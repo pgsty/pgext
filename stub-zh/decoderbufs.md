@@ -1,63 +1,58 @@
-
-
-
 ## 用法
 
-> [decoderbufs: 使用 Protocol Buffer 格式传递 WAL 流变更的逻辑解码插件](https://github.com/debezium/postgres-decoderbufs)
+来源：
 
-一个 PostgreSQL 逻辑解码输出插件，将 WAL 变更序列化为 Protocol Buffers 格式，主要由 Debezium PostgreSQL 连接器用于变更数据捕获。
+- [Debezium decoderbufs 3.6.0.Final README](https://github.com/debezium/postgres-decoderbufs/blob/v3.6.0.Final/README.md)
+- [Output-plugin控制文件](https://github.com/debezium/postgres-decoderbufs/blob/v3.6.0.Final/decoderbufs.control)
+- [Protocol Buffers模式](https://github.com/debezium/postgres-decoderbufs/blob/v3.6.0.Final/proto/pg_logicaldec.proto)
 
-### 配置
+`decoderbufs` 是一个无头的PostgreSQL逻辑复制输出插件，由Debezium PostgreSQL连接器使用。它将WAL更改转换为Protocol Buffers消息；它不会创建用户SQL模式，并不需要 `CREATE EXTENSION`。
 
-在 `postgresql.conf` 中：
+### 配置PostgreSQL
 
-```ini
+在 `postgresql.conf` 中启用该插件和逻辑复制，根据预期的消费者调整发送者和槽限制，然后重启PostgreSQL：
+
+```conf
 shared_preload_libraries = 'decoderbufs'
 wal_level = logical
 max_wal_senders = 8
 max_replication_slots = 4
 ```
 
-### 使用 SQL（调试模式）
+复制登录也需要具有 `REPLICATION` 属性，并且需要一个匹配的 `pg_hba.conf` 规则。使用适用于网络的安全认证方式，而不是README中的本地演示设置。
+
+### 核心工作流程
+
+创建一个输出插件为 `decoderbufs` 的逻辑槽：
 
 ```sql
--- 创建逻辑复制槽
-SELECT * FROM pg_create_logical_replication_slot('decoderbufs_demo', 'decoderbufs');
-
--- 执行表修改
-INSERT INTO my_table VALUES (1, 'test');
-UPDATE my_table SET col = 'updated' WHERE id = 1;
-
--- 以调试文本模式查看变更
-SELECT data FROM pg_logical_slot_peek_changes(
-    'decoderbufs_demo', NULL, NULL, 'debug-mode', '1');
-
--- 消费变更
-SELECT data FROM pg_logical_slot_get_changes(
-    'decoderbufs_demo', NULL, NULL, 'debug-mode', '1');
-
--- 检查槽状态
-SELECT * FROM pg_replication_slots WHERE slot_type = 'logical';
+SELECT *
+FROM pg_create_logical_replication_slot('decoderbufs_demo', 'decoderbufs');
 ```
 
-### 类型映射
+在 `psql` 中检查时，请向插件请求调试文本：
 
-| PostgreSQL 类型    | Protobuf 字段   |
-|--------------------|------------------|
-| BOOL               | datum_boolean    |
-| INT2, INT4         | datum_int32      |
-| INT8, OID          | datum_int64      |
-| FLOAT4             | datum_float      |
-| FLOAT8, NUMERIC    | datum_double     |
-| CHAR, VARCHAR, TEXT | datum_string    |
-| JSON, XML, UUID    | datum_string     |
-| TIMESTAMP(TZ)      | datum_string     |
-| BYTEA              | datum_bytes      |
-| POINT, PostGIS     | datum_point      |
+```sql
+SELECT data
+FROM pg_logical_slot_peek_changes(
+  'decoderbufs_demo', NULL, NULL, 'debug-mode', '1'
+);
 
-### 注意事项
+SELECT data
+FROM pg_logical_slot_get_changes(
+  'decoderbufs_demo', NULL, NULL, 'debug-mode', '1'
+);
+```
 
-- 对于 UPDATE/DELETE，需要适当设置 [REPLICA IDENTITY](https://www.postgresql.org/docs/current/sql-altertable.html#SQL-CREATETABLE-REPLICA-IDENTITY)
-- 二进制 Protocol Buffer 输出由 Debezium Postgres Connector 消费
-- `debug-mode` 选项提供人类可读的文本输出，用于 SQL 控制台测试
-- 编译需要 `protobuf-c` 库和 PostGIS 开发包
+`peek` 不改变已确认的位置；`get` 会将其向前推进。正常的Debezium操作将消费由 `pg_logicaldec.proto` 定义的二进制消息，而不是启用调试模式。
+
+### 关键对象和边界
+
+- `decoderbufs` 是创建槽时传递的逻辑复制输出插件名称。
+- `debug-mode = 1` 只用于故障排除的人类可读输出。
+- Protobuf 消息携带事务元数据、关系和列信息、操作类型、旧键以及带类型的值。
+- 需要为 `UPDATE` 和 `DELETE` 表提供足够的数据的表需要适当的 `REPLICA IDENTITY`。
+
+逻辑槽保留WAL直到消费者确认进度。监控 `pg_replication_slots` 并故意删除废弃的槽以防止磁盘耗尽。模式变更、复制标识符、不支持的数据类型映射和大事务应与匹配的Debezium连接器版本一起进行测试。
+
+上游构建需要PostgreSQL 9.6或更高版本以及protobuf-c；当可用时，会编译PostGIS支持。包发布跟随Debezium到3.6.0.Final，而插件控制元数据保持SQL版本0.1.0，因为这是一个输出插件而不是基于迁移的SQL扩展。

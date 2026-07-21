@@ -1,9 +1,11 @@
-
-
-
 ## Usage
 
-> Sources: [pgRDF upstream README](https://github.com/styk-tv/pgRDF/blob/v0.6.4/README.md), [pgRDF user guide](https://github.com/styk-tv/pgRDF/tree/v0.6.4/guide), [v0.6.4 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.4).
+Sources:
+
+- [pgRDF 0.6.20 README](https://github.com/styk-tv/pgRDF/blob/v0.6.20/README.md)
+- [pgRDF 0.6.20 user guide](https://github.com/styk-tv/pgRDF/tree/v0.6.20/guide)
+- [pgRDF 0.6.20 changelog](https://github.com/styk-tv/pgRDF/blob/v0.6.20/CHANGELOG.md)
+- [pgRDF 0.6.20 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.20)
 
 `pgRDF` stores RDF data inside PostgreSQL and exposes SQL-callable helpers for Turtle/TriG/N-Quads loading, SPARQL query/update, named graphs, SHACL validation, and RDFS/OWL 2 RL materialization.
 
@@ -14,7 +16,7 @@ SELECT pgrdf.version();
 
 ### Preload And PostgreSQL Version Caveat
 
-Upstream documents PostgreSQL 14-17 support and defers PostgreSQL 18 while pgRDF remains pinned to `pgrx` 0.16.
+pgRDF 0.6.20 supports PostgreSQL 14-18 and moves from `pgrx` 0.16.1 to 0.19.1. Upstream describes 0.6.20 as a build/runtime migration with no schema or query-surface change; PostgreSQL 19 remains a tracked follow-up.
 
 `pgrdf` must be present in `shared_preload_libraries` before PostgreSQL starts. Without preload, upstream documents that the shared-memory dictionary and plan-cache atomics are not initialized and the first pgRDF call can fail.
 
@@ -55,6 +57,27 @@ SELECT pgrdf.count_quads(100::bigint);
 ```
 
 Related ingest and graph-management functions documented upstream include `parse_trig`, `parse_nquads`, `add_graph`, `drop`, `clear`, `copy`, `move_graph`, `graph_id`, and `graph_iri`.
+
+### Carve Graph Slices
+
+The 0.6.x series adds `carve_graph` overloads for copying a predicate-defined slice or a bounded neighbourhood into another graph without decoding and re-encoding the shared dictionary:
+
+```sql
+SELECT pgrdf.carve_graph(
+  100::bigint,
+  'http://example.org/type'::text,
+  200::bigint
+);
+
+SELECT pgrdf.carve_graph(
+  100::bigint,
+  ARRAY['http://example.org/alice', 'http://example.org/bob']::text[],
+  201::bigint,
+  2
+);
+```
+
+The neighbourhood form uses `max_hops` as a graph-distance boundary. Set `pgrdf.on_path_truncation` to `warn` or `error` when a truncated property-path walk must not be silently accepted.
 
 ### Query With SPARQL
 
@@ -140,8 +163,10 @@ Useful introspection and cache-management helpers documented upstream include:
 | `pgrdf.plan_cache_clear()` | Clear prepared SPARQL plan cache |
 | `pgrdf.sparql_parse(text)` | Inspect parsed SPARQL without executing it |
 
-The `pgrdf.path_max_depth` setting guards property-path expansion depth.
+The `pgrdf.path_max_depth` setting guards property-path expansion depth, while `pgrdf.on_path_truncation = count | warn | error` controls how callers learn that the guard was reached.
 
 ### Version Notes
 
-`pgrdf` 0.6.4 improves the deferred-index bulk-load path: for fresh bulk loads above `pgrdf.bulk_defer_index_min`, `load_turtle(..., bulk_load => true)` also defers the dictionary `unique_term` constraint, then rebuilds and validates it in the same transaction. PostgreSQL 18 remains deferred upstream while pgRDF is pinned to `pgrx` 0.16.
+The releases between 0.6.4 and 0.6.20 materially improve large RDF ingestion and query correctness: streaming/windowed bulk ingestion, a staged multi-backend loader, safe repeated loads into populated dictionaries, graph-carving helpers, dictionary inclusion in `pg_dump`, SPARQL expression/aggregate additions, and fail-closed path-truncation handling. The 0.6.20 release itself changes only the build/runtime layer to `pgrx` 0.19.1 and adds PostgreSQL 18 support.
+
+For very large fresh N-Triples loads, upstream documents `pgrdf.load_turtle_staged_run` as the resumable, phase-oriented path. It commits parsing, dictionary, resolution, and index phases separately and is operationally different from the transactional `load_turtle()` call; validate staging tablespaces, disk headroom, and recovery procedures before using it for production-scale imports.

@@ -2,23 +2,54 @@
 
 来源：
 
-- [官方上游文档](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/README.md)
+- [Version 3.4控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_copy/pg_lake_copy.control)
+- [官方数据湖导入和导出指南](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/data-lake-import-export.md)
+- [官方文件格式参考](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/file-formats-reference.md)
+- [Version 3.4 SQL文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_copy/pg_lake_copy--3.3--3.4.sql)
 
-`pg_lake_copy` — 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展
+`pg_lake_copy` 扩展了 PostgreSQL `COPY`，使得查询、堆表、外部湖表和 Iceberg 表可以与本地路径、HTTP 端点以及配置的对象存储交换 Parquet、CSV 或换行符分隔的 JSON 文件。它通过钩子添加行为，并没有独立的 SQL 函数 API。
 
-已复核目录快照记录的版本为 `3.4`、类型为 `preload`、实现语言为 `C`。
-应先安装并验证声明的扩展依赖：`pg_lake_engine`, `pg_lake_iceberg`, `pg_lake_table`。
-整理后的兼容版本集合为 `16,17,18`；仍需针对目标服务器确认实际构建。
+### 启用组件
+
+正常的入口点会一起安装 `pg_lake_copy` 及其精确依赖项：
 
 ```sql
-CREATE EXTENSION "pg_lake_copy";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_lake_copy';
+CREATE EXTENSION pg_lake CASCADE;
 ```
 
-该上游项目与 `Snowflake` 相关；应根据所链接来源核实当前支持、许可证、打包方式与部署边界。
+它的控制文件需要 `pg_lake_engine`、`pg_lake_iceberg` 和 `pg_lake_table`。部署还需要在 `pg_extension_base` 中安装 `shared_preload_libraries`，并运行一个正在运行的 `pgduck_server`。
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+### 导出和导入
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+格式可以从路径后缀推断或显式选择：
+
+```sql
+COPY (
+    SELECT event_id, event_time, payload
+    FROM events
+    WHERE event_time >= DATE '2026-07-01'
+)
+TO 's3://analytics-bucket/events/july.parquet'
+WITH (format 'parquet');
+
+COPY events_archive
+FROM 's3://analytics-bucket/events/july.parquet'
+WITH (format 'parquet');
+```
+
+CSV 和压缩输出使用标准看起来的 `COPY` 选项扩展为湖写入器：
+
+```sql
+COPY (SELECT * FROM daily_summary)
+TO 's3://analytics-bucket/summary/daily.csv.gz'
+WITH (format 'csv', header true, compression 'gzip');
+```
+
+目标可以是 PostgreSQL 堆表或 Iceberg 表；源也可以是安装的 pg_lake 堆栈支持的任何查询。
+
+### 格式和运行时边界
+
+- Parquet 是列式的，并保留了受支持的数据类型值；CSV 和换行符分隔的 JSON 有特定格式的推断和转换选项，这些选项在上游文档中有所说明。
+- 对象存储访问通过 `pgduck_server` 进行。其凭据链、网络访问以及桶权限必须允许请求的读取或写入。
+- `COPY` 是一个语句，并参与外围的 PostgreSQL 事务，但远程文件和清理也依赖于 pg_lake 事务/队列机制。在重试大规模导出之前，请检查失败的操作和孤儿清理。
+- Version `3.4` 在 `pg_lake_copy` 中没有增加任何用户可见的 SQL 对象；其从 `3.3` 到 `3.4` 的升级脚本为空。

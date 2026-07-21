@@ -3,9 +3,13 @@
 
 ## Usage
 
-> [tdigest: t-digest percentile estimation for PostgreSQL](https://github.com/tvondra/tdigest)
+Sources:
 
-Implements t-digest for on-line accumulation of rank-based statistics such as quantiles and trimmed means. Much faster than `percentile_cont`, supports parallelism, and allows pre-aggregation.
+- [tdigest v1.4.4 README](https://github.com/tvondra/tdigest/blob/v1.4.4/README.md)
+- [v1.4.4 release](https://github.com/tvondra/tdigest/releases/tag/v1.4.4)
+- [Extension control file](https://github.com/tvondra/tdigest/blob/v1.4.4/tdigest.control)
+
+`tdigest` implements an approximate, mergeable t-digest for online rank statistics such as quantiles, percentile ranks, and trimmed means. It supports parallel aggregation and storing pre-aggregated digests for later rollups.
 
 ```sql
 CREATE EXTENSION tdigest;
@@ -63,3 +67,10 @@ CREATE TABLE p AS SELECT a, b, tdigest(c, 100) AS d FROM t GROUP BY a, b;
 -- Query pre-aggregated data (~1.5ms vs ~7s for exact)
 SELECT a, tdigest_percentile(d, 0.95) FROM p GROUP BY a ORDER BY a;
 ```
+
+### Caveats
+
+- Results are estimates. Validate the chosen compression against exact `percentile_cont` results on representative data before setting accuracy targets.
+- Higher compression usually improves tail accuracy but increases state size and CPU cost.
+- Stored digests can be merged across groups and time windows. Version `1.4.4` fixes combining digests created with different parameters, so use that patch level when heterogeneous states may meet.
+- Version `1.4.4` also strengthens text-input parsing and validation and adds PostgreSQL 19 build/test coverage; malformed serialized digests that older builds accepted may now be rejected.

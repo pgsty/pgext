@@ -1,9 +1,12 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/PierreSenellart/provsql/blob/v1.9.0/doc/provsql.md), [v1.9.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.9.0), [v1.9.0 control](https://github.com/PierreSenellart/provsql/blob/v1.9.0/provsql.common.control), [getting started](https://provsql.org/docs/user/getting-provsql.html), [configuration](https://provsql.org/docs/user/configuration.html), [semirings](https://provsql.org/docs/user/semirings.html)
+Sources:
+
+- [ProvSQL 1.11.0 documentation](https://github.com/PierreSenellart/provsql/blob/v1.11.0/doc/provsql.md)
+- [ProvSQL 1.11.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.11.0)
+- [ProvSQL 1.10.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.10.0)
+- [ProvSQL 1.11.0 control file](https://github.com/PierreSenellart/provsql/blob/v1.11.0/provsql.common.control)
+- [ProvSQL user documentation](https://provsql.org/docs/user/introduction.html)
 
 `provsql` adds semiring provenance and uncertainty management to PostgreSQL. Upstream documents provenance tracking, semiring evaluation, probabilities, Shapley and Banzhaf values, where-provenance, update provenance, and temporal features.
 
@@ -106,21 +109,35 @@ SET provsql.aggtoken_text_as_uuid = on;
 
 The user guide separately documents where-provenance helpers, update provenance, temporal helpers such as `get_valid_time`, `timetravel`, `timeslice`, `history`, and `undo`, circuit-inspection helpers `circuit_subgraph(root, max_depth)` and `resolve_input(uuid)`, and `setup_search_path()` for preparing the helper search path.
 
-### v1.9.0 Query and Probability Notes
+### Current Probability and Inference Surface
 
-Release `1.9.0` materially expands SQL coverage for provenance-aware queries:
+The 1.9 through 1.11 releases materially expand SQL coverage and probability evaluation:
 
 - subqueries outside `FROM`, including `EXISTS`, `NOT EXISTS`, `IN`, `NOT IN`, `ANY`, `ALL`, row-valued `IN`, scalar subqueries, and `ARRAY(SELECT ...)`;
 - `LEFT`, `RIGHT`, and `FULL` outer joins, plus corrected `EXCEPT` and `EXCEPT ALL` provenance;
 - SQL-faithful `NULL` handling for aggregates and exact `HAVING` aggregate probabilities for `COUNT`, `SUM`, `MIN`, `MAX`, and `AVG`;
 - probability-method selection through the method catalog and cost chooser, with `karp-luby`, `stopping-rule`, `sieve`, `d-tree`, and `probability_bounds`;
-- idempotent `add_provenance` and `create_provenance_mapping` calls.
+- exact bounded-treewidth recursive reachability, unsafe-UCQ joint-width compilation, Möbius inversion for safe UCQs, and absorptive provenance for cyclic recursion;
+- conditional events and distributions through the `target | evidence` operator and the whole-tuple `given()`/prefix form;
+- continuous and discrete `random_variable` families, including normal, gamma, log-normal, beta, Weibull, Pareto, inverse-gamma, inverse-Gaussian, logistic, Poisson, binomial, geometric, hypergeometric, and negative-binomial distributions;
+- hierarchical Bayesian models where distribution parameters are themselves random variables, with conjugate posterior updates when a closed form is available;
+- maintained provenance mappings that remain correct as source data changes, plus SQL-conformant `NULL` behavior for `NOT IN`, `EXCEPT`, and nullable random variables.
 
-The release removes the old `probability_benchmark` helper. `agg_token` now has native arithmetic, unary minus, and comparison support for aggregate-token expressions.
+For example, condition a continuous value on observed evidence and read the posterior expectation:
+
+```sql
+WITH model AS (
+  SELECT normal(20, 5) AS reading
+)
+SELECT expected(reading | (reading > 25))
+FROM model;
+```
+
+The `agg_token` type supports arithmetic, unary minus, and comparisons for probabilistic aggregate expressions. Use the official probability and continuous-distribution chapters to choose between exact, compiled, and sampling-based evaluation methods.
 
 ### Notes
 
-- The package row in `db/extension.csv` lists version `1.9.0`, package `provsql`, dependency `uuid-ossp`, and PostgreSQL support for 14 through 18.
-- The v1.9.0 control file sets `default_version = '1.9.0'`, requires `uuid-ossp`, marks the extension trusted, and is not relocatable.
-- Upstream docs say ProvSQL has been tested on PostgreSQL 10 through 18; the Pigsty package matrix is PostgreSQL 14-18.
+- The 1.11.0 control file sets `default_version = '1.11.0'`, requires `uuid-ossp`, marks the extension trusted, and is not relocatable.
+- Upstream documentation says ProvSQL has been tested on PostgreSQL 10 through 18.
 - `provsql.update_provenance` and the multirange semirings require PostgreSQL 14 or later.
+- Update-provenance tracking remains experimental; validate its storage and performance costs before enabling it broadly.

@@ -1,13 +1,15 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/darkhanakh/pg-kazsearch/blob/v2.2.0/README.md)、[v2.2.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.2.0)、[v2.1.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.1.0)
+来源：
 
-`pg_kazsearch` 是面向哈萨克语的 PostgreSQL full-text search 扩展。README 说明它支持 PostgreSQL 16-18，并创建可直接使用的 text search configuration `kazakh_cfg` 和 dictionary `pg_kazsearch_dict`。版本 2.2.0 在核心 stemmer 中增加拉丁字母哈萨克语支持；成功识别的拉丁与西里尔输入会收敛到 canonical Cyrillic stems。
+- [官方 v2.3.0 README](https://github.com/darkhanakh/pg-kazsearch/blob/v2.3.0/README.md)
+- [v2.3.0 发行版](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.3.0)
+- [PostgreSQL 扩展控制文件](https://github.com/darkhanakh/pg-kazsearch/blob/v2.3.0/pg_ext/pg_kazsearch.control)
+- [从 v2.2.0 到 v2.3.0 的升级 SQL](https://github.com/darkhanakh/pg-kazsearch/blob/v2.3.0/pg_ext/sql/pg_kazsearch--2.2.0--2.3.0.sql)
 
-### 快速开始
+`pg_kazsearch` 为 PostgreSQL 16 至 18 提供了哈萨克语全文词干提取。它安装了一个现成的 `kazakh_cfg` 配置和 `pg_kazsearch_dict` 字典。使用支持的现代拉丁字母书写法的西里尔文和哈萨克语会转换为标准的西里尔文词干，从而使文档和查询能够在不同书写系统之间匹配。
+
+### 核心工作流程
 
 ```sql
 CREATE EXTENSION pg_kazsearch;
@@ -15,51 +17,56 @@ CREATE EXTENSION pg_kazsearch;
 SELECT ts_lexize('pg_kazsearch_dict', 'алмаларымыздағы');
 -- {алма}
 
-SELECT to_tsvector('kazakh_cfg', 'президенттің жарлығы');
--- 'жарлық':2 'президент':1
+SELECT to_tsvector('kazakh_cfg', 'мектептеріміздегі оқушылардың');
+-- 'мектеп':1 'оқушы':2
 ```
 
-### 将哈萨克语 FTS 添加到表
+添加加权存储向量和 GIN 索引：
 
 ```sql
 ALTER TABLE articles ADD COLUMN fts tsvector
-    GENERATED ALWAYS AS (
-        setweight(to_tsvector('kazakh_cfg', title), 'A') ||
-        setweight(to_tsvector('kazakh_cfg', body), 'B')
-    ) STORED;
+GENERATED ALWAYS AS (
+    setweight(to_tsvector('kazakh_cfg', title), 'A') ||
+    setweight(to_tsvector('kazakh_cfg', body), 'B')
+) STORED;
 
-CREATE INDEX idx_fts ON articles USING GIN (fts);
+CREATE INDEX articles_fts_idx ON articles USING GIN (fts);
 
 SELECT title
 FROM articles
 WHERE fts @@ websearch_to_tsquery('kazakh_cfg', 'президенттің жарлығы')
-ORDER BY ts_rank_cd(fts, websearch_to_tsquery('kazakh_cfg', 'президенттің жарлығы')) DESC
-LIMIT 10;
+ORDER BY ts_rank_cd(
+    fts,
+    websearch_to_tsquery('kazakh_cfg', 'президенттің жарлығы')
+) DESC;
 ```
 
-### 调优
+### 字典调优
 
-README 记录了无需重启的运行时 dictionary 调优：
+可以在运行时更改惩罚权重：
 
 ```sql
 ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict
-  (w_deriv = 3.5, w_short_char = 100.0);
+    (w_deriv = 3.5, w_short_char = 100.0);
 ```
 
-通过 `script_mode` 控制拉丁字母处理；默认 `auto` 模式会检测受支持的现代哈萨克拉丁正字法，并归一化为西里尔输出：
+默认的 `script_mode = auto` 会检测支持的现代哈萨克语拉丁字母书写法并返回西里尔文词干。当需要严格的西里尔文行为时，可以禁用拉丁字母处理：
 
 ```sql
 ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict
-  (script_mode = cyrillic_only);
+    (script_mode = cyrillic_only);
 ```
 
-### Release 与打包说明
+### 升级和搜索注意事项
 
-- 本项目 CSV 跟踪 package/source version `2.2.0`、extension control version `0.1.0`、`pgrx` `0.18.1`，以及 PostgreSQL versions 16-18。
-- 上游 release `v2.2.0` 为核心 stemmer 增加拉丁字母哈萨克语支持。
-- 上游 release `v2.0.0` 引入了当前 Rust / `pgrx` PostgreSQL extension 打包。
-- 上游 release `v2.1.0` 在 PostgreSQL extension 之外增加了 Elasticsearch plugin；README 中的 PostgreSQL SQL 用法未改变。
+- 在升级到 `2.3.0` 后，重新计算存储的 `tsvector` 列或重新填充触发器维护的向量，然后对表执行 `VACUUM (ANALYZE)`。
 
-### 注意事项
+```sql
+ALTER EXTENSION pg_kazsearch UPDATE;
+UPDATE articles SET title = title;
+VACUUM (ANALYZE) articles;
+```
 
-面向 PostgreSQL 的文档很简洁，重点是 stemming 和 FTS 用法。此 stub 避免推断除 `kazakh_cfg`、`pg_kazsearch_dict` 以及上面文档化示例以外的 SQL 对象。
+- 升级前长时间运行的会话应重新连接以加载新的字典。
+- 拉丁字母支持针对现代书写法。混合书写系统的输入、过时的撇号/重音符/双字符拼写以及低置信度的 ASCII 词素可能保持不变。
+- `websearch_to_tsquery` 使用严格的 AND 语义处理普通词项。需要更广泛召回的应用程序应故意实现并衡量一个备选查询，而不是默默地将所有搜索都改为 OR 操作。

@@ -3,7 +3,16 @@
 
 ## Usage
 
-Sources: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB 2.28.0 release](https://github.com/timescale/timescaledb/releases/tag/2.28.0), [2.28.0 changelog](https://github.com/timescale/timescaledb/blob/2.28.0/CHANGELOG.md), [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/), [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/), [continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/), [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/), [GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
+Sources:
+
+- [TimescaleDB v2.28.3 README](https://github.com/timescale/timescaledb/blob/2.28.3/README.md)
+- [TimescaleDB 2.28.3 release](https://github.com/timescale/timescaledb/releases/tag/2.28.3)
+- [2.28.3 changelog](https://github.com/timescale/timescaledb/blob/2.28.3/CHANGELOG.md)
+- [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/)
+- [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/)
+- [Continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)
+- [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/)
+- [TimescaleDB GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
 
 `timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize `CREATE TABLE ... WITH (tsdb.hypertable)`, continuous aggregates, automation jobs, and moving chunks into the columnstore.
 
@@ -94,9 +103,9 @@ SET timescaledb.enable_columnar_scan_filter_pushdown = on;
 
 `timescaledb.enable_direct_compress_insert` and `timescaledb.enable_direct_compress_copy` enable tech-preview direct compression during ingestion. TimescaleDB 2.27.0 adds `timescaledb.enable_cagg_rewrites` and `timescaledb.cagg_rewrites_debug_info`, and documents `timescaledb.enable_columnar_scan_filter_pushdown` as enabled by default.
 
-### Caveats
+### Version 2.28.3 and Caveats
 
-- This project's CSV tracks TimescaleDB `2.28.0` for PostgreSQL 15-18.
+- Use `2.28.3` instead of earlier `2.28.x` builds. It contains correctness fixes for columnar `NULL` handling, sorting negative constants and collated values, `stddev`/`avg` results, compressed-data DML under non-default collations, compression races, and a direct-delete case involving arrays and `NULL` that could remove too many rows.
 - TimescaleDB 2.28.0 speeds up `first(value, time)` and `last(value, time)` aggregates on compressed data by deriving results from columnstore batch metadata instead of decompressing batches.
 - The columnar executor in 2.28.0 can evaluate `CASE ... WHEN` expressions on compressed data, keeping conditional aggregates and computed expressions on the vectorized path.
 - TimescaleDB 2.28.0 removes adaptive chunking and drops `_timescaledb_catalog.chunk_constraint`, temporarily replacing it with a compatibility view. Use stable informational views instead of depending on that catalog object.

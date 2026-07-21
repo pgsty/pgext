@@ -1,60 +1,69 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/buzzm/postgresbson/blob/master/README.md), [META.json 2.0.2](https://github.com/buzzm/postgresbson/blob/master/META.json), [pgbson.control](https://github.com/buzzm/postgresbson/blob/master/pgbson.control)
+Sources:
 
-`pgbson` adds a BSON data type plus BSON-aware accessors and operators. Upstream documents the package release as `2.0.2`, while the extension control file still exposes SQL default version `2.0`; this matches the packaging note that the dist version is ahead of the extension SQL version.
+- [postgresbson README at the 2.0.4 revision](https://github.com/buzzm/postgresbson/blob/ec71d314511d484a99ed510f480919dd0509fbe9/README.md)
+- [META.json version 2.0.4](https://github.com/buzzm/postgresbson/blob/ec71d314511d484a99ed510f480919dd0509fbe9/META.json)
+- [pgbson control file](https://github.com/buzzm/postgresbson/blob/ec71d314511d484a99ed510f480919dd0509fbe9/pgbson.control)
+- [Version 2.0 SQL API](https://github.com/buzzm/postgresbson/blob/ec71d314511d484a99ed510f480919dd0509fbe9/pgbson--2.0.sql)
 
-```sql
-CREATE EXTENSION pgbson;
-```
+pgbson adds a BSON data type, typed path accessors, JSON-style operators, casts, and expression-index support. Use it when binary BSON must be stored without first converting every value to JSONB, especially when BSON type fidelity or byte-level round trips matter.
 
-### Core Access Patterns
+The distribution release is 2.0.4 while the extension control and SQL API version remain 2.0.
 
-Typed dotpath accessors walk the BSON structure directly and are the upstream-recommended fast path:
+### Create the Extension
 
-```sql
-SELECT bson_get_datetime(bson_column, 'msg.header.event.ts') FROM my_table;
-SELECT bson_get_bson(bson_column, 'msg.header.event') FROM my_table;
-SELECT bson_get_string(bson_column, 'data.payload.product.definition.id') FROM my_table;
-```
+    CREATE EXTENSION pgbson;
 
-JSON-style operators are also supported:
+The native module uses libbson. Install a package built against compatible PostgreSQL and libbson versions.
 
-```sql
-SELECT (bson_column->'msg'->'header'->'event'->>'ts')::timestamp
-FROM my_table;
-```
+### Store and Validate BSON
 
-### Main Functions and Operators
+The bytea-to-bson cast validates input when a value is written. Version 2.0.4 documents that reads can then assume the stored BSON is valid. Do not bypass the type's input or cast path with unsafe low-level writes.
 
-- Typed getters such as `bson_get_string`, `bson_get_int32`, `bson_get_int64`, `bson_get_double`, `bson_get_decimal`, `bson_get_datetime`, `bson_get_binary`, and `bson_get_boolean`.
-- `bson_get_bson` to return a BSON subdocument.
-- `bson_get_jsonb_array` when a path resolves to an array and you want native `jsonb` array operators afterward.
-- Arrow operators `->` and `->>` similar to PostgreSQL JSON types.
-- Casts to `json`/`jsonb` using Extended JSON so type fidelity is preserved.
+### Extract Values
 
-### Interop and Indexing
+Typed dot-path accessors avoid materializing every intermediate object:
 
-Cast BSON to `jsonb` when you want PostgreSQL JSON operators:
+    SELECT bson_get_datetime(payload, 'msg.header.event.ts'),
+           bson_get_string(payload, 'data.customer.name')
+    FROM events;
 
-```sql
-SELECT (bson_get_bson(bson_column, 'msg.header.event')::jsonb) ?& ARRAY['id', 'type']
-FROM my_table;
-```
+Use bson_get_bson for a subdocument:
 
-Build expression indexes on extracted paths:
+    SELECT bson_get_bson(payload, 'msg.header.event')
+    FROM events;
 
-```sql
-CREATE INDEX ON data_collection (bson_get_string(data, 'd.recordId'));
-```
+JSON-style navigation is also available:
 
-The README also notes BSON values can round-trip byte-for-byte through `bytea` casts.
+    SELECT payload->'msg'->'header'->'event'->>'ts'
+    FROM events;
+
+### Function and Operator Index
+
+- bson_get_string, bson_get_int32, bson_get_int64, bson_get_double, bson_get_decimal: typed scalar accessors.
+- bson_get_datetime, bson_get_binary, bson_get_boolean: accessors for additional BSON types.
+- bson_get_bson: return an embedded BSON document.
+- bson_get_jsonb_array: convert an array endpoint to a PostgreSQL jsonb array.
+- -> and ->>: navigate values with JSON-like syntax.
+- bson casts to json and jsonb: expose Extended JSON for PostgreSQL JSON processing.
+- bson and bytea casts: preserve the BSON binary representation.
+
+### Index and Interoperate
+
+Create expression indexes on frequently queried paths:
+
+    CREATE INDEX events_customer_id_idx
+    ON events (bson_get_string(payload, 'data.customer.id'));
+
+Cast a subdocument to jsonb when PostgreSQL's JSON operators are more convenient:
+
+    SELECT bson_get_bson(payload, 'msg.header')::jsonb ? 'event'
+    FROM events;
 
 ### Caveats
 
-- Dotpath accessors are usually faster and more memory-efficient than long `->` chains because they avoid materializing intermediate substructures.
-- `bson_get_bson()` returns `NULL` for scalar endpoints because simple scalars are not BSON documents.
-- Upstream explicitly calls out array handling and wrong-type accessor behavior as rough edges that still need better ergonomics.
+- A typed getter returns useful data only when the endpoint has the expected BSON type. Make type expectations explicit in ingestion code.
+- bson_get_bson returns NULL for scalar endpoints because a scalar is not a BSON document.
+- Dot-path accessors are generally preferable to long operator chains for repeated extraction because they avoid intermediate BSON values.
+- BSON and JSONB have different type and ordering semantics. A cast can be useful but is not a lossless replacement for every BSON workflow.

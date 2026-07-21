@@ -1,59 +1,51 @@
-
-
-
 ## 用法
 
-> [pg_statement_rollback: 类似 Oracle 或 DB2 的 PostgreSQL 语句级服务器端回滚](https://github.com/lzlabs/pg_statement_rollback)
+来源：
 
-在每条语句之前自动创建服务器端保存点，允许单条语句失败而不中止整个事务。
+- [pg_statement_rollback v1.6 README](https://github.com/lzlabs/pg_statement_rollback/blob/v1.6/README.md)
+- [v1.5 到 v1.6 的变更](https://github.com/lzlabs/pg_statement_rollback/compare/v1.5...v1.6)
 
-### 启用
+pg_statement_rollback 会在每条符合条件的语句之前自动创建保存点，使显式事务在某条语句报错后仍可继续使用。它模拟部分其他数据库的语句级回滚行为，但客户端在出错后仍必须执行 ROLLBACK TO SAVEPOINT。
 
-```sql
-LOAD 'pg_statement_rollback.so';
-SET pg_statement_rollback.enabled TO on;
-```
+该模块加载到后端进程中，不需要 CREATE EXTENSION。
 
-或在 `postgresql.conf` 中为所有会话启用：
+### 加载模块
 
-```ini
-session_preload_libraries = 'pg_statement_rollback'
-pg_statement_rollback.enabled = on
-```
+仅为当前会话加载：
 
-### 基本用法
+    LOAD 'pg_statement_rollback.so';
 
-```sql
-BEGIN;
-CREATE TABLE test(id integer);
-INSERT INTO test SELECT 1;
-SELECT COUNT(*) FROM test;         -- 返回 1
+如需针对指定角色或数据库启用，请将其加入 session_preload_libraries，然后重新连接：
 
-INSERT INTO test SELECT 'wrong';   -- ERROR: invalid input syntax
-ROLLBACK TO SAVEPOINT "PgSLRAutoSvpt";  -- 仅回滚失败的语句
+    session_preload_libraries = 'pg_statement_rollback'
 
-SELECT COUNT(*) FROM test;         -- 仍然返回 1
-COMMIT;
-```
+只有部署确实需要服务器级全局加载时才应使用 shared_preload_libraries；在服务器范围修改任一预加载列表，都必须遵守相应的重启或重新连接边界。
 
-没有此扩展，错误会中止整个事务，后续所有语句都会以 "current transaction is aborted" 失败。
+### 从失败语句中恢复
 
-### 配置
+    BEGIN;
+    INSERT INTO accounts(id, balance) VALUES (1, 100);
+    INSERT INTO accounts(id, balance) VALUES (1, 200);
+    -- duplicate-key error
+    ROLLBACK TO SAVEPOINT "PgSLRAutoSvpt";
+    UPDATE accounts SET balance = 150 WHERE id = 1;
+    COMMIT;
 
-```sql
--- 随时在会话中启用/禁用
-SET pg_statement_rollback.enabled TO off;
+保存点名称在使用引号时区分大小写。应用程序必须检测语句错误，并在继续执行前发送回滚命令。
 
--- 更改保存点名称（仅超级用户）
-SET pg_statement_rollback.savepoint_name TO 'my_savepoint';
+### 配置索引
 
--- 将保存点限制为仅写操作语句（默认：on）
-SET pg_statement_rollback.enable_writeonly TO off;
-```
+- pg_statement_rollback.enabled 为当前会话启用自动保存点。
+- pg_statement_rollback.savepoint_name 更改自动保存点名称，并且只能由超级用户控制。
+- pg_statement_rollback.enable_writeonly 将保存点创建限制在可能执行写入的语句。
 
-### 关键行为
+### 1.6 版本行为
 
-- 以最小性能开销在服务器端自动创建保存点
-- 默认仅在写语句（INSERT、UPDATE、DELETE 等）后创建保存点
-- 当 `enable_writeonly` 开启时，SELECT 语句不会触发自动保存点
-- 客户端在处理错误时仍需调用 `ROLLBACK TO SAVEPOINT "PgSLRAutoSvpt"`
+1.6 版增加 PostgreSQL 19 构建支持，并改进了只读事务检测。该模块不再在只读事务中创建自动保存点，并会在 SET TRANSACTION ... READ ONLY 之前释放初始保存点，避免干扰备份导出及其他只读会话。
+
+### 注意事项
+
+- 这不是透明重试机制：客户端必须显式回滚到自动保存点。
+- 保存点会给每条受覆盖语句增加开销。大范围启用前，应先测量写密集型工作负载。
+- 上游 README 警告该模块在启用断言的 PostgreSQL 构建上可能崩溃；未经测试，不要把开发构建的行为视为生产环境安全。
+- 跨整个事务的错误、连接故障以及使会话失效的错误，都无法通过保存点修复。

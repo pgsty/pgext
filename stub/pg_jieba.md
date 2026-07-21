@@ -2,18 +2,58 @@
 
 Sources:
 
-- [Official upstream documentation](https://github.com/jaiminpan/pg_jieba/blob/d0ffac8028328b2566a889ff4db3d74ba63d1b42/README.md)
+- [Official v2.0.1 README](https://github.com/jaiminpan/pg_jieba/blob/v2.0.1/README.md)
+- [Extension control file](https://github.com/jaiminpan/pg_jieba/blob/v2.0.1/pg_jieba.control)
+- [SQL parser and configuration definitions](https://github.com/jaiminpan/pg_jieba/blob/v2.0.1/pg_jieba.sql)
 
-`pg_jieba` — Chinese full-text search parser extension using Jieba tokenization.
+`pg_jieba` adds Jieba-based Chinese word segmentation to PostgreSQL full-text search. The upstream `v2.0.1` source release installs SQL extension version `1.1.0`, as recorded by its control file. It provides separate document and query parsers plus ready-to-use text-search configurations.
 
-The reviewed catalog snapshot records version `1.1.1`, kind `standard`, and implementation language `C++`.
-The curated compatibility set is `10,11`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "pg_jieba";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_jieba';
+CREATE EXTENSION pg_jieba;
+
+SELECT to_tsvector(
+    'jiebacfg',
+    '小明硕士毕业于中国科学院计算所，后在日本京都大学深造'
+);
+
+SELECT plainto_tsquery('jiebaqry', '云计算专家');
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Use `jiebacfg` to build searchable document vectors and `jiebaqry` to segment user queries:
+
+```sql
+ALTER TABLE articles
+ADD COLUMN search_vector tsvector
+GENERATED ALWAYS AS (to_tsvector('jiebacfg', body)) STORED;
+
+CREATE INDEX articles_search_idx
+ON articles USING GIN (search_vector);
+
+SELECT title
+FROM articles
+WHERE search_vector @@ plainto_tsquery('jiebaqry', '中文全文检索');
+```
+
+### Object Index
+
+- `jieba`: document text-search parser.
+- `jiebaqry`: query-oriented text-search parser.
+- `jiebacfg`: document text-search configuration using `jieba` and `jieba_stem`.
+- `jiebaqry`: text-search configuration of the same name using the query parser.
+- `jieba_stem`: simple dictionary with Jieba stop words used for the parser's token categories.
+
+### Custom Dictionary and Caveats
+
+Upstream reads a custom dictionary named `jieba.user.dict.utf8` from PostgreSQL's `tsearch_data` directory. Entries may contain a word and optional part-of-speech tag:
+
+```text
+云计算
+韩玉鉴赏
+蓝翔 nz
+```
+
+- The v2.x source requires a C++11-capable compiler because of its bundled `cppjieba` dependency.
+- Upstream's published compatibility testing is old and limited. Build and regression-test the package against the exact PostgreSQL major version used in production.
+- Changing dictionaries changes tokenization. Recompute stored `tsvector` values and rebuild dependent indexes when dictionary output changes.

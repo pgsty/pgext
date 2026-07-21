@@ -1,114 +1,53 @@
-
-
-
 ## 用法
 
 来源：
 
-- [PGXN biscuit 2.4.1](https://pgxn.org/dist/biscuit/2.4.1/)
-- [Biscuit README](https://github.com/CrystallineCore/Biscuit)
-- [Biscuit CHANGELOG](https://github.com/CrystallineCore/Biscuit/blob/main/CHANGELOG.md)
-- [Biscuit documentation](https://biscuit.readthedocs.io/)
+- [PGXN biscuit 2.4.3 分发](https://pgxn.org/dist/biscuit/2.4.3/)
+- [PGXN 2.4.3 元数据](https://api.pgxn.org/dist/biscuit/2.4.3/META.json)
+- [PGXN 2.4.3 控制文件](https://api.pgxn.org/src/biscuit/biscuit-2.4.3/biscuit.control)
+- [PGXN 2.4.3 改变日志](https://api.pgxn.org/src/biscuit/biscuit-2.4.3/CHANGELOG.md)
+- [官方文档](https://biscuit.readthedocs.io/)
 
-`biscuit` 是 PostgreSQL 的索引访问方法，用于加速文本上的 `LIKE`、`NOT LIKE`、`ILIKE` 和 `NOT ILIKE` 模式匹配。它使用类似位图的位置索引，避免 trigram 搜索中常见的 heap recheck 开销，并支持多列索引，适合通配符查询较多的负载。
+`biscuit` 是一个针对文本模式过滤优化的实验性 PostgreSQL 索引访问方法。它主要针对 `LIKE`, `ILIKE`, `NOT LIKE`, 和 `NOT ILIKE` 预测子，包括多列和表达式索引，同时以增加内存使用和写入工作为代价换取更快的过滤速度。
 
-PGXN 2.4.1 包里携带的 SQL/control 版本是 `2.4.0`，因此扩展可见的 `default_version` 仍是 `2.4.0`。Pigsty 本地扩展名为 `biscuit`，旧包元数据中可能仍能看到 `pg_biscuit`。
-
-> [!WARNING]
-> 上游说明 Biscuit 仍处于活跃开发阶段，建议在生产使用前进行充分的 staging 验证。应覆盖代表性数据集、查询模式、升级、备份恢复和性能行为，再用于关键负载。
-
-### 快速开始
+### 核心流程
 
 ```sql
-CREATE EXTENSION IF NOT EXISTS biscuit;
+CREATE EXTENSION biscuit;
 
-CREATE TABLE users (
-  id bigserial PRIMARY KEY,
-  name text,
-  email text,
-  bio text
-);
+CREATE INDEX message_body_biscuit_idx
+ON message USING biscuit (body);
 
-CREATE INDEX users_name_biscuit
-ON users USING biscuit (name);
+SELECT id, body
+FROM message
+WHERE body ILIKE '%timeout%';
+```
+
+当查询中使用相同的表达式时，表达式索引可以生效：
+
+```sql
+CREATE INDEX customer_email_biscuit_idx
+ON customer USING biscuit (lower(email));
 
 SELECT *
-FROM users
-WHERE name LIKE '%john%';
+FROM customer
+WHERE lower(email) LIKE '%@example.com';
 ```
 
-`biscuit` 支持带 `%` 和 `_` 的普通通配符模式：
+对于跨越多个索引文本列的预测子，应使用多列索引，并通过在代表性数据上运行 `EXPLAIN (ANALYZE, BUFFERS)` 来确认选择的计划。
 
-```sql
-SELECT * FROM users WHERE name LIKE 'john%';
-SELECT * FROM users WHERE name LIKE '%smith';
-SELECT * FROM users WHERE name LIKE '%oh_';
-SELECT * FROM users WHERE name ILIKE '%john%';
-SELECT * FROM users WHERE name NOT LIKE '%test%';
-```
+### 重要对象
 
-### 多列索引
+- `biscuit` 是用于 `CREATE INDEX ... USING biscuit` 的索引访问方法。
+- `biscuit_operators` 报告支持的操作符。
+- `biscuit_version` 和 `biscuit_build_info` 暴露构建信息；`biscuit_build_info_json` 以 JSON 格式返回这些信息。
+- `biscuit_status` 报告安装的构建和位图配置。
+- `biscuit_index_stats` 和 `biscuit_index_memory_size` 检查索引及其内存占用情况。
+- `biscuit_memory_usage` 是扩展内存使用情况视图。
+- `biscuit_has_roaring` 和 `biscuit_roaring_version` 报告可选的 Roaring 位图支持。
 
-```sql
-CREATE INDEX users_search_biscuit
-ON users USING biscuit (name, email, bio);
+### 限制和操作
 
-SELECT *
-FROM users
-WHERE name ILIKE '%john%'
-  AND email LIKE '%example.com'
-  AND bio NOT LIKE '%inactive%';
-```
+`biscuit` 主要用于过滤，而不是有序索引扫描。它不提供正则表达式或相似性搜索功能。索引可能比 B-树更大且更昂贵；在生产使用前，请先基准测试读取选择性、摄入成本、内存使用情况以及真空行为。保留常规索引以满足排序、等值、唯一性或其他访问方法的需求。
 
-Biscuit 可以合并多个索引列上的 bitmap 匹配，并可能按估计选择性重排谓词。
-
-### 表达式索引
-
-2.4.0 增加了 expression index 支持：
-
-```sql
-CREATE INDEX users_lower_name_biscuit
-ON users USING biscuit (lower(name));
-
-SELECT *
-FROM users
-WHERE lower(name) LIKE '%john%';
-```
-
-对于 `char(n)` / `bpchar` 列，上游建议使用显式 cast 到 `text` 的表达式索引，因为原生 `bpchar` 操作符类尚不可用：
-
-```sql
-CREATE INDEX legacy_code_biscuit
-ON legacy_table USING biscuit ((code::text));
-```
-
-### 查看信息
-
-```sql
-SELECT *
-FROM biscuit_operators;
-
-SELECT *
-FROM biscuit_version_history;
-```
-
-`biscuit_operators` 视图列出 Biscuit 访问方法注册的操作符。2.4.0 修复了该视图，使它在后续增加 operator class / family 时仍能保持正确。
-
-### 运维说明
-
-Biscuit 的设计重点是：
-
-- prefix、suffix、substring 和混合通配符 `LIKE` / `ILIKE` 模式
-- 多列谓词中通过 bitmap 交集减少候选集
-- 不依赖 trigram false-positive recheck 的精确模式匹配
-- 文本模式搜索占主要延迟的查询
-
-它不是通用全文检索引擎，也不替代排序、词干化、分词或短语检索。如果需要这些语义，应使用 PostgreSQL 全文检索、trigram 索引或专门的搜索扩展。
-
-### 注意事项
-
-- 上游要求 PostgreSQL 16 或更高版本及标准构建工具。Pigsty 本地元数据目前为 PostgreSQL 16-18 打包 Biscuit。
-- PGXN 包版本 2.4.1 携带的 SQL/control `default_version = '2.4.0'`；这是当前源码包的预期状态。
-- Biscuit 只面向 `LIKE` / `ILIKE` 风格的通配符匹配；正则表达式不是它支持的搜索界面。
-- 如需索引非 text 列，应使用显式 text 表达式。
-- 替换现有生产索引前，应基于真实数据分布与 `pg_trgm` 做基准对比。
+上游项目将 Biscuit 标记为积极开发中。PGXN 发布 `2.4.3` 作为稳定分发，但该存档的改变日志仅止于 `2.4.2`，其元数据和控制文件暴露 SQL 扩展版本 `2.4.1`。将 `2.4.3` 视为分发/包刷新：未声称有额外的 SQL API 变更。材料中的 `2.4.2` 改变修复了索引缓存中的使用后释放漏洞以及编译器警告。

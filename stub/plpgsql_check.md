@@ -1,17 +1,15 @@
-
-
-
 ## Usage
 
 Sources:
 
-- [PGXN plpgsql_check 2.9.2](https://pgxn.org/dist/plpgsql_check/2.9.2/)
-- [plpgsql_check README](https://github.com/okbob/plpgsql_check)
-- [plpgsql_check control file](https://pgxn.org/dist/plpgsql_check/2.9.2/)
+- [plpgsql_check 2.10.1 README](https://github.com/okbob/plpgsql_check/blob/v2.10.1/README.md)
+- [plpgsql_check 2.10.1 release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.1)
+- [plpgsql_check 2.10.1 control file](https://github.com/okbob/plpgsql_check/blob/v2.10.1/plpgsql_check.control)
+- [plpgsql_check 2.9.2 to 2.10.1 changes](https://github.com/okbob/plpgsql_check/compare/v2.9.2...v2.10.1)
 
 `plpgsql_check` is a PL/pgSQL checker, linter, profiler, tracer, and coverage tool. It analyzes PL/pgSQL function bodies with PostgreSQL's own parser and executor infrastructure, so many problems that would otherwise appear only at runtime can be found during development or CI.
 
-The PGXN distribution version is 2.9.2, while the extension control file still declares SQL `default_version = '2.9'`. PostgreSQL 14-18 are documented as supported in the upstream README.
+Package release 2.10.1 installs SQL extension version `2.10`. PostgreSQL 14-18 are supported; the upstream source also contains compatibility work for later PostgreSQL development branches.
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -161,9 +159,22 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
+Version 2.10 adds `plpgsql_make_pragma(regprocedure)`, which plans `CREATE TEMP TABLE ... AS SELECT|VALUES|TABLE` statements without executing them and returns table pragmas that can be supplied to a check:
+
+```sql
+SELECT *
+FROM plpgsql_check_function(
+  'public.refresh_stage()'::regprocedure,
+  pragmas => ARRAY(
+    SELECT plpgsql_make_pragma('public.refresh_stage()'::regprocedure)
+  )
+);
+```
+
 ### Caveats
 
 - `plpgsql_check` requires `plpgsql`.
 - Preloading is optional for active checks, but required for shared profiler storage and robust tracer/profiler initialization.
 - Tracer output can include function arguments and local variable values; do not enable it broadly on sensitive production workloads.
 - The checker cannot perfectly understand every dynamic SQL string. Use pragmas to document expected dynamic objects and reduce false positives.
+- Release 2.10.1 fixes shared-memory LWLock tranche registration on PostgreSQL 14; use it instead of the initial 2.10.0 build when preloading profiler/tracer state there.

@@ -1,13 +1,16 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/PierreSenellart/provsql/blob/v1.9.0/doc/provsql.md)、[v1.9.0 发行版](https://github.com/PierreSenellart/provsql/releases/tag/v1.9.0)、[v1.9.0 控制文件](https://github.com/PierreSenellart/provsql/blob/v1.9.0/provsql.common.control)、[入门指南](https://provsql.org/docs/user/getting-provsql.html)、[配置](https://provsql.org/docs/user/configuration.html)、[半环](https://provsql.org/docs/user/semirings.html)
+来源：
 
-`provsql` 为 PostgreSQL 增加半环溯源与不确定性管理能力。上游文档覆盖溯源跟踪、半环求值、概率、Shapley 值与 Banzhaf 值、位置溯源、更新溯源和时态功能。
+- [ProvSQL 1.11.0 文档](https://github.com/PierreSenellart/provsql/blob/v1.11.0/doc/provsql.md)
+- [ProvSQL 1.11.0 发行版](https://github.com/PierreSenellart/provsql/releases/tag/v1.11.0)
+- [ProvSQL 1.10.0 发行版](https://github.com/PierreSenellart/provsql/releases/tag/v1.10.0)
+- [ProvSQL 1.11.0 控制文件](https://github.com/PierreSenellart/provsql/blob/v1.11.0/provsql.common.control)
+- [ProvSQL 用户文档](https://provsql.org/docs/user/introduction.html)
 
-### 加载并跟踪溯源信息
+`provsql` 将半环证明和不确定性管理添加到 PostgreSQL 中。上游文档介绍了证明跟踪、半环评估、概率、Shapley 和 Banzhaf 值、来源证明、更新证明以及时间特征。
+
+### 加载并追踪证明
 
 ```ini
 shared_preload_libraries = 'provsql'
@@ -17,7 +20,7 @@ shared_preload_libraries = 'provsql'
 CREATE EXTENSION provsql CASCADE;
 ```
 
-如果需要，`CASCADE` 形式会自动安装 `uuid-ossp`。入门指南说明预加载步骤是必需的，因为 ProvSQL 会安装规划器钩子。
+`CASCADE` 形式会自动安装 `uuid-ossp`（如果需要）。入门指南指出，预加载步骤是必需的，因为 ProvSQL 安装了一个计划器挂钩。
 
 ```sql
 SELECT provsql.add_provenance('mytable');
@@ -28,16 +31,16 @@ FROM mytable;
 SELECT provsql.remove_provenance('mytable');
 ```
 
-用户文档还描述了溯源映射：
+用户文档还描述了证明映射：
 
 ```sql
 SELECT create_provenance_mapping('my_mapping', 'mytable', 'column_name');
 SELECT create_provenance_mapping_view('my_mapping_view', 'mytable', 'column_name');
 ```
 
-### 概率与影响力
+### 概率与影响
 
-为元组令牌分配概率：
+为元组标记分配概率：
 
 ```sql
 SELECT set_prob(provenance(), 0.8)
@@ -48,7 +51,7 @@ SELECT name, probability_evaluate(provenance()) AS prob
 FROM mytable;
 ```
 
-计算影响力分数：
+计算影响得分：
 
 ```sql
 SELECT shapley(provenance(), m.token)
@@ -58,11 +61,11 @@ SELECT banzhaf(provenance(), m.token)
 FROM mytable, my_mapping AS m;
 ```
 
-文档还描述了 `shapley_all_vars` 和 `banzhaf_all_vars`，用于一次性计算所有输入变量的分数。
+文档中也介绍了 `shapley_all_vars` 和 `banzhaf_all_vars`，用于一次性计算所有输入变量的得分。
 
 ### 内置半环
 
-内置半环函数使用溯源令牌和溯源映射表：
+内置半环函数使用证明标记和证明映射表：
 
 ```sql
 SELECT name, sr_boolean(provenance(), 'my_mapping')
@@ -75,7 +78,7 @@ SELECT name, sr_how(provenance(), 'my_mapping')
 FROM mytable;
 ```
 
-当前文档包含 `sr_how`、`sr_which`、`sr_tropical`、`sr_viterbi`、`sr_lukasiewicz`、`sr_minmax` 和 `sr_maxmin` 的编译型封装。对于 PostgreSQL 14 及之后版本，还包含基于多范围值的 `sr_temporal`、`sr_interval_num` 和 `sr_interval_int`。
+当前文档包括编译后的包装器：`sr_how`、`sr_which`、`sr_tropical`、`sr_viterbi`、`sr_lukasiewicz`、`sr_minmax` 和 `sr_maxmin`。对于 PostgreSQL 14 及以上版本，它们还包括对多范围值的 `sr_temporal`、`sr_interval_num` 和 `sr_interval_int`。
 
 ```sql
 SELECT city,
@@ -87,11 +90,11 @@ SELECT entity_id, sr_temporal(provenance(), 'validity_mapping')
 FROM mytable;
 ```
 
-高级用户仍可以定义自定义半环，并通过 `provenance_evaluate` 或 `aggregation_evaluate` 求值；如果已有编译型半环符合所需代数，上游建议优先使用它。
+高级用户仍然可以定义自定义半环，并使用 `provenance_evaluate` 或 `aggregation_evaluate` 评估它们；上游建议当一个半环匹配所需的代数时，使用编译的半环。
 
-### 额外模式与辅助函数
+### 额外模式和助手
 
-上游文档记录的会话 GUC 包括：
+上游文档中记录的会话 GUC 包括：
 
 ```sql
 SET provsql.active = on;
@@ -102,25 +105,41 @@ SET provsql.tool_search_path = '/opt/d4:/home/postgres/bin';
 SET provsql.aggtoken_text_as_uuid = on;
 ```
 
-`provsql.tool_search_path` 用于 `d4`、`c2d`、`dsharp`、`minic2d`、`weightmc` 和 `graph-easy` 等外部概率与可视化工具。`provsql.last_eval_method` 会保存上一次选用的概率求值方法。`provsql.aggtoken_text_as_uuid` 会让聚合令牌单元格显示为其溯源 UUID；`agg_token_value_text(token)` 可恢复这些聚合令牌的显示文本。
+`provsql.tool_search_path` 用于外部概率和可视化工具，如 `d4`、`c2d`、`dsharp`、`minic2d`、`weightmc` 和 `graph-easy`。`provsql.last_eval_method` 存储最后选择的概率评估方法。`provsql.aggtoken_text_as_uuid` 使聚合标记单元格显示为其证明 UUID；`agg_token_value_text(token)` 可以恢复这些聚合标记的显示文本。
 
-用户指南另行记录了位置溯源辅助函数、更新溯源、`get_valid_time`、`timetravel`、`timeslice`、`history` 和 `undo` 等时态辅助函数，`circuit_subgraph(root, max_depth)` 与 `resolve_input(uuid)` 这类电路检查辅助函数，以及用于准备辅助函数搜索路径的 `setup_search_path()`。
+用户指南单独记录了来源证明助手、更新证明、时间助手，如 `get_valid_time`、`timetravel`、`timeslice`、`history` 和 `undo`，电路检查助手 `circuit_subgraph(root, max_depth)` 和 `resolve_input(uuid)` 以及用于准备助手搜索路径的 `setup_search_path()`。
 
-### v1.9.0 查询与概率说明
+### 当前概率和推理界面
 
-`1.9.0` 发行版显著扩展了溯源感知查询的 SQL 覆盖范围：
+从 1.9 到 1.11 的多次发布显著扩展了 SQL 覆盖范围和概率评估：
 
-- `FROM` 之外的子查询，包括 `EXISTS`、`NOT EXISTS`、`IN`、`NOT IN`、`ANY`、`ALL`、行值 `IN`、标量子查询和 `ARRAY(SELECT ...)`；
-- `LEFT`、`RIGHT` 和 `FULL` 外连接，并修正了 `EXCEPT` 与 `EXCEPT ALL` 的溯源；
-- 聚合中忠实于 SQL 语义的 `NULL` 处理，以及 `COUNT`、`SUM`、`MIN`、`MAX` 和 `AVG` 的精确 `HAVING` 聚合概率；
-- 通过方法目录和成本选择器选择概率方法，支持 `karp-luby`、`stopping-rule`、`sieve`、`d-tree` 和 `probability_bounds`；
-- 幂等的 `add_provenance` 和 `create_provenance_mapping` 调用。
+- `FROM` 之外的子查询，包括 `EXISTS`、`NOT EXISTS`、`IN`、`NOT IN`、`ANY`、`ALL`、行值 `IN` 子查询和 `ARRAY(SELECT ...)`；
+- `LEFT`、`RIGHT` 和 `FULL` 外连接，以及修正的 `EXCEPT` 和 `EXCEPT ALL` 证明；
+- 遵循 SQL 的聚合处理方法和精确 `HAVING` 聚合概率，适用于 `COUNT`、`SUM`、`MIN`、`MAX` 和 `AVG`；
+- 通过方法目录和成本选择器进行概率方法的选择，包括 `karp-luby`、`stopping-rule`、`sieve`、`d-tree` 和 `probability_bounds`；
+- 精确的有界树宽递归可达性、不安全-UCQ 联合宽度编译、安全 UCQ 的 Möbius 反演以及循环递归的吸收证明；
+- 通过 `target | evidence` 操作符和整个元组的 `given()`/前缀形式进行条件事件和分布处理；
+- 连续和离散 `random_variable` 家族，包括正态、伽玛、对数正态、贝塔、威布尔、帕累托、逆伽玛、逆高斯、逻辑斯谛、泊松、二项式、几何、超几何和负二项分布；
+- 分层贝叶斯模型，其中分布参数本身是随机变量，在可用闭合形式时进行共轭后验更新；
+- 随着源数据变化而保持正确的维护证明映射，以及对 `NULL` 和可为空的随机变量的 SQL 合规 `NOT IN` 行为。
 
-该发行版移除了旧的 `probability_benchmark` 辅助函数。`agg_token` 现在为聚合令牌表达式提供原生算术、一元负号和比较支持。
+例如，根据观察到的证据条件化一个连续值并读取后验期望：
 
-### 说明
+```sql
+WITH model AS (
+  SELECT normal(20, 5) AS reading
+)
+SELECT expected(reading | (reading > 25))
+FROM model;
+```
 
-- `db/extension.csv` 中的软件包行列出版本 `1.9.0`、软件包 `provsql`、依赖 `uuid-ossp`，并标注支持 PostgreSQL 14 到 18。
-- v1.9.0 控制文件设置 `default_version = '1.9.0'`，要求 `uuid-ossp`，将扩展标记为可信，且不可迁移。
-- 上游文档说明 ProvSQL 已在 PostgreSQL 10 到 18 上测试；Pigsty 软件包矩阵覆盖 PostgreSQL 14-18。
-- `provsql.update_provenance` 和多范围半环要求 PostgreSQL 14 或更新版本。
+`agg_token` 类型支持概率聚合表达式的算术、一元负号和比较。使用官方的概率和连续分布章节来选择精确、编译或基于采样的评估方法。
+
+### 备注
+
+- 1.11.0 控制文件设置了 `default_version = '1.11.0'`，要求 `uuid-ossp`，标记扩展为受信任的，并且不可重定位。
+- 上游文档指出 ProvSQL 已在 PostgreSQL 10 至 18 版本上进行了测试。
+- `provsql.update_provenance` 和多范围半环需要 PostgreSQL 14 或更高版本。
+- 更新证明追踪仍处于实验阶段；启用之前请验证其存储和性能成本。
+
+还应分别验证 `NULL` 与 `EXCEPT` 的 SQL 语义是否符合应用预期。

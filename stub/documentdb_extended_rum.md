@@ -1,28 +1,41 @@
-
-
-
 ## Usage
 
-> [documentdb_extended_rum: DocumentDB Extended RUM index access method](https://github.com/documentdb/documentdb)
+Sources:
 
-The `documentdb_extended_rum` extension provides an enhanced RUM (Recursive Union Merge) index access method for DocumentDB on PostgreSQL. It improves query performance for document-based workloads.
+- [DocumentDB Extended RUM README](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_extended_rum/README.md)
+- [`documentdb_extended_rum` control file](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_extended_rum/documentdb_extended_rum.control)
+- [Access-method SQL definitions](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_extended_rum/sql/documentdb_extended_rum--0.106-0.sql)
+- [DocumentDB v0.114-0 changelog](https://github.com/documentdb/documentdb/blob/v0.114-0/CHANGELOG.md)
 
-### Overview
+`documentdb_extended_rum` is DocumentDB's extended RUM index access method. It is an implementation component selected by DocumentDB's indexing layer, not a general-purpose application index or a replacement for installing `documentdb`.
 
-This extension extends the RUM index type to better support BSON document indexing within DocumentDB. It provides optimized index access methods for:
+### Configure and Install
 
-- Full-text search on document fields
-- Compound index operations on BSON data
-- Efficient range queries and sorting on indexed document properties
+The library can only be initialized from `shared_preload_libraries`. Preload it after the base DocumentDB libraries and restart PostgreSQL:
 
-### Prerequisites
+```conf
+shared_preload_libraries = 'pg_cron, pg_documentdb_core, pg_documentdb, pg_documentdb_extended_rum'
+documentdb.alternate_index_handler_name = 'extended_rum'
+```
 
-Requires `documentdb_core` to be installed.
-
-### Enabling
+Then install the extension using the same release as the base stack:
 
 ```sql
+CREATE EXTENSION documentdb CASCADE;
 CREATE EXTENSION documentdb_extended_rum;
 ```
 
-The extended RUM indexes are automatically utilized by the DocumentDB query planner when appropriate for document query patterns.
+DocumentDB deployment tooling normally owns this configuration. Existing databases should follow the release-specific upgrade procedure rather than switching an index handler ad hoc.
+
+### Important Objects
+
+- `documentdb_extended_rum` is the index access method registered by the extension.
+- `documentdb_extended_rum_catalog` contains BSON operator families and classes used by DocumentDB.
+- `documentdb.alternate_index_handler_name = 'extended_rum'` directs the DocumentDB index layer to the adapter.
+- The implementation is a RUM fork whose on-disk layout and content are designed to remain backward compatible with upstream RUM while changing query and volatile paths for document workloads.
+
+### Operational Boundaries
+
+Install and upgrade this component with matching `documentdb` and `documentdb_core` binaries. Do not build indexes with its internal operator classes directly unless following upstream development guidance; create and manage indexes through the DocumentDB APIs so metadata stays consistent.
+
+The v0.114-0 changelog describes a RUM WAL page-reuse marker and targeted posting-tree pruning, but both are feature-flagged and disabled by default pending stabilization. They are not default user-visible capabilities of this release.

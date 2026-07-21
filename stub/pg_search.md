@@ -1,69 +1,73 @@
-
-
-
 ## Usage
 
-Sources: [ParadeDB extension install docs](https://docs.paradedb.com/deploy/self-hosted/extension), [create-index docs](https://docs.paradedb.com/documentation/indexing/create-index.md), [match docs](https://docs.paradedb.com/documentation/full-text/match.md), [score docs](https://docs.paradedb.com/documentation/sorting/score.md), [highlight docs](https://docs.paradedb.com/documentation/full-text/highlight.md), [v0.24.0 release](https://github.com/paradedb/paradedb/releases/tag/v0.24.0), [pg_search README](https://github.com/paradedb/paradedb/blob/v0.24.0/pg_search/README.md)
+Sources:
 
-`pg_search` is ParadeDB's BM25-based search extension for PostgreSQL. The upstream README says support starts at PostgreSQL 15; Pigsty packages `0.24.0` for PostgreSQL 15-18 and builds it with `cargo-pgrx` 0.18.1.
+- [pg_search v0.24.3 README](https://github.com/paradedb/paradedb/blob/v0.24.3/pg_search/README.md)
+- [pg_search v0.24.3 release notes](https://github.com/paradedb/paradedb/releases/tag/v0.24.3)
+- [ParadeDB documentation](https://docs.paradedb.com/)
 
-### Enable And Create The Extension
+pg_search adds ParadeDB's BM25 access method and query operators to PostgreSQL for ranked full-text, structured, and hybrid search. Use it when search must remain transactional with PostgreSQL data and must support BM25 scoring, highlighting, filters, aggregates, and joins.
 
-```conf
-shared_preload_libraries = 'pg_search'
-```
+### Create the Extension
 
-```sql
-CREATE EXTENSION pg_search;
-```
+    CREATE EXTENSION pg_search;
 
-The self-hosted extension docs require `shared_preload_libraries = 'pg_search'` before `CREATE EXTENSION`.
+Upstream v0.24.3 supports PostgreSQL 15 and later. Use a build packaged for the exact PostgreSQL major version. The extension participates in planner and executor paths, so test query plans and resource use before production upgrades.
 
-### Create A BM25 Index
+### Build a BM25 Index
 
-Current examples use the `bm25` access method with a unique key field:
+Create a BM25 index with a stable unique key field:
 
-```sql
-CREATE INDEX search_idx ON mock_items
-USING bm25 (id, description, category, rating)
-WITH (key_field = 'id');
-```
+    CREATE INDEX products_search_idx
+    ON products
+    USING bm25 (
+      id,
+      title,
+      description,
+      category,
+      rating
+    )
+    WITH (key_field = 'id');
 
-Only one BM25 index is supported per table. `key_field` is mandatory, must be unique, and must be the first indexed column; text key fields must be untokenized.
+Keep the key field unique and non-null. Index only fields used by search or filtering; every indexed field increases build time, disk use, and write amplification.
 
-### Query Operators And Helpers
+### Query, Rank, and Highlight
 
-The current docs use these query operators:
+The @@@ operator matches a field or indexed row against a ParadeDB query:
 
-- `|||`: match disjunction, equivalent to `term1 OR term2`.
-- `&&&`: match conjunction, equivalent to `term1 AND term2`.
+    SELECT id,
+           title,
+           paradedb.score(id) AS score,
+           paradedb.snippet(description) AS snippet
+    FROM products
+    WHERE description @@@ 'wireless keyboard'
+      AND category = 'electronics'
+    ORDER BY score DESC
+    LIMIT 20;
 
-Examples:
+Use field-qualified query strings or the paradedb query constructors when user input must be constrained. Do not concatenate untrusted input into query syntax without validation.
 
-```sql
-SELECT description, rating
-FROM mock_items
-WHERE description ||| 'running shoes'
-ORDER BY rating
-LIMIT 5;
+For boolean queries, paradedb.boolean() can combine must, should, and must_not clauses and can set minimum_should_match. The extension also exposes index_created_at() for inspecting index creation time.
 
-SELECT description, pdb.score(id) AS score
-FROM mock_items
-WHERE description &&& 'running shoes'
-ORDER BY score DESC
-LIMIT 5;
+### User-Facing Object Index
 
-SELECT description, pdb.snippet(description) AS snippet, pdb.score(id) AS score
-FROM mock_items
-WHERE description ||| 'running shoes'
-ORDER BY score DESC
-LIMIT 5;
-```
+- bm25: index access method for text and structured fields.
+- @@@: search-match operator used in WHERE clauses.
+- paradedb.score(key): BM25 relevance score for a matching row.
+- paradedb.snippet(field): highlighted excerpt for the current match.
+- paradedb.parse(...), paradedb.term(...), paradedb.boolean(...): typed query constructors.
+- paradedb.index_info(...): index metadata and field configuration.
+- paradedb.index_created_at(...): index creation timestamp.
 
-Useful result helpers include `pdb.score(id)`, `pdb.snippet(field)`, `pdb.snippets(field)`, and `pdb.snippet_positions(field)`. Highlighting is relatively expensive and is not supported for fuzzy search queries.
+### Version 0.24.3 Operational Changes
 
-### Notes
+The 0.24.x line enables more aggregate and join scan paths and adds time and timetz support. Version 0.24.3 also bounds sequential-scan buffering, caps index-build worker memory, checks available disk space earlier, fixes GROUP BY cardinality routing, and raises an error when Tantivy would truncate a value.
 
-- The old quickstart URL was removed; use the versioned docs pages above for current `|||`, `&&&`, scoring, and highlighting syntax.
-- Release `0.24.0` requires preloading `pg_search`, upgrades pgrx to 0.18.1, and documents crash-recovery, `ltree`, and inline-tokenizer work without changing the basic BM25 query examples above.
-- The Pigsty metadata notes that the `bm25` access method conflicts with `pg_textsearch` and `vchord_bm25`; do not preload competing BM25 access-method extensions in the same cluster without testing the target combination.
+These safeguards reduce runaway resource use but do not eliminate capacity planning. Monitor temporary space, index size, build duration, and query memory. Re-run representative EXPLAIN ANALYZE plans after upgrading because planner behavior can change.
+
+### Compatibility and Caveats
+
+- pg_search uses its own BM25 index implementation. Do not assume an index created by another extension is interchangeable.
+- Local catalog metadata reports a bm25 access-method conflict with pg_textsearch and vchord_bm25; avoid loading competing implementations in the same database unless their documentation explicitly supports coexistence.
+- Search indexes must be maintained with the table and can materially increase update cost.
+- Ranking is query- and corpus-dependent. Benchmark with production-like text and filters rather than treating example scores as portable.

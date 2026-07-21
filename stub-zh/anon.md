@@ -1,84 +1,59 @@
-
-
-
 ## 用法
 
-> 来源：[概览](https://postgresql-anonymizer.readthedocs.io/en/stable/)、[静态脱敏](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/)、[动态脱敏](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/)、[匿名导出](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/)、[脱敏函数](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/)、[3.1.1 发行版](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.1.1)
+来源：
 
-`anon` 使用 `SECURITY LABEL FOR anon` 声明脱敏规则。官方文档描述了六种脱敏方法：匿名导出、静态脱敏、动态脱敏、副本脱敏、脱敏视图和脱敏数据包装器。
+- [PostgreSQL Anonymizer 3.1.3 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/README.md)
+- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/docs/masking_functions.md)
+- [3.1.3 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/CHANGELOG.md)
+- [Official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/)
 
-### 初始化与声明规则
+`anon` 是 PostgreSQL Anonymizer，它应用声明式的遮掩规则以实现受保护查询的访问，并生成匿名化数据集。同时提供伪名化和随机响应辅助功能。在必须保持现实数据有用性而不暴露原始敏感值时使用它；将遮掩策略、角色授权以及未遮掩数据库的访问视为安全边界的一部分。
+
+### 核心工作流程
+
+在目标数据库会话中加载 `anon`，安装扩展并启用透明动态遮掩。新连接会自动获取数据库级别的设置。
 
 ```sql
-CREATE EXTENSION IF NOT EXISTS anon CASCADE;
-SELECT anon.init();
+ALTER DATABASE app SET session_preload_libraries = 'anon';
 
-SECURITY LABEL FOR anon ON COLUMN customer.full_name
-IS 'MASKED WITH FUNCTION anon.dummy_name()';
+\connect app
+CREATE EXTENSION anon;
+ALTER DATABASE app SET anon.transparent_dynamic_masking = true;
+```
 
-SECURITY LABEL FOR anon ON COLUMN customer.employer
-IS 'MASKED WITH FUNCTION anon.dummy_company_name()';
+将登录标记为被遮掩，并将遮掩规则附加到敏感列上：
 
+```sql
+CREATE ROLE reporting LOGIN;
+SECURITY LABEL FOR anon ON ROLE reporting IS 'MASKED';
+GRANT pg_read_all_data TO reporting;
+
+SECURITY LABEL FOR anon ON COLUMN customer.last_name
+  IS 'MASKED WITH FUNCTION anon.dummy_last_name()';
 SECURITY LABEL FOR anon ON COLUMN customer.phone
-IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
+  IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
 ```
 
-### 静态脱敏
+以 `reporting` 身份执行的查询会看到变换后的值。特权用户仍然可以看到原始值，因此不要授予被遮掩的角色绕过策略的路径。
 
-静态脱敏会原地改写已存储的数据：
+### 遮掩策略
 
-```sql
-SELECT anon.anonymize_database();
--- See also: anon.anonymize_table(), anon.anonymize_column()
--- For larger databases: anon.anonymize_database_parallel(worker_count)
-```
+- **动态遮掩** 对标记为 `MASKED` 的角色转换结果而无需重写表。
+- **静态遮掩** 永久性地重写选定的数据，并适用于一次性开发或测试副本。
+- **匿名导出和复制体** 生成经过净化的导出或下游副本。
+- **遮掩视图和数据包装器** 展示一个故意减少或转换后的投影。
+- **伪名化** 在必须保持一致性的连接或重复值时使用确定性变换。
 
-静态脱敏文档还覆盖随机重排、噪声注入，以及面向较大数据集的并行脱敏。并行静态脱敏受 `anon.max_bg_workers` 和服务器 `max_worker_processes` 限制。
+### 关键对象
 
-### 动态脱敏
+- `anon.dummy_*`、`anon.random_*` 和 `anon.partial(...)` 生成或部分遮掩值。
+- `anon.hash(text)` 和 `anon.digest(text, text, text)` 提供确定性转换。在 3.1.2 版本中，它们被标记为 `RESTRICTED` 以限制暴力破解暴露。
+- `anon.ldp_grrm(value, epsilon, max_v)` 和 `anon.ldp_grrm_pttt(value, truth_probability, max_v)` 实现了局部差分隐私的通用随机响应。
+- `anon.ldp_truth_probability(...)` 和 `anon.ldp_lie_probability(...)` 用于检查随机响应概率。
+- 角色和列上的安全标签定义谁被遮掩以及每个值如何转换。
 
-动态脱敏只对标记为已脱敏的角色隐藏值：
+### 运营注意事项
 
-```sql
-ALTER DATABASE demo SET session_preload_libraries = 'anon';
-ALTER DATABASE demo SET anon.transparent_dynamic_masking TO true;
+`anon` 是超级用户安装且不可重定位的。使用与预期消费者相同的授权和连接路径测试每项策略。随机化不是自动确定性的；当需要稳定相等时，请使用确认的伪名化函数。静态匿名化是破坏性的，因此在副本上运行它并在之后验证约束条件和应用程序行为。
 
-CREATE ROLE skynet LOGIN;
-SECURITY LABEL FOR anon ON ROLE skynet IS 'MASKED';
-GRANT pg_read_all_data TO skynet;
-
-SECURITY LABEL FOR anon ON COLUMN people.lastname
-IS 'MASKED WITH FUNCTION anon.dummy_last_name()';
-```
-
-当 `skynet` 查询该表时，会返回脱敏值而不是原始值。
-
-### 匿名导出与伪名化
-
-当前文档推荐通过脱敏角色和 `pg_dump` 做透明匿名导出。较早的辅助工具 `pg_dump_anon.sh` 和 `pg_dump_anon` 已明确标记为弃用。
-
-对于 PostgreSQL 17 及之后版本，导出示例使用 `--exclude-extension="anon"` 搭配 `--no-security-labels`；较旧的 `pg_dump` 版本需要另一种扩展选择方式，例如 `--extension plpgsql`。
-
-对于导出中的稳定键重映射，文档列出了：
-
-- `anon.pseudo_shift(bigint)`
-- `anon.pseudo_xor(bigint)`
-- `anon.set_shift()`
-
-### 常用函数与注意事项
-
-函数目录中的常用脱敏辅助函数包括：
-
-- `anon.dummy_first_name()`
-- `anon.dummy_last_name()`
-- `anon.dummy_company_name()`
-- `anon.random_zip()`
-- `anon.random_date_between(date, date)`
-- `anon.partial(value, prefix, mask, suffix)`
-
-官方文档中的注意事项：
-
-- 动态脱敏需要在脱敏角色会话使用前完成预加载和配置
-- 静态脱敏会破坏原始值
-- 假名化不等同于匿名化
-- 版本 3.1.1 是针对 CVE-2026-11945 的安全发行版，并从导入/导出行为中移除条件随机化；应尽快从 3.0.x 升级。
+版本 3.1.3 重新运行缺失的 ARM 构建并更改发布元数据，没有新的 SQL 工作流。自 3.1.1 版本以来的主要差异在于对 `anon.hash` 和 `anon.digest` 的 3.1.2 安全强化；使用这些函数的部署应升级而不是依赖旧标签。

@@ -1,9 +1,11 @@
-
-
-
 ## Usage
 
-> [plproxy: Database partitioning implemented as procedural language](https://github.com/plproxy/plproxy)
+Sources:
+
+- [PL/Proxy 2.12.0 README](https://github.com/plproxy/plproxy/blob/v2.12.0/README.md)
+- [PL/Proxy language syntax](https://github.com/plproxy/plproxy/blob/v2.12.0/doc/syntax.md)
+- [PL/Proxy cluster configuration](https://github.com/plproxy/plproxy/blob/v2.12.0/doc/config.md)
+- [PL/Proxy 2.12.0 release](https://github.com/plproxy/plproxy/releases/tag/v2.12.0)
 
 PL/Proxy is a PostgreSQL procedural language handler that enables remote procedure calls
 between PostgreSQL databases, with optional sharding.
@@ -82,3 +84,9 @@ CREATE USER MAPPING FOR CURRENT_USER
     SERVER mycluster
     OPTIONS (user 'proxy_user', password 'secret');
 ```
+
+### Caveats
+
+- PL/Proxy routes function calls, not arbitrary cross-database transactions. Design remote functions to be retry-safe and keep transaction boundaries explicit.
+- Cluster definitions and user mappings can expose connection details; protect catalog access and prefer restricted remote roles.
+- Release 2.12.0 fixes quoted-identifier parsing in `SELECT`, a null-pointer issue in `plproxy_fdw_validator`, Windows builds, and PostgreSQL 19 compatibility. Existing SQL objects do not need a new usage pattern, but databases upgraded from an older extension version should run the matching `ALTER EXTENSION plproxy UPDATE` path.

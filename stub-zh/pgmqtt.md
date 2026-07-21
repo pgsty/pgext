@@ -1,96 +1,89 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/RayElg/pgmqtt/blob/0.3.0/README.md)、[interfaces](https://github.com/RayElg/pgmqtt/blob/0.3.0/docs/interfaces.md)、[configuration](https://github.com/RayElg/pgmqtt/blob/0.3.0/docs/configuration.md)、[limitations](https://github.com/RayElg/pgmqtt/blob/0.3.0/docs/limitations.md)、[Cargo.toml](https://github.com/RayElg/pgmqtt/blob/0.3.0/extension/Cargo.toml)
+来源：
 
-`pgmqtt` 是一个 `pgrx` 扩展，会在 PostgreSQL 中嵌入 MQTT 代理，并使用变更数据捕获将表变更转为 MQTT 消息。它也支持入站主题映射，让 MQTT 发布操作可以向 PostgreSQL 表插入行。
+- [pgmqtt 0.4.1 README](https://github.com/RayElg/pgmqtt/blob/0.4.1/README.md)
+- [pgmqtt 0.4.1 interfaces](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/interfaces.md)
+- [pgmqtt 0.4.1 configuration](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/configuration.md)
+- [pgmqtt 0.4.1 limitations](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/limitations.md)
+- [pgmqtt 0.4.1 release notes](https://github.com/RayElg/pgmqtt/releases/tag/0.4.1)
 
-```sql
-CREATE EXTENSION pgmqtt;
-```
+pgmqtt 将一个 MQTT 代理嵌入到 PostgreSQL 中。它可以通过逻辑解码发布 INSERT、UPDATE 和 DELETE 变化，并可以将传入的 MQTT 主题和 JSON 载荷映射到表写入操作。当数据库与 MQTT 的集成值得在 PostgreSQL 服务器进程中运行网络代理时，请使用此扩展。
 
-### 出站映射
+### 预加载并创建扩展
 
-将表变更发布到主题：
+设置逻辑 WAL 并预加载工作进程，然后重启 PostgreSQL：
 
-```sql
-SELECT pgmqtt_add_outbound_mapping(
-  'public',
-  'my_table',
-  'topics/{{ op | lower }}',
-  '{{ columns | tojson }}',
-  1
-);
-```
+    wal_level = logical
+    shared_preload_libraries = 'pgmqtt'
 
-有了该映射后，`INSERT`、`UPDATE` 和 `DELETE` 会把 JSON 载荷发布到 `topics/insert` 等主题。文档化函数签名还接受可选的 `qos integer DEFAULT 0` 和 `template_type text DEFAULT 'jinja2'`。
+重启后创建扩展：
 
-### 入站映射
+    CREATE EXTENSION pgmqtt;
 
-通过 MQTT 发布操作插入行：
+监听地址、端口、认证和 TLS 设置由后台工作进程读取。文档中注明仅在启动时需要的设置需要重新启动工作进程或服务器，而不是仅仅使用 pg_reload_conf()。
 
-```sql
-SELECT pgmqtt_add_inbound_mapping(
-  'sensor/{site_id}/temperature',
-  'sensor_readings',
-  '{"site_id": "{site_id}", "value": "$.temperature"}'::jsonb
-);
-```
+### 发布表变化
 
-向 `sensor/site-1/temperature` 发布 `{"temperature": 22.5}` 会向 `sensor_readings` 插入一行。
+创建一个传出映射：
 
-入站映射也可通过传入 `op`、`conflict_columns`、`target_schema`、`mapping_name` 和 `template_type` 执行 `upsert` 与 `delete` 操作。主题模式使用 `{variable}` 捕获；JSON 载荷字段使用 `$.temperature`、`$payload`、`$topic` 等表达式。
+    SELECT pgmqtt_add_outbound_mapping(
+      'public',
+      'orders',
+      'orders/{{ op | lower }}',
+      '{{ columns | tojson }}',
+      1
+    );
 
-### 查看和删除映射
+该映射将行变化发布到如 orders/insert 这样的主题。接口还接受 QoS 和模板类型（在支持时）。版本 0.4.1 每次最多处理 4096 条 CDC 变化。
 
-```sql
-SELECT * FROM pgmqtt_list_outbound_mappings();
-SELECT pgmqtt_remove_outbound_mapping('public', 'my_table');
+检查或移除传出映射：
 
-SELECT * FROM pgmqtt_list_inbound_mappings();
-SELECT pgmqtt_remove_inbound_mapping('temp_readings');
+    SELECT * FROM pgmqtt_list_outbound_mappings();
+    SELECT pgmqtt_remove_outbound_mapping('public', 'orders');
 
-SELECT * FROM pgmqtt_status();
-```
+### 从 MQTT 写入行
 
-`pgmqtt_status()` 报告活跃连接、订阅、保留消息、待处理会话消息、CDC 映射、CDC 复制槽状态、入站映射、待处理入站写入和死信。
+将捕获的主题片段和 JSON 字段映射到目标表：
 
-版本 0.3.0 增加了异步管理命令：
+    SELECT pgmqtt_add_inbound_mapping(
+      'sensor/{site_id}/temperature',
+      'sensor_readings',
+      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb
+    );
 
-```sql
-SELECT pgmqtt_disconnect_client('device-42');
-SELECT pgmqtt_disconnect_role('mqtt_devices');
-SELECT pgmqtt_reload_acls('*');
-```
+传出映射支持插入和文档中描述的 UPSERT 或 DELETE 模式，具有如目标模式、冲突列、映射名称和模板类型等选项。仅授予工作进程所需的表权限，并验证数据包类型和约束。
 
-后台工作进程会处理 `pgmqtt_admin_commands`；重新加载 ACL 时会移除不再允许的订阅。
+    SELECT * FROM pgmqtt_list_inbound_mappings();
+    SELECT pgmqtt_remove_inbound_mapping('temp_readings');
 
-### MQTT 客户端示例
+### 管理与状态
 
-```bash
-mosquitto_sub -h localhost -t 'topics/#'
-mosquitto_pub -h localhost -t 'sensor/site-1/temperature' -m '{"temperature": 22.5}'
-```
+    SELECT * FROM pgmqtt_status();
+    SELECT pgmqtt_disconnect_client('device-42');
+    SELECT pgmqtt_disconnect_role('mqtt_devices');
+    SELECT pgmqtt_reload_acls('*');
 
-### 配置
+pgmqtt_status 报告监听器、客户端、订阅、保留消息、CDC、传出写入和死信队列状态。管理调用由工作进程异步处理并排队。
 
-文档化 GUC 位于 `pgmqtt` 命名空间下：
+### 配置索引
 
-```sql
-ALTER SYSTEM SET pgmqtt.cdc_every_n_ticks = 16;
-SELECT pg_reload_conf();
-```
+- pgmqtt.mqtt_enabled 和 pgmqtt.mqtt_port: TCP MQTT 监听器。
+- pgmqtt.ws_enabled 和 pgmqtt.ws_port: WebSocket 监听器。
+- pgmqtt.tick_interval_ms 和 pgmqtt.cdc_every_n_ticks: 工作进程的节拍频率。
+- pgmqtt.max_client_buffer_bytes: 每个客户端的流控边界。
+- pgmqtt.debug_log 和 pgmqtt.metrics_*: 调试和指标集成。
+- pgmqtt TLS, JWT, 密码认证和 ACL 设置: 传输和客户端访问控制；社区版与企业版之间有所不同。在设置监听器期望之前，请验证版本。
 
-监听器 GUC 包括 `pgmqtt.mqtt_enabled`、`pgmqtt.mqtt_port`（`1883`）、`pgmqtt.ws_enabled`、`pgmqtt.ws_port`（`9001`）、`pgmqtt.mqtts_enabled`、`pgmqtt.mqtts_port`（`8883`）、`pgmqtt.wss_enabled`、`pgmqtt.wss_port`（`9002`）。TLS 和认证设置包括 `pgmqtt.tls_cert_file`、`pgmqtt.tls_key_file`、`pgmqtt.license_key`、`pgmqtt.jwt_public_key`、`pgmqtt.jwt_required`、`pgmqtt.jwt_required_ws`、`pgmqtt.password_auth_enabled`、`pgmqtt.password_auth_required` 和 `pgmqtt.password_auth_role_filter`。
+### 协议与 CDC 边界
 
-性能和可观测性 GUC 包括 `pgmqtt.tick_interval_ms`、`pgmqtt.max_client_buffer_bytes`、`pgmqtt.cdc_every_n_ticks`、`pgmqtt.debug_log`、`pgmqtt.metrics_snapshot_interval`、`pgmqtt.metrics_retention_days`、`pgmqtt.metrics_connections_cache_interval`、`pgmqtt.metrics_hook_function`、`pgmqtt.metrics_notify_channel`。监听器和 TLS 设置在 MQTT 后台工作进程启动时读取，因此需要重启工作进程，而不是只执行 `pg_reload_conf()`。
+- 支持 MQTT 5.0 和 3.1.1 版本。实现了 QoS 0 和 1，请求的 QoS 2 被降级为 QoS 1。
+- CDC 包括 INSERT、UPDATE 和 DELETE 操作，不包括 DDL 或 TRUNCATE。DELETE 数据包可能需要 REPLICA IDENTITY FULL。
+- CDC 环有有限容量 8192，并在溢出时丢弃最旧的记录。QoS 0 主题缓冲区限制为 4096 并也丢弃最旧条目；QoS 1 缓冲区可以无固定上限增长。
+- 社区版通过代理文档 TLS，而原生 TLS 和一些 JWT 特性是企业版边界。在设置监听器期望之前，请验证版本。
 
-### 注意事项
+### v0.4.1 及操作
 
-- README 要求 `wal_level = logical`；没有逻辑解码时 CDC 侧无法工作。
-- 本项目 CSV 跟踪版本 `0.3.0`、PostgreSQL 14-18，以及软件包侧 `pgrx` `0.18.1` 重构说明。
-- 文档记录支持 MQTT 5.0 和 MQTT 3.1.1 客户端。QoS 0 和 QoS 1 受支持；QoS 2 未实现，请求 QoS 2 的订阅会降级到 QoS 1。
-- CDC 捕获 `INSERT`、`UPDATE` 和 `DELETE`；不捕获 DDL 变更和 `TRUNCATE`。`DELETE` 可能需要 `REPLICA IDENTITY FULL`。
-- 版本 0.3.0 增加 PostgreSQL 角色/密码认证、按主题 ACL、管理员断开连接/重新加载命令、指标与可观测性表和函数、MQTT 3.1.1 协议测试、UNLOGGED 指标/缓存恢复测试，以及额外的流量控制限制。
+0.4 系列统一了 HTTP/工作进程处理，并减少了恐慌路径；0.4.1 提高了 CDC 批次处理到 4096 条记录。这些更改提高了吞吐量和结构，但并不保证在所有负载或崩溃情况下嵌入的代理是无损的。
+
+将代理运行在 PostgreSQL 中扩展了数据库网络和资源边界。隔离监听接口、强制执行认证和主题 ACL、监控工作进程滞后和丢失缓冲区，并在生产使用前测试故障转移和重启行为。

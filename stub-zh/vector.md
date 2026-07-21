@@ -1,19 +1,16 @@
-
-
-
 ## 用法
 
 来源：
 
-- [pgvector v0.8.4 release](https://github.com/pgvector/pgvector/releases/tag/v0.8.4)
-- [pgvector v0.8.4 README](https://github.com/pgvector/pgvector/blob/v0.8.4/README.md)
-- [pgvector v0.8.4 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.4/CHANGELOG.md)
+- [pgvector v0.8.5 README](https://github.com/pgvector/pgvector/blob/v0.8.5/README.md)
+- [pgvector v0.8.5 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.5/CHANGELOG.md)
+- [Changes from v0.8.4 to v0.8.5](https://github.com/pgvector/pgvector/compare/v0.8.4...v0.8.5)
 
-`pgvector` 在 PostgreSQL 内提供向量相似性搜索。扩展名是 `vector`，Pigsty 中的包名是 `pgvector`。它支持精确搜索、基于 HNSW 与 IVFFlat 的近似最近邻搜索，并提供 dense、half-precision、binary、sparse 等多种向量表示。
+`pgvector` 在 PostgreSQL 内部提供了向量相似性搜索功能。扩展名称为 `vector`，而 Pigsty 将其打包为 `pgvector`。它支持精确搜索、使用 HNSW 和 IVFFlat 索引的近似最近邻搜索以及多种向量表示形式，包括密集型、半精度、二进制和稀疏嵌入。
 
-v0.8.4 是 0.8.x HNSW / vacuum 修复之后的维护版本。维护写入较多的 HNSW 索引时，应优先使用它而不是更早的 0.8.x 构建。
+版本 `0.8.5` 在构建小表上的 IVFFlat 索引时减少了内存使用。它保留了当前 README 中记录的 0.8.x HNSW 迭代扫描和维护改进。
 
-### 创建与查询向量
+### 创建和查询向量
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS vector;
@@ -32,16 +29,16 @@ ORDER BY embedding <-> '[3,1,2]'
 LIMIT 5;
 ```
 
-常用距离操作符：
+常用的距离操作符：
 
 - `<->` 表示 L2 距离
 - `<#>` 表示负内积
 - `<=>` 表示余弦距离
 - `<+>` 表示 L1 距离
-- `<~>` 表示二进制向量上的 Hamming 距离
-- `<%>` 表示二进制向量上的 Jaccard 距离
+- `<~>` 表示二进制向量的汉明距离
+- `<%>` 表示二进制向量的 Jaccard 距离
 
-由于 PostgreSQL 索引扫描按升序工作，`<#>` 返回负内积；展示实际内积时需要乘以 `-1`。
+由于 PostgreSQL 索引扫描顺序为升序，`<#>` 返回的是负内积；在显示实际内积时需要乘以 `-1`。
 
 ### 向量类型
 
@@ -55,9 +52,9 @@ CREATE TABLE embeddings (
 );
 ```
 
-`vector` 是标准单精度类型。`halfvec` 可降低存储和内存压力，`bit` 适合二进制签名，`sparsevec` 适合高维稀疏向量。
+`vector` 是标准的单精度类型。使用 `halfvec` 可以减少存储和内存压力，使用 `bit` 用于二进制签名，使用 `sparsevec` 用于高维稀疏向量。
 
-向量列可以使用 `avg()`、`sum()` 等聚合：
+可以对向量列使用聚合函数如 `avg()` 和 `sum()`：
 
 ```sql
 SELECT avg(embedding) FROM items;
@@ -65,7 +62,7 @@ SELECT avg(embedding) FROM items;
 
 ### HNSW 索引
 
-HNSW 提供较好的速度/召回权衡，并且不需要训练步骤。
+HNSW 提供了速度和召回率之间的强权衡，并不需要训练步骤。
 
 ```sql
 CREATE INDEX items_embedding_hnsw
@@ -79,7 +76,7 @@ ORDER BY embedding <-> '[3,1,2]'
 LIMIT 10;
 ```
 
-操作符类必须匹配距离类型：
+选择与距离匹配的操作符类：
 
 ```sql
 CREATE INDEX ON items USING hnsw (embedding vector_ip_ops);
@@ -90,11 +87,11 @@ CREATE INDEX ON embeddings USING hnsw (sparse sparsevec_l2_ops);
 CREATE INDEX ON embeddings USING hnsw (binary_sig bit_hamming_ops);
 ```
 
-常用调优参数包括 `hnsw.ef_search`、`hnsw.iterative_scan`、`hnsw.max_scan_tuples` 和 `hnsw.scan_mem_multiplier`。
+有用的调优设置包括 `hnsw.ef_search`、`hnsw.iterative_scan`、`hnsw.max_scan_tuples` 和 `hnsw.scan_mem_multiplier`。
 
 ### IVFFlat 索引
 
-IVFFlat 构建时需要训练聚类列表，因此应在载入有代表性的数据后再创建。
+IVFFlat 在索引创建前需要代表性的数据，因为它在构建时会训练聚类列表。
 
 ```sql
 CREATE INDEX items_embedding_ivfflat
@@ -109,11 +106,11 @@ ORDER BY embedding <-> '[3,1,2]'
 LIMIT 10;
 ```
 
-大表通常需要提高 `lists`；提高 `ivfflat.probes` 可以提升召回率。带过滤条件的查询要实测普通 btree 过滤、partial vector index 和分区表哪种计划更好。
+增加 `lists` 以适应更大的表，并通过增加 `ivfflat.probes` 来提高召回率。对于过滤查询，请测试是否使用精确的 btree 过滤、部分向量索引或分区可以提供更好的计划。
 
-### 过滤与混合搜索
+### 混合搜索
 
-向量排序可以和普通 PostgreSQL 过滤结合：
+普通的 PostgreSQL 过滤器可以与向量排序结合使用：
 
 ```sql
 CREATE INDEX ON items (tenant_id);
@@ -125,7 +122,7 @@ ORDER BY embedding <=> '[0.1,0.2,0.3]'
 LIMIT 20;
 ```
 
-混合搜索可以把 `pgvector` 与 PostgreSQL 全文检索、trigram 检索或自定义排序表达式结合：
+对于混合搜索，可以将 `pgvector` 与 PostgreSQL 全文搜索、三元组搜索或外部排名表达式结合起来：
 
 ```sql
 SELECT id,
@@ -145,12 +142,14 @@ REINDEX INDEX CONCURRENTLY items_embedding_hnsw;
 ANALYZE items;
 ```
 
-HNSW 索引可能很大，构建成本也高。构建时配置 `maintenance_work_mem`，观察 build notice；当索引膨胀或召回漂移重要时，安排 `REINDEX`。
+HNSW 索引可能很大且构建成本高昂。使用 `maintenance_work_mem` 进行构建，监控构建通知，并在索引膨胀或召回漂移时安排 `REINDEX`。
 
 ### 注意事项
 
-- Pigsty 本地元数据可能落后于上游版本；本文档按上游 pgvector 0.8.4 编写，本地包行可能要等包 catalog 刷新后才显示同一版本。
-- 查询操作符必须匹配索引操作符类。cosine 索引不会加速 L2 `ORDER BY`。
-- 近似索引用速度换取非精确召回。应使用代表性数据和过滤条件验证 recall。
-- IVFFlat 应在导入数据后构建；数据分布明显变化后需要重建。
-- 如果 HNSW 表有大量写入和 vacuum 活动，应保持 pgvector 在较新版本；0.8.x 包含重要的 HNSW 维护修复。
+- 版本 `0.8.5` 是一个专注于 IVFFlat 构建内存的补丁；它不会改变 SQL 查询表面。当数据库报告较旧的 SQL 版本时，在安装新的扩展文件后运行 `ALTER EXTENSION vector UPDATE`。
+- 使用与查询操作符匹配的操作符类。余弦索引不会加速 L2 `ORDER BY` 操作。
+- 近似索引以牺牲精确召回率为代价换取速度。请使用代表性数据和查询过滤器验证召回率。
+- 在加载数据后构建 IVFFlat 索引。如果数据分布发生显著变化，请重新构建索引。
+- 当使用 HNSW 并且存在大量写入和 vacuum 活动时，保持 pgvector 更新；`0.8.x` 系列包括重要的 HNSW 维护修复。
+
+这里仍采用负内积操作符；版本对比基线是 `0.8.4`。

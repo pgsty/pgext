@@ -1,69 +1,63 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/documentdb/documentdb/blob/v0.113-0/README.md), [CHANGELOG](https://github.com/documentdb/documentdb/blob/v0.113-0/CHANGELOG.md), [documentdb.control](https://github.com/documentdb/documentdb/blob/v0.113-0/pg_documentdb/documentdb.control), [documentdb_core.control](https://github.com/documentdb/documentdb/blob/v0.113-0/pg_documentdb_core/documentdb_core.control), [documentdb_extended_rum.control](https://github.com/documentdb/documentdb/blob/v0.113-0/pg_documentdb_extended_rum/documentdb_extended_rum.control)
+Sources:
 
-`documentdb` is a MongoDB-compatible document database implemented as PostgreSQL extensions. It adds BSON storage and APIs in PostgreSQL, plus an optional gateway layer for MongoDB wire-protocol clients. FerretDB 2.0+ can use DocumentDB as its backend.
+- [DocumentDB v0.114-0 README](https://github.com/documentdb/documentdb/blob/v0.114-0/README.md)
+- [DocumentDB v0.114-0 changelog](https://github.com/documentdb/documentdb/blob/v0.114-0/CHANGELOG.md)
+- [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb/documentdb.control)
+- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.114-0/scripts/preload_libraries.sh)
 
-### Components
+`documentdb` is the public PostgreSQL API extension for DocumentDB, an open-source MongoDB-compatible document database built on PostgreSQL. It stores BSON documents and implements CRUD, aggregation, full-text, geospatial, and vector workflows. MongoDB drivers require the separate DocumentDB gateway; installing this extension alone exposes the PostgreSQL API, not a wire-protocol listener.
 
-The public extension surface is split across related extensions:
+### Configure and Install
 
-- `documentdb_core`: BSON datatype and low-level BSON operations.
-- `documentdb`: public API for document CRUD and query behavior.
-- `documentdb_extended_rum`: extended RUM access method used by DocumentDB indexing.
-- `pg_documentdb_gw`: gateway protocol layer used by the local Docker image and MongoDB-compatible clients.
+The official deployment helper preloads the core and API libraries with `pg_cron`. Restart PostgreSQL after changing this setting:
 
-Install the SQL extension in each database that needs the API:
+```conf
+shared_preload_libraries = 'pg_cron, pg_documentdb_core, pg_documentdb'
+```
+
+Install the public extension and its declared dependencies:
 
 ```sql
-CREATE EXTENSION IF NOT EXISTS documentdb CASCADE;
+CREATE EXTENSION documentdb CASCADE;
 ```
 
-The `documentdb.control` file for `0.113-0` declares dependencies on `documentdb_core`, `pg_cron`, `tsm_system_rows`, `vector`, and `postgis`. The gateway container listens on a MongoDB-compatible port; the README examples use `10260` to avoid colliding with local MongoDB services.
+`CASCADE` can install `documentdb_core`, `pg_cron`, `tsm_system_rows`, `vector`, and `postgis` when their files are present. Installation is superuser-only and non-relocatable.
 
-### MongoDB Client Example
+### Native SQL Workflow
 
-```python
-import pymongo
+The SQL surface uses a database name, collection name, and BSON command document:
 
-client = pymongo.MongoClient(
-    "mongodb://user:pass@localhost:10260/?tls=true&tlsAllowInvalidCertificates=true"
-)
+```sql
+SELECT documentdb_api.create_collection('appdb', 'people');
 
-db = client["quickStartDatabase"]
-coll = db.create_collection("quickStartCollection")
+SELECT documentdb_api.insert_one(
+  'appdb',
+  'people',
+  '{"_id": 1, "name": "Ada", "team": "storage"}',
+  NULL
+);
 
-coll.insert_one({"name": "Alice", "email": "alice@example.com"})
-print(coll.find_one({"name": "Alice"}))
+SELECT document
+FROM documentdb_api_catalog.bson_aggregation_find(
+  'appdb',
+  '{"find":"people","filter":{"team":"storage"}}'
+);
 ```
 
-The upstream README also demonstrates aggregation pipelines through normal MongoDB drivers:
+For application compatibility, run the gateway and use a supported MongoDB driver against its configured TLS endpoint. The gateway translates wire-protocol commands into this PostgreSQL API.
 
-```python
-pipeline = [
-    {"$match": {"name": "Alice"}},
-    {"$project": {"_id": 0, "name": 1, "email": 1}},
-]
+### Important Objects
 
-for doc in coll.aggregate(pipeline):
-    print(doc)
-```
+- `documentdb_api` contains collection-management and command functions such as `create_collection` and `insert_one`.
+- `documentdb_api_catalog.bson_aggregation_find` executes a MongoDB-style find specification and returns BSON documents.
+- `documentdb_core.bson` is the storage and interchange type supplied by `documentdb_core`.
+- DocumentDB roles and internal schemas separate public read/write operations from administrative and implementation objects.
+- `documentdb.enableNonBlockingUniqueIndexBuild` controls the v0.114 path for background unique ordered-index builds and is enabled by default in that release.
 
-### Version Notes
+### Version and Operational Notes
 
-This project's CSV tracks DocumentDB `0.113` for PostgreSQL 15-18. The upstream tag is `v0.113-0`; control files report `default_version = '0.113-0'`.
+The v0.114-0 tagged changelog enables schema validation by default, fixes validator propagation and caching, and enables non-blocking unique ordered-index builds. It also records gateway configuration, connectivity-check, TLS, and credential-handling improvements. Two RUM optimizations in that changelog remain feature-flagged and disabled by default; do not describe them as active behavior.
 
-The `0.111` through `0.113` changelog entries are mostly query-planner, collation, and index correctness work:
-
-- `0.113-0` adds opt-in collation support for non-unique ordered indexes with `$in` and `$nin`, and supports pruning dead index entries on ordered TTL indexes behind feature flags.
-- `0.112-0` removes the legacy composite-returning `bson_update_document` UDF path, expands non-unique ordered-index collation support, and improves `$group` and accumulator execution.
-- `0.111-0` adds background init job infrastructure, more `$group` validation, collation/index pushdown improvements, and several crash fixes.
-
-### Caveats
-
-- DocumentDB is a multi-extension stack; `CREATE EXTENSION documentdb CASCADE` is the normal entry point, but operational deployments also need the gateway/runtime pieces if MongoDB wire compatibility is required.
-- Some features listed in the changelog are gated by `documentdb.*` feature flags. Verify flag defaults in the exact installed build before documenting behavior as always-on.
-- `documentdb_extended_rum` is relocatable, but `documentdb` and `documentdb_core` are not.
+MongoDB compatibility is not identical to every MongoDB server version. Test operators, index behavior, transactions, schema validation, authentication, and driver behavior used by the application. Match `documentdb`, `documentdb_core`, gateway, and optional distributed/index components to the same release line.

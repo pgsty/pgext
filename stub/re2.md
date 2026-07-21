@@ -3,9 +3,14 @@
 
 ## Usage
 
-Sources: [official README](https://github.com/ClickHouse/pg_re2/blob/main/README.md), [official reference doc](https://github.com/ClickHouse/pg_re2/blob/main/doc/re2.md), [v0.3.0 release](https://github.com/ClickHouse/pg_re2/releases/tag/v0.3.0)
+Sources:
 
-`re2` provides ClickHouse-compatible regular expression functions backed by Google's RE2 engine. It exposes both `text` and `bytea` overloads, so binary data with `\\0` bytes can be searched too. Pigsty packages version `0.3.0` for PostgreSQL 16-18 while upstream documents PostgreSQL 13+ support.
+- [pg_re2 v0.4.1 README](https://github.com/ClickHouse/pg_re2/blob/v0.4.1/README.md)
+- [SQL reference](https://github.com/ClickHouse/pg_re2/blob/v0.4.1/doc/re2.md)
+- [v0.4.0 release](https://github.com/ClickHouse/pg_re2/releases/tag/v0.4.0)
+- [v0.4.1 release](https://github.com/ClickHouse/pg_re2/releases/tag/v0.4.1)
+
+`re2` provides ClickHouse-compatible regular-expression functions backed by Google's RE2 engine. It exposes both `text` and `bytea` overloads, so binary data containing `\\0` bytes can be searched too. Version `0.4.1` also adds index-assisted matching and reports the linked RE2 version.
 
 ```sql
 CREATE EXTENSION re2;
@@ -13,6 +18,7 @@ CREATE EXTENSION re2;
 SELECT re2match('hello world', 'h.*o');
 SELECT re2extract('Order #123', '(\\d+)');
 SELECT re2countmatches('a1 b2 c3', '\\d');
+SELECT re2_version();
 ```
 
 ### Core Functions
@@ -46,6 +52,22 @@ SELECT re2multimatchanyindex('error: timeout', VARIADIC ARRAY['timeout', 'denied
 SELECT re2multimatchallindices('error: timeout', 'error', 'timeout', 'panic');
 ```
 
+### Index Support
+
+Version `0.4.0` adds two complementary index paths:
+
+```sql
+-- Anchored constant patterns can use a normal btree prefix scan.
+CREATE INDEX docs_body_btree ON docs (body);
+SELECT * FROM docs WHERE re2match(body, '^order_2025');
+
+-- The @~ operator can use the extension's GIN operator class.
+CREATE INDEX docs_body_re2_gin ON docs USING gin (body gin_re2_ops);
+SELECT * FROM docs WHERE body @~ 'timeout|denied';
+```
+
+The extension also provides selectivity estimation for RE2 predicates. Check `EXPLAIN` with representative data before choosing between btree, GIN, and a sequential scan.
+
 ### Matching Semantics
 
 - To match ClickHouse behavior, `.` matches line breaks by default.
@@ -55,6 +77,7 @@ SELECT re2multimatchallindices('error: timeout', 'error', 'timeout', 'panic');
 ### Caveats
 
 - Upstream requires the system `re2` library at build/install time.
-- Release `v0.3.0` uses SQL version `0.3`; run `ALTER EXTENSION re2 UPDATE TO '0.3'` after replacing extension binaries from an older minor release.
-- `re2splitbyregexp` changed argument order in `v0.3.0` to `pattern, haystack[, max_substrings]`, matching ClickHouse. Earlier `0.2.0` builds used `haystack, pattern`.
-- Upstream treats patch releases as binary-only, but minor releases can require SQL upgrade scripts.
+- The `v0.4.x` binaries use SQL extension version `0.4`; after replacing an older binary, run `ALTER EXTENSION re2 UPDATE TO '0.4'` when an upgrade is pending.
+- `v0.4.1` fixes a cache-related use-after-free and improves stable-pattern and multi-match performance; use it instead of `v0.4.0`.
+- `re2splitbyregexp` uses `pattern, haystack[, max_substrings]`. Builds older than `0.3.0` used the reverse order.
+- RE2 deliberately excludes features such as backreferences in patterns and look-around assertions; its bounded-time behavior differs from PostgreSQL's native regular-expression engine.

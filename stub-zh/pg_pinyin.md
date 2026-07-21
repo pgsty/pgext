@@ -1,100 +1,65 @@
-
-
-
 ## 用法
 
-> 来源：[pg_pinyin upstream README](https://github.com/aiyou178/pg_pinyin)、[Chinese README](https://github.com/aiyou178/pg_pinyin/blob/main/README.zh-CN.md)。
+来源：
 
-`pg_pinyin` 将中文文本转换为拼音，可以按字符转换，也可以按词转换。它适用于生成搜索列、trigram 搜索，以及需要拼音输入的 `pg_search` BM25 查询。
+- [pg_pinyin v0.0.5 README](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/readme.md)
+- [pg_pinyin v0.0.5 control file](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/pg_pinyin.control)
+- [0.0.4到0.0.5升级SQL](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/pg_pinyin--0.0.4--0.0.5.sql)
 
-```sql
-CREATE EXTENSION pg_pinyin;
-```
+pg_pinyin 对中文文本进行拉丁化，并提供分词器和查询辅助工具，适用于搜索应用。使用 pg_pinyin 可以创建稳定的拼音搜索键、分汉字文本或扩展拼音输入为 pg_search 正则表达式查询。
 
-### 函数
+版本 0.0.5 主要是打包和工具链更新；其升级脚本未对 SQL 系统目录进行更改，因此用户面向的 API 与 0.0.4 保持兼容。
 
-| 函数 | 说明 |
-|------|------|
-| `pinyin_char_romanize(text)` | 字符级拼音罗马化 |
-| `pinyin_char_romanize(text, suffix text)` | 使用自定义词典后缀进行字符级罗马化 |
-| `pinyin_word_romanize(text)` | 词级拼音罗马化 |
-| `pinyin_word_romanize(text, suffix text)` | 使用自定义词典后缀进行词级罗马化 |
-| `pinyin_word_romanize(tokenizer_input anyelement)` | 从 `pg_search` tokenizer 输入进行词级罗马化，例如 `name::pdb.icu::text[]` |
-| `pinyin_word_romanize(tokenizer_input anyelement, suffix text)` | 使用自定义词典后缀处理 tokenizer 输入 |
-| `pinyin_regex_phrase(text, slope integer DEFAULT NULL, max_expansions integer DEFAULT NULL, generated_pinyin boolean DEFAULT false)` | 返回 `pdb.query` 的 `pg_search` 查询辅助函数；仅在 `CREATE EXTENSION pg_pinyin` 前已启用 `pg_search` 时可用 |
-| `pinyin_regex_phrase_patterns(text, generated_pinyin boolean DEFAULT false)` | 内部辅助函数，以 `text[]` 返回正则短语 token |
+### 创建扩展
 
-### 生成列 + Trigram 搜索
+    CREATE EXTENSION pg_pinyin;
 
-```sql
-CREATE EXTENSION IF NOT EXISTS pg_pinyin;
-CREATE EXTENSION IF NOT EXISTS pg_trgm;
+该扩展是可重定位的，并不需要 shared_preload_libraries 或服务器重启。
 
-CREATE TABLE voice (
-  id bigserial PRIMARY KEY,
-  description text NOT NULL,
-  pinyin text GENERATED ALWAYS AS (public.pinyin_char_romanize(description)) STORED
-);
+### 拉丁化文本
 
-CREATE INDEX voice_pinyin_trgm_idx ON voice USING gin (pinyin gin_trgm_ops);
+逐字符拉丁化或使用词感知分割：
 
-INSERT INTO voice (description) VALUES ('郑爽ABC');
-SELECT id, description, pinyin FROM voice;
-```
+    SELECT pinyin_char_romanize('重庆');
+    SELECT pinyin_word_romanize('重庆火锅');
+    SELECT pinyin_word_romanize('重庆火锅', ' ');
 
-### 分词 + pg_search
+这两个函数接受一个可选后缀，该后缀插入到每个发出的拼音单元之后。字符模式是每字符确定性的；词模式使用捆绑的词典来解决上下文发音。
 
-面向词的搜索使用 `pinyin_word_romanize`。当 `pg_search` 可用时，它可以消费 `pdb.icu::text[]` 这类 tokenizer 输入。
+### 使用 pg_search 分词器输入
 
-```sql
-CREATE EXTENSION IF NOT EXISTS pg_search;
-CREATE EXTENSION IF NOT EXISTS pg_pinyin;
+当安装了 pg_search 时，词拉丁化也接受 pg_search 分词器的结果：
 
-CREATE TABLE voice (
-  id bigserial PRIMARY KEY,
-  description text NOT NULL,
-  pinyin text GENERATED ALWAYS AS (public.pinyin_word_romanize(description)) STORED
-);
+    SELECT pinyin_word_romanize(
+      description::pdb.icu::text[]
+    )
+    FROM documents;
 
-CREATE INDEX voice_pinyin_bm25_idx
-ON voice
-USING bm25 (id, pinyin)
-WITH (key_field='id');
+该重载返回拉丁化文本；它不暴露每分词一行的 API。在不需要 pg_search 分词的情况下使用纯文本重载。
 
-SELECT *
-FROM voice
-WHERE pinyin @@@ public.pinyin_regex_phrase('zhengshuang');
+### 构建一个 pg_search 查询
 
-SELECT public.pinyin_word_romanize('郑爽ABC'::pdb.icu::text[]);
-```
+如果在安装 pg_pinyin 之前已安装了 pg_search，pg_pinyin 提供了一个类型化的重载，返回 pdb.query：
 
-`pinyin_regex_phrase` 的返回类型是 `pdb.query`，因此必须先在数据库中启用 `pg_search`，再创建 `pg_pinyin`。如果先创建 `pg_pinyin`，上游文档说明罗马化函数仍会安装，但 `pinyin_regex_phrase` 会以带有清晰异常信息的错误占位函数安装。
+    SELECT *
+    FROM documents
+    WHERE id @@@ pinyin_regex_phrase(
+      'chong qing',
+      slope => 1,
+      max_expansions => 64,
+      generated_pinyin => true
+    );
 
-### 字典表
+如果未安装 pg_search，则相同的入口点将作为错误报告的占位符而不是静默返回不同类型的值。在升级后按预期顺序安装依赖项并测试函数签名。
 
-执行 `CREATE EXTENSION pg_pinyin` 时，扩展会在 `pinyin` schema 下初始化内置字典表；正常使用扩展时不需要额外加载数据。内置数据覆盖字符映射、词 token 和词映射。
+### 对象索引
 
-可以在 `pinyin` schema 中提供带后缀的自定义词典表。调用时指定该后缀会把基础字典和后缀表合并，且后缀表条目优先。
+- pinyin_char_romanize(text [, suffix]) 返回基于字符的拼音文本。
+- pinyin_word_romanize(text [, suffix]) 返回词典分割的拼音文本。
+- pinyin_word_romanize(tokenizer_input [, suffix]) 接受一个 pg_search 分词器结果。
+- pinyin_regex_phrase(text, slope, max_expansions, generated_pinyin) 当该集成可用时，构建一个 pg_search 拼音短语查询。
+- pinyin_regex_phrase_patterns 是一个内部模式构建辅助函数；请优先使用公共查询函数。
 
-```sql
-CREATE TABLE IF NOT EXISTS pinyin.pinyin_mapping_suffix1 (
-  character text PRIMARY KEY,
-  pinyin text NOT NULL
-);
+### 运行注意事项
 
-CREATE TABLE IF NOT EXISTS pinyin.pinyin_words_suffix1 (
-  word text PRIMARY KEY,
-  pinyin text NOT NULL
-);
-
-INSERT INTO pinyin.pinyin_mapping_suffix1 (character, pinyin)
-VALUES ('郑', '|zhengx|')
-ON CONFLICT (character) DO UPDATE SET pinyin = EXCLUDED.pinyin;
-
-INSERT INTO pinyin.pinyin_words_suffix1 (word, pinyin)
-VALUES ('郑爽', '|zhengx| |shuangx|')
-ON CONFLICT (word) DO UPDATE SET pinyin = EXCLUDED.pinyin;
-
-SELECT public.pinyin_char_romanize('郑爽ABC', '_suffix1');
-SELECT public.pinyin_word_romanize('郑爽ABC'::pdb.icu::text[], '_suffix1');
-```
+扩展在其 pinyin 模式中自带生成的字符和词字典。将这些表视为由扩展管理的数据，而不是应用程序表。拉丁化是规范化，不是翻译，并且可能需要应用端审查以处理模糊或领域特定的读音。

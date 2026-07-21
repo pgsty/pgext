@@ -1,84 +1,59 @@
-
-
-
 ## Usage
 
-> Sources: [overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/), [release 3.1.1](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.1.1)
+Sources:
 
-`anon` applies declarative masking rules with `SECURITY LABEL FOR anon`. The official docs describe six masking methods: anonymous dumps, static masking, dynamic masking, replica masking, masking views, and masking data wrappers.
+- [PostgreSQL Anonymizer 3.1.3 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/README.md)
+- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/docs/masking_functions.md)
+- [3.1.3 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/CHANGELOG.md)
+- [Official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/)
 
-### Initialize and Declare Rules
+`anon` is PostgreSQL Anonymizer. It applies declarative masking rules for protected query access, produces anonymized data sets, and provides pseudonymization and randomized-response helpers. Use it when realistic data must remain useful without exposing the original sensitive values; treat masking policy, role grants, and access to the unmasked database as part of the security boundary.
+
+### Core Workflow
+
+Load `anon` for sessions in the target database, install the extension, and enable transparent dynamic masking. New connections pick up database-level settings.
 
 ```sql
-CREATE EXTENSION IF NOT EXISTS anon CASCADE;
-SELECT anon.init();
+ALTER DATABASE app SET session_preload_libraries = 'anon';
 
-SECURITY LABEL FOR anon ON COLUMN customer.full_name
-IS 'MASKED WITH FUNCTION anon.dummy_name()';
+\connect app
+CREATE EXTENSION anon;
+ALTER DATABASE app SET anon.transparent_dynamic_masking = true;
+```
 
-SECURITY LABEL FOR anon ON COLUMN customer.employer
-IS 'MASKED WITH FUNCTION anon.dummy_company_name()';
+Mark a login as masked and attach masking rules to sensitive columns:
 
+```sql
+CREATE ROLE reporting LOGIN;
+SECURITY LABEL FOR anon ON ROLE reporting IS 'MASKED';
+GRANT pg_read_all_data TO reporting;
+
+SECURITY LABEL FOR anon ON COLUMN customer.last_name
+  IS 'MASKED WITH FUNCTION anon.dummy_last_name()';
 SECURITY LABEL FOR anon ON COLUMN customer.phone
-IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
+  IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
 ```
 
-### Static Masking
+Queries made as `reporting` see the transformed values. Privileged users still see the originals, so do not grant masked roles a path around the policy.
 
-Static masking rewrites the stored data in place:
+### Masking Strategies
 
-```sql
-SELECT anon.anonymize_database();
--- See also: anon.anonymize_table(), anon.anonymize_column()
--- For larger databases: anon.anonymize_database_parallel(worker_count)
-```
+- **Dynamic masking** transforms results for roles labeled `MASKED` without rewriting the table.
+- **Static masking** permanently rewrites selected data and is appropriate for disposable development or test copies.
+- **Anonymous dumps and replicas** produce sanitized exports or downstream copies.
+- **Masking views and data wrappers** expose a deliberately reduced or transformed projection.
+- **Pseudonymization** uses deterministic transforms when joins or repeated values must remain consistent.
 
-The static-masking docs also cover shuffling, noise injection, and parallel masking for larger datasets. Parallel static masking is bounded by `anon.max_bg_workers` and the server's `max_worker_processes`.
+### Important Objects
 
-### Dynamic Masking
+- `anon.dummy_*`, `anon.random_*`, and `anon.partial(...)` generate or partially conceal values.
+- `anon.hash(text)` and `anon.digest(text, text, text)` provide deterministic transformations. In 3.1.2 they were marked `RESTRICTED` to limit brute-force exposure.
+- `anon.ldp_grrm(value, epsilon, max_v)` and `anon.ldp_grrm_pttt(value, truth_probability, max_v)` implement generalized randomized response for local differential privacy.
+- `anon.ldp_truth_probability(...)` and `anon.ldp_lie_probability(...)` help inspect randomized-response probabilities.
+- Security labels on roles and columns define who is masked and how each value is transformed.
 
-Dynamic masking hides values only from roles labeled as masked:
+### Operational Notes
 
-```sql
-ALTER DATABASE demo SET session_preload_libraries = 'anon';
-ALTER DATABASE demo SET anon.transparent_dynamic_masking TO true;
+`anon` is superuser-installed and non-relocatable. Test every policy with the same grants and connection path used by the intended consumer. Randomization is not automatically deterministic; use a confirmed pseudonymization function when stable equality is required. Static anonymization is destructive, so run it on a copy and verify constraints and application behavior afterward.
 
-CREATE ROLE skynet LOGIN;
-SECURITY LABEL FOR anon ON ROLE skynet IS 'MASKED';
-GRANT pg_read_all_data TO skynet;
-
-SECURITY LABEL FOR anon ON COLUMN people.lastname
-IS 'MASKED WITH FUNCTION anon.dummy_last_name()';
-```
-
-When `skynet` queries the table, masked values are returned instead of the originals.
-
-### Anonymous Dumps and Pseudonymization
-
-The current docs recommend transparent anonymous dumps through a masked role and `pg_dump`. Older helpers `pg_dump_anon.sh` and `pg_dump_anon` are explicitly marked deprecated.
-
-For PostgreSQL 17 and later, the dump example uses `--exclude-extension="anon"` with `--no-security-labels`; older `pg_dump` versions need another extension-selection approach such as `--extension plpgsql`.
-
-For stable key remapping in dumps, the docs call out:
-
-- `anon.pseudo_shift(bigint)`
-- `anon.pseudo_xor(bigint)`
-- `anon.set_shift()`
-
-### Common Functions and Caveats
-
-Common masking helpers in the function catalog include:
-
-- `anon.dummy_first_name()`
-- `anon.dummy_last_name()`
-- `anon.dummy_company_name()`
-- `anon.random_zip()`
-- `anon.random_date_between(date, date)`
-- `anon.partial(value, prefix, mask, suffix)`
-
-Caveats from the official docs:
-
-- dynamic masking needs preload/configuration before masked-role sessions use it
-- static masking destroys the original values
-- pseudonymization is not anonymization
-- Version 3.1.1 is a security release for CVE-2026-11945 and removes conditional randomization from import/export behavior; upgrade from 3.0.x promptly.
+Version 3.1.3 reruns missing ARM builds and changes release metadata, with no new SQL workflow. The material delta since 3.1.1 is the 3.1.2 security hardening for `anon.hash` and `anon.digest`; deployments using those functions should upgrade rather than relying on the old labels.

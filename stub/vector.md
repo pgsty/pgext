@@ -5,13 +5,13 @@
 
 Sources:
 
-- [pgvector v0.8.4 release](https://github.com/pgvector/pgvector/releases/tag/v0.8.4)
-- [pgvector v0.8.4 README](https://github.com/pgvector/pgvector/blob/v0.8.4/README.md)
-- [pgvector v0.8.4 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.4/CHANGELOG.md)
+- [pgvector v0.8.5 README](https://github.com/pgvector/pgvector/blob/v0.8.5/README.md)
+- [pgvector v0.8.5 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.5/CHANGELOG.md)
+- [Changes from v0.8.4 to v0.8.5](https://github.com/pgvector/pgvector/compare/v0.8.4...v0.8.5)
 
 `pgvector` provides vector similarity search inside PostgreSQL. The extension name is `vector`, while Pigsty packages it as `pgvector`. It supports exact search, approximate nearest-neighbor search with HNSW and IVFFlat indexes, and multiple vector representations for dense, half-precision, binary, and sparse embeddings.
 
-v0.8.4 is a maintenance release after the 0.8.x HNSW/vacuum fixes. Use it instead of older 0.8.x builds when maintaining HNSW indexes under write-heavy workloads.
+Version `0.8.5` reduces memory use when building IVFFlat indexes on small tables. It retains the 0.8.x HNSW iterative-scan and maintenance improvements documented in the current README.
 
 ### Create and Query Vectors
 
@@ -149,8 +149,8 @@ HNSW indexes can be large and expensive to build. Use `maintenance_work_mem` for
 
 ### Caveats
 
-- Pigsty local metadata may lag this upstream version; this stub tracks upstream pgvector 0.8.4 while the local package row may still show an older package version until the package catalog is refreshed.
+- Version `0.8.5` is a focused IVFFlat build-memory patch; it does not change the SQL query surface from `0.8.4`. Run `ALTER EXTENSION vector UPDATE` after installing new extension files when the database reports an older SQL version.
 - Use the operator class that matches the query operator. A cosine index will not accelerate an L2 `ORDER BY`.
 - Approximate indexes trade exact recall for speed. Validate recall with representative data and query filters.
 - Build IVFFlat after loading data. If data distribution changes substantially, rebuild the index.
-- Keep pgvector updated when using HNSW with heavy writes and vacuum activity; v0.8.x includes important HNSW maintenance fixes.
+- Keep pgvector updated when using HNSW with heavy writes and vacuum activity; the `0.8.x` line includes important HNSW maintenance fixes.

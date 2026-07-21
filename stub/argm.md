@@ -2,33 +2,50 @@
 
 Sources:
 
-- [Argm README at the reviewed commit](https://github.com/bashtanov/argm/blob/b8b2db36d0a57987d413f909e82369f9677e384a/README.md)
-- [argm.control at the reviewed commit](https://github.com/bashtanov/argm/blob/b8b2db36d0a57987d413f909e82369f9677e384a/argm.control)
-- [Version 1.1.2 install SQL](https://github.com/bashtanov/argm/blob/b8b2db36d0a57987d413f909e82369f9677e384a/argm--1.1.2.sql)
-- [Argm on PGXN](https://pgxn.org/dist/argm/)
+- [argm 1.1.1 README](https://github.com/bashtanov/argm/blob/1.1.1/README.md)
+- [Extension control file](https://github.com/bashtanov/argm/blob/1.1.1/argm.control)
+- [SQL definitions](https://github.com/bashtanov/argm/blob/1.1.1/argm--1.1.1.sql)
 
-`argm` provides the `argmax`, `argmin`, and `anyold` aggregates. The first two return the value from the row whose sortable key tuple is lexicographically greatest or least within a group. `anyold` returns the first non-null value seen by the aggregate and is useful when a selected attribute is functionally determined by the grouping key.
+`argm` provides the polymorphic aggregates `argmax`, `argmin`, and `anyold`. They return a value from a selected row while grouping, avoiding a join or window-function pass when the row can be chosen by one or more sortable keys.
 
-### Basic Example
+### Core Workflow
 
 ```sql
 CREATE EXTENSION argm;
 
-SELECT
-  argmax(label, score) AS highest_label,
-  argmin(label, score) AS lowest_label,
-  anyold(label) AS one_label
-FROM (VALUES
-  ('alpha', 10),
-  ('beta', 20),
-  ('gamma', NULL)
-) AS sample(label, score);
+SELECT customer_id,
+       argmax(order_id, total, ordered_at) AS largest_order
+FROM orders
+GROUP BY customer_id;
 ```
 
-Unlike a `DISTINCT ON` formulation, these aggregates can participate in the same `GROUP BY` operation as other aggregates and may use hash aggregation.
+`argmax(value, key...)` returns the `value` belonging to the lexicographically greatest key tuple. `argmin` selects the least tuple. Additional keys break ties without building a composite value:
 
-### Caveats
+```sql
+SELECT device_id,
+       argmax(reading, measured_at, sequence_no) AS latest_reading
+FROM measurements
+GROUP BY device_id;
+```
 
-- If several rows have identical key tuples, `argmax` or `argmin` chooses one corresponding value arbitrarily.
-- Values may use any PostgreSQL type, but ordering keys must be sortable. The upstream implementation applies one ordering direction and collation to the complete key tuple.
-- Current source and catalog identify `1.1.2`; the latest visible Git tag is `1.1.1`, and PGXN still presents `1.0.2`. Do not infer current behavior from the older PGXN package.
+Use `anyold(value)` when any member of a group is acceptable:
+
+```sql
+SELECT account_id, anyold(display_name)
+FROM account_aliases
+GROUP BY account_id;
+```
+
+### Important Objects
+
+- `argmax(value, key [, key ...])` selects the value associated with the greatest key tuple.
+- `argmin(value, key [, key ...])` selects the value associated with the least key tuple.
+- `anyold(value)` returns an arbitrary non-null value from the aggregate state.
+
+The aggregates accept any value type; key types must have ordering support. The SQL definitions are parallel-safe and include combine and serialization functions for partial aggregation.
+
+### Semantics and Caveats
+
+Key tuples use one ordering direction and one collation for the whole tuple, with null keys sorted last. If complete key tuples tie, the chosen value is unspecified; add a stable final key when deterministic results matter. As with other PostgreSQL aggregates, empty input produces `NULL`.
+
+`argm` 1.1.x requires PostgreSQL 9.6 or newer. The extension is relocatable. Upgrading from 1.0.3 to 1.1.x requires dropping and recreating the extension because the aggregate state changed; the 1.1.0-to-1.1.1 upgrade does not change the public SQL surface.

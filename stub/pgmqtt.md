@@ -1,96 +1,89 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/RayElg/pgmqtt/blob/0.3.0/README.md), [interfaces](https://github.com/RayElg/pgmqtt/blob/0.3.0/docs/interfaces.md), [configuration](https://github.com/RayElg/pgmqtt/blob/0.3.0/docs/configuration.md), [limitations](https://github.com/RayElg/pgmqtt/blob/0.3.0/docs/limitations.md), [Cargo.toml](https://github.com/RayElg/pgmqtt/blob/0.3.0/extension/Cargo.toml)
+Sources:
 
-`pgmqtt` is a `pgrx` extension that embeds an MQTT broker into PostgreSQL and uses change data capture to turn table changes into MQTT messages. It also supports inbound topic mappings so MQTT publishes can insert rows into PostgreSQL tables.
+- [pgmqtt 0.4.1 README](https://github.com/RayElg/pgmqtt/blob/0.4.1/README.md)
+- [pgmqtt 0.4.1 interfaces](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/interfaces.md)
+- [pgmqtt 0.4.1 configuration](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/configuration.md)
+- [pgmqtt 0.4.1 limitations](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/limitations.md)
+- [pgmqtt 0.4.1 release notes](https://github.com/RayElg/pgmqtt/releases/tag/0.4.1)
 
-```sql
-CREATE EXTENSION pgmqtt;
-```
+pgmqtt embeds an MQTT broker in PostgreSQL. It can publish INSERT, UPDATE, and DELETE changes through logical decoding and can map inbound MQTT topics and JSON payloads to table writes. Use it when database and MQTT integration justify running a network broker inside the PostgreSQL server process.
 
-### Outbound Mapping
+### Preload and Create the Extension
 
-Publish table changes to topics:
+Set logical WAL and preload the worker, then restart PostgreSQL:
 
-```sql
-SELECT pgmqtt_add_outbound_mapping(
-  'public',
-  'my_table',
-  'topics/{{ op | lower }}',
-  '{{ columns | tojson }}',
-  1
-);
-```
+    wal_level = logical
+    shared_preload_libraries = 'pgmqtt'
 
-With that mapping, `INSERT`, `UPDATE`, and `DELETE` publish JSON payloads to topics such as `topics/insert`. The documented function signature also accepts optional `qos integer DEFAULT 0` and `template_type text DEFAULT 'jinja2'`.
+Create the extension after restart:
 
-### Inbound Mapping
+    CREATE EXTENSION pgmqtt;
 
-Insert rows from MQTT publishes:
+Listener addresses, ports, authentication, and TLS settings are read by the background worker. Settings documented as startup-only require a worker/server restart, not just pg_reload_conf().
 
-```sql
-SELECT pgmqtt_add_inbound_mapping(
-  'sensor/{site_id}/temperature',
-  'sensor_readings',
-  '{"site_id": "{site_id}", "value": "$.temperature"}'::jsonb
-);
-```
+### Publish Table Changes
 
-Publishing `{"temperature": 22.5}` to `sensor/site-1/temperature` inserts a row into `sensor_readings`.
+Create an outbound mapping:
 
-Inbound mappings can also perform `upsert` and `delete` operations by passing `op`, `conflict_columns`, `target_schema`, `mapping_name`, and `template_type`. Topic patterns use `{variable}` captures; JSON payload fields use expressions such as `$.temperature`, `$payload`, and `$topic`.
+    SELECT pgmqtt_add_outbound_mapping(
+      'public',
+      'orders',
+      'orders/{{ op | lower }}',
+      '{{ columns | tojson }}',
+      1
+    );
 
-### Inspect and Remove Mappings
+The mapping publishes row changes to topics such as orders/insert. The interface also accepts a QoS and template type where supported. Version 0.4.1 drains CDC changes in batches of up to 4096 records.
 
-```sql
-SELECT * FROM pgmqtt_list_outbound_mappings();
-SELECT pgmqtt_remove_outbound_mapping('public', 'my_table');
+Inspect or remove outbound mappings:
 
-SELECT * FROM pgmqtt_list_inbound_mappings();
-SELECT pgmqtt_remove_inbound_mapping('temp_readings');
+    SELECT * FROM pgmqtt_list_outbound_mappings();
+    SELECT pgmqtt_remove_outbound_mapping('public', 'orders');
 
-SELECT * FROM pgmqtt_status();
-```
+### Write Rows from MQTT
 
-`pgmqtt_status()` reports active connections, subscriptions, retained messages, pending session messages, CDC mappings, CDC slot state, inbound mappings, pending inbound writes, and dead letters.
+Map captured topic segments and JSON fields to a target table:
 
-Version 0.3.0 adds asynchronous admin commands:
+    SELECT pgmqtt_add_inbound_mapping(
+      'sensor/{site_id}/temperature',
+      'sensor_readings',
+      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb
+    );
 
-```sql
-SELECT pgmqtt_disconnect_client('device-42');
-SELECT pgmqtt_disconnect_role('mqtt_devices');
-SELECT pgmqtt_reload_acls('*');
-```
+Inbound mappings support insert and documented upsert/delete modes with options such as target_schema, conflict_columns, mapping_name, and template_type. Grant the worker role only the required table privileges and validate payload types and constraints.
 
-The background worker drains `pgmqtt_admin_commands`; ACL reloads prune subscriptions that are no longer allowed.
+    SELECT * FROM pgmqtt_list_inbound_mappings();
+    SELECT pgmqtt_remove_inbound_mapping('temp_readings');
 
-### MQTT Client Examples
+### Administration and Status
 
-```bash
-mosquitto_sub -h localhost -t 'topics/#'
-mosquitto_pub -h localhost -t 'sensor/site-1/temperature' -m '{"temperature": 22.5}'
-```
+    SELECT * FROM pgmqtt_status();
+    SELECT pgmqtt_disconnect_client('device-42');
+    SELECT pgmqtt_disconnect_role('mqtt_devices');
+    SELECT pgmqtt_reload_acls('*');
 
-### Configuration
+pgmqtt_status reports listener, client, subscription, retained-message, CDC, inbound-write, and dead-letter state. Administrative calls are queued for asynchronous processing by the worker.
 
-The documented GUCs live under the `pgmqtt` namespace:
+### Configuration Index
 
-```sql
-ALTER SYSTEM SET pgmqtt.cdc_every_n_ticks = 16;
-SELECT pg_reload_conf();
-```
+- pgmqtt.mqtt_enabled and pgmqtt.mqtt_port: TCP MQTT listener.
+- pgmqtt.ws_enabled and pgmqtt.ws_port: WebSocket listener.
+- pgmqtt.tick_interval_ms and pgmqtt.cdc_every_n_ticks: worker cadence.
+- pgmqtt.max_client_buffer_bytes: per-client flow-control boundary.
+- pgmqtt.debug_log and pgmqtt.metrics_*: diagnostics and metrics integration.
+- pgmqtt TLS, JWT, password-authentication, and ACL settings: transport and client access controls; availability differs between community and enterprise features.
 
-Listener GUCs include `pgmqtt.mqtt_enabled`, `pgmqtt.mqtt_port` (`1883`), `pgmqtt.ws_enabled`, `pgmqtt.ws_port` (`9001`), `pgmqtt.mqtts_enabled`, `pgmqtt.mqtts_port` (`8883`), `pgmqtt.wss_enabled`, and `pgmqtt.wss_port` (`9002`). TLS and authentication settings include `pgmqtt.tls_cert_file`, `pgmqtt.tls_key_file`, `pgmqtt.license_key`, `pgmqtt.jwt_public_key`, `pgmqtt.jwt_required`, `pgmqtt.jwt_required_ws`, `pgmqtt.password_auth_enabled`, `pgmqtt.password_auth_required`, and `pgmqtt.password_auth_role_filter`.
+### Protocol and CDC Boundaries
 
-Performance and observability GUCs include `pgmqtt.tick_interval_ms`, `pgmqtt.max_client_buffer_bytes`, `pgmqtt.cdc_every_n_ticks`, `pgmqtt.debug_log`, `pgmqtt.metrics_snapshot_interval`, `pgmqtt.metrics_retention_days`, `pgmqtt.metrics_connections_cache_interval`, `pgmqtt.metrics_hook_function`, and `pgmqtt.metrics_notify_channel`. Listener and TLS settings are read when the MQTT background worker starts, so they require a worker restart rather than only `pg_reload_conf()`.
+- MQTT 5.0 and 3.1.1 are supported. QoS 0 and 1 are implemented; requested QoS 2 is downgraded to QoS 1.
+- CDC covers INSERT, UPDATE, and DELETE, not DDL or TRUNCATE. DELETE payloads may require REPLICA IDENTITY FULL.
+- The CDC ring has a finite capacity of 8192 and drops the oldest records on overflow. The QoS 0 topic buffer is capped at 4096 and also drops oldest entries; QoS 1 buffering can grow without a fixed bound.
+- The community edition documents TLS through a proxy, while native TLS and some JWT features are enterprise boundaries. Verify the edition before setting listener expectations.
 
-### Caveats
+### Version 0.4.1 and Operations
 
-- The README requires `wal_level = logical`; without logical decoding the CDC side will not work.
-- This project's CSV tracks version `0.3.0`, PostgreSQL versions 14-18, and a package-side `pgrx` `0.18.1` rebuild note.
-- MQTT 5.0 and MQTT 3.1.1 clients are documented as supported. QoS 0 and QoS 1 are supported; QoS 2 is not implemented and subscriptions requesting QoS 2 are downgraded to QoS 1.
-- CDC captures `INSERT`, `UPDATE`, and `DELETE`; DDL changes and `TRUNCATE` are not captured. `DELETE` may require `REPLICA IDENTITY FULL`.
-- Version 0.3.0 adds PostgreSQL role/password authentication, per-topic ACLs, admin disconnect/reload commands, metrics/observability tables and functions, MQTT 3.1.1 protocol tests, UNLOGGED metrics/cache recovery tests, and additional flow-control limits.
+The 0.4 line consolidates HTTP/worker handling and reduces panic paths; 0.4.1 raises CDC batch processing to 4096. These changes improve throughput and structure but do not make the embedded broker lossless under every overload or crash.
+
+Running a broker inside PostgreSQL expands the database network and resource boundary. Isolate listener interfaces, enforce authentication and topic ACLs, monitor worker lag and dropped buffers, and test failover and restart behavior before production use.

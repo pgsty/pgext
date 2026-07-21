@@ -1,53 +1,51 @@
-
-
-
 ## 用法
 
-> [babelfishpg_tsql: SQL Server Transact SQL 兼容性](https://babelfishpg.org/)
+来源：
 
-`babelfishpg_tsql` 扩展作为 Babelfish 项目的一部分，为 PostgreSQL 提供 Microsoft SQL Server Transact-SQL（T-SQL）兼容性。为 SQL Server 编写的应用程序可以连接到 PostgreSQL 并运行查询，只需最小的更改。
+- [Babelfish扩展BABEL_5_4_0 README](https://github.com/babelfish-for-postgresql/babelfish_extensions/blob/BABEL_5_4_0/README.md)
+- [安装指南](https://github.com/babelfish-for-postgresql/babelfish_extensions/blob/BABEL_5_4_0/INSTALLING.md.tmpl)
+- [`babelfishpg_tsql`控制文件](https://github.com/babelfish-for-postgresql/babelfish_extensions/blob/BABEL_5_4_0/contrib/babelfishpg_tsql/babelfishpg_tsql.control.in)
+- [Babelfish限制](https://babelfishpg.org/docs/limitations/limitations-of-babelfish/)
+- [处理T-SQL](https://babelfishpg.org/docs/usage/handling-tsql/)
 
-### 启用
+`babelfishpg_tsql`实现了T-SQL语言和SQL Server兼容的系统目录行为，这是Babelfish数据库的一个组成部分，而不是一个可以独立添加到标准PostgreSQL中的兼容层：完整的堆栈需要带有Babelfish补丁的PostgreSQL引擎加上公共、TDS和T-SQL扩展。
+
+### 核心工作流程
+
+为预加载配置TDS协议扩展并重启Babelfish服务器：
+
+```conf
+shared_preload_libraries = 'babelfishpg_tds'
+```
+
+使用`CASCADE`创建TDS扩展，以便安装其依赖项，包括`babelfishpg_tsql`。在初始化前选择迁移模式。
 
 ```sql
-CREATE EXTENSION babelfishpg_tsql;
+CREATE EXTENSION IF NOT EXISTS babelfishpg_tds CASCADE;
+
+ALTER SYSTEM SET babelfishpg_tsql.database_name = 'babelfish_db';
+ALTER SYSTEM SET babelfishpg_tsql.migration_mode = 'multi-db';
+
+CALL sys.initialize_babelfish('babelfish_user');
 ```
 
-### 关键特性
+按照安装指南重新加载配置后，SQL Server客户端连接到通常位于端口1433的TDS监听器，并在Babelfish创建的逻辑数据库中发出T-SQL语句。
 
-- **T-SQL 语言支持**：理解 T-SQL 语法，包括存储过程、函数、触发器和批处理
-- **SQL Server 线协议**：应用程序可以使用 TDS（表格数据流）协议在 1433 端口连接
-- **系统过程**：常用的 `sp_` 系统存储过程可用
-- **系统视图**：SQL Server 目录视图（如 `sys.tables`、`sys.columns`、`sys.objects`）
-- **多数据库语义**：支持 SQL Server 风格的数据库/模式分离
+### 组件和对象索引
 
-### 支持的 T-SQL 特性
+- `babelfishpg_tsql`提供T-SQL解析器、过程语言、系统对象、兼容函数以及T-SQL配置变量。
+- `babelfishpg_tds`提供表格数据流监听器，也是常规安装入口点。
+- `babelfishpg_common`提供共享的数据类型和函数。它和`uuid-ossp`是`babelfishpg_tsql`的声明依赖项。
+- `babelfishpg_money`提供与堆栈相关的货币相关兼容对象。
+- `sys.initialize_babelfish(login_name)`为Babelfish目录和服务初始化登录。
+- `sys.sp_babelfish_configure`控制文档化的兼容性开关。
+- `babelfishpg_tsql.database_name`标识托管Babelfish的物理PostgreSQL数据库。
+- `babelfishpg_tsql.migration_mode`选择`single-db`或`multi-db`逻辑数据库映射。
 
-- `BEGIN...END` 块、`IF...ELSE`、`WHILE` 循环
-- `TRY...CATCH` 错误处理
-- 临时表（`#temp`、`##global_temp`）
-- 表变量（`DECLARE @t TABLE (...)`）
-- `IDENTITY` 列和 `@@IDENTITY` / `SCOPE_IDENTITY()`
-- `TOP` 子句、`OUTPUT` 子句
-- `MERGE` 语句
-- 公共表表达式（CTE）
-- 同一实例内的跨数据库查询
-- `EXEC` / `EXECUTE` 动态 SQL
-- SQL Server 风格字符串连接和 NULL 处理
-- `PRINT` 和 `RAISERROR` 语句
+### 运行边界
 
-### 通过 TDS 协议连接
+安装需要超级用户权限和与扩展版本匹配的Babelfish构建。不要单独安装`babelfishpg_tsql`并期望获得TDS连接性。迁移模式是一个配置决策，在数据库初始化后不应更改。
 
-应用程序可以使用 SQL Server 驱动程序（JDBC、ODBC、ADO.NET）连接到 TDS 监听端口（默认 1433）：
+Babelfish实现了大量但不完整的SQL Server功能集。在迁移前，请根据官方限制验证应用程序语法、数据类型、系统目录假设、驱动程序和开关设置。PostgreSQL和T-SQL连接可以观察不同的命名和事务语义。
 
-```
-Server: hostname
-Port: 1433
-Database: mydb
-```
-
-### 注意事项
-
-- 需要 `babelfishpg_common` 扩展
-- Babelfish for PostgreSQL 项目的一部分（Apache 2.0 / PostgreSQL 许可证）
-- 并非所有 T-SQL 特性都受支持；请查看 Babelfish 兼容性参考
+从5.5.0到5.4.0的目录更改是官方`BABEL_5_4_0`发布线的一个版本修正，而不是新功能或自动降级过程的证据。

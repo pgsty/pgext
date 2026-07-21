@@ -1,100 +1,65 @@
-
-
-
 ## Usage
 
-> Sources: [pg_pinyin upstream README](https://github.com/aiyou178/pg_pinyin), [Chinese README](https://github.com/aiyou178/pg_pinyin/blob/main/README.zh-CN.md).
+Sources:
 
-`pg_pinyin` converts Chinese text to Pinyin, either character by character or by word. It is useful for generated search columns, trigram search, and `pg_search` BM25 queries that need Pinyin input.
+- [pg_pinyin v0.0.5 README](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/readme.md)
+- [pg_pinyin v0.0.5 control file](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/pg_pinyin.control)
+- [0.0.4 to 0.0.5 upgrade SQL](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/pg_pinyin--0.0.4--0.0.5.sql)
 
-```sql
-CREATE EXTENSION pg_pinyin;
-```
+pg_pinyin romanizes Chinese text and exposes tokenizer and query helpers for search applications. Use pg_pinyin to create stable Pinyin search keys, tokenize Han text, or expand Pinyin input into a pg_search regular-expression query.
 
-### Functions
+Version 0.0.5 is primarily a packaging and toolchain update; its upgrade script makes no SQL catalog changes, so the user-facing API remains compatible with 0.0.4.
 
-| Function | Description |
-|----------|-------------|
-| `pinyin_char_romanize(text)` | Character-level Pinyin romanization |
-| `pinyin_char_romanize(text, suffix text)` | Character-level romanization with a custom dictionary suffix |
-| `pinyin_word_romanize(text)` | Word-level Pinyin romanization |
-| `pinyin_word_romanize(text, suffix text)` | Word-level romanization with a custom dictionary suffix |
-| `pinyin_word_romanize(tokenizer_input anyelement)` | Word-level romanization from a `pg_search` tokenizer input such as `name::pdb.icu::text[]` |
-| `pinyin_word_romanize(tokenizer_input anyelement, suffix text)` | Tokenizer-input romanization with a custom dictionary suffix |
-| `pinyin_regex_phrase(text, slope integer DEFAULT NULL, max_expansions integer DEFAULT NULL, generated_pinyin boolean DEFAULT false)` | `pg_search` query helper returning `pdb.query`, available when `pg_search` was enabled before `CREATE EXTENSION pg_pinyin` |
-| `pinyin_regex_phrase_patterns(text, generated_pinyin boolean DEFAULT false)` | Internal helper returning regex phrase tokens as `text[]` |
+### Create the Extension
 
-### Generated Column + Trigram Search
+    CREATE EXTENSION pg_pinyin;
 
-```sql
-CREATE EXTENSION IF NOT EXISTS pg_pinyin;
-CREATE EXTENSION IF NOT EXISTS pg_trgm;
+The extension is relocatable and does not require shared_preload_libraries or a server restart.
 
-CREATE TABLE voice (
-  id bigserial PRIMARY KEY,
-  description text NOT NULL,
-  pinyin text GENERATED ALWAYS AS (public.pinyin_char_romanize(description)) STORED
-);
+### Romanize Text
 
-CREATE INDEX voice_pinyin_trgm_idx ON voice USING gin (pinyin gin_trgm_ops);
+Romanize character by character or use word-aware segmentation:
 
-INSERT INTO voice (description) VALUES ('郑爽ABC');
-SELECT id, description, pinyin FROM voice;
-```
+    SELECT pinyin_char_romanize('重庆');
+    SELECT pinyin_word_romanize('重庆火锅');
+    SELECT pinyin_word_romanize('重庆火锅', ' ');
 
-### Word Tokenization + pg_search
+Both functions accept an optional suffix inserted after each emitted Pinyin unit. Character mode is deterministic per character; word mode uses the bundled word dictionary to resolve contextual pronunciations.
 
-For word-oriented search, use `pinyin_word_romanize`. When `pg_search` is available, it can consume tokenizer input such as `pdb.icu::text[]`.
+### Use pg_search Tokenizer Input
 
-```sql
-CREATE EXTENSION IF NOT EXISTS pg_search;
-CREATE EXTENSION IF NOT EXISTS pg_pinyin;
+Word romanization also accepts a pg_search tokenizer result when that extension is available:
 
-CREATE TABLE voice (
-  id bigserial PRIMARY KEY,
-  description text NOT NULL,
-  pinyin text GENERATED ALWAYS AS (public.pinyin_word_romanize(description)) STORED
-);
+    SELECT pinyin_word_romanize(
+      description::pdb.icu::text[]
+    )
+    FROM documents;
 
-CREATE INDEX voice_pinyin_bm25_idx
-ON voice
-USING bm25 (id, pinyin)
-WITH (key_field='id');
+The overload returns romanized text; it does not expose a row-per-token API. Use the plain-text overload when pg_search tokenization is not required.
 
-SELECT *
-FROM voice
-WHERE pinyin @@@ public.pinyin_regex_phrase('zhengshuang');
+### Build a pg_search Query
 
-SELECT public.pinyin_word_romanize('郑爽ABC'::pdb.icu::text[]);
-```
+When pg_search was installed before pg_pinyin, pg_pinyin provides a typed overload that returns pdb.query:
 
-`pinyin_regex_phrase` has return type `pdb.query`, so `pg_search` must be enabled in the database before `pg_pinyin` is created. If `pg_pinyin` is created first, upstream documents that the romanization functions are installed, but `pinyin_regex_phrase` is installed as an error stub with a clear exception.
+    SELECT *
+    FROM documents
+    WHERE id @@@ pinyin_regex_phrase(
+      'chong qing',
+      slope => 1,
+      max_expansions => 64,
+      generated_pinyin => true
+    );
 
-### Dictionary Tables
+If pg_search is absent, the same entry point is installed as an error-reporting stub rather than silently returning a different type. Install dependencies in the intended order and test the function signature after upgrades.
 
-The extension seeds bundled dictionary tables under schema `pinyin` during `CREATE EXTENSION pg_pinyin`; no separate data-load step is needed for normal extension usage. The bundled data covers character mappings, word tokens, and word mappings.
+### Object Index
 
-Provide custom dictionary tables in schema `pinyin` with a suffix. Calls using that suffix merge the base dictionary with the suffix tables, and suffix entries take priority.
+- pinyin_char_romanize(text [, suffix]) returns character-based Pinyin text.
+- pinyin_word_romanize(text [, suffix]) returns dictionary-segmented Pinyin text.
+- pinyin_word_romanize(tokenizer_input [, suffix]) accepts a pg_search tokenizer result.
+- pinyin_regex_phrase(text, slope, max_expansions, generated_pinyin) constructs a pg_search Pinyin phrase query when that integration is available.
+- pinyin_regex_phrase_patterns is an internal pattern-building helper; prefer the public query function.
 
-```sql
-CREATE TABLE IF NOT EXISTS pinyin.pinyin_mapping_suffix1 (
-  character text PRIMARY KEY,
-  pinyin text NOT NULL
-);
+### Operational Notes
 
-CREATE TABLE IF NOT EXISTS pinyin.pinyin_words_suffix1 (
-  word text PRIMARY KEY,
-  pinyin text NOT NULL
-);
-
-INSERT INTO pinyin.pinyin_mapping_suffix1 (character, pinyin)
-VALUES ('郑', '|zhengx|')
-ON CONFLICT (character) DO UPDATE SET pinyin = EXCLUDED.pinyin;
-
-INSERT INTO pinyin.pinyin_words_suffix1 (word, pinyin)
-VALUES ('郑爽', '|zhengx| |shuangx|')
-ON CONFLICT (word) DO UPDATE SET pinyin = EXCLUDED.pinyin;
-
-SELECT public.pinyin_char_romanize('郑爽ABC', '_suffix1');
-SELECT public.pinyin_word_romanize('郑爽ABC'::pdb.icu::text[], '_suffix1');
-```
+The extension ships generated character and word dictionaries in its pinyin schema. Treat those tables as extension-managed data rather than application tables. Romanization is normalization, not translation, and ambiguous or domain-specific readings may require application-side review.

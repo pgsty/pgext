@@ -1,59 +1,51 @@
-
-
-
 ## Usage
 
-> [pg_statement_rollback: Server side rollback at statement level for PostgreSQL like Oracle or DB2](https://github.com/lzlabs/pg_statement_rollback)
+Sources:
 
-Provides automatic server-side savepoints before each statement, allowing individual statement failures without aborting the entire transaction.
+- [pg_statement_rollback v1.6 README](https://github.com/lzlabs/pg_statement_rollback/blob/v1.6/README.md)
+- [Changes from v1.5 to v1.6](https://github.com/lzlabs/pg_statement_rollback/compare/v1.5...v1.6)
 
-### Enabling
+pg_statement_rollback keeps an explicit transaction usable after a statement error by creating an automatic savepoint before each eligible statement. It emulates the statement-level rollback behavior familiar from some other databases, but the client must still issue ROLLBACK TO SAVEPOINT after an error.
 
-```sql
-LOAD 'pg_statement_rollback.so';
-SET pg_statement_rollback.enabled TO on;
-```
+The module is loaded into a backend and does not require CREATE EXTENSION.
 
-Or in `postgresql.conf` for all sessions:
+### Load the Module
 
-```ini
-session_preload_libraries = 'pg_statement_rollback'
-pg_statement_rollback.enabled = on
-```
+Load it for one session:
 
-### Basic Usage
+    LOAD 'pg_statement_rollback.so';
 
-```sql
-BEGIN;
-CREATE TABLE test(id integer);
-INSERT INTO test SELECT 1;
-SELECT COUNT(*) FROM test;         -- returns 1
+For a selected role or database, add it to session_preload_libraries and reconnect:
 
-INSERT INTO test SELECT 'wrong';   -- ERROR: invalid input syntax
-ROLLBACK TO SAVEPOINT "PgSLRAutoSvpt";  -- rollback only the failed statement
+    session_preload_libraries = 'pg_statement_rollback'
 
-SELECT COUNT(*) FROM test;         -- still returns 1
-COMMIT;
-```
+Use shared_preload_libraries only if the deployment specifically needs server-wide loading; changing either preload list at server scope requires the corresponding restart or reconnect boundary.
 
-Without this extension, the error would abort the entire transaction and all subsequent statements would fail with "current transaction is aborted".
+### Recover from a Failed Statement
 
-### Configuration
+    BEGIN;
+    INSERT INTO accounts(id, balance) VALUES (1, 100);
+    INSERT INTO accounts(id, balance) VALUES (1, 200);
+    -- duplicate-key error
+    ROLLBACK TO SAVEPOINT "PgSLRAutoSvpt";
+    UPDATE accounts SET balance = 150 WHERE id = 1;
+    COMMIT;
 
-```sql
--- Enable/disable at any time in a session
-SET pg_statement_rollback.enabled TO off;
+The savepoint name is case-sensitive when quoted. Applications must detect the statement error and send the rollback command before continuing.
 
--- Change the savepoint name (superuser only)
-SET pg_statement_rollback.savepoint_name TO 'my_savepoint';
+### Configuration Index
 
--- Limit savepoints to write-only statements (default: on)
-SET pg_statement_rollback.enable_writeonly TO off;
-```
+- pg_statement_rollback.enabled enables automatic savepoints for the current session.
+- pg_statement_rollback.savepoint_name changes the automatic savepoint name and is superuser-controlled.
+- pg_statement_rollback.enable_writeonly limits savepoint creation to statements that can write.
 
-### Key Behaviors
+### Version 1.6 Behavior
 
-- Automatic savepoints are created server-side with minimal performance overhead
-- By default, savepoints are only created after write statements (INSERT, UPDATE, DELETE, etc.)
-- When `enable_writeonly` is on, SELECT statements do not trigger automatic savepoints
-- The client must still call `ROLLBACK TO SAVEPOINT "PgSLRAutoSvpt"` when handling errors
+Version 1.6 adds PostgreSQL 19 build support and improves detection of read-only transactions. The module no longer creates automatic savepoints in read-only transactions and releases its initial savepoint before SET TRANSACTION ... READ ONLY, which avoids interfering with dump and other read-only sessions.
+
+### Caveats
+
+- This is not transparent retry logic: clients must explicitly roll back to the automatic savepoint.
+- Savepoints add overhead to every covered statement. Measure write-heavy workloads before enabling the module broadly.
+- The upstream README warns of a crash with assertion-enabled PostgreSQL builds; do not treat development-build behavior as production-safe without testing.
+- Transaction-wide errors, connection failures, and errors that invalidate the session cannot be repaired by a savepoint.

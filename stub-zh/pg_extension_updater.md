@@ -2,25 +2,41 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/pg_extension_updater.control)
-- [官方上游文档](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/README.md)
+- [pg_extension_updater 官方 README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/README.md)
+- [3.4 版控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/pg_extension_updater.control)
+- [工作进程注册 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/pg_extension_updater--1.1.sql)
+- [更新器实现与配置](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/src/pg_extension_updater.c)
+- [pg_extension_base 预加载文档](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_base/README.md)
 
-`pg_extension_updater` — 在数据库启动时自动执行 ALTER EXTENSION UPDATE 的扩展更新器
+`pg_extension_updater` 会在数据库生命周期工作进程启动时，对已安装版本与可用默认版本不同的每个扩展执行 `ALTER EXTENSION ... UPDATE`。它用于减少部署新扩展文件后 SQL 与二进制版本不一致的问题；它不会安装缺失的扩展，也不能替代发布测试。
 
-已复核目录快照记录的版本为 `3.4`、类型为 `preload`、实现语言为 `C`。
-应先安装并验证声明的扩展依赖：`pg_extension_base`。
-整理后的兼容版本集合为 `16,17,18`；仍需针对目标服务器确认实际构建。
+### 启用自动更新
 
-```sql
-CREATE EXTENSION "pg_extension_updater";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_extension_updater';
+更新器依赖 `pg_extension_base`，后者必须在整个集群中预加载：
+
+```conf
+shared_preload_libraries = 'pg_extension_base'
 ```
 
-该上游项目与 `Snowflake` 相关；应根据所链接来源核实当前支持、许可证、打包方式与部署边界。
+重启 PostgreSQL 后，在每个需要自动更新的数据库中创建更新器：
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+```sql
+CREATE EXTENSION pg_extension_updater CASCADE;
+```
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+在 `template1` 中创建它，会让从该模板克隆的新数据库包含更新器。工作进程不会更新模板数据库自身的扩展，但会在新克隆的数据库中启动。
+
+### 运行时行为
+
+- 更新器控制文件中的 `#!shared_preload_libraries` 指令允许 `pg_extension_base` 加载其库。
+- 安装过程会注册内部生命周期工作进程 `extension_updater.main(internal)`。
+- 工作进程启动时读取 `pg_available_extensions`，并更新其中 `installed_version` 与 `default_version` 不同的条目。
+- `ALTER EXTENSION` 失败会记为警告，并且在该工作进程的本轮运行中只尝试一次。
+- `pg_extension_updater.enable` 是 postmaster 参数，默认为 `on`；设为 `off` 会禁用工作进程更新。修改后必须重启。
+
+### 注意事项
+
+- 自动迁移可能执行任何已安装扩展提供的升级 SQL。在生产数据库启用前，应验证软件包及升级路径。
+- 应独立审查扩展依赖变化，并按应用需求制作备份；某项警告不会回滚其他已经成功的扩展更新。
+- `3.4` 版没有面向用户的强制更新函数，也没有逐扩展允许列表。
+- 与 `3.3` 相比，`3.4` 没有改变更新器的 SQL API。

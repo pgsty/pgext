@@ -1,66 +1,60 @@
-
-
-
 ## 用法
 
-> [documentdb_core: DocumentDB for PostgreSQL 的核心 API 接口](https://github.com/documentdb/documentdb)
+来源：
 
-DocumentDB 在 PostgreSQL 上提供 MongoDB 兼容的文档数据库功能。`documentdb_core` 扩展为原生 Postgres 引入了 BSON 数据类型支持和操作。
+- [DocumentDB v0.114-0 README](https://github.com/documentdb/documentdb/blob/v0.114-0/README.md)
+- [`documentdb_core`控制文件](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_core/documentdb_core.control)
+- [BSON SQL定义](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
+- [官方预加载助手](https://github.com/documentdb/documentdb/blob/v0.114-0/scripts/preload_libraries.sh)
 
-### BSON 数据类型
+`documentdb_core`是DocumentDB使用的低层BSON类型和操作符层。通常它作为`documentdb`的依赖项安装，自身不提供集合CRUD、MongoDB网络协议或网关。
 
-该扩展为 PostgreSQL 添加了原生 BSON（二进制 JSON）数据类型，支持 MongoDB 风格文档的存储和操作。
+### 配置与安装
 
-### 基本文档操作
+必须通过`pg_documentdb_core`加载`shared_preload_libraries`，然后重启PostgreSQL：
 
-文档通过 DocumentDB API 层的 MongoDB 兼容 CRUD 操作进行管理：
-
-```python
-import pymongo
-
-client = pymongo.MongoClient(
-    'mongodb://user:pass@localhost:10260/?tls=true&tlsAllowInvalidCertificates=true'
-)
-
-db = client["myDatabase"]
-collection = db.create_collection("myCollection")
-
-# 插入文档
-collection.insert_one({
-    'name': 'John Doe',
-    'email': 'john@email.com',
-    'address': '123 Main St'
-})
-
-collection.insert_many([
-    {'name': 'Jane Smith', 'email': 'jane@email.com'},
-    {'name': 'Alice Johnson', 'email': 'alice@email.com'}
-])
-
-# 查询文档
-for doc in collection.find():
-    print(doc)
-
-single = collection.find_one({'name': 'John Doe'})
+```conf
+shared_preload_libraries = 'pg_documentdb_core'
 ```
 
-### 聚合管道
+对于完整的单节点堆栈，官方助手还会预加载`pg_cron`和`pg_documentdb`。在常规部署中安装父扩展：
 
-```python
-pipeline = [
-    {'$match': {'name': 'Alice Johnson'}},
-    {'$project': {'_id': 0, 'name': 1, 'email': 1}}
-]
-
-results = collection.aggregate(pipeline)
-for doc in results:
-    print(doc)
+```sql
+CREATE EXTENSION documentdb CASCADE;
 ```
 
-### 组件
+直接安装仅适用于低层BSON工作：
 
-- **documentdb_core**：原生 Postgres 的 BSON 数据类型支持和操作
-- **documentdb (pg_documentdb)**：提供 CRUD 功能的公共 API 接口
-- **pg_documentdb_gw**：网关协议转换层（MongoDB 线协议到 PostgreSQL）
+```sql
+CREATE EXTENSION documentdb_core;
+```
 
-该扩展支持对 BSON 文档的全文搜索、地理空间查询和向量搜索。
+该扩展为超级用户专用且不可重定位。
+
+### BSON 工作流
+
+```sql
+SELECT '{"name":"Ada","score":42}'::documentdb_core.bson;
+
+SELECT documentdb_core.bson_get_value_text(
+  '{"name":"Ada","score":42}'::documentdb_core.bson,
+  'name'
+);
+```
+
+除非`documentdb_core`在`search_path`中，否则请显式使用模式限定名。
+
+### 重要对象
+
+- `documentdb_core.bson`存储BSON文档。
+- `documentdb_core.bsonquery`表示用于DocumentDB计划器和操作符层的BSON查询值。
+- `documentdb_core.bsonsequence`表示BSON值序列。
+- `bson_get_value` 和 `bson_get_value_text`，通过`->`和`->>`也暴露出来，从BSON文档中提取路径。
+- `bson_from_bytea`, `bson_to_bytea`, `bson_json_to_bson` 和 `bson_to_json_string` 支持序列化边界。
+- `bson_btree_ops` 和 `bson_hash_ops` 提供更高层所需的比较和哈希支持。
+
+### 操作边界
+
+BSON比较、索引和数值语义遵循DocumentDB的实现，不应假设与PostgreSQL `jsonb`匹配。大多数对象是`documentdb`的基础架构；寻求集合和MongoDB命令的应用程序应使用父扩展或网关而非直接构建在内部类型上。
+
+版本0.114-0保持`documentdb_core`与整个DocumentDB堆栈一致。上游变更日志未标识此发布单独的用户核心API迁移，因此没有新的独立工作流程声明。

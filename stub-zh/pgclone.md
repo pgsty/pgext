@@ -1,98 +1,96 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/valehdba/pgclone/blob/main/README.md)、[使用指南](https://github.com/valehdba/pgclone/blob/main/docs/USAGE.md)、[异步指南](https://github.com/valehdba/pgclone/blob/main/docs/ASYNC.md)、[v4.3.2 发行版](https://github.com/valehdba/pgclone/releases/tag/v4.3.2)、[变更日志](https://github.com/valehdba/pgclone/blob/main/CHANGELOG.md)、[SQL 安装脚本](https://github.com/valehdba/pgclone/blob/main/sql/pgclone--4.3.2.sql)
+来源：
 
-`pgclone` 可直接从 SQL 克隆表、模式、函数、角色和整个数据库。在 v4.x 中，公共 API 位于 `pgclone` 模式下；上游和 Pigsty 当前都跟踪 PostgreSQL 14-18。
+- [pgclone v4.4.2 README](https://github.com/valehdba/pgclone/blob/v4.4.2/README.md)
+- [pgclone v4.4.2 使用指南](https://github.com/valehdba/pgclone/blob/v4.4.2/docs/USAGE.md)
+- [异步克隆指南](https://github.com/valehdba/pgclone/blob/v4.4.2/docs/ASYNC.md)
+- [pgclone v4.4.2 发行说明](https://github.com/valehdba/pgclone/releases/tag/v4.4.2)
 
-### 核心克隆函数
+pgclone 通过 PostgreSQL 连接克隆表、模式、函数、角色或整个数据库。它还提供预检、结构差异、屏蔽、一致快照以及可选的后台作业。使用它进行受控数据库复制，而不是将其用作备份和恢复的无人值守替代品。
 
-```sql
-CREATE EXTENSION pgclone;
-SELECT pgclone.version();
+### 创建并运行一个克隆
 
-SELECT pgclone.table(
-  'host=source-server dbname=mydb user=postgres password=secret',
-  'public',
-  'customers',
-  true
-);
+    CREATE EXTENSION pgclone;
+    SELECT pgclone.version();
 
-SELECT pgclone.schema(
-  'host=source-server dbname=mydb user=postgres password=secret',
-  'sales',
-  true
-);
+    SELECT pgclone.table(
+      'host=source.example dbname=app user=clone_user',
+      'public',
+      'customers',
+      true
+    );
 
-SELECT pgclone.database(
-  'host=source-server dbname=mydb user=postgres password=secret',
-  true
-);
-```
+模式和数据库入口点遵循相同的连接优先模式：
 
-- `pgclone.table(...)`、`pgclone.schema(...)`、`pgclone.functions(...)`、`pgclone.database(...)`
-- `pgclone.database_create(...)` 会创建本地目标数据库并克隆进去。
-- `_ex` 变体暴露显式布尔参数，用于控制索引、约束和触发器。
+    SELECT pgclone.schema(
+      'host=source.example dbname=app user=clone_user',
+      'sales',
+      true
+    );
 
-### 选项与脱敏
+    SELECT pgclone.database(
+      'host=source.example dbname=app user=clone_user',
+      true
+    );
 
-- JSON 选项支持 `columns`、`where`、`conflict`，以及 `indexes`、`constraints`、`triggers` 等对象开关。
-- JSON 选项也包含 `consistent`；v4.3.0+ 默认使用跨表一致快照，并可通过 `{"consistent": false}` 在单次调用中禁用。
-- 上游使用指南记录了脱敏、敏感列自动发现、静态脱敏、动态脱敏、克隆验证，以及 GDPR/合规报告。
+主要 API 包括 pgclone.table、pgclone.schema、pgclone.functions、pgclone.database 和 pgclone.database_create。_ex 变体暴露了对索引、约束和触发器的显式选择。
 
-```sql
-SELECT pgclone.table(
-  'host=source-server dbname=mydb user=postgres',
-  'public', 'users', true, 'users_lite',
-  '{"columns":["id","name","email"],"where":"status = ''active''"}'
-);
-```
+### 过滤和屏蔽数据
 
-### 一致性、差异与预检
+JSON 选项可以限制列和行：
 
-```sql
-SELECT pgclone.diff(
-  'host=source-server dbname=prod user=postgres',
-  'app_schema'
-)::jsonb;
+    SELECT pgclone.table(
+      'host=source.example dbname=app user=clone_user',
+      'public',
+      'users',
+      true,
+      'users_lite',
+      '{"columns":["id","name","email"],"where":"active"}'
+    );
 
-SELECT pgclone.preflight(
-  'host=source-server dbname=prod user=postgres',
-  'app_schema'
-)::jsonb;
-```
+4.4 版本增加了模式级和数据库级屏蔽、表包含模式以及 exclude_tables。屏蔽表达式在源端的 COPY 查询中运行，因此成功屏蔽的数据不会以未屏蔽的形式到达目标。
 
-- `pgclone.diff(conninfo, schema)` 报告只读 DDL 漂移，覆盖表、列、索引、约束、触发器、视图和序列。
-- `pgclone.preflight(conninfo, schema)` 在克隆前检查源端和目标端的就绪状态，包括连接、版本、权限、容量、命名冲突、缺失角色、缺失扩展和表空间问题。
-- v4.3.0+ 默认在源端以 `REPEATABLE READ READ ONLY` 执行克隆读取。多连接的模式、数据库和并行池克隆共享同一个导出快照，从而在活动源端持续写入时保持父子对象一致性。
-- 长时间克隆会在源端保持事务打开，可能延迟清理和 WAL 回收；当这个代价比跨表一致性更重要时，可使用 `{"consistent": false}`。
+4.4.2 版本的屏蔽验证器会跳过不安全或不兼容的屏蔽：无法转换为列的常量值、NOT NULL 列中的 NULL 值、唯一或主键列上的非哈希屏蔽，以及外键列上的屏蔽。被跳过的屏蔽会使该列保持未屏蔽状态。将警告视为隐私门失败，并在分发克隆之前检查结果。
 
-### 异步与进度
+### 预检、差异和一致性
 
-```sql
--- postgresql.conf
-shared_preload_libraries = 'pgclone'
+    SELECT pgclone.preflight(
+      'host=source.example dbname=app user=clone_user',
+      'public'
+    )::jsonb;
 
-SELECT pgclone.schema_async(
-  'host=source-server dbname=mydb user=postgres',
-  'sales', true, '{"parallel":4}'
-);
+    SELECT pgclone.diff(
+      'host=source.example dbname=app user=clone_user',
+      'public'
+    )::jsonb;
 
-SELECT * FROM pgclone.jobs_view;
-SELECT pgclone.progress(1);
-SELECT pgclone.cancel(1);
-```
+预检检查连接性、版本、权限、容量、名称、角色、扩展和表空间。差异报告 DDL 差异而不应用更改。
 
-- `pgclone.table_async(...)` 和 `pgclone.schema_async(...)` 在后台工作进程中运行。
-- `pgclone.jobs_view`、`pgclone.progress_detail()`、`pgclone.resume()` 和 `pgclone.clear_jobs()` 提供任务跟踪与恢复。
-- v4.3.2 将快照保持器的弹性修复移植到异步/后台工作进程路径，包括保活注入，以及面向网络源连接的超时保护。
+模式和数据库克隆默认使用共享导出快照，因此相关表可以一致地复制。长时间的快照可能会延迟源真空清理和 WAL 回收。仅在明确接受跨表不一致性时才将 consistent 选项设置为 false。
 
-### 注意事项
+### 异步作业
 
-- 上游要求 PostgreSQL 14+。
-- 使用指南说明安装和使用该扩展需要超级用户权限。
-- 异步功能需要 `shared_preload_libraries = 'pgclone'`；工作进程池的并行度也依赖 `max_worker_processes`。
-- 如果必须绕过源端快照问题，一致性异步克隆仍可使用 `{"consistent": false}` 退出一致快照模式。
-- Pigsty 为 PostgreSQL 14-18 打包 `4.3.2`。2026 年 6 月的 RPM 重建使用了 `LLVM_BINPATH` 构建修复；已复核上游，除软件包注意事项和既有 v4.3.2 异步快照说明外，没有实质文档变化。
+异步执行需要预加载和重启：
+
+    shared_preload_libraries = 'pgclone'
+
+    SELECT pgclone.schema_async(
+      'host=source.example dbname=app user=clone_user',
+      'sales',
+      true,
+      '{"parallel":4}'
+    );
+
+    SELECT * FROM pgclone.jobs_view;
+    SELECT pgclone.progress(1);
+    SELECT pgclone.cancel(1);
+
+pgclone 还暴露了 progress_detail、resume 和 clear_jobs 用于作业管理。根据所需的并行度调整 max_worker_processes。
+
+### 重要边界
+
+- 上游使用指南要求超级用户权限来安装和使用 pgclone。
+- 异步模式下的模式/数据库/并行路径在 v4.4.2 中不尊重屏蔽、表或 exclude_tables。当这些控制是安全需求时，请使用文档中同步路径。
+- 请勿将密码存储在 SQL 和日志中；优先考虑 libpq 服务文件、密钥文件或其他受控凭据机制。
+- v4.4.2 版本改进了序列状态的复制，并保护 PostgreSQL 17 源会话免受 transaction_timeout 影响，但调用者仍需验证对象所有权、扩展、角色和克隆后应用程序行为。

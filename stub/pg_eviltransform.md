@@ -1,48 +1,57 @@
-
-
-
 ## Usage
 
-> [pg_eviltransform: Coordinate transform between WGS84, GCJ02, and BD09](https://github.com/aiyou178/pg_eviltransform)
+Sources:
 
-`pg_eviltransform` extends PostGIS `ST_Transform` with BD09/GCJ02 support for Chinese coordinate systems. It exposes `ST_EvilTransform` with the same overload interface as `ST_Transform`.
+- [Official v0.0.4 README](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.4/README.md)
+- [v0.0.4 release notes](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.4)
+- [v0.0.4 control file](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.4/pg_eviltransform.control)
+- [v0.0.4 upgrade SQL](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.4/pg_eviltransform--0.0.3--0.0.4.sql)
 
-Custom SRIDs:
-- `990001`: GCJ02
-- `990002`: BD09
+`pg_eviltransform` extends PostGIS with coordinate transformations involving China's GCJ-02 and BD-09 systems. Version `0.0.4` also adds exact Jenks natural-break classification through `ST_JenksBins` array and aggregate overloads.
 
-### Functions
-
-```sql
-ST_EvilTransform(geometry, to_srid integer)
-ST_EvilTransform(geometry, to_proj text)
-ST_EvilTransform(geometry, from_proj text, to_srid integer)
-ST_EvilTransform(geometry, from_proj text, to_proj text)
-```
-
-If neither side uses custom coordinates, it delegates directly to `ST_Transform`. If BD09/GCJ02 is involved, it transforms via WGS84 (`4326`) when needed.
-
-### Examples
+### Coordinate Transformation
 
 ```sql
--- WGS84 to GCJ02 using text literal
-SELECT ST_EvilTransform(ST_SetSRID('POINT(120 30)'::geometry, 4326), 'GCJ02');
+CREATE EXTENSION postgis;
+CREATE EXTENSION pg_eviltransform;
 
--- WGS84 to BD09 using text literal
-SELECT ST_EvilTransform(ST_SetSRID('POINT(120 30)'::geometry, 4326), 'BD09');
-
--- WGS84 to GCJ02 using numeric SRID
-SELECT ST_EvilTransform(ST_SetSRID('POINT(120 30)'::geometry, 4326), 990001);
-
--- BD09 to Web Mercator
+-- WGS84 to GCJ-02 using a readable coordinate-system name.
 SELECT ST_EvilTransform(
-  ST_SetSRID('POINT(120.011070620552 30.0038830555128)'::geometry, 990002), 3857
+    ST_SetSRID('POINT(120 30)'::geometry, 4326),
+    'GCJ02'
 );
 
--- from_proj / to_proj overload
-SELECT ST_EvilTransform('POINT(120 30)'::geometry, 'EPSG:4326', 'GCJ02');
+-- BD-09 to Web Mercator.
+SELECT ST_EvilTransform(
+    ST_SetSRID('POINT(120.011070620552 30.0038830555128)'::geometry, 990002),
+    3857
+);
 ```
 
-### Performance
+Custom SRIDs are `990001` for GCJ-02 and `990002` for BD-09. When neither endpoint uses a custom system, `ST_EvilTransform` delegates to PostGIS `ST_Transform`; otherwise it converts through WGS84 (`4326`) when necessary.
 
-On PG18 with 200,000 rows, `ST_EvilTransform` is ~30-45x faster than the regex-based SQL approach.
+### Jenks Natural Breaks
+
+```sql
+-- Array form; NULL elements are ignored.
+SELECT ST_JenksBins(ARRAY[1, 2, NULL, 10, 11]::numeric[], 2);
+
+-- Streaming aggregate form for a large table.
+SELECT ST_JenksBins(value, 7)
+FROM measurements;
+
+-- Return lower rather than upper bin edges.
+SELECT ST_JenksBins(value, 7, true)
+FROM measurements;
+```
+
+Array inputs support `numeric`, `double precision`, `real`, `bigint`, `integer`, and `smallint`. Aggregate inputs are `numeric` or `double precision`; cast other numeric columns when needed.
+
+### API Index and Caveats
+
+- `ST_EvilTransform(geometry, integer|text)` and `ST_EvilTransform(geometry, text, integer|text)`: four overloads corresponding to the PostGIS `ST_Transform` interface.
+- `ST_JenksBins(values[], breaks [, invert])`: classifies an array and returns `double precision[]` edges.
+- `ST_JenksBins(value, breaks [, invert])`: streaming aggregate that avoids materializing `array_agg`.
+- PostGIS is a runtime prerequisite and must be installed before `pg_eviltransform`.
+- Jenks inputs must be finite and `breaks` must be at least one. `numeric` values are converted to finite `f64`, so returned edges are floating-point values.
+- When the distinct value count does not exceed `breaks`, the result is the sorted set of unique values; no valid input rows return `NULL`.

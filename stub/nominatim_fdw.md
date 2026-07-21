@@ -1,85 +1,76 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/jimjonesbr/nominatim_fdw/blob/master/README.md), [Nominatim API](https://nominatim.org/)
+Sources:
 
-`nominatim_fdw` is a PostgreSQL foreign data wrapper for Nominatim geocoding services. Upstream exposes it through SQL functions mapped to the Nominatim `search`, `reverse`, and `lookup` endpoints rather than through foreign tables.
+- [nominatim_fdw v2.0 README](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.0/README.md)
+- [nominatim_fdw v2.0 changelog](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.0/CHANGELOG.md)
+- [Extension control file](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.0/nominatim_fdw.control)
+- [Official Nominatim API overview](https://nominatim.org/release-docs/develop/api/Overview/)
+- [OpenStreetMap Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/)
 
-### Create a server
+`nominatim_fdw` calls a Nominatim geocoding service from PostgreSQL. Unlike a conventional FDW, it exposes functions for search, reverse geocoding, and OSM-object lookup; it does not create queryable foreign tables.
+
+### Configure a Server
 
 ```sql
 CREATE EXTENSION nominatim_fdw;
 
 CREATE SERVER osm
-FOREIGN DATA WRAPPER nominatim_fdw
-OPTIONS (url 'https://nominatim.openstreetmap.org');
+  FOREIGN DATA WRAPPER nominatim_fdw
+  OPTIONS (
+    url 'https://nominatim.openstreetmap.org',
+    connect_timeout '10',
+    max_connect_retry '2',
+    max_connect_redirect '1',
+    accept_language 'en'
+  );
 ```
 
-Documented server options:
+The public OpenStreetMap endpoint has an official usage policy. For sustained or bulk workloads, use an authorized provider or operate your own Nominatim service, identify the application as required, and respect rate limits.
 
-- `url` (required)
-- `http_proxy`
-- `connect_timeout`
-- `max_connect_retry`
-- `max_connect_redirect`
+### Core Workflow
 
-Proxy credentials belong in a user mapping:
+Free-form search:
 
 ```sql
-CREATE USER MAPPING FOR pguser
-SERVER osm
-OPTIONS (proxy_user 'myuser', proxy_password 'mysecret');
-```
-
-### Geocoding functions
-
-Structured or free-form search:
-
-```sql
-SELECT osm_id, ref, lon, lat, boundingbox
-FROM nominatim_search(
-  server_name => 'osm',
-  street => 'Neubrueckenstrasse 63',
-  city => 'Muenster',
-  country => 'Germany'
-);
-
 SELECT osm_id, display_name, lon, lat
 FROM nominatim_search(
   server_name => 'osm',
-  q => '1600 Pennsylvania Avenue, Washington DC'
+  q => 'Neubrückenstraße 63, Münster, Germany'
 );
 ```
 
-Reverse lookup:
+Reverse geocoding and object lookup:
 
 ```sql
-SELECT osm_id, display_name, boundingbox
+SELECT osm_id, display_name, addressdetails
 FROM nominatim_reverse(
   server_name => 'osm',
-  lon => -77.0365,
-  lat => 38.8977,
-  zoom => 18,
+  lon => 7.6293,
+  lat => 51.9648,
   addressdetails => true
 );
-```
 
-OSM object lookup:
-
-```sql
 SELECT osm_id, display_name
 FROM nominatim_lookup(
   server_name => 'osm',
-  osm_ids => 'W121736959,R123456'
+  osm_ids => 'W121736959'
 );
 ```
 
-The README notes OSM ID prefixes such as `N` for nodes, `W` for ways, and `R` for relations.
+### Important Objects
 
-### Notes
+- `nominatim_search(...)` implements free-form or structured forward search.
+- `nominatim_reverse(...)` resolves longitude and latitude to the nearest suitable OSM address.
+- `nominatim_lookup(...)` fetches node, way, or relation identifiers such as `N123`, `W456`, or `R789`.
+- `nominatim_fdw_version()` reports the extension and principal library versions.
+- `nominatim_fdw_settings` exposes dependency and build versions as rows.
+- Server options include `url`, proxy configuration, timeouts, retry and redirect limits, and default `accept_language`.
 
-- Upstream documents PostgreSQL 12+, `libxml2` 2.5.0+, and `libcurl` 7.74.0+.
-- The extension exposes `nominatim_fdw_version()`.
-- The current README documents `CREATE EXTENSION ... WITH VERSION '1.3'` and `ALTER EXTENSION ... UPDATE TO '1.3'`, so upstream has moved past the requested `1.2` refresh target.
+All endpoint functions are `STRICT`: an explicit SQL `NULL` argument returns no rows without sending a request. In 2.0 they are correctly declared `VOLATILE`, because responses are remote and can change.
+
+### Version 2.0 Changes and Caveats
+
+Version 2.0 validates reverse coordinates, adds `email`, `polygon_threshold`, and `entrances`, exposes dependency settings, and fixes JSON escaping for returned detail fields. It also has user-visible compatibility changes: reverse output uses `display_name`; `addressparts` becomes `addressdetails`; address details default to true for reverse and lookup; and version output is shorter. Review result-column consumers before upgrading from 1.3.
+
+Each call performs network I/O in the database statement. Use finite timeouts, constrain who can create or alter servers, and avoid invoking a public service once per row in a large query. The upstream build requires PostgreSQL 10 or newer, libxml2 2.5 or newer, and libcurl 7.74 or newer.
