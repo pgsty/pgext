@@ -609,16 +609,16 @@ weight: 200
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
-| 2270 | {{< alias "hunspell_cs_cz" >}} | Hunspell捷克语全文检索词典 |
-| 2271 | {{< alias "hunspell_de_de" >}} | Hunspell德语全文检索词典 |
-| 2272 | {{< alias "hunspell_en_us" >}} | Hunspell英语全文检索词典 |
-| 2273 | {{< alias "hunspell_fr" >}} | Hunspell法语全文检索词典 |
-| 2274 | {{< alias "hunspell_ne_np" >}} | Hunspell尼泊尔语全文检索词典 |
-| 2275 | {{< alias "hunspell_nl_nl" >}} | Hunspell荷兰语全文检索词典 |
-| 2276 | {{< alias "hunspell_nn_no" >}} | Hunspell挪威语全文检索词典 |
-| 2277 | {{< alias "hunspell_pt_pt" >}} | Hunspell葡萄牙语全文检索词典 |
-| 2278 | {{< alias "hunspell_ru_ru" >}} | Hunspell俄语全文检索词典 |
-| 2279 | {{< alias "hunspell_ru_ru_aot" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
+| 2270 | {{< alias "hunspell_cs_cz" "hunspell" >}} | Hunspell捷克语全文检索词典 |
+| 2271 | {{< alias "hunspell_de_de" "hunspell" >}} | Hunspell德语全文检索词典 |
+| 2272 | {{< alias "hunspell_en_us" "hunspell" >}} | Hunspell英语全文检索词典 |
+| 2273 | {{< alias "hunspell_fr" "hunspell" >}} | Hunspell法语全文检索词典 |
+| 2274 | {{< alias "hunspell_ne_np" "hunspell" >}} | Hunspell尼泊尔语全文检索词典 |
+| 2275 | {{< alias "hunspell_nl_nl" "hunspell" >}} | Hunspell荷兰语全文检索词典 |
+| 2276 | {{< alias "hunspell_nn_no" "hunspell" >}} | Hunspell挪威语全文检索词典 |
+| 2277 | {{< alias "hunspell_pt_pt" "hunspell" >}} | Hunspell葡萄牙语全文检索词典 |
+| 2278 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Hunspell俄语全文检索词典 |
+| 2279 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
 
 ## Python
 

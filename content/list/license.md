@@ -69,16 +69,16 @@ PostgreSQL extension categorized by license.
 | 2180 | {{< alias "pg_textsearch" >}} | Full-text search with BM25 ranking |
 | 2220 | {{< alias "pg_fts" >}} | Full-text search with BM25 and BM25F ranking |
 | 2230 | {{< alias "pg_cjk_parser" >}} | CJK bigram parser derived from PostgreSQL full-text search |
-| 2270 | {{< alias "hunspell_cs_cz" >}} | Czech Hunspell Dictionary |
-| 2271 | {{< alias "hunspell_de_de" >}} | German Hunspell Dictionary |
-| 2272 | {{< alias "hunspell_en_us" >}} | en_US Hunspell Dictionary |
-| 2273 | {{< alias "hunspell_fr" >}} | French Hunspell Dictionary |
-| 2274 | {{< alias "hunspell_ne_np" >}} | Nepali Hunspell Dictionary |
-| 2275 | {{< alias "hunspell_nl_nl" >}} | Dutch Hunspell Dictionary |
-| 2276 | {{< alias "hunspell_nn_no" >}} | Norwegian (norsk) Hunspell Dictionary |
-| 2277 | {{< alias "hunspell_pt_pt" >}} | Portuguese Hunspell Dictionary |
-| 2278 | {{< alias "hunspell_ru_ru" >}} | Russian Hunspell Dictionary |
-| 2279 | {{< alias "hunspell_ru_ru_aot" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
+| 2270 | {{< alias "hunspell_cs_cz" "hunspell" >}} | Czech Hunspell Dictionary |
+| 2271 | {{< alias "hunspell_de_de" "hunspell" >}} | German Hunspell Dictionary |
+| 2272 | {{< alias "hunspell_en_us" "hunspell" >}} | en_US Hunspell Dictionary |
+| 2273 | {{< alias "hunspell_fr" "hunspell" >}} | French Hunspell Dictionary |
+| 2274 | {{< alias "hunspell_ne_np" "hunspell" >}} | Nepali Hunspell Dictionary |
+| 2275 | {{< alias "hunspell_nl_nl" "hunspell" >}} | Dutch Hunspell Dictionary |
+| 2276 | {{< alias "hunspell_nn_no" "hunspell" >}} | Norwegian (norsk) Hunspell Dictionary |
+| 2277 | {{< alias "hunspell_pt_pt" "hunspell" >}} | Portuguese Hunspell Dictionary |
+| 2278 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Russian Hunspell Dictionary |
+| 2279 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |

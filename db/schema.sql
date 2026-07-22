@@ -702,7 +702,7 @@ COMMENT ON COLUMN pgext.bin.size_full IS 'Installed size';
 -- Extension Package Availability
 -----------------------------------
 -- DROP TYPE IF EXISTS pgext.pkg_state CASCADE;
-CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'HIDE', 'BREAK','THROW', 'FORK');
+CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'N/A');
 
 -- Cross-reference table showing extension package availability across PG versions and OS platforms
 -- DROP TABLE IF EXISTS pgext.pkg CASCADE;
@@ -713,7 +713,7 @@ CREATE TABLE IF NOT EXISTS pgext.pkg
     name    TEXT,                                   -- Versioned package name (e.g., 'postgresql-17-pgvector')
     pkg     TEXT,                                   -- Normalized extension package name (like pgvector, postgis)
     ext     TEXT REFERENCES pgext.extension (name) ON DELETE CASCADE, -- Leading extension name in this package
-    state   pgext.pkg_state DEFAULT 'MISS',         -- State: AVAIL, MISS, HIDE, BREAK, THROW
+    state   pgext.pkg_state DEFAULT 'MISS',         -- State: AVAIL, MISS, N/A
     hide    BOOLEAN         DEFAULT false,          -- Hide this entry in the extension category listing
     org     TEXT            DEFAULT NULL,           -- Repository source of latest package (pgdg or pigsty)
     version TEXT            DEFAULT NULL,           -- Latest available version for this combination
@@ -729,7 +729,7 @@ COMMENT ON COLUMN pgext.pkg.os IS 'OS and architecture identifier in format os_c
 COMMENT ON COLUMN pgext.pkg.pkg IS 'Normalized extension package name like pgvector, postgis';
 COMMENT ON COLUMN pgext.pkg.ext IS 'Leading extension name within this package';
 COMMENT ON COLUMN pgext.pkg.name IS 'Full versioned package name (e.g., postgresql-17-pgvector, postgresql-16-postgis)';
-COMMENT ON COLUMN pgext.pkg.state IS 'State code: AVAIL, MISS, HIDE, BREAK, THROW';
+COMMENT ON COLUMN pgext.pkg.state IS 'State code: AVAIL, MISS, N/A';
 COMMENT ON COLUMN pgext.pkg.org IS 'Latest package source organization (pgdg or pigsty)';
 COMMENT ON COLUMN pgext.pkg.version IS 'Latest available package version for this specific PG+OS combination';
 COMMENT ON COLUMN pgext.pkg.count IS 'Count of available package variants (including different repos and versions)';
@@ -741,10 +741,7 @@ COMMENT ON COLUMN pgext.pkg.count IS 'Count of available package variants (inclu
 CREATE MATERIALIZED VIEW pgext.matrix AS
 WITH lead_packages AS (
     SELECT DISTINCT ON (e.pkg)
-           e.id, e.pkg, e.name AS ext,
-           coalesce(e.pg_ver, ARRAY[]::text[]) AS pg_ver,
-           coalesce(e.rpm_repo, '') AS rpm_repo,
-           coalesce(e.deb_repo, '') AS deb_repo
+           e.id, e.pkg, e.name AS ext
     FROM pgext.extension e
     WHERE e.lead = true
       AND (e.state IS NULL OR e.state <> 'not-ready')
@@ -752,7 +749,7 @@ WITH lead_packages AS (
     ORDER BY e.pkg, e.id
 ),
 os_dim AS (
-    SELECT o.os, o.os_type,
+    SELECT o.os,
            row_number() OVER (
                ORDER BY CASE o.os_vendor
                             WHEN 'EL' THEN 0
@@ -773,10 +770,10 @@ pg_dim AS (
     WHERE p.active = true
 ),
 matrix_cells AS (
-    SELECT lp.id, lp.pkg, lp.ext, lp.pg_ver, lp.rpm_repo, lp.deb_repo,
-           o.os, o.os_type, o.oi, p.pg, p.pi,
+    SELECT lp.id, lp.pkg, lp.ext,
+           o.os, o.oi, p.pg, p.pi,
            coalesce(x.name, '') AS name,
-           coalesce(x.state::text, 'MISS') AS state,
+           coalesce(x.state::text, 'N/A') AS state,
            upper(coalesce(x.org, '')) AS org,
            coalesce(x.version, '') AS version,
            coalesce(x.count, 0) AS count
@@ -789,17 +786,9 @@ classified AS (
     SELECT c.*,
            CASE
                WHEN c.state = 'AVAIL' AND c.org = 'PGDG' THEN 'B'
-               WHEN c.state = 'AVAIL' AND c.org = 'PIGSTY' THEN 'G'
-               WHEN c.state = 'AVAIL' THEN 'Y'
-               WHEN c.state = 'MISS' AND NOT (c.pg_ver @> ARRAY[c.pg::text]) THEN '.'
-               WHEN c.state = 'MISS' AND (
-                   (c.os_type = 'rpm' AND c.rpm_repo = '') OR
-                   (c.os_type = 'deb' AND c.deb_repo = '')
-               ) THEN 'A'
+               WHEN c.state = 'AVAIL' THEN 'G'
                WHEN c.state = 'MISS' THEN 'R'
-               WHEN c.state = 'HIDE' THEN '.'
-               WHEN c.state IN ('FORK', 'THROW') THEN 'P'
-               WHEN c.state = 'BREAK' THEN 'O'
+               WHEN c.state = 'N/A' THEN '.'
                ELSE '.'
            END AS code
     FROM matrix_cells c
@@ -809,7 +798,7 @@ detail_names AS (
     FROM (
         SELECT DISTINCT id, name
         FROM classified
-        WHERE code IN ('B', 'G', 'P', 'O', 'Y') AND name <> ''
+        WHERE code IN ('B', 'G') AND name <> ''
     ) n
     GROUP BY id
 ),
@@ -818,7 +807,7 @@ detail_versions AS (
     FROM (
         SELECT DISTINCT id, version
         FROM classified
-        WHERE code IN ('B', 'G', 'P', 'O', 'Y') AND version <> ''
+        WHERE code IN ('B', 'G') AND version <> ''
     ) v
     GROUP BY id
 ),
@@ -833,11 +822,6 @@ matrix_rows AS (
                        coalesce(array_position(n.names, c.name) - 1, -1),
                        coalesce(array_position(v.versions, c.version) - 1, -1),
                        c.count
-                   )
-                   WHEN c.code IN ('P', 'O', 'Y') THEN jsonb_build_array(
-                       coalesce(array_position(n.names, c.name) - 1, -1),
-                       coalesce(array_position(v.versions, c.version) - 1, -1),
-                       c.count, c.state, c.org
                    )
                    ELSE 'null'::jsonb
                END
@@ -860,7 +844,7 @@ CREATE UNIQUE INDEX matrix_id_idx ON pgext.matrix (id);
 CREATE UNIQUE INDEX matrix_pkg_idx ON pgext.matrix (pkg);
 
 COMMENT ON MATERIALIZED VIEW pgext.matrix IS 'Precomputed compact package x OS x PG build matrix for /api/v1/matrix';
-COMMENT ON COLUMN pgext.matrix.codes IS 'Positional status codes ordered by active OS then active PG descending';
+COMMENT ON COLUMN pgext.matrix.codes IS 'Positional status codes ordered by active OS then active PG descending: B=PGDG, G=Pigsty, R=MISS, .=N/A';
 COMMENT ON COLUMN pgext.matrix.data IS 'Compact wire row: p=package, e=lead extension, c=status string, n/v=row dictionaries, d=aligned indexed details';
 -- END PGEXT MATRIX DDL
 

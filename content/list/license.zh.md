@@ -69,16 +69,16 @@ weight: 300
 | 2180 | {{< alias "pg_textsearch" >}} | 带有BM25排序的全文搜索扩展 |
 | 2220 | {{< alias "pg_fts" >}} | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | 2230 | {{< alias "pg_cjk_parser" >}} | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
-| 2270 | {{< alias "hunspell_cs_cz" >}} | Hunspell捷克语全文检索词典 |
-| 2271 | {{< alias "hunspell_de_de" >}} | Hunspell德语全文检索词典 |
-| 2272 | {{< alias "hunspell_en_us" >}} | Hunspell英语全文检索词典 |
-| 2273 | {{< alias "hunspell_fr" >}} | Hunspell法语全文检索词典 |
-| 2274 | {{< alias "hunspell_ne_np" >}} | Hunspell尼泊尔语全文检索词典 |
-| 2275 | {{< alias "hunspell_nl_nl" >}} | Hunspell荷兰语全文检索词典 |
-| 2276 | {{< alias "hunspell_nn_no" >}} | Hunspell挪威语全文检索词典 |
-| 2277 | {{< alias "hunspell_pt_pt" >}} | Hunspell葡萄牙语全文检索词典 |
-| 2278 | {{< alias "hunspell_ru_ru" >}} | Hunspell俄语全文检索词典 |
-| 2279 | {{< alias "hunspell_ru_ru_aot" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
+| 2270 | {{< alias "hunspell_cs_cz" "hunspell" >}} | Hunspell捷克语全文检索词典 |
+| 2271 | {{< alias "hunspell_de_de" "hunspell" >}} | Hunspell德语全文检索词典 |
+| 2272 | {{< alias "hunspell_en_us" "hunspell" >}} | Hunspell英语全文检索词典 |
+| 2273 | {{< alias "hunspell_fr" "hunspell" >}} | Hunspell法语全文检索词典 |
+| 2274 | {{< alias "hunspell_ne_np" "hunspell" >}} | Hunspell尼泊尔语全文检索词典 |
+| 2275 | {{< alias "hunspell_nl_nl" "hunspell" >}} | Hunspell荷兰语全文检索词典 |
+| 2276 | {{< alias "hunspell_nn_no" "hunspell" >}} | Hunspell挪威语全文检索词典 |
+| 2277 | {{< alias "hunspell_pt_pt" "hunspell" >}} | Hunspell葡萄牙语全文检索词典 |
+| 2278 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Hunspell俄语全文检索词典 |
+| 2279 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2480 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |

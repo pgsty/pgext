@@ -7,14 +7,14 @@ categories: ["FTS"]
 width: full
 ---
 
-[**hunspell_nl_nl**](https://github.com/postgrespro/hunspell_dicts) : Dutch Hunspell Dictionary
+[**hunspell**](https://github.com/postgrespro/hunspell_dicts) : Dutch Hunspell Dictionary
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2275** | {{< badge content="hunspell_nl_nl" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_nl_nl" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2275** | {{< badge content="hunspell_nl_nl" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_nl_nl" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -25,148 +25,37 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "hunspell_cs_cz" >}} {{< ext "hunspell_de_de" >}} {{< ext "hunspell_en_us" >}} {{< ext "hunspell_fr" >}} {{< ext "hunspell_ne_np" >}} {{< ext "hunspell_nn_no" >}} {{< ext "hunspell_pt_pt" >}} {{< ext "hunspell_ru_ru" >}} |
+|    **Siblings**   | {{< ext "hunspell_cs_cz" >}} {{< ext "hunspell_de_de" >}} {{< ext "hunspell_en_us" >}} {{< ext "hunspell_fr" >}} {{< ext "hunspell_ne_np" >}} {{< ext "hunspell_nn_no" >}} {{< ext "hunspell_pt_pt" >}} {{< ext "hunspell_ru_ru" >}} {{< ext "hunspell_ru_ru_aot" >}} |
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hunspell_nl_nl` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "hunspell_nl_nl_18" "green" >}} {{< bg "17" "hunspell_nl_nl_17" "green" >}} {{< bg "16" "hunspell_nl_nl_16" "green" >}} {{< bg "15" "hunspell_nl_nl_15" "green" >}} {{< bg "14" "hunspell_nl_nl_14" "green" >}} | `hunspell_nl_nl_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-hunspell-nl-nl" "green" >}} {{< bg "17" "postgresql-17-hunspell-nl-nl" "green" >}} {{< bg "16" "postgresql-16-hunspell-nl-nl" "green" >}} {{< bg "15" "postgresql-15-hunspell-nl-nl" "green" >}} {{< bg "14" "postgresql-14-hunspell-nl-nl" "green" >}} | `postgresql-$v-hunspell-nl-nl` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hunspell` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "hunspell_18" "green" >}} {{< bg "17" "hunspell_17" "green" >}} {{< bg "16" "hunspell_16" "green" >}} {{< bg "15" "hunspell_15" "green" >}} {{< bg "14" "hunspell_14" "green" >}} | `hunspell_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-hunspell" "green" >}} {{< bg "17" "postgresql-17-hunspell" "green" >}} {{< bg "16" "postgresql-16-hunspell" "green" >}} {{< bg "15" "postgresql-15-hunspell" "green" >}} {{< bg "14" "postgresql-14-hunspell" "green" >}} | `postgresql-$v-hunspell` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_nl_nl_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-nl-nl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-nl-nl : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0" "hunspell_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0" "hunspell_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0" "hunspell_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0" "hunspell_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0" "hunspell_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0" "hunspell_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "hunspell_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
 
-
-{{< tabs >}}
-{{< tab name="PG18" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hunspell_nl_nl_18` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 592.3 KiB | [hunspell_nl_nl_18-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hunspell_nl_nl_18-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `hunspell_nl_nl_18` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 592.2 KiB | [hunspell_nl_nl_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hunspell_nl_nl_18-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `hunspell_nl_nl_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 544.4 KiB | [hunspell_nl_nl_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hunspell_nl_nl_18-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `hunspell_nl_nl_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hunspell_nl_nl_18-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `hunspell_nl_nl_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 544.5 KiB | [hunspell_nl_nl_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hunspell_nl_nl_18-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `hunspell_nl_nl_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hunspell_nl_nl_18-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 517.1 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 517.1 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 517.8 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 517.8 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 537.6 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 537.6 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 536.7 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 536.7 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 537.7 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-hunspell-nl-nl` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 537.7 KiB | [postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-18-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb) |
-
-{{< /tab >}}
-{{< tab name="PG17" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hunspell_nl_nl_17` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 592.3 KiB | [hunspell_nl_nl_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hunspell_nl_nl_17-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `hunspell_nl_nl_17` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 592.2 KiB | [hunspell_nl_nl_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hunspell_nl_nl_17-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `hunspell_nl_nl_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 544.1 KiB | [hunspell_nl_nl_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hunspell_nl_nl_17-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `hunspell_nl_nl_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hunspell_nl_nl_17-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `hunspell_nl_nl_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 544.5 KiB | [hunspell_nl_nl_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hunspell_nl_nl_17-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `hunspell_nl_nl_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hunspell_nl_nl_17-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 517.2 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 517.2 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 517.0 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 517.0 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 537.6 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 537.6 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 536.7 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 536.7 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 536.6 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-hunspell-nl-nl` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 536.6 KiB | [postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-17-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb) |
-
-{{< /tab >}}
-{{< tab name="PG16" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hunspell_nl_nl_16` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 592.3 KiB | [hunspell_nl_nl_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hunspell_nl_nl_16-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `hunspell_nl_nl_16` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 592.2 KiB | [hunspell_nl_nl_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hunspell_nl_nl_16-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `hunspell_nl_nl_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 544.0 KiB | [hunspell_nl_nl_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hunspell_nl_nl_16-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `hunspell_nl_nl_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hunspell_nl_nl_16-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `hunspell_nl_nl_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 544.5 KiB | [hunspell_nl_nl_16-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hunspell_nl_nl_16-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `hunspell_nl_nl_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_16-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hunspell_nl_nl_16-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 517.0 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 517.0 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 517.0 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 517.0 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 537.6 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 537.6 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 536.7 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 536.7 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 536.5 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-hunspell-nl-nl` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 536.5 KiB | [postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-16-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb) |
-
-{{< /tab >}}
-{{< tab name="PG15" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hunspell_nl_nl_15` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 592.3 KiB | [hunspell_nl_nl_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hunspell_nl_nl_15-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `hunspell_nl_nl_15` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 592.2 KiB | [hunspell_nl_nl_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hunspell_nl_nl_15-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `hunspell_nl_nl_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 544.4 KiB | [hunspell_nl_nl_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hunspell_nl_nl_15-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `hunspell_nl_nl_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hunspell_nl_nl_15-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `hunspell_nl_nl_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 544.5 KiB | [hunspell_nl_nl_15-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hunspell_nl_nl_15-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `hunspell_nl_nl_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_15-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hunspell_nl_nl_15-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 517.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 517.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 517.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 517.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 538.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 538.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 537.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 537.1 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 536.9 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-hunspell-nl-nl` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 536.9 KiB | [postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-15-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb) |
-
-{{< /tab >}}
-{{< tab name="PG14" >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hunspell_nl_nl_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 592.3 KiB | [hunspell_nl_nl_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hunspell_nl_nl_14-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `hunspell_nl_nl_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 592.2 KiB | [hunspell_nl_nl_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hunspell_nl_nl_14-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `hunspell_nl_nl_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 544.4 KiB | [hunspell_nl_nl_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hunspell_nl_nl_14-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `hunspell_nl_nl_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hunspell_nl_nl_14-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `hunspell_nl_nl_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 544.5 KiB | [hunspell_nl_nl_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hunspell_nl_nl_14-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `hunspell_nl_nl_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 544.4 KiB | [hunspell_nl_nl_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hunspell_nl_nl_14-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 517.0 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 517.0 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 517.0 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 517.0 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 537.1 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 537.1 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 537.1 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 537.1 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 536.9 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-hunspell-nl-nl` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 536.9 KiB | [postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-nl-nl/postgresql-14-hunspell-nl-nl_1.0-1PIGSTY~resolute_arm64.deb) |
-
-{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
@@ -177,7 +66,7 @@ width: full
 
 
 ```bash
-pig build pkg hunspell_nl_nl;		# build rpm/deb
+pig build pkg hunspell;		# build rpm/deb
 ```
 
 
@@ -192,7 +81,8 @@ pig repo add pgsql -u   # add both repo and update cache
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig install hunspell_nl_nl;		# install via package name, for the active PG version
+pig install hunspell;		# install via package name, for the active PG version
+pig install hunspell_nl_nl;		# install by extension name, for the current active PG version
 
 pig install hunspell_nl_nl -v 18;   # install for PG 18
 pig install hunspell_nl_nl -v 17;   # install for PG 17

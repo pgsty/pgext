@@ -5,11 +5,22 @@ SET search_path TO pgext,public;
 TRUNCATE pgext.pkg;
 
 -- 'step 2/5: init pgext.pkg combinations ...';
-INSERT INTO pgext.pkg (pg,os,name,pkg,ext)
+-- Invalid extension/PG/OS combinations start as N/A. A real package found in
+-- the repository metadata is authoritative and is promoted to AVAIL in step 5.
+INSERT INTO pgext.pkg (pg,os,name,pkg,ext,state)
 SELECT pg,os,CASE os.os_type
                  WHEN 'rpm' THEN replace(replace(ext.rpm_pkg, '*', ''), '$v', pg::text)
-                 WHEN 'deb' THEN replace(replace(ext.deb_pkg, '*', ''), '$v', pg::text) ELSE NULL END AS name,ext.pkg,ext.name
-FROM (SELECT * FROM pgext.extension WHERE lead AND NOT contrib) ext,
+                 WHEN 'deb' THEN replace(replace(ext.deb_pkg, '*', ''), '$v', pg::text) ELSE NULL END AS name,
+       ext.pkg,ext.name,
+       CASE
+           WHEN NOT coalesce(ext.pg_ver, ARRAY[]::text[]) @> ARRAY[pg.pg::text] THEN 'N/A'
+           WHEN os.os_type = 'rpm' AND coalesce(ext.rpm_repo, '') = '' THEN 'N/A'
+           WHEN os.os_type = 'deb' AND coalesce(ext.deb_repo, '') = '' THEN 'N/A'
+           WHEN coalesce(ext.extra->'os_exclude', '[]'::jsonb) ? os.os THEN 'N/A'
+           WHEN coalesce(ext.tags, ARRAY[]::text[]) @> ARRAY['fork'] THEN 'N/A'
+           ELSE 'MISS'
+       END::pgext.pkg_state AS state
+FROM (SELECT DISTINCT ON (pkg) * FROM pgext.extension WHERE lead AND NOT contrib ORDER BY pkg,id) ext,
      (SELECT * FROM pgext.os WHERE active) os,
      (SELECT * FROM pgext.pg WHERE active) pg;
 -- special case handling
@@ -29,19 +40,13 @@ WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
 UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 
 -- conflict with other extension, hide in list
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra' ,'pg_analytics', 'pgml');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra');
 
 -- too big, non-free, heavy extensions
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2', 'pgml');
 
--- only works on postgres forks
-UPDATE pgext.pkg SET hide = true, state = 'FORK' WHERE pkg IN (SELECT distinct pkg FROM pgext.extension WHERE tags @> '{fork}');
-
--- broken extensions
-UPDATE pgext.pkg SET hide = true, state = 'THROW' WHERE pkg IN ('hunspell_pt_pt');   -- a broken extension conflict with pg dict file
-
--- mark a brokwn extension
-UPDATE pgext.pkg SET hide = true, state = 'BREAK' WHERE pkg = 'pg_dbms_job' AND os ~ '^el8';
+-- kernel-specific packages stay out of vanilla PostgreSQL package groups
+UPDATE pgext.pkg SET hide = true WHERE pkg IN (SELECT distinct pkg FROM pgext.extension WHERE tags @> '{fork}');
 
 -- 'pgext.refresh_pkg complete';
 UPDATE pgext.status SET recap_time = now();

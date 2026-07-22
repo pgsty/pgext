@@ -468,12 +468,8 @@ func getBadgeColor(state, org string) string {
 	switch state {
 	case "MISS":
 		return "red"
-	case "HIDE":
-		return "" // No color (gray)
-	case "THROW":
-		return "purple"
-	case "BREAK":
-		return "orange"
+	case "N/A":
+		return "gray"
 	case "AVAIL":
 		// For AVAIL, check org
 		switch strings.ToUpper(org) {
@@ -482,7 +478,7 @@ func getBadgeColor(state, org string) string {
 		case "PIGSTY":
 			return "green"
 		default:
-			return "yellow"
+			return "green"
 		}
 	default:
 		return ""
@@ -546,68 +542,24 @@ func (g *ExtensionGenerator) generateAvailabilityMatrix(packages []*PkgInfo, bin
 					count = fmt.Sprintf("%d", pkg.Count.Int64)
 				}
 
-				// Build badge text
-				text := "MISS"
-				if state != "MISS" && org != "" && version != "" {
+				// Build badge text from the database state only.
+				text := state
+				if state == "AVAIL" && org != "" && version != "" {
 					text = fmt.Sprintf("%s %s", org, version)
 				}
 
 				// Build alt text: "package_name : STATE count"
 				alt := fmt.Sprintf("%s : %s %s", name, state, count)
 
-				// Get color based on state and org
-				// If text shows "MISS", always use red color
-				var color string
-				if text == "MISS" {
-					color = "red"
-				} else {
-					color = getBadgeColor(state, org)
-				}
+				color := getBadgeColor(state, org)
 
 				// Generate bg shortcode
 				cellContent := BgShortcode(text, alt, color)
 
-				// Adjust spacing based on state
-				if state == "AVAIL" {
-					b.WriteString(fmt.Sprintf(" %s |", cellContent))
-				} else if state == "HIDE" {
-					b.WriteString(fmt.Sprintf("  %s   |", cellContent))
-				} else {
-					b.WriteString(fmt.Sprintf("      %s      |", cellContent))
-				}
+				b.WriteString(fmt.Sprintf(" %s |", cellContent))
 			} else {
-				// Not available - MISS state
-				// Try to infer package name from other available packages
-				pkgName := "N/A"
-
-				// Look for any package with the same extension but different PG version
-				for _, p := range packages {
-					if p.PG == pg {
-						// Found a package for this PG version (shouldn't happen in this else block)
-						pkgName = p.Name.String
-						if pkgName == "" {
-							pkgName = p.Pkg
-						}
-						break
-					}
-				}
-
-				// If still not found, try to construct from first available package
-				if pkgName == "N/A" && len(packages) > 0 {
-					basePkg := packages[0]
-					if basePkg.Name.Valid && basePkg.Name.String != "" {
-						// Replace version number in package name
-						pkgName = strings.ReplaceAll(basePkg.Name.String, fmt.Sprintf("_%d", basePkg.PG), fmt.Sprintf("_%d", pg))
-						pkgName = strings.ReplaceAll(pkgName, fmt.Sprintf("-%d-", basePkg.PG), fmt.Sprintf("-%d-", pg))
-					} else {
-						pkgName = strings.ReplaceAll(basePkg.Pkg, fmt.Sprintf("_%d", basePkg.PG), fmt.Sprintf("_%d", pg))
-					}
-				}
-
-				text := "MISS"
-				alt := fmt.Sprintf("%s : MISS 0", pkgName)
-				cellContent := BgShortcode(text, alt, "red")
-				b.WriteString(fmt.Sprintf("    %s     |", cellContent))
+				cellContent := BgShortcode("N/A", "N/A 0", "gray")
+				b.WriteString(fmt.Sprintf(" %s |", cellContent))
 			}
 		}
 		b.WriteString("\n")

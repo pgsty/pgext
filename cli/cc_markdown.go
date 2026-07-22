@@ -131,14 +131,10 @@ func CCPkgStateBadge(state, version string) string {
 		return CCAvailBadge("✓")
 	case "MISS":
 		return CCMissBadge()
-	case "HIDE":
-		return `<span class="ext-badge ext-badge--hide">-</span>`
-	case "THROW":
-		return `<span class="ext-badge ext-badge--throw">!</span>`
-	case "BREAK":
-		return `<span class="ext-badge ext-badge--break">!</span>`
+	case "N/A":
+		return `<span class="ext-badge ext-badge--na">N/A</span>`
 	default:
-		return `<span class="ext-badge ext-badge--hide">-</span>`
+		return `<span class="ext-badge ext-badge--na">N/A</span>`
 	}
 }
 
@@ -190,4 +186,3 @@ func CCExtensionTable(exts []*Extension) string {
 	b.WriteString("{.ext-table}\n\n")
 	return b.String()
 }
-

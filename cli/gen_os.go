@@ -304,7 +304,7 @@ func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, os
 
 		// Generate cells for each PG version
 		for _, pg := range g.Cache.PGVersions {
-			cell := g.generateOSMatrixCell(ospkg, pg, osName)
+			cell := g.generateOSMatrixCell(ospkg, pg)
 			b.WriteString(fmt.Sprintf(" %s |", cell))
 		}
 		b.WriteString("\n")
@@ -314,49 +314,10 @@ func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, os
 }
 
 // generateOSMatrixCell generates a single cell in the availability matrix
-func (g *OSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osName string) string {
+func (g *OSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int) string {
 	pkg, exists := ospkg.PGData[pg]
 	if !exists {
-		// Not available - MISS state, but check the reason
-		// Get the extension from cache to check pg_ver and repos
-		ext, hasExt := g.Cache.PkgMap[ospkg.Pkg]
-		if hasExt {
-			// Check if the extension supports this PG version
-			pgSupported := false
-			pgStr := fmt.Sprintf("%d", pg)
-			for _, ver := range ext.PgVer {
-				if ver == pgStr {
-					pgSupported = true
-					break
-				}
-			}
-
-			// If extension doesn't support this PG version, use gray (no color)
-			if !pgSupported {
-				return Badge("✗", "", "", "", "")
-			}
-
-			// Check if the platform provides this extension
-			// Determine if this OS is RPM or DEB based
-			osPrefix := strings.Split(osName, ".")[0]
-			isRPMBased := strings.HasPrefix(osPrefix, "el")
-			isDEBBased := strings.HasPrefix(osPrefix, "d") || strings.HasPrefix(osPrefix, "u")
-
-			platformUnsupported := false
-			if isRPMBased && (!ext.RpmRepo.Valid || ext.RpmRepo.String == "") {
-				platformUnsupported = true
-			} else if isDEBBased && (!ext.DebRepo.Valid || ext.DebRepo.String == "") {
-				platformUnsupported = true
-			}
-
-			// If platform doesn't provide this extension, use amber
-			if platformUnsupported {
-				return Badge("✗", "amber", "", "", "")
-			}
-		}
-
-		// Otherwise, it's a genuine MISS - use red
-		return Badge("✗", "red", "", "", "")
+		return Badge("N/A", "gray", "", "", "")
 	}
 
 	// Get package state
@@ -388,57 +349,11 @@ func (g *OSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osName 
 		}
 		return Badge("✓", "green", "", "", "")
 	case "MISS":
-		// Apply same logic as above for MISS state
-		ext, hasExt := g.Cache.PkgMap[ospkg.Pkg]
-		if hasExt {
-			// Check if the extension supports this PG version
-			pgSupported := false
-			pgStr := fmt.Sprintf("%d", pg)
-			for _, ver := range ext.PgVer {
-				if ver == pgStr {
-					pgSupported = true
-					break
-				}
-			}
-
-			// If extension doesn't support this PG version, use gray (no color)
-			if !pgSupported {
-				return Badge("✗", "", "", "", "")
-			}
-
-			// Check if the platform provides this extension
-			// Determine if this OS is RPM or DEB based
-			osPrefix := strings.Split(osName, ".")[0]
-			isRPMBased := strings.HasPrefix(osPrefix, "el")
-			isDEBBased := strings.HasPrefix(osPrefix, "d") || strings.HasPrefix(osPrefix, "u")
-
-			platformUnsupported := false
-			if isRPMBased && (!ext.RpmRepo.Valid || ext.RpmRepo.String == "") {
-				platformUnsupported = true
-			} else if isDEBBased && (!ext.DebRepo.Valid || ext.DebRepo.String == "") {
-				platformUnsupported = true
-			}
-
-			// If platform doesn't provide this extension, use amber
-			if platformUnsupported {
-				return Badge("✗", "amber", "", "", "")
-			}
-		}
 		return Badge("✗", "red", "", "", "")
-	case "HIDE":
-		if version != "" && org != "" {
-			text := fmt.Sprintf("%s %s", org, version)
-			return Badge(text, "gray", "", "", "")
-		}
-		return Badge("HIDE", "gray", "", "", "")
-	case "THROW":
-		return Badge("THROW", "purple", "", "", "")
-	case "BREAK":
-		return Badge("BREAK", "orange", "", "", "")
-	case "TBD":
-		return Badge("TBD", "yellow", "", "", "")
+	case "N/A":
+		return Badge("N/A", "gray", "", "", "")
 	default:
-		return Badge("?", "gray", "", "", "")
+		return Badge("N/A", "gray", "", "", "")
 	}
 }
 
@@ -448,12 +363,8 @@ func getOSBadgeColor(state, org string) string {
 	switch state {
 	case "MISS":
 		return "red"
-	case "HIDE":
-		return "" // No color (gray)
-	case "THROW":
-		return "purple"
-	case "BREAK":
-		return "orange"
+	case "N/A":
+		return "gray"
 	case "AVAIL":
 		// For AVAIL, check org
 		switch strings.ToUpper(org) {
@@ -462,7 +373,7 @@ func getOSBadgeColor(state, org string) string {
 		case "PIGSTY":
 			return "green"
 		default:
-			return "yellow"
+			return "green"
 		}
 	default:
 		return ""

@@ -430,9 +430,7 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 				cell := g.formatAvailCell(pkg, ext, osv.OS)
 				b.WriteString(fmt.Sprintf(" %s |", cell))
 			} else {
-				// Infer repo for missing cells, count is 0
-				repo := InferRepo(ext, osv.OS)
-				b.WriteString(fmt.Sprintf(" MISS %s - 0 |", repo))
+				b.WriteString(" N/A - - 0 |")
 			}
 		}
 		b.WriteString("\n")
@@ -480,12 +478,7 @@ func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo, ext *Extension, osName s
 		version = pkg.Version.String
 	}
 
-	// MISS takes highest priority: if no actual package exists, override to MISS
-	if version == "-" && state != "AVAIL" && state != "HIDE" {
-		state = "MISS"
-	}
-
-	count := int64(1)
+	count := int64(0)
 	if pkg.Count.Valid {
 		count = pkg.Count.Int64
 	}

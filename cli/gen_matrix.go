@@ -65,12 +65,8 @@ type globalMatrixLegendItem struct {
 var globalMatrixLegend = []globalMatrixLegendItem{
 	{Code: "B", Label: "PGDG", Class: "gm-pgdg", Color: "#5b9cd5"},
 	{Code: "G", Label: "PIGSTY", Class: "gm-pigsty", Color: "#60be59"},
-	{Code: ".", Label: "Unavailable", Class: "gm-unavailable", Color: "#6c6c6c"},
 	{Code: "R", Label: "Missing", Class: "gm-missing", Color: "#cc4637"},
-	{Code: "A", Label: "No platform repo", Class: "gm-platform", Color: "#6c6c6c"},
-	{Code: "P", Label: "Fork / Throw", Class: "gm-fork", Color: "#7771a4"},
-	{Code: "O", Label: "Break", Class: "gm-break", Color: "#f79f64"},
-	{Code: "Y", Label: "Other", Class: "gm-other", Color: "#fcdb72"},
+	{Code: ".", Label: "N/A", Class: "gm-na", Color: "#6c6c6c"},
 }
 
 // NewGlobalMatrixGenerator creates a global matrix generator.
@@ -143,7 +139,6 @@ func (g *GlobalMatrixGenerator) buildMatrix(ctx context.Context) ([]*GlobalMatri
 	for _, row := range rows {
 		row.Cells = make(map[string]map[int]GlobalMatrixCell, len(osVersions))
 		row.PGDGCells = make(map[string]map[int]GlobalMatrixCell, len(osVersions))
-		ext := g.Cache.PkgMap[row.Pkg]
 		for _, osv := range osVersions {
 			row.Cells[osv.OS] = make(map[int]GlobalMatrixCell, len(pgVersions))
 			row.PGDGCells[osv.OS] = make(map[int]GlobalMatrixCell, len(pgVersions))
@@ -154,7 +149,7 @@ func (g *GlobalMatrixGenerator) buildMatrix(ctx context.Context) ([]*GlobalMatri
 						pkg = byPG[pg]
 					}
 				}
-				cell := classifyGlobalMatrixCell(ext, pkg, osv.OS, pg)
+				cell := classifyGlobalMatrixCell(pkg)
 				cell.Title = globalMatrixCellTitle(osv.OS, pg, cell)
 				row.Cells[osv.OS][pg] = cell
 				stats.Counts[cell.Code]++
@@ -165,7 +160,7 @@ func (g *GlobalMatrixGenerator) buildMatrix(ctx context.Context) ([]*GlobalMatri
 						pgdgPkg = byPG[pg]
 					}
 				}
-				pgdgCell := classifyGlobalMatrixCell(ext, pgdgPkg, osv.OS, pg)
+				pgdgCell := classifyGlobalMatrixCell(pgdgPkg)
 				pgdgCell.Title = globalMatrixCellTitle(osv.OS, pg, pgdgCell)
 				row.PGDGCells[osv.OS][pg] = pgdgCell
 				stats.PGDGCounts[pgdgCell.Code]++
@@ -308,7 +303,7 @@ func (g *GlobalMatrixGenerator) loadGlobalMatrixPGDGOnlyPackageData(ctx context.
 		SELECT b.pg, b.os, COALESCE(m.name, b.name) AS name, b.pkg, b.ext,
 		       CASE
 		         WHEN COALESCE(m.count, 0) > 0 THEN 'AVAIL'
-		         WHEN b.state IN ('FORK', 'THROW', 'BREAK') THEN b.state
+		         WHEN b.state = 'N/A' THEN 'N/A'
 		         ELSE 'MISS'
 		       END AS state,
 		       CASE WHEN COALESCE(m.count, 0) > 0 THEN m.org ELSE NULL END AS org,
@@ -342,12 +337,12 @@ func (g *GlobalMatrixGenerator) loadGlobalMatrixPGDGOnlyPackageData(ctx context.
 	return result, rows.Err()
 }
 
-func classifyGlobalMatrixCell(ext *Extension, pkg *PkgInfo, osName string, pg int) GlobalMatrixCell {
+func classifyGlobalMatrixCell(pkg *PkgInfo) GlobalMatrixCell {
 	if pkg == nil {
-		return classifyGlobalMatrixMiss(ext, osName, pg, "MISS")
+		return GlobalMatrixCell{Code: ".", Class: "gm-na", Label: "N/A", State: "N/A"}
 	}
 
-	state := "MISS"
+	state := "N/A"
 	if pkg.State.Valid && pkg.State.String != "" {
 		state = strings.ToUpper(pkg.State.String)
 	}
@@ -376,69 +371,20 @@ func classifyGlobalMatrixCell(ext *Extension, pkg *PkgInfo, osName string, pg in
 
 	switch state {
 	case "AVAIL":
-		switch org {
-		case "PGDG":
+		if org == "PGDG" {
 			cell.Code, cell.Class, cell.Label = "B", "gm-pgdg", "PGDG"
-		case "PIGSTY":
+		} else {
 			cell.Code, cell.Class, cell.Label = "G", "gm-pigsty", "Pigsty"
-		default:
-			cell.Code, cell.Class, cell.Label = "Y", "gm-other", "Available"
 		}
 	case "MISS":
-		return classifyGlobalMatrixMiss(ext, osName, pg, state)
-	case "HIDE":
-		cell.Code, cell.Class, cell.Label = ".", "gm-unavailable", "Hidden"
-	case "THROW", "FORK":
-		cell.Code, cell.Class, cell.Label = "P", "gm-fork", state
-	case "BREAK":
-		cell.Code, cell.Class, cell.Label = "O", "gm-break", "Break"
-	case "TBD":
-		cell.Code, cell.Class, cell.Label = "Y", "gm-other", "TBD"
+		cell.Code, cell.Class, cell.Label = "R", "gm-missing", "Missing"
+	case "N/A":
+		cell.Code, cell.Class, cell.Label = ".", "gm-na", "N/A"
 	default:
-		cell.Code, cell.Class, cell.Label = ".", "gm-unavailable", state
+		cell.Code, cell.Class, cell.Label, cell.State = ".", "gm-na", "N/A", "N/A"
 	}
 
 	return cell
-}
-
-func classifyGlobalMatrixMiss(ext *Extension, osName string, pg int, state string) GlobalMatrixCell {
-	cell := GlobalMatrixCell{State: state}
-	if ext != nil {
-		if !globalMatrixPGSupported(ext, pg) {
-			cell.Code, cell.Class, cell.Label = ".", "gm-unavailable", "Unsupported PG"
-			return cell
-		}
-		if globalMatrixPlatformUnsupported(ext, osName) {
-			cell.Code, cell.Class, cell.Label = "A", "gm-platform", "No platform repo"
-			return cell
-		}
-	}
-	cell.Code, cell.Class, cell.Label = "R", "gm-missing", "Missing"
-	return cell
-}
-
-func globalMatrixPGSupported(ext *Extension, pg int) bool {
-	pgStr := fmt.Sprintf("%d", pg)
-	for _, ver := range ext.PgVer {
-		if ver == pgStr {
-			return true
-		}
-	}
-	return false
-}
-
-func globalMatrixPlatformUnsupported(ext *Extension, osName string) bool {
-	osPrefix := strings.Split(osName, ".")[0]
-	isRPMBased := strings.HasPrefix(osPrefix, "el")
-	isDEBBased := strings.HasPrefix(osPrefix, "d") || strings.HasPrefix(osPrefix, "u")
-
-	if isRPMBased {
-		return !ext.RpmRepo.Valid || ext.RpmRepo.String == ""
-	}
-	if isDEBBased {
-		return !ext.DebRepo.Valid || ext.DebRepo.String == ""
-	}
-	return false
 }
 
 func globalMatrixCellTitle(osName string, pg int, cell GlobalMatrixCell) string {
@@ -519,23 +465,15 @@ func (g *GlobalMatrixGenerator) renderLegend(stats globalMatrixStats, isZh bool)
 	labels := map[string]string{
 		"B": "PGDG",
 		"G": "Pigsty",
-		".": "Unavailable",
 		"R": "Missing",
-		"A": "No platform repo",
-		"P": "Fork / Throw",
-		"O": "Break",
-		"Y": "Other",
+		".": "N/A",
 	}
 	if isZh {
 		labels = map[string]string{
 			"B": "PGDG",
 			"G": "Pigsty",
-			".": "不可用",
 			"R": "缺失",
-			"A": "平台无仓库",
-			"P": "Fork / Throw",
-			"O": "Break",
-			"Y": "其他",
+			".": "N/A",
 		}
 	}
 
@@ -783,17 +721,11 @@ func (g *GlobalMatrixGenerator) renderStandaloneToolbar(stats globalMatrixStats)
 		{Code: "B", Label: "PGDG", Class: "gm-pgdg"},
 		{Code: "G", Label: "PIGSTY", Class: "gm-pigsty"},
 		{Code: "R", Label: "Missing", Class: "gm-missing"},
-		{Code: ".", Label: "Unavailable", Class: "gm-unavailable"},
-		{Code: "P", Label: "Fork", Class: "gm-fork"},
-		{Code: "O", Label: "Break", Class: "gm-break"},
+		{Code: ".", Label: "N/A", Class: "gm-na"},
 	}
 	for _, item := range items {
 		count := stats.Counts[item.Code]
 		pgdgCount := stats.PGDGCounts[item.Code]
-		if item.Code == "." {
-			count += stats.Counts["A"]
-			pgdgCount += stats.PGDGCounts["A"]
-		}
 		b.WriteString(fmt.Sprintf(`  <span class="mx-legend-item" data-code="%s"><i class="mx-dot %s"></i><b>%s</b><em data-full-count="%d" data-pgdg-count="%d">%d</em></span>`+"\n",
 			html.EscapeString(item.Code),
 			html.EscapeString(item.Class),
@@ -886,12 +818,7 @@ func standalonePGVersions(pgVersions []int) []int {
 	return display
 }
 
-func standaloneCellClass(cell GlobalMatrixCell) string {
-	if cell.Code == "A" {
-		return "gm-unavailable"
-	}
-	return cell.Class
-}
+func standaloneCellClass(cell GlobalMatrixCell) string { return cell.Class }
 
 func globalMatrixStandaloneCSS() string {
 	return `<style>
@@ -904,11 +831,8 @@ func globalMatrixStandaloneCSS() string {
   --line-soft: #edf0f4;
   --pgdg: rgb(91, 156, 213);
   --pigsty: rgb(96, 190, 89);
-  --unavailable: rgb(108, 108, 108);
+  --na: rgb(108, 108, 108);
   --missing: rgb(204, 70, 55);
-  --fork: rgb(119, 113, 164);
-  --break: rgb(247, 159, 100);
-  --other: rgb(252, 219, 114);
 }
 * { box-sizing: border-box; }
 body {
@@ -1117,12 +1041,8 @@ body[data-view="pgdg"] .mx-legend-item:not([data-code="B"]) { display: none; }
 }
 .gm-pgdg { background: var(--pgdg); }
 .gm-pigsty { background: var(--pigsty); }
-.gm-unavailable { background: var(--unavailable); }
+.gm-na { background: var(--na); }
 .gm-missing { background: var(--missing); }
-.gm-platform { background: var(--unavailable); }
-.gm-fork { background: var(--fork); }
-.gm-break { background: var(--break); }
-.gm-other { background: var(--other); }
 .mx-dimmed { background: rgb(108, 108, 108); }
 body[data-view="pgdg"] .mx-cell .mx-dot {
   background: #d8dde6;
@@ -1187,12 +1107,8 @@ func globalMatrixCSS() string {
   --gm-soft: #f8fafc;
   --gm-pgdg: rgb(91, 156, 213);
   --gm-pigsty: rgb(96, 190, 89);
-  --gm-unavailable: rgb(108, 108, 108);
+  --gm-na: rgb(108, 108, 108);
   --gm-missing: rgb(204, 70, 55);
-  --gm-platform: rgb(108, 108, 108);
-  --gm-fork: rgb(119, 113, 164);
-  --gm-break: rgb(247, 159, 100);
-  --gm-other: rgb(252, 219, 114);
   color: var(--gm-text);
 }
 .gm-summary {
@@ -1349,12 +1265,8 @@ func globalMatrixCSS() string {
 }
 .gm-pgdg { background: var(--gm-pgdg); }
 .gm-pigsty { background: var(--gm-pigsty); }
-.gm-unavailable { background: var(--gm-unavailable); }
+.gm-na { background: var(--gm-na); }
 .gm-missing { background: var(--gm-missing); }
-.gm-platform { background: var(--gm-platform); }
-.gm-fork { background: var(--gm-fork); }
-.gm-break { background: var(--gm-break); }
-.gm-other { background: var(--gm-other); }
 .gm-letter {
   margin-top: 18px;
 }

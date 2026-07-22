@@ -245,7 +245,7 @@ func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osNam
 
 	pkg, exists := ospkg.PGData[pg]
 	if !exists {
-		return fmt.Sprintf("MISS %s - 0", fallbackRepo)
+		return "N/A - - 0"
 	}
 
 	state := "MISS"
@@ -263,12 +263,7 @@ func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osNam
 		version = pkg.Version.String
 	}
 
-	// MISS takes highest priority when no actual package
-	if version == "-" && state != "AVAIL" && state != "HIDE" {
-		state = "MISS"
-	}
-
-	count := int64(1)
+	count := int64(0)
 	if pkg.Count.Valid {
 		count = pkg.Count.Int64
 	}

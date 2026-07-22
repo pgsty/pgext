@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (555 ext in 464 pkg) categorized into 16 categories.
+PostgreSQL Extensions (555 ext in 455 pkg) categorized into 16 categories.
 
 
 
@@ -112,16 +112,16 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2220 | {{< alias "pg_fts" >}} | 0.2.0 | Full-text search with BM25 and BM25F ranking |
 | 2230 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | CJK bigram parser derived from PostgreSQL full-text search |
 | 2240 | {{< alias "pg_jieba" >}} | 1.1.0 | Chinese full-text search parser based on cppjieba |
-| 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
-| 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | German Hunspell Dictionary |
-| 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | en_US Hunspell Dictionary |
-| 2273 | {{< alias "hunspell_fr" >}} | 1.0 | French Hunspell Dictionary |
-| 2274 | {{< alias "hunspell_ne_np" >}} | 1.0 | Nepali Hunspell Dictionary |
-| 2275 | {{< alias "hunspell_nl_nl" >}} | 1.0 | Dutch Hunspell Dictionary |
-| 2276 | {{< alias "hunspell_nn_no" >}} | 1.0 | Norwegian (norsk) Hunspell Dictionary |
-| 2277 | {{< alias "hunspell_pt_pt" >}} | 1.0 | Portuguese Hunspell Dictionary |
-| 2278 | {{< alias "hunspell_ru_ru" >}} | 1.0 | Russian Hunspell Dictionary |
-| 2279 | {{< alias "hunspell_ru_ru_aot" >}} | 1.0 | Russian Hunspell Dictionary (from AOT.ru group) |
+| 2270 | {{< alias "hunspell_cs_cz" "hunspell" >}} | 1.0 | Czech Hunspell Dictionary |
+| 2271 | {{< alias "hunspell_de_de" "hunspell" >}} | 1.0 | German Hunspell Dictionary |
+| 2272 | {{< alias "hunspell_en_us" "hunspell" >}} | 1.0 | en_US Hunspell Dictionary |
+| 2273 | {{< alias "hunspell_fr" "hunspell" >}} | 1.0 | French Hunspell Dictionary |
+| 2274 | {{< alias "hunspell_ne_np" "hunspell" >}} | 1.0 | Nepali Hunspell Dictionary |
+| 2275 | {{< alias "hunspell_nl_nl" "hunspell" >}} | 1.0 | Dutch Hunspell Dictionary |
+| 2276 | {{< alias "hunspell_nn_no" "hunspell" >}} | 1.0 | Norwegian (norsk) Hunspell Dictionary |
+| 2277 | {{< alias "hunspell_pt_pt" "hunspell" >}} | 1.0 | Portuguese Hunspell Dictionary |
+| 2278 | {{< alias "hunspell_ru_ru" "hunspell" >}} | 1.0 | Russian Hunspell Dictionary |
+| 2279 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | 1.0 | Russian Hunspell Dictionary (from AOT.ru group) |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
 

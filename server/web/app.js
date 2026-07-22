@@ -242,9 +242,8 @@ const I18N = {
   'state.avail': ['available', '可用'], 'state.na': ['not packaged', '未打包'],
   'mx.legend.pgdg': ['available · PGDG repo', '可用 · PGDG 仓库'],
   'mx.legend.pigsty': ['available · Pigsty repo', '可用 · Pigsty 仓库'],
-  'mx.legend.miss': ['not packaged', '未打包'],
-  'mx.legend.warn': ['FORK: renamed / forked build', 'FORK：改名或分叉构建'],
-  'mx.legend.bad': ['BREAK / THROW: known broken', 'BREAK / THROW：已知损坏'],
+  'mx.legend.miss': ['MISS · package missing', 'MISS · 软件包缺失'],
+  'mx.legend.na': ['N/A · invalid combination', 'N/A · 无效组合'],
   'files.none': ['No binary artifacts recorded for this extension.', '没有该扩展的二进制包记录。'],
   'files.showall': ['show all {n} builds', '显示全部 {n} 个构建'],
   'files.collapse': ['latest builds only', '只看最新构建'],
@@ -275,11 +274,7 @@ const I18N = {
   'gmx.pgdg': ['PGDG', 'PGDG'],
   'gmx.pigsty': ['Pigsty', 'Pigsty'],
   'gmx.missing': ['Missing', '缺失'],
-  'gmx.unsupported': ['Unsupported PG', '不支持该 PG'],
-  'gmx.platform': ['No platform repo', '平台无仓库'],
-  'gmx.fork': ['Fork / Throw', 'Fork / Throw'],
-  'gmx.break': ['Break', '损坏'],
-  'gmx.other': ['Other', '其他'],
+  'gmx.na': ['N/A', 'N/A'],
   'gmx.empty': ['No package row matches this filter.', '没有扩展包行符合当前筛选条件。'],
   'gmx.hint': ['Click a status to isolate it · click again to reset', '点击状态可单独查看 · 再次点击恢复全部'],
   'gmx.pkg': ['PACKAGE / EXTENSION', '扩展包 / 扩展'],
@@ -1381,7 +1376,7 @@ function fullMatrixHTML(m, e, options) {
   const extRow = '<tr><td class="oslab"><b>' + t('matrix.ext') + '</b> · v' + esc(e.ver || '—') + '</td>'
     + m.pg.map(pg => (e.pg || []).includes(pg)
       ? '<td><span class="cellv org-other" data-tip="' + esc(e.name) + '">✓</span></td>'
-      : '<td class="miss">·</td>').join('') + '</tr>';
+      : '<td><span class="cellv st-na">N/A</span></td>').join('') + '</tr>';
   let prevFam = null, rows = '';
   for (const os of m.os) {
     const fam = famOf(os);
@@ -1390,24 +1385,23 @@ function fullMatrixHTML(m, e, options) {
     const [osname, arch] = os.split('.');
     const cells = m.pg.map(pg => {
       const c = byKey[os + '|' + pg];
-      if (!c || c.state === 'MISS') return '<td class="miss">·</td>';
+      if (!c || c.state === 'N/A') return '<td><span class="cellv st-na">N/A</span></td>';
+      if (c.state === 'MISS') return '<td><span class="cellv st-miss">MISS</span></td>';
       if (c.state === 'AVAIL') {
         const org = (c.org || '').toLowerCase();
         const cls = org === 'pgdg' ? 'org-pgdg' : org === 'pigsty' ? 'org-pigsty' : 'org-other';
         const target = opts.pkg ? ' data-target-pkg="' + esc(opts.pkg) + '"' : ' data-target-ext="' + esc(e.name) + '"';
         return '<td><button class="cellv ' + cls + '"' + target + ' data-target-pg="' + c.pg + '" data-target-os="' + esc(c.os) + '" data-tip="' + esc(c.name || '') + ' · ' + c.count + ' builds">' + esc(c.org || '✓') + ' ' + esc(c.version || '') + '</button></td>';
       }
-      const cls = (c.state === 'BREAK' || c.state === 'THROW') ? 'st-bad' : 'st-warn';
-      return '<td><span class="cellv ' + cls + '" data-tip="' + esc(c.name || '') + ' · ' + esc(c.state) + '">' + esc(c.state) + '</span></td>';
+      return '<td><span class="cellv st-na">N/A</span></td>';
     }).join('');
     rows += '<tr' + (famStart ? ' class="fam-start"' : '') + '><td class="oslab"><b>' + esc(osname) + '</b> · ' + esc(arch) + '</td>' + cells + '</tr>';
   }
   const legend = '<div class="mx-legend">'
     + '<span><span class="cellv org-pgdg">pgdg</span> ' + t('mx.legend.pgdg') + '</span>'
     + '<span><span class="cellv org-pigsty">pigsty</span> ' + t('mx.legend.pigsty') + '</span>'
-    + '<span><span class="miss">·</span> ' + t('mx.legend.miss') + '</span>'
-    + '<span><span class="cellv st-warn">FORK</span> ' + t('mx.legend.warn') + '</span>'
-    + '<span><span class="cellv st-bad">BREAK</span> ' + t('mx.legend.bad') + '</span>'
+    + '<span><span class="cellv st-miss">MISS</span> ' + t('mx.legend.miss') + '</span>'
+    + '<span><span class="cellv st-na">N/A</span> ' + t('mx.legend.na') + '</span>'
     + '</div>';
   return '<div class="matrix-scroll"><table class="fmx"><thead><tr><th></th>' + ths + '</tr></thead><tbody>'
     + (opts.includeExtension === false ? '' : extRow) + rows + '</tbody></table></div>' + legend;
@@ -2073,11 +2067,7 @@ const GMX_META = [
   ['B', 'gmx.pgdg', 'pgdg'],
   ['G', 'gmx.pigsty', 'pigsty'],
   ['R', 'gmx.missing', 'missing'],
-  ['.', 'gmx.unsupported', 'unsupported'],
-  ['A', 'gmx.platform', 'platform'],
-  ['P', 'gmx.fork', 'fork'],
-  ['O', 'gmx.break', 'break'],
-  ['Y', 'gmx.other', 'other']
+  ['.', 'gmx.na', 'na']
 ];
 
 function globalMatrixShellHTML() {
@@ -2088,15 +2078,16 @@ function globalMatrixShellHTML() {
     + '<div class="gmx-frame" id="gmx-root">' + skel(7) + '</div></article>';
 }
 
-// Decode one positional cell lazily. Details use indexes into the row-local
-// name/version dictionaries: [nameIndex, versionIndex, count, state?, org?].
+// Decode one positional cell lazily. Available-cell details use indexes into
+// the row-local name/version dictionaries: [nameIndex, versionIndex, count].
 function globalMatrixCell(row, index) {
   const code = (row.c || '').charAt(index) || '.';
   const detail = Array.isArray(row.d) ? row.d[index] : null;
   let state = '', org = '';
   if (code === 'B') { state = 'AVAIL'; org = 'PGDG'; }
   else if (code === 'G') { state = 'AVAIL'; org = 'PIGSTY'; }
-  else if (code === 'R' || code === 'A' || code === '.') state = 'MISS';
+  else if (code === 'R') state = 'MISS';
+  else if (code === '.') state = 'N/A';
   if (detail) {
     state = detail[3] || state;
     org = detail[4] || org;
@@ -2111,15 +2102,13 @@ function globalMatrixCell(row, index) {
 
 function globalMatrixStatusLabel(cell) {
   if (!cell) return '—';
-  if (cell.code === 'P' && cell.state) return cell.state;
-  if (cell.code === 'O' && cell.state) return cell.state;
   const item = GMX_META.find(x => x[0] === cell.code);
-  return item ? t(item[1]) : (cell.state || t('gmx.other'));
+  return item ? t(item[1]) : 'N/A';
 }
 
 function globalMatrixClass(code) {
   const item = GMX_META.find(x => x[0] === code);
-  return item ? item[2] : 'other';
+  return item ? item[2] : 'na';
 }
 
 function globalMatrixHTML(data) {

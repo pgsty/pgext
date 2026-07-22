@@ -29,26 +29,24 @@ width: full
 |   **See Also**    | {{< ext "plperl" >}} {{< ext "plpgsql" >}} {{< ext "plpython3u" >}} {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pljava" >}} {{< ext "plperlu" >}} |
 |    **Siblings**   | {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} |
 
-> [!Note] missing pg12-15 on el.aarch64
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.12` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pllua` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.12` | {{< bg "18" "pllua_18" "red" >}} {{< bg "17" "pllua_17" "green" >}} {{< bg "16" "pllua_16" "green" >}} {{< bg "15" "pllua_15" "green" >}} {{< bg "14" "pllua_14" "green" >}} | `pllua_$v` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pllua` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "pllua_18" "green" >}} {{< bg "17" "pllua_17" "green" >}} {{< bg "16" "pllua_16" "green" >}} {{< bg "15" "pllua_15" "green" >}} {{< bg "14" "pllua_14" "green" >}} | `pllua_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.12` | {{< bg "18" "postgresql-18-pllua" "green" >}} {{< bg "17" "postgresql-17-pllua" "green" >}} {{< bg "16" "postgresql-16-pllua" "green" >}} {{< bg "15" "postgresql-15-pllua" "green" >}} {{< bg "14" "postgresql-14-pllua" "green" >}} | `postgresql-$v-pllua` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.11" "pllua_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.11" "pllua_14 : AVAIL 2" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 2" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 1" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 2" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 2" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
@@ -66,11 +64,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pllua_18` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pigsty | 133.9 KiB | [pllua_18-2.0.12-7PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pllua_18-2.0.12-7PIGSTY.el8.x86_64.rpm) |
 | `pllua_18` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pigsty | 128.8 KiB | [pllua_18-2.0.12-4PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pllua_18-2.0.12-4PIGSTY.el8.x86_64.rpm) |
+| `pllua_18` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 125.9 KiB | [pllua_18-2.0.12-7PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_18-2.0.12-7PIGSTY.el8.aarch64.rpm) |
 | `pllua_18` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 120.6 KiB | [pllua_18-2.0.12-4PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_18-2.0.12-4PIGSTY.el8.aarch64.rpm) |
+| `pllua_18` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pigsty | 128.7 KiB | [pllua_18-2.0.12-7PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pllua_18-2.0.12-7PIGSTY.el9.x86_64.rpm) |
 | `pllua_18` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pigsty | 123.6 KiB | [pllua_18-2.0.12-4PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pllua_18-2.0.12-4PIGSTY.el9.x86_64.rpm) |
+| `pllua_18` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pigsty | 123.9 KiB | [pllua_18-2.0.12-7PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pllua_18-2.0.12-7PIGSTY.el9.aarch64.rpm) |
 | `pllua_18` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pigsty | 118.5 KiB | [pllua_18-2.0.12-4PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pllua_18-2.0.12-4PIGSTY.el9.aarch64.rpm) |
+| `pllua_18` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pigsty | 130.9 KiB | [pllua_18-2.0.12-7PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pllua_18-2.0.12-7PIGSTY.el10.x86_64.rpm) |
 | `pllua_18` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pigsty | 125.5 KiB | [pllua_18-2.0.12-4PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pllua_18-2.0.12-4PIGSTY.el10.x86_64.rpm) |
+| `pllua_18` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pigsty | 126.1 KiB | [pllua_18-2.0.12-7PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pllua_18-2.0.12-7PIGSTY.el10.aarch64.rpm) |
 | `pllua_18` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pigsty | 120.7 KiB | [pllua_18-2.0.12-4PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pllua_18-2.0.12-4PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pllua` | `2.0.12` | [d12.x86_64](/os/d12.x86_64) | pgdg | 347.6 KiB | [postgresql-18-pllua_2.0.12-7.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg12+1_amd64.deb) |
 | `postgresql-18-pllua` | `2.0.12` | [d12.aarch64](/os/d12.aarch64) | pgdg | 336.3 KiB | [postgresql-18-pllua_2.0.12-7.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg12+1_arm64.deb) |
@@ -88,14 +92,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pllua_17` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pigsty | 133.7 KiB | [pllua_17-2.0.12-7PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pllua_17-2.0.12-7PIGSTY.el8.x86_64.rpm) |
 | `pllua_17` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pgdg | 119.4 KiB | [pllua_17-2.0.12-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pllua_17-2.0.12-3PGDG.rhel8.x86_64.rpm) |
+| `pllua_17` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 125.6 KiB | [pllua_17-2.0.12-7PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_17-2.0.12-7PIGSTY.el8.aarch64.rpm) |
 | `pllua_17` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 110.9 KiB | [pllua_17-2.0.12-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pllua_17-2.0.12-3PGDG.rhel8.aarch64.rpm) |
+| `pllua_17` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pigsty | 128.7 KiB | [pllua_17-2.0.12-7PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pllua_17-2.0.12-7PIGSTY.el9.x86_64.rpm) |
 | `pllua_17` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.3 KiB | [pllua_17-2.0.12-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pllua_17-2.0.12-6PGDG.rhel9.8.x86_64.rpm) |
 | `pllua_17` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.4 KiB | [pllua_17-2.0.12-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pllua_17-2.0.12-3PGDG.rhel9.x86_64.rpm) |
+| `pllua_17` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pigsty | 123.6 KiB | [pllua_17-2.0.12-7PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pllua_17-2.0.12-7PIGSTY.el9.aarch64.rpm) |
 | `pllua_17` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 115.1 KiB | [pllua_17-2.0.12-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pllua_17-2.0.12-6PGDG.rhel9.8.aarch64.rpm) |
 | `pllua_17` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 115.3 KiB | [pllua_17-2.0.12-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pllua_17-2.0.12-3PGDG.rhel9.aarch64.rpm) |
+| `pllua_17` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pigsty | 130.5 KiB | [pllua_17-2.0.12-7PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pllua_17-2.0.12-7PIGSTY.el10.x86_64.rpm) |
 | `pllua_17` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 122.2 KiB | [pllua_17-2.0.12-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pllua_17-2.0.12-6PGDG.rhel10.2.x86_64.rpm) |
 | `pllua_17` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 122.4 KiB | [pllua_17-2.0.12-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pllua_17-2.0.12-4PGDG.rhel10.x86_64.rpm) |
+| `pllua_17` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pigsty | 126.2 KiB | [pllua_17-2.0.12-7PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pllua_17-2.0.12-7PIGSTY.el10.aarch64.rpm) |
 | `pllua_17` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.5 KiB | [pllua_17-2.0.12-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pllua_17-2.0.12-6PGDG.rhel10.2.aarch64.rpm) |
 | `pllua_17` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.8 KiB | [pllua_17-2.0.12-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pllua_17-2.0.12-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pllua` | `2.0.12` | [d12.x86_64](/os/d12.x86_64) | pgdg | 347.0 KiB | [postgresql-17-pllua_2.0.12-7.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg12+1_amd64.deb) |
@@ -114,14 +124,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pllua_16` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pigsty | 133.8 KiB | [pllua_16-2.0.12-7PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pllua_16-2.0.12-7PIGSTY.el8.x86_64.rpm) |
 | `pllua_16` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pgdg | 119.2 KiB | [pllua_16-2.0.12-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pllua_16-2.0.12-1PGDG.rhel8.x86_64.rpm) |
+| `pllua_16` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 125.7 KiB | [pllua_16-2.0.12-7PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_16-2.0.12-7PIGSTY.el8.aarch64.rpm) |
 | `pllua_16` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 110.6 KiB | [pllua_16-2.0.12-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pllua_16-2.0.12-1PGDG.rhel8.aarch64.rpm) |
+| `pllua_16` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pigsty | 128.7 KiB | [pllua_16-2.0.12-7PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pllua_16-2.0.12-7PIGSTY.el9.x86_64.rpm) |
 | `pllua_16` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.4 KiB | [pllua_16-2.0.12-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pllua_16-2.0.12-6PGDG.rhel9.8.x86_64.rpm) |
 | `pllua_16` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.1 KiB | [pllua_16-2.0.12-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pllua_16-2.0.12-1PGDG.rhel9.x86_64.rpm) |
+| `pllua_16` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pigsty | 123.6 KiB | [pllua_16-2.0.12-7PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pllua_16-2.0.12-7PIGSTY.el9.aarch64.rpm) |
 | `pllua_16` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 115.2 KiB | [pllua_16-2.0.12-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pllua_16-2.0.12-6PGDG.rhel9.8.aarch64.rpm) |
 | `pllua_16` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 115.5 KiB | [pllua_16-2.0.12-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pllua_16-2.0.12-1PGDG.rhel9.aarch64.rpm) |
+| `pllua_16` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pigsty | 130.6 KiB | [pllua_16-2.0.12-7PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pllua_16-2.0.12-7PIGSTY.el10.x86_64.rpm) |
 | `pllua_16` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 122.5 KiB | [pllua_16-2.0.12-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pllua_16-2.0.12-6PGDG.rhel10.2.x86_64.rpm) |
 | `pllua_16` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 122.7 KiB | [pllua_16-2.0.12-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pllua_16-2.0.12-4PGDG.rhel10.x86_64.rpm) |
+| `pllua_16` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pigsty | 126.2 KiB | [pllua_16-2.0.12-7PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pllua_16-2.0.12-7PIGSTY.el10.aarch64.rpm) |
 | `pllua_16` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.4 KiB | [pllua_16-2.0.12-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pllua_16-2.0.12-6PGDG.rhel10.2.aarch64.rpm) |
 | `pllua_16` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.7 KiB | [pllua_16-2.0.12-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pllua_16-2.0.12-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pllua` | `2.0.12` | [d12.x86_64](/os/d12.x86_64) | pgdg | 346.9 KiB | [postgresql-16-pllua_2.0.12-7.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg12+1_amd64.deb) |
@@ -140,15 +156,21 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pllua_15` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pigsty | 136.2 KiB | [pllua_15-2.0.12-7PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pllua_15-2.0.12-7PIGSTY.el8.x86_64.rpm) |
 | `pllua_15` | `2.0.11` | [el8.x86_64](/os/el8.x86_64) | pgdg | 120.9 KiB | [pllua_15-2.0.11-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pllua_15-2.0.11-1.rhel8.x86_64.rpm) |
 | `pllua_15` | `2.0.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 120.9 KiB | [pllua_15-2.0.10-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pllua_15-2.0.10-1.rhel8.x86_64.rpm) |
+| `pllua_15` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 127.7 KiB | [pllua_15-2.0.12-7PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_15-2.0.12-7PIGSTY.el8.aarch64.rpm) |
 | `pllua_15` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.4 KiB | [pllua_15-2.0.12-4PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_15-2.0.12-4PIGSTY.el8.aarch64.rpm) |
+| `pllua_15` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pigsty | 132.0 KiB | [pllua_15-2.0.12-7PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pllua_15-2.0.12-7PIGSTY.el9.x86_64.rpm) |
 | `pllua_15` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 123.9 KiB | [pllua_15-2.0.12-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pllua_15-2.0.12-6PGDG.rhel9.8.x86_64.rpm) |
 | `pllua_15` | `2.0.11` | [el9.x86_64](/os/el9.x86_64) | pgdg | 123.5 KiB | [pllua_15-2.0.11-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pllua_15-2.0.11-1.rhel9.x86_64.rpm) |
 | `pllua_15` | `2.0.10` | [el9.x86_64](/os/el9.x86_64) | pgdg | 123.8 KiB | [pllua_15-2.0.10-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pllua_15-2.0.10-1.rhel9.x86_64.rpm) |
+| `pllua_15` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pigsty | 126.3 KiB | [pllua_15-2.0.12-7PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pllua_15-2.0.12-7PIGSTY.el9.aarch64.rpm) |
 | `pllua_15` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 118.0 KiB | [pllua_15-2.0.12-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pllua_15-2.0.12-6PGDG.rhel9.8.aarch64.rpm) |
+| `pllua_15` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pigsty | 133.4 KiB | [pllua_15-2.0.12-7PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pllua_15-2.0.12-7PIGSTY.el10.x86_64.rpm) |
 | `pllua_15` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 125.5 KiB | [pllua_15-2.0.12-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pllua_15-2.0.12-6PGDG.rhel10.2.x86_64.rpm) |
 | `pllua_15` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 125.8 KiB | [pllua_15-2.0.12-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pllua_15-2.0.12-4PGDG.rhel10.x86_64.rpm) |
+| `pllua_15` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pigsty | 128.3 KiB | [pllua_15-2.0.12-7PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pllua_15-2.0.12-7PIGSTY.el10.aarch64.rpm) |
 | `pllua_15` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 120.2 KiB | [pllua_15-2.0.12-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pllua_15-2.0.12-6PGDG.rhel10.2.aarch64.rpm) |
 | `pllua_15` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 120.4 KiB | [pllua_15-2.0.12-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pllua_15-2.0.12-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pllua` | `2.0.12` | [d12.x86_64](/os/d12.x86_64) | pgdg | 348.7 KiB | [postgresql-15-pllua_2.0.12-7.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg12+1_amd64.deb) |
@@ -167,14 +189,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pllua_14` | `2.0.12` | [el8.x86_64](/os/el8.x86_64) | pigsty | 136.2 KiB | [pllua_14-2.0.12-7PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pllua_14-2.0.12-7PIGSTY.el8.x86_64.rpm) |
 | `pllua_14` | `2.0.11` | [el8.x86_64](/os/el8.x86_64) | pgdg | 121.1 KiB | [pllua_14-2.0.11-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pllua_14-2.0.11-1.rhel8.x86_64.rpm) |
 | `pllua_14` | `2.0.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 120.9 KiB | [pllua_14-2.0.10-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pllua_14-2.0.10-1.rhel8.x86_64.rpm) |
+| `pllua_14` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 127.7 KiB | [pllua_14-2.0.12-7PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_14-2.0.12-7PIGSTY.el8.aarch64.rpm) |
 | `pllua_14` | `2.0.12` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.4 KiB | [pllua_14-2.0.12-4PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pllua_14-2.0.12-4PIGSTY.el8.aarch64.rpm) |
+| `pllua_14` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pigsty | 132.0 KiB | [pllua_14-2.0.12-7PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pllua_14-2.0.12-7PIGSTY.el9.x86_64.rpm) |
 | `pllua_14` | `2.0.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 124.0 KiB | [pllua_14-2.0.12-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pllua_14-2.0.12-6PGDG.rhel9.8.x86_64.rpm) |
 | `pllua_14` | `2.0.11` | [el9.x86_64](/os/el9.x86_64) | pgdg | 123.2 KiB | [pllua_14-2.0.11-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pllua_14-2.0.11-1.rhel9.x86_64.rpm) |
+| `pllua_14` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pigsty | 126.5 KiB | [pllua_14-2.0.12-7PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pllua_14-2.0.12-7PIGSTY.el9.aarch64.rpm) |
 | `pllua_14` | `2.0.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 118.1 KiB | [pllua_14-2.0.12-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pllua_14-2.0.12-6PGDG.rhel9.8.aarch64.rpm) |
+| `pllua_14` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pigsty | 133.2 KiB | [pllua_14-2.0.12-7PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pllua_14-2.0.12-7PIGSTY.el10.x86_64.rpm) |
 | `pllua_14` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 125.6 KiB | [pllua_14-2.0.12-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pllua_14-2.0.12-6PGDG.rhel10.2.x86_64.rpm) |
 | `pllua_14` | `2.0.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 125.8 KiB | [pllua_14-2.0.12-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pllua_14-2.0.12-4PGDG.rhel10.x86_64.rpm) |
+| `pllua_14` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pigsty | 128.3 KiB | [pllua_14-2.0.12-7PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pllua_14-2.0.12-7PIGSTY.el10.aarch64.rpm) |
 | `pllua_14` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 120.1 KiB | [pllua_14-2.0.12-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pllua_14-2.0.12-6PGDG.rhel10.2.aarch64.rpm) |
 | `pllua_14` | `2.0.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 120.6 KiB | [pllua_14-2.0.12-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pllua_14-2.0.12-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pllua` | `2.0.12` | [d12.x86_64](/os/d12.x86_64) | pgdg | 348.5 KiB | [postgresql-14-pllua_2.0.12-7.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg12+1_amd64.deb) |
@@ -199,10 +227,10 @@ width: full
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

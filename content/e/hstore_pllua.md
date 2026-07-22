@@ -28,25 +28,24 @@ width: full
 |   **See Also**    | {{< ext "hstore_plperl" >}} {{< ext "hstore_plperlu" >}} {{< ext "hstore_plpython3u" >}} {{< ext "plpgsql" >}} |
 |    **Siblings**   | {{< ext "pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} |
 
-> [!Note] missing pg12-15 on el.aarch64
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.12` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pllua` | `hstore`, `pllua` |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pllua` | `hstore`, `pllua` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "pllua_18" "green" >}} {{< bg "17" "pllua_17" "green" >}} {{< bg "16" "pllua_16" "green" >}} {{< bg "15" "pllua_15" "green" >}} {{< bg "14" "pllua_14" "green" >}} | `pllua_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.12` | {{< bg "18" "postgresql-18-pllua" "green" >}} {{< bg "17" "postgresql-17-pllua" "green" >}} {{< bg "16" "postgresql-16-pllua" "green" >}} {{< bg "15" "postgresql-15-pllua" "green" >}} {{< bg "14" "postgresql-14-pllua" "green" >}} | `postgresql-$v-pllua` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.11" "pllua_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.11" "pllua_14 : AVAIL 2" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 2" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 1" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 2" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.12" "pllua_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.12" "pllua_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 2" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.12" "pllua_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.12" "pllua_14 : AVAIL 3" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
@@ -68,10 +67,10 @@ width: full
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

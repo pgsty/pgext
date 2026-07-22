@@ -7,23 +7,13 @@ import (
 )
 
 func TestGlobalMatrixClassifyCellMatchesAvailabilityColors(t *testing.T) {
-	ext := &Extension{
-		PgVer:   []string{"18", "17", "16"},
-		RpmRepo: sql.NullString{Valid: true, String: "PIGSTY"},
-		DebRepo: sql.NullString{Valid: true, String: "PIGSTY"},
-	}
-
 	tests := []struct {
 		name string
-		os   string
-		pg   int
 		pkg  *PkgInfo
 		want string
 	}{
 		{
 			name: "available from pgdg is blue code",
-			os:   "el9.x86_64",
-			pg:   18,
 			pkg: &PkgInfo{
 				State:   sql.NullString{Valid: true, String: "AVAIL"},
 				Org:     sql.NullString{Valid: true, String: "pgdg"},
@@ -33,8 +23,6 @@ func TestGlobalMatrixClassifyCellMatchesAvailabilityColors(t *testing.T) {
 		},
 		{
 			name: "available from pigsty is green code",
-			os:   "u24.x86_64",
-			pg:   18,
 			pkg: &PkgInfo{
 				State:   sql.NullString{Valid: true, String: "AVAIL"},
 				Org:     sql.NullString{Valid: true, String: "pigsty"},
@@ -43,61 +31,63 @@ func TestGlobalMatrixClassifyCellMatchesAvailabilityColors(t *testing.T) {
 			want: "G",
 		},
 		{
-			name: "missing supported package is red code",
-			os:   "el9.x86_64",
-			pg:   17,
+			name: "missing package is red code",
 			pkg:  &PkgInfo{State: sql.NullString{Valid: true, String: "MISS"}},
 			want: "R",
 		},
 		{
-			name: "missing unsupported pg is gray code",
-			os:   "el9.x86_64",
-			pg:   15,
-			pkg:  &PkgInfo{State: sql.NullString{Valid: true, String: "MISS"}},
+			name: "not applicable package is gray code",
+			pkg:  &PkgInfo{State: sql.NullString{Valid: true, String: "N/A"}},
 			want: ".",
 		},
 		{
-			name: "missing unsupported platform is amber code",
-			os:   "el9.x86_64",
-			pg:   17,
-			pkg:  &PkgInfo{State: sql.NullString{Valid: true, String: "MISS"}},
-			want: "A",
-		},
-		{
-			name: "fork is purple code",
-			os:   "u24.x86_64",
-			pg:   18,
-			pkg:  &PkgInfo{State: sql.NullString{Valid: true, String: "FORK"}},
-			want: "P",
-		},
-		{
-			name: "throw is purple code",
-			os:   "u24.x86_64",
-			pg:   18,
-			pkg:  &PkgInfo{State: sql.NullString{Valid: true, String: "THROW"}},
-			want: "P",
-		},
-		{
-			name: "break is orange code",
-			os:   "u24.x86_64",
-			pg:   18,
-			pkg:  &PkgInfo{State: sql.NullString{Valid: true, String: "BREAK"}},
-			want: "O",
+			name: "missing row defaults to not applicable",
+			pkg:  nil,
+			want: ".",
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			testExt := *ext
-			if tt.want == "A" {
-				testExt.RpmRepo = sql.NullString{}
-			}
-
-			got := classifyGlobalMatrixCell(&testExt, tt.pkg, tt.os, tt.pg)
+			got := classifyGlobalMatrixCell(tt.pkg)
 			if got.Code != tt.want {
 				t.Fatalf("Code = %q, want %q; cell = %+v", got.Code, tt.want, got)
 			}
 		})
+	}
+}
+
+func TestPackageStatusRenderersUseTriStateColors(t *testing.T) {
+	colors := []struct {
+		name, state, org, want string
+	}{
+		{"pgdg available", "AVAIL", "PGDG", "blue"},
+		{"pigsty available", "AVAIL", "PIGSTY", "green"},
+		{"missing", "MISS", "", "red"},
+		{"not applicable", "N/A", "", "gray"},
+	}
+	for _, tt := range colors {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := getBadgeColor(tt.state, tt.org); got != tt.want {
+				t.Fatalf("getBadgeColor(%q, %q) = %q, want %q", tt.state, tt.org, got, tt.want)
+			}
+			if got := getOSBadgeColor(tt.state, tt.org); got != tt.want {
+				t.Fatalf("getOSBadgeColor(%q, %q) = %q, want %q", tt.state, tt.org, got, tt.want)
+			}
+		})
+	}
+
+	if got := CCPkgStateBadge("N/A", ""); !strings.Contains(got, "ext-badge--na") || !strings.Contains(got, ">N/A<") {
+		t.Fatalf("CCPkgStateBadge(N/A) = %q", got)
+	}
+
+	ext := &Extension{RpmRepo: sql.NullString{Valid: true, String: "PIGSTY"}}
+	pkg := &PkgInfo{State: sql.NullString{Valid: true, String: "N/A"}, Count: sql.NullInt64{Valid: true, Int64: 0}}
+	if got := (&IOPageGenerator{}).formatAvailCell(pkg, ext, "el9.x86_64"); got != "N/A PIGSTY - 0" {
+		t.Fatalf("IO N/A cell = %q", got)
+	}
+	if got := (&CCPageGenerator{}).formatAvailCell(pkg, ext, "el9.x86_64"); got != "N/A PIGSTY - 0" {
+		t.Fatalf("CC N/A cell = %q", got)
 	}
 }
 
@@ -112,7 +102,7 @@ func TestGlobalMatrixLetterLineUsesPackageNameAndLeadLink(t *testing.T) {
 			},
 			"u24.x86_64": {
 				14: {Code: "."},
-				15: {Code: "P"},
+				15: {Code: "R"},
 			},
 		},
 	}
@@ -120,7 +110,7 @@ func TestGlobalMatrixLetterLineUsesPackageNameAndLeadLink(t *testing.T) {
 	pgVersions := []int{14, 15}
 
 	got := formatGlobalMatrixLetterLine(row, osVersions, pgVersions)
-	want := "[pg_duckdb](https://pigsty.io/ext/e/pg_duckdb) | BG | .P"
+	want := "[pg_duckdb](https://pigsty.io/ext/e/pg_duckdb) | BG | .R"
 	if got != want {
 		t.Fatalf("letter line = %q, want %q", got, want)
 	}
@@ -134,14 +124,14 @@ func TestGlobalMatrixStandaloneHTMLIsPresentationPage(t *testing.T) {
 			"el9.x86_64": {
 				14: {Code: "B", Class: "gm-pgdg", Label: "PGDG", Title: "el9.x86_64 PG14 | PGDG"},
 				15: {Code: "G", Class: "gm-pigsty", Label: "Pigsty", Title: "el9.x86_64 PG15 | Pigsty"},
-				16: {Code: "A", Class: "gm-platform", Label: "No platform repo", Title: "el9.x86_64 PG16 | No platform repo"},
+				16: {Code: ".", Class: "gm-na", Label: "N/A", Title: "el9.x86_64 PG16 | N/A"},
 			},
 		},
 		PGDGCells: map[string]map[int]GlobalMatrixCell{
 			"el9.x86_64": {
 				14: {Code: "B", Class: "gm-pgdg", Label: "PGDG", Title: "el9.x86_64 PG14 | PGDG"},
 				15: {Code: "R", Class: "gm-missing", Label: "Missing", Title: "el9.x86_64 PG15 | Missing"},
-				16: {Code: ".", Class: "gm-unavailable", Label: "Unavailable", Title: "el9.x86_64 PG16 | Unavailable"},
+				16: {Code: ".", Class: "gm-na", Label: "N/A", Title: "el9.x86_64 PG16 | N/A"},
 			},
 		},
 	}
@@ -152,7 +142,7 @@ func TestGlobalMatrixStandaloneHTMLIsPresentationPage(t *testing.T) {
 		OS:         1,
 		PG:         3,
 		Cells:      3,
-		Counts:     map[string]int{"B": 1, "G": 1, "A": 1},
+		Counts:     map[string]int{"B": 1, "G": 1, ".": 1},
 		PGDGCounts: map[string]int{"B": 1, "R": 1, ".": 1},
 	}
 
@@ -177,8 +167,8 @@ func TestGlobalMatrixStandaloneHTMLIsPresentationPage(t *testing.T) {
 		`Package Cells`,
 		`PG Extension Matrix`,
 		`<b>PIGSTY</b><em data-full-count="1"`,
-		`<b>Unavailable</b><em data-full-count="1" data-pgdg-count="1">1</em>`,
-		`<span class="mx-dot gm-unavailable"></span>`,
+		`<b>N/A</b><em data-full-count="1" data-pgdg-count="1">1</em>`,
+		`<span class="mx-dot gm-na"></span>`,
 	}
 	for _, needle := range required {
 		if !strings.Contains(got, needle) {

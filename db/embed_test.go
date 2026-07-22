@@ -53,6 +53,40 @@ func TestCSVTableRegistryCoversEmbeddedAssets(t *testing.T) {
 	}
 }
 
+func TestPackageStateIsTriState(t *testing.T) {
+	schema, err := GetSchema()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(schema, "CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'N/A')") {
+		t.Fatal("pgext.pkg schema does not define the AVAIL/MISS/N/A state machine")
+	}
+	for _, retired := range []string{"'HIDE'", "'BREAK'", "'THROW'", "'FORK'"} {
+		if strings.Contains(schema, retired) {
+			t.Fatalf("pgext.pkg schema still defines retired state %s", retired)
+		}
+	}
+
+	reload, err := embeddedFS.ReadFile("reload.sql")
+	if err != nil {
+		t.Fatal(err)
+	}
+	reloadSQL := string(reload)
+	for _, retired := range []string{"state = 'HIDE'", "state = 'BREAK'", "state = 'THROW'", "state = 'FORK'"} {
+		if strings.Contains(reloadSQL, retired) {
+			t.Fatalf("package recap still assigns retired state in %q", retired)
+		}
+	}
+	baseline := strings.Index(reloadSQL, "END::pgext.pkg_state AS state")
+	available := strings.Index(reloadSQL, "SET state = 'AVAIL' WHERE count > 0")
+	if baseline < 0 || available < 0 || baseline >= available {
+		t.Fatal("package recap must establish the N/A baseline before real packages override it to AVAIL")
+	}
+	if !strings.Contains(reloadSQL, "SELECT DISTINCT ON (pkg) * FROM pgext.extension") {
+		t.Fatal("package recap must initialize each normalized package exactly once")
+	}
+}
+
 func TestUniverseSchemaMatchesCSV(t *testing.T) {
 	schema, err := GetSchema()
 	if err != nil {
