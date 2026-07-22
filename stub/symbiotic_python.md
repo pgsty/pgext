@@ -2,15 +2,22 @@
 
 Sources:
 
-- [Upstream README at the reviewed commit](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/README.md)
-- [Rust implementation](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/src/lib.rs)
+- [Official README at the reviewed commit](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/README.md)
 - [Install-time SQL script](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/sql/symbiotic_python.sql)
-- [Extension control file](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/symbiotic_python.control)
+- [Rust implementation](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/src/lib.rs)
+- [Python notification listener](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/scripts/symbiotic.py)
+- [Build metadata](https://github.com/MarchLiu/symbiotic_python/blob/519af89947c885de1f445d40cd2e5b0d5a5bf9dc/Cargo.toml)
 
-`symbiotic_python` is an abandoned one-day pgrx prototype, not an extension that is safe to install. Its install script immediately invokes `create_venv`, creates files under the PostgreSQL service account's home directory, runs `pip` to download `asyncpg` and `asyncpg-listen`, writes launcher scripts, and starts a detached Python listener connected to the current database.
+`symbiotic_python` is an abandoned pgrx prototype that tries to create a per-database Python virtual environment and launch an asynchronous notification listener. It is unsafe to install: extension installation itself performs operating-system, filesystem, package-download, and process-launch side effects as the PostgreSQL service account.
 
-### Critical Security Warning
+### Intended Workflow
 
-Public SQL functions interpolate the caller-supplied environment name into `sh -c` commands used by `create_venv` and `drop_venv` without shell quoting. A caller able to invoke them can inject shell syntax and execute operating-system commands as the PostgreSQL service account; `drop_venv` also constructs an unquoted `rm -rf` command.
+The SQL API includes `create_venv(name)`, `drop_venv(name)`, `venv_path(name)`, and `run_symbiotic(venv, channel)`, plus zero-argument wrappers. The install script automatically invokes environment creation for the current database. It creates files beneath the service account's `$HOME/.symbiotic`, runs `pip` for `asyncpg` and `asyncpg-listen`, writes shell launchers, and starts a detached listener.
 
-Do not run `CREATE EXTENSION symbiotic_python`, do not expose its shared library, and do not test it on a host containing data or credentials. Source inspection in an isolated build environment is the only appropriate use. The repository contains no operational documentation, maintenance history, or mitigation for these install-time side effects.
+The listener connects back to the local database, subscribes to a notification channel, appends payloads to a log, and exits on a shutdown payload. There is no reliable SQL status or stop interface, package lockfile, process supervision, or cleanup transaction for these external side effects.
+
+### Critical Security Boundary
+
+`create_venv(name)` and `drop_venv(name)` interpolate the caller-controlled name into shell commands without quoting. This permits shell-command injection as the PostgreSQL operating-system account; the deletion path also constructs an unquoted `rm -rf`. These functions are not made safe merely by placing them in the `symbiotic` schema, and default function privileges can expose them more broadly than intended.
+
+Do not install or load `symbiotic_python` on any host containing data, credentials, or network access. Do not run its SQL even for a trial. The only appropriate evaluation is offline source inspection or a throwaway sandbox with no secrets and no reachable systems. Its old pgrx dependencies cover only historical PostgreSQL majors and do not mitigate the design-level command-execution flaw.

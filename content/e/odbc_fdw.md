@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8520** | {{< badge content="odbc_fdw" link="https://github.com/devrimgunduz/odbc_fdw" >}} | {{< ext "odbc_fdw" >}} | `0.6.1` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8520** | {{< badge content="odbc_fdw" link="https://github.com/devrimgunduz/odbc_fdw" >}} | {{< ext "odbc_fdw" >}} | `0.5.2` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `odbc_fdw` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `odbc_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.6.1` | {{< bg "18" "odbc_fdw_18" "green" >}} {{< bg "17" "odbc_fdw_17" "green" >}} {{< bg "16" "odbc_fdw_16" "green" >}} {{< bg "15" "odbc_fdw_15" "green" >}} {{< bg "14" "odbc_fdw_14" "green" >}} | `odbc_fdw_$v` | `unixODBC` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "postgresql-18-odbc-fdw" "green" >}} {{< bg "17" "postgresql-17-odbc-fdw" "green" >}} {{< bg "16" "postgresql-16-odbc-fdw" "green" >}} {{< bg "15" "postgresql-15-odbc-fdw" "green" >}} {{< bg "14" "postgresql-14-odbc-fdw" "green" >}} | `postgresql-$v-odbc-fdw` | `libodbc2` |
 
@@ -251,77 +251,71 @@ pig install odbc_fdw -v 14;   # install for PG 14
 CREATE EXTENSION odbc_fdw;
 ```
 
-
-
-
 ## Usage
 
-> [odbc_fdw: Foreign data wrapper for accessing remote databases using ODBC](https://github.com/CartoDB/odbc_fdw)
+Sources:
 
-### Create Server
+- [odbc_fdw 0.6.1 README](https://github.com/devrimgunduz/odbc_fdw/blob/0.6.1/README.md)
+- [odbc_fdw changelog](https://github.com/devrimgunduz/odbc_fdw/blob/0.6.1/NEWS.md)
+- [Extension control file](https://github.com/devrimgunduz/odbc_fdw/blob/0.6.1/odbc_fdw.control)
+- [0.6.0 to 0.6.1 comparison](https://github.com/devrimgunduz/odbc_fdw/compare/0.6.0...0.6.1)
 
-Connect using a DSN defined in your ODBC configuration:
+`odbc_fdw` exposes tables or driver-specific queries from an ODBC data source as PostgreSQL foreign tables. It is primarily a read/query bridge across heterogeneous systems; validate data-type conversions and remote-driver behavior before relying on it for production queries.
+
+### Core Workflow
 
 ```sql
 CREATE EXTENSION odbc_fdw;
 
-CREATE SERVER odbc_server
+-- In 0.6.1 a superuser must set the server-level dsn or driver option.
+CREATE SERVER warehouse_odbc
   FOREIGN DATA WRAPPER odbc_fdw
-  OPTIONS (dsn 'test');
+  OPTIONS (dsn 'warehouse');
+
+CREATE USER MAPPING FOR analyst
+  SERVER warehouse_odbc
+  OPTIONS (odbc_UID 'reporter', odbc_PWD 'secret');
+
+CREATE FOREIGN TABLE remote_customer (
+  id bigint,
+  name text,
+  created_at timestamp
+) SERVER warehouse_odbc
+  OPTIONS (schema 'sales', table 'customer');
+
+SELECT * FROM remote_customer WHERE id = 42;
 ```
 
-Or specify connection attributes directly without a DSN:
+Use `driver` instead of `dsn` for a DSN-less connection. Other driver attributes use the `odbc_` prefix and may be placed on the server, user mapping, or foreign table. Put credentials in a user mapping. Quote case-sensitive attribute names, and wrap values containing `=` or `;` in braces as required by the driver.
+
+### Queries and Import
+
+`sql_query` overrides `table`; pair it with `sql_count` when the FDW needs an explicit row-count query:
 
 ```sql
-CREATE SERVER odbc_server
-  FOREIGN DATA WRAPPER odbc_fdw
+CREATE FOREIGN TABLE active_customer (
+  id bigint,
+  name text
+) SERVER warehouse_odbc
   OPTIONS (
-    odbc_DRIVER 'MySQL',
-    odbc_SERVER '192.168.1.17',
-    encoding 'iso88591'
+    sql_query 'SELECT id, name FROM sales.customer WHERE active = 1',
+    sql_count 'SELECT count(*) FROM sales.customer WHERE active = 1'
   );
+
+IMPORT FOREIGN SCHEMA sales
+  FROM SERVER warehouse_odbc
+  INTO imported
+  OPTIONS (prefix 'odbc_');
 ```
 
-**Server Options:** `dsn` (ODBC data source name), `driver` (ODBC driver name, required if no DSN), `odbc_*` (driver-specific attributes), `encoding` (remote database character encoding).
+### Important Objects and Options
 
-Prefix driver-specific options with `odbc_`. Attributes DSN, DRIVER, UID, and PWD are automatically uppercased.
+- `dsn` or `driver` selects the ODBC data source; 0.6.1 restricts these server options to superusers because the driver manager loads shared libraries.
+- `schema`, `table`, `sql_query`, and `sql_count` select the remote relation or query.
+- `prefix` changes local names created by `IMPORT FOREIGN SCHEMA`.
+- `ODBCTablesList(server_name, ...)` lists visible remote tables.
+- `ODBCTableSize(server_name, table_name)` and `ODBCQuerySize(server_name, query)` return remote row counts.
 
-### Create User Mapping
+Version 0.6.0 restores compatibility and fixes crashes on recent PostgreSQL releases. Version 0.6.1 escapes remote literals and identifiers to prevent SQL injection, restricts driver selection, and redacts common credential attributes in debug connection strings. Upgrade before allowing delegated FDW use, while retaining normal server ownership and user-mapping controls.
 
-```sql
-CREATE USER MAPPING FOR postgres
-  SERVER odbc_server
-  OPTIONS (odbc_UID 'root', odbc_PWD '');
-```
-
-### Create Foreign Table
-
-```sql
-CREATE FOREIGN TABLE odbc_table (
-  id integer,
-  name varchar(255),
-  description text,
-  users float4,
-  created timestamp
-)
-SERVER odbc_server
-OPTIONS (
-  odbc_DATABASE 'mydb',
-  schema 'test',
-  sql_query 'SELECT id, name, description, created, users FROM test.mytable',
-  sql_count 'SELECT count(id) FROM test.mytable'
-);
-
-SELECT * FROM odbc_table;
-```
-
-**Table Options:** `schema` (remote schema), `table` (remote table name), `sql_query` (custom SQL query, overrides `table`), `sql_count` (custom count SQL).
-
-### Import Foreign Schema
-
-```sql
-IMPORT FOREIGN SCHEMA test
-  FROM SERVER odbc_server
-  INTO public
-  OPTIONS (odbc_DATABASE 'mydb');
-```
+Only the ODBC types listed by the upstream README are fully supported. Identifier length, driver SQL dialect, encodings, null handling, and binary values can vary. The source/package release is 0.6.1, while the control file and install SQL continue to declare extension version 0.5.2.

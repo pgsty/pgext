@@ -2,24 +2,32 @@
 
 Sources:
 
-- [TencentDB for PostgreSQL extension version matrix](https://cloud.tencent.com/document/product/409/75121)
-- [TencentDB: Creating an extension in an instance](https://cloud.tencent.com/document/product/409/121744)
-- [TencentDB example showing the preloaded module](https://cloud.tencent.com/document/product/409/111199)
+- [Official TencentDB for PostgreSQL extension matrix](https://cloud.tencent.com/document/product/409/75121)
 
-`tencentdb_pwdcheck` is TencentDB for PostgreSQL's provider-only strong-password authentication extension. The current support matrix lists version `1.0` for PostgreSQL 10 through 17 and no PostgreSQL 18 package. Tencent does not publish its source, control file, password-policy settings, or SQL API.
+`tencentdb_pwdcheck` is a provider-only extension available on TencentDB for PostgreSQL. Use it only within that managed-service boundary and obtain the password-policy semantics from the TencentDB console or support channel: the public matrix confirms availability but does not document SQL functions, policy parameters, preload behavior, or source code.
 
-Check the exact instance's catalog before enabling it:
+### Core Workflow
+
+The current TencentDB matrix lists version `1.0` for PostgreSQL 10 through 17 and no entry for PostgreSQL 18. First verify that the extension is offered by the exact instance engine version, then enable it using TencentDB's supported extension procedure:
 
 ```sql
 SELECT name, default_version, installed_version
 FROM pg_available_extensions
 WHERE name = 'tencentdb_pwdcheck';
-```
 
-TencentDB documentation shows `tencentdb_pwdcheck` in `shared_preload_libraries`. In the managed console, add the module to that parameter if it is not already present, save the parameter change, and allow the instance to restart. Then create the extension in each database where its extension object is required:
-
-```sql
 CREATE EXTENSION tencentdb_pwdcheck;
+
+SELECT extname, extversion
+FROM pg_extension
+WHERE extname = 'tencentdb_pwdcheck';
 ```
 
-Changing `shared_preload_libraries` restarts the managed instance, so schedule the operation and ensure clients reconnect automatically. Because the provider does not document individual policy knobs publicly, use the console and Tencent support information for the selected engine revision instead of assuming community `passwordcheck` settings apply.
+If the first query returns no row, do not copy files or substitute the community `passwordcheck` module; choose a supported engine version or contact Tencent Cloud.
+
+### Provider Boundary
+
+The cited TencentDB page documents package availability only. It does not specify which password operations are checked, how rules are configured, whether existing credentials are evaluated, or whether a restart is required. Treat those details as provider-managed and revision-specific, and verify them against the console help or a Tencent support response for the target instance.
+
+### Operational Notes
+
+Test activation and password changes on a disposable role before applying a policy to production users. Coordinate database policy changes with application secret rotation and preserve an independently tested administrative recovery path; a stricter or misunderstood password rule can block user creation, password rotation, or emergency access.

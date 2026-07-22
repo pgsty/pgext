@@ -2,21 +2,29 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/Giangblackk/wrapper_deltalake/blob/0459b9f308ee790df21dafdd9f366b5b54fb33b0/wrapper_deltalake.control)
-- [官方上游文档](https://github.com/Giangblackk/wrapper_deltalake/blob/0459b9f308ee790df21dafdd9f366b5b54fb33b0/README.md)
+- [Official README](https://github.com/Giangblackk/wrapper_deltalake/blob/0459b9f308ee790df21dafdd9f366b5b54fb33b0/README.md)
+- [Extension control file](https://github.com/Giangblackk/wrapper_deltalake/blob/0459b9f308ee790df21dafdd9f366b5b54fb33b0/wrapper_deltalake.control)
+- [Rust implementation](https://github.com/Giangblackk/wrapper_deltalake/blob/0459b9f308ee790df21dafdd9f366b5b54fb33b0/src/lib.rs)
 
-`wrapper_deltalake` — 原计划实现 Delta Lake 外部数据包装器、但仅停留在 pgrx Hello World 的未完成原型。
+wrapper_deltalake 是一个未完成的概念验证，原计划连接 Supabase Wrappers 与 delta-rs。所核验版本没有实现外部数据包装器、Delta Lake 读取器、服务器选项或表映射；它只暴露一个问候函数。
 
-已复核目录快照记录的版本为 `0.0.0`、类型为 `standard`、实现语言为 `Rust`。
-整理后的兼容版本集合为 `14,15,16`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+完整的用户可见行为只有这条演示调用：
 
 ```sql
-CREATE EXTENSION "wrapper_deltalake";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'wrapper_deltalake';
+CREATE EXTENSION wrapper_deltalake;
+
+SELECT hello_wrapper_deltalake();
 ```
 
-整理后的生命周期为 `abandoned`。采用前应固定已复核构建并确认维护状态。
+它会返回固定问候语。项目没有定义外部服务器或查询 Delta 表的受支持方法。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### 重要对象
+
+- `hello_wrapper_deltalake` 返回固定文本 `Hello, wrapper_deltalake`。
+- `wrapper_deltalake` 是扩展名，但没有注册 FDW handler 或 validator。
+
+### 运维说明
+
+目录和 control 文件使用 0.0.0 版本，README 描述的是未来意图而非已实现行为。不要从 Supabase Wrappers 或 delta-rs 文档中臆造配置：那些项目的能力并不存在于此扩展。实际数据访问应选择仍受维护且已经实现的 Delta Lake 集成。

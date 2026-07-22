@@ -240,90 +240,76 @@ shared_preload_libraries = 'pg_statement_rollback, pg_dbms_errlog';
 CREATE EXTENSION pg_dbms_errlog CASCADE; -- requires pg_statement_rollback
 ```
 
-
-
-
 ## Usage
 
-> [pg_dbms_errlog: Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table](https://github.com/HexaCluster/pg_dbms_errlog)
+Sources:
 
-Enables DML operations to continue after encountering errors by logging failures to an error table, rather than aborting the transaction.
+- [Official v2.4 README](https://github.com/HexaCluster/pg_dbms_errlog/blob/v2.4/README.md)
+- [v2.4 release changelog](https://github.com/HexaCluster/pg_dbms_errlog/blob/v2.4/ChangeLog)
+- [v2.4 control file](https://github.com/HexaCluster/pg_dbms_errlog/blob/v2.4/pg_dbms_errlog.control)
+- [v2.4 extension SQL](https://github.com/HexaCluster/pg_dbms_errlog/blob/v2.4/sql/pg_dbms_errlog--2.4.sql)
 
-### Enabling
+`pg_dbms_errlog` provides Oracle-style DML error logging for PostgreSQL. It queues an error from a failed `INSERT`, `UPDATE`, or `DELETE`, writes it to a registered `ERR$_...` table through background workers, and lets the surrounding script continue after rolling back to a savepoint. It requires either `pg_statement_rollback` or explicit savepoint management by the caller.
 
-Add to `shared_preload_libraries` in `postgresql.conf`:
+### Enable the Extension
 
-```ini
+Add the library to `shared_preload_libraries`, ensure `max_worker_processes` can accommodate `pg_dbms_errlog.max_workers` plus the fixed worker, and restart PostgreSQL:
+
+```conf
 shared_preload_libraries = 'pg_dbms_errlog'
 ```
 
 ```sql
 CREATE EXTENSION pg_dbms_errlog;
-LOAD 'pg_dbms_errlog';
 ```
 
-### Create Error Log Table
+Create and register an error table for each DML target:
 
 ```sql
-BEGIN;
-CALL dbms_errlog.create_error_log('employees');
-END;
--- Creates table "ERR$_employees" with error logging columns
+CREATE TABLE raises (
+    employee_id integer,
+    salary integer CHECK (salary > 8000)
+);
 
--- With custom name and schema:
-BEGIN;
-CALL dbms_errlog.create_error_log('hr.employees', '"ERRORS"."ERR$_EMPTABLE"');
-END;
+CALL dbms_errlog.create_error_log('raises');
+-- Creates and registers public."ERR$_raises" by default.
 ```
 
-### Configuration
+### Log and Continue after an Error
 
 ```sql
-SET pg_dbms_errlog.enabled TO true;       -- enable error logging
-SET pg_dbms_errlog.query_tag TO 'daily_load';  -- tag for identifying statements
-SET pg_dbms_errlog.reject_limit TO 10;    -- max errors before rollback (-1=unlimited)
-SET pg_dbms_errlog.synchronous TO 'transaction'; -- 'transaction', 'query', or 'off'
-SET pg_dbms_errlog.no_client_error TO true;      -- suppress client error messages
-```
-
-### Usage with pg_statement_rollback
-
-```sql
-LOAD 'pg_dbms_errlog';
 LOAD 'pg_statement_rollback';
 
-CREATE TABLE hr.raises (emp_id integer, sal integer CHECK(sal > 8000));
+SET pg_statement_rollback.enabled = on;
+SET pg_dbms_errlog.enabled = on;
+SET pg_dbms_errlog.query_tag = 'daily_load';
+SET pg_dbms_errlog.reject_limit = 10;
 
 BEGIN;
-CALL dbms_errlog.create_error_log('hr.raises');
-END;
-
-SET pg_dbms_errlog.query_tag TO 'daily_load';
-SET pg_dbms_errlog.reject_limit TO 10;
-SET pg_dbms_errlog.enabled TO true;
-
-BEGIN;
-SET pg_statement_rollback.enabled TO on;
-INSERT INTO hr.raises VALUES (145, 15400);  -- Success
-INSERT INTO hr.raises VALUES (161, 7700);   -- Failure (logged)
+INSERT INTO raises VALUES (145, 15400);
+INSERT INTO raises VALUES (161, 7700);  -- logged failure
 ROLLBACK TO SAVEPOINT "PgSLRAutoSvpt";
-INSERT INTO hr.raises VALUES (175, 9680);   -- Success
+INSERT INTO raises VALUES (175, 9680);
 COMMIT;
-```
 
-### Viewing Error Logs
-
-```sql
 SELECT * FROM "ERR$_raises";
--- pg_err_number$  | 23514
--- pg_err_mesg$    | new row for relation "raises" violates check constraint
--- pg_err_optyp$   | I
--- pg_err_tag$     | daily_load
--- pg_err_query$   | INSERT INTO hr.raises VALUES (161, 7700);
 ```
 
-### Flush Queued Errors
+The error table contains `pg_err_number$`, `pg_err_mesg$`, `pg_err_optyp$`, `pg_err_tag$`, `pg_err_query$`, and `pg_err_detail$`.
 
-```sql
-SELECT dbms_errlog.publish_queue();
-```
+### API and Configuration Index
+
+- `dbms_errlog.create_error_log(dml_table_name, err_log_table_name, err_log_table_owner, err_log_table_space)`: creates and registers an error table.
+- `dbms_errlog.publish_queue(wait_for_completion)`: asks workers to process queued errors; execution is not granted to `PUBLIC` by default.
+- `dbms_errlog.queue_size()`: reports queued errors.
+- `pg_dbms_errlog.synchronous`: `transaction` by default, `query`, or `off`. Transaction mode guarantees that only errors from committed transactions are logged.
+- `pg_dbms_errlog.reject_limit`: transaction-wide error limit; `-1` is unlimited and `0` logs nothing and rolls back.
+- `pg_dbms_errlog.no_client_error`: suppresses client error messages while retaining server logging; enabled by default.
+- `pg_dbms_errlog.frequency` and `pg_dbms_errlog.max_workers`: asynchronous worker timing and concurrency.
+
+### Caveats
+
+- A caller needs DML privileges on the target and error tables; creating an error table also requires execution and registration-table privileges described upstream.
+- `INSERT INTO ... SELECT ...` is one PostgreSQL statement and cannot preserve only successful rows in the Oracle manner.
+- Syntax and other parse-time errors are not logged. Stored query text must remain below PostgreSQL's 1 GB value limit.
+- Version `2.4` changes no SQL API; it fixes worker shutdown loops and a dynamic-background-worker crash.

@@ -2,29 +2,52 @@
 
 Sources:
 
-- [pg_scws README at the reviewed commit](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/README.md)
-- [pg_scws.control at the reviewed commit](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws.control)
-- [Version 1.0 install SQL](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws--1.0.sql)
-- [Parser and configuration implementation](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws.c)
-- [Bundled SCWS sources and dictionaries](https://github.com/jaiminpan/pg_scws/tree/338d1ebe911372165acad331264bbf48afa56a9e/libscws)
+- [Official README at the catalog revision](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/README.md)
+- [Extension SQL at the catalog revision](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws--1.0.sql)
+- [Parser implementation at the catalog revision](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws.c)
 
-`pg_scws` embeds the SCWS Chinese word segmenter as PostgreSQL's `scws` text-search parser. Installation creates the `scwscfg` text-search configuration and maps noun, verb, adjective, idiom, exclamation, and temporary-word token classes through the `simple` dictionary.
+`pg_scws` 1.0 integrates the SCWS Chinese word segmenter as a PostgreSQL full-text-search parser. It installs the scws parser and the scwscfg text-search configuration, which maps several lexical classes through the simple dictionary.
 
-### Chinese Full-Text Parsing
+### Core Workflow
 
 ```sql
 CREATE EXTENSION pg_scws;
 
 SELECT to_tsvector(
-  'scwscfg',
-  '小明硕士毕业于中国科学院计算所，后在日本京都大学深造'
+    'scwscfg',
+    '小明硕士毕业于中国科学院计算所，后在日本京都大学深造'
 );
+
+CREATE INDEX article_search_idx
+ON article
+USING gin (to_tsvector('scwscfg', body));
+
+SELECT id
+FROM article
+WHERE to_tsvector('scwscfg', body)
+      @@ to_tsquery('scwscfg', '计算 & 专家');
 ```
 
-Session settings include `scws.charset`, `scws.rules`, `scws.extra_dicts`, `scws.punctuation_ignore`, `scws.seg_with_duality`, and `scws.multi_mode`. Rule and dictionary names resolve under PostgreSQL's shared `tsearch_data` directory.
+Use the same text-search configuration in the indexed expression and every matching query.
 
-### Caveats
+### Objects and Settings
 
-- Version `1.0` was tested upstream only with PostgreSQL 9.4, and the reviewed source dates from 2016. Port and regression-test the parser against the exact target release.
-- The bundled default dictionary and rules determine segmentation quality and vocabulary. Changes to those files are server-wide deployment changes and must be consistent across replicas.
-- `scws.extra_dicts` accepts server-side dictionary filenames, not client files. Upstream's user-defined-dictionary documentation is empty; establish your own controlled build, distribution, and rollback procedure.
+- The extension creates the scws text-search parser and scwscfg configuration.
+- Settings control dictionary-in-memory mode, charset selection, rules file, extra dictionaries, punctuation handling, duality segmentation, and multi-mode segmentation.
+- Dictionary and rule files are resolved from PostgreSQL's text-search data directory. Every server that can execute queries needs identical files and configuration.
+
+```sql
+SHOW scws.dict_in_memory;
+SHOW scws.charset;
+SHOW scws.rules;
+SHOW scws.extra_dicts;
+SHOW scws.punctuation_ignore;
+SHOW scws.seg_with_duality;
+SHOW scws.multi_mode;
+```
+
+### Compatibility and Operations
+
+- Upstream reports testing only on PostgreSQL 9.4 and merely expects later 9.x versions to work. The parser uses server APIs that can change between major versions; build and test it on each exact target major.
+- The source bundles SCWS, a default UTF-8 dictionary, and rules. Custom dictionaries should be deployed atomically across primary, replicas, and failover candidates before rebuilding affected indexes.
+- Segmentation or dictionary changes alter lexemes. REINDEX expression indexes after intentional rule changes and validate search recall/precision with representative Chinese text.

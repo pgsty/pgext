@@ -2,24 +2,43 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/neurondb/neurondb/blob/66284d0476a864bbe074017b517a34daef454fba/neurondb.control)
-- [Official upstream documentation](https://www.neurondb.ai/docs)
-- [Official project or provider page](https://www.neurondb.ai)
+- [Official README](https://github.com/neurondb/neurondb/blob/66284d0476a864bbe074017b517a34daef454fba/README.md)
+- [Official control file](https://github.com/neurondb/neurondb/blob/66284d0476a864bbe074017b517a34daef454fba/neurondb.control)
+- [Official documentation](https://www.neurondb.ai/docs)
 
-`neurondb` — AI database extension for vector search, ML inference, hybrid search, and RAG in PostgreSQL.
+`neurondb` is a proprietary PostgreSQL extension for vector types and search, in-database ML and embedding inference, hybrid retrieval, and optional background workers. The reviewed source identifies itself as development version `4.0.0-devel`; verify licensing and the exact binary's implemented SQL surface before storing production data in its types or indexes.
 
-The reviewed catalog snapshot records version `4.0.0-devel`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `16,17,18`; confirm the exact build against the target server.
+### Core Workflow
+
+Start by verifying the extension build rather than assuming every advertised module is present:
 
 ```sql
-CREATE EXTENSION "neurondb";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'neurondb';
+CREATE EXTENSION neurondb;
+
+SELECT neurondb.version();
+
+SELECT n.nspname AS schema_name,
+       p.proname AS function_name,
+       pg_get_function_identity_arguments(p.oid) AS arguments
+FROM pg_proc AS p
+JOIN pg_namespace AS n ON n.oid = p.pronamespace
+WHERE n.nspname = 'neurondb'
+ORDER BY p.proname, arguments;
 ```
 
-The upstream project is associated with `NeuronDB`; verify its current support, license, packaging, and deployment boundary from the linked source.
+The upstream project documents vector types including `vector`, `halfvec`, `binaryvec`, and `sparsevec`, distance operators including `<->`, `<=>`, and `<#>`, plus HNSW and IVF indexes. Follow the version-matched indexing documentation and test exact recall before adopting an operator class or tuning setting.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+### Major Surfaces
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+- Vector storage, distance calculation, approximate HNSW/IVF search, and quantization.
+- SQL-facing model training, prediction, embeddings, hybrid retrieval, reranking, and RAG helpers.
+- Optional workers named `neuranq`, `neuranmon`, `neurandefrag`, and `neuranllm`.
+- Optional platform-specific GPU paths for CUDA, ROCm, and Metal.
+
+The breadth is build- and license-dependent. Use the installed catalogs and vendor documentation for the licensed artifact as the authority, not function counts or performance claims in the repository overview.
+
+### Prerequisites and Operations
+
+The control file requires superuser installation, marks the extension untrusted, and says to put `neurondb` in `shared_preload_libraries` and restart when using its background workers. The README declares PostgreSQL 16 through 18 support and a proprietary license that restricts commercial use, modification, and redistribution; obtain terms applicable to the deployed binary.
+
+Vector indexes are approximate and add build memory, disk, WAL, and write-maintenance costs. Model and GPU features add native libraries, model files, backend memory, and potentially external-provider credentials or traffic. Benchmark recall and failure behavior, cap resource use, restrict execution privileges, and prove upgrade plus dump/restore on a copy of production-shaped data.

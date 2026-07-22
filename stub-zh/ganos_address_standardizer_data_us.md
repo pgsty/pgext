@@ -2,23 +2,22 @@
 
 来源：
 
-- [官方上游文档](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [阿里云扩展支持矩阵](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
 
-`ganos_address_standardizer_data_us` — 基于PAGC标准的地名标准化美国部分数据插件。
+`ganos_address_standardizer_data_us` 版本 `7.0` 是阿里云 ApsaraDB RDS for PostgreSQL 提供的、基于 PAGC 标准的美国地址标准化数据插件。它是服务商提供的数据组件，并不是一组有独立文档的 SQL 函数。
 
-已复核目录快照记录的版本为 `7.0`、类型为 `puresql`、实现语言为 `Data`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17`；仍需针对目标服务器确认实际构建。
+### 启用方式
+
+首先确认精确的 ApsaraDB RDS PostgreSQL 引擎版本与版本系列支持该扩展及版本。在实例允许用 SQL 安装时，服务商文档给出了标准扩展机制：
 
 ```sql
-CREATE EXTENSION "ganos_address_standardizer_data_us";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'ganos_address_standardizer_data_us';
+CREATE EXTENSION ganos_address_standardizer_data_us;
 ```
 
-这是 `Alibaba Cloud` 的服务商专用组件；可用性、启用、权限与升级遵循该服务，而不是可移植的社区软件包。
+部分托管扩展必须改用服务控制台启用。应遵循当前实例的服务商流程，并在 `pg_extension` 中确认安装结果。
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+### 运维边界
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+服务商矩阵分别列出了 `ganos_address_standardizer` 与 `ganos_address_standardizer_data_us`。地址处理操作应通过另行受支持的标准化组件完成；服务商页面没有为该数据插件本身记录独立的函数接口。
+
+可用性会随引擎版本与版本系列变化。如果扩展不存在，阿里云建议升级引擎小版本或核对适用的支持列。不要把此流程用于自建 PostgreSQL：这里引用的制品与启用契约仅适用于阿里云。

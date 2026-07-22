@@ -2,22 +2,33 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/iso_codes.control)
-- [官方 Rust 包清单](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/Cargo.toml)
-- [官方上游 README](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/README.md)
+- [官方控制文件](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/iso_codes.control)
+- [官方 ISO Codes README](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/README.md)
+- [生成的 PostgreSQL 17 扩展 SQL](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/extension/usr/share/postgresql/17/extension/iso_codes--0.1.0.sql)
 
-`iso_codes` — 基于 pgrx 的 ISO 国家代码枚举/数据类型扩展，并提供 Rust、Diesel 与 PostgreSQL 集成。
+`iso_codes` 添加 `CountryCode` PostgreSQL 枚举，包含该扩展构建固化的两字母国家代码集合。需要把列限制在固定词表而不是任意文本时，可以使用它。
 
-已复核目录快照记录的版本为 `0.1.0`、类型为 `standard`、实现语言为 `Rust`。
-整理后的兼容版本集合为 `13,14,15,16,17`；仍需针对目标服务器确认实际构建。
+### 核心流程
 
 ```sql
-CREATE EXTENSION "iso_codes";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'iso_codes';
+CREATE EXTENSION iso_codes;
+
+CREATE TABLE offices (
+    name text NOT NULL,
+    country CountryCode NOT NULL
+);
+
+INSERT INTO offices VALUES ('New York', 'US'), ('Berlin', 'DE');
+SELECT * FROM offices WHERE country = 'US'::CountryCode;
 ```
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+枚举之外的值会被拒绝。生成的 0.1.0 SQL 包含该版本编译时收录的国家代码标签，其中包括 `XK`。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### SQL 对象
+
+- `CountryCode` 是所核验生成 SQL 中唯一面向用户的 SQL 对象。
+- 枚举顺序遵循生成产物的声明顺序；不要假设该顺序代表地理或业务优先级。
+
+### 运维说明
+
+0.1.0 版不可重定位。控制文件设置 `superuser = true` 和 `trusted = false`，因此创建需要超级用户；它未声明前置扩展或预加载要求。PostgreSQL 枚举成员固定在已安装 SQL 中，依赖新分配或变更的代码前应审查版本差异。

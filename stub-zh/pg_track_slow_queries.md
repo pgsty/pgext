@@ -2,21 +2,46 @@
 
 来源：
 
-- [官方上游文档](https://github.com/julmon/pg_track_slow_queries/blob/eeea6f7c65d2e59cfe01e71329016e0bc364bdca/README.md)
+- [Official README](https://github.com/julmon/pg_track_slow_queries/blob/eeea6f7c65d2e59cfe01e71329016e0bc364bdca/README.md)
+- [Extension SQL](https://github.com/julmon/pg_track_slow_queries/blob/eeea6f7c65d2e59cfe01e71329016e0bc364bdca/pg_track_slow_queries--1.0.sql)
+- [Hook and GUC implementation](https://github.com/julmon/pg_track_slow_queries/blob/eeea6f7c65d2e59cfe01e71329016e0bc364bdca/pg_track_slow_queries.c)
 
-`pg_track_slow_queries` — pg_track_slow_queries：统计观测类 PostgreSQL 扩展；上游说明为“追踪慢查询及其执行计划”。
+pg_track_slow_queries 是一个预加载扩展，会把超过时长阈值的语句、执行指标以及可选 JSON 计划写入专用服务端文件。SQL 函数可以读取和重置该文件。上游把项目标记为仍在开发，所核验源码来自 2019 年。
 
-已复核目录快照记录的版本为 `1.0`、类型为 `preload`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
 
-```sql
-CREATE EXTENSION "pg_track_slow_queries";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_track_slow_queries';
+预加载该库，配置正阈值，重启 PostgreSQL，并在用于检查的数据库中创建扩展：
+
+```ini
+shared_preload_libraries = 'pg_track_slow_queries'
+pg_track_slow_queries.log_min_duration = 1000
+pg_track_slow_queries.log_plan = on
+pg_track_slow_queries.compression = on
+pg_track_slow_queries.max_file_size = 1048576
 ```
 
-整理后的生命周期为 `abandoned`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+```sql
+CREATE EXTENSION pg_track_slow_queries;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SELECT datetime, duration, username, dbname, query, plan
+FROM pg_track_slow_queries()
+ORDER BY datetime DESC;
+
+SELECT pg_track_slow_queries_reset();
+```
+
+reset 调用会截断共享历史；如果需要保留证据，应先导出。
+
+### 重要对象
+
+- `pg_track_slow_queries` 返回时间戳、时长、用户、应用、数据库、临时块、缓存命中率、影响行数、查询文本和 JSON 计划。
+- `pg_track_slow_queries_reset` 清空存储文件。
+- `pg_track_slow_queries.log_min_duration` 设置毫秒阈值；-1 禁用捕获。
+- `pg_track_slow_queries.compression` 控制行压缩。
+- `pg_track_slow_queries.max_file_size` 以 KB 限制文件大小；-1 表示无限制。
+- `pg_track_slow_queries.log_plan` 控制计划捕获。
+- `pg_track_slow_queries.cost_analyze` 在超过成本阈值时启用类似 EXPLAIN ANALYZE 的工作；-1 禁用。
+
+### 安全与性能说明
+
+捕获的 SQL 和计划可能含有字面值、标识符及敏感负载细节，而 reset 函数会销毁共享证据。必须限制函数执行权限和服务端文件访问。扩展不跟踪 utility 语句，也不记录预备语句参数值。计划捕获、压缩、文件大小强制限制，尤其是 analyze 风格执行，都可能带来可观开销；大范围启用前要按实际配置做基准测试并监控磁盘。

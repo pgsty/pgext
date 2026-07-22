@@ -5,27 +5,40 @@ Sources:
 - [Aiven Extras README at the reviewed commit](https://github.com/aiven/aiven-extras/blob/ed2a4a676034b1ca3edb767d5805c482262d3f9b/README.md)
 - [Control template at the reviewed commit](https://github.com/aiven/aiven-extras/blob/ed2a4a676034b1ca3edb767d5805c482262d3f9b/aiven_extras.control.in)
 - [Build version at the reviewed commit](https://github.com/aiven/aiven-extras/blob/ed2a4a676034b1ca3edb767d5805c482262d3f9b/Makefile)
-- [Aiven Extras tags](https://github.com/aiven/aiven-extras/tags)
 
-`aiven_extras` is an Aiven-maintained extension that lets non-superusers perform a selected set of otherwise privileged operations after a privileged operator installs it. Its main use cases are logical-replication administration, session-local `auto_explain` configuration, selected pgaudit settings, and controlled dblink execution.
+`aiven_extras` is an Aiven-maintained collection of narrowly scoped wrappers for operations that normally require elevated PostgreSQL privileges. After a privileged operator installs it, eligible non-superusers can administer selected logical-replication objects, configure session-local `auto_explain`, adjust selected pgaudit settings, and run controlled dblink operations. It installs into the fixed `aiven_extras` schema and does not grant general superuser access.
 
-The replication wrappers include `pg_create_publication`, `pg_create_subscription`, and subscription enable, disable, refresh, list, and drop operations. The calling role still needs the `REPLICATION` privilege; the extension does not turn an arbitrary role into a superuser.
+### Logical Replication Workflow
 
-### Basic Setup
+The calling role still needs `REPLICATION`. Use schema-qualified table names and restrict execution privileges on the wrappers to the operational roles that need them.
 
 ```sql
 CREATE EXTENSION aiven_extras;
 
+SELECT aiven_extras.pg_create_publication(
+  'pub1', 'INSERT,UPDATE', 'public.foo', 'public.bar'
+);
+
+SELECT * FROM aiven_extras.pg_list_all_subscriptions();
+```
+
+The replication surface includes `pg_create_publication`, `pg_create_publication_for_all_tables`, `pg_create_subscription`, `pg_drop_subscription`, `pg_alter_subscription_enable`, `pg_alter_subscription_disable`, `pg_alter_subscription_refresh_publication`, `pg_list_all_subscriptions`, and `pg_stat_replication_list`. Subscription creation still performs network and replication-slot work; it is not made transactional by the wrapper.
+
+### Session Diagnostics
+
+`auto_explain_load` loads `auto_explain` for the current session. The `set_auto_explain_*` family then changes that session's settings only.
+
+```sql
 SELECT aiven_extras.auto_explain_load();
 SELECT aiven_extras.set_auto_explain_log_min_duration('2000');
 SELECT aiven_extras.set_auto_explain_log_analyze('on');
 ```
 
-The example loads and configures `auto_explain` only for the current database session. Publication and subscription functions should be called with fully qualified table names and carefully scoped connection strings.
+Other exposed helpers include `claim_public_schema_ownership`, `dblink_record_execute`, `dblink_slot_create_or_drop`, `explain_statement`, `session_replication_role`, `set_pgaudit_parameter`, and `set_pgaudit_role_parameter`.
 
-### Caveats
+### Operational Notes
 
-- A privileged operator must install the extension first. Logical-replication operations still require `REPLICATION` on the calling role.
-- The extension deliberately exposes only selected operations; it is not a general privilege-bypass mechanism.
-- The current `main` Makefile identifies version `1.1.20`, matching the catalog, while the latest visible upstream tag is `1.1.15`. Pin the source commit or provider package whose behavior you have tested.
-- Subscription connection strings can contain credentials. Keep them out of logs and query history and prefer provider-supported secret handling.
+- The current reviewed Makefile identifies version `1.1.20`, matching the catalog. Pin the provider package or source commit whose behavior you tested.
+- Publication and subscription wrappers are privileged interfaces, not a privilege bypass. Audit their grants and revoke `PUBLIC` execution where the deployment's role model requires it.
+- Subscription connection strings can contain credentials. Keep them out of logs, query history, and error-reporting pipelines, and prefer provider-supported secret handling.
+- Enabling plan analysis can add execution overhead and expose query text or values in logs. Use `auto_explain` selectively, especially with analysis enabled.

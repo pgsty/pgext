@@ -2,23 +2,43 @@
 
 来源：
 
-- [官方上游文档](https://cloud.tencent.com/document/product/409/86587)
-- [官方项目或服务商页面](https://cloud.tencent.com/product/postgres)
+- [TencentDB Failover Slot 官方文档](https://cloud.tencent.com/document/product/409/86587)
+- [TencentDB for PostgreSQL 官方产品页](https://cloud.tencent.com/product/postgres)
 
-`tencentdb_failover_slot` — 腾讯云数据库专有内核扩展：把逻辑复制槽状态同步到备节点，使逻辑订阅可在主备切换后连续运行。
+`tencentdb_failover_slot` 是 TencentDB for PostgreSQL 的服务商扩展，用于把逻辑复制槽状态同步到备库，使逻辑复制在 HA 切换后能够继续。它属于 TencentDB 内核能力，并非可移植的社区扩展，而且只支持逻辑复制槽。
 
-已复核目录快照记录的版本为 `1.0`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,18`；仍需针对目标服务器确认实际构建。
+### 创建故障转移槽
+
+实例参数 `tencentdb_force_enable_failover_slot` 启用时，TencentDB 默认把新建逻辑槽创建为故障转移槽：
 
 ```sql
-CREATE EXTENSION "tencentdb_failover_slot";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tencentdb_failover_slot';
+CREATE EXTENSION tencentdb_failover_slot;
+
+SELECT *
+FROM pg_create_logical_replication_slot(
+  'app_slot',
+  'pgoutput'
+);
+
+SELECT * FROM pg_failover_slots;
+SELECT *
+FROM pg_replication_slots
+WHERE slot_name = 'app_slot';
 ```
 
-这是 `Tencent Cloud` 的服务商专用组件；可用性、启用、权限与升级遵循该服务，而不是可移植的社区软件包。
+如果关闭了默认强制参数，可用 `pg_create_logical_failover_slot(slotname, pluginname)` 显式创建。腾讯云建议使用 `pgoutput` 解码插件。
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+### 生命周期操作
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+- `pg_create_logical_failover_slot()` 显式创建故障转移逻辑槽。
+- `pg_failover_slots` 列出当前故障转移槽名称；普通槽详情可连接或查询 `pg_replication_slots`。
+- `transform_slot_to_nonfailover()` 把未激活的故障转移槽转换成普通槽。
+- `pg_drop_replication_slot()` 删除任意一种复制槽。
+
+复制槽属于实例级，而扩展属于数据库级。切换到另一个数据库调用函数前，需要在那里重新创建 `tencentdb_failover_slot`。
+
+### 故障转移策略与注意事项
+
+TencentDB 参数 `failover_slot_timeline_diverged_option` 控制 HA 期间备库 WAL 接收落后于逻辑消费的情况。默认值 `error` 会暂停逻辑复制并向操作方报告错误。`rewind` 会从切换时间点恢复，因此可能涉及连续性/数据丢失取舍；只有具备应用级对账方案时才能选择。
+
+故障转移前后都应监控保留 WAL、复制槽活跃状态、消费者 LSN、备库重放和磁盘用量。应使用真实订阅端测试计划内与意外切换，确认重复/缺口处理，并及时删除遗弃槽。该功能不支持物理复制槽，其行为、可用性、权限、备份和升级仍受 TencentDB 服务及区域约束。

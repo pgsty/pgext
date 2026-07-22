@@ -2,22 +2,35 @@
 
 来源：
 
-- [官方 PGXN 分发页](https://pgxn.org/dist/plv8/)
-- [官方项目或服务商页面](https://plv8.github.io/)
+- [官方 PL/V8 方言文档](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/doc/plv8.md#dialects)
+- [官方 LiveScript 示例](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/doc/plv8.md#livescript-example)
+- [官方构建规则](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/Makefile)
 
-`plls` — 基于 PL/v8 运行时编译并执行 LiveScript 的 PostgreSQL 过程语言
+`plls` 是 PL/V8 随附的可选 LiveScript 过程语言方言。它编译 LiveScript 函数体，并交给 V8 后端的 PL/V8 处理器。版本 `3.1.10` 属于遗留方言，主要用于兼容现有数据库函数。
 
-已复核目录快照记录的版本为 `3.1.10`、类型为 `standard`、实现语言为 `C++`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+服务器软件包必须包含可选的 `plls.control` 与版本化 SQL 文件。超级用户创建语言后，获准用户即可定义 LiveScript 函数：
 
 ```sql
-CREATE EXTENSION "plls";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'plls';
+CREATE EXTENSION plls;
+
+CREATE FUNCTION plls_test(keys text[], vals text[])
+RETURNS text AS $$
+  return JSON.stringify { [key, vals[idx]] for key, idx in keys }
+$$ LANGUAGE plls IMMUTABLE STRICT;
+
+SELECT plls_test(ARRAY['name', 'age'], ARRAY['Tom', '29']);
 ```
 
-整理后的生命周期为 `deprecated`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+结果是由 LiveScript 函数体组装的 JSON 字符串。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### 对象与运行时
+
+`CREATE EXTENSION plls` 会在 `pg_catalog` 中安装可信语言 `plls`，以及调用、内联、校验处理器函数。生成的 control/SQL 文件加载 `$libdir/plv8`；LiveScript 没有单独的 PostgreSQL 共享库，也不需要预加载设置。
+
+### 注意事项
+
+使用 `DISABLE_DIALECT` 构建 PL/V8 时会省略 `plls` 文件。应确认已安装软件包包含该方言，并与 PL/V8 二进制和版本匹配。虽然最终语言标记为 trusted，创建扩展仍需要超级用户。
+
+LiveScript 及其 PL/V8 集成属于遗留接口。执行的代码会在数据库后端中消耗内存与 CPU。应限制函数定义权限，审查易变性与 strict 声明，并在升级前对完全一致的 PostgreSQL/PL/V8/V8/LiveScript 组合执行回归测试。

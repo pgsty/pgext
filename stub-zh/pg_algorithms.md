@@ -2,25 +2,32 @@
 
 来源：
 
-- [已复核 commit 的 pg_algorithms README](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/README.md)
-- [已复核 commit 的 pg_algorithms.control](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/pg_algorithms.control)
-- [版本 1.0 的安装 SQL](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/pg_algorithms--1.0.sql)
-- [冒泡排序实现](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/bubble_sort.c)
-- [快速排序实现](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/quick_sort.c)
+- [目录版本对应的官方 README](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/README.md)
+- [目录版本对应的扩展 SQL](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/pg_algorithms--1.0.sql)
 
-`pg_algorithms` 是一个学习项目，提供两个用于排序一维 `int[]` 的 C 函数：`bubble_sort` 和 `quick_sort`。两者都会返回新的升序数组，并拒绝包含 `NULL` 的数组。
+`pg_algorithms` 1.0 为整数数组暴露冒泡排序和快速排序的演示实现。上游将其称为个人练习项目；它适合学习或小型实验，不应作为生产排序原语。
 
-### 排序整数数组
+### 核心流程
 
 ```sql
 CREATE EXTENSION pg_algorithms;
 
-SELECT bubble_sort(ARRAY[9, 0, -2, 9, 4]);
-SELECT quick_sort(ARRAY[9, 0, -2, 9, 4]);
+SELECT bubble_sort(ARRAY[5, 1, 4, 2, 3]);
+SELECT quick_sort(ARRAY[5, 1, 4, 2, 3]);
+
+-- PostgreSQL's native relational sort is the normal production choice.
+SELECT array_agg(v ORDER BY v)
+FROM unnest(ARRAY[5, 1, 4, 2, 3]) AS u(v);
 ```
+
+### 函数索引
+
+- `bubble_sort(integer[])` 使用冒泡排序返回升序的一维整数数组。
+- `quick_sort(integer[])` 使用首元素为枢轴的递归快速排序，返回升序的一维整数数组。
+- 两个函数均为 strict 和 stable，SQL 接口只暴露 integer 数组。
 
 ### 注意事项
 
-- 上游明确表示不要在生产中使用该项目。已复核源码停留在 2018 年，且没有现代 PostgreSQL 兼容性矩阵。
-- `bubble_sort` 的比较开销为 `O(n²)`，手写递归快速排序在不利输入下也可能退化。运维工作负载更适合使用 PostgreSQL 原生排序设施。
-- 版本 `1.0` 只实现上述两个函数，尽管项目名称涵盖更广的算法范围。SQL 签名接受 PostgreSQL `integer[]`，而非任意数值或多态数组。
+- C 实现会拒绝包含 NULL 元素的数组和多维数组。
+- 冒泡排序时间复杂度为平方级；该快速排序的枢轴选择在已有序或对抗性输入上也会退化为平方级并产生深递归。
+- 实际工作负载应优先使用 PostgreSQL 原生 ORDER BY，它具备成熟的内存、磁盘溢写、排序规则和规划器集成。

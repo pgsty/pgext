@@ -2,27 +2,31 @@
 
 来源：
 
-- [已复核 commit 的 pgautograph Rust 入口](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/lib.rs)
-- [已复核 commit 的属性图查询生成器](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/queries/mod.rs)
-- [已复核 commit 的 pgautograph.control](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/pgautograph.control)
-- [已复核 commit 的 pgautograph Cargo 清单](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/Cargo.toml)
+- [官方 Rust 实现](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/lib.rs)
+- [官方图查询生成器](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/queries/mod.rs)
+- [官方 Rust 软件包清单](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/Cargo.toml)
 
-`pgautograph` 是一个早期 Rust/`pgrx` 扩展，用于从关系型外键推导属性图 DDL。当前的 `list_foreign_keys()` 函数检查 `public` 模式中的外键约束，返回来源和目标元数据，并以 INFO 消息输出生成的 `CREATE PROPERTY GRAPH graph` 语句。
+`pgautograph` 0.0.0 是未完成的 pgrx 实验，从 `public` 模式读取外键并构造拟议的属性图 DDL 字符串。其公开函数返回外键元数据，并将生成字符串写入 PostgreSQL 日志；它不会创建图。
 
 ### 检查外键
+
+在一次性数据库中创建扩展并调用主要函数：
 
 ```sql
 CREATE EXTENSION pgautograph;
 
-SELECT *
-FROM list_foreign_keys();
+SELECT * FROM list_foreign_keys();
+SELECT hello_pgautograph();
 ```
 
-应检查返回行和生成的 INFO 消息。当前函数只生成文本，不会执行属性图语句。
+`list_foreign_keys()` 返回 `source_table`、`source_pk`、`source_columns`、`target_table` 和 `target_column`。随后它会以 LOG 级别记录一个以 `CREATE PROPERTY GRAPH graph` 开头的字符串。评估原型时，需要手工捕获并审查该日志文本。
 
-### 注意事项
+### 硬编码模型假设
 
-- 已复核 crate 版本是 0.0.0，仓库没有 README、许可证声明、标签或发行版。应将其视为开发中代码。
-- control 文件设置了 `superuser = true`，因此安装扩展需要具有相应权限的角色。
-- 生成器只检查 `public` 模式，并使用简单的首字母大写与单数化规则构造图标签。执行前必须审查并编辑生成的 DDL。
-- Cargo 清单以 `pgrx` 0.16.1 声明 PostgreSQL 13 至 18 功能；这表示源码目标，不是已发布的兼容性保证。
+目录查询只考虑源表位于 `public` 的外键。它使用不带模式限定的关系名，假定每个源表都有主键，每个外键行只处理一列，并应用简单的英语首字母大写与单数化。生成的顶点定义没有属性，边生成器则根据匹配引用的数量推断有向或无向形式。
+
+### 开发中边界
+
+函数既不返回也不执行图 DDL。它直接解包 NULL 目录值和 SPI 结果，所以没有主键的外键表可能引发 Rust panic。Hash set 迭代还会使生成子句顺序不确定。随附的问候测试所期待的文本与函数实际包含感叹号的结果不同，说明 0.0.0 源码树甚至没有通过自身测试进行发布门禁。
+
+只能将它作为源码材料或一次性原型。实际使用前，必须加入带模式限定的目录处理、复合键支持、确定性输出、标识符引用、NULL 与错误处理、生成 DDL 返回值，以及针对准确 PostgreSQL 属性图语法的测试。不要仅为获取一个可以安全地用 SQL 编写的目录查询，就向它授予生产超级用户安装权限。

@@ -6,17 +6,19 @@ Sources:
 - [Official PGXN distribution page](https://pgxn.org/dist/explanation/)
 - [Official upstream README](https://github.com/theory/explanation/blob/abae6466a140981565479b6160fe6122eb344248/README.md)
 
-`explanation` — EXPLAIN plan parser that returns plan nodes as relational rows organized as a proximity tree.
+`explanation` 0.3.0 parses PostgreSQL `EXPLAIN` output into relational rows: one row per plan node, with child nodes referring to their parent identifiers. It is useful for SQL-side plan analysis when a proximity-tree representation is easier to query than formatted plan text.
 
-The reviewed catalog snapshot records version `0.3.0`, kind `puresql`, and implementation language `SQL`.
-Install and validate the declared extension dependencies first: `plpgsql`.
-The curated compatibility set is `10,11,12,13,14`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "explanation";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'explanation';
+CREATE EXTENSION explanation;
+
+SELECT *
+FROM explanation('SELECT * FROM orders WHERE customer_id = 42');
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Pass a single query string to `explanation(text)`. The function runs plain `EXPLAIN`, parses its XML representation, and returns the plan nodes as a table for filtering, joins, or visualization.
+
+### Requirements and Caveats
+
+The upstream release requires PostgreSQL 9.0 or later built with XML support, and its code predates modern JSON-format plan tooling. It does not run `EXPLAIN ANALYZE`, so the result contains planner estimates rather than measured execution. Accept query text only from trusted callers, and test the parser against the exact PostgreSQL major version because plan fields evolve between releases.

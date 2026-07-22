@@ -2,22 +2,48 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/calebwin/pgclaw/blob/ea6c3abe27602724f01de199b87eac8cfcd47212/pgclaw.control)
-- [Official upstream documentation](https://github.com/calebwin/pgclaw/blob/ea6c3abe27602724f01de199b87eac8cfcd47212/README.md)
-- [Official Rust package manifest](https://github.com/calebwin/pgclaw/blob/ea6c3abe27602724f01de199b87eac8cfcd47212/Cargo.toml)
+- [Official README for version 0.1.0](https://github.com/calebwin/pgclaw/blob/ea6c3abe27602724f01de199b87eac8cfcd47212/README.md)
+- [Official extension SQL](https://github.com/calebwin/pgclaw/blob/ea6c3abe27602724f01de199b87eac8cfcd47212/sql/pgclaw--0.1.0.sql)
+- [Official background-worker implementation](https://github.com/calebwin/pgclaw/blob/ea6c3abe27602724f01de199b87eac8cfcd47212/src/worker.rs)
 
-`pgclaw` — Store LLM or OpenClaw agents as PostgreSQL values and process watched rows with a background worker
+`pgclaw` stores an LLM-agent specification in the `claw` data type and asynchronously processes inserted or updated rows with a PostgreSQL background worker. It is useful for experimental agent-driven workflows in which a model writes values back to a row; it also supports reusable agents, channel sessions, and optional Claude Code workspaces.
 
-The reviewed catalog snapshot records version `0.1.0`, kind `preload`, and implementation language `Rust`.
-The curated compatibility set is `14,15,16,17`; confirm the exact build against the target server.
+### Configuration and Core Workflow
 
-```sql
-CREATE EXTENSION "pgclaw";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pgclaw';
+The background worker requires preload-time configuration and a restart:
+
+```conf
+shared_preload_libraries = 'pgclaw'
+pgclaw.database = 'appdb'
+pgclaw.api_provider = 'anthropic'
+pgclaw.api_key = 'replace-with-a-secret'
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+Then create the extension, add a primary-key table with a `claw` column, and register it:
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```sql
+CREATE EXTENSION pgclaw;
+
+CREATE TABLE tickets (
+    id bigserial PRIMARY KEY,
+    title text,
+    priority text,
+    agent claw DEFAULT claw(
+        'Set priority to low, medium, high, or critical from the ticket data.'
+    )
+);
+
+SELECT claw_watch('tickets'::regclass);
+INSERT INTO tickets(title) VALUES ('Production login returns HTTP 500');
+
+SELECT id, priority FROM tickets;
+SELECT id, error, created_at, done_at FROM claw.queue ORDER BY id DESC;
+```
+
+The trigger writes row JSON to `claw.queue`; the worker calls the configured provider, parses its response, and updates the source row. `claw_unwatch(regclass)` removes the trigger. `claw_model()`, `claw_prompt()`, and `claw_agent_id()` inspect stored values. Reusable definitions live in `claw.agents`; sessions, messages, inbox/outbox, channel bindings, heartbeats, and cron definitions live in the corresponding `claw` tables.
+
+### Operational and Security Boundaries
+
+`claw_watch()` requires a primary key and at least one `claw` column. Processing is asynchronous and can fail; monitor `claw.queue.error` and design idempotent retries. Row contents are sent to an external LLM endpoint, so minimize exposed fields and obtain appropriate data-handling approval. The API key is a superuser-only GUC but still resides in server configuration/process memory.
+
+Agents with a `workspace` can create directories and invoke Claude Code, which can read/write files and run tools under the PostgreSQL service account. Treat that mode as remote code execution and isolate it from database hosts carrying important data. Version 0.1.0 is an early design; test provider responses, permissions, trigger recursion protection, rate limits, transaction visibility, and crash recovery before relying on it.

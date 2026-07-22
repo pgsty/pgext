@@ -2,38 +2,42 @@
 
 Sources:
 
-- [vercomp README at the reviewed commit](https://github.com/eendroroy/pg_vercomp/blob/767244c2ab544bbe660e85a4d61cae774ab61441/README.md)
-- [vercomp 1.0.0 install SQL at the reviewed commit](https://github.com/eendroroy/pg_vercomp/blob/767244c2ab544bbe660e85a4d61cae774ab61441/vercomp--1.0.0.sql)
-- [vercomp C source at the reviewed commit](https://github.com/eendroroy/pg_vercomp/blob/767244c2ab544bbe660e85a4d61cae774ab61441/vercomp.c)
-- [Upstream-recommended pg_semver successor](https://github.com/eendroroy/pg_semver)
+- [Official upstream documentation](https://github.com/eendroroy/pg_vercomp/blob/767244c2ab544bbe660e85a4d61cae774ab61441/README.md)
+- [Official extension SQL](https://github.com/eendroroy/pg_vercomp/blob/767244c2ab544bbe660e85a4d61cae774ab61441/vercomp--1.0.0.sql)
+- [Official range-operator regression tests](https://github.com/eendroroy/pg_vercomp/blob/767244c2ab544bbe660e85a4d61cae774ab61441/test/sql/vercomp_test_caret.sql)
 
-`vercomp` version 1.0.0 defines a `version` data type, casts, comparison and range operators, and default B-tree and hash operator classes. It supports ordinary comparisons plus the `~`, `!~`, `^`, and `!^` version-range operators, and exposes helpers including `version_cmp` and `version_bump`.
+`vercomp` 1.0.0 adds a `version` base type, comparisons, B-tree and hash operator classes, and semver-like range operators. Upstream explicitly marks the project obsolete and points users to `pg_semver`. Use `vercomp` only to maintain data already committed to its exact parsing and ordering semantics.
 
 ### Store and Compare Versions
+
+Create the extension before defining columns of its type:
 
 ```sql
 CREATE EXTENSION vercomp;
 
-CREATE TABLE component_versions (
-  component text PRIMARY KEY,
+CREATE TABLE releases (
+  package text NOT NULL,
   release version NOT NULL
 );
 
-INSERT INTO component_versions VALUES
-  ('alpha', '1.2.3'),
-  ('beta', '2.0.0-rc1'),
-  ('gamma', '2.0.0');
+INSERT INTO releases VALUES
+  ('demo', '1.2.3'),
+  ('demo', '2.0.0-rc1'),
+  ('demo', '2.0.0');
 
-SELECT component, release
-FROM component_versions
-ORDER BY release;
-
+SELECT * FROM releases ORDER BY release;
 SELECT version_cmp('1.2.3', '2.0.0');
+SELECT version_bump('1.2.3', 2);
 ```
 
-### Caveats
+`version_cmp(version, version)` returns a negative, zero, or positive integer. `version_bump(version, integer)` increments component 0, 1, or 2. Ordinary `=`, `<>`, `<`, `<=`, `>`, and `>=` operators support indexed comparison.
 
-- Upstream marks the project obsolete, archived the repository, and recommends `pg_semver` as its successor. Prefer the maintained alternative for new deployments.
-- The README contains a legacy instruction to add `$libdir/vercomp` to `shared_preload_libraries` and restart. However, the reviewed control/C source declares no `_PG_init`, hook, worker, or shared-memory setup; catalog evidence records no load requirement. Treat the README step as an unresolved documentation conflict, not as demonstrated runtime necessity.
-- Upstream's environment tests target PostgreSQL 10 and do not establish compatibility with current releases.
-- Existing indexes and columns depend on this extension's `version` type and operator classes; plan an explicit data conversion before replacing it.
+### Range Operators and Casts
+
+`~` and `!~` implement the project's tilde-style match; `^` and `!^` implement its caret-style match. These are binary operators between `version` values, not string prefix or regular-expression operators. The extension also installs implicit casts between text and `version` and an implicit `version`-to-integer cast, plus B-tree and hash operator classes.
+
+Do not assume npm, Cargo, or another semver library will produce the same ranges. The reviewed zero-major regression tests produce surprising matches relative to the README's formulas, so build fixtures for every range used by the application. The integer conversion is a custom, lossy encoding and is not a stable monotonic representation for external systems.
+
+### Migration Boundary
+
+The README includes a legacy preload instruction, but the extension's user-visible type and operators are registered by its SQL script; validate the packaged loading procedure on the exact server rather than copying old configuration blindly. Before replacing it with `pg_semver`, compare accepted syntax, prerelease ordering, casts, range operators, indexes, and dump/restore output. A type change requires an explicit data migration and index rebuild, not just swapping a shared library.

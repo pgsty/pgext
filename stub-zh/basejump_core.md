@@ -2,11 +2,17 @@
 
 来源：
 
-- [database.dev 上的 basejump_core 2.0.1](https://database.dev/basejump/basejump_core)
-- [Basejump 产品与 RPC 概览](https://usebasejump.com/)
-- [已复核 commit 的账户 API 迁移](https://github.com/usebasejump/basejump/blob/cfaeaa314e2bd336ff296c8b45fa5f0fa7e4856b/supabase/migrations/20240414161947_basejump-accounts.sql)
+- [basejump_core 2.0.1 package](https://database.dev/basejump/basejump_core)
+- [Official Basejump README](https://github.com/usebasejump/basejump/blob/cfaeaa314e2bd336ff296c8b45fa5f0fa7e4856b/README.md)
+- [Account schema and RPC implementation](https://github.com/usebasejump/basejump/blob/cfaeaa314e2bd336ff296c8b45fa5f0fa7e4856b/supabase/migrations/20240414161947_basejump-accounts.sql)
+- [Invitation implementation](https://github.com/usebasejump/basejump/blob/cfaeaa314e2bd336ff296c8b45fa5f0fa7e4856b/supabase/migrations/20240414162100_basejump-invitations.sql)
+- [Billing implementation](https://github.com/usebasejump/basejump/blob/cfaeaa314e2bd336ff296c8b45fa5f0fa7e4856b/supabase/migrations/20240414162131_basejump-billing.sql)
 
-`basejump_core` 是 Basejump 的 Supabase 账户层数据库包。2.0.1 版创建个人与团队账户、账户成员和角色、邀请、计费记录、RLS 策略、触发器及公共 RPC 函数。先用 dbdev 把软件包生成到 Supabase 迁移目录，应用迁移后再启用扩展：
+`basejump_core` 2.0.1 是 Basejump 的 Supabase 账户层数据库包。它添加个人与团队账户、成员和角色、邀请、计费状态、行级安全策略、触发器以及公共 RPC 函数。它面向 Supabase 数据库，并不是独立的认证或计费服务。
+
+### 安装与启用
+
+使用官方 database.dev 软件包名生成迁移，通过正常的 Supabase 迁移流程应用，再启用生成的扩展：
 
 ```bash
 dbdev add -o ./migrations -s extensions -v 2.0.1 package -n "basejump@basejump_core"
@@ -14,15 +20,33 @@ dbdev add -o ./migrations -s extensions -v 2.0.1 package -n "basejump@basejump_c
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS basejump_core WITH SCHEMA extensions;
-
-SELECT create_account('team-slug', 'Your Team Name');
-SELECT get_accounts();
 ```
 
-公共 RPC 函数使用调用者的 Supabase 身份。例如，`create_account` 为当前已认证用户创建账户，`get_accounts` 返回该用户可见的账户。
+该软件包依赖 `auth.users`、`authenticated`、`service_role` 等 Supabase 身份与角色。SQL 还引用 `auth.uid()`、`extensions.uuid_generate_v4()`、`gen_random_bytes()` 等函数；应用迁移前，应确认 Supabase 项目已经提供这些前置对象。
 
-### 注意事项
+### 账户工作流
 
-- 这是面向 Supabase 的模式软件包，不是独立认证服务器；它依赖 `auth.users`、`authenticated` 和 `service_role` 等 Supabase 对象与角色。
-- 扩展会安装 security-definer 函数、触发器、授权和 RLS 策略。将生成的迁移应用到既有项目之前，应复核配置与权限。
-- 账户和计费数据保留在数据库中；应把升级与备份按模式迁移对待，而不是按无状态应用部署对待。
+公共函数应通过 Supabase RPC 调用，并使用调用者的已认证身份：
+
+```sql
+SELECT create_account('engineering', 'Engineering');
+SELECT get_accounts();
+SELECT get_account_by_slug('engineering');
+SELECT get_account_members(get_account_id('engineering'));
+```
+
+所有者可通过 `update_account_user_role`、`remove_account_member`、`create_invitation`、`get_account_invitations`、`lookup_invitation`、`accept_invitation` 等函数管理成员和邀请。计费消费者使用 `get_account_billing_status`；可信计费 webhook 则通过 `service_role_upsert_customer_subscription` 同步状态。
+
+### 数据库对象
+
+- `basejump.accounts` 与 `basejump.account_user`：账户、成员和账户角色。
+- `basejump.invitations`：一次性或 24 小时有效的邀请令牌。
+- `basejump.billing_customers` 与 `basejump.billing_subscriptions`：计费服务商的客户和订阅状态。
+- `basejump.config`：团队账户、计费和计费服务商的功能开关。
+- 公共 RPC 函数：面向应用的支持接口；直接访问表会受授权和 RLS 限制。
+
+### 安全与维护
+
+该软件包会安装 RLS 策略、触发器、授权和多个 `SECURITY DEFINER` 函数。应用前应审阅生成的带版本迁移，保留文档定义的 `search_path`，并分别以 `anon`、`authenticated`、`service_role` 身份测试，而不能只用管理员验证。
+
+账户、邀请和计费行都是持久业务状态。应同时备份模式与数据，把版本升级作为数据库迁移进行演练，并避免向不可信客户端暴露 webhook 凭据和 service-role 权限。即使普通读取受 RLS 限制，邀请令牌和计费载荷仍属于敏感数据。

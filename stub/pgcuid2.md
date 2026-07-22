@@ -2,21 +2,33 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/ari-becker/pgcuid2/blob/0782b48bcb6eedbfc8785eca9c1e5b5f6215a22f/pgcuid2.control)
 - [Official upstream documentation](https://github.com/ari-becker/pgcuid2/blob/0782b48bcb6eedbfc8785eca9c1e5b5f6215a22f/README.md)
+- [Official Rust implementation](https://github.com/ari-becker/pgcuid2/blob/0782b48bcb6eedbfc8785eca9c1e5b5f6215a22f/src/lib.rs)
+- [Official Rust package manifest](https://github.com/ari-becker/pgcuid2/blob/0782b48bcb6eedbfc8785eca9c1e5b5f6215a22f/Cargo.toml)
 
-`pgcuid2` — Generate CUID2 text identifiers inside PostgreSQL using the cuid2 Rust crate.
+`pgcuid2` adds a single PostgreSQL function that generates CUID2 text identifiers through the Rust `cuid2` crate. Use it when an application explicitly requires CUID2-compatible text keys; the result is not a PostgreSQL `uuid` and should be treated as an opaque, case-sensitive string.
 
-The reviewed catalog snapshot records version `0.1.0`, kind `standard`, and implementation language `Rust`.
-The curated compatibility set is `11,12,13,14,15,16`; confirm the exact build against the target server.
+### Core Workflow
+
+Install the pgrx-built extension and use the generator as a column default:
 
 ```sql
-CREATE EXTENSION "pgcuid2";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pgcuid2';
+CREATE EXTENSION pgcuid2;
+
+SELECT cuid2_create_id();
+
+CREATE TABLE account (
+  id text PRIMARY KEY DEFAULT cuid2_create_id(),
+  display_name text NOT NULL
+);
 ```
 
-The curated lifecycle is `archived`. Pin the reviewed build and verify maintenance status before adoption.
+The reviewed version returns a 24-character text value. `cuid2_create_id()` is declared `VOLATILE`, parallel safe, and security invoker, so PostgreSQL evaluates it for each inserted row rather than folding it as a constant.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Data-Model Notes
+
+Store generated values in `text` or a domain with a length check that matches the pinned implementation. Do not cast them to `uuid`, derive creation time from them, or sort them as chronological identifiers. Text primary keys are wider than integer or UUID keys and increase index, foreign-key, and cache footprint; benchmark that cost for large tables.
+
+### Compatibility and Maintenance
+
+The archived upstream release uses pgrx 0.11 and declares PostgreSQL 11 through 16 build features. Pin both the extension and Rust dependency versions, build against the exact PostgreSQL major, and test uniqueness and output format before migrations. The function delegates generation to its dependency; do not make stronger unpredictability or collision guarantees than the pinned CUID2 implementation documents. If external services validate a particular CUID2 revision, include cross-language fixtures in the application test suite.

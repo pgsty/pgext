@@ -2,27 +2,31 @@
 
 Sources:
 
-- [pgautograph Rust entry point at the reviewed commit](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/lib.rs)
-- [property-graph query generator at the reviewed commit](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/queries/mod.rs)
-- [pgautograph.control at the reviewed commit](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/pgautograph.control)
-- [pgautograph Cargo manifest at the reviewed commit](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/Cargo.toml)
+- [Official Rust implementation](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/lib.rs)
+- [Official graph-query generator](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/src/queries/mod.rs)
+- [Official Rust package manifest](https://github.com/nevindev/pgautograph/blob/a8c59f407f80fb5ed4f1ee8e3ab15745aab03100/Cargo.toml)
 
-`pgautograph` is an early-stage Rust/`pgrx` extension for deriving property-graph DDL from relational foreign keys. The current `list_foreign_keys()` function inspects foreign-key constraints in the `public` schema, returns their source and target metadata, and emits a generated `CREATE PROPERTY GRAPH graph` statement as an INFO message.
+`pgautograph` 0.0.0 is an unfinished pgrx experiment that reads foreign keys from the `public` schema and constructs a proposed property-graph DDL string. Its public function returns foreign-key metadata and writes the generated string to the PostgreSQL log; it does not create a graph.
 
 ### Inspect Foreign Keys
+
+Create the extension in a disposable database and call its main function:
 
 ```sql
 CREATE EXTENSION pgautograph;
 
-SELECT *
-FROM list_foreign_keys();
+SELECT * FROM list_foreign_keys();
+SELECT hello_pgautograph();
 ```
 
-Review the returned rows and the generated INFO message. The current function generates text but does not execute the property-graph statement.
+`list_foreign_keys()` returns `source_table`, `source_pk`, `source_columns`, `target_table`, and `target_column`. It then logs a string beginning with `CREATE PROPERTY GRAPH graph` at LOG level. Capture and review that log text manually if evaluating the prototype.
 
-### Caveats
+### Hard-Coded Model Assumptions
 
-- The reviewed crate version is 0.0.0 and the repository has no README, license declaration, tags, or releases. Treat it as development code.
-- The control file sets `superuser = true`, so extension installation requires an appropriately privileged role.
-- The generator only inspects the `public` schema and uses simple capitalization and singularization rules when constructing graph labels. Review and edit generated DDL before execution.
-- The Cargo manifest declares PostgreSQL 13 through 18 features with `pgrx` 0.16.1; this matches source targets, not a published compatibility guarantee.
+The catalog query only considers foreign keys whose source table is in `public`. It uses unqualified relation names, expects every source table to have a primary key, handles only one column from each foreign-key row, and applies simple English capitalization and singularization. Generated vertex definitions have no properties, while edge generation infers directed or undirected forms from the number of matching references.
+
+### Work-in-Progress Boundary
+
+The function does not return or execute the graph DDL. It unwraps NULL catalog values and SPI results, so a foreign-key table without a primary key can raise a Rust panic. Hash-set iteration also makes generated clause order nondeterministic. The included greeting test expects text different from the function's actual exclamation-mark result, indicating the 0.0.0 tree is not release-gated even by its own test.
+
+Use it only as source material or a disposable prototype. Before any real use, add schema-qualified catalog handling, composite-key support, deterministic output, identifier quoting, NULL/error handling, a return value for generated DDL, and tests against the exact PostgreSQL property-graph syntax. Do not grant it production superuser installation merely to obtain a catalog query that can be written safely in SQL.

@@ -2,22 +2,24 @@
 
 Sources:
 
-- [Official upstream documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraPostgreSQLReleaseNotes/AuroraPostgreSQL.Extensions.html)
-- [Official project or provider page](https://aws.amazon.com/rds/aurora/)
+- [AWS Aurora PostgreSQL extension support table](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraPostgreSQLReleaseNotes/AuroraPostgreSQL.Extensions.html)
+- [Amazon Aurora product page](https://aws.amazon.com/rds/aurora/)
 
-`apgunit` — No-longer-supported internal RDS/Aurora PostgreSQL extension listed for older Aurora PostgreSQL 9.6 releases.
+`apgunit` was an AWS-internal Aurora PostgreSQL extension, not a portable community extension. AWS now describes it as no longer supported. Use this entry only to identify old Aurora clusters or dumps that mention it; do not design new database code around it.
 
-The reviewed catalog snapshot records version `1.0`, kind `standard`, and implementation language `C`.
+### Historical Boundary
 
-```sql
-CREATE EXTENSION "apgunit";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'apgunit';
-```
+The AWS support table lists `apgunit` version `1.0` for old `Aurora PostgreSQL 9.6.3` and `Aurora PostgreSQL 9.6.6` releases, while later releases show it as unavailable. AWS does not publish a control file, SQL API, configuration reference, or migration interface for the component.
 
-This is a provider-specific component for `AWS`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+There is therefore no supported current enablement workflow to document. In particular, do not assume that `CREATE EXTENSION` is accepted on a modern Aurora cluster, that a similarly named package exists for self-managed PostgreSQL, or that `shared_preload_libraries` can restore it.
 
-The curated lifecycle is `deprecated`. Pin the reviewed build and verify maintenance status before adoption.
+### Operational Guidance
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+When an inherited schema or migration references `apgunit`:
+
+1. Identify the exact Aurora engine release on which it was used.
+2. Ask AWS Support for the historical behavior and a supported replacement.
+3. Remove or replace dependent objects before upgrading to an engine release where the extension is unavailable.
+4. Test the resulting schema and application behavior on a separate target cluster.
+
+Treat the catalog version as historical metadata, not evidence that `apgunit` can be installed or used today.

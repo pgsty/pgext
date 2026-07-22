@@ -6,12 +6,33 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-07-19
+## 2026-07-20
 
-| Name                | Old | New    | Comment                                                |
-|:--------------------|:----|:-------|:-------------------------------------------------------|
-| k3s                 | -   | 1.36.2 | Upstream `v1.36.2+k3s1`; amd64 and arm64               |
-| k3s-images          | -   | 1.36.2 | Exact-match system image package for both architectures |
+| Name                     | Old              | New              | Comment                                                                 |
+|:-------------------------|:-----------------|:-----------------|:------------------------------------------------------------------------|
+| pg-exporter              | 1.3.0            | 1.4.0            | Repackaged from the upstream Linux tarball                              |
+| victoria-metrics         | 1.147.0          | 1.148.0          | VictoriaMetrics main package                                            |
+| victoria-metrics-cluster | 1.147.0          | 1.148.0          | VictoriaMetrics companion package                                       |
+| vmutils                  | 1.147.0          | 1.148.0          | VictoriaMetrics companion package                                       |
+| victoria-logs            | 1.51.0           | 1.52.0           | VictoriaLogs main package                                               |
+| vlogscli                 | 1.51.0           | 1.52.0           | VictoriaLogs companion package                                          |
+| vlagent                  | 1.51.0           | 1.52.0           | VictoriaLogs companion package                                          |
+| grafana-victorialogs-ds  | 0.29.0           | 0.30.0           |                                                                         |
+| seaweedfs                | 4.39             | 4.40             |                                                                         |
+| rustfs                   | 1.0.0-b9         | 1.0.0-b10        | Prerelease line; preview releases excluded                              |
+| sabiql                   | 1.14.0           | 1.15.1           |                                                                         |
+| timescaledb-tools        | 0.19.0-1         | 0.19.0-2         | Bundles timescaledb-parallel-copy 0.13.0                                |
+| claude                   | 2.1.211          | 2.1.215          | Downloaded through the 8118 proxy and verified                          |
+| codex                    | 0.144.4          | 0.144.6          | Release tag `rust-v0.144.6`                                             |
+| genai-toolbox            | 1.6.0            | 1.7.0            | External build from official GCS binary and arm64 container artifact    |
+| opencode                 | 1.18.2           | 1.18.3           |                                                                         |
+| pg-hardstorage           | 1.0.10           | 1.0.12           | Direct-download artifacts                                               |
+| code                     | 1.129.0          | 1.129.1          | Direct-download artifacts                                               |
+| code-server              | 4.128.0          | 4.129.0          | Direct-download artifacts                                               |
+| pev2                     | 1.22.0           | 1.23.0           | Noarch package                                                          |
+| k3s                      | -                | 1.36.2           | Upstream `v1.36.2+k3s1`; amd64 and arm64                                |
+| k3s-images               | -                | 1.36.2           | Exact-match system image package for both architectures                 |
+
 
 ## 2026-07-16
 

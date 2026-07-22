@@ -2,23 +2,35 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/rjuju/pg_shared_plans/blob/f9b04f967e5bd64834b53c3a119384346107bfc6/pg_shared_plans.control)
-- [Official upstream documentation](https://github.com/rjuju/pg_shared_plans/blob/f9b04f967e5bd64834b53c3a119384346107bfc6/README.md)
+- [Official README](https://github.com/rjuju/pg_shared_plans/blob/master/README.md)
+- [Extension SQL and privilege definitions](https://github.com/rjuju/pg_shared_plans/blob/master/pg_shared_plans--0.0.1.sql)
+- [Preload and configuration implementation](https://github.com/rjuju/pg_shared_plans/blob/master/pg_shared_plans.c)
 
-`pg_shared_plans` — Proof-of-concept shared-memory execution-plan cache for PostgreSQL
+`pg_shared_plans` 0.0.1 is an explicit proof of concept for transparently caching execution plans in shared memory. It can reduce repeated planning work for eligible statements, but upstream says it is not production-ready and cannot reliably invalidate plans after DDL on a standby.
 
-The reviewed catalog snapshot records version `0.0.1`, kind `preload`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `pg_stat_statements`.
-The curated compatibility set is `12,13,14,15,16,17`; confirm the exact build against the target server.
+### Preload and Setup
 
-```sql
-CREATE EXTENSION "pg_shared_plans";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_shared_plans';
+The module supports PostgreSQL 12 and later, requires `pg_stat_statements`, and must be preloaded before the extension objects are created:
+
+```conf
+shared_preload_libraries = 'pg_stat_statements,pg_shared_plans'
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+```sql
+CREATE EXTENSION pg_shared_plans CASCADE;
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+SELECT * FROM pg_shared_plans_info;
+SELECT * FROM pg_shared_plans;
+```
+
+A postmaster restart is required after changing the preload list. PostgreSQL 14 and later also need query identifier computation enabled; the module calls the server hook that enables it when the core setting permits.
+
+### Controls and Views
+
+Important controls include `pg_shared_plans.enabled`, `pg_shared_plans.max`, `pg_shared_plans.min_plan_time`, `pg_shared_plans.threshold`, `pg_shared_plans.rdepend_max`, and `pg_shared_plans.read_only`. The current C default for `pg_shared_plans.max` is 1000 even though the README still says 200.
+
+Use `pg_shared_plans` for summary data, `pg_shared_plans_relations` for relation OIDs, `pg_shared_plans_explain` for plan text, and `pg_shared_plans_all` for both. `pg_shared_plans_reset(userid, dbid, queryid)` removes matching cached entries and is revoked from PUBLIC by the install script.
+
+### Security and Operational Notes
+
+Cached query and plan text can expose schema names, relation details, and predicates. The low-level `pg_shared_plans(boolean, boolean, oid, oid)` function keeps default PUBLIC execution even though its curated views have narrower grants; revoke it and grant only the required monitoring views to trusted roles. Shared-memory contents disappear at restart. Treat DDL invalidation, RLS identity handling, prepared-statement behavior, eviction, memory sizing, and failover as experimental surfaces, and never enable this POC on a standby or production cluster without source-level validation.

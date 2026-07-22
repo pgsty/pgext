@@ -2,23 +2,40 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/eidos_oauth.control)
-- [官方上游文档](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/README.md)
-- [官方 Rust 包清单](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/Cargo.toml)
+- [官方 eidos_oauth README](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/README.md)
+- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/eidos_oauth.control)
+- [验证器实现](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/src/validator.rs)
 
-`eidos_oauth` — 面向 PostgreSQL 18 OAuth 验证器 API 的 OAuth 2.0 JWT 校验扩展。
+`eidos_oauth` 版本 `0.2.0` 为 PostgreSQL 18 连接认证验证 OAuth bearer JWT。它通过远程 JWKS 端点验证签名，检查配置的 issuer 与 audience 声明，返回认证身份，并把声明暴露为会话 GUC，以供授权策略使用。
 
-已复核目录快照记录的版本为 `0.2.0`、类型为 `preload`、实现语言为 `Rust`。
-整理后的兼容版本集合为 `14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
 
-```sql
-CREATE EXTENSION "eidos_oauth";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'eidos_oauth';
+在服务器启动时配置库，然后创建 SQL 扩展并检查验证器状态：
+
+```conf
+shared_preload_libraries = 'eidos_oauth'
+oauth_validator_libraries = 'eidos_oauth'
+
+eidos_oauth.jwks_url = 'https://auth.example.com/.well-known/jwks.json'
+eidos_oauth.issuer = 'https://auth.example.com'
+eidos_oauth.audience = 'my-app'
+eidos_oauth.role_claim = 'sub'
+eidos_oauth.role_prefix = 'oauth_'
+eidos_oauth.jwks_cache_seconds = 300
+eidos_oauth.jwks_timeout_ms = 5000
 ```
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+```sql
+CREATE EXTENSION eidos_oauth;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SELECT eidos_oauth.oauth_jwks_status();
+SELECT eidos_oauth.oauth_refresh_jwks();
+SELECT eidos_oauth.oauth_validate_token('signed.jwt.value');
+SELECT current_setting('app.user_sub', true);
+```
+
+SQL 辅助函数包括 `oauth_validate_token`、`oauth_get_claim`、`oauth_inject_claims`、`oauth_jwks_status` 和 `oauth_refresh_jwks`。连接时验证使用配置的声明（默认为 `sub`）作为认证身份；该身份到数据库角色的映射仍由 PostgreSQL 角色映射负责。
+
+### 运维说明
+
+连接验证器 API 需要 PostgreSQL 18。源码将 `oauth_inject_claims` 描述为测试或 18 之前版本的辅助函数，而不是 PostgreSQL 18 OAuth 认证的替代方案。control 文件不可重定位且仅限超级用户安装。配置变更使用 SIGHUP 上下文 GUC，但加入这些库需要重启。应保护 JWKS 端点，测试密钥轮换与服务中断行为，限制刷新和令牌测试函数，并让 RLS 策略把注入声明视为认证上下文，而不是可信的应用输入。

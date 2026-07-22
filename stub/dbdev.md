@@ -2,25 +2,30 @@
 
 Sources:
 
-- [Official upstream documentation](https://database.dev/supabase/dbdev)
-- [Official project or provider page](https://database.dev/)
-- [Official upstream README](https://github.com/supabase/dbdev/blob/8b3b966d97f87027a36c052e679ebb45f7e25736/README.md)
+- [Official dbdev package page](https://database.dev/supabase/dbdev)
+- [Official package-installation documentation](https://github.com/supabase/dbdev/blob/8b3b966d97f87027a36c052e679ebb45f7e25736/website/content/docs/install-a-package.mdx)
+- [Official project README](https://github.com/supabase/dbdev/blob/8b3b966d97f87027a36c052e679ebb45f7e25736/README.md)
 
-`dbdev` — In-database client for installing packages from the database.dev registry.
+`dbdev` is the in-database client for the database.dev registry of PostgreSQL Trusted Language Extensions. The catalog entry corresponds to the registry package `supabase@dbdev`; it downloads package SQL, registers it through `pg_tle`, and exposes installed packages as PostgreSQL extensions.
 
-The reviewed catalog snapshot records version `0.0.5`, kind `puresql`, and implementation language `SQL`.
-Install and validate the declared extension dependencies first: `http`, `pg_tle`.
+### Core Workflow
+
+First install `pg_tle` and `http`, then follow the bootstrap SQL on the official package page to register and create `supabase@dbdev`. After that, install a versioned package and enable it as an extension:
 
 ```sql
-CREATE EXTENSION "dbdev";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'dbdev';
+CREATE EXTENSION IF NOT EXISTS http WITH SCHEMA extensions;
+CREATE EXTENSION IF NOT EXISTS pg_tle;
+
+-- Run the current bootstrap block from the official supabase@dbdev page.
+
+SELECT dbdev.install('owner@package');
+CREATE EXTENSION "owner@package"
+    SCHEMA public
+    VERSION '1.2.3';
 ```
 
-The upstream project is associated with `Supabase`; verify its current support, license, packaging, and deployment boundary from the linked source.
+The principal SQL API is `dbdev.install(package_name text)`. It fetches available versions and upgrade paths from the registry, calls the `pg_tle` installation functions, and registers a download event. Pin the extension version in `CREATE EXTENSION` for reproducibility.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+### Operational Notes
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Version `0.0.5` requires the `http` and `pg_tle` extensions plus outbound HTTPS access to database.dev. Installing a package executes SQL obtained from the remote registry inside the database, so review the selected package and version before installation and control who may call `dbdev.install`. The official documentation warns that logical restore of databases containing TLEs can fail and recommends physical backups for this workflow.

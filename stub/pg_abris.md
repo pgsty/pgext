@@ -4,14 +4,28 @@ Sources:
 
 - [Version 0.0.1 installation SQL](https://github.com/abris-platform/pg_abris/blob/cca112ac51e23ee130be17a25cb0724a085aa58e/pg_abris--0.0.1.sql)
 - [Extension control file](https://github.com/abris-platform/pg_abris/blob/cca112ac51e23ee130be17a25cb0724a085aa58e/pg_abris.control)
-- [Upstream build notes](https://github.com/abris-platform/pg_abris/blob/cca112ac51e23ee130be17a25cb0724a085aa58e/README.md)
+- [Official upstream build notes](https://github.com/abris-platform/pg_abris/blob/cca112ac51e23ee130be17a25cb0724a085aa58e/README.md)
 
-`pg_abris` is a pure PL/pgSQL metadata component for the Abris platform. It creates a fixed `meta` schema containing metadata tables, views, and helper functions, and requires `uuid-ossp`.
+`pg_abris` is a pure PL/pgSQL metadata layer for the Abris platform. It creates a fixed `meta` schema whose views expose database objects as Abris entities, properties, relations, and projections, while triggers make parts of that metadata surface writable.
+
+### Core Workflow
 
 ```sql
 CREATE EXTENSION "uuid-ossp";
 CREATE EXTENSION pg_abris;
-SELECT nspname FROM pg_namespace WHERE nspname = 'meta';
+
+SELECT entity_id, schema_name, table_name, primarykey
+FROM meta.entity
+ORDER BY schema_name, table_name;
 ```
 
-Although the control file says relocatable, the SQL hard-codes `meta`, so moving the extension is unsafe. Upstream provides almost no user documentation, no release history, no PostgreSQL support statement, and no clear license file. Review every installed object and privilege in the SQL script, isolate it to an Abris-specific database, and do not treat version `0.0.1` as a general metadata framework.
+The extension requires `uuid-ossp`. The installation SQL creates and seeds the `meta` schema directly; use it only in a database dedicated to software that understands the Abris metadata contract.
+
+### Installed Surface
+
+- `meta.entity`, `meta.property`, and `meta.relation` present relations, columns, and relationships through catalog-backed views.
+- Projection, menu, page, and extra-attribute tables store application presentation metadata.
+- INSTEAD OF and table triggers translate selected writes against metadata views into underlying DDL or metadata-table changes.
+- `meta.clean()` removes stale auxiliary rows whose referenced catalog objects no longer exist.
+
+The control file says version `0.0.1` is relocatable, but the SQL hard-codes `meta`, so moving the extension is unsafe. Upstream provides no user guide, supported PostgreSQL matrix, release history, or clear license file. Review the full installation SQL, object ownership, trigger-generated DDL, and privileges before use; do not expose writable metadata views to untrusted roles or treat this as a general-purpose metadata framework.

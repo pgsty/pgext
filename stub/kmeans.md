@@ -2,20 +2,41 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/umitanuki/kmeans-postgresql/blob/d6a57eda9e4908ef5768ad2a5c70bd92d0abb3ae/kmeans.control)
-- [Official upstream documentation](https://pgxn.org/dist/kmeans/1.1.0/doc/kmeans.html)
-- [Official PGXN distribution page](https://pgxn.org/dist/kmeans/)
+- [Official usage documentation](https://github.com/umitanuki/kmeans-postgresql/blob/d6a57eda9e4908ef5768ad2a5c70bd92d0abb3ae/doc/kmeans.md)
+- [Extension SQL](https://github.com/umitanuki/kmeans-postgresql/blob/d6a57eda9e4908ef5768ad2a5c70bd92d0abb3ae/kmeans.sql.in)
+- [C implementation](https://github.com/umitanuki/kmeans-postgresql/blob/d6a57eda9e4908ef5768ad2a5c70bd92d0abb3ae/kmeans.c)
 
-`kmeans` — K-means clustering window function for PostgreSQL
+`kmeans` version `1.1.0` implements K-means clustering as a PostgreSQL window function. It returns a zero-based cluster number for every input row and is intended for relatively small, in-database vector classifications.
 
-The reviewed catalog snapshot records version `1.1.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "kmeans";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'kmeans';
+CREATE EXTENSION kmeans;
+
+SELECT id,
+       kmeans(ARRAY[x, y, z]::float8[], 3) OVER () AS cluster
+FROM samples;
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+All vectors in a window partition must be one-dimensional and have the same length. The second argument is the requested number of clusters.
+
+For reproducible initialization, supply centroids explicitly:
+
+```sql
+SELECT id,
+       kmeans(
+         ARRAY[x, y]::float8[],
+         2,
+         ARRAY[0.5, 0.5, 1.0, 1.0]::float8[]
+       ) OVER (PARTITION BY group_key) AS cluster
+FROM samples;
+```
+
+The third argument may be a two-dimensional centroid array or a flat array whose length equals cluster count times vector dimension.
+
+### Behavior and Caveats
+
+- `kmeans(float[], int) returns int`: choose initial centroids from input vectors after interpolating between per-dimension minima and maxima.
+- `kmeans(float[], int, float[]) returns int`: use caller-supplied initial centroids.
+
+K-means results depend on initialization and scale. Normalize dimensions when appropriate, supply fixed centroids when repeatability matters, and test NULLs and degenerate partitions. This upstream release dates from 2011 and was designed for PostgreSQL 8.4-era APIs; verify source compatibility and results on the target PostgreSQL version. No preload is required.

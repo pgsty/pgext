@@ -2,27 +2,49 @@
 
 Sources:
 
-- [Upstream README](https://github.com/furstenheim/is_jsonb_valid/blob/3afa28d70500791a233dc17c919d6136b83cb2ef/README.md)
-- [Extension SQL](https://github.com/furstenheim/is_jsonb_valid/blob/3afa28d70500791a233dc17c919d6136b83cb2ef/is_jsonb_valid--0.1.4.sql)
-- [Extension control file](https://github.com/furstenheim/is_jsonb_valid/blob/3afa28d70500791a233dc17c919d6136b83cb2ef/is_jsonb_valid.control)
-- [PGXN distribution](https://pgxn.org/dist/is_jsonb_valid/)
+- [Official README at the catalog source revision](https://github.com/furstenheim/is_jsonb_valid/blob/3afa28d70500791a233dc17c919d6136b83cb2ef/README.md)
+- [Extension control file at the catalog source revision](https://github.com/furstenheim/is_jsonb_valid/blob/3afa28d70500791a233dc17c919d6136b83cb2ef/is_jsonb_valid.control)
+- [Version 0.1.4 extension SQL](https://github.com/furstenheim/is_jsonb_valid/blob/3afa28d70500791a233dc17c919d6136b83cb2ef/is_jsonb_valid--0.1.4.sql)
+- [PGXN distribution page](https://pgxn.org/dist/is_jsonb_valid/)
 
-`is_jsonb_valid` validates a JSONB value against a JSON Schema and returns a boolean. Use `is_jsonb_valid(schema, data)` for draft 4 or `is_jsonb_valid_draft_v7(schema, data)` for draft 7:
+is_jsonb_valid provides native boolean validation of JSONB values against JSON Schema Draft 4 or Draft 7. It is suitable for checks and predicates that need only pass/fail output; it does not return a path or diagnostic explaining a failed keyword.
+
+### Core Workflow
+
+Choose the function that matches the schema draft and pass the schema first, followed by the value being validated.
 
 ```sql
 CREATE EXTENSION is_jsonb_valid;
 
 SELECT is_jsonb_valid(
-  '{"type":"object","required":["name"]}'::jsonb,
-  '{"name":"Ada"}'::jsonb
+    '{"type":"object","required":["id"],"properties":{"id":{"type":"integer"}}}'::jsonb,
+    '{"id":42}'::jsonb
 );
 
 SELECT is_jsonb_valid_draft_v7(
-  '{"type":"integer","minimum":0}'::jsonb,
-  '7'::jsonb
+    '{"if":{"exclusiveMaximum":0},"else":{"multipleOf":2}}'::jsonb,
+    '4'::jsonb
 );
 ```
 
-### Schema support
+The two functions are strict and immutable in version 0.1.4. This makes them usable in constraints and indexes when the schema is stable.
 
-Upstream version `0.1.4` documents PostgreSQL 9.6 and later. Remote references are unsupported, local references are limited to definitions at the schema root, and JSON Schema format validation is not implemented. Treat unsupported keywords and reference layouts as application-level validation gaps rather than assuming full draft compliance.
+```sql
+CREATE TABLE events (
+    payload jsonb NOT NULL,
+    CONSTRAINT events_payload_valid CHECK (
+        is_jsonb_valid(
+            '{"type":"object","required":["id"]}'::jsonb,
+            payload
+        )
+    )
+);
+```
+
+### Draft Boundary and Limitations
+
+The base validator follows Draft 4; the explicitly named alternative follows Draft 7. Select deliberately, because keyword meaning differs between drafts and the extension does not infer the draft from a schema declaration.
+
+At the pinned revision, remote references are unsupported. Local references are limited to definitions reachable from the schema root, and identifier changes along a reference chain are not resolved. Format validation is also unsupported. These gaps mean a true result is only a claim about the implemented subset, not every behavior in the complete JSON Schema specifications.
+
+No preload or restart is declared. Keep schema literals and application expectations under version control, and add representative valid and invalid cases whenever a constraint depends on this extension.

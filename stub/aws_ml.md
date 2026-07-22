@@ -2,24 +2,29 @@
 
 Sources:
 
-- [Official upstream documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/postgresql-ml.html)
+- [Amazon Aurora machine learning documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/postgresql-ml.html)
 
-`aws_ml` — Amazon Aurora PostgreSQL extension for invoking Amazon Comprehend, SageMaker AI, and Bedrock services from SQL.
+`aws_ml` is an Amazon Aurora PostgreSQL extension for invoking Amazon Comprehend, SageMaker AI, and Bedrock from SQL. It is an AWS-managed feature, not a portable extension for self-managed PostgreSQL, and all participating services must be available in the same AWS Region.
 
-The reviewed catalog snapshot records version `2.0`, kind `standard`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `aws_commons`.
-The curated compatibility set is `14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
+
+First attach the service-specific IAM role and policy to the Aurora cluster, using the corresponding Aurora ML feature. Then connect to the writer instance and install the extension; `CASCADE` also installs `aws_commons`.
 
 ```sql
-CREATE EXTENSION "aws_ml";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'aws_ml';
+CREATE EXTENSION IF NOT EXISTS aws_ml CASCADE;
+
+SELECT aws_bedrock.invoke_model_get_embeddings(
+  model_id := 'amazon.titan-embed-text-v1',
+  content_type := 'application/json',
+  json_key := 'embedding',
+  model_input := '{"inputText":"PostgreSQL"}'
+);
 ```
 
-This is a provider-specific component for `AWS`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+The Bedrock example requires extension version `2.0`, model access, and a model whose request and response match the supplied JSON. Version `1.0` exposes `aws_comprehend.detect_sentiment` and `aws_sagemaker.invoke_endpoint`; version `2.0` adds `aws_bedrock.invoke_model` and `aws_bedrock.invoke_model_get_embeddings`.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+### Security and Operations
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Installation creates the `aws_ml` administrative role and the `aws_comprehend`, `aws_sagemaker`, and `aws_bedrock` schemas. Public execution is revoked by default. An administrator must grant schema usage and execution on only the required functions.
+
+Availability depends on the Aurora PostgreSQL version and Region. IAM, service quotas, network calls, model costs, payload limits, and provider upgrades remain operational dependencies; test errors and latency on the exact Aurora cluster before using calls in transactions or latency-sensitive queries.

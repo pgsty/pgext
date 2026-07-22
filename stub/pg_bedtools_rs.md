@@ -2,33 +2,41 @@
 
 Sources:
 
-- [pg_bedtools_rs README at the reviewed commit](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/README.md)
-- [pg_bedtools_rs.control at the reviewed commit](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/pg_bedtools_rs.control)
-- [Cargo package metadata](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/Cargo.toml)
-- [bed_merge implementation](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/src/bed/merge.rs)
-- [Generated extension SQL](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/sql/pg_bedtools_rs--0.1.0.sql)
+- [Official README at the catalog revision](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/README.md)
+- [Rust implementation at the catalog revision](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/src/lib.rs)
+- [Committed extension SQL at the catalog revision](https://github.com/shencangsheng/pg_bedtools_rs/blob/a04ef932a131323de5f9d7f85e78d0e5affd101c/sql/pg_bedtools_rs--0.1.0.sql)
 
-`pg_bedtools_rs` exposes `bed_merge(table_name, padding, conditions)` for merging overlapping genomic intervals with the Rust bedrs library. The input relation must provide `chromosome`, `pos_start`, and `pos_end` columns; optional padding expands both ends before merging.
+`pg_bedtools_rs` 0.1.0 is a pgrx experiment that merges genomic intervals with the Rust bedrs library. It expects a relation containing chromosome, start, and end columns. Upstream targets PostgreSQL 13, and the pinned repository does not contain a directly usable generated extension SQL artifact.
 
-### Merge Intervals
+### Core Workflow
+
+First build a complete pgrx package and verify that its install script actually declares the function. Then use a trusted, fixed relation and predicate.
 
 ```sql
-CREATE EXTENSION pg_bedtools_rs;
-
-CREATE TABLE genomic_interval (
-  chromosome varchar NOT NULL,
-  pos_start integer NOT NULL,
-  pos_end integer NOT NULL
+CREATE TABLE intervals (
+    chromosome text NOT NULL,
+    pos_start integer NOT NULL,
+    pos_end integer NOT NULL
 );
-INSERT INTO genomic_interval VALUES
-  ('chr1', 5, 10), ('chr1', 7, 15), ('chr1', 22, 30);
 
-SELECT * FROM bed_merge('genomic_interval', 0, '1 = 1');
+INSERT INTO intervals VALUES
+    ('chr1', 10, 20),
+    ('chr1', 18, 30),
+    ('chr2', 5, 8);
+
+SELECT *
+FROM bed_merge('intervals', 0, '1 = 1');
 ```
 
-### Caveats
+### Function Index
 
-- Both `table_name` and `conditions` are interpolated directly into SQL with Rust `format!`. They are not identifier-quoted or parameterized; accept them only from trusted code and do not expose the function to untrusted callers.
-- The implementation loads all selected intervals into backend memory before returning merged rows. Validate interval bounds and size large jobs conservatively.
-- Version `0.1.0` supports PostgreSQL 13 only. One secondary upstream document calls the function `bed_overlap`, but the reviewed Rust export and README use `bed_merge`.
-- The control file requires `superuser` installation and marks the extension untrusted. Installation privilege does not make dynamically supplied filter text safe.
+- `bed_merge(text, integer, text)` returns chromosome, start, and end columns after sorting and merging intervals.
+- The second argument is padding, defaulting to zero. It expands interval starts and ends before merging.
+- The third argument is a SQL condition string, defaulting to a true predicate.
+
+### Installation and Safety Boundaries
+
+- The source expects columns named chromosome, pos_start, and pos_end, and upstream reports PostgreSQL 13 support only.
+- The pinned committed SQL file recursively issues CREATE EXTENSION instead of declaring the Rust function. A source checkout is therefore not an installable artifact by itself; generate/package with the matching pgrx toolchain and inspect the resulting SQL.
+- Table and condition strings are interpolated into SQL rather than identifier-quoted or parameter-bound. Never pass user-controlled values; expose only reviewed wrappers over fixed relations and predicates.
+- The control file marks the extension superuser-only and non-relocatable. Validate interval ranges and NULL handling before production use.

@@ -2,21 +2,43 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/pgstuff/sys_syn_dblink/blob/0c7a18da219a2e71b83ce374e589cfa383a72518/sys_syn_dblink.control)
+- [Official README](https://github.com/pgstuff/sys_syn_dblink/blob/0c7a18da219a2e71b83ce374e589cfa383a72518/README.md)
+- [Official user guide](https://github.com/pgstuff/sys_syn_dblink/blob/0c7a18da219a2e71b83ce374e589cfa383a72518/doc/sys_syn_dblink.adoc)
+- [Official extension SQL](https://github.com/pgstuff/sys_syn_dblink/blob/0c7a18da219a2e71b83ce374e589cfa383a72518/sql/sys_syn_dblink.sql)
 
-`sys_syn_dblink` — PL/pgSQL synchronization processor that pulls sys_syn queues over named dblink connections, transforms batches, writes local tables, and returns processing status to the source database.
+`sys_syn_dblink` is the receiving-side processor for `sys_syn` queues. It uses a named `dblink` connection to claim batches on a source database, pull changes, transform them, write local target tables, and push processing status back to the source.
 
-The reviewed catalog snapshot records version `0.0.1`, kind `puresql`, and implementation language `SQL`.
-Install and validate the declared extension dependencies first: `dblink`, `hstore`, `plpgsql`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Setup
+
+Install `sys_syn` and configure its input/output queues on the source. On the receiving database, install the declared dependencies and this extension, open the named connection, define input/output/put groups, and generate a process table:
 
 ```sql
-CREATE EXTENSION "sys_syn_dblink";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'sys_syn_dblink';
+CREATE EXTENSION hstore;
+CREATE EXTENSION dblink;
+CREATE EXTENSION sys_syn_dblink;
+
+SELECT dblink_connect('source_syn', 'service=sys_syn_source');
+
+INSERT INTO sys_syn_dblink.in_groups_def
+VALUES ('source-cluster', 'in');
+INSERT INTO sys_syn_dblink.out_groups_def
+VALUES ('source-cluster', 'out');
+INSERT INTO sys_syn_dblink.put_groups_def
+VALUES ('put');
+
+SELECT sys_syn_dblink.proc_table_create(
+    proc_schema     => 'processor_data',
+    in_table_id     => 'customer',
+    out_group_id    => 'out',
+    put_group_id    => 'put',
+    dblink_connname => 'source_syn'
+);
 ```
 
-The curated lifecycle is `preview`. Pin the reviewed build and verify maintenance status before adoption.
+Optional rows in `put_table_transforms` and `put_column_transforms` change table/column mappings. Generated worker functions implement claim, pull, process, and status-push stages. The official guide requires repeated pull/process/push cycles because each call handles a limited batch; claim operations also use an explicit remote transaction.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Dependencies and Operations
+
+The receiver requires `hstore` and `dblink`; the remote database requires `sys_syn`. Temporal and bitemporal table types additionally require the specified `temporal_tables` version or patch. The reviewed project documents PostgreSQL 9.5 or later, but version `0.0.1` uses extensive generated PL/pgSQL and old APIs, so verify the exact modern-server combination.
+
+Keep the named `dblink` connection open in the session running generated procedures. Protect connection credentials and transformation definitions: they determine remote access and dynamically generated local SQL. Monitor held/retry states, bound batch sizes, serialize claims correctly, and test interrupted transactions so rows are not lost or processed twice. The catalog classifies this version as preview.

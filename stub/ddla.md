@@ -23,4 +23,6 @@ The query helpers also filter by object type, timestamp range, or user. `ddla.re
 
 ### Operational cautions
 
-The control file requires superuser installation, and the event triggers run for DDL throughout the database. Plan retention for `ddla.ddl_logs`, restrict access because `query` may contain sensitive text, and measure overhead on DDL-heavy systems. The upstream README explicitly says version 0.1 has known bugs; validate behavior on the exact PostgreSQL release before relying on it as an audit control.
+The upstream requirement is PostgreSQL 9.6 or later. The control file requires superuser installation, and the event triggers run for DDL throughout the database. Plan retention for `ddla.ddl_logs`, restrict access because `query` may contain sensitive text, and measure overhead on DDL-heavy systems.
+
+This is not a tamper-resistant audit trail: the installation SQL grants `PUBLIC` usage on the `ddla` schema, insert access to `ddla.ddl_logs`, and all privileges on its sequence, so an ordinary role can add fabricated rows. It also hard-codes the `ddla` schema despite declaring the extension relocatable. Revoke unneeded grants and protect or export the log before treating it as evidence. The upstream README explicitly says version 0.1 has known bugs; validate behavior on the exact PostgreSQL release before relying on it as an audit control.

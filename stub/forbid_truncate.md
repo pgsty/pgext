@@ -2,28 +2,34 @@
 
 Sources:
 
-- [forbid_truncate README at the reviewed commit](https://github.com/NaokiNakamichi/postgres_extension/blob/47029106ccbc1fe00d0ec9a612ddfedd7abf6847/README.md)
-- [forbid_truncate hook implementation at the reviewed commit](https://github.com/NaokiNakamichi/postgres_extension/blob/47029106ccbc1fe00d0ec9a612ddfedd7abf6847/forbid_truncate.c)
-- [forbid_truncate control file at the reviewed commit](https://github.com/NaokiNakamichi/postgres_extension/blob/47029106ccbc1fe00d0ec9a612ddfedd7abf6847/forbid_truncate.control)
+- [Official README](https://github.com/NaokiNakamichi/postgres_extension/blob/47029106ccbc1fe00d0ec9a612ddfedd7abf6847/README.md)
+- [Version 1.0 control file](https://github.com/NaokiNakamichi/postgres_extension/blob/47029106ccbc1fe00d0ec9a612ddfedd7abf6847/forbid_truncate.control)
+- [ProcessUtility hook implementation](https://github.com/NaokiNakamichi/postgres_extension/blob/47029106ccbc1fe00d0ec9a612ddfedd7abf6847/forbid_truncate.c)
 
-`forbid_truncate` installs a ProcessUtility hook that rejects every TRUNCATE statement. The library must be loaded while PostgreSQL starts. After installing the binary, add it to the server configuration and restart PostgreSQL:
+`forbid_truncate` 1.0 installs a PostgreSQL `ProcessUtility` hook that rejects every `TRUNCATE` statement seen by a backend. It is a coarse guard against accidental truncation, with no role, table, database, or maintenance exception.
 
-```ini
+### Preload and Verify
+
+Install the shared library, add it to `shared_preload_libraries`, and restart PostgreSQL:
+
+```conf
 shared_preload_libraries = 'forbid_truncate'
 ```
 
-Record the installed extension in each database where it is managed, then verify the guard in a disposable table. The final statement is expected to fail with “forbid truncate”.
+`CREATE EXTENSION` only records the extension in a database; the versioned SQL creates no callable objects. After the restart, verify the hook in a disposable table:
 
 ```sql
 CREATE EXTENSION forbid_truncate;
 
-CREATE TABLE truncate_guard_demo (id integer);
-TRUNCATE TABLE truncate_guard_demo;
+CREATE TEMP TABLE truncate_guard_demo (id integer);
+INSERT INTO truncate_guard_demo VALUES (1);
+TRUNCATE truncate_guard_demo;
 ```
 
-### Caveats
+The last statement should fail with `forbid truncate`. Verify separately in every database and connection path that matters, because sessions started without the preloaded library are unprotected.
 
-- Changing `shared_preload_libraries` requires a server restart. Creating the extension without preloading the library does not activate the hook in existing backends.
-- The implementation blocks all users, including superusers, and provides no per-role, per-table, or maintenance bypass.
-- The hook calls PostgreSQL's standard utility handler directly instead of chaining to the previously installed hook. Test it with every other ProcessUtility-hook extension used by the cluster.
-- This guard covers TRUNCATE only; DELETE, DROP TABLE, partition maintenance, and other data-removal paths remain unaffected.
+### Coverage and Hook Compatibility
+
+The hook blocks `TRUNCATE` for ordinary users and superusers alike. It does not block `DELETE`, `DROP TABLE`, partition detach/drop, table replacement, or other ways to remove data, so normal privilege design, backups, and change controls remain necessary.
+
+Although the implementation saves the previously registered `ProcessUtility_hook`, it does not call it for non-TRUNCATE commands; it calls `standard_ProcessUtility` directly. This can bypass another extension's hook depending on preload order. Test the exact `shared_preload_libraries` ordering with every audit, DDL-control, or utility-hook extension in the cluster. Disabling or changing the guard requires configuration change and restart because it exposes no GUC or SQL bypass.

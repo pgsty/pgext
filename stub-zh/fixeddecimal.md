@@ -2,20 +2,32 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/2ndQuadrant/fixeddecimal/blob/970f56b53a2eef74130527778190597dbd9a6a30/fixeddecimal.control)
-- [官方上游文档](https://github.com/2ndQuadrant/fixeddecimal/blob/970f56b53a2eef74130527778190597dbd9a6a30/README.md)
+- [官方 README](https://github.com/2ndQuadrant/fixeddecimal/blob/970f56b53a2eef74130527778190597dbd9a6a30/README.md)
+- [扩展控制文件](https://github.com/2ndQuadrant/fixeddecimal/blob/970f56b53a2eef74130527778190597dbd9a6a30/fixeddecimal.control)
+- [扩展 SQL](https://github.com/2ndQuadrant/fixeddecimal/blob/970f56b53a2eef74130527778190597dbd9a6a30/fixeddecimal--1.1.0.sql)
+- [类型实现](https://github.com/2ndQuadrant/fixeddecimal/blob/970f56b53a2eef74130527778190597dbd9a6a30/fixeddecimal.c)
 
-`fixeddecimal` — fixeddecimal：提供高性能固定精度 decimal 类型的 PostgreSQL 扩展。
+`fixeddecimal` 提供一个 8 字节定标小数类型，适合金额等恰好需要两位小数并希望紧凑存储的值。它能在自身范围内精确存储并精确加减，但不提供任意 `numeric` 精度，也不能配置其他小数位数。
 
-已复核目录快照记录的版本为 `1.1.0`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
 
 ```sql
-CREATE EXTENSION "fixeddecimal";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'fixeddecimal';
-```
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+CREATE EXTENSION fixeddecimal;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+CREATE TABLE invoice (
+  invoice_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  amount fixeddecimal(12,2) NOT NULL
+);
+
+INSERT INTO invoice(amount) VALUES ('19.95'), ('0.05');
+SELECT sum(amount), avg(amount) FROM invoice;
+CREATE INDEX invoice_amount_idx ON invoice (amount);
+```
+
+声明形式为 `fixeddecimal(precision,2)`，精度可从 3 到 17。数值以放大 100 倍的有符号 64 位整数存储，范围为 `-92233720368547758.08` 到 `92233720368547758.07`。扩展提供比较和算术操作符、与常见数值类型间的转换、`sum`、`avg`、B-tree 与哈希操作符类，以及 BRIN minmax 操作符类。
+
+### 精度与兼容性
+
+输入超过两位的小数会被截断而不是四舍五入，乘除法重新定标时也向零截断。业务规则需要显式舍入时，应使用 `round(value::numeric, 2)::fixeddecimal`。溢出会报错，并且该类型没有 `NaN` 表示。
+
+不需要预加载。上游说明支持 PostgreSQL 9.5 及以上版本，但只声明最后测试到 PostgreSQL 12；固定的 1.1.0 源码来自 2019 年。在较新的 PostgreSQL 大版本上采用前，应分别验证编译、二进制升级、转储恢复、类型转换、聚合与索引。以后若需要改变列的小数位数，必须转换为其他类型，因为实现只支持两位小数。

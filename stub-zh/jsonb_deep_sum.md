@@ -2,35 +2,35 @@
 
 来源：
 
-- [已复核 commit 的 jsonb_deep_sum README](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/README.md)
-- [已复核 commit 的 jsonb_deep_sum.control](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/jsonb_deep_sum.control)
-- [PGXN 上的 jsonb_deep_sum](https://pgxn.org/dist/jsonb_deep_sum/)
+- [官方 README](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/README.md)
+- [扩展 SQL API](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/jsonb_deep_sum--0.0.2.sql)
+- [官方回归测试](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/sql/jsonb_deep_sum_test.sql)
 
-`jsonb_deep_sum` 递归合并 JSONB 对象中的数值字段。它提供用于相加两个对象的 `jsonb_deep_add`，以及按行归约一列、同时保留嵌套对象结构的 `jsonb_deep_sum` 聚合。
+`jsonb_deep_sum` 0.0.2 递归相加 JSON 对象中的数值叶子。它提供双值函数和聚合，适合对不同行键集合不同的稀疏嵌套指标映射求和。
 
-### 相加与聚合 JSONB 值
+### 核心流程
 
 ```sql
 CREATE EXTENSION jsonb_deep_sum;
 
 SELECT jsonb_deep_add(
-  '{"a": 1, "nested": {"b": 2}}'::jsonb,
-  '{"a": 4, "nested": {"b": 3}}'::jsonb
+  '{"requests":{"ok":4},"bytes":10}'::jsonb,
+  '{"requests":{"ok":3,"failed":1},"bytes":5}'::jsonb
 );
 
-CREATE TABLE measurements (data jsonb);
-INSERT INTO measurements VALUES
-  ('{"a": 1}'),
-  ('{"a": 2, "b": 1}'),
-  ('{"a": 5}');
+CREATE TABLE metric_batch (metrics jsonb);
+INSERT INTO metric_batch VALUES
+  ('{"a":1,"nested":{"x":2}}'),
+  ('{"a":4,"nested":{"x":3,"y":8}}'),
+  (NULL);
 
-SELECT jsonb_deep_sum(data) FROM measurements;
+SELECT jsonb_deep_sum(metrics) FROM metric_batch;
 ```
 
-本例最后一个聚合会产生等价于 `{"a": 8, "b": 1}` 的对象。
+`jsonb_deep_add(jsonb, jsonb) RETURNS jsonb` 递归合并对象，并在相同路径相加数值。只存在于一侧的键会被保留。`jsonb_deep_sum(jsonb)` 使用该函数作为转换步骤，并以 `{}` 为初始状态；SQL NULL 输入行会被跳过。
 
-### 注意事项
+### 数据契约与限制
 
-- 0.0.2 版支持 JSON 对象和数值。上游说明，JSON 值内部出现空值、字符串、数组或布尔值时会报错。
-- 该算法遍历 JSONB 内部排序的树并执行归并；它没有定义数组合并或非数值冲突语义。
-- control 文件与 PGXN 发行版都标识版本 0.0.2，与 catalog 版本一致。
+遍历到的每个 JSON 值都必须是对象或数字。字符串、布尔值、JSON null 与数组都会报错，同一键上的不兼容结构也不会自动转换。聚合前应验证文档，并确保每条重复路径使用一致单位。
+
+实现会在 C 中直接遍历 PostgreSQL 内部 `jsonb` 表示。上游示例测试过 PostgreSQL 12 时代的构建，但没有发布当前大版本矩阵；应针对精确服务器重新构建并运行回归测试。聚合会在后端内存中物化完整结果对象，因此高键基数或深层嵌套文档可能成本很高。对于模式稳定的指标，带类型列通常能提供更清晰的验证、索引和溢出处理。

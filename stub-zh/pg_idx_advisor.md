@@ -2,21 +2,40 @@
 
 来源：
 
-- [官方 PGXN 分发页](https://pgxn.org/dist/pg_idx_advisor/)
+- [Official README and deprecation notice](https://github.com/cohenjo/pg_idx_advisor/blob/5c7a51797b65b0fd8b8d4b26e2fbc28e6a8ca780/README.md)
+- [Extension SQL](https://github.com/cohenjo/pg_idx_advisor/blob/5c7a51797b65b0fd8b8d4b26e2fbc28e6a8ca780/sql/pg_idx_advisor.sql)
+- [Planner-hook implementation](https://github.com/cohenjo/pg_idx_advisor/blob/5c7a51797b65b0fd8b8d4b26e2fbc28e6a8ca780/src/idx_adviser.c)
 
-`pg_idx_advisor` — 分析查询计划并建议候选索引的 PostgreSQL 扩展，现已停止更新。
+pg_idx_advisor 是一个已弃用的规划器钩子扩展，会把普通 EXPLAIN 计划与加入假想候选索引后的计划进行比较，并给出 CREATE INDEX 建议。上游说明项目不再更新，并引导用户使用 HypoPG。它只适合复现历史行为。
 
-已复核目录快照记录的版本为 `0.1.2`、类型为 `preload`、实现语言为 `C`。
-应先安装并验证声明的扩展依赖：`plpgsql`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+先创建目录表，再在会话中加载库，然后运行 EXPLAIN：
 
 ```sql
-CREATE EXTENSION "pg_idx_advisor";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_idx_advisor';
+CREATE EXTENSION pg_idx_advisor;
+LOAD 'pg_idx_advisor';
+
+EXPLAIN
+SELECT * FROM orders WHERE customer_id = 42;
+
+SELECT recommendation, benefit, index_size
+FROM index_advisory
+WHERE backend_pid = pg_backend_pid()
+ORDER BY benefit DESC;
 ```
 
-整理后的生命周期为 `deprecated`。采用前应固定已复核构建并确认维护状态。
+扩展会打印原始计划和假想计划；除非启用只读模式，还会把建议存入 `index_advisory`。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### 重要对象
+
+- `index_advisory` 存储关系 OID、索引属性、估算收益与大小、表达式或谓词、源查询及建议文本。
+- `index_adviser.cols` 列出部分索引考虑的列。
+- `index_adviser.schema` 选择 advisory 表所在模式。
+- `index_adviser.read_only` 禁止写表，只打印建议。
+- `index_adviser.text_pattern_ops` 允许文本模式操作符类。
+- `index_adviser.composit_max_cols` 限制复合候选项的列数。
+
+### 运维说明
+
+加载该库会替换当前后端的规划器和 EXPLAIN 钩子，并使用旧版 PostgreSQL 虚拟索引内部接口。建议只是成本模型假设，并不能证明索引在实际数据、写入、缓存状态或并发下有效。执行任何输出 SQL 前，都要审查锁、构建时间、存储、写放大、重复索引和部分谓词。受支持 PostgreSQL 版本应优先采用基于 HypoPG 且仍受维护的工作流。

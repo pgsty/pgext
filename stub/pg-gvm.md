@@ -2,20 +2,45 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/greenbone/pg-gvm/blob/2427faa6e26ebb02d134b65efad8c9bf936dfa81/control.in)
+- [Official README for the 22.6 series](https://github.com/greenbone/pg-gvm/blob/v22.6.18/README.md)
+- [Official host utility SQL](https://github.com/greenbone/pg-gvm/blob/v22.6.18/sql/hosts.in.sql)
+- [Official iCalendar utility SQL](https://github.com/greenbone/pg-gvm/blob/v22.6.18/sql/ical.in.sql)
+- [Official regular-expression utility SQL](https://github.com/greenbone/pg-gvm/blob/v22.6.18/sql/regexp.in.sql)
 
-`pg-gvm` — Functions for GVMd
+`pg-gvm` is Greenbone's PostgreSQL helper library for GVMd. Version/API series `22.6` provides C functions for Greenbone host-range expressions, iCalendar recurrence calculation, and regular-expression matching. It is an application support component rather than a general SQL utility collection.
 
-The reviewed catalog snapshot records version `22.6`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
+
+Create the extension, then use its helpers with the same text formats produced by Greenbone components:
 
 ```sql
 CREATE EXTENSION "pg-gvm";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg-gvm';
+
+SELECT hosts_contains(
+  '192.168.123.1-192.168.123.20, 192.168.123.30',
+  '192.168.123.10'
+);
+
+SELECT max_hosts(
+  '192.168.123.1-192.168.123.20, 192.168.123.30-192.168.123.34',
+  '192.168.123.10'
+);
+
+SELECT regexp('abc', '^[a-z]+$');
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+The first call tests membership in a Greenbone host specification. The second counts addresses in the range expression while excluding the second argument.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### API
+
+- `hosts_contains(text, text) RETURNS boolean`: whether a host expression contains the requested host.
+- `max_hosts(text, text) RETURNS integer`: count hosts represented by the first expression after exclusions in the second.
+- `regexp(text, text) RETURNS boolean`: regular-expression match; invalid patterns return false in the upstream tests.
+- `next_time_ical(text, bigint, text) RETURNS integer`: calculate the next recurrence from iCalendar text, a Unix timestamp, and timezone.
+- `next_time_ical(text, bigint, text, integer) RETURNS integer`: same calculation with an occurrence offset.
+
+### Caveats
+
+The extension links to `libical`, GLib, and `libgvm-base`; package and library versions must match the Greenbone stack. The generated control file uses the project's API version and shared-library name, so install a coherent release rather than mixing artifacts from different tags.
+
+Host syntax and iCalendar behavior follow Greenbone's libraries, not PostgreSQL native network/range types. Test boundary addresses, exclusions, timezones, daylight-saving transitions, malformed calendar input, and large range expressions before embedding these helpers in policy decisions.

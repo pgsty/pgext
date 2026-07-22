@@ -2,28 +2,40 @@
 
 来源：
 
-- [已复核 commit 的 jsonb_delete README](https://github.com/glynastill/jsonb_delete/blob/f87d296d725ae1ba207a3b65335967c4444c8d6d/README.md)
-- [已复核 commit 的 jsonb_delete 1.0 安装 SQL](https://github.com/glynastill/jsonb_delete/blob/f87d296d725ae1ba207a3b65335967c4444c8d6d/jsonb_delete--1.0.sql)
-- [已复核 commit 的 jsonb_delete 回归 SQL](https://github.com/glynastill/jsonb_delete/blob/f87d296d725ae1ba207a3b65335967c4444c8d6d/sql/jsonb_delete.sql)
+- [Official README](https://github.com/glynastill/jsonb_delete/blob/f87d296d725ae1ba207a3b65335967c4444c8d6d/README.md)
+- [Version 1.0 SQL API](https://github.com/glynastill/jsonb_delete/blob/f87d296d725ae1ba207a3b65335967c4444c8d6d/jsonb_delete--1.0.sql)
+- [C deletion implementation](https://github.com/glynastill/jsonb_delete/blob/f87d296d725ae1ba207a3b65335967c4444c8d6d/jsonb_delete.c)
+- [Official regression examples](https://github.com/glynastill/jsonb_delete/blob/f87d296d725ae1ba207a3b65335967c4444c8d6d/sql/jsonb_delete.sql)
 
-1.0 版 `jsonb_delete` 增加 `jsonb_delete(jsonb, jsonb)` 及对应的二元 `-` 运算符。它只删除左值顶层中那些键和值都与右值条目完整匹配的项目。
+`jsonb_delete` 1.0 添加 `jsonb_delete(jsonb, jsonb)` 和二元 `jsonb - jsonb` 操作符。对于对象，只有键和完整值都与右侧对象匹配时，才删除对应顶层条目；对于数组，则删除与右侧数组元素相等的顶层元素。
+
+### 对象差集
 
 ```sql
 CREATE EXTENSION jsonb_delete;
 
-SELECT '{"a": 1, "b": 2, "nested": {"x": 3}}'::jsonb
-       - '{"a": 9, "b": 2, "nested": {"x": 4}}'::jsonb;
+SELECT '{"a":1,"b":2,"nested":{"x":3}}'::jsonb
+       - '{"a":9,"b":2,"nested":{"x":4}}'::jsonb;
+-- {"a": 1, "nested": {"x": 3}}
 
 SELECT jsonb_delete(
-  '{"a": 1, "b": 2}'::jsonb,
-  '{"b": 2}'::jsonb
+  '{"a":1,"b":2}'::jsonb,
+  '{"b":2}'::jsonb
 );
 ```
 
-第一个结果保留 `a` 和 `nested`，因为它们的值不匹配；`b` 的键和值都匹配，所以被删除。
+只改变右侧的值并不足以删除键。这与 PostgreSQL 核心的 `jsonb - text` 等按键删除形式不同。
 
-### 注意事项
+### 数组差集
 
-- 删除不会递归。只有嵌套值在顶层完整匹配时，整个嵌套对象才会被删除。
-- 该 API 早于多数 PostgreSQL 内置 JSONB 修改运算符，开发背景是 PostgreSQL 9.4/9.5；应在目标大版本上验证编译与行为。
-- 此运算符比较 JSONB 值，并非只按键名删除；没有核对语义前，不要把它直接替换成内置的按键删除表达式。
+```sql
+SELECT '["a",2,{"x":1}]'::jsonb
+       - '["a",{"x":1}]'::jsonb;
+-- [2]
+```
+
+### 使用边界
+
+删除不会递归。只有整个顶层嵌套对象或数组相等时才会删除；保留值内部的匹配后代不会被修改。函数声明为 `STRICT`，因此 SQL NULL 参数返回 SQL NULL，而 JSON `null` 会正常参与 JSON 相等比较。
+
+该 API 创建于 PostgreSQL 9.4/9.5 时期，早于大多数核心 JSONB 修改操作符，并使用 PostgreSQL 内部 JSONB C 结构。应在每个目标大版本上构建并运行回归测试。由于它添加了 `jsonb - jsonb` 重载，当其他 JSONB 扩展也定义相关重载时，应审计应用中的操作符解析结果。

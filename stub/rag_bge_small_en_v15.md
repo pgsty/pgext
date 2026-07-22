@@ -2,26 +2,37 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/neondatabase/pgrag/blob/53b0d8da7a310b4a28c40bdf3d4ae5efd156673b/exts/rag_bge_small_en_v15/rag_bge_small_en_v15.control)
-- [Official upstream documentation](https://github.com/neondatabase/pgrag/blob/53b0d8da7a310b4a28c40bdf3d4ae5efd156673b/README.md)
-- [Official Rust package manifest](https://github.com/neondatabase/pgrag/blob/53b0d8da7a310b4a28c40bdf3d4ae5efd156673b/exts/rag_bge_small_en_v15/Cargo.toml)
+- [Official control file](https://github.com/neondatabase/pgrag/blob/53b0d8da7a310b4a28c40bdf3d4ae5efd156673b/exts/rag_bge_small_en_v15/rag_bge_small_en_v15.control)
+- [Official pgrag README](https://github.com/neondatabase/pgrag/blob/53b0d8da7a310b4a28c40bdf3d4ae5efd156673b/README.md)
+- [Official package manifest](https://github.com/neondatabase/pgrag/blob/53b0d8da7a310b4a28c40bdf3d4ae5efd156673b/exts/rag_bge_small_en_v15/Cargo.toml)
 
-`rag_bge_small_en_v15` — rag_bge_small_en_v15: local bge-small-en-v1.5 embeddings in PostgreSQL
+`rag_bge_small_en_v15` runs the 33-million-parameter bge-small-en-v1.5 model locally to tokenize text, split model-aware chunks, and generate 384-dimensional passage or query embeddings. It is deprecated and no longer maintained.
 
-The reviewed catalog snapshot records version `0.0.0`, kind `preload`, and implementation language `Rust`.
-Install and validate the declared extension dependencies first: `vector`.
-The curated compatibility set is `13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
-```sql
-CREATE EXTENSION "rag_bge_small_en_v15";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'rag_bge_small_en_v15';
+The model executes in a background worker, so preload the library and restart PostgreSQL before creating the extension:
+
+```conf
+shared_preload_libraries = 'rag_bge_small_en_v15.so'
 ```
 
-This is a provider-specific component for `Neon`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+```sql
+CREATE EXTENSION vector;
+CREATE EXTENSION rag_bge_small_en_v15;
 
-The curated lifecycle is `archived`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+SELECT rag_bge_small_en_v15.embedding_for_query(
+    'What did the quick brown fox jump over?'
+);
+```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+On macOS, the upstream instructions use `.dylib` instead of `.so` in `shared_preload_libraries`.
+
+### SQL API
+
+- `rag_bge_small_en_v15.chunks_by_token_count(text, integer, integer)` returns chunks bounded by model tokens with the requested overlap.
+- `rag_bge_small_en_v15.embedding_for_passage(text)` returns `vector(384)` for stored passages.
+- `rag_bge_small_en_v15.embedding_for_query(text)` returns `vector(384)` for search queries.
+
+### Operational Notes
+
+The reviewed version is 0.0.0, non-relocatable, requires `vector`, and sets `superuser = true`. The worker starts with PostgreSQL but lazy-loads the model on first use; expect first-call latency and substantial memory use. The default build embeds the large ONNX model. A `remote_onnx` build downloads it after restart and should use a controlled URL. The repository pins patched ONNX Runtime dependencies and documents possible platform-specific symbol failures. Pin the entire build because the project is archived and deprecated.

@@ -2,29 +2,52 @@
 
 来源：
 
-- [已复核 commit 的 pg_scws README](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/README.md)
-- [已复核 commit 的 pg_scws.control](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws.control)
-- [版本 1.0 的安装 SQL](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws--1.0.sql)
-- [解析器与配置实现](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws.c)
-- [内置 SCWS 源码与词典](https://github.com/jaiminpan/pg_scws/tree/338d1ebe911372165acad331264bbf48afa56a9e/libscws)
+- [目录版本对应的官方 README](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/README.md)
+- [目录版本对应的扩展 SQL](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws--1.0.sql)
+- [目录版本对应的解析器实现](https://github.com/jaiminpan/pg_scws/blob/338d1ebe911372165acad331264bbf48afa56a9e/pg_scws.c)
 
-`pg_scws` 把 SCWS 中文分词器嵌入为 PostgreSQL 的 `scws` 文本搜索解析器。安装会创建 `scwscfg` 文本搜索配置，并通过 `simple` 词典映射名词、动词、形容词、习语、感叹词和临时词等 token 类型。
+`pg_scws` 1.0 将 SCWS 中文分词器集成为 PostgreSQL 全文检索解析器。它安装 scws 解析器和 scwscfg 文本搜索配置，并把若干词法类别映射到 simple 词典。
 
-### 中文全文解析
+### 核心流程
 
 ```sql
 CREATE EXTENSION pg_scws;
 
 SELECT to_tsvector(
-  'scwscfg',
-  '小明硕士毕业于中国科学院计算所，后在日本京都大学深造'
+    'scwscfg',
+    '小明硕士毕业于中国科学院计算所，后在日本京都大学深造'
 );
+
+CREATE INDEX article_search_idx
+ON article
+USING gin (to_tsvector('scwscfg', body));
+
+SELECT id
+FROM article
+WHERE to_tsvector('scwscfg', body)
+      @@ to_tsquery('scwscfg', '计算 & 专家');
 ```
 
-会话设置包括 `scws.charset`、`scws.rules`、`scws.extra_dicts`、`scws.punctuation_ignore`、`scws.seg_with_duality` 和 `scws.multi_mode`。规则和词典名称会在 PostgreSQL 共享 `tsearch_data` 目录下解析。
+索引表达式和所有匹配查询必须使用同一文本搜索配置。
 
-### 注意事项
+### 对象与设置
 
-- 版本 `1.0` 上游只在 PostgreSQL 9.4 上测试过，已复核源码则停留在 2016 年。必须针对确切目标版本移植并回归测试解析器。
-- 内置默认词典和规则决定分词质量与词汇范围。修改这些文件属于服务器级部署变更，必须在副本间保持一致。
-- `scws.extra_dicts` 接受服务器端词典文件名，而不是客户端文件。上游用户自定义词典文档为空；应自行建立受控的构建、分发与回滚流程。
+- 扩展创建 scws 文本搜索解析器和 scwscfg 配置。
+- 设置项控制词典常驻内存、字符集、规则文件、附加词典、标点处理、二元分词和复合分词模式。
+- 词典和规则文件从 PostgreSQL 文本搜索数据目录解析；所有可能执行查询的服务器都需要相同文件与配置。
+
+```sql
+SHOW scws.dict_in_memory;
+SHOW scws.charset;
+SHOW scws.rules;
+SHOW scws.extra_dicts;
+SHOW scws.punctuation_ignore;
+SHOW scws.seg_with_duality;
+SHOW scws.multi_mode;
+```
+
+### 兼容性与运维
+
+- 上游只报告在 PostgreSQL 9.4 上测试，并仅预期后续 9.x 可以工作。解析器使用可能跨大版本变化的服务器 API，必须在每个确切目标大版本上构建和测试。
+- 源码捆绑 SCWS、默认 UTF-8 词典和规则。重建受影响索引前，应把自定义词典原子地部署到主库、副本和故障转移候选节点。
+- 分词或词典变化会改变 lexeme。计划内修改规则后应 REINDEX 表达式索引，并用有代表性的中文文本验证召回率和准确率。

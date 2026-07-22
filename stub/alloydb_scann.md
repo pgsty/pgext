@@ -2,23 +2,43 @@
 
 Sources:
 
-- [Official upstream source](https://docs.cloud.google.com/alloydb/docs/reference/ai/scann-index-reference)
+- [Create a ScaNN index](https://cloud.google.com/alloydb/docs/ai/create-scann-index)
+- [AlloyDB ScaNN index reference](https://cloud.google.com/alloydb/docs/reference/ai/scann-index-reference)
+- [Supported AlloyDB extensions](https://cloud.google.com/alloydb/docs/reference/extensions)
 
-`alloydb_scann` — AlloyDB ScaNN extension for approximate nearest-neighbor vector indexes.
+`alloydb_scann` is Google AlloyDB's managed ScaNN access method for approximate nearest-neighbor searches over `vector` columns. Use it when vector search latency, index build time, or memory footprint matters more than exact-neighbor guarantees. It is available in AlloyDB and AlloyDB Omni, not as a portable community PostgreSQL extension.
 
-The reviewed catalog snapshot records version `unknown`, kind `standard`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `vector`.
-The curated compatibility set is `14,15,16,17`; confirm the exact build against the target server.
+### Core Workflow
+
+Install the managed extension; `CASCADE` installs the required `vector` extension when necessary:
 
 ```sql
-CREATE EXTENSION "alloydb_scann";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'alloydb_scann';
+CREATE EXTENSION IF NOT EXISTS alloydb_scann CASCADE;
 ```
 
-This is a provider-specific component for `Google Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Create an automatically tuned cosine-distance index and run a matching nearest-neighbor query:
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+```sql
+CREATE INDEX items_embedding_scann
+ON items USING scann (embedding cosine);
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+SELECT id, embedding <=> $1::vector AS distance
+FROM items
+ORDER BY embedding <=> $1::vector
+LIMIT 20;
+```
+
+The indexed distance function and query operator must represent the same metric. ScaNN supports `l2`, `dot_product`, and `cosine`. A simple `USING scann` definition uses automatic tuning and maintenance by default.
+
+### Index Modes and Options
+
+- `mode='AUTO'` lets AlloyDB choose and maintain the tree structure. `optimization='SEARCH_OPTIMIZED'` favors recall and latency; `BALANCED` reduces build cost.
+- `auto_maintenance='ON'` is the automatic-mode default and keeps the index adapted as data changes.
+- `mode='MANUAL'` exposes settings such as `num_leaves`, `quantizer`, and `max_num_levels`; use it only after measuring recall and latency on representative queries.
+- Quantizers include `SQ8` and `FLAT`; additional choices and deeper trees can be preview features with separate instance flags.
+
+### Requirements and Caveats
+
+The source table needs stored `vector` embeddings. Empty, nearly empty, and partitioned tables have special creation constraints; automatically tuned indexes on tables with fewer than 10,000 rows require deferred index creation. Approximate results require application-level recall testing, and index build or maintenance consumes instance resources.
+
+Version availability, supported PostgreSQL majors, preview flags, privileges, upgrades, and maintenance behavior are controlled by the AlloyDB service. Check the provider documentation for the target instance rather than assigning a community extension version.

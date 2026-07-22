@@ -2,20 +2,34 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/DanielJDufour/safecast/blob/0ad39b4f99d373f309817ba803374b5b2c9229a3/safecast.control)
-- [官方上游文档](https://github.com/DanielJDufour/safecast/blob/0ad39b4f99d373f309817ba803374b5b2c9229a3/README.md)
+- [Pinned official README](https://github.com/DanielJDufour/safecast/blob/0ad39b4f99d373f309817ba803374b5b2c9229a3/README.md)
+- [Pinned extension SQL](https://github.com/DanielJDufour/safecast/blob/0ad39b4f99d373f309817ba803374b5b2c9229a3/safecast--0.0.1.sql)
 
-`safecast` — 纯 SQL 安全类型转换辅助函数；部分无效文本转数值时返回 NULL。
+`safecast` 提供几个小型 SQL 函数：先用类似数值的正则表达式检查文本，对部分不匹配的值返回 `NULL`，再进行类型转换。尽管名称如此，0.0.1 版并不会捕获转换异常，不能安全处理任意不可信输入。
 
-已复核目录快照记录的版本为 `0.0.1`、类型为 `puresql`、实现语言为 `SQL`。
+### 核心流程
 
 ```sql
-CREATE EXTENSION "safecast";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'safecast';
+CREATE EXTENSION safecast;
+
+SELECT to_integer('42');
+SELECT to_integer('not-a-number');
+SELECT to_float('-12.5');
+SELECT to_bigint('9000000000');
+SELECT to_double_precision('123');
 ```
 
-整理后的生命周期为 `abandoned`。采用前应固定已复核构建并确认维护状态。
+第二次调用返回 `NULL`；被接受的字符串会交给 PostgreSQL 的普通类型转换实现。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### 函数与接受形式
+
+- `to_integer(text)`：只接受一个或多个 ASCII 数字，再转换为 `integer`。
+- `to_bigint(text)`：只接受一个或多个 ASCII 数字，再转换为 `bigint`。
+- `to_float(text)`：接受由 `-`、数字和 `.` 构成的任意非空组合，再转换为 `float`（`double precision`）。
+- `to_double_precision(text)`：只接受一个或多个 ASCII 数字，再转换为 `double precision`。
+
+### 注意事项
+
+超出类型范围仍会报错。`to_float` 的正则表达式过于宽松，会接受 `.` 或 `--1` 等畸形值，随后在转换时出错。整数函数拒绝前导符号、空白、小数点和指数形式；`to_double_precision` 同样拒绝符号、小数和指数。也不接受区域相关数值格式以及 `NaN`/`Infinity`。
+
+这些函数没有声明 `STRICT`、易变性或并行属性，而且这个已弃用项目的测试面很小。若必须可靠地把失败变成 `NULL`，应采用显式校验或捕获异常的函数。该扩展是纯 SQL 实现，无需预加载或重启。

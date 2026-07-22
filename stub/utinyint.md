@@ -2,20 +2,30 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/blueskylxb/utinyint/blob/8c5d9d832af6d148668d86769fa2b662b6582a19/utinyint.control)
-- [Official upstream documentation](https://github.com/blueskylxb/utinyint/blob/8c5d9d832af6d148668d86769fa2b662b6582a19/doc/utinyint.md)
-- [Official upstream README](https://github.com/blueskylxb/utinyint/blob/8c5d9d832af6d148668d86769fa2b662b6582a19/README.md)
+- [Upstream documentation](https://github.com/blueskylxb/utinyint/blob/8c5d9d832af6d148668d86769fa2b662b6582a19/doc/utinyint.md)
+- [SQL type and casts](https://github.com/blueskylxb/utinyint/blob/8c5d9d832af6d148668d86769fa2b662b6582a19/utinyint.sql.in.c)
+- [C type implementation](https://github.com/blueskylxb/utinyint/blob/8c5d9d832af6d148668d86769fa2b662b6582a19/utinyint.c)
 
-`utinyint` — One-byte unsigned integer type with casts to smallint, integer, and boolean.
+`utinyint` version `0.1.1` defines a one-byte integer type intended to represent unsigned values. Its main benefit is compact scalar storage; PostgreSQL row alignment can erase that saving depending on neighboring columns.
 
-The reviewed catalog snapshot records version `0.1.1`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "utinyint";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'utinyint';
+CREATE EXTENSION utinyint;
+
+CREATE TABLE sensor_value (
+  sensor_id bigint,
+  channel utinyint
+);
+
+INSERT INTO sensor_value VALUES (1, 0), (1, 128), (1, 255);
+SELECT channel, channel::integer FROM sensor_value;
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The reviewed install SQL defines binary/text I/O and casts between `utinyint` and `smallint`, `integer`, and `boolean`. Conversion to the wider integer types is implicit; conversion back is assignment-only. Boolean false maps to zero, true maps to one, and any nonzero value maps to true.
+
+### Compatibility Caveats
+
+The C header uses an unsigned byte and conversion functions accept values through `UCHAR_MAX`, but the upstream prose says the range is `-127` through `127`. The same prose claims arithmetic, aggregates, B-tree, and GIN support that does not appear in the reviewed installation SQL. Treat the source/install script as the API boundary and verify `0`, `128`, and `255` on the exact packaged build before use.
+
+This custom base type has on-disk and binary-send formats tied to its C implementation. Test range errors, casts, dump/restore, replication, upgrades, and row-size effects. Prefer `smallint` when predictable built-in operators, indexing, portability, and maintenance matter more than one byte per scalar.

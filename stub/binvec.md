@@ -22,6 +22,6 @@ The result has 32 elements. Bit zero maps to the first element, so the first and
 ### Caveats
 
 - The C code accepts several numeric array element types but reads and writes every element as a 32-bit integer. Arrays other than integer arrays can be corrupted or produce invalid results.
-- Input array null flags are ignored, and multidimensional arrays are rejected. An empty array returns null, while a zero right-hand value returns the original array without expanding it to 32 elements.
+- Input array null flags are ignored, and multidimensional arrays are rejected. An empty array returns null, while a zero right-hand value returns the original array without expanding it to 32 elements. The SQL function is not strict, but the C code reads its second argument without checking for null; never pass a null right-hand value.
 - The signed high bit and negative input values are not handled safely. Restrict the right-hand value to nonnegative values below 2^31.
 - This is an old prototype with no tests, license, release history, or current PostgreSQL compatibility statement. Validate the exact build before any non-disposable use.

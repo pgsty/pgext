@@ -4,7 +4,7 @@ Sources:
 
 - [Upstream README at the reviewed commit](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/README.md)
 - [Version 1.0 SQL objects](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/postgres_fdw_plus--1.0.sql)
-- [FDW implementation](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/postgres_fdw.c)
+- [FDW implementation](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/postgres_fdw_plus.c)
 
 `postgres_fdw_plus` forks PostgreSQL's `postgres_fdw` and adds optional two-phase commit for foreign transactions. It creates the wrapper named `postgres_fdw`, so core `postgres_fdw` and this extension cannot coexist in one database.
 

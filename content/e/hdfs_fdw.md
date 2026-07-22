@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8740** | {{< badge content="hdfs_fdw" link="https://github.com/EnterpriseDB/hdfs_fdw" >}} | {{< ext "hdfs_fdw" >}} | `2.3.3` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8740** | {{< badge content="hdfs_fdw" link="https://github.com/EnterpriseDB/hdfs_fdw" >}} | {{< ext "hdfs_fdw" >}} | `2.0.5` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hdfs_fdw` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hdfs_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "hdfs_fdw_18" "green" >}} {{< bg "17" "hdfs_fdw_17" "green" >}} {{< bg "16" "hdfs_fdw_16" "green" >}} {{< bg "15" "hdfs_fdw_15" "green" >}} {{< bg "14" "hdfs_fdw_14" "green" >}} | `hdfs_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.3` | {{< bg "18" "postgresql-18-hdfs-fdw" "green" >}} {{< bg "17" "postgresql-17-hdfs-fdw" "green" >}} {{< bg "16" "postgresql-16-hdfs-fdw" "green" >}} {{< bg "15" "postgresql-15-hdfs-fdw" "green" >}} {{< bg "14" "postgresql-14-hdfs-fdw" "green" >}} | `postgresql-$v-hdfs-fdw` | `default-jre-headless` |
 

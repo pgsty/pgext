@@ -2,24 +2,32 @@
 
 来源：
 
-- [腾讯云 PostgreSQL 扩展版本矩阵](https://cloud.tencent.com/document/product/409/75121)
-- [腾讯云：在实例中创建扩展](https://cloud.tencent.com/document/product/409/121744)
-- [腾讯云展示预加载模块的示例](https://cloud.tencent.com/document/product/409/111199)
+- [腾讯云 PostgreSQL 官方扩展矩阵](https://cloud.tencent.com/document/product/409/75121)
 
-`tencentdb_pwdcheck` 是腾讯云数据库 PostgreSQL 专有的强密码认证扩展。当前支持矩阵显示 PostgreSQL 10 至 17 提供 `1.0` 版本，PostgreSQL 18 不提供该包。腾讯云未公开其源码、control 文件、密码策略参数或 SQL API。
+`tencentdb_pwdcheck` 是仅在腾讯云数据库 PostgreSQL 中提供的扩展。它只能在该托管服务边界内使用，密码策略语义应从腾讯云控制台或支持渠道获取：公开矩阵只确认可用性，并未公开 SQL 函数、策略参数、预加载行为或源代码。
 
-启用前先检查目标实例的实际目录：
+### 核心流程
+
+当前腾讯云矩阵为 PostgreSQL 10 至 17 列出版本 `1.0`，PostgreSQL 18 则没有条目。先确认实际实例引擎版本提供该扩展，再通过腾讯云支持的扩展流程启用：
 
 ```sql
 SELECT name, default_version, installed_version
 FROM pg_available_extensions
 WHERE name = 'tencentdb_pwdcheck';
-```
 
-腾讯云文档展示的 `shared_preload_libraries` 中包含 `tencentdb_pwdcheck`。如果托管实例尚未预加载该模块，应在控制台参数设置中加入它，保存参数变更并等待实例重启；随后在需要扩展对象的各数据库中创建扩展：
-
-```sql
 CREATE EXTENSION tencentdb_pwdcheck;
+
+SELECT extname, extversion
+FROM pg_extension
+WHERE extname = 'tencentdb_pwdcheck';
 ```
 
-修改 `shared_preload_libraries` 会重启托管实例，因此应安排维护时段，并确保客户端能够自动重连。云厂商没有公开各项策略参数，不应假定社区 `passwordcheck` 的配置同样适用；应以所选引擎版本的控制台与腾讯云支持信息为准。
+如果第一个查询没有返回行，不要自行复制文件，也不要拿社区 `passwordcheck` 模块替代；应选择受支持的引擎版本或联系腾讯云。
+
+### 提供商边界
+
+引用的腾讯云页面只说明软件包可用性，并未说明检查哪些密码操作、如何配置规则、是否评估已有凭据，或是否需要重启。应把这些细节视为由提供商管理且随版本变化，并针对目标实例查阅控制台帮助或腾讯支持答复。
+
+### 运维注意事项
+
+在把策略应用到生产用户前，先用一次性角色测试启用流程与密码变更。数据库策略变更要与应用密钥轮换协调，并保留经过独立验证的管理员恢复路径；过严或理解有误的密码规则可能阻断用户创建、密码轮换或紧急访问。

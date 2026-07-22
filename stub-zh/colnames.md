@@ -3,8 +3,8 @@
 来源：
 
 - [已复核 commit 的当前上游文档](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/doc/colnames.md)
-- [1.7.0 版本 SQL 对象](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/sql/colnames--1.7.0.sql)
-- [C 实现](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/colnames.c)
+- [1.7.0 版本 SQL 对象](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/sql/colnames.sql)
+- [C 实现](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/src/colnames.c)
 
 `colnames` 只提供一个函数 `colnames(record)`，以 `text[]` 返回输入记录的字段名。通用触发器或元编程代码需要复合值结构时可使用它。
 

@@ -2,21 +2,41 @@
 
 Sources:
 
-- [Official PGXN distribution page](https://pgxn.org/dist/shared_ispell/)
+- [Official README](https://github.com/tvondra/shared_ispell/blob/8e3f3e1022b2f45b07b0ac84481dfb68460cb9e6/README.md)
+- [Extension SQL for 1.0.0](https://github.com/tvondra/shared_ispell/blob/8e3f3e1022b2f45b07b0ac84481dfb68460cb9e6/sql/shared_ispell--1.0.0.sql)
+- [Extension control file](https://github.com/tvondra/shared_ispell/blob/8e3f3e1022b2f45b07b0ac84481dfb68460cb9e6/shared_ispell.control)
 
-`shared_ispell` — Shared-memory ispell dictionary template for reducing per-session initialization and memory.
+`shared_ispell` stores Ispell dictionaries in a fixed shared-memory segment so PostgreSQL sessions can reuse one loaded copy instead of parsing and storing a private copy per backend. It is useful for large Ispell dictionaries; Snowball dictionaries do not benefit from this extension.
 
-The reviewed catalog snapshot records version `1.0.0`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
-```sql
-CREATE EXTENSION "shared_ispell";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'shared_ispell';
+Choose a shared-memory budget, preload the module, and restart PostgreSQL before creating the extension.
+
+```conf
+shared_preload_libraries = 'shared_ispell'
+shared_ispell.max_size = '32MB'
 ```
 
-The curated lifecycle is `abandoned`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+```sql
+CREATE EXTENSION shared_ispell;
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+CREATE TEXT SEARCH DICTIONARY czech_shared (
+  TEMPLATE = shared_ispell,
+  DictFile = czech,
+  AffFile = czech,
+  StopWords = czech
+);
+
+SELECT ts_lexize('czech_shared', 'automobile');
+```
+
+Dictionary, affix, and stop-word files follow PostgreSQL text-search file placement rules. The first use loads a dictionary into the shared segment.
+
+### Management Objects
+
+- `shared_ispell_mem_used()` and `shared_ispell_mem_available()` report shared-memory consumption.
+- `shared_ispell_dicts()` and `shared_ispell_stoplists()` list loaded dictionaries and stop lists.
+- `shared_ispell_reset()` invalidates loaded data so sessions reload changed files.
+- The `shared_ispell` text-search template is the basis for custom dictionaries.
+
+The shared-memory allocation cannot grow at runtime. Size it for every dictionary plus headroom; changing `shared_ispell.max_size` requires a restart. Upstream warns that affixes requiring full regular expressions are unsupported and fail during dictionary initialization. The project is unmaintained, so validate compatibility with the exact PostgreSQL build before production use.

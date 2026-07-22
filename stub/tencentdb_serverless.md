@@ -2,23 +2,40 @@
 
 Sources:
 
-- [Official upstream documentation](https://cloud.tencent.com/document/product/409/105554)
-- [Official primary documentation](https://cloud.tencent.com/document/product/409/75121)
+- [Official TencentDB database resource-isolation guide](https://cloud.tencent.com/document/product/409/105554)
+- [Official TencentDB for PostgreSQL extension-version matrix](https://cloud.tencent.com/document/product/409/75121)
 
-`tencentdb_serverless` — TencentDB extension for per-database CPU resource isolation in serverless and multi-tenant workloads.
+`tencentdb_serverless` is a TencentDB for PostgreSQL provider extension for per-database CPU resource limits in multi-tenant instances. It is installed and configured by Tencent Cloud support as part of the managed service; it is not a downloadable, portable PostgreSQL extension.
 
-The reviewed catalog snapshot records version `1.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `14,15,16,17,18`; confirm the exact build against the target server.
+### Enablement and Core Workflow
+
+The official feature guide says to submit a support ticket to enable database resource isolation, install `tencentdb_serverless`, and set its service-managed parameters. It documents qualifying PostgreSQL 14, 15, and 16 kernel versions; consult the current service matrix for other versions. The feature currently applies to primary instances.
+
+After Tencent Cloud confirms enablement, inspect the managed bounds and assign limits to every non-template database:
 
 ```sql
-CREATE EXTENSION "tencentdb_serverless";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tencentdb_serverless';
+SHOW tencentdb_serverless.min_cpu_cores;
+SHOW tencentdb_serverless.max_cpu_cores;
+
+SELECT tencentdb_serverless.set_database_cpu_limit(
+    'tenant_001', 2.0, 2.5
+);
+
+SELECT *
+FROM tencentdb_serverless.resource_limit_view;
 ```
 
-This is a provider-specific component for `Tencent Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+`set_database_cpu_limit(database_name, min_cpu_cores, max_cpu_cores)` sets the relative guaranteed minimum and absolute maximum. A maximum of `-1` means no configured cap. The provider-managed GUCs describe the instance-wide allowable range and are for inspection, not direct user modification.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+Reset one database or the whole instance configuration with:
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```sql
+SELECT tencentdb_serverless.reset_database_limit('tenant_001');
+SELECT tencentdb_serverless.reset_all_database_limit();
+```
+
+### Operational Notes
+
+Limits take effect in real time, but the guide requires configuring every database for isolation to work as intended. Minimum CPU values are weights when total resources are constrained, not permanently dedicated cores. `resource_limit_view` includes memory columns that the guide marks reserved and currently unused.
+
+Deleting a database removes its configuration automatically. Disabling the feature also requires a Tencent Cloud support ticket to reset parameters, clear limits, and remove the extension. Validate tenant SLOs under contention and follow the provider's current kernel, privilege, failover, billing, and support rules.

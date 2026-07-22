@@ -2,22 +2,20 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/michelmilezzi/pg_job_queue/blob/b742a0713ebe46b15a154a53074a52107338a620/job_queue.control)
-- [官方上游文档](https://github.com/michelmilezzi/pg_job_queue/blob/b742a0713ebe46b15a154a53074a52107338a620/README.md)
+- [已复核 commit 的上游 README](https://github.com/michelmilezzi/pg_job_queue/blob/b742a0713ebe46b15a154a53074a52107338a620/README.md)
+- [1.0 版本 SQL 对象](https://github.com/michelmilezzi/pg_job_queue/blob/b742a0713ebe46b15a154a53074a52107338a620/job_queue--1.0.sql)
+- [后台工作进程实现](https://github.com/michelmilezzi/pg_job_queue/blob/b742a0713ebe46b15a154a53074a52107338a620/job_queue.c)
 
-`job_queue` — 使用动态 PostgreSQL 后台工作进程实现的数据库内异步作业队列概念验证。
-
-已复核目录快照记录的版本为 `1.0`、类型为 `standard`、实现语言为 `C`。
-应先安装并验证声明的扩展依赖：`plpgsql`。
+`job_queue` 是一个已归档的概念验证：语句向 `jobs_queue` 插入数据后，会启动动态后台工作进程。工作进程用 `FOR UPDATE SKIP LOCKED` 领取一行，删除该行，再执行存于 `proc` 的文本以及可选 JSON `args`。
 
 ```sql
-CREATE EXTENSION "job_queue";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'job_queue';
+CREATE EXTENSION job_queue;
+INSERT INTO jobs_queue (proc, args)
+VALUES ('SELECT process_order($1)', '{"order_id": 42}');
 ```
 
-整理后的生命周期为 `archived`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+它不是安全的生产队列。`proc` 会被拼接为 SQL，而不是解析为有类型的过程，因此任意写入者都可能借后台工作进程的数据库权限执行 SQL。应撤销 `PUBLIC` 对表及启动函数的访问权，且不要让不可信输入控制这些字段。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+领取、删除和任务正文位于同一个工作进程事务中，但实现明确留下了未完成的错误路径：任务抛出异常时不会捕获并更新 `error_count` 或 `last_error`。源事务只注册工作进程，不会等待任务成功；动态工作进程槽耗尽时，注册也可能失败。
+
+生产环境应使用具有明确重试、死信、可观测性、取消、幂等和权限语义的受维护队列。此扩展只适合在可丢弃环境中研究 PostgreSQL 后台工作进程。

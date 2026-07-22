@@ -11,7 +11,11 @@ Sources:
 
 ### Minimal construction
 
-The module requires `uuid-ossp` and `uri`, must be preloaded for its background worker, and must be installed by a superuser:
+The module requires `uuid-ossp` and `uri` and must be installed by a superuser. The SQL extension library and worker are separate binaries: preload `datalink_bgw`, not `datalink`, and restart PostgreSQL before creating the extension:
+
+```conf
+shared_preload_libraries = 'datalink_bgw'
+```
 
 ```sql
 CREATE EXTENSION "uuid-ossp";
@@ -21,6 +25,6 @@ CREATE TABLE persons (id integer, picture datalink);
 INSERT INTO persons VALUES (1, DLVALUE('img1.jpg', 'MyBaseDir', 'portrait'));
 ```
 
-Register base directories in `pg_catalog.pg_datalink_bases` before using local paths. The PostgreSQL OS account needs the relevant filesystem permissions.
+Register base directories in `pg_catalog.pg_datalink_bases` before using local paths. The worker defines `datalink.dl_naptime`, `datalink.dl_token_expiry`, `datalink.dl_base_directory`, `datalink.dl_token_path`, and `datalink.dl_keep_max_copies`; review their paths and retention values before startup. The PostgreSQL OS account needs the relevant filesystem permissions.
 
 Upstream explicitly says this is not for production. It creates, copies, renames, symlinks, and deletes server-side files, while a background worker removes token files and some external copies. Defaults and semantics are early-stage and the source has no current compatibility matrix. Test only inside an isolated directory tree with backups and an unprivileged OS account.

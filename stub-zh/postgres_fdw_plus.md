@@ -4,7 +4,7 @@
 
 - [已复核 commit 的上游 README](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/README.md)
 - [1.0 版本 SQL 对象](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/postgres_fdw_plus--1.0.sql)
-- [FDW 实现](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/postgres_fdw.c)
+- [FDW 实现](https://github.com/MasaoFujii/postgres_fdw_plus/blob/e04bf0a9948333e415e3a5ea68a0af861b19e918/postgres_fdw_plus.c)
 
 `postgres_fdw_plus` 派生自 PostgreSQL `postgres_fdw`，为外部事务增加可选两阶段提交。它创建的包装器名称仍是 `postgres_fdw`，因此核心 `postgres_fdw` 与本扩展不能在同一数据库共存。
 

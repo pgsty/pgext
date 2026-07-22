@@ -2,21 +2,34 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/metabrainz/postgresql-musicbrainz-unaccent/blob/b727896da12f03f404ed96a4d0cc8c967681fbaf/musicbrainz_unaccent.control)
 - [官方上游文档](https://github.com/metabrainz/postgresql-musicbrainz-unaccent/blob/b727896da12f03f404ed96a4d0cc8c967681fbaf/README.musicbrainz_unaccent.md)
+- [官方扩展 SQL](https://github.com/metabrainz/postgresql-musicbrainz-unaccent/blob/b727896da12f03f404ed96a4d0cc8c967681fbaf/sql/musicbrainz_unaccent.sql)
+- [官方实现](https://github.com/metabrainz/postgresql-musicbrainz-unaccent/blob/b727896da12f03f404ed96a4d0cc8c967681fbaf/musicbrainz_unaccent.c)
 
-`musicbrainz_unaccent` — musicbrainz_unaccent：为 PostgreSQL 提供可用于索引的 Unicode 去重音函数和文本搜索字典。
+`musicbrainz_unaccent` 通过 C 函数和文本搜索词典删除一组固定的 Unicode 重音符号。与 PostgreSQL 通用的 `unaccent` 函数不同，它的函数被声明为不可变，因此可用于表达式索引。它最初用于 MusicBrainz 规范化，其仓库现已归档。
 
-已复核目录快照记录的版本为 `1.0.0`、类型为 `standard`、实现语言为 `C`。
+### 核心流程
+
+安装扩展，然后使用标量函数或文本搜索词典：
 
 ```sql
-CREATE EXTENSION "musicbrainz_unaccent";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'musicbrainz_unaccent';
+CREATE EXTENSION musicbrainz_unaccent;
+
+SELECT musicbrainz_unaccent('ľščťžýáí');
+SELECT ts_lexize('musicbrainz_unaccentdict', 'ľščťžýáí');
+
+CREATE INDEX artist_unaccent_idx
+  ON artist (musicbrainz_unaccent(name));
 ```
 
-整理后的生命周期为 `archived`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+标量示例返回 `lsctzyai`。希望使用表达式索引的查询必须应用完全相同的不可变表达式。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### 重要对象
+
+- `musicbrainz_unaccent(text)` 返回规范化文本，并声明为 `IMMUTABLE` 与 `STRICT`。
+- `musicbrainz_unaccentdict_template` 是文本搜索词典模板。
+- `musicbrainz_unaccentdict` 是安装后的词典；它会先将词元转换为小写，再应用编译进程序的映射。
+
+### 兼容性与注意事项
+
+无论数据库编码为何，实现都假定输入为 UTF-8，因此不得用于非 UTF-8 数据库。映射被编译到扩展二进制文件中，而不是从可编辑的词典规则文件加载，所以修改规范化规则需要重新构建。小写转换还取决于 PostgreSQL 的区域设置行为。上游项目已归档并依赖较旧的 PostgreSQL 内部接口，采用前应验证 ABI 兼容性、区域敏感字符、索引重建行为以及应用所需的每种语言。应固定已复核的源码与映射，避免规范化键意外变化。

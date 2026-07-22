@@ -2,15 +2,28 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/jamessewell/pgsloth/blob/cf5fbf1f68a7527bbe75c3eaf4c28bad92a582a0/pgsloth.control)
-- [Official upstream documentation](https://github.com/jamessewell/pgsloth/blob/cf5fbf1f68a7527bbe75c3eaf4c28bad92a582a0/README.md)
-- [Official Rust package manifest](https://github.com/jamessewell/pgsloth/blob/cf5fbf1f68a7527bbe75c3eaf4c28bad92a582a0/Cargo.toml)
+- [Official README](https://github.com/jamessewell/pgsloth/blob/cf5fbf1f68a7527bbe75c3eaf4c28bad92a582a0/README.md)
+- [Executor-hook implementation](https://github.com/jamessewell/pgsloth/blob/cf5fbf1f68a7527bbe75c3eaf4c28bad92a582a0/src/lib.rs)
+- [Extension control file](https://github.com/jamessewell/pgsloth/blob/cf5fbf1f68a7527bbe75c3eaf4c28bad92a582a0/pgsloth.control)
 
-`pgsloth` — Intentionally delays every query by a random 100 to 9,999 milliseconds through an executor hook.
+`pgsloth` version `0.0.0` is a demonstration module that deliberately delays every query executor start by a random 100 through 9,999 milliseconds. It is a test toy for observing latency behavior, not a production extension.
 
-The reviewed catalog snapshot records version `0.0.0`, kind `preload`, and implementation language `Rust`.
-The curated compatibility set is `12,13,14,15,16,17`; confirm the exact build against the target server.
+### Enablement
 
-This component has no standalone extension DDL in the curated record; integrate it only through the upstream-documented load or provider workflow.
+The library installs only an executor hook and has no SQL objects, so do not use `CREATE EXTENSION` as its activation mechanism. Add the library to server configuration and restart PostgreSQL:
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```conf
+shared_preload_libraries = 'pgsloth'
+```
+
+After restart, ordinary queries emit a notice and sleep before execution:
+
+```sql
+SELECT 1;
+```
+
+### Operational Boundary
+
+The delay applies globally in every backend that loads the hook. There is no GUC, role exemption, relation filter, or per-session switch. The README's relaxed-replication and index features are explicitly marked “to be implemented”; the current source implements only query sleep.
+
+Remove `pgsloth` from `shared_preload_libraries` and restart to disable it. Never enable it on a production or shared server: it adds unpredictable latency to application queries and administrative work, and could amplify connection backlog and timeout failures.

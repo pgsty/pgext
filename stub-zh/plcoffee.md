@@ -2,23 +2,36 @@
 
 来源：
 
-- [官方 PGXN 分发页](https://pgxn.org/dist/plv8/)
-- [官方项目或服务商页面](https://plv8.github.io/)
-- [官方主文档](https://pgxn.org/dist/plv8/doc/plv8.html)
+- [官方 PL/V8 方言文档](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/doc/plv8.md#dialects)
+- [官方 CoffeeScript 示例](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/doc/plv8.md#coffeescript-example)
+- [官方构建规则](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/Makefile)
 
-`plcoffee` — 基于 PL/v8 运行时编译并执行 CoffeeScript 的 PostgreSQL 过程语言
+`plcoffee` 是 PL/V8 随附的可选 CoffeeScript 过程语言方言。它编译 CoffeeScript 函数体，并交给与 PL/V8 相同的 V8 后端处理器执行。版本 `3.1.10` 属于遗留方言：适合维护现有函数，不应作为新数据库代码的默认语言。
 
-已复核目录快照记录的版本为 `3.1.10`、类型为 `standard`、实现语言为 `C++`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+服务器软件包必须包含可选的 `plcoffee.control` 与版本化 SQL 文件。超级用户创建语言后，获准用户即可用它定义函数：
 
 ```sql
-CREATE EXTENSION "plcoffee";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'plcoffee';
+CREATE EXTENSION plcoffee;
+
+CREATE FUNCTION plcoffee_test(keys text[], vals text[])
+RETURNS text AS $$
+  return JSON.stringify(keys.reduce(((o, key, idx) ->
+    o[key] = vals[idx]; return o), {}), {})
+$$ LANGUAGE plcoffee IMMUTABLE STRICT;
+
+SELECT plcoffee_test(ARRAY['name', 'age'], ARRAY['Tom', '29']);
 ```
 
-整理后的生命周期为 `deprecated`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+结果是由 CoffeeScript 函数体组装的 JSON 字符串。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### 对象与运行时
+
+`CREATE EXTENSION plcoffee` 会在 `pg_catalog` 中安装可信语言 `plcoffee`，以及调用、内联、校验处理器函数。control 与 SQL 文件由 PL/V8 构建过程生成，加载共享模块 `$libdir/plv8`；没有单独的 CoffeeScript 服务器库，也不需要预加载设置。
+
+### 注意事项
+
+PL/V8 可以使用 `DISABLE_DIALECT` 构建，此时不会产生 `plcoffee` 扩展文件。应确认软件包确实包含该方言，并与已安装的 PL/V8 二进制和版本匹配。虽然最终过程语言标记为 trusted，创建扩展仍仅限超级用户。
+
+CoffeeScript 及其 PL/V8 方言都属于遗留接口。JavaScript 会在 PostgreSQL 后端内消耗内存与 CPU，因此应限制函数定义权限，审查易变性与 strict 声明，并使用完全一致的 PostgreSQL、PL/V8、V8、CoffeeScript 构建组合测试升级。

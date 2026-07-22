@@ -2,21 +2,32 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/pgrx_jsonb.control)
-- [官方上游文档](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/README.md)
-- [官方 Rust 包清单](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/Cargo.toml)
+- [Official README](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/README.md)
+- [Extension control file](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/pgrx_jsonb.control)
+- [Rust implementation](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/src/lib.rs)
 
-`pgrx_jsonb` — 用于遍历 PostgreSQL JSONB 内部结构并重建 JSON 值的 pgrx 概念验证函数
+pgrx_jsonb 是一个通过 Rust/pgrx 遍历 PostgreSQL 内部 JSONB 表示的概念验证。上游明确要求不要将其用于任何重要场景。它的三个演示函数只适合研究扩展内部实现。
 
-已复核目录快照记录的版本为 `0.0.0`、类型为 `standard`、实现语言为 `Rust`。
-整理后的兼容版本集合为 `11,12,13,14,15,16`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+只能在一次性开发数据库中安装，并比较几条演示路径：
 
 ```sql
-CREATE EXTENSION "pgrx_jsonb";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pgrx_jsonb';
-```
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+CREATE EXTENSION pgrx_jsonb;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SELECT jsonb_to_text('{"answer": 42}'::jsonb);
+SELECT jsonb_test('{"answer": 42}'::jsonb);
+SELECT jsonb_test2('{"answer": 42}'::jsonb);
+```
+
+第一个函数遍历底层表示并将其序列化，另外两个函数通过不同代码路径报告顶层值是否为对象。
+
+### 重要对象
+
+- `jsonb_to_text` 通过原型迭代器把 JSONB 值转换为文本。
+- `jsonb_test` 通过自定义底层迭代器检查值是否为对象。
+- `jsonb_test2` 使用 pgrx 的高层 JSONB 包装器执行比较。
+
+### 安全与兼容性说明
+
+迭代器依赖 PostgreSQL 内部 JSONB API，并包含断言、unwrap、panic 以及对某些 token 类型尚未实现的分支。不受支持的数据可能报错或终止后端进程。目录版本是 0.0.0，项目没有稳定兼容性承诺。实际扩展应使用 PostgreSQL 内置 JSONB 函数或仍受维护的 pgrx API。

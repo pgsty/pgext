@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.1.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
+| **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.2.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,16 +28,16 @@ width: full
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "pg_stat_statements" >}} {{< ext "btree_gist" >}} |
 |   **See Also**    | {{< ext "pg_stat_kcache" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_wait_sampling" >}} {{< ext "hypopg" >}} {{< ext "plprofiler" >}} {{< ext "pg_profile" >}} {{< ext "pg_track_settings" >}} {{< ext "btree_gin" >}} |
 
-> [!Note] pgdg missing el10.pg17
+> [!Note] Latest stable upstream/PGXN and PGDG DEB are 5.2.0; PGDG RPM remains at 5.1.0.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `powa` | `plpgsql`, `pg_stat_statements`, `btree_gist` |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `powa` | `plpgsql`, `pg_stat_statements`, `btree_gist` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.0` | {{< bg "18" "powa_18" "green" >}} {{< bg "17" "powa_17" "green" >}} {{< bg "16" "powa_16" "green" >}} {{< bg "15" "powa_15" "green" >}} {{< bg "14" "powa_14" "green" >}} | `powa_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.2` | {{< bg "18" "postgresql-18-powa" "green" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} {{< bg "14" "postgresql-14-powa" "green" >}} | `postgresql-$v-powa` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.2.0` | {{< bg "18" "postgresql-18-powa" "green" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} {{< bg "14" "postgresql-14-powa" "green" >}} | `postgresql-$v-powa` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -422,12 +422,14 @@ pig install powa -v 14;   # install for PG 14
 CREATE EXTENSION powa CASCADE; -- requires plpgsql, pg_stat_statements, btree_gist
 ```
 
-
-
-
 ## Usage
 
-> [powa: PostgreSQL Workload Analyzer](https://github.com/powa-team/powa)
+Sources:
+
+- [PoWA Archivist 5.2.0 README](https://github.com/powa-team/powa-archivist/blob/REL_5_2_0/README.md)
+- [PoWA Archivist 5.2.0 control file](https://github.com/powa-team/powa-archivist/blob/REL_5_2_0/powa.control)
+- [PoWA Archivist 5.2.0 release](https://github.com/powa-team/powa-archivist/releases/tag/REL_5_2_0)
+- [PoWA documentation](https://powa.readthedocs.io/en/latest/components/powa-archivist/index.html)
 
 PoWA is a workload analysis framework that collects performance statistics and provides real-time charts through a web UI. The core extension (`powa-archivist`) snapshots statistics from multiple stat extensions.
 
@@ -441,6 +443,16 @@ PoWA consists of several components:
 - **pg_qualstats**: Optional, provides predicate statistics and index suggestions
 - **pg_stat_kcache**: Optional, provides OS-level metrics (CPU, I/O)
 - **pg_wait_sampling**: Optional, provides wait event sampling
+
+Enable the extension in the repository database. Its control file requires PL/pgSQL, `pg_stat_statements`, and `btree_gist`:
+
+```sql
+CREATE EXTENSION pg_stat_statements;
+CREATE EXTENSION btree_gist;
+CREATE EXTENSION powa CASCADE;
+```
+
+`pg_stat_statements` itself must be configured in `shared_preload_libraries` before PostgreSQL starts.
 
 ### Taking Snapshots
 
@@ -485,3 +497,9 @@ The PoWA web interface (installed separately) provides:
 - System resource usage graphs
 
 Documentation: [powa.readthedocs.io](https://powa.readthedocs.io/)
+
+### Version and Deployment Notes
+
+- PoWA Archivist 5.2.0 adds PostgreSQL 19 support, including collectors for the new `pg_stat_recovery` and `pg_stat_lock` statistics views. The core snapshot workflow remains compatible with the 5.1 series.
+- `powa` is the database extension; `powa-web` is a separate visualization service, and `powa-collector` is used for remote collection architectures. Installing the extension alone does not deploy the UI.
+- Retention and snapshot frequency directly affect repository growth. Monitor the PoWA repository database and size retention for the number of databases, queries, and enabled optional modules.

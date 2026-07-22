@@ -34,7 +34,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_http` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.2` | {{< bg "18" "pgsql_http_18" "green" >}} {{< bg "17" "pgsql_http_17" "green" >}} {{< bg "16" "pgsql_http_16" "green" >}} {{< bg "15" "pgsql_http_15" "green" >}} {{< bg "14" "pgsql_http_14" "green" >}} | `pgsql_http_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.1` | {{< bg "18" "postgresql-18-http" "green" >}} {{< bg "17" "postgresql-17-http" "green" >}} {{< bg "16" "postgresql-16-http" "green" >}} {{< bg "15" "postgresql-15-http" "green" >}} {{< bg "14" "postgresql-14-http" "green" >}} | `postgresql-$v-http` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.2` | {{< bg "18" "postgresql-18-http" "green" >}} {{< bg "17" "postgresql-17-http" "green" >}} {{< bg "16" "postgresql-16-http" "green" >}} {{< bg "15" "postgresql-15-http" "green" >}} {{< bg "14" "postgresql-14-http" "green" >}} | `postgresql-$v-http` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -509,83 +509,68 @@ pig install http -v 14;   # install for PG 14
 CREATE EXTENSION http;
 ```
 
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/pramsey/pgsql-http/blob/v1.7.1/README.md), [v1.7.1 release](https://github.com/pramsey/pgsql-http/releases/tag/v1.7.1)
+Sources:
 
-`http` lets SQL code make HTTP requests through libcurl. Use it for controlled integration points such as triggers that notify an external service, SQL jobs that fetch a small remote payload, or database-side webhook calls.
+- [pgsql-http v1.7.2 README](https://github.com/pramsey/pgsql-http/blob/v1.7.2/README.md)
+- [Extension control file](https://github.com/pramsey/pgsql-http/blob/v1.7.2/http.control)
+- [v1.7.1 to v1.7.2 comparison](https://github.com/pramsey/pgsql-http/compare/v1.7.1...v1.7.2)
+
+`http` lets PostgreSQL issue synchronous HTTP requests through libcurl. It is useful for controlled integrations and administrative calls, but the backend waits for the remote service inside the SQL statement and transaction. Restrict who can call it, set short timeouts, and do not let untrusted input choose arbitrary URLs.
+
+### Core Workflow
 
 ```sql
 CREATE EXTENSION http;
+
+SELECT status, content_type, content
+FROM http_get('https://httpbingo.org/get');
 ```
 
-### Request And Response Types
-
-Every request uses `http_request` and returns `http_response`:
-
-```text
-http_request(method http_method, uri varchar, headers http_header[], content_type varchar, content varchar)
-http_response(status integer, content_type varchar, headers http_header[], content varchar)
-```
-
-Convenience wrappers call the same underlying `http(http_request)` function:
-
-- `http_get(uri varchar)`
-- `http_get(uri varchar, data jsonb)`
-- `http_post(uri varchar, content varchar, content_type varchar)`
-- `http_post(uri varchar, data jsonb)`
-- `http_put(uri varchar, content varchar, content_type varchar)`
-- `http_patch(uri varchar, content varchar, content_type varchar)`
-- `http_delete(uri varchar)`
-- `http_head(uri varchar)`
-
-### Examples
+Send JSON and inspect the response:
 
 ```sql
-SELECT status, content_type, content
-FROM http_get('https://httpbun.com/ip');
+SELECT status, content::jsonb
+FROM http_post(
+  'https://httpbingo.org/post',
+  '{"event":"invoice.paid"}',
+  'application/json'
+);
+```
 
-SELECT content::json->'headers'->>'Authorization'
-FROM http((
+The generic entry point accepts a complete request:
+
+```sql
+SELECT (http((
   'GET',
-  'https://httpbun.com/headers',
-  http_headers('Authorization', 'Bearer token'),
+  'https://httpbingo.org/headers',
+  http_headers('Authorization', 'Bearer example'),
   NULL,
   NULL
-)::http_request);
-
-SELECT status, content::json->'form' AS form
-FROM http_post(
-  'https://httpbun.com/post',
-  jsonb_build_object('myvar', 'myval', 'foo', 'bar')
-);
-
-SELECT status, content_type, content::json->>'data' AS data
-FROM http_put('https://httpbun.com/put', 'some text', 'text/plain');
+)::http_request)).status;
 ```
 
-Inspect response headers by unnesting the `headers` array:
+### Important Objects
+
+- `http_request` contains `method`, `uri`, `headers`, `content_type`, and `content`.
+- `http_response` contains `status`, `content_type`, `headers`, and `content`.
+- `http_header`, `http_header(...)`, and `http_headers(...)` build request headers; `unnest(response.headers)` exposes response headers as rows.
+- `http(...)` executes a complete `http_request`.
+- `http_get`, `http_post`, `http_put`, `http_patch`, `http_delete`, and `http_head` are convenience wrappers.
+- `urlencode(text)` and `urlencode(jsonb)` encode query data.
+- `http_set_curlopt`, `http_list_curlopt`, and `http_reset_curlopt` manage supported session-level libcurl settings.
+
+### Timeouts, Connections, and Security
+
+Each request uses a fresh connection by default. Enable persistent connections only after measuring backend lifetime and remote-server behavior:
 
 ```sql
-SELECT (unnest(headers)).*
-FROM http_get('https://httpbun.com/');
+SET http.curlopt_timeout_ms = 1000;
+SET http.curlopt_connecttimeout_ms = 250;
+SET http.curlopt_tcp_keepalive = 1;
 ```
 
-### Binary Content
+The default request timeout is five seconds. A timeout raises a SQL error, so callers must handle transaction rollback. Network latency in triggers or long transactions can hold locks and exhaust database connections; prefer an outbox plus an external worker for durable asynchronous delivery.
 
-The README warns that `varchar::bytea` is not safe for binary response bodies because it stops at zero-valued bytes. Use `text_to_bytea(content)` for response content and `bytea_to_text(bytea)` when sending binary request bodies.
-
-```sql
-WITH http AS (
-  SELECT * FROM http_get('https://httpbingo.org/image/png')
-)
-SELECT content_type, length(text_to_bytea(content)) AS bytes
-FROM http;
-```
-
-### Timeout And Version Notes
-
-`pg_http` 1.7.1 is a compatibility and documentation release: it adds timeout examples, adds PostgreSQL 17 wait-event hooks, and includes PostgreSQL 19 support fixes. The user-facing SQL API remains the README surface above.
+Keep TLS verification enabled, protect credential-bearing curl settings, validate response status and content before use, and limit outbound destinations at both SQL privilege and network layers. Version 1.7.2 contains build, test, and curl-option constant maintenance relative to 1.7.1; it does not introduce a material SQL API change. The control file still declares SQL extension version 1.7.

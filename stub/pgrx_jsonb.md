@@ -2,21 +2,32 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/pgrx_jsonb.control)
-- [Official upstream documentation](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/README.md)
-- [Official Rust package manifest](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/Cargo.toml)
+- [Official README](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/README.md)
+- [Extension control file](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/pgrx_jsonb.control)
+- [Rust implementation](https://github.com/jscheid/pgrx_jsonb/blob/777c01c72062b74127e562f179d2810c7f7a7450/src/lib.rs)
 
-`pgrx_jsonb` — Proof-of-concept pgrx functions for iterating PostgreSQL JSONB internals and reconstructing JSON values
+pgrx_jsonb is a proof of concept for iterating PostgreSQL's internal JSONB representation from Rust/pgrx. Upstream explicitly says not to use it for anything important. Its three demonstration functions are useful only when studying extension internals.
 
-The reviewed catalog snapshot records version `0.0.0`, kind `standard`, and implementation language `Rust`.
-The curated compatibility set is `11,12,13,14,15,16`; confirm the exact build against the target server.
+### Core Workflow
+
+Install it only in a disposable development database and compare the demonstration paths:
 
 ```sql
-CREATE EXTENSION "pgrx_jsonb";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pgrx_jsonb';
-```
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+CREATE EXTENSION pgrx_jsonb;
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+SELECT jsonb_to_text('{"answer": 42}'::jsonb);
+SELECT jsonb_test('{"answer": 42}'::jsonb);
+SELECT jsonb_test2('{"answer": 42}'::jsonb);
+```
+
+The first function walks the low-level representation and serializes it, while the other two report whether the top-level value is an object through different code paths.
+
+### Important Objects
+
+- `jsonb_to_text` converts a JSONB value to text through the prototype iterator.
+- `jsonb_test` checks for an object through the custom low-level iterator.
+- `jsonb_test2` performs the comparison using pgrx's higher-level JSONB wrapper.
+
+### Safety and Compatibility Notes
+
+The iterator relies on PostgreSQL internal JSONB APIs and contains assertions, unwraps, panics, and unimplemented branches for some token types. Unsupported data can raise an error or terminate the backend process. The cataloged version is 0.0.0 and the project has no stable compatibility promise. Use PostgreSQL's built-in JSONB functions or maintained pgrx APIs in real extensions.

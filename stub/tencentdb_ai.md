@@ -2,24 +2,46 @@
 
 Sources:
 
-- [Official upstream documentation](https://cloud.tencent.com/document/product/409/116227)
-- [Official primary documentation](https://cloud.tencent.com/document/product/409/75121)
+- [Tencent Cloud tencentdb_ai function documentation](https://cloud.tencent.com/document/product/409/116227)
+- [TencentDB for PostgreSQL supported extension versions](https://cloud.tencent.com/document/product/409/75121)
 
-`tencentdb_ai` — TencentDB extension for calling large-model APIs and building in-database RAG workflows.
+`tencentdb_ai` is a TencentDB for PostgreSQL managed extension that calls network-reachable model APIs from SQL. Version 1.3 manages model definitions and credentials and provides generic calls plus chat, embedding, reranking, and image-to-text helpers. Requests leave the database and can incur provider cost, latency, rate limits, and data-governance obligations.
 
-The reviewed catalog snapshot records version `1.3`, kind `standard`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `pgcrypto`.
-The curated compatibility set is `14,15,16,17,18`; confirm the exact build against the target server.
+### Register and Call a Model
+
+On a supported TencentDB instance:
 
 ```sql
-CREATE EXTENSION "tencentdb_ai";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tencentdb_ai';
+CREATE EXTENSION tencentdb_ai CASCADE;
+
+SELECT tencentdb_ai.add_model(
+  'hunyuan-lite',
+  '2023-09-01',
+  NULL,
+  NULL
+);
+
+SELECT * FROM tencentdb_ai.list_models();
+
+SELECT tencentdb_ai.chat_completions(
+  'hunyuan-lite',
+  'Summarize the current transaction isolation level.'
+);
+
+SELECT tencentdb_ai.get_embedding(
+  'hunyuan-embedding',
+  ARRAY['PostgreSQL', 'vector search']
+);
 ```
 
-This is a provider-specific component for `Tencent Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Creation also installs `pgcrypto`. Before calling a registered model, use `update_model_attr(model_name, attr_name, attr_value)` to configure the provider's `SecretId` and `SecretKey`, plus `version`, `region`, or `json_path` when required. Do not embed credentials in reusable SQL, application logs, or shared shell history; tightly restrict function and model-catalog access.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+### Function Index
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+`add_model` registers a name, version, region, and optional JSONPath used like `jsonb_path_query_first` to select a response field. `list_models`, `update_model_attr`, and `delete_model` manage registrations. `call_model(model_name, common_params, api_params)` exposes the generic text-array request form. `chat_completions`, `get_embedding`, `run_rerank`, and `image_to_text` provide fixed-scene interfaces.
+
+### Service, Version, and Security Boundaries
+
+The detailed function page states PostgreSQL 17 as its prerequisite, while the current provider extension matrix lists `tencentdb_ai` 1.3 for PostgreSQL 14–18. Its older walkthrough output also shows an extension version 1.0. Treat the instance's `pg_available_extension_versions` and current Tencent support response as authoritative, and query `pg_extension` after installation.
+
+Calls are synchronous external network operations and are not made transactional by SQL rollback. Prompts, documents, image URLs, and returned content may contain sensitive data or untrusted model output. Apply egress controls, least-privilege Tencent credentials, time/cost budgets, output validation, retry/idempotency rules, and explicit consent/retention policy before using results in database writes or automated decisions.

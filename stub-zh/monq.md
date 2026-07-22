@@ -2,20 +2,28 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/postgrespro/monq/blob/0c245caeeee1057144d91c57c2d7d229310afe7e/monq.control)
-- [官方上游文档](https://github.com/postgrespro/monq/blob/0c245caeeee1057144d91c57c2d7d229310afe7e/README.md)
+- [官方 README](https://github.com/postgrespro/monq/blob/0c245caeeee1057144d91c57c2d7d229310afe7e/README.md)
+- [0.1 版 SQL API](https://github.com/postgrespro/monq/blob/0c245caeeee1057144d91c57c2d7d229310afe7e/monq--0.1.sql)
+- [扩展控制文件](https://github.com/postgrespro/monq/blob/0c245caeeee1057144d91c57c2d7d229310afe7e/monq.control)
 
-`monq` — monq：为 PostgreSQL jsonb 数据提供类似 MongoDB 的查询支持。
+`monq` 将 MongoDB 查询语法的一个子集转换为 JsQuery 表达式，并针对 PostgreSQL `jsonb` 求值。它提供 `mquery` 类型与可交换的 `<=>` 匹配操作符；这是兼容辅助工具，并非 MongoDB 服务端或完整的 MongoDB 查询语义实现。
 
-已复核目录快照记录的版本为 `0.1`、类型为 `standard`、实现语言为 `C`。
-应先安装并验证声明的扩展依赖：`jsquery`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+先安装必需的 `jsquery` 扩展，把查询文本转换为 `mquery`，再与 JSON 文档进行匹配。
 
 ```sql
-CREATE EXTENSION "monq";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'monq';
+CREATE EXTENSION jsquery;
+CREATE EXTENSION monq;
+
+SELECT '{"a":["ssl","security","pattern"]}'::jsonb <=>
+       '{a: {$all: ["ssl", "security"]}}'::mquery;
 ```
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SQL 中同时声明了 `jsonb <=> mquery` 与 `mquery <=> jsonb`。支持的类别包括比较操作符、逻辑操作符、`$exists`、`$type`、`$text`、`$all`、`$elemMatch` 与 `$size`。
+
+### 兼容性限制
+
+README 明确不支持 `$mod`、`$regex`、`$where`、位操作、地理空间、注释及投影操作符。结果受 JsQuery 行为限制，因此在建立针对性测试语料前，不要假定它与 MongoDB 的类型转换、字段缺失、数组、排序规则或空值语义一致。SQL API 没有为 `<=>` 定义索引操作符类；应在真实数据上确认执行计划，而不能假定谓词会使用索引。
+
+项目自述仍处于开发中，并面向 PostgreSQL 9.4 时代的 API。应将 `monq` 与 `jsquery` 一起固定版本，验证不可信查询文本的解析行为，并在迁移前逐个将应用查询与预期 MongoDB 结果比较。

@@ -27,6 +27,8 @@ ORDER BY totalsize DESC, count DESC;
 
 The result describes only the backend executing the query. It is a point-in-time diagnostic and cannot measure another session or provide historical retention.
 
+Despite that dynamic behavior, the installation SQL declares `pg_memorycontext()` `IMMUTABLE`; do not treat that declaration as a caching or planner-safety guarantee. It also exposes `totalsize` as a 32-bit `integer` even though the C code accumulates into a wider `long`, so an aggregate above 2 GiB can fail conversion instead of being reported.
+
 ### Unsafe compatibility boundary
 
 The source duplicates a private AllocSetContext layout, casts every traversed context to that structure, and follows private first-child and next-child pointers from TopMemoryContext. PostgreSQL has multiple memory-context implementations and their layouts change between server versions. Upstream's broad PostgreSQL 9.2+ claim is not a reliable modern compatibility guarantee; a mismatched build can misread memory or crash the backend.

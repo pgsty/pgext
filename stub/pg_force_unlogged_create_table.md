@@ -2,20 +2,29 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/gurjeet/pg_force_unlogged_create_table/blob/b143432f1f05bf0a16cb7480dd23acd4bf3e43f8/pg_force_unlogged_create_table.control)
-- [Official upstream documentation](https://github.com/gurjeet/pg_force_unlogged_create_table/blob/b143432f1f05bf0a16cb7480dd23acd4bf3e43f8/README.md)
+- [Official README](https://github.com/gurjeet/pg_force_unlogged_create_table/blob/b143432f1f05bf0a16cb7480dd23acd4bf3e43f8/README.md)
+- [Version 1.0 load script](https://github.com/gurjeet/pg_force_unlogged_create_table/blob/b143432f1f05bf0a16cb7480dd23acd4bf3e43f8/pg_force_unlogged_create_table--1.0.sql)
+- [ProcessUtility hook implementation](https://github.com/gurjeet/pg_force_unlogged_create_table/blob/b143432f1f05bf0a16cb7480dd23acd4bf3e43f8/pg_force_unlogged_create_table.c)
 
-`pg_force_unlogged_create_table` — force CREATE TABLE to create UNLOGGED tables
+`pg_force_unlogged_create_table` installs a utility hook that changes ordinary `CREATE TABLE` and `CREATE TABLE AS` commands into `UNLOGGED` table creation. It is intended for environments that deliberately prefer load speed over crash durability and replication coverage.
 
-The reviewed catalog snapshot records version `1.0`, kind `preload`, and implementation language `C`.
+### Core Workflow
+
+Creating the extension executes `LOAD`, so the hook becomes active immediately in that session. Put the library in `shared_preload_libraries` and restart PostgreSQL when every new session should inherit the behavior.
 
 ```sql
-CREATE EXTENSION "pg_force_unlogged_create_table";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_force_unlogged_create_table';
+CREATE EXTENSION pg_force_unlogged_create_table;
+CREATE TABLE staging (id bigint, payload jsonb);
+
+SELECT relpersistence
+FROM pg_class
+WHERE oid = 'staging'::regclass;
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+The expected `relpersistence` is `u`. Explicit `CREATE TEMP TABLE` and `CREATE UNLOGGED TABLE` commands are left unchanged, and `CREATE MATERIALIZED VIEW` is not affected. The extension defines no SQL functions or types.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Durability Boundary
+
+Unlogged relations are truncated after an unclean shutdown and are not written to WAL for physical replication. Indexes on an unlogged table are unlogged as well. Use this only for disposable, reconstructible data, and verify that backup, failover, logical processing, and recovery procedures do not assume these tables are durable.
+
+Session loading affects only statements executed after the library is loaded. Dropping the extension removes its membership objects but does not convert existing unlogged tables back to logged tables; convert or recreate those relations explicitly if durability requirements change.

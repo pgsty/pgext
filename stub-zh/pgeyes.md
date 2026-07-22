@@ -2,21 +2,31 @@
 
 来源：
 
-- [官方上游文档](https://github.com/ycku/pgeyes/blob/e09e243faaf4837a05366c3fc9d573909dbd053d/README.md)
+- [官方 README](https://github.com/ycku/pgeyes/blob/e09e243faaf4837a05366c3fc9d573909dbd053d/README.md)
+- [0.0.2 版本扩展 SQL](https://github.com/ycku/pgeyes/blob/e09e243faaf4837a05366c3fc9d573909dbd053d/pgeyes--0.0.2.sql)
+- [扩展控制文件](https://github.com/ycku/pgeyes/blob/e09e243faaf4837a05366c3fc9d573909dbd053d/pgeyes.control)
 
-`pgeyes` — pgeyes：PL/pgSQL 管理辅助扩展，提供 pgeyes() 环境检查函数与 foreign_db 元数据表。
+`pgeyes` `0.0.2` 版本只安装一个 PL/pgSQL 环境检查函数。虽然项目 README 描述了更广泛的远程管理工具集合，但在这个已复核版本中，`CREATE EXTENSION pgeyes` 不会安装外部数据包装器、远程检查 API 或元数据表。
 
-已复核目录快照记录的版本为 `0.0.2`、类型为 `puresql`、实现语言为 `SQL`。
-应先安装并验证声明的扩展依赖：`plpgsql`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 运行检查
+
+上游说明建议使用专用模式，并撤销 `PUBLIC` 访问权限：
 
 ```sql
-CREATE EXTENSION "pgeyes";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pgeyes';
+CREATE SCHEMA pgeyes;
+REVOKE ALL ON SCHEMA pgeyes FROM PUBLIC;
+CREATE EXTENSION pgeyes WITH SCHEMA pgeyes;
+
+SELECT * FROM pgeyes.pgeyes();
 ```
 
-整理后的生命周期为 `abandoned`。采用前应固定已复核构建并确认维护状态。
+`pgeyes()` 返回一行，包含四个文本/布尔字段：
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+- `item`：`PostgreSQL version number`
+- `result`：`server_version_num` 的值
+- `valid`：版本号至少为 `90600` 时为 true
+- `description`：固定阈值 `>=90600`
+
+这个检查只比较版本号。它不会验证配置、安全、连接、复制、备份或扩展兼容性；对于当前系统，PostgreSQL 9.6 阈值也不再是有用的健康门槛。
+
+项目没有提供扩展升级脚本；README 建议删除后重新创建。执行前应检查依赖对象。由于项目已废弃，且安装 API 比项目描述小得多，新系统应改用直接的 PostgreSQL 系统目录查询或监控查询。

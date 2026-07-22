@@ -2,13 +2,13 @@
 
 Sources:
 
-- [go_fdw README at the reviewed commit](https://github.com/dennwc/go-fdw/blob/93f15338153f6e07f1673e8733863cc17258a181/README.md)
-- [go_fdw install SQL at the reviewed commit](https://github.com/dennwc/go-fdw/blob/93f15338153f6e07f1673e8733863cc17258a181/go_fdw--1.0.sql)
-- [go_fdw.control at the reviewed commit](https://github.com/dennwc/go-fdw/blob/93f15338153f6e07f1673e8733863cc17258a181/go_fdw.control)
+- [Official README](https://github.com/dennwc/go-fdw/blob/93f15338153f6e07f1673e8733863cc17258a181/README.md)
+- [Extension SQL](https://github.com/dennwc/go-fdw/blob/93f15338153f6e07f1673e8733863cc17258a181/go_fdw--1.0.sql)
+- [Bundled Go example](https://github.com/dennwc/go-fdw/blob/93f15338153f6e07f1673e8733863cc17258a181/fdw.go)
 
-`go_fdw` is an experimental Go/cgo template for developing a PostgreSQL foreign data wrapper, not a general connector to Go data. The bundled example supports table scans, EXPLAIN, and table options; developers replace the example's `SetTable` implementation with their own data source logic.
+`go_fdw` 1.0 is an experimental template for writing a PostgreSQL foreign data wrapper in Go. The distributed example does not connect to an external system: it registers a hard-coded generator that returns ten synthetic rows. Developers are expected to replace `fdw.go` and rebuild the shared library for their own source.
 
-### Exercise the Bundled Example
+### Bundled Example
 
 ```sql
 CREATE EXTENSION go_fdw;
@@ -20,13 +20,13 @@ CREATE FOREIGN TABLE public.gotest (
 SERVER "go-fdw"
 OPTIONS (foo 'bar');
 
-SELECT * FROM public.gotest;
+SELECT * FROM gotest;
 ```
 
-The extension install script creates the `go_fdw` wrapper and a server named `go-fdw` automatically.
+The installation creates foreign data wrapper `go_fdw` and server `go-fdw`. In the bundled implementation, `id` is derived from the row counter and `name` becomes text such as a row/column label. Nullable columns are left NULL; the demonstration explicitly handles only integer and text types. Table options are passed to the Go callbacks but `foo='bar'` has no meaning in the example.
 
-### Caveats
+### Development Boundary
 
-- Upstream calls the project experimental and documents testing only with PostgreSQL 9.6 and Go 1.8.1. Validate and port it before considering use with a current server.
-- This is a development template with a basic working implementation. Its table options and returned rows depend on the Go code compiled into the library.
-- Replacing the compiled shared library during development requires a PostgreSQL restart before retesting, according to the README; this is not a `shared_preload_libraries` requirement.
+The framework implements table estimates, scans, rescan/close behavior, table options, and `EXPLAIN` properties. It has no generic remote protocol, write callbacks, transaction integration, qualifier pushdown, join pushdown, authentication, or retry behavior. Those semantics belong entirely to the custom Go code supplied to `SetTable`.
+
+Upstream reports testing only with PostgreSQL 9.6 and Go 1.8.1 on Ubuntu x64. The module crosses PostgreSQL C and Go runtime boundaries and uses old server APIs; it must be rebuilt and stress-tested for the exact PostgreSQL and Go versions, especially around memory, signals, concurrency, and backend shutdown. Replacing the library requires new PostgreSQL backend processes because an already loaded shared object is not reloaded in place.

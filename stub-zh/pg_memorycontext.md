@@ -27,6 +27,8 @@ ORDER BY totalsize DESC, count DESC;
 
 结果只描述执行查询的当前 backend。它是一个时间点诊断，不能测量其他 session，也不提供历史保留。
 
+尽管结果会动态变化，安装 SQL 仍把 `pg_memorycontext()` 声明为 `IMMUTABLE`；不能把这个声明当作缓存或规划器安全保证。此外，C 代码使用更宽的 `long` 累加大小，但 SQL 把 `totalsize` 暴露为 32 位 `integer`，因此总量超过 2 GiB 时可能发生转换错误，而不是返回结果。
+
 ### 不安全的兼容边界
 
 源码复制私有 AllocSetContext 布局，把遍历到的每个 context 都转换为这种结构，并从 TopMemoryContext 沿私有 first-child/next-child 指针行走。PostgreSQL 存在多种 memory context 实现，其布局也会随服务器版本变化。上游笼统的 PostgreSQL 9.2+ 声明不能当作现代兼容保证；构建不匹配时可能误读内存或让 backend 崩溃。

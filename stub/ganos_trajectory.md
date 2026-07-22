@@ -2,25 +2,29 @@
 
 Sources:
 
-- [Official upstream documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/basic-concepts)
-- [Official primary documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Alibaba Cloud trajectory introduction](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/trajectory-introduction)
+- [Alibaba Cloud Ganos basic concepts](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/basic-concepts)
+- [Alibaba Cloud extension creation guide](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/create-extensions)
+- [Alibaba Cloud RDS for PostgreSQL extension matrix](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
 
-`ganos_trajectory` — Models, queries, and analyzes moving-object trajectories across space and time.
+`ganos_trajectory` is Alibaba Cloud's Ganos component for storing and analyzing moving-object trajectories. A trajectory combines spatial points with ordered `TIMESTAMP` observations and can carry point attributes and events; it is provider-managed rather than a portable community extension.
 
-The reviewed catalog snapshot records version `7.0`, kind `standard`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `ganos_geometry`, `ganos_spatialref`.
-The curated compatibility set is `10,11,12,13,14,15,16,17`; confirm the exact build against the target server.
+### Enablement and Workflow
+
+Alibaba Cloud documents `ganos_spatialref` and `ganos_geometry` as prerequisites. `CASCADE` is the compact provider-supported installation path; inspect the installed dependency set on the exact RDS instance.
 
 ```sql
-CREATE EXTENSION "ganos_trajectory";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'ganos_trajectory';
+CREATE EXTENSION ganos_trajectory CASCADE;
+
+SELECT name, default_version, installed_version
+FROM pg_available_extensions
+WHERE name IN ('ganos_spatialref', 'ganos_geometry', 'ganos_trajectory');
 ```
 
-This is a provider-specific component for `Alibaba Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+The data model supports trajectory points, attributes, events, and spatiotemporal bounding boxes such as `BoxNDF`. Time helpers include `ST_UnixEpochToTS` and `ST_TsToUnixEpoch`. Supply observations in timestamp order and verify duplicate-time, missing-point, timezone, interpolation, and units behavior with provider examples before loading production data.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+### Provider Boundaries
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The catalog records Ganos 7.0, but the provider matrix lists different versions and availability across PostgreSQL engine versions. Extension creation can also be restricted by RDS edition and minor engine version while an already-installed copy remains usable. Query the current matrix and `pg_available_extensions` instead of assuming the catalog version can be created.
+
+GanosBase and PostGIS cannot be installed in the same schema according to the provider's basic-concepts documentation. Plan schemas before enablement, and test dependency creation, privileges, upgrades, backup/restore, spatial indexes, temporal predicates, export formats, and migration to a non-Ganos PostgreSQL service in a disposable instance.

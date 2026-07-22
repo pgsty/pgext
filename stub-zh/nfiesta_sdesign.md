@@ -2,21 +2,35 @@
 
 来源：
 
-- [官方上游来源](https://gitlab.com/1on.cz/nfiesta/nfiesta_sdesign)
+- [官方仓库 README](https://gitlab.com/1on.cz/nfiesta/nfiesta_sdesign/-/blob/37945954242446614f08e36b958710ef965fca76/README.md)
+- [官方扩展控制文件](https://gitlab.com/1on.cz/nfiesta/nfiesta_sdesign/-/blob/37945954242446614f08e36b958710ef965fca76/nfiesta_sdesign.control)
+- [官方扩展 SQL](https://gitlab.com/1on.cz/nfiesta/nfiesta_sdesign/-/blob/37945954242446614f08e36b958710ef965fca76/nfiesta_sdesign--1.0.0.sql)
+- [官方导入函数](https://gitlab.com/1on.cz/nfiesta/nfiesta_sdesign/-/blob/37945954242446614f08e36b958710ef965fca76/functions/fn_import_data.sql)
 
-`nfiesta_sdesign` — 用于采样设计数据建模与操作的 PostgreSQL 扩展。
+`nfiesta_sdesign` 安装 NFIesta 森林清查系统使用的抽样设计数据模型。它在固定的 `sdesign` 模式中描述国家、分层、面板、样地簇、样地、清查活动、参考年集合、抽样权重和 PostGIS 几何；它属于领域应用模式，而不是通用统计函数库。
 
-已复核目录快照记录的版本为 `1.1.17`、类型为 `puresql`、实现语言为 `SQL`。
-应先安装并验证声明的扩展依赖：`plpgsql`, `postgis`。
-整理后的兼容版本集合为 `16`；仍需针对目标服务器确认实际构建。
+### 安装与检查
+
+版本 `1.1.17` 依赖 `plpgsql` 和 `postgis`，且不可重定位：
 
 ```sql
-CREATE EXTENSION "nfiesta_sdesign";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'nfiesta_sdesign';
+CREATE EXTENSION postgis;
+CREATE EXTENSION nfiesta_sdesign;
+
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'sdesign'
+ORDER BY table_name;
 ```
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+主要表包括 `sdesign.c_country`、`sdesign.t_strata_set`、`sdesign.t_stratum`、`sdesign.t_panel`、`sdesign.t_cluster_configuration`、`sdesign.t_cluster`、`sdesign.f_p_plot`、`sdesign.t_inventory_campaign` 和 `sdesign.t_reference_year_set`，另有映射表连接面板、样地簇、清查活动和参考年。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### 导入与校验
+
+`sdesign.fn_import_data(text)` 从调用方指定的暂存模式导入完整数据集。该模式必须包含函数所期待的全部暂存关系，包括国家、样地簇配置、分层集合、分层、面板、样地簇、样地、清查活动、测量日期和参考年映射。
+
+校验触发器会强制检查清查活动起止配对、面板/参考年映射、样地测量日期、样地簇配置组合和抽样权重总和等关系。`sdesign.fn_create_buffered_geometry()` 为支持的样带布局派生 MultiPolygon 抽样框几何。
+
+### 运维边界
+
+应把安装、导入、升级和删除都当成应用模式迁移：它们会创建并修改大量持久表、序列、约束、触发器和 PostGIS 值。导入函数使用调用方提供的模式字符串拼接动态 SQL，但没有引用标识符，因此只允许预先验证的可信模式名，并以最小权限所有者运行。导入不是幂等行更新，且可能到延迟校验阶段才失败；应在事务中执行，提前验证暂存计数和 SRID，并在副本上测试回滚。版本 `1.1.17` 为面板/参考年映射增加唯一约束，升级前必须清理重复项。

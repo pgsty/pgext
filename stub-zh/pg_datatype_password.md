@@ -2,21 +2,37 @@
 
 来源：
 
-- [官方扩展控制文件](https://api.pgxn.org/src/pg_datatype_password/pg_datatype_password-1.0.0/pg_datatype_password.control)
-- [官方上游文档](https://pgxn.org/dist/pg_datatype_password/1.0.0/)
-- [官方 PGXN 分发页](https://pgxn.org/dist/pg_datatype_password/)
+- [PGXN 发行版 1.0.0 README](https://api.pgxn.org/src/pg_datatype_password/pg_datatype_password-1.0.0/README.md)
+- [版本 0.0.1 安装 SQL](https://api.pgxn.org/src/pg_datatype_password/pg_datatype_password-1.0.0/sql/pg_datatype_password--0.0.1.sql)
+- [扩展控制文件](https://api.pgxn.org/src/pg_datatype_password/pg_datatype_password-1.0.0/pg_datatype_password.control)
 
-`pg_datatype_password` — 纯 SQL 密码数据类型与比较运算符，使用 pgcrypto Blowfish 哈希，并依赖触发器在写入前加密。
+`pg_datatype_password` 提供 `password` 类型，以及由 `pgcrypto` Blowfish 哈希支持的明文比较操作符。本次核对的 PGXN 发行版是 `1.0.0`，但其中可安装的扩展版本是 `0.0.1`。
 
-已复核目录快照记录的版本为 `0.0.1`、类型为 `puresql`、实现语言为 `SQL`。
-应先安装并验证声明的扩展依赖：`pgcrypto`, `plpgsql`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+该类型的输入函数不会进行哈希。每张存储此类型的表都必须使用 `t_encrypt_password` BEFORE 触发器，否则会直接存入明文。
 
 ```sql
-CREATE EXTENSION "pg_datatype_password";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_datatype_password';
+CREATE EXTENSION pgcrypto;
+CREATE EXTENSION pg_datatype_password;
+
+CREATE TABLE app_user (
+  username text PRIMARY KEY,
+  passwd password NOT NULL
+);
+
+CREATE TRIGGER app_user_encrypt_password
+BEFORE INSERT OR UPDATE OF passwd ON app_user
+FOR EACH ROW EXECUTE PROCEDURE t_encrypt_password('passwd', '10');
+
+INSERT INTO app_user VALUES ('alice', 'secret');
+SELECT username FROM app_user WHERE passwd = 'secret'::text;
 ```
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+可选的第二个触发器参数是 bcrypt 成本；上游默认值为 `8`。输出时显示存储的哈希。更新密码列会对新值进行哈希，因此写入已有哈希会再次哈希。
+
+### 安全与注意事项
+
+可用比较是在 `password` 与 `text` 之间双向使用 `=` 和 `<>`；没有文档说明排序或密码索引操作符类。应限制对表的直接访问，避免记录明文，并在认证外围采用当前的密码策略和速率限制。
+
+尽管控制文件声明可重定位，版本化 SQL 仍将多个对象硬编码到 `public`。请安装并测试于预期模式。这是一个较老的 bcrypt 设计，默认工作因子已经过时；应评估使用受维护库在应用侧哈希密码是否更符合威胁模型。

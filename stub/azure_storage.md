@@ -2,22 +2,48 @@
 
 Sources:
 
-- [Official upstream documentation](https://learn.microsoft.com/en-us/azure/postgresql/extensions/concepts-storage-extension)
+- [Azure Storage extension overview](https://learn.microsoft.com/en-us/azure/postgresql/extensions/concepts-storage-extension)
+- [Azure Storage extension configuration](https://learn.microsoft.com/en-us/azure/postgresql/extensions/how-to-configure-azure-storage-extension)
+- [Azure Storage function reference](https://learn.microsoft.com/en-us/azure/postgresql/extensions/reference-azure-storage-extension)
 
-`azure_storage` — Azure Database for PostgreSQL extension for importing from and exporting to Azure Storage blobs from SQL.
+`azure_storage` is a Microsoft-managed extension for moving data between Azure Database for PostgreSQL Flexible Server and Azure Blob Storage with SQL. It supports listing, importing, and exporting blobs; it is not a portable extension for self-managed PostgreSQL.
 
-The reviewed catalog snapshot records version `1.9`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
+
+First allow the extension and load its library through the Flexible Server configuration described by Microsoft, then restart when required and create it in every database that will use it. Microsoft recommends managed identity instead of Shared Key authentication.
 
 ```sql
-CREATE EXTENSION "azure_storage";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'azure_storage';
+CREATE EXTENSION azure_storage;
+
+SELECT azure_storage.account_add(
+    azure_storage.account_options_managed_identity('mystorage', 'blob')
+);
+
+SELECT azure_storage.account_user_add('mystorage', 'etl_role');
+
+SELECT path, bytes, last_modified
+FROM azure_storage.blob_list('mystorage', 'incoming', 'daily/');
+
+SELECT *
+FROM azure_storage.blob_get(
+    'mystorage',
+    'incoming',
+    'daily/customers.csv',
+    'csv',
+    'none',
+    azure_storage.options_csv_get(header => true)
+) AS t(customer_id bigint, name text);
 ```
 
-This is a provider-specific component for `Microsoft Azure`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+The role that registers accounts must be a member of `azure_storage_admin`. Other roles need an explicit `azure_storage.account_user_add` grant before using storage functions. The managed identity also needs appropriate Azure data-plane permissions, such as Blob Data Reader for reads or Blob Data Contributor for writes.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+### Main Objects
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+- `azure_storage.account_add`, `azure_storage.account_remove`, and `azure_storage.account_list` manage storage-account registrations.
+- `azure_storage.account_user_add` and `azure_storage.account_user_remove` manage database-role access.
+- `azure_storage.blob_list` lists objects; `azure_storage.blob_get` imports rows; `azure_storage.blob_put` exports rows.
+- `azure_storage.options_csv_get`, `azure_storage.options_tsv`, `azure_storage.options_binary`, and `azure_storage.options_parquet` build decoder options.
+
+### Caveats
+
+Format and compression can be inferred from a blob suffix or supplied explicitly. Supported formats include CSV, TSV, text-like files, PostgreSQL binary, and Parquet; supported compression depends on the encoder. Account keys are sensitive credentials, so prefer managed identity and rotate any Shared Keys. Network access, container existence, role allowlists, and Azure IAM are all separate prerequisites. Loading the library and changing server-level settings can require a restart.

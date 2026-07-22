@@ -2,22 +2,21 @@
 
 来源：
 
-- [官方项目或服务商页面](https://cloud.tencent.com/product/postgres)
+- [腾讯云 PostgreSQL SQL 限流文档](https://intl.cloud.tencent.com/zh/document/product/409/64750)
+- [腾讯云 PostgreSQL 产品页](https://cloud.tencent.com/product/postgres)
 
-`tencentdb_sql_throttling` — 腾讯云数据库专有预加载扩展：按规范化 SQL 文本或 query_id 限制主实例与只读节点上的 SQL 并发。
-
-已复核目录快照记录的版本为 `1.0`、类型为 `preload`、实现语言为 `C`。
-整理后的兼容版本集合为 `14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+`tencentdb_sql_throttling` 是腾讯云托管扩展，按规范化查询 ID 限制并发执行数。它不是可移植的社区包：可用性、支持的内核构建、预加载修改、权限、HA 行为和升级均由腾讯云控制。
 
 ```sql
-CREATE EXTENSION "tencentdb_sql_throttling";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tencentdb_sql_throttling';
+CREATE EXTENSION tencentdb_sql_throttling;
+SELECT tencentdb_sql_throttling.add_rule_with_queryid(
+  497939862935121343, 0, 10, true
+);
+SELECT * FROM tencentdb_sql_throttling.rules;
 ```
 
-这是 `Tencent Cloud` 的服务商专用组件；可用性、启用、权限与升级遵循该服务，而不是可移植的社区软件包。
+需要由腾讯云支持把 `tencentdb_sql_throttling` 加入 `shared_preload_libraries`，这会重启实例。官方文档要求至少达到所列腾讯云内核修订版，并说明无法直接配置扩展查询协议语句。应从 `pg_stat_activity` 或 `pg_stat_statements` 获取查询 ID；`work_node` 为 0 时作用于主节点与只读节点，1 仅主节点，2 仅只读节点。
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+规则只有载入内存后才影响流量。重启、HA 事件或大版本升级会清除内存规则；应将规则持久化到 `tencentdb_sql_throttling.persistent_rules_table` 并显式重新加载。`drop_rule`、`drop_all_rules`、`change_rule_status` 及 load/dump 辅助函数会区分内存与持久状态；每次控制操作后都要核对两处状态。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+应从保守的 `max_concurrency` 开始，监控 `current_concurrency`、`total_hit_count`、`reject_count`、延迟和应用错误，并保留紧急回滚路径。SQL、模式、规划器或版本变化后的查询 ID 改变，可能导致规则漏匹配或作用于非预期规范化查询，因此必须与厂商演练故障切换和升级行为。

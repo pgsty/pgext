@@ -33,7 +33,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `ogr_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "ogr_fdw_18" "green" >}} {{< bg "17" "ogr_fdw_17" "green" >}} {{< bg "16" "ogr_fdw_16" "green" >}} {{< bg "15" "ogr_fdw_15" "green" >}} {{< bg "14" "ogr_fdw_14" "green" >}} | `ogr_fdw_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.8` | {{< bg "18" "postgresql-18-ogr-fdw" "green" >}} {{< bg "17" "postgresql-17-ogr-fdw" "green" >}} {{< bg "16" "postgresql-16-ogr-fdw" "green" >}} {{< bg "15" "postgresql-15-ogr-fdw" "green" >}} {{< bg "14" "postgresql-14-ogr-fdw" "green" >}} | `postgresql-$v-ogr-fdw` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "postgresql-18-ogr-fdw" "green" >}} {{< bg "17" "postgresql-17-ogr-fdw" "green" >}} {{< bg "16" "postgresql-16-ogr-fdw" "green" >}} {{< bg "15" "postgresql-15-ogr-fdw" "green" >}} {{< bg "14" "postgresql-14-ogr-fdw" "green" >}} | `postgresql-$v-ogr-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -470,173 +470,75 @@ pig install ogr_fdw -v 14;   # install for PG 14
 CREATE EXTENSION ogr_fdw;
 ```
 
-
-
-
 ## Usage
 
-> [ogr_fdw: OGR Foreign Data Wrapper for PostgreSQL](https://github.com/pramsey/pgsql-ogr-fdw)
+Sources:
 
-OGR is the **vector** half of the [GDAL](http://www.gdal.org/) spatial data access library. It allows access to a [large number of GIS data formats](http://www.gdal.org/ogr_formats.html) using a simple C API. Since OGR exposes a simple table structure and PostgreSQL foreign data wrappers allow access to table structures, the fit is pretty perfect.
+- [ogr_fdw v1.1.9 README](https://github.com/pramsey/pgsql-ogr-fdw/blob/v1.1.9/README.md)
+- [Extension control file](https://github.com/pramsey/pgsql-ogr-fdw/blob/v1.1.9/ogr_fdw.control)
+- [v1.1.8 to v1.1.9 comparison](https://github.com/pramsey/pgsql-ogr-fdw/compare/v1.1.8...v1.1.9)
+- [GDAL vector drivers](https://gdal.org/en/stable/drivers/vector/index.html)
 
-### Quick Start
+`ogr_fdw` exposes vector data supported by GDAL/OGR as PostgreSQL foreign tables. It can read files and remote data sources through OGR drivers and can write when the selected driver and data source support updates. Install PostGIS before `ogr_fdw` for native geometry columns; otherwise geometry is exposed as WKB `bytea`.
+
+### Discover and Import a Layer
+
+Use the installed helper to inspect a source and generate matching SQL:
+
+```console
+ogr_fdw_info -s /srv/gis/cities.gpkg
+ogr_fdw_info -s /srv/gis/cities.gpkg -l cities
+```
+
+A minimal equivalent definition is:
 
 ```sql
 CREATE EXTENSION postgis;
 CREATE EXTENSION ogr_fdw;
-```
 
-Use the `ogr_fdw_info` tool to read an OGR data source and output server/table definitions:
-
-```bash
-ogr_fdw_info -s /tmp/test -l pt_two
-```
-
-```sql
-CREATE SERVER "myserver"
+CREATE SERVER city_source
   FOREIGN DATA WRAPPER ogr_fdw
   OPTIONS (
-    datasource '/tmp/test',
-    format 'ESRI Shapefile' );
+    datasource '/srv/gis/cities.gpkg',
+    format 'GPKG'
+  );
 
-CREATE FOREIGN TABLE "pt_two" (
-  fid integer,
-  "geom" geometry(Point, 4326),
-  "name" varchar,
-  "age" integer,
-  "height" real,
-  "birthdate" date )
-  SERVER "myserver"
-  OPTIONS (layer 'pt_two');
-
-SELECT * FROM pt_two;
-```
-
-Filter pushdown is supported — both simple predicates and bounding box filters (`&&`):
-
-```sql
-SET client_min_messages = debug1;
-
-SELECT name, age, height
-FROM pt_two
-WHERE height < 5.7
-AND geom && ST_MakeEnvelope(0, 0, 1, 1);
-```
-
-```
-DEBUG:  OGR SQL: (height < 5.7)
-DEBUG:  OGR spatial filter (0 0, 1 1)
-```
-
-
-## Limitations
-
-- PostgreSQL 11 or higher required
-- Limited non-spatial query restrictions are pushed down to OGR (only `>`, `<`, `<=`, `>=`, `=`)
-- Only bounding box filters (`&&`) are pushed down for spatial filtering
-- OGR connections are made for every query (no pooling)
-- All columns are retrieved every time
-
-
-## Examples
-
-### WFS (Web Feature Service)
-
-```sql
-CREATE SERVER geoserver
-  FOREIGN DATA WRAPPER ogr_fdw
-  OPTIONS (
-    datasource 'WFS:https://demo.geo-solutions.it/geoserver/wfs',
-    format 'WFS' );
-
-CREATE FOREIGN TABLE topp_states (
+CREATE FOREIGN TABLE city (
   fid bigint,
-  the_geom Geometry(MultiSurface,4326),
-  gml_id varchar,
-  state_name varchar,
-  state_fips varchar,
-  state_abbr varchar,
-  land_km double precision,
-  persons double precision )
-  SERVER "geoserver"
-  OPTIONS (layer 'topp:states');
+  geom geometry,
+  name text
+) SERVER city_source
+  OPTIONS (layer 'cities');
+
+SELECT fid, name FROM city WHERE geom && ST_MakeEnvelope(-10, 35, 30, 60, 4326);
 ```
 
-### File Geodatabase
+The PostgreSQL server account needs filesystem permissions for file-backed data sources and network/credential access for remote drivers.
+
+### Import and Mapping
 
 ```sql
-CREATE SERVER fgdbtest
-  FOREIGN DATA WRAPPER ogr_fdw
-  OPTIONS (
-    datasource '/tmp/Querying.gdb',
-    format 'OpenFileGDB' );
+CREATE SCHEMA gis_import;
 
-CREATE FOREIGN TABLE cities (
-  fid integer,
-  geom geometry(Point, 4326),
-  city_name varchar,
-  state_name varchar,
-  elevation integer,
-  pop1990 integer )
-  SERVER fgdbtest
-  OPTIONS (layer 'Cities');
-```
-
-
-## Advanced Features
-
-### Writeable Tables
-
-If the OGR driver supports it, you can insert/update/delete records. Writeable tables require a `fid` column in the table definition.
-
-```sql
-ALTER SERVER myserver
-  OPTIONS (ADD updateable 'true');
-```
-
-### Column Name Mapping
-
-Map remote column names to local names:
-
-```sql
-CREATE FOREIGN TABLE typetest_fdw_mapped (
-  fid bigint,
-  supertime time OPTIONS (column_name 'clock'),
-  thebestname varchar OPTIONS (column_name 'name') )
-  SERVER wraparound
-  OPTIONS (layer 'typetest');
-```
-
-### Automatic Table Import
-
-Use `IMPORT FOREIGN SCHEMA` to auto-create foreign table definitions:
-
-```sql
-CREATE SCHEMA fgdball;
-
--- Import all tables
 IMPORT FOREIGN SCHEMA ogr_all
-  FROM SERVER fgdbtest
-  INTO fgdball;
-
--- Import specific tables
-IMPORT FOREIGN SCHEMA ogr_all
-  LIMIT TO(cities)
-  FROM SERVER fgdbtest
-  INTO fgdball;
+  LIMIT TO (cities)
+  FROM SERVER city_source
+  INTO gis_import;
 ```
 
-### GDAL Options
+`ogr_all` means all OGR layers. Import normally launders table and column names; use `launder_table_names` and `launder_column_names` options when exact remote names are required. A foreign column can map to a different source name with `OPTIONS (column_name 'RemoteName')`.
 
-Control driver behavior with config and open options:
+### Important Options and Objects
 
-```sql
-CREATE SERVER myserver_latin1
-  FOREIGN DATA WRAPPER ogr_fdw
-  OPTIONS (
-    datasource '/tmp/test',
-    format 'ESRI Shapefile',
-    config_options 'SHAPE_ENCODING=LATIN1' );
-```
+- Server options: required `datasource`, optional `format`, `updateable`, `config_options`, `open_options`, and `character_encoding`.
+- Table options: `layer` identifies the OGR layer and `updateable` can disable writes.
+- `fid` identifies a feature and is required for writable foreign tables.
+- `ogr_fdw_info` lists drivers and layers and emits server/table definitions.
+- `ogr_fdw_version()` reports the extension and GDAL version.
+- `ogr_fdw_drivers()` lists the compiled OGR drivers.
 
-Multiple config options can be passed as a space-separated list.
+### Performance and Write Boundaries
+
+Simple comparisons and bounding-box `&&` predicates can be pushed down, but more complex filters may be evaluated locally. The FDW retrieves all selected source columns and opens two OGR connections per query rather than pooling them. Use `EXPLAIN`, project only needed columns, and benchmark the actual driver and data source.
+
+Writes depend on driver capability and require source-level write permissions plus `fid`. Set `updateable = false` when a source must remain read-only. Version 1.1.9 simplifies the version string relative to 1.1.8 and has no documented SQL workflow change; the control file remains at SQL extension version 1.1.

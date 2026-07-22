@@ -2,22 +2,28 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/postgrespro/aqo/blob/4a7fcd7291a8c4209c9102d1736f9f754d311cf2/aqo.control)
-- [Official upstream documentation](https://github.com/postgrespro/aqo/blob/4a7fcd7291a8c4209c9102d1736f9f754d311cf2/README.md)
+- [Upstream README at the reviewed commit](https://github.com/postgrespro/aqo/blob/4a7fcd7291a8c4209c9102d1736f9f754d311cf2/README.md)
+- [Extension control file](https://github.com/postgrespro/aqo/blob/4a7fcd7291a8c4209c9102d1736f9f754d311cf2/aqo.control)
 
-`aqo` — Adaptive query optimization extension using execution statistics to improve cardinality estimation.
+`aqo` augments PostgreSQL cardinality estimation with models learned from prior executions of normalized query shapes. It targets expensive queries whose bad row estimates lead to bad plans; it is experimental optimizer research, not a guaranteed accelerator.
 
-The reviewed catalog snapshot records version `1.6`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+The reviewed upstream requires a PostgreSQL-version-specific core patch and a complete server rebuild, plus cluster-wide preload:
 
-```sql
-CREATE EXTENSION "aqo";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'aqo';
+```conf
+shared_preload_libraries = 'aqo'
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+Restart PostgreSQL, create the extension, and train only a chosen query inside a controlled transaction:
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```sql
+CREATE EXTENSION aqo;
+BEGIN;
+SET aqo.mode = 'learn';
+EXPLAIN ANALYZE SELECT * FROM fact JOIN dim USING (dim_id) WHERE dim.kind = 'x';
+SET aqo.mode = 'controlled';
+COMMIT;
+```
+
+`controlled` is the upstream production default for ignoring unknown query shapes. `learn` records them; `intelligent` auto-tunes; `forced` shares a common model; `disabled` bypasses AQO. Inspect `aqo_queries` and `aqo_query_texts`, and use `aqo.show_details` or `aqo.show_hash` only for diagnosis.
+
+Training executes the real query and can add CPU, memory, storage, and latency. Plans can regress as data distributions change. AQO does not support temporary objects, and replicas cannot collect training statistics. Pin the exact patched server branch, benchmark representative parameters, retain a fast disable path, and test failover, upgrade, model cleanup, and backup/restore before cluster-wide use.

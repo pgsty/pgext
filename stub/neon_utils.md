@@ -2,22 +2,28 @@
 
 Sources:
 
-- [Official Neon neon_utils documentation](https://neon.com/docs/extensions/neon-utils)
+- [Official Neon documentation](https://neon.com/docs/extensions/neon-utils)
 
-`neon_utils` is a Neon-provided extension for observing Autoscaling. Its `num_cpus()` function reports the current whole number of CPU cores allocated to the connected Neon compute, making it useful while load-testing an autoscaling range.
+`neon_utils` is a Neon-managed extension that reports the CPU capacity currently allocated to an autoscaling Neon compute. It is meaningful only inside Neon and is not a portable community package or a general operating-system monitoring API.
 
-### Read the Current Allocation
+### Install and Read Capacity
+
+Create the extension in a Neon database, then call its single documented function:
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS neon_utils;
+
 SELECT num_cpus();
 ```
 
-Run the query repeatedly from a Neon compute while applying load to observe allocation changes.
+`num_cpus()` returns the current number of allocated CPU cores. Poll it alongside workload metrics to observe how a compute moves between its configured autoscaling minimum and maximum.
 
-### Caveats
+### Interpretation Limits
 
-- `neon_utils` is provider-managed and documented for Neon; no portable source repository or self-hosted installation is published.
-- `num_cpus()` is correct only for computes with Autoscaling enabled. The official documentation says it does not return a correct value for a fixed-size compute.
-- Fractional Compute Unit allocations are rounded up to a whole number: allocations of 0.25 or 0.5 CU are reported as 1.
-- No preload step is documented. Availability is controlled by the Neon service and may depend on the compute's PostgreSQL version and service configuration.
+Neon measures compute size in Compute Units, which can be fractional. `num_cpus()` does not report fractional sizes: for example, Neon documents that a compute at 0.25 or 0.5 CU returns `1`. The value is therefore an operational signal, not an exact billing, memory, or entitlement measurement.
+
+The function only works correctly on computes with Autoscaling enabled. On a fixed-size compute it does not return a correct value. Confirm the compute configuration in the Neon console before consuming the result.
+
+### Monitoring Notes
+
+Sample at a reasonable interval and record timestamps, workload latency, and the configured autoscaling bounds; a single value cannot explain why a scale event occurred. Avoid using the rounded result as a hard scheduler or admission-control input. Availability, versioning, privileges, and behavior follow the Neon service, so recheck the official page after compute or platform upgrades. The public official page documents the function and limitations but does not publish an extension version; verify the installed `extversion` on the target Neon database when version evidence is required.

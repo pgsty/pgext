@@ -2,23 +2,29 @@
 
 Sources:
 
-- [Official upstream documentation](https://pgxn.org/dist/hyperloglog_estimator/README.html)
-- [Official PGXN distribution page](https://pgxn.org/dist/hyperloglog_estimator/)
-- [Official upstream README](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/README.md)
+- [Official control file](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/hyperloglog/hyperloglog_counter.control)
+- [Official HyperLogLog README](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/hyperloglog/README.md)
 
-`hyperloglog_counter` — Aggregation functions and data type for distinct estimation based on HyperLogLog.
+`hyperloglog_counter` provides approximate distinct counting with the HyperLogLog algorithm. It supplies a `hyperloglog_estimator` state type plus aggregate and state-management functions; use it for memory-bounded cardinality estimates, not exact counts.
 
-The reviewed catalog snapshot records version `1.2.6`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "hyperloglog_counter";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'hyperloglog_counter';
+CREATE EXTENSION hyperloglog_counter;
+
+SELECT hyperloglog_distinct(i, 0.01)
+FROM generate_series(1, 100000) AS s(i);
 ```
 
-The curated lifecycle is `archived`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+The one-argument `hyperloglog_distinct(anyelement)` overload uses a 2% default error rate. Pass an explicit error rate to control the memory-versus-accuracy tradeoff.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### API
+
+- `hyperloglog_init(real)` creates a `hyperloglog_estimator`; `hyperloglog_size(real)` reports the required size for an error rate.
+- `hyperloglog_add_item(hyperloglog_estimator, anyelement)` updates a state, and `hyperloglog_get_estimate(hyperloglog_estimator)` reads its estimate.
+- `hyperloglog_reset(hyperloglog_estimator)` clears a state, while `length(hyperloglog_estimator)` reports its storage size.
+- `hyperloglog_distinct(anyelement, real)` is the configurable aggregate; `hyperloglog_distinct(anyelement)` uses the default error rate.
+
+### Operational Notes
+
+The version 1.2.6 control file is relocatable and declares no prerequisite extension or preload requirement. The upstream repository is archived and read-only. A stored estimator can consume several kilobytes, and repeated updates can create MVCC bloat. Choose the least memory-intensive acceptable error rate and validate estimates on the workload's real cardinality distribution.

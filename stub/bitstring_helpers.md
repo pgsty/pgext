@@ -19,6 +19,12 @@ SELECT * FROM neighbours(B'101'::bit varying);
 
 Use equal-length operands for Hamming distance. The neighbours function returns one value for every possible single-bit flip.
 
+### Conversions and aggregates
+
+`text2bitstring(text)` converts a string of zeroes and ones to `bit varying`, and `bit2text(bit varying)` converts it back to `text`. The extension also creates explicit casts in both directions.
+
+The installed aggregate surface is `aconcat(anyelement)` for collecting values into an array, `concat(text)` for concatenating text values, and `concat(bit)` for concatenating bit values. These declarations use PostgreSQL's legacy aggregate syntax, so verify that `CREATE EXTENSION` succeeds on the target major before relying on them.
+
 ### Caveats
 
 - shuffled_ints produces values from zero through limit minus one, despite the README describing a range starting at one.

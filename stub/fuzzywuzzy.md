@@ -2,19 +2,32 @@
 
 Sources:
 
-- [Official upstream documentation](https://github.com/hooopo/pg-fuzzywuzzy/blob/b02f84ac42f7cc1c5bc51f4daf0c58a68752bf56/README.md)
+- [Official README](https://github.com/hooopo/pg-fuzzywuzzy/blob/b02f84ac42f7cc1c5bc51f4daf0c58a68752bf56/README.md)
+- [Version 0.0.2 installation SQL](https://github.com/hooopo/pg-fuzzywuzzy/blob/b02f84ac42f7cc1c5bc51f4daf0c58a68752bf56/sql/fuzzywuzzy.sql)
+- [Extension control file](https://github.com/hooopo/pg-fuzzywuzzy/blob/b02f84ac42f7cc1c5bc51f4daf0c58a68752bf56/fuzzywuzzy.control)
 - [Official PGXN distribution page](https://pgxn.org/dist/fuzzywuzzy/)
 
-`fuzzywuzzy` — fuzzywuzzy ratio for postgres
+`fuzzywuzzy` provides a single SQL-level similarity score for short text values. It wraps the Levenshtein distance from `fuzzystrmatch` and is useful for simple fuzzy ordering or filtering when a full search system is unnecessary.
 
-The reviewed catalog snapshot records version `0.0.2`, kind `puresql`, and implementation language `SQL`.
-Install and validate the declared extension dependencies first: `fuzzystrmatch`.
+### Core Workflow
+
+Install the extension, then call `ratio(text, text)` to obtain an integer score from 0 to 100:
 
 ```sql
-CREATE EXTENSION "fuzzywuzzy";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'fuzzywuzzy';
+CREATE EXTENSION fuzzywuzzy;
+
+SELECT name, ratio(name, '人棉锦纶') AS score
+FROM products
+ORDER BY score DESC
+LIMIT 3;
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The installation script creates `fuzzystrmatch` automatically when it is absent. Provision that dependency explicitly if extension creation is restricted in the target environment.
+
+### Object and Semantics
+
+- `ratio(text, text)` returns 100 for identical non-empty strings and 0 when either argument is NULL or empty.
+- The implementation derives its score from `levenshtein(text, text)`, the two input lengths, and an integer return value; it is inspired by fuzzywuzzy but does not expose the wider Python fuzzywuzzy API.
+- The function is declared `IMMUTABLE`, and version `0.0.2` is relocatable.
+
+The project is small and has no documented Unicode normalization, collation, length-limit, or indexing contract. Normalize text deliberately, test multibyte and long inputs, and avoid treating the score as a calibrated probability.

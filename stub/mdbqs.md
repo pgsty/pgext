@@ -2,30 +2,33 @@
 
 Sources:
 
-- [mdbqs 0.1 install SQL at the reviewed commit](https://github.com/NikitOS94/MDBQT/blob/9b4c5b5b17973660ddf83a02d3b4ca2f8537af94/mdbqs--0.1.sql)
-- [mdbqs regression SQL at the reviewed commit](https://github.com/NikitOS94/MDBQT/blob/9b4c5b5b17973660ddf83a02d3b4ca2f8537af94/sql/mdbqs_test.sql)
-- [mdbqs.control at the reviewed commit](https://github.com/NikitOS94/MDBQT/blob/9b4c5b5b17973660ddf83a02d3b4ca2f8537af94/mdbqs.control)
+- [Official extension SQL](https://github.com/NikitOS94/MDBQT/blob/9b4c5b5b17973660ddf83a02d3b4ca2f8537af94/mdbqs--0.1.sql)
+- [Official parser implementation](https://github.com/NikitOS94/MDBQT/blob/9b4c5b5b17973660ddf83a02d3b4ca2f8537af94/mdbqs_gram.y)
+- [Official regression examples](https://github.com/NikitOS94/MDBQT/blob/9b4c5b5b17973660ddf83a02d3b4ca2f8537af94/sql/mdbqs_test.sql)
 
-`mdbqs` adds the `mdbquery` type and the `<=>` operator for matching a JSONB value against a MongoDB-style predicate. The regression suite exercises comparison and membership predicates such as `$lt`, `$gte`, and `$in`, logical forms such as `$and` and `$or`, and checks including `$exists` and `$type`.
+`mdbqs` 0.1 parses a subset of MongoDB query syntax into the API of the separate `jsquery` PostgreSQL extension and evaluates it against JSONB values. It does not connect to MongoDB. Use it only when an old application needs this exact query dialect and can strictly control the query strings.
 
-### Match JSONB Against a Predicate
+### Install and Match JSONB
+
+The control file does not declare the runtime dependency, so install `jsquery` first:
 
 ```sql
 CREATE EXTENSION jsquery;
 CREATE EXTENSION mdbqs;
 
 SELECT '{"a": 2}'::jsonb
-       <=> '{ a: { $lt: 3 } }'::mdbquery AS matches;
+       <=> '{ a: { $gte: 2 } }'::mdbquery;
 
-SELECT '{"quantity": 5, "price": 100}'::jsonb
-       <=> '{ $and: [ { quantity: { $lt: 20 } }, { price: 100 } ] }'::mdbquery
-       AS matches;
+SELECT '{"tags": ["ssl", "security"]}'::jsonb
+       <=> '{ tags: { $all: ["ssl", "security"] } }'::mdbquery;
 ```
 
-The install SQL defines the operator in both argument orders, so an `mdbquery` can also appear on the left of a JSONB value.
+The `<=>` operator is defined in both argument orders for `jsonb` and `mdbquery` and returns a boolean.
 
-### Caveats
+### Supported Surface
 
-- The source invokes `jsquery` functionality and its regression setup creates that extension first, but `mdbqs.control` does not declare the dependency. Install `jsquery` explicitly.
-- The repository and package are named MDBQT/`mdbqt`, while the installable extension is `mdbqs` version 0.1.
-- Upstream publishes no README, license, release history, or modern compatibility matrix. The C source uses PostgreSQL internal APIs from its 2017-era codebase; validate or port it for the exact server version before use.
+The grammar includes scalar equality and `$eq`, `$ne`, `$lt`, `$lte`, `$gt`, `$gte`; arrays with `$in`, `$nin`, and `$all`; `$size`, `$exists`, `$type`, `$not`, and `$mod`; and expression trees with `$and`, `$or`, and `$nor`. It translates the parsed tree to `jsquery`, so supported value types and matching behavior ultimately depend on the installed `jsquery` version.
+
+### Safety and Compatibility
+
+This is an old parser coupled to PostgreSQL and `jsquery` internal function names. Several MongoDB constructs and types are rejected, and it is not a complete MongoDB compatibility layer. The reviewed parser's error handler calls the C process-exit function on invalid syntax, which can terminate the current backend connection instead of reporting a normal parse error. Never accept arbitrary `mdbquery` text from untrusted users; validate it in an isolated process and bind only known templates. The extension defines no index operator class, so test query plans and expect per-row evaluation unless another compatible index expression is explicitly provided. Pin PostgreSQL and `jsquery`, and test malformed input, nesting depth, numeric conversion, Unicode, NULL/missing fields, and backend failure recovery.

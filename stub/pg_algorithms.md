@@ -2,25 +2,32 @@
 
 Sources:
 
-- [pg_algorithms README at the reviewed commit](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/README.md)
-- [pg_algorithms.control at the reviewed commit](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/pg_algorithms.control)
-- [Version 1.0 install SQL](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/pg_algorithms--1.0.sql)
-- [Bubble-sort implementation](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/bubble_sort.c)
-- [Quick-sort implementation](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/quick_sort.c)
+- [Official README at the catalog revision](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/README.md)
+- [Extension SQL at the catalog revision](https://github.com/kostiantyn-nemchenko/pg_algorithms/blob/e258c1cd1710f5867d21c864a01ad90f0f04326c/pg_algorithms--1.0.sql)
 
-`pg_algorithms` is a learning project that exposes two C functions for sorting a one-dimensional `int[]`: `bubble_sort` and `quick_sort`. Both return a new ascending array and reject arrays containing `NULL`.
+`pg_algorithms` 1.0 exposes demonstration implementations of bubble sort and quicksort for integer arrays. Upstream describes it as a pet project; use it for learning or small experiments, not as a production sorting primitive.
 
-### Sort Integer Arrays
+### Core Workflow
 
 ```sql
 CREATE EXTENSION pg_algorithms;
 
-SELECT bubble_sort(ARRAY[9, 0, -2, 9, 4]);
-SELECT quick_sort(ARRAY[9, 0, -2, 9, 4]);
+SELECT bubble_sort(ARRAY[5, 1, 4, 2, 3]);
+SELECT quick_sort(ARRAY[5, 1, 4, 2, 3]);
+
+-- PostgreSQL's native relational sort is the normal production choice.
+SELECT array_agg(v ORDER BY v)
+FROM unnest(ARRAY[5, 1, 4, 2, 3]) AS u(v);
 ```
+
+### Function Index
+
+- `bubble_sort(integer[])` returns an ascending one-dimensional integer array using bubble sort.
+- `quick_sort(integer[])` returns an ascending one-dimensional integer array using a recursive first-element-pivot quicksort.
+- Both functions are strict and stable. The SQL surface exposes integer arrays only.
 
 ### Caveats
 
-- Upstream explicitly says not to use the project in production. The reviewed source dates from 2018 and provides no modern PostgreSQL compatibility matrix.
-- `bubble_sort` has `O(n²)` comparison cost, while the hand-written recursive quick sort can degrade on unfavorable input. PostgreSQL's native ordering facilities are more appropriate for operational workloads.
-- Version `1.0` implements only the two functions above, despite the project's broader algorithm name. The SQL signature accepts PostgreSQL `integer[]`, not arbitrary numeric or polymorphic arrays.
+- NULL array elements and multidimensional arrays are rejected by the C implementation.
+- Bubble sort has quadratic runtime. The chosen quicksort pivot also reaches quadratic runtime and deep recursion on already ordered or adversarial input.
+- Prefer PostgreSQL's native ORDER BY for real workloads; it has mature memory, disk-spill, collation, and planner integration.

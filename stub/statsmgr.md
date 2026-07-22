@@ -2,22 +2,38 @@
 
 Sources:
 
-- [Official extension control file](https://codeberg.org/Data-Bene/StatsMgr/src/commit/4e934fb1f74178c8300160b456531ae6850068e7/statsmgr.control)
-- [Official upstream documentation](https://codeberg.org/Data-Bene/StatsMgr/src/commit/4e934fb1f74178c8300160b456531ae6850068e7/README.statsmgr.md)
-- [Official upstream source](https://codeberg.org/Data-Bene/StatsMgr)
+- [Official README](https://codeberg.org/Data-Bene/StatsMgr/src/commit/4e934fb1f74178c8300160b456531ae6850068e7/README.statsmgr.md)
+- [Extension SQL](https://codeberg.org/Data-Bene/StatsMgr/src/commit/4e934fb1f74178c8300160b456531ae6850068e7/statsmgr--0.1-alpha.sql)
+- [C implementation](https://codeberg.org/Data-Bene/StatsMgr/src/commit/4e934fb1f74178c8300160b456531ae6850068e7/statsmgr.c)
 
-`statsmgr` — C extension that snapshots PostgreSQL cumulative WAL, SLRU, checkpoint, archiver, I/O, and background-writer statistics in dynamic shared memory.
+`statsmgr` 0.1-alpha is a preview extension for taking periodic snapshots of PostgreSQL cumulative archiver, background-writer, checkpointer, I/O, SLRU, and WAL statistics into dynamic shared memory. It targets PostgreSQL 17 or later and keeps only an in-memory rolling history, not a durable monitoring store.
 
-The reviewed catalog snapshot records version `0.1-alpha`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `17,18`; confirm the exact build against the target server.
+### Setup Modes
+
+For a temporary evaluation, create the extension and start its main dynamic background worker manually:
 
 ```sql
-CREATE EXTENSION "statsmgr";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'statsmgr';
+CREATE EXTENSION statsmgr;
+SELECT statsmgr_start_main_worker();
+SELECT statsmgr_snapshot();
+SELECT * FROM statsmgr_wal();
 ```
 
-The curated lifecycle is `preview`. Pin the reviewed build and verify maintenance status before adoption.
+For automatic startup, preload the module and restart PostgreSQL:
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```conf
+shared_preload_libraries = 'statsmgr'
+```
+
+Each result row adds `tick` and `tick_tz` to the corresponding core statistics fields.
+
+### Function Index
+
+- Management: `statsmgr_start_main_worker()`, `statsmgr_stop_main_worker()`, `statsmgr_snapshot()`, and `statsmgr_reset()`.
+- History readers: `statsmgr_archiver()`, `statsmgr_bgwriter()`, `statsmgr_checkpointer()`, `statsmgr_io()`, `statsmgr_slru()`, and `statsmgr_wal()`.
+
+The current implementation uses a 512-slot ring and a fixed 60-second periodic interval. Source variables for interval and per-kind enablement are not registered as PostgreSQL GUCs, and the README's configuration section is commented out, so those values are not runtime settings in this version.
+
+### Security and Operational Notes
+
+The SQL install script does not revoke PUBLIC execution on worker start/stop, reset, or manual snapshot functions, and the inspected C wrappers perform no explicit superuser check. Revoke management functions from PUBLIC immediately and grant them only to an administrative role; grant reader functions separately to a monitoring role after reviewing data exposure. State is cluster-wide shared memory and is lost at restart, while extension objects are database-local, so coordinate one control database. Background workers consume worker slots. This alpha implementation relies on PostgreSQL 17 internals; validate exact minor-version builds, concurrent management calls, ring wraparound, restart behavior, and resource limits before evaluation outside a test cluster.

@@ -2,21 +2,36 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/s-hironobu/dont_drop_db/blob/8610f0b4b37af5634135414614dad1b3080bc8de/dont_drop_db.control)
-- [Official upstream documentation](https://github.com/s-hironobu/dont_drop_db/blob/8610f0b4b37af5634135414614dad1b3080bc8de/README.md)
+- [Official README](https://github.com/s-hironobu/dont_drop_db/blob/8610f0b4b37af5634135414614dad1b3080bc8de/README.md)
+- [Official control file](https://github.com/s-hironobu/dont_drop_db/blob/8610f0b4b37af5634135414614dad1b3080bc8de/dont_drop_db.control)
 
-`dont_drop_db` — Prevents DROP DATABASE for databases listed in the dont_drop_db.list setting.
+`dont_drop_db` prevents `DROP DATABASE` for database names listed in a server configuration parameter. It is a shared-preload safety guard, not an authorization boundary or a substitute for backups: a privileged operator can change the setting, omit the module at restart, or remove data by other means.
 
-The reviewed catalog snapshot records version `1.0`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
-```sql
-CREATE EXTENSION "dont_drop_db";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'dont_drop_db';
+Configure the module before starting PostgreSQL:
+
+```ini
+shared_preload_libraries = 'dont_drop_db'
+dont_drop_db.list = 'postgres,template0,template1,production'
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+Restart the server, optionally register the extension object in an administrative database, and verify both protected and unprotected names in a disposable cluster:
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```sql
+CREATE EXTENSION dont_drop_db;
+
+SHOW dont_drop_db.list;
+```
+
+The default list is `postgres,template0,template1`. The special value `all` blocks every database name, while a value containing only spaces disables protection.
+
+### Configuration Semantics
+
+`dont_drop_db.list` is a comma-separated database-name list evaluated by the preloaded module. Review exact spelling whenever databases are renamed or cloned. Because the behavior is loaded at server start, changing only the extension object in one database does not establish cluster-wide protection.
+
+### Operational Notes
+
+Treat configuration management and restart verification as part of the control. After deployment, confirm `shared_preload_libraries`, inspect the server log for module-load failures, and execute a negative test against a throwaway database name that appears in the list.
+
+The guard covers `DROP DATABASE`, not table drops, schema drops, filesystem deletion, storage failure, or a superuser bypassing the configuration. Preserve tested backups and restrict configuration-file and service-control access. Upstream reports checks through PostgreSQL 18 RC1, but each packaged binary and target major version still needs a startup and command-hook test.

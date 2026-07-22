@@ -2,30 +2,47 @@
 
 Sources:
 
-- [AST-PostGIS README at the reviewed commit](https://github.com/lizardoluis/ast_postgis/blob/a7b71d3b350cd7c12dfb574ea886bd14c870ce6c/README.md)
-- [ast_postgis.control at the reviewed commit](https://github.com/lizardoluis/ast_postgis/blob/a7b71d3b350cd7c12dfb574ea886bd14c870ce6c/ast_postgis.control)
+- [Official extension control file](https://github.com/lizardoluis/ast_postgis/blob/a7b71d3b350cd7c12dfb574ea886bd14c870ce6c/ast_postgis.control)
+- [Official upstream documentation](https://github.com/lizardoluis/ast_postgis/blob/a7b71d3b350cd7c12dfb574ea886bd14c870ce6c/README.md)
+- [Official consistency-check implementation](https://github.com/lizardoluis/ast_postgis/blob/a7b71d3b350cd7c12dfb574ea886bd14c870ce6c/sql/consistency_functions.sql)
 
-`ast_postgis` adds richer spatial types and spatial-integrity checks on top of `postgis`. Its types include `ast_point`, `ast_polygon`, and `ast_uniline`, which wrap PostGIS geometry or raster representations with constraints suited to geo-object and geo-field models.
+`ast_postgis` 1.1.1 adds OMT-G-inspired spatial domains and database-side integrity checks to PostGIS. Use it when a spatial model needs simple-geometry, network, topology, or aggregation rules enforced near the data. It requires `postgis` and installs event triggers, so installation and DDL integration require an appropriately privileged administrator.
 
-The extension also provides trigger procedures such as `ast_spatialrelationship`, `ast_arcnodenetwork`, and `ast_aggregation`. Validation functions such as `ast_isTopologicalRelationshipValid` can check existing data before constraints are enforced and record inconsistencies in `ast_validation_log`.
+### Core Workflow
 
-### Basic Setup
+Create the extension, define columns with its domains, then attach a relationship trigger:
 
 ```sql
-CREATE EXTENSION IF NOT EXISTS postgis;
+CREATE EXTENSION postgis;
 CREATE EXTENSION ast_postgis;
 
-CREATE TABLE landmarks (
-  id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  name text NOT NULL,
+CREATE TABLE bus_stop (
+  stop_id integer PRIMARY KEY,
   geom ast_point
+);
+
+CREATE TABLE route_segment (
+  segment_id integer PRIMARY KEY,
+  geom ast_uniline
+);
+
+CREATE TRIGGER route_segment_nodes
+AFTER INSERT OR UPDATE ON route_segment
+FOR EACH STATEMENT
+EXECUTE PROCEDURE ast_arcnodenetwork(
+  'route_segment', 'geom', 'bus_stop', 'geom'
 );
 ```
 
-Use the advanced types as table-column types, then add the documented trigger procedures for the spatial relationships your model must enforce.
+Relationship triggers validate the affected model after writes and raise an error when the configured rule is violated.
+
+### Important Objects
+
+- Geometry domains include `ast_polygon`, `ast_line`, `ast_point`, `ast_node`, `ast_isoline`, `ast_planarsubdivision`, `ast_tin`, `ast_sample`, `ast_uniline`, and `ast_biline`; `ast_tesselation` wraps PostGIS raster.
+- `ast_spatialrelationship()` supports `contains`, `containsproperly`, `covers`, `coveredby`, `crosses`, `disjoint`, `distant`, `intersects`, `near`, `overlaps`, `touches`, and `within` trigger rules.
+- `ast_arcnodenetwork()`, `ast_arcarcnetwork()`, and `ast_aggregation()` enforce network and part/whole relationships.
+- `ast_isSpatialRelationshipValid(...)`, `ast_isNetworkValid(...)`, and `ast_isSpatialAggregationValid(...)` inspect existing data and write violations to `ast_violation_log`.
 
 ### Caveats
 
-- The control file declares `postgis` as a dependency, so it must be available in the database.
-- Upstream currently identifies version 1.1.1 and documents testing with PostgreSQL 15. Test the exact PostgreSQL/PostGIS combination used by your deployment.
-- Constraint procedures accept table and column names. Reproduce the upstream trigger signatures carefully and validate existing rows before enabling enforcement on production data.
+The extension implements constraints with statement-level triggers, event triggers, PL/pgSQL, and dynamically constructed SQL. Restrict its checker and trigger-management APIs to trusted roles, pass only administrator-controlled identifiers, and test write concurrency and large-table cost. The reviewed `ast_isSpatialAggregationValid(...)` source contains a hard-coded query against `tablea` and `tableb`, so do not trust that checker without patching and regression-testing it for the actual model. Verify every domain and relation on a copy before enabling enforcement on existing data, and review `ast_violation_log` retention because validation records are included in extension configuration dumps.

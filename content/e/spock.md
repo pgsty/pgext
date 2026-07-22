@@ -153,7 +153,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgEdge/spock" title="Repository" icon="github" subtitle="github.com/pgEdge/spock" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="spock-5.0.6.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="spock-5.0.10.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -201,9 +201,15 @@ CREATE EXTENSION spock;
 
 ## Usage
 
-> [spock: Multi-master logical replication extension for PostgreSQL](https://github.com/pgEdge/spock)
+Sources:
 
-Multi-master logical replication for PostgreSQL 15+. Each node acts as both publisher and subscriber.
+- [Spock v5.0.10 README](https://github.com/pgEdge/spock/blob/v5.0.10/README.md)
+- [Getting started](https://github.com/pgEdge/spock/blob/v5.0.10/docs/getting_started.md)
+- [Configuration reference](https://github.com/pgEdge/spock/blob/v5.0.10/docs/configuring.md)
+- [Limitations](https://github.com/pgEdge/spock/blob/v5.0.10/docs/limitations.md)
+- [Release notes](https://github.com/pgEdge/spock/blob/v5.0.10/docs/spock_release_notes.md)
+
+`spock` provides active-active logical replication for PostgreSQL 15 through 18. Each participating database is a Spock node; a multi-master topology is formed by creating directed subscriptions between nodes.
 
 ### Configuration
 
@@ -283,3 +289,16 @@ SELECT spock.repset_add_all_tables('default', '{public}');
 - Row and column filtering
 - Supports PostgreSQL 15, 16, 17, and 18
 - Tables must have primary keys and matching schemas across nodes
+
+### Operations and Caveats
+
+- Install `spock` and add it to `shared_preload_libraries` on every participating server before creating nodes or subscriptions.
+- Keep table definitions, data types, primary keys, and relevant unique indexes identical across nodes. Coordinate DDL even when DDL replication is enabled.
+- Replicated tables need a primary key or another usable replica identity. Temporary and unlogged tables are not replication targets.
+- Spock operates per database. Repeat extension and topology setup for each database that participates.
+- Active-active conflict handling depends on commit timestamps and policy. Test simultaneous inserts and updates, especially nullable unique keys, before production use.
+- Upstream documents platform/build requirements in the README; verify that the PostgreSQL build and Spock package used on every node are compatible.
+
+### Version 5.0.10
+
+`5.0.10` is a patch release in the 5.0 line. Its release notes include fixes for unique indexes containing `NULL`, `NULLS NOT DISTINCT` conflict handling, refreshing cached index metadata after an index is dropped, exception-path memory handling, and numerical version checks used during rolling patch upgrades. Upgrade every node to a compatible patch level and validate subscriptions after the rolling change.

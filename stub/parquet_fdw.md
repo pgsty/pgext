@@ -2,36 +2,41 @@
 
 Sources:
 
-- [parquet_fdw README at the reviewed commit](https://github.com/adjust/parquet_fdw/blob/d15664ebdcb1cbb759a7bb39fd26fb2fa2fff3ea/README.md)
-- [parquet_fdw.control at the reviewed commit](https://github.com/adjust/parquet_fdw/blob/d15664ebdcb1cbb759a7bb39fd26fb2fa2fff3ea/parquet_fdw.control)
+- [Official upstream documentation](https://github.com/adjust/parquet_fdw/blob/d15664ebdcb1cbb759a7bb39fd26fb2fa2fff3ea/README.md)
+- [Official extension control file](https://github.com/adjust/parquet_fdw/blob/d15664ebdcb1cbb759a7bb39fd26fb2fa2fff3ea/parquet_fdw.control)
+- [Official option and import implementation](https://github.com/adjust/parquet_fdw/blob/d15664ebdcb1cbb759a7bb39fd26fb2fa2fff3ea/src/parquet_impl.cpp)
 
-`parquet_fdw` is an experimental, read-only foreign data wrapper for Apache Parquet files. It uses Apache Arrow and Parquet libraries to expose one file or a set of files as a PostgreSQL foreign table.
+`parquet_fdw` 0.2 is an experimental, read-only foreign data wrapper for local Apache Parquet files. It uses Apache Arrow and Parquet C++ libraries, supports multiple files, parallel scans, sorted-file merge strategies, and schema import. The paths are resolved on the PostgreSQL server, not the client.
 
-### Read a Parquet File
+### Core Workflow
+
+Create a server and map a Parquet file to a foreign table:
 
 ```sql
 CREATE EXTENSION parquet_fdw;
 CREATE SERVER parquet_srv FOREIGN DATA WRAPPER parquet_fdw;
-CREATE USER MAPPING FOR CURRENT_USER
-  SERVER parquet_srv
-  OPTIONS (user 'postgres');
 
-CREATE FOREIGN TABLE userdata (
+CREATE FOREIGN TABLE public.userdata (
   id integer,
   first_name text,
   last_name text
 )
 SERVER parquet_srv
-OPTIONS (filename '/mnt/data/userdata.parquet');
+OPTIONS (filename '/srv/parquet/userdata.parquet');
 
-SELECT * FROM userdata LIMIT 20;
+SELECT * FROM public.userdata WHERE id >= 100;
 ```
 
-The `filename` option can contain space-separated paths. Advanced options include `sorted`, `files_func`, `max_open_files`, `use_mmap`, and `use_threads`; upstream also documents `IMPORT FOREIGN SCHEMA` for discovering files in a server-side directory.
+The PostgreSQL operating-system account must be able to read every selected path. Writes through the foreign table are not supported.
 
-### Caveats
+### Files, Types, and Import
 
-- The wrapper is read-only and upstream labels it experimental. Paths refer to the PostgreSQL server's filesystem, not the SQL client's filesystem.
-- Building the reviewed version requires system Apache Arrow/Parquet libraries; the README states version 0.15 or newer.
-- Supported mappings include integer, floating-point, timestamp, date, string, binary, list, and map values. Structs and nested lists are not supported.
-- The control file identifies extension version 0.2, matching the catalog version. Validate the external library and PostgreSQL combinations used by the deployment.
+`filename` accepts a space-separated file list. Alternatively, `files_func` names a function taking one JSONB argument and returning `text[]`; `files_func_arg` supplies that JSONB value. Other options include `sorted`, `files_in_order`, `use_mmap`, `use_threads`, and `max_open_files`. Global switches include `parquet_fdw.use_threads`, `parquet_fdw.enable_multifile`, and `parquet_fdw.enable_multifile_merge`.
+
+Supported mappings include Arrow integers, floats, timestamp, date, string, binary, list, and map to PostgreSQL numeric types, timestamp, date, text, bytea, arrays, and JSONB. Structs and nested lists are not supported. `IMPORT FOREIGN SCHEMA` treats the remote schema name as a quoted local directory path and creates foreign tables from files in that directory.
+
+### Security and Correctness
+
+The reviewed validator checks path existence and options but does not enforce a `file_fdw`-style superuser restriction. A role able to create or alter these foreign tables can attempt to read files accessible to the PostgreSQL server account or invoke an approved `files_func`. Restrict foreign-server usage, schema creation, table ownership, and function ownership to trusted administrators; use absolute paths below a dedicated read-only directory and schema-qualify immutable file-list functions.
+
+The `sorted` and `files_in_order` options are promises to the planner. Incorrect declarations can produce incorrectly ordered results, so verify file ranges before enabling them. Pin matching PostgreSQL, Arrow, and Parquet library versions and test type conversion, timestamp units, NULLs, schema drift, memory mapping, file replacement, open-file limits, parallel scans, and malformed input on representative data.

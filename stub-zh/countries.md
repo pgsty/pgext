@@ -2,20 +2,37 @@
 
 来源：
 
-- [官方上游文档](https://database.dev/raminder/countries)
+- [官方 database.dev 软件包页面](https://database.dev/raminder/countries)
+- [官方 database.dev 安装指南](https://database.dev/docs/install-a-package)
 
-`countries` — 纯 SQL 包：创建并填充 public.countries 国家参考数据表。
+`countries` 是一个 database.dev 可信语言扩展，会创建名为 `countries` 的小型查找表。尽管软件包描述另有表述，发布的 `0.0.4` 版 SQL 实际只包含六行，因此不能把它当作完整或基于标准的国家数据集。
 
-已复核目录快照记录的版本为 `0.0.4`、类型为 `puresql`、实现语言为 `SQL`。
+### 核心流程
 
-```sql
-CREATE EXTENSION "countries";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'countries';
+先安装 `pg_tle` 前置扩展，再使用 dbdev CLI 为指定软件包版本生成迁移；审核生成的 SQL 后，通过常规迁移流程应用。
+
+```bash
+dbdev add -o ./migrations -s public -v 0.0.4 package -n "raminder@countries"
 ```
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+迁移创建扩展后，务必先检查表内容再使用。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+```sql
+TABLE public.countries ORDER BY name;
+```
+
+发布的 `0.0.4` 安装脚本只定义一列，并写入 Afghanistan、Albania、Algeria、Zambia、Zimbabwe 和 India 六个值。
+
+```sql
+SELECT count(*) AS row_count
+FROM public.countries;
+```
+
+### 重要对象
+
+- `public.countries`：仅含 `name text PRIMARY KEY` 一列的表。
+- `pg_extension_config_dump`：安装脚本把 `public.countries` 注册为扩展配置数据，使其内容可进入扩展感知的转储。
+
+### 运维说明
+
+该软件包通过 database.dev 分发并依赖 `pg_tle`，不是传统的原生扩展归档。即使生成软件包时指定其他目标模式，`0.0.4` 版仍把名称硬编码为 `public.countries`。随附的六个名称没有 ISO 编码、地区、本地化名称、生命周期状态或更新机制。应用若需要权威国家列表，应改用持续维护、源自 ISO 的数据集。编辑这些行时应按应用数据处理，并在变更种子数据前测试转储、恢复与扩展升级行为。

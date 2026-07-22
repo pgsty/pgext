@@ -2,30 +2,42 @@
 
 Sources:
 
-- [Official Alibaba Cloud pg_concurrency_control guide](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-the-pg-concurrency-control-plug-in)
-- [Official ApsaraDB RDS PostgreSQL supported-extension list](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Alibaba Cloud usage documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-the-pg-concurrency-control-plug-in)
+- [Alibaba Cloud extension support matrix](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
 
-`pg_concurrency_control` is an Alibaba Cloud ApsaraDB RDS PostgreSQL extension that caps concurrently executing SQL by category and queues excess work. It has separate limits for SELECT queries, autocommit DML, transaction blocks, and explicitly marked slow queries through `query_concurrency`, `autocommit_concurrency`, `transaction_concurrency`, and `bigquery_concurrency`.
+`pg_concurrency_control` 1.0 is an Alibaba Cloud ApsaraDB RDS for PostgreSQL extension that queues SQL by workload class when a configured concurrency limit is reached. It is a provider-specific protection against resource saturation, not a portable community extension. The current official usage page limits this workflow to RDS PostgreSQL 10 and 11.
 
-### Enable a Query Limit
+### Enable and Observe
+
+Create the extension on a supported instance and inspect its queue counters:
 
 ```sql
 CREATE EXTENSION pg_concurrency_control;
 
-SET pg_concurrency_control.query_concurrency = 10;
-
 SELECT * FROM pg_concurrency_control_status();
 ```
 
-Each concurrency limit defaults to zero, which disables that category's control. `pg_concurrency_control_status()` reports the current counts in the autocommit, big-query, query, and transaction queues.
+The status function returns `autocommit_count`, `bigquery_count`, `query_count`, and `transaction_count`. A positive counter means statements are waiting in that class.
 
-### Timeouts and Scope
+Configure concurrency parameters through the RDS parameter-management workflow. Each limit defaults to `0`, which disables that class; values from `1` through `1024` enable queuing.
 
-Queue wait limits are controlled by `control_timeout` and `bigsql_control_timeout`. The documented timeout actions are `TCC_break`, `TCC_rollback`, and `TCC_wait`; choose them according to whether a timed-out statement should be skipped, abort its transaction, or continue waiting.
+### Limits and Timeouts
 
-### Caveats
+- `pg_concurrency_control.query_concurrency` limits SELECT statements.
+- `pg_concurrency_control.bigquery_concurrency` limits statements explicitly marked as slow queries.
+- `pg_concurrency_control.transaction_concurrency` limits transaction blocks.
+- `pg_concurrency_control.autocommit_concurrency` limits autocommit DML.
+- `pg_concurrency_control.control_timeout` and `pg_concurrency_control.bigsql_control_timeout` set queue timeouts.
+- `pg_concurrency_control.timeout_action` and `pg_concurrency_control.bigsql_timeout_action` select `TCC_break`, `TCC_rollback`, or `TCC_wait` behavior.
 
-- This is a provider-only extension for ApsaraDB RDS PostgreSQL, not a generally published extension for self-managed PostgreSQL.
-- The dedicated usage guide currently requires an ApsaraDB RDS instance running PostgreSQL 10 or 11. Check the supported-extension table and upgrade to the latest minor engine version before enabling it.
-- Version 1.0 is listed for supported engine combinations. The provider does not publish its source, control file, software license, or portable installation artifacts.
-- The official guide installs it directly with `CREATE EXTENSION`; it does not document a preload step for this extension.
+Mark a statement for the big-query class with the provider hint:
+
+```sql
+/*+bigsql*/ SELECT pg_sleep(10);
+```
+
+### Operational Boundary
+
+Concurrency limits change latency and failure behavior for every matching statement. Load-test queue depth, application timeouts, transaction retry logic, pool size, and each timeout action before production rollout. A queue can protect CPU or I/O but can also move overload into connection pools and client timeout storms. Monitor the four status counters together with active sessions, latency, errors, and instance resources.
+
+Availability and editable parameter behavior depend on the exact RDS engine minor release. The support matrix currently lists 1.0 only for the older supported majors, so verify the target instance before a major-version upgrade. Configure and remove the extension through Alibaba Cloud's privilege and maintenance model; do not copy its binaries to self-managed PostgreSQL.

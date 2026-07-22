@@ -2,19 +2,42 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/gleu/autovacuum_informations/blob/0dde21773a3929e0b0bacca018607d911fa71f00/autovacuum_informations.control)
-- [官方上游文档](https://github.com/gleu/autovacuum_informations/blob/0dde21773a3929e0b0bacca018607d911fa71f00/README.md)
+- [官方 README](https://github.com/gleu/autovacuum_informations/blob/0dde21773a3929e0b0bacca018607d911fa71f00/README.md)
+- [官方扩展 SQL](https://github.com/gleu/autovacuum_informations/blob/0dde21773a3929e0b0bacca018607d911fa71f00/autovacuum_informations--1.0.sql)
+- [官方实现](https://github.com/gleu/autovacuum_informations/blob/0dde21773a3929e0b0bacca018607d911fa71f00/autovacuum_informations.c)
 
-`autovacuum_informations` — 提供 autovacuum launcher PID 与 autovacuum worker 信息查询函数的 PostgreSQL 扩展。
+`autovacuum_informations` 1.0 通过两个 C 函数暴露 PostgreSQL 内存中的 autovacuum launcher 与 worker 状态。它是与 PostgreSQL 内部实现紧密耦合的诊断原型；上游明确说明该项目仍处于开发中，禁止用于生产环境。
 
-已复核目录快照记录的版本为 `1.0`、类型为 `standard`、实现语言为 `C`。
+### 核心流程
+
+安装扩展后，可以读取 launcher PID，或展开每个活动 worker 返回的记录：
 
 ```sql
-CREATE EXTENSION "autovacuum_informations";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'autovacuum_informations';
-```
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+CREATE EXTENSION autovacuum_informations;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SELECT get_autovacuum_launcher_pid();
+
+SELECT *
+FROM get_autovacuum_workers_infos() AS w(
+  idx integer,
+  datid oid,
+  relid oid,
+  pid integer,
+  launchtime timestamptz,
+  dobalance boolean,
+  cost_delay integer,
+  cost_limit integer,
+  cost_limit_base integer
+);
+```
+
+launcher 函数返回 `bigint` 类型的 PID；没有可用 PID 时返回 null。worker 函数声明为 `SETOF record`，因此调用方必须像上例一样提供九列记录定义。
+
+### 重要对象
+
+- `get_autovacuum_launcher_pid()` 从 autovacuum 共享内存读取 launcher 进程 ID。
+- `get_autovacuum_workers_infos()` 返回当前 worker 序号、数据库与关系 OID、PID、启动时间、负载均衡标志以及成本参数。
+
+### 运维说明
+
+控制文件将扩展固定在 `pg_catalog` 中，并标记为不可迁移。它没有 GUC 或预加载要求，但 C 实现直接使用 PostgreSQL 私有的 autovacuum 结构和锁，因此必须针对精确的服务端构建验证兼容性。所有结果都应视为瞬时诊断状态，并严格遵守上游的非生产警告。

@@ -2,32 +2,44 @@
 
 来源：
 
-- [已复核 commit 的 jsonb_schema README](https://github.com/postgrespro/jsonb_schema/blob/541028e86696c2bfc9c057245ed47563d92befa0/README.md)
-- [已复核 commit 的 jsonb_schema 1.0 安装 SQL](https://github.com/postgrespro/jsonb_schema/blob/541028e86696c2bfc9c057245ed47563d92befa0/jsonb_schema--1.0.sql)
-- [已复核 commit 的 jsonb_schema 回归 SQL](https://github.com/postgrespro/jsonb_schema/blob/541028e86696c2bfc9c057245ed47563d92befa0/sql/test.sql)
+- [官方 README](https://github.com/postgrespro/jsonb_schema/blob/master/README.md)
+- [扩展控制文件](https://github.com/postgrespro/jsonb_schema/blob/master/jsonb_schema.control)
+- [1.0 版扩展 SQL](https://github.com/postgrespro/jsonb_schema/blob/master/jsonb_schema--1.0.sql)
+- [上游回归测试示例](https://github.com/postgrespro/jsonb_schema/blob/master/sql/test.sql)
 
-1.0 版 `jsonb_schema` 把重复的 JSONB 结构与数据值分开存储。`jsonb_pack` 将去重后的二进制模式写入 `jsonb_schemes`，并返回包含模式 ID 与编码数据的两元素 JSONB 数组；`jsonb_unpack` 则还原原始值。
+jsonb_schema 把 JSONB 值的结构模式与标量数据分离，并在数据库表中只保存一次每种不同模式。当大量文档具有相同形状时，它可能减少存储；但打包表示并非自包含，也不能像原始文档一样直接查询。
+
+### 核心流程
+
+存储前打包文档，需要原始 JSONB 值时再解包。
 
 ```sql
 CREATE EXTENSION jsonb_schema;
 
-CREATE TABLE packed_documents (
-  id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  payload jsonb NOT NULL
+CREATE TABLE compact_events (
+    id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    packed jsonb NOT NULL
 );
 
-INSERT INTO packed_documents (payload)
-VALUES (jsonb_pack('{"kind":"event","value":42}'::jsonb));
+INSERT INTO compact_events (packed)
+VALUES
+    (jsonb_pack('{"kind":"click","user":10,"tags":["a","b"]}'::jsonb)),
+    (jsonb_pack('{"kind":"view","user":11,"tags":["c"]}'::jsonb));
 
-SELECT id, jsonb_unpack(payload)
-FROM packed_documents;
-
-SELECT count(*) FROM jsonb_schemes;
+SELECT id, jsonb_unpack(packed) AS document
+FROM compact_events;
 ```
 
-### 注意事项
+打包值是一个双元素 JSONB 数组，包含模式标识符和编码数据。共享的模式字节保存在扩展拥有的字典表中。
 
-- 打包值是扩展专用的数组表示，不能像原对象一样透明查询；应用需要先解包，再执行常规 JSONB 访问。
-- 新模式出现时，`jsonb_pack` 会执行插入。即使安装 SQL 将函数标记为 parallel safe，也应把它视为写操作。
-- 函数以未限定模式名的 `jsonb_schemes` 查表。如果扩展安装模式不在当前搜索路径中，调用可能失败或解析到非预期关系；应固定受控搜索路径并测试所选扩展模式。
-- 必须把 `jsonb_schemes` 与所有打包列一起保留和备份；引用的模式行丢失后，打包值将无法还原。
+### 已安装对象
+
+1.0 版创建模式字典表、模式字节与标识符的唯一索引、两个 C 层模式/数据转换函数，以及打包与解包包装函数。第一次使用某种模式时会插入新行，冲突时则复用已有标识符。
+
+### 存储与生命周期边界
+
+采用前应使用代表性数据测量：形状重复的文档可能受益，而形状高度多样的数据会承担字典和编码开销。针对原始 JSON 字段的索引或表达式必须先解包，因此普通 JSONB 查询与索引行为不会透明地作用于打包列。
+
+打包行依赖字典表中完全一致的标识符映射。转储、恢复、复制或迁移时，必须把该表与全部打包值一起处理；只把 JSONB 列复制到另一个数据库，可能按错误模式解码或得不到值。不能删除仍被打包文档引用的字典行。扩展不提供引用计数或模式垃圾回收。
+
+虽然打包以函数形式调用，但它会写入共享元数据，因此在事务、权限和并发规划中应把它视为写操作。该扩展可重定位，也没有声明预加载或重启要求。

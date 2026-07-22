@@ -2,24 +2,32 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/brainfuck.control)
-- [Official upstream documentation](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/README.md)
-- [Official project or provider page](https://database.dev/mansueli/brainfuck)
+- [Official README](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/README.md)
+- [Official control file](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/brainfuck.control)
+- [Official version 4.2.0 SQL](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/brainfuck--4.2.0.sql)
+- [Official package page](https://database.dev/mansueli/brainfuck)
 
-`brainfuck` — Run Brainfuck programs inside PostgreSQL using a PLV8 trusted language extension.
+`brainfuck` runs Brainfuck programs inside PostgreSQL through PLV8. It is useful for demonstrations and experiments, not for application logic: arbitrary programs execute JavaScript in the database backend and can consume substantial CPU.
 
-The reviewed catalog snapshot records version `4.2.0`, kind `puresql`, and implementation language `SQL`.
-Install and validate the declared extension dependencies first: `plv8`.
-The curated compatibility set is `15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
+
+Install `plv8` first, then create `brainfuck`:
 
 ```sql
-CREATE EXTENSION "brainfuck";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'brainfuck';
+CREATE EXTENSION plv8;
+CREATE EXTENSION brainfuck;
+
+SELECT brainfuck('++++++++[>++++++++<-]>+.', '');
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+The second argument supplies input consumed by the `,` instruction. Pass an empty string when the program needs no input.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### API
+
+`brainfuck(code text, input text) RETURNS text` is the extension's only SQL function. It is declared `IMMUTABLE STRICT`, uses a 256-cell wrapping tape, implements the eight Brainfuck instructions, and ignores other characters in `code`.
+
+### Caveats
+
+The extension requires `plv8`; the package registry workflow additionally uses `pg_tle`/`dbdev`, while a conventional extension installation does not. The actual SQL signature has two arguments even though an upstream README example shows one.
+
+There is no execution limit or sandbox specific to the interpreted program. Malformed brackets fail during generated JavaScript compilation, and long-running or non-terminating programs occupy a PostgreSQL backend. Keep it out of untrusted SQL paths and use it only in controlled experiments.

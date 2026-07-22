@@ -2,19 +2,34 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/nmandery/dumppoints/blob/96343c7e4eb76765da69737f79611fa7355c9e5b/dumppoints.control)
-- [Official upstream documentation](https://github.com/nmandery/dumppoints/blob/96343c7e4eb76765da69737f79611fa7355c9e5b/README)
+- [Official project description](https://github.com/nmandery/dumppoints/blob/96343c7e4eb76765da69737f79611fa7355c9e5b/README)
+- [Extension control file](https://github.com/nmandery/dumppoints/blob/96343c7e4eb76765da69737f79611fa7355c9e5b/dumppoints.control)
+- [Extension SQL](https://github.com/nmandery/dumppoints/blob/96343c7e4eb76765da69737f79611fa7355c9e5b/dumppoints--1.0.sql)
 
-`dumppoints` — C implementation of ST_DumpPoints for PostGIS geometry collections.
+`dumppoints` version `1.0` installs a C implementation of the PostGIS `ST_DumpPoints(geometry)` function. Use it to expand every vertex of a geometry into PostGIS `geometry_dump` rows containing a path and point geometry.
 
-The reviewed catalog snapshot records version `1.0`, kind `standard`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `postgis`.
+### Core Workflow
+
+PostGIS is a declared dependency and must be available first.
 
 ```sql
-CREATE EXTENSION "dumppoints";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'dumppoints';
+CREATE EXTENSION postgis;
+CREATE EXTENSION dumppoints;
+
+SELECT (d).path, ST_AsText((d).geom)
+FROM (
+  SELECT ST_DumpPoints(
+    ST_GeomFromText('POLYGON((0 0, 2 0, 2 2, 0 0))')
+  ) AS d
+) AS q;
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The path array identifies the component, ring, and vertex position using PostGIS dump conventions; the geometry field is the corresponding point.
+
+### Objects
+
+- `ST_DumpPoints(geometry) returns setof geometry_dump`: emit one `geometry_dump` value for each input vertex.
+
+### Compatibility Notes
+
+The installation script executes `CREATE OR REPLACE FUNCTION` for the same signature exposed by PostGIS. Installing `dumppoints` therefore replaces that database function in the target extension schema rather than adding a separately named API. Test behavior against the exact PostGIS version in use, and account for extension ownership before upgrading or removing either extension. No preload is required.

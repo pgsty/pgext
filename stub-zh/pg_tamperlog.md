@@ -2,15 +2,25 @@
 
 来源：
 
-- [最后已知的官方上游仓库；当前不可用](https://github.com/dmtkfs/pg-tamper-log)
+- [官方上游仓库的归档快照](https://github.pkg.st/dmtkfs/pg-tamper-log)
+- [最后已知的官方仓库地址](https://github.com/dmtkfs/pg-tamper-log)
 
-当前来源状态：官方仓库与 owner 均返回 HTTP 404。对 GitHub 仓库、fork、代码与 commit 搜索，raw、codeload、PGXN 和 Software Heritage 的检查都未找到当前官方来源或归档。
-
-冻结目录历史上把 `pg_tamperlog` 版本 `1.1` 描述为使用哈希链的纯 SQL 防篡改审计日志，并依赖 `pg_tamperlog_rust` 与 `pgcrypto`。这些仅是历史线索，仓库删除后无法重新验证。
+`pg_tamperlog` 是一个教学用途的纯 SQL/PL/pgSQL 追加式审计事件扩展。每个 `audit_log` 行保存 JSON 事件、时间戳、前一个哈希和当前 SHA-256 哈希；`BEFORE INSERT` 触发器延伸哈希链，`tamper_log_verify` 则报告完整性失败。
 
 ```sql
--- Run only if matching, independently verified artifacts are recovered.
-CREATE EXTENSION "pg_tamperlog";
+CREATE EXTENSION pgcrypto;
+CREATE EXTENSION pg_tamperlog;
+
+INSERT INTO audit_log (event)
+VALUES ('{"user":"alice","action":"login"}');
+
+SELECT *
+FROM tamper_log_verify
+WHERE integrity_check IS NOT NULL;
 ```
 
-不要从未经验证的 fork 获取替代二进制或 SQL。任何使用前都必须恢复可信的签名或内容寻址源码，审查全部安装对象与权限，确认哈希链威胁模型，并独立测试删除、更新、并发、密钥管理、备份、恢复和校验行为。
+1.1 版本可选用 `pg_tamperlog_rust` 加速哈希。验证会扫描整张表，因此调度时要明确预算 I/O 与延迟。只有在存在可信检查点或预期链头副本时，哈希链才能让编辑或删除变得可检测；数据库超级用户仍能修改表、函数、触发器和验证代码。
+
+上游明确把项目定位为教学用途。应隔离日志写入者与管理员，撤销更新/删除和 DDL 权限，串行化并发追加，把签名检查点和备份导出到数据库主机之外，并测试回滚、恢复、截断、重排、故障切换以及无密钥哈希的威胁假设。
+
+官方 GitHub 仓库目前返回 HTTP 404；上述来源是该仓库的归档渲染。不要安装未经验证的二进制或 fork。生产使用前必须恢复内容寻址的源码树，并审计准确 SQL。

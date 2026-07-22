@@ -11,7 +11,11 @@
 
 ### 最小构造
 
-模块依赖 `uuid-ossp` 和 `uri`，其后台工作进程要求预加载，而且必须由超级用户安装：
+模块依赖 `uuid-ossp` 和 `uri`，而且必须由超级用户安装。SQL 扩展库和工作进程是两个不同的二进制文件；应预加载 `datalink_bgw` 而不是 `datalink`，并在创建扩展前重启 PostgreSQL：
+
+```conf
+shared_preload_libraries = 'datalink_bgw'
+```
 
 ```sql
 CREATE EXTENSION "uuid-ossp";
@@ -21,6 +25,6 @@ CREATE TABLE persons (id integer, picture datalink);
 INSERT INTO persons VALUES (1, DLVALUE('img1.jpg', 'MyBaseDir', 'portrait'));
 ```
 
-使用本地路径前，要先在 `pg_catalog.pg_datalink_bases` 注册基目录。PostgreSQL 操作系统账户需要相应文件系统权限。
+使用本地路径前，要先在 `pg_catalog.pg_datalink_bases` 注册基目录。工作进程定义了 `datalink.dl_naptime`、`datalink.dl_token_expiry`、`datalink.dl_base_directory`、`datalink.dl_token_path` 和 `datalink.dl_keep_max_copies`；启动前应复核其路径与保留值。PostgreSQL 操作系统账户需要相应文件系统权限。
 
 上游明确声明它不能用于生产。它会在服务器端创建、复制、重命名、链接和删除文件，后台工作进程还会删除令牌文件及部分外部副本。默认值和语义仍处早期阶段，源码也没有当前兼容矩阵。只能在隔离目录树中用备份和低权限操作系统账户进行测试。

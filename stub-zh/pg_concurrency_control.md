@@ -2,30 +2,42 @@
 
 来源：
 
-- [阿里云官方 pg_concurrency_control 指南](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-the-pg-concurrency-control-plug-in)
-- [ApsaraDB RDS PostgreSQL 官方支持扩展列表](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [阿里云使用文档](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-the-pg-concurrency-control-plug-in)
+- [阿里云扩展支持矩阵](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
 
-`pg_concurrency_control` 是阿里云 ApsaraDB RDS PostgreSQL 的扩展，可按类别限制同时执行的 SQL，并将超额工作放入队列。它通过 `query_concurrency`、`autocommit_concurrency`、`transaction_concurrency` 和 `bigquery_concurrency`，分别限制 SELECT 查询、自动提交 DML、事务块和显式标记的慢查询。
+`pg_concurrency_control` 1.0 是阿里云 ApsaraDB RDS for PostgreSQL 扩展；达到配置的并发上限时，它会按工作负载类别排队 SQL。它是防止资源耗尽的云厂商专用机制，不是可移植的社区扩展。当前官方使用页面将此流程限制在 RDS PostgreSQL 10 与 11。
 
-### 启用查询并发限制
+### 启用与观察
+
+在受支持的实例上创建扩展，并查看队列计数器：
 
 ```sql
 CREATE EXTENSION pg_concurrency_control;
 
-SET pg_concurrency_control.query_concurrency = 10;
-
 SELECT * FROM pg_concurrency_control_status();
 ```
 
-每个并发限制默认值都是零，即不控制该类别。`pg_concurrency_control_status()` 报告自动提交、大查询、查询和事务队列中的当前数量。
+状态函数返回 `autocommit_count`、`bigquery_count`、`query_count` 和 `transaction_count`。计数器为正表示该类别存在等待语句。
 
-### 超时与适用范围
+通过 RDS 参数管理流程配置并发参数。每个上限默认为 `0`，即禁用该类别；设置为 `1` 至 `1024` 会启用排队。
 
-队列等待限制由 `control_timeout` 和 `bigsql_control_timeout` 控制。文档给出的超时动作是 `TCC_break`、`TCC_rollback` 和 `TCC_wait`；应根据超时后是跳过语句、中止事务还是继续等待来选择。
+### 上限与超时
 
-### 注意事项
+- `pg_concurrency_control.query_concurrency` 限制 SELECT 语句。
+- `pg_concurrency_control.bigquery_concurrency` 限制显式标记为慢查询的语句。
+- `pg_concurrency_control.transaction_concurrency` 限制事务块。
+- `pg_concurrency_control.autocommit_concurrency` 限制自动提交 DML。
+- `pg_concurrency_control.control_timeout` 与 `pg_concurrency_control.bigsql_control_timeout` 设置队列超时。
+- `pg_concurrency_control.timeout_action` 与 `pg_concurrency_control.bigsql_timeout_action` 选择 `TCC_break`、`TCC_rollback` 或 `TCC_wait` 行为。
 
-- 这是 ApsaraDB RDS PostgreSQL 的服务商专有扩展，并不是面向自管理 PostgreSQL 普遍发布的扩展。
-- 专用使用指南当前要求 ApsaraDB RDS 实例运行 PostgreSQL 10 或 11。启用前应核对支持扩展表，并升级到最新次要引擎版本。
-- 受支持的引擎组合列出了 1.0 版。服务商没有发布其源码、control 文件、软件许可证或可移植安装制品。
-- 官方指南直接使用 `CREATE EXTENSION` 安装，没有说明该扩展需要预加载。
+使用云厂商 hint 将语句标记为大查询类别：
+
+```sql
+/*+bigsql*/ SELECT pg_sleep(10);
+```
+
+### 运维边界
+
+并发上限会改变所有匹配语句的延迟和失败行为。投入生产前应压力测试队列深度、应用超时、事务重试逻辑、连接池大小和每种超时动作。队列可以保护 CPU 或 I/O，但也可能把过载转移为连接池拥塞和客户端超时风暴。应将四个状态计数器与活动会话、延迟、错误和实例资源一起监控。
+
+可用性和可编辑参数行为取决于准确的 RDS 引擎小版本。当前支持矩阵只在较早的受支持大版本中列出 1.0，因此升级大版本前必须核对目标实例。应按照阿里云的权限和维护模型配置与移除扩展；不要把其二进制文件复制到自托管 PostgreSQL。

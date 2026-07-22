@@ -23,4 +23,6 @@ SELECT * FROM ddla.get_ddl_cmd_stats();
 
 ### 运维注意事项
 
-control 文件要求由超级用户安装，事件触发器会处理数据库中的全部 DDL。应为 `ddla.ddl_logs` 规划保留策略；由于 `query` 可能含敏感文本，还应限制访问，并在 DDL 密集型系统上评估开销。上游 README 明确指出 0.1 版存在已知缺陷；将其作为审计控制前，应在目标 PostgreSQL 版本上验证实际行为。
+上游要求 PostgreSQL 9.6 或更高版本。control 文件要求由超级用户安装，事件触发器会处理数据库中的全部 DDL。应为 `ddla.ddl_logs` 规划保留策略；由于 `query` 可能含敏感文本，还应限制访问，并在 DDL 密集型系统上评估开销。
+
+它并不是防篡改审计链：安装 SQL 向 `PUBLIC` 授予 `ddla` schema 的使用权、`ddla.ddl_logs` 的插入权以及其序列的全部权限，因此普通角色可以写入伪造记录。尽管 control 文件声明扩展可重定位，安装 SQL 仍将 `ddla` schema 写死。把日志作为证据前，应撤销不必要的授权，并保护或外送日志。上游 README 明确指出 0.1 版存在已知缺陷；将其作为审计控制前，应在目标 PostgreSQL 版本上验证实际行为。

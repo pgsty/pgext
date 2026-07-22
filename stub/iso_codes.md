@@ -2,22 +2,33 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/iso_codes.control)
-- [Official Rust package manifest](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/Cargo.toml)
-- [Official upstream README](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/README.md)
+- [Official control file](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/iso_codes.control)
+- [Official ISO Codes README](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/README.md)
+- [Generated PostgreSQL 17 extension SQL](https://github.com/earth-metabolome-initiative/emi-monorepo/blob/9167c187f6a6f91f629187e3c3768c54f4eb0703/web/web_common/iso_codes/extension/usr/share/postgresql/17/extension/iso_codes--0.1.0.sql)
 
-`iso_codes` — ISO country code enum/data types for PostgreSQL, generated with pgrx.
+`iso_codes` adds the `CountryCode` PostgreSQL enum containing the extension build's two-letter country-code set. Use it when a column must be constrained to that fixed vocabulary rather than arbitrary text.
 
-The reviewed catalog snapshot records version `0.1.0`, kind `standard`, and implementation language `Rust`.
-The curated compatibility set is `13,14,15,16,17`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "iso_codes";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'iso_codes';
+CREATE EXTENSION iso_codes;
+
+CREATE TABLE offices (
+    name text NOT NULL,
+    country CountryCode NOT NULL
+);
+
+INSERT INTO offices VALUES ('New York', 'US'), ('Berlin', 'DE');
+SELECT * FROM offices WHERE country = 'US'::CountryCode;
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+Values outside the enum are rejected. The generated 0.1.0 SQL includes the country-code labels compiled into that release, including `XK`.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### SQL Objects
+
+- `CountryCode` is the only user-facing SQL object in the reviewed generated SQL.
+- Enum ordering follows the declaration order in the generated artifact; do not assume that ordering represents geography or business priority.
+
+### Operational Notes
+
+Version 0.1.0 is non-relocatable. Its control file sets `superuser = true` and `trusted = false`, so creation requires a superuser; it declares no prerequisite extension or preload requirement. Because PostgreSQL enum membership is fixed in the installed SQL, review release diffs before relying on newly assigned or changed codes.

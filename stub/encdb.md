@@ -2,23 +2,30 @@
 
 Sources:
 
-- [Official upstream documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Alibaba Cloud RDS for PostgreSQL extension matrix](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
 
-`encdb` — Alibaba Cloud RDS extension that provides Always Confidential Database features for PostgreSQL.
+`encdb` is an Alibaba Cloud RDS for PostgreSQL provider extension described as supplying confidential-database capabilities. It is not a portable community package: availability, enablement, upgrade timing, privileges, and supported operations are controlled by the managed service.
 
-The reviewed catalog snapshot records version `1.1.14`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17`; confirm the exact build against the target server.
+### Check Availability First
+
+The current Standard Edition matrix lists `encdb` `1.1.14` for PostgreSQL 11 through 17, `1.1.13` for PostgreSQL 10, and no version for PostgreSQL 18. Other editions, regions, engine minor versions, or service updates can differ, so query the target instance rather than relying on a static matrix.
 
 ```sql
-CREATE EXTENSION "encdb";
+SELECT name, default_version, installed_version
+FROM pg_available_extensions
+WHERE name = 'encdb';
+```
+
+Only after the provider reports the extension as available and the service's enablement requirements have been satisfied should an authorized administrator install it:
+
+```sql
+CREATE EXTENSION encdb;
+
 SELECT extversion
 FROM pg_extension
 WHERE extname = 'encdb';
 ```
 
-This is a provider-specific component for `Alibaba Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+### Managed-Service Boundary
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
-
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The public extension matrix does not document a portable SQL API, preload setting, client requirement, key-management procedure, or privilege model for `encdb`. Obtain the instance-specific confidential-database documentation and support confirmation before use; do not infer APIs from similarly named projects. Test backup/restore, replica and failover behavior, client compatibility, encryption-key lifecycle, version upgrades, and what metadata or query results remain visible to service administrators. Follow Alibaba Cloud's restrictions for extension creation and removal.

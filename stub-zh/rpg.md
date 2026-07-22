@@ -2,19 +2,33 @@
 
 来源：
 
-- [上游 README](https://github.com/ryapric/rpg/blob/76c6a508ac04fca27ebb0ea3ffc675e7a3fb6442/README.md)
-- [扩展 SQL](https://github.com/ryapric/rpg/blob/76c6a508ac04fca27ebb0ea3ffc675e7a3fb6442/rpg--0.1.sql)
-- [扩展 control 文件](https://github.com/ryapric/rpg/blob/76c6a508ac04fca27ebb0ea3ffc675e7a3fb6442/rpg.control)
+- [官方 README](https://github.com/ryapric/rpg/blob/master/README.md)
+- [扩展控制文件](https://github.com/ryapric/rpg/blob/master/rpg.control)
+- [0.1 版扩展 SQL](https://github.com/ryapric/rpg/blob/master/rpg--0.1.sql)
 
-`rpg` 版本 `0.1` 是一个小型 SQL/PLpgSQL 原型，包含三个工具函数。`year_month` 用于格式化日期，`letters` 则返回小写或大写英文字母表：
+rpg 是一组很小的纯 SQL、受 R 启发的 PL/pgSQL 辅助函数。0.1 版提供日期格式化、英文字母数组和实验性的动态表绑定函数；上游 README 明确尚未完成，因此 SQL 文件才是权威 API 界面。
+
+### 安全辅助函数
+
+日期辅助函数返回年份与补零月份，中间使用可选分隔符。字母辅助函数默认返回小写字母表，传入已识别的另一选项时返回大写字母表。
 
 ```sql
 CREATE EXTENSION rpg;
 
-SELECT year_month(DATE '2026-07-16');
+SELECT year_month(DATE '2026-07-22');
+SELECT year_month(DATE '2026-07-22', '/');
+SELECT letters();
 SELECT letters('upper');
 ```
 
-### 原型限制
+0.1 版没有后备分支，因此未识别的字母大小写参数会返回空值。函数也没有声明严格属性，所以空输入会继续进入函数逻辑，而不是立即被拒绝。
 
-第三个函数 `bind_rows(output_table, table_a, table_b)` 尝试通过两个指定表的 `UNION ALL` 创建新表。其动态 SQL 直接拼接表名和列名，未做标识符引用，而且输入关系仍须满足 union 兼容性。绝不能将不可信名称传给 `bind_rows`；实际使用前应审查并修补实现。上游 README 没有提供 API、兼容性或支持文档。
+### 实验性表绑定
+
+表绑定辅助函数接收三个文本参数，分别命名输出表和两个输入表，然后构造一个基于联合的建表查询。其实现会拼接未引用的标识符，只按表名查询 information_schema 而不限定模式，分别按字母顺序排列两个输入的列，而且尽管源码注释声称支持不同列数，却不会补充缺失列。
+
+不要向该函数传递不可信值，也不要把它当作显式联合的通用替代品。它存在标识符歧义和 SQL 注入风险；输入列数不同，或按字母排序后的列不兼容时，可能失败或产生错误对齐。应改用经过审查的语句，对带模式限定的标识符加引号，并明确列出每个输出列。
+
+### 运维边界
+
+该扩展依赖已经安装 PL/pgSQL，可重定位，也没有声明预加载或重启要求。由于上游没有实质性回归测试且项目文档不完整，应把 0.1 版视为便利原型；即使是简单辅助函数，进入持久应用逻辑前也应使用本地测试固定其行为。

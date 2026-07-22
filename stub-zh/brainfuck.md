@@ -2,24 +2,32 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/brainfuck.control)
-- [官方上游文档](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/README.md)
-- [官方项目或服务商页面](https://database.dev/mansueli/brainfuck)
+- [官方 README](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/README.md)
+- [官方 control 文件](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/brainfuck.control)
+- [官方 4.2.0 版 SQL](https://github.com/mansueli/tle/blob/919de6247f4126dd11cd20e36602e0c5baf6fcaf/brainfuck/brainfuck--4.2.0.sql)
+- [官方软件包页面](https://database.dev/mansueli/brainfuck)
 
-`brainfuck` — 使用 PLV8 可信语言扩展在 PostgreSQL 中运行 Brainfuck 程序。
+`brainfuck` 通过 PLV8 在 PostgreSQL 内运行 Brainfuck 程序。它适合演示和实验，不适合承载应用逻辑：任意程序会在数据库后端中执行 JavaScript，并可能消耗大量 CPU。
 
-已复核目录快照记录的版本为 `4.2.0`、类型为 `puresql`、实现语言为 `SQL`。
-应先安装并验证声明的扩展依赖：`plv8`。
-整理后的兼容版本集合为 `15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+先安装 `plv8`，再创建 `brainfuck`：
 
 ```sql
-CREATE EXTENSION "brainfuck";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'brainfuck';
+CREATE EXTENSION plv8;
+CREATE EXTENSION brainfuck;
+
+SELECT brainfuck('++++++++[>++++++++<-]>+.', '');
 ```
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+第二个参数提供由 `,` 指令读取的输入；程序不需要输入时传空字符串。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### API
+
+`brainfuck(code text, input text) RETURNS text` 是扩展唯一的 SQL 函数。它声明为 `IMMUTABLE STRICT`，使用 256 个单元的循环纸带，实现八条 Brainfuck 指令，并忽略 `code` 中的其他字符。
+
+### 注意事项
+
+扩展依赖 `plv8`；软件包注册表的安装流程还使用 `pg_tle`/`dbdev`，传统扩展安装则不需要。实际 SQL 签名有两个参数，尽管上游 README 的一个示例只传了一个参数。
+
+解释执行的程序没有专门的运行时间限制或沙箱。括号不匹配会在生成的 JavaScript 编译阶段失败，长时间运行或不终止的程序会持续占用 PostgreSQL 后端。不要把它暴露给不可信 SQL，只应在受控实验中使用。

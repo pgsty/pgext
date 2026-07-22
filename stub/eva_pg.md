@@ -2,22 +2,32 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/eva-ics/eva4/blob/f0e6801d2bb79d6651487766e3a3843fc50e2c2b/eva_pg/eva_pg.control)
-- [Official Rust package manifest](https://github.com/eva-ics/eva4/blob/f0e6801d2bb79d6651487766e3a3843fc50e2c2b/eva_pg/Cargo.toml)
-- [Official upstream README](https://github.com/eva-ics/eva4/blob/f0e6801d2bb79d6651487766e3a3843fc50e2c2b/README.md)
+- [Extension control file](https://github.com/eva-ics/eva4/blob/main/eva_pg/eva_pg/eva_pg.control)
+- [pgrx implementation](https://github.com/eva-ics/eva4/blob/main/eva_pg/eva_pg/src/lib.rs)
+- [Extension package metadata](https://github.com/eva-ics/eva4/blob/main/eva_pg/eva_pg/Cargo.toml)
 
-`eva_pg` — EVA ICS pgrx extension for the EVA industrial IoT platform.
+`eva_pg` 0.0.1 is the PostgreSQL subproject of the EVA ICS monorepo. It exposes one pgrx function, `oid_match`, for matching EVA object identifiers against EVA mask syntax; it does not import the wider platform's service APIs into PostgreSQL.
 
-The reviewed catalog snapshot records version `0.0.1`, kind `standard`, and implementation language `Rust`.
-The curated compatibility set is `13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
+
+Install the extension as a superuser, then compare an EVA identifier in `kind:path/segments` form with a mask:
 
 ```sql
-CREATE EXTENSION "eva_pg";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'eva_pg';
+CREATE EXTENSION eva_pg;
+
+SELECT oid_match('sensor:plant/line1/temp', 'sensor:plant/+/temp');
+SELECT oid_match('unit:plant/line1/pump', '+:plant/#');
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+The whole mask `*` or `#` matches immediately. Otherwise, the identifier and mask must contain a colon separating kind from path or the function raises an error.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Matching Rules
+
+- A mask kind of `+` or `?` matches any one kind; any other kind must match exactly.
+- A path segment of `+` or `?` matches one segment.
+- A path segment of `*` or `#` accepts the remaining path immediately, so later mask segments are ignored.
+- Without a remainder wildcard, identifier and mask paths must have the same number of segments.
+
+### Operational Notes
+
+The control file requires superuser installation and is not relocatable. The Rust package currently declares pgrx features for PostgreSQL 13 through 18, with PostgreSQL 16 as its default build feature; build it for the exact target major. The subproject contains no independent SQL regression suite, so test malformed identifiers, empty segments, wildcard placement, and application-specific masks before relying on it in authorization or filtering logic.

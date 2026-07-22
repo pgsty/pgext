@@ -2,7 +2,7 @@
 title: "pg4ml"
 linkTitle: "pg4ml"
 description: "Machine learning framework for PostgreSQL"
-weight: 1880
+weight: 1930
 categories: ["RAG"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1880** | {{< badge content="pg4ml" link="https://gitee.com/guotiecheng/plpgsql_pg4ml" >}} | {{< ext "pg4ml" >}} | `2.0` | {{< category "RAG" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
+| **1930** | {{< badge content="pg4ml" link="https://gitee.com/guotiecheng/plpgsql_pg4ml" >}} | {{< ext "pg4ml" >}} | `2.0` | {{< category "RAG" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

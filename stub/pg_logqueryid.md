@@ -2,22 +2,33 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/pierreforstmann/pg_logqueryid/blob/306da69ba0dc73f49ab08feaf61b83e5f521cdd1/pg_logqueryid.control)
-- [Official PGXN distribution page](https://pgxn.org/dist/pg_logqueryid/)
+- [Official README](https://github.com/pierreforstmann/pg_logqueryid/blob/306da69ba0dc73f49ab08feaf61b83e5f521cdd1/README.md)
+- [Extension control file](https://github.com/pierreforstmann/pg_logqueryid/blob/306da69ba0dc73f49ab08feaf61b83e5f521cdd1/pg_logqueryid.control)
+- [PGXN distribution and releases](https://pgxn.org/dist/pg_logqueryid/)
 
-`pg_logqueryid` — Logs pg_stat_statements query IDs alongside auto_explain output.
+`pg_logqueryid` writes the `pg_stat_statements` query identifier next to plans emitted by `auto_explain`, allowing operators to correlate a logged plan with the normalized statement statistics. It adds no queryable SQL API or custom GUC of its own.
 
-The reviewed catalog snapshot records version `0.0.1`, kind `preload`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `auto_explain`, `pg_stat_statements`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
-```sql
-CREATE EXTENSION "pg_logqueryid";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_logqueryid';
+Load and configure `pg_stat_statements` and `auto_explain`, enable log collection, then load `pg_logqueryid` in a session or through a preload setting.
+
+```conf
+logging_collector = on
+shared_preload_libraries = 'pg_stat_statements,auto_explain,pg_logqueryid'
+pg_stat_statements.track = 'all'
+auto_explain.log_min_duration = '1s'
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+```sql
+SELECT queryid, query
+FROM pg_stat_statements
+WHERE queryid = 5917340101676597114;
+```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The module can instead be activated for selected connections with `LOAD 'pg_logqueryid'` or `session_preload_libraries`. It remains inactive if the two prerequisite modules are not loaded and configured.
+
+### Version and Logging Boundaries
+
+The cataloged control file reports `0.0.1`, while PGXN publishes later distributions through `1.0.1`; pin the actual installed artifact rather than inferring its version from the repository README. Upstream reports validation through PostgreSQL 18, but hook interaction and log format still need an exact-build test.
+
+On PostgreSQL 16 and later, `auto_explain` can already print the query ID when `auto_explain.log_verbose` is enabled, so this extension may be redundant. Logging every plan with a zero duration threshold can impose heavy overhead and expose SQL text or sensitive values. Start with a selective threshold and sampling policy, secure log access and retention, and verify that the logged query ID matches the intended `pg_stat_statements` entry.

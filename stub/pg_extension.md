@@ -2,11 +2,17 @@
 
 Sources:
 
-- [indices developer guide at the reviewed commit](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/documents/dev_guide.md)
-- [pg_extension Rust SQL API at the reviewed commit](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/internal/pg_extension/src/lib.rs)
-- [pg_extension Cargo configuration at the reviewed commit](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/internal/pg_extension/Cargo.toml)
+- [indices developer guide](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/documents/dev_guide.md)
+- [pg_extension control file](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/internal/pg_extension/pg_extension.control)
+- [SQL-facing Rust API](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/internal/pg_extension/src/lib.rs)
+- [Inference and SPI implementation](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/internal/pg_extension/src/bindings/inference.rs)
+- [Cargo features and dependencies](https://github.com/NLGithubWP/indices/blob/93ce9d11a66b8f2ae4cb5422a874de49e116e0b4/internal/pg_extension/Cargo.toml)
 
-`pg_extension` 0.1.0 is the in-database research component of the indices project. It exposes Rust/pgrx functions for model selection, model slicing, profiling, and inference. The documented `inference` call accepts a dataset, JSON condition, configuration and cardinality files, a model path, a SQL filter fragment, and a batch size.
+`pg_extension` 0.1.0 is the in-database research component of the `indices` project. It embeds Python through pyo3 and exposes experimental model-selection, profiling, model initialization, and inference functions. It is tied to the repository's datasets, Python modules, model artifacts, configuration files, and filesystem layout; it is not a portable general-purpose ML extension.
+
+### Repository-Specific Workflow
+
+The control file requires superuser, and the default Cargo features build for PostgreSQL 14 with embedded Python. The developer guide creates the extension only after reproducing its container, Python dependencies, database tables, and absolute `/project/...` paths:
 
 ```sql
 CREATE EXTENSION pg_extension;
@@ -22,12 +28,19 @@ SELECT inference(
 );
 ```
 
-This example is repository-specific and works only after reproducing its Python environment, tables, model files, and configuration layout.
+This example is a reproduction target for the upstream experiment, not a safe template for arbitrary application input.
 
-### Caveats
+### API Groups
 
-- The name collides with PostgreSQL's `pg_extension` system catalog; qualify catalog references when discussing or querying both.
-- The control file requires superuser. The default build embeds Python support and declares features only for PostgreSQL 11 through 15, with PostgreSQL 14 as the default.
-- Source and guide contain deployment-specific absolute paths and assumptions about dataset table names and column counts. This is not a portable general-purpose inference API.
-- Several APIs are declared immutable and parallel safe even though their implementations query tables, load models, or use shared memory. Treat those planner labels as unsafe until independently audited.
-- The SQL filter argument is incorporated into a dynamically built query. Accept it only from trusted, validated configuration.
+- Model selection: `model_selection`, `model_selection_workloads`, `model_selection_trails`, and coordinator/filter/refinement helpers.
+- Profiling and benchmarks: `profiling_filtering_phase`, `profiling_refinement_phase`, and latency benchmark functions.
+- Inference: `inference`, `inference_shared`, `inference_shared_write_once`, integer/shared-memory variants, and `model_init`.
+- Build matrix: Cargo declares PostgreSQL 11–15 features; default is PostgreSQL 14 plus `python`.
+
+### Security and Correctness Boundaries
+
+The name `pg_extension` collides with PostgreSQL's `pg_catalog.pg_extension` system catalog. Qualify catalog queries explicitly.
+
+Many functions are declared `IMMUTABLE PARALLEL SAFE` even though they read database tables, load and mutate Python/model state, access files, create fixed-name OS shared memory such as `my_shared_memory`, write logs, and measure time. Those planner labels do not match the implementation. Do not use these functions in indexes, generated columns, constraints, or parallel production queries without a full audit and corrected volatility/parallel declarations.
+
+Dataset names and a caller-supplied SQL fragment are concatenated into SPI queries. Fixed shared-memory names and unchecked `unwrap` paths also make concurrent calls unsafe. Treat every argument as administrator-controlled, isolate the experiment from production data, and review filesystem, Python import, native-library, memory, and SQL-injection boundaries before execution.

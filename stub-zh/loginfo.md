@@ -2,19 +2,23 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/sroeschus/loginfo/blob/e78fb0312856ff0c4fc4000fa49f75be24ad3d67/loginfo.control)
-- [官方上游文档](https://github.com/sroeschus/loginfo/blob/e78fb0312856ff0c4fc4000fa49f75be24ad3d67/README.md)
+- [Official extension control file](https://github.com/sroeschus/loginfo/blob/e78fb0312856ff0c4fc4000fa49f75be24ad3d67/loginfo.control)
+- [Official upstream documentation](https://github.com/sroeschus/loginfo/blob/e78fb0312856ff0c4fc4000fa49f75be24ad3d67/README.md)
 
-`loginfo` — 查询 PostgreSQL 日志配置、日志文件列表及普通或 CSV 日志内容。
+`loginfo` 1.0 通过 SQL 视图暴露 PostgreSQL 日志配置、日志文件清单与日志内容。它用于数据库内诊断和监控，但也可能暴露敏感语句与服务器路径。
 
-已复核目录快照记录的版本为 `1.0`、类型为 `standard`、实现语言为 `C`。
+### 核心流程
 
 ```sql
-CREATE EXTENSION "loginfo";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'loginfo';
-```
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+CREATE EXTENSION loginfo;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SELECT * FROM log_info;
+SELECT * FROM ls_log_files;
+SELECT * FROM cat_log_file;
+```
+
+`log_info` 报告当前日志相关参数和日志目标。`ls_log_files` 列出 `log_directory` 下的 `.log` 文件，`cat_log_file` 读取当前文本日志。启用 CSV 日志后，`ls_csv_files` 列出 CSV 日志，`cat_csv_file` 把其中 23 个字段作为文本列暴露。
+
+### 配置与注意事项
+
+要使用 CSV 视图，应在 `log_destination` 中加入 `csvlog`；上游 README 说明此变更需要重启。文件清单视图按后缀选择文件，不会展开 `log_filename` 模式。日志扫描可能很大，并可能暴露凭据、个人数据、查询文本、文件系统路径或错误详情，因此只应授权给可信运维人员，并施加严格过滤与保留策略。

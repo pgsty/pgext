@@ -19,6 +19,8 @@ ORDER BY skypoint(ra, dec) <-> skypoint(11.2, 67.0)
 LIMIT 10;
 ```
 
-The project describes itself as experimental and is heavily based on pgSphere. Confirm coordinate units, right-ascension wraparound, declination bounds, spherical distance, null behavior, and edge cases near poles before trusting results.
+The project describes itself as experimental and is heavily based on pgSphere. Its constructors and text input routines do not validate parse success or enforce right-ascension, declination, and radius ranges. Equality compares the internal floating-point representation byte for byte. Validate inputs before constructing values, and do not assume mathematically equivalent coordinates compare equal.
 
-There is no current compatibility or numerical-accuracy matrix. Compare indexed and sequential results over a known reference catalog, test GiST recheck behavior and concurrent updates, and benchmark both selectivity and KNN ordering. If index-key representation or distance semantics change, rebuild every dependent index. Prefer maintained pgSphere or another supported spatial astronomy stack for production.
+The reviewed GiST code has correctness defects. Direct `@` containment includes a point exactly on the circle boundary, but the leaf consistency function uses a strict comparison and sets `recheck = false`, so an indexed scan can omit that point. The internal-node KNN distance code compares the query's y coordinate with the key's x upper bound in one branch, which can invalidate nearest-neighbor ordering. Compare indexed and sequential cone-search results and compare KNN output with an independently sorted spherical-distance calculation; exact-boundary tests are mandatory.
+
+There is no current compatibility or numerical-accuracy matrix. Do not use this operator class for authoritative results without fixing and independently validating it. If the index-key representation, containment, or distance code changes, rebuild every dependent index. Prefer maintained pgSphere or another supported spatial astronomy stack for production.

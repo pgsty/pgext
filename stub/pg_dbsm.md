@@ -30,4 +30,6 @@ ORDER BY created DESC;
 
 The version 0.0.1 installation SQL is effectively empty: `CREATE EXTENSION` neither registers the background worker nor creates or owns the `dbsm` table. Preloading the library is what registers the worker, and the worker creates the table and index. Consequently, dropping the extension does not stop a still-preloaded library or clean up those objects.
 
+The first row for each database has a null `incsize`, not zero: the source tests `m.datsize = NULL`, which can never be true, and then subtracts the missing previous value. Account for that when reporting growth.
+
 The source configures the worker not to restart automatically after failure. Monitor its process and PostgreSQL log, protect the central table, and define retention because it grows indefinitely. The project has no published modern compatibility matrix; verify this old C background-worker code on the exact PostgreSQL major version before production use.

@@ -2,20 +2,20 @@
 
 Sources:
 
-- [Official upstream documentation](https://pgxn.org/dist/tab_tier/doc/tab_tier.html)
+- [Official PGXN usage documentation](https://pgxn.org/dist/tab_tier/doc/tab_tier.html)
 - [Official PGXN distribution page](https://pgxn.org/dist/tab_tier/)
 
-`tab_tier` — PL/pgSQL extension for job-driven retention, tiering, and date-based table partition maintenance.
-
-The reviewed catalog snapshot records version `1.1`, kind `puresql`, and implementation language `SQL`.
-Install and validate the declared extension dependencies first: `plpgsql`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+`tab_tier` is a historical PL/pgSQL partition-maintenance and archival toolkit. Unlike trigger-routed partitioning, recent rows remain in a root table; scheduled jobs later move older rows into inheritance children, and optional long-term storage can be a local or foreign table.
 
 ```sql
-CREATE EXTENSION "tab_tier";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tab_tier';
+CREATE EXTENSION tab_tier;
+SELECT tab_tier.register_tier_root('comm', 'yell', 'created_dt');
+SELECT tab_tier.bootstrap_tier_parts('comm', 'yell');
+SELECT tab_tier.migrate_tier_data('comm', 'yell', '201301');
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Schedule `cap_tier_partitions()` more frequently than `part_period`, then run `migrate_all_tiers()` so an eligible destination exists before data movement. The default design keeps `root_retain` in the root, uses `part_period` for child boundaries, and archives after `lts_threshold`; inspect `tier_root`, `tier_part`, and `tier_config` for effective state.
+
+Migration copies rows and then deletes them from the root. Bootstrap large tables in resumable per-partition transactions: `flush_tier_data()` and `flush_all_tiers()` can move all eligible rows in one very large transaction, and any error rolls that work back. Test locks, WAL, replication lag, disk headroom, constraints, indexes, triggers, late/future timestamps, and concurrent writes.
+
+Archival can move data to `lts_target` and drop the old child. Verify row counts and durable backups before enabling it. The extension uses old inheritance partitioning, broad administrative privileges through `tab_tier_role`, and 2014-era assumptions; prefer maintained declarative-partition tooling for new systems.

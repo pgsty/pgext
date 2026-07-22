@@ -2,17 +2,18 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/nuko-yokohama/ksj/blob/6ae22bfa2d1fcfb59d55824f388d193cc0252a7e/ksj.control)
+- [Version 1.0 SQL objects](https://github.com/nuko-yokohama/ksj/blob/6ae22bfa2d1fcfb59d55824f388d193cc0252a7e/ksj--1.0.sql)
+- [Type implementation](https://github.com/nuko-yokohama/ksj/blob/6ae22bfa2d1fcfb59d55824f388d193cc0252a7e/ksj.c)
+- [Extension control file](https://github.com/nuko-yokohama/ksj/blob/6ae22bfa2d1fcfb59d55824f388d193cc0252a7e/ksj.control)
 
-`ksj` — Japanese kanji-numeral integer type with arithmetic, aggregates, casts, comparison, and B-tree indexing
-
-The reviewed catalog snapshot records version `1.0`, kind `standard`, and implementation language `C`.
+`ksj` defines a fixed-length PostgreSQL type whose text form uses Japanese kanji numerals while its internal value is a 32-bit integer. It supplies arithmetic, comparisons, `sum`, `min`, `max`, integer casts, and a B-tree operator class.
 
 ```sql
-CREATE EXTENSION "ksj";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'ksj';
+CREATE EXTENSION ksj;
+SELECT '百二十三'::ksj + '七'::ksj;
+CREATE INDEX ON ledger (amount_kanji);
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The reviewed repository has no user documentation or regression tests, so accepted grammar and output spelling must be established from the C implementation on the exact build. The 32-bit representation also means arithmetic and casts need explicit boundary and overflow tests.
+
+Do not use display text as a stable interchange or collation key. Preserve the original source text when wording matters, and use a core numeric type for calculations, constraints, and external APIs. Treat the `ksj` B-tree ordering as numeric ordering only after validating negative values, zero, malformed input, dump/restore, and upgrade behavior.

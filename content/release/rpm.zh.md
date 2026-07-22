@@ -6,6 +6,140 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
+## 2026-07-21
+
+本批次合并整理 2026-07-07 之后的 RPM 与 DEB 扩展变化：新增 26 个、Rust/pgrx 升级或重构建 50 个、其他版本升级 33 个、包侧或支持矩阵变化 18 个。旧版本与新版本指逻辑扩展版本；包版本差异在备注中单独说明。
+
+| 类型 | 扩展名 | 旧版本 | 新版本 | 备注 |
+|:-----|:------|:------|:------|:-----|
+| 新增 | argm | - | 1.1.1 | 新增；PG 14-18；补 PostgreSQL 16+ varlena 头文件兼容。 |
+| 新增 | cron_utils | - | 0.1.0 | 新增纯 SQL 扩展；PG 14-18；PGXN 标记为 unstable。 |
+| 新增 | fbsql | - | 0.1.0 | 新增；PG 16-18；依赖 PL/R >= 8.4.0。 |
+| 新增 | oidc_validator | - | 0.1.0 | 新增 Rust OIDC 模块；PG 18；上游 pgrx 0.16.1 补到 0.19.1；16 平台；上游未给 license grant。 |
+| 新增 | online_advisor | - | 1.0 | 新增；PG 14-18；回移 PG18 hook 兼容补丁；PG14-16 需 preload。 |
+| 新增 | pg_cjk_parser | - | 0.1.0 | 新增；PG 14-18；补 PG_CONFIG 构建选择及构建依赖。 |
+| 新增 | pg_extension_base | - | 3.4 | 新增；pg_lake 3.4.0 共包组件；PG 16-18；需 preload。 |
+| 新增 | pg_extension_updater | - | 3.4 | 新增；pg_lake 3.4.0 共包可选组件；PG 16-18。 |
+| 新增 | pg_fts | - | 0.2.0 | 新增；PG 17-18；trusted/relocatable；RPM 另有 llvmjit 子包。 |
+| 新增 | pg_jieba | - | 1.1.0 | 新增；包版本 2.0.1、扩展版本 1.1.0；PG 14-18；修 LexDescr 分配及 CMake 4 构建。 |
+| 新增 | pg_kpart | - | 1.0 | 新增；PG 14-18；planner hook 需 shared/session preload；16 平台。 |
+| 新增 | pg_lake | - | 3.4 | 新增；包 3.4.0、扩展 3.4；PG 16-18；RPM 仅 EL9/10，DEB 覆盖全部 Debian/Ubuntu 目标。 |
+| 新增 | pg_lake_copy | - | 3.4 | 新增；pg_lake 3.4.0 共包组件；PG 16-18；RPM 仅 EL9/10。 |
+| 新增 | pg_lake_engine | - | 3.4 | 新增；pg_lake 共包查询引擎；PG 16-18；委托执行需 pgduck_server。 |
+| 新增 | pg_lake_iceberg | - | 3.4 | 新增；pg_lake 共包组件；PG 16-18；依赖 pg_lake_engine。 |
+| 新增 | pg_lake_table | - | 3.4 | 新增；pg_lake 共包组件；PG 16-18；由 pg_extension_base 按序加载。 |
+| 新增 | pg_map | - | 3.4 | 新增；pg_lake 共包组件；PG 16-18；不是同名 array-mapping 项目。 |
+| 新增 | pg_oidc_validator | - | 0.2 | 新增 Percona C++ OIDC 模块；PG 18；GCC 11/12 补丁；DEB 全覆盖，RPM 仅 EL10，EL8/9 因 libstdc++ ABI 失败剔除。 |
+| 新增 | pg_roast | - | 1.0 | 新增；PG 14-18；固定 main commit ccbf012；周期 worker 需 preload。 |
+| 新增 | pg_tiktoken_c | - | 1.1 | 新增；PG 14-18；固定 commit fa2957b；含 DESTDIR/correctness 补丁；快照缺 LICENSE。 |
+| 新增 | pgfr_analyze | - | 2.29.2 | 新增；pg_flight_recorder 2.29.2 共包次级扩展；PG 15-18；依赖 pgfr_record。 |
+| 新增 | pgfr_record | - | 2.29.2 | 新增；pg_flight_recorder 主扩展；PG 15-18，缺 PG14；规范 control 版本并补事务提交后调度。 |
+| 新增 | pgmemento | - | 0.7.4 | 新增纯 SQL 扩展；PG 14-18；包含 0.7-0.7.3 到 0.7.4 升级脚本。 |
+| 新增 | pgmonitor | - | 2.2.0 | 新增；PG 14-18；指标无需 preload，可选 worker 需 pgmonitor_bgw preload。 |
+| 新增 | pgsqlmock | - | 1.0.1 | 新增；PG 14-18；修正 control 依赖名 pgTap -> pgtap。 |
+| 新增 | plx | - | 1.3.1 | 新增；PG 14-18；16 平台验证；使用内置 PL/pgSQL handler。 |
+| Rust | anon | 3.1.1 | 3.1.3 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | block_copy_command | 0.1.5 | 0.1.5 | 需 preload；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | convert | 0.1.0 | 0.1.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | etcd_fdw | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | explain_ui | 0.0.2 | 0.0.2 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | graph | 0.1.7 | 0.1.8 | 包名 pggraph；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | jsonschema | 0.1.9 | 0.1.9 | 与 Supabase pg_jsonschema 不同；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_base58 | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_bestmatch | 0.0.2 | 0.0.2 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_cardano | 1.2.0 | 1.2.0 | pgrx 0.18.1 -> 0.19.1；PG 15-18。 |
+| Rust | pg_command_fw | 0.1.0 | 0.1.0 | 启用 hook 需 preload；pgrx 0.18.1 -> 0.19.1；PG 15-18。 |
+| Rust | pg_durable | 0.2.2 | 0.2.3 | 需 preload 和 superuser worker role；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_enigma | 0.5.0 | 0.5.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_eviltransform | 0.0.2 | 0.0.4 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_graphql | 1.6.1 | 1.6.1 | 非上游正式 release；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_idkit | 0.4.0 | 0.4.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_jsonschema | 0.3.4 | 0.3.4 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_kazsearch | 2.2.0 | 2.3.0 | 上游 pgrx 0.17.0，Pigsty 补到 0.19.1；pgrx 0.18.1 -> 0.19.1；PG 16-18。 |
+| Rust | pg_later | 0.4.0 | 0.4.0 | 另补运行时兼容；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_mooncake | 0.2.0 | 0.2.0 | 0.2.0 未正式发布；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_parquet | 0.5.1 | 0.5.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_pinyin | 0.0.4 | 0.0.5 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_polyline | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_render | 0.1.3 | 0.1.3 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_rrf | 0.0.3 | 0.0.3 | 新增 PG18；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_search | 0.24.0 | 0.24.3 | 固定 builder Rust 工具链；pgrx 0.18.1 -> 0.19.1；PG 15-18。 |
+| Rust | pg_session_jwt | 0.5.0 | 0.5.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_smtp_client | 0.2.1 | 0.2.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_strict | 1.0.5 | 1.0.5 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_summarize | 0.0.1 | 0.0.1 | 含 PG18 兼容修复；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_tiktoken | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_tokenizer | 0.1.1 | 0.1.1 | 含 PG18 兼容修复；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pg_trickle | 0.81.0 | 0.81.0 | 仅 PG18；保留 pgrx schema linker section；pgrx 0.18.1 -> 0.19.1；PG 18。 |
+| Rust | pg_when | 0.1.9 | 0.1.9 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pgdd | 0.6.1 | 0.6.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pglinter | 2.0.0 | 2.0.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pglite_fusion | 0.0.6 | 0.0.6 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pgmqtt | 0.3.0 | 0.4.1 | CDC 需 wal_level=logical；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pgrdf | 0.6.4 | 0.6.20 | 新增 PG18；建议 preload；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pgsmcrypto | 0.1.1 | 0.1.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | pgx_ulid | 0.2.3 | 0.2.3 | 仅 gen_monotonic_ulid() 需 preload；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | plprql | 18.0.1 | 18.0.1 | 另补运行时兼容；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | timescaledb_toolkit | 1.23.0 | 1.23.0 | pgrx 0.18.1 -> 0.19.1；PG 15-18。 |
+| Rust | typeid | 0.3.0 | 0.3.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | tzf | 0.3.0 | 0.3.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | vchord | 1.1.1 | 1.1.1 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | vchord_bm25 | 0.3.0 | 0.3.0 | bm25 AM 与 pg_search/pg_textsearch 冲突；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | vectorize | 0.26.2 | 0.26.2 | 版本曾误改为 0.23.0 后回退；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | vectorscale | 0.9.0 | 0.9.0 | pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| Rust | wrappers | 0.6.1 | 0.6.2 | DuckDB FDW feature 中间修改已回退；pgrx 0.18.1 -> 0.19.1；PG 14-18。 |
+| 升级 | babelfishpg_tsql | 5.5.0 | 5.4.0 | 向下修正；支持从 PG17 扩到 PG17-18；仅 WiltonDB 内核。 |
+| 升级 | biscuit | 2.4.1 | 2.4.3 | PG 16-18；包 2.4.3，但 control/SQL default 仍为 2.4.1。 |
+| 升级 | decoderbufs | 3.5.0 | 3.6.0 | PG 14-18；PGDG RPM/DEB。 |
+| 升级 | documentdb | 0.113 | 0.114 | 与三个子扩展共包；PG 15-18；16 平台；最终移除临时导出校验/缓存补丁。 |
+| 升级 | documentdb_core | 0.113 | 0.114 | documentdb 共包扩展；PG 15-18；16 平台。 |
+| 升级 | documentdb_distributed | 0.113 | 0.114 | documentdb 共包扩展；PG 15-18；16 平台。 |
+| 升级 | documentdb_extended_rum | 0.113 | 0.114 | documentdb 共包扩展；PG 15-18；16 平台。 |
+| 升级 | http | 1.7.1 | 1.7.2 | PG 14-18；PGDG RPM/DEB。 |
+| 升级 | jdbc_fdw | 0.4.0 | 0.5.0 | 源码/包 0.5.0、SQL 扩展 1.2；RPM 仅 PG14-16 且缺 EL aarch64；DEB PG14-18，含 PG18 补丁。 |
+| 升级 | nominatim_fdw | 1.3 | 2.0.0 | PG 14-18；Pigsty RPM/DEB 对齐。 |
+| 升级 | odbc_fdw | 0.5.1 | 0.6.1 | 源码/包 0.6.1、SQL 扩展 0.5.2；PG 14-18；PGDG RPM、Pigsty DEB。 |
+| 升级 | ogr_fdw | 1.1.8 | 1.1.9 | PG 14-18；PGDG RPM/DEB。 |
+| 升级 | pg_dbms_errlog | 2.2 | 2.4 | PG 14-18；依赖 pg_statement_rollback；需 preload/restart。 |
+| 升级 | pg_ivm | 1.14 | 1.15 | PG 14-18。 |
+| 升级 | pg_statement_rollback | 1.5 | 1.6 | PG 14-18；PGDG RPM、Pigsty DEB。 |
+| 升级 | pg_tde | 2.1 | 2.2 | 仅 PG 17-18；Percona TDE 内核。 |
+| 升级 | pgauditlogtofile | 1.8.4 | 1.8.5 | PG 14-18；PGDG RPM/DEB。 |
+| 升级 | pgbson | 2.0.2 | 2.0.4 | 包 2.0.4 仍安装 SQL 扩展 2.0；RPM 包族 postgresbson；依赖 libbson。 |
+| 升级 | pgclone | 4.3.2 | 4.4.2 | PG 14-18；保留 RPM LLVM_BINPATH 修复；异步/进度功能需 preload。 |
+| 升级 | pgextwlist | 1.19 | 1.20 | PG 14-18；PGDG RPM/DEB。 |
+| 升级 | pgmnemo | 0.12.1 | 0.13.0 | 支持收窄为 PG 17-18；纯 SQL；要求 pgvector >= 0.7.0。 |
+| 升级 | pgmq | 1.11.1 | 1.12.0 | PG 14-18；纯 SQL。 |
+| 升级 | pgsentinel | 1.4.1 | 1.4.2 | PG 14-18；本批仅 RPM 1.4.2，DEB/control 仍为 1.4.1；明确的 RPM-only 例外。 |
+| 升级 | plpgsql_check | 2.9.2 | 2.10.1 | PG 14-18；Pigsty RPM/DEB 对齐。 |
+| 升级 | plproxy | 2.11.0 | 2.12.0 | PG 14-18；Pigsty RPM 与 PGDG DEB 对齐。 |
+| 升级 | powa | 5.1.2 | 5.2.0 | PG 14-18；PGDG DEB 5.2.0，RPM 仍为 5.1.0。 |
+| 升级 | provsql | 1.10.0 | 1.11.0 | PG 14-18。 |
+| 升级 | re2 | 0.3.0 | 0.4.1 | PG 16-18；Pigsty RPM/DEB。 |
+| 升级 | snowflake | 2.4 | 2.5.0 | 支持从 PG18 扩到 PG15-18；仅 pgEdge 内核。 |
+| 升级 | spock | 5.0.6 | 5.0.10 | 支持从 PG18 扩到 PG15-18；仅 pgEdge 内核。 |
+| 升级 | tdigest | 1.4.3 | 1.4.4 | PG 14-18；PGDG RPM/DEB。 |
+| 升级 | timescaledb | 2.28.2 | 2.28.3 | PG 15-18；timescaledb-tsl；16 平台。 |
+| 升级 | vector | 0.8.4 | 0.8.5 | PG 14-18；PGDG RPM 与 Pigsty DEB 对齐。 |
+| 包侧 | babelfishpg_money | 1.1.0 | 1.1.0 | 版本不变；支持从 PG17 扩到 PG17-18；仅 WiltonDB 内核。 |
+| 包侧 | babelfishpg_tds | 1.0.0 | 1.0.0 | 版本不变；支持从 PG17 扩到 PG17-18；仅 WiltonDB 内核。 |
+| 包侧 | dbt2 | 0.61.7 | 0.61.7 | 新增 Pigsty DEB；PG 14-18；SQL 扩展版本仍为 0.45.0。 |
+| 包侧 | faker | 0.5.3 | 0.5.3 | 新增 Pigsty DEB；PG 14-18；含 PG17+ parser 补丁。 |
+| 包侧 | gb18030_2022 | 1.0 | 1.0 | IvorySQL contrib 包 5.1 -> 5.4；仅 IvorySQL 18；16 平台。 |
+| 包侧 | hdfs_fdw | 2.3.3 | 2.3.3 | 新增 Pigsty DEB；PG 14-18；SQL 扩展版本 2.0.5。 |
+| 包侧 | ivorysql_ora | 1.0 | 1.0 | IvorySQL contrib 包 5.1 -> 5.4；仅 IvorySQL 18；16 平台。 |
+| 包侧 | mobilitydb | 1.3.0 | 1.3.0 | 新增 Pigsty RPM 1.3.0；PG 14-18，EL8/9/10 双架构；DEB 已有 1.3.0。 |
+| 包侧 | mobilitydb_datagen | 1.3.0 | 1.3.0 | 随 mobilitydb 共包新增 RPM；PG 14-18。 |
+| 包侧 | ora_btree_gin | 1.0 | 1.0 | IvorySQL contrib 包 5.1 -> 5.4；仅 IvorySQL 18；16 平台。 |
+| 包侧 | ora_btree_gist | 1.0 | 1.0 | IvorySQL contrib 包 5.1 -> 5.4；仅 IvorySQL 18；16 平台。 |
+| 包侧 | pg_dbms_job | 2.0 | 2.0 | 新增 Pigsty DEB；PG 14-18；worker 需 preload/restart。 |
+| 包侧 | pg_dbms_lock | 2.0 | 2.0 | 新增 Pigsty DEB；PG 14-18；补 pg_background v2 API 兼容。 |
+| 包侧 | pg_dbms_metadata | 1.0.0 | 1.0.0 | 新增 Pigsty DEB；PG 14-18；PGDG RPM 的 EL8 aarch64 缺 PG15。 |
+| 包侧 | pg_fact_loader | 2.0.1 | 2.0.1 | 版本不变；DEB 补 PG18，并为 Ubuntu 26.04 自建 PG14-18 缺口包。 |
+| 包侧 | pg_get_functiondef | 1.0 | 1.0 | IvorySQL contrib 包 5.1 -> 5.4；仅 IvorySQL 18；16 平台。 |
+| 包侧 | pgbouncer_fdw | 1.4.0 | 1.4.0 | 新增 Pigsty DEB；PG 14-18；运行需 PgBouncer admin console。 |
+| 包侧 | plisql | 1.0 | 1.0 | IvorySQL contrib 包 5.1 -> 5.4；仅 IvorySQL 18；16 平台。 |
+
 ## 2026-07-07
 
 | 包名                | 旧版本        | 新版本        | 备注                   |

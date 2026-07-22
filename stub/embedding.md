@@ -19,4 +19,6 @@ CREATE INDEX ON documents USING hnsw (embedding)
   WITH (dims=3, m=3, efconstruction=5, efsearch=5);
 ```
 
-The upstream repository is archived and explicitly says `pg_embedding` is deprecated, with migration to `pgvector` strongly recommended. Keep vector dimensions consistent; validate HNSW recall and tune its build/query parameters against representative data. Use this only to support an existing deployment while planning migration, not for a new system.
+The upstream repository is archived and explicitly says `pg_embedding` is deprecated, with migration to `pgvector` strongly recommended. Keep vector dimensions consistent; `dims` is mandatory for an index and must equal the array element count.
+
+Use dense, NULL-free arrays with finite coordinates. The C distance path reads the raw `real[]` payload without checking for null elements, and cosine distance divides by both vector norms, so a zero vector produces an undefined/NaN result. Validate HNSW recall and tune its build/query parameters against representative data. Use this only to support an existing deployment while planning migration, not for a new system.

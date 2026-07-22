@@ -2,19 +2,19 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/bmuratshin/zcurve/blob/76b88d80794a4ccde95c01111453ad8d7fbdbf36/zcurve.control)
+- [Version 1.3 SQL API](https://github.com/bmuratshin/zcurve/blob/76b88d80794a4ccde95c01111453ad8d7fbdbf36/zcurve--1.3.sql)
+- [Lookup implementation](https://github.com/bmuratshin/zcurve/blob/76b88d80794a4ccde95c01111453ad8d7fbdbf36/zcurve.c)
+- [B-tree traversal implementation](https://github.com/bmuratshin/zcurve/blob/76b88d80794a4ccde95c01111453ad8d7fbdbf36/sp_tree.c)
 
-`zcurve` — Two- and three-dimensional Z-order bit interleaving plus direct range lookup over numeric B-tree indexes.
-
-The reviewed catalog snapshot records version `1.3`, kind `standard`, and implementation language `C`.
+`zcurve` interleaves two or three integer coordinates into a Z-order key and performs rectangular lookup by traversing an existing numeric B-tree index. Version 1.3 exposes `zcurve_val_from_xy`, `zcurve_num_from_xy`, `zcurve_num_from_xyz`, and 2-D/3-D lookup functions returning heap TIDs and decoded coordinates.
 
 ```sql
-CREATE EXTENSION "zcurve";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'zcurve';
+CREATE EXTENSION zcurve;
+CREATE TABLE points (x integer, y integer, zkey numeric);
+CREATE INDEX points_zkey_idx ON points (zkey);
+SELECT * FROM zcurve_2d_lookup('points_zkey_idx', 0, 100, 0, 100);
 ```
 
-The curated lifecycle is `abandoned`. Pin the reviewed build and verify maintenance status before adoption.
+The lookup argument is an index relation name, not a table. The implementation opens PostgreSQL B-tree internals directly, assumes its first key contains the expected numeric Z-order encoding, and returns physical TIDs; join results back to the heap immediately and recheck coordinate predicates because TIDs change after updates or table rewrites.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+This is abandoned server-internal C code with copied numeric/B-tree structures, debug logging, no user README, and no stated modern PostgreSQL compatibility. A mismatched server major, index definition, coordinate range, or numeric representation can crash or return wrong rows. Use only for historical research on disposable data; prefer maintained spatial indexing such as GiST/SP-GiST/PostGIS for production.

@@ -2,34 +2,40 @@
 
 Sources:
 
-- [file_fdw_program documentation at the reviewed commit](https://github.com/corlogic-code/file_fdw_program/blob/412b751c6af32882f335515e5af1337000624ce2/doc/file_fdw_program.md)
-- [file_fdw_program README at the reviewed commit](https://github.com/corlogic-code/file_fdw_program/blob/412b751c6af32882f335515e5af1337000624ce2/README.md)
-- [Current PostgreSQL file_fdw documentation](https://www.postgresql.org/docs/current/file-fdw.html)
+- [Official upstream documentation](https://github.com/corlogic-code/file_fdw_program/blob/412b751c6af32882f335515e5af1337000624ce2/doc/file_fdw_program.md)
+- [Official extension control file](https://github.com/corlogic-code/file_fdw_program/blob/412b751c6af32882f335515e5af1337000624ce2/file_fdw_program.control)
+- [Official implementation](https://github.com/corlogic-code/file_fdw_program/blob/412b751c6af32882f335515e5af1337000624ce2/src/file_fdw_program.c)
 
-`file_fdw_program` is a historical backport of the `program` option for `file_fdw`. Instead of reading a named file, a foreign table runs a server-side command and parses its standard output with COPY-style format options.
+`file_fdw_program` 1.0.1 is a PostgreSQL 9.4-era, read-only FDW that feeds an external command's standard output through COPY parsing. It backported the `program` option later incorporated into core `file_fdw` for PostgreSQL 10. On supported modern PostgreSQL releases, prefer the built-in `file_fdw` implementation.
 
-### Create a Program-Backed Foreign Table
+### Core Workflow
+
+Only a superuser can define or change the command-bearing foreign-table options:
 
 ```sql
 CREATE EXTENSION file_fdw_program;
-CREATE SERVER file_program_server
-  FOREIGN DATA WRAPPER file_fdw_program;
+CREATE SERVER local_program FOREIGN DATA WRAPPER file_fdw_program;
 
 CREATE FOREIGN TABLE generated_rows (
   one text,
   two text,
   three text
 )
-SERVER file_program_server
-OPTIONS (program 'echo one,two,three', format 'csv');
+SERVER local_program
+OPTIONS (
+  program 'printf "one,two,three\n"',
+  format 'csv'
+);
 
 SELECT * FROM generated_rows;
 ```
 
-The command runs when the foreign table is scanned. The available format options follow the extension's `file_fdw`-like interface.
+Use either `program` or `filename`, never both. Other table and column options follow the COPY FROM parsing options supported by the target server version.
 
-### Caveats
+### Execution Boundary
 
-- PostgreSQL 10 and later include `program` support in the bundled `file_fdw`; use the bundled extension on modern PostgreSQL instead of this version 1.0.1 backport.
-- A `program` is executed by the PostgreSQL server operating-system account. Treat server and foreign-table ownership as code-execution privileges, use fixed commands, and do not interpolate untrusted input.
-- Upstream describes this package as a PostgreSQL 9.4-or-newer backport from 2016. It does not document support for current PostgreSQL releases.
+The command is executed by the PostgreSQL server under the operating-system account running the database, not by the SQL client. It inherits server-side filesystem, environment, network, and process privileges. The validator restricts foreign-table option changes to superusers, but selecting the table runs the saved command; tightly control ownership, grants, and dependency chains so untrusted roles cannot cause privileged command execution or alter referenced objects.
+
+### Compatibility and Operations
+
+The wrapper is read-only and cannot estimate command output from filesystem metadata, so plans use fallback estimates. Commands must produce stable rows matching the declared types and COPY format; nonzero exits, stderr, encoding errors, or malformed rows fail the scan. Avoid secrets in command text because catalog metadata and logs may expose it. Set operating-system limits, absolute executable paths, a minimal environment, and explicit timeouts outside the extension. This project is deprecated and targets old PostgreSQL APIs; use it only for a pinned legacy server after testing cancellation, repeated scans, parallel plans, command failure, and privilege behavior.

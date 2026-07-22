@@ -2,24 +2,26 @@
 
 来源：
 
-- [官方上游文档](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/using-the-index-adviser-extension-on-an-apsaradb-rds-for-postgresql-instance)
-- [官方主文档](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Official upstream documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/using-the-index-adviser-extension-on-an-apsaradb-rds-for-postgresql-instance)
+- [Official primary documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
 
-`index_adviser` — Alibaba Cloud RDS 扩展，用于分析工作负载并推荐 B-tree 索引。
+`index_adviser` 2.0 是阿里云 RDS PostgreSQL 扩展，根据已规划或已执行的查询估算有用的 B-tree 索引。它属于云厂商托管软件，建议只是估算结果，执行生成的 DDL 前必须人工审查。
 
-已复核目录快照记录的版本为 `2.0`、类型为 `preload`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+创建扩展，然后选择在当前会话加载，或者配置 `shared_preload_libraries` 并重启实例，使其对所有会话生效。
 
 ```sql
-CREATE EXTENSION "index_adviser";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'index_adviser';
+CREATE EXTENSION index_adviser;
+LOAD 'index_adviser';
+
+EXPLAIN SELECT * FROM orders WHERE customer_id = 42;
+SELECT * FROM index_advisory;
+SELECT show_index_advisory(NULL);
 ```
 
-这是 `Alibaba Cloud` 的服务商专用组件；可用性、启用、权限与升级遵循该服务，而不是可移植的社区软件包。
+普通 `EXPLAIN` 不执行查询，但会记录建议。正常执行的查询会在运行期间被分析。`index_advisory` 保存逐查询原始估算；`show_index_advisory(pid)` 将指定会话建议格式化成 `CREATE INDEX` 语句；`select_index_advisory` 汇总所有已记录会话。
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+### 要求与限制
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+当前厂商文档要求在创建或重建扩展时，RDS PostgreSQL 小版本至少为 20230830。不要在只读事务中使用。它只建议单列或复合 B-tree 索引，不支持 GIN、GiST 或哈希索引。应用建议前，应核验工作负载代表性、写放大、存储、重复索引、锁影响与维护成本。

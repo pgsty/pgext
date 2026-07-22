@@ -2,24 +2,37 @@
 
 Sources:
 
-- [pg_xid README at the reviewed commit](https://github.com/iCyberon/pg_xid/blob/61214ecd1a5e469771580eb8a7d320d632a7d6d1/README.md)
-- [pg_xid 1.0 install SQL at the reviewed commit](https://github.com/iCyberon/pg_xid/blob/61214ecd1a5e469771580eb8a7d320d632a7d6d1/pg_xid--1.0.sql)
-- [pg_xid C entry points at the reviewed commit](https://github.com/iCyberon/pg_xid/blob/61214ecd1a5e469771580eb8a7d320d632a7d6d1/pg_xid.c)
+- [Official README](https://github.com/iCyberon/pg_xid/blob/61214ecd1a5e469771580eb8a7d320d632a7d6d1/README.md)
+- [Version 1.0 SQL API](https://github.com/iCyberon/pg_xid/blob/61214ecd1a5e469771580eb8a7d320d632a7d6d1/pg_xid--1.0.sql)
+- [PostgreSQL entry points](https://github.com/iCyberon/pg_xid/blob/61214ecd1a5e469771580eb8a7d320d632a7d6d1/pg_xid.c)
+- [Identifier generation and encoding](https://github.com/iCyberon/pg_xid/blob/61214ecd1a5e469771580eb8a7d320d632a7d6d1/xid.c)
 
-`pg_xid` 1.0 generates Mongo ObjectID-compatible 12-byte identifiers. `xid` returns the raw value as `bytea`; `xid_encoded` returns its 20-character encoded `text` form. The layout combines a seconds timestamp, machine identifier, process ID, and per-process counter.
+`pg_xid` 1.0 generates 12-byte identifiers with the classic MongoDB ObjectID layout: a four-byte seconds timestamp, three-byte hostname-derived value, two-byte process ID, and three-byte per-process counter. It needs no central sequence and is roughly ordered by creation time. `xid()` returns raw `bytea`; `xid_encoded()` returns a 20-character custom Base32 string.
+
+### Generate Identifiers
 
 ```sql
 CREATE EXTENSION pg_xid;
 
-SELECT encode(xid(), 'hex');
-SELECT xid_encoded();
+SELECT encode(xid(), 'hex') AS raw_hex;
+SELECT xid_encoded() AS compact_text;
 ```
 
-The timestamp prefix makes the identifiers roughly ordered by creation time without a central generator.
+Choose one representation for a column and keep it consistent:
 
-### Caveats
+```sql
+CREATE TABLE event (
+  id bytea PRIMARY KEY DEFAULT xid(),
+  payload jsonb NOT NULL
+);
+```
 
-- These identifiers are not secrets or cryptographic random tokens. Their layout exposes creation time and process/machine-derived components.
-- The 24-bit counter allows 16,777,216 values per second per host/process before wrapping, according to upstream; generator limits still need workload testing.
-- Upstream provides no release series or current PostgreSQL compatibility matrix. Build and concurrency-test the C extension on every target major and architecture.
-- Store the raw and encoded forms consistently. Text ordering, binary ordering, and application serialization should be verified before using them as distributed sort keys.
+The binary form is 12 bytes; its ordinary hex rendering is 24 characters. The encoded function uses upstream's ordered alphabet `0-9a-v` and produces 20 characters, not MongoDB's usual hexadecimal text.
+
+### Operational and Security Boundaries
+
+The leading timestamp makes values only approximately time ordered: all IDs generated in the same second are ordered by host/process/counter components, not by a global clock. Clock changes, hostname reuse, containers with identical hostnames, PID reuse, counter wrap, and cloned environments all affect collision assumptions. A 24-bit counter wraps after 16,777,216 IDs in one second per initialized host/process context.
+
+These values are not secrets and are not cryptographic random tokens. They expose creation time plus host- and process-derived bits. Do not use them for authentication, capability URLs, or information-hiding identifiers.
+
+Upstream provides no modern PostgreSQL compatibility matrix or upgrade series. The C code depends on OpenSSL MD5 for the hostname component and PostgreSQL APIs for strong random initialization. Build and concurrency-test it on each target architecture and PostgreSQL major, and validate dump/restore plus byte/text ordering before using it as a distributed primary key.

@@ -36,6 +36,7 @@ Queue creation is a security-definer operation whose PUBLIC execute privilege is
 
 - Delivery is transactional but not an exactly-once distributed protocol. Consumers must make external side effects idempotent and decide how to recover abandoned work.
 - The retrieval functions update queue rows and can block under concurrent consumption. This design is suitable for modest integration queues, not a high-throughput broker replacement.
+- `pg_mq_create_queue` and `pg_mq_drop_queue` are security-definer functions without a fixed `SET search_path`. Although installation revokes their default public execution privilege, do not grant them to untrusted roles without first repairing and reviewing that boundary.
 - PostgreSQL notifications are wakeups, not protected payload delivery. Database users can generally LISTEN on a channel; secure the underlying tables and do not put secrets in notification payloads.
 - The published 0.2.1 SQL defines pg_mq_rebuild_triggers with an undeclared t_table_name reference. Do not rely on that restoration helper without patching and testing it.
 - Some internal function signatures use integer message identifiers even though queue identifiers are based on bigint. Test rollover and retention behavior for long-lived queues.

@@ -2,32 +2,44 @@
 
 Sources:
 
-- [jsonb_schema README at the reviewed commit](https://github.com/postgrespro/jsonb_schema/blob/541028e86696c2bfc9c057245ed47563d92befa0/README.md)
-- [jsonb_schema 1.0 install SQL at the reviewed commit](https://github.com/postgrespro/jsonb_schema/blob/541028e86696c2bfc9c057245ed47563d92befa0/jsonb_schema--1.0.sql)
-- [jsonb_schema regression SQL at the reviewed commit](https://github.com/postgrespro/jsonb_schema/blob/541028e86696c2bfc9c057245ed47563d92befa0/sql/test.sql)
+- [Official README](https://github.com/postgrespro/jsonb_schema/blob/master/README.md)
+- [Extension control file](https://github.com/postgrespro/jsonb_schema/blob/master/jsonb_schema.control)
+- [Version 1.0 extension SQL](https://github.com/postgrespro/jsonb_schema/blob/master/jsonb_schema--1.0.sql)
+- [Upstream regression example](https://github.com/postgrespro/jsonb_schema/blob/master/sql/test.sql)
 
-`jsonb_schema` version 1.0 separates repeated JSONB structure from values. `jsonb_pack` stores a deduplicated binary schema in `jsonb_schemes` and returns a two-element JSONB array containing the schema ID and encoded data; `jsonb_unpack` reconstructs the original value.
+jsonb_schema separates the structural schema of a JSONB value from its scalar data and stores each distinct schema once in a database table. It can reduce storage when many documents share the same shape, but the packed representation is not self-contained and is not directly queryable like the original document.
+
+### Core Workflow
+
+Pack documents before storage and unpack them when the original JSONB value is needed.
 
 ```sql
 CREATE EXTENSION jsonb_schema;
 
-CREATE TABLE packed_documents (
-  id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  payload jsonb NOT NULL
+CREATE TABLE compact_events (
+    id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    packed jsonb NOT NULL
 );
 
-INSERT INTO packed_documents (payload)
-VALUES (jsonb_pack('{"kind":"event","value":42}'::jsonb));
+INSERT INTO compact_events (packed)
+VALUES
+    (jsonb_pack('{"kind":"click","user":10,"tags":["a","b"]}'::jsonb)),
+    (jsonb_pack('{"kind":"view","user":11,"tags":["c"]}'::jsonb));
 
-SELECT id, jsonb_unpack(payload)
-FROM packed_documents;
-
-SELECT count(*) FROM jsonb_schemes;
+SELECT id, jsonb_unpack(packed) AS document
+FROM compact_events;
 ```
 
-### Caveats
+The packed value is a two-element JSONB array containing a schema identifier and encoded data. The shared schema bytes live in the extension-owned dictionary table.
 
-- Packed values are an extension-specific array representation, not transparently queryable as the original object. Applications must unpack them before normal JSONB access.
-- `jsonb_pack` performs an insert when a schema is new. Treat it as a write operation even though the install SQL labels the function parallel safe.
-- The functions refer to `jsonb_schemes` without schema qualification. If the extension is installed outside the active search path, calls can fail or resolve an unintended relation; pin a controlled search path and test the chosen extension schema.
-- Preserve and back up `jsonb_schemes` together with every packed column. A packed value cannot be reconstructed when its referenced schema row is missing.
+### Installed Objects
+
+Version 1.0 creates the schema dictionary table, unique indexes for schema bytes and identifiers, two C-level schema/data conversion functions, and the pack and unpack wrappers. Packing inserts a new schema row on first use and reuses the identifier on conflict.
+
+### Storage and Lifecycle Boundaries
+
+Measure with representative data before adopting the format: documents with repeated shapes may benefit, while highly variable shapes pay dictionary and encoding overhead. Indexes or expressions aimed at original JSON fields must unpack first, so ordinary JSONB query and index behavior does not transparently carry over to the packed column.
+
+Packed rows depend on the exact identifier mapping in the dictionary table. Dump, restore, replicate, or move that table together with all packed values; copying only the JSONB column to another database can decode against the wrong schema or return no value. Do not delete dictionary rows still referenced by packed documents. The extension does not provide reference counting or schema garbage collection.
+
+Packing writes shared metadata even though it is called as a function, so treat it as a write operation for transaction, permission, and concurrency planning. The extension is relocatable and declares no preload or restart requirement.

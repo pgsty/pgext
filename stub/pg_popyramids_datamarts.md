@@ -2,28 +2,39 @@
 
 Sources:
 
-- [Upstream README](https://github.com/torrespri/pg_popyramids_datamarts/blob/24a3360122d8c3ba9503b36cc41b50d48a248552/README.md)
-- [Upstream documentation](https://github.com/torrespri/pg_popyramids_datamarts/blob/24a3360122d8c3ba9503b36cc41b50d48a248552/doc/pg_popyramids_datamarts.md)
-- [Extension control file](https://github.com/torrespri/pg_popyramids_datamarts/blob/24a3360122d8c3ba9503b36cc41b50d48a248552/pg_popyramids_datamarts.control)
-- [Extension SQL](https://github.com/torrespri/pg_popyramids_datamarts/blob/24a3360122d8c3ba9503b36cc41b50d48a248552/sql/pg_popyramids_datamarts--1.0.0.sql)
+- [Official repository](https://github.com/torrespri/pg_popyramids_datamarts)
+- [Extension control file](https://github.com/torrespri/pg_popyramids_datamarts/blob/master/pg_popyramids_datamarts.control)
+- [Version 1.0.0 extension SQL](https://github.com/torrespri/pg_popyramids_datamarts/blob/master/sql/pg_popyramids_datamarts--1.0.0.sql)
+- [Upstream project documentation](https://github.com/torrespri/pg_popyramids_datamarts/blob/master/doc/pg_popyramids_datamarts.md)
 
-`pg_popyramids_datamarts` is the data-mart layer of the popyramids population-pyramid application, not a standalone general-purpose extension. Version `1.0.0` requires PostGIS and assumes an existing application database with `dms` and `ods` schemas, the `ods.pyrint` type, and the `ods.main` source table.
+pg_popyramids_datamarts installs the data-mart layer of the popyramids application: demographic pyramid types and transformations, PostGIS geometry helpers, GeoJSON-producing functions, and populated materialized views. It is application schema, not a standalone general-purpose extension.
 
-Check the application prerequisites before creating it; only a matching popyramids database should proceed to the activation and query steps:
+### Required Application Environment
+
+The control file requires PostGIS and marks the extension non-relocatable, but the version 1.0.0 SQL has additional prerequisites that are not encoded there. Before installation, the database must already have the destination schema, the operational-data-store schema with its pyramid type and source table, and the hard-coded roles referenced by grants.
 
 ```sql
-SELECT
-  to_regnamespace('dms') AS dms_schema,
-  to_regnamespace('ods') AS ods_schema,
-  to_regtype('ods.pyrint') AS ods_pyrint,
-  to_regclass('ods.main') AS ods_main;
-
 CREATE EXTENSION postgis;
-CREATE EXTENSION pg_popyramids_datamarts;
+CREATE SCHEMA dms;
 
-SELECT dms.chibo_give_me_pyramids(ARRAY[1, 2]);
+-- The popyramids ODS deployment must already provide ods.pyrint and ods.main.
+-- Provision the roles referenced by the upstream grants before continuing.
+CREATE EXTENSION pg_popyramids_datamarts;
 ```
 
-### Deployment constraints
+Do not run the final statement in a generic database: extension creation builds materialized views with data from the existing operational store and will fail if any application-specific type, relation, column, role, or schema is absent.
 
-The install script creates application-specific types, functions, casts, and materialized views, and it reads directly from `ods.main`. It also contains ownership and grant statements for the roles `postgres` and `chichinabo`. Creation will fail in a generic database when expected schemas, types, tables, or roles are absent; review and patch those environment assumptions before deployment.
+### Main Object Families
+
+- Demographic types represent age buckets, male and female counts or percentages, variables, and classified pyramid shapes.
+- Array and pyramid helpers aggregate buckets, compute totals and percentages, convert operational-store values, and derive PostGIS geometry.
+- Query helpers select population-pyramid identifiers and return GeoJSON-like feature collections for map clients.
+- Materialized views expose raw, five-year, ten-year, and broad-group variants, percentage variants, statistics, and user-interface catalogs.
+
+### Refresh and Ownership Boundaries
+
+The materialized views are created with data and depend on the existing source table and on one another. The extension does not supply an automated refresh schedule; refresh them in dependency order after source changes and assess locking, runtime, and storage on production-sized data.
+
+Version 1.0.0 embeds application-specific grants and object names, including PostgreSQL roles. Review the complete SQL against the target popyramids deployment before installation instead of treating the control-file dependency list as sufficient. Test installation and removal on a restored copy, because the extension owns a large graph of schema-qualified types, casts, functions, and populated views.
+
+No preload or restart is declared. Database-level installation still requires authority to create all application objects and to grant privileges to the referenced roles.

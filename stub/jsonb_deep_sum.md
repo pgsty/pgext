@@ -2,35 +2,35 @@
 
 Sources:
 
-- [jsonb_deep_sum README at the reviewed commit](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/README.md)
-- [jsonb_deep_sum.control at the reviewed commit](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/jsonb_deep_sum.control)
-- [jsonb_deep_sum on PGXN](https://pgxn.org/dist/jsonb_deep_sum/)
+- [Official README](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/README.md)
+- [Extension SQL API](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/jsonb_deep_sum--0.0.2.sql)
+- [Official regression tests](https://github.com/furstenheim/jsonb_deep_sum/blob/3f1b4be67e3bc74b7cc4635fc285dc3c602ee420/sql/jsonb_deep_sum_test.sql)
 
-`jsonb_deep_sum` recursively combines numeric fields in JSONB objects. It provides `jsonb_deep_add` for adding two objects and the `jsonb_deep_sum` aggregate for reducing a column across rows while preserving nested object structure.
+`jsonb_deep_sum` 0.0.2 recursively adds numeric leaves in JSON objects. It supplies a two-value function and an aggregate, making it useful for summing sparse, nested metric maps whose keys differ between rows.
 
-### Add and Aggregate JSONB Values
+### Core Workflow
 
 ```sql
 CREATE EXTENSION jsonb_deep_sum;
 
 SELECT jsonb_deep_add(
-  '{"a": 1, "nested": {"b": 2}}'::jsonb,
-  '{"a": 4, "nested": {"b": 3}}'::jsonb
+  '{"requests":{"ok":4},"bytes":10}'::jsonb,
+  '{"requests":{"ok":3,"failed":1},"bytes":5}'::jsonb
 );
 
-CREATE TABLE measurements (data jsonb);
-INSERT INTO measurements VALUES
-  ('{"a": 1}'),
-  ('{"a": 2, "b": 1}'),
-  ('{"a": 5}');
+CREATE TABLE metric_batch (metrics jsonb);
+INSERT INTO metric_batch VALUES
+  ('{"a":1,"nested":{"x":2}}'),
+  ('{"a":4,"nested":{"x":3,"y":8}}'),
+  (NULL);
 
-SELECT jsonb_deep_sum(data) FROM measurements;
+SELECT jsonb_deep_sum(metrics) FROM metric_batch;
 ```
 
-The final aggregate in this example produces an object equivalent to `{"a": 8, "b": 1}`.
+`jsonb_deep_add(jsonb, jsonb) RETURNS jsonb` merges objects recursively and adds numeric values at matching paths. Keys present on only one side are retained. `jsonb_deep_sum(jsonb)` uses that function as its transition step with `{}` as the initial state; SQL NULL input rows are skipped.
 
-### Caveats
+### Data Contract and Limitations
 
-- Version 0.0.2 supports JSON objects and numeric values. Upstream says nulls, strings, arrays, and booleans inside the JSON value raise an error.
-- The algorithm traverses JSONB's internally sorted tree and performs a merge; it does not define array-merging or nonnumeric conflict semantics.
-- Both the control file and PGXN distribution identify version 0.0.2, matching the catalog version.
+Every JSON value traversed must be either an object or a number. Strings, booleans, JSON nulls, and arrays raise errors, and incompatible shapes at the same key are not a coercion mechanism. Validate documents before aggregation and keep units consistent for every repeated path.
+
+The implementation directly walks PostgreSQL's internal `jsonb` representation in C. Upstream examples tested PostgreSQL 12-era builds but do not publish a current major-version matrix; rebuild and run the regression suite against the exact server. Aggregation materializes a complete result object in backend memory, so high key cardinality or deeply nested documents can be expensive. For schema-stable metrics, typed columns generally provide clearer validation, indexing, and overflow handling.

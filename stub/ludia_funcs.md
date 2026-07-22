@@ -2,19 +2,32 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/pgbigm/ludia_funcs/blob/d220429554fbc1f04573f444a58bc5ab8919d4a6/ludia_funcs.control)
-- [Official upstream documentation](https://github.com/pgbigm/ludia_funcs/blob/d220429554fbc1f04573f444a58bc5ab8919d4a6/README.md)
+- [Official README](https://github.com/pgbigm/ludia_funcs/blob/d220429554fbc1f04573f444a58bc5ab8919d4a6/README.md)
+- [Official extension SQL](https://github.com/pgbigm/ludia_funcs/blob/d220429554fbc1f04573f444a58bc5ab8919d4a6/ludia_funcs--1.0.sql)
+- [Official C implementation](https://github.com/pgbigm/ludia_funcs/blob/d220429554fbc1f04573f444a58bc5ab8919d4a6/ludia_funcs.c)
 
-`ludia_funcs` — Ludia full-text search helper functions
+`ludia_funcs` supplies Ludia-compatible text normalization and snippet helpers for PostgreSQL. It is mainly useful when porting applications that expect Ludia/Senna behavior or combining the helpers with a full-text search extension such as `pg_bigm`.
 
-The reviewed catalog snapshot records version `1.0`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "ludia_funcs";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'ludia_funcs';
+CREATE EXTENSION ludia_funcs;
+
+SELECT pgs2norm('ｱﾌﾟﾘｹｰｼｮﾝ');
+SELECT pgs2snippet1(1, 32, 1, '★', '★', 0,
+                    'ｱﾌﾟﾘｹｰｼｮﾝ', '...');
+SELECT * FROM pgs2seninfo();
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The installed SQL surface is compact:
+
+- `pgs2norm(text)` normalizes text using Senna.
+- `pgs2snippet1(...)` produces highlighted snippets with caller-supplied width, result count, tags, keyword count, source text, and keyword arguments.
+- `pgs2seninfo()` returns the linked Senna version and configure options.
+- `pgs2textporter1(text)` invokes the optional TextPorter integration when the extension was compiled with that support.
+
+### Configuration and Boundaries
+
+`ludia_funcs` initializes Senna when its library is first loaded; the control file does not require `shared_preload_libraries`. Its optional GUCs include `ludia_funcs.norm_cache_limit` (negative means use `work_mem`, zero means unlimited) and `ludia_funcs.escape_snippet_keyword`. TextPorter builds can expose additional settings.
+
+The primary functions expect a UTF-8 database. `pgs2textporter1()` operates on server-side application files and temporary files, so it crosses a filesystem and privilege boundary; do not pass untrusted paths, and do not assume TextPorter was compiled into a particular package. The extension declares no SQL dependency on `pg_bigm`; that integration is optional.

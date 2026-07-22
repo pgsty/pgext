@@ -2,22 +2,34 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/fraktalio/fmodel-rust-postgres/blob/3f9c55771582e1fc7fd77858b0aded2fcb766cae/fmodel_rust_postgres.control)
-- [Official upstream documentation](https://github.com/fraktalio/fmodel-rust-postgres/blob/3f9c55771582e1fc7fd77858b0aded2fcb766cae/README.md)
-- [Official Rust package manifest](https://github.com/fraktalio/fmodel-rust-postgres/blob/3f9c55771582e1fc7fd77858b0aded2fcb766cae/Cargo.toml)
+- [Official README](https://github.com/fraktalio/fmodel-rust-postgres/blob/3f9c55771582e1fc7fd77858b0aded2fcb766cae/README.md)
+- [Extension control file](https://github.com/fraktalio/fmodel-rust-postgres/blob/3f9c55771582e1fc7fd77858b0aded2fcb766cae/fmodel_rust_postgres.control)
+- [Rust extension entry point](https://github.com/fraktalio/fmodel-rust-postgres/blob/3f9c55771582e1fc7fd77858b0aded2fcb766cae/src/lib.rs)
+- [Event-sourcing schema](https://github.com/fraktalio/fmodel-rust-postgres/blob/3f9c55771582e1fc7fd77858b0aded2fcb766cae/sql/event_sourcing.sql)
 
-`fmodel_rust_postgres` — Run f{model} event-sourced domain models inside PostgreSQL as a pgrx extension.
+`fmodel_rust_postgres` embeds a concrete Rust event-sourcing demonstration in PostgreSQL. The checked source models restaurant and order commands with fmodel-rust; it is a project template and domain example, not a generic SQL-configurable event-sourcing framework.
 
-The reviewed catalog snapshot records version `1.0.0`, kind `standard`, and implementation language `Rust`.
-The curated compatibility set is `13,14,15,16`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "fmodel_rust_postgres";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'fmodel_rust_postgres';
+CREATE EXTENSION fmodel_rust_postgres;
+
+SELECT *
+FROM handle(
+  '{"CreateRestaurant":{"name":"Ada Cafe","menu":[]}}'::Command
+);
+
+SELECT *
+FROM handle_all(ARRAY[
+  '{"CreateRestaurant":{"name":"North Cafe","menu":[]}}'::Command,
+  '{"CreateRestaurant":{"name":"South Cafe","menu":[]}}'::Command
+]);
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+`handle(Command)` returns an array of `Event` values for one command. `handle_all(Command[])` processes a command batch in one PostgreSQL transaction, so later commands can observe earlier results and any error rolls the batch back. Installed objects also include `deciders`, `events`, `restaurants`, and `orders`, plus triggers that project restaurant and order events and enforce the previous-event chain.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Domain and Security Boundaries
+
+The `Command` and `Event` types and their JSON representation are compiled Rust domain types. Adding a domain, changing a payload, or changing projection behavior requires changing the Rust source and rebuilding the extension; arbitrary applications cannot register deciders through SQL. The bootstrap creates generic unqualified object names, so install in a dedicated database or schema plan and inspect collisions before enabling it.
+
+The event tables and functions receive ordinary PostgreSQL default privileges unless administrators revoke them. Direct writes or DDL against the tables can bypass the intended command path, and the extension does not add row-level security, tenant isolation, or an authorization policy. Restrict table writes and function execution, expose an application-specific API, and design backup, replay, retention, and schema-evolution procedures before production use. The pinned build uses pgrx 0.16 with PostgreSQL 13–16 features; match the binary to the exact server major and test upgrades.

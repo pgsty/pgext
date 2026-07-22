@@ -2,22 +2,53 @@
 
 Sources:
 
-- [Official upstream source](https://docs.cloud.google.com/alloydb/docs/elastic-search?hl=en)
+- [AlloyDB Elasticsearch FDW documentation](https://docs.cloud.google.com/alloydb/docs/elastic-search?hl=en)
+- [AlloyDB release notes](https://docs.cloud.google.com/alloydb/docs/release-notes)
 
-`external_search_fdw` — AlloyDB extension that provides a read-only foreign data wrapper for querying Elasticsearch data from PostgreSQL.
+`external_search_fdw` is a Google-managed AlloyDB extension that exposes Elasticsearch indexes as read-only foreign tables. It is useful when SQL, Lucene syntax, Query DSL, or AlloyDB hybrid search must operate over Elasticsearch data without copying it into PostgreSQL.
 
-The reviewed catalog snapshot records version `unknown`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `17,18`; confirm the exact build against the target server.
+### Core Workflow
+
+Create an Elasticsearch read-only API key, store it in Secret Manager, grant the AlloyDB service account access to that secret, and enable outbound connectivity before configuring the FDW.
 
 ```sql
-CREATE EXTENSION "external_search_fdw";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'external_search_fdw';
+CREATE EXTENSION external_search_fdw;
+
+CREATE SERVER elasticsearch_server
+FOREIGN DATA WRAPPER external_search_fdw
+OPTIONS (
+    server 'https://elastic.example.com:9200',
+    search_provider 'elastic',
+    auth_mode 'secret_manager',
+    auth_method 'ApiKey',
+    secret_path 'projects/123456789012/secrets/es-key/versions/1'
+);
+
+CREATE USER MAPPING FOR CURRENT_USER
+SERVER elasticsearch_server;
+
+CREATE FOREIGN TABLE es_documents (
+    metadata external_search_fdw_schema.OpaqueMetadata,
+    id bigint,
+    body text,
+    qubits integer
+)
+SERVER elasticsearch_server
+OPTIONS (remote_table_name 'documents');
+
+SELECT id, body
+FROM es_documents
+WHERE qubits < 105
+ORDER BY metadata <@> 'body:"quantum computing"'
+LIMIT 10;
 ```
 
-This is a provider-specific component for `Google Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Use `remote_field_name` on a foreign-table column when its PostgreSQL name differs from the Elasticsearch field. The `metadata <@>` ordering expression accepts Lucene query text; the same metadata object can receive the documented Query DSL JSON form.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+### Server Options and Query Behavior
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+`auth_method` accepts `ApiKey` or `Basic`. Optional `max_deadline_ms`, `pagination_num_results`, and `pagination_context_timeout_ms` options control request and pagination behavior. AlloyDB attempts to push `SELECT`, `WHERE`, `ORDER BY`, and `LIMIT` work to Elasticsearch. Inspect important queries with `EXPLAIN VERBOSE`; missing or non-pushable limits can invoke Elasticsearch Scroll API pagination.
+
+### Caveats
+
+This integration is a Preview feature for AlloyDB running PostgreSQL `17` or later. It reads but does not write Elasticsearch data, so synchronization remains the application's responsibility. Not every Elasticsearch type is supported, and specialized types such as `geo_point` are excluded. `LIKE` and some other text predicates are not pushed down. Availability and upgrades follow AlloyDB rather than a community package.

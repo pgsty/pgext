@@ -2,18 +2,43 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/danolivo/pg_repeater/blob/93cabed0ce5cec20d36d1cd56e200a4a0091d55d/pg_repeater.control)
+- [Official README](https://github.com/danolivo/pg_repeater/blob/master/README.md)
+- [Extension control file](https://github.com/danolivo/pg_repeater/blob/master/pg_repeater.control)
+- [Hook implementation](https://github.com/danolivo/pg_repeater/blob/master/pg_repeater.c)
 
-`pg_repeater` — Replicates utility statements and serialized query plans to a remote PostgreSQL node over postgres_fdw.
+`pg_repeater` 0.1 is a PostgreSQL patch-and-extension prototype that forwards utility commands and serialized executor plans to a remote server. It depends on postgres_fdw and pg_execplan plus compatible patched source trees. It is research code, not a replication or distributed-transaction system.
 
-The reviewed catalog snapshot records version `0.1`, kind `preload`, and implementation language `C`.
-Install and validate the declared extension dependencies first: `pg_execplan`, `postgres_fdw`.
+### Core Workflow
 
-```sql
-CREATE EXTENSION "pg_repeater";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_repeater';
+The local and remote servers need matching object layouts and the companion execution support. Configure a postgres_fdw server named by the extension GUC, then preload the hook library and restart PostgreSQL.
+
+```conf
+shared_preload_libraries = 'pg_repeater'
+repeater.fdwname = 'remoteserv'
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```sql
+CREATE EXTENSION postgres_fdw;
+CREATE EXTENSION pg_execplan;
+CREATE EXTENSION pg_repeater;
+
+CREATE SERVER remoteserv
+FOREIGN DATA WRAPPER postgres_fdw
+OPTIONS (host '/tmp', dbname 'remote_compute');
+
+CREATE USER MAPPING FOR CURRENT_USER
+SERVER remoteserv
+OPTIONS (user 'remote_executor');
+```
+
+### Execution Model
+
+- ProcessUtility and executor hooks intercept eligible statements. Plans are serialized, object OIDs are converted to a portable representation, and the payload is sent through the configured postgres_fdw connection.
+- The remote side executes the supplied plan through pg_exec_plan. Both nodes therefore need compatible PostgreSQL internals, schemas, functions, types, and data assumptions.
+- The implementation excludes several utility classes, including COPY, CREATE EXTENSION, EXPLAIN, FETCH, and VACUUM.
+
+### Critical Caveats
+
+- A session LOAD can install hooks only in that session; preloading is required for consistent server-wide interception, and changing the preload list requires restart.
+- There is no distributed commit protocol or reliable rollback coupling between local and remote execution. Errors, network loss, or topology drift can leave nodes divergent.
+- Serialized PostgreSQL plan trees are private, version-sensitive internals. Never mix server builds or extension ABIs, and do not use this prototype as a production availability or consistency mechanism.

@@ -30,5 +30,6 @@ The first two rows return null because a complete three-row trailing window is n
 
 - Catalog, control, and the actual extension install script report `0.0.1`, while documentation, tags, metadata, and PGXN label the distribution `0.0.7`. Do not use the distribution label as `ALTER EXTENSION` target unless a matching SQL upgrade path exists.
 - Ordering comes from the `OVER` clause; the functions inspect partition positions rather than a caller-defined SQL window frame. Always specify deterministic ordering.
+- Pass a positive odd window size. The C code rejects even values but converts the signed SQL argument to an unsigned integer before validation, so a negative odd value can become a huge allocation or loop bound.
 - The iterative filter repeatedly processes an entire partition until convergence, and imputation builds partition-sized arrays. Bound partition and window sizes and test backend memory and latency.
 - Upstream says PostgreSQL 9.6 or later, but the C window-API code has no current compatibility matrix.

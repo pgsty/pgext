@@ -6,7 +6,9 @@ Sources:
 - [Version 1.0 SQL objects](https://github.com/s-hironobu/pg_stats/blob/c7753215e4070a88379775470c888d5eed049d17/pg_stats--1.0.sql)
 - [Extension control file](https://github.com/s-hironobu/pg_stats/blob/c7753215e4070a88379775470c888d5eed049d17/pg_stats.control)
 
-`pg_stats` is a pure-SQL collection of convenience monitoring views. It combines PostgreSQL statistics and size functions into `pg_stat_tables`, `pg_stat_indexes`, `pg_stat_users`, and `pg_stat_queries`.
+`pg_stats` is a pure-SQL collection of convenience monitoring views. Version 1.0 creates `pg_stat_tables`, `pg_stat_indexes`, `pg_stat_users`, `pg_stat_queries`, `pg_stat_long_trx`, and `pg_stat_waiting_locks`.
+
+### Core workflow
 
 ```sql
 CREATE EXTENSION pg_stats;
@@ -15,6 +17,8 @@ FROM pg_stat_tables
 ORDER BY total_size DESC;
 ```
 
-`pg_stat_tables` adds scan, cache-hit, DML, HOT-update, and size ratios. `pg_stat_indexes` adds index hit ratios and sizes; the user and query views summarize active backends and running-query duration.
+### View inventory and limits
 
-These are derived snapshots, not durable measurements. Ratios can be null or misleading after statistics resets, with small denominators, or when activity is not represented by the underlying views. Version 1.0 was written against older statistics columns such as the historical waiting flag. Inspect the SQL on every target PostgreSQL major, qualify view names to avoid confusion with the core `pg_stats` system view, and use a maintained monitoring stack for alerts and long-term trends.
+`pg_stat_tables` adds scan, cache-hit, DML, HOT-update, and size ratios. `pg_stat_indexes` adds index hit ratios and sizes. `pg_stat_users` summarizes backend login duration, `pg_stat_queries` and `pg_stat_long_trx` show transaction duration, and `pg_stat_waiting_locks` reports ungranted locks.
+
+These are derived snapshots, not durable measurements. Several percentages use integer division before rounding, and `pg_stat_indexes` joins I/O rows by table OID rather than index OID, so a table with multiple indexes can produce duplicated or mismatched index metrics. Version 1.0 also uses the removed `pg_stat_activity.waiting` column. Inspect and correct the SQL for every target PostgreSQL major, qualify view names to avoid confusion with the core `pg_stats` system view, and use a maintained monitoring stack for alerts and long-term trends.

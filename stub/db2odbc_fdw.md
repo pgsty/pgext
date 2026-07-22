@@ -18,6 +18,6 @@ CREATE FOREIGN TABLE db2_customer (id integer, name text)
   SERVER db2_server OPTIONS (sql_query 'SELECT ID, NAME FROM CUSTOMER');
 ```
 
-Use a real secret workflow rather than keeping the example password in SQL, restrict access to user mappings and ODBC configuration, and never grant the FDW or server to `PUBLIC`. Treat `sql_query` as trusted administrator input because it defines remote SQL.
+Use a real secret workflow rather than keeping the example password in SQL, restrict access to user mappings and ODBC configuration, and never grant the FDW or server to `PUBLIC`. The reviewed C source logs the DSN, username, password, and remote query through its debug macro while opening a connection. Treat server logs as credential-bearing, suppress or patch this logging before use, and rotate any credential exposed during testing. Treat `sql_query` as trusted administrator input because it defines remote SQL.
 
 Upstream points advanced users to a fuller DB2 FDW and documents PostgreSQL 12 only. Validate ODBC driver ABI, encodings, numeric and timestamp conversion, nulls, remote errors, connection retry/caching, cancellation, timeouts, credential rotation, transaction boundaries, and predicate behavior. Assume no write or distributed-transaction semantics unless the exact code and tests demonstrate them.

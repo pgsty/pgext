@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2520** | {{< badge content="plproxy" link="https://github.com/plproxy/plproxy" >}} | {{< ext "plproxy" >}} | `2.11.0` | {{< category "OLAP" >}} | {{< license "0BSD" >}} | {{< language "C" >}} |
+| **2520** | {{< badge content="plproxy" link="https://github.com/plproxy/plproxy" >}} | {{< ext "plproxy" >}} | `2.12.0` | {{< category "OLAP" >}} | {{< license "0BSD" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,24 +26,26 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "citus" >}} {{< ext "dblink" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_partman" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} |
 
+> [!Note] PIGSTY RPM and PGDG DEB are aligned at 2.12.0.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.11.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plproxy` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.11.0` | {{< bg "18" "plproxy_18" "green" >}} {{< bg "17" "plproxy_17" "green" >}} {{< bg "16" "plproxy_16" "green" >}} {{< bg "15" "plproxy_15" "green" >}} {{< bg "14" "plproxy_14" "green" >}} | `plproxy_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.11.0` | {{< bg "18" "postgresql-18-plproxy" "green" >}} {{< bg "17" "postgresql-17-plproxy" "green" >}} {{< bg "16" "postgresql-16-plproxy" "green" >}} {{< bg "15" "postgresql-15-plproxy" "green" >}} {{< bg "14" "postgresql-14-plproxy" "green" >}} | `postgresql-$v-plproxy` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.12.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plproxy` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.12.0` | {{< bg "18" "plproxy_18" "green" >}} {{< bg "17" "plproxy_17" "green" >}} {{< bg "16" "plproxy_16" "green" >}} {{< bg "15" "plproxy_15" "green" >}} {{< bg "14" "plproxy_14" "green" >}} | `plproxy_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.12.0` | {{< bg "18" "postgresql-18-plproxy" "green" >}} {{< bg "17" "postgresql-17-plproxy" "green" >}} {{< bg "16" "postgresql-16-plproxy" "green" >}} {{< bg "15" "postgresql-15-plproxy" "green" >}} {{< bg "14" "postgresql-14-plproxy" "green" >}} | `postgresql-$v-plproxy` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.12.0" "plproxy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_14 : AVAIL 4" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.12.0" "plproxy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_14 : AVAIL 4" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.11.0" "plproxy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.11.0" "plproxy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.11.0" "plproxy_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.11.0" "plproxy_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.11.0" "plproxy_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.12.0" "plproxy_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_14 : AVAIL 5" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.12.0" "plproxy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_14 : AVAIL 3" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.12.0" "plproxy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.12.0" "plproxy_14 : AVAIL 3" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_14 : AVAIL 4" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_14 : AVAIL 4" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_15 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_14 : AVAIL 4" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_15 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_14 : AVAIL 5" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_14 : AVAIL 4" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.12.0" "plproxy_14 : AVAIL 4" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.12.0" "postgresql-18-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-17-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-16-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-15-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-14-plproxy : AVAIL 2" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.12.0" "postgresql-18-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-17-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-16-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-15-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-14-plproxy : AVAIL 2" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.12.0" "postgresql-18-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-17-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-16-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-15-plproxy : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.12.0" "postgresql-14-plproxy : AVAIL 2" "blue" >}} |
@@ -61,22 +63,25 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plproxy_18` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 48.3 KiB | [plproxy_18-2.12.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_18-2.12.0-1PIGSTY.el8.x86_64.rpm) |
 | `plproxy_18` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.8 KiB | [plproxy_18-2.12.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/plproxy_18-2.12.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `plproxy_18` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.2 KiB | [plproxy_18-2.11.0-4PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/plproxy_18-2.11.0-4PGDG.rhel8.x86_64.rpm) |
-| `plproxy_18` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 44.4 KiB | [plproxy_18-2.11.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_18-2.11.0-1PIGSTY.el8.x86_64.rpm) |
+| `plproxy_18` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 46.3 KiB | [plproxy_18-2.12.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_18-2.12.0-1PIGSTY.el8.aarch64.rpm) |
 | `plproxy_18` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 46.4 KiB | [plproxy_18-2.12.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/plproxy_18-2.12.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `plproxy_18` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.8 KiB | [plproxy_18-2.11.0-4PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/plproxy_18-2.11.0-4PGDG.rhel8.aarch64.rpm) |
-| `plproxy_18` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 42.0 KiB | [plproxy_18-2.11.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_18-2.11.0-1PIGSTY.el8.aarch64.rpm) |
+| `plproxy_18` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 45.2 KiB | [plproxy_18-2.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_18-2.12.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_18` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.0 KiB | [plproxy_18-2.12.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/plproxy_18-2.12.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `plproxy_18` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 45.7 KiB | [plproxy_18-2.11.0-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/plproxy_18-2.11.0-6PGDG.rhel9.8.x86_64.rpm) |
 | `plproxy_18` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 45.8 KiB | [plproxy_18-2.11.0-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/plproxy_18-2.11.0-4PGDG.rhel9.x86_64.rpm) |
-| `plproxy_18` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 43.8 KiB | [plproxy_18-2.11.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_18-2.11.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_18` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 43.4 KiB | [plproxy_18-2.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_18-2.12.0-1PIGSTY.el9.aarch64.rpm) |
 | `plproxy_18` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.8 KiB | [plproxy_18-2.12.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plproxy_18-2.12.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `plproxy_18` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.4 KiB | [plproxy_18-2.11.0-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plproxy_18-2.11.0-6PGDG.rhel9.8.aarch64.rpm) |
 | `plproxy_18` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.4 KiB | [plproxy_18-2.11.0-4PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plproxy_18-2.11.0-4PGDG.rhel9.aarch64.rpm) |
-| `plproxy_18` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.4 KiB | [plproxy_18-2.11.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_18-2.11.0-1PIGSTY.el9.aarch64.rpm) |
+| `plproxy_18` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 46.0 KiB | [plproxy_18-2.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plproxy_18-2.12.0-1PIGSTY.el10.x86_64.rpm) |
 | `plproxy_18` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.7 KiB | [plproxy_18-2.12.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/plproxy_18-2.12.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_18` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.3 KiB | [plproxy_18-2.11.0-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/plproxy_18-2.11.0-6PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_18` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.7 KiB | [plproxy_18-2.11.0-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/plproxy_18-2.11.0-4PGDG.rhel10.x86_64.rpm) |
+| `plproxy_18` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 44.5 KiB | [plproxy_18-2.12.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plproxy_18-2.12.0-1PIGSTY.el10.aarch64.rpm) |
 | `plproxy_18` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.9 KiB | [plproxy_18-2.12.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plproxy_18-2.12.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_18` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.6 KiB | [plproxy_18-2.11.0-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plproxy_18-2.11.0-6PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_18` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.9 KiB | [plproxy_18-2.11.0-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plproxy_18-2.11.0-4PGDG.rhel10.aarch64.rpm) |
@@ -106,22 +111,25 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plproxy_17` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 48.4 KiB | [plproxy_17-2.12.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_17-2.12.0-1PIGSTY.el8.x86_64.rpm) |
 | `plproxy_17` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.9 KiB | [plproxy_17-2.12.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/plproxy_17-2.12.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `plproxy_17` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.1 KiB | [plproxy_17-2.11.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/plproxy_17-2.11.0-2PGDG.rhel8.x86_64.rpm) |
-| `plproxy_17` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 44.4 KiB | [plproxy_17-2.11.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_17-2.11.0-1PIGSTY.el8.x86_64.rpm) |
+| `plproxy_17` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 46.2 KiB | [plproxy_17-2.12.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_17-2.12.0-1PIGSTY.el8.aarch64.rpm) |
 | `plproxy_17` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 46.4 KiB | [plproxy_17-2.12.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/plproxy_17-2.12.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `plproxy_17` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.6 KiB | [plproxy_17-2.11.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/plproxy_17-2.11.0-2PGDG.rhel8.aarch64.rpm) |
-| `plproxy_17` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 42.0 KiB | [plproxy_17-2.11.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_17-2.11.0-1PIGSTY.el8.aarch64.rpm) |
+| `plproxy_17` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 45.2 KiB | [plproxy_17-2.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_17-2.12.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_17` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.0 KiB | [plproxy_17-2.12.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plproxy_17-2.12.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `plproxy_17` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 45.6 KiB | [plproxy_17-2.11.0-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plproxy_17-2.11.0-6PGDG.rhel9.8.x86_64.rpm) |
 | `plproxy_17` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 45.7 KiB | [plproxy_17-2.11.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plproxy_17-2.11.0-2PGDG.rhel9.x86_64.rpm) |
-| `plproxy_17` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 43.9 KiB | [plproxy_17-2.11.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_17-2.11.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_17` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 43.4 KiB | [plproxy_17-2.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_17-2.12.0-1PIGSTY.el9.aarch64.rpm) |
 | `plproxy_17` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.7 KiB | [plproxy_17-2.12.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plproxy_17-2.12.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `plproxy_17` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.4 KiB | [plproxy_17-2.11.0-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plproxy_17-2.11.0-6PGDG.rhel9.8.aarch64.rpm) |
 | `plproxy_17` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.5 KiB | [plproxy_17-2.11.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plproxy_17-2.11.0-2PGDG.rhel9.aarch64.rpm) |
-| `plproxy_17` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.6 KiB | [plproxy_17-2.11.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_17-2.11.0-1PIGSTY.el9.aarch64.rpm) |
+| `plproxy_17` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 46.0 KiB | [plproxy_17-2.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plproxy_17-2.12.0-1PIGSTY.el10.x86_64.rpm) |
 | `plproxy_17` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.7 KiB | [plproxy_17-2.12.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/plproxy_17-2.12.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_17` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.4 KiB | [plproxy_17-2.11.0-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/plproxy_17-2.11.0-6PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_17` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.7 KiB | [plproxy_17-2.11.0-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/plproxy_17-2.11.0-4PGDG.rhel10.x86_64.rpm) |
+| `plproxy_17` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 44.4 KiB | [plproxy_17-2.12.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plproxy_17-2.12.0-1PIGSTY.el10.aarch64.rpm) |
 | `plproxy_17` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.9 KiB | [plproxy_17-2.12.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plproxy_17-2.12.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_17` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [plproxy_17-2.11.0-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plproxy_17-2.11.0-6PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_17` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.9 KiB | [plproxy_17-2.11.0-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plproxy_17-2.11.0-4PGDG.rhel10.aarch64.rpm) |
@@ -151,18 +159,21 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plproxy_16` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 48.4 KiB | [plproxy_16-2.12.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_16-2.12.0-1PIGSTY.el8.x86_64.rpm) |
 | `plproxy_16` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.9 KiB | [plproxy_16-2.12.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/plproxy_16-2.12.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `plproxy_16` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 44.5 KiB | [plproxy_16-2.11.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_16-2.11.0-1PIGSTY.el8.x86_64.rpm) |
+| `plproxy_16` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 46.2 KiB | [plproxy_16-2.12.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_16-2.12.0-1PIGSTY.el8.aarch64.rpm) |
 | `plproxy_16` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 46.4 KiB | [plproxy_16-2.12.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/plproxy_16-2.12.0-1PGDG.rhel8.10.aarch64.rpm) |
-| `plproxy_16` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 42.0 KiB | [plproxy_16-2.11.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_16-2.11.0-1PIGSTY.el8.aarch64.rpm) |
+| `plproxy_16` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 45.2 KiB | [plproxy_16-2.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_16-2.12.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_16` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.0 KiB | [plproxy_16-2.12.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plproxy_16-2.12.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `plproxy_16` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 45.7 KiB | [plproxy_16-2.11.0-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plproxy_16-2.11.0-6PGDG.rhel9.8.x86_64.rpm) |
-| `plproxy_16` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 43.9 KiB | [plproxy_16-2.11.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_16-2.11.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_16` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 43.4 KiB | [plproxy_16-2.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_16-2.12.0-1PIGSTY.el9.aarch64.rpm) |
 | `plproxy_16` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.7 KiB | [plproxy_16-2.12.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plproxy_16-2.12.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `plproxy_16` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.4 KiB | [plproxy_16-2.11.0-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plproxy_16-2.11.0-6PGDG.rhel9.8.aarch64.rpm) |
-| `plproxy_16` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 41.6 KiB | [plproxy_16-2.11.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_16-2.11.0-1PIGSTY.el9.aarch64.rpm) |
+| `plproxy_16` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 46.0 KiB | [plproxy_16-2.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plproxy_16-2.12.0-1PIGSTY.el10.x86_64.rpm) |
 | `plproxy_16` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.7 KiB | [plproxy_16-2.12.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/plproxy_16-2.12.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_16` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.4 KiB | [plproxy_16-2.11.0-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/plproxy_16-2.11.0-6PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_16` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.8 KiB | [plproxy_16-2.11.0-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/plproxy_16-2.11.0-4PGDG.rhel10.x86_64.rpm) |
+| `plproxy_16` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 44.4 KiB | [plproxy_16-2.12.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plproxy_16-2.12.0-1PIGSTY.el10.aarch64.rpm) |
 | `plproxy_16` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.9 KiB | [plproxy_16-2.12.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plproxy_16-2.12.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_16` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [plproxy_16-2.11.0-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plproxy_16-2.11.0-6PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_16` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.9 KiB | [plproxy_16-2.11.0-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plproxy_16-2.11.0-4PGDG.rhel10.aarch64.rpm) |
@@ -192,26 +203,29 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plproxy_15` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 50.0 KiB | [plproxy_15-2.12.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_15-2.12.0-1PIGSTY.el8.x86_64.rpm) |
 | `plproxy_15` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.2 KiB | [plproxy_15-2.12.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plproxy_15-2.12.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `plproxy_15` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 45.7 KiB | [plproxy_15-2.11.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_15-2.11.0-1PIGSTY.el8.x86_64.rpm) |
 | `plproxy_15` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 49.2 KiB | [plproxy_15-2.11.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plproxy_15-2.11.0-1PGDG.rhel8.x86_64.rpm) |
 | `plproxy_15` | `2.10.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 145.3 KiB | [plproxy_15-2.10.0-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plproxy_15-2.10.0-3.rhel8.x86_64.rpm) |
+| `plproxy_15` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 47.7 KiB | [plproxy_15-2.12.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_15-2.12.0-1PIGSTY.el8.aarch64.rpm) |
 | `plproxy_15` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 47.5 KiB | [plproxy_15-2.12.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plproxy_15-2.12.0-1PGDG.rhel8.10.aarch64.rpm) |
-| `plproxy_15` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 43.0 KiB | [plproxy_15-2.11.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_15-2.11.0-1PIGSTY.el8.aarch64.rpm) |
 | `plproxy_15` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 46.6 KiB | [plproxy_15-2.11.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plproxy_15-2.11.0-1PGDG.rhel8.aarch64.rpm) |
 | `plproxy_15` | `2.10.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 142.2 KiB | [plproxy_15-2.10.0-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plproxy_15-2.10.0-3.rhel8.aarch64.rpm) |
+| `plproxy_15` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 49.1 KiB | [plproxy_15-2.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_15-2.12.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_15` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 49.3 KiB | [plproxy_15-2.12.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plproxy_15-2.12.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `plproxy_15` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 49.1 KiB | [plproxy_15-2.11.0-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plproxy_15-2.11.0-6PGDG.rhel9.8.x86_64.rpm) |
-| `plproxy_15` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 47.3 KiB | [plproxy_15-2.11.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_15-2.11.0-1PIGSTY.el9.x86_64.rpm) |
 | `plproxy_15` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 49.0 KiB | [plproxy_15-2.11.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plproxy_15-2.11.0-1PGDG.rhel9.x86_64.rpm) |
 | `plproxy_15` | `2.10.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 146.6 KiB | [plproxy_15-2.10.0-3.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plproxy_15-2.10.0-3.rhel9.x86_64.rpm) |
+| `plproxy_15` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 47.4 KiB | [plproxy_15-2.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_15-2.12.0-1PIGSTY.el9.aarch64.rpm) |
 | `plproxy_15` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 47.5 KiB | [plproxy_15-2.12.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plproxy_15-2.12.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `plproxy_15` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 47.2 KiB | [plproxy_15-2.11.0-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plproxy_15-2.11.0-6PGDG.rhel9.8.aarch64.rpm) |
-| `plproxy_15` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 45.4 KiB | [plproxy_15-2.11.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_15-2.11.0-1PIGSTY.el9.aarch64.rpm) |
 | `plproxy_15` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 46.8 KiB | [plproxy_15-2.11.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plproxy_15-2.11.0-1PGDG.rhel9.aarch64.rpm) |
 | `plproxy_15` | `2.10.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 144.3 KiB | [plproxy_15-2.10.0-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plproxy_15-2.10.0-3.rhel9.aarch64.rpm) |
+| `plproxy_15` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 49.6 KiB | [plproxy_15-2.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plproxy_15-2.12.0-1PIGSTY.el10.x86_64.rpm) |
 | `plproxy_15` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 49.9 KiB | [plproxy_15-2.12.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/plproxy_15-2.12.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_15` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 49.5 KiB | [plproxy_15-2.11.0-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/plproxy_15-2.11.0-6PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_15` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 49.9 KiB | [plproxy_15-2.11.0-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/plproxy_15-2.11.0-4PGDG.rhel10.x86_64.rpm) |
+| `plproxy_15` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 47.9 KiB | [plproxy_15-2.12.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plproxy_15-2.12.0-1PIGSTY.el10.aarch64.rpm) |
 | `plproxy_15` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 48.1 KiB | [plproxy_15-2.12.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plproxy_15-2.12.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_15` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 47.8 KiB | [plproxy_15-2.11.0-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plproxy_15-2.11.0-6PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_15` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 48.1 KiB | [plproxy_15-2.11.0-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plproxy_15-2.11.0-4PGDG.rhel10.aarch64.rpm) |
@@ -241,25 +255,28 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plproxy_14` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 49.9 KiB | [plproxy_14-2.12.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_14-2.12.0-1PIGSTY.el8.x86_64.rpm) |
 | `plproxy_14` | `2.12.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.1 KiB | [plproxy_14-2.12.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plproxy_14-2.12.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `plproxy_14` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 45.7 KiB | [plproxy_14-2.11.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plproxy_14-2.11.0-1PIGSTY.el8.x86_64.rpm) |
 | `plproxy_14` | `2.11.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 49.2 KiB | [plproxy_14-2.11.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plproxy_14-2.11.0-1PGDG.rhel8.x86_64.rpm) |
 | `plproxy_14` | `2.10.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 143.8 KiB | [plproxy_14-2.10.0-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plproxy_14-2.10.0-3.rhel8.x86_64.rpm) |
+| `plproxy_14` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 47.7 KiB | [plproxy_14-2.12.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_14-2.12.0-1PIGSTY.el8.aarch64.rpm) |
 | `plproxy_14` | `2.12.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 47.5 KiB | [plproxy_14-2.12.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plproxy_14-2.12.0-1PGDG.rhel8.10.aarch64.rpm) |
-| `plproxy_14` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 43.0 KiB | [plproxy_14-2.11.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plproxy_14-2.11.0-1PIGSTY.el8.aarch64.rpm) |
 | `plproxy_14` | `2.11.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 46.6 KiB | [plproxy_14-2.11.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plproxy_14-2.11.0-1PGDG.rhel8.aarch64.rpm) |
 | `plproxy_14` | `2.10.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 140.5 KiB | [plproxy_14-2.10.0-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plproxy_14-2.10.0-3.rhel8.aarch64.rpm) |
+| `plproxy_14` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 48.9 KiB | [plproxy_14-2.12.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_14-2.12.0-1PIGSTY.el9.x86_64.rpm) |
+| `plproxy_14` | `2.12.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 49.2 KiB | [plproxy_14-2.12.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plproxy_14-2.12.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `plproxy_14` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 48.8 KiB | [plproxy_14-2.11.0-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plproxy_14-2.11.0-6PGDG.rhel9.8.x86_64.rpm) |
-| `plproxy_14` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 47.1 KiB | [plproxy_14-2.11.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plproxy_14-2.11.0-1PIGSTY.el9.x86_64.rpm) |
 | `plproxy_14` | `2.11.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 48.7 KiB | [plproxy_14-2.11.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plproxy_14-2.11.0-1PGDG.rhel9.x86_64.rpm) |
+| `plproxy_14` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 47.4 KiB | [plproxy_14-2.12.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_14-2.12.0-1PIGSTY.el9.aarch64.rpm) |
 | `plproxy_14` | `2.12.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 47.5 KiB | [plproxy_14-2.12.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plproxy_14-2.12.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `plproxy_14` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 47.1 KiB | [plproxy_14-2.11.0-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plproxy_14-2.11.0-6PGDG.rhel9.8.aarch64.rpm) |
-| `plproxy_14` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 45.3 KiB | [plproxy_14-2.11.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plproxy_14-2.11.0-1PIGSTY.el9.aarch64.rpm) |
 | `plproxy_14` | `2.11.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 46.8 KiB | [plproxy_14-2.11.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plproxy_14-2.11.0-1PGDG.rhel9.aarch64.rpm) |
 | `plproxy_14` | `2.10.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 142.6 KiB | [plproxy_14-2.10.0-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plproxy_14-2.10.0-3.rhel9.aarch64.rpm) |
+| `plproxy_14` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 49.9 KiB | [plproxy_14-2.12.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plproxy_14-2.12.0-1PIGSTY.el10.x86_64.rpm) |
 | `plproxy_14` | `2.12.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 49.9 KiB | [plproxy_14-2.12.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/plproxy_14-2.12.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_14` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 49.5 KiB | [plproxy_14-2.11.0-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/plproxy_14-2.11.0-6PGDG.rhel10.2.x86_64.rpm) |
 | `plproxy_14` | `2.11.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 49.8 KiB | [plproxy_14-2.11.0-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/plproxy_14-2.11.0-4PGDG.rhel10.x86_64.rpm) |
+| `plproxy_14` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 47.9 KiB | [plproxy_14-2.12.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plproxy_14-2.12.0-1PIGSTY.el10.aarch64.rpm) |
 | `plproxy_14` | `2.12.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 48.0 KiB | [plproxy_14-2.12.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plproxy_14-2.12.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_14` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 47.7 KiB | [plproxy_14-2.11.0-6PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plproxy_14-2.11.0-6PGDG.rhel10.2.aarch64.rpm) |
 | `plproxy_14` | `2.11.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 48.0 KiB | [plproxy_14-2.11.0-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plproxy_14-2.11.0-4PGDG.rhel10.aarch64.rpm) |
@@ -290,16 +307,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/plproxy/plproxy" title="Repository" icon="github" subtitle="github.com/plproxy/plproxy" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plproxy-2.11.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plproxy-2.12.0.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg plproxy;		# build rpm
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
@@ -322,12 +344,14 @@ pig install plproxy -v 14;   # install for PG 14
 CREATE EXTENSION plproxy;
 ```
 
-
-
-
 ## Usage
 
-> [plproxy: Database partitioning implemented as procedural language](https://github.com/plproxy/plproxy)
+Sources:
+
+- [PL/Proxy 2.12.0 README](https://github.com/plproxy/plproxy/blob/v2.12.0/README.md)
+- [PL/Proxy language syntax](https://github.com/plproxy/plproxy/blob/v2.12.0/doc/syntax.md)
+- [PL/Proxy cluster configuration](https://github.com/plproxy/plproxy/blob/v2.12.0/doc/config.md)
+- [PL/Proxy 2.12.0 release](https://github.com/plproxy/plproxy/releases/tag/v2.12.0)
 
 PL/Proxy is a PostgreSQL procedural language handler that enables remote procedure calls
 between PostgreSQL databases, with optional sharding.
@@ -406,3 +430,9 @@ CREATE USER MAPPING FOR CURRENT_USER
     SERVER mycluster
     OPTIONS (user 'proxy_user', password 'secret');
 ```
+
+### Caveats
+
+- PL/Proxy routes function calls, not arbitrary cross-database transactions. Design remote functions to be retry-safe and keep transaction boundaries explicit.
+- Cluster definitions and user mappings can expose connection details; protect catalog access and prefer restricted remote roles.
+- Release 2.12.0 fixes quoted-identifier parsing in `SELECT`, a null-pointer issue in `plproxy_fdw_validator`, Windows builds, and PostgreSQL 19 compatibility. Existing SQL objects do not need a new usage pattern, but databases upgraded from an older extension version should run the matching `ALTER EXTENSION plproxy UPDATE` path.

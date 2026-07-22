@@ -5,18 +5,35 @@ Sources:
 - [Official extension control file](https://github.com/postgrespro/tsexact/blob/b08a6ce7ed40b5b62cccdb12d7e138c653d2efd0/tsexact.control)
 - [Official upstream documentation](https://github.com/postgrespro/tsexact/blob/b08a6ce7ed40b5b62cccdb12d7e138c653d2efd0/README.md)
 
-`tsexact` — Full-text-search helpers for exact phrase matching on PostgreSQL 9.5 and earlier.
+`tsexact` 1.0 adds exact-fragment helpers for PostgreSQL full-text vectors. It was designed to emulate phrase search on PostgreSQL 9.5 and earlier; upstream recommends built-in phrase-search operators on PostgreSQL 9.6 and later.
 
-The reviewed catalog snapshot records version `1.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "tsexact";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tsexact';
+CREATE EXTENSION tsexact;
+
+SELECT ts_exact_match(
+  'cat:3 fat:2 sad:5'::tsvector,
+  'cat:2 fat:1 sad:4'::tsvector
+);
+
+SELECT ts_squeeze('cat:2,9 fat:1,6 sad:4'::tsvector);
 ```
 
-The curated lifecycle is `deprecated`. Pin the reviewed build and verify maintenance status before adoption.
+`ts_exact_match(tsvector, tsvector)` checks whether the fragment's relative positions occur at some offset in the document and ignores weights. Its three-argument overload accepts a weight mask for the document. `ts_squeeze(tsvector)` removes gaps in position numbering, `setweight(tsquery, text)` applies weights to query lexemes, and `poslen(tsvector)` returns the total position span.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Indexing Pattern and Caveats
+
+`ts_exact_match` is not directly supported by full-text indexes. Use an indexed `@@` condition to obtain candidates, then apply `ts_exact_match` as an exact recheck.
+
+```sql
+SELECT *
+FROM documents
+WHERE search_vector @@ plainto_tsquery('fat rat')
+  AND ts_exact_match(
+        search_vector,
+        ts_squeeze(to_tsvector('fat rat'))
+      );
+```
+
+Tokenization, dictionaries, stop words, weights, and position gaps all affect results. Prefer native phrase queries on current PostgreSQL, and retain `tsexact` only when its legacy vector semantics are specifically required and covered by regression tests.

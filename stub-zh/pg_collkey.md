@@ -2,20 +2,38 @@
 
 来源：
 
-- [官方扩展控制文件](https://api.pgxn.org/src/pg_collkey/pg_collkey-0.5.1/pg_collkey.control)
-- [官方上游文档](https://pgxn.org/dist/pg_collkey/0.5.1/)
-- [官方 PGXN 分发页](https://pgxn.org/dist/pg_collkey/)
+- [Official README](https://github.com/ccutrer/pg_collkey/blob/42d93fd5182ca94efbc45d7c02b86d95e8e2070a/README)
+- [Extension control file](https://github.com/ccutrer/pg_collkey/blob/42d93fd5182ca94efbc45d7c02b86d95e8e2070a/pg_collkey.control)
+- [SQL function definitions](https://github.com/ccutrer/pg_collkey/blob/42d93fd5182ca94efbc45d7c02b86d95e8e2070a/collkey_icu.sql)
 
-`pg_collkey` — pg_collkey：为 PostgreSQL 提供 ICU 排序键函数封装，可按指定 locale 生成排序键。
+pg_collkey 封装 ICU 排序键生成，让查询可以独立于数据库默认排序规则选择区域设置和比较强度。它适合生成可排序的字节键，包括忽略重音或识别数字的排序，但这份年代较久的上游代码只支持 UTF-8 数据库。
 
-已复核目录快照记录的版本为 `0.5.1`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+可以在 `ORDER BY` 中生成排序键；如果区域设置及选项保持稳定，也可将其放入表达式索引：
 
 ```sql
-CREATE EXTENSION "pg_collkey";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_collkey';
+CREATE EXTENSION pg_collkey;
+
+SELECT name
+FROM product
+ORDER BY collkey(name, 'fr_FR');
+
+CREATE INDEX product_name_root_idx
+ON product (collkey(name, 'root'));
 ```
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+双参数重载会采用后置标点处理、默认强度以及数字排序。单参数重载还会选择 ICU root 排序规则。
+
+### 重要对象
+
+- `collkey(text, text, boolean, integer, boolean)` 以 `bytea` 返回 ICU 排序键。
+- locale 参数选择 ICU root 或 `fr_FR` 等命名区域设置。
+- 第一个 boolean 会把标点移到第四比较层级。
+- 强度 1 比较基本字符；2 包含重音；3 包含大小写；4 包含其他差异；5 比较规范化后的码点。
+- 最后一个 boolean 启用数字排序，使数字序列按数值排列。
+- `collkey(text, text)` 和 `collkey(text)` 是便捷重载。
+
+### 运维说明
+
+排序键来自链接的 ICU 库。ICU 升级或区域数据变化可能使既有排序假设和表达式索引失效，因此升级后要重建索引并回归测试结果。在同一查询中使用许多区域设置会增加初始化开销。README 记录的是非常老的 PostgreSQL 与 ICU 基线，且不支持非 UTF-8 数据库。

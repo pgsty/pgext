@@ -2,23 +2,54 @@
 
 Sources:
 
-- [Official upstream documentation](https://support.huaweicloud.com/intl/en-us/usermanual-rds-pg/rds_09_0067.html)
+- [Huawei Cloud RDS for PostgreSQL documentation](https://support.huaweicloud.com/intl/en-us/usermanual-rds-pg/rds_09_0067.html)
 
-`rds_hwdrs_ddl` — Huawei Cloud RDS incremental DDL synchronization helper extension
+`rds_hwdrs_ddl` is a Huawei Cloud RDS for PostgreSQL provider extension used during incremental DDL synchronization. It creates the table, function, event trigger, and grants needed by Huawei's synchronization service when the database user cannot create those objects directly. It is a managed-service facility, not a portable open-source extension for self-hosted PostgreSQL.
 
-The reviewed catalog snapshot records version `1`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `13,14,15,16,17`; confirm the exact build against the target server.
+### Availability and Enablement
+
+First check the target RDS instance's live extension inventory; supported versions depend on the service instance and are not given as a general PostgreSQL compatibility matrix:
 
 ```sql
-CREATE EXTENSION "rds_hwdrs_ddl";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'rds_hwdrs_ddl';
+SELECT *
+FROM pg_available_extension_versions
+WHERE name = 'rds_hwdrs_ddl';
 ```
 
-This is a provider-specific component for `Huawei Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Huawei's documented SQL installation path uses the provider function rather than direct `CREATE EXTENSION`:
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+```sql
+SELECT control_extension('create', 'rds_hwdrs_ddl');
+```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+After enablement, confirm the provider-created objects before starting a synchronization task:
+
+```sql
+SELECT relname, relowner::regrole, relacl
+FROM pg_class
+WHERE relname = 'hwdrs_ddl_info';
+
+SELECT proname, proowner::regrole
+FROM pg_proc
+WHERE proname = 'hwdrs_ddl_function';
+
+SELECT evtname, evtevent
+FROM pg_event_trigger
+WHERE evtname = 'hwdrs_ddl_event';
+```
+
+### Synchronization Lifecycle
+
+The documented workflow is intentionally temporary:
+
+1. enable `rds_hwdrs_ddl` on the source or target RDS for PostgreSQL instance as required by the Huawei synchronization workflow;
+2. create and run the PostgreSQL-to-RDS synchronization task;
+3. after synchronization completes, remove the extension through the provider-supported console or SQL management path so its tracking table, function, and event trigger are deleted.
+
+Follow the current console instructions for the exact topology and removal command. The provider page's displayed removal identifier differs from the extension name used everywhere else on that page, so verify the command against the instance's available extensions or use the RDS console rather than copying it blindly.
+
+### Operational Boundaries
+
+The `hwdrs_ddl_event` event trigger fires at `ddl_command_end`, and `hwdrs_ddl_info` stores information used by synchronization. Installing the extension therefore changes cluster-side DDL behavior and grants access needed by the service. Enable it only for the duration of the approved migration, monitor the synchronization task, and confirm removal afterward.
+
+Do not substitute hand-created lookalike tables, functions, or triggers: object definitions and permissions are controlled by Huawei Cloud and may vary with the service. The documentation page was updated on 2025-11-10; for a current production task, re-check the live provider documentation and instance inventory before use.

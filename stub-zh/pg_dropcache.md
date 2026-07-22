@@ -2,24 +2,30 @@
 
 来源：
 
-- [已复核 commit 的上游 README](https://github.com/pierreforstmann/pg_dropcache/blob/e13cb92f52ce671e1e3cf2b29aa0f9908d8162ff/README.md)
-- [1.0.0 版本 SQL 定义](https://github.com/pierreforstmann/pg_dropcache/blob/e13cb92f52ce671e1e3cf2b29aa0f9908d8162ff/pg_dropcache--1.0.0.sql)
-- [扩展 control 文件](https://github.com/pierreforstmann/pg_dropcache/blob/e13cb92f52ce671e1e3cf2b29aa0f9908d8162ff/pg_dropcache.control)
+- [官方 README 与警告](https://github.com/pierreforstmann/pg_dropcache/blob/e13cb92f52ce671e1e3cf2b29aa0f9908d8162ff/README.md)
+- [扩展 SQL 与版本门禁](https://github.com/pierreforstmann/pg_dropcache/blob/e13cb92f52ce671e1e3cf2b29aa0f9908d8162ff/pg_dropcache--1.0.0.sql)
+- [缓冲区驱逐实现](https://github.com/pierreforstmann/pg_dropcache/blob/e13cb92f52ce671e1e3cf2b29aa0f9908d8162ff/pg_dropcache.c)
 
-`pg_dropcache` 使 PostgreSQL `shared_buffers` 中属于当前数据库或单个关系的页面失效。它仅适合在受控环境中进行与缓存有关的测试和诊断。
+`pg_dropcache` 1.0.0 强制失效当前数据库或单个关系的 PostgreSQL 共享缓冲区。它用于 PostgreSQL 11–16 上的破坏性缓存实验。它可能在不刷盘时丢弃脏页，从而导致数据丢失或损坏；绝不能用于生产或不可替代的集群。
+
+### 隔离测试流程
+
+只有在取得可恢复副本并停止全部并发写入之后才可执行：
 
 ```sql
 CREATE EXTENSION pg_dropcache;
 
--- Evict buffers belonging to one relation.
-SELECT pg_drop_rel_cache('bench_data'::regclass);
+CHECKPOINT;
 
--- Evict buffers for the current database.
+SELECT pg_drop_rel_cache('bench.measurements'::regclass);
+
 SELECT pg_drop_cache();
 ```
 
-### 数据丢失警告
+`pg_drop_rel_cache(regclass)` 驱逐单个关系所有 fork 的缓冲区。`pg_drop_cache()` 调用 PostgreSQL 内部数据库缓冲区驱逐例程，作用于当前数据库。`CHECKPOINT` 可以降低脏页风险，但不能让并发使用变得安全；之后可能立即出现新的脏缓冲区。
 
-该实现会直接丢弃脏缓冲区，不先写回磁盘。调用任一函数都可能丢失已提交数据并破坏测试数据库；绝不能用于生产环境或必须保留的数据。应限制执行权限，并且只在可丢弃实例中使用。
+### 安全与版本边界
 
-上游支持 PostgreSQL 11 至 16。PostgreSQL 17 或更高版本应改用内置 `pg_buffercache` 扩展提供的 `pg_buffercache_evict()`、`pg_buffercache_evict_relation()` 或 `pg_buffercache_evict_all()`；该扩展的安装 SQL 会拒绝这些服务端版本。
+这些函数使用 PostgreSQL 私有缓冲区管理 API，并绕过正常持久性预期。应只向专用测试管理员开放，断开应用连接，并准备从已知良好副本重建集群。缓存实验还必须区分 PostgreSQL `shared_buffers` 与操作系统页缓存；此扩展不会清除后者。
+
+安装脚本拒绝低于 11 的 PostgreSQL，也拒绝 17 或更高版本。在 PostgreSQL 17+ 上，上游要求改用由 `pg_buffercache` 提供并维护的 `pg_buffercache_evict`、`pg_buffercache_evict_relation` 和 `pg_buffercache_evict_all`。不要移除版本门禁，也不要跨服务器大版本复制旧二进制文件。

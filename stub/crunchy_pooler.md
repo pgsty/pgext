@@ -2,22 +2,25 @@
 
 Sources:
 
-- [Official upstream documentation](https://docs.crunchybridge.com/how-to/pgbouncer)
-- [Official project or provider page](https://www.crunchydata.com/products/crunchy-bridge)
+- [Crunchy Bridge PgBouncer documentation](https://docs.crunchybridge.com/how-to/pgbouncer)
+- [Crunchy Bridge product page](https://www.crunchydata.com/products/crunchy-bridge)
 
-`crunchy_pooler` — Crunchy Bridge helper extension that lets PgBouncer authenticate users through PostgreSQL.
+`crunchy_pooler` is the provider-managed helper extension that lets the PgBouncer service on Crunchy Bridge validate database roles against PostgreSQL. It is specific to Crunchy Bridge rather than a portable community package, and it must be enabled separately in every database whose users will connect through the pooler.
 
-The reviewed catalog snapshot records version `unknown`, kind `puresql`, and implementation language `SQL`.
+### Enable pooled connections
+
+Connect as a superuser to each target database and install the extension:
 
 ```sql
-CREATE EXTENSION "crunchy_pooler";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'crunchy_pooler';
+CREATE EXTENSION crunchy_pooler;
 ```
 
-This is a provider-specific component for `Crunchy Data`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+The extension creates the `crunchy_pooler` role and grants it access only to the provider's `user_lookup` authentication helper. Dropping the extension removes this authentication path and prevents PgBouncer from accepting connections to that database.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+Use the cluster's normal connection string with port `5431` for PgBouncer; port `5432` connects directly to PostgreSQL. The username, password, database, and TLS settings otherwise remain the same.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Pooling modes and limits
+
+Crunchy Bridge uses transaction pooling by default. Session-level state must therefore not be assumed to survive across transactions. Prepared statements are supported on the service with PgBouncer 1.22 or later when `max_prepared_statements` is greater than zero; the documented service default is `250`. Session pooling is available when an application needs a stable backend session, while statement pooling cannot run multi-statement transactions.
+
+Superuser and replication roles are intentionally rejected through PgBouncer and must connect directly on port `5432`. If the extension is missing from the selected database, clients receive `FATAL: bouncer config error`. Availability, upgrades, and implementation details remain controlled by Crunchy Data, so check the current service documentation before relying on a particular PgBouncer version or setting.

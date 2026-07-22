@@ -2,20 +2,25 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/ibarwick/filenode_map_inspect/blob/8cffe378ce38a6c3d7bff828636fff33e29e46f4/filenode_map_inspect.control)
-- [官方上游文档](https://github.com/ibarwick/filenode_map_inspect/blob/8cffe378ce38a6c3d7bff828636fff33e29e46f4/README.md)
+- [Official extension control file](https://github.com/ibarwick/filenode_map_inspect/blob/8cffe378ce38a6c3d7bff828636fff33e29e46f4/filenode_map_inspect.control)
+- [Official upstream documentation](https://github.com/ibarwick/filenode_map_inspect/blob/8cffe378ce38a6c3d7bff828636fff33e29e46f4/README.md)
 
-`filenode_map_inspect` — 检查并解析 PostgreSQL pg_filenode.map 文件的扩展。
+`filenode_map_inspect` 0.1 读取 PostgreSQL 的 `pg_filenode.map` 文件，用于集群级诊断。它能找出无法读取或不完整的映射文件，并列出映射的系统目录对象，但不会修复损坏，也不能替代常规恢复流程。
 
-已复核目录快照记录的版本为 `0.1`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
 
 ```sql
-CREATE EXTENSION "filenode_map_inspect";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'filenode_map_inspect';
-```
-官方材料包含实验性、弃用、不支持或明确警告边界；用于非实验环境前必须阅读全文并测试失败场景。
+CREATE EXTENSION filenode_map_inspect;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SELECT * FROM filenode_map_check();
+SELECT * FROM filenode_map_list();
+SELECT * FROM filenode_map_list_global();
+```
+
+- `filenode_map_check()` 定位数据库及全局映射文件，并报告每个文件的状态。
+- `filenode_map_list()` 返回当前数据库映射中的关系名、OID 和 filenode。
+- `filenode_map_list_global()` 返回全局映射中的对应条目。
+
+### 运维边界
+
+上游明确将其标为只面向教学与诊断的实验扩展。它会读取服务器端集群文件，因此只应由可信管理员安装并获得执行权限。错误报告只是进一步调查的证据；应保留数据目录并采用受支持的备份、还原或恢复流程，不要手工修改映射文件。

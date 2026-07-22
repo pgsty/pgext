@@ -2,31 +2,40 @@
 
 Sources:
 
-- [postgresql-migrations README at the reviewed commit](https://github.com/drewc/postgresql-migrations/blob/3da0fe400bfa37f92a78e8854f08522f3989079d/README.org)
-- [migration.control at the reviewed commit](https://github.com/drewc/postgresql-migrations/blob/3da0fe400bfa37f92a78e8854f08522f3989079d/migration.control)
-- [Version 0.0.1 install SQL](https://github.com/drewc/postgresql-migrations/blob/3da0fe400bfa37f92a78e8854f08522f3989079d/migration--0.0.1.sql)
-- [Upstream migration design and examples](https://github.com/drewc/postgresql-migrations/blob/3da0fe400bfa37f92a78e8854f08522f3989079d/doc/migration.org)
+- [Official README at the catalog revision](https://github.com/drewc/postgresql-migrations/blob/3da0fe400bfa37f92a78e8854f08522f3989079d/README.org)
+- [Extension SQL at the catalog revision](https://github.com/drewc/postgresql-migrations/blob/3da0fe400bfa37f92a78e8854f08522f3989079d/migration--0.0.1.sql)
 
-`migration` is a pure-SQL migration runner. It records numbered up/down script paths in `migration_registry`, reads those files from the database server, executes their contents, and records outcomes in `migration_log` and `migration_error`.
+`migration` 0.0.1 is a database-resident migration runner. It registers numbered up/down SQL files, reads those files from the PostgreSQL server filesystem, executes them dynamically, and records status. It is an old administrative tool, not a safe migration service for untrusted users.
 
-### Register and Run Scripts
+### Core Workflow
+
+Place reviewed SQL files on the database server, choose a stable root directory, register them in order, and use one administrative session to migrate.
 
 ```sql
 CREATE EXTENSION migration;
 
-SELECT migration_setenv('ROOT_DIRECTORY', '/srv/postgresql/migrations');
-SELECT register_migration(0, '000-up.sql', '000-down.sql');
-SELECT register_migration(1, '001-up.sql', '001-down.sql');
+SELECT migration_set_env('ROOT_DIRECTORY', '/srv/db-migrations');
+SELECT register_migration(1, '001_create.up.sql', '001_create.down.sql');
+SELECT register_migration(2, '002_index.up.sql',  '002_index.down.sql');
 
-SELECT migration_migrate_database(1);
-SELECT migration_current_number();
-SELECT migration_migrate_database(0);
+-- Apply registered migrations through version 2.
+SELECT migration_migrate_database(2);
+
+-- Inspect the registry and recorded errors.
+TABLE migration_registry;
+TABLE migration_error;
 ```
 
-The paths are resolved on the server, not on the client. The reviewed SQL exposes `migration_migrate_database`; the README's older `migration.migrate_database()` spelling does not match the installed API.
+### Object Index
 
-### Caveats
+- `migration_registry` stores the numeric migration, up/down file paths, and applied status.
+- `migration_set_env(text, text)` and related environment helpers manage values such as the server-side root directory.
+- `register_migration(...)` records file paths; it does not freeze or checksum their contents.
+- `migration_run(...)` executes one direction, while `migration_migrate_database(numeric)` walks the registry toward a target version.
 
-- `migration_read_file` implements server-side file reads through dynamic `COPY`, and `migration_eval` executes the resulting text as SQL. Restrict function privileges and the script directory to trusted database operators.
-- Up and down scripts run with the caller's database privileges and can make arbitrary schema or data changes. Review, checksum, back up, and rehearse them before execution.
-- Version `0.0.1` is 2018-era code with no current compatibility matrix. Its recursive runner and custom error logging are not a substitute for release orchestration, locking, or an external audit trail.
+### Security and Operations
+
+- File access occurs on the PostgreSQL server through server-side COPY, and file contents are executed as SQL. Restrict the extension and its functions to trusted administrators.
+- Keep registered files immutable, reviewed, and backed up. The registry stores paths rather than content hashes, so replacing a file changes what a later run executes.
+- Run only one migrator at a time. The implementation provides no advisory-lock protocol for concurrent runners.
+- Test both up and down paths on a disposable copy and take a database backup. Error rows help diagnosis but are not a substitute for transactional review or recovery planning.

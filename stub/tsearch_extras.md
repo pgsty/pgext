@@ -2,21 +2,43 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/zulip/tsearch_extras/blob/f566e9606bac00a22c4b62e9511b022c861db05c/tsearch_extras.control)
-- [Official upstream documentation](https://github.com/zulip/tsearch_extras/blob/f566e9606bac00a22c4b62e9511b022c861db05c/README.md)
+- [Official README](https://github.com/zulip/tsearch_extras/blob/f566e9606bac00a22c4b62e9511b022c861db05c/README.md)
+- [Extension SQL](https://github.com/zulip/tsearch_extras/blob/f566e9606bac00a22c4b62e9511b022c861db05c/tsearch_extras--1.0.sql)
+- [Full-text implementation](https://github.com/zulip/tsearch_extras/blob/f566e9606bac00a22c4b62e9511b022c861db05c/tsearch_extras.c)
 
-`tsearch_extras` — Full-text-search helpers for returning match locations and extracting tsvector lexemes.
+`tsearch_extras` version `1.0` exposes lower-level information from PostgreSQL full-text search: locations and lengths of query matches in source text, and the lexemes stored in a `tsvector`.
 
-The reviewed catalog snapshot records version `1.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "tsearch_extras";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tsearch_extras';
+CREATE EXTENSION tsearch_extras;
+
+SELECT ts_match_locs_array(
+  'The quick brown fox jumped. The jumping continued.',
+  plainto_tsquery('jump')
+);
+
+SELECT tsvector_lexemes(
+  to_tsvector('The quick brown fox jumped over the lazy dog')
+);
 ```
 
-The curated lifecycle is `archived`. Pin the reviewed build and verify maintenance status before adoption.
+Use an explicit text-search configuration when results must not depend on the session default:
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+```sql
+SELECT ts_match_locs_array(
+  'english'::regconfig,
+  'The quick brown fox jumped.',
+  plainto_tsquery('english', 'jump')
+);
+```
+
+### Objects
+
+- `ts_match_locs_array(text, tsquery) returns int4[][2]`: match location/length pairs using the current text-search configuration.
+- `ts_match_locs_array(regconfig, text, tsquery) returns int4[][2]`: the same result using the selected configuration.
+- `tsvector_lexemes(tsvector) returns text[]`: lexemes stored in the vector, without positional metadata or weights.
+
+### Compatibility Boundary
+
+Match locations are produced through PostgreSQL's parser and headline internals, so validate offsets with the exact configuration, encoding, dictionary, and server version used by the application. The repository is archived and the C source depends on internal full-text-search headers. Verify compilation and regression behavior for the target PostgreSQL release; no preload is required.

@@ -2,19 +2,28 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/bktree.control)
-- [官方上游文档](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/README.md)
+- [官方 README](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/README.md)
+- [1.0 版 SQL API](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/bktree--1.0.sql)
+- [汉明距离实现](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/bktree.c)
 
-`bktree` — 面向 64 位感知哈希和汉明距离搜索的 SP-GiST BK-tree 索引扩展。
+`bktree` 为 64 位整数哈希提供 BK-tree SP-GiST 操作符类。其距离是两个位模式之间的汉明距离，因此适合对感知哈希进行近邻式过滤，而不是处理普通数值范围。
 
-已复核目录快照记录的版本为 `1.0`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `15`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+把每个 64 位哈希保存为 `bigint`，用 `bktree_ops` 建立索引，再用包含中心值与最大距离的 `bktree_area` 查询。
 
 ```sql
-CREATE EXTENSION "bktree";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'bktree';
+CREATE EXTENSION bktree;
+CREATE TABLE images (id bigint PRIMARY KEY, phash bigint NOT NULL);
+CREATE INDEX images_phash_bktree ON images USING spgist (phash bktree_ops);
+
+SELECT id, phash <-> 123456789::bigint AS distance
+FROM images
+WHERE phash <@ ROW(123456789::bigint, 8::bigint)::bktree_area;
 ```
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+`<@` 操作符检查汉明距离是否不大于给定半径。`<->` 操作符返回距离，而扩展提供的 `=` 操作符检查位相等。`int64_to_bitstring()` 与 `bitstring_to_int64()` 是转换辅助函数。
+
+### 注意事项
+
+该操作符类只适用于 `int8`，实现假定 64 位汉明距离介于 0 到 64。这里的半径不是数值容差：数值接近的整数可能有很多不同位，数值相距很远的整数也可能只有少量不同位。所审阅分支专门面向 PostgreSQL 15；生产采用前应在目标服务端版本上验证索引创建、执行计划、相等语义以及有符号哈希转换。

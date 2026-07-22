@@ -2,23 +2,32 @@
 
 Sources:
 
-- [Official upstream documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Alibaba Cloud supported-extension matrix](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Alibaba Cloud extension management](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/manage-plug-ins)
+- [Official Tiger Geocoder documentation](https://postgis.net/docs/Extras.html#Tiger_Geocoder)
+- [Official geocode function reference](https://postgis.net/docs/Geocode.html)
 
-`ganos_tiger_geocoder` — Ganos tiger geocoder and reverse geocoder with support for USCB TIGER data.
+`ganos_tiger_geocoder` is an Alibaba Cloud GanosBase extension for U.S. Census Bureau TIGER data, forward geocoding, and reverse geocoding. It is a managed-service component, not an extension that can be installed on community PostgreSQL from an upstream source repository.
 
-The reviewed catalog snapshot records version `7.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17`; confirm the exact build against the target server.
+### Core Workflow
+
+On ApsaraDB RDS for PostgreSQL, confirm that the instance engine version exposes 7.0, make the target database owned by a privileged account, and install `ganos_tiger_geocoder` through the Alibaba Cloud extension-management workflow. GanosBase and PostGIS extensions cannot be installed in the same schema.
+
+The geocoder needs TIGER lookup and state data before address matching is useful. After the provider-supported loader has populated the data and the `tiger` schema is on `search_path`, a forward-geocoding query follows the Tiger interface:
 
 ```sql
-CREATE EXTENSION "ganos_tiger_geocoder";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'ganos_tiger_geocoder';
+SET search_path = public, tiger;
+
+SELECT pprint_addy(addy) AS normalized_address,
+       rating,
+       ST_AsText(geomout) AS point
+FROM geocode('1 Devonshire Place, Boston, MA 02109', 5);
 ```
 
-This is a provider-specific component for `Alibaba Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Important user-facing objects include `geocode` for ranked address candidates, `reverse_geocode` for addresses near a point, `normalize_address` and `pprint_addy` for address handling, and loader or index-maintenance helpers in the `tiger` schema. Lower `rating` values indicate better forward-geocoding matches.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+### Managed-Service Boundaries
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Availability and version depend on the Alibaba Cloud product, region, PostgreSQL major, and minor engine release; query `pg_available_extensions` on the actual instance instead of assuming catalog availability. The service documentation requires a privileged database owner for this extension. Loading national or state TIGER data consumes substantial storage and maintenance time, and geocoding quality depends on the loaded Census vintage and local data quality.
+
+The linked PostGIS documentation describes the Tiger SQL model to which Alibaba Cloud points, but Alibaba controls the Ganos build and lifecycle. Follow the provider console and support documentation for installation, data loading, upgrades, backups, and removal; do not substitute community PostGIS files or expect `ganos_tiger_geocoder` to work on self-managed PostgreSQL.

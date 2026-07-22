@@ -2,22 +2,32 @@
 
 来源：
 
-- [官方上游文档](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-the-varbitx-plug-in)
+- [阿里云 RDS varbitx 文档](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-the-varbitx-plug-in)
 
-`varbitx` — 阿里云 ApsaraDB RDS for PostgreSQL 的位图函数扩展，为 varbit 增加切片、批量置位、位置查找和计数操作。
+`varbitx` 版本 `1.0` 是阿里云 ApsaraDB RDS for PostgreSQL 扩展，为变长位串增加切片、批量修改、位置查找、生成和计数函数。它是供应商托管功能，并没有被文档描述为可移植的社区软件包。
 
-已复核目录快照记录的版本为 `1.0`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+阿里云文档说明该扩展用于受支持的 RDS PostgreSQL 10 与 11 实例。
 
 ```sql
-CREATE EXTENSION "varbitx";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'varbitx';
+CREATE EXTENSION varbitx;
+
+SELECT get_bit('111110000011'::varbit, 3, 5);
+SELECT bit_count('1111000011110000'::varbit, 1, 5, 4);
+SELECT set_bit_array_record(
+  '111100001111'::varbit,
+  1,
+  0,
+  ARRAY[1,4,5,6,7],
+  2
+);
 ```
 
-这是 `Alibaba Cloud` 的服务商专用组件；可用性、启用、权限与升级遵循该服务，而不是可移植的社区软件包。
+文档中函数的位置从零开始。`get_bit` 提取切片。`set_bit_array` 返回修改后的位串；`set_bit_array_record` 还会返回发生变化的位置。可选限制可在达到指定变更次数后停止。
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+### 函数组与注意事项
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+提取使用 `get_bit` 和 `get_bit_array`；生成使用 `bit_fill` 与概率性的 `bit_rand`；计数使用 `bit_count` 与 `bit_count_array`；`bit_posite` 按升序或降序返回匹配位置。
+
+修改函数返回新值，并不会原地更新表。填充值、结果长度、顺序和限制参数都会实质性改变结果，因此应测试边界位置，以及短于目标索引的位串。可用性与升级由 RDS 实例系列和供应商发行控制；将其写入存储过程前，应在目标实例上核实确切数据库版本与函数签名。

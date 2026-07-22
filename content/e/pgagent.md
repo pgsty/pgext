@@ -44,16 +44,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_14 : AVAIL 3" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 4.2.3" "pgagent_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent_14 : AVAIL 2" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |      {{< bg "MISS" "pgagent : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
 
 
 {{< tabs >}}
@@ -71,6 +71,16 @@ width: full
 | `pgagent_18` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_18-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgagent_18-4.2.3-1PGDG.rhel10.x86_64.rpm) |
 | `pgagent_18` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.3 KiB | [pgagent_18-4.2.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgagent_18-4.2.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `pgagent_18` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent` | `4.2.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 95.4 KiB | [pgagent_4.2.3-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d12.aarch64](/os/d12.aarch64) | pgdg | 85.9 KiB | [pgagent_4.2.3-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [d13.x86_64](/os/d13.x86_64) | pgdg | 102.3 KiB | [pgagent_4.2.3-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d13.aarch64](/os/d13.aarch64) | pgdg | 90.6 KiB | [pgagent_4.2.3-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u22.x86_64](/os/u22.x86_64) | pgdg | 87.4 KiB | [pgagent_4.2.3-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.9 KiB | [pgagent_4.2.3-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -91,6 +101,16 @@ width: full
 | `pgagent_17` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_17-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgagent_17-4.2.3-1PGDG.rhel10.x86_64.rpm) |
 | `pgagent_17` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.3 KiB | [pgagent_17-4.2.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgagent_17-4.2.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `pgagent_17` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent` | `4.2.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 95.4 KiB | [pgagent_4.2.3-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d12.aarch64](/os/d12.aarch64) | pgdg | 85.9 KiB | [pgagent_4.2.3-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [d13.x86_64](/os/d13.x86_64) | pgdg | 102.3 KiB | [pgagent_4.2.3-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d13.aarch64](/os/d13.aarch64) | pgdg | 90.6 KiB | [pgagent_4.2.3-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u22.x86_64](/os/u22.x86_64) | pgdg | 87.4 KiB | [pgagent_4.2.3-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.9 KiB | [pgagent_4.2.3-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -111,6 +131,16 @@ width: full
 | `pgagent_16` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_16-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgagent_16-4.2.3-1PGDG.rhel10.x86_64.rpm) |
 | `pgagent_16` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.3 KiB | [pgagent_16-4.2.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgagent_16-4.2.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `pgagent_16` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent` | `4.2.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 95.4 KiB | [pgagent_4.2.3-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d12.aarch64](/os/d12.aarch64) | pgdg | 85.9 KiB | [pgagent_4.2.3-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [d13.x86_64](/os/d13.x86_64) | pgdg | 102.3 KiB | [pgagent_4.2.3-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d13.aarch64](/os/d13.aarch64) | pgdg | 90.6 KiB | [pgagent_4.2.3-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u22.x86_64](/os/u22.x86_64) | pgdg | 87.4 KiB | [pgagent_4.2.3-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.9 KiB | [pgagent_4.2.3-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -131,6 +161,16 @@ width: full
 | `pgagent_15` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_15-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgagent_15-4.2.3-1PGDG.rhel10.x86_64.rpm) |
 | `pgagent_15` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.3 KiB | [pgagent_15-4.2.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgagent_15-4.2.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `pgagent_15` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent` | `4.2.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 95.4 KiB | [pgagent_4.2.3-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d12.aarch64](/os/d12.aarch64) | pgdg | 85.9 KiB | [pgagent_4.2.3-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [d13.x86_64](/os/d13.x86_64) | pgdg | 102.3 KiB | [pgagent_4.2.3-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d13.aarch64](/os/d13.aarch64) | pgdg | 90.6 KiB | [pgagent_4.2.3-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u22.x86_64](/os/u22.x86_64) | pgdg | 87.4 KiB | [pgagent_4.2.3-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.9 KiB | [pgagent_4.2.3-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -153,6 +193,16 @@ width: full
 | `pgagent_14` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_14-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgagent_14-4.2.3-1PGDG.rhel10.x86_64.rpm) |
 | `pgagent_14` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 117.3 KiB | [pgagent_14-4.2.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgagent_14-4.2.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `pgagent_14` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.7 KiB | [pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent` | `4.2.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 95.4 KiB | [pgagent_4.2.3-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d12.aarch64](/os/d12.aarch64) | pgdg | 85.9 KiB | [pgagent_4.2.3-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg12+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [d13.x86_64](/os/d13.x86_64) | pgdg | 102.3 KiB | [pgagent_4.2.3-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [d13.aarch64](/os/d13.aarch64) | pgdg | 90.6 KiB | [pgagent_4.2.3-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg13+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u22.x86_64](/os/u22.x86_64) | pgdg | 87.4 KiB | [pgagent_4.2.3-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg22.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.9 KiB | [pgagent_4.2.3-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
+| `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
+| `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

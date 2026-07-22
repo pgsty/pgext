@@ -22,7 +22,7 @@ SELECT ruid_v4();
 SELECT '5b0ba39c-6597-11e2-9d36-001b211595d1'::uuid::ruid;
 ```
 
-辅助函数包括 `ruid_nil`、`ruid_v1`、`ruid_v1mc`、`ruid_v4`、`ruid_v5`，以及命名空间辅助函数 `ruid_dns`、`ruid_oid`、`ruid_url` 和 `ruid_x500`。
+辅助函数包括 `ruid_nil`、`ruid_v1`、`ruid_v1mc`、`ruid_v4` 和 `ruid_v5`。命名空间常量由 `ruid_ns_dns`、`ruid_ns_oid`、`ruid_ns_url` 和 `ruid_ns_x500` 提供；基于名称生成版本 5 标识符的辅助函数为 `ruid_dns`、`ruid_oid`、`ruid_url`、`ruid_x500` 和 `ruid_sum`。
 
 ### 注意事项
 

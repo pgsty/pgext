@@ -22,7 +22,7 @@ SELECT ruid_v4();
 SELECT '5b0ba39c-6597-11e2-9d36-001b211595d1'::uuid::ruid;
 ```
 
-Helper functions include `ruid_nil`, `ruid_v1`, `ruid_v1mc`, `ruid_v4`, `ruid_v5`, and namespace helpers `ruid_dns`, `ruid_oid`, `ruid_url`, and `ruid_x500`.
+Helper functions include `ruid_nil`, `ruid_v1`, `ruid_v1mc`, `ruid_v4`, and `ruid_v5`. Namespace constants are exposed by `ruid_ns_dns`, `ruid_ns_oid`, `ruid_ns_url`, and `ruid_ns_x500`; name-based version-5 helpers are `ruid_dns`, `ruid_oid`, `ruid_url`, `ruid_x500`, and `ruid_sum`.
 
 ### Caveats
 

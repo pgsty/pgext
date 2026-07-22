@@ -2,19 +2,28 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/bktree.control)
-- [Official upstream documentation](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/README.md)
+- [Official README](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/README.md)
+- [Version 1.0 SQL API](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/bktree--1.0.sql)
+- [Hamming-distance implementation](https://github.com/meniam/pg_bktree/blob/59db54ff5cd0b9f1b60c95be6f04414282699237/bktree.c)
 
-`bktree` — SP-GiST BK-tree index extension for 64-bit perceptual hashes and Hamming-distance searches.
+`bktree` provides a BK-tree operator class for SP-GiST indexes over 64-bit integer hashes. Its distance is the Hamming distance between the two bit patterns, making it useful for nearest-neighbor-like filtering of perceptual hashes rather than ordinary numeric ranges.
 
-The reviewed catalog snapshot records version `1.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `15`; confirm the exact build against the target server.
+### Core Workflow
+
+Store each 64-bit hash as `bigint`, build the `bktree_ops` index, and query with a `bktree_area` containing the center and maximum distance.
 
 ```sql
-CREATE EXTENSION "bktree";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'bktree';
+CREATE EXTENSION bktree;
+CREATE TABLE images (id bigint PRIMARY KEY, phash bigint NOT NULL);
+CREATE INDEX images_phash_bktree ON images USING spgist (phash bktree_ops);
+
+SELECT id, phash <-> 123456789::bigint AS distance
+FROM images
+WHERE phash <@ ROW(123456789::bigint, 8::bigint)::bktree_area;
 ```
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The `<@` operator tests whether the Hamming distance is at most the requested radius. The `<->` operator returns the distance, while the extension's `=` operator tests bitwise equality. `int64_to_bitstring()` and `bitstring_to_int64()` are conversion helpers.
+
+### Caveats
+
+The operator class is only for `int8` and the implementation assumes a 64-bit Hamming distance from 0 through 64. A radius is not a numeric tolerance: nearby integer values may have many differing bits, and distant integer values may have few. The reviewed fork specifically targets PostgreSQL 15; validate index creation, plans, equality semantics, and signed hash conversion on the exact server build before production use.

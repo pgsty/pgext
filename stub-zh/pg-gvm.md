@@ -2,20 +2,45 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/greenbone/pg-gvm/blob/2427faa6e26ebb02d134b65efad8c9bf936dfa81/control.in)
+- [官方 22.6 系列 README](https://github.com/greenbone/pg-gvm/blob/v22.6.18/README.md)
+- [官方主机工具 SQL](https://github.com/greenbone/pg-gvm/blob/v22.6.18/sql/hosts.in.sql)
+- [官方 iCalendar 工具 SQL](https://github.com/greenbone/pg-gvm/blob/v22.6.18/sql/ical.in.sql)
+- [官方正则表达式工具 SQL](https://github.com/greenbone/pg-gvm/blob/v22.6.18/sql/regexp.in.sql)
 
-`pg-gvm` — 为 Greenbone 漏洞管理守护进程提供 PostgreSQL 实用函数。
+`pg-gvm` 是 Greenbone 为 GVMd 提供的 PostgreSQL 辅助库。版本/API 系列 `22.6` 提供 C 函数，用于处理 Greenbone 主机范围表达式、iCalendar 重复时间计算与正则匹配。它是应用支撑组件，而不是通用 SQL 工具集。
 
-已复核目录快照记录的版本为 `22.6`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+创建扩展，然后用 Greenbone 组件生成的相同文本格式调用辅助函数：
 
 ```sql
 CREATE EXTENSION "pg-gvm";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg-gvm';
+
+SELECT hosts_contains(
+  '192.168.123.1-192.168.123.20, 192.168.123.30',
+  '192.168.123.10'
+);
+
+SELECT max_hosts(
+  '192.168.123.1-192.168.123.20, 192.168.123.30-192.168.123.34',
+  '192.168.123.10'
+);
+
+SELECT regexp('abc', '^[a-z]+$');
 ```
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+第一个调用测试 Greenbone 主机规格是否包含请求的主机；第二个统计第一个范围表达式中的地址数，并排除第二个参数中的地址。
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+### API
+
+- `hosts_contains(text, text) RETURNS boolean`：主机表达式是否包含指定主机。
+- `max_hosts(text, text) RETURNS integer`：第一个表达式所代表的主机数，扣除第二个表达式中的排除项。
+- `regexp(text, text) RETURNS boolean`：执行正则匹配；上游测试中无效模式返回 false。
+- `next_time_ical(text, bigint, text) RETURNS integer`：根据 iCalendar 文本、Unix 时间戳和时区计算下一次重复时间。
+- `next_time_ical(text, bigint, text, integer) RETURNS integer`：带发生次数偏移量的相同计算。
+
+### 注意事项
+
+扩展链接 `libical`、GLib 与 `libgvm-base`；软件包和库版本必须与 Greenbone 栈匹配。生成的 control 文件使用项目 API 版本和共享库名称，因此应安装同一发布的完整产物，不能混用不同标签的文件。
+
+主机语法和 iCalendar 行为遵循 Greenbone 库，而非 PostgreSQL 原生网络/范围类型。把这些函数用于策略判断前，应测试边界地址、排除项、时区、夏令时转换、畸形日历输入与大型范围表达式。

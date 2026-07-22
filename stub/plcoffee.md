@@ -2,23 +2,36 @@
 
 Sources:
 
-- [Official PGXN distribution page](https://pgxn.org/dist/plv8/)
-- [Official project or provider page](https://plv8.github.io/)
-- [Official primary documentation](https://pgxn.org/dist/plv8/doc/plv8.html)
+- [Official PL/V8 dialect documentation](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/doc/plv8.md#dialects)
+- [Official CoffeeScript example](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/doc/plv8.md#coffeescript-example)
+- [Official build rules](https://github.com/plv8/plv8/blob/3be0e9d2b112cbf0a4783bbdecd442acbe6b0fb3/Makefile)
 
-`plcoffee` — CoffeeScript procedural language for PostgreSQL, compiled and executed by the PL/v8 runtime
+`plcoffee` is the optional CoffeeScript procedural-language dialect shipped by PL/V8. It compiles CoffeeScript function bodies for execution by the same V8-backed handler used by PL/V8. Version `3.1.10` is a legacy dialect: use it to maintain existing functions, not as the default language for new database code.
 
-The reviewed catalog snapshot records version `3.1.10`, kind `standard`, and implementation language `C++`.
-The curated compatibility set is `10,11,12,13,14,15,16`; confirm the exact build against the target server.
+### Core Workflow
+
+The server package must include the optional `plcoffee.control` and versioned SQL files. A superuser creates the language, after which permitted users can define functions in it:
 
 ```sql
-CREATE EXTENSION "plcoffee";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'plcoffee';
+CREATE EXTENSION plcoffee;
+
+CREATE FUNCTION plcoffee_test(keys text[], vals text[])
+RETURNS text AS $$
+  return JSON.stringify(keys.reduce(((o, key, idx) ->
+    o[key] = vals[idx]; return o), {}), {})
+$$ LANGUAGE plcoffee IMMUTABLE STRICT;
+
+SELECT plcoffee_test(ARRAY['name', 'age'], ARRAY['Tom', '29']);
 ```
 
-The curated lifecycle is `deprecated`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+The result is a JSON string assembled by the CoffeeScript body.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Objects and Runtime
+
+`CREATE EXTENSION plcoffee` installs the trusted language `plcoffee` plus its call, inline, and validator handler functions in `pg_catalog`. The control and SQL files are generated as part of the PL/V8 build and load the shared `$libdir/plv8` module; there is no separate CoffeeScript server library and no preload setting.
+
+### Caveats
+
+PL/V8 can be built with `DISABLE_DIALECT`, in which case the `plcoffee` extension files do not exist. Confirm the package includes the dialect and matches the installed PL/V8 binary/version. Extension creation is superuser-only even though the resulting procedural language is marked trusted.
+
+CoffeeScript and its PL/V8 dialect are legacy surfaces. JavaScript execution consumes memory and CPU inside a PostgreSQL backend, so restrict who may define functions, review volatility/strictness declarations, and test upgrades with the exact PostgreSQL, PL/V8, V8, and CoffeeScript build combination.

@@ -2,22 +2,21 @@
 
 Sources:
 
-- [Official project or provider page](https://cloud.tencent.com/product/postgres)
+- [TencentDB PostgreSQL SQL throttling documentation](https://intl.cloud.tencent.com/zh/document/product/409/64750)
+- [TencentDB for PostgreSQL product page](https://cloud.tencent.com/product/postgres)
 
-`tencentdb_sql_throttling` — TencentDB proprietary preloaded extension for limiting SQL concurrency by normalized SQL text or query ID across primary and read-only nodes.
-
-The reviewed catalog snapshot records version `1.0`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `14,15,16,17,18`; confirm the exact build against the target server.
+`tencentdb_sql_throttling` is a TencentDB-managed extension that limits concurrent executions by normalized query ID. It is not a portable community package: Tencent Cloud controls availability, supported kernel builds, preload changes, privileges, HA behavior, and upgrades.
 
 ```sql
-CREATE EXTENSION "tencentdb_sql_throttling";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'tencentdb_sql_throttling';
+CREATE EXTENSION tencentdb_sql_throttling;
+SELECT tencentdb_sql_throttling.add_rule_with_queryid(
+  497939862935121343, 0, 10, true
+);
+SELECT * FROM tencentdb_sql_throttling.rules;
 ```
 
-This is a provider-specific component for `Tencent Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Tencent Cloud support must add `tencentdb_sql_throttling` to `shared_preload_libraries`, which restarts the instance. Official documentation requires at least the listed TencentDB kernel revisions and says Extended Query Protocol statements cannot be configured directly. Obtain query IDs from `pg_stat_activity` or `pg_stat_statements`, and use `work_node` 0 for primary plus read-only nodes, 1 for primary only, or 2 for read-only only.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+Rules affect traffic only while loaded in memory. A restart, HA event, or major-version upgrade clears memory rules; persist them in `tencentdb_sql_throttling.persistent_rules_table` and explicitly reload them. `drop_rule`, `drop_all_rules`, `change_rule_status`, and the load/dump helpers distinguish memory from persistent state; verify both tables after every control operation.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Start with a conservative `max_concurrency`, monitor `current_concurrency`, `total_hit_count`, `reject_count`, latency, and application errors, and keep an emergency rollback path. Query-ID changes after SQL, schema, planner, or version changes can make a rule miss or affect an unintended normalized query, so rehearse failover and upgrade behavior with the provider.

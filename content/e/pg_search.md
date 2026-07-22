@@ -27,7 +27,7 @@ width: full
 |    **Schemas**    | `paradedb` |
 |   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_trgm" >}} |
 
-> [!Note] bm25 am conflicts with pg_textsearch and vchord_bm25
+> [!Note] bm25 access method conflicts with pg_textsearch and vchord_bm25; PIGSTY packaging uses pgrx 0.19.1 and the pinned builder Rust toolchain instead of upstream rolling stable.
 
 
 ## Packages
@@ -41,22 +41,22 @@ width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.5" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.5" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pg-search : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.0" "postgresql-15-pg-search : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pg-search : MISS 0" "red" >}}      |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "pg_search_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_search_14 : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.5" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.5" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.7" "postgresql-14-pg-search : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pg-search : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.24.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pg-search : MISS 0" "red" >}}      |
 
 
 {{< tabs >}}
@@ -64,88 +64,88 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_18` | `0.24.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 70.8 MiB | [pg_search_18-0.24.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_18-0.24.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_search_18` | `0.24.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.0 MiB | [pg_search_18-0.24.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_18-0.24.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_search_18` | `0.24.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.1 MiB | [pg_search_18-0.24.0-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_18-0.24.0-1PARADEDB.el9.x86_64.rpm) |
-| `pg_search_18` | `0.24.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.0 MiB | [pg_search_18-0.24.0-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_18-0.24.0-1PARADEDB.el9.aarch64.rpm) |
-| `pg_search_18` | `0.24.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.0 MiB | [pg_search_18-0.24.0-1PARADEDB.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_18-0.24.0-1PARADEDB.el10.x86_64.rpm) |
-| `pg_search_18` | `0.24.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.0 MiB | [pg_search_18-0.24.0-1PARADEDB.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_18-0.24.0-1PARADEDB.el10.aarch64.rpm) |
-| `postgresql-18-pg-search` | `0.24.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 67.1 MiB | [postgresql-18-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-18-pg-search/postgresql-18-pg-search_0.24.0_amd64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 64.6 MiB | [postgresql-18-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-18-pg-search/postgresql-18-pg-search_0.24.0_arm64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 67.1 MiB | [postgresql-18-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-18-pg-search/postgresql-18-pg-search_0.24.0_amd64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 64.6 MiB | [postgresql-18-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-18-pg-search/postgresql-18-pg-search_0.24.0_arm64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.2 MiB | [postgresql-18-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-18-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.6 MiB | [postgresql-18-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-18-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.1 MiB | [postgresql-18-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-18-pg-search/postgresql-18-pg-search_0.24.0_amd64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.6 MiB | [postgresql-18-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-18-pg-search/postgresql-18-pg-search_0.24.0_arm64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 66.9 MiB | [postgresql-18-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-18-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-search` | `0.24.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.2 MiB | [postgresql-18-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-18-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb) |
+| `pg_search_18` | `0.24.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 70.9 MiB | [pg_search_18-0.24.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_18-0.24.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_search_18` | `0.24.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.2 MiB | [pg_search_18-0.24.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_18-0.24.3-1PIGSTY.el8.aarch64.rpm) |
+| `pg_search_18` | `0.24.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.2 MiB | [pg_search_18-0.24.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_18-0.24.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_search_18` | `0.24.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.1 MiB | [pg_search_18-0.24.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_18-0.24.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_search_18` | `0.24.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.1 MiB | [pg_search_18-0.24.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_18-0.24.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_search_18` | `0.24.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.0 MiB | [pg_search_18-0.24.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_18-0.24.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-search` | `0.24.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 65.2 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 62.3 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 65.2 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 62.3 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.3 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.7 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.2 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 65.5 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 67.0 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-search` | `0.24.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.4 MiB | [postgresql-18-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-18-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_17` | `0.24.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 70.8 MiB | [pg_search_17-0.24.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_17-0.24.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_search_17` | `0.24.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.0 MiB | [pg_search_17-0.24.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_17-0.24.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_search_17` | `0.24.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.0 MiB | [pg_search_17-0.24.0-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_17-0.24.0-1PARADEDB.el9.x86_64.rpm) |
-| `pg_search_17` | `0.24.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.0 MiB | [pg_search_17-0.24.0-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_17-0.24.0-1PARADEDB.el9.aarch64.rpm) |
-| `pg_search_17` | `0.24.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.1 MiB | [pg_search_17-0.24.0-1PARADEDB.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_17-0.24.0-1PARADEDB.el10.x86_64.rpm) |
-| `pg_search_17` | `0.24.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.0 MiB | [pg_search_17-0.24.0-1PARADEDB.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_17-0.24.0-1PARADEDB.el10.aarch64.rpm) |
-| `postgresql-17-pg-search` | `0.24.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 67.1 MiB | [postgresql-17-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-17-pg-search/postgresql-17-pg-search_0.24.0_amd64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 64.6 MiB | [postgresql-17-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-17-pg-search/postgresql-17-pg-search_0.24.0_arm64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 67.1 MiB | [postgresql-17-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-17-pg-search/postgresql-17-pg-search_0.24.0_amd64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 64.6 MiB | [postgresql-17-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-17-pg-search/postgresql-17-pg-search_0.24.0_arm64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.2 MiB | [postgresql-17-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-17-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.5 MiB | [postgresql-17-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-17-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.1 MiB | [postgresql-17-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-search/postgresql-17-pg-search_0.24.0_amd64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.6 MiB | [postgresql-17-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-search/postgresql-17-pg-search_0.24.0_arm64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 66.9 MiB | [postgresql-17-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-17-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-pg-search` | `0.24.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.3 MiB | [postgresql-17-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-17-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb) |
+| `pg_search_17` | `0.24.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 71.0 MiB | [pg_search_17-0.24.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_17-0.24.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_search_17` | `0.24.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.2 MiB | [pg_search_17-0.24.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_17-0.24.3-1PIGSTY.el8.aarch64.rpm) |
+| `pg_search_17` | `0.24.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.2 MiB | [pg_search_17-0.24.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_17-0.24.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_search_17` | `0.24.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.1 MiB | [pg_search_17-0.24.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_17-0.24.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_search_17` | `0.24.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.2 MiB | [pg_search_17-0.24.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_17-0.24.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_search_17` | `0.24.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.0 MiB | [pg_search_17-0.24.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_17-0.24.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-search` | `0.24.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 65.2 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 62.3 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 65.2 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 62.3 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.3 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.6 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.2 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 65.5 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 67.1 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-search` | `0.24.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.4 MiB | [postgresql-17-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-17-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_16` | `0.24.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 70.8 MiB | [pg_search_16-0.24.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_16-0.24.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_search_16` | `0.24.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.0 MiB | [pg_search_16-0.24.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_16-0.24.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_search_16` | `0.24.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.1 MiB | [pg_search_16-0.24.0-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_16-0.24.0-1PARADEDB.el9.x86_64.rpm) |
-| `pg_search_16` | `0.24.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.0 MiB | [pg_search_16-0.24.0-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_16-0.24.0-1PARADEDB.el9.aarch64.rpm) |
-| `pg_search_16` | `0.24.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.0 MiB | [pg_search_16-0.24.0-1PARADEDB.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_16-0.24.0-1PARADEDB.el10.x86_64.rpm) |
-| `pg_search_16` | `0.24.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.0 MiB | [pg_search_16-0.24.0-1PARADEDB.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_16-0.24.0-1PARADEDB.el10.aarch64.rpm) |
-| `postgresql-16-pg-search` | `0.24.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 67.1 MiB | [postgresql-16-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-16-pg-search/postgresql-16-pg-search_0.24.0_amd64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 64.5 MiB | [postgresql-16-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-16-pg-search/postgresql-16-pg-search_0.24.0_arm64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 67.1 MiB | [postgresql-16-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-16-pg-search/postgresql-16-pg-search_0.24.0_amd64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 64.6 MiB | [postgresql-16-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-16-pg-search/postgresql-16-pg-search_0.24.0_arm64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.2 MiB | [postgresql-16-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-16-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.4 MiB | [postgresql-16-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-16-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.1 MiB | [postgresql-16-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-search/postgresql-16-pg-search_0.24.0_amd64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.6 MiB | [postgresql-16-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-search/postgresql-16-pg-search_0.24.0_arm64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 66.9 MiB | [postgresql-16-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-16-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-pg-search` | `0.24.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.3 MiB | [postgresql-16-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-16-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb) |
+| `pg_search_16` | `0.24.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 71.0 MiB | [pg_search_16-0.24.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_16-0.24.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_search_16` | `0.24.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.2 MiB | [pg_search_16-0.24.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_16-0.24.3-1PIGSTY.el8.aarch64.rpm) |
+| `pg_search_16` | `0.24.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.3 MiB | [pg_search_16-0.24.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_16-0.24.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_search_16` | `0.24.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.1 MiB | [pg_search_16-0.24.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_16-0.24.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_search_16` | `0.24.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.1 MiB | [pg_search_16-0.24.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_16-0.24.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_search_16` | `0.24.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.1 MiB | [pg_search_16-0.24.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_16-0.24.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-search` | `0.24.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 65.2 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 62.3 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 65.2 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 62.3 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.3 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.7 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.2 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 65.5 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 67.1 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-search` | `0.24.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.4 MiB | [postgresql-16-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-16-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_15` | `0.24.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 70.8 MiB | [pg_search_15-0.24.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_15-0.24.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_search_15` | `0.24.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.0 MiB | [pg_search_15-0.24.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_15-0.24.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_search_15` | `0.24.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.0 MiB | [pg_search_15-0.24.0-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_15-0.24.0-1PARADEDB.el9.x86_64.rpm) |
-| `pg_search_15` | `0.24.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.0 MiB | [pg_search_15-0.24.0-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_15-0.24.0-1PARADEDB.el9.aarch64.rpm) |
-| `pg_search_15` | `0.24.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.0 MiB | [pg_search_15-0.24.0-1PARADEDB.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_15-0.24.0-1PARADEDB.el10.x86_64.rpm) |
-| `pg_search_15` | `0.24.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.0 MiB | [pg_search_15-0.24.0-1PARADEDB.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_15-0.24.0-1PARADEDB.el10.aarch64.rpm) |
-| `postgresql-15-pg-search` | `0.24.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 67.0 MiB | [postgresql-15-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-15-pg-search/postgresql-15-pg-search_0.24.0_amd64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 64.5 MiB | [postgresql-15-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-15-pg-search/postgresql-15-pg-search_0.24.0_arm64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 67.0 MiB | [postgresql-15-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-15-pg-search/postgresql-15-pg-search_0.24.0_amd64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 64.6 MiB | [postgresql-15-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-15-pg-search/postgresql-15-pg-search_0.24.0_arm64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.2 MiB | [postgresql-15-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-15-pg-search_0.24.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.5 MiB | [postgresql-15-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-15-pg-search_0.24.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.0 MiB | [postgresql-15-pg-search_0.24.0_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-search/postgresql-15-pg-search_0.24.0_amd64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.6 MiB | [postgresql-15-pg-search_0.24.0_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-search/postgresql-15-pg-search_0.24.0_arm64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 66.9 MiB | [postgresql-15-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-15-pg-search_0.24.0-2PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-pg-search` | `0.24.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.2 MiB | [postgresql-15-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-15-pg-search_0.24.0-2PIGSTY~resolute_arm64.deb) |
+| `pg_search_15` | `0.24.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 70.9 MiB | [pg_search_15-0.24.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_15-0.24.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_search_15` | `0.24.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 68.1 MiB | [pg_search_15-0.24.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_15-0.24.3-1PIGSTY.el8.aarch64.rpm) |
+| `pg_search_15` | `0.24.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 69.2 MiB | [pg_search_15-0.24.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_15-0.24.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_search_15` | `0.24.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 68.1 MiB | [pg_search_15-0.24.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_15-0.24.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_search_15` | `0.24.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 69.1 MiB | [pg_search_15-0.24.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_15-0.24.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_search_15` | `0.24.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 68.0 MiB | [pg_search_15-0.24.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_15-0.24.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-search` | `0.24.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 65.2 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 62.3 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 65.2 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 62.3 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.3 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.7 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 67.1 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 65.5 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 67.0 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-search` | `0.24.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.4 MiB | [postgresql-15-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-search/postgresql-15-pg-search_0.24.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -210,72 +210,76 @@ shared_preload_libraries = 'pg_search';
 CREATE EXTENSION pg_search;
 ```
 
-
-
-
 ## Usage
 
-Sources: [ParadeDB extension install docs](https://docs.paradedb.com/deploy/self-hosted/extension), [create-index docs](https://docs.paradedb.com/documentation/indexing/create-index.md), [match docs](https://docs.paradedb.com/documentation/full-text/match.md), [score docs](https://docs.paradedb.com/documentation/sorting/score.md), [highlight docs](https://docs.paradedb.com/documentation/full-text/highlight.md), [v0.24.0 release](https://github.com/paradedb/paradedb/releases/tag/v0.24.0), [pg_search README](https://github.com/paradedb/paradedb/blob/v0.24.0/pg_search/README.md)
+Sources:
 
-`pg_search` is ParadeDB's BM25-based search extension for PostgreSQL. The upstream README says support starts at PostgreSQL 15; Pigsty packages `0.24.0` for PostgreSQL 15-18 and builds it with `cargo-pgrx` 0.18.1.
+- [pg_search v0.24.3 README](https://github.com/paradedb/paradedb/blob/v0.24.3/pg_search/README.md)
+- [pg_search v0.24.3 release notes](https://github.com/paradedb/paradedb/releases/tag/v0.24.3)
+- [ParadeDB documentation](https://docs.paradedb.com/)
 
-### Enable And Create The Extension
+pg_search adds ParadeDB's BM25 access method and query operators to PostgreSQL for ranked full-text, structured, and hybrid search. Use it when search must remain transactional with PostgreSQL data and must support BM25 scoring, highlighting, filters, aggregates, and joins.
 
-```conf
-shared_preload_libraries = 'pg_search'
-```
+### Create the Extension
 
-```sql
-CREATE EXTENSION pg_search;
-```
+    CREATE EXTENSION pg_search;
 
-The self-hosted extension docs require `shared_preload_libraries = 'pg_search'` before `CREATE EXTENSION`.
+Upstream v0.24.3 supports PostgreSQL 15 and later. Use a build packaged for the exact PostgreSQL major version. The extension participates in planner and executor paths, so test query plans and resource use before production upgrades.
 
-### Create A BM25 Index
+### Build a BM25 Index
 
-Current examples use the `bm25` access method with a unique key field:
+Create a BM25 index with a stable unique key field:
 
-```sql
-CREATE INDEX search_idx ON mock_items
-USING bm25 (id, description, category, rating)
-WITH (key_field = 'id');
-```
+    CREATE INDEX products_search_idx
+    ON products
+    USING bm25 (
+      id,
+      title,
+      description,
+      category,
+      rating
+    )
+    WITH (key_field = 'id');
 
-Only one BM25 index is supported per table. `key_field` is mandatory, must be unique, and must be the first indexed column; text key fields must be untokenized.
+Keep the key field unique and non-null. Index only fields used by search or filtering; every indexed field increases build time, disk use, and write amplification.
 
-### Query Operators And Helpers
+### Query, Rank, and Highlight
 
-The current docs use these query operators:
+The @@@ operator matches a field or indexed row against a ParadeDB query:
 
-- `|||`: match disjunction, equivalent to `term1 OR term2`.
-- `&&&`: match conjunction, equivalent to `term1 AND term2`.
+    SELECT id,
+           title,
+           paradedb.score(id) AS score,
+           paradedb.snippet(description) AS snippet
+    FROM products
+    WHERE description @@@ 'wireless keyboard'
+      AND category = 'electronics'
+    ORDER BY score DESC
+    LIMIT 20;
 
-Examples:
+Use field-qualified query strings or the paradedb query constructors when user input must be constrained. Do not concatenate untrusted input into query syntax without validation.
 
-```sql
-SELECT description, rating
-FROM mock_items
-WHERE description ||| 'running shoes'
-ORDER BY rating
-LIMIT 5;
+For boolean queries, paradedb.boolean() can combine must, should, and must_not clauses and can set minimum_should_match. The extension also exposes index_created_at() for inspecting index creation time.
 
-SELECT description, pdb.score(id) AS score
-FROM mock_items
-WHERE description &&& 'running shoes'
-ORDER BY score DESC
-LIMIT 5;
+### User-Facing Object Index
 
-SELECT description, pdb.snippet(description) AS snippet, pdb.score(id) AS score
-FROM mock_items
-WHERE description ||| 'running shoes'
-ORDER BY score DESC
-LIMIT 5;
-```
+- bm25: index access method for text and structured fields.
+- @@@: search-match operator used in WHERE clauses.
+- paradedb.score(key): BM25 relevance score for a matching row.
+- paradedb.snippet(field): highlighted excerpt for the current match.
+- paradedb.parse(...), paradedb.term(...), paradedb.boolean(...): typed query constructors.
+- paradedb.index_info(...): index metadata and field configuration.
+- paradedb.index_created_at(...): index creation timestamp.
 
-Useful result helpers include `pdb.score(id)`, `pdb.snippet(field)`, `pdb.snippets(field)`, and `pdb.snippet_positions(field)`. Highlighting is relatively expensive and is not supported for fuzzy search queries.
+### Version 0.24.3 Operational Changes
 
-### Notes
+The 0.24.x line enables more aggregate and join scan paths and adds time and timetz support. Version 0.24.3 also bounds sequential-scan buffering, caps index-build worker memory, checks available disk space earlier, fixes GROUP BY cardinality routing, and raises an error when Tantivy would truncate a value.
 
-- The old quickstart URL was removed; use the versioned docs pages above for current `|||`, `&&&`, scoring, and highlighting syntax.
-- Release `0.24.0` requires preloading `pg_search`, upgrades pgrx to 0.18.1, and documents crash-recovery, `ltree`, and inline-tokenizer work without changing the basic BM25 query examples above.
-- The Pigsty metadata notes that the `bm25` access method conflicts with `pg_textsearch` and `vchord_bm25`; do not preload competing BM25 access-method extensions in the same cluster without testing the target combination.
+These safeguards reduce runaway resource use but do not eliminate capacity planning. Monitor temporary space, index size, build duration, and query memory. Re-run representative EXPLAIN ANALYZE plans after upgrading because planner behavior can change.
+
+### Compatibility and Caveats
+
+- pg_search uses its own BM25 index implementation. Do not assume an index created by another extension is interchangeable.
+- Local catalog metadata reports a bm25 access-method conflict with pg_textsearch and vchord_bm25; avoid loading competing implementations in the same database unless their documentation explicitly supports coexistence.
+- Search indexes must be maintained with the table and can materially increase update cost.
+- Ranking is query- and corpus-dependent. Benchmark with production-like text and filters rather than treating example scores as portable.

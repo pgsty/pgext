@@ -2,23 +2,29 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/bitmap/bitmap_counter.control)
-- [Official upstream documentation](https://pgxn.org/dist/bitmap_estimator/README.html)
-- [Official PGXN distribution page](https://pgxn.org/dist/bitmap_estimator/)
+- [Official control file](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/bitmap/bitmap_counter.control)
+- [Official bitmap estimator README](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/bitmap/README.md)
 
-`bitmap_counter` — Aggregation functions and data type for distinct estimation based on s-bitmap.
+`bitmap_counter` implements approximate distinct counting with a self-learning bitmap. It exposes the `bitmap_estimator` state type for stored or procedural state and a `bitmap_distinct` aggregate for direct queries.
 
-The reviewed catalog snapshot records version `1.3.5`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "bitmap_counter";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'bitmap_counter';
+CREATE EXTENSION bitmap_counter;
+
+SELECT bitmap_distinct(i, 0.01, 100000)
+FROM generate_series(1, 100000) AS s(i);
 ```
 
-The curated lifecycle is `archived`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+The two tuning arguments are the target error and expected distinct count. The one-argument `bitmap_distinct(anyelement)` overload defaults to 0.025 and 1,000,000, so explicit values are preferable when the expected set is smaller or less precision is acceptable.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### API
+
+- `bitmap_init(real, int)` creates a `bitmap_estimator`, and `bitmap_size(real, int)` estimates its size.
+- `bitmap_add_item(bitmap_estimator, anyelement)` updates a state; `bitmap_get_estimate(bitmap_estimator)` reads the estimate.
+- `bitmap_get_error(bitmap_estimator)` and `bitmap_get_ndistinct(bitmap_estimator)` expose configured state properties.
+- `bitmap_reset(bitmap_estimator)` clears a state, and `length(bitmap_estimator)` reports its storage size.
+
+### Operational Notes
+
+The version 1.3.5 control file is relocatable and declares no prerequisite extension or preload requirement. The upstream repository is archived and read-only. Stored estimator states may be several kilobytes, and frequent row updates can amplify MVCC bloat. Size the state conservatively, batch updates, and treat results as estimates rather than exact cardinalities.

@@ -2,23 +2,28 @@
 
 Sources:
 
-- [Official upstream documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Alibaba Cloud extension support matrix](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
+- [Alibaba Cloud point cloud model documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/point-cloud-model)
 
-`ganos_pointcloud` — Provides storage, computing, and analysis features for point clouds.
+`ganos_pointcloud` is an Alibaba Cloud GanosBase extension for storing, compressing, inspecting, and processing point-cloud data in ApsaraDB RDS for PostgreSQL. It is a provider-specific component, not a portable community package; availability and the exact version depend on the RDS PostgreSQL engine generation and edition.
 
-The reviewed catalog snapshot records version `7.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17`; confirm the exact build against the target server.
+### Enable the Extensions
+
+On a supported RDS instance, create the core extension in the intended schema. Add the geometry bridge when spatial conversion and analysis are needed:
 
 ```sql
-CREATE EXTENSION "ganos_pointcloud";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'ganos_pointcloud';
+CREATE EXTENSION ganos_pointcloud WITH SCHEMA public CASCADE;
+CREATE EXTENSION ganos_pointcloud_geometry WITH SCHEMA public CASCADE;
 ```
 
-This is a provider-specific component for `Alibaba Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+`CASCADE` may install prerequisites available on the service. Confirm the resulting extension list and versions after creation, because the support matrix contains different Ganos releases for different engine versions.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+### Data Model
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+Point formats are registered in `pointcloud_formats`. Each format defines dimensions, data types, scale/offset rules, compression, and an SRID through XML. Point values use `pcpoint`, while collections use `pcpatch`; all values reference a format identifier so the binary payload can be interpreted correctly. `ganos_pointcloud_geometry` connects these values to Ganos geometry operations.
+
+Register and validate the format before loading a data set, then keep its dimension order, scale, offset, and SRID stable. Mixing values with an incorrect format identifier can silently reinterpret coordinates or attributes.
+
+### Operational Notes
+
+Check the Alibaba Cloud matrix for the target engine minor version before deployment or upgrade. Point-cloud sets can be large, so test compression choice, ingest throughput, indexes, spatial conversion, backup size, and query memory on representative data. Extension creation and upgrades follow Alibaba Cloud's privilege and maintenance model; do not assume that a self-managed build or APIs from the community `pointcloud` project are interchangeable with the installed Ganos release.

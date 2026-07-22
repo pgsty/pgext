@@ -2,22 +2,29 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/loglog/loglog_counter.control)
-- [Official upstream documentation](https://pgxn.org/dist/loglog_estimator/README.html)
-- [Official PGXN distribution page](https://pgxn.org/dist/loglog_estimator/)
+- [Official control file](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/loglog/loglog_counter.control)
+- [Official LogLog README](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/loglog/README.md)
 
-`loglog_counter` — Aggregation functions and data type for distinct estimation based on LogLog.
+`loglog_counter` implements the LogLog cardinality estimator as a `loglog_estimator` type, state functions, and aggregates. It is intended for approximate distinct counts where fixed memory matters more than exactness.
 
-The reviewed catalog snapshot records version `1.2.4`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "loglog_counter";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'loglog_counter';
+CREATE EXTENSION loglog_counter;
+
+SELECT loglog_distinct(i, 0.01)
+FROM generate_series(1, 100000) AS s(i);
 ```
 
-The curated lifecycle is `archived`. Pin the reviewed build and verify maintenance status before adoption.
+The one-argument `loglog_distinct(anyelement)` overload uses a 2.5% default error rate. The explicit overload lets the query select a different error target.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### API
+
+- `loglog_init(real)` creates a `loglog_estimator`, and `loglog_size(real)` reports the corresponding size.
+- `loglog_add_item(loglog_estimator, anyelement)` updates a state; `loglog_get_estimate(loglog_estimator)` reads the result.
+- `loglog_reset(loglog_estimator)` clears the state, and `length(loglog_estimator)` reports its storage size.
+- `loglog_distinct(anyelement, real)` performs configurable aggregation; `loglog_distinct(anyelement)` uses the default.
+
+### Operational Notes
+
+The version 1.2.4 control file is relocatable and declares no prerequisite extension or preload requirement. The upstream repository is archived and read-only. Estimator states may occupy several kilobytes; frequent updates to stored states produce MVCC row versions and can cause bloat. Use the lowest acceptable precision, batch updates, and measure actual error before relying on an estimate.

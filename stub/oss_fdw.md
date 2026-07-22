@@ -2,23 +2,53 @@
 
 Sources:
 
-- [Official upstream documentation](https://www.alibabacloud.com/help/en/polardb/polardb-for-postgresql/read-and-write-external-data-files-by-using-oss-fdw)
+- [Alibaba Cloud oss_fdw documentation](https://www.alibabacloud.com/help/en/polardb/polardb-for-oracle/oss-fdw)
 
-`oss_fdw` — Alibaba Cloud OSS foreign data wrapper for reading and writing OSS objects from PostgreSQL-compatible managed services.
+`oss_fdw` is an Alibaba Cloud PolarDB provider extension that maps Object Storage Service directories or file prefixes to PostgreSQL foreign tables. It is designed for append-only archives and cold data on supported PolarDB for PostgreSQL-compatible service revisions, not as a portable community FDW for self-managed PostgreSQL.
 
-The reviewed catalog snapshot records version `unknown`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `11,14,16`; confirm the exact build against the target server.
+### Core Workflow
+
+Enable the provider extension, define an OSS server, and map a directory to a foreign table:
 
 ```sql
-CREATE EXTENSION "oss_fdw";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'oss_fdw';
+CREATE EXTENSION oss_fdw;
+
+CREATE SERVER archive_oss
+FOREIGN DATA WRAPPER oss_fdw
+OPTIONS (
+    host 'oss-cn-hangzhou-internal.aliyuncs.com',
+    bucket 'example-archive',
+    id '<access-key-id>',
+    key '<access-key-secret>'
+);
+
+CREATE FOREIGN TABLE public.events_archive (
+    event_id bigint,
+    occurred_at timestamptz,
+    payload text
+)
+SERVER archive_oss
+OPTIONS (dir 'events/', format 'csv', compressiontype 'gzip');
+
+INSERT INTO public.events_archive
+SELECT event_id, occurred_at, payload
+FROM public.events
+WHERE occurred_at < current_date - 90;
+
+SELECT count(*) FROM public.events_archive;
+SELECT * FROM oss_fdw_list_file('events_archive', 'public');
 ```
 
-This is a provider-specific component for `Alibaba Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Use exactly one of `dir` or `prefix` for the object mapping. `format` defaults to CSV. `compressiontype` can select gzip or, on supported PostgreSQL 14 service revisions, Zstandard; `compressionlevel` controls the provider-supported range.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+### Write and Removal Semantics
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+`SELECT`, `INSERT`, and `TRUNCATE` are supported; `UPDATE` and `DELETE` are not. Each `INSERT` execution creates a new OSS file instead of modifying an existing one. `TRUNCATE public.events_archive` removes all OSS files mapped to that foreign table, so treat it as destructive object-store deletion rather than ordinary local-table cleanup.
+
+Dropping a foreign table or the extension is distinct from truncating mapped data. Confirm the provider's behavior and preserve independent OSS retention or backups before removing definitions.
+
+### Provider and Security Boundaries
+
+The server options contain OSS access credentials. Use a dedicated RAM identity with the minimum bucket permissions, restrict `USAGE` on the foreign server, and avoid exposing catalog metadata or DDL to untrusted roles. Prefer an internal endpoint in the same region as the PolarDB cluster when supported; network placement affects both reachability and performance.
+
+Availability, exact version, supported PostgreSQL revisions, regions, compression algorithms, and privileges are controlled by Alibaba Cloud. Check the extension list and service documentation for the target cluster before running the example. Access to OSS has substantially different latency and transaction behavior from local PostgreSQL storage; test retries, partial failures, file accumulation, and downstream readers before using it for archival workflows.

@@ -97,74 +97,87 @@ shared_preload_libraries = 'pg_tde';
 CREATE EXTENSION pg_tde;
 ```
 
-
-
-
 ## Usage
 
-> [pg_tde: Transparent Data Encryption for PostgreSQL](https://github.com/percona/pg_tde)
+Sources:
 
-`pg_tde` provides Transparent Data Encryption (TDE) at the file level, encrypting tuples, WAL, and indexes. It works with the `tde_heap` access method and supports keyringfile and external Key Management Systems (KMS).
+- [pg_tde 2.2 setup](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/setup.md)
+- [Key-provider and key-management functions](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/functions.md)
+- [pg_tde 2.2.0 release notes](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/release-notes/release-notes-v2.2.0.md)
+- [Transparent data encryption limitations](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/tde-limitations.md)
+- [TDE table access method](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/table-access-method.md)
+- [WAL encryption](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/wal-encryption.md)
 
-```sql
-CREATE EXTENSION pg_tde;
-```
+pg_tde provides transparent data encryption for Percona Server for PostgreSQL. It encrypts table data through the tde_heap access method and can encrypt WAL, with keys managed by file, HashiCorp Vault, or KMIP providers. It is not a drop-in extension for community PostgreSQL.
 
-### Configuration
+### Preload and Create the Extension
 
-Add to `postgresql.conf`:
+Add the library and restart the server:
 
-```ini
-shared_preload_libraries = 'pg_tde'
-```
+    shared_preload_libraries = 'pg_tde'
 
-### Setting Up a Key Provider
+Then enable pg_tde in every database that will use encrypted tables:
 
-```sql
--- File-based key provider (database-level)
-SELECT pg_tde_add_database_key_provider_file('file_keyring', '/path/to/keyring');
+    CREATE EXTENSION pg_tde;
 
--- Or global-level key provider
-SELECT pg_tde_add_global_key_provider_file('file_keyring', '/path/to/keyring');
+Run setup as a superuser or suitably privileged database owner. Upstream pg_tde 2.2 is tied to compatible Percona Server for PostgreSQL 17 or 18 builds; the 2.2.0 release notes warn that it is incompatible with Percona Distribution releases older than 17.10 and 18.4.
 
--- Set the encryption key using a database key provider
-SELECT pg_tde_set_key_using_database_key_provider('my_key', 'file_keyring');
+### Configure a Key Provider
 
--- Or using a global key provider
-SELECT pg_tde_set_key_using_global_key_provider('my_key', 'file_keyring');
-```
+Register a provider, then set a principal key. A local file provider is useful for evaluation:
 
-### Creating Encrypted Tables
+    SELECT pg_tde_add_database_key_provider_file(
+      'local-file',
+      '/secure/path/pg_tde_keys'
+    );
 
-```sql
-CREATE TABLE sensitive_data (
-    id serial PRIMARY KEY,
-    secret text
-) USING tde_heap;
-```
+    SELECT pg_tde_set_principal_key(
+      'app-principal-key',
+      'local-file'
+    );
 
-All data in tables created with `USING tde_heap` is transparently encrypted on disk.
+For production, upstream recommends an external provider such as Vault or KMIP rather than the local-file provider. Protect provider credentials, key files, backups, and recovery procedures independently of the database files.
 
-### Checking Encryption Status
+Provider management includes database- and server-global variants for file, Vault, and KMIP providers, plus functions to list, change, and delete providers and to inspect or rotate the principal key.
 
-```sql
-SELECT pg_tde_is_encrypted('sensitive_data');
-```
+### Create and Convert Encrypted Tables
 
-### Additional Functions
+Create a table with the encrypted access method:
 
-| Function | Description |
-|----------|-------------|
-| `pg_tde_add_database_key_provider_file(name, path)` | Add a file-based database key provider |
-| `pg_tde_add_global_key_provider_file(name, path)` | Add a file-based global key provider |
-| `pg_tde_add_database_key_provider_vault_v2(...)` | Add a HashiCorp Vault database key provider |
-| `pg_tde_add_global_key_provider_vault_v2(...)` | Add a HashiCorp Vault global key provider |
-| `pg_tde_set_key_using_database_key_provider(key, provider)` | Set encryption key via database provider |
-| `pg_tde_set_key_using_global_key_provider(key, provider)` | Set encryption key via global provider |
-| `pg_tde_is_encrypted(table)` | Check if a table is encrypted |
+    CREATE TABLE customer_secrets (
+      id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+      payload jsonb NOT NULL
+    ) USING tde_heap;
 
-### Notes
+Convert an existing table only after testing lock, rewrite, disk-space, and backup implications:
 
-- Works only with Percona Server for PostgreSQL 17+
-- Encrypts tuples, WAL, and indexes
-- Does not yet encrypt temporary files and statistics
+    ALTER TABLE customer_secrets SET ACCESS METHOD tde_heap;
+
+Changing a table access method rewrites the table. Plan maintenance time and confirm indexes, replicas, backups, and restores on a staging copy.
+
+### Enable WAL Encryption
+
+WAL encryption is a separate server setting:
+
+    pg_tde.wal_encrypt = on
+
+Changing it requires a restart. Confirm that every primary, standby, backup, archive, and recovery host has the required provider configuration and key access before enabling it.
+
+### Object Index
+
+- tde_heap: encrypted table access method.
+- pg_tde_add_database_key_provider_file/vault/kmip: database-scoped provider registration.
+- pg_tde_add_global_key_provider_file/vault/kmip: server-global provider registration.
+- pg_tde_set_principal_key and pg_tde_set_server_principal_key: select the key used to protect data-encryption keys.
+- pg_tde_list_all_key_providers: inspect registered providers.
+- pg_tde_change_key_provider_* and pg_tde_delete_key_provider: manage provider definitions.
+- pg_tde.wal_encrypt: enable encryption of write-ahead log records.
+- pg_tde_upgrade: upgrade helper introduced in the 2.2 line.
+
+### Security and Recovery Boundaries
+
+- pg_tde encrypts supported user-table storage, not every PostgreSQL artifact. System catalogs, planner statistics, and temporary spill files are among the documented exclusions.
+- Upstream warns that pg_rewind and pg_tde_rewind between diverged nodes can corrupt a cluster. Follow the documented rebuild/recovery path instead of assuming ordinary rewind is safe.
+- Starting recovery without pg_tde preloaded can corrupt encrypted data. Validate disaster-recovery automation with the library and keys present.
+- Percona documents incompatibilities with Citus and TimescaleDB in Percona Server and limitations for several WAL-inspection and recovery tools.
+- Encryption does not replace SQL privileges, TLS, host hardening, audit logging, or tested backups. Loss of keys can make otherwise intact backups unrecoverable.

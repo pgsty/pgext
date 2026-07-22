@@ -2,20 +2,35 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/beargiles/pg-bignum/blob/79950064ca96595dd0a26c81915ea2d7396e6986/bignum.control)
-- [官方上游文档](https://pgxn.org/dist/bignum/doc/bignum.html)
-- [官方 PGXN 分发页](https://pgxn.org/dist/bignum/)
+- [Official PGXN documentation](https://pgxn.org/dist/bignum/doc/bignum.html)
+- [Pinned extension SQL](https://github.com/beargiles/pg-bignum/blob/79950064ca96595dd0a26c81915ea2d7396e6986/sql/bignum.sql)
 
-`bignum` — bignum：为 PostgreSQL 提供任意精度整数。
+`bignum` 增加了一个基于 OpenSSL `BIGNUM` 实现的任意精度整数类型。当数值需要超出 PostgreSQL 内置 `bigint` 的范围且只需整数运算时可使用它；它不能替代 `numeric` 或 `decimal`。
 
-已复核目录快照记录的版本为 `0.8.0`、类型为 `standard`、实现语言为 `C`。
-整理后的兼容版本集合为 `10,11,12,13,14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
+
+创建扩展，将整数文字值转换或写成 `bignum`，然后使用常规算术与比较运算符：
 
 ```sql
-CREATE EXTENSION "bignum";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'bignum';
+CREATE EXTENSION bignum;
+
+SELECT '170141183460469231731687303715884105727'::bignum + 1;
+SELECT 12::bignum * 12::bigint;
+SELECT gcd(48::bignum, 18::bignum);
 ```
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+扩展提供从 `int4` 和 `int8` 到该类型的赋值转换，并为算术、比较运算符定义了 `bignum`/`int8` 混合形式。
+
+### 重要对象
+
+- 类型：`bignum`。
+- 算术：一元 `-`，以及 `+`、`-`、`*`、`/`、`%`。
+- 比较：`=`、`<>`、`<`、`<=`、`>=`、`>`。
+- 函数：`abs(bignum)`、`gcd(bignum, bignum)` 及混合类型的 `gcd` 重载。
+- 索引：默认 `bignum_ops` B-tree 运算符类支持排序与 B-tree 索引。
+
+### 运维说明
+
+该模块是链接 OpenSSL 的 C 扩展，服务端软件包必须提供匹配的共享库。它可迁移，不要求 `shared_preload_libraries`，也不需要重启。
+
+上游实现没有提供与 `numeric`/`decimal` 之间的转换、密码学函数、哈希索引支持，也没有为 `bignum` 实现 `min`、`max`、`sum`、`avg` 聚合。除法是整数除法。由于只定义了文档所述的 `int4`/`int8` 转换路径，应显式测试混合类型表达式。

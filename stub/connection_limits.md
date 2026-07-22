@@ -42,4 +42,5 @@ The preload setting and shared-memory allocation still require a restart. The SQ
 - Superuser connections are counted but not rejected. They can therefore consume a quota and prevent ordinary roles from connecting.
 - Rules are keyed by the database and role names supplied during login, not by object identifiers. Update the rule file after a rename.
 - File rules override the per-database, per-user, and per-IP defaults. Review overlapping rules carefully.
+- The install SQL leaves `connection_limits_reload()` executable by `PUBLIC`, and the C function performs no superuser check before replacing shared rules. Revoke that privilege from untrusted roles; otherwise any database user can trigger rule reloads.
 - Prefer PostgreSQL's built-in CONNECTION LIMIT for simple per-role or per-database quotas. This extension uses server hooks and old internal APIs, and upstream provides no current major-version compatibility matrix.

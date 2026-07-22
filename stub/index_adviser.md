@@ -5,21 +5,23 @@ Sources:
 - [Official upstream documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/using-the-index-adviser-extension-on-an-apsaradb-rds-for-postgresql-instance)
 - [Official primary documentation](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/extensions-supported-by-apsaradb-rds-for-postgresql)
 
-`index_adviser` — Alibaba Cloud RDS extension that analyzes workloads and recommends B-tree indexes.
+`index_adviser` 2.0 is an Alibaba Cloud RDS for PostgreSQL extension that estimates useful B-tree indexes from planned or executed queries. It is provider-managed software, and its recommendations are estimates that must be reviewed before executing the generated DDL.
 
-The reviewed catalog snapshot records version `2.0`, kind `preload`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17`; confirm the exact build against the target server.
+### Core Workflow
+
+Create the extension, then either load it for one session or configure `shared_preload_libraries` and restart the instance for all sessions.
 
 ```sql
-CREATE EXTENSION "index_adviser";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'index_adviser';
+CREATE EXTENSION index_adviser;
+LOAD 'index_adviser';
+
+EXPLAIN SELECT * FROM orders WHERE customer_id = 42;
+SELECT * FROM index_advisory;
+SELECT show_index_advisory(NULL);
 ```
 
-This is a provider-specific component for `Alibaba Cloud`; availability, enablement, privileges, and upgrades follow that service rather than a portable community package.
+Plain `EXPLAIN` records advice without running the query. Queries executed normally are analyzed as they run. `index_advisory` stores raw per-query estimates; `show_index_advisory(pid)` formats session recommendations as `CREATE INDEX` statements; `select_index_advisory` summarizes all recorded sessions.
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
-The official material contains an experimental, deprecated, unsupported, or explicit warning boundary; read it in full and test failure cases before non-lab use.
+### Requirements and Limits
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+The current vendor documentation requires RDS PostgreSQL minor engine version 20230830 or later when creating or recreating the extension. Do not use it in read-only transactions. It recommends only single-column or composite B-tree indexes, not GIN, GiST, or hash indexes. Validate workload representativeness, write amplification, storage, duplicate indexes, locking, and maintenance cost before applying any suggestion.

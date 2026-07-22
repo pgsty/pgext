@@ -2,20 +2,29 @@
 
 Sources:
 
-- [Official PGXN distribution page](https://pgxn.org/dist/probabilistic_estimator/)
+- [Official control file](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/probabilistic/probabilistic_counter.control)
+- [Official probabilistic estimator README](https://github.com/tvondra/distinct_estimators/blob/248ffd3eb601785b5c6752707f4e054839bccfba/probabilistic/README.md)
 
-`probabilistic_counter` — A C data type and aggregates for approximate distinct counting using the Flajolet-Martin probabilistic counting algorithm.
+`probabilistic_counter` implements the Flajolet-Martin probabilistic counter as a `probabilistic_estimator` state type and aggregate. It trades exactness for a compact, configurable distinct-count estimate.
 
-The reviewed catalog snapshot records version `1.3.3`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "probabilistic_counter";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'probabilistic_counter';
+CREATE EXTENSION probabilistic_counter;
+
+SELECT probabilistic_distinct(i, 4, 32)
+FROM generate_series(1, 100000) AS s(i);
 ```
 
-The curated lifecycle is `archived`. Pin the reviewed build and verify maintenance status before adoption.
+The explicit arguments are the state byte count and number of salts. The one-argument `probabilistic_distinct(anyelement)` overload uses 4 bytes and 32 salts.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### API
+
+- `probabilistic_init(int, int)` creates a `probabilistic_estimator`; `probabilistic_size(int, int)` reports its size.
+- `probabilistic_add_item(probabilistic_estimator, anyelement)` updates a state, and `probabilistic_get_estimate(probabilistic_estimator)` returns the estimate.
+- `probabilistic_reset(probabilistic_estimator)` clears a state, while `length(probabilistic_estimator)` reports its storage size.
+- `probabilistic_distinct(anyelement, int, int)` is the configurable aggregate; `probabilistic_distinct(anyelement)` uses the defaults.
+
+### Operational Notes
+
+The version 1.3.3 control file is relocatable and declares no prerequisite extension or preload requirement. The upstream repository is archived and read-only. Larger states can improve behavior at the cost of memory; stored states can also contribute to MVCC bloat when updated frequently. Test the estimator on representative distributions and retain exact counting for correctness-sensitive work.

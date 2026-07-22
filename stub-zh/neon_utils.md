@@ -2,22 +2,28 @@
 
 来源：
 
-- [Neon 官方 neon_utils 文档](https://neon.com/docs/extensions/neon-utils)
+- [Neon 官方文档](https://neon.com/docs/extensions/neon-utils)
 
-`neon_utils` 是 Neon 提供的自动伸缩观测扩展。其 `num_cpus()` 函数报告当前连接的 Neon 计算节点已分配的整数 CPU 核数，适合在对自动伸缩范围做负载测试时使用。
+`neon_utils` 是 Neon 托管扩展，用于报告启用自动伸缩的 Neon compute 当前分配的 CPU 容量。它只在 Neon 内有意义，不是可移植的社区软件包，也不是通用操作系统监控 API。
 
-### 读取当前分配量
+### 安装并读取容量
+
+在 Neon 数据库中创建扩展，然后调用其唯一有文档的函数：
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS neon_utils;
+
 SELECT num_cpus();
 ```
 
-在 Neon 计算节点上施加负载时重复运行该查询，即可观察分配变化。
+`num_cpus()` 返回当前分配的 CPU 核数。可将它与工作负载指标一起轮询，观察 compute 如何在配置的自动伸缩最小值与最大值之间变化。
 
-### 注意事项
+### 解释限制
 
-- `neon_utils` 由服务商管理且只针对 Neon 提供文档；上游没有发布可移植源码仓库或自托管安装方式。
-- `num_cpus()` 仅在启用自动伸缩的计算节点上结果正确。官方文档明确说明，它在固定规格计算节点上不会返回正确值。
-- 小数 Compute Unit 分配会向上取整为整数：0.25 或 0.5 CU 都报告为 1。
-- 文档没有要求预加载。可用性由 Neon 服务控制，并可能取决于计算节点的 PostgreSQL 版本和服务配置。
+Neon 使用可以为小数的 Compute Units 衡量计算容量。`num_cpus()` 不报告小数大小：例如，Neon 文档说明 0.25 或 0.5 CU 的 compute 会返回 `1`。因此该值是运维信号，而不是准确的计费、内存或配额度量。
+
+该函数只在启用 Autoscaling 的 compute 上正确工作；在固定大小 compute 上不会返回正确值。使用结果前应在 Neon 控制台确认 compute 配置。
+
+### 监控说明
+
+应以合理间隔采样，并记录时间戳、工作负载延迟和配置的自动伸缩边界；单个值不能解释伸缩事件的原因。不要把舍入后的结果作为硬性调度或准入控制输入。可用性、版本、权限和行为遵循 Neon 服务，因此 compute 或平台升级后应重新核对官方页面。公开官方页面记录了函数与限制，但没有公布扩展版本；需要版本证据时，应在目标 Neon 数据库中核对实际安装的 `extversion`。

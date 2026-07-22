@@ -2,22 +2,25 @@
 
 Sources:
 
-- [Official extension control file](https://github.com/theory/pg-hostname/blob/37d7fea1d393b3bb2093e419b181c7d0826b3c6e/hostname.control)
-- [Official upstream documentation](https://github.com/theory/pg-hostname/blob/37d7fea1d393b3bb2093e419b181c7d0826b3c6e/README.md)
-- [Official PGXN distribution page](https://pgxn.org/dist/hostname/)
+- [Official README](https://github.com/theory/pg-hostname/blob/37d7fea1d393b3bb2093e419b181c7d0826b3c6e/README.md)
+- [SQL declaration](https://github.com/theory/pg-hostname/blob/37d7fea1d393b3bb2093e419b181c7d0826b3c6e/sql/hostname.sql)
+- [C implementation](https://github.com/theory/pg-hostname/blob/37d7fea1d393b3bb2093e419b181c7d0826b3c6e/src/hostname.c)
+- [PGXN distribution](https://pgxn.org/dist/hostname/)
 
-`hostname` — Get the server host name
+`hostname` provides one function, `hostname() RETURNS text`, that returns the operating-system host name visible to the PostgreSQL server process. It identifies the database server or container, not the client host and not necessarily a DNS-qualified or cluster-unique name.
 
-The reviewed catalog snapshot records version `1.0.0`, kind `standard`, and implementation language `C`.
-The curated compatibility set is `10,11,12,13,14,15,16,17,18`; confirm the exact build against the target server.
+### Core Workflow
 
 ```sql
-CREATE EXTENSION "hostname";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'hostname';
+CREATE EXTENSION hostname;
+
+SELECT hostname();
 ```
 
-The curated lifecycle is `active`. Pin the reviewed build and verify maintenance status before adoption.
+The C function calls the POSIX `gethostname` API and returns NULL if that call fails. The extension is relocatable and requires a POSIX platform with `<unistd.h>`.
 
-Before production use, review the linked control/SQL or provider documentation, verify privileges and compatibility, and test the actual API and failure behavior on the target PostgreSQL build.
+### Interpretation and Versioning
+
+In containers, Kubernetes pods, failover clusters, and cloned hosts, the returned value can change across restarts or role transitions. Do not use it as a durable node identifier, security boundary, or routing source without comparing it to infrastructure metadata. The function is declared `IMMUTABLE`, so PostgreSQL may fold repeated calls within a planned expression even though an administrator can change the operating-system hostname.
+
+The SQL extension version remains 1.0.0, while the upstream package/PGXN distribution is 1.0.4 at the pinned source revision. That is a packaging release difference rather than a new SQL extension version. Current upstream documentation supports PostgreSQL 9.0 or later and documents PostgreSQL 18 extension-path settings for custom install prefixes.

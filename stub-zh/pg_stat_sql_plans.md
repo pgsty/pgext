@@ -2,21 +2,32 @@
 
 来源：
 
-- [官方扩展控制文件](https://github.com/legrandlegrand/pg_stat_sql_plans/blob/d0401cdf5ff3f01ceb0e0b7a0d8bc3edbb620d24/pg_stat_sql_plans.control)
-- [官方上游文档](https://github.com/legrandlegrand/pg_stat_sql_plans/blob/d0401cdf5ff3f01ceb0e0b7a0d8bc3edbb620d24/README.md)
+- [Official extension control file](https://github.com/legrandlegrand/pg_stat_sql_plans/blob/d0401cdf5ff3f01ceb0e0b7a0d8bc3edbb620d24/pg_stat_sql_plans.control)
+- [Official upstream documentation](https://github.com/legrandlegrand/pg_stat_sql_plans/blob/d0401cdf5ff3f01ceb0e0b7a0d8bc3edbb620d24/README.md)
 
-`pg_stat_sql_plans` — pg_stat_sql_plans：按规范化 SQL 查询和执行计划 ID 跟踪执行统计信息。
+`pg_stat_sql_plans` 0.2 是 `pg_stat_statements` 的 alpha 分支，按规范化查询 ID 与计划 ID 记录统计信息。它能区分同一 SQL 形态的计划变化，并保留规划、执行、扩展开销、失败、首次调用和最近调用信息；上游明确说明不要用于生产环境。
 
-已复核目录快照记录的版本为 `0.2`、类型为 `preload`、实现语言为 `C`。
-整理后的兼容版本集合为 `14,15,16,17,18`；仍需针对目标服务器确认实际构建。
+### 核心流程
 
-```sql
-CREATE EXTENSION "pg_stat_sql_plans";
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'pg_stat_sql_plans';
+对于这里审阅的分支，应使用 PostgreSQL 14 或更高版本，预加载模块、关闭内核查询 ID 计算、重启，然后创建扩展。
+
+```conf
+shared_preload_libraries = 'pg_stat_sql_plans'
+compute_query_id = off
 ```
 
-整理后的生命周期为 `active`。采用前应固定已复核构建并确认维护状态。
+```sql
+CREATE EXTENSION pg_stat_sql_plans;
 
-投入生产前，应复核所链接的 control/SQL 或服务商文档，验证权限与兼容性，并在目标 PostgreSQL 构建上测试实际 API 和故障行为。
+SELECT queryid, planid, calls, plan_time, exec_time, first_call, last_call
+FROM pg_stat_sql_plans
+ORDER BY exec_time DESC;
+
+SELECT * FROM pg_stat_sql_plans_agg;
+```
+
+`pg_stat_sql_plans` 为每个查询与计划组合保存一行。`pg_stat_sql_plans_agg` 按查询聚合。`pgssp_backend_qpid(pid)` 暴露后端最近的查询计划标识，`pgssp_normalize_query(text)` 规范化 SQL 文本，`pg_stat_sql_plans_reset()` 清空已收集条目。
+
+### 参数与注意事项
+
+重要参数包括 `pg_stat_sql_plans.max`、`pg_stat_sql_plans.plan_type`、`pg_stat_sql_plans.track`、`pg_stat_sql_plans.track_errors`、`pg_stat_sql_plans.track_pid`、`pg_stat_sql_plans.track_utility`、`pg_stat_sql_plans.save` 和 `pg_stat_sql_plans.explain`。计划哈希和可选计划日志会增加规划、内存与日志开销；保存的查询文本可能包含字面量。应限制访问、测量开销，并把这些 ID 当作实现派生的诊断值，而不是可移植身份。

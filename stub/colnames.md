@@ -3,8 +3,8 @@
 Sources:
 
 - [Current upstream documentation at the reviewed commit](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/doc/colnames.md)
-- [Version 1.7.0 SQL objects](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/sql/colnames--1.7.0.sql)
-- [C implementation](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/colnames.c)
+- [Version 1.7.0 SQL objects](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/sql/colnames.sql)
+- [C implementation](https://github.com/theory/colnames/blob/00bdd0f4becdde261c0395ebfbc7943b49e5d519/src/colnames.c)
 
 `colnames` provides one function, `colnames(record)`, which returns the input record's field names as a `text[]`. It is useful when generic trigger or metaprogramming code needs the shape of a composite value.
 
