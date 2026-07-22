@@ -24,6 +24,7 @@ const F = { LEAD: 1, CONTRIB: 2, BIN: 4, LIB: 8, DDL: 16, LOAD: 32, TRUSTED: 64,
 const B = { RPM: 1, DEB: 2, PGRX: 4, SOURCE: 8 };
 const R = { REQUIRES: 1, REQUIRED_BY: 2, SEE_ALSO: 4 };
 const FULLC = new Map(), MXC = new Map(), FILEC = new Map(), DOCC = new Map();
+let GMATRIX = null, GMATRIX_VIEW = null, matrixHydSeq = 0;
 
 /* bootstrap row columns — keep in sync with handleBootstrap in server/api.go:
    0 name 1 cat 2 avail 3 repo 4 license 5 lang 6 version 7 stars
@@ -94,6 +95,7 @@ const CAT_NAMES = {
 
 const I18N = {
   'nav.ext': ['Extensions', '扩展目录'],
+  'nav.matrix': ['Matrix', '全局矩阵'],
   'nav.browse': ['Browse', '多维索引'],
   'nav.about': ['About', '关于'],
   'nav.lang': ['中文', 'EN'],
@@ -258,6 +260,30 @@ const I18N = {
   'type.puresql': ['puresql — SQL objects only, no binary', 'puresql——纯 SQL 对象，无二进制'],
   'type.headless': ['headless — library only, no SQL objects', 'headless——只有库，无 SQL 对象'],
   'matrix.ext': ['CREATE EXTENSION', 'CREATE EXTENSION'],
+  'gmx.eyebrow': ['package intelligence · pgext.matrix', '软件包情报 · pgext.matrix'],
+  'gmx.title': ['Global Build Matrix', '全局构建矩阵'],
+  'gmx.lede': ['One operational view of every package, Linux target, and supported PostgreSQL major. Each colored square is one exact build combination from the latest CI materialization.',
+               '用一张表总览每个扩展包、Linux 目标与 PostgreSQL 大版本。每个彩色方格都代表最近一次 CI 物化结果中的一个精确构建组合。'],
+  'gmx.packages': ['package families', '个扩展包族'],
+  'gmx.targets': ['OS targets', '个 OS 目标'],
+  'gmx.pg': ['PG majors', '个 PG 大版本'],
+  'gmx.cells': ['build cells', '个构建格子'],
+  'gmx.search': ['Filter package or extension…', '筛选扩展包或扩展名…'],
+  'gmx.showing': ['{rows} packages · {cells} visible cells', '{rows} 个扩展包 · {cells} 个可见格子'],
+  'gmx.source': ['Precomputed in {source} from CI-ingested repository metadata and atomically refreshed with the package catalog. Hover a cell for package, repository, version, and artifact count.',
+                 '数据由 CI 回传的软件仓库元数据预计算至 {source}，并与软件包目录原子刷新。悬停格子可查看包名、仓库、版本与制品数量。'],
+  'gmx.pgdg': ['PGDG', 'PGDG'],
+  'gmx.pigsty': ['Pigsty', 'Pigsty'],
+  'gmx.missing': ['Missing', '缺失'],
+  'gmx.unsupported': ['Unsupported PG', '不支持该 PG'],
+  'gmx.platform': ['No platform repo', '平台无仓库'],
+  'gmx.fork': ['Fork / Throw', 'Fork / Throw'],
+  'gmx.break': ['Break', '损坏'],
+  'gmx.other': ['Other', '其他'],
+  'gmx.empty': ['No package row matches this filter.', '没有扩展包行符合当前筛选条件。'],
+  'gmx.hint': ['Click a status to isolate it · click again to reset', '点击状态可单独查看 · 再次点击恢复全部'],
+  'gmx.pkg': ['PACKAGE / EXTENSION', '扩展包 / 扩展'],
+  'gmx.api': ['JSON API', 'JSON API'],
   'cat.crumb': ['categories', '分类'],
   'cat.featured': ['Featured', '精选'],
   'cat.all': ['All {n} extensions', '全部 {n} 个扩展'],
@@ -960,6 +986,7 @@ function navHTML(active) {
     + '<a class="brand" href="/"><span class="brand-mark">\\dx</span><span class="brand-name">PGEXT<span class="tld">.CLOUD</span></span></a>'
     + '<nav class="nav-links">'
     + '<a href="/" aria-current="' + (active === 'home') + '">' + t('nav.ext') + '</a>'
+    + '<a href="/matrix" aria-current="' + (active === 'matrix') + '">' + t('nav.matrix') + '</a>'
     + '<a href="/browse" aria-current="' + (active === 'browse') + '">' + t('nav.browse') + '</a>'
     + '<a href="/about" aria-current="' + (active === 'about') + '">' + t('nav.about') + '</a>'
     + '</nav><span class="nav-spacer"></span><div class="nav-actions">'
@@ -2041,6 +2068,223 @@ function dimHTML(dim) {
     + '<tbody>' + rows + '</tbody></table></div></article>';
 }
 
+/* ---------------- view: global build matrix ---------------- */
+const GMX_META = [
+  ['B', 'gmx.pgdg', 'pgdg'],
+  ['G', 'gmx.pigsty', 'pigsty'],
+  ['R', 'gmx.missing', 'missing'],
+  ['.', 'gmx.unsupported', 'unsupported'],
+  ['A', 'gmx.platform', 'platform'],
+  ['P', 'gmx.fork', 'fork'],
+  ['O', 'gmx.break', 'break'],
+  ['Y', 'gmx.other', 'other']
+];
+
+function globalMatrixShellHTML() {
+  return '<article class="gmx-page">'
+    + '<header class="gmx-hero gmx-frame"><p class="eyebrow">' + t('gmx.eyebrow') + '</p>'
+    + '<div class="gmx-titleline"><div><h1>' + t('gmx.title') + '</h1><p>' + t('gmx.lede') + '</p></div>'
+    + '<a class="gmx-api" href="/api/v1/matrix" target="_blank" rel="noopener">' + t('gmx.api') + ' ↗</a></div></header>'
+    + '<div class="gmx-frame" id="gmx-root">' + skel(7) + '</div></article>';
+}
+
+// Decode one positional cell lazily. Details use indexes into the row-local
+// name/version dictionaries: [nameIndex, versionIndex, count, state?, org?].
+function globalMatrixCell(row, index) {
+  const code = (row.c || '').charAt(index) || '.';
+  const detail = Array.isArray(row.d) ? row.d[index] : null;
+  let state = '', org = '';
+  if (code === 'B') { state = 'AVAIL'; org = 'PGDG'; }
+  else if (code === 'G') { state = 'AVAIL'; org = 'PIGSTY'; }
+  else if (code === 'R' || code === 'A' || code === '.') state = 'MISS';
+  if (detail) {
+    state = detail[3] || state;
+    org = detail[4] || org;
+  }
+  return {
+    code, state, org,
+    name: detail && detail[0] >= 0 ? (row.n[detail[0]] || '') : '',
+    version: detail && detail[1] >= 0 ? (row.v[detail[1]] || '') : '',
+    count: detail ? detail[2] : 0
+  };
+}
+
+function globalMatrixStatusLabel(cell) {
+  if (!cell) return '—';
+  if (cell.code === 'P' && cell.state) return cell.state;
+  if (cell.code === 'O' && cell.state) return cell.state;
+  const item = GMX_META.find(x => x[0] === cell.code);
+  return item ? t(item[1]) : (cell.state || t('gmx.other'));
+}
+
+function globalMatrixClass(code) {
+  const item = GMX_META.find(x => x[0] === code);
+  return item ? item[2] : 'other';
+}
+
+function globalMatrixHTML(data) {
+  const stats = data.stats || { rows: 0, os: 0, pg: 0, cells: 0, counts: {} };
+  const statItems = [
+    [stats.rows, 'gmx.packages'], [stats.os, 'gmx.targets'],
+    [stats.pg, 'gmx.pg'], [stats.cells, 'gmx.cells']
+  ].map(x => '<div><strong>' + fmtInt(x[0]) + '</strong><span>' + t(x[1]) + '</span></div>').join('');
+  const legend = GMX_META.map(item => {
+    const count = (stats.counts && stats.counts[item[0]]) || 0;
+    return '<button type="button" class="gmx-legend-item gmx-' + item[2] + '" data-gmx-code="' + item[0]
+      + '" aria-pressed="false"><i></i><span>' + t(item[1]) + '</span><b>' + fmtInt(count) + '</b></button>';
+  }).join('');
+  const cols = (data.os || []).length * (data.pg || []).length;
+  const osHeads = (data.os || []).map(osName => {
+    const bits = osName.split('.');
+    return '<span class="gmx-oshead" style="grid-column:span ' + (data.pg || []).length + '"><b>'
+      + esc(bits[0]) + '</b><small>' + esc(bits.slice(1).join('.') || '') + '</small></span>';
+  }).join('');
+  let pgHeads = '';
+  for (const osName of (data.os || [])) {
+    for (let i = 0; i < (data.pg || []).length; i++) {
+      pgHeads += '<span class="gmx-pghead' + (i === 0 ? ' group-start' : '') + '">' + esc(data.pg[i]) + '</span>';
+    }
+  }
+  return '<section class="gmx-stats" aria-label="Matrix summary">' + statItems + '</section>'
+    + '<section class="gmx-panel">'
+    + '<div class="gmx-toolbar"><label class="gmx-search"><span>\\</span><input id="gmx-q" type="search" autocomplete="off" spellcheck="false" placeholder="'
+    + esc(t('gmx.search')) + '"></label><span class="gmx-showing" id="gmx-showing"></span></div>'
+    + '<div class="gmx-legend" aria-label="Matrix status filters">' + legend + '</div>'
+    + '<div class="gmx-hint">' + t('gmx.hint') + '</div>'
+    + '<div class="gmx-viewport" id="gmx-viewport" role="grid" aria-rowcount="' + stats.rows + '" aria-colcount="' + (cols + 1) + '">'
+    + '<div class="gmx-stage" style="--gmx-columns:' + cols + '">'
+    + '<div class="gmx-grid-head"><div class="gmx-headrow"><span class="gmx-corner">' + t('gmx.pkg') + '</span>' + osHeads + '</div>'
+    + '<div class="gmx-headrow gmx-pg-row"><span class="gmx-corner gmx-corner-sub">OS → · PG →</span>' + pgHeads + '</div></div>'
+    + '<div class="gmx-grid-body" id="gmx-body"></div></div></div>'
+    + '<p class="gmx-source"><span class="gmx-source-copy">' + t('gmx.source', { source: '<code>' + esc(data.source || 'pgext.matrix') + '</code>' })
+    + '</span><span class="gmx-snapshot">snapshot ' + esc((data.generated || '').replace('T', ' ').slice(0, 19)) + '</span></p>'
+    + '</section>';
+}
+
+function setupGlobalMatrix(data) {
+  const viewport = document.getElementById('gmx-viewport');
+  const body = document.getElementById('gmx-body');
+  const input = document.getElementById('gmx-q');
+  const showing = document.getElementById('gmx-showing');
+  if (!viewport || !body || !input) return;
+  const matrixPage = document.querySelector('.gmx-page');
+  const rowHeight = Number.parseFloat(getComputedStyle(matrixPage).getPropertyValue('--gmx-row')) || 20;
+  const cellCount = (data.os || []).length * (data.pg || []).length;
+  const overscan = 10;
+  const state = { rows: [], activeCode: '', start: -1, end: -1, raf: 0 };
+
+  function render(force) {
+    if (!viewport.isConnected) return;
+    const bodyY = Math.max(0, viewport.scrollTop - body.offsetTop);
+    const start = Math.max(0, Math.floor(bodyY / rowHeight) - overscan);
+    const visible = Math.ceil(viewport.clientHeight / rowHeight) + overscan * 2;
+    const end = Math.min(state.rows.length, start + visible);
+    if (!force && start === state.start && end === state.end) return;
+    state.start = start; state.end = end;
+    body.style.height = (state.rows.length * rowHeight) + 'px';
+    if (!state.rows.length) {
+      body.innerHTML = '<div class="gmx-empty">' + t('gmx.empty') + '</div>';
+      return;
+    }
+    const html = [];
+    const pgCount = (data.pg || []).length;
+    for (let vi = start; vi < end; vi++) {
+      const ref = state.rows[vi], row = ref.row;
+      let cells = '';
+      for (let ci = 0; ci < cellCount; ci++) {
+        const cell = globalMatrixCell(row, ci);
+        const pi = ci % pgCount;
+        const oi = Math.floor(ci / pgCount);
+        const aria = row.p + ' · ' + data.os[oi] + ' · PG ' + data.pg[pi] + ' · ' + globalMatrixStatusLabel(cell);
+        cells += '<span class="gmx-cell gmx-' + globalMatrixClass(cell.code) + (pi === 0 ? ' group-start' : '')
+          + '" role="gridcell" data-gmx-row="' + ref.index + '" data-gmx-cell="' + ci + '" aria-label="' + esc(aria) + '"></span>';
+      }
+      const ext = row.e && row.e !== row.p ? '<small>' + esc(row.e) + '</small>' : '';
+      html.push('<div class="gmx-row" role="row" style="top:' + (vi * rowHeight) + 'px"><a class="gmx-row-name" href="'
+        + pkgHref(row.p) + '"><b>' + esc(row.p) + '</b>' + ext + '</a>' + cells + '</div>');
+    }
+    body.innerHTML = html.join('');
+  }
+
+  function schedule(force) {
+    if (state.raf) cancelAnimationFrame(state.raf);
+    state.raf = requestAnimationFrame(() => { state.raf = 0; render(force); });
+  }
+
+  function applyFilter() {
+    const query = input.value.trim().toLowerCase();
+    state.rows = data.rows.map((row, index) => ({ row, index })).filter(ref => {
+      const row = ref.row;
+      if (query && !(row.p + ' ' + row.e).toLowerCase().includes(query)) return false;
+      return !state.activeCode || (row.c || '').includes(state.activeCode);
+    });
+    showing.textContent = t('gmx.showing', {
+      rows: fmtInt(state.rows.length), cells: fmtInt(state.rows.length * data.os.length * data.pg.length)
+    });
+    document.querySelectorAll('[data-gmx-code]').forEach(button => {
+      button.setAttribute('aria-pressed', button.dataset.gmxCode === state.activeCode ? 'true' : 'false');
+    });
+    viewport.scrollTop = 0;
+    state.start = state.end = -1;
+    schedule(true);
+  }
+
+  viewport.addEventListener('scroll', () => { hideTip(); schedule(false); }, { passive: true });
+  viewport.addEventListener('click', ev => {
+    const cell = ev.target.closest('.gmx-cell');
+    if (!cell) return;
+    const row = data.rows[Number.parseInt(cell.dataset.gmxRow, 10)];
+    if (row) navigateTo(pkgHref(row.p));
+  });
+  input.addEventListener('input', debounce(applyFilter, 90));
+  document.querySelectorAll('[data-gmx-code]').forEach(button => {
+    button.addEventListener('click', () => {
+      state.activeCode = state.activeCode === button.dataset.gmxCode ? '' : button.dataset.gmxCode;
+      applyFilter();
+    });
+  });
+  GMATRIX_VIEW = { render: () => schedule(true), state };
+  applyFilter();
+}
+
+async function hydrateGlobalMatrix() {
+  const token = ++matrixHydSeq;
+  try {
+    if (!GMATRIX) GMATRIX = await j('/api/v1/matrix');
+    if (token !== matrixHydSeq || currentPath !== '/matrix') return;
+    const root = document.getElementById('gmx-root');
+    if (!root) return;
+    root.innerHTML = globalMatrixHTML(GMATRIX);
+    setupGlobalMatrix(GMATRIX);
+  } catch (err) {
+    if (token === matrixHydSeq) {
+      const root = document.getElementById('gmx-root');
+      if (root) root.innerHTML = hydrateErr(err);
+    }
+  }
+}
+
+function globalMatrixCellInfo(el) {
+  if (!GMATRIX || !el) return null;
+  const ri = Number.parseInt(el.dataset.gmxRow, 10);
+  const ci = Number.parseInt(el.dataset.gmxCell, 10);
+  const row = GMATRIX.rows[ri];
+  if (!row || ci < 0 || ci >= (row.c || '').length) return null;
+  const pgCount = GMATRIX.pg.length;
+  return { row, cell: globalMatrixCell(row, ci), os: GMATRIX.os[Math.floor(ci / pgCount)], pg: GMATRIX.pg[ci % pgCount] };
+}
+
+function globalMatrixTipHTML(info) {
+  const cell = info.cell;
+  let details = '<span class="d">' + esc(info.row.e) + ' · ' + esc(info.os) + ' · PG ' + esc(info.pg) + '</span>';
+  if (cell.name) details += '<br><span class="k">package</span> ' + esc(cell.name);
+  if (cell.org) details += '<br><span class="k">repo</span> ' + esc(cell.org);
+  if (cell.version) details += '<br><span class="k">version</span> ' + esc(cell.version);
+  if (cell.count) details += '<br><span class="k">artifacts</span> ' + fmtInt(cell.count);
+  return '<b>' + esc(info.row.p) + '</b> <span class="gmx-tip-state gmx-' + globalMatrixClass(cell.code) + '">'
+    + esc(globalMatrixStatusLabel(cell)) + '</span><br>' + details;
+}
+
 /* ---------------- view: about ---------------- */
 function aboutHTML() {
   return '<article class="page wrap">'
@@ -2060,6 +2304,7 @@ function aboutHTML() {
     + '<li><span class="tag">GET</span><code>/api/v1/ext?q=vector&cat=RAG</code></li>'
     + '<li><span class="tag">GET</span><code>/api/v1/ext/postgis</code></li>'
     + '<li><span class="tag">GET</span><code>/api/v1/ext/postgis/matrix</code></li>'
+    + '<li><span class="tag">GET</span><code>/api/v1/matrix</code></li>'
     + '<li><span class="tag">GET</span><code>/api/v1/ext/postgis/files?pg=18</code></li>'
     + '<li><span class="tag">GET</span><code>/api/v1/ext/postgis/doc?lang=zh</code></li>'
     + '<li><span class="tag">GET</span><code>/api/v1/dim/license</code></li>'
@@ -2080,6 +2325,7 @@ function route() {
   const nav = document.getElementById('nav');
   const pathChanged = path !== currentPath;
   currentPath = path;
+  if (path !== '/matrix') { GMATRIX_VIEW = null; matrixHydSeq++; }
   let active = 'home';
   if (path === '/' || path === '') {
     readState(params);
@@ -2098,6 +2344,9 @@ function route() {
     active = '';
   } else if (path.startsWith('/c/')) {
     app.innerHTML = catHTML(decodeURIComponent(path.slice(3)).toUpperCase()); active = '';
+  } else if (path === '/matrix') {
+    app.innerHTML = globalMatrixShellHTML(); active = 'matrix';
+    hydrateGlobalMatrix();
   } else if (path === '/browse') {
     app.innerHTML = browseHTML(); active = 'browse';
   } else if (path.startsWith('/dim/')) {
@@ -2117,6 +2366,7 @@ function route() {
   let description = LANG === 'zh' ? 'PostgreSQL 扩展、项目包族、依赖关系与 PG/OS 精确可用性目录。' : 'Search PostgreSQL extensions, package families, dependencies, and exact PG/OS availability.';
   if (path.startsWith('/e/')) { const e = byName.get(decodeURIComponent(path.slice(3))); if (e) description = desc(e); }
   if (path.startsWith('/p/')) { const family = byPkg.get(decodeURIComponent(path.slice(3))); if (family && family[0]) description = desc(byName.get(family[0].lead) || family[0]); }
+  if (path === '/matrix') description = LANG === 'zh' ? '跨扩展包、操作系统与 PostgreSQL 大版本的 32,000 格全局构建矩阵。' : 'A 32,000-cell global build matrix across extension packages, operating systems, and PostgreSQL majors.';
   if (meta) meta.content = description;
   if (ogTitle) ogTitle.content = document.title;
   if (ogDesc) ogDesc.content = description;
@@ -2125,6 +2375,7 @@ function titleFor(path) {
   if (path.startsWith('/e/')) { const n = decodeURIComponent(path.slice(3)); return n + ' · PGEXT.CLOUD'; }
   if (path.startsWith('/p/')) { const n = decodeURIComponent(path.slice(3)); return n + ' package · PGEXT.CLOUD'; }
   if (path.startsWith('/c/')) return decodeURIComponent(path.slice(3)).toUpperCase() + ' · PGEXT.CLOUD';
+  if (path === '/matrix') return t('gmx.title') + ' · PGEXT.CLOUD';
   if (path === '/browse') return t('nav.browse') + ' · PGEXT.CLOUD';
   if (path.startsWith('/dim/')) {
     const dim = decodeURIComponent(path.slice(5));
@@ -2225,7 +2476,7 @@ function hideTip() { tip().classList.remove('show'); }
 function attachEvents() {
   window.addEventListener('popstate', route);
   window.addEventListener('hashchange', route);
-  window.addEventListener('resize', debounce(() => drawField(), 150));
+  window.addEventListener('resize', debounce(() => { drawField(); if (GMATRIX_VIEW) GMATRIX_VIEW.render(); }, 150));
   window.addEventListener('scroll', hideTip, { passive: true });
 
   document.addEventListener('click', ev => {
@@ -2387,6 +2638,12 @@ function attachEvents() {
   });
 
   document.addEventListener('mousemove', ev => {
+    const matrixCell = ev.target.closest && ev.target.closest('.gmx-cell');
+    if (matrixCell) {
+      const info = globalMatrixCellInfo(matrixCell);
+      if (info) showTip(globalMatrixTipHTML(info), ev.clientX, ev.clientY);
+      return;
+    }
     const cv = ev.target.id === 'ufield' ? ev.target : null;
     if (cv) {
       const e = fieldHit(ev);

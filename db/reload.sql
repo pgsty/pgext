@@ -32,7 +32,7 @@ UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra' ,'pg_analytics', 'pgml');
 
 -- too big, non-free, heavy extensions
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
 
 -- only works on postgres forks
 UPDATE pgext.pkg SET hide = true, state = 'FORK' WHERE pkg IN (SELECT distinct pkg FROM pgext.extension WHERE tags @> '{fork}');

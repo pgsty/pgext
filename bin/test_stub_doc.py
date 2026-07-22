@@ -33,7 +33,7 @@ class StubDocFileSyncTest(unittest.TestCase):
             return [{"ext": name} for name in self.names]
 
         def assert_universe_query(self, query):
-            if "pgext.universe4" not in query:
+            if "FROM pgext.universe ORDER BY name" not in query or "pgext.universe4" in query:
                 raise AssertionError(f"unexpected catalog query: {query}")
 
         def sync_docs_from_csv(self, rows, expected_count, commit=True):
@@ -145,7 +145,7 @@ class StubDocFileSyncTest(unittest.TestCase):
             self.fail("bin/stub_doc.py is missing")
 
         self.assertNotIn("REFERENCES pgext.extension", stub_doc.DOC_TABLE_SQL)
-        self.assertNotIn("REFERENCES pgext.universe4", stub_doc.DOC_TABLE_SQL)
+        self.assertNotIn("REFERENCES pgext.universe", stub_doc.DOC_TABLE_SQL)
         self.assertIn("cargo_url", stub_doc.DOC_TABLE_SQL)
 
     def test_live_doc_comments_are_updated_inside_atomic_sync(self):
@@ -156,9 +156,9 @@ class StubDocFileSyncTest(unittest.TestCase):
         comment_pos = source.index("COMMENT ON TABLE pgext.doc")
         transaction_end_pos = source.index("{transaction_end}")
         self.assertLess(comment_pos, transaction_end_pos)
-        self.assertIn("against pgext.universe4", source)
+        self.assertIn("against pgext.universe", source)
         self.assertIn("COMMENT ON COLUMN pgext.doc.cargo_url", source)
-        self.assertIn("pgext.doc metadata differs from pgext.universe4", source)
+        self.assertIn("pgext.doc metadata differs from pgext.universe", source)
         self.assertIn("pgext.doc still has a foreign key", source)
         self.assertIn("COMMENT ON TABLE {DOC_BACKUP_TABLE}", source)
         self.assertIn("Historical immutable pgext.extension", source)

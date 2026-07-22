@@ -33,7 +33,7 @@ def warn_extra(label: str, names):
     suffix = "" if len(names) <= 10 else f", ... (+{len(names) - 10} more)"
     print(
         f"warning: {len(names)} {label} files do not match "
-        f"pgext.universe4 rows: {preview}{suffix}",
+        f"pgext.universe rows: {preview}{suffix}",
         file=sys.stderr,
     )
 

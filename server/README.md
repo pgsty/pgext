@@ -30,7 +30,9 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
    `doc` 元数据与 `pkg` 的 AVAIL 目标整体载入内存（`atomic.Pointer` 原子换入）。列表、详情、
    维度聚合及首页的 PG × OS 精确筛选均零 SQL 应答。内容 ETag 不包含加载时间，相同数据刷新后
    浏览器缓存仍然有效。按 `--cache-ttl`（默认 5m）后台自动刷新。
-2. **ttlCache（`cache.go`）**——逐扩展的 `pkg` 矩阵、`bin` 文件表、`doc` 正文按需查询后缓存；
+2. **物化矩阵（`pgext.matrix`）**——CI/recap 发布 `pgext.pkg` 时，在同一事务内刷新 400 行物化视图；
+   每行以 80 字符状态串、行级包名/版本字典和位置对齐的详情元组表达 16 × 5 个组合。
+3. **ttlCache（`cache.go`）**——全局物化矩阵、逐扩展 `pkg` 矩阵、`bin` 文件表、`doc` 正文按需查询后缓存；
    键内嵌快照版本号，快照刷新即自然失效。
 
 中间件（`middleware.go`）：访问日志（debug 级）、panic 恢复、只读 `/api/*` CORS、安全响应头、
@@ -46,6 +48,7 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 | `GET /api/v1/ext` | 列表/搜索：除分类、仓库、PG/OS、形态、生命周期与来源外，还支持 `tag pkg capability build docs relation pgrx active`；`q` 可组合 `tag:vector build:pgrx doc:bilingual is:packaged` 等操作符 |
 | `GET /api/v1/ext/{name}` | 单个扩展完整记录（新版 universe 字段 + `state/repo/ext_*` v1 兼容别名） |
 | `GET /api/v1/ext/{name}/matrix` | 可用性矩阵：`pgext.pkg` 的 pg × os 单元格（state/org/version/count） |
+| `GET /api/v1/matrix` | 全局构建矩阵：仅扫描 `pgext.matrix` 的 400 个预计算 JSON 行；紧凑协议 `p/e/c/n/v/d` 可还原 32,000 个状态格及悬停详情 |
 | `GET /api/v1/ext/{name}/files` | 二进制包文件（`pgext.bin` ⋈ `repository`，含下载 URL 与 SHA256），可选 `?pg= &os=` |
 | `GET /api/v1/ext/{name}/doc` | 用法文档 markdown（`pgext.doc`），`?lang=en\|zh` |
 | `GET /api/v1/dim/{key}` | 19 个维度聚合：`category tag package kind lifecycle license lang distribution repo pg os build pgrx capability docs relation vendor kernel activity`（旧 `type` 仍是 `kind` 的兼容别名） |
@@ -62,18 +65,26 @@ curl 'localhost:8432/api/v1/ext?pg=18,17'                      # 同时支持 PG
 curl 'localhost:8432/api/v1/ext?q=vector&pg=18&os=el9.x86_64' # 该精确二进制目标可安装
 curl 'localhost:8432/api/v1/ext?tag=analytics&build=pgrx&docs=bilingual'
 curl 'localhost:8432/api/v1/dim/capability'                    # 运行时能力聚合
+curl 'localhost:8432/api/v1/matrix'                           # 全局扩展包构建矩阵
 curl 'localhost:8432/api/v1/ext/postgis/files?pg=18&os=el9.x86_64'
 curl 'localhost:8432/api/v1/ext/timescaledb/doc?lang=zh'
 curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 ```
 
+已有目录运行一次 `pgext init` 会以非破坏方式补建 `pgext.matrix`。正常的 `pgext recap` / `reload`
+发布路径会与 `pgext.pkg` 在同一事务内刷新它；若绕过 CLI 直接导入 `pgext.pkg`，导入事务中也应执行
+`REFRESH MATERIALIZED VIEW pgext.matrix`，避免服务读到旧快照。
+
 ## 前端（web/）
 
 `design/prototype/` 静态原型的 API 化版本：同一套设计系统，使用 History API 的干净路由
-（`/`、`/p/{pkg}`、`/e/{name}`、`/c/{CODE}`、`/browse`、`/dim/{key}`、`/about`）。旧的
+（`/`、`/p/{pkg}`、`/e/{name}`、`/c/{CODE}`、`/matrix`、`/browse`、`/dim/{key}`、`/about`）。旧的
 `#/pkg/{pkg}`、`#/ext/{name}` 与 `#/cat/{CODE}` 链接会在客户端自动迁移到对应新地址。差异：
 
 - 启动时拉取 `/api/v1/bootstrap`（位置数组，列序与 `handleBootstrap` 注释同步维护）；
+- `/matrix` 按需拉取独立物化载荷，以全宽可横向滚动的正方形格子、固定表头/首列、状态筛选、
+  悬停详情和虚拟化行呈现 400 × 16 × 5 个构建组合；浏览器仅解码可见行，避免把 32,000 个
+  完整对象与 DOM 节点长期驻留；
 - 首页默认展示扩展卡片（导航中的“扩展”直接进入 EXT 目录），可显式切换项目/共享包族或表格；
   `packaged/source/kernel/vendor/contrib` 独立编码，并支持 `PG + OS + 架构` 精确包可用性筛选；
 - 多维索引按身份分类、构建交付、运行时文档、生态活跃度组织 19 个维度。标签、包族、二进制目标、

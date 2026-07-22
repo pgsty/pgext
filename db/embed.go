@@ -12,6 +12,8 @@ import (
 const (
 	universeDDLBegin = "-- BEGIN PGEXT UNIVERSE DDL"
 	universeDDLEnd   = "-- END PGEXT UNIVERSE DDL"
+	matrixDDLBegin   = "-- BEGIN PGEXT MATRIX DDL"
+	matrixDDLEnd     = "-- END PGEXT MATRIX DDL"
 )
 
 // Embed all SQL and CSV files from the db directory
@@ -36,20 +38,33 @@ func GetUniverseSchema() (string, error) {
 	if err != nil {
 		return "", err
 	}
+	return extractSchemaBlock(schema, universeDDLBegin, universeDDLEnd)
+}
 
-	start := strings.Index(schema, universeDDLBegin)
+// GetMatrixSchema returns the independently executable global matrix DDL.
+// It upgrades existing catalogs without duplicating the materialized-view SQL.
+func GetMatrixSchema() (string, error) {
+	schema, err := GetSchema()
+	if err != nil {
+		return "", err
+	}
+	return extractSchemaBlock(schema, matrixDDLBegin, matrixDDLEnd)
+}
+
+func extractSchemaBlock(schema, begin, end string) (string, error) {
+	start := strings.Index(schema, begin)
 	if start < 0 {
-		return "", fmt.Errorf("embedded schema.sql is missing %q", universeDDLBegin)
+		return "", fmt.Errorf("embedded schema.sql is missing %q", begin)
 	}
-	start += len(universeDDLBegin)
-	end := strings.Index(schema[start:], universeDDLEnd)
-	if end < 0 {
-		return "", fmt.Errorf("embedded schema.sql is missing %q", universeDDLEnd)
+	start += len(begin)
+	endPos := strings.Index(schema[start:], end)
+	if endPos < 0 {
+		return "", fmt.Errorf("embedded schema.sql is missing %q", end)
 	}
 
-	ddl := strings.TrimSpace(schema[start : start+end])
+	ddl := strings.TrimSpace(schema[start : start+endPos])
 	if ddl == "" {
-		return "", fmt.Errorf("embedded universe DDL block is empty")
+		return "", fmt.Errorf("embedded DDL block %q is empty", begin)
 	}
 	return ddl + "\n", nil
 }

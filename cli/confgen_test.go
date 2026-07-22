@@ -563,6 +563,9 @@ func TestMySQL84RepoAndPackageContract(t *testing.T) {
 			t.Fatalf("RPM %s repo should not carry meta: %q", repo, line)
 		}
 	}
+	if rpmPXB := renderedRepoUpstreamLine(rpm, "pxb84"); !strings.Contains(rpmPXB, "mirrors.cloud.tencent.com/percona/pxb-84-lts/yum/release") {
+		t.Fatalf("RPM pxb84 repo missing China mirror: %q", rpmPXB)
+	}
 	if strings.Contains(rpmMySQL, "meta:") {
 		t.Fatalf("RPM mysql repo should not carry meta: %q", rpmMySQL)
 	}
@@ -587,6 +590,9 @@ func TestMySQL84RepoAndPackageContract(t *testing.T) {
 	debPXB := renderedRepoUpstreamLine(deb, "pxb84")
 	if !strings.Contains(debPXB, "repo.percona.com/pxb-84-lts/apt") {
 		t.Fatalf("DEB pxb84 repo missing upstream URL: %q", debPXB)
+	}
+	if !strings.Contains(debPXB, "mirrors.cloud.tencent.com/percona/pxb-84-lts/apt") {
+		t.Fatalf("DEB pxb84 repo missing China mirror: %q", debPXB)
 	}
 	if strings.Contains(debPXB, "meta:") {
 		t.Fatalf("DEB pxb84 repo should not carry meta: %q", debPXB)
@@ -1126,7 +1132,7 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 		"name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24,26]",
 		"name: groonga        ,description: 'Groonga Ubuntu'     ,module: groonga ,releases: [         22,24   ]",
 		"name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [   12,13,22,24   ] ,arch: [x86_64         ]",
-		"name: pxb84          ,description: 'Percona XtraBackup' ,module: mysql   ,releases: [   12,13,22,24   ]",
+		"name: pxb84          ,description: 'Percona XtraBackup' ,module: mysql   ,releases: [   12,13,22,24,26]",
 		"name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [   12,   22,24   ]",
 		"name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24,26]",
 		"name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24,26]",

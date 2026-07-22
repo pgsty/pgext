@@ -83,7 +83,6 @@ func NewFetcher(opts FetchOptions) *Fetcher {
 
 	return &Fetcher{
 		httpClient: &http.Client{
-			Timeout: 2 * time.Minute,
 			Transport: &http.Transport{
 				Proxy:               http.ProxyFromEnvironment,
 				MaxIdleConns:        100,

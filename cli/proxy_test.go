@@ -16,6 +16,13 @@ func TestNewFetcherUsesEnvironmentProxy(t *testing.T) {
 	runProxyHelper(t, "fetcher")
 }
 
+func TestNewFetcherHasNoOverallTimeout(t *testing.T) {
+	fetcher := NewFetcher(FetchOptions{})
+	if fetcher.httpClient.Timeout != 0 {
+		t.Fatalf("expected no overall HTTP timeout, got %s", fetcher.httpClient.Timeout)
+	}
+}
+
 func TestPGXNExporterUsesEnvironmentProxy(t *testing.T) {
 	runProxyHelper(t, "pgxn")
 }

@@ -236,7 +236,7 @@ func (g *BinGenerator) collectAPT(pg int) ([]BinaryPackage, error) {
 		       a.filename, a.sha256, a.size, a.size_install
 		FROM %s a
 		JOIN pgext.repository r ON a.repo = r.id
-		WHERE a.package LIKE '%%-%d%%'
+		WHERE (a.package LIKE '%%-%d%%' OR a.package = 'pgagent')
 		  AND a.package NOT LIKE '%%-dbgsym%%'
 	`, g.aptTable, pg)
 

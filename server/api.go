@@ -26,6 +26,7 @@ import (
      GET  /api/v1/ext                   list/search: q + catalog/runtime/build/doc/relation dimensions
      GET  /api/v1/ext/{name}            one extension, full record
      GET  /api/v1/ext/{name}/matrix     package availability: pg × os cells
+     GET  /api/v1/matrix                global package availability: package × os × pg
      GET  /api/v1/ext/{name}/files      binary artifacts with download URLs (?pg= &os=)
      GET  /api/v1/ext/{name}/doc        usage doc markdown (?lang=en|zh)
      GET  /api/v1/dim/{key}             aggregate: 19 universe/doc/pkg dimensions
@@ -603,6 +604,78 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 			"ext": e.Name, "pkg": e.Pkg,
 			"pg": snap.PGs, "os": snap.OSs,
 			"cells": cells,
+		}, nil
+	})
+}
+
+type GlobalMatrixStats struct {
+	Rows   int            `json:"rows"`
+	OS     int            `json:"os"`
+	PG     int            `json:"pg"`
+	Cells  int            `json:"cells"`
+	Counts map[string]int `json:"counts"`
+}
+
+// handleGlobalMatrix serves the precomputed pgext.matrix rows. Each JSON row is
+// compact and positional: p=package, e=lead extension, c=80 status bytes,
+// n/v=row-local name/version dictionaries, and d=80 aligned optional detail
+// tuples. The request path never expands or classifies the 32,000 combinations.
+func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
+	snap := a.store.Get()
+	// LoadedAt participates in this cache key because package version/count
+	// changes can be meaningful even when the catalog content hash is stable.
+	cacheVersion := snap.Version + "|" + snap.LoadedAt.Format(time.RFC3339Nano)
+	a.cached(w, r, cacheVersion, func(ctx context.Context) (any, error) {
+		stats := GlobalMatrixStats{
+			OS: len(snap.OSs), PG: len(snap.PGs),
+			Counts: make(map[string]int),
+		}
+		cellWidth := stats.OS * stats.PG
+		rows, err := a.pool.Query(ctx, `
+			SELECT m.codes, m.data::text, coalesce(s.recap_time, s.parse_time, s.init_time)
+			FROM pgext.matrix m
+			CROSS JOIN pgext.status s
+			WHERE s.id = 0
+			ORDER BY m.id`)
+		if err != nil {
+			return nil, fmt.Errorf("load precomputed global matrix: %w", err)
+		}
+		defer rows.Close()
+
+		resultRows := make([]json.RawMessage, 0, 400)
+		generated := snap.LoadedAt
+		for rows.Next() {
+			var codes, data string
+			if err := rows.Scan(&codes, &data, &generated); err != nil {
+				return nil, fmt.Errorf("scan precomputed global matrix row: %w", err)
+			}
+			if len(codes) != cellWidth {
+				return nil, fmt.Errorf("invalid precomputed global matrix row width: got %d, want %d", len(codes), cellWidth)
+			}
+			if !json.Valid([]byte(data)) {
+				return nil, fmt.Errorf("invalid JSON in precomputed global matrix row")
+			}
+			resultRows = append(resultRows, json.RawMessage(data))
+			for i := 0; i < len(codes); i++ {
+				stats.Counts[codes[i:i+1]]++
+			}
+		}
+		if err := rows.Err(); err != nil {
+			return nil, fmt.Errorf("iterate precomputed global matrix rows: %w", err)
+		}
+		stats.Rows = len(resultRows)
+		stats.Cells = stats.Rows * cellWidth
+		if stats.Rows == 0 && cellWidth > 0 {
+			return nil, fmt.Errorf("precomputed global matrix is empty; run pgext recap after schema initialization")
+		}
+		return map[string]any{
+			"generated": generated.Format(time.RFC3339),
+			"source":    "pgext.matrix",
+			"format":    "matrix-row.v1",
+			"pg":        snap.PGs,
+			"os":        snap.OSs,
+			"stats":     stats,
+			"rows":      resultRows,
 		}, nil
 	})
 }

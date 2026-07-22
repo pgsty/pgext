@@ -103,6 +103,26 @@ func TestUniverseSchemaMatchesCSV(t *testing.T) {
 	}
 }
 
+func TestMatrixSchemaIsStandaloneCompactMaterialization(t *testing.T) {
+	matrixDDL, err := GetMatrixSchema()
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, fragment := range []string{
+		"CREATE MATERIALIZED VIEW pgext.matrix",
+		"string_agg(c.code, '' ORDER BY c.oi, c.pi)",
+		"'n', to_jsonb(names), 'v', to_jsonb(versions), 'd', details",
+		"CREATE UNIQUE INDEX matrix_pkg_idx",
+	} {
+		if !strings.Contains(matrixDDL, fragment) {
+			t.Errorf("matrix migration DDL is missing %q", fragment)
+		}
+	}
+	if strings.Contains(matrixDDL, "CREATE DOMAIN pgext.version") {
+		t.Fatal("matrix migration DDL must not include the following version domain")
+	}
+}
+
 func TestUniverseContainsPackagedExtensionCatalog(t *testing.T) {
 	extension, err := GetCSVFile("extension")
 	if err != nil {

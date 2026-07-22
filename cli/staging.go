@@ -389,6 +389,9 @@ func (s *packageStaging) publishLocked(ctx context.Context, tx pgx.Tx, core, pkg
 		if _, err := tx.Exec(ctx, fmt.Sprintf("INSERT INTO %s SELECT * FROM %s", liveTable("pkg"), s.pkg)); err != nil {
 			return nil, fmt.Errorf("publish %s: %w", liveTable("pkg"), err)
 		}
+		if err := refreshGlobalMatrix(ctx, tx); err != nil {
+			return nil, err
+		}
 	}
 
 	// Take one wall-clock timestamp after the publish lock has been acquired and
@@ -418,6 +421,24 @@ func (s *packageStaging) publishLocked(ctx context.Context, tx pgx.Tx, core, pkg
 		}
 	}
 	return liveTables, nil
+}
+
+// refreshGlobalMatrix keeps the compact serving view in the same transaction
+// as pgext.pkg, so readers observe either the old pair or the new pair.
+func refreshGlobalMatrix(ctx context.Context, tx pgx.Tx) error {
+	var exists bool
+	if err := tx.QueryRow(ctx, "SELECT to_regclass('pgext.matrix') IS NOT NULL").Scan(&exists); err != nil {
+		return fmt.Errorf("check global matrix materialization: %w", err)
+	}
+	if !exists {
+		// Catalogs created by older versions remain publishable; `pgext init`
+		// installs the materialization non-destructively before it is served.
+		return nil
+	}
+	if _, err := tx.Exec(ctx, "REFRESH MATERIALIZED VIEW pgext.matrix"); err != nil {
+		return fmt.Errorf("refresh global matrix materialization: %w", err)
+	}
+	return nil
 }
 
 func analyzePackageTables(ctx context.Context, liveTables []string) {

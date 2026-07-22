@@ -53,6 +53,7 @@ func Serve(ctx context.Context, opts Options) error {
 	mux.HandleFunc("GET /api/v1/ext", a.handleList)
 	mux.HandleFunc("GET /api/v1/ext/{name}", a.handleExt)
 	mux.HandleFunc("GET /api/v1/ext/{name}/matrix", a.handleMatrix)
+	mux.HandleFunc("GET /api/v1/matrix", a.handleGlobalMatrix)
 	mux.HandleFunc("GET /api/v1/ext/{name}/files", a.handleFiles)
 	mux.HandleFunc("GET /api/v1/ext/{name}/doc", a.handleDoc)
 	mux.HandleFunc("GET /api/v1/dim/{key}", a.handleDim)

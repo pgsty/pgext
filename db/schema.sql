@@ -734,6 +734,136 @@ COMMENT ON COLUMN pgext.pkg.org IS 'Latest package source organization (pgdg or 
 COMMENT ON COLUMN pgext.pkg.version IS 'Latest available package version for this specific PG+OS combination';
 COMMENT ON COLUMN pgext.pkg.count IS 'Count of available package variants (including different repos and versions)';
 
+-- BEGIN PGEXT MATRIX DDL
+-- Precomputed package x OS x PG matrix consumed by `pgext serve`.
+-- Each row is one lead package. `codes` contains one byte per cell in OS-major,
+-- PG-minor order; `data` is the compact wire row used by /api/v1/matrix.
+CREATE MATERIALIZED VIEW pgext.matrix AS
+WITH lead_packages AS (
+    SELECT DISTINCT ON (e.pkg)
+           e.id, e.pkg, e.name AS ext,
+           coalesce(e.pg_ver, ARRAY[]::text[]) AS pg_ver,
+           coalesce(e.rpm_repo, '') AS rpm_repo,
+           coalesce(e.deb_repo, '') AS deb_repo
+    FROM pgext.extension e
+    WHERE e.lead = true
+      AND (e.state IS NULL OR e.state <> 'not-ready')
+      AND EXISTS (SELECT 1 FROM pgext.pkg p WHERE p.pkg = e.pkg)
+    ORDER BY e.pkg, e.id
+),
+os_dim AS (
+    SELECT o.os, o.os_type,
+           row_number() OVER (
+               ORDER BY CASE o.os_vendor
+                            WHEN 'EL' THEN 0
+                            WHEN 'Debian' THEN 1
+                            WHEN 'Ubuntu' THEN 2
+                            ELSE 9
+                        END,
+                        o.os_major,
+                        CASE o.os_arch WHEN 'x86_64' THEN 0 WHEN 'aarch64' THEN 1 ELSE 9 END,
+                        o.os
+           ) - 1 AS oi
+    FROM pgext.os o
+    WHERE o.active = true
+),
+pg_dim AS (
+    SELECT p.pg, row_number() OVER (ORDER BY p.pg DESC) - 1 AS pi
+    FROM pgext.pg p
+    WHERE p.active = true
+),
+matrix_cells AS (
+    SELECT lp.id, lp.pkg, lp.ext, lp.pg_ver, lp.rpm_repo, lp.deb_repo,
+           o.os, o.os_type, o.oi, p.pg, p.pi,
+           coalesce(x.name, '') AS name,
+           coalesce(x.state::text, 'MISS') AS state,
+           upper(coalesce(x.org, '')) AS org,
+           coalesce(x.version, '') AS version,
+           coalesce(x.count, 0) AS count
+    FROM lead_packages lp
+    CROSS JOIN os_dim o
+    CROSS JOIN pg_dim p
+    LEFT JOIN pgext.pkg x ON x.pkg = lp.pkg AND x.os = o.os AND x.pg = p.pg
+),
+classified AS (
+    SELECT c.*,
+           CASE
+               WHEN c.state = 'AVAIL' AND c.org = 'PGDG' THEN 'B'
+               WHEN c.state = 'AVAIL' AND c.org = 'PIGSTY' THEN 'G'
+               WHEN c.state = 'AVAIL' THEN 'Y'
+               WHEN c.state = 'MISS' AND NOT (c.pg_ver @> ARRAY[c.pg::text]) THEN '.'
+               WHEN c.state = 'MISS' AND (
+                   (c.os_type = 'rpm' AND c.rpm_repo = '') OR
+                   (c.os_type = 'deb' AND c.deb_repo = '')
+               ) THEN 'A'
+               WHEN c.state = 'MISS' THEN 'R'
+               WHEN c.state = 'HIDE' THEN '.'
+               WHEN c.state IN ('FORK', 'THROW') THEN 'P'
+               WHEN c.state = 'BREAK' THEN 'O'
+               ELSE '.'
+           END AS code
+    FROM matrix_cells c
+),
+detail_names AS (
+    SELECT id, array_agg(name ORDER BY name) AS names
+    FROM (
+        SELECT DISTINCT id, name
+        FROM classified
+        WHERE code IN ('B', 'G', 'P', 'O', 'Y') AND name <> ''
+    ) n
+    GROUP BY id
+),
+detail_versions AS (
+    SELECT id, array_agg(version ORDER BY version) AS versions
+    FROM (
+        SELECT DISTINCT id, version
+        FROM classified
+        WHERE code IN ('B', 'G', 'P', 'O', 'Y') AND version <> ''
+    ) v
+    GROUP BY id
+),
+matrix_rows AS (
+    SELECT c.id, c.pkg, c.ext,
+           coalesce(n.names, ARRAY[]::text[]) AS names,
+           coalesce(v.versions, ARRAY[]::text[]) AS versions,
+           string_agg(c.code, '' ORDER BY c.oi, c.pi) AS codes,
+           jsonb_agg(
+               CASE
+                   WHEN c.code IN ('B', 'G') THEN jsonb_build_array(
+                       coalesce(array_position(n.names, c.name) - 1, -1),
+                       coalesce(array_position(v.versions, c.version) - 1, -1),
+                       c.count
+                   )
+                   WHEN c.code IN ('P', 'O', 'Y') THEN jsonb_build_array(
+                       coalesce(array_position(n.names, c.name) - 1, -1),
+                       coalesce(array_position(v.versions, c.version) - 1, -1),
+                       c.count, c.state, c.org
+                   )
+                   ELSE 'null'::jsonb
+               END
+               ORDER BY c.oi, c.pi
+           ) AS details
+    FROM classified c
+    LEFT JOIN detail_names n ON n.id = c.id
+    LEFT JOIN detail_versions v ON v.id = c.id
+    GROUP BY c.id, c.pkg, c.ext, n.names, v.versions
+)
+SELECT id, pkg, ext, codes,
+       jsonb_build_object(
+           'p', pkg, 'e', ext, 'c', codes,
+           'n', to_jsonb(names), 'v', to_jsonb(versions), 'd', details
+       ) AS data
+FROM matrix_rows
+ORDER BY id;
+
+CREATE UNIQUE INDEX matrix_id_idx ON pgext.matrix (id);
+CREATE UNIQUE INDEX matrix_pkg_idx ON pgext.matrix (pkg);
+
+COMMENT ON MATERIALIZED VIEW pgext.matrix IS 'Precomputed compact package x OS x PG build matrix for /api/v1/matrix';
+COMMENT ON COLUMN pgext.matrix.codes IS 'Positional status codes ordered by active OS then active PG descending';
+COMMENT ON COLUMN pgext.matrix.data IS 'Compact wire row: p=package, e=lead extension, c=status string, n/v=row dictionaries, d=aligned indexed details';
+-- END PGEXT MATRIX DDL
+
 -----------------------------------
 -- Domain: Semantic Version
 -----------------------------------

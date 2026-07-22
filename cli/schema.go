@@ -34,17 +34,30 @@ func InitSchema(force bool) error {
 		if err != nil {
 			return fmt.Errorf("failed to get embedded universe CSV: %w", err)
 		}
+		matrixDDL, err := db.GetMatrixSchema()
+		if err != nil {
+			return fmt.Errorf("failed to get embedded matrix schema: %w", err)
+		}
 
-		created, rows, err := ensureUniverse(ctx, universeDDL, universeCSV)
+		universeCreated, universeRows, err := ensureUniverse(ctx, universeDDL, universeCSV)
 		if err != nil {
 			return fmt.Errorf("failed to ensure pgext.universe: %w", err)
 		}
-		if !created {
+		matrixCreated, matrixRows, err := ensureMatrix(ctx, matrixDDL)
+		if err != nil {
+			return fmt.Errorf("failed to ensure pgext.matrix: %w", err)
+		}
+		if !universeCreated && !matrixCreated {
 			logrus.Warn("pgext schema already exists, use --force to recreate")
 			return nil
 		}
 
-		logrus.Infof("added pgext.universe to existing schema with %d rows", rows)
+		if universeCreated {
+			logrus.Infof("added pgext.universe to existing schema with %d rows", universeRows)
+		}
+		if matrixCreated {
+			logrus.Infof("added pgext.matrix to existing schema with %d rows", matrixRows)
+		}
 		return nil
 	}
 
@@ -123,6 +136,43 @@ func ensureUniverse(ctx context.Context, universeDDL string, universeCSV db.CSVF
 	}
 	if err := tx.Commit(ctx); err != nil {
 		return false, 0, fmt.Errorf("failed to commit universe transaction: %w", err)
+	}
+	return true, rows, nil
+}
+
+// ensureMatrix adds the compact matrix materialization to an existing catalog.
+// Creation and its initial population are serialized with other schema upgrades.
+func ensureMatrix(ctx context.Context, matrixDDL string) (bool, int64, error) {
+	tx, err := Begin(ctx)
+	if err != nil {
+		return false, 0, fmt.Errorf("failed to begin matrix transaction: %w", err)
+	}
+	defer tx.Rollback(ctx)
+
+	if _, err := tx.Exec(ctx, "SELECT pg_advisory_xact_lock(hashtext('pgext'), hashtext('schema'))"); err != nil {
+		return false, 0, fmt.Errorf("failed to acquire schema lock: %w", err)
+	}
+
+	var exists bool
+	if err := tx.QueryRow(ctx, "SELECT to_regclass('pgext.matrix') IS NOT NULL").Scan(&exists); err != nil {
+		return false, 0, fmt.Errorf("failed to check pgext.matrix: %w", err)
+	}
+	if exists {
+		if err := tx.Commit(ctx); err != nil {
+			return false, 0, fmt.Errorf("failed to commit matrix check: %w", err)
+		}
+		return false, 0, nil
+	}
+
+	if _, err := tx.Exec(ctx, matrixDDL); err != nil {
+		return false, 0, fmt.Errorf("failed to create pgext.matrix: %w", err)
+	}
+	var rows int64
+	if err := tx.QueryRow(ctx, "SELECT count(*) FROM pgext.matrix").Scan(&rows); err != nil {
+		return false, 0, fmt.Errorf("failed to count pgext.matrix: %w", err)
+	}
+	if err := tx.Commit(ctx); err != nil {
+		return false, 0, fmt.Errorf("failed to commit matrix transaction: %w", err)
 	}
 	return true, rows, nil
 }

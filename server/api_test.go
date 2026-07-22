@@ -305,7 +305,7 @@ func TestServeIndexFingerprintsAssets(t *testing.T) {
 }
 
 func TestSPAHistoryRoutesServeShell(t *testing.T) {
-	for _, path := range []string{"/e/vector", "/p/pgvector", "/c/RAG", "/browse", "/dim/license", "/about"} {
+	for _, path := range []string{"/e/vector", "/p/pgvector", "/c/RAG", "/matrix", "/browse", "/dim/license", "/about"} {
 		t.Run(path, func(t *testing.T) {
 			req := httptest.NewRequest(http.MethodGet, path, nil)
 			w := httptest.NewRecorder()
@@ -323,6 +323,31 @@ func TestSPAHistoryRoutesServeShell(t *testing.T) {
 				t.Fatalf("GET %s did not return the SPA shell", path)
 			}
 		})
+	}
+}
+
+func TestEmbeddedGlobalMatrixContract(t *testing.T) {
+	app, err := webFS.ReadFile("web/app.js")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, want := range []string{
+		`href="/matrix"`, `j('/api/v1/matrix')`, "globalMatrixShellHTML", "setupGlobalMatrix",
+		"gmx-viewport", "data-gmx-cell", "globalMatrixTipHTML", "globalMatrixCell",
+	} {
+		if !strings.Contains(string(app), want) {
+			t.Errorf("embedded matrix app is missing %q", want)
+		}
+	}
+
+	style, err := webFS.ReadFile("web/style.css")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, want := range []string{".gmx-page", ".gmx-grid-head", ".gmx-grid-body", ".gmx-cell.gmx-pgdg", ".gmx-cell.gmx-missing"} {
+		if !strings.Contains(string(style), want) {
+			t.Errorf("embedded matrix styles are missing %q", want)
+		}
 	}
 }
 

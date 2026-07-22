@@ -118,7 +118,7 @@ class PsqlClient:
             self._run(
                 f"""
 BEGIN;
-LOCK TABLE pgext.universe4 IN SHARE MODE;
+LOCK TABLE pgext.universe IN SHARE MODE;
 LOCK TABLE pgext.extension IN SHARE MODE;
 LOCK TABLE pgext.doc IN SHARE ROW EXCLUSIVE MODE;
 
@@ -135,24 +135,24 @@ DECLARE
     universe_count INTEGER;
 BEGIN
     SELECT count(*) INTO stage_count FROM stub_doc_load;
-    SELECT count(*) INTO universe_count FROM pgext.universe4;
+    SELECT count(*) INTO universe_count FROM pgext.universe;
 
     IF stage_count <> {expected_count} OR universe_count <> {expected_count} THEN
         RAISE EXCEPTION
-            'documentation cardinality drift: stage=%, universe4=%, expected={expected_count}',
+            'documentation cardinality drift: stage=%, universe=%, expected={expected_count}',
             stage_count, universe_count;
     END IF;
 
     IF EXISTS (
         SELECT ext FROM stub_doc_load
         EXCEPT
-        SELECT name FROM pgext.universe4
+        SELECT name FROM pgext.universe
     ) OR EXISTS (
-        SELECT name FROM pgext.universe4
+        SELECT name FROM pgext.universe
         EXCEPT
         SELECT ext FROM stub_doc_load
     ) THEN
-        RAISE EXCEPTION 'staged documentation names do not exactly match pgext.universe4';
+        RAISE EXCEPTION 'staged documentation names do not exactly match pgext.universe';
     END IF;
 
     IF EXISTS (
@@ -170,10 +170,10 @@ BEGIN
     ) OR EXISTS (
         SELECT name FROM pgext.extension
         EXCEPT
-        SELECT name FROM pgext.universe4
+        SELECT name FROM pgext.universe
     ) THEN
         RAISE EXCEPTION
-            'pgext.extension is not covered by the staged universe4 documentation';
+            'pgext.extension is not covered by the staged universe documentation';
     END IF;
 
     IF to_regclass('{DOC_BACKUP_TABLE}') IS NULL THEN
@@ -196,7 +196,7 @@ BEGIN
                 s.en_doc,
                 s.zh_doc
             FROM pgext.extension AS e
-            JOIN pgext.universe4 AS u ON u.name = e.name
+            JOIN pgext.universe AS u ON u.name = e.name
             JOIN stub_doc_load AS s ON s.ext = e.name
             ORDER BY e.id
         $doc_backup$;
@@ -221,15 +221,15 @@ ALTER TABLE pgext.doc DROP CONSTRAINT IF EXISTS doc_id_fkey;
 ALTER TABLE pgext.doc DROP CONSTRAINT IF EXISTS doc_ext_fkey;
 
 COMMENT ON TABLE pgext.doc IS
-    'PostgreSQL extension documentation synchronized atomically from stub directories against pgext.universe4';
+    'PostgreSQL extension documentation synchronized atomically from stub directories against pgext.universe';
 COMMENT ON COLUMN pgext.doc.id IS
-    'Extension identifier copied from pgext.universe4.id and validated by the loader';
+    'Extension identifier copied from pgext.universe.id and validated by the loader';
 COMMENT ON COLUMN pgext.doc.ext IS
-    'Extension name copied from pgext.universe4.name and validated by the loader';
+    'Extension name copied from pgext.universe.name and validated by the loader';
 COMMENT ON COLUMN pgext.doc.pkg IS
-    'Package name copied from pgext.universe4.pkg';
+    'Package name copied from pgext.universe.pkg';
 COMMENT ON COLUMN pgext.doc.repo_url IS
-    'Primary project URL seeded from pgext.universe4.url';
+    'Primary project URL seeded from pgext.universe.url';
 COMMENT ON COLUMN pgext.doc.license_url IS
     'Optional upstream license URL';
 COMMENT ON COLUMN pgext.doc.control_url IS
@@ -245,7 +245,7 @@ COMMENT ON COLUMN pgext.doc.en_doc IS
 COMMENT ON COLUMN pgext.doc.zh_doc IS
     'Chinese Markdown documentation from stub-zh/<ext>.md';
 COMMENT ON TABLE {DOC_BACKUP_TABLE} IS
-    'Historical immutable pgext.extension documentation snapshot captured before universe4 synchronization; live Markdown may receive later corrections';
+    'Historical immutable pgext.extension documentation snapshot captured before universe synchronization; live Markdown may receive later corrections';
 
 DELETE FROM pgext.doc;
 
@@ -265,7 +265,7 @@ SELECT
     u.cargo_url,
     s.en_doc,
     s.zh_doc
-FROM pgext.universe4 AS u
+FROM pgext.universe AS u
 JOIN stub_doc_load AS s ON s.ext = u.name
 ORDER BY u.id;
 
@@ -273,16 +273,16 @@ DO $doc_postflight$
 BEGIN
     IF (SELECT count(*) FROM pgext.doc) <> {expected_count}
        OR EXISTS (
-            SELECT name FROM pgext.universe4
+            SELECT name FROM pgext.universe
             EXCEPT
             SELECT ext FROM pgext.doc
        )
        OR EXISTS (
             SELECT ext FROM pgext.doc
             EXCEPT
-            SELECT name FROM pgext.universe4
+            SELECT name FROM pgext.universe
        ) THEN
-        RAISE EXCEPTION 'pgext.doc does not exactly match pgext.universe4 after sync';
+        RAISE EXCEPTION 'pgext.doc does not exactly match pgext.universe after sync';
     END IF;
 
     IF EXISTS (
@@ -297,7 +297,7 @@ BEGIN
     IF EXISTS (
         SELECT 1
         FROM pgext.doc AS d
-        JOIN pgext.universe4 AS u ON u.name = d.ext
+        JOIN pgext.universe AS u ON u.name = d.ext
         WHERE d.id <> u.id
            OR d.pkg IS DISTINCT FROM u.pkg
            OR d.repo_url IS DISTINCT FROM u.url
@@ -307,7 +307,7 @@ BEGIN
            OR d.author_url IS DISTINCT FROM u.author_url
            OR d.cargo_url IS DISTINCT FROM u.cargo_url
     ) THEN
-        RAISE EXCEPTION 'pgext.doc metadata differs from pgext.universe4 after sync';
+        RAISE EXCEPTION 'pgext.doc metadata differs from pgext.universe after sync';
     END IF;
 
     IF EXISTS (
@@ -316,7 +316,7 @@ BEGIN
         WHERE conrelid = 'pgext.doc'::regclass
           AND contype = 'f'
     ) THEN
-        RAISE EXCEPTION 'pgext.doc still has a foreign key after universe4 migration';
+        RAISE EXCEPTION 'pgext.doc still has a foreign key after universe migration';
     END IF;
 
 END
@@ -395,7 +395,7 @@ def ensure_doc_table(conn) -> None:
 def _known_extensions(conn) -> set:
     return {
         row["ext"]
-        for row in conn.query_csv("SELECT name AS ext FROM pgext.universe4 ORDER BY name")
+        for row in conn.query_csv("SELECT name AS ext FROM pgext.universe ORDER BY name")
     }
 
 
@@ -405,7 +405,7 @@ def load_stub_docs(
     zh_docs: Mapping[str, str],
     dry_run: bool = False,
 ) -> Dict[str, Any]:
-    """Atomically sync complete universe4 Markdown pairs into pgext.doc."""
+    """Atomically sync complete universe Markdown pairs into pgext.doc."""
     ensure_doc_table(conn)
     known_exts = _known_extensions(conn)
     missing_en = sorted(known_exts - set(en_docs))
