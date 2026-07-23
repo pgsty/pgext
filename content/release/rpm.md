@@ -6,9 +6,9 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
-## 2026-07-22
+## 2026-07-24
 
-This batch records extension changes from 2026-07-07 through 2026-07-22: new extensions, version upgrades, Rust/pgrx rebuilds, and package-matrix gap repairs. Rows with unchanged versions record packaging or coverage changes; package or SQL-version differences are called out where they matter.
+This batch records extension changes from 2026-07-07 through 2026-07-24: new extensions, version upgrades, Rust/pgrx rebuilds, and package-matrix gap repairs. Rows with unchanged versions record packaging or coverage changes; package or SQL-version differences are called out where they matter.
 
 | Extension               | Old      | New      | Comment                                                                                            |
 |:------------------------|:---------|:---------|:---------------------------------------------------------------------------------------------------|
@@ -88,6 +88,7 @@ This batch records extension changes from 2026-07-07 through 2026-07-22: new ext
 | vectorize               | 0.26.2   | 0.26.2   | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
 | vectorscale             | 0.9.0    | 0.9.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
 | wrappers                | 0.6.1    | 0.6.2    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| age                     | 1.7.0    | 1.8.0    | PG 18 uses the upstream PG18 v1.8.0-rc0 source; PG 17 remains on 1.7.0.                            |
 | babelfishpg_tsql        | 5.5.0    | 5.4.0    | Catalog version corrected to 5.4.0; Babelfish PG 17-18.                                            |
 | biscuit                 | 2.4.1    | 2.4.3    | PG 16-18; package 2.4.3, SQL default remains 2.4.1.                                                |
 | decoderbufs             | 3.5.0    | 3.6.0    | PG 14-18; DEB 3.6.0, RPM remains 3.5.0.                                                            |
@@ -100,10 +101,14 @@ This batch records extension changes from 2026-07-07 through 2026-07-22: new ext
 | nominatim_fdw           | 1.3      | 2.0.0    | PG 14-18; 16 platforms.                                                                            |
 | odbc_fdw                | 0.5.1    | 0.6.1    | Package 0.6.1, SQL extension 0.5.2; PG 14-18.                                                      |
 | ogr_fdw                 | 1.1.8    | 1.1.9    | PG 14-18.                                                                                          |
+| pg_csv                  | 1.0.1    | 1.0.2    | Adds Pigsty RPM; package/source 1.0.2, SQL/control remains 1.0.1; PG 14-18.                        |
 | pg_dbms_errlog          | 2.2      | 2.4      | PG 14-18.                                                                                          |
 | pg_ivm                  | 1.14     | 1.15     | PG 14-18.                                                                                          |
+| pg_net                  | 0.20.3   | 0.20.5   | Package/source 0.20.5, SQL/control 0.20.4; PG 14-18; Pigsty RPM on EL10.                          |
+| pg_rewrite              | 2.0.0    | 2.2      | PG 14-18.                                                                                          |
 | pg_statement_rollback   | 1.5      | 1.6      | PG 14-18.                                                                                          |
 | pg_tde                  | 2.1      | 2.2      | PG 17-18; Percona packages.                                                                        |
+| pgnodemx                | 1.7      | 2.0.1    | Package/source 2.0.1, SQL/control 2.0; PG 14-18; handles disabled cgroups safely.                 |
 | pgauditlogtofile        | 1.8.4    | 1.8.5    | PG 14-18.                                                                                          |
 | pgbson                  | 2.0.2    | 2.0.4    | Package 2.0.4, SQL extension remains 2.0; PG 14-18.                                                |
 | pgclone                 | 4.3.2    | 4.4.2    | PG 14-18.                                                                                          |
@@ -157,14 +162,18 @@ This batch records extension changes from 2026-07-07 through 2026-07-22: new ext
 | pg_strom                | 6.1      | 6.1      | a compatible pg_strom 3.5 package fills the EL10 x86_64 PG 14 RPM gap.                             |
 | pgautofailover          | 2.2      | 2.2      | fills PG 18 RPM gaps on all six EL targets.                                                        |
 | pgbouncer_fdw           | 1.4.0    | 1.4.0    | adds Pigsty DEB for PG 14-18.                                                                      |
-| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | fills U26 amd64/arm64 PG 14-17 DEB gaps.                                                           |
+| pg_wait_sampling        | 1.1.11   | 1.1.11   | adds Pigsty RPM for PG 14-18; SQL/control version is 1.1.                                          |
+| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | adds Pigsty RPM for PG 14-18 with PG18 compatibility; also fills U26 PG 14-17 DEB gaps.           |
 | pglogical_ticker        | 1.4.1    | 1.4.1    | fills PG 14-17 RPM gaps on all six EL targets.                                                     |
 | pgmemcache              | 2.3.0    | 2.3.0    | fills EL8 aarch64 PG 14-15 RPM gaps.                                                               |
 | pgml                    | 2.10.0   | 2.10.0   | fills EL10, D13 and U26, both architectures, PG 14-17.                                             |
+| pgspider_ext            | 1.3.0    | 1.3.0    | adds a Pigsty RPM recipe for PG 14-18 with PostgreSQL 18 compatibility.                           |
 | plisql                  | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
 | pllua                   | 2.0.12   | 2.0.12   | fills PG 18 on all six EL targets plus EL8 aarch64 PG 14-15.                                       |
 | rdkit                   | 202503.6 | 202503.6 | 202303.3 packages fill EL8/9, D12 and U22 gaps for PG 14-18.                                       |
+| sqlite_fdw              | 2.5.0    | 2.5.0    | Pigsty RPM release 3 adds PostgreSQL 18 and EL8 SQLite compatibility; PG 14-18.                   |
 | sslutils                | 1.4      | 1.4      | fills EL8 x86_64/aarch64 PG 18 RPM gaps.                                                           |
+| wal2mongo               | 1.0.7    | 1.0.7    | adds a Pigsty RPM recipe for PG 14-18 with PostgreSQL 17-18 compatibility.                        |
 
 ## 2026-07-07
 

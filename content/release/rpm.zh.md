@@ -6,9 +6,9 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
-## 2026-07-22
+## 2026-07-24
 
-本批次记录 2026-07-07 至 2026-07-22 期间的扩展变化，包括新增扩展、版本升级、Rust/pgrx 重构建，以及软件包矩阵缺口修复。版本未变化的条目表示打包或覆盖范围发生变化；包版本与 SQL 扩展版本不同时，仅在必要处注明。
+本批次记录 2026-07-07 至 2026-07-24 期间的扩展变化，包括新增扩展、版本升级、Rust/pgrx 重构建，以及软件包矩阵缺口修复。版本未变化的条目表示打包或覆盖范围发生变化；包版本与 SQL 扩展版本不同时，仅在必要处注明。
 
 | 扩展名                     | 旧版本      | 新版本      | 备注                                                                  |
 |:------------------------|:---------|:---------|:--------------------------------------------------------------------|
@@ -88,6 +88,7 @@ weight: 200
 | vectorize               | 0.26.2   | 0.26.2   | pgrx 0.18.1 -> 0.19.1；PG 14-18。                                     |
 | vectorscale             | 0.9.0    | 0.9.0    | pgrx 0.18.1 -> 0.19.1；PG 14-18。                                     |
 | wrappers                | 0.6.1    | 0.6.2    | pgrx 0.18.1 -> 0.19.1；PG 14-18。                                     |
+| age                     | 1.7.0    | 1.8.0    | PG 18 使用上游 PG18 v1.8.0-rc0 源码；PG 17 保持 1.7.0。                         |
 | babelfishpg_tsql        | 5.5.0    | 5.4.0    | 目录版本修正为 5.4.0；Babelfish 支持 PG 17-18。                                |
 | biscuit                 | 2.4.1    | 2.4.3    | PG 16-18；包版本 2.4.3，SQL 默认版本仍为 2.4.1。                                |
 | decoderbufs             | 3.5.0    | 3.6.0    | PG 14-18；DEB 为 3.6.0，RPM 仍为 3.5.0。                                  |
@@ -100,10 +101,14 @@ weight: 200
 | nominatim_fdw           | 1.3      | 2.0.0    | PG 14-18；16 平台。                                                     |
 | odbc_fdw                | 0.5.1    | 0.6.1    | 包版本 0.6.1、SQL 扩展版本 0.5.2；PG 14-18。                                  |
 | ogr_fdw                 | 1.1.8    | 1.1.9    | PG 14-18。                                                           |
+| pg_csv                  | 1.0.1    | 1.0.2    | 新增 Pigsty RPM；包/源码版本 1.0.2，SQL/control 仍为 1.0.1；PG 14-18。             |
 | pg_dbms_errlog          | 2.2      | 2.4      | PG 14-18。                                                           |
 | pg_ivm                  | 1.14     | 1.15     | PG 14-18。                                                           |
+| pg_net                  | 0.20.3   | 0.20.5   | 包/源码版本 0.20.5，SQL/control 版本 0.20.4；PG 14-18；Pigsty RPM 仅 EL10。       |
+| pg_rewrite              | 2.0.0    | 2.2      | PG 14-18。                                                           |
 | pg_statement_rollback   | 1.5      | 1.6      | PG 14-18。                                                           |
 | pg_tde                  | 2.1      | 2.2      | PG 17-18；Percona 软件包。                                               |
+| pgnodemx                | 1.7      | 2.0.1    | 包/源码版本 2.0.1，SQL/control 版本 2.0；PG 14-18；可安全处理禁用的 cgroup。          |
 | pgauditlogtofile        | 1.8.4    | 1.8.5    | PG 14-18。                                                           |
 | pgbson                  | 2.0.2    | 2.0.4    | 包版本 2.0.4，SQL 扩展版本仍为 2.0；PG 14-18。                                  |
 | pgclone                 | 4.3.2    | 4.4.2    | PG 14-18。                                                           |
@@ -157,14 +162,18 @@ weight: 200
 | pg_strom                | 6.1      | 6.1      | 版本不变；使用兼容的 pg_strom 3.5 包补齐 EL10 x86_64 PG 14 RPM。                  |
 | pgautofailover          | 2.2      | 2.2      | 版本不变；补齐六个 EL 平台的 PG 18 RPM。                                         |
 | pgbouncer_fdw           | 1.4.0    | 1.4.0    | 版本不变；新增 PG 14-18 的 Pigsty DEB。                                      |
-| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | 版本不变；补齐 U26 双架构的 PG 14-17 DEB。                                      |
+| pg_wait_sampling        | 1.1.11   | 1.1.11   | 版本不变；新增 PG 14-18 的 Pigsty RPM；SQL/control 版本为 1.1。                   |
+| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | 版本不变；新增支持 PG 14-18 及 PG18 兼容的 Pigsty RPM，并补齐 U26 PG 14-17 DEB。      |
 | pglogical_ticker        | 1.4.1    | 1.4.1    | 版本不变；补齐六个 EL 平台的 PG 14-17 RPM。                                      |
 | pgmemcache              | 2.3.0    | 2.3.0    | 版本不变；补齐 EL8 aarch64 的 PG 14-15 RPM。                                 |
 | pgml                    | 2.10.0   | 2.10.0   | 版本不变；补齐 EL10、D13、U26 双架构的 PG 14-17。                                 |
+| pgspider_ext            | 1.3.0    | 1.3.0    | 版本不变；新增支持 PG 14-18 及 PostgreSQL 18 兼容的 Pigsty RPM 构建配方。             |
 | plisql                  | 1.0      | 1.0      | 版本不变；IvorySQL contrib 包更新到 5.4；仅 IvorySQL 18；16 平台。                 |
 | pllua                   | 2.0.12   | 2.0.12   | 版本不变；补齐六个 EL 平台的 PG 18，以及 EL8 aarch64 的 PG 14-15。                   |
 | rdkit                   | 202503.6 | 202503.6 | 版本不变；使用 202303.3 包补齐 EL8/9、D12、U22 的 PG 14-18。                      |
+| sqlite_fdw              | 2.5.0    | 2.5.0    | 版本不变；Pigsty RPM 第 3 次打包新增 PostgreSQL 18 与 EL8 SQLite 兼容；PG 14-18。   |
 | sslutils                | 1.4      | 1.4      | 版本不变；补齐 EL8 双架构的 PG 18 RPM。                                         |
+| wal2mongo               | 1.0.7    | 1.0.7    | 版本不变；新增支持 PG 14-18 及 PostgreSQL 17-18 兼容的 Pigsty RPM 构建配方。          |
 
 ## 2026-07-07
 
