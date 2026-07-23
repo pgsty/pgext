@@ -56,6 +56,7 @@ func TestParseFilterOperators(t *testing.T) {
 		{"pg operator", "q=pg:18", Filter{PG: []int{18}}},
 		{"multi pg operator", "q=pg:17,18", Filter{PG: []int{18, 17}}},
 		{"is packaged", "q=is:packaged", Filter{Scope: "packaged"}},
+		{"is unpacked", "q=is:unpacked", Filter{Scope: "unpacked"}},
 		{"vendor", "q=vendor:aws", Filter{Vendor: "aws"}},
 		{"kind lifecycle target", "kind=preload&lifecycle=active&os=el9.x86_64", Filter{Kind: "preload", Lifecycle: "active", OS: "el9.x86_64"}},
 		{"universe params", "tag=hnsw&pkg=pgvector&capability=trusted&build=pgrx&docs=bilingual&relation=requires&pgrx=0.12.0&active=2026",
@@ -96,6 +97,7 @@ func TestFilterApply(t *testing.T) {
 		{"all selected pg majors", "pg=18,17", "", []string{"timescaledb", "vector", "postgis"}},
 		{"all selected including pg14", "pg=18,14", "", []string{"vector", "postgis"}},
 		{"packaged only", "scope=packaged", "", []string{"timescaledb", "vector", "postgis"}},
+		{"unpacked only", "scope=unpacked", "", []string{"aws_s3"}},
 		{"vendor catalog", "scope=cloud", "", []string{"aws_s3"}},
 		{"exact name outranks stars", "q=postgis", "", []string{"postgis"}},
 		{"desc match", "q=hnsw", "", []string{"vector"}},
@@ -164,7 +166,7 @@ func TestBootstrapIncludesNewUniverseFields(t *testing.T) {
 	if err := json.Unmarshal(w.Body.Bytes(), &body); err != nil {
 		t.Fatal(err)
 	}
-	if len(body.Rows) != 4 || len(body.Rows[0]) != 29 {
+	if len(body.Rows) != 4 || len(body.Rows[0]) != 32 {
 		t.Fatalf("bootstrap shape = %d rows x %d cols", len(body.Rows), len(body.Rows[0]))
 	}
 	if body.Counts["projects"] != 4 || body.Counts["packaged"] != 3 {
@@ -305,7 +307,7 @@ func TestServeIndexFingerprintsAssets(t *testing.T) {
 }
 
 func TestSPAHistoryRoutesServeShell(t *testing.T) {
-	for _, path := range []string{"/e/vector", "/p/pgvector", "/c/RAG", "/matrix", "/browse", "/dim/license", "/about"} {
+	for _, path := range []string{"/ext/vector", "/pkg/pgvector", "/cate/RAG", "/matrix", "/list", "/list/license", "/about"} {
 		t.Run(path, func(t *testing.T) {
 			req := httptest.NewRequest(http.MethodGet, path, nil)
 			w := httptest.NewRecorder()
@@ -333,7 +335,7 @@ func TestEmbeddedGlobalMatrixContract(t *testing.T) {
 	}
 	for _, want := range []string{
 		`href="/matrix"`, `j('/api/v1/matrix')`, "globalMatrixShellHTML", "setupGlobalMatrix",
-		"gmx-viewport", "data-gmx-cell", "globalMatrixTipHTML", "globalMatrixCell",
+		"gmx-sheet", "data-gmx-cell", "data-gmx-lens", "globalMatrixTipHTML", "globalMatrixCell",
 	} {
 		if !strings.Contains(string(app), want) {
 			t.Errorf("embedded matrix app is missing %q", want)
@@ -344,7 +346,7 @@ func TestEmbeddedGlobalMatrixContract(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for _, want := range []string{".gmx-page", ".gmx-grid-head", ".gmx-grid-body", ".gmx-cell.gmx-pgdg", ".gmx-cell.gmx-missing"} {
+	for _, want := range []string{".gmx-page", ".gmx-head", ".gmx-body", ".gmx-cell.gmx-pgdg", ".gmx-cell.gmx-missing", ".gmx-cell.gmx-alt", ".gmx-lens-toggle"} {
 		if !strings.Contains(string(style), want) {
 			t.Errorf("embedded matrix styles are missing %q", want)
 		}
@@ -365,6 +367,7 @@ func TestEmbeddedDetailManualContract(t *testing.T) {
 		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "preload_libs", "pig build pkg",
 		"file-browser", "usage-prose", "function navigateTo", "const extHref", "const pkgHref",
 		"DIM_GROUPS", "relationbits", "migrateLegacyHash", "data-dim-search", "capabilityMatches",
+		"pkg-banner", "data-hover-ext", "md-alert", "/visit",
 	} {
 		if !strings.Contains(appText, want) {
 			t.Errorf("embedded detail app is missing %q", want)
@@ -382,6 +385,94 @@ func TestEmbeddedDetailManualContract(t *testing.T) {
 		if !strings.Contains(string(style), want) {
 			t.Errorf("embedded detail styles are missing %q", want)
 		}
+	}
+}
+
+func TestLegacyRoutesRedirectPermanently(t *testing.T) {
+	tests := []struct {
+		prefix, name, query, want string
+	}{
+		{"/ext/", "vector", "", "/ext/vector"},
+		{"/pkg/", "pgvector", "lang=zh", "/pkg/pgvector?lang=zh"},
+		{"/ext/", "uri-template", "", "/ext/uri-template"},
+	}
+	for _, tt := range tests {
+		req := httptest.NewRequest(http.MethodGet, "/e/"+tt.name, nil)
+		if tt.query != "" {
+			req = httptest.NewRequest(http.MethodGet, "/e/"+tt.name+"?"+tt.query, nil)
+		}
+		req.SetPathValue("name", tt.name)
+		w := httptest.NewRecorder()
+		redirectPrefix(tt.prefix)(w, req)
+		if w.Code != http.StatusMovedPermanently {
+			t.Fatalf("redirect status = %d", w.Code)
+		}
+		if got := w.Header().Get("Location"); got != tt.want {
+			t.Fatalf("redirect location = %q, want %q", got, tt.want)
+		}
+	}
+}
+
+func TestVisitStorePersistsCounts(t *testing.T) {
+	path := t.TempDir() + "/visits.json"
+	s := newVisitStore(path)
+	if v, _ := s.hit("postgis"); v != 1 {
+		t.Fatalf("first hit = %d", v)
+	}
+	s.hit("postgis")
+	if v, d := s.hit("timescaledb"); v != 1 || d != 0 {
+		t.Fatalf("hit = %d, downloads = %d", v, d)
+	}
+	s.flush()
+	reloaded := newVisitStore(path)
+	if v, _ := reloaded.get("postgis"); v != 2 {
+		t.Fatalf("reloaded visits = %d, want 2", v)
+	}
+	if v, _ := reloaded.get("nosuch"); v != 0 {
+		t.Fatalf("unknown ext visits = %d, want 0", v)
+	}
+}
+
+func TestVisitEndpointCountsAndValidates(t *testing.T) {
+	store := NewStore(nil)
+	store.snap.Store(fixtureSnapshot())
+	a := &api{store: store, visits: newVisitStore("")}
+
+	req := httptest.NewRequest(http.MethodPost, "/api/v1/ext/postgis/visit", nil)
+	req.SetPathValue("name", "postgis")
+	w := httptest.NewRecorder()
+	a.handleVisit(w, req)
+	if w.Code != http.StatusOK {
+		t.Fatalf("visit status = %d", w.Code)
+	}
+	var body struct {
+		Visits    int64 `json:"visits"`
+		Downloads int64 `json:"downloads"`
+	}
+	if err := json.Unmarshal(w.Body.Bytes(), &body); err != nil {
+		t.Fatal(err)
+	}
+	if body.Visits != 1 || body.Downloads != 0 {
+		t.Fatalf("visit body = %+v", body)
+	}
+
+	req = httptest.NewRequest(http.MethodGet, "/api/v1/ext/postgis/visit", nil)
+	req.SetPathValue("name", "postgis")
+	w = httptest.NewRecorder()
+	a.handleVisit(w, req)
+	if err := json.Unmarshal(w.Body.Bytes(), &body); err != nil {
+		t.Fatal(err)
+	}
+	if body.Visits != 1 {
+		t.Fatalf("GET must not increment: %+v", body)
+	}
+
+	req = httptest.NewRequest(http.MethodPost, "/api/v1/ext/nosuch/visit", nil)
+	req.SetPathValue("name", "nosuch")
+	w = httptest.NewRecorder()
+	a.handleVisit(w, req)
+	if w.Code != http.StatusNotFound {
+		t.Fatalf("unknown extension visit status = %d", w.Code)
 	}
 }
 

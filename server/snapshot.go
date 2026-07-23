@@ -165,6 +165,8 @@ type Snapshot struct {
 	CountContrib         int
 	CountDocs            int
 	CountSourceOnly      int
+	CountPackages        int // distinct package families in pgext.pkg
+	CountBuildSlots      int // pkg × pg × os combinations in pgext.pkg
 
 	// CountAvail is kept internally for older tests/callers.
 	CountAvail int
@@ -511,6 +513,9 @@ func loadTargets(ctx context.Context, pool *pgxpool.Pool, snap *Snapshot, byPkg 
 	}
 	for i, os := range snap.OSs {
 		osIdx[os] = i
+	}
+	if err := pool.QueryRow(ctx, `SELECT count(DISTINCT pkg), count(*) FROM pgext.pkg`).Scan(&snap.CountPackages, &snap.CountBuildSlots); err != nil {
+		return fmt.Errorf("count pgext.pkg: %w", err)
 	}
 	targets := map[string]map[int]struct{}{}
 	rows, err := pool.Query(ctx, `SELECT pkg, pg, os FROM pgext.pkg WHERE state::text = 'AVAIL'`)

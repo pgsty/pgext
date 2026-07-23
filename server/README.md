@@ -44,17 +44,21 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 
 | 端点 | 说明 |
 |---|---|
-| `GET /api/v1/meta` | 服务信息、计数、分类（双语描述）、活跃 PG/OS |
+| `GET /api/v1/meta` | 服务信息、计数（含 `packages` 包族数与 `build_slots` 构建槽位）、分类（双语描述）、活跃 PG/OS |
 | `GET /api/v1/ext` | 列表/搜索：除分类、仓库、PG/OS、形态、生命周期与来源外，还支持 `tag pkg capability build docs relation pgrx active`；`q` 可组合 `tag:vector build:pgrx doc:bilingual is:packaged` 等操作符 |
 | `GET /api/v1/ext/{name}` | 单个扩展完整记录（新版 universe 字段 + `state/repo/ext_*` v1 兼容别名） |
 | `GET /api/v1/ext/{name}/matrix` | 可用性矩阵：`pgext.pkg` 的 pg × os 单元格（state/org/version/count） |
-| `GET /api/v1/matrix` | 全局构建矩阵：仅扫描 `pgext.matrix` 的 400 个预计算 JSON 行；紧凑协议 `p/e/c/n/v/d` 可还原 32,000 个状态格及悬停详情 |
+| `GET /api/v1/matrix` | 全局构建矩阵：仅扫描 `pgext.matrix` 的预计算 JSON 行；紧凑协议 `p/e/c/n/v/d` 可还原全部状态格及悬停详情（gzip 后约 25 KiB） |
 | `GET /api/v1/ext/{name}/files` | 二进制包文件（`pgext.bin` ⋈ `repository`，含下载 URL 与 SHA256），可选 `?pg= &os=` |
 | `GET /api/v1/ext/{name}/doc` | 用法文档 markdown（`pgext.doc`），`?lang=en\|zh` |
+| `GET/POST /api/v1/ext/{name}/visit` | 页面访问计数：POST 自增并返回 `{visits, downloads}`，GET 只读；下载计数暂为占位 0。由 `--visits-file`（默认 `~/.pgext/visits.json`）持久化，30s 周期 + 退出时落盘 |
 | `GET /api/v1/dim/{key}` | 19 个维度聚合：`category tag package kind lifecycle license lang distribution repo pg os build pgrx capability docs relation vendor kernel activity`（旧 `type` 仍是 `kind` 的兼容别名） |
-| `GET /api/v1/bootstrap` | SPA 引导载荷（紧凑位置数组，ETag/304，gzip 后约 100 KiB） |
+| `GET /api/v1/bootstrap` | SPA 引导载荷（紧凑位置数组 32 列，含 `repo_url/url/license_url`；ETag/304，gzip 后约 200 KiB）。载荷格式版本 `bootFormat` 同时参与 ETag 与前端请求 URL（`?fmt=b32`）：改动列布局时必须同步递增，否则浏览器缓存可能把旧列布局供给新前端 |
 | `POST /api/v1/reload` | 带令牌刷新内存快照；未配置令牌时返回 404 |
 | `GET /healthz` | 存活探针：db ping + 快照年龄 |
+
+路由层面：规范深链为 `/ext/{name}`、`/pkg/{name}`、`/cate/{CODE}` 与 `/list[/{dim}]`；旧的
+`/e/ /p/ /c/` 由服务端 301 永久重定向（保留查询串），`/browse`、`/dim/{key}`、`/cat/` 由客户端就地迁移。
 
 组合示例：
 
@@ -78,20 +82,43 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 ## 前端（web/）
 
 `design/prototype/` 静态原型的 API 化版本：同一套设计系统，使用 History API 的干净路由
-（`/`、`/p/{pkg}`、`/e/{name}`、`/c/{CODE}`、`/matrix`、`/browse`、`/dim/{key}`、`/about`）。旧的
-`#/pkg/{pkg}`、`#/ext/{name}` 与 `#/cat/{CODE}` 链接会在客户端自动迁移到对应新地址。差异：
+（`/`、`/pkg/{pkg}`、`/ext/{name}`、`/c/{CODE}`、`/matrix`、`/list`、`/list/{dim}`、`/about`）。旧的
+`/e/ /p/ /browse /dim/` 与 `#/…` 哈希链接会经服务端 301 或客户端迁移到对应新地址。差异：
 
-- 启动时拉取 `/api/v1/bootstrap`（位置数组，列序与 `handleBootstrap` 注释同步维护）；
-- `/matrix` 按需拉取独立物化载荷，以全宽可横向滚动的正方形格子、固定表头/首列、状态筛选、
-  悬停详情和虚拟化行呈现 400 × 16 × 5 个构建组合；浏览器仅解码可见行，避免把 32,000 个
-  完整对象与 DOM 节点长期驻留；
+- 启动时拉取 `/api/v1/bootstrap`（位置数组，列序与 `handleBootstrap` 注释同步维护）；上一次
+  载荷缓存在 localStorage，回访先用缓存目录即时渲染，再以 `If-None-Match` 条件请求后台校验，
+  全部筛选、排序与搜索都在前端对这份数据完成；
+- 首页 Hero：单行主标题与说明、六项关键指标（收录/已打包/包族/Linux 目标/PG 大版本/构建槽位）、
+  放大后的宇宙点阵导航（分类图例并入筛选面板）；检索区为 搜索框 → SQL 读出 → 筛选面板 → 结果；
+- 筛选面板收敛为 SCOPE（全部/可交付/未交付/分支限定/特定厂商/PG 自带）+ 分类 + PostgreSQL +
+  语言 + 许可证（≤2 个成员的取值折叠进"全部 N 种 →"索引链接）。SCOPE 级联：其余各行计数都在
+  所选范围子集上重新聚合；分类固定 8 × 2 对齐、Any 独立成列；每行标题可点击直达对应
+  `/list/{dim}` 索引页；无独立行的维度（形态、仓库来源、生命周期、二进制目标等）在激活时显示于
+  "当前筛选"并可一键清除。筛选参数统一为 `lang/license/repo/...`（`lng` 兼容保留，
+  `?lang=zh|en` 仍是界面语言开关）；
+- 扩展卡片固定四列：标题 + 角标（GitHub 仓库显示 GitHub 图标与星数，其余上游显示 ↗ 箭头，点击均
+  跳首要 URL）、灰色 `pkg · version` 副标题、双语描述与维度标签（点击即筛选）；`pgext.extension`
+  （packaged）条目带强调边框以示开箱即用。软件包卡片同构：标题携主扩展版本、正文列出全部交付
+  扩展按钮（直达 `/ext`）、标签取自主扩展。卡片与表格行悬停片刻会弹出可交互的详情浮窗（完整描述、
+  元数据与上游链接）。扩展表格列序为 name/version/description/category/license/lang/pg/stars，
+  名称与许可证列设宽度上限，描述占满余宽；软件包表格为 扩展包/主扩展/描述/分类/许可证/PG/星标，
+  多扩展的包在首列于包名下方逐行列出全部扩展并可直达；
+- 代码块内置轻量高亮（SQL / shell / yaml·conf 键值），Usage 文档、安装与构建命令统一生效；
+- `/matrix` 重写为整页滚动的全宽格子表：行虚拟化改挂窗口滚动，双行表头（OS 释出 + 架构配色区分
+  x86_64/aarch64 + PG 大版本）吸顶，每格是首页点阵同款的纯色方块；除状态筛选外新增
+  全部 / PGDG / Pigsty 三种视角，按所选仓库的覆盖情况重新着色所有有效槽位，直观呈现
+  “PGDG 提供了哪些、缺了哪些，Pigsty 补齐了哪些”。性能：物化载荷缓存于 localStorage
+  （回访即时渲染，按 `generated` 时间戳后台校验一次），每行单元格 HTML 按视角惰性预计算，
+  滚动帧只拼接缓存字符串；
 - 首页默认展示扩展卡片（导航中的“扩展”直接进入 EXT 目录），可显式切换项目/共享包族或表格；
   `packaged/source/kernel/vendor/contrib` 独立编码，并支持 `PG + OS + 架构` 精确包可用性筛选；
 - 多维索引按身份分类、构建交付、运行时文档、生态活跃度组织 19 个维度。标签、包族、二进制目标、
   构建链、pgrx 版本、能力位、文档覆盖与依赖信号均直接利用 `universe/doc/pkg` 快照；点击任意取值
   会生成可组合、可分享的首页查询参数，长维度页可即时搜索取值；
-- 详情页沿用 `pgext gen cc/io` 的内容逻辑组织成完整扩展手册：概览、分组元数据、正反向依赖与
-  同包扩展、版本/包名定义、可用性矩阵与 SHA256 下载、源码构建、仓库/安装/预加载/启用/验证；
+- 扩展详情页重构：Hero 左侧为身份区（名称/状态/标签/GitHub 活跃度 + 访问计数，下载计数占位），
+  右侧是醒目的软件包导航卡（直达 `/pkg/{pkg}` 的定义、矩阵与下载）；正文为 概览 → 安装 →
+  版本与可用性 → 构建 → 关联 → 元数据 → 用法。软件下载表只保留在 PKG 页；用法文档按
+  GitHub 风味 Markdown 渲染，支持 `> [!NOTE]` 等 Alert 标注（含标注行内正文的变体）；
 - 预加载配置会合并依赖扩展所需的动态库；安装命令会按选定的 PG + OS + 架构使用矩阵里的
   精确包名，并区分预编译包、PostgreSQL contrib、源码目录与供应商专有扩展；
 - `pgext.doc` 的中英文 Markdown 正文会去掉重复的顶层 Usage 标题，并渲染目录、锚点、表格、

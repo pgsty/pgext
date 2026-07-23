@@ -67,7 +67,7 @@ languages:
           url: "https://pigsty.io"
           weight: 10
         - identifier: pigsty-doc
-          name: "Pigsty v4.2 Doc ↗"
+          name: "Pigsty v4.4 Doc ↗"
           url: "https://pigsty.io/docs"
           weight: 11
         - identifier: pgext
@@ -129,7 +129,7 @@ languages:
           url: "https://pigsty.cc"
           weight: 10
         - identifier: pigsty-doc
-          name: "Pigsty v4.2文档 ↗"
+          name: "Pigsty v4.4文档 ↗"
           url: "https://pigsty.io/docs/"
           weight: 11
         - identifier: pgext
@@ -186,7 +186,7 @@ security:
     urls: ['(?i)^https?://[a-z].*']
 
 params:
-  description: PostgreSQL Extension Catalog, Install 444 PG Extensions on 14 Linux Distribution with the PIG Package Manager
+  description: PostgreSQL Extension Catalog, Install 555 PG Extensions across 16 Linux Platforms with the PIG Package Manager
 
   navbar:
     displayTitle: true

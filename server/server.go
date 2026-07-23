@@ -11,6 +11,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"net/url"
 	"strings"
 	"time"
 
@@ -27,6 +28,7 @@ type Options struct {
 	CacheTTL    time.Duration // snapshot refresh interval & response cache TTL
 	Pool        *pgxpool.Pool // connected database pool (pgext schema expected)
 	ReloadToken string        // enables authenticated POST /api/v1/reload when non-empty
+	VisitsFile  string        // page hit counter persistence path (empty: memory only)
 }
 
 // Serve runs the web server until ctx is cancelled.
@@ -46,7 +48,9 @@ func Serve(ctx context.Context, opts Options) error {
 	}
 	store.StartRefresher(ctx, opts.CacheTTL)
 
-	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken}
+	visits := newVisitStore(opts.VisitsFile)
+	visits.startFlusher(ctx)
+	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken, visits: visits}
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /api/v1/meta", a.handleMeta)
@@ -56,11 +60,18 @@ func Serve(ctx context.Context, opts Options) error {
 	mux.HandleFunc("GET /api/v1/matrix", a.handleGlobalMatrix)
 	mux.HandleFunc("GET /api/v1/ext/{name}/files", a.handleFiles)
 	mux.HandleFunc("GET /api/v1/ext/{name}/doc", a.handleDoc)
+	mux.HandleFunc("GET /api/v1/ext/{name}/visit", a.handleVisit)
+	mux.HandleFunc("POST /api/v1/ext/{name}/visit", a.handleVisit)
 	mux.HandleFunc("GET /api/v1/dim/{key}", a.handleDim)
 	mux.HandleFunc("GET /api/v1/bootstrap", a.handleBootstrap)
 	mux.HandleFunc("POST /api/v1/reload", a.handleReload)
 	mux.HandleFunc("GET /healthz", a.handleHealth)
 	mux.HandleFunc("GET /assets/{file}", handleAsset)
+	// Canonical deep links are /ext/{name}, /pkg/{name} and /cate/{code}; the
+	// short legacy forms redirect permanently so old shared URLs keep working.
+	mux.HandleFunc("GET /e/{name}", redirectPrefix("/ext/"))
+	mux.HandleFunc("GET /p/{name}", redirectPrefix("/pkg/"))
+	mux.HandleFunc("GET /c/{name}", redirectPrefix("/cate/"))
 	mux.HandleFunc("/", handleSPA)
 
 	srv := &http.Server{
@@ -87,6 +98,18 @@ func Serve(ctx context.Context, opts Options) error {
 		shutCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
 		return srv.Shutdown(shutCtx)
+	}
+}
+
+// redirectPrefix maps a one-segment legacy route onto its canonical prefix,
+// preserving the query string.
+func redirectPrefix(prefix string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		target := prefix + url.PathEscape(r.PathValue("name"))
+		if r.URL.RawQuery != "" {
+			target += "?" + r.URL.RawQuery
+		}
+		http.Redirect(w, r, target, http.StatusMovedPermanently)
 	}
 }
 

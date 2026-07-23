@@ -924,8 +924,8 @@ func GetConfigConstants() *ConfigConstants {
 			{"orioledb", "orioledb-$v", "orioledb-$v"},
 			{"pgedge", "pgedge-$v", "pgedge-$v"},
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
-			{"greenplum", "open-source-greenplum-db-7", ""},
 			{"cloudberry", "cloudberry cloudberry-backup cloudberry-pxf", "cloudberry cloudberry-backup cloudberry-pxf"},
+			{"pgtde", "pgtde-18,pgtde-18-contrib", "pgtde-18 pgtde-18-contrib"},
 			{"percona-core", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18"},
 			{"percona-main", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18,percona-postgis35_18,percona-postgis35_18-client,percona-postgis35_18-utils,percona-pgvector_18,percona-wal2json18,percona-pg_repack18,percona-pgaudit18,percona-pgaudit18_set_user,percona-pg_stat_monitor18,percona-pg_gather", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18 percona-postgresql-18-postgis-3 percona-postgresql-18-pgvector percona-postgresql-18-wal2json percona-postgresql-18-repack percona-postgresql-18-pgaudit percona-pgaudit18-set-user percona-pg-stat-monitor18 percona-pg-gather"},
 		},
@@ -986,8 +986,9 @@ pg_home_map:
   citus:  '/usr/pgsql-$v'
   mssql:  '/usr/babelfish-$v/'
   agens:  '/usr/agens-$v'
-  ivory:  '/usr/ivory-5'
+  ivory:  '/usr/ivory-$v'
   mysql:  '/usr/halo-$v'
+  pgtde:  '/usr/pgtde-$v'
   gpsql:  '/usr/cloudberry'
   polar:  '/usr/polar-$v'
   oriole: '/usr/oriole-$v'
@@ -1020,7 +1021,7 @@ repo_upstream_default:
   - { name: pgdg17-nonfree ,description: 'PostgreSQL 17+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: pgdg18-nonfree ,description: 'PostgreSQL 18+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
-  - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/percona/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/percona/el$releasever.$basearch' ,origin: 'http://repo.percona.com/ppg-18.3/yum/release/$releasever/RPMS/$basearch'  }}
+  - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://repo.percona.com/ppg-18.4/yum/release/$releasever/RPMS/$basearch'  }}
   - { name: groonga        ,description: 'Groonga'            ,module: groonga ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/almalinux/$releasever/$basearch/' }}
   - { name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/'       ,china: 'https://mirrors.ustc.edu.cn/mysql-repo/yum/mysql-8.4-community/el/$releasever/$basearch/' }}
   - { name: mysql-tools    ,description: 'MySQL 8.4 Tools'    ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-tools-8.4-community/el/$releasever/$basearch/' ,china: 'https://mirrors.ustc.edu.cn/mysql-repo/yum/mysql-tools-8.4-community/el/$releasever/$basearch/' }}
@@ -1139,8 +1140,9 @@ pg_home_map:
   mssql:  '/usr/babelfish-$v/'
   agens:  '/usr/agens-$v'
   gpsql:  '/usr/cloudberry'
-  ivory:  '/usr/ivory-5'
-  mysql:  '/usr/halo-14'
+  ivory:  '/usr/ivory-$v'
+  mysql:  '/usr/halo-$v'
+  pgtde:  '/usr/pgtde-$v'
   polar:  '/usr/polar-$v'
   oriole: '/usr/oriole-$v'
   pgedge: '/usr/pgedge-$v'

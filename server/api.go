@@ -63,7 +63,7 @@ type Filter struct {
 // like `cat:GIS tag:vector pg:18 build:pgrx is:packaged`.
 func ParseFilter(v url.Values) Filter {
 	f := Filter{
-		Cat:        strings.ToUpper(v.Get("cat")),
+		Cat:        strings.ToUpper(first(v.Get("cat"), v.Get("cate"))),
 		Repo:       strings.ToUpper(v.Get("repo")),
 		License:    v.Get("license"),
 		Lang:       first(v.Get("lang"), v.Get("lng")),
@@ -93,7 +93,7 @@ func ParseFilter(v url.Values) Filter {
 			continue
 		}
 		switch strings.ToLower(key) {
-		case "cat", "category":
+		case "cat", "cate", "category":
 			f.Cat = strings.ToUpper(val)
 		case "repo":
 			f.Repo = strings.ToUpper(val)
@@ -133,7 +133,9 @@ func ParseFilter(v url.Values) Filter {
 			switch strings.ToLower(val) {
 			case "packaged":
 				f.Scope = "packaged"
-			case "source", "source-only", "unpackaged":
+			case "unpacked", "unpackaged":
+				f.Scope = "unpacked"
+			case "source", "source-only":
 				f.Scope = "source"
 			case "kernel":
 				f.Scope = "kernel"
@@ -207,6 +209,9 @@ func (f Filter) match(e *Ext, snap *Snapshot) (int, bool) {
 		return 0, false
 	}
 	if f.Scope == "packaged" && !e.Packaged {
+		return 0, false
+	}
+	if f.Scope == "unpacked" && e.Packaged {
 		return 0, false
 	}
 	if f.Scope == "source" && (e.Packaged || (e.RepoURL == "" && e.Tarball == "")) {
@@ -476,6 +481,7 @@ type api struct {
 	cache       *ttlCache
 	pool        *pgxpool.Pool
 	reloadToken string
+	visits      *visitStore
 }
 
 func writeJSON(w http.ResponseWriter, code int, v any) {
@@ -508,6 +514,8 @@ func (a *api) handleMeta(w http.ResponseWriter, r *http.Request) {
 			"kernel":            snap.CountKernel,
 			"contrib":           snap.CountContrib,
 			"docs":              snap.CountDocs,
+			"packages":          snap.CountPackages,
+			"build_slots":       snap.CountBuildSlots,
 		},
 		"pg":         snap.PGs,
 		"os":         snap.OSs,
@@ -925,11 +933,21 @@ bootstrap: compact positional rows for the SPA.
 	  15 docbits(en1 zh2)  16 last_commit  17 pkg  18 lead_ext  19 lifecycle
 	  20 tags[]  21 last_active  22 checked_at
 	  23 buildbits(rpm1 deb2 pgrx4 source8)  24 target_idx[]  25 family_size  26 comment
-	  27 relationbits(requires1 required_by2 see_also4)  28 pgrx_ver
+	  27 relationbits(requires1 required_by2 see_also4)  28 pgrx_ver  29 repo_url  30 url  31 license_url
 */
+// bootFormat versions the positional payload layout. It participates in the
+// ETag (and the SPA's request URL) so a redeployed binary can never pair its
+// new app.js with an older cached payload whose columns no longer line up.
+const bootFormat = "b32"
+
+func bootstrapETag(snap *Snapshot) string {
+	return `"` + bootFormat + "-" + strings.Trim(snap.Version, `"`) + `"`
+}
+
 func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
-	if match := r.Header.Get("If-None-Match"); match != "" && match == snap.Version {
+	etag := bootstrapETag(snap)
+	if match := r.Header.Get("If-None-Match"); match != "" && match == etag {
 		w.WriteHeader(http.StatusNotModified)
 		return
 	}
@@ -980,13 +998,14 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 			e.EnDesc, e.ZhDesc, e.Kind, e.Vendor, e.Kernel, e.PG,
 			flags, docbits, e.LastCommit, e.Pkg, e.LeadExt, e.Lifecycle, e.Tags,
 			e.LastActive, e.CheckedAt, buildbits, e.TargetIdx, e.FamilySize, e.Comment,
-			relationbits, e.PGRXVer,
+			relationbits, e.PGRXVer, e.RepoURL, e.URL, e.LicenseURL,
 		}
 	}
-	w.Header().Set("ETag", snap.Version)
+	w.Header().Set("ETag", etag)
 	w.Header().Set("Cache-Control", "public, max-age=60")
 	writeJSON(w, 200, map[string]any{
 		"generated": snap.LoadedAt.Format(time.RFC3339),
+		"format":    bootFormat,
 		"version":   strings.Trim(snap.Version, `"`),
 		"pg":        snap.PGs,
 		"os":        snap.OSs,
@@ -1000,10 +1019,33 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 			"kernel":            snap.CountKernel,
 			"contrib":           snap.CountContrib,
 			"docs":              snap.CountDocs,
+			"packages":          snap.CountPackages,
+			"build_slots":       snap.CountBuildSlots,
 		},
 		"cats": snap.Cats,
 		"rows": rows,
 	})
+}
+
+/* visit counter: file-backed page hit counts. POST increments, GET reads.
+   The download counter is a placeholder that always reports zero until
+   artifact download tracking lands. */
+
+func (a *api) handleVisit(w http.ResponseWriter, r *http.Request) {
+	snap := a.store.Get()
+	e, ok := snap.ByName[r.PathValue("name")]
+	if !ok {
+		writeErr(w, http.StatusNotFound, "extension %q does not exist", r.PathValue("name"))
+		return
+	}
+	var visits, downloads int64
+	if r.Method == http.MethodPost {
+		visits, downloads = a.visits.hit(e.Name)
+	} else {
+		visits, downloads = a.visits.get(e.Name)
+	}
+	w.Header().Set("Cache-Control", "no-store")
+	writeJSON(w, 200, map[string]any{"ext": e.Name, "visits": visits, "downloads": downloads})
 }
 
 func (a *api) handleReload(w http.ResponseWriter, r *http.Request) {

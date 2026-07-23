@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"syscall"
 	"time"
 
@@ -22,7 +23,18 @@ var (
 	serveListen      string
 	serveCacheTTL    time.Duration
 	serveReloadToken string
+	serveVisitsFile  string
 )
+
+// defaultVisitsFile keeps the page hit counter under ~/.pgext by default;
+// an empty value (no resolvable home) degrades to a memory-only counter.
+func defaultVisitsFile() string {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return ""
+	}
+	return filepath.Join(home, ".pgext", "visits.json")
+}
 
 // serveCmd runs the pgext.cloud web server
 var serveCmd = &cobra.Command{
@@ -54,6 +66,7 @@ query API under /api/v1. Web assets are embedded — the binary is all you need.
 			CacheTTL:    serveCacheTTL,
 			Pool:        cli.DB,
 			ReloadToken: serveReloadToken,
+			VisitsFile:  serveVisitsFile,
 		}); err != nil {
 			return fmt.Errorf("server failed: %w", err)
 		}
@@ -67,5 +80,6 @@ func init() {
 	serveCmd.Flags().StringVar(&serveListen, "listen", ":8432", "listen address")
 	serveCmd.Flags().DurationVar(&serveCacheTTL, "cache-ttl", 5*time.Minute, "catalog snapshot refresh interval")
 	serveCmd.Flags().StringVar(&serveReloadToken, "reload-token", os.Getenv("PGEXT_RELOAD_TOKEN"), "token enabling POST /api/v1/reload (default: $PGEXT_RELOAD_TOKEN; disabled when empty)")
+	serveCmd.Flags().StringVar(&serveVisitsFile, "visits-file", defaultVisitsFile(), "page hit counter persistence path (empty: memory only)")
 	rootCmd.AddCommand(serveCmd)
 }

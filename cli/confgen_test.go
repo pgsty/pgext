@@ -1021,6 +1021,23 @@ func TestConfigConstantsIncludeCloudberryFullPackageAlias(t *testing.T) {
 	t.Fatal("cloudberry mapping not found in PGSQLExoticMap")
 }
 
+func TestConfigConstantsIncludePgTDEAlias(t *testing.T) {
+	constants := GetConfigConstants()
+	for _, mapping := range constants.PGSQLExoticMap {
+		if mapping.Key != "pgtde" {
+			continue
+		}
+		if mapping.RPM != "pgtde-18,pgtde-18-contrib" {
+			t.Fatalf("pgtde RPM alias = %q", mapping.RPM)
+		}
+		if mapping.DEB != "pgtde-18 pgtde-18-contrib" {
+			t.Fatalf("pgtde DEB alias = %q", mapping.DEB)
+		}
+		return
+	}
+	t.Fatal("pgtde mapping not found in PGSQLExoticMap")
+}
+
 func TestConfigConstantsIncludePgHardstorageToolAlias(t *testing.T) {
 	constants := GetConfigConstants()
 	expected := map[string]PackageMapping{
@@ -1099,6 +1116,29 @@ func TestRenderedTemplatesIncludePolarDBPackageMap(t *testing.T) {
 			if strings.Contains(rendered, fragment) {
 				t.Fatalf("%s rendered template still contains old PolarDB fragment: %q", name, fragment)
 			}
+		}
+	}
+}
+
+func TestRenderedTemplatesIncludePgTDEPackageMap(t *testing.T) {
+	tests := map[string]struct {
+		rendered string
+		want     string
+	}{
+		"rpm": {rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"), want: `pgtde: "pgtde-18,pgtde-18-contrib"`},
+		"deb": {rendered: renderDEBTemplateForTest(t, "u24.x86_64", "u24"), want: `pgtde: "pgtde-18 pgtde-18-contrib"`},
+	}
+
+	for name, tt := range tests {
+		found := false
+		for _, line := range strings.Split(tt.rendered, "\n") {
+			if strings.Join(strings.Fields(line), " ") == tt.want {
+				found = true
+				break
+			}
+		}
+		if !found {
+			t.Fatalf("%s rendered template missing expected pgTDE alias: %q", name, tt.want)
 		}
 	}
 }

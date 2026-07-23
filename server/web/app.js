@@ -17,6 +17,7 @@ let OSS = [];         // active os targets in canonical order
 let OSIDX = {};       // os -> canonical index
 let UFIELD = [];      // dots for the universe field
 let N_ALL = 0, N_AVAIL = 0, N_PROJECTS = 0, N_SOURCE = 0, N_VENDOR = 0, N_KERNEL = 0, N_CONTRIB = 0, N_DOCS = 0;
+let N_PKGS = 0, N_SLOTS = 0; // pgext.pkg package families / build slots
 let META = {};
 let INSTALL_PREF = { pg: '', os: '' };
 
@@ -30,7 +31,7 @@ let GMATRIX = null, GMATRIX_VIEW = null, matrixHydSeq = 0;
    0 name 1 cat 2 avail 3 repo 4 license 5 lang 6 version 7 stars
    8 en 9 zh 10 kind 11 vendor 12 kernel 13 pg[] 14 flags 15 docbits 16 commit
    17 pkg 18 lead 19 lifecycle 20 tags[] 21 active 22 checked 23 buildbits
-   24 target_idx[] 25 family_size 26 comment 27 relationbits 28 pgrx_ver */
+   24 target_idx[] 25 family_size 26 comment 27 relationbits 28 pgrx_ver 29 repo_url 30 url 31 license_url */
 function decodeBoot(b) {
   BOOT = b;
   EXT = b.rows.map((r, i) => ({
@@ -41,7 +42,7 @@ function decodeBoot(b) {
     pkg: r[17] || r[0], lead: r[18] || r[0], lifecycle: r[19] || '', tags: r[20] || [],
     active: r[21] || r[16] || '', checked: r[22] || '', buildbits: r[23] | 0,
     targets: r[24] || [], familySize: r[25] || 1, comment: r[26] || '',
-    relationbits: r[27] | 0, pgrx: r[28] || ''
+    relationbits: r[27] | 0, pgrx: r[28] || '', repoUrl: r[29] || '', url: r[30] || '', licenseUrl: r[31] || ''
   }));
   byName = new Map(EXT.map(e => [e.name, e]));
   byPkg = new Map();
@@ -51,9 +52,21 @@ function decodeBoot(b) {
   PGS = b.pg || [];
   OSS = b.os || [];
   OSIDX = {}; OSS.forEach((os, i) => { OSIDX[os] = i; });
-  N_ALL = b.counts.total; N_AVAIL = b.counts.packaged; N_PROJECTS = b.counts.projects || byPkg.size;
-  N_SOURCE = b.counts.source_only || 0; N_VENDOR = b.counts.vendor || 0; N_KERNEL = b.counts.kernel || 0;
-  N_CONTRIB = b.counts.contrib || 0; N_DOCS = b.counts.docs || 0;
+  // Counts derivable from the rows are derived, so figures can never disagree
+  // with the decoded catalog itself; only the pkg-table aggregates rely on the
+  // server (with a slot fallback of families × pg × os).
+  N_ALL = EXT.length; N_PROJECTS = byPkg.size;
+  N_AVAIL = 0; N_SOURCE = 0; N_VENDOR = 0; N_KERNEL = 0; N_CONTRIB = 0;
+  for (const e of EXT) {
+    if (e.avail) N_AVAIL++;
+    else if (e.buildbits & B.SOURCE) N_SOURCE++;
+    if (e.vendor) N_VENDOR++;
+    if (e.kernel) N_KERNEL++;
+    if (e.flags & F.CONTRIB) N_CONTRIB++;
+  }
+  N_DOCS = b.counts.docs || 0;
+  N_PKGS = b.counts.packages || 0;
+  N_SLOTS = b.counts.build_slots || (N_PKGS * PGS.length * OSS.length);
   META = { generated: (b.generated || '').slice(0, 10) };
   UFIELD = [];
   for (const c of CAT_ORDER) {
@@ -95,28 +108,30 @@ const CAT_NAMES = {
 
 const I18N = {
   'nav.ext': ['Extensions', '扩展目录'],
-  'nav.matrix': ['Matrix', '全局矩阵'],
-  'nav.browse': ['Browse', '多维索引'],
+  'nav.matrix': ['Matrix', '构建矩阵'],
+  'nav.browse': ['Index', '扩展索引'],
   'nav.about': ['About', '关于'],
   'nav.lang': ['中文', 'EN'],
   'hero.eyebrow': ['pgext.cloud · the postgresql extension catalog', 'pgext.cloud · PostgreSQL 扩展目录'],
   'hero.title': ['Everything <em>PostgreSQL</em> can become.', 'PostgreSQL 的<em>一切可能</em>。'],
-  'hero.sub': ['Search <b>{all}</b> extensions across <b>{projects}</b> upstream projects, with exact package availability for every supported PostgreSQL, OS, and architecture target.',
-               '检索来自 <b>{projects}</b> 个上游项目的 <b>{all}</b> 个扩展，并精确查询每个 PostgreSQL、操作系统与架构目标上的软件包可用性。'],
-  'hero.s1': ['extensions catalogued', '个扩展收录在册'],
-  'hero.s2': ['upstream projects', '个上游项目'],
-  'hero.s3': ['packaged extensions', '个已打包扩展'],
-  'hero.s4': ['usage documents', '份用法文档'],
-  'field.note': ['Every dot is one extension, colored by category — hover to identify, click to open.', '每一个点都是一个扩展，颜色代表分类——悬停查看，点击进入。'],
+  'hero.sub': ['Explore the superpowers of <b>{all}</b> PostgreSQL extensions, and the availability of <b>{avail}</b> extension artifacts across <b>{os}</b> Linux platforms.',
+               '探索 <b>{all}</b> 个 PostgreSQL 扩展的超能力，以及 <b>{avail}</b> 个扩展制品在 <b>{os}</b> 个 Linux 平台上的可用性。'],
+  'hero.s1': ['extensions catalogued', '收录在册扩展'],
+  'hero.s2': ['packaged extensions', '已打包扩展'],
+  'hero.s3': ['extension packages', '扩展软件包'],
+  'hero.s4': ['Linux platforms', 'Linux 大版本'],
+  'hero.s5': ['PG majors', 'PG 大版本'],
+  'hero.s6': ['build slots', '构建槽位'],
   'search.ph': ['Search {n} extensions — name, package, tags, or try tag:vector build:pgrx', '搜索 {n} 个扩展——名称、项目、标签，或试试 tag:vector build:pgrx'],
   'search.copy': ['click to copy query', '点击复制查询'],
   'search.copied': ['copied ✓', '已复制 ✓'],
   'chip.all': ['All', '全部'],
-  'chip.packaged': ['Packaged', '已打包'],
+  'chip.packaged': ['Packaged', '可交付'],
+  'chip.unpacked': ['Unpacked', '未交付'],
   'chip.source': ['Source-only', '仅源码'],
-  'chip.kernel': ['Kernel-specific', '内核特定'],
-  'chip.vendor': ['Vendor catalog', '厂商目录'],
-  'chip.contrib': ['PostgreSQL contrib', 'PG 自带'],
+  'chip.kernel': ['Fork-Only', '分支限定'],
+  'chip.vendor': ['Vendor-Specific', '特定厂商'],
+  'chip.contrib': ['Contrib', 'PG 自带'],
   'sel.cat': ['category', '分类'],
   'sel.license': ['license', '许可证'],
   'sel.lang': ['language', '语言'],
@@ -124,24 +139,17 @@ const I18N = {
   'sel.os': ['binary target', '二进制目标'],
   'sel.kind': ['extension kind', '扩展形态'],
   'sel.lifecycle': ['lifecycle', '生命周期'],
-  'filter.scope': ['catalog scope', '收录范围'],
+  'filter.scope': ['scope', '收录范围'],
   'filter.category': ['category', '分类'],
-  'filter.pg': ['PostgreSQL · all selected', 'PostgreSQL · 同时支持所选版本'],
-  'filter.kind': ['extension kind', '扩展形态'],
-  'filter.repo': ['package source', '软件包来源'],
-  'filter.lifecycle': ['lifecycle', '生命周期'],
-  'filter.lang': ['implementation', '实现语言'],
-  'filter.os': ['binary target', '二进制目标'],
-  'filter.license': ['common licenses', '常用许可证'],
+  'filter.pg': ['PG major', 'PG 大版本'],
+  'filter.lang': ['language', '实现语言'],
+  'filter.license': ['license', '许可证'],
+  'filter.license.more': ['all {n} licenses →', '全部 {n} 种许可证 →'],
   'filter.any': ['Any', '不限'],
-  'filter.pg.hint': ['Multiple selections use <code>pg_ver @&gt; \'{…}\'</code>: every selected major must be supported.', '多选采用 <code>pg_ver @&gt; \'{…}\'</code>：扩展必须同时支持全部所选大版本。'],
-  'filter.license.all': ['all {n} licenses', '全部 {n} 种许可证'],
   'filter.dimensions': ['all dimensions', '全部维度'],
   'filter.active': ['Active filters', '当前筛选'],
   'filter.results.ext': ['matching extensions', '个匹配扩展'],
   'filter.results.pkg': ['matching projects', '个匹配项目'],
-  'filter.entity': ['catalog', '目录对象'],
-  'filter.layout': ['layout', '呈现方式'],
   'sort.stars': ['sort: stars', '排序：星标'],
   'sort.name': ['sort: name', '排序：名称'],
   'sort.updated': ['sort: updated', '排序：更新'],
@@ -152,9 +160,9 @@ const I18N = {
   'wall.empty': ['No extension matches. Loosen a filter, or try <code>vector</code>, <code>gis</code>, <code>parquet</code>.',
                  '没有匹配的扩展。放宽筛选条件，或试试 <code>vector</code>、<code>gis</code>、<code>parquet</code>。'],
   'rows.name': ['name', '名称'], 'rows.cat': ['category', '分类'], 'rows.ver': ['version', '版本'],
-  'rows.license': ['license', '许可证'], 'rows.lang': ['lang', '语言'], 'rows.pg': ['pg', 'PG'],
+  'rows.license': ['license', '许可证'], 'rows.lang': ['lang', '语言'], 'rows.pg': ['pg ver', 'PG 版本'],
   'rows.stars': ['stars', '星标'], 'rows.desc': ['description', '描述'],
-  'rows.package': ['package', '项目包'], 'rows.lead': ['lead extension', '主扩展'],
+  'rows.package': ['package', '扩展包'], 'rows.lead': ['lead extension', '主扩展'],
   'rows.extensions': ['extensions', '扩展数'], 'rows.packaged': ['packaged', '已打包'],
   'ext.crumb': ['extensions', '扩展'],
   'ext.overview': ['Overview', '概览'],
@@ -164,6 +172,7 @@ const I18N = {
   'ext.build': ['Build manual', '构建手册'],
   'ext.install': ['Install', '安装'],
   'ext.avail': ['Availability', '可用性矩阵'],
+  'ext.veravail': ['Versions & Availability', '版本与可用性'],
   'ext.pkgs': ['Packages & Downloads', '安装包与下载'],
   'ext.downloads': ['Downloads', '软件下载'],
   'ext.deps': ['Dependencies & Relations', '依赖与关联'],
@@ -215,6 +224,10 @@ const I18N = {
   'ext.lifecycleNote': ['Upstream lifecycle is {state}. Evaluate maintenance and compatibility before production use.',
                         '上游生命周期状态为 {state}，用于生产前请评估维护状态与兼容性。'],
   'ext.family': ['Package family', '同包扩展族'],
+  'ext.pkgnav': ['Package & Downloads', '软件包与下载'],
+  'ext.pkgnav.d': ['Package definitions, build matrix, artifacts, checksums and install commands',
+                   '包定义、构建矩阵、二进制制品、校验和与安装命令'],
+  'ext.visits': ['visits', '次访问'],
   'spec.id': ['id', 'ID'],
   'spec.version': ['version', '版本'], 'spec.state': ['state', '状态'], 'spec.category': ['category', '分类'],
   'spec.license': ['license', '许可证'], 'spec.language': ['language', '语言'], 'spec.repo': ['repo', '仓库'],
@@ -253,37 +266,39 @@ const I18N = {
   'files.sha': ['sha256', 'SHA256'],
   'link.home': ['homepage', '主页'], 'link.repo': ['repository', '仓库'], 'link.license': ['license', '许可证'],
   'link.docs': ['documentation', '官方文档'], 'link.pgxn': ['PGXN', 'PGXN'],
-  'link.control': ['control file', 'control 文件'], 'link.author': ['author', '作者'], 'link.cargo': ['cargo', 'cargo'],
+  'link.control': ['control', 'Control'], 'link.author': ['author', '作者'], 'link.cargo': ['cargo', 'cargo'],
   'type.standard': ['standard — CREATE EXTENSION, no preload', 'standard——直接 CREATE EXTENSION，无需预加载'],
   'type.preload': ['preload — needs shared_preload_libraries', 'preload——需要 shared_preload_libraries'],
   'type.puresql': ['puresql — SQL objects only, no binary', 'puresql——纯 SQL 对象，无二进制'],
   'type.headless': ['headless — library only, no SQL objects', 'headless——只有库，无 SQL 对象'],
   'matrix.ext': ['CREATE EXTENSION', 'CREATE EXTENSION'],
   'gmx.eyebrow': ['package intelligence · pgext.matrix', '软件包情报 · pgext.matrix'],
-  'gmx.title': ['Global Build Matrix', '全局构建矩阵'],
-  'gmx.lede': ['One operational view of every package, Linux target, and supported PostgreSQL major. Each colored square is one exact build combination from the latest CI materialization.',
-               '用一张表总览每个扩展包、Linux 目标与 PostgreSQL 大版本。每个彩色方格都代表最近一次 CI 物化结果中的一个精确构建组合。'],
-  'gmx.packages': ['package families', '个扩展包族'],
-  'gmx.targets': ['OS targets', '个 OS 目标'],
-  'gmx.pg': ['PG majors', '个 PG 大版本'],
-  'gmx.cells': ['build cells', '个构建格子'],
+  'gmx.title': ['Build Matrix', '构建矩阵'],
+  'gmx.lede': ['Availability of {pkgs} extension packages across {combos} Linux × PostgreSQL build targets.',
+               '列出 {pkgs} 个扩展包在 {combos} 个 Linux × PostgreSQL 组合矩阵下的可用性。'],
   'gmx.search': ['Filter package or extension…', '筛选扩展包或扩展名…'],
-  'gmx.showing': ['{rows} packages · {cells} visible cells', '{rows} 个扩展包 · {cells} 个可见格子'],
+  'gmx.showing': ['{rows} packages · {cells} cells', '{rows} 个扩展包 · {cells} 个格子'],
   'gmx.source': ['Precomputed in {source} from CI-ingested repository metadata and atomically refreshed with the package catalog. Hover a cell for package, repository, version, and artifact count.',
                  '数据由 CI 回传的软件仓库元数据预计算至 {source}，并与软件包目录原子刷新。悬停格子可查看包名、仓库、版本与制品数量。'],
   'gmx.pgdg': ['PGDG', 'PGDG'],
   'gmx.pigsty': ['Pigsty', 'Pigsty'],
   'gmx.missing': ['Missing', '缺失'],
   'gmx.na': ['N/A', 'N/A'],
+  'gmx.lens': ['view', '视角'],
+  'gmx.lens.all': ['All', '全部'],
+  'gmx.lens.pgdg.provided': ['PGDG provides', 'PGDG 提供'],
+  'gmx.lens.pgdg.gap': ['PGDG missing', 'PGDG 缺失'],
+  'gmx.lens.pigsty.provided': ['Pigsty provides', 'Pigsty 提供'],
+  'gmx.lens.pigsty.other': ['covered by PGDG', '由 PGDG 提供'],
   'gmx.empty': ['No package row matches this filter.', '没有扩展包行符合当前筛选条件。'],
-  'gmx.hint': ['Click a status to isolate it · click again to reset', '点击状态可单独查看 · 再次点击恢复全部'],
+  'gmx.hint': ['Click a status to isolate it · click again to reset · the PGDG / Pigsty views recolor every valid slot by that repository\'s coverage',
+               '点击状态可单独查看 · 再次点击恢复全部 · PGDG / Pigsty 视角会按该仓库的覆盖情况重新着色所有有效槽位'],
   'gmx.pkg': ['PACKAGE / EXTENSION', '扩展包 / 扩展'],
   'gmx.api': ['JSON API', 'JSON API'],
-  'cat.crumb': ['categories', '分类'],
   'cat.featured': ['Featured', '精选'],
   'cat.all': ['All {n} extensions', '全部 {n} 个扩展'],
   'cat.open': ['Open in search ↗', '在搜索中打开 ↗'],
-  'browse.title': ['Browse by dimension', '多维索引'],
+  'browse.title': ['Extension Index', '扩展索引'],
   'browse.lede': ['One catalog, many ways in. Slice the extension universe by any dimension — every value below is a live filter.',
                   '一份目录，多个入口。任选维度切分扩展宇宙——下面每个值都是一个即时筛选器。'],
   'browse.catalog': ['Identity & classification', '身份与分类'],
@@ -340,7 +355,7 @@ const I18N = {
                '本站就是 <code>pgext serve</code>：网页资产内嵌于二进制，数据实时查询、内存快照缓存。渲染这些页面所用的 API 就公开在 <code>/api/v1</code>。'],
   'about.roadmap': ['Roadmap', '路线图'],
   'about.r1': ['Galaxy — the dependency graph as a navigable star map', 'Galaxy——把依赖关系画成可漫游的星图'],
-  'about.r2': ['Global availability matrix explorer — every extension × OS × PG at once', '全局可用性矩阵——所有扩展 × 操作系统 × PG 一屏总览'],
+  'about.r2': ['Download counters & install telemetry', '下载计数与安装遥测'],
   'about.r3': ['Server-side rendering for real URLs & SEO', '服务端渲染真实 URL 与 SEO'],
   'about.sources': ['Data sources', '数据来源'],
   'about.s1': ['pgext.universe — the curated catalog of {n} extensions', 'pgext.universe——{n} 个扩展的策展目录'],
@@ -378,10 +393,10 @@ const fmtNum = n => n == null ? '—' : n >= 1000 ? (n / 1000).toFixed(n >= 1000
 const fmtInt = n => (n == null ? '—' : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 const fmtSize = b => b == null || b === 0 ? '—' : b >= 1048576 ? (b / 1048576).toFixed(1) + ' MiB' : (b / 1024).toFixed(0) + ' KiB';
 const pgRange = arr => { if (!arr || !arr.length) return '—'; const s = [...arr].sort((a, b) => a - b); return s.length > 1 ? s[0] + '–' + s[s.length - 1] : String(s[0]); };
-const extHref = n => '/e/' + encodeURIComponent(n);
-const pkgHref = n => '/p/' + encodeURIComponent(n);
-const catHref = n => '/c/' + encodeURIComponent(n);
-const dimHref = n => '/dim/' + encodeURIComponent(n);
+const extHref = n => '/ext/' + encodeURIComponent(n);
+const pkgHref = n => '/pkg/' + encodeURIComponent(n);
+const catHref = n => '/cate/' + encodeURIComponent(n);
+const dimHref = n => '/list/' + encodeURIComponent(n);
 const catVar = c => 'style="--seg:var(--c-' + esc(c) + ')"';
 const debounce = (fn, ms) => { let h; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; };
 const osLabel = os => {
@@ -401,6 +416,69 @@ function copyText(txt, cb) {
     let ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
     ta.remove(); done(ok);
   }
+}
+
+/* ---------------- lightweight code highlighting ----------------
+   Self-contained tokenizers for the languages that dominate pgext docs:
+   SQL, shell, and key/value config (yaml, postgresql.conf). Rules must not
+   contain capturing groups; the first alternative that matches wins. */
+const HL_RULES = {
+  sql: {
+    flags: 'gi',
+    rules: [
+      ['--[^\\n]*', 'tok-cmt'],
+      ['/\\*[\\s\\S]*?\\*/', 'tok-cmt'],
+      ["'(?:[^'\\n]|'')*'", 'tok-str'],
+      ['\\b(?:select|insert|update|delete|create|drop|alter|extension|table|index|view|materialized|function|procedure|trigger|schema|database|from|where|join|left|right|inner|outer|full|cross|lateral|on|group|order|by|having|limit|offset|as|and|or|not|null|true|false|is|in|exists|between|like|ilike|cascade|with|values|into|set|returning|union|all|distinct|case|when|then|else|end|grant|revoke|comment|show|explain|analyze|vacuum|begin|commit|rollback|if|replace|to|using|primary|key|foreign|references|unique|default|constraint|add|column|type|language|returns|immutable|stable|volatile|security|definer|partition|of|for|each|row|execute|declare|loop|return|raise|notice|copy|owner)\\b', 'tok-kw'],
+      ['\\b\\d+(?:\\.\\d+)?\\b', 'tok-num']
+    ]
+  },
+  bash: {
+    flags: 'gm',
+    rules: [
+      ['#[^\\n]*', 'tok-cmt'],
+      ["'[^'\\n]*'", 'tok-str'],
+      ['"(?:[^"\\\\\\n]|\\\\.)*"', 'tok-str'],
+      ['\\$\\{[^}\\n]*\\}|\\$[A-Za-z_][A-Za-z0-9_]*', 'tok-var'],
+      ['\\b(?:sudo|dnf|yum|apt|apt-get|zypper|pig|pgext|psql|pg_ctl|pg_dump|pg_restore|initdb|systemctl|service|curl|wget|git|make|cmake|cargo|python3?|pip3?|echo|export|source|cd|cp|mv|rm|mkdir|tar|install|tee|cat|grep|sed|awk|docker)\\b', 'tok-kw'],
+      ['\\b\\d+(?:\\.\\d+)?\\b', 'tok-num']
+    ]
+  },
+  conf: {
+    flags: 'gm',
+    rules: [
+      ['#[^\\n]*', 'tok-cmt'],
+      ["'[^'\\n]*'", 'tok-str'],
+      ['"[^"\\n]*"', 'tok-str'],
+      ['^\\s*[A-Za-z_][\\w.-]*(?=\\s*[:=])', 'tok-var'],
+      ['\\b\\d+(?:\\.\\d+)?\\b', 'tok-num']
+    ]
+  }
+};
+
+function hlLang(language) {
+  const l = String(language || '').toLowerCase();
+  if (['sql', 'psql', 'postgresql', 'pgsql', 'plpgsql'].includes(l)) return 'sql';
+  if (['bash', 'sh', 'shell', 'zsh', 'console', 'shell-session', 'terminal'].includes(l)) return 'bash';
+  if (['yaml', 'yml', 'ini', 'conf', 'toml', 'properties', 'postgresql.conf', 'env'].includes(l)) return 'conf';
+  return '';
+}
+
+function highlightCode(source, language) {
+  const src = String(source == null ? '' : source);
+  const spec = HL_RULES[hlLang(language)];
+  if (!spec) return esc(src);
+  const re = new RegExp(spec.rules.map(r => '(' + r[0] + ')').join('|'), spec.flags);
+  let out = '', pos = 0, m;
+  while ((m = re.exec(src))) {
+    if (m.index > pos) out += esc(src.slice(pos, m.index));
+    let cls = '';
+    for (let g = 1; g < m.length; g++) if (m[g] !== undefined) { cls = spec.rules[g - 1][1]; break; }
+    out += cls ? '<span class="' + cls + '">' + esc(m[0]) + '</span>' : esc(m[0]);
+    pos = m.index + m[0].length;
+    if (!m[0].length) re.lastIndex++;
+  }
+  return out + esc(src.slice(pos));
 }
 
 /* ---------------- curated markdown (pgext.doc usage manuals) ---------------- */
@@ -528,7 +606,7 @@ function renderMD(source, options) {
       if (i < lines.length) i++;
       const raw = code.join('\n');
       out.push('<div class="md-code"><div class="md-codebar"><span>' + esc(language) + '</span><button data-copy="' + esc(raw) + '">copy</button></div>'
-        + '<pre><code class="language-' + esc(language) + '">' + esc(raw) + '</code></pre></div>');
+        + '<pre><code class="language-' + esc(language) + '">' + highlightCode(raw, language) + '</code></pre></div>');
       continue;
     }
 
@@ -555,7 +633,20 @@ function renderMD(source, options) {
     if (/^>\s?/.test(line)) {
       const quote = [];
       while (i < lines.length && /^>\s?/.test(lines[i])) quote.push(lines[i++].replace(/^>\s?/, ''));
-      out.push('<blockquote><p>' + mdInline(quote.join(' ')) + '</p></blockquote>');
+      // GitHub-flavored alerts: > [!NOTE] / [!TIP] / [!IMPORTANT] / [!WARNING] /
+      // [!CAUTION] — the marker may stand alone or share its line with text.
+      const alert = quote[0] && quote[0].match(/^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*(.*)$/i);
+      const inner = source => renderMD(source.join('\n')).html || ('<p>' + mdInline(source.join(' ')) + '</p>');
+      if (alert) {
+        const kind = alert[1].toUpperCase();
+        const label = { NOTE: ['Note', '提示'], TIP: ['Tip', '技巧'], IMPORTANT: ['Important', '重要'], WARNING: ['Warning', '警告'], CAUTION: ['Caution', '当心'] }[kind];
+        const icon = { NOTE: 'ⓘ', TIP: '☛', IMPORTANT: '❢', WARNING: '⚠', CAUTION: '⛒' }[kind];
+        const rest = alert[2] ? [alert[2], ...quote.slice(1)] : quote.slice(1);
+        out.push('<div class="md-alert md-alert-' + kind.toLowerCase() + '"><p class="md-alert-title"><span>' + icon + '</span>'
+          + (LANG === 'zh' ? label[1] : label[0]) + '</p>' + inner(rest) + '</div>');
+      } else {
+        out.push('<blockquote>' + inner(quote) + '</blockquote>');
+      }
       continue;
     }
 
@@ -578,12 +669,14 @@ function renderMD(source, options) {
 }
 
 /* ---------------- landing state / filter engine ---------------- */
-const FILTER_KEYS = ['q', 'cat', 'repo', 'license', 'lng', 'pg', 'os', 'kind', 'lifecycle', 'scope',
+// The category state key stays `S.cat`; its URL parameter is spelled `cate`
+// (with `cat` accepted for old links) — see pushState/readState.
+const FILTER_KEYS = ['q', 'repo', 'license', 'lang', 'pg', 'os', 'kind', 'lifecycle', 'scope',
   'vendor', 'kernel', 'tag', 'pkg', 'capability', 'build', 'docs', 'relation', 'pgrx', 'active'];
 const DEFAULT_STATE = {
-  q: '', cat: '', repo: '', license: '', lng: '', pg: '', os: '', kind: '', lifecycle: '', scope: '',
+  q: '', cat: '', repo: '', license: '', lang: '', pg: '', os: '', kind: '', lifecycle: '', scope: '',
   vendor: '', kernel: '', tag: '', pkg: '', capability: '', build: '', docs: '', relation: '', pgrx: '', active: '',
-  sort: 'stars', entity: 'ext', layout: 'card'
+  sort: 'name', entity: 'ext', layout: 'card'
 };
 let S = { ...DEFAULT_STATE };
 
@@ -593,9 +686,7 @@ function migrateLegacyHash() {
   const qi = raw.indexOf('?');
   let path = qi >= 0 ? raw.slice(0, qi) : raw;
   const query = qi >= 0 ? raw.slice(qi + 1) : '';
-  if (path.startsWith('/ext/')) path = '/e/' + path.slice(5);
-  else if (path.startsWith('/pkg/')) path = '/p/' + path.slice(5);
-  else if (path.startsWith('/cat/')) path = '/c/' + path.slice(5);
+  if (path.startsWith('/cat/')) path = '/cate/' + path.slice(5);
   history.replaceState(null, '', path + (query ? '?' + query : ''));
   return true;
 }
@@ -620,8 +711,9 @@ function navigateTo(url, replace) {
 
 function pushState() {
   const p = new URLSearchParams();
+  if (S.cat) p.set('cate', S.cat);
   for (const k of FILTER_KEYS) if (S[k]) p.set(k, S[k]);
-  if (S.sort !== 'stars') p.set('sort', S.sort);
+  if (S.sort !== DEFAULT_STATE.sort) p.set('sort', S.sort);
   if (S.entity !== 'ext') p.set('entity', S.entity);
   if (S.layout !== 'card') p.set('layout', S.layout);
   const qs = p.toString();
@@ -632,6 +724,9 @@ function readState(params) {
   for (const k of [...FILTER_KEYS, 'sort', 'entity', 'layout']) {
     const v = params.get(k); if (v) S[k] = v;
   }
+  S.cat = (params.get('cate') || params.get('cat') || '').toUpperCase();
+  if (!S.lang && params.get('lng')) S.lang = params.get('lng'); // legacy param name
+  if (S.lang === 'zh' || S.lang === 'en') S.lang = ''; // ?lang=zh|en selects the UI language, not a filter
   // Keep old shared links useful while moving from one overloaded view switch
   // to independent entity and presentation controls.
   const legacyView = params.get('view');
@@ -660,19 +755,19 @@ function parsePGs(value) {
 
 function effectiveFilters() {
   const f = {
-    cat: S.cat, repo: S.repo, license: S.license, lng: S.lng, pg: S.pg, os: S.os,
+    cat: S.cat, repo: S.repo, license: S.license, lang: S.lang, pg: S.pg, os: S.os,
     kind: S.kind, lifecycle: S.lifecycle, scope: S.scope, vendorQ: S.vendor.toLowerCase(), kernelQ: S.kernel.toLowerCase(),
     tag: S.tag, pkg: S.pkg, capability: S.capability, build: S.build, docs: S.docs,
     relation: S.relation, pgrx: S.pgrx, active: S.active, words: []
   };
   for (const tok of S.q.trim().split(/\s+/).filter(Boolean)) {
-    const m = tok.match(/^(cat|category|repo|license|lang|lng|pg|os|target|type|kind|life|lifecycle|kernel|vendor|tag|tags|pkg|package|project|cap|capability|feature|build|builder|doc|docs|rel|relation|dependency|pgrx|active|year|is):(.+)$/i);
+    const m = tok.match(/^(cat|cate|category|repo|license|lang|lng|pg|os|target|type|kind|life|lifecycle|kernel|vendor|tag|tags|pkg|package|project|cap|capability|feature|build|builder|doc|docs|rel|relation|dependency|pgrx|active|year|is):(.+)$/i);
     if (!m) { f.words.push(tok.toLowerCase()); continue; }
     const key = m[1].toLowerCase(), val = m[2];
-    if (key === 'cat' || key === 'category') f.cat = val.toUpperCase();
+    if (key === 'cat' || key === 'cate' || key === 'category') f.cat = val.toUpperCase();
     else if (key === 'repo') f.repo = val.toUpperCase();
     else if (key === 'license') f.license = val;
-    else if (key === 'lang' || key === 'lng') f.lng = val;
+    else if (key === 'lang' || key === 'lng') f.lang = val;
     else if (key === 'pg') f.pg = val;
     else if (key === 'os' || key === 'target') f.os = val;
     else if (key === 'type' || key === 'kind') f.kind = val.toLowerCase();
@@ -690,7 +785,8 @@ function effectiveFilters() {
     else if (key === 'is') {
       const v = val.toLowerCase();
       if (v === 'packaged') f.scope = 'packaged';
-      if (v === 'source' || v === 'source-only' || v === 'unpackaged') f.scope = 'source';
+      if (v === 'unpacked' || v === 'unpackaged') f.scope = 'unpacked';
+      if (v === 'source' || v === 'source-only') f.scope = 'source';
       if (v === 'kernel') f.scope = 'kernel';
       if (v === 'vendor' || v === 'cloud') f.scope = 'vendor';
       if (v === 'contrib') f.scope = 'contrib';
@@ -762,6 +858,20 @@ function activeYear(e) {
   return /^\d{4}$/.test(value) ? value : 'unknown';
 }
 
+// Catalog scope: packaged/unpacked split the universe by deliverability;
+// 'source' survives as a legacy alias (unpackaged with a buildable source).
+function scopeMatch(e, scope) {
+  switch (scope) {
+    case 'packaged': return e.avail;
+    case 'unpacked': return !e.avail;
+    case 'source': return !e.avail && Boolean(e.buildbits & B.SOURCE);
+    case 'kernel': return Boolean(e.kernel);
+    case 'vendor': return Boolean(e.vendor);
+    case 'contrib': return Boolean(e.flags & F.CONTRIB);
+    default: return true;
+  }
+}
+
 function runFilter() {
   const f = effectiveFilters();
   const pgs = parsePGs(f.pg);
@@ -770,7 +880,7 @@ function runFilter() {
     if (f.cat && e.cat !== f.cat) continue;
     if (f.repo && e.repo !== f.repo) continue;
     if (f.license && e.license.toLowerCase() !== f.license.toLowerCase()) continue;
-    if (f.lng && e.lang.toLowerCase() !== f.lng.toLowerCase()) continue;
+    if (f.lang && e.lang.toLowerCase() !== f.lang.toLowerCase()) continue;
     if (pgs.length && !pgs.every(pg => e.pg.includes(pg))) continue;
     if (f.os && !targetsAvailable(e, pgs, f.os)) continue;
     if (f.kind && e.kind !== f.kind) continue;
@@ -783,11 +893,7 @@ function runFilter() {
     if (f.relation && !relationMatches(e, f.relation)) continue;
     if (f.pgrx && e.pgrx.toLowerCase() !== f.pgrx.toLowerCase()) continue;
     if (f.active && activeYear(e) !== f.active) continue;
-    if (f.scope === 'packaged' && !e.avail) continue;
-    if (f.scope === 'source' && (e.avail || !(e.buildbits & B.SOURCE))) continue;
-    if (f.scope === 'kernel' && !e.kernel) continue;
-    if (f.scope === 'vendor' && !e.vendor) continue;
-    if (f.scope === 'contrib' && !(e.flags & F.CONTRIB)) continue;
+    if (f.scope && !scopeMatch(e, f.scope)) continue;
     if (f.vendorQ && !(e.vendor || '').toLowerCase().includes(f.vendorQ)) continue;
     if (f.kernelQ && !(e.kernel || '').toLowerCase().includes(f.kernelQ)) continue;
     let score = 0, drop = false;
@@ -807,9 +913,9 @@ function runFilter() {
   const hasQ = f.words.length > 0;
   list.sort((a, b) => {
     if (hasQ && b[0] !== a[0]) return b[0] - a[0];
-    if (S.sort === 'name') return a[1].name.localeCompare(b[1].name);
+    if (S.sort === 'stars') return (b[1].stars || 0) - (a[1].stars || 0) || a[1].name.localeCompare(b[1].name);
     if (S.sort === 'updated') return (b[1].active || '').localeCompare(a[1].active || '') || (b[1].stars || 0) - (a[1].stars || 0);
-    return (b[1].stars || 0) - (a[1].stars || 0) || a[1].name.localeCompare(b[1].name);
+    return a[1].name.localeCompare(b[1].name);
   });
   return { f, list: list.map(x => x[1]) };
 }
@@ -822,7 +928,7 @@ function buildSQL(f, n) {
   if (f.cat) wh.push('category = ' + lit(f.cat));
   if (f.repo) wh.push("COALESCE(extra->>'repo', rpm_repo, deb_repo) = " + lit(f.repo));
   if (f.license) wh.push(f.license.toLowerCase() === 'unknown' ? "COALESCE(NULLIF(license, ''), 'Unknown') = 'Unknown'" : 'license = ' + lit(f.license));
-  if (f.lng) wh.push('lang = ' + lit(f.lng));
+  if (f.lang) wh.push('lang = ' + lit(f.lang));
   const pgs = parsePGs(f.pg);
   if (pgs.length) wh.push("pg_ver @> '{" + pgs.join(',') + "}'::text[]");
   if (f.os) {
@@ -876,31 +982,70 @@ function buildSQL(f, n) {
   if (f.active === 'unknown') wh.push('last_active IS NULL');
   else if (/^\d{4}$/.test(f.active)) wh.push("left(last_active::text, 4) = " + lit(f.active));
   if (f.scope === 'packaged') wh.push('packaged');
+  if (f.scope === 'unpacked') wh.push('NOT packaged');
   if (f.scope === 'source') wh.push("NOT packaged AND (repo_url IS NOT NULL OR tarball IS NOT NULL)");
   if (f.scope === 'kernel') wh.push('kernel IS NOT NULL');
   if (f.scope === 'vendor') wh.push('vendor IS NOT NULL');
   if (f.scope === 'contrib') wh.push('contrib');
-  const sql = 'SELECT * FROM pgext.universe' + (wh.length ? ' WHERE ' + wh.join(' AND ') : '') + ' ORDER BY stars DESC NULLS LAST;';
+  const order = S.sort === 'stars' ? ['stars', ' DESC NULLS LAST']
+    : S.sort === 'updated' ? ['last_active', ' DESC NULLS LAST'] : ['name', ''];
+  const sql = 'SELECT * FROM pgext.universe' + (wh.length ? ' WHERE ' + wh.join(' AND ') : '') + ' ORDER BY ' + order[0] + order[1] + ';';
   const kw = s => '<span class="kw">' + s + '</span>';
   let html = kw('SELECT') + ' * ' + kw('FROM') + ' pgext.universe';
   if (wh.length) html += ' ' + kw('WHERE') + ' ' + esc(wh.join(' AND ')).replace(/&#39;([^&]*)&#39;/g, '<span class="lit">&#39;$1&#39;</span>');
-  html += ' ' + kw('ORDER BY') + ' stars <span class="kw">DESC NULLS LAST</span>;';
+  html += ' ' + kw('ORDER BY') + ' ' + order[0] + (order[1] ? '<span class="kw">' + order[1] + '</span>' : '') + ';';
   const rows = n === 1 ? '(1 row)' : '(' + fmtInt(n) + ' rows)';
   return { sql, html: '<span class="sql-q">' + html + '</span><span class="rcount">' + rows + '</span>' };
 }
 
 /* ---------------- shared components ---------------- */
+const GH_SVG = '<svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>';
+
+/* Card corner badge — one rule everywhere (ext cards, pkg cards, hovercard):
+   a GitHub repo shows the GitHub mark with the star count; any other primary
+   URL shows a generic external-link icon. The badge always links out. */
+const EXTLINK_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+  + '<path d="M13.5 5H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6.5"/>'
+  + '<path d="M14 3h7v7M21 3l-9.5 9.5"/></svg>';
+
+function cardBadgeHTML(e) {
+  const link = e.repoUrl || e.url;
+  const isGH = /github\.com/i.test(e.repoUrl || '');
+  if (link) {
+    return '<a class="card-gh" href="' + esc(link) + '" target="_blank" rel="noopener" aria-label="' + esc(e.name) + ' upstream">'
+      + (isGH ? GH_SVG : EXTLINK_SVG)
+      + (e.stars != null ? '<b>' + fmtNum(e.stars) + '</b>' : '') + '</a>';
+  }
+  return e.stars != null ? '<span class="card-gh plain">' + GH_SVG + '<b>' + fmtNum(e.stars) + '</b></span>' : '';
+}
+
+// Card tags: category, language, license, package source, vendor, and a
+// non-active lifecycle. The repo value already covers contrib delivery, and
+// unpackaged entries read from the missing emphasis border — no extra tags.
+function cardTagsHTML(e) {
+  return [
+    '<a class="tg tg-cat" href="/?cate=' + encodeURIComponent(e.cat) + '">' + esc(e.cat) + '</a>',
+    e.lang ? '<a class="tg" href="/?lang=' + encodeURIComponent(e.lang) + '">' + esc(e.lang) + '</a>' : '',
+    e.license !== 'Unknown' ? '<a class="tg" href="/?license=' + encodeURIComponent(e.license) + '">' + esc(e.license) + '</a>' : '',
+    e.repo !== 'n/a' ? '<a class="tg" href="/?repo=' + encodeURIComponent(e.repo) + '">' + esc(e.repo) + '</a>' : '',
+    e.vendor ? '<a class="tg tg-dim" href="/?vendor=' + encodeURIComponent(e.vendor) + '">☁ ' + esc(e.vendor) + '</a>' : '',
+    e.lifecycle && e.lifecycle !== 'active' ? '<a class="tg tg-life" href="/?lifecycle=' + encodeURIComponent(e.lifecycle) + '">' + esc(e.lifecycle) + '</a>' : ''
+  ].filter(Boolean).join('');
+}
+
+/* Extension card: the whole card is clickable (cover link) while every inner
+   element — the corner badge, the package subtitle and the dimension tags —
+   stays independently clickable above it. Packaged (pgext.extension) entries
+   get an emphasized border so out-of-the-box extensions read at a glance. */
 function tileHTML(e) {
-  return '<li><a class="tile" href="' + extHref(e.name) + '" ' + catVar(e.cat) + '>'
-    + '<span class="tile-head"><span class="tile-name">' + esc(e.name) + '</span>'
-    + (e.stars ? '<span class="tile-star">★ ' + fmtNum(e.stars) + '</span>' : '') + '</span>'
-    + '<span class="tile-desc">' + esc(desc(e)) + '</span>'
-    + '<span class="tile-meta"><span class="cat">' + esc(e.cat) + '</span>'
-    + '<span class="ver">' + esc(e.ver || '') + '</span>'
-    + (!e.avail ? '<span class="status source">source</span>' : '')
-    + (e.lifecycle ? '<span class="status life">' + esc(e.lifecycle) + '</span>' : '')
-    + '<span class="lic">' + esc(e.license === 'Unknown' ? '' : e.license) + '</span></span>'
-    + '</a></li>';
+  return '<li><article class="ecard' + (e.avail ? ' packaged' : '') + '" ' + catVar(e.cat) + ' data-hover-ext="' + esc(e.name) + '">'
+    + '<a class="card-cover" href="' + extHref(e.name) + '" aria-label="' + esc(e.name) + '"></a>'
+    + '<header class="card-head"><h3 class="card-name">' + esc(e.name) + '</h3>' + cardBadgeHTML(e) + '</header>'
+    + '<p class="card-sub"><a href="' + pkgHref(e.pkg) + '">' + esc(e.pkg) + '</a>'
+    + (e.ver ? '<span class="ver">' + esc(e.ver) + '</span>' : '') + '</p>'
+    + '<p class="card-desc">' + esc(desc(e)) + '</p>'
+    + '<footer class="card-tags">' + cardTagsHTML(e) + '</footer>'
+    + '</article></li>';
 }
 
 function projectGroups(list) {
@@ -917,56 +1062,63 @@ function projectGroups(list) {
   });
 }
 
+/* Package card anatomy:
+     PKG NAME                 badge (GitHub star / external link)
+     lead extension · version           — gray subtitle, links to /ext
+     description
+     extra extensions (when > 1)        — plain gray inline links
+     tags (from the lead extension) */
 function packageTileHTML(g) {
   const e = g.lead;
-  const packaged = g.all.filter(x => x.avail).length;
-  const cats = [...new Set(g.all.map(x => x.cat))];
-  const matched = g.matched.length === g.all.length ? '' : ' · ' + g.matched.length + ' matched';
-  return '<li><a class="tile project" href="' + pkgHref(g.pkg) + '" ' + catVar(e.cat) + '>'
-    + '<span class="tile-head"><span class="tile-name">' + esc(g.pkg) + '</span>'
-    + (e.stars ? '<span class="tile-star">★ ' + fmtNum(e.stars) + '</span>' : '') + '</span>'
-    + '<span class="tile-desc">' + esc(desc(e)) + '</span>'
-    + '<span class="family-preview">' + g.all.slice(0, 4).map(x => '<code>' + esc(x.name) + '</code>').join('')
-    + (g.all.length > 4 ? '<code>+' + (g.all.length - 4) + '</code>' : '') + '</span>'
-    + '<span class="tile-meta"><span class="cat">' + esc(cats.slice(0, 3).join(' · ')) + '</span>'
-    + '<span>' + g.all.length + (LANG === 'zh' ? ' 个扩展' : ' ext') + matched + '</span>'
-    + '<span class="lic">' + packaged + (LANG === 'zh' ? ' 已打包' : ' packaged') + '</span></span>'
-    + '</a></li>';
+  const packaged = g.all.some(x => x.avail);
+  const extras = g.all.filter(x => x.name !== e.name).sort((a, b) => a.name.localeCompare(b.name));
+  const extraRow = extras.length
+    ? '<p class="card-exts">' + extras.map(x => '<a href="' + extHref(x.name) + '">' + esc(x.name) + '</a>').join('') + '</p>' : '';
+  return '<li><article class="ecard pkg-ecard' + (packaged ? ' packaged' : '') + '" ' + catVar(e.cat) + ' data-hover-ext="' + esc(e.name) + '">'
+    + '<a class="card-cover" href="' + pkgHref(g.pkg) + '" aria-label="' + esc(g.pkg) + '"></a>'
+    + '<header class="card-head"><h3 class="card-name">' + esc(g.pkg) + '</h3>' + cardBadgeHTML(e) + '</header>'
+    + '<p class="card-sub"><a href="' + extHref(e.name) + '">' + esc(e.name) + '</a>'
+    + (e.ver ? '<span class="ver">' + esc(e.ver) + '</span>' : '') + '</p>'
+    + '<p class="card-desc">' + esc(desc(e)) + '</p>'
+    + extraRow
+    + '<footer class="card-tags">' + cardTagsHTML(e) + '</footer>'
+    + '</article></li>';
+}
+
+function licenseCellHTML(e) {
+  const url = mdSafeURL(e.licenseUrl);
+  if (e.license === 'Unknown') return '—';
+  return url
+    ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(e.license) + '</a>'
+    : esc(e.license);
 }
 
 function rowHTML(e) {
-  return '<tr ' + catVar(e.cat) + '><td class="r-name"><a href="' + extHref(e.name) + '">' + esc(e.name) + '</a></td>'
-    + '<td class="r-cat">' + esc(e.cat) + '</td>'
-    + '<td class="r-mono">' + esc(e.ver || '—') + '</td>'
+  return '<tr ' + catVar(e.cat) + ' data-hover-ext="' + esc(e.name) + '"><td class="r-name"><a href="' + extHref(e.name) + '">' + esc(e.name) + '</a></td>'
+    + '<td class="r-mono r-ver">' + esc(e.ver || '—') + '</td>'
     + '<td class="r-desc">' + esc(desc(e)) + '</td>'
-    + '<td class="r-mono">' + esc(e.license) + '</td>'
+    + '<td class="r-cat">' + esc(e.cat) + '</td>'
+    + '<td class="r-mono r-lic" title="' + esc(e.license) + '">' + licenseCellHTML(e) + '</td>'
     + '<td class="r-mono">' + esc(e.lang) + '</td>'
     + '<td class="r-mono">' + esc(pgRange(e.pg)) + '</td>'
     + '<td class="r-num">' + (e.stars ? fmtNum(e.stars) : '') + '</td></tr>';
 }
 
+/* Package row: the first cell stacks the package name over its delivered
+   extensions (one per line, each navigating to /ext) when there is more than
+   one; single-extension packages stay a plain row. */
 function packageRowHTML(g) {
   const e = g.lead;
   const cats = [...new Set(g.all.map(x => x.cat))];
   const pgs = [...new Set(g.all.flatMap(x => x.pg))].sort((a, b) => b - a);
-  const packaged = g.all.filter(x => x.avail).length;
-  const matched = g.matched.length === g.all.length ? fmtInt(g.all.length) : fmtInt(g.matched.length) + ' / ' + fmtInt(g.all.length);
-  return '<tr ' + catVar(e.cat) + '><td class="r-name"><a href="' + pkgHref(g.pkg) + '">' + esc(g.pkg) + '</a></td>'
-    + '<td class="r-mono"><a href="' + extHref(e.name) + '">' + esc(e.name) + '</a></td>'
+  const members = g.all.slice().sort((a, b) => a.name.localeCompare(b.name));
+  const subs = g.all.length > 1
+    ? '<div class="r-exts">' + members.map(x => '<a href="' + extHref(x.name) + '">' + esc(x.name) + '</a>').join('') + '</div>' : '';
+  return '<tr ' + catVar(e.cat) + ' data-hover-ext="' + esc(e.name) + '"><td class="r-name r-pkg"><a class="r-pkg-name" href="' + pkgHref(g.pkg) + '">' + esc(g.pkg) + '</a>' + subs + '</td>'
     + '<td class="r-desc">' + esc(desc(e)) + '</td>'
     + '<td class="r-cat">' + esc(cats.join(' · ')) + '</td>'
-    + '<td class="r-num">' + matched + '</td><td class="r-num">' + fmtInt(packaged) + '</td>'
+    + '<td class="r-mono r-lic" title="' + esc(e.license) + '">' + licenseCellHTML(e) + '</td>'
     + '<td class="r-mono">' + esc(pgRange(pgs)) + '</td><td class="r-num">' + (e.stars ? fmtNum(e.stars) : '') + '</td></tr>';
-}
-
-function depChips(names, current) {
-  const items = (names || []).filter(n => n !== current);
-  if (!items.length) return '<span class="none">' + t('ext.none') + '</span>';
-  return items.map(n => {
-    const e = byName.get(n);
-    if (!e) return '<span class="badge">' + esc(n) + '</span>';
-    return '<a class="badge" href="' + extHref(n) + '" ' + catVar(e.cat) + ' data-tip="' + esc(desc(e)) + '"><span class="dot"></span>' + esc(n) + '</a>';
-  }).join('');
 }
 
 function skel(lines) {
@@ -976,19 +1128,30 @@ function skel(lines) {
 }
 const hydrateErr = err => '<div class="hydrate-err">' + esc(t('hydrate.err', { msg: err && err.message || 'unknown' })) + '</div>';
 
+// Icon-only nav actions: language (文/A), theme (sun/moon showing the current
+// mode, click flips it), and GitHub — bare glyphs, no button chrome.
+const ICON_LANG = '<svg width="17" height="17" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">'
+  + '<text x="0" y="11.5" font-size="11" font-family="system-ui,sans-serif">文</text>'
+  + '<text x="10.5" y="19" font-size="10.5" font-weight="700" font-family="system-ui,sans-serif">A</text></svg>';
+const ICON_SUN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">'
+  + '<circle cx="12" cy="12" r="4.4"/>'
+  + '<path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.2 5.2l1.5 1.5M17.3 17.3l1.5 1.5M18.8 5.2l-1.5 1.5M6.7 17.3l-1.5 1.5"/></svg>';
+const ICON_MOON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
+  + '<path d="M20.6 14.6A8.7 8.7 0 0 1 9.4 3.4a8.7 8.7 0 1 0 11.2 11.2Z"/></svg>';
+
 function navHTML(active) {
   return '<div class="wrap nav-in">'
     + '<a class="brand" href="/"><span class="brand-mark">\\dx</span><span class="brand-name">PGEXT<span class="tld">.CLOUD</span></span></a>'
     + '<nav class="nav-links">'
     + '<a href="/" aria-current="' + (active === 'home') + '">' + t('nav.ext') + '</a>'
     + '<a href="/matrix" aria-current="' + (active === 'matrix') + '">' + t('nav.matrix') + '</a>'
-    + '<a href="/browse" aria-current="' + (active === 'browse') + '">' + t('nav.browse') + '</a>'
+    + '<a href="/list" aria-current="' + (active === 'browse') + '">' + t('nav.browse') + '</a>'
     + '<a href="/about" aria-current="' + (active === 'about') + '">' + t('nav.about') + '</a>'
     + '</nav><span class="nav-spacer"></span><div class="nav-actions">'
-    + '<button class="nav-btn" id="lang-toggle" aria-label="switch language">' + t('nav.lang') + '</button>'
-    + '<button class="nav-btn" id="theme-toggle" aria-label="switch theme">' + themeLabel() + '</button>'
-    + '<a class="nav-btn nav-github" href="https://github.com/pgsty/pgext" target="_blank" rel="noopener" aria-label="GitHub">'
-    + '<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>'
+    + '<button class="nav-ico" id="lang-toggle" aria-label="' + (LANG === 'zh' ? 'switch to English' : '切换到中文') + '">' + ICON_LANG + '</button>'
+    + '<button class="nav-ico" id="theme-toggle" aria-label="switch theme">' + themeIcon() + '</button>'
+    + '<a class="nav-ico nav-github" href="https://github.com/pgsty/pgext" target="_blank" rel="noopener" aria-label="GitHub">'
+    + '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>'
     + '</div></div>';
 }
 
@@ -1005,28 +1168,23 @@ function footerHTML() {
 function homeHTML() {
   const stats = [
     [fmtInt(N_ALL), t('hero.s1')],
-    [fmtInt(N_PROJECTS), t('hero.s2')],
-    [fmtInt(N_AVAIL), t('hero.s3')],
-    [fmtInt(N_DOCS), t('hero.s4')]
+    [fmtInt(N_AVAIL), t('hero.s2')],
+    [fmtInt(N_PKGS), t('hero.s3')],
+    [fmtInt(OSS.length), t('hero.s4')],
+    [fmtInt(PGS.length), t('hero.s5')],
+    [fmtInt(N_SLOTS), t('hero.s6')]
   ].map(([n, l]) => '<li><span class="num">' + n + '</span><span class="lbl">' + l + '</span></li>').join('');
-  const legend = CAT_ORDER.map(c =>
-    '<li style="--seg:var(--c-' + c + ')">'
-    + '<button data-cat-go="' + c + '" data-tip="' + esc(catDesc(c)) + '">' + c
-    + '<span class="cnt">' + CATS[c].count + '</span></button></li>'
-  ).join('');
   return '<section class="hero wrap">'
     + '<p class="eyebrow">' + t('hero.eyebrow') + '</p>'
-    + '<h1>' + t('hero.title') + '</h1>'
-    + '<p class="hero-sub">' + t('hero.sub', { all: fmtInt(N_ALL), projects: fmtInt(N_PROJECTS), avail: fmtInt(N_AVAIL) }) + '</p>'
+    + '<h1 class="oneline">' + t('hero.title') + '</h1>'
+    + '<p class="hero-sub oneline">' + t('hero.sub', { all: fmtInt(N_ALL), avail: fmtInt(N_AVAIL), os: fmtInt(OSS.length) }) + '</p>'
+    + '<ul class="hero-stats">' + stats + '</ul>'
+    + '<div class="universe"><canvas id="ufield" height="80" aria-hidden="true" style="width:100%;display:block;cursor:crosshair"></canvas></div>'
     + '<div class="console">'
     + '<div class="searchbox"><span class="prompt">pgext=#</span>'
     + '<input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="' + esc(t('search.ph', { n: fmtInt(N_ALL) })) + '" value="' + esc(S.q) + '" aria-label="search extensions">'
     + '<kbd>/</kbd></div>'
     + '</div>'
-    + '<ul class="hero-stats">' + stats + '</ul>'
-    + '<div class="universe"><canvas id="ufield" height="80" aria-hidden="true" style="width:100%;display:block;cursor:crosshair"></canvas>'
-    + '<ul class="ubar-legend">' + legend + '</ul>'
-    + '<p class="universe-note">' + t('field.note') + '</p></div>'
     + '<div id="dynamic">' + dynamicHTML() + '</div>'
     + '</section>';
 }
@@ -1034,63 +1192,59 @@ function homeHTML() {
 function dynamicHTML() {
   const { f, list } = runFilter();
   const { sql, html: sqlHTML } = buildSQL(f, list.length);
-  const sortOpts = [['stars', t('sort.stars')], ['name', t('sort.name')], ['updated', t('sort.updated')]].map(([v, l]) =>
+  const sortOpts = [['name', t('sort.name')], ['stars', t('sort.stars')], ['updated', t('sort.updated')]].map(([v, l]) =>
     '<option value="' + v + '"' + (S.sort === v ? ' selected' : '') + '>' + l + '</option>').join('');
 
-  const countMap = dim => new Map(dimValues(dim).map(x => [String(x.v), x.n]));
-  const button = (key, value, label, on, count, cls, style) => {
+  // The SCOPE row cascades: every count below it is computed over the
+  // scope-filtered subset, so narrowing the scope renarrates the whole panel.
+  const scopedEXT = S.scope ? EXT.filter(e => scopeMatch(e, S.scope)) : EXT;
+  const countMap = dim => new Map(dimValues(dim, scopedEXT).map(x => [String(x.v), x.n]));
+  const button = (key, value, label, on, count, cls, style, tip) => {
     const data = key === 'pg' ? ' data-pg-toggle="' + esc(value) + '"' : ' data-fkey="' + key + '" data-fval="' + esc(value) + '"';
-    return '<button class="facet-btn' + (cls ? ' ' + cls : '') + '"' + data + ' aria-pressed="' + on + '"' + (style ? ' style="' + style + '"' : '') + '>'
+    return '<button class="facet-btn' + (cls ? ' ' + cls : '') + '"' + data + ' aria-pressed="' + on + '"'
+      + (style ? ' style="' + style + '"' : '') + (tip ? ' data-tip="' + esc(tip) + '"' : '') + '>'
       + (cls === 'category' ? '<i></i>' : '') + '<span>' + label + '</span>'
       + (count == null ? '' : '<small>' + fmtInt(count) + '</small>') + '</button>';
   };
   const any = (key, on) => button(key, '', t('filter.any'), on, null, 'any');
-  const row = (label, values, hint, cls) => '<div class="facet-row' + (cls ? ' ' + cls : '') + '"><div class="facet-name"><b>' + label + '</b>'
-    + (hint ? '<span>' + hint + '</span>' : '') + '</div><div class="facet-values">' + values + '</div></div>';
+  // Each facet header links to its full index page under /list.
+  const row = (label, values, cls, href) => '<div class="facet-row' + (cls ? ' ' + cls : '') + '"><div class="facet-name">'
+    + (href ? '<a class="facet-head" href="' + href + '"><b>' + label + '</b><i>→</i></a>' : '<b>' + label + '</b>')
+    + '</div><div class="facet-values">' + values + '</div></div>';
 
   const scopeValues = [
-    ['', t('chip.all'), N_ALL], ['packaged', t('chip.packaged'), N_AVAIL], ['source', t('chip.source'), N_SOURCE],
+    ['', t('chip.all'), N_ALL], ['packaged', t('chip.packaged'), N_AVAIL], ['unpacked', t('chip.unpacked'), N_ALL - N_AVAIL],
     ['kernel', t('chip.kernel'), N_KERNEL], ['vendor', t('chip.vendor'), N_VENDOR], ['contrib', t('chip.contrib'), N_CONTRIB]
   ].map(([v, label, count]) => button('scope', v, label, S.scope === v, count)).join('');
-  const categoryValues = any('cat', !S.cat) + CAT_ORDER.map(c => button('cat', c, '<code>' + c + '</code><em>' + esc(catName(c)) + '</em>', S.cat === c, CATS[c].count, 'category', '--seg:var(--c-' + c + ')')).join('');
+
+  // Categories: Any stands alone on the left; the 16 codes align 8 × 2.
+  const catCounts = countMap('category');
+  const categoryValues = any('cat', !S.cat) + CAT_ORDER.map(c =>
+    button('cat', c, '<code>' + c + '</code>', S.cat === c, catCounts.get(c) || 0, 'category', '--seg:var(--c-' + c + ')', catName(c))).join('');
 
   const pgCounts = countMap('pg'), selectedPGs = parsePGs(S.pg);
   const pgValues = [...new Set([...PGS, ...selectedPGs])].sort((a, b) => b - a);
   const pgButtons = button('pg', '', t('filter.any'), !selectedPGs.length, null, 'any')
     + pgValues.map(pg => button('pg', String(pg), 'PG ' + pg, selectedPGs.includes(pg), pgCounts.get(String(pg)) || 0)).join('');
 
-  const kindCounts = countMap('kind');
-  const kindButtons = any('kind', !S.kind) + [...kindCounts.entries()].map(([v, count]) => button('kind', v, esc(v), S.kind === v, count)).join('');
-  const repoCounts = countMap('repo');
-  const repoButtons = any('repo', !S.repo) + [...repoCounts.entries()].filter(([v]) => v && v !== 'n/a')
-    .map(([v, count]) => button('repo', v, esc(v), S.repo === v, count)).join('');
-  const lifecycleCounts = countMap('lifecycle');
-  const lifecycleButtons = any('lifecycle', !S.lifecycle) + [...lifecycleCounts.entries()]
-    .map(([v, count]) => button('lifecycle', v, esc(v), S.lifecycle === v, count)).join('');
   const langCounts = countMap('lang');
-  const langButtons = any('lng', !S.lng) + [...langCounts.entries()]
-    .map(([v, count]) => button('lng', v, esc(v), S.lng === v, count)).join('');
-  const osCounts = countMap('os');
-  const osButtons = any('os', !S.os) + OSS.map(v => button('os', v, esc(osLabel(v)), S.os === v, osCounts.get(v) || 0)).join('');
-  const licenses = dimValues('license');
-  const visibleLicenses = licenses.slice(0, 10);
-  if (S.license && !visibleLicenses.some(x => x.v === S.license)) {
-    const selected = licenses.find(x => x.v === S.license);
-    if (selected) visibleLicenses.push(selected);
+  const langButtons = any('lang', !S.lang) + [...langCounts.entries()]
+    .map(([v, count]) => button('lang', v, esc(v), S.lang === v, count)).join('');
+  // Licenses: values with ≤3 members collapse into the index-page link.
+  const allLicenses = dimValues('license', scopedEXT);
+  const licenses = allLicenses.filter(x => x.n > 3);
+  if (S.license && !licenses.some(x => x.v === S.license)) {
+    licenses.push(allLicenses.find(x => x.v === S.license) || { v: S.license, n: 0 });
   }
-  const licenseButtons = any('license', !S.license) + visibleLicenses.map(x => button('license', x.v, esc(x.v), S.license === x.v, x.n)).join('')
-    + '<a class="facet-more" href="' + dimHref('license') + '">' + t('filter.license.all', { n: fmtInt(licenses.length) }) + ' →</a>';
+  const licenseButtons = any('license', !S.license) + licenses.map(x => button('license', x.v, esc(x.v), S.license === x.v, x.n)).join('')
+    + '<a class="facet-more" href="' + dimHref('license') + '">' + t('filter.license.more', { n: fmtInt(allLicenses.length) }) + '</a>';
   const facets = '<section class="facet-panel" aria-label="filters">'
-    + row(t('filter.scope'), scopeValues, '', 'scope-facet')
-    + row(t('filter.category'), categoryValues, '', 'category-facet')
-    + row(t('filter.pg'), pgButtons, t('filter.pg.hint'), 'pg-facet')
-    + row(t('filter.kind'), kindButtons)
-    + row(t('filter.repo'), repoButtons)
-    + row(t('filter.lifecycle'), lifecycleButtons)
-    + row(t('filter.lang'), langButtons)
-    + row(t('filter.os'), osButtons)
-    + row(t('filter.license'), licenseButtons)
-    + '<footer><a class="dimension-link" href="/browse">＋ ' + t('filter.dimensions') + '</a><span>pgext.universe · pgext.pkg · pgext.doc</span></footer></section>';
+    + row(t('filter.scope'), scopeValues, 'scope-facet', dimHref('distribution'))
+    + row(t('filter.category'), categoryValues, 'category-facet', dimHref('category'))
+    + row(t('filter.pg'), pgButtons, 'pg-facet', dimHref('pg'))
+    + row(t('filter.lang'), langButtons, '', dimHref('lang'))
+    + row(t('filter.license'), licenseButtons, 'license-facet', dimHref('license'))
+    + '<footer><a class="dimension-link" href="/list">＋ ' + t('filter.dimensions') + '</a><span>pgext.universe · pgext.pkg · pgext.doc</span></footer></section>';
 
   const projects = S.entity === 'pkg' ? projectGroups(list) : [];
   const itemTotal = S.entity === 'pkg' ? projects.length : list.length;
@@ -1098,22 +1252,25 @@ function dynamicHTML() {
   if (!itemTotal) {
     results = '<div class="result-empty">' + t('wall.empty') + '</div>';
   } else if (S.entity === 'pkg' && S.layout === 'card') {
-    results = '<ul class="wall project-wall">' + projects.map(packageTileHTML).join('') + '</ul>';
+    results = '<ul class="wall ext-wall pkg-wall">' + projects.map(packageTileHTML).join('') + '</ul>';
   } else if (S.entity === 'pkg') {
-    results = '<div class="rows"><div class="rows-scroll"><table><thead><tr>'
-      + '<th>' + t('rows.package') + '</th><th>' + t('rows.lead') + '</th><th>' + t('rows.desc') + '</th><th>' + t('rows.cat') + '</th>'
-      + '<th>' + t('rows.extensions') + '</th><th>' + t('rows.packaged') + '</th><th>' + t('rows.pg') + '</th><th>' + t('rows.stars') + '</th>'
+    results = '<div class="rows"><div class="rows-scroll"><table class="ext-table pkg-table"><thead><tr>'
+      + '<th>' + t('rows.package') + '</th><th>' + t('rows.desc') + '</th><th>' + t('rows.cat') + '</th>'
+      + '<th>' + t('rows.license') + '</th><th>' + t('rows.pg') + '</th><th>' + t('rows.stars') + '</th>'
       + '</tr></thead><tbody>' + projects.map(packageRowHTML).join('') + '</tbody></table></div></div>';
   } else if (S.layout === 'list') {
-    results = '<div class="rows"><div class="rows-scroll"><table><thead><tr>'
-      + '<th>' + t('rows.name') + '</th><th>' + t('rows.cat') + '</th><th>' + t('rows.ver') + '</th><th>' + t('rows.desc') + '</th>'
+    results = '<div class="rows"><div class="rows-scroll"><table class="ext-table"><thead><tr>'
+      + '<th>' + t('rows.name') + '</th><th>' + t('rows.ver') + '</th><th>' + t('rows.desc') + '</th><th>' + t('rows.cat') + '</th>'
       + '<th>' + t('rows.license') + '</th><th>' + t('rows.lang') + '</th><th>' + t('rows.pg') + '</th><th>' + t('rows.stars') + '</th>'
       + '</tr></thead><tbody>' + list.map(rowHTML).join('') + '</tbody></table></div></div>';
   } else {
-    results = '<ul class="wall">' + list.map(tileHTML).join('') + '</ul>';
+    results = '<ul class="wall ext-wall">' + list.map(tileHTML).join('') + '</ul>';
   }
 
+  // Dimensions without a dedicated facet row surface here when active, so
+  // filters arriving via card tags or shared links stay visible and clearable.
   const advanced = [
+    ['repo', 'repo'], ['lifecycle', 'lifecycle'], ['os', 'os'], ['kind', 'kind'],
     ['vendor', 'vendor'], ['kernel', 'kernel'], ['tag', 'tag'], ['pkg', 'package'],
     ['capability', 'capability'], ['build', 'build'], ['docs', 'docs'], ['relation', 'relation'],
     ['pgrx', 'pgrx'], ['active', 'activity']
@@ -1126,12 +1283,12 @@ function dynamicHTML() {
   const toolbar = '<div class="catalog-toolbar"><div class="result-summary"><strong>' + fmtInt(itemTotal) + '</strong><span>'
     + t(S.entity === 'pkg' ? 'filter.results.pkg' : 'filter.results.ext') + '</span></div><div class="catalog-controls">'
     + '<select data-skey="sort" aria-label="sort">' + sortOpts + '</select>'
-    + '<div class="control-cluster"><span>' + t('filter.entity') + '</span><span class="viewtoggle">'
+    + '<span class="viewtoggle" role="group" aria-label="catalog entity">'
     + '<button data-entity="ext" aria-pressed="' + (S.entity === 'ext') + '">' + t('view.ext') + '</button>'
-    + '<button data-entity="pkg" aria-pressed="' + (S.entity === 'pkg') + '">' + t('view.pkg') + '</button></span></div>'
-    + '<div class="control-cluster"><span>' + t('filter.layout') + '</span><span class="viewtoggle">'
+    + '<button data-entity="pkg" aria-pressed="' + (S.entity === 'pkg') + '">' + t('view.pkg') + '</button></span>'
+    + '<span class="viewtoggle" role="group" aria-label="layout">'
     + '<button data-layout="card" aria-pressed="' + (S.layout === 'card') + '">' + t('view.card') + '</button>'
-    + '<button data-layout="list" aria-pressed="' + (S.layout === 'list') + '">' + t('view.list') + '</button></span></div></div></div>';
+    + '<button data-layout="list" aria-pressed="' + (S.layout === 'list') + '">' + t('view.list') + '</button></span></div></div>';
 
   return '<button class="sql-readout" data-sql="' + esc(sql) + '" title="' + esc(t('search.copy')) + '">' + sqlHTML + '</button>'
     + activeFilters + facets + toolbar + results;
@@ -1144,7 +1301,7 @@ function drawField() {
   if (!cv) return;
   const dpr = window.devicePixelRatio || 1;
   const W = cv.clientWidth || cv.parentElement.clientWidth;
-  const pitch = W > 900 ? 7 : W > 560 ? 6 : 5;
+  const pitch = W > 900 ? 8 : W > 560 ? 7 : 6;
   const dot = pitch - 2;
   const cols = Math.max(24, Math.floor(W / pitch));
   let cell = 0;
@@ -1210,8 +1367,9 @@ function manualOutlineHTML(items, extraClass) {
 
 function extOutlineHTML() {
   return manualOutlineHTML([
-    ['ext-overview', 'ext.overview'], ['ext-metadata', 'ext.metadata'], ['ext-relations', 'ext.relations'],
-    ['ext-packages', 'ext.pkgs'], ['ext-build', 'ext.build'], ['ext-install', 'ext.installguide'], ['ext-usage', 'ext.docs']
+    ['ext-overview', 'ext.overview'], ['ext-install', 'ext.installguide'], ['ext-packages', 'ext.veravail'],
+    ['ext-build', 'ext.build'], ['ext-relations', 'ext.relations'], ['ext-metadata', 'ext.metadata'],
+    ['ext-usage', 'ext.docs']
   ].map(([id, key]) => [id, t(key)]), 'ext-outline');
 }
 
@@ -1224,17 +1382,24 @@ function extHTML(name) {
     ? '<div class="notice provider">☁ ' + t('ext.providerNote', { provider: esc([e.vendor, e.kernel].filter(Boolean).join(' · ')) }) + '</div>' : '';
   const lifecycleNote = ['deprecated', 'archived', 'abandoned'].includes(e.lifecycle)
     ? '<div class="notice lifecycle">⚠ ' + t('ext.lifecycleNote', { state: '<b>' + esc(e.lifecycle) + '</b>' }) + '</div>' : '';
+  const stateChip = e.avail
+    ? '<span class="state-chip ok">● ' + t('state.avail') + '</span>'
+    : '<span class="state-chip">○ ' + t('state.na') + '</span>';
+  const repoHost = e.repoUrl ? e.repoUrl.replace(/^https?:\/\//, '').replace(/\/$/, '') : '';
 
   return '<article class="page wrap manual-page ext-page">'
     + '<nav class="crumbs"><a href="/">' + t('ext.crumb') + '</a><span class="sep">/</span>'
     + '<a href="' + catHref(e.cat) + '" style="color:var(--c-' + e.cat + ')">' + e.cat + '</a><span class="sep">/</span>'
     + '<span class="here">' + esc(e.name) + '</span></nav>'
-    + '<header class="detail-hero ext-detail-hero"><div class="detail-kicker">EXTENSION</div><div class="ext-head"><h1>' + esc(e.name) + '</h1>' + (e.ver ? '<span class="ver">v' + esc(e.ver) + '</span>' : '') + '</div>'
+    + '<header class="detail-hero ext-detail-hero"><div class="ext-hero-grid"><div class="ext-hero-main">'
+    + '<div class="detail-kicker-row"><span class="detail-kicker">EXTENSION</span>' + stateChip
+    + '<span class="visit-chip" id="d-visits" hidden></span></div>'
+    + '<div class="ext-head"><h1>' + esc(e.name) + '</h1>' + (e.ver ? '<span class="ver">v' + esc(e.ver) + '</span>' : '') + '</div>'
     + '<p class="ext-tagline">' + esc(desc(e)) + '</p>'
     + '<div class="badge-row">'
     + '<a class="badge cat" href="' + catHref(e.cat) + '" ' + catVar(e.cat) + '><span class="dot"></span>' + e.cat + ' · ' + esc(catName(e.cat)) + '</a>'
     + '<a class="badge" href="/?license=' + encodeURIComponent(e.license) + '">' + esc(e.license) + '</a>'
-    + '<a class="badge" href="/?lng=' + encodeURIComponent(e.lang) + '">' + esc(e.lang) + '</a>'
+    + '<a class="badge" href="/?lang=' + encodeURIComponent(e.lang) + '">' + esc(e.lang) + '</a>'
     + (e.repo !== 'n/a' ? '<a class="badge" href="/?repo=' + encodeURIComponent(e.repo) + '">' + esc(e.repo) + '</a>' : '')
     + (e.kind ? '<a class="badge" href="/?kind=' + encodeURIComponent(e.kind) + '" data-tip="' + esc(t('type.' + e.kind)) + '">' + esc(e.kind) + '</a>' : '')
     + (e.lifecycle ? '<a class="badge" href="/?lifecycle=' + encodeURIComponent(e.lifecycle) + '">' + esc(e.lifecycle) + '</a>' : '')
@@ -1242,22 +1407,28 @@ function extHTML(name) {
     + (e.vendor ? '<span class="badge">☁ ' + esc(e.vendor) + '</span>' : '')
     + '</div>'
     + '<div class="badge-row">' + attrBadges(e) + '</div>'
-    + '<div class="ghstats" id="d-gh">'
-    + (e.stars != null ? '<span>★ <b>' + fmtInt(e.stars) + '</b></span>' : '')
-    + (e.active ? '<span>' + t('commit.freshness', { d: '<b>' + esc(e.active) + '</b>' }) + '</span>' : '')
-    + (e.familySize > 1 ? '<a href="' + pkgHref(e.pkg) + '">' + esc(e.pkg) + ' · ' + e.familySize + (LANG === 'zh' ? ' 个同包扩展' : ' extensions') + ' ↗</a>' : '')
-    + '</div>' + lifecycleNote + providerNote + '</header>'
+    + lifecycleNote + providerNote + '</div>'
+    + '<aside class="ext-hero-side">'
+    + '<a class="pkg-banner" href="' + pkgHref(e.pkg) + '">'
+    + '<span class="pkg-banner-kicker">▤ ' + t('ext.pkgnav') + '</span>'
+    + '<b>' + esc(e.pkg) + '</b>'
+    + '<span class="pkg-banner-desc">' + t('ext.pkgnav.d') + '</span>'
+    + '<span class="pkg-banner-meta">' + (e.familySize > 1 ? e.familySize + bi(' extensions', ' 个扩展') + ' · ' : '')
+    + (e.avail ? bi('prebuilt packages', '预编译软件包') : bi('source / provider', '源码 / 服务商')) + ' →</span></a>'
+    + (repoHost ? '<a class="hero-side-link" href="' + esc(e.repoUrl) + '" target="_blank" rel="noopener">' + GH_SVG
+      + '<span>' + esc(repoHost) + '</span>' + (e.stars != null ? '<b>★ ' + fmtNum(e.stars) + '</b>' : '') + '<i>↗</i></a>' : '')
+    + '</aside></div></header>'
     + extOutlineHTML()
     + '<div class="ext-grid ext-manual"><main class="ext-main">'
     + '<section class="section ext-section" id="ext-overview"><h2>' + t('ext.overview') + '</h2><div id="d-overview">' + skel(5) + '</div></section>'
-    + '<section class="section ext-section" id="ext-metadata"><h2>' + t('ext.metadata') + '</h2><div id="d-metadata">' + skel(7) + '</div></section>'
-    + '<section class="section ext-section" id="ext-relations"><h2>' + t('ext.relations') + '</h2><div id="d-deps">' + skel(4) + '</div></section>'
-    + '<section class="section ext-section" id="ext-packages"><h2>' + t('ext.pkgs') + '</h2>'
+    + '<section class="section ext-section" id="ext-install"><h2>' + t('ext.installguide') + '</h2><p class="section-lede">' + t('ext.installlede') + '</p><div id="d-install">' + skel(6) + '</div></section>'
+    + '<section class="section ext-section" id="ext-packages"><h2>' + t('ext.veravail') + '</h2>'
     + '<p class="section-lede">' + t('ext.packageintro') + '</p><div id="d-versions">' + skel(3) + '</div>'
     + '<h3 class="section-subhead">' + t('ext.avail') + '</h3><div id="d-matrix">' + skel(5) + '</div>'
-    + '<h3 class="section-subhead">' + t('ext.downloads') + '</h3><div id="d-files">' + skel(4) + '</div></section>'
+    + '<p class="matrix-pkg-note"><a href="' + pkgHref(e.pkg) + '">⇩ ' + t('ext.downloads') + ' · <code>' + esc(e.pkg) + '</code> →</a></p></section>'
     + '<section class="section ext-section" id="ext-build"><h2>' + t('ext.build') + '</h2><div id="d-build">' + skel(3) + '</div></section>'
-    + '<section class="section ext-section" id="ext-install"><h2>' + t('ext.installguide') + '</h2><p class="section-lede">' + t('ext.installlede') + '</p><div id="d-install">' + skel(6) + '</div></section>'
+    + '<section class="section ext-section" id="ext-relations"><h2>' + t('ext.relations') + '</h2><div id="d-deps">' + skel(4) + '</div></section>'
+    + '<section class="section ext-section" id="ext-metadata"><h2>' + t('ext.metadata') + '</h2><div id="d-metadata">' + skel(7) + '</div></section>'
     + '</main><aside class="ext-rail"><div id="d-spec">' + skel(8) + '</div></aside></div>'
     + '<section class="section ext-section usage-section" id="ext-usage"><h2>' + t('ext.docs') + '</h2><div id="d-doc">' + (e.docbits ? skel(8) : '<div class="docs-missing">' + t('ext.docsnone') + '</div>') + '</div></section>'
     + (related.length ? '<section class="section related-section"><h2>' + t('ext.related', { cat: e.cat }) + '</h2><ul class="related">' + related.map(tileHTML).join('') + '</ul></section>' : '')
@@ -1343,7 +1514,7 @@ function installHTML(e, full, matrix, override) {
     '<div class="install-body" data-ipane="' + i + '"' + (i ? ' hidden' : '') + '>'
     + (copy ? '<button class="copy-btn" data-copy="' + esc(copy) + '">copy</button>' : '')
     + '<pre>' + html + '</pre></div>').join('');
-  const code = (language, value) => '<div class="md-code compact"><div class="md-codebar"><span>' + language + '</span><button data-copy="' + esc(value) + '">copy</button></div><pre><code>' + esc(value) + '</code></pre></div>';
+  const code = (language, value) => '<div class="md-code compact"><div class="md-codebar"><span>' + language + '</span><button data-copy="' + esc(value) + '">copy</button></div><pre><code>' + highlightCode(value, language) + '</code></pre></div>';
   const repoBody = full.contrib
     ? '<p>' + bi('Bundled with the matching PostgreSQL distribution; no separate repository setup is required.', '随对应 PostgreSQL 发行包交付，无需单独配置扩展仓库。') + '</p>'
     : repoCmd ? '<p>' + bi('Enable and refresh the repository selected by the catalog before installing.', '安装前启用并刷新目录所选的软件仓库。') + '</p>' + code('bash', repoCmd)
@@ -1456,6 +1627,9 @@ function pgBadgesHTML(values) {
   return pgs.length ? '<span class="pg-badges">' + pgs.map(pg => '<span>PG' + pg + '</span>').join('') + '</span>' : '—';
 }
 
+/* Overview keeps only what the hero has not already said: the catalog note
+   and six orientation facts. The runtime flag details live in the hero badges
+   and the metadata reference. */
 function overviewHTML(e, full) {
   const fact = (label, value, note, mono) => '<div class="detail-fact"><span>' + label + '</span><strong' + (mono ? ' class="mono"' : '') + '>' + value + '</strong>'
     + (note ? '<small>' + note + '</small>' : '') + '</div>';
@@ -1463,12 +1637,7 @@ function overviewHTML(e, full) {
     : full.packaged ? bi('Prebuilt packages', '预编译软件包')
       : (full.repo_url || full.tarball) ? bi('Source catalog', '源码目录') : bi('Provider catalog', '服务商目录');
   const docLangs = [full.has_en_doc ? 'EN' : '', full.has_zh_doc ? '中文' : ''].filter(Boolean).join(' + ') || '—';
-  const flags = [
-    ['attr.bin', full.has_bin], ['attr.lib', full.has_lib], ['attr.load', full.need_load], ['attr.ddl', full.need_ddl],
-    ['attr.trusted', full.trusted], ['attr.reloc', full.relocatable], ['attr.contrib', full.contrib]
-  ];
-  return '<div class="overview-copy"><p>' + esc(LANG === 'zh' ? (full.zh_desc || full.en_desc || e.zh || e.en) : (full.en_desc || full.zh_desc || e.en || e.zh)) + '</p>'
-    + (full.comment ? '<div class="catalog-note"><b>' + bi('Catalog note', '目录备注') + '</b><span>' + esc(full.comment) + '</span></div>' : '') + '</div>'
+  return (full.comment ? '<div class="catalog-note"><b>' + bi('Catalog note', '目录备注') + '</b><span>' + esc(full.comment) + '</span></div>' : '')
     + '<div class="detail-facts">'
     + fact(bi('Project package', '项目包族'), '<a href="' + pkgHref(full.pkg) + '">' + esc(full.pkg) + '</a>', full.family_size + bi(' extension definitions', ' 个扩展定义'), true)
     + fact(bi('Catalog version', '目录版本'), esc(full.version || '—'), bi('extension control version', '扩展 control 版本'), true)
@@ -1476,50 +1645,35 @@ function overviewHTML(e, full) {
     + fact(bi('Distribution', '交付方式'), esc(distribution), full.repo && full.repo !== 'n/a' ? esc(full.repo) : '', false)
     + fact(bi('Extension kind', '扩展形态'), esc(full.kind || '—'), esc(t('type.' + (full.kind || ''))), true)
     + fact(bi('Usage manual', '用法手册'), esc(docLangs), full.has_en_doc || full.has_zh_doc ? t('ext.docsource') : t('ext.docsnone'), true)
-    + '</div><div class="attribute-grid">' + flags.map(([key, value]) => '<div class="attribute ' + (value ? 'on' : 'off') + '"><span>' + (value ? '✓' : '—') + '</span><div><b>' + t(key) + '</b><small>' + boolHTML(value) + '</small></div></div>').join('') + '</div>';
+    + '</div>';
 }
 
+/* Metadata is a reference of what no other section states: catalog identity
+   details plus the full runtime behavior matrix. Packaging rows live in the
+   versions table, upstream links and freshness live in the rail. */
 function metadataHTML(full) {
   const row = (label, value, mono) => '<div class="meta-row"><dt>' + label + '</dt><dd' + (mono ? ' class="mono"' : '') + '>' + (value || '—') + '</dd></div>';
   const panel = (title, rows) => '<section class="meta-panel"><h3>' + title + '</h3><dl>' + rows.join('') + '</dl></section>';
   const names = values => (values || []).length ? esc(values.join(', ')) : '—';
-  const pkgLine = (name, version, repo) => [name, version ? 'v' + version : '', repo].filter(Boolean).map(esc).join(' · ') || '—';
   const catalog = [
-    row('ID', esc(full.id), true), row(bi('name', '扩展名'), esc(full.name), true),
-    row(bi('package family', '项目包族'), '<a href="' + pkgHref(full.pkg) + '">' + esc(full.pkg) + '</a>', true),
-    row(bi('lead extension', '主扩展'), full.lead_ext === full.name ? esc(full.name) : '<a href="' + extHref(full.lead_ext) + '">' + esc(full.lead_ext) + '</a>', true),
-    row(bi('category', '分类'), '<a href="' + catHref(full.category) + '">' + esc(full.category) + ' · ' + esc(catName(full.category)) + '</a>'),
-    row(bi('kind', '形态'), esc(full.kind || '—'), true), row(bi('lifecycle', '生命周期'), esc(full.lifecycle || '—'), true),
-    row(bi('tags', '标签'), names(full.tags), true)
-  ];
+    row('ID', esc(full.id), true),
+    full.lead_ext && full.lead_ext !== full.name
+      ? row(bi('lead extension', '主扩展'), '<a href="' + extHref(full.lead_ext) + '">' + esc(full.lead_ext) + '</a>', true) : '',
+    row(bi('tags', '标签'), names(full.tags), true),
+    row(bi('repository created', '仓库创建'), esc(full.repo_created_at || '—'), true),
+    row('GitHub', ['★ ' + fmtInt(full.stars), '⑂ ' + fmtInt(full.forks), '👁 ' + fmtInt(full.watchers)].join(' · '), true)
+  ].filter(Boolean);
   const runtime = [
-    row(bi('PG support', 'PG 支持'), pgBadgesHTML(full.pg_ver)), row(bi('schemas', '模式'), names(full.schemas), true),
+    row(bi('schemas', '模式'), names(full.schemas), true),
     row(bi('libraries', '动态库'), names(full.libs), true), row('shared_preload_libraries', names(full.preload_libs), true),
     row(bi('ships executables', '携带可执行文件'), boolHTML(full.has_bin)), row(bi('ships libraries', '携带动态库'), boolHTML(full.has_lib)),
     row(bi('needs preload', '需要预加载'), boolHTML(full.need_load)), row('CREATE EXTENSION', boolHTML(full.need_ddl)),
     row(bi('trusted', '非超户可安装'), boolHTML(full.trusted)), row(bi('relocatable', '模式可迁移'), boolHTML(full.relocatable)),
     row('contrib', boolHTML(full.contrib))
   ];
-  const packaging = [
-    row('EXT', pkgLine(full.pkg, full.version, full.repo), true), row(bi('source archive', '源码归档'), esc(full.tarball || '—'), true),
-    row('pgrx', esc(full.pgrx_ver || '—'), true),
-    row('RPM', pkgLine(full.rpm_pkg, full.rpm_ver, full.rpm_repo), true), row('RPM PG', pgBadgesHTML(full.rpm_pg)),
-    row(bi('RPM dependencies', 'RPM 依赖'), names(full.rpm_deps), true), row(bi('RPM build recipe', 'RPM 构建配方'), boolHTML(full.rpm_build)),
-    row('DEB', pkgLine(full.deb_pkg, full.deb_ver, full.deb_repo), true), row('DEB PG', pgBadgesHTML(full.deb_pg)),
-    row(bi('DEB dependencies', 'DEB 依赖'), names(full.deb_deps), true), row(bi('DEB build recipe', 'DEB 构建配方'), boolHTML(full.deb_build))
-  ];
-  const upstream = [
-    row(bi('language', '实现语言'), esc(full.lang || '—'), true), row(bi('license', '许可证'), esc(full.license || '—'), true),
-    row(bi('kernel', '专属内核'), esc(full.kernel || '—'), true), row(bi('vendor', '服务商'), esc(full.vendor || '—'), true),
-    row('GitHub', ['★ ' + fmtInt(full.stars), '⑂ ' + fmtInt(full.forks), '👁 ' + fmtInt(full.watchers)].join(' · '), true),
-    row(bi('repository created', '仓库创建'), esc(full.repo_created_at || '—'), true), row(bi('last release', '最近发布'), esc(full.last_release || '—'), true),
-    row(bi('last commit', '最近提交'), esc(full.last_commit || '—'), true), row(bi('last active', '最近活跃'), esc(full.last_active || '—'), true),
-    row(bi('checked at', '核验日期'), esc(full.checked_at || '—'), true), row(bi('catalog mtime', '目录更新时间'), esc(full.mtime || '—'), true)
-  ];
   const extra = full.extra && typeof full.extra === 'object' && Object.keys(full.extra).length
     ? '<details class="extra-meta"><summary>' + t('spec.extra') + '</summary><pre>' + esc(JSON.stringify(full.extra, null, 2)) + '</pre></details>' : '';
-  return '<div class="metadata-grid">' + panel(t('ext.catalog'), catalog) + panel(t('ext.runtime'), runtime)
-    + panel(t('ext.packaging'), packaging) + panel(t('ext.upstream'), upstream) + '</div>' + extra;
+  return '<div class="metadata-grid">' + panel(t('ext.catalog'), catalog) + panel(t('ext.runtime'), runtime) + '</div>' + extra;
 }
 
 function packageVersionsHTML(full) {
@@ -1558,7 +1712,7 @@ function buildHTML(full) {
     guide = '<div class="build-recipe"><p>' + t('ext.buildrecipe', { types: '<b>' + types.join(' / ') + '</b>' }) + '</p>'
       + '<div class="build-targets"><span>RPM ' + pgBadgesHTML(full.rpm_pg) + '</span><span>DEB ' + pgBadgesHTML(full.deb_pg) + '</span>'
       + (full.pgrx_ver ? '<span><code>pgrx ' + esc(full.pgrx_ver) + '</code></span>' : '') + '</div>'
-      + '<div class="md-code"><div class="md-codebar"><span>bash</span><button data-copy="' + esc(command) + '">copy</button></div><pre><code>' + esc(command) + '</code></pre></div></div>';
+      + '<div class="md-code"><div class="md-codebar"><span>bash</span><button data-copy="' + esc(command) + '">copy</button></div><pre><code>' + highlightCode(command, 'bash') + '</code></pre></div></div>';
   } else {
     guide = '<div class="build-note"><b>' + bi('Upstream build', '上游构建') + '</b><p>' + t('ext.buildnone') + '</p>'
       + (full.pgrx_ver ? '<span class="badge">pgrx · ' + esc(full.pgrx_ver) + '</span>' : '') + '</div>';
@@ -1609,9 +1763,8 @@ function specHTML(e, full) {
   const freshHTML = '<div class="rail-card"><h3>' + t('ext.freshness') + '</h3><dl class="fresh-list">'
     + freshness.map(([label, value]) => '<div><dt>' + label + '</dt><dd>' + esc(value) + '</dd></div>').join('') + '</dl>'
     + '<div class="rail-stats"><span>★ <b>' + fmtInt(full.stars) + '</b></span><span>⑂ <b>' + fmtInt(full.forks) + '</b></span><span>👁 <b>' + fmtInt(full.watchers) + '</b></span></div></div>';
-  const identity = '<div class="rail-card identity"><h3>' + t('ext.catalog') + '</h3><code>' + esc(full.name) + '</code><p>' + esc(full.pkg) + ' · ' + esc(full.kind) + '</p>'
-    + '<div class="rail-status"><span class="' + (full.packaged ? 'ok' : '') + '">' + (full.packaged ? '● ' + t('state.avail') : '○ ' + t('state.na')) + '</span><span>PG ' + esc(pgRange(full.pg_ver)) + '</span></div></div>';
-  return identity + resourceHTML + freshHTML;
+  // No identity card: the hero already states name, package, kind and state.
+  return resourceHTML + freshHTML;
 }
 
 /* hydration: fetch full record, matrix, files, doc — fill sections as they land */
@@ -1642,11 +1795,6 @@ async function hydrateExt(name) {
     fill('d-versions', packageVersionsHTML(full));
     fill('d-build', buildHTML(full));
     fill('d-spec', specHTML(e, full));
-    if (full.repo_url || full.url) {
-      const gh = document.getElementById('d-gh');
-      const url = mdSafeURL(full.repo_url || full.url);
-      if (url && gh && !gh.querySelector('.upstream-link')) gh.insertAdjacentHTML('beforeend', '<a class="upstream-link" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(url.replace(/^https?:\/\//, '')) + ' ↗</a>');
-    }
   }).catch(err => {
     if (tok !== hydSeq) return;
     for (const id of ['d-overview', 'd-metadata', 'd-deps', 'd-versions', 'd-build', 'd-spec']) fill(id, hydrateErr(err));
@@ -1661,14 +1809,19 @@ async function hydrateExt(name) {
     if (tok === hydSeq) fill('d-install', installHTML(e, full, matrix));
   }).catch(err => { if (tok === hydSeq) fill('d-install', hydrateErr(err)); });
 
-  (async () => {
-    try {
-      let fl = FILEC.get(name);
-      if (!fl) { fl = await j('/api/v1/ext/' + enc + '/files'); FILEC.set(name, fl); }
-      if (tok !== hydSeq) return;
-      fill('d-files', filesHTML(fl));
-    } catch (err) { if (tok === hydSeq) fill('d-files', hydrateErr(err)); }
-  })();
+  // Page hit counter: fire-and-forget increment; the download counter is a
+  // placeholder until artifact download tracking lands.
+  fetch('/api/v1/ext/' + enc + '/visit', { method: 'POST' })
+    .then(res => res.ok ? res.json() : null)
+    .then(v => {
+      if (!v || tok !== hydSeq) return;
+      const chip = document.getElementById('d-visits');
+      if (!chip) return;
+      chip.hidden = false;
+      // downloads: empty-set placeholder until artifact tracking lands
+      chip.innerHTML = '◉ ' + fmtInt(v.visits) + ' ' + t('ext.visits')
+        + ' <span class="sep">·</span> ⇩ <span class="soon">∅</span>';
+    }).catch(() => {});
 
   if (e.docbits) {
     (async () => {
@@ -1854,53 +2007,104 @@ async function hydratePkg(pkg) {
   } catch (err) { if (tok === hydSeq) fill('p-files', hydrateErr(err)); }
 }
 
-/* ---------------- view: category ---------------- */
-function catHTML(code) {
-  const c = CATS[code];
-  if (!c) return notFoundHTML(code);
-  const members = EXT.filter(e => e.cat === code).sort((a, b) => (b.stars || 0) - (a.stars || 0) || a.name.localeCompare(b.name));
+/* ---------------- view: dimension navigation pages ----------------
+   One landing page per value of the primary dimensions — /cate/{CODE},
+   /lang/{value}, /repo/{value}, /license/{value}. Each page carries a
+   horizontal nav across every value of its dimension, featured cards
+   (identical to the home wall) and the full table. */
+const NAV_DIMS = {
+  category: {
+    prefix: '/cate/', param: 'cate', dim: 'category',
+    canon: v => v.toUpperCase(),
+    match: (e, v) => e.cat === v,
+    title: v => catName(v),
+    lede: v => catDesc(v)
+  },
+  lang: {
+    prefix: '/lang/', param: 'lang', dim: 'lang',
+    canon: v => v,
+    match: (e, v) => e.lang.toLowerCase() === v.toLowerCase(),
+    title: v => v,
+    lede: () => bi('Extensions implemented in this language.', '以该语言实现的扩展。')
+  },
+  repo: {
+    prefix: '/repo/', param: 'repo', dim: 'repo',
+    canon: v => v.toUpperCase(),
+    match: (e, v) => e.repo === v,
+    title: v => v,
+    lede: () => bi('Extensions delivered by this package source.', '由该软件源打包分发的扩展。')
+  },
+  license: {
+    prefix: '/license/', param: 'license', dim: 'license',
+    canon: v => v,
+    match: (e, v) => e.license.toLowerCase() === v.toLowerCase(),
+    title: v => v,
+    lede: () => bi('Extensions released under this license.', '以该许可证发布的扩展。')
+  }
+};
+
+function navValueHref(dim, value) {
+  const m = { category: '/cate/', lang: '/lang/', repo: '/repo/', license: '/license/' }[dim];
+  return m ? m + encodeURIComponent(value) : '/?' + DIMS[dim].key + '=' + encodeURIComponent(value);
+}
+
+function extTableHTML(members) {
+  return '<div class="rows"><div class="rows-scroll"><table class="ext-table"><thead><tr>'
+    + '<th>' + t('rows.name') + '</th><th>' + t('rows.ver') + '</th><th>' + t('rows.desc') + '</th><th>' + t('rows.cat') + '</th>'
+    + '<th>' + t('rows.license') + '</th><th>' + t('rows.lang') + '</th><th>' + t('rows.pg') + '</th><th>' + t('rows.stars') + '</th>'
+    + '</tr></thead><tbody>' + members.map(rowHTML).join('') + '</tbody></table></div></div>';
+}
+
+function navPageHTML(kind, raw) {
+  const cfg = NAV_DIMS[kind];
+  if (!cfg) return notFoundHTML(raw);
+  const requested = cfg.canon(raw);
+  const vals = dimValues(cfg.dim);
+  const hit = vals.find(x => x.v.toLowerCase() === requested.toLowerCase());
+  const v = hit ? hit.v : requested;
+  const members = EXT.filter(e => cfg.match(e, v)).sort((a, b) => a.name.localeCompare(b.name));
+  if (!members.length) return notFoundHTML(v);
   const featured = members.filter(e => e.avail)
     .sort((a, b) => ((b.docbits ? 1 : 0) - (a.docbits ? 1 : 0)) || (b.stars || 0) - (a.stars || 0))
-    .slice(0, 6);
-  const strip = CAT_ORDER.map(x =>
-    '<a href="' + catHref(x) + '" style="--seg:var(--c-' + x + ');flex:' + CATS[x].count + ' 1 0" aria-current="' + (x === code) + '" data-tip="' + x + ' · ' + CATS[x].count + '"></a>').join('');
-  const fcards = featured.map(e =>
-    '<li><a class="fcard" href="' + extHref(e.name) + '" ' + catVar(e.cat) + '>'
-    + '<span class="name">' + esc(e.name) + '<span class="ver">' + esc(e.ver || '') + '</span>'
-    + (e.stars ? '<span class="star">★ ' + fmtNum(e.stars) + '</span>' : '') + '</span>'
-    + '<span class="desc">' + esc(desc(e)) + '</span>'
-    + '<span class="meta"><span>' + esc(e.license) + '</span><span>' + esc(e.lang) + '</span><span>PG ' + esc(pgRange(e.pg)) + '</span>'
-    + (e.docbits ? '<span>📖 docs</span>' : '') + '</span>'
-    + '</a></li>').join('');
+    .slice(0, 4);
+  const isCat = kind === 'category';
+  const strip = isCat ? '<div class="cat-strip">' + CAT_ORDER.map(x =>
+    '<a href="' + catHref(x) + '" style="--seg:var(--c-' + x + ');flex:' + (CATS[x].count || 1) + ' 1 0" aria-current="' + (x === v) + '" data-tip="' + x + ' · ' + CATS[x].count + '"></a>').join('') + '</div>' : '';
+  const navVals = isCat
+    ? CAT_ORDER.map(c => ({ v: c, n: (vals.find(x => x.v === c) || {}).n || 0 }))
+    : vals;
+  const nav = '<nav class="value-nav">' + navVals.map(o =>
+    '<a class="facet-btn' + (isCat ? ' category' : '') + '" href="' + cfg.prefix + encodeURIComponent(o.v) + '"'
+    + ' aria-pressed="' + (o.v === v) + '"' + (isCat ? ' style="--seg:var(--c-' + o.v + ')"' : '') + '>'
+    + (isCat ? '<i></i>' : '') + '<span>' + (isCat ? '<code>' + o.v + '</code>' : esc(o.v)) + '</span>'
+    + '<small>' + fmtInt(o.n) + '</small></a>').join('') + '</nav>';
+  const lede = cfg.lede(v);
   return '<article class="page wrap">'
     + '<nav class="crumbs"><a href="/">' + t('ext.crumb') + '</a><span class="sep">/</span>'
-    + '<a href="' + dimHref('category') + '">' + t('cat.crumb') + '</a><span class="sep">/</span><span class="here">' + code + '</span></nav>'
-    + '<div class="cat-strip">' + strip + '</div>'
-    + '<header class="page-head cat-hero" style="--seg:var(--c-' + code + ');margin-top:22px">'
-    + '<span class="code">' + code + '</span>'
-    + '<h1>' + esc(catName(code)) + '</h1>'
-    + '<p class="lede">' + esc(catDesc(code)) + '</p>'
-    + '<p class="cat-count" style="margin-top:8px">' + fmtInt(members.length) + ' extensions · '
-    + fmtInt(members.filter(e => e.avail).length) + ' packaged · <a href="/?cat=' + code + '">' + t('cat.open') + '</a></p>'
+    + '<a href="' + dimHref(cfg.dim) + '">' + t(DIMS[cfg.dim].label) + '</a><span class="sep">/</span><span class="here">' + esc(v) + '</span></nav>'
+    + strip + nav
+    + '<header class="page-head cat-hero" style="--seg:' + (isCat ? 'var(--c-' + v + ')' : 'var(--accent)') + ';margin-top:18px">'
+    + '<span class="code">' + (isCat ? v : esc(t(DIMS[cfg.dim].label))) + '</span>'
+    + '<h1>' + esc(cfg.title(v)) + '</h1>'
+    + (lede ? '<p class="lede">' + esc(lede) + '</p>' : '')
+    + '<p class="cat-count" style="margin-top:8px">' + fmtInt(members.length) + bi(' extensions', ' 个扩展') + ' · '
+    + fmtInt(members.filter(e => e.avail).length) + bi(' packaged', ' 个已打包')
+    + ' · <a href="/?' + cfg.param + '=' + encodeURIComponent(v) + '">' + t('cat.open') + '</a></p>'
     + '</header>'
-    + '<div class="section"><h2>' + t('cat.featured') + '</h2><ul class="featured">' + fcards + '</ul></div>'
-    + '<div class="section"><h2>' + t('cat.all', { n: fmtInt(members.length) }) + '</h2>'
-    + '<div class="rows"><div class="rows-scroll"><table><thead><tr>'
-    + '<th>' + t('rows.name') + '</th><th>' + t('rows.cat') + '</th><th>' + t('rows.ver') + '</th><th>' + t('rows.desc') + '</th>'
-    + '<th>' + t('rows.license') + '</th><th>' + t('rows.lang') + '</th><th>' + t('rows.pg') + '</th><th>' + t('rows.stars') + '</th>'
-    + '</tr></thead><tbody>' + members.map(rowHTML).join('') + '</tbody></table></div></div></div>'
+    + (featured.length ? '<div class="section"><h2>' + t('cat.featured') + '</h2><ul class="wall ext-wall">' + featured.map(tileHTML).join('') + '</ul></div>' : '')
+    + '<div class="section"><h2>' + t('cat.all', { n: fmtInt(members.length) }) + '</h2>' + extTableHTML(members) + '</div>'
     + '</article>';
 }
 
 /* ---------------- view: browse & dimensions ---------------- */
 const DIMS = {
-  category: { key: 'cat', label: 'dim.category', d: 'dim.category.d', field: 'category' },
+  category: { key: 'cate', label: 'dim.category', d: 'dim.category.d', field: 'category' },
   tag: { key: 'tag', label: 'dim.tag', d: 'dim.tag.d', field: 'tags[]' },
   package: { key: 'pkg', label: 'dim.package', d: 'dim.package.d', field: 'pkg · lead_ext' },
   kind: { key: 'kind', label: 'dim.type', d: 'dim.type.d', field: 'kind' },
   lifecycle: { key: 'lifecycle', label: 'dim.lifecycle', d: 'dim.lifecycle.d', field: 'lifecycle' },
   license: { key: 'license', label: 'dim.license', d: 'dim.license.d', field: 'license' },
-  lang: { key: 'lng', label: 'dim.lang', d: 'dim.lang.d', field: 'lang' },
+  lang: { key: 'lang', label: 'dim.lang', d: 'dim.lang.d', field: 'lang' },
   distribution: { key: 'scope', label: 'dim.distribution', d: 'dim.distribution.d', field: 'packaged · contrib · vendor · kernel' },
   repo: { key: 'repo', label: 'dim.repo', d: 'dim.repo.d', field: 'rpm_repo · deb_repo' },
   pg: { key: 'pg', label: 'dim.pg', d: 'dim.pg.d', field: 'pg_ver[]' },
@@ -1966,10 +2170,12 @@ function dimValueHTML(dim, value) {
   return '<span class="mono">' + esc(name) + '</span>';
 }
 
-function dimValues(dim) {
+// dimValues aggregates one dimension over the whole catalog, or over a subset
+// (the home facet panel passes the scope-filtered list for cascading counts).
+function dimValues(dim, subset) {
   const cnt = new Map();
   const add = (k, e) => { if (!k) return; if (!cnt.has(k)) cnt.set(k, { n: 0, ex: [] }); const o = cnt.get(k); o.n++; if (o.ex.length < 4) o.ex.push(e.name); };
-  for (const e of EXT) {
+  for (const e of (subset || EXT)) {
     const values = [];
     if (dim === 'category') values.push(e.cat);
     else if (dim === 'tag') values.push(...e.tags);
@@ -2044,7 +2250,7 @@ function dimHTML(dim) {
   const max = Math.max(1, ...vals.map(v => v.n));
   const rows = vals.map(o => {
     const isCat = dim === 'category';
-    const href = '/?' + cfg.key + '=' + encodeURIComponent(o.v);
+    const href = navValueHref(dim, o.v);
     const seg = isCat ? 'style="--seg:var(--c-' + o.v + ')"' : '';
     const sample = o.ex.map(name => '<a href="' + extHref(name) + '">' + esc(name) + '</a>').join('');
     return '<tr ' + seg + ' data-dim-row data-dim-value="' + esc((o.v + ' ' + dimValueName(dim, o.v)).toLowerCase()) + '"><td class="v"><a href="' + href + '">' + dimValueHTML(dim, o.v) + '</a></td>'
@@ -2053,7 +2259,7 @@ function dimHTML(dim) {
       + '<td class="ex">' + sample + '</td></tr>';
   }).join('');
   return '<article class="page wrap">'
-    + '<nav class="crumbs"><a href="/browse">' + t('nav.browse') + '</a><span class="sep">/</span><span class="here">' + t(cfg.label) + '</span></nav>'
+    + '<nav class="crumbs"><a href="/list">' + t('nav.browse') + '</a><span class="sep">/</span><span class="here">' + t(cfg.label) + '</span></nav>'
     + '<header class="page-head dimension-head"><span class="dim-source">pgext.universe · <code>' + esc(cfg.field) + '</code></span>'
     + '<h1>' + t(cfg.label) + '</h1><p class="lede">' + t(cfg.d) + '</p></header>'
     + '<div class="dim-toolbar"><label><span>⌕</span><input type="search" data-dim-search placeholder="' + esc(t('dim.search', { n: fmtInt(vals.length) })) + '" autocomplete="off"></label>'
@@ -2071,11 +2277,13 @@ const GMX_META = [
 ];
 
 function globalMatrixShellHTML() {
+  const combos = (OSS.length || 16) * (PGS.length || 5);
   return '<article class="gmx-page">'
     + '<header class="gmx-hero gmx-frame"><p class="eyebrow">' + t('gmx.eyebrow') + '</p>'
-    + '<div class="gmx-titleline"><div><h1>' + t('gmx.title') + '</h1><p>' + t('gmx.lede') + '</p></div>'
+    + '<div class="gmx-titleline"><div><h1>' + t('gmx.title') + '</h1>'
+    + '<p class="gmx-lede">' + t('gmx.lede', { pkgs: fmtInt(N_PKGS), combos: fmtInt(combos) }) + '</p></div>'
     + '<a class="gmx-api" href="/api/v1/matrix" target="_blank" rel="noopener">' + t('gmx.api') + ' ↗</a></div></header>'
-    + '<div class="gmx-frame" id="gmx-root">' + skel(7) + '</div></article>';
+    + '<div id="gmx-root"><div class="gmx-frame">' + skel(7) + '</div></div></article>';
 }
 
 // Decode one positional cell lazily. Available-cell details use indexes into
@@ -2113,84 +2321,138 @@ function globalMatrixClass(code) {
 
 function globalMatrixHTML(data) {
   const stats = data.stats || { rows: 0, os: 0, pg: 0, cells: 0, counts: {} };
-  const statItems = [
-    [stats.rows, 'gmx.packages'], [stats.os, 'gmx.targets'],
-    [stats.pg, 'gmx.pg'], [stats.cells, 'gmx.cells']
-  ].map(x => '<div><strong>' + fmtInt(x[0]) + '</strong><span>' + t(x[1]) + '</span></div>').join('');
+  const pgCount = (data.pg || []).length;
+  const cols = (data.os || []).length * pgCount;
   const legend = GMX_META.map(item => {
     const count = (stats.counts && stats.counts[item[0]]) || 0;
     return '<button type="button" class="gmx-legend-item gmx-' + item[2] + '" data-gmx-code="' + item[0]
       + '" aria-pressed="false"><i></i><span>' + t(item[1]) + '</span><b>' + fmtInt(count) + '</b></button>';
   }).join('');
-  const cols = (data.os || []).length * (data.pg || []).length;
+  const lens = [['', t('gmx.lens.all')], ['pgdg', 'PGDG'], ['pigsty', 'Pigsty']].map(([v, l]) =>
+    '<button type="button" data-gmx-lens="' + v + '" aria-pressed="' + (v === '') + '">' + l + '</button>').join('');
+  // OS heads stack the release over the architecture; the two architectures
+  // share the exact type style and differ only in color.
   const osHeads = (data.os || []).map(osName => {
     const bits = osName.split('.');
-    return '<span class="gmx-oshead" style="grid-column:span ' + (data.pg || []).length + '"><b>'
-      + esc(bits[0]) + '</b><small>' + esc(bits.slice(1).join('.') || '') + '</small></span>';
+    const arch = bits.slice(1).join('.');
+    const archCls = arch === 'aarch64' ? 'arch-arm' : 'arch-x86';
+    return '<span class="gmx-oshead" style="grid-column:span ' + pgCount + '"><b>'
+      + esc(bits[0]) + '</b><span class="gmx-arch ' + archCls + '">' + esc(arch) + '</span></span>';
   }).join('');
   let pgHeads = '';
   for (const osName of (data.os || [])) {
-    for (let i = 0; i < (data.pg || []).length; i++) {
+    for (let i = 0; i < pgCount; i++) {
       pgHeads += '<span class="gmx-pghead' + (i === 0 ? ' group-start' : '') + '">' + esc(data.pg[i]) + '</span>';
     }
   }
-  return '<section class="gmx-stats" aria-label="Matrix summary">' + statItems + '</section>'
-    + '<section class="gmx-panel">'
-    + '<div class="gmx-toolbar"><label class="gmx-search"><span>\\</span><input id="gmx-q" type="search" autocomplete="off" spellcheck="false" placeholder="'
-    + esc(t('gmx.search')) + '"></label><span class="gmx-showing" id="gmx-showing"></span></div>'
-    + '<div class="gmx-legend" aria-label="Matrix status filters">' + legend + '</div>'
-    + '<div class="gmx-hint">' + t('gmx.hint') + '</div>'
-    + '<div class="gmx-viewport" id="gmx-viewport" role="grid" aria-rowcount="' + stats.rows + '" aria-colcount="' + (cols + 1) + '">'
-    + '<div class="gmx-stage" style="--gmx-columns:' + cols + '">'
-    + '<div class="gmx-grid-head"><div class="gmx-headrow"><span class="gmx-corner">' + t('gmx.pkg') + '</span>' + osHeads + '</div>'
-    + '<div class="gmx-headrow gmx-pg-row"><span class="gmx-corner gmx-corner-sub">OS → · PG →</span>' + pgHeads + '</div></div>'
-    + '<div class="gmx-grid-body" id="gmx-body"></div></div></div>'
-    + '<p class="gmx-source"><span class="gmx-source-copy">' + t('gmx.source', { source: '<code>' + esc(data.source || 'pgext.matrix') + '</code>' })
-    + '</span><span class="gmx-snapshot">snapshot ' + esc((data.generated || '').replace('T', ' ').slice(0, 19)) + '</span></p>'
-    + '</section>';
+  return '<div class="gmx-toolbar gmx-frame">'
+    + '<label class="gmx-search"><span>\\</span><input id="gmx-q" type="search" autocomplete="off" spellcheck="false" placeholder="'
+    + esc(t('gmx.search')) + '"></label>'
+    + '<span class="gmx-lens-toggle" role="group" aria-label="' + esc(t('gmx.lens')) + '" id="gmx-lens">' + lens + '</span>'
+    + '<div class="gmx-legend" id="gmx-legend" aria-label="Matrix status filters">' + legend + '</div>'
+    + '<span class="gmx-showing" id="gmx-showing"></span></div>'
+    + '<p class="gmx-hint gmx-frame">' + t('gmx.hint') + '</p>'
+    + '<div class="gmx-sheet" id="gmx-sheet" style="--gmx-columns:' + cols + '" role="grid" aria-rowcount="' + stats.rows + '" aria-colcount="' + (cols + 1) + '">'
+    + '<div class="gmx-head"><div class="gmx-headrow gmx-os-row"><span class="gmx-corner">' + t('gmx.pkg') + '</span>' + osHeads + '</div>'
+    + '<div class="gmx-headrow gmx-pg-row"><span class="gmx-corner gmx-corner-sub">PG →</span>' + pgHeads + '</div></div>'
+    + '<div class="gmx-body" id="gmx-body"></div>'
+    + '</div>'
+    + '<p class="gmx-source gmx-frame"><span class="gmx-source-copy">' + t('gmx.source', { source: '<code>' + esc(data.source || 'pgext.matrix') + '</code>' })
+    + '</span><span class="gmx-snapshot">snapshot ' + esc((data.generated || '').replace('T', ' ').slice(0, 19)) + '</span></p>';
 }
 
+/* The matrix sheet scrolls with the page: rows are virtualized against the
+   window viewport (absolute-positioned inside a full-height body), the two
+   header rows stick under the nav, and each cell is a flat colored square —
+   the same technique as the home-page universe field, so 391 × 80 slots stay
+   cheap. The PGDG / Pigsty lenses recolor valid cells by provider coverage. */
 function setupGlobalMatrix(data) {
-  const viewport = document.getElementById('gmx-viewport');
+  const sheet = document.getElementById('gmx-sheet');
   const body = document.getElementById('gmx-body');
   const input = document.getElementById('gmx-q');
   const showing = document.getElementById('gmx-showing');
-  if (!viewport || !body || !input) return;
-  const matrixPage = document.querySelector('.gmx-page');
-  const rowHeight = Number.parseFloat(getComputedStyle(matrixPage).getPropertyValue('--gmx-row')) || 20;
-  const cellCount = (data.os || []).length * (data.pg || []).length;
-  const overscan = 10;
-  const state = { rows: [], activeCode: '', start: -1, end: -1, raf: 0 };
+  if (!sheet || !body || !input) return;
+  const pgCount = (data.pg || []).length;
+  const cellCount = (data.os || []).length * pgCount;
+  const overscan = 12;
+  const state = { rows: [], activeCode: '', lens: '', start: -1, end: -1, raf: 0 };
+  // shareable provider lens: /matrix?lens=pgdg|pigsty
+  const initLens = new URLSearchParams(location.search).get('lens');
+  if (initLens === 'pgdg' || initLens === 'pigsty') state.lens = initLens;
 
-  function render(force) {
-    if (!viewport.isConnected) return;
-    const bodyY = Math.max(0, viewport.scrollTop - body.offsetTop);
-    const start = Math.max(0, Math.floor(bodyY / rowHeight) - overscan);
-    const visible = Math.ceil(viewport.clientHeight / rowHeight) + overscan * 2;
-    const end = Math.min(state.rows.length, start + visible);
-    if (!force && start === state.start && end === state.end) return;
-    state.start = start; state.end = end;
-    body.style.height = (state.rows.length * rowHeight) + 'px';
-    if (!state.rows.length) {
-      body.innerHTML = '<div class="gmx-empty">' + t('gmx.empty') + '</div>';
-      return;
+  // Cell size adapts to the viewport: squares fill the width beside the label
+  // column, clamped so they stay legible on phones and calm on ultrawides.
+  let rowH = 16;
+  const layout = () => {
+    const vw = document.documentElement.clientWidth;
+    const label = Math.round(Math.min(230, Math.max(150, vw * 0.17)));
+    const cell = Math.max(9, Math.min(22, Math.floor((vw - label) / Math.max(1, cellCount))));
+    rowH = Math.max(cell, 14);
+    sheet.style.setProperty('--gmx-label', label + 'px');
+    sheet.style.setProperty('--gmx-cell-px', cell + 'px');
+    sheet.style.setProperty('--gmx-row', rowH + 'px');
+  };
+  layout();
+  const rowHeight = () => rowH;
+
+  // Lens recoloring: PGDG shows its own coverage vs every gap; Pigsty shows
+  // what it builds, with PGDG-covered slots dimmed instead of alarmed.
+  function cellLensClass(code) {
+    if (state.lens === 'pgdg') {
+      if (code === 'B') return 'pgdg';
+      if (code === 'G' || code === 'R') return 'missing';
+      return 'na';
     }
-    const html = [];
-    const pgCount = (data.pg || []).length;
-    for (let vi = start; vi < end; vi++) {
-      const ref = state.rows[vi], row = ref.row;
+    if (state.lens === 'pigsty') {
+      if (code === 'G') return 'pigsty';
+      if (code === 'B') return 'alt';
+      if (code === 'R') return 'missing';
+      return 'na';
+    }
+    return globalMatrixClass(code);
+  }
+
+  // Per-row inner HTML is precomputed once per lens and reused on every
+  // scroll frame, so scrolling only concatenates cached strings.
+  const rowCache = data.rows.map(() => ({}));
+  function rowInnerHTML(index, row) {
+    const cache = rowCache[index];
+    if (cache.name === undefined) {
+      const ext = row.e && row.e !== row.p ? '<small>' + esc(row.e) + '</small>' : '';
+      cache.name = '<a class="gmx-row-name" href="' + pkgHref(row.p) + '"><b>' + esc(row.p) + '</b>' + ext + '</a>';
+    }
+    const key = state.lens || 'all';
+    if (cache[key] === undefined) {
       let cells = '';
       for (let ci = 0; ci < cellCount; ci++) {
-        const cell = globalMatrixCell(row, ci);
-        const pi = ci % pgCount;
-        const oi = Math.floor(ci / pgCount);
-        const aria = row.p + ' · ' + data.os[oi] + ' · PG ' + data.pg[pi] + ' · ' + globalMatrixStatusLabel(cell);
-        cells += '<span class="gmx-cell gmx-' + globalMatrixClass(cell.code) + (pi === 0 ? ' group-start' : '')
-          + '" role="gridcell" data-gmx-row="' + ref.index + '" data-gmx-cell="' + ci + '" aria-label="' + esc(aria) + '"></span>';
+        const code = (row.c || '').charAt(ci) || '.';
+        cells += '<span class="gmx-cell gmx-' + cellLensClass(code) + (ci % pgCount === 0 ? ' group-start' : '')
+          + '" data-gmx-row="' + index + '" data-gmx-cell="' + ci + '"></span>';
       }
-      const ext = row.e && row.e !== row.p ? '<small>' + esc(row.e) + '</small>' : '';
-      html.push('<div class="gmx-row" role="row" style="top:' + (vi * rowHeight) + 'px"><a class="gmx-row-name" href="'
-        + pkgHref(row.p) + '"><b>' + esc(row.p) + '</b>' + ext + '</a>' + cells + '</div>');
+      cache[key] = cells;
+    }
+    return cache.name + cache[key];
+  }
+
+  function render(force) {
+    if (!body.isConnected) return;
+    const rh = rowHeight();
+    body.style.height = (state.rows.length * rh) + 'px';
+    if (!state.rows.length) {
+      body.innerHTML = '<div class="gmx-empty gmx-frame">' + t('gmx.empty') + '</div>';
+      state.start = state.end = -1;
+      return;
+    }
+    const bodyTop = body.getBoundingClientRect().top + window.scrollY;
+    const y = window.scrollY - bodyTop;
+    const start = Math.max(0, Math.floor(y / rh) - overscan);
+    const end = Math.min(state.rows.length, start + Math.ceil(window.innerHeight / rh) + overscan * 2);
+    if (!force && start === state.start && end === state.end) return;
+    state.start = start; state.end = end;
+    const html = [];
+    for (let vi = start; vi < end; vi++) {
+      const ref = state.rows[vi];
+      html.push('<div class="gmx-row" style="top:' + (vi * rh) + 'px">' + rowInnerHTML(ref.index, ref.row) + '</div>');
     }
     body.innerHTML = html.join('');
   }
@@ -2208,18 +2470,20 @@ function setupGlobalMatrix(data) {
       return !state.activeCode || (row.c || '').includes(state.activeCode);
     });
     showing.textContent = t('gmx.showing', {
-      rows: fmtInt(state.rows.length), cells: fmtInt(state.rows.length * data.os.length * data.pg.length)
+      rows: fmtInt(state.rows.length), cells: fmtInt(state.rows.length * cellCount)
     });
     document.querySelectorAll('[data-gmx-code]').forEach(button => {
       button.setAttribute('aria-pressed', button.dataset.gmxCode === state.activeCode ? 'true' : 'false');
     });
-    viewport.scrollTop = 0;
     state.start = state.end = -1;
     schedule(true);
   }
 
-  viewport.addEventListener('scroll', () => { hideTip(); schedule(false); }, { passive: true });
-  viewport.addEventListener('click', ev => {
+  const onScroll = () => { hideTip(); schedule(false); };
+  const onResize = () => { layout(); state.start = state.end = -1; schedule(true); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onResize);
+  sheet.addEventListener('click', ev => {
     const cell = ev.target.closest('.gmx-cell');
     if (!cell) return;
     const row = data.rows[Number.parseInt(cell.dataset.gmxRow, 10)];
@@ -2232,23 +2496,73 @@ function setupGlobalMatrix(data) {
       applyFilter();
     });
   });
-  GMATRIX_VIEW = { render: () => schedule(true), state };
+  const syncLens = () => {
+    document.querySelectorAll('[data-gmx-lens]').forEach(b =>
+      b.setAttribute('aria-pressed', b.dataset.gmxLens === state.lens ? 'true' : 'false'));
+    sheet.dataset.lens = state.lens;
+    const params = new URLSearchParams(location.search);
+    if (state.lens) params.set('lens', state.lens); else params.delete('lens');
+    const qs = params.toString();
+    history.replaceState(null, '', '/matrix' + (qs ? '?' + qs : ''));
+  };
+  document.querySelectorAll('[data-gmx-lens]').forEach(button => {
+    button.addEventListener('click', () => {
+      state.lens = button.dataset.gmxLens;
+      syncLens();
+      state.start = state.end = -1;
+      schedule(true);
+    });
+  });
+  if (state.lens) syncLens();
+  GMATRIX_VIEW = {
+    render: () => { state.start = state.end = -1; schedule(true); },
+    state,
+    destroy() {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      if (state.raf) cancelAnimationFrame(state.raf);
+    }
+  };
   applyFilter();
+}
+
+/* Matrix hydration is cache-first: the last payload is kept in localStorage
+   (gzip-small, parses in ~10ms) so revisits render instantly; one background
+   fetch per session revalidates by the materialization timestamp. */
+const MATRIX_CACHE_KEY = 'pgext.matrix.v1';
+let MATRIX_CHECKED = false;
+
+function renderGlobalMatrix() {
+  const root = document.getElementById('gmx-root');
+  if (!root || !GMATRIX) return;
+  if (GMATRIX_VIEW) { GMATRIX_VIEW.destroy(); GMATRIX_VIEW = null; }
+  root.innerHTML = globalMatrixHTML(GMATRIX);
+  setupGlobalMatrix(GMATRIX);
 }
 
 async function hydrateGlobalMatrix() {
   const token = ++matrixHydSeq;
+  if (!GMATRIX) {
+    try {
+      const cached = JSON.parse(localStorage.getItem(MATRIX_CACHE_KEY) || 'null');
+      if (cached && Array.isArray(cached.rows) && cached.rows.length) GMATRIX = cached;
+    } catch (e) {}
+  }
+  if (GMATRIX) renderGlobalMatrix();
+  if (MATRIX_CHECKED && GMATRIX) return;
   try {
-    if (!GMATRIX) GMATRIX = await j('/api/v1/matrix');
-    if (token !== matrixHydSeq || currentPath !== '/matrix') return;
-    const root = document.getElementById('gmx-root');
-    if (!root) return;
-    root.innerHTML = globalMatrixHTML(GMATRIX);
-    setupGlobalMatrix(GMATRIX);
+    const fresh = await j('/api/v1/matrix');
+    MATRIX_CHECKED = true;
+    const changed = !GMATRIX || fresh.generated !== GMATRIX.generated
+      || !GMATRIX.stats || !fresh.stats || fresh.stats.cells !== GMATRIX.stats.cells;
+    if (!changed) return;
+    GMATRIX = fresh;
+    try { localStorage.setItem(MATRIX_CACHE_KEY, JSON.stringify(fresh)); } catch (e) {}
+    if (token === matrixHydSeq && currentPath === '/matrix') renderGlobalMatrix();
   } catch (err) {
-    if (token === matrixHydSeq) {
+    if (!GMATRIX && token === matrixHydSeq) {
       const root = document.getElementById('gmx-root');
-      if (root) root.innerHTML = hydrateErr(err);
+      if (root) root.innerHTML = '<div class="gmx-frame">' + hydrateErr(err) + '</div>';
     }
   }
 }
@@ -2304,42 +2618,58 @@ function aboutHTML() {
 }
 
 /* ---------------- router ---------------- */
+// /list/{dim} accepts a few spelling variants for shareable URLs.
+const DIM_ALIASES = { cate: 'category', cat: 'category', lic: 'license', language: 'lang', pkg: 'package', type: 'kind' };
 let currentPath = null;
 function route() {
   const { path, params } = parseRoute();
-  if (path.startsWith('/ext/')) { navigateTo('/e/' + path.slice(5) + location.search, true); return; }
-  if (path.startsWith('/pkg/')) { navigateTo('/p/' + path.slice(5) + location.search, true); return; }
-  if (path.startsWith('/cat/')) { navigateTo('/c/' + path.slice(5) + location.search, true); return; }
+  // Canonical routes are /ext/{name}, /pkg/{name} and /list[/{dim}]; the
+  // legacy short forms redirect in place so old links keep resolving.
+  if (path.startsWith('/e/')) { navigateTo('/ext/' + path.slice(3) + location.search, true); return; }
+  if (path.startsWith('/p/')) { navigateTo('/pkg/' + path.slice(3) + location.search, true); return; }
+  if (path.startsWith('/c/')) { navigateTo('/cate/' + path.slice(3) + location.search, true); return; }
+  if (path.startsWith('/cat/')) { navigateTo('/cate/' + path.slice(5) + location.search, true); return; }
+  if (path === '/browse') { navigateTo('/list' + location.search, true); return; }
+  if (path.startsWith('/dim/')) { navigateTo('/list/' + path.slice(5) + location.search, true); return; }
+  hideHovercard();
   const app = document.getElementById('app');
   const nav = document.getElementById('nav');
   const pathChanged = path !== currentPath;
   currentPath = path;
-  if (path !== '/matrix') { GMATRIX_VIEW = null; matrixHydSeq++; }
+  if (path !== '/matrix' && GMATRIX_VIEW) { GMATRIX_VIEW.destroy(); GMATRIX_VIEW = null; }
+  if (path !== '/matrix') matrixHydSeq++;
   let active = 'home';
   if (path === '/' || path === '') {
     readState(params);
     app.innerHTML = homeHTML();
     drawField();
     bindSearch();
-  } else if (path.startsWith('/e/')) {
-    const name = decodeURIComponent(path.slice(3));
+  } else if (path.startsWith('/ext/')) {
+    const name = decodeURIComponent(path.slice(5));
     app.innerHTML = extHTML(name);
     hydrateExt(name);
     active = '';
-  } else if (path.startsWith('/p/')) {
-    const pkg = decodeURIComponent(path.slice(3));
+  } else if (path.startsWith('/pkg/')) {
+    const pkg = decodeURIComponent(path.slice(5));
     app.innerHTML = pkgHTML(pkg);
     hydratePkg(pkg);
     active = '';
-  } else if (path.startsWith('/c/')) {
-    app.innerHTML = catHTML(decodeURIComponent(path.slice(3)).toUpperCase()); active = '';
+  } else if (path.startsWith('/cate/')) {
+    app.innerHTML = navPageHTML('category', decodeURIComponent(path.slice(6))); active = '';
+  } else if (path.startsWith('/lang/')) {
+    app.innerHTML = navPageHTML('lang', decodeURIComponent(path.slice(6))); active = '';
+  } else if (path.startsWith('/repo/')) {
+    app.innerHTML = navPageHTML('repo', decodeURIComponent(path.slice(6))); active = '';
+  } else if (path.startsWith('/license/')) {
+    app.innerHTML = navPageHTML('license', decodeURIComponent(path.slice(9))); active = '';
   } else if (path === '/matrix') {
     app.innerHTML = globalMatrixShellHTML(); active = 'matrix';
     hydrateGlobalMatrix();
-  } else if (path === '/browse') {
+  } else if (path === '/list') {
     app.innerHTML = browseHTML(); active = 'browse';
-  } else if (path.startsWith('/dim/')) {
-    app.innerHTML = dimHTML(decodeURIComponent(path.slice(5))); active = 'browse';
+  } else if (path.startsWith('/list/')) {
+    const raw = decodeURIComponent(path.slice(6));
+    app.innerHTML = dimHTML(DIM_ALIASES[raw] || raw); active = 'browse';
   } else if (path === '/about') {
     app.innerHTML = aboutHTML(); active = 'about';
   } else {
@@ -2353,21 +2683,25 @@ function route() {
   const ogTitle = document.querySelector('meta[property="og:title"]');
   const ogDesc = document.querySelector('meta[property="og:description"]');
   let description = LANG === 'zh' ? 'PostgreSQL 扩展、项目包族、依赖关系与 PG/OS 精确可用性目录。' : 'Search PostgreSQL extensions, package families, dependencies, and exact PG/OS availability.';
-  if (path.startsWith('/e/')) { const e = byName.get(decodeURIComponent(path.slice(3))); if (e) description = desc(e); }
-  if (path.startsWith('/p/')) { const family = byPkg.get(decodeURIComponent(path.slice(3))); if (family && family[0]) description = desc(byName.get(family[0].lead) || family[0]); }
-  if (path === '/matrix') description = LANG === 'zh' ? '跨扩展包、操作系统与 PostgreSQL 大版本的 32,000 格全局构建矩阵。' : 'A 32,000-cell global build matrix across extension packages, operating systems, and PostgreSQL majors.';
+  if (path.startsWith('/ext/')) { const e = byName.get(decodeURIComponent(path.slice(5))); if (e) description = desc(e); }
+  if (path.startsWith('/pkg/')) { const family = byPkg.get(decodeURIComponent(path.slice(5))); if (family && family[0]) description = desc(byName.get(family[0].lead) || family[0]); }
+  if (path === '/matrix') description = LANG === 'zh' ? '跨扩展包、操作系统与 PostgreSQL 大版本的全局构建矩阵。' : 'The global build matrix across extension packages, operating systems, and PostgreSQL majors.';
   if (meta) meta.content = description;
   if (ogTitle) ogTitle.content = document.title;
   if (ogDesc) ogDesc.content = description;
 }
 function titleFor(path) {
-  if (path.startsWith('/e/')) { const n = decodeURIComponent(path.slice(3)); return n + ' · PGEXT.CLOUD'; }
-  if (path.startsWith('/p/')) { const n = decodeURIComponent(path.slice(3)); return n + ' package · PGEXT.CLOUD'; }
-  if (path.startsWith('/c/')) return decodeURIComponent(path.slice(3)).toUpperCase() + ' · PGEXT.CLOUD';
+  if (path.startsWith('/ext/')) { const n = decodeURIComponent(path.slice(5)); return n + ' · PGEXT.CLOUD'; }
+  if (path.startsWith('/pkg/')) { const n = decodeURIComponent(path.slice(5)); return n + ' package · PGEXT.CLOUD'; }
+  if (path.startsWith('/cate/')) return decodeURIComponent(path.slice(6)).toUpperCase() + ' · PGEXT.CLOUD';
+  if (path.startsWith('/lang/')) return decodeURIComponent(path.slice(6)) + ' · PGEXT.CLOUD';
+  if (path.startsWith('/repo/')) return decodeURIComponent(path.slice(6)).toUpperCase() + ' · PGEXT.CLOUD';
+  if (path.startsWith('/license/')) return decodeURIComponent(path.slice(9)) + ' · PGEXT.CLOUD';
   if (path === '/matrix') return t('gmx.title') + ' · PGEXT.CLOUD';
-  if (path === '/browse') return t('nav.browse') + ' · PGEXT.CLOUD';
-  if (path.startsWith('/dim/')) {
-    const dim = decodeURIComponent(path.slice(5));
+  if (path === '/list') return t('browse.title') + ' · PGEXT.CLOUD';
+  if (path.startsWith('/list/')) {
+    const raw = decodeURIComponent(path.slice(6));
+    const dim = DIM_ALIASES[raw] || raw;
     return (DIMS[dim] ? t(DIMS[dim].label) : dim) + ' · PGEXT.CLOUD';
   }
   if (path === '/about') return t('nav.about') + ' · PGEXT.CLOUD';
@@ -2414,24 +2748,32 @@ function bindSearch() {
 }
 
 /* ---------------- theme & lang ---------------- */
-function themeLabel() {
-  let mode = 'auto';
-  try { mode = localStorage.getItem('pgext.theme') || 'auto'; } catch (e) {}
-  return mode === 'dark' ? '☾ dark' : mode === 'light' ? '☀ light' : '◐ auto';
+// currentTheme resolves the effective theme, including the OS preference when
+// nothing is stored; the toggle simply flips between light and dark.
+function currentTheme() {
+  let mode = THEME_OVERRIDE || 'auto';
+  if (!THEME_OVERRIDE) { try { mode = localStorage.getItem('pgext.theme') || 'auto'; } catch (e) {} }
+  if (mode === 'auto') {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  return mode;
 }
+function themeIcon() { return currentTheme() === 'dark' ? ICON_MOON : ICON_SUN; }
 function cycleTheme() {
-  let mode = 'auto';
-  try { mode = localStorage.getItem('pgext.theme') || 'auto'; } catch (e) {}
-  const next = mode === 'auto' ? 'dark' : mode === 'dark' ? 'light' : 'auto';
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  THEME_OVERRIDE = null; // manual toggle always wins over the ?theme= override
   try { localStorage.setItem('pgext.theme', next); } catch (e) {}
   applyTheme();
   const b = document.getElementById('theme-toggle');
-  if (b) b.textContent = themeLabel();
+  if (b) b.innerHTML = themeIcon();
   drawField();
 }
+// ?theme=dark|light applies for the visit without touching the stored preference.
+let THEME_OVERRIDE = null;
+try { const q = new URLSearchParams(location.search).get('theme'); if (q === 'dark' || q === 'light') THEME_OVERRIDE = q; } catch (e) {}
 function applyTheme() {
-  let mode = 'auto';
-  try { mode = localStorage.getItem('pgext.theme') || 'auto'; } catch (e) {}
+  let mode = THEME_OVERRIDE || 'auto';
+  if (!THEME_OVERRIDE) { try { mode = localStorage.getItem('pgext.theme') || 'auto'; } catch (e) {} }
   if (mode === 'auto') document.documentElement.removeAttribute('data-theme');
   else document.documentElement.setAttribute('data-theme', mode);
 }
@@ -2461,8 +2803,129 @@ function showTip(html, x, y) {
 }
 function hideTip() { tip().classList.remove('show'); }
 
+/* ---------------- extension hovercard ----------------
+   Any element with data-hover-ext (cards, table rows) pops a rich, interactive
+   detail card after a short dwell. The card itself accepts the pointer, so its
+   links are clickable; the full record hydrates lazily via FULLC. */
+const HOVER_DELAY = 420, HOVER_GRACE = 260;
+let hcEl = null, hcName = null, hcPendingName = null, hcShowTimer = 0, hcHideTimer = 0, hcSeq = 0;
+
+function hovercardEl() {
+  if (!hcEl) {
+    hcEl = document.createElement('aside');
+    hcEl.id = 'hovercard';
+    document.body.appendChild(hcEl);
+    hcEl.addEventListener('mouseenter', () => clearTimeout(hcHideTimer));
+    hcEl.addEventListener('mouseleave', scheduleHovercardHide);
+  }
+  return hcEl;
+}
+
+/* Hovercard anatomy: linked title + GitHub badge, package subtitle (packaged
+   entries only), summary, then a fixed 2 × 4 fact grid — version/category,
+   pg availability/license, kind/language, last modified/repo — plus lazily
+   hydrated upstream links. */
+function hovercardHTML(e, full) {
+  // Links render as a compact label | URL table, one row per destination.
+  const link = (label, url) => url
+    ? '<a href="' + esc(url) + '" target="_blank" rel="noopener"><span>' + label + '</span><b>'
+      + esc(url.replace(/^https?:\/\//, '').replace(/\/$/, '')) + '</b><i>↗</i></a>' : '';
+  const links = full ? [
+    link(t('link.repo'), mdSafeURL(full.repo_url)), link(t('link.home'), mdSafeURL(full.home_url)),
+    link(t('link.docs'), mdSafeURL(full.doc_url)), link('PGXN', mdSafeURL(full.pgxn_url)),
+    link(t('link.license'), mdSafeURL(full.license_url)), link(t('link.control'), mdSafeURL(full.control_url))
+  ].filter(Boolean).join('') : link(t('link.repo'), mdSafeURL(e.repoUrl || e.url));
+  const facts = [
+    [bi('version', '版本'), esc(e.ver || '—')],
+    [bi('category', '分类'), esc(e.cat)],
+    [bi('pg avail', 'PG 可用性'), esc(pgRange(e.pg))],
+    [bi('license', '许可证'), esc(e.license)],
+    [bi('kind', '形态'), esc(e.kind || '—')],
+    [bi('language', '语言'), esc(e.lang || '—')],
+    [bi('modified', '最后修改'), esc((e.active || '').slice(0, 10) || '—')],
+    [bi('repo', '仓库'), esc(e.repo === 'n/a' ? '—' : e.repo)]
+  ];
+  return '<header ' + catVar(e.cat) + '><a class="hc-title" href="' + extHref(e.name) + '">' + esc(e.name) + '</a>'
+    + cardBadgeHTML(e) + '</header>'
+    + (e.avail ? '<a class="hc-sub" href="' + pkgHref(e.pkg) + '">' + bi('Package: ', '软件包：') + esc(e.pkg) + '</a>' : '')
+    + '<p class="hc-desc">' + esc(desc(e)) + '</p>'
+    + '<dl class="hc-facts">' + facts.map(([k, v]) => '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>').join('') + '</dl>'
+    + (links ? '<div class="hc-links">' + links + '</div>' : '');
+}
+
+function positionHovercard(anchor) {
+  const el = hovercardEl();
+  if (!anchor.isConnected) { hideHovercard(); return; }
+  const r = anchor.getBoundingClientRect();
+  const w = el.offsetWidth, h = el.offsetHeight;
+  const vw = window.innerWidth, vh = window.innerHeight;
+  let x = r.right + 10, y = r.top;
+  if (x + w > vw - 8) x = r.left - w - 10;
+  if (x < 8) { x = Math.min(Math.max(8, r.left), Math.max(8, vw - w - 8)); y = r.bottom + 8; }
+  if (y + h > vh - 8) y = Math.max(8, vh - h - 8);
+  el.style.left = Math.round(x) + 'px';
+  el.style.top = Math.round(y) + 'px';
+}
+
+function showHovercard(anchor, name) {
+  const e = byName.get(name);
+  if (!e) return;
+  const el = hovercardEl();
+  hcName = name;
+  el.innerHTML = hovercardHTML(e, FULLC.get(name));
+  el.classList.add('show');
+  positionHovercard(anchor);
+  hideTip();
+  const seq = ++hcSeq;
+  if (!FULLC.get(name)) {
+    j('/api/v1/ext/' + encodeURIComponent(name)).then(full => {
+      FULLC.set(name, full);
+      if (seq === hcSeq && hcName === name && el.classList.contains('show')) {
+        el.innerHTML = hovercardHTML(e, full);
+        positionHovercard(anchor);
+      }
+    }).catch(() => {});
+  }
+}
+
+function hideHovercard() {
+  clearTimeout(hcShowTimer);
+  clearTimeout(hcHideTimer);
+  hcName = null; hcPendingName = null;
+  if (hcEl) hcEl.classList.remove('show');
+}
+
+function scheduleHovercardHide() {
+  clearTimeout(hcHideTimer);
+  hcHideTimer = setTimeout(hideHovercard, HOVER_GRACE);
+}
+
+function bindHovercard() {
+  if (window.matchMedia && !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  document.addEventListener('mouseover', ev => {
+    const trigger = ev.target.closest('[data-hover-ext]');
+    if (!trigger) return;
+    clearTimeout(hcHideTimer);
+    const name = trigger.dataset.hoverExt;
+    if ((hcName === name && hcEl && hcEl.classList.contains('show')) || hcPendingName === name) return;
+    hcPendingName = name;
+    clearTimeout(hcShowTimer);
+    hcShowTimer = setTimeout(() => { hcPendingName = null; showHovercard(trigger, name); }, HOVER_DELAY);
+  });
+  document.addEventListener('mouseout', ev => {
+    const trigger = ev.target.closest('[data-hover-ext]');
+    if (!trigger) return;
+    if (ev.relatedTarget && (trigger.contains(ev.relatedTarget) || (hcEl && hcEl.contains(ev.relatedTarget)))) return;
+    hcPendingName = null;
+    clearTimeout(hcShowTimer);
+    scheduleHovercardHide();
+  });
+  window.addEventListener('scroll', () => { if (hcName) hideHovercard(); }, { passive: true });
+}
+
 /* ---------------- global events ---------------- */
 function attachEvents() {
+  bindHovercard();
   window.addEventListener('popstate', route);
   window.addEventListener('hashchange', route);
   window.addEventListener('resize', debounce(() => { drawField(); if (GMATRIX_VIEW) GMATRIX_VIEW.render(); }, 150));
@@ -2671,17 +3134,40 @@ function bootError(err) {
   document.getElementById('boot-retry').addEventListener('click', boot);
 }
 
+/* Boot with a warm-start cache: the last bootstrap payload is kept in
+   localStorage so revisits render instantly from the cached catalog, then a
+   conditional fetch (If-None-Match) revalidates it in the background. All
+   filtering, sorting and search run client-side over this dataset. */
+const BOOT_CACHE_KEY = 'pgext.boot.v4';
+
 async function boot() {
   applyTheme();
   document.documentElement.lang = LANG === 'zh' ? 'zh-CN' : 'en';
+  let cached = null;
+  try { cached = JSON.parse(localStorage.getItem(BOOT_CACHE_KEY) || 'null'); } catch (e) {}
+  if (cached && Array.isArray(cached.rows) && cached.rows.length && cached.rows[0].length >= 32) {
+    try { decodeBoot(cached); route(); } catch (e) { cached = null; }
+  } else { cached = null; }
   try {
-    const b = await j('/api/v1/bootstrap');
+    const headers = { Accept: 'application/json' };
+    if (cached && cached.version) headers['If-None-Match'] = '"b32-' + cached.version + '"';
+    // The fmt query parameter mirrors the server's payload-format version so
+    // the browser HTTP cache can never serve an older payload layout to a
+    // newer app.js (the format also salts the ETag server-side).
+    const res = await fetch('/api/v1/bootstrap?fmt=b32', { headers });
+    if (res.status === 304) return; // cached catalog is current
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const b = await res.json();
+    const hadCache = Boolean(cached);
     decodeBoot(b);
+    try { localStorage.setItem(BOOT_CACHE_KEY, JSON.stringify(b)); } catch (e) {}
+    const y = window.scrollY;
+    currentPath = null; // re-render the live route with fresh data
+    route();
+    if (hadCache) window.scrollTo(0, y);
   } catch (err) {
-    bootError(err);
-    return;
+    if (!cached) bootError(err);
   }
-  route();
 }
 
 attachEvents();
