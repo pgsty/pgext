@@ -6,9 +6,9 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
-## 2026-07-22
+## 2026-07-24
 
-This batch records extension changes from 2026-07-07 through 2026-07-22: new extensions, version upgrades, Rust/pgrx rebuilds, and package-matrix gap repairs. Rows with unchanged versions record packaging or coverage changes; package or SQL-version differences are called out where they matter.
+This batch records extension changes from 2026-07-07 through 2026-07-24: new extensions, version upgrades, Rust/pgrx rebuilds, and package-matrix gap repairs. Rows with unchanged versions record packaging or coverage changes; package or SQL-version differences are called out where they matter.
 
 | Extension               | Old      | New      | Comment                                                                                            |
 |:------------------------|:---------|:---------|:---------------------------------------------------------------------------------------------------|
@@ -102,6 +102,7 @@ This batch records extension changes from 2026-07-07 through 2026-07-22: new ext
 | ogr_fdw                 | 1.1.8    | 1.1.9    | PG 14-18.                                                                                          |
 | pg_dbms_errlog          | 2.2      | 2.4      | PG 14-18.                                                                                          |
 | pg_ivm                  | 1.14     | 1.15     | PG 14-18.                                                                                          |
+| pg_net                  | 0.20.3   | 0.20.5   | PG 14-18; 0.20.5 on D12/D13/U24/U26, while U22 remains 0.9.2 because its libcurl is too old.       |
 | pg_statement_rollback   | 1.5      | 1.6      | PG 14-18.                                                                                          |
 | pg_tde                  | 2.1      | 2.2      | PG 17-18; Percona packages.                                                                        |
 | pgauditlogtofile        | 1.8.4    | 1.8.5    | PG 14-18.                                                                                          |
@@ -118,6 +119,7 @@ This batch records extension changes from 2026-07-07 through 2026-07-22: new ext
 | re2                     | 0.3.0    | 0.4.1    | PG 16-18.                                                                                          |
 | snowflake               | 2.4      | 2.5.0    | pgEdge PG 15-18.                                                                                   |
 | spock                   | 5.0.6    | 5.0.10   | pgEdge PG 15-18.                                                                                   |
+| system_stats            | 4.0      | 4.1      | PG 14-18 on all 10 Debian/Ubuntu targets.                                                          |
 | tdigest                 | 1.4.3    | 1.4.4    | PG 14-18.                                                                                          |
 | timescaledb             | 2.28.2   | 2.28.3   | PG 15-18 uses 2.28.3; PG 14 uses 2.19.3, now filled on all six EL targets.                         |
 | vector                  | 0.8.4    | 0.8.5    | PG 14-18.                                                                                          |
@@ -126,7 +128,7 @@ This batch records extension changes from 2026-07-07 through 2026-07-22: new ext
 | citus                   | 14.1.0   | 14.1.0   | Citus 13.0.0 packages fill EL10 x86_64/aarch64 PG 14 RPM gaps.                                     |
 | dbt2                    | 0.61.7   | 0.61.7   | adds Pigsty DEB for PG 14-18 and fills EL8 x86_64/aarch64 PG 17-18 RPM gaps.                       |
 | decoder_raw             | 1.0      | 1.0      | fills EL10 and D13, both architectures, PG 14-16.                                                  |
-| faker                   | 0.5.3    | 0.5.3    | adds Pigsty DEB for PG 14-18.                                                                      |
+| faker                   | 0.5.3    | 0.5.3    | adds Pigsty DEB for PG 14-18 and a python3-fake-factory 22.0.0 runtime backport for D12/U22.       |
 | gb18030_2022            | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
 | h3                      | 4.2.3    | 4.2.3    | fills EL8 x86_64 PG 17-18 RPM gaps.                                                                |
 | hdfs_fdw                | 2.3.3    | 2.3.3    | adds Pigsty DEB for PG 14-18.                                                                      |
@@ -157,14 +159,17 @@ This batch records extension changes from 2026-07-07 through 2026-07-22: new ext
 | pg_strom                | 6.1      | 6.1      | a compatible pg_strom 3.5 package fills the EL10 x86_64 PG 14 RPM gap.                             |
 | pgautofailover          | 2.2      | 2.2      | fills PG 18 RPM gaps on all six EL targets.                                                        |
 | pgbouncer_fdw           | 1.4.0    | 1.4.0    | adds Pigsty DEB for PG 14-18.                                                                      |
-| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | fills U26 amd64/arm64 PG 14-17 DEB gaps.                                                           |
+| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | fills PG 18 on all 10 DEB targets; U26 also uses Pigsty packages for PG 14-17.                     |
+| pgspider_ext            | 1.3.0    | 1.3.0    | adds PG 18 on all 10 DEB targets; PG 15-18.                                                        |
 | pglogical_ticker        | 1.4.1    | 1.4.1    | fills PG 14-17 RPM gaps on all six EL targets.                                                     |
 | pgmemcache              | 2.3.0    | 2.3.0    | fills EL8 aarch64 PG 14-15 RPM gaps.                                                               |
 | pgml                    | 2.10.0   | 2.10.0   | fills EL10, D13 and U26, both architectures, PG 14-17.                                             |
 | plisql                  | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
 | pllua                   | 2.0.12   | 2.0.12   | fills PG 18 on all six EL targets plus EL8 aarch64 PG 14-15.                                       |
-| rdkit                   | 202503.6 | 202503.6 | 202303.3 packages fill EL8/9, D12 and U22 gaps for PG 14-18.                                       |
+| rdkit                   | 202503.6 | 202503.6 | cartridge-only gaps: D12/U22 PG 17-18 use 202303.3; U26 PG 14-17 uses 202503.6; runtimes stay upstream. |
+| sqlite_fdw              | 2.5.0    | 2.5.0    | adds PG 18 on all 10 DEB targets; PG 14-18.                                                        |
 | sslutils                | 1.4      | 1.4      | fills EL8 x86_64/aarch64 PG 18 RPM gaps.                                                           |
+| wal2mongo               | 1.0.7    | 1.0.7    | adds PG 17-18 on all 10 DEB targets; PG 14-18.                                                     |
 
 ## 2026-07-07
 
