@@ -252,7 +252,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.1 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.10.1 | extended check for plpgsql functions |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.10.2 | extended check for plpgsql functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |

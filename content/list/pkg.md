@@ -168,7 +168,7 @@ There are 400 available PostgreSQL packages:
 | {{< ext "pllua" >}} | `2.0.12` | {{< badge content="Link" link="https://github.com/pllua/pllua" >}} | {{< category "LANG" >}} | `pllua_$v` | `postgresql-$v-pllua` |
 | {{< ext "plprql" >}} | `18.0.1` | {{< badge content="Link" link="https://github.com/kaspermarstal/plprql" >}} | {{< category "LANG" >}} | `plprql_$v` | `postgresql-$v-plprql` |
 | {{< ext "pldbgapi" "pldebugger" >}} | `1.10` | {{< badge content="Link" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< category "LANG" >}} | `pldebugger_$v` | `postgresql-$v-pldebugger` |
-| {{< ext "plpgsql_check" >}} | `2.10.1` | {{< badge content="Link" link="https://github.com/okbob/plpgsql_check" >}} | {{< category "LANG" >}} | `plpgsql_check_$v` | `postgresql-$v-plpgsql-check` |
+| {{< ext "plpgsql_check" >}} | `2.10.2` | {{< badge content="Link" link="https://github.com/okbob/plpgsql_check" >}} | {{< category "LANG" >}} | `plpgsql_check_$v` | `postgresql-$v-plpgsql-check` |
 | {{< ext "plprofiler" >}} | `4.2.5` | {{< badge content="Link" link="https://github.com/bigsql/plprofiler" >}} | {{< category "LANG" >}} | `plprofiler_$v` | `postgresql-$v-plprofiler` |
 | {{< ext "plsh" >}} | `1.20220917` | {{< badge content="Link" link="https://github.com/petere/plsh" >}} | {{< category "LANG" >}} | `plsh_$v` | `postgresql-$v-plsh` |
 | {{< ext "pljava" >}} | `1.6.10` | {{< badge content="Link" link="https://github.com/tada/pljava" >}} | {{< category "LANG" >}} | `pljava_$v` | `postgresql-$v-pljava` |
