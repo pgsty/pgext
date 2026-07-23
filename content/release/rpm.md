@@ -6,139 +6,165 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
-## 2026-07-21
+## 2026-07-22
 
-This batch consolidates extension changes across the RPM and DEB repositories since 2026-07-07: 26 new extensions, 50 Rust/pgrx upgrades or rebuilds, 33 other version upgrades, and 18 package-side or support-matrix changes. Old and New refer to the logical extension version; package-version differences are noted explicitly.
+This batch records extension changes from 2026-07-07 through 2026-07-22: new extensions, version upgrades, Rust/pgrx rebuilds, and package-matrix gap repairs. Rows with unchanged versions record packaging or coverage changes; package or SQL-version differences are called out where they matter.
 
-| Type | Extension | Old | New | Comment |
-|:-----|:----------|:----|:----|:--------|
-| New | argm | - | 1.1.1 | New; PG 14-18; adds the PostgreSQL 16+ varlena header compatibility fix. |
-| New | cron_utils | - | 0.1.0 | New SQL-only extension; PG 14-18; PGXN marks 0.1.0 as unstable. |
-| New | fbsql | - | 0.1.0 | New; PG 16-18; requires PL/R >= 8.4.0. |
-| New | oidc_validator | - | 0.1.0 | New Rust OIDC module; PG 18; upstream pgrx 0.16.1 patched to 0.19.1; 16 platforms; upstream provides no license grant. |
-| New | online_advisor | - | 1.0 | New; PG 14-18; backports the PG18 hook fix; PG14-16 require preload. |
-| New | pg_cjk_parser | - | 0.1.0 | New; PG 14-18; adds PG_CONFIG build selection and dependency fixes. |
-| New | pg_extension_base | - | 3.4 | New pg_lake 3.4.0 component; PG 16-18; requires preload. |
-| New | pg_extension_updater | - | 3.4 | New optional pg_lake 3.4.0 component; PG 16-18. |
-| New | pg_fts | - | 0.2.0 | New; PG 17-18; trusted and relocatable; RPM also ships an llvmjit subpackage. |
-| New | pg_jieba | - | 1.1.0 | New; package 2.0.1, extension 1.1.0; PG 14-18; fixes LexDescr allocation and CMake 4 builds. |
-| New | pg_kpart | - | 1.0 | New; PG 14-18; planner hook requires shared/session preload; 16 platforms. |
-| New | pg_lake | - | 3.4 | New; package 3.4.0, extension 3.4; PG 16-18; RPM supports EL9/10 only, DEB covers all Debian/Ubuntu targets. |
-| New | pg_lake_copy | - | 3.4 | New pg_lake 3.4.0 component; PG 16-18; RPM supports EL9/10 only. |
-| New | pg_lake_engine | - | 3.4 | New pg_lake query-engine component; PG 16-18; delegated execution requires pgduck_server. |
-| New | pg_lake_iceberg | - | 3.4 | New pg_lake component; PG 16-18; requires pg_lake_engine. |
-| New | pg_lake_table | - | 3.4 | New pg_lake component; PG 16-18; loaded in order by pg_extension_base. |
-| New | pg_map | - | 3.4 | New pg_lake component; PG 16-18; not the unrelated array-mapping project. |
-| New | pg_oidc_validator | - | 0.2 | New Percona C++ OIDC module; PG 18; GCC 11/12 patch; DEB fully covered, RPM EL10 only after EL8/9 libstdc++ ABI failures. |
-| New | pg_roast | - | 1.0 | New; PG 14-18; pins main commit ccbf012; periodic worker requires preload. |
-| New | pg_tiktoken_c | - | 1.1 | New; PG 14-18; pins commit fa2957b; DESTDIR/correctness patches; pinned snapshot lacks LICENSE. |
-| New | pgfr_analyze | - | 2.29.2 | New secondary pg_flight_recorder 2.29.2 extension; PG 15-18; requires pgfr_record. |
-| New | pgfr_record | - | 2.29.2 | New primary pg_flight_recorder extension; PG 15-18, no PG14; normalizes the control version and defers scheduling until commit. |
-| New | pgmemento | - | 0.7.4 | New SQL-only extension; PG 14-18; includes upgrade scripts from 0.7-0.7.3 to 0.7.4. |
-| New | pgmonitor | - | 2.2.0 | New; PG 14-18; metrics need no preload, optional worker requires pgmonitor_bgw preload. |
-| New | pgsqlmock | - | 1.0.1 | New; PG 14-18; fixes the control dependency name from pgTap to pgtap. |
-| New | plx | - | 1.3.1 | New; PG 14-18; validated on 16 platforms; uses the built-in PL/pgSQL handler. |
-| Rust | anon | 3.1.1 | 3.1.3 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | block_copy_command | 0.1.5 | 0.1.5 | requires preload; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | convert | 0.1.0 | 0.1.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | etcd_fdw | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | explain_ui | 0.0.2 | 0.0.2 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | graph | 0.1.7 | 0.1.8 | package name pggraph; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | jsonschema | 0.1.9 | 0.1.9 | distinct from Supabase pg_jsonschema; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_base58 | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_bestmatch | 0.0.2 | 0.0.2 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_cardano | 1.2.0 | 1.2.0 | pgrx 0.18.1 -> 0.19.1; PG 15-18. |
-| Rust | pg_command_fw | 0.1.0 | 0.1.0 | hook activation requires preload; pgrx 0.18.1 -> 0.19.1; PG 15-18. |
-| Rust | pg_durable | 0.2.2 | 0.2.3 | requires preload and a superuser worker role; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_enigma | 0.5.0 | 0.5.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_eviltransform | 0.0.2 | 0.0.4 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_graphql | 1.6.1 | 1.6.1 | not an official upstream release; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_idkit | 0.4.0 | 0.4.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_jsonschema | 0.3.4 | 0.3.4 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_kazsearch | 2.2.0 | 2.3.0 | upstream uses pgrx 0.17.0, Pigsty patches to 0.19.1; pgrx 0.18.1 -> 0.19.1; PG 16-18. |
-| Rust | pg_later | 0.4.0 | 0.4.0 | also includes a runtime compatibility fix; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_mooncake | 0.2.0 | 0.2.0 | 0.2.0 is not an official release; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_parquet | 0.5.1 | 0.5.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_pinyin | 0.0.4 | 0.0.5 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_polyline | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_render | 0.1.3 | 0.1.3 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_rrf | 0.0.3 | 0.0.3 | adds PG18; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_search | 0.24.0 | 0.24.3 | pins the builder Rust toolchain; pgrx 0.18.1 -> 0.19.1; PG 15-18. |
-| Rust | pg_session_jwt | 0.5.0 | 0.5.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_smtp_client | 0.2.1 | 0.2.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_strict | 1.0.5 | 1.0.5 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_summarize | 0.0.1 | 0.0.1 | includes a PG18 compatibility fix; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_tiktoken | 0.0.1 | 0.0.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_tokenizer | 0.1.1 | 0.1.1 | includes a PG18 compatibility fix; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pg_trickle | 0.81.0 | 0.81.0 | PG18 only; preserves the pgrx schema linker section; pgrx 0.18.1 -> 0.19.1; PG 18. |
-| Rust | pg_when | 0.1.9 | 0.1.9 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pgdd | 0.6.1 | 0.6.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pglinter | 2.0.0 | 2.0.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pglite_fusion | 0.0.6 | 0.0.6 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pgmqtt | 0.3.0 | 0.4.1 | CDC requires wal_level=logical; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pgrdf | 0.6.4 | 0.6.20 | adds PG18; preload recommended; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pgsmcrypto | 0.1.1 | 0.1.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | pgx_ulid | 0.2.3 | 0.2.3 | only gen_monotonic_ulid() requires preload; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | plprql | 18.0.1 | 18.0.1 | also includes a runtime compatibility fix; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | timescaledb_toolkit | 1.23.0 | 1.23.0 | pgrx 0.18.1 -> 0.19.1; PG 15-18. |
-| Rust | typeid | 0.3.0 | 0.3.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | tzf | 0.3.0 | 0.3.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | vchord | 1.1.1 | 1.1.1 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | vchord_bm25 | 0.3.0 | 0.3.0 | bm25 AM conflicts with pg_search/pg_textsearch; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | vectorize | 0.26.2 | 0.26.2 | version was incorrectly changed to 0.23.0 and reverted; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | vectorscale | 0.9.0 | 0.9.0 | pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Rust | wrappers | 0.6.1 | 0.6.2 | intermediate DuckDB FDW feature change was reverted; pgrx 0.18.1 -> 0.19.1; PG 14-18. |
-| Upgrade | babelfishpg_tsql | 5.5.0 | 5.4.0 | Downward correction; expands from PG17 to PG17-18; WiltonDB kernel only. |
-| Upgrade | biscuit | 2.4.1 | 2.4.3 | PG 16-18; package 2.4.3, but control/SQL default remains 2.4.1. |
-| Upgrade | decoderbufs | 3.5.0 | 3.6.0 | PG 14-18; PGDG RPM/DEB. |
-| Upgrade | documentdb | 0.113 | 0.114 | Bundled with three subextensions; PG 15-18; 16 platforms; final flow drops temporary export/cache patches. |
-| Upgrade | documentdb_core | 0.113 | 0.114 | Bundled documentdb extension; PG 15-18; 16 platforms. |
-| Upgrade | documentdb_distributed | 0.113 | 0.114 | Bundled documentdb extension; PG 15-18; 16 platforms. |
-| Upgrade | documentdb_extended_rum | 0.113 | 0.114 | Bundled documentdb extension; PG 15-18; 16 platforms. |
-| Upgrade | http | 1.7.1 | 1.7.2 | PG 14-18; PGDG RPM/DEB. |
-| Upgrade | jdbc_fdw | 0.4.0 | 0.5.0 | Source/package 0.5.0, SQL extension 1.2; RPM PG14-16 with no EL aarch64; DEB PG14-18 with PG18 patch. |
-| Upgrade | nominatim_fdw | 1.3 | 2.0.0 | PG 14-18; Pigsty RPM/DEB aligned. |
-| Upgrade | odbc_fdw | 0.5.1 | 0.6.1 | Source/package 0.6.1, SQL extension 0.5.2; PG 14-18; PGDG RPM, Pigsty DEB. |
-| Upgrade | ogr_fdw | 1.1.8 | 1.1.9 | PG 14-18; PGDG RPM/DEB. |
-| Upgrade | pg_dbms_errlog | 2.2 | 2.4 | PG 14-18; requires pg_statement_rollback and preload/restart. |
-| Upgrade | pg_ivm | 1.14 | 1.15 | PG 14-18. |
-| Upgrade | pg_statement_rollback | 1.5 | 1.6 | PG 14-18; PGDG RPM, Pigsty DEB. |
-| Upgrade | pg_tde | 2.1 | 2.2 | PG 17-18 only; Percona TDE kernel. |
-| Upgrade | pgauditlogtofile | 1.8.4 | 1.8.5 | PG 14-18; PGDG RPM/DEB. |
-| Upgrade | pgbson | 2.0.2 | 2.0.4 | Package 2.0.4 still installs SQL extension 2.0; RPM family postgresbson; requires libbson. |
-| Upgrade | pgclone | 4.3.2 | 4.4.2 | PG 14-18; retains RPM LLVM_BINPATH fix; async/progress features require preload. |
-| Upgrade | pgextwlist | 1.19 | 1.20 | PG 14-18; PGDG RPM/DEB. |
-| Upgrade | pgmnemo | 0.12.1 | 0.13.0 | Support narrowed to PG 17-18; SQL-only; requires pgvector >= 0.7.0. |
-| Upgrade | pgmq | 1.11.1 | 1.12.0 | PG 14-18; SQL-only. |
-| Upgrade | pgsentinel | 1.4.1 | 1.4.2 | PG 14-18; this batch has RPM 1.4.2 only, while DEB/control remains 1.4.1; explicit RPM-only exception. |
-| Upgrade | plpgsql_check | 2.9.2 | 2.10.1 | PG 14-18; Pigsty RPM/DEB aligned. |
-| Upgrade | plproxy | 2.11.0 | 2.12.0 | PG 14-18; Pigsty RPM and PGDG DEB aligned. |
-| Upgrade | powa | 5.1.2 | 5.2.0 | PG 14-18; PGDG DEB is 5.2.0 while RPM remains 5.1.0. |
-| Upgrade | provsql | 1.10.0 | 1.11.0 | PG 14-18. |
-| Upgrade | re2 | 0.3.0 | 0.4.1 | PG 16-18; Pigsty RPM/DEB. |
-| Upgrade | snowflake | 2.4 | 2.5.0 | Expands from PG18 to PG15-18; pgEdge kernel only. |
-| Upgrade | spock | 5.0.6 | 5.0.10 | Expands from PG18 to PG15-18; pgEdge kernel only. |
-| Upgrade | tdigest | 1.4.3 | 1.4.4 | PG 14-18; PGDG RPM/DEB. |
-| Upgrade | timescaledb | 2.28.2 | 2.28.3 | PG 15-18; timescaledb-tsl; 16 platforms. |
-| Upgrade | vector | 0.8.4 | 0.8.5 | PG 14-18; PGDG RPM and Pigsty DEB aligned. |
-| Package | babelfishpg_money | 1.1.0 | 1.1.0 | Version unchanged; expands from PG17 to PG17-18; WiltonDB kernel only. |
-| Package | babelfishpg_tds | 1.0.0 | 1.0.0 | Version unchanged; expands from PG17 to PG17-18; WiltonDB kernel only. |
-| Package | dbt2 | 0.61.7 | 0.61.7 | Adds Pigsty DEB; PG 14-18; SQL extension version remains 0.45.0. |
-| Package | faker | 0.5.3 | 0.5.3 | Adds Pigsty DEB; PG 14-18; includes PG17+ parser patch. |
-| Package | gb18030_2022 | 1.0 | 1.0 | IvorySQL contrib package 5.1 -> 5.4; IvorySQL 18 only; 16 platforms. |
-| Package | hdfs_fdw | 2.3.3 | 2.3.3 | Adds Pigsty DEB; PG 14-18; SQL extension version 2.0.5. |
-| Package | ivorysql_ora | 1.0 | 1.0 | IvorySQL contrib package 5.1 -> 5.4; IvorySQL 18 only; 16 platforms. |
-| Package | mobilitydb | 1.3.0 | 1.3.0 | Adds Pigsty RPM 1.3.0; PG 14-18 on EL8/9/10, both architectures; DEB already at 1.3.0. |
-| Package | mobilitydb_datagen | 1.3.0 | 1.3.0 | Adds RPM with the mobilitydb package; PG 14-18. |
-| Package | ora_btree_gin | 1.0 | 1.0 | IvorySQL contrib package 5.1 -> 5.4; IvorySQL 18 only; 16 platforms. |
-| Package | ora_btree_gist | 1.0 | 1.0 | IvorySQL contrib package 5.1 -> 5.4; IvorySQL 18 only; 16 platforms. |
-| Package | pg_dbms_job | 2.0 | 2.0 | Adds Pigsty DEB; PG 14-18; worker requires preload/restart. |
-| Package | pg_dbms_lock | 2.0 | 2.0 | Adds Pigsty DEB; PG 14-18; includes pg_background v2 API compatibility. |
-| Package | pg_dbms_metadata | 1.0.0 | 1.0.0 | Adds Pigsty DEB; PG 14-18; PGDG RPM lacks PG15 on EL8 aarch64. |
-| Package | pg_fact_loader | 2.0.1 | 2.0.1 | Version unchanged; DEB adds PG18 and fills PG14-18 gaps for Ubuntu 26.04. |
-| Package | pg_get_functiondef | 1.0 | 1.0 | IvorySQL contrib package 5.1 -> 5.4; IvorySQL 18 only; 16 platforms. |
-| Package | pgbouncer_fdw | 1.4.0 | 1.4.0 | Adds Pigsty DEB; PG 14-18; runtime requires a PgBouncer admin console. |
-| Package | plisql | 1.0 | 1.0 | IvorySQL contrib package 5.1 -> 5.4; IvorySQL 18 only; 16 platforms. |
+| Extension               | Old      | New      | Comment                                                                                            |
+|:------------------------|:---------|:---------|:---------------------------------------------------------------------------------------------------|
+| argm                    | -        | 1.1.1    | New; PG 14-18.                                                                                     |
+| cron_utils              | -        | 0.1.0    | New SQL-only extension; PG 14-18.                                                                  |
+| fbsql                   | -        | 0.1.0    | New; PG 16-18; requires PL/R.                                                                      |
+| oidc_validator          | -        | 0.1.0    | New Rust OIDC module; PG 18.                                                                       |
+| online_advisor          | -        | 1.0      | New; PG 14-18.                                                                                     |
+| pg_cjk_parser           | -        | 0.1.0    | New; PG 14-18.                                                                                     |
+| pg_extension_base       | -        | 3.4      | New pg_lake 3.4.0 component; PG 16-18; RPM EL9/10 only.                                            |
+| pg_extension_updater    | -        | 3.4      | New pg_lake 3.4.0 component; PG 16-18; RPM EL9/10 only.                                            |
+| pg_fts                  | -        | 0.2.0    | New; PG 17-18.                                                                                     |
+| pg_jieba                | -        | 1.1.0    | New; package 2.0.1, SQL extension 1.1.0; PG 14-18.                                                 |
+| pg_kpart                | -        | 1.0      | New; PG 14-18.                                                                                     |
+| pg_lake                 | -        | 3.4      | New pg_lake 3.4.0 bundle; PG 16-18; RPM EL9/10 only.                                               |
+| pg_lake_copy            | -        | 3.4      | New pg_lake 3.4.0 component; PG 16-18; RPM EL9/10 only.                                            |
+| pg_lake_engine          | -        | 3.4      | New pg_lake 3.4.0 component; PG 16-18; RPM EL9/10 only.                                            |
+| pg_lake_iceberg         | -        | 3.4      | New pg_lake 3.4.0 component; PG 16-18; RPM EL9/10 only.                                            |
+| pg_lake_table           | -        | 3.4      | New pg_lake 3.4.0 component; PG 16-18; RPM EL9/10 only.                                            |
+| pg_map                  | -        | 3.4      | New pg_lake 3.4.0 component; PG 16-18; RPM EL9/10 only.                                            |
+| pg_oidc_validator       | -        | 0.2      | New Percona OIDC module; PG 18; DEB all targets, RPM EL10 only.                                    |
+| pg_roast                | -        | 1.0      | New; PG 14-18.                                                                                     |
+| pg_tiktoken_c           | -        | 1.1      | New; PG 14-18.                                                                                     |
+| pgfr_analyze            | -        | 2.29.2   | New pg_flight_recorder component; PG 15-18.                                                        |
+| pgfr_record             | -        | 2.29.2   | New pg_flight_recorder component; PG 15-18.                                                        |
+| pgmemento               | -        | 0.7.4    | New SQL-only extension; PG 14-18.                                                                  |
+| pgmonitor               | -        | 2.2.0    | New; PG 14-18.                                                                                     |
+| pgsqlmock               | -        | 1.0.1    | New; PG 14-18.                                                                                     |
+| plx                     | -        | 1.3.1    | New; PG 14-18.                                                                                     |
+| anon                    | 3.1.1    | 3.1.3    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| block_copy_command      | 0.1.5    | 0.1.5    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| convert                 | 0.1.0    | 0.1.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| etcd_fdw                | 0.0.1    | 0.0.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| explain_ui              | 0.0.2    | 0.0.2    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| graph                   | 0.1.7    | 0.1.8    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| jsonschema              | 0.1.9    | 0.1.9    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_base58               | 0.0.1    | 0.0.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_bestmatch            | 0.0.2    | 0.0.2    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_cardano              | 1.2.0    | 1.2.0    | pgrx 0.18.1 -> 0.19.1; PG 15-18.                                                                   |
+| pg_command_fw           | 0.1.0    | 0.1.0    | pgrx 0.18.1 -> 0.19.1; PG 15-18.                                                                   |
+| pg_durable              | 0.2.2    | 0.2.3    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_enigma               | 0.5.0    | 0.5.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_eviltransform        | 0.0.2    | 0.0.4    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_graphql              | 1.6.1    | 1.6.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_idkit                | 0.4.0    | 0.4.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_jsonschema           | 0.3.4    | 0.3.4    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_kazsearch            | 2.2.0    | 2.3.0    | pgrx 0.18.1 -> 0.19.1; PG 16-18.                                                                   |
+| pg_later                | 0.4.0    | 0.4.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_mooncake             | 0.2.0    | 0.2.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_parquet              | 0.5.1    | 0.5.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_pinyin               | 0.0.4    | 0.0.5    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_polyline             | 0.0.1    | 0.0.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_render               | 0.1.3    | 0.1.3    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_rrf                  | 0.0.3    | 0.0.3    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_search               | 0.24.0   | 0.24.3   | pgrx 0.18.1 -> 0.19.1; PG 15-18.                                                                   |
+| pg_session_jwt          | 0.5.0    | 0.5.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_smtp_client          | 0.2.1    | 0.2.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_strict               | 1.0.5    | 1.0.5    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_summarize            | 0.0.1    | 0.0.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_tiktoken             | 0.0.1    | 0.0.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_tokenizer            | 0.1.1    | 0.1.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pg_trickle              | 0.81.0   | 0.81.0   | pgrx 0.18.1 -> 0.19.1; PG 18.                                                                      |
+| pg_when                 | 0.1.9    | 0.1.9    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pgdd                    | 0.6.1    | 0.6.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pglinter                | 2.0.0    | 2.0.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pglite_fusion           | 0.0.6    | 0.0.6    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pgmqtt                  | 0.3.0    | 0.4.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pgrdf                   | 0.6.4    | 0.6.20   | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pgsmcrypto              | 0.1.1    | 0.1.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| pgx_ulid                | 0.2.3    | 0.2.3    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| plprql                  | 18.0.1   | 18.0.1   | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| timescaledb_toolkit     | 1.23.0   | 1.23.0   | pgrx 0.18.1 -> 0.19.1; PG 15-18.                                                                   |
+| typeid                  | 0.3.0    | 0.3.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| tzf                     | 0.3.0    | 0.3.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| vchord                  | 1.1.1    | 1.1.1    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| vchord_bm25             | 0.3.0    | 0.3.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| vectorize               | 0.26.2   | 0.26.2   | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| vectorscale             | 0.9.0    | 0.9.0    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| wrappers                | 0.6.1    | 0.6.2    | pgrx 0.18.1 -> 0.19.1; PG 14-18.                                                                   |
+| babelfishpg_tsql        | 5.5.0    | 5.4.0    | Catalog version corrected to 5.4.0; Babelfish PG 17-18.                                            |
+| biscuit                 | 2.4.1    | 2.4.3    | PG 16-18; package 2.4.3, SQL default remains 2.4.1.                                                |
+| decoderbufs             | 3.5.0    | 3.6.0    | PG 14-18; DEB 3.6.0, RPM remains 3.5.0.                                                            |
+| documentdb              | 0.113    | 0.114    | PG 15-18; 16 platforms.                                                                            |
+| documentdb_core         | 0.113    | 0.114    | PG 15-18; 16 platforms.                                                                            |
+| documentdb_distributed  | 0.113    | 0.114    | PG 15-18; 16 platforms.                                                                            |
+| documentdb_extended_rum | 0.113    | 0.114    | PG 15-18; 16 platforms.                                                                            |
+| http                    | 1.7.1    | 1.7.2    | PG 14-18.                                                                                          |
+| jdbc_fdw                | 0.4.0    | 0.5.0    | Package 0.5.0, SQL extension 1.2; PG 14-18; 16 platforms.                                          |
+| nominatim_fdw           | 1.3      | 2.0.0    | PG 14-18; 16 platforms.                                                                            |
+| odbc_fdw                | 0.5.1    | 0.6.1    | Package 0.6.1, SQL extension 0.5.2; PG 14-18.                                                      |
+| ogr_fdw                 | 1.1.8    | 1.1.9    | PG 14-18.                                                                                          |
+| pg_dbms_errlog          | 2.2      | 2.4      | PG 14-18.                                                                                          |
+| pg_ivm                  | 1.14     | 1.15     | PG 14-18.                                                                                          |
+| pg_statement_rollback   | 1.5      | 1.6      | PG 14-18.                                                                                          |
+| pg_tde                  | 2.1      | 2.2      | PG 17-18; Percona packages.                                                                        |
+| pgauditlogtofile        | 1.8.4    | 1.8.5    | PG 14-18.                                                                                          |
+| pgbson                  | 2.0.2    | 2.0.4    | Package 2.0.4, SQL extension remains 2.0; PG 14-18.                                                |
+| pgclone                 | 4.3.2    | 4.4.2    | PG 14-18.                                                                                          |
+| pgextwlist              | 1.19     | 1.20     | PG 14-18.                                                                                          |
+| pgmnemo                 | 0.12.1   | 0.13.0   | PG 17-18.                                                                                          |
+| pgmq                    | 1.11.1   | 1.12.0   | PG 14-18.                                                                                          |
+| pgsentinel              | 1.4.1    | 1.4.2    | PG 14-18; RPM 1.4.2; DEB remains 1.4.0, with U26 at 1.4.1.                                         |
+| plpgsql_check           | 2.9.2    | 2.10.1   | PG 14-18.                                                                                          |
+| plproxy                 | 2.11.0   | 2.12.0   | PG 14-18.                                                                                          |
+| powa                    | 5.1.2    | 5.2.0    | PG 14-18; DEB 5.2.0, RPM remains 5.1.0.                                                            |
+| provsql                 | 1.10.0   | 1.11.0   | PG 14-18.                                                                                          |
+| re2                     | 0.3.0    | 0.4.1    | PG 16-18.                                                                                          |
+| snowflake               | 2.4      | 2.5.0    | pgEdge PG 15-18.                                                                                   |
+| spock                   | 5.0.6    | 5.0.10   | pgEdge PG 15-18.                                                                                   |
+| tdigest                 | 1.4.3    | 1.4.4    | PG 14-18.                                                                                          |
+| timescaledb             | 2.28.2   | 2.28.3   | PG 15-18 uses 2.28.3; PG 14 uses 2.19.3, now filled on all six EL targets.                         |
+| vector                  | 0.8.4    | 0.8.5    | PG 14-18.                                                                                          |
+| babelfishpg_money       | 1.1.0    | 1.1.0    | Babelfish adds PG 18.                                                                              |
+| babelfishpg_tds         | 1.0.0    | 1.0.0    | Babelfish adds PG 18.                                                                              |
+| citus                   | 14.1.0   | 14.1.0   | Citus 13.0.0 packages fill EL10 x86_64/aarch64 PG 14 RPM gaps.                                     |
+| dbt2                    | 0.61.7   | 0.61.7   | adds Pigsty DEB for PG 14-18 and fills EL8 x86_64/aarch64 PG 17-18 RPM gaps.                       |
+| decoder_raw             | 1.0      | 1.0      | fills EL10 and D13, both architectures, PG 14-16.                                                  |
+| faker                   | 0.5.3    | 0.5.3    | adds Pigsty DEB for PG 14-18.                                                                      |
+| gb18030_2022            | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
+| h3                      | 4.2.3    | 4.2.3    | fills EL8 x86_64 PG 17-18 RPM gaps.                                                                |
+| hdfs_fdw                | 2.3.3    | 2.3.3    | adds Pigsty DEB for PG 14-18.                                                                      |
+| hstore_pllua            | 2.0.12   | 2.0.12   | adds RPM coverage on all six EL targets for PG 14-18 via Pigsty pllua.                             |
+| hstore_plluau           | 2.0.12   | 2.0.12   | adds RPM coverage on all six EL targets for PG 14-18 via Pigsty pllua.                             |
+| hunspell_cs_cz          | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_de_de          | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_en_us          | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_fr             | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_ne_np          | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_nl_nl          | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_nn_no          | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_pt_pt          | 1.0      | 1.0      | unified 16-platform package; pt_PT now uses pt_pt.stop to avoid the core portuguese.stop conflict. |
+| hunspell_ru_ru          | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| hunspell_ru_ru_aot      | 1.0      | 1.0      | unified hunspell package provides all 10 dictionaries on 16 platforms, PG 14-18.                   |
+| imgsmlr                 | 1.0      | 1.0      | fills EL10 and D13, both architectures, PG 14-18.                                                  |
+| ivorysql_ora            | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
+| mobilitydb              | 1.3.0    | 1.3.0    | adds Pigsty RPM on six EL targets for PG 14-18 and fills the U22 PG 18 DEB gap.                    |
+| mobilitydb_datagen      | 1.3.0    | 1.3.0    | bundled with mobilitydb; adds six-target EL RPM coverage and fills the U22 PG 18 DEB gap.          |
+| omni                    | 0.2.14   | 0.2.14   | omnigres 20251108 fills EL10 PG 14-18 and EL8/9/D12/U22 PG 18 gaps on both architectures.          |
+| ora_btree_gin           | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
+| ora_btree_gist          | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
+| pg_dbms_job             | 2.0      | 2.0      | adds Pigsty DEB for PG 14-18.                                                                      |
+| pg_dbms_lock            | 2.0      | 2.0      | adds Pigsty DEB for PG 14-18.                                                                      |
+| pg_dbms_metadata        | 1.0.0    | 1.0.0    | adds Pigsty DEB for PG 14-18 and fills the EL8 aarch64 PG 15 RPM gap.                              |
+| pg_fact_loader          | 2.0.1    | 2.0.1    | fills U26 PG 14-18 DEB gaps.                                                                       |
+| pg_get_functiondef      | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
+| pg_strom                | 6.1      | 6.1      | a compatible pg_strom 3.5 package fills the EL10 x86_64 PG 14 RPM gap.                             |
+| pgautofailover          | 2.2      | 2.2      | fills PG 18 RPM gaps on all six EL targets.                                                        |
+| pgbouncer_fdw           | 1.4.0    | 1.4.0    | adds Pigsty DEB for PG 14-18.                                                                      |
+| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | fills U26 amd64/arm64 PG 14-17 DEB gaps.                                                           |
+| pglogical_ticker        | 1.4.1    | 1.4.1    | fills PG 14-17 RPM gaps on all six EL targets.                                                     |
+| pgmemcache              | 2.3.0    | 2.3.0    | fills EL8 aarch64 PG 14-15 RPM gaps.                                                               |
+| pgml                    | 2.10.0   | 2.10.0   | fills EL10, D13 and U26, both architectures, PG 14-17.                                             |
+| plisql                  | 1.0      | 1.0      | IvorySQL contrib package updated to 5.4; IvorySQL 18; 16 platforms.                                |
+| pllua                   | 2.0.12   | 2.0.12   | fills PG 18 on all six EL targets plus EL8 aarch64 PG 14-15.                                       |
+| rdkit                   | 202503.6 | 202503.6 | 202303.3 packages fill EL8/9, D12 and U22 gaps for PG 14-18.                                       |
+| sslutils                | 1.4      | 1.4      | fills EL8 x86_64/aarch64 PG 18 RPM gaps.                                                           |
 
 ## 2026-07-07
 

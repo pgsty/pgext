@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5140** | {{< badge content="pg_permissions" link="https://github.com/cybertec-postgresql/pg_permissions" >}} | {{< ext "pg_permissions" >}} | `1.4` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "SQL" >}} |
+| **5140** | {{< badge content="pg_permissions" link="https://github.com/cybertec-postgresql/pg_permissions" >}} | {{< ext "pg_permissions" >}} | `1.4.1` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,13 +26,15 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_readonly" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_upless" >}} {{< ext "safeupdate" >}} {{< ext "pgauditlogtofile" >}} {{< ext "credcheck" >}} {{< ext "login_hook" >}} |
 
+> [!Note] Latest PGDG RPM/catalog version is 1.4.1; PGDG DEB remains on 1.4.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_permissions` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4` | {{< bg "18" "pg_permissions_18" "green" >}} {{< bg "17" "pg_permissions_17" "green" >}} {{< bg "16" "pg_permissions_16" "green" >}} {{< bg "15" "pg_permissions_15" "green" >}} {{< bg "14" "pg_permissions_14" "green" >}} | `pg_permissions_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_permissions` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "18" "pg_permissions_18" "green" >}} {{< bg "17" "pg_permissions_17" "green" >}} {{< bg "16" "pg_permissions_16" "green" >}} {{< bg "15" "pg_permissions_15" "green" >}} {{< bg "14" "pg_permissions_14" "green" >}} | `pg_permissions_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4` | {{< bg "18" "postgresql-18-pg-permissions" "green" >}} {{< bg "17" "postgresql-17-pg-permissions" "green" >}} {{< bg "16" "postgresql-16-pg-permissions" "green" >}} {{< bg "15" "postgresql-15-pg-permissions" "green" >}} {{< bg "14" "postgresql-14-pg-permissions" "green" >}} | `postgresql-$v-pg-permissions` | - |
 
 

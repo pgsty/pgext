@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "mysql_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "postgres_fdw" >}} |
 
-> [!Note] Package/source version 0.5.0; SQL extension version 1.2. PGDG RPM is PG14-16 and missing EL aarch64; PIGSTY DEB is PG14-18 on amd64 and arm64, with a downstream PG18 compatibility patch. Live queries require a JDBC driver and remote database.
+> [!Note] Package/source version 0.5.0; SQL extension version 1.2. PIGSTY RPM and DEB packages cover PostgreSQL 14-18 on x86_64 and aarch64; PGDG RPM 0.4.0 is a legacy alternative for PostgreSQL 14-16. Live queries require a JDBC driver and remote database.
 
 
 ## Packages
@@ -34,18 +34,18 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `jdbc_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.4.0` | {{< bg "18" "jdbc_fdw_18" "red" >}} {{< bg "17" "jdbc_fdw_17" "red" >}} {{< bg "16" "jdbc_fdw_16" "green" >}} {{< bg "15" "jdbc_fdw_15" "green" >}} {{< bg "14" "jdbc_fdw_14" "green" >}} | `jdbc_fdw_$v` | `java-11-openjdk-headless` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "jdbc_fdw_18" "green" >}} {{< bg "17" "jdbc_fdw_17" "green" >}} {{< bg "16" "jdbc_fdw_16" "green" >}} {{< bg "15" "jdbc_fdw_15" "green" >}} {{< bg "14" "jdbc_fdw_14" "green" >}} | `jdbc_fdw_$v` | `java-11-openjdk-headless` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "postgresql-18-jdbc-fdw" "green" >}} {{< bg "17" "postgresql-17-jdbc-fdw" "green" >}} {{< bg "16" "postgresql-16-jdbc-fdw" "green" >}} {{< bg "15" "postgresql-15-jdbc-fdw" "green" >}} {{< bg "14" "postgresql-14-jdbc-fdw" "green" >}} | `postgresql-$v-jdbc-fdw` | `default-jre-headless`, `libpq5` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}} | {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "jdbc_fdw_18 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_17 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_16 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_15 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}} | {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "jdbc_fdw_18 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_17 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_16 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_15 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "jdbc_fdw_18 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_17 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_16 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_15 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "jdbc_fdw_18 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_17 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_16 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_15 : N/A 0" "gray" >}} | {{< bg "N/A" "jdbc_fdw_14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "jdbc_fdw_14 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-jdbc-fdw : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-jdbc-fdw : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-jdbc-fdw : AVAIL 1" "green" >}} |
@@ -63,6 +63,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `jdbc_fdw_18` | `0.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 62.5 KiB | [jdbc_fdw_18-0.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/jdbc_fdw_18-0.5.0-1PIGSTY.el8.x86_64.rpm) |
+| `jdbc_fdw_18` | `0.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 60.4 KiB | [jdbc_fdw_18-0.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/jdbc_fdw_18-0.5.0-1PIGSTY.el8.aarch64.rpm) |
+| `jdbc_fdw_18` | `0.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 61.3 KiB | [jdbc_fdw_18-0.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/jdbc_fdw_18-0.5.0-1PIGSTY.el9.x86_64.rpm) |
+| `jdbc_fdw_18` | `0.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 59.7 KiB | [jdbc_fdw_18-0.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/jdbc_fdw_18-0.5.0-1PIGSTY.el9.aarch64.rpm) |
+| `jdbc_fdw_18` | `0.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 62.0 KiB | [jdbc_fdw_18-0.5.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/jdbc_fdw_18-0.5.0-1PIGSTY.el10.x86_64.rpm) |
+| `jdbc_fdw_18` | `0.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 60.9 KiB | [jdbc_fdw_18-0.5.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/jdbc_fdw_18-0.5.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-jdbc-fdw` | `0.5.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 129.5 KiB | [postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-jdbc-fdw` | `0.5.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 126.7 KiB | [postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-jdbc-fdw` | `0.5.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 129.5 KiB | [postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/j/jdbc-fdw/postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb) |
@@ -79,6 +85,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `jdbc_fdw_17` | `0.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 62.4 KiB | [jdbc_fdw_17-0.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/jdbc_fdw_17-0.5.0-1PIGSTY.el8.x86_64.rpm) |
+| `jdbc_fdw_17` | `0.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 60.3 KiB | [jdbc_fdw_17-0.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/jdbc_fdw_17-0.5.0-1PIGSTY.el8.aarch64.rpm) |
+| `jdbc_fdw_17` | `0.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 61.2 KiB | [jdbc_fdw_17-0.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/jdbc_fdw_17-0.5.0-1PIGSTY.el9.x86_64.rpm) |
+| `jdbc_fdw_17` | `0.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 59.7 KiB | [jdbc_fdw_17-0.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/jdbc_fdw_17-0.5.0-1PIGSTY.el9.aarch64.rpm) |
+| `jdbc_fdw_17` | `0.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 61.9 KiB | [jdbc_fdw_17-0.5.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/jdbc_fdw_17-0.5.0-1PIGSTY.el10.x86_64.rpm) |
+| `jdbc_fdw_17` | `0.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 60.7 KiB | [jdbc_fdw_17-0.5.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/jdbc_fdw_17-0.5.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-jdbc-fdw` | `0.5.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 129.1 KiB | [postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-jdbc-fdw` | `0.5.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 126.3 KiB | [postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-jdbc-fdw` | `0.5.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 129.2 KiB | [postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/j/jdbc-fdw/postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb) |
@@ -95,8 +107,14 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `jdbc_fdw_16` | `0.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 62.3 KiB | [jdbc_fdw_16-0.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/jdbc_fdw_16-0.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `jdbc_fdw_16` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 49.8 KiB | [jdbc_fdw_16-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/jdbc_fdw_16-0.4.0-1PGDG.rhel8.x86_64.rpm) |
+| `jdbc_fdw_16` | `0.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 60.4 KiB | [jdbc_fdw_16-0.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/jdbc_fdw_16-0.5.0-1PIGSTY.el8.aarch64.rpm) |
+| `jdbc_fdw_16` | `0.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 61.2 KiB | [jdbc_fdw_16-0.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/jdbc_fdw_16-0.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `jdbc_fdw_16` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 49.6 KiB | [jdbc_fdw_16-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/jdbc_fdw_16-0.4.0-1PGDG.rhel9.x86_64.rpm) |
+| `jdbc_fdw_16` | `0.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 59.7 KiB | [jdbc_fdw_16-0.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/jdbc_fdw_16-0.5.0-1PIGSTY.el9.aarch64.rpm) |
+| `jdbc_fdw_16` | `0.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 61.9 KiB | [jdbc_fdw_16-0.5.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/jdbc_fdw_16-0.5.0-1PIGSTY.el10.x86_64.rpm) |
+| `jdbc_fdw_16` | `0.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 60.8 KiB | [jdbc_fdw_16-0.5.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/jdbc_fdw_16-0.5.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-jdbc-fdw` | `0.5.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 129.0 KiB | [postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-jdbc-fdw` | `0.5.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 126.3 KiB | [postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-jdbc-fdw` | `0.5.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 129.1 KiB | [postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/j/jdbc-fdw/postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb) |
@@ -113,8 +131,14 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `jdbc_fdw_15` | `0.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 63.3 KiB | [jdbc_fdw_15-0.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/jdbc_fdw_15-0.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `jdbc_fdw_15` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.5 KiB | [jdbc_fdw_15-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/jdbc_fdw_15-0.4.0-1PGDG.rhel8.x86_64.rpm) |
+| `jdbc_fdw_15` | `0.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 61.2 KiB | [jdbc_fdw_15-0.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/jdbc_fdw_15-0.5.0-1PIGSTY.el8.aarch64.rpm) |
+| `jdbc_fdw_15` | `0.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 63.5 KiB | [jdbc_fdw_15-0.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/jdbc_fdw_15-0.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `jdbc_fdw_15` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.0 KiB | [jdbc_fdw_15-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/jdbc_fdw_15-0.4.0-1PGDG.rhel9.x86_64.rpm) |
+| `jdbc_fdw_15` | `0.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 62.3 KiB | [jdbc_fdw_15-0.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/jdbc_fdw_15-0.5.0-1PIGSTY.el9.aarch64.rpm) |
+| `jdbc_fdw_15` | `0.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 64.0 KiB | [jdbc_fdw_15-0.5.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/jdbc_fdw_15-0.5.0-1PIGSTY.el10.x86_64.rpm) |
+| `jdbc_fdw_15` | `0.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 63.0 KiB | [jdbc_fdw_15-0.5.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/jdbc_fdw_15-0.5.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-jdbc-fdw` | `0.5.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 129.9 KiB | [postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-jdbc-fdw` | `0.5.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 127.2 KiB | [postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-jdbc-fdw` | `0.5.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 130.0 KiB | [postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/j/jdbc-fdw/postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb) |
@@ -131,8 +155,14 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `jdbc_fdw_14` | `0.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 63.3 KiB | [jdbc_fdw_14-0.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/jdbc_fdw_14-0.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `jdbc_fdw_14` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.5 KiB | [jdbc_fdw_14-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/jdbc_fdw_14-0.4.0-1PGDG.rhel8.x86_64.rpm) |
+| `jdbc_fdw_14` | `0.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 61.2 KiB | [jdbc_fdw_14-0.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/jdbc_fdw_14-0.5.0-1PIGSTY.el8.aarch64.rpm) |
+| `jdbc_fdw_14` | `0.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 63.4 KiB | [jdbc_fdw_14-0.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/jdbc_fdw_14-0.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `jdbc_fdw_14` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.0 KiB | [jdbc_fdw_14-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/jdbc_fdw_14-0.4.0-1PGDG.rhel9.x86_64.rpm) |
+| `jdbc_fdw_14` | `0.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 62.2 KiB | [jdbc_fdw_14-0.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/jdbc_fdw_14-0.5.0-1PIGSTY.el9.aarch64.rpm) |
+| `jdbc_fdw_14` | `0.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 64.0 KiB | [jdbc_fdw_14-0.5.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/jdbc_fdw_14-0.5.0-1PIGSTY.el10.x86_64.rpm) |
+| `jdbc_fdw_14` | `0.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 63.1 KiB | [jdbc_fdw_14-0.5.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/jdbc_fdw_14-0.5.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-jdbc-fdw` | `0.5.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 129.9 KiB | [postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-jdbc-fdw` | `0.5.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 127.0 KiB | [postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/j/jdbc-fdw/postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-jdbc-fdw` | `0.5.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 130.0 KiB | [postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/j/jdbc-fdw/postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~trixie_amd64.deb) |

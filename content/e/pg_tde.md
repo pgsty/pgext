@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7500** | {{< badge content="pg_tde" link="https://github.com/percona/pg_tde" >}} | {{< ext "pg_tde" >}} | `2.2` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7500** | {{< badge content="pg_tde" link="https://github.com/percona/pg_tde" >}} | {{< ext "pg_tde" >}} | `2.2.1` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,35 +33,60 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tde` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "percona-postgresql18" "green" >}} {{< bg "17" "percona-postgresql17" "green" >}} {{< bg "16" "percona-postgresql16" "red" >}} {{< bg "15" "percona-postgresql15" "red" >}} {{< bg "14" "percona-postgresql14" "red" >}} | `percona-postgresql$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "percona-postgresql-18" "green" >}} {{< bg "17" "percona-postgresql-17" "green" >}} {{< bg "16" "percona-postgresql-16" "red" >}} {{< bg "15" "percona-postgresql-15" "red" >}} {{< bg "14" "percona-postgresql-14" "red" >}} | `percona-postgresql-$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tde` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.4` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.4` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "percona-postgresql18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "percona-postgresql18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "percona-postgresql18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "percona-postgresql18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "percona-postgresql18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "percona-postgresql18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "percona-postgresql-18 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "percona-postgresql-14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
 
+
+{{< tabs >}}
+{{< tab name="PG18" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgtde-18` | `18.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 12.9 MiB | [pgtde-18-18.4-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgtde-18-18.4-2PIGSTY.el8.x86_64.rpm) |
+| `pgtde-18` | `18.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 12.6 MiB | [pgtde-18-18.4-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgtde-18-18.4-2PIGSTY.el8.aarch64.rpm) |
+| `pgtde-18` | `18.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.5 MiB | [pgtde-18-18.4-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgtde-18-18.4-2PIGSTY.el9.x86_64.rpm) |
+| `pgtde-18` | `18.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.3 MiB | [pgtde-18-18.4-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgtde-18-18.4-2PIGSTY.el9.aarch64.rpm) |
+| `pgtde-18` | `18.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 11.6 MiB | [pgtde-18-18.4-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgtde-18-18.4-2PIGSTY.el10.x86_64.rpm) |
+| `pgtde-18` | `18.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.4 MiB | [pgtde-18-18.4-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgtde-18-18.4-2PIGSTY.el10.aarch64.rpm) |
+| `pgtde-18` | `18.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.8 MiB | [pgtde-18_18.4-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~bookworm_amd64.deb) |
+| `pgtde-18` | `18.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.3 MiB | [pgtde-18_18.4-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~bookworm_arm64.deb) |
+| `pgtde-18` | `18.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.9 MiB | [pgtde-18_18.4-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~trixie_amd64.deb) |
+| `pgtde-18` | `18.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.4 MiB | [pgtde-18_18.4-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~trixie_arm64.deb) |
+| `pgtde-18` | `18.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.1 MiB | [pgtde-18_18.4-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~jammy_amd64.deb) |
+| `pgtde-18` | `18.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.9 MiB | [pgtde-18_18.4-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~jammy_arm64.deb) |
+| `pgtde-18` | `18.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.9 MiB | [pgtde-18_18.4-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~noble_amd64.deb) |
+| `pgtde-18` | `18.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.8 MiB | [pgtde-18_18.4-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~noble_arm64.deb) |
+| `pgtde-18` | `18.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.0 MiB | [pgtde-18_18.4-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~resolute_amd64.deb) |
+| `pgtde-18` | `18.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.7 MiB | [pgtde-18_18.4-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~resolute_arm64.deb) |
+
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/percona/pg_tde" title="Repository" icon="github" subtitle="github.com/percona/pg_tde" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="percona-pg_tde18-2.2.1.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -79,7 +104,6 @@ pig repo add pgsql -u   # add both repo and update cache
 pig install pg_tde;		# install via package name, for the active PG version
 
 pig install pg_tde -v 18;   # install for PG 18
-pig install pg_tde -v 17;   # install for PG 17
 
 ```
 

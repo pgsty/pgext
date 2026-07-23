@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5120** | {{< badge content="pg_readonly" link="https://github.com/pierreforstmann/pg_readonly" >}} | {{< ext "pg_readonly" >}} | `1.0.5` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5120** | {{< badge content="pg_readonly" link="https://github.com/pierreforstmann/pg_readonly" >}} | {{< ext "pg_readonly" >}} | `1.0.6` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,13 +26,15 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_permissions" >}} {{< ext "pg_upless" >}} {{< ext "safeupdate" >}} {{< ext "set_user" >}} {{< ext "pgaudit" >}} {{< ext "noset" >}} {{< ext "sepgsql" >}} {{< ext "login_hook" >}} |
 
+> [!Note] Latest PGDG RPM/catalog version is 1.0.6; PIGSTY DEB and source remain on 1.0.5.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_readonly` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.5` | {{< bg "18" "pg_readonly_18" "green" >}} {{< bg "17" "pg_readonly_17" "green" >}} {{< bg "16" "pg_readonly_16" "green" >}} {{< bg "15" "pg_readonly_15" "green" >}} {{< bg "14" "pg_readonly_14" "green" >}} | `pg_readonly_$v` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_readonly` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.6` | {{< bg "18" "pg_readonly_18" "green" >}} {{< bg "17" "pg_readonly_17" "green" >}} {{< bg "16" "pg_readonly_16" "green" >}} {{< bg "15" "pg_readonly_15" "green" >}} {{< bg "14" "pg_readonly_14" "green" >}} | `pg_readonly_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pg-readonly" "green" >}} {{< bg "17" "postgresql-17-pg-readonly" "green" >}} {{< bg "16" "postgresql-16-pg-readonly" "green" >}} {{< bg "15" "postgresql-15-pg-readonly" "green" >}} {{< bg "14" "postgresql-14-pg-readonly" "green" >}} | `postgresql-$v-pg-readonly` | - |
 
 

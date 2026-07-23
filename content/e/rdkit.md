@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
 
-> [!Note] legacy 202303.3 for el8/el9/d12/u22
+> [!Note] PIGSTY RPM and DEB packages provide 202503.6 for PostgreSQL 14-18; legacy 202303.3 packages remain in some repositories.
 
 
 ## Packages
@@ -35,7 +35,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `202503.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `rdkit` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `202503.6` | {{< bg "18" "rdkit_18" "green" >}} {{< bg "17" "rdkit_17" "green" >}} {{< bg "16" "rdkit_16" "green" >}} {{< bg "15" "rdkit_15" "green" >}} {{< bg "14" "rdkit_14" "green" >}} | `rdkit_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `202503.6` | {{< bg "18" "postgresql-18-rdkit" "green" >}} {{< bg "17" "postgresql-17-rdkit" "green" >}} {{< bg "16" "postgresql-16-rdkit" "green" >}} {{< bg "15" "postgresql-15-rdkit" "green" >}} {{< bg "14" "postgresql-14-rdkit" "green" >}} | `postgresql-$v-rdkit` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `202503.6` | {{< bg "18" "postgresql-18-rdkit" "green" >}} {{< bg "17" "postgresql-17-rdkit" "green" >}} {{< bg "16" "postgresql-16-rdkit" "green" >}} {{< bg "15" "postgresql-15-rdkit" "green" >}} {{< bg "14" "postgresql-14-rdkit" "green" >}} | `postgresql-$v-rdkit` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

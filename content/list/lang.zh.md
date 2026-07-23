@@ -373,7 +373,7 @@ weight: 200
 | 7410 | {{< alias "sslutils" >}} | 使用SQL管理SSL证书 |
 | 7420 | {{< alias "noset" "pg_noset" >}} | 阻止非超级用户使用SET/RESET设置变量 |
 | 7450 | {{< alias "pg_kpart" >}} | 拒绝未使用分区键的全分区扫描查询 |
-| 7500 | {{< alias "pg_tde" >}} | Percona加密存储引擎 |
+| 7500 | {{< alias "pg_tde" >}} | Percona 透明加密存储引擎 |
 | 7960 | {{< alias "sepgsql" >}} | 基于SELinux标签的强制访问控制 |
 | 7970 | {{< alias "auth_delay" >}} | 在返回认证失败前暂停一会，避免爆破 |
 | 7980 | {{< alias "pgcrypto" >}} | 实用加解密函数 |

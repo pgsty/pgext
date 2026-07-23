@@ -14,36 +14,38 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4760** | {{< badge content="pg_csv" link="https://github.com/PostgREST/pg_csv" >}} | {{< ext "pg_csv" >}} | `1.0.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4760** | {{< badge content="pg_csv" link="https://github.com/PostgREST/pg_csv" >}} | {{< ext "pg_csv" >}} | `1.0.2` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "aggs_for_vecs" >}} {{< ext "first_last_agg" >}} {{< ext "arraymath" >}} {{< ext "intarray" >}} |
 
+> [!Note] PIGSTY RPM and PGDG DEB package version 1.0.2 cover PostgreSQL 14-18; SQL/control version is 1.0.1 and the extension is not trusted.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_csv` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.1` | {{< bg "18" "pg_csv_18" "green" >}} {{< bg "17" "pg_csv_17" "green" >}} {{< bg "16" "pg_csv_16" "green" >}} {{< bg "15" "pg_csv_15" "green" >}} {{< bg "14" "pg_csv_14" "green" >}} | `pg_csv_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-csv" "green" >}} {{< bg "17" "postgresql-17-pg-csv" "green" >}} {{< bg "16" "postgresql-16-pg-csv" "green" >}} {{< bg "15" "postgresql-15-pg-csv" "green" >}} {{< bg "14" "postgresql-14-pg-csv" "green" >}} | `postgresql-$v-pg-csv` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_csv` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "pg_csv_18" "green" >}} {{< bg "17" "pg_csv_17" "green" >}} {{< bg "16" "pg_csv_16" "green" >}} {{< bg "15" "pg_csv_15" "green" >}} {{< bg "14" "pg_csv_14" "green" >}} | `pg_csv_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.2` | {{< bg "18" "postgresql-18-pg-csv" "green" >}} {{< bg "17" "postgresql-17-pg-csv" "green" >}} {{< bg "16" "postgresql-16-pg-csv" "green" >}} {{< bg "15" "postgresql-15-pg-csv" "green" >}} {{< bg "14" "postgresql-14-pg-csv" "green" >}} | `postgresql-$v-pg-csv` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.0.1" "pg_csv_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_14 : AVAIL 1" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.0.1" "pg_csv_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_14 : AVAIL 1" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.0.1" "pg_csv_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_14 : AVAIL 2" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0.1" "pg_csv_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_14 : AVAIL 2" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0.1" "pg_csv_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_14 : AVAIL 2" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0.1" "pg_csv_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.1" "pg_csv_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_14 : AVAIL 3" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0.2" "pg_csv_14 : AVAIL 3" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.0.2" "postgresql-18-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-17-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-16-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-15-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-14-pg-csv : AVAIL 3" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.0.2" "postgresql-18-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-17-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-16-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-15-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-14-pg-csv : AVAIL 3" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.0.2" "postgresql-18-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-17-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-16-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-15-pg-csv : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-14-pg-csv : AVAIL 3" "blue" >}} |
@@ -61,14 +63,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_csv_18` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 17.0 KiB | [pg_csv_18-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_csv_18-1.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 14.3 KiB | [pg_csv_18-1.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_csv_18-1.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_csv_18` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.2 KiB | [pg_csv_18-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_csv_18-1.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 14.2 KiB | [pg_csv_18-1.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_csv_18-1.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_csv_18` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.8 KiB | [pg_csv_18-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_csv_18-1.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.3 KiB | [pg_csv_18-1.0.1-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_csv_18-1.0.1-3PGDG.rhel9.8.x86_64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.2 KiB | [pg_csv_18-1.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_csv_18-1.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `pg_csv_18` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.8 KiB | [pg_csv_18-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_csv_18-1.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 14.2 KiB | [pg_csv_18-1.0.1-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_csv_18-1.0.1-3PGDG.rhel9.8.aarch64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.9 KiB | [pg_csv_18-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_csv_18-1.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_csv_18` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 16.9 KiB | [pg_csv_18-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_csv_18-1.0.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.5 KiB | [pg_csv_18-1.0.1-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_csv_18-1.0.1-3PGDG.rhel10.2.x86_64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.6 KiB | [pg_csv_18-1.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_csv_18-1.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `pg_csv_18` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.1 KiB | [pg_csv_18-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_csv_18-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.5 KiB | [pg_csv_18-1.0.1-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_csv_18-1.0.1-3PGDG.rhel10.2.aarch64.rpm) |
 | `pg_csv_18` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.6 KiB | [pg_csv_18-1.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_csv_18-1.0.1-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-18-pg-csv` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 17.4 KiB | [postgresql-18-pg-csv_1.0.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-18-pg-csv_1.0.2-1.pgdg12+1_amd64.deb) |
@@ -107,14 +115,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_csv_17` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 17.0 KiB | [pg_csv_17-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_csv_17-1.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 14.3 KiB | [pg_csv_17-1.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_csv_17-1.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_csv_17` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.2 KiB | [pg_csv_17-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_csv_17-1.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 14.2 KiB | [pg_csv_17-1.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_csv_17-1.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_csv_17` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.8 KiB | [pg_csv_17-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_csv_17-1.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.4 KiB | [pg_csv_17-1.0.1-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_csv_17-1.0.1-3PGDG.rhel9.8.x86_64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.2 KiB | [pg_csv_17-1.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_csv_17-1.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `pg_csv_17` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.8 KiB | [pg_csv_17-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_csv_17-1.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 14.2 KiB | [pg_csv_17-1.0.1-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_csv_17-1.0.1-3PGDG.rhel9.8.aarch64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.9 KiB | [pg_csv_17-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_csv_17-1.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_csv_17` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 16.9 KiB | [pg_csv_17-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_csv_17-1.0.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.5 KiB | [pg_csv_17-1.0.1-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_csv_17-1.0.1-3PGDG.rhel10.2.x86_64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.6 KiB | [pg_csv_17-1.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_csv_17-1.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `pg_csv_17` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.1 KiB | [pg_csv_17-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_csv_17-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.5 KiB | [pg_csv_17-1.0.1-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_csv_17-1.0.1-3PGDG.rhel10.2.aarch64.rpm) |
 | `pg_csv_17` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.6 KiB | [pg_csv_17-1.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_csv_17-1.0.1-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pg-csv` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 17.3 KiB | [postgresql-17-pg-csv_1.0.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-17-pg-csv_1.0.2-1.pgdg12+1_amd64.deb) |
@@ -153,14 +167,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_csv_16` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 17.0 KiB | [pg_csv_16-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_csv_16-1.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 14.3 KiB | [pg_csv_16-1.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_csv_16-1.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_csv_16` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.2 KiB | [pg_csv_16-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_csv_16-1.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 14.2 KiB | [pg_csv_16-1.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_csv_16-1.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_csv_16` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.8 KiB | [pg_csv_16-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_csv_16-1.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.4 KiB | [pg_csv_16-1.0.1-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_csv_16-1.0.1-3PGDG.rhel9.8.x86_64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.2 KiB | [pg_csv_16-1.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_csv_16-1.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `pg_csv_16` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.8 KiB | [pg_csv_16-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_csv_16-1.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 14.2 KiB | [pg_csv_16-1.0.1-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_csv_16-1.0.1-3PGDG.rhel9.8.aarch64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.9 KiB | [pg_csv_16-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_csv_16-1.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_csv_16` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 16.9 KiB | [pg_csv_16-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_csv_16-1.0.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.4 KiB | [pg_csv_16-1.0.1-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_csv_16-1.0.1-3PGDG.rhel10.2.x86_64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.5 KiB | [pg_csv_16-1.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_csv_16-1.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `pg_csv_16` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.1 KiB | [pg_csv_16-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_csv_16-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.5 KiB | [pg_csv_16-1.0.1-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_csv_16-1.0.1-3PGDG.rhel10.2.aarch64.rpm) |
 | `pg_csv_16` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.6 KiB | [pg_csv_16-1.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_csv_16-1.0.1-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pg-csv` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 17.3 KiB | [postgresql-16-pg-csv_1.0.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-16-pg-csv_1.0.2-1.pgdg12+1_amd64.deb) |
@@ -199,14 +219,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_csv_15` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 17.2 KiB | [pg_csv_15-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_csv_15-1.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 14.5 KiB | [pg_csv_15-1.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_csv_15-1.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_csv_15` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.3 KiB | [pg_csv_15-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_csv_15-1.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 14.4 KiB | [pg_csv_15-1.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_csv_15-1.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_csv_15` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 17.1 KiB | [pg_csv_15-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_csv_15-1.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.7 KiB | [pg_csv_15-1.0.1-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_csv_15-1.0.1-3PGDG.rhel9.8.x86_64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.6 KiB | [pg_csv_15-1.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_csv_15-1.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `pg_csv_15` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.1 KiB | [pg_csv_15-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_csv_15-1.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 14.6 KiB | [pg_csv_15-1.0.1-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_csv_15-1.0.1-3PGDG.rhel9.8.aarch64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 14.3 KiB | [pg_csv_15-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_csv_15-1.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_csv_15` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.2 KiB | [pg_csv_15-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_csv_15-1.0.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.8 KiB | [pg_csv_15-1.0.1-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_csv_15-1.0.1-3PGDG.rhel10.2.x86_64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.9 KiB | [pg_csv_15-1.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_csv_15-1.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `pg_csv_15` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.4 KiB | [pg_csv_15-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_csv_15-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.9 KiB | [pg_csv_15-1.0.1-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_csv_15-1.0.1-3PGDG.rhel10.2.aarch64.rpm) |
 | `pg_csv_15` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 15.0 KiB | [pg_csv_15-1.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_csv_15-1.0.1-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pg-csv` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 17.4 KiB | [postgresql-15-pg-csv_1.0.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-15-pg-csv_1.0.2-1.pgdg12+1_amd64.deb) |
@@ -245,14 +271,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_csv_14` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 17.1 KiB | [pg_csv_14-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_csv_14-1.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 14.5 KiB | [pg_csv_14-1.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_csv_14-1.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_csv_14` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.3 KiB | [pg_csv_14-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_csv_14-1.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 14.4 KiB | [pg_csv_14-1.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_csv_14-1.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_csv_14` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 17.1 KiB | [pg_csv_14-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_csv_14-1.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.7 KiB | [pg_csv_14-1.0.1-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_csv_14-1.0.1-3PGDG.rhel9.8.x86_64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 14.5 KiB | [pg_csv_14-1.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_csv_14-1.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `pg_csv_14` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.1 KiB | [pg_csv_14-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_csv_14-1.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 14.5 KiB | [pg_csv_14-1.0.1-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_csv_14-1.0.1-3PGDG.rhel9.8.aarch64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 14.3 KiB | [pg_csv_14-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_csv_14-1.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_csv_14` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.2 KiB | [pg_csv_14-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_csv_14-1.0.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.8 KiB | [pg_csv_14-1.0.1-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_csv_14-1.0.1-3PGDG.rhel10.2.x86_64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 14.9 KiB | [pg_csv_14-1.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_csv_14-1.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `pg_csv_14` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.4 KiB | [pg_csv_14-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_csv_14-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.9 KiB | [pg_csv_14-1.0.1-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_csv_14-1.0.1-3PGDG.rhel10.2.aarch64.rpm) |
 | `pg_csv_14` | `1.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 14.9 KiB | [pg_csv_14-1.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_csv_14-1.0.1-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pg-csv` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 17.4 KiB | [postgresql-14-pg-csv_1.0.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-14-pg-csv_1.0.2-1.pgdg12+1_amd64.deb) |
@@ -292,21 +324,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/PostgREST/pg_csv" title="Repository" icon="github" subtitle="github.com/PostgREST/pg_csv" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_csv-1.0.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_csv-1.0.2.tar.gz" >}}
 {{< /cards >}}
 
 
 ```bash
-pig build pkg pg_csv;		# build deb
+pig build pkg pg_csv;		# build rpm/deb
 ```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

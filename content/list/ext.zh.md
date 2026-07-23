@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 555 | 155 | 398 | 71 | 0 | 545 | 536 | 526 | 506 | 483 |
-| **EL** | 554 | 154 | 398 | 71 | 1 | 542 | 534 | 525 | 505 | 482 |
-| **Debian** | 552 | 110 | 371 | 71 | 3 | 542 | 533 | 523 | 503 | 480 |
+| **ALL** | 555 | 158 | 402 | 71 | 0 | 550 | 536 | 526 | 506 | 483 |
+| **EL** | 554 | 157 | 402 | 71 | 1 | 549 | 535 | 525 | 505 | 482 |
+| **Debian** | 552 | 112 | 369 | 71 | 3 | 547 | 533 | 523 | 503 | 480 |
 
 ## 分类
 
@@ -138,7 +138,7 @@ comments: false
 | {{< ext "pg_fkpart" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | 按外键实用程序进行表分区的扩展 |
 | {{< ext "pg_partman" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | {{< ext "plproxy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 作为过程语言实现的数据库分区 |
-| {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 使用GPU与NVMe加速大数据处理 |
+| {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 使用GPU与NVMe加速大数据处理 |
 | {{< ext "pg_orca" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL ORCA 查询优化器扩展 |
 | {{< ext "pg_sorted_heap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 带 zone map 剪枝和内置向量搜索的有序堆表访问方法 |
 | {{< ext "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | Snowflake 开源的 PostgreSQL 数据湖与 Iceberg 集成扩展 |
@@ -368,7 +368,7 @@ comments: false
 | {{< ext "aggs_for_vecs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 针对数组类型的聚合函数集合扩展 |
 | {{< ext "aggs_for_arrays" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 计算数组聚合统计值的函数包 |
 | {{< ext "argm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 提供 argmax、argmin 与 anyold 聚合函数 |
-| {{< ext "pg_csv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | 灵活的CSV聚合处理函数 |
+| {{< ext "pg_csv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 灵活的CSV聚合处理函数 |
 | {{< ext "arraymath" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 数组逐元素数学运算符包 |
 | {{< ext "pg_math" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 使用GSL库的数学统计函数 |
 | {{< ext "random" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 随机数生成器 |
@@ -514,7 +514,7 @@ comments: false
 | {{< ext "noset" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 阻止非超级用户使用SET/RESET设置变量 |
 | {{< ext "block_copy_command" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 通过可配置的 ProcessUtility hook 阻止 COPY 命令 |
 | {{< ext "pg_kpart" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | 拒绝未使用分区键的全分区扫描查询 |
-| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Percona加密存储引擎 |
+| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Percona 透明加密存储引擎 |
 | {{< ext "sepgsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | 基于SELinux标签的强制访问控制 |
 | {{< ext "auth_delay" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | 在返回认证失败前暂停一会，避免爆破 |
 | {{< ext "pgcrypto" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | 实用加解密函数 |
@@ -523,12 +523,12 @@ comments: false
 | {{< ext "multicorn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 用Python编写自定义的外部数据源包装器 |
 | {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 访问ODBC可访问的任何外部数据源 |
 | {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 访问JDBC可访问的任何外部数据源 |
-| {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 使用多种FDW访问远程数据库服务器 |
+| {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 使用多种FDW访问远程数据库服务器 |
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | MySQL外部数据包装器 |
 | {{< ext "oracle_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 提供对Oracle的外部数据源包装器 |
 | {{< ext "tds_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | TDS 数据库（Sybase/SQL Server）外部数据包装器 |
 | {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 提供对DB2的外部数据源包装器 |
-| {{< ext "sqlite_fdw" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQLite 外部数据包装器 |
+| {{< ext "sqlite_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQLite 外部数据包装器 |
 | {{< ext "pgbouncer_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
 | {{< ext "etcd_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | etcd分布式键值存储外部数据包装器 |
 | {{< ext "informix_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Informix 外部数据包装器 |
@@ -576,7 +576,7 @@ comments: false
 | {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL逻辑复制：三方扩展实现 |
 | {{< ext "pglogical_origin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | pglogical复制延迟以秒计的精确视图 |
-| {{< ext "pgl_ddl_deploy" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 使用 pglogical 执行自动 DDL 部署 |
+| {{< ext "pgl_ddl_deploy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 使用 pglogical 执行自动 DDL 部署 |
 | {{< ext "logical_ddl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 在 PostgreSQL 逻辑复制中复制受支持的 DDL 变更 |
 | {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | 在Failover过程中保留复制槽 |
 | {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
@@ -586,7 +586,7 @@ comments: false
 | {{< ext "pgclone" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 在不同环境间克隆 PostgreSQL 数据库、模式、表和函数 |
 | {{< ext "pgmqtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
-| {{< ext "wal2mongo" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
+| {{< ext "wal2mongo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
 | {{< ext "decoderbufs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
 | {{< ext "decoder_raw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | 逻辑复制解码输出插件：RAW SQL格式 |
 | {{< ext "mimeo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | 在PostgreSQL实例间进行表级复制 |

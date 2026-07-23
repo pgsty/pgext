@@ -33,7 +33,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.21` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hll` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.21` | {{< bg "18" "hll_18" "green" >}} {{< bg "17" "hll_17" "green" >}} {{< bg "16" "hll_16" "green" >}} {{< bg "15" "hll_15" "green" >}} {{< bg "14" "hll_14" "green" >}} | `hll_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.20` | {{< bg "18" "postgresql-18-hll" "green" >}} {{< bg "17" "postgresql-17-hll" "green" >}} {{< bg "16" "postgresql-16-hll" "green" >}} {{< bg "15" "postgresql-15-hll" "green" >}} {{< bg "14" "postgresql-14-hll" "green" >}} | `postgresql-$v-hll` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.21` | {{< bg "18" "postgresql-18-hll" "green" >}} {{< bg "17" "postgresql-17-hll" "green" >}} {{< bg "16" "postgresql-16-hll" "green" >}} {{< bg "15" "postgresql-15-hll" "green" >}} {{< bg "14" "postgresql-14-hll" "green" >}} | `postgresql-$v-hll` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

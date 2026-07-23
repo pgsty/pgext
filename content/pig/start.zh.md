@@ -123,23 +123,24 @@ pig pitr -d -y                # 跳过确认（自动化场景）
 
 ## 列出扩展
 
-使用 `pig ext list` 命令，可以打印内置的 PG 扩展数据目录。
+Pig v1.5.1 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
 
 ```bash
+$ pig ext reload
 $ pig ext list
-✓ Found 531 extensions
+✓ Found 555 extensions
 Name                Status     Version     Cate   Flags   License         Repo     PGVer  Package                               Description
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-timescaledb         available  2.28.2      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
+timescaledb         available  2.28.3      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
 timescaledb_toolkit available  1.23.0      TIME   -ds---  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-toolkit     Library of analytical hyperfunctions, time-series pipelining, an
 timeseries          available  0.2.1       TIME   -d----  PostgreSQL      PIGSTY   14-18  postgresql-18-pg-timeseries           Convenience API for time series stack
-periods             available  1.2.3       TIME   -ds---  PostgreSQL      PGDG     14-18  postgresql-18-periods                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
+periods             available  1.2.3       TIME   -ds---  PostgreSQL      PIGSTY   14-18  postgresql-18-periods                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
 ........
 pg_bulkload         available  3.1.23      ETL    bds---  BSD 3-Clause    PIGSTY   14-18  postgresql-18-pg-bulkload             pg_bulkload is a high speed data loading utility for PostgreSQL
 test_decoding       available  -           ETL    --s--x  PostgreSQL      CONTRIB  14-18  postgresql-18                         SQL-based test/example module for WAL logical decoding
 pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
 
-(531 Rows)
+(555 Rows)
 ```
 
 所有的扩展元数据都在一份名为 [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv) 的数据文件中定义，

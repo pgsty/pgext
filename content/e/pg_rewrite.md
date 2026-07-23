@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5020** | {{< badge content="pg_rewrite" link="https://github.com/cybertec-postgresql/pg_rewrite" >}} | {{< ext "pg_rewrite" >}} | `2.1.0` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **5020** | {{< badge content="pg_rewrite" link="https://github.com/cybertec-postgresql/pg_rewrite" >}} | {{< ext "pg_rewrite" >}} | `2.2` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,24 +26,26 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_repack" >}} {{< ext "pg_squeeze" >}} {{< ext "pgfincore" >}} {{< ext "pg_prewarm" >}} {{< ext "pgstattuple" >}} {{< ext "amcheck" >}} {{< ext "pageinspect" >}} {{< ext "pg_visibility" >}} |
 
+> [!Note] PIGSTY RPM and PGDG DEB are aligned at 2.2 for PostgreSQL 14-18; shared_preload_libraries=pg_rewrite and wal_level=logical are required.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rewrite` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.0` | {{< bg "18" "pg_rewrite_18" "green" >}} {{< bg "17" "pg_rewrite_17" "green" >}} {{< bg "16" "pg_rewrite_16" "green" >}} {{< bg "15" "pg_rewrite_15" "green" >}} {{< bg "14" "pg_rewrite_14" "green" >}} | `pg_rewrite_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.0` | {{< bg "18" "postgresql-18-pg-rewrite" "green" >}} {{< bg "17" "postgresql-17-pg-rewrite" "green" >}} {{< bg "16" "postgresql-16-pg-rewrite" "green" >}} {{< bg "15" "postgresql-15-pg-rewrite" "green" >}} {{< bg "14" "postgresql-14-pg-rewrite" "green" >}} | `postgresql-$v-pg-rewrite` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rewrite` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "pg_rewrite_18" "green" >}} {{< bg "17" "pg_rewrite_17" "green" >}} {{< bg "16" "pg_rewrite_16" "green" >}} {{< bg "15" "pg_rewrite_15" "green" >}} {{< bg "14" "pg_rewrite_14" "green" >}} | `pg_rewrite_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "postgresql-18-pg-rewrite" "green" >}} {{< bg "17" "postgresql-17-pg-rewrite" "green" >}} {{< bg "16" "postgresql-16-pg-rewrite" "green" >}} {{< bg "15" "postgresql-15-pg-rewrite" "green" >}} {{< bg "14" "postgresql-14-pg-rewrite" "green" >}} | `postgresql-$v-pg-rewrite` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_14 : AVAIL 3" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_14 : AVAIL 5" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_14 : AVAIL 5" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_14 : AVAIL 5" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.1.0" "pg_rewrite_14 : AVAIL 5" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_14 : AVAIL 4" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_14 : AVAIL 4" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_14 : AVAIL 6" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_14 : AVAIL 6" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_14 : AVAIL 6" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 2.2" "pg_rewrite_14 : AVAIL 6" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.2" "postgresql-18-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-pg-rewrite : AVAIL 2" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.2" "postgresql-18-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-pg-rewrite : AVAIL 2" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.2" "postgresql-18-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-pg-rewrite : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-pg-rewrite : AVAIL 2" "blue" >}} |
@@ -61,22 +63,28 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_rewrite_18` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 39.7 KiB | [pg_rewrite_18-2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rewrite_18-2.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 38.3 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_rewrite_18-2.1.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_rewrite_18` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 37.6 KiB | [pg_rewrite_18-2.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_rewrite_18-2.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_rewrite_18` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 37.7 KiB | [pg_rewrite_18-2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rewrite_18-2.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 36.1 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_rewrite_18-2.1.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_rewrite_18` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.4 KiB | [pg_rewrite_18-2.0.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_rewrite_18-2.0.0-1PGDG.rhel8.aarch64.rpm) |
+| `pg_rewrite_18` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 39.8 KiB | [pg_rewrite_18-2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rewrite_18-2.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.8 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_rewrite_18-2.1.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.8 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_rewrite_18-2.1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.9 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_rewrite_18-2.1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pg_rewrite_18` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.1 KiB | [pg_rewrite_18-2.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_rewrite_18-2.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `pg_rewrite_18` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 38.1 KiB | [pg_rewrite_18-2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rewrite_18-2.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.2 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_rewrite_18-2.1.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.2 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_rewrite_18-2.1.0-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.3 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_rewrite_18-2.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pg_rewrite_18` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.4 KiB | [pg_rewrite_18-2.0.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_rewrite_18-2.0.0-1PGDG.rhel9.aarch64.rpm) |
+| `pg_rewrite_18` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 40.5 KiB | [pg_rewrite_18-2.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_rewrite_18-2.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.4 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_rewrite_18-2.1.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.3 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_rewrite_18-2.1.0-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.7 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_rewrite_18-2.1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pg_rewrite_18` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.0 KiB | [pg_rewrite_18-2.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_rewrite_18-2.0.0-1PGDG.rhel10.x86_64.rpm) |
+| `pg_rewrite_18` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 38.3 KiB | [pg_rewrite_18-2.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_rewrite_18-2.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_rewrite_18-2.1.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_rewrite_18-2.1.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_rewrite_18` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_18-2.1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_rewrite_18-2.1.0-1PGDG.rhel10.0.aarch64.rpm) |
@@ -107,26 +115,28 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_rewrite_17` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 39.3 KiB | [pg_rewrite_17-2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rewrite_17-2.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 37.9 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_rewrite_17-2.1.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `pg_rewrite_17` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 37.0 KiB | [pg_rewrite_17-2.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rewrite_17-2.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rewrite_17` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 37.2 KiB | [pg_rewrite_17-2.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_rewrite_17-2.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_rewrite_17` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 37.3 KiB | [pg_rewrite_17-2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rewrite_17-2.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.8 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_rewrite_17-2.1.0-1PGDG.rhel8.10.aarch64.rpm) |
-| `pg_rewrite_17` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 35.0 KiB | [pg_rewrite_17-2.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rewrite_17-2.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rewrite_17` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.1 KiB | [pg_rewrite_17-2.0.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_rewrite_17-2.0.0-1PGDG.rhel8.aarch64.rpm) |
+| `pg_rewrite_17` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 39.5 KiB | [pg_rewrite_17-2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rewrite_17-2.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.4 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_rewrite_17-2.1.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.5 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_rewrite_17-2.1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.6 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_rewrite_17-2.1.0-1PGDG.rhel9.6.x86_64.rpm) |
-| `pg_rewrite_17` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 37.7 KiB | [pg_rewrite_17-2.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rewrite_17-2.0.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rewrite_17` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 37.9 KiB | [pg_rewrite_17-2.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_rewrite_17-2.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `pg_rewrite_17` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 37.8 KiB | [pg_rewrite_17-2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rewrite_17-2.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.9 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_rewrite_17-2.1.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.9 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_rewrite_17-2.1.0-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.0 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_rewrite_17-2.1.0-1PGDG.rhel9.6.aarch64.rpm) |
-| `pg_rewrite_17` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 36.1 KiB | [pg_rewrite_17-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rewrite_17-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_rewrite_17` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.2 KiB | [pg_rewrite_17-2.0.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_rewrite_17-2.0.0-1PGDG.rhel9.aarch64.rpm) |
+| `pg_rewrite_17` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 40.0 KiB | [pg_rewrite_17-2.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_rewrite_17-2.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.0 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_rewrite_17-2.1.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.0 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_rewrite_17-2.1.0-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.4 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_rewrite_17-2.1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pg_rewrite_17` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 38.7 KiB | [pg_rewrite_17-2.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_rewrite_17-2.0.0-1PGDG.rhel10.x86_64.rpm) |
+| `pg_rewrite_17` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 38.4 KiB | [pg_rewrite_17-2.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_rewrite_17-2.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_rewrite_17-2.1.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_rewrite_17-2.1.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_rewrite_17` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_17-2.1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_rewrite_17-2.1.0-1PGDG.rhel10.0.aarch64.rpm) |
@@ -157,27 +167,33 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_rewrite_16` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 39.3 KiB | [pg_rewrite_16-2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rewrite_16-2.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 37.9 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_rewrite_16-2.1.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_rewrite_16` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 37.3 KiB | [pg_rewrite_16-2.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_rewrite_16-2.0.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_rewrite_16` | `1.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.0 KiB | [pg_rewrite_16-1.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_rewrite_16-1.1.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_rewrite_16` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 37.3 KiB | [pg_rewrite_16-2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rewrite_16-2.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.8 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_rewrite_16-2.1.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_rewrite_16` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.1 KiB | [pg_rewrite_16-2.0.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_rewrite_16-2.0.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_rewrite_16` | `1.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 34.1 KiB | [pg_rewrite_16-1.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_rewrite_16-1.1.0-1PGDG.rhel8.aarch64.rpm) |
+| `pg_rewrite_16` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 39.5 KiB | [pg_rewrite_16-2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rewrite_16-2.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.4 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_rewrite_16-2.1.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.4 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_rewrite_16-2.1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.5 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_rewrite_16-2.1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pg_rewrite_16` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 37.9 KiB | [pg_rewrite_16-2.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_rewrite_16-2.0.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_rewrite_16` | `1.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 36.4 KiB | [pg_rewrite_16-1.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_rewrite_16-1.1.0-1PGDG.rhel9.x86_64.rpm) |
+| `pg_rewrite_16` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 37.8 KiB | [pg_rewrite_16-2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rewrite_16-2.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.0 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_rewrite_16-2.1.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.9 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_rewrite_16-2.1.0-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.0 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_rewrite_16-2.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pg_rewrite_16` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.3 KiB | [pg_rewrite_16-2.0.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_rewrite_16-2.0.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_rewrite_16` | `1.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 34.9 KiB | [pg_rewrite_16-1.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_rewrite_16-1.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pg_rewrite_16` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 40.0 KiB | [pg_rewrite_16-2.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_rewrite_16-2.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.0 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_rewrite_16-2.1.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.0 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_rewrite_16-2.1.0-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.4 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_rewrite_16-2.1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pg_rewrite_16` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 38.7 KiB | [pg_rewrite_16-2.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_rewrite_16-2.0.0-1PGDG.rhel10.x86_64.rpm) |
 | `pg_rewrite_16` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 37.3 KiB | [pg_rewrite_16-1.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_rewrite_16-1.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pg_rewrite_16` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 38.4 KiB | [pg_rewrite_16-2.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_rewrite_16-2.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.6 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_rewrite_16-2.1.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_rewrite_16-2.1.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_rewrite_16` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_16-2.1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_rewrite_16-2.1.0-1PGDG.rhel10.0.aarch64.rpm) |
@@ -209,27 +225,33 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_rewrite_15` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 39.4 KiB | [pg_rewrite_15-2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rewrite_15-2.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 38.0 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_rewrite_15-2.1.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_rewrite_15` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 37.3 KiB | [pg_rewrite_15-2.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_rewrite_15-2.0.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_rewrite_15` | `1.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.0 KiB | [pg_rewrite_15-1.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_rewrite_15-1.1.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_rewrite_15` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 37.3 KiB | [pg_rewrite_15-2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rewrite_15-2.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.8 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_rewrite_15-2.1.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_rewrite_15` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.1 KiB | [pg_rewrite_15-2.0.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_rewrite_15-2.0.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_rewrite_15` | `1.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 34.0 KiB | [pg_rewrite_15-1.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_rewrite_15-1.1.0-1PGDG.rhel8.aarch64.rpm) |
+| `pg_rewrite_15` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 39.5 KiB | [pg_rewrite_15-2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rewrite_15-2.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.5 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_rewrite_15-2.1.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.6 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_rewrite_15-2.1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.7 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_rewrite_15-2.1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pg_rewrite_15` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.0 KiB | [pg_rewrite_15-2.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_rewrite_15-2.0.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_rewrite_15` | `1.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 36.5 KiB | [pg_rewrite_15-1.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_rewrite_15-1.1.0-1PGDG.rhel9.x86_64.rpm) |
+| `pg_rewrite_15` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 37.9 KiB | [pg_rewrite_15-2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rewrite_15-2.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.9 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_rewrite_15-2.1.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.9 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_rewrite_15-2.1.0-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.0 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_rewrite_15-2.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pg_rewrite_15` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.2 KiB | [pg_rewrite_15-2.0.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_rewrite_15-2.0.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_rewrite_15` | `1.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 34.9 KiB | [pg_rewrite_15-1.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_rewrite_15-1.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pg_rewrite_15` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 39.8 KiB | [pg_rewrite_15-2.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_rewrite_15-2.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 38.9 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_rewrite_15-2.1.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 38.9 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_rewrite_15-2.1.0-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.3 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_rewrite_15-2.1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pg_rewrite_15` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 38.7 KiB | [pg_rewrite_15-2.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_rewrite_15-2.0.0-1PGDG.rhel10.x86_64.rpm) |
 | `pg_rewrite_15` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 37.5 KiB | [pg_rewrite_15-1.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_rewrite_15-1.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pg_rewrite_15` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 38.2 KiB | [pg_rewrite_15-2.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_rewrite_15-2.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.3 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_rewrite_15-2.1.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.3 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_rewrite_15-2.1.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_rewrite_15` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.3 KiB | [pg_rewrite_15-2.1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_rewrite_15-2.1.0-1PGDG.rhel10.0.aarch64.rpm) |
@@ -261,27 +283,33 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_rewrite_14` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 39.6 KiB | [pg_rewrite_14-2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rewrite_14-2.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 38.1 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_rewrite_14-2.1.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_rewrite_14` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 37.5 KiB | [pg_rewrite_14-2.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_rewrite_14-2.0.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_rewrite_14` | `1.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.2 KiB | [pg_rewrite_14-1.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_rewrite_14-1.1.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_rewrite_14` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 37.4 KiB | [pg_rewrite_14-2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rewrite_14-2.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.8 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_rewrite_14-2.1.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_rewrite_14` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 35.2 KiB | [pg_rewrite_14-2.0.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_rewrite_14-2.0.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_rewrite_14` | `1.1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 34.0 KiB | [pg_rewrite_14-1.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_rewrite_14-1.1.0-1PGDG.rhel8.aarch64.rpm) |
+| `pg_rewrite_14` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 39.7 KiB | [pg_rewrite_14-2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rewrite_14-2.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.7 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_rewrite_14-2.1.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.7 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_rewrite_14-2.1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.7 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_rewrite_14-2.1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pg_rewrite_14` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.1 KiB | [pg_rewrite_14-2.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_rewrite_14-2.0.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_rewrite_14` | `1.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 36.8 KiB | [pg_rewrite_14-1.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_rewrite_14-1.1.0-1PGDG.rhel9.x86_64.rpm) |
+| `pg_rewrite_14` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 38.0 KiB | [pg_rewrite_14-2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rewrite_14-2.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.2 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_rewrite_14-2.1.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.1 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_rewrite_14-2.1.0-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 37.3 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_rewrite_14-2.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pg_rewrite_14` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 36.5 KiB | [pg_rewrite_14-2.0.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_rewrite_14-2.0.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_rewrite_14` | `1.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 35.0 KiB | [pg_rewrite_14-1.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_rewrite_14-1.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pg_rewrite_14` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 40.1 KiB | [pg_rewrite_14-2.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_rewrite_14-2.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.2 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_rewrite_14-2.1.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.2 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_rewrite_14-2.1.0-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.6 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_rewrite_14-2.1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pg_rewrite_14` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 39.0 KiB | [pg_rewrite_14-2.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_rewrite_14-2.0.0-1PGDG.rhel10.x86_64.rpm) |
 | `pg_rewrite_14` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 37.6 KiB | [pg_rewrite_14-1.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_rewrite_14-1.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pg_rewrite_14` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 38.4 KiB | [pg_rewrite_14-2.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_rewrite_14-2.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.5 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_rewrite_14-2.1.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.4 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_rewrite_14-2.1.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_rewrite_14` | `2.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 37.4 KiB | [pg_rewrite_14-2.1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_rewrite_14-2.1.0-1PGDG.rhel10.0.aarch64.rpm) |
@@ -314,15 +342,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/cybertec-postgresql/pg_rewrite" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_rewrite" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rewrite-REL2_2.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_rewrite;		# build rpm
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

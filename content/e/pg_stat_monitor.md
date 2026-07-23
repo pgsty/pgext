@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_stat_monitor` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.2` | {{< bg "18" "pg_stat_monitor_18" "green" >}} {{< bg "17" "pg_stat_monitor_17" "green" >}} {{< bg "16" "pg_stat_monitor_16" "green" >}} {{< bg "15" "pg_stat_monitor_15" "green" >}} {{< bg "14" "pg_stat_monitor_14" "green" >}} | `pg_stat_monitor_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "pg_stat_monitor_18" "green" >}} {{< bg "17" "pg_stat_monitor_17" "green" >}} {{< bg "16" "pg_stat_monitor_16" "green" >}} {{< bg "15" "pg_stat_monitor_15" "green" >}} {{< bg "14" "pg_stat_monitor_14" "green" >}} | `pg_stat_monitor_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.2` | {{< bg "18" "postgresql-18-pg-stat-monitor" "green" >}} {{< bg "17" "postgresql-17-pg-stat-monitor" "green" >}} {{< bg "16" "postgresql-16-pg-stat-monitor" "green" >}} {{< bg "15" "postgresql-15-pg-stat-monitor" "green" >}} {{< bg "14" "postgresql-14-pg-stat-monitor" "green" >}} | `postgresql-$v-pg-stat-monitor` | - |
 
 

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2600** | {{< badge content="age" link="https://github.com/apache/age" >}} | {{< ext "age" >}} | `1.7.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2600** | {{< badge content="age" link="https://github.com/apache/age" >}} | {{< ext "age" >}} | `1.8.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,26 +27,26 @@ width: full
 |    **Schemas**    | `ag_catalog` |
 |   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "ltree" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "citus" >}} |
 
-> [!Note] pg18/17 = 1.7.0, pg 14-17 with 1.6.0 support, rename apache_age to age on el since 1.7
+> [!Note] PIGSTY RPM package 1.8.0 for PostgreSQL 18 is built from the upstream PG18 v1.8.0-rc0 source; SQL/control version is 1.8.0 and LOAD 'age' is required before use. PostgreSQL 17 remains on PIGSTY 1.7.0; PGDG DEB raw version 1.8.0~rc0 is available for PostgreSQL 18.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `age` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "age_18" "green" >}} {{< bg "17" "age_17" "green" >}} {{< bg "16" "age_16" "red" >}} {{< bg "15" "age_15" "red" >}} {{< bg "14" "age_14" "red" >}} | `age_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "postgresql-18-age" "green" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "red" >}} {{< bg "15" "postgresql-15-age" "red" >}} {{< bg "14" "postgresql-14-age" "red" >}} | `postgresql-$v-age` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `age` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "age_18" "green" >}} {{< bg "17" "age_17" "green" >}} {{< bg "16" "age_16" "red" >}} {{< bg "15" "age_15" "red" >}} {{< bg "14" "age_14" "red" >}} | `age_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.0` | {{< bg "18" "postgresql-18-age" "green" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "red" >}} {{< bg "15" "postgresql-15-age" "red" >}} {{< bg "14" "postgresql-14-age" "red" >}} | `postgresql-$v-age` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.7.0" "age_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 2" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "age_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 2" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.7.0" "age_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "age_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.7.0" "age_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "age_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "age_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "age_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "age_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "age_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "age_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "age_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.7.0" "age_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.6.0" "age_14 : AVAIL 3" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-age : AVAIL 3" "blue" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-age : AVAIL 2" "green" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-age : AVAIL 1" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-age : AVAIL 3" "blue" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-age : AVAIL 2" "green" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-age : AVAIL 1" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-age : AVAIL 3" "blue" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-age : AVAIL 2" "green" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-age : AVAIL 1" "blue" >}} |
@@ -64,22 +64,28 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `age_18` | `1.8.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 300.8 KiB | [age_18-1.8.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/age_18-1.8.0-1PIGSTY.el8.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 247.6 KiB | [age_18-1.7.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/age_18-1.7.0-2PIGSTY.el8.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 227.0 KiB | [age_18-1.7.0-rc0_1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/age_18-1.7.0-rc0_1PGDG.rhel8.10.x86_64.rpm) |
+| `age_18` | `1.8.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 278.7 KiB | [age_18-1.8.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/age_18-1.8.0-1PIGSTY.el8.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 229.8 KiB | [age_18-1.7.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/age_18-1.7.0-2PIGSTY.el8.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 209.6 KiB | [age_18-1.7.0-rc0_1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/age_18-1.7.0-rc0_1PGDG.rhel8.10.aarch64.rpm) |
+| `age_18` | `1.8.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 280.3 KiB | [age_18-1.8.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/age_18-1.8.0-1PIGSTY.el9.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 229.2 KiB | [age_18-1.7.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/age_18-1.7.0-2PIGSTY.el9.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 225.4 KiB | [age_18-1.7.0-rc0_1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/age_18-1.7.0-rc0_1PGDG.rhel9.8.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 225.4 KiB | [age_18-1.7.0-rc0_1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/age_18-1.7.0-rc0_1PGDG.rhel9.7.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 225.5 KiB | [age_18-1.7.0-rc0_1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/age_18-1.7.0-rc0_1PGDG.rhel9.6.x86_64.rpm) |
+| `age_18` | `1.8.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 271.3 KiB | [age_18-1.8.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/age_18-1.8.0-1PIGSTY.el9.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 221.0 KiB | [age_18-1.7.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/age_18-1.7.0-2PIGSTY.el9.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 216.0 KiB | [age_18-1.7.0-rc0_1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/age_18-1.7.0-rc0_1PGDG.rhel9.8.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 216.0 KiB | [age_18-1.7.0-rc0_1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/age_18-1.7.0-rc0_1PGDG.rhel9.7.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 216.2 KiB | [age_18-1.7.0-rc0_1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/age_18-1.7.0-rc0_1PGDG.rhel9.6.aarch64.rpm) |
+| `age_18` | `1.8.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 280.6 KiB | [age_18-1.8.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/age_18-1.8.0-1PIGSTY.el10.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 231.5 KiB | [age_18-1.7.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/age_18-1.7.0-2PIGSTY.el10.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 227.9 KiB | [age_18-1.7.0-rc0_1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/age_18-1.7.0-rc0_1PGDG.rhel10.2.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 227.9 KiB | [age_18-1.7.0-rc0_1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/age_18-1.7.0-rc0_1PGDG.rhel10.1.x86_64.rpm) |
 | `age_18` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 228.2 KiB | [age_18-1.7.0-rc0_1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/age_18-1.7.0-rc0_1PGDG.rhel10.0.x86_64.rpm) |
+| `age_18` | `1.8.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 270.5 KiB | [age_18-1.8.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/age_18-1.8.0-1PIGSTY.el10.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 221.8 KiB | [age_18-1.7.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/age_18-1.7.0-2PIGSTY.el10.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 218.2 KiB | [age_18-1.7.0-rc0_1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/age_18-1.7.0-rc0_1PGDG.rhel10.2.aarch64.rpm) |
 | `age_18` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 218.3 KiB | [age_18-1.7.0-rc0_1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/age_18-1.7.0-rc0_1PGDG.rhel10.1.aarch64.rpm) |
@@ -273,7 +279,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/apache/age" title="Repository" icon="github" subtitle="github.com/apache/age" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="age-1.7.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="age-PG18-v1.8.0-rc0.tar.gz" >}}
 {{< /cards >}}
 
 

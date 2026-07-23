@@ -7,11 +7,11 @@ breadcrumbs: false
 ---
 
 
-Pigsty has a repository that provides 200+ extra PostgreSQL extensions on 10
-mainstream [Linux Distros](/os).
+Pigsty provides a PostgreSQL extension repository across 16 [Linux platform targets](/os)
+(8 distribution releases on both `x86_64` and `aarch64`).
 It is designed to work together with the official PostgreSQL Global Development
 Group ([PGDG](https://www.postgresql.org/download/linux/)) repo.
-Together, they can provide up to [531 PostgreSQL Extensions](https://ext.pgsty.com/list) out-of-the-box.
+Together, they can provide up to [555 PostgreSQL Extensions](https://ext.pgsty.com/list) out-of-the-box.
 
 {{< cards cols=2 >}}
 {{< card link="/repo/pgsql"  title="PGSQL Repo" subtitle="Pigsty Extension Repository"  icon="play"     >}}
@@ -27,6 +27,7 @@ Together, they can provide up to [531 PostgreSQL Extensions](https://ext.pgsty.c
 |  Debian 13   | d13  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
 | Ubuntu 22.04 | u22  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
 | Ubuntu 24.04 | u24  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
+| Ubuntu 26.04 | u26  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
 
 ## Get Started
 
@@ -63,7 +64,7 @@ You can also add these repo to your system [manually](#manual-install) with defa
 # Add Pigsty's GPG public key to your system keychain to verify package signatures
 curl -fsSL https://repo.pigsty.io/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
 
-# Get Debian distribution codename (distro_codename=jammy, focal, bullseye, bookworm), and write the corresponding upstream repository address to the APT List file
+# Get the Debian/Ubuntu codename (bookworm, trixie, jammy, noble, resolute), and write the matching repository address to the APT list file
 distro_codename=$(lsb_release -cs)
 sudo tee /etc/apt/sources.list.d/pigsty-io.list > /dev/null <<EOF
 deb [signed-by=/etc/apt/keyrings/pigsty.gpg] https://repo.pigsty.io/apt/infra generic main

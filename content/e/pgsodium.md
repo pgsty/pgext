@@ -37,7 +37,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.1.11` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsodium` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.1.11` | {{< bg "18" "pgsodium_18" "green" >}} {{< bg "17" "pgsodium_17" "green" >}} {{< bg "16" "pgsodium_16" "green" >}} {{< bg "15" "pgsodium_15" "green" >}} {{< bg "14" "pgsodium_14" "green" >}} | `pgsodium_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.1.9` | {{< bg "18" "postgresql-18-pgsodium" "green" >}} {{< bg "17" "postgresql-17-pgsodium" "green" >}} {{< bg "16" "postgresql-16-pgsodium" "green" >}} {{< bg "15" "postgresql-15-pgsodium" "green" >}} {{< bg "14" "postgresql-14-pgsodium" "green" >}} | `postgresql-$v-pgsodium` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "postgresql-18-pgsodium" "green" >}} {{< bg "17" "postgresql-17-pgsodium" "green" >}} {{< bg "16" "postgresql-16-pgsodium" "green" >}} {{< bg "15" "postgresql-15-pgsodium" "green" >}} {{< bg "14" "postgresql-14-pgsodium" "green" >}} | `postgresql-$v-pgsodium` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

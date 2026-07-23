@@ -494,7 +494,7 @@ weight: 300
 | 7150 | {{< alias "pg_auth_mon" >}} | 监控每个用户的连接尝试 |
 | 7310 | {{< alias "credcheck" >}} | 明文凭证检查器 |
 | 7330 | {{< alias "pg_pwhash" >}} | PostgreSQL 高级密码哈希扩展（Argon2/scrypt/yescrypt） |
-| 7500 | {{< alias "pg_tde" >}} | Percona加密存储引擎 |
+| 7500 | {{< alias "pg_tde" >}} | Percona 透明加密存储引擎 |
 | 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
 | 8680 | {{< alias "nominatim_fdw" >}} | Nominatim 地理编码接口的 FDW 扩展 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 从PG向Redis发送Pub/Sub消息 |

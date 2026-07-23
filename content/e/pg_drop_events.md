@@ -33,8 +33,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_drop_events` | `plpgsql` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.0` | {{< bg "18" "pg_drop_events_18" "green" >}} {{< bg "17" "pg_drop_events_17" "green" >}} {{< bg "16" "pg_drop_events_16" "green" >}} {{< bg "15" "pg_drop_events_15" "green" >}} {{< bg "14" "pg_drop_events_14" "green" >}} | `pg_drop_events_$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_drop_events` | `plpgsql` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_drop_events_18" "green" >}} {{< bg "17" "pg_drop_events_17" "green" >}} {{< bg "16" "pg_drop_events_16" "green" >}} {{< bg "15" "pg_drop_events_15" "green" >}} {{< bg "14" "pg_drop_events_14" "green" >}} | `pg_drop_events_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-drop-events" "green" >}} {{< bg "17" "postgresql-17-pg-drop-events" "green" >}} {{< bg "16" "postgresql-16-pg-drop-events" "green" >}} {{< bg "15" "postgresql-15-pg-drop-events" "green" >}} {{< bg "14" "postgresql-14-pg-drop-events" "green" >}} | `postgresql-$v-pg-drop-events` | - |
 
 

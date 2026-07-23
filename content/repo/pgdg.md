@@ -6,9 +6,9 @@ weight: 400
 ---
 
 The Pigsty PGSQL Repo is designed to work together with the official PostgreSQL Global Development Group ([PGDG](https://www.postgresql.org/download/linux/)) repo.
-Together, they can provide up to [531 PostgreSQL Extensions](https://ext.pgsty.com/list) out-of-the-box.
+Together, they can provide up to [555 PostgreSQL Extensions](https://ext.pgsty.com/list) out-of-the-box.
 
-Mirror synced at 2025-12-01 18:00:00
+Repository availability is derived from the current package indexes and reflected in the platform table below.
 
 ## Quick Start
 
@@ -30,7 +30,7 @@ Since 2025-05, PGDG has closed the rsync/ftp sync channel, which makes almost al
 
 Currently, Pigsty, Yandex, Xtom are providing regular synced mirror service.
 
-The pigsty pgdg mirror is a subset of official pgdg repo, cover EL 7-10, Debian 11-13, Ubuntu 20.04 - 24.04, with x86_64 & arm6 and pg 14 - 19alpha. 
+The Pigsty PGDG mirror is a subset of the official PGDG repo, covering EL 7-10, Debian 11-13, and Ubuntu 20.04-26.04 on `x86_64` and `aarch64`. The active PGEXT catalog targets PostgreSQL 14-18; beta and legacy branches may also be mirrored where available.
 
 | OS Code                                                                               | Vendor     | Major            | PG Major                                                                                                                                                                                                                                                |                       Comment         |
 |:----------------------------------------------------------------------------------------|:-------|:---:|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------:|
@@ -53,6 +53,8 @@ The pigsty pgdg mirror is a subset of official pgdg repo, cover EL 7-10, Debian 
 | {{< badge content="u22.aarch64" link="/os/u22.aarch64" color="green" border=false >}} | Ubuntu | 22  |  {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    |    {{< badge content="OK" color="green" >}}    |
 | {{< badge content="u24.x86_64"  link="/os/u24.x86_64"  color="green" >}}              | Ubuntu | 24  |  {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    |    {{< badge content="OK" color="green" >}}    |
 | {{< badge content="u24.aarch64" link="/os/u24.aarch64" color="green" border=false >}} | Ubuntu | 24  |  {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    |    {{< badge content="OK" color="green" >}}    |
+| {{< badge content="u26.x86_64"  link="/os/u26.x86_64"  color="green" >}}              | Ubuntu | 26  |  {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    |    {{< badge content="OK" color="green" >}}    |
+| {{< badge content="u26.aarch64" link="/os/u26.aarch64" color="green" border=false >}} | Ubuntu | 26  |  {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    |    {{< badge content="OK" color="green" >}}    |
 
 EL YUM/DNF Repo info:
 
