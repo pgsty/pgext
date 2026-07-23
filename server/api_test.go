@@ -362,8 +362,8 @@ func TestEmbeddedDetailManualContract(t *testing.T) {
 	for _, want := range []string{
 		`id="ext-overview"`, `id="ext-metadata"`, `id="ext-relations"`,
 		`id="ext-packages"`, `id="ext-build"`, `id="ext-install"`, `id="ext-usage"`,
-		`id="pkg-overview"`, `id="pkg-version"`, `id="pkg-availability"`, `id="pkg-downloads"`,
-		`id="pkg-build"`, `id="pkg-install"`, `id="pkg-extensions"`,
+		`id="pkg-family"`, `id="pkg-overview"`, `id="pkg-version"`, `id="pkg-availability"`, `id="pkg-downloads"`,
+		`id="pkg-build"`, `id="pkg-install"`,
 		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "preload_libs", "pig build pkg",
 		"file-browser", "usage-prose", "function navigateTo", "const extHref", "const pkgHref",
 		"DIM_GROUPS", "relationbits", "migrateLegacyHash", "data-dim-search", "capabilityMatches",

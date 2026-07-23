@@ -384,6 +384,9 @@ func (g *PigstyConfigGenerator) generateCategoryPackages(extensions map[string]*
 			var pkgList []pkgInfo
 
 			for _, ext := range sortedExtensions {
+				if ext.ForkBound {
+					continue
+				}
 				if strings.ToLower(ext.Category) != cat {
 					continue
 				}
@@ -475,20 +478,7 @@ func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]
 
 	// Sort extensions by category ID and extension ID
 	sortedExts := sortExtensionsByID(extensions)
-
-	// Collect all hunspell extensions for aggregation
-	hunspellExts := []string{}
-	hunspellVersions := make(map[int]bool)
-	for _, ext := range sortedExts {
-		if strings.HasPrefix(ext.Name, "hunspell_") && ext.Name != "hunspell_pt_pt" { // Exclude broken hunspell_pt_pt
-			hunspellExts = append(hunspellExts, ext.Alias)
-			for pg := range ext.Available {
-				if ext.Available[pg] {
-					hunspellVersions[pg] = true
-				}
-			}
-		}
-	}
+	seenAliases := make(map[string]struct{})
 
 	// Generate mappings
 	for _, ext := range sortedExts {
@@ -499,43 +489,10 @@ func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]
 		if ext.ForkBound {
 			continue
 		}
-
-		// Special handling: insert hunspell aggregation alias before hunspell_cs_cz
-		if ext.Name == "hunspell_cs_cz" && len(hunspellExts) > 0 {
-			// Create hunspell aggregate package pattern
-			var hunspellPkgPattern string
-			if g.isRPM() {
-				// For RPM: hunspell_cs_cz_$v hunspell_de_de_$v hunspell_en_us_$v ...
-				var pkgs []string
-				for _, hext := range hunspellExts {
-					pkgs = append(pkgs, hext+"_$v")
-				}
-				hunspellPkgPattern = strings.Join(pkgs, " ")
-			} else {
-				// For DEB: postgresql-$v-hunspell-cs-cz,postgresql-$v-hunspell-de-de,...
-				var pkgs []string
-				for _, hext := range hunspellExts {
-					pkgs = append(pkgs, "postgresql-$v-"+strings.ReplaceAll(hext, "_", "-"))
-				}
-				hunspellPkgPattern = strings.Join(pkgs, ",")
-			}
-
-			// Convert map to slice for versions
-			var hunspellVerList []int
-			for v := range hunspellVersions {
-				hunspellVerList = append(hunspellVerList, v)
-			}
-			sort.Sort(sort.Reverse(sort.IntSlice(hunspellVerList)))
-
-			// Add hunspell aggregate alias
-			mappings = append(mappings, ExtensionMapping{
-				Name:     "hunspell",
-				Package:  hunspellPkgPattern,
-				PGVers:   hunspellVerList,
-				Comment:  "aggregate all hunspell extensions",
-				Category: ext.Category,
-			})
+		if _, exists := seenAliases[ext.Alias]; exists {
+			continue
 		}
+		seenAliases[ext.Alias] = struct{}{}
 
 		// Determine package pattern
 		var pkgPattern string
@@ -925,7 +882,7 @@ func GetConfigConstants() *ConfigConstants {
 			{"pgedge", "pgedge-$v", "pgedge-$v"},
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
 			{"cloudberry", "cloudberry cloudberry-backup cloudberry-pxf", "cloudberry cloudberry-backup cloudberry-pxf"},
-			{"pgtde", "pgtde-18,pgtde-18-contrib", "pgtde-18 pgtde-18-contrib"},
+			{"pgtde", "pgtde-$v,pgtde-$v-contrib", "pgtde-$v pgtde-$v-contrib"},
 			{"percona-core", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18"},
 			{"percona-main", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18,percona-postgis35_18,percona-postgis35_18-client,percona-postgis35_18-utils,percona-pgvector_18,percona-wal2json18,percona-pg_repack18,percona-pgaudit18,percona-pgaudit18_set_user,percona-pg_stat_monitor18,percona-pg_gather", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18 percona-postgresql-18-postgis-3 percona-postgresql-18-pgvector percona-postgresql-18-wal2json percona-postgresql-18-repack percona-postgresql-18-pgaudit percona-pgaudit18-set-user percona-pg-stat-monitor18 percona-pg-gather"},
 		},

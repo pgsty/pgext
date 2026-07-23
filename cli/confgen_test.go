@@ -123,6 +123,72 @@ func TestGenerateExtensionMappingsFallbackToDeclaredPG(t *testing.T) {
 	}
 }
 
+func TestGenerateExtensionMappingsTreatsHunspellAsRegularPackage(t *testing.T) {
+	tests := []struct {
+		name    string
+		gen     *PigstyConfigGenerator
+		wantPkg string
+	}{
+		{
+			name:    "rpm",
+			gen:     &PigstyConfigGenerator{osCode: "el9"},
+			wantPkg: "hunspell_$v",
+		},
+		{
+			name:    "deb",
+			gen:     &PigstyConfigGenerator{osCode: "u24"},
+			wantPkg: "postgresql-$v-hunspell",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			extensions := map[string]*ExtensionData{
+				"hunspell_cs_cz": {
+					ID:         2270,
+					Name:       "hunspell_cs_cz",
+					Alias:      "hunspell",
+					Category:   "FTS",
+					CategoryID: 21,
+					RPMPkg:     "hunspell_$v",
+					DEBPkg:     "postgresql-$v-hunspell",
+					Available: map[int]bool{
+						18: true,
+						17: true,
+					},
+				},
+				"hunspell_de_de": {
+					ID:         2271,
+					Name:       "hunspell_de_de",
+					Alias:      "hunspell",
+					Category:   "FTS",
+					CategoryID: 21,
+					RPMPkg:     "hunspell_$v",
+					DEBPkg:     "postgresql-$v-hunspell",
+					Available: map[int]bool{
+						18: true,
+						17: true,
+					},
+				},
+			}
+
+			mappings := tt.gen.generateExtensionMappings(extensions)
+			if len(mappings) != 1 {
+				t.Fatalf("expected 1 regular hunspell mapping, got %d: %#v", len(mappings), mappings)
+			}
+			if mappings[0].Name != "hunspell" {
+				t.Fatalf("mapping name = %q, want hunspell", mappings[0].Name)
+			}
+			if mappings[0].Package != tt.wantPkg {
+				t.Fatalf("mapping package = %q, want %q", mappings[0].Package, tt.wantPkg)
+			}
+			if !reflect.DeepEqual(mappings[0].PGVers, []int{18, 17}) {
+				t.Fatalf("mapping versions = %v, want %v", mappings[0].PGVers, []int{18, 17})
+			}
+		})
+	}
+}
+
 func TestGenerateExtensionMappingsSkipsForkBoundExtensions(t *testing.T) {
 	g := &PigstyConfigGenerator{osCode: "el9"}
 	extensions := map[string]*ExtensionData{
