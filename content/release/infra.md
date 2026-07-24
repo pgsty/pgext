@@ -6,6 +6,19 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-07-24
+
+| Name                    | Old           | New           | Comment                                    |
+|:------------------------|:--------------|:--------------|:-------------------------------------------|
+| etcd                    | 3.7.0         | 3.7.1         |                                            |
+| redis-exporter          | 1.87.0        | 1.88.0        |                                            |
+| victoria-traces         | 0.9.4         | 0.10.0        |                                            |
+| rustfs                  | 1.0.0-beta.10 | 1.0.0-beta.11 | Prerelease line; preview releases excluded |
+| uv                      | 0.11.31       | 0.11.32       |                                            |
+| pg-hardstorage          | 1.0.13        | 1.0.16        | Direct-download artifacts                  |
+| code-server             | 4.129.0       | 4.130.0       | Direct-download artifacts                  |
+| cloudflared             | 2026.7.2      | 2026.7.3      | Direct-download artifacts                  |
+
 ## 2026-07-23
 
 | Name                    | Old     | New     | Comment |

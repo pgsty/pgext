@@ -30,8 +30,10 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
    `doc` 元数据与 `pkg` 的 AVAIL 目标整体载入内存（`atomic.Pointer` 原子换入）。列表、详情、
    维度聚合及首页的 PG × OS 精确筛选均零 SQL 应答。内容 ETag 不包含加载时间，相同数据刷新后
    浏览器缓存仍然有效。按 `--cache-ttl`（默认 5m）后台自动刷新。
-2. **物化矩阵（`pgext.matrix`）**——CI/recap 发布 `pgext.pkg` 时，在同一事务内刷新 400 行物化视图；
-   每行以 80 字符状态串、行级包名/版本字典和位置对齐的详情元组表达 16 × 5 个组合。
+2. **矩阵缓存（`matrix.go` / `pgext.matrix_cache`）**——`/api/v1/matrix` 的完整响应在写入侧预计算：
+   一条 `jsonb_object_agg` 聚合把 `pgext.pkg` 折叠成每包一行（键 `el8i.17`，值 `版本 + #/@ + G/P/M/N`），
+   Go 侧铺到规范 OS × PG 网格后连同统计一起序列化，落入单行 mtime 缓存表。读路径是一次主键查询；
+   缓存在早于 `pgext.status` 装载时间或超过 24h 时惰性重建，`POST /api/v1/reload` 与启动预热会主动重建。
 3. **ttlCache（`cache.go`）**——全局物化矩阵、逐扩展 `pkg` 矩阵、`bin` 文件表、`doc` 正文按需查询后缓存；
    键内嵌快照版本号，快照刷新即自然失效。
 
@@ -48,7 +50,7 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 | `GET /api/v1/ext` | 列表/搜索：除分类、仓库、PG/OS、形态、生命周期与来源外，还支持 `tag pkg capability build docs relation pgrx active`；`q` 可组合 `tag:vector build:pgrx doc:bilingual is:packaged` 等操作符 |
 | `GET /api/v1/ext/{name}` | 单个扩展完整记录（新版 universe 字段 + `state/repo/ext_*` v1 兼容别名） |
 | `GET /api/v1/ext/{name}/matrix` | 可用性矩阵：`pgext.pkg` 的 pg × os 单元格（state/org/version/count） |
-| `GET /api/v1/matrix` | 全局构建矩阵：仅扫描 `pgext.matrix` 的预计算 JSON 行；紧凑协议 `p/e/c/n/v/d` 可还原全部状态格及悬停详情（gzip 后约 25 KiB） |
+| `GET /api/v1/matrix` | 全局构建矩阵（`matrix-row.v2`）：`p/e/c` 每格一个状态字节（`G/P/M/N`），`v/i` 为行级版本字典与 base36 索引（gzip 后约 7 KiB，读路径为 `pgext.matrix_cache` 单行查询；前端以单张 canvas 一次绘制，/pg/{n} 与 /os/{target} 复用同一载荷切片渲染） |
 | `GET /api/v1/ext/{name}/files` | 二进制包文件（`pgext.bin` ⋈ `repository`，含下载 URL 与 SHA256），可选 `?pg= &os=` |
 | `GET /api/v1/ext/{name}/doc` | 用法文档 markdown（`pgext.doc`），`?lang=en\|zh` |
 | `GET/POST /api/v1/ext/{name}/visit` | 页面访问计数：POST 自增并返回 `{visits, downloads}`，GET 只读；下载计数暂为占位 0。由 `--visits-file`（默认 `~/.pgext/visits.json`）持久化，30s 周期 + 退出时落盘 |
@@ -80,9 +82,10 @@ curl 'localhost:8432/api/v1/ext/timescaledb/doc?lang=zh'
 curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 ```
 
-已有目录运行一次 `pgext init` 会以非破坏方式补建 `pgext.matrix`。正常的 `pgext recap` / `reload`
-发布路径会与 `pgext.pkg` 在同一事务内刷新它；若绕过 CLI 直接导入 `pgext.pkg`，导入事务中也应执行
-`REFRESH MATERIALIZED VIEW pgext.matrix`，避免服务读到旧快照。
+全局矩阵缓存表 `pgext.matrix_cache` 由服务端按需自建（`CREATE TABLE IF NOT EXISTS`，只读角色下
+自动降级为纯内存计算）。任何路径更新 `pgext.pkg` 后，只要 `pgext.status` 的装载时间随之推进，
+服务端就会在下一次读取时自动重建缓存；`POST /api/v1/reload` 会立即重建。旧的
+`pgext.matrix` 物化视图不再被服务端读取，仍由 `pgext reload` 的发布事务顺带刷新。
 
 ## 前端（web/）
 

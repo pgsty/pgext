@@ -876,7 +876,7 @@ func GetConfigConstants() *ConfigConstants {
 			{"agensgraph", "agensgraph-$v", "agensgraph-$v"},
 			{"polardb", "polardb-$v", "polardb-$v"},
 			{"openhalo", "openhalodb-$v", "openhalodb-$v"},
-			{"ivorysql", "ivorysql5", "ivorysql-5"},
+			{"ivorysql", "ivorysql-$v", "ivorysql-$v"},
 			{"babelfish", "babelfish-$v", "babelfish-$v"},
 			{"orioledb", "orioledb-$v", "orioledb-$v"},
 			{"pgedge", "pgedge-$v", "pgedge-$v"},

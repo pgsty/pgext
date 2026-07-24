@@ -51,6 +51,7 @@ func Serve(ctx context.Context, opts Options) error {
 	visits := newVisitStore(opts.VisitsFile)
 	visits.startFlusher(ctx)
 	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken, visits: visits}
+	go a.warmMatrixCache(ctx)
 
 	mux := newMux(a)
 
@@ -228,7 +229,7 @@ func displayAddr(listen string) string {
 var assetETags = map[string]string{}
 
 func init() {
-	for _, name := range []string{"index.html", "style.css", "app.js"} {
+	for _, name := range []string{"index.html", "style.css", "app.js", "favicon.ico"} {
 		if b, err := webFS.ReadFile("web/" + name); err == nil {
 			sum := sha1.Sum(b)
 			assetETags[name] = `"` + hex.EncodeToString(sum[:8]) + `"`
@@ -266,6 +267,8 @@ func handleAsset(w http.ResponseWriter, r *http.Request) {
 		serveEmbedded(w, r, "style.css", "text/css; charset=utf-8")
 	case "app.js":
 		serveEmbedded(w, r, "app.js", "text/javascript; charset=utf-8")
+	case "favicon.ico":
+		serveEmbedded(w, r, "favicon.ico", "image/x-icon")
 	default:
 		http.NotFound(w, r)
 	}

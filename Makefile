@@ -6,7 +6,7 @@
 # Path      :   Makefile
 # Copyright (C) 2019-2025 Ruohang Feng
 #==============================================================#
-VERSION=v0.7.2
+VERSION=v1.0.0
 default: v d
 
 PGURL="postgres:///data"
@@ -112,10 +112,10 @@ gen-mdx:
 	@echo "Extension MDX files generated in content/docs/ext/"
 
 arm:
-	CGO_ENABLED=1 GOOS=linux  GOARCH=arm64 go build -a -ldflags "$(LD_FLAGS) -extldflags '-static'" -o pgext
+	CGO_ENABLED=0 GOOS=linux  GOARCH=arm64 go build -ldflags "$(LD_FLAGS)" -o pgext
 	upx pgext
 amd:
-	CGO_ENABLED=1 GOOS=linux  GOARCH=amd64 go build -a -o pgext
+	CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -o pgext
 	upx pgext
 
 # inventory

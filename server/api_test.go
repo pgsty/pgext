@@ -166,7 +166,7 @@ func TestBootstrapIncludesNewUniverseFields(t *testing.T) {
 	if err := json.Unmarshal(w.Body.Bytes(), &body); err != nil {
 		t.Fatal(err)
 	}
-	if len(body.Rows) != 4 || len(body.Rows[0]) != 32 {
+	if len(body.Rows) != 4 || len(body.Rows[0]) != 34 {
 		t.Fatalf("bootstrap shape = %d rows x %d cols", len(body.Rows), len(body.Rows[0]))
 	}
 	if body.Counts["projects"] != 4 || body.Counts["packaged"] != 3 {
@@ -335,7 +335,7 @@ func TestEmbeddedGlobalMatrixContract(t *testing.T) {
 	}
 	for _, want := range []string{
 		`href="/matrix"`, `j('/api/v1/matrix')`, "globalMatrixShellHTML", "setupGlobalMatrix",
-		"gmx-sheet", "data-gmx-cell", "data-gmx-lens", "globalMatrixTipHTML", "globalMatrixCell",
+		"gmx-sheet", "gmx-canvas", "matrix-row.v2", "gmx-readout", "sliceMatrixHTML", "osNavHTML", "matrixBlockHTML", "gmxTipHTML", "PIGSTY_LOGO",
 	} {
 		if !strings.Contains(string(app), want) {
 			t.Errorf("embedded matrix app is missing %q", want)
@@ -346,7 +346,7 @@ func TestEmbeddedGlobalMatrixContract(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for _, want := range []string{".gmx-page", ".gmx-head", ".gmx-body", ".gmx-cell.gmx-pgdg", ".gmx-cell.gmx-missing", ".gmx-cell.gmx-alt", ".gmx-lens-toggle"} {
+	for _, want := range []string{".mx-card", ".mx-scroll", ".gmx-grid", ".gmx-labels", ".gmx-legend-item.gmx-pgdg", ".gmx-legend-item.gmx-missing", ".gmx-readout", ".os-nav", ".slice-mx", ".nav-menu", ".footer-bottom", ".cat-card"} {
 		if !strings.Contains(string(style), want) {
 			t.Errorf("embedded matrix styles are missing %q", want)
 		}
@@ -360,14 +360,14 @@ func TestEmbeddedDetailManualContract(t *testing.T) {
 	}
 	appText := string(app)
 	for _, want := range []string{
-		`id="ext-overview"`, `id="ext-metadata"`, `id="ext-relations"`,
+		`id="ext-overview"`, `id="ext-relations"`,
 		`id="ext-packages"`, `id="ext-build"`, `id="ext-install"`, `id="ext-usage"`,
-		`id="pkg-family"`, `id="pkg-overview"`, `id="pkg-version"`, `id="pkg-availability"`, `id="pkg-downloads"`,
+		`id="pkg-family"`, `id="pkg-packages"`, `id="pkg-downloads"`,
 		`id="pkg-build"`, `id="pkg-install"`,
-		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "preload_libs", "pig build pkg",
+		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "packageTabsHTML", "preload_libs", "pig build pkg",
 		"file-browser", "usage-prose", "function navigateTo", "const extHref", "const pkgHref",
 		"DIM_GROUPS", "relationbits", "migrateLegacyHash", "data-dim-search", "capabilityMatches",
-		"pkg-banner", "data-hover-ext", "md-alert", "/visit",
+		"heroDimBadgesHTML", "heroLinkBadgesHTML", "data-hover-ext", "md-alert", "/visit", "ghCardHTML", "heroDatesHTML",
 	} {
 		if !strings.Contains(appText, want) {
 			t.Errorf("embedded detail app is missing %q", want)
@@ -381,7 +381,7 @@ func TestEmbeddedDetailManualContract(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for _, want := range []string{".manual-outline", ".metadata-grid", ".install-steps", ".pkg-facts", ".pkg-install-panel", ".doc-layout", ".usage-prose", ".md-table", ".dimension-group", ".dim-toolbar", ".active-filters"} {
+	for _, want := range []string{".page-toc", ".metadata-grid", ".install-steps", ".gh-card", ".hero-dates", ".empty-note", ".pgm-cell", ".usage-prose", ".md-table", ".dimension-group", ".dim-toolbar", ".active-filters"} {
 		if !strings.Contains(string(style), want) {
 			t.Errorf("embedded detail styles are missing %q", want)
 		}

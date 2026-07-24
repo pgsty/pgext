@@ -616,75 +616,22 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-type GlobalMatrixStats struct {
-	Rows   int            `json:"rows"`
-	OS     int            `json:"os"`
-	PG     int            `json:"pg"`
-	Cells  int            `json:"cells"`
-	Counts map[string]int `json:"counts"`
-}
-
-// handleGlobalMatrix serves the precomputed pgext.matrix rows. Each JSON row is
-// compact and positional: p=package, e=lead extension, c=80 status bytes,
-// n/v=row-local name/version dictionaries, and d=80 aligned optional detail
-// tuples. The request path never expands or classifies the 32,000 combinations.
+// handleGlobalMatrix serves the write-time-computed matrix payload (see
+// server/matrix.go). The request path is one primary-key lookup on
+// pgext.matrix_cache behind the in-memory TTL cache; the payload is compact
+// and positional: p=package, e=lead extension, c=status bytes (lowercase =
+// hidden), v/i=row-local version dictionary and per-cell index.
 func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
 	// LoadedAt participates in this cache key because package version/count
 	// changes can be meaningful even when the catalog content hash is stable.
 	cacheVersion := snap.Version + "|" + snap.LoadedAt.Format(time.RFC3339Nano)
 	a.cached(w, r, cacheVersion, func(ctx context.Context) (any, error) {
-		stats := GlobalMatrixStats{
-			OS: len(snap.OSs), PG: len(snap.PGs),
-			Counts: make(map[string]int),
-		}
-		cellWidth := stats.OS * stats.PG
-		rows, err := a.pool.Query(ctx, `
-			SELECT m.codes, m.data::text, coalesce(s.recap_time, s.parse_time, s.init_time)
-			FROM pgext.matrix m
-			CROSS JOIN pgext.status s
-			WHERE s.id = 0
-			ORDER BY m.id`)
+		payload, err := a.matrixPayload(ctx, false)
 		if err != nil {
-			return nil, fmt.Errorf("load precomputed global matrix: %w", err)
+			return nil, err
 		}
-		defer rows.Close()
-
-		resultRows := make([]json.RawMessage, 0, 400)
-		generated := snap.LoadedAt
-		for rows.Next() {
-			var codes, data string
-			if err := rows.Scan(&codes, &data, &generated); err != nil {
-				return nil, fmt.Errorf("scan precomputed global matrix row: %w", err)
-			}
-			if len(codes) != cellWidth {
-				return nil, fmt.Errorf("invalid precomputed global matrix row width: got %d, want %d", len(codes), cellWidth)
-			}
-			if !json.Valid([]byte(data)) {
-				return nil, fmt.Errorf("invalid JSON in precomputed global matrix row")
-			}
-			resultRows = append(resultRows, json.RawMessage(data))
-			for i := 0; i < len(codes); i++ {
-				stats.Counts[codes[i:i+1]]++
-			}
-		}
-		if err := rows.Err(); err != nil {
-			return nil, fmt.Errorf("iterate precomputed global matrix rows: %w", err)
-		}
-		stats.Rows = len(resultRows)
-		stats.Cells = stats.Rows * cellWidth
-		if stats.Rows == 0 && cellWidth > 0 {
-			return nil, fmt.Errorf("precomputed global matrix is empty; run pgext recap after schema initialization")
-		}
-		return map[string]any{
-			"generated": generated.Format(time.RFC3339),
-			"source":    "pgext.matrix",
-			"format":    "matrix-row.v1",
-			"pg":        snap.PGs,
-			"os":        snap.OSs,
-			"stats":     stats,
-			"rows":      resultRows,
-		}, nil
+		return json.RawMessage(payload), nil
 	})
 }
 
@@ -933,12 +880,12 @@ bootstrap: compact positional rows for the SPA.
 	  15 docbits(en1 zh2)  16 last_commit  17 pkg  18 lead_ext  19 lifecycle
 	  20 tags[]  21 last_active  22 checked_at
 	  23 buildbits(rpm1 deb2 pgrx4 source8)  24 target_idx[]  25 family_size  26 comment
-	  27 relationbits(requires1 required_by2 see_also4)  28 pgrx_ver  29 repo_url  30 url  31 license_url
+	  27 relationbits(requires1 required_by2 see_also4)  28 pgrx_ver  29 repo_url  30 url  31 license_url  32 rpm_pkg  33 deb_pkg
 */
 // bootFormat versions the positional payload layout. It participates in the
 // ETag (and the SPA's request URL) so a redeployed binary can never pair its
 // new app.js with an older cached payload whose columns no longer line up.
-const bootFormat = "b32"
+const bootFormat = "b34"
 
 func bootstrapETag(snap *Snapshot) string {
 	return `"` + bootFormat + "-" + strings.Trim(snap.Version, `"`) + `"`
@@ -998,7 +945,7 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 			e.EnDesc, e.ZhDesc, e.Kind, e.Vendor, e.Kernel, e.PG,
 			flags, docbits, e.LastCommit, e.Pkg, e.LeadExt, e.Lifecycle, e.Tags,
 			e.LastActive, e.CheckedAt, buildbits, e.TargetIdx, e.FamilySize, e.Comment,
-			relationbits, e.PGRXVer, e.RepoURL, e.URL, e.LicenseURL,
+			relationbits, e.PGRXVer, e.RepoURL, e.URL, e.LicenseURL, e.RPMPkg, e.DEBPkg,
 		}
 	}
 	w.Header().Set("ETag", etag)
@@ -1068,6 +1015,10 @@ func (a *api) handleReload(w http.ResponseWriter, r *http.Request) {
 		logrus.Errorf("catalog reload failed: %v", err)
 		writeErr(w, 500, "catalog reload failed")
 		return
+	}
+	// recompute the matrix cache at write time so no visitor pays for it
+	if _, err := a.matrixPayload(ctx, true); err != nil {
+		logrus.Warnf("matrix cache rebuild after reload failed: %v", err)
 	}
 	writeJSON(w, 200, map[string]any{
 		"generated": snap.LoadedAt.Format(time.RFC3339),

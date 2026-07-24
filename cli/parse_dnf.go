@@ -10,8 +10,8 @@ import (
 	"os"
 
 	"github.com/jackc/pgx/v5"
-	_ "github.com/mattn/go-sqlite3"
 	"github.com/sirupsen/logrus"
+	_ "modernc.org/sqlite"
 )
 
 // DNFParser handles parsing of DNF/YUM repository metadata
@@ -53,7 +53,7 @@ func (p *DNFParser) ParseRepository(repoID string, data []byte) (int, error) {
 	tmpFile.Close()
 
 	// Open SQLite database
-	sqliteDB, err := sql.Open("sqlite3", tmpPath+"?mode=ro")
+	sqliteDB, err := sql.Open("sqlite", "file:"+tmpPath+"?mode=ro")
 	if err != nil {
 		return 0, fmt.Errorf("open sqlite: %w", err)
 	}
