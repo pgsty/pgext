@@ -121,7 +121,7 @@ comments: false
 | {{< ext "pg_parquet" >}} | `0.5.1` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< category "OLAP" >}} | `pg_parquet_$v` | `postgresql-$v-pg-parquet` |
 | {{< ext "pg_ducklake" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/relytcloud/pg_ducklake" >}} | {{< category "OLAP" >}} | `pg_ducklake_$v` | `postgresql-$v-pg-ducklake` |
 | {{< ext "pg_fkpart" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/lemoineat/pg_fkpart" >}} | {{< category "OLAP" >}} | `pg_fkpart_$v` | `postgresql-$v-pg-fkpart` |
-| {{< ext "pg_partman" >}} | `5.4.3` | {{< badge content="Link" link="https://github.com/pgpartman/pg_partman" >}} | {{< category "OLAP" >}} | `pg_partman_$v` | `postgresql-$v-partman` |
+| {{< ext "pg_partman" >}} | `5.5.0` | {{< badge content="Link" link="https://github.com/pgpartman/pg_partman" >}} | {{< category "OLAP" >}} | `pg_partman_$v` | `postgresql-$v-partman` |
 | {{< ext "plproxy" >}} | `2.12.0` | {{< badge content="Link" link="https://github.com/plproxy/plproxy" >}} | {{< category "OLAP" >}} | `plproxy_$v` | `postgresql-$v-plproxy` |
 | {{< ext "pg_strom" >}} | `6.1` | {{< badge content="Link" link="https://github.com/heterodb/pg-strom" >}} | {{< category "OLAP" >}} | `pg_strom_$v` | - |
 | {{< ext "pg_orca" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/quantumiodb/pgorca" >}} | {{< category "OLAP" >}} | `pg_orca_$v` | `postgresql-$v-pg-orca` |
@@ -361,7 +361,7 @@ comments: false
 | {{< ext "adminpack" >}} | `2.1` | {{< badge content="Link" link="https://www.postgresql.org/docs/16/adminpack.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "amcheck" >}} | `1.4` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/amcheck.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_surgery" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/pgsurgery.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "pg_profile" >}} | `4.11` | {{< badge content="Link" link="https://github.com/zubkov-andrei/pg_profile" >}} | {{< category "STAT" >}} | `pg_profile_$v` | `postgresql-$v-pg-profile` |
+| {{< ext "pg_profile" >}} | `4.15` | {{< badge content="Link" link="https://github.com/zubkov-andrei/pg_profile" >}} | {{< category "STAT" >}} | `pg_profile_$v` | `postgresql-$v-pg-profile` |
 | {{< ext "pg_tracing" >}} | `0.1.3` | {{< badge content="Link" link="https://github.com/DataDog/pg_tracing" >}} | {{< category "STAT" >}} | `pg_tracing_$v` | `postgresql-$v-pg-tracing` |
 | {{< ext "pg_stat_ch" >}} | `0.3.6` | {{< badge content="Link" link="https://github.com/ClickHouse/pg_stat_ch" >}} | {{< category "STAT" >}} | `pg_stat_ch_$v` | `postgresql-$v-pg-stat-ch` |
 | {{< ext "pg_stat_backtrace" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/Nickyoung0/pg_stat_backtrace" >}} | {{< category "STAT" >}} | `pg_stat_backtrace_$v` | `postgresql-$v-pg-stat-backtrace` |

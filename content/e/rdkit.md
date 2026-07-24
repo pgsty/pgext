@@ -63,20 +63,20 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdkit_18` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 165.7 KiB | [rdkit_18-202303.3-0.1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_18-202303.3-0.1PIGSTY.el8.x86_64.rpm) |
-| `rdkit_18` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 158.7 KiB | [rdkit_18-202303.3-0.1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_18-202303.3-0.1PIGSTY.el8.aarch64.rpm) |
-| `rdkit_18` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 158.8 KiB | [rdkit_18-202303.3-0.1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_18-202303.3-0.1PIGSTY.el9.x86_64.rpm) |
-| `rdkit_18` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 152.8 KiB | [rdkit_18-202303.3-0.1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_18-202303.3-0.1PIGSTY.el9.aarch64.rpm) |
+| `rdkit_18` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 165.8 KiB | [rdkit_18-202303.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_18-202303.3-1PIGSTY.el8.x86_64.rpm) |
+| `rdkit_18` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 158.8 KiB | [rdkit_18-202303.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_18-202303.3-1PIGSTY.el8.aarch64.rpm) |
+| `rdkit_18` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 158.8 KiB | [rdkit_18-202303.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_18-202303.3-1PIGSTY.el9.x86_64.rpm) |
+| `rdkit_18` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 152.9 KiB | [rdkit_18-202303.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_18-202303.3-1PIGSTY.el9.aarch64.rpm) |
 | `rdkit_18` | `202503.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 143.1 KiB | [rdkit_18-202503.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdkit_18-202503.6-1PIGSTY.el10.x86_64.rpm) |
 | `rdkit_18` | `202503.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 135.2 KiB | [rdkit_18-202503.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdkit_18-202503.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-rdkit` | `202303.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 74.6 KiB | [postgresql-18-rdkit_202303.3-3PIGSTY~legacy_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-3PIGSTY~legacy_amd64.deb) |
-| `postgresql-18-rdkit` | `202303.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 67.0 KiB | [postgresql-18-rdkit_202303.3-3PIGSTY~legacy_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-3PIGSTY~legacy_arm64.deb) |
+| `postgresql-18-rdkit` | `202303.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 74.5 KiB | [postgresql-18-rdkit_202303.3-4PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-4PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-rdkit` | `202303.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 67.1 KiB | [postgresql-18-rdkit_202303.3-4PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-4PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-rdkit` | `202503.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 102.8 KiB | [postgresql-18-rdkit_202503.6-4PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdkit/postgresql-18-rdkit_202503.6-4PIGSTY~trixie_amd64.deb) |
 | `postgresql-18-rdkit` | `202503.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 245.1 KiB | [postgresql-18-rdkit_202503.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-18-rdkit_202503.1-5.pgdg13+1_amd64.deb) |
 | `postgresql-18-rdkit` | `202503.6` | [d13.aarch64](/os/d13.aarch64) | pigsty | 94.2 KiB | [postgresql-18-rdkit_202503.6-4PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdkit/postgresql-18-rdkit_202503.6-4PIGSTY~trixie_arm64.deb) |
 | `postgresql-18-rdkit` | `202503.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 237.6 KiB | [postgresql-18-rdkit_202503.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-18-rdkit_202503.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-18-rdkit` | `202303.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 81.8 KiB | [postgresql-18-rdkit_202303.3-3PIGSTY~legacy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-3PIGSTY~legacy_amd64.deb) |
-| `postgresql-18-rdkit` | `202303.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 76.7 KiB | [postgresql-18-rdkit_202303.3-3PIGSTY~legacy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-3PIGSTY~legacy_arm64.deb) |
+| `postgresql-18-rdkit` | `202303.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 81.8 KiB | [postgresql-18-rdkit_202303.3-4PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-4PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-rdkit` | `202303.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 77.1 KiB | [postgresql-18-rdkit_202303.3-4PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-18-rdkit_202303.3-4PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-rdkit` | `202503.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 108.6 KiB | [postgresql-18-rdkit_202503.6-4PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdkit/postgresql-18-rdkit_202503.6-4PIGSTY~noble_amd64.deb) |
 | `postgresql-18-rdkit` | `202503.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 243.1 KiB | [postgresql-18-rdkit_202503.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-18-rdkit_202503.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-rdkit` | `202503.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 105.8 KiB | [postgresql-18-rdkit_202503.6-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdkit/postgresql-18-rdkit_202503.6-4PIGSTY~noble_arm64.deb) |
@@ -89,36 +89,36 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdkit_17` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 165.7 KiB | [rdkit_17-202303.3-0.1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_17-202303.3-0.1PIGSTY.el8.x86_64.rpm) |
-| `rdkit_17` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 158.8 KiB | [rdkit_17-202303.3-0.1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_17-202303.3-0.1PIGSTY.el8.aarch64.rpm) |
-| `rdkit_17` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 158.8 KiB | [rdkit_17-202303.3-0.1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_17-202303.3-0.1PIGSTY.el9.x86_64.rpm) |
-| `rdkit_17` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 152.8 KiB | [rdkit_17-202303.3-0.1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_17-202303.3-0.1PIGSTY.el9.aarch64.rpm) |
+| `rdkit_17` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 165.8 KiB | [rdkit_17-202303.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_17-202303.3-1PIGSTY.el8.x86_64.rpm) |
+| `rdkit_17` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 158.8 KiB | [rdkit_17-202303.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_17-202303.3-1PIGSTY.el8.aarch64.rpm) |
+| `rdkit_17` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 158.9 KiB | [rdkit_17-202303.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_17-202303.3-1PIGSTY.el9.x86_64.rpm) |
+| `rdkit_17` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 152.8 KiB | [rdkit_17-202303.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_17-202303.3-1PIGSTY.el9.aarch64.rpm) |
 | `rdkit_17` | `202503.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 143.2 KiB | [rdkit_17-202503.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdkit_17-202503.6-1PIGSTY.el10.x86_64.rpm) |
 | `rdkit_17` | `202503.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 135.2 KiB | [rdkit_17-202503.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdkit_17-202503.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-rdkit` | `202303.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 74.5 KiB | [postgresql-17-rdkit_202303.3-3PIGSTY~legacy_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-3PIGSTY~legacy_amd64.deb) |
-| `postgresql-17-rdkit` | `202303.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 66.9 KiB | [postgresql-17-rdkit_202303.3-3PIGSTY~legacy_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-3PIGSTY~legacy_arm64.deb) |
+| `postgresql-17-rdkit` | `202303.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 74.4 KiB | [postgresql-17-rdkit_202303.3-4PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-4PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-rdkit` | `202303.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 67.1 KiB | [postgresql-17-rdkit_202303.3-4PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-4PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-rdkit` | `202503.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 103.0 KiB | [postgresql-17-rdkit_202503.6-4PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-4PIGSTY~trixie_amd64.deb) |
 | `postgresql-17-rdkit` | `202503.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 245.2 KiB | [postgresql-17-rdkit_202503.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-17-rdkit_202503.1-5.pgdg13+1_amd64.deb) |
 | `postgresql-17-rdkit` | `202503.6` | [d13.aarch64](/os/d13.aarch64) | pigsty | 94.5 KiB | [postgresql-17-rdkit_202503.6-4PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-4PIGSTY~trixie_arm64.deb) |
 | `postgresql-17-rdkit` | `202503.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 237.5 KiB | [postgresql-17-rdkit_202503.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-17-rdkit_202503.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-17-rdkit` | `202303.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 81.8 KiB | [postgresql-17-rdkit_202303.3-3PIGSTY~legacy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-3PIGSTY~legacy_amd64.deb) |
-| `postgresql-17-rdkit` | `202303.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 76.6 KiB | [postgresql-17-rdkit_202303.3-3PIGSTY~legacy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-3PIGSTY~legacy_arm64.deb) |
+| `postgresql-17-rdkit` | `202303.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 81.8 KiB | [postgresql-17-rdkit_202303.3-4PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-4PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-rdkit` | `202303.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 77.1 KiB | [postgresql-17-rdkit_202303.3-4PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdkit/postgresql-17-rdkit_202303.3-4PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-rdkit` | `202503.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 108.6 KiB | [postgresql-17-rdkit_202503.6-4PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-4PIGSTY~noble_amd64.deb) |
 | `postgresql-17-rdkit` | `202503.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 243.1 KiB | [postgresql-17-rdkit_202503.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-17-rdkit_202503.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-rdkit` | `202503.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 105.8 KiB | [postgresql-17-rdkit_202503.6-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-4PIGSTY~noble_arm64.deb) |
 | `postgresql-17-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.2 KiB | [postgresql-17-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-17-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
-| `postgresql-17-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 111.8 KiB | [postgresql-17-rdkit_202503.6-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-4PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.2 KiB | [postgresql-17-rdkit_202503.6-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-4PIGSTY~resolute_arm64.deb) |
+| `postgresql-17-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 112.0 KiB | [postgresql-17-rdkit_202503.6-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-5PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.4 KiB | [postgresql-17-rdkit_202503.6-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-17-rdkit_202503.6-5PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdkit_16` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 165.7 KiB | [rdkit_16-202303.3-0.1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_16-202303.3-0.1PIGSTY.el8.x86_64.rpm) |
-| `rdkit_16` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 158.8 KiB | [rdkit_16-202303.3-0.1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_16-202303.3-0.1PIGSTY.el8.aarch64.rpm) |
-| `rdkit_16` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 158.9 KiB | [rdkit_16-202303.3-0.1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_16-202303.3-0.1PIGSTY.el9.x86_64.rpm) |
-| `rdkit_16` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 152.7 KiB | [rdkit_16-202303.3-0.1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_16-202303.3-0.1PIGSTY.el9.aarch64.rpm) |
+| `rdkit_16` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 165.8 KiB | [rdkit_16-202303.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_16-202303.3-1PIGSTY.el8.x86_64.rpm) |
+| `rdkit_16` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 158.7 KiB | [rdkit_16-202303.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_16-202303.3-1PIGSTY.el8.aarch64.rpm) |
+| `rdkit_16` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 158.8 KiB | [rdkit_16-202303.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_16-202303.3-1PIGSTY.el9.x86_64.rpm) |
+| `rdkit_16` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 152.8 KiB | [rdkit_16-202303.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_16-202303.3-1PIGSTY.el9.aarch64.rpm) |
 | `rdkit_16` | `202503.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 143.1 KiB | [rdkit_16-202503.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdkit_16-202503.6-1PIGSTY.el10.x86_64.rpm) |
 | `rdkit_16` | `202503.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 135.2 KiB | [rdkit_16-202503.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdkit_16-202503.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-rdkit` | `202303.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 393.5 KiB | [postgresql-16-rdkit_202303.3-3.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-16-rdkit_202303.3-3.pgdg120+1_amd64.deb) |
@@ -137,18 +137,18 @@ width: full
 | `postgresql-16-rdkit` | `202503.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 243.2 KiB | [postgresql-16-rdkit_202503.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-16-rdkit_202503.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-rdkit` | `202503.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 105.8 KiB | [postgresql-16-rdkit_202503.6-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdkit/postgresql-16-rdkit_202503.6-4PIGSTY~noble_arm64.deb) |
 | `postgresql-16-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.0 KiB | [postgresql-16-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-16-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
-| `postgresql-16-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 111.8 KiB | [postgresql-16-rdkit_202503.6-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-16-rdkit_202503.6-4PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.2 KiB | [postgresql-16-rdkit_202503.6-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-16-rdkit_202503.6-4PIGSTY~resolute_arm64.deb) |
+| `postgresql-16-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 112.0 KiB | [postgresql-16-rdkit_202503.6-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-16-rdkit_202503.6-5PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.4 KiB | [postgresql-16-rdkit_202503.6-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-16-rdkit_202503.6-5PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdkit_15` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 166.6 KiB | [rdkit_15-202303.3-0.1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_15-202303.3-0.1PIGSTY.el8.x86_64.rpm) |
-| `rdkit_15` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 159.3 KiB | [rdkit_15-202303.3-0.1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_15-202303.3-0.1PIGSTY.el8.aarch64.rpm) |
-| `rdkit_15` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 159.2 KiB | [rdkit_15-202303.3-0.1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_15-202303.3-0.1PIGSTY.el9.x86_64.rpm) |
-| `rdkit_15` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 153.3 KiB | [rdkit_15-202303.3-0.1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_15-202303.3-0.1PIGSTY.el9.aarch64.rpm) |
+| `rdkit_15` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 166.6 KiB | [rdkit_15-202303.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_15-202303.3-1PIGSTY.el8.x86_64.rpm) |
+| `rdkit_15` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 159.3 KiB | [rdkit_15-202303.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_15-202303.3-1PIGSTY.el8.aarch64.rpm) |
+| `rdkit_15` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 159.3 KiB | [rdkit_15-202303.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_15-202303.3-1PIGSTY.el9.x86_64.rpm) |
+| `rdkit_15` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 153.4 KiB | [rdkit_15-202303.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_15-202303.3-1PIGSTY.el9.aarch64.rpm) |
 | `rdkit_15` | `202503.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 143.1 KiB | [rdkit_15-202503.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdkit_15-202503.6-1PIGSTY.el10.x86_64.rpm) |
 | `rdkit_15` | `202503.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 135.2 KiB | [rdkit_15-202503.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdkit_15-202503.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-rdkit` | `202303.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 394.5 KiB | [postgresql-15-rdkit_202303.3-3.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-15-rdkit_202303.3-3.pgdg120+1_amd64.deb) |
@@ -167,18 +167,18 @@ width: full
 | `postgresql-15-rdkit` | `202503.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 243.1 KiB | [postgresql-15-rdkit_202503.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-15-rdkit_202503.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-rdkit` | `202503.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 105.8 KiB | [postgresql-15-rdkit_202503.6-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdkit/postgresql-15-rdkit_202503.6-4PIGSTY~noble_arm64.deb) |
 | `postgresql-15-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.0 KiB | [postgresql-15-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-15-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
-| `postgresql-15-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 111.8 KiB | [postgresql-15-rdkit_202503.6-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-15-rdkit_202503.6-4PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.2 KiB | [postgresql-15-rdkit_202503.6-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-15-rdkit_202503.6-4PIGSTY~resolute_arm64.deb) |
+| `postgresql-15-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 112.0 KiB | [postgresql-15-rdkit_202503.6-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-15-rdkit_202503.6-5PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.4 KiB | [postgresql-15-rdkit_202503.6-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-15-rdkit_202503.6-5PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdkit_14` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 166.6 KiB | [rdkit_14-202303.3-0.1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_14-202303.3-0.1PIGSTY.el8.x86_64.rpm) |
-| `rdkit_14` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 159.2 KiB | [rdkit_14-202303.3-0.1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_14-202303.3-0.1PIGSTY.el8.aarch64.rpm) |
-| `rdkit_14` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 159.2 KiB | [rdkit_14-202303.3-0.1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_14-202303.3-0.1PIGSTY.el9.x86_64.rpm) |
-| `rdkit_14` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 153.4 KiB | [rdkit_14-202303.3-0.1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_14-202303.3-0.1PIGSTY.el9.aarch64.rpm) |
+| `rdkit_14` | `202303.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 166.6 KiB | [rdkit_14-202303.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdkit_14-202303.3-1PIGSTY.el8.x86_64.rpm) |
+| `rdkit_14` | `202303.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 159.4 KiB | [rdkit_14-202303.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdkit_14-202303.3-1PIGSTY.el8.aarch64.rpm) |
+| `rdkit_14` | `202303.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 159.2 KiB | [rdkit_14-202303.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdkit_14-202303.3-1PIGSTY.el9.x86_64.rpm) |
+| `rdkit_14` | `202303.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 153.5 KiB | [rdkit_14-202303.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdkit_14-202303.3-1PIGSTY.el9.aarch64.rpm) |
 | `rdkit_14` | `202503.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 143.1 KiB | [rdkit_14-202503.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdkit_14-202503.6-1PIGSTY.el10.x86_64.rpm) |
 | `rdkit_14` | `202503.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 135.1 KiB | [rdkit_14-202503.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdkit_14-202503.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-rdkit` | `202303.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 394.1 KiB | [postgresql-14-rdkit_202303.3-3.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-14-rdkit_202303.3-3.pgdg120+1_amd64.deb) |
@@ -197,8 +197,8 @@ width: full
 | `postgresql-14-rdkit` | `202503.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 242.9 KiB | [postgresql-14-rdkit_202503.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-14-rdkit_202503.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-rdkit` | `202503.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 105.7 KiB | [postgresql-14-rdkit_202503.6-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdkit/postgresql-14-rdkit_202503.6-4PIGSTY~noble_arm64.deb) |
 | `postgresql-14-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.0 KiB | [postgresql-14-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-14-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
-| `postgresql-14-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 111.8 KiB | [postgresql-14-rdkit_202503.6-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-14-rdkit_202503.6-4PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.2 KiB | [postgresql-14-rdkit_202503.6-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-14-rdkit_202503.6-4PIGSTY~resolute_arm64.deb) |
+| `postgresql-14-rdkit` | `202503.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 112.0 KiB | [postgresql-14-rdkit_202503.6-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-14-rdkit_202503.6-5PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-rdkit` | `202503.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.4 KiB | [postgresql-14-rdkit_202503.6-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-14-rdkit_202503.6-5PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

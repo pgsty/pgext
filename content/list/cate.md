@@ -142,7 +142,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2490 | {{< alias "pg_ducklake" >}} | 1.0.0 | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
-| 2510 | {{< alias "pg_partman" >}} | 5.4.3 | Extension to manage partitioned tables by time or ID |
+| 2510 | {{< alias "pg_partman" >}} | 5.5.0 | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | 2.12.0 | Database partitioning implemented as procedural language |
 | 2530 | {{< alias "pg_strom" >}} | 6.1 | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2540 | {{< alias "pg_orca" >}} | 1.0.0 | ORCA query optimizer as a PostgreSQL extension |
@@ -494,7 +494,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 6000 | {{< alias "pg_profile" >}} | 4.11 | PostgreSQL load profile repository and report builder |
+| 6000 | {{< alias "pg_profile" >}} | 4.15 | PostgreSQL load profile repository and report builder |
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | Distributed Tracing for PostgreSQL |
 | 6020 | {{< alias "pg_stat_ch" >}} | 0.3.6 | Export PostgreSQL query telemetry to ClickHouse |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | 1.0.0 | Capture or log C-level stack backtraces of PostgreSQL processes |
