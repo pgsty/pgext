@@ -113,6 +113,7 @@ const I18N = {
   'nav.matrix': ['Matrix', '构建矩阵'],
   'nav.browse': ['Index', '扩展索引'],
   'nav.about': ['About', '关于'],
+  'nav.docs': ['Docs', '文档'],
   'nav.lang': ['中文', 'EN'],
   'hero.eyebrow': ['pgext.cloud · everything postgresql can become', 'pgext.cloud · PostgreSQL 的一切可能'],
   'hero.title': ['<em>PostgreSQL</em> Extension Catalog', '<em>PostgreSQL</em> 扩展目录'],
@@ -1191,6 +1192,7 @@ function navHTML(active) {
       + dims.map(d => '<a href="' + dimHref(d) + '">' + t(DIMS[d].label) + '</a>').join('') + '</div>').join('')
     + '</div></span>'
     + '<a href="/about" aria-current="' + (active === 'about') + '">' + t('nav.about') + '</a>'
+    + '<a href="https://doc.pgext.cloud" target="_blank" rel="noopener">' + t('nav.docs') + '</a>'
     + '</nav><span class="nav-spacer"></span><div class="nav-actions">'
     + '<div class="nav-search"><input id="nav-q" type="search" autocomplete="off" spellcheck="false" placeholder="'
     + esc(bi('Press / to search', '按 / 开始搜索')) + '" aria-label="search extensions"><kbd>/</kbd>'

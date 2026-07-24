@@ -7,14 +7,16 @@
 # Copyright (C) 2019-2025 Ruohang Feng
 #==============================================================#
 VERSION=v1.0.0
-default: v d
+default: v dev
 
 PGURL="postgres:///data"
 
-# run next dev server (3000)
-d: dev
+# run hugo dev server (1313)
 dev:
 	hugo serve
+
+# quick release: build linux/amd64, ship to jp, restart service
+d: amd 2j rs
 
 # building (SSG) - new optimized version
 b: build
@@ -115,8 +117,16 @@ arm:
 	CGO_ENABLED=0 GOOS=linux  GOARCH=arm64 go build -ldflags "$(LD_FLAGS)" -o pgext
 	upx pgext
 amd:
-	CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -o pgext
-	upx pgext
+	CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -ldflags "-s -w" -o pgext
+
+# ship binary to jp (atomic swap avoids ETXTBSY on the running daemon)
+2j:
+	scp pgext jp:/usr/bin/pgext.new
+	ssh jp 'chmod 755 /usr/bin/pgext.new && mv -f /usr/bin/pgext.new /usr/bin/pgext'
+
+# restart pgext daemon on jp
+rs:
+	ssh jp 'systemctl restart pgext && systemctl is-active pgext'
 
 # inventory
-.PHONY: default run gen dump save load gen-json gen-mdx build-mdx
+.PHONY: default run gen dump save load gen-json gen-mdx build-mdx arm amd 2j rs d dev
