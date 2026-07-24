@@ -8,23 +8,23 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2026-07-23
 
-| Name                      | Old     | New     | Comment                                          |
-|:--------------------------|:--------|:--------|:-------------------------------------------------|
-| claude                    | 2.1.215 | 2.1.218 | Verified against the official manifest via proxy |
-| codex                     | 0.144.6 | 0.145.0 | Release tag `rust-v0.145.0`                      |
-| dblab                     | 0.44.1  | 0.46.0  |                                                  |
-| duckdb                    | 1.5.4   | 1.5.5   |                                                  |
-| grafana-infinity-ds       | 3.8.0   | 3.11.1  |                                                  |
-| grafana-victorialogs-ds   | 0.30.0  | 0.30.1  |                                                  |
-| opencode                  | 1.18.3  | 1.18.4  |                                                  |
-| pg-timetable              | 6.3.0   | 7.0.0   | Major release                                    |
-| pgstream                  | 1.2.0   | 1.2.2   |                                                  |
-| stalwart                  | 0.16.13 | 0.16.14 |                                                  |
-| uv                        | 0.11.29 | 0.11.31 |                                                  |
-| grafana                   | 13.1.0  | 13.1.1  | Direct-download artifacts                        |
-| pg-hardstorage            | 1.0.12  | 1.0.13  | Direct-download artifacts                        |
-| crush                     | 0.85.0  | 0.86.0  | Direct-download artifacts                        |
-| code                      | 1.129.1 | 1.130.0 | Direct-download artifacts                        |
+| Name                    | Old     | New     | Comment |
+|:------------------------|:--------|:--------|:--------|
+| claude                  | 2.1.215 | 2.1.218 |         |
+| codex                   | 0.144.6 | 0.145.0 |         |
+| dblab                   | 0.44.1  | 0.46.0  |         |
+| duckdb                  | 1.5.4   | 1.5.5   |         |
+| grafana-infinity-ds     | 3.8.0   | 3.11.1  |         |
+| grafana-victorialogs-ds | 0.30.0  | 0.30.1  |         |
+| opencode                | 1.18.3  | 1.18.4  |         |
+| pg-timetable            | 6.3.0   | 7.0.0   |         |
+| pgstream                | 1.2.0   | 1.2.2   |         |
+| stalwart                | 0.16.13 | 0.16.14 |         |
+| uv                      | 0.11.29 | 0.11.31 |         |
+| grafana                 | 13.1.0  | 13.1.1  |         |
+| pg-hardstorage          | 1.0.12  | 1.0.13  |         |
+| crush                   | 0.85.0  | 0.86.0  |         |
+| code                    | 1.129.1 | 1.130.0 |         |
 
 ## 2026-07-20
 
