@@ -52,27 +52,7 @@ func Serve(ctx context.Context, opts Options) error {
 	visits.startFlusher(ctx)
 	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken, visits: visits}
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("GET /api/v1/meta", a.handleMeta)
-	mux.HandleFunc("GET /api/v1/ext", a.handleList)
-	mux.HandleFunc("GET /api/v1/ext/{name}", a.handleExt)
-	mux.HandleFunc("GET /api/v1/ext/{name}/matrix", a.handleMatrix)
-	mux.HandleFunc("GET /api/v1/matrix", a.handleGlobalMatrix)
-	mux.HandleFunc("GET /api/v1/ext/{name}/files", a.handleFiles)
-	mux.HandleFunc("GET /api/v1/ext/{name}/doc", a.handleDoc)
-	mux.HandleFunc("GET /api/v1/ext/{name}/visit", a.handleVisit)
-	mux.HandleFunc("POST /api/v1/ext/{name}/visit", a.handleVisit)
-	mux.HandleFunc("GET /api/v1/dim/{key}", a.handleDim)
-	mux.HandleFunc("GET /api/v1/bootstrap", a.handleBootstrap)
-	mux.HandleFunc("POST /api/v1/reload", a.handleReload)
-	mux.HandleFunc("GET /healthz", a.handleHealth)
-	mux.HandleFunc("GET /assets/{file}", handleAsset)
-	// Canonical deep links are /ext/{name}, /pkg/{name} and /cate/{code}; the
-	// short legacy forms redirect permanently so old shared URLs keep working.
-	mux.HandleFunc("GET /e/{name}", redirectPrefix("/ext/"))
-	mux.HandleFunc("GET /p/{name}", redirectPrefix("/pkg/"))
-	mux.HandleFunc("GET /c/{name}", redirectPrefix("/cate/"))
-	mux.HandleFunc("/", handleSPA)
+	mux := newMux(a)
 
 	srv := &http.Server{
 		Addr:              opts.Listen,
@@ -101,16 +81,136 @@ func Serve(ctx context.Context, opts Options) error {
 	}
 }
 
+// newMux wires every route of the pgext web server onto a fresh ServeMux.
+func newMux(a *api) *http.ServeMux {
+	mux := http.NewServeMux()
+	mux.HandleFunc("GET /api/v1/meta", a.handleMeta)
+	mux.HandleFunc("GET /api/v1/ext", a.handleList)
+	mux.HandleFunc("GET /api/v1/ext/{name}", a.handleExt)
+	mux.HandleFunc("GET /api/v1/ext/{name}/matrix", a.handleMatrix)
+	mux.HandleFunc("GET /api/v1/matrix", a.handleGlobalMatrix)
+	mux.HandleFunc("GET /api/v1/ext/{name}/files", a.handleFiles)
+	mux.HandleFunc("GET /api/v1/ext/{name}/doc", a.handleDoc)
+	mux.HandleFunc("GET /api/v1/ext/{name}/visit", a.handleVisit)
+	mux.HandleFunc("POST /api/v1/ext/{name}/visit", a.handleVisit)
+	mux.HandleFunc("GET /api/v1/dim/{key}", a.handleDim)
+	mux.HandleFunc("GET /api/v1/bootstrap", a.handleBootstrap)
+	mux.HandleFunc("POST /api/v1/reload", a.handleReload)
+	mux.HandleFunc("GET /healthz", a.handleHealth)
+	mux.HandleFunc("GET /assets/{file}", handleAsset)
+	// Canonical deep links are /ext/{name}, /pkg/{name} and /cate/{code}; the
+	// short legacy forms redirect permanently so old shared URLs keep working.
+	for _, route := range []struct{ from, to string }{
+		{"/e", "/ext/"}, {"/p", "/pkg/"}, {"/c", "/cate/"},
+	} {
+		mux.HandleFunc("GET "+route.from+"/{name}", redirectPrefix(route.to, http.StatusMovedPermanently))
+		mux.HandleFunc("GET "+route.from+"/{name}/{$}", redirectPrefix(route.to, http.StatusMovedPermanently))
+	}
+	registerLegacyRedirects(mux)
+	mux.HandleFunc("/", handleSPA)
+	return mux
+}
+
+/* ---------------- legacy Hugo URL compatibility ---------------- */
+
+// pigDocsURL is where the retired /pig/* CLI handbook lives now.
+const pigDocsURL = "https://pigsty.io/docs/pig"
+
+// legacyRedirects maps retired Hugo-era pages onto their dynamic equivalents.
+// Each entry is registered with and without a trailing slash and answers with
+// a 302 that carries the query string over. Prefix families (/zh, /en, /pig
+// and the taxonomy term pages) are wired in registerLegacyRedirects.
+var legacyRedirects = map[string]string{
+	"/e":          "/",              // full extension table → catalog home
+	"/list/ext":   "/",              // ditto (lang/license are native dims already)
+	"/list/pkg":   "/list/package",  // package family index
+	"/list/cate":  "/list/category", // category index
+	"/os":         "/list/os",       // Linux target index; /os/{target} is a live SPA route
+	"/os/matrix":  "/matrix",        // global build matrix
+	"/categories": "/list/category", // Hugo taxonomy index
+	"/tags":       "/list/tag",      // Hugo taxonomy index
+	"/repo":       "/list/repo",     // repo doc index; /repo/{value} is a live SPA route
+	"/repo/pgsql": "/repo/PIGSTY",   // old Pigsty PGSQL repo doc → its repo page
+}
+
+func registerLegacyRedirects(mux *http.ServeMux) {
+	for from, to := range legacyRedirects {
+		mux.HandleFunc("GET "+from, redirectTo(to))
+		mux.HandleFunc("GET "+from+"/{$}", redirectTo(to))
+	}
+	// The /zh mirror (and a defensive /en) drops its language prefix; the SPA
+	// switches UI language via ?lang= instead.
+	for _, lang := range []string{"/zh", "/en"} {
+		mux.HandleFunc("GET "+lang, redirectStripPrefix(lang))
+		mux.HandleFunc("GET "+lang+"/", redirectStripPrefix(lang))
+	}
+	// The whole retired pig CLI handbook moved to the Pigsty documentation.
+	mux.HandleFunc("GET /pig", redirectTo(pigDocsURL))
+	mux.HandleFunc("GET /pig/", redirectTo(pigDocsURL))
+	// Hugo taxonomy term pages: categories have dedicated landing pages while
+	// tag terms map onto the catalog tag filter.
+	mux.HandleFunc("GET /categories/{name}", redirectPrefix("/cate/", http.StatusFound))
+	mux.HandleFunc("GET /categories/{name}/{$}", redirectPrefix("/cate/", http.StatusFound))
+	mux.HandleFunc("GET /tags/{name}", redirectTagTerm)
+	mux.HandleFunc("GET /tags/{name}/{$}", redirectTagTerm)
+}
+
 // redirectPrefix maps a one-segment legacy route onto its canonical prefix,
 // preserving the query string.
-func redirectPrefix(prefix string) http.HandlerFunc {
+func redirectPrefix(prefix string, code int) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		target := prefix + url.PathEscape(r.PathValue("name"))
 		if r.URL.RawQuery != "" {
 			target += "?" + r.URL.RawQuery
 		}
-		http.Redirect(w, r, target, http.StatusMovedPermanently)
+		http.Redirect(w, r, target, code)
 	}
+}
+
+// redirectTo answers a retired page with a temporary redirect onto its fixed
+// replacement, carrying the query string over.
+func redirectTo(target string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		dest := target
+		if q := r.URL.RawQuery; q != "" {
+			if strings.Contains(dest, "?") {
+				dest += "&" + q
+			} else {
+				dest += "?" + q
+			}
+		}
+		http.Redirect(w, r, dest, http.StatusFound)
+	}
+}
+
+// redirectStripPrefix drops a legacy language prefix and redirects to the same
+// path on the default site, keeping the query string. The target is always a
+// local absolute path (never protocol-relative), and stripping one prefix per
+// hop cannot loop.
+func redirectStripPrefix(prefix string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		target := strings.TrimPrefix(r.URL.EscapedPath(), prefix)
+		for strings.HasPrefix(target, "//") {
+			target = target[1:]
+		}
+		if !strings.HasPrefix(target, "/") {
+			target = "/" + target
+		}
+		if q := r.URL.RawQuery; q != "" {
+			target += "?" + q
+		}
+		http.Redirect(w, r, target, http.StatusFound)
+	}
+}
+
+// redirectTagTerm maps a Hugo /tags/{term} taxonomy page onto the catalog tag
+// filter, merging any extra query parameters behind it.
+func redirectTagTerm(w http.ResponseWriter, r *http.Request) {
+	target := "/?tag=" + url.QueryEscape(r.PathValue("name"))
+	if r.URL.RawQuery != "" {
+		target += "&" + r.URL.RawQuery
+	}
+	http.Redirect(w, r, target, http.StatusFound)
 }
 
 func displayAddr(listen string) string {

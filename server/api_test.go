@@ -403,7 +403,7 @@ func TestLegacyRoutesRedirectPermanently(t *testing.T) {
 		}
 		req.SetPathValue("name", tt.name)
 		w := httptest.NewRecorder()
-		redirectPrefix(tt.prefix)(w, req)
+		redirectPrefix(tt.prefix, http.StatusMovedPermanently)(w, req)
 		if w.Code != http.StatusMovedPermanently {
 			t.Fatalf("redirect status = %d", w.Code)
 		}

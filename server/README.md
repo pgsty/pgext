@@ -58,7 +58,12 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 | `GET /healthz` | 存活探针：db ping + 快照年龄 |
 
 路由层面：规范深链为 `/ext/{name}`、`/pkg/{name}`、`/cate/{CODE}` 与 `/list[/{dim}]`；旧的
-`/e/ /p/ /c/` 由服务端 301 永久重定向（保留查询串），`/browse`、`/dim/{key}`、`/cat/` 由客户端就地迁移。
+`/e/ /p/ /c/` 由服务端 301 永久重定向（保留查询串，含尾斜杠变体），`/browse`、`/dim/{key}`、`/cat/` 由客户端就地迁移。
+Hugo 时代的旧页面由 `server.go` 中集中的 `legacyRedirects` 表做 302 兼容跳转（保留查询串、覆盖有无尾斜杠）：
+`/zh(/...)`与 `/en(/...)` 去语言前缀、`/e` `/list/ext` → `/`、`/list/pkg|cate` → `/list/package|category`、
+`/os` → `/list/os`、`/os/matrix` → `/matrix`、`/categories[/{code}]` `/tags[/{tag}]` 分别映射到
+`/list/category`、`/cate/{code}`、`/list/tag`、`/?tag={tag}`、`/repo` → `/list/repo`、
+`/repo/pgsql` → `/repo/PIGSTY`、`/pig/*` → Pigsty 文档；新动态 `/repo/{value}`、`/os/{target}` 不受影响。
 
 组合示例：
 
