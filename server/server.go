@@ -28,7 +28,7 @@ type Options struct {
 	CacheTTL    time.Duration // snapshot refresh interval & response cache TTL
 	Pool        *pgxpool.Pool // connected database pool (pgext schema expected)
 	ReloadToken string        // enables authenticated POST /api/v1/reload when non-empty
-	VisitsFile  string        // page hit counter persistence path (empty: memory only)
+	VisitsFile  string        // retired file-backed counter path, imported into pgext.counter once
 }
 
 // Serve runs the web server until ctx is cancelled.
@@ -48,9 +48,17 @@ func Serve(ctx context.Context, opts Options) error {
 	}
 	store.StartRefresher(ctx, opts.CacheTTL)
 
-	visits := newVisitStore(opts.VisitsFile)
-	visits.startFlusher(ctx)
-	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken, visits: visits}
+	counter := newCounterStore(opts.Pool)
+	if snap := store.Get(); snap != nil {
+		names := make([]string, 0, len(snap.Exts))
+		for _, e := range snap.Exts {
+			names = append(names, e.Name)
+		}
+		counter.prime(bootCtx, names)
+	}
+	counter.importLegacy(opts.VisitsFile)
+	counter.startFlusher(ctx, time.Minute)
+	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken, counter: counter}
 	go a.warmMatrixCache(ctx)
 
 	mux := newMux(a)
@@ -92,6 +100,7 @@ func newMux(a *api) *http.ServeMux {
 	mux.HandleFunc("GET /api/v1/matrix", a.handleGlobalMatrix)
 	mux.HandleFunc("GET /api/v1/ext/{name}/files", a.handleFiles)
 	mux.HandleFunc("GET /api/v1/ext/{name}/doc", a.handleDoc)
+	mux.HandleFunc("GET /api/v1/ext/{name}/changelog", a.handleChangelog)
 	mux.HandleFunc("GET /api/v1/ext/{name}/visit", a.handleVisit)
 	mux.HandleFunc("POST /api/v1/ext/{name}/visit", a.handleVisit)
 	mux.HandleFunc("GET /api/v1/dim/{key}", a.handleDim)

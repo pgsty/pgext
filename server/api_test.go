@@ -4,10 +4,12 @@ Copyright 2018-2026 Ruohang Feng <rh@vonng.com>
 package server
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
+	"os"
 	"reflect"
 	"strings"
 	"testing"
@@ -363,7 +365,7 @@ func TestEmbeddedDetailManualContract(t *testing.T) {
 		`id="ext-overview"`, `id="ext-relations"`,
 		`id="ext-packages"`, `id="ext-build"`, `id="ext-install"`, `id="ext-usage"`,
 		`id="pkg-family"`, `id="pkg-packages"`, `id="pkg-downloads"`,
-		`id="pkg-build"`, `id="pkg-install"`,
+		`id="pkg-build"`, `id="pkg-install"`, `id="pkg-changelog"`, "changelogHTML", "/changelog",
 		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "packageTabsHTML", "preload_libs", "pig build pkg",
 		"file-browser", "usage-prose", "function navigateTo", "const extHref", "const pkgHref",
 		"DIM_GROUPS", "relationbits", "migrateLegacyHash", "data-dim-search", "capabilityMatches",
@@ -413,9 +415,8 @@ func TestLegacyRoutesRedirectPermanently(t *testing.T) {
 	}
 }
 
-func TestVisitStorePersistsCounts(t *testing.T) {
-	path := t.TempDir() + "/visits.json"
-	s := newVisitStore(path)
+func TestCounterStoreCountsInMemory(t *testing.T) {
+	s := newCounterStore(nil) // no database: memory-only counting
 	if v, _ := s.hit("postgis"); v != 1 {
 		t.Fatalf("first hit = %d", v)
 	}
@@ -423,20 +424,55 @@ func TestVisitStorePersistsCounts(t *testing.T) {
 	if v, d := s.hit("timescaledb"); v != 1 || d != 0 {
 		t.Fatalf("hit = %d, downloads = %d", v, d)
 	}
-	s.flush()
-	reloaded := newVisitStore(path)
-	if v, _ := reloaded.get("postgis"); v != 2 {
-		t.Fatalf("reloaded visits = %d, want 2", v)
+	if v, _ := s.get("postgis"); v != 2 {
+		t.Fatalf("visits = %d, want 2", v)
 	}
-	if v, _ := reloaded.get("nosuch"); v != 0 {
+	if v, _ := s.get("nosuch"); v != 0 {
 		t.Fatalf("unknown ext visits = %d, want 0", v)
+	}
+	// counts survive a flush attempt without a pool (nothing to flush into)
+	s.flush(context.Background())
+	if v, _ := s.get("postgis"); v != 2 {
+		t.Fatalf("visits after no-op flush = %d, want 2", v)
+	}
+}
+
+func TestCounterStoreTotalsCombineBaseAndDelta(t *testing.T) {
+	s := newCounterStore(nil)
+	s.base = map[string]counterVal{"postgis": {Visit: 40, Download: 7}}
+	if v, d := s.hit("postgis"); v != 41 || d != 7 {
+		t.Fatalf("hit totals = %d/%d, want 41/7", v, d)
+	}
+	if v, d := s.get("postgis"); v != 41 || d != 7 {
+		t.Fatalf("get totals = %d/%d, want 41/7", v, d)
+	}
+}
+
+func TestCounterStoreImportsLegacyFileOnce(t *testing.T) {
+	path := t.TempDir() + "/visits.json"
+	if err := os.WriteFile(path, []byte(`{"visits":{"postgis":5},"downloads":{"postgis":2}}`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	s := newCounterStore(nil)
+	s.importLegacy(path)
+	if v, d := s.get("postgis"); v != 5 || d != 2 {
+		t.Fatalf("imported totals = %d/%d, want 5/2", v, d)
+	}
+	if _, err := os.Stat(path); !os.IsNotExist(err) {
+		t.Fatalf("legacy file should be renamed away, stat err = %v", err)
+	}
+	// a second import (e.g. another process restart) finds nothing to claim
+	again := newCounterStore(nil)
+	again.importLegacy(path)
+	if v, _ := again.get("postgis"); v != 0 {
+		t.Fatalf("second import must be a no-op, got %d visits", v)
 	}
 }
 
 func TestVisitEndpointCountsAndValidates(t *testing.T) {
 	store := NewStore(nil)
 	store.snap.Store(fixtureSnapshot())
-	a := &api{store: store, visits: newVisitStore("")}
+	a := &api{store: store, counter: newCounterStore(nil)}
 
 	req := httptest.NewRequest(http.MethodPost, "/api/v1/ext/postgis/visit", nil)
 	req.SetPathValue("name", "postgis")

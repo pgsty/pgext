@@ -32,8 +32,10 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
    浏览器缓存仍然有效。按 `--cache-ttl`（默认 5m）后台自动刷新。
 2. **矩阵缓存（`matrix.go` / `pgext.matrix_cache`）**——`/api/v1/matrix` 的完整响应在写入侧预计算：
    一条 `jsonb_object_agg` 聚合把 `pgext.pkg` 折叠成每包一行（键 `el8i.17`，值 `版本 + #/@ + G/P/M/N`），
-   Go 侧铺到规范 OS × PG 网格后连同统计一起序列化，落入单行 mtime 缓存表。读路径是一次主键查询；
-   缓存在早于 `pgext.status` 装载时间或超过 24h 时惰性重建，`POST /api/v1/reload` 与启动预热会主动重建。
+   Go 侧铺到规范 OS × PG 网格后连同统计一起序列化，落入 mtime 缓存表（每视图一行：1=全局、
+   2=pgdg、3=pigsty what-if；旧库的单行 CHECK 约束在启动时自动放宽）。读路径是一次主键查询；
+   缓存在早于 `pgext.status` 装载时间或超过 24h 时惰性重建，`POST /api/v1/reload` 与启动预热会
+   主动重建全部三个视图。
 3. **ttlCache（`cache.go`）**——全局物化矩阵、逐扩展 `pkg` 矩阵、`bin` 文件表、`doc` 正文按需查询后缓存；
    键内嵌快照版本号，快照刷新即自然失效。
 
@@ -50,10 +52,11 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 | `GET /api/v1/ext` | 列表/搜索：除分类、仓库、PG/OS、形态、生命周期与来源外，还支持 `tag pkg capability build docs relation pgrx active`；`q` 可组合 `tag:vector build:pgrx doc:bilingual is:packaged` 等操作符 |
 | `GET /api/v1/ext/{name}` | 单个扩展完整记录（新版 universe 字段 + `state/repo/ext_*` v1 兼容别名） |
 | `GET /api/v1/ext/{name}/matrix` | 可用性矩阵：`pgext.pkg` 的 pg × os 单元格（state/org/version/count） |
-| `GET /api/v1/matrix` | 全局构建矩阵（`matrix-row.v2`）：`p/e/c` 每格一个状态字节（`G/P/M/N`），`v/i` 为行级版本字典与 base36 索引（gzip 后约 7 KiB，读路径为 `pgext.matrix_cache` 单行查询；前端以单张 canvas 一次绘制，/pg/{n} 与 /os/{target} 复用同一载荷切片渲染） |
+| `GET /api/v1/matrix` | 全局构建矩阵（`matrix-row.v2`）：`p/e/c` 每格一个状态字节（`G/P/M/N`），`v/i` 为行级版本字典与 base36 索引（gzip 后约 7 KiB，读路径为 `pgext.matrix_cache` 单行查询；前端以单张 canvas 一次绘制，/pg/{n} 与 /os/{target} 复用同一载荷切片渲染）。`?repo=pgdg\|pigsty` 返回单仓库 what-if 视图（与 `pgext.pkg_pgdg`/`pkg_pigsty` 视图同一逻辑）：行恰为该仓库实际交付的扩展包，AVAIL 格携带其自有最新版本（单一状态字母），其余现实有效槽位降级为 `M`，`stats.global` 附带现实矩阵的包数与可用槽位数供前端陈述缺口 |
 | `GET /api/v1/ext/{name}/files` | 二进制包文件（`pgext.bin` ⋈ `repository`，含下载 URL 与 SHA256），可选 `?pg= &os=` |
 | `GET /api/v1/ext/{name}/doc` | 用法文档 markdown（`pgext.doc`），`?lang=en\|zh` |
-| `GET/POST /api/v1/ext/{name}/visit` | 页面访问计数：POST 自增并返回 `{visits, downloads}`，GET 只读；下载计数暂为占位 0。由 `--visits-file`（默认 `~/.pgext/visits.json`）持久化，30s 周期 + 退出时落盘 |
+| `GET /api/v1/ext/{name}/changelog` | 所属软件包的发布历史（`pgext.changelog`，由 RPM/DEB 发布说明经 `bin/changelog.py` 蒸馏）：`{ds, old, new, note_en, note_zh}` 按日期降序；库中无该表时返回空列表 |
+| `GET/POST /api/v1/ext/{name}/visit` | 页面访问计数：POST 自增并返回 `{visits, downloads}`，GET 只读。计数持久化于 `pgext.counter`：内存中累积增量，每分钟以累加式 UPDATE（`visit = visit + Δ`）落库后回读全局值，因此多进程共用一表不冲突；表不存在时退化为内存计数并在每次落盘周期重试。旧 `--visits-file` JSON 文件首次启动时一次性导入并改名 |
 | `GET /api/v1/dim/{key}` | 19 个维度聚合：`category tag package kind lifecycle license lang distribution repo pg os build pgrx capability docs relation vendor kernel activity`（旧 `type` 仍是 `kind` 的兼容别名） |
 | `GET /api/v1/bootstrap` | SPA 引导载荷（紧凑位置数组 32 列，含 `repo_url/url/license_url`；ETag/304，gzip 后约 200 KiB）。载荷格式版本 `bootFormat` 同时参与 ETag 与前端请求 URL（`?fmt=b32`）：改动列布局时必须同步递增，否则浏览器缓存可能把旧列布局供给新前端 |
 | `POST /api/v1/reload` | 带令牌刷新内存快照；未配置令牌时返回 404 |
@@ -83,8 +86,10 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 ```
 
 全局矩阵缓存表 `pgext.matrix_cache` 由服务端按需自建（`CREATE TABLE IF NOT EXISTS`，只读角色下
-自动降级为纯内存计算）。任何路径更新 `pgext.pkg` 后，只要 `pgext.status` 的装载时间随之推进，
-服务端就会在下一次读取时自动重建缓存；`POST /api/v1/reload` 会立即重建。旧的
+自动降级为纯内存计算），每个视图一行（全局 / pgdg / pigsty what-if）。任何路径更新 `pgext.pkg`
+后，只要 `pgext.status` 的装载时间随之推进，服务端就会在下一次读取时自动重建缓存；
+`POST /api/v1/reload` 会立即重建全部视图。单仓库 what-if 的规范定义是 `db/schema.sql` 里的
+`pgext.pkg_pgdg` / `pgext.pkg_pigsty` 视图（服务端内联同一逻辑，不依赖视图存在）。旧的
 `pgext.matrix` 物化视图不再被服务端读取，仍由 `pgext reload` 的发布事务顺带刷新。
 
 ## 前端（web/）
@@ -112,12 +117,13 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
   名称与许可证列设宽度上限，描述占满余宽；软件包表格为 扩展包/主扩展/描述/分类/许可证/PG/星标，
   多扩展的包在首列于包名下方逐行列出全部扩展并可直达；
 - 代码块内置轻量高亮（SQL / shell / yaml·conf 键值），Usage 文档、安装与构建命令统一生效；
-- `/matrix` 重写为整页滚动的全宽格子表：行虚拟化改挂窗口滚动，双行表头（OS 释出 + 架构配色区分
-  x86_64/aarch64 + PG 大版本）吸顶，每格是首页点阵同款的纯色方块；除状态筛选外新增
-  全部 / PGDG / Pigsty 三种视角，按所选仓库的覆盖情况重新着色所有有效槽位，直观呈现
-  “PGDG 提供了哪些、缺了哪些，Pigsty 补齐了哪些”。性能：物化载荷缓存于 localStorage
-  （回访即时渲染，按 `generated` 时间戳后台校验一次），每行单元格 HTML 按视角惰性预计算，
-  滚动帧只拼接缓存字符串；
+- `/matrix` 是整页的全宽格子表：双行表头（OS 目标 + PG 大版本）+ 单张 canvas 一次绘制全部格子，
+  搜索与状态图例即时过滤行集。`/repo/PGDG`、`/repo/PIGSTY` 各自内嵌同款矩阵块，但数据换成
+  `?repo=` 单仓库 what-if 载荷：行恰为该仓库实际交付的扩展包、格子只分 该仓库可用 / 缺失 / N-A，
+  矩阵上方一行推演摘要给出“若只剩此仓库”的存活包数、存活槽位、缺失槽位与完全消失的包数，
+  直观呈现“PGDG 独自能交付什么、Pigsty 独自能交付什么、彼此缺了对方会失去多少”。
+  性能：全局与各仓库载荷分键缓存于 localStorage（回访即时渲染，按 `generated` 时间戳每会话
+  后台校验一次）；
 - 首页默认展示扩展卡片（导航中的“扩展”直接进入 EXT 目录），可显式切换项目/共享包族或表格；
   `packaged/source/kernel/vendor/contrib` 独立编码，并支持 `PG + OS + 架构` 精确包可用性筛选；
 - 多维索引按身份分类、构建交付、运行时文档、生态活跃度组织 19 个维度。标签、包族、二进制目标、

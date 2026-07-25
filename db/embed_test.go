@@ -9,7 +9,7 @@ import (
 )
 
 func TestCSVTableRegistry(t *testing.T) {
-	want := []string{"pg", "os", "category", "repository", "extension", "universe"}
+	want := []string{"pg", "os", "category", "repository", "extension", "universe", "changelog"}
 	if got := CSVTableNames(); !reflect.DeepEqual(got, want) {
 		t.Fatalf("CSVTableNames() = %v, want %v", got, want)
 	}

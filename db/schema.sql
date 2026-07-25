@@ -526,6 +526,55 @@ COMMENT ON COLUMN pgext.doc.zh_doc IS 'Chinese Markdown documentation from stub-
 
 
 -----------------------------------
+-- Extension Changelog
+-----------------------------------
+-- Per-package release history distilled from the RPM/DEB release notes.
+-- One row per (release batch date, normalized package); RPM and DEB sides of
+-- the same batch are merged under one aligned date. Generated from
+-- content/release/{rpm,deb}{,.zh}.md by bin/changelog.py into db/changelog.csv.
+CREATE TABLE IF NOT EXISTS pgext.changelog
+(
+    ds      DATE NOT NULL, -- release batch date (RPM/DEB sides aligned)
+    pkg     TEXT NOT NULL, -- normalized extension package name (pgext.extension.pkg)
+    old_ver TEXT,          -- version before this batch (NULL: new package / not recorded)
+    new_ver TEXT,          -- version after this batch (NULL: unchanged rebuild / not recorded)
+    note_en TEXT,          -- English release comment
+    note_zh TEXT,          -- Chinese release comment
+    PRIMARY KEY (ds, pkg)
+);
+
+CREATE INDEX IF NOT EXISTS changelog_pkg_ds_idx ON pgext.changelog (pkg, ds DESC);
+
+COMMENT ON TABLE pgext.changelog IS 'Extension package release history merged from RPM/DEB release notes';
+COMMENT ON COLUMN pgext.changelog.ds IS 'Release batch date; RPM and DEB sides of one batch share the same aligned date';
+COMMENT ON COLUMN pgext.changelog.pkg IS 'Normalized package name matching pgext.extension.pkg (kernel packages keep their own names)';
+COMMENT ON COLUMN pgext.changelog.old_ver IS 'Package version before this batch; NULL for new packages or unrecorded values';
+COMMENT ON COLUMN pgext.changelog.new_ver IS 'Package version after this batch; NULL for unchanged rebuilds or unrecorded values';
+COMMENT ON COLUMN pgext.changelog.note_en IS 'English release comment for this package in this batch';
+COMMENT ON COLUMN pgext.changelog.note_zh IS 'Chinese release comment for this package in this batch';
+
+
+-----------------------------------
+-- Extension Visit Counter
+-----------------------------------
+-- Global page hit / download counters keyed by extension name. Server
+-- processes accumulate increments in memory and flush them periodically with
+-- additive updates (visit = visit + delta), so multiple pgext processes can
+-- share this table without conflicting on absolute values.
+CREATE TABLE IF NOT EXISTS pgext.counter
+(
+    ext      TEXT NOT NULL PRIMARY KEY, -- extension name (pgext.universe.name)
+    visit    BIGINT NOT NULL DEFAULT 0, -- accumulated page visit count
+    download BIGINT NOT NULL DEFAULT 0  -- accumulated package download count
+);
+
+COMMENT ON TABLE pgext.counter IS 'Extension page visit / download counters, updated additively by pgext serve';
+COMMENT ON COLUMN pgext.counter.ext IS 'Extension name this counter belongs to';
+COMMENT ON COLUMN pgext.counter.visit IS 'Accumulated page visit count across all server processes';
+COMMENT ON COLUMN pgext.counter.download IS 'Accumulated package download count across all server processes';
+
+
+-----------------------------------
 -- YUM Packages
 -----------------------------------
 -- Parsed YUM/RPM repository package metadata from repomd.xml primary database
@@ -959,6 +1008,54 @@ CREATE OPERATOR pgext.> (LEFTARG = pgext.version, RIGHTARG = pgext.version, PROC
 CREATE OPERATOR CLASS pgext.version_ops DEFAULT FOR TYPE pgext.version USING btree AS
     OPERATOR 1 pgext.<, OPERATOR 2 pgext.<=, OPERATOR 3 pgext.=, OPERATOR 4 pgext.>=, OPERATOR 5 pgext.>,
     FUNCTION 1 pgext.version_cmp(pgext.version, pgext.version);
+
+
+-----------------------------------
+-- What-if Package Availability
+-----------------------------------
+-- pgext.pkg recomputed as if only one repository organization existed:
+-- a slot is AVAIL only when that org ships a matching binary; slots that are
+-- N/A on the real matrix stay N/A; every other slot degrades to MISS.
+-- org/version/count describe the surviving organization only. `pgext serve`
+-- inlines the same logic for /api/v1/matrix?repo=pgdg|pigsty, so these views
+-- exist for analysis and as the canonical definition of the what-if worlds.
+CREATE OR REPLACE VIEW pgext.pkg_pgdg AS
+SELECT p.pg, p.os, p.name, p.pkg, p.ext,
+       CASE WHEN o.count > 0 THEN 'AVAIL'
+            WHEN p.state = 'N/A' THEN 'N/A'
+            ELSE 'MISS' END::pgext.pkg_state AS state,
+       p.hide,
+       CASE WHEN o.count > 0 THEN 'pgdg' END AS org,
+       o.version,
+       coalesce(o.count, 0) AS count
+FROM pgext.pkg p
+LEFT JOIN (SELECT b.pg, b.os, b.name, count(*) AS count,
+                  (array_agg(b.version ORDER BY b.ver::pgext.version USING OPERATOR (pgext.>)))[1] AS version
+           FROM pgext.bin b JOIN pgext.repository r ON r.id = b.repo
+           WHERE r.org = 'pgdg'
+           GROUP BY b.pg, b.os, b.name) o
+          ON o.pg = p.pg AND o.os = p.os AND o.name = p.name;
+
+COMMENT ON VIEW pgext.pkg_pgdg IS 'pgext.pkg as if only PGDG repositories existed (Pigsty removed)';
+
+CREATE OR REPLACE VIEW pgext.pkg_pigsty AS
+SELECT p.pg, p.os, p.name, p.pkg, p.ext,
+       CASE WHEN o.count > 0 THEN 'AVAIL'
+            WHEN p.state = 'N/A' THEN 'N/A'
+            ELSE 'MISS' END::pgext.pkg_state AS state,
+       p.hide,
+       CASE WHEN o.count > 0 THEN 'pigsty' END AS org,
+       o.version,
+       coalesce(o.count, 0) AS count
+FROM pgext.pkg p
+LEFT JOIN (SELECT b.pg, b.os, b.name, count(*) AS count,
+                  (array_agg(b.version ORDER BY b.ver::pgext.version USING OPERATOR (pgext.>)))[1] AS version
+           FROM pgext.bin b JOIN pgext.repository r ON r.id = b.repo
+           WHERE r.org = 'pigsty'
+           GROUP BY b.pg, b.os, b.name) o
+          ON o.pg = p.pg AND o.os = p.os AND o.name = p.name;
+
+COMMENT ON VIEW pgext.pkg_pigsty IS 'pgext.pkg as if only Pigsty repositories existed (PGDG removed)';
 
 
 -----------------------------------

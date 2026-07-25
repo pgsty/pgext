@@ -91,6 +91,7 @@ var csvTables = []csvTable{
 	{Name: "repository", Asset: "repository.csv", Aliases: []string{"repositories", "repo", "r"}},
 	{Name: "extension", Asset: "extension.csv", Aliases: []string{"extensions", "ext", "e"}},
 	{Name: "universe", Asset: "universe.csv"},
+	{Name: "changelog", Asset: "changelog.csv", Aliases: []string{"chlog"}},
 }
 
 // CSVTableNames returns canonical embedded table names in load order.

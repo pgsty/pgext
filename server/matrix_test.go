@@ -33,6 +33,33 @@ func TestParseMatrixCell(t *testing.T) {
 	}
 }
 
+func TestMatrixViews(t *testing.T) {
+	seen := map[int]string{}
+	for view, mv := range matrixViews {
+		if prev, dup := seen[mv.id]; dup {
+			t.Fatalf("cache id %d shared by %q and %q", mv.id, prev, view)
+		}
+		seen[mv.id] = view
+		if mv.id < 1 || mv.id > 3 {
+			t.Fatalf("view %q cache id %d outside the matrix_cache_id_range check", view, mv.id)
+		}
+		if view == "" && mv.letter != "" {
+			t.Fatalf("global view must not carry a status letter, got %q", mv.letter)
+		}
+		if view != "" && mv.letter != "G" && mv.letter != "P" {
+			t.Fatalf("view %q letter %q is not a known AVAIL status byte", view, mv.letter)
+		}
+	}
+	if len(matrixViewOrder) != len(matrixViews) {
+		t.Fatalf("matrixViewOrder covers %d views, registry has %d", len(matrixViewOrder), len(matrixViews))
+	}
+	for _, view := range matrixViewOrder {
+		if _, ok := matrixViews[view]; !ok {
+			t.Fatalf("matrixViewOrder lists unknown view %q", view)
+		}
+	}
+}
+
 func TestMatrixColumnKeys(t *testing.T) {
 	keys := matrixColumnKeys([]string{"el8.x86_64", "el8.aarch64", "d12.x86_64"}, []int{18, 17})
 	want := []string{"el8i.18", "el8i.17", "el8a.18", "el8a.17", "d12i.18", "d12i.17"}

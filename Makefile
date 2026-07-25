@@ -62,6 +62,7 @@ dump:
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.repository ORDER BY id)       TO STDOUT CSV HEADER;"  > db/repository.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.extension  ORDER BY id)       TO STDOUT CSV HEADER;"  > db/extension.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.universe  ORDER BY id)       TO STDOUT CSV HEADER;"  > db/universe.csv
+	psql $(PGURL) -c "COPY (SELECT * FROM pgext.changelog ORDER BY ds DESC, pkg) TO STDOUT CSV HEADER;" > db/changelog.csv
 load:
 	cat db/pg.csv         | psql $(PGURL) -c "COPY pgext.pg         FROM STDIN CSV HEADER;"
 	cat db/os.csv         | psql $(PGURL) -c "COPY pgext.os         FROM STDIN CSV HEADER;"
@@ -69,6 +70,7 @@ load:
 	cat db/repository.csv | psql $(PGURL) -c "COPY pgext.repository FROM STDIN CSV HEADER;"
 	cat db/extension.csv  | psql $(PGURL) -c "COPY pgext.extension  FROM STDIN CSV HEADER;"
 	cat db/universe.csv   | psql $(PGURL) -c "COPY pgext.universe   FROM STDIN CSV HEADER;"
+	cat db/changelog.csv  | psql $(PGURL) -c "COPY pgext.changelog  FROM STDIN CSV HEADER;"
 
 dumps:
 	pg_dump $(PGURL) -c -x -n pgext -f tmp/pgext.sql

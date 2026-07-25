@@ -24,7 +24,7 @@ let INSTALL_PREF = { pg: '', os: '' };
 const F = { LEAD: 1, CONTRIB: 2, BIN: 4, LIB: 8, DDL: 16, LOAD: 32, TRUSTED: 64, RELOC: 128 };
 const B = { RPM: 1, DEB: 2, PGRX: 4, SOURCE: 8 };
 const R = { REQUIRES: 1, REQUIRED_BY: 2, SEE_ALSO: 4 };
-const FULLC = new Map(), MXC = new Map(), FILEC = new Map(), DOCC = new Map();
+const FULLC = new Map(), MXC = new Map(), FILEC = new Map(), DOCC = new Map(), CHLOGC = new Map();
 let GMATRIX = null, GMATRIX_VIEW = null, matrixHydSeq = 0;
 
 /* bootstrap row columns — keep in sync with handleBootstrap in server/api.go:
@@ -220,6 +220,7 @@ const I18N = {
   'ext.lifecycleNote': ['Upstream lifecycle is {state}. Evaluate maintenance and compatibility before production use.',
                         '上游生命周期状态为 {state}，用于生产前请评估维护状态与兼容性。'],
   'ext.family': ['Extensions', '扩展列表'],
+  'ext.changelog': ['Changelog', '变更日志'],
   'ext.visits': ['visits', '次访问'],
   'spec.category': ['Category', '分类'],
   'spec.license': ['License', '许可'], 'spec.language': ['Language', '语言'],
@@ -275,6 +276,8 @@ const I18N = {
                '点击状态可单独查看 · 再次点击恢复全部 · 点击任意格子查看详情'],
   'gmx.pkg': ['PACKAGE / PLATFORM', '扩展包 / 平台'],
   'gmx.api': ['JSON API', 'JSON API'],
+  'gmx.solo': ['What-if view: with {org} repositories alone, {pkgs} of {allPkgs} packages remain deliverable — {avail} of {allAvail} available build slots survive, {miss} go missing, and {gone} packages vanish entirely. The sheet below lists exactly the packages {org} ships.',
+               '独立推演：假设只剩 {org} 仓库，{allPkgs} 个扩展包中仍可交付 {pkgs} 个——现有 {allAvail} 个可用构建槽位保留 {avail} 个、缺失 {miss} 个，{gone} 个扩展包完全消失。下方矩阵恰好列出 {org} 实际交付的扩展包。'],
   'cat.featured': ['Featured', '精选'],
   'cat.all': ['All {n} extensions', '全部 {n} 个扩展'],
   'cat.open': ['Open in search ↗', '在搜索中打开 ↗'],
@@ -1940,7 +1943,8 @@ function pkgTocHTML() {
     ['pkg-packages', t('ext.pkgs')],
     ['pkg-downloads', t('ext.downloads')],
     ['pkg-build', t('ext.build')],
-    ['pkg-install', t('ext.install')]
+    ['pkg-install', t('ext.install')],
+    ['pkg-changelog', t('ext.changelog')]
   ]);
 }
 
@@ -2101,7 +2105,41 @@ function pkgHTML(pkg) {
     + '<section class="section pkg-section" id="pkg-downloads"><h2>' + t('ext.downloads') + '</h2><div id="p-files">' + skel(4) + '</div></section>'
     + '<section class="section pkg-section" id="pkg-build"><h2>' + t('ext.build') + '</h2><div id="p-build">' + skel(3) + '</div></section>'
     + '<section class="section pkg-section" id="pkg-install"><h2>' + t('ext.install') + '</h2><div id="p-install">' + skel(4) + '</div></section>'
+    + '<section class="section pkg-section" id="pkg-changelog"><h2>' + t('ext.changelog') + '</h2><div id="p-changelog">' + skel(3) + '</div></section>'
     + '</article>';
+}
+
+/* Package release history distilled from the RPM/DEB release notes: one row
+   per release batch — date, version movement, and the bilingual comment.
+   Packages without recorded history hide the section (and its TOC entry)
+   instead of rendering an empty shell. */
+function changelogHTML(cl) {
+  const entries = cl.entries || [];
+  const verCell = e => {
+    const o = e.old || '', n = e.new || '';
+    if (o && n && o !== n) return '<span class="chlog-old">' + esc(o) + '</span><span class="chlog-arrow">→</span><b class="chlog-new">' + esc(n) + '</b>';
+    if (!o && n) return '<span class="chlog-tag">' + bi('NEW', '新增') + '</span><b class="chlog-new">' + esc(n) + '</b>';
+    if (n || o) return '<span class="chlog-same">' + esc(n || o) + '</span>';
+    return '<span class="chlog-old">—</span>';
+  };
+  const note = e => { const s = LANG === 'zh' ? (e.note_zh || e.note_en) : (e.note_en || e.note_zh); return s ? esc(s) : ''; };
+  const rows = entries.map(e => '<tr><td class="mono chlog-ds">' + esc(e.ds) + '</td>'
+    + '<td class="mono chlog-ver">' + verCell(e) + '</td>'
+    + '<td class="chlog-note">' + note(e) + '</td></tr>').join('');
+  const oldest = entries[entries.length - 1];
+  return '<p class="section-lede">' + entries.length
+    + bi(' release entries since ', ' 条发布记录，始于 ') + esc(oldest.ds)
+    + bi(', distilled from the RPM / DEB release notes.', '，摘自 RPM / DEB 仓库发布说明。') + '</p>'
+    + '<div class="version-table chlog-table"><div class="rows-scroll"><table><thead><tr>'
+    + '<th>' + bi('date', '日期') + '</th><th>' + bi('version', '版本变更') + '</th><th>' + bi('note', '备注') + '</th>'
+    + '</tr></thead><tbody>' + rows + '</tbody></table></div></div>';
+}
+
+function hidePkgChangelog() {
+  const sec = document.getElementById('pkg-changelog');
+  if (sec) sec.style.display = 'none';
+  const btn = document.querySelector('.page-toc button[data-scroll="pkg-changelog"]');
+  if (btn) btn.style.display = 'none';
 }
 
 async function hydratePkg(pkg) {
@@ -2132,6 +2170,17 @@ async function hydratePkg(pkg) {
       chip.innerHTML = ICON_EYE + fmtInt(v.visits);
       chip.dataset.tip = fmtInt(v.visits) + ' ' + t('ext.visits');
     }).catch(() => {});
+
+  // release history renders when recorded, otherwise the section disappears
+  (async () => {
+    let cl = CHLOGC.get(lead.name);
+    if (!cl) { cl = await j('/api/v1/ext/' + enc + '/changelog'); CHLOGC.set(lead.name, cl); }
+    return cl;
+  })().then(cl => {
+    if (tok !== hydSeq) return;
+    if (cl && cl.entries && cl.entries.length) fill('p-changelog', changelogHTML(cl));
+    else hidePkgChangelog();
+  }).catch(() => { if (tok === hydSeq) hidePkgChangelog(); });
 
   // the family table needs every member's full record for schema + requires
   Promise.all(members.map(async m => {
@@ -2264,7 +2313,7 @@ function navPageHTML(kind, raw) {
   const body = kind === 'pg' || kind === 'os'
     ? '<div class="section"><h2>' + t('gmx.title') + '</h2><div id="slice-matrix">' + skel(6) + '</div></div>'
     : kind === 'repo'
-      ? '<div class="section"><h2>' + t('gmx.title') + '</h2><div id="repo-matrix">' + skel(6) + '</div></div>'
+      ? '<div class="section"><h2>' + t('gmx.title') + '</h2><p class="gmx-solo" id="repo-solo" hidden></p><div id="repo-matrix">' + skel(6) + '</div></div>'
       : (kind !== 'lang' && featured.length ? '<div class="section"><h2>' + t('cat.featured') + '</h2><ul class="wall ext-wall">' + featured.map(tileHTML).join('') + '</ul></div>' : '')
       + '<div class="section"><h2>' + t('cat.all', { n: fmtInt(members.length) }) + '</h2>' + extTableHTML(members) + '</div>';
   return '<article class="page wrap' + (kind === 'repo' || kind === 'pg' || kind === 'os' ? ' page-wide' : '') + '">'
@@ -2362,9 +2411,74 @@ async function ensureGlobalMatrix() {
   return GMATRIX;
 }
 
-/* /repo/{ORG} embeds the same matrix block as /matrix, restricted to the
-   packages this source delivers. */
+/* /repo/{ORG} embeds the same matrix block as /matrix. PGDG and PIGSTY get
+   the exact single-repository what-if payload (/api/v1/matrix?repo=…): the
+   grid as if only that organization's repositories existed, rows being
+   exactly the packages it ships, AVAIL cells carrying its own versions.
+   Other sources keep the global rows their member packages appear in. */
+const MATRIX_REPO_VIEWS = { PGDG: 'pgdg', PIGSTY: 'pigsty' };
+const RMATRIX = {}, RMATRIX_CHECKED = {};
+
 async function hydrateRepoMatrix(org) {
+  if (!document.getElementById('repo-matrix')) return;
+  const view = MATRIX_REPO_VIEWS[org];
+  if (!view) return hydrateRepoMemberMatrix(org);
+  const token = matrixHydSeq;
+  const paint = data => {
+    const box = document.getElementById('repo-matrix');
+    if (!box) return;
+    const rows = data.rows.map((row, index) => ({ row, index }));
+    box.innerHTML = matrixBlockHTML(data, rows);
+    setupGlobalMatrix(data, { root: box, rows });
+    const solo = document.getElementById('repo-solo');
+    if (solo) { const html = soloLedeHTML(data, org); solo.hidden = !html; solo.innerHTML = html; }
+  };
+  const key = MATRIX_CACHE_KEY + '.' + view;
+  if (!RMATRIX[view]) {
+    try {
+      const cached = JSON.parse(localStorage.getItem(key) || 'null');
+      if (matrixUsable(cached) && cached.repo === view) RMATRIX[view] = cached;
+    } catch (e) {}
+  }
+  if (RMATRIX[view]) paint(RMATRIX[view]);
+  if (RMATRIX[view] && RMATRIX_CHECKED[view]) return;
+  try {
+    const fresh = await j('/api/v1/matrix?repo=' + view);
+    RMATRIX_CHECKED[view] = true;
+    if (!matrixUsable(fresh) || fresh.repo !== view) return;
+    const prev = RMATRIX[view];
+    RMATRIX[view] = fresh;
+    try { localStorage.setItem(key, JSON.stringify(fresh)); } catch (e) {}
+    const changed = !prev || fresh.generated !== prev.generated
+      || !prev.stats || !fresh.stats || fresh.stats.cells !== prev.stats.cells;
+    if (changed && token === matrixHydSeq) paint(fresh);
+  } catch (err) {
+    if (!RMATRIX[view] && token === matrixHydSeq) {
+      const box = document.getElementById('repo-matrix');
+      if (box) box.innerHTML = hydrateErr(err);
+    }
+  }
+}
+
+/* the what-if numbers above a repo matrix, phrased against stats.global */
+function soloLedeHTML(data, org) {
+  const stats = data.stats || {}, counts = stats.counts || {}, g = stats.global || {};
+  if (!g.avail) return '';
+  const avail = (counts.G || 0) + (counts.P || 0);
+  return esc(t('gmx.solo', {
+    org,
+    pkgs: fmtInt((data.rows || []).length),
+    allPkgs: fmtInt(g.rows || 0),
+    avail: fmtInt(avail),
+    allAvail: fmtInt(g.avail),
+    miss: fmtInt(Math.max((g.avail || 0) - avail, 0)),
+    gone: fmtInt(Math.max((g.rows || 0) - (data.rows || []).length, 0))
+  }));
+}
+
+/* sources without a dedicated what-if payload (CONTRIB, MIXED): restrict the
+   global sheet to the packages their member extensions belong to. */
+async function hydrateRepoMemberMatrix(org) {
   const box = document.getElementById('repo-matrix');
   if (!box) return;
   try {
@@ -2564,7 +2678,9 @@ function dimHTML(dim) {
    Payload format matrix-row.v2 (see server/matrix.go): one row per package,
    c = one status byte per cell — G AVAIL·PGDG / P AVAIL·Pigsty / M MISS /
    N N/A — plus v/i, a row-local version dictionary with its per-cell base36
-   index. Rendering follows the four states only. */
+   index. Rendering follows the four states only. The same format carries the
+   /repo/{PGDG,PIGSTY} what-if payloads (data.repo set, single AVAIL letter,
+   stats.global sizing the real-world matrix). */
 const GMX_META = [
   ['G', 'gmx.pgdg', 'pgdg'],
   ['P', 'gmx.pigsty', 'pigsty'],
@@ -2598,7 +2714,10 @@ function matrixBlockHTML(data, rows) {
       if (counts[ch] != null) counts[ch]++;
     }
   }
-  const legend = GMX_META.map(item =>
+  // a single-repository payload only ever uses one AVAIL letter — drop the
+  // other organization's zero chip instead of advertising an empty filter
+  const legendMeta = data.repo ? GMX_META.filter(item => counts[item[0]] || item[0] === 'M' || item[0] === 'N') : GMX_META;
+  const legend = legendMeta.map(item =>
     '<button type="button" class="gmx-legend-item gmx-' + item[2] + '" data-gmx-code="' + item[0]
     + '" aria-pressed="false"><i></i><span>' + t(item[1]) + '</span><b>' + fmtInt(counts[item[0]] || 0) + '</b></button>').join('');
   // one full target name per OS group, PG majors underneath — both navigate
@@ -2936,6 +3055,12 @@ function route() {
   if (path.startsWith('/ext/')) { const e = byName.get(decodeURIComponent(path.slice(5))); if (e) description = desc(e); }
   if (path.startsWith('/pkg/')) { const family = byPkg.get(decodeURIComponent(path.slice(5))); if (family && family[0]) description = desc(byName.get(family[0].lead) || family[0]); }
   if (path === '/matrix') description = LANG === 'zh' ? '跨扩展包、操作系统与 PostgreSQL 大版本的全局构建矩阵。' : 'The global build matrix across extension packages, operating systems, and PostgreSQL majors.';
+  if (path.startsWith('/repo/')) {
+    const repoName = decodeURIComponent(path.slice(6)).toUpperCase();
+    if (MATRIX_REPO_VIEWS[repoName]) description = LANG === 'zh'
+      ? '假设只剩 ' + repoName + ' 仓库时的独立构建矩阵：它实际交付哪些扩展包，又会缺失多少构建槽位。'
+      : 'The standalone ' + repoName + ' build matrix: exactly what this repository ships, and how much would go missing without the other one.';
+  }
   if (meta) meta.content = description;
   if (ogTitle) ogTitle.content = document.title;
   if (ogDesc) ogDesc.content = description;

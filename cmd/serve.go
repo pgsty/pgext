@@ -26,8 +26,9 @@ var (
 	serveVisitsFile  string
 )
 
-// defaultVisitsFile keeps the page hit counter under ~/.pgext by default;
-// an empty value (no resolvable home) degrades to a memory-only counter.
+// defaultVisitsFile points at the retired file-backed counter location; when
+// the file exists its counts are imported into pgext.counter once and the
+// file is renamed. Counters now persist in the database.
 func defaultVisitsFile() string {
 	home, err := os.UserHomeDir()
 	if err != nil {
@@ -80,6 +81,6 @@ func init() {
 	serveCmd.Flags().StringVar(&serveListen, "listen", ":8432", "listen address")
 	serveCmd.Flags().DurationVar(&serveCacheTTL, "cache-ttl", 5*time.Minute, "catalog snapshot refresh interval")
 	serveCmd.Flags().StringVar(&serveReloadToken, "reload-token", os.Getenv("PGEXT_RELOAD_TOKEN"), "token enabling POST /api/v1/reload (default: $PGEXT_RELOAD_TOKEN; disabled when empty)")
-	serveCmd.Flags().StringVar(&serveVisitsFile, "visits-file", defaultVisitsFile(), "page hit counter persistence path (empty: memory only)")
+	serveCmd.Flags().StringVar(&serveVisitsFile, "visits-file", defaultVisitsFile(), "legacy visit counter file imported into pgext.counter once (empty: skip)")
 	rootCmd.AddCommand(serveCmd)
 }

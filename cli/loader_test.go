@@ -6,7 +6,7 @@ import (
 )
 
 func TestEmbeddedTableRegistry(t *testing.T) {
-	want := []string{"pg", "os", "category", "repository", "extension", "universe"}
+	want := []string{"pg", "os", "category", "repository", "extension", "universe", "changelog"}
 	if got := EmbeddedTableNames(); !reflect.DeepEqual(got, want) {
 		t.Fatalf("EmbeddedTableNames() = %v, want %v", got, want)
 	}

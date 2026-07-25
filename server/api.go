@@ -7,6 +7,7 @@ import (
 	"context"
 	"crypto/subtle"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -15,6 +16,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/sirupsen/logrus"
 )
@@ -29,6 +31,7 @@ import (
      GET  /api/v1/matrix                global package availability: package × os × pg
      GET  /api/v1/ext/{name}/files      binary artifacts with download URLs (?pg= &os=)
      GET  /api/v1/ext/{name}/doc        usage doc markdown (?lang=en|zh)
+     GET  /api/v1/ext/{name}/changelog  release history rows for the package
      GET  /api/v1/dim/{key}             aggregate: 19 universe/doc/pkg dimensions
      GET  /api/v1/bootstrap             compact positional payload for the SPA
      POST /api/v1/reload                refresh the snapshot from the database
@@ -481,7 +484,7 @@ type api struct {
 	cache       *ttlCache
 	pool        *pgxpool.Pool
 	reloadToken string
-	visits      *visitStore
+	counter     *counterStore
 }
 
 func writeJSON(w http.ResponseWriter, code int, v any) {
@@ -621,13 +624,19 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 // pgext.matrix_cache behind the in-memory TTL cache; the payload is compact
 // and positional: p=package, e=lead extension, c=status bytes (lowercase =
 // hidden), v/i=row-local version dictionary and per-cell index.
+// ?repo=pgdg|pigsty selects the single-repository what-if view.
 func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
+	view := strings.ToLower(strings.TrimSpace(r.URL.Query().Get("repo")))
+	if _, ok := matrixViews[view]; !ok {
+		writeErr(w, http.StatusBadRequest, "unknown matrix repo view %q (want pgdg or pigsty)", view)
+		return
+	}
 	snap := a.store.Get()
 	// LoadedAt participates in this cache key because package version/count
 	// changes can be meaningful even when the catalog content hash is stable.
 	cacheVersion := snap.Version + "|" + snap.LoadedAt.Format(time.RFC3339Nano)
 	a.cached(w, r, cacheVersion, func(ctx context.Context) (any, error) {
-		payload, err := a.matrixPayload(ctx, false)
+		payload, err := a.matrixPayload(ctx, false, view)
 		if err != nil {
 			return nil, err
 		}
@@ -974,9 +983,9 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-/* visit counter: file-backed page hit counts. POST increments, GET reads.
-   The download counter is a placeholder that always reports zero until
-   artifact download tracking lands. */
+/* visit counter: in-memory counts persisted additively to pgext.counter.
+   POST increments, GET reads. The download counter is a placeholder that
+   reports the stored value until artifact download tracking lands. */
 
 func (a *api) handleVisit(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
@@ -987,12 +996,66 @@ func (a *api) handleVisit(w http.ResponseWriter, r *http.Request) {
 	}
 	var visits, downloads int64
 	if r.Method == http.MethodPost {
-		visits, downloads = a.visits.hit(e.Name)
+		visits, downloads = a.counter.hit(e.Name)
 	} else {
-		visits, downloads = a.visits.get(e.Name)
+		visits, downloads = a.counter.get(e.Name)
 	}
 	w.Header().Set("Cache-Control", "no-store")
 	writeJSON(w, 200, map[string]any{"ext": e.Name, "visits": visits, "downloads": downloads})
+}
+
+// ChangelogRow is one release-notes entry of the package this extension
+// belongs to. Versions may be absent: a new package has no old version, an
+// unchanged rebuild records neither.
+type ChangelogRow struct {
+	DS     string `json:"ds"`
+	Old    string `json:"old,omitempty"`
+	New    string `json:"new,omitempty"`
+	NoteEn string `json:"note_en,omitempty"`
+	NoteZh string `json:"note_zh,omitempty"`
+}
+
+// handleChangelog serves the per-package release history distilled from the
+// RPM/DEB release notes (pgext.changelog). A catalog database that predates
+// the changelog table simply reports an empty history.
+func (a *api) handleChangelog(w http.ResponseWriter, r *http.Request) {
+	snap := a.store.Get()
+	e, ok := snap.ByName[r.PathValue("name")]
+	if !ok {
+		writeErr(w, 404, "extension %q does not exist", r.PathValue("name"))
+		return
+	}
+	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
+		entries := []ChangelogRow{}
+		rows, err := a.pool.Query(ctx, `
+			SELECT ds::text, coalesce(old_ver,''), coalesce(new_ver,''), coalesce(note_en,''), coalesce(note_zh,'')
+			FROM pgext.changelog WHERE pkg = $1 ORDER BY ds DESC`, e.Pkg)
+		if err != nil {
+			if isUndefinedTable(err) {
+				return map[string]any{"ext": e.Name, "pkg": e.Pkg, "total": 0, "entries": entries}, nil
+			}
+			return nil, err
+		}
+		defer rows.Close()
+		for rows.Next() {
+			var c ChangelogRow
+			if err := rows.Scan(&c.DS, &c.Old, &c.New, &c.NoteEn, &c.NoteZh); err != nil {
+				return nil, err
+			}
+			entries = append(entries, c)
+		}
+		if err := rows.Err(); err != nil {
+			return nil, err
+		}
+		return map[string]any{"ext": e.Name, "pkg": e.Pkg, "total": len(entries), "entries": entries}, nil
+	})
+}
+
+// isUndefinedTable reports whether err is PostgreSQL 42P01 (relation does not
+// exist) — the serving database has not loaded the current schema yet.
+func isUndefinedTable(err error) bool {
+	var pgErr *pgconn.PgError
+	return errors.As(err, &pgErr) && pgErr.Code == "42P01"
 }
 
 func (a *api) handleReload(w http.ResponseWriter, r *http.Request) {
@@ -1016,10 +1079,8 @@ func (a *api) handleReload(w http.ResponseWriter, r *http.Request) {
 		writeErr(w, 500, "catalog reload failed")
 		return
 	}
-	// recompute the matrix cache at write time so no visitor pays for it
-	if _, err := a.matrixPayload(ctx, true); err != nil {
-		logrus.Warnf("matrix cache rebuild after reload failed: %v", err)
-	}
+	// recompute the matrix caches at write time so no visitor pays for them
+	a.refreshMatrixCaches(ctx, true)
 	writeJSON(w, 200, map[string]any{
 		"generated": snap.LoadedAt.Format(time.RFC3339),
 		"total":     len(snap.Exts),
