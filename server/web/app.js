@@ -27,6 +27,31 @@ const R = { REQUIRES: 1, REQUIRED_BY: 2, SEE_ALSO: 4 };
 const FULLC = new Map(), MXC = new Map(), FILEC = new Map(), DOCC = new Map(), CHLOGC = new Map();
 let GMATRIX = null, GMATRIX_VIEW = null, matrixHydSeq = 0;
 
+/* ---------------- google analytics (GA4) ---------------- */
+// Same property the Hugo site used (hugo.yaml googleAnalytics.ID). The gtag
+// loader is injected here instead of index.html so localhost sessions never
+// load or report analytics. Automatic page views are disabled; route() reports
+// one page_view per path change (boot re-renders, language toggles and
+// query-only filter updates all keep the same path, so none of them re-fire).
+const GA_ID = 'G-5HDLR6CMB4';
+const GA_ON = !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+let gaLastPath = null;
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+if (GA_ON) {
+  gtag('js', new Date());
+  gtag('config', GA_ID, { send_page_view: false });
+  const ga = document.createElement('script');
+  ga.async = true;
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(ga);
+}
+function gaPageView(path) {
+  if (!GA_ON || path === gaLastPath) return;
+  gaLastPath = path;
+  gtag('event', 'page_view', { page_location: location.href, page_title: document.title });
+}
+
 /* bootstrap row columns — keep in sync with handleBootstrap in server/api.go:
    0 name 1 cat 2 avail 3 repo 4 license 5 lang 6 version 7 stars
    8 en 9 zh 10 kind 11 vendor 12 kernel 13 pg[] 14 flags 15 docbits 16 commit
@@ -3064,6 +3089,7 @@ function route() {
   if (meta) meta.content = description;
   if (ogTitle) ogTitle.content = document.title;
   if (ogDesc) ogDesc.content = description;
+  gaPageView(path);
 }
 function titleFor(path) {
   if (path.startsWith('/ext/')) { const n = decodeURIComponent(path.slice(5)); return n + ' · PGEXT.CLOUD'; }

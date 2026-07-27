@@ -43,19 +43,18 @@ func Serve(ctx context.Context, opts Options) error {
 	store := NewStore(opts.Pool)
 	bootCtx, cancel := context.WithTimeout(ctx, 60*time.Second)
 	defer cancel()
-	if _, err := store.Reload(bootCtx); err != nil {
+	snap, err := store.Reload(bootCtx)
+	if err != nil {
 		return fmt.Errorf("initial catalog load failed: %w", err)
 	}
 	store.StartRefresher(ctx, opts.CacheTTL)
 
 	counter := newCounterStore(opts.Pool)
-	if snap := store.Get(); snap != nil {
-		names := make([]string, 0, len(snap.Exts))
-		for _, e := range snap.Exts {
-			names = append(names, e.Name)
-		}
-		counter.prime(bootCtx, names)
+	names := make([]string, len(snap.Exts))
+	for i, e := range snap.Exts {
+		names[i] = e.Name
 	}
+	counter.prime(bootCtx, names)
 	counter.importLegacy(opts.VisitsFile)
 	counter.startFlusher(ctx, time.Minute)
 	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken, counter: counter}
@@ -165,38 +164,37 @@ func registerLegacyRedirects(mux *http.ServeMux) {
 	mux.HandleFunc("GET /tags/{name}/{$}", redirectTagTerm)
 }
 
-// redirectPrefix maps a one-segment legacy route onto its canonical prefix,
-// preserving the query string.
+// withQuery carries the request's query string over to a redirect target,
+// appending with '&' when the target already has one of its own.
+func withQuery(target string, r *http.Request) string {
+	if q := r.URL.RawQuery; q != "" {
+		sep := "?"
+		if strings.Contains(target, "?") {
+			sep = "&"
+		}
+		return target + sep + q
+	}
+	return target
+}
+
+// redirectPrefix maps a one-segment legacy route onto its canonical prefix.
 func redirectPrefix(prefix string, code int) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		target := prefix + url.PathEscape(r.PathValue("name"))
-		if r.URL.RawQuery != "" {
-			target += "?" + r.URL.RawQuery
-		}
-		http.Redirect(w, r, target, code)
+		http.Redirect(w, r, withQuery(prefix+url.PathEscape(r.PathValue("name")), r), code)
 	}
 }
 
 // redirectTo answers a retired page with a temporary redirect onto its fixed
-// replacement, carrying the query string over.
+// replacement.
 func redirectTo(target string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		dest := target
-		if q := r.URL.RawQuery; q != "" {
-			if strings.Contains(dest, "?") {
-				dest += "&" + q
-			} else {
-				dest += "?" + q
-			}
-		}
-		http.Redirect(w, r, dest, http.StatusFound)
+		http.Redirect(w, r, withQuery(target, r), http.StatusFound)
 	}
 }
 
 // redirectStripPrefix drops a legacy language prefix and redirects to the same
-// path on the default site, keeping the query string. The target is always a
-// local absolute path (never protocol-relative), and stripping one prefix per
-// hop cannot loop.
+// path on the default site. The target is always a local absolute path (never
+// protocol-relative), and stripping one prefix per hop cannot loop.
 func redirectStripPrefix(prefix string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		target := strings.TrimPrefix(r.URL.EscapedPath(), prefix)
@@ -206,21 +204,14 @@ func redirectStripPrefix(prefix string) http.HandlerFunc {
 		if !strings.HasPrefix(target, "/") {
 			target = "/" + target
 		}
-		if q := r.URL.RawQuery; q != "" {
-			target += "?" + q
-		}
-		http.Redirect(w, r, target, http.StatusFound)
+		http.Redirect(w, r, withQuery(target, r), http.StatusFound)
 	}
 }
 
 // redirectTagTerm maps a Hugo /tags/{term} taxonomy page onto the catalog tag
 // filter, merging any extra query parameters behind it.
 func redirectTagTerm(w http.ResponseWriter, r *http.Request) {
-	target := "/?tag=" + url.QueryEscape(r.PathValue("name"))
-	if r.URL.RawQuery != "" {
-		target += "&" + r.URL.RawQuery
-	}
-	http.Redirect(w, r, target, http.StatusFound)
+	http.Redirect(w, r, withQuery("/?tag="+url.QueryEscape(r.PathValue("name")), r), http.StatusFound)
 }
 
 func displayAddr(listen string) string {
@@ -235,19 +226,32 @@ func displayAddr(listen string) string {
 
 /* ---------------- embedded assets & SPA shell ---------------- */
 
+// assetTypes is the single registry of embedded assets served under /assets/.
+var assetTypes = map[string]string{
+	"style.css":   "text/css; charset=utf-8",
+	"app.js":      "text/javascript; charset=utf-8",
+	"favicon.ico": "image/x-icon",
+}
+
 var assetETags = map[string]string{}
 
+func etagOf(data []byte) string {
+	sum := sha1.Sum(data)
+	return `"` + hex.EncodeToString(sum[:8]) + `"`
+}
+
 func init() {
-	for _, name := range []string{"index.html", "style.css", "app.js", "favicon.ico"} {
+	for name := range assetTypes {
 		if b, err := webFS.ReadFile("web/" + name); err == nil {
-			sum := sha1.Sum(b)
-			assetETags[name] = `"` + hex.EncodeToString(sum[:8]) + `"`
+			assetETags[name] = etagOf(b)
 		}
 	}
 	// The shell ETag covers its referenced assets as well as its own source.
 	// This makes the fingerprint query strings advance on every UI change.
-	sum := sha1.Sum([]byte(assetETags["index.html"] + assetETags["style.css"] + assetETags["app.js"]))
-	assetETags["index.html"] = `"` + hex.EncodeToString(sum[:8]) + `"`
+	if b, err := webFS.ReadFile("web/index.html"); err == nil {
+		assetETags["index.html"] = etagOf(b)
+	}
+	assetETags["index.html"] = etagOf([]byte(assetETags["index.html"] + assetETags["style.css"] + assetETags["app.js"]))
 }
 
 func serveEmbedded(w http.ResponseWriter, r *http.Request, name, ctype string) {
@@ -271,16 +275,13 @@ func serveEmbedded(w http.ResponseWriter, r *http.Request, name, ctype string) {
 }
 
 func handleAsset(w http.ResponseWriter, r *http.Request) {
-	switch r.PathValue("file") {
-	case "style.css":
-		serveEmbedded(w, r, "style.css", "text/css; charset=utf-8")
-	case "app.js":
-		serveEmbedded(w, r, "app.js", "text/javascript; charset=utf-8")
-	case "favicon.ico":
-		serveEmbedded(w, r, "favicon.ico", "image/x-icon")
-	default:
+	name := r.PathValue("file")
+	ctype, ok := assetTypes[name]
+	if !ok {
 		http.NotFound(w, r)
+		return
 	}
+	serveEmbedded(w, r, name, ctype)
 }
 
 // serveIndex keeps the shell revalidated and fingerprints its embedded asset

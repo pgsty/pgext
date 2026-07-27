@@ -34,29 +34,30 @@ func TestParseMatrixCell(t *testing.T) {
 }
 
 func TestMatrixViews(t *testing.T) {
+	if matrixViews[0].name != "" {
+		t.Fatalf("the global view must lead the rebuild order, got %q", matrixViews[0].name)
+	}
 	seen := map[int]string{}
-	for view, mv := range matrixViews {
+	for _, mv := range matrixViews {
 		if prev, dup := seen[mv.id]; dup {
-			t.Fatalf("cache id %d shared by %q and %q", mv.id, prev, view)
+			t.Fatalf("cache id %d shared by %q and %q", mv.id, prev, mv.name)
 		}
-		seen[mv.id] = view
+		seen[mv.id] = mv.name
 		if mv.id < 1 || mv.id > 3 {
-			t.Fatalf("view %q cache id %d outside the matrix_cache_id_range check", view, mv.id)
+			t.Fatalf("view %q cache id %d outside the matrix_cache_id_range check", mv.name, mv.id)
 		}
-		if view == "" && mv.letter != "" {
+		if mv.name == "" && mv.letter != "" {
 			t.Fatalf("global view must not carry a status letter, got %q", mv.letter)
 		}
-		if view != "" && mv.letter != "G" && mv.letter != "P" {
-			t.Fatalf("view %q letter %q is not a known AVAIL status byte", view, mv.letter)
+		if mv.name != "" && mv.letter != "G" && mv.letter != "P" {
+			t.Fatalf("view %q letter %q is not a known AVAIL status byte", mv.name, mv.letter)
+		}
+		if got, ok := matrixViewOf(mv.name); !ok || got != mv {
+			t.Fatalf("matrixViewOf(%q) = %+v, %v", mv.name, got, ok)
 		}
 	}
-	if len(matrixViewOrder) != len(matrixViews) {
-		t.Fatalf("matrixViewOrder covers %d views, registry has %d", len(matrixViewOrder), len(matrixViews))
-	}
-	for _, view := range matrixViewOrder {
-		if _, ok := matrixViews[view]; !ok {
-			t.Fatalf("matrixViewOrder lists unknown view %q", view)
-		}
+	if _, ok := matrixViewOf("bogus"); ok {
+		t.Fatal("matrixViewOf must reject unknown views")
 	}
 }
 

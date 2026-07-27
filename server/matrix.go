@@ -45,19 +45,38 @@ import (
 
 const matrixFormat = "matrix-row.v2"
 
-// matrixViews maps the ?repo= query value onto its cache row and the status
-// letter its AVAIL cells carry ("" is the global three-color view).
-var matrixViews = map[string]struct {
+// matrixView is one /api/v1/matrix variant: the ?repo= query value, its
+// pgext.matrix_cache row, and the status letter its AVAIL cells carry
+// ("" is the global three-color view).
+type matrixView struct {
+	name   string
 	id     int
 	letter string
-}{
-	"":       {id: 1},
-	"pgdg":   {id: 2, letter: "G"},
-	"pigsty": {id: 3, letter: "P"},
 }
 
-// matrixViewOrder fixes the warmup/reload rebuild order (global first).
-var matrixViewOrder = []string{"", "pgdg", "pigsty"}
+// matrixViews lists every variant in warmup/reload rebuild order (global first).
+var matrixViews = []matrixView{
+	{name: "", id: 1},
+	{name: "pgdg", id: 2, letter: "G"},
+	{name: "pigsty", id: 3, letter: "P"},
+}
+
+func matrixViewOf(name string) (matrixView, bool) {
+	for _, mv := range matrixViews {
+		if mv.name == name {
+			return mv, true
+		}
+	}
+	return matrixView{}, false
+}
+
+// label names the view in logs and error chains.
+func (mv matrixView) label() string {
+	if mv.name == "" {
+		return "global"
+	}
+	return mv.name
+}
 
 const matrixCacheDDL = `
 	CREATE TABLE IF NOT EXISTS pgext.matrix_cache (
@@ -164,13 +183,16 @@ const matrixLeadJoin = `
 		      WHERE lead AND (state IS NULL OR state <> 'not-ready')
 		      ORDER BY pkg, id) e ON e.pkg = p.pkg`
 
+// matrixCellAggKey is the jsonb_object_agg key expression, producing the same
+// "el8i.17"-style cell keys matrixColumnKeys lays out on the Go side.
+const matrixCellAggKey = `split_part(p.os, '.', 1)
+		             || CASE WHEN p.os LIKE '%x86%' THEN 'i' ELSE 'a' END
+		             || '.' || p.pg`
+
 // matrixGlobalQuery folds live pgext.pkg into one aggregated row per package.
 const matrixGlobalQuery = `
 		SELECT p.pkg, e.name,
-		       jsonb_object_agg(
-		           split_part(p.os, '.', 1)
-		             || CASE WHEN p.os LIKE '%x86%' THEN 'i' ELSE 'a' END
-		             || '.' || p.pg,
+		       jsonb_object_agg(` + matrixCellAggKey + `,
 		           coalesce(p.version, '')
 		             || CASE WHEN p.hide THEN '#' ELSE '@' END
 		             || CASE p.state
@@ -190,10 +212,7 @@ const matrixGlobalQuery = `
 func matrixRepoQuery(letter string) string {
 	return `
 		SELECT p.pkg, e.name,
-		       jsonb_object_agg(
-		           split_part(p.os, '.', 1)
-		             || CASE WHEN p.os LIKE '%x86%' THEN 'i' ELSE 'a' END
-		             || '.' || p.pg,
+		       jsonb_object_agg(` + matrixCellAggKey + `,
 		           CASE WHEN o.count > 0 THEN coalesce(o.version, '') || '@` + letter + `'
 		                WHEN p.state = 'N/A' THEN '@N'
 		                ELSE '@M'
@@ -216,26 +235,29 @@ const matrixGlobalStats = `
 		SELECT count(DISTINCT p.pkg), count(*) FILTER (WHERE p.state = 'AVAIL')
 		FROM pgext.pkg p` + matrixLeadJoin
 
+// catalogMtime reads the last catalog load time recorded in pgext.status.
+func (a *api) catalogMtime(ctx context.Context) (*time.Time, error) {
+	var t *time.Time
+	err := a.pool.QueryRow(ctx,
+		`SELECT coalesce(recap_time, parse_time, init_time) FROM pgext.status WHERE id = 0`,
+	).Scan(&t)
+	return t, err
+}
+
 // buildMatrixPayload computes one /api/v1/matrix response variant from
 // pgext.pkg with one aggregation query, ordered by lead-extension catalog id.
-func (a *api) buildMatrixPayload(ctx context.Context, snap *Snapshot, view string) ([]byte, error) {
-	mv, ok := matrixViews[view]
-	if !ok {
-		return nil, fmt.Errorf("unknown matrix view %q", view)
-	}
-	var generated time.Time
-	if err := a.pool.QueryRow(ctx, `
-		SELECT coalesce(recap_time, parse_time, init_time, now()) FROM pgext.status WHERE id = 0`,
-	).Scan(&generated); err != nil {
-		generated = snap.LoadedAt
+func (a *api) buildMatrixPayload(ctx context.Context, snap *Snapshot, mv matrixView) ([]byte, error) {
+	generated := snap.LoadedAt
+	if t, err := a.catalogMtime(ctx); err == nil && t != nil {
+		generated = *t
 	}
 	query, args := matrixGlobalQuery, []any(nil)
-	if view != "" {
-		query, args = matrixRepoQuery(mv.letter), []any{view}
+	if mv.name != "" {
+		query, args = matrixRepoQuery(mv.letter), []any{mv.name}
 	}
 	rows, err := a.pool.Query(ctx, query, args...)
 	if err != nil {
-		return nil, fmt.Errorf("aggregate %s matrix: %w", matrixViewName(view), err)
+		return nil, fmt.Errorf("aggregate %s matrix: %w", mv.label(), err)
 	}
 	defer rows.Close()
 
@@ -246,21 +268,21 @@ func (a *api) buildMatrixPayload(ctx context.Context, snap *Snapshot, view strin
 		var pkg, ext string
 		var raw []byte
 		if err := rows.Scan(&pkg, &ext, &raw); err != nil {
-			return nil, fmt.Errorf("scan %s matrix row: %w", matrixViewName(view), err)
+			return nil, fmt.Errorf("scan %s matrix row: %w", mv.label(), err)
 		}
 		cells := map[string]string{}
 		if err := json.Unmarshal(raw, &cells); err != nil {
-			return nil, fmt.Errorf("decode %s matrix row %s: %w", matrixViewName(view), pkg, err)
+			return nil, fmt.Errorf("decode %s matrix row %s: %w", mv.label(), pkg, err)
 		}
 		row := layoutMatrixRow(cells, keys, counts)
 		row.Pkg, row.Ext = pkg, ext
 		out = append(out, row)
 	}
 	if err := rows.Err(); err != nil {
-		return nil, fmt.Errorf("iterate %s matrix rows: %w", matrixViewName(view), err)
+		return nil, fmt.Errorf("iterate %s matrix rows: %w", mv.label(), err)
 	}
 	if len(out) == 0 {
-		return nil, fmt.Errorf("pgext.pkg holds no %s packages for the active lead extensions", matrixViewName(view))
+		return nil, fmt.Errorf("pgext.pkg holds no %s packages for the active lead extensions", mv.label())
 	}
 	stats := map[string]any{
 		"rows": len(out), "os": len(snap.OSs), "pg": len(snap.PGs),
@@ -275,25 +297,17 @@ func (a *api) buildMatrixPayload(ctx context.Context, snap *Snapshot, view strin
 		"stats":     stats,
 		"rows":      out,
 	}
-	if view != "" {
+	if mv.name != "" {
 		// size the real-world matrix so clients can state the complement:
 		// packages this organization does not ship and slots it leaves missing
 		var globalRows, globalAvail int
 		if err := a.pool.QueryRow(ctx, matrixGlobalStats).Scan(&globalRows, &globalAvail); err != nil {
-			return nil, fmt.Errorf("size global matrix for %s view: %w", matrixViewName(view), err)
+			return nil, fmt.Errorf("size global matrix for %s view: %w", mv.label(), err)
 		}
-		payload["repo"] = view
+		payload["repo"] = mv.name
 		stats["global"] = map[string]any{"rows": globalRows, "avail": globalAvail}
 	}
 	return json.Marshal(payload)
-}
-
-// matrixViewName labels a view in logs and error chains.
-func matrixViewName(view string) string {
-	if view == "" {
-		return "global"
-	}
-	return view
 }
 
 // ensureMatrixCache creates the cache table; a read-only role just loses the
@@ -311,11 +325,7 @@ func (a *api) ensureMatrixCache(ctx context.Context) {
 // matrixPayload returns the cached payload of one view when it is still
 // current, and rebuilds + upserts it otherwise. force skips the freshness
 // check (reload).
-func (a *api) matrixPayload(ctx context.Context, force bool, view string) ([]byte, error) {
-	mv, ok := matrixViews[view]
-	if !ok {
-		return nil, fmt.Errorf("unknown matrix view %q", view)
-	}
+func (a *api) matrixPayload(ctx context.Context, force bool, mv matrixView) ([]byte, error) {
 	snap := a.store.Get()
 	if snap == nil {
 		return nil, fmt.Errorf("catalog snapshot not loaded yet")
@@ -328,17 +338,14 @@ func (a *api) matrixPayload(ctx context.Context, force bool, view string) ([]byt
 		cached, mtime = nil, nil
 	}
 	if !force && len(cached) > 0 && mtime != nil && time.Since(*mtime) < 24*time.Hour {
-		var dataMtime *time.Time
-		if err := a.pool.QueryRow(ctx,
-			`SELECT coalesce(recap_time, parse_time, init_time) FROM pgext.status WHERE id = 0`,
-		).Scan(&dataMtime); err == nil && (dataMtime == nil || !mtime.Before(*dataMtime)) {
+		if dataMtime, err := a.catalogMtime(ctx); err == nil && (dataMtime == nil || !mtime.Before(*dataMtime)) {
 			return cached, nil
 		}
 	}
-	payload, err := a.buildMatrixPayload(ctx, snap, view)
+	payload, err := a.buildMatrixPayload(ctx, snap, mv)
 	if err != nil {
 		if len(cached) > 0 {
-			logrus.Warnf("%s matrix rebuild failed, serving cached payload: %v", matrixViewName(view), err)
+			logrus.Warnf("%s matrix rebuild failed, serving cached payload: %v", mv.label(), err)
 			return cached, nil
 		}
 		return nil, err
@@ -355,9 +362,9 @@ func (a *api) matrixPayload(ctx context.Context, force bool, view string) ([]byt
 // refreshMatrixCaches rebuilds/refreshes every matrix view in order; used by
 // startup warmup and POST /api/v1/reload so no visitor pays for a build.
 func (a *api) refreshMatrixCaches(ctx context.Context, force bool) {
-	for _, view := range matrixViewOrder {
-		if _, err := a.matrixPayload(ctx, force, view); err != nil {
-			logrus.Warnf("%s matrix cache refresh failed: %v", matrixViewName(view), err)
+	for _, mv := range matrixViews {
+		if _, err := a.matrixPayload(ctx, force, mv); err != nil {
+			logrus.Warnf("%s matrix cache refresh failed: %v", mv.label(), err)
 		}
 	}
 }

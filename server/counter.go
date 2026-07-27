@@ -27,8 +27,8 @@ import (
 type counterStore struct {
 	mu    sync.Mutex
 	pool  *pgxpool.Pool
-	ready bool           // pgext.counter reachable and primed
-	names []string       // known extension names, used to (re)prime the table
+	ready bool                  // pgext.counter reachable and primed
+	names []string              // known extension names, used to (re)prime the table
 	base  map[string]counterVal // totals last read back from the database
 	delta map[string]counterVal // local increments not yet flushed
 }

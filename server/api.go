@@ -4,6 +4,7 @@ Copyright 2018-2026 Ruohang Feng <rh@vonng.com>
 package server
 
 import (
+	"cmp"
 	"context"
 	"crypto/subtle"
 	"encoding/json"
@@ -11,11 +12,13 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
 	"time"
 
+	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/sirupsen/logrus"
@@ -66,24 +69,24 @@ type Filter struct {
 // like `cat:GIS tag:vector pg:18 build:pgrx is:packaged`.
 func ParseFilter(v url.Values) Filter {
 	f := Filter{
-		Cat:        strings.ToUpper(first(v.Get("cat"), v.Get("cate"))),
+		Cat:        strings.ToUpper(cmp.Or(v.Get("cat"), v.Get("cate"))),
 		Repo:       strings.ToUpper(v.Get("repo")),
 		License:    v.Get("license"),
-		Lang:       first(v.Get("lang"), v.Get("lng")),
+		Lang:       cmp.Or(v.Get("lang"), v.Get("lng")),
 		OS:         v.Get("os"),
-		Kind:       strings.ToLower(first(v.Get("kind"), v.Get("type"))),
+		Kind:       strings.ToLower(cmp.Or(v.Get("kind"), v.Get("type"))),
 		Lifecycle:  strings.ToLower(v.Get("lifecycle")),
 		Kernel:     v.Get("kernel"),
 		Vendor:     v.Get("vendor"),
 		Scope:      strings.ToLower(v.Get("scope")),
 		Tag:        v.Get("tag"),
-		Pkg:        first(v.Get("pkg"), v.Get("package")),
-		Capability: strings.ToLower(first(v.Get("capability"), v.Get("cap"))),
+		Pkg:        cmp.Or(v.Get("pkg"), v.Get("package")),
+		Capability: strings.ToLower(cmp.Or(v.Get("capability"), v.Get("cap"))),
 		Build:      strings.ToLower(v.Get("build")),
-		Docs:       strings.ToLower(first(v.Get("docs"), v.Get("doc"))),
-		Relation:   strings.ToLower(first(v.Get("relation"), v.Get("rel"))),
+		Docs:       strings.ToLower(cmp.Or(v.Get("docs"), v.Get("doc"))),
+		Relation:   strings.ToLower(cmp.Or(v.Get("relation"), v.Get("rel"))),
 		PGRX:       v.Get("pgrx"),
-		Active:     strings.ToLower(first(v.Get("active"), v.Get("year"))),
+		Active:     strings.ToLower(cmp.Or(v.Get("active"), v.Get("year"))),
 	}
 	if f.Scope == "cloud" { // legacy query alias
 		f.Scope = "vendor"
@@ -211,22 +214,7 @@ func (f Filter) match(e *Ext, snap *Snapshot) (int, bool) {
 	if f.Active != "" && activityYear(e) != f.Active {
 		return 0, false
 	}
-	if f.Scope == "packaged" && !e.Packaged {
-		return 0, false
-	}
-	if f.Scope == "unpacked" && e.Packaged {
-		return 0, false
-	}
-	if f.Scope == "source" && (e.Packaged || (e.RepoURL == "" && e.Tarball == "")) {
-		return 0, false
-	}
-	if f.Scope == "kernel" && e.Kernel == "" {
-		return 0, false
-	}
-	if f.Scope == "vendor" && e.Vendor == "" {
-		return 0, false
-	}
-	if f.Scope == "contrib" && !e.Contrib {
+	if !matchesScope(e, f.Scope) {
 		return 0, false
 	}
 	if f.Kernel != "" && !strings.Contains(strings.ToLower(e.Kernel), strings.ToLower(f.Kernel)) {
@@ -305,15 +293,6 @@ func (f Filter) Apply(snap *Snapshot, sortKey string) []*Ext {
 	return out
 }
 
-func first(values ...string) string {
-	for _, value := range values {
-		if value != "" {
-			return value
-		}
-	}
-	return ""
-}
-
 func containsFold(values []string, needle string) bool {
 	for _, value := range values {
 		if strings.Contains(strings.ToLower(value), needle) {
@@ -330,6 +309,27 @@ func containsEqualFold(values []string, needle string) bool {
 		}
 	}
 	return false
+}
+
+// matchesScope narrows by distribution scope; an empty or unknown scope value
+// filters nothing, mirroring the other dimension parameters.
+func matchesScope(e *Ext, scope string) bool {
+	switch scope {
+	case "packaged":
+		return e.Packaged
+	case "unpacked":
+		return !e.Packaged
+	case "source":
+		return !e.Packaged && (e.RepoURL != "" || e.Tarball != "")
+	case "kernel":
+		return e.Kernel != ""
+	case "vendor":
+		return e.Vendor != ""
+	case "contrib":
+		return e.Contrib
+	default:
+		return true
+	}
 }
 
 func matchesCapability(e *Ext, value string) bool {
@@ -410,13 +410,7 @@ func hasTarget(e *Ext, snap *Snapshot, pg int, os string) bool {
 	if len(e.TargetIdx) == 0 || len(snap.OSs) == 0 {
 		return false
 	}
-	osIndex := -1
-	for i, target := range snap.OSs {
-		if target == os {
-			osIndex = i
-			break
-		}
-	}
+	osIndex := slices.Index(snap.OSs, os)
 	if osIndex < 0 {
 		return false
 	}
@@ -442,39 +436,23 @@ func hasTargets(e *Ext, snap *Snapshot, pgs []int, os string) bool {
 }
 
 func parsePGValues(raw string) []int {
-	seen := make(map[int]struct{})
 	var values []int
 	for _, part := range strings.FieldsFunc(raw, func(r rune) bool { return r == ',' || r == ';' || r == ' ' }) {
-		pg, err := strconv.Atoi(part)
-		if err != nil || pg <= 0 || pg >= 100 {
-			continue
+		if pg, err := strconv.Atoi(part); err == nil && pg > 0 && pg < 100 && !slices.Contains(values, pg) {
+			values = append(values, pg)
 		}
-		if _, ok := seen[pg]; ok {
-			continue
-		}
-		seen[pg] = struct{}{}
-		values = append(values, pg)
 	}
-	sort.Sort(sort.Reverse(sort.IntSlice(values)))
+	sortDesc(values)
 	return values
 }
 
 func containsAllInts(xs, wanted []int) bool {
 	for _, value := range wanted {
-		if !containsInt(xs, value) {
+		if !slices.Contains(xs, value) {
 			return false
 		}
 	}
 	return true
-}
-
-func containsInt(xs []int, x int) bool {
-	for _, v := range xs {
-		if v == x {
-			return true
-		}
-	}
-	return false
 }
 
 /* ---------------- handlers ---------------- */
@@ -501,25 +479,24 @@ func writeErr(w http.ResponseWriter, code int, format string, args ...any) {
 	writeJSON(w, code, map[string]string{"error": fmt.Sprintf(format, args...)})
 }
 
+// extOf resolves the {name} path segment against the snapshot; on a miss it
+// writes the JSON 404 and returns a nil extension.
+func (a *api) extOf(w http.ResponseWriter, r *http.Request) (*Snapshot, *Ext) {
+	snap := a.store.Get()
+	if e, ok := snap.ByName[r.PathValue("name")]; ok {
+		return snap, e
+	}
+	writeErr(w, http.StatusNotFound, "extension %q does not exist", r.PathValue("name"))
+	return snap, nil
+}
+
 func (a *api) handleMeta(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
 	writeJSON(w, 200, map[string]any{
 		"server":     "pgext",
 		"generated":  snap.LoadedAt.Format(time.RFC3339),
 		"dimensions": dimKeys,
-		"counts": map[string]int{
-			"total":             len(snap.Exts),
-			"packaged":          snap.CountPackaged,
-			"projects":          snap.CountProjects,
-			"packaged_projects": snap.CountPackagedProject,
-			"source_only":       snap.CountSourceOnly,
-			"vendor":            snap.CountVendor,
-			"kernel":            snap.CountKernel,
-			"contrib":           snap.CountContrib,
-			"docs":              snap.CountDocs,
-			"packages":          snap.CountPackages,
-			"build_slots":       snap.CountBuildSlots,
-		},
+		"counts":     snap.counts(),
 		"pg":         snap.PGs,
 		"os":         snap.OSs,
 		"categories": snap.Cats,
@@ -562,10 +539,8 @@ func (a *api) handleList(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *api) handleExt(w http.ResponseWriter, r *http.Request) {
-	snap := a.store.Get()
-	e, ok := snap.ByName[r.PathValue("name")]
-	if !ok {
-		writeErr(w, 404, "extension %q does not exist", r.PathValue("name"))
+	_, e := a.extOf(w, r)
+	if e == nil {
 		return
 	}
 	w.Header().Set("Cache-Control", "public, max-age=60")
@@ -584,31 +559,16 @@ type MatrixCell struct {
 }
 
 func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
-	snap := a.store.Get()
-	e, ok := snap.ByName[r.PathValue("name")]
-	if !ok {
-		writeErr(w, 404, "extension %q does not exist", r.PathValue("name"))
+	snap, e := a.extOf(w, r)
+	if e == nil {
 		return
 	}
 	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
-		rows, err := a.pool.Query(ctx, `
+		rows, _ := a.pool.Query(ctx, `
 			SELECT pg, os, coalesce(name,''), state::text, coalesce(org,''), coalesce(version,''), coalesce(count,0)
 			FROM pgext.pkg WHERE pkg = $1 ORDER BY pg DESC, os`, e.Pkg)
+		cells, err := pgx.CollectRows(rows, pgx.RowToStructByPos[MatrixCell])
 		if err != nil {
-			return nil, err
-		}
-		defer rows.Close()
-		cells := []MatrixCell{}
-		for rows.Next() {
-			var c MatrixCell
-			var cnt int64
-			if err := rows.Scan(&c.PG, &c.OS, &c.Name, &c.State, &c.Org, &c.Version, &cnt); err != nil {
-				return nil, err
-			}
-			c.Count = int(cnt)
-			cells = append(cells, c)
-		}
-		if err := rows.Err(); err != nil {
 			return nil, err
 		}
 		return map[string]any{
@@ -627,7 +587,8 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 // ?repo=pgdg|pigsty selects the single-repository what-if view.
 func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
 	view := strings.ToLower(strings.TrimSpace(r.URL.Query().Get("repo")))
-	if _, ok := matrixViews[view]; !ok {
+	mv, ok := matrixViewOf(view)
+	if !ok {
 		writeErr(w, http.StatusBadRequest, "unknown matrix repo view %q (want pgdg or pigsty)", view)
 		return
 	}
@@ -636,7 +597,7 @@ func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
 	// changes can be meaningful even when the catalog content hash is stable.
 	cacheVersion := snap.Version + "|" + snap.LoadedAt.Format(time.RFC3339Nano)
 	a.cached(w, r, cacheVersion, func(ctx context.Context) (any, error) {
-		payload, err := a.matrixPayload(ctx, false, view)
+		payload, err := a.matrixPayload(ctx, false, mv)
 		if err != nil {
 			return nil, err
 		}
@@ -660,17 +621,15 @@ type FileRow struct {
 }
 
 func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
-	snap := a.store.Get()
-	e, ok := snap.ByName[r.PathValue("name")]
-	if !ok {
-		writeErr(w, 404, "extension %q does not exist", r.PathValue("name"))
+	snap, e := a.extOf(w, r)
+	if e == nil {
 		return
 	}
 	q := r.URL.Query()
 	pg, _ := strconv.Atoi(q.Get("pg"))
 	osFilter := q.Get("os")
 	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
-		rows, err := a.pool.Query(ctx, `
+		rows, _ := a.pool.Query(ctx, `
 			SELECT b.pg, b.os, b.name, b.repo, coalesce(r.org,''), coalesce(b.ver,''), coalesce(b.version,''),
 			       coalesce(b.file,''), coalesce(b.sha256,''), coalesce(b.size,0),
 			       CASE WHEN b.href ~ '^https?://' THEN b.href
@@ -680,19 +639,8 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 			  AND ($2 = 0 OR b.pg = $2) AND ($3 = '' OR b.os = $3)
 			ORDER BY b.pg DESC, b.os, b.name, b.ver DESC
 			LIMIT 5000`, e.Pkg, pg, osFilter)
+		files, err := pgx.CollectRows(rows, pgx.RowToStructByPos[FileRow])
 		if err != nil {
-			return nil, err
-		}
-		defer rows.Close()
-		files := []FileRow{}
-		for rows.Next() {
-			var f FileRow
-			if err := rows.Scan(&f.PG, &f.OS, &f.Name, &f.Repo, &f.Org, &f.Ver, &f.Version, &f.File, &f.SHA256, &f.Size, &f.URL); err != nil {
-				return nil, err
-			}
-			files = append(files, f)
-		}
-		if err := rows.Err(); err != nil {
 			return nil, err
 		}
 		return map[string]any{"ext": e.Name, "pkg": e.Pkg, "total": len(files), "files": files}, nil
@@ -700,33 +648,18 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *api) handleDoc(w http.ResponseWriter, r *http.Request) {
-	snap := a.store.Get()
-	e, ok := snap.ByName[r.PathValue("name")]
-	if !ok {
-		writeErr(w, 404, "extension %q does not exist", r.PathValue("name"))
+	snap, e := a.extOf(w, r)
+	if e == nil {
 		return
 	}
-	lang := "en"
+	lang, col := "en", "en_doc"
 	if r.URL.Query().Get("lang") == "zh" {
-		lang = "zh"
-	}
-	col := "en_doc"
-	if lang == "zh" {
-		col = "zh_doc"
+		lang, col = "zh", "zh_doc"
 	}
 	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
 		var doc *string
-		row, err := a.pool.Query(ctx, `SELECT `+col+` FROM pgext.doc WHERE ext = $1`, e.Name)
-		if err != nil {
-			return nil, err
-		}
-		defer row.Close()
-		if row.Next() {
-			if err := row.Scan(&doc); err != nil {
-				return nil, err
-			}
-		}
-		if err := row.Err(); err != nil {
+		err := a.pool.QueryRow(ctx, `SELECT `+col+` FROM pgext.doc WHERE ext = $1`, e.Name).Scan(&doc)
+		if err != nil && !errors.Is(err, pgx.ErrNoRows) {
 			return nil, err
 		}
 		if doc == nil || *doc == "" {
@@ -900,57 +833,32 @@ func bootstrapETag(snap *Snapshot) string {
 	return `"` + bootFormat + "-" + strings.Trim(snap.Version, `"`) + `"`
 }
 
+// bits packs booleans LSB-first, so the call site reads as the bit layout.
+func bits(bs ...bool) int {
+	n := 0
+	for i, b := range bs {
+		if b {
+			n |= 1 << i
+		}
+	}
+	return n
+}
+
 func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
 	etag := bootstrapETag(snap)
-	if match := r.Header.Get("If-None-Match"); match != "" && match == etag {
+	if r.Header.Get("If-None-Match") == etag {
 		w.WriteHeader(http.StatusNotModified)
 		return
 	}
 	rows := make([]any, len(snap.Exts))
 	for i, e := range snap.Exts {
-		flags := 0
-		for bit, on := range []bool{e.Lead, e.Contrib, e.HasBin, e.HasLib, e.NeedDDL, e.NeedLoad, e.Trusted, e.Relocatable} {
-			if on {
-				flags |= 1 << bit
-			}
-		}
-		docbits := 0
-		if e.HasEnDoc {
-			docbits |= 1
-		}
-		if e.HasZhDoc {
-			docbits |= 2
-		}
-		avail := 0
-		if e.Packaged {
-			avail = 1
-		}
-		buildbits := 0
-		if e.RPMBuild {
-			buildbits |= 1
-		}
-		if e.DEBBuild {
-			buildbits |= 2
-		}
-		if e.PGRXVer != "" {
-			buildbits |= 4
-		}
-		if e.RepoURL != "" || e.Tarball != "" {
-			buildbits |= 8
-		}
-		relationbits := 0
-		if len(e.Requires) > 0 {
-			relationbits |= 1
-		}
-		if len(e.RequiredBy) > 0 {
-			relationbits |= 2
-		}
-		if len(e.SeeAlso) > 0 {
-			relationbits |= 4
-		}
+		flags := bits(e.Lead, e.Contrib, e.HasBin, e.HasLib, e.NeedDDL, e.NeedLoad, e.Trusted, e.Relocatable)
+		docbits := bits(e.HasEnDoc, e.HasZhDoc)
+		buildbits := bits(e.RPMBuild, e.DEBBuild, e.PGRXVer != "", e.RepoURL != "" || e.Tarball != "")
+		relationbits := bits(len(e.Requires) > 0, len(e.RequiredBy) > 0, len(e.SeeAlso) > 0)
 		rows[i] = []any{
-			e.Name, e.Category, avail, e.Repo, e.License, e.Lang, e.Version, e.Stars,
+			e.Name, e.Category, bits(e.Packaged), e.Repo, e.License, e.Lang, e.Version, e.Stars,
 			e.EnDesc, e.ZhDesc, e.Kind, e.Vendor, e.Kernel, e.PG,
 			flags, docbits, e.LastCommit, e.Pkg, e.LeadExt, e.Lifecycle, e.Tags,
 			e.LastActive, e.CheckedAt, buildbits, e.TargetIdx, e.FamilySize, e.Comment,
@@ -965,21 +873,9 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 		"version":   strings.Trim(snap.Version, `"`),
 		"pg":        snap.PGs,
 		"os":        snap.OSs,
-		"counts": map[string]int{
-			"total":             len(snap.Exts),
-			"packaged":          snap.CountPackaged,
-			"projects":          snap.CountProjects,
-			"packaged_projects": snap.CountPackagedProject,
-			"source_only":       snap.CountSourceOnly,
-			"vendor":            snap.CountVendor,
-			"kernel":            snap.CountKernel,
-			"contrib":           snap.CountContrib,
-			"docs":              snap.CountDocs,
-			"packages":          snap.CountPackages,
-			"build_slots":       snap.CountBuildSlots,
-		},
-		"cats": snap.Cats,
-		"rows": rows,
+		"counts":    snap.counts(),
+		"cats":      snap.Cats,
+		"rows":      rows,
 	})
 }
 
@@ -988,10 +884,8 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
    reports the stored value until artifact download tracking lands. */
 
 func (a *api) handleVisit(w http.ResponseWriter, r *http.Request) {
-	snap := a.store.Get()
-	e, ok := snap.ByName[r.PathValue("name")]
-	if !ok {
-		writeErr(w, http.StatusNotFound, "extension %q does not exist", r.PathValue("name"))
+	_, e := a.extOf(w, r)
+	if e == nil {
 		return
 	}
 	var visits, downloads int64
@@ -1019,33 +913,20 @@ type ChangelogRow struct {
 // RPM/DEB release notes (pgext.changelog). A catalog database that predates
 // the changelog table simply reports an empty history.
 func (a *api) handleChangelog(w http.ResponseWriter, r *http.Request) {
-	snap := a.store.Get()
-	e, ok := snap.ByName[r.PathValue("name")]
-	if !ok {
-		writeErr(w, 404, "extension %q does not exist", r.PathValue("name"))
+	snap, e := a.extOf(w, r)
+	if e == nil {
 		return
 	}
 	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
-		entries := []ChangelogRow{}
-		rows, err := a.pool.Query(ctx, `
+		rows, _ := a.pool.Query(ctx, `
 			SELECT ds::text, coalesce(old_ver,''), coalesce(new_ver,''), coalesce(note_en,''), coalesce(note_zh,'')
 			FROM pgext.changelog WHERE pkg = $1 ORDER BY ds DESC`, e.Pkg)
+		entries, err := pgx.CollectRows(rows, pgx.RowToStructByPos[ChangelogRow])
 		if err != nil {
-			if isUndefinedTable(err) {
-				return map[string]any{"ext": e.Name, "pkg": e.Pkg, "total": 0, "entries": entries}, nil
-			}
-			return nil, err
-		}
-		defer rows.Close()
-		for rows.Next() {
-			var c ChangelogRow
-			if err := rows.Scan(&c.DS, &c.Old, &c.New, &c.NoteEn, &c.NoteZh); err != nil {
+			if !isUndefinedTable(err) {
 				return nil, err
 			}
-			entries = append(entries, c)
-		}
-		if err := rows.Err(); err != nil {
-			return nil, err
+			entries = []ChangelogRow{} // catalog database predates the changelog table
 		}
 		return map[string]any{"ext": e.Name, "pkg": e.Pkg, "total": len(entries), "entries": entries}, nil
 	})
@@ -1113,32 +994,27 @@ func (e errNotFound) Error() string { return e.msg }
 
 func (a *api) cached(w http.ResponseWriter, r *http.Request, ver string, fn func(ctx context.Context) (any, error)) {
 	key := ver + "|" + r.URL.RequestURI()
-	if body, ok := a.cache.Get(key); ok {
-		w.Header().Set("Content-Type", "application/json; charset=utf-8")
-		w.Header().Set("Cache-Control", "public, max-age=60")
-		w.WriteHeader(200)
-		w.Write(body)
-		return
-	}
-	ctx, cancel := context.WithTimeout(r.Context(), 10*time.Second)
-	defer cancel()
-	v, err := fn(ctx)
-	if err != nil {
-		if nf, ok := err.(errNotFound); ok {
-			writeErr(w, 404, "%s", nf.msg)
+	body, ok := a.cache.Get(key)
+	if !ok {
+		ctx, cancel := context.WithTimeout(r.Context(), 10*time.Second)
+		defer cancel()
+		v, err := fn(ctx)
+		if err != nil {
+			if nf, ok := err.(errNotFound); ok {
+				writeErr(w, 404, "%s", nf.msg)
+				return
+			}
+			logrus.Errorf("query failed for %s: %v", r.URL.Path, err)
+			writeErr(w, 500, "catalog query failed")
 			return
 		}
-		logrus.Errorf("query failed for %s: %v", r.URL.Path, err)
-		writeErr(w, 500, "catalog query failed")
-		return
+		if body, err = json.Marshal(v); err != nil {
+			logrus.Errorf("encode failed for %s: %v", r.URL.Path, err)
+			writeErr(w, 500, "response encoding failed")
+			return
+		}
+		a.cache.Set(key, body)
 	}
-	body, err := json.Marshal(v)
-	if err != nil {
-		logrus.Errorf("encode failed for %s: %v", r.URL.Path, err)
-		writeErr(w, 500, "response encoding failed")
-		return
-	}
-	a.cache.Set(key, body)
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.Header().Set("Cache-Control", "public, max-age=60")
 	w.WriteHeader(200)

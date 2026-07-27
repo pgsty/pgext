@@ -172,6 +172,23 @@ type Snapshot struct {
 	CountAvail int
 }
 
+// counts summarizes the snapshot totals for /api/v1/meta and /api/v1/bootstrap.
+func (s *Snapshot) counts() map[string]int {
+	return map[string]int{
+		"total":             len(s.Exts),
+		"packaged":          s.CountPackaged,
+		"projects":          s.CountProjects,
+		"packaged_projects": s.CountPackagedProject,
+		"source_only":       s.CountSourceOnly,
+		"vendor":            s.CountVendor,
+		"kernel":            s.CountKernel,
+		"contrib":           s.CountContrib,
+		"docs":              s.CountDocs,
+		"packages":          s.CountPackages,
+		"build_slots":       s.CountBuildSlots,
+	}
+}
+
 // Store holds the current snapshot and refreshes it in the background.
 type Store struct {
 	pool *pgxpool.Pool
@@ -228,18 +245,23 @@ func (s *Store) StartRefresher(ctx context.Context, ttl time.Duration) {
 	}()
 }
 
+// universeQuery selects every catalog column in Scan order; nullable columns
+// are coalesced to their zero value so rows scan straight into Ext fields.
 const universeQuery = `
 SELECT id, name, pkg, lead_ext, category,
-       packaged, lifecycle, kind, kernel, vendor, contrib, lang, license, tags,
-       version, url, repo_url, home_url, doc_url, license_url, control_url, author_url, cargo_url, pgxn_url,
-       has_bin, has_lib, need_ddl, need_load, trusted, relocatable,
+       packaged, coalesce(lifecycle, ''), kind, coalesce(kernel, ''), coalesce(vendor, ''),
+       contrib, lang, coalesce(license, ''), tags,
+       coalesce(version, ''), url, coalesce(repo_url, ''), coalesce(home_url, ''), coalesce(doc_url, ''),
+       coalesce(license_url, ''), coalesce(control_url, ''), coalesce(author_url, ''), coalesce(cargo_url, ''), coalesce(pgxn_url, ''),
+       coalesce(has_bin, false), coalesce(has_lib, false), need_ddl, coalesce(need_load, false), coalesce(trusted, false), coalesce(relocatable, false),
        libs, schemas, pg_ver, requires, required_by, see_also,
-       tarball, pgrx_ver,
-       rpm_ver, rpm_repo, rpm_pkg, rpm_pg, rpm_deps, rpm_build,
-       deb_ver, deb_repo, deb_pkg, deb_pg, deb_deps, deb_build,
+       coalesce(tarball, ''), coalesce(pgrx_ver, ''),
+       coalesce(rpm_ver, ''), coalesce(rpm_repo, ''), coalesce(rpm_pkg, ''), rpm_pg, rpm_deps, rpm_build,
+       coalesce(deb_ver, ''), coalesce(deb_repo, ''), coalesce(deb_pkg, ''), deb_pg, deb_deps, deb_build,
        stars, watchers, forks,
-       repo_created_at::text, last_commit::text, last_release::text, last_active::text, checked_at::text,
-       en_desc, zh_desc, comment, extra, mtime::text,
+       coalesce(repo_created_at::text, ''), coalesce(last_commit::text, ''), coalesce(last_release::text, ''),
+       coalesce(last_active::text, ''), coalesce(checked_at::text, ''),
+       coalesce(en_desc, ''), coalesce(zh_desc, ''), coalesce(comment, ''), extra, mtime::text,
        COALESCE(extra->>'repo',
          CASE WHEN contrib THEN 'CONTRIB'
               WHEN rpm_repo = deb_repo THEN rpm_repo
@@ -292,54 +314,32 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 	packagedProjects := map[string]struct{}{}
 	for rows.Next() {
 		var e Ext
-		var lifecycle, kernel, vendor, license, version *string
-		var repoURL, homeURL, docURL, licenseURL, controlURL, authorURL, cargoURL, pgxnURL *string
-		var hasBin, hasLib, needLoad, trusted, relocatable *bool
-		var tarball, pgrxVer, rpmVer, rpmRepo, rpmPkg, debVer, debRepo, debPkg *string
-		var repoCreated, lastCommit, lastRelease, lastActive, checkedAt *string
-		var enDesc, zhDesc, comment *string
-		var tags, libs, schemas, pgVer, requires, requiredBy, seeAlso, rpmDeps, debDeps []string
+		var pgVer []string
 		var rpmPG, debPG []int16
-		var extra []byte
 		if err := rows.Scan(
 			&e.ID, &e.Name, &e.Pkg, &e.LeadExt, &e.Category,
-			&e.Packaged, &lifecycle, &e.Kind, &kernel, &vendor, &e.Contrib, &e.Lang, &license, &tags,
-			&version, &e.URL, &repoURL, &homeURL, &docURL, &licenseURL, &controlURL, &authorURL, &cargoURL, &pgxnURL,
-			&hasBin, &hasLib, &e.NeedDDL, &needLoad, &trusted, &relocatable,
-			&libs, &schemas, &pgVer, &requires, &requiredBy, &seeAlso,
-			&tarball, &pgrxVer,
-			&rpmVer, &rpmRepo, &rpmPkg, &rpmPG, &rpmDeps, &e.RPMBuild,
-			&debVer, &debRepo, &debPkg, &debPG, &debDeps, &e.DEBBuild,
+			&e.Packaged, &e.Lifecycle, &e.Kind, &e.Kernel, &e.Vendor, &e.Contrib, &e.Lang, &e.License, &e.Tags,
+			&e.Version, &e.URL, &e.RepoURL, &e.HomeURL, &e.DocURL, &e.LicenseURL, &e.ControlURL, &e.AuthorURL, &e.CargoURL, &e.PGXNURL,
+			&e.HasBin, &e.HasLib, &e.NeedDDL, &e.NeedLoad, &e.Trusted, &e.Relocatable,
+			&e.Libs, &e.Schemas, &pgVer, &e.Requires, &e.RequiredBy, &e.SeeAlso,
+			&e.Tarball, &e.PGRXVer,
+			&e.RPMVer, &e.RPMRepo, &e.RPMPkg, &rpmPG, &e.RPMDeps, &e.RPMBuild,
+			&e.DEBVer, &e.DEBRepo, &e.DEBPkg, &debPG, &e.DEBDeps, &e.DEBBuild,
 			&e.Stars, &e.Watchers, &e.Forks,
-			&repoCreated, &lastCommit, &lastRelease, &lastActive, &checkedAt,
-			&enDesc, &zhDesc, &comment, &extra, &e.MTime, &e.Repo,
+			&e.RepoCreatedAt, &e.LastCommit, &e.LastRelease, &e.LastActive, &e.CheckedAt,
+			&e.EnDesc, &e.ZhDesc, &e.Comment, &e.Extra, &e.MTime, &e.Repo,
 		); err != nil {
 			return nil, fmt.Errorf("scan pgext.universe: %w", err)
 		}
-		e.Lifecycle, e.Kernel, e.Vendor, e.License = deref(lifecycle), deref(kernel), deref(vendor), deref(license)
-		e.Version = deref(version)
-		e.RepoURL, e.HomeURL, e.DocURL = deref(repoURL), deref(homeURL), deref(docURL)
-		e.LicenseURL, e.ControlURL = deref(licenseURL), deref(controlURL)
-		e.AuthorURL, e.CargoURL, e.PGXNURL = deref(authorURL), deref(cargoURL), deref(pgxnURL)
-		e.HasBin, e.HasLib, e.NeedLoad = boolOf(hasBin), boolOf(hasLib), boolOf(needLoad)
-		e.Trusted, e.Relocatable = boolOf(trusted), boolOf(relocatable)
 		e.Lead = e.Name == e.LeadExt
-		e.Tags, e.Libs, e.Schemas = tags, libs, schemas
-		e.PG, e.Requires, e.RequiredBy, e.RequireBy, e.SeeAlso = atois(pgVer), requires, requiredBy, requiredBy, seeAlso
-		e.Tarball, e.PGRXVer = deref(tarball), deref(pgrxVer)
-		e.RPMVer, e.RPMRepo, e.RPMPkg, e.RPMPG, e.RPMDeps = deref(rpmVer), deref(rpmRepo), deref(rpmPkg), ints16(rpmPG), rpmDeps
-		e.DEBVer, e.DEBRepo, e.DEBPkg, e.DEBPG, e.DEBDeps = deref(debVer), deref(debRepo), deref(debPkg), ints16(debPG), debDeps
-		e.RepoCreatedAt, e.LastCommit, e.LastRelease = deref(repoCreated), deref(lastCommit), deref(lastRelease)
-		e.LastActive, e.CheckedAt = deref(lastActive), deref(checkedAt)
-		e.EnDesc, e.ZhDesc, e.Comment = deref(enDesc), deref(zhDesc), deref(comment)
-		e.Extra = json.RawMessage(extra)
+		e.PG, e.RPMPG, e.DEBPG = atois(pgVer), ints16(rpmPG), ints16(debPG)
 
 		// v1 aliases.
+		e.State = "n/a"
 		if e.Packaged {
 			e.State = "available"
-		} else {
-			e.State = "n/a"
 		}
+		e.RequireBy = e.RequiredBy
 		e.Source, e.ExtType, e.ExtKernel, e.ExtVendor = e.Tarball, e.Kind, e.Kernel, e.Vendor
 		e.LastUpdate = e.LastActive
 		e.StarCnt, e.WatchCnt, e.ForkCnt = e.Stars, e.Watchers, e.Forks
@@ -415,18 +415,17 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 	for _, e := range snap.Exts {
 		catCount[e.Category]++
 	}
-	crows, err := pool.Query(ctx, `SELECT id, name, zh_desc, en_desc FROM pgext.category ORDER BY id`)
+	crows, err := pool.Query(ctx, `SELECT id, name, coalesce(zh_desc, ''), coalesce(en_desc, '') FROM pgext.category ORDER BY id`)
 	if err != nil {
 		return nil, fmt.Errorf("query pgext.category: %w", err)
 	}
 	defer crows.Close()
 	for crows.Next() {
 		var c Category
-		var zh, en *string
-		if err := crows.Scan(&c.ID, &c.Name, &zh, &en); err != nil {
+		if err := crows.Scan(&c.ID, &c.Name, &c.ZhDesc, &c.EnDesc); err != nil {
 			return nil, fmt.Errorf("scan pgext.category: %w", err)
 		}
-		c.ZhDesc, c.EnDesc, c.Count = deref(zh), deref(en), catCount[c.Name]
+		c.Count = catCount[c.Name]
 		snap.Cats = append(snap.Cats, c)
 	}
 	if err := crows.Err(); err != nil {
@@ -590,14 +589,7 @@ func sortOS(oss []string) {
 	})
 }
 
-func deref(s *string) string {
-	if s == nil {
-		return ""
-	}
-	return *s
-}
-
-func boolOf(b *bool) bool { return b != nil && *b }
+func sortDesc(xs []int) { sort.Sort(sort.Reverse(sort.IntSlice(xs))) }
 
 func atois(ss []string) []int {
 	if len(ss) == 0 {
@@ -609,7 +601,7 @@ func atois(ss []string) []int {
 			out = append(out, n)
 		}
 	}
-	sort.Sort(sort.Reverse(sort.IntSlice(out)))
+	sortDesc(out)
 	return out
 }
 
@@ -621,7 +613,7 @@ func ints16(ss []int16) []int {
 	for i, n := range ss {
 		out[i] = int(n)
 	}
-	sort.Sort(sort.Reverse(sort.IntSlice(out)))
+	sortDesc(out)
 	return out
 }
 
