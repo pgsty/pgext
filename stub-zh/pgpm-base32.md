@@ -1,0 +1,42 @@
+## 用法
+
+来源：
+
+- [官方上游 README](https://github.com/constructive-io/pgpm-modules/blob/45d62108f508af564b72bd6512e86a5ec7cdc923/packages/base32/README.md)
+- [官方扩展控制文件 (pgpm-base32.control)](https://github.com/constructive-io/pgpm-modules/blob/45d62108f508af564b72bd6512e86a5ec7cdc923/packages/base32/pgpm-base32.control)
+- [官方扩展 SQL (pgpm-base32--0.15.5.sql)](https://github.com/constructive-io/pgpm-modules/blob/45d62108f508af564b72bd6512e86a5ec7cdc923/packages/base32/sql/pgpm-base32--0.15.5.sql)
+
+`pgpm-base32` — @pgpm/base32 是一个完全使用 plpgsql 实现 Base32 编码和解码的扩展。请在相应的 SQL 或数据库实用程序工作流中使用它。在集成到应用程序 SQL 之前，必须先安装并验证其扩展依赖项。
+
+### 核心工作流
+
+```sql
+CREATE EXTENSION "pgpm-base32";
+```
+
+在目标数据库中安装扩展，当可用时运行上游最小示例，并在将其集成到应用程序 SQL 之前验证已安装的版本和返回值。
+
+### 重要对象
+
+- `base32.base32_alphabet(input int)` 是一个扩展函数，返回 `char`。
+- `base32.base32_alphabet_to_decimal(input text)` 是一个扩展函数，返回 `text`。
+- `base32.base32_alphabet_to_decimal_int(input text)` 是一个扩展函数，返回 `int`。
+- `base32.base32_to_decimal(input text)` 是一个扩展函数，返回 `text[]`。
+- `base32.binary_to_int(input text)` 是一个扩展函数，返回 `int`。
+- `base32.decimal_to_chunks(input text[])` 是一个扩展函数，返回 `text[]`。
+- `base32.decode(input text)` 是一个扩展函数，返回 `text`。
+- `base32.encode(input text)` 是一个扩展函数，返回 `text`。
+- `base32.fill_chunks(input text[])` 是一个扩展函数，返回 `text[]`。
+- `base32.string_nchars(text, int)` 是一个扩展函数，返回 `text[]`。
+- `base32.to_ascii(input text)` 是一个扩展函数，返回 `int[]`。
+- `base32.to_base32(input text[])` 是一个扩展函数，返回 `text`。
+- `base32.to_binary(input int)` 是一个扩展函数，返回 `text`。
+- `base32.to_binary(input int[])` 是一个扩展函数，返回 `text[]`。
+
+### 要求与注意事项
+
+- 审核的控制文件声明默认版本为 `0.15.5`。
+- 先安装并验证确认的扩展依赖项：`pgcrypto`, `plpgsql`, `pgpm-verify`。
+- 控制文件标记该扩展为不可重定位。
+- 控制文件不要求超级用户安装。
+- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况。
