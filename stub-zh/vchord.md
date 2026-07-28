@@ -119,7 +119,7 @@ SELECT phase, round(100.0 * blocks_done / nullif(blocks_total, 0), 1) AS "%" FRO
 
 ### 外部索引预计算
 
-与纯 SQL 方式不同，外部索引预计算会先在外部进行聚类，然后将质心插入 PostgreSQL 表中。虽然过程更为复杂，但在大规模数据集（>500 万条）上，外部构建明显更快。
+与内部构建不同，外部索引预计算会在 PostgreSQL 之外完成分区计算，再将得到的质心写入 PostgreSQL 表。对于大型数据集，这可以减少数据库侧的构建时间和内存占用。
 
 首先，需要使用 `faiss`、`scikit-learn` 或其他聚类库对向量进行聚类。
 
@@ -146,7 +146,7 @@ table = 'public.centroids'
 $$);
 ```
 
-为了简化工作流程，我们提供了端到端的外部索引预计算脚本，详见 [scripts](./scripts/README.md#run-external-index-precomputation-toolkit)。
+完整流程与质心表要求请参阅官方 [External Build 文档](https://docs.vectorchord.ai/vectorchord/usage/external-index-precomputation.html)。
 
 
 

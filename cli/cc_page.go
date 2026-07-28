@@ -230,12 +230,12 @@ func (g *CCPageGenerator) generateRelationships(ext *Extension, siblings []*Exte
 	headerParts := make([]string, 0)
 	if len(ext.Requires) > 0 {
 		for _, req := range ext.Requires {
-			headerParts = append(headerParts, CCExtLink(req))
+			headerParts = append(headerParts, CCExtRef(g.Cache, req))
 		}
 	}
 	if len(ext.SeeAlso) > 0 {
 		for _, see := range ext.SeeAlso {
-			headerParts = append(headerParts, CCExtLink(see))
+			headerParts = append(headerParts, CCExtRef(g.Cache, see))
 		}
 	}
 
@@ -251,7 +251,7 @@ func (g *CCPageGenerator) generateRelationships(ext *Extension, siblings []*Exte
 	if len(ext.RequireBy) > 0 {
 		links := make([]string, len(ext.RequireBy))
 		for i, req := range ext.RequireBy {
-			links[i] = CCExtLink(req)
+			links[i] = CCExtRef(g.Cache, req)
 		}
 		b.WriteString(fmt.Sprintf("| **下游依赖** | %s |\n", strings.Join(links, " ")))
 	}

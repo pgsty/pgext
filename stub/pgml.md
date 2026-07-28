@@ -7,7 +7,7 @@
 
 After installing the `pgml` extension and python dependencies on all cluster nodes, you can enable `pgml` on the PostgreSQL cluster.
 
-[Configure](/pgsql/admin/#config-cluster) cluster with `patronictl` command and add `pgml` to `shared_preload_libraries`, and specify your `venv` dir in `pgml.venv`:
+[Edit the cluster configuration](/docs/pgsql/admin/patroni/#edit-config) with `patronictl`, add `pgml` to `shared_preload_libraries`, and specify your `venv` directory in `pgml.venv`:
 
 ```yaml
 shared_preload_libraries: pgml, timescaledb, pg_stat_statements, auto_explain
@@ -37,5 +37,4 @@ CREATE EXTENSION
 ```
 
 You are all set! Check PostgresML for more details: https://postgresml.org/docs/guides/use-cases/
-
 

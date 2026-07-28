@@ -7,7 +7,7 @@
 
 在所有集群节点上安装 `pgml` 扩展及 Python 依赖后，即可在 PostgreSQL 集群中启用 `pgml`。
 
-使用 `patronictl` 命令[配置](/pgsql/admin/#config-cluster)集群，将 `pgml` 添加到 `shared_preload_libraries` 中，并在 `pgml.venv` 中指定 `venv` 目录：
+使用 `patronictl` [修改集群配置](/docs/pgsql/admin/patroni/#修改配置)，将 `pgml` 添加到 `shared_preload_libraries` 中，并在 `pgml.venv` 中指定 `venv` 目录：
 
 ```yaml
 shared_preload_libraries: pgml, timescaledb, pg_stat_statements, auto_explain
@@ -37,4 +37,3 @@ CREATE EXTENSION
 ```
 
 一切就绪！更多详情请参阅 PostgresML 官方文档：https://postgresml.org/docs/guides/use-cases/
-

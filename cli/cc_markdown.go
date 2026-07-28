@@ -146,6 +146,20 @@ func CCExtLink(name string) string {
 	return fmt.Sprintf("[`%s`](%s/e/%s)", name, CCBaseURL, name)
 }
 
+// CCExtRef links an extension only when the packaged catalog will emit its page.
+// Relations may also name source-only, archived, or otherwise non-page entities.
+func CCExtRef(cache *ExtensionCache, name string) string {
+	if name == "" {
+		return ""
+	}
+	if cache != nil {
+		if ext, ok := cache.ExtMap[name]; ok && ext.IsReady() {
+			return CCExtLink(name)
+		}
+	}
+	return fmt.Sprintf("`%s`", name)
+}
+
 // CCExtBoldLink generates a bold code extension link
 func CCExtBoldLink(name, url string) string {
 	if url != "" {
