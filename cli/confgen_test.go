@@ -672,6 +672,37 @@ func TestMySQL84RepoAndPackageContract(t *testing.T) {
 	}
 }
 
+func TestPerconaTDERepoURLs(t *testing.T) {
+	tests := []struct {
+		name     string
+		rendered string
+		want     string
+	}{
+		{
+			name:     "rpm",
+			rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+			want:     "default: 'https://repo.percona.com/ppg-18.4/yum/release/$releasever/RPMS/$basearch'",
+		},
+		{
+			name:     "deb",
+			rendered: renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+			want:     "default: 'https://repo.percona.com/ppg-18.4/apt ${distro_codename} main'",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			line := renderedRepoUpstreamLine(tt.rendered, "percona")
+			if !strings.Contains(line, tt.want) {
+				t.Fatalf("Percona TDE repository = %q, want %q", line, tt.want)
+			}
+			if strings.Contains(line, "http://repo.percona.com") {
+				t.Fatalf("Percona TDE repository must use HTTPS: %q", line)
+			}
+		})
+	}
+}
+
 func TestInfraPackageNamesAndLegacyAliases(t *testing.T) {
 	legacyAliases := map[string]string{
 		"blackbox_exporter":   "blackbox-exporter",
