@@ -17,6 +17,7 @@ pig sty - Init (Download), Bootstrap, Configure, and Deploy Pigsty
   pig sty deploy                  # use pigsty to deploy everything (CAUTION!)
   pig sty get                     # download pigsty source tarball
   pig sty list                    # list available pigsty versions
+  pig sty grafana <verb>          # manage grafana dashboards (native HTTP)
 
 Examples:
   pig sty init                 # extract and init ~/pigsty
@@ -33,7 +34,12 @@ Examples:
 | `sty deploy` | Run deployment playbook | |
 | `sty list` | List available Pigsty versions | |
 | `sty get` | Download Pigsty source tarball | |
+| `sty grafana` | Manage Grafana dashboards (alias `gf`) | New in v1.6.0 |
 {.full-width}
+
+> Since v1.6.0, the former `pig sty edit` / `validate` / `check` commands moved to the
+> root-level [`pig inventory`](/pig/cmd/inventory/) command group, and the experimental
+> `pig sty dashboard` was replaced by `pig sty grafana`.
 
 
 ## Quick Start
@@ -57,7 +63,7 @@ Download and install the Pigsty distribution into `~/pigsty`.
 ```bash
 pig sty init                   # install latest version to ~/pigsty
 pig sty init -f                # install and overwrite existing pigsty directory
-pig sty init -m                # install from the pigsty.cc mirror source
+pig sty init -m                # prefer the pigsty.cc mirror for downloads
 pig sty init -p /tmp/pigsty    # install to selected directory /tmp/pigsty
 pig sty init -v 3.4            # fetch and install selected version v3.4.1
 pig sty init 3                 # fetch and install latest v3 major version
@@ -67,7 +73,7 @@ pig sty init 3                 # fetch and install latest v3 major version
 
 - `-p|--path`: target installation directory, default `~/pigsty`
 - `-f|--force`: force overwrite of existing pigsty directory
-- `-m|--mirror`: prefer the `pigsty.cc` mirror as the primary source
+- `-m|--mirror`: prefer the `pigsty.cc` mirror
 - `-v|--version`: Pigsty version
 - `-d|--dir`: download directory, default `/tmp`
 
@@ -79,7 +85,7 @@ Install Ansible and its dependencies.
 ```bash
 pig sty boot                     # install Ansible
 pig sty boot -r china            # use China region mirror
-pig sty boot -m                  # same as --region china
+pig sty boot -m                  # equivalent to --region china
 pig sty boot -k                  # keep existing repositories
 pig sty boot -p /path/to/pkg     # selected offline package path
 ```
@@ -87,7 +93,7 @@ pig sty boot -p /path/to/pkg     # selected offline package path
 **Options:**
 
 - `-r|--region`: region, such as default, china, europe
-- `-m|--mirror`: same as `--region china`
+- `-m|--mirror`: equivalent to `--region china`
 - `-p|--path`: offline package path
 - `-k|--keep`: keep existing repositories
 
@@ -107,7 +113,7 @@ pig sty conf -c slim               # use conf/slim.yml minimal template
 pig sty conf -c supabase           # use conf/supabase.yml self-hosting template
 pig sty conf -v 18 -c rich         # use conf/rich.yml template with PostgreSQL 18
 pig sty conf -r china -s           # use China mirror and skip IP probing
-pig sty conf -m -s                 # mirror mode, same as --region china
+pig sty conf -m -s                 # use mirror mode and skip IP probing
 pig sty conf -x                    # write proxy settings from environment variables
 pig sty conf -c full -g -O ha.yml  # full HA template, random passwords, output to ha.yml
 pig sty conf --raw                 # use legacy shell configure workflow
@@ -119,14 +125,14 @@ pig sty conf --raw                 # use legacy shell configure workflow
 - `--ip`: primary node IP address
 - `-v|--version`: PostgreSQL major version, 18/17/16/15/14; 19 beta can be specified explicitly
 - `-r|--region`: upstream repository region, such as default/china/europe
-- `-m|--mirror`: same as `--region china`
+- `-m|--mirror`: equivalent to `--region china`
 - `-O|--output-file`: output config file path, default `pigsty.yml`
-- `-s|--skip`: skip IP probing
+- `-s|--skip`: use a placeholder IP and skip the admin SSH/sudo preflight
 - `-p|--port`: SSH port
 - `-x|--proxy`: write proxy settings from environment variables
 - `-n|--non-interactive`: non-interactive mode
 - `-g|--generate`: generate random default passwords, recommended
-- `--raw`: use the legacy shell configure workflow
+- `--raw`: use the legacy shell configure workflow (generated passwords remain visible)
 
 See: <https://pigsty.io/docs/setup/install/#configure>
 
@@ -137,15 +143,15 @@ Deploy Pigsty with the `deploy.yml` playbook.
 
 ```bash
 pig sty deploy       # run deploy.yml, falling back to install.yml if not found
-pig sty install      # same as deploy, for backward compatibility
 pig sty d            # short alias
 pig sty de           # short alias
-pig sty ins          # short alias
 ```
 
 This command runs the `deploy.yml` playbook from your Pigsty installation directory. For backward compatibility, if `deploy.yml` does not exist but `install.yml` exists, `install.yml` is used instead.
 
-> **Warning**: This operation modifies your system. Use it carefully.
+> **Warning**: This operation modifies your system, and **invocation is explicit consent** —
+> deploy starts immediately without a `--yes` gate; use Ctrl+C to interrupt a mistaken run.
+> (The `pig sty install` / `ins` aliases were removed in v1.6.0.)
 
 
 ## sty list
@@ -154,7 +160,6 @@ List available Pigsty versions.
 
 ```bash
 pig sty list                     # list available versions
-pig sty list -m                  # list versions from the pigsty.cc mirror
 ```
 
 
@@ -165,5 +170,40 @@ Download the Pigsty source tarball.
 ```bash
 pig sty get                      # download latest version
 pig sty get v3.4.0               # download selected version
-pig sty get -m                   # download from the pigsty.cc mirror
+pig sty get -m                   # prefer the pigsty.cc mirror
 ```
+
+
+## sty grafana
+
+Since v1.6.0, `pig sty grafana` (alias `gf`) manages Grafana dashboards through the native
+HTTP API, replacing the experimental `pig sty dashboard`. The `PATH` argument may select the
+grafana root, one direct folder, or one dashboard JSON file; without `PATH`, pig resolves
+`<PIGSTY_HOME>/files/grafana` and never falls back to the current directory.
+
+```bash
+pig sty grafana info             # check Grafana health, authentication, and basic info
+pig sty grafana list             # list all dashboards in the active organization
+pig sty grafana boot             # bootstrap Grafana around the existing pigsty dashboards
+pig sty grafana init             # load the complete dashboard corpus, then bootstrap
+pig sty grafana load [PATH]      # load dashboards selected by a local path
+pig sty grafana dump [PATH]      # export remote dashboards into a local path
+pig sty grafana clean [PATH]     # delete dashboards selected by a path (--dry-run/--yes)
+pig sty grafana lang zh-Hans     # set the organization and current-user language
+pig sty grafana style            # set the organization and current-user visual style
+```
+
+**Connection and credentials**:
+
+| Option            | Description                                                     |
+|:------------------|:----------------------------------------------------------------|
+| `--endpoint`      | Grafana origin and optional path prefix (default `http://i.pigsty/ui`) |
+| `--username`      | Grafana API username                                            |
+| `--password`      | Grafana API password (**insecure**: visible in process arguments and shell history) |
+| `--password-file` | Owner-only file containing the password (recommended)           |
+{.full-width}
+
+Password resolution order: `--password` → `--password-file` → the `GRAFANA_PASSWORD`
+environment variable → `all.vars.grafana_admin_password` from the inventory.
+The HTTP client enforces timeouts and response-size limits, refuses redirects, and
+verifies TLS certificates by default.

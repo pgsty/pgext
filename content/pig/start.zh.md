@@ -42,18 +42,18 @@ $ curl -fsSL https://repo.pigsty.cc/pig | bash
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = deb
-[INFO] pkg_url = https://repo.pigsty.cc/pkg/pig/v1.5.1/pig_1.5.1-1_amd64.deb
-[INFO] download = /tmp/pig_1.5.1-1_amd64.deb
-[INFO] downloading pig v1.5.1
-curl -fSL https://repo.pigsty.cc/pkg/pig/v1.5.1/pig_1.5.1-1_amd64.deb -o /tmp/pig_1.5.1-1_amd64.deb
+[INFO] pkg_url = https://repo.pigsty.cc/pkg/pig/v1.6.0/pig_1.6.0-1_amd64.deb
+[INFO] download = /tmp/pig_1.6.0-1_amd64.deb
+[INFO] downloading pig v1.6.0
+curl -fSL https://repo.pigsty.cc/pkg/pig/v1.6.0/pig_1.6.0-1_amd64.deb -o /tmp/pig_1.6.0-1_amd64.deb
 ######################################################################## 100.0%
 [INFO] md5sum = b7d18865090df8c03523c79ec2744e91
-[INFO] installing: dpkg -i /tmp/pig_1.5.1-1_amd64.deb
+[INFO] installing: dpkg -i /tmp/pig_1.6.0-1_amd64.deb
 (Reading database ... 166001 files and directories currently installed.)
-Preparing to unpack /tmp/pig_1.5.1-1_amd64.deb ...
-Unpacking pig (1.5.1-1) ...
-Setting up pig (1.5.1-1) ...
-[INFO] pig v1.5.1 installed successfully
+Preparing to unpack /tmp/pig_1.6.0-1_amd64.deb ...
+Unpacking pig (1.6.0-1) ...
+Setting up pig (1.6.0-1) ...
+[INFO] pig v1.6.0 installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -65,7 +65,7 @@ PIG 是一个由 Go 编写的二进制程序，默认安装路径为 `/usr/bin/p
 
 ```bash
 $ pig version
-pig version 1.5.1 linux/amd64
+pig version 1.6.0 linux/amd64
 ```
 
 使用 `pig status` 命令，会打印当前环境的状态，操作系统代码，PG 的安装情况，仓库的可访问性与延迟。
@@ -73,7 +73,7 @@ pig version 1.5.1 linux/amd64
 ```bash
 $ pig status
 # [Configuration] ================================
-Pig Version      : 1.5.1
+Pig Version      : 1.6.0
 Pig Config       : /home/vagrant/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -123,12 +123,12 @@ pig pitr -d -y                # 跳过确认（自动化场景）
 
 ## 列出扩展
 
-Pig v1.5.1 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
+Pig v1.6.0 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
 
 ```bash
 $ pig ext reload
 $ pig ext list
-✓ Found 555 extensions
+✓ Found 562 extensions
 Name                Status     Version     Cate   Flags   License         Repo     PGVer  Package                               Description
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 timescaledb         available  2.28.3      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
@@ -140,7 +140,7 @@ pg_bulkload         available  3.1.23      ETL    bds---  BSD 3-Clause    PIGSTY
 test_decoding       available  -           ETL    --s--x  PostgreSQL      CONTRIB  14-18  postgresql-18                         SQL-based test/example module for WAL logical decoding
 pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
 
-(555 Rows)
+(562 Rows)
 ```
 
 所有的扩展元数据都在一份名为 [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv) 的数据文件中定义，

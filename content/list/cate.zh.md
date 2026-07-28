@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（555 ext / 455 pkg）归属 16 个分类。
+562 个已打包 PostgreSQL 扩展（归属 460 个包族）划分为 16 个分类。
 
 
 
@@ -23,7 +23,7 @@ PostgreSQL 扩展（555 ext / 455 pkg）归属 16 个分类。
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | 时态表功能支持 |
-| 1050 | {{< alias "emaj" >}} | 4.7.1 | 让数据库的子集具有细粒度日志和时间旅行功能 |
+| 1050 | {{< alias "emaj" >}} | 5.0.0 | 让数据库的子集具有细粒度日志和时间旅行功能 |
 | 1060 | {{< alias "table_version" >}} | 1.11.1 | PostgreSQL 版本控制表扩展 |
 | 1070 | {{< alias "pg_cron" >}} | 1.6.7 | 定时任务调度器 |
 | 1080 | {{< alias "pg_task" >}} | 2.1.29 | 在特定时间点在后台执行SQL命令 |
@@ -69,6 +69,8 @@ PostgreSQL 扩展（555 ext / 455 pkg）归属 16 个分类。
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | 1.3.0 | MobilityDB随机数据生成函数 |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 0.3.0 | 快速根据GPS经纬度坐标查找时区 |
 | 1690 | {{< alias "earthdistance" >}} | 1.2 | 计算地球表面上的大圆距离 |
+| 1700 | {{< alias "qdgc" >}} | 0.1.0 | 用纯 SQL 编码、解码、遍历和填充扩展四分之一度网格单元（QDGC）编码。 |
+| 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 0.1.0 | 为 QDGC 增加 PostGIS geometry/geography 绑定与区域到网格单元的填充能力。 |
 
 ## RAG
 
@@ -88,7 +90,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 1.1 | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
 | 1930 | {{< alias "pg4ml" >}} | 2.0 | PG4ML是一个机器学习框架 |
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | PostgresML：用SQL运行机器学习算法并训练模型 |
-| 1950 | {{< alias "pgmnemo" >}} | 0.13.0 | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
+| 1950 | {{< alias "pgmnemo" >}} | 0.14.2 | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
+| 1960 | {{< alias "pgcontext" >}} | 0.2.0 | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
+| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 
 ## FTS
 
@@ -166,7 +170,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2600 | {{< alias "age" >}} | 1.8.0 | Apache AGE，图数据库扩展 （Deb可用） |
 | 2610 | {{< alias "pg_liquid" >}} | 0.1.7 | 受 Liquid 启发的 Datalog 图查询扩展 |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | 1.0.0 | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
-| 2630 | {{< alias "graph" "pggraph" >}} | 0.1.8 | PostgreSQL 图查询与遍历扩展 |
+| 2630 | {{< alias "graph" "pggraph" >}} | 1.0.0 | PostgreSQL 图查询与遍历扩展 |
 | 2640 | {{< alias "pgrdf" >}} | 0.6.20 | PostgreSQL 内 RDF、SPARQL、SHACL 与 OWL 推理扩展 |
 | 2650 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2660 | {{< alias "pgmq" >}} | 1.12.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
@@ -252,7 +256,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | 3040 | {{< alias "plprql" >}} | 18.0.1 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.10.2 | 对 plpgsql 函数进行扩展检查 |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.10.3 | 对 plpgsql 函数进行扩展检查 |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | 剖析 PL/pgSQL 函数 |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh 程序语言 |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | Java 程序语言 |
@@ -261,6 +265,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3120 | {{< alias "pg_mockable" >}} | 1.1.0 | 为测试创建可 Mock 的 PostgreSQL 函数包装器 |
 | 3130 | {{< alias "pgsqlmock" >}} | 1.0.1 | 为 PostgreSQL 单元测试提供函数 Mock、表和视图伪造能力 |
 | 3140 | {{< alias "plx" >}} | 1.3.1 | 将多种过程语言方言转译为 PL/pgSQL |
+| 3150 | {{< alias "pgwasm" >}} | 0.1.0 | 将沙箱化 WebAssembly 组件映射为强类型 PostgreSQL SQL 函数。 |
 | 3200 | {{< alias "pgtap" >}} | 1.3.4 | PostgreSQL单元测试框架 |
 | 3210 | {{< alias "faker" >}} | 0.5.3 | 插入生成的测试伪造数据，Python库的包装 |
 | 3220 | {{< alias "dbt2" >}} | 0.61.7 | OSDL-DBT-2 测试组件 |
@@ -303,12 +308,13 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n 工具包 |
 | 3680 | {{< alias "currency" "pg_currency" >}} | 0.0.3 | 使用1字节表示的货币数据类型 |
 | 3690 | {{< alias "collection" "pgcollection" >}} | 2.0.0 | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
-| 3700 | {{< alias "pgmp" >}} | 1.0.5 | 多精度算术扩展 |
+| 3700 | {{< alias "pgmp" >}} | 1.0.6 | 多精度算术扩展 |
 | 3710 | {{< alias "numeral" >}} | 1.3 | 数值类型扩展 |
 | 3720 | {{< alias "pg_rational" >}} | 0.0.2 | 使用BIGINT表示的有理数数据类型 |
 | 3730 | {{< alias "uint" "pguint" >}} | 1.20250815 | 无符号整型数据类型 |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | 1.2.0 | 原生128位无符号整型数据类型 |
 | 3750 | {{< alias "hashtypes" >}} | 0.1.5 | 包括SHA1，MD5在内的多种哈希数据类型 |
+| 3760 | {{< alias "postbis" >}} | 1.0 | 提供压缩的 DNA、RNA、氨基酸及比对序列类型，以及类型转换、运算符、索引和生物信息学函数。 |
 | 3770 | {{< alias "ip4r" >}} | 2.4.3 | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
 | 3790 | {{< alias "uri" "pg_uri" >}} | 1.20251029 | URI数据类型 |
 | 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email地址数据类型 |
@@ -469,6 +475,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5250 | {{< alias "pg_pathcheck" >}} | 0.9.1 | 校验 planner Path 树，诊断已释放或损坏的内存引用 |
 | 5260 | {{< alias "pgdisablelogerror" >}} | 1.0 | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
 | 5270 | {{< alias "online_advisor" >}} | 1.0 | 在线建议缺失索引、扩展统计信息与预备语句 |
+| 5280 | {{< alias "pg_column_tetris" >}} | 0.1.0 | 强制采用最优列对齐顺序，以减少 PostgreSQL 行数据中的填充浪费。 |
 | 5810 | {{< alias "pg_savior" >}} | 0.1.0 | 阻止不带条件的全表更新以避免意外事故 |
 | 5820 | {{< alias "safeupdate" >}} | 1.5 | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | 5830 | {{< alias "pg_strict" >}} | 1.0.5 | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
@@ -601,14 +608,14 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
 | 8660 | {{< alias "etcd_fdw" >}} | 0.0.1 | etcd分布式键值存储外部数据包装器 |
 | 8670 | {{< alias "informix_fdw" >}} | 0.6.3 | Informix 外部数据包装器 |
-| 8680 | {{< alias "nominatim_fdw" >}} | 2.0.0 | Nominatim 地理编码接口的 FDW 扩展 |
+| 8680 | {{< alias "nominatim_fdw" >}} | 2.1.0 | Nominatim 地理编码接口的 FDW 扩展 |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | MongoDB 外部数据包装器 |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | 查询外部Redis数据源 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | 从PG向Redis发送Pub/Sub消息 |
 | 8730 | {{< alias "kafka_fdw" >}} | 0.0.3 | Kafka外部数据源包装器 |
 | 8740 | {{< alias "hdfs_fdw" >}} | 2.0.5 | hdfs 外部数据包装器 |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.2 | Firebird外部数据源包装器 |
-| 8760 | {{< alias "rdf_fdw" >}} | 2.6.0 | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
+| 8760 | {{< alias "rdf_fdw" >}} | 2.7.0 | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | 从S3导入导出数据的外部数据源包装器 |
 | 8810 | {{< alias "log_fdw" >}} | 1.4 | 访问PostgreSQL日志文件的FDW |
 | 8970 | {{< alias "dblink" >}} | 1.2 | 从数据库内连接到其他 PostgreSQL 数据库 |

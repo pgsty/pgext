@@ -14,9 +14,9 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 411 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 64 | Pure SQL extensions and functions |
-| {{< language "Rust" >}} | 52 | Extensions written in Rust with the pgrx framework |
+| {{< language "C" >}} | 412 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 67 | Pure SQL extensions and functions |
+| {{< language "Rust" >}} | 55 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="411 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="412 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -193,6 +193,7 @@ The traditional PostgreSQL extension language
 | 3730 | {{< alias "uint" "pguint" >}} | unsigned integer types |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | Native uint128 type |
 | 3750 | {{< alias "hashtypes" >}} | sha1, md5 and other data types for PostgreSQL |
+| 3760 | {{< alias "postbis" >}} | Adds compressed DNA, RNA, amino-acid, and aligned sequence types with casts, operators, indexes, and bioinformatics functions. |
 | 3770 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | 3790 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
 | 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
@@ -445,7 +446,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="64 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="67 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -465,6 +466,8 @@ Pure SQL extensions and functions
 | 1605 | {{< alias "pgh_output_pt_br" "pghydro" >}} | Brazilian Portuguese output pack for PgHydro |
 | 1606 | {{< alias "pgh_consistency" "pghydro" >}} | Pfafstetter consistency checks for PgHydro |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
+| 1700 | {{< alias "qdgc" >}} | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
+| 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
 | 1950 | {{< alias "pgmnemo" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
 | 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
 | 2660 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
@@ -495,6 +498,7 @@ Pure SQL extensions and functions
 | 5140 | {{< alias "pg_permissions" >}} | view object permissions and compare them with the desired state |
 | 5180 | {{< alias "pg_upless" >}} | Detect Useless UPDATE |
 | 5190 | {{< alias "pgcozy" >}} | Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL. |
+| 5280 | {{< alias "pg_column_tetris" >}} | Enforce optimal column alignment to minimize row padding |
 | 5850 | {{< alias "pg_drop_events" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
 | 5870 | {{< alias "pgelog" >}} | Extended logging via pseudo-autonomous transactions |
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | Server-side PostgreSQL performance flight recorder |
@@ -518,7 +522,7 @@ Pure SQL extensions and functions
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="52 Extensions" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="55 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -537,6 +541,8 @@ Extensions written in Rust with the pgrx framework
 | 1860 | {{< alias "pg_summarize" >}} | Text Summarization using LLMs. Built using pgrx |
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | 1940 | {{< alias "pgml" >}} | Run AL/ML workloads with SQL interface |
+| 1960 | {{< alias "pgcontext" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
+| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | 2100 | {{< alias "pg_search" >}} | Full text search for PostgreSQL using BM25 |
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | 2150 | {{< alias "vchord_bm25" >}} | A postgresql extension for bm25 ranking algorithm |
@@ -554,6 +560,7 @@ Extensions written in Rust with the pgrx framework
 | 2870 | {{< alias "pg_durable" >}} | Durable SQL functions for PostgreSQL |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
+| 3150 | {{< alias "pgwasm" >}} | Run sandboxed WebAssembly components as strongly typed PostgreSQL SQL functions. |
 | 3590 | {{< alias "pglite_fusion" >}} | Embed an SQLite database in your PostgreSQL table |
 | 4170 | {{< alias "pg_smtp_client" >}} | PostgreSQL extension to send email using SMTP |
 | 4290 | {{< alias "pg_render" >}} | Render HTML in SQL |

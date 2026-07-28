@@ -1146,10 +1146,10 @@ func (g *CCListGenerator) GenerateOverviewPage(outputPath string) error {
 	// YAML Front Matter
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString(fmt.Sprintf(`---
-title: Pigsty 扩展目录
-linkTitle: Pigsty 扩展目录
+title: Pigsty 已打包扩展目录
+linkTitle: Pigsty 已打包扩展目录
 description: >
-  扩展是 PostgreSQL 的灵魂所在，Pigsty 制作、收录、整合了 %d 个 PG 生态扩展，供用户开箱即用。
+  扩展是 PostgreSQL 的灵魂所在，Pigsty 制作、打包、收录并整合了 %d 个 PG 生态扩展，供用户开箱即用。
 weight: 20
 %s
 ---
@@ -1161,7 +1161,7 @@ weight: 20
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString(fmt.Sprintf(`Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQL 扩展生态系统的协同超能力：
 
-- [**扩展目录**](/ext/list)：查阅 [**%d**](/ext/list) 个扩展插件的详细信息，使用方法，元数据，下载链接与文档
+- [**已打包扩展目录**](/ext/list)：查阅 [**%d 个已打包扩展**](/ext/list) 的详细信息，使用方法，元数据，下载链接与文档
 - [**扩展仓库**](/docs/repo/pgsql)：获取预先打包的 RPM/DEB 二进制包，在 [**%d 个 Linux 系统**](/ext/os) 上可用
 - [**包管理器**](/docs/pig)：使用 [**`+"`"+`pig`+"`"+`**](/docs/pig) 命令行工具，屏蔽复杂度与操作系统与架构差异
 
@@ -1179,7 +1179,7 @@ weight: 20
 	// 核心特点
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString("--------\n\n## 核心特点\n\n")
-	b.WriteString(fmt.Sprintf("- **数量**：无与伦比的扩展数量：**%d** 个可用扩展，为 PG 扩展生态之最\n", totalExts))
+	b.WriteString(fmt.Sprintf("- **数量**：无与伦比的扩展数量：**%d 个已打包扩展**，为 PG 扩展生态之最\n", totalExts))
 	b.WriteString("- **质量**：原生 Linux RPM/DEB 包，完全兼容 PGDG 打包规范\n")
 	b.WriteString("- **易用**：提供包管理器 [**`pig`**](/docs/pig)，屏蔽操作系统与架构差异，开箱即用\n")
 	b.WriteString("- **兼容**：扩展完全兼容 PGDG 打包规范，可与 PGDG 仓库无缝混用\n")

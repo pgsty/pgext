@@ -338,7 +338,7 @@ SELECT phase, round(100.0 * blocks_done / nullif(blocks_total, 0), 1) AS "%" FRO
 
 ### External Index Precomputation
 
-Unlike pure SQL, an external index precomputation will first do clustering outside and insert centroids to a PostgreSQL table. Although it might be more complicated, external build is definitely much faster on larger dataset (>5M).
+Unlike an internal build, external index precomputation performs the partitioning work outside PostgreSQL and inserts the resulting centroids into a PostgreSQL table. This can reduce database-side build time and memory use for large datasets.
 
 To get started, you need to do a clustering of vectors using `faiss`, `scikit-learn` or any other clustering library.
 
@@ -365,7 +365,7 @@ table = 'public.centroids'
 $$);
 ```
 
-To simplify the workflow, we provide end-to-end scripts for external index pre-computation, see [scripts](./scripts/README.md#run-external-index-precomputation-toolkit).
+For the complete workflow and table requirements, see the official [External Build documentation](https://docs.vectorchord.ai/vectorchord/usage/external-index-precomputation.html).
 
 
 
@@ -390,4 +390,3 @@ For example, install clang-18 on Ubuntu 22 / Debian 12 and set it as the default
 curl --proto '=https' --tlsv1.2 -sSf https://apt.llvm.org/llvm.sh | bash -s -- 18
 sudo update-alternatives --install /usr/bin/clang clang $(which clang-18) 255
 ```
-

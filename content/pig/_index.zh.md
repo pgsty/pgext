@@ -1,5 +1,5 @@
 ---
-title: "PIG 1.5 文档"
+title: "PIG 1.6 文档"
 description: PostgreSQL 扩展生态包管理器与管理命令行工具
 icon: PiggyBank
 full: true
@@ -14,7 +14,7 @@ weight: 100
 
 PIG 包管理器是一个专门用于安装、管理、构建 PostgreSQL 及其扩展的命令行工具，使用 Go 开发，开箱即用，简单易用，小巧玲珑（约 5MB）。
 PIG 包管理器并非重新发明的土鳖轮子，而是 **依托** （PiggyBack）现有 Linux 发行版包管理器 （`apt`/`dnf`）的一个高级抽象层。
-它屏蔽了不同操作系统，不同芯片架构，以及不同 PG 大版本的管理差异，让您用简单的几行命令，就可以完成 PG 内核与 555 个扩展的安装与管理。
+它屏蔽了不同操作系统，不同芯片架构，以及不同 PG 大版本的管理差异，让您用简单的几行命令，就可以完成 PG 内核与 562 个已打包扩展的安装与管理。
 
 PIG 的命令设计同样适合自动化脚本：提供统一的参数风格、清晰的错误提示，以及如 `--plan` 等预览开关与确认步骤。
 
@@ -65,10 +65,11 @@ $ pig install -y vector               # 您可以使用扩展名称（vector）�
 
 **Pigsty 管理**：
 
-- [**pig sty**](/zh/pig/cmd/sty/)：管理 Pigsty 安装
+- [**pig sty**](/zh/pig/cmd/sty/)：管理 Pigsty 安装与 Grafana 仪表盘
+- [**pig inventory**](/zh/pig/cmd/inventory/)：检视、编辑、校验与交换 Pigsty 配置清单
 - [**pig context**](/zh/pig/cmd/#pig-context)：采集主机、PostgreSQL、Patroni、pgBackRest 与扩展上下文
 - [**pig pg**](/zh/pig/cmd/pg/)：管理本地 PostgreSQL 服务
-- [**pig pt**](/zh/pig/cmd/pt/)：管理 Patroni HA 集群
+- [**pig pt**](/zh/pig/cmd/pt/)：透明运行 patronictl 管理 Patroni HA 集群
 - [**pig pb**](/zh/pig/cmd/pb/)：管理 pgBackRest 备份
 - [**pig pitr**](/zh/pig/cmd/pitr/)：时间点恢复工作流
 

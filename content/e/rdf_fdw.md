@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8760** | {{< badge content="rdf_fdw" link="https://github.com/jimjonesbr/rdf_fdw" >}} | {{< ext "rdf_fdw" >}} | `2.6.0` | {{< category "FDW" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **8760** | {{< badge content="rdf_fdw" link="https://github.com/jimjonesbr/rdf_fdw" >}} | {{< ext "rdf_fdw" >}} | `2.7.0` | {{< category "FDW" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,34 +26,36 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "postgres_fdw" >}} {{< ext "sparql" >}} |
 
+> [!Note] PIGSTY RPM and DEB packages are aligned at 2.7.0 for PostgreSQL 14 through 18.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.6.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `rdf_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.6.0` | {{< bg "18" "rdf_fdw_18" "green" >}} {{< bg "17" "rdf_fdw_17" "green" >}} {{< bg "16" "rdf_fdw_16" "green" >}} {{< bg "15" "rdf_fdw_15" "green" >}} {{< bg "14" "rdf_fdw_14" "green" >}} | `rdf_fdw_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.6.0` | {{< bg "18" "postgresql-18-rdf-fdw" "green" >}} {{< bg "17" "postgresql-17-rdf-fdw" "green" >}} {{< bg "16" "postgresql-16-rdf-fdw" "green" >}} {{< bg "15" "postgresql-15-rdf-fdw" "green" >}} {{< bg "14" "postgresql-14-rdf-fdw" "green" >}} | `postgresql-$v-rdf-fdw` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `rdf_fdw` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.0` | {{< bg "18" "rdf_fdw_18" "green" >}} {{< bg "17" "rdf_fdw_17" "green" >}} {{< bg "16" "rdf_fdw_16" "green" >}} {{< bg "15" "rdf_fdw_15" "green" >}} {{< bg "14" "rdf_fdw_14" "green" >}} | `rdf_fdw_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.0` | {{< bg "18" "postgresql-18-rdf-fdw" "green" >}} {{< bg "17" "postgresql-17-rdf-fdw" "green" >}} {{< bg "16" "postgresql-16-rdf-fdw" "green" >}} {{< bg "15" "postgresql-15-rdf-fdw" "green" >}} {{< bg "14" "postgresql-14-rdf-fdw" "green" >}} | `postgresql-$v-rdf-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.6.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "rdf_fdw_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-rdf-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-rdf-fdw : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -61,110 +63,110 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdf_fdw_18` | `2.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 150.9 KiB | [rdf_fdw_18-2.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_18-2.6.0-1PIGSTY.el8.x86_64.rpm) |
-| `rdf_fdw_18` | `2.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 141.7 KiB | [rdf_fdw_18-2.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_18-2.6.0-1PIGSTY.el8.aarch64.rpm) |
-| `rdf_fdw_18` | `2.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 145.3 KiB | [rdf_fdw_18-2.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_18-2.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `rdf_fdw_18` | `2.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 140.3 KiB | [rdf_fdw_18-2.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_18-2.6.0-1PIGSTY.el9.aarch64.rpm) |
-| `rdf_fdw_18` | `2.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 146.0 KiB | [rdf_fdw_18-2.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_18-2.6.0-1PIGSTY.el10.x86_64.rpm) |
-| `rdf_fdw_18` | `2.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 142.1 KiB | [rdf_fdw_18-2.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_18-2.6.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 350.0 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 339.2 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 348.8 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 339.5 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 367.8 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 362.2 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 354.2 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 350.0 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 352.5 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-rdf-fdw` | `2.6.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 347.9 KiB | [postgresql-18-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb) |
+| `rdf_fdw_18` | `2.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 151.6 KiB | [rdf_fdw_18-2.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_18-2.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `rdf_fdw_18` | `2.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 142.3 KiB | [rdf_fdw_18-2.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_18-2.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `rdf_fdw_18` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 146.0 KiB | [rdf_fdw_18-2.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_18-2.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `rdf_fdw_18` | `2.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 141.1 KiB | [rdf_fdw_18-2.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_18-2.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `rdf_fdw_18` | `2.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 146.6 KiB | [rdf_fdw_18-2.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_18-2.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `rdf_fdw_18` | `2.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 142.9 KiB | [rdf_fdw_18-2.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_18-2.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 350.9 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 342.1 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 350.5 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 341.9 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 369.4 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 363.5 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 355.0 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 351.1 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 353.7 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-rdf-fdw` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 349.0 KiB | [postgresql-18-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-18-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdf_fdw_17` | `2.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 151.1 KiB | [rdf_fdw_17-2.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_17-2.6.0-1PIGSTY.el8.x86_64.rpm) |
-| `rdf_fdw_17` | `2.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 141.8 KiB | [rdf_fdw_17-2.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_17-2.6.0-1PIGSTY.el8.aarch64.rpm) |
-| `rdf_fdw_17` | `2.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 145.3 KiB | [rdf_fdw_17-2.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_17-2.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `rdf_fdw_17` | `2.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 140.2 KiB | [rdf_fdw_17-2.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_17-2.6.0-1PIGSTY.el9.aarch64.rpm) |
-| `rdf_fdw_17` | `2.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 146.0 KiB | [rdf_fdw_17-2.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_17-2.6.0-1PIGSTY.el10.x86_64.rpm) |
-| `rdf_fdw_17` | `2.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 142.0 KiB | [rdf_fdw_17-2.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_17-2.6.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 348.3 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 339.5 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 348.2 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 339.4 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 388.9 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 383.9 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 353.6 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 349.5 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 351.3 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-rdf-fdw` | `2.6.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 346.8 KiB | [postgresql-17-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb) |
+| `rdf_fdw_17` | `2.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 151.7 KiB | [rdf_fdw_17-2.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_17-2.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `rdf_fdw_17` | `2.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 142.4 KiB | [rdf_fdw_17-2.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_17-2.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `rdf_fdw_17` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 145.6 KiB | [rdf_fdw_17-2.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_17-2.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `rdf_fdw_17` | `2.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 140.9 KiB | [rdf_fdw_17-2.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_17-2.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `rdf_fdw_17` | `2.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 146.7 KiB | [rdf_fdw_17-2.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_17-2.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `rdf_fdw_17` | `2.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 142.8 KiB | [rdf_fdw_17-2.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_17-2.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 350.7 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 341.1 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 350.3 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 342.0 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 390.0 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 384.8 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 354.6 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 350.6 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 352.7 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-rdf-fdw` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 347.9 KiB | [postgresql-17-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-17-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdf_fdw_16` | `2.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 151.2 KiB | [rdf_fdw_16-2.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_16-2.6.0-1PIGSTY.el8.x86_64.rpm) |
-| `rdf_fdw_16` | `2.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 141.7 KiB | [rdf_fdw_16-2.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_16-2.6.0-1PIGSTY.el8.aarch64.rpm) |
-| `rdf_fdw_16` | `2.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 144.9 KiB | [rdf_fdw_16-2.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_16-2.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `rdf_fdw_16` | `2.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 140.6 KiB | [rdf_fdw_16-2.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_16-2.6.0-1PIGSTY.el9.aarch64.rpm) |
-| `rdf_fdw_16` | `2.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 146.0 KiB | [rdf_fdw_16-2.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_16-2.6.0-1PIGSTY.el10.x86_64.rpm) |
-| `rdf_fdw_16` | `2.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 142.0 KiB | [rdf_fdw_16-2.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_16-2.6.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 348.1 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 339.0 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 348.0 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 340.3 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 387.0 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 381.6 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 353.3 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 349.4 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 351.6 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-rdf-fdw` | `2.6.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 346.8 KiB | [postgresql-16-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb) |
+| `rdf_fdw_16` | `2.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 151.6 KiB | [rdf_fdw_16-2.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_16-2.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `rdf_fdw_16` | `2.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 142.4 KiB | [rdf_fdw_16-2.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_16-2.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `rdf_fdw_16` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 146.1 KiB | [rdf_fdw_16-2.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_16-2.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `rdf_fdw_16` | `2.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 141.1 KiB | [rdf_fdw_16-2.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_16-2.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `rdf_fdw_16` | `2.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 146.7 KiB | [rdf_fdw_16-2.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_16-2.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `rdf_fdw_16` | `2.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 142.8 KiB | [rdf_fdw_16-2.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_16-2.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 350.7 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 341.7 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 350.7 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 341.8 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 388.2 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 382.9 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 354.3 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 350.6 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 352.6 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-rdf-fdw` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 347.9 KiB | [postgresql-16-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-16-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdf_fdw_15` | `2.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 152.2 KiB | [rdf_fdw_15-2.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_15-2.6.0-1PIGSTY.el8.x86_64.rpm) |
-| `rdf_fdw_15` | `2.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 143.1 KiB | [rdf_fdw_15-2.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_15-2.6.0-1PIGSTY.el8.aarch64.rpm) |
-| `rdf_fdw_15` | `2.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 147.3 KiB | [rdf_fdw_15-2.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_15-2.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `rdf_fdw_15` | `2.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 142.9 KiB | [rdf_fdw_15-2.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_15-2.6.0-1PIGSTY.el9.aarch64.rpm) |
-| `rdf_fdw_15` | `2.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 148.0 KiB | [rdf_fdw_15-2.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_15-2.6.0-1PIGSTY.el10.x86_64.rpm) |
-| `rdf_fdw_15` | `2.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 144.3 KiB | [rdf_fdw_15-2.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_15-2.6.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 350.4 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 340.2 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 350.7 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 341.1 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 388.2 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 383.1 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 353.7 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 350.2 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 352.7 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-rdf-fdw` | `2.6.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 347.6 KiB | [postgresql-15-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb) |
+| `rdf_fdw_15` | `2.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 152.8 KiB | [rdf_fdw_15-2.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_15-2.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `rdf_fdw_15` | `2.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 143.7 KiB | [rdf_fdw_15-2.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_15-2.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `rdf_fdw_15` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 147.9 KiB | [rdf_fdw_15-2.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_15-2.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `rdf_fdw_15` | `2.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 143.3 KiB | [rdf_fdw_15-2.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_15-2.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `rdf_fdw_15` | `2.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 148.7 KiB | [rdf_fdw_15-2.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_15-2.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `rdf_fdw_15` | `2.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 144.7 KiB | [rdf_fdw_15-2.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_15-2.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 352.2 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 341.9 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 351.9 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 342.9 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 389.6 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 384.2 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 355.6 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 351.6 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 353.7 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-rdf-fdw` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 348.9 KiB | [postgresql-15-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-15-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `rdf_fdw_14` | `2.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 152.3 KiB | [rdf_fdw_14-2.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_14-2.6.0-1PIGSTY.el8.x86_64.rpm) |
-| `rdf_fdw_14` | `2.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 143.0 KiB | [rdf_fdw_14-2.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_14-2.6.0-1PIGSTY.el8.aarch64.rpm) |
-| `rdf_fdw_14` | `2.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 147.2 KiB | [rdf_fdw_14-2.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_14-2.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `rdf_fdw_14` | `2.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 142.8 KiB | [rdf_fdw_14-2.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_14-2.6.0-1PIGSTY.el9.aarch64.rpm) |
-| `rdf_fdw_14` | `2.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 147.9 KiB | [rdf_fdw_14-2.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_14-2.6.0-1PIGSTY.el10.x86_64.rpm) |
-| `rdf_fdw_14` | `2.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 144.2 KiB | [rdf_fdw_14-2.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_14-2.6.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 350.3 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 339.9 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 349.7 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 341.0 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 387.9 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 382.8 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 353.9 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 350.1 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 352.4 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-rdf-fdw` | `2.6.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 347.5 KiB | [postgresql-14-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.6.0-1PIGSTY~resolute_arm64.deb) |
+| `rdf_fdw_14` | `2.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 152.9 KiB | [rdf_fdw_14-2.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rdf_fdw_14-2.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `rdf_fdw_14` | `2.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 143.7 KiB | [rdf_fdw_14-2.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rdf_fdw_14-2.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `rdf_fdw_14` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 148.0 KiB | [rdf_fdw_14-2.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rdf_fdw_14-2.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `rdf_fdw_14` | `2.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 143.2 KiB | [rdf_fdw_14-2.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rdf_fdw_14-2.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `rdf_fdw_14` | `2.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 148.6 KiB | [rdf_fdw_14-2.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rdf_fdw_14-2.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `rdf_fdw_14` | `2.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 144.8 KiB | [rdf_fdw_14-2.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rdf_fdw_14-2.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 351.6 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 342.0 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 351.8 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 343.0 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 389.7 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 384.2 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 355.5 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 351.5 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 353.6 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-rdf-fdw` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 348.7 KiB | [postgresql-14-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -172,7 +174,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/jimjonesbr/rdf_fdw" title="Repository" icon="github" subtitle="github.com/jimjonesbr/rdf_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="rdf_fdw-2.6.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="rdf_fdw-2.7.0.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -216,14 +218,14 @@ CREATE EXTENSION rdf_fdw;
 
 Sources:
 
-- [PGXN rdf_fdw 2.6.0](https://pgxn.org/dist/rdf_fdw/2.6.0/)
-- [rdf_fdw README](https://github.com/jimjonesbr/rdf_fdw)
-- [rdf_fdw CHANGELOG](https://github.com/jimjonesbr/rdf_fdw/blob/master/CHANGELOG.md)
-- [rdf_fdw control file](https://pgxn.org/dist/rdf_fdw/2.6.0/)
+- [PGXN rdf_fdw 2.7.0](https://pgxn.org/dist/rdf_fdw/2.7.0/)
+- [rdf_fdw 2.7 README](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/README.md)
+- [rdf_fdw 2.7 changelog](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/CHANGELOG.md)
+- [rdf_fdw 2.7 control file](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/rdf_fdw.control)
 
 `rdf_fdw` is a PostgreSQL foreign data wrapper for querying RDF triplestores over SPARQL endpoints. It exposes SPARQL result variables as foreign-table columns, supports pushdown for common SQL clauses, includes a native `rdfnode` type for RDF terms, provides SPARQL 1.1 helper functions, and can perform SPARQL `INSERT`, `UPDATE`, and `DELETE` through writable foreign tables.
 
-v2.6.0 adds Bearer-token authentication through `USER MAPPING`, a `max_response_size` server option to cap HTTP response bodies, BCE date/timestamp cast handling, and many `rdfnode` parser/comparison fixes. v2.5 added `request_timeout` and `readonly` options.
+v2.6.0 adds Bearer-token authentication through `USER MAPPING`, a `max_response_size` server option to cap HTTP response bodies, BCE date/timestamp cast handling, and many `rdfnode` parser/comparison fixes. v2.7 fixes RDF literal escaping for runs of trailing backslashes so literal content cannot break out into generated SPARQL syntax. It also initializes libcurl once per PostgreSQL backend instead of once per request.
 
 ### Create the Extension
 
@@ -237,8 +239,8 @@ SELECT * FROM rdf_fdw_settings();
 To install or update to the exact SQL version:
 
 ```sql
-CREATE EXTENSION rdf_fdw WITH VERSION '2.6';
-ALTER EXTENSION rdf_fdw UPDATE TO '2.6';
+CREATE EXTENSION rdf_fdw WITH VERSION '2.7';
+ALTER EXTENSION rdf_fdw UPDATE TO '2.7';
 ```
 
 ### Register a SPARQL Endpoint
@@ -396,8 +398,9 @@ The `sparql` schema implements many SPARQL 1.1 functions and aggregates, includi
 
 ### Caveats
 
-- PostgreSQL 9.5+ is the upstream baseline, but Pigsty packages target modern PostgreSQL majors listed in local metadata.
+- PostgreSQL 9.5 or newer is the upstream baseline.
 - Retrieved RDF data is accumulated in memory before conversion. Set `max_response_size`, use `LIMIT`, and keep remote result sets bounded.
 - Prefer `rdfnode` columns. Native PostgreSQL typed columns are deprecated for RDF terms and will lose IRI/language/datatype information.
 - Store secrets in `USER MAPPING`; do not put proxy credentials or endpoint tokens into `SERVER` options.
 - Public SPARQL endpoints can be slow or rate-limited. Use `connect_timeout`, `request_timeout`, retries, and local materialization when needed.
+- Upgrade to 2.7 before accepting untrusted literal content in pushed-down filters or writable foreign-table operations; the libcurl lifecycle fix is internal and adds no new SQL configuration.

@@ -44,7 +44,7 @@ func newCounterStore(pool *pgxpool.Pool) *counterStore {
 }
 
 // prime makes sure every known extension has a counter row, then loads the
-// current totals. All extensions are enumerable (~1.6k), so the whole table
+// current totals. All 2,230 catalogued extensions are enumerable, so the whole table
 // lives comfortably in memory.
 func (s *counterStore) prime(ctx context.Context, names []string) {
 	s.mu.Lock()

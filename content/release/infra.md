@@ -6,6 +6,23 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-07-28
+
+| Name               | Old      | New      | Comment                                      |
+|:-------------------|:---------|:---------|:---------------------------------------------|
+| agentsview         | 0.38.1   | 0.39.0   |                                              |
+| claude             | 2.1.218  | 2.1.220  | Official manifest verified through proxy     |
+| dblab              | 0.46.0   | 0.47.0   |                                              |
+| opencode           | 1.18.4   | 1.18.7   |                                              |
+| pgstream           | 1.2.2    | 1.2.4    |                                              |
+| postgrest          | 14.15    | 14.16    |                                              |
+| rainfrog           | 0.3.20   | 0.4.1    | Minor release                                |
+| stalwart           | 0.16.14  | 0.16.15  |                                              |
+| pig                | 1.5.1    | 1.6.0    | Unreleased                                   |
+| genai-toolbox      | 1.7.0    | 1.8.0    | Source-built RPM/DEB; Rocky 8/9 and Debian 12 verified |
+| pg-hardstorage     | 1.0.16   | 1.0.17   | Direct-download artifacts                    |
+| crush              | 0.86.0   | 0.87.0   | Direct-download artifacts                    |
+
 ## 2026-07-24
 
 | Name                    | Old           | New           | Comment                                    |

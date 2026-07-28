@@ -283,14 +283,14 @@ def generate_content(extensions: List[Extension], packages: List[Package], activ
             'title': 'Extensions',
             'desc': 'PostgreSQL extensions enhance the database with additional functionality.',
             'pkg_header': f'\n## Packages\n\nThere are {pkg_count} available PostgreSQL packages:\n',
-            'ext_header': f'\n## Extensions\n\nThere are {ext_count} available PostgreSQL extensions:\n',
+            'ext_header': f'\n## Extensions\n\nThere are {ext_count} packaged PostgreSQL extensions:\n',
             'attr_legend': '\n**Attribute Legend**: `c`:contrib `b`:bin `s`:lib `l`:load `d`:ddl `t`:trusted `r`:relocatable'
         },
         'zh': {
             'title': '扩展',
             'desc': 'PostgreSQL 扩展通过额外的功能增强数据库。',
             'pkg_header': f'\n## 包\n\n共有 {pkg_count} 个可用的 PostgreSQL 包：\n',
-            'ext_header': f'\n## 扩展\n\n共有 {ext_count} 个可用的 PostgreSQL 扩展：\n',
+            'ext_header': f'\n## 扩展\n\n共有 {ext_count} 个已打包的 PostgreSQL 扩展：\n',
             'attr_legend': '\n**属性说明**: `c`:contrib `b`:二进制 `s`:动态库 `l`:需加载 `d`:需DDL `t`:无需特权 `r`:可重定位'
         }
     }

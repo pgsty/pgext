@@ -1,72 +1,202 @@
 ---
 title: "pig pt"
-description: "使用 pig pt 子命令管理 Patroni 服务与集群"
+description: "透明运行 patronictl，附带 Pigsty 服务、配置与日志辅助命令"
 icon: RefreshCw
 weight: 650
 ---
 
-`pig patroni` 命令（别名 `pig pt`）用于管理 Patroni 服务和 PostgreSQL HA 集群。它封装了常用的 `patronictl` 和 `systemctl` 操作，提供简化的集群管理体验。
+`pig patroni` 命令（别名 `pig pt`）自 v1.6.0 起是已安装 `patronictl` 的**透明启动器**：
+pig 只负责选择配置文件与少量本地辅助命令，其余一切命令与参数**原样转发**给 `patronictl`，
+使用原生的参数、交互确认、输出与退出码——patronictl 的新功能无需等待 pig 发版即可使用。
 
 ```bash
-pig pt - Manage Patroni cluster using patronictl commands.
+pig pt transparently launches the installed patronictl binary.
 
-Cluster Operations (via patronictl):
-  pig pt list [cluster]            list cluster members
-  pig pt restart [member]          restart PostgreSQL (rolling restart)
-  pig pt reload                    reload PostgreSQL config
-  pig pt reinit <member>           reinitialize a member
-  pig pt pause                     pause automatic failover
-  pig pt resume                    resume automatic failover
-  pig pt switchover                perform planned switchover
-  pig pt failover [candidate]      perform manual failover
-  pig pt config <action>           manage cluster config (edit|show|set|pg)
+Pig only owns config-file selection and these local helpers:
+  pig pt set KEY=VALUE...       update PostgreSQL or scalar Patroni settings
+  pig pt start|stop             manage the local patroni service
+  pig pt service <action>       start, stop, restart, reload, or show service
+  pig pt status                 show local and cluster status
+  pig pt log ...                view local Patroni logs
 
-Service Management (via systemctl):
-  pig pt status                    show comprehensive patroni status
-  pig pt svc start (pig pt start)  start patroni service
-  pig pt svc stop  (pig pt stop)   stop patroni service
-  pig pt svc restart               restart patroni service
-  pig pt svc reload                reload patroni service
-  pig pt svc status                show patroni service status
-
-Logs:
-  pig pt log [-f] [-n 50]          view patroni logs
-  pig pt log tail [-n 50]          follow patroni logs
-  pig pt log show [-n 50]          show patroni log snapshot
-  pig pt log grep <pattern>        search patroni logs
+Every other command and all arguments after it are passed unchanged to
+patronictl. Use "pig pt -- COMMAND ..." to bypass a local-name collision.
 ```
 
-`pt start` / `pt stop` 是 `pt svc start` / `pt svc stop` 的隐藏快捷入口；`pt svc` 是显式的 Patroni 守护进程管理入口。
+第一个非选项命令词决定分发方式：
 
-短参数契约：如果命令作用域内没有冲突，`--wait` 必须提供 `-w` 缩写。当前适用于 `pt reinit`、`pt pause`、`pt resume`；`pt list -w` 保留为该命令自己的刷新间隔参数。
-
-切换前置检查契约：`pt switchover` 与 `pt failover` 在执行或要求确认前，会通过与 `pig pt list` / `pig pt config show` 相同的结构化接口读取当前拓扑，确认集群名、当前 Leader、候选从库以及 Patroni pause 状态。如果集群处于 pause 模式，pig 会拒绝切换并提示先执行 `pig pt resume`。
+- `set`、`start`/`up`、`stop`/`dn`、`service`/`svc`、`status`/`st`、`log`/`l` 走 pig 的本地实现；
+- **其余任何命令词**（`list`、`restart`、`reload`、`reinit`、`switchover`、`failover`、
+  `pause`、`resume`、`show-config`、`edit-config`、`query`、`history`、`topology`、`dsn`、`version` 等）
+  连同其后的全部参数，逐字转发给 `patronictl`；
+- `pig pt -- <命令> ...` 可以绕过本地命令名冲突（例如 `pig pt -- set` 会把 `set` 交给 patronictl）；
+- `pig pt` 不带命令时打印 pig 帮助，不会运行 patronictl；
+  原生子命令帮助用 `pig pt <命令> --help`，patronictl 根帮助用 `pig pt -- --help`。
 
 
 ## 命令概览
 
-**集群操作**（`patronictl` 封装）：
+**透传命令**（`patronictl` 原生）：
 
-以下命令用于通过 Patroni 管理 PostgreSQL 集群。
-
-| 命令              | 缩写   | 描述               | 实现方式                                   |
-|:----------------|:-----|:-----------------|:---------------------------------------|
-| `pt list`       | `ls` | 列出集群成员           | `patronictl list -e -t`                |
-| `pt restart`    | `rs` | 重启 PostgreSQL 实例 | `patronictl restart`                   |
-| `pt reload`     | `rl` | 重载 PostgreSQL 配置 | `patronictl reload`                    |
-| `pt reinit`     | `ri` | 重新初始化成员          | `patronictl reinit`                    |
-| `pt switchover` | `so` | 计划内主从切换          | `patronictl switchover`                |
-| `pt failover`   | `fo` | 手动故障切换           | `patronictl failover`                  |
-| `pt pause`      | `p`  | 暂停自动故障切换         | `patronictl pause`                     |
-| `pt resume`     | `r`  | 恢复自动故障切换         | `patronictl resume`                    |
-| `pt config`     | `c`  | 查看或修改集群配置        | `patronictl show-config / edit-config` |
+| 示例                                            | 说明                                  |
+|:----------------------------------------------|:------------------------------------|
+| `pig pt list [CLUSTER]`                       | 列出集群成员（原生输出，`--format json` 可用）     |
+| `pig pt restart CLUSTER [MEMBER]`             | 重启集群 / 成员的 PostgreSQL（原生确认）         |
+| `pig pt reload CLUSTER`                       | 重载 PostgreSQL 配置                    |
+| `pig pt reinit CLUSTER MEMBER`                | 重新初始化成员（从主库重新同步数据）                  |
+| `pig pt switchover CLUSTER [--candidate X]`   | 计划内主从切换                             |
+| `pig pt failover CLUSTER --candidate MEMBER`  | 手动故障切换（**位置参数是集群名**）                |
+| `pig pt pause / resume CLUSTER`               | 暂停 / 恢复自动故障切换（维护模式）                 |
+| `pig pt show-config / edit-config`            | 查看 / 编辑集群动态配置                       |
+| `pig pt query -c 'select 1'`                  | 原生查询（此处 `-c` 是 query 自己的 SQL 参数）    |
 {.full-width}
 
-**服务子命令**（`pt service`，封装 `systemctl`）：
+转发命令的位置参数遵循 patronictl 原生的**集群优先**（CLUSTER-first）语义，
+确认提示、输出格式与退出码（含 Click 用法错误退出码 `2`）均由 patronictl 负责。
 
-以下命令通过 `systemctl` 管理 Patroni 服务本身。
+**本地命令**（pig 实现）：
 
-| 命令                   | 缩写          | 描述            |
+| 命令           | 别名            | 说明                                        |
+|:-------------|:--------------|:------------------------------------------|
+| `pt set`     |               | 修改 PostgreSQL 参数或 Patroni 标量配置（语法糖）       |
+| `pt status`  | `st`          | 综合状态：systemd 服务 + Patroni 进程 + 集群成员       |
+| `pt service` | `svc`         | 管理本地 patroni systemd 服务                   |
+| `pt start`   | `up`          | 隐藏快捷入口，等价于 `pt svc start`                 |
+| `pt stop`    | `dn`          | 隐藏快捷入口，等价于 `pt svc stop`                  |
+| `pt log`     | `l`           | 查看本地 Patroni 日志（show / tail / grep）       |
+{.full-width}
+
+注意：顶层 `pt restart` **不是**重启 patroni 守护进程的快捷方式，它会转发给
+`patronictl restart` 用于重启 PostgreSQL；重启守护进程请使用 `pt svc restart`。
+
+
+## 快速入门
+
+```bash
+# 集群操作（原生透传，集群优先语义）
+pig pt list pg-meta                         # 列出集群成员
+pig pt list pg-meta --format json           # 原生 JSON 输出
+pig pt restart pg-test --pending            # 应用待重启成员
+pig pt restart pg-test pg-test-1            # 重启指定成员
+pig pt switchover pg-test --candidate pg-2  # 计划内切换
+pig pt failover pg-test --candidate pg-2    # 手动故障切换
+pig pt pause pg-test                        # 进入维护模式
+pig pt show-config pg-test                  # 查看动态配置
+
+# 配置修改（本地语法糖，一次 edit-config 调用）
+pig pt set ttl=60                           # Patroni 标量配置 → --set
+pig pt set max_connections=200              # PostgreSQL 参数 → --pg
+pig pt set ttl=60 max_connections=200 -y    # 混合修改，跳过确认
+pig pt set shared_buffers=4GB --plan        # 仅预览翻译后的原生命令
+
+# 服务与日志（本地实现）
+pig pt status                               # 综合状态
+pig pt svc restart                          # 重启 patroni 守护进程
+pig pt log -f                               # 实时跟踪日志
+pig pt log grep ERROR                       # 搜索日志
+```
+
+
+## Pig/PT 选项
+
+以下包装层选项**必须出现在原生命令之前**；一旦出现原生命令词，其后的所有参数都属于 patronictl：
+
+| 参数              | 简写   | 说明                                     |
+|:----------------|:-----|:---------------------------------------|
+| `--config-file` | `-c` | 显式指定 Patroni/patronictl 配置文件           |
+| `--dbsu`        |      | 执行 patronictl 的 OS 用户（默认 `$PIG_DBSU` 或 `postgres`） |
+| `--dcs-url`     | `-d` | 覆盖 Patroni DCS URL（`--dcs` 为其别名）       |
+| `--insecure`    | `-k` | 允许 TLS 连接不校验证书                         |
+{.full-width}
+
+```bash
+pig pt -c /path/patroni.yml list pg-meta   # 包装层 -c：配置文件
+pig pt query -c 'select 1'                 # 原生 query 的 -c：SQL 语句，不会被 pig 截获
+```
+
+> v1.6.0 起 `--dbsu` 不再提供 `-U` 简写（`pg` / `pb` 命令不受影响）。
+
+
+## 配置文件解析
+
+每次配置相关的 patronictl 调用都会由 pig 注入唯一的根 `-c <路径>`，解析优先级：
+
+1. 命令前显式给出的 `-c/--config-file`；
+2. 非空的 `PATRONICTL_CONFIG_FILE` 环境变量；
+3. `/etc/patroni/patroni.yml`（存在且以 DBSU 身份可读）；
+4. `/infra/conf/patronictl.yml`（存在且以 DBSU 身份可读）；
+5. 兜底回退 `/etc/patroni/patroni.yml`，让 patronictl 的报错指向常规位置。
+
+显式路径与环境变量路径具有权威性：文件缺失或不可读时 pig 不会静默换用其他候选；
+相对路径会在切换 OS 用户前转换为绝对路径。常规候选文件的可读性按**实际执行用户（DBSU）**探测，
+而非简单检查权限位。解析是惰性的：`pt svc start` 这类纯 systemd 操作不会触发配置解析；
+原生 `-h/--help` 走免配置快速路径，在未配置 Patroni 的机器上也能查看帮助。
+
+
+## 透传执行与输出模式
+
+转发执行直接继承 stdin / stdout / stderr 与终端：原生交互确认、`edit-config` 的编辑器、
+`--watch` 流式刷新、退出码全部保真；pig 不做输出捕获、不重复渲染错误、不重试、
+也不在执行前后读取集群或 DCS 状态。逻辑调用形态为：
+
+```text
+patronictl -c <选中配置> [--dcs-url URL] [--insecure] <原生命令与参数...>
+```
+
+**结构化输出**：转发路径只支持 pig 的 `text` 模式。在原生命令之前出现的
+`-o json` / `-o yaml` 会被**明确拒绝**（提示改用原生输出选项）；
+出现在原生命令之后的参数原样转发，由 patronictl 自行校验：
+
+```bash
+pig -o json pt list          # 拒绝：请使用原生输出选项
+pig pt -o json list          # 拒绝：请使用原生输出选项
+pig pt list --format json    # 原样转发，patronictl 原生 JSON
+pig pt list -o json          # 原样转发，由 patronictl 校验
+```
+
+本地命令（`set` / `status` / `log` / `service`）保留 pig 的结构化输出行为。
+
+
+## pt set
+
+`pt set` 是唯一的本地配置语法糖，作用于选中配置对应的集群：
+
+```bash
+pig pt set KEY=VALUE [KEY=VALUE ...] [--yes] [--plan]
+```
+
+**键分类规则**：
+
+- 以下 Patroni 顶层标量键翻译为原生 `--set`：
+  `loop_wait`、`ttl`、`retry_timeout`、`primary_race_backoff`、
+  `maximum_lag_on_failover`、`maximum_lag_on_syncnode`、`max_timelines_history`、
+  `primary_start_timeout`、`primary_stop_timeout`、`synchronous_mode`、
+  `synchronous_mode_strict`、`synchronous_node_count`、`failsafe_mode`、
+  `check_timeline`、`member_slots_ttl`（`pause` 不在其列——请使用原生 `pause`/`resume`）；
+- 其余键一律视为 PostgreSQL 参数，翻译为原生 `--pg`（含 `timescaledb.telemetry_level` 这类带点自定义 GUC）；
+- 以 `postgresql.`、`standby_cluster.`、`slots.`、`ignore_slots.` 开头的结构性键会被**拒绝**，
+  并提示改用原生 `pig pt edit-config --set`。
+
+所有键值对按输入顺序合并为**一次**原生 `edit-config` 调用，产生一次 diff、一次确认、一次 DCS 更新：
+
+```bash
+pig pt set ttl=60 max_connections=200 synchronous_mode=on
+# 等价于：patronictl -c <选中配置> edit-config --set ttl=60 --pg max_connections=200 --set synchronous_mode=on
+```
+
+- `--yes/-y` 追加原生 `--force` 跳过确认；默认由 patronictl 显示 diff 并负责确认；
+- `--plan` 不执行任何修改，仅渲染选中配置与翻译后的原生命令（**计划可能包含敏感值**）；
+- 结构化输出模式下执行必须携带 `--yes`（禁止隐藏交互提示）；
+- 值按 YAML 解析：`KEY=null` 与 `KEY=` 均表示删除该键，pig 原样传递；
+- 修改需要重启的 PostgreSQL 参数后，pig 会提示后续操作：
+  先 `pig pt list`，再 `pig pt restart CLUSTER --pending`（需显式集群名）。
+
+
+## 服务管理
+
+`pt service`（别名 `pt svc`）管理本地 `patroni` systemd 服务：
+
+| 命令                   | 别名          | 说明            |
 |:---------------------|:------------|:--------------|
 | `pt service start`   | `pt svc up` | 启动 Patroni 服务 |
 | `pt service stop`    | `pt svc dn` | 停止 Patroni 服务 |
@@ -75,358 +205,32 @@ Logs:
 | `pt service status`  | `pt svc st` | 显示服务状态        |
 {.full-width}
 
-**服务管理**（`systemctl` 封装）：
-
-以下顶层命令用于直接查看或管理 Patroni 服务；其中 `pt start` / `pt stop` 是隐藏快捷入口。
-
-| 命令          | 缩写   | 描述            | 实现方式                                          |
-|:------------|:-----|:--------------|:----------------------------------------------|
-| `pt start`  | `up` | 启动 Patroni 服务 | `systemctl start patroni`                     |
-| `pt stop`   | `dn` | 停止 Patroni 服务 | `systemctl stop patroni`                      |
-| `pt status` | `st` | 显示综合状态        | `systemctl status` + `ps` + `patronictl list` |
-| `pt log`    | `l`  | 查看 Patroni 日志 | 读取 Patroni 日志目录中的日志文件                         |
-{.full-width}
-
-
-
-## 快速入门
-
-```bash
-# 查看集群成员状态
-pig pt list                    # 列出默认集群成员
-pig pt list pg-meta            # 列出指定集群成员
-pig pt list -W                 # 持续监视模式
-pig pt list -w 5               # 每 5 秒刷新一次
-
-# 查看和修改集群配置
-pig pt config                  # 显示当前集群配置（默认 show）
-pig pt config set ttl=60       # 修改单个配置项（直接生效）
-pig pt config set ttl=60 loop_wait=15  # 修改多个配置项
-pig pt config pg max_connections=200   # 修改 PostgreSQL 参数
-
-# 集群运维操作
-pig pt restart                 # 重启所有成员的 PostgreSQL（需要确认）
-pig pt restart pg-test-1       # 重启指定成员
-pig pt restart --pending       # 应用待重启成员（直接执行）
-pig pt restart -y              # 集群级重启，跳过确认
-pig pt switchover              # 计划内主从切换
-pig pt pause                   # 暂停自动故障切换
-pig pt resume                  # 恢复自动故障切换
-
-# 管理 Patroni 服务
-pig pt status                  # 查看服务状态
-pig pt start                   # 隐藏快捷入口：等价于 pig pt svc start
-pig pt stop                    # 隐藏快捷入口：等价于 pig pt svc stop
-pig pt svc start               # 启动服务
-pig pt svc stop                # 停止服务
-pig pt log -f                  # 实时查看日志
-pig pt log grep ERROR          # 搜索日志
-```
-
-
-## 全局参数
-
-以下参数适用于所有 `pig pt` 子命令：
-
-| 参数       | 简写   | 说明                                   |
-|:---------|:-----|:-------------------------------------|
-| `--dbsu` | `-U` | 数据库超级用户（默认：`$PIG_DBSU` 或 `postgres`） |
-{.full-width}
-
-
-## 集群操作命令
-
-### pt list
-
-列出 Patroni 集群成员状态。该命令封装了 `patronictl list`，并默认添加 `-e`（扩展输出）和 `-t`（显示时间戳）参数。
-
-```bash
-pig pt list                    # 列出默认集群成员
-pig pt list pg-meta            # 列出指定集群
-pig pt list -W                 # 持续监视模式
-pig pt list -w 5               # 每 5 秒刷新一次
-pig pt list -w 0.5             # 每 0.5 秒刷新一次
-pig pt list pg-test -W -w 3    # 监视 pg-test 集群，3 秒刷新
-```
-
-**选项：**
-
-| 参数           | 简写   | 说明                    |
-|:-------------|:-----|:----------------------|
-| `--watch`    | `-W` | 启用持续监视模式              |
-| `--interval` | `-w` | 监视刷新间隔（秒，支持 0.5 这类小数） |
-{.full-width}
-
-watch 模式使用实时 `patronictl` 透传输出，不能与 `-o json` / `-o yaml` 结构化输出一起使用；结构化输出会返回 `CodePtWatchModeUnsupported`。
-
-
-### pt restart
-
-通过 Patroni 重启 PostgreSQL 实例。这会触发 PostgreSQL 的滚动重启，而非重启 Patroni 守护进程本身。
-
-```bash
-pig pt restart                   # 重启所有成员（交互式）
-pig pt restart pg-test-1         # 重启指定成员
-pig pt restart -y                # 集群级重启，跳过确认
-pig pt restart --role=replica    # 仅重启从库
-pig pt restart --pending         # 重启待重启的成员
-pig pt restart --plan            # 预览执行计划
-```
-
-**选项：**
-
-| 参数          | 简写   | 说明                        |
-|:------------|:-----|:--------------------------|
-| `--yes`     | `-y` | 跳过确认                      |
-| `--role`    | `-r` | 按角色筛选（leader/replica/any） |
-| `--pending` | `-p` | 仅重启待重启的成员                 |
-| `--plan`    |      | 仅显示执行计划                   |
-{.full-width}
-
-`pt restart` 是条件确认：指定单个成员或使用 `--pending` 时直接执行；未指定成员的集群级滚动重启需要确认，结构化输出中需要显式 `--yes`。
-底层 `patronictl restart` 始终由 pig 传入 `--force`，不会再触发 `patronictl` 自己的交互提示。
-
-
-### pt reload
-
-通过 Patroni 重载 PostgreSQL 配置。这会触发所有成员执行配置重载。
-
-```bash
-pig pt reload
-```
-
-
-### pt reinit
-
-重新初始化集群成员。这会从主库重新同步数据。
-
-```bash
-pig pt reinit pg-test-1          # 重新初始化指定成员
-pig pt reinit pg-test-1 -y       # 跳过确认
-pig pt reinit pg-test-1 -w       # 等待完成
-pig pt reinit pg-test-1 --plan   # 预览执行计划
-```
-
-**选项：**
-
-| 参数       | 简写   | 说明        |
-|:---------|:-----|:----------|
-| `--yes`  | `-y` | 跳过确认      |
-| `--wait` | `-w` | 等待重新初始化完成 |
-| `--plan` |      | 仅显示执行计划   |
-{.full-width}
-
-**警告：** 此操作会删除目标成员的所有数据并重新同步。文本模式会要求确认；JSON/YAML 执行模式需要显式 `--yes`。
-
-
-
-### pt switchover
-
-通过 Patroni 执行计划内的主从切换。（命令别名：`so`）
-
-```bash
-pig pt switchover                 # 交互式切换
-pig pt switchover -y              # 跳过确认
-pig pt switchover -l pg-1 -c pg-2 # 指定当前主库和新主库
-pig pt switchover -s "2026-07-01T12:00:00"  # 定时切换
-pig pt switchover --plan          # 预览执行计划
-pig pt so -c pg-test-1 -y         # 无需确认直接切换至 pg-test-1 实例
-```
-
-**选项：**
-
-| 参数            | 简写   | 说明      |
-|:--------------|:-----|:--------|
-| `--yes`       | `-y` | 跳过确认    |
-| `--leader`    | `-l` | 指定当前主库  |
-| `--candidate` | `-c` | 指定候选新主库 |
-| `--scheduled` | `-s` | 定时切换时间  |
-| `--plan`      |      | 仅显示执行计划 |
-{.full-width}
-
-相比 `patronictl` 命令行，pig 会从 `/etc/patroni/patroni.yml` 中解析并填充集群 scope，避免用户手动输入集群名称。
-执行或确认前，pig 会读取当前拓扑：集群名、当前 Leader、候选从库以及 pause 状态。如果集群已经 pause，命令会拒绝执行并提示先运行 `pig pt resume`。
-
-如果未指定 `--candidate`，pig 不会自行挑选实例，而是将候选选择交给 `patronictl` / Patroni；确认提示会说明“将 leadership 转移给 Patroni 选择的最适格从库”，并列出当前观察到的候选成员。需要指定新主实例时，使用 `--candidate/-c`。
-
-
-
-### pt failover
-
-执行手动故障切换。用于主库不可用时强制切换。（命令别名：`fo`）
-
-与 `switchover` 不同，`failover` 不要求当前主库可用，但您 **必须** 指定一个候选新主库。候选可以通过 `--candidate/-c` 指定，也可以作为唯一位置参数传入：`pig pt failover <member>`。
-
-```bash
-pig pt failover --candidate pg-2          # 交互式故障切换
-pig pt failover pg-2                      # 位置参数形式，等效于 -c pg-2
-pig pt failover -c pg-2 -y                # 跳过确认
-pig pt failover -c pg-2 --plan            # 预览执行计划
-pig pt fo pg-test-2 -y                    # 简写 + 确认
-```
-
-**选项：**
-
-| 参数            | 简写   | 说明               |
-|:--------------|:-----|:-----------------|
-| `--yes`       | `-y` | 跳过确认             |
-| `--candidate` | `-c` | 指定候选新主库；也可使用位置参数 |
-| `--plan`      |      | 仅显示执行计划          |
-{.full-width}
-
-执行或确认前，pig 会读取当前拓扑并检查 pause 状态。如果集群已经 pause，命令会拒绝执行并提示先运行 `pig pt resume`。确认提示会包含集群名、当前 Leader、指定候选新主库以及当前观察到的候选成员，并保留故障切换可能丢数据的警告。
-
-
-### pt pause
-
-暂停 Patroni 的自动故障切换，进入维护模式，防止在维护期间触发故障切换。
-如果集群已经处于维护模式，则该命令会报错。
-
-```bash
-pig pt pause                      # 暂停自动故障切换
-pig pt pause -w                   # 等待确认
-```
-
-**选项：**
-
-| 参数       | 简写   | 说明     |
-|:---------|:-----|:-------|
-| `--wait` | `-w` | 等待操作完成 |
-{.full-width}
-
-**使用场景：** 在执行维护操作（如大版本升级、存储迁移）时暂停自动故障切换，防止误触发。
-
-
-
-### pt resume
-
-恢复 Patroni 的自动故障切换，退出维护模式。
-如果集群未处于维护模式，则该命令会报错。
-
-```bash
-pig pt resume                     # 恢复自动故障切换
-pig pt resume -w                  # 等待确认
-```
-
-**选项：**
-
-| 参数       | 简写   | 说明     |
-|:---------|:-----|:-------|
-| `--wait` | `-w` | 等待操作完成 |
-{.full-width}
-
-
-
-### pt config
-
-显示或修改集群配置。`show` 显示当前配置，`set` 修改 Patroni 动态配置，`pg` 修改 PostgreSQL 参数。
-
-```bash
-pig pt config show                      # 显示当前集群配置
-pig pt config edit                      # 交互式编辑配置
-pig pt config set ttl=60                # 设置 TTL 为 60 秒
-pig pt config set ttl=60 loop_wait=15   # 同时修改多个配置项
-pig pt config pg max_connections=200    # 修改 PostgreSQL 参数
-pig pt config set ttl=60 --plan         # 预览配置修改
-```
-
-**子命令：**
-
-| 子命令             | 说明               |
-|:----------------|:-----------------|
-| `show`          | 显示当前配置           |
-| `edit`          | 交互式编辑配置          |
-| `set key=value` | 直接设置配置项          |
-| `pg key=value`  | 设置 PostgreSQL 参数 |
-{.full-width}
-
-**选项：**
-
-| 参数       | 说明                       |
-|:---------|:-------------------------|
-| `--plan` | 对 `set` / `pg` 操作仅显示执行计划 |
-{.full-width}
-
-当你修改 Patroni 本身的配置参数时，需要使用 `pig pt config set k=v` 命令。`set` 与 `pg` 都要求参数是 `key=value` 形式，非 `key=value` token 会被拒绝，而不是静默忽略。`edit` 是交互式操作，不支持结构化输出。
-
-
-| 配置项                       | 说明                       | 默认值     |
-|:--------------------------|:-------------------------|:--------|
-| `ttl`                     | Leader 锁的生存时间（秒）         | 30      |
-| `loop_wait`               | 主循环休眠时间（秒）               | 10      |
-| `retry_timeout`           | DCS 和 PostgreSQL 操作超时（秒） | 10      |
-| `maximum_lag_on_failover` | 故障切换时允许的最大延迟（字节）         | 1048576 |
-{.full-width}
-
-
-当你修改 PostgreSQL 本身的配置参数时，需要使用 `pig pt config pg k=v` 命令。该命令会识别已知的 postmaster-context 参数；若修改需要重启的 PostgreSQL 参数，计划和结构化结果会给出 `pig pt list` 与 `pig pt restart --pending` 后续动作。
-
-**注意：** 此命令修改的是存储在 DCS（如 etcd）中的集群动态配置，而非本地配置文件 `/etc/patroni/patroni.yml`。
-
-例如：
-
-```bash
-pig pt config set ttl=60 --plan
-pig pt config pg shared_buffers=4GB --plan
-```
-
-
-
-## 服务管理命令
-
-### pt start
-
-启动 Patroni 服务。
-
-```bash
-pig pt start                     # 启动 Patroni 服务
-pig pt up                        # 别名
-```
-
-等效于执行 `sudo systemctl start patroni`。
-
-
-### pt stop
-
-停止 Patroni 服务。
-
-```bash
-pig pt stop                      # 停止 Patroni 服务
-pig pt dn                        # 别名
-```
-
-等效于执行 `sudo systemctl stop patroni`。
-
-**注意：** 停止 Patroni 服务会导致该节点上的 PostgreSQL 实例也被停止（取决于 Patroni 配置）。
-
+顶层 `pt start` / `pt stop`（别名 `up` / `dn`）是隐藏快捷入口，调用同一本地实现。
+停止 Patroni 服务可能导致该节点上的 PostgreSQL 一并停止（取决于 Patroni 配置）。
 
 ### pt status
 
-显示 Patroni 服务的综合状态，包括：
-- systemd 服务状态
-- Patroni 进程信息
-- 集群成员状态
+显示综合状态：systemd 服务状态、Patroni 进程信息、以及来自 patronictl 的集群成员状态。
 
 ```bash
 pig pt status
+pig pt st -o json                # 结构化输出
 ```
-
 
 ### pt log
 
-查看 Patroni 服务日志。日志目录默认从 `/etc/patroni/patroni.yml` 的 `log.dir` 读取，未配置时回退到 `/pg/log/patroni`；也可用 `--log-dir` 显式指定。只有 `pt log` 与 `pt log show` 支持 `-o json` 输出 JSONL；日志快照不支持 `yaml` 与 `json-pretty`，follow/tail/grep 不支持结构化输出。
+查看本地 Patroni 日志。日志目录取自选中配置的 `log.dir`，未配置时回退到 `/pg/log/patroni`，
+也可用 `--log-dir` 显式指定。仅 `pt log` 与 `pt log show` 支持 `-o json`（JSONL 快照）；
+follow / tail / grep 是终端流式操作，不支持结构化输出。
 
 ```bash
 pig pt log                     # 显示最近 50 行日志
 pig pt log -f                  # 实时跟踪日志输出
-pig pt log show                # 显示最近日志
-pig pt log tail                # 跟踪日志
+pig pt log -n 100              # 显示最近 100 行
+pig pt log show -o json        # JSONL 快照
+pig pt log tail -n 100         # 跟踪日志
 pig pt log grep ERROR          # 搜索日志
-pig pt log -n 100              # 显示最近 100 行日志
-pig pt log -f -n 200           # 显示最近 200 行并持续跟踪
 ```
-
-**子命令：**
 
 | 子命令    | 别名             | 说明              |
 |:-------|:---------------|:----------------|
@@ -434,8 +238,6 @@ pig pt log -f -n 200           # 显示最近 200 行并持续跟踪
 | `tail` | `t, f, follow` | 持续跟踪 Patroni 日志 |
 | `grep` | `g, search`    | 搜索 Patroni 日志   |
 {.full-width}
-
-**选项：**
 
 | 参数          | 简写   | 默认值   | 说明       |
 |:------------|:-----|:------|:---------|
@@ -445,62 +247,38 @@ pig pt log -f -n 200           # 显示最近 200 行并持续跟踪
 {.full-width}
 
 
+## 从 v1.5.x 迁移
 
+v1.6.0 的透传重写是**破坏性变更**，升级前请检查自动化脚本：
 
-## pt svc 子命令
-
-`pt svc`（也可写作 `pt service`）提供与顶层服务命令相同的功能，用于明确操作的是 Patroni 守护进程：
-
-```bash
-pig pt svc start                 # 启动 Patroni 服务
-pig pt svc stop                  # 停止 Patroni 服务
-pig pt svc restart               # 重启 Patroni 服务
-pig pt svc reload                # 重载 Patroni 服务
-pig pt svc status                # 显示服务状态
-```
-
-**别名对照：**
-
-| 命令               | 别名   |
-|:-----------------|:-----|
-| `pt svc start`   | `up` |
-| `pt svc stop`    | `dn` |
-| `pt svc restart` | `rs` |
-| `pt svc reload`  | `rl` |
-| `pt svc status`  | `st` |
+| v1.5.x 用法                          | v1.6.0 用法                                        |
+|:-----------------------------------|:-------------------------------------------------|
+| `pig pt failover <候选成员>`           | ⚠ `pig pt failover CLUSTER --candidate MEMBER`（位置参数语义反转：现在是**集群名**） |
+| `pig pt restart [成员]`（自动定位集群）      | `pig pt restart CLUSTER [MEMBER]`（需显式集群名）        |
+| `pig pt list -o json`              | `pig pt list --format json`（原生 JSON，schema 不同）   |
+| `pig pt config show`               | `pig pt show-config`                             |
+| `pig pt config edit`               | `pig pt edit-config`                             |
+| `pig pt config set K=V` / `pg K=V` | `pig pt set K=V`                                 |
+| `pig pt restart -y`（pig 确认门）       | 原生确认由 patronictl 负责；`pt set -y` 仍有效              |
+| `pig pt list -W` / `-w 5`          | 原生 `pig pt list --watch`（patronictl 语义）          |
+| 别名 `ls/rs/rl/ri/so/fo/p/r/c`       | 已移除，使用完整原生命令名                                    |
+| `--dbsu -U`                        | `--dbsu`（`-U` 简写已移除）                             |
 {.full-width}
 
-其中 `start` 和 `stop` 有专门的 `pt start` 和 `pt stop` 的快捷方式，方便用户直接管理 Patroni 服务。
-但请注意，`pt restart` 并非是 `pt svc restart` 的快捷方式，而是用于 Patroni 重启 PostgreSQL 集群的命令，二者功能不同。
-
+此外：转发命令的退出码为 patronictl 原生值（用法错误为 `2`）；
+switchover / failover 不再有 pig 侧的 pause 预检——维护模式语义完全由 Patroni 负责。
 
 
 ## 设计说明
 
-**与 patronictl 的关系：**
+**单一权威**：集群控制路径只有一条——已安装的 `patronictl` + 一份选中配置，
+经由 Patroni REST API / DCS 生效。pig 不内嵌 DCS 客户端或 REST 控制引擎，
+不维护 patronictl 命令清单，不对转发命令做确认、预检、重试或结果改写。
 
-`pig pt` 封装了 `patronictl` 的常用操作：
-- 集群查询：`list`、`config show`
-- 集群管理：`restart`、`reload`、`reinit`、`switchover`、`failover`、`pause`、`resume`
-- 配置修改：`config set`、`config pg`、`config edit`
-- 服务管理命令（start/stop/restart/reload/status）调用 `systemctl`
-- `log` 命令读取 Patroni 日志目录中的日志文件
+**权限处理**（与 v1.5.x 相同）：
 
-**默认配置路径：**
+- 当前用户已是 DBSU：直接执行；
+- 当前用户是 root：`su - postgres -c "..."` 执行；
+- 其他用户：`sudo -inu postgres -- ...` 执行。
 
-| 配置项          | 默认值                                 |
-|:-------------|:------------------------------------|
-| Patroni 配置文件 | `/etc/patroni/patroni.yml`          |
-| 日志目录         | 配置文件 `log.dir`，回退 `/pg/log/patroni` |
-| 服务名称         | `patroni`                           |
-{.full-width}
-
-**权限处理：**
-
-- 如果当前用户已是 DBSU：直接执行命令
-- 如果当前用户是 root：使用 `su - postgres -c "..."` 执行
-- 其他用户：使用 `sudo -inu postgres -- ...` 执行
-
-**平台支持：**
-
-此命令专为 Linux 系统设计，服务管理依赖 `systemctl`，日志功能依赖可读取的 Patroni 日志文件。
+**平台支持**：此命令专为 Linux 设计，服务管理依赖 `systemctl`，日志功能依赖可读取的 Patroni 日志文件。

@@ -31,6 +31,9 @@ func TestOverviewPagesOnlyEmitHTMLOutput(t *testing.T) {
 		if strings.Contains(text, "print") {
 			t.Fatalf("cc overview front matter must not enable print output:\n%s", text)
 		}
+		if !strings.Contains(text, "已打包扩展目录") {
+			t.Fatalf("cc overview must identify the catalog as packaged:\n%s", text)
+		}
 	})
 
 	t.Run("io", func(t *testing.T) {
@@ -55,6 +58,9 @@ func TestOverviewPagesOnlyEmitHTMLOutput(t *testing.T) {
 		}
 		if strings.Contains(text, "print") {
 			t.Fatalf("io overview front matter must not enable print output:\n%s", text)
+		}
+		if !strings.Contains(text, "Packaged Extension Catalog") {
+			t.Fatalf("io overview must identify the catalog as packaged:\n%s", text)
 		}
 	})
 }

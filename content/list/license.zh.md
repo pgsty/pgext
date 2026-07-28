@@ -17,10 +17,10 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 248 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 103 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 88 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
-| {{< license "BSD-3-Clause" >}} | 33 | [许可证文本](#) | Unknown license |
+| {{< license "PostgreSQL" >}} | 249 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 107 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 89 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "BSD-3-Clause" >}} | 34 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 16 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 13 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
@@ -42,7 +42,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="248 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="249 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -132,6 +132,7 @@ weight: 300
 | 3730 | {{< alias "uint" "pguint" >}} | 无符号整型数据类型 |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | 原生128位无符号整型数据类型 |
 | 3750 | {{< alias "hashtypes" >}} | 包括SHA1，MD5在内的多种哈希数据类型 |
+| 3760 | {{< alias "postbis" >}} | 提供压缩的 DNA、RNA、氨基酸及比对序列类型，以及类型转换、运算符、索引和生物信息学函数。 |
 | 3770 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
 | 3790 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
 | 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
@@ -301,7 +302,7 @@ weight: 300
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="103 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="107 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -309,9 +310,13 @@ weight: 300
 |:---:|:---|:---|
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3六边形层级索引支持 |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | H3与PostGIS集成的扩展插件 |
+| 1700 | {{< alias "qdgc" >}} | 用纯 SQL 编码、解码、遍历和填充扩展四分之一度网格单元（QDGC）编码。 |
+| 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 为 QDGC 增加 PostGIS geometry/geography 绑定与区域到网格单元的填充能力。 |
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
 | 1950 | {{< alias "pgmnemo" >}} | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
+| 1960 | {{< alias "pgcontext" >}} | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
+| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 | 2140 | {{< alias "pg_bestmatch" >}} | 在数据库内生成BM25稀疏向量 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
@@ -415,7 +420,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="88 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="89 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -484,6 +489,7 @@ weight: 300
 | 4850 | {{< alias "convert" "pg_convert" >}} | 用于空间里程等的公英制转换函数 |
 | 5130 | {{< alias "pgdd" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
 | 5250 | {{< alias "pg_pathcheck" >}} | 校验 planner Path 树，诊断已释放或损坏的内存引用 |
+| 5280 | {{< alias "pg_column_tetris" >}} | 强制采用最优列对齐顺序，以减少 PostgreSQL 行数据中的填充浪费。 |
 | 5830 | {{< alias "pg_strict" >}} | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
 | 6010 | {{< alias "pg_tracing" >}} | PostgreSQL分布式Tracing |
 | 6270 | {{< alias "pg_track_optimizer" >}} | 跟踪规划器决策与实际执行的差距 |
@@ -514,7 +520,7 @@ weight: 300
 
 
 
-| {{< license "BSD-3-Clause" >}} | {{< badge content="33 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "BSD-3-Clause" >}} | {{< badge content="34 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
@@ -528,6 +534,7 @@ weight: 300
 | 2780 | {{< alias "pg_hint_plan" >}} | 添加强制指定执行计划的能力 |
 | 2930 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
 | 3090 | {{< alias "pljava" >}} | Java 程序语言 |
+| 3150 | {{< alias "pgwasm" >}} | 将沙箱化 WebAssembly 组件映射为强类型 PostgreSQL SQL 函数。 |
 | 3640 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
 | 3650 | {{< alias "pg_sphere" "pgsphere" >}} | 球面对象函数、运算符与索引支持 |
 | 4250 | {{< alias "pgqr" >}} | 从数据库中直接生成QR二维码 |

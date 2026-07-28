@@ -69,3 +69,31 @@ func TestGenerateLicenseListIsDeterministicForEqualRankLicenses(t *testing.T) {
 		previous = index
 	}
 }
+
+func TestGenerateCatalogContentDistinguishesUniverseFromPackaged(t *testing.T) {
+	stats := &CatalogStats{
+		ExtensionStats: []StatsRow{{Title: "ALL", Total: 562}},
+		PackageStats:   []StatsRow{{Title: "ALL", Total: 405}},
+	}
+	generator := &ExtensionGenerator{}
+
+	en := generator.generateCatalogContent(stats, nil, 2230, "en")
+	for _, want := range []string{
+		"packaged PostgreSQL extension catalog contains **562** extensions",
+		"full PGEXT.CLOUD directory contains **2230** extensions",
+	} {
+		if !strings.Contains(en, want) {
+			t.Fatalf("English catalog output is missing %q", want)
+		}
+	}
+
+	zh := generator.generateCatalogContent(stats, nil, 2230, "zh")
+	for _, want := range []string{
+		"已打包扩展目录包含 **562** 个扩展",
+		"总目录收录 **2230** 个扩展",
+	} {
+		if !strings.Contains(zh, want) {
+			t.Fatalf("Chinese catalog output is missing %q", want)
+		}
+	}
+}

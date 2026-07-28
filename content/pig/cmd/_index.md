@@ -11,12 +11,16 @@ The `pig` CLI provides a comprehensive toolkit for managing PostgreSQL installat
 - [**pig ext**](/pig/cmd/ext/): manage PostgreSQL extensions
 - [**pig build**](/pig/cmd/build/): build extensions from source
 - **pig install**: install packages with the native package manager and translate PostgreSQL aliases
-- [**pig sty**](/pig/cmd/sty/): manage Pigsty installation
+- [**pig sty**](/pig/cmd/sty/): manage Pigsty installation and Grafana dashboards
+- [**pig inventory**](/pig/cmd/inventory/): inspect, edit, validate, and exchange the Pigsty inventory (new in v1.6.0)
+- **pig do**: run Pigsty administration playbook tasks
+- **pig pe**: access pg_exporter metrics and configuration
 - [**pig pg**](/pig/cmd/pg/): manage local PostgreSQL servers
-- [**pig pt**](/pig/cmd/pt/): manage Patroni HA clusters
+- [**pig pt**](/pig/cmd/pt/): run patronictl transparently with service and config helpers
 - [**pig pb**](/pig/cmd/pb/): manage pgBackRest backup and restore
 - [**pig pitr**](/pig/cmd/pitr/): run the full PITR workflow
 - **pig context**: output an environment context snapshot for humans and agents
+- **pig status / update / version**: inspect environment status, upgrade pig, and print version information
 
 
 ## Overview
@@ -42,14 +46,15 @@ PostgreSQL Extension Manager
   repo        Manage Linux software repo (apt/dnf)
 
 Pigsty Management Commands
-  do          Run admin tasks
-  postgres    Manage local PostgreSQL server and databases (alias: pg)
-  patroni     Manage Patroni cluster with patronictl (alias: pt)
-  pgbackrest  Manage pgBackRest backup and restore (alias: pb)
-  pg_exporter Manage pg_exporter and metrics (alias: pe)
-  pitr        Orchestrated point-in-time recovery
-  sty         Manage Pigsty installation
   context     Show environment context snapshot
+  do          Run admin tasks
+  inventory   Inspect, edit, validate, check, and exchange Pigsty Inventory
+  patroni     Run patronictl with Pigsty service and config helpers (alias: pt)
+  pg_exporter Manage pg_exporter and metrics (alias: pe)
+  pgbackrest  Manage pgBackRest backup and restore (alias: pb)
+  pitr        Point-in-time recovery using pgBackRest
+  postgres    Manage local PostgreSQL server and databases (alias: pg)
+  sty         Manage Pigsty installation and controller services
 
 Additional Commands:
   completion  Generate shell completion scripts
@@ -99,10 +104,10 @@ pig ext info    pg_duckdb        # extension details
 pig ext status                   # show installed extensions
 pig ext add     pg_duckdb -y     # install extension
 pig ext rm      old_extension    # remove extension
-pig ext update  pg_duckdb        # update selected extension
+pig ext update                   # update extension
 pig ext scan                     # scan installed extensions
 pig ext import  pg_duckdb        # download for offline use
-pig ext link    polar            # link PG/PolarDB installation into PATH
+pig ext link    17               # link PG version into PATH
 pig ext reload                   # refresh extension catalog
 ```
 
@@ -114,10 +119,14 @@ Build PostgreSQL extensions from source. See [`pig build`](/pig/cmd/build/) for 
 ```bash
 # Environment setup
 pig build spec                   # initialize build specs
-pig build repo -m                # configure repositories with mirror/proxy
+pig build repo                   # configure repositories
+pig build repo --beta            # configure repositories and add PostgreSQL 19 beta repo
 pig build tool                   # install build tools
-pig build rust -m                # install Rust with mirror config
-pig build pgrx -b                # install PGRX and include beta PG auto-detect
+pig build tool --beta            # install build tools plus PG19 beta build packages
+pig build rust -y                # force reinstall Rust (default does not reinstall)
+pig build rust -m                # use China mirror mode and write Cargo mirror config
+pig build pgrx                   # install PGRX framework
+pig build pgrx -b                # include PostgreSQL 19 beta pg_config during auto-detection
 
 # Build extensions
 pig build pkg citus              # complete build pipeline = get + dep + ext
@@ -146,10 +155,58 @@ pig install pg_vector -y         # auto-confirm installation
 Install the Pigsty distribution. See [`pig sty`](/pig/cmd/sty/) for details.
 
 ```bash
-pig sty init -m                  # install Pigsty from mirror to ~/pigsty
+pig sty init                     # install Pigsty to ~/pigsty
 pig sty boot                     # install Ansible prerequisites
 pig sty conf                     # generate configuration
 pig sty deploy                   # run deployment playbook
+pig sty list                     # list available Pigsty releases
+pig sty get 4.4.0                # download a Pigsty release
+pig sty grafana list             # manage Grafana dashboards (info/list/boot/load/init/dump/clean/lang/style)
+```
+
+
+## pig inventory
+
+Inspect, edit, validate, check, and exchange the Pigsty inventory (`pigsty.yml`) with the
+CMDB. Root-level command group with alias `inv`; see [`pig inventory`](/pig/cmd/inventory/)
+for details. (New in v1.6.0)
+
+```bash
+pig inventory status             # inspect the active inventory source
+pig inventory list               # list inventory topology and value kinds
+pig inventory show               # show verbatim inventory YAML (may contain secrets)
+pig inventory edit               # edit the inventory (or one fragment) in $EDITOR
+pig inventory validate           # validate one complete static Pigsty inventory
+pig inventory check              # check inventory, controller, and target readiness
+pig inventory diff other.yml     # compare declarations without emitting values
+pig inventory cmdb check         # exchange with the PostgreSQL CMDB (experimental)
+```
+
+
+## pig do
+
+Run Pigsty administration tasks through the corresponding Ansible playbooks.
+
+```bash
+pig do pgsql-add  <cls> [ip...]       # add cluster or instances
+pig do pgsql-rm   <cls> [ip...]       # remove cluster or instances
+pig do pgsql-db   <cls> <dbname>      # create or update database
+pig do pgsql-user <cls> <username>    # create or update user
+pig do pgsql-ext  <cls> [ext...]      # install extensions
+pig do node-pkg   <sel> [pkg...]      # install node packages
+```
+
+
+## pig pe
+
+Access PostgreSQL monitoring metrics exposed by pg_exporter. The default endpoint is `127.0.0.1:9630`.
+
+```bash
+pig pe list                    # list available metric types
+pig pe get                     # get all pg_ prefixed metrics
+pig pe stat                    # show exporter statistics
+pig pe reload                  # reload pg_exporter configuration
+pig pe --host 127.0.0.1 -p 9630 get
 ```
 
 
@@ -186,14 +243,15 @@ pig pg log tail                  # tail logs in real time
 
 ## pig pt
 
-Manage Patroni HA clusters. See [`pig pt`](/pig/cmd/pt/) for details.
+Run `patronictl` transparently to manage Patroni HA clusters. See [`pig pt`](/pig/cmd/pt/) for details.
 
 ```bash
-pig pt list                      # list cluster members
-pig pt config show               # show cluster configuration
-pig pt config set ttl=60         # modify cluster configuration
-pig pt status                    # check service status
-pig pt log -f                    # tail logs in real time
+pig pt list pg-meta              # list cluster members (native passthrough)
+pig pt show-config pg-meta       # show cluster dynamic config (native passthrough)
+pig pt set ttl=60                # local sugar: update Patroni/PG settings
+pig pt restart pg-test --pending # apply pending restarts (native passthrough)
+pig pt status                    # local: combined service and cluster status
+pig pt log -f                    # local: tail logs in real time
 ```
 
 
@@ -222,4 +280,17 @@ pig pitr -t "2025-01-01 12:00:00+08"  # recover to a specific time
 pig pitr -I                      # recover to backup consistency point
 pig pitr -d --plan               # show execution plan without running
 pig pitr -d -y                   # skip confirmation for automation
+```
+
+
+## Helper Commands
+
+```bash
+pig status                       # show current environment status
+pig status -o json               # structured status output
+pig update                       # upgrade pig itself to the latest version
+pig update -m                    # upgrade using the pigsty.cc mirror
+pig update -v 1.6.0              # upgrade to a selected version
+pig version                      # show pig version information
+pig version -o json              # structured version output
 ```

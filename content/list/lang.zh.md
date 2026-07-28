@@ -14,9 +14,9 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 411 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 64 | 纯 SQL 扩展和函数 |
-| {{< language "Rust" >}} | 52 | 使用 pgrx 框架用 Rust 编写的扩展 |
+| {{< language "C" >}} | 412 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 67 | 纯 SQL 扩展和函数 |
+| {{< language "Rust" >}} | 55 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 15 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="411 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="412 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -193,6 +193,7 @@ weight: 200
 | 3730 | {{< alias "uint" "pguint" >}} | 无符号整型数据类型 |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | 原生128位无符号整型数据类型 |
 | 3750 | {{< alias "hashtypes" >}} | 包括SHA1，MD5在内的多种哈希数据类型 |
+| 3760 | {{< alias "postbis" >}} | 提供压缩的 DNA、RNA、氨基酸及比对序列类型，以及类型转换、运算符、索引和生物信息学函数。 |
 | 3770 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
 | 3790 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
 | 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
@@ -445,7 +446,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="64 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="67 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -465,6 +466,8 @@ weight: 200
 | 1605 | {{< alias "pgh_output_pt_br" "pghydro" >}} | PgHydro 巴西葡语输出扩展 |
 | 1606 | {{< alias "pgh_consistency" "pghydro" >}} | PgHydro Pfafstetter 一致性检查扩展 |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
+| 1700 | {{< alias "qdgc" >}} | 用纯 SQL 编码、解码、遍历和填充扩展四分之一度网格单元（QDGC）编码。 |
+| 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 为 QDGC 增加 PostGIS geometry/geography 绑定与区域到网格单元的填充能力。 |
 | 1950 | {{< alias "pgmnemo" >}} | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
 | 2500 | {{< alias "pg_fkpart" >}} | 按外键实用程序进行表分区的扩展 |
 | 2660 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
@@ -495,6 +498,7 @@ weight: 200
 | 5140 | {{< alias "pg_permissions" >}} | 查看对象权限并将其与期望状态进行比较 |
 | 5180 | {{< alias "pg_upless" >}} | 检测表上的无用UPDATE |
 | 5190 | {{< alias "pgcozy" >}} | 根据先前的pg_buffercache快照预热内存缓冲区 |
+| 5280 | {{< alias "pg_column_tetris" >}} | 强制采用最优列对齐顺序，以减少 PostgreSQL 行数据中的填充浪费。 |
 | 5850 | {{< alias "pg_drop_events" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
 | 5870 | {{< alias "pgelog" >}} | 通过伪自治事务实现扩展日志记录 |
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | 基于 pg_cron 的服务端 PostgreSQL 性能飞行记录器 |
@@ -518,7 +522,7 @@ weight: 200
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="52 个扩展" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="55 个扩展" color="gray" icon="cube" >}}
 
 使用 pgrx 框架用 Rust 编写的扩展
 
@@ -537,6 +541,8 @@ weight: 200
 | 1860 | {{< alias "pg_summarize" >}} | 使用LLM对文本字段进行总结 |
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | 1940 | {{< alias "pgml" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
+| 1960 | {{< alias "pgcontext" >}} | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
+| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 | 2100 | {{< alias "pg_search" >}} | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2140 | {{< alias "pg_bestmatch" >}} | 在数据库内生成BM25稀疏向量 |
 | 2150 | {{< alias "vchord_bm25" >}} | BM25排序算法 |
@@ -554,6 +560,7 @@ weight: 200
 | 2870 | {{< alias "pg_durable" >}} | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 3040 | {{< alias "plprql" >}} | 在PostgreSQL使用PRQL——管线式关系查询语言 |
+| 3150 | {{< alias "pgwasm" >}} | 将沙箱化 WebAssembly 组件映射为强类型 PostgreSQL SQL 函数。 |
 | 3590 | {{< alias "pglite_fusion" >}} | 在PG表中嵌入SQLite数据库作为数据类型 |
 | 4170 | {{< alias "pg_smtp_client" >}} | 使用SMTP从PostgreSQL内发送邮件的客户端扩展 |
 | 4290 | {{< alias "pg_render" >}} | 使用SQL渲染HTML页面 |

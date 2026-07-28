@@ -794,8 +794,8 @@ const I18N = {
   'about.title': ['About this catalog', '关于本目录'],
   'about.lede': ['PGEXT.CLOUD is the census of the PostgreSQL extension ecosystem — built from a live metadata pipeline, not a wiki.',
                  'PGEXT.CLOUD 是 PostgreSQL 扩展生态的全量普查——由实时元数据管线生成，而不是一个靠人肉维护的 wiki。'],
-  'about.p1': ['Every entry is drawn from the <code>pgext</code> catalog database: upstream repositories are crawled, RPM/DEB package indexes are parsed, GitHub activity is sampled, and 555 packaged extensions carry hand-curated bilingual documentation.',
-               '每个条目都来自 <code>pgext</code> 目录数据库：抓取上游仓库、解析 RPM/DEB 包索引、采样 GitHub 活跃度；555 个已打包扩展配有人工撰写的中英双语文档。'],
+  'about.p1': ['Every entry is drawn from the <code>pgext</code> catalog database: upstream repositories are crawled, RPM/DEB package indexes are parsed, and GitHub activity is sampled. This prototype snapshot contains <b>{all}</b> entries, including <b>{avail}</b> packaged extensions.',
+               '每个条目都来自 <code>pgext</code> 目录数据库：抓取上游仓库、解析 RPM/DEB 包索引并采样 GitHub 活跃度。该原型快照包含 <b>{all}</b> 个条目，其中 <b>{avail}</b> 个为已打包扩展。'],
   'about.p2': ['This page is a static prototype rendered from a database snapshot. The production plan replaces it with <code>pgext server</code> — the same catalog, served live.',
                '本页是由数据库快照渲染的静态原型。正式版将由 <code>pgext server</code> 驱动——同一份目录，实时供给。'],
   'about.roadmap': ['Roadmap', '路线图'],
@@ -803,7 +803,7 @@ const I18N = {
   'about.r2': ['Galaxy — the dependency graph as a navigable star map', 'Galaxy——把依赖关系画成可漫游的星图'],
   'about.r3': ['Live search API & dynamic pages via pgext server', 'pgext server 提供实时搜索 API 与动态页面'],
   'about.sources': ['Data sources', '数据来源'],
-  'about.s1': ['pgext.universe — the curated catalog of 1,633 extensions', 'pgext.universe——1,633 个扩展的策展目录'],
+  'about.s1': ['pgext.universe — the curated catalog of {all} extensions', 'pgext.universe——{all} 个扩展的策展目录'],
   'about.s2': ['PGDG & Pigsty repositories — RPM / DEB package metadata', 'PGDG 与 Pigsty 仓库——RPM / DEB 包元数据'],
   'about.s3': ['GitHub — stars, forks, freshness signals', 'GitHub——星标、分支与活跃度信号'],
   'about.colophon': ['Prototype snapshot generated {date}. Twelve showcase extensions carry full bilingual docs; the rest render live from catalog metadata.',
@@ -1464,9 +1464,9 @@ function aboutHTML() {
     + '<header class="page-head"><p class="eyebrow">pgext.cloud</p>'
     + '<h1>' + t('about.title') + '</h1><p class="lede">' + t('about.lede') + '</p></header>'
     + '<div class="about-cols">'
-    + '<div><h3>' + (LANG === 'zh' ? '这是什么' : 'What this is') + '</h3><p>' + t('about.p1') + '</p><p>' + t('about.p2') + '</p></div>'
+    + '<div><h3>' + (LANG === 'zh' ? '这是什么' : 'What this is') + '</h3><p>' + t('about.p1', { all: fmtInt(N_ALL), avail: fmtInt(N_AVAIL) }) + '</p><p>' + t('about.p2') + '</p></div>'
     + '<div><h3>' + t('about.sources') + '</h3><ul class="roadmap">'
-    + '<li><span class="tag">catalog</span>' + t('about.s1') + '</li>'
+    + '<li><span class="tag">catalog</span>' + t('about.s1', { all: fmtInt(N_ALL) }) + '</li>'
     + '<li><span class="tag">packages</span>' + t('about.s2') + '</li>'
     + '<li><span class="tag">github</span>' + t('about.s3') + '</li></ul></div>'
     + '<div><h3>' + t('about.roadmap') + '</h3><ul class="roadmap">'

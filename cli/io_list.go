@@ -1146,10 +1146,10 @@ func (g *IOListGenerator) GenerateOverviewPage(outputPath string) error {
 	// YAML Front Matter
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString(fmt.Sprintf(`---
-title: Pigsty Extension Catalog
-linkTitle: Pigsty Extension Catalog
+title: Pigsty Packaged Extension Catalog
+linkTitle: Pigsty Packaged Extension Catalog
 description: >
-  Extensions are the soul of PostgreSQL. Pigsty builds, collects, and integrates %d PG ecosystem extensions for out-of-the-box use.
+  Extensions are the soul of PostgreSQL. Pigsty builds, packages, collects, and integrates %d PG ecosystem extensions for out-of-the-box use.
 weight: 20
 %s
 ---
@@ -1161,7 +1161,7 @@ weight: 20
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString(fmt.Sprintf(`Pigsty provides the following three pieces of infrastructure to help users harness the collaborative superpowers of the PostgreSQL extension ecosystem:
 
-- [**Extension Catalog**](/ext/list): Browse detailed information, usage, metadata, download links and docs for [**%d**](/ext/list) extensions
+- [**Packaged Extension Catalog**](/ext/list): Browse detailed information, usage, metadata, download links and docs for [**%d packaged extensions**](/ext/list)
 - [**Extension Repository**](/docs/repo/pgsql): Get pre-built RPM/DEB binary packages, available on [**%d Linux systems**](/ext/os)
 - [**Package Manager**](/docs/pig): Use the [`+"`"+`pig`+"`"+`](/docs/pig) CLI tool to abstract away OS and architecture differences
 
@@ -1179,7 +1179,7 @@ weight: 20
 	// Key Features
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString("--------\n\n## Key Features\n\n")
-	b.WriteString(fmt.Sprintf("- **Quantity**: Unparalleled extension count: **%d** available extensions, the most in the PG extension ecosystem\n", totalExts))
+	b.WriteString(fmt.Sprintf("- **Quantity**: Unparalleled extension count: **%d packaged extensions**, the most in the PG extension ecosystem\n", totalExts))
 	b.WriteString("- **Quality**: Native Linux RPM/DEB packages, fully compatible with PGDG packaging standards\n")
 	b.WriteString("- **Ease of Use**: Provides the [**`pig`**](/docs/pig) package manager, abstracting away OS and architecture differences for out-of-the-box use\n")
 	b.WriteString("- **Compatibility**: Extensions are fully compatible with PGDG packaging standards, seamlessly usable with PGDG repositories\n")

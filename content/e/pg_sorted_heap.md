@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "storage_engine" >}} {{< ext "pg_ivm" >}} {{< ext "pgvector" >}} {{< ext "vchord" >}} {{< ext "pg_search" >}} |
+|   **See Also**    | {{< ext "storage_engine" >}} {{< ext "pg_ivm" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "pg_search" >}} |
 
 > [!Note] sorted_hnsw.shared_cache requires shared_preload_libraries=pg_sorted_heap.
 

@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (555 ext in 455 pkg) categorized into 16 categories.
+The 562 packaged PostgreSQL extensions (in 460 package families) are organized into 16 categories.
 
 
 
@@ -23,7 +23,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | temporal tables |
-| 1050 | {{< alias "emaj" >}} | 4.7.1 | Enables fine-grained write logging and time travel on subsets of the database. |
+| 1050 | {{< alias "emaj" >}} | 5.0.0 | Enables fine-grained write logging and time travel on subsets of the database. |
 | 1060 | {{< alias "table_version" >}} | 1.11.1 | PostgreSQL table versioning extension |
 | 1070 | {{< alias "pg_cron" >}} | 1.6.7 | Job scheduler for PostgreSQL |
 | 1080 | {{< alias "pg_task" >}} | 2.1.29 | execute any sql command at any specific time at background |
@@ -69,6 +69,8 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | 1.3.0 | MobilityDB random data generator functions |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 0.3.0 | Fast lookup timezone name by GPS coordinates |
 | 1690 | {{< alias "earthdistance" >}} | 1.2 | calculate great-circle distances on the surface of the Earth |
+| 1700 | {{< alias "qdgc" >}} | 0.1.0 | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
+| 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 0.1.0 | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
 
 ## RAG
 
@@ -88,7 +90,9 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 1.1 | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
 | 1930 | {{< alias "pg4ml" >}} | 2.0 | Machine learning framework for PostgreSQL |
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | Run AL/ML workloads with SQL interface |
-| 1950 | {{< alias "pgmnemo" >}} | 0.13.0 | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| 1950 | {{< alias "pgmnemo" >}} | 0.14.2 | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| 1960 | {{< alias "pgcontext" >}} | 0.2.0 | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
+| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 
 ## FTS
 
@@ -166,7 +170,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2600 | {{< alias "age" >}} | 1.8.0 | AGE graph database extension |
 | 2610 | {{< alias "pg_liquid" >}} | 0.1.7 | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | 1.0.0 | Sparse linear algebra and graph extension for PostgreSQL 18 |
-| 2630 | {{< alias "graph" "pggraph" >}} | 0.1.8 | Graph database capabilities for PostgreSQL |
+| 2630 | {{< alias "graph" "pggraph" >}} | 1.0.0 | Graph database capabilities for PostgreSQL |
 | 2640 | {{< alias "pgrdf" >}} | 0.6.20 | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2650 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
 | 2660 | {{< alias "pgmq" >}} | 1.12.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
@@ -252,7 +256,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.1 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.10.2 | extended check for plpgsql functions |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.10.3 | extended check for plpgsql functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |
@@ -261,6 +265,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3120 | {{< alias "pg_mockable" >}} | 1.1.0 | Create mockable wrappers for PostgreSQL functions in tests |
 | 3130 | {{< alias "pgsqlmock" >}} | 1.0.1 | Mocking and faking helpers for PostgreSQL unit tests |
 | 3140 | {{< alias "plx" >}} | 1.3.1 | Transpile multiple procedural dialects to PL/pgSQL |
+| 3150 | {{< alias "pgwasm" >}} | 0.1.0 | Run sandboxed WebAssembly components as strongly typed PostgreSQL SQL functions. |
 | 3200 | {{< alias "pgtap" >}} | 1.3.4 | Unit testing for PostgreSQL |
 | 3210 | {{< alias "faker" >}} | 0.5.3 | Wrapper for the Faker Python library |
 | 3220 | {{< alias "dbt2" >}} | 0.61.7 | OSDL-DBT-2 test kit |
@@ -303,12 +308,13 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n toolbox |
 | 3680 | {{< alias "currency" "pg_currency" >}} | 0.0.3 | Custom PostgreSQL currency type in 1Byte |
 | 3690 | {{< alias "collection" "pgcollection" >}} | 2.0.0 | Memory optimized data type to be used inside of plpglsql func |
-| 3700 | {{< alias "pgmp" >}} | 1.0.5 | Multiple Precision Arithmetic extension |
+| 3700 | {{< alias "pgmp" >}} | 1.0.6 | Multiple Precision Arithmetic extension |
 | 3710 | {{< alias "numeral" >}} | 1.3 | numeral datatypes extension |
 | 3720 | {{< alias "pg_rational" >}} | 0.0.2 | bigint fractions |
 | 3730 | {{< alias "uint" "pguint" >}} | 1.20250815 | unsigned integer types |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | 1.2.0 | Native uint128 type |
 | 3750 | {{< alias "hashtypes" >}} | 0.1.5 | sha1, md5 and other data types for PostgreSQL |
+| 3760 | {{< alias "postbis" >}} | 1.0 | Adds compressed DNA, RNA, amino-acid, and aligned sequence types with casts, operators, indexes, and bioinformatics functions. |
 | 3770 | {{< alias "ip4r" >}} | 2.4.3 | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | 3790 | {{< alias "uri" "pg_uri" >}} | 1.20251029 | URI Data type for PostgreSQL |
 | 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email address type for PostgreSQL |
@@ -469,6 +475,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5250 | {{< alias "pg_pathcheck" >}} | 0.9.1 | Validate planner Path trees for freed or corrupt memory |
 | 5260 | {{< alias "pgdisablelogerror" >}} | 1.0 | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 | 5270 | {{< alias "online_advisor" >}} | 1.0 | Suggest missing indexes and extended statistics online |
+| 5280 | {{< alias "pg_column_tetris" >}} | 0.1.0 | Enforce optimal column alignment to minimize row padding |
 | 5810 | {{< alias "pg_savior" >}} | 0.1.0 | Postgres extension to save OOPS mistakes |
 | 5820 | {{< alias "safeupdate" >}} | 1.5 | Require criteria for UPDATE and DELETE |
 | 5830 | {{< alias "pg_strict" >}} | 1.0.5 | Prevent dangerous UPDATE and DELETE without WHERE clause |
@@ -601,14 +608,14 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8660 | {{< alias "etcd_fdw" >}} | 0.0.1 | Foreign data wrapper for etcd |
 | 8670 | {{< alias "informix_fdw" >}} | 0.6.3 | Foreign data wrapper for Informix access |
-| 8680 | {{< alias "nominatim_fdw" >}} | 2.0.0 | Nominatim Foreign Data Wrapper for PostgreSQL |
+| 8680 | {{< alias "nominatim_fdw" >}} | 2.1.0 | Nominatim Foreign Data Wrapper for PostgreSQL |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | foreign data wrapper for MongoDB access |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | Foreign data wrapper for querying a Redis server |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | Send redis pub/sub messages to Redis from PostgreSQL Directly |
 | 8730 | {{< alias "kafka_fdw" >}} | 0.0.3 | kafka Foreign Data Wrapper for CSV formatted messages |
 | 8740 | {{< alias "hdfs_fdw" >}} | 2.0.5 | foreign-data wrapper for remote hdfs servers |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.2 | Foreign data wrapper for Firebird |
-| 8760 | {{< alias "rdf_fdw" >}} | 2.6.0 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| 8760 | {{< alias "rdf_fdw" >}} | 2.7.0 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | 1.4 | foreign-data wrapper for Postgres log file access |
 | 8970 | {{< alias "dblink" >}} | 1.2 | connect to other PostgreSQL databases from within a database |

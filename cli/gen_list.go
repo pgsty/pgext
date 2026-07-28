@@ -159,9 +159,9 @@ func (g *ExtensionGenerator) generateExtensionListContent(stats *CatalogStats, c
 
 	// Full extension list
 	if isZh {
-		b.WriteString(fmt.Sprintf("## 扩展列表\n\n共有 %d 个可用的 PostgreSQL 扩展：\n\n", totalExts))
+		b.WriteString(fmt.Sprintf("## 扩展列表\n\n共有 %d 个已打包的 PostgreSQL 扩展：\n\n", totalExts))
 	} else {
-		b.WriteString(fmt.Sprintf("## Extensions\n\nThere are %d available PostgreSQL extensions:\n\n", totalExts))
+		b.WriteString(fmt.Sprintf("## Extensions\n\nThere are %d packaged PostgreSQL extensions:\n\n", totalExts))
 	}
 	b.WriteString(g.generateFullExtensionTable(extensions, isZh))
 
@@ -197,9 +197,9 @@ func (g *ExtensionGenerator) generateExtensionIndexContent(extensions []*Extensi
 	extCount := len(extensions)
 
 	if isZh {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"扩展列表\"\nbreadcrumbs: false\nexcludeSearch: true\ncomments: false\nweight: 900\n---\n\n共有 %d 个可用的 PostgreSQL 扩展：\n\n", extCount))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"扩展列表\"\nbreadcrumbs: false\nexcludeSearch: true\ncomments: false\nweight: 900\n---\n\n共有 %d 个已打包的 PostgreSQL 扩展：\n\n", extCount))
 	} else {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"Extensions\"\nbreadcrumbs: false\nexcludeSearch: true\ncomments: false\nweight: 900\n---\n\nThere are %d available PostgreSQL extensions:\n\n", extCount))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"Extensions\"\nbreadcrumbs: false\nexcludeSearch: true\ncomments: false\nweight: 900\n---\n\nThere are %d packaged PostgreSQL extensions:\n\n", extCount))
 	}
 
 	b.WriteString(g.generateExtensionIndexTable(extensions, isZh))
@@ -465,16 +465,21 @@ func (g *ExtensionGenerator) GenerateCatalogPage(locale, outputPath string) erro
 		return fmt.Errorf("failed to fetch catalog stats: %w", err)
 	}
 
+	universeTotal, err := g.fetchUniverseTotal()
+	if err != nil {
+		return fmt.Errorf("failed to fetch universe total: %w", err)
+	}
+
 	categories, err := g.fetchCategoriesWithExtensions()
 	if err != nil {
 		return fmt.Errorf("failed to fetch categories: %w", err)
 	}
 
-	content := g.generateCatalogContent(stats, categories, locale)
+	content := g.generateCatalogContent(stats, categories, universeTotal, locale)
 	return os.WriteFile(outputPath, []byte(content), 0644)
 }
 
-func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categories []CategoryExtensions, locale string) string {
+func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categories []CategoryExtensions, universeTotal int, locale string) string {
 	isZh := locale == "zh"
 	var b strings.Builder
 
@@ -489,11 +494,11 @@ func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categor
 
 	if isZh {
 		b.WriteString("---\ntitle: \"扩展目录\"\nweight: 200\nexcludeSearch: true\ncomments: false\n---\n\n")
-		b.WriteString(fmt.Sprintf("PostgreSQL 扩展目录包含了 **%d** 个扩展和 **%d** 个包。\n\n", totalExts, totalPkgs))
+		b.WriteString(fmt.Sprintf("PostgreSQL 已打包扩展目录包含 **%d** 个扩展和 **%d** 个软件包。\nPGEXT.CLOUD 总目录收录 **%d** 个扩展。\n\n", totalExts, totalPkgs, universeTotal))
 		b.WriteString("## 扩展统计\n\n")
 	} else {
 		b.WriteString("---\ntitle: \"Catalog\"\nweight: 200\nexcludeSearch: true\ncomments: false\n---\n\n")
-		b.WriteString(fmt.Sprintf("The PostgreSQL Extension Catalog contains **%d** extensions and **%d** packages.\n\n", totalExts, totalPkgs))
+		b.WriteString(fmt.Sprintf("The packaged PostgreSQL extension catalog contains **%d** extensions and **%d** packages.\nThe full PGEXT.CLOUD directory contains **%d** extensions.\n\n", totalExts, totalPkgs, universeTotal))
 		b.WriteString("## Extension Stat\n\n")
 	}
 
@@ -541,6 +546,12 @@ func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categor
 	return b.String()
 }
 
+func (g *ExtensionGenerator) fetchUniverseTotal() (int, error) {
+	var total int
+	err := g.DB.QueryRow(context.Background(), `SELECT count(*) FROM pgext.universe`).Scan(&total)
+	return total, err
+}
+
 //============================================================================
 // Category List Generation
 //============================================================================
@@ -558,9 +569,9 @@ func (g *ListGenerator) GenerateCategoryList(locale, outputPath string) error {
 	var b strings.Builder
 
 	if isZh {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"按分类\"\nweight: 100\n---\n\nPostgreSQL 扩展（%d ext / %d pkg）归属 %d 个分类。\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"按分类\"\nweight: 100\n---\n\n%d 个已打包 PostgreSQL 扩展（归属 %d 个包族）划分为 %d 个分类。\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
 	} else {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"By Category\"\nweight: 100\n---\n\nPostgreSQL Extensions (%d ext in %d pkg) categorized into %d categories.\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"By Category\"\nweight: 100\n---\n\nThe %d packaged PostgreSQL extensions (in %d package families) are organized into %d categories.\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
 	}
 
 	b.WriteString(`

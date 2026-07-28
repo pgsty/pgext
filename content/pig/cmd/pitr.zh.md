@@ -359,7 +359,7 @@ pig pb create
 - `pig pitr` 调用 pgBackRest restore，并在本地处理 Patroni/PostgreSQL 停止与可选启动。
 - `pig pitr` 不是集群恢复总控，不负责 Patroni failover、rejoin、VIP 或应用流量切换。
 - 需要底层 restore 语义或脚本细粒度控制时，使用 [`pig pb restore`](/zh/pig/cmd/pb/#pb-restore/)。
-- 需要手工切换 Patroni 集群时，使用 [`pig pt switchover`](/zh/pig/cmd/pt/#pt-switchover/) 或 [`pig pt failover`](/zh/pig/cmd/pt/#pt-failover/)。
+- 需要手工切换 Patroni 集群时，使用 [`pig pt switchover CLUSTER`](/zh/pig/cmd/pt/) 或 [`pig pt failover CLUSTER --candidate MEMBER`](/zh/pig/cmd/pt/)（v1.6.0 起为 patronictl 原生透传，集群名必填）。
 
 **权限执行：**
 

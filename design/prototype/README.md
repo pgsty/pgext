@@ -52,7 +52,7 @@ open design/prototype/index.html        # 直接本地打开即可，无需构�
 - 数据层自带 `en_desc`/`zh_desc`；分类中英文描述来自 `pgext.category`。
 - 12 个演示扩展内置 stub/stub-zh 的完整双语用法文档（postgis、pgrouting、ogr_fdw、
   timescaledb、pg_cron、pg_partman、vector、citus、pg_search、pgmq、age、pg_stat_statements），
-  其余扩展显示占位说明——正式版 555 篇全量供给。
+  其余扩展显示占位说明——生产版的已打包扩展数量由实时目录提供。
 
 ## 数据管线
 

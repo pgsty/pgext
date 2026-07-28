@@ -6,6 +6,41 @@ breadcrumbs: false
 ---
 
 
+## v1.6.0
+
+Pig `v1.6.0` is a major release: `pig pt` becomes a transparent `patronictl` launcher, the new root-level `pig inventory` command group brings lossless editing and validation of `pigsty.yml` (with an experimental PostgreSQL CMDB bridge), `pig sty grafana` adds native Grafana dashboard management, and the packaged extension catalog grows to 562.
+
+**Highlights**
+
+- `pig pt` is rewritten as a native `patronictl` passthrough: all cluster commands (`list`, `restart`, `switchover`, `failover`, `edit-config`, …) forward directly with native flags, prompts, output, and exit codes, so new patronictl features work without waiting for a pig release. Local helpers `status`, `log`, `set`, and `service/svc` remain, with new `-c/--config-file`, `-d/--dcs-url`, `-k/--insecure` options and a `pig pt -- …` escape hatch.
+- New root-level `pig inventory` command group (alias `inv`): `status` / `list` / `show` / `edit` / `validate` / `check` / `diff` — a lossless YAML engine that preserves comments, formatting, key order, and anchors byte-for-byte; `edit` validates before writing and writes atomically, so invalid YAML can never reach disk.
+- New **experimental** `pig inventory cmdb` subcommands (`check` / `init` / `load` / `dump` / `enable` / `disable`) exchange the inventory with the Pigsty CMDB in PostgreSQL over a native driver, with bounded timeouts and digest-pinned confirmation for destructive operations.
+- New `pig sty grafana` (alias `gf`) manages Grafana dashboards natively over HTTP: `info` / `list` / `boot` / `load` / `init` / `dump` / `clean` / `lang` / `style`. The `pig sty` surface is simplified: `sty edit` / `validate` / `check` / `cmdb` / `dashboard` / `release` are removed in favor of `pig inventory`, `pig sty grafana`, and `pig sty list` / `get`.
+- Reliability hardening: repo / catalog / download writes are atomic (no more truncated files on interrupt); structured `-o json|yaml` keeps stdout as a pure result envelope with wrapped-tool output on stderr; finer exit codes (usage errors → 2, missing `--yes` confirmation → 7); Ansible list variables are JSON-encoded.
+- Repository refresh: MySQL repos upgraded to 8.4 LTS, new Percona XtraBackup (`pxb84`) and MySQL Tools repos, Kubernetes v1.36, LLVM apt coverage for Debian/Ubuntu 26, Percona TDE sourced directly from repo.percona.com, `wiltondb` repo removed.
+- Toolchain: Go 1.26.5, new native PostgreSQL driver (pgx v5), embedded Pigsty version `4.4.0`.
+
+**Extension Catalog**
+
+- Packaged extensions: **531 -> 562**; the broader PGEXT.CLOUD directory contains **2,230** entries.
+- 33 new extensions, including the `pg_lake` family (`pg_lake`, `pg_lake_table`, `pg_lake_engine`, `pg_lake_iceberg`, `pg_lake_copy`), `pg_jieba`, `pg_cjk_parser`, `pg_fts`, `pgmonitor`, `pgmemento`, `pg_tiktoken_c`, `online_advisor`, `pgsqlmock`, and `plx`.
+- 2 removed: `pg_analytics`, `spat`; 58 version refreshes, including `vector 0.8.5`, `timescaledb 2.28.3`, `pg_search 0.24.3`, `pg_tde 2.2.1`, and `powa 5.2.0`.
+- Package aliases synced with Pigsty: `kafka` is renamed to `kafka-stack`; the Debian/Ubuntu `postgresql` alias now maps to `postgresql-$v` only (use `pgsql` / `pgsql-full` for the full dev set).
+
+**Compatibility Notes**
+
+- ⚠ `pig pt failover <name>`: the positional argument is now the **cluster**, not the promotion candidate — use `pig pt failover CLUSTER --candidate MEMBER` and review any failover automation before upgrading.
+- `pig pt` positionals are native cluster-first (`restart CLUSTER [MEMBER]`); forwarded commands return native patronictl exit codes, own their confirmation prompts (`-y` no longer gates them), and no longer support `-o json` (use native `--format json`). `pig pt config` is replaced by `pig pt set K=V` and native `show-config` / `edit-config`.
+- In structured output mode, wrapped-tool output moves to stderr and stdout carries only the JSON/YAML envelope — update scripts that parsed mixed output.
+- `pig inventory edit` tightens the inventory file mode to 0600 after a successful edit, since the file may contain credentials.
+
+**Checksums**
+
+<!-- to be added upon release -->
+
+Release: https://github.com/pgsty/pig/releases/tag/v1.6.0
+
+
 ## v1.5.1
 
 Pig `v1.5.1` updates PG kernel forks to the latest version.

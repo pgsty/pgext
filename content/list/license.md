@@ -17,10 +17,10 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 248 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 103 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 88 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
-| {{< license "BSD-3-Clause" >}} | 33 | [License Text](#) | Unknown license |
+| {{< license "PostgreSQL" >}} | 249 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 107 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 89 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 16 | [License Text](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 13 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
@@ -42,7 +42,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="248 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="249 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -132,6 +132,7 @@ PostgreSQL extension categorized by license.
 | 3730 | {{< alias "uint" "pguint" >}} | unsigned integer types |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | Native uint128 type |
 | 3750 | {{< alias "hashtypes" >}} | sha1, md5 and other data types for PostgreSQL |
+| 3760 | {{< alias "postbis" >}} | Adds compressed DNA, RNA, amino-acid, and aligned sequence types with casts, operators, indexes, and bioinformatics functions. |
 | 3770 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | 3790 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
 | 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
@@ -301,7 +302,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="103 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="107 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -309,9 +310,13 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3 bindings for PostgreSQL |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | H3 PostGIS integration |
+| 1700 | {{< alias "qdgc" >}} | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
+| 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
 | 1950 | {{< alias "pgmnemo" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| 1960 | {{< alias "pgcontext" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
+| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL extension for BM25-family lexical retrieval |
@@ -415,7 +420,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="88 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="89 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -484,6 +489,7 @@ PostgreSQL extension categorized by license.
 | 4850 | {{< alias "convert" "pg_convert" >}} | conversion functions for spatial, routing and other specialized uses |
 | 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
 | 5250 | {{< alias "pg_pathcheck" >}} | Validate planner Path trees for freed or corrupt memory |
+| 5280 | {{< alias "pg_column_tetris" >}} | Enforce optimal column alignment to minimize row padding |
 | 5830 | {{< alias "pg_strict" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
 | 6010 | {{< alias "pg_tracing" >}} | Distributed Tracing for PostgreSQL |
 | 6270 | {{< alias "pg_track_optimizer" >}} | Track planning decisions in comparison with execution reality |
@@ -514,7 +520,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "BSD-3-Clause" >}} | {{< badge content="33 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "BSD-3-Clause" >}} | {{< badge content="34 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
 
@@ -528,6 +534,7 @@ PostgreSQL extension categorized by license.
 | 2780 | {{< alias "pg_hint_plan" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2930 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3090 | {{< alias "pljava" >}} | PL/Java procedural language |
+| 3150 | {{< alias "pgwasm" >}} | Run sandboxed WebAssembly components as strongly typed PostgreSQL SQL functions. |
 | 3640 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
 | 3650 | {{< alias "pg_sphere" "pgsphere" >}} | spherical objects with useful functions, operators and index support |
 | 4250 | {{< alias "pgqr" >}} | QR Code generator from PostgreSQL |

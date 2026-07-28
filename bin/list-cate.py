@@ -97,10 +97,10 @@ def generate_frontmatter(locale: str, cat_count: int, ext_count: int, pkg_count:
     """Generate frontmatter"""
     if locale == "en":
         title = "By Category"
-        summary = f"PostgreSQL Extensions ({ext_count} ext in {pkg_count} pkg) categorized into {cat_count} categories."
+        summary = f"The {ext_count} packaged PostgreSQL extensions (in {pkg_count} package families) are organized into {cat_count} categories."
     else:  # zh
         title = "按分类"
-        summary = f"PostgreSQL 扩展（{ext_count} ext / {pkg_count} pkg）归属 {cat_count} 个分类。"
+        summary = f"{ext_count} 个已打包 PostgreSQL 扩展（归属 {pkg_count} 个包族）划分为 {cat_count} 个分类。"
 
     return f"""---
 title: "{title}"

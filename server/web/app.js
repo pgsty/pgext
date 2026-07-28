@@ -3133,7 +3133,7 @@ function rerenderPkgInstall(pkg) {
 /* ---------------- nav quick search ----------------
    Instant name completion over the in-memory catalog: score by how close the
    query sits to the extension (or package) name, nudge by popularity, take
-   the top handful. No engine, just one pass over ~1,600 records. */
+   the top handful. No engine, just one pass over 2,230 records. */
 function navSuggest(query) {
   const w = query.trim().toLowerCase();
   if (!w) return [];

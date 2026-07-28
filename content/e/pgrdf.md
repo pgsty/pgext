@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgrdf` |
-|   **See Also**    | {{< ext "rdf_fdw" >}} {{< ext "pg_sparql" >}} {{< ext "rdkit" >}} |
+|   **See Also**    | {{< ext "rdf_fdw" >}} {{< ext "sparql" >}} {{< ext "rdkit" >}} |
 
 > [!Note] Production hook/cache deployments should preload pgrdf.
 
