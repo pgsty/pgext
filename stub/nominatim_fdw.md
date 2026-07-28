@@ -2,9 +2,9 @@
 
 Sources:
 
-- [nominatim_fdw v2.0 README](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.0/README.md)
-- [nominatim_fdw v2.0 changelog](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.0/CHANGELOG.md)
-- [Extension control file](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.0/nominatim_fdw.control)
+- [nominatim_fdw v2.1 README](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.1/README.md)
+- [nominatim_fdw v2.1 changelog](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.1/CHANGELOG.md)
+- [nominatim_fdw v2.1 control file](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.1/nominatim_fdw.control)
 - [Official Nominatim API overview](https://nominatim.org/release-docs/develop/api/Overview/)
 - [OpenStreetMap Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/)
 
@@ -27,6 +27,16 @@ CREATE SERVER osm
 ```
 
 The public OpenStreetMap endpoint has an official usage policy. For sustained or bulk workloads, use an authorized provider or operate your own Nominatim service, identify the application as required, and respect rate limits.
+
+Version 2.1 supports HTTP Basic authentication through a per-user mapping:
+
+```sql
+CREATE USER MAPPING FOR app_user
+SERVER osm
+OPTIONS (user 'remote_user', password 'secret');
+```
+
+Keep endpoint and proxy credentials in `USER MAPPING`, where PostgreSQL applies its credential-visibility rules, rather than in foreign-server options.
 
 ### Core Workflow
 
@@ -69,8 +79,16 @@ FROM nominatim_lookup(
 
 All endpoint functions are `STRICT`: an explicit SQL `NULL` argument returns no rows without sending a request. In 2.0 they are correctly declared `VOLATILE`, because responses are remote and can change.
 
-### Version 2.0 Changes and Caveats
+### Version 2.1 Changes and Caveats
 
-Version 2.0 validates reverse coordinates, adds `email`, `polygon_threshold`, and `entrances`, exposes dependency settings, and fixes JSON escaping for returned detail fields. It also has user-visible compatibility changes: reverse output uses `display_name`; `addressparts` becomes `addressdetails`; address details default to true for reverse and lookup; and version output is shorter. Review result-column consumers before upgrading from 1.3.
+Version 2.0 validates reverse coordinates, adds `email`, `polygon_threshold`, and `entrances`, exposes dependency settings, and fixes JSON escaping for returned detail fields. It also has user-visible compatibility changes: reverse output uses `display_name`; `addressparts` becomes `addressdetails`; address details default to true for reverse and lookup; and version output is shorter.
+
+After installing the 2.1 package files, upgrade existing databases:
+
+```sql
+ALTER EXTENSION nominatim_fdw UPDATE TO '2.1';
+```
+
+Version 2.1 adds Basic-auth mapping and initializes libcurl once per PostgreSQL backend instead of relying on implicit per-request initialization. The libcurl fix requires no new SQL or preload setting.
 
 Each call performs network I/O in the database statement. Use finite timeouts, constrain who can create or alter servers, and avoid invoking a public service once per row in a large query. The upstream build requires PostgreSQL 10 or newer, libxml2 2.5 or newer, and libcurl 7.74 or newer.

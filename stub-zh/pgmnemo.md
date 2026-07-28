@@ -2,15 +2,16 @@
 
 来源：
 
-- [pgmnemo v0.13.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/README.md)
-- [pgmnemo v0.13.0 使用指南](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/docs/USAGE.md)
-- [pgmnemo v0.13.0 SQL 参考](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.13.0 发行说明](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.13.0)
-- [pgmnemo v0.13.0 控制文件](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/extension/pgmnemo.control)
+- [pgmnemo v0.14.2 README](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/README.md)
+- [pgmnemo v0.14.2 使用指南](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/docs/USAGE.md)
+- [pgmnemo v0.14.2 SQL 参考](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.14.2 变更日志](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/CHANGELOG.md)
+- [pgmnemo v0.14.2 发行说明](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.14.2)
+- [pgmnemo v0.14.2 控制文件](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/extension/pgmnemo.control)
 
 pgmnemo 将代理内存存储在 PostgreSQL 中，并通过向量、BM25 样式的文本、图、元数据、时间序列、来源和置信度结果信号检索。它安装到 pgmnemo 模式中，需要 vector 扩展，并且当前 SQL API 需要 1024 维嵌入。
 
-v0.13.0 版本默认将置信度转换为贝叶斯后验概率，记录召回的记忆是否实际被使用，并添加了最小置信度过滤器以进行召回。
+v0.14.2 保留 0.13 的贝叶斯置信度与结果使用反馈能力，并增加确定性内容分类、默认 dry-run 的 corpus 重分类、可逆的近重复合并，以及 hybrid HNSW recall 的 planner 修复。
 
 ### 安装
 
@@ -20,7 +21,7 @@ v0.13.0 版本默认将置信度转换为贝叶斯后验概率，记录召回的
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-v0.13.0 控制文件在所需 vector 扩展可用时将 pgmnemo 标记为受信任且非超级用户可安装。
+v0.14.2 控制文件在所需 vector 扩展可用时将 pgmnemo 标记为受信任且非超级用户可安装。
 
 ### 载入一课
 
@@ -98,7 +99,26 @@ v0.13.0 控制文件在所需 vector 扩展可用时将 pgmnemo 标记为受信�
 
 ### 注意事项
 
+0.14 增加了 corpus 维护操作，默认均为只读：
+
+```sql
+SELECT * FROM pgmnemo.reclassify_corpus();
+SELECT * FROM pgmnemo.consolidate(
+  p_similarity := 0.92,
+  p_dry_run := true,
+  p_role := NULL,
+  p_limit := 100
+);
+SELECT * FROM pgmnemo.undo_consolidate(
+  p_canonical_id := 42,
+  p_dry_run := true
+);
+```
+
+只有在事务中检查结果后，才应设置 `p_dry_run := false`。0.14.2 的重分类只处理空值或分类器自有类型，并保留 event、relation 等 curator 自有类型。合并会把非规范 lesson 标为 superseded、写入 edge 并累积 evidence count；`undo_consolidate` 利用这些 edge 恢复指定 cluster。
+
 - 召回可以写入最近性元数据。禁用 pgmnemo.track_recall_recency 以进行只读分析。
 - 置信度模型仅在其强化反馈评估后才可靠。避免将后验值视为经过校准的概率。
 - HNSW、文本、图和元数据索引增加了写入和维护成本。
 - 默认置信度增强权重为 0，这意味着 p_min_score 可以过滤结果而置信度对排名没有任何贡献。
+- 分类只是确定性的关键词与正则表达式 heuristic，不是语义审查。应用 corpus 变更前，必须检查 dry-run distribution 与建议的重复 cluster。

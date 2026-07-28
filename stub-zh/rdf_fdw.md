@@ -5,14 +5,14 @@
 
 来源：
 
-- [PGXN rdf_fdw 2.6.0](https://pgxn.org/dist/rdf_fdw/2.6.0/)
-- [rdf_fdw README](https://github.com/jimjonesbr/rdf_fdw)
-- [rdf_fdw CHANGELOG](https://github.com/jimjonesbr/rdf_fdw/blob/master/CHANGELOG.md)
-- [rdf_fdw control file](https://pgxn.org/dist/rdf_fdw/2.6.0/)
+- [PGXN rdf_fdw 2.7.0](https://pgxn.org/dist/rdf_fdw/2.7.0/)
+- [rdf_fdw 2.7 README](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/README.md)
+- [rdf_fdw 2.7 变更日志](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/CHANGELOG.md)
+- [rdf_fdw 2.7 控制文件](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/rdf_fdw.control)
 
 `rdf_fdw` 是通过 SPARQL endpoint 查询 RDF triplestore 的 PostgreSQL foreign data wrapper。它把 SPARQL 结果变量暴露为外部表列，支持常见 SQL 子句下推，提供用于 RDF term 的原生 `rdfnode` 类型，实现了多种 SPARQL 1.1 辅助函数，并可通过可写外部表执行 SPARQL `INSERT`、`UPDATE` 和 `DELETE`。
 
-v2.6.0 增加了通过 `USER MAPPING` 配置 Bearer token 认证、用于限制 HTTP 响应体大小的 `max_response_size` server option、BCE date/timestamp cast 支持，以及大量 `rdfnode` 解析和比较修复。v2.5 增加了 `request_timeout` 与 `readonly` 选项。
+v2.6.0 增加了通过 `USER MAPPING` 配置 Bearer token 认证、用于限制 HTTP 响应体大小的 `max_response_size` server option、BCE date/timestamp cast 支持，以及大量 `rdfnode` 解析和比较修复。v2.7 修复了尾部连续反斜线的 RDF literal 转义，避免 literal 内容逃逸为生成的 SPARQL 语法；同时把 libcurl 初始化从每次请求改为每个 PostgreSQL backend 一次。
 
 ### 创建扩展
 
@@ -26,8 +26,8 @@ SELECT * FROM rdf_fdw_settings();
 安装或升级到指定 SQL 版本：
 
 ```sql
-CREATE EXTENSION rdf_fdw WITH VERSION '2.6';
-ALTER EXTENSION rdf_fdw UPDATE TO '2.6';
+CREATE EXTENSION rdf_fdw WITH VERSION '2.7';
+ALTER EXTENSION rdf_fdw UPDATE TO '2.7';
 ```
 
 ### 注册 SPARQL Endpoint
@@ -185,8 +185,9 @@ CALL rdf_fdw_clone_table(
 
 ### 注意事项
 
-- 上游最低基线为 PostgreSQL 9.5+；Pigsty 包则面向本地元数据中列出的现代 PostgreSQL 大版本。
+- 上游最低基线为 PostgreSQL 9.5 或更高版本。
 - 取回的 RDF 数据会在转换前累积到内存中。应设置 `max_response_size`、使用 `LIMIT`，并限制远端结果集规模。
 - 优先使用 `rdfnode` 列。RDF term 使用 PostgreSQL 原生类型已被弃用，并会丢失 IRI、语言和 datatype 信息。
 - 密钥应放在 `USER MAPPING`；不要把代理凭据或 endpoint token 写进 `SERVER` options。
 - 公共 SPARQL endpoint 可能慢或有速率限制。需要时使用 `connect_timeout`、`request_timeout`、重试和本地物化。
+- 在 pushed-down filter 或可写外部表操作中接收不可信 literal 内容前，应升级到 2.7；libcurl 生命周期修复属于内部实现，不增加新的 SQL 配置。

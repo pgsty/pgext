@@ -2,109 +2,98 @@
 
 Sources:
 
-- [PGXN pgContext 0.1.0 release](https://pgxn.org/dist/pgcontext/0.1.0/)
-- [Official pgContext 0.1.0 README](https://github.com/Evokoa/pgContext/blob/v0.1.0/README.md)
-- [Official pgcontext control file](https://github.com/Evokoa/pgContext/blob/v0.1.0/pgcontext.control)
-- [Official PostgreSQL 17 quickstart](https://github.com/Evokoa/pgContext/blob/v0.1.0/docs/user_guide/quickstart.md)
-- [Official configuration guide](https://github.com/Evokoa/pgContext/blob/v0.1.0/docs/user_guide/configuration.md)
-- [Official index guide](https://github.com/Evokoa/pgContext/blob/v0.1.0/docs/user_guide/indexes.md)
-- [Official 0.1.0 limitations](https://github.com/Evokoa/pgContext/blob/v0.1.0/docs/user_guide/limitations.md)
-- [Official pgvector coexistence guide](https://github.com/Evokoa/pgContext/blob/v0.1.0/docs/user_guide/pgvector_coexist.md)
+- [pgContext 0.2.0 README](https://github.com/evokoa/pgcontext/blob/v0.2.0/README.md)
+- [pgContext 0.2.0 release notes](https://github.com/evokoa/pgcontext/blob/v0.2.0/docs/user_guide/release_notes.md)
+- [pgContext collection quickstart](https://github.com/evokoa/pgcontext/blob/v0.2.0/docs/user_guide/quickstart.md)
+- [pgContext index guide](https://github.com/evokoa/pgcontext/blob/v0.2.0/docs/user_guide/indexes.md)
+- [pgContext known limitations](https://github.com/evokoa/pgcontext/blob/v0.2.0/docs/user_guide/limitations.md)
+- [pgContext control file](https://github.com/evokoa/pgcontext/blob/v0.2.0/pgcontext.control)
+- [pgvector coexistence guide](https://github.com/evokoa/pgcontext/blob/v0.2.0/docs/user_guide/pgvector_coexist.md)
 
-`pgcontext` 0.1.0 is a PostgreSQL 17 extension for exact vector search, registered-field filtering, persisted HNSW indexing, and dense plus full-text hybrid retrieval over ordinary PostgreSQL tables. Application tables remain authoritative for data, MVCC visibility, ACL/RLS, backup, and replication; HNSW state is a derived, rebuildable index. The stable V1 surface centers on exact table-backed retrieval, while `pgcontext_hnsw`, non-dense vector variants, and several advanced serving paths retain explicit experimental boundaries.
+`pgcontext` keeps vector and hybrid retrieval inside PostgreSQL. It provides pgContext-owned vector types, collection metadata over application tables, registered-field filters, exact search, persisted HNSW, and dense plus full-text fusion. Application rows remain authoritative for MVCC, ACL/RLS, backup, and replication; indexes and generated artifacts are rebuildable acceleration state.
+
+Version 0.2.0 targets PostgreSQL 17 and 18, with the release's controlled-pilot qualification centered on PostgreSQL 17. Advanced HNSW, non-dense, quantized, mapped, and late-interaction paths retain explicit experimental boundaries.
 
 ### Core Workflow
-
-Once the extension files are installed into PostgreSQL 17, create a table-backed collection and register only the fields that retrieval is allowed to use:
 
 ```sql
 CREATE EXTENSION pgcontext;
 
 CREATE TABLE public.docs (
     id text PRIMARY KEY,
-    embedding vector(3) NOT NULL,
+    embedding pgcontext.vector(2) NOT NULL,
     status text NOT NULL,
     body text NOT NULL,
     metadata jsonb NOT NULL
 );
 
-INSERT INTO public.docs VALUES
-    ('postgres', '[1,0,0]', 'published', 'postgres vector search', '{"topic":"database"}'),
-    ('rust',     '[0,1,0]', 'published', 'rust extension guide',  '{"topic":"systems"}'),
-    ('draft',    '[1,1,0]', 'draft',     'internal notes',        '{"topic":"database"}');
+INSERT INTO public.docs (id, embedding, status, body, metadata) VALUES
+    ('doc-1', '[1,0]'::pgcontext.vector, 'published', 'postgres vector search', '{"topic":"postgres"}'),
+    ('doc-2', '[0,1]'::pgcontext.vector, 'published', 'rust extension guide', '{"topic":"rust"}');
 
 SELECT * FROM pgcontext.create_collection('docs', 'public.docs');
-SELECT pgcontext.register_vector('docs', 'embedding', 'embedding', 3, 'cosine');
+SELECT pgcontext.register_vector('docs', 'embedding', 'embedding', 2, 'l2');
 SELECT pgcontext.register_filter_column('docs', 'status', 'status');
 SELECT pgcontext.register_jsonb_path('docs', 'topic', 'metadata', ARRAY['topic']);
-SELECT pgcontext.upsert_points('docs', ARRAY['postgres', 'rust', 'draft']);
+SELECT pgcontext.upsert_points('docs', ARRAY['doc-1', 'doc-2']);
 
 SELECT source_key, score
 FROM pgcontext.search(
     'docs',
-    '[1,0,0]'::vector,
+    '[1,0]'::pgcontext.vector,
     '{"must":[{"key":"status","match":"published"}]}'::jsonb,
     10
 );
 ```
 
-Filters accept only registered columns and JSONB paths. The same filter grammar is shared by search, count, and facets:
-
-```sql
-SELECT pgcontext.count(
-    'docs',
-    '{"must":[{"key":"topic","match":"database"}]}'::jsonb
-);
-
-SELECT * FROM pgcontext.facet('docs', 'topic', NULL, 10);
-```
+Collections describe application-owned tables; they do not copy those rows into another authoritative store. Search, count, facets, grouping, scrolling, recommendation, and discovery share registered vector and filter definitions.
 
 ### HNSW and Hybrid Retrieval
 
-Add the experimental HNSW access method only after exact search supplies a correctness oracle for the workload:
-
 ```sql
-CREATE INDEX docs_embedding_hnsw
-ON public.docs USING pgcontext_hnsw (
-    embedding pgcontext.vector_hnsw_cosine_ops
-);
-
-SELECT source_key, score
-FROM pgcontext.search('docs', '[1,0,0]'::vector, 10);
+SET maintenance_work_mem = '2GB';
+CREATE INDEX docs_embedding_hnsw ON public.docs
+    USING pgcontext_hnsw
+    (embedding pgcontext.vector_hnsw_cosine_ops);
+RESET maintenance_work_mem;
 
 SELECT source_key, score
 FROM pgcontext.query(
     'docs',
-    '[1,0,0]'::vector,
+    '[1,0]'::pgcontext.vector,
     'postgres search',
     'body',
     10
 );
 ```
 
-Dense HNSW operator classes cover L2, cosine, negative inner product, and L1. Use `pgcontext.index_status`, `pgcontext.index_diagnostics`, and `pgcontext.recall_check` before routing a workload to an approximate path. `pgcontext.query` performs reciprocal-rank fusion for dense plus PostgreSQL full-text retrieval; keep `pgcontext.search` for a single-vector request.
+Dense HNSW operator classes cover L2, inner product, cosine, and L1. Index builds enforce `maintenance_work_mem`; size the build budget first, then compare approximate results with exact search and `pgcontext.recall_check`. `pgcontext.query` combines dense and PostgreSQL full-text branches with reciprocal-rank fusion.
 
 ### Important Objects
 
-- `vector` is the stable dense type. `halfvec`, `sparsevec`, and `bitvec` are SQL-visible but experimental in V1.
-- `pgcontext.create_collection`, `collection_info`, `drop_collection`, and collection aliases manage registrations over application-owned tables.
-- `register_vector`, `register_filter_column`, `register_jsonb_path`, and `upsert_points` establish the explicit retrieval contract.
-- `search`, `count`, `facet`, `scroll`, `grouped_search`, `recommend`, and `discover` provide table-backed retrieval and navigation.
-- `query` and `explain` expose hybrid retrieval and its SQL-visible execution stages.
-- `pgcontext_hnsw` plus the `vector_hnsw_ops`, `vector_hnsw_cosine_ops`, `vector_hnsw_ip_ops`, and `vector_hnsw_l1_ops` operator classes provide dense ANN indexing.
-- `optimization_status`, `index_status`, `index_diagnostics`, `vacuum_advice`, `recall_check`, and `telemetry` support operational inspection.
+- `pgcontext.vector`, `pgcontext.halfvec`, `pgcontext.sparsevec`, and `pgcontext.bitvec` are extension-owned types; the non-dense variants remain experimental.
+- `pgcontext.create_collection`, registration functions, and point-mapping functions define the retrieval contract over source tables.
+- `pgcontext.search`, `count`, `facet`, `scroll`, `grouped_search`, `recommend`, and `discover` provide table-backed retrieval.
+- `pgcontext.query` and `explain` expose composable and hybrid retrieval.
+- `pgcontext_hnsw` plus metric-specific operator classes provide ANN indexing.
+- Index status, diagnostics, vacuum advice, recall checks, optimization status, and bounded telemetry support operational review.
 
-### PostgreSQL and pgvector Boundaries
+### Upgrade and pgvector Boundary
 
-- V1 supports PostgreSQL 17 only. PostgreSQL 15, 16, and 18 are roadmap targets, not supported 0.1.0 majors.
-- The control file sets `superuser = false` and `relocatable = false`; the extension installs the fixed `pgcontext` schema and `$libdir/pgcontext` library. It does not require `shared_preload_libraries`, `LOAD`, or a server restart.
-- Installing files on the host still requires filesystem access appropriate to the PostgreSQL 17 installation. A source build is pinned to Rust 1.96.0 and `cargo-pgrx` 0.19.1.
-- `pgcontext` can supply its own vector types. On a database that already uses pgvector, install `CREATE EXTENSION vector` first and `CREATE EXTENSION pgcontext` second so pgContext binds to pgvector's existing types.
-- pgContext has no required external service. Ordinary PostgreSQL memory, WAL, authentication, backup, and ACL/RLS settings remain the operational foundation.
+Version 0.2.0 moves pgContext-owned types into the fixed `pgcontext` schema. Existing standalone 0.1.0 installations can use the packaged update as a superuser:
 
-### V1 Caveats
+```sql
+ALTER EXTENSION pgcontext UPDATE TO '0.2.0';
+```
 
-- `pgcontext_hnsw` is experimental and does not promise long-term on-disk compatibility. Rebuild affected HNSW indexes when an upgrade changes their page format, and qualify recall, latency, MVCC, RLS, restart, VACUUM, and replica behavior on production-shaped data.
-- A full HNSW delta segment can trigger synchronous compaction on an insert. The stall grows with index size; tune `pgcontext.hnsw_delta_segment_limit` and `pgcontext.hnsw_compact_on_threshold_max_mb`, or disable automatic threshold compaction and schedule `pgcontext.compact()` or `REINDEX` deliberately.
-- Sparse and other non-dense ANN coverage is incomplete. Quantization helpers do not imply quantized HNSW serving, and internally maintained late-interaction or memory-mapped serving remains outside the stable V1 path.
-- Remove collection registrations and review dependent application tables before dropping the extension. `DROP EXTENSION pgcontext` intentionally does not treat user tables as disposable acceleration state.
+Afterward, qualify types such as `pgcontext.vector(1536)` or deliberately add the schema to `search_path`. A 0.1.0 database where public vector types are owned by pgvector is rejected before mutation; inventory dependencies, install 0.2.0 and the separate `pgcontext_pgvector` bridge, recreate registrations and dependents, and rebuild pgContext indexes over the unchanged pgvector columns.
+
+The main extension has no dependency on pgvector. Its types are distinct from `public.vector`, `public.halfvec`, and `public.sparsevec`; do not assume install order aliases one extension's types to the other.
+
+### Operational Boundaries
+
+- `CREATE EXTENSION` and updates require a PostgreSQL superuser because pgContext installs an access method. Granted application APIs do not require superuser.
+- No `shared_preload_libraries`, `LOAD`, or restart is required by the main extension.
+- The early-release HNSW on-disk format is not stable; plan and validate index rebuilds across releases rather than treating index files as portable data.
+- Exact reranking, MVCC, ACL, and RLS checks remain correctness boundaries, but they do not replace workload-specific recall, latency, restart, VACUUM, replication, and failure testing.
+- Remove collection registrations and inspect dependent application objects before dropping the extension; avoid unreviewed `CASCADE`.

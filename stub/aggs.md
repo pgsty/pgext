@@ -1,0 +1,33 @@
+## Usage
+
+Sources:
+
+- [Official upstream README](https://github.com/mkindahl/pg_examples/blob/277a29ac1b31478911c75ddd886d4dea02730aa8/README.md)
+- [Official extension control file (aggs.control)](https://github.com/mkindahl/pg_examples/blob/277a29ac1b31478911c75ddd886d4dea02730aa8/aggs/aggs.control)
+- [Official extension SQL (aggs--0.1.sql)](https://github.com/mkindahl/pg_examples/blob/277a29ac1b31478911c75ddd886d4dea02730aa8/aggs/aggs--0.1.sql)
+
+`aggs` — Testing aggregation functions. Use it when SQL needs these specialized functions or aggregates. Use the pinned upstream revision linked above as the API boundary and test it on the target PostgreSQL build.
+
+### Core Workflow
+
+```sql
+CREATE EXTENSION aggs;
+```
+
+Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+
+### Important Objects
+
+- `window_agg_dropfn(internal, anynonarray)` is an extension function and returns `internal`.
+- `window_agg_dropfn(internal, anynonarray, integer)` is an extension function and returns `internal`.
+- `window_agg_finalfn(internal, anynonarray)` is an extension function and returns `anyarray`.
+- `window_agg_finalfn(internal, anynonarray, integer)` is an extension function and returns `anyarray`.
+- `window_agg_transfn(internal, anynonarray)` is an extension function and returns `internal`.
+- `window_agg_transfn(internal, anynonarray, integer)` is an extension function and returns `internal`.
+- `window_agg` is an aggregate exposed by the extension.
+
+### Requirements and Caveats
+
+- The reviewed control file declares default version `0.1`.
+- The control file marks the extension as relocatable.
+- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.

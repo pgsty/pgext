@@ -2,15 +2,16 @@
 
 Sources:
 
-- [pgmnemo v0.13.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/README.md)
-- [pgmnemo v0.13.0 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/docs/USAGE.md)
-- [pgmnemo v0.13.0 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.13.0 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.13.0)
-- [pgmnemo v0.13.0 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.13.0/extension/pgmnemo.control)
+- [pgmnemo v0.14.2 README](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/README.md)
+- [pgmnemo v0.14.2 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/docs/USAGE.md)
+- [pgmnemo v0.14.2 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.14.2 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/CHANGELOG.md)
+- [pgmnemo v0.14.2 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.14.2)
+- [pgmnemo v0.14.2 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/extension/pgmnemo.control)
 
 pgmnemo stores agent memory in PostgreSQL and retrieves it through vector, BM25-style text, graph, metadata, temporal, provenance, and outcome-confidence signals. It installs into schema pgmnemo, requires the vector extension, and expects 1024-dimensional embeddings in its current SQL API.
 
-Version 0.13.0 changes confidence to a Bayesian posterior by default, records whether recalled memories were actually used, and adds minimum-confidence filters to recall.
+Version 0.14.2 retains the 0.13 Bayesian confidence and outcome-use surface, and adds deterministic content classification, dry-run corpus reclassification, reversible near-duplicate consolidation, and a planner fix for hybrid HNSW recall.
 
 ### Install
 
@@ -20,7 +21,7 @@ Version 0.13.0 changes confidence to a Bayesian posterior by default, records wh
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-The v0.13.0 control file marks pgmnemo as trusted and non-superuser-installable when the required vector extension is available.
+The v0.14.2 control file marks pgmnemo as trusted and non-superuser-installable when the required vector extension is available.
 
 ### Ingest a Lesson
 
@@ -98,7 +99,26 @@ The older confidence-delta settings are deprecated and ignored in posterior mode
 
 ### Caveats
 
+Version 0.14 adds corpus-maintenance operations. They are read-only by default:
+
+```sql
+SELECT * FROM pgmnemo.reclassify_corpus();
+SELECT * FROM pgmnemo.consolidate(
+  p_similarity := 0.92,
+  p_dry_run := true,
+  p_role := NULL,
+  p_limit := 100
+);
+SELECT * FROM pgmnemo.undo_consolidate(
+  p_canonical_id := 42,
+  p_dry_run := true
+);
+```
+
+Set `p_dry_run := false` only after reviewing the result inside a transaction. In 0.14.2, reclassification touches only null or classifier-owned types and preserves curator-owned types such as event and relation. Consolidation marks noncanonical lessons superseded, writes edges, and accumulates evidence counts; `undo_consolidate` uses those edges to restore a selected cluster.
+
 - Recall can write recency metadata. Disable pgmnemo.track_recall_recency for read-only analysis.
 - The confidence model is only as reliable as reinforcement feedback. Avoid treating posterior values as calibrated probabilities without evaluation.
 - HNSW, text, graph, and metadata indexes increase write and maintenance cost.
 - The default confidence_boost_weight of 0 means p_min_score can filter results while confidence still contributes nothing to ranking.
+- Classification is a deterministic keyword and regular-expression heuristic, not semantic review. Always inspect dry-run distributions and proposed duplicate clusters before applying corpus changes.

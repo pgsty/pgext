@@ -5,14 +5,14 @@
 
 Sources:
 
-- [PGXN rdf_fdw 2.6.0](https://pgxn.org/dist/rdf_fdw/2.6.0/)
-- [rdf_fdw README](https://github.com/jimjonesbr/rdf_fdw)
-- [rdf_fdw CHANGELOG](https://github.com/jimjonesbr/rdf_fdw/blob/master/CHANGELOG.md)
-- [rdf_fdw control file](https://pgxn.org/dist/rdf_fdw/2.6.0/)
+- [PGXN rdf_fdw 2.7.0](https://pgxn.org/dist/rdf_fdw/2.7.0/)
+- [rdf_fdw 2.7 README](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/README.md)
+- [rdf_fdw 2.7 changelog](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/CHANGELOG.md)
+- [rdf_fdw 2.7 control file](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/rdf_fdw.control)
 
 `rdf_fdw` is a PostgreSQL foreign data wrapper for querying RDF triplestores over SPARQL endpoints. It exposes SPARQL result variables as foreign-table columns, supports pushdown for common SQL clauses, includes a native `rdfnode` type for RDF terms, provides SPARQL 1.1 helper functions, and can perform SPARQL `INSERT`, `UPDATE`, and `DELETE` through writable foreign tables.
 
-v2.6.0 adds Bearer-token authentication through `USER MAPPING`, a `max_response_size` server option to cap HTTP response bodies, BCE date/timestamp cast handling, and many `rdfnode` parser/comparison fixes. v2.5 added `request_timeout` and `readonly` options.
+v2.6.0 adds Bearer-token authentication through `USER MAPPING`, a `max_response_size` server option to cap HTTP response bodies, BCE date/timestamp cast handling, and many `rdfnode` parser/comparison fixes. v2.7 fixes RDF literal escaping for runs of trailing backslashes so literal content cannot break out into generated SPARQL syntax. It also initializes libcurl once per PostgreSQL backend instead of once per request.
 
 ### Create the Extension
 
@@ -26,8 +26,8 @@ SELECT * FROM rdf_fdw_settings();
 To install or update to the exact SQL version:
 
 ```sql
-CREATE EXTENSION rdf_fdw WITH VERSION '2.6';
-ALTER EXTENSION rdf_fdw UPDATE TO '2.6';
+CREATE EXTENSION rdf_fdw WITH VERSION '2.7';
+ALTER EXTENSION rdf_fdw UPDATE TO '2.7';
 ```
 
 ### Register a SPARQL Endpoint
@@ -185,8 +185,9 @@ The `sparql` schema implements many SPARQL 1.1 functions and aggregates, includi
 
 ### Caveats
 
-- PostgreSQL 9.5+ is the upstream baseline, but Pigsty packages target modern PostgreSQL majors listed in local metadata.
+- PostgreSQL 9.5 or newer is the upstream baseline.
 - Retrieved RDF data is accumulated in memory before conversion. Set `max_response_size`, use `LIMIT`, and keep remote result sets bounded.
 - Prefer `rdfnode` columns. Native PostgreSQL typed columns are deprecated for RDF terms and will lose IRI/language/datatype information.
 - Store secrets in `USER MAPPING`; do not put proxy credentials or endpoint tokens into `SERVER` options.
 - Public SPARQL endpoints can be slow or rate-limited. Use `connect_timeout`, `request_timeout`, retries, and local materialization when needed.
+- Upgrade to 2.7 before accepting untrusted literal content in pushed-down filters or writable foreign-table operations; the libcurl lifecycle fix is internal and adds no new SQL configuration.

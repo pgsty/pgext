@@ -5,15 +5,16 @@
 
 来源：
 
-- [pgGraph v0.1.8 README](https://github.com/Evokoa/pgGraph/blob/v0.1.8/README.md)
-- [v0.1.8 release notes](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/release-notes.mdx)
-- [SQL API Reference](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/user_guide/api-reference.mdx)
-- [Schema Registration](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/user_guide/schema-registration.mdx)
-- [Administration and Security](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/user_guide/administration-and-security.mdx)
+- [pgGraph v1.0.0 README](https://github.com/evokoa/pggraph/blob/v1.0.0/README.md)
+- [v1.0.0 发行说明](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/release-notes.mdx)
+- [SQL API 参考](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/api-reference.mdx)
+- [Schema 注册](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/schema-registration.mdx)
+- [管理与安全](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/administration-and-security.mdx)
+- [v0.1.8 到 v1.0.0 迁移指南](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/migration-1-0.mdx)
 
 `pggraph` 是包名与 PGXN 发行名，但安装到 PostgreSQL 中的扩展名是 `graph`。它从普通 PostgreSQL 表构建派生图产物，并以源表作为事实来源，通过 `graph` schema 提供图搜索、遍历、最短路径、GQL 风格读取，以及部分映射式写入。
 
-v0.1.8 增加了命名图管理、按图隔离的 catalog、图级授权与配额、托管维护任务、GQL 关系创建，以及更明确的 openCypher / SQL/PGQ 预览能力边界。上游仍把 pgGraph 标记为早期 alpha；应先在可丢弃或开发数据库中试用，并始终把图产物视为可从源表重建的派生状态。
+v1.0.0 是首个 production 发行版。它支持 PostgreSQL 14-18、命名图、按图隔离的授权与配额、持久同步、有界遍历与分析、维护任务，以及选定的 GQL 读写 profile。它不声明支持完整 ISO GQL、完整 openCypher 或公开 SQL/PGQ `GRAPH_TABLE` surface。标准 PostgreSQL SQLSTATE 会与稳定的 `PGxxx` detail 配对，供应用诊断。
 
 ### 基本图构建
 
@@ -85,7 +86,7 @@ SELECT graph.add_edge_to_graph(
 SELECT * FROM graph.build_graph('customer_360', graph_namespace := 'analytics');
 ```
 
-除非使用显式的 `*_to_graph` / `*_from_graph` 辅助函数，注册操作会作用于当前选中的图。节点标识符必须匹配主键，或匹配唯一的 `NOT NULL` 索引。`columns` 控制可搜索和可被 GQL 读取的属性；遍历过滤下推需要通过 `graph.add_filter_column()` 单独注册。边表和 junction table 形式的关系也受支持，`label_column` 可提供动态边标签，但 v0.1.8 对用户可见标签数量有上限。
+除非使用显式的 `*_to_graph` / `*_from_graph` 辅助函数，注册操作会作用于当前选中的图。节点标识符必须匹配主键，或匹配唯一的 `NOT NULL` 索引。`columns` 控制可搜索和可被 GQL 读取的属性；遍历过滤下推需要通过 `graph.add_filter_column()` 单独注册。边表和 junction table 形式的关系也受支持，`label_column` 可在文档规定的公开上限内提供动态边标签。
 
 ### 搜索、遍历与路径
 
@@ -133,7 +134,7 @@ FROM graph.gql(
 );
 ```
 
-`graph.gql()` 为每条 SQL 行返回一个 `jsonb` 对象。节点标签映射到已注册表名，关系类型映射到已注册边标签。v0.1.8 扩展了可变 GQL 写入面，支持创建已注册关系：映射式写入仍通过 PostgreSQL 源表 DML 执行，源表依然是权威数据。未支持的 openCypher 或 SQL/PGQ 形状会返回更清晰的能力边界错误，而不是部分执行。
+`graph.gql()` 为每条 SQL 行返回一个 `jsonb` 对象。节点标签映射到已注册表名，关系类型映射到已注册边标签。受支持的可变 GQL profile 包含已注册关系创建：映射式写入仍通过 PostgreSQL 源表 DML 执行，源表依然是权威数据。未支持的 openCypher 或 SQL/PGQ 形状会返回显式能力错误，而不是部分执行。
 
 ### 管理与运维
 
@@ -150,9 +151,32 @@ SELECT * FROM graph.projection_status();
 
 图管理覆盖 catalog 变更、构建、同步回放、维护、配额、运行时图加载和全局分析。命名图权限包括 `read`、`write`、`build`、`admin`，但图级 `read` 本身不够：hydrated 读取仍需要源表 `SELECT` 权限。选中图的 tenant 也会默认约束遍历、搜索、GQL 与 Cypher 调用，除非显式传入匹配的 tenant。
 
+### 从 Alpha 版本迁移
+
+v0.1.8 到 v1.0.0 的迁移会保留源表，但不是就地 catalog 或 binary 更新。应先备份并测试恢复、盘点注册和依赖对象、停止图写入者与调度器，再在事务中预检删除：
+
+```sql
+BEGIN;
+DROP EXTENSION graph;
+ROLLBACK;
+```
+
+检查全部依赖对象后，删除 alpha 扩展、安装 v1.0.0，只重新应用经过复核的公开注册调用，再从 PostgreSQL 源表重建：
+
+```sql
+DROP EXTENSION graph CASCADE;
+CREATE EXTENSION graph VERSION '1.0.0';
+
+-- Reapply graph.add_table(...), graph.add_edge(...), and related calls.
+SELECT * FROM graph.build();
+SELECT * FROM graph.status();
+```
+
+`CASCADE` 可能删除应用视图、函数、生成的同步对象及其他依赖。Alpha catalog、`.pggraph` 文件、manifest 与 projection segment 都不是 v1.0.0 可移植状态。回滚必须使用匹配的 alpha 软件包恢复已测试备份，再重建旧版图状态。
+
 ### 注意事项
 
 - 源表仍是事实来源。图产物、projection 文件、同步状态和运行时引擎都是派生状态，可从源表重建。
 - 注册信息变化后需要运行 `graph.build()` 或图级构建辅助函数；依赖增量 projection 时，应使用 sync/maintenance API。
 - `graph._graphs`、授权、配额、任务、同步日志、projection 元数据等内部表是实现细节，应用代码应使用公开 SQL 函数。
-- v0.1.8 将源码构建基线提升到 Rust 1.96 和 `cargo-pgrx` 0.19.1。上游仍支持 PostgreSQL 14 到 18，默认 release gate 目标是 PostgreSQL 17。
+- v1.0.0 源码构建使用 Rust 1.96 与 `cargo-pgrx` 0.19.1。上游支持 PostgreSQL 14 到 18，默认 release gate 目标是 PostgreSQL 17。

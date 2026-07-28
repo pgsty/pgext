@@ -2,54 +2,52 @@
 
 Sources:
 
-- [Official README for version 0.1.4](https://github.com/davidbeauchamp/pgzint/blob/47cdb014cd81752c9d42b1d06c85871872a1793f/README.md)
-- [Extension SQL for version 0.1.4](https://github.com/davidbeauchamp/pgzint/blob/47cdb014cd81752c9d42b1d06c85871872a1793f/pgzint--0.1.4.sql)
-- [PGXN distribution page](https://pgxn.org/dist/pgzint/)
+- [pgzint 0.2.0 README](https://github.com/davidbeauchamp/pgzint/blob/v0.2.0/README.md)
+- [pgzint 0.2.0 release notes](https://github.com/davidbeauchamp/pgzint/releases/tag/v0.2.0)
+- [pgzint 0.2.0 extension SQL](https://github.com/davidbeauchamp/pgzint/blob/v0.2.0/pgzint--0.2.0.sql)
+- [pgzint 0.2.0 control file](https://github.com/davidbeauchamp/pgzint/blob/v0.2.0/pgzint.control)
 
-`pgzint` generates barcode images inside PostgreSQL through the Zint barcode library. Its SQL functions return PNG bytes as `bytea`, which is useful when an application can display binary images but should not integrate Zint itself.
+`pgzint` generates barcode images inside PostgreSQL with the Zint library and returns PNG bytes as `bytea`. Use it when an application can consume binary images but should not integrate Zint directly.
 
 ### Core Workflow
 
-Install the extension, choose a symbology, and return or store the generated binary result:
+Install the extension, inspect the symbol catalog, and call either a convenience wrapper or the general generator:
 
 ```sql
 CREATE EXTENSION pgzint;
 
--- Convenience wrapper with project-provided QR defaults.
+SELECT bc_symbol_zint_id, bc_symbol_zint_constant, bc_symbol_name
+FROM bc_symbols
+ORDER BY bc_symbol_zint_id;
+
 SELECT bc_qrcode('SAMPLE');
 
--- Inspect the installed symbol catalog before choosing an integer ID.
-SELECT symbol_id, symbol_name
-FROM barcodes
-ORDER BY symbol_id;
-```
-
-The actual columns exposed by `barcodes` come from the installed 0.1.4 SQL, so use `\d+ barcodes` when integrating with a client. The primary API accepts the payload followed by the Zint symbol number and rendering options:
-
-```sql
 SELECT bc_generate(
   'SAMPLE', 58, NULL, 2, 0, NULL, NULL,
   NULL, NULL, NULL, NULL, 14, NULL, 0
 );
 ```
 
-The example uses the same QR symbology and defaults described by the upstream README. Rendering parameters are passed through to Zint; confirm their meaning against the Zint version installed with the extension.
+`bc_generate` accepts the payload, Zint symbology ID, height, scale, whitespace and border widths, output flags, colors, text flag, three symbology-specific options, and rotation. In 0.2.0 the height argument is `float8`.
 
 ### Important Objects
 
-- `bc_generate` is the general-purpose C-backed generator. Its parameters control symbology, height, scale, whitespace, border, output flags, foreground/background colors, text display, three symbol-specific options, and rotation.
-- `bc_qrcode`, `bc_excode39`, `bc_pdf417`, `bc_maxicode`, and `bc_code128` are SQL convenience wrappers with project-selected defaults.
-- `bc_symbols` stores the extension's symbology metadata, while `barcodes` presents it as a view.
-- `getzintsymbolconstant` and `getzintsymbolid` convert between numeric constants and text identifiers used by the generator.
+- `bc_generate` is the C-backed general generator.
+- `bc_qrcode`, `bc_excode39`, `bc_pdf417`, `bc_maxicode`, and `bc_code128` are SQL wrappers with project-selected defaults.
+- `bc_symbols` maps Zint numeric IDs to constants and display names.
+- `getzintsymbolid(text)` and `getzintsymbolconstant(integer)` convert between those identifiers.
+- `pgzint_version()` reports the installed pgzint version.
 
-`bc_generate` is the only generator implemented directly in C in this release; the convenience helpers delegate to it. Call it directly when wrapper defaults do not match the required barcode size or encoding options.
+Version 0.2.0 removes the old `barcodes` view and simplifies `bc_symbols`; integrations must use the three columns shown above rather than the metadata columns removed by this release.
 
-### Prerequisites and Caveats
+### Upgrade and Requirements
 
-Version 0.1.4 requires PostgreSQL 9.1 or later plus the Zint and PNG libraries at build and runtime. The extension control file does not declare preload or another PostgreSQL extension dependency. Existing databases upgraded from an earlier release must run the extension update after installing the 0.1.4 files:
+After installing the 0.2.0 package files, upgrade each database that already has pgzint:
 
 ```sql
-ALTER EXTENSION pgzint UPDATE TO '0.1.4';
+ALTER EXTENSION pgzint UPDATE TO '0.2.0';
 ```
 
-Image generation consumes database CPU and memory and returns potentially large binary values, so bound payload sizes and avoid unreviewed bulk generation in latency-sensitive queries. The project is old and the bundled symbology metadata reflects its Zint-era definitions; verify output with the scanners and standards required by the application.
+pgzint 0.2.0 requires PostgreSQL 9.4 or newer and Zint 2.14 or newer compiled with PNG support. It uses Zint's in-memory PNG output instead of the earlier BMP-to-PNG conversion and no longer has a direct libpng conversion layer.
+
+Image generation consumes database CPU and can return large binary values. Bound payload sizes, avoid unreviewed bulk generation in latency-sensitive queries, and validate output against the scanners and barcode standards required by the application.

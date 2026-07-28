@@ -2,14 +2,15 @@
 
 来源：
 
-- [plpgsql_check 2.10.1 README](https://github.com/okbob/plpgsql_check/blob/v2.10.1/README.md)
-- [plpgsql_check 2.10.1 release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.1)
-- [plpgsql_check 2.10.1 control file](https://github.com/okbob/plpgsql_check/blob/v2.10.1/plpgsql_check.control)
-- [plpgsql_check 2.9.2 to 2.10.1 changes](https://github.com/okbob/plpgsql_check/compare/v2.9.2...v2.10.1)
+- [plpgsql_check 2.10.3 README](https://github.com/okbob/plpgsql_check/blob/v2.10.3/README.md)
+- [plpgsql_check 2.10.3 发行说明](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.3)
+- [plpgsql_check 2.10.2 发行说明](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.2)
+- [plpgsql_check 2.10.3 控制文件](https://github.com/okbob/plpgsql_check/blob/v2.10.3/plpgsql_check.control)
+- [plpgsql_check 2.10.1 到 2.10.3 的变更](https://github.com/okbob/plpgsql_check/compare/v2.10.1...v2.10.3)
 
 `plpgsql_check` 是一个 PL/pgSQL 检查器、语法检查工具、性能分析器、跟踪器和覆盖率工具。它使用 PostgreSQL 自身的解析器和执行器基础设施来分析 PL/pgSQL 函数体，因此许多问题可以在开发或 CI 阶段被发现而不会在运行时才出现。
 
-2.10.1 版本安装的是 SQL 扩展 `2.10`。支持 PostgreSQL 14-18；上游源代码还包含对后续 PostgreSQL 开发分支的兼容性工作。
+2.10.3 软件包安装的 SQL 扩展版本是 `2.10`。该标签下的控制文件覆盖 PostgreSQL 14-18 软件包，源码还包含对后续 PostgreSQL 开发分支的兼容性工作。
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -159,7 +160,7 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
-版本 2.10 添加了 `plpgsql_make_pragma(regprocedure)`，它会计划 `CREATE TEMP TABLE ... AS SELECT|VALUES|TABLE` 语句而不执行它们，并返回可以提供给检查的表断言。
+版本 2.10 添加了 `plpgsql_make_pragma(regprocedure)`，它会规划临时表创建但不执行，并返回可传给检查器的表断言。2.10.2 进一步支持更多 `CREATE TABLE` 语句形式：
 
 ```sql
 SELECT *
@@ -177,4 +178,4 @@ FROM plpgsql_check_function(
 - 活动检查可选地预加载，但共享分析器存储和稳健的跟踪/分析器初始化需要预加载。
 - 跟踪输出可能包括函数参数和局部变量值；不要在敏感生产工作负载中广泛启用它。
 - 检查器无法完全理解每个动态 SQL 字符串。使用断言来记录预期的动态对象并减少误报。
-- 2.10.1 版本修复了 PostgreSQL 14 中的共享内存 LWLock tranche 注册问题；在预加载分析器/跟踪状态时，请使用此版本而不是初始 2.10.0 构建。
+- 2.10.2 与 2.10.3 修复了复合参数分析中的潜在崩溃，以及对含多态参数函数生成覆盖率或分析器报告时的潜在崩溃。使用这些路径时应采用 2.10.3。
