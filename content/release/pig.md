@@ -36,7 +36,18 @@ Pig `v1.6.0` is a major release: `pig pt` becomes a transparent `patronictl` lau
 
 **Checksums**
 
-<!-- to be added upon release -->
+Artifacts: [Pigsty Mirror](https://repo.pigsty.io/pkg/pig/v1.6.0/) · [checksums.txt](https://repo.pigsty.io/pkg/pig/v1.6.0/checksums.txt)
+
+```bash
+6899e8a3e1c0adfe8c0c177c0632b0a00821b304ed5998fcbdf28d02660c6768  pig-1.6.0-1.aarch64.rpm
+cabe593fe7f5c31cdbcd8d546ae4925b57f98f70c564452335568389f3f9737c  pig-1.6.0-1.x86_64.rpm
+1f46d4a0b4710eed06b2cf8e7e17ee04b8d65331697c5c65afd513cc28282231  pig-v1.6.0.darwin-amd64.tar.gz
+845decb95697fc68bc5e12bc80cecfd4c6d23160afee96568b699d82f2e9261d  pig-v1.6.0.darwin-arm64.tar.gz
+4f1bb4fda8131db9f40db15e1575a6045b373dee609250cf5ee2bdedc2db89e2  pig-v1.6.0.linux-amd64.tar.gz
+4384d11150e31d614ed4ac3de4d6bf7ee7fa111ac84f5575753bb9f2f31f4ed8  pig-v1.6.0.linux-arm64.tar.gz
+e35ef0f2c76afe5f3512d34c0440abd8c0106c0e2775c5452e167ae3a4127e8e  pig_1.6.0-1_amd64.deb
+c3bc6d04c6acd7e5c3164a33b7525b25a93e2de9822ce957c15c18ee0d551901  pig_1.6.0-1_arm64.deb
+```
 
 Release: https://github.com/pgsty/pig/releases/tag/v1.6.0
 
