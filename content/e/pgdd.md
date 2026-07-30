@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `dd` |
-|   **See Also**    | {{< ext "pg_catcheck" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_checksums" >}} |
+|   **See Also**    | {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "meta" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_checksums" >}} {{< ext "pg_render" >}} {{< ext "pg_get_functiondef" >}} {{< ext "amcheck" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "schedoc" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "prioritize" >}} {{< ext "pg_permissions" >}} {{< ext "pg_readonly" >}} {{< ext "pg_crash" >}} {{< ext "pg_cooldown" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_repack" >}} {{< ext "pgfincore" >}} |
+|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_kpart" >}} {{< ext "pg_readonly" >}} {{< ext "prioritize" >}} {{< ext "block_copy_command" >}} {{< ext "safeupdate" >}} {{< ext "pg_command_fw" >}} {{< ext "pg_strict" >}} {{< ext "pg_hint_plan" >}} |
 
 > [!Note] requires shared_preload_libraries = 'qos'; official support PG15+
 

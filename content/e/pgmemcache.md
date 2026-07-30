@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "redis_fdw" >}} {{< ext "redis" >}} {{< ext "spat" >}} {{< ext "mongo_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} |
+|   **See Also**    | {{< ext "pgmq" >}} {{< ext "redis" >}} {{< ext "redis_fdw" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "pgq" >}} {{< ext "tcn" >}} {{< ext "pgmqtt" >}} {{< ext "pg_durable" >}} |
 
 > [!Note] missing pg12-14 on el.aarch64
 

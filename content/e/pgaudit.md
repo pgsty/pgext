@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgauditlogtofile" >}} {{< ext "set_user" >}} {{< ext "pg_permissions" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_auditor" >}} {{< ext "safeupdate" >}} {{< ext "pg_drop_events" >}} {{< ext "table_log" >}} |
+|   **See Also**    | {{< ext "pgauditlogtofile" >}} {{< ext "pg_auditor" >}} {{< ext "pg_roast" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "pg_drop_events" >}} {{< ext "pgelog" >}} {{< ext "logerrors" >}} {{< ext "pg_stat_log" >}} {{< ext "pg_auth_mon" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} |
 
 > [!Note] pg15=pgaudit17, pg14=pgaudit16
 

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `auth` |
-|   **See Also**    | {{< ext "pgjwt" >}} {{< ext "pgaudit" >}} {{< ext "pgsodium" >}} {{< ext "supabase_vault" >}} {{< ext "anon" >}} |
+|   **See Also**    | {{< ext "pg_oidc_validator" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "oidc_validator" >}} {{< ext "pg_auth_mon" >}} {{< ext "pgsodium" >}} {{< ext "auth_delay" >}} {{< ext "set_user" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} |
 
 
 ## Packages

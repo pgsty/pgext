@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "pgml" >}} {{< ext "plpython3u" >}} {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pljava" >}} {{< ext "plperl" >}} {{< ext "pllua" >}} |
+|   **See Also**    | {{< ext "plxslt" >}} {{< ext "pltcl" >}} {{< ext "plperl" >}} {{< ext "pljava" >}} {{< ext "plsh" >}} {{< ext "plpython3u" >}} {{< ext "plpgsql" >}} {{< ext "plperlu" >}} |
 
 > [!Note] missing el10.x86_64
 

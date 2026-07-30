@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "file_fdw" >}} {{< ext "aws_s3" >}} {{< ext "db_migrator" >}} {{< ext "pg_fact_loader" >}} {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "pglogical" >}} |
+|   **See Also**    | {{< ext "file_fdw" >}} {{< ext "aws_s3" >}} {{< ext "pg_parquet" >}} {{< ext "pg_lake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_csv" >}} {{< ext "omni_csv" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} |
 
 > [!Note] pg18 fixed by vonng
 

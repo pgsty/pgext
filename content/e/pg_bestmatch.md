@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `bm_catalog` |
-|   **See Also**    | {{< ext "vector" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "vectorize" >}} |
+|   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_fts" >}} {{< ext "pg_rrf" >}} {{< ext "pgroonga" >}} {{< ext "psql_bm25s" >}} {{< ext "vectorize" >}} {{< ext "pgcontext" >}} |
 
 
 ## Packages

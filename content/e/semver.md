@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "prefix" >}} {{< ext "ltree" >}} {{< ext "citext" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "pg_text_semver" >}} {{< ext "debversion" >}} |
 
 
 ## Packages

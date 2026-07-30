@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pgcrypto" >}} {{< ext "pg_cron" >}} |
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "pg_background" >}} |
+|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pgagent" >}} {{< ext "pg_later" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_background" >}} {{< ext "pg_durable" >}} {{< ext "pg_jobmon" >}} {{< ext "omni_worker" >}} |
 
 > [!Note] Pure SQL extension; runtime also needs pgcrypto from contrib in addition to pg_cron.
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "plv8" >}} {{< ext "jsonb_plperl" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "pg_net" >}} {{< ext "pg_summarize" >}} {{< ext "age" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "pgjq" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pg_projection" >}} {{< ext "documentdb" >}} {{< ext "mongo_fdw" >}} {{< ext "jsonb_plperl" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "jsonb_plperlu" >}} |
 
 
 ## Packages

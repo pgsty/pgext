@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_tiktoken" >}} {{< ext "pg_summarize" >}} {{< ext "vectorize" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "pg_graphql" >}} |
+|   **See Also**    | {{< ext "pg_tiktoken" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} {{< ext "pgroonga" >}} {{< ext "dict_xsyn" >}} |
 
 > [!Note] Built from upstream main snapshot fa2957b; bundles five vocabularies and includes DESTDIR and correctness patches. Upstream README declares Apache-2.0, but the pinned snapshot omits the referenced LICENSE file.
 

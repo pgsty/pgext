@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `tokenizer_catalog` |
-|   **See Also**    | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_trgm" >}} |
+|   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg_tiktoken_c" >}} {{< ext "unaccent" >}} {{< ext "dict_xsyn" >}} {{< ext "dict_int" >}} {{< ext "hunspell_cs_cz" >}} {{< ext "pg_kazsearch" >}} |
 
 > [!Note] PG18 fix by Vonng.
 

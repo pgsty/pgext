@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "citext" >}} {{< ext "btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "prefix" >}} {{< ext "dict_xsyn" >}} {{< ext "dict_int" >}} |
+|   **See Also**    | {{< ext "dict_xsyn" >}} {{< ext "dict_int" >}} {{< ext "pg_tokenizer" >}} {{< ext "pgroonga" >}} {{< ext "icu_ext" >}} {{< ext "pg_xenophile" >}} {{< ext "citext" >}} {{< ext "pg_trgm" >}} |
 
 
 ## Packages

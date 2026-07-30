@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `extension_base` `pg_catalog` |
 |    **Need By**    | {{< ext "pg_extension_updater" >}} {{< ext "pg_lake_engine" >}} |
+|   **See Also**    | {{< ext "pg_tle" >}} {{< ext "pg_readme" >}} {{< ext "pgextwlist" >}} {{< ext "ddlx" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_command_fw" >}} {{< ext "supautils" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
 > [!Note] Set shared_preload_libraries=pg_extension_base. It auto-loads dependent libraries declared through the pg_lake control-file marker and manages extension lifecycle background workers.

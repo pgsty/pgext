@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "first_last_agg" >}} {{< ext "aggs_for_arrays" >}} {{< ext "aggs_for_vecs" >}} {{< ext "topn" >}} |
+|   **See Also**    | {{< ext "tablefunc" >}} {{< ext "first_last_agg" >}} {{< ext "extra_window_functions" >}} {{< ext "pg_duckdb" >}} |
 
 > [!Note] fix pg16+ varlena header with patch
 

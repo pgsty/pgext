@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "documentdb_core" >}} {{< ext "pg_cron" >}} {{< ext "postgis" >}} {{< ext "tsm_system_rows" >}} {{< ext "vector" >}} |
 |    **Need By**    | {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
-|   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "wal2mongo" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "jsquery" >}} {{< ext "pg_projection" >}} {{< ext "mongo_fdw" >}} {{< ext "pgjq" >}} {{< ext "pg_graphql" >}} {{< ext "omni_rest" >}} {{< ext "pg_jsonschema" >}} {{< ext "pg_net" >}} {{< ext "jsonschema" >}} |
 |    **Siblings**   | {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
 
 

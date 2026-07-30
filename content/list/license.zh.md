@@ -25,15 +25,15 @@ weight: 300
 | {{< license "BSD-2-Clause" >}} | 16 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 13 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 11 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
-| {{< license "ISC" >}} | 7 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "ISC" >}} | 8 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
 | {{< license "LGPL-3.0" >}} | 4 | [许可证文本](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [许可证文本](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
-| {{< license "0BSD" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "Artistic-2.0" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
 | {{< license "Artistic-1.0" >}} | 1 | [许可证文本](#) | Unknown license |
-| {{< license "LicenseRef-Upstream-No-License" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "Unknown" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "0BSD" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 1 | [许可证文本](#) | Unknown license |
 
 ---------
@@ -314,7 +314,7 @@ weight: 300
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 为 QDGC 增加 PostGIS geometry/geography 绑定与区域到网格单元的填充能力。 |
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
-| 1950 | {{< alias "pgmnemo" >}} | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
+| 1950 | {{< alias "pgmnemo" >}} | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 1960 | {{< alias "pgcontext" >}} | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 | 2140 | {{< alias "pg_bestmatch" >}} | 在数据库内生成BM25稀疏向量 |
@@ -670,12 +670,13 @@ weight: 300
 
 
 
-| {{< license "ISC" >}} | {{< badge content="7 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "ISC" >}} | {{< badge content="8 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/ISC" icon="scale" >}} | A permissive license similar to MIT, allowing commercial use and modification. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
+| 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
 | 2650 | {{< alias "pgq" >}} | 通用队列的PG实现 |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | ZSTD压缩解压缩函数包 |
 | 5820 | {{< alias "safeupdate" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
@@ -711,19 +712,6 @@ weight: 300
 |:---:|:---|:---|
 | 1000 | {{< alias "timescaledb" >}} | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
-
-## 0BSD
-
-
-
-| {{< license "0BSD" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
-| 9100 | {{< alias "orafce" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 
 ## Artistic-2.0
 
@@ -774,17 +762,29 @@ weight: 300
 |:---:|:---|:---|
 | 3070 | {{< alias "plprofiler" >}} | 剖析 PL/pgSQL 函数 |
 
-## LicenseRef-Upstream-No-License
+## Unknown
 
 
 
-| {{< license "LicenseRef-Upstream-No-License" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Unknown" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 使用 Rust 与 pgrx 编写的 PostgreSQL 18 OIDC Bearer 令牌验证模块 |
+
+## 0BSD
+
+
+
+| {{< license "0BSD" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 9100 | {{< alias "orafce" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 
 ## Elastic-2.0
 

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "pg4ml" >}} |
-|   **See Also**    | {{< ext "cube" >}} {{< ext "plr" >}} {{< ext "orafce" >}} {{< ext "timescaledb" >}} {{< ext "citus" >}} {{< ext "pg_partman" >}} {{< ext "citus_columnar" >}} |
+|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "first_last_agg" >}} {{< ext "extra_window_functions" >}} {{< ext "argm" >}} {{< ext "pg_lake" >}} {{< ext "plprql" >}} {{< ext "duckdb_fdw" >}} |
 
 
 ## Packages

@@ -10,7 +10,7 @@ There are 562 packaged PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
-| {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "TIME" >}} | Enables scalable inserts and complex queries for time-series data |
+| {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "TIME" >}} | Enables scalable inserts and complex queries for time-series data |
 | {{< ext "timescaledb_toolkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | {{< ext "timeseries" "pg_timeseries" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | Convenience API for time series stack |
 | {{< ext "periods" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -68,7 +68,7 @@ There are 562 packaged PostgreSQL extensions:
 | {{< ext "pg_tiktoken_c" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | {{< category "RAG" >}} | Machine learning framework for PostgreSQL |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | Run AL/ML workloads with SQL interface |
-| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | {{< ext "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | {{< ext "pgcontext_pgvector" "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full text search for PostgreSQL using BM25 |
@@ -206,7 +206,7 @@ There are 562 packaged PostgreSQL extensions:
 | {{< ext "hstore_plluau" "pllua" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Hstore transform for untrusted Lua |
 | {{< ext "plprql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | {{< ext "pldbgapi" "pldebugger" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | server-side support for debugging PL/pgSQL functions |
-| {{< ext "plpgsql_check" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "LANG" >}} | extended check for plpgsql functions |
+| {{< ext "plpgsql_check" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | extended check for plpgsql functions |
 | {{< ext "plprofiler" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | server-side support for profiling PL/pgSQL functions |
 | {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | PL/sh procedural language |
 | {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/Java procedural language |

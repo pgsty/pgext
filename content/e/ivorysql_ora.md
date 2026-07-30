@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `sys` |
 |    **Need By**    | {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} |
+|   **See Also**    | {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pgtt" >}} {{< ext "db_migrator" >}} |
 |    **Siblings**   | {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} |
 
 > [!Note] compatible with PostgreSQL 18.4

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pgextwlist" >}} {{< ext "login_hook" >}} {{< ext "set_user" >}} |
+|   **See Also**    | {{< ext "pgextwlist" >}} {{< ext "supautils" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} {{< ext "noset" >}} {{< ext "sepgsql" >}} {{< ext "set_user" >}} {{< ext "pg_permissions" >}} {{< ext "pg_readonly" >}} {{< ext "pg_roast" >}} |
 
 > [!Note] Requires shared_preload_libraries = pg_command_fw to activate hooks for all sessions.
 

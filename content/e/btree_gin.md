@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "btree_gist" >}} {{< ext "unaccent" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} {{< ext "prefix" >}} {{< ext "citext" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} |
+|   **See Also**    | {{< ext "ora_btree_gin" >}} {{< ext "btree_gist" >}} {{< ext "parray_gin" >}} {{< ext "intarray" >}} {{< ext "rum" >}} {{< ext "bloom" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} |
 
 
 ## Packages

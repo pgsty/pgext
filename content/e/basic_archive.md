@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "basebackup_to_shell" >}} {{< ext "pg_walinspect" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_dirtyread" >}} {{< ext "pgfincore" >}} {{< ext "pg_cooldown" >}} |
+|   **See Also**    | {{< ext "aws_s3" >}} {{< ext "basebackup_to_shell" >}} {{< ext "external_file" >}} {{< ext "file_fdw" >}} {{< ext "repmgr" >}} {{< ext "pg_parquet" >}} {{< ext "pg_bulkload" >}} |
 
 
 ## Packages

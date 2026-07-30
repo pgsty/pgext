@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
+|   **See Also**    | {{< ext "pg_hint_plan" >}} {{< ext "pg_kpart" >}} {{< ext "pg_command_fw" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "block_copy_command" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_readonly" >}} |
 
 
 ## Packages

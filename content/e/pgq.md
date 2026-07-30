@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
+|   **See Also**    | {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "pgmqtt" >}} {{< ext "redis" >}} {{< ext "kafka_fdw" >}} {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "tcn" >}} {{< ext "pg_durable" >}} |
 
 
 ## Packages

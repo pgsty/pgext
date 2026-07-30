@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "file_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "nominatim_fdw" >}} {{< ext "rdf_fdw" >}} {{< ext "pointcloud" >}} {{< ext "pgh_raster" >}} {{< ext "file_fdw" >}} |
 
 
 ## Packages

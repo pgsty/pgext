@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "earthdistance" >}} {{< ext "pg4ml" >}} |
-|   **See Also**    | {{< ext "seg" >}} {{< ext "intarray" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} |
+|   **See Also**    | {{< ext "seg" >}} {{< ext "prefix" >}} {{< ext "unit" >}} {{< ext "ip4r" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "ltree" >}} |
 
 
 ## Packages

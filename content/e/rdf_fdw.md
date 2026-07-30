@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "postgres_fdw" >}} {{< ext "sparql" >}} |
+|   **See Also**    | {{< ext "pgrdf" >}} {{< ext "ogr_fdw" >}} {{< ext "sparql" >}} {{< ext "nominatim_fdw" >}} {{< ext "postgis" >}} {{< ext "mongo_fdw" >}} {{< ext "redis_fdw" >}} {{< ext "etcd_fdw" >}} {{< ext "xml2" >}} {{< ext "plxslt" >}} |
 
 > [!Note] PIGSTY RPM and DEB packages are aligned at 2.7.0 for PostgreSQL 14 through 18.
 

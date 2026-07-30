@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgtt_schema` |
-|   **See Also**    | {{< ext "oracle_fdw" >}} {{< ext "orafce" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "periods" >}} |
+|   **See Also**    | {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "db_migrator" >}} |
 
 
 ## Packages

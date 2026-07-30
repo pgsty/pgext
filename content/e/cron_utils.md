@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_when" >}} {{< ext "pgcalendar" >}} {{< ext "periods" >}} |
+|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pgcalendar" >}} {{< ext "pg_rrule" >}} {{< ext "pg_when" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_dispatch" >}} |
 
 > [!Note] The PGXN 0.1.0 distribution is marked unstable; the control file marks the extension relocatable.
 

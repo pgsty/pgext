@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "postgis" >}} {{< ext "pointcloud" >}} |
-|   **See Also**    | {{< ext "postgis_raster" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "pgrouting" >}} {{< ext "h3" >}} |
+|   **See Also**    | {{< ext "postgis_raster" >}} {{< ext "pgh_raster" >}} {{< ext "ogr_fdw" >}} {{< ext "pgrouting" >}} {{< ext "q3c" >}} {{< ext "h3" >}} |
 |    **Siblings**   | {{< ext "pointcloud" >}} |
 
 

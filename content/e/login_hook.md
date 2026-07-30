@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `login_hook` |
-|   **See Also**    | {{< ext "pg_auth_mon" >}} {{< ext "credcheck" >}} {{< ext "set_user" >}} {{< ext "pg_permissions" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "pgaudit" >}} {{< ext "auth_delay" >}} {{< ext "passwordcheck" >}} |
+|   **See Also**    | {{< ext "pg_session_jwt" >}} {{< ext "pg_oidc_validator" >}} {{< ext "pgjwt" >}} {{< ext "oidc_validator" >}} {{< ext "pg_auth_mon" >}} {{< ext "auth_delay" >}} {{< ext "set_user" >}} {{< ext "pgsodium" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} |
 
 
 ## Packages

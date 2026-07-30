@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} {{< ext "pgfincore" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_buffercache" >}} {{< ext "pgstattuple" >}} {{< ext "pg_cooldown" >}} {{< ext "pgcozy" >}} |
+|   **See Also**    | {{< ext "pg_squeeze" >}} {{< ext "pg_rewrite" >}} {{< ext "pgstattuple" >}} {{< ext "pg_column_tetris" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_visibility" >}} {{< ext "pageinspect" >}} |
 
 
 ## Packages

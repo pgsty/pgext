@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `eviltransform_internal` |
 |   **Requires**    | {{< ext "postgis" >}} |
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "earthdistance" >}} {{< ext "tzf" >}} {{< ext "geoip" >}} |
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "h3" >}} {{< ext "pg_geohash" >}} {{< ext "pg_polyline" >}} {{< ext "earthdistance" >}} {{< ext "qdgc" >}} {{< ext "convert" >}} {{< ext "pgrouting" >}} {{< ext "nominatim_fdw" >}} {{< ext "q3c" >}} |
 
 
 ## Packages

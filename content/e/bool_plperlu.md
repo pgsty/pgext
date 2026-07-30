@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plperlu" >}} |
-|   **See Also**    | {{< ext "plperl" >}} {{< ext "bool_plperl" >}} {{< ext "plpgsql" >}} {{< ext "pg_tle" >}} {{< ext "plv8" >}} |
+|   **See Also**    | {{< ext "plperl" >}} |
 |    **Siblings**   | {{< ext "plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "hstore_plperlu" >}} |
 
 

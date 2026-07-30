@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `omni_datasets` |
+|   **See Also**    | {{< ext "faker" >}} {{< ext "pg_fact_loader" >}} {{< ext "db_migrator" >}} {{< ext "postgres_fdw" >}} {{< ext "dbt2" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgfincore" >}} {{< ext "system_stats" >}} {{< ext "pg_buffercache" >}} {{< ext "pgnodemx" >}} {{< ext "pg_proctab" >}} {{< ext "pg_cooldown" >}} {{< ext "pgcozy" >}} {{< ext "pg_prewarm" >}} |
+|   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "system_stats" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} |
 
 > [!Note] no pg14 on el8/9 pgdg repo
 

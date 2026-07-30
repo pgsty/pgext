@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "pg_fsql" >}} {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "pglinter" >}} {{< ext "omni_sql" >}} {{< ext "pg_variables" >}} {{< ext "pre_prepare" >}} {{< ext "plan_filter" >}} {{< ext "pg_hint_plan" >}} {{< ext "pgdd" >}} |
+
 > [!Note] Requires shared_preload_libraries=pg_query_rewrite.
 
 

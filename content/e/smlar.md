@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_similarity" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} {{< ext "intarray" >}} {{< ext "vector" >}} {{< ext "pg_bigm" >}} {{< ext "unaccent" >}} {{< ext "vchord" >}} |
+|   **See Also**    | {{< ext "pg_similarity" >}} {{< ext "pg_trgm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "pg_bigm" >}} {{< ext "biscuit" >}} {{< ext "vector" >}} {{< ext "imgsmlr" >}} |
 
 > [!Note] fix pg18 break issue by https://github.com/Vonng/smlar
 

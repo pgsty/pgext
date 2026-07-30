@@ -25,15 +25,15 @@ PostgreSQL extension categorized by license.
 | {{< license "BSD-2-Clause" >}} | 16 | [License Text](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 13 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 11 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
-| {{< license "ISC" >}} | 7 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "ISC" >}} | 8 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
 | {{< license "LGPL-3.0" >}} | 4 | [License Text](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [License Text](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
-| {{< license "0BSD" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "Artistic-2.0" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
 | {{< license "Artistic-1.0" >}} | 1 | [License Text](#) | Unknown license |
-| {{< license "LicenseRef-Upstream-No-License" >}} | 1 | [License Text](#) | Unknown license |
+| {{< license "Unknown" >}} | 1 | [License Text](#) | Unknown license |
+| {{< license "0BSD" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 1 | [License Text](#) | Unknown license |
 
 ---------
@@ -314,7 +314,7 @@ PostgreSQL extension categorized by license.
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
-| 1950 | {{< alias "pgmnemo" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| 1950 | {{< alias "pgmnemo" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
@@ -670,12 +670,13 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "ISC" >}} | {{< badge content="7 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "ISC" >}} | {{< badge content="8 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/ISC" icon="scale" >}} | A permissive license similar to MIT, allowing commercial use and modification. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
+| 2520 | {{< alias "plproxy" >}} | Database partitioning implemented as procedural language |
 | 2650 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | Zstandard compression algorithm implementation in PostgreSQL |
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
@@ -711,19 +712,6 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 1000 | {{< alias "timescaledb" >}} | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
-
-## 0BSD
-
-
-
-| {{< license "0BSD" >}} | {{< badge content="2 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 2520 | {{< alias "plproxy" >}} | Database partitioning implemented as procedural language |
-| 9100 | {{< alias "orafce" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 
 ## Artistic-2.0
 
@@ -774,17 +762,29 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 3070 | {{< alias "plprofiler" >}} | server-side support for profiling PL/pgSQL functions |
 
-## LicenseRef-Upstream-No-License
+## Unknown
 
 
 
-| {{< license "LicenseRef-Upstream-No-License" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Unknown" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
+
+## 0BSD
+
+
+
+| {{< license "0BSD" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 9100 | {{< alias "orafce" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 
 ## Elastic-2.0
 

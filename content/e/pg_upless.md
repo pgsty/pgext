@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "pg_readonly" >}} {{< ext "pg_savior" >}} {{< ext "safeupdate" >}} {{< ext "pg_permissions" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_drop_events" >}} {{< ext "table_log" >}} |
+|   **See Also**    | {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "hypopg" >}} {{< ext "pg_relusage" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_track_optimizer" >}} {{< ext "plan_filter" >}} |
 
 
 ## Packages

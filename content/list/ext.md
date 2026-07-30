@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 562 | 156 | 410 | 71 | 0 | 557 | 543 | 531 | 511 | 488 |
-| **EL** | 561 | 155 | 410 | 71 | 1 | 556 | 542 | 530 | 510 | 487 |
-| **Debian** | 559 | 111 | 377 | 71 | 3 | 554 | 540 | 528 | 508 | 485 |
+| **ALL** | 562 | 156 | 410 | 71 | 0 | 557 | 543 | 531 | 510 | 488 |
+| **EL** | 561 | 155 | 410 | 71 | 1 | 556 | 542 | 530 | 509 | 487 |
+| **Debian** | 559 | 111 | 377 | 71 | 3 | 554 | 540 | 528 | 507 | 485 |
 
 ## Categories
 
@@ -40,7 +40,7 @@ There are 562 packaged PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Description |
 |:----------|:------------|:---------:|:--------------|
-| {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | Enables scalable inserts and complex queries for time-series data |
+| {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | Enables scalable inserts and complex queries for time-series data |
 | {{< ext "timescaledb_toolkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | {{< ext "timeseries" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Convenience API for time series stack |
 | {{< ext "periods" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -98,7 +98,7 @@ There are 562 packaged PostgreSQL extensions:
 | {{< ext "pg_tiktoken_c" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | Machine learning framework for PostgreSQL |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | Run AL/ML workloads with SQL interface |
-| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | {{< ext "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | {{< ext "pgcontext_pgvector" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Full text search for PostgreSQL using BM25 |
@@ -236,7 +236,7 @@ There are 562 packaged PostgreSQL extensions:
 | {{< ext "hstore_plluau" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Hstore transform for untrusted Lua |
 | {{< ext "plprql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | {{< ext "pldbgapi" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | server-side support for debugging PL/pgSQL functions |
-| {{< ext "plpgsql_check" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | extended check for plpgsql functions |
+| {{< ext "plpgsql_check" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | extended check for plpgsql functions |
 | {{< ext "plprofiler" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | server-side support for profiling PL/pgSQL functions |
 | {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PL/sh procedural language |
 | {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PL/Java procedural language |

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "fio" >}} {{< ext "lo" >}} {{< ext "file_fdw" >}} {{< ext "ddlx" >}} {{< ext "pgdd" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_cheat_funcs" >}} {{< ext "pg_repack" >}} |
+|   **See Also**    | {{< ext "pg_checksums" >}} {{< ext "amcheck" >}} {{< ext "pg_repack" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_surgery" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_pathcheck" >}} {{< ext "pg_isok" >}} {{< ext "pageinspect" >}} {{< ext "pg_squeeze" >}} |
 
 
 ## Packages

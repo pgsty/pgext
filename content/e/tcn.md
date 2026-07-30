@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "permuteseq" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "topn" >}} {{< ext "quantile" >}} |
+|   **See Also**    | {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "redis" >}} {{< ext "pgq" >}} {{< ext "pgmqtt" >}} {{< ext "pg_durable" >}} {{< ext "redis_fdw" >}} {{< ext "fsm_core" >}} {{< ext "refint" >}} |
 
 
 ## Packages

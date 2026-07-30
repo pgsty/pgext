@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `geoip` |
 |   **Requires**    | {{< ext "ip4r" >}} |
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "tzf" >}} {{< ext "country" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
+|   **See Also**    | {{< ext "postgis_tiger_geocoder" >}} {{< ext "tzf" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_geohash" >}} |
 
 > [!Note] no pg17 on el9, no legacy branch on el8
 

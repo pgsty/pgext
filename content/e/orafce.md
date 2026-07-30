@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "oracle_fdw" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "db_migrator" >}} |
+|   **See Also**    | {{< ext "ivorysql_ora" >}} {{< ext "db2fce" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "tds_fdw" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} |
 
 > [!Note] el llvmjit deps break
 

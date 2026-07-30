@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `spock` |
-|   **See Also**    | {{< ext "lolor" >}} {{< ext "snowflake" >}} |
+|   **See Also**    | {{< ext "pglogical" >}} {{< ext "pgactive" >}} {{< ext "mimeo" >}} {{< ext "pgoutput" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} {{< ext "postgres_fdw" >}} {{< ext "lolor" >}} {{< ext "citus" >}} {{< ext "plproxy" >}} |
 
 > [!Note] works on pgedge kernel fork
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_ivm" >}} {{< ext "pg_bulkload" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
+|   **See Also**    | {{< ext "external_file" >}} {{< ext "pg_parquet" >}} {{< ext "arraymath" >}} {{< ext "file_fdw" >}} {{< ext "byteamagic" >}} {{< ext "fio" >}} {{< ext "aws_s3" >}} {{< ext "envvar" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_lake" >}} |
 
 
 ## Packages

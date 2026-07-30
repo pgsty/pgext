@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pinyin` |
-|   **See Also**    | {{< ext "zhparser" >}} {{< ext "pg_search" >}} {{< ext "pg_trgm" >}} {{< ext "pg_bigm" >}} {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_tokenizer" >}} {{< ext "fuzzystrmatch" >}} |
+|   **See Also**    | {{< ext "pg_cjk_parser" >}} {{< ext "pg_jieba" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} {{< ext "icu_ext" >}} {{< ext "pg_xenophile" >}} {{< ext "gb18030_2022" >}} |
 
 > [!Note] optional tokenizer-input overload can integrate with pg_search.
 

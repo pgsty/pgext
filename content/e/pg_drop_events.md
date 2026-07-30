@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "pg_savior" >}} {{< ext "table_log" >}} {{< ext "pgaudit" >}} {{< ext "pg_auditor" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_upless" >}} {{< ext "pgauditlogtofile" >}} |
+|   **See Also**    | {{< ext "table_log" >}} {{< ext "safeupdate" >}} {{< ext "pg_strict" >}} {{< ext "pg_savior" >}} {{< ext "pgmemento" >}} {{< ext "pgaudit" >}} {{< ext "pgelog" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} {{< ext "data_historization" >}} |
 
 
 ## Packages

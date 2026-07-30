@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
+|   **See Also**    | {{< ext "postbis" >}} {{< ext "vector" >}} {{< ext "pg_similarity" >}} {{< ext "pg_trgm" >}} {{< ext "smlar" >}} {{< ext "imgsmlr" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} |
 
 > [!Note] PIGSTY RPM and DEB packages provide 202503.6 for PostgreSQL 14-18; legacy 202303.3 packages remain in some repositories.
 

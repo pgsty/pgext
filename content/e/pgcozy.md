@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pg_buffercache" >}} {{< ext "pg_prewarm" >}} |
-|   **See Also**    | {{< ext "pgfincore" >}} {{< ext "pg_cooldown" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_repack" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_visibility" >}} {{< ext "system_stats" >}} |
+|   **See Also**    | {{< ext "pg_buffercache" >}} {{< ext "pgfincore" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_cooldown" >}} |
 
 
 ## Packages

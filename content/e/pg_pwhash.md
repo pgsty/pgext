@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "passwordpolicy" >}} {{< ext "credcheck" >}} {{< ext "chkpass" >}} {{< ext "pg_enigma" >}} {{< ext "column_encrypt" >}} |
+
 > [!Note] RPM metadata shows license=PostgreSQL, but packaged LICENSE file is MIT
 
 

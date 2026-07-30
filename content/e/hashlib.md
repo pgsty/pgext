@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "xxhash" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgcrypto" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} |
+|   **See Also**    | {{< ext "pgcrypto" >}} {{< ext "xxhash" >}} {{< ext "md5hash" >}} {{< ext "hashtypes" >}} {{< ext "pgsodium" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} |
 
 > [!Note] build-deps: python3-docutils
 

@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "rdf_fdw" >}} |
+
 > [!Note] PIGSTY RPM and DEB packages are aligned at 2.1.0 for PostgreSQL 14 through 18.
 
 

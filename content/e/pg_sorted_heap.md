@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "storage_engine" >}} {{< ext "pg_ivm" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "pg_search" >}} |
+|   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "columnar" >}} {{< ext "orioledb" >}} {{< ext "citus_columnar" >}} |
 
 > [!Note] sorted_hnsw.shared_cache requires shared_preload_libraries=pg_sorted_heap.
 

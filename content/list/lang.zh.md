@@ -468,7 +468,7 @@ weight: 200
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
 | 1700 | {{< alias "qdgc" >}} | 用纯 SQL 编码、解码、遍历和填充扩展四分之一度网格单元（QDGC）编码。 |
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 为 QDGC 增加 PostGIS geometry/geography 绑定与区域到网格单元的填充能力。 |
-| 1950 | {{< alias "pgmnemo" >}} | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
+| 1950 | {{< alias "pgmnemo" >}} | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 2500 | {{< alias "pg_fkpart" >}} | 按外键实用程序进行表分区的扩展 |
 | 2660 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2670 | {{< alias "pgmb" >}} | 一个简单的PostgreSQL消息代理系统 |

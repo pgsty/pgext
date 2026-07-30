@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "amcheck" >}} {{< ext "supautils" >}} |
+|   **See Also**    | {{< ext "plpgsql_check" >}} {{< ext "pg_query_rewrite" >}} {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "pldbgapi" >}} {{< ext "pg_fsql" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "plprofiler" >}} {{< ext "pg_stat_plans" >}} |
 
 
 ## Packages

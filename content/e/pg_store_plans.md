@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_hint_plan" >}} {{< ext "pre_prepare" >}} {{< ext "pg_stat_monitor" >}} {{< ext "explain_ui" >}} {{< ext "plprofiler" >}} |
+|   **See Also**    | {{< ext "pg_stat_plans" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_statements" >}} {{< ext "auto_explain" >}} {{< ext "explain_ui" >}} {{< ext "powa" >}} {{< ext "pg_overexplain" >}} {{< ext "pg_wait_sampling" >}} |
 
 
 ## Packages

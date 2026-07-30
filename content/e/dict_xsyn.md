@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "dict_int" >}} {{< ext "unaccent" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} {{< ext "pg_summarize" >}} {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} |
+|   **See Also**    | {{< ext "dict_int" >}} {{< ext "unaccent" >}} {{< ext "pg_tokenizer" >}} {{< ext "pgroonga" >}} {{< ext "pg_kazsearch" >}} {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "zhparser" >}} |
 
 
 ## Packages

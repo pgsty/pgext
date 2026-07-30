@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pg_xenophile" >}} |
-|   **See Also**    | {{< ext "country" >}} {{< ext "currency" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} |
+|   **See Also**    | {{< ext "icu_ext" >}} {{< ext "country" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_cjk_parser" >}} {{< ext "unaccent" >}} {{< ext "isn" >}} {{< ext "currency" >}} |
 |    **Siblings**   | {{< ext "pg_xenophile" >}} |
 
 

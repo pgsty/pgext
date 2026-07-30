@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7180** | {{< badge content="oidc_validator" link="https://github.com/UnAfraid/pg_oidc_validator_rust" >}} | {{< ext "oidc_validator" "pg_oidc_validator_rust" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "LicenseRef-Upstream-No-License" >}} | {{< language "Rust" >}} |
+| **7180** | {{< badge content="oidc_validator" link="https://github.com/UnAfraid/pg_oidc_validator_rust" >}} | {{< ext "oidc_validator" "pg_oidc_validator_rust" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "Unknown" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "auth_delay" >}} |
+|   **See Also**    | {{< ext "pg_oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} {{< ext "pgsodium" >}} |
 
 > [!Note] Configure oauth_validator_libraries='oidc_validator'. Built from upstream commit b65bbbe288f84fab91d58b8304e8a526d1326af5; upstream publishes no license grant.
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgjwt" >}} {{< ext "pg_protobuf" >}} {{< ext "jsquery" >}} {{< ext "sparql" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pg_projection" >}} {{< ext "jsonb_plperl" >}} {{< ext "jsonb_plperlu" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "documentdb" >}} {{< ext "mongo_fdw" >}} |
 
 > [!Note] build with jq-devel
 

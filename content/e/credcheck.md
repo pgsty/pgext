@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "passwordcheck_cracklib" >}} {{< ext "login_hook" >}} {{< ext "passwordcheck" >}} {{< ext "pgaudit" >}} {{< ext "pg_auth_mon" >}} {{< ext "set_user" >}} {{< ext "auth_delay" >}} {{< ext "pg_permissions" >}} |
+|   **See Also**    | {{< ext "pg_pwhash" >}} {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "passwordpolicy" >}} {{< ext "chkpass" >}} {{< ext "pg_enigma" >}} {{< ext "column_encrypt" >}} |
 
 
 ## Packages

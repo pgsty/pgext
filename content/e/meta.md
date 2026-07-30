@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `meta` |
-|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} |
+|   **See Also**    | {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "pgdd" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_checksums" >}} {{< ext "pg_render" >}} {{< ext "pg_get_functiondef" >}} {{< ext "amcheck" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "schedoc" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "system_stats" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pgsentinel" >}} {{< ext "pgmeminfo" >}} {{< ext "pgfincore" >}} {{< ext "prioritize" >}} {{< ext "pg_buffercache" >}} |
+|   **See Also**    | {{< ext "system_stats" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgsentinel" >}} {{< ext "pg_datasentinel" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "pgpool_adm" >}} |
 |    **Siblings**   | {{< ext "pg_proctab" >}} |
 
 > [!Note] Package/source version 2.0.1 ships SQL/control version 2.0. PIGSTY RPM and PGDG DEB cover PostgreSQL 14-18 and also ship the pg_proctab compatibility stub; the release tarball reports pgnodemx_version() as none. shared_preload_libraries=pgnodemx is required.

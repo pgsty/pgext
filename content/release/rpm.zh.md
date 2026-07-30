@@ -6,6 +6,33 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
+## 2026-07-30
+
+| 扩展名              | 旧版本        | 新版本        | 备注                                                        |
+|:-----------------|:-----------|:-----------|:----------------------------------------------------------|
+| emaj             | -          | 5.0.0      | 包名改为 `e-maj`；Provides/Obsoletes `emaj`；r2                 |
+| graph            | 0.1.8      | 1.0.0      | pggraph；PG14-18；pgrx 0.19.1                               |
+| nominatim_fdw    | 2.0.0      | 2.1.0      | PG14-18                                                   |
+| numeral          | 1.3        | 1.3        | 包名改为 `postgresql-numeral`；Provides/Obsoletes `numeral`；r3 |
+| pg_ai_query      | 0.1.1      | 0.1.1      | 仅 EL9/10（GCC 13/OpenSSL 3）；r2 尚未入库                        |
+| pg_column_tetris | -          | 0.1.0      | 纯 SQL；PG14-18                                             |
+| pg_net           | 0.20.5     | 0.20.5     | EL8/9：0.9.2；EL10：0.20.5；r3 尚未入库                           |
+| pg_partman       | 5.4.0      | 5.5.0      | PG14-18                                                   |
+| pg_search        | 0.24.3     | 0.25.0     | PG15-18；pgrx 0.19.1；新增 pgvector/OpenBLAS 依赖               |
+| pgcontext        | -          | 0.2.0      | PG17-18；pgrx 0.19.1；可选 pgvector 兼容桥                       |
+| pgedge           | 18.4       | 18.4       | PG15-18 ABI 修复；r2 尚未入库                                    |
+| pgmnemo          | 0.13.0     | 0.15.0     | PG17-18；依赖 pgvector >= 0.7.0                              |
+| pgmp             | -          | 1.0.6      | PG14-18；依赖 GMP                                            |
+| pgpcre           | 0.20190509 | 0.20190509 | 仅 EL8/9；r2 尚未入库                                           |
+| pgwasm           | -          | 0.1.0      | PG14-18                                                   |
+| plpgsql_check    | 2.10.1     | 2.10.3     | PG14-18；预加载改为可选                                           |
+| postbis          | -          | 1.0        | PG14-18 兼容补丁；r2                                           |
+| qdgc             | -          | 0.1.0      | PG14-18；包含 qdgc_postgis                                   |
+| rdf_fdw          | 2.6.0      | 2.7.0      | PG14-18                                                   |
+| timescaledb      | 2.28.3     | 2.29.0     | PG16-18                                                   |
+| uri              | 1.20251029 | 1.20251029 | 包名改为 `pguri`；Provides/Obsoletes `pg_uri`；r2               |
+| vector           | 0.8.5      | 0.8.6      | PG14-18；0.8.6 尚未入库                                        |
+
 ## 2026-07-24
 
 本批次记录 2026-07-07 至 2026-07-24 期间的扩展变化，包括新增扩展、版本升级、Rust/pgrx 重构建，以及软件包矩阵缺口修复。版本未变化的条目表示打包或覆盖范围发生变化；包版本与 SQL 扩展版本不同时，仅在必要处注明。

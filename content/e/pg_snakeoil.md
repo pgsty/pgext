@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_crash" >}} {{< ext "pg_cheat_funcs" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_savior" >}} {{< ext "pg_surgery" >}} {{< ext "pageinspect" >}} {{< ext "pg_catcheck" >}} {{< ext "amcheck" >}} |
+|   **See Also**    | {{< ext "pg_roast" >}} {{< ext "pg_permissions" >}} {{< ext "pg_auditor" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "pg_readonly" >}} |
 
 > [!Note] require clamV libs
 

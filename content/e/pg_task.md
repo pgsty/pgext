@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "timescaledb" >}} {{< ext "pg_cron" >}} {{< ext "pg_later" >}} {{< ext "pg_background" >}} {{< ext "pg_partman" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} |
+|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_durable" >}} {{< ext "pg_background" >}} {{< ext "pgagent" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_later" >}} {{< ext "pgmq" >}} {{< ext "ulak" >}} {{< ext "pg_retry" >}} |
 
 > [!Note] breaks on many systems
 

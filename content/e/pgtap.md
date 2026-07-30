@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "plpgsql_check" >}} {{< ext "plpgsql" >}} {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "faker" >}} {{< ext "unit" >}} {{< ext "dbt2" >}} {{< ext "plperl" >}} |
+|   **See Also**    | {{< ext "faker" >}} {{< ext "dbt2" >}} {{< ext "pg_mockable" >}} {{< ext "pgsqlmock" >}} {{< ext "omni_test" >}} {{< ext "random" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 
 > [!Note] missing pg17 el9, breaking perl deps
 

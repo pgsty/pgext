@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_extra_time" >}} {{< ext "extra_window_functions" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
+|   **See Also**    | {{< ext "pgcalendar" >}} {{< ext "pg_math" >}} {{< ext "pg_extra_time" >}} {{< ext "pg_rrule" >}} |
 
 
 ## Packages

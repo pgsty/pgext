@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgdd" >}} {{< ext "pg_checksums" >}} {{< ext "pg_permissions" >}} {{< ext "pgextwlist" >}} {{< ext "pg_catcheck" >}} {{< ext "adminpack" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} |
+|   **See Also**    | {{< ext "pg_readme" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_get_functiondef" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_render" >}} {{< ext "schedoc" >}} {{< ext "pg_query_rewrite" >}} {{< ext "pgpdf" >}} |
 
 
 ## Packages

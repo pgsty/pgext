@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `vectorize` |
 |   **Requires**    | {{< ext "pg_cron" >}} {{< ext "pgmq" >}} {{< ext "vector" >}} |
-|   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "pg_later" >}} {{< ext "pg_similarity" >}} |
+|   **See Also**    | {{< ext "vector" >}} {{< ext "pgcontext" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_summarize" >}} {{< ext "pgmnemo" >}} |
 
 > [!Note] Extension identity is 0.23.0 inside package 0.26.2; shared_preload_libraries should include vectorize and pg_cron.
 

@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_textsearch" >}} |
+|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "pg_similarity" >}} {{< ext "fuzzystrmatch" >}} {{< ext "smlar" >}} {{< ext "pg_bigm" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "pgroonga" >}} |
 
 > [!Note] Latest stable PGXN distribution and package release is 2.4.3; 2.5.0 is testing; packaged control and SQL default version remain 2.4.1; package name is biscuit.
 

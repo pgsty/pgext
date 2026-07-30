@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_wait_sampling" >}} |
+|   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "pgfr_record" >}} {{< ext "logerrors" >}} {{< ext "pgelog" >}} |
 
 
 ## Packages

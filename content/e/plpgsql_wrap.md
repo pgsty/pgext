@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "orafce" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pgaudit" >}} |
+|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plisql" >}} {{< ext "orafce" >}} {{< ext "plx" >}} {{< ext "db2fce" >}} |
 
 > [!Note] PGDG RPM and Pigsty DEB package hexacluster/plpgsql_wrap 1.0; control requires plpgsql and superuser=true; links OpenSSL.
 

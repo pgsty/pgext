@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "geoip" >}} |
-|   **See Also**    | {{< ext "pg_net" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "prefix" >}} {{< ext "geoip" >}} {{< ext "postgis" >}} {{< ext "uri" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_sphere" >}} {{< ext "earthdistance" >}} {{< ext "q3c" >}} |
 
 
 ## Packages

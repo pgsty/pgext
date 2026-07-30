@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_graphql" >}} {{< ext "plv8" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "pg_projection" >}} {{< ext "jsonb_plperl" >}} {{< ext "documentdb" >}} {{< ext "jsonb_plperlu" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "mongo_fdw" >}} |
 
 > [!Note] Distinct from Supabase pg_jsonschema.
 

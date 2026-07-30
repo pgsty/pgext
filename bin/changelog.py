@@ -290,9 +290,11 @@ def main():
         old, new, note, note_zh = merge_group(pkg, uniq, norm.leads.get(pkg.lower(), set()))
         records.append((ds, pkg, old, new, note, note_zh))
 
-    records.sort(key=lambda r: (r[0], r[1]), reverse=True)
+    # Match the canonical database dump order: batch descending, package ascending.
+    records.sort(key=lambda r: r[1])
+    records.sort(key=lambda r: r[0], reverse=True)
     with OUTPUT.open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["ds", "pkg", "old_ver", "new_ver", "note_en", "note_zh"])
         for r in records:
             w.writerow(["" if v is None else v for v in r])

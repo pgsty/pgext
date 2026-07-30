@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "columnar" >}} {{< ext "citus" >}} {{< ext "pg_analytics" >}} {{< ext "citus_columnar" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} |
+|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_orca" >}} {{< ext "columnar" >}} {{< ext "citus" >}} {{< ext "pg_clickhouse" >}} {{< ext "storage_engine" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
 
 > [!Note] RPM only: version 6.1 is available for PostgreSQL 15-18; PostgreSQL 14 remains on 3.5; no DEB package is available.
 

@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pglater` |
 |   **Requires**    | {{< ext "pgmq" >}} |
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_background" >}} {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} |
+|   **See Also**    | {{< ext "pg_task" >}} {{< ext "pg_cron" >}} {{< ext "pg_dispatch" >}} {{< ext "pgagent" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_background" >}} {{< ext "pg_durable" >}} {{< ext "omni_worker" >}} {{< ext "pg_jobmon" >}} |
 
 
 ## Packages

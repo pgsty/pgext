@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "numeral" >}} {{< ext "aggs_for_vecs" >}} {{< ext "aggs_for_arrays" >}} {{< ext "arraymath" >}} {{< ext "financial" >}} |
+|   **See Also**    | {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "aggs_for_vecs" >}} {{< ext "aggs_for_arrays" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "plan_filter" >}} {{< ext "auto_explain" >}} |
+|   **See Also**    | {{< ext "hypopg" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_hint_plan" >}} {{< ext "online_advisor" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "plan_filter" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} |
 
 > [!Note] Activate it with LOAD pg_regresql or session_preload_libraries.
 

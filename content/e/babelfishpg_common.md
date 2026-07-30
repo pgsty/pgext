@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "babelfishpg_tsql" >}} |
-|   **See Also**    | {{< ext "tds_fdw" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "pg_hint_plan" >}} {{< ext "uuid-ossp" >}} {{< ext "session_variable" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} |
+|   **See Also**    | {{< ext "tds_fdw" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "ivorysql_ora" >}} {{< ext "mysql_fdw" >}} {{< ext "db_migrator" >}} {{< ext "db2_fdw" >}} |
 |    **Siblings**   | {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} |
 
 > [!Note] special case: this extension only works on wiltondb kernel fork

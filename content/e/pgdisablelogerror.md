@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "logerrors" >}} {{< ext "pgauditlogtofile" >}} |
+|   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "pgelog" >}} {{< ext "logerrors" >}} {{< ext "pgaudit" >}} {{< ext "pg_sqlog" >}} {{< ext "log_fdw" >}} {{< ext "pg_auth_mon" >}} |
 
 > [!Note] PGDG RPM and Pigsty DEB package fmbiete/pgdisablelogerror 1.0; control is relocatable=true and requires shared_preload_libraries.
 

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "seg" >}} {{< ext "cube" >}} |
 
 
 ## Packages

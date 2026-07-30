@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "ddsketch" >}} {{< ext "hll" >}} {{< ext "count_distinct" >}} {{< ext "topn" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "first_last_agg" >}} |
+|   **See Also**    | {{< ext "ddsketch" >}} {{< ext "count_distinct" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "datasketches" >}} {{< ext "hll" >}} |
 
 
 ## Packages

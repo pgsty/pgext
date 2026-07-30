@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "pg_dbms_errlog" >}} |
-|   **See Also**    | {{< ext "oracle_fdw" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "safeupdate" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_hint_plan" >}} |
+|   **See Also**    | {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "pgtt" >}} {{< ext "ivorysql_ora" >}} {{< ext "session_variable" >}} {{< ext "db_migrator" >}} {{< ext "db2_fdw" >}} {{< ext "babelfishpg_common" >}} {{< ext "tds_fdw" >}} |
 
 
 ## Packages

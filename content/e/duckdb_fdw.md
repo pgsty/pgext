@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_parquet" >}} {{< ext "wrappers" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "citus" >}} |
+|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_clickhouse" >}} {{< ext "pg_parquet" >}} {{< ext "pg_lake" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_stat_ch" >}} |
 
 > [!Note] depend on pg_duckdb's libduckdb, memory mode is break
 

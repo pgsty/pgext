@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgfr_analyze` |
 |   **Requires**    | {{< ext "pgfr_record" >}} |
-|   **See Also**    | {{< ext "pgfr_record" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_statements" >}} |
+|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "pg_stat_log" >}} {{< ext "pg_wait_sampling" >}} |
 |    **Siblings**   | {{< ext "pgfr_record" >}} |
 
 > [!Note] Secondary extension shipped by pg_flight_recorder; requires pgfr_record.

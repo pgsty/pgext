@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|   **See Also**    | {{< ext "columnar" >}} {{< ext "pg_parquet" >}} {{< ext "timescaledb" >}} {{< ext "pg_analytics" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "orioledb" >}} |
+|   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "columnar" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} {{< ext "pg_sorted_heap" >}} |
 |    **Siblings**   | {{< ext "citus" >}} |
 
 > [!Note] conflict with hydra columnar

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "aggs_for_arrays" >}} {{< ext "aggs_for_vecs" >}} {{< ext "intarray" >}} {{< ext "first_last_agg" >}} {{< ext "floatvec" >}} |
+|   **See Also**    | {{< ext "intarray" >}} {{< ext "floatvec" >}} {{< ext "aggs_for_vecs" >}} {{< ext "aggs_for_arrays" >}} {{< ext "collection" >}} {{< ext "hstore" >}} {{< ext "pgbson" >}} |
 
 
 ## Packages

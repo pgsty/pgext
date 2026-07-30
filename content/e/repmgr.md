@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `repmgr` |
-|   **See Also**    | {{< ext "pglogical" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgactive" >}} {{< ext "bgw_replstatus" >}} {{< ext "postgres_fdw" >}} {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "dblink" >}} |
+|   **See Also**    | {{< ext "pg_failover_slots" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgautofailover" >}} {{< ext "pgpool_adm" >}} {{< ext "pglogical" >}} {{< ext "pgactive" >}} {{< ext "pglogical_ticker" >}} |
 
 
 ## Packages
@@ -41,7 +41,7 @@ width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "PGDG 5.5.0" "repmgr_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_14 : AVAIL 7" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PGDG 5.5.0" "repmgr_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_14 : AVAIL 4" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 5.5.0" "repmgr_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_14 : AVAIL 7" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 5.5.0" "repmgr_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_14 : AVAIL 6" "blue" >}} |
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 5.5.0" "repmgr_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_14 : AVAIL 4" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 5.5.0" "repmgr_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 5.5.0" "repmgr_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.0" "repmgr_14 : AVAIL 2" "blue" >}} |
@@ -95,7 +95,6 @@ width: full
 | `repmgr_17` | `5.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 295.1 KiB | [repmgr_17-5.5.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/repmgr_17-5.5.0-1PGDG.rhel8.x86_64.rpm) |
 | `repmgr_17` | `5.5.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 285.2 KiB | [repmgr_17-5.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/repmgr_17-5.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `repmgr_17` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 266.9 KiB | [repmgr_17-5.5.0-7PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/repmgr_17-5.5.0-7PGDG.rhel9.8.x86_64.rpm) |
-| `repmgr_17` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 267.9 KiB | [repmgr_17-5.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/repmgr_17-5.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `repmgr_17` | `5.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 260.0 KiB | [repmgr_17-5.5.0-7PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/repmgr_17-5.5.0-7PGDG.rhel9.8.aarch64.rpm) |
 | `repmgr_17` | `5.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 261.0 KiB | [repmgr_17-5.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/repmgr_17-5.5.0-1PGDG.rhel9.aarch64.rpm) |
 | `repmgr_17` | `5.5.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 270.0 KiB | [repmgr_17-5.5.0-7PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/repmgr_17-5.5.0-7PGDG.rhel10.2.x86_64.rpm) |
@@ -123,7 +122,6 @@ width: full
 | `repmgr_16` | `5.5.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 282.6 KiB | [repmgr_16-5.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/repmgr_16-5.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `repmgr_16` | `5.4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 280.9 KiB | [repmgr_16-5.4.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/repmgr_16-5.4.1-1PGDG.rhel8.aarch64.rpm) |
 | `repmgr_16` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 266.9 KiB | [repmgr_16-5.5.0-7PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/repmgr_16-5.5.0-7PGDG.rhel9.8.x86_64.rpm) |
-| `repmgr_16` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 268.1 KiB | [repmgr_16-5.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/repmgr_16-5.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `repmgr_16` | `5.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 266.8 KiB | [repmgr_16-5.4.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/repmgr_16-5.4.1-1PGDG.rhel9.x86_64.rpm) |
 | `repmgr_16` | `5.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 260.1 KiB | [repmgr_16-5.5.0-7PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/repmgr_16-5.5.0-7PGDG.rhel9.8.aarch64.rpm) |
 | `repmgr_16` | `5.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 261.2 KiB | [repmgr_16-5.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/repmgr_16-5.5.0-1PGDG.rhel9.aarch64.rpm) |
@@ -157,7 +155,6 @@ width: full
 | `repmgr_15` | `5.4.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 280.4 KiB | [repmgr_15-5.4.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/repmgr_15-5.4.0-1.rhel8.aarch64.rpm) |
 | `repmgr_15` | `5.3.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 276.5 KiB | [repmgr_15-5.3.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/repmgr_15-5.3.3-1.rhel8.aarch64.rpm) |
 | `repmgr_15` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 268.9 KiB | [repmgr_15-5.5.0-7PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/repmgr_15-5.5.0-7PGDG.rhel9.8.x86_64.rpm) |
-| `repmgr_15` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 270.1 KiB | [repmgr_15-5.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/repmgr_15-5.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `repmgr_15` | `5.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 268.7 KiB | [repmgr_15-5.4.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/repmgr_15-5.4.1-1PGDG.rhel9.x86_64.rpm) |
 | `repmgr_15` | `5.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 268.6 KiB | [repmgr_15-5.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/repmgr_15-5.4.0-1.rhel9.x86_64.rpm) |
 | `repmgr_15` | `5.3.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 266.8 KiB | [repmgr_15-5.3.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/repmgr_15-5.3.3-1.rhel9.x86_64.rpm) |
@@ -197,7 +194,6 @@ width: full
 | `repmgr_14` | `5.4.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 278.9 KiB | [repmgr_14-5.4.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/repmgr_14-5.4.0-1.rhel8.aarch64.rpm) |
 | `repmgr_14` | `5.3.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 275.3 KiB | [repmgr_14-5.3.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/repmgr_14-5.3.3-1.rhel8.aarch64.rpm) |
 | `repmgr_14` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 268.0 KiB | [repmgr_14-5.5.0-7PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/repmgr_14-5.5.0-7PGDG.rhel9.8.x86_64.rpm) |
-| `repmgr_14` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 269.3 KiB | [repmgr_14-5.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/repmgr_14-5.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `repmgr_14` | `5.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 268.2 KiB | [repmgr_14-5.4.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/repmgr_14-5.4.1-1PGDG.rhel9.x86_64.rpm) |
 | `repmgr_14` | `5.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 267.9 KiB | [repmgr_14-5.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/repmgr_14-5.4.0-1.rhel9.x86_64.rpm) |
 | `repmgr_14` | `5.3.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 266.0 KiB | [repmgr_14-5.3.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/repmgr_14-5.3.3-1.rhel9.x86_64.rpm) |

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_auth_mon" >}} {{< ext "credcheck" >}} {{< ext "login_hook" >}} {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_permissions" >}} |
+|   **See Also**    | {{< ext "pg_session_jwt" >}} {{< ext "login_hook" >}} {{< ext "set_user" >}} {{< ext "pg_auth_mon" >}} {{< ext "pgjwt" >}} {{< ext "pg_oidc_validator" >}} {{< ext "oidc_validator" >}} {{< ext "pg_permissions" >}} {{< ext "pgaudit" >}} |
 
 
 ## Packages

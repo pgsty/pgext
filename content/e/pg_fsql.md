@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `fsql` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "pg_readme" >}} {{< ext "schedoc" >}} |
+|   **See Also**    | {{< ext "pg_query_rewrite" >}} {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "pglinter" >}} {{< ext "omni_sql" >}} {{< ext "pg_variables" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} |
 
 > [!Note] Release tag 1.1.0 still ships extension SQL version 1.0; shared_preload_libraries is optional and only needed for session-start GUC availability.
 

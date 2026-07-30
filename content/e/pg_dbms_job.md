@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `dbms_job` |
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pgagent" >}} {{< ext "pg_jobmon" >}} {{< ext "oracle_fdw" >}} {{< ext "orafce" >}} |
+|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pgagent" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_later" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "orafce" >}} {{< ext "pg_utl_smtp" >}} |
 
 > [!Note] Background worker; requires shared_preload_libraries=pg_dbms_job and restart. Worker connections also require valid database, user, and authentication settings.
 

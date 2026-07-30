@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_tracing" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_kcache" >}} {{< ext "powa" >}} |
+|   **See Also**    | {{< ext "pg_clickhouse" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pgmonitor" >}} {{< ext "pg_datasentinel" >}} {{< ext "duckdb_fdw" >}} {{< ext "pgsentinel" >}} {{< ext "pgnodemx" >}} {{< ext "pg_duckdb" >}} {{< ext "system_stats" >}} {{< ext "pg_profile" >}} |
 
 > [!Note] freeze due to new vcpkg dependency stack
 

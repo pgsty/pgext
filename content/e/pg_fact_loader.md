@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `fact_loader` |
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} {{< ext "pg_jobmon" >}} {{< ext "mimeo" >}} {{< ext "timescaledb" >}} {{< ext "citus" >}} {{< ext "tablefunc" >}} {{< ext "pg_bulkload" >}} |
+|   **See Also**    | {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_parquet" >}} {{< ext "aws_s3" >}} {{< ext "pg_lake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_csv" >}} {{< ext "omni_csv" >}} |
 
 > [!Note] PGDG provides the regular DEB channel; Pigsty fills the missing PostgreSQL 18 packages on Debian/Ubuntu and builds PG14-18 for Ubuntu 26.04 (Resolute).
 

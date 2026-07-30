@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|   **See Also**    | {{< ext "pglogical" >}} {{< ext "pg_failover_slots" >}} {{< ext "repmgr" >}} {{< ext "bgw_replstatus" >}} {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "decoderbufs" >}} |
+|   **See Also**    | {{< ext "pglogical" >}} {{< ext "spock" >}} {{< ext "mimeo" >}} {{< ext "pgoutput" >}} {{< ext "postgres_fdw" >}} {{< ext "repmgr" >}} {{< ext "pg_failover_slots" >}} {{< ext "citus" >}} {{< ext "pgautofailover" >}} {{< ext "bgw_replstatus" >}} |
 
 > [!Note] require libpgfeutils
 

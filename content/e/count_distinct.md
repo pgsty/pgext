@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "topn" >}} {{< ext "hll" >}} {{< ext "omnisketch" >}} {{< ext "ddsketch" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "first_last_agg" >}} {{< ext "aggs_for_arrays" >}} |
+|   **See Also**    | {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "hll" >}} {{< ext "intagg" >}} {{< ext "intarray" >}} |
 
 > [!Note] no pg14 on el8/9 pgdg
 

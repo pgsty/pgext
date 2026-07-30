@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgautofailover" >}} {{< ext "pglogical" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgpool_recovery" >}} {{< ext "pgsentinel" >}} {{< ext "pglogical_origin" >}} {{< ext "repmgr" >}} {{< ext "pg_jobmon" >}} |
+|   **See Also**    | {{< ext "repmgr" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgautofailover" >}} {{< ext "pgpool_adm" >}} {{< ext "pglogical" >}} {{< ext "pgactive" >}} {{< ext "pglogical_ticker" >}} |
 
 
 ## Packages

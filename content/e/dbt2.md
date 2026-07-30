@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgtap" >}} {{< ext "faker" >}} {{< ext "plpgsql" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} |
+|   **See Also**    | {{< ext "faker" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "pgsqlmock" >}} {{< ext "omni_test" >}} {{< ext "random" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 
 > [!Note] Package/source version 0.61.7; SQL extension version 0.45.0. This package contains the PostgreSQL stored-function extension, not the full DBT-2 benchmark toolchain.
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_catcheck" >}} {{< ext "pg_checksums" >}} {{< ext "amcheck" >}} {{< ext "pg_surgery" >}} {{< ext "pageinspect" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "pg_repack" >}} |
+|   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "pg_overexplain" >}} {{< ext "pg_stat_plans" >}} {{< ext "auto_explain" >}} {{< ext "explain_ui" >}} {{< ext "pg_hint_plan" >}} {{< ext "plan_filter" >}} |
 
 > [!Note] preload-only module; no CREATE EXTENSION objects; pg17-18 branch
 

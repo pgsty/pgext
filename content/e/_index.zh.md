@@ -10,7 +10,7 @@ weight: 900
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
-| {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "TIME" >}} | 时序数据库扩展插件 |
+| {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "TIME" >}} | 时序数据库扩展插件 |
 | {{< ext "timescaledb_toolkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | {{< ext "timeseries" "pg_timeseries" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | 时序数据API封装 |
 | {{< ext "periods" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
@@ -68,7 +68,7 @@ weight: 900
 | {{< ext "pg_tiktoken_c" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | {{< category "RAG" >}} | PG4ML是一个机器学习框架 |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
-| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
+| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | PostgreSQL 单计划多模态智能体记忆扩展 |
 | {{< ext "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
 | {{< ext "pgcontext_pgvector" "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | ParadeDB BM25算法全文检索插件，ES全文检索 |
@@ -206,7 +206,7 @@ weight: 900
 | {{< ext "hstore_plluau" "pllua" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | {{< ext "plprql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | {{< ext "pldbgapi" "pldebugger" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| {{< ext "plpgsql_check" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "LANG" >}} | 对 plpgsql 函数进行扩展检查 |
+| {{< ext "plpgsql_check" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | 对 plpgsql 函数进行扩展检查 |
 | {{< ext "plprofiler" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | 剖析 PL/pgSQL 函数 |
 | {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | PL/sh 程序语言 |
 | {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Java 程序语言 |

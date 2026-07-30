@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "redis_fdw" >}} {{< ext "spat" >}} {{< ext "pgmemcache" >}} {{< ext "pg_net" >}} {{< ext "wrappers" >}} {{< ext "kafka_fdw" >}} {{< ext "pgmq" >}} {{< ext "multicorn" >}} |
+|   **See Also**    | {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "redis_fdw" >}} {{< ext "ulak" >}} {{< ext "pgq" >}} {{< ext "pgmqtt" >}} {{< ext "tcn" >}} {{< ext "pgmemcache" >}} {{< ext "pg_durable" >}} {{< ext "kafka_fdw" >}} |
 
 
 ## Packages

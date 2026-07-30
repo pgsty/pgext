@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} |
+|   **See Also**    | {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "icu_ext" >}} {{< ext "currency" >}} {{< ext "asn1oid" >}} {{< ext "uri" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_cjk_parser" >}} |
 
 
 ## Packages

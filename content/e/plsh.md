@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_tle" >}} {{< ext "plperl" >}} {{< ext "plperlu" >}} {{< ext "plpython3u" >}} {{< ext "plv8" >}} |
+|   **See Also**    | {{< ext "plxslt" >}} {{< ext "pltcl" >}} {{< ext "plperl" >}} {{< ext "pljava" >}} {{< ext "plr" >}} {{< ext "plperlu" >}} {{< ext "plpython3u" >}} {{< ext "plpgsql" >}} |
 
 
 ## Packages

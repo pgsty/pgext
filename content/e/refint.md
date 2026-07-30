@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "permuteseq" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "topn" >}} {{< ext "quantile" >}} |
+|   **See Also**    | {{< ext "tcn" >}} {{< ext "autoinc" >}} {{< ext "insert_username" >}} {{< ext "moddatetime" >}} {{< ext "table_log" >}} |
 
 
 ## Packages

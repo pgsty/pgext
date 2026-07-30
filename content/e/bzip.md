@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "gzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} |
+|   **See Also**    | {{< ext "gzip" >}} {{< ext "zstd" >}} {{< ext "pg_parquet" >}} {{< ext "pg_bulkload" >}} {{< ext "file_fdw" >}} {{< ext "aws_s3" >}} |
 
 
 ## Packages

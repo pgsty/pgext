@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "citus_columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "timescaledb" >}} {{< ext "citus" >}} {{< ext "pg_strom" >}} |
+|   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "columnar" >}} {{< ext "pg_sorted_heap" >}} {{< ext "citus_columnar" >}} |
 
 > [!Note] patched kernel; beta16 for patchset 18.1/17.20/16.47
 

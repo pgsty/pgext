@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgh_consistency` |
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} {{< ext "pghydro" >}} |
+|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "postgis_raster" >}} {{< ext "pg_isok" >}} {{< ext "pointcloud" >}} {{< ext "h3" >}} {{< ext "mobilitydb" >}} |
 |    **Siblings**   | {{< ext "pghydro" >}} {{< ext "pgh_raster" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} |
 
 

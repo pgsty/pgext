@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `convert` |
-|   **See Also**    | {{< ext "unit" >}} |
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "pg_eviltransform" >}} {{< ext "earthdistance" >}} {{< ext "h3" >}} {{< ext "ogr_fdw" >}} {{< ext "nominatim_fdw" >}} |
 
 
 ## Packages

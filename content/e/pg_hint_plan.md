@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `hint_plan` |
-|   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_stat_statements" >}} {{< ext "hypopg" >}} {{< ext "pg_qualstats" >}} {{< ext "auto_explain" >}} {{< ext "index_advisor" >}} {{< ext "pg_profile" >}} |
+|   **See Also**    | {{< ext "hypopg" >}} {{< ext "online_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "plan_filter" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} {{< ext "pg_regresql" >}} {{< ext "pg_track_optimizer" >}} |
 
 
 ## Packages

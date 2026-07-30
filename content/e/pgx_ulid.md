@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "uuid-ossp" >}} {{< ext "pg_hashids" >}} {{< ext "permuteseq" >}} |
+|   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "snowflake" >}} {{< ext "pg_idkit" >}} {{< ext "pg_uuid_v8" >}} {{< ext "uuid-ossp" >}} {{< ext "typeid" >}} {{< ext "permuteseq" >}} |
 
 > [!Note] shared_preload_libraries = pgx_ulid is only required for gen_monotonic_ulid(); other functions work without it.
 

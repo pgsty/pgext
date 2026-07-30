@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pageinspect" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_checksums" >}} {{< ext "pg_catcheck" >}} {{< ext "amcheck" >}} {{< ext "toastinfo" >}} |
+|   **See Also**    | {{< ext "pg_repack" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_column_tetris" >}} {{< ext "toastinfo" >}} {{< ext "pageinspect" >}} {{< ext "pagevis" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_buffercache" >}} |
 
 
 ## Packages

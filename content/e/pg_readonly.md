@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_permissions" >}} {{< ext "pg_upless" >}} {{< ext "safeupdate" >}} {{< ext "set_user" >}} {{< ext "pgaudit" >}} {{< ext "noset" >}} {{< ext "sepgsql" >}} {{< ext "login_hook" >}} |
+|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_kpart" >}} {{< ext "prioritize" >}} {{< ext "qos" >}} {{< ext "pg_permissions" >}} {{< ext "set_user" >}} {{< ext "pg_roast" >}} {{< ext "pg_command_fw" >}} {{< ext "pg_hint_plan" >}} |
 
 > [!Note] Latest PGDG RPM/catalog version is 1.0.6; PIGSTY DEB and source remain on 1.0.5.
 

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `public` |
-|   **See Also**    | {{< ext "uuid-ossp" >}} {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} |
+|   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "snowflake" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "uuid-ossp" >}} {{< ext "typeid" >}} {{< ext "permuteseq" >}} |
 
 > [!Note] Pinned to public so uuid operator commutators resolve on PostgreSQL 17 and 18.
 

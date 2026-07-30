@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgfincore" >}} {{< ext "adminpack" >}} {{< ext "file_fdw" >}} {{< ext "pageinspect" >}} {{< ext "pgstattuple" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} |
+|   **See Also**    | {{< ext "external_file" >}} {{< ext "byteamagic" >}} {{< ext "envvar" >}} {{< ext "floatfile" >}} {{< ext "file_fdw" >}} {{< ext "aws_s3" >}} {{< ext "basic_archive" >}} {{< ext "basebackup_to_shell" >}} |
 
 
 ## Packages

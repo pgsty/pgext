@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} |
+|   **See Also**    | {{< ext "wal2json" >}} {{< ext "pgoutput" >}} {{< ext "test_decoding" >}} {{< ext "pg_walinspect" >}} {{< ext "decoderbufs" >}} {{< ext "wal2mongo" >}} {{< ext "decoder_raw" >}} {{< ext "pgmqtt" >}} {{< ext "kafka_fdw" >}} {{< ext "pgq" >}} |
 
 
 ## Packages

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "tablefunc" >}} {{< ext "cube" >}} {{< ext "plpython3u" >}} |
-|   **See Also**    | {{< ext "pgml" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_strom" >}} |
+|   **See Also**    | {{< ext "vectorize" >}} {{< ext "pgml" >}} {{< ext "pgcontext" >}} {{< ext "pgmnemo" >}} {{< ext "vector" >}} {{< ext "pg_summarize" >}} {{< ext "pg_ai_query" >}} |
 
 > [!Note] require python3
 

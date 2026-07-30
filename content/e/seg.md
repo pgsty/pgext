@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "cube" >}} {{< ext "intarray" >}} {{< ext "intagg" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
+|   **See Also**    | {{< ext "cube" >}} {{< ext "prefix" >}} {{< ext "unit" >}} {{< ext "ip4r" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "ltree" >}} |
 
 
 ## Packages

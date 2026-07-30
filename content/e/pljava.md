@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `sqlj` |
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pg_tle" >}} {{< ext "pllua" >}} {{< ext "plluau" >}} {{< ext "pltclu" >}} |
+|   **See Also**    | {{< ext "plxslt" >}} {{< ext "pltcl" >}} {{< ext "plperl" >}} {{< ext "plsh" >}} {{< ext "plr" >}} {{< ext "plpython3u" >}} {{< ext "plpgsql" >}} {{< ext "plperlu" >}} |
 
 
 ## Packages

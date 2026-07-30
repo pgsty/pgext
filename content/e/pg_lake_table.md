@@ -27,6 +27,7 @@ width: full
 |    **Schemas**    | `__pg_lake_table_writes` `lake_file` `lake_file_cache` `lake_table` `pg_catalog` |
 |   **Requires**    | {{< ext "btree_gist" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} |
 |    **Need By**    | {{< ext "pg_lake" >}} {{< ext "pg_lake_copy" >}} |
+|   **See Also**    | {{< ext "pg_ducklake" >}} {{< ext "pg_mooncake" >}} {{< ext "columnar" >}} {{< ext "pg_parquet" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} {{< ext "pg_sorted_heap" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "file_fdw" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_copy" >}} |
 
 > [!Note] pg_extension_base auto-loads pg_lake_engine, pg_lake_iceberg, and pg_lake_table in dependency order.

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "geoip" >}} {{< ext "pg_cron" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
+|   **See Also**    | {{< ext "postgis_tiger_geocoder" >}} {{< ext "geoip" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_geohash" >}} |
 
 
 ## Packages

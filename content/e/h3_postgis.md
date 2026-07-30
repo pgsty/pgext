@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "h3" >}} {{< ext "postgis" >}} {{< ext "postgis_raster" >}} |
-|   **See Also**    | {{< ext "mobilitydb" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} |
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "qdgc" >}} {{< ext "pg_geohash" >}} {{< ext "pgrouting" >}} {{< ext "q3c" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "earthdistance" >}} {{< ext "mobilitydb" >}} |
 |    **Siblings**   | {{< ext "h3" >}} |
 
 > [!Note] pgdg missing el8.x86.pg17 and el8.x86.pg18

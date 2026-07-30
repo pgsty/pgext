@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pglogical_ticker` |
 |   **Requires**    | {{< ext "pglogical" >}} |
-|   **See Also**    | {{< ext "pglogical_origin" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgactive" >}} {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "repmgr" >}} {{< ext "decoder_raw" >}} |
+|   **See Also**    | {{< ext "pglogical" >}} {{< ext "bgw_replstatus" >}} {{< ext "pg_failover_slots" >}} {{< ext "repmgr" >}} {{< ext "pgautofailover" >}} {{< ext "spock" >}} {{< ext "pgactive" >}} {{< ext "mimeo" >}} {{< ext "pgpool_adm" >}} |
 
 > [!Note] require a patch on el, pg18 break on el
 

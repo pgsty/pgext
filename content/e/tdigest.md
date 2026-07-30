@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "topn" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} |
+|   **See Also**    | {{< ext "ddsketch" >}} {{< ext "count_distinct" >}} {{< ext "topn" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "hll" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "weighted_statistics" >}} |
 
 
 ## Packages

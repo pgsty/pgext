@@ -468,7 +468,7 @@ Pure SQL extensions and functions
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
 | 1700 | {{< alias "qdgc" >}} | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
-| 1950 | {{< alias "pgmnemo" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| 1950 | {{< alias "pgmnemo" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
 | 2660 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2670 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |

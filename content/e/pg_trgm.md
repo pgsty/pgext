@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_similarity" >}} {{< ext "pg_bigm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "unaccent" >}} {{< ext "smlar" >}} {{< ext "pgroonga_database" >}} {{< ext "rum" >}} {{< ext "citext" >}} |
+|   **See Also**    | {{< ext "pg_similarity" >}} {{< ext "fuzzystrmatch" >}} {{< ext "smlar" >}} {{< ext "pg_bigm" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "biscuit" >}} {{< ext "citext" >}} {{< ext "unaccent" >}} {{< ext "pgroonga" >}} |
 
 
 ## Packages

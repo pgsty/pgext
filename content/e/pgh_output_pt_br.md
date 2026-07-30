@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgh_output_pt_br` |
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} {{< ext "pghydro" >}} |
+|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "postgis_raster" >}} {{< ext "pg_render" >}} {{< ext "pointcloud" >}} {{< ext "pg_xenophile" >}} {{< ext "icu_ext" >}} {{< ext "h3" >}} |
 |    **Siblings**   | {{< ext "pghydro" >}} {{< ext "pgh_raster" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_consistency" >}} |
 
 

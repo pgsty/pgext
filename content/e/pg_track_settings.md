@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_profile" >}} {{< ext "pg_store_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_qualstats" >}} |
+|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "powa" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_stat_plans" >}} |
 
 
 ## Packages

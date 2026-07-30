@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "pg_readme" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
+|   **See Also**    | {{< ext "pg_readme" >}} {{< ext "ddlx" >}} {{< ext "schedoc" >}} {{< ext "pgpdf" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_get_functiondef" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_query_rewrite" >}} |
 
 
 ## Packages

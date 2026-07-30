@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} {{< ext "unaccent" >}} {{< ext "dict_xsyn" >}} {{< ext "hunspell_cs_cz" >}} {{< ext "dict_int" >}} {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} |
+
 > [!Note] Upstream 2.3.0 uses pgrx 0.17.0; PIGSTY packaging builds with pgrx 0.19.1 for PostgreSQL 16 through 18.
 
 

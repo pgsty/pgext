@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "uuid-ossp" >}} |
+|   **See Also**    | {{< ext "weighted_statistics" >}} {{< ext "pg_math" >}} {{< ext "xicor" >}} {{< ext "fbsql" >}} |
 
 
 ## Packages

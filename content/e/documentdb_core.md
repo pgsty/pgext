@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "documentdb" >}} {{< ext "documentdb_distributed" >}} |
-|   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_cron" >}} {{< ext "postgis" >}} {{< ext "vector" >}} |
+|   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "pg_projection" >}} {{< ext "pgbson" >}} {{< ext "jsquery" >}} {{< ext "pgjq" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
 
 

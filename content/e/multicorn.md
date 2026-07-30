@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "wrappers" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} {{< ext "mysql_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "mongo_fdw" >}} {{< ext "redis_fdw" >}} |
+|   **See Also**    | {{< ext "odbc_fdw" >}} {{< ext "wrappers" >}} {{< ext "jdbc_fdw" >}} |
 
 
 ## Packages

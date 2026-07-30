@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pageinspect" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_buffercache" >}} {{< ext "amcheck" >}} {{< ext "pg_surgery" >}} {{< ext "toastinfo" >}} |
+|   **See Also**    | {{< ext "pg_dirtyread" >}} {{< ext "pg_visibility" >}} {{< ext "temporal_tables" >}} {{< ext "pgstattuple" >}} |
 
 
 ## Packages

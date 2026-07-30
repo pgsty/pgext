@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_readonly" >}} {{< ext "pg_upless" >}} {{< ext "pg_savior" >}} {{< ext "pg_permissions" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "login_hook" >}} {{< ext "noset" >}} |
+|   **See Also**    | {{< ext "pg_strict" >}} {{< ext "pg_savior" >}} {{< ext "pg_drop_events" >}} {{< ext "table_log" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} {{< ext "plan_filter" >}} |
 
 
 ## Packages

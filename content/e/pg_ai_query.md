@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} |
+|   **See Also**    | {{< ext "vectorize" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "pgcontext" >}} {{< ext "pgmnemo" >}} {{< ext "vector" >}} {{< ext "pg_summarize" >}} |
 
 
 ## Packages

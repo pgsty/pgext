@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "q3c" >}} {{< ext "earthdistance" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
+|   **See Also**    | {{< ext "q3c" >}} {{< ext "postgis" >}} {{< ext "earthdistance" >}} {{< ext "pointcloud" >}} {{< ext "h3" >}} {{< ext "pgrouting" >}} {{< ext "mobilitydb" >}} {{< ext "ogr_fdw" >}} {{< ext "pg_geohash" >}} {{< ext "qdgc" >}} |
 
 
 ## Packages

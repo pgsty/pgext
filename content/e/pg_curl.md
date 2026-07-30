@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pgjwt" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pgjq" >}} {{< ext "pg_smtp_client" >}} |
+|   **See Also**    | {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "omni_httpc" >}} {{< ext "pg_graphql" >}} {{< ext "documentdb" >}} |
 
 
 ## Packages

@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `vault` |
 |   **Requires**    | {{< ext "pgsodium" >}} |
-|   **See Also**    | {{< ext "passwordcheck_cracklib" >}} {{< ext "supautils" >}} {{< ext "pg_session_jwt" >}} {{< ext "anon" >}} {{< ext "pg_tde" >}} {{< ext "pgsmcrypto" >}} {{< ext "pgaudit" >}} |
+|   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_tde" >}} {{< ext "pg_enigma" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "anon" >}} {{< ext "pgcrypto" >}} {{< ext "pgsmcrypto" >}} |
 
 
 ## Packages

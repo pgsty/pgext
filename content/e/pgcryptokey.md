@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pgcrypto" >}} |
-|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgsmcrypto" >}} {{< ext "pg_tde" >}} {{< ext "faker" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "supautils" >}} {{< ext "supabase_vault" >}} |
+|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "pg_tde" >}} {{< ext "pgcrypto" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgsmcrypto" >}} |
 
 > [!Note] missing 14 on el pgdg repo
 

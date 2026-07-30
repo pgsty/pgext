@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} |
+|   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pg_permissions" >}} {{< ext "set_user" >}} {{< ext "pg_roast" >}} {{< ext "table_log" >}} {{< ext "pgmemento" >}} {{< ext "pg_auditor" >}} {{< ext "pgelog" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_readonly" >}} |
 
 > [!Note] +cast pg_uuid_t
 

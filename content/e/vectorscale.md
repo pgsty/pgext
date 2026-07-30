@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "vector" >}} |
-|   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_similarity" >}} |
+|   **See Also**    | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} |
 
 
 ## Packages

@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgl_ddl_deploy` |
 |   **Requires**    | {{< ext "pglogical" >}} |
-|   **See Also**    | {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "ddlx" >}} {{< ext "pg_permissions" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgactive" >}} {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} |
+|   **See Also**    | {{< ext "pglogical" >}} {{< ext "logical_ddl" >}} {{< ext "spock" >}} {{< ext "pgactive" >}} {{< ext "mimeo" >}} {{< ext "pgoutput" >}} {{< ext "lolor" >}} |
 
 
 ## Packages

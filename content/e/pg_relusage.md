@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "toastinfo" >}} {{< ext "pageinspect" >}} {{< ext "pg_buffercache" >}} {{< ext "pgfincore" >}} {{< ext "old_snapshot" >}} |
+|   **See Also**    | {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "hypopg" >}} {{< ext "pg_stat_statements" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_upless" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_track_optimizer" >}} {{< ext "plan_filter" >}} |
 
 
 ## Packages

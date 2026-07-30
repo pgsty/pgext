@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "qdgc_postgis" >}} |
-|   **See Also**    | {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "pg_geohash" >}} |
+|   **See Also**    | {{< ext "h3" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "q3c" >}} {{< ext "postgis_topology" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "mobilitydb" >}} {{< ext "earthdistance" >}} {{< ext "pointcloud" >}} |
 |    **Siblings**   | {{< ext "qdgc_postgis" >}} |
 
 > [!Note] PGXN distribution qdgc also ships qdgc_postgis; the GitHub v0.1.0 tag belongs to qdgc-py and is not this PGXN release.

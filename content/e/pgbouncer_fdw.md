@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "dblink" >}} |
-|   **See Also**    | {{< ext "dblink" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_statements" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} |
+|   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "pgmonitor" >}} {{< ext "pgpool_adm" >}} {{< ext "system_stats" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} |
 
 > [!Note] Requires dblink and PgBouncer >= 1.17; live queries require a configured PgBouncer admin console.
 

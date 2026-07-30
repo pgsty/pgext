@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "ltree" >}} {{< ext "plpython3u" >}} |
-|   **See Also**    | {{< ext "faker" >}} {{< ext "plperl" >}} {{< ext "plpgsql" >}} {{< ext "pg_tle" >}} |
+|   **See Also**    | {{< ext "ltree" >}} |
 |    **Siblings**   | {{< ext "plpython3u" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "hstore_plpython3u" >}} |
 
 

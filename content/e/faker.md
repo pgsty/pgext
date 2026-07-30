@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpython3u" >}} |
-|   **See Also**    | {{< ext "plpython3u" >}} {{< ext "pgtap" >}} {{< ext "dbt2" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "hstore_plpython3u" >}} {{< ext "random" >}} {{< ext "pg_tle" >}} |
+|   **See Also**    | {{< ext "dbt2" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "pgsqlmock" >}} {{< ext "omni_test" >}} {{< ext "random" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 
 > [!Note] Requires PL/Python3 and Python Faker; the PIGSTY DEB carries a PG17+ parser compatibility patch.
 

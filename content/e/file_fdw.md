@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "pg_sqlog" >}} |
-|   **See Also**    | {{< ext "log_fdw" >}} {{< ext "wrappers" >}} {{< ext "sqlite_fdw" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "multicorn" >}} {{< ext "hdfs_fdw" >}} {{< ext "postgres_fdw" >}} |
+|   **See Also**    | {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_parquet" >}} {{< ext "pg_lake" >}} {{< ext "pg_csv" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fact_loader" >}} {{< ext "log_fdw" >}} {{< ext "omni_csv" >}} {{< ext "pg_sqlog" >}} |
 
 
 ## Packages

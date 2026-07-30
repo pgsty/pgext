@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `omni_shmem` |
+|   **See Also**    | {{< ext "pg_variables" >}} {{< ext "pgmeminfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pgfincore" >}} {{< ext "pgcozy" >}} {{< ext "pg_prewarm" >}} |
 
 
 ## Packages

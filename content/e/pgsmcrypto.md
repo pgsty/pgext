@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "pg_tde" >}} {{< ext "sslutils" >}} {{< ext "faker" >}} {{< ext "uuid-ossp" >}} {{< ext "lo" >}} |
+|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgcrypto" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgcryptokey" >}} {{< ext "pg_tde" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} |
 
 
 ## Packages

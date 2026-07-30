@@ -27,7 +27,7 @@ width: full
 |    **Schemas**    | `xeno` |
 |   **Requires**    | {{< ext "hstore" >}} |
 |    **Need By**    | {{< ext "l10n_table_dependent_extension" >}} |
-|   **See Also**    | {{< ext "country" >}} {{< ext "currency" >}} {{< ext "icu_ext" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
+|   **See Also**    | {{< ext "icu_ext" >}} {{< ext "pg_cjk_parser" >}} {{< ext "gb18030_2022" >}} {{< ext "unaccent" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} {{< ext "country" >}} {{< ext "currency" >}} {{< ext "isn" >}} {{< ext "dict_xsyn" >}} |
 |    **Siblings**   | {{< ext "l10n_table_dependent_extension" >}} |
 
 

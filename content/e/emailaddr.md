@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} |
+|   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "uri" >}} {{< ext "pg_utl_smtp" >}} {{< ext "pg_smtp_client" >}} {{< ext "omni_email" >}} {{< ext "ip4r" >}} {{< ext "url_encode" >}} {{< ext "prefix" >}} |
 
 > [!Note] +varatt.h
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "timescaledb_toolkit" >}} {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} |
+|   **See Also**    | {{< ext "periods" >}} {{< ext "table_version" >}} {{< ext "data_historization" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "emaj" >}} {{< ext "old_snapshot" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_visibility" >}} {{< ext "ddl_historization" >}} |
 
 > [!Note] no pg17 on el8/9 pgdg repo
 

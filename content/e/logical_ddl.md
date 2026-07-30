@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `logical_ddl` |
+|   **See Also**    | {{< ext "pglogical" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "spock" >}} {{< ext "pgactive" >}} {{< ext "mimeo" >}} {{< ext "pgoutput" >}} {{< ext "lolor" >}} |
 
 > [!Note] Pigsty carries the upstream RAISE WARNING typo fix for 0.1.0.
 

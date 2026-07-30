@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "postgis" >}} |
 |    **Need By**    | {{< ext "mobilitydb_datagen" >}} |
-|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3_postgis" >}} {{< ext "timescaledb" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
+|   **See Also**    | {{< ext "h3" >}} {{< ext "pgrouting" >}} {{< ext "postgis" >}} {{< ext "pg_polyline" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "pointcloud" >}} {{< ext "pg_geohash" >}} {{< ext "qdgc" >}} {{< ext "pg_eviltransform" >}} |
 |    **Siblings**   | {{< ext "mobilitydb_datagen" >}} |
 
 

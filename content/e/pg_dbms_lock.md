@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `dbms_lock` |
 |   **Requires**    | {{< ext "pg_background" >}} |
-|   **See Also**    | {{< ext "orafce" >}} {{< ext "session_variable" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_job" >}} {{< ext "oracle_fdw" >}} {{< ext "pgtt" >}} {{< ext "pg_statement_rollback" >}} {{< ext "mysql_fdw" >}} |
+|   **See Also**    | {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_utl_smtp" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "orafce" >}} {{< ext "pg_cron" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} |
 
 > [!Note] Requires pg_background >= 2.0; the PIGSTY DEB carries a downstream pg_background v2 API compatibility patch.
 

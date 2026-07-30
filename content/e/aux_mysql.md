@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `mysql` |
+|   **See Also**    | {{< ext "mysql_fdw" >}} {{< ext "db_migrator" >}} {{< ext "postgres_fdw" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} |
 
 > [!Note] module_pathname=$libdir/mysm; openHalo 14.x only
 

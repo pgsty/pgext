@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "intarray" >}} {{< ext "btree_gin" >}} {{< ext "btree_gist" >}} {{< ext "pg_trgm" >}} {{< ext "smlar" >}} {{< ext "aggs_for_arrays" >}} {{< ext "aggs_for_vecs" >}} {{< ext "arraymath" >}} |
+|   **See Also**    | {{< ext "intarray" >}} {{< ext "btree_gin" >}} {{< ext "btree_gist" >}} {{< ext "rum" >}} {{< ext "bloom" >}} {{< ext "ora_btree_gin" >}} {{< ext "orafce" >}} {{< ext "arraymath" >}} {{< ext "hll" >}} {{< ext "roaringbitmap" >}} |
 
 > [!Note] PGXN dist name and PostgreSQL extension name are both parray_gin; Pigsty packages are built for PG 14-18.
 

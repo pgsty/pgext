@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "qdgc" >}} {{< ext "postgis" >}} |
-|   **See Also**    | {{< ext "h3_postgis" >}} {{< ext "postgis" >}} |
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "h3" >}} {{< ext "pg_geohash" >}} {{< ext "pgrouting" >}} {{< ext "q3c" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "earthdistance" >}} {{< ext "mobilitydb" >}} |
 |    **Siblings**   | {{< ext "qdgc" >}} |
 
 

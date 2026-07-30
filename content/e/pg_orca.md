@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
+|   **See Also**    | {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} {{< ext "online_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_stat_plans" >}} {{< ext "plan_filter" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_strom" >}} {{< ext "pg_regresql" >}} |
 
 > [!Note] PG18 only; use session_preload_libraries=pg_orca for automatic planner hook loading.
 

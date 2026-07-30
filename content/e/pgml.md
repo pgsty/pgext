@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgml` |
-|   **See Also**    | {{< ext "pg4ml" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_strom" >}} |
+|   **See Also**    | {{< ext "vectorize" >}} {{< ext "pg4ml" >}} {{< ext "pgcontext" >}} {{< ext "pgmnemo" >}} {{< ext "vector" >}} {{< ext "pg_summarize" >}} {{< ext "pg_ai_query" >}} |
 
 > [!Note] pgrx=0.12.9
 

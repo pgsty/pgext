@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `auditor` |
 |   **Requires**    | {{< ext "hstore" >}} |
-|   **See Also**    | {{< ext "pg_drop_events" >}} {{< ext "table_log" >}} {{< ext "pgaudit" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_savior" >}} {{< ext "pg_upless" >}} {{< ext "pgauditlogtofile" >}} |
+|   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_roast" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pgelog" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} {{< ext "pg_permissions" >}} |
 
 > [!Note] pg15 rpm pkg name is pgaudit17_$v*
 

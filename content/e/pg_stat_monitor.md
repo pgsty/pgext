@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pgsentinel" >}} {{< ext "auto_explain" >}} {{< ext "logerrors" >}} |
+|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pgsentinel" >}} {{< ext "pg_datasentinel" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_track_optimizer" >}} |
 
 
 ## Packages

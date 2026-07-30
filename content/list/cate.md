@@ -18,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.28.3 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.29.0 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.23.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -78,7 +78,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.5 | vector data type and ivfflat and hnsw access methods |
+| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.6 | vector data type and ivfflat and hnsw access methods |
 | 1810 | {{< alias "vchord" >}} | 1.1.1 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.2 | The simplest way to do vector search on Postgres |
@@ -90,7 +90,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 1.1 | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
 | 1930 | {{< alias "pg4ml" >}} | 2.0 | Machine learning framework for PostgreSQL |
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | Run AL/ML workloads with SQL interface |
-| 1950 | {{< alias "pgmnemo" >}} | 0.14.2 | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| 1950 | {{< alias "pgmnemo" >}} | 0.15.0 | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | 0.2.0 | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 
@@ -100,7 +100,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.24.3 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.25.0 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |

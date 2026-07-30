@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_bestmatch" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_trgm" >}} {{< ext "rum" >}} {{< ext "vchord_bm25" >}} |
+|   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_fts" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_cjk_parser" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pg_jieba" >}} {{< ext "dict_xsyn" >}} {{< ext "unaccent" >}} |
 |    **Siblings**   | {{< ext "pgroonga_database" >}} |
 
 > [!Note] require xxHash vendor repo to build

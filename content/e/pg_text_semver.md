@@ -22,6 +22,11 @@ width: full
 | {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "semver" >}} {{< ext "debversion" >}} |
+
+
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |

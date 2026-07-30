@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "pgfaceting" >}} |
-|   **See Also**    | {{< ext "rum" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pgfaceting" >}} {{< ext "pg_search" >}} {{< ext "bloom" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_fts" >}} |
 
 
 ## Packages

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `roast` |
-|   **See Also**    | {{< ext "pglinter" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_statements" >}} |
+|   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pg_auditor" >}} {{< ext "pg_permissions" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "pgauditlogtofile" >}} {{< ext "set_user" >}} {{< ext "pg_snakeoil" >}} {{< ext "pg_readonly" >}} {{< ext "pg_command_fw" >}} |
 
 > [!Note] Upstream has no release tag; package pins main commit ccbf012. Manual audits work normally; the periodic background worker requires shared_preload_libraries=pg_roast.
 

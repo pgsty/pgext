@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "hstore" >}} {{< ext "plpython3u" >}} |
-|   **See Also**    | {{< ext "hstore_pllua" >}} {{< ext "hstore_plluau" >}} {{< ext "hstore_plperl" >}} {{< ext "hstore_plperlu" >}} {{< ext "faker" >}} {{< ext "plpgsql" >}} |
+|   **See Also**    | {{< ext "hstore_pllua" >}} {{< ext "hstore_plperl" >}} {{< ext "hstore_plperlu" >}} {{< ext "hstore" >}} |
 |    **Siblings**   | {{< ext "plpython3u" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} |
 
 

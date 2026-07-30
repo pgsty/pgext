@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "prioritize" >}} {{< ext "system_stats" >}} {{< ext "pg_background" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pgmeminfo" >}} {{< ext "pgsentinel" >}} {{< ext "pg_profile" >}} |
+|   **See Also**    | {{< ext "system_stats" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} |
 |    **Siblings**   | {{< ext "pgnodemx" >}} |
 
 > [!Note] Bundled with pgnodemx package/source 2.0.1 for PostgreSQL 14-18; this package ships pg_proctab as a compatibility stub backed by pgnodemx.

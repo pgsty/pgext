@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgmq` |
 |    **Need By**    | {{< ext "fsm_core" >}} {{< ext "pg_later" >}} {{< ext "vectorize" >}} |
-|   **See Also**    | {{< ext "kafka_fdw" >}} {{< ext "pg_task" >}} {{< ext "pg_net" >}} {{< ext "pg_background" >}} {{< ext "pgagent" >}} {{< ext "pg_jobmon" >}} |
+|   **See Also**    | {{< ext "redis" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "redis_fdw" >}} {{< ext "pg_durable" >}} {{< ext "pgq" >}} {{< ext "tcn" >}} {{< ext "pgmqtt" >}} {{< ext "pgmemcache" >}} {{< ext "fsm_core" >}} |
 
 
 ## Packages

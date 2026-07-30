@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} |
+|   **See Also**    | {{< ext "pg_ivm" >}} {{< ext "pg_trickle" >}} {{< ext "timescaledb" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_partman" >}} {{< ext "pg_ttl_index" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_lake" >}} |
 
 > [!Note] pg_cron is optional since v1.3 and only required for scheduled pipelines.
 

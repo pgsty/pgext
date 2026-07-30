@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `public` |
 |    **Need By**    | {{< ext "pg_mooncake" >}} |
-|   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_analytics" >}} {{< ext "pg_parquet" >}} {{< ext "columnar" >}} {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "orioledb" >}} |
+|   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "pg_ducklake" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_lake" >}} {{< ext "pg_clickhouse" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "columnar" >}} |
 
 > [!Note] conflict with duckdb_fdw
 

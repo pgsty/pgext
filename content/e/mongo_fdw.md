@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "wrappers" >}} {{< ext "redis_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "hdfs_fdw" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "multicorn" >}} {{< ext "jdbc_fdw" >}} |
+|   **See Also**    | {{< ext "documentdb" >}} {{< ext "pg_projection" >}} {{< ext "pgbson" >}} {{< ext "jsquery" >}} {{< ext "pgjq" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "redis_fdw" >}} {{< ext "etcd_fdw" >}} {{< ext "rdf_fdw" >}} |
 
 
 ## Packages

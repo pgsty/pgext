@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pgjq" >}} |
+|   **See Also**    | {{< ext "documentdb" >}} {{< ext "mongo_fdw" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} {{< ext "pg_jsonschema" >}} {{< ext "pgjq" >}} {{< ext "jsonschema" >}} |
 
 > [!Note] SQL-only extension.
 

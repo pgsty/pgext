@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "aggs_for_arrays" >}} {{< ext "aggs_for_vecs" >}} {{< ext "arraymath" >}} {{< ext "floatvec" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "vectorize" >}} |
+|   **See Also**    | {{< ext "arraymath" >}} {{< ext "floatvec" >}} {{< ext "aggs_for_vecs" >}} {{< ext "aggs_for_arrays" >}} {{< ext "collection" >}} {{< ext "hstore" >}} {{< ext "pgbson" >}} {{< ext "parray_gin" >}} {{< ext "btree_gin" >}} {{< ext "btree_gist" >}} |
 
 
 ## Packages

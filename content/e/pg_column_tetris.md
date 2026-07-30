@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `column_tetris` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
+|   **See Also**    | {{< ext "pg_repack" >}} {{< ext "pgstattuple" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_dirtyread" >}} |
 
 > [!Note] Upstream has no release or tag; source archive is normalized from commit e70f9867c63e932cdaf87b2d34b6504adad9ce12.
 

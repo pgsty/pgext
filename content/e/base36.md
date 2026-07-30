@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "base62" >}} {{< ext "pg_base58" >}} {{< ext "pg_polyline" >}} {{< ext "uri" >}} {{< ext "pg_curl" >}} {{< ext "url_encode" >}} {{< ext "pg_rewrite" >}} {{< ext "sepgsql" >}} |
+|   **See Also**    | {{< ext "base62" >}} {{< ext "pg_base58" >}} {{< ext "pg_hashids" >}} {{< ext "url_encode" >}} {{< ext "pg_slug_gen" >}} {{< ext "typeid" >}} {{< ext "pgqr" >}} |
 
 
 ## Packages

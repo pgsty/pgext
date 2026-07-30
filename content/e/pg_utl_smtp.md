@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `utl_smtp` |
 |   **Requires**    | {{< ext "plperlu" >}} |
+|   **See Also**    | {{< ext "pg_smtp_client" >}} {{< ext "omni_email" >}} {{< ext "orafce" >}} {{< ext "pg_html5_email_address" >}} {{< ext "emailaddr" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "db2fce" >}} |
 
 > [!Note] runtime requires plperlu and Perl Net::SMTP
 

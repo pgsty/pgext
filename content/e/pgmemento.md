@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgmemento` |
-|   **See Also**    | {{< ext "table_log" >}} {{< ext "table_version" >}} {{< ext "ddl_historization" >}} |
+|   **See Also**    | {{< ext "table_log" >}} {{< ext "pgaudit" >}} {{< ext "table_version" >}} {{< ext "data_historization" >}} {{< ext "ddl_historization" >}} {{< ext "pg_drop_events" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pgelog" >}} |
 
 > [!Note] Packages upgrade scripts from 0.7, 0.7.1, 0.7.2, and 0.7.3 to 0.7.4.
 

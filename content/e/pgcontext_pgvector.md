@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pgcontext" >}} {{< ext "vector" >}} |
+|   **See Also**    | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pgml" >}} |
 |    **Siblings**   | {{< ext "pgcontext" >}} |
 
 > [!Note] Optional control shipped by pgcontext 0.2.0; requires pgcontext and vector.

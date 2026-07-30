@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgjq" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "plxslt" >}} {{< ext "omni_xml" >}} {{< ext "pgrdf" >}} {{< ext "sparql" >}} {{< ext "rdf_fdw" >}} {{< ext "pgpdf" >}} {{< ext "pgbson" >}} {{< ext "hstore" >}} {{< ext "pglite_fusion" >}} |
 
 
 ## Packages

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgtle` |
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "pllua" >}} {{< ext "pljava" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "plprql" >}} {{< ext "plsh" >}} |
+|   **See Also**    | {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "pgwasm" >}} {{< ext "pllua" >}} {{< ext "pg_extension_base" >}} {{< ext "pgextwlist" >}} {{< ext "pg_readme" >}} |
 
 > [!Note] require bison flex to build
 

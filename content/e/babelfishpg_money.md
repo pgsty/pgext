@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "financial" >}} {{< ext "tds_fdw" >}} {{< ext "numeral" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} |
+|   **See Also**    | {{< ext "currency" >}} {{< ext "financial" >}} {{< ext "pg_accumulator" >}} {{< ext "omni_ledger" >}} {{< ext "tds_fdw" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} |
 |    **Siblings**   | {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} |
 
 > [!Note] special case: this extension only works on wiltondb kernel fork

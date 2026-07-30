@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `dbms_errlog` |
 |   **Requires**    | {{< ext "pg_statement_rollback" >}} |
-|   **See Also**    | {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} |
+|   **See Also**    | {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_utl_smtp" >}} {{< ext "pg_dbms_lock" >}} {{< ext "orafce" >}} {{< ext "pg_cron" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} |
 
 > [!Note] Requires pg_statement_rollback and shared_preload_libraries=pg_dbms_errlog; restart required.
 

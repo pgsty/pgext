@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "babelfishpg_tsql" >}} {{< ext "provsql" >}} |
-|   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "permuteseq" >}} {{< ext "ddsketch" >}} {{< ext "vasco" >}} |
+|   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "snowflake" >}} {{< ext "pg_uuid_v8" >}} {{< ext "typeid" >}} |
 
 
 ## Packages

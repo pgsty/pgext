@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `sys` |
 |   **Requires**    | {{< ext "ivorysql_ora" >}} |
+|   **See Also**    | {{< ext "orafce" >}} {{< ext "btree_gin" >}} {{< ext "btree_gist" >}} {{< ext "db2fce" >}} {{< ext "parray_gin" >}} {{< ext "intarray" >}} |
 |    **Siblings**   | {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} |
 
 > [!Note] from contrib/ora_btree_gist/ora_btree_gist.control and package metadata

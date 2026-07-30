@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "orafce" >}} {{< ext "pg_bulkload" >}} {{< ext "jdbc_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "pgtt" >}} |
+|   **See Also**    | {{< ext "pgclone" >}} {{< ext "mimeo" >}} {{< ext "postgres_fdw" >}} {{< ext "pglogical" >}} {{< ext "pgspider_ext" >}} {{< ext "dblink" >}} {{< ext "mysql_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "db2fce" >}} {{< ext "aux_mysql" >}} |
 
 
 ## Packages

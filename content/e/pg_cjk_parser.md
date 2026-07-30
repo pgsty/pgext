@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_jieba" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} |
+|   **See Also**    | {{< ext "zhparser" >}} {{< ext "pg_jieba" >}} {{< ext "pg_bigm" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_pinyin" >}} {{< ext "icu_ext" >}} {{< ext "unaccent" >}} {{< ext "pg_xenophile" >}} {{< ext "gb18030_2022" >}} |
 
 > [!Note] PGSTY applies a PG_CONFIG build-selection patch.
 

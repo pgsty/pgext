@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pg_stat_statements" >}} |
-|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "powa" >}} {{< ext "plprofiler" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_wait_sampling" >}} {{< ext "system_stats" >}} |
+|   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "system_stats" >}} {{< ext "pgmeminfo" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
+|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgcrypto" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgcryptokey" >}} {{< ext "hashlib" >}} {{< ext "md5hash" >}} {{< ext "hashtypes" >}} {{< ext "xxhash" >}} |
 
 > [!Note] PG18 fix by https://github.com/Vonng/pg_cardano.
 

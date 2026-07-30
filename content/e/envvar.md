@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "session_variable" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} |
+|   **See Also**    | {{< ext "external_file" >}} {{< ext "fio" >}} {{< ext "omni_os" >}} {{< ext "byteamagic" >}} {{< ext "floatfile" >}} {{< ext "file_fdw" >}} {{< ext "basic_archive" >}} {{< ext "basebackup_to_shell" >}} {{< ext "aws_s3" >}} |
 
 
 ## Packages

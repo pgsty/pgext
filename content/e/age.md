@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `ag_catalog` |
-|   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "ltree" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "citus" >}} |
+|   **See Also**    | {{< ext "pg_liquid" >}} {{< ext "onesparse" >}} {{< ext "graph" >}} {{< ext "pgrdf" >}} {{< ext "ltree" >}} {{< ext "sparql" >}} |
 
 > [!Note] PIGSTY RPM package 1.8.0 for PostgreSQL 18 is built from the upstream PG18 v1.8.0-rc0 source; SQL/control version is 1.8.0 and LOAD 'age' is required before use. PostgreSQL 17 remains on PIGSTY 1.7.0; PGDG DEB raw version 1.8.0~rc0 is available for PostgreSQL 18.
 

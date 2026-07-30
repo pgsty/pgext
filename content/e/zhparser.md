@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "rum" >}} {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bigm" >}} {{< ext "pg_tokenizer" >}} {{< ext "vchord_bm25" >}} |
+|   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pg_cjk_parser" >}} {{< ext "pg_jieba" >}} {{< ext "pg_bigm" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_pinyin" >}} {{< ext "unaccent" >}} {{< ext "dict_xsyn" >}} {{< ext "icu_ext" >}} {{< ext "pg_xenophile" >}} |
 
 
 ## Packages

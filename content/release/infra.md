@@ -6,35 +6,35 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-07-28
+## 2026-07-30
 
-| Name               | Old      | New      | Comment                                      |
-|:-------------------|:---------|:---------|:---------------------------------------------|
-| agentsview         | 0.38.1   | 0.39.0   |                                              |
-| claude             | 2.1.218  | 2.1.220  | Official manifest verified through proxy     |
-| dblab              | 0.46.0   | 0.47.0   |                                              |
-| opencode           | 1.18.4   | 1.18.7   |                                              |
-| pgstream           | 1.2.2    | 1.2.4    |                                              |
-| postgrest          | 14.15    | 14.16    |                                              |
-| rainfrog           | 0.3.20   | 0.4.1    | Minor release                                |
-| stalwart           | 0.16.14  | 0.16.15  |                                              |
-| pig                | 1.5.1    | 1.6.0    | Unreleased                                   |
-| genai-toolbox      | 1.7.0    | 1.8.0    | Source-built RPM/DEB; Rocky 8/9 and Debian 12 verified |
-| pg-hardstorage     | 1.0.16   | 1.0.17   | Direct-download artifacts                    |
-| crush              | 0.86.0   | 0.87.0   | Direct-download artifacts                    |
-
-## 2026-07-24
-
-| Name                    | Old           | New           | Comment                                    |
-|:------------------------|:--------------|:--------------|:-------------------------------------------|
-| etcd                    | 3.7.0         | 3.7.1         |                                            |
-| redis-exporter          | 1.87.0        | 1.88.0        |                                            |
-| victoria-traces         | 0.9.4         | 0.10.0        |                                            |
-| rustfs                  | 1.0.0-beta.10 | 1.0.0-beta.11 | Prerelease line; preview releases excluded |
-| uv                      | 0.11.31       | 0.11.32       |                                            |
-| pg-hardstorage          | 1.0.13        | 1.0.16        | Direct-download artifacts                  |
-| code-server             | 4.129.0       | 4.130.0       | Direct-download artifacts                  |
-| cloudflared             | 2026.7.2      | 2026.7.3      | Direct-download artifacts                  |
+| Name              | Old           | New           | Comment                                              |
+|:------------------|:--------------|:--------------|:-----------------------------------------------------|
+| agentsview        | 0.38.1        | 0.39.0        |                                                      |
+| claude            | 2.1.218       | 2.1.220       |                                                      |
+| cloudflared       | 2026.7.2      | 2026.7.3      |                                                      |
+| code              | 1.130.0       | 1.131.0       |                                                      |
+| code-server       | 4.129.0       | 4.130.0       |                                                      |
+| codex             | 0.145.0       | 0.146.0       | Release tag `rust-v0.146.0`                          |
+| crush             | 0.86.0        | 0.87.0        |                                                      |
+| dblab             | 0.46.0        | 0.47.2        |                                                      |
+| etcd              | 3.7.0         | 3.7.1         |                                                      |
+| genai-toolbox     | 1.7.0         | 1.8.0         | Source build; Rocky 8/9 and Debian 12 verified       |
+| headscale         | 0.29.2        | 0.29.3        |                                                      |
+| nodejs            | 24.18.0       | 24.18.1       | Security release                                     |
+| opencode          | 1.18.4        | 1.18.9        |                                                      |
+| pg-exporter       | 1.4.0         | 1.4.1         | Official release artifacts                           |
+| pg-hardstorage    | 1.0.13        | 1.0.17        |                                                      |
+| pgschema          | 1.12.0        | 1.12.1        |                                                      |
+| pgstream          | 1.2.2         | 1.2.5         |                                                      |
+| pig               | 1.5.1         | 1.6.0         |                                                      |
+| postgrest         | 14.15         | 14.16         |                                                      |
+| rainfrog          | 0.3.20        | 0.4.2         |                                                      |
+| redis-exporter    | 1.87.0        | 1.88.0        |                                                      |
+| rustfs            | 1.0.0-beta.10 | 1.0.0-beta.11 | Preview releases excluded                            |
+| stalwart          | 0.16.14       | 0.16.15       |                                                      |
+| uv                | 0.11.31       | 0.12.0        |                                                      |
+| victoria-traces   | 0.9.4         | 0.10.0        |                                                      |
 
 ## 2026-07-23
 

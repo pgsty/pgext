@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_readonly" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_upless" >}} {{< ext "safeupdate" >}} {{< ext "pgauditlogtofile" >}} {{< ext "credcheck" >}} {{< ext "login_hook" >}} |
+|   **See Also**    | {{< ext "set_user" >}} {{< ext "pg_roast" >}} {{< ext "pg_readonly" >}} {{< ext "pgaudit" >}} {{< ext "pg_command_fw" >}} {{< ext "acl" >}} {{< ext "pg_auditor" >}} {{< ext "pg_snakeoil" >}} |
 
 > [!Note] Latest PGDG RPM/catalog version is 1.4.1; PGDG DEB remains on 1.4.
 

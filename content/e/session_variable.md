@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `session_variable` |
-|   **See Also**    | {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "pg_statement_rollback" >}} {{< ext "plpgsql" >}} {{< ext "set_user" >}} {{< ext "oracle_fdw" >}} {{< ext "pg_dbms_lock" >}} {{< ext "babelfishpg_common" >}} |
+|   **See Also**    | {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "pgtt" >}} {{< ext "ivorysql_ora" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pg_variables" >}} {{< ext "omni_var" >}} |
 
 
 ## Packages

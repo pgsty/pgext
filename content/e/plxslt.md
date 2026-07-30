@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "pgml" >}} {{< ext "plpython3u" >}} {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pljava" >}} {{< ext "plperl" >}} {{< ext "pllua" >}} |
+|   **See Also**    | {{< ext "pgrdf" >}} {{< ext "sparql" >}} {{< ext "xml2" >}} {{< ext "omni_xml" >}} {{< ext "pljava" >}} {{< ext "plsh" >}} {{< ext "rdf_fdw" >}} {{< ext "plr" >}} {{< ext "plperl" >}} {{< ext "pltcl" >}} |
 
 
 ## Packages

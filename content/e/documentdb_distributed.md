@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "citus" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb" >}} |
-|   **See Also**    | {{< ext "citus" >}} {{< ext "mongo_fdw" >}} {{< ext "plproxy" >}} {{< ext "postgres_fdw" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} |
+|   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "citus" >}} {{< ext "pg_projection" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_extended_rum" >}} |
 
 

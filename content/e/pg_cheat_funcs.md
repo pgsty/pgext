@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_crash" >}} {{< ext "pg_snakeoil" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_savior" >}} {{< ext "pg_surgery" >}} {{< ext "adminpack" >}} {{< ext "pageinspect" >}} {{< ext "pg_repack" >}} |
+|   **See Also**    | {{< ext "pg_dirtyread" >}} {{< ext "pg_savior" >}} {{< ext "pg_crash" >}} |
 
 
 ## Packages

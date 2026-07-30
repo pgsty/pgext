@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "semver" >}} {{< ext "ltree" >}} {{< ext "citext" >}} {{< ext "pg_trgm" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} |
+|   **See Also**    | {{< ext "ip4r" >}} {{< ext "ltree" >}} {{< ext "seg" >}} {{< ext "cube" >}} {{< ext "uri" >}} {{< ext "emailaddr" >}} {{< ext "pg_html5_email_address" >}} |
 
 
 ## Packages

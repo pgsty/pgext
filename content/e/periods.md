@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "btree_gist" >}} |
-|   **See Also**    | {{< ext "timescaledb_toolkit" >}} {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} |
+|   **See Also**    | {{< ext "temporal_tables" >}} {{< ext "table_version" >}} {{< ext "data_historization" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "emaj" >}} {{< ext "ddl_historization" >}} |
 
 
 ## Packages

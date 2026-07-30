@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `graphql` |
-|   **See Also**    | {{< ext "age" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_net" >}} {{< ext "http" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "wrappers" >}} |
+|   **See Also**    | {{< ext "omni_rest" >}} {{< ext "documentdb" >}} {{< ext "pg_net" >}} {{< ext "http" >}} {{< ext "pg_jsonschema" >}} {{< ext "pgjwt" >}} {{< ext "pg_session_jwt" >}} |
 
 > [!Note] not an official release by Vonng.
 

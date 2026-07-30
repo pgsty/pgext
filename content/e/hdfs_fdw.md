@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_parquet" >}} {{< ext "mongo_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "jdbc_fdw" >}} {{< ext "aws_s3" >}} {{< ext "duckdb_fdw" >}} |
+|   **See Also**    | {{< ext "aws_s3" >}} {{< ext "duckdb_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "pg_clickhouse" >}} {{< ext "pg_parquet" >}} {{< ext "file_fdw" >}} {{< ext "pg_lake" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_ducklake" >}} |
 
 > [!Note] Package/source version 2.3.3; SQL extension version 2.0.5. Live queries require a compatible Hive JDBC driver and Hadoop/Hive service.
 

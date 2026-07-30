@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_duration" >}} {{< ext "pg_rrule" >}} {{< ext "pgcalendar" >}} {{< ext "timestamp9" >}} {{< ext "pg_extra_time" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "country" >}} |
+|   **See Also**    | {{< ext "pgcalendar" >}} {{< ext "pg_rrule" >}} {{< ext "pg_duration" >}} {{< ext "timestamp9" >}} {{< ext "pg_when" >}} {{< ext "cron_utils" >}} {{< ext "pg_cron" >}} |
 
 
 ## Packages

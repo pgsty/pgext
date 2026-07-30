@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_tle" >}} {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} |
+|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_lake" >}} {{< ext "tablefunc" >}} {{< ext "pg_parquet" >}} {{< ext "pg_ducklake" >}} {{< ext "duckdb_fdw" >}} {{< ext "extra_window_functions" >}} {{< ext "first_last_agg" >}} {{< ext "pg_mooncake" >}} |
 
 
 ## Packages

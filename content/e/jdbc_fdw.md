@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "mysql_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "postgres_fdw" >}} |
+|   **See Also**    | {{< ext "odbc_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} |
 
 > [!Note] Package/source version 0.5.0; SQL extension version 1.2. PIGSTY RPM and DEB packages cover PostgreSQL 14-18 on x86_64 and aarch64; PGDG RPM 0.4.0 is a legacy alternative for PostgreSQL 14-16. Live queries require a JDBC driver and remote database.
 

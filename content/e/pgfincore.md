@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_cooldown" >}} {{< ext "pgcozy" >}} {{< ext "fio" >}} {{< ext "pg_prewarm" >}} {{< ext "pgmeminfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} |
+|   **See Also**    | {{< ext "pg_buffercache" >}} {{< ext "pgcozy" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_cooldown" >}} |
 
 > [!Note] pg18 el fixed by vonng
 

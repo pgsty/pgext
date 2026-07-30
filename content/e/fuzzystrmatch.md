@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "postgis_tiger_geocoder" >}} |
-|   **See Also**    | {{< ext "pg_similarity" >}} {{< ext "smlar" >}} {{< ext "pg_trgm" >}} {{< ext "unaccent" >}} {{< ext "pg_bigm" >}} {{< ext "citext" >}} {{< ext "btree_gist" >}} {{< ext "btree_gin" >}} |
+|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "pg_bigm" >}} {{< ext "biscuit" >}} {{< ext "unaccent" >}} {{< ext "citext" >}} |
 
 
 ## Packages

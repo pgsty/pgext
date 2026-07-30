@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "pgq" >}} {{< ext "kafka_fdw" >}} {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "tcn" >}} {{< ext "redis" >}} {{< ext "test_decoding" >}} |
+
 > [!Note] requires wal_level = logical for CDC.
 
 

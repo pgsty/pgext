@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_background" >}} {{< ext "pg_stat_kcache" >}} {{< ext "system_stats" >}} {{< ext "pgnodemx" >}} {{< ext "pg_profile" >}} {{< ext "pgsentinel" >}} |
+|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pgsentinel" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_datasentinel" >}} {{< ext "powa" >}} {{< ext "pgrowlocks" >}} {{< ext "pg_visibility" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_stat_plans" >}} |
 
 > [!Note] PIGSTY RPM and PGDG DEB package version 1.1.11 cover PostgreSQL 14-18; SQL/control version is 1.1 and shared_preload_libraries=pg_wait_sampling is required.
 

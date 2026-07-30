@@ -1,9 +1,30 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
-2026-07-30,pg_search,0.24.3,0.25.0,PG15-18; pgrx 0.19.1; add pgvector and OpenBLAS runtime dependencies,PG15-18；pgrx 0.19.1；新增 pgvector 与 OpenBLAS 运行依赖
-2026-07-30,pgmnemo,0.14.2,0.15.0,SQL-only; PG17-18; requires pgvector 0.7.0 or newer,纯 SQL；PG17-18；依赖 pgvector 0.7.0 或更高版本
-2026-07-30,pgvector,0.8.5,0.8.6,RPM/DEB recipes validated; upstream/source 0.8.6; indexed PGDG packages remain 0.8.5,RPM/DEB 配方验证通过；上游与源码为 0.8.6；PGDG 索引包仍为 0.8.5
-2026-07-30,plpgsql_check,2.10.1,2.10.3,PG14-18; preload reclassified as optional,PG14-18；预加载重分类为可选
-2026-07-30,timescaledb,2.28.3,2.29.0,RPM/DEB; PG16-18; PostgreSQL 15 support removed,RPM/DEB；PG16-18；移除 PostgreSQL 15 支持
+2026-07-30,emaj,,5.0.0,Renamed to `e-maj`; Provides/Obsoletes `emaj`; r2; PG14-18,包名改为 `e-maj`；Provides/Obsoletes `emaj`；r2；PG14-18
+2026-07-30,nominatim_fdw,2.0.0,2.1.0,PG14-18,PG14-18
+2026-07-30,numeral,1.3,1.3,Renamed to `postgresql-numeral`; Provides/Obsoletes `numeral`; r3,包名改为 `postgresql-numeral`；Provides/Obsoletes `numeral`；r3
+2026-07-30,pg_ai_query,0.1.1,0.1.1,EL9/10 only (GCC 13/OpenSSL 3); r2 not indexed,仅 EL9/10（GCC 13/OpenSSL 3）；r2 尚未入库
+2026-07-30,pg_column_tetris,,0.1.0,SQL-only; PG14-18,纯 SQL；PG14-18
+2026-07-30,pg_net,0.20.5,0.20.5,EL8/9: 0.9.2; EL10: 0.20.5; r3 not indexed; D12/D13/U24/U26: 0.20.5; U22: 0.9.2; r2 not indexed,EL8/9：0.9.2；EL10：0.20.5；r3 尚未入库；D12/D13/U24/U26：0.20.5；U22：0.9.2；r2 尚未入库
+2026-07-30,pg_partman,5.4.0,5.5.0,PG14-18; Use `postgresql-PGVERSION-partman` package name,PG14-18；使用 `postgresql-PGVERSION-partman` 包名
+2026-07-30,pg_rewrite,2.0.0,2.2,Renamed to `postgresql-PGVERSION-pg-rewrite`; PG14-18,包名改为 `postgresql-PGVERSION-pg-rewrite`；PG14-18
+2026-07-30,pg_search,0.24.3,0.25.0,PG15-18; pgrx 0.19.1; add pgvector/OpenBLAS dependencies,PG15-18；pgrx 0.19.1；新增 pgvector/OpenBLAS 依赖
+2026-07-30,pg_timeseries,0.2.1,0.2.1,Fix partman/cron Recommends and docs; r3,修正 partman/cron 推荐依赖与文档；r3
+2026-07-30,pg_uri,1.20251029,1.20251029,Renamed to `pguri`; Provides/Obsoletes `pg_uri`; r2,包名改为 `pguri`；Provides/Obsoletes `pg_uri`；r2
+2026-07-30,pgactive,2.1.7,2.1.7,PG14-18 build fix; r2 not indexed,修复 PG14-18 构建；r2 尚未入库
+2026-07-30,pgcontext,,0.2.0,PG17-18; pgrx 0.19.1; optional pgvector bridge,PG17-18；pgrx 0.19.1；可选 pgvector 兼容桥
+2026-07-30,pgedge,18.4,18.4,PG15-18 ABI fix; r2 not indexed,PG15-18 ABI 修复；r2 尚未入库
+2026-07-30,pggraph,0.1.8,1.0.0,pggraph; PG14-18; pgrx 0.19.1,pggraph；PG14-18；pgrx 0.19.1
+2026-07-30,pgmnemo,0.13.0,0.15.0,PG17-18; requires pgvector >= 0.7.0,PG17-18；依赖 pgvector >= 0.7.0
+2026-07-30,pgmp,,1.0.6,PG14-18; GMP dependency,PG14-18；依赖 GMP
+2026-07-30,pgpcre,0.20190509,0.20190509,EL8/9 only; r2 not indexed,仅 EL8/9；r2 尚未入库
+2026-07-30,pgvector,0.8.5,0.8.6,PG14-18; 0.8.6 not indexed,PG14-18；0.8.6 尚未入库
+2026-07-30,pgwasm,,0.1.0,PG14-18,PG14-18
+2026-07-30,pgzint,,0.2.0,D13/U26 only; requires Zint >= 2.14; not indexed,仅 D13/U26；依赖 Zint >= 2.14；尚未入库
+2026-07-30,plpgsql_check,2.10.1,2.10.3,PG14-18; optional preload,PG14-18；预加载改为可选
+2026-07-30,postbis,,1.0,PG14-18 compatibility patch; r2,PG14-18 兼容补丁；r2
+2026-07-30,qdgc,,0.1.0,PG14-18; includes qdgc_postgis,PG14-18；包含 qdgc_postgis
+2026-07-30,rdf_fdw,2.6.0,2.7.0,PG14-18,PG14-18
+2026-07-30,timescaledb,2.28.3,2.29.0,PG16-18,PG16-18
 2026-07-24,age,1.7.0,1.8.0,PG18: 1.8.0-rc0; PG17: 1.7.0,PG18：1.8.0-rc0；PG17：1.7.0
 2026-07-24,argm,,1.1.1,PG14-18,PG14-18
 2026-07-24,babelfish,5.5.0,5.4.0,Catalog fix: 5.4.0; PG17-18; Babelfish: +PG18,目录修正为 5.4.0；PG17-18；Babelfish：+PG18

@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgh_hgm` |
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} {{< ext "postgis_raster" >}} {{< ext "pghydro" >}} {{< ext "pgh_raster" >}} |
+|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "postgis_raster" >}} {{< ext "pointcloud" >}} {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "mobilitydb" >}} {{< ext "pg_sphere" >}} |
 |    **Siblings**   | {{< ext "pghydro" >}} {{< ext "pgh_raster" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_consistency" >}} |
 
 > [!Note] Extension version is 2.2.6, shipped inside pghydro package version 6.6.

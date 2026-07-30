@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "dblink" >}} {{< ext "pg_variables" >}} |
-|   **See Also**    | {{< ext "table_log" >}} {{< ext "pgaudit" >}} {{< ext "logerrors" >}} {{< ext "dblink" >}} |
+|   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "logerrors" >}} {{< ext "pgaudit" >}} {{< ext "table_log" >}} {{< ext "pg_drop_events" >}} {{< ext "pgmemento" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_sqlog" >}} {{< ext "log_fdw" >}} {{< ext "pgdisablelogerror" >}} |
 
 > [!Note] Release tag 1.0.2 still ships extension SQL version 1.0; requires the dblink extension at runtime in addition to pg_variables.
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "auth_delay" >}} |
+|   **See Also**    | {{< ext "oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} {{< ext "pgsodium" >}} {{< ext "pguecc" >}} |
 
 > [!Note] Configure oauth_validator_libraries='pg_oidc_validator'. RPM is available on EL10 only; EL8/EL9 RPMs were excluded after libstdc++ ABI smoke failures. DEB covers all supported Debian/Ubuntu targets.
 

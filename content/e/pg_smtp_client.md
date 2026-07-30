@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `smtp_client` |
-|   **See Also**    | {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_html5_email_address" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} |
+|   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "emailaddr" >}} {{< ext "pg_utl_smtp" >}} {{< ext "omni_email" >}} {{< ext "uri" >}} {{< ext "ip4r" >}} {{< ext "url_encode" >}} |
 
 
 ## Packages

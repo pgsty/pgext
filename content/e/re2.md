@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "pgpcre" >}} {{< ext "omni_regex" >}} {{< ext "pg_similarity" >}} {{< ext "fuzzystrmatch" >}} {{< ext "smlar" >}} {{< ext "biscuit" >}} {{< ext "pg_bigm" >}} |
+
 > [!Note] Stable PGXN and PIGSTY package release 0.4.1 for PostgreSQL 16 through 18.
 
 

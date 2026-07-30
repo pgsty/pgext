@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "h3" >}} {{< ext "pg_geohash" >}} {{< ext "earthdistance" >}} {{< ext "pg_sphere" >}} {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} |
+|   **See Also**    | {{< ext "pg_sphere" >}} {{< ext "earthdistance" >}} {{< ext "postgis" >}} {{< ext "h3" >}} {{< ext "pointcloud" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "mobilitydb" >}} {{< ext "qdgc" >}} {{< ext "pg_eviltransform" >}} |
 
 > [!Note] Latest PGDG DEB/catalog version is 2.0.4; PGDG RPM and Pigsty source remain on 2.0.3.
 

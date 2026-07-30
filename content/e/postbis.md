@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "rdkit" >}} {{< ext "vector" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} {{< ext "pg_trgm" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "imgsmlr" >}} |
+
 > [!Note] The packaged repository is an untagged copy of PostBIS, inactive since 2019; Pigsty pins commit ce454ebf and patches PostgreSQL 14-18 compatibility plus alphabet output and indexed slice correctness.
 
 

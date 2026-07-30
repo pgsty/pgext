@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pglock` |
 |   **Requires**    | {{< ext "pg_cron" >}} |
-|   **See Also**    | {{< ext "pgmb" >}} {{< ext "pgmq" >}} {{< ext "pgq" >}} {{< ext "pg_cron" >}} |
+|   **See Also**    | {{< ext "pg_task" >}} {{< ext "pg_durable" >}} {{< ext "pg_background" >}} {{< ext "pg_retry" >}} {{< ext "pg_later" >}} {{< ext "pgmq" >}} {{< ext "pg_dispatch" >}} {{< ext "ulak" >}} {{< ext "omni_worker" >}} {{< ext "pg_cron" >}} |
 
 > [!Note] Packaging patches the upstream pgmb.control mismatch and installs the extension as pglock.
 

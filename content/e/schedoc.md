@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "ddl_historization" >}} |
-|   **See Also**    | {{< ext "pg_readme_test_extension" >}} {{< ext "pg_readme" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
+|   **See Also**    | {{< ext "pg_readme" >}} {{< ext "ddlx" >}} {{< ext "pg_render" >}} {{< ext "pgpdf" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_get_functiondef" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_query_rewrite" >}} |
 
 
 ## Packages

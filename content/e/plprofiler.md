@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pldbgapi" >}} {{< ext "plpgsql_check" >}} {{< ext "plpgsql" >}} {{< ext "pgtap" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_store_plans" >}} {{< ext "auto_explain" >}} |
+|   **See Also**    | {{< ext "plpgsql_check" >}} {{< ext "pldbgapi" >}} {{< ext "pglinter" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_stat_statements" >}} {{< ext "auto_explain" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_show_plans" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
 
 
 ## Packages

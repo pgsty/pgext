@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pg_tle" >}} {{< ext "pllua" >}} {{< ext "plluau" >}} |
+|   **See Also**    | {{< ext "pljs" >}} {{< ext "pllua" >}} {{< ext "pgwasm" >}} {{< ext "pg_tle" >}} |
 
 
 ## Packages

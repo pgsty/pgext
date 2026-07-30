@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_store_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "plpgsql_check" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_hint_plan" >}} {{< ext "pgaudit" >}} |
+|   **See Also**    | {{< ext "pg_hint_plan" >}} {{< ext "plan_filter" >}} {{< ext "pg_query_rewrite" >}} {{< ext "hypopg" >}} {{< ext "pg_qualstats" >}} {{< ext "index_advisor" >}} {{< ext "online_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_kpart" >}} {{< ext "pg_fsql" >}} |
 
 
 ## Packages

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "l10n_table_dependent_extension" >}} {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "numeral" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} |
+|   **See Also**    | {{< ext "financial" >}} {{< ext "pg_accumulator" >}} {{< ext "omni_ledger" >}} {{< ext "country" >}} {{< ext "isn" >}} {{< ext "pg_xenophile" >}} {{< ext "icu_ext" >}} |
 
 
 ## Packages

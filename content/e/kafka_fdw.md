@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgmq" >}} {{< ext "mongo_fdw" >}} {{< ext "redis_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "redis" >}} {{< ext "hdfs_fdw" >}} {{< ext "wal2json" >}} |
+|   **See Also**    | {{< ext "pgmqtt" >}} {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "pgq" >}} {{< ext "test_decoding" >}} {{< ext "pgoutput" >}} {{< ext "pg_protobuf" >}} {{< ext "pgproto" >}} {{< ext "hdfs_fdw" >}} |
 
 
 ## Packages

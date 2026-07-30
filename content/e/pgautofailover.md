@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "btree_gist" >}} |
-|   **See Also**    | {{< ext "pglogical" >}} {{< ext "pglogical_origin" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgpool_recovery" >}} {{< ext "repmgr" >}} {{< ext "pg_checksums" >}} {{< ext "pgpool_adm" >}} {{< ext "bgw_replstatus" >}} |
+|   **See Also**    | {{< ext "repmgr" >}} {{< ext "pg_failover_slots" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgpool_adm" >}} {{< ext "pglogical" >}} {{< ext "pgactive" >}} {{< ext "pglogical_ticker" >}} |
 
 
 ## Packages

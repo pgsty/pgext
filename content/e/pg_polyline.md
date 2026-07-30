@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
+|   **See Also**    | {{< ext "h3" >}} {{< ext "pgrouting" >}} {{< ext "mobilitydb" >}} {{< ext "postgis" >}} {{< ext "pg_geohash" >}} {{< ext "qdgc" >}} {{< ext "q3c" >}} {{< ext "pointcloud" >}} {{< ext "pg_eviltransform" >}} {{< ext "earthdistance" >}} |
 
 
 ## Packages

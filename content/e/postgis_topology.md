@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `topology` |
 |   **Requires**    | {{< ext "postgis" >}} |
-|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} {{< ext "pointcloud_postgis" >}} {{< ext "h3" >}} {{< ext "h3_postgis" >}} {{< ext "q3c" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} |
+|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3" >}} {{< ext "qdgc" >}} {{< ext "q3c" >}} {{< ext "mobilitydb" >}} {{< ext "pg_polyline" >}} {{< ext "pg_geohash" >}} |
 |    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
 
 

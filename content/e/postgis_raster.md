@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "postgis" >}} |
 |    **Need By**    | {{< ext "h3_postgis" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_raster" >}} |
-|   **See Also**    | {{< ext "pointcloud_postgis" >}} {{< ext "pointcloud" >}} {{< ext "pgrouting" >}} {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} {{< ext "pg_polyline" >}} |
+|   **See Also**    | {{< ext "pgh_raster" >}} {{< ext "pointcloud" >}} {{< ext "ogr_fdw" >}} {{< ext "pgrouting" >}} {{< ext "q3c" >}} {{< ext "h3" >}} |
 |    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
 
 

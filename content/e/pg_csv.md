@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "aggs_for_vecs" >}} {{< ext "first_last_agg" >}} {{< ext "arraymath" >}} {{< ext "intarray" >}} |
+|   **See Also**    | {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "omni_csv" >}} {{< ext "aws_s3" >}} {{< ext "pg_parquet" >}} {{< ext "log_fdw" >}} {{< ext "pg_lake" >}} {{< ext "pg_sqlog" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_ducklake" >}} |
 
 > [!Note] PIGSTY RPM and PGDG DEB package version 1.0.2 cover PostgreSQL 14-18; SQL/control version is 1.0.1 and the extension is not trusted.
 

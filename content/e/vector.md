@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1800** | {{< badge content="vector" link="https://github.com/pgvector/pgvector" >}} | {{< ext "vector" "pgvector" >}} | `0.8.5` | {{< category "RAG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **1800** | {{< badge content="vector" link="https://github.com/pgvector/pgvector" >}} | {{< ext "vector" "pgvector" >}} | `0.8.6` | {{< category "RAG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,17 +24,17 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "documentdb" >}} {{< ext "pgmnemo" >}} {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} |
-|   **See Also**    | {{< ext "pg_bestmatch" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} {{< ext "pg_search" >}} |
+|    **Need By**    | {{< ext "documentdb" >}} {{< ext "pgmnemo" >}} {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} {{< ext "pg_search" >}} |
+|   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} |
 
-> [!Note] PGDG RPM and DEB packages are aligned at pgvector 0.8.5 for PostgreSQL 14-18.
+> [!Note] Upstream and source archive are at pgvector 0.8.6; indexed PGDG RPM and DEB packages remain at 0.8.5 for PostgreSQL 14-18.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgvector` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgvector` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.5` | {{< bg "18" "pgvector_18" "green" >}} {{< bg "17" "pgvector_17" "green" >}} {{< bg "16" "pgvector_16" "green" >}} {{< bg "15" "pgvector_15" "green" >}} {{< bg "14" "pgvector_14" "green" >}} | `pgvector_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.5` | {{< bg "18" "postgresql-18-pgvector" "green" >}} {{< bg "17" "postgresql-17-pgvector" "green" >}} {{< bg "16" "postgresql-16-pgvector" "green" >}} {{< bg "15" "postgresql-15-pgvector" "green" >}} {{< bg "14" "postgresql-14-pgvector" "green" >}} | `postgresql-$v-pgvector` | - |
 
@@ -611,7 +611,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgvector/pgvector" title="Repository" icon="github" subtitle="github.com/pgvector/pgvector" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgvector-0.8.5.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgvector-0.8.6.tar.gz" >}}
 {{< /cards >}}
 
 

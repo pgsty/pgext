@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "hstore" >}} |
-|   **See Also**    | {{< ext "schedoc" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} |
+|   **See Also**    | {{< ext "schedoc" >}} {{< ext "ddlx" >}} {{< ext "pgpdf" >}} {{< ext "pg_render" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} |
 |    **Siblings**   | {{< ext "pg_readme" >}} |
 
 

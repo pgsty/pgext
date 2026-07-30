@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "decoder_raw" >}} {{< ext "documentdb" >}} {{< ext "pglogical" >}} {{< ext "test_decoding" >}} {{< ext "pgoutput" >}} |
+|   **See Also**    | {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "test_decoding" >}} {{< ext "pgoutput" >}} {{< ext "decoder_raw" >}} {{< ext "pgmqtt" >}} {{< ext "kafka_fdw" >}} {{< ext "pgq" >}} {{< ext "pg_protobuf" >}} {{< ext "pgproto" >}} |
 
 
 ## Packages

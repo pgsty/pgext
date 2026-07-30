@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "sslinfo" >}} {{< ext "pgsodium" >}} {{< ext "pgsmcrypto" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "pg_tde" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "supautils" >}} |
+|   **See Also**    | {{< ext "sslinfo" >}} {{< ext "pg_oidc_validator" >}} {{< ext "oidc_validator" >}} {{< ext "pguecc" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "pgsodium" >}} {{< ext "login_hook" >}} |
 
 > [!Note] no pg15,14 on el9, no pg18 on el8
 

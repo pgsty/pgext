@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `ducklake` |
-|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_analytics" >}} {{< ext "pg_parquet" >}} {{< ext "columnar" >}} {{< ext "citus_columnar" >}} |
+|   **See Also**    | {{< ext "pg_lake" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_parquet" >}} {{< ext "duckdb_fdw" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "columnar" >}} {{< ext "pg_clickhouse" >}} |
 
 
 ## Packages

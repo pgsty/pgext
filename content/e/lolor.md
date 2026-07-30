@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `lolor` |
-|   **See Also**    | {{< ext "spock" >}} {{< ext "snowflake" >}} |
+|   **See Also**    | {{< ext "lo" >}} {{< ext "pglogical" >}} {{< ext "spock" >}} {{< ext "mimeo" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} {{< ext "pg_surgery" >}} {{< ext "pg_repack" >}} |
 
 > [!Note] works on pgedge kernel fork. Requires lolor.node
 

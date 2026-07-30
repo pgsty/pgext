@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `sparql` |
 |   **Requires**    | {{< ext "plperl" >}} {{< ext "plperlu" >}} |
-|   **See Also**    | {{< ext "pgjq" >}} {{< ext "pgjwt" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
+|   **See Also**    | {{< ext "pgrdf" >}} {{< ext "rdf_fdw" >}} {{< ext "xml2" >}} {{< ext "plxslt" >}} {{< ext "omni_xml" >}} |
 
 
 ## Packages

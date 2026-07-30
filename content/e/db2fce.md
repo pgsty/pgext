@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `db2` `sysibm` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "orafce" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_job" >}} |
+|   **See Also**    | {{< ext "orafce" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "babelfishpg_common" >}} {{< ext "tds_fdw" >}} {{< ext "db_migrator" >}} {{< ext "db2_fdw" >}} |
 
 > [!Note] PGDG APT is complete for PG14-18; Pigsty RPM noarch spec fills the PGDG YUM gap for PG14-18.
 

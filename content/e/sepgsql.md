@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_readonly" >}} {{< ext "pg_permissions" >}} {{< ext "set_user" >}} {{< ext "noset" >}} {{< ext "pgaudit" >}} {{< ext "credcheck" >}} {{< ext "login_hook" >}} {{< ext "passwordcheck_cracklib" >}} |
+|   **See Also**    | {{< ext "pg_command_fw" >}} {{< ext "pgextwlist" >}} {{< ext "supautils" >}} {{< ext "noset" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "index_advisor" >}} {{< ext "hypopg" >}} {{< ext "pg_qualstats" >}} |
+|   **See Also**    | {{< ext "pg_qualstats" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_stat_plans" >}} {{< ext "plan_filter" >}} {{< ext "pg_relusage" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} |
 
 > [!Note] Requires shared_preload_libraries=online_advisor on PostgreSQL 14-16; PGSTY backports upstream PG18 hook compatibility.
 

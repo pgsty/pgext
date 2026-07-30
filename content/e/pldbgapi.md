@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plpgsql_check" >}} {{< ext "plprofiler" >}} {{< ext "plpgsql" >}} {{< ext "pgtap" >}} {{< ext "pg_stat_statements" >}} {{< ext "plv8" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} |
+|   **See Also**    | {{< ext "plpgsql_check" >}} {{< ext "plprofiler" >}} {{< ext "pglinter" >}} {{< ext "pg_stat_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
 
 
 ## Packages

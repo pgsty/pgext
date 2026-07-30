@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
 |    **Need By**    | {{< ext "schedoc" >}} |
-|   **See Also**    | {{< ext "pg_readme" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} |
+|   **See Also**    | {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} {{< ext "pgaudit" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "provsql" >}} {{< ext "pgmnemo" >}} |
 
 
 ## Packages

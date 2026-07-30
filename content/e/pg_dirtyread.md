@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_orphaned" >}} {{< ext "pg_surgery" >}} {{< ext "pageinspect" >}} {{< ext "pg_visibility" >}} {{< ext "pg_cheat_funcs" >}} {{< ext "amcheck" >}} {{< ext "pg_repack" >}} {{< ext "pg_squeeze" >}} |
+|   **See Also**    | {{< ext "pg_visibility" >}} {{< ext "pageinspect" >}} {{< ext "pg_surgery" >}} {{< ext "pgstattuple" >}} {{< ext "pg_repack" >}} {{< ext "old_snapshot" >}} {{< ext "temporal_tables" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_cheat_funcs" >}} |
 
 
 ## Packages

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "dblink" >}} |
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pgagent" >}} {{< ext "pg_background" >}} {{< ext "logerrors" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pg_auth_mon" >}} |
+|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pgagent" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_later" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_upless" >}} {{< ext "safeupdate" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_cheat_funcs" >}} {{< ext "table_log" >}} {{< ext "pg_snakeoil" >}} {{< ext "pg_auditor" >}} {{< ext "temporal_tables" >}} |
+|   **See Also**    | {{< ext "table_log" >}} {{< ext "safeupdate" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_strict" >}} {{< ext "pgmemento" >}} {{< ext "pgaudit" >}} {{< ext "pg_cheat_funcs" >}} {{< ext "pg_crash" >}} {{< ext "pg_dirtyread" >}} {{< ext "block_copy_command" >}} |
 
 > [!Note] -tuplestore_donestoring , breaks on pg18 @ el
 

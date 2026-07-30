@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgcalendar` |
-|   **See Also**    | {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "timeseries" >}} {{< ext "pg_cron" >}} |
+|   **See Also**    | {{< ext "pg_rrule" >}} {{< ext "pg_when" >}} {{< ext "cron_utils" >}} {{< ext "pg_cron" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "timestamp9" >}} {{< ext "pgsql_tweaks" >}} {{< ext "pg_extra_time" >}} {{< ext "pg_math" >}} |
 
 > [!Note] Deb/RPM recipes patch the stale upstream 1.1.0 control metadata (default_version/module_pathname).
 

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `liquid` |
-|   **See Also**    | {{< ext "age" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "pg_search" >}} |
+|   **See Also**    | {{< ext "age" >}} {{< ext "onesparse" >}} {{< ext "graph" >}} {{< ext "pgrdf" >}} {{< ext "ltree" >}} {{< ext "sparql" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "pgq" >}} {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} |
+|   **See Also**    | {{< ext "pg_task" >}} {{< ext "pg_durable" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_retry" >}} {{< ext "pglock" >}} {{< ext "pgmq" >}} {{< ext "ulak" >}} {{< ext "omni_worker" >}} {{< ext "pg_cron" >}} |
 
 
 ## Packages

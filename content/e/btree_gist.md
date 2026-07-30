@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "emaj" >}} {{< ext "omni_auth" >}} {{< ext "periods" >}} {{< ext "pg_lake_table" >}} {{< ext "pgautofailover" >}} {{< ext "powa" >}} |
-|   **See Also**    | {{< ext "btree_gin" >}} {{< ext "unaccent" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} {{< ext "prefix" >}} {{< ext "citext" >}} |
+|   **See Also**    | {{< ext "ora_btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "parray_gin" >}} {{< ext "intarray" >}} {{< ext "rum" >}} {{< ext "bloom" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "numeral" >}} {{< ext "unit" >}} {{< ext "pguecc" >}} {{< ext "pgcrypto" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
+|   **See Also**    | {{< ext "unit" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "seg" >}} {{< ext "cube" >}} |
 
 > [!Note] PIGSTY RPM and DEB packages are aligned at 1.0.6 for PostgreSQL 14 through 18.
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "vector" >}} {{< ext "smlar" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} {{< ext "vchord" >}} {{< ext "pg_bigm" >}} {{< ext "citext" >}} {{< ext "unaccent" >}} |
+|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "smlar" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "pg_bigm" >}} {{< ext "biscuit" >}} {{< ext "vector" >}} {{< ext "imgsmlr" >}} |
 
 
 ## Packages

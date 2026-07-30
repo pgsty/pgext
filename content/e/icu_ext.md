@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgpcre" >}} {{< ext "pg_xenophile" >}} {{< ext "unaccent" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} |
+|   **See Also**    | {{< ext "pg_xenophile" >}} {{< ext "pg_cjk_parser" >}} {{< ext "unaccent" >}} {{< ext "gb18030_2022" >}} {{< ext "pgroonga" >}} {{< ext "citext" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_trgm" >}} {{< ext "country" >}} {{< ext "currency" >}} |
 
 
 ## Packages

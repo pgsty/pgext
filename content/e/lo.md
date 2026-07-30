@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgcrypto" >}} {{< ext "adminpack" >}} {{< ext "file_fdw" >}} {{< ext "pageinspect" >}} {{< ext "pg_visibility" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} |
+|   **See Also**    | {{< ext "lolor" >}} {{< ext "pg_surgery" >}} {{< ext "pg_repack" >}} {{< ext "pglogical" >}} {{< ext "spock" >}} |
 
 
 ## Packages

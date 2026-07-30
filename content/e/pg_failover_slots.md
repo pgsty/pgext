@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pglogical" >}} {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "pgactive" >}} {{< ext "repmgr" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "decoderbufs" >}} |
+|   **See Also**    | {{< ext "repmgr" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgautofailover" >}} {{< ext "pgpool_adm" >}} {{< ext "pglogical" >}} {{< ext "pgactive" >}} {{< ext "pglogical_ticker" >}} |
 
 > [!Note] Load via shared_preload_libraries on both primary and standby nodes.
 

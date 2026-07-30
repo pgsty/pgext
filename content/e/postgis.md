@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "documentdb" >}} {{< ext "h3_postgis" >}} {{< ext "mobilitydb" >}} {{< ext "pg_eviltransform" >}} {{< ext "pgh_consistency" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_raster" >}} {{< ext "pghydro" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud_postgis" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "postgis_topology" >}} |
-|   **See Also**    | {{< ext "pointcloud" >}} {{< ext "h3" >}} {{< ext "pg_geohash" >}} {{< ext "geoip" >}} {{< ext "pg_polyline" >}} {{< ext "earthdistance" >}} {{< ext "ogr_fdw" >}} {{< ext "tzf" >}} |
+|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3" >}} {{< ext "mobilitydb" >}} {{< ext "ogr_fdw" >}} {{< ext "pointcloud" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_polyline" >}} {{< ext "earthdistance" >}} {{< ext "pg_eviltransform" >}} {{< ext "pg_geohash" >}} |
 |    **Siblings**   | {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
 
 

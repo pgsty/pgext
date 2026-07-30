@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "duckdb_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "sqlite_fdw" >}} {{< ext "omni_sqlite" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_clickhouse" >}} |
 
 
 ## Packages

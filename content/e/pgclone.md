@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "db_migrator" >}} {{< ext "pglogical" >}} {{< ext "repmgr" >}} {{< ext "pgactive" >}} |
+|   **See Also**    | {{< ext "db_migrator" >}} {{< ext "mimeo" >}} {{< ext "postgres_fdw" >}} {{< ext "pglogical" >}} {{< ext "spock" >}} {{< ext "pgactive" >}} {{< ext "pgspider_ext" >}} {{< ext "dblink" >}} {{< ext "pgoutput" >}} {{< ext "mysql_fdw" >}} |
 
 > [!Note] preload for async/progress; RPM LLVM_BINPATH build fix retained in the 4.4.2 package.
 

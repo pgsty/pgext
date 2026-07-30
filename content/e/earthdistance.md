@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "cube" >}} |
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "pointcloud" >}} {{< ext "h3" >}} {{< ext "pg_geohash" >}} {{< ext "pg_eviltransform" >}} {{< ext "qdgc" >}} {{< ext "pgrouting" >}} {{< ext "pg_polyline" >}} |
 
 
 ## Packages

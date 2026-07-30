@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
+|   **See Also**    | {{< ext "vector" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} {{< ext "pg_trgm" >}} {{< ext "pgcontext" >}} {{< ext "rdkit" >}} {{< ext "postbis" >}} |
 
 > [!Note] breaks on el10
 

@@ -22,6 +22,11 @@ width: full
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vector" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pg_textsearch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_fts" >}} {{< ext "pgmnemo" >}} {{< ext "pg_similarity" >}} |
+
+
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |

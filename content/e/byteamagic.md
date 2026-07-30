@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "external_file" >}} {{< ext "pgpdf" >}} {{< ext "omni_mimetypes" >}} {{< ext "fio" >}} {{< ext "envvar" >}} {{< ext "floatfile" >}} {{< ext "file_fdw" >}} |
+
 > [!Note] Extension name is byteamagic; package name is pg_byteamagic.
 
 

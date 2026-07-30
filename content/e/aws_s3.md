@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_parquet" >}} {{< ext "hdfs_fdw" >}} {{< ext "file_fdw" >}} {{< ext "duckdb_fdw" >}} {{< ext "wrappers" >}} {{< ext "pg_bulkload" >}} {{< ext "columnar" >}} {{< ext "pg_analytics" >}} |
+|   **See Also**    | {{< ext "file_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_lake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_csv" >}} {{< ext "basic_archive" >}} {{< ext "duckdb_fdw" >}} {{< ext "basebackup_to_shell" >}} |
 
 
 ## Packages

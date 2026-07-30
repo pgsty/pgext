@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2520** | {{< badge content="plproxy" link="https://github.com/plproxy/plproxy" >}} | {{< ext "plproxy" >}} | `2.12.0` | {{< category "OLAP" >}} | {{< license "0BSD" >}} | {{< language "C" >}} |
+| **2520** | {{< badge content="plproxy" link="https://github.com/plproxy/plproxy" >}} | {{< ext "plproxy" >}} | `2.12.0` | {{< category "OLAP" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,9 +24,9 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "citus" >}} {{< ext "dblink" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_partman" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} |
+|   **See Also**    | {{< ext "postgres_fdw" >}} {{< ext "pgspider_ext" >}} {{< ext "pgactive" >}} {{< ext "citus" >}} {{< ext "spock" >}} {{< ext "db_migrator" >}} {{< ext "dblink" >}} {{< ext "pglogical" >}} {{< ext "mimeo" >}} |
 
-> [!Note] PIGSTY RPM and PGDG DEB are aligned at 2.12.0.
+> [!Note] PIGSTY RPM and PGDG DEB are aligned at 2.12.0.; Upstream COPYRIGHT text matches ISC.
 
 
 ## Packages

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "fsm_core" >}} |
-|   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "jsquery" >}} {{< ext "plv8" >}} {{< ext "jsonb_plperl" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "jsonschema" >}} {{< ext "pg_projection" >}} {{< ext "jsonb_plperl" >}} {{< ext "documentdb" >}} {{< ext "jsonb_plperlu" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "mongo_fdw" >}} |
 
 
 ## Packages

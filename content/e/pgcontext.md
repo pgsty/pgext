@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgcontext` |
 |    **Need By**    | {{< ext "pgcontext_pgvector" >}} |
-|   **See Also**    | {{< ext "vector" >}} {{< ext "vectorscale" >}} {{< ext "vchord" >}} {{< ext "pg_search" >}} |
+|   **See Also**    | {{< ext "vector" >}} {{< ext "vectorize" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pgmnemo" >}} {{< ext "pg_summarize" >}} |
 |    **Siblings**   | {{< ext "pgcontext_pgvector" >}} |
 
 > [!Note] Upstream 0.2.0 and PIGSTY packages support PostgreSQL 17 and 18; pgcontext_pgvector ships in the same package.

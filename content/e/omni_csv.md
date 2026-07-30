@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `omni_csv` |
+|   **See Also**    | {{< ext "file_fdw" >}} {{< ext "pg_csv" >}} {{< ext "pg_bulkload" >}} {{< ext "aws_s3" >}} {{< ext "pg_parquet" >}} {{< ext "pg_lake" >}} {{< ext "log_fdw" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_sqlog" >}} |
 
 
 ## Packages

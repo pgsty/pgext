@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "hll" >}} {{< ext "age" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
+|   **See Also**    | {{< ext "rum" >}} {{< ext "hll" >}} {{< ext "roaringbitmap" >}} {{< ext "pgfaceting" >}} {{< ext "parray_gin" >}} {{< ext "btree_gin" >}} {{< ext "btree_gist" >}} {{< ext "intarray" >}} |
 
 
 ## Packages

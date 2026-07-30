@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "mysql_fdw" >}} {{< ext "file_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "duckdb_fdw" >}} |
+|   **See Also**    | {{< ext "duckdb_fdw" >}} {{< ext "pglite_fusion" >}} {{< ext "omni_sqlite" >}} {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "informix_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "firebird_fdw" >}} |
 
 > [!Note] break on el8 due to sqlite-lib version low
 

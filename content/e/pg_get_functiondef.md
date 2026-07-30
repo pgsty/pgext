@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **See Also**    | {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_render" >}} {{< ext "pg_catcheck" >}} {{< ext "schedoc" >}} {{< ext "pg_query_rewrite" >}} {{< ext "pgpdf" >}} |
 |    **Siblings**   | {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} |
 
 > [!Note] from contrib/pg_get_functiondef/pg_get_functiondef.control and package metadata

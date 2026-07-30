@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "pgtap" >}} |
-|   **See Also**    | {{< ext "pgtap" >}} {{< ext "pg_mockable" >}} {{< ext "faker" >}} {{< ext "unit" >}} |
+|   **See Also**    | {{< ext "faker" >}} {{< ext "dbt2" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "omni_test" >}} {{< ext "random" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 
 > [!Note] Packaging corrects the upstream control dependency name from pgTap to pgtap and requires pgTAP 1.3.4 or newer.
 

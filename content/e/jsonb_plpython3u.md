@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpython3u" >}} |
-|   **See Also**    | {{< ext "faker" >}} {{< ext "jsonb_plperl" >}} {{< ext "jsonb_plperlu" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "plpgsql" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "pgjq" >}} {{< ext "jsonb_plperl" >}} {{< ext "jsonb_plperlu" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pg_projection" >}} |
 |    **Siblings**   | {{< ext "plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "hstore_plpython3u" >}} |
 
 

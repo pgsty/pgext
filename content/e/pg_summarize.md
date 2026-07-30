@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "vectorize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_net" >}} |
+|   **See Also**    | {{< ext "vectorize" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "pgmnemo" >}} {{< ext "pgcontext" >}} {{< ext "vector" >}} {{< ext "pg_ai_query" >}} |
 
 > [!Note] PG18 fix by https://github.com/Vonng/pg_summarize.
 

@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `external_file` |
+|   **See Also**    | {{< ext "fio" >}} {{< ext "floatfile" >}} {{< ext "file_fdw" >}} {{< ext "byteamagic" >}} {{< ext "aws_s3" >}} {{< ext "envvar" >}} {{< ext "pg_bulkload" >}} {{< ext "basic_archive" >}} {{< ext "basebackup_to_shell" >}} {{< ext "pg_parquet" >}} |
 
 > [!Note] Fixed schema external_file; superuser required.
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "hashlib" >}} {{< ext "shacrypt" >}} {{< ext "pguecc" >}} {{< ext "pgcrypto" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} |
+|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgcrypto" >}} {{< ext "pguecc" >}} {{< ext "shacrypt" >}} {{< ext "pgcryptokey" >}} {{< ext "pgsmcrypto" >}} {{< ext "hashlib" >}} {{< ext "md5hash" >}} {{< ext "hashtypes" >}} {{< ext "xxhash" >}} |
 
 
 ## Packages

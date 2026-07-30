@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "wrappers" >}} {{< ext "redis_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "mysql_fdw" >}} {{< ext "mongo_fdw" >}} |
+|   **See Also**    | {{< ext "redis_fdw" >}} {{< ext "rdf_fdw" >}} {{< ext "mongo_fdw" >}} {{< ext "redis" >}} {{< ext "pgmq" >}} |
 
 
 ## Packages

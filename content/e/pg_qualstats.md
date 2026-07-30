@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "hypopg" >}} {{< ext "pg_stat_kcache" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "index_advisor" >}} {{< ext "pre_prepare" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_monitor" >}} |
+|   **See Also**    | {{< ext "online_advisor" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_stat_plans" >}} {{< ext "plan_filter" >}} {{< ext "pg_relusage" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_regresql" >}} {{< ext "pg_strom" >}} |
 
 
 ## Packages

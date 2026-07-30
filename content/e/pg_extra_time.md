@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgsql_tweaks" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "pg_cron" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} |
+|   **See Also**    | {{< ext "pgcalendar" >}} {{< ext "pg_math" >}} {{< ext "pgsql_tweaks" >}} {{< ext "pg_rrule" >}} |
 
 
 ## Packages

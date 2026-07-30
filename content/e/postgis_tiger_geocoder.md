@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `tiger` |
 |   **Requires**    | {{< ext "postgis" >}} {{< ext "fuzzystrmatch" >}} |
-|   **See Also**    | {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} {{< ext "pointcloud_postgis" >}} {{< ext "h3" >}} {{< ext "h3_postgis" >}} {{< ext "q3c" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} |
+|   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
 |    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
 
 

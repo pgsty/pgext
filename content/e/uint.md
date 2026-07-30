@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} |
+|   **See Also**    | {{< ext "uint128" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "unit" >}} {{< ext "pg_rational" >}} {{< ext "seg" >}} {{< ext "cube" >}} |
 
 > [!Note] no pg14 for el8/el9 pgdg repo
 

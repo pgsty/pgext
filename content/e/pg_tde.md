@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgsmcrypto" >}} {{< ext "pgcrypto" >}} {{< ext "anon" >}} {{< ext "pgcryptokey" >}} {{< ext "faker" >}} {{< ext "sslutils" >}} {{< ext "uuid-ossp" >}} |
+|   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_enigma" >}} {{< ext "supabase_vault" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "anon" >}} {{< ext "pgcrypto" >}} {{< ext "pgsmcrypto" >}} |
 
 > [!Note] works on percona postgres tde fork
 

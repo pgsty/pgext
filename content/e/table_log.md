@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_auditor" >}} {{< ext "pg_upless" >}} {{< ext "pg_savior" >}} {{< ext "pgaudit" >}} {{< ext "pgauditlogtofile" >}} |
+|   **See Also**    | {{< ext "pgmemento" >}} {{< ext "pgaudit" >}} {{< ext "pg_drop_events" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} {{< ext "pgelog" >}} {{< ext "ddl_historization" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pg_auditor" >}} {{< ext "pg_roast" >}} |
 
 
 ## Packages

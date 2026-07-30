@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "citus" >}} {{< ext "columnar" >}} {{< ext "citus_columnar" >}} {{< ext "clickhouse_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "dblink" >}} |
+|   **See Also**    | {{< ext "pg_stat_ch" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_lake" >}} {{< ext "hdfs_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "aws_s3" >}} {{< ext "pg_parquet" >}} |
 
 > [!Note] release 0.3.1; SQL v0.3
 

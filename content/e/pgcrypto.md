@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "column_encrypt" >}} {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_credentials" >}} {{< ext "omni_rest" >}} {{< ext "pg_dispatch" >}} {{< ext "pgcryptokey" >}} {{< ext "pgjwt" >}} |
-|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgsmcrypto" >}} {{< ext "lo" >}} {{< ext "anon" >}} {{< ext "pg_tde" >}} {{< ext "sslutils" >}} {{< ext "faker" >}} |
+|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgsmcrypto" >}} {{< ext "pgcryptokey" >}} {{< ext "pguecc" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pg_tde" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "hashlib" >}} {{< ext "xxhash" >}} |
 
 
 ## Packages

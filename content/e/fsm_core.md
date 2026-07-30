@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `fsm_core` |
 |   **Requires**    | {{< ext "ltree" >}} {{< ext "pgmq" >}} {{< ext "pg_jsonschema" >}} |
-|   **See Also**    | {{< ext "pgmq" >}} {{< ext "pg_jsonschema" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "pg_cron" >}} |
+|   **See Also**    | {{< ext "pgmq" >}} {{< ext "ulak" >}} {{< ext "pgmb" >}} {{< ext "pg_durable" >}} {{< ext "redis" >}} {{< ext "pg_task" >}} {{< ext "pg_background" >}} {{< ext "pgq" >}} {{< ext "redis_fdw" >}} {{< ext "tcn" >}} |
 
 > [!Note] PG15+; requires ltree, pgmq, and pg_jsonschema
 

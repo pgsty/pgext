@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "wrappers" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "postgres_fdw" >}} |
+|   **See Also**    | {{< ext "mysql_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "informix_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} {{< ext "db_migrator" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgauditlogtofile" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_stat_monitor" >}} {{< ext "auto_explain" >}} {{< ext "pg_track_settings" >}} {{< ext "pgaudit" >}} {{< ext "pgsentinel" >}} |
+|   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "pgelog" >}} {{< ext "pg_sqlog" >}} {{< ext "log_fdw" >}} {{< ext "pgaudit" >}} {{< ext "pgdisablelogerror" >}} {{< ext "pg_auth_mon" >}} {{< ext "pgfr_record" >}} |
 
 
 ## Packages

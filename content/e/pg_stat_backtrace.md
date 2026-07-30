@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "pg_tracing" >}} {{< ext "pgfr_record" >}} {{< ext "logerrors" >}} {{< ext "pgelog" >}} |
+
 > [!Note] GitHub v1.0.0; C PGXS extension using ptrace(PTRACE_SEIZE) and libunwind; Linux only; runtime may need kernel.yama.ptrace_scope=0
 
 

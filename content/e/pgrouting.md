@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} |
-|   **See Also**    | {{< ext "postgis_topology" >}} {{< ext "mobilitydb" >}} {{< ext "pg_polyline" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
+|   **See Also**    | {{< ext "postgis" >}} {{< ext "mobilitydb" >}} {{< ext "h3" >}} {{< ext "pg_polyline" >}} {{< ext "q3c" >}} {{< ext "pointcloud" >}} {{< ext "qdgc" >}} {{< ext "pg_geohash" >}} {{< ext "pg_sphere" >}} {{< ext "pg_eviltransform" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pguecc" >}} {{< ext "pgcrypto" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} |
+|   **See Also**    | {{< ext "isn" >}} {{< ext "uri" >}} {{< ext "country" >}} {{< ext "emailaddr" >}} {{< ext "pg_html5_email_address" >}} |
 
 
 ## Packages

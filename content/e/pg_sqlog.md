@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `sqlog` |
 |   **Requires**    | {{< ext "file_fdw" >}} |
-|   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} |
+|   **See Also**    | {{< ext "log_fdw" >}} {{< ext "pg_stat_log" >}} {{< ext "logerrors" >}} {{< ext "pgelog" >}} {{< ext "file_fdw" >}} {{< ext "pg_csv" >}} {{< ext "aws_s3" >}} {{< ext "pgdisablelogerror" >}} {{< ext "pgaudit" >}} {{< ext "pg_auth_mon" >}} |
 
 > [!Note] require certain params
 

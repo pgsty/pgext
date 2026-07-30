@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "pg_mooncake" >}} {{< ext "aws_s3" >}} {{< ext "citus" >}} |
+|   **See Also**    | {{< ext "file_fdw" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_lake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_csv" >}} {{< ext "omni_csv" >}} |
 
 
 ## Packages

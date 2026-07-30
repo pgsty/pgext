@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `net` |
-|   **See Also**    | {{< ext "http" >}} {{< ext "pg_curl" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pgjq" >}} |
+|   **See Also**    | {{< ext "http" >}} {{< ext "pg_curl" >}} {{< ext "omni_httpc" >}} {{< ext "pg_graphql" >}} {{< ext "documentdb" >}} |
 
 > [!Note] Package/source version 0.20.5 ships SQL/control version 0.20.4. PIGSTY 0.20.5 covers EL10 RPM and D12/D13/U24/U26 DEB for PostgreSQL 14-18; older PIGSTY platform cells remain on 0.9.2. shared_preload_libraries=pg_net is required.
 

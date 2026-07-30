@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgmb` |
 |   **Requires**    | {{< ext "pg_cron" >}} {{< ext "http" >}} |
-|   **See Also**    | {{< ext "pgmq" >}} {{< ext "pgq" >}} {{< ext "pg_task" >}} {{< ext "pg_cron" >}} {{< ext "pg_background" >}} {{< ext "pg_later" >}} {{< ext "pg_net" >}} {{< ext "kafka_fdw" >}} |
+|   **See Also**    | {{< ext "pgmq" >}} {{< ext "redis" >}} {{< ext "ulak" >}} {{< ext "pgq" >}} {{< ext "pgmqtt" >}} {{< ext "redis_fdw" >}} {{< ext "tcn" >}} {{< ext "pg_durable" >}} {{< ext "fsm_core" >}} {{< ext "kafka_fdw" >}} |
 
 
 ## Packages

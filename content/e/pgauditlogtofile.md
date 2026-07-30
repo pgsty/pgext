@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pg_auth_mon" >}} {{< ext "logerrors" >}} {{< ext "pg_permissions" >}} {{< ext "login_hook" >}} {{< ext "set_user" >}} {{< ext "pg_drop_events" >}} {{< ext "table_log" >}} |
+|   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pgelog" >}} {{< ext "logerrors" >}} {{< ext "pg_stat_log" >}} {{< ext "table_log" >}} {{< ext "pgmemento" >}} {{< ext "pg_auditor" >}} {{< ext "pg_roast" >}} {{< ext "pg_permissions" >}} {{< ext "pg_drop_events" >}} |
 
 
 ## Packages

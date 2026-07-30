@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `table_version` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_cron" >}} {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "pg_task" >}} |
+|   **See Also**    | {{< ext "data_historization" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "ddl_historization" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pgaudit" >}} {{< ext "pg_drop_events" >}} {{< ext "pgauditlogtofile" >}} |
 
 
 ## Packages

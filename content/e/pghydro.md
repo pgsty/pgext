@@ -27,6 +27,7 @@ width: full
 |    **Schemas**    | `pghydro` |
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} |
 |    **Need By**    | {{< ext "pgh_consistency" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_raster" >}} |
+|   **See Also**    | {{< ext "postgis_raster" >}} {{< ext "pointcloud" >}} {{< ext "pgrouting" >}} {{< ext "ogr_fdw" >}} {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "mobilitydb" >}} {{< ext "pg_sphere" >}} |
 |    **Siblings**   | {{< ext "pgh_raster" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_consistency" >}} |
 
 > [!Note] Lead row; package also ships pgh_raster, pgh_hgm, pgh_output, pgh_output_en_au, pgh_output_pt_br, and pgh_consistency.

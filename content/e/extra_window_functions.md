@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "permuteseq" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "topn" >}} {{< ext "quantile" >}} |
+|   **See Also**    | {{< ext "tablefunc" >}} {{< ext "first_last_agg" >}} {{< ext "pg_duckdb" >}} {{< ext "argm" >}} {{< ext "pg_lake" >}} {{< ext "duckdb_fdw" >}} |
 
 > [!Note] no pg14 on el8/9
 

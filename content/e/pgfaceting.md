@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `faceting` |
 |   **Requires**    | {{< ext "roaringbitmap" >}} |
-|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "rum" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} |
+|   **See Also**    | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "roaringbitmap" >}} {{< ext "rum" >}} {{< ext "hll" >}} {{< ext "bloom" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_fts" >}} {{< ext "vchord_bm25" >}} |
 
 
 ## Packages

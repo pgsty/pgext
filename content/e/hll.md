@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "topn" >}} {{< ext "count_distinct" >}} {{< ext "omnisketch" >}} {{< ext "bloom" >}} {{< ext "roaringbitmap" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "citus" >}} |
+|   **See Also**    | {{< ext "count_distinct" >}} {{< ext "datasketches" >}} {{< ext "omnisketch" >}} {{< ext "topn" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "roaringbitmap" >}} {{< ext "bloom" >}} {{< ext "rum" >}} {{< ext "pgfaceting" >}} |
 
 
 ## Packages

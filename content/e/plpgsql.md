@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "biscuit" >}} {{< ext "currency" >}} {{< ext "data_historization" >}} {{< ext "db2fce" >}} {{< ext "ddl_historization" >}} {{< ext "pg4ml" >}} {{< ext "pg_accumulator" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_fsql" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_partman" >}} {{< ext "pg_profile" >}} {{< ext "pg_upless" >}} {{< ext "pgh_consistency" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_raster" >}} {{< ext "pghydro" >}} {{< ext "pgrouting" >}} {{< ext "pgtap" >}} {{< ext "plpgsql_check" >}} {{< ext "plpgsql_wrap" >}} {{< ext "powa" >}} {{< ext "table_version" >}} {{< ext "unit" >}} |
-|   **See Also**    | {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "pltclu" >}} {{< ext "plv8" >}} {{< ext "plluau" >}} |
+|   **See Also**    | {{< ext "plx" >}} {{< ext "plisql" >}} {{< ext "plpgsql_check" >}} {{< ext "pldbgapi" >}} {{< ext "plpgsql_wrap" >}} {{< ext "orafce" >}} {{< ext "plprofiler" >}} {{< ext "plsh" >}} {{< ext "pljava" >}} {{< ext "pglinter" >}} |
 
 
 ## Packages

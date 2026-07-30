@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_partman" >}} {{< ext "pg_fkpart" >}} {{< ext "plan_filter" >}} {{< ext "pg_hint_plan" >}} {{< ext "citus" >}} {{< ext "timescaledb" >}} |
+|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_partman" >}} {{< ext "safeupdate" >}} {{< ext "block_copy_command" >}} {{< ext "pg_strict" >}} {{< ext "prioritize" >}} {{< ext "qos" >}} {{< ext "pg_readonly" >}} {{< ext "pgextwlist" >}} {{< ext "timescaledb" >}} |
 
 > [!Note] Planner hook must be loaded through shared_preload_libraries or session_preload_libraries; CREATE EXTENSION is optional.
 

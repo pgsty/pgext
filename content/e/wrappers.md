@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} |
+|   **See Also**    | {{< ext "odbc_fdw" >}} {{< ext "multicorn" >}} {{< ext "jdbc_fdw" >}} |
 
 
 ## Packages

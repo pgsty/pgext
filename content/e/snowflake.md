@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `snowflake` |
-|   **See Also**    | {{< ext "spock" >}} {{< ext "lolor" >}} |
+|   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuid_v8" >}} {{< ext "uuid-ossp" >}} {{< ext "typeid" >}} {{< ext "permuteseq" >}} |
 
 > [!Note] works on pgedge kernel fork. Set snowflake.node (1..1023) before using snowflake.nextval().
 

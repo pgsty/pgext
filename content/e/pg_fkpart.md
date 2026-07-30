@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgfkpart` |
-|   **See Also**    | {{< ext "citus" >}} {{< ext "pg_partman" >}} {{< ext "timescaledb" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "btree_gist" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} |
+|   **See Also**    | {{< ext "timescaledb" >}} {{< ext "pg_partman" >}} {{< ext "pg_ttl_index" >}} {{< ext "citus" >}} {{< ext "timeseries" >}} {{< ext "pg_cron" >}} |
 
 
 ## Packages

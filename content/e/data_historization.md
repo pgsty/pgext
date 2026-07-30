@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "ddl_historization" >}} {{< ext "temporal_tables" >}} {{< ext "table_version" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} |
+|   **See Also**    | {{< ext "table_log" >}} {{< ext "pgmemento" >}} {{< ext "table_version" >}} {{< ext "temporal_tables" >}} {{< ext "periods" >}} {{< ext "ddl_historization" >}} {{< ext "emaj" >}} {{< ext "pgaudit" >}} {{< ext "pg_drop_events" >}} {{< ext "pgauditlogtofile" >}} |
 
 
 ## Packages

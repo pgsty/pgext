@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "pllua" >}} {{< ext "pljava" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "plprql" >}} {{< ext "plsh" >}} |
+|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plisql" >}} {{< ext "plpgsql_wrap" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} |
 
 > [!Note] Uses PostgreSQL's built-in PL/pgSQL call handler; no control-file dependency is declared.
 

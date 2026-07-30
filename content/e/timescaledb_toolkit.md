@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} {{< ext "table_version" >}} |
+|   **See Also**    | {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "pg_stl" >}} {{< ext "first_last_agg" >}} {{< ext "extra_window_functions" >}} {{< ext "quantile" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "tablefunc" >}} |
 
 
 ## Packages

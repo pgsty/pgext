@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "hashlib" >}} {{< ext "xxhash" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "pgcrypto" >}} {{< ext "hashlib" >}} {{< ext "xxhash" >}} {{< ext "hashtypes" >}} {{< ext "pgsodium" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} |
 
 
 ## Packages

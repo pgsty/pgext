@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgautofailover" >}} {{< ext "pglogical" >}} {{< ext "pg_failover_slots" >}} {{< ext "repmgr" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} |
+|   **See Also**    | {{< ext "pgautofailover" >}} {{< ext "repmgr" >}} {{< ext "pg_failover_slots" >}} {{< ext "bgw_replstatus" >}} {{< ext "pglogical" >}} {{< ext "pgactive" >}} {{< ext "pglogical_ticker" >}} |
 |    **Siblings**   | {{< ext "pgpool_adm" >}} {{< ext "pgpool_regclass" >}} |
 
 

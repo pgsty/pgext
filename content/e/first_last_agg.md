@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "aggs_for_arrays" >}} {{< ext "aggs_for_vecs" >}} {{< ext "topn" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "count_distinct" >}} {{< ext "arraymath" >}} |
+|   **See Also**    | {{< ext "tablefunc" >}} {{< ext "extra_window_functions" >}} {{< ext "pg_duckdb" >}} {{< ext "argm" >}} {{< ext "pg_lake" >}} {{< ext "duckdb_fdw" >}} |
 
 
 ## Packages

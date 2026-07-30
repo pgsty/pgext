@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "random" >}} {{< ext "permuteseq" >}} {{< ext "tsm_system_rows" >}} {{< ext "pg_crash" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "pg_hashids" >}} |
+|   **See Also**    | {{< ext "faker" >}} {{< ext "dbt2" >}} {{< ext "random" >}} {{< ext "tsm_system_rows" >}} {{< ext "pg_mockable" >}} {{< ext "pgsqlmock" >}} {{< ext "pgtap" >}} {{< ext "omni_test" >}} |
 
 
 ## Packages

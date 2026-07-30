@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `anon` |
-|   **See Also**    | {{< ext "faker" >}} {{< ext "pgsodium" >}} {{< ext "pgcrypto" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_tde" >}} |
+|   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_tde" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} |
 
 
 ## Packages

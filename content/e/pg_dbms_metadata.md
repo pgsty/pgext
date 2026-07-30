@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `dbms_metadata` |
-|   **See Also**    | {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "oracle_fdw" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ddlx" >}} |
+|   **See Also**    | {{< ext "pg_get_functiondef" >}} {{< ext "ddlx" >}} {{< ext "orafce" >}} {{< ext "pg_readme" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} |
 
 > [!Note] PGDG RPM lacks PG15 on EL8 aarch64; PIGSTY DEB covers PG14-18 on amd64 and arm64.
 

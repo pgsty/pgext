@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "ddlx" >}} {{< ext "pgdd" >}} {{< ext "pg_permissions" >}} {{< ext "adminpack" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_catcheck" >}} {{< ext "noset" >}} |
+|   **See Also**    | {{< ext "pg_command_fw" >}} {{< ext "supautils" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} {{< ext "noset" >}} {{< ext "sepgsql" >}} |
 
 
 ## Packages

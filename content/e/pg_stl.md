@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} |
+|   **See Also**    | {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "timescaledb" >}} {{< ext "first_last_agg" >}} {{< ext "extra_window_functions" >}} {{< ext "quantile" >}} {{< ext "tdigest" >}} |
 
 > [!Note] ACF, PACF, STL decomposition, and Holt-Winters forecasting.
 

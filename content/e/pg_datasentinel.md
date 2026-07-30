@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgsentinel" >}} {{< ext "system_stats" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_kcache" >}} {{< ext "powa" >}} |
+|   **See Also**    | {{< ext "pgsentinel" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgmonitor" >}} {{< ext "system_stats" >}} {{< ext "powa" >}} {{< ext "pgnodemx" >}} {{< ext "pg_stat_statements" >}} |
 
 > [!Note] shared_preload_libraries = pg_datasentinel is required because the extension allocates shared memory and hooks into activity logging.
 

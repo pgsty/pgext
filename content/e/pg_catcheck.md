@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_checksums" >}} {{< ext "amcheck" >}} {{< ext "pg_surgery" >}} {{< ext "pageinspect" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "ddlx" >}} {{< ext "pgdd" >}} |
+|   **See Also**    | {{< ext "amcheck" >}} {{< ext "pg_checksums" >}} {{< ext "pg_surgery" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_pathcheck" >}} {{< ext "pageinspect" >}} {{< ext "pg_isok" >}} {{< ext "pgdd" >}} {{< ext "ddlx" >}} {{< ext "meta" >}} |
 
 
 ## Packages

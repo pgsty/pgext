@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "omni_schema" >}} |
-|   **See Also**    | {{< ext "citus" >}} {{< ext "plproxy" >}} {{< ext "wrappers" >}} {{< ext "pgspider_ext" >}} {{< ext "dblink" >}} {{< ext "mimeo" >}} {{< ext "multicorn" >}} {{< ext "mysql_fdw" >}} |
+|   **See Also**    | {{< ext "db_migrator" >}} {{< ext "pgspider_ext" >}} {{< ext "dblink" >}} {{< ext "mimeo" >}} {{< ext "pgclone" >}} {{< ext "pglogical" >}} {{< ext "mysql_fdw" >}} {{< ext "citus" >}} {{< ext "plproxy" >}} {{< ext "db2_fdw" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "temporal_tables" >}} {{< ext "periods" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_partman" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "timescaledb" >}} |
+|   **See Also**    | {{< ext "timescaledb" >}} {{< ext "pg_partman" >}} {{< ext "citus" >}} {{< ext "pg_fkpart" >}} {{< ext "timeseries" >}} {{< ext "pg_cron" >}} |
 
 > [!Note] pg 14 breaks; rm README from RPM/DEB
 

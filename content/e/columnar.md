@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "pg_mooncake" >}} {{< ext "timescaledb" >}} {{< ext "pg_analytics" >}} {{< ext "pg_parquet" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} |
+|   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} {{< ext "pg_sorted_heap" >}} {{< ext "citus_columnar" >}} |
 
 > [!Note] conflict with citus columnar, obsolete, no longer maintained
 

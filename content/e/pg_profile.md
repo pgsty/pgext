@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "dblink" >}} {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "plprofiler" >}} {{< ext "pg_stat_kcache" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} |
+|   **See Also**    | {{< ext "pg_stat_monitor" >}} {{< ext "powa" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pgsentinel" >}} {{< ext "pg_datasentinel" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_track_optimizer" >}} |
 
 
 ## Packages

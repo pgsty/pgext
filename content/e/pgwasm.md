@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgwasm` |
-|   **See Also**    | {{< ext "wasm" >}} {{< ext "pg_extism" >}} {{< ext "plrust" >}} |
+|   **See Also**    | {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "pllua" >}} {{< ext "pg_tle" >}} |
 
 > [!Note] No upstream tag or release; package pins commit 535b5336, ports pgrx 0.18 to 0.19.1, and supports PostgreSQL 14-18. Preloading is optional and enables shared metrics.
 

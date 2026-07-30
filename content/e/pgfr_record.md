@@ -27,7 +27,7 @@ width: full
 |    **Schemas**    | `pgfr_record` |
 |   **Requires**    | {{< ext "pg_cron" >}} |
 |    **Need By**    | {{< ext "pgfr_analyze" >}} |
-|   **See Also**    | {{< ext "pg_stat_statements" >}} {{< ext "pg_cron" >}} {{< ext "pg_profile" >}} {{< ext "pgmonitor" >}} |
+|   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "logerrors" >}} {{< ext "pgelog" >}} |
 |    **Siblings**   | {{< ext "pgfr_analyze" >}} |
 
 > [!Note] Package normalizes the upstream 0.0.0 control version to 2.29.2; run SELECT pgfr_record.enable() after CREATE EXTENSION. The downstream install patch defers scheduling until the CREATE transaction commits and guards optional pg_stat_statements.

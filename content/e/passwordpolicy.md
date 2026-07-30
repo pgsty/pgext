@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "credcheck" >}} |
+|   **See Also**    | {{< ext "pg_pwhash" >}} {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "credcheck" >}} {{< ext "chkpass" >}} {{< ext "pg_enigma" >}} {{< ext "column_encrypt" >}} |
 
 > [!Note] PGDG RPM and Pigsty DEB package fmbiete/passwordpolicy 2.0.5; requires shared_preload_libraries and cracklib runtime.
 

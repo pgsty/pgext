@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pgcrypto" >}} |
-|   **See Also**    | {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} {{< ext "sparql" >}} {{< ext "pgcrypto" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} |
+|   **See Also**    | {{< ext "pg_oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgsodium" >}} {{< ext "oidc_validator" >}} {{< ext "login_hook" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} {{< ext "pgcrypto" >}} {{< ext "pguecc" >}} {{< ext "pgcryptokey" >}} |
 
 
 ## Packages

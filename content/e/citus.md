@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "documentdb_distributed" >}} |
-|   **See Also**    | {{< ext "pg_partman" >}} {{< ext "plproxy" >}} {{< ext "columnar" >}} {{< ext "pg_fkpart" >}} {{< ext "timescaledb" >}} {{< ext "pg_duckdb" >}} {{< ext "tablefunc" >}} {{< ext "hll" >}} |
+|   **See Also**    | {{< ext "plproxy" >}} {{< ext "pgspider_ext" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_partman" >}} {{< ext "timescaledb" >}} {{< ext "pg_ttl_index" >}} {{< ext "pgactive" >}} {{< ext "spock" >}} {{< ext "pg_fkpart" >}} {{< ext "db_migrator" >}} |
 |    **Siblings**   | {{< ext "citus_columnar" >}} |
 
 > [!Note] conflict with hydra

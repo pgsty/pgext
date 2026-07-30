@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_snakeoil" >}} {{< ext "pg_cheat_funcs" >}} {{< ext "pg_savior" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_surgery" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} |
+|   **See Also**    | {{< ext "pg_dirtyread" >}} {{< ext "pg_savior" >}} {{< ext "pg_cheat_funcs" >}} |
 
 
 ## Packages

@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "pgelog" >}} |
-|   **See Also**    | {{< ext "session_variable" >}} {{< ext "orafce" >}} {{< ext "plisql" >}} |
+|   **See Also**    | {{< ext "session_variable" >}} {{< ext "omni_var" >}} {{< ext "pg_fsql" >}} {{< ext "pg_query_rewrite" >}} |
 
 > [!Note] Release tag 1.2.5 still ships extension SQL version 1.2.
 

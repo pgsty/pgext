@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "dblink" >}} |
-|   **See Also**    | {{< ext "pg_jobmon" >}} {{< ext "postgres_fdw" >}} {{< ext "pglogical" >}} {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} {{< ext "repmgr" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_failover_slots" >}} |
+|   **See Also**    | {{< ext "pglogical" >}} {{< ext "spock" >}} {{< ext "db_migrator" >}} {{< ext "pgactive" >}} {{< ext "postgres_fdw" >}} {{< ext "pgoutput" >}} {{< ext "pgclone" >}} {{< ext "repmgr" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgspider_ext" >}} |
 
 > [!Note] name conflict with pg_partman
 

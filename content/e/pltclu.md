@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plperlu" >}} {{< ext "plpython3u" >}} {{< ext "plv8" >}} {{< ext "plluau" >}} {{< ext "pljava" >}} {{< ext "pg_tle" >}} |
+|   **See Also**    | {{< ext "plperl" >}} {{< ext "plperlu" >}} {{< ext "plpython3u" >}} {{< ext "pljava" >}} {{< ext "plsh" >}} {{< ext "plr" >}} {{< ext "plxslt" >}} {{< ext "plpgsql" >}} |
 |    **Siblings**   | {{< ext "pltcl" >}} |
 
 

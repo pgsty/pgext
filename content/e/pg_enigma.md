@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "pg_tde" >}} |
+|   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_tde" >}} {{< ext "supabase_vault" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "anon" >}} {{< ext "pgcrypto" >}} {{< ext "pgsmcrypto" >}} |
 
 
 ## Packages

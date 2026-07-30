@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_graphql" >}} |
+|   **See Also**    | {{< ext "pg_tiktoken_c" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} {{< ext "pgroonga" >}} {{< ext "dict_xsyn" >}} |
 
 
 ## Packages

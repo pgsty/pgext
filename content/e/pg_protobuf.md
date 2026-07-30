@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgjq" >}} {{< ext "pgqr" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
+|   **See Also**    | {{< ext "pgproto" >}} {{< ext "decoderbufs" >}} {{< ext "wal2json" >}} {{< ext "pgoutput" >}} {{< ext "test_decoding" >}} {{< ext "pgmqtt" >}} {{< ext "kafka_fdw" >}} {{< ext "pgq" >}} {{< ext "pg_logicalinspect" >}} |
 
 
 ## Packages

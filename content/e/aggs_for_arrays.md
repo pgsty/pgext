@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "aggs_for_vecs" >}} {{< ext "first_last_agg" >}} {{< ext "arraymath" >}} {{< ext "intarray" >}} {{< ext "topn" >}} {{< ext "quantile" >}} |
+|   **See Also**    | {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "aggs_for_vecs" >}} {{< ext "floatvec" >}} |
 
 
 ## Packages

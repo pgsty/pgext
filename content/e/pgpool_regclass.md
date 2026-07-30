@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_dirtyread" >}} {{< ext "pgfincore" >}} {{< ext "pg_cooldown" >}} |
+|   **See Also**    | {{< ext "pgbouncer_fdw" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_readme" >}} {{< ext "ddlx" >}} {{< ext "pg_catcheck" >}} |
 |    **Siblings**   | {{< ext "pgpool_adm" >}} {{< ext "pgpool_recovery" >}} |
 
 

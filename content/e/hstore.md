@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "hstore_pllua" >}} {{< ext "hstore_plluau" >}} {{< ext "hstore_plperl" >}} {{< ext "hstore_plperlu" >}} {{< ext "hstore_plpython3u" >}} {{< ext "pg_auditor" >}} {{< ext "pg_readme" >}} {{< ext "pg_readme_test_extension" >}} {{< ext "pg_xenophile" >}} |
-|   **See Also**    | {{< ext "intarray" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "collection" >}} {{< ext "jsonschema" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
 
 
 ## Packages

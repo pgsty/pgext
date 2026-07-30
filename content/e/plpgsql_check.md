@@ -19,15 +19,15 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "pg_hint_plan" >}} {{< ext "pgtap" >}} {{< ext "auto_explain" >}} {{< ext "plv8" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} |
+|   **See Also**    | {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "pglinter" >}} {{< ext "pg_stat_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
 
-> [!Note] PIGSTY RPM and DEB packages are aligned at 2.10.3 for PostgreSQL 14 through 18.
+> [!Note] Core active checks work after CREATE EXTENSION; LOAD or shared_preload_libraries is optional for passive mode, early profiler/tracer initialization, and shared profiler statistics. PIGSTY RPM and DEB packages are aligned at 2.10.3 for PostgreSQL 14-18.
 
 
 ## Packages
@@ -1186,13 +1186,6 @@ pig install plpgsql_check -v 16;   # install for PG 16
 pig install plpgsql_check -v 15;   # install for PG 15
 pig install plpgsql_check -v 14;   # install for PG 14
 
-```
-
-
-[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
-
-```ini
-shared_preload_libraries = 'plpgsql_check';
 ```
 
 

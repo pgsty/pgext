@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `encrypt` |
 |   **Requires**    | {{< ext "pgcrypto" >}} |
-|   **See Also**    | {{< ext "pg_enigma" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "pg_tde" >}} {{< ext "pgsmcrypto" >}} {{< ext "sslutils" >}} |
+|   **See Also**    | {{< ext "pg_tde" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "anon" >}} {{< ext "pgcrypto" >}} {{< ext "pgsmcrypto" >}} |
 
 > [!Note] fixed encrypt schema; create schema encrypt before CREATE EXTENSION; preload column_encrypt;
 

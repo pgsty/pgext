@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "pgcozy" >}} |
-|   **See Also**    | {{< ext "pgfincore" >}} {{< ext "pg_cooldown" >}} {{< ext "pgcozy" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} {{< ext "old_snapshot" >}} |
+|   **See Also**    | {{< ext "pg_buffercache" >}} {{< ext "pgfincore" >}} {{< ext "pgcozy" >}} {{< ext "pg_cooldown" >}} |
 
 
 ## Packages

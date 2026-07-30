@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "redis" >}} {{< ext "kafka_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "spat" >}} {{< ext "pgmemcache" >}} {{< ext "odbc_fdw" >}} |
+|   **See Also**    | {{< ext "pgmq" >}} {{< ext "redis" >}} {{< ext "pgmb" >}} {{< ext "pgmemcache" >}} {{< ext "ulak" >}} {{< ext "pgq" >}} {{< ext "tcn" >}} {{< ext "pgmqtt" >}} {{< ext "mongo_fdw" >}} {{< ext "pg_durable" >}} |
 
 > [!Note] multiple branch for different pg major versions
 

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "base36" >}} {{< ext "base62" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} |
+|   **See Also**    | {{< ext "uri" >}} {{< ext "pg_curl" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "emailaddr" >}} {{< ext "pg_html5_email_address" >}} {{< ext "pg_smtp_client" >}} |
 
 
 ## Packages

@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "basic_archive" >}} {{< ext "pglogical" >}} {{< ext "pg_failover_slots" >}} {{< ext "wal2json" >}} {{< ext "basebackup_to_shell" >}} {{< ext "decoderbufs" >}} {{< ext "test_decoding" >}} {{< ext "pg_profile" >}} |
+|   **See Also**    | {{< ext "wal2json" >}} {{< ext "pgoutput" >}} {{< ext "test_decoding" >}} {{< ext "pg_logicalinspect" >}} {{< ext "decoderbufs" >}} {{< ext "wal2mongo" >}} {{< ext "decoder_raw" >}} {{< ext "pgmqtt" >}} {{< ext "kafka_fdw" >}} {{< ext "pgq" >}} |
 
 
 ## Packages

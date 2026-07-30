@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_stat_statements" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_plans" >}} |
+|   **See Also**    | {{< ext "pgelog" >}} {{< ext "logerrors" >}} {{< ext "pg_sqlog" >}} {{< ext "log_fdw" >}} {{< ext "pgaudit" >}} {{< ext "pgdisablelogerror" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "pgfr_record" >}} |
 
 
 ## Packages

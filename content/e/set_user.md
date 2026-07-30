@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_readonly" >}} {{< ext "pg_permissions" >}} {{< ext "pgaudit" >}} {{< ext "login_hook" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pg_auth_mon" >}} {{< ext "credcheck" >}} {{< ext "pgextwlist" >}} |
+|   **See Also**    | {{< ext "pg_permissions" >}} {{< ext "login_hook" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_session_jwt" >}} {{< ext "auth_delay" >}} {{< ext "pgaudit" >}} {{< ext "pg_roast" >}} {{< ext "pg_readonly" >}} {{< ext "acl" >}} {{< ext "pg_command_fw" >}} |
 
 
 ## Packages

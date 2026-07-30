@@ -18,7 +18,7 @@ weight: 100
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.28.3 | 时序数据库扩展插件 |
+| 1000 | {{< alias "timescaledb" >}} | 2.29.0 | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.23.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
@@ -78,7 +78,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.5 | 向量数据类型和 ivfflat / hnsw 访问方法 |
+| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.6 | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | 1810 | {{< alias "vchord" >}} | 1.1.1 | 使用Rust重写的高性能向量扩展 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.2 | 在PostgreSQL中封装RAG向量检索服务 |
@@ -90,7 +90,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 1.1 | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
 | 1930 | {{< alias "pg4ml" >}} | 2.0 | PG4ML是一个机器学习框架 |
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | PostgresML：用SQL运行机器学习算法并训练模型 |
-| 1950 | {{< alias "pgmnemo" >}} | 0.14.2 | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
+| 1950 | {{< alias "pgmnemo" >}} | 0.15.0 | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 1960 | {{< alias "pgcontext" >}} | 0.2.0 | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 
@@ -100,7 +100,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.24.3 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.25.0 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |

@@ -21,6 +21,11 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "mysql_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "firebird_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} {{< ext "db_migrator" >}} |
+
 > [!Note] PGDG non-free (pgnf) only; no SQL-level extension dependency; runtime requires IBM Informix Client SDK (libifsql15a/libifasf15a/libifgen15a/libifos15a/libifgls)
 
 

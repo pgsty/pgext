@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `onesparse` |
-|   **See Also**    | {{< ext "age" >}} {{< ext "pgrouting" >}} {{< ext "postgis" >}} |
+|   **See Also**    | {{< ext "age" >}} {{< ext "pg_liquid" >}} {{< ext "graph" >}} {{< ext "pgrdf" >}} {{< ext "ltree" >}} {{< ext "sparql" >}} |
 
 > [!Note] PG18 only; upstream release v1.0.0 ships extension SQL version 0.1.0
 

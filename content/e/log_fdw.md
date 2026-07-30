@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_sqlog" >}} {{< ext "pgaudit" >}} {{< ext "file_fdw" >}} {{< ext "auto_explain" >}} {{< ext "pgauditlogtofile" >}} {{< ext "logerrors" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} |
+|   **See Also**    | {{< ext "pg_sqlog" >}} {{< ext "file_fdw" >}} {{< ext "pg_stat_log" >}} {{< ext "logerrors" >}} {{< ext "pgelog" >}} {{< ext "aws_s3" >}} {{< ext "pg_csv" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_parquet" >}} {{< ext "pg_lake" >}} |
 
 > [!Note] PG18 fixed by vonng
 

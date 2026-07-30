@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_readonly" >}} {{< ext "pg_permissions" >}} {{< ext "set_user" >}} {{< ext "pgaudit" >}} {{< ext "login_hook" >}} {{< ext "sepgsql" >}} {{< ext "safeupdate" >}} {{< ext "credcheck" >}} |
+|   **See Also**    | {{< ext "pg_command_fw" >}} {{< ext "pg_kpart" >}} {{< ext "pgextwlist" >}} {{< ext "block_copy_command" >}} {{< ext "supautils" >}} {{< ext "plan_filter" >}} {{< ext "safeupdate" >}} {{< ext "pg_readonly" >}} {{< ext "sepgsql" >}} {{< ext "pg_strict" >}} |
 
 
 ## Packages

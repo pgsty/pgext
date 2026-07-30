@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "wrappers" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "db2_fdw" >}} |
+|   **See Also**    | {{< ext "babelfishpg_tds" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "mysql_fdw" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "db2_fdw" >}} |
 
 
 ## Packages

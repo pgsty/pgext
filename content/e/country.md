@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "l10n_table_dependent_extension" >}} {{< ext "pg_xenophile" >}} {{< ext "currency" >}} {{< ext "geoip" >}} {{< ext "icu_ext" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} |
+|   **See Also**    | {{< ext "isn" >}} {{< ext "pg_xenophile" >}} {{< ext "icu_ext" >}} {{< ext "currency" >}} {{< ext "asn1oid" >}} {{< ext "uri" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_cjk_parser" >}} |
 
 
 ## Packages

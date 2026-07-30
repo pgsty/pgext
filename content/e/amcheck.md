@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_checksums" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_visibility" >}} {{< ext "pg_surgery" >}} {{< ext "toastinfo" >}} {{< ext "pagevis" >}} {{< ext "pageinspect" >}} {{< ext "pg_freespacemap" >}} |
+|   **See Also**    | {{< ext "pg_checksums" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_pathcheck" >}} {{< ext "pg_isok" >}} {{< ext "pg_surgery" >}} {{< ext "pageinspect" >}} {{< ext "adminpack" >}} {{< ext "pg_repack" >}} |
 
 
 ## Packages

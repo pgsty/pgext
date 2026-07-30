@@ -6,6 +6,32 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+## 2026-07-30
+
+| 扩展名              | 旧版本    | 新版本    | 备注                                             |
+|:-----------------|:-------|:-------|:-----------------------------------------------|
+| emaj             | 4.7.1  | 5.0.0  | PG14-18                                        |
+| graph            | 0.1.8  | 1.0.0  | pggraph；PG14-18；pgrx 0.19.1                    |
+| nominatim_fdw    | 2.0.0  | 2.1.0  | PG14-18                                        |
+| pg_column_tetris | -      | 0.1.0  | 纯 SQL；PG14-18                                  |
+| pg_net           | 0.20.5 | 0.20.5 | D12/D13/U24/U26：0.20.5；U22：0.9.2；r2 尚未入库       |
+| pg_partman       | 5.4.2  | 5.5.0  | 使用 `postgresql-PGVERSION-partman` 包名           |
+| pg_rewrite       | 2.0.0  | 2.2    | 包名改为 `postgresql-PGVERSION-pg-rewrite`；PG14-18 |
+| pg_search        | 0.24.3 | 0.25.0 | PG15-18；pgrx 0.19.1；新增 pgvector/OpenBLAS 依赖    |
+| pgactive         | 2.1.7  | 2.1.7  | 修复 PG14-18 构建；r2 尚未入库                          |
+| pgcontext        | -      | 0.2.0  | PG17-18；pgrx 0.19.1；可选 pgvector 兼容桥            |
+| pgmnemo          | 0.13.0 | 0.15.0 | PG17-18；依赖 pgvector >= 0.7.0                   |
+| pgmp             | -      | 1.0.6  | PG14-18；依赖 GMP                                 |
+| pgwasm           | -      | 0.1.0  | PG14-18                                        |
+| pgzint           | -      | 0.2.0  | 仅 D13/U26；依赖 Zint >= 2.14；尚未入库                 |
+| plpgsql_check    | 2.10.1 | 2.10.3 | PG14-18；预加载改为可选                                |
+| postbis          | -      | 1.0    | PG14-18 兼容补丁；r2                                |
+| qdgc             | -      | 0.1.0  | PG14-18；包含 qdgc_postgis                        |
+| rdf_fdw          | 2.6.0  | 2.7.0  | PG14-18                                        |
+| timescaledb      | 2.28.3 | 2.29.0 | PG16-18                                        |
+| timeseries       | 0.2.1  | 0.2.1  | 修正 partman/cron 推荐依赖与文档；r3                     |
+| vector           | 0.8.5  | 0.8.6  | PG14-18；0.8.6 尚未入库                             |
+
 ## 2026-07-24
 
 本批次记录 2026-07-07 至 2026-07-24 期间的扩展变化，包括新增扩展、版本升级、Rust/pgrx 重构建，以及软件包矩阵缺口修复。版本未变化的条目表示打包或覆盖范围发生变化；包版本与 SQL 扩展版本不同时，仅在必要处注明。

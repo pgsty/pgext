@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "documentdb" >}} {{< ext "pg_dispatch" >}} {{< ext "pglock" >}} {{< ext "pgmb" >}} {{< ext "timeseries" >}} {{< ext "vectorize" >}} |
-|   **See Also**    | {{< ext "timescaledb_toolkit" >}} {{< ext "timescaledb" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} |
+|   **See Also**    | {{< ext "pgagent" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_later" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_durable" >}} {{< ext "pg_background" >}} {{< ext "pg_when" >}} {{< ext "cron_utils" >}} |
 
 > [!Note] require cron.database_name
 

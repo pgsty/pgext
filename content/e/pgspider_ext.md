@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plproxy" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "postgres_fdw" >}} {{< ext "citus" >}} {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "mongo_fdw" >}} |
+|   **See Also**    | {{< ext "postgres_fdw" >}} {{< ext "db_migrator" >}} {{< ext "dblink" >}} {{< ext "citus" >}} {{< ext "plproxy" >}} {{< ext "pgactive" >}} {{< ext "spock" >}} {{< ext "mysql_fdw" >}} {{< ext "pgclone" >}} {{< ext "mimeo" >}} |
 
 
 ## Packages

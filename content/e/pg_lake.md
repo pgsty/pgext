@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `lake` `pg_catalog` |
 |   **Requires**    | {{< ext "pg_lake_copy" >}} {{< ext "pg_lake_table" >}} |
-|   **See Also**    | {{< ext "duckdb_fdw" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_parquet" >}} |
+|   **See Also**    | {{< ext "pg_ducklake" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_parquet" >}} {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_clickhouse" >}} {{< ext "columnar" >}} |
 |    **Siblings**   | {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
 > [!Note] Pigsty packages this release for PG16-18. Configure shared_preload_libraries=pg_extension_base and run the matching PG-major pgduck_server process. RPM supports EL9/EL10 only; EL8 is rejected because OpenSSL 3 is required. DEB supports Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64/arm64. DuckDB and Avro are private per PG major. Co-installation with pg_duckdb, pg_mooncake, and duckdb_fdw is file-safe, but overlapping hooks and COPY behavior can be preload-order-sensitive.

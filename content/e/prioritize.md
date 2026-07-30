@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_proctab" >}} {{< ext "pg_background" >}} {{< ext "system_stats" >}} {{< ext "pgnodemx" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} |
+|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_kpart" >}} {{< ext "pg_readonly" >}} {{< ext "qos" >}} {{< ext "block_copy_command" >}} {{< ext "safeupdate" >}} {{< ext "pg_command_fw" >}} {{< ext "pg_strict" >}} {{< ext "pg_hint_plan" >}} |
 
 > [!Note] no pg 14 on el9
 

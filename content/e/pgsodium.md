@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgsodium` |
 |    **Need By**    | {{< ext "supabase_vault" >}} |
-|   **See Also**    | {{< ext "pgsmcrypto" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "anon" >}} {{< ext "pg_tde" >}} {{< ext "sslutils" >}} {{< ext "faker" >}} |
+|   **See Also**    | {{< ext "pgcrypto" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgcryptokey" >}} {{< ext "pgsmcrypto" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_tde" >}} {{< ext "pg_enigma" >}} |
 
 > [!Note] +fix missing pg17
 

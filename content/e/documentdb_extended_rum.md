@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "documentdb" >}} |
-|   **See Also**    | {{< ext "rum" >}} {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "mongo_fdw" >}} |
+|   **See Also**    | {{< ext "rum" >}} {{< ext "pg_projection" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} {{< ext "mongo_fdw" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pgjq" >}} {{< ext "hll" >}} {{< ext "roaringbitmap" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} |
 
 

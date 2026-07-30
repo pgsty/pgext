@@ -25,7 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "pg_duckdb" >}} |
-|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_analytics" >}} {{< ext "columnar" >}} {{< ext "citus_columnar" >}} {{< ext "pg_parquet" >}} {{< ext "orioledb" >}} {{< ext "timescaledb" >}} |
+|   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_ducklake" >}} {{< ext "columnar" >}} {{< ext "citus_columnar" >}} {{< ext "pg_lake" >}} {{< ext "pg_parquet" >}} {{< ext "orioledb" >}} {{< ext "storage_engine" >}} {{< ext "pg_sorted_heap" >}} {{< ext "duckdb_fdw" >}} |
 
 > [!Note] unpublished release.
 

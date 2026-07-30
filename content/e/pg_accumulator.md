@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `accum` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "financial" >}} {{< ext "topn" >}} {{< ext "quantile" >}} {{< ext "first_last_agg" >}} |
+|   **See Also**    | {{< ext "currency" >}} {{< ext "financial" >}} {{< ext "omni_ledger" >}} |
 
 
 ## Packages

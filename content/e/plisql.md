@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
+|   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plpgsql_wrap" >}} {{< ext "plx" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} |
 |    **Siblings**   | {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "gb18030_2022" >}} |
 
 > [!Note] from src/pl/plisql/src/plisql.control and IvorySQL package metadata

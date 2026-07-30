@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "bool_plperlu" >}} {{< ext "hstore_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "pg_utl_smtp" >}} {{< ext "sparql" >}} |
-|   **See Also**    | {{< ext "plperl" >}} {{< ext "plluau" >}} {{< ext "pltclu" >}} {{< ext "bool_plperl" >}} {{< ext "hstore_plperl" >}} {{< ext "jsonb_plperl" >}} {{< ext "plpgsql" >}} {{< ext "plv8" >}} |
+|   **See Also**    | {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "plluau" >}} {{< ext "pltclu" >}} {{< ext "plsh" >}} {{< ext "pljava" >}} {{< ext "plr" >}} {{< ext "plxslt" >}} {{< ext "plpgsql" >}} |
 |    **Siblings**   | {{< ext "bool_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "hstore_plperlu" >}} |
 
 

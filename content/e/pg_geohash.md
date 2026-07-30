@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "postgis" >}} {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "pg_polyline" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} |
+|   **See Also**    | {{< ext "h3" >}} {{< ext "qdgc" >}} {{< ext "pgrouting" >}} {{< ext "postgis_topology" >}} {{< ext "q3c" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "earthdistance" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} |
 
 
 ## Packages

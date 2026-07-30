@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_cjk_parser" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} |
+|   **See Also**    | {{< ext "pg_cjk_parser" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} {{< ext "pg_pinyin" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg_tiktoken_c" >}} {{< ext "unaccent" >}} {{< ext "dict_xsyn" >}} |
 
 > [!Note] Package 2.0.1 ships extension version 1.1.0, vendors cppjieba commit 45809955, and fixes the LexDescr terminator allocation.
 

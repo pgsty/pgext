@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "passwordcheck_cracklib" >}} {{< ext "pgaudit" >}} {{< ext "pgauditlogtofile" >}} {{< ext "login_hook" >}} {{< ext "auth_delay" >}} {{< ext "credcheck" >}} {{< ext "logerrors" >}} {{< ext "set_user" >}} |
+|   **See Also**    | {{< ext "set_user" >}} {{< ext "login_hook" >}} {{< ext "pg_session_jwt" >}} {{< ext "auth_delay" >}} {{< ext "logerrors" >}} {{< ext "pg_stat_log" >}} {{< ext "pgelog" >}} {{< ext "pgaudit" >}} {{< ext "pg_permissions" >}} |
 
 
 ## Packages

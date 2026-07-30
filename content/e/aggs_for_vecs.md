@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "aggs_for_arrays" >}} {{< ext "first_last_agg" >}} {{< ext "arraymath" >}} {{< ext "floatvec" >}} {{< ext "vector" >}} {{< ext "topn" >}} |
+|   **See Also**    | {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "floatvec" >}} {{< ext "aggs_for_arrays" >}} |
 
 
 ## Packages

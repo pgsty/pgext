@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `fbsql` |
 |   **Requires**    | {{< ext "plr" >}} |
-|   **See Also**    | {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "pg_math" >}} {{< ext "weighted_statistics" >}} |
+|   **See Also**    | {{< ext "weighted_statistics" >}} {{< ext "pg_math" >}} {{< ext "vasco" >}} {{< ext "xicor" >}} |
 
 > [!Note] Requires PL/R 8.4.0 or newer; PIGSTY packages target PostgreSQL 16 through 18.
 
