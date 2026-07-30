@@ -1,4 +1,9 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
+2026-07-30,pg_search,0.24.3,0.25.0,PG15-18; pgrx 0.19.1; add pgvector and OpenBLAS runtime dependencies,PG15-18；pgrx 0.19.1；新增 pgvector 与 OpenBLAS 运行依赖
+2026-07-30,pgmnemo,0.14.2,0.15.0,SQL-only; PG17-18; requires pgvector 0.7.0 or newer,纯 SQL；PG17-18；依赖 pgvector 0.7.0 或更高版本
+2026-07-30,pgvector,0.8.5,0.8.6,RPM/DEB recipes validated; upstream/source 0.8.6; indexed PGDG packages remain 0.8.5,RPM/DEB 配方验证通过；上游与源码为 0.8.6；PGDG 索引包仍为 0.8.5
+2026-07-30,plpgsql_check,2.10.1,2.10.3,PG14-18; preload reclassified as optional,PG14-18；预加载重分类为可选
+2026-07-30,timescaledb,2.28.3,2.29.0,RPM/DEB; PG16-18; PostgreSQL 15 support removed,RPM/DEB；PG16-18；移除 PostgreSQL 15 支持
 2026-07-24,age,1.7.0,1.8.0,PG18: 1.8.0-rc0; PG17: 1.7.0,PG18：1.8.0-rc0；PG17：1.7.0
 2026-07-24,argm,,1.1.1,PG14-18,PG14-18
 2026-07-24,babelfish,5.5.0,5.4.0,Catalog fix: 5.4.0; PG17-18; Babelfish: +PG18,目录修正为 5.4.0；PG17-18；Babelfish：+PG18
