@@ -397,7 +397,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4570 | {{< alias "sequential_uuids" >}} | 1.0.3 | 生成连续生成的UUID |
 | 4580 | {{< alias "typeid" "pg_typeid" >}} | 0.3.0 | PG原生TypeID类型与函数 |
 | 4590 | {{< alias "snowflake" >}} | 2.5.0 | Snowflake 风格 64 位 ID 生成与序列工具 |
-| 4600 | {{< alias "topn" >}} | 2.7.0 | top-n JSONB 的类型 |
+| 4600 | {{< alias "topn" >}} | 2.7.1 | top-n JSONB 的类型 |
 | 4610 | {{< alias "quantile" >}} | 1.1.8 | Quantile聚合函数 |
 | 4620 | {{< alias "lower_quantile" >}} | 1.0.3 | Lower Quantile 聚合函数 |
 | 4630 | {{< alias "count_distinct" >}} | 3.0.2 | COUNT(DISTINCT …) 聚合的替代方案 |
@@ -451,7 +451,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5010 | {{< alias "pg_repack" >}} | 1.5.3 | 在线垃圾清理与表膨胀治理 |
 | 5020 | {{< alias "pg_rewrite" >}} | 2.2 | 在线重写整表，不阻塞读写 |
 | 5030 | {{< alias "pg_query_rewrite" >}} | 0.0.5 | 使用 ProcessUtility hook 重写 SQL 语句 |
-| 5040 | {{< alias "pg_squeeze" >}} | 1.9.3 | 从关系中删除未使用空间 |
+| 5040 | {{< alias "pg_squeeze" >}} | 1.9.4 | 从关系中删除未使用空间 |
 | 5050 | {{< alias "pg_dirtyread" >}} | 2.8 | 从表中读取尚未垃圾回收的行 |
 | 5060 | {{< alias "pgfincore" >}} | 1.4.0 | 检查和管理操作系统缓冲区缓存 |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | 从缓冲区中移除特定关系的页面 |
@@ -603,7 +603,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | MySQL外部数据包装器 |
 | 8610 | {{< alias "oracle_fdw" >}} | 2.9.0 | 提供对Oracle的外部数据源包装器 |
 | 8620 | {{< alias "tds_fdw" >}} | 2.0.5 | TDS 数据库（Sybase/SQL Server）外部数据包装器 |
-| 8630 | {{< alias "db2_fdw" >}} | 18.1.2 | 提供对DB2的外部数据源包装器 |
+| 8630 | {{< alias "db2_fdw" >}} | 18.2.0 | 提供对DB2的外部数据源包装器 |
 | 8640 | {{< alias "sqlite_fdw" >}} | 2.5.0 | SQLite 外部数据包装器 |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
 | 8660 | {{< alias "etcd_fdw" >}} | 0.0.1 | etcd分布式键值存储外部数据包装器 |
@@ -663,7 +663,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 9500 | {{< alias "pglogical" >}} | 2.4.7 | PostgreSQL逻辑复制：三方扩展实现 |
+| 9500 | {{< alias "pglogical" >}} | 2.4.8 | PostgreSQL逻辑复制：三方扩展实现 |
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 2.4.7 | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | 9510 | {{< alias "pglogical_ticker" >}} | 1.4.1 | pglogical复制延迟以秒计的精确视图 |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 2.2.1 | 使用 pglogical 执行自动 DDL 部署 |

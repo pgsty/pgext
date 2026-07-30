@@ -5,7 +5,7 @@ excludeSearch: true
 comments: false
 ---
 
-The packaged PostgreSQL extension catalog contains **562** extensions and **405** packages.
+The packaged PostgreSQL extension catalog contains **562** extensions and **396** packages.
 The full PGEXT.CLOUD directory contains **2230** extensions.
 
 ## Extension Stat
@@ -22,9 +22,9 @@ The full PGEXT.CLOUD directory contains **2230** extensions.
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 405 | 139 | 335 | 0 | 0 | 402 | 395 | 385 | 372 | 357 |
-| **EL** | 404 | 138 | 335 | 0 | 62 | 401 | 394 | 384 | 371 | 356 |
-| **Debian** | 402 | 95 | 307 | 0 | 64 | 399 | 392 | 382 | 369 | 354 |
+| **ALL** | 396 | 139 | 326 | 0 | 0 | 393 | 386 | 376 | 363 | 348 |
+| **EL** | 395 | 138 | 326 | 0 | 62 | 392 | 385 | 375 | 362 | 347 |
+| **Debian** | 393 | 95 | 298 | 0 | 64 | 390 | 383 | 373 | 360 | 345 |
 
 ## Categories
 

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4600** | {{< badge content="topn" link="https://github.com/citusdata/postgresql-topn" >}} | {{< ext "topn" >}} | `2.7.0` | {{< category "FUNC" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
+| **4600** | {{< badge content="topn" link="https://github.com/citusdata/postgresql-topn" >}} | {{< ext "topn" >}} | `2.7.1` | {{< category "FUNC" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,13 +26,15 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "count_distinct" >}} {{< ext "hll" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "weighted_statistics" >}} |
 
+> [!Note] Latest PGDG RPM/catalog version is 2.7.1; EL8/EL9 x86_64, Pigsty DEB, and Pigsty source remain on 2.7.0.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `topn` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.0` | {{< bg "18" "topn_18" "green" >}} {{< bg "17" "topn_17" "green" >}} {{< bg "16" "topn_16" "green" >}} {{< bg "15" "topn_15" "green" >}} {{< bg "14" "topn_14" "green" >}} | `topn_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `topn` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.1` | {{< bg "18" "topn_18" "green" >}} {{< bg "17" "topn_17" "green" >}} {{< bg "16" "topn_16" "green" >}} {{< bg "15" "topn_15" "green" >}} {{< bg "14" "topn_14" "green" >}} | `topn_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.0` | {{< bg "18" "postgresql-18-topn" "green" >}} {{< bg "17" "postgresql-17-topn" "green" >}} {{< bg "16" "postgresql-16-topn" "green" >}} {{< bg "15" "postgresql-15-topn" "green" >}} {{< bg "14" "postgresql-14-topn" "green" >}} | `postgresql-$v-topn` | - |
 
 

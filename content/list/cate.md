@@ -397,7 +397,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4570 | {{< alias "sequential_uuids" >}} | 1.0.3 | generator of sequential UUIDs |
 | 4580 | {{< alias "typeid" "pg_typeid" >}} | 0.3.0 | Allows to use TypeIDs in Postgres natively |
 | 4590 | {{< alias "snowflake" >}} | 2.5.0 | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
-| 4600 | {{< alias "topn" >}} | 2.7.0 | type for top-n JSONB |
+| 4600 | {{< alias "topn" >}} | 2.7.1 | type for top-n JSONB |
 | 4610 | {{< alias "quantile" >}} | 1.1.8 | Quantile aggregation function |
 | 4620 | {{< alias "lower_quantile" >}} | 1.0.3 | Lower quantile aggregate function |
 | 4630 | {{< alias "count_distinct" >}} | 3.0.2 | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
@@ -451,7 +451,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5010 | {{< alias "pg_repack" >}} | 1.5.3 | Reorganize tables in PostgreSQL databases with minimal locks |
 | 5020 | {{< alias "pg_rewrite" >}} | 2.2 | Tool allows read write to the table during the rewriting |
 | 5030 | {{< alias "pg_query_rewrite" >}} | 0.0.5 | Rewrite SQL statements with a PostgreSQL ProcessUtility hook |
-| 5040 | {{< alias "pg_squeeze" >}} | 1.9.3 | A tool to remove unused space from a relation. |
+| 5040 | {{< alias "pg_squeeze" >}} | 1.9.4 | A tool to remove unused space from a relation. |
 | 5050 | {{< alias "pg_dirtyread" >}} | 2.8 | Read dead but unvacuumed rows from table |
 | 5060 | {{< alias "pgfincore" >}} | 1.4.0 | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | remove buffered pages for specific relations |
@@ -603,7 +603,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | Foreign data wrapper for querying a MySQL server |
 | 8610 | {{< alias "oracle_fdw" >}} | 2.9.0 | foreign data wrapper for Oracle access |
 | 8620 | {{< alias "tds_fdw" >}} | 2.0.5 | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
-| 8630 | {{< alias "db2_fdw" >}} | 18.1.2 | foreign data wrapper for DB2 access |
+| 8630 | {{< alias "db2_fdw" >}} | 18.2.0 | foreign data wrapper for DB2 access |
 | 8640 | {{< alias "sqlite_fdw" >}} | 2.5.0 | SQLite Foreign Data Wrapper |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8660 | {{< alias "etcd_fdw" >}} | 0.0.1 | Foreign data wrapper for etcd |
@@ -663,7 +663,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 9500 | {{< alias "pglogical" >}} | 2.4.7 | PostgreSQL Logical Replication |
+| 9500 | {{< alias "pglogical" >}} | 2.4.8 | PostgreSQL Logical Replication |
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 2.4.7 | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | 9510 | {{< alias "pglogical_ticker" >}} | 1.4.1 | Have an accurate view on pglogical replication delay |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 2.2.1 | automated ddl deployment using pglogical |

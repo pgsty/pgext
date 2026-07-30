@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5040** | {{< badge content="pg_squeeze" link="https://github.com/cybertec-postgresql/pg_squeeze" >}} | {{< ext "pg_squeeze" >}} | `1.9.3` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
+| **5040** | {{< badge content="pg_squeeze" link="https://github.com/cybertec-postgresql/pg_squeeze" >}} | {{< ext "pg_squeeze" >}} | `1.9.4` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,14 +27,16 @@ width: full
 |    **Schemas**    | `squeeze` |
 |   **See Also**    | {{< ext "pg_repack" >}} {{< ext "pgstattuple" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_column_tetris" >}} |
 
+> [!Note] Latest PGDG DEB/catalog version is 1.9.4; PGDG RPM remains on 1.9.2.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_squeeze` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_squeeze` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.2` | {{< bg "18" "pg_squeeze_18" "green" >}} {{< bg "17" "pg_squeeze_17" "green" >}} {{< bg "16" "pg_squeeze_16" "green" >}} {{< bg "15" "pg_squeeze_15" "green" >}} {{< bg "14" "pg_squeeze_14" "green" >}} | `pg_squeeze_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.3` | {{< bg "18" "postgresql-18-squeeze" "green" >}} {{< bg "17" "postgresql-17-squeeze" "green" >}} {{< bg "16" "postgresql-16-squeeze" "green" >}} {{< bg "15" "postgresql-15-squeeze" "green" >}} {{< bg "14" "postgresql-14-squeeze" "green" >}} | `postgresql-$v-squeeze` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.4` | {{< bg "18" "postgresql-18-squeeze" "green" >}} {{< bg "17" "postgresql-17-squeeze" "green" >}} {{< bg "16" "postgresql-16-squeeze" "green" >}} {{< bg "15" "postgresql-15-squeeze" "green" >}} {{< bg "14" "postgresql-14-squeeze" "green" >}} | `postgresql-$v-squeeze` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
