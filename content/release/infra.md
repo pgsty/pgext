@@ -6,6 +6,12 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-08-01
+
+| Name       | Old    | New    | Comment                        |
+|:-----------|:-------|:-------|:-------------------------------|
+| prometheus | 3.13.1 | 3.13.2 | Security and stability release |
+
 ## 2026-07-30
 
 | Name              | Old           | New           | Comment                                              |
