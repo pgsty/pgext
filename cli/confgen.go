@@ -914,8 +914,6 @@ const rpmTemplate = `---
 # License    :   Apache-2.0 @ https://pigsty.io/docs/about/license
 # Copyright  :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
 
-# where to register systemd files
-systemd_dir: /usr/lib/systemd/system
 syslog_path: /var/log/messages
 
 # default packages to be downloaded (if ` + "`repo_packages`" + ` is not explicitly set)
@@ -1067,8 +1065,6 @@ const debTemplate = `---
 # License    :   Apache-2.0 @ https://pigsty.io/docs/about/license
 # Copyright  :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
 
-# where to register systemd files
-systemd_dir: /lib/systemd/system
 syslog_path: /var/log/syslog
 
 # default packages to be downloaded (if ` + "`repo_packages`" + ` is not explicitly set)

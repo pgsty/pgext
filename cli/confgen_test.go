@@ -423,6 +423,20 @@ func TestNodePackagesDefaultRenderedAsThreeAlignedGroups(t *testing.T) {
 	}
 }
 
+func TestConfigTemplatesDoNotEmitSystemdDir(t *testing.T) {
+	tests := map[string]string{
+		"rpm": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+		"deb": renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+	}
+	for name, rendered := range tests {
+		t.Run(name, func(t *testing.T) {
+			if strings.Contains(rendered, "systemd_dir:") {
+				t.Fatal("generated config still contains the obsolete systemd_dir variable")
+			}
+		})
+	}
+}
+
 func TestRPMTemplateAppStreamExcludesDistroPostgreSQLProviders(t *testing.T) {
 	const wantMeta = "meta: { excludepkgs: 'postgresql* libpq*' }"
 
