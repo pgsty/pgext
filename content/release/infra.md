@@ -6,6 +6,12 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-08-02
+
+| Name | Old   | New   | Comment                     |
+|:-----|:------|:------|:----------------------------|
+| pig  | 1.6.0 | 1.6.1 | Refreshed extension catalog |
+
 ## 2026-08-01
 
 | Name       | Old    | New    | Comment                        |
