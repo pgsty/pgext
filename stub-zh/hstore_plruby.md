@@ -2,36 +2,38 @@
 
 来源：
 
-- [官方上游 README](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/README.md)
-- [官方扩展控制文件 (hstore_plruby.control)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/hstore_plruby/hstore_plruby.control)
-- [官方扩展 SQL (hstore_plruby--1.0.sql)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/hstore_plruby/hstore_plruby--1.0.sql)
+- [PL/Ruby v2.5.0 README](https://github.com/commandprompt/plruby/blob/v2.5.0/README.md)
+- [hstore_plruby v1.0 控制文件](https://github.com/commandprompt/plruby/blob/v2.5.0/hstore_plruby/hstore_plruby.control)
+- [hstore_plruby v1.0 扩展 SQL](https://github.com/commandprompt/plruby/blob/v2.5.0/hstore_plruby/hstore_plruby--1.0.sql)
 
-`hstore_plruby` — 用于在数据库代码中运行或与此过程语言进行交互时，将 hstore 转换为 Ruby Hash。在安装扩展之前，必须先安装并验证其依赖项。
+`hstore_plruby` 为 `plruby` 语言安装 PostgreSQL `hstore` 与 Ruby `Hash` 值之间的转换。键会变为 Ruby 字符串，值会变为字符串或 `nil`；兼容的 Ruby 哈希也可以直接作为 `hstore` 返回。
 
-### 核心工作流
+### 安装并使用转换
 
 ```sql
+CREATE EXTENSION hstore;
+CREATE EXTENSION plruby;
 CREATE EXTENSION hstore_plruby;
 
-CREATE EXTENSION plruby;
-
-CREATE FUNCTION hello(text) RETURNS text LANGUAGE plruby AS $$
-    "Hello, #{args[0]}!"
+CREATE FUNCTION ruby_add_hstore_key(hstore)
+RETURNS hstore
+LANGUAGE plruby
+TRANSFORM FOR TYPE hstore
+AS $$
+  value = args[0]
+  value['processed'] = 'yes'
+  value
 $$;
 
-SELECT hello('world');   -- Hello, world!
+SELECT ruby_add_hstore_key('id=>42'::hstore);
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小代码片段，并在将其集成到应用程序 SQL 中之前验证安装的版本和返回值。
+只有声明了 `TRANSFORM FOR TYPE hstore` 的函数才会使用该转换。
 
-### 重要对象
+### 对象与注意事项
 
-- `hstore_to_plruby(val internal)` 是一个扩展函数，返回 `internal`。
-- `plruby_to_hstore(val internal)` 是一个扩展函数，返回 `hstore`。
-
-### 要求与注意事项
-
-- 控制文件声明默认版本为 `1.0`。
-- 首先安装并验证确认的扩展依赖项：`hstore`, `plruby`。
-- 控制文件将扩展标记为可重定位。
-- 在生产使用之前，确认权限、支持的 PostgreSQL 版本、升级行为和失败情况与固定源保持一致。
+- `hstore_to_plruby(internal)` 实现从 SQL 到 Ruby 的转换。
+- `plruby_to_hstore(internal)` 实现从 Ruby 到 SQL 的转换。
+- 扩展版本为 `1.0`，同时依赖 `hstore` 和 `plruby`，并且可重定位。
+- `hstore` 是从字符串到字符串或 NULL 的扁平映射。它不会保留嵌套的 Ruby 哈希、数组或有类型的数值；如果这些数据形态很重要，请使用 `jsonb_plruby`。
+- PL/Ruby 仍是不受信任的语言。安装此转换不会为 Ruby 代码提供沙箱，也不会降低创建 PL/Ruby 函数所需的权限。

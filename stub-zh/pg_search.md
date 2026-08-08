@@ -2,72 +2,99 @@
 
 来源：
 
-- [pg_search v0.24.3 README](https://github.com/paradedb/paradedb/blob/v0.24.3/pg_search/README.md)
-- [pg_search v0.24.3 release notes](https://github.com/paradedb/paradedb/releases/tag/v0.24.3)
-- [ParadeDB 文档](https://docs.paradedb.com/)
+- [pg_search v0.25.1 README](https://github.com/paradedb/paradedb/blob/v0.25.1/pg_search/README.md)
+- [pg_search v0.25.1 发行说明](https://github.com/paradedb/paradedb/releases/tag/v0.25.1)
+- [pg_search v0.25.1 变更日志](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/changelog/0.25.1.mdx)
+- [创建 ParadeDB 索引](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/indexing/create-index.mdx)
+- [全文匹配操作符](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/full-text/match.mdx)
+- [BM25 评分](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/sorting/score.mdx)
+- [高亮与摘要](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/full-text/highlight.mdx)
+- [索引向量](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/indexing/indexing-vectors.mdx)
+- [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/vector/querying.mdx)
+- [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/hybrid/overview.mdx)
 
-pg_search 为 PostgreSQL 添加了 ParadeDB 的 BM25 访问方法和查询操作符，用于排名全文搜索、结构化搜索以及混合搜索。当搜索必须与 PostgreSQL 数据保持事务一致性，并支持 BM25 评分、高亮显示、过滤器、聚合和连接时，请使用此扩展。
+`pg_search` 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
-### 安装扩展
+### 安装并构建索引
 
-    CREATE EXTENSION pg_search;
+```conf
+shared_preload_libraries = 'pg_search'
+```
 
-上游 v0.24.3 支持 PostgreSQL 15 及以上版本。请使用与具体 PostgreSQL 主版本匹配的构建包。由于该扩展参与了规划器和执行器路径，因此在生产升级前，请先测试查询计划和资源使用情况。
+重启 PostgreSQL，然后创建扩展以及一张拥有稳定唯一键的表：
 
-### 创建 BM25 索引
+```sql
+CREATE EXTENSION pg_search CASCADE;
 
-创建一个以稳定唯一键字段为基础的 BM25 索引：
+CREATE TABLE documents (
+  id          bigint PRIMARY KEY,
+  title       text,
+  body        text,
+  category    text,
+  embedding   vector(768)
+);
 
-    CREATE INDEX products_search_idx
-    ON products
-    USING bm25 (
-      id,
-      title,
-      description,
-      category,
-      rating
-    )
-    WITH (key_field = 'id');
+CREATE INDEX documents_search_idx ON documents
+USING paradedb (
+  id,
+  title,
+  body,
+  category,
+  embedding vector_cosine_ops
+)
+WITH (key_field = 'id');
+```
 
-保持键字段的唯一性和非空性。仅索引用于搜索或过滤的字段；每个被索引的字段都会增加构建时间、磁盘使用和写入放大。
+`key_field` 必须是第一个索引列，并能唯一标识每一行。文本键必须以不分词的方式建立索引。一张表只能拥有一个 ParadeDB 索引，因此应将所有需要搜索的字段都纳入该索引。
 
-### 查询、排名与高亮
+### 全文搜索
 
-@@@ 操作符匹配字段或已索引行与 ParadeDB 查询：
+使用 `|||` 匹配任意词元，使用 `&&&` 要求匹配所有词元：
 
-    SELECT id,
-           title,
-           paradedb.score(id) AS score,
-           paradedb.snippet(description) AS snippet
-    FROM products
-    WHERE description @@@ 'wireless keyboard'
-      AND category = 'electronics'
-    ORDER BY score DESC
-    LIMIT 20;
+```sql
+SELECT id, title, pdb.score(id) AS score
+FROM documents
+WHERE body ||| 'postgresql search'
+ORDER BY score DESC, id;
 
-当用户输入必须受到限制时，请使用字段限定的查询字符串或 ParadeDB 查询构造器。未经验证的情况下，切勿将不可信输入直接拼接到查询语法中。
+SELECT id, pdb.snippet(body) AS excerpt
+FROM documents
+WHERE body &&& 'postgresql indexing';
+```
 
-对于布尔查询，paradedb.boolean() 可以组合 must、should 和 must_not 子句，并可以设置 minimum_should_match。该扩展还暴露了 index_created_at() 函数用于检查索引创建时间。
+`pdb.score(key_field)` 提供当前行的相关性分数。`pdb.snippet(indexed_text_column)` 返回高亮摘要。这些辅助函数只有在 ParadeDB 搜索谓词驱动的查询中才有意义。
 
-### 用户可接触的对象索引
+### 向量搜索
 
-- bm25: 用于文本和结构化字段的 BM25 索引访问方法。
-- @@@: 在 WHERE 子句中使用的搜索匹配操作符。
-- paradedb.score(key): 匹配行的 BM25 相关性评分。
-- paradedb.snippet(field): 当前匹配的高亮摘录。
-- paradedb.parse(...), paradedb.term(...), paradedb.boolean(...): 带类型查询构造器。
-- paradedb.index_info(...): 索引元数据和字段配置信息。
-- paradedb.index_created_at(...): 索引创建时间戳。
+向量索引在 0.25 系列中处于 beta 阶段，使用 pgvector 的 `vector` 类型。创建索引时应选择操作符类；更改距离度量需要重建索引。
 
-### 0.24.3 版本的操作变化
+```sql
+SELECT id, title, embedding <=> $1::vector AS distance
+FROM documents
+WHERE id @@@ pdb.all()
+ORDER BY embedding <=> $1::vector, id
+LIMIT 20;
+```
 
-0.24.x 系列启用了更多聚合和连接扫描路径，并增加了 time 和 timetz 支持。版本 0.24.3 还限制了顺序扫描缓冲区，设置了索引构建工作内存上限，更早地检查可用磁盘空间，修复了 GROUP BY 分组基数路由问题，并在 Tantivy 会截断值时抛出错误。
+支持的索引操作符类为 `vector_l2_ops`、`vector_ip_ops` 和 `vector_cosine_ops`。0.25 向量索引不为 `halfvec`、`sparsevec` 或 `bit` 列建立索引。
 
-这些防护措施减少了资源使用失控的风险，但并未消除容量规划的需求。请监控临时空间、索引大小、构建时间和查询内存。升级后重新运行代表性的 EXPLAIN ANALYZE 计划，因为计划器行为可能会发生变化。
+### 混合搜索
 
-### 兼容性与注意事项
+单个 ParadeDB 索引可以组合词法谓词、结构化过滤与向量排序。需要更复杂的融合时，应使用文档中的 RRF 和加权混合搜索函数，而不是直接将量纲不同的分数相加。
 
-- pg_search 使用其自己的 BM25 索引实现。不要假设由其他扩展创建的索引可以互换。
-- 本地目录元数据报告了 bm25 访问方法与 pg_textsearch 和 vchord_bm25 的冲突；除非文档明确支持共存，否则请避免在同一数据库中加载竞争性实现。
-- 搜索索引必须与表一起维护，并可能显著增加更新成本。
-- 排名依赖于查询和语料库。请使用生产环境相似的文本和过滤器进行基准测试，而不是将示例分数视为可移植的。
+```sql
+SELECT id, title, pdb.score(id) AS lexical_score
+FROM documents
+WHERE body ||| 'postgresql extension'
+  AND category === 'database'
+ORDER BY embedding <=> $1::vector, id
+LIMIT 20;
+```
+
+### 版本 0.25.1 与注意事项
+
+- 版本 0.25 将主要索引访问方法从 `bm25` 重命名为 `paradedb`。现有的 `USING bm25` 定义仍受支持，但新示例应使用 `USING paradedb`。
+- 版本 0.25.1 支持确定性的向量并列结果排序，并将倒数排名融合查询的向量分支下推到索引中。它还新增 `paradedb.vector_clustering_threshold`，默认值为 500，并将向量索引构建并行度上限设为四个工作进程。
+- 版本 0.25.1 移除了 `paradedb.vector_cluster_probe_epsilon`，并更改了向量索引的边界门控。从 0.25.0 升级数据库后，必须对所有包含向量字段的 ParadeDB 索引执行 `REINDEX`；对于这些索引，仅安装新的共享库并执行 `ALTER EXTENSION` 并不充分。
+- `CREATE EXTENSION pg_search CASCADE` 可以安装所需的 `vector` 扩展，但仍须先为所有服务器进程配置预加载并重启。
+- 使用不同字段选项重建索引后，查询计划、分词和排名都可能变化。在上线前，请使用符合生产形态的数据测试相关性与向量召回率。

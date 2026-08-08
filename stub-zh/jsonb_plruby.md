@@ -2,36 +2,37 @@
 
 来源：
 
-- [官方上游 README](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/README.md)
-- [官方扩展控制文件 (jsonb_plruby.control)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/jsonb_plruby/jsonb_plruby.control)
-- [官方扩展 SQL (jsonb_plruby--1.0.sql)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/jsonb_plruby/jsonb_plruby--1.0.sql)
+- [PL/Ruby v2.5.0 README](https://github.com/commandprompt/plruby/blob/v2.5.0/README.md)
+- [jsonb_plruby v1.0 控制文件](https://github.com/commandprompt/plruby/blob/v2.5.0/jsonb_plruby/jsonb_plruby.control)
+- [jsonb_plruby v1.0 扩展 SQL](https://github.com/commandprompt/plruby/blob/v2.5.0/jsonb_plruby/jsonb_plruby--1.0.sql)
 
-`jsonb_plruby` — 在数据库代码需要在或与此过程语言进行交互时，用于在 jsonb 和 Ruby 数据之间进行转换。在安装扩展之前，必须先安装并验证其依赖项。
+`jsonb_plruby` 为 `plruby` 语言安装 PostgreSQL `jsonb` 与原生 Ruby 值之间的转换。经过转换的 `jsonb` 参数会成为 Ruby `Hash`、`Array`、`String`、`Integer`、`Float`、`true`、`false` 或 `nil`；兼容的 Ruby 值也可以直接作为 `jsonb` 返回。
 
-### 核心工作流
+### 安装并使用转换
 
 ```sql
+CREATE EXTENSION plruby;
 CREATE EXTENSION jsonb_plruby;
 
-CREATE EXTENSION plruby;
-
-CREATE FUNCTION hello(text) RETURNS text LANGUAGE plruby AS $$
-    "Hello, #{args[0]}!"
+CREATE FUNCTION ruby_mark_processed(jsonb)
+RETURNS jsonb
+LANGUAGE plruby
+TRANSFORM FOR TYPE jsonb
+AS $$
+  value = args[0]
+  value['processed'] = true
+  value
 $$;
 
-SELECT hello('world');   -- Hello, world!
+SELECT ruby_mark_processed('{"id": 42}'::jsonb);
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小代码，然后在集成到应用程序 SQL 之前验证安装的版本和返回值。
+只有声明了 `TRANSFORM FOR TYPE jsonb` 的函数才会使用该转换。其他 PL/Ruby 函数仍采用该语言通常的 JSONB 转换行为。
 
-### 重要对象
+### 对象与注意事项
 
-- `jsonb_to_plruby(val internal)` 是一个扩展函数，返回 `internal`。
-- `plruby_to_jsonb(val internal)` 是一个扩展函数，返回 `jsonb`。
-
-### 要求与注意事项
-
-- 控制文件声明默认版本为 `1.0`。
-- 首先安装并验证确认的扩展依赖项：`plruby`。
-- 控制文件标记该扩展为可重定位。
-- 在生产使用之前，确认权限、支持的 PostgreSQL 版本、升级行为和失败情况与固定源进行比对。
+- `jsonb_to_plruby(internal)` 实现从 SQL 到 Ruby 的转换。
+- `plruby_to_jsonb(internal)` 实现从 Ruby 到 SQL 的转换。
+- 扩展版本为 `1.0`，依赖 `plruby`，并且可重定位。
+- 返回 PostgreSQL 的 Ruby `Hash` 键必须是有效的 JSON 对象键，数值及特殊值也必须能够由 PostgreSQL `jsonb` 表示。请显式测试嵌套值和数值边界。
+- PL/Ruby 仍是不受信任的语言。安装此转换不会为 Ruby 代码提供沙箱，也不会降低创建 PL/Ruby 函数所需的权限。

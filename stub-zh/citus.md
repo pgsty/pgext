@@ -1,18 +1,16 @@
-
-
-
 ## 用法
 
 来源：
 
-- [Citus v14.1.0 release](https://github.com/citusdata/citus/releases/tag/v14.1.0)
-- [Citus v14.1.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.1.0/CHANGELOG.md)
-- [What is Citus?](https://docs.citusdata.com/en/stable/get_started/what_is_citus.html)
-- [Citus Utility Functions](https://docs.citusdata.com/en/stable/develop/api_udf.html)
+- [Citus v14.2.0 发行说明](https://github.com/citusdata/citus/releases/tag/v14.2.0)
+- [Citus v14.2.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.2.0/CHANGELOG.md)
+- [Citus v14.2.0 控制文件](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/distributed/citus.control)
+- [什么是 Citus？](https://docs.citusdata.com/en/stable/get_started/what_is_citus.html)
+- [Citus 实用函数](https://docs.citusdata.com/en/stable/develop/api_udf.html)
 
-Citus 通过把表分片到多个 worker 节点，把 PostgreSQL 扩展成分布式数据库，同时保留 PostgreSQL SQL、索引、扩展、事务和运维工具作为主要使用界面。它常用于多租户 SaaS、实时分析、时间序列/事件数据和分布式微服务 schema。
+Citus 通过把表分片到工作节点，将 PostgreSQL 转换为分布式数据库，同时仍以 PostgreSQL SQL、索引、扩展、事务和运维工具作为面向用户的接口。它常用于多租户 SaaS 数据库、实时分析、时序/事件工作负载和分布式微服务模式。
 
-Pigsty 本地 catalog 中包名和主扩展名都是 `citus`；同一个包还包含 `citus_columnar`。Citus 是 preload 扩展，每个节点都需要先加载库，再创建扩展。
+本地 Pigsty 目录将 Citus 打包为 `citus`，并提供主扩展 `citus`；同一软件包还包含 `citus_columnar`。Citus 是预加载扩展，因此每个节点都必须在执行 `CREATE EXTENSION` 之前加载其库。
 
 ### 启用 Citus
 
@@ -20,14 +18,14 @@ Pigsty 本地 catalog 中包名和主扩展名都是 `citus`；同一个包还�
 shared_preload_libraries = 'citus'
 ```
 
-在 coordinator 和 worker 上重启 PostgreSQL，然后在数据库中创建扩展：
+在协调节点和工作节点上重启 PostgreSQL，然后在数据库中创建扩展：
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS citus;
 SELECT citus_version();
 ```
 
-多节点集群中，在 coordinator 上注册 coordinator 与 worker：
+在多节点集群中，从协调节点注册协调节点自身与各工作节点：
 
 ```sql
 SELECT citus_set_coordinator_host('coord-1', 5432);
@@ -39,7 +37,7 @@ SELECT * FROM citus_get_active_worker_nodes();
 
 ### 分布式表
 
-分布式表通过分片键分布。相同分片键值的行会协同定位到同一个 shard，因此租户内 join 和点查可以保持本地执行。
+按分片键分布表。分片键值相同的行会被共置在同一分片上，使限定租户的连接和点查询可以在本地完成。
 
 ```sql
 CREATE TABLE events (
@@ -50,22 +48,22 @@ CREATE TABLE events (
   payload    jsonb,
   PRIMARY KEY (tenant_id, event_id)
 );
-
-SELECT create_distributed_table('events', 'tenant_id');
 ```
 
-也可以显式设置 shard 数量和 colocation：
+分布该表，并显式调整分片数与共置设置：
 
 ```sql
 SELECT create_distributed_table(
   'events',
   'tenant_id',
   shard_count  := 64,
-  colocate_with := 'default'
+  colocate_with := 'none'
 );
 ```
 
-带分布列过滤的查询可以路由到单个 shard：
+显式选择分片数时，应使用 `colocate_with := 'none'` 启动新的共置组。要与现有分布式表共置，请指定该表的名称，并让它的分片数决定布局。
+
+过滤分布列的查询可以路由到单个分片：
 
 ```sql
 SELECT *
@@ -75,7 +73,7 @@ ORDER BY event_at DESC
 LIMIT 50;
 ```
 
-跨 shard 查询会被规划为分布式任务，在 worker 上并行执行：
+跨分片查询会被规划为分布式任务，并在工作节点上并行运行：
 
 ```sql
 SELECT kind, count(*)
@@ -85,9 +83,9 @@ GROUP BY kind
 ORDER BY count DESC;
 ```
 
-### 引用表
+### 参考表
 
-引用表会完整复制到所有 worker，适合需要和多个分布式表 join 的小型维表。
+参考表会完整复制到所有工作节点。它们适用于需要与许多分布式表连接的小型查找表。
 
 ```sql
 CREATE TABLE countries (
@@ -98,9 +96,9 @@ CREATE TABLE countries (
 SELECT create_reference_table('countries');
 ```
 
-### 基于 Schema 的分片
+### 基于模式的分片
 
-当每个租户或服务拥有独立 schema 时，可以使用 schema-based sharding。Citus v14.1.0 增加了从任意节点执行多类 schema 分片 DDL 的支持，包括 `CREATE SCHEMA`、`DROP SCHEMA`、`ALTER SCHEMA RENAME`、`ALTER SCHEMA OWNER`，以及分布式 schema 内的表级 DDL。
+当每个租户或服务拥有独立模式时，基于模式的分片很有用。Citus 支持从任意节点执行模式分片 DDL，包括 `CREATE SCHEMA`、`DROP SCHEMA`、`ALTER SCHEMA RENAME`、`ALTER SCHEMA OWNER`，以及分布式模式上的表级 DDL。
 
 ```sql
 CREATE SCHEMA tenant_42;
@@ -113,50 +111,56 @@ CREATE TABLE tenant_42.orders (
 );
 ```
 
-共享表通常使用行分布模型；每租户 schema 布局可以使用 schema 分片。不要在没有检查 colocation 和 SQL 支持限制的情况下随意混用两种模型。
+共享表应使用基于行的分布，每租户模式布局应使用基于模式的分片；在未检查共置与 SQL 支持影响之前，不要随意混用这两种模型。
 
-### 节点与 Shard 运维
+### 节点与分片操作
 
 ```sql
--- 添加或禁用节点。
+-- Add or disable nodes.
 SELECT * FROM citus_add_node('worker-3', 5432);
 SELECT * FROM citus_disable_node('worker-2', 5432);
 SELECT * FROM citus_activate_node('worker-2', 5432);
 
--- 排空并移除节点。
+-- Drain and remove a node.
 SELECT * FROM citus_drain_node('worker-1', 5432);
 SELECT * FROM citus_remove_node('worker-1', 5432);
 
--- 重平衡 shard。
+-- Rebalance shards.
 SELECT citus_rebalance_start();
 SELECT * FROM citus_rebalance_status();
 SELECT rebalance_table_shards('events');
 
--- 查看表和 shard。
+-- Inspect tables and shards.
 SELECT * FROM citus_tables;
 SELECT * FROM citus_shards;
 ```
 
 ### 备份协调
 
-Citus v14.1.0 增加了用于临时阻塞分布式 2PC 提交决策以及 schema/topology 变更的 UDF，方便在协调磁盘快照时获得一致性窗口。它们只应该出现在受控备份流程里，快照步骤结束后必须解除阻塞。
+Citus v14.1.0 新增了 UDF，可在制作协调一致的磁盘快照时阻止分布式 2PC 提交决策和模式/拓扑变更。只能在受控备份流程中使用这些函数，并且在完成快照步骤后必须解除集群阻塞。
 
 ```sql
 SELECT citus_cluster_changes_block();
 SELECT * FROM citus_cluster_changes_block_status();
 
--- 此处执行协调后的文件系统或卷快照。
+-- Take coordinated filesystem or volume snapshots here.
 
 SELECT citus_cluster_changes_unblock();
 ```
 
-这些函数仍然需要配合常规 PostgreSQL 备份纪律：一致 checkpoint、WAL 归档、跨节点快照顺序，以及经过验证的恢复流程。
+应将这些函数与常规 PostgreSQL 备份规范配合使用：一致检查点、WAL 归档、跨节点快照顺序，以及经过测试的恢复流程。
+
+### 版本 14.2 运维
+
+Citus 14.2 新增了仅限超级用户使用的 `citus_internal.distribute_object()` 修复辅助函数，用于处理元数据未正确传播的受支持数据库对象。应将它视为针对性的恢复操作，而不是常规分布 API。
+
+该版本还新增了 `citus.allow_unsafe_insert_select_pushdown`，用于显式选择在共置表上启用批量 `INSERT ... SELECT` 下推，并改进了单分片存储过程执行。除非已经依据发行说明中的限制检查工作负载，否则应保持关闭不安全下推设置。
 
 ### 注意事项
 
-- Pigsty 本地元数据当前跟踪 PostgreSQL 16-18 上的 Citus 14.x；Citus 14 已移除 PostgreSQL 15 支持。
-- 创建扩展前必须设置 `shared_preload_libraries = 'citus'`。新实例上单纯执行 `CREATE EXTENSION citus` 不够。
-- 分布列选择很关键。分布式表上的主键和唯一约束通常需要包含分布列。
-- 跨 shard join、repartition join、分布式 DDL 和多 shard 写入虽然强大，但规划、锁和失败语义都不同于单机 PostgreSQL。
-- Citus 通过 `citus_columnar` 提供自己的列式存储界面；Pigsty 元数据中它与 Hydra `columnar` 冲突。
-- cluster-change blocking 函数是备份运维工具。备份脚本失败后不要让集群长期保持阻塞状态。
+- Pigsty 本地元数据当前跟踪面向 PostgreSQL 16-18 的 Citus 14.x；Citus 14 已停止支持 PostgreSQL 15。
+- 必须在创建扩展之前设置 `shared_preload_libraries = 'citus'`。在全新服务器上，仅执行 `CREATE EXTENSION citus` 并不充分。
+- 应仔细选择分布列。分布式表上的主键和唯一约束通常需要包含分布列。
+- 跨分片连接、重分区连接、分布式 DDL 和多分片写入功能强大，但其规划与锁行为不同于单节点 PostgreSQL。
+- Citus 通过 `citus_columnar` 提供自己的列存储接口；Pigsty 元数据将其标记为与 Hydra `columnar` 冲突。
+- 集群变更阻塞函数是用于备份的运维工具。备份脚本失败后，不要让集群一直处于阻塞状态。

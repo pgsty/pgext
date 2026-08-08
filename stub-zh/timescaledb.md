@@ -2,16 +2,17 @@
 
 来源：
 
-- [TimescaleDB v2.28.3 README](https://github.com/timescale/timescaledb/blob/2.28.3/README.md)
-- [TimescaleDB 2.28.3 发行版](https://github.com/timescale/timescaledb/releases/tag/2.28.3)
-- [2.28.3 变更日志](https://github.com/timescale/timescaledb/blob/2.28.3/CHANGELOG.md)
+- [TimescaleDB v2.29.1 README](https://github.com/timescale/timescaledb/blob/2.29.1/README.md)
+- [TimescaleDB 2.29.0 发行说明](https://github.com/timescale/timescaledb/releases/tag/2.29.0)
+- [TimescaleDB 2.29.1 安全与缺陷修复版本](https://github.com/timescale/timescaledb/releases/tag/2.29.1)
+- [TimescaleDB v2.29.1 控制文件](https://github.com/timescale/timescaledb/blob/2.29.1/timescaledb.control.in)
 - [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/)
 - [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/)
-- [连续聚合API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)
+- [连续聚合 API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)
 - [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/)
-- [TimescaleDB GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
+- [TimescaleDB GUC](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
 
-`timescaledb` 是一个用于时间序列和事件分析的PostgreSQL扩展。当前文档强调了 `CREATE TABLE ... WITH (tsdb.hypertable)`、连续聚合、自动化任务以及将数据块移入列存储。
+`timescaledb` 是用于时序与事件分析的 PostgreSQL 扩展。当前文档重点介绍 `CREATE TABLE ... WITH (tsdb.hypertable)`、连续聚合、自动化作业，以及将数据块迁移到列存储的用法。
 
 ### 超表
 
@@ -28,7 +29,7 @@ CREATE TABLE ts_test (
 );
 ```
 
-要转换现有的PostgreSQL表，请使用通用超表API：
+要转换现有 PostgreSQL 表，请使用通用超表 API：
 
 ```sql
 CREATE TABLE ts_existing (
@@ -39,11 +40,11 @@ CREATE TABLE ts_existing (
 SELECT create_hypertable('ts_existing', by_range('ts'));
 ```
 
-- `CREATE TABLE ... WITH (tsdb.hypertable)` 从TimescaleDB 2.20.0版本开始被文档化，是创建新超表的最佳实践路径。
-- 对于TimescaleDB 2.23.0及更高版本，第一个`TIMESTAMP`或`TIMESTAMPTZ`列将自动选择为分区列，除非多个候选者使选择变得模糊。
-- `create_hypertable()` 仍然可以用于转换现有表。
+- `CREATE TABLE ... WITH (tsdb.hypertable)` 自 TimescaleDB 2.20.0 起已有文档说明，是新建超表的最佳实践。
+- 在 TimescaleDB 2.23.0 及更高版本中，系统会自动选择第一个 `TIMESTAMP` 或 `TIMESTAMPTZ` 列作为分区列；如果存在多个候选列而导致选择有歧义，则不会自动选择。
+- `create_hypertable()` 仍可用于转换现有表。
 
-### 连续聚合和任务
+### 连续聚合与作业
 
 ```sql
 CREATE MATERIALIZED VIEW ts_hourly
@@ -64,10 +65,10 @@ SELECT add_continuous_aggregate_policy(
 SELECT add_job('user_defined_action', '1h');
 ```
 
-- 连续聚合需要在超表的时间维度上使用`time_bucket(...)`。
-- 连续聚合的`WITH`子句支持 `timescaledb.materialized_only`；当前API默认值为`TRUE`，因此除非另行配置，否则实时聚合不会启用。
-- TimescaleDB 2.28.0允许手动调用 `refresh_continuous_aggregate()` 分批增量执行。使用 `buckets_per_batch`、`max_batches_per_execution` 和 `refresh_newest_first` 来将大型手动刷新拆分为较小的工作单元。
-- TimescaleDB 2.28.0还允许通过 `ALTER MATERIALIZED VIEW ... ADD COLUMN ... GENERATED ALWAYS AS (...) STORED` 向现有连续聚合添加新的生成聚合列；现有行在刷新之前为`NULL`。
+- 连续聚合要求在超表的时间维度上使用 `time_bucket(...)`。
+- 连续聚合的 `WITH` 子句支持 `timescaledb.materialized_only`；当前 API 默认值为 `TRUE`，因此除非另行配置，否则不会启用实时聚合。
+- TimescaleDB 2.28.0 支持以批次增量执行手工 `refresh_continuous_aggregate()` 调用。可使用 `buckets_per_batch`、`max_batches_per_execution` 和 `refresh_newest_first` 将大型手工刷新拆分为较小的工作单元。
+- TimescaleDB 2.28.0 还允许通过 `ALTER MATERIALIZED VIEW ... ADD COLUMN ... GENERATED ALWAYS AS (...) STORED`，向现有连续聚合添加新的生成聚合列；在刷新之前，现有行的该列为 `NULL`。
 
 ### 列存储
 
@@ -86,10 +87,11 @@ CREATE TABLE crypto_ticks (
 CALL add_columnstore_policy('crypto_ticks', after => INTERVAL '60 days');
 ```
 
-- 除非 `CREATE TABLE ... WITH (tsdb.hypertable)`，否则默认情况下 `tsdb.columnstore = false` 启用列存储。
-- `add_columnstore_policy()` 替换了较旧的 `add_compression_policy()` API，并需要选择 `after` 或 `created_before` 中的一个，而不是两个。
+- `CREATE TABLE ... WITH (tsdb.hypertable)` 默认启用列存储，除非设置 `tsdb.columnstore = false`。
+- `add_columnstore_policy()` 取代了旧的 `add_compression_policy()` API，且要求在 `after` 和 `created_before` 中二选一，不能同时指定。
+- 新建列存储数据块默认启用布隆过滤器。现有数据块必须重新压缩，之后才会拥有布隆索引。
 
-### 重要GUCs
+### 相关 GUC
 
 ```sql
 SET timescaledb.enable_direct_compress_insert = on;
@@ -97,12 +99,12 @@ SET timescaledb.enable_cagg_rewrites = on;
 SET timescaledb.enable_columnar_scan_filter_pushdown = on;
 ```
 
-`timescaledb.enable_direct_compress_insert` 和 `timescaledb.enable_direct_compress_copy` 在数据导入期间启用技术预览版的直接压缩。TimescaleDB 2.27.0 添加了 `timescaledb.enable_cagg_rewrites` 和 `timescaledb.cagg_rewrites_debug_info`，并记录了 `timescaledb.enable_columnar_scan_filter_pushdown` 默认启用。
+`timescaledb.enable_direct_compress_insert` 和 `timescaledb.enable_direct_compress_copy` 可在写入期间启用技术预览版的直接压缩。TimescaleDB 2.27.0 新增了 `timescaledb.enable_cagg_rewrites` 与 `timescaledb.cagg_rewrites_debug_info`，并说明 `timescaledb.enable_columnar_scan_filter_pushdown` 默认启用。
 
-### 版本2.28.3及相关注意事项
+### 版本 2.29.1 与注意事项
 
-- 使用 `2.28.3` 而不是早期的 `2.28.x` 构建。它包含列存储中 `NULL` 处理、排序负常量和排序值、`stddev`/`avg` 结果、非默认排序规则下的压缩数据DML操作、压缩竞争以及涉及数组和 `NULL` 的直接删除情况的正确性修复。
-- TimescaleDB 2.28.0通过从列存储批处理元数据中推导结果而不是解压批处理来加快对压缩数据的 `first(value, time)` 和 `last(value, time)` 聚合。
-- 2.28.0中的列存储执行器可以在压缩数据上评估 `CASE ... WHEN` 表达式，保持条件聚合和计算表达式的向量化路径。
-- TimescaleDB 2.28.0移除了自适应分块，并删除了 `_timescaledb_catalog.chunk_constraint`，暂时用兼容视图替换。使用稳定的信息视图而不是依赖于该系统目录对象。
-- 2.28.x是支持PostgreSQL 15的最后一个次要系列；计划中的下一个次要版本仅支持PostgreSQL 16、17和18。
+- TimescaleDB 2.29 支持 PostgreSQL 16、17 和 18。PostgreSQL 15 支持止于 2.28 系列，因此在将 PG15 数据库迁移到 2.29 之前，应先升级 PostgreSQL。
+- 版本 2.29.0 新增 `compact_chunk()` 以及用于合并小型列存储批次的压实策略，并优化了 DML 数据块排除和小 `LIMIT` 列存储扫描。在现有工作负载上启用压实策略之前，请先审阅发行说明。
+- 2.29 系列新增了 `alter_job(..., config_merge => ...)`、直接压缩与无序重压缩控制，以及分层连续聚合的并发刷新策略。
+- 应使用 2.29.1，而不是 2.29.0。该版本修复了权限检查缺失、畸形压缩数据处理、多个崩溃路径，以及 `compact_chunk` 批次限制验证问题；上游建议所有 2.29.0 安装均进行升级。
+- 控制文件将 `timescaledb` 标记为受信任且不可重定位。服务器库仍须根据打包部署配置进行预加载，并重启 PostgreSQL。

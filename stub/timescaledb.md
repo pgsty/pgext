@@ -1,13 +1,11 @@
-
-
-
 ## Usage
 
 Sources:
 
-- [TimescaleDB v2.28.3 README](https://github.com/timescale/timescaledb/blob/2.28.3/README.md)
-- [TimescaleDB 2.28.3 release](https://github.com/timescale/timescaledb/releases/tag/2.28.3)
-- [2.28.3 changelog](https://github.com/timescale/timescaledb/blob/2.28.3/CHANGELOG.md)
+- [TimescaleDB v2.29.1 README](https://github.com/timescale/timescaledb/blob/2.29.1/README.md)
+- [TimescaleDB 2.29.0 release](https://github.com/timescale/timescaledb/releases/tag/2.29.0)
+- [TimescaleDB 2.29.1 security and bug-fix release](https://github.com/timescale/timescaledb/releases/tag/2.29.1)
+- [TimescaleDB v2.29.1 control file](https://github.com/timescale/timescaledb/blob/2.29.1/timescaledb.control.in)
 - [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/)
 - [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/)
 - [Continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)
@@ -103,10 +101,10 @@ SET timescaledb.enable_columnar_scan_filter_pushdown = on;
 
 `timescaledb.enable_direct_compress_insert` and `timescaledb.enable_direct_compress_copy` enable tech-preview direct compression during ingestion. TimescaleDB 2.27.0 adds `timescaledb.enable_cagg_rewrites` and `timescaledb.cagg_rewrites_debug_info`, and documents `timescaledb.enable_columnar_scan_filter_pushdown` as enabled by default.
 
-### Version 2.28.3 and Caveats
+### Version 2.29.1 and Caveats
 
-- Use `2.28.3` instead of earlier `2.28.x` builds. It contains correctness fixes for columnar `NULL` handling, sorting negative constants and collated values, `stddev`/`avg` results, compressed-data DML under non-default collations, compression races, and a direct-delete case involving arrays and `NULL` that could remove too many rows.
-- TimescaleDB 2.28.0 speeds up `first(value, time)` and `last(value, time)` aggregates on compressed data by deriving results from columnstore batch metadata instead of decompressing batches.
-- The columnar executor in 2.28.0 can evaluate `CASE ... WHEN` expressions on compressed data, keeping conditional aggregates and computed expressions on the vectorized path.
-- TimescaleDB 2.28.0 removes adaptive chunking and drops `_timescaledb_catalog.chunk_constraint`, temporarily replacing it with a compatibility view. Use stable informational views instead of depending on that catalog object.
-- TimescaleDB 2.28.x is the final minor series supporting PostgreSQL 15; the next planned minor line supports PostgreSQL 16, 17, and 18 only.
+- TimescaleDB 2.29 supports PostgreSQL 16, 17, and 18. PostgreSQL 15 support ended with the 2.28 line, so upgrade PostgreSQL before moving a PG15 database to 2.29.
+- Version 2.29.0 adds `compact_chunk()` and a compaction policy for merging small columnstore batches, plus optimized DML chunk exclusion and small-`LIMIT` columnstore scans. Review the release notes before enabling compaction policies on existing workloads.
+- The 2.29 line adds `alter_job(..., config_merge => ...)`, direct-compression and unordered-recompression controls, and concurrent refresh policies for hierarchical continuous aggregates.
+- Use 2.29.1 rather than 2.29.0. It fixes missing permission checks, malformed compressed-data handling, several crash paths, and validation of `compact_chunk` batch limits; upstream recommends upgrading all 2.29.0 installations.
+- The control file marks `timescaledb` trusted and non-relocatable. The server library still has to be preloaded and PostgreSQL restarted according to the packaged deployment configuration.

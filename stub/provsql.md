@@ -2,10 +2,10 @@
 
 Sources:
 
-- [ProvSQL 1.11.0 documentation](https://github.com/PierreSenellart/provsql/blob/v1.11.0/doc/provsql.md)
-- [ProvSQL 1.11.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.11.0)
-- [ProvSQL 1.10.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.10.0)
-- [ProvSQL 1.11.0 control file](https://github.com/PierreSenellart/provsql/blob/v1.11.0/provsql.common.control)
+- [ProvSQL 1.12.0 documentation](https://github.com/PierreSenellart/provsql/blob/v1.12.0/doc/provsql.md)
+- [ProvSQL 1.12.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.12.0)
+- [ProvSQL 1.12.0 changelog](https://github.com/PierreSenellart/provsql/blob/v1.12.0/CHANGELOG.md)
+- [ProvSQL 1.12.0 control file](https://github.com/PierreSenellart/provsql/blob/v1.12.0/provsql.common.control)
 - [ProvSQL user documentation](https://provsql.org/docs/user/introduction.html)
 
 `provsql` adds semiring provenance and uncertainty management to PostgreSQL. Upstream documents provenance tracking, semiring evaluation, probabilities, Shapley and Banzhaf values, where-provenance, update provenance, and temporal features.
@@ -100,9 +100,11 @@ Session GUCs documented upstream include:
 SET provsql.active = on;
 SET provsql.where_provenance = on;
 SET provsql.update_provenance = on;
-SET provsql.last_eval_method = on;
 SET provsql.tool_search_path = '/opt/d4:/home/postgres/bin';
 SET provsql.aggtoken_text_as_uuid = on;
+
+-- After probability_evaluate(...), inspect the route that actually ran:
+SHOW provsql.last_eval_method;
 ```
 
 `provsql.tool_search_path` is used for external probability and visualization tools such as `d4`, `c2d`, `dsharp`, `minic2d`, `weightmc`, and `graph-easy`. `provsql.last_eval_method` stores the last chosen probability-evaluation method. `provsql.aggtoken_text_as_uuid` makes aggregate-token cells render as their provenance UUIDs; `agg_token_value_text(token)` can recover the display text for those aggregate tokens.
@@ -111,7 +113,7 @@ The user guide separately documents where-provenance helpers, update provenance,
 
 ### Current Probability and Inference Surface
 
-The 1.9 through 1.11 releases materially expand SQL coverage and probability evaluation:
+The recent releases materially expand SQL coverage and probability evaluation:
 
 - subqueries outside `FROM`, including `EXISTS`, `NOT EXISTS`, `IN`, `NOT IN`, `ANY`, `ALL`, row-valued `IN`, scalar subqueries, and `ARRAY(SELECT ...)`;
 - `LEFT`, `RIGHT`, and `FULL` outer joins, plus corrected `EXCEPT` and `EXCEPT ALL` provenance;
@@ -137,7 +139,10 @@ The `agg_token` type supports arithmetic, unary minus, and comparisons for proba
 
 ### Notes
 
-- The 1.11.0 control file sets `default_version = '1.11.0'`, requires `uuid-ossp`, marks the extension trusted, and is not relocatable.
+- Version 1.11.1 corrects aggregate-comparison provenance and makes empty `sum`, `min`, `max`, and product groups return SQL `NULL`. It also changes the content-addressed token produced for `count(*)`; re-run queries that materialized those tokens when the old empty-input behavior matters.
+- Version 1.12.0 extends Möbius evaluation to self-joins, lets `sr_formula` render all gate types with an optional mapping, and reports `sq-rewrite`, `bounded-jw`, and `reachability` through `provsql.last_eval_method`. It also fixes DML rewrite cases and makes repeated `remove_provenance()` calls safe.
+- `ALTER EXTENSION provsql UPDATE` installs the SQL changes. Reconnect sessions that stayed open across the update because ProvSQL caches function OIDs per session.
+- The 1.12.0 control file sets `default_version = '1.12.0'`, requires `uuid-ossp`, marks the extension trusted, and is not relocatable.
 - Upstream documentation says ProvSQL has been tested on PostgreSQL 10 through 18.
 - `provsql.update_provenance` and the multirange semirings require PostgreSQL 14 or later.
 - Update-provenance tracking remains experimental; validate its storage and performance costs before enabling it broadly.
