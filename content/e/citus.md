@@ -535,15 +535,13 @@ shared_preload_libraries = 'citus';
 CREATE EXTENSION citus;
 ```
 
-
-
-
 ## Usage
 
 Sources:
 
-- [Citus v14.1.0 release](https://github.com/citusdata/citus/releases/tag/v14.1.0)
-- [Citus v14.1.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.1.0/CHANGELOG.md)
+- [Citus v14.2.0 release](https://github.com/citusdata/citus/releases/tag/v14.2.0)
+- [Citus v14.2.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.2.0/CHANGELOG.md)
+- [Citus v14.2.0 control file](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/distributed/citus.control)
 - [What is Citus?](https://docs.citusdata.com/en/stable/get_started/what_is_citus.html)
 - [Citus Utility Functions](https://docs.citusdata.com/en/stable/develop/api_udf.html)
 
@@ -587,20 +585,20 @@ CREATE TABLE events (
   payload    jsonb,
   PRIMARY KEY (tenant_id, event_id)
 );
-
-SELECT create_distributed_table('events', 'tenant_id');
 ```
 
-You can tune the shard count and colocation explicitly:
+Distribute the table and tune the shard count and colocation explicitly:
 
 ```sql
 SELECT create_distributed_table(
   'events',
   'tenant_id',
   shard_count  := 64,
-  colocate_with := 'default'
+  colocate_with := 'none'
 );
 ```
+
+When choosing an explicit shard count, start a new colocation group with `colocate_with := 'none'`. To colocate with an existing distributed table, name that table and let its shard count determine the layout.
 
 Queries that filter on the distribution column can route to a single shard:
 
@@ -637,7 +635,7 @@ SELECT create_reference_table('countries');
 
 ### Schema-Based Sharding
 
-Schema-based sharding is useful when each tenant or service owns its own schema. In v14.1.0, Citus adds support for running several schema-sharding DDLs from any node, including `CREATE SCHEMA`, `DROP SCHEMA`, `ALTER SCHEMA RENAME`, `ALTER SCHEMA OWNER`, and table-level DDL on distributed schemas.
+Schema-based sharding is useful when each tenant or service owns its own schema. Citus supports running schema-sharding DDLs from any node, including `CREATE SCHEMA`, `DROP SCHEMA`, `ALTER SCHEMA RENAME`, `ALTER SCHEMA OWNER`, and table-level DDL on distributed schemas.
 
 ```sql
 CREATE SCHEMA tenant_42;
@@ -688,6 +686,12 @@ SELECT citus_cluster_changes_unblock();
 ```
 
 Pair these functions with regular PostgreSQL backup discipline: consistent checkpoints, WAL archiving, snapshot ordering across nodes, and a tested restore procedure.
+
+### Version 14.2 Operations
+
+Citus 14.2 adds the superuser-only `citus_internal.distribute_object()` repair helper for supported database objects whose metadata was not propagated correctly. Treat it as a targeted recovery operation, not as the normal distribution API.
+
+The release also adds `citus.allow_unsafe_insert_select_pushdown` for explicitly opting into batched `INSERT ... SELECT` pushdown on colocated tables, and improves single-shard stored-procedure execution. Keep the unsafe pushdown setting off unless the workload has been checked against the release-note restrictions.
 
 ### Caveats
 

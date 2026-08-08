@@ -37,7 +37,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plruby` | `hstore`, `plruby` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "plruby_18" "green" >}} {{< bg "17" "plruby_17" "green" >}} {{< bg "16" "plruby_16" "green" >}} {{< bg "15" "plruby_15" "green" >}} {{< bg "14" "plruby_14" "green" >}} | `plruby_$v` | `ruby-libs` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "postgresql-18-plruby" "green" >}} {{< bg "17" "postgresql-17-plruby" "green" >}} {{< bg "16" "postgresql-16-plruby" "green" >}} {{< bg "15" "postgresql-15-plruby" "green" >}} {{< bg "14" "postgresql-14-plruby" "green" >}} | `postgresql-$v-plruby` | `libruby3.0 | libruby3.1 | libruby3.2 | libruby3.3` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "postgresql-18-plruby" "green" >}} {{< bg "17" "postgresql-17-plruby" "green" >}} {{< bg "16" "postgresql-16-plruby" "green" >}} {{< bg "15" "postgresql-15-plruby" "green" >}} {{< bg "14" "postgresql-14-plruby" "green" >}} | `postgresql-$v-plruby` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -106,36 +106,38 @@ CREATE EXTENSION hstore_plruby CASCADE; -- requires hstore, plruby
 
 Sources:
 
-- [Official upstream README](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/README.md)
-- [Official extension control file (hstore_plruby.control)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/hstore_plruby/hstore_plruby.control)
-- [Official extension SQL (hstore_plruby--1.0.sql)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/hstore_plruby/hstore_plruby--1.0.sql)
+- [PL/Ruby v2.5.0 README](https://github.com/commandprompt/plruby/blob/v2.5.0/README.md)
+- [hstore_plruby v1.0 control file](https://github.com/commandprompt/plruby/blob/v2.5.0/hstore_plruby/hstore_plruby.control)
+- [hstore_plruby v1.0 extension SQL](https://github.com/commandprompt/plruby/blob/v2.5.0/hstore_plruby/hstore_plruby--1.0.sql)
 
-`hstore_plruby` — transform between hstore and Ruby Hashes. Use it when database code must run in or interoperate with this procedural language. Its extension dependencies must be installed and validated first.
+`hstore_plruby` installs a PostgreSQL transform between `hstore` and Ruby `Hash` values for the `plruby` language. Keys become Ruby strings and values become strings or `nil`; a compatible Ruby hash can be returned directly as `hstore`.
 
-### Core Workflow
+### Install and Use the Transform
 
 ```sql
+CREATE EXTENSION hstore;
+CREATE EXTENSION plruby;
 CREATE EXTENSION hstore_plruby;
 
-CREATE EXTENSION plruby;
-
-CREATE FUNCTION hello(text) RETURNS text LANGUAGE plruby AS $$
-    "Hello, #{args[0]}!"
+CREATE FUNCTION ruby_add_hstore_key(hstore)
+RETURNS hstore
+LANGUAGE plruby
+TRANSFORM FOR TYPE hstore
+AS $$
+  value = args[0]
+  value['processed'] = 'yes'
+  value
 $$;
 
-SELECT hello('world');   -- Hello, world!
+SELECT ruby_add_hstore_key('id=>42'::hstore);
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+The transform is used only by functions that declare `TRANSFORM FOR TYPE hstore`.
 
-### Important Objects
+### Objects and Caveats
 
-- `hstore_to_plruby(val internal)` is an extension function and returns `internal`.
-- `plruby_to_hstore(val internal)` is an extension function and returns `hstore`.
-
-### Requirements and Caveats
-
-- The reviewed control file declares default version `1.0`.
-- Install the confirmed extension dependencies first: `hstore`, `plruby`.
-- The control file marks the extension as relocatable.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+- `hstore_to_plruby(internal)` implements SQL-to-Ruby conversion.
+- `plruby_to_hstore(internal)` implements Ruby-to-SQL conversion.
+- The extension version is `1.0`, it requires both `hstore` and `plruby`, and it is relocatable.
+- `hstore` is a flat string-to-string-or-NULL map. It does not preserve nested Ruby hashes, arrays, or typed numeric values; use `jsonb_plruby` when those shapes matter.
+- PL/Ruby remains untrusted. Installing this transform does not sandbox Ruby code or reduce the privileges required to create PL/Ruby functions.

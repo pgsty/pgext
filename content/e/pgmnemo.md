@@ -226,16 +226,15 @@ CREATE EXTENSION pgmnemo CASCADE; -- requires vector
 
 Sources:
 
-- [pgmnemo v0.14.2 README](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/README.md)
-- [pgmnemo v0.14.2 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/docs/USAGE.md)
-- [pgmnemo v0.14.2 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.14.2 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/CHANGELOG.md)
-- [pgmnemo v0.14.2 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.14.2)
-- [pgmnemo v0.14.2 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.14.2/extension/pgmnemo.control)
+- [pgmnemo v0.16.1 README](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/README.md)
+- [pgmnemo v0.16.1 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/docs/USAGE.md)
+- [pgmnemo v0.16.1 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.16.1 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/CHANGELOG.md)
+- [pgmnemo v0.16.1 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/extension/pgmnemo.control)
 
 pgmnemo stores agent memory in PostgreSQL and retrieves it through vector, BM25-style text, graph, metadata, temporal, provenance, and outcome-confidence signals. It installs into schema pgmnemo, requires the vector extension, and expects 1024-dimensional embeddings in its current SQL API.
 
-Version 0.14.2 retains the 0.13 Bayesian confidence and outcome-use surface, and adds deterministic content classification, dry-run corpus reclassification, reversible near-duplicate consolidation, and a planner fix for hybrid HNSW recall.
+Version 0.16.1 retains the 0.14 corpus-maintenance surface and adds situation fingerprints, verified situation recall, entity-key extraction, and entity-centered recall.
 
 ### Install
 
@@ -245,7 +244,7 @@ Version 0.14.2 retains the 0.13 Bayesian confidence and outcome-use surface, and
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-The v0.14.2 control file marks pgmnemo as trusted and non-superuser-installable when the required vector extension is available.
+The v0.16.1 control file marks pgmnemo as trusted, installs it in schema `pgmnemo`, requires `vector`, and is not relocatable.
 
 ### Ingest a Lesson
 
@@ -309,6 +308,38 @@ Important write helpers include remember_fact, remember_event, remember_relation
 
 Use navigate_locate or navigate_locate_dispatch to select candidate IDs within a character budget, then navigate_expand_typed to fetch content and neighboring graph edges.
 
+### Situation and Entity Recall
+
+The 0.15 line adds deterministic situation fingerprints and a dedicated recall path:
+
+```sql
+SELECT pgmnemo.extract_sit_fp(
+  'security',
+  'failure_class=KEY_ROTATION outcome=COMPLETED'
+);
+SELECT *
+FROM pgmnemo.recall_situation(
+  pgmnemo.extract_sit_fp(
+    'security',
+    'failure_class=KEY_ROTATION outcome=COMPLETED'
+  ),
+  1,
+  'developer',
+  10
+);
+```
+
+Starting with 0.15.1, `recall_situation` returns verified memories by default. Set `pgmnemo.include_unverified = on` only when the caller deliberately accepts memories without provenance verification.
+
+The 0.16 line also extracts stable entity keys into `metadata.entity_keys` during ingestion and exposes entity-centered recall:
+
+```sql
+SELECT pgmnemo.extract_entity_keys('The run failed with INFRA_FAILURE.');
+SELECT * FROM pgmnemo.recall_entity('failure:INFRA_FAILURE', 10);
+```
+
+These extractors are deterministic classifiers, not semantic entity resolution. Normalize application vocabulary and inspect the generated keys before relying on them for tenancy or authorization decisions.
+
 ### Configuration Index
 
 - pgmnemo.confidence_mode: posterior by default; additive retains the legacy calculation.
@@ -323,12 +354,14 @@ The older confidence-delta settings are deprecated and ignored in posterior mode
 
 ### Caveats
 
-Version 0.14 adds corpus-maintenance operations. They are read-only by default:
+- Use PostgreSQL 17 or 18 for pgmnemo 0.16.1. The tagged changelog notes that syntax introduced in the 0.10 line makes older PostgreSQL 14-16 compatibility claims inaccurate; current Pigsty packages target 17-18.
+
+Corpus-maintenance operations are read-only by default:
 
 ```sql
 SELECT * FROM pgmnemo.reclassify_corpus();
 SELECT * FROM pgmnemo.consolidate(
-  p_similarity := 0.92,
+  p_threshold := 0.92,
   p_dry_run := true,
   p_role := NULL,
   p_limit := 100

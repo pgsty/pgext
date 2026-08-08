@@ -218,28 +218,55 @@ CREATE EXTENSION cat_tools CASCADE; -- requires plpgsql
 
 Sources:
 
-- [Official extension control file (cat_tools.control)](https://api.pgxn.org/src/cat_tools/cat_tools-0.2.1/cat_tools.control)
-- [Official extension SQL (cat_tools--0.1.0--0.1.3.sql)](https://api.pgxn.org/src/cat_tools/cat_tools-0.2.1/sql/cat_tools--0.1.0--0.1.3.sql)
+- [cat_tools 0.3.0 README](https://github.com/Postgres-Extensions/cat_tools/blob/0.3.0/README.asc)
+- [cat_tools 0.3.0 history](https://github.com/Postgres-Extensions/cat_tools/blob/0.3.0/HISTORY.asc)
+- [cat_tools 0.3.0 control file](https://github.com/Postgres-Extensions/cat_tools/blob/0.3.0/cat_tools.control)
+- [cat_tools 0.3.0 install SQL](https://github.com/Postgres-Extensions/cat_tools/blob/0.3.0/sql/cat_tools--0.3.0.sql.in)
 
-`cat_tools` — Tools for interfacing with the catalog. Use it when administering or automating the database behavior described above. Use the pinned upstream revision linked above as the API boundary and test it on the target PostgreSQL build.
+`cat_tools` provides typed views, enums, and helper functions for PostgreSQL catalog introspection. It is designed for database code that needs a more stable and readable interface than repeatedly decoding raw `pg_catalog` fields; the views still track PostgreSQL's catalogs and must be reviewed across major-version upgrades.
 
-### Core Workflow
+### Install and Grant Access
 
 ```sql
 CREATE EXTENSION cat_tools;
+GRANT cat_tools__usage TO app_introspection;
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+The extension installs in the fixed `cat_tools` schema, requires `plpgsql`, and is not relocatable. Grant the `cat_tools__usage` role rather than exposing internal `_cat_tools` helpers directly.
 
-### Important Objects
+### Inspect Relations and Columns
 
-- `__cat_tools.create_function(function_name text , args text , options text , body text , grants text DEFAULT NULL)` is an extension function and returns `void`.
-- `__cat_tools.exec(sql text)` is an extension function and returns `void`.
-- `pg_temp.create_function(function_name text , args text , options text , body text , grants text DEFAULT NULL)` is an extension function and returns `void`.
-- `pg_temp.exec(sql text)` is an extension function and returns `void`.
+```sql
+SELECT cat_tools.relation__kind(c.relkind::text)
+FROM pg_catalog.pg_class AS c
+WHERE c.oid = 'public.orders'::regclass;
 
-### Requirements and Caveats
+SELECT cat_tools.relation__column_names('public.orders'::regclass);
+SELECT cat_tools.pg_attribute__get('public.orders'::regclass, 'id');
+```
 
-- The reviewed control file declares default version `0.2.1`.
-- The control file marks the extension as non-relocatable.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+Useful relation helpers include `pg_class(regclass)`, `relation__is_catalog`, `relation__is_temp`, `relation__kind`, and `relation__relkind`. Typed mapping functions make the one-character catalog codes explicit.
+
+### Inspect Routines
+
+Version 0.3 adds functions and types that cover both functions and procedures:
+
+```sql
+SELECT cat_tools.routine__arg_types(
+  'public.calculate_total(integer, numeric)'::regprocedure
+);
+
+SELECT cat_tools.routine__parse_arg_names(
+  'IN account_id integer, INOUT total numeric'
+);
+```
+
+The routine surface includes `routine__parse_arg_types`, `routine__parse_arg_names`, `routine__arg_types`, `routine__arg_names`, their text variants, and mappings for routine kind, argument mode, volatility, and parallel safety. `function__arg_types` and `function__arg_types_text` are deprecated; use the routine parsers.
+
+### Version 0.3.0 and Caveats
+
+- Version 0.3.0 supports PostgreSQL 12-18+ upstream; current Pigsty packages cover PostgreSQL 14-18.
+- The release corrects the `c`, `f`, and `m` mappings for composite types, foreign tables, and materialized views. Re-test any code that worked around the old mapping.
+- Internal `_cat_tools` helpers now revoke `EXECUTE` from `PUBLIC`; callers should inherit `cat_tools__usage` and use the supported surface.
+- The 0.2.3-to-0.3.0 update adds enum values and therefore cannot run on PostgreSQL 11 or earlier. Upgrade the database major version and extension in the order documented upstream.
+- PostgreSQL does not promise catalog compatibility across major releases. Pin tests to every supported PostgreSQL major even when using these wrappers.

@@ -37,7 +37,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plruby` | `plruby` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "plruby_18" "green" >}} {{< bg "17" "plruby_17" "green" >}} {{< bg "16" "plruby_16" "green" >}} {{< bg "15" "plruby_15" "green" >}} {{< bg "14" "plruby_14" "green" >}} | `plruby_$v` | `ruby-libs` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "postgresql-18-plruby" "green" >}} {{< bg "17" "postgresql-17-plruby" "green" >}} {{< bg "16" "postgresql-16-plruby" "green" >}} {{< bg "15" "postgresql-15-plruby" "green" >}} {{< bg "14" "postgresql-14-plruby" "green" >}} | `postgresql-$v-plruby` | `libruby3.0 | libruby3.1 | libruby3.2 | libruby3.3` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "postgresql-18-plruby" "green" >}} {{< bg "17" "postgresql-17-plruby" "green" >}} {{< bg "16" "postgresql-16-plruby" "green" >}} {{< bg "15" "postgresql-15-plruby" "green" >}} {{< bg "14" "postgresql-14-plruby" "green" >}} | `postgresql-$v-plruby` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -106,36 +106,37 @@ CREATE EXTENSION jsonb_plruby CASCADE; -- requires plruby
 
 Sources:
 
-- [Official upstream README](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/README.md)
-- [Official extension control file (jsonb_plruby.control)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/jsonb_plruby/jsonb_plruby.control)
-- [Official extension SQL (jsonb_plruby--1.0.sql)](https://github.com/commandprompt/plruby/blob/0720d8e72522c5196db062a1610eb2031a832246/jsonb_plruby/jsonb_plruby--1.0.sql)
+- [PL/Ruby v2.5.0 README](https://github.com/commandprompt/plruby/blob/v2.5.0/README.md)
+- [jsonb_plruby v1.0 control file](https://github.com/commandprompt/plruby/blob/v2.5.0/jsonb_plruby/jsonb_plruby.control)
+- [jsonb_plruby v1.0 extension SQL](https://github.com/commandprompt/plruby/blob/v2.5.0/jsonb_plruby/jsonb_plruby--1.0.sql)
 
-`jsonb_plruby` — transform between jsonb and Ruby data. Use it when database code must run in or interoperate with this procedural language. Its extension dependencies must be installed and validated first.
+`jsonb_plruby` installs a PostgreSQL transform between `jsonb` and native Ruby values for the `plruby` language. A transformed `jsonb` argument becomes a Ruby `Hash`, `Array`, `String`, `Integer`, `Float`, `true`, `false`, or `nil`; compatible Ruby values can be returned directly as `jsonb`.
 
-### Core Workflow
+### Install and Use the Transform
 
 ```sql
+CREATE EXTENSION plruby;
 CREATE EXTENSION jsonb_plruby;
 
-CREATE EXTENSION plruby;
-
-CREATE FUNCTION hello(text) RETURNS text LANGUAGE plruby AS $$
-    "Hello, #{args[0]}!"
+CREATE FUNCTION ruby_mark_processed(jsonb)
+RETURNS jsonb
+LANGUAGE plruby
+TRANSFORM FOR TYPE jsonb
+AS $$
+  value = args[0]
+  value['processed'] = true
+  value
 $$;
 
-SELECT hello('world');   -- Hello, world!
+SELECT ruby_mark_processed('{"id": 42}'::jsonb);
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+The transform is used only by functions that declare `TRANSFORM FOR TYPE jsonb`. Other PL/Ruby functions keep the language's ordinary JSONB conversion behavior.
 
-### Important Objects
+### Objects and Caveats
 
-- `jsonb_to_plruby(val internal)` is an extension function and returns `internal`.
-- `plruby_to_jsonb(val internal)` is an extension function and returns `jsonb`.
-
-### Requirements and Caveats
-
-- The reviewed control file declares default version `1.0`.
-- Install the confirmed extension dependencies first: `plruby`.
-- The control file marks the extension as relocatable.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+- `jsonb_to_plruby(internal)` implements SQL-to-Ruby conversion.
+- `plruby_to_jsonb(internal)` implements Ruby-to-SQL conversion.
+- The extension version is `1.0`, it requires `plruby`, and it is relocatable.
+- Ruby `Hash` keys returned to PostgreSQL must be valid JSON object keys, and numeric/special values must be representable by PostgreSQL `jsonb`. Test nested values and numeric limits explicitly.
+- PL/Ruby remains untrusted. Installing this transform does not sandbox Ruby code or reduce the privileges required to create PL/Ruby functions.

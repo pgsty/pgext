@@ -679,20 +679,17 @@ pig install vector -v 14;   # install for PG 14
 CREATE EXTENSION vector;
 ```
 
-
-
-
 ## Usage
 
 Sources:
 
-- [pgvector v0.8.5 README](https://github.com/pgvector/pgvector/blob/v0.8.5/README.md)
-- [pgvector v0.8.5 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.5/CHANGELOG.md)
-- [Changes from v0.8.4 to v0.8.5](https://github.com/pgvector/pgvector/compare/v0.8.4...v0.8.5)
+- [pgvector v0.8.6 README](https://github.com/pgvector/pgvector/blob/v0.8.6/README.md)
+- [pgvector v0.8.6 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.6/CHANGELOG.md)
+- [Changes from v0.8.5 to v0.8.6](https://github.com/pgvector/pgvector/compare/v0.8.5...v0.8.6)
 
 `pgvector` provides vector similarity search inside PostgreSQL. The extension name is `vector`, while Pigsty packages it as `pgvector`. It supports exact search, approximate nearest-neighbor search with HNSW and IVFFlat indexes, and multiple vector representations for dense, half-precision, binary, and sparse embeddings.
 
-Version `0.8.5` reduces memory use when building IVFFlat indexes on small tables. It retains the 0.8.x HNSW iterative-scan and maintenance improvements documented in the current README.
+Version `0.8.6` is a focused correctness release. It retains the 0.8.x HNSW iterative-scan and maintenance improvements documented in the current README.
 
 ### Create and Query Vectors
 
@@ -797,6 +794,7 @@ Increase `lists` for larger tables and increase `ivfflat.probes` for higher reca
 Normal PostgreSQL filters can be combined with vector ordering:
 
 ```sql
+ALTER TABLE items ADD COLUMN tenant_id bigint;
 CREATE INDEX ON items (tenant_id);
 
 SELECT *
@@ -809,6 +807,14 @@ LIMIT 20;
 For hybrid search, combine `pgvector` with PostgreSQL full text search, trigram search, or an external ranking expression:
 
 ```sql
+CREATE TABLE docs (
+  id bigint PRIMARY KEY,
+  body text NOT NULL,
+  text_tsv tsvector GENERATED ALWAYS AS
+    (to_tsvector('english', body)) STORED,
+  embedding vector(3)
+);
+
 SELECT id,
        ts_rank_cd(text_tsv, plainto_tsquery('database')) AS text_score,
        1 - (embedding <=> '[0.1,0.2,0.3]') AS vector_score
@@ -830,7 +836,7 @@ HNSW indexes can be large and expensive to build. Use `maintenance_work_mem` for
 
 ### Caveats
 
-- Version `0.8.5` is a focused IVFFlat build-memory patch; it does not change the SQL query surface from `0.8.4`. Run `ALTER EXTENSION vector UPDATE` after installing new extension files when the database reports an older SQL version.
+- Version `0.8.6` fixes an IVFFlat build overflow on 32-bit systems, enforcement of the nonzero-element limit when casting an array to `sparsevec`, and memory growth during IVFFlat scans inside nested loops. It does not add a new SQL feature surface. Run `ALTER EXTENSION vector UPDATE` after installing new extension files when the database reports an older SQL version.
 - Use the operator class that matches the query operator. A cosine index will not accelerate an L2 `ORDER BY`.
 - Approximate indexes trade exact recall for speed. Validate recall with representative data and query filters.
 - Build IVFFlat after loading data. If data distribution changes substantially, rebuild the index.

@@ -2,6 +2,15 @@
 
 | Name                    | Old                  | New            | Comment                                                   |
 |:------------------------|:---------------------|:---------------|:----------------------------------------------------------|
+| claude                  | 2.1.223              | 2.1.226        | 通过代理下载并按官方清单核验，已构建双架构 RPM/DEB                             |
+| codex                   | 0.146.1              | 0.147.0        | 稳定发布标签 `rust-v0.147.0`，已构建双架构 RPM/DEB                     |
+| crush                   | 0.88.0               | 0.88.1         | 仅更新官方链接；再分发仍受许可证条款阻塞                                      |
+| grafana                 | 13.1.2               | 13.1.3         | 官方双架构 RPM/DEB 成品                                          |
+| opencode                | 1.18.14              | 1.18.15        | 已构建双架构 RPM/DEB                                            |
+| postgrest               | 14.16                | 16.0           | 双架构静态制品；最低支持 PostgreSQL 14                                |
+| rainfrog                | 0.4.2                | 0.4.3          | 已构建双架构 RPM/DEB                                            |
+| rustfs                  | 1.0.0-b12            | 1.0.0-rc1      | 上游 `rc.1-preview.1`；已构建双架构 RPM/DEB                        |
+| uv                      | 0.12.2               | 0.12.3         | 已构建双架构 RPM/DEB                                            |
 | claude                  | 2.1.222              | 2.1.223        | Official manifest verified via proxy; built               |
 | codex                   | 0.146.0              | 0.146.1        | Stable tag `rust-v0.146.1`; built                         |
 | code                    | 1.131.0              | 1.132.0        | Official dual-architecture RPM/DEB verified               |

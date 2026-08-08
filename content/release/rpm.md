@@ -8,6 +8,29 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 ## 2026-08-08
 
+This batch records changes from 2026-07-31 through 2026-08-08, excluding the 2026-07-30 batch. It covers 18 package families and 23 extension names; bundled extensions are listed in the comments.
+
+| Extension     | Old    | New    | Comment                                                                     |
+|:--------------|:-------|:-------|:----------------------------------------------------------------------------|
+| cat_tools     | -      | 0.3.0  | SQL-only; PG14-18                                                           |
+| citus         | 14.1.0 | 14.2.0 | Includes citus_columnar; PG16-18                                            |
+| pg_describe   | -      | 1.0.0  | PG17-18                                                                     |
+| pg_disorder   | -      | 0.1.0  | PG14-18                                                                     |
+| pg_mentat     | -      | 1.5.7  | Promoted from source-only to a PIGSTY package; PG14-18                      |
+| pg_rational   | 0.0.2  | 0.0.3  | RPM-only PIGSTY update; PG14-18                                             |
+| pg_readme     | 0.7.0  | 0.7.1  | Spec prepared but PIGSTY RPM not indexed; includes pg_readme_test_extension |
+| pg_search     | 0.25.0 | 0.25.1 | PG15-18; pgrx 0.19.1                                                        |
+| pg_squeeze    | 1.9.2  | 1.9.4  | PGDG package; PG14-18                                                       |
+| pg_turbovec   | -      | 1.28.3 | Package remains 1.28.3 while upstream metadata is 1.29.0; PG14-18           |
+| pg_vault_tde  | -      | 1.7.0  | PG17-18; EL9/10 only; requires preload                                      |
+| pgbson        | 2.0.4  | 2.1.0  | RPM package name postgresbson; PG14-18                                      |
+| pgmnemo       | 0.15.0 | 0.16.1 | PG17-18                                                                     |
+| plpgsql_check | 2.10.3 | 2.10.4 | PG14-18                                                                     |
+| plruby        | -      | 2.5.0  | Includes jsonb_plruby, hstore_plruby, and ltree_plruby; PG14-18             |
+| provsql       | 1.11.0 | 1.12.0 | PG14-18                                                                     |
+| timescaledb   | 2.29.0 | 2.29.1 | PG16-18                                                                     |
+| vector        | 0.8.6  | 0.8.6  | PGDG 0.8.6 is now indexed; PG14-18                                          |
+
 ## 2026-07-30
 
 | Extension        | Old        | New        | Comment                                                           |

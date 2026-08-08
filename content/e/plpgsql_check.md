@@ -1199,15 +1199,14 @@ CREATE EXTENSION plpgsql_check CASCADE; -- requires plpgsql
 
 Sources:
 
-- [plpgsql_check 2.10.3 README](https://github.com/okbob/plpgsql_check/blob/v2.10.3/README.md)
-- [plpgsql_check 2.10.3 release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.3)
-- [plpgsql_check 2.10.2 release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.2)
-- [plpgsql_check 2.10.3 control file](https://github.com/okbob/plpgsql_check/blob/v2.10.3/plpgsql_check.control)
-- [plpgsql_check 2.10.1 to 2.10.3 changes](https://github.com/okbob/plpgsql_check/compare/v2.10.1...v2.10.3)
+- [plpgsql_check 2.10.4 README](https://github.com/okbob/plpgsql_check/blob/v2.10.4/README.md)
+- [plpgsql_check 2.10.4 release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.4)
+- [plpgsql_check 2.10.4 control file](https://github.com/okbob/plpgsql_check/blob/v2.10.4/plpgsql_check.control)
+- [plpgsql_check 2.10.3 to 2.10.4 changes](https://github.com/okbob/plpgsql_check/compare/v2.10.3...v2.10.4)
 
 `plpgsql_check` is a PL/pgSQL checker, linter, profiler, tracer, and coverage tool. It analyzes PL/pgSQL function bodies with PostgreSQL's own parser and executor infrastructure, so many problems that would otherwise appear only at runtime can be found during development or CI.
 
-Package release 2.10.3 installs SQL extension version `2.10`. The tagged control file supports PostgreSQL 14-18 packages and the source also contains compatibility work for later PostgreSQL development branches.
+Package release 2.10.4 installs SQL extension version `2.10`. This release also reports relations referenced as declaration types in dependency output.
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -1375,4 +1374,4 @@ FROM plpgsql_check_function(
 - Preloading is optional for active checks, but required for shared profiler storage and robust tracer/profiler initialization.
 - Tracer output can include function arguments and local variable values; do not enable it broadly on sensitive production workloads.
 - The checker cannot perfectly understand every dynamic SQL string. Use pragmas to document expected dynamic objects and reduce false positives.
-- Releases 2.10.2 and 2.10.3 fix possible crashes in composite-parameter analysis and in coverage or profiler reports for functions with polymorphic arguments. Use 2.10.3 when those paths are exercised.
+- Releases 2.10.2 and 2.10.3 fixed possible crashes in composite-parameter analysis and in coverage or profiler reports for functions with polymorphic arguments. Version 2.10.4 keeps those fixes and improves dependency reporting.

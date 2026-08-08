@@ -10,6 +10,15 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 | Name                    | Old                  | New            | Comment                                                   |
 |:------------------------|:---------------------|:---------------|:----------------------------------------------------------|
+| claude                  | 2.1.223              | 2.1.226        | Official manifest verified via proxy; dual-arch built     |
+| codex                   | 0.146.1              | 0.147.0        | Stable tag `rust-v0.147.0`; dual-arch built               |
+| crush                   | 0.88.0               | 0.88.1         | Official links only; redistribution remains blocked       |
+| grafana                 | 13.1.2               | 13.1.3         | Official dual-architecture RPM/DEB artifacts              |
+| opencode                | 1.18.14              | 1.18.15        | Built as dual-architecture RPM/DEB                        |
+| postgrest               | 14.16                | 16.0           | Static dual-architecture assets; requires PostgreSQL 14+  |
+| rainfrog                | 0.4.2                | 0.4.3          | Built as dual-architecture RPM/DEB                        |
+| rustfs                  | 1.0.0-b12            | 1.0.0-rc1      | Upstream `rc.1-preview.1`; dual-arch RPM/DEB built        |
+| uv                      | 0.12.2               | 0.12.3         | Built as dual-architecture RPM/DEB                        |
 | claude                  | 2.1.222              | 2.1.223        | Official manifest verified via proxy; built               |
 | codex                   | 0.146.0              | 0.146.1        | Stable tag `rust-v0.146.1`; built                         |
 | code                    | 1.131.0              | 1.132.0        | Official dual-architecture RPM/DEB verified               |

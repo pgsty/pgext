@@ -509,56 +509,72 @@ shared_preload_libraries = 'pg_squeeze';
 CREATE EXTENSION pg_squeeze;
 ```
 
-
-
-
 ## Usage
 
-> [pg_squeeze: A tool to remove unused space from a relation.](https://github.com/cybertec-postgresql/pg_squeeze)
+Sources:
 
-`pg_squeeze` requires `wal_level = logical` and must be added to `shared_preload_libraries`. It removes bloat from tables while allowing concurrent reads and writes, using logical decoding instead of triggers.
+- [pg_squeeze REL1_9_4 release](https://github.com/cybertec-postgresql/pg_squeeze/releases/tag/REL1_9_4)
+- [pg_squeeze REL1_9_4 README](https://github.com/cybertec-postgresql/pg_squeeze/blob/REL1_9_4/README.md)
+- [pg_squeeze release notes](https://github.com/cybertec-postgresql/pg_squeeze/blob/REL1_9_4/NEWS)
 
-### Register a Table for Scheduled Processing
+`pg_squeeze` removes bloat from a table and its indexes while allowing concurrent reads and writes. It copies live tuples to new storage and applies concurrent changes through logical decoding, avoiding the long exclusive lock of `VACUUM FULL`. Use it only after sizing replication slots, disk space, and the table's replica identity.
 
-Insert into `squeeze.tables` to enable periodic bloat checks:
+### Configure and Install
 
-```sql
-INSERT INTO squeeze.tables (tabschema, tabname, schedule)
-VALUES ('public', 'foo', ('{30}', '{22}', NULL, NULL, '{3, 5}'));
+```conf
+max_replication_slots = 1  # or add one to the existing requirement
+shared_preload_libraries = 'pg_squeeze'
+wal_level = logical       # required on PostgreSQL versions before 19
 ```
 
-The `schedule` field uses a crontab-like format: `(minutes, hours, days_of_month, months, days_of_week)`. The above checks table `foo` every Wednesday and Friday at 22:30.
+Restart PostgreSQL, then create the extension:
 
-Optional columns: `free_space_extra` (min % extra free space to trigger, default 50), `min_size` (min MB, default 8), `vacuum_max_age` (max time since last VACUUM, default 1h), `max_retry` (retry count, default 0), `clustering_index` (sort tuples by this index), `rel_tablespace`, `ind_tablespaces`, `skip_analyze`.
+```sql
+CREATE EXTENSION pg_squeeze;
+```
 
-### Ad-hoc Squeeze
+The table must have an identity index. A primary key works with the default replica identity; otherwise select a suitable unique index with `ALTER TABLE ... REPLICA IDENTITY USING INDEX`.
+
+### Run an Ad-Hoc Squeeze
 
 ```sql
 SELECT squeeze.squeeze_table('public', 'pgbench_accounts');
-SELECT squeeze.squeeze_table('public', 'mytable', 'my_cluster_idx', 'target_tablespace');
+
+SELECT squeeze.squeeze_table(
+  'public',
+  'large_table',
+  'large_table_cluster_idx',
+  'target_tablespace'
+);
 ```
 
-### Start / Stop Workers
+The function starts background work and is not transactional in the ordinary SQL-function sense. Monitor the operation rather than assuming a surrounding `ROLLBACK` cancels it.
+
+### Schedule Tables and Monitor Work
 
 ```sql
-SELECT squeeze.start_worker();   -- start scheduler + squeeze workers
-SELECT squeeze.stop_worker();    -- stop all workers for current database
+INSERT INTO squeeze.tables (tabschema, tabname, schedule)
+VALUES ('public', 'events', ('{30}', '{22}', NULL, NULL, '{3,5}'));
+
+SELECT * FROM squeeze.get_active_workers();
+SELECT * FROM squeeze.log ORDER BY finished DESC;
+SELECT * FROM squeeze.errors;
 ```
 
-Auto-start on cluster boot via `postgresql.conf`:
+The schedule tuple contains minutes, hours, days of month, months, and days of week. Registration also supports thresholds and placement options such as `free_space_extra`, `min_size`, `vacuum_max_age`, `max_retry`, `clustering_index`, relation/index tablespaces, and `skip_analyze`.
 
+For automatic startup:
+
+```conf
+squeeze.worker_autostart = 'my_database'
+squeeze.worker_role = 'postgres'
 ```
-squeeze.worker_autostart = 'my_database your_database'
-squeeze.worker_role = postgres
-```
 
-### Monitoring
+### Version 1.9.4 and Operational Caveats
 
-- **`squeeze.log`** -- one entry per successfully squeezed table (with `started`, `finished`, `ins_initial`, `ins`, `upd`, `del`)
-- **`squeeze.errors`** -- errors during squeezing
-- **`squeeze.get_active_workers()`** -- shows currently active squeeze workers and their progress
-
-### Configuration
-
-- **`squeeze.max_xlock_time`** -- max exclusive lock time in ms (default unlimited)
-- **`squeeze.workers_per_database`** -- number of concurrent squeeze workers (default 1)
+- Version 1.9.4 fixes unsafe quoting in dynamically constructed `ANALYZE`, log, and error statements, including a superuser SQL-injection path. Upgrade earlier 1.9 builds promptly.
+- A full-table squeeze needs free disk space of roughly twice the combined size of the target table and its indexes.
+- Disruptive DDL, `VACUUM FULL`, `CLUSTER`, or `TRUNCATE` can make an in-progress squeeze abort. Coordinate schema changes and use `max_retry` deliberately.
+- Like other online rewrite tools, `pg_squeeze` changes row visibility and has documented MVCC caveats for concurrent sessions that retain old snapshots.
+- Configure `pg_squeeze` in `shared_preload_libraries` on the new cluster before `pg_upgrade` or dump/restore of a database containing the extension.
+- Current Pigsty packages cover PostgreSQL 14-18. For those versions, keep `wal_level = logical`; upstream's relaxed PostgreSQL 19 rule does not apply to this package matrix yet.
