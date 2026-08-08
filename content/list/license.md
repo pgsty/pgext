@@ -17,9 +17,9 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 249 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 107 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 89 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "PostgreSQL" >}} | 251 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 109 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 95 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 16 | [License Text](#) | Unknown license |
@@ -42,7 +42,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="249 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="251 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -99,6 +99,7 @@ PostgreSQL extension categorized by license.
 | 2840 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
 | 2870 | {{< alias "pg_durable" >}} | Durable SQL functions for PostgreSQL |
+| 2880 | {{< alias "pg_disorder" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
@@ -159,8 +160,8 @@ PostgreSQL extension categorized by license.
 | 4240 | {{< alias "icu_ext" >}} | Access ICU functions |
 | 4270 | {{< alias "envvar" "pg_envvar" >}} | Fetch the value of an environment variable |
 | 4285 | {{< alias "external_file" >}} | Access external server-side files through PostgreSQL functions |
-| 4300 | {{< alias "pg_readme" >}} | Generate a README.md document for a database extension or schema |
-| 4301 | {{< alias "pg_readme_test_extension" "pg_readme" >}} | Test generating a README.md document for extension or schema |
+| 4300 | {{< alias "pg_readme" >}} | Generate a Markdown README from PostgreSQL COMMENT objects |
+| 4301 | {{< alias "pg_readme_test_extension" "pg_readme" >}} | Fixture extension used to test pg_readme document generation |
 | 4320 | {{< alias "data_historization" >}} | PLPGSQL Script to historize data in partitionned table |
 | 4400 | {{< alias "hashlib" "pg_hashlib" >}} | Stable hash functions for Postgres |
 | 4440 | {{< alias "shacrypt" >}} | Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes |
@@ -259,6 +260,7 @@ PostgreSQL extension categorized by license.
 | 7380 | {{< alias "pg_snakeoil" >}} | The PostgreSQL Antivirus |
 | 7390 | {{< alias "pgextwlist" >}} | PostgreSQL Extension Whitelisting |
 | 7410 | {{< alias "sslutils" >}} | A Postgres extension for managing SSL certificates through SQL |
+| 7510 | {{< alias "pg_vault_tde" >}} | Transparent Data Encryption for PostgreSQL through custom table and index access methods |
 | 7960 | {{< alias "sepgsql" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
 | 7970 | {{< alias "auth_delay" >}} | pause briefly before reporting authentication failure |
 | 7980 | {{< alias "pgcrypto" >}} | cryptographic functions |
@@ -302,7 +304,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="107 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="109 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -317,6 +319,7 @@ PostgreSQL extension categorized by license.
 | 1950 | {{< alias "pgmnemo" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
+| 1980 | {{< alias "pg_turbovec" >}} | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL extension for BM25-family lexical retrieval |
@@ -380,6 +383,7 @@ PostgreSQL extension categorized by license.
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | YAML toolkit |
+| 2980 | {{< alias "pg_mentat" >}} | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 3000 | {{< alias "pg_tle" >}} | Trusted Language Extensions for PostgreSQL |
 | 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3630 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | support for Roaring Bitmaps |
@@ -420,7 +424,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="89 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="95 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -445,15 +449,19 @@ PostgreSQL extension categorized by license.
 | 2610 | {{< alias "pg_liquid" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | 2640 | {{< alias "pgrdf" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
-| 2900 | {{< alias "provsql" >}} | Semiring provenance and uncertainty management for PostgreSQL |
+| 2900 | {{< alias "provsql" >}} | Semiring provenance and probability management for PostgreSQL |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3020 | {{< alias "pllua" >}} | Lua as a procedural language |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | Hstore transform for Lua |
 | 3030 | {{< alias "plluau" "pllua" >}} | Lua as an untrusted procedural language |
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | Hstore transform for untrusted Lua |
-| 3060 | {{< alias "plpgsql_check" >}} | extended check for plpgsql functions |
+| 3060 | {{< alias "plpgsql_check" >}} | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | PL/sh procedural language |
 | 3140 | {{< alias "plx" >}} | Transpile multiple procedural dialects to PL/pgSQL |
+| 3160 | {{< alias "plruby" >}} | Embed MRI Ruby as an untrusted PostgreSQL procedural language |
+| 3161 | {{< alias "jsonb_plruby" "plruby" >}} | Transform between jsonb and native Ruby data for PL/Ruby |
+| 3162 | {{< alias "hstore_plruby" "plruby" >}} | Transform between hstore and Ruby Hashes for PL/Ruby |
+| 3163 | {{< alias "ltree_plruby" "plruby" >}} | Transform between ltree and Ruby Arrays for PL/Ruby |
 | 3590 | {{< alias "pglite_fusion" >}} | Embed an SQLite database in your PostgreSQL table |
 | 3680 | {{< alias "currency" "pg_currency" >}} | Custom PostgreSQL currency type in 1Byte |
 | 3720 | {{< alias "pg_rational" >}} | bigint fractions |
@@ -472,6 +480,7 @@ PostgreSQL extension categorized by license.
 | 4170 | {{< alias "pg_smtp_client" >}} | PostgreSQL extension to send email using SMTP |
 | 4280 | {{< alias "floatfile" >}} | Simple file storage for arrays of floats |
 | 4290 | {{< alias "pg_render" >}} | Render HTML in SQL |
+| 4350 | {{< alias "pg_describe" >}} | Report a query's parameters and result columns without executing it |
 | 4510 | {{< alias "pgx_ulid" >}} | ulid type and methods |
 | 4550 | {{< alias "pg_hashids" >}} | Short unique id generator for PostgreSQL, using hashids |
 | 4560 | {{< alias "pg_slug_gen" >}} | Generate cryptographically secure timestamp-based slugs |
@@ -490,6 +499,7 @@ PostgreSQL extension categorized by license.
 | 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
 | 5250 | {{< alias "pg_pathcheck" >}} | Validate planner Path trees for freed or corrupt memory |
 | 5280 | {{< alias "pg_column_tetris" >}} | Enforce optimal column alignment to minimize row padding |
+| 5290 | {{< alias "cat_tools" >}} | Tools for interfacing with the PostgreSQL catalog |
 | 5830 | {{< alias "pg_strict" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
 | 6010 | {{< alias "pg_tracing" >}} | Distributed Tracing for PostgreSQL |
 | 6270 | {{< alias "pg_track_optimizer" >}} | Track planning decisions in comparison with execution reality |

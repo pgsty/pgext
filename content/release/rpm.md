@@ -6,32 +6,34 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-08-08
+
 ## 2026-07-30
 
-| Extension          | Old        | New        | Comment                                                       |
-|:-------------------|:-----------|:-----------|:--------------------------------------------------------------|
-| emaj               | -          | 5.0.0      | Renamed to `e-maj`; Provides/Obsoletes `emaj`; r2            |
-| graph              | 0.1.8      | 1.0.0      | pggraph; PG14-18; pgrx 0.19.1                                |
-| nominatim_fdw      | 2.0.0      | 2.1.0      | PG14-18                                                       |
-| numeral            | 1.3        | 1.3        | Renamed to `postgresql-numeral`; Provides/Obsoletes `numeral`; r3 |
-| pg_ai_query        | 0.1.1      | 0.1.1      | EL9/10 only (GCC 13/OpenSSL 3); r2 not indexed                |
-| pg_column_tetris   | -          | 0.1.0      | SQL-only; PG14-18                                             |
-| pg_net             | 0.20.5     | 0.20.5     | EL8/9: 0.9.2; EL10: 0.20.5; r3 not indexed                   |
-| pg_partman         | 5.4.0      | 5.5.0      | PG14-18                                                       |
-| pg_search          | 0.24.3     | 0.25.0     | PG15-18; pgrx 0.19.1; add pgvector/OpenBLAS dependencies     |
-| pgcontext          | -          | 0.2.0      | PG17-18; pgrx 0.19.1; optional pgvector bridge               |
-| pgedge             | 18.4       | 18.4       | PG15-18 ABI fix; r2 not indexed                               |
-| pgmnemo            | 0.13.0     | 0.15.0     | PG17-18; requires pgvector >= 0.7.0                           |
-| pgmp               | -          | 1.0.6      | PG14-18; GMP dependency                                       |
-| pgpcre             | 0.20190509 | 0.20190509 | EL8/9 only; r2 not indexed                                    |
-| pgwasm             | -          | 0.1.0      | PG14-18                                                       |
-| plpgsql_check      | 2.10.1     | 2.10.3     | PG14-18; optional preload                                     |
-| postbis            | -          | 1.0        | PG14-18 compatibility patch; r2                               |
-| qdgc               | -          | 0.1.0      | PG14-18; includes qdgc_postgis                                |
-| rdf_fdw            | 2.6.0      | 2.7.0      | PG14-18                                                       |
-| timescaledb        | 2.28.3     | 2.29.0     | PG16-18                                                       |
-| uri                | 1.20251029 | 1.20251029 | Renamed to `pguri`; Provides/Obsoletes `pg_uri`; r2          |
-| vector             | 0.8.5      | 0.8.6      | PG14-18; 0.8.6 not indexed                                   |
+| Extension        | Old        | New        | Comment                                                           |
+|:-----------------|:-----------|:-----------|:------------------------------------------------------------------|
+| emaj             | -          | 5.0.0      | Renamed to `e-maj`; Provides/Obsoletes `emaj`; r2                 |
+| graph            | 0.1.8      | 1.0.0      | pggraph; PG14-18; pgrx 0.19.1                                     |
+| nominatim_fdw    | 2.0.0      | 2.1.0      | PG14-18                                                           |
+| numeral          | 1.3        | 1.3        | Renamed to `postgresql-numeral`; Provides/Obsoletes `numeral`; r3 |
+| pg_ai_query      | 0.1.1      | 0.1.1      | EL9/10 only (GCC 13/OpenSSL 3); r2 not indexed                    |
+| pg_column_tetris | -          | 0.1.0      | SQL-only; PG14-18                                                 |
+| pg_net           | 0.20.5     | 0.20.5     | EL8/9: 0.9.2; EL10: 0.20.5; r3 not indexed                        |
+| pg_partman       | 5.4.0      | 5.5.0      | PG14-18                                                           |
+| pg_search        | 0.24.3     | 0.25.0     | PG15-18; pgrx 0.19.1; add pgvector/OpenBLAS dependencies          |
+| pgcontext        | -          | 0.2.0      | PG17-18; pgrx 0.19.1; optional pgvector bridge                    |
+| pgedge           | 18.4       | 18.4       | PG15-18 ABI fix; r2 not indexed                                   |
+| pgmnemo          | 0.13.0     | 0.15.0     | PG17-18; requires pgvector >= 0.7.0                               |
+| pgmp             | -          | 1.0.6      | PG14-18; GMP dependency                                           |
+| pgpcre           | 0.20190509 | 0.20190509 | EL8/9 only; r2 not indexed                                        |
+| pgwasm           | -          | 0.1.0      | PG14-18                                                           |
+| plpgsql_check    | 2.10.1     | 2.10.3     | PG14-18; optional preload                                         |
+| postbis          | -          | 1.0        | PG14-18 compatibility patch; r2                                   |
+| qdgc             | -          | 0.1.0      | PG14-18; includes qdgc_postgis                                    |
+| rdf_fdw          | 2.6.0      | 2.7.0      | PG14-18                                                           |
+| timescaledb      | 2.28.3     | 2.29.0     | PG16-18                                                           |
+| uri              | 1.20251029 | 1.20251029 | Renamed to `pguri`; Provides/Obsoletes `pg_uri`; r2               |
+| vector           | 0.8.5      | 0.8.6      | PG14-18; 0.8.6 not indexed                                        |
 
 ## 2026-07-24
 

@@ -51,19 +51,19 @@
     }
   ],
   "stats": {
-    "Rows": 396,
+    "Rows": 403,
     "OS": 16,
     "PG": 5,
-    "Cells": 31680,
+    "Cells": 32240,
     "Counts": {
-      ".": 1928,
+      ".": 2028,
       "B": 8089,
-      "G": 21663
+      "G": 22123
     },
     "pgdg_counts": {
-      ".": 1928,
+      ".": 2028,
       "B": 9545,
-      "R": 20207
+      "R": 20667
     }
   },
   "rows": [
@@ -1828,6 +1828,47 @@
         "u24.x86_64": "...RR",
         "u26.aarch64": "...RR",
         "u26.x86_64": "...RR"
+      }
+    },
+    {
+      "pkg": "pg_turbovec",
+      "ext": "pg_turbovec",
+      "url": "https://pigsty.io/ext/e/pg_turbovec",
+      "groups": {
+        "d12.aarch64": "GGGGG",
+        "d12.x86_64": "GGGGG",
+        "d13.aarch64": "GGGGG",
+        "d13.x86_64": "GGGGG",
+        "el10.aarch64": "GGGGG",
+        "el10.x86_64": "GGGGG",
+        "el8.aarch64": "GGGGG",
+        "el8.x86_64": "GGGGG",
+        "el9.aarch64": "GGGGG",
+        "el9.x86_64": "GGGGG",
+        "u22.aarch64": "GGGGG",
+        "u22.x86_64": "GGGGG",
+        "u24.aarch64": "GGGGG",
+        "u24.x86_64": "GGGGG",
+        "u26.aarch64": "GGGGG",
+        "u26.x86_64": "GGGGG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "RRRRR",
+        "d12.x86_64": "RRRRR",
+        "d13.aarch64": "RRRRR",
+        "d13.x86_64": "RRRRR",
+        "el10.aarch64": "RRRRR",
+        "el10.x86_64": "RRRRR",
+        "el8.aarch64": "RRRRR",
+        "el8.x86_64": "RRRRR",
+        "el9.aarch64": "RRRRR",
+        "el9.x86_64": "RRRRR",
+        "u22.aarch64": "RRRRR",
+        "u22.x86_64": "RRRRR",
+        "u24.aarch64": "RRRRR",
+        "u24.x86_64": "RRRRR",
+        "u26.aarch64": "RRRRR",
+        "u26.x86_64": "RRRRR"
       }
     },
     {
@@ -4291,6 +4332,47 @@
       }
     },
     {
+      "pkg": "pg_disorder",
+      "ext": "pg_disorder",
+      "url": "https://pigsty.io/ext/e/pg_disorder",
+      "groups": {
+        "d12.aarch64": "GGGGG",
+        "d12.x86_64": "GGGGG",
+        "d13.aarch64": "GGGGG",
+        "d13.x86_64": "GGGGG",
+        "el10.aarch64": "GGGGG",
+        "el10.x86_64": "GGGGG",
+        "el8.aarch64": "GGGGG",
+        "el8.x86_64": "GGGGG",
+        "el9.aarch64": "GGGGG",
+        "el9.x86_64": "GGGGG",
+        "u22.aarch64": "GGGGG",
+        "u22.x86_64": "GGGGG",
+        "u24.aarch64": "GGGGG",
+        "u24.x86_64": "GGGGG",
+        "u26.aarch64": "GGGGG",
+        "u26.x86_64": "GGGGG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "RRRRR",
+        "d12.x86_64": "RRRRR",
+        "d13.aarch64": "RRRRR",
+        "d13.x86_64": "RRRRR",
+        "el10.aarch64": "RRRRR",
+        "el10.x86_64": "RRRRR",
+        "el8.aarch64": "RRRRR",
+        "el8.x86_64": "RRRRR",
+        "el9.aarch64": "RRRRR",
+        "el9.x86_64": "RRRRR",
+        "u22.aarch64": "RRRRR",
+        "u22.x86_64": "RRRRR",
+        "u24.aarch64": "RRRRR",
+        "u24.x86_64": "RRRRR",
+        "u26.aarch64": "RRRRR",
+        "u26.x86_64": "RRRRR"
+      }
+    },
+    {
       "pkg": "provsql",
       "ext": "provsql",
       "url": "https://pigsty.io/ext/e/provsql",
@@ -4458,6 +4540,47 @@
       "pkg": "omnigres",
       "ext": "omni",
       "url": "https://pigsty.io/ext/e/omni",
+      "groups": {
+        "d12.aarch64": "GGGGG",
+        "d12.x86_64": "GGGGG",
+        "d13.aarch64": "GGGGG",
+        "d13.x86_64": "GGGGG",
+        "el10.aarch64": "GGGGG",
+        "el10.x86_64": "GGGGG",
+        "el8.aarch64": "GGGGG",
+        "el8.x86_64": "GGGGG",
+        "el9.aarch64": "GGGGG",
+        "el9.x86_64": "GGGGG",
+        "u22.aarch64": "GGGGG",
+        "u22.x86_64": "GGGGG",
+        "u24.aarch64": "GGGGG",
+        "u24.x86_64": "GGGGG",
+        "u26.aarch64": "GGGGG",
+        "u26.x86_64": "GGGGG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "RRRRR",
+        "d12.x86_64": "RRRRR",
+        "d13.aarch64": "RRRRR",
+        "d13.x86_64": "RRRRR",
+        "el10.aarch64": "RRRRR",
+        "el10.x86_64": "RRRRR",
+        "el8.aarch64": "RRRRR",
+        "el8.x86_64": "RRRRR",
+        "el9.aarch64": "RRRRR",
+        "el9.x86_64": "RRRRR",
+        "u22.aarch64": "RRRRR",
+        "u22.x86_64": "RRRRR",
+        "u24.aarch64": "RRRRR",
+        "u24.x86_64": "RRRRR",
+        "u26.aarch64": "RRRRR",
+        "u26.x86_64": "RRRRR"
+      }
+    },
+    {
+      "pkg": "pg_mentat",
+      "ext": "pg_mentat",
+      "url": "https://pigsty.io/ext/e/pg_mentat",
       "groups": {
         "d12.aarch64": "GGGGG",
         "d12.x86_64": "GGGGG",
@@ -5114,6 +5237,47 @@
       "pkg": "pgwasm",
       "ext": "pgwasm",
       "url": "https://pigsty.io/ext/e/pgwasm",
+      "groups": {
+        "d12.aarch64": "GGGGG",
+        "d12.x86_64": "GGGGG",
+        "d13.aarch64": "GGGGG",
+        "d13.x86_64": "GGGGG",
+        "el10.aarch64": "GGGGG",
+        "el10.x86_64": "GGGGG",
+        "el8.aarch64": "GGGGG",
+        "el8.x86_64": "GGGGG",
+        "el9.aarch64": "GGGGG",
+        "el9.x86_64": "GGGGG",
+        "u22.aarch64": "GGGGG",
+        "u22.x86_64": "GGGGG",
+        "u24.aarch64": "GGGGG",
+        "u24.x86_64": "GGGGG",
+        "u26.aarch64": "GGGGG",
+        "u26.x86_64": "GGGGG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "RRRRR",
+        "d12.x86_64": "RRRRR",
+        "d13.aarch64": "RRRRR",
+        "d13.x86_64": "RRRRR",
+        "el10.aarch64": "RRRRR",
+        "el10.x86_64": "RRRRR",
+        "el8.aarch64": "RRRRR",
+        "el8.x86_64": "RRRRR",
+        "el9.aarch64": "RRRRR",
+        "el9.x86_64": "RRRRR",
+        "u22.aarch64": "RRRRR",
+        "u22.x86_64": "RRRRR",
+        "u24.aarch64": "RRRRR",
+        "u24.x86_64": "RRRRR",
+        "u26.aarch64": "RRRRR",
+        "u26.x86_64": "RRRRR"
+      }
+    },
+    {
+      "pkg": "plruby",
+      "ext": "plruby",
+      "url": "https://pigsty.io/ext/e/plruby",
       "groups": {
         "d12.aarch64": "GGGGG",
         "d12.x86_64": "GGGGG",
@@ -8019,6 +8183,47 @@
         "u24.x86_64": "RRRRR",
         "u26.aarch64": "RRRRR",
         "u26.x86_64": "RRRRR"
+      }
+    },
+    {
+      "pkg": "pg_describe",
+      "ext": "pg_describe",
+      "url": "https://pigsty.io/ext/e/pg_describe",
+      "groups": {
+        "d12.aarch64": "...GG",
+        "d12.x86_64": "...GG",
+        "d13.aarch64": "...GG",
+        "d13.x86_64": "...GG",
+        "el10.aarch64": "...GG",
+        "el10.x86_64": "...GG",
+        "el8.aarch64": "...GG",
+        "el8.x86_64": "...GG",
+        "el9.aarch64": "...GG",
+        "el9.x86_64": "...GG",
+        "u22.aarch64": "...GG",
+        "u22.x86_64": "...GG",
+        "u24.aarch64": "...GG",
+        "u24.x86_64": "...GG",
+        "u26.aarch64": "...GG",
+        "u26.x86_64": "...GG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "...RR",
+        "d12.x86_64": "...RR",
+        "d13.aarch64": "...RR",
+        "d13.x86_64": "...RR",
+        "el10.aarch64": "...RR",
+        "el10.x86_64": "...RR",
+        "el8.aarch64": "...RR",
+        "el8.x86_64": "...RR",
+        "el9.aarch64": "...RR",
+        "el9.x86_64": "...RR",
+        "u22.aarch64": "...RR",
+        "u22.x86_64": "...RR",
+        "u24.aarch64": "...RR",
+        "u24.x86_64": "...RR",
+        "u26.aarch64": "...RR",
+        "u26.x86_64": "...RR"
       }
     },
     {
@@ -11015,6 +11220,47 @@
       }
     },
     {
+      "pkg": "cat_tools",
+      "ext": "cat_tools",
+      "url": "https://pigsty.io/ext/e/cat_tools",
+      "groups": {
+        "d12.aarch64": "GGGGG",
+        "d12.x86_64": "GGGGG",
+        "d13.aarch64": "GGGGG",
+        "d13.x86_64": "GGGGG",
+        "el10.aarch64": "GGGGG",
+        "el10.x86_64": "GGGGG",
+        "el8.aarch64": "GGGGG",
+        "el8.x86_64": "GGGGG",
+        "el9.aarch64": "GGGGG",
+        "el9.x86_64": "GGGGG",
+        "u22.aarch64": "GGGGG",
+        "u22.x86_64": "GGGGG",
+        "u24.aarch64": "GGGGG",
+        "u24.x86_64": "GGGGG",
+        "u26.aarch64": "GGGGG",
+        "u26.x86_64": "GGGGG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "RRRRR",
+        "d12.x86_64": "RRRRR",
+        "d13.aarch64": "RRRRR",
+        "d13.x86_64": "RRRRR",
+        "el10.aarch64": "RRRRR",
+        "el10.x86_64": "RRRRR",
+        "el8.aarch64": "RRRRR",
+        "el8.x86_64": "RRRRR",
+        "el9.aarch64": "RRRRR",
+        "el9.x86_64": "RRRRR",
+        "u22.aarch64": "RRRRR",
+        "u22.x86_64": "RRRRR",
+        "u24.aarch64": "RRRRR",
+        "u24.x86_64": "RRRRR",
+        "u26.aarch64": "RRRRR",
+        "u26.x86_64": "RRRRR"
+      }
+    },
+    {
       "pkg": "pg_savior",
       "ext": "pg_savior",
       "url": "https://pigsty.io/ext/e/pg_savior",
@@ -13882,6 +14128,47 @@
         "u24.x86_64": "....R",
         "u26.aarch64": "....R",
         "u26.x86_64": "....R"
+      }
+    },
+    {
+      "pkg": "pg_vault_tde",
+      "ext": "pg_vault_tde",
+      "url": "https://pigsty.io/ext/e/pg_vault_tde",
+      "groups": {
+        "d12.aarch64": "...GG",
+        "d12.x86_64": "...GG",
+        "d13.aarch64": "...GG",
+        "d13.x86_64": "...GG",
+        "el10.aarch64": "...GG",
+        "el10.x86_64": "...GG",
+        "el8.aarch64": ".....",
+        "el8.x86_64": ".....",
+        "el9.aarch64": "...GG",
+        "el9.x86_64": "...GG",
+        "u22.aarch64": "...GG",
+        "u22.x86_64": "...GG",
+        "u24.aarch64": "...GG",
+        "u24.x86_64": "...GG",
+        "u26.aarch64": "...GG",
+        "u26.x86_64": "...GG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "...RR",
+        "d12.x86_64": "...RR",
+        "d13.aarch64": "...RR",
+        "d13.x86_64": "...RR",
+        "el10.aarch64": "...RR",
+        "el10.x86_64": "...RR",
+        "el8.aarch64": ".....",
+        "el8.x86_64": ".....",
+        "el9.aarch64": "...RR",
+        "el9.x86_64": "...RR",
+        "u22.aarch64": "...RR",
+        "u22.x86_64": "...RR",
+        "u24.aarch64": "...RR",
+        "u24.x86_64": "...RR",
+        "u26.aarch64": "...RR",
+        "u26.x86_64": "...RR"
       }
     },
     {

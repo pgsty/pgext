@@ -6,17 +6,48 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-08-02
+## 2026-08-08
 
-| Name | Old   | New   | Comment                     |
-|:-----|:------|:------|:----------------------------|
-| pig  | 1.6.0 | 1.6.1 | Refreshed extension catalog |
-
-## 2026-08-01
-
-| Name       | Old    | New    | Comment                        |
-|:-----------|:-------|:-------|:-------------------------------|
-| prometheus | 3.13.1 | 3.13.2 | Security and stability release |
+| Name                    | Old                  | New            | Comment                                                   |
+|:------------------------|:---------------------|:---------------|:----------------------------------------------------------|
+| claude                  | 2.1.222              | 2.1.223        | Official manifest verified via proxy; built               |
+| codex                   | 0.146.0              | 0.146.1        | Stable tag `rust-v0.146.1`; built                         |
+| code                    | 1.131.0              | 1.132.0        | Official dual-architecture RPM/DEB verified               |
+| dblab                   | 0.47.2               | 0.47.4         | Built as dual-architecture RPM/DEB                        |
+| grafana-infinity-ds     | 3.11.1               | 3.11.2         | Built as dual-architecture RPM/DEB                        |
+| grafana-victorialogs-ds | 0.30.1               | 0.31.0         | Built as dual-architecture RPM/DEB                        |
+| k3s                     | 1.36.2               | 1.36.3         | Official stable channel `v1.36.3+k3s1`; built             |
+| k3s-images              | 1.36.2               | 1.36.3         | Exact-match dual-architecture airgap images; built        |
+| mcli                    | 20260804000000       | 20260806000000 | Official pgsty fork dual-architecture RPM/DEB verified    |
+| opencode                | 1.18.13              | 1.18.14        | Built as dual-architecture RPM/DEB                        |
+| pgschema                | 1.12.1               | 1.12.2         | Official dual-architecture RPM/DEB verified               |
+| seaweedfs               | 4.40                 | 4.41           | Built as dual-architecture RPM/DEB                        |
+| silo                    | minio 20260804000000 | 20260806000000 | Official replacement; dual-architecture RPM/DEB verified  |
+| uv                      | 0.12.1               | 0.12.2         | Built as dual-architecture RPM/DEB                        |
+| victoria-metrics        | 1.148.0              | 1.149.0        | Main, cluster, and vmutils packages built for both arches |
+| agentsview              | 0.39.0               | 0.40.1         | Built as dual-architecture RPM/DEB                        |
+| claude                  | 2.1.220              | 2.1.222        | Official manifest verified via proxy; built               |
+| code-server             | 4.130.0              | 4.131.0        | Official artifacts downloaded and verified                |
+| crush                   | 0.87.0               | 0.88.0         | Official links only; redistribution blocked               |
+| grafana                 | 13.1.1               | 13.1.2         | Official artifacts verified; security fix                 |
+| juicefs                 | 1.4.0                | 1.4.1          | Built as dual-architecture RPM/DEB                        |
+| mcli                    | 20260417000000       | 20260804000000 | pgsty fork artifacts downloaded and verified              |
+| minio                   | 20260618000000       | 20260804000000 | pgsty fork artifacts downloaded and verified              |
+| mongodb-exporter        | 0.51.0               | 0.52.0         | Built as dual-architecture RPM/DEB                        |
+| mtail                   | 3.0.8                | 3.4.6          | Built as dual-architecture RPM/DEB                        |
+| nodejs                  | 24.18.1              | 24.19.0        | Node.js 24.x LTS; built                                   |
+| opencode                | 1.18.9               | 1.18.13        | Built as dual-architecture RPM/DEB                        |
+| pg-hardstorage          | 1.0.17               | 1.1.1          | Official artifacts downloaded and verified                |
+| pgbackrest-exporter     | 0.23.0               | 0.24.0         | Built as dual-architecture RPM/DEB                        |
+| pgstream                | 1.2.5                | 1.3.1          | Built as dual-architecture RPM/DEB                        |
+| rclone                  | 1.74.4               | 1.75.0         | Official artifacts downloaded and verified                |
+| rustfs                  | 1.0.0-b11            | 1.0.0-b12      | Beta line; built as dual-architecture RPM/DEB             |
+| stalwart                | 0.16.15              | 0.16.16        | Built as dual-architecture RPM/DEB                        |
+| uv                      | 0.12.0               | 0.12.1         | Built as dual-architecture RPM/DEB                        |
+| vray                    | 5.51.2               | 5.52.0         | Latest stable; built as dual-architecture RPM/DEB         |
+| xray                    | 26.3.27              | 26.7.28        | Latest dated release; built as dual-architecture RPM/DEB  |
+| pig                     | 1.6.0                | 1.6.1          | Refreshed extension catalog                               |
+| prometheus              | 3.13.1               | 3.13.2         | Security and stability release                            |
 
 ## 2026-07-30
 
