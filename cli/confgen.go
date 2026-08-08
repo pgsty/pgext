@@ -794,11 +794,11 @@ func GetConfigConstants() *ConfigConstants {
 	constants := &ConfigConstants{
 		RPMCommonPkg: []string{
 			// 0: infra-package
-			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis minio mcli pig",
+			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis valkey silo mcli sow pig",
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
-			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
+			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
 			"bash python3 sudo acl ca-certificates openssl curl wget lz4 zstd unzip bzip2 gzip tar tzdata chrony openssh-server util-linux rsync psmisc logrotate",
 			// 4: node-package2
@@ -811,11 +811,11 @@ func GetConfigConstants() *ConfigConstants {
 
 		DEBCommonPkg: []string{
 			// 0: infra-package
-			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis minio mcli pig",
+			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis valkey silo mcli sow pig",
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
-			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
+			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
 			"bash python3 sudo acl ca-certificates openssl curl wget lz4 zstd unzip bzip2 gzip tar tzdata chrony openssh-server util-linux rsync psmisc logrotate",
 			// 4: node-package2
@@ -886,11 +886,11 @@ func GetConfigConstants() *ConfigConstants {
 		},
 
 		DistroAdhocPkg: map[string]string{
-			"rpm":  "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
+			"rpm":  "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass",
 			"deb":  "ansible python3 python3-jmespath dpkg-dev sshpass",
 			"el7":  "ansible python3 python36-requests python36-idna yum-utils createrepo_c sshpass",
-			"el8":  "ansible python3 python3-requests python3.12-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
-			"el9":  "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
+			"el8":  "ansible python3 python3-requests python3.12-jmespath python3-cryptography dnf-utils createrepo_c sshpass",
+			"el9":  "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass",
 			"el10": "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass crypto-policies-scripts",
 			"d11":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",
 			"d12":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",

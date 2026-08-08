@@ -587,6 +587,70 @@ func TestExtraModulesDownloadAliasExcludesOpenCode(t *testing.T) {
 	}
 }
 
+func TestRPMBootstrapExcludesModulemdTools(t *testing.T) {
+	constants := GetConfigConstants()
+	for _, distro := range []string{"rpm", "el8", "el9"} {
+		if containsToken(constants.DistroAdhocPkg[distro], "modulemd-tools") {
+			t.Fatalf("%s node-bootstrap still contains modulemd-tools", distro)
+		}
+	}
+	for osCode, rendered := range map[string]string{
+		"el8.x86_64": renderRPMTemplateForTest(t, "el8.x86_64", "el8"),
+		"el9.x86_64": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+	} {
+		if containsToken(renderedPackageAliasValue(rendered, "node-bootstrap"), "modulemd-tools") {
+			t.Fatalf("rendered %s node-bootstrap still contains modulemd-tools", osCode)
+		}
+	}
+}
+
+func TestDefaultOfflinePackagesUseSiloAndExcludeFerretDB(t *testing.T) {
+	constants := GetConfigConstants()
+	for name, aliases := range map[string][]string{
+		"rpm": constants.RPMCommonPkg,
+		"deb": constants.DEBCommonPkg,
+	} {
+		t.Run(name, func(t *testing.T) {
+			infraPackages := aliases[0]
+			for _, pkg := range []string{"redis", "valkey", "silo", "mcli"} {
+				if !containsToken(infraPackages, pkg) {
+					t.Fatalf("infra-package missing %q: %q", pkg, infraPackages)
+				}
+			}
+			if containsToken(infraPackages, "minio") {
+				t.Fatalf("infra-package still contains minio: %q", infraPackages)
+			}
+
+			extraModules := aliases[2]
+			for _, pkg := range []string{"ferretdb", "ferretdb2"} {
+				if containsToken(extraModules, pkg) {
+					t.Fatalf("extra-modules still contains %q: %q", pkg, extraModules)
+				}
+			}
+		})
+	}
+
+	for name, rendered := range map[string]string{
+		"rpm": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+		"deb": renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+	} {
+		t.Run(name+"-rendered", func(t *testing.T) {
+			infraPackages := renderedPackageAliasValue(rendered, "infra-package")
+			for _, pkg := range []string{"valkey", "silo"} {
+				if !containsToken(infraPackages, pkg) {
+					t.Fatalf("rendered infra-package missing %q: %q", pkg, infraPackages)
+				}
+			}
+			if containsToken(infraPackages, "minio") {
+				t.Fatalf("rendered infra-package still contains minio: %q", infraPackages)
+			}
+			if containsToken(renderedPackageAliasValue(rendered, "extra-modules"), "ferretdb2") {
+				t.Fatalf("rendered extra-modules still contains ferretdb2")
+			}
+		})
+	}
+}
+
 func TestKafkaStackAliasIncludesMonitoringPackages(t *testing.T) {
 	tests := []struct {
 		name     string
