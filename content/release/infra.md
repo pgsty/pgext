@@ -12,7 +12,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 |:------------------------|:---------------------|:---------------|:----------------------------------------------------------|
 | claude                  | 2.1.223              | 2.1.226        | Official manifest verified via proxy; dual-arch built     |
 | codex                   | 0.146.1              | 0.147.0        | Stable tag `rust-v0.147.0`; dual-arch built               |
-| crush                   | 0.88.0               | 0.88.1         | Official links only; redistribution remains blocked       |
+| crush                   | 0.88.0               | 0.88.1         | Official tarballs repacked as `1PGSTY` with license       |
 | grafana                 | 13.1.2               | 13.1.3         | Official dual-architecture RPM/DEB artifacts              |
 | opencode                | 1.18.14              | 1.18.15        | Built as dual-architecture RPM/DEB                        |
 | postgrest               | 14.16                | 16.0           | Static dual-architecture assets; requires PostgreSQL 14+  |

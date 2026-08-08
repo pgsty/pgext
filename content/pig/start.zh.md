@@ -128,7 +128,7 @@ Pig v1.6.0 内置的是发布时的目录快照。先用 `pig ext reload` 刷新
 ```bash
 $ pig ext reload
 $ pig ext list
-✓ Found 562 extensions
+✓ Found 572 extensions
 Name                Status     Version     Cate   Flags   License         Repo     PGVer  Package                               Description
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 timescaledb         available  2.28.3      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
@@ -140,7 +140,7 @@ pg_bulkload         available  3.1.23      ETL    bds---  BSD 3-Clause    PIGSTY
 test_decoding       available  -           ETL    --s--x  PostgreSQL      CONTRIB  14-18  postgresql-18                         SQL-based test/example module for WAL logical decoding
 pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
 
-(562 Rows)
+(572 Rows)
 ```
 
 所有的扩展元数据都在一份名为 [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv) 的数据文件中定义，

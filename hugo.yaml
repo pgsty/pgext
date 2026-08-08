@@ -186,7 +186,7 @@ security:
     urls: ['(?i)^https?://[a-z].*']
 
 params:
-  description: PostgreSQL Extension Catalog with 2,230 entries, including 562 packaged PG extensions across 16 Linux platforms
+  description: PostgreSQL Extension Catalog with 2,230 entries, including 572 packaged PG extensions across 16 Linux platforms
 
   navbar:
     displayTitle: true
