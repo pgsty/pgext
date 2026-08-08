@@ -79,7 +79,6 @@ icon: fa-solid fa-tags
 	return WriteMarkdownFile(outputPath, content)
 }
 
-
 // GenerateLoadPage generates the load.md page (extensions needing shared_preload_libraries)
 func (g *CCAttrGenerator) GenerateLoadPage(outputPath string) error {
 	var exts []*Extension

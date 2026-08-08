@@ -5,8 +5,9 @@ env:
 
 before:
   hooks:
+    # Download only: a release must build the committed module graph, never
+    # rewrite go.mod on its way out. Tidiness is enforced by the CI workflow.
     - go mod download
-    - go mod tidy
 
 builds:
   - id: pgext
@@ -33,13 +34,16 @@ archives:
 nfpms:
   - id: pgext-packages
     package_name: pgext
+    # Package names carry the PGSTY release segment, PGDG-style: nfpm renders
+    # `release` as the RPM Release tag and as the Debian revision after the
+    # dash, and these names must agree with it.
     file_name_template: >-
       {{ .PackageName }}
-      {{- if eq .Format "deb" }}_{{ .Version }}-1_
+      {{- if eq .Format "deb" }}_{{ .Version }}-1PGSTY_
         {{- if eq .Arch "amd64" }}amd64
         {{- else if eq .Arch "arm64" }}arm64
         {{- else }}{{ .Arch }}{{ end }}
-      {{- else if eq .Format "rpm" }}-{{ .Version }}-1.
+      {{- else if eq .Format "rpm" }}-{{ .Version }}-1PGSTY.
         {{- if eq .Arch "amd64" }}x86_64
         {{- else if eq .Arch "arm64" }}aarch64
         {{- else }}{{ .Arch }}{{ end }}
@@ -59,7 +63,7 @@ nfpms:
         dst: /usr/share/doc/pgext/LICENSE
         file_info:
           mode: 0644
-    release: "1"
+    release: "1PGSTY"
     rpm:
       summary: "PostgreSQL Extension Catalog Util"
       group: "Applications/Databases"
@@ -70,7 +74,9 @@ checksum:
   algorithm: sha256
 
 snapshot:
-  version_template: "{{ .Tag }}-next"
+  # .Version, not .Tag: the tag carries a leading `v` that the archive and
+  # package name templates add back themselves.
+  version_template: "{{ .Version }}-next"
 
 changelog:
   sort: asc
@@ -86,7 +92,8 @@ release:
   github:
     owner: pgsty
     name: pgext
-  draft: false
+  # Artifacts are uploaded to a draft; publishing stays a manual step.
+  draft: true
   prerelease: false
   mode: replace
   replace_existing_artifacts: true

@@ -1,0 +1,94 @@
+name: Go CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Cancel superseded runs for the same PR; never cancel main push runs.
+# Keyed on PR number (not head_ref) so fork PRs sharing a branch name
+# do not collide.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Format, Vet, Build, Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Check gofmt
+        run: |
+          mapfile -t unformatted < <(gofmt -l main.go cli cmd db server)
+          if [ "${#unformatted[@]}" -ne 0 ]; then
+            echo "The following files are not gofmt-formatted:"
+            printf '%s\n' "${unformatted[@]}"
+            gofmt -d "${unformatted[@]}"
+            exit 1
+          fi
+
+      - name: Build
+        env:
+          CGO_ENABLED: 0
+        run: go build ./...
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test
+        run: go test ./... -count=1
+
+      - name: Check go.mod is tidy
+        run: |
+          go mod tidy
+          git diff --exit-code -- go.mod go.sum
+
+  package:
+    name: Snapshot Packages
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # GoReleaser derives the snapshot version from the tag history.
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      # Builds every release target and both package formats without
+      # publishing, so a broken .goreleaser.yml fails here rather than on
+      # the tag that was supposed to ship.
+      - name: Build snapshot with GoReleaser
+        uses: goreleaser/goreleaser-action@v7
+        with:
+          version: "~> v2"
+          args: release --clean --snapshot --skip=publish
+
+      - name: Upload snapshot artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist-snapshot
+          retention-days: 7
+          path: |
+            dist/*.tar.gz
+            dist/*.rpm
+            dist/*.deb
+            dist/checksums.txt
