@@ -82,7 +82,7 @@ func TestEnsureUniverseMigrationIntegration(t *testing.T) {
 	universeRows := embeddedCSVRowCount(t, "universe")
 	ctx := context.Background()
 
-	if _, err := ExecContext(ctx, "DROP TABLE pgext.universe"); err != nil {
+	if _, err := ExecContext(ctx, "DROP TABLE pgext.universe CASCADE"); err != nil {
 		t.Fatalf("drop universe to simulate old schema: %v", err)
 	}
 	universeDDL, err := db.GetUniverseSchema()
@@ -140,18 +140,19 @@ func embeddedCSVRowCount(t *testing.T, table string) int {
 
 func assertCatalogCounts(t *testing.T, wantExtension, wantUniverse, wantMissing int) {
 	t.Helper()
-	var extension, universe, missing int
+	var extension, universe, missing, idMismatch int
 	err := QueryRowContext(context.Background(), `
 SELECT
     (SELECT count(*) FROM pgext.extension),
     (SELECT count(*) FROM pgext.universe),
-    (SELECT count(*) FROM pgext.extension e LEFT JOIN pgext.universe u USING (name) WHERE u.name IS NULL)`).
-		Scan(&extension, &universe, &missing)
+    (SELECT count(*) FROM pgext.extension e LEFT JOIN pgext.universe u USING (name) WHERE u.name IS NULL),
+    (SELECT count(*) FROM pgext.extension e JOIN pgext.universe u USING (name) WHERE e.id <> u.id)`).
+		Scan(&extension, &universe, &missing, &idMismatch)
 	if err != nil {
 		t.Fatalf("query catalog counts: %v", err)
 	}
-	if extension != wantExtension || universe != wantUniverse || missing != wantMissing {
-		t.Fatalf("catalog counts = (%d, %d, %d), want (%d, %d, %d)",
-			extension, universe, missing, wantExtension, wantUniverse, wantMissing)
+	if extension != wantExtension || universe != wantUniverse || missing != wantMissing || idMismatch != 0 {
+		t.Fatalf("catalog counts = (%d, %d, %d, id_mismatch=%d), want (%d, %d, %d, id_mismatch=0)",
+			extension, universe, missing, idMismatch, wantExtension, wantUniverse, wantMissing)
 	}
 }

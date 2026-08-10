@@ -57,8 +57,8 @@
     "Cells": 32240,
     "Counts": {
       ".": 2028,
-      "B": 8089,
-      "G": 22123
+      "B": 8107,
+      "G": 22105
     },
     "pgdg_counts": {
       ".": 2028,
@@ -2536,12 +2536,12 @@
         "d12.x86_64": "GGGGG",
         "d13.aarch64": "GGGGG",
         "d13.x86_64": "GGGGG",
-        "el10.aarch64": "GBGGG",
-        "el10.x86_64": "GBGGG",
-        "el8.aarch64": "BBGGG",
-        "el8.x86_64": "BBGGG",
-        "el9.aarch64": "BBGGG",
-        "el9.x86_64": "BBGGG",
+        "el10.aarch64": "GBBBB",
+        "el10.x86_64": "GBBBB",
+        "el8.aarch64": "BBBBB",
+        "el8.x86_64": "BBBBB",
+        "el9.aarch64": "BBBBB",
+        "el9.x86_64": "BBBBB",
         "u22.aarch64": "GGGGG",
         "u22.x86_64": "GGGGG",
         "u24.aarch64": "GGGGG",

@@ -57,3 +57,6 @@ bin/*
 !bin/dump-stub
 !bin/stub_doc.py
 !bin/test_stub_doc.py
+!bin/github_activity.py
+!bin/github_activity_acceptance.py
+!bin/test_github_activity.py

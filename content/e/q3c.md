@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1540** | {{< badge content="q3c" link="https://github.com/segasai/q3c" >}} | {{< ext "q3c" >}} | `2.0.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1540** | {{< badge content="q3c" link="https://github.com/segasai/q3c" >}} | {{< ext "q3c" >}} | `2.0.5` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,19 +33,19 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `q3c` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.3` | {{< bg "18" "q3c_18" "green" >}} {{< bg "17" "q3c_17" "green" >}} {{< bg "16" "q3c_16" "green" >}} {{< bg "15" "q3c_15" "green" >}} {{< bg "14" "q3c_14" "green" >}} | `q3c_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `q3c` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "q3c_18" "green" >}} {{< bg "17" "q3c_17" "green" >}} {{< bg "16" "q3c_16" "green" >}} {{< bg "15" "q3c_15" "green" >}} {{< bg "14" "q3c_14" "green" >}} | `q3c_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.4` | {{< bg "18" "postgresql-18-q3c" "green" >}} {{< bg "17" "postgresql-17-q3c" "green" >}} {{< bg "16" "postgresql-16-q3c" "green" >}} {{< bg "15" "postgresql-15-q3c" "green" >}} {{< bg "14" "postgresql-14-q3c" "green" >}} | `postgresql-$v-q3c` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.0.3" "q3c_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_14 : AVAIL 5" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.0.3" "q3c_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_14 : AVAIL 5" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.0.3" "q3c_18 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_17 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_15 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_14 : AVAIL 9" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0.3" "q3c_18 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_17 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_15 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_14 : AVAIL 9" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0.3" "q3c_18 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_17 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_15 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_14 : AVAIL 9" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0.3" "q3c_18 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_17 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_15 : AVAIL 9" "blue" >}} | {{< bg "PGDG 2.0.3" "q3c_14 : AVAIL 9" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.0.5" "q3c_18 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_17 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_16 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_15 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_14 : AVAIL 6" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.0.5" "q3c_18 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_17 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_16 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_15 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_14 : AVAIL 6" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.0.5" "q3c_18 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_17 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_16 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_14 : AVAIL 10" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0.5" "q3c_18 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_17 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_16 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_14 : AVAIL 10" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0.5" "q3c_18 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_17 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_16 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_14 : AVAIL 10" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0.5" "q3c_18 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_17 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_16 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 2.0.5" "q3c_14 : AVAIL 10" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.0.4" "postgresql-18-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-17-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-16-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-15-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-14-q3c : AVAIL 3" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.0.4" "postgresql-18-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-17-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-16-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-15-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-14-q3c : AVAIL 3" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.0.4" "postgresql-18-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-17-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-16-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-15-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.4" "postgresql-14-q3c : AVAIL 3" "blue" >}} |
@@ -63,16 +63,19 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `q3c_18` | `2.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.2 KiB | [q3c_18-2.0.5-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/q3c_18-2.0.5-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.5 KiB | [q3c_18-2.0.3-2PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/q3c_18-2.0.3-2PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.4 KiB | [q3c_18-2.0.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/q3c_18-2.0.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_18` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 99.3 KiB | [q3c_18-2.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_18-2.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `q3c_18` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 104.7 KiB | [q3c_18-2.0.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/q3c_18-2.0.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_18` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_18-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/q3c_18-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_18` | `2.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 101.8 KiB | [q3c_18-2.0.5-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/q3c_18-2.0.5-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 100.0 KiB | [q3c_18-2.0.3-2PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/q3c_18-2.0.3-2PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 99.9 KiB | [q3c_18-2.0.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/q3c_18-2.0.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_18` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.6 KiB | [q3c_18-2.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_18-2.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `q3c_18` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 98.8 KiB | [q3c_18-2.0.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/q3c_18-2.0.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_18` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.8 KiB | [q3c_18-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/q3c_18-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_18` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 148.2 KiB | [q3c_18-2.0.5-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.5-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.2 KiB | [q3c_18-2.0.3-2PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.3-2PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 160.4 KiB | [q3c_18-2.0.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 160.3 KiB | [q3c_18-2.0.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.3-1PGDG.rhel9.7.x86_64.rpm) |
@@ -82,6 +85,7 @@ width: full
 | `q3c_18` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.7 KiB | [q3c_18-2.0.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `q3c_18` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.8 KiB | [q3c_18-2.0.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.2-1PGDG.rhel9.6.x86_64.rpm) |
 | `q3c_18` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.7 KiB | [q3c_18-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_18` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 108.5 KiB | [q3c_18-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.8 KiB | [q3c_18-2.0.3-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.3-2PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.7 KiB | [q3c_18-2.0.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.7 KiB | [q3c_18-2.0.3-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.3-1PGDG.rhel9.7.aarch64.rpm) |
@@ -91,6 +95,7 @@ width: full
 | `q3c_18` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 112.4 KiB | [q3c_18-2.0.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `q3c_18` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 112.5 KiB | [q3c_18-2.0.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.2-1PGDG.rhel9.6.aarch64.rpm) |
 | `q3c_18` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 105.3 KiB | [q3c_18-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_18` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 141.7 KiB | [q3c_18-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.6 KiB | [q3c_18-2.0.3-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.3-2PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.5 KiB | [q3c_18-2.0.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_18` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.4 KiB | [q3c_18-2.0.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.3-1PGDG.rhel10.1.x86_64.rpm) |
@@ -100,6 +105,7 @@ width: full
 | `q3c_18` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.8 KiB | [q3c_18-2.0.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `q3c_18` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 157.9 KiB | [q3c_18-2.0.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.2-1PGDG.rhel10.0.x86_64.rpm) |
 | `q3c_18` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 127.7 KiB | [q3c_18-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_18` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 87.5 KiB | [q3c_18-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/q3c_18-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 108.7 KiB | [q3c_18-2.0.3-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/q3c_18-2.0.3-2PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 108.5 KiB | [q3c_18-2.0.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/q3c_18-2.0.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_18` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 108.5 KiB | [q3c_18-2.0.3-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/q3c_18-2.0.3-1PGDG.rhel10.1.aarch64.rpm) |
@@ -145,16 +151,19 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `q3c_17` | `2.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.3 KiB | [q3c_17-2.0.5-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/q3c_17-2.0.5-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.5 KiB | [q3c_17-2.0.3-2PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/q3c_17-2.0.3-2PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.4 KiB | [q3c_17-2.0.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/q3c_17-2.0.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_17` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 99.3 KiB | [q3c_17-2.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_17-2.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `q3c_17` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 104.7 KiB | [q3c_17-2.0.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/q3c_17-2.0.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_17` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_17-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/q3c_17-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_17` | `2.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 101.8 KiB | [q3c_17-2.0.5-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/q3c_17-2.0.5-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 100.0 KiB | [q3c_17-2.0.3-2PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/q3c_17-2.0.3-2PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 99.9 KiB | [q3c_17-2.0.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/q3c_17-2.0.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_17` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.6 KiB | [q3c_17-2.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_17-2.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `q3c_17` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 98.8 KiB | [q3c_17-2.0.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/q3c_17-2.0.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_17` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.8 KiB | [q3c_17-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/q3c_17-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_17` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 148.2 KiB | [q3c_17-2.0.5-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.5-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 160.5 KiB | [q3c_17-2.0.3-2PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.3-2PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.1 KiB | [q3c_17-2.0.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 111.1 KiB | [q3c_17-2.0.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.3-1PGDG.rhel9.7.x86_64.rpm) |
@@ -164,6 +173,7 @@ width: full
 | `q3c_17` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.4 KiB | [q3c_17-2.0.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `q3c_17` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.6 KiB | [q3c_17-2.0.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.2-1PGDG.rhel9.6.x86_64.rpm) |
 | `q3c_17` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 101.8 KiB | [q3c_17-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_17` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 110.5 KiB | [q3c_17-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 97.9 KiB | [q3c_17-2.0.3-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.3-2PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 97.8 KiB | [q3c_17-2.0.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 97.8 KiB | [q3c_17-2.0.3-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.3-1PGDG.rhel9.7.aarch64.rpm) |
@@ -173,6 +183,7 @@ width: full
 | `q3c_17` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 107.7 KiB | [q3c_17-2.0.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `q3c_17` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 108.6 KiB | [q3c_17-2.0.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.2-1PGDG.rhel9.6.aarch64.rpm) |
 | `q3c_17` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 105.4 KiB | [q3c_17-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_17` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 141.5 KiB | [q3c_17-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.6 KiB | [q3c_17-2.0.3-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.3-2PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.5 KiB | [q3c_17-2.0.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_17` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.5 KiB | [q3c_17-2.0.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.3-1PGDG.rhel10.1.x86_64.rpm) |
@@ -182,6 +193,7 @@ width: full
 | `q3c_17` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.7 KiB | [q3c_17-2.0.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `q3c_17` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 157.9 KiB | [q3c_17-2.0.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.2-1PGDG.rhel10.0.x86_64.rpm) |
 | `q3c_17` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 127.7 KiB | [q3c_17-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_17` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 88.4 KiB | [q3c_17-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/q3c_17-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.5 KiB | [q3c_17-2.0.3-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/q3c_17-2.0.3-2PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.4 KiB | [q3c_17-2.0.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/q3c_17-2.0.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_17` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.4 KiB | [q3c_17-2.0.3-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/q3c_17-2.0.3-1PGDG.rhel10.1.aarch64.rpm) |
@@ -227,16 +239,19 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `q3c_16` | `2.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.3 KiB | [q3c_16-2.0.5-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/q3c_16-2.0.5-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.5 KiB | [q3c_16-2.0.3-2PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/q3c_16-2.0.3-2PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.4 KiB | [q3c_16-2.0.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/q3c_16-2.0.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_16` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 99.3 KiB | [q3c_16-2.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_16-2.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `q3c_16` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 104.7 KiB | [q3c_16-2.0.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/q3c_16-2.0.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_16` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_16-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/q3c_16-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_16` | `2.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 101.8 KiB | [q3c_16-2.0.5-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/q3c_16-2.0.5-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 100.0 KiB | [q3c_16-2.0.3-2PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/q3c_16-2.0.3-2PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 99.9 KiB | [q3c_16-2.0.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/q3c_16-2.0.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_16` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.6 KiB | [q3c_16-2.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_16-2.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `q3c_16` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 98.8 KiB | [q3c_16-2.0.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/q3c_16-2.0.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_16` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.8 KiB | [q3c_16-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/q3c_16-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_16` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 148.2 KiB | [q3c_16-2.0.5-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.5-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.4 KiB | [q3c_16-2.0.3-2PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.3-2PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 160.4 KiB | [q3c_16-2.0.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.3 KiB | [q3c_16-2.0.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.3-1PGDG.rhel9.7.x86_64.rpm) |
@@ -246,6 +261,7 @@ width: full
 | `q3c_16` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.4 KiB | [q3c_16-2.0.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `q3c_16` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 149.3 KiB | [q3c_16-2.0.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.2-1PGDG.rhel9.6.x86_64.rpm) |
 | `q3c_16` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 103.3 KiB | [q3c_16-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_16` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 110.5 KiB | [q3c_16-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 97.9 KiB | [q3c_16-2.0.3-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.3-2PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 97.8 KiB | [q3c_16-2.0.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 97.8 KiB | [q3c_16-2.0.3-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.3-1PGDG.rhel9.7.aarch64.rpm) |
@@ -255,6 +271,7 @@ width: full
 | `q3c_16` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 103.8 KiB | [q3c_16-2.0.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `q3c_16` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 107.8 KiB | [q3c_16-2.0.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.2-1PGDG.rhel9.6.aarch64.rpm) |
 | `q3c_16` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 105.4 KiB | [q3c_16-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_16` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 141.6 KiB | [q3c_16-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.6 KiB | [q3c_16-2.0.3-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.3-2PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.5 KiB | [q3c_16-2.0.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_16` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 160.2 KiB | [q3c_16-2.0.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.3-1PGDG.rhel10.1.x86_64.rpm) |
@@ -264,6 +281,7 @@ width: full
 | `q3c_16` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.7 KiB | [q3c_16-2.0.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `q3c_16` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 114.9 KiB | [q3c_16-2.0.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.2-1PGDG.rhel10.0.x86_64.rpm) |
 | `q3c_16` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 127.7 KiB | [q3c_16-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_16` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 88.4 KiB | [q3c_16-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/q3c_16-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.5 KiB | [q3c_16-2.0.3-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/q3c_16-2.0.3-2PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.4 KiB | [q3c_16-2.0.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/q3c_16-2.0.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_16` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.4 KiB | [q3c_16-2.0.3-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/q3c_16-2.0.3-1PGDG.rhel10.1.aarch64.rpm) |
@@ -309,16 +327,19 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `q3c_15` | `2.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.4 KiB | [q3c_15-2.0.5-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/q3c_15-2.0.5-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 104.4 KiB | [q3c_15-2.0.3-2PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/q3c_15-2.0.3-2PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 104.3 KiB | [q3c_15-2.0.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/q3c_15-2.0.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_15` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 98.2 KiB | [q3c_15-2.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_15-2.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `q3c_15` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_15-2.0.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/q3c_15-2.0.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_15` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 102.3 KiB | [q3c_15-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/q3c_15-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_15` | `2.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 101.1 KiB | [q3c_15-2.0.5-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/q3c_15-2.0.5-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 99.5 KiB | [q3c_15-2.0.3-2PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/q3c_15-2.0.3-2PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 99.4 KiB | [q3c_15-2.0.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/q3c_15-2.0.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_15` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.2 KiB | [q3c_15-2.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_15-2.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `q3c_15` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 98.3 KiB | [q3c_15-2.0.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/q3c_15-2.0.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_15` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.2 KiB | [q3c_15-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/q3c_15-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_15` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.8 KiB | [q3c_15-2.0.5-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.5-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.4 KiB | [q3c_15-2.0.3-2PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.3-2PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 111.1 KiB | [q3c_15-2.0.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.3 KiB | [q3c_15-2.0.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.3-1PGDG.rhel9.7.x86_64.rpm) |
@@ -328,6 +349,7 @@ width: full
 | `q3c_15` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 140.1 KiB | [q3c_15-2.0.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `q3c_15` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 140.1 KiB | [q3c_15-2.0.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.2-1PGDG.rhel9.6.x86_64.rpm) |
 | `q3c_15` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.3 KiB | [q3c_15-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_15` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 102.6 KiB | [q3c_15-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 95.9 KiB | [q3c_15-2.0.3-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.3-2PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 95.7 KiB | [q3c_15-2.0.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 95.8 KiB | [q3c_15-2.0.3-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.3-1PGDG.rhel9.7.aarch64.rpm) |
@@ -337,6 +359,7 @@ width: full
 | `q3c_15` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 108.7 KiB | [q3c_15-2.0.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `q3c_15` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 108.8 KiB | [q3c_15-2.0.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.2-1PGDG.rhel9.6.aarch64.rpm) |
 | `q3c_15` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 103.5 KiB | [q3c_15-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_15` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.7 KiB | [q3c_15-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.8 KiB | [q3c_15-2.0.3-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.3-2PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.6 KiB | [q3c_15-2.0.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_15` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.7 KiB | [q3c_15-2.0.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.3-1PGDG.rhel10.1.x86_64.rpm) |
@@ -346,6 +369,7 @@ width: full
 | `q3c_15` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.2 KiB | [q3c_15-2.0.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `q3c_15` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.7 KiB | [q3c_15-2.0.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.2-1PGDG.rhel10.0.x86_64.rpm) |
 | `q3c_15` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 92.2 KiB | [q3c_15-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_15` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 111.8 KiB | [q3c_15-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/q3c_15-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 97.8 KiB | [q3c_15-2.0.3-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/q3c_15-2.0.3-2PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 97.7 KiB | [q3c_15-2.0.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/q3c_15-2.0.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_15` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 97.7 KiB | [q3c_15-2.0.3-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/q3c_15-2.0.3-1PGDG.rhel10.1.aarch64.rpm) |
@@ -391,16 +415,19 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `q3c_14` | `2.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.4 KiB | [q3c_14-2.0.5-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/q3c_14-2.0.5-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 104.4 KiB | [q3c_14-2.0.3-2PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/q3c_14-2.0.3-2PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 104.3 KiB | [q3c_14-2.0.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/q3c_14-2.0.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_14` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 98.2 KiB | [q3c_14-2.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_14-2.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `q3c_14` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_14-2.0.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/q3c_14-2.0.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `q3c_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 102.3 KiB | [q3c_14-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/q3c_14-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_14` | `2.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 101.1 KiB | [q3c_14-2.0.5-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/q3c_14-2.0.5-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 99.5 KiB | [q3c_14-2.0.3-2PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/q3c_14-2.0.3-2PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 99.4 KiB | [q3c_14-2.0.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/q3c_14-2.0.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_14` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.2 KiB | [q3c_14-2.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_14-2.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `q3c_14` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 98.3 KiB | [q3c_14-2.0.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/q3c_14-2.0.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `q3c_14` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.2 KiB | [q3c_14-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/q3c_14-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_14` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 136.8 KiB | [q3c_14-2.0.5-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.5-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 129.6 KiB | [q3c_14-2.0.3-2PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.3-2PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.4 KiB | [q3c_14-2.0.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 120.3 KiB | [q3c_14-2.0.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.3-1PGDG.rhel9.7.x86_64.rpm) |
@@ -410,6 +437,7 @@ width: full
 | `q3c_14` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 91.6 KiB | [q3c_14-2.0.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `q3c_14` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 91.7 KiB | [q3c_14-2.0.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.2-1PGDG.rhel9.6.x86_64.rpm) |
 | `q3c_14` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.3 KiB | [q3c_14-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_14` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.4 KiB | [q3c_14-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 95.5 KiB | [q3c_14-2.0.3-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.3-2PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 95.4 KiB | [q3c_14-2.0.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 95.4 KiB | [q3c_14-2.0.3-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.3-1PGDG.rhel9.7.aarch64.rpm) |
@@ -419,6 +447,7 @@ width: full
 | `q3c_14` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 108.7 KiB | [q3c_14-2.0.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `q3c_14` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 108.8 KiB | [q3c_14-2.0.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.2-1PGDG.rhel9.6.aarch64.rpm) |
 | `q3c_14` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 103.3 KiB | [q3c_14-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_14` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 113.1 KiB | [q3c_14-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.7 KiB | [q3c_14-2.0.3-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.3-2PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.6 KiB | [q3c_14-2.0.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `q3c_14` | `2.0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.6 KiB | [q3c_14-2.0.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.3-1PGDG.rhel10.1.x86_64.rpm) |
@@ -428,6 +457,7 @@ width: full
 | `q3c_14` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.2 KiB | [q3c_14-2.0.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `q3c_14` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 112.6 KiB | [q3c_14-2.0.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.2-1PGDG.rhel10.0.x86_64.rpm) |
 | `q3c_14` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 92.1 KiB | [q3c_14-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_14` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 111.3 KiB | [q3c_14-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/q3c_14-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.4 KiB | [q3c_14-2.0.3-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/q3c_14-2.0.3-2PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.3 KiB | [q3c_14-2.0.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/q3c_14-2.0.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `q3c_14` | `2.0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.3 KiB | [q3c_14-2.0.3-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/q3c_14-2.0.3-1PGDG.rhel10.1.aarch64.rpm) |
@@ -474,7 +504,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/segasai/q3c" title="Repository" icon="github" subtitle="github.com/segasai/q3c" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="q3c-2.0.3.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="q3c-2.0.5.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -374,7 +374,7 @@ CREATE TABLE pgext.universe
 CREATE INDEX universe_pkg_idx ON pgext.universe (pkg);
 
 COMMENT ON TABLE pgext.universe IS 'Canonical PostgreSQL extension catalog with one row per extension name.';
-COMMENT ON COLUMN pgext.universe.id              IS 'Stable internal identifier.';
+COMMENT ON COLUMN pgext.universe.id              IS 'Stable internal identifier; packaged rows must reuse pgext.extension.id for the same extension name.';
 COMMENT ON COLUMN pgext.universe.name            IS 'Extension name used by the control file and CREATE EXTENSION.';
 COMMENT ON COLUMN pgext.universe.pkg             IS 'Project, source distribution, or shared package unit.';
 COMMENT ON COLUMN pgext.universe.lead_ext        IS 'Primary extension in the extension family.';
@@ -462,6 +462,103 @@ WHERE target.name = calculated.name
 $function$;
 
 COMMENT ON FUNCTION pgext.refresh_deps() IS 'Recalculate the required_by column for all extensions in pgext.universe.';
+
+
+-----------------------------------
+-- GitHub Repository Activity Cache
+-----------------------------------
+CREATE OR REPLACE FUNCTION pgext.repo_url_norm(url TEXT)
+RETURNS TEXT
+LANGUAGE SQL IMMUTABLE PARALLEL SAFE
+AS $function$
+WITH cleaned AS (
+    SELECT regexp_replace(regexp_replace(lower(btrim(url)), '[?#].*$', ''), '/+$', '') AS u
+), stripped AS (
+    SELECT regexp_replace(u, '\.git$', '') AS u FROM cleaned
+)
+SELECT CASE
+    WHEN url IS NULL OR btrim(url) = '' THEN NULL
+    WHEN u ~ '^https?://(github\.com|gitlab\.com|bitbucket\.org)/[^/]+/[^/]+' THEN
+        regexp_replace(u, '^(https?://(?:github\.com|gitlab\.com|bitbucket\.org)/[^/]+/[^/]+).*$', '\1')
+    ELSE u
+END
+FROM stripped;
+$function$;
+
+COMMENT ON FUNCTION pgext.repo_url_norm(TEXT) IS 'Normalize repository/homepage URLs for extension catalog deduplication';
+
+CREATE TABLE IF NOT EXISTS pgext.gh_repo
+(
+    url_norm                    TEXT PRIMARY KEY,
+    repo_host                   TEXT        NOT NULL DEFAULT 'github.com',
+    repo_owner                  TEXT        NOT NULL,
+    repo_name                   TEXT        NOT NULL,
+    api_url                     TEXT        NOT NULL,
+    extension_ids               INTEGER[]   NOT NULL DEFAULT '{}',
+    extension_names             TEXT[]      NOT NULL DEFAULT '{}',
+    extension_count             INTEGER     NOT NULL DEFAULT 0,
+    status                      TEXT        NOT NULL DEFAULT 'pending'
+        CHECK (status IN ('pending','collecting','fetched','rate_limited','blocked','error')),
+    attempts                    INTEGER     NOT NULL DEFAULT 0,
+    http_status                 INTEGER,
+    etag                        TEXT,
+    rate_limit_remaining        INTEGER,
+    rate_limit_reset            TIMESTAMPTZ,
+    api_json                    JSONB,
+    stargazers_count            INTEGER,
+    forks_count                 INTEGER,
+    watchers_count              INTEGER,
+    subscribers_count           INTEGER,
+    pushed_at                   TIMESTAMPTZ,
+    updated_at_api              TIMESTAMPTZ,
+    fetched_at                  TIMESTAMPTZ,
+    error                       TEXT,
+    created_at                  TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at                  TIMESTAMPTZ NOT NULL DEFAULT now(),
+    default_branch              TEXT,
+    archived                    BOOLEAN,
+    last_commit_at              TIMESTAMPTZ,
+    last_commit_date            TIMESTAMPTZ,
+    last_commit_sha             TEXT,
+    last_commit_html_url        TEXT,
+    latest_release_tag          TEXT,
+    latest_release_published_at TIMESTAMPTZ,
+    latest_release_created_at   TIMESTAMPTZ,
+    last_release_at             TIMESTAMPTZ,
+    last_release_date           TIMESTAMPTZ,
+    latest_tag_name             TEXT,
+    latest_tag_at               TIMESTAMPTZ,
+    last_tag_date               TIMESTAMPTZ,
+    latest_tag_date_source      TEXT,
+    latest_tag_target_type      TEXT,
+    latest_tag_commit_sha       TEXT,
+    latest_tag_commit_at        TIMESTAMPTZ,
+    last_release_or_tag_at      TIMESTAMPTZ,
+    last_release_or_tag_date    TIMESTAMPTZ,
+    last_release_or_tag_source  TEXT,
+    last_update_at              TIMESTAMPTZ,
+    last_update_date            TIMESTAMPTZ,
+    last_update_source          TEXT,
+    activity_json               JSONB
+);
+
+CREATE INDEX IF NOT EXISTS gh_repo_status_idx
+    ON pgext.gh_repo(status, updated_at);
+CREATE INDEX IF NOT EXISTS gh_repo_owner_repo_idx
+    ON pgext.gh_repo(lower(repo_owner), lower(repo_name));
+CREATE INDEX IF NOT EXISTS gh_repo_last_commit_at_idx
+    ON pgext.gh_repo(last_commit_at DESC NULLS LAST);
+CREATE INDEX IF NOT EXISTS gh_repo_last_release_or_tag_at_idx
+    ON pgext.gh_repo(last_release_or_tag_at DESC NULLS LAST);
+CREATE INDEX IF NOT EXISTS gh_repo_last_update_date_idx
+    ON pgext.gh_repo(last_update_date DESC NULLS LAST);
+
+COMMENT ON TABLE pgext.gh_repo IS 'GitHub repository metadata and activity cache keyed by normalized repository URL.';
+COMMENT ON COLUMN pgext.gh_repo.extension_ids IS 'Current pgext.universe ids associated with this repository.';
+COMMENT ON COLUMN pgext.gh_repo.extension_names IS 'Current pgext.universe names associated with this repository.';
+COMMENT ON COLUMN pgext.gh_repo.api_json IS 'Latest successful raw GitHub repository REST response.';
+COMMENT ON COLUMN pgext.gh_repo.subscribers_count IS 'GitHub subscribers_count, the explicit watch count.';
+COMMENT ON COLUMN pgext.gh_repo.activity_json IS 'Auditable REST commit and GraphQL release/tag evidence for the latest attempt.';
 
 
 
