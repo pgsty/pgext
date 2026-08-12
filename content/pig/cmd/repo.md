@@ -115,11 +115,15 @@ The full repository definition bundled with Pigsty is in [`cli/repo/assets/repo.
 
 You can create `~/.pig/repo.yml` to explicitly modify and override pig's repository definitions. When editing repository definitions, you can add extra regional mirror URLs under `baseurl`, such as China or Europe mirrors. When `--region` is specified, pig first looks for the matching regional URL and falls back to the `default` URL if the region is unavailable.
 
-When `--mirror` is specified on `repo add` or `repo set`, pig selects the China
-region and routes recognized PGDG YUM/DNF and APT URLs directly to Tencent
-Cloud's PostgreSQL mirror. Other repository modules use their normal China
-regional URLs. This is equivalent to `--region=china` for selection purposes;
-PGDG YUM definitions retain the Pigsty mirror as a compatibility fallback.
+Since v1.7.0, `--mirror` on `repo add` or `repo set` explicitly selects the
+bundled `china` definitions. PGDG uses Tencent Cloud first and retains any
+declared Pigsty fallback; other modules use their maintained China-region URLs.
+Pig no longer rewrites PGDG URLs through a separate runtime proxy route.
+
+Ordinary EL repositories keep native DNF module filtering. Only definitions
+that explicitly declare `module_hotfixes=1`—notably Pigsty and PGDG
+repositories—override module streams, and the key is removed when rendering
+EL7 YUM configuration.
 
 
 ## repo list
@@ -164,7 +168,7 @@ pig repo add pigsty -u           # add and update cache
 pig repo add all -r              # remove existing repos before adding
 pig repo add all -ru             # remove, add, and update (full reset)
 pig repo add pgdg --region=china # use China mirror
-pig repo add pgdg -m             # use Tencent Cloud first for PGDG
+pig repo add pgdg -m             # select China definitions; Tencent first for PGDG
 ```
 
 **Options:**
@@ -172,7 +176,7 @@ pig repo add pgdg -m             # use Tencent Cloud first for PGDG
 - `-r|--remove`: remove existing repositories before adding new ones
 - `-u|--update`: run package cache update after adding repositories
 - `--region <region>`: use regional mirror repositories (`default` / `china` / `europe`)
-- `-m|--mirror`: prefer China mirrors (Tencent Cloud first for PGDG)
+- `-m|--mirror`: explicitly select the bundled `china` definitions
 
 | Platform | Module Location |
 |:---:|:---|
@@ -189,7 +193,7 @@ Equivalent to `repo add --remove --update`. It clears existing repositories, set
 pig repo set                     # replace with default repositories
 pig repo set pgdg pigsty         # replace with selected repositories and update
 pig repo set all --region=china  # use China mirror
-pig repo set -m                  # prefer China mirrors (Tencent Cloud first for PGDG)
+pig repo set -m                  # explicitly select the bundled China definitions
 ```
 
 

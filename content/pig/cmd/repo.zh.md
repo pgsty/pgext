@@ -116,10 +116,12 @@ Pigsty 中可用仓库的完整定义位于 [`cli/repo/assets/repo.yml`](https:/
 
 您可以创建 `~/.pig/repo.yml` 文件，显式修改并覆盖 pig 的仓库定义。在编辑仓库定义文件时，您可以在 `baseurl` 处添加额外的区域镜像，例如指定中国，欧洲地区的镜像仓库 URL。当 pig 使用 `--region` 参数指定特定的区域时，pig 会优先查找对应区域的仓库 URL，如果不存在，则会 Fallback 到 `default` 的仓库 URL。
 
-当 `repo add` 或 `repo set` 指定 `--mirror` 时，pig 会选择中国区域，并将
-识别到的 PGDG YUM/DNF 与 APT 地址统一优先使用腾讯云 PostgreSQL 镜像。
-其他仓库模块继续使用各自正常的中国区域 URL。就区域选择而言，它等价于
-`--region=china`；PGDG YUM 定义保留 Pigsty 镜像作为兼容回退。
+从 v1.7.0 起，`repo add` 或 `repo set` 指定 `--mirror` 时会明确选择内置的
+`china` 定义。PGDG 优先使用腾讯云，并保留定义中声明的 Pigsty 回退；其他模块
+使用各自维护中的中国区域 URL。pig 不再通过单独的运行时代理路由改写 PGDG URL。
+
+普通 EL 仓库保留 DNF 原生模块过滤。只有显式声明 `module_hotfixes=1` 的定义
+（主要是 Pigsty 与 PGDG 仓库）会覆盖模块流；渲染 EL7 YUM 配置时会移除该键。
 
 
 ## repo list
@@ -164,7 +166,7 @@ pig repo add pigsty -u           # 添加并更新缓存
 pig repo add all -r              # 添加前移除现有仓库
 pig repo add all -ru             # 移除、添加并更新（完全重置）
 pig repo add pgdg --region=china # 使用中国镜像
-pig repo add pgdg -m             # PGDG 优先使用腾讯云镜像
+pig repo add pgdg -m             # 选择中国定义；PGDG 优先使用腾讯云
 ```
 
 **选项：**
@@ -172,7 +174,7 @@ pig repo add pgdg -m             # PGDG 优先使用腾讯云镜像
 - `-r|--remove`：添加新仓库前移除现有仓库
 - `-u|--update`：添加仓库后运行包缓存更新
 - `--region <region>`：使用区域镜像仓库（`default` / `china` / `europe`）
-- `-m|--mirror`：优先使用中国镜像（PGDG 首选腾讯云）
+- `-m|--mirror`：明确选择内置的 `china` 仓库定义
 
 |   平台   | 模块位置                                    |
 |:------:|:----------------------------------------|
@@ -189,7 +191,7 @@ pig repo add pgdg -m             # PGDG 优先使用腾讯云镜像
 pig repo set                     # 替换为默认仓库
 pig repo set pgdg pigsty         # 替换为特定仓库并更新
 pig repo set all --region=china  # 使用中国镜像
-pig repo set -m                  # 优先使用中国镜像（PGDG 首选腾讯云）
+pig repo set -m                  # 明确选择内置的中国区域定义
 ```
 
 

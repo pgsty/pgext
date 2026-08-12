@@ -64,7 +64,7 @@ PIG 是一个由 Go 编写的二进制程序，默认安装路径为 `/usr/bin/p
 
 ```bash
 $ pig version
-pig version 1.6.2 linux/amd64
+pig version 1.7.0 linux/amd64
 ```
 
 使用 `pig status` 命令，会打印当前环境的状态，操作系统代码，PG 的安装情况，仓库的可访问性与延迟。
@@ -72,7 +72,7 @@ pig version 1.6.2 linux/amd64
 ```bash
 $ pig status
 # [Configuration] ================================
-Pig Version      : 1.6.2
+Pig Version      : 1.7.0
 Pig Config       : /home/vagrant/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -122,7 +122,7 @@ pig pitr -d -y                # 跳过确认（自动化场景）
 
 ## 列出扩展
 
-Pig v1.6.2 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
+Pig v1.7.0 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
 
 ```bash
 $ pig ext reload

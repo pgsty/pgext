@@ -47,23 +47,23 @@ Mirror publication can lag the GitHub release. For the exact current release, us
 
 ## Download Release Artifacts
 
-Current `v1.6.2` installation packages (`RPM`/`DEB`/tarball) are available from:
+Current `v1.7.0` installation packages (`RPM`/`DEB`/tarball) are available from:
 
-- [GitHub Release](https://github.com/pgsty/pig/releases/tag/v1.6.2)
-- [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.6.2/checksums.txt)
+- [GitHub Release](https://github.com/pgsty/pig/releases/tag/v1.7.0)
+- [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.7.0/checksums.txt)
 
-Use `https://github.com/pgsty/pig/releases/download/v1.6.2/<filename>` for direct downloads.
+Use `https://github.com/pgsty/pig/releases/download/v1.7.0/<filename>` for direct downloads.
 
 ```text
-v1.6.2
-├── pig_1.6.2-1_amd64.deb
-├── pig_1.6.2-1_arm64.deb
-├── pig-1.6.2-1.aarch64.rpm
-├── pig-1.6.2-1.x86_64.rpm
-├── pig-v1.6.2.linux-amd64.tar.gz
-├── pig-v1.6.2.linux-arm64.tar.gz
-├── pig-v1.6.2.darwin-amd64.tar.gz
-└── pig-v1.6.2.darwin-arm64.tar.gz
+v1.7.0
+├── pig_1.7.0-1_amd64.deb
+├── pig_1.7.0-1_arm64.deb
+├── pig-1.7.0-1.aarch64.rpm
+├── pig-1.7.0-1.x86_64.rpm
+├── pig-v1.7.0.linux-amd64.tar.gz
+├── pig-v1.7.0.linux-arm64.tar.gz
+├── pig-v1.7.0.darwin-amd64.tar.gz
+└── pig-v1.7.0.darwin-arm64.tar.gz
 ```
 
 After extracting, place the binary file in your system PATH.

@@ -1,5 +1,5 @@
 ---
-title: "PIG 1.6 文档"
+title: "PIG 1.7 文档"
 description: PostgreSQL 扩展生态包管理器与管理命令行工具
 icon: PiggyBank
 full: true
