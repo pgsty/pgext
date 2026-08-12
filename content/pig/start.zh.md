@@ -19,7 +19,7 @@ pig install -v 18 -y pg18 pg_duckdb vector     # 安装 PG 18 内核，pg_duckdb
 
 ## 安装
 
-您可以使用以下命令 [**一键安装**](/zh/pig/install/) `pig`：
+您可以使用以下命令 [**一键安装**](https://pig.pgsty.com/zh/install/) `pig`：
 
 **中国大陆**：
 
@@ -35,25 +35,24 @@ curl -fsSL https://repo.pigsty.io/pig | bash
 
 
 
-PIG 二进制包大约 5 MB，在 Linux 上会自动使用 `rpm` 或 `dpkg` 安装最新可用版本：
+PIG 二进制包大约 5 MB，在 Linux 上会自动使用 `rpm` 或 `dpkg` 安装所选镜像中的最新可用版本。下方示例输出中的 `X.Y.Z` 代表该镜像版本：
 
 ```bash
 $ curl -fsSL https://repo.pigsty.cc/pig | bash
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = deb
-[INFO] pkg_url = https://repo.pigsty.cc/pkg/pig/v1.6.0/pig_1.6.0-1_amd64.deb
-[INFO] download = /tmp/pig_1.6.0-1_amd64.deb
-[INFO] downloading pig v1.6.0
-curl -fSL https://repo.pigsty.cc/pkg/pig/v1.6.0/pig_1.6.0-1_amd64.deb -o /tmp/pig_1.6.0-1_amd64.deb
+[INFO] pkg_url = https://repo.pigsty.cc/pkg/pig/vX.Y.Z/pig_X.Y.Z-1_amd64.deb
+[INFO] download = /tmp/pig_X.Y.Z-1_amd64.deb
+[INFO] downloading pig vX.Y.Z
+curl -fSL https://repo.pigsty.cc/pkg/pig/vX.Y.Z/pig_X.Y.Z-1_amd64.deb -o /tmp/pig_X.Y.Z-1_amd64.deb
 ######################################################################## 100.0%
-[INFO] md5sum = b7d18865090df8c03523c79ec2744e91
-[INFO] installing: dpkg -i /tmp/pig_1.6.0-1_amd64.deb
+[INFO] installing: dpkg -i /tmp/pig_X.Y.Z-1_amd64.deb
 (Reading database ... 166001 files and directories currently installed.)
-Preparing to unpack /tmp/pig_1.6.0-1_amd64.deb ...
-Unpacking pig (1.6.0-1) ...
-Setting up pig (1.6.0-1) ...
-[INFO] pig v1.6.0 installed successfully
+Preparing to unpack /tmp/pig_X.Y.Z-1_amd64.deb ...
+Unpacking pig (X.Y.Z-1) ...
+Setting up pig (X.Y.Z-1) ...
+[INFO] pig vX.Y.Z installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -65,7 +64,7 @@ PIG 是一个由 Go 编写的二进制程序，默认安装路径为 `/usr/bin/p
 
 ```bash
 $ pig version
-pig version 1.6.0 linux/amd64
+pig version 1.6.2 linux/amd64
 ```
 
 使用 `pig status` 命令，会打印当前环境的状态，操作系统代码，PG 的安装情况，仓库的可访问性与延迟。
@@ -73,7 +72,7 @@ pig version 1.6.0 linux/amd64
 ```bash
 $ pig status
 # [Configuration] ================================
-Pig Version      : 1.6.0
+Pig Version      : 1.6.2
 Pig Config       : /home/vagrant/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -108,7 +107,7 @@ pigsty.io  ping ok: 1270 ms
 Internet Access   :  true
 Pigsty Repo       :  pigsty.io
 Inferred Region   :  china
-Latest Pigsty Ver :  v4.4.0
+Latest Pigsty Ver :  4.5.0
 ```
 
 ## 自动化建议
@@ -123,15 +122,15 @@ pig pitr -d -y                # 跳过确认（自动化场景）
 
 ## 列出扩展
 
-Pig v1.6.0 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
+Pig v1.6.2 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
 
 ```bash
 $ pig ext reload
 $ pig ext list
-✓ Found 572 extensions
+✓ Found 575 extensions
 Name                Status     Version     Cate   Flags   License         Repo     PGVer  Package                               Description
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-timescaledb         available  2.28.3      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
+timescaledb         available  2.29.1      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
 timescaledb_toolkit available  1.23.0      TIME   -ds---  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-toolkit     Library of analytical hyperfunctions, time-series pipelining, an
 timeseries          available  0.2.1       TIME   -d----  PostgreSQL      PIGSTY   14-18  postgresql-18-pg-timeseries           Convenience API for time series stack
 periods             available  1.2.3       TIME   -ds---  PostgreSQL      PIGSTY   14-18  postgresql-18-periods                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
@@ -140,11 +139,11 @@ pg_bulkload         available  3.1.23      ETL    bds---  BSD 3-Clause    PIGSTY
 test_decoding       available  -           ETL    --s--x  PostgreSQL      CONTRIB  14-18  postgresql-18                         SQL-based test/example module for WAL logical decoding
 pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
 
-(572 Rows)
+(575 Rows)
 ```
 
 所有的扩展元数据都在一份名为 [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv) 的数据文件中定义，
-这份文件会随着 pig 版本发布不断更新，您可以直接使用 [`pig ext reload`](/zh/pig/cmd/ext/#ext-reload) 命令更新这份数据文件。
+这份文件会随着 pig 版本发布不断更新，您可以直接使用 [`pig ext reload`](https://pig.pgsty.com/zh/ext/#ext-reload) 命令更新这份数据文件。
 更新后的文件会默认放置于 `~/.pig/extension.csv` 中，您可以查阅与更改；在线最新版目录可在 [**pigsty.io/ext/data/extension.csv**](https://pigsty.io/ext/data/extension.csv) 获取。
 
 
@@ -152,9 +151,9 @@ pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRI
 
 ## 添加仓库
 
-要想安装扩展，首先需要添加上游仓库。[`pig repo`](/zh/pig/cmd/repo/) 可用于管理 Linux APT/YUM/DNF 软件仓库配置。
+要想安装扩展，首先需要添加上游仓库。[`pig repo`](https://pig.pgsty.com/zh/repo/) 可用于管理 Linux APT/YUM/DNF 软件仓库配置。
 
-您可以使用简单粗暴直接的版本 [`pig repo set`](/zh/pig/cmd/repo/#repo-set) 覆盖式写入现有仓库配置，该命令确保系统中只存在必须的仓库配置：
+您可以使用简单粗暴直接的版本 [`pig repo set`](https://pig.pgsty.com/zh/repo/#repo-set) 覆盖式写入现有仓库配置，该命令确保系统中只存在必须的仓库配置：
 
 ```bash
 pig repo set                # 一次性配置好所有仓库，包括 Linux 系统仓库，PGDG，PIGSTY (PGSQL+INFRA) 仓库
@@ -163,7 +162,7 @@ pig repo set                # 一次性配置好所有仓库，包括 Linux 系�
 > **警告**：`pig repo set` 会备份并清理现有的仓库配置，然后添加所需的仓库，实现 Overwrite 语义，请务必注意！
 
 
-或者选择使用温和的 [`pig repo add`](/zh/pig/cmd/repo/#repo-add) 添加所需的仓库：
+或者选择使用温和的 [`pig repo add`](https://pig.pgsty.com/zh/repo/#repo-add) 添加所需的仓库：
 
 ```bash
 pig repo add pgdg pigsty     # 添加 PGDG 官方仓库 和 PIGSTY 补充仓库
@@ -175,7 +174,7 @@ PIG 会检测您的网络环境，并选择使用 Cloudflare 全球 CDN，或者
 
 ```bash
 pig repo set      --region=china              # 使用中国区域镜像仓库加速下载
-pig repo set      --mirror                    # 对 PG 仓库使用 Pigsty 镜像/代理路径
+pig repo set      --mirror                    # 使用中国镜像（PGDG 首选腾讯云）
 pig repo add pgdg --region=default --update   # 强制指定使用 PGDG 上游仓库
 ```
 
@@ -186,7 +185,7 @@ PIG 本身不支持离线安装，您可以自行下载 RPM/DEB 包，拷贝到�
 
 ## 安装 PG
 
-添加仓库后，您可以使用 [`pig ext add`](/zh/pig/cmd/ext/#ext-add) 子命令安装扩展（以及相关软件包）
+添加仓库后，您可以使用 [`pig ext add`](https://pig.pgsty.com/zh/ext/#ext-add) 子命令安装扩展（以及相关软件包）
 
 ```bash
 pig ext add -v 18 -y pgsql timescaledb postgis vector pg_duckdb pg_mooncake # 安装 PG 18 内核与扩展，自动确认
@@ -317,7 +316,7 @@ pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor v
 
 ## 显示扩展
 
-[`pig ext status`](/zh/pig/cmd/ext/#ext-status) 命令可以用于显示当前安装的扩展。
+[`pig ext status`](https://pig.pgsty.com/zh/ext/#ext-status) 命令可以用于显示当前安装的扩展。
 
 ```bash
 $ pig ext status
@@ -342,7 +341,7 @@ wal2json   2.6      ETL    --s--x  BSD 3-Clause  PGDG  postgresql-18-wal2json  C
 
 ## 扫描扩展
 
-[`pig ext scan`](/zh/pig/cmd/ext/#ext-scan) 提供更底层的扩展扫描功能，将扫描指定 PostgreSQL 目录下的共享库，从而发现安装了哪些扩展：
+[`pig ext scan`](https://pig.pgsty.com/zh/ext/#ext-scan) 提供更底层的扩展扫描功能，将扫描指定 PostgreSQL 目录下的共享库，从而发现安装了哪些扩展：
 
 ```bash
 $ pig ext scan
@@ -385,7 +384,7 @@ docker build -t d13:latest .
 docker run -it d13:latest /bin/bash
 
 pig repo set --region=china    # 添加中国区域的仓库
-pig repo set --mirror          # 对 PG 仓库使用 Pigsty 镜像/代理路径
+pig repo set --mirror          # 使用中国镜像（PGDG 首选腾讯云）
 pig install -y pg18            # 安装 PGDG 18 内核包
 pig install -y postgis timescaledb pgvector pg_duckdb
 ```

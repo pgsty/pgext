@@ -137,7 +137,7 @@ Initialize package repositories required for building extensions.
 
 ```bash
 pig build repo                   # equivalent to: pig repo set -ru
-pig build repo -m                # use mirror/proxy routes for PostgreSQL repos
+pig build repo -m                # use China mirrors (Tencent Cloud first for PGDG)
 pig build repo -b                # include PostgreSQL beta repository
 ```
 
@@ -145,7 +145,7 @@ pig build repo -b                # include PostgreSQL beta repository
 
 **Options:**
 
-- `-m|--mirror`: use Pigsty mirror/proxy routes for PostgreSQL repositories.
+- `-m|--mirror`: prefer China mirrors (Tencent Cloud first for PGDG).
 - `-b|--beta`: include the PostgreSQL beta repository module, currently for PG19 beta builds.
 
 

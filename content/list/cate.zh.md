@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-572 个已打包 PostgreSQL 扩展（归属 467 个包族）划分为 16 个分类。
+575 个已打包 PostgreSQL 扩展（归属 470 个包族）划分为 16 个分类。
 
 
 
@@ -52,7 +52,7 @@ weight: 100
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | 将激光雷达点云与PostGIS几何类型相集成 |
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.2.3 | H3六边形层级索引支持 |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | 4.2.3 | H3与PostGIS集成的扩展插件 |
-| 1540 | {{< alias "q3c" >}} | 2.0.4 | Q3C天空索引插件 |
+| 1540 | {{< alias "q3c" >}} | 2.0.5 | Q3C天空索引插件 |
 | 1550 | {{< alias "ogr_fdw" >}} | 1.1.9 | GIS 数据外部数据源包装器 |
 | 1560 | {{< alias "geoip" >}} | 0.3.0 | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Google快速Polyline编码解码扩展 |
@@ -101,7 +101,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.25.1 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
+| 2100 | {{< alias "pg_search" >}} | 0.25.2 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -109,7 +109,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | 在数据库内生成BM25稀疏向量 |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | 用于全文检索的分词器 |
-| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.4.3 | 使用IAM的高性能文本模式匹配 |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 3.0.0 | 使用IAM的高性能文本模式匹配 |
 | 2180 | {{< alias "pg_textsearch" >}} | 1.2.0 | 带有BM25排序的全文搜索扩展 |
 | 2190 | {{< alias "pg_pinyin" >}} | 0.0.5 | PostgreSQL 拼音转写与检索辅助扩展 |
 | 2200 | {{< alias "pg_kazsearch" >}} | 2.3.0 | PostgreSQL 哈萨克语全文检索扩展 |
@@ -142,7 +142,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | PostgreSQL列式存储表 |
 | 2450 | {{< alias "storage_engine" >}} | 2.4.0 | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
-| 2460 | {{< alias "pg_clickhouse" >}} | 0.3.2 | 从PostgreSQL中查询ClickHouse的接口 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.10.0 | 从PostgreSQL中查询ClickHouse的接口 |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.4.3 | DuckDB 外部数据源包装器 |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2490 | {{< alias "pg_ducklake" >}} | 1.0.0 | 基于 DuckDB 与 Parquet 的 DuckLake 湖仓一体扩展 |
@@ -197,6 +197,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2860 | {{< alias "pg_trickle" >}} | 0.81.0 | 为 PostgreSQL 18 提供流式表与差分视图维护 |
 | 2870 | {{< alias "pg_durable" >}} | 0.2.3 | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
+| 2890 | {{< alias "pg_local_cache" >}} | 1.3.0 | 为普通 PostgreSQL 主键读取提供事务感知的共享内存缓存 |
 | 2900 | {{< alias "provsql" >}} | 1.12.0 | PostgreSQL 半环溯源、概率与不确定性管理扩展 |
 | 2910 | {{< alias "orioledb" >}} | 1.8 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -398,7 +399,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4500 | {{< alias "pg_idkit" >}} | 0.4.0 | 生成各式各样的唯一标识符：UUIDv6, ULID, KSUID |
 | 4510 | {{< alias "pgx_ulid" >}} | 0.2.3 | ULID数据类型与函数 |
 | 4520 | {{< alias "pg_uuidv7" >}} | 1.7.0 | UUIDv7 支持 |
-| 4530 | {{< alias "pg_uuid_v8" >}} | 1.0.0 | 带隐藏时间戳的 PostgreSQL UUID v8 生成器 |
+| 4530 | {{< alias "pg_uuid_v8" >}} | 1.1.0 | 带隐藏时间戳的 PostgreSQL UUID v8 生成器 |
 | 4540 | {{< alias "permuteseq" >}} | 1.2.2 | 伪随机数ID置换生成器 |
 | 4550 | {{< alias "pg_hashids" >}} | 1.3 | 加盐将整型ID转为短字符串ID |
 | 4560 | {{< alias "pg_slug_gen" >}} | 1.0.0 | 生成带时间戳的加密安全短标识 |
@@ -519,6 +520,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | 2.29.2 | 基于 pg_cron 的服务端 PostgreSQL 性能飞行记录器 |
 | 6061 | {{< alias "pgfr_analyze" "pg_flight_recorder" >}} | 2.29.2 | pgfr_record 采集数据的报告与性能分析函数 |
 | 6070 | {{< alias "pgmonitor" >}} | 2.2.0 | 面向外部采集器的指标视图与后台刷新工作进程 |
+| 6080 | {{< alias "pg_statviz" >}} | 1.1 | 采集 PostgreSQL 统计快照，用于时序分析与可视化 |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.8 | 打印所有当前正在运行查询的执行计划 |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.2 | 内核统计信息收集 |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.2 | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
@@ -591,6 +593,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7410 | {{< alias "sslutils" >}} | 1.4 | 使用SQL管理SSL证书 |
 | 7420 | {{< alias "noset" "pg_noset" >}} | 0.3.0 | 阻止非超级用户使用SET/RESET设置变量 |
 | 7430 | {{< alias "block_copy_command" >}} | 0.1.5 | 通过可配置的 ProcessUtility hook 阻止 COPY 命令 |
+| 7440 | {{< alias "pg_policy" >}} | 0.1.0 | 面向 AI 智能体的 PostgreSQL 策略语言，提供护栏、软性引导与会话级控制 |
 | 7450 | {{< alias "pg_kpart" >}} | 1.0 | 拒绝未使用分区键的全分区扫描查询 |
 | 7500 | {{< alias "pg_tde" >}} | 2.2.1 | Percona 透明加密存储引擎 |
 | 7510 | {{< alias "pg_vault_tde" >}} | 1.7.0 | 通过自定义表与索引访问方法为 PostgreSQL 提供透明数据加密 |

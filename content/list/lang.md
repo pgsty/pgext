@@ -14,8 +14,8 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 417 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 70 | Pure SQL extensions and functions |
+| {{< language "C" >}} | 418 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 72 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 57 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="417 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="418 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -104,6 +104,7 @@ The traditional PostgreSQL extension language
 | 2840 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
 | 2880 | {{< alias "pg_disorder" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
+| 2890 | {{< alias "pg_local_cache" >}} | Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
 | 2940 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Basic session management |
@@ -451,7 +452,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="70 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="72 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -511,6 +512,7 @@ Pure SQL extensions and functions
 | 5870 | {{< alias "pgelog" >}} | Extended logging via pseudo-autonomous transactions |
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | Server-side PostgreSQL performance flight recorder |
 | 6061 | {{< alias "pgfr_analyze" "pg_flight_recorder" >}} | Reporting and analysis functions for pgfr_record |
+| 6080 | {{< alias "pg_statviz" >}} | Capture PostgreSQL statistics snapshots for time-series analysis and visualization |
 | 6260 | {{< alias "pg_track_settings" >}} | Track settings changes |
 | 6430 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
 | 6500 | {{< alias "pg_sqlog" >}} | Provide SQL interface to logs |
@@ -518,6 +520,7 @@ Pure SQL extensions and functions
 | 7130 | {{< alias "pg_auditor" >}} | Audit data changes and provide flashback ability |
 | 7160 | {{< alias "pg_jobmon" >}} | Extension for logging and monitoring functions in PostgreSQL |
 | 7190 | {{< alias "pgmemento" >}} | Transaction-based audit trail with schema versioning |
+| 7440 | {{< alias "pg_policy" >}} | Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
 | 9090 | {{< alias "pg_projection" >}} | MongoDB-like read projections for JSONB in PostgreSQL |

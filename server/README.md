@@ -68,7 +68,7 @@ Hugo 时代的旧页面由 `server.go` 中集中的 `legacyRedirects` 表做 302
 `/zh(/...)`与 `/en(/...)` 去语言前缀、`/e` `/list/ext` → `/`、`/list/pkg|cate` → `/list/package|category`、
 `/os` → `/list/os`、`/os/matrix` → `/matrix`、`/categories[/{code}]` `/tags[/{tag}]` 分别映射到
 `/list/category`、`/cate/{code}`、`/list/tag`、`/?tag={tag}`、`/repo` → `/list/repo`、
-`/repo/pgsql` → `/repo/PIGSTY`、`/pig/*` → Pigsty 文档；新动态 `/repo/{value}`、`/os/{target}` 不受影响。
+`/repo/pgsql` → `/repo/PIGSTY`、`/pig/*` 与 `/release/pig` → `pig.pgsty.com` 对应页面，中文旧路由则进入 `pig.pgsty.com/zh`；新动态 `/repo/{value}`、`/os/{target}` 不受影响。
 
 组合示例：
 

@@ -26,7 +26,7 @@ You can check the [Release - RPM Changelog](/release/rpm) / [Release - DEB Chang
 
 ### PIG
 
-You can install [pig](/pig) - the cli tool, and add pgdg / pigsty repo with it (recommended):
+You can install [pig](https://pig.pgsty.com) - the cli tool, and add pgdg / pigsty repo with it (recommended):
 
 ```bash tab="pig"
 pig repo add pigsty                         # add pigsty-pgsql repo
@@ -93,4 +93,4 @@ Building specs of this repo is open-sourced on GitHub:
 
 If the platform is not supported, you can also build the packages from source code by yourself.
 
-The [`pig build`](/pig/cmd/build) provide an easy way to build extension rpm/deb on your own systems. 
+The [`pig build`](https://pig.pgsty.com/build/) provides an easy way to build extension RPM/DEB packages on your own systems.

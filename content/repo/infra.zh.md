@@ -22,7 +22,7 @@ Infra 仓库的更新记录可以参考 [**Release - Infra 变更日志**](/zh/r
 
 ## 快速上手
 
-您可以使用 [`pig`](/zh/pig) CLI 工具添加 `pigsty-infra` 仓库，它会自动从 `apt/yum/dnf` 中选择合适的包管理器。
+您可以使用 [`pig`](https://pig.pgsty.com/zh) CLI 工具添加 `pigsty-infra` 仓库，它会自动从 `apt/yum/dnf` 中选择合适的包管理器。
 
 {{< tabs >}}
 {{< tab name="默认" >}}
@@ -271,7 +271,7 @@ Pig 包管理器、PostgreSQL 工具和其他数据库相关实用程序
 
 |                                          名称                                           |   版本   |    许可证     | 备注                           |
 |:-------------------------------------------------------------------------------------:|:------:|:----------:|:-----------------------------|
-|                          [pig](https://github.com/pgsty/pig)                          | 1.5.1  | Apache-2.0 | PG 包管理器                      |
+|                          [pig](https://pig.pgsty.com/zh)                               | 1.5.1  | Apache-2.0 | PG 包管理器                      |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0  |   BSD-2    | 将 L2 VIP 绑定到 PG 主节点          |
 |                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15 | Apache-2.0 | 实时流式传输、转换和路由 PG 数据           |
 |                   [pgschema](https://github.com/schemagood/pgschema)                  | 1.4.2  | Apache-2.0 | 执行 PG 模式迁移                   |

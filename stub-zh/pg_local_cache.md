@@ -2,15 +2,16 @@
 
 来源：
 
-- [PGXN 上的 pg_local_cache 1.2.0](https://pgxn.org/dist/pg_local_cache/1.2.0/)
-- [pg_local_cache v1.2.0 README](https://github.com/profundium/pg_local_cache/blob/v1.2.0/README.md)
-- [pg_local_cache v1.2.0 控制文件](https://github.com/profundium/pg_local_cache/blob/v1.2.0/pg_local_cache.control)
-- [pg_local_cache 1.2.0 扩展 SQL](https://github.com/profundium/pg_local_cache/blob/v1.2.0/sql/pg_local_cache--1.2.0.sql)
-- [技术参考](https://github.com/profundium/pg_local_cache/blob/v1.2.0/docs/TECHNICAL.md)
-- [现有服务器安装指南](https://github.com/profundium/pg_local_cache/blob/v1.2.0/docs/INSTALL_EXISTING.md)
-- [pg_local_cache v1.2.0 发行版](https://github.com/profundium/pg_local_cache/releases/tag/v1.2.0)
+- [PGXN 上的 pg_local_cache 1.3.0](https://pgxn.org/dist/pg_local_cache/1.3.0/)
+- [pg_local_cache v1.3.0 README](https://github.com/profundium/pg_local_cache/blob/v1.3.0/README.md)
+- [pg_local_cache v1.3.0 控制文件](https://github.com/profundium/pg_local_cache/blob/v1.3.0/pg_local_cache.control)
+- [pg_local_cache 1.3.0 扩展 SQL](https://github.com/profundium/pg_local_cache/blob/v1.3.0/sql/pg_local_cache--1.3.0.sql)
+- [技术参考](https://github.com/profundium/pg_local_cache/blob/v1.3.0/docs/TECHNICAL.md)
+- [现有服务器安装指南](https://github.com/profundium/pg_local_cache/blob/v1.3.0/docs/INSTALL_EXISTING.md)
+- [pg_local_cache v1.3.0 发行版](https://github.com/profundium/pg_local_cache/releases/tag/v1.3.0)
+- [Pigsty 软件包矩阵](https://pgext.cloud/ext/pg_local_cache)
 
-`pg_local_cache` 1.2.0 是一个面向重复主键读取的事务感知 PostgreSQL 进程内缓存。它在共享内存中保存有界的整行条目，可以透明加速符合条件的普通 `SELECT`，同时始终保留原始 PostgreSQL 主键计划作为权威回退路径。它适合单个可写主库上的热点工作集；不是通用查询结果缓存、持久化层，也不是分布式 Redis/Valkey 替代品。
+`pg_local_cache` 1.3.0 是一个面向重复主键读取的事务感知 PostgreSQL 进程内缓存。它在共享内存中保存有界的整行条目，可以透明加速符合条件的普通 `SELECT`，同时始终保留原始 PostgreSQL 主键计划作为权威回退路径。它适合单个可写主库上的热点工作集；不是通用查询结果缓存、持久化层，也不是分布式 Redis/Valkey 替代品。
 
 ### 核心流程
 
@@ -114,9 +115,22 @@ SELECT local_cache.mget(
 
 ### 表与部署要求
 
-版本 1.2.0 的已发布 Linux amd64 构建支持 PostgreSQL 14–18、一个配置数据库和一个可写主库。附加对象必须是没有继承和行级安全策略的永久非分区表，并使用即时、非部分的 B-tree 主键。支持的键列类型包括 `int2`、`int4`、`int8`、`text`、`varchar`、`bpchar` 和 `uuid`；复合主键可包含 1–16 列。临时表、无日志表、视图、分区表、表达式或部分主键、不确定性排序规则，以及非默认主键操作符类都会被拒绝。
+版本 1.3.0 支持 PostgreSQL 14–18、一个配置数据库和一个可写主库。上游自行发布的二进制包和现有服务器安装指南仅覆盖使用 glibc 或 musl 的 Linux amd64；当前 Pigsty 软件包矩阵另行包含经过验证的 x86_64 与 aarch64 构建。应把二者视为不同证据层，并在安装前核对确切的软件包平台。附加对象必须是没有继承和行级安全策略的永久非分区表，并使用即时、非部分的 B-tree 主键。支持的键列类型包括 `int2`、`int4`、`int8`、`text`、`varchar`、`bpchar` 和 `uuid`；复合主键可包含 1–16 列。临时表、无日志表、视图、分区表、表达式或部分主键、不确定性排序规则，以及非默认主键操作符类都会被拒绝。
 
 每个实例最多发布 128 个映射。删除表会遗忘其映射；用相同名称重建表不会自动重新附加。备库不提供缓存服务，也不支持多主协调、TTL、集群、Pub/Sub，或通用范围、连接、聚合缓存。
+
+### 版本 1.3.0 升级
+
+1.3.0 版本改变了共享库、打包或文档；SQL 对象与 1.2.1 相同。由于动态库在 postmaster 启动时加载，应安装匹配的文件、执行受控重启，然后记录扩展版本：
+
+```sql
+ALTER EXTENSION pg_local_cache UPDATE TO '1.3.0';
+SELECT extversion
+FROM pg_extension
+WHERE extname = 'pg_local_cache';
+```
+
+重启后，应检查 `local_cache.health()`、`local_cache.metrics()`、已附加映射，以及一条 `EXPLAIN (ANALYZE, COSTS OFF)` 快速路径查询，再恢复流量。不能只根据扩展版本推断运行时已经就绪。
 
 ### 可选 RESP2 安全边界
 

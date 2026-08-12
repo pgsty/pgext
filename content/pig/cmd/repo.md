@@ -61,6 +61,7 @@ pig repo set                          # = pig repo add all --remove --update
 pig repo add pgsql                    # add PGDG and Pigsty PGSQL repositories
 pig repo add pigsty --region=china    # add Pigsty repositories with China region
 pig repo add pgdg   --region=europe   # add PGDG repositories with Europe region
+pig repo add pgdg   --mirror          # use Tencent Cloud first for PGDG
 pig repo add infra  --region=default  # add INFRA repositories with default region
 
 # If the commands above did not use -u|--update, run this as an extra step
@@ -114,7 +115,11 @@ The full repository definition bundled with Pigsty is in [`cli/repo/assets/repo.
 
 You can create `~/.pig/repo.yml` to explicitly modify and override pig's repository definitions. When editing repository definitions, you can add extra regional mirror URLs under `baseurl`, such as China or Europe mirrors. When `--region` is specified, pig first looks for the matching regional URL and falls back to the `default` URL if the region is unavailable.
 
-When `--mirror` is specified on `repo add` or `repo set`, pig prefers mirror/proxy routes for PostgreSQL repositories. PGDG repository URLs can be rewritten through the Pigsty proxy mirror, while other repository modules continue to use their normal regional URL selection.
+When `--mirror` is specified on `repo add` or `repo set`, pig selects the China
+region and routes recognized PGDG YUM/DNF and APT URLs directly to Tencent
+Cloud's PostgreSQL mirror. Other repository modules use their normal China
+regional URLs. This is equivalent to `--region=china` for selection purposes;
+PGDG YUM definitions retain the Pigsty mirror as a compatibility fallback.
 
 
 ## repo list
@@ -159,7 +164,7 @@ pig repo add pigsty -u           # add and update cache
 pig repo add all -r              # remove existing repos before adding
 pig repo add all -ru             # remove, add, and update (full reset)
 pig repo add pgdg --region=china # use China mirror
-pig repo add pgdg -m             # use Pigsty proxy mirror for PGDG
+pig repo add pgdg -m             # use Tencent Cloud first for PGDG
 ```
 
 **Options:**
@@ -167,7 +172,7 @@ pig repo add pgdg -m             # use Pigsty proxy mirror for PGDG
 - `-r|--remove`: remove existing repositories before adding new ones
 - `-u|--update`: run package cache update after adding repositories
 - `--region <region>`: use regional mirror repositories (`default` / `china` / `europe`)
-- `-m|--mirror`: use Pigsty mirror/proxy routes for PostgreSQL repositories
+- `-m|--mirror`: prefer China mirrors (Tencent Cloud first for PGDG)
 
 | Platform | Module Location |
 |:---:|:---|
@@ -184,7 +189,7 @@ Equivalent to `repo add --remove --update`. It clears existing repositories, set
 pig repo set                     # replace with default repositories
 pig repo set pgdg pigsty         # replace with selected repositories and update
 pig repo set all --region=china  # use China mirror
-pig repo set -m                  # use Pigsty mirror/proxy routes for PG repos
+pig repo set -m                  # prefer China mirrors (Tencent Cloud first for PGDG)
 ```
 
 
@@ -225,15 +230,25 @@ pig repo update                  # update package cache
 Create a local package repository for offline installation.
 
 ```bash
-pig repo create                  # create at default location (/www/pigsty)
+pig repo create                  # Linux: /www/pigsty; macOS: current directory
 pig repo create /srv/repo        # create at custom location
 ```
 
-| Platform | Dependency     |
-|:--------:|:---------------|
-|    EL    | `createrepo_c` |
-|  Debian  | `dpkg-dev`     |
-{.full-width}
+The current implementation prefers [`sow`](https://sow.pgsty.com/docs/reference/cli/create/) when it is available in `PATH`. On Linux, the SOW backend runs the equivalent of the following with `sudo` for every target directory:
+
+```bash
+sow create --pigsty --timeout 10m -- /absolute/repository/path
+```
+
+On macOS, SOW is required, runs without `sudo`, and the default target is the current directory. On Linux, if `sow` is not installed, EL falls back to `createrepo_c` and Debian/Ubuntu falls back to `dpkg-scanpackages` from `dpkg-dev`. If neither the preferred backend nor the platform fallback is available, `pig repo create` fails. A SOW execution error is returned directly rather than retried through the legacy backend. The `10m` timeout limits the wait for SOW's directory lock; it does not cap repository indexing time.
+
+SOW's `--pigsty` transaction:
+
+1. Scans only top-level regular `.rpm` and `.deb` files—no recursion and no symlink following.
+2. Removes parsed 32-bit x86 packages (RPM `i386/i486/i586/i686`, DEB `i386`) and packages whose binary name is exactly `patroni` with upstream version exactly `3.0.4`.
+3. Builds the applicable RPM/DEB metadata atomically and writes `repo_complete` last. The marker contains SHA-256 hashes for remaining top-level packages, sorted by basename.
+
+Non-package files and directories are left untouched; malformed package candidates or conflicting package coordinates make the SOW transaction fail closed. The legacy fallback has different cleanup and metadata semantics and writes an MD5 package list to `repo_complete`. After either backend exits, PIG requires `repo_complete` to exist as a regular file, but it does not validate the marker contents or hashes. Consumers that use the marker as a delivery gate should perform that verification themselves.
 
 
 ## repo cache

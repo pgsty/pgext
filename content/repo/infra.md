@@ -22,7 +22,7 @@ You can check the [**Release - Infra Changelog**](/release/infra) for the latest
 
 ## Quick Start
 
-You can add the `pigsty-infra` repo with the [`pig`](/pig) CLI tool, it will automatically choose from `apt/yum/dnf`.
+You can add the `pigsty-infra` repo with the [`pig`](https://pig.pgsty.com) CLI tool, it will automatically choose from `apt/yum/dnf`.
 
 {{< tabs >}}
 {{< tab name="Default" >}}
@@ -271,7 +271,7 @@ Pig the package manager, PostgreSQL tools, and other database related utils
 
 |                                         Name                                          | Version |  License   | Comment                                            |
 |:-------------------------------------------------------------------------------------:|:-------:|:----------:|:---------------------------------------------------|
-|                          [pig](https://github.com/pgsty/pig)                          |  1.5.1  | Apache-2.0 | The pg package manager                             |
+|                          [pig](https://pig.pgsty.com)                                 |  1.5.1  | Apache-2.0 | The pg package manager                             |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           |  4.0.0  |   BSD-2    | bind L2 vip to pg primary                          |
 |                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  | Apache-2.0 | Stream, transform, and route PG data in real-time. |
 |                 [pgschema](https://github.com/schemagood/pgschema)                    |  1.4.2  | Apache-2.0 | perform pg schema migration                        |

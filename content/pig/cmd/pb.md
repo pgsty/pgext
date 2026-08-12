@@ -7,7 +7,7 @@ weight: 670
 
 The `pig pgbackrest` command (alias `pig pb`) manages pgBackRest backups and provides low-level restore primitives.
 It wraps common `pgbackrest` operations for a simplified backup management experience. All commands run as the database superuser (default `postgres`).
-For orchestrated point-in-time recovery on managed clusters, prefer [`pig pitr`](/pig/cmd/pitr/).
+For orchestrated point-in-time recovery on managed clusters, prefer [`pig pitr`](https://pig.pgsty.com/pitr/).
 
 ```bash
 pig pb - Manage pgBackRest backup and point-in-time recovery.
@@ -342,7 +342,7 @@ Supports multiple time formats and auto-completes timezones (including non-integ
 4. Execute pgbackrest restore
 5. Provide post-restore guidance
 
-**Important:** Stop PostgreSQL before restore. If the PGDATA is managed by Patroni, use [`pig pitr`](/pig/cmd/pitr/) to orchestrate Patroni, PostgreSQL, and pgBackRest:
+**Important:** Stop PostgreSQL before restore. If the PGDATA is managed by Patroni, use [`pig pitr`](https://pig.pgsty.com/pitr/) to orchestrate Patroni, PostgreSQL, and pgBackRest:
 
 ```bash
 pig pg stop                          # Stop PostgreSQL

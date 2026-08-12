@@ -14,20 +14,20 @@ weight: 100
 
 PIG 包管理器是一个专门用于安装、管理、构建 PostgreSQL 及其扩展的命令行工具，使用 Go 开发，开箱即用，简单易用，小巧玲珑（约 5MB）。
 PIG 包管理器并非重新发明的土鳖轮子，而是 **依托** （PiggyBack）现有 Linux 发行版包管理器 （`apt`/`dnf`）的一个高级抽象层。
-它屏蔽了不同操作系统，不同芯片架构，以及不同 PG 大版本的管理差异，让您用简单的几行命令，就可以完成 PG 内核与 572 个已打包扩展的安装与管理。
+它屏蔽了不同操作系统，不同芯片架构，以及不同 PG 大版本的管理差异，让您用简单的几行命令，就可以完成 PG 内核与 575 个已打包扩展的安装与管理。
 
 PIG 的命令设计同样适合自动化脚本：提供统一的参数风格、清晰的错误提示，以及如 `--plan` 等预览开关与确认步骤。
 
 请注意：对于扩展安装来说，**pig 并非必须组件**，您依然可以使用 apt / dnf 等包管理器直接访问 [**Pigsty PGSQL**](/zh/repo/pgsql/) 仓库。
 
-- [**简介**](/zh/pig/intro/)：为什么需要专用的 PG 包管理器？
-- [**上手**](/zh/pig/start/)：快速上手与样例
-- [**安装**](/zh/pig/install/)：下载、安装、更新 pig
+- [**简介**](https://pig.pgsty.com/zh/intro/)：为什么需要专用的 PG 包管理器？
+- [**上手**](https://pig.pgsty.com/zh/start/)：快速上手与样例
+- [**安装**](https://pig.pgsty.com/zh/install/)：下载、安装、更新 pig
 
 
 ## 快速上手
 
-使用以下命令即可在您的系统上 [**安装**](/zh/pig/install/) PIG 包管理器：
+使用以下命令即可在您的系统上 [**安装**](https://pig.pgsty.com/zh/install/) PIG 包管理器：
 
 **默认安装**（Cloudflare CDN）：
 
@@ -41,7 +41,7 @@ curl -fsSL https://repo.pigsty.io/pig | bash
 curl -fsSL https://repo.pigsty.cc/pig | bash
 ```
 
-安装完成后，几行命令即可 [**快速开始**](/zh/pig/start/)。例如，若需安装 PG 18 与相应的 [**`pg_duckdb`**](/e/pg_duckdb/) 扩展：
+安装完成后，几行命令即可 [**快速开始**](https://pig.pgsty.com/zh/start/)。例如，若需安装 PG 18 与相应的 [**`pg_duckdb`**](/e/pg_duckdb/) 扩展：
 
 ```bash
 $ pig repo set                        # 一次性设置好 Linux, Pigsty + PGDG 仓库（覆盖式！）
@@ -58,20 +58,20 @@ $ pig install -y vector               # 您可以使用扩展名称（vector）�
 
 **扩展管理**：
 
-- [**pig repo**](/zh/pig/cmd/repo/)：管理 APT/YUM 软件仓库
-- [**pig ext**](/zh/pig/cmd/ext/)：管理 PostgreSQL 扩展
-- [**pig build**](/zh/pig/cmd/build/)：从源码构建扩展
-- [**pig install**](/zh/pig/cmd/#pig-install)：通过原生包管理器安装 PostgreSQL 与扩展包
+- [**pig repo**](https://pig.pgsty.com/zh/repo/)：管理 APT/YUM 软件仓库
+- [**pig ext**](https://pig.pgsty.com/zh/ext/)：管理 PostgreSQL 扩展
+- [**pig build**](https://pig.pgsty.com/zh/build/)：从源码构建扩展
+- [**pig install**](https://pig.pgsty.com/zh/cmd/#pig-install)：通过原生包管理器安装 PostgreSQL 与扩展包
 
 **Pigsty 管理**：
 
-- [**pig sty**](/zh/pig/cmd/sty/)：管理 Pigsty 安装与 Grafana 仪表盘
-- [**pig inventory**](/zh/pig/cmd/inventory/)：检视、编辑、校验与交换 Pigsty 配置清单
-- [**pig context**](/zh/pig/cmd/#pig-context)：采集主机、PostgreSQL、Patroni、pgBackRest 与扩展上下文
-- [**pig pg**](/zh/pig/cmd/pg/)：管理本地 PostgreSQL 服务
-- [**pig pt**](/zh/pig/cmd/pt/)：透明运行 patronictl 管理 Patroni HA 集群
-- [**pig pb**](/zh/pig/cmd/pb/)：管理 pgBackRest 备份
-- [**pig pitr**](/zh/pig/cmd/pitr/)：时间点恢复工作流
+- [**pig sty**](https://pig.pgsty.com/zh/sty/)：管理 Pigsty 安装与 Grafana 仪表盘
+- [**pig inventory**](https://pig.pgsty.com/zh/inventory/)：检视、编辑、校验与交换 Pigsty 配置清单
+- [**pig context**](https://pig.pgsty.com/zh/cmd/#pig-context)：采集主机、PostgreSQL、Patroni、pgBackRest 与扩展上下文
+- [**pig pg**](https://pig.pgsty.com/zh/pg/)：管理本地 PostgreSQL 服务
+- [**pig pt**](https://pig.pgsty.com/zh/pt/)：透明运行 patronictl 管理 Patroni HA 集群
+- [**pig pb**](https://pig.pgsty.com/zh/pb/)：管理 pgBackRest 备份
+- [**pig pitr**](https://pig.pgsty.com/zh/pitr/)：时间点恢复工作流
 
 
 ## 关于

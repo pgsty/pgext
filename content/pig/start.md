@@ -19,7 +19,7 @@ pig install -v 18 -y pg18 pg_duckdb vector     # Install PG 18 kernel, pg_duckdb
 
 ## Installation
 
-You can [**install**](/pig/install/) `pig` with the following command:
+You can [**install**](https://pig.pgsty.com/install/) `pig` with the following command:
 
 **Global** (Cloudflare CDN):
 
@@ -34,25 +34,24 @@ curl -fsSL https://repo.pigsty.cc/pig | bash
 ```
 
 
-PIG binary is about 5 MB. On Linux it uses `rpm` or `dpkg` to install the latest available version:
+PIG binary is about 5 MB. On Linux it uses `rpm` or `dpkg` to install the latest version available on the selected mirror. In the example output below, `X.Y.Z` is that mirrored version:
 
 ```bash
 $ curl -fsSL https://repo.pigsty.io/pig | bash
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = deb
-[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v1.6.0/pig_1.6.0-1_amd64.deb
-[INFO] download = /tmp/pig_1.6.0-1_amd64.deb
-[INFO] downloading pig v1.6.0
-curl -fSL https://repo.pigsty.io/pkg/pig/v1.6.0/pig_1.6.0-1_amd64.deb -o /tmp/pig_1.6.0-1_amd64.deb
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/vX.Y.Z/pig_X.Y.Z-1_amd64.deb
+[INFO] download = /tmp/pig_X.Y.Z-1_amd64.deb
+[INFO] downloading pig vX.Y.Z
+curl -fSL https://repo.pigsty.io/pkg/pig/vX.Y.Z/pig_X.Y.Z-1_amd64.deb -o /tmp/pig_X.Y.Z-1_amd64.deb
 ######################################################################## 100.0%
-[INFO] md5sum = b7d18865090df8c03523c79ec2744e91
-[INFO] installing: dpkg -i /tmp/pig_1.6.0-1_amd64.deb
+[INFO] installing: dpkg -i /tmp/pig_X.Y.Z-1_amd64.deb
 (Reading database ... 166001 files and directories currently installed.)
-Preparing to unpack /tmp/pig_1.6.0-1_amd64.deb ...
-Unpacking pig (1.6.0-1) ...
-Setting up pig (1.6.0-1) ...
-[INFO] pig v1.6.0 installed successfully
+Preparing to unpack /tmp/pig_X.Y.Z-1_amd64.deb ...
+Unpacking pig (X.Y.Z-1) ...
+Setting up pig (X.Y.Z-1) ...
+[INFO] pig vX.Y.Z installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -64,7 +63,7 @@ PIG is a Go-written binary program, installed by default at `/usr/bin/pig`. `pig
 
 ```bash
 $ pig version
-pig version 1.6.0 linux/amd64
+pig version 1.6.2 linux/amd64
 ```
 
 Use `pig status` to print the current environment status, OS code, PG installation status, repository accessibility and latency.
@@ -73,7 +72,7 @@ Use `pig status` to print the current environment status, OS code, PG installati
 $ pig status
 
 # [Configuration] ================================
-Pig Version      : 1.6.0
+Pig Version      : 1.6.2
 Pig Config       : /home/vagrant/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -108,7 +107,7 @@ pigsty.io  ping ok: 1270 ms
 Internet Access   :  true
 Pigsty Repo       :  pigsty.io
 Inferred Region   :  china
-Latest Pigsty Ver :  v4.4.0
+Latest Pigsty Ver :  4.5.0
 ```
 
 ## Automation Tips
@@ -123,15 +122,15 @@ pig pitr -d -y                # skip confirmation (automation scenarios)
 
 ## List Extensions
 
-Pig v1.6.0 ships with a release-time catalog snapshot. Refresh it with `pig ext reload`, then use `pig ext list` to print the current PG extension catalog.
+Pig v1.6.2 ships with a release-time catalog snapshot. Refresh it with `pig ext reload`, then use `pig ext list` to print the current PG extension catalog.
 
 ```bash
 $ pig ext reload
 $ pig ext list
-✓ Found 572 extensions
+✓ Found 575 extensions
 Name                Status     Version     Cate   Flags   License         Repo     PGVer  Package                               Description
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-timescaledb         available  2.28.3      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
+timescaledb         available  2.29.1      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
 timescaledb_toolkit available  1.23.0      TIME   -ds---  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-toolkit     Library of analytical hyperfunctions, time-series pipelining, an
 timeseries          available  0.2.1       TIME   -d----  PostgreSQL      PIGSTY   14-18  postgresql-18-pg-timeseries           Convenience API for time series stack
 periods             available  1.2.3       TIME   -ds---  PostgreSQL      PIGSTY   14-18  postgresql-18-periods                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
@@ -140,11 +139,11 @@ pg_bulkload         available  3.1.23      ETL    bds---  BSD 3-Clause    PIGSTY
 test_decoding       available  -           ETL    --s--x  PostgreSQL      CONTRIB  14-18  postgresql-18                         SQL-based test/example module for WAL logical decoding
 pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
 
-(572 Rows)
+(575 Rows)
 ```
 
 All extension metadata is defined in a data file named [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv).
-This file is updated with each pig release. You can update it directly using the [`pig ext reload`](/pig/cmd/ext/#ext-reload) command.
+This file is updated with each pig release. You can update it directly using the [`pig ext reload`](https://pig.pgsty.com/ext/#ext-reload) command.
 The updated file is placed in `~/.pig/extension.csv` by default. You can view and modify it, and the latest online catalog is available at [**pigsty.io/ext/data/extension.csv**](https://pigsty.io/ext/data/extension.csv).
 
 
@@ -152,9 +151,9 @@ The updated file is placed in `~/.pig/extension.csv` by default. You can view an
 
 ## Add Repositories
 
-To install extensions, you first need to add upstream repositories. [`pig repo`](/pig/cmd/repo/) can be used to manage Linux APT/YUM/DNF software repository configuration.
+To install extensions, you first need to add upstream repositories. [`pig repo`](https://pig.pgsty.com/repo/) can be used to manage Linux APT/YUM/DNF software repository configuration.
 
-You can use the straightforward [`pig repo set`](/pig/cmd/repo/#repo-set) to overwrite existing repository configuration, ensuring only necessary repositories exist in the system:
+You can use the straightforward [`pig repo set`](https://pig.pgsty.com/repo/#repo-set) to overwrite existing repository configuration, ensuring only necessary repositories exist in the system:
 
 ```bash
 pig repo set                # One-time setup for all repos including Linux system, PGDG, PIGSTY (PGSQL+INFRA)
@@ -163,7 +162,7 @@ pig repo set                # One-time setup for all repos including Linux syste
 > **Warning**: `pig repo set` will back up and clear existing repository configuration, then add required repositories with overwrite semantics.
 
 
-Or choose the gentler [`pig repo add`](/pig/cmd/repo/#repo-add) to add needed repositories:
+Or choose the gentler [`pig repo add`](https://pig.pgsty.com/repo/#repo-add) to add needed repositories:
 
 ```bash
 pig repo add pgdg pigsty     # Add PGDG official repo and PIGSTY supplementary repo
@@ -175,7 +174,7 @@ PIG detects your network environment and chooses Cloudflare global CDN or China 
 
 ```bash
 pig repo set      --region=china              # use China mirror for faster downloads
-pig repo set      --mirror                    # use Pigsty mirror/proxy for PG repos
+pig repo set      --mirror                    # use China mirrors (Tencent Cloud first for PGDG)
 pig repo add pgdg --region=default --update   # force PGDG upstream repo
 ```
 
@@ -186,7 +185,7 @@ The related PIGSTY project provides local software repositories. You can use pig
 
 ## Install PG
 
-After adding repositories, you can use [`pig ext add`](/pig/cmd/ext/#ext-add) to install extensions (and related packages):
+After adding repositories, you can use [`pig ext add`](https://pig.pgsty.com/ext/#ext-add) to install extensions (and related packages):
 
 ```bash
 pig ext add -v 18 -y pgsql timescaledb postgis vector pg_duckdb pg_mooncake # install PG 18 kernel and extensions, auto-confirm
@@ -318,7 +317,7 @@ pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor v
 
 ## Show Extensions
 
-[`pig ext status`](/pig/cmd/ext/#ext-status) shows installed extensions.
+[`pig ext status`](https://pig.pgsty.com/ext/#ext-status) shows installed extensions.
 
 ```bash
 $ pig ext status
@@ -344,7 +343,7 @@ If PostgreSQL cannot be found in your current `PATH` (via `pg_config`), it is re
 
 ## Scan Extensions
 
-[`pig ext scan`](/pig/cmd/ext/#ext-scan) provides a lower-level scan. It scans shared libraries under the target PG directory to discover installed extensions:
+[`pig ext scan`](https://pig.pgsty.com/ext/#ext-scan) provides a lower-level scan. It scans shared libraries under the target PG directory to discover installed extensions:
 
 ```bash
 $ pig ext scan
@@ -387,7 +386,7 @@ docker build -t d13:latest .
 docker run -it d13:latest /bin/bash
 
 pig repo set --region=china    # add China region repos
-pig repo set --mirror          # use Pigsty mirror/proxy for PG repos
+pig repo set --mirror          # use China mirrors (Tencent Cloud first for PGDG)
 pig install -y pg18            # install PGDG 18 kernel packages
 pig install -y postgis timescaledb pgvector pg_duckdb
 ```

@@ -46,7 +46,7 @@ Examples:
 
 ## Quick Start
 
-Before installing PostgreSQL extensions, add the required repositories with [`pig repo add`](/pig/cmd/repo/):
+Before installing PostgreSQL extensions, add the required repositories with [`pig repo add`](https://pig.pgsty.com/repo/):
 
 ```bash
 pig repo add pgdg pigsty -u    # gentle way to add pgdg and pigsty repos
@@ -172,7 +172,7 @@ This command scans the PostgreSQL extension directory and finds extensions that 
 
 ## ext add
 
-Install one or more PostgreSQL extensions. Same-level aliases for `pig ext add` include `pig ext install`, `pig ext ins`, and `pig ext a`. The top-level [`pig install`](/pig/cmd/#install) command is a separate native package-manager wrapper that also supports PostgreSQL and extension alias translation.
+Install one or more PostgreSQL extensions. Same-level aliases for `pig ext add` include `pig ext install`, `pig ext ins`, and `pig ext a`. The top-level [`pig install`](https://pig.pgsty.com/cmd/#pig-install) command is a separate native package-manager wrapper that also supports PostgreSQL and extension alias translation.
 
 ```bash
 pig ext add pg_duckdb            # install pg_duckdb

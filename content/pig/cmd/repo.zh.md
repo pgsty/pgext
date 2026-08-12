@@ -61,7 +61,7 @@ pig repo set                          # = pig repo add all --remove --update
 pig repo add pgsql                    # 添加 PGDG 和 Pigsty PGSQL 仓库
 pig repo add pigsty --region=china    # 添加 Pigsty 仓库，指定使用中国区域
 pig repo add pgdg   --region=europe   # 添加 PGDG 仓库，指定使用欧洲区域
-pig repo add pgdg   --mirror          # 使用 Pigsty 镜像/代理路径访问 PGDG
+pig repo add pgdg   --mirror          # PGDG 优先使用腾讯云镜像
 pig repo add infra  --region=default  # 添加 INFRA 仓库 ，指定使用默认区域
 
 # 如果上面没有-u|--update 选项一步到位，请额外执行此命令
@@ -116,7 +116,10 @@ Pigsty 中可用仓库的完整定义位于 [`cli/repo/assets/repo.yml`](https:/
 
 您可以创建 `~/.pig/repo.yml` 文件，显式修改并覆盖 pig 的仓库定义。在编辑仓库定义文件时，您可以在 `baseurl` 处添加额外的区域镜像，例如指定中国，欧洲地区的镜像仓库 URL。当 pig 使用 `--region` 参数指定特定的区域时，pig 会优先查找对应区域的仓库 URL，如果不存在，则会 Fallback 到 `default` 的仓库 URL。
 
-当 `repo add` 或 `repo set` 指定 `--mirror` 时，pig 会优先为 PostgreSQL 仓库使用 Pigsty 镜像/代理路径。PGDG 仓库 URL 可被重写到 Pigsty 代理镜像，其他仓库模块仍按正常区域 URL 选择。
+当 `repo add` 或 `repo set` 指定 `--mirror` 时，pig 会选择中国区域，并将
+识别到的 PGDG YUM/DNF 与 APT 地址统一优先使用腾讯云 PostgreSQL 镜像。
+其他仓库模块继续使用各自正常的中国区域 URL。就区域选择而言，它等价于
+`--region=china`；PGDG YUM 定义保留 Pigsty 镜像作为兼容回退。
 
 
 ## repo list
@@ -161,7 +164,7 @@ pig repo add pigsty -u           # 添加并更新缓存
 pig repo add all -r              # 添加前移除现有仓库
 pig repo add all -ru             # 移除、添加并更新（完全重置）
 pig repo add pgdg --region=china # 使用中国镜像
-pig repo add pgdg -m             # 对 PGDG 使用 Pigsty 代理镜像
+pig repo add pgdg -m             # PGDG 优先使用腾讯云镜像
 ```
 
 **选项：**
@@ -169,7 +172,7 @@ pig repo add pgdg -m             # 对 PGDG 使用 Pigsty 代理镜像
 - `-r|--remove`：添加新仓库前移除现有仓库
 - `-u|--update`：添加仓库后运行包缓存更新
 - `--region <region>`：使用区域镜像仓库（`default` / `china` / `europe`）
-- `-m|--mirror`：对 PostgreSQL 仓库使用 Pigsty 镜像/代理路径
+- `-m|--mirror`：优先使用中国镜像（PGDG 首选腾讯云）
 
 |   平台   | 模块位置                                    |
 |:------:|:----------------------------------------|
@@ -186,7 +189,7 @@ pig repo add pgdg -m             # 对 PGDG 使用 Pigsty 代理镜像
 pig repo set                     # 替换为默认仓库
 pig repo set pgdg pigsty         # 替换为特定仓库并更新
 pig repo set all --region=china  # 使用中国镜像
-pig repo set -m                  # 对 PG 仓库使用 Pigsty 镜像/代理路径
+pig repo set -m                  # 优先使用中国镜像（PGDG 首选腾讯云）
 ```
 
 
@@ -227,15 +230,25 @@ pig repo update                  # 更新包缓存
 为离线安装创建本地包仓库。
 
 ```bash
-pig repo create                  # 在默认位置创建 (/www/pigsty)
+pig repo create                  # Linux：/www/pigsty；macOS：当前目录
 pig repo create /srv/repo        # 在自定义位置创建
 ```
 
-|   平台   | 依赖软件           |
-|:------:|:---------------|
-|   EL   | `createrepo_c` |
-| Debian | `dpkg-dev`     |
-{.full-width}
+当前实现会优先使用 `PATH` 中的 [`sow`](https://sow.pgsty.com/zh/docs/reference/cli/create/)。在 Linux 上选择 SOW 后，会对每个目标目录以 `sudo` 执行等价命令：
+
+```bash
+sow create --pigsty --timeout 10m -- /absolute/repository/path
+```
+
+在 macOS 上必须安装 SOW，执行时不使用 `sudo`，默认目标为当前目录。Linux 上如果没有安装 `sow`，EL 会回退到 `createrepo_c`，Debian/Ubuntu 会回退到 `dpkg-dev` 提供的 `dpkg-scanpackages`；首选后端与平台回退均不可用时，`pig repo create` 才会失败。SOW 一旦被选中，其执行错误会直接返回，不会再用旧后端重试。`10m` 只限制等待 SOW 目录锁的时间，并不限制仓库索引本身的执行时间。
+
+SOW 的 `--pigsty` 事务会：
+
+1. 只扫描顶层普通 `.rpm` 与 `.deb` 文件，不递归，也不跟随符号链接。
+2. 按解析后的软件包事实，删除 32 位 x86 包（RPM 的 `i386/i486/i586/i686`、DEB 的 `i386`），以及二进制包名恰为 `patroni`、上游版本恰为 `3.0.4` 的包。
+3. 以原子方式生成对应的 RPM/DEB 元数据，最后写入 `repo_complete`；marker 按 basename 排序，记录剩余顶层软件包的 SHA-256。
+
+非软件包文件与目录不会被改动；候选软件包无法解析或逻辑坐标冲突时，SOW 事务会失败关闭。旧版回退脚本的清理与元数据语义不同，并在 `repo_complete` 中写入软件包的 MD5 列表。任一后端退出后，PIG 都会要求 `repo_complete` 存在且为普通文件，但不会校验 marker 内容或其中哈希。若交付流程把 marker 当作放行条件，调用方应自行完成这些验证。
 
 
 ## repo cache

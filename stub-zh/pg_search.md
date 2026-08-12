@@ -2,18 +2,19 @@
 
 来源：
 
-- [pg_search v0.25.1 README](https://github.com/paradedb/paradedb/blob/v0.25.1/pg_search/README.md)
-- [pg_search v0.25.1 发行说明](https://github.com/paradedb/paradedb/releases/tag/v0.25.1)
-- [pg_search v0.25.1 变更日志](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/changelog/0.25.1.mdx)
-- [创建 ParadeDB 索引](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/indexing/create-index.mdx)
-- [全文匹配操作符](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/full-text/match.mdx)
-- [BM25 评分](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/sorting/score.mdx)
-- [高亮与摘要](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/full-text/highlight.mdx)
-- [索引向量](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/indexing/indexing-vectors.mdx)
-- [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/vector/querying.mdx)
-- [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.1/docs/documentation/hybrid/overview.mdx)
+- [pg_search v0.25.2 README](https://github.com/paradedb/paradedb/blob/v0.25.2/pg_search/README.md)
+- [pg_search v0.25.2 发行说明](https://github.com/paradedb/paradedb/releases/tag/v0.25.2)
+- [pg_search v0.25.2 变更日志](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/changelog/0.25.2.mdx)
+- [pg_search v0.25.1 迁移说明](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/changelog/0.25.1.mdx)
+- [创建 ParadeDB 索引](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/documentation/indexing/create-index.mdx)
+- [全文匹配操作符](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/documentation/full-text/match.mdx)
+- [BM25 评分](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/documentation/sorting/score.mdx)
+- [高亮与摘要](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/documentation/full-text/highlight.mdx)
+- [索引向量](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/documentation/indexing/indexing-vectors.mdx)
+- [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/documentation/vector/querying.mdx)
+- [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.2/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.25.2 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
@@ -91,10 +92,11 @@ ORDER BY embedding <=> $1::vector, id
 LIMIT 20;
 ```
 
-### 版本 0.25.1 与注意事项
+### 版本 0.25.2 与注意事项
 
 - 版本 0.25 将主要索引访问方法从 `bm25` 重命名为 `paradedb`。现有的 `USING bm25` 定义仍受支持，但新示例应使用 `USING paradedb`。
 - 版本 0.25.1 支持确定性的向量并列结果排序，并将倒数排名融合查询的向量分支下推到索引中。它还新增 `paradedb.vector_clustering_threshold`，默认值为 500，并将向量索引构建并行度上限设为四个工作进程。
 - 版本 0.25.1 移除了 `paradedb.vector_cluster_probe_epsilon`，并更改了向量索引的边界门控。从 0.25.0 升级数据库后，必须对所有包含向量字段的 ParadeDB 索引执行 `REINDEX`；对于这些索引，仅安装新的共享库并执行 `ALTER EXTENSION` 并不充分。
-- `CREATE EXTENSION pg_search CASCADE` 可以安装所需的 `vector` 扩展，但仍须先为所有服务器进程配置预加载并重启。
+- 0.25.2 是稳定性与正确性版本：它修复带向量列的无字段 `more_like_this`、通用预备计划中的 `pdb.fuzzy`、遗留动态过滤器、多种并行子计划和 MPP 计划形态错误，并收紧 typemod 定义的访问控制。除了继承自 0.25.0 的向量索引重建要求外，没有新增索引迁移。
+- `CREATE EXTENSION pg_search CASCADE` 可以安装所需的 `vector` 扩展，但仍须先为所有服务器进程配置预加载并重启。仅通过 `LOAD` 或 `session_preload_libraries` 加载并不充分。
 - 使用不同字段选项重建索引后，查询计划、分词和排名都可能变化。在上线前，请使用符合生产形态的数据测试相关性与向量召回率。

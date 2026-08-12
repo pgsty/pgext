@@ -211,7 +211,7 @@ func (g *IOAttrGenerator) depsRow(ext *Extension, deps []string) string {
 	// Format dependency links
 	depLinks := make([]string, 0, len(deps))
 	for _, dep := range deps {
-		depLinks = append(depLinks, CCExtLink(dep))
+		depLinks = append(depLinks, CCExtRef(g.Cache, dep))
 	}
 	depStr := strings.Join(depLinks, " ")
 
@@ -274,7 +274,7 @@ weight: 40
 	b.WriteString("When installing these packages, you will get all extensions in the package. The lead extension is shown in bold.\n\n")
 
 	for _, p := range pkgs {
-		b.WriteString(fmt.Sprintf("### %s\n\n", p.Pkg))
+		b.WriteString(fmt.Sprintf("## %s\n\n", p.Pkg))
 
 		pkgLink := fmt.Sprintf("[`%s`](/ext/e/%s)", p.Pkg, p.Lead.Name)
 		b.WriteString(fmt.Sprintf("Package %s contains **%d** extensions:\n\n", pkgLink, len(p.Exts)))

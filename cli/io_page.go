@@ -576,7 +576,7 @@ func (g *IOPageGenerator) generateInstall(ext *Extension) string {
 		debPkg = ext.DebPkg.String
 	}
 
-	b.WriteString("Install the extension using [**pig**](/docs/pig) or `apt/yum/dnf`:\n\n")
+	b.WriteString("Install the extension using [**pig**](https://pig.pgsty.com) or `apt/yum/dnf`:\n\n")
 	b.WriteString("{{< tabpane text=true persist=header >}}\n")
 
 	// Tab: Install (simple install)

@@ -1,11 +1,16 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md), [v0.3.2 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.2), [changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
+Sources:
 
-`pg_clickhouse` runs analytics queries on ClickHouse from PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream documents PostgreSQL 13+ and ClickHouse 23+ support; the current version is 0.3.2.
+- [pg_clickhouse v0.10.0 README](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/README.md)
+- [pg_clickhouse v0.10.0 reference](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/doc/pg_clickhouse.md)
+- [pg_clickhouse v0.10.0 tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/doc/tutorial.md)
+- [pg_clickhouse v0.10.0 changelog](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/CHANGELOG.md)
+- [pg_clickhouse v0.10.0 control file](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/pg_clickhouse.control)
+- [pg_clickhouse 0.3 to 0.10 upgrade SQL](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/sql/pg_clickhouse--0.3--0.10.sql)
+- [Pigsty pg_clickhouse package matrix](https://pgext.cloud/ext/pg_clickhouse)
+
+`pg_clickhouse` 0.10.0 exposes ClickHouse tables to PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream targets PostgreSQL 13 or later and ClickHouse 23.3 or later; current Pigsty packages cover PostgreSQL 14–18. No preload is required for normal use; `session_preload_libraries` and `shared_preload_libraries` are optional connection-startup optimizations.
 
 ### Connect PostgreSQL to ClickHouse
 
@@ -14,7 +19,12 @@ CREATE EXTENSION pg_clickhouse;
 
 CREATE SERVER taxi_srv
 FOREIGN DATA WRAPPER clickhouse_fdw
-OPTIONS (driver 'binary', host 'localhost', dbname 'taxi');
+OPTIONS (
+  driver 'binary',
+  host 'localhost',
+  dbname 'taxi',
+  compression 'lz4'
+);
 
 CREATE USER MAPPING FOR CURRENT_USER
 SERVER taxi_srv
@@ -24,65 +34,65 @@ CREATE SCHEMA taxi;
 IMPORT FOREIGN SCHEMA taxi FROM SERVER taxi_srv INTO taxi;
 ```
 
-Server options documented upstream:
+The required `driver` option is `binary` or `http`. Common server options include `host`, `port`, `dbname`, `compression`, `secure`, and `min_tls_version`; user mappings accept `user` and `password`. Version 0.10 deprecates and ignores `fetch_size` because both drivers now stream the same Native format.
 
-- `driver`: required, `binary` or `http`
-- `host`
-- `port`
-- `dbname`
-- `fetch_size`: HTTP streaming batch size; `0` disables streaming
-- `compression`: binary-driver compression, `none`, `lz4`, or `zstd`; v0.3.2 defaults to `lz4`
-- `secure`: explicit TLS mode, `on`, `off`, or `auto`
-- `min_tls_version`: minimum TLS protocol version for both binary and HTTP drivers
+`IMPORT FOREIGN SCHEMA` supports `LIMIT TO (...)` and `EXCEPT (...)`. Imported mixed-case identifiers remain quoted and must be referenced with matching quotes.
 
-User mapping options:
-
-- `user`
-- `password`
-
-### Common operations
-
-```sql
-ALTER EXTENSION pg_clickhouse UPDATE;
-ALTER EXTENSION pg_clickhouse UPDATE TO '0.3';
-SELECT pgch_version();
-DROP SERVER taxi_srv CASCADE;
-```
-
-`IMPORT FOREIGN SCHEMA` also supports `LIMIT TO (...)` and `EXCEPT (...)`. The reference warns that imported mixed-case identifiers are double-quoted in PostgreSQL and must be queried with quotes.
-
-### Query and write notes
-
-`SELECT`, `EXPLAIN`, prepared statements, `INSERT`, and `COPY` can operate on `pg_clickhouse` foreign tables. Use `EXPLAIN (VERBOSE)` to inspect the remote SQL that will be sent to ClickHouse.
+### Query and Write Foreign Tables
 
 ```sql
 EXPLAIN (VERBOSE)
 SELECT node_id, count(*)
-FROM logs
+FROM taxi.logs
 GROUP BY node_id;
 
-INSERT INTO nodes(node_id, name, region, arch, os)
-VALUES (9, 'west-node', 'us-west-2', 'amd64', 'Linux');
+INSERT INTO taxi.nodes(node_id, name)
+VALUES (9, 'west-node');
+
+COPY taxi.nodes(node_id, name) FROM STDIN;
 ```
 
-`COPY` into a foreign table is documented, but upstream notes that it currently uses `INSERT` statements because FDW batch insertion is still future work.
+`SELECT`, `EXPLAIN`, prepared statements, `INSERT`, and `COPY` operate on foreign tables. In version 0.10 the binary driver flushes inserts in bounded 64 MiB batches, so `COPY` is no longer merely expanded into one statement per row. Use `EXPLAIN (VERBOSE)` to inspect remote SQL and verify which filters, joins, aggregates, and functions were pushed down.
 
-### Version and pushdown notes
+### Direct Query and Command APIs
 
-- The reference documents separate library and extension versions; `pgch_version()` reports the loaded library version.
-- Release `v0.3.2` is binary-only for existing SQL version `0.3`; it does not require `ALTER EXTENSION UPDATE` when upgrading from another 0.3 build.
-- Release `v0.3.2` adds the `compression`, `secure`, and `min_tls_version` server options, adds `regexp_match()` pushdown, and adds PostgreSQL 19beta1 distribution support.
-- Release `v0.3.2` also fixes regular-expression flag pushdown and avoids pushing down regex calls when the regex argument is not a constant.
-- Release `v0.3.1` is binary-only for existing SQL version `0.3`; it does not require `ALTER EXTENSION UPDATE` when upgrading from `v0.3.0`.
-- Release `v0.3.1` replaces the client library with `ClickHouse/clickhouse-c`, streams result blocks, and adds rectangular multidimensional array support for `SELECT` and `INSERT`.
-- Release `v0.3.1` also adds pushdown for `pg_re2` 0.3.0 functions such as `re2extractallgroupshorizontal`, `re2extractallgroupsvertical`, `re2regexpquotemeta`, and `re2splitbyregexp`, and fixes `UInt16` casts to PostgreSQL `int4`.
-- Release `v0.3.0` uses SQL version `0.3`; run `ALTER EXTENSION pg_clickhouse UPDATE TO '0.3'` to apply its SQL-level privilege change.
-- Release `v0.3.0` adds pushdown for `re2` functions, `soundex()`, two-argument `levenshtein()`, compatible `to_char(timestamp[tz], fmt)`, selected builtin functions, and JSON/JSONB path operations.
-- ClickHouse `JSON` maps to PostgreSQL `jsonb` or `json`; the binary driver's `JSON` mapping requires ClickHouse 24.10 or later.
-- `pg_clickhouse.pushdown_regex` controls built-in PostgreSQL regex pushdown. Upstream recommends considering the `re2` extension for regex work that should push down directly.
+Version 0.10 adds typed arbitrary-query and command interfaces:
 
-### Caveats
+```sql
+GRANT EXECUTE ON FUNCTION clickhouse_query(text, text) TO analyst;
+GRANT EXECUTE ON PROCEDURE clickhouse_perform(text, text) TO operator;
 
-- In 0.3.0, `clickhouse_raw_query(text, text)` is no longer executable by `PUBLIC`; grant it only to roles that need ad-hoc ClickHouse queries.
-- This is positioned upstream as an analytics-first extension; lightweight `DELETE` and `UPDATE` support remain on the roadmap.
-- For full examples, follow the official tutorial, which creates a ClickHouse `taxi` database, imports it through `IMPORT FOREIGN SCHEMA`, and queries the resulting foreign tables.
+SELECT *
+FROM clickhouse_query(
+  'taxi_srv',
+  'SELECT region, count() FROM taxi GROUP BY region'
+) AS t(region text, n bigint);
+
+CALL clickhouse_perform(
+  'taxi_srv',
+  'OPTIMIZE TABLE taxi.nodes FINAL'
+);
+
+SELECT clickhouse_server_version('taxi_srv');
+```
+
+`clickhouse_query(server, sql)` returns rows using the caller-provided column definition, while `clickhouse_perform(server, sql)` discards any result. Both can run arbitrary remote SQL, so `EXECUTE` is revoked from `PUBLIC` and should be granted narrowly. `clickhouse_raw_query()` is deprecated in favor of these interfaces.
+
+### Pushdown and Session Settings
+
+Version 0.10 expands aggregate and function pushdown, improves aggregate execution over mixed local and foreign partitions, and fixes several PostgreSQL NULL-semantics mismatches. Subquery pushdown requires ClickHouse 25.8 or later; older servers evaluate those subqueries locally.
+
+The default `pg_clickhouse.session_settings` preserves PostgreSQL-compatible behavior, including `join_use_nulls = 1`, `group_by_use_nulls = 1`, `final = 1`, and `transform_null_in = 0`. If it is overridden, retain the settings needed by the workload—especially `transform_null_in = 0`, which is required for safe `IN` pushdown.
+
+### Upgrade and Operational Boundaries
+
+```sql
+ALTER EXTENSION pg_clickhouse UPDATE TO '0.10';
+SELECT pgch_version();
+```
+
+The extension SQL version is `0.10`, while `pgch_version()` reports the full library version `0.10.0`. An installation upgraded from SQL version `0.3` must run `ALTER EXTENSION` after the new files are installed.
+
+If `pg_clickhouse` is placed in `session_preload_libraries`, new sessions load it automatically. If it is placed in `shared_preload_libraries`, changing the library requires a PostgreSQL restart. Neither setting is mandatory, unlike extensions that register postmaster hooks.
+
+Lightweight `UPDATE` and `DELETE` remain outside the documented write surface. Treat direct remote SQL as privileged, test pushdown with production-shaped NULL and type cases, and validate both PostgreSQL and ClickHouse versions before relying on a version-gated optimization.

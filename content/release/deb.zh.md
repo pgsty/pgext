@@ -6,29 +6,38 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
-## 2026-08-08
+## 2026-08-12
 
-
-| 扩展名           | 旧版本    | 新版本    | 备注                                                 |
-|:--------------|:-------|:-------|:---------------------------------------------------|
-| cat_tools     | -      | 0.3.0  | 纯 SQL；PG14-18                                      |
-| citus         | 14.1.0 | 14.2.0 | 包含 citus_columnar；PG16-18                          |
-| pg_describe   | -      | 1.0.0  | PG17-18                                            |
-| pg_disorder   | -      | 0.1.0  | PG14-18                                            |
-| pg_mentat     | -      | 1.5.7  | 从仅源码收录提升为 PIGSTY 软件包；PG14-18                       |
-| pg_rational   | 0.0.2  | 0.0.3  | PGDG 软件包；PIGSTY DEB 未重构建；PG14-18                   |
-| pg_readme     | 0.7.0  | 0.7.1  | 包含 pg_readme_test_extension；PG14-18                |
-| pg_search     | 0.25.0 | 0.25.1 | PG15-18；pgrx 0.19.1                                |
-| pg_squeeze    | 1.9.2  | 1.9.4  | PGDG 软件包；PG14-18                                   |
-| pg_turbovec   | -      | 1.28.3 | 软件包保持 1.28.3，上游元数据为 1.29.0；PG14-18                 |
-| pg_vault_tde  | -      | 1.7.0  | PG17-18；需要预加载                                      |
-| pgbson        | 2.0.4  | 2.1.0  | 源码包名 postgresbson；PG14-18                          |
-| pgmnemo       | 0.15.0 | 0.16.1 | PG17-18                                            |
-| plpgsql_check | 2.10.3 | 2.10.4 | PG14-18                                            |
-| plruby        | -      | 2.5.0  | 包含 jsonb_plruby、hstore_plruby、ltree_plruby；PG14-18 |
-| provsql       | 1.11.0 | 1.12.0 | PG14-18                                            |
-| timescaledb   | 2.29.0 | 2.29.1 | PG16-18                                            |
-| vector        | 0.8.6  | 0.8.6  | PGDG 0.8.6 现已入库；PG14-18                            |
+| 名称             | 旧版本               | 新版本              | 备注                                                |
+|:---------------|:------------------|:-----------------|:--------------------------------------------------|
+| biscuit        | 2.4.3             | 3.0.0            | PG16-18；2.x 索引需 REINDEX                           |
+| cat_tools      | -                 | 0.3.0            | 纯 SQL；PG14-18                                     |
+| citus          | 14.1.0            | 14.2.0           | 含 citus_columnar；PG16-18                          |
+| pg_clickhouse  | 0.3.2             | 0.10.0           | PG14-18                                           |
+| pg_describe    | -                 | 1.0.0            | PG17-18                                           |
+| pg_disorder    | -                 | 0.1.0            | PG14-18                                           |
+| pg_local_cache | -                 | 1.3.0            | PG14-18；需预加载；仅单主                                  |
+| pg_mentat      | -                 | 1.5.7            | PG14-18                                           |
+| pg_policy      | -                 | 0.1.0            | 纯 SQL；PG14-18                                     |
+| pg_rational    | 0.0.2             | 0.0.3            | PGDG；PG14-18                                      |
+| pg_readme      | 0.7.0             | 0.7.1            | 含 pg_readme_test_extension；PG14-18                |
+| pg_search      | 0.25.0            | 0.25.2           | PG15-18；pgrx 0.19.1；需预加载                          |
+| pg_squeeze     | 1.9.2             | 1.9.4            | PGDG；PG14-18                                      |
+| pg_statviz     | -                 | 1.1              | PGDG；PG14-18（U22 除外）；非默认包组                        |
+| pg_turbovec    | -                 | 1.29.0           | PG14-18；pgrx 0.19.1                               |
+| pg_uuid_v8     | 1.0.0             | 1.1.0            | PG14-18；含 1.0 至 1.1 升级脚本                          |
+| pg_vault_tde   | -                 | 1.7.0            | PG17-18；需预加载                                      |
+| pgbson         | 2.0.4             | 2.1.0            | 源码包 postgresbson；PG14-18                          |
+| pgmnemo        | 0.15.0            | 0.16.1           | PG17-18                                           |
+| plpgsql_check  | 2.10.3            | 2.10.4           | PG14-18                                           |
+| plruby         | -                 | 2.5.0            | 含 jsonb_plruby、hstore_plruby、ltree_plruby；PG14-18 |
+| polardb-17     | 17.10.1.0-1PIGSTY | 17.10.1.0-2PGSTY | 重构建；PG17                                          |
+| polarstore     | 1.2.42-1PIGSTY    | 1.2.42-2PGSTY    | 重构建                                               |
+| provsql        | 1.11.0            | 1.12.0           | PG14-18                                           |
+| q3c            | 2.0.4             | 2.0.5            | PGDG；PG14-18                                      |
+| timescaledb    | 2.29.0            | 2.29.1           | PG16-18                                           |
+| vector         | 0.8.6             | 0.8.6            | PGDG 仓库刷新；PG14-18                                 |
+| zlog           | 1.2.18-1PIGSTY    | 1.2.18-2PGSTY    | 重构建                                               |
 
 ## 2026-07-30
 

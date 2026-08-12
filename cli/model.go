@@ -377,6 +377,7 @@ func WriteMarkdownFile(path string, content string) error {
 	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
 		return fmt.Errorf("failed to create directory %s: %w", filepath.Dir(path), err)
 	}
+	content = strings.TrimRight(content, "\n") + "\n"
 	return os.WriteFile(path, []byte(content), 0644)
 }
 

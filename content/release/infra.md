@@ -6,6 +6,22 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-08-12
+
+| Name                    | Old      | New      | Comment                                                       |
+|:------------------------|:---------|:---------|:--------------------------------------------------------------|
+| claude                  | 2.1.226  | 2.1.227  | Official manifest verified via proxy; dual-arch RPM/DEB built |
+| code-server             | 4.131.0  | 4.132.0  | Official dual-architecture RPM/DEB downloaded and verified    |
+| grafana-infinity-ds     | 3.11.2   | 3.11.3   | Built as dual-architecture RPM/DEB                            |
+| mtail                   | 3.4.6    | 3.4.7    | Built as dual-architecture RPM/DEB                            |
+| opencode                | 1.18.15  | 1.18.16  | Built as dual-architecture RPM/DEB                            |
+| pg-hardstorage          | 1.1.1    | 1.2.1    | Official dual-architecture RPM/DEB downloaded and verified    |
+| pig                     | 1.6.1    | 1.6.2    | Official dual-architecture RPM/DEB downloaded and verified    |
+| postgrest               | 16.0     | 16.1     | Static dual-architecture RPM/DEB; requires PostgreSQL 14+     |
+| redis-exporter          | 1.88.0   | 1.89.0   | Built as dual-architecture RPM/DEB                            |
+| sow                     | 0.2.0    | 0.3.0    | Official dual-architecture RPM/DEB downloaded and verified    |
+| stalwart                | 0.16.16  | 0.16.17  | Built as dual-architecture RPM/DEB                            |
+
 ## 2026-08-08
 
 | Name                    | Old                  | New            | Comment                                                   |

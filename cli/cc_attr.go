@@ -211,7 +211,7 @@ func (g *CCAttrGenerator) depsRow(ext *Extension, deps []string) string {
 	// Format dependency links
 	depLinks := make([]string, 0, len(deps))
 	for _, dep := range deps {
-		depLinks = append(depLinks, CCExtLink(dep))
+		depLinks = append(depLinks, CCExtRef(g.Cache, dep))
 	}
 	depStr := strings.Join(depLinks, " ")
 
@@ -274,7 +274,7 @@ weight: 40
 	b.WriteString("在安装这些包时，您将同时获得包中的所有扩展。主扩展用粗体标出。\n\n")
 
 	for _, p := range pkgs {
-		b.WriteString(fmt.Sprintf("### %s\n\n", p.Pkg))
+		b.WriteString(fmt.Sprintf("## %s\n\n", p.Pkg))
 
 		pkgLink := fmt.Sprintf("[`%s`](/ext/e/%s)", p.Pkg, p.Lead.Name)
 		b.WriteString(fmt.Sprintf("%s 扩展包共有 **%d** 个扩展：\n\n", pkgLink, len(p.Exts)))

@@ -46,7 +46,7 @@ weight: 600
 icon: fas fa-puzzle-piece
 ---
 `
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 // GenerateExtensionList generates the full extension list page
@@ -242,7 +242,7 @@ icon: fas fa-puzzle-piece
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GeneratePackageList generates the package list page
@@ -289,7 +289,7 @@ icon: fas fa-box
 
 	b.WriteString("{.ext-table}\n\n")
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateLanguageList generates the language list page
@@ -404,7 +404,7 @@ icon: fas fa-code
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateLicenseList generates the license list page
@@ -558,7 +558,7 @@ icon: fas fa-scale-balanced
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateRepoList generates the repository list page
@@ -633,7 +633,7 @@ icon: fas fa-warehouse
 	b.WriteString(fmt.Sprintf("## CONTRIB {#contrib}\n\nPostgreSQL 内置的 Contrib 扩展模块，总计 %d 个扩展，PG 随内核 contrib 包交付。\n\n", len(contribExts)))
 	writeContribExtTable(&b, contribExts)
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // writeRepoExtTable writes a 7-column table for PGDG/PIGSTY/MIXED sections
@@ -860,9 +860,9 @@ func (g *CCListGenerator) generatePlatformList(outputPath string, cfg *platformL
 		}
 	}
 
-	// Summary text - two lines separated by blank line
-	b.WriteString(fmt.Sprintf("在 %s 系统上共有 **%d** 个 PostgreSQL 扩展可用，共计 **%d** 个扩展包。\n\n",
-		cfg.OSDesc, extAll, pkgAll))
+	// Summary text - distinguish the full catalog from platform coverage
+	b.WriteString(fmt.Sprintf("在 **%d** 个已打包扩展总目录中，%s 系统当前覆盖 **%d** 个 PostgreSQL 扩展，共计 **%d** 个扩展包。\n\n",
+		len(allExts), cfg.OSDesc, extAll, pkgAll))
 	b.WriteString(fmt.Sprintf("其中 **%d** 个扩展包是 %s 独有，**%d** 个 %s 扩展包缺少对应的 %s 包。\n\n",
 		exclusive, cfg.OSDesc, otherMissing, cfg.OtherName, cfg.Name))
 
@@ -975,7 +975,7 @@ func (g *CCListGenerator) generatePlatformList(outputPath string, cfg *platformL
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateOSIndexPage generates the OS index page (os/_index.md)
@@ -994,7 +994,7 @@ weight: 400
 icon: fa-brands fa-linux
 ---
 `
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 // GenerateOverviewPage generates the ext/_index.md overview page with dynamic data
@@ -1163,7 +1163,7 @@ weight: 20
 
 - [**已打包扩展目录**](/ext/list)：查阅 [**%d 个已打包扩展**](/ext/list) 的详细信息，使用方法，元数据，下载链接与文档
 - [**扩展仓库**](/docs/repo/pgsql)：获取预先打包的 RPM/DEB 二进制包，在 [**%d 个 Linux 系统**](/ext/os) 上可用
-- [**包管理器**](/docs/pig)：使用 [**`+"`"+`pig`+"`"+`**](/docs/pig) 命令行工具，屏蔽复杂度与操作系统与架构差异
+- [**包管理器**](https://pig.pgsty.com/zh)：使用 [**`+"`"+`pig`+"`"+`**](https://pig.pgsty.com/zh) 命令行工具，屏蔽复杂度与操作系统与架构差异
 
 `, totalExts, activeOSCount))
 	b.WriteString("```bash\n")
@@ -1173,7 +1173,7 @@ weight: 20
 	b.WriteString("pig install pg_duckdb -v 18                   # 例：针对 PG 18 安装 pg_duckdb\n")
 	b.WriteString("```\n\n")
 	b.WriteString("一切都皆可用 PostgreSQL 解决！请参阅我们的博客文章：[**PostgreSQL 正在吞噬数据库世界！**](/blog/pg/pg-eat-db-world)\n\n")
-	b.WriteString("![](/img/pigsty/ecosystem.png)\n\n\n")
+	b.WriteString("![Pigsty PostgreSQL 扩展生态系统](/img/pigsty/ecosystem.png)\n\n")
 
 	// ══════════════════════════════════════════════════════════════════
 	// 核心特点
@@ -1181,7 +1181,7 @@ weight: 20
 	b.WriteString("--------\n\n## 核心特点\n\n")
 	b.WriteString(fmt.Sprintf("- **数量**：无与伦比的扩展数量：**%d 个已打包扩展**，为 PG 扩展生态之最\n", totalExts))
 	b.WriteString("- **质量**：原生 Linux RPM/DEB 包，完全兼容 PGDG 打包规范\n")
-	b.WriteString("- **易用**：提供包管理器 [**`pig`**](/docs/pig)，屏蔽操作系统与架构差异，开箱即用\n")
+	b.WriteString("- **易用**：提供包管理器 [**`pig`**](https://pig.pgsty.com/zh)，屏蔽操作系统与架构差异，开箱即用\n")
 	b.WriteString("- **兼容**：扩展完全兼容 PGDG 打包规范，可与 PGDG 仓库无缝混用\n")
 	b.WriteString("- **分发**：由 Cloudflare CDN 进行全球仓库分发，提供国内 CDN 加速\n")
 	b.WriteString("- **开源**：完全开源，提供便利的构建工具，免费对公众提供服务的软件基础设施\n\n\n")
@@ -1204,6 +1204,7 @@ weight: 20
 	writeStatsRow("EL", elRow)
 	writeStatsRow("Debian", debRow)
 	b.WriteString("{.ext-table}\n\n")
+	b.WriteString(fmt.Sprintf("> **%d** 是已打包扩展总目录口径；EL、Debian/Ubuntu 及各 PostgreSQL 大版本行展示对应平台的实际覆盖数，因此可能少于 %d。\n>\n", totalExts, totalExts))
 	b.WriteString("> 详见：[扩展列表](/ext/list)，[RPM 列表](/ext/rpm)，[DEB 列表](/ext/deb)，[归属仓库](/ext/repo)\n\n")
 
 	// ══════════════════════════════════════════════════════════════════
@@ -1336,7 +1337,7 @@ weight: 20
 	b.WriteString("| [pgsty/deb](https://github.com/pgsty/deb) | DEB 构建源代码 |\n")
 	b.WriteString("| [pgsty/infra-pkg](https://github.com/pgsty/infra-pkg) | 基础设施包仓库 |\n")
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateAllLists generates all list pages (output to top-level ext/ directory)
@@ -1420,7 +1421,7 @@ sidebar_divider: true
 toc_hide: false
 ---
 `, weight)
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 // ccRepoBadgeOrMiss returns a repo badge or a miss badge

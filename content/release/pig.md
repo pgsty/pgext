@@ -6,6 +6,76 @@ breadcrumbs: false
 ---
 
 
+## v1.6.2
+
+Pig `v1.6.2` is a feature and catalog release on top of `v1.6.1`. It grows the packaged extension catalog from 562 to 572, adds native Grafana dashboard schema v2 support, and improves local repository generation. The embedded Pigsty version remains locked at `4.5.0`.
+
+**Highlights**
+
+- `pig sty grafana` now accepts both legacy dashboard JSON and native `dashboard.grafana.app/v2` Dashboard resources. Loading a v2 dashboard uses Grafana's resource API so tabs and section variables survive the round trip; dumping preserves an existing v2 destination while new dumps keep the legacy format by default.
+- `pig repo create` now prefers `sow create --pigsty --timeout 10m -- <dir>` when SOW is available, requires the resulting `repo_complete` marker to exist as a regular file, and falls back to `createrepo_c` / `dpkg-scanpackages` on Linux.
+- Local repository creation now works on macOS through SOW, defaults to the current directory there, and does not require `sudo`. The Linux default remains `/www/pigsty`.
+- Release metadata is bumped to `1.6.2`; the embedded Pigsty version stays at `4.5.0`.
+
+**Extension Catalog**
+
+- Packaged extensions: **562 -> 572**, with no removals.
+- 10 new extensions: `pg_turbovec`, `pg_disorder`, `pg_mentat`, `plruby`, `jsonb_plruby`, `hstore_plruby`, `ltree_plruby`, `pg_describe`, `cat_tools`, and `pg_vault_tde`.
+- 12 version refreshes: `timescaledb 2.29.1`, `q3c 2.0.5`, `pgmnemo 0.16.1`, `pg_search 0.25.1`, `citus 14.2.0`, `citus_columnar 14.2.0`, `provsql 1.12.0`, `plpgsql_check 2.10.4`, `pg_rational 0.0.3`, `pgbson 2.1.0`, `pg_readme 0.7.1`, and `pg_readme_test_extension 0.7.1`.
+- Package metadata and availability matrices are refreshed. Run `pig ext reload` to replace the embedded release snapshot with the latest online catalog.
+
+**Compatibility Notes**
+
+- No commands or global flags are removed in this release.
+- When SOW is installed, `pig repo create` now prefers it over the legacy Linux generators and checks that the completion marker exists before reporting success.
+- The catalog count is not a promise that every package is available on every PostgreSQL / OS / architecture combination; use `pig ext avail NAME` on the target host.
+
+**Checksums**
+
+Artifacts: [GitHub Release](https://github.com/pgsty/pig/releases/tag/v1.6.2) · [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.6.2/checksums.txt)
+
+```bash
+6697a96bbf476e697a5c3da8b6c861719e4b7208e1e4fe927cf4b475ea1f162f  pig-1.6.2-1.aarch64.rpm
+ad0b311867bc6cd689dd73e9a96b84f1fe0f49f6c0f1184abf9eb3232a07a184  pig-1.6.2-1.x86_64.rpm
+bb167e04fceb6cebee5c8a2423279cefb4474f46301a5055c464ac98294dc9db  pig-v1.6.2.darwin-amd64.tar.gz
+3de74e33321884a0c36596c1e7df9370be594a315395538e9ba5b775bbc1a79d  pig-v1.6.2.darwin-arm64.tar.gz
+7b69214e115e6815e772b7e179aa4070bd8553e585b164ba3a0f69a1d53a0294  pig-v1.6.2.linux-amd64.tar.gz
+b511e727642987867be5921d72e8019e9c6186b82e63ddc34ad653773abed5a8  pig-v1.6.2.linux-arm64.tar.gz
+3d1a80b833c6179b84ac5cc590ad06695b187b2bb4a09f544b1a14f9684dc4bc  pig_1.6.2-1_amd64.deb
+00e4c84cd6b07a98401c73fb58dedaafe34bc794d7604edbcb76c5de39b0fb44  pig_1.6.2-1_arm64.deb
+```
+
+Release: https://github.com/pgsty/pig/releases/tag/v1.6.2
+
+
+## v1.6.1
+
+Pig `v1.6.1` is a maintenance release that refreshes the bundled extension catalog and aligns the embedded Pigsty version with `4.5.0`. It introduces no new commands or flag changes.
+
+**Highlights**
+
+- Regenerate the embedded `extension.csv` from the Pigsty package repositories so fresh installs resolve against current package metadata without first running `pig ext reload`.
+- Update the embedded Pigsty version reported by `pig sty` and `pig status` from `4.4.0` to `4.5.0`.
+- Keep 562 packaged extensions across PostgreSQL 14-18, EL 8/9/10, Debian 12/13, and Ubuntu 22/24/26 on `x86_64` and `aarch64`.
+
+**Checksums**
+
+Artifacts: [Pigsty Mirror](https://repo.pigsty.io/pkg/pig/v1.6.1/) · [checksums.txt](https://repo.pigsty.io/pkg/pig/v1.6.1/checksums.txt)
+
+```bash
+088e62bf7c64dbbe1d66cb54e6a6971e4d245e76ac0b9ab9de2280053b692e77  pig-1.6.1-1.aarch64.rpm
+11b81f43754bcd7691752025ff0a95aa39745883d1cc17183e81fd357f50f5d3  pig-1.6.1-1.x86_64.rpm
+f0512d26fd934a9ac7b0bf5aba22aba151991a4edcc8e995441f79f66fc6080a  pig-v1.6.1.darwin-amd64.tar.gz
+595f122c210b1e5a5211de5b397bfcf2a803179f52a97aa38e68e8c567381533  pig-v1.6.1.darwin-arm64.tar.gz
+d6c0ad7784c8df33539d60cb22259bb1b6f92a6fc26543f4384448dd630a83fd  pig-v1.6.1.linux-amd64.tar.gz
+017fbae1c32858b5438514685e45959ceaeb6bf29ae11ecf0496b52d00908627  pig-v1.6.1.linux-arm64.tar.gz
+571bc16bc8490190935ecb6d8dde9c5827e63eced0b7bbd05cfad1e4363e385b  pig_1.6.1-1_amd64.deb
+54010b414aaf3971c435db714d5e1c0e039f30a11adf95a902040e177f911fa6  pig_1.6.1-1_arm64.deb
+```
+
+Release: https://github.com/pgsty/pig/releases/tag/v1.6.1
+
+
 ## v1.6.0
 
 Pig `v1.6.0` is a major release: `pig pt` becomes a transparent `patronictl` launcher, the new root-level `pig inventory` command group brings lossless editing and validation of `pigsty.yml` (with an experimental PostgreSQL CMDB bridge), `pig sty grafana` adds native Grafana dashboard management, and the packaged extension catalog grows to 562.
@@ -838,7 +908,7 @@ Release: https://github.com/pgsty/pig/releases/tag/v0.6.2
 ## v0.6.1
 
 - Add el10 and debian 13 trixie support stub
-- Dedicate website: https://pigsty.io/docs/pig
+- Dedicated website: https://pig.pgsty.com
 - rebuild with go 1.25 and CI/CD pipeline
 - Use the PIGSTY mirror in mainland china due to pgdg ftp rsync mirror break
 - Remove unused `pgdg-el10fix` repo
@@ -1175,7 +1245,7 @@ Release: https://github.com/pgsty/pig/releases/tag/v0.3.1
 
 ## v0.3.0
 
-The [`pig`](/pig/) project now has a new [homepage](https://pigsty.io/docs/pig), alone with the PostgreSQL Extension [Catalog](https://ext.pgsty.com/list).
+The [`pig`](https://pig.pgsty.com) project now has a new [homepage](https://pig.pgsty.com), along with the PostgreSQL Extension [Catalog](https://ext.pgsty.com/list).
 
 ```bash
 curl https://repo.pigsty.io/pig | bash    # cloudflare
@@ -1187,7 +1257,7 @@ pig v0.3 is also embedded & shipped with the latest Pigsty [v3.3.0](https://doc.
 
 **New Features**
 
-`pig build` subcommand with the [ability](https://pigsty.io/docs/pig/build/) to set up extension building environment
+`pig build` subcommand with the [ability](https://pig.pgsty.com/build/) to set up extension building environment
 
 ```bash
 pig build repo     # init build repo (=repo set -ru)

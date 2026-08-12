@@ -6,7 +6,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 **pgext** catalogs the PostgreSQL extension universe: 2,230 extensions, including
-572 packaged extensions, with metadata, dependencies, categories, and exact package
+575 packaged extensions, with metadata, dependencies, categories, and exact package
 availability across PostgreSQL versions, operating systems, and repositories
 (PGDG / Pigsty, APT / YUM).
 
@@ -77,7 +77,7 @@ Run `pgext help <command>` for details on any command.
 - Catalog website: [pgext.cloud](https://pgext.cloud)
 - Documentation: [doc.pgext.cloud](https://doc.pgext.cloud)
 - Pigsty — battery-included PostgreSQL distribution: [pigsty.io](https://pigsty.io)
-- `pig` — the PostgreSQL extension package manager: [github.com/pgsty/pig](https://github.com/pgsty/pig)
+- `pig` — the PostgreSQL extension package manager: [pig.pgsty.com](https://pig.pgsty.com)
 
 ## License
 

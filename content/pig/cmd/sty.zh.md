@@ -38,7 +38,7 @@ Examples:
 {.full-width}
 
 > v1.6.0 起，原先的 `pig sty edit` / `validate` / `check` 已上移为根级
-> [`pig inventory`](/pig/cmd/inventory/) 命令组；实验性的 `pig sty dashboard` 由
+> [`pig inventory`](https://pig.pgsty.com/zh/inventory/) 命令组；实验性的 `pig sty dashboard` 由
 > `pig sty grafana` 取代。
 
 
@@ -201,3 +201,21 @@ pig sty grafana style            # 设置组织与当前用户界面风格
 密码解析顺序：`--password` → `--password-file` → `GRAFANA_PASSWORD` 环境变量 →
 Inventory 中的 `all.vars.grafana_admin_password`。
 HTTP 客户端带有超时与响应大小限制，并拒绝重定向；TLS 证书默认校验。
+
+### 传统仪表盘与 schema v2 资源
+
+`load` 与 `init` 同时接受传统 Grafana 仪表盘 JSON，以及身份字段严格如下的资源格式：
+
+```json
+{"apiVersion":"dashboard.grafana.app/v2","kind":"Dashboard","metadata":{"name":"pgsql-overview","namespace":"default"},"spec":{}}
+```
+
+载入时不会把两种格式互相压平：
+
+- 传统 JSON 从顶层 `uid` 取得 UID，并使用旧版 dashboard API。
+- Schema v2 从 `metadata.name` 取得 UID；缺少 namespace 时默认使用 `default`，`spec` 必须是对象，并通过 Grafana dashboard resource API 写入。
+- JSON 文件名（不含 `.json`）必须与解析出的 UID 一致。本地只允许一层文件夹，其目录名会成为 Grafana folder UID。
+- 对 schema v2，PIG 保留 `spec` 与 `grafana.app/message` 注解，根据本地文件夹写入 `grafana.app/folder`，并在 upsert 前主动去掉由服务端管理的 metadata/status。
+- `dump` 只有在目标文件已经以 v2 形式存在时才保持 schema v2；此时会使用该文件的 namespace 拉取原生 v2 资源。全新导出目标默认写成传统 JSON；仅存在于本地的文件不会被 `dump` 删除。
+
+其他 `dashboard.grafana.app/*` 版本或结构不完整的资源封装会被直接拒绝，不会被静默当成传统仪表盘。因此，要往返保持 v2 格式，必须保留已有的本地 v2 文件作为格式契约。

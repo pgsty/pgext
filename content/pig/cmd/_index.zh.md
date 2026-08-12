@@ -7,18 +7,18 @@ weight: 600
 
 `pig` CLI 提供了全面的工具集，用于管理 PostgreSQL 安装、扩展、软件仓库以及从源码构建扩展。使用 `pig help <command>` 查看命令文档。
 
-- [**pig repo**](/pig/cmd/repo/)：管理软件仓库
-- [**pig ext**](/pig/cmd/ext/)：管理 PostgreSQL 扩展
-- [**pig build**](/pig/cmd/build/)：从源码构建扩展
+- [**pig repo**](https://pig.pgsty.com/zh/repo/)：管理软件仓库
+- [**pig ext**](https://pig.pgsty.com/zh/ext/)：管理 PostgreSQL 扩展
+- [**pig build**](https://pig.pgsty.com/zh/build/)：从源码构建扩展
 - **pig install**：使用原生包管理器安装包，并对 PostgreSQL 别名做翻译
-- [**pig sty**](/pig/cmd/sty/)：管理 Pigsty 安装与 Grafana 仪表盘
-- [**pig inventory**](/pig/cmd/inventory/)：检视、编辑、校验与交换 Pigsty 配置清单（v1.6.0 新增）
+- [**pig sty**](https://pig.pgsty.com/zh/sty/)：管理 Pigsty 安装与 Grafana 仪表盘
+- [**pig inventory**](https://pig.pgsty.com/zh/inventory/)：检视、编辑、校验与交换 Pigsty 配置清单（v1.6.0 新增）
 - **pig do**：执行 Pigsty 管理 playbook 任务
 - **pig pe**：访问 pg_exporter 指标与配置
-- [**pig pg**](/pig/cmd/pg/)：管理本地 PostgreSQL 服务器
-- [**pig pt**](/pig/cmd/pt/)：透明运行 patronictl，附带服务与配置辅助命令
-- [**pig pb**](/pig/cmd/pb/)：管理 pgBackRest 备份与恢复
-- [**pig pitr**](/pig/cmd/pitr/)：进行完整 PITR 工作流
+- [**pig pg**](https://pig.pgsty.com/zh/pg/)：管理本地 PostgreSQL 服务器
+- [**pig pt**](https://pig.pgsty.com/zh/pt/)：透明运行 patronictl，附带服务与配置辅助命令
+- [**pig pb**](https://pig.pgsty.com/zh/pb/)：管理 pgBackRest 备份与恢复
+- [**pig pitr**](https://pig.pgsty.com/zh/pitr/)：进行完整 PITR 工作流
 - **pig context**：输出面向人工和 Agent 的环境上下文快照
 - **pig status / update / version**：查看环境、升级 pig、打印版本信息
 
@@ -80,7 +80,7 @@ Flags:
 
 ## pig repo
 
-管理 PostgreSQL 软件包的 APT/YUM 仓库，详情请参考 [`pig repo`](/pig/cmd/repo/)
+管理 PostgreSQL 软件包的 APT/YUM 仓库，详情请参考 [`pig repo`](https://pig.pgsty.com/zh/repo/)
 
 ```bash
 pig repo list                    # 列出可用仓库
@@ -99,7 +99,7 @@ pig repo boot                    # 从离线包引导
 
 ## pig ext
 
-管理 PostgreSQL 扩展和内核包，详情请参考 [`pig ext`](/pig/cmd/ext/)
+管理 PostgreSQL 扩展和内核包，详情请参考 [`pig ext`](https://pig.pgsty.com/zh/ext/)
 
 ```bash
 pig ext list    duck             # 搜索扩展
@@ -119,7 +119,7 @@ pig ext reload                   # 刷新扩展目录
 
 ## pig build
 
-从源码构建 PostgreSQL 扩展，详情请参考 [`pig build`](/pig/cmd/build/)
+从源码构建 PostgreSQL 扩展，详情请参考 [`pig build`](https://pig.pgsty.com/zh/build/)
 
 ```bash
 # 环境设置
@@ -157,7 +157,7 @@ pig install pg_vector -y         # 自动确认安装
 
 ## pig sty
 
-安装 Pigsty 发行版，详情请参考 [`pig sty`](/pig/cmd/sty/)
+安装 Pigsty 发行版，详情请参考 [`pig sty`](https://pig.pgsty.com/zh/sty/)
 
 ```bash
 pig sty init                     # 安装 Pigsty 到 ~/pigsty
@@ -165,7 +165,7 @@ pig sty boot                     # 安装 Ansible 依赖
 pig sty conf                     # 生成配置
 pig sty deploy                   # 运行部署 playbook
 pig sty list                     # 列出可用 Pigsty 版本
-pig sty get 4.4.0                # 下载指定 Pigsty 版本
+pig sty get 4.5.0                # 下载指定 Pigsty 版本
 pig sty grafana list             # 管理 Grafana 仪表盘（info/list/boot/load/init/dump/clean/lang/style）
 ```
 
@@ -173,7 +173,7 @@ pig sty grafana list             # 管理 Grafana 仪表盘（info/list/boot/loa
 ## pig inventory
 
 检视、编辑、校验、体检并与 CMDB 交换 Pigsty 配置清单（`pigsty.yml`），根级命令组，别名 `inv`，
-详情请参考 [`pig inventory`](/pig/cmd/inventory/)。（v1.6.0 新增）
+详情请参考 [`pig inventory`](https://pig.pgsty.com/zh/inventory/)。（v1.6.0 新增）
 
 ```bash
 pig inventory status             # 检视当前生效的清单来源
@@ -228,7 +228,7 @@ pig context -m postgres,!host    # 排除 host 模块
 
 ## pig pg
 
-管理本地 PostgreSQL 服务器，详情请参考 [`pig pg`](/pig/cmd/pg/)
+管理本地 PostgreSQL 服务器，详情请参考 [`pig pg`](https://pig.pgsty.com/zh/pg/)
 
 ```bash
 pig pg init                      # 初始化数据目录
@@ -247,7 +247,7 @@ pig pg log tail                  # 实时查看日志
 
 ## pig pt
 
-透明运行 `patronictl` 管理 Patroni HA 集群，详情请参考 [`pig pt`](/pig/cmd/pt/)
+透明运行 `patronictl` 管理 Patroni HA 集群，详情请参考 [`pig pt`](https://pig.pgsty.com/zh/pt/)
 
 ```bash
 pig pt list pg-meta              # 列出集群成员（原生透传）
@@ -261,7 +261,7 @@ pig pt log -f                    # 本地命令：实时查看日志
 
 ## pig pb
 
-管理 pgBackRest 备份与恢复，详情请参考 [`pig pb`](/pig/cmd/pb/)
+管理 pgBackRest 备份与恢复，详情请参考 [`pig pb`](https://pig.pgsty.com/zh/pb/)
 
 ```bash
 pig pb info                      # 显示备份信息
@@ -276,7 +276,7 @@ pig pb log tail                  # 实时查看日志
 
 ## pig pitr
 
-执行编排式时间点恢复（PITR），详情请参考 [`pig pitr`](/pig/cmd/pitr/)
+执行编排式时间点恢复（PITR），详情请参考 [`pig pitr`](https://pig.pgsty.com/zh/pitr/)
 
 ```bash
 pig pitr -d                      # 恢复到最新数据
@@ -294,7 +294,7 @@ pig status                       # 显示当前环境状态
 pig status -o json               # 结构化状态输出
 pig update                       # 将 pig 自身升级到最新版
 pig update -m                    # 使用 pigsty.cc 镜像升级
-pig update -v 1.6.0              # 升级到指定版本
+pig update -v X.Y.Z              # 升级到已发布在当前软件仓库中的指定版本
 pig version                      # 显示 pig 版本信息
 pig version -o json              # 结构化版本输出
 ```

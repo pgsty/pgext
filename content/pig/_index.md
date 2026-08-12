@@ -13,16 +13,16 @@ weight: 100
 — ***Postgres Install Genius, the missing extension package manager for PostgreSQL ecosystem***
 
 {{< cards >}}
-{{< card link="/pig/intro"   title="Introduction" subtitle="Why we need a package manager" icon="sparkles" >}}
-{{< card link="/pig/start"   title="Get Started"  subtitle="Tutorial and examples"         icon="play" >}}
-{{< card link="/pig/install" title="Installation" subtitle="Install in different ways" icon="save" >}}
+{{< card link="https://pig.pgsty.com/intro"   title="Introduction" subtitle="Why we need a package manager" icon="sparkles" >}}
+{{< card link="https://pig.pgsty.com/start"   title="Get Started"  subtitle="Tutorial and examples"         icon="play" >}}
+{{< card link="https://pig.pgsty.com/install" title="Installation" subtitle="Install in different ways" icon="save" >}}
 {{< /cards >}}
 
 
 
 ## Quick Start
 
-[Install](/pig/install) `pig` with a single command
+[Install](https://pig.pgsty.com/install) `pig` with a single command
 
 {{< tabs >}}
 {{< tab name="Default" >}}
@@ -51,24 +51,24 @@ $ pig install -y vector         # use both pkg and ext name to install extension
 
 ## CLI Usage
 
-Check sub-commands [documentation](/pig/cmd) with `pig help <command>`
+Check sub-commands [documentation](https://pig.pgsty.com/cmd/) with `pig help <command>`
 
 {{< cards cols="4" >}}
-{{< card link="/pig/cmd/repo"  title="pig repo"  subtitle="Manage software repositories" icon="library" >}}
-{{< card link="/pig/cmd/ext"   title="pig ext"   subtitle="Manage postgres extensions"   icon="cube" >}}
-{{< card link="/pig/cmd/build" title="pig build" subtitle="Build extension from source"  icon="view-grid" >}}
-{{< card link="/pig/cmd/sty"   title="pig sty"   subtitle="Manage pigsty installation"   icon="cloud-download" >}}
+{{< card link="https://pig.pgsty.com/repo"  title="pig repo"  subtitle="Manage software repositories" icon="library" >}}
+{{< card link="https://pig.pgsty.com/ext"   title="pig ext"   subtitle="Manage postgres extensions"   icon="cube" >}}
+{{< card link="https://pig.pgsty.com/build" title="pig build" subtitle="Build extension from source"  icon="view-grid" >}}
+{{< card link="https://pig.pgsty.com/sty"   title="pig sty"   subtitle="Manage pigsty installation"   icon="cloud-download" >}}
 {{< /cards >}}
 
 {{< cards cols="4" >}}
-{{< card link="/pig/cmd/pg"    title="pig pg"    subtitle="Manage local PostgreSQL"      icon="database" >}}
-{{< card link="/pig/cmd/pt"    title="pig pt"    subtitle="Run patronictl transparently" icon="refresh" >}}
-{{< card link="/pig/cmd/pb"    title="pig pb"    subtitle="Manage pgBackRest backup"     icon="archive" >}}
-{{< card link="/pig/cmd/pitr"  title="pig pitr"  subtitle="Orchestrated PITR recovery"   icon="clock" >}}
+{{< card link="https://pig.pgsty.com/pg"    title="pig pg"    subtitle="Manage local PostgreSQL"      icon="database" >}}
+{{< card link="https://pig.pgsty.com/pt"    title="pig pt"    subtitle="Run patronictl transparently" icon="refresh" >}}
+{{< card link="https://pig.pgsty.com/pb"    title="pig pb"    subtitle="Manage pgBackRest backup"     icon="archive" >}}
+{{< card link="https://pig.pgsty.com/pitr"  title="pig pitr"  subtitle="Orchestrated PITR recovery"   icon="clock" >}}
 {{< /cards >}}
 
 {{< cards cols="4" >}}
-{{< card link="/pig/cmd/inventory" title="pig inventory" subtitle="Edit & validate pigsty.yml" icon="clipboard-list" >}}
+{{< card link="https://pig.pgsty.com/inventory" title="pig inventory" subtitle="Edit & validate pigsty.yml" icon="clipboard-list" >}}
 {{< /cards >}}
 
 

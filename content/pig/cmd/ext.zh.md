@@ -46,7 +46,7 @@ Examples:
 
 ## 快速入门
 
-在安装 PostgreSQL 扩展前，你需要先添加 [`pig repo add`](/zh/pig/cmd/repo/)：
+在安装 PostgreSQL 扩展前，你需要先添加 [`pig repo add`](https://pig.pgsty.com/zh/repo/)：
 
 ```bash
 pig repo add pgdg pigsty -u    # 温和方式添加 pgdg 和 pigsty 仓库
@@ -172,7 +172,7 @@ pig ext scan [-v version]
 
 ## ext add
 
-安装一个或多个 PostgreSQL 扩展。`pig ext add` 的同级别名包括 `pig ext install`、`pig ext ins` 与 `pig ext a`。顶层 [`pig install`](/zh/pig/cmd/#install) 是另一个原生包管理器包装命令，也支持 PostgreSQL 与扩展包 alias 翻译。
+安装一个或多个 PostgreSQL 扩展。`pig ext add` 的同级别名包括 `pig ext install`、`pig ext ins` 与 `pig ext a`。顶层 [`pig install`](https://pig.pgsty.com/zh/cmd/#pig-install) 是另一个原生包管理器包装命令，也支持 PostgreSQL 与扩展包 alias 翻译。
 
 ```bash
 pig ext add pg_duckdb            # 安装 pg_duckdb

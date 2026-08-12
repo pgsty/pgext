@@ -14,13 +14,13 @@ Pigsty 依赖 PGDG 仓库中原生的 PostgreSQL 内核软件包，并在此基�
 
 ## 快速上手
 
-您可以安装 [pig](/zh/pig) - CLI 工具，并使用它添加 pgdg / pigsty 仓库（推荐）：
+您可以安装 [pig](https://pig.pgsty.com/zh) - CLI 工具，并使用它添加 pgdg / pigsty 仓库（推荐）：
 
 ```bash tab="pig"
 pig repo add pgdg                         # 添加 PGDG 仓库
 pig repo add pgdg -u                      # 添加 PGDG 仓库，并更新本地缓存
 pig repo add pgdg -u --region=default     # 强制使用全球默认区域的仓库（postgresql.org）
-pig repo add pgdg -u --region=china       # 使用中国镜像仓库 (repo.pigsty.cc)
+pig repo add pgdg -u --region=china       # 使用腾讯云 PGDG 中国镜像仓库
 pig repo add pgsql -u                     # pgsql = pgdg + pigsty-pgsql (同时添加 Pigsty 与 PGDG 官方仓库)
 pig repo add -u                           # all = node + pgsql (pgdg + pigsty) + infra，一次性添加所有仓库
 ```
@@ -29,9 +29,11 @@ pig repo add -u                           # all = node + pgsql (pgdg + pigsty) +
 
 ## 镜像
 
-2025年5月中旬，PGDG 关闭了 rsync/ftp 同步渠道，导致全球几乎所有 PGDG 镜像站失去同步，根据观察，目前只有 YANDEX，XTOM，PIGSTY 提供定期同步。
-
-Pigsty 在中国区域提供 PGDG 镜像的子集，覆盖 EL 7-10、Debian 11-13 与 Ubuntu 20.04-26.04 的 `x86_64`、`aarch64` 仓库。当前 PGEXT 目录以 PostgreSQL 14-18 为活跃支持窗口；可用时也会镜像 beta 与旧版本分支。
+中国区域的 PGDG 路由统一使用腾讯云 PostgreSQL 镜像：
+`https://mirrors.cloud.tencent.com/postgresql/repos/`。使用
+`--region=china` 或 `--mirror` 时，Pig 与 Pigsty 都会为 PGDG YUM/DNF 和
+APT 仓库首选该地址；YUM 定义保留 Pigsty 镜像作为兼容回退。全球
+`default` 路由仍使用 PostgreSQL 官方仓库。
 
 | OS 系统代码                                                                               | 厂商     | 大版本            | PG 大版本                                                                                                                                                                                                                                                |                       备注                       |
 |:----------------------------------------------------------------------------------------|:-------|:---:|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------:|
@@ -60,19 +62,19 @@ Pigsty 在中国区域提供 PGDG 镜像的子集，覆盖 EL 7-10、Debian 11-1
 EL YUM/DNF 仓库信息：
 
 ```yaml
-- { name: pgdg14         ,description: 'PostgreSQL 14'      ,module: pgsql   ,releases: [7,8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/14/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch' }}
-- { name: pgdg15         ,description: 'PostgreSQL 15'      ,module: pgsql   ,releases: [7,8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/15/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch' }}
-- { name: pgdg16         ,description: 'PostgreSQL 16'      ,module: pgsql   ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/16/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/16/redhat/rhel-$releasever-$basearch' }}
-- { name: pgdg17         ,description: 'PostgreSQL 17'      ,module: pgsql   ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/17/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/17/redhat/rhel-$releasever-$basearch' }}
-- { name: pgdg18         ,description: 'PostgreSQL 18'      ,module: pgsql   ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/18/redhat/rhel-$releasever-$basearch' }}
-- { name: pgdg19-beta    ,description: 'PostgreSQL 19 Beta' ,module: beta    ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/testing/19/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/testing/19/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/testing/19/redhat/rhel-$releasever-$basearch' }}
+- { name: pgdg14         ,description: 'PostgreSQL 14'      ,module: pgsql   ,releases: [7,8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch https://repo.pigsty.cc/yum/pgdg/14/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch' }}
+- { name: pgdg15         ,description: 'PostgreSQL 15'      ,module: pgsql   ,releases: [7,8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch https://repo.pigsty.cc/yum/pgdg/15/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch' }}
+- { name: pgdg16         ,description: 'PostgreSQL 16'      ,module: pgsql   ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/16/redhat/rhel-$releasever-$basearch https://repo.pigsty.cc/yum/pgdg/16/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/16/redhat/rhel-$releasever-$basearch' }}
+- { name: pgdg17         ,description: 'PostgreSQL 17'      ,module: pgsql   ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/17/redhat/rhel-$releasever-$basearch https://repo.pigsty.cc/yum/pgdg/17/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/17/redhat/rhel-$releasever-$basearch' }}
+- { name: pgdg18         ,description: 'PostgreSQL 18'      ,module: pgsql   ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/18/redhat/rhel-$releasever-$basearch https://repo.pigsty.cc/yum/pgdg/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/18/redhat/rhel-$releasever-$basearch' }}
+- { name: pgdg19-beta    ,description: 'PostgreSQL 19 Beta' ,module: beta    ,releases: [  8,9,10]       ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/testing/19/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/testing/19/redhat/rhel-$releasever-$basearch https://repo.pigsty.cc/yum/pgdg/testing/19/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/testing/19/redhat/rhel-$releasever-$basearch' }}
 ```
 
 Debian / Ubuntu APT 仓库信息：
 
 ```yaml
-- { name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,   22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg main'            ,china: 'https://repo.pigsty.cc/apt/pgdg/ ${distro_codename}-pgdg main' }}
-- { name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,   22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg-testing main 19' ,china: 'https://repo.pigsty.cc/apt/pgdg/ ${distro_codename}-pgdg-testing main 19' }}
+- { name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg main'            ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/apt/ ${distro_codename}-pgdg main' }}
+- { name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg-testing main 19' ,china: 'https://mirrors.cloud.tencent.com/postgresql/repos/apt/ ${distro_codename}-pgdg-testing main 19' }}
 ```
 
 
@@ -89,12 +91,12 @@ sudo curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc -o /usr/share
 sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 ```
 
-使用此镜像站时，可以从 `https://repo.pigsty.cc/apt/pgdg/ACCC4CF8.key` 获取 PGDG APT 公钥： 
+使用腾讯云镜像时，可以直接获取同一份 PGDG APT 公钥：
 
 ```bash
-sudo curl -fsSL https://repo.pigsty.cc/apt/pgdg/ACCC4CF8.key -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc 
+sudo curl -fsSL https://mirrors.cloud.tencent.com/postgresql/repos/apt/ACCC4CF8.asc -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
 . /etc/os-release
-sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://repo.pigsty.cc/apt/pgdg/ $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://mirrors.cloud.tencent.com/postgresql/repos/apt/ $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 ```
 
 

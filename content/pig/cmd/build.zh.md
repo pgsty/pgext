@@ -135,7 +135,7 @@ pig build spec -m                # 优先使用 pigsty.cc 中国镜像
 
 ```bash
 pig build repo                   # 等同于：pig repo set -ru
-pig build repo -m                # 使用镜像/代理路径添加 PostgreSQL 仓库
+pig build repo -m                # 使用中国镜像（PGDG 首选腾讯云）
 pig build repo -b                # 包含 PostgreSQL beta 仓库
 ```
 
@@ -143,7 +143,7 @@ pig build repo -b                # 包含 PostgreSQL beta 仓库
 
 **选项：**
 
-- `-m|--mirror`：对 PostgreSQL 仓库使用 Pigsty 镜像/代理路径
+- `-m|--mirror`：优先使用中国镜像（PGDG 首选腾讯云）
 - `-b|--beta`：包含 PostgreSQL beta 仓库模块，当前用于 PG19 beta 构建
 
 

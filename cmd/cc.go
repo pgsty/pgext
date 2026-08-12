@@ -110,6 +110,15 @@ If no extension names are provided, generates pages for all extensions.`,
 			logrus.Warnf("Failed to generate pages for: %v", failedExtensions)
 			return fmt.Errorf("failed to generate %d extension pages: %s", len(failedExtensions), strings.Join(failedExtensions, ", "))
 		}
+		if len(args) == 0 {
+			removed, err := generator.PruneStaleExtensionPages(extensionsToGenerate)
+			if err != nil {
+				return fmt.Errorf("failed to prune stale extension pages: %w", err)
+			}
+			if len(removed) > 0 {
+				logrus.Infof("Removed %d stale extension pages: %s", len(removed), strings.Join(removed, ", "))
+			}
+		}
 		return nil
 	}),
 }
@@ -270,6 +279,14 @@ var ccAllCmd = &cobra.Command{
 				logrus.Error(err)
 			}
 			return fmt.Errorf("generation completed with %d errors", len(errors))
+		}
+
+		removed, err := pageGenerator.PruneStaleExtensionPages(cache.ReadyExtensions())
+		if err != nil {
+			return fmt.Errorf("failed to prune stale extension pages: %w", err)
+		}
+		if len(removed) > 0 {
+			logrus.Infof("Removed %d stale extension pages: %s", len(removed), strings.Join(removed, ", "))
 		}
 
 		logrus.Info("All content generated successfully!")

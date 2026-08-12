@@ -1,52 +1,44 @@
-
-
-
 ## Usage
 
-Sources: [pg_uuid_v8 README](https://github.com/ineron/pg_uuid_v8), [SQL definitions](https://github.com/ineron/pg_uuid_v8/blob/main/pg_uuid_v8--1.0.sql), [control file](https://github.com/ineron/pg_uuid_v8/blob/main/pg_uuid_v8.control).
+Sources:
 
-`pg_uuid_v8` generates UUIDs that look like UUID v4 values while embedding encrypted microsecond timestamps for extraction, sorting, and range predicates. The SQL file exposes both `uuid_stego_*` names and `uuid_v8_*` convenience aliases.
+- [pg_uuid_v8 1.1.0 on PGXN](https://pgxn.org/dist/pg_uuid_v8/1.1.0/)
+- [pg_uuid_v8 1.1.0 README](https://api.pgxn.org/src/pg_uuid_v8/pg_uuid_v8-1.1.0/README.md)
+- [pg_uuid_v8 1.1.0 control file](https://api.pgxn.org/src/pg_uuid_v8/pg_uuid_v8-1.1.0/pg_uuid_v8.control)
+- [pg_uuid_v8 1.0 base SQL](https://api.pgxn.org/src/pg_uuid_v8/pg_uuid_v8-1.1.0/pg_uuid_v8--1.0.sql)
+- [pg_uuid_v8 1.0 to 1.1 upgrade SQL](https://api.pgxn.org/src/pg_uuid_v8/pg_uuid_v8-1.1.0/pg_uuid_v8--1.0--1.1.sql)
+- [Pigsty pg_uuid_v8 package matrix](https://pgext.cloud/ext/pg_uuid_v8)
 
-### Generate UUIDs
+`pg_uuid_v8` 1.1.0 generates UUID values with UUID-v4 version and variant bits while embedding an obfuscated creation time in the random payload. Its `uuid_v8_*` convenience functions mirror the lower-level `uuid_stego_*` API. Use it when hidden time extraction and time-range indexing are useful, but do not treat the embedded value as an authentication token or a substitute for a separate trusted creation timestamp.
+
+### Generate Values
 
 ```sql
 CREATE EXTENSION pg_uuid_v8;
 
-SELECT uuid_v8_set_seed('replace-with-a-secret-seed');
-SELECT uuid_v8_generate();
-```
+SELECT uuid_v8_set_seed('replace-with-a-unique-secret');
+SELECT uuid_v8_set_encryption_mode('AES128');
 
-The equivalent lower-level generator is:
-
-```sql
-SELECT uuid_stego_generate();
-```
-
-Use a default expression when inserting events:
-
-```sql
 CREATE TABLE events (
   id uuid PRIMARY KEY DEFAULT uuid_v8_generate(),
   data jsonb,
-  created_at timestamptz DEFAULT now()
+  created_at timestamptz NOT NULL DEFAULT now()
 );
+
+INSERT INTO events(data) VALUES ('{"type":"login"}');
 ```
 
-### Extract And Query Hidden Timestamps
+The upstream implementation defaults to a published built-in seed and `XOR` mode. Set a deployment-specific secret before generating values. `AES128` and `AES256` are also available, but the same seed and mode must be selected when extracting a value.
 
-Extract the embedded timestamp as microseconds since the Unix epoch:
-
-```sql
-SELECT uuid_v8_extract_timestamp(id)
-FROM events
-ORDER BY uuid_v8_extract_timestamp(id)
-LIMIT 10;
-```
-
-The README recommends functional indexes for time-based lookups:
+### Extract and Index the Hidden Time
 
 ```sql
-CREATE INDEX events_uuid_v8_time_idx
+SELECT
+  uuid_v8_extract_timestamp(id) AS epoch_microseconds,
+  stego_time_to_timestamp(uuid_v8_extract_timestamp(id)) AS created_time
+FROM events;
+
+CREATE INDEX events_uuid_time_idx
 ON events USING btree (uuid_v8_extract_timestamp(id));
 
 SELECT *
@@ -57,61 +49,39 @@ WHERE uuid_v8_extract_timestamp(id)
 ORDER BY uuid_v8_extract_timestamp(id);
 ```
 
-Helper functions convert between timestamps and the integer timestamp format:
+`uuid_v8_extract_timestamp(uuid)` returns a microsecond-scaled `bigint` so it remains compatible with `timestamp_to_stego_time()` and `stego_time_to_timestamp()`. In version 1.1 the internal 48-bit field stores milliseconds, so the returned value has millisecond resolution and its last three decimal digits are zero.
+
+`uuid_stego_in_range()` offers a boolean timestamp-range helper. A functional B-tree index on the extraction function is the explicit and predictable path for indexed time predicates.
+
+### Compare Hidden Times
+
+`uuid_v8_compare(uuid, uuid)` and `uuid_stego_compare(uuid, uuid)` return ordering by extracted hidden time. The extension also defines `<`, `<=`, `>`, and `>=` operators for UUID arguments.
+
+Pigsty packages install these added operators in `public` and qualify their commutator and negator references for PostgreSQL 17 and 18 compatibility. PostgreSQL already has built-in UUID ordering operators, so use the comparison functions or a schema-qualified `OPERATOR(public.<)` expression when hidden-time semantics must be unambiguous.
+
+### Seed and Mode Controls
 
 ```sql
-SELECT timestamp_to_stego_time(now());
-SELECT stego_time_to_timestamp(uuid_v8_extract_timestamp(id))
-FROM events;
-```
-
-### Range Helpers And Operators
-
-The SQL definition includes direct range helpers:
-
-```sql
-SELECT *
-FROM events
-WHERE uuid_stego_in_range(
-  id,
-  now() - interval '24 hours',
-  now()
-);
-```
-
-It also defines timestamp-aware comparison functions and operators for `uuid`:
-
-- `uuid_stego_compare(uuid, uuid)` and `uuid_v8_compare(uuid, uuid)`.
-- `uuid_stego_lt`, `uuid_stego_le`, `uuid_stego_gt`, `uuid_stego_ge`.
-- Operators `<`, `<=`, `>`, and `>=` compare UUIDs by hidden timestamp.
-
-### Seed And Encryption Mode
-
-Set and inspect the seed:
-
-```sql
-SELECT uuid_v8_set_seed('replace-with-a-secret-seed');
+SELECT uuid_v8_set_seed('replace-with-a-unique-secret');
 SELECT uuid_v8_get_seed();
-```
 
-Available encryption modes are `XOR`, `AES128`, and `AES256`:
-
-```sql
-SELECT uuid_v8_get_encryption_mode();
-SELECT uuid_v8_set_encryption_mode('AES128');
 SELECT uuid_v8_set_encryption_mode('XOR');
-```
+SELECT uuid_v8_set_encryption_mode('AES128');
+SELECT uuid_v8_set_encryption_mode('AES256');
+SELECT uuid_v8_get_encryption_mode();
 
-For a persistent default, the README documents the `uuid_v8.encryption_mode` GUC:
-
-```sql
 ALTER SYSTEM SET uuid_v8.encryption_mode = 'AES128';
 SELECT pg_reload_conf();
 ```
 
-### Caveats
+The seed is exposed as `uuid_v8.stego_seed` and the mode as `uuid_v8.encryption_mode`. Setter functions change the current session; configuration settings can establish defaults for later sessions. `uuid_v8_get_seed()` returns the active seed, so restrict database access accordingly and never log its result.
 
-- Keep the seed secret; it is required to interpret hidden timestamps.
-- UUIDs generated with one seed and encryption mode must be decoded with the same settings.
-- Functional indexes on extracted timestamps add storage and update overhead, but are the intended path for efficient time-range predicates.
-- Local Pigsty metadata pins this extension to the `public` schema so the UUID comparison operator commutators resolve on PostgreSQL 17 and 18; test operators explicitly if using a different schema in a non-Pigsty build.
+### Upgrade and Compatibility Boundaries
+
+```sql
+ALTER EXTENSION pg_uuid_v8 UPDATE TO '1.1';
+```
+
+Version 1.1 changes timestamp storage from microseconds to milliseconds. The old 48-bit microsecond field rolled over about every 8.9 years and could not reliably recover current absolute dates; the 48-bit millisecond field lasts about 8,925 years. Relative ordering of pre-1.1 values was unaffected, but absolute time extraction and range predicates for those existing values remain unreliable after the upgrade because their encoded representation is not rewritten.
+
+The PGXN metadata targets PostgreSQL 12 or later; current Pigsty packages cover PostgreSQL 14–18. Pigsty packages pin the extension to `public` and make it non-relocatable so the added operators resolve consistently. Keep an ordinary `created_at` column when provenance, auditability, sub-millisecond precision, or migrations across seeds and modes matter.

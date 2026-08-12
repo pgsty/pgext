@@ -7,18 +7,18 @@ weight: 600
 
 The `pig` CLI provides a comprehensive toolkit for managing PostgreSQL installations, extensions, repositories, and extension builds from source. Use `pig help <command>` to view command documentation.
 
-- [**pig repo**](/pig/cmd/repo/): manage software repositories
-- [**pig ext**](/pig/cmd/ext/): manage PostgreSQL extensions
-- [**pig build**](/pig/cmd/build/): build extensions from source
+- [**pig repo**](https://pig.pgsty.com/repo/): manage software repositories
+- [**pig ext**](https://pig.pgsty.com/ext/): manage PostgreSQL extensions
+- [**pig build**](https://pig.pgsty.com/build/): build extensions from source
 - **pig install**: install packages with the native package manager and translate PostgreSQL aliases
-- [**pig sty**](/pig/cmd/sty/): manage Pigsty installation and Grafana dashboards
-- [**pig inventory**](/pig/cmd/inventory/): inspect, edit, validate, and exchange the Pigsty inventory (new in v1.6.0)
+- [**pig sty**](https://pig.pgsty.com/sty/): manage Pigsty installation and Grafana dashboards
+- [**pig inventory**](https://pig.pgsty.com/inventory/): inspect, edit, validate, and exchange the Pigsty inventory (new in v1.6.0)
 - **pig do**: run Pigsty administration playbook tasks
 - **pig pe**: access pg_exporter metrics and configuration
-- [**pig pg**](/pig/cmd/pg/): manage local PostgreSQL servers
-- [**pig pt**](/pig/cmd/pt/): run patronictl transparently with service and config helpers
-- [**pig pb**](/pig/cmd/pb/): manage pgBackRest backup and restore
-- [**pig pitr**](/pig/cmd/pitr/): run the full PITR workflow
+- [**pig pg**](https://pig.pgsty.com/pg/): manage local PostgreSQL servers
+- [**pig pt**](https://pig.pgsty.com/pt/): run patronictl transparently with service and config helpers
+- [**pig pb**](https://pig.pgsty.com/pb/): manage pgBackRest backup and restore
+- [**pig pitr**](https://pig.pgsty.com/pitr/): run the full PITR workflow
 - **pig context**: output an environment context snapshot for humans and agents
 - **pig status / update / version**: inspect environment status, upgrade pig, and print version information
 
@@ -79,7 +79,7 @@ Use "pig [command] --help" for more information about a command.
 
 ## pig repo
 
-Manage APT/YUM repositories for PostgreSQL packages. See [`pig repo`](/pig/cmd/repo/) for details.
+Manage APT/YUM repositories for PostgreSQL packages. See [`pig repo`](https://pig.pgsty.com/repo/) for details.
 
 ```bash
 pig repo list                    # list available repositories
@@ -96,7 +96,7 @@ pig repo boot                    # bootstrap from offline package
 
 ## pig ext
 
-Manage PostgreSQL extensions and kernel packages. See [`pig ext`](/pig/cmd/ext/) for details.
+Manage PostgreSQL extensions and kernel packages. See [`pig ext`](https://pig.pgsty.com/ext/) for details.
 
 ```bash
 pig ext list    duck             # search extensions
@@ -114,7 +114,7 @@ pig ext reload                   # refresh extension catalog
 
 ## pig build
 
-Build PostgreSQL extensions from source. See [`pig build`](/pig/cmd/build/) for details.
+Build PostgreSQL extensions from source. See [`pig build`](https://pig.pgsty.com/build/) for details.
 
 ```bash
 # Environment setup
@@ -152,7 +152,7 @@ pig install pg_vector -y         # auto-confirm installation
 
 ## pig sty
 
-Install the Pigsty distribution. See [`pig sty`](/pig/cmd/sty/) for details.
+Install the Pigsty distribution. See [`pig sty`](https://pig.pgsty.com/sty/) for details.
 
 ```bash
 pig sty init                     # install Pigsty to ~/pigsty
@@ -160,7 +160,7 @@ pig sty boot                     # install Ansible prerequisites
 pig sty conf                     # generate configuration
 pig sty deploy                   # run deployment playbook
 pig sty list                     # list available Pigsty releases
-pig sty get 4.4.0                # download a Pigsty release
+pig sty get 4.5.0                # download a Pigsty release
 pig sty grafana list             # manage Grafana dashboards (info/list/boot/load/init/dump/clean/lang/style)
 ```
 
@@ -168,7 +168,7 @@ pig sty grafana list             # manage Grafana dashboards (info/list/boot/loa
 ## pig inventory
 
 Inspect, edit, validate, check, and exchange the Pigsty inventory (`pigsty.yml`) with the
-CMDB. Root-level command group with alias `inv`; see [`pig inventory`](/pig/cmd/inventory/)
+CMDB. Root-level command group with alias `inv`; see [`pig inventory`](https://pig.pgsty.com/inventory/)
 for details. (New in v1.6.0)
 
 ```bash
@@ -224,7 +224,7 @@ pig context -m postgres,!host    # exclude host module
 
 ## pig pg
 
-Manage the local PostgreSQL server. See [`pig pg`](/pig/cmd/pg/) for details.
+Manage the local PostgreSQL server. See [`pig pg`](https://pig.pgsty.com/pg/) for details.
 
 ```bash
 pig pg init                      # initialize data directory
@@ -243,7 +243,7 @@ pig pg log tail                  # tail logs in real time
 
 ## pig pt
 
-Run `patronictl` transparently to manage Patroni HA clusters. See [`pig pt`](/pig/cmd/pt/) for details.
+Run `patronictl` transparently to manage Patroni HA clusters. See [`pig pt`](https://pig.pgsty.com/pt/) for details.
 
 ```bash
 pig pt list pg-meta              # list cluster members (native passthrough)
@@ -257,7 +257,7 @@ pig pt log -f                    # local: tail logs in real time
 
 ## pig pb
 
-Manage pgBackRest backup and restore. See [`pig pb`](/pig/cmd/pb/) for details.
+Manage pgBackRest backup and restore. See [`pig pb`](https://pig.pgsty.com/pb/) for details.
 
 ```bash
 pig pb info                      # show backup information
@@ -272,7 +272,7 @@ pig pb log tail                  # tail logs in real time
 
 ## pig pitr
 
-Run orchestrated point-in-time recovery (PITR). See [`pig pitr`](/pig/cmd/pitr/) for details.
+Run orchestrated point-in-time recovery (PITR). See [`pig pitr`](https://pig.pgsty.com/pitr/) for details.
 
 ```bash
 pig pitr -d                      # recover to latest data
@@ -290,7 +290,7 @@ pig status                       # show current environment status
 pig status -o json               # structured status output
 pig update                       # upgrade pig itself to the latest version
 pig update -m                    # upgrade using the pigsty.cc mirror
-pig update -v 1.6.0              # upgrade to a selected version
+pig update -v X.Y.Z              # upgrade to a version published by the configured repository
 pig version                      # show pig version information
 pig version -o json              # structured version output
 ```

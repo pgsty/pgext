@@ -2,33 +2,75 @@
 
 Sources:
 
-- [Pinned current upstream README](https://github.com/vyruss/pg_statviz/blob/b9af6214a10d9295de54b27842a7e0da1e3066fa/README.md)
-- [Version 1.1 installation SQL](https://github.com/vyruss/pg_statviz/blob/b9af6214a10d9295de54b27842a7e0da1e3066fa/pg_statviz--1.1.sql)
-- [Pinned extension control file](https://github.com/vyruss/pg_statviz/blob/b9af6214a10d9295de54b27842a7e0da1e3066fa/pg_statviz.control)
-- [Formal PGXN distribution](https://pgxn.org/dist/pg_statviz/)
+- [pg_statviz v1.1 release](https://github.com/vyruss/pg_statviz/releases/tag/v1.1)
+- [pg_statviz v1.1 README](https://github.com/vyruss/pg_statviz/blob/v1.1/README.md)
+- [pg_statviz v1.1 installation SQL](https://github.com/vyruss/pg_statviz/blob/v1.1/pg_statviz--1.1.sql)
+- [pg_statviz v1.1 control file](https://github.com/vyruss/pg_statviz/blob/v1.1/pg_statviz.control)
+- [pg_statviz v1.1 metadata](https://github.com/vyruss/pg_statviz/blob/v1.1/META.json)
+- [pg_statviz v1.1 Python package metadata](https://github.com/vyruss/pg_statviz/blob/v1.1/pyproject.toml)
+- [pg_statviz v1.1 AI provider implementation](https://github.com/vyruss/pg_statviz/blob/v1.1/src/pg_statviz/libs/ai.py)
+- [Official PGXN distribution](https://pgxn.org/dist/pg_statviz/)
 
-pg_statviz version 1.1 is a pure-SQL statistics snapshot extension paired with an external Python visualization utility. Each snapshot stores selected buffer, configuration, connection, database, I/O, lock, replication, SLRU, wait-event, and WAL counters under the fixed pgstatviz schema.
+`pg_statviz` v1.1 is a pure SQL and PL/pgSQL statistics snapshot extension plus a separately installed Python visualization utility. The extension stores cumulative and dynamic PostgreSQL statistics in the fixed `pgstatviz` schema; the utility reads a selected time range and generates charts or optional AI-assisted HTML reports. It requires PostgreSQL 13 or later, needs no `shared_preload_libraries`, and does not require a restart. The utility requires Python 3.11 or later.
 
-### Capture snapshots
+### Capture and Retain Snapshots
+
+Have an administrator install the extension, then let a dedicated collection role inherit `pg_monitor` and schedule `pgstatviz.snapshot()` with cron or another external job runner.
 
 ```sql
 CREATE EXTENSION pg_statviz;
 
+GRANT pg_monitor TO stats_collector;
+
 SELECT pgstatviz.snapshot();
 
-SELECT snapshot_tstamp, conn_total, conn_active,
-       max_query_age_seconds, max_xact_age_seconds
-FROM pgstatviz.conn
-ORDER BY snapshot_tstamp DESC
-LIMIT 10;
+DELETE FROM pgstatviz.snapshots
+WHERE snapshot_tstamp < CURRENT_DATE - 90;
 ```
 
-Schedule snapshot calls with an external job runner at an interval appropriate for the required resolution. The separately installed pg_statviz command reads a time range and renders charts. The current README states Python 3.11+ for the utility and supports recent PostgreSQL versions through 18.
+Deleting parent rows cascades to the associated samples. `pgstatviz.delete_snapshots()` instead truncates the complete history. Pick an interval and retention window based on the shortest event worth observing and the resulting table growth; raw PostgreSQL counters are cumulative and can reset independently, so analyze timestamped deltas rather than treating stored values as rates.
 
-### Retention, privileges, and optional AI
+### Stored Data and Version Boundaries
 
-Snapshots accumulate until rows are deleted or delete_snapshots truncates all snapshot tables. Set a retention job and estimate storage before frequent collection. Statistics are cumulative, can reset independently, and may require elevated visibility; interpret deltas rather than treating raw counters as rates.
+The main relations are `pgstatviz.snapshots`, `pgstatviz.buf`, `pgstatviz.conf`, `pgstatviz.conn`, `pgstatviz.db`, `pgstatviz.io`, `pgstatviz.lock`, `pgstatviz.repl`, `pgstatviz.slru`, `pgstatviz.wait`, and `pgstatviz.wal`. Samples include configuration values, connection user names and ages, replication application and slot names, waits, locks, I/O, database counters, and WAL counters. Protect the tables, dumps, charts, and reports as operational data.
 
-The install SQL grants the built-in pg_monitor role schema usage, execute on all functions, and SELECT, INSERT, DELETE, and TRUNCATE on all pgstatviz tables. That lets any member collect and remove history, including calling the all-data delete function. Use a dedicated role or revised grants when collection and retention administration should be separated.
+Configuration is stored only when it changes, so `pgstatviz.conf` need not contain one row for every snapshot. `pg_stat_wal` data is collected on PostgreSQL 14 and later; `pg_stat_io` data is collected on PostgreSQL 16 and later, with PostgreSQL 18's byte-based fields handled separately. On older supported versions those tables remain part of the schema, but the unavailable collectors are skipped.
 
-The utility's optional AI mode can send chart data, captured configuration, host/role context, and deterministic findings to Claude or Gemini; local Ollama is also supported. This mode is not required for normal visualization. Review data classification, provider retention, prompt content, credentials, and outbound network policy before enabling a cloud provider.
+The extension marks its snapshot tables for extension-aware dumps. This allows history to be moved with `pg_dump`, but retention and backup size still need deliberate limits.
+
+### Visualize a Time Range
+
+Install the utility separately and pass normal libpq connection options. The `analyze` command runs every analysis module; individual modules such as `conn`, `io`, `wait`, and `wal` can be selected when a narrower report is sufficient.
+
+```bash
+pip install pg_statviz
+
+pg_statviz analyze \
+  -h /var/run/postgresql -d mydb -U stats_reader \
+  -D 2026-08-01T00:00 2026-08-02T00:00 \
+  -O /srv/pg_statviz/reports
+```
+
+Restrict database credentials and report-directory access. A visualization role needs read access to the captured schema but does not need permission to collect or delete snapshots.
+
+### Privilege Boundary
+
+The v1.1 installation SQL grants every member of `pg_monitor` schema usage, function execution, and `SELECT`, `INSERT`, `DELETE`, and `TRUNCATE` on all `pgstatviz` tables. Consequently, membership allows both snapshot collection and complete history removal through `pgstatviz.delete_snapshots()`; it is not a read-only visualization role.
+
+If collection, visualization, and retention administration must be separated, revise the default grants after installation and grant only the required functions and table privileges to dedicated roles. Recheck those grants after an extension update.
+
+### Optional AI and Cloud Data Review
+
+Normal chart generation makes no LLM request. AI mode requires the optional `pg_statviz[ai]` dependencies and an explicit `--ai` flag. Claude is the default cloud provider and reads `ANTHROPIC_API_KEY`; Gemini reads `GOOGLE_API_KEY`; `--ai local` uses a local Ollama service. The current defaults are `claude-sonnet-4-6`, `gemini-2.5-flash`, and `gemma4:e4b`; these are implementation defaults, not a guarantee that a provider account or local runtime will continue to offer them.
+
+```bash
+pip install 'pg_statviz[ai]'
+
+pg_statviz analyze \
+  -h /var/run/postgresql -d mydb -U stats_reader \
+  -D 2026-08-01T00:00 2026-08-02T00:00 \
+  -O /srv/pg_statviz/reports \
+  --ai gemini
+```
+
+For a cloud provider, the request can include chart images and summarized series together with the captured PostgreSQL version, primary/standby role, hostname, relevant configuration values, deterministic findings, user or role names, and replication identifiers. Treat that as an explicit operational-data export: review provider retention and regional policy, minimize the selected time range, secure generated HTML and PNG files, and use an approved outbound path. The prompt's data envelopes reduce prompt-injection risk but do not provide confidentiality, authorization, or a substitute for provider governance.

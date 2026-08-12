@@ -73,11 +73,22 @@ func TestLegacyRedirects(t *testing.T) {
 		{"/repo/pgsql", http.StatusFound, "/repo/PIGSTY"},
 		{"/repo/pgsql/", http.StatusFound, "/repo/PIGSTY"},
 
-		// retired pig CLI handbook moved to the Pigsty docs
-		{"/pig", http.StatusFound, pigDocsURL},
-		{"/pig/", http.StatusFound, pigDocsURL},
-		{"/pig/install", http.StatusFound, pigDocsURL},
-		{"/pig/cmd/repo/", http.StatusFound, pigDocsURL},
+		// retired pig CLI handbook moved to the dedicated bilingual site
+		{"/pig", http.StatusFound, pigSiteURL},
+		{"/pig/", http.StatusFound, pigSiteURL},
+		{"/pig/install", http.StatusFound, pigSiteURL + "/install"},
+		{"/pig/cmd/", http.StatusFound, pigSiteURL + "/cmd/"},
+		{"/pig/cmd/repo/", http.StatusFound, pigSiteURL + "/repo/"},
+		{"/pig/cmd/ext/?from=old", http.StatusFound, pigSiteURL + "/ext/?from=old"},
+		{"/zh/pig", http.StatusFound, pigSiteURL + "/zh"},
+		{"/zh/pig/", http.StatusFound, pigSiteURL + "/zh"},
+		{"/zh/pig/install/", http.StatusFound, pigSiteURL + "/zh/install/"},
+		{"/zh/pig/cmd/", http.StatusFound, pigSiteURL + "/zh/cmd/"},
+		{"/zh/pig/cmd/repo/", http.StatusFound, pigSiteURL + "/zh/repo/"},
+		{"/release/pig", http.StatusFound, pigSiteURL + "/release/"},
+		{"/release/pig/", http.StatusFound, pigSiteURL + "/release/"},
+		{"/zh/release/pig", http.StatusFound, pigSiteURL + "/zh/release/"},
+		{"/zh/release/pig/", http.StatusFound, pigSiteURL + "/zh/release/"},
 	}
 	for _, tc := range cases {
 		rec := get(t, mux, tc.path)

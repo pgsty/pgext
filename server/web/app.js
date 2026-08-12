@@ -220,8 +220,8 @@ const I18N = {
   'ext.buildrecipe': ['A Pigsty package recipe is recorded for {types}. Build it with the same package-family name used by the catalog.',
                       '目录记录了 {types} 的 Pigsty 构建配方，请使用目录中的包族名称进行构建。'],
   'ext.sourcearchive': ['Source Tarball', '源码包'],
-  'ext.installlede': ['Enable the repository, install the package for your PostgreSQL major with <code>pig</code>, <code>apt</code> or <code>dnf</code>, then follow the preload, CREATE EXTENSION and verification steps from <code>pgext.universe</code>.',
-                      '启用软件仓库，用 <code>pig</code>、<code>apt</code> 或 <code>dnf</code> 为你的 PostgreSQL 大版本安装软件包，再按 <code>pgext.universe</code> 生成的步骤完成预加载、CREATE EXTENSION 与验证。'],
+  'ext.installlede': ['Enable the repository, install the package for your PostgreSQL major with <a href="https://pig.pgsty.com" target="_blank" rel="noopener"><code>pig</code></a>, <code>apt</code> or <code>dnf</code>, then follow the preload, CREATE EXTENSION and verification steps from <code>pgext.universe</code>.',
+                      '启用软件仓库，用 <a href="https://pig.pgsty.com/zh" target="_blank" rel="noopener"><code>pig</code></a>、<code>apt</code> 或 <code>dnf</code> 为你的 PostgreSQL 大版本安装软件包，再按 <code>pgext.universe</code> 生成的步骤完成预加载、CREATE EXTENSION 与验证。'],
   'ext.step.repo': ['1 · Repository', '1 · 软件仓库'],
   'ext.step.package': ['2 · Install package', '2 · 安装软件包'],
   'ext.step.load': ['3 · Load library', '3 · 加载动态库'],
@@ -1243,7 +1243,7 @@ function footerHTML() {
     + '<span class="footer-snap">snapshot ' + esc(META.generated || '—') + '</span></div>'
     + group(bi('Catalog', '目录'), [['/matrix', t('nav.matrix')], ['/list', t('nav.browse')], ['/about', t('nav.about')]])
     + group(bi('Resources', '资源'), [['/api/v1/meta', 'API', true], ['https://github.com/pgsty/pgext', 'GitHub', true], ['https://github.com/pgsty/pgext/blob/main/db/universe.csv', bi('Raw Data', '原始数据'), true]])
-    + group('Pigsty', [['https://pigsty.io', 'pigsty.io', true], ['https://pigsty.cc', 'pigsty.cc', true], ['https://pgext.cloud', 'pgext.cloud', true]])
+    + group('Pigsty', [['https://pigsty.io', 'pigsty.io', true], ['https://pigsty.cc', 'pigsty.cc', true], [bi('https://pig.pgsty.com', 'https://pig.pgsty.com/zh'), 'pig.pgsty.com', true], ['https://pgext.cloud', 'pgext.cloud', true]])
     + '</div>'
     + '<div class="wrap footer-bottom">'
     + '<span>© 2018-2026 <a href="https://pigsty.io" target="_blank" rel="noopener">Pigsty</a> · <a href="https://vonng.com/en" target="_blank" rel="noopener">Ruohang Feng</a></span>'
@@ -2970,16 +2970,18 @@ function aboutHTML() {
     + '<div><h3>' + bi('Highlights', '亮点') + '</h3><ul class="roadmap about-highlights">'
     + '<li><span class="tag">catalog</span>' + bi('<b>' + fmtInt(N_AVAIL) + '</b> packaged extensions — the largest catalog in the Postgres ecosystem', '<b>' + fmtInt(N_AVAIL) + '</b> 个已打包扩展——PG 生态最大的扩展目录') + '</li>'
     + '<li><span class="tag">native</span>' + bi('RPM/DEB packages, properly built, freely composable', 'Linux 原生 RPM/DEB 软件包，规范构建、自由组合') + '</li>'
-    + '<li><span class="tag">pig</span>' + bi('A handy CLI on apt/dnf: zero-config, out-of-the-box installs', '趁手的 pig 命令行：零配置、开箱即用') + '</li>'
+    + '<li><span class="tag">pig</span><a href="' + bi('https://pig.pgsty.com', 'https://pig.pgsty.com/zh') + '" target="_blank" rel="noopener">' + bi('A handy CLI on apt/dnf: zero-config, out-of-the-box installs', '趁手的 pig 命令行：零配置、开箱即用') + ' ↗</a></li>'
     + '<li><span class="tag">pgdg</span>' + bi('PGDG-compliant — drop-in with the official PostgreSQL kernel', '兼容 PGDG——与官方 PostgreSQL 内核即插即用') + '</li>'
     + '<li><span class="tag">cdn</span>' + bi('Distributed worldwide via Cloudflare CDN, fast and reliable', '通过 Cloudflare CDN 全球分发，快速可靠') + '</li>'
     + '<li><span class="tag">oss</span>' + bi('Reproducible builds on public infra — free for everyone', '可复现构建、公开基础设施，对所有人免费') + '</li>'
     + '</ul></div>'
     + '<div><h3>' + bi('Get started', '快速上手') + '</h3>'
-    + mdCodeHTML('bash', 'curl -fsSL https://repo.pigsty.io/pig | bash  # install pig cli\\npig repo set                  # setup upstream repository on your linux\\npig install pg18              # install PostgreSQL 18 kernel from PGDG\\npig install pg_duckdb -v 18   # install pg_duckdb extension for PG 18') + '</div>'
+    + mdCodeHTML('bash', 'curl -fsSL https://repo.pigsty.io/pig | bash  # install pig cli\\npig repo set                  # setup upstream repository on your linux\\npig install pg18              # install PostgreSQL 18 kernel from PGDG\\npig install pg_duckdb -v 18   # install pg_duckdb extension for PG 18')
+    + '<p><a href="' + bi('https://pig.pgsty.com/start/', 'https://pig.pgsty.com/zh/start/') + '" target="_blank" rel="noopener">' + bi('Read the PIG getting-started guide', '阅读 PIG 快速上手指南') + ' ↗</a></p></div>'
     + '<div><h3>' + bi('Friends', '友情链接') + '</h3><ul class="roadmap">'
     + out('https://pigsty.io', 'pigsty.io', bi('Pigsty — Battery-Included PostgreSQL Distribution', 'Pigsty——开箱即用的 PostgreSQL 发行版'))
     + out('https://pigsty.cc', 'pigsty.cc', bi('Pigsty Chinese site & mirror', 'Pigsty 中文站与镜像'))
+    + out(bi('https://pig.pgsty.com', 'https://pig.pgsty.com/zh'), 'pig.pgsty.com', bi('PIG — PostgreSQL package manager', 'PIG——PostgreSQL 包管理器'))
     + out('https://github.com/pgsty/pgext', 'github', bi('pgsty/pgext — the code behind this catalog', 'pgsty/pgext——本目录背后的代码'))
     + '</ul></div>'
     + '<div><h3>' + bi('Data', '数据') + '</h3>'

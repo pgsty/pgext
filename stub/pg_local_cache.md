@@ -2,15 +2,16 @@
 
 Sources:
 
-- [pg_local_cache 1.2.0 on PGXN](https://pgxn.org/dist/pg_local_cache/1.2.0/)
-- [pg_local_cache v1.2.0 README](https://github.com/profundium/pg_local_cache/blob/v1.2.0/README.md)
-- [pg_local_cache v1.2.0 control file](https://github.com/profundium/pg_local_cache/blob/v1.2.0/pg_local_cache.control)
-- [pg_local_cache 1.2.0 extension SQL](https://github.com/profundium/pg_local_cache/blob/v1.2.0/sql/pg_local_cache--1.2.0.sql)
-- [Technical reference](https://github.com/profundium/pg_local_cache/blob/v1.2.0/docs/TECHNICAL.md)
-- [Existing-server installation guide](https://github.com/profundium/pg_local_cache/blob/v1.2.0/docs/INSTALL_EXISTING.md)
-- [pg_local_cache v1.2.0 release](https://github.com/profundium/pg_local_cache/releases/tag/v1.2.0)
+- [pg_local_cache 1.3.0 on PGXN](https://pgxn.org/dist/pg_local_cache/1.3.0/)
+- [pg_local_cache v1.3.0 README](https://github.com/profundium/pg_local_cache/blob/v1.3.0/README.md)
+- [pg_local_cache v1.3.0 control file](https://github.com/profundium/pg_local_cache/blob/v1.3.0/pg_local_cache.control)
+- [pg_local_cache 1.3.0 extension SQL](https://github.com/profundium/pg_local_cache/blob/v1.3.0/sql/pg_local_cache--1.3.0.sql)
+- [Technical reference](https://github.com/profundium/pg_local_cache/blob/v1.3.0/docs/TECHNICAL.md)
+- [Existing-server installation guide](https://github.com/profundium/pg_local_cache/blob/v1.3.0/docs/INSTALL_EXISTING.md)
+- [pg_local_cache v1.3.0 release](https://github.com/profundium/pg_local_cache/releases/tag/v1.3.0)
+- [Pigsty package matrix](https://pgext.cloud/ext/pg_local_cache)
 
-`pg_local_cache` 1.2.0 is a transaction-aware, in-process cache for repeated PostgreSQL primary-key reads. It keeps bounded whole-row entries in shared memory and can transparently accelerate eligible ordinary `SELECT` statements while retaining the original PostgreSQL primary-key plan as the authoritative fallback. Use it for a hot working set on one writable primary; it is not a general query-result cache, a durability layer, or a distributed Redis/Valkey replacement.
+`pg_local_cache` 1.3.0 is a transaction-aware, in-process cache for repeated PostgreSQL primary-key reads. It keeps bounded whole-row entries in shared memory and can transparently accelerate eligible ordinary `SELECT` statements while retaining the original PostgreSQL primary-key plan as the authoritative fallback. Use it for a hot working set on one writable primary; it is not a general query-result cache, a durability layer, or a distributed Redis/Valkey replacement.
 
 ### Core Workflow
 
@@ -114,9 +115,22 @@ Entries have no TTL. They remain until invalidation, eviction, replacement, corr
 
 ### Table and Deployment Requirements
 
-Version 1.2.0 supports PostgreSQL 14–18 on the published Linux amd64 builds, one configured database, and one writable primary. Attached relations must be permanent, non-partitioned tables with no inheritance or row-level security and with an immediate, non-partial B-tree primary key. Supported key columns are `int2`, `int4`, `int8`, `text`, `varchar`, `bpchar`, and `uuid`; composite keys may contain 1–16 columns. Temporary or unlogged tables, views, partitioned tables, expression or partial primary keys, nondeterministic key collations, and non-default primary-key operator classes are rejected.
+Version 1.3.0 supports PostgreSQL 14–18, one configured database, and one writable primary. Upstream's own published binary and existing-server instructions cover Linux amd64 with glibc or musl; the current Pigsty package matrix separately includes validated x86_64 and aarch64 builds. Treat those as different evidence layers and verify the exact package platform before installation. Attached relations must be permanent, non-partitioned tables with no inheritance or row-level security and with an immediate, non-partial B-tree primary key. Supported key columns are `int2`, `int4`, `int8`, `text`, `varchar`, `bpchar`, and `uuid`; composite keys may contain 1–16 columns. Temporary or unlogged tables, views, partitioned tables, expression or partial primary keys, nondeterministic key collations, and non-default primary-key operator classes are rejected.
 
 At most 128 mappings are published per instance. Dropping a table forgets its mapping; recreating a table with the same name does not reattach it. The cache is not served on standbys and provides no multi-primary coordination, TTL, clustering, Pub/Sub, or general range/join/aggregate caching.
+
+### Version 1.3.0 Upgrade
+
+Version 1.3.0 changes the shared library, packaging, or documentation; its SQL objects are unchanged from 1.2.1. Because the library is loaded at postmaster startup, install the matching files, perform a controlled restart, then record the extension version:
+
+```sql
+ALTER EXTENSION pg_local_cache UPDATE TO '1.3.0';
+SELECT extversion
+FROM pg_extension
+WHERE extname = 'pg_local_cache';
+```
+
+After restart, check `local_cache.health()`, `local_cache.metrics()`, attached mappings, and an `EXPLAIN (ANALYZE, COSTS OFF)` fast-path query before returning traffic. Do not infer runtime readiness from the extension version alone.
 
 ### Optional RESP2 Security Boundary
 

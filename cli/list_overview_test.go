@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"database/sql"
 	"os"
 	"path/filepath"
 	"strings"
@@ -34,6 +35,9 @@ func TestOverviewPagesOnlyEmitHTMLOutput(t *testing.T) {
 		if !strings.Contains(text, "已打包扩展目录") {
 			t.Fatalf("cc overview must identify the catalog as packaged:\n%s", text)
 		}
+		if !strings.Contains(text, "已打包扩展总目录口径") {
+			t.Fatalf("cc overview must distinguish total catalog count from platform coverage:\n%s", text)
+		}
 	})
 
 	t.Run("io", func(t *testing.T) {
@@ -63,4 +67,35 @@ func TestOverviewPagesOnlyEmitHTMLOutput(t *testing.T) {
 			t.Fatalf("io overview must identify the catalog as packaged:\n%s", text)
 		}
 	})
+}
+
+func TestCCPlatformSummaryUsesCatalogTotal(t *testing.T) {
+	dir := t.TempDir()
+	path := filepath.Join(dir, "rpm.md")
+	g := &CCListGenerator{
+		Cache: &ExtensionCache{
+			Extensions: []*Extension{
+				{Name: "rpm_only", Lead: true, RpmRepo: validString("PIGSTY")},
+				{Name: "deb_only", Lead: true, DebRepo: validString("PIGSTY")},
+			},
+		},
+	}
+
+	if err := g.GenerateRPMList(path); err != nil {
+		t.Fatalf("GenerateRPMList() error = %v", err)
+	}
+
+	content, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatalf("os.ReadFile() error = %v", err)
+	}
+
+	text := string(content)
+	if !strings.Contains(text, "在 **2** 个已打包扩展总目录中，EL 系统当前覆盖 **1** 个 PostgreSQL 扩展") {
+		t.Fatalf("platform summary must separate catalog total from platform coverage:\n%s", text)
+	}
+}
+
+func validString(value string) sql.NullString {
+	return sql.NullString{String: value, Valid: true}
 }

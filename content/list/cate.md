@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-The 572 packaged PostgreSQL extensions (in 467 package families) are organized into 16 categories.
+The 575 packaged PostgreSQL extensions (in 470 package families) are organized into 16 categories.
 
 
 
@@ -52,7 +52,7 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | integration for pointcloud LIDAR data and PostGIS geometry data |
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.2.3 | H3 bindings for PostgreSQL |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | 4.2.3 | H3 PostGIS integration |
-| 1540 | {{< alias "q3c" >}} | 2.0.4 | q3c sky indexing plugin |
+| 1540 | {{< alias "q3c" >}} | 2.0.5 | q3c sky indexing plugin |
 | 1550 | {{< alias "ogr_fdw" >}} | 1.1.9 | foreign-data wrapper for GIS data access |
 | 1560 | {{< alias "geoip" >}} | 0.3.0 | IP-based geolocation query |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Fast Google Encoded Polyline encoding & decoding for postgres |
@@ -101,7 +101,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.25.1 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.25.2 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -109,7 +109,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
-| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.4.3 | IAM-LIKE pattern matching with bitmap indexing |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 3.0.0 | IAM-LIKE pattern matching with bitmap indexing |
 | 2180 | {{< alias "pg_textsearch" >}} | 1.2.0 | Full-text search with BM25 ranking |
 | 2190 | {{< alias "pg_pinyin" >}} | 0.0.5 | Pinyin romanization and search helpers for PostgreSQL |
 | 2200 | {{< alias "pg_kazsearch" >}} | 2.3.0 | Kazakh full-text search extension for PostgreSQL |
@@ -142,7 +142,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
 | 2450 | {{< alias "storage_engine" >}} | 2.4.0 | colcompress and rowcompress Table Access Methods with vectorized execution |
-| 2460 | {{< alias "pg_clickhouse" >}} | 0.3.2 | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.10.0 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.4.3 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2490 | {{< alias "pg_ducklake" >}} | 1.0.0 | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
@@ -197,6 +197,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2860 | {{< alias "pg_trickle" >}} | 0.81.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2870 | {{< alias "pg_durable" >}} | 0.2.3 | Durable SQL functions for PostgreSQL |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | Perturb unordered SELECT row order to expose order-dependent tests |
+| 2890 | {{< alias "pg_local_cache" >}} | 1.3.0 | Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads |
 | 2900 | {{< alias "provsql" >}} | 1.12.0 | Semiring provenance and probability management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.8 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
@@ -398,7 +399,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4500 | {{< alias "pg_idkit" >}} | 0.4.0 | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
 | 4510 | {{< alias "pgx_ulid" >}} | 0.2.3 | ulid type and methods |
 | 4520 | {{< alias "pg_uuidv7" >}} | 1.7.0 | Create UUIDv7 values in postgres |
-| 4530 | {{< alias "pg_uuid_v8" >}} | 1.0.0 | UUID v8 generator with embedded timestamps for PostgreSQL |
+| 4530 | {{< alias "pg_uuid_v8" >}} | 1.1.0 | UUID v8 generator with embedded timestamps for PostgreSQL |
 | 4540 | {{< alias "permuteseq" >}} | 1.2.2 | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
 | 4550 | {{< alias "pg_hashids" >}} | 1.3 | Short unique id generator for PostgreSQL, using hashids |
 | 4560 | {{< alias "pg_slug_gen" >}} | 1.0.0 | Generate cryptographically secure timestamp-based slugs |
@@ -519,6 +520,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | 2.29.2 | Server-side PostgreSQL performance flight recorder |
 | 6061 | {{< alias "pgfr_analyze" "pg_flight_recorder" >}} | 2.29.2 | Reporting and analysis functions for pgfr_record |
 | 6070 | {{< alias "pgmonitor" >}} | 2.2.0 | Collector-friendly metric views and background refresh worker |
+| 6080 | {{< alias "pg_statviz" >}} | 1.1 | Capture PostgreSQL statistics snapshots for time-series analysis and visualization |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.8 | show query plans of all currently running SQL statements |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.2 | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.2 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
@@ -591,6 +593,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7410 | {{< alias "sslutils" >}} | 1.4 | A Postgres extension for managing SSL certificates through SQL |
 | 7420 | {{< alias "noset" "pg_noset" >}} | 0.3.0 | Module for blocking SET variables for non-super users. |
 | 7430 | {{< alias "block_copy_command" >}} | 0.1.5 | Block COPY commands via a configurable ProcessUtility hook |
+| 7440 | {{< alias "pg_policy" >}} | 0.1.0 | Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls |
 | 7450 | {{< alias "pg_kpart" >}} | 1.0 | Reject full partition scans that omit the partition key |
 | 7500 | {{< alias "pg_tde" >}} | 2.2.1 | Percona pg_tde access method |
 | 7510 | {{< alias "pg_vault_tde" >}} | 1.7.0 | Transparent Data Encryption for PostgreSQL through custom table and index access methods |

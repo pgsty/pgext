@@ -46,7 +46,7 @@ weight: 600
 icon: fas fa-puzzle-piece
 ---
 `
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 // GenerateExtensionList generates the full extension list page
@@ -242,7 +242,7 @@ icon: fas fa-puzzle-piece
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GeneratePackageList generates the package list page
@@ -289,7 +289,7 @@ icon: fas fa-box
 
 	b.WriteString("{.ext-table}\n\n")
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateLanguageList generates the language list page
@@ -404,7 +404,7 @@ icon: fas fa-code
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateLicenseList generates the license list page
@@ -558,7 +558,7 @@ icon: fas fa-scale-balanced
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateRepoList generates the repository list page
@@ -633,7 +633,7 @@ icon: fas fa-warehouse
 	b.WriteString(fmt.Sprintf("## CONTRIB {#contrib}\n\nPostgreSQL built-in contrib extension modules, %d extensions total, shipped with the PG kernel contrib package.\n\n", len(contribExts)))
 	writeIOContribExtTable(&b, contribExts)
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // writeIORepoExtTable writes a 7-column table for PGDG/PIGSTY/MIXED sections
@@ -975,7 +975,7 @@ func (g *IOListGenerator) generatePlatformList(outputPath string, cfg *ioPlatfor
 		b.WriteString("{.ext-table}\n\n")
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateOSIndexPage generates the OS index page (os/_index.md)
@@ -994,7 +994,7 @@ weight: 400
 icon: fa-brands fa-linux
 ---
 `
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 // GenerateOverviewPage generates the ext/_index.md overview page with dynamic data
@@ -1163,7 +1163,7 @@ weight: 20
 
 - [**Packaged Extension Catalog**](/ext/list): Browse detailed information, usage, metadata, download links and docs for [**%d packaged extensions**](/ext/list)
 - [**Extension Repository**](/docs/repo/pgsql): Get pre-built RPM/DEB binary packages, available on [**%d Linux systems**](/ext/os)
-- [**Package Manager**](/docs/pig): Use the [`+"`"+`pig`+"`"+`](/docs/pig) CLI tool to abstract away OS and architecture differences
+- [**Package Manager**](https://pig.pgsty.com): Use the [`+"`"+`pig`+"`"+`](https://pig.pgsty.com) CLI tool to abstract away OS and architecture differences
 
 `, totalExts, activeOSCount))
 	b.WriteString("```bash\n")
@@ -1173,7 +1173,7 @@ weight: 20
 	b.WriteString("pig install pg_duckdb -v 18                    # e.g., install pg_duckdb for PG 18\n")
 	b.WriteString("```\n\n")
 	b.WriteString("Everything can be solved with PostgreSQL! Check out our blog post: [**PostgreSQL is eating the database world!**](/blog/pg/pg-eat-db-world)\n\n")
-	b.WriteString("![](/img/pigsty/ecosystem.png)\n\n\n")
+	b.WriteString("![Pigsty PostgreSQL extension ecosystem](/img/pigsty/ecosystem.png)\n\n")
 
 	// ══════════════════════════════════════════════════════════════════
 	// Key Features
@@ -1181,7 +1181,7 @@ weight: 20
 	b.WriteString("--------\n\n## Key Features\n\n")
 	b.WriteString(fmt.Sprintf("- **Quantity**: Unparalleled extension count: **%d packaged extensions**, the most in the PG extension ecosystem\n", totalExts))
 	b.WriteString("- **Quality**: Native Linux RPM/DEB packages, fully compatible with PGDG packaging standards\n")
-	b.WriteString("- **Ease of Use**: Provides the [**`pig`**](/docs/pig) package manager, abstracting away OS and architecture differences for out-of-the-box use\n")
+	b.WriteString("- **Ease of Use**: Provides the [**`pig`**](https://pig.pgsty.com) package manager, abstracting away OS and architecture differences for out-of-the-box use\n")
 	b.WriteString("- **Compatibility**: Extensions are fully compatible with PGDG packaging standards, seamlessly usable with PGDG repositories\n")
 	b.WriteString("- **Distribution**: Global repository distribution via Cloudflare CDN\n")
 	b.WriteString("- **Open Source**: Fully open source, with convenient build tools and free public software infrastructure\n\n\n")
@@ -1336,7 +1336,7 @@ weight: 20
 	b.WriteString("| [pgsty/deb](https://github.com/pgsty/deb) | DEB build source code |\n")
 	b.WriteString("| [pgsty/infra-pkg](https://github.com/pgsty/infra-pkg) | Infrastructure package repository |\n")
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 // GenerateAllLists generates all list pages (output to top-level ext/ directory)
@@ -1420,7 +1420,7 @@ sidebar_divider: true
 toc_hide: false
 ---
 `, weight)
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 // ioRepoBadgeOrMiss returns a repo badge or a miss badge

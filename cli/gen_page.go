@@ -746,7 +746,7 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	b.WriteString("\n\n")
 
 	// Build install commands
-	b.WriteString("[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):\n\n")
+	b.WriteString("[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):\n\n")
 	installScript := fmt.Sprintf("pig install %s;\t\t# install via package name, for the active PG version\n", ext.Pkg)
 	if ext.Name != ext.Pkg {
 		installScript = installScript + fmt.Sprintf("pig install %s;\t\t# install by extension name, for the current active PG version\n", ext.Name)

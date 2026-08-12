@@ -24,7 +24,7 @@ weight: 100
 
 ### PIG
 
-您可以安装 [pig](/zh/pig) - CLI 工具，并使用它添加 pgdg / pigsty 仓库（推荐）：
+您可以安装 [pig](https://pig.pgsty.com/zh) - CLI 工具，并使用它添加 pgdg / pigsty 仓库（推荐）：
 
 ```bash tab="pig"
 pig repo add pigsty                         # 添加 pigsty-pgsql 仓库
@@ -93,4 +93,4 @@ sudo yum makecache;
 
 如果平台不受支持，您也可以自行从源代码构建软件包。
 
-[`pig build`](/zh/pig/cmd/build) 提供了简便的扩展构建基础设施，您可以方便的在自己的系统上制作 RPM/DEB 包。
+[`pig build`](https://pig.pgsty.com/zh/build/) 提供了简便的扩展构建基础设施，您可以方便的在自己的系统上制作 RPM/DEB 包。

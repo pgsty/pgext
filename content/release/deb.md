@@ -7,28 +7,38 @@ weight: 300
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 
-## 2026-08-08
+## 2026-08-12
 
-| Extension      | Old    | New    | Comment                                                                  |
-|:---------------|:-------|:-------|:-------------------------------------------------------------------------|
-| cat_tools      | -      | 0.3.0  | SQL-only; PG14-18                                                        |
-| citus          | 14.1.0 | 14.2.0 | Includes citus_columnar; PG16-18                                         |
-| pg_describe    | -      | 1.0.0  | PG17-18                                                                  |
-| pg_disorder    | -      | 0.1.0  | PG14-18                                                                  |
-| pg_mentat      | -      | 1.5.7  | Promoted from source-only to a PIGSTY package; PG14-18                   |
-| pg_rational    | 0.0.2  | 0.0.3  | PGDG package; no PIGSTY DEB rebuild; PG14-18                             |
-| pg_readme      | 0.7.0  | 0.7.1  | Includes pg_readme_test_extension; PG14-18                               |
-| pg_search      | 0.25.0 | 0.25.1 | PG15-18; pgrx 0.19.1                                                     |
-| pg_squeeze     | 1.9.2  | 1.9.4  | PGDG package; PG14-18                                                    |
-| pg_turbovec    | -      | 1.28.3 | Package remains 1.28.3 while upstream metadata is 1.29.0; PG14-18        |
-| pg_vault_tde   | -      | 1.7.0  | PG17-18; requires preload                                                |
-| pgbson         | 2.0.4  | 2.1.0  | Source package postgresbson; PG14-18                                     |
-| pgmnemo        | 0.15.0 | 0.16.1 | PG17-18                                                                  |
-| plpgsql_check  | 2.10.3 | 2.10.4 | PG14-18                                                                  |
-| plruby         | -      | 2.5.0  | Includes jsonb_plruby, hstore_plruby, and ltree_plruby; PG14-18          |
-| provsql        | 1.11.0 | 1.12.0 | PG14-18                                                                  |
-| timescaledb    | 2.29.0 | 2.29.1 | PG16-18                                                                  |
-| vector         | 0.8.6  | 0.8.6  | PGDG 0.8.6 is now indexed; PG14-18                                       |
+| Name           | Old               | New              | Comment                                                     |
+|:---------------|:------------------|:-----------------|:------------------------------------------------------------|
+| biscuit        | 2.4.3             | 3.0.0            | PG16-18; 2.x indexes require REINDEX                        |
+| cat_tools      | -                 | 0.3.0            | SQL-only; PG14-18                                           |
+| citus          | 14.1.0            | 14.2.0           | Includes citus_columnar; PG16-18                            |
+| pg_clickhouse  | 0.3.2             | 0.10.0           | PG14-18                                                     |
+| pg_describe    | -                 | 1.0.0            | PG17-18                                                     |
+| pg_disorder    | -                 | 0.1.0            | PG14-18                                                     |
+| pg_local_cache | -                 | 1.3.0            | PG14-18; preload; single-primary                            |
+| pg_mentat      | -                 | 1.5.7            | PG14-18                                                     |
+| pg_policy      | -                 | 0.1.0            | SQL-only; PG14-18                                           |
+| pg_rational    | 0.0.2             | 0.0.3            | PGDG; PG14-18                                               |
+| pg_readme      | 0.7.0             | 0.7.1            | Includes pg_readme_test_extension; PG14-18                  |
+| pg_search      | 0.25.0            | 0.25.2           | PG15-18; pgrx 0.19.1; preload                               |
+| pg_squeeze     | 1.9.2             | 1.9.4            | PGDG; PG14-18                                               |
+| pg_statviz     | -                 | 1.1              | PGDG; PG14-18 except Ubuntu 22.04; not in default groups    |
+| pg_turbovec    | -                 | 1.29.0           | PG14-18; pgrx 0.19.1                                        |
+| pg_uuid_v8     | 1.0.0             | 1.1.0            | PG14-18; includes 1.0-to-1.1 upgrade script                 |
+| pg_vault_tde   | -                 | 1.7.0            | PG17-18; preload                                            |
+| pgbson         | 2.0.4             | 2.1.0            | Source package postgresbson; PG14-18                        |
+| pgmnemo        | 0.15.0            | 0.16.1           | PG17-18                                                     |
+| plpgsql_check  | 2.10.3            | 2.10.4           | PG14-18                                                     |
+| plruby         | -                 | 2.5.0            | Includes jsonb_plruby, hstore_plruby, ltree_plruby; PG14-18 |
+| polardb-17     | 17.10.1.0-1PIGSTY | 17.10.1.0-2PGSTY | Rebuild; PG17                                               |
+| polarstore     | 1.2.42-1PIGSTY    | 1.2.42-2PGSTY    | Rebuild                                                     |
+| provsql        | 1.11.0            | 1.12.0           | PG14-18                                                     |
+| q3c            | 2.0.4             | 2.0.5            | PGDG; PG14-18                                               |
+| timescaledb    | 2.29.0            | 2.29.1           | PG16-18                                                     |
+| vector         | 0.8.6             | 0.8.6            | PGDG repository refresh; PG14-18                            |
+| zlog           | 1.2.18-1PIGSTY    | 1.2.18-2PGSTY    | Rebuild                                                     |
 
 ## 2026-07-30
 

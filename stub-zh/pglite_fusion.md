@@ -134,6 +134,7 @@ CREATE TABLE people (
 -----
 
 ### `get_sqlite_text`
+
 从 `query_sqlite` 返回的行中提取指定列的文本值。使用此函数可从查询结果中获取文本类型的值。
 
 #### 参数：

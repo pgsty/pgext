@@ -38,7 +38,7 @@ Examples:
 {.full-width}
 
 > Since v1.6.0, the former `pig sty edit` / `validate` / `check` commands moved to the
-> root-level [`pig inventory`](/pig/cmd/inventory/) command group, and the experimental
+> root-level [`pig inventory`](https://pig.pgsty.com/inventory/) command group, and the experimental
 > `pig sty dashboard` was replaced by `pig sty grafana`.
 
 
@@ -207,3 +207,21 @@ Password resolution order: `--password` → `--password-file` → the `GRAFANA_P
 environment variable → `all.vars.grafana_admin_password` from the inventory.
 The HTTP client enforces timeouts and response-size limits, refuses redirects, and
 verifies TLS certificates by default.
+
+### Legacy dashboards and schema v2 resources
+
+`load` and `init` accept both classic Grafana dashboard JSON and the resource form whose identity is exactly:
+
+```json
+{"apiVersion":"dashboard.grafana.app/v2","kind":"Dashboard","metadata":{"name":"pgsql-overview","namespace":"default"},"spec":{}}
+```
+
+The two formats are not flattened into one another during loading:
+
+- Classic JSON takes its UID from top-level `uid` and uses the legacy dashboard API.
+- Schema v2 takes its UID from `metadata.name`, defaults a missing namespace to `default`, requires an object-valued `spec`, and uses Grafana's dashboard resource API.
+- The JSON filename (without `.json`) must match the resolved UID. Only one local folder layer is allowed; its directory name becomes the Grafana folder UID.
+- For schema v2, PIG preserves `spec` and the `grafana.app/message` annotation, sets `grafana.app/folder` from the local folder, and deliberately removes server-managed metadata/status before upsert.
+- `dump` preserves schema v2 only when the target file already exists locally in v2 form; it then fetches the native v2 resource using that file's namespace. A new dump target defaults to classic JSON. Local-only files are never deleted by `dump`.
+
+Other `dashboard.grafana.app/*` versions or malformed resource envelopes are rejected instead of being silently treated as classic dashboards. Format preservation therefore depends on keeping the existing local file when round-tripping v2 resources.

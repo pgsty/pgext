@@ -14,8 +14,8 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 417 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 70 | 纯 SQL 扩展和函数 |
+| {{< language "C" >}} | 418 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 72 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 57 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 15 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="417 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="418 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -104,6 +104,7 @@ weight: 200
 | 2840 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
 | 2880 | {{< alias "pg_disorder" >}} | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
+| 2890 | {{< alias "pg_local_cache" >}} | 为普通 PostgreSQL 主键读取提供事务感知的共享内存缓存 |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
 | 2940 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Omnigres 基础会话认证管理模块 |
@@ -451,7 +452,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="70 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="72 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -511,6 +512,7 @@ weight: 200
 | 5870 | {{< alias "pgelog" >}} | 通过伪自治事务实现扩展日志记录 |
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | 基于 pg_cron 的服务端 PostgreSQL 性能飞行记录器 |
 | 6061 | {{< alias "pgfr_analyze" "pg_flight_recorder" >}} | pgfr_record 采集数据的报告与性能分析函数 |
+| 6080 | {{< alias "pg_statviz" >}} | 采集 PostgreSQL 统计快照，用于时序分析与可视化 |
 | 6260 | {{< alias "pg_track_settings" >}} | 跟踪设置更改 |
 | 6430 | {{< alias "meta" "pg_meta" >}} | 标准化，更友好的PostgreSQL系统目录视图 |
 | 6500 | {{< alias "pg_sqlog" >}} | 提供访问PostgreSQL日志的SQL接口 |
@@ -518,6 +520,7 @@ weight: 200
 | 7130 | {{< alias "pg_auditor" >}} | 审计数据变更并提供闪回能力 |
 | 7160 | {{< alias "pg_jobmon" >}} | 记录和监控函数 |
 | 7190 | {{< alias "pgmemento" >}} | 基于事务日志的审计追踪、模式版本管理与数据恢复 |
+| 7440 | {{< alias "pg_policy" >}} | 面向 AI 智能体的 PostgreSQL 策略语言，提供护栏、软性引导与会话级控制 |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
 | 8800 | {{< alias "aws_s3" >}} | 从S3导入导出数据的外部数据源包装器 |
 | 9090 | {{< alias "pg_projection" >}} | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |

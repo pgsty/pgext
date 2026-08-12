@@ -28,42 +28,46 @@ curl -fsSL https://repo.pigsty.cc/pig | bash
 
 ## 指定版本
 
-您可以指定特定版本进行安装，将版本号作为参数传入即可：
+您可以指定已经发布到所选镜像的特定版本，将版本号作为参数传入即可：
 
 **默认安装**（Cloudflare CDN）：
 
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s 1.6.0
+curl -fsSL https://repo.pigsty.io/pig | bash -s X.Y.Z
 ```
 
 **中国镜像**：
 
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.6.0
+curl -fsSL https://repo.pigsty.cc/pig | bash -s X.Y.Z
 ```
+
+镜像发布可能晚于 GitHub Release；如需精确获取当前版本，请使用下方 GitHub 制品。
 
 
 ## 发布产物下载
 
-你也可以直接从 Pigsty 软件仓库下载 `pig` 安装包（`RPM`/`DEB`/ 压缩包）。当前 `v1.6.0` 发布产物位于：
+当前 `v1.6.2` 安装包（`RPM`/`DEB`/压缩包）可从以下位置获取：
 
-- <https://repo.pigsty.io/pkg/pig/v1.6.0/>
-- <https://repo.pigsty.cc/pkg/pig/v1.6.0/>
+- [GitHub Release](https://github.com/pgsty/pig/releases/tag/v1.6.2)
+- [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.6.2/checksums.txt)
 
-```
-latest
-└── v1.6.0
-    ├── pig_1.6.0-1_amd64.deb
-    ├── pig_1.6.0-1_arm64.deb
-    ├── pig-1.6.0-1.aarch64.rpm
-    ├── pig-1.6.0-1.x86_64.rpm
-    ├── pig-v1.6.0.linux-amd64.tar.gz
-    ├── pig-v1.6.0.linux-arm64.tar.gz
-    ├── pig-v1.6.0.darwin-amd64.tar.gz
-    └── pig-v1.6.0.darwin-arm64.tar.gz
+直接下载时使用 `https://github.com/pgsty/pig/releases/download/v1.6.2/<filename>`。
+
+```text
+v1.6.2
+├── pig_1.6.2-1_amd64.deb
+├── pig_1.6.2-1_arm64.deb
+├── pig-1.6.2-1.aarch64.rpm
+├── pig-1.6.2-1.x86_64.rpm
+├── pig-v1.6.2.linux-amd64.tar.gz
+├── pig-v1.6.2.linux-arm64.tar.gz
+├── pig-v1.6.2.darwin-amd64.tar.gz
+└── pig-v1.6.2.darwin-arm64.tar.gz
 ```
 
 将其解压后，将二进制文件放入您的 PATH 系统路径中即可。
+对应的 Pigsty 镜像目录会在软件仓库同步后可用；使用锁定版本的安装命令前，请先检查目标 URL。
 
 
 ## 仓库安装

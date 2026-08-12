@@ -604,6 +604,34 @@ func TestRPMBootstrapExcludesModulemdTools(t *testing.T) {
 	}
 }
 
+func TestBootstrapPackagesUseSow(t *testing.T) {
+	constants := GetConfigConstants()
+	for distro, packages := range constants.DistroAdhocPkg {
+		t.Run(distro, func(t *testing.T) {
+			if !containsToken(packages, "sow") {
+				t.Fatalf("node-bootstrap missing sow: %q", packages)
+			}
+			for _, legacy := range []string{"createrepo_c", "dpkg-dev"} {
+				if containsToken(packages, legacy) {
+					t.Fatalf("node-bootstrap still contains legacy repo generator %q: %q", legacy, packages)
+				}
+			}
+		})
+	}
+
+	for osCode, rendered := range map[string]string{
+		"el9.x86_64": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+		"u24.x86_64": renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+	} {
+		t.Run(osCode+"-rendered", func(t *testing.T) {
+			bootstrap := renderedPackageAliasValue(rendered, "node-bootstrap")
+			if !containsToken(bootstrap, "sow") {
+				t.Fatalf("rendered node-bootstrap missing sow: %q", bootstrap)
+			}
+		})
+	}
+}
+
 func TestDefaultOfflinePackagesUseSiloAndExcludeFerretDB(t *testing.T) {
 	constants := GetConfigConstants()
 	for name, aliases := range map[string][]string{
@@ -1334,6 +1362,38 @@ func TestDebTemplateUbuntuRepoSuffixesMatchRepoName(t *testing.T) {
 	}
 }
 
+func TestPGDGChinaMirrorContract(t *testing.T) {
+	rpm := renderRPMTemplateForTest(t, "el9.x86_64", "el9")
+	var yumCount int
+	for _, line := range strings.Split(rpm, "\n") {
+		if !strings.Contains(line, "default: 'https://download.postgresql.org/pub/repos/yum/") {
+			continue
+		}
+		// China RPM entries lead with the confirmed Tencent Cloud PGDG mirror and
+		// retain the established Pigsty fallback for compatibility.
+		if !strings.Contains(line, "china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/") {
+			t.Fatalf("PGDG YUM line does not lead with the Tencent mirror: %q", line)
+		}
+		if !strings.Contains(line, " https://repo.pigsty.cc/yum/pgdg/") {
+			t.Fatalf("PGDG YUM line lost the Pigsty fallback: %q", line)
+		}
+		yumCount++
+	}
+	if yumCount == 0 {
+		t.Fatal("rendered RPM config contains no PGDG repositories")
+	}
+
+	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
+	stable := "china: 'https://mirrors.cloud.tencent.com/postgresql/repos/apt/ ${distro_codename}-pgdg main'"
+	beta := "china: 'https://mirrors.cloud.tencent.com/postgresql/repos/apt/ ${distro_codename}-pgdg-testing main 19'"
+	if !strings.Contains(deb, stable) {
+		t.Fatalf("rendered DEB config missing PGDG China mirror %q", stable)
+	}
+	if !strings.Contains(deb, beta) {
+		t.Fatalf("rendered DEB config missing PGDG beta China mirror %q", beta)
+	}
+}
+
 func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 	required := []string{
 		"name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [11,12,13,22,24,26]",
@@ -1407,6 +1467,49 @@ func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 	}
 }
 
+func TestCurrentRepositoryVersionContract(t *testing.T) {
+	required := map[string][]string{
+		"rpm": {
+			"https://mirrors.cloud.tencent.com/grafana/yum/rpm/",
+			"https://pkgs.k8s.io/core:/stable:/v1.36/rpm/",
+			"https://mirrors.ustc.edu.cn/kubernetes/core:/stable:/v1.36/rpm/",
+		},
+		"deb": {
+			"https://pkgs.k8s.io/core:/stable:/v1.36/deb/ /",
+			"https://mirrors.ustc.edu.cn/kubernetes/core:/stable:/v1.36/deb/ /",
+		},
+	}
+	templates := map[string]string{"rpm": rpmTemplate, "deb": debTemplate}
+	for kind, fragments := range required {
+		for _, fragment := range fragments {
+			if !strings.Contains(templates[kind], fragment) {
+				t.Errorf("%s template missing current repository fragment %q", kind, fragment)
+			}
+		}
+	}
+
+	for _, fragment := range []string{
+		"core:/stable:/v1.33/rpm/",
+		"core:/stable:/v1.33/deb/",
+		"china: 'https://mirrors.cloud.tencent.com/grafana/yum/'",
+	} {
+		if strings.Contains(rpmTemplate, fragment) || strings.Contains(debTemplate, fragment) {
+			t.Errorf("generated templates still contain obsolete repository fragment %q", fragment)
+		}
+	}
+}
+
+func TestRenderedTemplatesEndWithNewline(t *testing.T) {
+	for name, rendered := range map[string]string{
+		"rpm": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+		"deb": renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+	} {
+		if !strings.HasSuffix(rendered, "\n") {
+			t.Fatalf("%s rendered config must end with a newline", name)
+		}
+	}
+}
+
 func TestDebTemplateUbuntu20Removed(t *testing.T) {
 	releaseWith20 := regexp.MustCompile(`releases:\s*\[[^]]*\b20\b`)
 	if match := releaseWith20.FindString(debTemplate); match != "" {
@@ -1420,9 +1523,9 @@ func TestDebTemplateUbuntu20Removed(t *testing.T) {
 
 func TestDebTemplateDebianChinaComponents(t *testing.T) {
 	required := []string{
-		"name: base           ,description: 'Debian Basic'       ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename} main non-free-firmware'                                  ,china: 'https://mirrors.aliyun.com/debian/ ${distro_codename} main non-free-firmware' }",
-		"name: updates        ,description: 'Debian Updates'     ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename}-updates main non-free-firmware'                          ,china: 'https://mirrors.aliyun.com/debian/ ${distro_codename}-updates main non-free-firmware' }",
-		"name: security       ,description: 'Debian Security'    ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://security.debian.org/debian-security ${distro_codename}-security main non-free-firmware'            ,china: 'https://mirrors.aliyun.com/debian-security/ ${distro_codename}-security main non-free-firmware' }",
+		"name: base           ,description: 'Debian Basic'       ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename} main non-free-firmware'                                  ,china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename} main non-free-firmware' }",
+		"name: updates        ,description: 'Debian Updates'     ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename}-updates main non-free-firmware'                          ,china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename}-updates main non-free-firmware' }",
+		"name: security       ,description: 'Debian Security'    ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://security.debian.org/debian-security ${distro_codename}-security main non-free-firmware'            ,china: 'https://mirrors.cloud.tencent.com/debian-security/ ${distro_codename}-security main non-free-firmware' }",
 	}
 	for _, fragment := range required {
 		if !strings.Contains(debTemplate, fragment) {
@@ -1431,12 +1534,12 @@ func TestDebTemplateDebianChinaComponents(t *testing.T) {
 	}
 
 	forbidden := []string{
-		"china: 'https://mirrors.aliyun.com/debian/ ${distro_codename} main restricted universe multiverse'",
-		"china: 'https://mirrors.aliyun.com/debian/ ${distro_codename}-updates main restricted universe multiverse'",
-		"china: 'https://mirrors.aliyun.com/debian-security/ ${distro_codename}-security main restricted universe multiverse'",
-		"china: 'https://mirrors.aliyun.com/debian/ ${distro_codename} main contrib non-free non-free-firmware'",
-		"china: 'https://mirrors.aliyun.com/debian/ ${distro_codename}-updates main contrib non-free non-free-firmware'",
-		"china: 'https://mirrors.aliyun.com/debian-security/ ${distro_codename}-security main contrib non-free non-free-firmware'",
+		"china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename} main restricted universe multiverse'",
+		"china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename}-updates main restricted universe multiverse'",
+		"china: 'https://mirrors.cloud.tencent.com/debian-security/ ${distro_codename}-security main restricted universe multiverse'",
+		"china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename} main contrib non-free non-free-firmware'",
+		"china: 'https://mirrors.cloud.tencent.com/debian/ ${distro_codename}-updates main contrib non-free non-free-firmware'",
+		"china: 'https://mirrors.cloud.tencent.com/debian-security/ ${distro_codename}-security main contrib non-free non-free-firmware'",
 	}
 	for _, fragment := range forbidden {
 		if strings.Contains(debTemplate, fragment) {

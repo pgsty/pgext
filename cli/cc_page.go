@@ -47,6 +47,59 @@ func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extens
 	return WriteMarkdownFile(filepath.Join(g.OutputDir, "e", ext.Name+".md"), content)
 }
 
+// PruneStaleExtensionPages removes generated detail pages that are no longer
+// present in the packaged extension catalog. It deliberately preserves index
+// files and hand-written Markdown that does not have generated page metadata.
+func (g *CCPageGenerator) PruneStaleExtensionPages(extensions []*Extension) ([]string, error) {
+	if len(extensions) == 0 {
+		return nil, fmt.Errorf("refusing to prune extension pages with an empty catalog")
+	}
+
+	extDir := filepath.Join(g.OutputDir, "e")
+	entries, err := os.ReadDir(extDir)
+	if os.IsNotExist(err) {
+		return nil, nil
+	}
+	if err != nil {
+		return nil, fmt.Errorf("read extension page directory %s: %w", extDir, err)
+	}
+
+	expected := make(map[string]struct{}, len(extensions))
+	for _, ext := range extensions {
+		if ext != nil && ext.Name != "" {
+			expected[ext.Name+".md"] = struct{}{}
+		}
+	}
+
+	var removed []string
+	for _, entry := range entries {
+		name := entry.Name()
+		if entry.IsDir() || !strings.HasSuffix(name, ".md") || strings.HasPrefix(name, "_") {
+			continue
+		}
+		if _, ok := expected[name]; ok {
+			continue
+		}
+
+		path := filepath.Join(extDir, name)
+		content, err := os.ReadFile(path)
+		if err != nil {
+			return nil, fmt.Errorf("read candidate stale extension page %s: %w", path, err)
+		}
+		stem := strings.TrimSuffix(name, ".md")
+		if !strings.Contains(string(content), fmt.Sprintf("title: %q", stem)) ||
+			!strings.Contains(string(content), fmt.Sprintf("linkTitle: %q", stem)) {
+			continue
+		}
+		if err := os.Remove(path); err != nil {
+			return nil, fmt.Errorf("remove stale extension page %s: %w", path, err)
+		}
+		removed = append(removed, stem)
+	}
+	sort.Strings(removed)
+	return removed, nil
+}
+
 // generateExtensionContent generates the markdown content
 func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Extension) (string, error) {
 	var b strings.Builder
@@ -576,7 +629,7 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 		debPkg = ext.DebPkg.String
 	}
 
-	b.WriteString("使用 [**pig**](/docs/pig) 或者是 `apt/yum/dnf` 安装扩展：\n\n")
+	b.WriteString("使用 [**pig**](https://pig.pgsty.com/zh) 或者是 `apt/yum/dnf` 安装扩展：\n\n")
 	b.WriteString("{{< tabpane text=true persist=header >}}\n")
 
 	// Tab: 安装 (simple install)

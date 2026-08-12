@@ -17,9 +17,9 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 251 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 253 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 109 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 95 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 96 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 16 | [许可证文本](#) | Unknown license |
@@ -42,7 +42,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="251 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="253 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -226,6 +226,7 @@ weight: 300
 | 6030 | {{< alias "pg_stat_backtrace" >}} | 捕获或记录 PostgreSQL 进程的 C 层调用栈 |
 | 6040 | {{< alias "pg_stat_log" >}} | 按后端类型、数据库、用户、日志级别与 SQLSTATE 统计 PostgreSQL 日志消息。 |
 | 6050 | {{< alias "pg_stat_plans" >}} | 跟踪查询计划级别的调用次数、执行时间与示例 EXPLAIN 文本。 |
+| 6080 | {{< alias "pg_statviz" >}} | 采集 PostgreSQL 统计快照，用于时序分析与可视化 |
 | 6210 | {{< alias "pg_show_plans" >}} | 打印所有当前正在运行查询的执行计划 |
 | 6260 | {{< alias "pg_track_settings" >}} | 跟踪设置更改 |
 | 6280 | {{< alias "pg_wait_sampling" >}} | 基于采样的等待事件统计 |
@@ -260,6 +261,7 @@ weight: 300
 | 7380 | {{< alias "pg_snakeoil" >}} | PostgreSQL动态链接库反病毒功能 |
 | 7390 | {{< alias "pgextwlist" >}} | PostgreSQL扩展白名单功能 |
 | 7410 | {{< alias "sslutils" >}} | 使用SQL管理SSL证书 |
+| 7440 | {{< alias "pg_policy" >}} | 面向 AI 智能体的 PostgreSQL 策略语言，提供护栏、软性引导与会话级控制 |
 | 7510 | {{< alias "pg_vault_tde" >}} | 通过自定义表与索引访问方法为 PostgreSQL 提供透明数据加密 |
 | 7960 | {{< alias "sepgsql" >}} | 基于SELinux标签的强制访问控制 |
 | 7970 | {{< alias "auth_delay" >}} | 在返回认证失败前暂停一会，避免爆破 |
@@ -424,7 +426,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="95 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="96 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -449,6 +451,7 @@ weight: 300
 | 2610 | {{< alias "pg_liquid" >}} | 受 Liquid 启发的 Datalog 图查询扩展 |
 | 2640 | {{< alias "pgrdf" >}} | PostgreSQL 内 RDF、SPARQL、SHACL 与 OWL 推理扩展 |
 | 2760 | {{< alias "jsonschema" >}} | PostgreSQL JSON Schema 校验函数 |
+| 2890 | {{< alias "pg_local_cache" >}} | 为普通 PostgreSQL 主键读取提供事务感知的共享内存缓存 |
 | 2900 | {{< alias "provsql" >}} | PostgreSQL 半环溯源、概率与不确定性管理扩展 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 3020 | {{< alias "pllua" >}} | Lua 程序语言 |

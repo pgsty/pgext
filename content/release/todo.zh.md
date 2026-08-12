@@ -1,182 +1,112 @@
 ---
-title: 扩展待办列表
-description: 需要更新，已经退役的 PG 扩展列表。 
+title: 扩展待办与路线图
+description: 当前扩展打包待办、候选项目、维护风险与退役项目。
 weight: 700
 ---
 
+本页根据 2026-08-12 的本地 `pgext` 目录与软件包矩阵整理。目录中出现新版本，并不等同于该版本已经交付；只有对应 RPM/DEB 完成构建、测试并进入仓库索引后，才算真正完成。
 
-## TODO
+## 当前打包待办
 
-- re2 0.4.0
+### Pigsty 自维护升级
 
-## 最近更新
+| 软件包 | 当前版本 | 目标版本 | 范围 | 备注 |
+|:-------|:---------|:---------|:-----|:-----|
+| `pg_profile` | 4.11 | 4.15 | DEB | PGDG RPM 已为 4.15；Pigsty DEB 与源码仍为 4.11。 |
+| `pg_readonly` | 1.0.5 | 1.0.6 | DEB | PGDG RPM 已为 1.0.6。 |
+| `pg_statement_rollback` | 1.5 | 1.6 | DEB | PGDG RPM 已为 1.6。 |
+| `pgsodium` | 3.1.9 | 3.1.11 | Pigsty RPM/DEB | PGDG 在 EL10 上已有 3.1.11，Pigsty 与其他旧 PGDG 目标仍为 3.1.9。 |
+| `topn` | 2.7.0 | 2.7.1 | DEB | Pigsty DEB/源码仍为 2.7.0；PGDG RPM 同时存在 2.7.0 与 2.7.1。 |
 
-- citus 14.0 with pg18 support
-- age 1.6.0 with pg18 support (age)
-- pgsentinel 1.3.0 -> 1.3.1 rpm
-- pg_timeseries 0.1.8 -> 0.2.0
-- pg_clickhouse 0.1.0 -> 0.1.2
-- pg_bulkload 3.1.22 -> 3.1.23
-- pg_biscuit 2.0.2 -> 2.2.2
-- documentdb 0.107 -> 0.109 (switch to upstream)
-- pg_partman 5.4.0 new
-- pljs new 1.0.4
-- pg_timeseries 0.1.8
-- pg_duckdb 1.1.1
-- pg_summarize rebuild for pg18 on deb
-- semver 0.41.0 (rpm only)
-- pg_search 0.20.5
-- supautils rebuild for pg18 on deb
-- [pg_textsearch](https://github.com/timescale/pg_textsearch) 0.1.0 new
-- [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0 new
-- [pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1 new
-- timescaledb 2.23.1 -> 2.24.0
-- pg_search 0.20.0 -> 0.20.3
-- convert 0.0.4 -> 0.0.5
-- pglinter 1.0.0 -> 1.0.1
-- pgdd 0.6.0 -> 0.6.1
-- pg_session_jwt 0.3.3 -> 0.4.0
-- pg_anon 2.4.1 -> 2.5.1
-- pg_enigma 0.4.0 -> 0.5.0
-- wrappers 0.5.6 -> 0.5.7
-- pg_vectorize 0.25.0 -> 0.26.0
+不要仅为消除表格差异而提前修改目录元数据；应先完成构建、测试、入库与重新扫描。
 
+### 软件包矩阵缺口
 
-## 暂时雪藏
+- [`pg_statviz`](https://github.com/vyruss/pg_statviz) 是当前唯一仍含 `MISS` 单元格的软件包族：80 个活跃 PG/OS 目标中缺 20 个。缺口包括 EL8/9/10 的 RPM PG17、EL8/9 的 RPM PG18，以及 Ubuntu 22.04 上双架构的 DEB PG14-18。上游/控制文件版本为 1.1，PGDG DEB 为 1.1，PGDG RPM 仍为 0.9。需要决定由 Pigsty 补齐，还是将明确不支持的目标标记为 `N/A`，不应继续保留无法解释的 `MISS`。
 
-- pgelog 1.0.2
-- oai_fdw 1.11.0
-- rdf_fdw 2.1.0
-- pg_ttl_index 1.0.2
-- [pgcalendar](https://github.com/h4kbas/pgcalendar) bad makefile
-- [dsef](https://github.com/ardentperf/dsef/)
-- [pg_mustach](https://github.com/RekGRpth/pg_mustach)
-- [is_jsonb_valid](https://github.com/furstenheim/is_jsonb_valid)
-- [pg_kafka](https://github.com/xstevens/pg_kafka)
-- [pg_jieba](https://github.com/jaiminpan/pg_jieba)
-- [OneSparse](https://github.com/OneSparse/OneSparse)
-- [PipelineDB](https://github.com/pipelinedb/pipelinedb)
-- [SQL Firewall](https://github.com/uptimejp/sql_firewall)
-- [zcurve](https://github.com/bmuratshin/zcurve)
-- [PG.NET](https://github.com/Brick-Abode/pldotnet/releases)
-- [pg_scws](https://github.com/jaiminpan/pg_scws)
-- [themsis](https://github.com/cossacklabs/pg_themis)
-- [pgspeck](https://github.com/johto/pgspeck)
-- [lsm3](https://github.com/postgrespro/lsm3)
-- [monq](https://github.com/postgrespro/monq)
-- [pg_badplan](https://github.com/trustly/pg_badplan)
-- [pg_recall](https://github.com/mreithub/pg_recall)
-- [pgfsm](https://github.com/michelp/pgfsm)
-- [pg_trgm pro](https://github.com/postgrespro/pg_trgm_pro)
-- [weighted_mean](https://github.com/Kozea/weighted_mean)
-- [kmeans](https://github.com/umitanuki/kmeans-postgresql)
-- [pgjwt_rs](https://github.com/vishvish/pgjwt_rs)
-- [plrust](https://github.com/tcdi/plrust)
+### 外部仓库版本差异
 
-## 缺少维护
+以下差异存在于当前矩阵中，但由 PGDG 维护，不应自动视为 Pigsty 重构建任务：
 
-- hydra: https://github.com/hydradatabase/columnar , no longer maintained since 17
-- age: https://github.com/apache/age
+| 软件包 | RPM | DEB |
+|:-------|:----|:----|
+| `credcheck` | 4.7 | 5.0 |
+| `decoderbufs` | 3.5.0 | 3.6.0 |
+| `pg_permissions` | 1.4.1 | 1.4 |
+| `pg_stat_kcache` | 2.3.1 | 2.3.2 |
+| `pgauditlogtofile` | 1.8.4 | 1.8.5 |
+| `postgis` | 3.6.3 | 3.6.4 |
+| `powa` | 5.1.0 | 5.2.0 |
 
+## 打包候选
 
-## 尚未规划
+以下候选均已进入 `pgext.universe`，但尚未进入正式打包基线。
 
-- pg_base62: https://github.com/bkircher/pg_base62/blob/main/Cargo.toml
-- pg_conda: PostgreSQL extension that adds types and functions for the conda ecosystem
-- pgfdb: https://github.com/fabianlindfors/pgfdb
-- postgres-ical: https://github.com/edgarogh/postgres-ical
-- pgsloth: https://github.com/jamessewell/pgsloth
-- pgfaker: https://github.com/rustprooflabs/pgfaker
-- pglance - PostgreSQL Lance Table Extension
-- pg_oidc_validator_rust https://github.com/UnAfraid/pg_oidc_validator_rust
-- pg_top: not ready due to cmake error
-- pg_quack, we already have a pg_lakehouse
-- pg_telemetry, we already have better observability
-- pgx_ulid, https://github.com/pksunkara/pgx_ulid, already covered by pg_idkit (MIT, but RUST)
-- embedding: obsolete
-- zson https://github.com/postgrespro/zson MIT C (too old)
-- pghydro https://github.com/pghydro/pghydro C GPL-2.0 6.6 (no makefile)
-- pg_natural_sort_order https://github.com/Zeleo/pg_natural_sort_order (too old)
-- pg_query_state https://github.com/postgrespro/pg_query_state
-- pgsampler https://github.com/no0p/pgsampler
-- pg_lz4 https://github.com/zilder/pg_lz4
-- pg_amqp https://github.com/omniti-labs/pg_amqp
-- tinyint https://github.com/umitanuki/tinyint-postgresql
-- pg_blkchain https://github.com/blkchain/pg_blkchain
-- hashtypes https://github.com/pandrewhk/hashtypes
-- foreign_table_exposer https://github.com/komamitsu/foreign_table_exposer
-- ldap_fdw https://github.com/guedes/ldap_fdw
-- pg_backtrace https://github.com/postgrespro/pg_backtrace (only works on PG12)
-- connection_limits https://github.com/tvondra/connection_limits
-- fixeddecimal https://github.com/2ndQuadrant/fixeddecimal
-- fuzzywuzzy https://github.com/hooopo/pg-fuzzywuzzy
-- pg_paxos https://github.com/microsoft/pg_paxos
+### 值得评估
 
+- [`pgedge_vectorizer` 1.1](https://github.com/pgEdge/pgedge-vectorizer)：异步文本切分与嵌入生成；C 后台工作进程，需要预加载和 pgvector。当前 1.1 标签仍命名为 `v1.1-test1`。
+- [`synchdb`](https://github.com/Hornetlabs/synchdb)：直接从 MySQL、SQL Server、Oracle 进行 CDC；上游发布版本为 1.4，控制文件版本仍为 1.0，且跨越较大的 C/Java 运行时边界。
+- [`pg_onnx`](https://github.com/kibae/pg_onnx)：在 PostgreSQL 内执行 ONNX 推理；扩展版本为 1.2.1、项目发布版本为 1.28.0，C++ 运行时依赖较重。
+- [`pg_deltax` 0.2.1](https://github.com/xataio/deltax)：活跃的 Rust 时序扩展；打包前需确认 PostgreSQL 大版本与 pgrx 支持范围。
+- [`steampipe_postgres_fdw` 1.0](https://github.com/turbot/steampipe-postgres-fdw)：以零 ETL 方式访问云服务与 API；需评估 Go 运行时及插件分发边界。
+- [`pg_mustach`](https://github.com/RekGRpth/pg_mustach)：体量较小的 C 语言 Mustache 实现；最新标签为 `v1.0.0`，但控制文件默认版本已经是 3.0，应先厘清发布边界。
+- [`is_jsonb_valid` 0.1.4](https://github.com/furstenheim/is_jsonb_valid)：仍在维护的 C 语言 JSON Schema draft 4/7 校验实现；需评估与现有 JSON Schema 扩展的功能重叠。
+- [`oai_fdw` 1.13](https://github.com/jimjonesbr/oai_fdw)：仍在活跃维护的 OAI-PMH FDW，但学术元数据场景较窄。
+- [`pgjwt_rs` 0.1.2](https://github.com/vishvish/pgjwt)：支持 RS256 与 Ed25519 的 Rust JWT 校验扩展；需评估与现有 JWT/安全扩展的重叠。
 
-## 退役淘汰
+### 暂存 / 待评审
 
-- parquet_s3_fdw: retired due to too much duckdb better alternatives
-- pg_tier: retired due to parquet_s3_fdw deps
-- pg_mon: retired due to pg17 in-compatibility
-- pg_search: retired due to moving to official release procedure
-- pg_bm25: retired due to renaming to pg_search
-- pg_analytics: retired due to moving to official release procedure, and once renaming to pg_lakehouse
-- pg_lakehouse: retired due to renaming back to pg_analytics
-- pg_sparse: retired due to merge into pgvector, and no longer maintained
-- mysqlcompat: retire due to conflict func with higher version of PG
-- pg_comparator: retired due to removing from PGDG repo
-- pg_proctab: retired due to covered by pgnodemx
-- pg_statviz: broken deps and replaceable functionality
-- [pg_net](https://github.com/supabase/pg_net) : retired due to moving into PGDG repo
-- [pg_tle](https://github.com/aws/pg_tle) : retired due to moving into PGDG repo
-- [pg_bigm](https://github.com/pgbigm/pg_bigm) : retired due to moving into PGDG repo
-- [pgsql-http](https://github.com/pramsey/pgsql-http) : retired due to moving into PGDG repo
-- [pgsql-gzip](https://github.com/pramsey/pgsql-gzip) : retired due to moving into PGDG repo
-- [pg_dirtyread](https://github.com/df7cb/pg_dirtyread) : retired due to moving into PGDG repo
-- [pointcloud](https://github.com/pgpointcloud/pointcloud) : retired due to moving into PGDG repo
-- pg_top: retired due to too much trouble
-- pg_timeit: retired due incompatible on arm64
-- vacuumlo & oid2name: binary command, actually they are not extensions
-- pgdd: remove due to not actively maintained and legacy pgrx version
+- [`coldfront`](https://github.com/pgEdge/coldfront)：面向 PG16-18 的公开测试版；需要预加载、`pg_duckdb`、打补丁的 DuckDB/Iceberg 组件及辅助服务，尚不适合生产。
+- [`ruvector`](https://github.com/ruvnet/RuVector)：覆盖面很广且变化迅速的 Rust/向量 monorepo；目录版本为 0.3.0，当前 PostgreSQL crate 为 2.0.6，而仓库标签已进入 2.2 系列。
+- [`pg_deeplake`](https://github.com/activeloopai/deeplake) 与 [`vexdb_lite`](https://github.com/VexDB-THU/VexDB-Lite)：方向有吸引力，但 PostgreSQL 打包边界和运行时依赖需要单独评审。
+- [`plrust`](https://github.com/pgcentralfoundation/plrust)：编译器与沙箱工具链复杂；项目发布版本为 1.2.8、控制文件默认版本仍为 1.1，上游也只声明 PG13-16 feature。
+- [`pg_query_state`](https://github.com/postgrespro/pg_query_state)：依赖两处匹配的 PostgreSQL 内核补丁，不属于常规扩展打包候选。
+- `pg_conda`、`pgfdb`、`postgres_ical`、`pgfaker`、`pgsloth`、`pg_kafka`、`pgspeck`、`dsef`、`pg_fsql`、`pg_liquid`、`pg_regresql`：保留在 Universe 中继续观察；优先级较低、仍属实验阶段、场景过窄，或缺少清晰的当前发布边界。
 
-## 缺少许可证
+## 状态纠正
 
-- [jsonb_apply](https://github.com/Florents-Tselai/jsonb_apply) 0.1.0
+### 相比旧清单已完成
 
+- `re2` 0.4.1、`spock` 5.0.10、`pg_lake` 3.4 与 `omnigres` 软件包族，在各自支持矩阵中均已入库且没有 `MISS`。
+- `age` 1.8.0、`pg_jieba` 2.0.1、`onesparse` 1.0.0、`pgelog` 1.0.2、`rdf_fdw` 2.7.0、`pg_ttl_index` 3.0.0、`pgcalendar` 1.1.0 均已打包。
+- `pg_statviz` 已从 PGDG 纳入目录，目前只剩上文明确列出的矩阵缺口。
 
-## EL 独有
+### 仍在打包，并未退役
 
-- pg_strom
-- faker
-- dbt2
-- pg_top
-- multicorn
-- odbc_fdw
-- jdbc_fdw
-- tds_fdw
-- db2_fdw
-- sqlite_fdw
-- pgbouncer_fdw
-- mongo_fdw
-- hdfs_fdw
-- pg_dbms_metadata
-- pg_dbms_lock
-- pg_dbms_job
+`pg_search`、`pg_net`、`pg_tle`、`pg_bigm`、`http`、`gzip`、`pg_dirtyread`、`pointcloud`、`pg_proctab`、`pgdd`、`pgx_ulid`、`hashtypes`、`pghydro` 仍在活跃打包目录中。旧页面将它们列入“退役”或“尚未规划”已经不再准确。
 
+### 维护风险
 
-## Debian 独有
+- [`columnar` 1.1.2](https://github.com/hydradatabase/columnar) 仍为 PG14-16 提供软件包，但上游自 2025-02-10 后没有新提交，当前目录也没有 PG17/18 支持。
+- Apache AGE 仍在活跃开发且已经打包，不再归类为“缺少维护”。
 
-- mobilitydb
-- hstore_pllua
-- hstore_plluau
-- debversion
-- pg_rrule
+## 尚未规划或已经退役
 
+- [`timescale/pgai`](https://github.com/timescale/pgai) 已归档；[`river`](https://github.com/riverqueue/river) 是 Go 作业队列库，不是 PostgreSQL 扩展。
+- `pg_bm25` 已由 `pg_search` 取代；`pg_analytics` 已归档；`pg_lakehouse` 与 `embedding` 已弃用；`pg_sparse` 已并入 pgvector。
+- PipelineDB 已弃用；`sql_firewall`、`zcurve`、`pg_comparator` 已停止维护；`weighted_mean` 与 `pg_paxos` 已归档。
+- `pg_lz4` 与 `pg_query_state` 依赖打补丁的 PostgreSQL 内核。`vacuumlo`、`oid2name`、`pg_top` 是命令行程序，不是扩展软件包。
+- 当前没有打包计划的老旧项目包括：`zson`、`pg_natural_sort_order`、`pgsampler`、`pg_amqp`、`tinyint`、`pg_blkchain`、`foreign_table_exposer`、`ldap_fdw`、`pg_backtrace`、`connection_limits`、`fixeddecimal`、`fuzzywuzzy`、`pg_scws`、`pg_themis`、`lsm3`、`monq`、`pg_recall`、`kmeans`。
+- [`jsonb_apply` 0.1.0](https://github.com/Florents-Tselai/jsonb_apply) 仍被阻塞，因为上游仓库没有声明许可证。
+
+## 单侧平台软件包
+
+旧页面中的 EL 独有与 Debian 独有清单已经过时。当前目录只有以下单侧软件包族：
+
+### 仅 RPM
+
+- `db2_fdw` 18.2.0
+- `informix_fdw` 0.6.3 — 位于 PGDG non-free，需要 IBM Informix Client SDK
+- `pg_strom` 6.1 — GPU/NVMe 扩展，没有 DEB 软件包
+
+### 仅 DEB
+
+- `debversion` 1.2.0
 
 ## 相关资源
 
-- [**PGXN**](https://pgxn.org/): https://pgxn.org/recent/
-- [**PGRPMS**](https://git.postgresql.org/gitweb/?p=pgrpms.git;a=summary) : [https://git.postgresql.org/gitweb](https://git.postgresql.org/gitweb/?p=pgrpms.git)
-- [**PGDEBS**](https://salsa.debian.org/postgresql): https://salsa.debian.org/postgresql
-- [**Gist** of 1000+ PG Extension](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47)
-- https://www.pgextensions.org/
+- [PGXN 最近发布](https://pgxn.org/recent/)
+- [PGDG RPM 打包仓库](https://git.postgresql.org/gitweb/?p=pgrpms.git;a=summary)
+- [PGDG Debian 打包仓库](https://salsa.debian.org/postgresql)
+- [1000+ PostgreSQL 扩展清单](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47)
+- [PostgreSQL Extension Network](https://www.pgextensions.org/)

@@ -28,42 +28,46 @@ Script installation targets Linux x86_64 / aarch64 RPM or DEB distributions. On 
 
 ## Specify Version
 
-You can specify a particular version to install by passing the version number as an argument:
+You can request a particular version that is already published on the selected mirror by passing the version number as an argument:
 
 **Default Installation** (Cloudflare CDN):
 
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s 1.6.0
+curl -fsSL https://repo.pigsty.io/pig | bash -s X.Y.Z
 ```
 
 **China Mirror**:
 
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.6.0
+curl -fsSL https://repo.pigsty.cc/pig | bash -s X.Y.Z
 ```
+
+Mirror publication can lag the GitHub release. For the exact current release, use the GitHub artifacts below.
 
 
 ## Download Release Artifacts
 
-You can also download `pig` installation packages (`RPM`/`DEB`/tarball) directly from the Pigsty software repository. Current `v1.6.0` artifacts are available at:
+Current `v1.6.2` installation packages (`RPM`/`DEB`/tarball) are available from:
 
-- <https://repo.pigsty.io/pkg/pig/v1.6.0/>
-- <https://repo.pigsty.cc/pkg/pig/v1.6.0/>
+- [GitHub Release](https://github.com/pgsty/pig/releases/tag/v1.6.2)
+- [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.6.2/checksums.txt)
 
-```
-latest
-└── v1.6.0
-    ├── pig_1.6.0-1_amd64.deb
-    ├── pig_1.6.0-1_arm64.deb
-    ├── pig-1.6.0-1.aarch64.rpm
-    ├── pig-1.6.0-1.x86_64.rpm
-    ├── pig-v1.6.0.linux-amd64.tar.gz
-    ├── pig-v1.6.0.linux-arm64.tar.gz
-    ├── pig-v1.6.0.darwin-amd64.tar.gz
-    └── pig-v1.6.0.darwin-arm64.tar.gz
+Use `https://github.com/pgsty/pig/releases/download/v1.6.2/<filename>` for direct downloads.
+
+```text
+v1.6.2
+├── pig_1.6.2-1_amd64.deb
+├── pig_1.6.2-1_arm64.deb
+├── pig-1.6.2-1.aarch64.rpm
+├── pig-1.6.2-1.x86_64.rpm
+├── pig-v1.6.2.linux-amd64.tar.gz
+├── pig-v1.6.2.linux-arm64.tar.gz
+├── pig-v1.6.2.darwin-amd64.tar.gz
+└── pig-v1.6.2.darwin-arm64.tar.gz
 ```
 
 After extracting, place the binary file in your system PATH.
+The equivalent Pigsty mirror directory becomes available after repository synchronization; check the target URL before using a version-pinned installer command.
 
 
 ## Repository Installation

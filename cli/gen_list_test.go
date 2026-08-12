@@ -72,14 +72,14 @@ func TestGenerateLicenseListIsDeterministicForEqualRankLicenses(t *testing.T) {
 
 func TestGenerateCatalogContentDistinguishesUniverseFromPackaged(t *testing.T) {
 	stats := &CatalogStats{
-		ExtensionStats: []StatsRow{{Title: "ALL", Total: 572}},
-		PackageStats:   []StatsRow{{Title: "ALL", Total: 405}},
+		ExtensionStats: []StatsRow{{Title: "ALL", Total: 575}},
+		PackageStats:   []StatsRow{{Title: "ALL", Total: 406}},
 	}
 	generator := &ExtensionGenerator{}
 
 	en := generator.generateCatalogContent(stats, nil, 2230, "en")
 	for _, want := range []string{
-		"packaged PostgreSQL extension catalog contains **572** extensions",
+		"packaged PostgreSQL extension catalog contains **575** extensions",
 		"full PGEXT.CLOUD directory contains **2230** extensions",
 	} {
 		if !strings.Contains(en, want) {
@@ -89,7 +89,7 @@ func TestGenerateCatalogContentDistinguishesUniverseFromPackaged(t *testing.T) {
 
 	zh := generator.generateCatalogContent(stats, nil, 2230, "zh")
 	for _, want := range []string{
-		"已打包扩展目录包含 **572** 个扩展",
+		"已打包扩展目录包含 **575** 个扩展",
 		"总目录收录 **2230** 个扩展",
 	} {
 		if !strings.Contains(zh, want) {

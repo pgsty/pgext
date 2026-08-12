@@ -74,14 +74,18 @@ languages:
           name: "PG Extension ↗"
           url: "https://pigsty.io/ext"
           weight: 12
+        - identifier: pig
+          name: "PIG Package Manager ↗"
+          url: "https://pig.pgsty.com"
+          weight: 13
         - identifier: pgexp
           name: "PG Exporter ↗"
           url: "https://pigsty.io/docs/pg_exporter"
-          weight: 13
+          weight: 14
         - identifier: vonng
           name: "Author: Vonng ↗"
           url: "https://vonng.com/en/"
-          weight: 14
+          weight: 15
 
 
   zh:
@@ -136,14 +140,18 @@ languages:
           name: "PG 扩展目录 ↗"
           url: "https://pigsty.cc/ext/"
           weight: 12
+        - identifier: pig
+          name: "PIG 包管理器 ↗"
+          url: "https://pig.pgsty.com/zh"
+          weight: 13
         - identifier: pgexp
           name: "PG Exporter ↗"
           url: "https://pigsty.cc/ext"
-          weight: 13
+          weight: 14
         - identifier: vonng
           name: "作者：Vonng ↗"
           url: "https://vonng.com"
-          weight: 14
+          weight: 15
         - name: PG 中文网
           weight: 2
           url: "https://pg.center"
@@ -186,7 +194,7 @@ security:
     urls: ['(?i)^https?://[a-z].*']
 
 params:
-  description: PostgreSQL Extension Catalog with 2,230 entries, including 572 packaged PG extensions across 16 Linux platforms
+  description: PostgreSQL Extension Catalog with 2,230 entries, including 575 packaged PG extensions across 16 Linux platforms
 
   navbar:
     displayTitle: true

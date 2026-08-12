@@ -232,7 +232,7 @@ Make sure [**PGDG**](/repo/pgdg) repo available:
 pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install plpgsql_wrap;		# install via package name, for the active PG version

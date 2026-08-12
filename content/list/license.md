@@ -17,9 +17,9 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 251 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 253 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 109 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 95 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 96 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 16 | [License Text](#) | Unknown license |
@@ -42,7 +42,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="251 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="253 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -226,6 +226,7 @@ PostgreSQL extension categorized by license.
 | 6030 | {{< alias "pg_stat_backtrace" >}} | Capture or log C-level stack backtraces of PostgreSQL processes |
 | 6040 | {{< alias "pg_stat_log" >}} | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
 | 6050 | {{< alias "pg_stat_plans" >}} | Track per-plan call counts, execution times, and example EXPLAIN texts. |
+| 6080 | {{< alias "pg_statviz" >}} | Capture PostgreSQL statistics snapshots for time-series analysis and visualization |
 | 6210 | {{< alias "pg_show_plans" >}} | show query plans of all currently running SQL statements |
 | 6260 | {{< alias "pg_track_settings" >}} | Track settings changes |
 | 6280 | {{< alias "pg_wait_sampling" >}} | sampling based statistics of wait events |
@@ -260,6 +261,7 @@ PostgreSQL extension categorized by license.
 | 7380 | {{< alias "pg_snakeoil" >}} | The PostgreSQL Antivirus |
 | 7390 | {{< alias "pgextwlist" >}} | PostgreSQL Extension Whitelisting |
 | 7410 | {{< alias "sslutils" >}} | A Postgres extension for managing SSL certificates through SQL |
+| 7440 | {{< alias "pg_policy" >}} | Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls |
 | 7510 | {{< alias "pg_vault_tde" >}} | Transparent Data Encryption for PostgreSQL through custom table and index access methods |
 | 7960 | {{< alias "sepgsql" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
 | 7970 | {{< alias "auth_delay" >}} | pause briefly before reporting authentication failure |
@@ -424,7 +426,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="95 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="96 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -449,6 +451,7 @@ PostgreSQL extension categorized by license.
 | 2610 | {{< alias "pg_liquid" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | 2640 | {{< alias "pgrdf" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
+| 2890 | {{< alias "pg_local_cache" >}} | Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads |
 | 2900 | {{< alias "provsql" >}} | Semiring provenance and probability management for PostgreSQL |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3020 | {{< alias "pllua" >}} | Lua as a procedural language |

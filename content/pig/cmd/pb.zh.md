@@ -7,7 +7,7 @@ weight: 660
 
 `pig pgbackrest` 命令（别名 `pig pb`）用于管理 pgBackRest 备份，并提供低层 restore 原语。
 它封装了常用的 `pgbackrest` 操作，提供简化的备份管理体验。所有命令均以数据库超级用户身份（默认 `postgres`）执行。
-托管集群的编排式时间点恢复请优先使用 [`pig pitr`](/zh/pig/cmd/pitr/)。
+托管集群的编排式时间点恢复请优先使用 [`pig pitr`](https://pig.pgsty.com/zh/pitr/)。
 
 ```bash
 pig pb - Manage pgBackRest backup and point-in-time recovery.
@@ -344,7 +344,7 @@ pig pb restore -d -- --delta         # 在 -- 后透传 pgBackRest restore 参�
 4. 执行 pgbackrest restore
 5. 提供恢复后的操作指引
 
-**重要提示：** 恢复前必须先停止 PostgreSQL；如果该 PGDATA 由 Patroni 管理，应使用 [`pig pitr`](/zh/pig/cmd/pitr/) 编排 Patroni、PostgreSQL 与 pgBackRest：
+**重要提示：** 恢复前必须先停止 PostgreSQL；如果该 PGDATA 由 Patroni 管理，应使用 [`pig pitr`](https://pig.pgsty.com/zh/pitr/) 编排 Patroni、PostgreSQL 与 pgBackRest：
 
 ```bash
 pig pg stop                          # 停止 PostgreSQL

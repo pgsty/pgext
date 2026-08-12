@@ -122,8 +122,8 @@ func newMux(a *api) *http.ServeMux {
 
 /* ---------------- legacy Hugo URL compatibility ---------------- */
 
-// pigDocsURL is where the retired /pig/* CLI handbook lives now.
-const pigDocsURL = "https://pigsty.io/docs/pig"
+// pigSiteURL is where the retired /pig/* CLI handbook lives now.
+const pigSiteURL = "https://pig.pgsty.com"
 
 // legacyRedirects maps retired Hugo-era pages onto their dynamic equivalents.
 // Each entry is registered with and without a trailing slash and answers with
@@ -153,9 +153,16 @@ func registerLegacyRedirects(mux *http.ServeMux) {
 		mux.HandleFunc("GET "+lang, redirectStripPrefix(lang))
 		mux.HandleFunc("GET "+lang+"/", redirectStripPrefix(lang))
 	}
-	// The whole retired pig CLI handbook moved to the Pigsty documentation.
-	mux.HandleFunc("GET /pig", redirectTo(pigDocsURL))
-	mux.HandleFunc("GET /pig/", redirectTo(pigDocsURL))
+	// The retired pig CLI handbook now has its own bilingual site. Preserve the
+	// old page suffix so bookmarks land on the corresponding new document.
+	mux.HandleFunc("GET /pig", redirectTo(pigSiteURL))
+	mux.HandleFunc("GET /pig/", redirectPigDocs(false))
+	mux.HandleFunc("GET /zh/pig", redirectTo(pigSiteURL+"/zh"))
+	mux.HandleFunc("GET /zh/pig/", redirectPigDocs(true))
+	mux.HandleFunc("GET /release/pig", redirectTo(pigSiteURL+"/release/"))
+	mux.HandleFunc("GET /release/pig/", redirectTo(pigSiteURL+"/release/"))
+	mux.HandleFunc("GET /zh/release/pig", redirectTo(pigSiteURL+"/zh/release/"))
+	mux.HandleFunc("GET /zh/release/pig/", redirectTo(pigSiteURL+"/zh/release/"))
 	// Hugo taxonomy term pages: categories have dedicated landing pages while
 	// tag terms map onto the catalog tag filter.
 	mux.HandleFunc("GET /categories/{name}", redirectPrefix("/cate/", http.StatusFound))
@@ -188,6 +195,35 @@ func redirectPrefix(prefix string, code int) http.HandlerFunc {
 // replacement.
 func redirectTo(target string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, withQuery(target, r), http.StatusFound)
+	}
+}
+
+// redirectPigDocs maps the retired pgext Hugo handbook onto pig.pgsty.com.
+// Old command pages used /pig/cmd/<name>; the dedicated site exposes each
+// command at the root. Other handbook pages retain their original slug.
+func redirectPigDocs(zh bool) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		path := strings.TrimPrefix(r.URL.Path, "/pig/")
+		if zh {
+			path = strings.TrimPrefix(r.URL.Path, "/zh/pig/")
+		}
+		commandIndex := path == "cmd" || path == "cmd/"
+		if !commandIndex {
+			path = strings.TrimPrefix(path, "cmd/")
+		}
+		target := pigSiteURL
+		if zh {
+			target += "/zh"
+		}
+		if commandIndex {
+			target += "/cmd"
+			if strings.HasSuffix(path, "/") {
+				target += "/"
+			}
+		} else if path != "" {
+			target += "/" + path
+		}
 		http.Redirect(w, r, withQuery(target, r), http.StatusFound)
 	}
 }
