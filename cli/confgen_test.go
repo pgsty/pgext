@@ -1474,6 +1474,13 @@ func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 	}
 }
 
+func TestRPMTemplateNginxOptsOutOfModularFiltering(t *testing.T) {
+	const nginxRepo = "name: nginx          ,description: 'Nginx Repo'         ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }"
+	if !strings.Contains(rpmTemplate, nginxRepo) {
+		t.Fatalf("rpmTemplate nginx repository must declare module_hotfixes: %q", nginxRepo)
+	}
+}
+
 func TestCurrentRepositoryVersionContract(t *testing.T) {
 	required := map[string][]string{
 		"rpm": {
