@@ -721,6 +721,7 @@ func TestMySQL84RepoAndPackageContract(t *testing.T) {
 		"description: 'MySQL 8.4 LTS'",
 		"mysql-8.4-community",
 		"mirrors.ustc.edu.cn/mysql-repo",
+		"meta: { module_hotfixes: 1 }",
 	} {
 		if !strings.Contains(rpmMySQL, fragment) {
 			t.Fatalf("RPM mysql repo missing %q: %q", fragment, rpmMySQL)
@@ -738,10 +739,6 @@ func TestMySQL84RepoAndPackageContract(t *testing.T) {
 	if rpmPXB := renderedRepoUpstreamLine(rpm, "pxb84"); !strings.Contains(rpmPXB, "mirrors.cloud.tencent.com/percona/pxb-84-lts/yum/release") {
 		t.Fatalf("RPM pxb84 repo missing China mirror: %q", rpmPXB)
 	}
-	if strings.Contains(rpmMySQL, "meta:") {
-		t.Fatalf("RPM mysql repo should not carry meta: %q", rpmMySQL)
-	}
-
 	debMySQL := renderedRepoUpstreamLine(deb, "mysql")
 	for _, fragment := range []string{
 		"description: 'MySQL 8.4 LTS'",
@@ -1474,10 +1471,19 @@ func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 	}
 }
 
-func TestRPMTemplateNginxOptsOutOfModularFiltering(t *testing.T) {
-	const nginxRepo = "name: nginx          ,description: 'Nginx Repo'         ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }"
-	if !strings.Contains(rpmTemplate, nginxRepo) {
-		t.Fatalf("rpmTemplate nginx repository must declare module_hotfixes: %q", nginxRepo)
+func TestRPMTemplateReplacementReposOptOutOfModularFiltering(t *testing.T) {
+	repos := map[string]string{
+		"nginx":   "name: nginx          ,description: 'Nginx Repo'         ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }",
+		"percona": "name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.percona.com/ppg-18.4/yum/release/$releasever/RPMS/$basearch'  } ,meta: { module_hotfixes: 1 }",
+		"mysql":   "name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/'       ,china: 'https://mirrors.ustc.edu.cn/mysql-repo/yum/mysql-8.4-community/el/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }",
+		"redis":   "name: redis          ,description: 'Redis'              ,module: redis   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://rpmfind.net/linux/remi/enterprise/$releasever/redis72/$basearch/' } ,meta: { module_hotfixes: 1 }",
+	}
+	for name, repo := range repos {
+		t.Run(name, func(t *testing.T) {
+			if !strings.Contains(rpmTemplate, repo) {
+				t.Fatalf("rpmTemplate %s repository must declare module_hotfixes: %q", name, repo)
+			}
+		})
 	}
 }
 
