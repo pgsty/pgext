@@ -88,6 +88,15 @@ func (g *PigstyConfigGenerator) isEL9ARM() bool {
 	return g.osCode == "el9" && g.arch == "aarch64"
 }
 
+func (g *PigstyConfigGenerator) tunedProfileDir() string {
+	switch g.osCode {
+	case "el10", "d13", "u26":
+		return "/etc/tuned/profiles"
+	default:
+		return "/etc/tuned"
+	}
+}
+
 // NewPigstyConfigGenerator creates a new generator
 func NewPigstyConfigGenerator(db *sql.DB, osName string, verbose bool) *PigstyConfigGenerator {
 	parts := strings.Split(osName, ".")
@@ -312,15 +321,16 @@ func (g *PigstyConfigGenerator) prepareTemplateData(extensions map[string]*Exten
 	}
 
 	return map[string]interface{}{
-		"OSName":       g.osName,
-		"OSCode":       g.osCode,
-		"Arch":         g.arch,
-		"Constants":    g.constants,
-		"Extensions":   extensions,
-		"PGVersions":   []int{18, 17, 16, 15, 14},
-		"CategoryExts": catExts,
-		"Categories":   categories,
-		"ExtMappings":  g.generateExtensionMappings(extensions),
+		"OSName":          g.osName,
+		"OSCode":          g.osCode,
+		"Arch":            g.arch,
+		"TunedProfileDir": g.tunedProfileDir(),
+		"Constants":       g.constants,
+		"Extensions":      extensions,
+		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"CategoryExts":    catExts,
+		"Categories":      categories,
+		"ExtMappings":     g.generateExtensionMappings(extensions),
 	}
 }
 
@@ -907,6 +917,7 @@ const rpmTemplate = `---
 # Copyright  :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
 
 syslog_path: /var/log/messages
+node_tuned_profile_dir: {{ .TunedProfileDir }}
 
 # default packages to be downloaded (if ` + "`repo_packages`" + ` is not explicitly set)
 repo_packages_default: [ node-bootstrap, infra-package, infra-addons, node-package1, node-package2, node-package3, pgsql-utility, extra-modules ]
@@ -1059,6 +1070,7 @@ const debTemplate = `---
 # Copyright  :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
 
 syslog_path: /var/log/syslog
+node_tuned_profile_dir: {{ .TunedProfileDir }}
 
 # default packages to be downloaded (if ` + "`repo_packages`" + ` is not explicitly set)
 repo_packages_default: [ node-bootstrap, infra-package, infra-addons, node-package1, node-package2, node-package3, pgsql-utility, extra-modules ]

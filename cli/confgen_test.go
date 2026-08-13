@@ -349,15 +349,16 @@ func TestRPMNodePackage1IncludesACL(t *testing.T) {
 	}
 	tmpl := template.Must(template.New("rpm").Funcs(g.getFuncMap()).Parse(rpmTemplate))
 	data := map[string]interface{}{
-		"OSName":       g.osName,
-		"OSCode":       g.osCode,
-		"Arch":         g.arch,
-		"Constants":    g.constants,
-		"Extensions":   map[string]*ExtensionData{},
-		"PGVersions":   []int{18, 17, 16, 15, 14},
-		"CategoryExts": map[string]CategoryPkgList{},
-		"Categories":   []string{},
-		"ExtMappings":  []ExtensionMapping{},
+		"OSName":          g.osName,
+		"OSCode":          g.osCode,
+		"Arch":            g.arch,
+		"TunedProfileDir": g.tunedProfileDir(),
+		"Constants":       g.constants,
+		"Extensions":      map[string]*ExtensionData{},
+		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"CategoryExts":    map[string]CategoryPkgList{},
+		"Categories":      []string{},
+		"ExtMappings":     []ExtensionMapping{},
 	}
 
 	var buf bytes.Buffer
@@ -432,6 +433,38 @@ func TestConfigTemplatesDoNotEmitSystemdDir(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			if strings.Contains(rendered, "systemd_dir:") {
 				t.Fatal("generated config still contains the obsolete systemd_dir variable")
+			}
+		})
+	}
+}
+
+func TestConfigTemplatesEmitTunedProfileDir(t *testing.T) {
+	tests := []struct {
+		osCode string
+		want   string
+	}{
+		{osCode: "el8", want: "/etc/tuned"},
+		{osCode: "el9", want: "/etc/tuned"},
+		{osCode: "el10", want: "/etc/tuned/profiles"},
+		{osCode: "d12", want: "/etc/tuned"},
+		{osCode: "d13", want: "/etc/tuned/profiles"},
+		{osCode: "u22", want: "/etc/tuned"},
+		{osCode: "u24", want: "/etc/tuned"},
+		{osCode: "u26", want: "/etc/tuned/profiles"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.osCode, func(t *testing.T) {
+			osName := tt.osCode + ".x86_64"
+			var rendered string
+			if strings.HasPrefix(tt.osCode, "el") {
+				rendered = renderRPMTemplateForTest(t, osName, tt.osCode)
+			} else {
+				rendered = renderDEBTemplateForTest(t, osName, tt.osCode)
+			}
+			want := "node_tuned_profile_dir: " + tt.want
+			if !strings.Contains(rendered, want) {
+				t.Fatalf("rendered config missing %q", want)
 			}
 		})
 	}
@@ -894,15 +927,16 @@ func TestDebTemplateRendersBind9DNSUtils(t *testing.T) {
 	}
 	tmpl := template.Must(template.New("deb").Funcs(g.getFuncMap()).Parse(debTemplate))
 	data := map[string]interface{}{
-		"OSName":       g.osName,
-		"OSCode":       g.osCode,
-		"Arch":         g.arch,
-		"Constants":    g.constants,
-		"Extensions":   map[string]*ExtensionData{},
-		"PGVersions":   []int{18, 17, 16, 15, 14},
-		"CategoryExts": map[string]CategoryPkgList{},
-		"Categories":   []string{},
-		"ExtMappings":  []ExtensionMapping{},
+		"OSName":          g.osName,
+		"OSCode":          g.osCode,
+		"Arch":            g.arch,
+		"TunedProfileDir": g.tunedProfileDir(),
+		"Constants":       g.constants,
+		"Extensions":      map[string]*ExtensionData{},
+		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"CategoryExts":    map[string]CategoryPkgList{},
+		"Categories":      []string{},
+		"ExtMappings":     []ExtensionMapping{},
 	}
 
 	var buf bytes.Buffer
@@ -984,15 +1018,16 @@ func renderDEBTemplateForTest(t *testing.T, osName, osCode string) string {
 func renderConfigTemplateForTest(t *testing.T, tmpl *template.Template, g *PigstyConfigGenerator) string {
 	t.Helper()
 	data := map[string]interface{}{
-		"OSName":       g.osName,
-		"OSCode":       g.osCode,
-		"Arch":         g.arch,
-		"Constants":    g.constants,
-		"Extensions":   map[string]*ExtensionData{},
-		"PGVersions":   []int{18, 17, 16, 15, 14},
-		"CategoryExts": map[string]CategoryPkgList{},
-		"Categories":   []string{},
-		"ExtMappings":  []ExtensionMapping{},
+		"OSName":          g.osName,
+		"OSCode":          g.osCode,
+		"Arch":            g.arch,
+		"TunedProfileDir": g.tunedProfileDir(),
+		"Constants":       g.constants,
+		"Extensions":      map[string]*ExtensionData{},
+		"PGVersions":      []int{18, 17, 16, 15, 14},
+		"CategoryExts":    map[string]CategoryPkgList{},
+		"Categories":      []string{},
+		"ExtMappings":     []ExtensionMapping{},
 	}
 
 	var buf bytes.Buffer
