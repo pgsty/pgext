@@ -1366,16 +1366,23 @@ func TestPGDGChinaMirrorContract(t *testing.T) {
 	rpm := renderRPMTemplateForTest(t, "el9.x86_64", "el9")
 	var yumCount int
 	for _, line := range strings.Split(rpm, "\n") {
-		if !strings.Contains(line, "default: 'https://download.postgresql.org/pub/repos/yum/") {
+		const defaultPrefix = "default: 'https://download.postgresql.org/pub/repos/yum/"
+		defaultIndex := strings.Index(line, defaultPrefix)
+		if defaultIndex < 0 {
 			continue
 		}
 		// China RPM entries lead with the confirmed Tencent Cloud PGDG mirror and
 		// retain the established Pigsty fallback for compatibility.
-		if !strings.Contains(line, "china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/") {
-			t.Fatalf("PGDG YUM line does not lead with the Tencent mirror: %q", line)
+		pathAndRest := line[defaultIndex+len(defaultPrefix):]
+		pathEnd := strings.IndexByte(pathAndRest, '\'')
+		if pathEnd < 0 {
+			t.Fatalf("PGDG YUM default URL is malformed: %q", line)
 		}
-		if !strings.Contains(line, " https://repo.pigsty.cc/yum/pgdg/") {
-			t.Fatalf("PGDG YUM line lost the Pigsty fallback: %q", line)
+		path := pathAndRest[:pathEnd]
+		want := "china: 'https://mirrors.cloud.tencent.com/postgresql/repos/yum/" + path +
+			" https://repo.pigsty.cc/yum/pgdg/" + path + "'"
+		if !strings.Contains(line, want) {
+			t.Fatalf("PGDG YUM China route mismatch: got %q, want fragment %q", line, want)
 		}
 		yumCount++
 	}

@@ -53,6 +53,66 @@ func TestCSVTableRegistryCoversEmbeddedAssets(t *testing.T) {
 	}
 }
 
+func TestPGDGRepositoryChinaMirrorsUseTencent(t *testing.T) {
+	repository, err := GetCSVFile("repository")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	reader := csv.NewReader(strings.NewReader(string(repository.Content)))
+	header, err := reader.Read()
+	if err != nil {
+		t.Fatal(err)
+	}
+	columns := make(map[string]int, len(header))
+	for i, name := range header {
+		columns[name] = i
+	}
+	for _, name := range []string{"id", "org", "type", "default_url", "default_meta", "mirror_url", "mirror_meta"} {
+		if _, ok := columns[name]; !ok {
+			t.Fatalf("repository.csv column %q not found", name)
+		}
+	}
+
+	const aptDefault = "https://apt.postgresql.org/pub/repos/apt"
+	const aptMirror = "https://mirrors.cloud.tencent.com/postgresql/repos/apt"
+	const yumDefault = "https://download.postgresql.org/pub/repos/yum/"
+	const yumMirror = "https://mirrors.cloud.tencent.com/postgresql/repos/yum/"
+	var count int
+	for {
+		record, err := reader.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			t.Fatal(err)
+		}
+		if record[columns["org"]] != "pgdg" {
+			continue
+		}
+		count++
+		defaultPrefix, mirrorPrefix := yumDefault, yumMirror
+		if record[columns["type"]] == "deb" {
+			defaultPrefix, mirrorPrefix = aptDefault, aptMirror
+		}
+		for _, pair := range [][2]string{{"default_url", "mirror_url"}, {"default_meta", "mirror_meta"}} {
+			upstream := record[columns[pair[0]]]
+			got := record[columns[pair[1]]]
+			if !strings.HasPrefix(upstream, defaultPrefix) {
+				t.Errorf("%s %s = %q, want PGDG prefix %q", record[columns["id"]], pair[0], upstream, defaultPrefix)
+				continue
+			}
+			want := mirrorPrefix + strings.TrimPrefix(upstream, defaultPrefix)
+			if got != want {
+				t.Errorf("%s %s = %q, want %q", record[columns["id"]], pair[1], got, want)
+			}
+		}
+	}
+	if count == 0 {
+		t.Fatal("repository.csv contains no PGDG rows")
+	}
+}
+
 func TestPackageStateIsTriState(t *testing.T) {
 	schema, err := GetSchema()
 	if err != nil {
