@@ -1,15 +1,13 @@
 ---
 title: "pg_track_optimizer"
 linkTitle: "pg_track_optimizer"
-description: "Track planning decisions in comparison with
-  execution reality"
+description: "Track planning decisions in comparison with  execution reality"
 weight: 6270
 categories: ["STAT"]
 width: full
 ---
 
-[**pg_track_optimizer**](https://github.com/danolivo/pg_track_optimizer) : Track planning decisions in comparison with
-  execution reality
+[**pg_track_optimizer**](https://github.com/danolivo/pg_track_optimizer) : Track planning decisions in comparison with  execution reality
 
 
 ## Overview

@@ -1,10 +1,10 @@
 module pgext
 
-go 1.26.5
+go 1.26.6
 
 require (
 	github.com/jackc/pgx/v5 v5.10.0
-	github.com/sirupsen/logrus v1.9.4
+	github.com/sirupsen/logrus v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.10
 	golang.org/x/sync v0.22.0

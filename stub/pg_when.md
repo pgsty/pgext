@@ -1,53 +1,53 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/frectonz/pg-when/blob/main/README.md), [Cargo.toml version 0.1.9](https://github.com/frectonz/pg-when/blob/main/Cargo.toml), [META.json](https://github.com/frectonz/pg-when/blob/main/META.json)
+Sources:
 
-`pg-when` parses a constrained natural-language time expression and returns either a PostgreSQL timestamp with time zone or Unix epoch values at different resolutions.
+- [pg_when 0.1.10 on PGXN](https://pgxn.org/dist/pg_when/0.1.10/)
+- [pg_when 0.1.10 README](https://github.com/frectonz/pg-when/blob/0.1.10/README.md)
+- [pg_when 0.1.10 Cargo manifest](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/Cargo.toml)
+- [pg_when 0.1.10 control file](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/pg_when.control)
+- [pg_when 0.1.10 exported functions](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_is.rs)
+- [pg_when 0.1.10 relative-date implementation](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_relative_date.rs)
+
+`pg_when` 0.1.10 parses a constrained natural-language date and time expression and returns either a PostgreSQL `timestamptz` value or a Unix epoch value at a selected precision.
 
 ```sql
 CREATE EXTENSION pg_when;
 
 SELECT when_is('next friday at 8:00 pm in America/New_York');
-SELECT seconds_at('next friday at 8:00 pm in America/New_York');
-SELECT millis_at('next friday at 8:00 pm in America/New_York');
-SELECT micros_at('next friday at 8:00 pm in America/New_York');
-SELECT nanos_at('next friday at 8:00 pm in America/New_York');
+SELECT seconds_at('5 days ago at this hour in Asia/Tokyo');
+SELECT millis_at('in 2 months at midnight in UTC-8');
+SELECT micros_at('December 31, 2026 at evening');
+SELECT nanos_at('last monday at 22:30');
 ```
 
-### Supported Query Shape
+### Query Shape
 
-The parser accepts up to three parts:
+A query can contain a date, a time, and a time zone, joined by `at` and `in`:
 
 ```sql
 SELECT when_is('<date> at <time> in <timezone>');
 SELECT when_is('<date>');
+SELECT when_is('<date> in <timezone>');
+SELECT when_is('<time>');
 SELECT when_is('<time> in <timezone>');
 SELECT when_is('<date> at <time>');
 ```
 
-If no timezone is provided, upstream says the default is UTC.
+If the time zone is omitted, the parser uses UTC. Supported inputs include relative dates such as `tomorrow`, `last month`, and `5 days ago`; exact dates in common numeric and month-name forms; relative times such as `noon`, `midnight`, and `next hour`; clock times; IANA time-zone names; and UTC offsets.
 
-### Common Inputs
+### Function Index
 
-- relative dates: `today`, `tomorrow`, `last month`, `this friday`, `5 days ago`, `in 2 years`
-- exact dates: `YYYY-MM-DD`, `DD/MM/YYYY`, `January 10, 2004`, `10 Jan 2004`
-- relative times: `noon`, `midnight`, `morning`, `evening`, `next hour`
-- exact times: `8:30 pm`, `15:45`
-- time zones: `America/New_York`, `Europe/London`, `UTC-08:00`, `UTC+05:30`
+- `when_is(text)` returns `timestamptz`.
+- `seconds_at(text)` returns Unix epoch seconds.
+- `millis_at(text)` returns Unix epoch milliseconds.
+- `micros_at(text)` returns Unix epoch microseconds.
+- `nanos_at(text)` returns Unix epoch nanoseconds.
 
-### Examples
+### Compatibility and Boundaries
 
-```sql
-SELECT when_is('5 days ago at this hour in Asia/Tokyo');
-SELECT when_is('in 2 months at midnight in UTC-8');
-SELECT when_is('December 31, 2026 at evening');
-```
-
-### Caveats
-
-- The extension is aimed at the documented grammar above, not arbitrary English.
-- Upstream still lists source/runtime support and Docker image examples from PostgreSQL 13 through 18, but this repo's package matrix is PostgreSQL 14 through 18 only; do not assume Pigsty packages for PostgreSQL 13.
-- Upstream `Cargo.toml` currently pins `pgrx` 0.15.0; this repo's package metadata records a manual `pgrx` 0.17.0 upgrade.
+- The parser implements the documented grammar; it is not a general-purpose natural-language interpreter.
+- Upstream 0.1.10 declares PostgreSQL 13–18 features and pins pgrx 0.18.1. Pigsty packages cover PostgreSQL 14–18 and apply a locked pgrx 0.19.1 compatibility update.
+- `pg_when` is not relocatable and its control file requires a superuser for `CREATE EXTENSION`.
+- Invalid text raises an error. All five functions are `STRICT`, so a null input returns null; `nanos_at(text)` also errors when the epoch nanoseconds cannot fit in `bigint`.
+- The 0.1.10 SQL functions are declared `IMMUTABLE`, but relative expressions such as `now`, `tomorrow`, and `5 days ago` read the wall clock. Do not use relative-input calls in expression indexes or generated columns, and do not rely on them being reevaluated in cached plans; only fully specified date, time, and time-zone inputs are time-independent.

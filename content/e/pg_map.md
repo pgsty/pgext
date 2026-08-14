@@ -29,8 +29,7 @@ width: full
 |   **See Also**    | {{< ext "hstore" >}} {{< ext "pgbson" >}} {{< ext "collection" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pg_projection" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] This packaged provider is Snowflake pg_lake pg_map 3.4, not the unrelated semenikhind/pg_map 1.0 array-mapping extension. The catalog name is unique, so the packaged provider supersedes that source-only row and is reassigned with the pg_lake family to OLAP ID 2563.
-Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
+> [!Note] This packaged provider is Snowflake pg_lake pg_map 3.4, not the unrelated semenikhind/pg_map 1.0 array-mapping extension. The catalog name is unique, so the packaged provider supersedes that source-only row and is reassigned with the pg_lake family to OLAP ID 2563. Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
 
 
 ## Packages

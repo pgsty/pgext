@@ -30,8 +30,7 @@ width: full
 |   **See Also**    | {{< ext "pg_ducklake" >}} {{< ext "pg_parquet" >}} {{< ext "pg_duckdb" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_clickhouse" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] The control file declares pg_lake_engine; canonical metadata also retains plpgsql because the install SQL uses PL/pgSQL. plpgsql is installed by default in normal PostgreSQL databases.
-Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
+> [!Note] The control file declares pg_lake_engine; canonical metadata also retains plpgsql because the install SQL uses PL/pgSQL. plpgsql is installed by default in normal PostgreSQL databases. Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
 
 
 ## Packages

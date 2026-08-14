@@ -21,6 +21,7 @@ weight: 200
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
+| {{< language "PLpgSQL" >}} | 1 | 使用 PLpgSQL 编写的扩展 |
 
 
 ## C
@@ -660,4 +661,14 @@ weight: 200
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 3090 | {{< alias "pljava" >}} | Java 程序语言 |
+
+## PLpgSQL
+
+{{< language "PLpgSQL" >}} {{< badge content="1 个扩展" color="gray" icon="cube" >}}
+
+使用 PLpgSQL 编写的扩展
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 4210 | {{< alias "pg_relation_sql" >}} | 根据 PostgreSQL 外键生成可内联的关系导航 SQL 函数 |
 

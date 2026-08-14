@@ -61,12 +61,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `preprepare_18` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.3 KiB | [preprepare_18-0.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_18-0.9-1PIGSTY.el8.x86_64.rpm) |
-| `preprepare_18` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [preprepare_18-0.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_18-0.9-1PIGSTY.el8.aarch64.rpm) |
-| `preprepare_18` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_18-0.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_18-0.9-1PIGSTY.el9.x86_64.rpm) |
-| `preprepare_18` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_18-0.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_18-0.9-1PIGSTY.el9.aarch64.rpm) |
-| `preprepare_18` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_18-0.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_18-0.9-1PIGSTY.el10.x86_64.rpm) |
-| `preprepare_18` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [preprepare_18-0.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_18-0.9-1PIGSTY.el10.aarch64.rpm) |
+| `preprepare_18` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.4 KiB | [preprepare_18-0.9-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_18-0.9-2PGSTY.el8.x86_64.rpm) |
+| `preprepare_18` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [preprepare_18-0.9-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_18-0.9-2PGSTY.el8.aarch64.rpm) |
+| `preprepare_18` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_18-0.9-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_18-0.9-2PGSTY.el9.x86_64.rpm) |
+| `preprepare_18` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_18-0.9-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_18-0.9-2PGSTY.el9.aarch64.rpm) |
+| `preprepare_18` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_18-0.9-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_18-0.9-2PGSTY.el10.x86_64.rpm) |
+| `preprepare_18` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [preprepare_18-0.9-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_18-0.9-2PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-preprepare` | `0.9` | [d12.x86_64](/os/d12.x86_64) | pgdg | 16.8 KiB | [postgresql-18-preprepare_0.9-10.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-18-preprepare_0.9-10.pgdg12+1_amd64.deb) |
 | `postgresql-18-preprepare` | `0.9` | [d12.aarch64](/os/d12.aarch64) | pgdg | 16.8 KiB | [postgresql-18-preprepare_0.9-10.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-18-preprepare_0.9-10.pgdg12+1_arm64.deb) |
 | `postgresql-18-preprepare` | `0.9` | [d13.x86_64](/os/d13.x86_64) | pgdg | 16.8 KiB | [postgresql-18-preprepare_0.9-10.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-18-preprepare_0.9-10.pgdg13+1_amd64.deb) |
@@ -83,12 +83,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `preprepare_17` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.3 KiB | [preprepare_17-0.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_17-0.9-1PIGSTY.el8.x86_64.rpm) |
-| `preprepare_17` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [preprepare_17-0.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_17-0.9-1PIGSTY.el8.aarch64.rpm) |
-| `preprepare_17` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_17-0.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_17-0.9-1PIGSTY.el9.x86_64.rpm) |
-| `preprepare_17` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_17-0.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_17-0.9-1PIGSTY.el9.aarch64.rpm) |
-| `preprepare_17` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_17-0.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_17-0.9-1PIGSTY.el10.x86_64.rpm) |
-| `preprepare_17` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [preprepare_17-0.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_17-0.9-1PIGSTY.el10.aarch64.rpm) |
+| `preprepare_17` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.4 KiB | [preprepare_17-0.9-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_17-0.9-2PGSTY.el8.x86_64.rpm) |
+| `preprepare_17` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [preprepare_17-0.9-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_17-0.9-2PGSTY.el8.aarch64.rpm) |
+| `preprepare_17` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_17-0.9-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_17-0.9-2PGSTY.el9.x86_64.rpm) |
+| `preprepare_17` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_17-0.9-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_17-0.9-2PGSTY.el9.aarch64.rpm) |
+| `preprepare_17` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_17-0.9-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_17-0.9-2PGSTY.el10.x86_64.rpm) |
+| `preprepare_17` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [preprepare_17-0.9-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_17-0.9-2PGSTY.el10.aarch64.rpm) |
 | `postgresql-17-preprepare` | `0.9` | [d12.x86_64](/os/d12.x86_64) | pgdg | 16.8 KiB | [postgresql-17-preprepare_0.9-10.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-17-preprepare_0.9-10.pgdg12+1_amd64.deb) |
 | `postgresql-17-preprepare` | `0.9` | [d12.aarch64](/os/d12.aarch64) | pgdg | 16.8 KiB | [postgresql-17-preprepare_0.9-10.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-17-preprepare_0.9-10.pgdg12+1_arm64.deb) |
 | `postgresql-17-preprepare` | `0.9` | [d13.x86_64](/os/d13.x86_64) | pgdg | 16.8 KiB | [postgresql-17-preprepare_0.9-10.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-17-preprepare_0.9-10.pgdg13+1_amd64.deb) |
@@ -105,12 +105,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `preprepare_16` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.4 KiB | [preprepare_16-0.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_16-0.9-1PIGSTY.el8.x86_64.rpm) |
-| `preprepare_16` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [preprepare_16-0.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_16-0.9-1PIGSTY.el8.aarch64.rpm) |
-| `preprepare_16` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_16-0.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_16-0.9-1PIGSTY.el9.x86_64.rpm) |
-| `preprepare_16` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_16-0.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_16-0.9-1PIGSTY.el9.aarch64.rpm) |
-| `preprepare_16` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_16-0.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_16-0.9-1PIGSTY.el10.x86_64.rpm) |
-| `preprepare_16` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [preprepare_16-0.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_16-0.9-1PIGSTY.el10.aarch64.rpm) |
+| `preprepare_16` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.4 KiB | [preprepare_16-0.9-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_16-0.9-2PGSTY.el8.x86_64.rpm) |
+| `preprepare_16` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [preprepare_16-0.9-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_16-0.9-2PGSTY.el8.aarch64.rpm) |
+| `preprepare_16` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_16-0.9-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_16-0.9-2PGSTY.el9.x86_64.rpm) |
+| `preprepare_16` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_16-0.9-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_16-0.9-2PGSTY.el9.aarch64.rpm) |
+| `preprepare_16` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_16-0.9-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_16-0.9-2PGSTY.el10.x86_64.rpm) |
+| `preprepare_16` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [preprepare_16-0.9-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_16-0.9-2PGSTY.el10.aarch64.rpm) |
 | `postgresql-16-preprepare` | `0.9` | [d12.x86_64](/os/d12.x86_64) | pgdg | 16.8 KiB | [postgresql-16-preprepare_0.9-10.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-16-preprepare_0.9-10.pgdg12+1_amd64.deb) |
 | `postgresql-16-preprepare` | `0.9` | [d12.aarch64](/os/d12.aarch64) | pgdg | 16.8 KiB | [postgresql-16-preprepare_0.9-10.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-16-preprepare_0.9-10.pgdg12+1_arm64.deb) |
 | `postgresql-16-preprepare` | `0.9` | [d13.x86_64](/os/d13.x86_64) | pgdg | 16.8 KiB | [postgresql-16-preprepare_0.9-10.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-16-preprepare_0.9-10.pgdg13+1_amd64.deb) |
@@ -127,12 +127,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `preprepare_15` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.3 KiB | [preprepare_15-0.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_15-0.9-1PIGSTY.el8.x86_64.rpm) |
-| `preprepare_15` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [preprepare_15-0.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_15-0.9-1PIGSTY.el8.aarch64.rpm) |
-| `preprepare_15` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_15-0.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_15-0.9-1PIGSTY.el9.x86_64.rpm) |
-| `preprepare_15` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_15-0.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_15-0.9-1PIGSTY.el9.aarch64.rpm) |
-| `preprepare_15` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_15-0.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_15-0.9-1PIGSTY.el10.x86_64.rpm) |
-| `preprepare_15` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [preprepare_15-0.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_15-0.9-1PIGSTY.el10.aarch64.rpm) |
+| `preprepare_15` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.4 KiB | [preprepare_15-0.9-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_15-0.9-2PGSTY.el8.x86_64.rpm) |
+| `preprepare_15` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [preprepare_15-0.9-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_15-0.9-2PGSTY.el8.aarch64.rpm) |
+| `preprepare_15` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_15-0.9-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_15-0.9-2PGSTY.el9.x86_64.rpm) |
+| `preprepare_15` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_15-0.9-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_15-0.9-2PGSTY.el9.aarch64.rpm) |
+| `preprepare_15` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_15-0.9-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_15-0.9-2PGSTY.el10.x86_64.rpm) |
+| `preprepare_15` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [preprepare_15-0.9-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_15-0.9-2PGSTY.el10.aarch64.rpm) |
 | `postgresql-15-preprepare` | `0.9` | [d12.x86_64](/os/d12.x86_64) | pgdg | 16.8 KiB | [postgresql-15-preprepare_0.9-10.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-15-preprepare_0.9-10.pgdg12+1_amd64.deb) |
 | `postgresql-15-preprepare` | `0.9` | [d12.aarch64](/os/d12.aarch64) | pgdg | 16.8 KiB | [postgresql-15-preprepare_0.9-10.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-15-preprepare_0.9-10.pgdg12+1_arm64.deb) |
 | `postgresql-15-preprepare` | `0.9` | [d13.x86_64](/os/d13.x86_64) | pgdg | 16.8 KiB | [postgresql-15-preprepare_0.9-10.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-15-preprepare_0.9-10.pgdg13+1_amd64.deb) |
@@ -149,12 +149,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `preprepare_14` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.3 KiB | [preprepare_14-0.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_14-0.9-1PIGSTY.el8.x86_64.rpm) |
-| `preprepare_14` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [preprepare_14-0.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_14-0.9-1PIGSTY.el8.aarch64.rpm) |
-| `preprepare_14` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_14-0.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_14-0.9-1PIGSTY.el9.x86_64.rpm) |
-| `preprepare_14` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_14-0.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_14-0.9-1PIGSTY.el9.aarch64.rpm) |
-| `preprepare_14` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_14-0.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_14-0.9-1PIGSTY.el10.x86_64.rpm) |
-| `preprepare_14` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [preprepare_14-0.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_14-0.9-1PIGSTY.el10.aarch64.rpm) |
+| `preprepare_14` | `0.9` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.4 KiB | [preprepare_14-0.9-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/preprepare_14-0.9-2PGSTY.el8.x86_64.rpm) |
+| `preprepare_14` | `0.9` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [preprepare_14-0.9-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/preprepare_14-0.9-2PGSTY.el8.aarch64.rpm) |
+| `preprepare_14` | `0.9` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.3 KiB | [preprepare_14-0.9-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/preprepare_14-0.9-2PGSTY.el9.x86_64.rpm) |
+| `preprepare_14` | `0.9` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [preprepare_14-0.9-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/preprepare_14-0.9-2PGSTY.el9.aarch64.rpm) |
+| `preprepare_14` | `0.9` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [preprepare_14-0.9-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/preprepare_14-0.9-2PGSTY.el10.x86_64.rpm) |
+| `preprepare_14` | `0.9` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [preprepare_14-0.9-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/preprepare_14-0.9-2PGSTY.el10.aarch64.rpm) |
 | `postgresql-14-preprepare` | `0.9` | [d12.x86_64](/os/d12.x86_64) | pgdg | 16.7 KiB | [postgresql-14-preprepare_0.9-10.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-14-preprepare_0.9-10.pgdg12+1_amd64.deb) |
 | `postgresql-14-preprepare` | `0.9` | [d12.aarch64](/os/d12.aarch64) | pgdg | 16.8 KiB | [postgresql-14-preprepare_0.9-10.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-14-preprepare_0.9-10.pgdg12+1_arm64.deb) |
 | `postgresql-14-preprepare` | `0.9` | [d13.x86_64](/os/d13.x86_64) | pgdg | 16.7 KiB | [postgresql-14-preprepare_0.9-10.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-14-preprepare_0.9-10.pgdg13+1_amd64.deb) |

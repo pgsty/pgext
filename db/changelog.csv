@@ -1,4 +1,18 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
+2026-08-14,asn1oid,1.6,1.6,License metadata: `GPL-3.0-or-later`; r2; PG14-18,许可证元数据：`GPL-3.0-or-later`；r2；PG14-18
+2026-08-14,numeral,1.3,1.3,License metadata: `GPL-2.0-or-later`; r6; PG14-18,许可证元数据：`GPL-2.0-or-later`；r6；PG14-18
+2026-08-14,pg_emailaddr,0,0,License metadata: `LicenseRef-Upstream-No-License`; r3; PG14-18,许可证元数据：`LicenseRef-Upstream-No-License`；r3；PG14-18
+2026-08-14,pg_explain_ui,0.0.2,0.0.2,License metadata: `LicenseRef-Upstream-No-License`; r4; PG14-18,许可证元数据：`LicenseRef-Upstream-No-License`；r4；PG14-18
+2026-08-14,pg_failover_slots,1.2.1,1.2.1,License metadata: `PostgreSQL`; r2; preload; PG14-18,许可证元数据：`PostgreSQL`；r2；需预加载；PG14-18
+2026-08-14,pg_geohash,1.0,1.0,License metadata: `MIT`; r4; fix SQL filename and target-PG ABI; PG14-18,许可证元数据：`MIT`；r4；修复 SQL 文件名与目标 PG ABI；PG14-18
+2026-08-14,pg_oidc_validator,0.2,1.1.0,PG18 OAuth validator module; add `discovery_url_override`; EL10 only; PG18 OAuth validator module; add `discovery_url_override` and GSSAPI build dependency,PG18 OAuth 校验模块；新增 `discovery_url_override`；仅 EL10；PG18 OAuth 校验模块；新增 `discovery_url_override` 与 GSSAPI 构建依赖
+2026-08-14,pg_oidc_validator_rust,0.1.0,0.1.0,Rust module; `LicenseRef-Upstream-No-License`; r2; PG18,Rust 模块；`LicenseRef-Upstream-No-License`；r2；PG18
+2026-08-14,pg_relation_sql,,0.2.2,Standalone SQL; no `CREATE EXTENSION`; noarch; PG14-18; Standalone SQL; no `CREATE EXTENSION`; Architecture: all; PG14-18,独立 SQL；不支持 `CREATE EXTENSION`；noarch；PG14-18；独立 SQL；不支持 `CREATE EXTENSION`；Architecture: all；PG14-18
+2026-08-14,pg_summarize,0.0.1,0.0.1,License metadata: `LicenseRef-Upstream-No-License`; r6; PG14-18,许可证元数据：`LicenseRef-Upstream-No-License`；r6；PG14-18
+2026-08-14,pg_when,0.1.9,0.1.10,"GitHub/PGXN release; upstream pgrx 0.18.1, packaged with 0.19.1; PG14-18",GitHub/PGXN 同一发行版；上游 pgrx 0.18.1，打包使用 0.19.1；PG14-18
+2026-08-14,pgunit,7.10,7.10,License metadata: `GPL-3.0-or-later`; r7; PG14-18,许可证元数据：`GPL-3.0-or-later`；r7；PG14-18
+2026-08-14,preprepare,0.9,0.9,License metadata: `PostgreSQL`; r2; PG14-18,许可证元数据：`PostgreSQL`；r2；PG14-18
+2026-08-14,smlar,1.0,1.0,License metadata: `LicenseRef-Upstream-No-License`; r2; PG14-18,许可证元数据：`LicenseRef-Upstream-No-License`；r2；PG14-18
 2026-08-12,cat_tools,,0.3.0,SQL-only; PG14-18,纯 SQL；PG14-18
 2026-08-12,citus,14.1.0,14.2.0,Includes citus_columnar; PG16-18,含 citus_columnar；PG16-18
 2026-08-12,pg_biscuit,2.4.3,3.0.0,PG16-18; 2.x indexes require REINDEX,PG16-18；2.x 索引需 REINDEX
@@ -8,15 +22,15 @@ ds,pkg,old_ver,new_ver,note_en,note_zh
 2026-08-12,pg_local_cache,,1.3.0,PG14-18; preload; single-primary,PG14-18；需预加载；仅单主
 2026-08-12,pg_mentat,,1.5.7,PG14-18,PG14-18
 2026-08-12,pg_policy,,0.1.0,SQL-only; PG14-18,纯 SQL；PG14-18
-2026-08-12,pg_rational,0.0.2,0.0.3,RPM PIGSTY; DEB PGDG; PG14-18,RPM PIGSTY；DEB PGDG；PG14-18
-2026-08-12,pg_readme,0.7.0,0.7.1,DEB/catalog 0.7.1; RPM remains PGDG 0.7.0; includes pg_readme_test_extension; PG14-18,DEB/目录为 0.7.1；RPM 仍为 PGDG 0.7.0；含 pg_readme_test_extension；PG14-18
+2026-08-12,pg_rational,0.0.2,0.0.3,PIGSTY; PG14-18; PGDG; PG14-18,PIGSTY；PG14-18；PGDG；PG14-18
+2026-08-12,pg_readme,0.7.0,0.7.1,Catalog 0.7.1; RPM remains PGDG 0.7.0; Includes pg_readme_test_extension; PG14-18,目录 0.7.1；RPM 仍为 PGDG 0.7.0；含 pg_readme_test_extension；PG14-18
 2026-08-12,pg_search,0.25.0,0.25.2,PG15-18; pgrx 0.19.1; preload,PG15-18；pgrx 0.19.1；需预加载
 2026-08-12,pg_squeeze,1.9.2,1.9.4,PGDG; PG14-18,PGDG；PG14-18
-2026-08-12,pg_statviz,,0.9,"PGDG; RPM 0.9: PG14-16 + EL10 PG18, no PG17; DEB 1.1: PG14-18 except U22; not in default groups",PGDG；RPM 0.9：PG14-16，另有 EL10 PG18，无 PG17；DEB 1.1：PG14-18（U22 除外）；非默认包组
+2026-08-12,pg_statviz,,0.9,"PGDG; PG14-16 and EL10 PG18; no PG17; not in default groups; PGDG; PG14-18 except Ubuntu 22.04; not in default groups; RPM 0.9, DEB 1.1",PGDG；PG14-16，另有 EL10 PG18；无 PG17；非默认包组；PGDG；PG14-18（U22 除外）；非默认包组；RPM 0.9，DEB 1.1
 2026-08-12,pg_turbovec,,1.29.0,PG14-18; pgrx 0.19.1,PG14-18；pgrx 0.19.1
 2026-08-12,pg_uuid_v8,1.0.0,1.1.0,PG14-18; includes 1.0-to-1.1 upgrade script,PG14-18；含 1.0 至 1.1 升级脚本
-2026-08-12,pg_vault_tde,,1.7.0,PG17-18; RPM EL9/10 only; preload,PG17-18；RPM 仅 EL9/10；需预加载
-2026-08-12,pgbson,2.0.4,2.1.0,RPM package and DEB source package: postgresbson; PG14-18,RPM 包名与 DEB 源码包均为 postgresbson；PG14-18
+2026-08-12,pg_vault_tde,,1.7.0,PG17-18; EL9/10; preload; PG17-18; preload,PG17-18；仅 EL9/10；需预加载；PG17-18；需预加载
+2026-08-12,pgbson,2.0.4,2.1.0,RPM package postgresbson; PG14-18; Source package postgresbson; PG14-18,RPM 包名 postgresbson；PG14-18；源码包 postgresbson；PG14-18
 2026-08-12,pgmnemo,0.15.0,0.16.1,PG17-18,PG17-18
 2026-08-12,pgvector,0.8.6,0.8.6,PGDG repository refresh; PG14-18,PGDG 仓库刷新；PG14-18
 2026-08-12,plpgsql_check,2.10.3,2.10.4,PG14-18,PG14-18
@@ -24,7 +38,7 @@ ds,pkg,old_ver,new_ver,note_en,note_zh
 2026-08-12,polardb-17,17.10.1.0-1PIGSTY,17.10.1.0-2PGSTY,Rebuild; PG17,重构建；PG17
 2026-08-12,polarstore,1.2.42-1PIGSTY,1.2.42-2PGSTY,Rebuild,重构建
 2026-08-12,provsql,1.11.0,1.12.0,PG14-18,PG14-18
-2026-08-12,q3c,2.0.2,2.0.5,PGDG; DEB old 2.0.4; PIGSTY RPM remains 2.0.2; PG14-18,PGDG；DEB 原版本 2.0.4；PIGSTY RPM 仍为 2.0.2；PG14-18
+2026-08-12,q3c,2.0.2,2.0.5,PGDG; PIGSTY remains 2.0.2; PG14-18; PGDG; PG14-18,PGDG；PIGSTY 仍为 2.0.2；PG14-18；PGDG；PG14-18
 2026-08-12,timescaledb,2.29.0,2.29.1,PG16-18,PG16-18
 2026-08-12,zlog,1.2.18-1PIGSTY,1.2.18-2PGSTY,Rebuild,重构建
 2026-07-30,emaj,,5.0.0,Renamed to `e-maj`; Provides/Obsoletes `emaj`; r2; PG14-18,包名改为 `e-maj`；Provides/Obsoletes `emaj`；r2；PG14-18
@@ -67,16 +81,7 @@ ds,pkg,old_ver,new_ver,note_en,note_zh
 2026-07-24,faker,0.5.3,0.5.3,+DEB PG14-18; +DEB PG14-18; D12/U22: python3-fake-factory 22.0.0,+DEB PG14-18；+DEB PG14-18；D12/U22：python3-fake-factory 22.0.0
 2026-07-24,fbsql,,0.1.0,PL/R; PG16-18,依赖 PL/R；PG16-18
 2026-07-24,hdfs_fdw,2.3.3,2.3.3,+DEB PG14-18,+DEB PG14-18
-2026-07-24,hunspell_cs_cz,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_de_de,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_en_us,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_fr,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_ne_np,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_nl_nl,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_nn_no,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_pt_pt,1.0,1.0,16 targets; pt_pt.stop avoids core conflict,16 平台；pt_pt.stop 避免内核冲突
-2026-07-24,hunspell_ru_ru,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
-2026-07-24,hunspell_ru_ru_aot,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18,hunspell 合包；10 词典；16 平台；PG14-18
+2026-07-24,hunspell,1.0,1.0,hunspell bundle; 10 dictionaries; 16 targets; PG14-18; 16 targets; pt_pt.stop avoids core conflict,hunspell 合包；10 词典；16 平台；PG14-18；16 平台；pt_pt.stop 避免内核冲突
 2026-07-24,imgsmlr,1.0,1.0,EL10/D13; PG14-18; 2 arch,EL10/D13；PG14-18；双架构
 2026-07-24,ivorysql,1.0,1.0,IvorySQL 5.4; PG18; 16 targets,IvorySQL 5.4；PG18；16 平台
 2026-07-24,jdbc_fdw,0.4.0,0.5.0,pkg 0.5.0; SQL 1.2; PG14-18; 16 targets,包 0.5.0；SQL 1.2；PG14-18；16 平台
@@ -545,16 +550,7 @@ ds,pkg,old_ver,new_ver,note_en,note_zh
 2025-11-10,geoip,0.3.0,,+pg18,+pg18
 2025-11-10,hashtypes,0.1.5,,+pg18,+pg18
 2025-11-10,hll,2.18,,+pg18,+pg18
-2025-11-10,hunspell_cs_cz,1.0,,+pg18,+pg18
-2025-11-10,hunspell_de_de,1.0,,+pg18,+pg18
-2025-11-10,hunspell_en_us,1.0,,+pg18,+pg18
-2025-11-10,hunspell_fr,1.0,,+pg18,+pg18
-2025-11-10,hunspell_ne_np,1.0,,+pg18,+pg18
-2025-11-10,hunspell_nl_nl,1.0,,+pg18,+pg18
-2025-11-10,hunspell_nn_no,1.0,,+pg18,+pg18
-2025-11-10,hunspell_pt_pt,1.0,,+pg18,+pg18
-2025-11-10,hunspell_ru_ru,1.0,,+pg18,+pg18
-2025-11-10,hunspell_ru_ru_aot,1.0,,+pg18,+pg18
+2025-11-10,hunspell,1.0,,+pg18,+pg18
 2025-11-10,hypopg,1.4.1,1.4.2,+pg18,+pg18
 2025-11-10,imgsmlr,1.0,,+pg18,+pg18
 2025-11-10,index_advisor,0.2.0,,+pg18,+pg18

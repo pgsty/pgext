@@ -43,10 +43,10 @@ UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra');
 
 -- too big, non-free, heavy extensions
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2', 'pgml', 'pljava', 'rdkit', 'jdbc_fdw', 'odbc_fdw', 'pg_strom', 'db_fdw', 'informix_fdw' , 'oracle_fdw');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2', 'pgml', 'pljava', 'rdkit', 'jdbc_fdw', 'odbc_fdw', 'pg_strom', 'db_fdw', 'informix_fdw' , 'oracle_fdw', 'pg_statviz');
 
--- cataloged for visibility, but intentionally excluded from default package groups
-UPDATE pgext.pkg SET hide = true WHERE pkg = 'pg_statviz';
+-- exclude due to no license
+UPDATE pgext.pkg SET hide = true WHERE pkg in (SELECT pkg FROM pgext.extension WHERE license = 'Unknown');
 
 -- temporary unavailable
 UPDATE pgext.pkg SET hide = true WHERE pkg = 'ogr_fdw' and os in ('d12.x86_64', 'd12.aarch64', 'd13.x86_64', 'd13.aarch64', 'u24.x86_64', 'u24.aarch64', 'u26.x86_64', 'u26.aarch64');

@@ -2,50 +2,56 @@
 
 Sources:
 
-- [pg_oidc_validator 0.2 README](https://github.com/percona/pg_oidc_validator/blob/0.2/README.md)
-- [Keycloak example for 0.2](https://github.com/percona/pg_oidc_validator/tree/0.2/examples/keycloak)
+- [pg_oidc_validator 1.1.0 README](https://github.com/percona/pg_oidc_validator/blob/1.1.0/README.md)
+- [pg_oidc_validator 1.1.0 Keycloak example](https://github.com/percona/pg_oidc_validator/tree/1.1.0/examples/keycloak)
+- [pg_oidc_validator 1.1.0 validator source](https://github.com/percona/pg_oidc_validator/blob/1.1.0/src/pg_oidc_validator.cpp)
+- [PostgreSQL 18 OAuth authentication](https://www.postgresql.org/docs/18/auth-oauth.html)
+- [PostgreSQL 18 libpq OAuth support](https://www.postgresql.org/docs/18/libpq-oauth.html)
 
-pg_oidc_validator is an OAuth validator module for PostgreSQL 18 that validates libpq OAuth bearer tokens against an OpenID Connect issuer. Use it when PostgreSQL clients authenticate through an OIDC provider; it is loaded by the server and does not define a SQL extension, so do not run CREATE EXTENSION.
-
-The project describes the module as experimental and not ready for production. Test the exact identity provider, client, and PostgreSQL build before relying on it.
+`pg_oidc_validator` 1.1.0 is a PostgreSQL 18 OAuth validator module that validates JWT access tokens against an OpenID Connect provider. It is a server library with no control file or SQL extension, so do not run `CREATE EXTENSION`.
 
 ### Configure the Server
 
-Load the validator and restart PostgreSQL:
+Load the module in `postgresql.conf`, then restart PostgreSQL:
 
-    oauth_validator_libraries = 'pg_oidc_validator'
+```ini
+oauth_validator_libraries = 'pg_oidc_validator'
+```
 
-Add an oauth rule to pg_hba.conf. The issuer and scope must match the provider:
+Add an OAuth rule to `pg_hba.conf`; the issuer and required scope must match the provider. Use `hostssl` outside a strictly local test:
 
-    host  all  all  127.0.0.1/32  oauth  issuer=https://id.example.com/realms/postgres scope="openid postgres"
+```text
+hostssl  all  all  127.0.0.1/32  oauth  issuer=https://id.example.com/realms/postgres scope="openid postgres" validator=pg_oidc_validator
+```
 
-Reload pg_hba.conf after editing it. The validator checks the token issuer, audience, scope, signature, and expiry according to the provider metadata discovered from the issuer.
+Reload PostgreSQL after HBA or validator-setting changes; adding the module to `oauth_validator_libraries` itself requires a restart.
 
-By default the PostgreSQL role is matched against the JWT sub claim. To authenticate by another claim, such as email, set:
+The default authenticated identity claim is `sub`. To return another stable string claim for role matching, configure:
 
-    pg_oidc_validator.authn_field = 'email'
+```ini
+pg_oidc_validator.authn_field = 'email'
+```
 
-This setting changes the identity claim used for role matching; it does not create or provision database roles.
+Version 1.1.0 also provides `pg_oidc_validator.discovery_url_override`. It changes where discovery metadata and JWKS are fetched without changing the issuer used to validate the JWT `iss` claim; this is useful when an OIDC provider has different internal and external URLs. Both validator settings are reloadable with `SIGHUP`.
+
+Without `map=` in the HBA rule, the selected claim must exactly equal the requested PostgreSQL role. Use a named `pg_ident.conf` mapping when provider identities and database roles differ; the validator does not create roles.
 
 ### Connect with libpq
 
-A libpq client that supports OAuth can initiate the device-authorization flow:
+An OAuth-capable libpq client can start the provider's device authorization flow:
 
-    psql "host=127.0.0.1 dbname=app user=alice +      oauth_issuer=https://id.example.com/realms/postgres +      oauth_client_id=postgres-client"
+```bash
+psql 'host=127.0.0.1 dbname=app user=alice oauth_issuer=https://id.example.com/realms/postgres oauth_client_id=postgres-client'
+```
 
-Use oauth_client_secret only when the registered client requires one. The client identifier, redirect/device-flow settings, audience, and requested scopes must agree with the identity-provider configuration.
-
-### Configuration Index
-
-- oauth_validator_libraries: server-level list of OAuth validator modules; adding pg_oidc_validator requires a restart.
-- pg_oidc_validator.authn_field: JWT claim compared with the requested PostgreSQL role; defaults to sub.
-- pg_hba.conf oauth method: selects OAuth authentication and supplies the accepted issuer and scope.
-- oauth_issuer, oauth_client_id, oauth_client_secret: libpq connection parameters used to obtain a token.
+Use `oauth_client_secret` only when the registered client requires it. The client identifier, requested scope, issuer, and provider configuration must agree.
 
 ### Provider and Security Boundaries
 
-- The upstream 0.2 documentation targets PostgreSQL 18 and requires an OAuth-capable libpq client.
-- The validator supports common OIDC providers, but the README explicitly calls out Google as unsupported and describes provider-specific setup for Microsoft Entra ID.
-- Token validation is only one part of authorization. PostgreSQL role membership and object privileges still control database access.
-- Protect client secrets and provider credentials outside connection strings where possible, and validate TLS trust for the issuer.
-
+- Keycloak must enable the OAuth 2 device flow for command-line clients.
+- Microsoft Entra ID requires a tenant-specific v2 issuer and custom scopes; use the full scope name in `pg_hba.conf`.
+- Google is not usable through libpq's built-in device flow, though custom clients may work.
+- Dex does not emit OAuth scopes; an explicitly empty `scope=""` disables scope validation, which weakens the normal check.
+- The client `oauth_issuer` must exactly match the HBA issuer and the discovery document. Treat the issuer and any `pg_oidc_validator.discovery_url_override` endpoint as trusted security boundaries, and require verified TLS for database and provider connections.
+- Token validation does not replace PostgreSQL grants, role membership, or row-level security.
+- Pigsty RPM packages are limited to EL10; DEB packages cover the supported Debian and Ubuntu targets. PostgreSQL 18 is required.

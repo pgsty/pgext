@@ -30,8 +30,7 @@ width: full
 |   **See Also**    | {{< ext "pg_ducklake" >}} {{< ext "pg_mooncake" >}} {{< ext "columnar" >}} {{< ext "pg_parquet" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} {{< ext "pg_sorted_heap" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "file_fdw" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] pg_extension_base auto-loads pg_lake_engine, pg_lake_iceberg, and pg_lake_table in dependency order.
-Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
+> [!Note] pg_extension_base auto-loads pg_lake_engine, pg_lake_iceberg, and pg_lake_table in dependency order. Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
 
 
 ## Packages

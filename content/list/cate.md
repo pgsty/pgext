@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-The 575 packaged PostgreSQL extensions (in 470 package families) are organized into 16 categories.
+The 576 packaged PostgreSQL extensions (in 471 package families) are organized into 16 categories.
 
 
 
@@ -30,7 +30,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1090 | {{< alias "pg_later" >}} | 0.4.0 | Run queries now and get results later |
 | 1100 | {{< alias "pg_dispatch" >}} | 0.1.5 | Asynchronous SQL dispatcher built on pg_cron |
 | 1110 | {{< alias "pg_background" >}} | 2.0.2 | Run SQL queries in the background |
-| 1120 | {{< alias "pg_when" >}} | 0.1.9 | Natural language time parsing for PostgreSQL |
+| 1120 | {{< alias "pg_when" >}} | 0.1.10 | Natural language time parsing for PostgreSQL |
 | 1130 | {{< alias "pg_stl" >}} | 1.0.0 | Time series analysis functions for PostgreSQL |
 | 1140 | {{< alias "cron_utils" >}} | 0.1.0 | Parse cron expressions and compute previous or next trigger times |
 
@@ -366,6 +366,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4180 | {{< alias "pg_html5_email_address" >}} | 1.2.3 | PostgreSQL email validation that is consistent with the HTML5 spec |
 | 4190 | {{< alias "url_encode" >}} | 1.2.5 | url_encode, url_decode functions |
 | 4200 | {{< alias "pgsql_tweaks" >}} | 1.0.5 | Some functions and views for daily usage |
+| 4210 | {{< alias "pg_relation_sql" >}} | 0.2.2 | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
 | 4220 | {{< alias "pg_extra_time" >}} | 2.1.0 | Some date time functions and operators that, |
 | 4230 | {{< alias "pgpcre" >}} | 0.20190509 | Perl Compatible Regular Expression functions |
 | 4235 | {{< alias "re2" >}} | 0.4.1 | ClickHouse-compatible regex functions using RE2 |
@@ -579,7 +580,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | Extension for logging and monitoring functions in PostgreSQL |
-| 7170 | {{< alias "pg_oidc_validator" >}} | 0.2 | OAuth and OIDC token validator for PostgreSQL 18 |
+| 7170 | {{< alias "pg_oidc_validator" >}} | 1.1.0 | OAuth and OIDC token validator for PostgreSQL 18 |
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 0.1.0 | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
 | 7190 | {{< alias "pgmemento" >}} | 0.7.4 | Transaction-based audit trail with schema versioning |
 | 7310 | {{< alias "credcheck" >}} | 5.0 | credcheck - postgresql plain text credential checker |

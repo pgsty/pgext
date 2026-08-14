@@ -21,6 +21,7 @@ weight: 200
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
+| {{< language "PLpgSQL" >}} | 1 | Extensions written in PLpgSQL |
 
 
 ## C
@@ -660,4 +661,14 @@ Extensions running on JVM
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 3090 | {{< alias "pljava" >}} | PL/Java procedural language |
+
+## PLpgSQL
+
+{{< language "PLpgSQL" >}} {{< badge content="1 Extensions" color="gray" icon="cube" >}}
+
+Extensions written in PLpgSQL
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 4210 | {{< alias "pg_relation_sql" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
 

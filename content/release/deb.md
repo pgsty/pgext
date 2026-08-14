@@ -6,6 +6,23 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-08-14
+
+This batch adds `pg_relation_sql`, upgrades `pg_oidc_validator` and `pg_when`, and rebuilds existing packages after correcting license metadata. `pg_relation_sql` is standalone SQL and does not support `CREATE EXTENSION`.
+
+| Name                | Old   | New    | Comment                                                                                   |
+|:--------------------|:------|:-------|:------------------------------------------------------------------------------------------|
+| emailaddr           | 0     | 0      | License metadata: `LicenseRef-Upstream-No-License`; r3; PG14-18                           |
+| explain_ui          | 0.0.2 | 0.0.2  | License metadata: `LicenseRef-Upstream-No-License`; r4; PG14-18                           |
+| oidc_validator      | 0.1.0 | 0.1.0  | Rust module; `LicenseRef-Upstream-No-License`; r2; PG18                                   |
+| pg_failover_slots   | 1.2.1 | 1.2.1  | License metadata: `PostgreSQL`; r2; preload; PG14-18                                      |
+| pg_geohash          | 1.0   | 1.0    | License metadata: `MIT`; r4; fix SQL filename and target-PG ABI; PG14-18                  |
+| pg_oidc_validator   | 0.2   | 1.1.0  | PG18 OAuth validator module; add `discovery_url_override` and GSSAPI build dependency     |
+| pg_relation_sql     | -     | 0.2.2  | Standalone SQL; no `CREATE EXTENSION`; Architecture: all; PG14-18                         |
+| pg_summarize        | 0.0.1 | 0.0.1  | License metadata: `LicenseRef-Upstream-No-License`; r6; PG14-18                           |
+| pg_when             | 0.1.9 | 0.1.10 | GitHub/PGXN release; upstream pgrx 0.18.1, packaged with 0.19.1; PG14-18                  |
+| smlar               | 1.0   | 1.0    | License metadata: `LicenseRef-Upstream-No-License`; r2; PG14-18                           |
+| unit                | 7.10  | 7.10   | License metadata: `GPL-3.0-or-later`; r7; PG14-18                                         |
 
 ## 2026-08-12
 

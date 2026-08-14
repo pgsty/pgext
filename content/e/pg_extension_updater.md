@@ -29,8 +29,7 @@ width: full
 |   **See Also**    | {{< ext "pg_tle" >}} {{< ext "pgextwlist" >}} {{< ext "pg_readme" >}} {{< ext "ddlx" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_command_fw" >}} {{< ext "supautils" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] Optional packaged component. It runs installed extension updates at database start through pg_extension_base; it is not part of CREATE EXTENSION pg_lake CASCADE dependency closure.
-Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
+> [!Note] Optional packaged component. It runs installed extension updates at database start through pg_extension_base; it is not part of CREATE EXTENSION pg_lake CASCADE dependency closure. Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
 
 
 ## Packages

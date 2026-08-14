@@ -1,53 +1,53 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/frectonz/pg-when/blob/main/README.md), [Cargo.toml version 0.1.9](https://github.com/frectonz/pg-when/blob/main/Cargo.toml), [META.json](https://github.com/frectonz/pg-when/blob/main/META.json)
+来源：
 
-`pg-when` 解析受限的自然语言时间表达式，并返回 PostgreSQL timestamp with time zone，或以不同精度返回 Unix epoch 值。
+- [PGXN 上的 pg_when 0.1.10](https://pgxn.org/dist/pg_when/0.1.10/)
+- [pg_when 0.1.10 README](https://github.com/frectonz/pg-when/blob/0.1.10/README.md)
+- [pg_when 0.1.10 Cargo 清单](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/Cargo.toml)
+- [pg_when 0.1.10 control 文件](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/pg_when.control)
+- [pg_when 0.1.10 导出函数源码](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_is.rs)
+- [pg_when 0.1.10 相对日期实现](https://api.pgxn.org/src/pg_when/pg_when-0.1.10/src/when_relative_date.rs)
+
+`pg_when` 0.1.10 解析受限的自然语言日期与时间表达式，返回 PostgreSQL `timestamptz`，或按指定精度返回 Unix epoch 值。
 
 ```sql
 CREATE EXTENSION pg_when;
 
 SELECT when_is('next friday at 8:00 pm in America/New_York');
-SELECT seconds_at('next friday at 8:00 pm in America/New_York');
-SELECT millis_at('next friday at 8:00 pm in America/New_York');
-SELECT micros_at('next friday at 8:00 pm in America/New_York');
-SELECT nanos_at('next friday at 8:00 pm in America/New_York');
+SELECT seconds_at('5 days ago at this hour in Asia/Tokyo');
+SELECT millis_at('in 2 months at midnight in UTC-8');
+SELECT micros_at('December 31, 2026 at evening');
+SELECT nanos_at('last monday at 22:30');
 ```
 
-### 支持的查询形状
+### 查询结构
 
-解析器接受最多三个部分：
+查询可包含日期、时间和时区，并通过 `at` 与 `in` 连接：
 
 ```sql
 SELECT when_is('<date> at <time> in <timezone>');
 SELECT when_is('<date>');
+SELECT when_is('<date> in <timezone>');
+SELECT when_is('<time>');
 SELECT when_is('<time> in <timezone>');
 SELECT when_is('<date> at <time>');
 ```
 
-如果没有提供 timezone，上游说明默认是 UTC。
+省略时区时，解析器使用 UTC。支持的输入包括 `tomorrow`、`last month`、`5 days ago` 等相对日期，常见数字及月份名称形式的准确日期，`noon`、`midnight`、`next hour` 等相对时间，时钟时间、IANA 时区名与 UTC 偏移量。
 
-### 常见输入
+### 函数索引
 
-- relative dates：`today`、`tomorrow`、`last month`、`this friday`、`5 days ago`、`in 2 years`
-- exact dates：`YYYY-MM-DD`、`DD/MM/YYYY`、`January 10, 2004`、`10 Jan 2004`
-- relative times：`noon`、`midnight`、`morning`、`evening`、`next hour`
-- exact times：`8:30 pm`、`15:45`
-- time zones：`America/New_York`、`Europe/London`、`UTC-08:00`、`UTC+05:30`
+- `when_is(text)` 返回 `timestamptz`。
+- `seconds_at(text)` 返回 Unix epoch 秒数。
+- `millis_at(text)` 返回 Unix epoch 毫秒数。
+- `micros_at(text)` 返回 Unix epoch 微秒数。
+- `nanos_at(text)` 返回 Unix epoch 纳秒数。
 
-### 示例
+### 兼容性与边界
 
-```sql
-SELECT when_is('5 days ago at this hour in Asia/Tokyo');
-SELECT when_is('in 2 months at midnight in UTC-8');
-SELECT when_is('December 31, 2026 at evening');
-```
-
-### 注意事项
-
-- 扩展面向上面记录的 grammar，不是任意英文解析器。
-- 上游仍列出 PostgreSQL 13 到 18 的源码/runtime 支持和 Docker image 示例，但本仓库 package matrix 仅为 PostgreSQL 14 到 18；不要假设 Pigsty 为 PostgreSQL 13 提供包。
-- 上游 `Cargo.toml` 当前固定 `pgrx` 0.15.0；本仓库 package metadata 记录了手工升级到 `pgrx` 0.17.0。
+- 解析器实现的是文档中定义的语法，并非通用自然语言解释器。
+- 上游 0.1.10 提供 PostgreSQL 13–18 的构建特性并固定使用 pgrx 0.18.1；Pigsty 软件包覆盖 PostgreSQL 14–18，并应用锁定依赖的 pgrx 0.19.1 兼容更新。
+- `pg_when` 不可重定位，其 control 文件要求超级用户执行 `CREATE EXTENSION`。
+- 非法文本会触发错误。这五个函数都声明为 `STRICT`，因此空值输入返回空值；当 epoch 纳秒数无法放入 `bigint` 时，`nanos_at(text)` 也会报错。
+- 0.1.10 的 SQL 函数声明为 `IMMUTABLE`，但 `now`、`tomorrow`、`5 days ago` 等相对表达式会读取当前时钟。不要把相对输入调用用于表达式索引或生成列，也不要假定它们会在缓存计划中重新求值；只有完整指定日期、时间与时区的输入才与当前时间无关。

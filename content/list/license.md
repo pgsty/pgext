@@ -17,7 +17,7 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 253 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 250 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 109 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 96 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
@@ -26,13 +26,13 @@ PostgreSQL extension categorized by license.
 | {{< license "GPL-3.0" >}} | 13 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 11 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 8 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "Unknown" >}} | 5 | [License Text](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [License Text](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [License Text](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "Artistic-2.0" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
 | {{< license "Artistic-1.0" >}} | 1 | [License Text](#) | Unknown license |
-| {{< license "Unknown" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "0BSD" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 1 | [License Text](#) | Unknown license |
 
@@ -42,7 +42,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="253 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="250 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -60,8 +60,6 @@ PostgreSQL extension categorized by license.
 | 1800 | {{< alias "vector" "pgvector" >}} | vector data type and ivfflat and hnsw access methods |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | The simplest way to do vector search on Postgres |
-| 1850 | {{< alias "smlar" >}} | Effective similarity search |
-| 1860 | {{< alias "pg_summarize" >}} | Text Summarization using LLMs. Built using pgrx |
 | 2110 | {{< alias "pgroonga" >}} | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | create 2-gram (bigram) index for faster full text search. |
@@ -136,7 +134,6 @@ PostgreSQL extension categorized by license.
 | 3760 | {{< alias "postbis" >}} | Adds compressed DNA, RNA, amino-acid, and aligned sequence types with casts, operators, indexes, and bioinformatics functions. |
 | 3770 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | 3790 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
-| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
 | 3820 | {{< alias "debversion" >}} | Debian version number data type |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat date type and AD/BS conversion functions |
 | 3920 | {{< alias "chkpass" >}} | data type for auto-encrypted passwords |
@@ -154,6 +151,7 @@ PostgreSQL extension categorized by license.
 | 4180 | {{< alias "pg_html5_email_address" >}} | PostgreSQL email validation that is consistent with the HTML5 spec |
 | 4190 | {{< alias "url_encode" >}} | url_encode, url_decode functions |
 | 4200 | {{< alias "pgsql_tweaks" >}} | Some functions and views for daily usage |
+| 4210 | {{< alias "pg_relation_sql" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
 | 4220 | {{< alias "pg_extra_time" >}} | Some date time functions and operators that, |
 | 4230 | {{< alias "pgpcre" >}} | Perl Compatible Regular Expression functions |
 | 4235 | {{< alias "re2" >}} | ClickHouse-compatible regex functions using RE2 |
@@ -234,7 +232,6 @@ PostgreSQL extension categorized by license.
 | 6420 | {{< alias "system_stats" >}} | EnterpriseDB system statistics for PostgreSQL |
 | 6510 | {{< alias "bgw_replstatus" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
 | 6530 | {{< alias "toastinfo" >}} | show details on toasted datums |
-| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
 | 6850 | {{< alias "pg_relusage" >}} | Log all the queries that reference a particular column |
 | 6870 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
 | 6880 | {{< alias "pg_overexplain" >}} | Allow EXPLAIN to dump even more details |
@@ -698,6 +695,22 @@ PostgreSQL extension categorized by license.
 | 9130 | {{< alias "pg_statement_rollback" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 
+## Unknown
+
+
+
+| {{< license "Unknown" >}} | {{< badge content="5 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1850 | {{< alias "smlar" >}} | Effective similarity search |
+| 1860 | {{< alias "pg_summarize" >}} | Text Summarization using LLMs. Built using pgrx |
+| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
+| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
+| 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
+
 ## LGPL-3.0
 
 
@@ -774,18 +787,6 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 3070 | {{< alias "plprofiler" >}} | server-side support for profiling PL/pgSQL functions |
-
-## Unknown
-
-
-
-| {{< license "Unknown" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
 
 ## 0BSD
 

@@ -6,6 +6,27 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
+## 2026-08-14
+
+本批次新增 `pg_relation_sql`，升级 `pg_oidc_validator` 与 `pg_when`，并在修正许可证元数据后重构建现有软件包。`pg_relation_sql` 是独立 SQL，不支持 `CREATE EXTENSION`。
+
+| 名称                | 旧版本   | 新版本    | 备注                                                   |
+|:------------------|:------|:-------|:-----------------------------------------------------|
+| asn1oid           | 1.6   | 1.6    | 许可证元数据：`GPL-3.0-or-later`；r2；PG14-18                 |
+| emailaddr         | 0     | 0      | 许可证元数据：`LicenseRef-Upstream-No-License`；r3；PG14-18   |
+| explain_ui        | 0.0.2 | 0.0.2  | 许可证元数据：`LicenseRef-Upstream-No-License`；r4；PG14-18   |
+| numeral           | 1.3   | 1.3    | 许可证元数据：`GPL-2.0-or-later`；r6；PG14-18                 |
+| oidc_validator    | 0.1.0 | 0.1.0  | Rust 模块；`LicenseRef-Upstream-No-License`；r2；PG18     |
+| pg_failover_slots | 1.2.1 | 1.2.1  | 许可证元数据：`PostgreSQL`；r2；需预加载；PG14-18                  |
+| pg_geohash        | 1.0   | 1.0    | 许可证元数据：`MIT`；r4；修复 SQL 文件名与目标 PG ABI；PG14-18         |
+| pg_oidc_validator | 0.2   | 1.1.0  | PG18 OAuth 校验模块；新增 `discovery_url_override`；仅 EL10   |
+| pg_relation_sql   | -     | 0.2.2  | 独立 SQL；不支持 `CREATE EXTENSION`；noarch；PG14-18         |
+| pg_summarize      | 0.0.1 | 0.0.1  | 许可证元数据：`LicenseRef-Upstream-No-License`；r6；PG14-18   |
+| pg_when           | 0.1.9 | 0.1.10 | GitHub/PGXN 同一发行版；上游 pgrx 0.18.1，打包使用 0.19.1；PG14-18 |
+| pre_prepare       | 0.9   | 0.9    | 许可证元数据：`PostgreSQL`；r2；PG14-18                       |
+| smlar             | 1.0   | 1.0    | 许可证元数据：`LicenseRef-Upstream-No-License`；r2；PG14-18   |
+| unit              | 7.10  | 7.10   | 许可证元数据：`GPL-3.0-or-later`；r7；PG14-18                 |
+
 ## 2026-08-12
 
 | 名称             | 旧版本               | 新版本              | 备注                                                |

@@ -5,16 +5,16 @@ excludeSearch: true
 comments: false
 ---
 
-The packaged PostgreSQL extension catalog contains **575** extensions and **406** packages.
-The full PGEXT.CLOUD directory contains **2240** extensions.
+The packaged PostgreSQL extension catalog contains **576** extensions and **407** packages.
+The full PGEXT.CLOUD directory contains **2241** extensions.
 
 ## Extension Stat
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 575 | 157 | 422 | 71 | 0 | 570 | 556 | 542 | 521 | 499 |
-| **EL** | 574 | 156 | 422 | 71 | 1 | 569 | 554 | 541 | 520 | 498 |
-| **Debian** | 572 | 112 | 389 | 71 | 3 | 567 | 553 | 539 | 518 | 496 |
+| **ALL** | 576 | 157 | 423 | 71 | 0 | 571 | 557 | 543 | 522 | 500 |
+| **EL** | 575 | 156 | 423 | 71 | 1 | 570 | 555 | 542 | 521 | 499 |
+| **Debian** | 573 | 112 | 390 | 71 | 3 | 568 | 554 | 540 | 519 | 497 |
 
 ## Package Stat
 
@@ -22,9 +22,9 @@ The full PGEXT.CLOUD directory contains **2240** extensions.
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 406 | 140 | 335 | 0 | 0 | 403 | 396 | 384 | 371 | 356 |
-| **EL** | 405 | 139 | 335 | 0 | 62 | 402 | 394 | 383 | 370 | 355 |
-| **Debian** | 403 | 96 | 307 | 0 | 64 | 400 | 393 | 381 | 368 | 353 |
+| **ALL** | 407 | 140 | 336 | 0 | 0 | 404 | 397 | 385 | 372 | 357 |
+| **EL** | 406 | 139 | 336 | 0 | 62 | 403 | 395 | 384 | 371 | 356 |
+| **Debian** | 404 | 96 | 308 | 0 | 64 | 401 | 394 | 382 | 369 | 354 |
 
 ## Categories
 
@@ -45,4 +45,4 @@ The full PGEXT.CLOUD directory contains **2240** extensions.
 | {{< category stat >}} | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "pg_stat_log" >}} {{< ext "pg_stat_plans" >}} {{< ext "pgfr_record" >}} {{< ext "pgfr_analyze" >}} {{< ext "pgmonitor" >}} {{< ext "pg_statviz" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} {{< ext "system_stats" >}} {{< ext "meta" >}} {{< ext "pgnodemx" >}} {{< ext "pg_proctab" >}} {{< ext "pg_sqlog" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgmeminfo" >}} {{< ext "toastinfo" >}} {{< ext "explain_ui" >}} {{< ext "pg_relusage" >}} {{< ext "pagevis" >}} {{< ext "powa" >}} {{< ext "pg_overexplain" >}} {{< ext "pg_logicalinspect" >}} {{< ext "pageinspect" >}} {{< ext "pgrowlocks" >}} {{< ext "sslinfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_walinspect" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} |
 | {{< category time >}} | {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_background" >}} {{< ext "pg_when" >}} {{< ext "pg_stl" >}} {{< ext "cron_utils" >}} |
 | {{< category type >}} | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pg_text_semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} {{< ext "pgfaceting" >}} {{< ext "pg_sphere" >}} {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "l10n_table_dependent_extension" >}} {{< ext "currency" >}} {{< ext "collection" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "hashtypes" >}} {{< ext "postbis" >}} {{< ext "ip4r" >}} {{< ext "uri" >}} {{< ext "emailaddr" >}} {{< ext "acl" >}} {{< ext "debversion" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_rrule" >}} {{< ext "pgcalendar" >}} {{< ext "timestamp9" >}} {{< ext "pgbson" >}} {{< ext "chkpass" >}} {{< ext "isn" >}} {{< ext "seg" >}} {{< ext "cube" >}} {{< ext "ltree" >}} {{< ext "hstore" >}} {{< ext "citext" >}} {{< ext "xml2" >}} |
-| {{< category util >}} | {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pg_retry" >}} {{< ext "pg_fsql" >}} {{< ext "pg_protobuf" >}} {{< ext "pgproto" >}} {{< ext "pglock" >}} {{< ext "pgjq" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "pg_html5_email_address" >}} {{< ext "url_encode" >}} {{< ext "pgsql_tweaks" >}} {{< ext "pg_extra_time" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "icu_ext" >}} {{< ext "pgqr" >}} {{< ext "envvar" >}} {{< ext "byteamagic" >}} {{< ext "floatfile" >}} {{< ext "external_file" >}} {{< ext "pg_render" >}} {{< ext "pg_readme" >}} {{< ext "pg_readme_test_extension" >}} {{< ext "ddl_historization" >}} {{< ext "data_historization" >}} {{< ext "schedoc" >}} {{< ext "pg_isok" >}} {{< ext "pg_describe" >}} {{< ext "hashlib" >}} {{< ext "xxhash" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "sparql" >}} |
+| {{< category util >}} | {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pg_retry" >}} {{< ext "pg_fsql" >}} {{< ext "pg_protobuf" >}} {{< ext "pgproto" >}} {{< ext "pglock" >}} {{< ext "pgjq" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "pg_html5_email_address" >}} {{< ext "url_encode" >}} {{< ext "pgsql_tweaks" >}} {{< ext "pg_relation_sql" >}} {{< ext "pg_extra_time" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "icu_ext" >}} {{< ext "pgqr" >}} {{< ext "envvar" >}} {{< ext "byteamagic" >}} {{< ext "floatfile" >}} {{< ext "external_file" >}} {{< ext "pg_render" >}} {{< ext "pg_readme" >}} {{< ext "pg_readme_test_extension" >}} {{< ext "ddl_historization" >}} {{< ext "data_historization" >}} {{< ext "schedoc" >}} {{< ext "pg_isok" >}} {{< ext "pg_describe" >}} {{< ext "hashlib" >}} {{< ext "xxhash" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "sparql" >}} |

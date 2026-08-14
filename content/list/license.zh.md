@@ -17,7 +17,7 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 253 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 250 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 109 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 96 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [许可证文本](#) | Unknown license |
@@ -26,13 +26,13 @@ weight: 300
 | {{< license "GPL-3.0" >}} | 13 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 11 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 8 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "Unknown" >}} | 5 | [许可证文本](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [许可证文本](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [许可证文本](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "Artistic-2.0" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
 | {{< license "Artistic-1.0" >}} | 1 | [许可证文本](#) | Unknown license |
-| {{< license "Unknown" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "0BSD" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 1 | [许可证文本](#) | Unknown license |
 
@@ -42,7 +42,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="253 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="250 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -60,8 +60,6 @@ weight: 300
 | 1800 | {{< alias "vector" "pgvector" >}} | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 在PostgreSQL中封装RAG向量检索服务 |
-| 1850 | {{< alias "smlar" >}} | 高效的相似度搜索函数 |
-| 1860 | {{< alias "pg_summarize" >}} | 使用LLM对文本字段进行总结 |
 | 2110 | {{< alias "pgroonga" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
@@ -136,7 +134,6 @@ weight: 300
 | 3760 | {{< alias "postbis" >}} | 提供压缩的 DNA、RNA、氨基酸及比对序列类型，以及类型转换、运算符、索引和生物信息学函数。 |
 | 3770 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
 | 3790 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
-| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
 | 3820 | {{< alias "debversion" >}} | Debian版本号数据类型 |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat 日期类型与公历/尼泊尔历转换函数 |
 | 3920 | {{< alias "chkpass" >}} | 数据类型：自动加密的密码 |
@@ -154,6 +151,7 @@ weight: 300
 | 4180 | {{< alias "pg_html5_email_address" >}} | 验证Email是否符合HTML5规范的扩展 |
 | 4190 | {{< alias "url_encode" >}} | 提供URL编码解码函数 |
 | 4200 | {{< alias "pgsql_tweaks" >}} | 一些日常会用到的便利函数与视图 |
+| 4210 | {{< alias "pg_relation_sql" >}} | 根据 PostgreSQL 外键生成可内联的关系导航 SQL 函数 |
 | 4220 | {{< alias "pg_extra_time" >}} | 一些关于日期与时间的扩展函数 |
 | 4230 | {{< alias "pgpcre" >}} | PCRE/Perl风格的正则表达式支持 |
 | 4235 | {{< alias "re2" >}} | 使用 RE2 的 ClickHouse 兼容正则函数 |
@@ -234,7 +232,6 @@ weight: 300
 | 6420 | {{< alias "system_stats" >}} | PostgreSQL 的系统统计函数 |
 | 6510 | {{< alias "bgw_replstatus" >}} | 用于汇报本机主从状态的后台工作进程 |
 | 6530 | {{< alias "toastinfo" >}} | 显示TOAST字段的详细信息 |
-| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 快速跳转至PEV查阅可视化执行计划 |
 | 6850 | {{< alias "pg_relusage" >}} | 打印查询引用的表与列 |
 | 6870 | {{< alias "powa" >}} | PostgreSQL 工作负载分析器-核心 |
 | 6880 | {{< alias "pg_overexplain" >}} | 允许 EXPLAIN 转储更多详细 |
@@ -698,6 +695,22 @@ weight: 300
 | 9130 | {{< alias "pg_statement_rollback" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 
+## Unknown
+
+
+
+| {{< license "Unknown" >}} | {{< badge content="5 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 1850 | {{< alias "smlar" >}} | 高效的相似度搜索函数 |
+| 1860 | {{< alias "pg_summarize" >}} | 使用LLM对文本字段进行总结 |
+| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
+| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 快速跳转至PEV查阅可视化执行计划 |
+| 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 使用 Rust 与 pgrx 编写的 PostgreSQL 18 OIDC Bearer 令牌验证模块 |
+
 ## LGPL-3.0
 
 
@@ -774,18 +787,6 @@ weight: 300
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 3070 | {{< alias "plprofiler" >}} | 剖析 PL/pgSQL 函数 |
-
-## Unknown
-
-
-
-| {{< license "Unknown" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 使用 Rust 与 pgrx 编写的 PostgreSQL 18 OIDC Bearer 令牌验证模块 |
 
 ## 0BSD
 

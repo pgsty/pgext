@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-575 个已打包 PostgreSQL 扩展（归属 470 个包族）划分为 16 个分类。
+576 个已打包 PostgreSQL 扩展（归属 471 个包族）划分为 16 个分类。
 
 
 
@@ -30,7 +30,7 @@ weight: 100
 | 1090 | {{< alias "pg_later" >}} | 0.4.0 | 执行查询，并在稍后异步获取查询结果 |
 | 1100 | {{< alias "pg_dispatch" >}} | 0.1.5 | 基于 pg_cron 的异步 SQL 分发器 |
 | 1110 | {{< alias "pg_background" >}} | 2.0.2 | 在后台运行 SQL 查询 |
-| 1120 | {{< alias "pg_when" >}} | 0.1.9 | PostgreSQL 自然语言时间解析扩展 |
+| 1120 | {{< alias "pg_when" >}} | 0.1.10 | PostgreSQL 自然语言时间解析扩展 |
 | 1130 | {{< alias "pg_stl" >}} | 1.0.0 | PostgreSQL 时间序列分析函数 |
 | 1140 | {{< alias "cron_utils" >}} | 0.1.0 | 解析 Cron 表达式并计算上一次或下一次触发时间 |
 
@@ -366,6 +366,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4180 | {{< alias "pg_html5_email_address" >}} | 1.2.3 | 验证Email是否符合HTML5规范的扩展 |
 | 4190 | {{< alias "url_encode" >}} | 1.2.5 | 提供URL编码解码函数 |
 | 4200 | {{< alias "pgsql_tweaks" >}} | 1.0.5 | 一些日常会用到的便利函数与视图 |
+| 4210 | {{< alias "pg_relation_sql" >}} | 0.2.2 | 根据 PostgreSQL 外键生成可内联的关系导航 SQL 函数 |
 | 4220 | {{< alias "pg_extra_time" >}} | 2.1.0 | 一些关于日期与时间的扩展函数 |
 | 4230 | {{< alias "pgpcre" >}} | 0.20190509 | PCRE/Perl风格的正则表达式支持 |
 | 4235 | {{< alias "re2" >}} | 0.4.1 | 使用 RE2 的 ClickHouse 兼容正则函数 |
@@ -579,7 +580,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | 用于收集日志文件中消息统计信息的函数 |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | 监控每个用户的连接尝试 |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | 记录和监控函数 |
-| 7170 | {{< alias "pg_oidc_validator" >}} | 0.2 | PostgreSQL 18 OAuth 与 OIDC 令牌验证模块 |
+| 7170 | {{< alias "pg_oidc_validator" >}} | 1.1.0 | PostgreSQL 18 OAuth 与 OIDC 令牌验证模块 |
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 0.1.0 | 使用 Rust 与 pgrx 编写的 PostgreSQL 18 OIDC Bearer 令牌验证模块 |
 | 7190 | {{< alias "pgmemento" >}} | 0.7.4 | 基于事务日志的审计追踪、模式版本管理与数据恢复 |
 | 7310 | {{< alias "credcheck" >}} | 5.0 | 明文凭证检查器 |
