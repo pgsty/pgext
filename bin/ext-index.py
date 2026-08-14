@@ -113,6 +113,14 @@ def fetch_extensions(conn) -> List[Extension]:
                    trusted, relocatable, en_desc, zh_desc
             FROM pgext.extension
             WHERE state != 'not-ready'
+              AND NOT (
+                    coalesce(extra->>'type', '') = 'puresql'
+                AND NOT coalesce(contrib, false)
+                AND NOT coalesce(has_bin, false)
+                AND NOT coalesce(has_lib, false)
+                AND NOT coalesce(need_ddl, false)
+                AND NOT coalesce(need_load, false)
+              )
             ORDER BY id
         """)
 

@@ -63,7 +63,7 @@ PIG is a Go-written binary program, installed by default at `/usr/bin/pig`. `pig
 
 ```bash
 $ pig version
-pig version 1.7.0 linux/amd64
+pig version 1.8.0 linux/amd64
 ```
 
 Use `pig status` to print the current environment status, OS code, PG installation status, repository accessibility and latency.
@@ -72,7 +72,7 @@ Use `pig status` to print the current environment status, OS code, PG installati
 $ pig status
 
 # [Configuration] ================================
-Pig Version      : 1.7.0
+Pig Version      : 1.8.0
 Pig Config       : /home/vagrant/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -122,7 +122,7 @@ pig pitr -d -y                # skip confirmation (automation scenarios)
 
 ## List Extensions
 
-Pig v1.7.0 ships with a release-time catalog snapshot. Refresh it with `pig ext reload`, then use `pig ext list` to print the current PG extension catalog.
+Pig v1.8.0 ships with a release-time catalog snapshot. Refresh it with `pig ext reload`, then use `pig ext list` to print the current PG extension catalog.
 
 ```bash
 $ pig ext reload
