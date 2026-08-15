@@ -29,7 +29,7 @@ Examples:
 | Command | Description | Notes |
 |:---|:---|:---|
 | `sty init` | Install Pigsty | |
-| `sty boot` | Bootstrap the Pigsty controller | Requires root |
+| `sty boot` | Bootstrap the Pigsty controller | Auto-elevates when needed |
 | `sty conf` | Generate and validate Inventory | Native Go workflow |
 | `sty deploy` | Run deployment playbook | |
 | `sty list` | List available Pigsty versions | |
@@ -48,7 +48,7 @@ Examples:
 Use `pig sty` to bootstrap and deploy Pigsty on the current node.
 
 ```bash
-sudo pig sty boot                # prepare the controller and ~/pigsty
+pig sty boot                     # prepare the controller; auto-elevates when needed
 pig sty conf -g                  # generate and validate pigsty.yml
 pig inventory edit              # optional: review and adjust the Inventory
 pig sty deploy                   # run deployment playbook
@@ -82,10 +82,11 @@ pig sty init 3                 # fetch and install latest v3 major version
 
 ## sty boot
 
-Bootstrap the Pigsty controller with the native Go workflow. The command requires root,
-prepares a usable Ansible environment, supports online and offline repositories, repairs
-common controller prerequisites, and reports a structured result. It never delegates to
-Pigsty's legacy `bootstrap` script.
+Bootstrap the Pigsty controller with the native Go workflow. The command prepares a usable
+Ansible environment, supports online and offline repositories, repairs common controller
+prerequisites, and reports a structured result. It never delegates to Pigsty's legacy
+`bootstrap` script and does not require `curl`, `wget`, `tar`, or `gzip` for package download
+and extraction.
 
 ```bash
 sudo pig sty boot                         # online bootstrap with the default region
@@ -97,31 +98,87 @@ sudo pig sty boot -p https://host/pkg.tgz # download and use an offline package
 sudo pig sty boot -o json                 # machine-readable result and warnings
 ```
 
-The native bootstrap performs these stages:
+You may invoke the command without `sudo`. Pig resolves and downloads an explicit source first,
+then re-executes itself through `sudo` once when root access is required. Set `PIG_NO_SUDO=1` to
+disable automatic elevation, or `PIG_NON_INTERACTIVE=1` to make the sudo attempt non-interactive.
+
+### Bootstrap stages
+
+The native workflow performs these stages:
 
 1. On Debian 12/13, check and repair `en_US.UTF-8` when possible so Ansible can start.
-2. Verify `ansible-playbook` and its Python dependencies instead of checking only the binary.
-3. Reuse a committed `/www/pigsty` repository, consume an explicit package or URL, accept a
-   trusted automatic `/tmp/pkg.tgz`, or configure the selected online repositories.
-4. Install the controller package set when Ansible is missing or unusable. Explicit offline
-   input is still prepared when Ansible is already installed.
-5. Unless `--keep` is set, back up repository definitions before replacement and restore them
-   automatically when local or online package setup fails.
-6. Best-effort repair key-based localhost SSH and initialize a missing default `~/pigsty` tree.
-   These final convenience checks produce warnings rather than turning a usable controller into
-   a false bootstrap failure.
+2. Execute `ansible-playbook`, discover its Python interpreter, and verify `yaml`, `jmespath`,
+   and either `cryptography` or `OpenSSL`. A binary that cannot actually run is not considered ready.
+3. Resolve the repository source, prepare offline content when selected, and install the lean
+   controller package set only when Ansible is missing or unusable.
+4. Verify Ansible again after package installation and retry locale preparation when packages may
+   have made locale tools available.
+5. Probe controller helpers, repair key-based SSH to `127.0.0.1` for the invoking admin user, and
+   initialize a missing default `~/pigsty` tree when possible.
+
+Explicit, automatically discovered, and already committed offline sources are prepared even when
+Ansible is already usable. This makes `sty boot` suitable for staging an offline repository on an
+otherwise ready controller.
+
+### Source selection and modes
+
+The result records one of four bootstrap modes:
+
+| Mode | Meaning |
+|------|---------|
+| `ready` | Ansible was already usable and no offline source needed preparation. |
+| `offline` | An explicit, trusted automatic, or committed offline repository was selected. |
+| `online` | Regional online repositories were configured to repair the controller. |
+| `existing` | An online refresh failed under `--keep`, and existing repository definitions were successfully used as a fallback. |
+
+Source precedence and safety rules are deterministic:
+
+- `--path` accepts a local archive or an HTTP(S) URL. URL credentials are rejected, and a bad
+  explicit source is a hard error rather than an online fallback.
+- An automatically discovered `/tmp/pkg.tgz` must be a regular, non-group/world-writable file
+  owned by root or the invoking sudo user. Unsafe candidates are ignored with a warning.
+- A completed `/www/pigsty` repository takes precedence over a selected package. If both exist,
+  the committed repository is reused and the package is left untouched with a warning.
+- Archives are downloaded and extracted by Pig itself. If `/www` does not exist, Pig creates
+  `/data/nginx` and the expected `/www -> /data/nginx` symbolic link before committing content.
+
+Offline mode enables only the strict `pigsty-local` repository. Online mode configures the
+selected region, installs Pigsty's embedded signing key with repository signature checks enabled,
+and installs the `node` and `pigsty` controller modules.
+
+### Repository transaction and failure boundary
+
+By default, repository definitions are backed up before replacement. If repository setup or
+package installation fails, Pig attempts to restore the backup and reports whether rollback
+succeeded or failed. `--keep` changes the policy to additive operation: existing definitions are
+preserved, online refresh may fall back to them, and no replacement rollback is required.
+
+Invalid explicit sources, unsupported package management when installation is required,
+repository/package failures, and an unusable post-install Ansible runtime are command failures.
+Locale repair, optional helper probes, localhost SSH repair, and Pigsty tree initialization are
+advisory finishing steps; their failures are retained as warnings in an otherwise usable result.
 
 **Options:**
 
 - `-r|--region`: region, such as default, china, europe
-- `-m|--mirror`: equivalent to `--region china`
+- `-m|--mirror`: equivalent to `--region china`; mutually exclusive with `--region`
 - `-p|--path`: offline package file or HTTP(S) URL; an invalid explicit source is a hard error
 - `-k|--keep`: preserve existing repositories instead of replacing them
 
-An automatically discovered `/tmp/pkg.tgz` must be a regular, non-group/world-writable file
-owned by root or the invoking sudo user. Unsafe automatic candidates are ignored with a warning.
-Use `-o json` or `-o yaml` to consume bootstrap mode, repository policy, rollback state, locale,
-SSH, Pigsty initialization status, warnings, and recommended next commands without scraping text.
+### Structured output
+
+Use the global `-o json` or `-o yaml` flag for automation. The payload kind is
+`pig.sty.boot/v2` and includes the Ansible state, selected mode and package manager, repository
+policy and rollback result, source and repository paths, locale, localhost SSH and Pigsty tree
+initialization status, whether the machine changed, warnings, and these recommended next steps:
+
+```bash
+pig sty conf -g
+pig inv edit
+pig sty deploy
+```
+
+Dynamic progress is suppressed in structured mode, so stdout remains machine-readable.
 
 See: <https://pigsty.io/docs/setup/offline/#bootstrap>
 
@@ -145,14 +202,60 @@ pig sty conf full -g -O ha.yml       # custom owner-only output file
 pig sty conf -n --ip 10.0.0.10 -o json
 ```
 
+The default mode is `meta`; `pig sty c` and `pig sty configure` are command aliases. Note that
+`-O` selects the Inventory output file, while the global lowercase `-o` selects text, JSON, or
+YAML command output.
+
+### Template and output safety
+
+- A mode is a slash-separated relative name below `<PIGSTY_HOME>/conf`; `.yml` is optional.
+  Absolute paths, traversal, empty segments, and path escape are rejected.
+- Relative output paths are resolved below `<PIGSTY_HOME>`; absolute output paths are retained.
+- The destination cannot alias the source through the same path, an existing symlink, a
+  symlinked parent, or a hard link. An existing output symlink is always refused.
+- Pig parses the source and rejects conflicting IP mappings before running external preflight
+  checks. A parse, mutation, preflight, or validation failure leaves the destination unchanged.
+- A successful result is written atomically with mode `0600`.
+
+### Structural mutations
+
+The command edits parsed YAML structures and bounded scalar tokens rather than applying broad
+text substitutions:
+
+| Input | Native behavior |
+|-------|-----------------|
+| `--ip A,B,...` | Maps up to ten distinct addresses, in order, to `10.10.10.10` through `10.10.10.19`. Replacement is simultaneous, so swaps are safe and unrelated VIPs remain intact. |
+| no `--ip` | Detects local interfaces. Interactive mode asks when selection is ambiguous; `--non-interactive` or closed stdin fails with guidance to pass `--ip`. |
+| `--domain NAME` | Replaces only the exact `i.pigsty` token, not names such as `cli.pigsty` or `i.pigsty.cc`; NAME must be a valid DNS domain. |
+| small controller | When detected CPU count is below four, rewrites `node_tune: oltp` and `pg_conf: oltp.yml` to their `tiny` profiles. |
+| `--region REGION` | Updates `all.vars.region` for non-default regions. `china` also activates template-provided Docker and pip mirrors, but never invents values absent from the template. |
+| `--proxy` | Writes non-empty `HTTP_PROXY`/`http_proxy`, `HTTPS_PROXY` (falling back to `ALL_PROXY`), `ALL_PROXY`, and `NO_PROXY` values into `all.vars.proxy_env`; a safe default no-proxy list is used when needed. |
+| `--version MAJOR` | Updates generic templates for PostgreSQL 14-18, or explicit 19 beta, and selects the matching locale. Version-pinned `mssql`, `polar`, and `pgNN` modes keep their template version and report a warning. |
+| `--generate` | Generates one 24-character value per known credential identifier and consistently replaces its active values and documented placeholders. |
+
+An IP mapping that would collide with an unreplaced Inventory key is rejected as an invalid
+argument. A supplied address with no matching placeholder slot is retained in structured output
+as a discarded-IP warning rather than being silently ignored.
+
+For PostgreSQL 19 beta, Pig also enables the `beta` repository after `pgsql` when the template
+contains the expected repository list. Modes below `conf/build/` intentionally bypass IP mapping
+and controller-admin preflight so build templates remain portable.
+
+Active password identifiers are `grafana_admin_password`, `pg_admin_password`,
+`pg_monitor_password`, `pg_replication_password`, `patroni_password`,
+`haproxy_admin_password`, `minio_secret_key`, and `etcd_root_password`. Generation also covers
+the documented `DBUser.Meta`, `DBUser.Viewer`, `S3User.Backup`, `S3User.Meta`, `S3User.Data`,
+`DBUser.Supa`, and `Vibe.Coding` placeholders. Repeated occurrences of one identifier receive the
+same generated value.
+
 **Options:**
 
 - `-c|--conf`: template mode, equivalent to positional `[mode]`; the two forms are exclusive
 - `--ip`: up to ten distinct comma-separated IPv4 addresses
-- `--domain`: replace the exact `i.pigsty` placeholder domain
+- `--domain`: replace the exact `i.pigsty` placeholder with a valid DNS domain
 - `-v|--version`: PostgreSQL major version, 18/17/16/15/14; 19 beta can be specified explicitly
 - `-r|--region`: upstream repository region, such as default/china/europe
-- `-m|--mirror`: equivalent to `--region china`
+- `-m|--mirror`: equivalent to `--region china`; mutually exclusive with `--region`
 - `-O|--output-file`: output config file path, default `pigsty.yml`
 - `-s|--skip`: keep the placeholder IP and skip admin SSH/sudo preflight; exclusive with `--ip`
 - `-p|--port`: SSH port
@@ -160,18 +263,24 @@ pig sty conf -n --ip 10.0.0.10 -o json
 - `-n|--non-interactive`: refuse ambiguous IP selection instead of prompting
 - `-g|--generate`: replace known demo credentials with random 24-character values
 
-`--ip` maps addresses in order to the template slots `10.10.10.10` through
-`10.10.10.19`; replacement is simultaneous, and unrelated addresses such as VIPs remain intact.
-Without `--ip`, interactive mode lists detected interfaces for selection; non-interactive or
-closed-input execution fails with guidance to specify an address. `--domain` only replaces the
-exact `i.pigsty` token, not names such as `cli.pigsty` or `i.pigsty.cc`.
+### Preflight and validation
 
-Template modes are safe relative paths below `conf`; absolute paths, traversal, and path escape
-are rejected. Output cannot alias the source template through a direct path, symlink, symlinked
-parent, or hard link. The rendered Inventory is validated before the atomic `0600` write, so a
-parse, mutation, preflight, or validation failure does not replace the destination. Structured
-output reports applied IP mappings, effective PostgreSQL version, generated secret identifiers,
-and warnings, but never generated secret values.
+Unless `--skip` is used, Pig inspects the kernel, architecture, package manager, platform vendor,
+controller resources, sudo/admin access, localhost SSH, and Ansible availability. `--port` is used
+for the SSH check. These diagnostics are returned as actionable warnings where the Inventory can
+still be generated; invalid arguments and unsafe configuration transformations remain errors.
+
+The rendered candidate must pass Pig's native Inventory validation. When `ansible-inventory` is
+available, Pig also runs a bounded external parse before committing the file. `--skip` preserves
+placeholder IPs and bypasses admin SSH/sudo preflight, but it does not disable template parsing,
+safe mutation, Inventory validation, or atomic writing.
+
+### Structured output
+
+With global `-o json` or `-o yaml`, the payload kind is `pig.sty.configure/v1`. It reports the
+mode, source and output paths, region, chosen primary address, applied and discarded IPs, domain,
+SSH port, requested and effective PostgreSQL versions, native-workflow marker, generated secret
+identifiers, and warnings. Secret values are never printed.
 
 See: <https://pigsty.io/docs/setup/install/#configure>
 

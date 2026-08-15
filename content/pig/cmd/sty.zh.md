@@ -29,7 +29,7 @@ Examples:
 | 命令            | 描述                     | 备注                |
 |:--------------|:-----------------------|:------------------|
 | `sty init`    | 安装 Pigsty              |                   |
-| `sty boot`    | 原生引导 Pigsty 控制节点       | 需要 root 权限       |
+| `sty boot`    | 原生引导 Pigsty 控制节点       | 需要时自动提权至 root  |
 | `sty conf`    | 原生生成并校验 Inventory      | Go 工作流           |
 | `sty deploy`  | 运行部署 playbook          |                   |
 | `sty list`    | 列出可用 Pigsty 版本         |                   |
@@ -48,7 +48,7 @@ Examples:
 你可以使用 `pig sty` 子命令在当前节点引导部署 Pigsty。
 
 ```bash
-sudo pig sty boot                # 准备控制节点与 ~/pigsty
+pig sty boot                     # 准备控制节点；需要时自动提权
 pig sty conf -g                  # 生成并校验 pigsty.yml
 pig inventory edit              # 可选：检查并调整 Inventory
 pig sty deploy                   # 运行部署 playbook
@@ -82,9 +82,9 @@ pig sty init 3                 # 获取并安装指定主版本 v3 最新
 
 ## sty boot
 
-使用 Go 原生工作流引导 Pigsty 控制节点。该命令需要 root 权限，能够准备可用的 Ansible
-环境、处理在线与离线仓库、修复常见控制节点前置条件，并返回结构化结果；整个过程不再委托给
-Pigsty 旧版 `bootstrap` 脚本。
+使用 Go 原生工作流引导 Pigsty 控制节点。该命令能够准备可用的 Ansible 环境、处理在线与
+离线仓库、修复常见控制节点前置条件，并返回结构化结果；整个过程不再委托给 Pigsty 旧版
+`bootstrap` 脚本，下载与解压软件包也不依赖 `curl`、`wget`、`tar` 或 `gzip`。
 
 ```bash
 sudo pig sty boot                         # 使用默认区域在线引导
@@ -96,27 +96,80 @@ sudo pig sty boot -p https://host/pkg.tgz # 下载并使用离线包
 sudo pig sty boot -o json                 # 返回机器可读的结果与告警
 ```
 
-原生引导依次完成：
+命令可以不带 `sudo` 直接调用：Pig 会先解析并下载显式来源，需要 root 权限时再通过 `sudo`
+进行一次自重启。设置 `PIG_NO_SUDO=1` 可禁用自动提权；设置 `PIG_NON_INTERACTIVE=1` 可让
+sudo 使用非交互模式。
+
+### 引导阶段
+
+原生工作流依次完成：
 
 1. 在 Debian 12/13 上尽可能检查并修复 `en_US.UTF-8`，避免 Ansible 因继承到坏 locale 而无法启动。
-2. 同时校验 `ansible-playbook` 与 Python 依赖，而不是只检查二进制文件是否存在。
-3. 复用已提交的 `/www/pigsty` 仓库，使用显式软件包或 URL，接受可信的自动
-   `/tmp/pkg.tgz`，或配置所选区域的在线仓库。
-4. Ansible 缺失或不可用时安装控制节点软件包；即使 Ansible 已安装，显式离线输入仍会被准备。
-5. 未指定 `--keep` 时，在替换仓库定义前创建备份；本地或在线安装失败时自动恢复。
-6. 尽力修复本机免密 SSH，并初始化缺失的默认 `~/pigsty`。这些便利步骤失败时给出告警，
-   不会把已经可用的控制节点误判为引导失败。
+2. 实际执行 `ansible-playbook`，发现它使用的 Python 解释器，并校验 `yaml`、`jmespath`，
+   以及 `cryptography` 或 `OpenSSL` 两者之一；仅有二进制文件但无法运行，不会被判定为就绪。
+3. 解析仓库来源，按需准备离线内容，并且只在 Ansible 缺失或不可用时安装精简的控制节点软件包集。
+4. 安装后再次校验 Ansible；如果新软件包补齐了 locale 工具，也会重试 locale 准备。
+5. 探测控制节点辅助工具，为发起调用的管理员用户修复到 `127.0.0.1` 的密钥 SSH，并尽可能
+   初始化缺失的默认 `~/pigsty` 目录。
+
+即使 Ansible 已经可用，显式指定、自动发现或已经提交的离线来源仍会被准备，因此可以在一个
+已经就绪的控制节点上使用 `sty boot` 预置离线仓库。
+
+### 来源选择与工作模式
+
+结果中会记录以下四种引导模式之一：
+
+| 模式 | 含义 |
+|------|------|
+| `ready` | Ansible 已经可用，也不需要准备离线来源。 |
+| `offline` | 选择了显式、可信自动发现或已提交的离线仓库。 |
+| `online` | 配置所选区域的在线仓库以修复控制节点。 |
+| `existing` | 使用 `--keep` 在线刷新失败后，成功回退到现有仓库定义。 |
+
+来源优先级与安全规则是确定的：
+
+- `--path` 接受本地归档或 HTTP(S) URL。包含凭据的 URL 会被拒绝；显式来源无效时直接失败，
+  不会悄悄回退到在线模式。
+- 自动发现的 `/tmp/pkg.tgz` 必须是普通文件，不可被组或其他用户写入，且属主为 root 或发起
+  sudo 的用户；不安全的候选会被忽略并产生告警。
+- 已完整提交的 `/www/pigsty` 仓库优先于选中的离线包；两者同时存在时复用现有仓库，离线包
+  保持不动并给出告警。
+- Pig 使用 Go 原生能力下载并解压归档。如果 `/www` 不存在，会先创建 `/data/nginx` 与预期的
+  `/www -> /data/nginx` 符号链接，再提交仓库内容。
+
+离线模式只启用严格的 `pigsty-local` 仓库；在线模式配置所选区域，安装 Pigsty 内嵌签名密钥并
+启用仓库签名校验，同时安装 `node` 与 `pigsty` 控制节点模块。
+
+### 仓库事务与失败边界
+
+默认策略会在替换仓库定义前创建备份。仓库配置或软件包安装失败时，Pig 会尝试恢复备份，并在
+结果中明确标记回滚成功或失败。`--keep` 会切换为增量策略：保留现有定义，在线刷新失败时可以
+回退到已有仓库，也不需要执行替换回滚。
+
+显式来源无效、需要安装时软件包管理器不受支持、仓库或软件包操作失败，以及安装后 Ansible
+仍不可用，都会让命令失败。locale 修复、可选辅助工具探测、本机 SSH 修复与 Pigsty 目录初始化
+属于建议性收尾步骤；失败只会作为告警保留，不会否定已经可用的控制节点。
 
 **选项：**
 
 - `-r|--region`：区域（default, china, europe...）
-- `-m|--mirror`：等价于 `--region china`
+- `-m|--mirror`：等价于 `--region china`；不能与 `--region` 同时使用
 - `-p|--path`：离线包文件或 HTTP(S) URL；显式指定的来源无效时直接失败
 - `-k|--keep`：保留现有仓库定义，不执行替换
 
-自动发现的 `/tmp/pkg.tgz` 必须是普通文件，不可被组或其他用户写入，且属主为 root 或发起
-sudo 的用户；不安全的自动候选会被忽略并产生告警。使用 `-o json` 或 `-o yaml` 可直接获取
-引导模式、仓库策略、回滚状态、locale、SSH、Pigsty 初始化状态、告警与后续命令。
+### 结构化输出
+
+自动化场景可使用全局 `-o json` 或 `-o yaml`。结果类型为 `pig.sty.boot/v2`，包含 Ansible
+状态、工作模式与软件包管理器、仓库策略与回滚结果、来源与仓库路径、locale、本机 SSH 与
+Pigsty 目录初始化状态、是否发生变更、告警，以及以下后续建议：
+
+```bash
+pig sty conf -g
+pig inv edit
+pig sty deploy
+```
+
+结构化模式会抑制动态进度信息，保证 stdout 可以直接被程序解析。
 
 详见：https://pigsty.cc/docs/setup/offline/#bootstrap
 
@@ -140,14 +193,55 @@ pig sty conf full -g -O ha.yml       # 写入自定义的仅属主可读文件
 pig sty conf -n --ip 10.0.0.10 -o json
 ```
 
+默认模式为 `meta`；`pig sty c` 与 `pig sty configure` 是命令别名。注意大写 `-O` 用于指定
+Inventory 输出文件，全局小写 `-o` 用于选择 text、JSON 或 YAML 命令输出。
+
+### 模板与输出安全
+
+- 模式必须是 `<PIGSTY_HOME>/conf` 下用斜杠分隔的安全相对名称，`.yml` 后缀可省略；绝对路径、
+  目录穿越、空路径段与路径逃逸都会被拒绝。
+- 相对输出路径基于 `<PIGSTY_HOME>` 解析，绝对输出路径保持不变。
+- 目标文件不能通过相同路径、已有符号链接、带符号链接的父目录或硬链接指回源模板；已有输出
+  符号链接一律拒绝。
+- Pig 会先解析源模板并拒绝冲突的 IP 映射，再执行外部预检。解析、变更、预检或校验失败均不
+  会改动目标文件。
+- 成功结果以 `0600` 权限原子写入。
+
+### 结构化变更
+
+命令操作解析后的 YAML 结构与有边界的标量，而不是进行宽泛的文本替换：
+
+| 输入 | 原生行为 |
+|------|----------|
+| `--ip A,B,...` | 最多接收十个互不相同的地址，依次映射到 `10.10.10.10` 至 `10.10.10.19`；替换同时完成，因此地址互换安全，VIP 等无关地址保持不变。 |
+| 未指定 `--ip` | 探测本机网卡；候选不唯一时交互选择，`--non-interactive` 或 stdin 已关闭时则失败并提示使用 `--ip`。 |
+| `--domain NAME` | 只替换精确的 `i.pigsty`，不会误改 `cli.pigsty` 或 `i.pigsty.cc`；NAME 必须是合法 DNS 域名。 |
+| 小规格控制节点 | 探测到 CPU 少于四核时，将 `node_tune: oltp` 与 `pg_conf: oltp.yml` 改为对应的 `tiny` 配置。 |
+| `--region REGION` | 非默认区域会更新 `all.vars.region`；`china` 还会启用模板中已有的 Docker 与 pip 镜像值，但不会凭空补造模板中不存在的配置。 |
+| `--proxy` | 将非空的 `HTTP_PROXY`/`http_proxy`、`HTTPS_PROXY`（缺失时回退到 `ALL_PROXY`）、`ALL_PROXY` 与 `NO_PROXY` 写入 `all.vars.proxy_env`；必要时补充安全的默认 no-proxy 列表。 |
+| `--version MAJOR` | 通用模板支持 PostgreSQL 14-18，以及显式指定的 19 beta，并选择匹配的 locale；版本固定的 `mssql`、`polar` 与 `pgNN` 模式保留模板版本并给出告警。 |
+| `--generate` | 每个已知凭据标识符生成一个 24 位随机值，并一致替换其生效值和文档化占位符。 |
+
+如果某个 IP 映射会与未替换的 Inventory 键冲突，命令会按无效参数拒绝执行。某个已提供地址在
+模板中没有对应占位槽时，不会被静默忽略，而是作为 discarded-IP 告警保留在结构化结果中。
+
+指定 PostgreSQL 19 beta 时，如果模板包含预期的软件仓库列表，Pig 还会在 `pgsql` 后启用
+`beta` 仓库。`conf/build/` 下的模式有意绕过 IP 映射与控制节点管理员预检，以保持构建模板可移植。
+
+生效口令标识符包括 `grafana_admin_password`、`pg_admin_password`、
+`pg_monitor_password`、`pg_replication_password`、`patroni_password`、
+`haproxy_admin_password`、`minio_secret_key` 与 `etcd_root_password`。随机生成还覆盖文档中的
+`DBUser.Meta`、`DBUser.Viewer`、`S3User.Backup`、`S3User.Meta`、`S3User.Data`、
+`DBUser.Supa` 和 `Vibe.Coding` 占位符；同一标识符出现多次时会使用同一个生成值。
+
 **选项：**
 
 - `-c|--conf`：模板模式，等价于位置参数 `[mode]`，两种形式不能同时使用
 - `--ip`：最多十个互不相同、逗号分隔的 IPv4 地址
-- `--domain`：替换精确的 `i.pigsty` 占位域名
+- `--domain`：将精确的 `i.pigsty` 占位符替换为合法 DNS 域名
 - `-v|--version`：PostgreSQL 主版本（18/17/16/15/14；19 beta 可显式指定）
 - `-r|--region`：上游仓库区域（default/china/europe）
-- `-m|--mirror`：等价于 `--region china`
+- `-m|--mirror`：等价于 `--region china`；不能与 `--region` 同时使用
 - `-O|--output-file`：输出配置文件路径（默认：pigsty.yml）
 - `-s|--skip`：保留占位 IP 并跳过管理员 SSH/sudo 预检；不能与 `--ip` 同时使用
 - `-p|--port`：SSH 端口
@@ -155,15 +249,21 @@ pig sty conf -n --ip 10.0.0.10 -o json
 - `-n|--non-interactive`：IP 候选不唯一时拒绝猜测，不进入交互选择
 - `-g|--generate`：将已知演示口令替换为 24 位随机值
 
-`--ip` 会按顺序映射模板中的 `10.10.10.10` 至 `10.10.10.19` 占位槽；替换是同时完成的，
-VIP 等无关地址保持不变。未指定 `--ip` 时，交互模式会列出探测到的网卡供选择；非交互或输入已
-关闭时会明确提示指定地址。`--domain` 只替换精确的 `i.pigsty`，不会误改 `cli.pigsty` 或
-`i.pigsty.cc`。
+### 预检与校验
 
-模板模式只能是 `conf` 下的安全相对路径，绝对路径、目录穿越与路径逃逸都会被拒绝。输出文件
-不能通过直接路径、符号链接、带符号链接的父目录或硬链接指回源模板。渲染后的 Inventory 会在
-原子 `0600` 写入前完成校验，因此解析、变更、预检或校验失败都不会覆盖目标文件。结构化输出会
-报告 IP 映射、实际 PostgreSQL 版本、生成的机密标识符与告警，但绝不会暴露随机口令值。
+未使用 `--skip` 时，Pig 会检查内核、架构、软件包管理器、平台厂商、控制节点资源、sudo/管理员
+权限、本机 SSH 与 Ansible 可用性；SSH 检查使用 `--port` 指定的端口。在 Inventory 仍可安全
+生成时，这些诊断以可操作告警返回；无效参数与不安全的配置变换仍然是错误。
+
+渲染候选必须通过 Pig 原生 Inventory 校验；如果存在 `ansible-inventory`，还会在提交文件前执行
+一次有时间边界的外部解析。`--skip` 会保留占位 IP，并跳过管理员 SSH/sudo 预检，但不会禁用
+模板解析、安全变更、Inventory 校验或原子写入。
+
+### 结构化输出
+
+使用全局 `-o json` 或 `-o yaml` 时，结果类型为 `pig.sty.configure/v1`，会报告模式、源模板与
+输出路径、区域、所选主地址、已应用与被丢弃的 IP、域名、SSH 端口、请求与实际 PostgreSQL
+版本、原生工作流标记、生成的机密标识符及告警。随机口令值绝不会输出。
 
 详见：https://pigsty.cc/docs/setup/install/#配置
 
