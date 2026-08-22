@@ -1,0 +1,25 @@
+{{- /* Order weighted members first, then unweighted members by ascending date;
+       Path breaks ties. */ -}}
+{{- $pages := .Pages -}}
+{{- $ordered := slice -}}
+{{- $dateLayout := "2006-01-02T15:04:05.999999999Z07:00" -}}
+
+{{- $weighted := where $pages "Params.series_weight" "!=" nil -}}
+{{- $weights := slice -}}
+{{- range $weighted -}}
+  {{- $weights = $weights | append (index .Params "series_weight") -}}
+{{- end -}}
+{{- range $weight := (sort (uniq $weights)) -}}
+  {{- range sort (where $weighted "Params.series_weight" $weight) "Path" "asc" -}}
+    {{- $ordered = $ordered | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $unweighted := where $pages "Params.series_weight" "==" nil -}}
+{{- range $unweighted.GroupByDate $dateLayout "asc" -}}
+  {{- range sort .Pages "Path" "asc" -}}
+    {{- $ordered = $ordered | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $ordered -}}

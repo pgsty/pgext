@@ -1,0 +1,8 @@
+{{- /* Render an RSS-safe summary without crossing a manual summary divider. */ -}}
+{{- $page := . -}}
+{{- $markup := $page.Markup "td-rss-summary" -}}
+{{- $render := $markup.Render -}}
+{{- $summary := $render.Summary -}}
+{{- $description := printf "%s" $summary.Text -}}
+{{- $description = partial "content/static-image-output.html" $description -}}
+{{- return $description -}}

@@ -1,20 +1,19 @@
-{{- $ext := trim (.Get 0) " " -}}
-{{- $pkg := cond (ge (len .Params) 2) (trim (.Get 1) " ") $ext -}}
+{{- /*
+Link to an extension page, labelled by its package name.
 
+@param {string} 0 canonical extension name (required)
+@param {string} 1 display label (optional; defaults to the extension name)
+*/ -}}
+{{- $ext := trim (.Get 0) " " -}}
+{{- $label := cond (ge (len .Params) 2) (trim (.Get 1) " ") $ext -}}
 {{- if $ext -}}
-  <a href="{{ printf "/e/%s" $ext }}" title="Extension: {{ $ext }}">
-    {{- partial "shortcodes/badge.html" (dict
-      "content" $pkg
-      "color" "gray"
-      "border" true
-      )
-    -}}
-  </a>
-{{- else -}}
-  {{- partial "shortcodes/badge.html" (dict
-    "content" "unknown"
+  {{- partial "pgext/badge.html" (dict
+    "content" $label
     "color" "gray"
-    "border" true
-    )
-  -}}
+    "link" (printf "/e/%s" $ext)
+    "title" (printf "Extension: %s" $ext)
+    "mono" true
+  ) -}}
+{{- else -}}
+  {{- partial "pgext/badge.html" (dict "content" "unknown" "color" "gray") -}}
 {{- end -}}

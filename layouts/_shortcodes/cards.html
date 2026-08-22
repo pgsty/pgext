@@ -1,0 +1,28 @@
+{{- /*
+Site override of the theme's `cards`, adding the catalog's `cols` parameter.
+
+OINK's grid adapts to the available width; the catalog pages were authored
+with explicit column counts (`cols=1` for a single hero card, `cols=5` for the
+category wall), which the theme already supports through its own
+`--td-card-columns` custom property. Without `cols` this behaves exactly like
+the theme's auto grid.
+
+@param {int} cols optional column count, 1-6
+*/ -}}
+{{- $cols := 0 -}}
+{{- if and .IsNamedParams (isset .Params "cols") -}}
+  {{- $raw := int (.Get "cols") -}}
+  {{- if and (ge $raw 1) (le $raw 6) -}}
+    {{- $cols = $raw -}}
+  {{- else -}}
+    {{- warnf "shortcode %q: cols must be between 1 and 6; got %v at %s; using the auto grid" .Name $raw .Position -}}
+  {{- end -}}
+{{- end -}}
+{{- $format := lower (.Page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if eq $format "markdown" -}}
+{{ .Inner }}
+{{- else -}}
+<div class="td-content-cards{{ if not $cols }} td-content-cards--auto{{ end }}" id="td-cards-{{ md5 .Page.RelPermalink | truncate 8 "" }}-{{ .Ordinal }}"{{ if $cols }} style="--td-card-columns: {{ $cols }}"{{ end }}>
+{{ .Inner }}
+</div>
+{{- end -}}

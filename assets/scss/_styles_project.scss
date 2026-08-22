@@ -1,0 +1,1847 @@
+// ===========================================================================
+// PGEXT.CLOUD — the catalogue's design system, on top of OINK
+//
+// The visual language is the one the dynamic catalogue at pgext.cloud already
+// uses: "the catalogue is a database". Paper ground, ink text, a transitional
+// serif for display and a coding face for every piece of data. Sixteen fixed
+// category hues and a warm-to-cool dimension scale carry meaning that no other
+// signal on the page carries.
+//
+// The file has three jobs, in order:
+//
+//   1. declare the catalogue's own tokens (`--bg`, `--ink`, `--c-*`, `--h-*`);
+//   2. point OINK's tokens (`--bs-*`, `--td-*`) at them, so the whole shell —
+//      navbar, sidebar, cards, tables, footer — inherits the palette without a
+//      single template override;
+//   3. add the catalogue components the theme has no equivalent for: the
+//      badge, the version strip, the search console, the extension wall.
+// ===========================================================================
+
+// ---------------------------------------------------------------------------
+// 1 · Catalogue tokens
+// ---------------------------------------------------------------------------
+
+@mixin pgext-light {
+  --bg: #f7f7f4;
+  --bg-rgb: 247, 247, 244;
+  --bg-card: #fdfdfc;
+  --bg-raise: #f0f0ec;
+  --bg-inset: #eeeeea;
+  --bg-code: #131c28;
+  --fg-code: #dbe4f0;
+  --ink: #131c28;
+  --ink-rgb: 19, 28, 40;
+  --ink-2: #45536b;
+  --ink-2-rgb: 69, 83, 107;
+  --ink-3: #626f88;
+  --ink-3-rgb: 98, 111, 136;
+  --line: #e2e1da;
+  --line-2: #d3d2c9;
+  --accent: #1e5f9e;
+  --accent-fg: #1e5f9e;
+  --accent-rgb: 30, 95, 158;
+  --accent-wash: rgba(30, 95, 158, 0.08);
+  --good: #0b7a0b;
+  --bad: #c03535;
+  --shadow: 0 1px 2px rgba(19, 28, 40, 0.05), 0 8px 28px -12px rgba(19, 28, 40, 0.14);
+  --shadow-lift: 0 2px 4px rgba(19, 28, 40, 0.06), 0 14px 40px -12px rgba(19, 28, 40, 0.22);
+
+  // Sixteen category hues, CVD-validated, in the catalogue's canonical order.
+  --c-TIME: #b97e0c;
+  --c-GIS: #2f9e4f;
+  --c-RAG: #7c3aed;
+  --c-FTS: #e8590c;
+  --c-OLAP: #2456b8;
+  --c-FEAT: #d13ad6;
+  --c-LANG: #0f9e99;
+  --c-TYPE: #5b5bd6;
+  --c-UTIL: #9d5c00;
+  --c-FUNC: #0e8fb3;
+  --c-ADMIN: #a61e4d;
+  --c-STAT: #6a9a0a;
+  --c-SEC: #d21f3c;
+  --c-FDW: #e04e8f;
+  --c-SIM: #9741c9;
+  --c-ETL: #b8540f;
+
+  --h-pgblue: #336791;
+  --h-pgnavy: #1d4266;
+  --h-slate: #64748b;
+
+  --gmx-pgdg: #5b84ae;
+  --gmx-pigsty: #679c74;
+  --gmx-missing: #c26d5c;
+  --gmx-na: #e6e5de;
+
+  // Anything that pins below the site header measures from here.
+  --pgx-navbar-h: 51px;
+
+  // Scrollbars, form controls and the caret all follow this; without it a
+  // scrolling table gets the user-agent's dark furniture on a paper page.
+  color-scheme: light;
+}
+
+@mixin pgext-dark {
+  --bg: #0a0f1c;
+  --bg-rgb: 10, 15, 28;
+  --bg-card: #111a2b;
+  --bg-raise: #162134;
+  --bg-inset: #0d1524;
+  --bg-code: #0d1524;
+  --fg-code: #cdd9ea;
+  --ink: #eef2f8;
+  --ink-rgb: 238, 242, 248;
+  --ink-2: #aab6c8;
+  --ink-2-rgb: 170, 182, 200;
+  --ink-3: #8492a6;
+  --ink-3-rgb: 132, 146, 166;
+  --line: #1e2a3f;
+  --line-2: #2a3852;
+  --accent: #77aee8;
+  --accent-fg: #8dbcf0;
+  --accent-rgb: 119, 174, 232;
+  --accent-wash: rgba(119, 174, 232, 0.1);
+  --good: #2eb82e;
+  --bad: #e05252;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5), 0 18px 44px -12px rgba(0, 0, 0, 0.7);
+
+  --c-TIME: #bd861a;
+  --c-GIS: #33a856;
+  --c-RAG: #8f6ff0;
+  --c-FTS: #db5a18;
+  --c-OLAP: #2e63c6;
+  --c-FEAT: #c337d7;
+  --c-LANG: #14ab9c;
+  --c-TYPE: #7379f0;
+  --c-UTIL: #b0742f;
+  --c-FUNC: #1e9fc9;
+  --c-ADMIN: #c93d6e;
+  --c-STAT: #769c1c;
+  --c-SEC: #e04b41;
+  --c-FDW: #e2609f;
+  --c-SIM: #a05fd6;
+  --c-ETL: #c45f1e;
+
+  --h-pgblue: #5f96c9;
+  --h-pgnavy: #86a7c9;
+  --h-slate: #8e9cae;
+
+  --gmx-pgdg: #4c7096;
+  --gmx-pigsty: #4f8060;
+  --gmx-missing: #a2604f;
+  --gmx-na: #1b2537;
+
+  color-scheme: dark;
+}
+
+// The dimension scale aliases the category palette, so both themes stay tuned
+// together. Temperature encodes openness: cool for permissive and common,
+// warm for copyleft and modern, red for restrictive, violet for exotic.
+@mixin pgext-hue-aliases {
+  --h-blue: var(--c-OLAP);
+  --h-cyan: var(--c-FUNC);
+  --h-teal: var(--c-LANG);
+  --h-green: var(--c-GIS);
+  --h-olive: var(--c-STAT);
+  --h-amber: var(--c-TIME);
+  --h-orange: var(--c-FTS);
+  --h-red: var(--c-SEC);
+  --h-maroon: var(--c-ADMIN);
+  --h-violet: var(--c-RAG);
+  --h-indigo: var(--c-TYPE);
+  --h-pink: var(--c-FDW);
+}
+
+// OINK's dark mode is an attribute on the root element, and the toggle must win
+// in both directions, so each state gets its own explicit block.
+:root {
+  @include pgext-light;
+  @include pgext-hue-aliases;
+}
+
+:root[data-bs-theme='dark'] {
+  @include pgext-dark;
+  @include pgext-hue-aliases;
+}
+
+// ---------------------------------------------------------------------------
+// 2 · OINK's tokens, pointed at the catalogue's
+// ---------------------------------------------------------------------------
+
+@mixin pgext-oink-bridge {
+  --bs-body-bg: var(--bg);
+  --bs-body-bg-rgb: var(--bg-rgb);
+  --bs-body-color: var(--ink);
+  --bs-body-color-rgb: var(--ink-rgb);
+  --bs-emphasis-color: var(--ink);
+  --bs-emphasis-color-rgb: var(--ink-rgb);
+  --bs-secondary-color: var(--ink-2);
+  --bs-secondary-color-rgb: var(--ink-2-rgb);
+  --bs-tertiary-color: var(--ink-3);
+  --bs-tertiary-color-rgb: var(--ink-3-rgb);
+  --bs-secondary-bg: var(--bg-raise);
+  --bs-tertiary-bg: var(--bg-inset);
+  --bs-border-color: var(--line);
+  --bs-border-color-translucent: var(--line);
+  --bs-link-color: var(--accent-fg);
+  --bs-link-color-rgb: var(--accent-rgb);
+  --bs-link-hover-color: var(--accent);
+  --bs-link-hover-color-rgb: var(--accent-rgb);
+  --bs-code-color: var(--accent-fg);
+  --bs-highlight-bg: var(--accent-wash);
+
+  --td-pre-bg: var(--bg-card);
+  --td-brand-elev: var(--bg-card);
+  --td-brand-silk: var(--ink-3);
+  --td-brand-copper: var(--c-TIME);
+  --td-brand-copper-dim: color-mix(in srgb, var(--c-TIME) 60%, transparent);
+  --td-brand-line-strong: var(--line-2);
+  --td-brand-header-bg: color-mix(in srgb, var(--bg) 84%, transparent);
+  --td-brand-shadow-sm: var(--shadow);
+  --td-brand-shadow-md: var(--shadow-lift);
+  --td-brand-mark-from: var(--h-pgblue);
+  --td-brand-mark-to: var(--c-TIME);
+}
+
+:root,
+:root[data-bs-theme='dark'] {
+  @include pgext-oink-bridge;
+
+  // Display and headings take the transitional serif; data, metadata and the
+  // whole chrome vocabulary take the coding face. This is the single largest
+  // reason the static site reads like the dynamic one.
+  --td-display-font-family:
+    'Charter', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia,
+    'Songti SC', 'Noto Serif CJK SC', serif;
+  --td-heading-font-family: var(--td-display-font-family);
+  --td-meta-font-family: var(--td-code-font-family);
+}
+
+// Bootstrap paints the page ground from `--bs-body-bg`, but the theme's own
+// prepaint script writes a literal colour before CSS loads; restate it so the
+// first frame is paper, not white.
+html,
+body {
+  background-color: var(--bg);
+}
+
+// OINK's headings are display-weight; the serif wants a lighter, roomier
+// setting to read as an almanac rather than a poster.
+.td-content h1,
+.td-content h2,
+.td-content h3,
+.td-shell-article > header h1,
+.td-page-title,
+.page-head h1 {
+  font-family: var(--td-display-font-family);
+  font-weight: 550;
+  letter-spacing: -0.012em;
+}
+
+// Section headings on catalog pages read as field labels, like the dynamic
+// site's `-- comment` eyebrows.
+.td-content h2 {
+  font-size: 1.62em;
+}
+
+.td-content h3 {
+  font-size: 1.24em;
+  font-weight: 600;
+}
+
+// The chrome — navbar, sidebar, outline, breadcrumb, footer columns — is
+// data, so it takes the coding face at a small size.
+.td-nav-title,
+.td-shell-tree__row,
+.td-shell-toc a,
+.td-breadcrumb a,
+.td-breadcrumb span,
+.td-shell-root__title,
+.td-navbar-entry__label,
+.td-nav-menu__item-link,
+.footer-col a,
+.footer-col span {
+  font-family: var(--td-meta-font-family);
+}
+
+.td-shell-tree__row,
+.td-nav-menu__item-link {
+  font-size: 0.86em;
+}
+
+// Inline code inherits the dynamic site's tinted chip rather than a plain
+// monospace run, so an identifier is legible inside dense prose.
+.td-content :not(pre) > code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--accent-wash);
+  color: var(--accent-fg);
+  font-size: 0.88em;
+}
+
+// ---------------------------------------------------------------------------
+// 3 · The badge
+//
+// The busiest primitive on the site: one page of the catalogue draws several
+// hundred, the build draws well over a hundred thousand. One element, short
+// class names, no wrapper, no inline style.
+// ---------------------------------------------------------------------------
+
+.pgx-b {
+  --pgx-seg: var(--ink-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 2px 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--ink-2);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.79em;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  vertical-align: 0.04em;
+  white-space: nowrap;
+
+  > i {
+    font-size: 0.86em;
+    opacity: 0.75;
+  }
+
+  // A coloured badge tints itself from its own hue: border, wash and ink all
+  // derive from `--pgx-seg`, so adding a category needs one colour, not three.
+  &--hued {
+    border-color: color-mix(in srgb, var(--pgx-seg) 40%, var(--line-2));
+    background: color-mix(in srgb, var(--pgx-seg) 8%, var(--bg-card));
+    color: var(--pgx-seg);
+  }
+
+  // The flat variant separates `aarch64` from `x86_64`: same hue, no outline,
+  // so a pair of rows reads as one platform.
+  &--flat {
+    border-color: transparent;
+    background: var(--bg-raise);
+  }
+
+  &--mono {
+    font-size: 0.78em;
+    letter-spacing: -0.01em;
+  }
+
+  &--gray { --pgx-seg: var(--ink-3); }
+  &--blue { --pgx-seg: var(--h-blue); }
+  &--green { --pgx-seg: var(--h-green); }
+  &--orange { --pgx-seg: var(--h-orange); }
+  &--red { --pgx-seg: var(--h-red); }
+  &--yellow { --pgx-seg: var(--h-amber); }
+  &--amber { --pgx-seg: var(--h-amber); }
+  &--purple { --pgx-seg: var(--h-violet); }
+  &--indigo { --pgx-seg: var(--h-indigo); }
+  &--pgblue { --pgx-seg: var(--h-pgblue); }
+  &--pgnavy { --pgx-seg: var(--h-pgnavy); }
+  &--slate { --pgx-seg: var(--h-slate); }
+  &--teal { --pgx-seg: var(--h-teal); }
+  &--cyan { --pgx-seg: var(--h-cyan); }
+  &--olive { --pgx-seg: var(--h-olive); }
+  &--maroon { --pgx-seg: var(--h-maroon); }
+  &--violet { --pgx-seg: var(--h-violet); }
+  &--pink { --pgx-seg: var(--h-pink); }
+}
+
+// A linked badge keeps its own colour instead of the link colour, and answers
+// the pointer by deepening rather than by changing hue.
+a.pgx-b {
+  transition:
+    border-color 0.12s ease,
+    background-color 0.12s ease,
+    color 0.12s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: color-mix(in srgb, var(--pgx-seg) 62%, var(--line-2));
+    background: color-mix(in srgb, var(--pgx-seg) 14%, var(--bg-card));
+    color: var(--pgx-seg);
+    text-decoration: none;
+  }
+
+  &:not(.pgx-b--hued):hover {
+    border-color: var(--ink-3);
+    background: var(--bg-raise);
+    color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.pgx-b {
+    transition: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// PostgreSQL major-version strip
+// ---------------------------------------------------------------------------
+
+.pgx-vers {
+  display: inline-flex;
+  gap: 3px;
+  vertical-align: 0.04em;
+  white-space: nowrap;
+}
+
+.pgx-v {
+  min-width: 2.2em;
+  padding: 1px 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family: var(--td-meta-font-family);
+  font-size: 0.78em;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+
+  &--green {
+    border-color: color-mix(in srgb, var(--good) 34%, var(--line));
+    background: color-mix(in srgb, var(--good) 9%, var(--bg-card));
+    color: var(--good);
+  }
+  &--red {
+    border-color: color-mix(in srgb, var(--bad) 30%, var(--line));
+    background: color-mix(in srgb, var(--bad) 7%, var(--bg-card));
+    color: var(--bad);
+  }
+  &--yellow {
+    border-color: color-mix(in srgb, var(--c-TIME) 34%, var(--line));
+    background: color-mix(in srgb, var(--c-TIME) 9%, var(--bg-card));
+    color: var(--c-TIME);
+  }
+  &--blue {
+    border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+    background: var(--accent-wash);
+    color: var(--accent-fg);
+  }
+  &--orange {
+    border-color: color-mix(in srgb, var(--c-FTS) 34%, var(--line));
+    background: color-mix(in srgb, var(--c-FTS) 9%, var(--bg-card));
+    color: var(--c-FTS);
+  }
+  &--gray {
+    border-color: var(--line);
+    background: var(--bg-raise);
+    color: var(--ink-3);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 4 · Catalogue tables — psql density
+//
+// The generated pages are data sheets: 576-row extension lists, 16 × 5
+// availability matrices, per-major package tables. They get the dynamic
+// catalogue's table: a mono header rule, tight rows, and a wash on hover.
+// ---------------------------------------------------------------------------
+
+.td-content {
+  .td-table-scroll {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg-card);
+
+    > table {
+      margin: 0;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+
+      > thead th {
+        padding: 9px 12px;
+        border-bottom: 1px solid var(--line-2);
+        background: var(--bg-card);
+        color: var(--ink-3);
+        font-family: var(--td-meta-font-family);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+      }
+
+      > tbody td,
+      > tbody th {
+        padding: 7px 12px;
+        border-bottom: 1px solid var(--line);
+        vertical-align: baseline;
+      }
+
+      > tbody tr:last-child > * {
+        border-bottom: 0;
+      }
+
+      > tbody tr:hover {
+        background: var(--accent-wash);
+      }
+
+      // An extension id, a version, a package name: single tokens a squeezed
+      // column would otherwise break one character per line.
+      td > strong,
+      td > code,
+      th[scope='row'] > strong {
+        white-space: nowrap;
+      }
+
+      td > code {
+        background: none;
+        color: var(--ink-2);
+        font-size: 0.94em;
+      }
+    }
+  }
+
+  // Zebra striping fights the category colour, so the catalogue drops it.
+  .td-table.td-table:not(.td-initial) {
+    --bs-table-striped-bg: transparent;
+    --bs-table-bg: transparent;
+  }
+
+  td:has(.pgx-b),
+  td:has(.pgx-vers),
+  th:has(.pgx-b) {
+    padding-block: 5px;
+  }
+
+  td > .pgx-b + .pgx-b,
+  td > a + a > .pgx-b {
+    margin-inline-start: 2px;
+  }
+}
+
+// The availability matrix: `{.matrix}` gives it a sticky header and a sticky
+// first column from the theme; this only quiets the cells inside it.
+//
+// The table is never boxed into its own scroller. A platform page is one
+// table of several hundred rows and reads as a single sheet — so the page
+// scrolls, and the header pins below the site header instead of below the
+// top edge of a viewport-within-the-viewport.
+.td-content .td-table-scroll--matrix {
+  // The theme caps the region at 40rem and scrolls inside it. Releasing the
+  // cap is what makes the sheet one table — and it also keeps the page's own
+  // height honest, without which the sticky site header has nothing to stick
+  // to and scrolls away.
+  max-block-size: none;
+  overflow: visible;
+
+  > table {
+    td {
+      padding-block: 5px;
+      background-color: var(--bg-card);
+    }
+
+    th[scope='row'] {
+      padding-block: 5px;
+      background: var(--bg-card);
+      text-align: end;
+    }
+
+    thead th {
+      inset-block-start: var(--pgx-navbar-h);
+      background: var(--bg-raise);
+    }
+  }
+}
+
+// Per-major download tables inside the package tabs. Every column but the
+// filename is a short token, and wrapping those costs more height than the
+// row is worth; the wrapper scrolls instead.
+.td-content .td-tabs__panel-body .td-table-scroll > table {
+  td:not(:last-child),
+  th:not(:last-child) {
+    white-space: nowrap;
+  }
+
+  td {
+    padding-block: 6px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 5 · Category identity
+//
+// A category's colour is the same wherever it appears: the badge in a table,
+// the taxonomy chip under an extension's title, the term cloud in the rail,
+// and the facet button on the home console.
+// ---------------------------------------------------------------------------
+
+$pgext-categories: 'TIME' 'GIS' 'RAG' 'FTS' 'OLAP' 'FEAT' 'LANG' 'TYPE' 'UTIL'
+  'FUNC' 'ADMIN' 'STAT' 'SEC' 'FDW' 'SIM' 'ETL';
+
+@each $code in $pgext-categories {
+  $term: to-lower-case($code);
+
+  .pgx-b--cate-#{$term} {
+    --pgx-seg: var(--c-#{$code});
+  }
+
+  a.td-badge[href*='/categories/#{$term}/'],
+  a.td-shell-tag[href*='/categories/#{$term}/'] {
+    --pgx-seg: var(--c-#{$code});
+  }
+}
+
+// Taxonomy chips and the right-rail term cloud follow whatever `--pgx-seg`
+// the rules above resolved, and fall back to the ink scale when a term has no
+// colour of its own (tags, most licences).
+a.td-badge,
+a.td-shell-tag {
+  --pgx-seg: var(--ink-3);
+  border-color: color-mix(in srgb, var(--pgx-seg) 38%, var(--line));
+  background: color-mix(in srgb, var(--pgx-seg) 8%, var(--bg-card));
+  color: var(--pgx-seg);
+  font-family: var(--td-meta-font-family);
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--pgx-seg) 62%, var(--line));
+    background: color-mix(in srgb, var(--pgx-seg) 15%, var(--bg-card));
+    color: var(--pgx-seg);
+  }
+}
+
+a.td-badge--solid {
+  --td-badge-fg: var(--pgx-seg);
+  --td-badge-bg: color-mix(in srgb, var(--pgx-seg) 8%, var(--bg-card));
+  --td-badge-border: color-mix(in srgb, var(--pgx-seg) 38%, var(--line));
+}
+
+// The article's dimension chips are one row, not one row per taxonomy: an
+// extension's category, language, licence, repository and tags read together
+// as its identity line, the way they do on the dynamic catalogue's hero.
+.td-shell-article .td-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+// The theme gives each taxonomy block `width: 100%` so it owns a line; inside
+// the identity row they are flex items instead and size to their content.
+.td-shell-article .td-article-meta .td-taxonomy-terms-article {
+  width: auto;
+  margin: 0;
+}
+
+.td-shell-article .td-taxonomy-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Term clouds in the right rail: five dimensions is a lot of vertical space,
+// so the chips run tighter than the theme's default.
+.td-shell-tags-cloud__chips {
+  gap: 5px;
+}
+
+.td-shell-tag {
+  padding: 2px 7px;
+  font-size: 0.74rem;
+}
+
+// ---------------------------------------------------------------------------
+// 6 · The home console
+//
+// A port of the dynamic catalogue's front page: an almanac hero, a psql prompt
+// that filters the whole catalogue as you type, a facet panel that can be
+// scanned without opening a menu, and a wall of category-coloured cards.
+// Everything below the fetch is progressive — the shell and the sixteen
+// category entries are server-rendered.
+// ---------------------------------------------------------------------------
+
+.pgx-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+.pgx-eyebrow {
+  margin: 0;
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+
+  // The eyebrow reads as a SQL comment, because on this site it is one.
+  &::before {
+    content: '-- ';
+    opacity: 0.7;
+  }
+}
+
+.td-outer .pgx-hero {
+  padding-block: 56px 0;
+
+  h1 {
+    margin: 16px 0;
+    font-family: var(--td-display-font-family);
+    font-size: #{'clamp(30px, 4.9vw, 62px)'};
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+
+    em {
+      color: var(--accent-fg);
+      font-style: italic;
+    }
+  }
+}
+
+.pgx-hero-sub {
+  max-width: 76ch;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: #{'clamp(14px, 1.4vw, 17px)'};
+
+  b {
+    color: var(--ink);
+    font-weight: 650;
+  }
+}
+
+.pgx-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 26px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover .num {
+    color: var(--accent-fg);
+  }
+
+  .num {
+    display: block;
+    font-family: var(--td-meta-font-family);
+    font-size: 1.5rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    transition: color 0.12s ease;
+  }
+
+  .lbl {
+    display: block;
+    margin-top: 1px;
+    color: var(--ink-3);
+    font-size: 0.78rem;
+  }
+}
+
+// --------------------------------------------------------------- the prompt
+
+.td-outer .pgx-console {
+  margin-block: 26px 0;
+  padding-block: 0 64px;
+}
+
+.pgx-searchbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-wash), var(--shadow);
+  }
+
+  .prompt {
+    color: var(--accent-fg);
+    font-family: var(--td-meta-font-family);
+    font-size: 1rem;
+    user-select: none;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    font-family: var(--td-meta-font-family);
+    font-size: 1rem;
+    outline: none;
+
+    &::placeholder {
+      color: var(--ink-3);
+      opacity: 0.75;
+    }
+  }
+
+  // Bootstrap's kbd is a solid dark chip; here it is the quiet hint that the
+  // slash key focuses this field.
+  kbd {
+    padding: 1px 7px;
+    border: 1px solid var(--line-2);
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    background: none;
+    color: var(--ink-3);
+    font-size: 0.7rem;
+  }
+}
+
+// The readout states the query the console just answered. It is a button
+// because clicking it copies that query.
+.pgx-sql {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  align-items: baseline;
+  width: 100%;
+  margin: 12px 4px 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.79rem;
+  text-align: start;
+  cursor: pointer;
+
+  .kw {
+    color: var(--accent-fg);
+    font-weight: 600;
+  }
+
+  .lit {
+    color: var(--c-GIS);
+  }
+
+  .n {
+    margin-inline-start: auto;
+    color: var(--ink);
+    font-weight: 650;
+  }
+
+  &:hover .q {
+    color: var(--ink-2);
+  }
+
+  &.is-copied .n {
+    color: var(--good);
+  }
+}
+
+// ---------------------------------------------------------------- the facets
+
+.pgx-facets {
+  overflow: hidden;
+  margin: 22px 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg-card) 78%, var(--bg));
+}
+
+.pgx-facet {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 11px 15px;
+  border-bottom: 1px solid var(--line);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.pgx-facet-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  padding-top: 5px;
+  color: inherit;
+  text-decoration: none;
+
+  b {
+    color: var(--ink-2);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
+
+  i {
+    color: var(--ink-3);
+    font-size: 0.62rem;
+    font-style: normal;
+    opacity: 0;
+    transition: opacity 0.12s ease, transform 0.12s ease;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    b,
+    i {
+      color: var(--accent-fg);
+    }
+
+    i {
+      opacity: 1;
+      transform: translateX(2px);
+    }
+  }
+}
+
+.pgx-facet-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.pgx-fbtn {
+  --pgx-seg: var(--ink-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--bg-card);
+  color: var(--ink-2);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 0.1s ease,
+    background-color 0.1s ease,
+    color 0.1s ease;
+
+  &:hover {
+    border-color: var(--line-2);
+    background: var(--bg-raise);
+    color: var(--ink);
+  }
+
+  small {
+    color: var(--ink-3);
+    font-size: 0.66rem;
+  }
+
+  // The colour swatch is the same square the card band uses, so a facet and
+  // the results it produces are recognisably the same thing.
+  &.hued > i {
+    flex: 0 0 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--pgx-seg);
+    opacity: 0.85;
+  }
+
+  code {
+    padding: 0;
+    background: none;
+    color: var(--pgx-seg);
+    font-size: 0.74rem;
+    font-weight: 750;
+  }
+
+  &[aria-pressed='true'] {
+    border-color: color-mix(in srgb, var(--pgx-seg) 65%, var(--line));
+    background: color-mix(in srgb, var(--pgx-seg) 10%, var(--bg-card));
+    color: var(--ink);
+    font-weight: 650;
+  }
+
+  &.any[aria-pressed='true'] {
+    border-color: var(--accent);
+    background: var(--accent-wash);
+    color: var(--accent-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pgx-fbtn,
+  .pgx-facet-head i,
+  .pgx-hero-stats .num {
+    transition: none;
+  }
+}
+
+// --------------------------------------------------------------- the toolbar
+
+.pgx-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 50px;
+  margin: 16px 0 4px;
+  padding: 8px 11px 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--bg-card);
+}
+
+.pgx-count {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  white-space: nowrap;
+
+  strong {
+    color: var(--ink);
+    font-family: var(--td-meta-font-family);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  span {
+    color: var(--ink-3);
+    font-size: 0.79rem;
+  }
+}
+
+.pgx-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 14px;
+  margin-inline-start: auto;
+}
+
+.pgx-sort {
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: var(--bg-card);
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-inline-end: 1px solid var(--line);
+    color: var(--ink-3);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.75rem;
+  }
+
+  > select {
+    min-height: 28px;
+    padding: 3px 10px;
+    border: 0;
+    background: var(--accent-wash);
+    color: var(--ink);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.75rem;
+    font-weight: 650;
+    cursor: pointer;
+  }
+}
+
+.pgx-view {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+
+  button {
+    padding: 4px 10px;
+    border: 0;
+    background: var(--bg-card);
+    color: var(--ink-3);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.75rem;
+    cursor: pointer;
+
+    + button {
+      border-inline-start: 1px solid var(--line);
+    }
+
+    &[aria-pressed='true'] {
+      background: var(--accent-wash);
+      color: var(--ink);
+      font-weight: 650;
+    }
+  }
+}
+
+// ------------------------------------------------------------ the ext wall
+
+.pgx-wall {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 11px;
+  margin: 18px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 1080px) {
+  .pgx-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 820px) {
+  .pgx-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pgx-facet { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 540px) {
+  .pgx-wall { grid-template-columns: 1fr; }
+}
+
+// One card: the whole face is the link, with the category band down its edge.
+// A packaged extension carries the emphasis — it is the one you can install.
+.pgx-card {
+  --pgx-seg: var(--ink-3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100%;
+  padding: 12px 14px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-card);
+  transition:
+    border-color 0.12s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    border-radius: 10px 0 0 10px;
+    background: var(--pgx-seg);
+    opacity: 0.4;
+  }
+
+  &.is-packaged {
+    border-color: color-mix(in srgb, var(--pgx-seg) 42%, var(--line-2));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pgx-seg) 20%, transparent);
+
+    &::before {
+      opacity: 0.95;
+    }
+  }
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--pgx-seg) 60%, var(--line));
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-1px);
+  }
+
+  // The cover owns the whole card; real links inside sit above it.
+  > :not(.pgx-card-cover) {
+    position: relative;
+    pointer-events: none;
+  }
+
+  a:not(.pgx-card-cover) {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+  }
+}
+
+.pgx-card-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.pgx-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pgx-card-name {
+  overflow: hidden;
+  min-width: 0;
+  color: var(--ink);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pgx-card-stars {
+  margin-inline-start: auto;
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.pgx-card-sub {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  min-width: 0;
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.72rem;
+
+  > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.pgx-card-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: 2.6em;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.pgx-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 3px;
+}
+
+.pgx-tg {
+  --pgx-seg: var(--ink-3);
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  padding: 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg-raise);
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.66rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &--hued {
+    border-color: color-mix(in srgb, var(--pgx-seg) 38%, var(--line));
+    background: color-mix(in srgb, var(--pgx-seg) 8%, var(--bg-card));
+    color: var(--pgx-seg);
+  }
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--pgx-seg) 62%, var(--line));
+    background: color-mix(in srgb, var(--pgx-seg) 15%, var(--bg-card));
+    color: var(--pgx-seg);
+    text-decoration: none;
+  }
+}
+
+// ------------------------------------------------------------- the row view
+
+.pgx-rows {
+  overflow-x: auto;
+  margin: 18px 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-card);
+
+  table {
+    width: 100%;
+    min-width: 860px;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+  }
+
+  th {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--line-2);
+    color: var(--ink-3);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: start;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: baseline;
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  tbody tr:hover {
+    background: var(--accent-wash);
+  }
+
+  .r-name a {
+    font-family: var(--td-meta-font-family);
+    font-size: 0.84rem;
+    font-weight: 650;
+  }
+
+  .r-cat {
+    color: var(--pgx-seg, var(--ink-3));
+    font-family: var(--td-meta-font-family);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .r-mono {
+    color: var(--ink-3);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  .r-desc {
+    max-width: 420px;
+    color: var(--ink-2);
+  }
+}
+
+.pgx-empty {
+  margin: 30px 0 40px;
+  padding: 40px;
+  border: 1px dashed var(--line-2);
+  border-radius: 12px;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+.pgx-more {
+  display: block;
+  margin: 0 auto 16px;
+  padding: 7px 18px;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--ink-2);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.79rem;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--accent);
+    background: var(--accent-wash);
+    color: var(--accent-fg);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 7 · Extension page tables
+//
+// Two of the tables on an extension page are catalogue instruments rather than
+// prose: the delivery summary and the per-major download list. The generator
+// marks them `{.packages}` and `{.downloads}`, which the theme passes through
+// to the table element, so each can take the column rhythm its data wants.
+// ---------------------------------------------------------------------------
+
+.td-content .td-table-scroll > table.packages {
+  // Type and repository are two-token columns; the package pattern is the one
+  // that deserves the room, so nothing else is allowed to grow.
+  td:first-child {
+    color: var(--ink-3);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  td:nth-child(5) {
+    font-family: var(--td-meta-font-family);
+    font-size: 0.8rem;
+  }
+
+  td,
+  th {
+    white-space: nowrap;
+  }
+
+  td:nth-child(5),
+  th:nth-child(5) {
+    width: 99%;
+    white-space: normal;
+  }
+}
+
+.td-content .td-table-scroll > table.downloads {
+  // A download row is: what it is called, how big it is, where it comes from.
+  // The filename column absorbs the width; everything else stays a token.
+  td:first-child {
+    color: var(--ink-2);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+
+  td:nth-child(5),
+  th:nth-child(5) {
+    color: var(--ink-3);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.76rem;
+    text-align: end;
+  }
+
+  td:last-child,
+  th:last-child {
+    width: 99%;
+    white-space: normal;
+  }
+
+  // The filename is the download, so it is the one thing allowed to wrap:
+  // truncating it would hide the architecture and the distribution codename,
+  // which is most of what tells two rows apart.
+  td:last-child a {
+    font-family: var(--td-meta-font-family);
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+  }
+
+  td:last-child a::before {
+    content: '↓';
+    display: inline-block;
+    margin-inline-end: 6px;
+    color: var(--ink-3);
+    font-weight: 700;
+  }
+
+  tbody tr:hover td:last-child a::before {
+    color: var(--accent-fg);
+  }
+}
+
+// Scrolling data surfaces keep a hairline scrollbar in the page's own ink
+// rather than the user agent's default furniture.
+.td-content .td-table-scroll,
+.td-content .td-tabs__panel-body,
+.pgx-rows {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-2) transparent;
+}
+
+// Term pages reuse the console's wall, so the same extension looks the same
+// whether you found it by searching or by following a dimension.
+.pgx-wall--term {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.pgx-term-count {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-block: 4px 0;
+
+  strong {
+    color: var(--ink);
+    font-family: var(--td-meta-font-family);
+    font-size: 1.05rem;
+  }
+
+  span {
+    color: var(--ink-3);
+    font-size: 0.82rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Dimension index — every value of one taxonomy, sized by its share
+// ---------------------------------------------------------------------------
+
+.pgx-dims {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
+  max-width: 1200px;
+  margin: 18px auto 40px;
+  padding-inline: 24px;
+  list-style: none;
+}
+
+.pgx-dim {
+  --pgx-seg: var(--ink-3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-card);
+  transition:
+    border-color 0.12s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    border-radius: 10px 0 0 10px;
+    background: var(--pgx-seg);
+    opacity: 0.85;
+  }
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--pgx-seg) 60%, var(--line));
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-1px);
+  }
+}
+
+.pgx-dim-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.pgx-dim-name {
+  overflow: hidden;
+  color: var(--pgx-seg);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pgx-dim-n {
+  margin-inline-start: auto;
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.pgx-dim-desc {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.pgx-dim-bar {
+  height: 4px;
+  margin-top: auto;
+  border-radius: 2px;
+  background: var(--bg-raise);
+
+  > i {
+    display: block;
+    height: 100%;
+    border-radius: 2px;
+    background: var(--pgx-seg);
+    opacity: 0.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pgx-dim,
+  .pgx-card {
+    transition: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 8 · The global matrix
+//
+// One sheet: 407 packages down, sixteen platforms × five majors across. The
+// page exists to be read at a glance, so the grid is sized from the container
+// rather than from a fixed cell width — `--cell-size` is whatever is left of
+// the canvas after the package column, divided by the eighty data columns.
+// Widen the window and the dots grow; nothing ever scrolls sideways.
+// ---------------------------------------------------------------------------
+
+.mx-page {
+  container-type: inline-size;
+  --mx-pkg-col: #{'clamp(132px, 12cqw, 184px)'};
+  --mx-cell: #{'max(7px, calc((100cqw - var(--mx-pkg-col) - 2px) / 80))'};
+  // Rows run shorter than the cells are wide, which is what keeps four
+  // hundred packages within a few screens instead of a dozen. The dynamic
+  // catalogue draws the same sheet at fifteen pixels a row.
+  --mx-row: #{'max(12px, calc(var(--mx-cell) * 0.84))'};
+  // Both header rows pin below the site header, not behind it.
+  --mx-top: var(--pgx-navbar-h);
+  width: 100%;
+  padding: 28px 20px 56px;
+}
+
+.mx-head {
+  margin-bottom: 14px;
+
+  h1 {
+    margin: 8px 0 6px;
+    font-family: var(--td-display-font-family);
+    font-size: #{'clamp(30px, 4.2vw, 52px)'};
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+  }
+}
+
+.mx-lede {
+  max-width: 78ch;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+
+  b {
+    color: var(--ink);
+    font-weight: 650;
+  }
+}
+
+.mx-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin: 16px 0 10px;
+}
+
+.mx-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mx-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-card);
+  color: var(--ink-2);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.72rem;
+
+  > i {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+  }
+
+  em {
+    color: var(--ink-3);
+    font-style: normal;
+  }
+}
+
+.mx-links {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 0 auto;
+  font-family: var(--td-meta-font-family);
+  font-size: 0.74rem;
+}
+
+.mx-note {
+  max-width: 96ch;
+  margin: 14px 0 0;
+  color: var(--ink-3);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+// The four cell states. `.n` is not "unknown" — it is a combination that never
+// applied, so it stays quiet rather than alarming.
+.mx-lg > i.g,
+.mx-matrix td.g { background: var(--gmx-pigsty); }
+.mx-lg > i.b,
+.mx-matrix td.b { background: var(--gmx-pgdg); }
+.mx-lg > i.r,
+.mx-matrix td.r { background: var(--gmx-missing); }
+.mx-lg > i.n,
+.mx-matrix td.n { background: var(--gmx-na); }
+
+.mx-matrix {
+  overflow: visible;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  th,
+  td {
+    padding: 0;
+    border-inline-end: 1px solid var(--line);
+    border-block-end: 1px solid var(--line);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  // Both header rows and the package column pin, so a slot in the middle of
+  // four hundred rows can still be named. The stacking order is the reading
+  // order: corner over headers, headers over the package column, package
+  // column over the grid.
+  thead th {
+    position: sticky;
+    z-index: 6;
+    background: var(--bg-raise);
+  }
+
+  thead tr:first-child th { inset-block-start: var(--mx-top); }
+  thead tr:nth-child(2) th { inset-block-start: #{'calc(var(--mx-top) + 22px)'}; }
+
+  thead th.mx-corner {
+    inset-block-start: var(--mx-top);
+    z-index: 8;
+  }
+
+  tbody th.mx-pkg {
+    z-index: 3;
+  }
+}
+
+.mx-col-pkg { width: var(--mx-pkg-col); }
+.mx-col-cell { width: var(--mx-cell); }
+
+.mx-corner,
+.mx-pkg {
+  position: sticky;
+  inset-inline-start: 0;
+  width: var(--mx-pkg-col);
+  min-width: var(--mx-pkg-col);
+  max-width: var(--mx-pkg-col);
+  background: var(--bg-card);
+  text-align: start;
+}
+
+.mx-corner {
+  height: 37px;
+  padding-inline-start: 9px;
+  background: var(--bg-raise);
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.mx-os {
+  height: 22px;
+  color: var(--ink-2);
+  font-family: var(--td-meta-font-family);
+  font-size: #{'clamp(7px, calc(var(--mx-cell) * 0.72), 11px)'};
+  font-weight: 700;
+
+  a { color: inherit; }
+}
+
+.mx-pg {
+  height: 15px;
+  color: var(--ink-3);
+  font-family: var(--td-meta-font-family);
+  font-size: #{'clamp(6px, calc(var(--mx-cell) * 0.52), 9px)'};
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mx-pkg {
+  overflow: hidden;
+  height: var(--mx-row);
+  padding-inline: 9px;
+  font-family: var(--td-meta-font-family);
+  font-size: #{'clamp(8px, calc(var(--mx-row) * 0.74), 11px)'};
+  font-weight: 600;
+  line-height: var(--mx-row);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  a { color: var(--ink-2); }
+  a:hover { color: var(--accent-fg); }
+}
+
+// A cell is a padded box whose content area is the coloured slot, so the grid
+// needs no inner element: 32,560 spans saved is half a megabyte of markup.
+.mx-matrix tbody td {
+  height: var(--mx-row);
+  padding: 1.5px 2px;
+  background-clip: content-box;
+  border-radius: 3px;
+}
+
+// Every platform group starts on the first of its five majors: cell 2, 7, 12…
+.mx-matrix tbody td:nth-child(5n + 2),
+.mx-matrix thead tr:nth-child(2) th:nth-child(5n + 1),
+.mx-matrix thead tr:first-child th + th {
+  border-inline-start: 2px solid var(--line-2);
+}
+
+.mx-matrix tbody tr:hover td {
+  outline: 1px solid var(--accent-wash);
+}
+
+.mx-matrix tbody tr:hover .mx-pkg {
+  background: var(--accent-wash);
+}
+
+.mx-matrix tbody tr:last-child > * {
+  border-block-end: 0;
+}
+
+@container (max-width: 900px) {
+  .mx-page {
+    --mx-pkg-col: 112px;
+    padding-inline: 12px;
+  }
+}
+
+@media print {
+  .mx-matrix {
+    box-shadow: none;
+  }
+}

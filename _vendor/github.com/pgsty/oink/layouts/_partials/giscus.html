@@ -1,0 +1,85 @@
+{{/* Hugo normalizes keys under Params to lowercase. */ -}}
+{{- $giscus := .Site.Params.comments.giscus | default dict -}}
+{{- $repo := index $giscus "repo" -}}
+{{- $repoID := index $giscus "repoid" -}}
+{{- $category := index $giscus "category" -}}
+{{- $categoryID := index $giscus "categoryid" -}}
+
+{{- $lang := index $giscus "lang" | default "" -}}
+{{- if not $lang -}}
+  {{- $candidate := .Site.Language.Name | default "en" | replaceRE "_" "-" | lower -}}
+  {{- if hasPrefix $candidate "zh" -}}
+    {{- $candidate = .Site.Language.Locale | default $candidate | replaceRE "_" "-" | lower -}}
+    {{- if or (in $candidate "-tw") (in $candidate "hant") -}}
+      {{- $lang = "zh-TW" -}}
+    {{- else if in $candidate "-hk" -}}
+      {{- $lang = "zh-HK" -}}
+    {{- else -}}
+      {{- $lang = "zh-CN" -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $baseLang := index (split $candidate "-") 0 -}}
+    {{- $supported := slice
+      "ar" "be" "bg" "ca" "cs" "da" "de" "en" "eo" "es" "eu" "fa"
+      "fr" "gr" "hbs" "he" "hu" "id" "it" "ja" "kh" "ko" "nl" "pl"
+      "pt" "ro" "ru" "th" "tr" "uk" "uz" "vi"
+    -}}
+    {{- $lang = cond (in $supported $baseLang) $baseLang "en" -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $strict := 0 -}}
+{{- if isset $giscus "strict" -}}
+  {{- $value := printf "%v" (index $giscus "strict") | lower -}}
+  {{- $strict = cond (or (eq $value "1") (eq $value "true")) 1 0 -}}
+{{- end -}}
+{{- $reactionsEnabled := 1 -}}
+{{- if isset $giscus "reactionsenabled" -}}
+  {{- $value := printf "%v" (index $giscus "reactionsenabled") | lower -}}
+  {{- $reactionsEnabled = cond (or (eq $value "1") (eq $value "true")) 1 0 -}}
+{{- end -}}
+{{- $emitMetadata := 0 -}}
+{{- if isset $giscus "emitmetadata" -}}
+  {{- $value := printf "%v" (index $giscus "emitmetadata") | lower -}}
+  {{- $emitMetadata = cond (or (eq $value "1") (eq $value "true")) 1 0 -}}
+{{- end -}}
+
+{{- .Page.Store.Set "hasGiscus" true -}}
+{{- $ariaLabel := index $giscus "arialabel" | default "Comments" -}}
+{{- $errorMessage := index $giscus "errormessage" | default "Comments could not be loaded." -}}
+{{- $theme := index $giscus "theme" | default "auto" -}}
+{{- /* OINK's own giscus palettes are published only on pages that render
+       comments; a site may still name a giscus built-in theme or its own
+       stylesheet URL. */ -}}
+{{- $lightTheme := index $giscus "lighttheme" | default (resources.Get "css/giscus-light.css").Permalink -}}
+{{- $darkTheme := index $giscus "darktheme" | default (resources.Get "css/giscus-dark.css").Permalink -}}
+<section id="td-comments" class="td-comments d-print-none"
+  data-td-giscus
+  data-repo="{{ $repo }}"
+  data-repo-id="{{ $repoID }}"
+  data-category="{{ $category }}"
+  data-category-id="{{ $categoryID }}"
+  data-mapping="{{ index $giscus "mapping" | default "pathname" }}"
+  data-strict="{{ $strict }}"
+  data-reactions-enabled="{{ $reactionsEnabled }}"
+  data-emit-metadata="{{ $emitMetadata }}"
+  data-input-position="{{ index $giscus "inputposition" | default "top" }}"
+  data-theme="{{ $theme }}"
+  data-td-theme-light="{{ $lightTheme }}"
+  data-td-theme-dark="{{ $darkTheme }}"
+  data-lang="{{ $lang }}"
+  data-loading="{{ index $giscus "loading" | default "lazy" }}"
+  {{- with index $giscus "term" }} data-term="{{ . }}"{{ end }}
+  data-td-error-message="{{ $errorMessage }}"
+  aria-label="{{ $ariaLabel }}"
+  aria-busy="true">
+  <div data-td-giscus-container></div>
+  <p class="small text-body-secondary mt-2 mb-0 d-none"
+    data-td-giscus-status role="status" aria-live="polite"></p>
+  <noscript>
+    <p class="small text-body-secondary mt-2 mb-0">
+      {{ T "comments_noscript" }}
+      <a href="https://github.com/{{ $repo }}/discussions">{{ T "comments_noscript_link" }}</a>
+    </p>
+  </noscript>
+</section>

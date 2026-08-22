@@ -1,0 +1,6 @@
+{{- /* Escape a resolved URL for a Markdown link or image destination. */ -}}
+{{- $value := printf "%v" . -}}
+{{- $value = replace $value `\` `\\` -}}
+{{- $value = replace $value "(" `\(` -}}
+{{- $value = replace $value ")" `\)` -}}
+{{- return $value -}}

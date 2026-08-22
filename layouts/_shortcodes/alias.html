@@ -1,25 +1,26 @@
+{{- /*
+Link to an extension page, labelled `extension / package` when they differ.
+
+@param {string} 0 canonical extension name (required)
+@param {string} 1 source package name (optional)
+*/ -}}
 {{- $ext := trim (.Get 0) " " -}}
 {{- $pkg := cond (ge (len .Params) 2) (trim (.Get 1) " ") "" -}}
-
-{{- $displayName := $ext -}}
+{{- $label := $ext -}}
+{{- $title := printf "Extension: %s" $ext -}}
 {{- if and $pkg (ne $pkg $ext) -}}
-  {{- $displayName = printf "%s / %s" $ext $pkg -}}
+  {{- $label = printf "%s / %s" $ext $pkg -}}
+  {{- $title = printf "Extension: %s (Package: %s)" $ext $pkg -}}
 {{- end -}}
-
 {{- if $ext -}}
-  <span style="white-space: nowrap;"><a href="{{ printf "/e/%s" $ext }}" title="Extension: {{ $ext }}{{- if and $pkg (ne $pkg $ext) }} (Package: {{ $pkg }}){{- end }}">
-    {{- partial "shortcodes/badge.html" (dict
-      "content" $displayName
-      "color" "gray"
-      "border" true
-      )
-    -}}
-  </a></span>
-{{- else -}}
-  {{- partial "shortcodes/badge.html" (dict
-    "content" "unknown"
+  {{- partial "pgext/badge.html" (dict
+    "content" $label
     "color" "gray"
-    "border" true
-    )
-  -}}
+    "link" (printf "/e/%s" $ext)
+    "title" $title
+    "mono" true
+    "class" "pgx-b--nowrap"
+  ) -}}
+{{- else -}}
+  {{- partial "pgext/badge.html" (dict "content" "unknown" "color" "gray") -}}
 {{- end -}}

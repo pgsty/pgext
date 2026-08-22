@@ -1,0 +1,47 @@
+{{ $scssMain := "scss/main.scss" -}}
+{{ $scss := resources.Get $scssMain
+      | toCSS (dict "enableSourceMap" (not hugo.IsProduction)) -}}
+{{/* Font Awesome 7's source SCSS requires Dart Sass, while Hugo Extended
+     uses LibSass. Concatenate the official compiled CSS so the dependency
+     stays local and remains part of the theme's single stylesheet. */ -}}
+{{ $fontAwesome := slice
+      (resources.Get "third_party/Font-Awesome/css/fontawesome.css")
+      (resources.Get "third_party/Font-Awesome/css/solid.css")
+      (resources.Get "third_party/Font-Awesome/css/regular.css")
+      (resources.Get "third_party/Font-Awesome/css/brands.css")
+-}}
+{{ $css := $fontAwesome | append $scss | resources.Concat "scss/main.css" -}}
+
+{{ if hugo.IsProduction -}}
+  {{ $css = $css | minify | fingerprint -}}
+  <link rel="preload" href="{{ $css.RelPermalink }}" as="style" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{ end -}}
+
+{{ with $css -}}
+  <link href="{{ .RelPermalink }}" rel="stylesheet"
+  {{- with .Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end -}}
+  >
+{{ else -}}
+  {{ warnf "stylesheet: resource not found or CSS build failed: %s; the page will render unstyled" $scssMain -}}
+{{ end -}}
+
+{{/* Bootstrap publishes its RTL transform as a release artifact. Keep that
+consumer-side artifact local instead of invoking PostCSS/rtlcss during a Hugo
+build. The main bundle already supplies Bootstrap and project color tokens, so
+strip only the RTL artifact's first light/dark token blocks before publishing
+it. Directional rules remain later in the cascade; project token overrides keep
+their ordinary specificity and source order. */ -}}
+{{ if eq .Site.Language.Direction "rtl" -}}
+  {{ $rtl := resources.Get "third_party/bootstrap/dist/css/bootstrap.rtl.min.css" -}}
+  {{ $rtlContent := replaceRE `:root,\[data-bs-theme=light\]\{[^}]*\}` "" $rtl.Content 1 -}}
+  {{ $rtlContent = replaceRE `\[data-bs-theme=dark\]\{[^}]*\}` "" $rtlContent 1 -}}
+  {{ $rtl = resources.FromString "third_party/bootstrap/dist/css/bootstrap.rtl.oink.min.css" $rtlContent -}}
+  {{ if hugo.IsProduction -}}
+    {{ $rtl = $rtl | fingerprint -}}
+  {{ end -}}
+  <link href="{{ $rtl.RelPermalink }}" rel="stylesheet"
+  {{- with $rtl.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end -}}
+  >
+{{ end -}}
+
+{{- /**/ -}}

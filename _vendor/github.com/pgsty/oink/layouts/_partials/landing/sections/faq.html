@@ -1,0 +1,36 @@
+{{- $page := .page -}}
+{{- $data := .data -}}
+{{- $id := .id -}}
+{{- $style := lower (strings.TrimSpace (printf "%v" ($data.style | default "accordion"))) -}}
+{{- if not (in (slice "accordion" "flat") $style) }}{{ warnf "%s: faq.style must be accordion or flat; using accordion" $page.Path }}{{ $style = "accordion" }}{{ end -}}
+<section id="{{ $id }}" class="td-landing-section td-landing-faq-section{{ with $data.class }} {{ . }}{{ end }}"{{ with $data.title }} aria-labelledby="{{ $id }}-title"{{ end }}>
+  <div class="td-site-container">
+    {{- partial "landing/heading.html" (dict "page" $page "data" $data "id" $id) }}
+    {{- with $data.items }}
+    <div class="td-landing-faq-list td-landing-faq-list--{{ $style }}">
+      {{- range . }}
+      {{- if eq $style "flat" }}
+      <article class="td-landing-faq td-landing-faq--flat">
+        <h3>{{ partial "landing/markdown.html" (dict "page" $page "value" (.question | default .title)) }}</h3>
+        <div class="td-landing-faq__answer">
+          {{- partial "landing/markdown-block.html" (dict "page" $page "value" (.answer | default .desc | default .text)) -}}
+          {{- partial "landing/action.html" (dict "page" $page "item" . "label" (.link_label | default $data.link_label)) }}
+        </div>
+      </article>
+      {{- else }}
+      <details class="td-landing-faq"{{ if .open }} open{{ end }}>
+        {{- /* The summary is a flex row (question, toggle glyph). The question is
+             wrapped so inline Markdown — `code`, links, emphasis — stays one
+             flex item instead of each fragment spreading across the row. */}}
+        <summary><span>{{ partial "landing/markdown.html" (dict "page" $page "value" (.question | default .title)) }}</span><i class="fa-solid fa-plus" aria-hidden="true"></i></summary>
+        <div class="td-landing-faq__answer">
+          {{- partial "landing/markdown-block.html" (dict "page" $page "value" (.answer | default .desc | default .text)) -}}
+          {{- partial "landing/action.html" (dict "page" $page "item" . "label" (.link_label | default $data.link_label)) }}
+        </div>
+      </details>
+      {{- end }}
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</section>

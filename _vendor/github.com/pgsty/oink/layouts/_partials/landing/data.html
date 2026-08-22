@@ -1,0 +1,76 @@
+{{- /* Resolve a non-home landing page. Front matter may either provide an
+     inline sections array or name data/landing/<key>.yaml (or the localized
+     data/landing/<key>/<lang>.yaml form), never both. */ -}}
+{{- $page := . -}}
+{{- $position := $page.Path | default $page.RelPermalink -}}
+{{- $hasInline := isset $page.Params "sections" -}}
+{{- $key := strings.TrimSpace (printf "%v" ($page.Params.landing | default "")) -}}
+{{- $data := dict -}}
+{{- if and $hasInline $key -}}
+  {{- warnf "%s: landing and sections are mutually exclusive; using the inline sections" $position -}}
+  {{- $key = "" -}}
+{{- end -}}
+{{- if $hasInline -}}
+  {{- if not (reflect.IsSlice $page.Params.sections) -}}
+    {{- warnf "%s: landing sections must be an array; rendering no sections" $position -}}
+  {{- else if not $page.Params.sections -}}
+    {{- warnf "%s: landing sections must not be empty; rendering no sections" $position -}}
+  {{- else -}}
+    {{- $data = dict "sections" $page.Params.sections -}}
+  {{- end -}}
+{{- else -}}
+  {{- if not $key -}}
+    {{- warnf "%s: layout landing requires either landing: <key> or inline sections; rendering no sections" $position -}}
+  {{- else if not (findRE `^[A-Za-z0-9][A-Za-z0-9_-]*$` $key) -}}
+    {{- warnf "%s: landing key %q contains unsupported characters; rendering no sections" $position $key -}}
+    {{- $key = "" -}}
+  {{- end -}}
+  {{- if $key -}}
+
+  {{- $root := index hugo.Data "landing" | default dict -}}
+  {{- $raw := index $root $key | default false -}}
+  {{- if not $raw -}}
+    {{- warnf "%s: data/landing/%s was not found; rendering no sections" $position $key -}}
+    {{- $raw = dict -}}
+  {{- else if not (reflect.IsMap $raw) -}}
+    {{- warnf "%s: data/landing/%s must contain a map; rendering no sections" $position $key -}}
+    {{- $raw = dict -}}
+  {{- end -}}
+
+  {{- /* A direct map with sections is the single-file form. Otherwise resolve
+       the language directory with full tag -> primary tag -> English fallback. */ -}}
+  {{- if isset $raw "sections" -}}
+    {{- $data = $raw -}}
+  {{- else -}}
+    {{- $lang := lower $page.Site.Language.Lang -}}
+    {{- $langKey := replace $lang "-" "_" -}}
+    {{- $primary := index (split $langKey "_") 0 -}}
+    {{- with index $raw $lang }}
+      {{- $data = . -}}
+    {{- else }}{{ with index $raw $langKey }}
+      {{- $data = . -}}
+    {{- else }}{{ with index $raw $primary }}
+      {{- $data = . -}}
+    {{- else }}{{ with index $raw "en" }}
+      {{- $data = . -}}
+    {{- end }}{{ end }}{{ end }}{{ end -}}
+  {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- /* Every failure above resolves to no sections rather than stopping the
+     build: the landing page renders its shell and the author sees the reason
+     in the log. */ -}}
+{{- if not (reflect.IsMap $data) -}}
+  {{- warnf "%s: data/landing/%s has no map for language %q; rendering no sections" $position $key $page.Site.Language.Lang -}}
+  {{- $data = dict "sections" slice -}}
+{{- else if not (isset $data "sections") -}}
+  {{- warnf "%s: data/landing/%s must define sections; rendering no sections" $position $key -}}
+  {{- $data = dict "sections" slice -}}
+{{- else if not (reflect.IsSlice $data.sections) -}}
+  {{- warnf "%s: data/landing/%s sections must be an array; rendering no sections" $position $key -}}
+  {{- $data = dict "sections" slice -}}
+{{- else if not $data.sections -}}
+  {{- warnf "%s: data/landing/%s sections must not be empty; rendering no sections" $position $key -}}
+{{- end -}}
+{{- if not (isset $data "sections") }}{{ $data = dict "sections" slice }}{{ end -}}
+{{- return $data -}}

@@ -1,266 +1,888 @@
+#==============================================================#
+# File      :   hugo.yaml
+# Desc      :   PGEXT.CLOUD static site configuration (OINK 0.6.0)
+# Path      :   hugo.yaml
+# Copyright (C) 2019-2026 Ruohang Feng
+#==============================================================#
+
+#---------------------------------------------------------------#
+# Basics
+#---------------------------------------------------------------#
 baseURL: 'https://pgext.cloud/'
 title: 'PGEXT.CLOUD'
 
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
 enableRobotsTXT: true
 enableGitInfo: true
+enableEmoji: true
 hasCJKLanguage: true
+capitalizeListTitles: false
+
+pagination:
+  pagerSize: 100
 
 services:
   googleAnalytics:
     ID: G-5HDLR6CMB4
-
-outputs:
-  home: [HTML]
-  page: [HTML]
-  section: [HTML, RSS]
-
-module:
-  imports:
-    - path: github.com/imfing/hextra
-
-defaultContentLanguage: en
-defaultContentLanguageInSubdir: false
-languages:
-  en:
-    label: English
-    locale: en
-    weight: 1
-    title: PGEXT.CLOUD
-    menu:
-      main:
-
-        - name: Pigsty
-          weight: 2
-          url: "https://pigsty.io"
-
-        - name: GitHub
-          weight: 3
-          url: "https://github.com/pgsty/pgext"
-          params:
-            icon: github
-
-        - name: Search
-          weight: 4
-          params:
-            type: search
-
-      sidebar:
-        - identifier: more
-          name: Links
-          params:
-            type: separator
-          weight: 6
-        - identifier: chinese
-          name: "简体中文 ↗"
-          url: "/zh"
-          weight: 7
-        - identifier: galaxy
-          name: "Extension Galaxy"
-          url: "/galaxy"
-          weight: 8
-        - identifier: matrix
-          name: "Extension Matrix"
-          url: "/os/matrix"
-          weight: 9
-        - identifier: pigsty
-          name: "Pigsty, PG RDS ↗"
-          url: "https://pigsty.io"
-          weight: 10
-        - identifier: pigsty-doc
-          name: "Pigsty v4.4 Doc ↗"
-          url: "https://pigsty.io/docs"
-          weight: 11
-        - identifier: pgext
-          name: "PG Extension ↗"
-          url: "https://pigsty.io/ext"
-          weight: 12
-        - identifier: pig
-          name: "PIG Package Manager ↗"
-          url: "https://pig.pgsty.com"
-          weight: 13
-        - identifier: pgexp
-          name: "PG Exporter ↗"
-          url: "https://pigsty.io/docs/pg_exporter"
-          weight: 14
-        - identifier: vonng
-          name: "Author: Vonng ↗"
-          url: "https://vonng.com/en/"
-          weight: 15
-
-
-  zh:
-    label: 简体中文
-    locale: zh
-    weight: 2
-    title: PGEXT.CLOUD
-
-    menu:
-      main:
-        - name: Pigsty
-          weight: 2
-          url: "https://pigsty.cc"
-        - name: GitHub
-          weight: 3
-          url: "https://github.com/pgsty/pgext"
-          params:
-            icon: github
-        - name: Search
-          weight: 4
-          params:
-            type: search
-
-      sidebar:
-        - identifier: more
-          name: Links
-          params:
-            type: separator
-          weight: 6
-
-        - identifier: english
-          name: "English ↗"
-          url: "/"
-          weight: 7
-        - identifier: galaxy
-          name: "扩展宇宙"
-          url: "/galaxy"
-          weight: 8
-        - identifier: matrix
-          name: "可用矩阵"
-          url: "/os/matrix"
-          weight: 9
-        - identifier: pigsty
-          name: "Pigsty, PG RDS ↗"
-          url: "https://pigsty.cc"
-          weight: 10
-        - identifier: pigsty-doc
-          name: "Pigsty v4.4文档 ↗"
-          url: "https://pigsty.io/docs/"
-          weight: 11
-        - identifier: pgext
-          name: "PG 扩展目录 ↗"
-          url: "https://pigsty.cc/ext/"
-          weight: 12
-        - identifier: pig
-          name: "PIG 包管理器 ↗"
-          url: "https://pig.pgsty.com/zh"
-          weight: 13
-        - identifier: pgexp
-          name: "PG Exporter ↗"
-          url: "https://pigsty.cc/ext"
-          weight: 14
-        - identifier: vonng
-          name: "作者：Vonng ↗"
-          url: "https://vonng.com"
-          weight: 15
-        - name: PG 中文网
-          weight: 2
-          url: "https://pg.center"
-
-
-markup:
-  goldmark:
-    renderer:
-      unsafe: true           # 允许渲染原始 HTML
-    extensions:
-      footnote: true         # 开启脚注语法：[^id] / [^id]: text
-      linkify: true          # 自动将 URL 文本转为链接
-      table: true            # 启用 Markdown 表格
-      taskList: true         # 启用任务列表 [ ] / [x]
-      typographer: true      # 智能排版（引号、破折号等）
-    parser:
-      attribute: true        # 允许在标题后写 {#id .class key=val}，用于显式锚点
-      autoHeadingID: true    # 为标题自动生成 ID（手写 {#id} 会覆盖自动生成）
-      autoHeadingIDType: github  # 自动 ID 规则：github / blackfriday / none
-  tableOfContents:
-    startLevel: 2            # ToC 从 h2 开始
-    endLevel: 4              # ToC 到 h4 结束
-
-menu:
-  main:
-    - name: Search
-      weight: 1
-      params:
-        type: search
-    - name: GitHub
-      weight: 2
-      url: "https://github.com/pgsty/pgext"
-      params:
-        icon: github
-
 
 security:
   http:
     methods: ['(?i)GET|POST']
     urls: ['(?i)^https?://[a-z].*']
 
-params:
-  description: PostgreSQL Extension Catalog with 2,230 entries, including 575 packaged PG extensions across 16 Linux platforms
+#---------------------------------------------------------------#
+# OINK theme module
+#---------------------------------------------------------------#
+module:
+  hugoVersion:
+    extended: true
+    min: '0.160.1'
+  imports:
+    - path: github.com/pgsty/oink
+  mounts:
+    # English sources plus colocated `.zh.md` translations.
+    - source: content
+      target: content
+      sites:
+        matrix:
+          languages: [en, zh]
+    # The catalog's own CSV exports, so the home page can build its search
+    # payload from the same rows `pgext gen` writes the pages from. Declaring
+    # an assets mount replaces the default, so the site's own assets/ is
+    # restated here.
+    - source: assets
+      target: assets
+    - source: db
+      target: assets/db
+    # The global matrix's own export, so its page can be rendered from the
+    # same rows `pgext gen matrix` writes for the standalone viewer.
+    - source: static/matrix
+      target: assets/matrix
 
-  navbar:
-    displayTitle: true
-    displayLogo: true
-    logo:
-      path: /logo.png
-      dark: /logo.png
-    width: wide
+#---------------------------------------------------------------#
+# Outputs
+#---------------------------------------------------------------#
+# `markdown` / `print` stay off: 1,300+ generated catalog pages carry very
+# large availability matrices, and a second full render of each is not worth
+# the build cost. `LLMS` is a single cheap file that lists the site for agents.
+outputs:
+  home: [HTML, RSS, LLMS]
+  page: [HTML]
+  section: [HTML, RSS]
 
-  page:
-    # full (100%), wide (90rem), normal (80rem)
-    width: full
-
-  theme:
-    # light | dark | system
-    default: system
-    displayToggle: true
-
-  footer:
-    enable: false
-    displayCopyright: true
-    displayPoweredBy: false
-    width: normal
-
-  # Display the last modification date
-  displayUpdatedDate: true
-  dateFormat: "2006-01-02"
-
-  # Search
-  # flexsearch is enabled by default
-  search:
-    enable: true
-    type: flexsearch
-
-    flexsearch:
-      # index page by: content | summary | heading | title
-      index: content
-      # full | forward | reverse | strict
-      # https://github.com/nextapps-de/flexsearch/#tokenizer-prefix-search
-      tokenize: forward
-
-  editURL:
-    enable: true
-    base: "https://github.com/pgsty/pgext/edit/main/content"
-
-  toc:
-    displayTags: true
-
+#---------------------------------------------------------------#
+# Markdown
+#---------------------------------------------------------------#
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # generated pages embed raw HTML (matrix, legends)
+    parser:
+      autoHeadingID: true
+      autoHeadingIDType: github
+      # Block images can carry an attribute line; `{.cards}` / `{.steps}`
+      # markers need block attributes. Both are OINK component requirements.
+      wrapStandAloneImageWithinParagraph: false
+      attribute:
+        block: true
+        title: true
+    extensions:
+      footnote: true
+      linkify: true
+      table: true
+      taskList: true
+      typographer: true
+      # Chinese paragraphs are wrapped in the source like every other
+      # paragraph, but a soft line break between two East Asian characters
+      # would render as a visible space. This drops it; Latin text, where the
+      # space is wanted, is untouched.
+      cjk:
+        enable: true
+        eastAsianLineBreaks: true
+        eastAsianLineBreaksStyle: simple
+        escapedSpace: true
   highlight:
-    copy:
-      enable: true
-      # hover | always
-      display: hover
+    noClasses: false # required so code follows the light/dark palettes
+    codeFences: true
+    style: tango
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
 
-  comments:
-    enable: true
-    type: giscus
-    giscus:
-      repo: "pgsty/pig"
-      repoId: "MDEwOlJlcG9zaXRvcnkxMjA3MTA2NDQ"
-      category: "Announcements"
-      categoryId: "DIC_kwDOBzHl9M4CtlWB"
-      mapping: pathname
-      strict: 0
-      reactionsEnabled: 1
-      emitMetadata: 0
-      inputPosition: bottom
-      lang: en
-      theme: preferred_color_scheme
+#---------------------------------------------------------------#
+# Taxonomy
+#---------------------------------------------------------------#
+# Every packaged extension page carries `categories: [<CATE>]`, so the term
+# pages become a real second axis through the catalog.
+taxonomies:
+  category: categories
+  language: languages
+  license: licenses
+  repo: repos
+
+#---------------------------------------------------------------#
+# Cascade
+#---------------------------------------------------------------#
+# Everything except the home page reads as documentation, so it gets OINK's
+# docs shell: sidebar tree, outline, breadcrumb, pager. Targeting by kind
+# rather than putting the cascade in content/_index.md keeps the home page
+# itself on the landing layout.
+cascade:
+  - target:
+      kind: '{section,page}'
+    type: docs
+  # The platform and catalog pages are one very wide table each. They carry no
+  # taxonomy of their own, so dropping the term clouds lets an OS page give the
+  # whole canvas to its matrix instead of reserving an empty right rail.
+  - target:
+      path: '{/os/**,/list/**}'
+    toc_taxonomies: false
+  # Dimension pages are indexes, not documents. The extension tree in the
+  # sidebar has nothing to say about them, and the right rail's term clouds
+  # already carry the navigation, so they get the whole canvas for their wall.
+  - target:
+      kind: '{taxonomy,term}'
+    page_width: full
+    sidebar_enabled: false
+
+#---------------------------------------------------------------#
+# Languages and navigation
+#---------------------------------------------------------------#
+languages:
+  en:
+    label: English
+    locale: en-US
+    weight: 1
+    title: PGEXT.CLOUD
+    params:
+      description: >-
+        The PostgreSQL extension universe: 2,241 catalogued extensions, 576
+        packaged as native RPM/DEB across 16 Linux platforms.
+      ui:
+        alt_site: { label: 简体中文, url: /zh/ }
+        command_palette:
+          commands:
+            - id: galaxy
+              title: Extension Galaxy
+              description: Explore the whole extension universe as a star map
+              url: /galaxy/
+              icon: fa-solid fa-star
+              keywords: [galaxy, universe, map, visual]
+            - id: matrix
+              title: Availability Matrix
+              description: Every package against every OS and PG major
+              url: /matrix/
+              icon: fa-solid fa-table-cells
+              keywords: [matrix, availability, os, pg]
+            - id: pig
+              title: PIG Package Manager
+              description: Install PostgreSQL and its extensions from one CLI
+              url: https://pig.pgsty.com
+              icon: fa-solid fa-piggy-bank
+              keywords: [pig, cli, install, package manager]
+            - id: issues
+              title: Report a catalog issue
+              description: Missing extension, wrong metadata, broken package
+              url: https://github.com/pgsty/pgext/issues
+              icon: fa-brands fa-github
+              keywords: [bug, issue, report, missing]
+    menus:
+      main:
+        # The navbar mirrors the dynamic catalog at pgext.cloud: the extension
+        # list is the front door, platforms and the repository sit behind it,
+        # and About closes the row.
+        - identifier: extensions
+          name: Extensions
+          pageRef: /e
+          weight: 10
+          params: { icon: fa-solid fa-puzzle-piece }
+        - identifier: ext-all
+          parent: extensions
+          name: All extensions
+          pageRef: /e
+          weight: 11
+          params:
+            icon: fa-solid fa-list
+            description: 'Every packaged extension, one page each'
+        - identifier: ext-table
+          parent: extensions
+          name: Extension table
+          pageRef: /list/ext
+          weight: 12
+          params:
+            icon: fa-solid fa-table-list
+            description: 'The dense table: version, attributes, PG support'
+        - identifier: ext-packages
+          parent: extensions
+          name: Packages
+          pageRef: /list/pkg
+          weight: 13
+          params:
+            icon: fa-solid fa-box
+            description: 'One row per source package and its family'
+        - identifier: ext-category
+          parent: extensions
+          name: By category
+          pageRef: /categories
+          weight: 14
+          params:
+            icon: fa-solid fa-folder-tree
+            description: 'Sixteen categories, from TIME and GIS to RAG'
+        - identifier: ext-language
+          parent: extensions
+          name: By language
+          pageRef: /languages
+          weight: 15
+          params:
+            icon: fa-solid fa-code
+            description: 'C, C++, Rust, SQL, Java, Python and more'
+        - identifier: ext-license
+          parent: extensions
+          name: By licence
+          pageRef: /licenses
+          weight: 16
+          params:
+            icon: fa-solid fa-scale-balanced
+            description: 'Permissive, copyleft and source-available terms'
+        - identifier: ext-repo
+          parent: extensions
+          name: By repository
+          pageRef: /repos
+          weight: 17
+          params:
+            icon: fa-solid fa-warehouse
+            description: 'Which repository delivers each extension'
+
+        - identifier: platforms
+          name: Platforms
+          pageRef: /os
+          weight: 20
+          params: { icon: fa-solid fa-server }
+        - identifier: platform-matrix
+          parent: platforms
+          name: Global Matrix
+          pageRef: /os/matrix
+          weight: 21
+          params:
+            icon: fa-solid fa-table-cells
+            description: 'Every package against every OS and PG major'
+        - identifier: platform-el8-x86_64
+          parent: platforms
+          name: el8.x86_64
+          pageRef: /os/el8.x86_64
+          weight: 30
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 8 · x86_64'
+        - identifier: platform-el8-aarch64
+          parent: platforms
+          name: el8.aarch64
+          pageRef: /os/el8.aarch64
+          weight: 31
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 8 · aarch64'
+        - identifier: platform-el9-x86_64
+          parent: platforms
+          name: el9.x86_64
+          pageRef: /os/el9.x86_64
+          weight: 32
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 9 · x86_64'
+        - identifier: platform-el9-aarch64
+          parent: platforms
+          name: el9.aarch64
+          pageRef: /os/el9.aarch64
+          weight: 33
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 9 · aarch64'
+        - identifier: platform-el10-aarch64
+          parent: platforms
+          name: el10.aarch64
+          pageRef: /os/el10.aarch64
+          weight: 34
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 10 · aarch64'
+        - identifier: platform-el10-x86_64
+          parent: platforms
+          name: el10.x86_64
+          pageRef: /os/el10.x86_64
+          weight: 35
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 10 · x86_64'
+        - identifier: platform-d12-x86_64
+          parent: platforms
+          name: d12.x86_64
+          pageRef: /os/d12.x86_64
+          weight: 36
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 12 · x86_64'
+        - identifier: platform-d12-aarch64
+          parent: platforms
+          name: d12.aarch64
+          pageRef: /os/d12.aarch64
+          weight: 37
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 12 · aarch64'
+        - identifier: platform-d13-x86_64
+          parent: platforms
+          name: d13.x86_64
+          pageRef: /os/d13.x86_64
+          weight: 38
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 13 · x86_64'
+        - identifier: platform-d13-aarch64
+          parent: platforms
+          name: d13.aarch64
+          pageRef: /os/d13.aarch64
+          weight: 39
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 13 · aarch64'
+        - identifier: platform-u22-aarch64
+          parent: platforms
+          name: u22.aarch64
+          pageRef: /os/u22.aarch64
+          weight: 40
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 22 · aarch64'
+        - identifier: platform-u22-x86_64
+          parent: platforms
+          name: u22.x86_64
+          pageRef: /os/u22.x86_64
+          weight: 41
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 22 · x86_64'
+        - identifier: platform-u24-x86_64
+          parent: platforms
+          name: u24.x86_64
+          pageRef: /os/u24.x86_64
+          weight: 42
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 24 · x86_64'
+        - identifier: platform-u24-aarch64
+          parent: platforms
+          name: u24.aarch64
+          pageRef: /os/u24.aarch64
+          weight: 43
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 24 · aarch64'
+        - identifier: platform-u26-x86_64
+          parent: platforms
+          name: u26.x86_64
+          pageRef: /os/u26.x86_64
+          weight: 44
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 26 · x86_64'
+        - identifier: platform-u26-aarch64
+          parent: platforms
+          name: u26.aarch64
+          pageRef: /os/u26.aarch64
+          weight: 45
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 26 · aarch64'
+
+        - identifier: repository
+          name: Repository
+          pageRef: /repo
+          weight: 60
+          params: { icon: fa-solid fa-warehouse }
+        - identifier: repo-pgsql
+          parent: repository
+          name: PGSQL repo
+          pageRef: /repo/pgsql
+          weight: 61
+          params:
+            icon: fa-solid fa-database
+            description: 'The Pigsty extension repository for APT and DNF'
+        - identifier: repo-infra
+          parent: repository
+          name: INFRA repo
+          pageRef: /repo/infra
+          weight: 62
+          params:
+            icon: fa-solid fa-toolbox
+            description: 'OS-generic infrastructure packages'
+        - identifier: repo-pgdg
+          parent: repository
+          name: PGDG repo
+          pageRef: /repo/pgdg
+          weight: 63
+          params:
+            icon: fa-solid fa-cloud-arrow-down
+            description: 'The upstream PostgreSQL kernel repository'
+        - identifier: repo-gpg
+          parent: repository
+          name: GPG keys
+          pageRef: /repo/gpg
+          weight: 64
+          params:
+            icon: fa-solid fa-key
+            description: 'Signing keys and how to verify a package'
+        - identifier: repo-download
+          parent: repository
+          name: Download
+          pageRef: /download
+          weight: 65
+          params:
+            icon: fa-solid fa-download
+            description: 'Get pig, add the repositories, fetch packages'
+        - identifier: repo-pig
+          parent: repository
+          name: PIG package manager
+          pageRef: /pig
+          weight: 66
+          params:
+            icon: fa-solid fa-piggy-bank
+            description: 'One CLI for the kernel and its extensions'
+        - identifier: repo-release
+          parent: repository
+          name: Changelog
+          pageRef: /release
+          weight: 67
+          params:
+            icon: fa-solid fa-tags
+            description: 'RPM, DEB and infrastructure release history'
+
+        - identifier: about
+          name: About
+          pageRef: /about
+          weight: 80
+          params: { icon: fa-solid fa-circle-info }
+
+        - identifier: github
+          name: GitHub
+          url: https://github.com/pgsty/pgext
+          weight: 90
+          params: { icon: fa-brands fa-github }
+
+  zh:
+    label: 简体中文
+    locale: zh-CN
+    weight: 2
+    title: PGEXT.CLOUD
+    params:
+      description: >-
+        PostgreSQL 扩展宇宙：收录 2241 个扩展，其中 576 个已在 16 个 Linux
+        平台上打包为原生 RPM / DEB 软件包。
+      ui:
+        alt_site: { label: English, url: / }
+        command_palette:
+          commands:
+            - id: galaxy
+              title: 扩展宇宙
+              description: 用一张星图浏览整个扩展生态
+              url: /galaxy/
+              icon: fa-solid fa-star
+              keywords: [星图, 宇宙, 可视化]
+            - id: matrix
+              title: 可用性矩阵
+              description: 所有扩展包在所有操作系统与大版本上的可用性
+              url: /matrix/
+              icon: fa-solid fa-table-cells
+              keywords: [矩阵, 可用性, 操作系统]
+            - id: pig
+              title: PIG 包管理器
+              description: 用一个命令行工具安装 PostgreSQL 与扩展
+              url: https://pig.pgsty.com/zh
+              icon: fa-solid fa-piggy-bank
+              keywords: [pig, 命令行, 安装, 包管理]
+            - id: issues
+              title: 反馈目录问题
+              description: 缺失扩展、元数据错误、软件包异常
+              url: https://github.com/pgsty/pgext/issues
+              icon: fa-brands fa-github
+              keywords: [缺陷, 反馈, 缺失]
+    menus:
+      main:
+        # The navbar mirrors the dynamic catalog at pgext.cloud: the extension
+        # list is the front door, platforms and the repository sit behind it,
+        # and About closes the row.
+        - identifier: extensions
+          name: 扩展
+          pageRef: /e
+          weight: 10
+          params: { icon: fa-solid fa-puzzle-piece }
+        - identifier: ext-all
+          parent: extensions
+          name: 全部扩展
+          pageRef: /e
+          weight: 11
+          params:
+            icon: fa-solid fa-list
+            description: '每一个已打包扩展，一个扩展一页'
+        - identifier: ext-table
+          parent: extensions
+          name: 扩展清单
+          pageRef: /list/ext
+          weight: 12
+          params:
+            icon: fa-solid fa-table-list
+            description: '密集表格：版本、属性、大版本支持'
+        - identifier: ext-packages
+          parent: extensions
+          name: 扩展包
+          pageRef: /list/pkg
+          weight: 13
+          params:
+            icon: fa-solid fa-box
+            description: '一行一个软件包及其扩展家族'
+        - identifier: ext-category
+          parent: extensions
+          name: 按分类
+          pageRef: /categories
+          weight: 14
+          params:
+            icon: fa-solid fa-folder-tree
+            description: '十六个分类：时序、地理、向量检索……'
+        - identifier: ext-language
+          parent: extensions
+          name: 按语言
+          pageRef: /languages
+          weight: 15
+          params:
+            icon: fa-solid fa-code
+            description: 'C、C++、Rust、SQL、Java、Python……'
+        - identifier: ext-license
+          parent: extensions
+          name: 按许可证
+          pageRef: /licenses
+          weight: 16
+          params:
+            icon: fa-solid fa-scale-balanced
+            description: '宽松、传染性与源码可见许可证'
+        - identifier: ext-repo
+          parent: extensions
+          name: 按仓库
+          pageRef: /repos
+          weight: 17
+          params:
+            icon: fa-solid fa-warehouse
+            description: '每个扩展由哪个仓库交付'
+
+        - identifier: platforms
+          name: 平台
+          pageRef: /os
+          weight: 20
+          params: { icon: fa-solid fa-server }
+        - identifier: platform-matrix
+          parent: platforms
+          name: 全局矩阵
+          pageRef: /os/matrix
+          weight: 21
+          params:
+            icon: fa-solid fa-table-cells
+            description: '所有软件包 × 操作系统 × PG 大版本'
+        - identifier: platform-el8-x86_64
+          parent: platforms
+          name: el8.x86_64
+          pageRef: /os/el8.x86_64
+          weight: 30
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 8 · x86_64'
+        - identifier: platform-el8-aarch64
+          parent: platforms
+          name: el8.aarch64
+          pageRef: /os/el8.aarch64
+          weight: 31
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 8 · aarch64'
+        - identifier: platform-el9-x86_64
+          parent: platforms
+          name: el9.x86_64
+          pageRef: /os/el9.x86_64
+          weight: 32
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 9 · x86_64'
+        - identifier: platform-el9-aarch64
+          parent: platforms
+          name: el9.aarch64
+          pageRef: /os/el9.aarch64
+          weight: 33
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 9 · aarch64'
+        - identifier: platform-el10-aarch64
+          parent: platforms
+          name: el10.aarch64
+          pageRef: /os/el10.aarch64
+          weight: 34
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 10 · aarch64'
+        - identifier: platform-el10-x86_64
+          parent: platforms
+          name: el10.x86_64
+          pageRef: /os/el10.x86_64
+          weight: 35
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'EL 10 · x86_64'
+        - identifier: platform-d12-x86_64
+          parent: platforms
+          name: d12.x86_64
+          pageRef: /os/d12.x86_64
+          weight: 36
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 12 · x86_64'
+        - identifier: platform-d12-aarch64
+          parent: platforms
+          name: d12.aarch64
+          pageRef: /os/d12.aarch64
+          weight: 37
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 12 · aarch64'
+        - identifier: platform-d13-x86_64
+          parent: platforms
+          name: d13.x86_64
+          pageRef: /os/d13.x86_64
+          weight: 38
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 13 · x86_64'
+        - identifier: platform-d13-aarch64
+          parent: platforms
+          name: d13.aarch64
+          pageRef: /os/d13.aarch64
+          weight: 39
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Debian 13 · aarch64'
+        - identifier: platform-u22-aarch64
+          parent: platforms
+          name: u22.aarch64
+          pageRef: /os/u22.aarch64
+          weight: 40
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 22 · aarch64'
+        - identifier: platform-u22-x86_64
+          parent: platforms
+          name: u22.x86_64
+          pageRef: /os/u22.x86_64
+          weight: 41
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 22 · x86_64'
+        - identifier: platform-u24-x86_64
+          parent: platforms
+          name: u24.x86_64
+          pageRef: /os/u24.x86_64
+          weight: 42
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 24 · x86_64'
+        - identifier: platform-u24-aarch64
+          parent: platforms
+          name: u24.aarch64
+          pageRef: /os/u24.aarch64
+          weight: 43
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 24 · aarch64'
+        - identifier: platform-u26-x86_64
+          parent: platforms
+          name: u26.x86_64
+          pageRef: /os/u26.x86_64
+          weight: 44
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 26 · x86_64'
+        - identifier: platform-u26-aarch64
+          parent: platforms
+          name: u26.aarch64
+          pageRef: /os/u26.aarch64
+          weight: 45
+          params:
+            icon: fa-solid fa-hard-drive
+            description: 'Ubuntu 26 · aarch64'
+
+        - identifier: repository
+          name: 软件仓库
+          pageRef: /repo
+          weight: 60
+          params: { icon: fa-solid fa-warehouse }
+        - identifier: repo-pgsql
+          parent: repository
+          name: PGSQL 仓库
+          pageRef: /repo/pgsql
+          weight: 61
+          params:
+            icon: fa-solid fa-database
+            description: 'Pigsty 扩展仓库，APT 与 DNF 双源'
+        - identifier: repo-infra
+          parent: repository
+          name: INFRA 仓库
+          pageRef: /repo/infra
+          weight: 62
+          params:
+            icon: fa-solid fa-toolbox
+            description: '与操作系统无关的基础设施软件包'
+        - identifier: repo-pgdg
+          parent: repository
+          name: PGDG 仓库
+          pageRef: /repo/pgdg
+          weight: 63
+          params:
+            icon: fa-solid fa-cloud-arrow-down
+            description: '上游 PostgreSQL 内核仓库'
+        - identifier: repo-gpg
+          parent: repository
+          name: GPG 密钥
+          pageRef: /repo/gpg
+          weight: 64
+          params:
+            icon: fa-solid fa-key
+            description: '签名公钥与软件包校验方式'
+        - identifier: repo-download
+          parent: repository
+          name: 下载
+          pageRef: /download
+          weight: 65
+          params:
+            icon: fa-solid fa-download
+            description: '获取 pig、添加仓库、取用软件包'
+        - identifier: repo-pig
+          parent: repository
+          name: PIG 包管理器
+          pageRef: /pig
+          weight: 66
+          params:
+            icon: fa-solid fa-piggy-bank
+            description: '一个命令行工具管内核与扩展'
+        - identifier: repo-release
+          parent: repository
+          name: 变更日志
+          pageRef: /release
+          weight: 67
+          params:
+            icon: fa-solid fa-tags
+            description: 'RPM、DEB 与基础设施软件包发布历史'
+
+        - identifier: about
+          name: 关于
+          pageRef: /about
+          weight: 80
+          params: { icon: fa-solid fa-circle-info }
+
+        - identifier: github
+          name: GitHub
+          url: https://github.com/pgsty/pgext
+          weight: 90
+          params: { icon: fa-brands fa-github }
+
+#---------------------------------------------------------------#
+# Site parameters
+#---------------------------------------------------------------#
+params:
+  logo: icons/pgext-mark.svg
+  images:
+    - logo.png
+
+  version: v1.1.0
+  productionURL: &productionURL https://pgext.cloud
+  github_repo: https://github.com/pgsty/pgext
+  github_project_repo: https://github.com/pgsty/pgext
+  github_branch: main
+  github_subdir: ''
+
+  copyright:
+    authors: >-
+      [Ruohang Feng](https://vonng.com/en/) ([@Vonng](https://github.com/Vonng))
+      @ [PGSTY](https://pgsty.com/)
+    from_year: 2018
+    to_year: present
+  footer_center_info: 'Powered by [Oink](https://oink.pgsty.com)'
+
+  # The catalog pages are wide data sheets; the shell defaults to the wide
+  # reading measure and the generated pages ask for `page_width: full`.
+  page_width: wide
+
+  time_format_blog: 2006-01-02
+  time_format_default: 2006-01-02
+
+  # Local Lunr search over titles, headings and descriptions. Indexing the
+  # bodies would mean indexing several hundred megabytes of package tables.
+  offline_search: true
+  offline_search_on_serve: true
+  offline_search_index: summary
+  offline_search_summary_length: 90
+  offline_search_max_results: 12
+
+  comments: false
+
+  print:
+    toc: true
+
+  ui:
+    typography: technical
+    dark_mode: true
+
+    # Sidebar
+    #
+    # The tree roots at the current top-level section rather than the whole
+    # site: `/e` alone holds 575 sibling pages, and re-emitting that list on
+    # every page of every other section is pure weight.
+    sidebar_root_enabled: false
+    sidebar_root_menu: true
+    sidebar_menu_compact: true
+    sidebar_menu_foldable: true
+    sidebar_menu_truncate: 2000
+    sidebar_expand_levels: 2
+    sidebar_width_min: 220
+    sidebar_width_max: 460
+    sidebar_item_overflow: ellipsis
+    sidebar_icon_policy: groups
+    sidebar_cache_limit: 400
+
+    # Chrome
+    navbar_enabled: true
+    navbar_autohide: false
+    footer_style: fat
+    landing_search: true
+    breadcrumb: true
+    section_index: cards
+    section_index_columns: 2
+    quick_links: [e, os, repo]
+
+    toc_style: fixed
+    toc_taxonomies: true
+
+    lastmod_commit: subject
+    annotation: false
+    reading_time: false
+    keyboard_nav: true
+    image_zoom: true
+
+    taxonomy_icons:
+      categories: fa-solid fa-folder-tree
+      languages: fa-solid fa-code
+      licenses: fa-solid fa-scale-balanced
+      repos: fa-solid fa-warehouse
+
+    page_context_menu:
+      enable: true
+      assistant_links: false
+      links: []
+
+    feedback:
+      enable: false

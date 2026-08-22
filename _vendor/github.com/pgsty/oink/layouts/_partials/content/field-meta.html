@@ -1,0 +1,25 @@
+{{- $isHTML := .html | default false -}}
+{{- $meta := slice -}}
+{{- $code := "" -}}
+{{- with .type -}}
+  {{- $value := printf "%v" . -}}
+  {{- if $isHTML -}}
+    {{- $code = cond (in $value "<") $value (printf "<code>%s</code>" $value) -}}
+  {{- else -}}
+    {{- $code = printf "<code>%s</code>" (htmlEscape $value) -}}
+  {{- end -}}
+  {{- $meta = $meta | append (dict "label" "" "value" $code "class" "td-field__type") -}}
+{{- end -}}
+{{- if .required -}}
+  {{- $meta = $meta | append (dict "label" "required" "value" "" "class" "td-field__required") -}}
+{{- end -}}
+{{- if .hasDefault -}}
+  {{- $value := printf "%v" (.default | default "") -}}
+  {{- if $isHTML -}}
+    {{- $code = cond (in $value "<") $value (printf "<code>%s</code>" $value) -}}
+  {{- else -}}
+    {{- $code = printf "<code>%s</code>" (htmlEscape $value) -}}
+  {{- end -}}
+  {{- $meta = $meta | append (dict "label" "default" "value" $code "class" "td-field__default") -}}
+{{- end -}}
+{{- return $meta -}}

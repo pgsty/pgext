@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="td-content">
+		{{ partial "page-title.html" . }}
+  {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+	<header class="td-article-meta">
+		{{ partial "taxonomy-terms-article-wrapper.html" . -}}
+		{{ if partial "reading-time-enabled.html" . -}}
+			{{ partial "reading-time.html" . -}}
+		{{ end -}}
+	</header>
+	{{ .Render "_td-content-after-header" -}}
+	{{ partial "content/render.html" . }}
+	{{ partial "section-index.html" . -}}
+	{{ partial "page-end.html" . -}}
+</div>
+{{ end -}}

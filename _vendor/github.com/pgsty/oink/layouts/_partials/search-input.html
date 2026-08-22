@@ -1,0 +1,37 @@
+{{/* cSpell:ignore docsearch absurlreplacer */ -}}
+{{- /* Online search inputs for the sidebar header: Google Programmable Search
+       or Algolia DocSearch. Local (Lunr) search renders the palette button
+       instead (shell/sidebar-panel.html). A site configures one backend. */ -}}
+{{- $backends := slice -}}
+
+{{ if .Site.Params.gcs_engine_id -}}
+{{- $backends = $backends | append "params.gcs_engine_id" -}}
+<div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" name="q" {{/**/ -}}
+    class="td-search__input form-control td-search-input" {{/**/ -}}
+    placeholder='{{ T "ui_search" }}' {{/**/ -}}
+    aria-label='{{ T "ui_search" }}' autocomplete="off">
+</div>
+{{- end -}}
+
+{{ if partialCached "search/algolia-enabled.html" . .Site.Language.Lang .Site.BaseURL -}}
+{{- $backends = $backends | append "params.search.algolia" -}}
+{{- /* One container per page; scripts.html mounts DocSearch on this id. */ -}}
+<div class="td-search">
+  <div class="td-search--algolia" id="td-docsearch"></div>
+</div>
+{{- end -}}
+
+{{ if partial "shell/search-enabled.html" . -}}
+{{- $backends = $backends | append "params.offline_search" -}}
+<button type="button" class="td-search td-search--offline td-search--palette"
+  data-td-shell-search-open aria-controls="td-shell-search" aria-expanded="false">
+  <span class="td-search__icon" aria-hidden="true"></span>
+  <span class="td-search__input form-control">{{ T "ui_search" }}</span>
+</button>
+{{- end -}}
+
+{{ if gt (len $backends) 1 -}}
+  {{ warnf "params: more than one site-search backend is configured (%s); choose one, using the first" (delimit $backends ", ") -}}
+{{ end -}}

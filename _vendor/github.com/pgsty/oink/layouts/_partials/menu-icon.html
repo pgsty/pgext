@@ -1,0 +1,37 @@
+{{- $defaults := dict
+  "docs" "fa-solid fa-book"
+  "doc" "fa-solid fa-book"
+  "guide" "fa-solid fa-book"
+  "blog" "fa-solid fa-blog"
+  "news" "fa-solid fa-blog"
+  "examples" "fa-solid fa-flask"
+  "example" "fa-solid fa-flask"
+  "community" "fa-solid fa-people-group"
+  "about" "fa-solid fa-circle-info"
+  "download" "fa-solid fa-download"
+  "github" "fa-brands fa-github"
+-}}
+{{- $keys := slice -}}
+{{- with .Identifier }}{{ $keys = $keys | append (lower .) }}{{ end -}}
+{{- with .Page }}{{ with .Section }}{{ $keys = $keys | append (lower .) }}{{ end }}{{ end -}}
+{{- $link := .URL -}}
+{{- with .Page }}{{ $link = .RelPermalink }}{{ end -}}
+{{- with $link -}}
+  {{- $path := (urls.Parse .).Path | default "" -}}
+  {{- with site.LanguagePrefix }}{{ $path = strings.TrimPrefix . $path }}{{ end -}}
+  {{- with index (split (strings.TrimPrefix "/" $path) "/") 0 -}}
+    {{- $keys = $keys | append (lower .) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $icon := "" -}}
+{{- range $keys -}}
+  {{- if not $icon -}}
+    {{- with index $defaults . }}{{ $icon = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $icon }}{{ $icon = "fa-solid fa-link" }}{{ end -}}
+
+{{- with .Params }}{{ with .icon }}{{ $icon = . }}{{ end }}{{ end -}}
+{{- with .Page }}{{ with .Params.icon }}{{ $icon = . }}{{ end }}{{ end -}}
+{{- return $icon -}}

@@ -1,0 +1,173 @@
+{{- $page := . -}}
+{{- $items := slice -}}
+{{- $path := $page.Path -}}
+
+{{- /* Last modified ---------------------------------------------------- */ -}}
+{{- $commitMode := partial "validate.html" (dict
+    "value" (partial "ui-param.html" (dict "page" $page "key" "lastmod_commit")) "kind" "enum"
+    "allowed" (slice "subject" "hash" "none") "fallback" "subject"
+    "key" "params.ui.lastmod_commit" "where" (cond (isset $page.Params "lastmod_commit") $page.Path "")) -}}
+{{- if not $page.Lastmod.IsZero -}}
+  {{- $text := printf "%s %s" (T "post_last_mod") ($page.Lastmod.Format $page.Site.Params.time_format_default) -}}
+  {{- if ne $commitMode "none" -}}
+    {{- with $page.GitInfo -}}
+      {{- with $page.Site.Params.github_repo -}}
+        {{- $label := $page.GitInfo.Subject -}}
+        {{- if eq $commitMode "hash" }}{{ $label = printf "commit %s" $page.GitInfo.AbbreviatedHash }}{{ else }}{{ $label = printf "%s (%s)" $page.GitInfo.Subject $page.GitInfo.AbbreviatedHash }}{{ end -}}
+        {{- $text = printf `%s &middot; <a data-proofer-ignore href="%s/commit/%s">%s</a>` $text (. | htmlEscape) ($page.GitInfo.Hash | htmlEscape) ($label | htmlEscape) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $items = $items | append (dict "key" "lastmod" "icon" "fa-solid fa-clock-rotate-left" "html" $text) -}}
+{{- end -}}
+
+{{- /* Upstream attribution --------------------------------------------- */ -}}
+{{- if isset $page.Params "upstream_attribution" -}}
+  {{- warnidf "annotation-legacy-upstream-attribution" "front matter upstream_attribution was renamed: use upstream_link with upstream_name, upstream_copyright, upstream_license, and upstream_notice at %s; omitting the attribution" $path -}}
+{{- end -}}
+{{- if isset $page.Params "downstream_modified" -}}
+  {{- warnidf "annotation-legacy-downstream-modified" "front matter downstream_modified was renamed: use upstream_modified at %s; omitting the attribution" $path -}}
+{{- end -}}
+{{- $companions := slice "upstream_name" "upstream_copyright" "upstream_license" "upstream_notice" "upstream_ref" "upstream_source" "upstream_modified" -}}
+{{- $link := "" -}}
+{{- with index $page.Params "upstream_link" }}{{ $link = . }}{{ end -}}
+{{- /* An explicit empty value is the opt-out, so only an absent key is a
+       missing source. */ -}}
+{{- if not (or $link (isset $page.Params "upstream_link")) -}}
+  {{- range $companions -}}
+    {{- if isset $page.Params . -}}
+      {{- warnf "front matter %s needs upstream_link, the URL of the material this page is derived from (set upstream_link: \"\" to opt this page out of an inherited one) at %s; omitting the attribution" . $path -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $link -}}
+  {{- $valid := true -}}
+  {{- /* Least specific to most: site params, the named upstream registry
+         entry, then this page's own front matter. */ -}}
+  {{- $registry := dict -}}
+  {{- $source := "" -}}
+  {{- with index $page.Site.Params "upstream_source" }}{{ $source = . }}{{ end -}}
+  {{- with index $page.Params "upstream_source" }}{{ $source = . }}{{ end -}}
+  {{- with $source -}}
+    {{- $registry = index (hugo.Data.upstreams | default dict) . | default dict -}}
+    {{- if not $registry -}}
+      {{- warnf "upstream_source %q has no entry in data/upstreams at %s; omitting the attribution" . $path -}}
+      {{- $valid = false -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $fields := dict -}}
+  {{- range $pair := (slice (slice "upstream_name" "name") (slice "upstream_copyright" "copyright") (slice "upstream_license" "license") (slice "upstream_notice" "notice") (slice "upstream_ref" "ref")) -}}
+    {{- $value := "" -}}
+    {{- with index $page.Site.Params (index $pair 0) }}{{ $value = . }}{{ end -}}
+    {{- with index $registry (index $pair 1) }}{{ $value = . }}{{ end -}}
+    {{- with index $page.Params (index $pair 0) }}{{ $value = . }}{{ end -}}
+    {{- $fields = merge $fields (dict (index $pair 1) (printf "%v" $value)) -}}
+  {{- end -}}
+
+  {{- range $required := (slice "name" "copyright" "license" "notice") -}}
+    {{- if not (index $fields $required) -}}
+      {{- warnf "upstream_link needs upstream_%s as well; a page that names a source must name who holds it, the licence it carries, and where the full notice lives (front matter, params, or a data/upstreams entry) at %s; omitting the attribution" $required $path -}}
+      {{- $valid = false -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $licence := index (hugo.Data.licenses | default dict) (index $fields "license") -}}
+  {{- if not $licence -}}
+    {{- warnf "upstream_license %q is not in data/licenses; use its SPDX identifier or add the entry at %s; omitting the attribution" (index $fields "license") $path -}}
+    {{- $valid = false -}}
+  {{- end -}}
+
+  {{- $notice := index $fields "notice" -}}
+  {{- $licenceURL := "" -}}
+  {{- if $valid -}}
+    {{- $linkResult := partial "content/url.html" (dict
+      "name" "page annotation" "parameter" "upstream_link" "position" $path
+      "value" $link "kind" "web") -}}
+    {{- $noticeResult := partial "content/url.html" (dict
+      "name" "page annotation" "parameter" "upstream_notice" "position" $path
+      "value" $notice "kind" "web") -}}
+    {{- $licenceResult := partial "content/url.html" (dict
+      "name" "page annotation" "parameter" "upstream_license URL" "position" $path
+      "value" (index $licence "url") "kind" "web") -}}
+    {{- if and $linkResult.valid $noticeResult.valid $licenceResult.valid -}}
+      {{- $link = $linkResult.href -}}
+      {{- if or $noticeResult.external (hasPrefix $notice "#") (hasPrefix $notice "?") -}}
+        {{- $notice = $noticeResult.href -}}
+      {{- else -}}
+        {{- $notice = relLangURL $notice -}}
+      {{- end -}}
+      {{- $licenceURL = $licenceResult.href -}}
+    {{- else -}}
+      {{- $valid = false -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Modified downstream ------------------------------------------ */ -}}
+  {{- $modified := false -}}
+  {{- with index $page.Site.Params "upstream_modified" }}{{ $modified = . }}{{ end -}}
+  {{- if isset $registry "modified" }}{{ $modified = index $registry "modified" }}{{ end -}}
+  {{- if isset $page.Params "upstream_modified" }}{{ $modified = index $page.Params "upstream_modified" }}{{ end -}}
+  {{- if ne (printf "%T" $modified) "bool" -}}
+    {{- warnf "upstream_modified must be a boolean; got %v at %s; treating the page as unmodified" $modified $path -}}
+    {{- $modified = false -}}
+  {{- end -}}
+
+  {{- if $valid -}}
+  {{- /* One line, not two: the licence asks for an indication that the
+         material was changed, and the verb carries it. Unmodified material is
+         credited; modified material is adapted, and the credit gains a second
+         link to the change history that stands as the record of what changed. */ -}}
+  {{- $work := printf `<a href="%s" target="_blank" rel="noopener">%s</a>` ($link | htmlEscape) (index $fields "name" | htmlEscape) -}}
+  {{- with index $fields "ref" }}{{ $work = printf "%s (%s)" $work (. | htmlEscape) }}{{ end -}}
+  {{- $context := dict
+    "work" $work
+    "copyright" (index $fields "copyright" | htmlEscape)
+    "license" (printf `<a href="%s" target="_blank" rel="noopener">%s</a>` ($licenceURL | htmlEscape) (index $licence "name" | htmlEscape))
+    "notice" (printf `<a href="%s">%s</a>` ($notice | htmlEscape) (T "post_upstream_notice")) -}}
+  {{- $key := "post_upstream" -}}
+  {{- if $modified -}}
+    {{- $key = "post_upstream_adapted_plain" -}}
+    {{- with (partial "actions/page-urls.html" $page).history -}}
+      {{- $key = "post_upstream_adapted" -}}
+      {{- $context = merge $context (dict "history" (printf `<a data-proofer-ignore href="%s" target="_blank" rel="noopener">%s</a>` (. | htmlEscape) (T "post_upstream_history"))) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $items = $items | append (dict "key" "upstream" "icon" "fa-solid fa-copyright" "html" (T $key $context)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Translated from the authoritative language ------------------------ */ -}}
+{{- /* Infer translation notices only for authored non-authoritative pages. */ -}}
+{{- $authority := partial "ui-param.html" (dict "page" $page "key" "translation_notice" "default" false) -}}
+{{- $authorityType := printf "%T" $authority -}}
+{{- if and (eq $authorityType "bool") $authority -}}
+  {{- warnidf "translation-notice-true" "translation_notice must name an authoritative language code or be false; got true at %s; omitting the notice" $path -}}
+  {{- $authority = false -}}
+{{- else if and (ne $authorityType "bool") (ne $authorityType "string") -}}
+  {{- warnidf (printf "translation-notice-type:%s:%v" $authorityType $authority) "translation_notice must be a language code or false; got %v at %s; omitting the notice" $authority $path -}}
+  {{- $authority = false -}}
+{{- else if eq $authorityType "string" -}}
+  {{- $languageCodes := slice -}}
+  {{- range hugo.Sites }}{{ $languageCodes = $languageCodes | append .Language.Lang }}{{ end -}}
+  {{- $languageCodes = uniq $languageCodes -}}
+  {{- $authority = partial "validate.html" (dict
+    "value" $authority "kind" "enum" "allowed" $languageCodes "fallback" ""
+    "key" "params.ui.translation_notice" "where" (cond (isset $page.Params "translation_notice") $path "")) -}}
+{{- end -}}
+{{- if and (eq (printf "%T" $authority) "string") (ne $page.Language.Lang $authority) $page.File (strings.TrimSpace $page.RawContent) -}}
+  {{- $original := "" -}}
+  {{- range $page.AllTranslations -}}
+    {{- if eq .Language.Lang $authority }}{{ $original = .RelPermalink }}{{ end -}}
+  {{- end -}}
+  {{- with $original -}}
+    {{- $items = $items | append (dict
+      "key" "translation"
+      "icon" "fa-solid fa-language"
+      "html" (T "post_translated" (dict "original" (printf `<a href="%s">%s</a>` (. | htmlEscape) (T "post_translated_original")))))
+    -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $items -}}

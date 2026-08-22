@@ -1,0 +1,61 @@
+// Public typography roles. Existing Docsy and Bootstrap Sass variables seed
+// these values so consuming sites keep their current customization contract.
+// Keep this valid in Hugo Extended's Sass pipeline: sites must not need Dart
+// Sass, PostCSS, or a Node.js toolchain.
+
+:root {
+  // The `technical` preset reads UI and prose in the bundled Inter face; the
+  // platform stack behind it still renders CJK, emoji, and anything Inter
+  // lacks. A project that declared its own sans stack keeps exactly that stack:
+  // Inter is only put in front of OINK's stock value.
+  @if $font-family-sans-serif == $_td-fonts-sans-default {
+    --td-ui-font-family: 'Inter', var(--bs-body-font-family);
+  } @else {
+    --td-ui-font-family: var(--bs-body-font-family);
+  }
+  --td-body-font-family: var(--td-ui-font-family);
+
+  @if $headings-font-family == null {
+    --td-heading-font-family: var(--td-body-font-family);
+  } @else {
+    --td-heading-font-family: #{inspect($headings-font-family)};
+  }
+
+  --td-code-font-family: #{inspect($font-family-code)};
+  --td-display-font-family: 'Chakra Petch', var(--td-ui-font-family);
+  --td-meta-font-family: 'IBM Plex Mono', var(--td-code-font-family);
+  // Print keeps its own role so a site can give paper a different face, but
+  // the theme ships no print-only font: it follows the body role.
+  --td-print-font-family: var(--td-body-font-family);
+}
+
+[data-td-typography='system'] {
+  // Keep the dependency direction Bootstrap base -> OINK semantic role.
+  // Bootstrap's reboot and monospace utility also consume this base token.
+  // An explicit legacy override is a project decision and remains authoritative.
+  @if $font-family-monospace == $_td-font-family-monospace-default {
+    --bs-font-monospace:
+      SFMono-Regular, 'Cascadia Code', 'Roboto Mono', Menlo, Consolas,
+      'Liberation Mono', 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', monospace;
+  } @else {
+    --bs-font-monospace: #{inspect($font-family-monospace)};
+  }
+
+  --td-ui-font-family: var(--bs-body-font-family);
+  --td-display-font-family: var(--td-ui-font-family);
+  --td-meta-font-family: var(--td-ui-font-family);
+  --td-print-font-family: var(--td-body-font-family);
+}
+
+body {
+  font-family: var(--td-ui-font-family);
+}
+
+// Bootstrap emits this selector from $font-family-code. Repeating it after
+// Bootstrap turns that established Sass value into a runtime-overridable role.
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--td-code-font-family);
+}

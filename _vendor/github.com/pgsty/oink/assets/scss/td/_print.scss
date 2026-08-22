@@ -1,0 +1,246 @@
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm;
+}
+
+.td-print-view {
+  background: var(--bs-tertiary-bg);
+}
+
+.td-print-shell {
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.td-print-document {
+  width: unquote('min(100%, 900px)');
+  margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.8rem;
+  background: var(--bs-body-bg);
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+@media print {
+  html {
+    font-size: 10.5pt;
+    color-scheme: light;
+  }
+
+  body,
+  .td-print-view {
+    --td-body-font-family: var(--td-print-font-family);
+
+    @if $headings-font-family == null {
+      --td-heading-font-family: var(--td-print-font-family);
+    }
+
+    min-width: 0 !important;
+    background: #fff !important;
+    color: #171717 !important;
+    font-family: var(--td-print-font-family);
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .container-fluid,
+  .td-outer,
+  .td-main,
+  .td-shell-layout,
+  .td-shell-main,
+  .td-shell-article,
+  .td-print-shell,
+  .td-print-document,
+  .row,
+  [class*='col-'] {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .td-content {
+    max-width: none !important;
+    overflow: visible !important;
+    color: #171717 !important;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      break-after: avoid-page;
+      color: #111 !important;
+    }
+
+    h1 {
+      margin: 0 0 0.55em;
+      font-size: 24pt;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 1.6em;
+      padding-bottom: 0.25em;
+      border-bottom: 0.6pt solid #c9ced4;
+      font-size: 17pt;
+    }
+
+    h3 {
+      margin-top: 1.3em;
+      font-size: 13pt;
+    }
+
+    p,
+    li {
+      orphans: 3;
+      widows: 3;
+    }
+
+    a {
+      color: #174f78 !important;
+      text-decoration: underline;
+      text-underline-offset: 0.12em;
+    }
+
+    pre,
+    .highlight,
+    .chroma {
+      overflow: visible !important;
+      border: 0.6pt solid #c9ced4 !important;
+      border-radius: 4pt !important;
+      background: #f5f7f9 !important;
+      color: #111 !important;
+      white-space: pre-wrap !important;
+      overflow-wrap: anywhere;
+      break-inside: avoid-page;
+    }
+
+    code {
+      color: #111 !important;
+    }
+
+    table,
+    .td-table {
+      display: table !important;
+      width: 100% !important;
+      overflow: visible !important;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      break-inside: auto;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    figure,
+    img,
+    svg,
+    blockquote,
+    .td-callout,
+    .td-content-card,
+    .td-tabs {
+      break-inside: avoid-page;
+    }
+
+    th,
+    td {
+      border-color: #b8bec5 !important;
+      background: transparent !important;
+    }
+
+    blockquote {
+      border-inline-start: 2pt solid #8b5a2b;
+      background: #faf7f3 !important;
+      color: #30343a !important;
+    }
+
+    img,
+    svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+  .td-page-heading {
+    display: block !important;
+  }
+
+  .td-page-meta__footer {
+    border-color: #c9ced4 !important;
+    color: #4e555c !important;
+  }
+
+  .td-heading-self-link,
+  .td-page-actions,
+  .td-code__copy,
+  .td-code__expand,
+  .nav-tabs {
+    display: none !important;
+  }
+
+  .td-code {
+    max-height: none !important;
+    overflow: visible !important;
+    border: 0.6pt solid #c9ced4 !important;
+    border-radius: 4pt !important;
+    box-shadow: none !important;
+    break-inside: auto !important;
+
+    .td-code__header {
+      border-bottom: 0.6pt solid #c9ced4 !important;
+      background: #edf0f3 !important;
+    }
+
+    // The utility cluster only ever holds interactive controls now; on paper
+    // it would be an empty strip.
+    .td-code__utilities {
+      display: none !important;
+    }
+
+    .td-code__viewport,
+    .highlight,
+    .chroma,
+    pre {
+      max-height: none !important;
+      overflow: visible !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      break-inside: auto !important;
+    }
+
+    .td-code__viewport::after {
+      display: none !important;
+    }
+
+    &.td-code--untitled .td-code__viewport {
+      > .highlight > pre,
+      > .highlight > div.chroma {
+        padding-inline-end: 1rem !important;
+      }
+    }
+  }
+
+  details:not([open]) > :not(summary) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+
+
+  .td-content-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

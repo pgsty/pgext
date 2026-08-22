@@ -1,0 +1,70 @@
+{{- .Page.Store.Set "tdOutputFormat" "html" -}}
+<!doctype html>
+<html{{ partial "shell/document-attrs.html" (dict "page" .) }}>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  {{ $toc := "" -}}
+  {{ if not .Params.notoc }}{{ $toc = .TableOfContents }}{{ end -}}
+  {{ $hasToc := and $toc (ne $toc `<nav id="TableOfContents"></nav>`) -}}
+  {{ $sidebarMin := (partial "ui-param.html" (dict "page" . "key" "sidebar_width_min")) | default 220 -}}
+  {{ $sidebarMax := (partial "ui-param.html" (dict "page" . "key" "sidebar_width_max")) | default 480 -}}
+  {{ $navWrap := eq (partial "ui-param.html" (dict "page" . "key" "sidebar_item_overflow")) "wrap" -}}
+  {{ $hasSidebar := partial "shell/sidebar-enabled.html" . -}}
+  {{ $pageWidth := partial "shell/page-width.html" . -}}
+  {{ $tocStyle := partial "shell/toc-style.html" . -}}
+  {{ $rssURL := "" -}}
+  {{- /* Feeds cover the whole blog or one of its sections; a single article is
+       not a subscribable unit, so leaf pages carry no RSS affordance. */ -}}
+  {{ if not .IsPage -}}
+    {{ with .CurrentSection.OutputFormats.Get "rss" -}}
+      {{ $rssURL = .RelPermalink -}}
+    {{ end -}}
+  {{ end -}}
+  {{ $navbar := partial "shell/navbar-enabled.html" . -}}
+  {{ $featured := partial "featured-image-mode.html" . -}}
+  {{ $hero := eq $featured "hero" -}}
+  <body class="td-{{ .Kind }} td-blog td-shell-chrome{{ if and $navbar (not $hero) }} td-shell-chrome--navbar{{ end }}{{ if $hero }} td-shell-chrome--hero{{ end }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
+    {{ partial "skip-link.html" . }}
+    {{ if $navbar }}{{ partial "navbar.html" . }}{{ else }}{{ partial "shell/subnav.html" . }}{{ end }}
+    <div class="container-fluid td-outer">
+      {{ if $hero }}{{ partial "featured-image-article.html" (dict "page" . "mode" "hero") }}{{ end }}
+      <div class="td-main td-shell-layout td-shell-layout--w-{{ $pageWidth }}{{ if $hero }} td-shell-layout--hero{{ end }}{{ if eq $tocStyle "flow" }} td-shell-layout--toc-flow{{ end }}{{ if not $hasToc }} td-shell-layout--no-toc{{ end }}{{ if not $hasSidebar }} td-shell-layout--no-sidebar{{ end }}{{ if $navWrap }} td-shell-layout--nav-wrap{{ end }}"
+           style="--td-shell-sidebar-min: {{ $sidebarMin }}px; --td-shell-sidebar-max: {{ $sidebarMax }}px;">
+        {{ if $hasSidebar -}}
+        <aside id="td-shell-sidebar" class="td-shell-sidebar d-print-none">
+          {{ partial "shell/sidebar-panel.html" . }}
+        </aside>
+        <div class="td-shell-drawer-backdrop d-md-none d-print-none" data-td-shell-drawer-close></div>
+        {{ partial "shell/floating-pill.html" . }}
+        {{- end }}
+        <main id="td-main-content" class="td-shell-main" tabindex="-1">
+          <article class="td-shell-article">
+            {{ partial "version-banner.html" . }}
+            {{ $crumbs := partial "shell/breadcrumb-enabled.html" . -}}
+            {{- /* On the blog root and its first-level sections the split
+                 button leads with RSS instead of copy: those are the pages a
+                 reader subscribes to. */ -}}
+            {{ $feedURL := "" -}}
+            {{ if and $rssURL (or (eq . .FirstSection) (eq .Parent .FirstSection)) -}}
+              {{ $feedURL = $rssURL -}}
+            {{ end -}}
+            {{ $indexToggle := partial "shell/blog-index-toggle.html" . -}}
+            {{ $actionsHTML := partial "actions/title-menu.html" (dict "page" . "feedURL" $feedURL "indexToggle" $indexToggle) -}}
+            {{ if or $crumbs (strings.ContainsNonSpace $actionsHTML) -}}
+            <div class="td-shell-topline{{ if not $crumbs }} td-shell-topline--actions-only{{ end }}">
+              {{ if $crumbs }}{{ partial "breadcrumb.html" . }}{{ end }}
+              <span class="td-shell-topline__spacer"></span>
+              {{ $actionsHTML }}
+            </div>
+            {{ end -}}
+            {{ block "main" . }}{{ end }}
+          </article>
+        </main>
+        {{ partial "shell/toc-aside.html" (dict "page" . "hasToc" $hasToc) }}
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

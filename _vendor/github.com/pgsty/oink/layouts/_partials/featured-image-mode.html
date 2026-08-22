@@ -1,0 +1,12 @@
+{{- $mode := partial "validate.html" (dict
+    "value" (partial "ui-param.html" (dict "page" . "key" "featured_image")) "kind" "enum"
+    "allowed" (slice "none" "banner" "wash" "hero") "fallback" "none"
+    "key" "params.ui.featured_image" "where" (cond (isset .Params "featured_image") .Path "")) -}}
+{{- $active := "" -}}
+{{- if and (ne $mode "none") (eq (.Store.Get "tdOutputFormat") "html") -}}
+  {{- $found := partialCached "featured-image-resolve.html" . .RelPermalink -}}
+  {{- if or $found.resource $found.href -}}
+    {{- $active = $mode -}}
+  {{- end -}}
+{{- end -}}
+{{- return $active -}}

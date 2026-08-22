@@ -1,0 +1,43 @@
+{{- $label := .label | default "" -}}
+{{- $labelID := .labelID | default "" -}}
+{{- $format := lower (.format | default "html") -}}
+<div class="td-fields{{ with .class }} {{ . }}{{ end }}"{{ with .id }} id="{{ . }}"{{ end }}
+  {{- partial "content/attrs.html" (.generic | default dict) }}>
+{{- if $label }}
+<p class="td-fields__label" id="{{ $labelID }}">{{ $label }}</p>
+{{- end }}
+<dl class="td-fields__list"{{ if $label }} aria-labelledby="{{ $labelID }}"{{ end }}>
+{{- $anchored := eq $format "html" -}}
+{{- range .entries }}
+<div class="td-field"{{ if $anchored }}{{ with .anchor }} id="{{ . }}"{{ end }}{{ end }}>
+<dt class="td-field__term"><code class="td-field__name">{{ .name | safeHTML }}</code>
+{{- range .meta }}
+{{- $class := .class | default "td-field__meta" }}
+<span class="visually-hidden">, </span><span class="{{ $class }}">
+  {{- if .value -}}
+    {{- with .label }}<span class="td-field__meta-label">{{ . | safeHTML }}</span>{{ end -}}
+    <span class="td-field__meta-value">{{ .value | safeHTML }}</span>
+  {{- else -}}
+    {{ .label | safeHTML }}
+  {{- end -}}
+</span>
+{{- end }}
+{{- if and $anchored .anchor }}
+{{- /* Same affordance and class as a heading self-link (td/render-heading.html),
+       so hover behaviour, print suppression, and RTL come for free. */ -}}
+<a class="td-heading-self-link td-field__self-link" href="#{{ .anchor }}" aria-label="{{ T "ui_field_self_link" }}"></a>
+{{- end }}
+</dt>
+{{- if .descriptionMarkdown }}
+<dd class="td-field__description">
+
+{{ .description }}
+
+</dd>
+{{- else }}
+<dd class="td-field__description">{{ .description | safeHTML }}</dd>
+{{- end }}
+</div>
+{{- end }}
+</dl>
+</div>

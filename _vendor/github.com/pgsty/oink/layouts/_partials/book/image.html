@@ -1,0 +1,30 @@
+{{- /* Render a Book figure image from an already-resolved shared-resolver result.
+       The caller (`fig`) owns resolution; this partial owns only the optional
+       link wrapper and the markdown/RSS form. */ -}}
+{{- $sc := .shortcode -}}
+{{- $image := .image -}}
+{{- $alt := .alt -}}
+{{- $link := .link -}}
+{{- $format := .format -}}
+{{- $href := "" -}}
+{{- with $link -}}
+  {{- $linkURL := partial "content/url.html" (dict
+    "name" $sc.Name "parameter" "link" "position" $sc.Position
+    "value" . "kind" "link"
+  ) -}}
+  {{- $href = $linkURL.href -}}
+{{- end -}}
+{{- if in (slice "markdown" "rss") $format -}}
+  {{- $markdown := printf "![%s](%s)" (partial "content/markdown-escape.html" $alt) $image.markdownSrc -}}
+  {{- if $href }}{{ $markdown = printf "[%s](%s)" $markdown (partial "content/markdown-url.html" $href) }}{{ end -}}
+  {{- $markdown | safeHTML -}}
+{{- else -}}
+{{- /* A linked figure image is not zoomable (the runtime skips images inside
+       anchors), so it declares no marker. */ -}}
+{{- $zoomable := and (eq $format "html") (not $href) (ne (strings.TrimSpace $alt) "") -}}
+{{- if $href }}<a class="td-book-figure__link" href="{{ $href }}">{{ end -}}
+<img class="td-book-figure__image" src="{{ $image.src }}" alt="{{ $alt }}"
+  {{- with .width }} width="{{ . }}"{{ end -}}
+  {{- with .height }} height="{{ . }}"{{ end }}{{ if $zoomable }} data-td-image-zoom{{ end }} loading="lazy" decoding="async">
+{{- if $href }}</a>{{ end -}}
+{{- end -}}

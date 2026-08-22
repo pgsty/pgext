@@ -1,0 +1,660 @@
+// ============================================================
+// Blog lists, article metadata, and taxonomy surfaces inside the shell.
+// ============================================================
+
+/* ------------------------------------------------------------ list page */
+
+.td-blog-posts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--bs-border-color);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  // Preserve h2/h3 semantics while using the visual size of Bootstrap .h5.
+  .h5 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.45;
+
+    a {
+      color: var(--bs-body-color);
+
+      &:hover {
+        color: var(--td-shell-primary);
+        text-decoration: none;
+      }
+    }
+
+    i {
+      font-size: 11px;
+      color: var(--td-shell-muted-fg);
+    }
+  }
+
+  // Date and section metadata row.
+  small {
+    font-size: 12.5px;
+    letter-spacing: 0.01em;
+  }
+
+  // On desktop, the thumbnail defines the summary row height.
+  &__summary-row--with-image {
+    height: 125px;
+    overflow: hidden;
+  }
+
+  &__thumbnail {
+    // The inline width is a maximum, not a floor: at the md breakpoint the
+    // content column is only ~485px wide, and a rigid 250px thumbnail plus the
+    // summary's min-content width overflowed the page.
+    height: 100%;
+    max-width: 40%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--bs-border-color);
+    }
+  }
+
+  &__summary {
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__summary-row--with-image &__summary > p {
+    display: -webkit-box;
+    max-height: 100%;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+  }
+
+  &__body {
+    // Bootstrap's .flex-grow-1 leaves min-width at auto, so the summary
+    // refused to shrink below its longest word run.
+    .flex-grow-1 {
+      min-width: 0;
+    }
+
+    // A summary is machine-extracted prose: it can contain a URL or a long
+    // identifier that has no break opportunity, which pushed the row past the
+    // viewport once the column got narrow.
+    p {
+      overflow-wrap: anywhere;
+    }
+
+    .td-blog-posts-list__summary > p,
+    .td-blog-posts-list__summary-mobile > p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--bs-secondary-color);
+    }
+  }
+
+}
+
+.td-blog-posts__pagination {
+  margin-top: 1.5rem;
+
+  .pagination {
+    justify-content: center;
+  }
+}
+
+/* ------------------------------------------------- list page, card form */
+
+// `params.ui.blog_index: cards` swaps the row list for a grid of the shared
+// content cards. The grid, the card surface, the whole-face link, and its
+// focus ring all come from `.td-content-cards` / `.td-content-card`; only the
+// blog-specific parts live here.
+.td-blog-cards {
+  // The year heading already carries the separation the card grid would
+  // otherwise add above itself.
+  margin-block: 0.5rem 0;
+}
+
+.td-blog-card {
+  &__image {
+    display: block;
+    width: 100%;
+    // Processed images arrive cropped to 16:9; SVG, static, and remote ones
+    // cannot be cropped, so the same frame is imposed here.
+    aspect-ratio: 16 / 9;
+    border-block-end: 1px solid var(--bs-border-color);
+    background: var(--bs-secondary-bg);
+    object-fit: cover;
+  }
+
+  // A card is a browsing surface, not a reading one: everything in it is a
+  // step down from body size so the title, the date, the tags, and three
+  // lines of description all fit without the card growing.
+  font-size: 14px;
+
+  // The heading exists for the document outline; `.td-content-card__title`
+  // on the link owns the type, so `.h5` must not size the row.
+  &__heading {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+
+    i {
+      font-size: 10px;
+      color: var(--td-shell-muted-fg);
+    }
+  }
+
+  &__tags {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0.35rem 0 0;
+    padding: 0;
+    list-style: none;
+    max-block-size: 3.6em;
+    overflow: hidden;
+
+    li {
+      display: inline-flex;
+      margin: 0;
+    }
+
+    .td-badge {
+      font-size: 11px;
+    }
+  }
+
+  &__summary {
+    display: -webkit-box;
+    // Three lines, and the box is reserved whether or not the text fills it,
+    // so a short summary does not make its card shorter than its neighbours.
+    min-block-size: calc(3 * 1.55em);
+    margin-block-start: 0.4rem;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    // A summary is machine-extracted prose: a URL or a long identifier in it
+    // has no break opportunity and would push the card past its column.
+    overflow-wrap: anywhere;
+  }
+}
+
+@include media-breakpoint-between(md, xxl) {
+  .td-blog-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (forced-colors: active) {
+  // Border colour and shadow are both dropped in forced colours, so the
+  // hovered and focused card needs a shape of its own.
+  .td-blog-card:hover,
+  .td-blog-card:focus-within {
+    outline: 2px solid Highlight;
+  }
+
+  .td-blog-card__image {
+    border-block-end-color: CanvasText;
+  }
+}
+
+/* --------------------------------------------- post metadata line */
+
+// One line under a post title in a row, a card, or a term archive:
+// `shell/blog-meta.html` renders the same markup in all three, so the styling
+// lives once here instead of once per form.
+.td-blog-meta {
+  margin: 0.35rem 0 0.6rem;
+
+  small {
+    font-size: 12.5px;
+    letter-spacing: 0.01em;
+  }
+
+  &__sep {
+    color: var(--bs-tertiary-color);
+  }
+
+  &__author,
+  &__section {
+    color: inherit;
+    transition: color var(--td-motion-duration-fast) ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--td-shell-primary);
+    }
+  }
+
+  // A block sibling below the sentence, not a run inside it: the badges get
+  // one wrapping line of their own.
+  &__terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0.35rem 0 0.6rem;
+
+    .td-badge {
+      font-size: 11px;
+    }
+  }
+}
+
+// Tucked under its sentence: the pair reads as one metadata unit.
+.td-blog-meta + .td-blog-meta__terms {
+  margin-block-start: -0.3rem;
+}
+
+// Inside a card the whole face is the title link's ::after overlay, so the
+// links in this line have to lift themselves back above it to stay clickable.
+.td-blog-card .td-blog-meta {
+  margin-block: 0.3rem 0;
+
+  small {
+    font-size: 11.5px;
+  }
+
+  &__author,
+  &__section {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* ------------------------------------------- reader-chosen index form */
+
+.td-blog-posts[data-td-blog-default='list'] .td-blog-posts__paged > [data-td-blog-form='cards'],
+.td-blog-posts[data-td-blog-default='cards'] .td-blog-posts__paged > [data-td-blog-form='list'],
+.td-blog-posts[data-td-blog-default='table'] > .td-blog-posts__paged,
+.td-blog-posts[data-td-blog-default='list'] > [data-td-blog-form='table'],
+.td-blog-posts[data-td-blog-default='cards'] > [data-td-blog-form='table'] {
+  display: none;
+}
+
+html[data-td-blog-index='list'] .td-blog-posts {
+  > .td-blog-posts__paged { display: block; }
+  > [data-td-blog-form='table'] { display: none; }
+
+  .td-blog-posts__paged > [data-td-blog-form='cards'] { display: none; }
+  .td-blog-posts__paged > [data-td-blog-form='list'] { display: block; }
+}
+
+html[data-td-blog-index='cards'] .td-blog-posts {
+  > .td-blog-posts__paged { display: block; }
+  > [data-td-blog-form='table'] { display: none; }
+
+  .td-blog-posts__paged > [data-td-blog-form='list'] { display: none; }
+  .td-blog-posts__paged > [data-td-blog-form='cards'] { display: grid; }
+}
+
+html[data-td-blog-index='table'] .td-blog-posts {
+  > .td-blog-posts__paged { display: none; }
+  > [data-td-blog-form='table'] { display: table; }
+}
+
+// Show the destination glyph for the next form in the cycle.
+.td-page-actions__form {
+  .td-page-actions__icon--form-cards,
+  .td-page-actions__icon--form-table { display: none; }
+}
+
+html[data-td-blog-index='list'] .td-page-actions__form {
+  .td-page-actions__icon--form-list { display: none; }
+  .td-page-actions__icon--form-cards { display: inline-flex; }
+}
+
+html[data-td-blog-index='cards'] .td-page-actions__form {
+  .td-page-actions__icon--form-list { display: none; }
+  .td-page-actions__icon--form-table { display: inline-flex; }
+}
+
+/* --------------------------------------------------- table index form */
+
+.td-blog-table {
+  width: 100%;
+  margin-block: 1rem 1.5rem;
+  border-collapse: collapse;
+  border-block-start: 1px solid var(--bs-border-color);
+
+  td {
+    padding: 0.55rem 0;
+    border-block-end: 1px solid var(--bs-border-color);
+    vertical-align: baseline;
+  }
+
+  &__date {
+    width: 7.5em;
+    padding-inline-end: 1rem;
+    color: var(--bs-secondary-color);
+    font-family: var(--td-meta-font-family);
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+
+  &__title {
+    overflow-wrap: anywhere;
+
+    a {
+      font-weight: 600;
+    }
+  }
+
+  &__tags {
+    padding-inline-start: 1rem;
+    text-align: end;
+
+    .td-badge {
+      margin-inline-start: 0.3rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}
+
+/* -------------------------------------------- inline taxonomy terms */
+
+.taxonomy.td-taxonomy-terms-article {
+  display: flex;
+  align-items: baseline;
+  margin: 0.4rem 0;
+
+  .td-taxonomy-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+  }
+}
+
+a.td-taxonomy-term {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 12.5px;
+  line-height: 18px;
+  color: var(--td-shell-muted-fg);
+  text-decoration: none;
+  transition:
+    background-color var(--td-motion-duration-fast) ease,
+    color var(--td-motion-duration-fast) ease;
+
+  &:hover {
+    background: var(--td-shell-accent);
+    color: var(--bs-body-color);
+    text-decoration: none;
+  }
+
+  .td-taxonomy-label {
+    font-weight: 400;
+  }
+
+  .td-taxonomy-count {
+    font-size: 11px;
+    color: var(--bs-tertiary-color);
+  }
+}
+
+/* -------------------------------------- taxonomy chips and filters */
+
+.td-shell-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 7px;
+  background: var(--td-shell-field);
+  font-size: 12.5px;
+  line-height: 18px;
+  color: var(--td-shell-muted-fg);
+  text-decoration: none;
+  transition:
+    background-color var(--td-motion-duration-fast) ease,
+    color var(--td-motion-duration-fast) ease,
+    border-color var(--td-motion-duration-fast) ease;
+
+  &:hover {
+    background: var(--td-shell-accent);
+    color: var(--bs-body-color);
+    text-decoration: none;
+  }
+
+  &.td-is-active {
+    background: var(--td-shell-primary-dim);
+    border-color: color-mix(in srgb, var(--td-shell-primary) 35%, transparent);
+    color: var(--td-shell-primary);
+    font-weight: 500;
+  }
+
+  &__count {
+    font-size: 11px;
+    color: var(--bs-tertiary-color);
+  }
+
+  &.td-is-active &__count {
+    color: inherit;
+    opacity: 0.75;
+  }
+}
+
+/* Right-rail taxonomy cloud, ordered by count. */
+
+.td-shell-tags-cloud {
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 8px 6px 4px;
+  }
+
+  .td-shell-tag {
+    max-width: 100%;
+    border-radius: 999px;
+
+    > span:first-child {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: var(--td-shell-accent);
+    }
+
+    &.td-is-active {
+      background: var(--td-shell-primary-dim);
+    }
+  }
+
+  .td-shell-tag__count {
+    flex: 0 0 auto;
+    min-width: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--td-shell-accent);
+    color: var(--bs-body-color);
+    font-size: 11px;
+    line-height: 17px;
+    text-align: center;
+  }
+}
+
+/* Taxonomy index filter bar. */
+
+.td-shell-tags-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0.75rem 0 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.td-shell-term-summary {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--bs-secondary-color);
+}
+
+/* --------------------------------------------------------- series strip */
+
+// CSS-only series disclosure with forced-color-safe borders.
+.td-series-strip {
+  margin-block: 1rem 1.5rem;
+  padding-block: 8px;
+  padding-inline: 14px;
+  border: 1px solid var(--bs-border-color);
+  border-inline-start: 3px solid var(--td-shell-primary);
+  border-radius: 10px;
+  background: var(--td-shell-field);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--td-shell-muted-fg);
+
+  &__line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  &__name {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 24px;
+    font-weight: 600;
+    color: var(--td-shell-primary);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--td-shell-primary);
+      text-decoration: underline;
+    }
+  }
+
+  &__part {
+    color: var(--bs-body-color);
+  }
+
+  &__sep {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 24px;
+    color: var(--bs-tertiary-color);
+  }
+
+  &__all {
+    flex: 1 1 8rem;
+    min-inline-size: 0;
+  }
+
+  &__summary {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 24px;
+    gap: 6px;
+    cursor: pointer;
+    // Use a text caret instead of the engine-dependent native marker.
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: '\25B8'; // ▸
+      flex: 0 0 auto;
+      color: var(--bs-tertiary-color);
+    }
+
+    &:hover::before {
+      color: var(--bs-body-color);
+    }
+  }
+
+  &__all[open] > &__summary::before {
+    content: '\25BE'; // ▾
+  }
+
+  &__list {
+    margin-block: 8px 2px;
+    padding-inline-start: 2rem;
+  }
+
+  &__item {
+    margin-block: 3px;
+
+    &::marker {
+      color: var(--bs-tertiary-color);
+    }
+  }
+
+  // aria-current announces the reader's own place; on screen the whole row --
+  // ordinal marker included -- goes bold, so the cue is never colour alone.
+  &__item:has(> a[aria-current='page']) {
+    font-weight: 600;
+    color: var(--bs-body-color);
+  }
+
+  &__item > a[aria-current='page'] {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+// RTL flips the closed caret; print shows the open state.
+[dir='rtl'] .td-series-strip__summary::before {
+  content: '\25C2'; // ◂
+}
+
+[dir='rtl'] .td-series-strip__all[open] > .td-series-strip__summary::before {
+  content: '\25BE';
+}
+
+@media print {
+  .td-series-strip__summary::before {
+    content: '\25BE';
+  }
+}
+
+ol.td-blog-posts-list--numbered {
+  list-style: decimal;
+  padding-inline-start: 1.75rem;
+
+  > .td-blog-posts-list__item::marker {
+    color: var(--td-shell-muted-fg);
+    font-size: 13px;
+  }
+}

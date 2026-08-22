@@ -1,0 +1,72 @@
+{{/* Walk one content-tree node; sidebar-node.html owns shared row markup.
+     cSpell:ignore relref */ -}}
+{{- $s := .section -}}
+{{- $p := .page -}}
+{{- $shouldDelayActive := .shouldDelayActive -}}
+{{- $sidebarMenuTruncate := .sidebarMenuTruncate -}}
+{{- $treeRoot := eq .ulNr 0 -}}
+{{- $ulNr := .ulNr -}}
+{{- $ulShow := .ulShow -}}
+{{- $iconPolicy := .iconPolicy -}}
+{{- $active := and (not $shouldDelayActive) (eq $s $p) -}}
+{{- $activePath := and (not $shouldDelayActive) (or (eq $p $s) ($p.IsDescendant $s)) -}}
+{{/* Blog sections start expanded; sidebar_expanded: false collapses one.
+     isset keeps an explicit false distinct from the type default. */ -}}
+{{- $forceExpanded := eq $s.Type "blog" -}}
+{{- if isset $s.Params "sidebar_expanded" -}}
+  {{- $forceExpanded = $s.Params.sidebar_expanded -}}
+{{- end -}}
+{{- $shouldExpand := or $activePath $forceExpanded -}}
+{{- $show := cond
+      (or
+        (lt $ulNr $ulShow)
+        $activePath
+        (and (not $shouldDelayActive) (eq $s.Parent $p.Parent))
+        (and (not $shouldDelayActive) (eq $s.Parent $p))
+        (not (partial "ui-param.html" (dict "page" $p "key" "sidebar_menu_compact")))
+        (and (not $shouldDelayActive) ($p.IsDescendant $s.Parent))
+      )
+      true false
+-}}
+{{- $children := union $s.Pages $s.Sections -}}
+{{- $orderedChildren := $children.ByWeight -}}
+{{- if eq $s.Type "blog" -}}
+  {{- $orderedChildren = partial "shell/blog-pages.html" $children -}}
+{{- end -}}
+{{- $pages_tmp := where $orderedChildren ".Params.toc_hide" "!=" true -}}
+{{- $pages := $pages_tmp | first $sidebarMenuTruncate -}}
+{{- if gt (len $pages_tmp) $sidebarMenuTruncate -}}
+  {{- $truncatedEntryCount := sub (len $pages_tmp) $sidebarMenuTruncate -}}
+  {{- warnf "sidebar: %d entries were truncated in section %[4]s; raise params.ui.sidebar_menu_truncate to at least %[2]d (from %[3]d)"
+      $truncatedEntryCount (len $pages_tmp) $sidebarMenuTruncate  $s.Path -}}
+{{- end -}}
+
+{{- $withChild := gt (len $pages) 0 -}}
+{{- $foldable := and (partial "ui-param.html" (dict "page" $p "key" "sidebar_menu_foldable")) (ge $ulNr 1) $withChild -}}
+
+{{- $childMarkup := "" -}}
+{{- if $withChild -}}
+  {{- $childUlNr := add $ulNr 1 -}}
+  {{- $rows := "" -}}
+  {{- range $pages -}}
+    {{- if (not (and (eq $s $p.Site.Home) (eq .Params.toc_root true))) -}}
+      {{- $rows = printf "%s%s" $rows (partial "shell/sidebar-tree-node.html" (dict "page" $p "section" . "shouldDelayActive" $shouldDelayActive "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $childUlNr "ulShow" $ulShow "iconPolicy" $iconPolicy)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $childMarkup = printf "<ul class=\"td-shell-tree__list td-shell-tree__list--%d\">%s</ul>" $childUlNr $rows | safeHTML -}}
+{{- end -}}
+
+{{- partial "shell/sidebar-node.html" (dict
+  "page" $p
+  "section" $s
+  "active" $active
+  "activePath" $activePath
+  "treeRoot" $treeRoot
+  "iconRoot" $treeRoot
+  "withChild" $withChild
+  "foldable" $foldable
+  "shouldExpand" $shouldExpand
+  "hidden" (not (or $show $foldable))
+  "iconPolicy" $iconPolicy
+  "children" $childMarkup
+) -}}

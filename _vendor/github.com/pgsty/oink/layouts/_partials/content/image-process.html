@@ -1,0 +1,81 @@
+{{- /* Apply a validated Hugo image operation while preserving the full-size URL.
+
+     Anything that does not validate warns and returns the image unchanged --
+     the reader still sees it, just not resized. Continuing past a bad command
+     would call an operation on a resource that cannot take it and dereference
+     a result that was never produced. */ -}}
+{{- $name := .name | default "image" -}}
+{{- /* Error label: the Markdown image hook and the gallery fence are not
+       shortcodes, so their messages must not send authors looking for one. */ -}}
+{{- $label := printf "shortcode %q" $name -}}
+{{- if eq $name "image" }}{{ $label = "image" }}{{ else if eq $name "gallery" }}{{ $label = "gallery fence" }}{{ end -}}
+{{- $position := .position | default "unknown position" -}}
+{{- $image := .image -}}
+{{- $ok := true -}}
+{{- $commandValue := .command -}}
+{{- $command := "" -}}
+{{- if ne (printf "%T" $commandValue) "string" -}}
+  {{- warnf "%s: command must be a string at %s; leaving the image unprocessed" $label $position -}}
+  {{- $ok = false -}}
+{{- else -}}
+  {{- $command = strings.TrimSpace $commandValue -}}
+  {{- $commands := slice "Fit" "Resize" "Fill" "Crop" -}}
+  {{- if not (in $commands $command) -}}
+    {{- warnf "%s: command must be one of %s; got %q at %s; leaving the image unprocessed" $label (delimit $commands " | ") $command $position -}}
+    {{- $ok = false -}}
+  {{- end -}}
+{{- end -}}
+{{- $optionsValue := .options -}}
+{{- $options := "" -}}
+{{- if ne (printf "%T" $optionsValue) "string" -}}
+  {{- warnf "%s: options must be a string at %s; leaving the image unprocessed" $label $position -}}
+  {{- $ok = false -}}
+{{- else -}}
+  {{- $options = strings.TrimSpace $optionsValue -}}
+  {{- if not $options -}}
+    {{- warnf "%s: options must not be empty at %s; leaving the image unprocessed" $label $position -}}
+    {{- $ok = false -}}
+  {{- end -}}
+{{- end -}}
+{{- if and $ok (not $image.processable) -}}
+  {{- warnf "%s: src %q resolved as %s and cannot be processed at %s; leaving the image unprocessed" $label $image.source $image.kind $position -}}
+  {{- $ok = false -}}
+{{- end -}}
+
+{{- $out := $image -}}
+{{- if $ok -}}
+  {{- $result := false -}}
+  {{- if eq $command "Fit" -}}
+    {{- $result = try ($image.resource.Fit $options) -}}
+  {{- else if eq $command "Resize" -}}
+    {{- $result = try ($image.resource.Resize $options) -}}
+  {{- else if eq $command "Fill" -}}
+    {{- $result = try ($image.resource.Fill $options) -}}
+  {{- else -}}
+    {{- $result = try ($image.resource.Crop $options) -}}
+  {{- end -}}
+  {{- if $result.Err -}}
+    {{- warnf "%s: %s %q failed for src %q at %s: %s; leaving the image unprocessed" $label $command $options $image.source $position $result.Err -}}
+  {{- else -}}
+    {{- $rendered := $result.Value -}}
+    {{- $out = dict
+      "src" $rendered.RelPermalink
+      "fullSrc" $image.fullSrc
+      "markdownSrc" (partial "content/markdown-url.html" $rendered.RelPermalink)
+      "source" $image.source
+      "kind" $image.kind
+      "mediaType" $rendered.MediaType.Type
+      "width" $rendered.Width
+      "height" $rendered.Height
+      "processable" true
+      "processed" true
+      "resource" $image.resource
+      "renderedResource" $rendered
+      "alt" $image.alt
+      "decorative" $image.decorative
+      "caption" $image.caption
+      "byline" $image.byline
+    -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

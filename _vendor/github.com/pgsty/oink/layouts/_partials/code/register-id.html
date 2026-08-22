@@ -1,0 +1,14 @@
+{{- $page := .page -}}
+{{- $id := printf "%v" .id -}}
+{{- $owner := printf "%v" .owner -}}
+{{- $position := .position | default $page.Path -}}
+{{- $owners := $page.Store.Get "tdCodeIDOwners" | default (dict) -}}
+{{- if isset $owners $id -}}
+  {{- $existing := printf "%v" (index $owners $id) -}}
+  {{- if ne $existing $owner -}}
+    {{- warnf "code component: duplicate id %q at %s (already owned by %s); keeping the first" $id $position $existing -}}
+  {{- end -}}
+{{- else -}}
+  {{- $page.Store.SetInMap "tdCodeIDOwners" $id $owner -}}
+{{- end -}}
+{{- return "" -}}

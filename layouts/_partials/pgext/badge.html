@@ -1,0 +1,60 @@
+{{- /*
+The catalog badge: one compact, colour-coded pill.
+
+This is the busiest primitive on the site — a single extension page renders
+several hundred, the whole build renders well over a hundred thousand — so the
+markup stays deliberately small: one element, short class names, no wrapper,
+no inline style.
+
+Colour comes from a hue name, never a raw value, so the palette lives in one
+place (`assets/scss/_styles_project.scss`) and both themes stay tuned.
+
+Input (dict):
+  content  string  the label; empty renders nothing
+  color    string  hue: gray blue green orange red yellow amber purple indigo
+                   pgblue pgnavy slate teal cyan olive maroon violet pink
+  cate     string  a category code (TIME … ETL); overrides `color`
+  hued     bool    tint border, wash and ink from the hue instead of the
+                   default neutral pill
+  border   bool    true (default) draws the hairline; false is the flat
+                   variant the catalog uses to separate aarch64 from x86_64
+  icon     string  optional catalog icon name (see pgext/icon.html)
+  link     string  optional href; makes the pill a link
+  title    string  optional tooltip text
+  mono     bool    render the label in the coding face
+  class    string  optional extra classes
+*/ -}}
+{{- $content := strings.TrimSpace (printf "%v" (.content | default "")) -}}
+{{- if $content -}}
+  {{- $class := "pgx-b" -}}
+  {{- $cate := upper (strings.TrimSpace (printf "%v" (.cate | default ""))) -}}
+  {{- if $cate -}}
+    {{- $class = printf "%s pgx-b--cate-%s pgx-b--hued" $class (lower $cate) -}}
+  {{- else -}}
+    {{- $hues := slice "gray" "blue" "green" "orange" "red" "yellow" "amber"
+      "purple" "indigo" "pgblue" "pgnavy" "slate" "teal" "cyan" "olive"
+      "maroon" "violet" "pink" -}}
+    {{- $color := lower (strings.TrimSpace (printf "%v" (.color | default "gray"))) -}}
+    {{- if not (in $hues $color) }}{{ $color = "gray" }}{{ end -}}
+    {{- $class = printf "%s pgx-b--%s" $class $color -}}
+    {{- if .hued }}{{ $class = printf "%s pgx-b--hued" $class }}{{ end -}}
+  {{- end -}}
+  {{- $border := true -}}
+  {{- if isset . "border" }}{{ $border = ne (printf "%v" .border) "false" }}{{ end -}}
+  {{- if not $border }}{{ $class = printf "%s pgx-b--flat" $class }}{{ end -}}
+  {{- if .mono }}{{ $class = printf "%s pgx-b--mono" $class }}{{ end -}}
+  {{- with .class }}{{ $class = printf "%s %s" $class . }}{{ end -}}
+  {{- $icon := "" -}}
+  {{- with .icon }}{{ $icon = partial "pgext/icon.html" . }}{{ end -}}
+  {{- $title := strings.TrimSpace (printf "%v" (.title | default "")) -}}
+  {{- $link := strings.TrimSpace (printf "%v" (.link | default "")) -}}
+  {{- $inner := $content -}}
+  {{- if $icon }}{{ $inner = printf `<i class="%s" aria-hidden="true"></i>%s` $icon $content }}{{ end -}}
+  {{- if $link -}}
+    {{- $href := $link -}}
+    {{- if hasPrefix $link "/" }}{{ $href = relLangURL $link }}{{ end -}}
+    <a class="{{ $class }}" href="{{ $href }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $inner | safeHTML }}</a>
+  {{- else -}}
+    <span class="{{ $class }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $inner | safeHTML }}</span>
+  {{- end -}}
+{{- end -}}

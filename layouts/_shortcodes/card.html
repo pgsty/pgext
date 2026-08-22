@@ -1,0 +1,65 @@
+{{- /*
+Site override of the theme's `card`, accepting the catalog's call form.
+
+Two differences from the theme's card, both of which keep several hundred
+generated and hand-written call sites intact:
+
+  subtitle="…"  the description as a parameter rather than the inner body
+  icon="cube"   the catalog's short icon names (see pgext/icon.html); a Font
+                Awesome class pair still passes through unchanged
+
+Everything else — title, link, badge, the inner Markdown body — follows the
+theme, and the rendered markup is the theme's own so it inherits the card CSS.
+*/ -}}
+{{- $title := "" -}}
+{{- $ok := true -}}
+{{- if or (not .Params) (not .IsNamedParams) (not (isset .Params "title")) -}}
+  {{- warnf "shortcode %q requires named parameter title at %s; skipping the card" .Name .Position -}}
+  {{- $ok = false -}}
+{{- else -}}
+  {{- $title = strings.TrimSpace (printf "%v" (.Get "title")) -}}
+  {{- if not $title -}}
+    {{- warnf "shortcode %q: title must not be empty at %s; skipping the card" .Name .Position -}}
+    {{- $ok = false -}}
+  {{- end -}}
+{{- end -}}
+{{- if $ok -}}
+  {{- $href := "" -}}
+  {{- $external := false -}}
+  {{- if isset .Params "link" -}}
+    {{- $link := strings.TrimSpace (printf "%v" (.Get "link")) -}}
+    {{- if hasPrefix $link "/" -}}
+      {{- $href = relLangURL $link -}}
+    {{- else if $link -}}
+      {{- $href = $link -}}
+      {{- $external = not (hasPrefix $link "#") -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $icon := "" -}}
+  {{- if isset .Params "icon" }}{{ $icon = partial "pgext/icon.html" (.Get "icon") }}{{ end -}}
+  {{- $badge := "" -}}
+  {{- if isset .Params "badge" }}{{ $badge = strings.TrimSpace (printf "%v" (.Get "badge")) }}{{ end -}}
+  {{- $body := "" -}}
+  {{- if isset .Params "subtitle" }}{{ $body = strings.TrimSpace (printf "%v" (.Get "subtitle")) }}{{ end -}}
+  {{- with strings.TrimSpace (printf "%s" .InnerDeindent) }}{{ $body = . }}{{ end -}}
+  {{- $format := lower (.Page.Store.Get "tdOutputFormat" | default "html") -}}
+  {{- if eq $format "markdown" -}}
+    {{- $line := cond (ne $href "") (printf "[%s](%s)" $title $href) (printf "**%s**" $title) -}}
+    {{- with $body }}{{ $line = printf "%s — %s" $line (replaceRE `\s*\n\s*` " " .) }}{{ end }}
+- {{ $line | safeHTML }}
+  {{- else -}}
+    {{- $id := printf "td-card-%s-%d" (md5 .Page.RelPermalink | truncate 8 "") .Ordinal -}}
+<article id="{{ $id }}" class="td-content-card">
+<div class="td-content-card__body">
+<div class="td-content-card__head">
+{{- with $icon }}<i class="{{ . }} td-content-card__icon" aria-hidden="true"></i>{{ end -}}
+{{- if $href }}<a class="td-content-card__title" href="{{ $href }}"{{ if $external }} rel="noopener"{{ end }}>{{ $title }}</a>{{ else }}<strong class="td-content-card__title">{{ $title }}</strong>{{ end -}}
+{{- with $badge }}<span class="td-content-card__badge">{{ . }}</span>{{ end -}}
+</div>
+{{- if $body }}
+<div class="td-content-card__description">{{ partial "content/render-block.html" (dict "page" .Page "scope" (printf "card%d" .Ordinal) "content" $body "origin" (printf "shortcode %q at %s" .Name .Position)) }}</div>
+{{- end }}
+</div>
+</article>
+  {{- end -}}
+{{- end -}}

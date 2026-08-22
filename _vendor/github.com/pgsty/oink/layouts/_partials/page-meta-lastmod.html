@@ -1,0 +1,16 @@
+{{- /* Render the page annotation's lines. The lines themselves are resolved by
+     annotation-items.html; this partial owns only the markup, so a site that
+     needs a different line overrides the resolver and keeps these classes,
+     the print rules, and the icon column. The partial name is the older
+     override point and stays. */ -}}
+{{- $items := partial "annotation-items.html" . -}}
+{{- with $items }}
+<div class="td-page-meta__footer">
+  {{- range . }}
+  <div class="td-page-meta__item td-page-meta__{{ .key }}">
+    <span class="td-page-meta__icon"><i class="{{ .icon }}" aria-hidden="true"></i></span>
+    <span>{{ .html | safeHTML }}</span>
+  </div>
+  {{- end }}
+</div>
+{{ end -}}

@@ -1,0 +1,68 @@
+.td-skip-link {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 1100;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.5rem;
+  background: var(--bs-primary);
+  color: var(--bs-white);
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-150%);
+  transition:
+    opacity var(--td-motion-duration-fast) ease,
+    transform var(--td-motion-duration-fast) ease;
+
+  &:focus-visible {
+    color: var(--bs-white);
+    opacity: 1;
+    outline: 3px solid color-mix(in srgb, var(--bs-primary) 35%, white);
+    outline-offset: 2px;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+// Oink uses color, hover color, and visible focus states for links. Keep the
+// no-underline treatment consistent across content and component overrides.
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
+}
+
+// Without an underline, inline links need a non-color distinction from the
+// surrounding copy to preserve the WCAG link-in-text contract.
+.td-content,
+.td-landing-landing {
+  :where(p, li, dd, figcaption, td, th) a:not(.btn) {
+    font-weight: 600;
+  }
+}
+
+[data-bs-theme='light'] .td-content {
+  .text-primary {
+    color: var(--bs-link-color) !important;
+  }
+
+  .text-info {
+    color: #326f7d !important;
+  }
+}
+
+[data-bs-theme='dark'] .td-content .text-info {
+  color: #75c5d4 !important;
+}
+
+// Bootstrap's disabled opacity blends both text and background below 4.5:1.
+.btn-primary.disabled,
+.btn-primary:disabled {
+  border-color: #53657a;
+  background-color: #53657a;
+  color: #fff;
+  opacity: 1;
+}

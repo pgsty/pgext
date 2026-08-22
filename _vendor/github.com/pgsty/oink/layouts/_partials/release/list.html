@@ -1,0 +1,32 @@
+{{- $section := . -}}
+<div class="td-content td-release-index">
+  {{- partial "page-title.html" . -}}
+  {{- with partial "content/render.html" . }}{{ . }}{{ end -}}
+
+  {{- range slice "release_products" "release_group_by_product" -}}
+    {{- if isset $section.Params . -}}
+      {{- warnf "%s: %s was removed with the release map; the index lists every page in the section" $section.Path . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $records := slice -}}
+  {{- range .RegularPages -}}
+    {{- $meta := partial "release/meta.html" (dict "page" . "required" false) -}}
+    {{- $name := .Title -}}
+    {{- if $meta.valid }}{{ $name = printf "%s %s" $meta.project $meta.tag }}{{ end -}}
+    {{- $records = $records | append (dict
+      "page" .
+      "name" $name
+      "sortKey" (printf "%s|%s|%s" (.Date.UTC.Format "20060102T150405Z") $meta.versionSort .RelPermalink)
+    ) -}}
+  {{- end -}}
+  <ol class="td-release-index__list">
+    {{- range sort $records "sortKey" "desc" }}
+    <li class="td-release-index__item">
+      <a class="td-release-index__name" href="{{ .page.RelPermalink }}" dir="auto">{{ .name }}</a>
+      <time class="td-release-index__date" datetime="{{ .page.Date.Format "2006-01-02" }}">{{ .page.Date.Format "2006-01-02" }}</time>
+      {{- with .page.Description }}<p class="td-release-index__description">{{ . }}</p>{{ end -}}
+    </li>
+    {{- end }}
+  </ol>
+</div>

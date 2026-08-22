@@ -1,0 +1,11 @@
+{{- $text := printf "%v" . -}}
+{{- $longest := 0 -}}
+{{- range findRE `\x60+` $text -}}
+  {{- if gt (len .) $longest }}{{ $longest = len . }}{{ end -}}
+{{- end -}}
+{{- $fenceLength := 1 -}}
+{{- if gt $longest 0 }}{{ $fenceLength = add $longest 1 }}{{ end -}}
+{{- $fence := strings.Repeat $fenceLength "`" -}}
+{{- $padding := "" -}}
+{{- if or (hasPrefix $text "`") (hasSuffix $text "`") }}{{ $padding = " " }}{{ end -}}
+{{- return (printf "%s%s%s%s%s" $fence $padding $text $padding $fence) -}}

@@ -1,0 +1,25 @@
+{{- $item := .item -}}
+{{- $label := $item.name | default $item.title | default "" -}}
+{{- $alt := $item.alt | default ($label | markdownify | plainify) -}}
+{{- $asset := $item.image | default $item.logo -}}
+{{- $where := printf "landing item %q" ($label | default "(untitled)") -}}
+{{- with $asset -}}
+  {{- $url := partial "content/url.html" (dict
+    "name" "landing" "parameter" "image" "position" $where "value" (printf "%v" .) "kind" "image"
+  ) -}}
+<img src="{{ $url.href }}" alt="{{ $alt }}" loading="{{ $item.loading | default "lazy" }}"{{ with $item.width }} width="{{ . }}"{{ end }}{{ with $item.height }} height="{{ . }}"{{ end }}>
+{{- else -}}
+  {{- with $item.icon -}}
+    {{- $icon := printf "%v" . -}}
+    {{- if or (hasPrefix $icon "fa-") (in $icon " fa-") -}}
+<i class="{{ $icon }}" aria-hidden="true"></i>
+    {{- else if or (hasPrefix $icon "http://") (hasPrefix $icon "https://") (hasPrefix $icon "/") (in $icon "/") (in $icon ".svg") (in $icon ".png") (in $icon ".webp") (in $icon ".jpg") (in $icon ".jpeg") -}}
+      {{- $url := partial "content/url.html" (dict
+        "name" "landing" "parameter" "icon" "position" $where "value" $icon "kind" "image"
+      ) -}}
+<img src="{{ $url.href }}" alt="{{ $alt }}" loading="{{ $item.loading | default "lazy" }}"{{ with $item.width }} width="{{ . }}"{{ end }}{{ with $item.height }} height="{{ . }}"{{ end }}>
+    {{- else -}}
+<span aria-hidden="true">{{ $icon }}</span>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

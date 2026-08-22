@@ -1,0 +1,26 @@
+{{- $sidebarCacheLimit := .Site.Params.ui.sidebar_cache_limit | default 500 -}}
+{{- $cacheSidebar := ge (len .Site.Pages) $sidebarCacheLimit -}}
+{{- $sidebarRoot := partial "shell/sidebar-root.html" . -}}
+{{- $iconPolicy := partial "shell/sidebar-icon-policy.html" . -}}
+
+{{- $args := dict
+  "context" .
+  "cacheSidebar" $cacheSidebar
+  "sidebarRoot" $sidebarRoot
+  "sidebarRootID" $sidebarRoot.RelPermalink
+  "iconPolicy" $iconPolicy
+-}}
+{{- $docsNav := index hugo.Data "docs_nav" | default dict -}}
+{{- $tree := "shell/sidebar-tree.html" -}}
+{{- if and
+      (in (slice "docs" "book") .Type)
+      (ne $sidebarRoot .Site.Home)
+      (isset $docsNav "sections")
+  -}}
+  {{- $tree = "shell/docs-sidebar-tree.html" -}}
+{{- end -}}
+{{- if $cacheSidebar -}}
+  {{- partialCached $tree $args $sidebarRoot.RelPermalink -}}
+{{- else -}}
+  {{- partial $tree $args -}}
+{{- end -}}

@@ -1,0 +1,26 @@
+{{- /*
+The category registry: the single source of colour, glyph and short name for
+the sixteen catalog categories.
+
+Every surface that paints a category — the `category` shortcode, the landing
+grid, taxonomy term pages — reads this map, so a category looks the same
+everywhere. Cache it: it is a constant.
+*/ -}}
+{{- return dict
+  "TIME"  (dict "name" "Time Series"        "icon" "clock"                   "color" "purple")
+  "GIS"   (dict "name" "Geospatial"         "icon" "globe"                   "color" "green")
+  "RAG"   (dict "name" "Vector & AI"        "icon" "light-bulb"              "color" "red")
+  "FTS"   (dict "name" "Full-Text Search"   "icon" "search"                  "color" "blue")
+  "OLAP"  (dict "name" "Analytics"          "icon" "chart-bar"               "color" "indigo")
+  "FEAT"  (dict "name" "Features"           "icon" "sparkles"                "color" "amber")
+  "LANG"  (dict "name" "Procedural Languages" "icon" "code"                  "color" "blue")
+  "TYPE"  (dict "name" "Data Types"         "icon" "cube"                    "color" "purple")
+  "UTIL"  (dict "name" "Utilities"          "icon" "cog"                     "color" "gray")
+  "FUNC"  (dict "name" "Functions"          "icon" "variable"                "color" "red")
+  "ADMIN" (dict "name" "Administration"     "icon" "office-building"         "color" "gray")
+  "STAT"  (dict "name" "Statistics"         "icon" "trending-up"             "color" "green")
+  "SEC"   (dict "name" "Security"           "icon" "shield-check"            "color" "yellow")
+  "FDW"   (dict "name" "Foreign Data Wrappers" "icon" "database"             "color" "blue")
+  "SIM"   (dict "name" "Simulation"         "icon" "duplicate"               "color" "purple")
+  "ETL"   (dict "name" "Replication & ETL"  "icon" "truck"                   "color" "green")
+-}}

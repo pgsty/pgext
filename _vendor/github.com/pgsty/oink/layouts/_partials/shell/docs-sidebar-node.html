@@ -1,0 +1,53 @@
+{{/* Walk one docs_nav node; sidebar-node.html owns shared row markup.
+     cSpell:ignore relref */ -}}
+{{- $p := .page -}}
+{{- $node := .node -}}
+{{- $currentURL := .currentURL -}}
+{{- $activeURLs := .activeURLs -}}
+{{- $shouldDelayActive := .shouldDelayActive -}}
+{{- $ulNr := .ulNr -}}
+{{- $iconPolicy := .iconPolicy -}}
+{{- $s := $p.Site.GetPage $node.page -}}
+{{- if not $s -}}
+  {{- warnf "docs navigation: page %s was not found; skipping the entry" $node.page -}}
+{{- else -}}
+  {{- $active := and (not $shouldDelayActive) (eq $node.url $currentURL) -}}
+  {{- $activePath := and (not $shouldDelayActive) (in $activeURLs $node.url) -}}
+  {{- $forceExpanded := $s.Params.sidebar_expanded | default false -}}
+  {{- $shouldExpand := or $activePath $forceExpanded -}}
+  {{- $withChild := gt (len $node.children) 0 -}}
+  {{- $foldable := and (partial "ui-param.html" (dict "page" $p "key" "sidebar_menu_foldable")) $withChild -}}
+
+  {{- $childMarkup := "" -}}
+  {{- if $withChild -}}
+    {{- $childUlNr := add $ulNr 1 -}}
+    {{- $rows := "" -}}
+    {{- range $node.children -}}
+      {{- $rows = printf "%s%s" $rows (partial "shell/docs-sidebar-node.html" (dict
+          "page" $p
+          "node" .
+          "currentURL" $currentURL
+          "activeURLs" $activeURLs
+          "shouldDelayActive" $shouldDelayActive
+          "ulNr" $childUlNr
+          "iconPolicy" $iconPolicy
+      )) -}}
+    {{- end -}}
+    {{- $childMarkup = printf "<ul class=\"td-shell-tree__list td-shell-tree__list--%d\">%s</ul>" $childUlNr $rows | safeHTML -}}
+  {{- end -}}
+
+  {{- partial "shell/sidebar-node.html" (dict
+    "page" $p
+    "section" $s
+    "active" $active
+    "activePath" $activePath
+    "treeRoot" false
+    "iconRoot" (eq $ulNr 1)
+    "withChild" $withChild
+    "foldable" $foldable
+    "shouldExpand" $shouldExpand
+    "hidden" false
+    "iconPolicy" $iconPolicy
+    "children" $childMarkup
+  ) -}}
+{{- end -}}

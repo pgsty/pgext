@@ -1,0 +1,2 @@
+{{- $tag := .Site.Language.Locale | default .Site.Language.Lang -}}
+{{- replace $tag "_" "-" -}}

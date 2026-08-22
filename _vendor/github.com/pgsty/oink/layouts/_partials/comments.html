@@ -1,0 +1,17 @@
+{{- $state := partial "comments-state.html" . -}}
+{{- if $state.enabled -}}
+  {{- if ne $state.type "giscus" -}}
+    {{- $warningID := printf "comments-unsupported-type-%s" ($state.type | default "unset") -}}
+    {{- warnidf $warningID (printf
+      "unsupported params.comments.type %q on %s; skipping comments"
+      $state.type .RelPermalink
+    ) -}}
+  {{- else if $state.active -}}
+    {{- partial "giscus.html" . -}}
+  {{- else -}}
+    {{- warnidf "giscus-not-configured" (printf
+      "params.comments.giscus is missing required keys (%s); skipping comments"
+      (delimit $state.missing ", ")
+    ) -}}
+  {{- end -}}
+{{- end -}}

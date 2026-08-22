@@ -1,0 +1,11 @@
+{{- partial "content/shortcode-params.html" (dict "shortcode" . "form" "none") -}}
+{{- $format := lower (.Page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if eq $format "markdown" -}}
+{{ .Inner }}
+{{- else -}}
+<div class="td-steps td-max-width-on-larger-screens">
+
+{{ .Inner }}
+
+</div>
+{{- end -}}

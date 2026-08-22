@@ -1,0 +1,23 @@
+{{- $page := .page -}}
+{{- $data := .data -}}
+{{- $id := .id -}}
+{{- $description := "" -}}
+{{- with index $data "desc" -}}
+  {{- $description = printf "%v" . -}}
+{{- else -}}
+  {{- with index $data "text" }}{{ $description = printf "%v" . }}{{ end -}}
+{{- end -}}
+{{- $compact := cond (index . "compact") " td-landing-section__head--compact" "" -}}
+{{- if or (index $data "eyebrow") (index $data "title") $description -}}
+<header class="td-landing-section__head{{ $compact }}">
+  {{- with index $data "eyebrow" }}
+  <p class="td-landing-section__eyebrow"><span>{{ partial "landing/markdown.html" (dict "page" $page "value" .) }}</span><i aria-hidden="true"></i></p>
+  {{- end }}
+  {{- with index $data "title" }}
+  <h2 id="{{ $id }}-title">{{ partial "landing/markdown.html" (dict "page" $page "value" .) }}</h2>
+  {{- end }}
+  {{- with $description }}
+  <p class="td-landing-section__description">{{ partial "landing/markdown.html" (dict "page" $page "value" .) }}</p>
+  {{- end }}
+</header>
+{{- end -}}

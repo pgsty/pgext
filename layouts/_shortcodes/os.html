@@ -1,12 +1,15 @@
-{{- $osName := trim (.Get 0) " " -}}
-{{- $href := (printf "/os/%s" $osName) | relLangURL -}}
-{{- $hasBorder := not (strings.HasSuffix $osName "aarch64") -}}
+{{- /*
+Link to a platform page. The flat variant marks the aarch64 row of each pair,
+so a reader can tell the two architectures apart at a glance.
 
-<a href="{{ $href }}" title="OS: {{ $osName }}">
-  {{- partial "shortcodes/badge.html" (dict
-    "content" $osName
-    "color" "gray"
-    "border" $hasBorder
-    )
-  -}}
-</a>
+@param {string} 0 OS target, e.g. `el9.x86_64`
+*/ -}}
+{{- $os := trim (.Get 0) " " -}}
+{{- partial "pgext/badge.html" (dict
+  "content" $os
+  "color" "gray"
+  "border" (not (strings.HasSuffix $os "aarch64"))
+  "link" (printf "/os/%s" $os)
+  "title" (printf "OS: %s" $os)
+  "mono" true
+) -}}

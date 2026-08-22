@@ -1,0 +1,44 @@
+{{ define "main" -}}
+{{- /*
+Site override of OINK's term page.
+
+The theme's term page is a blog index — a dated row per post with an excerpt.
+An extension is neither dated nor prose, and its auto-generated excerpt is the
+first few hundred words of a specification table, which reads as noise. So a
+term lists its members as the same card the home console renders: name,
+description, and the dimension chips that place it in the catalog.
+*/ -}}
+{{- $cats := partialCached "pgext/categories.html" "categories" -}}
+{{- $dims := slice "categories" "languages" "licenses" "repos" -}}
+{{- $zh := eq .Site.Language.Lang "zh" -}}
+
+<div class="td-content">
+  <h1>{{ partial "taxonomy-label.html" (dict "page" . "key" .Data.Singular) }}: {{ .Title }}</h1>
+  {{ with partial "content/render.html" . }}<div class="td-shell-term-summary">{{ . }}</div>{{ end }}
+  <p class="pgx-term-count">
+    <strong>{{ len .Pages }}</strong>
+    <span>{{ cond $zh "个扩展" "extensions" }}</span>
+  </p>
+</div>
+
+<ul class="pgx-wall pgx-wall--term">
+  {{- range .Pages.ByWeight }}
+  {{- $page := . -}}
+  {{- $cat := "" -}}
+  {{- with .GetTerms "categories" }}{{ $cat = upper (index . 0).LinkTitle }}{{ end -}}
+  <li class="pgx-card is-packaged"{{ if and $cat (index $cats $cat) }} style="--pgx-seg: var(--c-{{ $cat }})"{{ end }}>
+    <a class="pgx-card-cover" href="{{ .RelPermalink }}" aria-label="{{ .LinkTitle }}"></a>
+    <div class="pgx-card-head"><span class="pgx-card-name">{{ .LinkTitle }}</span></div>
+    <p class="pgx-card-desc">{{ .Description }}</p>
+    <div class="pgx-card-tags">
+      {{- range $plural := $dims }}
+      {{- range $page.GetTerms $plural }}
+      {{- $seg := partial "pgext/term-seg.html" (dict "plural" $plural "term" .LinkTitle) }}
+      <a class="pgx-tg{{ if $seg }} pgx-tg--hued{{ end }}"{{ with $seg }} style="{{ . | safeCSS }}"{{ end }} href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+      {{- end }}
+    </div>
+  </li>
+  {{- end }}
+</ul>
+{{ end -}}

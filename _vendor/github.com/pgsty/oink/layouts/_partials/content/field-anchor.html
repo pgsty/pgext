@@ -1,0 +1,30 @@
+{{- $page := .page -}}
+{{- $identity := printf "%v" .identity -}}
+{{- $format := lower ($page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- /* Normalize identifier punctuation before adding collision suffixes. */ -}}
+{{- $slug := strings.Trim (replaceRE `[^\p{L}\p{N}_]+` "-" (lower (printf "%v" .name))) "-" -}}
+{{- if not $slug }}{{ $slug = "entry" }}{{ end -}}
+{{- $base := printf "field-%s" $slug -}}
+{{- $registry := $page.Store.Get "tdFieldAnchors" | default (dict) -}}
+{{- $id := "" -}}
+{{- range $i := seq 1 64 -}}
+  {{- if not $id -}}
+    {{- $candidate := cond (eq $i 1) $base (printf "%s-%d" $base $i) -}}
+    {{- $key := printf "%s|%s" $format $candidate -}}
+    {{- $taken := printf "%v" (index $registry $key | default "") -}}
+    {{- if or (not $taken) (eq $taken $identity) -}}
+      {{- $id = $candidate -}}
+      {{- $page.Store.SetInMap "tdFieldAnchors" $key $identity -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $id -}}
+  {{- /* Past 64 entries sharing one name, fall back to the caller identity,
+         which is unique inside the page by construction, so the document still
+         has no duplicate id. Warn rather than stop the build: the page is
+         readable, only these anchors stop being guessable. */ -}}
+  {{- $id = printf "%s-%s" $base (strings.Trim (replaceRE `[^\p{L}\p{N}_]+` "-" (lower $identity)) "-") -}}
+  {{- warnf "fields: more than 64 entries on %s share the name %q; %q falls back to a position-derived anchor" $page.Path .name $id -}}
+  {{- $page.Store.SetInMap "tdFieldAnchors" (printf "%s|%s" $format $id) $identity -}}
+{{- end -}}
+{{- return $id -}}

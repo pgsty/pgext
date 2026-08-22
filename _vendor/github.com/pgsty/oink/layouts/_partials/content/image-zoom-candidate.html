@@ -1,0 +1,22 @@
+{{- $html := printf "%s" (.html | default "") -}}
+{{- $candidate := strings.Contains $html "data-td-image-zoom" -}}
+{{- if and (not $candidate) (strings.Contains $html "<img") -}}
+  {{- range $block := findRE `(?is)<(?:p|figure)(?:\s[^>]*)?>\s*<img\b[^>]*?/?>` $html -}}
+    {{- if not $candidate -}}
+      {{- $images := findRE `(?is)<img\b[^>]*>` $block 1 -}}
+      {{- with index $images 0 -}}
+        {{- $excluded := or
+          (gt (len (findRE `(?is)\sdata-no-zoom(?:\s|=|/?>)` . 1)) 0)
+          (gt (len (findRE `(?is)\saria-hidden\s*=\s*(?:"true"|'true'|true)(?:\s|/?>)` . 1)) 0)
+          (gt (len (findRE `(?is)\srole\s*=\s*(?:"(?:presentation|none)"|'(?:presentation|none)'|(?:presentation|none))(?:\s|/?>)` . 1)) 0)
+        -}}
+        {{- $usable := and
+          (gt (len (findRE `(?is)\ssrc\s*=\s*(?:"[^"]+"|'[^']+'|[^\s>]+)` . 1)) 0)
+          (gt (len (findRE `(?is)\salt\s*=\s*(?:"[^"]+"|'[^']+'|[^\s>"']+)` . 1)) 0)
+        -}}
+        {{- if and (not $excluded) $usable }}{{ $candidate = true }}{{ end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $candidate -}}

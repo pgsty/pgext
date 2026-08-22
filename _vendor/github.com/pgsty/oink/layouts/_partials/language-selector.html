@@ -1,0 +1,54 @@
+{{- $page := .page -}}
+{{- $class := .class | default "" -}}
+{{- $mode := .mode | default "menu" -}}
+{{- $shellIcon := eq (.icon | default "") "shell" -}}
+{{- $targets := partialCached "language-targets.html" $page $page.Site.BaseURL $page.RelPermalink $page.Site.Language.Lang -}}
+{{- $count := len $targets -}}
+{{- if gt $count 1 -}}
+  {{- $currentIndex := 0 -}}
+  {{- range $index, $target := $targets -}}
+    {{- if $target.active }}{{ $currentIndex = $index }}{{ end -}}
+  {{- end -}}
+  {{- $next := index $targets (mod (add $currentIndex 1) $count) -}}
+  {{- if eq $mode "list" -}}
+{{- /* role=group, not <nav>: the list variant is rendered more than once per
+       page (sidebar utilities, footer, mobile menu), and duplicate navigation
+       landmarks sharing one name are indistinguishable to assistive tech. The
+       group is still named, and still sits inside a real landmark. */ -}}
+<div class="td-language-selector td-language-selector--list{{ with $class }} {{ . }}{{ end }}"
+  role="group" aria-label="{{ T "ui_language_select" }}">
+  {{- range $targets -}}
+    {{- if .active -}}
+  <span class="td-language-selector__item active" lang="{{ .code }}" dir="{{ .direction }}" aria-current="page">{{ .label }}</span>
+    {{- else -}}
+  <a class="td-language-selector__item" href="{{ .url }}" lang="{{ .code }}" hreflang="{{ .code }}" dir="{{ .direction }}">{{ .label }}</a>
+    {{- end -}}
+  {{- end }}
+</div>
+  {{- else -}}
+<div class="td-language-selector td-language-selector--menu{{ with $class }} {{ . }}{{ end }}">
+  <a class="td-language-selector__trigger" href="{{ $next.url }}"
+    lang="{{ $next.code }}" hreflang="{{ $next.code }}" dir="{{ $next.direction }}"
+    title="{{ T "ui_language_switch" }}: {{ $next.label }}"
+    aria-label="{{ T "ui_language_switch" }}: {{ $next.label }}" aria-haspopup="true" aria-expanded="false">
+    {{- if $shellIcon -}}
+      {{- partialCached "shell/icon.html" "languages" "languages" -}}
+    {{- else }}
+    <i class="fa-solid fa-language" aria-hidden="true"></i>
+    {{- end }}
+    <span>{{ $next.label }}</span>
+  </a>
+  <ul aria-label="{{ T "ui_language_select" }}">
+    {{- range $targets }}
+    <li>
+      {{- if .active }}
+      <span class="td-language-selector__item active" lang="{{ .code }}" dir="{{ .direction }}" aria-current="page">{{ .label }}</span>
+      {{- else }}
+      <a class="td-language-selector__item" href="{{ .url }}" lang="{{ .code }}" hreflang="{{ .code }}" dir="{{ .direction }}">{{ .label }}</a>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ul>
+</div>
+  {{- end -}}
+{{- end -}}

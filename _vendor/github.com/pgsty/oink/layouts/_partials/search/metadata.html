@@ -1,0 +1,58 @@
+{{- /* Deterministic local-search metadata derived from Hugo's page tree. */ -}}
+{{- $page := . -}}
+{{- $rootPage := $page.FirstSection -}}
+{{- if not $rootPage }}{{ $rootPage = $page -}}{{ end -}}
+{{- $sectionPage := $page.CurrentSection -}}
+{{- if not $sectionPage }}{{ $sectionPage = $rootPage }}{{ end -}}
+{{- $root := $rootPage.Section -}}
+{{- if not $root -}}
+  {{- with $rootPage.File }}{{ $root = .ContentBaseName }}{{ end -}}
+{{- end -}}
+{{- $root = $root | default "home" | lower -}}
+{{- $section := "" -}}
+{{- with $sectionPage.File -}}
+  {{- if ne .ContentBaseName "_index" }}{{ $section = .ContentBaseName }}{{ end -}}
+{{- end -}}
+{{- $section = $section | default $sectionPage.Section | default $root | lower -}}
+{{- $type := $page.Type | default $root | lower -}}
+{{- $breadcrumb := slice -}}
+{{- $trail := slice -}}
+{{- range $page.Ancestors.Reverse -}}
+  {{- if and (not .IsHome) (or (eq . $rootPage) (.IsDescendant $rootPage)) -}}
+    {{- $trail = $trail | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- range $trail }}{{ $breadcrumb = $breadcrumb | append (.LinkTitle | default .Title) }}{{ end -}}
+{{- if and (not $page.IsHome) (not (in $trail $page)) -}}
+  {{- $breadcrumb = $breadcrumb | append ($page.LinkTitle | default $page.Title) -}}
+{{- end -}}
+{{- $icon := $page.Params.icon | default $sectionPage.Params.icon | default $rootPage.Params.icon -}}
+{{- if not $icon -}}
+  {{- $icons := dict
+    "docs" "fa-solid fa-book"
+    "blog" "fa-solid fa-blog"
+    "swagger" "fa-solid fa-code"
+  -}}
+  {{- $icon = index $icons $type | default (index $icons $root) | default "fa-solid fa-file-lines" -}}
+{{- end -}}
+{{- $keywords := $page.Params.search_keywords | default (slice) -}}
+{{- if not (reflect.IsSlice $keywords) }}{{ $keywords = slice $keywords }}{{ end -}}
+{{- $extraKeywords := partial "hooks/search-keywords-extra.html" $page | default (slice) -}}
+{{- if not (reflect.IsSlice $extraKeywords) -}}
+  {{- warnf "hooks/search-keywords-extra.html must return an array for %s; ignoring the extra keywords" $page.Path -}}
+{{- end -}}
+{{- range $extraKeywords }}{{ $keywords = $keywords | append . }}{{ end -}}
+{{- $normalizedKeywords := slice -}}
+{{- range $keywords -}}
+  {{- $keyword := strings.TrimSpace (printf "%v" .) -}}
+  {{- if $keyword }}{{ $normalizedKeywords = $normalizedKeywords | append $keyword }}{{ end -}}
+{{- end -}}
+{{- return (dict
+  "root" $root
+  "section" $section
+  "type" $type
+  "keywords" $normalizedKeywords
+  "boost" (partial "search/boost.html" $page)
+  "breadcrumb" $breadcrumb
+  "icon" $icon
+) -}}

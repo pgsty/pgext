@@ -1,0 +1,81 @@
+{{- /* Accepts a page, or a dict {page, nested}. `nested: true` renders a <div>
+       instead of a <footer>: a page must not carry two contentinfo landmarks,
+       and the landing page already wraps this row in its own <footer>. */ -}}
+{{- $p := . -}}
+{{- $nested := false -}}
+{{- $collapsible := false -}}
+{{- if reflect.IsMap . -}}
+  {{- $p = .page -}}
+  {{- $nested = .nested | default false -}}
+  {{- $collapsible = .collapsible | default false -}}
+{{- end -}}
+{{- with $p -}}
+{{- $darkMode := partialCached "dark-mode-config.html" "dark-mode-global" -}}
+{{- $center := "Powered by [Oink](https://oink.pgsty.com)" -}}
+{{- if isset .Site.Params "footer_center_info" -}}
+  {{- $center = strings.TrimSpace (printf "%v" .Site.Params.footer_center_info) -}}
+{{- end -}}
+{{- /* Composed rather than branched: splitting an element across the arms of a
+       conditional leaves Go's HTML template parser with unbalanced tags.
+       `data-td-shell-footer` marks the page's one footer block for the
+       footer-offset measurement in docs-shell.js; when nested, the wrapping
+       <footer> in footer.html carries it instead. */ -}}
+{{- $tag := cond $nested "div" "footer" -}}
+{{- $attr := cond $nested "" " data-td-shell-footer" -}}
+{{ printf `<%s class="td-shell-footline d-print-none"%s>` $tag $attr | safeHTML }}
+  {{- with (partial "footer/copyright.html" .) }}
+  <div class="td-shell-footline__copy">{{ . }}</div>
+  {{- end }}
+  {{- with $center }}
+  <div class="td-shell-footline__center">{{ $p.RenderString (dict "display" "inline") . }}</div>
+  {{- end }}
+  <div class="td-shell-footline__right">
+    {{- /* Persistent utility dock for every rendered footer style. The four
+         controls keep the same order and open upward from the bottom bar. */ -}}
+    {{- if .Site.Params.versions }}
+    <div class="td-shell-footline__version">
+      {{ partial "navbar-version-selector.html" (dict "page" . "dropup" true "iconOnly" true) }}
+    </div>
+    {{- end }}
+    {{ partial "language-selector.html" (dict "page" . "class" "td-shell-footline__language" "icon" "shell") }}
+    {{- if le (len (partialCached "language-targets.html" . .Site.BaseURL .RelPermalink .Site.Language.Lang)) 1 }}
+      {{- with (partial "landing/alt-site.html" .) }}
+    <a class="td-shell-iconbtn td-shell-footline__language" href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+      title="{{ .label }}" aria-label="{{ .label }}">{{ partialCached "shell/icon.html" "languages" "footer-alt-language" }}</a>
+      {{- end }}
+    {{- end }}
+    {{- if $darkMode.showMenu }}
+    <div class="td-shell-footline__theme td-nav-hover-menu" data-td-nav-hover>
+      <button type="button" class="td-shell-iconbtn" data-td-nav-hover-trigger data-td-theme-toggle
+        title="{{ T "ui_theme_toggle" }}" aria-label="{{ T "ui_theme_toggle" }}" aria-expanded="false">
+        {{- partialCached "shell/icon.html" "moon" "footer-moon" -}}
+        {{- partialCached "shell/icon.html" "sun" "footer-sun" -}}
+      </button>
+      <div class="td-nav-hover-menu__pop" role="group" aria-label="{{ T "ui_theme_toggle" }}">
+        <button type="button" class="td-nav-hover-menu__option" data-bs-theme-value="light" aria-pressed="false">
+          {{- partialCached "shell/icon.html" "sun" "footer-theme-light" -}}<span>{{ T "ui_theme_light" }}</span>
+        </button>
+        <button type="button" class="td-nav-hover-menu__option" data-bs-theme-value="dark" aria-pressed="false">
+          {{- partialCached "shell/icon.html" "moon" "footer-theme-dark" -}}<span>{{ T "ui_theme_dark" }}</span>
+        </button>
+        <button type="button" class="td-nav-hover-menu__option" data-bs-theme-value="auto" aria-pressed="false">
+          {{- partialCached "shell/icon.html" "contrast" "footer-theme-auto" -}}<span>{{ T "ui_theme_auto" }}</span>
+        </button>
+      </div>
+    </div>
+    {{- end }}
+    {{ partial "shell/keyboard-help.html" . }}
+    {{- if $collapsible }}
+    {{- /* Collapses the fat footer above this line; footer-collapse.js owns the
+         behavior and persists the choice in localStorage. */}}
+    <button type="button" class="td-shell-footline__toggle" data-td-footer-toggle
+      aria-expanded="true" aria-controls="td-site-footer"
+      title="{{ T "ui_footer_collapse" }}" aria-label="{{ T "ui_footer_collapse" }}"
+      data-td-label-collapse="{{ T "ui_footer_collapse" }}"
+      data-td-label-expand="{{ T "ui_footer_expand" }}">
+      {{- partialCached "shell/icon.html" "chevron-down" "chevron-down" -}}
+    </button>
+    {{- end }}
+  </div>
+{{ printf "</%s>" $tag | safeHTML }}
+{{- end -}}

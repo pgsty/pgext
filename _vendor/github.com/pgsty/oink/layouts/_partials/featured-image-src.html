@@ -1,0 +1,12 @@
+{{- /* Resolve a page's featured image, returning a URL or "".
+
+`featured-image-resolve.html` owns the decision and the URL policy; this partial
+only picks the relative form of what it selected.
+
+Input: a page. Returns: a string. */ -}}
+{{- $found := partialCached "featured-image-resolve.html" . .RelPermalink -}}
+{{- $src := $found.href -}}
+{{- with $found.resource -}}
+  {{- $src = .RelPermalink -}}
+{{- end -}}
+{{- return $src -}}

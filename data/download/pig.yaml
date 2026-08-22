@@ -1,0 +1,89 @@
+# The `pig` package manager, as a download record.
+#
+# Every fact here is one this repository already documents: the install script
+# and its China mirror (content/pig/install.md), the two repository channels
+# (content/repo/), and the release artifact names published under the tag.
+# Checksums are deliberately not copied in — the release's own checksums.txt
+# is linked instead, so there is one authority for them.
+
+version: 1.8.0
+repo: pgsty/pig
+published: true
+
+channels:
+  - id: script
+    kind: rolling
+    title: Install script
+    title_zh: 安装脚本
+    icon: fa-solid fa-bolt
+    note: >-
+      Downloads the newest `pig` RPM or DEB from the repository and installs it
+      with `rpm` or `dpkg`. Linux `x86_64` and `aarch64`; on macOS use the
+      release tarball below.
+    note_zh: '从软件仓库下载最新的 `pig` RPM / DEB，并用 `rpm` 或 `dpkg` 安装。支持 Linux `x86_64` 与 `aarch64`；macOS 请使用下面的发布包。'
+    steps:
+      - title: Default
+        title_zh: 默认
+        code: curl -fsSL https://repo.pigsty.io/pig | bash
+        lang: bash
+      - title: China mirror
+        title_zh: 中国镜像
+        code: curl -fsSL https://repo.pigsty.cc/pig | bash
+        lang: bash
+
+  - id: repo
+    kind: rolling
+    title: Package manager
+    title_zh: 系统包管理器
+    icon: fa-solid fa-warehouse
+    note: >-
+      `pig` lives in the [`pigsty-infra`](/repo/infra/) repository, so once
+      that repository is configured it upgrades with everything else.
+    note_zh: '`pig` 位于 [`pigsty-infra`](/repo/infra/) 仓库中，配置好该仓库之后，它就会跟随系统其它软件包一起升级。'
+    steps:
+      - title: Debian / Ubuntu
+        title_zh: Debian / Ubuntu
+        code: |-
+          sudo tee /etc/apt/sources.list.d/pigsty-infra.list > /dev/null <<EOF
+          deb [trusted=yes] https://repo.pigsty.io/apt/infra generic main
+          EOF
+          sudo apt update && sudo apt install -y pig
+        lang: bash
+      - title: RHEL / RockyLinux
+        title_zh: RHEL / RockyLinux
+        code: |-
+          sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'
+          [pigsty-infra]
+          name=Pigsty Infra for $basearch
+          baseurl=https://repo.pigsty.io/yum/infra/$basearch
+          enabled = 1
+          gpgcheck = 0
+          module_hotfixes=1
+          EOF
+          sudo yum makecache && sudo yum install -y pig
+        lang: bash
+
+  - id: release
+    kind: pinned
+    title: Release artifacts
+    title_zh: 发布产物
+    icon: fa-solid fa-box-open
+    url: https://github.com/pgsty/pig/releases/tag/${tag}
+    note: >-
+      RPM, DEB and tarballs for Linux and macOS on both architectures.
+      Verify against the release's own
+      [checksums.txt](https://github.com/pgsty/pig/releases/latest).
+    note_zh: '面向 Linux 与 macOS、双架构的 RPM、DEB 与压缩包。请对照该发布自带的 [checksums.txt](https://github.com/pgsty/pig/releases/latest) 校验。'
+    steps:
+      - title: Linux x86_64 tarball
+        title_zh: Linux x86_64 压缩包
+        code: |-
+          curl -fsSLO https://github.com/pgsty/pig/releases/download/${tag}/pig-${tag}.linux-amd64.tar.gz
+          tar -xf pig-${tag}.linux-amd64.tar.gz && sudo install -m 0755 pig /usr/bin/pig
+        lang: bash
+      - title: macOS arm64 tarball
+        title_zh: macOS arm64 压缩包
+        code: |-
+          curl -fsSLO https://github.com/pgsty/pig/releases/download/${tag}/pig-${tag}.darwin-arm64.tar.gz
+          tar -xf pig-${tag}.darwin-arm64.tar.gz && sudo install -m 0755 pig /usr/local/bin/pig
+        lang: bash

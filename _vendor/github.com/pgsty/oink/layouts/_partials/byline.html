@@ -1,0 +1,17 @@
+{{- /* Date and length belong to the separate article info line. */ -}}
+{{- $page := .page -}}
+{{- $authors := .authors -}}
+{{- if not $authors -}}{{ $authors = partial "authors-resolve.html" $page }}{{- end -}}
+{{- if $authors }}
+	<div class="td-byline td-byline--authors mb-4">
+		{{- range $authors }}
+		<a class="td-byline__author" href="{{ .url }}">{{ partial "authors-avatar.html" (dict "author" . "size" 44 "class" "td-byline__avatar") }}<span class="td-byline__identity"><span class="td-byline__name">{{ .name }}</span>{{ with .description }}<span class="td-byline__bio">{{ . }}</span>{{ end }}</span></a>
+		{{- end }}
+	</div>
+{{- else }}
+	{{- with $page.Params.author }}
+	<div class="td-byline mb-4">
+		<b>{{ . | markdownify }}</b>
+	</div>
+	{{- end }}
+{{- end -}}

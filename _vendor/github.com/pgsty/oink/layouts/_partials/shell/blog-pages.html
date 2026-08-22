@@ -1,0 +1,26 @@
+{{- /*
+  Blog navigation keeps Hugo's weighted-page contract: explicitly weighted
+  entries come first. Unweighted entries follow in reverse chronological
+  order. A path tie-breaker keeps same-date translations in the same order.
+*/ -}}
+{{- $pages := . -}}
+{{- $ordered := slice -}}
+{{- $dateLayout := "2006-01-02T15:04:05.999999999Z07:00" -}}
+
+{{- $weighted := where $pages "Weight" "ne" 0 -}}
+{{- range $weighted.GroupBy "Weight" "asc" -}}
+  {{- range .Pages.GroupByDate $dateLayout -}}
+    {{- range sort .Pages "Path" "asc" -}}
+      {{- $ordered = $ordered | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $unweighted := where $pages "Weight" "eq" 0 -}}
+{{- range $unweighted.GroupByDate $dateLayout -}}
+  {{- range sort .Pages "Path" "asc" -}}
+    {{- $ordered = $ordered | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $ordered -}}

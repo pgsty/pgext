@@ -1,0 +1,57 @@
+{{- /* Semantic inline status label with static fallbacks for every output. */ -}}
+{{- partial "content/shortcode-params.html" (dict "shortcode" . "allowed" (slice "text" "tone" "link")) -}}
+{{- /* A badge with no usable text renders nothing; the sentence around it
+       still reads. */ -}}
+{{- $badgeText := "" -}}
+{{- if not (and .IsNamedParams (isset .Params "text")) -}}
+  {{- warnf "shortcode %q requires parameter text at %s; rendering nothing" .Name .Position -}}
+{{- else -}}
+  {{- $textParam := .Get "text" -}}
+  {{- if ne (printf "%T" $textParam) "string" -}}
+    {{- warnf "shortcode %q: text must be a string at %s; rendering nothing" .Name .Position -}}
+  {{- else -}}
+    {{- $badgeText = strings.TrimSpace $textParam -}}
+    {{- if not $badgeText -}}
+      {{- warnf "shortcode %q: text must not be empty at %s; rendering nothing" .Name .Position -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $tone := "neutral" -}}
+{{- if and .IsNamedParams (isset .Params "tone") -}}
+  {{- $toneParam := .Get "tone" -}}
+  {{- if ne (printf "%T" $toneParam) "string" -}}
+    {{- warnf "shortcode %q: tone must be a string at %s; using neutral" .Name .Position -}}
+  {{- else -}}
+    {{- $tone = strings.TrimSpace $toneParam -}}
+  {{- end -}}
+{{- end -}}
+{{- $tones := slice "neutral" "info" "success" "warning" "danger" -}}
+{{- if not (in $tones $tone) -}}
+  {{- warnf "shortcode %q: tone must be one of %s; got %q at %s; using neutral" .Name (delimit $tones " | ") $tone .Position -}}
+  {{- $tone = "neutral" -}}
+{{- end -}}
+
+{{- $link := false -}}
+{{- if and .IsNamedParams (isset .Params "link") -}}
+  {{- $link = partial "content/url.html" (dict
+    "name" .Name "parameter" "link" "position" .Position "value" (.Get "link")
+  ) -}}
+{{- end -}}
+{{- $outputFormat := lower (.Page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if not $badgeText -}}
+{{- else if eq $outputFormat "markdown" -}}
+  {{- $markdownText := partial "content/markdown-escape.html" $badgeText -}}
+  {{- if $link -}}
+    {{- printf "[**%s**](%s)" $markdownText $link.markdown | safeHTML -}}
+  {{- else -}}
+    {{- printf "**%s**" $markdownText | safeHTML -}}
+  {{- end -}}
+{{- else -}}
+  {{- $class := printf "td-badge td-badge--%s" $tone -}}
+  {{- if $link -}}
+<a class="{{ $class }}" href="{{ $link.href }}">{{ $badgeText }}</a>
+  {{- else -}}
+<span class="{{ $class }}">{{ $badgeText }}</span>
+  {{- end -}}
+{{- end -}}

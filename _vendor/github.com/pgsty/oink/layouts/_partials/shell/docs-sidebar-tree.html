@@ -1,0 +1,66 @@
+{{/* Sidebar tree walked from an explicit data/docs_nav.json tree. A site that
+     keeps a frozen navigation order (a migrated toctree, a hand-curated
+     manual) declares it once and both this sidebar and the pager read it.
+     The row markup lives in shell/sidebar-node.html, shared with the
+     content-tree walker, so the two sources cannot drift apart visually. */ -}}
+{{ $context := .context -}}
+{{ $sidebarRootID := .sidebarRootID -}}
+{{ $cacheSidebar := .cacheSidebar -}}
+{{ $iconPolicy := .iconPolicy -}}
+
+{{ with $context -}}
+{{ $shouldDelayActive := $cacheSidebar -}}
+{{ $currentURL := .RelPermalink -}}
+{{ with .Site.LanguagePrefix -}}
+  {{ $currentURL = strings.TrimPrefix . $currentURL -}}
+{{ end -}}
+{{ $docsNav := index hugo.Data "docs_nav" | default dict -}}
+{{ $activeByURL := index $docsNav "active_path_by_url" | default dict -}}
+{{ $activeURLs := index $activeByURL $currentURL | default (slice) -}}
+{{ $sidebarRootURL := $sidebarRootID -}}
+{{ with .Site.LanguagePrefix -}}
+  {{ $sidebarRootURL = strings.TrimPrefix . $sidebarRootURL -}}
+{{ end -}}
+
+<div id="td-sidebar-menu" class="td-shell-tree-wrap{{ if $shouldDelayActive }} d-none{{ end }}">
+  <nav class="td-shell-tree" id="td-section-nav" aria-label="{{ T "ui_sidebar_nav" }}"
+      data-td-sidebar-icon-policy="{{ $iconPolicy }}"
+      {{- if .Site.Params.ui.sidebar_root_enabled }} data-td-sidebar-root-id="{{ $sidebarRootID }}"{{ end -}}>
+    {{ with (index $docsNav "sections") -}}
+    <ul class="td-shell-tree__list td-shell-tree__list--1">
+      {{- $hasRoot := false -}}
+      {{- range . -}}
+        {{- if eq (strings.TrimSuffix "/" .url)
+              (strings.TrimSuffix "/" $sidebarRootURL) -}}
+          {{- $hasRoot = true -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $hasRoot -}}
+        {{- partial "shell/docs-sidebar-node.html" (dict
+            "page" $context
+            "node" (dict "page" $sidebarRootURL "url" $sidebarRootURL "children" (slice))
+            "currentURL" $currentURL
+            "activeURLs" $activeURLs
+            "shouldDelayActive" $shouldDelayActive
+            "ulNr" 1
+            "iconPolicy" $iconPolicy
+        ) -}}
+      {{- end -}}
+      {{ range . -}}
+        {{ partial "shell/docs-sidebar-node.html" (dict
+            "page" $context
+            "node" .
+            "currentURL" $currentURL
+            "activeURLs" $activeURLs
+            "shouldDelayActive" $shouldDelayActive
+            "ulNr" 1
+            "iconPolicy" $iconPolicy
+        ) }}
+      {{ end -}}
+    </ul>
+    {{ else -}}
+      {{ warnf "data/docs_nav.json does not define any Docs navigation sections; falling back to the section tree" -}}
+    {{ end -}}
+  </nav>
+</div>
+{{- end }}

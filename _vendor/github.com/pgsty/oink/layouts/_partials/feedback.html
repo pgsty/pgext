@@ -1,0 +1,75 @@
+{{- /* Low-friction documentation feedback. A click is recorded immediately
+     through the site's existing gtag integration; OINK never collects free
+     text or requires a server endpoint. */ -}}
+{{- $enabled := false -}}
+{{- $showReasons := true -}}
+{{- if isset .Site.Params.ui "feedback" -}}
+  {{- $config := .Site.Params.ui.feedback -}}
+  {{- if reflect.IsMap $config -}}
+    {{- if isset $config "enable" }}{{ $enabled = index $config "enable" }}{{ end -}}
+    {{- if isset $config "reasons" }}{{ $showReasons = index $config "reasons" }}{{ end -}}
+  {{- else -}}
+    {{- $enabled = $config -}}
+  {{- end -}}
+{{- end -}}
+{{- if isset .Params "feedback" -}}
+  {{- if reflect.IsMap .Params.feedback -}}
+    {{- if isset .Params.feedback "enable" }}{{ $enabled = index .Params.feedback "enable" }}{{ end -}}
+    {{- if isset .Params.feedback "reasons" }}{{ $showReasons = index .Params.feedback "reasons" }}{{ end -}}
+  {{- else -}}
+    {{- $enabled = .Params.feedback -}}
+  {{- end -}}
+{{- end -}}
+{{- if ne (printf "%T" $enabled) "bool" -}}
+  {{- warnf "params.ui.feedback.enable must be a boolean at %s; using false" .RelPermalink -}}
+  {{- $enabled = false -}}
+{{- end -}}
+{{- if ne (printf "%T" $showReasons) "bool" -}}
+  {{- warnf "params.ui.feedback.reasons must be a boolean at %s; using true" .RelPermalink -}}
+  {{- $showReasons = true -}}
+{{- end -}}
+{{- if $enabled -}}
+  {{- .Page.Store.Set "hasFeedback" true -}}
+  {{- $commentsState := partial "comments-state.html" . -}}
+<section class="td-feedback d-print-none" data-td-feedback
+  data-td-page-path="{{ .RelPermalink }}"
+  data-td-language="{{ .Site.Language.Lang }}">
+  <div class="td-feedback__prompt">
+    <h2 class="td-feedback__question">{{ i18n "feedback_question" }}</h2>
+    <div class="td-feedback__choices" role="group" aria-label="{{ i18n "feedback_question" }}">
+      <button type="button" class="td-feedback__choice" data-td-feedback-choice="solved" aria-pressed="false">
+        <i class="fa-regular fa-thumbs-up" aria-hidden="true"></i><span>{{ i18n "feedback_positive" }}</span>
+      </button>
+      <button type="button" class="td-feedback__choice" data-td-feedback-choice="not_solved" aria-pressed="false">
+        <i class="fa-regular fa-thumbs-down" aria-hidden="true"></i><span>{{ i18n "feedback_negative" }}</span>
+      </button>
+    </div>
+  </div>
+  <div class="td-feedback__result" data-td-feedback-result hidden>
+    <p class="td-feedback__thanks" data-td-feedback-thanks role="status" aria-live="polite">{{ i18n "feedback_thanks" }}</p>
+    {{- if $showReasons }}
+    <div class="td-feedback__reasons" data-td-feedback-reasons tabindex="-1" hidden>
+      <p>{{ i18n "feedback_reason_prompt" }}</p>
+      <div class="td-feedback__reason-list" role="group" aria-label="{{ i18n "feedback_reason_prompt" }}">
+        {{- range slice
+          (dict "value" "missing_info" "label" "feedback_reason_missing")
+          (dict "value" "outdated" "label" "feedback_reason_outdated")
+          (dict "value" "steps_failed" "label" "feedback_reason_failed")
+          (dict "value" "unclear" "label" "feedback_reason_unclear")
+        }}
+        <button type="button" class="td-feedback__reason" data-td-feedback-reason="{{ .value }}" aria-pressed="false">
+          {{ i18n .label }}
+        </button>
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+    <div class="td-feedback__result-actions">
+      {{- if $commentsState.active }}
+      <a class="td-feedback__details" href="#td-comments">{{ i18n "feedback_details" }}</a>
+      {{- end }}
+      <button type="button" class="td-feedback__change" data-td-feedback-change>{{ i18n "feedback_change" }}</button>
+    </div>
+  </div>
+</section>
+{{- end -}}

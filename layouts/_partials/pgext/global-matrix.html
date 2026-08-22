@@ -1,0 +1,111 @@
+{{- /*
+The global availability matrix: 407 packages × 16 platforms × 5 PostgreSQL
+majors, drawn as one sheet.
+
+The whole point of the page is that the grid fits the screen's width, so the
+column size is derived from the container rather than fixed: `--cell-size` is
+what remains of the canvas after the package column, divided by the eighty
+data columns. Everything else — the sticky header, the sticky package column,
+the group rules — follows from that one measurement.
+
+Rows come from the export `pgext gen matrix` already writes for the standalone
+viewer, so this page and `/matrix/` are the same data rendered twice.
+*/ -}}
+{{- $zh := eq .Site.Language.Lang "zh" -}}
+{{- $src := resources.Get "matrix/pgext-global-matrix.json" -}}
+{{- if not $src -}}
+  {{- errorf "pgext: matrix/pgext-global-matrix.json is not mounted into assets; run `pgext gen matrix`" -}}
+{{- end -}}
+{{- $m := $src | transform.Unmarshal -}}
+{{- $oss := $m.os_versions -}}
+{{- $stats := $m.stats -}}
+
+{{- /* The export stores each group oldest-major-first; the catalog reads
+     newest first, the way every other table on the site does. */ -}}
+{{- $pgs := slice -}}
+{{- range seq (len $m.pg_versions) }}{{ $pgs = $pgs | append (index $m.pg_versions (sub (len $m.pg_versions) .)) }}{{ end -}}
+{{- $npg := len $pgs -}}
+
+{{- $classes := dict "G" "g" "B" "b" "R" "r" "." "n" -}}
+{{- $labels := dict "G" "PIGSTY" "B" "PGDG" "R" (cond $zh "缺失" "Missing") "." "N/A" -}}
+{{- $counts := $stats.Counts -}}
+
+<section class="mx-page" aria-label="{{ cond $zh "全局构建矩阵" "Global build matrix" }}">
+  <header class="mx-head">
+    <p class="pgx-eyebrow">{{ cond $zh "pgext.cloud · 构建矩阵" "pgext.cloud · build matrix" }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="mx-lede">
+      {{- if $zh -}}
+        这张表把 <b>{{ $stats.Rows }}</b> 个扩展包、<b>{{ $stats.OS }}</b> 个操作系统目标与 <b>{{ $stats.PG }}</b> 个 PostgreSQL 大版本，压成 <b>{{ lang.FormatNumberCustom 0 $stats.Cells }}</b> 个彩色槽位。
+      {{- else -}}
+        This sheet compresses <b>{{ $stats.Rows }}</b> packages, <b>{{ $stats.OS }}</b>
+        platform targets and <b>{{ $stats.PG }}</b> PostgreSQL majors into
+        <b>{{ lang.FormatNumberCustom 0 $stats.Cells }}</b> coloured slots.
+      {{- end -}}
+    </p>
+  </header>
+
+  <div class="mx-bar">
+    <ul class="mx-legend">
+      {{- range slice "G" "B" "R" "." }}
+      <li class="mx-lg"><i class="{{ index $classes . }}"></i>{{ index $labels . }}
+        <em>{{ lang.FormatNumberCustom 0 (index $counts . | default 0) }}</em></li>
+      {{- end }}
+    </ul>
+    <p class="mx-links">
+      <a href="{{ "/matrix/pgext-global-matrix.csv" | relURL }}">CSV</a>
+      <a href="{{ "/matrix/pgext-global-matrix.json" | relURL }}">JSON</a>
+      <a href="{{ "/matrix/" | relURL }}">{{ cond $zh "独立视图" "standalone" }}</a>
+    </p>
+  </div>
+
+  {{- $extBase := "/e/" | relLangURL -}}
+  {{- $osBase := "/os/" | relLangURL -}}
+  <div class="mx-matrix" data-mx-oss="{{ delimit $oss "," }}" data-mx-pgs="{{ delimit $pgs "," }}">
+    <table>
+      <colgroup>
+        <col class="mx-col-pkg">
+        {{- range $oss }}{{ range $pgs }}<col class="mx-col-cell">{{ end }}{{ end }}
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="mx-corner" rowspan="2">{{ cond $zh "扩展包" "PACKAGE" }}</th>
+          {{- range $oss }}
+          <th class="mx-os" colspan="{{ $npg }}"><a href="{{ $osBase }}{{ . }}/">{{ . }}</a></th>
+          {{- end }}
+        </tr>
+        <tr>
+          {{- range $oss }}{{ $os := . }}{{ range $pgs }}<th class="mx-pg">{{ . }}</th>{{ end }}{{ end }}
+        </tr>
+      </thead>
+      <tbody>
+        {{- range $m.rows }}
+        {{- $row := . -}}
+        {{- $cells := "" -}}
+        {{- /* Each group is five characters in ascending major order, so the
+             newest major is read from the end. */ -}}
+        {{- range $os := $oss -}}
+          {{- $group := index $row.groups $os | default "" -}}
+          {{- range seq $npg -}}
+            {{- $code := "." -}}
+            {{- $i := sub (len $group) . -}}
+            {{- if ge $i 0 }}{{ $code = substr $group $i 1 }}{{ end -}}
+            {{- $cells = printf `%s<td class="%s"></td>` $cells (index $classes $code | default "n") -}}
+          {{- end -}}
+        {{- end -}}
+        <tr><th class="mx-pkg"><a href="{{ $extBase }}{{ $row.ext }}/">{{ $row.pkg }}</a></th>{{ $cells | safeHTML }}</tr>
+        {{- end }}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="mx-note">
+    {{- if $zh -}}
+      每一格是一个「扩展包 × 平台 × 大版本」的构建槽位。绿色由 Pigsty 仓库交付，蓝色来自 PGDG，红色是本该有却缺失的构建，灰色表示这个组合本来就不存在。
+    {{- else -}}
+      Each slot is one package on one platform for one major. Green ships from
+      the Pigsty repository, blue from PGDG, red is a build that should exist
+      and does not, and grey is a combination that never applied.
+    {{- end -}}
+  </p>
+</section>

@@ -1,0 +1,224 @@
+# Alert labels
+callout_caution: 注意
+callout_important: 重要
+callout_note: 說明
+callout_tip: 提示
+callout_warning: 警告
+callout_success: 成功
+callout_danger: 危險
+callout_question: 問題
+callout_example: 範例
+callout_quote: 引用
+callout_details: 詳情
+
+# UI strings. Buttons and similar.
+ui_pager_prev: 上一頁
+ui_pager_next: 下一頁
+ui_search: 搜尋…
+ui_search_empty: 找不到結果
+ui_search_loading: 正在載入搜尋索引…
+ui_search_nav: 選擇
+ui_search_open: 開啟
+ui_search_close: 關閉
+ui_palette_actions: 操作
+ui_palette_page_actions: 頁面操作
+ui_palette_preferences: 偏好設定
+ui_palette_commands: 命令
+ui_palette_quick_links: 快速連結
+ui_palette_no_commands: 找不到符合的命令
+ui_palette_choose: 請選擇一項
+ui_palette_action_failed: 無法完成此操作
+ui_palette_pages: 頁面
+ui_palette_index_unavailable: 頁面索引暫時無法使用，操作仍可使用
+ui_sidebar_nav: 章節導覽
+ui_heading_self_link: 標題錨點
+ui_field_self_link: 連結至此欄位
+ui_preview_source: Markdown
+ui_preview_rendered: 渲染結果
+ui_main_nav: 主導覽
+ui_home: 首頁
+ui_sidebar_expand: 展開側欄
+ui_sidebar_collapse: 收合側欄
+ui_drawer_open: 開啟導覽
+ui_drawer_close: 關閉導覽
+ui_root_menu_label: 選擇欄目
+ui_tags_title: 標籤
+ui_tag_title: 標籤
+ui_categories_title: 分類
+ui_category_title: 分類
+ui_modules_title: 模組
+ui_module_title: 模組
+ui_authors_title: 作者
+ui_author_title: 作者
+ui_theme_toggle: 切換配色
+ui_language: 語言切換
+ui_theme: 主題顏色
+ui_theme_auto: 跟隨系統
+ui_theme_light: 亮色
+ui_theme_dark: 暗色
+ui_page_actions: 操作
+ui_open_in_chatgpt: 在 ChatGPT 中開啟
+ui_open_in_claude: 在 Claude 中開啟
+ui_open_in_prompt: 請閱讀 %s 的內容，以便我就此向你提問。
+ui_toc_hide: 隱藏目錄
+ui_toc_show: 顯示目錄
+ui_language_select: 選擇語言
+ui_language_switch: 切換語言
+
+# Used in sentences such as "All Tags"
+ui_all: 所有
+
+# Footer text
+footer_all_rights_reserved: 保留所有權利
+
+ui_footer_collapse: 收起頁腳連結
+ui_footer_expand: 展開頁腳連結
+
+# Post (blog, article, etc.)
+post_last_mod: 最後更新於
+post_upstream: "{{ .work }}，{{ .copyright }}，依 {{ .license }} 授權使用，詳見{{ .notice }}。"
+post_upstream_adapted: 本頁改編自 {{ .work }}，{{ .copyright }}，依 {{ .license }} 授權，詳見{{ .notice }}與{{ .history }}。
+post_upstream_adapted_plain: 本頁改編自 {{ .work }}，{{ .copyright }}，依 {{ .license }} 授權，詳見{{ .notice }}。
+post_upstream_notice: 歸屬聲明
+post_upstream_history: 修改歷史
+post_translated: 本頁為譯文，如有出入以{{ .original }}為準。
+post_translated_original: 原文
+post_edit_this: 編輯目前頁面
+post_view_markdown: 檢視 Markdown 原始碼
+post_create_child_page: 建立子頁面
+post_create_issue: 建立文件議題
+post_create_project_issue: 建立專案議題
+post_reading_time: ' 分鐘閱讀時間'
+post_less_than_a_minute_read: 1 分鐘內可讀完
+post_word_count: '{{ .Count }} 字'
+post_reading_minutes: '{{ .Minutes }} 分鐘'
+post_read_original: 閱讀原文
+
+# Print support
+print_printable_section: 這是本節的多頁可列印檢視。
+print_click_to_print: 點選此處列印
+print_show_regular: 返回此頁面的標準檢視
+print_entire_section: 列印完整章節
+
+# Feedback
+feedback_question: 這篇文件解決了你的問題嗎？
+feedback_positive: 是
+feedback_negative: 否
+feedback_thanks: 感謝回饋，我們會據此改進這篇文件。
+feedback_reason_prompt: 哪裡沒有解決？（選填）
+feedback_reason_missing: 缺少必要資訊
+feedback_reason_outdated: 內容錯誤或已過時
+feedback_reason_failed: 操作步驟沒有生效
+feedback_reason_unclear: 內容難以理解
+feedback_details: 在留言區補充詳情
+feedback_change: 修改回饋
+
+# Table of contents
+toc_on_this_page: 目錄
+
+# Error pages
+error_404_title: 頁面不存在
+error_404_body: >-
+  抱歉，該頁面不存在。可以從首頁重新開始。
+error_404_home: 返回首頁
+
+# OINK UI additions.
+ui_search_results: '找到 {count} 筆結果'
+ui_skip_to_content: 跳至主要內容
+ui_copy_markdown: 複製 Markdown 文字
+ui_copy_success: 已複製 Markdown
+ui_copy_error: 無法複製 Markdown
+ui_share: 分享
+ui_share_email: 郵件
+ui_copy_link: 複製連結
+ui_copy_link_success: 已複製連結
+ui_copy_link_error: 無法複製連結
+ui_code_copy: 複製
+ui_code_copy_label: 複製程式碼
+ui_code_copied: 已複製
+ui_code_copy_error: 複製失敗
+ui_code_show_all: 顯示全部 {{ .Count }} 行
+ui_code_collapse: 收合程式碼
+ui_tabs_label: 分頁
+ui_pricing_featured: 推薦
+ui_pricing_included: 包含
+ui_pricing_excluded: 不包含
+ui_marquee_pause: 暫停捲動
+ui_kbd_with: 加
+ui_keyboard_shortcuts: 鍵盤快捷鍵
+ui_shortcut_tree_move: 在側欄中移動
+ui_shortcut_tree_toggle: 收合或展開章節
+ui_shortcut_tree_open: 開啟目前頁面
+ui_shortcut_heading_move: 上一個或下一個標題
+ui_shortcut_page_move: 上一頁或下一頁
+ui_shortcut_search: 搜尋
+ui_shortcut_commands: 命令面板
+ui_shortcut_reading_mode: 專注閱讀模式
+ui_shortcut_language: 切換語言
+ui_shortcut_theme: 切換主題
+ui_shortcut_route: 切換頂層頁面
+ui_page_annotation: 頁面資訊
+ui_field_required: 必填
+ui_action_unavailable: 暂不可用
+ui_image_zoom_dialog: 圖片預覽
+ui_image_zoom_open: 開啟圖片預覽
+ui_image_zoom_close: 關閉圖片預覽
+ui_print_page: 列印此頁
+ui_sidebar_expand_section: 展開章節
+ui_sidebar_collapse_section: 收合章節
+ui_asciinema_timer: 播放時間
+ui_release_view: 檢視發布
+ui_release_source: 原始碼
+ui_release_compare: 比較變更
+ui_release_released: 發布於
+ui_release_checksums: 校驗和
+ui_assets_file: 檔案
+ui_assets_checksum: 校驗和
+ui_assets_copy: 複製校驗和
+ui_assets_copied: 已複製
+ui_assets_copy_all: 複製全部校驗和
+ui_assets_download: 下載資產
+ui_download_channels: 下載渠道
+ui_download_unpublished: 待發布
+
+# Version banner
+version_banner_archived: >-
+  說明文件 {{ .Version }} 版本已不再積極維護，您目前瀏覽的是一份封存快照。
+version_banner_latest: 最新說明文件請參閱 {{ .Link }}。
+version_banner_latest_link: 最新版本
+
+# Comments
+comments_noscript: 載入留言需要啟用 JavaScript。
+comments_noscript_link: 在 GitHub 上檢視討論。
+
+# LLM 頁面操作
+ui_open_in_prompt_label: 就本頁提問
+ui_view_history: 檢視編輯歷史
+ui_table_scroll: "可橫向捲動的表格"
+ui_filetree_divider: "拖曳以調整目錄樹備註欄寬度"
+book_figure: 圖
+book_table: 表
+book_equation: 公式
+book_example: 範例
+book_toc: 全書目錄
+book_draft: 草稿
+book_draft_notice: 本章仍在修訂中。
+contributors_count: 位貢獻者
+
+# Article series
+ui_series_title: 系列
+ui_series_part: 第 {{ .Part }} / 共 {{ .Total }} 篇
+
+# Replace these values with reviewed translations when available.
+ui_list_separator: 、
+
+# Footer text
+post_meta_by_in: "{{ .Authors }} 發佈於 {{ .Section }}"
+post_meta_in: "發佈於 {{ .Section }}"
+
+# Replace these values with reviewed translations when available.
+ui_blog_index_toggle: 切换布局
+
+# Markdown output
+markdown_llms_index: "LLMS 索引："
+markdown_section_pages: "本節頁面："

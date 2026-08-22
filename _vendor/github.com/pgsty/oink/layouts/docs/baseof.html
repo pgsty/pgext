@@ -1,0 +1,50 @@
+{{- .Page.Store.Set "tdOutputFormat" "html" -}}
+<!doctype html>
+<html{{ partial "shell/document-attrs.html" (dict "page" .) }}>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  {{ $toc := "" -}}
+  {{ if not .Params.notoc }}{{ $toc = .TableOfContents }}{{ end -}}
+  {{ $hasToc := and $toc (ne $toc `<nav id="TableOfContents"></nav>`) -}}
+  {{ $sidebarMin := (partial "ui-param.html" (dict "page" . "key" "sidebar_width_min")) | default 220 -}}
+  {{ $sidebarMax := (partial "ui-param.html" (dict "page" . "key" "sidebar_width_max")) | default 480 -}}
+  {{ $navWrap := eq (partial "ui-param.html" (dict "page" . "key" "sidebar_item_overflow")) "wrap" -}}
+  {{ $hasSidebar := partial "shell/sidebar-enabled.html" . -}}
+  {{ $navbar := partial "shell/navbar-enabled.html" . -}}
+  {{ $pageWidth := partial "shell/page-width.html" . -}}
+  <body class="td-{{ .Kind }} td-shell-chrome{{ if $navbar }} td-shell-chrome--navbar{{ end }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
+    {{ partial "skip-link.html" . }}
+    {{ if $navbar }}{{ partial "navbar.html" . }}{{ else }}{{ partial "shell/subnav.html" . }}{{ end }}
+    <div class="container-fluid td-outer">
+      <div class="td-main td-shell-layout td-shell-layout--w-{{ $pageWidth }}{{ if eq (partial "shell/toc-style.html" .) "flow" }} td-shell-layout--toc-flow{{ end }}{{ if not $hasToc }} td-shell-layout--no-toc{{ end }}{{ if not $hasSidebar }} td-shell-layout--no-sidebar{{ end }}{{ if $navWrap }} td-shell-layout--nav-wrap{{ end }}"
+           style="--td-shell-sidebar-min: {{ $sidebarMin }}px; --td-shell-sidebar-max: {{ $sidebarMax }}px;">
+        {{ if $hasSidebar -}}
+        <aside id="td-shell-sidebar" class="td-shell-sidebar d-print-none">
+          {{ partial "shell/sidebar-panel.html" . }}
+        </aside>
+        <div class="td-shell-drawer-backdrop d-md-none d-print-none" data-td-shell-drawer-close></div>
+        {{ partial "shell/floating-pill.html" . }}
+        {{- end }}
+        <main id="td-main-content" class="td-shell-main" tabindex="-1">
+          <article class="td-shell-article">
+            {{ partial "version-banner.html" . }}
+            {{ $crumbs := partial "shell/breadcrumb-enabled.html" . -}}
+            {{ $actionsHTML := partial "actions/title-menu.html" . -}}
+            {{ if or $crumbs (strings.ContainsNonSpace $actionsHTML) -}}
+            <div class="td-shell-topline{{ if not $crumbs }} td-shell-topline--actions-only{{ end }}">
+              {{ if $crumbs }}{{ partial "breadcrumb.html" . }}{{ end }}
+              <span class="td-shell-topline__spacer"></span>
+              {{ $actionsHTML }}
+            </div>
+            {{ end -}}
+            {{ block "main" . }}{{ end }}
+          </article>
+        </main>
+        {{ partial "shell/toc-aside.html" (dict "page" . "hasToc" $hasToc) }}
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

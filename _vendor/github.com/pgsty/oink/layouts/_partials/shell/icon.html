@@ -1,0 +1,23 @@
+{{- $name := . -}}
+{{- $icons := dict
+  "search"           "fa-solid fa-magnifying-glass"
+  "menu"             "fa-solid fa-bars"
+  "x"                "fa-solid fa-xmark"
+  "check"            "fa-solid fa-check"
+  "chevron-down"     "fa-solid fa-angle-down"
+  "chevrons-up-down" "fa-solid fa-sort"
+  "panel-left"       "fa-solid fa-table-columns"
+  "external-link"    "fa-solid fa-arrow-up-right-from-square"
+  "languages"        "fa-solid fa-language"
+  "sun"              "fa-solid fa-sun"
+  "moon"             "fa-solid fa-moon"
+  "contrast"         "fa-solid fa-circle-half-stroke"
+  "code-branch"      "fa-solid fa-code-branch"
+  "circle-question"  "fa-solid fa-circle-question"
+  "github"           "fa-brands fa-github"
+-}}
+{{- with index $icons $name -}}
+<i class="td-shell-icon td-shell-icon--{{ $name }} {{ . }}" aria-hidden="true"></i>
+{{- else -}}
+{{- warnf "shell/icon.html: unknown icon %q; rendering no icon" $name -}}
+{{- end -}}

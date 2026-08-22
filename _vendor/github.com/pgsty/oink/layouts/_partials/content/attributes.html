@@ -1,0 +1,37 @@
+{{- /* Validate consumed, class, data-* and aria-* attributes. Unsafe or
+       unknown keys warn and are omitted. */ -}}
+{{- $attrs := .attributes | default (dict) -}}
+{{- $allowed := .allowed | default (slice) -}}
+{{- $position := .position | default "" -}}
+{{- $kind := .kind | default "block" -}}
+{{- $consumed := dict -}}
+{{- $generic := dict -}}
+{{- $classes := slice -}}
+{{- range $name, $value := $attrs -}}
+  {{- $lower := lower $name -}}
+  {{- $text := printf "%v" $value -}}
+  {{- if eq $lower "class" -}}
+    {{- range $token := split (strings.TrimSpace $text) " " -}}
+      {{- $token = strings.TrimSpace $token -}}
+      {{- if $token -}}
+        {{- if not (findRE `^[A-Za-z0-9_-]+$` $token) -}}
+          {{- warnf "%s attributes: class token %q contains unsupported characters at %s; ignoring it" $kind $token $position -}}{{- continue -}}
+        {{- end -}}
+        {{- if not (in $classes $token) }}{{ $classes = $classes | append $token }}{{ end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else if in $allowed $lower -}}
+    {{- $consumed = merge $consumed (dict $lower $text) -}}
+  {{- else if or (strings.HasPrefix $lower "on") (eq $lower "style") (eq $lower "srcdoc") -}}
+    {{- warnf "%s attributes: unsafe attribute %q is not supported at %s; ignoring it" $kind $name $position -}}
+  {{- else if or (strings.HasPrefix $lower "data-") (strings.HasPrefix $lower "aria-") -}}
+    {{- if not (findRE `^[a-z][a-z0-9_:.-]*$` $lower) -}}
+      {{- warnf "%s attributes: invalid attribute name %q at %s; ignoring it" $kind $name $position -}}
+      {{- continue -}}
+    {{- end -}}
+    {{- $generic = merge $generic (dict $lower $text) -}}
+  {{- else -}}
+    {{- warnf "%s attributes: unknown attribute %q at %s (allowed: %s, class, data-*, aria-*); ignoring it" $kind $name $position (delimit $allowed ", ") -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "consumed" $consumed "class" (delimit $classes " ") "classes" $classes "generic" $generic) -}}

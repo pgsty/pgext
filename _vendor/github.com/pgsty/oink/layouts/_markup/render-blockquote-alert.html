@@ -1,0 +1,65 @@
+{{- $page := .PageInner | default .Page -}}
+{{- $format := lower ($page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- $type := lower (.AlertType | default "") -}}
+{{- $sign := .AlertSign | default "" -}}
+{{- $canonical := slice "note" "tip" "important" "warning" "caution" "success" "danger" "question" "example" "quote" "details" -}}
+{{- $icons := dict
+  "note" "fa-solid fa-circle-info"
+  "tip" "fa-solid fa-lightbulb"
+  "important" "fa-solid fa-circle-exclamation"
+  "warning" "fa-solid fa-triangle-exclamation"
+  "caution" "fa-solid fa-circle-xmark"
+  "success" "fa-solid fa-circle-check"
+  "danger" "fa-solid fa-fire"
+  "question" "fa-solid fa-circle-question"
+  "example" "fa-solid fa-flask"
+  "quote" "fa-solid fa-quote-left"
+  "details" ""
+-}}
+{{- $policy := partial "content/attributes.html" (dict "attributes" .Attributes "allowed" (slice "icon") "position" .Position "kind" "callout") -}}
+{{- $icon := index $icons $type | default "" -}}
+{{- with index $policy.consumed "icon" -}}
+  {{- $value := strings.TrimSpace . -}}
+  {{- if not (findRE `^fa-(solid|regular|brands) fa-[a-z0-9-]+$` $value) -}}
+    {{- warnf "callout: icon must be one Font Awesome class pair such as \"fa-solid fa-rocket\"; got %q at %s; using the type's own icon" $value $.Position -}}
+  {{- else -}}
+    {{- $icon = $value -}}
+  {{- end -}}
+{{- end -}}
+{{- if not (in $canonical $type) -}}
+  {{- /* Unknown type: plain blockquote, marker kept visible so nothing is lost. */ -}}
+  {{- $marker := printf "[!%s]%s" (upper $type) $sign -}}
+<blockquote{{ with $policy.class }} class="{{ . }}"{{ end }}
+  {{- partial "content/attrs.html" $policy.generic }}>
+<p>{{ $marker }}{{ with .AlertTitle }} {{ . }}{{ end }}</p>
+{{ .Text }}
+</blockquote>
+{{- else -}}
+  {{- $title := .AlertTitle -}}
+  {{- if not $title }}{{ $title = i18n (printf "callout_%s" $type) | default (title $type) }}{{ end -}}
+  {{- $collapsible := or (eq $sign "-") (eq $sign "+") (eq $type "details") -}}
+  {{- $open := eq $sign "+" -}}
+  {{- $static := or (ne $format "html") (not $collapsible) -}}
+  {{- $classes := slice "td-callout" (printf "td-callout--%s" $type) -}}
+  {{- if $collapsible }}{{ $classes = $classes | append "td-callout--collapsible" }}{{ end -}}
+  {{- with $policy.class }}{{ $classes = $classes | append . }}{{ end -}}
+  {{- $iconHTML := "" -}}
+  {{- if $icon }}{{ $iconHTML = printf `<i class="td-callout__icon %s" aria-hidden="true"></i>` $icon | safeHTML }}{{ end -}}
+  {{- if $static -}}
+<div class="{{ delimit $classes " " }}" role="note"{{ if and $collapsible (ne $format "html") }} data-td-callout-collapsible{{ end }}
+  {{- partial "content/attrs.html" $policy.generic }}>
+  <div class="td-callout__title">{{ $iconHTML }}<span class="td-callout__label">{{ $title }}</span></div>
+  <div class="td-callout__body">
+{{ .Text }}
+  </div>
+</div>
+  {{- else -}}
+<details class="{{ delimit $classes " " }}"{{ if $open }} open{{ end }}
+  {{- partial "content/attrs.html" $policy.generic }}>
+  <summary class="td-callout__title">{{ $iconHTML }}<span class="td-callout__label">{{ $title }}</span><i class="td-callout__marker fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+  <div class="td-callout__body">
+{{ .Text }}
+  </div>
+</details>
+  {{- end -}}
+{{- end -}}

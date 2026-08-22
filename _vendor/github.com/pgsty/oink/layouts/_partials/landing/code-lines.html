@@ -1,0 +1,10 @@
+{{- $lines := .lines -}}
+{{- $position := .position | default "landing code lines" -}}
+{{- if not (reflect.IsSlice $lines) }}{{ warnf "%s must be an array; rendering no lines" $position }}{{ $lines = slice }}{{ end -}}
+{{- range $index, $line := $lines -}}
+  {{- if not (reflect.IsMap $line) }}{{ warnf "%s line %d must be a map; skipping it" $position (add $index 1) }}{{ continue }}{{ end -}}
+  {{- $class := strings.TrimSpace (printf "%v" ($line.class | default "")) -}}
+  {{- if and $class (not (in (slice "k" "s" "v" "c" "ok" "p") $class)) }}{{ warnf "%s line %d has unsupported class %q; dropping the class" $position (add $index 1) $class }}{{ $class = "" }}{{ end -}}
+  {{- if not (isset $line "text") }}{{ warnf "%s line %d requires text; skipping it" $position (add $index 1) }}{{ continue }}{{ end -}}
+<span{{ with $class }} class="{{ . }}"{{ end }}>{{ $line.prefix }}</span>{{ $line.text }}{{ "\n" -}}
+{{- end -}}

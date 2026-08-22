@@ -1,0 +1,236 @@
+# Oink theme config
+#
+# cSpell:ignore docsy fortawesome fontawesome github permalinkable twbs webfonts
+
+params:
+  # Highlight code with Chroma class names so it follows the theme's light/dark
+  # palettes. Hugo ignores `markup` set by a theme, so the theme applies this
+  # through layouts/_markup/render-codeblock.html instead. Set to false to fall
+  # back to Hugo's inline highlight styles.
+  highlight_classes: true
+  # `hugo server` builds the local index and search runtime too, so a preview
+  # behaves like the deployed site. Set false to skip it on very large sites.
+  offline_search_on_serve: true
+  # Local Lunr search. Off by default; a site opts in.
+  offline_search: false
+  offline_search_index: content # content | summary
+  offline_search_summary_length: 70
+  offline_search_max_results: 10
+  # ISO-8601, the one format every locale reads the same way. A weekday name
+  # is decoration a date line does not need.
+  time_format_blog: 2006-01-02
+  time_format_default: 2006-01-02
+  # Branch used by the edit / history / new-page links derived from github_repo.
+  github_branch: main
+  page_width: normal # normal | wide | full
+  # Inner reading measure for Book pages: slim | normal | wide. Unlike
+  # page_width, this changes content rather than the surrounding shell.
+  reading_width: normal
+  # Diagram runtimes are off until a site opts in. `markmap: true` renders
+  # ```markmap fences; plantuml and drawio also require their server URLs.
+  markmap: false
+  plantuml:
+    enable: false
+  drawio:
+    enable: false
+  print:
+    toc: true # section print views start with a table of contents
+    section_break_wordcount: 50 # pages longer than this start a new print page
+  # `comments: false` is the boolean shorthand for this map.
+  comments:
+    enable: false
+    type: giscus
+    giscus:
+      mapping: pathname
+      strict: 0
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: top
+      theme: auto
+      # lightTheme / darkTheme default to the theme's own giscus palettes
+      # (assets/css/giscus-{light,dark}.css, published only where comments
+      # render); set a giscus built-in name or a stylesheet URL to override.
+      loading: lazy
+  ui:
+    # The site navbar and footer render on every layout by default. Rendering,
+    # auto-hide, and footer style can be overridden per page (or per section,
+    # via a front-matter cascade) with the matching top-level keys.
+    navbar_enabled: true
+    # Auto-hide never applies to the home page unless its own front matter asks.
+    navbar_autohide: false
+    footer_style: fat # fat | slim | none
+    # Non-home pages with `layout: landing` reuse the search/command palette
+    # when offline_search is enabled. Set false to omit it from that shell.
+    landing_search: true
+    # The breadcrumb default is per shell -- on everywhere except the blog,
+    # where an article reads as a standalone piece -- so the resolver
+    # (shell/breadcrumb-enabled.html) owns it. Declaring a value here would
+    # flatten that split into one site-wide answer.
+    section_index: list # list | cards
+    section_index_columns: 2 # card columns when section_index is cards
+    # Form of the blog section list pages: list (rows), cards (a grid), or
+    # table (one compact row per post -- the whole section at once, no year
+    # groups, no pagination). Front matter `blog_index` (on the blog root, or
+    # through its cascade) overrides it per section.
+    blog_index: list # list | cards | table
+    blog_index_columns: 3 # card columns when blog_index is cards
+    # Let a reader cycle the index through list, cards, and table from the
+    # index toolbar. Off by default: it puts every form in the document. The
+    # hidden ones load no images, but their markup is real.
+    blog_index_toggle: false
+    # Posts per page on a list or cards blog index; the table form always
+    # shows everything. Hugo ignores `pagination` set by a theme, so the list
+    # template passes this to .Paginate itself. Twelve divides by two, three,
+    # and four, so no card row is left short.
+    blog_index_size: 12
+    lastmod_commit: subject # subject | hash | none
+    # Page provenance / revision block at the end of a page. Front matter
+    # `annotation: false` turns it off for one page. Its upstream attribution
+    # line is driven by front matter (`upstream_link` plus `upstream_name`,
+    # `upstream_copyright`, `upstream_license`, `upstream_notice`); the theme
+    # declares no defaults for those because they are the site's own facts.
+    annotation: true
+    # Language code of the authoritative version, so a translated page can say
+    # so and link to it; false disables the line. Front matter
+    # `translation_notice: false` opts out a page written natively in this
+    # language.
+    translation_notice: false
+    # Reading time in the article header. Front matter `reading_time: false`
+    # hides it for one page.
+    reading_time: false
+    # Optional local chrome data (never fetched by the browser):
+    # github_stars: 5500
+    # alt_site: { label: 中文站, url: https://example.cn/ }
+    # Native image preview. Front matter `image_zoom: true|false` overrides.
+    image_zoom: false
+    # Dark palette and theme menu: `dark_mode: true` is the shorthand for
+    # `dark_mode: { enable: true, show_menu: true }`.
+    dark_mode: false
+    typography: technical # technical | system
+    shell_types: [docs, book, blog, swagger]
+    docs_section: docs
+    blog_section: blog
+    # How a blog page presents the featured image `images` selects:
+    # none | banner (a framed figure above the title) | wash (the image
+    # behind the article header at a low opacity) | hero (the immersive
+    # presentation: the blog shell paints the image as its own full-bleed
+    # backdrop and moves the opening down — on single pages and section
+    # indexes alike). Front matter `featured_image` overrides it for one
+    # page or, in a cascade, one section. A page that carries no image
+    # renders nothing either way.
+    featured_image: none
+    # Presentation of the right rail: fixed (a panel pinned to the viewport)
+    # or flow (a wider panel in the content flow that starts where the
+    # article starts and pins only on scroll — the immersive blog rail).
+    toc_style: fixed
+    # Taxonomy term clouds on the right rail. Front matter `toc_taxonomies`
+    # (or a section cascade) turns them off; a rail left with neither a TOC
+    # nor clouds renders nothing at all.
+    toc_taxonomies: true
+    # Root of the docs sidebar tree: section (the docs section itself) or
+    # home (the whole site).
+    docs_sidebar_root: section
+    # Shell quick links default to [docs_section, blog_section]; declaring a
+    # value here would break that derivation, so a site sets it explicitly.
+    # quick_links: [docs, blog]
+    # Sidebar icon density: all | groups | none.
+    sidebar_icon_policy: all
+    # Taxonomy sidebar icons default to built-in categories/tags glyphs; a
+    # site adds or overrides one entry per taxonomy plural name.
+    # taxonomy_icons: { categories: fa-solid fa-folder, tags: fa-solid fa-tag }
+    # Sequential navigation is on by default for reading-oriented content.
+    # Override this list site-wide, or set `pager: false` in front matter.
+    pager_types: [docs, book, blog]
+    # Book pages may opt into an h2-h4 branch beneath the active sidebar row.
+    sidebar_headings: false
+    # Cache section trees once a site reaches this many pages. Active state is
+    # restored client-side when the cached tree is used.
+    sidebar_cache_limit: 500
+    # Draft state is always labeled in the sidebar; this optional banner adds
+    # an explicit notice at the start of draft book pages.
+    book_draft_banner: false
+    # Page-end share bar: a list drawn from
+    # x | bluesky | mastodon | facebook | linkedin | reddit | hackernews |
+    # telegram | whatsapp | line | pinterest | weibo | chatgpt | claude |
+    # email | copy. Empty means no bar. Every entry is a plain link (or the
+    # local copy button), never a platform script or a share count. Discord
+    # publishes no share-intent URL, so `copy` stands in for it. Front
+    # matter `share: [x, copy]` replaces the list for one page and
+    # `share: false` turns its bar off; a section cascade scopes the bar to,
+    # say, the blog.
+    share: []
+    # One-click structured docs feedback. The theme calls the site's existing
+    # gtag integration when present; no endpoint or free-text form is used.
+    feedback:
+      enable: false
+      reasons: true
+    sidebar_menu_compact: true
+    sidebar_menu_foldable: true
+    sidebar_menu_truncate: 2000
+    sidebar_root_enabled: true
+    sidebar_root_menu: true
+    sidebar_width_min: 220
+    sidebar_width_max: 480
+    sidebar_item_overflow: ellipsis
+    page_context_menu:
+      enable: true
+      # Opt in before exposing the built-in ChatGPT and Claude actions. When a
+      # reader activates one, the full browser URL (including query and hash)
+      # is sent to that third party; the page body is not uploaded.
+      assistant_links: false
+      # Optional external actions may use the placeholders {url}, {title}, and
+      # {markdown_url}. No custom links are enabled by default.
+      links: []
+    sidebar_expand_levels: 2
+    # Bootstrap's scroll spy for the in-page outline. Off by default: the
+    # theme's own outline runtime already tracks the active heading.
+    scroll_spy: false
+    # Copy control on code blocks. `false` sets the site-wide default only; a
+    # fence that names `copy` explicitly still wins.
+    code_copy: true
+    # Single-key keyboard navigation (WASD/arrow tree focus, j/k outline
+    # jumps, q/e paging, and shell/palette toggles). Set false to drop the
+    # runtime from the bundle; pages can also opt out via front matter or a
+    # section cascade.
+    keyboard_nav: true
+
+outputFormats:
+  LLMS:
+    baseName: llms
+    isPlainText: true
+    mediaType: text/plain
+    notAlternative: true
+  print:
+    baseName: index
+    # FIXME: leave isHTML unset (i.e. false) until we get a Hugo fix for
+    # https://github.com/gohugoio/hugo/issues/14381
+    # isHTML: true
+    mediaType: text/html
+    path: _print
+    permalinkable: false
+
+# Needed fo KaTeX, possibly useful for others. see
+# https://github.com/google/docsy/pull/2465
+mediaTypes:
+  font/woff:
+    suffixes: [woff]
+  font/woff2:
+    suffixes: [woff2]
+
+module:
+  hugoVersion:
+    extended: true
+    min: 0.160.1
+  mounts:
+    - source: assets
+      target: assets
+    # The SPDX table behind the annotation's attribution line. A site's own
+    # data/licenses.yaml is merged over it.
+    - source: data
+      target: data
+    - source: i18n
+      target: i18n
+    - source: layouts
+      target: layouts
+    - source: static
+      target: static

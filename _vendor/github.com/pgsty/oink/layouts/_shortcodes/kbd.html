@@ -1,0 +1,36 @@
+{{- /* Positional-only keyboard sequence with a pure Markdown fallback. */ -}}
+{{- partial "content/shortcode-params.html" (dict "shortcode" . "form" "positional") -}}
+{{- if eq (len .Params) 0 -}}
+  {{- warnf "shortcode %q requires at least one key at %s; rendering nothing" .Name .Position -}}
+{{- end -}}
+{{- $keys := slice -}}
+{{- range .Params -}}
+  {{- if ne (printf "%T" .) "string" -}}
+    {{- warnf "shortcode %q: every key must be a string at %s; skipping it" $.Name $.Position -}}
+    {{- continue -}}
+  {{- end -}}
+  {{- $key := strings.TrimSpace . -}}
+  {{- if not $key -}}
+    {{- warnf "shortcode %q: keys must not be empty at %s; skipping it" $.Name $.Position -}}
+    {{- continue -}}
+  {{- end -}}
+  {{- $keys = $keys | append $key -}}
+{{- end -}}
+{{- $outputFormat := lower (.Page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if not $keys -}}
+{{- else if eq $outputFormat "markdown" -}}
+  {{- $escaped := slice -}}
+  {{- range $keys -}}
+    {{- $escaped = $escaped | append (partial "content/markdown-escape.html" .) -}}
+  {{- end -}}
+  {{- delimit $escaped " + " | safeHTML -}}
+{{- else -}}
+<span class="td-kbd-sequence">
+  {{- range $index, $key := $keys -}}
+    {{- if gt $index 0 -}}
+  <span class="td-kbd-sequence__separator" aria-hidden="true">+</span><span class="visually-hidden"> {{ T "ui_kbd_with" }} </span>
+    {{- end -}}
+  <kbd>{{ $key }}</kbd>
+  {{- end -}}
+</span>
+{{- end -}}

@@ -1,0 +1,47 @@
+{{- $page := .page -}}
+{{- $withSection := ne .section false -}}
+{{- $withLength := ne .length false -}}
+{{- $withTerms := eq .terms true -}}
+{{- $authors := partial "authors-resolve.html" $page -}}
+{{- $names := slice -}}
+{{- range $authors -}}
+  {{- $names = $names | append (printf `<a class="td-blog-meta__author" href="%s">%s</a>` (.url | htmlEscape) (.name | htmlEscape)) -}}
+{{- end -}}
+{{- $segments := slice -}}
+{{- if not $page.Date.IsZero -}}
+  {{- $segments = $segments | append (printf `<time datetime="%s">%s</time>` ($page.Date.Format "2006-01-02") ($page.Date.Format ($page.Param "time_format_blog"))) -}}
+{{- end -}}
+{{- if $withSection -}}
+  {{- with $page.CurrentSection -}}
+    {{- $section := printf `<a class="td-blog-meta__section" href="%s">%s</a>` (.RelPermalink | htmlEscape) (.LinkTitle | htmlEscape) -}}
+    {{- $context := dict "Authors" (delimit $names (T "ui_list_separator")) "Section" $section -}}
+    {{- $sentence := cond (gt (len $names) 0) (T "post_meta_by_in" $context) (T "post_meta_in" $context) -}}
+    {{- /* Style locale-provided interpuncts like template separators. */ -}}
+    {{- $sentence = replace $sentence " · " ` <span class="td-blog-meta__sep" aria-hidden="true">&middot;</span> ` -}}
+    {{- $segments = $segments | append $sentence -}}
+  {{- end -}}
+{{- else if $names -}}
+  {{- $segments = $segments | append (delimit $names (T "ui_list_separator")) -}}
+{{- end -}}
+{{- if and $withLength (partial "reading-time-enabled.html" $page) -}}
+  {{- $segments = $segments | append (T "post_word_count" (dict "Count" $page.WordCount) | htmlEscape) -}}
+  {{- $minutes := $page.ReadingTime -}}
+  {{- if lt $minutes 1 }}{{ $minutes = 1 }}{{ end -}}
+  {{- $segments = $segments | append (T "post_reading_minutes" (dict "Minutes" $minutes) | htmlEscape) -}}
+{{- end -}}
+{{- $termGroups := slice -}}
+{{- if $withTerms }}{{ $termGroups = partial "shell/blog-terms.html" (dict "page" $page "exclude" (.terms_exclude | default slice)) }}{{ end -}}
+{{- if $segments }}
+<p class="td-blog-meta"><small class="text-body-secondary">
+  {{- delimit $segments ` <span class="td-blog-meta__sep" aria-hidden="true">&middot;</span> ` | safeHTML -}}
+</small></p>
+{{- end -}}
+{{- /* Every taxonomy's terms on one wrapping line of their own under the
+     sentence, alphabetical by taxonomy, each badge wearing its term glyph. */ -}}
+{{- with $termGroups }}
+<p class="td-blog-meta__terms">
+  {{- range . }}{{ $icon := .icon -}}
+    {{- range .terms }}<a class="td-badge td-badge--solid" href="{{ .RelPermalink }}"><i class="{{ $icon }}" aria-hidden="true"></i>{{ .LinkTitle }}</a>{{ end -}}
+  {{- end -}}
+</p>
+{{- end -}}

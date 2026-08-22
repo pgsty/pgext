@@ -1,0 +1,53 @@
+{{- $resource := "" -}}
+{{- $path := "" -}}
+{{- $href := "" -}}
+{{- $permalink := "" -}}
+{{- $images := .Resources.ByType "image" -}}
+
+{{- $own := partial "images-param.html" .Params.images -}}
+{{- $inherited := false -}}
+{{- with $own -}}
+  {{- $mine := delimit . "\x1f" -}}
+  {{- range $.Ancestors -}}
+    {{- with partial "images-param.html" .Params.images -}}
+      {{- if eq (delimit . "\x1f") $mine }}{{ $inherited = true }}{{ end -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and $own (not $inherited) -}}
+  {{- $path = index $own 0 -}}
+{{- else -}}
+  {{- with $images.GetMatch "**featured*" -}}
+    {{- $resource = . -}}
+  {{- else with $images.GetMatch "*feature*" -}}
+    {{- $resource = . -}}
+  {{- else with $images.GetMatch "{*cover*,*thumbnail*}" -}}
+    {{- $resource = . -}}
+  {{- else with $own -}}
+    {{- $path = index . 0 -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $path -}}
+  {{- $validated := partial "content/url.html" (dict
+    "name" "featured-image" "parameter" "images" "position" $.Path
+    "value" . "kind" "image"
+  ) -}}
+  {{- if $validated.valid -}}
+    {{- if $validated.external -}}
+      {{- $href = $validated.href -}}
+      {{- $permalink = $validated.raw -}}
+    {{- else -}}
+      {{- with or ($images.GetMatch $validated.raw) (resources.GetMatch $validated.raw) -}}
+        {{- $resource = . -}}
+      {{- else -}}
+        {{- $href = $validated.href -}}
+        {{- $permalink = strings.TrimPrefix "/" $validated.raw | absURL -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "resource" $resource "href" $href "permalink" $permalink) -}}

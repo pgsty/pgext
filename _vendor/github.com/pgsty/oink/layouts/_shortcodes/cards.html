@@ -1,0 +1,9 @@
+{{- partial "content/shortcode-params.html" (dict "shortcode" . "form" "none") -}}
+{{- $format := lower (.Page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if eq $format "markdown" -}}
+{{ .Inner }}
+{{- else -}}
+<div class="td-content-cards td-content-cards--auto" id="td-cards-{{ md5 .Page.RelPermalink | truncate 8 "" }}-{{ .Ordinal }}">
+{{ .Inner }}
+</div>
+{{- end -}}

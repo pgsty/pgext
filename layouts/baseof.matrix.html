@@ -1,0 +1,27 @@
+{{- /*
+Base template for the global matrix.
+
+The matrix is a single instrument that wants the whole canvas: the reading
+shell's sidebar and outline would take a third of the width the grid needs to
+fit eighty columns on one screen. So this base keeps the site header and the
+footer and nothing between them.
+*/ -}}
+{{- .Page.Store.Set "tdOutputFormat" "html" -}}
+<!doctype html>
+<html{{ partial "shell/document-attrs.html" (dict "page" .) }}>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="td-{{ .Kind }} td-shell-chrome td-shell-chrome--navbar pgx-matrix-body">
+    {{ partial "skip-link.html" . }}
+    {{ if partial "shell/navbar-enabled.html" . }}{{ partial "navbar.html" . }}{{ end }}
+    <div class="container-fluid td-outer">
+      <main id="td-main-content" class="td-main" tabindex="-1">
+        {{ partial "version-banner.html" . }}
+        {{ block "main" . }}{{ end }}
+      </main>
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

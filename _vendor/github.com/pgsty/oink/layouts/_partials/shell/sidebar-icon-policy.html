@@ -1,0 +1,14 @@
+{{- /* Resolve the compatibility-sensitive sidebar icon density policy.
+
+Absent stays `all` through 1.0. `groups` shows structural roots and nodes with
+children. Invalid values warn and safely fall back to `all`. */ -}}
+{{- $raw := "all" -}}
+{{- if isset .Site.Params.ui "sidebar_icon_policy" -}}
+  {{- $raw = printf "%v" .Site.Params.ui.sidebar_icon_policy -}}
+{{- end -}}
+{{- $policy := lower (strings.TrimSpace $raw) -}}
+{{- if not (in (slice "all" "groups" "none") $policy) -}}
+  {{- warnf "invalid params.ui.sidebar_icon_policy %q (allowed: all | groups | none); using all" $policy -}}
+  {{- $policy = "all" -}}
+{{- end -}}
+{{- return $policy -}}

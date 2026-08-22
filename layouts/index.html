@@ -1,0 +1,148 @@
+{{ define "main" -}}
+{{- $data := partial "pgext/catalog-data.html" . -}}
+{{- $s := $data.stats -}}
+{{- $zh := eq .Site.Language.Lang "zh" -}}
+{{- $cats := partialCached "pgext/categories.html" "categories" -}}
+
+<section class="pgx-hero pgx-wrap">
+  <p class="pgx-eyebrow">{{ cond $zh "pgext.cloud · PostgreSQL 的一切可能" "pgext.cloud · everything postgresql can become" }}</p>
+  <h1>{{ if $zh }}<em>PostgreSQL</em> 扩展目录{{ else }}The <em>PostgreSQL</em> Extension Catalog{{ end }}</h1>
+  <p class="pgx-hero-sub">
+    {{- /* Kept on one line: a template newline inside Chinese text renders as a
+         visible space between the two characters it falls between. */ -}}
+    {{- if $zh -}}
+      检索 <b>{{ lang.FormatNumberCustom 0 $s.all }}</b> 个 PostgreSQL 扩展的能力，以及其中 <b>{{ lang.FormatNumberCustom 0 $s.packaged }}</b> 个在 <b>{{ $s.targets }}</b> 个 Linux 平台上的可用性。
+    {{- else -}}
+      Explore the superpowers of <b>{{ lang.FormatNumberCustom 0 $s.all }}</b> PostgreSQL
+      extensions, and the availability of <b>{{ lang.FormatNumberCustom 0 $s.packaged }}</b>
+      extension artifacts across <b>{{ $s.targets }}</b> Linux platforms.
+    {{- end -}}
+  </p>
+  <ul class="pgx-hero-stats">
+    {{- range slice
+      (slice $s.all (cond $zh "收录在册扩展" "extensions catalogued") "/e/")
+      (slice $s.packaged (cond $zh "已打包扩展" "packaged extensions") "/list/ext/")
+      (slice $s.packages (cond $zh "扩展软件包" "extension packages") "/list/pkg/")
+      (slice $s.targets (cond $zh "Linux 平台" "Linux platforms") "/os/")
+      (slice $s.pgs (cond $zh "PG 大版本" "PG majors") "/os/matrix/")
+      (slice $s.slots (cond $zh "构建槽位" "build slots") "/os/matrix/") }}
+    <li><a href="{{ index . 2 | relLangURL }}"><span class="num">{{ lang.FormatNumberCustom 0 (index . 0) }}</span><span class="lbl">{{ index . 1 }}</span></a></li>
+    {{- end }}
+  </ul>
+</section>
+
+{{/* The console is progressive: the shell, the facets and a first page of
+     results are all server-rendered, so the catalogue is browsable with no
+     JavaScript at all. pgext-catalog.js then takes the same markup over and
+     makes it live — typing filters in place instead of loading a page. */}}
+<section class="pgx-console pgx-wrap" id="pgx-console"
+  data-pgx-catalog="{{ $data.resource.RelPermalink }}"
+  data-pgx-lang="{{ .Site.Language.Lang }}"
+  data-pgx-ext-base="{{ "/e/" | relLangURL }}">
+
+  <form class="pgx-searchbox" role="search" action="{{ "/e/" | relLangURL }}" method="get">
+    <span class="prompt" aria-hidden="true">pgext=#</span>
+    <input id="pgx-q" name="q" type="search" autocomplete="off" spellcheck="false"
+      placeholder="{{ cond $zh "搜索扩展、软件包、标签、描述…" "search extensions, packages, tags, descriptions…" }}"
+      aria-label="{{ cond $zh "搜索扩展" "search extensions" }}">
+    <kbd>/</kbd>
+  </form>
+
+  <button type="button" class="pgx-sql" id="pgx-sql" hidden
+    title="{{ cond $zh "复制这条查询" "copy this query" }}"></button>
+
+  <div class="pgx-facets" id="pgx-facets">
+    <div class="pgx-facet pgx-facet--cate">
+      <a class="pgx-facet-head" href="{{ "/categories/" | relLangURL }}">
+        <b>{{ cond $zh "分类" "category" }}</b><i aria-hidden="true">→</i>
+      </a>
+      <div class="pgx-facet-values">
+        <button type="button" class="pgx-fbtn any" data-facet="cat" data-value="" aria-pressed="true">{{ cond $zh "全部" "Any" }}</button>
+        {{- range $data.cats }}
+        {{- $meta := index $cats . }}
+        <button type="button" class="pgx-fbtn hued" data-facet="cat" data-value="{{ . }}"
+          style="--pgx-seg: var(--c-{{ . }})" aria-pressed="false"
+          title="{{ with $meta }}{{ .name }}{{ end }}"><i aria-hidden="true"></i><code>{{ . }}</code></button>
+        {{- end }}
+      </div>
+    </div>
+
+    {{- range slice
+      (slice "repo" (cond $zh "仓库" "repository") "/repos/")
+      (slice "lang" (cond $zh "语言" "language") "/languages/")
+      (slice "lic" (cond $zh "许可证" "licence") "/licenses/") }}
+    <div class="pgx-facet">
+      <a class="pgx-facet-head" href="{{ index . 2 | relLangURL }}">
+        <b>{{ index . 1 }}</b><i aria-hidden="true">→</i>
+      </a>
+      <div class="pgx-facet-values" data-facet-values="{{ index . 0 }}">
+        <button type="button" class="pgx-fbtn any" data-facet="{{ index . 0 }}" data-value="" aria-pressed="true">{{ cond $zh "全部" "Any" }}</button>
+      </div>
+    </div>
+    {{- end }}
+
+    <div class="pgx-facet">
+      <a class="pgx-facet-head" href="{{ "/os/matrix/" | relLangURL }}">
+        <b>{{ cond $zh "PG 大版本" "pg major" }}</b><i aria-hidden="true">→</i>
+      </a>
+      <div class="pgx-facet-values">
+        <button type="button" class="pgx-fbtn any" data-facet="pg" data-value="" aria-pressed="true">{{ cond $zh "全部" "Any" }}</button>
+        {{- range slice 18 17 16 15 14 }}
+        <button type="button" class="pgx-fbtn" data-facet="pg" data-value="{{ . }}" aria-pressed="false">PG{{ . }}</button>
+        {{- end }}
+      </div>
+    </div>
+
+    <div class="pgx-facet">
+      <span class="pgx-facet-head"><b>{{ cond $zh "范围" "scope" }}</b></span>
+      <div class="pgx-facet-values">
+        <button type="button" class="pgx-fbtn any" data-facet="scope" data-value="" aria-pressed="true">{{ cond $zh "全部" "Any" }}</button>
+        <button type="button" class="pgx-fbtn" data-facet="scope" data-value="packaged" aria-pressed="false">{{ cond $zh "已打包" "packaged" }}</button>
+        <button type="button" class="pgx-fbtn" data-facet="scope" data-value="contrib" aria-pressed="false">contrib</button>
+        <button type="button" class="pgx-fbtn" data-facet="scope" data-value="unpacked" aria-pressed="false">{{ cond $zh "未打包" "unpacked" }}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pgx-toolbar">
+    <p class="pgx-count"><strong id="pgx-n">{{ lang.FormatNumberCustom 0 $s.all }}</strong>
+      <span>{{ cond $zh "个扩展" "extensions" }}</span></p>
+    <div class="pgx-controls">
+      <label class="pgx-sort"><span>{{ cond $zh "排序" "sort" }}</span>
+        <select id="pgx-sort">
+          <option value="stars">{{ cond $zh "星标" "stars" }}</option>
+          <option value="name">{{ cond $zh "名称" "name" }}</option>
+          <option value="id">{{ cond $zh "目录序" "catalog order" }}</option>
+        </select>
+      </label>
+      <div class="pgx-view" role="group" aria-label="{{ cond $zh "视图" "view" }}">
+        <button type="button" data-view="cards" aria-pressed="true">{{ cond $zh "卡片" "cards" }}</button>
+        <button type="button" data-view="table" aria-pressed="false">{{ cond $zh "表格" "table" }}</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="pgx-results" class="pgx-results">
+    {{- /* Without JavaScript the console still shows the sixteen categories as
+         the way in, and every one of them is a real page. */}}
+    <noscript>
+      <ul class="pgx-wall">
+        {{- range $data.cats }}
+        {{- $meta := index $cats . }}
+        <li class="pgx-card" style="--pgx-seg: var(--c-{{ . }})">
+          <a class="pgx-card-cover" href="{{ (printf "/categories/%s/" (lower .)) | relLangURL }}"></a>
+          <div class="pgx-card-head"><span class="pgx-card-name">{{ . }}</span></div>
+          <p class="pgx-card-desc">{{ with $meta }}{{ .name }}{{ end }}</p>
+        </li>
+        {{- end }}
+      </ul>
+    </noscript>
+  </div>
+
+  <button type="button" class="pgx-more" id="pgx-more" hidden>{{ cond $zh "加载更多" "load more" }}</button>
+</section>
+
+{{- $js := resources.Get "js/pgext-catalog.js" | js.Build (dict "minify" hugo.IsProduction) -}}
+{{- if hugo.IsProduction }}{{ $js = $js | fingerprint "sha512" }}{{ end }}
+<script src="{{ $js.RelPermalink }}"{{ with $js.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end }} defer></script>
+{{- end }}

@@ -1,26 +1,19 @@
 {{- /*
-A simplified badge shortcode wrapper with positional parameters only.
+Positional badge: the catalog's densest call form.
 
-Positional parameters:
-@param {string} 0 Text - the badge display text (required)
-@param {string} 1 Alt - the hover tooltip text (optional)
-@param {string} 2 Color - the badge color (optional, defaults to blue)
+@param {string} 0 label (required)
+@param {string} 1 tooltip (optional; defaults to the label)
+@param {string} 2 colour (optional; defaults to blue)
 
-@example {{< bg "PASS" >}}
-@example {{< bg "v1.2.3" "Version 1.2.3" >}}
-@example {{< bg "SUCCESS" "Operation completed successfully" "green" >}}
+@example  bg "PASS"
+@example  bg "18" "pg_duckdb_18 : AVAIL 1" "green"
 */ -}}
-
 {{- $text := .Get 0 | default "" -}}
-{{- $alt := .Get 1 | default $text -}}
-{{- $color := .Get 2 | default "blue" -}}
-
-{{- /* Render the badge using the badge partial */ -}}
-<span title="{{ $alt | plainify }}">
-  {{- partial "shortcodes/badge.html" (dict
-    "content" $text
-    "color" $color
-    "border" true
-    )
-  -}}
-</span>
+{{- $alt := .Get 1 | default "" -}}
+{{- partial "pgext/badge.html" (dict
+  "content" $text
+  "color" (.Get 2 | default "blue")
+  "hued" true
+  "title" (cond (ne $alt "") $alt "")
+  "mono" true
+) -}}

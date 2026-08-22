@@ -1,0 +1,36 @@
+{{- $shell := partial "shell/chrome-enabled.html" . -}}
+{{- $keyboardNav := ne (partial "ui-param.html" (dict "page" . "key" "keyboard_nav")) false -}}
+{{- $readingSurface := or $shell (and .IsHome $keyboardNav) -}}
+{{- if $readingSurface -}}
+<script>
+  (function () {
+    var html = document.documentElement;
+    {{ if $shell -}}
+    html.setAttribute('data-td-shell-no-anim', '');
+    {{- end }}
+    try {
+      {{ if $shell -}}
+      if (localStorage.getItem('td-shell-sidebar-collapsed') === '1'
+          && window.matchMedia('(min-width: 768px)').matches) {
+        html.setAttribute('data-td-shell-sidebar', 'collapsed');
+      }
+      var width = parseInt(localStorage.getItem('td-shell-sidebar-w'), 10);
+      if (width > 0) html.style.setProperty('--td-shell-sidebar-w', width + 'px');
+      if (localStorage.getItem('td-shell-toc-collapsed') === '1'
+          && window.matchMedia('(min-width: 1200px)').matches) {
+        html.setAttribute('data-td-shell-toc', 'collapsed');
+      }
+      var blogIndex = localStorage.getItem('td-blog-index');
+      if (blogIndex === 'cards' || blogIndex === 'list' || blogIndex === 'table') {
+        html.setAttribute('data-td-blog-index', blogIndex);
+      }
+      {{- end }}
+      {{ if $keyboardNav -}}
+      if (sessionStorage.getItem('td-kbd-zen') === '1') {
+        html.setAttribute('data-td-kbd-zen', '');
+      }
+      {{- end }}
+    } catch (_) {}
+  })();
+</script>
+{{- end -}}

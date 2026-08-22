@@ -1,0 +1,29 @@
+{{- /* Resolve the same configured top-level Hugo Menu entries used by the
+     shell utility rail into inert Palette rows. */ -}}
+{{- $p := . -}}
+{{- $config := partialCached "shell/config.html" $p $p.Site.Language.Lang -}}
+{{- $baseURL := urls.Parse $p.Site.BaseURL -}}
+{{- $links := slice -}}
+{{- range $p.Site.Menus.main -}}
+  {{- $key := .Identifier -}}
+  {{- with .Page }}{{ if not $key }}{{ $key = .Section }}{{ end }}{{ end -}}
+  {{- if in $config.quickLinks $key -}}
+    {{- $href := .URL -}}
+    {{- $description := .Params.description | default "" | plainify -}}
+    {{- $target := urls.Parse .URL -}}
+    {{- $external := and $target.Host (ne $baseURL.Host $target.Host) -}}
+    {{- if not $external }}{{ $href = .URL | relLangURL }}{{ end -}}
+    {{- with .Page -}}
+      {{- $href = .RelPermalink -}}
+      {{- $description = .Description | default $description | plainify -}}
+    {{- end -}}
+    {{- $links = $links | append (dict
+      "id" (printf "quick_%s" ($key | default .Name | urlize))
+      "title" (.Name | plainify) "description" $description
+      "icon" (partial "menu-icon.html" .) "keywords" (slice (.Name | plainify) $key)
+      "kind" "url" "url" $href "target" (cond $external "blank" "self")
+      "available" true "disabledReason" ""
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $links -}}

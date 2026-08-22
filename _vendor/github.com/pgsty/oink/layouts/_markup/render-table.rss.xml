@@ -1,0 +1,3 @@
+{{- /* Table render hook: see content/table-render.html for the implementation
+       and for why every output format needs its own delegate. */ -}}
+{{ partial "content/table-render.html" . }}

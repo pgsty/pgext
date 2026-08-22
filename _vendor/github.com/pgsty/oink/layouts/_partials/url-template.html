@@ -1,0 +1,6 @@
+{{- /* Replace {url}, {title}, and {markdown_url} placeholders with URL-encoded values. */ -}}
+{{- $template := .template -}}
+{{- range $key, $value := (.values | default dict) -}}
+  {{- $template = replace $template (printf "{%s}" $key) ($value | urlquery) -}}
+{{- end -}}
+{{- return $template -}}

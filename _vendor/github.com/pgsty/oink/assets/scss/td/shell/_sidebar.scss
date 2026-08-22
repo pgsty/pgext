@@ -1,0 +1,638 @@
+// ============================================================
+// Sidebar internals: header/search, navigation tree, and footer actions.
+// ============================================================
+
+/* --------------------------------------------------------------- header */
+
+// Fixed vertical header: brand row, search row, and optional root switcher.
+.td-shell-sidebar__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 16px 8px;
+}
+
+// Brand row with the logo/wordmark and collapse action. The desktop sidebar
+// owns this identity even when the global navbar is enabled.
+.td-shell-sidebar__brand-row {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    min-height: 26px;
+  }
+}
+
+// Without switchable sub-roots the trigger is a plain link back to the
+// section landing: no box, flush with the tree's top-level rows, reading as
+// the highest-level item rather than a control.
+.td-shell-root--static .td-shell-root__trigger {
+  border: 0;
+  background: transparent;
+  font-weight: 600;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--td-shell-accent);
+    text-decoration: none;
+  }
+}
+
+.td-shell-sidebar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-inline-end: auto;
+  font-size: 15px;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  img.td-shell-brand-logo--wordmark {
+    width: auto;
+    // ~70% of the 20px mark beside it.
+    height: 14px;
+  }
+}
+
+.td-shell-sidebar__header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  > .td-search,
+  > .td-shell-sidebar__header-spacer {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .DocSearch-Button {
+    width: 100%;
+    margin: 0;
+  }
+
+  // With the navbar carrying the palette opener, this row is the mobile
+  // search/close cluster, so it disappears on desktop.
+  &--drawer-only {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+
+.td-shell-search-btn {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 8px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 10px;
+  background: var(--td-shell-field);
+  color: var(--bs-tertiary-color); // Keep placeholder text one tone quieter.
+  font-size: 14px;
+  line-height: 20px;
+  text-align: start;
+  transition:
+    background-color var(--td-motion-duration) ease,
+    color var(--td-motion-duration) ease;
+
+  .td-shell-icon {
+    --td-shell-icon-size: 16px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: var(--td-shell-accent);
+    color: var(--bs-body-color);
+  }
+
+  &__label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__keys {
+    margin-inline-start: auto;
+    display: inline-flex;
+    gap: 2px;
+
+    // Shortcut badges are not useful on touch-only devices.
+    @media (hover: none) and (pointer: coarse) {
+      display: none;
+    }
+
+    kbd {
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 0 6px;
+      border: 1px solid var(--bs-border-color);
+      border-radius: 7px;
+      background: var(--bs-body-bg);
+      color: var(--td-shell-muted-fg);
+    }
+  }
+
+  // The drawer deliberately advertises the global slash shortcut even on a
+  // coarse pointer device; a hardware keyboard can still be attached.
+  &--drawer &__keys {
+    display: inline-flex;
+  }
+}
+
+// Drawer close action, mobile only; specificity overrides the icon-button rule.
+.td-shell-iconbtn.td-shell-sidebar__close {
+  display: none;
+
+  @include media-breakpoint-down(md) {
+    display: inline-flex;
+  }
+}
+
+/* ------------------------------------------------------ scroll viewport */
+
+.td-shell-sidebar__viewport {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px 16px 16px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent
+  );
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+  &:hover {
+    scrollbar-color: var(--bs-border-color) transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: var(--bs-border-color);
+  }
+}
+
+// Content authors may insert a non-link grouping label into a long sidebar
+// with `sidebar_divider: true`. It is intentionally neither focusable nor a
+// pager destination.
+.td-shell-tree__heading {
+  margin-block: 0.9rem 0.25rem;
+  padding-block-start: 0.65rem;
+  border-block-start: 1px solid var(--bs-border-color);
+}
+
+.td-shell-tree__heading-label {
+  display: block;
+  padding-inline: 0.65rem;
+  color: var(--td-shell-muted-fg);
+  font-family: var(--td-meta-font-family);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------ navigation tree */
+
+.td-shell-tree {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Add slight separation between top-level groups.
+  .td-shell-tree__list--1 > li + li {
+    margin-top: 2px;
+  }
+}
+
+.td-shell-tree__item--hidden {
+  display: none;
+}
+
+.td-shell-tree__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  padding-inline-start: var(--td-shell-indent, 8px);
+  border-radius: 10px;
+  color: var(--td-shell-muted-fg);
+  transition: background-color var(--td-motion-duration) ease;
+
+  @include media-breakpoint-up(md) {
+    padding-block: 6px;
+  }
+
+  // Hover appears immediately and fades out over the base duration.
+  &:hover {
+    background: var(--td-shell-accent);
+    transition: none;
+
+    > .td-shell-tree__link {
+      color: var(--bs-body-color);
+    }
+  }
+
+  &.td-shell-active {
+    background: var(--td-shell-primary-dim);
+    transition: none;
+
+    > .td-shell-tree__link,
+    &:hover > .td-shell-tree__link {
+      color: var(--td-shell-primary);
+    }
+  }
+}
+
+.td-shell-tree__link {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  font-weight: 400;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  > i {
+    flex-shrink: 0;
+    width: 1.15em;
+    text-align: center;
+    font-size: 0.95em;
+    color: var(--bs-tertiary-color);
+  }
+
+  // Default overflow mode is a single-line ellipsis.
+  > span {
+    min-width: 0;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Wrap mode can be selected globally or through a section cascade.
+.td-shell-layout--nav-wrap .td-shell-tree__link > span {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+}
+
+// Top-level group rows use stronger weight and color.
+.td-shell-tree .td-shell-tree__list--1 > li > .td-shell-tree__row > .td-shell-tree__link {
+  font-weight: 500;
+  color: var(--bs-body-color);
+}
+
+.td-shell-tree .td-shell-tree__list--1 > li > .td-shell-tree__row {
+  color: var(--bs-body-color);
+}
+
+// Icons in the active row follow the accent color.
+.td-shell-tree__row.td-shell-active .td-shell-tree__link > i {
+  color: inherit;
+}
+
+/* Semantic collapse buttons with aria-expanded and a grid-row animation. */
+
+.td-shell-tree__chevron {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  margin-inline-start: auto;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--td-shell-muted-fg);
+  cursor: pointer;
+
+  .td-shell-icon {
+    --td-shell-icon-size: 16px;
+    transform: rotate(-90deg);
+    transition: transform var(--td-motion-duration) ease;
+  }
+
+  &:hover {
+    color: var(--bs-body-color);
+  }
+}
+
+.td-shell-tree__chevron[aria-expanded='true'] .td-shell-icon,
+[data-td-shell-tree-toggle][aria-expanded='true']
+  > .td-shell-tree__chevron
+  .td-shell-icon {
+  transform: rotate(0deg);
+}
+
+.td-shell-tree__children {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  // Delay visibility until collapse completes so hidden content is not focusable.
+  visibility: hidden;
+  transition:
+    grid-template-rows var(--td-motion-duration) var(--td-shell-ease-collapsible),
+    opacity var(--td-motion-duration) ease,
+    visibility 0s linear var(--td-motion-duration);
+
+  &--static {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+}
+
+.td-shell-tree__children.td-is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    grid-template-rows var(--td-motion-duration) var(--td-shell-ease-collapsible),
+    opacity var(--td-motion-duration) ease,
+    visibility 0s;
+}
+
+.td-shell-tree__children-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Row indentation and nested vertical rails. */
+
+.td-shell-tree .td-shell-tree__list--2 > li > .td-shell-tree__row {
+  --td-shell-indent: 24px;
+}
+.td-shell-tree .td-shell-tree__list--3 > li > .td-shell-tree__row {
+  --td-shell-indent: 36px;
+}
+.td-shell-tree .td-shell-tree__list--4 > li > .td-shell-tree__row {
+  --td-shell-indent: 48px;
+}
+.td-shell-tree .td-shell-tree__list--5 > li > .td-shell-tree__row {
+  --td-shell-indent: 60px;
+}
+
+.td-shell-tree .td-shell-tree__list--2 {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block: 4px;
+    inset-inline-start: 10px;
+    width: 1px;
+    background: var(--td-shell-rail);
+  }
+}
+
+// Paint an accent segment over the rail beside the active row.
+.td-shell-tree .td-shell-tree__list--2 .td-shell-tree__row.td-shell-active::before {
+  content: '';
+  position: absolute;
+  inset-block: 6px;
+  inset-inline-start: 10px;
+  width: 1px;
+  background: var(--td-shell-primary);
+  z-index: 2;
+}
+
+/* Blog tree root rendered as a section-heading link. */
+
+.td-shell-tree__row--root {
+  margin-bottom: 4px;
+
+  > .td-shell-tree__link {
+    font-weight: 600;
+    color: var(--bs-body-color);
+  }
+}
+
+/* --------------------------------------------------------------- footer */
+
+/* Shared ghost icon button. */
+
+.td-shell-iconbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--td-shell-muted-fg);
+  transition:
+    background-color var(--td-motion-duration) var(--td-shell-ease-color),
+    color var(--td-motion-duration) var(--td-shell-ease-color);
+
+  .td-shell-icon {
+    --td-shell-icon-size: 18px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--td-shell-accent);
+    color: var(--td-shell-primary-hover);
+    text-decoration: none;
+  }
+}
+
+/* Root switcher below search for docs and self-rooted sections. */
+
+.td-shell-root {
+  position: relative;
+}
+
+.td-shell-root__trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 8px;
+  background: var(--td-shell-field);
+  color: var(--bs-body-color);
+  font-size: 14px;
+  text-align: start;
+  transition:
+    background-color var(--td-motion-duration) ease,
+    color var(--td-motion-duration) ease;
+
+  &:hover,
+  &[aria-expanded='true'] {
+    background: var(--td-shell-accent);
+  }
+
+  > .td-shell-icon--chevrons-up-down {
+    --td-shell-icon-size: 16px;
+    flex-shrink: 0;
+    margin-inline-start: auto;
+    color: var(--td-shell-muted-fg);
+  }
+}
+
+.td-shell-root__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--td-shell-primary);
+
+  i {
+    font-size: 15px;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.td-shell-root__title {
+  min-width: 0;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.td-shell-root__pop {
+  position: absolute;
+  top: calc(100% + 4px);
+  inset-inline: 0;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 200px;
+  padding: 4px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--td-shell-popover) 60%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--td-shell-shadow-lg);
+  transform-origin: top;
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity var(--td-motion-duration-fast) ease,
+    transform var(--td-motion-duration-fast) ease;
+
+  &.td-is-open {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.td-shell-root__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 8px;
+  color: var(--bs-body-color);
+
+  &:hover {
+    background: var(--td-shell-accent);
+    color: var(--bs-body-color);
+    text-decoration: none;
+  }
+
+  .td-shell-root__icon {
+    margin-top: 1px;
+  }
+}
+
+.td-shell-root__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.td-shell-root__item-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.td-shell-root__item-desc {
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--td-shell-muted-fg);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Invisible checkmarks reserve equal row width for inactive items.
+.td-shell-root__check {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-inline-start: auto;
+  padding-top: 3px;
+  color: var(--td-shell-primary);
+
+  .td-shell-icon {
+    --td-shell-icon-size: 14px;
+  }
+
+  &.td-is-hidden {
+    visibility: hidden;
+  }
+}

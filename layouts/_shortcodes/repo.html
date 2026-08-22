@@ -1,0 +1,15 @@
+{{- /*
+The repository that delivers an extension, as a linked pill.
+
+@param {string} 0 repository name: PGDG | PIGSTY | CONTRIB | MIXED
+*/ -}}
+{{- $repo := upper (trim (.Get 0) " ") -}}
+{{- if $repo -}}
+  {{- partial "pgext/badge.html" (dict
+    "content" $repo
+    "color" (partial "pgext/hue.html" (dict "dim" "repo" "value" $repo))
+    "hued" true
+    "link" (printf "/repos/%s/" (lower $repo))
+    "title" (printf "Delivered by the %s repository" $repo)
+  ) -}}
+{{- end -}}

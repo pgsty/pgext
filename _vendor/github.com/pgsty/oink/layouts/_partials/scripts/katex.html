@@ -1,0 +1,8 @@
+{{/* cSpell:ignore katex */ -}}
+{{ range resources.Match "third_party/katex/fonts/*" -}}
+  {{ $published := .Publish -}}
+{{ end -}}
+{{ $katexCSS := resources.Get "third_party/katex/katex.min.css" -}}
+{{ if hugo.IsProduction }}{{ $katexCSS = $katexCSS | fingerprint }}{{ end -}}
+<link rel="stylesheet" href="{{ $katexCSS.RelPermalink }}"
+  {{- with $katexCSS.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end }}>

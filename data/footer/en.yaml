@@ -1,0 +1,33 @@
+brand:
+  name: PGEXT.CLOUD
+  tagline: '**P**ostgre**SQL** **Ext**ension **Cloud**'
+  slogan: Every PostgreSQL extension, catalogued — and the best of them, packaged.
+columns:
+  - title: Catalog
+    links:
+      - { label: Extension list, url: list/ext/ }
+      - { label: Package list, url: list/pkg/ }
+      - { label: By category, url: list/cate/ }
+      - { label: By language, url: list/lang/ }
+      - { label: By licence, url: list/license/ }
+  - title: Packages
+    links:
+      - { label: Platforms, url: os/ }
+      - { label: Availability matrix, url: os/matrix/ }
+      - { label: PGSQL repository, url: repo/pgsql/ }
+      - { label: INFRA repository, url: repo/infra/ }
+      - { label: GPG keys, url: repo/gpg/ }
+  - title: Tooling
+    links:
+      - { label: PIG package manager, url: pig/ }
+      - { label: Get started, url: pig/start/ }
+      - { label: Command reference, url: pig/cmd/ }
+      - { label: Release notes, url: release/ }
+      - { label: Extension Galaxy, url: galaxy/ }
+  - title: Project
+    links:
+      - { label: About, url: about/ }
+      - { label: pgsty/pgext, url: 'https://github.com/pgsty/pgext', external: true }
+      - { label: Pigsty distribution, url: 'https://pigsty.io', external: true }
+      - { label: RPM build specs, url: 'https://github.com/pgsty/rpm', external: true }
+      - { label: DEB build specs, url: 'https://github.com/pgsty/deb', external: true }

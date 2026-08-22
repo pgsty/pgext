@@ -1,0 +1,272 @@
+{{- $page := .page -}}
+{{- $key := .key -}}
+{{- $position := .position | default $page.Path -}}
+{{- $ok := true -}}
+
+{{- if not (findRE `^[a-z0-9][a-z0-9_-]*$` $key) -}}
+  {{- warnf "%s: download key must match ^[a-z0-9][a-z0-9_-]*$; got %q; skipping the block" $position $key -}}
+  {{- $ok = false -}}
+{{- end -}}
+
+{{- $raw := dict -}}
+{{- if $ok -}}
+  {{- $downloads := index hugo.Data "download" | default dict -}}
+  {{- $found := index $downloads $key | default false -}}
+  {{- if not $found -}}
+    {{- warnf "%s: data/download/%s.yaml was not found; skipping the block" $position $key -}}
+    {{- $ok = false -}}
+  {{- else if not (reflect.IsMap $found) -}}
+    {{- warnf "%s: data/download/%s.yaml must contain a map; skipping the block" $position $key -}}
+    {{- $ok = false -}}
+  {{- else -}}
+    {{- $raw = $found -}}
+  {{- end -}}
+{{- end -}}
+{{- if $ok -}}
+  {{- $allowed := slice "version" "repo" "tag" "published" "channels" -}}
+  {{- range $name, $_ := $raw -}}
+    {{- if not (in $allowed $name) -}}
+      {{- warnf "%s: download data has unsupported field %q; skipping the block" $position $name -}}
+      {{- $ok = false -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $version := "" -}}
+{{- if $ok -}}
+  {{- if isset $raw "version" -}}
+    {{- if ne (printf "%T" $raw.version) "string" -}}
+      {{- warnf "%s: download version must be a string; skipping the block" $position -}}
+      {{- $ok = false -}}
+    {{- else -}}
+      {{- $version = strings.TrimSpace $raw.version -}}
+    {{- end -}}
+  {{- else if isset $page.Site.Params "version" -}}
+    {{- if ne (printf "%T" $page.Site.Params.version) "string" -}}
+      {{- warnf "%s: site params.version must be a string; skipping the block" $position -}}
+      {{- $ok = false -}}
+    {{- else -}}
+      {{- $version = strings.TrimSpace $page.Site.Params.version -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if and $ok (not $version) -}}
+    {{- warnf "%s: download version is required in data or site params.version; skipping the block" $position -}}
+    {{- $ok = false -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $repo := "" -}}
+{{- if and $ok (isset $raw "repo") -}}
+  {{- if ne (printf "%T" $raw.repo) "string" -}}
+    {{- warnf "%s: download repo must be a string; skipping the block" $position -}}
+    {{- $ok = false -}}
+  {{- else -}}
+    {{- $repo = strings.TrimSpace $raw.repo -}}
+    {{- if not (findRE `^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$` $repo) -}}
+      {{- warnf "%s: download repo must be an owner/repository pair; skipping the block" $position -}}
+      {{- $ok = false -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $tag := "" -}}
+{{- if $ok -}}
+  {{- $tag = printf "v%s" $version -}}
+  {{- if isset $raw "tag" -}}
+    {{- if ne (printf "%T" $raw.tag) "string" -}}
+      {{- warnf "%s: download tag must be a string; skipping the block" $position -}}
+      {{- $ok = false -}}
+    {{- else -}}
+      {{- $tag = strings.TrimSpace $raw.tag -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if and $ok (not (findRE `^[A-Za-z0-9._+~-]+$` $tag)) -}}
+    {{- warnf "%s: download tag contains unsupported path characters; skipping the block" $position -}}
+    {{- $ok = false -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $published := true -}}
+{{- if and $ok (isset $raw "published") -}}
+  {{- if ne (printf "%T" $raw.published) "bool" -}}
+    {{- warnf "%s: download published must be a boolean; using true" $position -}}
+  {{- else -}}
+    {{- $published = $raw.published -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $rawChannels := slice -}}
+{{- if $ok -}}
+  {{- if not (isset $raw "channels") -}}
+    {{- warnf "%s: download channels are required; skipping the block" $position -}}
+    {{- $ok = false -}}
+  {{- else if not (reflect.IsSlice $raw.channels) -}}
+    {{- warnf "%s: download channels must be an array; skipping the block" $position -}}
+    {{- $ok = false -}}
+  {{- else if not $raw.channels -}}
+    {{- warnf "%s: download channels must not be empty; skipping the block" $position -}}
+    {{- $ok = false -}}
+  {{- else -}}
+    {{- $rawChannels = $raw.channels -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $channels := slice -}}
+{{- $ids := slice -}}
+{{- range $index, $channel := $rawChannels -}}
+  {{- $channelPosition := printf "%s: download channel %d" $position (add $index 1) -}}
+  {{- if not (reflect.IsMap $channel) }}{{ warnf "%s: must be a map; skipping the channel" $channelPosition }}{{ continue }}{{ end -}}
+  {{- $channelAllowed := slice "id" "kind" "icon" "url" "steps" "checksums" "checksums_src" -}}
+  {{- $fieldsOk := true -}}
+  {{- range $name, $_ := $channel -}}
+    {{- if not (or (in $channelAllowed $name) (findRE `^(title|note)(_[a-z0-9-]+)?$` $name)) -}}
+      {{- warnf "%s: has unsupported field %q; skipping the channel" $channelPosition $name -}}
+      {{- $fieldsOk = false -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $fieldsOk }}{{ continue }}{{ end -}}
+  {{- if or (not (isset $channel "id")) (ne (printf "%T" $channel.id) "string") }}{{ warnf "%s: id must be a string; skipping the channel" $channelPosition }}{{ continue }}{{ end -}}
+  {{- $id := strings.TrimSpace $channel.id -}}
+  {{- if not (findRE `^[a-z][a-z0-9-]*$` $id) }}{{ warnf "%s: id must match ^[a-z][a-z0-9-]*$; skipping the channel" $channelPosition }}{{ continue }}{{ end -}}
+  {{- if in $ids $id }}{{ warnf "%s: has duplicate id %q; skipping the channel" $channelPosition $id }}{{ continue }}{{ end -}}
+  {{- if or (not (isset $channel "kind")) (ne (printf "%T" $channel.kind) "string") }}{{ warnf "%s: kind must be rolling or pinned; skipping the channel" $channelPosition }}{{ continue }}{{ end -}}
+  {{- $kind := strings.TrimSpace $channel.kind -}}
+  {{- if not (in (slice "rolling" "pinned") $kind) }}{{ warnf "%s: kind must be rolling or pinned; got %q; skipping the channel" $channelPosition $kind }}{{ continue }}{{ end -}}
+  {{- $title := partial "download/localized.html" (dict "record" $channel "key" "title" "page" $page) -}}
+  {{- if or (eq $title false) (ne (printf "%T" $title) "string") (not (strings.TrimSpace $title)) }}{{ warnf "%s: title must resolve to a non-empty string; skipping the channel" $channelPosition }}{{ continue }}{{ end -}}
+  {{- $title = strings.TrimSpace $title -}}
+  {{- if strings.Contains $title "${" }}{{ warnf "%s: title must not interpolate version facts; skipping the channel" $channelPosition }}{{ continue }}{{ end -}}
+  {{- $note := partial "download/localized.html" (dict "record" $channel "key" "note" "page" $page) -}}
+  {{- $noteOk := true -}}
+  {{- if ne $note false -}}
+    {{- if ne (printf "%T" $note) "string" -}}
+      {{- warnf "%s: note must resolve to a string; dropping the note" $channelPosition -}}
+      {{- $note = "" -}}
+    {{- else -}}
+      {{- $note = strings.TrimSpace $note -}}
+      {{- if not $note -}}
+        {{- warnf "%s: note must not be empty; dropping the note" $channelPosition -}}
+      {{- else if strings.Contains $note "${" -}}
+        {{- warnf "%s: note must not interpolate version facts; dropping the note" $channelPosition -}}
+        {{- $note = "" -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else }}{{ $note = "" }}{{ end -}}
+  {{- $icon := "" -}}
+  {{- if isset $channel "icon" -}}
+    {{- if ne (printf "%T" $channel.icon) "string" -}}
+      {{- warnf "%s: icon must be a string; dropping the icon" $channelPosition -}}
+    {{- else -}}
+      {{- $icon = strings.TrimSpace $channel.icon -}}
+      {{- if not (findRE `^fa-(solid|regular|brands) fa-[a-z0-9-]+$` $icon) -}}
+        {{- warnf "%s: icon must be one Font Awesome class pair; dropping the icon" $channelPosition -}}
+        {{- $icon = "" -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $url := "" -}}
+  {{- if isset $channel "url" -}}
+    {{- $url = partial "download/interpolate.html" (dict "value" $channel.url "field" "url" "kind" $kind "version" $version "tag" $tag "position" $channelPosition) -}}
+    {{- $url = (partial "content/url.html" (dict
+      "name" "download" "parameter" "url" "position" $channelPosition "value" $url "kind" "web"
+    )).href -}}
+  {{- end -}}
+  {{- $steps := slice -}}
+  {{- if isset $channel "steps" -}}
+    {{- if not (reflect.IsSlice $channel.steps) -}}
+      {{- warnf "%s: steps must be an array; dropping the steps" $channelPosition -}}
+    {{- else -}}
+      {{- range $stepIndex, $step := $channel.steps -}}
+        {{- $stepPosition := printf "%s step %d" $channelPosition (add $stepIndex 1) -}}
+        {{- if not (reflect.IsMap $step) }}{{ warnf "%s: must be a map; skipping the step" $stepPosition }}{{ continue }}{{ end -}}
+        {{- $stepAllowed := slice "code" "lang" -}}
+        {{- $stepFieldsOk := true -}}
+        {{- range $name, $_ := $step }}{{ if not (or (in $stepAllowed $name) (findRE `^title(_[a-z0-9-]+)?$` $name)) }}{{ warnf "%s: has unsupported field %q; skipping the step" $stepPosition $name }}{{ $stepFieldsOk = false }}{{ end }}{{ end -}}
+        {{- if not $stepFieldsOk }}{{ continue }}{{ end -}}
+        {{- if not (isset $step "code") }}{{ warnf "%s: code is required; skipping the step" $stepPosition }}{{ continue }}{{ end -}}
+        {{- $code := partial "download/interpolate.html" (dict "value" $step.code "field" "step code" "kind" $kind "version" $version "tag" $tag "position" $stepPosition) -}}
+        {{- $code = strings.TrimRight "\r\n" $code -}}
+        {{- if not $code }}{{ warnf "%s: code must not be empty; skipping the step" $stepPosition }}{{ continue }}{{ end -}}
+        {{- $lang := "text" -}}
+        {{- if isset $step "lang" -}}
+          {{- if ne (printf "%T" $step.lang) "string" -}}
+            {{- warnf "%s: lang must be a string; using text" $stepPosition -}}
+          {{- else -}}
+            {{- $lang = strings.TrimSpace $step.lang -}}
+            {{- if not (findRE `^[A-Za-z0-9_+.-]+$` $lang) -}}
+              {{- warnf "%s: lang must be one lexer token; using text" $stepPosition -}}
+              {{- $lang = "text" -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $stepTitle := partial "download/localized.html" (dict "record" $step "key" "title" "page" $page) -}}
+        {{- if ne $stepTitle false -}}
+          {{- if ne (printf "%T" $stepTitle) "string" -}}
+            {{- warnf "%s: title must resolve to a string; dropping the title" $stepPosition -}}
+            {{- $stepTitle = "" -}}
+          {{- else -}}
+            {{- $stepTitle = strings.TrimSpace $stepTitle -}}
+            {{- if not $stepTitle -}}
+              {{- warnf "%s: title must not be empty; dropping the title" $stepPosition -}}
+            {{- else if strings.Contains $stepTitle "${" -}}
+              {{- warnf "%s: title must not interpolate version facts; dropping the title" $stepPosition -}}
+              {{- $stepTitle = "" -}}
+            {{- end -}}
+          {{- end -}}
+        {{- else }}{{ $stepTitle = "" }}{{ end -}}
+        {{- $steps = $steps | append (dict "title" $stepTitle "code" $code "lang" $lang "position" $stepPosition) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $checksums := "" -}}
+  {{- if isset $channel "checksums" -}}
+    {{- if ne (printf "%T" $channel.checksums) "string" -}}
+      {{- warnf "%s: checksums must be a string; dropping the checksums" $channelPosition -}}
+    {{- else -}}
+      {{- $checksums = strings.TrimSpace $channel.checksums -}}
+      {{- if not $checksums -}}
+        {{- warnf "%s: checksums must not be empty; dropping the checksums" $channelPosition -}}
+      {{- else if strings.Contains $checksums "${" -}}
+        {{- warnf "%s: checksums must not interpolate version facts; dropping the checksums" $channelPosition -}}
+        {{- $checksums = "" -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if isset $channel "checksums_src" -}}
+    {{- if ne (printf "%T" $channel.checksums_src) "string" -}}
+      {{- warnf "%s: checksums_src must be a string; dropping the checksums" $channelPosition -}}
+    {{- else -}}
+      {{- $checksumsSrc := strings.TrimSpace $channel.checksums_src -}}
+      {{- if not $checksumsSrc -}}
+        {{- warnf "%s: checksums_src must not be empty; dropping the checksums" $channelPosition -}}
+      {{- else if $checksums -}}
+        {{- warnf "%s: checksums and checksums_src are mutually exclusive; keeping checksums" $channelPosition -}}
+      {{- else -}}
+        {{- $resource := resources.Get $checksumsSrc -}}
+        {{- if not $resource -}}
+          {{- warnf "%s: checksums_src resource %q was not found; dropping the checksums" $channelPosition $checksumsSrc -}}
+        {{- else -}}
+          {{- $checksums = printf "%s" $resource.Content -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $checksums = replace $checksums "\r\n" "\n" -}}
+  {{- $checksums = replace $checksums "\r" "\n" -}}
+  {{- if and $checksums (ne $kind "pinned") -}}
+    {{- warnf "%s: checksums are valid only for a pinned channel; dropping the checksums" $channelPosition -}}
+    {{- $checksums = "" -}}
+  {{- end -}}
+  {{- if and (eq $kind "pinned") (or $url $checksums) (not $repo) -}}
+    {{- warnf "%s: pinned links/assets require download repo; skipping the channel" $channelPosition -}}
+    {{- continue -}}
+  {{- end -}}
+  {{- $ids = $ids | append $id -}}
+  {{- $channels = $channels | append (dict "id" $id "kind" $kind "title" $title "note" $note "icon" $icon "url" $url "steps" $steps "checksums" $checksums) -}}
+{{- end -}}
+
+{{- $result := dict "key" $key "version" "" "repo" "" "tag" "" "published" false "channels" slice -}}
+{{- if $ok -}}
+  {{- $result = dict "key" $key "version" $version "repo" $repo "tag" $tag "published" $published "channels" $channels -}}
+{{- end -}}
+{{- return $result -}}

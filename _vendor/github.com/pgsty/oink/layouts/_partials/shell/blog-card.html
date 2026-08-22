@@ -1,0 +1,44 @@
+{{- $manualLink := cond (isset .Params "manual_link") .Params.manual_link .RelPermalink -}}
+{{- $isExternal := isset .Params "manual_link" -}}
+{{- $summary := .Description | default .Params.summary | plainify | htmlUnescape -}}
+{{- if and (not $summary) (not $isExternal) -}}
+  {{- $summary = .Plain | htmlUnescape | truncate 160 -}}
+{{- end -}}
+{{- $summary = $summary | truncate 200 -}}
+{{- $found := partialCached "featured-image-resolve.html" . .RelPermalink -}}
+{{- /* Authors are excluded: the meta sentence above the terms already names
+     them, and a badge repeating the byline is noise. */ -}}
+{{- $termGroups := partial "shell/blog-terms.html" (dict "page" . "exclude" (slice "authors")) -}}
+<article class="td-content-card td-blog-card">
+  {{- with $found.resource }}
+  {{- if reflect.IsImageResourceProcessable . }}
+  {{- $image := .Fill "640x360 Center" }}
+  <img class="td-blog-card__image" src="{{ $image.RelPermalink }}" alt="" width="{{ $image.Width }}" height="{{ $image.Height }}" loading="lazy">
+  {{- else }}
+  <img class="td-blog-card__image" src="{{ .RelPermalink }}" alt="" loading="lazy">
+  {{- end }}
+  {{- else }}
+  {{- with $found.href }}
+  <img class="td-blog-card__image" src="{{ . }}" alt="" loading="lazy">
+  {{- end }}
+  {{- end }}
+  <div class="td-content-card__body">
+    <h3 class="h5 td-content-card__head td-blog-card__heading">
+      <a class="td-content-card__title" href="{{ $manualLink }}"{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a>
+      {{- if $isExternal }}<i class="fa-solid fa-arrow-up-right-from-square fa-xs text-muted" aria-hidden="true"></i>{{ end }}
+    </h3>
+    {{ partial "shell/blog-meta.html" (dict "page" . "section" false) }}
+    {{- with $termGroups }}
+    <ul class="td-blog-card__tags">
+      {{- range . }}{{ $icon := .icon }}
+      {{- range .terms }}
+      <li><a class="td-badge td-badge--solid" href="{{ .RelPermalink }}"><i class="{{ $icon }}" aria-hidden="true"></i>{{ .LinkTitle }}</a></li>
+      {{- end }}
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- with $summary }}
+    <p class="td-content-card__description td-blog-card__summary">{{ . }}</p>
+    {{- end }}
+  </div>
+</article>

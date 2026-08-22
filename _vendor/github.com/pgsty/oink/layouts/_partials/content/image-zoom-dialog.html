@@ -1,0 +1,14 @@
+<dialog class="td-image-zoom d-print-none" data-td-image-zoom-dialog
+        aria-label="{{ T "ui_image_zoom_dialog" }}"
+        data-td-open-label="{{ T "ui_image_zoom_open" }}">
+  <div class="td-image-zoom__surface">
+    <button class="td-image-zoom__close" type="button" data-td-image-zoom-close>
+      {{- partialCached "shell/icon.html" "x" "image-zoom-close" -}}
+      <span class="visually-hidden">{{ T "ui_image_zoom_close" }}</span>
+    </button>
+    <figure class="td-image-zoom__figure">
+      <img class="td-image-zoom__image" data-td-image-zoom-image alt="">
+      <figcaption class="td-image-zoom__caption" data-td-image-zoom-caption hidden></figcaption>
+    </figure>
+  </div>
+</dialog>

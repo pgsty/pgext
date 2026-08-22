@@ -1,0 +1,30 @@
+{{- $page := .page -}}
+{{- $key := lower (.key | default "") -}}
+{{- $label := $key | humanize -}}
+{{- $contentLabel := false -}}
+{{- $taxonomyPage := $page.Site.GetPage (printf "/%s" $key) -}}
+{{- with $taxonomyPage -}}
+  {{- with .File -}}
+    {{- $label = $taxonomyPage.LinkTitle -}}
+    {{- $contentLabel = true -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $contentLabel -}}
+  {{- $ids := dict
+    "tag" "ui_tag_title"
+    "tags" "ui_tags_title"
+    "category" "ui_category_title"
+    "categories" "ui_categories_title"
+    "module" "ui_module_title"
+    "modules" "ui_modules_title"
+    "author" "ui_author_title"
+    "authors" "ui_authors_title"
+    "series" "ui_series_title"
+  -}}
+  {{- with index $ids $key -}}
+    {{- $label = T . -}}
+  {{- else -}}
+    {{- with $taxonomyPage }}{{ $label = .LinkTitle }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $label -}}

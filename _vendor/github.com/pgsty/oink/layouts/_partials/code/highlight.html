@@ -1,0 +1,22 @@
+{{- $config := . -}}
+{{- $options := $config.options -}}
+{{- $useClasses := $config.page.Param "highlight_classes" -}}
+{{- if eq $useClasses nil }}{{ $useClasses = true }}{{ end -}}
+{{- if reflect.IsMap $options -}}
+  {{- if $useClasses -}}
+    {{- $options = merge (dict "noClasses" false) $options -}}
+  {{- end -}}
+  {{- $anchorLineNos := false -}}
+  {{- if isset $options "anchorLineNos" -}}
+    {{- $anchorLineNos = eq (lower (printf "%v" (index $options "anchorLineNos"))) "true" -}}
+  {{- else if isset $options "anchorlinenos" -}}
+    {{- $anchorLineNos = eq (lower (printf "%v" (index $options "anchorlinenos"))) "true" -}}
+  {{- end -}}
+  {{- if and $anchorLineNos (not (isset $options "lineAnchors")) (not (isset $options "lineanchors")) -}}
+    {{- $options = merge (dict "lineAnchors" $config.rootID) $options -}}
+  {{- end -}}
+{{- else if $useClasses -}}
+  {{- $options = strings.Trim " ," (printf "%v" $options) -}}
+  {{- $options = cond $options (printf "%s,noClasses=false" $options) "noClasses=false" -}}
+{{- end -}}
+{{- transform.Highlight $config.code $config.language $options -}}

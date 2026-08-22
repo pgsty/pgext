@@ -1,0 +1,126 @@
+{{- /* Resolve image metadata without fetching remote sources. */ -}}
+{{- $name := .name | default "image" -}}
+{{- $label := printf "shortcode %q" $name -}}
+{{- if eq $name "image" }}{{ $label = "image" }}{{ else if eq $name "gallery" }}{{ $label = "gallery fence" }}{{ end -}}
+{{- $position := .position | default "unknown position" -}}
+{{- $page := .page -}}
+{{- $sourceValue := .src -}}
+{{- if eq (printf "%T" $sourceValue) "string" }}{{ $sourceValue = strings.TrimSpace $sourceValue }}{{ end -}}
+{{- $validated := partial "content/url.html" (dict
+  "name" $name "label" $label "parameter" "src" "position" $position "value" $sourceValue "kind" "image"
+) -}}
+{{- $source := $validated.raw -}}
+{{- $scheme := $validated.scheme -}}
+
+{{- $kind := "static" -}}
+{{- $resource := false -}}
+{{- $lookup := strings.TrimPrefix "/" $source -}}
+{{- if not $scheme -}}
+  {{- $resource = $page.Resources.Get $lookup -}}
+  {{- if $resource -}}
+    {{- $kind = "page" -}}
+  {{- else -}}
+    {{- /* Branch-bundle resources: a regular page in a section may reference
+           files that live beside it under the section directory
+           (content/blog/pg/post/image.png → resource "post/image.png" of blog/pg). */ -}}
+    {{- with $page.CurrentSection -}}
+      {{- if ne . $page -}}
+        {{- with .Resources.Get $lookup }}{{ $resource = . }}{{ $kind = "page" }}{{ end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if not $resource -}}
+      {{- $resource = resources.Get $lookup -}}
+      {{- if $resource }}{{ $kind = "global" }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- $kind = "remote" -}}
+{{- end -}}
+
+{{- $src := $validated.href -}}
+{{- $fullSrc := $src -}}
+{{- $mediaType := "" -}}
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+{{- $processable := false -}}
+{{- $resourceAlt := "" -}}
+{{- $byline := "" -}}
+{{- if $resource -}}
+  {{- if not (reflect.IsImageResource $resource) -}}
+    {{- warnf "%s: src %q resolved to a non-image %s resource at %s; dropping the image" $label $source $kind $position -}}
+    {{- $resource = false -}}
+  {{- else -}}
+    {{- $src = $resource.RelPermalink -}}
+    {{- $fullSrc = $resource.RelPermalink -}}
+    {{- $mediaType = $resource.MediaType.Type -}}
+  {{- end -}}
+  {{- $processable = reflect.IsImageResourceProcessable $resource -}}
+  {{- if reflect.IsImageResourceWithMeta $resource -}}
+    {{- $width = $resource.Width -}}
+    {{- $height = $resource.Height -}}
+  {{- end -}}
+  {{- with $resource.Params -}}
+    {{- if isset . "alt" -}}
+      {{- $metadataAlt := index . "alt" -}}
+      {{- if ne (printf "%T" $metadataAlt) "string" -}}
+        {{- warnf "%s: image resource alt metadata must be a string at %s; ignoring it" $label $position -}}
+      {{- end -}}
+      {{- $resourceAlt = strings.TrimSpace $metadataAlt -}}
+    {{- end -}}
+    {{- with index . "byline" }}{{ $byline = strings.TrimSpace (printf "%v" .) }}{{ end -}}
+  {{- end -}}
+{{- else -}}
+  {{- $extension := lower (strings.TrimPrefix "." (path.Ext $validated.path)) -}}
+  {{- $mediaTypes := dict
+    "avif" "image/avif" "bmp" "image/bmp" "gif" "image/gif"
+    "heic" "image/heic" "heif" "image/heif" "ico" "image/x-icon"
+    "jpeg" "image/jpeg" "jpg" "image/jpeg" "png" "image/png"
+    "svg" "image/svg+xml" "tif" "image/tiff" "tiff" "image/tiff"
+    "webp" "image/webp"
+  -}}
+  {{- with index $mediaTypes $extension }}{{ $mediaType = . }}{{ end -}}
+{{- end -}}
+
+{{- $hasAlt := .hasAlt | default false -}}
+{{- $alt := $resourceAlt -}}
+{{- if $hasAlt -}}
+  {{- $altValue := .alt -}}
+  {{- if ne (printf "%T" $altValue) "string" -}}
+    {{- warnf "%s: alt must be a string at %s; using the resource alt" $label $position -}}
+  {{- else -}}
+    {{- $alt = strings.TrimSpace $altValue -}}
+  {{- end -}}
+{{- end -}}
+{{- $decorative := .decorative | default false -}}
+{{- if ne (printf "%T" $decorative) "bool" -}}
+  {{- warnf "%s: decorative must be boolean at %s; treating the image as meaningful" $label $position -}}
+  {{- $decorative = false -}}
+{{- end -}}
+{{- if and $decorative $hasAlt $alt -}}
+  {{- warnf "%s: decorative images must not define alt text at %s; dropping the alt text" $label $position -}}
+{{- end -}}
+{{- if $decorative }}{{ $alt = "" }}{{ end -}}
+{{- if and (.requireAlt | default false) (not $decorative) (not $alt) -}}
+  {{- warnf "%s requires meaningful alt text or decorative=true at %s; rendering it decorative" $label $position -}}
+  {{- $decorative = true -}}
+  {{- $alt = "" -}}
+{{- end -}}
+
+{{- return (dict
+  "src" $src
+  "fullSrc" $fullSrc
+  "markdownSrc" (partial "content/markdown-url.html" $src)
+  "source" $source
+  "kind" $kind
+  "mediaType" $mediaType
+  "width" $width
+  "height" $height
+  "processable" $processable
+  "processed" false
+  "resource" $resource
+  "renderedResource" $resource
+  "alt" $alt
+  "decorative" $decorative
+  "caption" (.caption | default "")
+  "byline" $byline
+) -}}

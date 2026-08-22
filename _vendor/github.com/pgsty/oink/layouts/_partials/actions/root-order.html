@@ -1,0 +1,10 @@
+{{- /* Stable page-result group order follows the top-level Hugo main menu. */ -}}
+{{- $order := slice -}}
+{{- range .Site.Menus.main -}}
+  {{- $key := .Identifier -}}
+  {{- with .Page }}{{ if not $key }}{{ $key = .Section }}{{ end }}{{ end -}}
+  {{- if not $key }}{{ $key = .Name | urlize }}{{ end -}}
+  {{- $key = lower (strings.TrimSpace $key) -}}
+  {{- if and $key (not (in $order $key)) }}{{ $order = $order | append $key }}{{ end -}}
+{{- end -}}
+{{- return $order -}}

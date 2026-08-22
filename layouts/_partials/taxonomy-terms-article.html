@@ -1,0 +1,19 @@
+{{- /*
+Site override of OINK's article term chips: each chip carries its dimension
+colour so an extension's identity line reads the same as everywhere else in
+the catalog. Structure and classes are the theme's; only the `--pgx-seg`
+declaration is added.
+*/ -}}
+{{ $context := .context -}}
+{{ $taxo := .taxo -}}
+{{ if (gt (len ($context.GetTerms $taxo)) 0) -}}
+<div class="taxonomy td-taxonomy-terms-article taxo-{{ urlize $taxo }}" role="group" aria-label="{{ partial "taxonomy-label.html" (dict "page" $context "key" $taxo) }}">
+  {{ $icon := partial "taxonomy-icon.html" (dict "page" $context "plural" $taxo "kind" "term") -}}
+  <ul class="td-taxonomy-terms">
+    {{ range ($context.GetTerms $taxo) -}}
+      {{- $seg := partial "pgext/term-seg.html" (dict "plural" $taxo "term" .LinkTitle) -}}
+      <li><a class="td-badge td-badge--solid" href="{{ .Permalink }}"{{ with $seg }} style="{{ . | safeCSS }}"{{ end }}><i class="{{ $icon }}" aria-hidden="true"></i>{{ .LinkTitle }}</a></li>
+    {{ end -}}
+  </ul>
+</div>
+{{ end -}}

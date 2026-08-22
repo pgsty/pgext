@@ -1,32 +1,24 @@
 {{- /*
-PostgreSQL Version Renderer
+The PostgreSQL major-version support strip: five numbers, coloured by whether
+the extension is available for that major. It is the fastest read on a catalog
+row, so it stays a run of plain spans with class names instead of inline
+colour — the same strip is drawn thousands of times per page.
 
-Renders a compact series of PostgreSQL version numbers with color coding.
+@param {string} 0 comma-separated majors, e.g. "18,17,16,15,14"
+@param {string} 1 comma-separated codes: r red, g green, y yellow,
+                  b blue, o orange, gr grey
 
-@param {string} 0 Comma-separated list of version numbers (e.g., "18,17,16,15,14")
-@param {string} 1 Comma-separated list of color codes (e.g., "r,g,g,g,g")
-              Color codes: r=red, g=green, y=yellow, b=blue, o=orange, gr=gray
-
-@example {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}}
+@example  pgver "18,17,16,15,14" "g,g,g,r,r"
 */ -}}
-
 {{- $versions := split (trim (.Get 0) " ") "," -}}
-{{- $colors := split (trim (.Get 1) " ") "," -}}
-
-{{- $colorMap := dict
-  "r" "#dc2626"
-  "g" "#16a34a"
-  "y" "#ca8a04"
-  "b" "#2563eb"
-  "o" "#ea580c"
-  "gr" "#6b7280"
--}}
-
-<span class="pgver" style="display: inline-flex; gap: 0.25rem; font-family: monospace; font-size: 0.875em; font-weight: 600; white-space: nowrap;">
-{{- range $index, $version := $versions -}}
-  {{- $version = trim $version " " -}}
-  {{- $colorCode := trim (index $colors $index) " " -}}
-  {{- $color := index $colorMap $colorCode | default "#6b7280" -}}
-  <span style="color: {{ $color }};">{{ $version }} </span>
+{{- $codes := split (trim (.Get 1) " ") "," -}}
+{{- $names := dict "r" "red" "g" "green" "y" "yellow" "b" "blue" "o" "orange" "gr" "gray" -}}
+<span class="pgx-vers">
+{{- range $i, $v := $versions -}}
+  {{- $v = trim $v " " -}}
+  {{- $code := "gr" -}}
+  {{- if lt $i (len $codes) }}{{ $code = trim (index $codes $i) " " }}{{ end -}}
+  {{- $name := index $names $code | default "gray" -}}
+  <span class="pgx-v pgx-v--{{ $name }}">{{ $v }}</span>
 {{- end -}}
 </span>

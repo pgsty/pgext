@@ -1,0 +1,33 @@
+{{- /* ```infographic {height="480px" full=true} — infographic DSL as a data
+       fence. Replaces the infographic shortcode. */ -}}
+{{- $page := .PageInner | default .Page -}}
+{{- $format := lower ($page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- $policy := partial "content/attributes.html" (dict "attributes" .Attributes "allowed" (slice "height" "full") "position" .Position "kind" "infographic") -}}
+{{- $height := index $policy.consumed "height" | default "auto" -}}
+{{- if ne $height "auto" -}}
+  {{- /* `auto` is legal beside a length here, so only the length case reaches
+         the shared check; both fall back to `auto`. */ -}}
+  {{- $height = partial "validate.html" (dict
+      "value" $height "kind" "length"
+      "fallback" "auto" "key" "infographic height" "where" .Position) -}}
+{{- end -}}
+{{- $fullValue := lower (index $policy.consumed "full" | default "false") -}}
+{{- if not (in (slice "true" "false") $fullValue) -}}
+  {{- warnf "infographic: full must be true or false; got %q at %s; using false" $fullValue .Position -}}
+  {{- $fullValue = "false" -}}
+{{- end -}}
+{{- $full := eq $fullValue "true" -}}
+{{- $syntax := strings.TrimSpace .Inner -}}
+{{- if not $syntax }}{{ warnf "infographic: the fence requires DSL content at %s; rendering nothing" .Position }}{{ end -}}
+{{- if or (not $syntax) (in (slice "markdown" "rss" "print") $format) -}}
+{{- with $syntax }}<pre class="td-infographic-source"><code class="language-infographic">{{ . }}</code></pre>{{ end -}}
+{{- else -}}
+{{- $id := printf "td-infographic-%s-f%d" (md5 $page.RelPermalink) .Ordinal -}}
+{{- $page.Store.Set "hasInfographic" true -}}
+<div id="{{ $id }}" class="td-infographic{{ if not $full }} td-max-width-on-larger-screens{{ end }}{{ with $policy.class }} {{ . }}{{ end }}"
+  data-td-infographic data-td-height="{{ $height }}"
+  {{- partial "content/attrs.html" $policy.generic }}>
+  <div id="{{ $id }}-canvas" data-td-infographic-canvas{{ if ne $height "auto" }} style="height: {{ $height }}"{{ end }}></div>
+  <script type="application/json" data-td-infographic-syntax>{{ $syntax | jsonify | safeJS }}</script>
+</div>
+{{- end -}}

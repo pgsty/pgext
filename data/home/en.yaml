@@ -1,0 +1,390 @@
+# The PGEXT.CLOUD home page.
+#
+# Every section is server-rendered from this file; nothing here is fetched at
+# runtime. The counts are the catalog's own, taken from db/universe.csv and
+# db/extension.csv, and are refreshed with the catalog.
+
+sections:
+  - hero
+  - metrics
+  - type: command-box
+    key: install
+  - capabilities
+  - type: cards
+    key: explore
+  - type: bar-chart
+    key: languages
+  - steps
+  - type: logo-wall
+    key: users
+  - faq
+  - cta
+
+hero:
+  eyebrow: 2,241 catalogued · 576 packaged · 16 platforms · PG 14 – 18
+  title_lines:
+    - words:
+        - { text: The PostgreSQL }
+    - words:
+        - { text: Extension Universe }
+  lead: >-
+    Everything the ecosystem has built, in one catalog — and the best of it
+    compiled into native RPM and DEB packages that drop straight onto the
+    official PostgreSQL kernel.
+  note: Reproducible builds · PGDG-compliant · free for everyone
+  note_icon: fa-solid fa-circle-check
+  title_size: 4rem
+  image:
+    light: ecosystem.gif
+    dark: ecosystem.gif
+    alt: The PostgreSQL extension ecosystem
+  media:
+    ratio: 1.15fr 1fr
+    max_width: 460px
+    hide_below: lg
+  actions:
+    - label: Browse the catalog
+      url: list/
+      icon: fa-solid fa-clipboard-list
+      style: primary
+    - label: Install with pig
+      url: pig/
+      icon: fa-solid fa-piggy-bank
+      style: ghost
+  detail:
+    label: Or wander the Extension Galaxy
+    url: galaxy/
+    icon: fa-solid fa-star
+
+metrics:
+  eyebrow: The catalog, in numbers
+  title: One index for a scattered ecosystem
+  text: >-
+    Extensions live on GitHub, PGXN, vendor sites and forgotten tarballs.
+    This is the count of what has been found, verified, and — where it can be
+    — built.
+  animate: true
+  columns: 4
+  items:
+    - value: 2241
+      label: Catalogued extensions
+      desc: Every PostgreSQL extension we can find and verify
+      url: list/
+      link_label: Open the catalog
+    - value: 576
+      label: Packaged
+      desc: Built and published as RPM and DEB
+      url: e/
+      link_label: See the list
+    - value: 16
+      label: Linux targets
+      desc: Eight distribution releases, `x86_64` and `aarch64`
+      url: os/
+      link_label: See the platforms
+    - value: 5
+      label: PostgreSQL majors
+      desc: PostgreSQL 14 through 18, in step with PGDG
+      url: os/matrix/
+      link_label: See the matrix
+
+install:
+  eyebrow: Install
+  title: One line to the package manager, four to a database
+  code: |-
+    curl -fsSL https://repo.pigsty.io/pig | bash   # install the pig CLI
+    pig repo set                                   # add pgdg + pigsty repos
+    pig install pg18                               # PostgreSQL 18 from PGDG
+    pig install pg_duckdb -v 18                    # any of 576 extensions
+  lang: bash
+  note: >-
+    `pig` speaks `apt` and `dnf` underneath, so nothing here is a private
+    package format — the same packages install by hand.
+
+capabilities:
+  eyebrow: What is here
+  title: Find it. Install it. Trust it.
+  text: >-
+    Three layers, each usable on its own: an index of what exists, a
+    repository of what is built, and a CLI that ties them to your machine.
+  items:
+    - ref: 01 / CATALOG
+      title: Know what actually exists
+      url: list/
+      motto: Sixteen categories, one page each
+      bullets:
+        - '**2,241 extensions** indexed by [category](list/cate/),
+          [language](list/lang/) and [licence](list/license/)'
+        - 'Every entry carries its version, dependencies, `shared_preload_libraries`
+          needs, trust and relocatability flags'
+        - 'Cross-links between families — `postgis` and its four siblings read
+          as one project, not five rows'
+      value: The search that used to take an afternoon takes a minute.
+      visual:
+        type: components
+        aria_label: Browse the catalog by category
+        columns: 4
+        compact: true
+        items:
+          - { icon: fa-solid fa-clock, title: TIME, url: list/cate/#time }
+          - { icon: fa-solid fa-globe, title: GIS, url: list/cate/#gis }
+          - { icon: fa-solid fa-lightbulb, title: RAG, url: list/cate/#rag }
+          - { icon: fa-solid fa-magnifying-glass, title: FTS, url: list/cate/#fts }
+          - { icon: fa-solid fa-chart-column, title: OLAP, url: list/cate/#olap }
+          - { icon: fa-solid fa-wand-magic-sparkles, title: FEAT, url: list/cate/#feat }
+          - { icon: fa-solid fa-code, title: LANG, url: list/cate/#lang }
+          - { icon: fa-solid fa-cube, title: TYPE, url: list/cate/#type }
+          - { icon: fa-solid fa-gear, title: UTIL, url: list/cate/#util }
+          - { icon: fa-solid fa-superscript, title: FUNC, url: list/cate/#func }
+          - { icon: fa-solid fa-building, title: ADMIN, url: list/cate/#admin }
+          - { icon: fa-solid fa-arrow-trend-up, title: STAT, url: list/cate/#stat }
+          - { icon: fa-solid fa-shield-halved, title: SEC, url: list/cate/#sec }
+          - { icon: fa-solid fa-database, title: FDW, url: list/cate/#fdw }
+          - { icon: fa-solid fa-clone, title: SIM, url: list/cate/#sim }
+          - { icon: fa-solid fa-truck, title: ETL, url: list/cate/#etl }
+    - ref: 02 / REPOSITORY
+      title: Packages, not build instructions
+      url: repo/
+      motto: Native RPM and DEB, built the boring way
+      bullets:
+        - '576 extensions across **16 Linux targets** and
+          [five PostgreSQL majors](os/matrix/)'
+        - 'Designed to sit beside [PGDG](repo/pgdg/), not replace it: same
+          naming, same paths, same `postgresql-$v-*` conventions'
+        - 'Every package signed; the whole repository served from a global CDN'
+      value: Your existing apt and dnf workflow does not change.
+      visual:
+        type: card
+        icon: fa-solid fa-warehouse
+        title: repo.pigsty.io
+        lines:
+          - '**EL 8 / 9 / 10** · RockyLinux, RHEL and compatibles'
+          - '**Debian 12 / 13** · Ubuntu 22.04 / 24.04 / 26.04'
+          - 'Both `x86_64` and `aarch64`, at parity'
+          - 'GPG-signed, [verifiable keys](repo/gpg/)'
+          - 'Mirrored in mainland China at `repo.pigsty.cc`'
+    - ref: 03 / PIG
+      title: One CLI for kernel and extensions alike
+      url: pig/
+      motto: Postgres Install Genius
+      bullets:
+        - '`pig repo` writes the right repository files for your
+          distribution — no hand-edited `sources.list`'
+        - '`pig ext` searches, installs and removes extensions by their
+          **canonical name**, whatever the package is called on your OS'
+        - 'Also manages the kernel, `pgbackrest` restores, and whole Pigsty
+          deployments'
+      value: One name works on Rocky, Debian and Ubuntu alike.
+      visual:
+        type: code
+        aria_label: Example pig session
+        title: pig
+        lines:
+          - { class: c, prefix: '# ', text: 'one name, every distribution' }
+          - { class: p, prefix: '$ ', text: 'pig ext install pgvector' }
+          - { class: ok, prefix: '✓ ', text: 'resolved  vector 0.8.1' }
+          - { class: ok, prefix: '✓ ', text: 'installed pgvector_18 (el9.x86_64)' }
+          - { class: c, prefix: '# ', text: 'now enable it in the database' }
+          - { class: p, prefix: '$ ', text: 'psql -c ''CREATE EXTENSION vector''' }
+
+explore:
+  eyebrow: Every way in
+  title: Slice the catalog however you think about it
+  text: >-
+    The same 2,241 rows, indexed along the axes that actually come up when you
+    are choosing an extension.
+  columns: 4
+  link_label: Open
+  items:
+    - title: Extension list
+      meta: 576 packaged
+      icon: fa-solid fa-puzzle-piece
+      desc: Every packaged extension with its version, attributes and PostgreSQL support.
+      url: list/ext/
+    - title: Package list
+      meta: By source package
+      icon: fa-solid fa-box
+      desc: One row per package, with the extension family it installs.
+      url: list/pkg/
+    - title: Categories
+      meta: 16 categories
+      icon: fa-solid fa-folder-tree
+      desc: From time series and geospatial to vector search and lakehouse analytics.
+      url: list/cate/
+    - title: Languages
+      meta: C, Rust, SQL …
+      icon: fa-solid fa-code
+      desc: What each extension is written in — and how much of the catalog is now Rust.
+      url: list/lang/
+    - title: Licences
+      meta: Permissive to AGPL
+      icon: fa-solid fa-scale-balanced
+      desc: Sorted by obligation, so a legal review starts from the right shortlist.
+      url: list/license/
+    - title: Platforms
+      meta: 16 targets
+      icon: fa-solid fa-server
+      desc: What is available on each distribution release and architecture.
+      url: os/
+    - title: Availability matrix
+      meta: Every cell
+      icon: fa-solid fa-table-cells
+      desc: All packages against all OS targets and PostgreSQL majors, in one grid.
+      url: os/matrix/
+    - title: Extension Galaxy
+      meta: Visual
+      icon: fa-solid fa-star
+      desc: The whole universe as a star map, coloured by category.
+      url: galaxy/
+
+languages:
+  eyebrow: What the ecosystem is written in
+  title: C still holds the ground. Rust took the frontier.
+  text: >-
+    Implementation language across all 2,241 catalogued extensions. Rust
+    arrived a decade after the others and is already the third-largest body of
+    code in the ecosystem — and most of the newest vector, search and
+    analytics work.
+  unit: extensions
+  items:
+    - label: C
+      value: 1368
+      group: c
+      note: The classic path — `PGXS`, a `.control` file, and a shared library.
+    - label: SQL
+      value: 379
+      group: sql
+      note: Pure-SQL extensions that need no compiler at all.
+    - label: Rust
+      value: 353
+      group: rust
+      note: Almost all of it written against `pgrx`, and almost all of it recent.
+    - label: C++
+      value: 76
+      group: cpp
+    - label: Python
+      value: 28
+      group: other
+    - label: Everything else
+      value: 37
+      group: other
+      note: Go, Java, JavaScript, shell, and data-only bundles.
+
+steps:
+  eyebrow: Get started
+  title: From a bare Linux box to an extended database
+  items:
+    - title: Install the package manager
+      icon: fa-solid fa-download
+      desc: A single static binary, no runtime dependencies.
+      cmd: { code: 'curl -fsSL https://repo.pigsty.io/pig | bash' }
+    - title: Add the repositories
+      icon: fa-solid fa-warehouse
+      desc: Writes the PGDG and Pigsty repository files your distribution expects, then refreshes the cache.
+      cmd: { code: 'pig repo add all -u' }
+    - title: Install a PostgreSQL kernel
+      icon: fa-solid fa-database
+      desc: Straight from PGDG — this catalog does not fork the kernel.
+      cmd: { code: 'pig install pg18' }
+    - title: Add the extensions you want
+      icon: fa-solid fa-puzzle-piece
+      desc: By canonical name, then enable it in the database as usual.
+      cmd: { code: 'pig install pgvector postgis timescaledb -v 18' }
+
+users:
+  eyebrow: Who builds on this
+  title: Distributions and vendors ship from here
+  text: >-
+    The extension supply chain behind [Pigsty](https://github.com/pgsty/pigsty),
+    [Omnigres](https://docs.omnigres.org/quick_start/),
+    [AutoBase](https://autobase.tech/docs/extensions/install),
+    [TensorChord](https://github.com/tensorchord) and
+    [WwIT](https://w3.ww-it.cn/) — and the package source for a good many
+    self-hosted fleets.
+  columns: 5
+  items:
+    - title: Pigsty
+      icon: fa-solid fa-database
+      url: https://github.com/pgsty/pigsty
+      external: true
+    - title: Omnigres
+      icon: fa-solid fa-layer-group
+      url: https://docs.omnigres.org/quick_start/
+      external: true
+    - title: AutoBase
+      icon: fa-solid fa-robot
+      url: https://autobase.tech/docs/extensions/install
+      external: true
+    - title: TensorChord
+      icon: fa-solid fa-microchip
+      url: https://github.com/tensorchord
+      external: true
+    - title: WwIT
+      icon: fa-solid fa-building
+      url: https://w3.ww-it.cn/
+      external: true
+
+faq:
+  eyebrow: Before you depend on it
+  title: The questions that decide whether this is usable
+  items:
+    - question: Does this replace or fork the PostgreSQL kernel?
+      answer: >-
+        No. The kernel comes from
+        [PGDG](https://www.postgresql.org/download/linux/), unmodified, and
+        these packages are built to sit beside it: the same package naming,
+        the same `$libdir` and extension directories, the same
+        `postgresql-$v-*` and `*_$v` conventions. An extension installed from
+        here works with a kernel installed from PGDG, and removing this
+        repository leaves a working database behind.
+      open: true
+    - question: What does "packaged" actually guarantee?
+      answer: >-
+        That the extension builds reproducibly from source against each
+        supported PostgreSQL major on each supported platform, that the result
+        is a signed RPM or DEB with correct dependencies, and that the
+        [availability matrix](os/matrix/) says so cell by cell. It does not
+        mean the extension is production-ready — that judgement is still
+        yours, and the catalog gives you the licence, activity and maintenance
+        signals to make it.
+    - question: Which platforms and PostgreSQL versions are covered?
+      answer: >-
+        Eight distribution releases — RockyLinux 8, 9 and 10, Debian 12 and
+        13, Ubuntu 22.04, 24.04 and 26.04 — on both `x86_64` and `aarch64`,
+        which is the sixteen targets counted above. PostgreSQL 14 through 18
+        on each. ARM is a first-class target, not an afterthought:
+        [the matrix](os/matrix/) shows where the two architectures differ.
+    - question: What is in the catalog that is not packaged?
+      answer: >-
+        Most of it. Of 2,241 catalogued extensions, 576 are built here; the
+        rest are indexed because knowing an extension exists — with its
+        repository, licence, language and last commit — is useful even when
+        nobody has packaged it. Provider-only extensions from managed clouds
+        are catalogued too, marked as such.
+    - question: Is there anything proprietary or paid here?
+      answer: >-
+        No. The build specifications
+        ([RPM](https://github.com/pgsty/rpm), [DEB](https://github.com/pgsty/deb)),
+        this catalog, and the `pig` CLI are all open source, and the
+        repository is free to use. A handful of *catalogued* extensions carry
+        source-available or copyleft licences of their own — the
+        [licence index](list/license/) sorts by obligation so you can see
+        which before you install.
+    - question: Something is missing or wrong. What then?
+      answer: >-
+        Open an issue on [pgsty/pgext](https://github.com/pgsty/pgext/issues).
+        New extensions get catalogued on request, and packaging requests are
+        taken seriously — a large part of the 576 arrived that way.
+
+cta:
+  title: Start where the ecosystem is indexed.
+  desc: >-
+    Browse 2,241 extensions, or install one of the 576 packaged ones in the
+    time it takes to read this sentence.
+  actions:
+    - label: Browse the catalog
+      url: list/
+      icon: fa-solid fa-clipboard-list
+      style: primary
+    - label: Read the pig guide
+      url: pig/start/
+      style: ghost

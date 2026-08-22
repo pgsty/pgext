@@ -1,0 +1,17 @@
+{{ if .Site.Params.archived_version -}}
+  {{ $latestVersion := .Site.Params.url_latest_version -}}
+  {{ $currentVersion := .Site.Params.version -}}
+  <div class="td-page-notice td-page-notice--primary">
+    {{ with $currentVersion -}}
+      <p>
+        {{ T "version_banner_archived" (dict "Version" (. | markdownify)) | safeHTML }}
+        {{ with $latestVersion -}}
+          {{/* Build the anchor here so translators localize word order without
+               editing markup. The URL comes from trusted site configuration. */ -}}
+          {{ $link := printf "<a href=%q target=\"_blank\" rel=\"noopener\">%s</a>" (. | safeURL) (T "version_banner_latest_link") -}}
+          {{ T "version_banner_latest" (dict "Link" $link) | safeHTML -}}
+        {{ end -}}
+      </p>
+    {{ end -}}
+  </div>
+{{ end -}}

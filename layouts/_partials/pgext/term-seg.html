@@ -1,0 +1,28 @@
+{{- /*
+The colour expression for one taxonomy term, as a `--pgx-seg` declaration.
+
+Categories use their own fixed hue; languages, licences and repositories share
+the dimension scale resolved by pgext/hue.html. Tags have no colour of their
+own — they cut across every dimension, so giving them one would imply an order
+they do not have.
+
+Input (dict): plural, term (the term's display title).
+Returns `--pgx-seg:<expr>` ready for a style attribute, or "".
+*/ -}}
+{{- $plural := .plural -}}
+{{- $term := strings.TrimSpace (printf "%v" (.term | default "")) -}}
+{{- $expr := "" -}}
+{{- if and $term (eq $plural "categories") -}}
+  {{- $code := upper $term -}}
+  {{- if index (partialCached "pgext/categories.html" "categories") $code -}}
+    {{- $expr = printf "var(--c-%s)" $code -}}
+  {{- end -}}
+{{- else if $term -}}
+  {{- $dim := index (dict "languages" "lang" "licenses" "license" "repos" "repo") $plural -}}
+  {{- with $dim -}}
+    {{- with partial "pgext/hue.html" (dict "dim" . "value" $term) -}}
+      {{- $expr = printf "var(--h-%s)" . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $expr }}{{ printf "--pgx-seg:%s" . }}{{ end -}}

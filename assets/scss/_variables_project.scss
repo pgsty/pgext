@@ -1,0 +1,18 @@
+// Sass-level overrides, applied before Bootstrap.
+//
+// Only the two things that must be Sass live here — the base font stacks,
+// which Bootstrap bakes into `--bs-body-font-family` and `--bs-font-monospace`
+// before OINK's semantic roles read them. Everything else about the look is a
+// CSS custom property and lives in `_styles_project.scss`, where it can be
+// re-declared per theme.
+//
+// The stacks are the dynamic catalogue's: a transitional serif for display, the
+// platform UI face for prose, and a coding face for every piece of data.
+
+$font-family-sans-serif:
+  system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif !default;
+
+$font-family-monospace:
+  ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas,
+  'Liberation Mono', 'Sarasa Mono SC', monospace !default;

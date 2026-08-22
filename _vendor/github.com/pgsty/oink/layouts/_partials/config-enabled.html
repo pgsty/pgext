@@ -1,0 +1,14 @@
+{{- $value := .value -}}
+{{- $enabled := false -}}
+{{- if eq (printf "%T" $value) "bool" -}}
+  {{- $enabled = $value -}}
+{{- else if reflect.IsMap $value -}}
+  {{- if isset $value "enable" -}}
+    {{- $enabled = partial "validate.html" (dict
+        "value" (index $value "enable") "kind" "bool" "fallback" false
+        "key" (printf "%s.enable" .key)) -}}
+  {{- end -}}
+{{- else if ne $value nil -}}
+  {{- warnf "%s must be a boolean or a map with enable; got %v -- using false" .key $value -}}
+{{- end -}}
+{{- return $enabled -}}

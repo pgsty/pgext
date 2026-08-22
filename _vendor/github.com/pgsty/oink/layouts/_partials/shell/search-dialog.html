@@ -1,0 +1,44 @@
+{{- if partial "shell/search-enabled.html" . -}}
+{{- $indexURL := partialCached "offline-search-index.html" . .Site.Language.Lang -}}
+<div id="td-shell-search" class="td-shell-search" hidden
+     data-td-index-src="{{ $indexURL }}"
+     data-td-max-results="{{ .Site.Params.offline_search_max_results | default 10 }}"
+     data-td-t-empty="{{ T "ui_search_empty" }}"
+     data-td-t-loading="{{ T "ui_search_loading" }}"
+     data-td-t-results="{{ T "ui_search_results" }}"
+     data-td-t-actions="{{ T "ui_palette_actions" }}"
+     data-td-t-page-actions="{{ T "ui_palette_page_actions" }}"
+     data-td-t-preferences="{{ T "ui_palette_preferences" }}"
+     data-td-t-commands="{{ T "ui_palette_commands" }}"
+     data-td-t-quick-links="{{ T "ui_palette_quick_links" }}"
+     data-td-t-no-commands="{{ T "ui_palette_no_commands" }}"
+     data-td-t-choice="{{ T "ui_palette_choose" }}"
+     data-td-t-action-failed="{{ T "ui_palette_action_failed" }}"
+     data-td-t-index-unavailable="{{ T "ui_palette_index_unavailable" }}"
+     data-td-t-pages="{{ T "ui_palette_pages" }}">
+  <div class="td-shell-search__backdrop" data-td-shell-search-close></div>
+  <div class="td-shell-search__panel" role="dialog" aria-modal="true" aria-label="{{ T "ui_search" }}">
+    <div class="td-shell-search__head">
+      {{ partialCached "shell/icon.html" "search" "search" }}
+      <input type="search" class="td-shell-search__input" placeholder="{{ T "ui_search" }}"
+             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+             role="combobox" aria-autocomplete="list" aria-haspopup="listbox"
+             aria-controls="td-shell-search-results" aria-expanded="false"
+             aria-label="{{ T "ui_search" }}" enterkeyhint="go">
+      <button type="button" class="td-shell-search__esc" data-td-shell-search-close
+        aria-label="{{ T "ui_search_close" }}">
+        <kbd>esc</kbd>
+      </button>
+    </div>
+    <div id="td-shell-search-results" class="td-shell-search__list" role="listbox"
+      aria-label="{{ T "ui_search" }}"></div>
+    <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"
+      data-td-shell-search-status></div>
+    <div class="td-shell-search__foot" aria-hidden="true">
+      <span><kbd>↑</kbd><kbd>↓</kbd> {{ T "ui_search_nav" }}</span>
+      <span><kbd>↵</kbd> {{ T "ui_search_open" }}</span>
+      <span><kbd>esc</kbd> {{ T "ui_search_close" }}</span>
+    </div>
+  </div>
+</div>
+{{- end -}}

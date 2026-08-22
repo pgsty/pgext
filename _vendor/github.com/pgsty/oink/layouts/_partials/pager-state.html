@@ -1,0 +1,48 @@
+{{- $page := . -}}
+{{- $format := lower ($page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- $types := slice "docs" "book" "blog" -}}
+{{- if isset $page.Site.Params.ui "pager_types" -}}
+  {{- $types = index $page.Site.Params.ui "pager_types" -}}
+{{- end -}}
+{{- if not (reflect.IsSlice $types) -}}
+  {{- warnf "params.ui.pager_types must be an array of docs, book, and/or blog; got %v; using the default [docs book blog]" $types -}}
+  {{- $types = slice "docs" "book" "blog" -}}
+{{- end -}}
+{{- $keptTypes := slice -}}
+{{- range $types -}}
+  {{- if or (ne (printf "%T" .) "string") (not (in (slice "docs" "book" "blog") .)) -}}
+    {{- warnf "invalid params.ui.pager_types value %q (allowed: docs | book | blog); dropping it" . -}}
+  {{- else -}}
+    {{- $keptTypes = $keptTypes | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $types = $keptTypes -}}
+
+{{- $enabled := and (eq $format "html") (in $types $page.Type) -}}
+{{- if isset $page.Params "pager" -}}
+  {{- if ne (printf "%T" $page.Params.pager) "bool" -}}
+    {{- warnf "front matter pager must be a boolean at %s; ignoring the override" $page.Path -}}
+  {{- else if not $page.Params.pager }}{{ $enabled = false }}{{ end -}}
+{{- end -}}
+
+{{- $prev := false -}}
+{{- $next := false -}}
+{{- if $enabled -}}
+  {{- $root := partial "shell/sidebar-root.html" $page -}}
+  {{- $pages := partialCached "shell/nav-flatten.html"
+      (dict "page" $page "root" $root)
+      $root.RelPermalink $page.Site.Language.Lang $page.Type -}}
+  {{- $index := -1 -}}
+  {{- range $candidateIndex, $candidate := $pages -}}
+    {{- if eq $candidate.RelPermalink $page.RelPermalink -}}
+      {{- $index = $candidateIndex -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if ge $index 0 -}}
+    {{- if gt $index 0 }}{{ $prev = index $pages (sub $index 1) }}{{ end -}}
+    {{- if lt (add $index 1) (len $pages) }}{{ $next = index $pages (add $index 1) }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "enabled" $enabled "prev" $prev "next" $next) -}}

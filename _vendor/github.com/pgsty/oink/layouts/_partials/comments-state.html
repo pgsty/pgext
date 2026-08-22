@@ -1,0 +1,57 @@
+{{/* Hugo normalizes keys under Params to lowercase. Keep all map lookups in
+this helper lowercase so comments.html and the page layouts share one source
+of truth for activation and legacy Disqus fallback. */ -}}
+{{- /* params.comments is a map (enable, type, giscus) or the bare boolean
+       shorthand `comments: true|false`. */ -}}
+{{- $raw := .Site.Params.comments -}}
+{{- $comments := dict -}}
+{{- $enabledValue := partial "config-enabled.html" (dict "value" $raw "key" "params.comments") -}}
+{{- if reflect.IsMap $raw -}}
+  {{- $comments = $raw -}}
+{{- end -}}
+{{- $pageOverride := isset .Params "comments" -}}
+{{- if $pageOverride -}}
+  {{- if eq (printf "%T" .Params.comments) "bool" -}}
+    {{- $enabledValue = .Params.comments -}}
+  {{- else -}}
+    {{- warnf "front matter comments must be a boolean; got %v at %s; using the site value" .Params.comments .Path -}}
+    {{- $pageOverride = false -}}
+  {{- end -}}
+{{- end -}}
+{{- $enabledText := printf "%v" $enabledValue | lower -}}
+{{- $enabled := or (eq $enabledText "true") (eq $enabledText "1") -}}
+
+{{- $commentTypeValue := index $comments "type" | default "" -}}
+{{- if ne (printf "%T" $commentTypeValue) "string" -}}
+  {{- warnf "params.comments.type must be a string; got %v; using giscus" $commentTypeValue -}}
+  {{- $commentTypeValue = "giscus" -}}
+{{- end -}}
+{{- $commentType := lower $commentTypeValue -}}
+{{- $giscus := index $comments "giscus" | default dict -}}
+{{- if not (reflect.IsMap $giscus) -}}
+  {{- warnf "params.comments.giscus must be a map; got %v; using an empty one" $giscus -}}
+  {{- $giscus = dict -}}
+{{- end -}}
+{{- $missing := slice -}}
+{{- $required := slice
+  (dict "key" "repo" "label" "repo")
+  (dict "key" "repoid" "label" "repoId")
+  (dict "key" "category" "label" "category")
+  (dict "key" "categoryid" "label" "categoryId")
+-}}
+{{- range $required -}}
+  {{- $value := index $giscus .key | default "" -}}
+  {{- if not (strings.TrimSpace (printf "%v" $value)) -}}
+    {{- $missing = $missing | append .label -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $active := and $enabled (eq $commentType "giscus") (eq (len $missing) 0) -}}
+{{- $suppressDisqus := or $active (and $pageOverride (not $enabled)) -}}
+{{- return dict
+  "enabled" $enabled
+  "type" $commentType
+  "missing" $missing
+  "active" $active
+  "suppressDisqus" $suppressDisqus
+-}}

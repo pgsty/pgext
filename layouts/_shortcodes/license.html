@@ -1,52 +1,32 @@
-{{- $licName := trim (.Get 0) " " -}}
+{{- /*
+The licence of an extension, as a linked pill.
 
-{{- /* Map licenses using uppercase keys with standard names and properties as values */ -}}
-{{- $licenses := dict
-  "MIT" (dict "name" "MIT" "color" "blue" "anchor" "mit" "desc" "MIT License - Simple and permissive")
-  "ISC" (dict "name" "ISC" "color" "blue" "anchor" "isc" "desc" "ISC License - Simplified BSD license")
-  "POSTGRESQL" (dict "name" "PostgreSQL" "color" "blue" "anchor" "postgresql" "desc" "PostgreSQL License - Liberal Open Source license")
-  "BSD-0" (dict "name" "BSD 0-Clause" "color" "blue" "anchor" "bsd-0-clause" "desc" "BSD Zero Clause License - No conditions")
-  "BSD-2" (dict "name" "BSD 2-Clause" "color" "blue" "anchor" "bsd-2-clause" "desc" "BSD 2-Clause 'Simplified' License")
-  "BSD-3" (dict "name" "BSD 3-Clause" "color" "blue" "anchor" "bsd-3-clause" "desc" "BSD 3-Clause 'New' or 'Revised' License")
-  "BSD 0-CLAUSE" (dict "name" "BSD 0-Clause" "color" "blue" "anchor" "bsd-0-clause" "desc" "BSD Zero Clause License - No conditions")
-  "BSD 2-CLAUSE" (dict "name" "BSD 2-Clause" "color" "blue" "anchor" "bsd-2-clause" "desc" "BSD 2-Clause 'Simplified' License")
-  "BSD 3-CLAUSE" (dict "name" "BSD 3-Clause" "color" "blue" "anchor" "bsd-3-clause" "desc" "BSD 3-Clause 'New' or 'Revised' License")
-  "ARTISTIC" (dict "name" "Artistic" "color" "green" "anchor" "artistic" "desc" "Artistic License - Used by Perl community")
-  "APACHE-2.0" (dict "name" "Apache-2.0" "color" "green" "anchor" "apache-20" "desc" "Apache License 2.0 - Permissive with patent grant")
-  "APACHE-2" (dict "name" "Apache-2.0" "color" "green" "anchor" "apache-20" "desc" "Apache License 2.0 - Permissive with patent grant")
-  "MPL-2.0" (dict "name" "MPL-2.0" "color" "green" "anchor" "mpl-20" "desc" "Mozilla Public License 2.0 - Weak copyleft")
-  "MPL-2" (dict "name" "MPL-2.0" "color" "green" "anchor" "mpl-20" "desc" "Mozilla Public License 2.0 - Weak copyleft")
-  "GPL-2.0" (dict "name" "GPL-2.0" "color" "yellow" "anchor" "gpl-20" "desc" "GNU General Public License v2.0 - Strong copyleft")
-  "GPL-2" (dict "name" "GPL-2.0" "color" "yellow" "anchor" "gpl-20" "desc" "GNU General Public License v2.0 - Strong copyleft")
-  "GPL-3.0" (dict "name" "GPL-3.0" "color" "yellow" "anchor" "gpl-30" "desc" "GNU General Public License v3.0 - Strong copyleft")
-  "GPL-3" (dict "name" "GPL-3.0" "color" "yellow" "anchor" "gpl-30" "desc" "GNU General Public License v3.0 - Strong copyleft")
-  "LGPL-2.1" (dict "name" "LGPL-2.1" "color" "yellow" "anchor" "lgpl-21" "desc" "GNU Lesser General Public License v2.1 - Weak copyleft")
-  "LGPL-3.0" (dict "name" "LGPL-3.0" "color" "yellow" "anchor" "lgpl-30" "desc" "GNU Lesser General Public License v3.0 - Weak copyleft")
-  "LGPL-3" (dict "name" "LGPL-3.0" "color" "yellow" "anchor" "lgpl-30" "desc" "GNU Lesser General Public License v3.0 - Weak copyleft")
-  "AGPL-3.0" (dict "name" "AGPL-3.0" "color" "red" "anchor" "agpl-30" "desc" "GNU Affero General Public License v3.0 - Network copyleft")
-  "AGPL-3" (dict "name" "AGPL-3.0" "color" "red" "anchor" "agpl-30" "desc" "GNU Affero General Public License v3.0 - Network copyleft")
-  "TIMESCALE" (dict "name" "Timescale" "color" "gray" "anchor" "timescale" "desc" "Timescale License - Source available license")
+The hue is the obligation class rather than the licence family: cool for
+permissive, green and teal for permissive-with-conditions, amber and orange for
+copyleft, red for network copyleft, violet for anything source-available.
+
+@param {string} 0 licence name, case-insensitive
+*/ -}}
+{{- $lic := trim (.Get 0) " " -}}
+{{- $names := dict
+  "mit" "MIT" "isc" "ISC" "postgresql" "PostgreSQL"
+  "bsd-0" "BSD 0-Clause" "bsd 0-clause" "BSD 0-Clause"
+  "bsd-2" "BSD 2-Clause" "bsd 2-clause" "BSD 2-Clause"
+  "bsd-3" "BSD 3-Clause" "bsd 3-clause" "BSD 3-Clause"
+  "artistic" "Artistic" "apache-2.0" "Apache-2.0" "apache-2" "Apache-2.0"
+  "mpl-2.0" "MPL-2.0" "mpl-2" "MPL-2.0"
+  "gpl-2.0" "GPL-2.0" "gpl-2" "GPL-2.0" "gpl-3.0" "GPL-3.0" "gpl-3" "GPL-3.0"
+  "lgpl-2.1" "LGPL-2.1" "lgpl-3.0" "LGPL-3.0" "lgpl-3" "LGPL-3.0"
+  "agpl-3.0" "AGPL-3.0" "agpl-3" "AGPL-3.0" "timescale" "Timescale"
 -}}
-
-{{- /* Look up license using uppercase key */ -}}
-{{- $license := index $licenses (upper $licName) -}}
-{{- if $license -}}
-  {{- $href := (printf "/list/license#%s" $license.anchor) | relLangURL -}}
-  <a href="{{ $href }}" title="{{ $license.name }}: {{ $license.desc }}">
-    {{- partial "shortcodes/badge.html" (dict
-      "content" $license.name
-      "color" $license.color
-      "border" true
-      "icon" "scale"
-      )
-    -}}
-  </a>
-{{- else -}}
-  {{- partial "shortcodes/badge.html" (dict
-    "content" $licName
-    "color" "gray"
-    "border" true
+{{- $name := index $names (lower $lic) | default $lic -}}
+{{- if $name -}}
+  {{- partial "pgext/badge.html" (dict
+    "content" $name
+    "color" (partial "pgext/hue.html" (dict "dim" "license" "value" $name))
+    "hued" true
     "icon" "scale"
-    )
-  -}}
+    "link" (printf "/licenses/%s/" (urlize $name))
+    "title" (printf "Licence: %s" $name)
+  ) -}}
 {{- end -}}

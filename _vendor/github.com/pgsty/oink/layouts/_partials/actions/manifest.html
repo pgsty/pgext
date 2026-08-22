@@ -1,0 +1,10 @@
+{{- $outputFormat := lower (.Store.Get "tdOutputFormat" | default "html") -}}
+{{- $context := partialCached "actions/context.html" . .Site.BaseURL .Site.Language.Lang .RelPermalink $outputFormat -}}
+{{- return (dict
+  "version" 1
+  "language" .Site.Language.Lang
+  "actions" $context.actions
+  "commands" (partialCached "actions/site-commands.html" . .Site.Language.Lang .Site.BaseURL)
+  "quickLinks" (partialCached "actions/quick-links.html" . .Site.Language.Lang .Site.BaseURL)
+  "rootOrder" (partialCached "actions/root-order.html" . .Site.Language.Lang .Site.BaseURL)
+) -}}

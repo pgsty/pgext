@@ -1,0 +1,371 @@
+// Code formatting.
+//
+// Surface tokens shared by inline code, code blocks, and the tab frame.
+// `_brand.scss` sets `--td-pre-bg` per palette; the defaults below derive from
+// Bootstrap tokens so a site without the brand layer stays coherent.
+
+:root,
+[data-bs-theme='light'] {
+  --td-code-inline-bg: rgba(var(--bs-body-color-rgb), 0.075);
+  --td-code-inline-fg: var(--bs-emphasis-color);
+  --td-code-header-bg: var(--bs-tertiary-bg);
+  --td-code-border-color: var(--bs-border-color);
+  --td-code-radius: 0.75rem;
+}
+
+@include color-mode(dark, true) {
+  --td-pre-bg: #{adjust-color($gray-900, $lightness: -2.5%)};
+  --td-code-inline-bg: rgba(var(--bs-body-color-rgb), 0.11);
+  --td-code-header-bg: var(--bs-secondary-bg);
+}
+
+.td-content {
+  // Enhanced code block shell. The highlighted markup remains complete in the
+  // document; JavaScript only reveals controls and applies the optional visual
+  // collapse after it can measure real rendered lines.
+  .td-code {
+    position: relative;
+    margin: 1.5rem 0;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--td-code-border-color);
+    border-radius: var(--td-code-radius);
+    background: var(--td-pre-bg);
+
+    &:focus-within {
+      border-color: color-mix(
+        in srgb,
+        var(--bs-link-color) 55%,
+        var(--td-code-border-color)
+      );
+    }
+
+    .highlight {
+      margin: 0;
+      max-width: none;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    pre {
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+  }
+
+  // Titled block: one quiet header row carrying the filename and the actions.
+  .td-code__header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    min-height: 2.5rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.5rem 0.3rem 1rem;
+    border-bottom: 1px solid var(--td-code-border-color);
+    background: var(--td-code-header-bg);
+  }
+
+  .td-code__filename {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    color: var(--bs-body-color);
+    font-family: var(--td-ui-font-family);
+    font-size: 0.8125rem;
+    font-weight: $font-weight-medium;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .td-code__utilities {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.25rem;
+    margin-inline-start: auto;
+    color: var(--bs-tertiary-color);
+
+    // Untitled block: the actions float over the first line and appear only
+    // while the block is hovered or holds *keyboard* focus (a mouse click
+    // focuses the button too, and must not pin the control open). Touch
+    // devices cannot hover, so they always see the control; a fresh
+    // success/error state stays visible after the pointer leaves, and the
+    // runtime restores the idle glyph only once the control has faded.
+    &--compact {
+      position: absolute;
+      z-index: 3;
+      inset-block-start: 0.5rem;
+      inset-inline-end: 0.5rem;
+      opacity: 0;
+      transition: opacity 120ms ease;
+    }
+  }
+
+  // Kept as separate rules: an unsupported `:has()` must drop only its own
+  // rule, not the hover reveal.
+  .td-code:hover > .td-code__utilities--compact {
+    opacity: 1;
+  }
+
+  .td-code:has(:focus-visible) > .td-code__utilities--compact {
+    opacity: 1;
+  }
+
+  .td-code__utilities--compact:has([data-td-state='success'], [data-td-state='error']) {
+    opacity: 1;
+  }
+
+  // Interpolated: libsass cannot parse a `selector()` condition itself.
+  @supports not #{'selector(:has(a))'} {
+    .td-code:focus-within > .td-code__utilities--compact {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none) {
+    .td-code__utilities--compact {
+      opacity: 1;
+    }
+  }
+
+  .td-code__copy,
+  .td-code__expand {
+    border: 0;
+    color: var(--bs-secondary-color);
+    background: transparent;
+    font: inherit;
+
+    &:hover {
+      color: var(--bs-emphasis-color);
+      background: var(--td-code-inline-bg);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--bs-focus-ring-color);
+      outline-offset: 1px;
+    }
+  }
+
+  .td-code__copy {
+    display: inline-flex;
+    width: 1.75rem;
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 0.375rem;
+    font-size: 0.8125rem;
+    line-height: 1;
+
+    &[hidden] {
+      display: none;
+    }
+
+    &[data-td-state='success'] {
+      color: var(--bs-success-text-emphasis);
+    }
+
+    &[data-td-state='error'] {
+      color: var(--bs-danger-text-emphasis);
+    }
+  }
+
+  // Floating over code, the button needs its own surface to stay legible.
+  .td-code__utilities--compact .td-code__copy {
+    border: 1px solid var(--td-code-border-color);
+    background: var(--td-pre-bg);
+    color: var(--bs-secondary-color);
+    box-shadow: 0 1px 2px rgba($black, 0.06);
+
+    &:hover {
+      color: var(--bs-emphasis-color);
+      background: var(--td-code-header-bg);
+    }
+
+    &[data-td-state='success'] {
+      color: var(--bs-success-text-emphasis);
+    }
+
+    &[data-td-state='error'] {
+      color: var(--bs-danger-text-emphasis);
+    }
+  }
+
+  .td-code__viewport {
+    position: relative;
+    overflow: auto;
+    scrollbar-gutter: stable;
+  }
+
+  .td-code--untitled .td-code__viewport {
+    > .highlight > pre,
+    > .highlight > div.chroma {
+      // Leave inline room for the floating Copy control without drawing an
+      // empty title row or changing the copied source text.
+      padding-inline-end: 3rem;
+    }
+  }
+
+  .td-code--wrap {
+    .td-code__viewport {
+      overflow-x: hidden;
+    }
+
+    pre,
+    pre code {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+  }
+
+  .td-code.is-collapsible .td-code__viewport {
+    transition: max-height 180ms ease;
+  }
+
+  .td-code.td-is-collapsed .td-code__viewport {
+    max-height: var(--td-code-collapsed-height);
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::after {
+      position: absolute;
+      inset: auto 0 0;
+      height: 2.5rem;
+      background: linear-gradient(to bottom, transparent, var(--td-pre-bg));
+      content: '';
+      pointer-events: none;
+    }
+  }
+
+  .td-code.is-expanded .td-code__viewport {
+    max-height: var(--td-code-expanded-height, none);
+  }
+
+  .td-code__expand {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    min-height: 2.25rem;
+    padding: 0.4rem 0.8rem;
+    border-top: 1px solid var(--td-code-border-color);
+    border-radius: 0;
+    background: var(--td-code-header-bg);
+    font-family: var(--td-ui-font-family);
+    font-size: 0.78rem;
+    font-weight: $font-weight-medium;
+    text-align: center;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .td-code.is-collapsible .td-code__viewport,
+    .td-code__utilities--compact {
+      transition: none;
+    }
+  }
+
+  // An embedded code block drops its own shell (used inside tabs panels).
+  .td-code--embedded {
+    margin: 0;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  // Highlighted code.
+  .highlight {
+    margin: 1.5rem 0;
+    padding: 0;
+    position: relative;
+
+    .lnlinks {
+      display: inline-flex;
+      // Leave a sub-pixel margin above WCAG 2.2's 24px target threshold.
+      min-width: 25px;
+      min-height: 25px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    pre {
+      margin: 0;
+      padding: 1rem;
+      border-radius: inherit;
+    }
+  }
+
+  // Code blocks
+  pre {
+    word-wrap: normal;
+    background-color: var(--td-pre-bg);
+    border: solid var(--td-code-border-color);
+    border-width: 1px;
+    border-radius: var(--td-code-radius);
+    padding: $spacer;
+
+    > code {
+      background-color: inherit !important;
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      border: 0;
+    }
+  }
+
+  pre.mermaid {
+    background-color: inherit;
+    font-size: 0;
+    padding: 0;
+  }
+
+  .chroma {
+    // Console blocks: exclude prompt and output from selection so copy yields
+    // only the command(s). Chroma: .gp is GenericPrompt (e.g. $), .go is
+    // GenericOutput.
+    code[data-lang='console'],
+    code.language-console,
+    code[data-lang='shell-session'],
+    code.language-shell-session {
+      .go,
+      .gp {
+        user-select: none;
+        -webkit-user-select: none;
+      }
+    }
+  }
+}
+
+// Inline code: a quiet, borderless pill on a body-colour tint. Everything that
+// is not the highlighted source of a block qualifies (prose, list items, table
+// cells, headings, callouts, field descriptions). `:where()` keeps the selector
+// at element specificity, so the theme's own semantic `code` elements (field
+// names, metadata values) override it with a single class, while it still wins
+// over Bootstrap's reboot by source order.
+:where(.td-content :not(pre)) > code {
+  padding: 0.15em 0.4em;
+  margin: 0;
+  border: 0;
+  border-radius: 0.375rem;
+  background-color: var(--td-code-inline-bg);
+  color: var(--td-code-inline-fg);
+  font-size: 0.875em;
+  word-break: normal;
+
+  br {
+    display: none;
+  }
+}

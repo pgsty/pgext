@@ -1,0 +1,33 @@
+{{- $page := .page -}}
+{{- $entry := .entry -}}
+{{- $class := .class -}}
+{{- $level := .level | default 0 -}}
+{{- $kind := .kind | default "link" -}}
+{{- $region := .region | default (cond (strings.Contains $class "mobile-menu") "mobile" "desktop") -}}
+{{- $baseURL := urls.Parse $page.Site.BaseURL -}}
+{{- $target := urls.Parse $entry.URL -}}
+{{- $external := and $target.Host (ne $baseURL.Host $target.Host) -}}
+{{- $current := $page.IsMenuCurrent "main" $entry -}}
+{{- $active := or $current ($page.HasMenuCurrent "main" $entry) -}}
+{{- if and (eq $entry.Identifier "docs") (eq $page.Type "docs") -}}
+  {{- $active = true -}}
+{{- else if and (eq $entry.Identifier "blog") (eq $page.Type "blog") -}}
+  {{- $active = true -}}
+{{- end -}}
+{{- $href := $entry.URL -}}
+{{- if not $external }}{{ $href = $entry.URL | relLangURL }}{{ end -}}
+{{- with $entry.Page -}}
+  {{- $current = eq $page.RelPermalink .RelPermalink -}}
+  {{- $active = or $active ($page.IsDescendant .) -}}
+  {{- $href = .RelPermalink -}}
+{{- end -}}
+<a class="{{ $class }}{{ if $active }} active{{ end }}" href="{{ $href }}"
+  data-td-navbar-level="{{ $level }}" data-td-navbar-kind="{{ $kind }}"
+  {{- if and (eq $level 0) (not $external) }} data-td-navbar-route{{ end }}
+  aria-label="{{ $entry.Name | plainify }}"
+  data-td-navbar-region="{{ $region }}" data-td-navbar-label="{{ $entry.Name | plainify }}"
+  data-td-navbar-external="{{ if $external }}true{{ else }}false{{ end }}"{{ if $current }} aria-current="page"{{ end }}{{ with .controls }} aria-controls="{{ . }}" aria-expanded="false"{{ end }}{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+  <i class="{{ partial "menu-icon.html" $entry }}" aria-hidden="true"></i>
+  <span class="td-navbar-entry__label">{{ $entry.Name }}</span>
+  {{- if $external }}<span class="td-navbar-entry__external">{{ partialCached "shell/icon.html" "external-link" "navbar-external-link" }}</span>{{ end -}}
+</a>

@@ -1,0 +1,49 @@
+{{ define "main" -}}
+{{- /*
+Site override of OINK's taxonomy index.
+
+The theme's index is a client-side filter over blog posts. A catalog dimension
+wants the opposite: every value at once, sized by how much of the catalog it
+holds and coloured the way it is coloured everywhere else, so the page reads as
+a distribution rather than a menu.
+*/ -}}
+{{- $plural := .Data.Plural -}}
+{{- $cats := partialCached "pgext/categories.html" "categories" -}}
+{{- $zh := eq .Site.Language.Lang "zh" -}}
+{{- $terms := index .Site.Taxonomies $plural -}}
+{{- $total := 0 -}}
+{{- range $terms }}{{ $total = add $total .Count }}{{ end -}}
+{{- $max := 1 -}}
+{{- range $terms }}{{ if gt .Count $max }}{{ $max = .Count }}{{ end }}{{ end -}}
+
+<div class="td-content">
+  <h1>{{ partial "taxonomy-label.html" (dict "page" . "key" $plural) }}</h1>
+  {{ with partial "content/render.html" . }}<div class="td-shell-term-summary">{{ . }}</div>{{ end }}
+  <p class="pgx-term-count">
+    <strong>{{ len $terms }}</strong>
+    <span>{{ cond $zh "个取值" "values" }}</span>
+  </p>
+</div>
+
+<ul class="pgx-dims">
+  {{- range $terms.ByCount }}
+  {{- $n := .Count -}}
+  {{- $term := .Page -}}
+  {{- $seg := partial "pgext/term-seg.html" (dict "plural" $plural "term" $term.LinkTitle) -}}
+  {{- $meta := index $cats (upper $term.LinkTitle) -}}
+  <li class="pgx-dim"{{ with $seg }} style="{{ . | safeCSS }}"{{ end }}>
+    <a class="pgx-card-cover" href="{{ $term.RelPermalink }}" aria-label="{{ $term.LinkTitle }}"></a>
+    <div class="pgx-dim-head">
+      <span class="pgx-dim-name">{{ $term.LinkTitle }}</span>
+      <span class="pgx-dim-n">{{ $n }}</span>
+    </div>
+    {{- with $meta }}<p class="pgx-dim-desc">{{ .name }}</p>{{ end }}
+    {{- /* The bar is the value's share of the largest one — the distribution
+         at a glance, with no chart runtime. */}}
+    <div class="pgx-dim-bar" aria-hidden="true">
+      <i style="width: {{ div (mul $n 100.0) $max }}%"></i>
+    </div>
+  </li>
+  {{- end }}
+</ul>
+{{ end -}}

@@ -1,0 +1,10 @@
+{{- /* Read the format the baseof template recorded rather than re-deriving it;
+       this partial is evaluated several times per page. */ -}}
+{{- $format := lower (.Store.Get "tdOutputFormat" | default "html") -}}
+{{- $type := .Type | default "" -}}
+{{- $kind := .Kind | default "" -}}
+{{- $config := partialCached "shell/config.html" . .Site.Language.Lang -}}
+{{- return and (ne $format "print") (or
+  (in $config.shellTypes $type)
+  (in (slice "taxonomy" "term") $kind)
+) -}}

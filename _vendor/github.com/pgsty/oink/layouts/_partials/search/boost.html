@@ -1,0 +1,21 @@
+{{- /* Resolve search_boost after Hugo cascade inheritance. Only numeric,
+     finite positive multipliers are accepted. */ -}}
+{{- $page := . -}}
+{{- $boost := 1.0 -}}
+{{- if isset $page.Params "search_boost" -}}
+  {{- $value := index $page.Params "search_boost" -}}
+  {{- $raw := printf "%v" $value -}}
+  {{- $numericTypes := slice
+        "int" "int8" "int16" "int32" "int64"
+        "uint" "uint8" "uint16" "uint32" "uint64"
+        "float32" "float64"
+  -}}
+  {{- if and (in $numericTypes (printf "%T" $value))
+        (gt (float $value) 0)
+        (not (in (slice "+Inf" "Inf" "-Inf" "NaN") $raw)) -}}
+    {{- $boost = float $value -}}
+  {{- else -}}
+    {{- warnf "%s: invalid search_boost %q; using 1.0" ($page.Path | default $page.RelPermalink) $raw -}}
+  {{- end -}}
+{{- end -}}
+{{- return $boost -}}

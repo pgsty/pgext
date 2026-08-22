@@ -1,0 +1,29 @@
+{{- $page := . -}}
+{{- $format := lower ($page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if eq $format "html" -}}
+{{- with partial "share/items.html" $page }}
+<section class="td-share d-print-none" data-td-share data-td-page-context
+  data-td-t-copied="{{ T "ui_copy_link_success" }}" data-td-t-copy-error="{{ T "ui_copy_link_error" }}">
+  {{- /* The group label replaces a visible heading. */}}
+  <div class="td-share__items" role="group" aria-label="{{ T "ui_share" }}">
+    {{- range . }}
+    {{- if .url }}
+    <a class="td-share__item td-share__item--{{ .id }}" href="{{ .url }}"
+      {{ if .blank }}target="_blank" rel="noopener noreferrer" {{ end -}}
+      title="{{ .label }}" aria-label="{{ .label }}">
+      <span class="td-share__icon"><i class="{{ .icon }}" aria-hidden="true"></i></span>
+    </a>
+    {{- else }}
+    <button type="button" class="td-share__item td-share__item--{{ .id }}"
+      data-td-action="{{ .action }}" data-td-url="{{ $page.Permalink }}"
+      title="{{ .label }}" aria-label="{{ .label }}">
+      <span class="td-share__icon"><i class="{{ .icon }}" aria-hidden="true"></i></span>
+      <span class="td-share__icon td-share__icon--done">{{ partialCached "shell/icon.html" "check" "check" }}</span>
+    </button>
+    {{- end }}
+    {{- end }}
+  </div>
+  <span class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-td-page-context-status></span>
+</section>
+{{ end -}}
+{{- end -}}

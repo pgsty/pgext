@@ -1,0 +1,65 @@
+{{- /*
+Resolve a short catalog icon name to one Font Awesome class pair.
+
+The catalog generator and the hand-written pages were authored against
+Heroicon names. Keeping those names in content means the generated Markdown
+stays stable across theme changes; this partial is the single place that
+translates them for OINK's Font Awesome runtime.
+
+A name that is already a Font Awesome class pair passes through unchanged, so
+new content can be written in the theme's own vocabulary.
+
+Input: the icon name (string). Returns a class pair, or "" when unknown.
+*/ -}}
+{{- $name := strings.TrimSpace (printf "%v" .) -}}
+{{- $icon := "" -}}
+{{- if findRE `^fa-(solid|regular|brands) fa-[a-z0-9-]+$` $name -}}
+  {{- $icon = $name -}}
+{{- else -}}
+  {{- $map := dict
+    "archive" "fa-solid fa-box-archive"
+    "book-open" "fa-solid fa-book-open"
+    "cash" "fa-solid fa-piggy-bank"
+    "chart-bar" "fa-solid fa-chart-column"
+    "chip" "fa-solid fa-microchip"
+    "clipboard-list" "fa-solid fa-clipboard-list"
+    "clock" "fa-solid fa-clock"
+    "cloud-download" "fa-solid fa-cloud-arrow-down"
+    "code" "fa-solid fa-code"
+    "cog" "fa-solid fa-gear"
+    "collection" "fa-solid fa-layer-group"
+    "cube" "fa-solid fa-cube"
+    "cube-transparent" "fa-solid fa-shapes"
+    "database" "fa-solid fa-database"
+    "document-download" "fa-solid fa-file-arrow-down"
+    "document-text" "fa-solid fa-file-lines"
+    "duplicate" "fa-solid fa-clone"
+    "github" "fa-brands fa-github"
+    "globe" "fa-solid fa-globe"
+    "key" "fa-solid fa-key"
+    "library" "fa-solid fa-building-columns"
+    "light-bulb" "fa-solid fa-lightbulb"
+    "link" "fa-solid fa-link"
+    "lock-closed" "fa-solid fa-lock"
+    "office-building" "fa-solid fa-building"
+    "play" "fa-solid fa-play"
+    "presentation-chart-line" "fa-solid fa-chart-line"
+    "puzzle" "fa-solid fa-puzzle-piece"
+    "refresh" "fa-solid fa-arrows-rotate"
+    "save" "fa-solid fa-floppy-disk"
+    "scale" "fa-solid fa-scale-balanced"
+    "search" "fa-solid fa-magnifying-glass"
+    "server" "fa-solid fa-server"
+    "shield-check" "fa-solid fa-shield-halved"
+    "sparkles" "fa-solid fa-wand-magic-sparkles"
+    "table" "fa-solid fa-table"
+    "terminal" "fa-solid fa-terminal"
+    "trending-up" "fa-solid fa-arrow-trend-up"
+    "truck" "fa-solid fa-truck"
+    "variable" "fa-solid fa-superscript"
+    "view-grid" "fa-solid fa-table-cells-large"
+    "warehouse" "fa-solid fa-warehouse"
+  -}}
+  {{- $icon = index $map (lower $name) | default "" -}}
+{{- end -}}
+{{- return $icon -}}

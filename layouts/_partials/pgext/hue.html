@@ -1,0 +1,48 @@
+{{- /*
+Resolve a catalog dimension value to a hue name.
+
+Licence, language and repository values map onto one shared scale (the `--h-*`
+tokens, which alias the category palette so both themes stay tuned together).
+The temperature encodes openness and familiarity: cool blues for permissive
+licences and core languages, greens for the moderate middle, ambers and oranges
+for copyleft and modern stacks, red for restrictive or rare, violet for
+commercial and exotic outliers.
+
+This mirrors `licenseHue` / `LANG_HUES` / `REPO_HUES` in server/web/app.js —
+the two catalogs must colour the same value the same way.
+
+Input (dict): dim ("license" | "lang" | "repo"), value.
+Returns a hue name, or "" when the value has no colour of its own.
+*/ -}}
+{{- $dim := .dim -}}
+{{- $value := strings.TrimSpace (printf "%v" (.value | default "")) -}}
+{{- $hue := "" -}}
+{{- if $value -}}
+  {{- $v := lower $value -}}
+  {{- if eq $dim "license" -}}
+    {{- if eq $v "unknown" -}}
+    {{- else if hasPrefix $v "postgresql" }}{{ $hue = "pgblue" }}
+    {{- else if hasPrefix $v "mit" }}{{ $hue = "blue" }}
+    {{- else if findRE `^(bsd|0bsd|isc|zlib|unlicense|cc0|wtfpl|public)` $v }}{{ $hue = "cyan" }}
+    {{- else if hasPrefix $v "apache" }}{{ $hue = "green" }}
+    {{- else if findRE `^(mpl|epl|cddl|osl)` $v }}{{ $hue = "teal" }}
+    {{- else if findRE `^(artistic|eupl|cecill)` $v }}{{ $hue = "olive" }}
+    {{- else if hasPrefix $v "lgpl" }}{{ $hue = "amber" }}
+    {{- else if hasPrefix $v "agpl" }}{{ $hue = "red" }}
+    {{- else if hasPrefix $v "gpl" }}{{ $hue = "orange" }}
+    {{- else }}{{ $hue = "violet" }}
+    {{- end -}}
+  {{- else if eq $dim "lang" -}}
+    {{- $map := dict
+      "c" "blue" "c++" "indigo" "sql" "green" "pl/pgsql" "teal" "go" "teal"
+      "rust" "orange" "python" "amber" "javascript" "amber" "typescript" "amber"
+      "java" "red" "r" "red" "ruby" "red" "shell" "maroon" "perl" "maroon"
+      "data" "slate"
+    -}}
+    {{- $hue = index $map $v | default "red" -}}
+  {{- else if eq $dim "repo" -}}
+    {{- $map := dict "pgdg" "pgblue" "pigsty" "green" "contrib" "pgnavy" "mixed" "teal" -}}
+    {{- $hue = index $map $v | default "" -}}
+  {{- end -}}
+{{- end -}}
+{{- return $hue -}}

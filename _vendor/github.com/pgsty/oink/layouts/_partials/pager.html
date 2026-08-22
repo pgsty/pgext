@@ -1,0 +1,19 @@
+{{- $outputFormat := lower (.Store.Get "tdOutputFormat" | default "html") -}}
+{{- $state := partialCached "pager-state.html" . .Site.BaseURL .Site.Language.Lang .RelPermalink $outputFormat -}}
+{{- if and $state.enabled (or $state.prev $state.next) -}}
+<nav class="td-pager d-print-none" data-td-pager
+  aria-label="{{ T "ui_pager_prev" }} / {{ T "ui_pager_next" }}">
+  {{- with $state.prev }}
+  <a class="td-pager__link td-pager__link--prev" href="{{ .RelPermalink }}"
+    aria-label="{{ T "ui_pager_prev" }} - {{ .Title }}" title="{{ .LinkTitle }}" data-td-pager-prev>
+    <span class="td-pager__arrow" aria-hidden="true">←</span><span class="td-pager__title" dir="auto">{{ .LinkTitle }}</span>
+  </a>
+  {{- end }}
+  {{- with $state.next }}
+  <a class="td-pager__link td-pager__link--next" href="{{ .RelPermalink }}"
+    aria-label="{{ T "ui_pager_next" }} - {{ .Title }}" title="{{ .LinkTitle }}" data-td-pager-next>
+    <span class="td-pager__title" dir="auto">{{ .LinkTitle }}</span><span class="td-pager__arrow" aria-hidden="true">→</span>
+  </a>
+  {{- end }}
+</nav>
+{{- end -}}

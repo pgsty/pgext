@@ -1,0 +1,76 @@
+{{- partial "content/shortcode-params.html" (dict "shortcode" . "allowed" (slice "group" "default" "label")) -}}
+{{- $params := dict -}}
+{{- if .IsNamedParams }}{{ $params = .Params }}{{ end -}}
+{{- $group := "" -}}
+{{- if isset $params "group" -}}
+  {{- $group = strings.TrimSpace (printf "%v" (.Get "group")) -}}
+  {{- if not (findRE `^[a-z][a-z0-9_-]*$` $group) }}{{ warnf "shortcode %q: group must match ^[a-z][a-z0-9_-]*$; got %q at %s; dropping the group" .Name $group .Position }}{{ $group = "" }}{{ end -}}
+{{- end -}}
+{{- $label := "" -}}
+{{- if isset $params "label" }}{{ $label = strings.TrimSpace (printf "%v" (.Get "label")) }}{{ end -}}
+{{- $innerOutput := strings.TrimSpace (printf "%s" .Inner) -}}
+{{- if $innerOutput }}{{ warnf "shortcode %q accepts tab children only at %s; ignoring the stray content" .Name .Position }}{{ end -}}
+{{- $entries := .Scratch.Get "tabEntries" | default (dict) -}}
+{{- if eq (len $entries) 0 }}{{ warnf "shortcode %q requires at least one tab child at %s; rendering nothing" .Name .Position }}{{ end -}}
+{{- $tabs := slice -}}
+{{- $seen := dict -}}
+{{- $i := 0 -}}
+{{- range $entries -}}
+  {{- $value := .value -}}
+  {{- if $group -}}
+    {{- if not $value }}{{ warnf "shortcode \"tab\": value is required because tabs declares group %q at %s; the tab will not sync" $group .position }}{{ end -}}
+  {{- else -}}
+    {{- if $value }}{{ warnf "shortcode \"tab\": value is only allowed when tabs declares a group at %s; ignoring it" .position }}{{ $value = "" }}{{ end -}}
+    {{- $value = printf "tab%d" (add $i 1) -}}
+  {{- end -}}
+  {{- if isset $seen $value }}{{ warnf "shortcode \"tab\": duplicate value %q at %s; the later tab wins" $value .position }}{{ end -}}
+  {{- $seen = merge $seen (dict $value true) -}}
+  {{- $tabs = $tabs | append (merge . (dict "value" $value)) -}}
+  {{- $i = add $i 1 -}}
+{{- end -}}
+{{- $default := "" -}}
+{{- if isset $params "default" -}}
+  {{- $default = strings.TrimSpace (printf "%v" (.Get "default")) -}}
+  {{- if not $group }}{{ warnf "shortcode %q: default requires group at %s; ignoring default" .Name .Position }}{{ $default = "" }}{{ end -}}
+  {{- if not (isset $seen $default) }}{{ warnf "shortcode %q: default %q does not match a tab value at %s; ignoring default" .Name $default .Position }}{{ $default = "" }}{{ end -}}
+{{- end -}}
+{{- if not $default }}{{ $default = (index $tabs 0).value }}{{ end -}}
+{{- $format := lower (.Page.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if eq $format "markdown" -}}
+  {{- $chunks := slice -}}
+  {{- range $tabs -}}
+    {{- $chunks = $chunks | append (printf "**%s**\n\n%s" (partial "content/markdown-escape.html" .label) .body) -}}
+  {{- end -}}
+  {{- delimit $chunks "\n\n" | safeHTML -}}
+{{- else -}}
+  {{- $base := printf "td-tabs-%s-%d" (md5 .Page.RelPermalink | truncate 8 "") .Ordinal -}}
+  {{- /* Peer sets of one group on the same page: the first keeps `<group>-<value>`
+         (deep-link target), later ones get a `-2`, `-3` … suffix so ids stay unique. */ -}}
+  {{- $idPrefix := $base -}}
+  {{- if $group -}}
+    {{- $seenKey := printf "tdTabsGroupSeen:%s:%s" $format $group -}}
+    {{- $seen := .Page.Store.Get $seenKey | default 0 -}}
+    {{- $seen = add $seen 1 -}}
+    {{- .Page.Store.Set $seenKey $seen -}}
+    {{- $idPrefix = cond (eq $seen 1) $group (printf "%s-%d" $group $seen) -}}
+  {{- end -}}
+  {{- $interactive := eq $format "html" -}}
+  {{- if $interactive }}{{ .Page.Store.Set "hasTabs" true }}{{ end -}}
+<div class="td-tabs td-tabs--shortcode" id="{{ $base }}"{{ if $interactive }} data-td-tabs{{ with $group }} data-td-tabs-group="{{ . }}"{{ end }} data-td-tabs-default="{{ $default }}"{{ end }}>
+  {{- if $interactive }}
+  <div class="td-tabs__list" role="tablist" aria-label="{{ $label | default (T "ui_tabs_label") }}">
+    {{- range $tabs }}
+    {{- $panelID := printf "%s-%s" $idPrefix .value }}
+    <button class="td-tabs__tab" type="button" role="tab" id="{{ $panelID }}-tab" aria-controls="{{ $panelID }}" aria-selected="{{ eq .value $default }}" tabindex="{{ cond (eq .value $default) "0" "-1" }}" data-td-tabs-value="{{ .value }}">{{ .label }}</button>
+    {{- end }}
+  </div>
+  {{- end }}
+  {{- range $tabs }}
+  {{- $panelID := printf "%s-%s" $idPrefix .value }}
+  <div class="td-tabs__panel" id="{{ $panelID }}"{{ if $interactive }} role="tabpanel" aria-labelledby="{{ $panelID }}-tab" tabindex="0"{{ end }} data-td-tabs-value="{{ .value }}"{{ if eq .value $default }} data-td-tabs-active{{ end }}>
+    <div class="td-tabs__panel-title" aria-hidden="true">{{ .label }}</div>
+    <div class="td-tabs__panel-body">{{ partial "content/render-block.html" (dict "page" $.Page "scope" (printf "tabs%d-%s" $.Ordinal .value) "content" .body "origin" (printf "shortcode %q at %s" $.Name $.Position)) }}</div>
+  </div>
+  {{- end }}
+</div>
+{{- end -}}

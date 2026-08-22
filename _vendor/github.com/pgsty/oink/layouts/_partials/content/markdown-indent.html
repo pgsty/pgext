@@ -1,0 +1,6 @@
+{{- $text := strings.TrimSpace (printf "%v" .) -}}
+{{- $lines := slice -}}
+{{- range split $text "\n" -}}
+  {{- $lines = $lines | append (cond (eq . "") "" (printf "  %s" .)) -}}
+{{- end -}}
+{{- return (delimit $lines "\n") -}}

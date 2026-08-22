@@ -4,8 +4,9 @@
 .vscode/
 dist/
 
-# Binary
-pgext
+# Binary (root only: a bare `pgext` pattern also swallows the site's
+# layouts/_partials/pgext/ directory)
+/pgext
 
 # Build artifacts
 *.o
@@ -48,6 +49,7 @@ AGENTS.md
 .idea/
 .code/
 public/
+resources/
 .hugo_build.lock
 __pycache__/
 vars/

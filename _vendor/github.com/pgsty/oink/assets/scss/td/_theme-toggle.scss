@@ -1,0 +1,24 @@
+// Theme toggles show the target mode: moon in light mode, sun in dark mode.
+[data-td-theme-toggle] {
+  > [hidden] {
+    display: none !important;
+  }
+
+  > .td-shell-icon--moon {
+    display: inline-block !important;
+  }
+
+  > .td-shell-icon--sun {
+    display: none !important;
+  }
+}
+
+html[data-bs-theme='dark'] [data-td-theme-toggle] {
+  > .td-shell-icon--moon {
+    display: none !important;
+  }
+
+  > .td-shell-icon--sun {
+    display: inline-block !important;
+  }
+}

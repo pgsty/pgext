@@ -1,0 +1,7 @@
+{{- $page := . -}}
+{{- $enabled := partial "validate.html" (dict
+    "value" (partial "ui-param.html" (dict "page" $page "key" "blog_index_toggle")) "kind" "bool"
+    "fallback" false "key" "params.ui.blog_index_toggle"
+    "where" (cond (isset $page.Params "blog_index_toggle") $page.Path "")) -}}
+{{- $renders := and (eq $page.Kind "section") (not $page.Layout) $page.Pages -}}
+{{- return (and $enabled $renders true) -}}

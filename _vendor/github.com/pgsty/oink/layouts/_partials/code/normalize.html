@@ -1,0 +1,248 @@
+{{- $page := .page -}}
+{{- $attrs := .attributes | default (dict) -}}
+{{- $options := .options | default (dict) -}}
+{{- $defaults := .defaults | default (dict) -}}
+{{- $position := .position | default $page.Path -}}
+{{- $code := strings.TrimRight "\r\n" (.code | default "") -}}
+{{- $language := .language | default "" -}}
+{{- $languageKey := lower $language -}}
+{{- $outputFormat := $page.Store.Get "tdOutputFormat" | default "html" -}}
+{{- $interactive := eq (lower $outputFormat) "html" -}}
+{{- $ownerKey := printf "%v" (.key | default $position) -}}
+
+{{- $hasFilename := isset $attrs "filename" -}}
+{{- $hasTitle := isset $attrs "title" -}}
+{{- if and $hasFilename $hasTitle -}}
+  {{- warnf "code block: filename and title are mutually exclusive at %s; using filename" $position -}}
+{{- end -}}
+{{- $filename := "" -}}
+{{- if $hasFilename -}}
+  {{- $filename = strings.TrimSpace (printf "%v" (index $attrs "filename")) -}}
+{{- else if $hasTitle -}}
+  {{- $filename = strings.TrimSpace (printf "%v" (index $attrs "title")) -}}
+{{- end -}}
+{{- if and (or $hasFilename $hasTitle) (not $filename) -}}
+  {{- warnf "code block: filename/title must not be empty at %s; dropping it" $position -}}
+{{- end -}}
+
+{{- $label := "" -}}
+{{- if isset $attrs "label" -}}
+  {{- $label = strings.TrimSpace (printf "%v" (index $attrs "label")) -}}
+  {{- if not $label -}}
+    {{- warnf "code block: label must not be empty at %s; dropping it" $position -}}
+  {{- end -}}
+{{- end -}}
+{{- if and $label (isset $attrs "aria-label") -}}
+  {{- warnf "code block: label/filename and aria-label are mutually exclusive at %s; dropping aria-label" $position -}}
+{{- end -}}
+
+{{- $rootID := .id | default "" -}}
+{{- if isset $attrs "id" -}}
+  {{- if $rootID -}}
+    {{- warnf "code block: duplicate internal and author id at %s; using the author id" $position -}}
+  {{- end -}}
+  {{- $rootID = strings.TrimSpace (printf "%v" (index $attrs "id")) -}}
+  {{- if not $rootID -}}
+    {{- warnf "code block: id must not be empty at %s; deriving one" $position -}}
+  {{- else if findRE `[\x00-\x20\x7f]` $rootID -}}
+    {{- warnf "code block: id must not contain ASCII whitespace or control characters; got %q at %s; deriving one" $rootID $position -}}
+    {{- $rootID = "" -}}
+  {{- end -}}
+{{- end -}}
+{{- $autoID := not $rootID -}}
+{{- if not $autoID }}{{ $page.Store.Set "hasAuthoredCodeID" true }}{{ end -}}
+{{- if not $rootID -}}
+  {{- $pageHash := printf "%.8s" (md5 $page.RelPermalink) -}}
+  {{- $key := $ownerKey | anchorize -}}
+  {{- $rootID = printf "td-code-%s-%s" $pageHash $key -}}
+{{- end -}}
+{{- if ne (lower $outputFormat) "markdown" -}}
+  {{- $ids := slice $rootID (printf "%s-viewport" $rootID) -}}
+  {{- if $filename }}{{ $ids = $ids | append (printf "%s-title" $rootID) }}{{ end -}}
+  {{- range $ids -}}
+    {{- $registered := partial "code/register-id.html" (dict
+      "page" $page "id" . "owner" $ownerKey "position" $position
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $authorClass := "" -}}
+{{- if isset $attrs "class" -}}
+  {{- $authorClass = strings.TrimSpace (printf "%v" (index $attrs "class")) -}}
+{{- end -}}
+{{- $genericScratch := newScratch -}}
+{{- $genericScratch.Set "attributes" (dict) -}}
+{{- $reserved := slice "filename" "title" "copy" "wrap" "collapse" "label" "id" "class" "role" "tab" "group" "value" "num" "caption" -}}
+{{- range $name, $value := $attrs -}}
+  {{- if not (findRE `^[A-Za-z_:][A-Za-z0-9:._-]*$` $name) -}}
+    {{- warnf "code block: invalid generic attribute name %q at %s; ignoring it" $name $position -}}
+    {{- continue -}}
+  {{- end -}}
+  {{- $lowerName := lower $name -}}
+  {{- if or (in $reserved $lowerName) (in (slice "aria-label" "aria-labelledby") $lowerName) -}}
+    {{- if eq $lowerName "aria-label" -}}
+      {{- if or $label $filename -}}
+        {{- warnf "code block: label/filename and aria-label are mutually exclusive at %s; ignoring aria-label" $position -}}
+      {{- else -}}
+        {{- $genericScratch.SetInMap "attributes" $name $value -}}
+      {{- end -}}
+    {{- else if eq $lowerName "aria-labelledby" -}}
+      {{- if or $label $filename -}}
+        {{- warnf "code block: aria-labelledby conflicts with the accessible name created by label/filename at %s; ignoring aria-labelledby" $position -}}
+      {{- else -}}
+        {{- $genericScratch.SetInMap "attributes" $name $value -}}
+      {{- end -}}
+    {{- else if eq $lowerName "role" -}}
+      {{- if or $label $filename -}}
+        {{- warnf "code block: role conflicts with the accessible group role created by label/filename at %s; ignoring role" $position -}}
+      {{- else -}}
+        {{- $genericScratch.SetInMap "attributes" $name $value -}}
+      {{- end -}}
+    {{- end -}}
+{{- else if or
+      (strings.HasPrefix $lowerName "data-td-code")
+      (in (slice "data-td-language" "data-td-line-count" "data-td-collapse-lines") $lowerName)
+  -}}
+    {{- warnf "code block: attribute %q is reserved by OINK at %s; ignoring it" $name $position -}}
+  {{- else if or (strings.HasPrefix $lowerName "on") (in (slice "style" "srcdoc") $lowerName) -}}
+    {{- warnf "code block: unsafe generic attribute %q is not supported at %s; ignoring it" $name $position -}}
+  {{- else if or (strings.HasPrefix $lowerName "data-") (strings.HasPrefix $lowerName "aria-") -}}
+    {{- $genericScratch.SetInMap "attributes" $name $value -}}
+  {{- else -}}
+    {{- /* Same policy as the other render hooks (content/attributes.html): only
+           OINK names, Chroma options, class/id/role, data-* and aria-* are known. */ -}}
+    {{- warnf "code block: unknown attribute %q at %s (allowed: %s, class, id, role, data-*, aria-*); ignoring it" $name $position (delimit $reserved ", ") -}}
+  {{- end -}}
+{{- end -}}
+{{- $genericAttributes := $genericScratch.Get "attributes" -}}
+
+{{- $hasCopy := false -}}
+{{- $copyValue := "" -}}
+{{- if isset $defaults "copy" -}}
+  {{- $hasCopy = true -}}
+  {{- $copyValue = printf "%v" (index $defaults "copy") -}}
+{{- end -}}
+{{- if isset $attrs "copy" -}}
+  {{- $hasCopy = true -}}
+  {{- $copyValue = printf "%v" (index $attrs "copy") -}}
+{{- end -}}
+{{- $sessionLanguages := slice "console" "shell-session" -}}
+{{- $copyMode := cond (in $sessionLanguages $languageKey) "command" "all" -}}
+{{- if $hasCopy -}}
+  {{- $copyKey := lower (strings.TrimSpace $copyValue) -}}
+  {{- if or (eq $copyKey "true") (eq $copyKey "all") -}}
+    {{- $copyMode = "all" -}}
+  {{- else if eq $copyKey "command" -}}
+    {{- $copyMode = "command" -}}
+  {{- else if eq $copyKey "false" -}}
+    {{- $copyMode = "false" -}}
+  {{- else -}}
+    {{- warnf "code block: copy must be all, command, true, or false; got %q at %s; using the default for this language" $copyValue $position -}}
+  {{- end -}}
+{{- end -}}
+{{- if and (eq $copyMode "command") (not (in $sessionLanguages $languageKey)) -}}
+  {{- warnf "code block: copy=command requires language console or shell-session; got %q at %s; using copy=all" $language $position -}}
+  {{- $copyMode = "all" -}}
+{{- end -}}
+{{- /* Site-wide default only: a fence that names `copy` explicitly wins. */ -}}
+{{- if and (eq (partial "ui-param.html" (dict "page" $page "key" "code_copy")) false) (not (isset $attrs "copy")) -}}
+  {{- $copyMode = "false" -}}
+{{- end -}}
+
+{{- $hasWrap := false -}}
+{{- $wrapValue := "false" -}}
+{{- if isset $defaults "wrap" -}}
+  {{- $hasWrap = true -}}
+  {{- $wrapValue = printf "%v" (index $defaults "wrap") -}}
+{{- end -}}
+{{- if isset $attrs "wrap" -}}
+  {{- $hasWrap = true -}}
+  {{- $wrapValue = printf "%v" (index $attrs "wrap") -}}
+{{- end -}}
+{{- $wrap := false -}}
+{{- if $hasWrap -}}
+  {{- $wrapKey := lower (strings.TrimSpace $wrapValue) -}}
+  {{- if eq $wrapKey "true" -}}
+    {{- $wrap = true -}}
+  {{- else if ne $wrapKey "false" -}}
+    {{- warnf "code block: wrap must be true or false; got %q at %s; leaving wrapping off" $wrapValue $position -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $hasCollapse := false -}}
+{{- $collapseValue := "" -}}
+{{- if isset $defaults "collapse" -}}
+  {{- $hasCollapse = true -}}
+  {{- $collapseValue = printf "%v" (index $defaults "collapse") -}}
+{{- end -}}
+{{- if isset $attrs "collapse" -}}
+  {{- $hasCollapse = true -}}
+  {{- $collapseValue = printf "%v" (index $attrs "collapse") -}}
+{{- end -}}
+{{- $collapseLines := 0 -}}
+{{- if $hasCollapse -}}
+  {{- $collapseKey := strings.TrimSpace $collapseValue -}}
+  {{- if not (findRE `^[1-9][0-9]*$` $collapseKey) -}}
+    {{- /* `int` would error on a non-numeric value, so leave collapse off. */ -}}
+    {{- warnf "code block: collapse must be a positive integer; got %q at %s; leaving the block expanded" $collapseValue $position -}}
+  {{- else -}}
+    {{- $collapseLines = int $collapseKey -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $lineNosValue := "" -}}
+{{- if reflect.IsMap $options -}}
+  {{- if isset $options "lineNos" -}}
+    {{- $lineNosValue = index $options "lineNos" -}}
+  {{- else if isset $options "linenos" -}}
+    {{- $lineNosValue = index $options "linenos" -}}
+  {{- end -}}
+{{- end -}}
+{{- $lineNosKey := lower (strings.TrimSpace (printf "%v" $lineNosValue)) -}}
+{{- $tableLineNos := eq $lineNosKey "table" -}}
+{{- if and $wrap $tableLineNos -}}
+  {{- warnf "code block: wrap=true is incompatible with table line numbers at %s; disabling wrapping (use lineNos=inline to keep it)" $position -}}
+  {{- $wrap = false -}}
+{{- end -}}
+
+{{- $lineCount := 0 -}}
+{{- if $code -}}
+  {{- $lineCount = add (strings.Count "\n" $code) 1 -}}
+{{- end -}}
+{{- $collapsible := and $interactive (gt $collapseLines 0) (gt $lineCount $collapseLines) -}}
+{{- $copyEnabled := and $interactive (ne $copyMode "false") -}}
+
+{{- $classes := slice "td-code" -}}
+{{- if $filename -}}
+  {{- $classes = $classes | append "td-code--titled" -}}
+{{- else -}}
+  {{- $classes = $classes | append "td-code--untitled" -}}
+{{- end -}}
+{{- if $wrap }}{{ $classes = $classes | append "td-code--wrap" }}{{ end -}}
+{{- if .embedded }}{{ $classes = $classes | append "td-code--embedded" }}{{ end -}}
+{{- with $authorClass }}{{ $classes = $classes | append . }}{{ end -}}
+
+{{- return (dict
+  "page" $page
+  "position" $position
+  "code" $code
+  "language" $language
+  "options" $options
+  "outputFormat" (lower $outputFormat)
+  "ownerKey" $ownerKey
+  "rootID" $rootID
+  "autoID" $autoID
+  "filenameID" (printf "%s-title" $rootID)
+  "filename" $filename
+  "label" $label
+  "genericAttributes" $genericAttributes
+  "classes" (delimit $classes " ")
+  "copyMode" $copyMode
+  "copyEnabled" $copyEnabled
+  "wrap" $wrap
+  "collapseLines" $collapseLines
+  "collapsible" $collapsible
+  "lineCount" $lineCount
+  "interactive" $interactive
+  "embedded" (.embedded | default false)
+) -}}

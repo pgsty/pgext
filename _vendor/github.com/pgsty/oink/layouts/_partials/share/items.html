@@ -1,0 +1,98 @@
+{{- $page := . -}}
+{{- $path := $page.Path -}}
+{{- $allowed := slice
+  "x" "bluesky" "mastodon" "facebook" "linkedin" "reddit" "hackernews"
+  "telegram" "whatsapp" "line" "pinterest" "weibo"
+  "chatgpt" "claude" "email" "copy" -}}
+{{- $names := delimit $allowed " | " -}}
+{{- $items := slice -}}
+{{- $ids := slice -}}
+
+{{- $value := partial "ui-param.html" (dict "page" $page "key" "share") -}}
+{{- if eq (printf "%T" $value) "bool" -}}
+  {{- /* `false` is the opt-out; `true` cannot say which platforms. */ -}}
+  {{- if $value -}}
+    {{- warnf "params.ui.share is the list of share targets, not a switch (allowed: %s); use `share: false` to turn one page's bar off; rendering no bar at %s" $names $path -}}
+  {{- end -}}
+{{- else if $value -}}
+  {{- if reflect.IsSlice $value -}}
+    {{- $ids = $value -}}
+  {{- else -}}
+    {{- warnf "params.ui.share must be a list of share targets (allowed: %s); got %v; rendering no bar at %s" $names $value $path -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Only a page of authored content is worth handing to someone: a list, a
+       term, or the home page has no single thing being shared. */ -}}
+{{- if and $ids $page.IsPage -}}
+  {{- /* Percent-encode once, here, and hand the same values to every
+         template. Spaces become %20 rather than +, which a query string
+         accepts everywhere and a mailto: needs. */ -}}
+  {{- $url := replace (urlquery $page.Permalink) "+" "%20" -}}
+  {{- $title := replace (urlquery $page.Title) "+" "%20" -}}
+  {{- $merged := replace (urlquery (printf "%s %s" $page.Title $page.Permalink)) "+" "%20" -}}
+  {{- $prompt := replace (urlquery (printf (T "ui_open_in_prompt") $page.Permalink)) "+" "%20" -}}
+  {{- $catalog := dict
+    "x" (dict "label" "X" "icon" "fa-brands fa-x-twitter"
+      "form" "ut" "template" "https://x.com/intent/post?url=%s&text=%s")
+    "bluesky" (dict "label" "Bluesky" "icon" "fa-brands fa-bluesky"
+      "form" "m" "template" "https://bsky.app/intent/compose?text=%s")
+    "mastodon" (dict "label" "Mastodon" "icon" "fa-brands fa-mastodon"
+      "form" "m" "template" "https://share.joinmastodon.org/#text=%s")
+    "facebook" (dict "label" "Facebook" "icon" "fa-brands fa-facebook"
+      "form" "u" "template" "https://www.facebook.com/sharer/sharer.php?u=%s")
+    "linkedin" (dict "label" "LinkedIn" "icon" "fa-brands fa-linkedin-in"
+      "form" "u" "template" "https://www.linkedin.com/sharing/share-offsite/?url=%s")
+    "reddit" (dict "label" "Reddit" "icon" "fa-brands fa-reddit-alien"
+      "form" "ut" "template" "https://www.reddit.com/submit?url=%s&title=%s")
+    "hackernews" (dict "label" "Hacker News" "icon" "fa-brands fa-hacker-news"
+      "form" "ut" "template" "https://news.ycombinator.com/submitlink?u=%s&t=%s")
+    "telegram" (dict "label" "Telegram" "icon" "fa-brands fa-telegram"
+      "form" "ut" "template" "https://t.me/share/url?url=%s&text=%s")
+    "whatsapp" (dict "label" "WhatsApp" "icon" "fa-brands fa-whatsapp"
+      "form" "m" "template" "https://wa.me/?text=%s")
+    "line" (dict "label" "LINE" "icon" "fa-brands fa-line"
+      "form" "ut" "template" "https://social-plugins.line.me/lineit/share?url=%s&text=%s")
+    "pinterest" (dict "label" "Pinterest" "icon" "fa-brands fa-pinterest-p"
+      "form" "pin" "template" "https://www.pinterest.com/pin/create/button/?url=%s&description=%s")
+    "weibo" (dict "label" "Weibo" "icon" "fa-brands fa-weibo"
+      "form" "ut" "template" "https://service.weibo.com/share/share.php?url=%s&title=%s")
+    "chatgpt" (dict "label" "ChatGPT" "icon" "fa-brands fa-openai"
+      "form" "p" "template" "https://chatgpt.com/?hints=search&prompt=%s")
+    "claude" (dict "label" "Claude" "icon" "fa-brands fa-claude"
+      "form" "p" "template" "https://claude.ai/new?q=%s")
+    "email" (dict "label" (T "ui_share_email") "icon" "fa-solid fa-envelope"
+      "form" "tu" "template" "mailto:?subject=%s&body=%s")
+    "copy" (dict "label" (T "ui_copy_link") "icon" "fa-solid fa-link"
+      "form" "" "template" "")
+  -}}
+  {{- range $id := $ids -}}
+    {{- if not (in $allowed $id) -}}
+      {{- warnf "invalid params.ui.share entry %q at %s (allowed: %s); dropping it" $id $path $names -}}
+    {{- else -}}
+    {{- $entry := index $catalog $id -}}
+    {{- $href := "" -}}
+    {{- if eq $entry.form "ut" }}{{ $href = printf $entry.template $url $title -}}
+    {{- else if eq $entry.form "u" }}{{ $href = printf $entry.template $url -}}
+    {{- else if eq $entry.form "tu" }}{{ $href = printf $entry.template $title $url -}}
+    {{- else if eq $entry.form "m" }}{{ $href = printf $entry.template $merged -}}
+    {{- else if eq $entry.form "p" }}{{ $href = printf $entry.template $prompt -}}
+    {{- else if eq $entry.form "pin" -}}
+      {{- $href = printf $entry.template $url $title -}}
+      {{- $featured := partialCached "featured-image-resolve.html" $page $page.RelPermalink -}}
+      {{- $media := "" -}}
+      {{- with $featured.resource }}{{ $media = .Permalink }}{{ else }}{{ $media = $featured.permalink }}{{ end -}}
+      {{- with $media }}{{ $href = printf "%s&media=%s" $href (replace (urlquery .) "+" "%20") }}{{ end -}}
+    {{- end -}}
+    {{- $items = $items | append (dict
+      "id" $id
+      "label" $entry.label
+      "icon" $entry.icon
+      "url" $href
+      "blank" (hasPrefix $href "https://")
+      "action" (cond (eq $id "copy") "copy_link" "")) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $items -}}

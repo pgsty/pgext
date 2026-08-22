@@ -1,0 +1,326 @@
+# PGEXT.CLOUD 首页。
+#
+# 所有版块都在构建期渲染，运行时不拉取任何数据。这里的数字来自 db/universe.csv
+# 与 db/extension.csv，随目录一同更新。
+#
+# 注意：中文字符串一律写成单行。YAML 的折叠标量会把换行折成一个空格，
+# 在中日韩文本里那个空格是可见的排版错误。
+
+sections:
+  - hero
+  - metrics
+  - type: command-box
+    key: install
+  - capabilities
+  - type: cards
+    key: explore
+  - type: bar-chart
+    key: languages
+  - steps
+  - type: logo-wall
+    key: users
+  - faq
+  - cta
+
+hero:
+  eyebrow: 收录 2241 个 · 打包 576 个 · 16 个平台 · PG 14 – 18
+  title_lines:
+    - words:
+        - { text: PostgreSQL }
+    - words:
+        - { text: 扩展宇宙 }
+  lead: 把生态里散落各处的扩展汇成一份目录，再把其中最值得用的那些，编译成能直接装在官方内核旁边的 RPM 与 DEB 软件包。
+  note: 可复现构建 · 兼容 PGDG · 完全免费
+  note_icon: fa-solid fa-circle-check
+  title_size: 4rem
+  image:
+    light: ecosystem.gif
+    dark: ecosystem.gif
+    alt: PostgreSQL 扩展生态
+  media:
+    ratio: 1.15fr 1fr
+    max_width: 460px
+    hide_below: lg
+  actions:
+    - label: 浏览扩展目录
+      url: list/
+      icon: fa-solid fa-clipboard-list
+      style: primary
+    - label: 用 pig 安装
+      url: pig/
+      icon: fa-solid fa-piggy-bank
+      style: ghost
+  detail:
+    label: 或者去扩展宇宙里逛逛
+    url: galaxy/
+    icon: fa-solid fa-star
+
+metrics:
+  eyebrow: 目录概览
+  title: 给一个四散的生态，做一份索引
+  text: 扩展散落在 GitHub、PGXN、厂商站点和无人问津的 tarball 里。下面是已经找到、核实，并在力所能及时构建出来的数量。
+  animate: true
+  columns: 4
+  items:
+    - value: 2241
+      label: 收录扩展
+      desc: 能找到、能核实的 PostgreSQL 扩展
+      url: list/
+      link_label: 打开目录
+    - value: 576
+      label: 已打包
+      desc: 已构建并发布为 RPM / DEB
+      url: e/
+      link_label: 查看清单
+    - value: 16
+      label: Linux 目标
+      desc: 八个发行版大版本，`x86_64` 与 `aarch64` 各一份
+      url: os/
+      link_label: 查看平台
+    - value: 5
+      label: PG 大版本
+      desc: PostgreSQL 14 到 18，与 PGDG 同步
+      url: os/matrix/
+      link_label: 查看矩阵
+
+install:
+  eyebrow: 安装
+  title: 一行装好包管理器，四行装好一整套数据库
+  code: |-
+    curl -fsSL https://repo.pigsty.io/pig | bash   # 安装 pig 命令行工具
+    pig repo set                                   # 添加 PGDG 与 Pigsty 仓库
+    pig install pg18                               # 从 PGDG 安装 PostgreSQL 18
+    pig install pg_duckdb -v 18                    # 576 个扩展，任选
+  lang: bash
+  note: '`pig` 底层说的就是 `apt` 和 `dnf`，这里没有任何私有包格式 —— 同样的软件包，手工安装一样可以。'
+
+capabilities:
+  eyebrow: 这里有什么
+  title: 找得到，装得上，敢用。
+  text: 三层能力，每一层都可以单独使用：一份「有什么」的索引，一个「已经构建好」的仓库，以及把两者接到你机器上的命令行工具。
+  items:
+    - ref: 01 / 目录
+      title: 先知道生态里到底有什么
+      url: list/
+      motto: 十六个分类，一类一页
+      bullets:
+        - '**2241 个扩展**，按 [分类](list/cate/)、[语言](list/lang/) 与 [许可证](list/license/) 建立索引'
+        - '每一条都带着版本、依赖、是否需要 `shared_preload_libraries`、是否可信、能否重定位'
+        - '同族扩展互相关联 —— `postgis` 和它的四个兄弟读起来是一个项目，而不是五行互不相干的记录'
+      value: 以前要花一下午的调研，现在一分钟。
+      visual:
+        type: components
+        aria_label: 按分类浏览目录
+        columns: 4
+        compact: true
+        items:
+          - { icon: fa-solid fa-clock, title: TIME, url: list/cate/#time }
+          - { icon: fa-solid fa-globe, title: GIS, url: list/cate/#gis }
+          - { icon: fa-solid fa-lightbulb, title: RAG, url: list/cate/#rag }
+          - { icon: fa-solid fa-magnifying-glass, title: FTS, url: list/cate/#fts }
+          - { icon: fa-solid fa-chart-column, title: OLAP, url: list/cate/#olap }
+          - { icon: fa-solid fa-wand-magic-sparkles, title: FEAT, url: list/cate/#feat }
+          - { icon: fa-solid fa-code, title: LANG, url: list/cate/#lang }
+          - { icon: fa-solid fa-cube, title: TYPE, url: list/cate/#type }
+          - { icon: fa-solid fa-gear, title: UTIL, url: list/cate/#util }
+          - { icon: fa-solid fa-superscript, title: FUNC, url: list/cate/#func }
+          - { icon: fa-solid fa-building, title: ADMIN, url: list/cate/#admin }
+          - { icon: fa-solid fa-arrow-trend-up, title: STAT, url: list/cate/#stat }
+          - { icon: fa-solid fa-shield-halved, title: SEC, url: list/cate/#sec }
+          - { icon: fa-solid fa-database, title: FDW, url: list/cate/#fdw }
+          - { icon: fa-solid fa-clone, title: SIM, url: list/cate/#sim }
+          - { icon: fa-solid fa-truck, title: ETL, url: list/cate/#etl }
+    - ref: 02 / 仓库
+      title: 给的是软件包，不是编译教程
+      url: repo/
+      motto: 原生 RPM 与 DEB，用最无聊的方式构建
+      bullets:
+        - '576 个扩展 × **16 个 Linux 目标** × [五个 PostgreSQL 大版本](os/matrix/)'
+        - '设计目标是与 [PGDG](repo/pgdg/) 并存而非取代：相同的命名、相同的路径、相同的 `postgresql-$v-*` 约定'
+        - '所有软件包均已签名，整个仓库通过全球 CDN 分发'
+      value: 你原来的 apt / dnf 工作流，一点都不用改。
+      visual:
+        type: card
+        icon: fa-solid fa-warehouse
+        title: repo.pigsty.io
+        lines:
+          - '**EL 8 / 9 / 10** · RockyLinux、RHEL 及兼容发行版'
+          - '**Debian 12 / 13** · Ubuntu 22.04 / 24.04 / 26.04'
+          - '`x86_64` 与 `aarch64` 完全对等'
+          - 'GPG 签名，[公钥可校验](repo/gpg/)'
+          - '中国大陆镜像：`repo.pigsty.cc`'
+    - ref: 03 / PIG
+      title: 内核与扩展，一个命令行搞定
+      url: pig/
+      motto: Postgres Install Genius
+      bullets:
+        - '`pig repo` 直接写出适配你发行版的仓库文件 —— 不用再手改 `sources.list`'
+        - '`pig ext` 用**扩展本名**搜索、安装、卸载，不管它在你的系统上叫什么包名'
+        - '同时还能管内核、管 `pgbackrest` 恢复，乃至整套 Pigsty 部署'
+      value: 一个名字，Rocky、Debian、Ubuntu 上都通用。
+      visual:
+        type: code
+        aria_label: pig 会话示例
+        title: pig
+        lines:
+          - { class: c, prefix: '# ', text: '一个名字，走遍所有发行版' }
+          - { class: p, prefix: '$ ', text: 'pig ext install pgvector' }
+          - { class: ok, prefix: '✓ ', text: '已解析  vector 0.8.1' }
+          - { class: ok, prefix: '✓ ', text: '已安装 pgvector_18 (el9.x86_64)' }
+          - { class: c, prefix: '# ', text: '然后在数据库里启用它' }
+          - { class: p, prefix: '$ ', text: 'psql -c ''CREATE EXTENSION vector''' }
+
+explore:
+  eyebrow: 各种入口
+  title: 按你思考问题的方式来切这份目录
+  text: 同样的 2241 条记录，沿着你挑选扩展时真正会用到的几条轴线重新组织。
+  columns: 4
+  link_label: 打开
+  items:
+    - title: 扩展清单
+      meta: 576 个已打包
+      icon: fa-solid fa-puzzle-piece
+      desc: 每一个已打包扩展的版本、属性与 PostgreSQL 大版本支持情况。
+      url: list/ext/
+    - title: 扩展包清单
+      meta: 以软件包为单位
+      icon: fa-solid fa-box
+      desc: 一行一个软件包，以及它会安装出哪一族扩展。
+      url: list/pkg/
+    - title: 按分类
+      meta: 16 个分类
+      icon: fa-solid fa-folder-tree
+      desc: 从时序、地理信息，到向量检索与湖仓分析。
+      url: list/cate/
+    - title: 按语言
+      meta: C、Rust、SQL……
+      icon: fa-solid fa-code
+      desc: 每个扩展用什么写的 —— 以及 Rust 在目录中已经占到多大比例。
+      url: list/lang/
+    - title: 按许可证
+      meta: 宽松到 AGPL
+      icon: fa-solid fa-scale-balanced
+      desc: 按约束强度排序，法务评审可以直接从正确的候选集开始。
+      url: list/license/
+    - title: 平台
+      meta: 16 个目标
+      icon: fa-solid fa-server
+      desc: 每个发行版大版本与架构上，分别有哪些扩展可用。
+      url: os/
+    - title: 可用性矩阵
+      meta: 每一个格子
+      icon: fa-solid fa-table-cells
+      desc: 所有软件包 × 所有操作系统 × 所有大版本，压进一张网格。
+      url: os/matrix/
+    - title: 扩展宇宙
+      meta: 可视化
+      icon: fa-solid fa-star
+      desc: 把整个宇宙画成星图，按分类着色。
+      url: galaxy/
+
+languages:
+  eyebrow: 这个生态是用什么写的
+  title: C 守住了腹地，Rust 拿下了边疆。
+  text: 全部 2241 个收录扩展的实现语言分布。Rust 比其它语言晚来了十年，如今已是生态中第三大的代码体量 —— 而且几乎垄断了最新的向量、检索与分析类扩展。
+  unit: 个
+  items:
+    - label: C
+      value: 1368
+      group: c
+      note: 最经典的路子 —— `PGXS`、一个 `.control` 文件，加一个动态库。
+    - label: SQL
+      value: 379
+      group: sql
+      note: 纯 SQL 扩展，连编译器都不需要。
+    - label: Rust
+      value: 353
+      group: rust
+      note: 几乎全部基于 `pgrx`，也几乎全部是近几年的作品。
+    - label: C++
+      value: 76
+      group: cpp
+    - label: Python
+      value: 28
+      group: other
+    - label: 其它
+      value: 37
+      group: other
+      note: Go、Java、JavaScript、Shell，以及纯数据包。
+
+steps:
+  eyebrow: 快速上手
+  title: 从一台裸 Linux，到一个装满扩展的数据库
+  items:
+    - title: 装上包管理器
+      icon: fa-solid fa-download
+      desc: 一个静态二进制，没有任何运行时依赖。
+      cmd: { code: 'curl -fsSL https://repo.pigsty.io/pig | bash' }
+    - title: 添加软件仓库
+      icon: fa-solid fa-warehouse
+      desc: 按你的发行版写出 PGDG 与 Pigsty 仓库文件，并刷新缓存。
+      cmd: { code: 'pig repo add all -u' }
+    - title: 安装 PostgreSQL 内核
+      icon: fa-solid fa-database
+      desc: 直接来自 PGDG —— 这份目录不会去分叉内核。
+      cmd: { code: 'pig install pg18' }
+    - title: 装上你想要的扩展
+      icon: fa-solid fa-puzzle-piece
+      desc: 用扩展本名安装，然后照常在数据库里启用。
+      cmd: { code: 'pig install pgvector postgis timescaledb -v 18' }
+
+users:
+  eyebrow: 谁在用
+  title: 发行版与厂商从这里取包
+  text: '[Pigsty](https://github.com/pgsty/pigsty)、[Omnigres](https://docs.omnigres.org/quick_start/)、[AutoBase](https://autobase.tech/docs/extensions/install)、[TensorChord](https://github.com/tensorchord) 与 [文武 IT](https://w3.ww-it.cn/) 背后的扩展供应链，也是相当多自建集群的软件包来源。'
+  columns: 5
+  items:
+    - title: Pigsty
+      icon: fa-solid fa-database
+      url: https://github.com/pgsty/pigsty
+      external: true
+    - title: Omnigres
+      icon: fa-solid fa-layer-group
+      url: https://docs.omnigres.org/quick_start/
+      external: true
+    - title: AutoBase
+      icon: fa-solid fa-robot
+      url: https://autobase.tech/docs/extensions/install
+      external: true
+    - title: TensorChord
+      icon: fa-solid fa-microchip
+      url: https://github.com/tensorchord
+      external: true
+    - title: 文武 IT
+      icon: fa-solid fa-building
+      url: https://w3.ww-it.cn/
+      external: true
+
+faq:
+  eyebrow: 在依赖它之前
+  title: 决定这东西能不能用的几个问题
+  items:
+    - question: 这会替换或分叉 PostgreSQL 内核吗？
+      answer: '不会。内核直接来自 [PGDG](https://www.postgresql.org/download/linux/)，未经改动；这些软件包的设计目标就是与之并存：相同的包命名、相同的 `$libdir` 与扩展目录、相同的 `postgresql-$v-*` 与 `*_$v` 约定。从这里装的扩展能配 PGDG 装的内核使用，把这个仓库移除之后，留下的仍然是一个能正常工作的数据库。'
+      open: true
+    - question: 「已打包」到底保证了什么？
+      answer: '保证这个扩展能在每个受支持的平台上、针对每个受支持的 PostgreSQL 大版本，从源码可复现地构建出来；保证产物是依赖正确、带签名的 RPM 或 DEB；并且 [可用性矩阵](os/matrix/) 会逐格告诉你结果。它并不保证这个扩展「适合上生产」—— 那个判断仍然是你的，目录会把许可证、活跃度与维护状况这些信号摆给你。'
+    - question: 覆盖哪些平台和 PostgreSQL 版本？
+      answer: '八个发行版大版本 —— RockyLinux 8 / 9 / 10，Debian 12 / 13，Ubuntu 22.04 / 24.04 / 26.04 —— 每个都提供 `x86_64` 与 `aarch64` 两种架构，合起来就是上面那 16 个目标；每个目标上覆盖 PostgreSQL 14 到 18。ARM 是一等公民而非附带品：[矩阵页](os/matrix/) 会明确标出两种架构的差异之处。'
+    - question: 目录里那些没打包的是什么？
+      answer: 大多数都没打包。2241 个收录扩展中有 576 个在这里构建，其余之所以收录，是因为「知道它存在」本身就有价值 —— 仓库地址、许可证、实现语言、最后一次提交，即便没人打包也值得记录。托管云厂商专有的扩展同样收录，并明确标注。
+    - question: 有没有闭源或收费的部分？
+      answer: '没有。构建规范（[RPM](https://github.com/pgsty/rpm)、[DEB](https://github.com/pgsty/deb)）、这份目录、`pig` 命令行工具全部开源，仓库本身免费使用。少数**被收录的**扩展自身采用源码可见或传染性许可证 —— [许可证索引](list/license/) 按约束强度排序，装之前就能看清楚。'
+    - question: 发现缺了或者错了，怎么办？
+      answer: '去 [pgsty/pgext](https://github.com/pgsty/pgext/issues) 提 issue。新扩展可以按需收录，打包请求也会被认真对待 —— 那 576 个里有相当一部分正是这么来的。'
+
+cta:
+  title: 从一份被索引过的生态开始。
+  desc: 浏览 2241 个扩展，或者在读完这句话的时间里，装上 576 个已打包扩展中的任意一个。
+  actions:
+    - label: 浏览扩展目录
+      url: list/
+      icon: fa-solid fa-clipboard-list
+      style: primary
+    - label: 阅读 pig 上手指南
+      url: pig/start/
+      style: ghost

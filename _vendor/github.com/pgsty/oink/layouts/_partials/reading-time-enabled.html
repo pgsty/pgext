@@ -1,0 +1,8 @@
+{{- /* Resolve the reading-time switch: params.ui.reading_time (boolean, off by
+     default) with a front matter reading_time override. */ -}}
+{{- $enabled := partial "validate.html" (dict
+    "value" (index .Site.Params.ui "reading_time") "kind" "bool"
+    "fallback" false "key" "params.ui.reading_time") -}}
+{{- return partial "validate.html" (dict
+    "value" (index .Params "reading_time") "kind" "bool"
+    "fallback" $enabled "key" "front matter reading_time" "where" (cond (isset .Params "reading_time") .Path "")) -}}

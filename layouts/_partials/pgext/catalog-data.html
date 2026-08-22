@@ -1,0 +1,188 @@
+{{- /*
+Build the home console's search payload from `db/universe.csv`.
+
+The whole catalog — every extension, packaged or not — has to reach the browser
+for the console to answer instantly, so the payload is positional and interned:
+dimension values become indices into small dictionaries, PostgreSQL support
+becomes one bit-field, and only the current language's description is carried.
+That turns roughly 2,200 rows into a couple of hundred kilobytes before
+compression.
+
+Returns the published resource, so the caller can emit its URL.
+
+Row layout — assets/js/pgext-catalog.js must agree with it:
+   0 name                       1 pkg (empty when equal to name)
+   2 category index (-1 none)   3 licence index (-1 none)
+   4 language index (-1 none)   5 repository index (-1 none)
+   6 version                    7 PG majors, a bit-field over `pgs`
+   8 stars (0 unknown)          9 flags: 1 packaged, 2 contrib, 4 not the lead
+  10 description               11 tags, comma-joined
+  12 upstream URL, `https://` dropped
+*/ -}}
+{{- $lang := .Site.Language.Lang -}}
+{{- $csv := resources.Get "db/universe.csv" -}}
+{{- if not $csv -}}
+  {{- errorf "pgext: db/universe.csv is not mounted into assets; the home console cannot be built" -}}
+{{- end -}}
+{{- $rows := $csv | transform.Unmarshal (dict "delimiter" ",") -}}
+{{- $col := dict -}}
+{{- range $i, $name := index $rows 0 }}{{ $col = merge $col (dict $name $i) }}{{ end -}}
+{{- $iName := index $col "name" -}}
+{{- $iPkg := index $col "pkg" -}}
+{{- $iLead := index $col "lead_ext" -}}
+{{- $iCat := index $col "category" -}}
+{{- $iLic := index $col "license" -}}
+{{- $iLang := index $col "lang" -}}
+{{- $iRpm := index $col "rpm_repo" -}}
+{{- $iDeb := index $col "deb_repo" -}}
+{{- $iExtra := index $col "extra" -}}
+{{- $iVer := index $col "version" -}}
+{{- $iPgVer := index $col "pg_ver" -}}
+{{- $iStars := index $col "stars" -}}
+{{- $iPackaged := index $col "packaged" -}}
+{{- $iContrib := index $col "contrib" -}}
+{{- $iTags := index $col "tags" -}}
+{{- $iRepoURL := index $col "repo_url" -}}
+{{- $iURL := index $col "url" -}}
+{{- $iDesc := index $col (cond (eq $lang "zh") "zh_desc" "en_desc") -}}
+{{- $iDescEn := index $col "en_desc" -}}
+
+{{- $catOrder := slice "TIME" "GIS" "RAG" "FTS" "OLAP" "FEAT" "LANG" "TYPE"
+  "UTIL" "FUNC" "ADMIN" "STAT" "SEC" "FDW" "SIM" "ETL" -}}
+{{- $catIndex := dict -}}
+{{- range $i, $c := $catOrder }}{{ $catIndex = merge $catIndex (dict $c $i) }}{{ end -}}
+
+{{- /* PostgreSQL majors, newest first — the order the catalog displays. One
+     bit each, in that order, so a row's support set is a single small int. */ -}}
+{{- $pgs := slice 18 17 16 15 14 -}}
+{{- $pgBit := dict "18" 1 "17" 2 "16" 4 "15" 8 "14" 16 -}}
+
+{{- $lics := slice -}}{{- $licIdx := dict -}}
+{{- $langs := slice -}}{{- $langIdx := dict -}}
+{{- $repos := slice -}}{{- $repoIdx := dict -}}
+{{- $out := slice -}}
+{{- $packagedN := 0 -}}
+{{- $pkgNames := slice -}}
+
+{{- range $n, $r := $rows -}}
+{{- if gt $n 0 -}}
+{{- $name := index $r $iName -}}
+{{- if $name -}}
+  {{- $lic := strings.TrimSpace (index $r $iLic) -}}
+  {{- $lg := strings.TrimSpace (index $r $iLang) -}}
+
+  {{- /* The delivering repository, resolved the way the dynamic catalog
+       resolves it: an explicit `extra.repo` first, then whichever of the RPM
+       and DEB repositories names one. */ -}}
+  {{- $repo := "" -}}
+  {{- $extra := index $r $iExtra -}}
+  {{- if and $extra (ne $extra "{}") -}}
+    {{- $parsed := try (transform.Unmarshal $extra) -}}
+    {{- with $parsed.Value -}}
+      {{- if reflect.IsMap . }}{{ with index . "repo" }}{{ $repo = upper (printf "%v" .) }}{{ end }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $repo }}{{ $repo = upper (strings.TrimSpace (index $r $iRpm)) }}{{ end -}}
+  {{- if not $repo }}{{ $repo = upper (strings.TrimSpace (index $r $iDeb)) }}{{ end -}}
+
+  {{- $li := -1 -}}
+  {{- if $lic -}}
+    {{- if isset $licIdx $lic }}{{ $li = index $licIdx $lic }}{{ else -}}
+      {{- $li = len $lics -}}{{ $lics = $lics | append $lic }}{{ $licIdx = merge $licIdx (dict $lic $li) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $gi := -1 -}}
+  {{- if $lg -}}
+    {{- if isset $langIdx $lg }}{{ $gi = index $langIdx $lg }}{{ else -}}
+      {{- $gi = len $langs -}}{{ $langs = $langs | append $lg }}{{ $langIdx = merge $langIdx (dict $lg $gi) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $ri := -1 -}}
+  {{- if $repo -}}
+    {{- if isset $repoIdx $repo }}{{ $ri = index $repoIdx $repo }}{{ else -}}
+      {{- $ri = len $repos -}}{{ $repos = $repos | append $repo }}{{ $repoIdx = merge $repoIdx (dict $repo $ri) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $mask := 0 -}}
+  {{- range $v := split (strings.Trim (index $r $iPgVer) "{}") "," -}}
+    {{- $key := strings.TrimSpace $v -}}
+    {{- if isset $pgBit $key }}{{ $mask = add $mask (index $pgBit $key) }}{{ end -}}
+  {{- end -}}
+
+  {{- $flags := 0 -}}
+  {{- if eq (index $r $iPackaged) "t" }}{{ $flags = add $flags 1 }}{{ end -}}
+  {{- if eq (index $r $iContrib) "t" }}{{ $flags = add $flags 2 }}{{ end -}}
+  {{- $lead := index $r $iLead -}}
+  {{- if and $lead (ne $lead $name) }}{{ $flags = add $flags 4 }}{{ end -}}
+
+  {{- $desc := index $r $iDesc -}}
+  {{- if not $desc }}{{ $desc = index $r $iDescEn }}{{ end -}}
+
+  {{- $url := index $r $iRepoURL -}}
+  {{- if not $url }}{{ $url = index $r $iURL }}{{ end -}}
+
+  {{- $stars := strings.TrimSpace (index $r $iStars) -}}
+  {{- $pkg := index $r $iPkg -}}
+
+  {{- /* Rows accumulate as JSON text rather than as nested slices: Hugo's
+       `append` flattens a slice argument, and a slice of maps would repeat
+       every key 2,200 times in the payload. */ -}}
+  {{- $out = $out | append (jsonify (dict "noHTMLEscape" true) (slice
+    $name
+    (cond (eq $pkg $name) "" $pkg)
+    (index $catIndex (index $r $iCat) | default -1)
+    $li
+    $gi
+    $ri
+    (index $r $iVer)
+    $mask
+    (cond (eq $stars "") 0 (int $stars))
+    $flags
+    $desc
+    (replace (strings.Trim (index $r $iTags) "{}") "\"" "")
+    (strings.TrimPrefix "https://" $url)
+  )) -}}
+  {{- if eq (mod $flags 2) 1 -}}
+    {{- $packagedN = add $packagedN 1 -}}
+    {{- $p := cond (eq $pkg "") $name $pkg -}}
+    {{- if not (in $pkgNames $p) }}{{ $pkgNames = $pkgNames | append $p }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{- /* The platform targets the catalog currently builds for. */ -}}
+{{- $targets := slice -}}
+{{- with resources.Get "db/os.csv" -}}
+  {{- $osRows := . | transform.Unmarshal (dict "delimiter" ",") -}}
+  {{- $oc := dict -}}
+  {{- range $i, $n := index $osRows 0 }}{{ $oc = merge $oc (dict $n $i) }}{{ end -}}
+  {{- range $n, $r := $osRows -}}
+    {{- if and (gt $n 0) (eq (index $r (index $oc "active")) "t") -}}
+      {{- $t := index $r (index $oc "os") -}}
+      {{- if not (in $targets $t) }}{{ $targets = $targets | append $t }}{{ end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $stats := dict
+  "all" (len $out)
+  "packaged" $packagedN
+  "packages" (len $pkgNames)
+  "targets" (len $targets)
+  "pgs" (len $pgs)
+  "slots" (mul (mul (len $pkgNames) (len $targets)) (len $pgs))
+-}}
+
+{{- $json := printf `{"v":1,"lang":%s,"cats":%s,"lics":%s,"langs":%s,"repos":%s,"pgs":%s,"rows":[%s]}`
+  (jsonify (dict "noHTMLEscape" true) $lang)
+  (jsonify (dict "noHTMLEscape" true) $catOrder)
+  (jsonify (dict "noHTMLEscape" true) $lics)
+  (jsonify (dict "noHTMLEscape" true) $langs)
+  (jsonify (dict "noHTMLEscape" true) $repos)
+  (jsonify (dict "noHTMLEscape" true) $pgs)
+  (delimit $out ",") -}}
+{{- $res := resources.FromString (printf "catalog/universe.%s.json" $lang) $json -}}
+{{- if hugo.IsProduction }}{{ $res = $res | fingerprint "md5" }}{{ end -}}
+{{- return dict "resource" $res "stats" $stats "cats" $catOrder "targets" $targets -}}

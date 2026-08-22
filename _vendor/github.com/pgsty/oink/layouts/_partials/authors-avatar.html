@@ -1,0 +1,19 @@
+{{- $author := .author -}}
+{{- $size := .size | default 28 -}}
+{{- $class := .class -}}
+{{- $found := $author.avatar -}}
+{{- with $found.resource -}}
+  {{- if reflect.IsImageResourceProcessable . -}}
+    {{- /* Twice the layout size so the circle stays sharp on a 2x display. */ -}}
+    {{- $image := .Fill (printf "%dx%d" (mul $size 2) (mul $size 2)) -}}
+    <img class="{{ $class }}" src="{{ $image.RelPermalink }}" alt="" width="{{ $size }}" height="{{ $size }}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+  {{- else -}}
+    <img class="{{ $class }}" src="{{ .RelPermalink }}" alt="" width="{{ $size }}" height="{{ $size }}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+  {{- end -}}
+{{- else -}}
+  {{- with $found.href -}}
+    <img class="{{ $class }}" src="{{ . }}" alt="" width="{{ $size }}" height="{{ $size }}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+  {{- else -}}
+    <span class="{{ $class }} {{ $class }}--placeholder" aria-hidden="true">{{ strings.Substr $author.name 0 1 | upper }}</span>
+  {{- end -}}
+{{- end -}}

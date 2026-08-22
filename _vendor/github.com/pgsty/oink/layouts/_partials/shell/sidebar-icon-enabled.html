@@ -1,0 +1,6 @@
+{{- /* Input: policy, root, hasChildren. */ -}}
+{{- $show := or
+  (eq .policy "all")
+  (and (eq .policy "groups") (or .root .hasChildren))
+-}}
+{{- return $show -}}

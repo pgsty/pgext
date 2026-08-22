@@ -1,0 +1,33 @@
+{{/* Reject unknown parameters and named/positional form mismatches. Attribute
+     passthrough is validated by the caller. */ -}}
+{{- $sc := .shortcode -}}
+{{- $allowed := .allowed | default (slice) -}}
+{{- $form := .form | default "named" -}}
+{{- $attributes := .attributes | default false -}}
+{{- $count := 0 -}}
+{{- with $sc.Params }}{{ $count = len . }}{{ end -}}
+
+{{- if eq $form "none" -}}
+  {{- if gt $count 0 -}}
+    {{- warnf "shortcode %q accepts no parameters at %s; ignoring them" $sc.Name $sc.Position -}}
+  {{- end -}}
+{{- else if eq $form "positional" -}}
+  {{- if $sc.IsNamedParams -}}
+    {{- warnf "shortcode %q accepts positional parameters only at %s; ignoring the named ones" $sc.Name $sc.Position -}}
+  {{- end -}}
+{{- else -}}
+  {{- if and (gt $count 0) (not $sc.IsNamedParams) (ne $form "any") -}}
+    {{- warnf "shortcode %q accepts named parameters only at %s; ignoring the positional ones" $sc.Name $sc.Position -}}
+  {{- end -}}
+  {{/* A positional shorthand under "any" has integer keys, not names. */ -}}
+  {{- if $sc.IsNamedParams -}}
+    {{- range $name, $_ := $sc.Params -}}
+      {{- $lower := lower $name -}}
+      {{- $passthrough := and $attributes (or (eq $lower "class") (hasPrefix $lower "data-") (hasPrefix $lower "aria-")) -}}
+      {{- if not (or (in $allowed $name) $passthrough) -}}
+        {{- warnf "shortcode %q: unsupported parameter %q at %s (allowed: %s); ignoring it" $sc.Name $name $sc.Position (delimit $allowed ", ") -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return "" -}}

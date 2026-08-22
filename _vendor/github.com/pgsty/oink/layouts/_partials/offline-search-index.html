@@ -1,0 +1,8 @@
+{{- $lang := .Site.Language.Lang | default "default" -}}
+{{- $target := printf "offline-search-index.%s.json" $lang -}}
+{{- $index := resources.Get "json/offline-search-index.json"
+      | resources.ExecuteAsTemplate $target .Site.Home -}}
+{{- if hugo.IsProduction -}}
+  {{- $index = $index | fingerprint "md5" -}}
+{{- end -}}
+{{- return $index.RelPermalink -}}

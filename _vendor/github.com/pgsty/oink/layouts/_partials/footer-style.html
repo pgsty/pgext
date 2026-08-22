@@ -1,0 +1,11 @@
+{{- /* Resolve the footer presentation for one page: fat, slim, or none.
+     Site `params.ui.footer_style`, overridden by front matter `footer_style`.
+     An invalid value warns and falls back to fat. */ -}}
+{{- $style := "fat" -}}
+{{- with .Site.Params.ui.footer_style }}{{ $style = . }}{{ end -}}
+{{- with .Params.footer_style }}{{ $style = . }}{{ end -}}
+{{- return partial "validate.html" (dict
+    "value" $style "kind" "enum"
+    "allowed" (slice "fat" "slim" "none")
+    "fallback" "fat"
+    "key" "params.ui.footer_style" "where" (cond (isset .Params "footer_style") .Path "")) -}}

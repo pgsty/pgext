@@ -1,0 +1,59 @@
+{{- /*
+Site override of the theme's `badge`, accepting both vocabularies.
+
+The generated catalog carries some 76,000 `badge content=… color=…` calls,
+whose colours encode real meaning (repository origin, availability, PostgreSQL
+major support). OINK's own badge has five semantic tones and no colour axis, so
+the catalog form is rendered by pgext/badge.html instead.
+
+  catalog form   content= color= border= icon= link=
+  theme form     text=    tone=  link=
+
+Hand-written pages may use either; `text` selects the theme form.
+
+One special case: a badge whose whole label is a repository name is tinted with
+that repository's hue, so PIGSTY and PGDG read the same here as they do in the
+dimension pages and on the dynamic catalog.
+*/ -}}
+{{- if and .IsNamedParams (isset .Params "content") -}}
+  {{- $content := strings.TrimSpace (printf "%v" (.Get "content")) -}}
+  {{- $color := .Get "color" | default "gray" -}}
+  {{- /* An explicit colour is a statement — availability, origin, a yes or a
+       no — so it gets the tinted pill. A badge with no colour is a label and
+       stays neutral. */ -}}
+  {{- $hued := isset .Params "color" -}}
+  {{- $repoHue := partial "pgext/hue.html" (dict "dim" "repo" "value" $content) -}}
+  {{- if and $repoHue (not (isset .Params "color")) -}}
+    {{- $color = $repoHue -}}
+    {{- $hued = true -}}
+  {{- end -}}
+  {{- $border := true -}}
+  {{- if isset .Params "border" }}{{ $border = ne (printf "%v" (.Get "border")) "false" }}{{ end -}}
+  {{- partial "pgext/badge.html" (dict
+    "content" $content
+    "color" $color
+    "hued" $hued
+    "border" $border
+    "icon" (.Get "icon" | default "")
+    "link" (.Get "link" | default "")
+    "title" (.Get "title" | default "")
+  ) -}}
+{{- else if and .IsNamedParams (isset .Params "text") -}}
+  {{- $tones := dict
+    "neutral" "gray" "info" "blue" "success" "green" "warning" "orange" "danger" "red"
+  -}}
+  {{- $tone := lower (strings.TrimSpace (printf "%v" (.Get "tone" | default "neutral"))) -}}
+  {{- $color := index $tones $tone -}}
+  {{- if not $color -}}
+    {{- warnf "shortcode %q: tone must be one of neutral | info | success | warning | danger; got %q at %s; using neutral" .Name $tone .Position -}}
+    {{- $color = "gray" -}}
+  {{- end -}}
+  {{- partial "pgext/badge.html" (dict
+    "content" (.Get "text")
+    "color" $color
+    "hued" true
+    "link" (.Get "link" | default "")
+  ) -}}
+{{- else -}}
+  {{- warnf "shortcode %q requires content= (catalog form) or text= (theme form) at %s; rendering nothing" .Name .Position -}}
+{{- end -}}

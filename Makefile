@@ -15,6 +15,24 @@ PGURL="postgres:///data"
 dev:
 	hugo serve
 
+#==============================================================#
+# Theme (OINK)
+#==============================================================#
+# The site renders with the OINK Hugo module, vendored into _vendor/. The
+# vendored copy is what `hugo` actually reads, which keeps the build working
+# even after `go mod tidy` drops the theme from go.mod (it provides no Go
+# packages, so tidy always does). Upgrading is therefore two steps, and
+# `hugo mod vendor` is the one that takes effect.
+t: theme
+theme:
+	hugo mod get -u github.com/pgsty/oink
+	hugo mod vendor
+	hugo --gc --printPathWarnings --panicOnWarning
+
+# strict build: any theme or content warning fails the build
+check:
+	hugo --gc --minify --printPathWarnings --panicOnWarning
+
 # quick release: build linux/amd64, ship to jp, restart service
 d: amd 2j rs
 
@@ -131,4 +149,4 @@ rs:
 	ssh jp 'systemctl restart pgext && systemctl is-active pgext'
 
 # inventory
-.PHONY: default run gen dump save load gen-json gen-mdx build-mdx arm amd 2j rs d dev
+.PHONY: default run gen dump save load gen-json gen-mdx build-mdx arm amd 2j rs d dev theme check

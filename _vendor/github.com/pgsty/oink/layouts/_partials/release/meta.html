@@ -1,0 +1,70 @@
+{{- $page := .page -}}
+{{- $position := .position | default $page.Path | default $page.RelPermalink -}}
+{{- $required := true -}}
+{{- if isset . "required" }}{{ $required = .required }}{{ end -}}
+{{- $ok := true -}}
+
+{{- if isset $page.Params "release" -}}
+  {{- warnf "%s: front matter `release` was replaced by `release_url`, one GitHub release URL (https://github.com/<owner>/<repo>/releases/tag/<tag>); skipping the release block" $position -}}
+  {{- $ok = false -}}
+{{- end -}}
+
+{{- $owner := "" -}}
+{{- $project := "" -}}
+{{- $repo := "" -}}
+{{- $tag := "" -}}
+{{- if $ok -}}
+  {{- $raw := $page.Params.release_url -}}
+  {{- if eq $raw nil -}}
+    {{- if $required -}}
+      {{- warnf "%s: release_url front matter is required; skipping the release block" $position -}}
+    {{- end -}}
+    {{- $ok = false -}}
+  {{- else if ne (printf "%T" $raw) "string" -}}
+    {{- warnf "%s: release_url must be a GitHub release URL string; got %v; skipping the release block" $position $raw -}}
+    {{- $ok = false -}}
+  {{- else -}}
+    {{- $matches := findRESubmatch `^https://github[.]com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)/releases/tag/([A-Za-z0-9._+~-]+)/?$` (strings.TrimSpace $raw) -}}
+    {{- if ne (len $matches) 1 -}}
+      {{- warnf "%s: release_url must match https://github.com/<owner>/<repo>/releases/tag/<tag>; got %q; skipping the release block" $position $raw -}}
+      {{- $ok = false -}}
+    {{- else -}}
+      {{- $match := index $matches 0 -}}
+      {{- $owner = index $match 1 -}}
+      {{- $project = index $match 2 -}}
+      {{- $repo = printf "%s/%s" $owner $project -}}
+      {{- $tag = index $match 3 -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $date := $page.Date -}}
+{{- $result := dict
+  "valid" false "owner" "" "project" "" "repo" "" "tag" ""
+  "date" $date "dateDisplay" ($date.Format "2006-01-02")
+  "dateSort" "" "versionSort" "" "sortKey" ""
+  "repoURL" "" "releaseURL" "" "sourceTarURL" "" "sourceZipURL" ""
+-}}
+{{- if $ok -}}
+  {{- $repoURL := printf "https://github.com/%s" $repo -}}
+  {{- $tagSegment := urls.PathEscape $tag -}}
+  {{- $dateSort := $date.UTC.Format "20060102T150405Z" -}}
+  {{- $versionSort := partial "release/version-sort-key.html" (strings.TrimPrefix "v" $tag) -}}
+  {{- $result = dict
+    "valid" true
+    "owner" $owner
+    "project" $project
+    "repo" $repo
+    "tag" $tag
+    "date" $date
+    "dateDisplay" ($date.Format "2006-01-02")
+    "dateSort" $dateSort
+    "versionSort" $versionSort
+    "sortKey" (printf "%s|%s" $dateSort $versionSort)
+    "repoURL" $repoURL
+    "releaseURL" (printf "%s/releases/tag/%s" $repoURL $tagSegment)
+    "sourceTarURL" (printf "%s/archive/refs/tags/%s.tar.gz" $repoURL $tagSegment)
+    "sourceZipURL" (printf "%s/archive/refs/tags/%s.zip" $repoURL $tagSegment)
+  -}}
+{{- end -}}
+{{- return $result -}}

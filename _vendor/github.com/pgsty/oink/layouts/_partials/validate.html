@@ -1,0 +1,49 @@
+{{/* Validate enum, bool, CSS length, or number values. Blank values use the
+     fallback; invalid values warn once per key and value, then use it. */ -}}
+
+{{- $value := .value -}}
+{{- $kind := .kind | default "enum" -}}
+{{- $fallback := .fallback -}}
+{{- $key := .key | default "value" -}}
+{{- $where := .where | default "" -}}
+{{- $at := cond (ne (printf "%v" $where) "") (printf " at %v" $where) "" -}}
+
+{{- $result := $fallback -}}
+{{- if ne $value nil -}}
+  {{- $raw := printf "%v" $value -}}
+  {{- $id := printf "validate:%s:%s:%s" $kind $key $raw -}}
+  {{- if eq $raw "" -}}
+    {{- /* Blank uses the default. */ -}}
+  {{- else if eq $kind "bool" -}}
+    {{- if eq (printf "%T" $value) "bool" -}}
+      {{- $result = $value -}}
+    {{- else -}}
+      {{- warnidf $id "%s must be true or false; got %q%s -- using %v" $key $raw $at $fallback -}}
+    {{- end -}}
+  {{- else if eq $kind "enum" -}}
+    {{- $allowed := .allowed | default slice -}}
+    {{- if in $allowed $raw -}}
+      {{- $result = $raw -}}
+    {{- else -}}
+      {{- warnidf $id "invalid %s %q%s (allowed: %s) -- using %q"
+          $key $raw $at (delimit $allowed " | ") $fallback -}}
+    {{- end -}}
+  {{- else if eq $kind "length" -}}
+    {{- if findRE `^[0-9]+(?:\.[0-9]+)?(?:px|rem|em|vh|vw|%)$` $raw -}}
+      {{- $result = $raw -}}
+    {{- else -}}
+      {{- warnidf $id "%s %q is not a safe CSS length%s -- using %q" $key $raw $at $fallback -}}
+    {{- end -}}
+  {{- else if eq $kind "number" -}}
+    {{- /* float errors on bad strings, so cast through try. */ -}}
+    {{- $cast := try (float $raw) -}}
+    {{- if or $cast.Err (in (slice "+Inf" "Inf" "-Inf" "NaN") $raw) -}}
+      {{- warnidf $id "%s %q is not a number%s -- using %v" $key $raw $at $fallback -}}
+    {{- else -}}
+      {{- $result = $cast.Value -}}
+    {{- end -}}
+  {{- else -}}
+    {{- warnidf $id "validate.html: unknown kind %q for %s -- using %v" $kind $key $fallback -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}
