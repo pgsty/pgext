@@ -8,7 +8,9 @@
 #---------------------------------------------------------------#
 # Basics
 #---------------------------------------------------------------#
-baseURL: 'https://pgext.cloud/'
+# The static catalog publishes at ext.pgsty.com; the dynamic `pgext serve`
+# app keeps pgext.cloud. Both carry the PGEXT.CLOUD name.
+baseURL: 'https://ext.pgsty.com/'
 title: 'PGEXT.CLOUD'
 
 defaultContentLanguage: en
@@ -22,6 +24,9 @@ capitalizeListTitles: false
 pagination:
   pagerSize: 100
 
+# Google Analytics 4: this site's own stream, carried over from pgext.cloud so
+# the history stays in one property. Injected only in production builds (OINK
+# wraps the partial in `hugo.IsProduction`), so `hugo serve` stays clean.
 services:
   googleAnalytics:
     ID: G-5HDLR6CMB4
@@ -799,7 +804,7 @@ params:
     - logo.png
 
   version: v1.1.0
-  productionURL: &productionURL https://pgext.cloud
+  productionURL: &productionURL https://ext.pgsty.com
   github_repo: https://github.com/pgsty/pgext
   github_project_repo: https://github.com/pgsty/pgext
   github_branch: main

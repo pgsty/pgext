@@ -967,7 +967,7 @@
 
   function extensionLinks(ext) {
     const slug = extensionSlug(ext);
-    const pgextUrl = `https://pgext.cloud/e/${slug}/`;
+    const pgextUrl = `https://ext.pgsty.com/e/${slug}/`;
     const pigstyIo = `https://pigsty.io/ext/e/${slug}/`;
     const url = normalizeLinkUrl(ext.url);
     const isAvailable = ext.state === 'available';

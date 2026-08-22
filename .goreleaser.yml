@@ -49,7 +49,7 @@ nfpms:
         {{- else }}{{ .Arch }}{{ end }}
       {{- end }}
     vendor: "PGSTY"
-    homepage: "https://pgext.pgsty.com"
+    homepage: "https://ext.pgsty.com"
     maintainer: "Ruohang Feng <rh@vonng.com>"
     description: |
       PostgreSQL Extension Package Manager and CLI Tool

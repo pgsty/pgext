@@ -1,6 +1,6 @@
 # pgext
 
-[![Website: pgext.cloud](https://img.shields.io/badge/website-pgext.cloud-336791?logo=postgresql&logoColor=white)](https://pgext.cloud)
+[![Website: ext.pgsty.com](https://img.shields.io/badge/website-ext.pgsty.com-336791?logo=postgresql&logoColor=white)](https://ext.pgsty.com)
 [![Docs: doc.pgext.cloud](https://img.shields.io/badge/docs-doc.pgext.cloud-4169E1)](https://doc.pgext.cloud)
 [![Release](https://img.shields.io/github/v/release/pgsty/pgext?color=teal)](https://github.com/pgsty/pgext/releases)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
@@ -74,7 +74,8 @@ Run `pgext help <command>` for details on any command.
 
 ## Links
 
-- Catalog website: [pgext.cloud](https://pgext.cloud)
+- Catalog website: [ext.pgsty.com](https://ext.pgsty.com)
+- Live catalog app (`pgext serve`): [pgext.cloud](https://pgext.cloud)
 - Documentation: [doc.pgext.cloud](https://doc.pgext.cloud)
 - Pigsty — battery-included PostgreSQL distribution: [pigsty.io](https://pigsty.io)
 - `pig` — the PostgreSQL extension package manager: [pig.pgsty.com](https://pig.pgsty.com)
