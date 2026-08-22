@@ -2,7 +2,9 @@
 .idea/
 *.iml
 .vscode/
-dist/
+# Release artifacts (root only: a bare `dist/` pattern also swallows the
+# vendored theme's assets/third_party/bootstrap/dist/)
+/dist/
 
 # Binary (root only: a bare `pgext` pattern also swallows the site's
 # layouts/_partials/pgext/ directory)
