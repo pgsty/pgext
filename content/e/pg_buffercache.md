@@ -4,7 +4,10 @@ linkTitle: "pg_buffercache"
 description: "examine the shared buffer cache"
 weight: 6930
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_buffercache**](https://www.postgresql.org/docs/current/pgbuffercache.html) : examine the shared buffer cache

@@ -4,7 +4,10 @@ linkTitle: "pg_cardano"
 description: "A suite of Cardano-related tools"
 weight: 2920
 categories: ["FEAT"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_cardano**](https://github.com/Fell-x27/pg_cardano) : A suite of Cardano-related tools
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_cardano` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_cardano_18" "green" >}} {{< bg "17" "pg_cardano_17" "green" >}} {{< bg "16" "pg_cardano_16" "green" >}} {{< bg "15" "pg_cardano_15" "green" >}} {{< bg "14" "pg_cardano_14" "red" >}} | `pg_cardano_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-cardano" "green" >}} {{< bg "17" "postgresql-17-pg-cardano" "green" >}} {{< bg "16" "postgresql-16-pg-cardano" "green" >}} {{< bg "15" "postgresql-15-pg-cardano" "green" >}} {{< bg "14" "postgresql-14-pg-cardano" "red" >}} | `postgresql-$v-pg-cardano` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-pg-cardano : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-cardano : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-cardano : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-16-pg-cardano : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-15-pg-cardano : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-cardano : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-cardano` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 904.0 KiB | [postgresql-18-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cardano/postgresql-18-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-cardano` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 933.2 KiB | [postgresql-18-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-18-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-cardano` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 901.0 KiB | [postgresql-18-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-18-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-pg-cardano` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 901.5 KiB | [postgresql-17-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cardano/postgresql-17-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-cardano` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 931.5 KiB | [postgresql-17-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-17-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-cardano` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 898.8 KiB | [postgresql-17-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-17-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-pg-cardano` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 900.1 KiB | [postgresql-16-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cardano/postgresql-16-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-cardano` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 929.7 KiB | [postgresql-16-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-16-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-cardano` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 898.0 KiB | [postgresql-16-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-16-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-pg-cardano` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 894.7 KiB | [postgresql-15-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cardano/postgresql-15-pg-cardano_1.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-cardano` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 924.7 KiB | [postgresql-15-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-15-pg-cardano_1.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-cardano` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 892.2 KiB | [postgresql-15-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cardano/postgresql-15-pg-cardano_1.2.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -159,14 +168,15 @@ width: full
 | `postgresql-14-pg-cardano` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 357.0 KiB | [postgresql-14-pg-cardano_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-cardano/postgresql-14-pg-cardano_1.1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-cardano` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 488.4 KiB | [postgresql-14-pg-cardano_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cardano/postgresql-14-pg-cardano_1.1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-cardano` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 351.9 KiB | [postgresql-14-pg-cardano_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cardano/postgresql-14-pg-cardano_1.1.1-1PIGSTY~noble_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/Fell-x27/pg_cardano" title="Repository" icon="github" subtitle="github.com/Fell-x27/pg_cardano" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_cardano-1.2.0.tar.gz" >}}
+{{< card link="https://github.com/Fell-x27/pg_cardano" title="Repository" icon="github" subtitle="github.com/Fell-x27/pg_cardano" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_cardano-1.2.0.tar.gz" />}}
 {{< /cards >}}
 
 

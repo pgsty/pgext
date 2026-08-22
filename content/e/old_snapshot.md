@@ -4,7 +4,10 @@ linkTitle: "old_snapshot"
 description: "utilities in support of old_snapshot_threshold"
 weight: 5960
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**old_snapshot**](https://www.postgresql.org/docs/current/oldsnapshot.html) : utilities in support of old_snapshot_threshold

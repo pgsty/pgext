@@ -4,7 +4,10 @@ linkTitle: "pg_checksums"
 description: "Activate/deactivate/verify checksums in offline Postgres clusters"
 weight: 5110
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["BSD-2-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_checksums**](https://github.com/credativ/pg_checksums) : Activate/deactivate/verify checksums in offline Postgres clusters
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_checksums` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3` | {{< bg "18" "pg_checksums_18" "green" >}} {{< bg "17" "pg_checksums_17" "green" >}} {{< bg "16" "pg_checksums_16" "green" >}} {{< bg "15" "pg_checksums_15" "green" >}} {{< bg "14" "pg_checksums_14" "green" >}} | `pg_checksums_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3` | {{< bg "18" "postgresql-18-pg-checksums" "green" >}} {{< bg "17" "postgresql-17-pg-checksums" "green" >}} {{< bg "16" "postgresql-16-pg-checksums" "green" >}} {{< bg "15" "postgresql-15-pg-checksums" "green" >}} {{< bg "14" "postgresql-14-pg-checksums" "green" >}} | `postgresql-$v-pg-checksums` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3" "postgresql-18-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-17-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-16-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-15-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-14-pg-checksums : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3" "postgresql-18-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-17-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-16-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-15-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-14-pg-checksums : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3" "postgresql-18-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-17-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-16-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-15-pg-checksums : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-14-pg-checksums : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-pg-checksums` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 35.8 KiB | [postgresql-18-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-18-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pg-checksums` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 37.3 KiB | [postgresql-18-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-18-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pg-checksums` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 36.2 KiB | [postgresql-18-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-18-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,9 +113,10 @@ width: full
 | `postgresql-17-pg-checksums` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 36.1 KiB | [postgresql-17-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-17-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pg-checksums` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 37.0 KiB | [postgresql-17-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-17-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-checksums` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 36.2 KiB | [postgresql-17-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-17-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -139,9 +146,10 @@ width: full
 | `postgresql-16-pg-checksums` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 34.1 KiB | [postgresql-16-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-16-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pg-checksums` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.1 KiB | [postgresql-16-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-16-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-checksums` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.4 KiB | [postgresql-16-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-16-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -175,9 +183,10 @@ width: full
 | `postgresql-15-pg-checksums` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 33.7 KiB | [postgresql-15-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-15-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pg-checksums` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.8 KiB | [postgresql-15-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-15-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pg-checksums` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.2 KiB | [postgresql-15-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-15-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -211,14 +220,15 @@ width: full
 | `postgresql-14-pg-checksums` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 33.7 KiB | [postgresql-14-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-14-pg-checksums_1.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pg-checksums` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.6 KiB | [postgresql-14-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-14-pg-checksums_1.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pg-checksums` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.0 KiB | [postgresql-14-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-checksums/postgresql-14-pg-checksums_1.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/credativ/pg_checksums" title="Repository" icon="github" subtitle="github.com/credativ/pg_checksums" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_checksums-1.3.tar.gz" >}}
+{{< card link="https://github.com/credativ/pg_checksums" title="Repository" icon="github" subtitle="github.com/credativ/pg_checksums" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_checksums-1.3.tar.gz" />}}
 {{< /cards >}}
 
 

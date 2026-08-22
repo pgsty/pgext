@@ -4,7 +4,10 @@ linkTitle: "session_variable"
 description: "Registration and manipulation of session variables and constants"
 weight: 9120
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["GPL-3.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**session_variable**](https://github.com/splendiddata/session_variable) : Registration and manipulation of session variables and constants
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `session_variable` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "session_variable_18" "green" >}} {{< bg "17" "session_variable_17" "green" >}} {{< bg "16" "session_variable_16" "green" >}} {{< bg "15" "session_variable_15" "green" >}} {{< bg "14" "session_variable_14" "green" >}} | `session_variable_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "postgresql-18-session-variable" "green" >}} {{< bg "17" "postgresql-17-session-variable" "green" >}} {{< bg "16" "postgresql-16-session-variable" "green" >}} {{< bg "15" "postgresql-15-session-variable" "green" >}} {{< bg "14" "postgresql-14-session-variable" "green" >}} | `postgresql-$v-session-variable` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.4" "postgresql-18-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-17-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-16-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-15-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-14-session-variable : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.4" "postgresql-18-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-17-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-16-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-15-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-14-session-variable : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.4" "postgresql-18-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-17-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-16-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-15-session-variable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4" "postgresql-14-session-variable : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -78,9 +83,10 @@ width: full
 | `postgresql-18-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.5 KiB | [postgresql-18-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-18-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-session-variable` | `3.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.5 KiB | [postgresql-18-session-variable_3.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-18-session-variable_3.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-session-variable` | `3.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 59.6 KiB | [postgresql-18-session-variable_3.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-18-session-variable_3.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -100,9 +106,10 @@ width: full
 | `postgresql-17-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.5 KiB | [postgresql-17-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-17-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-session-variable` | `3.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.7 KiB | [postgresql-17-session-variable_3.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-17-session-variable_3.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-session-variable` | `3.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 59.7 KiB | [postgresql-17-session-variable_3.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-17-session-variable_3.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -122,9 +129,10 @@ width: full
 | `postgresql-16-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.6 KiB | [postgresql-16-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-16-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-session-variable` | `3.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.7 KiB | [postgresql-16-session-variable_3.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-16-session-variable_3.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-session-variable` | `3.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 59.7 KiB | [postgresql-16-session-variable_3.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-16-session-variable_3.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -144,9 +152,10 @@ width: full
 | `postgresql-15-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.9 KiB | [postgresql-15-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-15-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-session-variable` | `3.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.9 KiB | [postgresql-15-session-variable_3.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-15-session-variable_3.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-session-variable` | `3.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.2 KiB | [postgresql-15-session-variable_3.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-15-session-variable_3.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -166,14 +175,15 @@ width: full
 | `postgresql-14-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.9 KiB | [postgresql-14-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-14-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-session-variable` | `3.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.9 KiB | [postgresql-14-session-variable_3.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-14-session-variable_3.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-session-variable` | `3.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.2 KiB | [postgresql-14-session-variable_3.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/session-variable/postgresql-14-session-variable_3.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/splendiddata/session_variable" title="Repository" icon="github" subtitle="github.com/splendiddata/session_variable" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="session_variable-3.4.tar.gz" >}}
+{{< card link="https://github.com/splendiddata/session_variable" title="Repository" icon="github" subtitle="github.com/splendiddata/session_variable" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="session_variable-3.4.tar.gz" />}}
 {{< /cards >}}
 
 

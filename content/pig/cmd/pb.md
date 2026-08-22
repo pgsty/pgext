@@ -1,7 +1,7 @@
 ---
 title: "CMD: pb"
 description: Manage pgBackRest backup and PITR with pig pb subcommand
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 670
 ---
 

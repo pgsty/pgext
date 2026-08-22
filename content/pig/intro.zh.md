@@ -1,9 +1,9 @@
 ---
 title: 简介
 description: 为什么我们还需要一个新的包管理器？尤其是针对 Postgres 扩展？
-icon: CircleHelp
+icon: fa-solid fa-circle-question
 weight: 100
-breadcrumbs: false
+breadcrumb: false
 ---
 
 你是否曾因安装或升级 PostgreSQL 扩展而头疼？翻查过时的文档、晦涩难懂的配置脚本，或是在 GitHub 上苦寻分支与补丁？

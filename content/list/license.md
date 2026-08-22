@@ -2,6 +2,7 @@
 title: "By License"
 description: "PostgreSQL extensions organized by open source license"
 weight: 300
+page_width: full
 ---
 
 PostgreSQL extension categorized by license.

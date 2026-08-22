@@ -4,7 +4,10 @@ linkTitle: "omni_shmem"
 description: "Shared Memory Management"
 weight: 2967
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**omni_shmem**](https://docs.omnigres.org/omni_shmem/) : Shared Memory Management
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `omni_shmem` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "omnigres_18" "green" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} | `omnigres_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-omnigres" "green" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} | `postgresql-$v-omnigres` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,13 +59,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://docs.omnigres.org/omni_shmem/" title="Repository" icon="link" subtitle="docs.omnigres.org/omni_shmem/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="omnigres-20251108.tar.gz" >}}
+{{< card link="https://docs.omnigres.org/omni_shmem/" title="Repository" icon="link" subtitle="docs.omnigres.org/omni_shmem/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="omnigres-20251108.tar.gz" />}}
 {{< /cards >}}
 
 

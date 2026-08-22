@@ -4,7 +4,10 @@ linkTitle: "pg_roast"
 description: "Opinionated PostgreSQL database auditor"
 weight: 7120
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_roast**](https://github.com/samirketema/pg_roast) : Opinionated PostgreSQL database auditor
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_roast` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_roast_18" "green" >}} {{< bg "17" "pg_roast_17" "green" >}} {{< bg "16" "pg_roast_16" "green" >}} {{< bg "15" "pg_roast_15" "green" >}} {{< bg "14" "pg_roast_14" "green" >}} | `pg_roast_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pg-roast" "green" >}} {{< bg "17" "postgresql-17-pg-roast" "green" >}} {{< bg "16" "postgresql-16-pg-roast" "green" >}} {{< bg "15" "postgresql-15-pg-roast" "green" >}} {{< bg "14" "postgresql-14-pg-roast" "green" >}} | `postgresql-$v-pg-roast` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-roast : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-roast : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-roast : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-roast : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,9 +85,10 @@ width: full
 | `postgresql-18-pg-roast` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.8 KiB | [postgresql-18-pg-roast_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-roast/postgresql-18-pg-roast_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-roast` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.8 KiB | [postgresql-18-pg-roast_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-18-pg-roast_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-roast` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-18-pg-roast_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-18-pg-roast_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -102,9 +108,10 @@ width: full
 | `postgresql-17-pg-roast` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.8 KiB | [postgresql-17-pg-roast_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-roast/postgresql-17-pg-roast_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-roast` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.8 KiB | [postgresql-17-pg-roast_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-17-pg-roast_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-roast` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-17-pg-roast_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-17-pg-roast_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -124,9 +131,10 @@ width: full
 | `postgresql-16-pg-roast` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.8 KiB | [postgresql-16-pg-roast_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-roast/postgresql-16-pg-roast_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-roast` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.7 KiB | [postgresql-16-pg-roast_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-16-pg-roast_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-roast` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-16-pg-roast_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-16-pg-roast_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -146,9 +154,10 @@ width: full
 | `postgresql-15-pg-roast` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.8 KiB | [postgresql-15-pg-roast_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-roast/postgresql-15-pg-roast_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-roast` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.9 KiB | [postgresql-15-pg-roast_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-15-pg-roast_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-roast` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-15-pg-roast_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-15-pg-roast_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -168,14 +177,15 @@ width: full
 | `postgresql-14-pg-roast` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.8 KiB | [postgresql-14-pg-roast_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-roast/postgresql-14-pg-roast_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-roast` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.9 KiB | [postgresql-14-pg-roast_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-14-pg-roast_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-roast` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-14-pg-roast_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-roast/postgresql-14-pg-roast_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/samirketema/pg_roast" title="Repository" icon="github" subtitle="github.com/samirketema/pg_roast" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_roast-1.0.tar.gz" >}}
+{{< card link="https://github.com/samirketema/pg_roast" title="Repository" icon="github" subtitle="github.com/samirketema/pg_roast" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_roast-1.0.tar.gz" />}}
 {{< /cards >}}
 
 

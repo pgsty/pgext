@@ -4,7 +4,10 @@ linkTitle: "xml2"
 description: "XPath querying and XSLT"
 weight: 3990
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**xml2**](https://www.postgresql.org/docs/current/xml2.html) : XPath querying and XSLT

@@ -4,7 +4,10 @@ linkTitle: "extra_window_functions"
 description: "Extra Window Functions for PostgreSQL"
 weight: 4720
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**extra_window_functions**](https://github.com/xocolatl/extra_window_functions) : Extra Window Functions for PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `extra_window_functions` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "extra_window_functions_18" "green" >}} {{< bg "17" "extra_window_functions_17" "green" >}} {{< bg "16" "extra_window_functions_16" "green" >}} {{< bg "15" "extra_window_functions_15" "green" >}} {{< bg "14" "extra_window_functions_14" "green" >}} | `extra_window_functions_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "postgresql-18-extra-window-functions" "green" >}} {{< bg "17" "postgresql-17-extra-window-functions" "green" >}} {{< bg "16" "postgresql-16-extra-window-functions" "green" >}} {{< bg "15" "postgresql-15-extra-window-functions" "green" >}} {{< bg "14" "postgresql-14-extra-window-functions" "green" >}} | `postgresql-$v-extra-window-functions` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-extra-window-functions : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0" "postgresql-18-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-extra-window-functions : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-extra-window-functions : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-extra-window-functions : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -83,9 +88,10 @@ width: full
 | `postgresql-18-extra-window-functions` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 15.9 KiB | [postgresql-18-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-18-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-extra-window-functions` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 15.8 KiB | [postgresql-18-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-18-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-extra-window-functions` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.8 KiB | [postgresql-18-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-18-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -109,9 +115,10 @@ width: full
 | `postgresql-17-extra-window-functions` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 15.9 KiB | [postgresql-17-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-17-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-extra-window-functions` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 15.8 KiB | [postgresql-17-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-17-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-extra-window-functions` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.9 KiB | [postgresql-17-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-17-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -135,9 +142,10 @@ width: full
 | `postgresql-16-extra-window-functions` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 15.9 KiB | [postgresql-16-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-16-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-extra-window-functions` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 15.8 KiB | [postgresql-16-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-16-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-extra-window-functions` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.9 KiB | [postgresql-16-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-16-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -161,9 +169,10 @@ width: full
 | `postgresql-15-extra-window-functions` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 15.9 KiB | [postgresql-15-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-15-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-extra-window-functions` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 15.8 KiB | [postgresql-15-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-15-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-extra-window-functions` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.9 KiB | [postgresql-15-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-15-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -186,13 +195,14 @@ width: full
 | `postgresql-14-extra-window-functions` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 15.8 KiB | [postgresql-14-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-14-extra-window-functions_1.0-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-extra-window-functions` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 15.8 KiB | [postgresql-14-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-14-extra-window-functions_1.0-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-extra-window-functions` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.9 KiB | [postgresql-14-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/e/extra-window-functions/postgresql-14-extra-window-functions_1.0-7.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/xocolatl/extra_window_functions" title="Repository" icon="github" subtitle="github.com/xocolatl/extra_window_functions" >}}
+{{< card link="https://github.com/xocolatl/extra_window_functions" title="Repository" icon="github" subtitle="github.com/xocolatl/extra_window_functions" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "unit"
 description: "SI units extension"
 weight: 3550
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["GPL-2.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pgunit**](https://github.com/df7cb/postgresql-unit) : SI units extension
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgunit` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.10` | {{< bg "18" "postgresql-unit_18" "green" >}} {{< bg "17" "postgresql-unit_17" "green" >}} {{< bg "16" "postgresql-unit_16" "green" >}} {{< bg "15" "postgresql-unit_15" "green" >}} {{< bg "14" "postgresql-unit_14" "green" >}} | `postgresql-unit_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.10` | {{< bg "18" "postgresql-18-unit" "green" >}} {{< bg "17" "postgresql-17-unit" "green" >}} {{< bg "16" "postgresql-16-unit" "green" >}} {{< bg "15" "postgresql-15-unit" "green" >}} {{< bg "14" "postgresql-14-unit" "green" >}} | `postgresql-$v-unit` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 7.10" "postgresql-18-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-17-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-16-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-15-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-14-unit : AVAIL 2" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 7.10" "postgresql-18-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-17-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-16-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-15-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-14-unit : AVAIL 2" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 7.10" "postgresql-18-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-17-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-16-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-15-unit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 7.10" "postgresql-14-unit : AVAIL 2" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -98,9 +103,10 @@ width: full
 | `postgresql-18-unit` | `7.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 157.8 KiB | [postgresql-18-unit_7.10-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-18-unit_7.10-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 167.9 KiB | [postgresql-18-unit_7.10-7PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-unit/postgresql-18-unit_7.10-7PGSTY~resolute_arm64.deb) |
 | `postgresql-18-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 156.2 KiB | [postgresql-18-unit_7.10-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-18-unit_7.10-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -144,9 +150,10 @@ width: full
 | `postgresql-17-unit` | `7.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 158.0 KiB | [postgresql-17-unit_7.10-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-17-unit_7.10-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 167.9 KiB | [postgresql-17-unit_7.10-7PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-unit/postgresql-17-unit_7.10-7PGSTY~resolute_arm64.deb) |
 | `postgresql-17-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 156.2 KiB | [postgresql-17-unit_7.10-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-17-unit_7.10-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -190,9 +197,10 @@ width: full
 | `postgresql-16-unit` | `7.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 157.6 KiB | [postgresql-16-unit_7.10-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-16-unit_7.10-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 167.8 KiB | [postgresql-16-unit_7.10-7PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-unit/postgresql-16-unit_7.10-7PGSTY~resolute_arm64.deb) |
 | `postgresql-16-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 156.2 KiB | [postgresql-16-unit_7.10-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-16-unit_7.10-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -240,9 +248,10 @@ width: full
 | `postgresql-15-unit` | `7.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 159.0 KiB | [postgresql-15-unit_7.10-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-15-unit_7.10-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 169.2 KiB | [postgresql-15-unit_7.10-7PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-unit/postgresql-15-unit_7.10-7PGSTY~resolute_arm64.deb) |
 | `postgresql-15-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 157.0 KiB | [postgresql-15-unit_7.10-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-15-unit_7.10-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -290,14 +299,15 @@ width: full
 | `postgresql-14-unit` | `7.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 159.0 KiB | [postgresql-14-unit_7.10-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-14-unit_7.10-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 169.2 KiB | [postgresql-14-unit_7.10-7PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-unit/postgresql-14-unit_7.10-7PGSTY~resolute_arm64.deb) |
 | `postgresql-14-unit` | `7.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 157.0 KiB | [postgresql-14-unit_7.10-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-unit/postgresql-14-unit_7.10-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/df7cb/postgresql-unit" title="Repository" icon="github" subtitle="github.com/df7cb/postgresql-unit" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql-unit-7.10.tar.gz" >}}
+{{< card link="https://github.com/df7cb/postgresql-unit" title="Repository" icon="github" subtitle="github.com/df7cb/postgresql-unit" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql-unit-7.10.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "logerrors"
 description: "Function for collecting statistics about messages in logfile"
 weight: 7140
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**logerrors**](https://github.com/munakoiso/logerrors) : Function for collecting statistics about messages in logfile
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `logerrors` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.5` | {{< bg "18" "logerrors_18" "green" >}} {{< bg "17" "logerrors_17" "green" >}} {{< bg "16" "logerrors_16" "green" >}} {{< bg "15" "logerrors_15" "green" >}} {{< bg "14" "logerrors_14" "green" >}} | `logerrors_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.5` | {{< bg "18" "postgresql-18-logerrors" "green" >}} {{< bg "17" "postgresql-17-logerrors" "green" >}} {{< bg "16" "postgresql-16-logerrors" "green" >}} {{< bg "15" "postgresql-15-logerrors" "green" >}} {{< bg "14" "postgresql-14-logerrors" "green" >}} | `postgresql-$v-logerrors` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-18-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-17-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-16-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-15-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-14-logerrors : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-18-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-17-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-16-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-15-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-14-logerrors : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-18-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-17-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-16-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-15-logerrors : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.5" "postgresql-14-logerrors : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-logerrors` | `2.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 32.2 KiB | [postgresql-18-logerrors_2.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/logerrors/postgresql-18-logerrors_2.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-logerrors` | `2.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.0 KiB | [postgresql-18-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-18-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-logerrors` | `2.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 32.7 KiB | [postgresql-18-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-18-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -113,9 +119,10 @@ width: full
 | `postgresql-17-logerrors` | `2.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 32.2 KiB | [postgresql-17-logerrors_2.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/logerrors/postgresql-17-logerrors_2.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-logerrors` | `2.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.9 KiB | [postgresql-17-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-17-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-logerrors` | `2.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 32.7 KiB | [postgresql-17-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-17-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -149,9 +156,10 @@ width: full
 | `postgresql-16-logerrors` | `2.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 32.2 KiB | [postgresql-16-logerrors_2.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/logerrors/postgresql-16-logerrors_2.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-logerrors` | `2.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.9 KiB | [postgresql-16-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-16-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-logerrors` | `2.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 32.7 KiB | [postgresql-16-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-16-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -201,9 +209,10 @@ width: full
 | `postgresql-15-logerrors` | `2.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 32.4 KiB | [postgresql-15-logerrors_2.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/logerrors/postgresql-15-logerrors_2.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-logerrors` | `2.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.1 KiB | [postgresql-15-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-15-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-logerrors` | `2.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 32.8 KiB | [postgresql-15-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-15-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -252,14 +261,15 @@ width: full
 | `postgresql-14-logerrors` | `2.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 32.3 KiB | [postgresql-14-logerrors_2.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/logerrors/postgresql-14-logerrors_2.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-logerrors` | `2.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.9 KiB | [postgresql-14-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-14-logerrors_2.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-logerrors` | `2.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 32.4 KiB | [postgresql-14-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/logerrors/postgresql-14-logerrors_2.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/munakoiso/logerrors" title="Repository" icon="github" subtitle="github.com/munakoiso/logerrors" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="logerrors-2.1.5.tar.gz" >}}
+{{< card link="https://github.com/munakoiso/logerrors" title="Repository" icon="github" subtitle="github.com/munakoiso/logerrors" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="logerrors-2.1.5.tar.gz" />}}
 {{< /cards >}}
 
 

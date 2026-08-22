@@ -1,7 +1,7 @@
 ---
 title: "CMD: repo"
 description: How to manage repositories with pig repo subcommand?
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 610
 ---
 

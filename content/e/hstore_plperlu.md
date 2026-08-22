@@ -4,7 +4,10 @@ linkTitle: "hstore_plperlu"
 description: "transform between hstore and plperlu"
 weight: 3273
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plperlu**](https://www.postgresql.org/docs/current/plperl.html) : transform between hstore and plperlu

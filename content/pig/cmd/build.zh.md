@@ -1,7 +1,7 @@
 ---
 title: "命令：build"
 description: 如何使用 pig build 子命令设置构建基础设施？
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 640
 ---
 

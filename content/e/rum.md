@@ -4,7 +4,10 @@ linkTitle: "rum"
 description: "RUM index access method"
 weight: 2710
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**rum**](https://github.com/postgrespro/rum) : RUM index access method
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.3.15` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `rum` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.15` | {{< bg "18" "rum_18" "green" >}} {{< bg "17" "rum_17" "green" >}} {{< bg "16" "rum_16" "green" >}} {{< bg "15" "rum_15" "green" >}} {{< bg "14" "rum_14" "green" >}} | `rum_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.15` | {{< bg "18" "postgresql-18-rum" "green" >}} {{< bg "17" "postgresql-17-rum" "green" >}} {{< bg "16" "postgresql-16-rum" "green" >}} {{< bg "15" "postgresql-15-rum" "green" >}} {{< bg "14" "postgresql-14-rum" "green" >}} | `postgresql-$v-rum` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 226.3 KiB | [postgresql-18-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 232.5 KiB | [postgresql-18-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 223.8 KiB | [postgresql-18-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -111,9 +117,10 @@ width: full
 | `postgresql-17-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 227.0 KiB | [postgresql-17-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 233.0 KiB | [postgresql-17-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 224.1 KiB | [postgresql-17-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,9 +154,10 @@ width: full
 | `postgresql-16-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 226.9 KiB | [postgresql-16-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 232.8 KiB | [postgresql-16-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 224.1 KiB | [postgresql-16-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -177,9 +185,10 @@ width: full
 | `postgresql-15-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 279.2 KiB | [postgresql-15-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 287.3 KiB | [postgresql-15-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 276.8 KiB | [postgresql-15-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -208,14 +217,15 @@ width: full
 | `postgresql-14-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 277.8 KiB | [postgresql-14-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 284.9 KiB | [postgresql-14-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 274.7 KiB | [postgresql-14-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/postgrespro/rum" title="Repository" icon="github" subtitle="github.com/postgrespro/rum" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="rum-1.3.15.tar.gz" >}}
+{{< card link="https://github.com/postgrespro/rum" title="Repository" icon="github" subtitle="github.com/postgrespro/rum" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="rum-1.3.15.tar.gz" />}}
 {{< /cards >}}
 
 

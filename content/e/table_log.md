@@ -4,7 +4,10 @@ linkTitle: "table_log"
 description: "record table modification logs and PITR for table/row"
 weight: 5860
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**table_log**](https://github.com/df7cb/table_log) : record table modification logs and PITR for table/row
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `table_log` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "table_log_18" "green" >}} {{< bg "17" "table_log_17" "green" >}} {{< bg "16" "table_log_16" "green" >}} {{< bg "15" "table_log_15" "green" >}} {{< bg "14" "table_log_14" "green" >}} | `table_log_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.6.4` | {{< bg "18" "postgresql-18-tablelog" "green" >}} {{< bg "17" "postgresql-17-tablelog" "green" >}} {{< bg "16" "postgresql-16-tablelog" "green" >}} {{< bg "15" "postgresql-15-tablelog" "green" >}} {{< bg "14" "postgresql-14-tablelog" "green" >}} | `postgresql-$v-tablelog` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.6.4" "postgresql-18-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-17-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-16-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-15-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-14-tablelog : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.6.4" "postgresql-18-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-17-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-16-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-15-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-14-tablelog : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.6.4" "postgresql-18-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-17-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-16-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-15-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-14-tablelog : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-tablelog` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.7 KiB | [postgresql-18-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-18-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-tablelog` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.5 KiB | [postgresql-18-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-18-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-tablelog` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.5 KiB | [postgresql-18-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-18-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-tablelog` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.6 KiB | [postgresql-17-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-17-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-tablelog` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.5 KiB | [postgresql-17-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-17-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-tablelog` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.5 KiB | [postgresql-17-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-17-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-tablelog` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.7 KiB | [postgresql-16-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-16-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-tablelog` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.4 KiB | [postgresql-16-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-16-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-tablelog` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.4 KiB | [postgresql-16-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-16-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-tablelog` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.6 KiB | [postgresql-15-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-15-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-tablelog` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.5 KiB | [postgresql-15-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-15-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-tablelog` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.5 KiB | [postgresql-15-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-15-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-tablelog` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.6 KiB | [postgresql-14-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-14-tablelog_0.6.4-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-tablelog` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.5 KiB | [postgresql-14-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-14-tablelog_0.6.4-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-tablelog` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.4 KiB | [postgresql-14-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-14-tablelog_0.6.4-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/df7cb/table_log" title="Repository" icon="github" subtitle="github.com/df7cb/table_log" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="table_log-0.6.4.tar.gz" >}}
+{{< card link="https://github.com/df7cb/table_log" title="Repository" icon="github" subtitle="github.com/df7cb/table_log" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="table_log-0.6.4.tar.gz" />}}
 {{< /cards >}}
 
 

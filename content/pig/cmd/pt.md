@@ -1,7 +1,7 @@
 ---
 title: "CMD: pt"
 description: Run patronictl transparently with Pigsty service and config helpers
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 660
 ---
 

@@ -4,7 +4,10 @@ linkTitle: "tcn"
 description: "Triggered change notifications"
 weight: 4920
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**tcn**](https://www.postgresql.org/docs/current/tcn.html) : Triggered change notifications

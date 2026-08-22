@@ -4,7 +4,10 @@ linkTitle: "vectorize"
 description: "The simplest way to do vector search on Postgres"
 weight: 1830
 categories: ["RAG"]
-width: full
+languages: ["Rust"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_vectorize**](https://github.com/ChuckHend/pg_vectorize) : The simplest way to do vector search on Postgres
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_vectorize` | `pg_cron`, `pgmq`, `vector` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.2` | {{< bg "18" "pg_vectorize_18" "green" >}} {{< bg "17" "pg_vectorize_17" "green" >}} {{< bg "16" "pg_vectorize_16" "green" >}} {{< bg "15" "pg_vectorize_15" "green" >}} {{< bg "14" "pg_vectorize_14" "green" >}} | `pg_vectorize_$v` | `pgmq_$v`, `pg_cron_$v`, `pgvector_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.2` | {{< bg "18" "postgresql-18-pg-vectorize" "green" >}} {{< bg "17" "postgresql-17-pg-vectorize" "green" >}} {{< bg "16" "postgresql-16-pg-vectorize" "green" >}} {{< bg "15" "postgresql-15-pg-vectorize" "green" >}} {{< bg "14" "postgresql-14-pg-vectorize" "green" >}} | `postgresql-$v-pg-vectorize` | `postgresql-$v-pgmq`, `postgresql-$v-pg-cron`, `postgresql-$v-pgvector` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-18-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-18-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-18-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-pg-vectorize` | `0.26.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.6 MiB | [postgresql-18-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-18-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-vectorize` | `0.26.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.0 MiB | [postgresql-18-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-18-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-vectorize` | `0.26.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [postgresql-18-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-18-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -103,9 +109,10 @@ width: full
 | `postgresql-17-pg-vectorize` | `0.26.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.6 MiB | [postgresql-17-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-vectorize` | `0.26.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.0 MiB | [postgresql-17-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-vectorize` | `0.26.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [postgresql-17-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,9 +132,10 @@ width: full
 | `postgresql-16-pg-vectorize` | `0.26.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.6 MiB | [postgresql-16-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-vectorize` | `0.26.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.0 MiB | [postgresql-16-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-vectorize` | `0.26.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [postgresql-16-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,9 +155,10 @@ width: full
 | `postgresql-15-pg-vectorize` | `0.26.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.6 MiB | [postgresql-15-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-vectorize` | `0.26.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.9 MiB | [postgresql-15-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-vectorize` | `0.26.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [postgresql-15-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -169,14 +178,15 @@ width: full
 | `postgresql-14-pg-vectorize` | `0.26.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.6 MiB | [postgresql-14-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.26.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-vectorize` | `0.26.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.9 MiB | [postgresql-14-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.26.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-vectorize` | `0.26.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [postgresql-14-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.26.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/ChuckHend/pg_vectorize" title="Repository" icon="github" subtitle="github.com/ChuckHend/pg_vectorize" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_vectorize-0.26.2.tar.gz" >}}
+{{< card link="https://github.com/ChuckHend/pg_vectorize" title="Repository" icon="github" subtitle="github.com/ChuckHend/pg_vectorize" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_vectorize-0.26.2.tar.gz" />}}
 {{< /cards >}}
 
 

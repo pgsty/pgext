@@ -4,7 +4,10 @@ linkTitle: "insert_username"
 description: "functions for tracking who changed a table"
 weight: 4882
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**insert_username**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-INSERT-USERNAME) : functions for tracking who changed a table

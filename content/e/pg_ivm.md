@@ -4,7 +4,10 @@ linkTitle: "pg_ivm"
 description: "incremental view maintenance on PostgreSQL"
 weight: 2840
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_ivm**](https://github.com/sraoss/pg_ivm) : incremental view maintenance on PostgreSQL
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.15` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ivm` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.15` | {{< bg "18" "pg_ivm_18" "green" >}} {{< bg "17" "pg_ivm_17" "green" >}} {{< bg "16" "pg_ivm_16" "green" >}} {{< bg "15" "pg_ivm_15" "green" >}} {{< bg "14" "pg_ivm_14" "green" >}} | `pg_ivm_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.15` | {{< bg "18" "postgresql-18-pg-ivm" "green" >}} {{< bg "17" "postgresql-17-pg-ivm" "green" >}} {{< bg "16" "postgresql-16-pg-ivm" "green" >}} {{< bg "15" "postgresql-15-pg-ivm" "green" >}} {{< bg "14" "postgresql-14-pg-ivm" "green" >}} | `postgresql-$v-pg-ivm` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.15" "postgresql-18-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-17-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-16-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-15-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-14-pg-ivm : AVAIL 2" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.15" "postgresql-18-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-17-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-16-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-15-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-14-pg-ivm : AVAIL 2" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.15" "postgresql-18-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-17-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-16-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-15-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.15" "postgresql-14-pg-ivm : AVAIL 2" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -122,9 +127,10 @@ width: full
 | `postgresql-18-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 117.1 KiB | [postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pg-ivm` | `1.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 126.4 KiB | [postgresql-18-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.6 KiB | [postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -196,9 +202,10 @@ width: full
 | `postgresql-17-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 116.8 KiB | [postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-ivm` | `1.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 126.1 KiB | [postgresql-17-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.6 KiB | [postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -274,9 +281,10 @@ width: full
 | `postgresql-16-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 117.0 KiB | [postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-ivm` | `1.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 126.2 KiB | [postgresql-16-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-16-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.5 KiB | [postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -372,9 +380,10 @@ width: full
 | `postgresql-15-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 117.1 KiB | [postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pg-ivm` | `1.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 126.4 KiB | [postgresql-15-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-15-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.6 KiB | [postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -477,14 +486,15 @@ width: full
 | `postgresql-14-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 206.0 KiB | [postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pg-ivm` | `1.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 217.1 KiB | [postgresql-14-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.15-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-14-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 198.6 KiB | [postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/sraoss/pg_ivm" title="Repository" icon="github" subtitle="github.com/sraoss/pg_ivm" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ivm-1.15.tar.gz" >}}
+{{< card link="https://github.com/sraoss/pg_ivm" title="Repository" icon="github" subtitle="github.com/sraoss/pg_ivm" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ivm-1.15.tar.gz" />}}
 {{< /cards >}}
 
 

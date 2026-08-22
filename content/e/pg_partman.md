@@ -4,7 +4,10 @@ linkTitle: "pg_partman"
 description: "Extension to manage partitioned tables by time or ID"
 weight: 2510
 categories: ["OLAP"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_partman**](https://github.com/pgpartman/pg_partman) : Extension to manage partitioned tables by time or ID
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_partman` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "pg_partman_18" "green" >}} {{< bg "17" "pg_partman_17" "green" >}} {{< bg "16" "pg_partman_16" "green" >}} {{< bg "15" "pg_partman_15" "green" >}} {{< bg "14" "pg_partman_14" "green" >}} | `pg_partman_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} {{< bg "14" "postgresql-14-partman" "green" >}} | `postgresql-$v-partman` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-18-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-17-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-16-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-15-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-14-partman : AVAIL 4" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-18-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-17-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-16-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-15-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-14-partman : AVAIL 4" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-18-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-17-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-16-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-15-partman : AVAIL 4" "green" >}} | {{< bg "PIGSTY 5.5.0" "postgresql-14-partman : AVAIL 4" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -177,9 +182,10 @@ width: full
 | `postgresql-18-partman` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 233.4 KiB | [postgresql-18-partman_5.5.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.5.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.0 KiB | [postgresql-18-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.4 KiB | [postgresql-18-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -317,9 +323,10 @@ width: full
 | `postgresql-17-partman` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 233.3 KiB | [postgresql-17-partman_5.5.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.5.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-17-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-17-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -473,9 +480,10 @@ width: full
 | `postgresql-16-partman` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 233.3 KiB | [postgresql-16-partman_5.5.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.5.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-16-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-16-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -643,9 +651,10 @@ width: full
 | `postgresql-15-partman` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 233.3 KiB | [postgresql-15-partman_5.5.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.5.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-15-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-15-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -819,14 +828,15 @@ width: full
 | `postgresql-14-partman` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 233.4 KiB | [postgresql-14-partman_5.5.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.5.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-14-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-14-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgpartman/pg_partman" title="Repository" icon="github" subtitle="github.com/pgpartman/pg_partman" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_partman-5.5.0.tar.gz" >}}
+{{< card link="https://github.com/pgpartman/pg_partman" title="Repository" icon="github" subtitle="github.com/pgpartman/pg_partman" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_partman-5.5.0.tar.gz" />}}
 {{< /cards >}}
 
 

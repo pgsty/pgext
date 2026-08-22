@@ -4,7 +4,10 @@ linkTitle: "seg"
 description: "data type for representing line segments or floating-point intervals"
 weight: 3940
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**seg**](https://www.postgresql.org/docs/current/seg.html) : data type for representing line segments or floating-point intervals

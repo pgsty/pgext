@@ -4,7 +4,10 @@ linkTitle: "datasketches"
 description: "Approximate analytics sketches and aggregates for PostgreSQL"
 weight: 4690
 categories: ["FUNC"]
-width: full
+languages: ["C++"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**datasketches**](https://github.com/apache/datasketches-postgresql) : Approximate analytics sketches and aggregates for PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `datasketches` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "datasketches_18" "green" >}} {{< bg "17" "datasketches_17" "green" >}} {{< bg "16" "datasketches_16" "green" >}} {{< bg "15" "datasketches_15" "green" >}} {{< bg "14" "datasketches_14" "green" >}} | `datasketches_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "postgresql-18-datasketches" "green" >}} {{< bg "17" "postgresql-17-datasketches" "green" >}} {{< bg "16" "postgresql-16-datasketches" "green" >}} {{< bg "15" "postgresql-15-datasketches" "green" >}} {{< bg "14" "postgresql-14-datasketches" "green" >}} | `postgresql-$v-datasketches` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 991.3 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 945.1 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 951.7 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 991.2 KiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 945.1 KiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 951.5 KiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 991.2 KiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 945.1 KiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 951.5 KiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 998.8 KiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 951.8 KiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 957.7 KiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 998.7 KiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 951.7 KiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 957.5 KiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/apache/datasketches-postgresql" title="Repository" icon="github" subtitle="github.com/apache/datasketches-postgresql" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="apache-datasketches-postgresql-1.7.0-src.tar.gz" >}}
+{{< card link="https://github.com/apache/datasketches-postgresql" title="Repository" icon="github" subtitle="github.com/apache/datasketches-postgresql" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="apache-datasketches-postgresql-1.7.0-src.tar.gz" />}}
 {{< /cards >}}
 
 

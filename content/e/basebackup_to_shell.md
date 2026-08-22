@@ -4,7 +4,10 @@ linkTitle: "basebackup_to_shell"
 description: "adds a custom basebackup target called shell"
 weight: 5950
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**basebackup_to_shell**](https://www.postgresql.org/docs/current/basebackup-to-shell.html) : adds a custom basebackup target called shell

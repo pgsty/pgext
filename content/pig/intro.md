@@ -2,8 +2,8 @@
 title: Introduction
 description: Why would we need yet another package manager? especially for Postgres extensions?
 weight: 100
-icon: CircleHelp
-breadcrumbs: false
+icon: fa-solid fa-circle-question
+breadcrumb: false
 ---
 
 Have you ever struggled with installing or upgrading PostgreSQL extensions? Digging through outdated documentation, cryptic configuration scripts, or searching GitHub for forks and patches?

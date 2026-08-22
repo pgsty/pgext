@@ -86,10 +86,10 @@ func (g *GlobalMatrixGenerator) Generate(ctx context.Context) error {
 	}
 
 	osDir := filepath.Join(g.ContentDir, "os")
-	if err := WriteMarkdownFile(filepath.Join(osDir, "matrix.md"), g.renderPage(rows, osVersions, pgVersions, stats, "en")); err != nil {
+	if err := WriteMarkdownFile(filepath.Join(osDir, "matrix.md"), g.renderPage("en")); err != nil {
 		return fmt.Errorf("write English matrix page: %w", err)
 	}
-	if err := WriteMarkdownFile(filepath.Join(osDir, "matrix.zh.md"), g.renderPage(rows, osVersions, pgVersions, stats, "zh")); err != nil {
+	if err := WriteMarkdownFile(filepath.Join(osDir, "matrix.zh.md"), g.renderPage("zh")); err != nil {
 		return fmt.Errorf("write Chinese matrix page: %w", err)
 	}
 
@@ -410,163 +410,31 @@ func ascendingPGVersions(values []int) []int {
 	return result
 }
 
-func (g *GlobalMatrixGenerator) renderPage(rows []*GlobalMatrixRow, osVersions []OSVersion, pgVersions []int, stats globalMatrixStats, locale string) string {
-	isZh := locale == "zh"
+// renderPage writes the global matrix page, which is front matter only: the
+// grid itself is drawn by the site's `matrix` layout from the JSON export
+// written alongside it. That keeps a page which would otherwise be eight
+// megabytes of table markup under a kilobyte, and keeps one copy of the rows
+// instead of three.
+func (g *GlobalMatrixGenerator) renderPage(locale string) string {
 	title := "Global Matrix"
 	description := "Global PostgreSQL extension package availability matrix across OS and PG versions"
-	intro := fmt.Sprintf("This matrix compresses <strong>%d</strong> package rows across <strong>%d</strong> operating systems and <strong>%d</strong> PostgreSQL majors into <strong>%d</strong> colored slots.", stats.Rows, stats.OS, stats.PG, stats.Cells)
-	if isZh {
+	if locale == "zh" {
 		title = "全局矩阵"
 		description = "跨操作系统与 PostgreSQL 大版本的扩展包可用性全局矩阵"
-		intro = fmt.Sprintf("这个矩阵将 <strong>%d</strong> 个扩展包、<strong>%d</strong> 个操作系统、<strong>%d</strong> 个 PostgreSQL 大版本压缩为 <strong>%d</strong> 个彩色槽位。", stats.Rows, stats.OS, stats.PG, stats.Cells)
 	}
 
-	var b strings.Builder
-	b.WriteString(fmt.Sprintf(`---
+	return fmt.Sprintf(`---
 title: "%s"
 linkTitle: "%s"
 description: "%s"
 weight: 699
-width: full
+layout: matrix
+page_width: full
+sidebar_enabled: false
+breadcrumb: false
+search_exclude: true
 ---
-
-`, title, title, description))
-
-	b.WriteString(globalMatrixCSS())
-	b.WriteString(`<div class="gm-page">` + "\n")
-	b.WriteString(fmt.Sprintf("<p>%s</p>\n", intro))
-	b.WriteString(g.renderSummary(stats, isZh))
-	b.WriteString(g.renderLegend(stats, isZh))
-	b.WriteString(`<p class="gm-links"><a href="/matrix/pgext-global-matrix.csv">CSV</a> <a href="/matrix/pgext-global-matrix.json">JSON</a></p>` + "\n")
-	b.WriteString(g.renderHTMLMatrix(rows, osVersions, pgVersions))
-	b.WriteString(g.renderLetterMatrix(rows, osVersions, pgVersions, isZh))
-	b.WriteString("</div>\n")
-
-	return b.String()
-}
-
-func (g *GlobalMatrixGenerator) renderSummary(stats globalMatrixStats, isZh bool) string {
-	labels := []string{"Packages", "OS", "PG", "Cells"}
-	if isZh {
-		labels = []string{"扩展包", "操作系统", "PG版本", "槽位"}
-	}
-	values := []int{stats.Rows, stats.OS, stats.PG, stats.Cells}
-
-	var b strings.Builder
-	b.WriteString(`<div class="gm-summary">`)
-	for i, label := range labels {
-		b.WriteString(fmt.Sprintf(`<div class="gm-stat"><strong>%d</strong><span>%s</span></div>`, values[i], label))
-	}
-	b.WriteString(`</div>` + "\n")
-	return b.String()
-}
-
-func (g *GlobalMatrixGenerator) renderLegend(stats globalMatrixStats, isZh bool) string {
-	labels := map[string]string{
-		"B": "PGDG",
-		"G": "Pigsty",
-		"R": "Missing",
-		".": "N/A",
-	}
-	if isZh {
-		labels = map[string]string{
-			"B": "PGDG",
-			"G": "Pigsty",
-			"R": "缺失",
-			".": "N/A",
-		}
-	}
-
-	var b strings.Builder
-	b.WriteString(`<div class="gm-legend">`)
-	for _, item := range globalMatrixLegend {
-		count := stats.Counts[item.Code]
-		b.WriteString(fmt.Sprintf(`<span><i class="gm-dot %s"></i><b>%s</b><em>%d</em></span>`, item.Class, labels[item.Code], count))
-	}
-	b.WriteString(`</div>` + "\n")
-	return b.String()
-}
-
-func (g *GlobalMatrixGenerator) renderHTMLMatrix(rows []*GlobalMatrixRow, osVersions []OSVersion, pgVersions []int) string {
-	var b strings.Builder
-	b.WriteString(`<div class="gm-table-wrap">` + "\n")
-	b.WriteString(`<table class="gm-table">` + "\n<thead>\n<tr>")
-	b.WriteString(`<th class="gm-pkg-head" rowspan="2">PKG</th>`)
-	for _, osv := range osVersions {
-		b.WriteString(fmt.Sprintf(`<th class="gm-os-head gm-group-start" colspan="%d"><a href="/os/%s">%s</a></th>`, len(pgVersions), html.EscapeString(osv.OS), html.EscapeString(osv.OS)))
-	}
-	b.WriteString("</tr>\n<tr>")
-	for range osVersions {
-		for i, pg := range pgVersions {
-			groupClass := ""
-			if i == 0 {
-				groupClass = " gm-group-start"
-			}
-			b.WriteString(fmt.Sprintf(`<th class="gm-pg-head%s">%d</th>`, groupClass, pg))
-		}
-	}
-	b.WriteString("</tr>\n</thead>\n<tbody>\n")
-
-	for _, row := range rows {
-		b.WriteString("<tr>")
-		b.WriteString(fmt.Sprintf(`<th class="gm-pkg-cell"><a href="%s/%s">%s</a></th>`, globalMatrixBaseURL, html.EscapeString(row.Ext), html.EscapeString(row.Pkg)))
-		for _, osv := range osVersions {
-			for i, pg := range pgVersions {
-				cell := row.Cells[osv.OS][pg]
-				groupClass := ""
-				if i == 0 {
-					groupClass = " gm-group-start"
-				}
-				b.WriteString(fmt.Sprintf(`<td class="gm-cell%s" title="%s" data-code="%s"><span class="gm-dot %s" aria-label="%s">%s</span></td>`,
-					groupClass,
-					html.EscapeString(cell.Title),
-					html.EscapeString(cell.Code),
-					html.EscapeString(cell.Class),
-					html.EscapeString(cell.Title),
-					html.EscapeString(cell.Code),
-				))
-			}
-		}
-		b.WriteString("</tr>\n")
-	}
-
-	b.WriteString("</tbody>\n</table>\n</div>\n")
-	return b.String()
-}
-
-func (g *GlobalMatrixGenerator) renderLetterMatrix(rows []*GlobalMatrixRow, osVersions []OSVersion, pgVersions []int, isZh bool) string {
-	summary := "Letter matrix data"
-	if isZh {
-		summary = "字母矩阵数据"
-	}
-
-	var b strings.Builder
-	b.WriteString(fmt.Sprintf(`<details class="gm-letter"><summary>%s</summary><pre>`, summary))
-	for i, row := range rows {
-		if i > 0 {
-			b.WriteByte('\n')
-		}
-		b.WriteString(html.EscapeString(formatGlobalMatrixLetterLine(row, osVersions, pgVersions)))
-	}
-	b.WriteString(`</pre></details>` + "\n")
-	return b.String()
-}
-
-func formatGlobalMatrixLetterLine(row *GlobalMatrixRow, osVersions []OSVersion, pgVersions []int) string {
-	groups := make([]string, 0, len(osVersions))
-	for _, osv := range osVersions {
-		var group strings.Builder
-		for _, pg := range pgVersions {
-			cell := row.Cells[osv.OS][pg]
-			if cell.Code == "" {
-				group.WriteByte('?')
-			} else {
-				group.WriteString(cell.Code)
-			}
-		}
-		groups = append(groups, group.String())
-	}
-	return fmt.Sprintf("[%s](%s/%s) | %s", row.Pkg, globalMatrixBaseURL, row.Ext, strings.Join(groups, " | "))
+`, title, title, description)
 }
 
 func (g *GlobalMatrixGenerator) writeCSV(path string, rows []*GlobalMatrixRow, osVersions []OSVersion, pgVersions []int) error {
@@ -1095,207 +963,4 @@ for (const tab of tabs) {
 }
 applyMatrixMode(document.body.dataset.view || "pgdg");
 </script>`
-}
-
-func globalMatrixCSS() string {
-	return `<style>
-.gm-page {
-  --gm-bg: #ffffff;
-  --gm-text: #111827;
-  --gm-muted: #6b7280;
-  --gm-border: #d1d5db;
-  --gm-soft: #f8fafc;
-  --gm-pgdg: rgb(91, 156, 213);
-  --gm-pigsty: rgb(96, 190, 89);
-  --gm-na: rgb(108, 108, 108);
-  --gm-missing: rgb(204, 70, 55);
-  color: var(--gm-text);
-}
-.gm-summary {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  margin: 18px 0 14px;
-}
-.gm-stat {
-  border: 1px solid var(--gm-border);
-  border-radius: 8px;
-  padding: 10px 12px;
-  background: var(--gm-soft);
-}
-.gm-stat strong {
-  display: block;
-  font-size: 24px;
-  line-height: 1.1;
-}
-.gm-stat span {
-  display: block;
-  color: var(--gm-muted);
-  font-size: 12px;
-  margin-top: 2px;
-}
-.gm-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 10px 0 8px;
-}
-.gm-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid var(--gm-border);
-  border-radius: 999px;
-  padding: 5px 8px;
-  font-size: 12px;
-  line-height: 1;
-  background: #fff;
-}
-.gm-legend em {
-  color: var(--gm-muted);
-  font-style: normal;
-}
-.gm-links {
-  font-size: 13px;
-  margin: 8px 0 14px;
-}
-.gm-links a {
-  margin-right: 12px;
-}
-.gm-table-wrap {
-  max-height: 78vh;
-  overflow: auto;
-  border: 1px solid var(--gm-border);
-  border-radius: 8px;
-  background: #fff;
-}
-.gm-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  table-layout: fixed;
-  font-size: 11px;
-  line-height: 1;
-  width: max-content;
-  min-width: 100%;
-}
-.gm-table th,
-.gm-table td {
-  border-right: 1px solid #edf0f4;
-  border-bottom: 1px solid #edf0f4;
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
-}
-.gm-table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: #f3f4f6;
-  color: #374151;
-}
-.gm-table thead tr:nth-child(2) th {
-  top: 24px;
-}
-.gm-pkg-head,
-.gm-pkg-cell {
-  position: sticky;
-  left: 0;
-  z-index: 6;
-  width: 190px;
-  min-width: 190px;
-  max-width: 190px;
-  background: #fff;
-  text-align: left !important;
-}
-.gm-pkg-head {
-  top: 0;
-  z-index: 9 !important;
-  padding-left: 8px !important;
-  background: #f3f4f6 !important;
-}
-.gm-pkg-cell {
-  padding: 0 8px !important;
-  height: 20px;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.gm-pkg-cell a {
-  color: #111827;
-  text-decoration: none;
-}
-.gm-pkg-cell a:hover {
-  text-decoration: underline;
-}
-.gm-os-head {
-  height: 24px;
-  min-width: 76px;
-  font-size: 11px;
-  font-weight: 700;
-}
-.gm-os-head a {
-  color: #374151;
-  text-decoration: none;
-}
-.gm-pg-head {
-  width: 15px;
-  min-width: 15px;
-  height: 18px;
-  font-size: 9px;
-  font-weight: 600;
-  color: #6b7280;
-}
-.gm-cell {
-  width: 15px;
-  min-width: 15px;
-  height: 20px;
-}
-.gm-group-start {
-  border-left: 2px solid #cbd5e1 !important;
-}
-.gm-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  font-size: 0;
-  color: transparent;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
-}
-.gm-pgdg { background: var(--gm-pgdg); }
-.gm-pigsty { background: var(--gm-pigsty); }
-.gm-na { background: var(--gm-na); }
-.gm-missing { background: var(--gm-missing); }
-.gm-letter {
-  margin-top: 18px;
-}
-.gm-letter summary {
-  cursor: pointer;
-  font-weight: 700;
-}
-.gm-letter pre {
-  max-height: 420px;
-  overflow: auto;
-  border: 1px solid var(--gm-border);
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 11px;
-  line-height: 1.45;
-  background: #0f172a;
-  color: #e5e7eb;
-}
-@media (max-width: 760px) {
-  .gm-summary {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .gm-pkg-head,
-  .gm-pkg-cell {
-    width: 132px;
-    min-width: 132px;
-    max-width: 132px;
-  }
-}
-</style>
-`
 }

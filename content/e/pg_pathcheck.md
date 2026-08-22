@@ -4,7 +4,10 @@ linkTitle: "pg_pathcheck"
 description: "Validate planner Path trees for freed or corrupt memory"
 weight: 5250
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_pathcheck**](https://github.com/danolivo/pg_pathcheck) : Validate planner Path trees for freed or corrupt memory
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_pathcheck` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9.1` | {{< bg "18" "pg_pathcheck_18" "green" >}} {{< bg "17" "pg_pathcheck_17" "green" >}} {{< bg "16" "pg_pathcheck_16" "red" >}} {{< bg "15" "pg_pathcheck_15" "red" >}} {{< bg "14" "pg_pathcheck_14" "red" >}} | `pg_pathcheck_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9.1` | {{< bg "18" "postgresql-18-pg-pathcheck" "green" >}} {{< bg "17" "postgresql-17-pg-pathcheck" "green" >}} {{< bg "16" "postgresql-16-pg-pathcheck" "red" >}} {{< bg "15" "postgresql-15-pg-pathcheck" "red" >}} {{< bg "14" "postgresql-14-pg-pathcheck" "red" >}} | `postgresql-$v-pg-pathcheck` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.9.1" "postgresql-18-pg-pathcheck : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.1" "postgresql-17-pg-pathcheck : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-pathcheck : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-pathcheck : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-pathcheck : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.9.1" "postgresql-18-pg-pathcheck : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.1" "postgresql-17-pg-pathcheck : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-pathcheck : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-pathcheck : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-pathcheck : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.9.1" "postgresql-18-pg-pathcheck : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.1" "postgresql-17-pg-pathcheck : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-pathcheck : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-pathcheck : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-pathcheck : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-pathcheck` | `0.9.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.9 KiB | [postgresql-18-pg-pathcheck_0.9.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pathcheck/postgresql-18-pg-pathcheck_0.9.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-pathcheck` | `0.9.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 62.2 KiB | [postgresql-18-pg-pathcheck_0.9.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pathcheck/postgresql-18-pg-pathcheck_0.9.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-pathcheck` | `0.9.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.3 KiB | [postgresql-18-pg-pathcheck_0.9.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pathcheck/postgresql-18-pg-pathcheck_0.9.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,14 +107,15 @@ width: full
 | `postgresql-17-pg-pathcheck` | `0.9.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.5 KiB | [postgresql-17-pg-pathcheck_0.9.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pathcheck/postgresql-17-pg-pathcheck_0.9.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-pathcheck` | `0.9.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.8 KiB | [postgresql-17-pg-pathcheck_0.9.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pathcheck/postgresql-17-pg-pathcheck_0.9.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-pathcheck` | `0.9.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 61.9 KiB | [postgresql-17-pg-pathcheck_0.9.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pathcheck/postgresql-17-pg-pathcheck_0.9.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/danolivo/pg_pathcheck" title="Repository" icon="github" subtitle="github.com/danolivo/pg_pathcheck" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_pathcheck-0.9.1-pg17-18.tar.gz" >}}
+{{< card link="https://github.com/danolivo/pg_pathcheck" title="Repository" icon="github" subtitle="github.com/danolivo/pg_pathcheck" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_pathcheck-0.9.1-pg17-18.tar.gz" />}}
 {{< /cards >}}
 
 

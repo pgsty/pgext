@@ -4,7 +4,10 @@ linkTitle: "orioledb"
 description: "OrioleDB, the next generation transactional engine"
 weight: 2910
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**orioledb**](https://github.com/orioledb/orioledb) : OrioleDB, the next generation transactional engine
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `orioledb` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "orioledb-18" "green" >}} {{< bg "17" "orioledb-17" "green" >}} {{< bg "16" "orioledb-16" "green" >}} {{< bg "15" "orioledb-15" "red" >}} {{< bg "14" "orioledb-14" "red" >}} | `orioledb-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "orioledb-18" "green" >}} {{< bg "17" "orioledb-17" "green" >}} {{< bg "16" "orioledb-16" "green" >}} {{< bg "15" "orioledb-15" "red" >}} {{< bg "14" "orioledb-14" "red" >}} | `orioledb-$v` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.8" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.8" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.8" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `orioledb-18` | `1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 MiB | [orioledb-18_1.8-0.beta16PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-18/orioledb-18_1.8-0.beta16PIGSTY~noble_arm64.deb) |
 | `orioledb-18` | `1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.6 MiB | [orioledb-18_1.8-0.beta16PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-18/orioledb-18_1.8-0.beta16PIGSTY~resolute_amd64.deb) |
 | `orioledb-18` | `1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.3 MiB | [orioledb-18_1.8-0.beta16PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-18/orioledb-18_1.8-0.beta16PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `orioledb-17` | `1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.0 MiB | [orioledb-17_1.8-0.beta16PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-17/orioledb-17_1.8-0.beta16PIGSTY~noble_arm64.deb) |
 | `orioledb-17` | `1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.2 MiB | [orioledb-17_1.8-0.beta16PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-17/orioledb-17_1.8-0.beta16PIGSTY~resolute_amd64.deb) |
 | `orioledb-17` | `1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.9 MiB | [orioledb-17_1.8-0.beta16PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-17/orioledb-17_1.8-0.beta16PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,14 +130,15 @@ width: full
 | `orioledb-16` | `1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.5 MiB | [orioledb-16_1.8-0.beta16PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-16/orioledb-16_1.8-0.beta16PIGSTY~noble_arm64.deb) |
 | `orioledb-16` | `1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.7 MiB | [orioledb-16_1.8-0.beta16PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-16/orioledb-16_1.8-0.beta16PIGSTY~resolute_amd64.deb) |
 | `orioledb-16` | `1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [orioledb-16_1.8-0.beta16PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-16/orioledb-16_1.8-0.beta16PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/orioledb/orioledb" title="Repository" icon="github" subtitle="github.com/orioledb/orioledb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="orioledb-beta16.tar.gz" >}}
+{{< card link="https://github.com/orioledb/orioledb" title="Repository" icon="github" subtitle="github.com/orioledb/orioledb" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="orioledb-beta16.tar.gz" />}}
 {{< /cards >}}
 
 

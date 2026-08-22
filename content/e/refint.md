@@ -4,7 +4,10 @@ linkTitle: "refint"
 description: "functions for implementing referential integrity (obsolete)"
 weight: 4880
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**refint**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-REFINT) : functions for implementing referential integrity (obsolete)

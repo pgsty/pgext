@@ -4,7 +4,10 @@ linkTitle: "pg_walinspect"
 description: "functions to inspect contents of PostgreSQL Write-Ahead Log"
 weight: 6940
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_walinspect**](https://www.postgresql.org/docs/current/pgwalinspect.html) : functions to inspect contents of PostgreSQL Write-Ahead Log

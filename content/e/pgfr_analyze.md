@@ -4,7 +4,10 @@ linkTitle: "pgfr_analyze"
 description: "Reporting and analysis functions for pgfr_record"
 weight: 6061
 categories: ["STAT"]
-width: full
+languages: ["SQL"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_flight_recorder**](https://github.com/dventimisupabase/pg_flight_recorder) : Reporting and analysis functions for pgfr_record
@@ -39,6 +42,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_flight_recorder` | `pgfr_record` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "pg_flight_recorder_18" "green" >}} {{< bg "17" "pg_flight_recorder_17" "green" >}} {{< bg "16" "pg_flight_recorder_16" "green" >}} {{< bg "15" "pg_flight_recorder_15" "green" >}} {{< bg "14" "pg_flight_recorder_14" "red" >}} | `pg_flight_recorder_$v` | `pg_cron_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "postgresql-18-pg-flight-recorder" "green" >}} {{< bg "17" "postgresql-17-pg-flight-recorder" "green" >}} {{< bg "16" "postgresql-16-pg-flight-recorder" "green" >}} {{< bg "15" "postgresql-15-pg-flight-recorder" "green" >}} {{< bg "14" "postgresql-14-pg-flight-recorder" "red" >}} | `postgresql-$v-pg-flight-recorder` | `postgresql-$v-cron` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,13 +63,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-18-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-17-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-16-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-15-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-flight-recorder : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-18-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-17-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-16-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-15-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-flight-recorder : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-18-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-17-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-16-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-15-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-flight-recorder : N/A 0" "gray" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/dventimisupabase/pg_flight_recorder" title="Repository" icon="github" subtitle="github.com/dventimisupabase/pg_flight_recorder" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_flight_recorder-2.29.2.tar.gz" >}}
+{{< card link="https://github.com/dventimisupabase/pg_flight_recorder" title="Repository" icon="github" subtitle="github.com/dventimisupabase/pg_flight_recorder" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_flight_recorder-2.29.2.tar.gz" />}}
 {{< /cards >}}
 
 

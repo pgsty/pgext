@@ -4,7 +4,10 @@ linkTitle: "pgcrypto"
 description: "cryptographic functions"
 weight: 7980
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pgcrypto**](https://www.postgresql.org/docs/current/pgcrypto.html) : cryptographic functions

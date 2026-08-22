@@ -1,7 +1,7 @@
 ---
 title: PGSQL Repo
 description: The repo for PostgreSQL Extensions & Kernel Forks
-icon: Database
+icon: fa-solid fa-database
 weight: 100
 ---
 

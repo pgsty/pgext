@@ -4,7 +4,10 @@ linkTitle: "pg_get_functiondef"
 description: "Get function's definition"
 weight: 9170
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**ivorysql**](https://github.com/IvorySQL/IvorySQL/tree/master/contrib/pg_get_functiondef) : Get function's definition
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `ivorysql` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,13 +61,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/pg_get_functiondef" title="Repository" icon="github" subtitle="github.com/IvorySQL/IvorySQL/tree/master/contrib/pg_get_functiondef" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="ivorysql-5.4.tar.gz" >}}
+{{< card link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/pg_get_functiondef" title="Repository" icon="github" subtitle="github.com/IvorySQL/IvorySQL/tree/master/contrib/pg_get_functiondef" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="ivorysql-5.4.tar.gz" />}}
 {{< /cards >}}
 
 

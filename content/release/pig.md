@@ -2,7 +2,7 @@
 title: PIG Releases
 description: The pig releasenote and changelog
 weight: 100
-breadcrumbs: false
+breadcrumb: false
 ---
 
 

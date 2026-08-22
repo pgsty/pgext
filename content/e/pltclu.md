@@ -4,7 +4,10 @@ linkTitle: "pltclu"
 description: "PL/TclU untrusted procedural language"
 weight: 3250
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pltcl**](https://www.postgresql.org/docs/current/pltcl.html) : PL/TclU untrusted procedural language

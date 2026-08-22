@@ -4,7 +4,10 @@ linkTitle: "pg_strom"
 description: "PG-Strom - big-data processing acceleration using GPU and NVME"
 weight: 2530
 categories: ["OLAP"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_strom**](https://github.com/heterodb/pg-strom) : PG-Strom - big-data processing acceleration using GPU and NVME
@@ -35,6 +38,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_strom` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "pg_strom_18" "green" >}} {{< bg "17" "pg_strom_17" "green" >}} {{< bg "16" "pg_strom_16" "green" >}} {{< bg "15" "pg_strom_15" "green" >}} {{< bg "14" "pg_strom_14" "green" >}} | `pg_strom_$v` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -67,9 +72,10 @@ width: full
 | `pg_strom_18` | `6.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 691.0 KiB | [pg_strom_18-6.1-1PGDG.el9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/pg_strom_18-6.1-1PGDG.el9.x86_64.rpm) |
 | `pg_strom_18` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 710.1 KiB | [pg_strom_18-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/pg_strom_18-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_18` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.8 KiB | [pg_strom_18-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/pg_strom_18-6.1-1PGDG.el10.x86_64.rpm) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +87,10 @@ width: full
 | `pg_strom_17` | `5.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 467.3 KiB | [pg_strom_17-5.2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/pg_strom_17-5.2.2-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_17` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 710.1 KiB | [pg_strom_17-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/pg_strom_17-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_17` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.4 KiB | [pg_strom_17-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/pg_strom_17-6.1-1PGDG.el10.x86_64.rpm) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,9 +114,10 @@ width: full
 | `pg_strom_16` | `5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 8.6 MiB | [pg_strom_16-5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/pg_strom_16-5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_16` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 710.2 KiB | [pg_strom_16-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/pg_strom_16-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_16` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.7 KiB | [pg_strom_16-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/pg_strom_16-6.1-1PGDG.el10.x86_64.rpm) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,9 +145,10 @@ width: full
 | `pg_strom_15` | `3.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_15-3.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/pg_strom_15-3.4-1.rhel9.x86_64.rpm) |
 | `pg_strom_15` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 734.6 KiB | [pg_strom_15-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/pg_strom_15-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_15` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 730.1 KiB | [pg_strom_15-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/pg_strom_15-6.1-1PGDG.el10.x86_64.rpm) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -149,13 +158,14 @@ width: full
 | `pg_strom_14` | `3.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_14-3.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/pg_strom_14-3.4-1.rhel9.x86_64.rpm) |
 | `pg_strom_14` | `3.3.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_14-3.3.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/pg_strom_14-3.3.2-1.rhel9.x86_64.rpm) |
 | `pg_strom_14` | `3.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 25.7 MiB | [pg_strom_14-3.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_strom_14-3.5-1PIGSTY.el10.x86_64.rpm) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/heterodb/pg-strom" title="Repository" icon="github" subtitle="github.com/heterodb/pg-strom" >}}
+{{< card link="https://github.com/heterodb/pg-strom" title="Repository" icon="github" subtitle="github.com/heterodb/pg-strom" />}}
 {{< /cards >}}
 
 

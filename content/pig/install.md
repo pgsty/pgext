@@ -1,9 +1,9 @@
 ---
 title: Installation
 description: How to download and install the pig Package Manager
-icon: Download
+icon: fa-solid fa-download
 weight: 300
-breadcrumbs: false
+breadcrumb: false
 ---
 
 ## Script Installation

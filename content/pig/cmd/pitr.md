@@ -1,7 +1,7 @@
 ---
 title: "CMD: pitr"
 description: Perform orchestrated Point-In-Time Recovery with pig pitr command
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 680
 ---
 

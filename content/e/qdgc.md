@@ -4,7 +4,10 @@ linkTitle: "qdgc"
 description: "Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL."
 weight: 1700
 categories: ["GIS"]
-width: full
+languages: ["SQL"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**qdgc**](https://pgxn.org/dist/qdgc/0.1.0/) : Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL.
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `qdgc` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "qdgc_18" "green" >}} {{< bg "17" "qdgc_17" "green" >}} {{< bg "16" "qdgc_16" "green" >}} {{< bg "15" "qdgc_15" "green" >}} {{< bg "14" "qdgc_14" "green" >}} | `qdgc_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-qdgc" "green" >}} {{< bg "17" "postgresql-17-qdgc" "green" >}} {{< bg "16" "postgresql-16-qdgc" "green" >}} {{< bg "15" "postgresql-15-qdgc" "green" >}} {{< bg "14" "postgresql-14-qdgc" "green" >}} | `postgresql-$v-qdgc` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-18-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-18-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-18-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -103,9 +109,10 @@ width: full
 | `postgresql-17-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-17-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-17-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-17-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,9 +132,10 @@ width: full
 | `postgresql-16-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-16-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-16-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-16-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,9 +155,10 @@ width: full
 | `postgresql-15-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-15-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-15-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-15-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -169,14 +178,15 @@ width: full
 | `postgresql-14-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-14-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://pgxn.org/dist/qdgc/0.1.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/qdgc/0.1.0/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="qdgc-0.1.0.tar.gz" >}}
+{{< card link="https://pgxn.org/dist/qdgc/0.1.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/qdgc/0.1.0/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="qdgc-0.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

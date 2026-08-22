@@ -4,7 +4,10 @@ linkTitle: "log_fdw"
 description: "foreign-data wrapper for Postgres log file access"
 weight: 8810
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**log_fdw**](https://github.com/aws/postgresql-logfdw) : foreign-data wrapper for Postgres log file access
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `log_fdw` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "log_fdw_18" "green" >}} {{< bg "17" "log_fdw_17" "green" >}} {{< bg "16" "log_fdw_16" "green" >}} {{< bg "15" "log_fdw_15" "green" >}} {{< bg "14" "log_fdw_14" "green" >}} | `log_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "postgresql-18-log-fdw" "green" >}} {{< bg "17" "postgresql-17-log-fdw" "green" >}} {{< bg "16" "postgresql-16-log-fdw" "green" >}} {{< bg "15" "postgresql-15-log-fdw" "green" >}} {{< bg "14" "postgresql-14-log-fdw" "green" >}} | `postgresql-$v-log-fdw` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4" "postgresql-18-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-17-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-16-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-15-log-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-14-log-fdw : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-log-fdw` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.4 KiB | [postgresql-18-log-fdw_1.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/log-fdw/postgresql-18-log-fdw_1.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-log-fdw` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.4 KiB | [postgresql-18-log-fdw_1.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-18-log-fdw_1.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-log-fdw` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.1 KiB | [postgresql-18-log-fdw_1.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-18-log-fdw_1.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-log-fdw` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.2 KiB | [postgresql-17-log-fdw_1.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/log-fdw/postgresql-17-log-fdw_1.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-log-fdw` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.3 KiB | [postgresql-17-log-fdw_1.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-17-log-fdw_1.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-log-fdw` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.2 KiB | [postgresql-17-log-fdw_1.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-17-log-fdw_1.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-log-fdw` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.1 KiB | [postgresql-16-log-fdw_1.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/log-fdw/postgresql-16-log-fdw_1.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-log-fdw` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.4 KiB | [postgresql-16-log-fdw_1.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-16-log-fdw_1.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-log-fdw` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.2 KiB | [postgresql-16-log-fdw_1.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-16-log-fdw_1.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-log-fdw` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.2 KiB | [postgresql-15-log-fdw_1.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/log-fdw/postgresql-15-log-fdw_1.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-log-fdw` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.4 KiB | [postgresql-15-log-fdw_1.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-15-log-fdw_1.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-log-fdw` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.1 KiB | [postgresql-15-log-fdw_1.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-15-log-fdw_1.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-log-fdw` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.1 KiB | [postgresql-14-log-fdw_1.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/log-fdw/postgresql-14-log-fdw_1.4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-log-fdw` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.3 KiB | [postgresql-14-log-fdw_1.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-14-log-fdw_1.4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-log-fdw` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.1 KiB | [postgresql-14-log-fdw_1.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/log-fdw/postgresql-14-log-fdw_1.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/aws/postgresql-logfdw" title="Repository" icon="github" subtitle="github.com/aws/postgresql-logfdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="log_fdw-1.4.tar.gz" >}}
+{{< card link="https://github.com/aws/postgresql-logfdw" title="Repository" icon="github" subtitle="github.com/aws/postgresql-logfdw" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="log_fdw-1.4.tar.gz" />}}
 {{< /cards >}}
 
 

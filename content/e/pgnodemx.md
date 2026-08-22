@@ -4,7 +4,10 @@ linkTitle: "pgnodemx"
 description: "Capture node OS metrics via SQL queries"
 weight: 6440
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgnodemx**](https://github.com/CrunchyData/pgnodemx) : Capture node OS metrics via SQL queries
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgnodemx` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "pgnodemx_18" "green" >}} {{< bg "17" "pgnodemx_17" "green" >}} {{< bg "16" "pgnodemx_16" "green" >}} {{< bg "15" "pgnodemx_15" "green" >}} {{< bg "14" "pgnodemx_14" "green" >}} | `pgnodemx_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pgnodemx" "green" >}} {{< bg "17" "postgresql-17-pgnodemx" "green" >}} {{< bg "16" "postgresql-16-pgnodemx" "green" >}} {{< bg "15" "postgresql-15-pgnodemx" "green" >}} {{< bg "14" "postgresql-14-pgnodemx" "green" >}} | `postgresql-$v-pgnodemx` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -110,9 +115,10 @@ width: full
 | `postgresql-18-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.1 KiB | [postgresql-18-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.4 KiB | [postgresql-18-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.5 KiB | [postgresql-18-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -162,9 +168,10 @@ width: full
 | `postgresql-17-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.0 KiB | [postgresql-17-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-17-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.5 KiB | [postgresql-17-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.5 KiB | [postgresql-17-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -214,9 +221,10 @@ width: full
 | `postgresql-16-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.0 KiB | [postgresql-16-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-16-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.5 KiB | [postgresql-16-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.5 KiB | [postgresql-16-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -266,9 +274,10 @@ width: full
 | `postgresql-15-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.1 KiB | [postgresql-15-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-15-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 82.2 KiB | [postgresql-15-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 89.4 KiB | [postgresql-15-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -318,14 +327,15 @@ width: full
 | `postgresql-14-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.6 KiB | [postgresql-14-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-14-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 81.8 KiB | [postgresql-14-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 89.0 KiB | [postgresql-14-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/CrunchyData/pgnodemx" title="Repository" icon="github" subtitle="github.com/CrunchyData/pgnodemx" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgnodemx-2.0.1.tar.gz" >}}
+{{< card link="https://github.com/CrunchyData/pgnodemx" title="Repository" icon="github" subtitle="github.com/CrunchyData/pgnodemx" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgnodemx-2.0.1.tar.gz" />}}
 {{< /cards >}}
 
 

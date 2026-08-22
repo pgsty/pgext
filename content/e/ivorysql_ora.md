@@ -4,7 +4,10 @@ linkTitle: "ivorysql_ora"
 description: "Oracle Compatible extension on Postgres Database"
 weight: 9140
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**ivorysql**](https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora) : Oracle Compatible extension on Postgres Database
@@ -39,6 +42,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `ivorysql` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,10 +63,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -82,14 +87,15 @@ width: full
 | `ivorysql-18` | `5.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 23.0 MiB | [ivorysql-18_5.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~noble_arm64.deb) |
 | `ivorysql-18` | `5.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.8 MiB | [ivorysql-18_5.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~resolute_amd64.deb) |
 | `ivorysql-18` | `5.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.5 MiB | [ivorysql-18_5.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" title="Repository" icon="github" subtitle="github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="ivorysql-5.4.tar.gz" >}}
+{{< card link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" title="Repository" icon="github" subtitle="github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="ivorysql-5.4.tar.gz" />}}
 {{< /cards >}}
 
 

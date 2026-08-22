@@ -4,7 +4,10 @@ linkTitle: "pg_stat_ch"
 description: "Export PostgreSQL query telemetry to ClickHouse"
 weight: 6020
 categories: ["STAT"]
-width: full
+languages: ["C++"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_stat_ch**](https://github.com/ClickHouse/pg_stat_ch) : Export PostgreSQL query telemetry to ClickHouse
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stat_ch` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.6` | {{< bg "18" "pg_stat_ch_18" "green" >}} {{< bg "17" "pg_stat_ch_17" "green" >}} {{< bg "16" "pg_stat_ch_16" "green" >}} {{< bg "15" "pg_stat_ch_15" "red" >}} {{< bg "14" "pg_stat_ch_14" "red" >}} | `pg_stat_ch_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.6` | {{< bg "18" "postgresql-18-pg-stat-ch" "green" >}} {{< bg "17" "postgresql-17-pg-stat-ch" "green" >}} {{< bg "16" "postgresql-16-pg-stat-ch" "green" >}} {{< bg "15" "postgresql-15-pg-stat-ch" "red" >}} {{< bg "14" "postgresql-14-pg-stat-ch" "red" >}} | `postgresql-$v-pg-stat-ch` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stat-ch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-ch : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stat-ch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-ch : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stat-ch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-ch : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 683.3 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 734.0 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 717.7 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -97,9 +103,10 @@ width: full
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 683.1 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 735.5 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 719.1 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -117,14 +124,15 @@ width: full
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 681.9 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 733.9 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 717.6 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/ClickHouse/pg_stat_ch" title="Repository" icon="github" subtitle="github.com/ClickHouse/pg_stat_ch" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_ch-0.3.6.tar.gz" >}}
+{{< card link="https://github.com/ClickHouse/pg_stat_ch" title="Repository" icon="github" subtitle="github.com/ClickHouse/pg_stat_ch" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_ch-0.3.6.tar.gz" />}}
 {{< /cards >}}
 
 

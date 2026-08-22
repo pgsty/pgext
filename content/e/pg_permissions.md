@@ -4,7 +4,10 @@ linkTitle: "pg_permissions"
 description: "view object permissions and compare them with the desired state"
 weight: 5140
 categories: ["ADMIN"]
-width: full
+languages: ["SQL"]
+licenses: ["BSD-2-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_permissions**](https://github.com/cybertec-postgresql/pg_permissions) : view object permissions and compare them with the desired state
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_permissions` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "18" "pg_permissions_18" "green" >}} {{< bg "17" "pg_permissions_17" "green" >}} {{< bg "16" "pg_permissions_16" "green" >}} {{< bg "15" "pg_permissions_15" "green" >}} {{< bg "14" "pg_permissions_14" "green" >}} | `pg_permissions_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4` | {{< bg "18" "postgresql-18-pg-permissions" "green" >}} {{< bg "17" "postgresql-17-pg-permissions" "green" >}} {{< bg "16" "postgresql-16-pg-permissions" "green" >}} {{< bg "15" "postgresql-15-pg-permissions" "green" >}} {{< bg "14" "postgresql-14-pg-permissions" "green" >}} | `postgresql-$v-pg-permissions` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.4" "postgresql-18-pg-permissions : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-pg-permissions : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.4" "postgresql-18-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-pg-permissions : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.4" "postgresql-18-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-pg-permissions : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-pg-permissions : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +106,10 @@ width: full
 | `postgresql-18-pg-permissions` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.1 KiB | [postgresql-18-pg-permissions_1.4-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-18-pg-permissions_1.4-2.pgdg26.04+1_all.deb) |
 | `postgresql-18-pg-permissions` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 10.9 KiB | [postgresql-18-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-18-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-18-pg-permissions` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.6 KiB | [postgresql-18-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-permissions/postgresql-18-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -157,9 +163,10 @@ width: full
 | `postgresql-17-pg-permissions` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.1 KiB | [postgresql-17-pg-permissions_1.4-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-17-pg-permissions_1.4-2.pgdg26.04+1_all.deb) |
 | `postgresql-17-pg-permissions` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 10.9 KiB | [postgresql-17-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-17-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-17-pg-permissions` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.6 KiB | [postgresql-17-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-permissions/postgresql-17-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -221,9 +228,10 @@ width: full
 | `postgresql-16-pg-permissions` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.1 KiB | [postgresql-16-pg-permissions_1.4-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-16-pg-permissions_1.4-2.pgdg26.04+1_all.deb) |
 | `postgresql-16-pg-permissions` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 10.9 KiB | [postgresql-16-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-16-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-16-pg-permissions` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.6 KiB | [postgresql-16-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-permissions/postgresql-16-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -285,9 +293,10 @@ width: full
 | `postgresql-15-pg-permissions` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.1 KiB | [postgresql-15-pg-permissions_1.4-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-15-pg-permissions_1.4-2.pgdg26.04+1_all.deb) |
 | `postgresql-15-pg-permissions` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 10.9 KiB | [postgresql-15-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-15-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-15-pg-permissions` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.6 KiB | [postgresql-15-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-permissions/postgresql-15-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -349,13 +358,14 @@ width: full
 | `postgresql-14-pg-permissions` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.1 KiB | [postgresql-14-pg-permissions_1.4-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-14-pg-permissions_1.4-2.pgdg26.04+1_all.deb) |
 | `postgresql-14-pg-permissions` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 10.9 KiB | [postgresql-14-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-permissions/postgresql-14-pg-permissions_1.4.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-14-pg-permissions` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.6 KiB | [postgresql-14-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-permissions/postgresql-14-pg-permissions_1.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/cybertec-postgresql/pg_permissions" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_permissions" >}}
+{{< card link="https://github.com/cybertec-postgresql/pg_permissions" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_permissions" />}}
 {{< /cards >}}
 
 

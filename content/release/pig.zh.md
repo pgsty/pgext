@@ -2,7 +2,7 @@
 title: PIG 变更记录
 description: pig 发布说明与变更记录
 weight: 100
-breadcrumbs: false
+breadcrumb: false
 ---
 
 

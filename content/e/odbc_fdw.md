@@ -4,7 +4,10 @@ linkTitle: "odbc_fdw"
 description: "Foreign data wrapper for accessing remote databases using ODBC"
 weight: 8520
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**odbc_fdw**](https://github.com/devrimgunduz/odbc_fdw) : Foreign data wrapper for accessing remote databases using ODBC
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `odbc_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.6.1` | {{< bg "18" "odbc_fdw_18" "green" >}} {{< bg "17" "odbc_fdw_17" "green" >}} {{< bg "16" "odbc_fdw_16" "green" >}} {{< bg "15" "odbc_fdw_15" "green" >}} {{< bg "14" "odbc_fdw_14" "green" >}} | `odbc_fdw_$v` | `unixODBC` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "postgresql-18-odbc-fdw" "green" >}} {{< bg "17" "postgresql-17-odbc-fdw" "green" >}} {{< bg "16" "postgresql-16-odbc-fdw" "green" >}} {{< bg "15" "postgresql-15-odbc-fdw" "green" >}} {{< bg "14" "postgresql-14-odbc-fdw" "green" >}} | `postgresql-$v-odbc-fdw` | `libodbc2` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-15-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-14-odbc-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-15-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-14-odbc-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-15-odbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-14-odbc-fdw : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-odbc-fdw` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 50.7 KiB | [postgresql-18-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/odbc-fdw/postgresql-18-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-odbc-fdw` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 50.8 KiB | [postgresql-18-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-18-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-odbc-fdw` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 50.3 KiB | [postgresql-18-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-18-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -111,9 +117,10 @@ width: full
 | `postgresql-17-odbc-fdw` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 50.4 KiB | [postgresql-17-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/odbc-fdw/postgresql-17-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-odbc-fdw` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 50.8 KiB | [postgresql-17-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-17-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-odbc-fdw` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 50.2 KiB | [postgresql-17-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-17-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +150,10 @@ width: full
 | `postgresql-16-odbc-fdw` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 50.5 KiB | [postgresql-16-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/odbc-fdw/postgresql-16-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-odbc-fdw` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 50.7 KiB | [postgresql-16-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-16-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-odbc-fdw` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 50.3 KiB | [postgresql-16-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-16-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -175,9 +183,10 @@ width: full
 | `postgresql-15-odbc-fdw` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 50.1 KiB | [postgresql-15-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/odbc-fdw/postgresql-15-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-odbc-fdw` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 50.8 KiB | [postgresql-15-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-15-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-odbc-fdw` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 50.3 KiB | [postgresql-15-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-15-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -207,14 +216,15 @@ width: full
 | `postgresql-14-odbc-fdw` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 50.0 KiB | [postgresql-14-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/odbc-fdw/postgresql-14-odbc-fdw_0.6.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-odbc-fdw` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 50.7 KiB | [postgresql-14-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-14-odbc-fdw_0.6.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-odbc-fdw` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 50.2 KiB | [postgresql-14-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/odbc-fdw/postgresql-14-odbc-fdw_0.6.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/devrimgunduz/odbc_fdw" title="Repository" icon="github" subtitle="github.com/devrimgunduz/odbc_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="odbc_fdw-0.6.1.tar.gz" >}}
+{{< card link="https://github.com/devrimgunduz/odbc_fdw" title="Repository" icon="github" subtitle="github.com/devrimgunduz/odbc_fdw" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="odbc_fdw-0.6.1.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -2,6 +2,7 @@
 title: "按许可证"
 description: "按开源许可证组织的 PostgreSQL 扩展"
 weight: 300
+page_width: full
 ---
 
 按照所使用开源许可证，对 PostgreSQL 扩展进行分类。

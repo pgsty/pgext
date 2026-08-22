@@ -4,7 +4,10 @@ linkTitle: "intarray"
 description: "functions, operators, and index support for 1-D arrays of integers"
 weight: 4960
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**intarray**](https://www.postgresql.org/docs/current/intarray.html) : functions, operators, and index support for 1-D arrays of integers

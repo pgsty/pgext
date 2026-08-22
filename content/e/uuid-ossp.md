@@ -4,7 +4,10 @@ linkTitle: "uuid-ossp"
 description: "generate universally unique identifiers (UUIDs)"
 weight: 4930
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**uuid-ossp**](https://www.postgresql.org/docs/current/uuid-ossp.html) : generate universally unique identifiers (UUIDs)

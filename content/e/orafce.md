@@ -4,7 +4,10 @@ linkTitle: "orafce"
 description: "Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS"
 weight: 9100
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["0BSD"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**orafce**](https://github.com/orafce/orafce) : Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `orafce` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.7` | {{< bg "18" "orafce_18" "green" >}} {{< bg "17" "orafce_17" "green" >}} {{< bg "16" "orafce_16" "green" >}} {{< bg "15" "orafce_15" "green" >}} {{< bg "14" "orafce_14" "green" >}} | `orafce_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.7` | {{< bg "18" "postgresql-18-orafce" "green" >}} {{< bg "17" "postgresql-17-orafce" "green" >}} {{< bg "16" "postgresql-16-orafce" "green" >}} {{< bg "15" "postgresql-15-orafce" "green" >}} {{< bg "14" "postgresql-14-orafce" "green" >}} | `postgresql-$v-orafce` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.16.7" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.16.7" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.16.7" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.7" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +148,10 @@ width: full
 | `postgresql-18-orafce` | `4.16.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.6 KiB | [postgresql-18-orafce_4.16.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.4 KiB | [postgresql-18-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.7 KiB | [postgresql-18-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -263,9 +269,10 @@ width: full
 | `postgresql-17-orafce` | `4.16.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.7 KiB | [postgresql-17-orafce_4.16.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.3 KiB | [postgresql-17-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 352.0 KiB | [postgresql-17-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -419,9 +426,10 @@ width: full
 | `postgresql-16-orafce` | `4.16.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.3 KiB | [postgresql-16-orafce_4.16.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 350.9 KiB | [postgresql-16-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.5 KiB | [postgresql-16-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -575,9 +583,10 @@ width: full
 | `postgresql-15-orafce` | `4.16.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 356.1 KiB | [postgresql-15-orafce_4.16.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 355.4 KiB | [postgresql-15-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 356.1 KiB | [postgresql-15-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -731,13 +740,14 @@ width: full
 | `postgresql-14-orafce` | `4.16.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 358.8 KiB | [postgresql-14-orafce_4.16.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 358.1 KiB | [postgresql-14-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 358.9 KiB | [postgresql-14-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/orafce/orafce" title="Repository" icon="github" subtitle="github.com/orafce/orafce" >}}
+{{< card link="https://github.com/orafce/orafce" title="Repository" icon="github" subtitle="github.com/orafce/orafce" />}}
 {{< /cards >}}
 
 

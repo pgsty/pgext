@@ -4,7 +4,10 @@ linkTitle: "pgfaceting"
 description: "fast faceting queries using an inverted index"
 weight: 3640
 categories: ["TYPE"]
-width: full
+languages: ["SQL"]
+licenses: ["BSD-3-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgfaceting**](https://github.com/cybertec-postgresql/pgfaceting) : fast faceting queries using an inverted index
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgfaceting` | `roaringbitmap` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pgfaceting_18" "green" >}} {{< bg "17" "pgfaceting_17" "green" >}} {{< bg "16" "pgfaceting_16" "green" >}} {{< bg "15" "pgfaceting_15" "green" >}} {{< bg "14" "pgfaceting_14" "green" >}} | `pgfaceting_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pgfaceting" "green" >}} {{< bg "17" "postgresql-17-pgfaceting" "green" >}} {{< bg "16" "postgresql-16-pgfaceting" "green" >}} {{< bg "15" "postgresql-15-pgfaceting" "green" >}} {{< bg "14" "postgresql-14-pgfaceting" "green" >}} | `postgresql-$v-pgfaceting` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -87,9 +92,10 @@ width: full
 | `postgresql-18-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-18-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 | `postgresql-18-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -117,9 +123,10 @@ width: full
 | `postgresql-17-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-17-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 | `postgresql-17-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,9 +154,10 @@ width: full
 | `postgresql-16-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-16-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 | `postgresql-16-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -177,9 +185,10 @@ width: full
 | `postgresql-15-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-15-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 | `postgresql-15-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -207,14 +216,15 @@ width: full
 | `postgresql-14-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-14-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 | `postgresql-14-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/cybertec-postgresql/pgfaceting" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pgfaceting" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgfaceting-0.2.0.tar.gz" >}}
+{{< card link="https://github.com/cybertec-postgresql/pgfaceting" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pgfaceting" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgfaceting-0.2.0.tar.gz" />}}
 {{< /cards >}}
 
 

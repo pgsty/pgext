@@ -4,7 +4,10 @@ linkTitle: "pg_orca"
 description: "ORCA query optimizer as a PostgreSQL extension"
 weight: 2540
 categories: ["OLAP"]
-width: full
+languages: ["C++"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_orca**](https://github.com/quantumiodb/pgorca) : ORCA query optimizer as a PostgreSQL extension
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_orca` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_orca_18" "green" >}} {{< bg "17" "pg_orca_17" "red" >}} {{< bg "16" "pg_orca_16" "red" >}} {{< bg "15" "pg_orca_15" "red" >}} {{< bg "14" "pg_orca_14" "red" >}} | `pg_orca_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-orca" "green" >}} {{< bg "17" "postgresql-17-pg-orca" "red" >}} {{< bg "16" "postgresql-16-pg-orca" "red" >}} {{< bg "15" "postgresql-15-pg-orca" "red" >}} {{< bg "14" "postgresql-14-pg-orca" "red" >}} | `postgresql-$v-pg-orca` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-orca : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-orca : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-orca : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,14 +84,15 @@ width: full
 | `postgresql-18-pg-orca` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.6 MiB | [postgresql-18-pg-orca_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-orca/postgresql-18-pg-orca_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-orca` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.7 MiB | [postgresql-18-pg-orca_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-orca/postgresql-18-pg-orca_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-orca` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-18-pg-orca_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-orca/postgresql-18-pg-orca_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/quantumiodb/pgorca" title="Repository" icon="github" subtitle="github.com/quantumiodb/pgorca" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_orca-1.0.0.tar.gz" >}}
+{{< card link="https://github.com/quantumiodb/pgorca" title="Repository" icon="github" subtitle="github.com/quantumiodb/pgorca" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_orca-1.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "toastinfo"
 description: "show details on toasted datums"
 weight: 6530
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**toastinfo**](https://github.com/df7cb/toastinfo) : show details on toasted datums
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `toastinfo` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "toastinfo_18" "green" >}} {{< bg "17" "toastinfo_17" "green" >}} {{< bg "16" "toastinfo_16" "green" >}} {{< bg "15" "toastinfo_15" "green" >}} {{< bg "14" "toastinfo_14" "green" >}} | `toastinfo_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7` | {{< bg "18" "postgresql-18-toastinfo" "green" >}} {{< bg "17" "postgresql-17-toastinfo" "green" >}} {{< bg "16" "postgresql-16-toastinfo" "green" >}} {{< bg "15" "postgresql-15-toastinfo" "green" >}} {{< bg "14" "postgresql-14-toastinfo" "green" >}} | `postgresql-$v-toastinfo` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.7" "postgresql-18-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-toastinfo : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.7" "postgresql-18-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-toastinfo : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.7" "postgresql-18-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-toastinfo : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -111,9 +116,10 @@ width: full
 | `postgresql-18-toastinfo` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-18-toastinfo_1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-toastinfo` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-18-toastinfo_1.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-18-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,9 +173,10 @@ width: full
 | `postgresql-17-toastinfo` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-17-toastinfo_1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-toastinfo` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-17-toastinfo_1.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-17-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -223,9 +230,10 @@ width: full
 | `postgresql-16-toastinfo` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-16-toastinfo_1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-toastinfo` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-16-toastinfo_1.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-16-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -279,9 +287,10 @@ width: full
 | `postgresql-15-toastinfo` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-15-toastinfo_1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-toastinfo` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-15-toastinfo_1.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-15-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -335,14 +344,15 @@ width: full
 | `postgresql-14-toastinfo` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-14-toastinfo_1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-toastinfo` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-14-toastinfo_1.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-14-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/df7cb/toastinfo" title="Repository" icon="github" subtitle="github.com/df7cb/toastinfo" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="toastinfo-1.7.tar.gz" >}}
+{{< card link="https://github.com/df7cb/toastinfo" title="Repository" icon="github" subtitle="github.com/df7cb/toastinfo" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="toastinfo-1.7.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "base36"
 description: "Integer Base36 types"
 weight: 4800
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_base36**](https://github.com/adjust/pg-base36) : Integer Base36 types
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_base36` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_base36_18" "green" >}} {{< bg "17" "pg_base36_17" "green" >}} {{< bg "16" "pg_base36_16" "green" >}} {{< bg "15" "pg_base36_15" "green" >}} {{< bg "14" "pg_base36_14" "green" >}} | `pg_base36_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-base36" "green" >}} {{< bg "17" "postgresql-17-base36" "green" >}} {{< bg "16" "postgresql-16-base36" "green" >}} {{< bg "15" "postgresql-15-base36" "green" >}} {{< bg "14" "postgresql-14-base36" "green" >}} | `postgresql-$v-base36` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-base36 : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-base36 : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-base36 : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-base36` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.2 KiB | [postgresql-18-base36_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/base36/postgresql-18-base36_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-base36` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 KiB | [postgresql-18-base36_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-18-base36_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-base36` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.4 KiB | [postgresql-18-base36_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-18-base36_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-base36` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.0 KiB | [postgresql-17-base36_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/base36/postgresql-17-base36_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-base36` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 15.8 KiB | [postgresql-17-base36_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-17-base36_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-base36` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.1 KiB | [postgresql-17-base36_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-17-base36_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-base36` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.0 KiB | [postgresql-16-base36_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/base36/postgresql-16-base36_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-base36` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 15.8 KiB | [postgresql-16-base36_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-16-base36_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-base36` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.1 KiB | [postgresql-16-base36_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-16-base36_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-base36` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.0 KiB | [postgresql-15-base36_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/base36/postgresql-15-base36_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-base36` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 15.8 KiB | [postgresql-15-base36_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-15-base36_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-base36` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.1 KiB | [postgresql-15-base36_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-15-base36_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-base36` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.1 KiB | [postgresql-14-base36_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/base36/postgresql-14-base36_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-base36` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.1 KiB | [postgresql-14-base36_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-14-base36_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-base36` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.2 KiB | [postgresql-14-base36_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/base36/postgresql-14-base36_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/adjust/pg-base36" title="Repository" icon="github" subtitle="github.com/adjust/pg-base36" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-base36-1.0.0.tar.gz" >}}
+{{< card link="https://github.com/adjust/pg-base36" title="Repository" icon="github" subtitle="github.com/adjust/pg-base36" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-base36-1.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

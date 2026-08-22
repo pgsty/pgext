@@ -1,7 +1,8 @@
 ---
 title: "Extensions"
 weight: 10
-excludeSearch: true
+page_width: full
+search_exclude: true
 comments: false
 ---
 

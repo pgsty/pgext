@@ -1,7 +1,7 @@
 ---
 title: INFRA 仓库
 description: 可观测性/PostgreSQL工具软件仓库，Linux发行版大版本无关的软件包
-icon: Landmark
+icon: fa-solid fa-landmark
 weight: 200
 ---
 
@@ -25,14 +25,14 @@ Infra 仓库的更新记录可以参考 [**Release - Infra 变更日志**](/zh/r
 您可以使用 [`pig`](https://pig.pgsty.com/zh) CLI 工具添加 `pigsty-infra` 仓库，它会自动从 `apt/yum/dnf` 中选择合适的包管理器。
 
 {{< tabs >}}
-{{< tab name="默认" >}}
+{{< tab label="默认" >}}
 ```bash tab="默认"
 curl https://repo.pigsty.io/pig | bash  # 下载并安装 pig CLI 工具
 pig repo add infra                      # 将 pigsty-infra 仓库文件添加到您的系统
 pig repo update                         # 使用 apt / dnf 更新本地仓库缓存
 ```
 {{< /tab >}}
-{{< tab name="镜像" >}}
+{{< tab label="镜像" >}}
 ```bash tab="镜像"
 # 在中国大陆或 Cloudflare 不可用时使用
 curl https://repo.pigsty.cc/pig | bash  # 从中国 CDN 镜像安装 pig
@@ -40,7 +40,7 @@ pig repo add infra                      # 将 pigsty-infra 仓库文件添加到
 pig repo update                         # 使用 apt / dnf 更新本地仓库缓存
 ```
 {{< /tab >}}
-{{< tab name="提示" >}}
+{{< tab label="提示" >}}
 ```bash tab="提示"
 # 您可以使用以下命令管理 infra 仓库：
 pig repo add infra -u       # 添加仓库文件，并更新缓存
@@ -64,7 +64,7 @@ pig repo set all            # 删除现有仓库，添加上述仓库并更新�
 在 **Debian / Ubuntu** 兼容的 Linux 发行版上，您可以手动添加 [GPG 密钥](/zh/repo/gpg) 和 APT 仓库文件：
 
 {{< tabs >}}
-{{< tab name="默认" >}}
+{{< tab label="默认" >}}
 ```bash tab="默认"
 # 将 Pigsty 的 GPG 公钥添加到您的系统密钥链以验证包签名，或者直接信任
 curl -fsSL https://repo.pigsty.io/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
@@ -80,7 +80,7 @@ EOF
 sudo apt update
 ```
 {{< /tab >}}
-{{< tab name="镜像" >}}
+{{< tab label="镜像" >}}
 ```bash tab="镜像"
 # 在中国大陆或 Cloudflare 不可用时使用
 # 将 Pigsty 的 GPG 公钥添加到您的系统密钥链以验证包签名，或者直接信任
@@ -97,7 +97,7 @@ EOF
 sudo apt update
 ```
 {{< /tab >}}
-{{< tab name="免密钥" >}}
+{{< tab label="免密钥" >}}
 ```bash tab="免密钥"
 # 如果您不想信任任何 GPG 密钥，直接信任仓库
 distro_codename=$(lsb_release -cs)
@@ -118,7 +118,7 @@ sudo apt update
 在 **RHEL** 兼容的 Linux 发行版上，您可以手动添加 [GPG 密钥](/zh/repo/gpg) 和 YUM 仓库文件：
 
 {{< tabs >}}
-{{< tab name="默认" >}}
+{{< tab label="默认" >}}
 ```bash tab="默认"
 # 将 Pigsty 的 GPG 公钥添加到您的系统密钥链以验证包签名
 curl -fsSL https://repo.pigsty.io/key | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty >/dev/null
@@ -140,7 +140,7 @@ EOF
 sudo yum makecache;
 ```
 {{< /tab >}}
-{{< tab name="镜像" >}}
+{{< tab label="镜像" >}}
 ```bash tab="镜像"
 # 在中国大陆或 Cloudflare 不可用时使用
 # 将 Pigsty 的 GPG 公钥添加到您的系统密钥链以验证包签名
@@ -163,7 +163,7 @@ EOF
 sudo yum makecache;
 ```
 {{< /tab >}}
-{{< tab name="免密钥" >}}
+{{< tab label="免密钥" >}}
 ```bash tab="免密钥"
 # 如果您不想信任任何 GPG 密钥，直接信任仓库
 sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'

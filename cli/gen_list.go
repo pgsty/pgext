@@ -134,9 +134,9 @@ func (g *ExtensionGenerator) generateExtensionListContent(stats *CatalogStats, c
 
 	// Frontmatter
 	if isZh {
-		b.WriteString("---\ntitle: \"扩展清单\"\nweight: 10\nexcludeSearch: true\ncomments: false\n---\n\n")
+		b.WriteString("---\ntitle: \"扩展清单\"\nweight: 10\npage_width: full\nsearch_exclude: true\ncomments: false\n---\n\n")
 	} else {
-		b.WriteString("---\ntitle: \"Extensions\"\nweight: 10\nexcludeSearch: true\ncomments: false\n---\n\n")
+		b.WriteString("---\ntitle: \"Extensions\"\nweight: 10\npage_width: full\nsearch_exclude: true\ncomments: false\n---\n\n")
 	}
 
 	// Statistics section
@@ -197,9 +197,9 @@ func (g *ExtensionGenerator) generateExtensionIndexContent(extensions []*Extensi
 	extCount := len(extensions)
 
 	if isZh {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"扩展列表\"\nbreadcrumbs: false\nexcludeSearch: true\ncomments: false\nweight: 900\n---\n\n共有 %d 个已打包的 PostgreSQL 扩展：\n\n", extCount))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"扩展列表\"\nbreadcrumb: false\npage_width: full\nsearch_exclude: true\ncomments: false\nweight: 900\n---\n\n共有 %d 个已打包的 PostgreSQL 扩展：\n\n", extCount))
 	} else {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"Extensions\"\nbreadcrumbs: false\nexcludeSearch: true\ncomments: false\nweight: 900\n---\n\nThere are %d packaged PostgreSQL extensions:\n\n", extCount))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"Extensions\"\nbreadcrumb: false\npage_width: full\nsearch_exclude: true\ncomments: false\nweight: 900\n---\n\nThere are %d packaged PostgreSQL extensions:\n\n", extCount))
 	}
 
 	b.WriteString(g.generateExtensionIndexTable(extensions, isZh))
@@ -351,11 +351,11 @@ func (g *ExtensionGenerator) generatePackageListContent(stats *CatalogStats, cat
 	}
 
 	if isZh {
-		b.WriteString("---\ntitle: \"扩展包清单\"\nweight: 20\nexcludeSearch: true\ncomments: false\n---\n\n")
+		b.WriteString("---\ntitle: \"扩展包清单\"\nweight: 20\npage_width: full\nsearch_exclude: true\ncomments: false\n---\n\n")
 		b.WriteString("## 统计\n\n")
 		b.WriteString("※ 一个扩展软件包可能同时包含多个 PG 扩展，因此按软件包统计的数量会少于扩展数量。\n\n")
 	} else {
-		b.WriteString("---\ntitle: \"Packages\"\nweight: 20\nexcludeSearch: true\ncomments: false\n---\n\n")
+		b.WriteString("---\ntitle: \"Packages\"\nweight: 20\npage_width: full\nsearch_exclude: true\ncomments: false\n---\n\n")
 		b.WriteString("## Statistics\n\n")
 		b.WriteString("※ One extension package may consist of multiple extensions\n\n")
 	}
@@ -493,11 +493,11 @@ func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categor
 	}
 
 	if isZh {
-		b.WriteString("---\ntitle: \"扩展目录\"\nweight: 200\nexcludeSearch: true\ncomments: false\n---\n\n")
+		b.WriteString("---\ntitle: \"扩展目录\"\nweight: 200\npage_width: full\nsearch_exclude: true\ncomments: false\n---\n\n")
 		b.WriteString(fmt.Sprintf("PostgreSQL 已打包扩展目录包含 **%d** 个扩展和 **%d** 个软件包。\nPGEXT.CLOUD 总目录收录 **%d** 个扩展。\n\n", totalExts, totalPkgs, universeTotal))
 		b.WriteString("## 扩展统计\n\n")
 	} else {
-		b.WriteString("---\ntitle: \"Catalog\"\nweight: 200\nexcludeSearch: true\ncomments: false\n---\n\n")
+		b.WriteString("---\ntitle: \"Catalog\"\nweight: 200\npage_width: full\nsearch_exclude: true\ncomments: false\n---\n\n")
 		b.WriteString(fmt.Sprintf("The packaged PostgreSQL extension catalog contains **%d** extensions and **%d** packages.\nThe full PGEXT.CLOUD directory contains **%d** extensions.\n\n", totalExts, totalPkgs, universeTotal))
 		b.WriteString("## Extension Stat\n\n")
 	}
@@ -569,9 +569,9 @@ func (g *ListGenerator) GenerateCategoryList(locale, outputPath string) error {
 	var b strings.Builder
 
 	if isZh {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"按分类\"\nweight: 100\n---\n\n%d 个已打包 PostgreSQL 扩展（归属 %d 个包族）划分为 %d 个分类。\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"按分类\"\nweight: 100\npage_width: full\n---\n\n%d 个已打包 PostgreSQL 扩展（归属 %d 个包族）划分为 %d 个分类。\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
 	} else {
-		b.WriteString(fmt.Sprintf("---\ntitle: \"By Category\"\nweight: 100\n---\n\nThe %d packaged PostgreSQL extensions (in %d package families) are organized into %d categories.\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
+		b.WriteString(fmt.Sprintf("---\ntitle: \"By Category\"\nweight: 100\npage_width: full\n---\n\nThe %d packaged PostgreSQL extensions (in %d package families) are organized into %d categories.\n\n", len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
 	}
 
 	b.WriteString(`
@@ -686,9 +686,9 @@ func (g *ListGenerator) GenerateLanguageList(locale, outputPath string) error {
 	var b strings.Builder
 
 	if isZh {
-		b.WriteString("---\ntitle: \"按语言\"\ndescription: \"按实现语言组织的 PostgreSQL 扩展\"\nexcludeSearch: true\nweight: 200\n---\n\n")
+		b.WriteString("---\ntitle: \"按语言\"\ndescription: \"按实现语言组织的 PostgreSQL 扩展\"\npage_width: full\nsearch_exclude: true\nweight: 200\n---\n\n")
 	} else {
-		b.WriteString("---\ntitle: \"By Language\"\ndescription: \"PostgreSQL extensions organized by implementation language\"\nexcludeSearch: true\nweight: 200\n---\n\n")
+		b.WriteString("---\ntitle: \"By Language\"\ndescription: \"PostgreSQL extensions organized by implementation language\"\npage_width: full\nsearch_exclude: true\nweight: 200\n---\n\n")
 	}
 
 	b.WriteString(`
@@ -808,9 +808,9 @@ func (g *ListGenerator) GenerateLicenseList(locale, outputPath string) error {
 	var b strings.Builder
 
 	if isZh {
-		b.WriteString("---\ntitle: \"按许可证\"\ndescription: \"按开源许可证组织的 PostgreSQL 扩展\"\nweight: 300\n---\n\n按照所使用开源许可证，对 PostgreSQL 扩展进行分类。\n\n")
+		b.WriteString("---\ntitle: \"按许可证\"\ndescription: \"按开源许可证组织的 PostgreSQL 扩展\"\nweight: 300\npage_width: full\n---\n\n按照所使用开源许可证，对 PostgreSQL 扩展进行分类。\n\n")
 	} else {
-		b.WriteString("---\ntitle: \"By License\"\ndescription: \"PostgreSQL extensions organized by open source license\"\nweight: 300\n---\n\nPostgreSQL extension categorized by license.\n\n")
+		b.WriteString("---\ntitle: \"By License\"\ndescription: \"PostgreSQL extensions organized by open source license\"\nweight: 300\npage_width: full\n---\n\nPostgreSQL extension categorized by license.\n\n")
 	}
 
 	b.WriteString(`

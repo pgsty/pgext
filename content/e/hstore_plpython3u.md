@@ -4,7 +4,10 @@ linkTitle: "hstore_plpython3u"
 description: "transform between hstore and plpython3u"
 weight: 3293
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plpython3u**](https://www.postgresql.org/docs/current/plpython.html) : transform between hstore and plpython3u

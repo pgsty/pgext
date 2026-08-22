@@ -4,7 +4,10 @@ linkTitle: "jsonb_plpython3u"
 description: "transform between jsonb and plpython3u"
 weight: 3291
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plpython3u**](https://www.postgresql.org/docs/current/plpython.html) : transform between jsonb and plpython3u

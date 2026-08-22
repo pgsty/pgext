@@ -4,7 +4,10 @@ linkTitle: "pgextwlist"
 description: "PostgreSQL Extension Whitelisting"
 weight: 7390
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pgextwlist**](https://github.com/dimitri/pgextwlist) : PostgreSQL Extension Whitelisting
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgextwlist` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20` | {{< bg "18" "pgextwlist_18" "green" >}} {{< bg "17" "pgextwlist_17" "green" >}} {{< bg "16" "pgextwlist_16" "green" >}} {{< bg "15" "pgextwlist_15" "green" >}} {{< bg "14" "pgextwlist_14" "green" >}} | `pgextwlist_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20` | {{< bg "18" "postgresql-18-pgextwlist" "green" >}} {{< bg "17" "postgresql-17-pgextwlist" "green" >}} {{< bg "16" "postgresql-16-pgextwlist" "green" >}} {{< bg "15" "postgresql-15-pgextwlist" "green" >}} {{< bg "14" "postgresql-14-pgextwlist" "green" >}} | `postgresql-$v-pgextwlist` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.20" "postgresql-18-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-17-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-16-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-15-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-14-pgextwlist : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.20" "postgresql-18-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-17-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-16-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-15-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-14-pgextwlist : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.20" "postgresql-18-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-17-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-16-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-15-pgextwlist : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.20" "postgresql-14-pgextwlist : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,9 +112,10 @@ width: full
 | `postgresql-18-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.1 KiB | [postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgextwlist` | `1.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.4 KiB | [postgresql-18-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.6 KiB | [postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -159,9 +165,10 @@ width: full
 | `postgresql-17-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.1 KiB | [postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgextwlist` | `1.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.4 KiB | [postgresql-17-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.7 KiB | [postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -211,9 +218,10 @@ width: full
 | `postgresql-16-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.2 KiB | [postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgextwlist` | `1.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.4 KiB | [postgresql-16-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.7 KiB | [postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -263,9 +271,10 @@ width: full
 | `postgresql-15-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.0 KiB | [postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgextwlist` | `1.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.4 KiB | [postgresql-15-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.6 KiB | [postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -315,14 +324,15 @@ width: full
 | `postgresql-14-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 28.9 KiB | [postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgextwlist` | `1.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.3 KiB | [postgresql-14-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.5 KiB | [postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/dimitri/pgextwlist" title="Repository" icon="github" subtitle="github.com/dimitri/pgextwlist" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgextwlist-1.19.tar.gz" >}}
+{{< card link="https://github.com/dimitri/pgextwlist" title="Repository" icon="github" subtitle="github.com/dimitri/pgextwlist" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgextwlist-1.19.tar.gz" />}}
 {{< /cards >}}
 
 

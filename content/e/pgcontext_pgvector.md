@@ -4,7 +4,10 @@ linkTitle: "pgcontext_pgvector"
 description: "Optional pgvector compatibility bridge for pgcontext HNSW indexes."
 weight: 1970
 categories: ["RAG"]
-width: full
+languages: ["Rust"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgcontext**](https://pgxn.org/dist/pgContext/0.2.0/) : Optional pgvector compatibility bridge for pgcontext HNSW indexes.
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | `pgcontext`, `vector` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pgcontext_18" "green" >}} {{< bg "17" "pgcontext_17" "green" >}} {{< bg "16" "pgcontext_16" "red" >}} {{< bg "15" "pgcontext_15" "red" >}} {{< bg "14" "pgcontext_14" "red" >}} | `pgcontext_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pgcontext" "green" >}} {{< bg "17" "postgresql-17-pgcontext" "green" >}} {{< bg "16" "postgresql-16-pgcontext" "red" >}} {{< bg "15" "postgresql-15-pgcontext" "red" >}} {{< bg "14" "postgresql-14-pgcontext" "red" >}} | `postgresql-$v-pgcontext` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,13 +62,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://pgxn.org/dist/pgContext/0.2.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/pgContext/0.2.0/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcontext-0.2.0.tar.gz" >}}
+{{< card link="https://pgxn.org/dist/pgContext/0.2.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/pgContext/0.2.0/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcontext-0.2.0.tar.gz" />}}
 {{< /cards >}}
 
 

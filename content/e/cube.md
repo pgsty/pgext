@@ -4,7 +4,10 @@ linkTitle: "cube"
 description: "data type for multidimensional cubes"
 weight: 3950
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**cube**](https://www.postgresql.org/docs/current/cube.html) : data type for multidimensional cubes

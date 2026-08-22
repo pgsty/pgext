@@ -4,7 +4,10 @@ linkTitle: "pg_local_cache"
 description: "Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads"
 weight: 2890
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_local_cache**](https://github.com/profundium/pg_local_cache) : Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_local_cache` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "pg_local_cache_18" "green" >}} {{< bg "17" "pg_local_cache_17" "green" >}} {{< bg "16" "pg_local_cache_16" "green" >}} {{< bg "15" "pg_local_cache_15" "green" >}} {{< bg "14" "pg_local_cache_14" "green" >}} | `pg_local_cache_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "postgresql-18-pg-local-cache" "green" >}} {{< bg "17" "postgresql-17-pg-local-cache" "green" >}} {{< bg "16" "postgresql-16-pg-local-cache" "green" >}} {{< bg "15" "postgresql-15-pg-local-cache" "green" >}} {{< bg "14" "postgresql-14-pg-local-cache" "green" >}} | `postgresql-$v-pg-local-cache` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-18-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-17-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-14-pg-local-cache : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-18-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-17-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-14-pg-local-cache : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-18-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-17-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pg-local-cache : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-14-pg-local-cache : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-local-cache` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 219.5 KiB | [postgresql-18-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-local-cache/postgresql-18-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-local-cache` | `1.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 218.8 KiB | [postgresql-18-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-18-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-local-cache` | `1.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 216.1 KiB | [postgresql-18-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-18-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-pg-local-cache` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 219.5 KiB | [postgresql-17-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-local-cache/postgresql-17-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-local-cache` | `1.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 218.8 KiB | [postgresql-17-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-17-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-local-cache` | `1.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 215.2 KiB | [postgresql-17-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-17-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-pg-local-cache` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 219.5 KiB | [postgresql-16-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-local-cache/postgresql-16-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-local-cache` | `1.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 218.8 KiB | [postgresql-16-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-16-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-local-cache` | `1.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 215.4 KiB | [postgresql-16-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-16-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-pg-local-cache` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 221.5 KiB | [postgresql-15-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-local-cache/postgresql-15-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-local-cache` | `1.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 220.1 KiB | [postgresql-15-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-15-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-local-cache` | `1.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 217.3 KiB | [postgresql-15-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-15-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-pg-local-cache` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 222.2 KiB | [postgresql-14-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-local-cache/postgresql-14-pg-local-cache_1.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-local-cache` | `1.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 219.8 KiB | [postgresql-14-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-14-pg-local-cache_1.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-local-cache` | `1.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 218.4 KiB | [postgresql-14-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-local-cache/postgresql-14-pg-local-cache_1.3.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/profundium/pg_local_cache" title="Repository" icon="github" subtitle="github.com/profundium/pg_local_cache" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_local_cache-1.3.0.tar.gz" >}}
+{{< card link="https://github.com/profundium/pg_local_cache" title="Repository" icon="github" subtitle="github.com/profundium/pg_local_cache" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_local_cache-1.3.0.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "pg_ai_query"
 description: "AI-powered SQL query generation for PostgreSQL"
 weight: 2720
 categories: ["FEAT"]
-width: full
+languages: ["C++"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_ai_query**](https://github.com/benodiwal/pg_ai_query) : AI-powered SQL query generation for PostgreSQL
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ai_query` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "pg_ai_query_18" "green" >}} {{< bg "17" "pg_ai_query_17" "green" >}} {{< bg "16" "pg_ai_query_16" "green" >}} {{< bg "15" "pg_ai_query_15" "green" >}} {{< bg "14" "pg_ai_query_14" "green" >}} | `pg_ai_query_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "postgresql-18-ai-query" "green" >}} {{< bg "17" "postgresql-17-ai-query" "green" >}} {{< bg "16" "postgresql-16-ai-query" "green" >}} {{< bg "15" "postgresql-15-ai-query" "green" >}} {{< bg "14" "postgresql-14-ai-query" "green" >}} | `postgresql-$v-ai-query` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-ai-query : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-ai-query : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -71,9 +76,10 @@ width: full
 | `postgresql-18-ai-query` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 771.8 KiB | [postgresql-18-ai-query_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ai-query/postgresql-18-ai-query_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-ai-query` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 845.6 KiB | [postgresql-18-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-18-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-ai-query` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 874.0 KiB | [postgresql-18-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-18-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -87,9 +93,10 @@ width: full
 | `postgresql-17-ai-query` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 771.8 KiB | [postgresql-17-ai-query_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ai-query/postgresql-17-ai-query_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-ai-query` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 845.6 KiB | [postgresql-17-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-17-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-ai-query` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 874.1 KiB | [postgresql-17-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-17-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -103,9 +110,10 @@ width: full
 | `postgresql-16-ai-query` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 771.8 KiB | [postgresql-16-ai-query_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ai-query/postgresql-16-ai-query_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-ai-query` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 845.4 KiB | [postgresql-16-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-16-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-ai-query` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 874.1 KiB | [postgresql-16-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-16-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,9 +127,10 @@ width: full
 | `postgresql-15-ai-query` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 771.6 KiB | [postgresql-15-ai-query_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ai-query/postgresql-15-ai-query_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-ai-query` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 845.6 KiB | [postgresql-15-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-15-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-ai-query` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 874.1 KiB | [postgresql-15-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-15-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -135,14 +144,15 @@ width: full
 | `postgresql-14-ai-query` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 771.7 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-ai-query` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 846.4 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-ai-query` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 873.7 KiB | [postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-ai-query/postgresql-14-ai-query_0.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/benodiwal/pg_ai_query" title="Repository" icon="github" subtitle="github.com/benodiwal/pg_ai_query" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ai_query-0.1.1.tar.gz" >}}
+{{< card link="https://github.com/benodiwal/pg_ai_query" title="Repository" icon="github" subtitle="github.com/benodiwal/pg_ai_query" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ai_query-0.1.1.tar.gz" />}}
 {{< /cards >}}
 
 

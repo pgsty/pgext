@@ -238,7 +238,7 @@ title: "OS: %s"
 linkTitle: "%s"
 description: "%s 的 PostgreSQL 扩展可用性"
 weight: %d
-width: full
+page_width: full
 ---
 
 `, osInfo.OS, osInfo.OS, localizedDesc, weight)
@@ -249,7 +249,7 @@ title: "OS: %s"
 linkTitle: "%s"
 description: "PostgreSQL Extension Availability for %s"
 weight: %d
-width: full
+page_width: full
 ---
 
 `, osInfo.OS, osInfo.OS, localizedDesc, weight)
@@ -298,7 +298,7 @@ func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, os
 
 	// Generate rows for each package
 	for _, ospkg := range packages {
-		// Extension link using Hugo hextra alias shortcode
+		// Extension link through the site's own `ext` shortcode
 		extLink := fmt.Sprintf(`{{< ext "%s" "%s" >}}`, ospkg.Lead, ospkg.Pkg)
 		b.WriteString(fmt.Sprintf("| %s |", extLink))
 
@@ -309,6 +309,10 @@ func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, os
 		}
 		b.WriteString("\n")
 	}
+
+	// Several hundred rows against five majors: `{.matrix}` pins the header
+	// row and the extension column inside a scrolling viewport.
+	b.WriteString("{.matrix}\n")
 
 	return b.String()
 }

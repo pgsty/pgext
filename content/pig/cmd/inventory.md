@@ -1,7 +1,7 @@
 ---
 title: "CMD: inventory"
 description: Inspect, edit, validate, check, and exchange the Pigsty Inventory
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 645
 ---
 

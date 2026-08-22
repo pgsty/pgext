@@ -1,7 +1,7 @@
 ---
 title: "pig pg"
 description: "使用 pig pg 子命令管理本地 PostgreSQL 服务器"
-icon: Database
+icon: fa-solid fa-database
 weight: 640
 ---
 

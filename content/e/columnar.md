@@ -4,7 +4,10 @@ linkTitle: "columnar"
 description: "Hydra Columnar extension"
 weight: 2410
 categories: ["OLAP"]
-width: full
+languages: ["C"]
+licenses: ["AGPL-3.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**hydra**](https://github.com/hydradatabase/hydra) : Hydra Columnar extension
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hydra` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "hydra_18" "red" >}} {{< bg "17" "hydra_17" "red" >}} {{< bg "16" "hydra_16" "green" >}} {{< bg "15" "hydra_15" "green" >}} {{< bg "14" "hydra_14" "green" >}} | `hydra_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "postgresql-18-hydra" "red" >}} {{< bg "17" "postgresql-17-hydra" "red" >}} {{< bg "16" "postgresql-16-hydra" "green" >}} {{< bg "15" "postgresql-15-hydra" "green" >}} {{< bg "14" "postgresql-14-hydra" "green" >}} | `postgresql-$v-hydra` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-18-hydra : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-hydra : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG16" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-16-hydra` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 363.6 KiB | [postgresql-16-hydra_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-16-hydra_1.1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-hydra` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 358.0 KiB | [postgresql-16-hydra_1.1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-16-hydra_1.1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-hydra` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 355.8 KiB | [postgresql-16-hydra_1.1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-16-hydra_1.1.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-15-hydra` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 381.2 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-hydra` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 375.7 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-hydra` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 371.3 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,14 +130,15 @@ width: full
 | `postgresql-14-hydra` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 382.5 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-hydra` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 376.6 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-hydra` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 372.3 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/hydradatabase/hydra" title="Repository" icon="github" subtitle="github.com/hydradatabase/hydra" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hydra-1.1.2.tar.gz" >}}
+{{< card link="https://github.com/hydradatabase/hydra" title="Repository" icon="github" subtitle="github.com/hydradatabase/hydra" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hydra-1.1.2.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "mysql_fdw"
 description: "Foreign data wrapper for querying a MySQL server"
 weight: 8600
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**mysql_fdw**](https://github.com/EnterpriseDB/mysql_fdw) : Foreign data wrapper for querying a MySQL server
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mysql_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.3` | {{< bg "18" "mysql_fdw_18" "green" >}} {{< bg "17" "mysql_fdw_17" "green" >}} {{< bg "16" "mysql_fdw_16" "green" >}} {{< bg "15" "mysql_fdw_15" "green" >}} {{< bg "14" "mysql_fdw_14" "green" >}} | `mysql_fdw_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.3` | {{< bg "18" "postgresql-18-mysql-fdw" "green" >}} {{< bg "17" "postgresql-17-mysql-fdw" "green" >}} {{< bg "16" "postgresql-16-mysql-fdw" "green" >}} {{< bg "15" "postgresql-15-mysql-fdw" "green" >}} {{< bg "14" "postgresql-14-mysql-fdw" "green" >}} | `postgresql-$v-mysql-fdw` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.9.3" "postgresql-18-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-17-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-16-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-15-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-14-mysql-fdw : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.9.3" "postgresql-18-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-17-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-16-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-15-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-14-mysql-fdw : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.9.3" "postgresql-18-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-17-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-16-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-15-mysql-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.9.3" "postgresql-14-mysql-fdw : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-mysql-fdw` | `2.9.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 120.6 KiB | [postgresql-18-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-18-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-mysql-fdw` | `2.9.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.7 KiB | [postgresql-18-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-18-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-mysql-fdw` | `2.9.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.6 KiB | [postgresql-18-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-18-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -113,9 +119,10 @@ width: full
 | `postgresql-17-mysql-fdw` | `2.9.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 120.2 KiB | [postgresql-17-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-17-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-mysql-fdw` | `2.9.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.4 KiB | [postgresql-17-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-17-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-mysql-fdw` | `2.9.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.2 KiB | [postgresql-17-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-17-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -149,9 +156,10 @@ width: full
 | `postgresql-16-mysql-fdw` | `2.9.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 120.2 KiB | [postgresql-16-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-16-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-mysql-fdw` | `2.9.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.3 KiB | [postgresql-16-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-16-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-mysql-fdw` | `2.9.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.1 KiB | [postgresql-16-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-16-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -191,9 +199,10 @@ width: full
 | `postgresql-15-mysql-fdw` | `2.9.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 120.8 KiB | [postgresql-15-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-15-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-mysql-fdw` | `2.9.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.0 KiB | [postgresql-15-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-15-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-mysql-fdw` | `2.9.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.9 KiB | [postgresql-15-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-15-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -236,14 +245,15 @@ width: full
 | `postgresql-14-mysql-fdw` | `2.9.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 121.1 KiB | [postgresql-14-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-14-mysql-fdw_2.9.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-mysql-fdw` | `2.9.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.2 KiB | [postgresql-14-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-14-mysql-fdw_2.9.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-mysql-fdw` | `2.9.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 120.1 KiB | [postgresql-14-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-mysql-fdw/postgresql-14-mysql-fdw_2.9.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/EnterpriseDB/mysql_fdw" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/mysql_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mysql_fdw-REL-2_9_3.tar.gz" >}}
+{{< card link="https://github.com/EnterpriseDB/mysql_fdw" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/mysql_fdw" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mysql_fdw-REL-2_9_3.tar.gz" />}}
 {{< /cards >}}
 
 

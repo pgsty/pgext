@@ -4,7 +4,10 @@ linkTitle: "pg_stat_kcache"
 description: "Kernel statistics gathering"
 weight: 6220
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_stat_kcache**](https://github.com/powa-team/pg_stat_kcache) : Kernel statistics gathering
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_stat_kcache` | `pg_stat_statements` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.1` | {{< bg "18" "pg_stat_kcache_18" "green" >}} {{< bg "17" "pg_stat_kcache_17" "green" >}} {{< bg "16" "pg_stat_kcache_16" "green" >}} {{< bg "15" "pg_stat_kcache_15" "green" >}} {{< bg "14" "pg_stat_kcache_14" "green" >}} | `pg_stat_kcache_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "postgresql-18-pg-stat-kcache" "green" >}} {{< bg "17" "postgresql-17-pg-stat-kcache" "green" >}} {{< bg "16" "postgresql-16-pg-stat-kcache" "green" >}} {{< bg "15" "postgresql-15-pg-stat-kcache" "green" >}} {{< bg "14" "postgresql-14-pg-stat-kcache" "green" >}} | `postgresql-$v-pg-stat-kcache` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.3.2" "postgresql-18-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-17-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-16-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-15-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-14-pg-stat-kcache : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.3.2" "postgresql-18-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-17-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-16-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-15-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-14-pg-stat-kcache : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.3.2" "postgresql-18-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-17-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-16-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-15-pg-stat-kcache : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.2" "postgresql-14-pg-stat-kcache : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -92,9 +97,10 @@ width: full
 | `postgresql-18-pg-stat-kcache` | `2.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.1 KiB | [postgresql-18-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-18-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pg-stat-kcache` | `2.3.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.4 KiB | [postgresql-18-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-18-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-stat-kcache` | `2.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.5 KiB | [postgresql-18-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-18-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -134,9 +140,10 @@ width: full
 | `postgresql-17-pg-stat-kcache` | `2.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.1 KiB | [postgresql-17-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-17-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-stat-kcache` | `2.3.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.4 KiB | [postgresql-17-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-17-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-stat-kcache` | `2.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.6 KiB | [postgresql-17-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-17-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -184,9 +191,10 @@ width: full
 | `postgresql-16-pg-stat-kcache` | `2.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.1 KiB | [postgresql-16-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-16-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-stat-kcache` | `2.3.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.4 KiB | [postgresql-16-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-16-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-stat-kcache` | `2.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.5 KiB | [postgresql-16-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-16-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -238,9 +246,10 @@ width: full
 | `postgresql-15-pg-stat-kcache` | `2.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.3 KiB | [postgresql-15-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-15-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pg-stat-kcache` | `2.3.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.4 KiB | [postgresql-15-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-15-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-stat-kcache` | `2.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.6 KiB | [postgresql-15-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-15-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -293,13 +302,14 @@ width: full
 | `postgresql-14-pg-stat-kcache` | `2.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.3 KiB | [postgresql-14-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-14-pg-stat-kcache_2.3.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pg-stat-kcache` | `2.3.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.3 KiB | [postgresql-14-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-14-pg-stat-kcache_2.3.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-stat-kcache` | `2.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.5 KiB | [postgresql-14-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-kcache/postgresql-14-pg-stat-kcache_2.3.1-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/powa-team/pg_stat_kcache" title="Repository" icon="github" subtitle="github.com/powa-team/pg_stat_kcache" >}}
+{{< card link="https://github.com/powa-team/pg_stat_kcache" title="Repository" icon="github" subtitle="github.com/powa-team/pg_stat_kcache" />}}
 {{< /cards >}}
 
 

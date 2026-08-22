@@ -4,7 +4,10 @@ linkTitle: "pgaudit"
 description: "provides auditing functionality"
 weight: 7100
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pgaudit**](https://github.com/pgaudit/pgaudit) : provides auditing functionality
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgaudit` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "pgaudit_18" "green" >}} {{< bg "17" "pgaudit_17" "green" >}} {{< bg "16" "pgaudit_16" "green" >}} {{< bg "15" "pgaudit_15" "green" >}} {{< bg "14" "pgaudit_14" "green" >}} | `pgaudit_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "postgresql-18-pgaudit" "green" >}} {{< bg "17" "postgresql-17-pgaudit" "green" >}} {{< bg "16" "postgresql-16-pgaudit" "green" >}} {{< bg "15" "postgresql-15-pgaudit" "green" >}} {{< bg "14" "postgresql-14-pgaudit" "green" >}} | `postgresql-$v-pgaudit` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 2" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -93,9 +98,10 @@ width: full
 | `postgresql-18-pgaudit` | `18.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 47.1 KiB | [postgresql-18-pgaudit_18.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgaudit` | `18.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 46.3 KiB | [postgresql-18-pgaudit_18.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-3.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgaudit` | `18.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 46.7 KiB | [postgresql-18-pgaudit_18.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +129,10 @@ width: full
 | `postgresql-17-pgaudit` | `17.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.9 KiB | [postgresql-17-pgaudit_17.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgaudit` | `17.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 46.2 KiB | [postgresql-17-pgaudit_17.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgaudit` | `17.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.9 KiB | [postgresql-17-pgaudit_17.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -153,9 +160,10 @@ width: full
 | `postgresql-16-pgaudit` | `16.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.0 KiB | [postgresql-16-pgaudit_16.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgaudit` | `16.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.5 KiB | [postgresql-16-pgaudit_16.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgaudit` | `16.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.0 KiB | [postgresql-16-pgaudit_16.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -185,9 +193,10 @@ width: full
 | `postgresql-15-pgaudit` | `1.7.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.6 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgaudit` | `1.7.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.2 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgaudit` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.0 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -217,13 +226,14 @@ width: full
 | `postgresql-14-pgaudit` | `1.6.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.6 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgaudit` | `1.6.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.2 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgaudit` | `1.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.0 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgaudit/pgaudit" title="Repository" icon="github" subtitle="github.com/pgaudit/pgaudit" >}}
+{{< card link="https://github.com/pgaudit/pgaudit" title="Repository" icon="github" subtitle="github.com/pgaudit/pgaudit" />}}
 {{< /cards >}}
 
 

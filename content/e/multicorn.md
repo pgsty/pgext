@@ -4,7 +4,10 @@ linkTitle: "multicorn"
 description: "Fetch foreign data in Python in your PostgreSQL server."
 weight: 8510
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**multicorn**](https://github.com/pgsql-io/multicorn2) : Fetch foreign data in Python in your PostgreSQL server.
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `multicorn` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "18" "multicorn2_18" "green" >}} {{< bg "17" "multicorn2_17" "green" >}} {{< bg "16" "multicorn2_16" "green" >}} {{< bg "15" "multicorn2_15" "green" >}} {{< bg "14" "multicorn2_14" "green" >}} | `multicorn2_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.2` | {{< bg "18" "postgresql-18-multicorn" "green" >}} {{< bg "17" "postgresql-17-multicorn" "green" >}} {{< bg "16" "postgresql-16-multicorn" "green" >}} {{< bg "15" "postgresql-15-multicorn" "green" >}} {{< bg "14" "postgresql-14-multicorn" "green" >}} | `postgresql-$v-multicorn` | `python3-multicorn` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.2" "postgresql-18-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-17-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-16-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-15-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-14-multicorn : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.2" "postgresql-18-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-17-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-16-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-15-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-14-multicorn : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.2" "postgresql-18-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-17-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-16-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-15-multicorn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.2" "postgresql-14-multicorn : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -87,9 +92,10 @@ width: full
 | `postgresql-18-multicorn` | `3.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 84.3 KiB | [postgresql-18-multicorn_3.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/m/multicorn/postgresql-18-multicorn_3.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-multicorn` | `3.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 84.8 KiB | [postgresql-18-multicorn_3.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-18-multicorn_3.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-multicorn` | `3.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 83.7 KiB | [postgresql-18-multicorn_3.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-18-multicorn_3.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,9 +131,10 @@ width: full
 | `postgresql-17-multicorn` | `3.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 83.9 KiB | [postgresql-17-multicorn_3.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/m/multicorn/postgresql-17-multicorn_3.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-multicorn` | `3.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 84.7 KiB | [postgresql-17-multicorn_3.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-17-multicorn_3.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-multicorn` | `3.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 83.4 KiB | [postgresql-17-multicorn_3.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-17-multicorn_3.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -163,9 +170,10 @@ width: full
 | `postgresql-16-multicorn` | `3.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 84.3 KiB | [postgresql-16-multicorn_3.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/m/multicorn/postgresql-16-multicorn_3.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-multicorn` | `3.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 84.9 KiB | [postgresql-16-multicorn_3.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-16-multicorn_3.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-multicorn` | `3.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 83.6 KiB | [postgresql-16-multicorn_3.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-16-multicorn_3.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -209,9 +217,10 @@ width: full
 | `postgresql-15-multicorn` | `3.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.7 KiB | [postgresql-15-multicorn_3.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/m/multicorn/postgresql-15-multicorn_3.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-multicorn` | `3.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 86.7 KiB | [postgresql-15-multicorn_3.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-15-multicorn_3.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-multicorn` | `3.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 85.2 KiB | [postgresql-15-multicorn_3.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-15-multicorn_3.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -259,14 +268,15 @@ width: full
 | `postgresql-14-multicorn` | `3.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.7 KiB | [postgresql-14-multicorn_3.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/m/multicorn/postgresql-14-multicorn_3.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-multicorn` | `3.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 86.6 KiB | [postgresql-14-multicorn_3.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-14-multicorn_3.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-multicorn` | `3.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 85.1 KiB | [postgresql-14-multicorn_3.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/m/multicorn/postgresql-14-multicorn_3.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgsql-io/multicorn2" title="Repository" icon="github" subtitle="github.com/pgsql-io/multicorn2" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="multicorn2-3.2.tar.gz" >}}
+{{< card link="https://github.com/pgsql-io/multicorn2" title="Repository" icon="github" subtitle="github.com/pgsql-io/multicorn2" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="multicorn2-3.2.tar.gz" />}}
 {{< /cards >}}
 
 

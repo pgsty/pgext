@@ -4,7 +4,10 @@ linkTitle: "pglite_fusion"
 description: "Embed an SQLite database in your PostgreSQL table"
 weight: 3590
 categories: ["TYPE"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pglite_fusion**](https://github.com/frectonz/pglite-fusion) : Embed an SQLite database in your PostgreSQL table
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglite_fusion` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.6` | {{< bg "18" "pglite_fusion_18" "green" >}} {{< bg "17" "pglite_fusion_17" "green" >}} {{< bg "16" "pglite_fusion_16" "green" >}} {{< bg "15" "pglite_fusion_15" "green" >}} {{< bg "14" "pglite_fusion_14" "green" >}} | `pglite_fusion_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.6` | {{< bg "18" "postgresql-18-pglite-fusion" "green" >}} {{< bg "17" "postgresql-17-pglite-fusion" "green" >}} {{< bg "16" "postgresql-16-pglite-fusion" "green" >}} {{< bg "15" "postgresql-15-pglite-fusion" "green" >}} {{< bg "14" "postgresql-14-pglite-fusion" "green" >}} | `postgresql-$v-pglite-fusion` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-18-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-17-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-16-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-15-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-14-pglite-fusion : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-18-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-17-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-16-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-15-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-14-pglite-fusion : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-18-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-17-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-16-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-15-pglite-fusion : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.6" "postgresql-14-pglite-fusion : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pglite-fusion` | `0.0.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-18-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglite-fusion/postgresql-18-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pglite-fusion` | `0.0.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.7 MiB | [postgresql-18-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-18-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pglite-fusion` | `0.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-18-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-18-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pglite-fusion` | `0.0.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-17-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglite-fusion/postgresql-17-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pglite-fusion` | `0.0.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.7 MiB | [postgresql-17-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-17-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pglite-fusion` | `0.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-17-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-17-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pglite-fusion` | `0.0.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-16-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglite-fusion/postgresql-16-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pglite-fusion` | `0.0.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.7 MiB | [postgresql-16-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-16-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pglite-fusion` | `0.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-16-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-16-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pglite-fusion` | `0.0.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-15-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglite-fusion/postgresql-15-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pglite-fusion` | `0.0.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.7 MiB | [postgresql-15-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-15-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pglite-fusion` | `0.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-15-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-15-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pglite-fusion` | `0.0.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-14-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglite-fusion/postgresql-14-pglite-fusion_0.0.6-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pglite-fusion` | `0.0.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.7 MiB | [postgresql-14-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-14-pglite-fusion_0.0.6-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pglite-fusion` | `0.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-14-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglite-fusion/postgresql-14-pglite-fusion_0.0.6-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/frectonz/pglite-fusion" title="Repository" icon="github" subtitle="github.com/frectonz/pglite-fusion" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglite-fusion-0.0.6.tar.gz" >}}
+{{< card link="https://github.com/frectonz/pglite-fusion" title="Repository" icon="github" subtitle="github.com/frectonz/pglite-fusion" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglite-fusion-0.0.6.tar.gz" />}}
 {{< /cards >}}
 
 

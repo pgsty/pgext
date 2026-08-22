@@ -4,7 +4,10 @@ linkTitle: "pgstattuple"
 description: "show tuple-level statistics"
 weight: 6970
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pgstattuple**](https://www.postgresql.org/docs/current/pgstattuple.html) : show tuple-level statistics

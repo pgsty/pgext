@@ -1,7 +1,7 @@
 ---
 title: "pig pb"
 description: "使用 pig pb 子命令管理 pgBackRest 备份与时间点恢复"
-icon: Archive
+icon: fa-solid fa-box-archive
 weight: 660
 ---
 

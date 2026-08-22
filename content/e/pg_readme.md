@@ -4,7 +4,10 @@ linkTitle: "pg_readme"
 description: "Generate a Markdown README from PostgreSQL COMMENT objects"
 weight: 4300
 categories: ["UTIL"]
-width: full
+languages: ["SQL"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_readme**](https://github.com/bigsmoke/pg_readme) : Generate a Markdown README from PostgreSQL COMMENT objects
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_readme` | `hstore` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.7.0` | {{< bg "18" "pg_readme_18" "green" >}} {{< bg "17" "pg_readme_17" "green" >}} {{< bg "16" "pg_readme_16" "green" >}} {{< bg "15" "pg_readme_15" "green" >}} {{< bg "14" "pg_readme_14" "green" >}} | `pg_readme_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "postgresql-18-pg-readme" "green" >}} {{< bg "17" "postgresql-17-pg-readme" "green" >}} {{< bg "16" "postgresql-16-pg-readme" "green" >}} {{< bg "15" "postgresql-15-pg-readme" "green" >}} {{< bg "14" "postgresql-14-pg-readme" "green" >}} | `postgresql-$v-pg-readme` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -85,9 +90,10 @@ width: full
 | `postgresql-18-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-18-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-18-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-18-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -111,9 +117,10 @@ width: full
 | `postgresql-17-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-17-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-17-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-17-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,9 +144,10 @@ width: full
 | `postgresql-16-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-16-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-16-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-16-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -163,9 +171,10 @@ width: full
 | `postgresql-15-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-15-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-15-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-15-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -189,14 +198,15 @@ width: full
 | `postgresql-14-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-14-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-14-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-14-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/bigsmoke/pg_readme" title="Repository" icon="github" subtitle="github.com/bigsmoke/pg_readme" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_readme-0.7.1.tar.gz" >}}
+{{< card link="https://github.com/bigsmoke/pg_readme" title="Repository" icon="github" subtitle="github.com/bigsmoke/pg_readme" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_readme-0.7.1.tar.gz" />}}
 {{< /cards >}}
 
 

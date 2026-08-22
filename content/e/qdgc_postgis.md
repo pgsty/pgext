@@ -4,7 +4,10 @@ linkTitle: "qdgc_postgis"
 description: "Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC."
 weight: 1710
 categories: ["GIS"]
-width: full
+languages: ["SQL"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**qdgc**](https://pgxn.org/dist/qdgc/0.1.0/) : Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC.
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `qdgc` | `qdgc`, `postgis` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "qdgc_18" "green" >}} {{< bg "17" "qdgc_17" "green" >}} {{< bg "16" "qdgc_16" "green" >}} {{< bg "15" "qdgc_15" "green" >}} {{< bg "14" "qdgc_14" "green" >}} | `qdgc_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-qdgc" "green" >}} {{< bg "17" "postgresql-17-qdgc" "green" >}} {{< bg "16" "postgresql-16-qdgc" "green" >}} {{< bg "15" "postgresql-15-qdgc" "green" >}} {{< bg "14" "postgresql-14-qdgc" "green" >}} | `postgresql-$v-qdgc` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,13 +60,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://pgxn.org/dist/qdgc/0.1.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/qdgc/0.1.0/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="qdgc-0.1.0.tar.gz" >}}
+{{< card link="https://pgxn.org/dist/qdgc/0.1.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/qdgc/0.1.0/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="qdgc-0.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

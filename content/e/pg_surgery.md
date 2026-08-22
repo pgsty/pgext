@@ -4,7 +4,10 @@ linkTitle: "pg_surgery"
 description: "extension to perform surgery on a damaged relation"
 weight: 5990
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_surgery**](https://www.postgresql.org/docs/current/pgsurgery.html) : extension to perform surgery on a damaged relation

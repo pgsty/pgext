@@ -4,7 +4,10 @@ linkTitle: "sslutils"
 description: "A Postgres extension for managing SSL certificates through SQL"
 weight: 7410
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**sslutils**](https://github.com/EnterpriseDB/sslutils) : A Postgres extension for managing SSL certificates through SQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `sslutils` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "sslutils_18" "green" >}} {{< bg "17" "sslutils_17" "green" >}} {{< bg "16" "sslutils_16" "green" >}} {{< bg "15" "sslutils_15" "green" >}} {{< bg "14" "sslutils_14" "green" >}} | `sslutils_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "postgresql-18-sslutils" "green" >}} {{< bg "17" "postgresql-17-sslutils" "green" >}} {{< bg "16" "postgresql-16-sslutils" "green" >}} {{< bg "15" "postgresql-15-sslutils" "green" >}} {{< bg "14" "postgresql-14-sslutils" "green" >}} | `postgresql-$v-sslutils` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4" "postgresql-18-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-17-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-16-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-15-sslutils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "postgresql-14-sslutils : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -87,9 +92,10 @@ width: full
 | `postgresql-18-sslutils` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 38.1 KiB | [postgresql-18-sslutils_1.4-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sslutils/postgresql-18-sslutils_1.4-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-sslutils` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.0 KiB | [postgresql-18-sslutils_1.4-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-18-sslutils_1.4-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-sslutils` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 38.6 KiB | [postgresql-18-sslutils_1.4-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-18-sslutils_1.4-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,9 +125,10 @@ width: full
 | `postgresql-17-sslutils` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 38.1 KiB | [postgresql-17-sslutils_1.4-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sslutils/postgresql-17-sslutils_1.4-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-sslutils` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.0 KiB | [postgresql-17-sslutils_1.4-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-17-sslutils_1.4-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-sslutils` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 38.6 KiB | [postgresql-17-sslutils_1.4-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-17-sslutils_1.4-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -151,9 +158,10 @@ width: full
 | `postgresql-16-sslutils` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 38.1 KiB | [postgresql-16-sslutils_1.4-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sslutils/postgresql-16-sslutils_1.4-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-sslutils` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.0 KiB | [postgresql-16-sslutils_1.4-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-16-sslutils_1.4-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-sslutils` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 38.6 KiB | [postgresql-16-sslutils_1.4-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-16-sslutils_1.4-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -180,9 +188,10 @@ width: full
 | `postgresql-15-sslutils` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 38.2 KiB | [postgresql-15-sslutils_1.4-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sslutils/postgresql-15-sslutils_1.4-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-sslutils` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.0 KiB | [postgresql-15-sslutils_1.4-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-15-sslutils_1.4-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-sslutils` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 38.6 KiB | [postgresql-15-sslutils_1.4-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-15-sslutils_1.4-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -209,14 +218,15 @@ width: full
 | `postgresql-14-sslutils` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 38.2 KiB | [postgresql-14-sslutils_1.4-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sslutils/postgresql-14-sslutils_1.4-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-sslutils` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.0 KiB | [postgresql-14-sslutils_1.4-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-14-sslutils_1.4-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-sslutils` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 38.6 KiB | [postgresql-14-sslutils_1.4-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sslutils/postgresql-14-sslutils_1.4-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/EnterpriseDB/sslutils" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/sslutils" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="sslutils-1.4.tar.gz" >}}
+{{< card link="https://github.com/EnterpriseDB/sslutils" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/sslutils" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="sslutils-1.4.tar.gz" />}}
 {{< /cards >}}
 
 

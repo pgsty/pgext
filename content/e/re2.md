@@ -4,7 +4,10 @@ linkTitle: "re2"
 description: "ClickHouse-compatible regex functions using RE2"
 weight: 4235
 categories: ["UTIL"]
-width: full
+languages: ["C++"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**re2**](https://github.com/ClickHouse/pg_re2) : ClickHouse-compatible regex functions using RE2
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `re2` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "re2_18" "green" >}} {{< bg "17" "re2_17" "green" >}} {{< bg "16" "re2_16" "green" >}} {{< bg "15" "re2_15" "red" >}} {{< bg "14" "re2_14" "red" >}} | `re2_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "postgresql-18-re2" "green" >}} {{< bg "17" "postgresql-17-re2" "green" >}} {{< bg "16" "postgresql-16-re2" "green" >}} {{< bg "15" "postgresql-15-re2" "red" >}} {{< bg "14" "postgresql-14-re2" "red" >}} | `postgresql-$v-re2` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-re2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-re2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-re2 : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-re2 : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-re2 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-re2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-re2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-re2 : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-re2 : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-re2 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-re2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-re2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-re2 : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-re2 : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-re2 : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-re2` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 74.1 KiB | [postgresql-18-re2_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/re2/postgresql-18-re2_0.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-re2` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 76.1 KiB | [postgresql-18-re2_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/re2/postgresql-18-re2_0.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-re2` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.4 KiB | [postgresql-18-re2_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/re2/postgresql-18-re2_0.4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-re2` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 73.9 KiB | [postgresql-17-re2_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/re2/postgresql-17-re2_0.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-re2` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 76.0 KiB | [postgresql-17-re2_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/re2/postgresql-17-re2_0.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-re2` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.4 KiB | [postgresql-17-re2_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/re2/postgresql-17-re2_0.4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,14 +130,15 @@ width: full
 | `postgresql-16-re2` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 73.9 KiB | [postgresql-16-re2_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/re2/postgresql-16-re2_0.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-re2` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 76.1 KiB | [postgresql-16-re2_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/re2/postgresql-16-re2_0.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-re2` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.4 KiB | [postgresql-16-re2_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/re2/postgresql-16-re2_0.4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/ClickHouse/pg_re2" title="Repository" icon="github" subtitle="github.com/ClickHouse/pg_re2" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="re2-0.4.1.tar.gz" >}}
+{{< card link="https://github.com/ClickHouse/pg_re2" title="Repository" icon="github" subtitle="github.com/ClickHouse/pg_re2" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="re2-0.4.1.tar.gz" />}}
 {{< /cards >}}
 
 

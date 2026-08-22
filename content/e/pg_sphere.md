@@ -4,7 +4,10 @@ linkTitle: "pg_sphere"
 description: "spherical objects with useful functions, operators and index support"
 weight: 3650
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgsphere**](https://github.com/postgrespro/pgsphere) : spherical objects with useful functions, operators and index support
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsphere` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.2` | {{< bg "18" "pgsphere_18" "green" >}} {{< bg "17" "pgsphere_17" "green" >}} {{< bg "16" "pgsphere_16" "green" >}} {{< bg "15" "pgsphere_15" "green" >}} {{< bg "14" "pgsphere_14" "green" >}} | `pgsphere_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pgsphere" "green" >}} {{< bg "17" "postgresql-17-pgsphere" "green" >}} {{< bg "16" "postgresql-16-pgsphere" "green" >}} {{< bg "15" "postgresql-15-pgsphere" "green" >}} {{< bg "14" "postgresql-14-pgsphere" "green" >}} | `postgresql-$v-pgsphere` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 404.0 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 404.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.0 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 405.0 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.3 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 402.1 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 402.5 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 399.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 402.0 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 402.4 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 399.7 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/postgrespro/pgsphere" title="Repository" icon="github" subtitle="github.com/postgrespro/pgsphere" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsphere-1.5.2.tar.gz" >}}
+{{< card link="https://github.com/postgrespro/pgsphere" title="Repository" icon="github" subtitle="github.com/postgrespro/pgsphere" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsphere-1.5.2.tar.gz" />}}
 {{< /cards >}}
 
 

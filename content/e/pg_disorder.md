@@ -4,7 +4,10 @@ linkTitle: "pg_disorder"
 description: "Perturb unordered SELECT row order to expose order-dependent tests"
 weight: 2880
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_disorder**](https://github.com/viralpraxis/pg_disorder) : Perturb unordered SELECT row order to expose order-dependent tests
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_disorder` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_disorder_18" "green" >}} {{< bg "17" "pg_disorder_17" "green" >}} {{< bg "16" "pg_disorder_16" "green" >}} {{< bg "15" "pg_disorder_15" "green" >}} {{< bg "14" "pg_disorder_14" "green" >}} | `pg_disorder_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-disorder" "green" >}} {{< bg "17" "postgresql-17-pg-disorder" "green" >}} {{< bg "16" "postgresql-16-pg-disorder" "green" >}} {{< bg "15" "postgresql-15-pg-disorder" "green" >}} {{< bg "14" "postgresql-14-pg-disorder" "green" >}} | `postgresql-$v-pg-disorder` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-disorder : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-disorder : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-disorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-disorder : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-disorder` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.9 KiB | [postgresql-18-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-disorder/postgresql-18-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-disorder` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.1 KiB | [postgresql-18-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-18-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-disorder` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.8 KiB | [postgresql-18-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-18-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-pg-disorder` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.9 KiB | [postgresql-17-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-disorder/postgresql-17-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-disorder` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.2 KiB | [postgresql-17-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-17-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-disorder` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.8 KiB | [postgresql-17-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-17-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-pg-disorder` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.1 KiB | [postgresql-16-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-disorder/postgresql-16-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-disorder` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.3 KiB | [postgresql-16-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-16-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-disorder` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.9 KiB | [postgresql-16-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-16-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-pg-disorder` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.1 KiB | [postgresql-15-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-disorder/postgresql-15-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-disorder` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.3 KiB | [postgresql-15-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-15-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-disorder` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.0 KiB | [postgresql-15-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-15-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-pg-disorder` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.1 KiB | [postgresql-14-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-disorder/postgresql-14-pg-disorder_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-disorder` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.3 KiB | [postgresql-14-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-14-pg-disorder_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-disorder` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.9 KiB | [postgresql-14-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-disorder/postgresql-14-pg-disorder_0.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/viralpraxis/pg_disorder" title="Repository" icon="github" subtitle="github.com/viralpraxis/pg_disorder" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_disorder-0.1.0.tar.gz" >}}
+{{< card link="https://github.com/viralpraxis/pg_disorder" title="Repository" icon="github" subtitle="github.com/viralpraxis/pg_disorder" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_disorder-0.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

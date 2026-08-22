@@ -4,7 +4,10 @@ linkTitle: "moddatetime"
 description: "functions for tracking last modification time"
 weight: 4883
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**moddatetime**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-MODDATETIME) : functions for tracking last modification time

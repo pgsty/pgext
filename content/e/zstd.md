@@ -4,7 +4,10 @@ linkTitle: "zstd"
 description: "Zstandard compression algorithm implementation in PostgreSQL"
 weight: 4030
 categories: ["UTIL"]
-width: full
+languages: ["C"]
+licenses: ["ISC"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_zstd**](https://github.com/grahamedgecombe/pgzstd) : Zstandard compression algorithm implementation in PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_zstd` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "pg_zstd_18" "green" >}} {{< bg "17" "pg_zstd_17" "green" >}} {{< bg "16" "pg_zstd_16" "green" >}} {{< bg "15" "pg_zstd_15" "green" >}} {{< bg "14" "pg_zstd_14" "green" >}} | `pg_zstd_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "postgresql-18-zstd" "green" >}} {{< bg "17" "postgresql-17-zstd" "green" >}} {{< bg "16" "postgresql-16-zstd" "green" >}} {{< bg "15" "postgresql-15-zstd" "green" >}} {{< bg "14" "postgresql-14-zstd" "green" >}} | `postgresql-$v-zstd` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-18-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-17-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-zstd : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-18-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-17-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-zstd : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-18-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-17-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-16-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-zstd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-zstd : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-zstd` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.1 KiB | [postgresql-18-zstd_1.1.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-zstd/postgresql-18-zstd_1.1.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-zstd` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.4 KiB | [postgresql-18-zstd_1.1.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-18-zstd_1.1.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-zstd` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.3 KiB | [postgresql-18-zstd_1.1.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-18-zstd_1.1.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-zstd` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.2 KiB | [postgresql-17-zstd_1.1.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-zstd/postgresql-17-zstd_1.1.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-zstd` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.5 KiB | [postgresql-17-zstd_1.1.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-17-zstd_1.1.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-zstd` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.4 KiB | [postgresql-17-zstd_1.1.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-17-zstd_1.1.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-zstd` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.2 KiB | [postgresql-16-zstd_1.1.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-zstd/postgresql-16-zstd_1.1.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-zstd` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.5 KiB | [postgresql-16-zstd_1.1.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-16-zstd_1.1.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-zstd` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.4 KiB | [postgresql-16-zstd_1.1.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-16-zstd_1.1.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-zstd` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.2 KiB | [postgresql-15-zstd_1.1.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-zstd/postgresql-15-zstd_1.1.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-zstd` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.5 KiB | [postgresql-15-zstd_1.1.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-15-zstd_1.1.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-zstd` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.4 KiB | [postgresql-15-zstd_1.1.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-15-zstd_1.1.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-zstd` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.2 KiB | [postgresql-14-zstd_1.1.2-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-zstd/postgresql-14-zstd_1.1.2-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-zstd` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.5 KiB | [postgresql-14-zstd_1.1.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-14-zstd_1.1.2-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-zstd` | `1.1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.4 KiB | [postgresql-14-zstd_1.1.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-zstd/postgresql-14-zstd_1.1.2-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/grahamedgecombe/pgzstd" title="Repository" icon="github" subtitle="github.com/grahamedgecombe/pgzstd" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgzstd-1.1.2.tar.gz" >}}
+{{< card link="https://github.com/grahamedgecombe/pgzstd" title="Repository" icon="github" subtitle="github.com/grahamedgecombe/pgzstd" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgzstd-1.1.2.tar.gz" />}}
 {{< /cards >}}
 
 

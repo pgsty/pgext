@@ -4,7 +4,10 @@ linkTitle: "pg_freespacemap"
 description: "examine the free space map (FSM)"
 weight: 6950
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_freespacemap**](https://www.postgresql.org/docs/current/pgfreespacemap.html) : examine the free space map (FSM)

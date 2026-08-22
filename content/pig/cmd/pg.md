@@ -1,7 +1,7 @@
 ---
 title: "CMD: pg"
 description: Manage local PostgreSQL server with pig pg subcommand
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 650
 ---
 

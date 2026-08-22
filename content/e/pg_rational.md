@@ -4,7 +4,10 @@ linkTitle: "pg_rational"
 description: "bigint fractions"
 weight: 3720
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_rational**](https://github.com/begriffs/pg_rational) : bigint fractions
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rational` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_rational_18" "green" >}} {{< bg "17" "pg_rational_17" "green" >}} {{< bg "16" "pg_rational_16" "green" >}} {{< bg "15" "pg_rational_15" "green" >}} {{< bg "14" "pg_rational_14" "green" >}} | `pg_rational_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.0.3` | {{< bg "18" "postgresql-18-rational" "green" >}} {{< bg "17" "postgresql-17-rational" "green" >}} {{< bg "16" "postgresql-16-rational" "green" >}} {{< bg "15" "postgresql-15-rational" "green" >}} {{< bg "14" "postgresql-14-rational" "green" >}} | `postgresql-$v-rational` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.0.3" "postgresql-18-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-17-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-16-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-15-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-14-rational : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.0.3" "postgresql-18-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-17-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-16-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-15-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-14-rational : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.0.3" "postgresql-18-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-17-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-16-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-15-rational : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.0.3" "postgresql-14-rational : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -87,9 +92,10 @@ width: full
 | `postgresql-18-rational` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.0 KiB | [postgresql-18-rational_0.0.2-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-rational` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.6 KiB | [postgresql-18-rational_0.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-rational` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.1 KiB | [postgresql-18-rational_0.0.2-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,9 +125,10 @@ width: full
 | `postgresql-17-rational` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.1 KiB | [postgresql-17-rational_0.0.2-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-rational` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.6 KiB | [postgresql-17-rational_0.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-rational` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.1 KiB | [postgresql-17-rational_0.0.2-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -151,9 +158,10 @@ width: full
 | `postgresql-16-rational` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.1 KiB | [postgresql-16-rational_0.0.2-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-rational` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.6 KiB | [postgresql-16-rational_0.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-rational` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.1 KiB | [postgresql-16-rational_0.0.2-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -183,9 +191,10 @@ width: full
 | `postgresql-15-rational` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.1 KiB | [postgresql-15-rational_0.0.2-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-rational` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.6 KiB | [postgresql-15-rational_0.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-rational` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.1 KiB | [postgresql-15-rational_0.0.2-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -215,14 +224,15 @@ width: full
 | `postgresql-14-rational` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.0 KiB | [postgresql-14-rational_0.0.2-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-rational` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.6 KiB | [postgresql-14-rational_0.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-rational` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.1 KiB | [postgresql-14-rational_0.0.2-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/begriffs/pg_rational" title="Repository" icon="github" subtitle="github.com/begriffs/pg_rational" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rational-0.0.3.tar.gz" >}}
+{{< card link="https://github.com/begriffs/pg_rational" title="Repository" icon="github" subtitle="github.com/begriffs/pg_rational" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rational-0.0.3.tar.gz" />}}
 {{< /cards >}}
 
 

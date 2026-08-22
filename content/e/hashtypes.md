@@ -4,7 +4,10 @@ linkTitle: "hashtypes"
 description: "sha1, md5 and other data types for PostgreSQL"
 weight: 3750
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**hashtypes**](https://github.com/adjust/hashtypes/) : sha1, md5 and other data types for PostgreSQL
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hashtypes` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.5` | {{< bg "18" "hashtypes_18" "green" >}} {{< bg "17" "hashtypes_17" "green" >}} {{< bg "16" "hashtypes_16" "green" >}} {{< bg "15" "hashtypes_15" "green" >}} {{< bg "14" "hashtypes_14" "green" >}} | `hashtypes_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.5` | {{< bg "18" "postgresql-18-hashtypes" "green" >}} {{< bg "17" "postgresql-17-hashtypes" "green" >}} {{< bg "16" "postgresql-16-hashtypes" "green" >}} {{< bg "15" "postgresql-15-hashtypes" "green" >}} {{< bg "14" "postgresql-14-hashtypes" "green" >}} | `postgresql-$v-hashtypes` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-18-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-17-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-16-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-15-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-14-hashtypes : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-18-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-17-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-16-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-15-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-14-hashtypes : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-18-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-17-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-16-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-15-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-14-hashtypes : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-hashtypes` | `0.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.1 KiB | [postgresql-18-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hashtypes/postgresql-18-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-hashtypes` | `0.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 34.9 KiB | [postgresql-18-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-18-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-hashtypes` | `0.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.1 KiB | [postgresql-18-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-18-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-hashtypes` | `0.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.2 KiB | [postgresql-17-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hashtypes/postgresql-17-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-hashtypes` | `0.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 34.9 KiB | [postgresql-17-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-17-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-hashtypes` | `0.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.1 KiB | [postgresql-17-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-17-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-hashtypes` | `0.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-16-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hashtypes/postgresql-16-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-hashtypes` | `0.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 34.8 KiB | [postgresql-16-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-16-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-hashtypes` | `0.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.1 KiB | [postgresql-16-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-16-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-hashtypes` | `0.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-15-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hashtypes/postgresql-15-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-hashtypes` | `0.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 34.7 KiB | [postgresql-15-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-15-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-hashtypes` | `0.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.1 KiB | [postgresql-15-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-15-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-hashtypes` | `0.1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-14-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hashtypes/postgresql-14-hashtypes_0.1.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-hashtypes` | `0.1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 34.7 KiB | [postgresql-14-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-14-hashtypes_0.1.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-hashtypes` | `0.1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.0 KiB | [postgresql-14-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hashtypes/postgresql-14-hashtypes_0.1.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/adjust/hashtypes/" title="Repository" icon="github" subtitle="github.com/adjust/hashtypes/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hashtypes-0.1.5.tar.gz" >}}
+{{< card link="https://github.com/adjust/hashtypes/" title="Repository" icon="github" subtitle="github.com/adjust/hashtypes/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hashtypes-0.1.5.tar.gz" />}}
 {{< /cards >}}
 
 

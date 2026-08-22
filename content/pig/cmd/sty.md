@@ -1,7 +1,7 @@
 ---
 title: "CMD: sty"
 description: How to manage pigsty with pig sty subcommand
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 630
 ---
 

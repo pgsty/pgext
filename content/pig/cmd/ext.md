@@ -1,7 +1,7 @@
 ---
 title: "CMD: ext"
 description: How to manage extensions with pig ext subcommand
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 620
 ---
 

@@ -4,7 +4,10 @@ linkTitle: "pg_background"
 description: "Run SQL queries in the background"
 weight: 1110
 categories: ["TIME"]
-width: full
+languages: ["C"]
+licenses: ["GPL-3.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_background**](https://github.com/vibhorkum/pg_background) : Run SQL queries in the background
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_background` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "pg_background_18" "green" >}} {{< bg "17" "pg_background_17" "green" >}} {{< bg "16" "pg_background_16" "green" >}} {{< bg "15" "pg_background_15" "green" >}} {{< bg "14" "pg_background_14" "green" >}} | `pg_background_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "postgresql-18-pg-background" "green" >}} {{< bg "17" "postgresql-17-pg-background" "green" >}} {{< bg "16" "postgresql-16-pg-background" "green" >}} {{< bg "15" "postgresql-15-pg-background" "green" >}} {{< bg "14" "postgresql-14-pg-background" "green" >}} | `postgresql-$v-pg-background` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-pg-background : AVAIL 4" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-pg-background : AVAIL 4" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-pg-background : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-pg-background : AVAIL 4" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -194,9 +199,10 @@ width: full
 | `postgresql-18-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.7 KiB | [postgresql-18-pg-background_2.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_2.0-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.4 KiB | [postgresql-18-pg-background_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-background/postgresql-18-pg-background_2.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.3 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -337,9 +343,10 @@ width: full
 | `postgresql-17-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.7 KiB | [postgresql-17-pg-background_2.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_2.0-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.3 KiB | [postgresql-17-pg-background_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-background/postgresql-17-pg-background_2.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.2 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -480,9 +487,10 @@ width: full
 | `postgresql-16-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.7 KiB | [postgresql-16-pg-background_2.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_2.0-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.3 KiB | [postgresql-16-pg-background_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-background/postgresql-16-pg-background_2.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.2 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -627,9 +635,10 @@ width: full
 | `postgresql-15-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.7 KiB | [postgresql-15-pg-background_2.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_2.0-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.4 KiB | [postgresql-15-pg-background_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-background/postgresql-15-pg-background_2.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.4 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -770,14 +779,15 @@ width: full
 | `postgresql-14-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 90.6 KiB | [postgresql-14-pg-background_2.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_2.0-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-background` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.3 KiB | [postgresql-14-pg-background_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-background/postgresql-14-pg-background_2.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 81.1 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/vibhorkum/pg_background" title="Repository" icon="github" subtitle="github.com/vibhorkum/pg_background" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_background-2.0.2.tar.gz" >}}
+{{< card link="https://github.com/vibhorkum/pg_background" title="Repository" icon="github" subtitle="github.com/vibhorkum/pg_background" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_background-2.0.2.tar.gz" />}}
 {{< /cards >}}
 
 

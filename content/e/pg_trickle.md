@@ -4,7 +4,10 @@ linkTitle: "pg_trickle"
 description: "Streaming tables and differential view maintenance for PostgreSQL 18"
 weight: 2860
 categories: ["FEAT"]
-width: full
+languages: ["Rust"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_trickle**](https://github.com/trickle-labs/pg-trickle) : Streaming tables and differential view maintenance for PostgreSQL 18
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.81.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_trickle` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.81.0` | {{< bg "18" "pg_trickle_18" "green" >}} {{< bg "17" "pg_trickle_17" "red" >}} {{< bg "16" "pg_trickle_16" "red" >}} {{< bg "15" "pg_trickle_15" "red" >}} {{< bg "14" "pg_trickle_14" "red" >}} | `pg_trickle_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.81.0` | {{< bg "18" "postgresql-18-pg-trickle" "green" >}} {{< bg "17" "postgresql-17-pg-trickle" "red" >}} {{< bg "16" "postgresql-16-pg-trickle" "red" >}} {{< bg "15" "postgresql-15-pg-trickle" "red" >}} {{< bg "14" "postgresql-14-pg-trickle" "red" >}} | `postgresql-$v-pg-trickle` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,14 +84,15 @@ width: full
 | `postgresql-18-pg-trickle` | `0.81.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-trickle` | `0.81.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-trickle` | `0.81.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/trickle-labs/pg-trickle" title="Repository" icon="github" subtitle="github.com/trickle-labs/pg-trickle" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_trickle-0.81.0.tar.gz" >}}
+{{< card link="https://github.com/trickle-labs/pg-trickle" title="Repository" icon="github" subtitle="github.com/trickle-labs/pg-trickle" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_trickle-0.81.0.tar.gz" />}}
 {{< /cards >}}
 
 

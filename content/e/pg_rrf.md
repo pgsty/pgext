@@ -4,7 +4,10 @@ linkTitle: "pg_rrf"
 description: "Reciprocal rank fusion functions for hybrid search"
 weight: 1845
 categories: ["RAG"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_rrf**](https://github.com/yuiseki/pg_rrf) : Reciprocal rank fusion functions for hybrid search
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rrf` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_rrf_18" "green" >}} {{< bg "17" "pg_rrf_17" "green" >}} {{< bg "16" "pg_rrf_16" "green" >}} {{< bg "15" "pg_rrf_15" "green" >}} {{< bg "14" "pg_rrf_14" "green" >}} | `pg_rrf_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-rrf" "green" >}} {{< bg "17" "postgresql-17-pg-rrf" "green" >}} {{< bg "16" "postgresql-16-pg-rrf" "green" >}} {{< bg "15" "postgresql-15-pg-rrf" "green" >}} {{< bg "14" "postgresql-14-pg-rrf" "green" >}} | `postgresql-$v-pg-rrf` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-18-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-rrf : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-18-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-rrf : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-18-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-rrf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-rrf : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pg-rrf` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 662.5 KiB | [postgresql-18-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-rrf/postgresql-18-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-rrf` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 747.8 KiB | [postgresql-18-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-18-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-rrf` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 661.5 KiB | [postgresql-18-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-18-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pg-rrf` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 660.6 KiB | [postgresql-17-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-rrf/postgresql-17-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-rrf` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 745.7 KiB | [postgresql-17-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-17-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-rrf` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 659.2 KiB | [postgresql-17-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-17-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pg-rrf` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 659.6 KiB | [postgresql-16-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-rrf/postgresql-16-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-rrf` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 745.3 KiB | [postgresql-16-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-16-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-rrf` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 658.6 KiB | [postgresql-16-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-16-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pg-rrf` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 654.6 KiB | [postgresql-15-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-rrf/postgresql-15-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-rrf` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 737.2 KiB | [postgresql-15-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-15-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-rrf` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 652.9 KiB | [postgresql-15-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-15-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pg-rrf` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 652.5 KiB | [postgresql-14-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-rrf/postgresql-14-pg-rrf_0.0.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-rrf` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 735.1 KiB | [postgresql-14-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-14-pg-rrf_0.0.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-rrf` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 650.8 KiB | [postgresql-14-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rrf/postgresql-14-pg-rrf_0.0.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/yuiseki/pg_rrf" title="Repository" icon="github" subtitle="github.com/yuiseki/pg_rrf" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rrf-0.0.3.tar.gz" >}}
+{{< card link="https://github.com/yuiseki/pg_rrf" title="Repository" icon="github" subtitle="github.com/yuiseki/pg_rrf" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rrf-0.0.3.tar.gz" />}}
 {{< /cards >}}
 
 

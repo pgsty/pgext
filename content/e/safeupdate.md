@@ -4,7 +4,10 @@ linkTitle: "safeupdate"
 description: "Require criteria for UPDATE and DELETE"
 weight: 5820
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["ISC"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**safeupdate**](https://github.com/eradman/pg-safeupdate) : Require criteria for UPDATE and DELETE
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `safeupdate` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "safeupdate_18" "green" >}} {{< bg "17" "safeupdate_17" "green" >}} {{< bg "16" "safeupdate_16" "green" >}} {{< bg "15" "safeupdate_15" "green" >}} {{< bg "14" "safeupdate_14" "green" >}} | `safeupdate_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-safeupdate" "green" >}} {{< bg "17" "postgresql-17-pg-safeupdate" "green" >}} {{< bg "16" "postgresql-16-pg-safeupdate" "green" >}} {{< bg "15" "postgresql-15-pg-safeupdate" "green" >}} {{< bg "14" "postgresql-14-pg-safeupdate" "green" >}} | `postgresql-$v-pg-safeupdate` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-pg-safeupdate : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-pg-safeupdate : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.5" "postgresql-18-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-17-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-16-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-15-pg-safeupdate : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5" "postgresql-14-pg-safeupdate : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-pg-safeupdate` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.0 KiB | [postgresql-18-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-safeupdate/postgresql-18-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-safeupdate` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.1 KiB | [postgresql-18-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-18-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-safeupdate` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.2 KiB | [postgresql-18-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-18-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,9 +113,10 @@ width: full
 | `postgresql-17-pg-safeupdate` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.0 KiB | [postgresql-17-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-safeupdate/postgresql-17-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-safeupdate` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.0 KiB | [postgresql-17-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-17-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-safeupdate` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.2 KiB | [postgresql-17-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-17-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,9 +144,10 @@ width: full
 | `postgresql-16-pg-safeupdate` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.9 KiB | [postgresql-16-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-safeupdate/postgresql-16-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-safeupdate` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.0 KiB | [postgresql-16-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-16-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-safeupdate` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.2 KiB | [postgresql-16-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-16-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -170,9 +178,10 @@ width: full
 | `postgresql-15-pg-safeupdate` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.9 KiB | [postgresql-15-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-safeupdate/postgresql-15-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-safeupdate` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.0 KiB | [postgresql-15-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-15-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-safeupdate` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.2 KiB | [postgresql-15-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-15-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -202,14 +211,15 @@ width: full
 | `postgresql-14-pg-safeupdate` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.9 KiB | [postgresql-14-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-safeupdate/postgresql-14-pg-safeupdate_1.5-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-safeupdate` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.0 KiB | [postgresql-14-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-14-pg-safeupdate_1.5-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-safeupdate` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.1 KiB | [postgresql-14-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-safeupdate/postgresql-14-pg-safeupdate_1.5-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/eradman/pg-safeupdate" title="Repository" icon="github" subtitle="github.com/eradman/pg-safeupdate" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-safeupdate-1.5.tar.gz" >}}
+{{< card link="https://github.com/eradman/pg-safeupdate" title="Repository" icon="github" subtitle="github.com/eradman/pg-safeupdate" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-safeupdate-1.5.tar.gz" />}}
 {{< /cards >}}
 
 

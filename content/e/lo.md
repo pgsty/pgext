@@ -4,7 +4,10 @@ linkTitle: "lo"
 description: "Large Object maintenance"
 weight: 5930
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**lo**](https://www.postgresql.org/docs/current/lo.html) : Large Object maintenance

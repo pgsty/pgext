@@ -4,7 +4,10 @@ linkTitle: "h3_postgis"
 description: "H3 PostGIS integration"
 weight: 1531
 categories: ["GIS"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_h3**](https://github.com/zachasme/h3-pg) : H3 PostGIS integration
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_h3` | `h3`, `postgis`, `postgis_raster` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "h3-pg_18" "green" >}} {{< bg "17" "h3-pg_17" "green" >}} {{< bg "16" "h3-pg_16" "green" >}} {{< bg "15" "h3-pg_15" "green" >}} {{< bg "14" "h3-pg_14" "green" >}} | `h3-pg_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "postgresql-18-h3" "green" >}} {{< bg "17" "postgresql-17-h3" "green" >}} {{< bg "16" "postgresql-16-h3" "green" >}} {{< bg "15" "postgresql-15-h3" "green" >}} {{< bg "14" "postgresql-14-h3" "green" >}} | `postgresql-$v-h3` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,12 +62,13 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/zachasme/h3-pg" title="Repository" icon="github" subtitle="github.com/zachasme/h3-pg" >}}
+{{< card link="https://github.com/zachasme/h3-pg" title="Repository" icon="github" subtitle="github.com/zachasme/h3-pg" />}}
 {{< /cards >}}
 
 

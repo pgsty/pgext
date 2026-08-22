@@ -1,7 +1,7 @@
 ---
 title: GPG 密钥
 description: 导入 Pigsty 仓库使用的 GPG 公钥以验证软件包签名完整性
-icon: KeyRound
+icon: fa-solid fa-key
 ---
 
 你可以通过检查 GPG 签名来验证从 Pigsty 仓库下载的软件包的完整性，本文会介绍如何导入用于签名软件包的 GPG 密钥。

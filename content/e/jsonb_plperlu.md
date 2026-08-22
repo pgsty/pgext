@@ -4,7 +4,10 @@ linkTitle: "jsonb_plperlu"
 description: "transform between jsonb and plperlu"
 weight: 3272
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plperlu**](https://www.postgresql.org/docs/current/plperl.html) : transform between jsonb and plperlu

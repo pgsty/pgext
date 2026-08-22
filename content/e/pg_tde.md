@@ -4,7 +4,10 @@ linkTitle: "pg_tde"
 description: "Percona pg_tde access method"
 weight: 7500
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_tde**](https://github.com/percona/pg_tde) : Percona pg_tde access method
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tde` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.4` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.4` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 18.4" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,14 +84,15 @@ width: full
 | `pgtde-18` | `18.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.8 MiB | [pgtde-18_18.4-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~noble_arm64.deb) |
 | `pgtde-18` | `18.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.0 MiB | [pgtde-18_18.4-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~resolute_amd64.deb) |
 | `pgtde-18` | `18.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.7 MiB | [pgtde-18_18.4-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtde-18/pgtde-18_18.4-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/percona/pg_tde" title="Repository" icon="github" subtitle="github.com/percona/pg_tde" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="percona-pg_tde18-2.2.1.tar.gz" >}}
+{{< card link="https://github.com/percona/pg_tde" title="Repository" icon="github" subtitle="github.com/percona/pg_tde" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="percona-pg_tde18-2.2.1.tar.gz" />}}
 {{< /cards >}}
 
 

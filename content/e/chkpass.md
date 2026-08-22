@@ -4,7 +4,10 @@ linkTitle: "chkpass"
 description: "data type for auto-encrypted passwords"
 weight: 3920
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**chkpass**](https://github.com/lacanoid/chkpass) : data type for auto-encrypted passwords
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `chkpass` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "chkpass_18" "green" >}} {{< bg "17" "chkpass_17" "green" >}} {{< bg "16" "chkpass_16" "green" >}} {{< bg "15" "chkpass_15" "green" >}} {{< bg "14" "chkpass_14" "green" >}} | `chkpass_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-chkpass" "green" >}} {{< bg "17" "postgresql-17-chkpass" "green" >}} {{< bg "16" "postgresql-16-chkpass" "green" >}} {{< bg "15" "postgresql-15-chkpass" "green" >}} {{< bg "14" "postgresql-14-chkpass" "green" >}} | `postgresql-$v-chkpass` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.5 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.8 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.2 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/lacanoid/chkpass" title="Repository" icon="github" subtitle="github.com/lacanoid/chkpass" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="chkpass-1.0.tar.gz" >}}
+{{< card link="https://github.com/lacanoid/chkpass" title="Repository" icon="github" subtitle="github.com/lacanoid/chkpass" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="chkpass-1.0.tar.gz" />}}
 {{< /cards >}}
 
 

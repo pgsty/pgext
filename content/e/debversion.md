@@ -4,7 +4,10 @@ linkTitle: "debversion"
 description: "Debian version number data type"
 weight: 3820
 categories: ["TYPE"]
-width: full
+languages: ["SQL"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**debversion**](https://github.com/ATIX-AG/postgresql-debversion-evr) : Debian version number data type
@@ -33,6 +36,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `debversion` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "postgresql-18-debversion" "green" >}} {{< bg "17" "postgresql-17-debversion" "green" >}} {{< bg "16" "postgresql-16-debversion" "green" >}} {{< bg "15" "postgresql-15-debversion" "green" >}} {{< bg "14" "postgresql-14-debversion" "green" >}} | `postgresql-$v-debversion` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -53,10 +57,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.0" "postgresql-18-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-debversion : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.0" "postgresql-18-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-debversion : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.0" "postgresql-18-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-debversion : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -70,9 +75,10 @@ width: full
 | `postgresql-18-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-18-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-18-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -86,9 +92,10 @@ width: full
 | `postgresql-17-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-17-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-17-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -102,9 +109,10 @@ width: full
 | `postgresql-16-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-16-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-16-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -118,9 +126,10 @@ width: full
 | `postgresql-15-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-15-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-15-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -134,13 +143,14 @@ width: full
 | `postgresql-14-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.0 KiB | [postgresql-14-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-14-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/ATIX-AG/postgresql-debversion-evr" title="Repository" icon="github" subtitle="github.com/ATIX-AG/postgresql-debversion-evr" >}}
+{{< card link="https://github.com/ATIX-AG/postgresql-debversion-evr" title="Repository" icon="github" subtitle="github.com/ATIX-AG/postgresql-debversion-evr" />}}
 {{< /cards >}}
 
 

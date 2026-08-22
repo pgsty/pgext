@@ -4,7 +4,10 @@ linkTitle: "earthdistance"
 description: "calculate great-circle distances on the surface of the Earth"
 weight: 1690
 categories: ["GIS"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**earthdistance**](https://www.postgresql.org/docs/current/earthdistance.html) : calculate great-circle distances on the surface of the Earth

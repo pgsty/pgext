@@ -4,7 +4,10 @@ linkTitle: "postgis_raster"
 description: "PostGIS raster types and functions"
 weight: 1502
 categories: ["GIS"]
-width: full
+languages: ["C"]
+licenses: ["GPL-2.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**postgis**](https://git.osgeo.org/gitea/postgis/postgis) : PostGIS raster types and functions
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | `postgis` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.3` | {{< bg "18" "postgis36_18" "green" >}} {{< bg "17" "postgis36_17" "green" >}} {{< bg "16" "postgis36_16" "green" >}} {{< bg "15" "postgis36_15" "green" >}} {{< bg "14" "postgis36_14" "green" >}} | `postgis36_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,12 +61,13 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.6.4" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.6.4" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.6.4" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.6.4" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://git.osgeo.org/gitea/postgis/postgis" title="Repository" icon="link" subtitle="git.osgeo.org/gitea/postgis/postgis" >}}
+{{< card link="https://git.osgeo.org/gitea/postgis/postgis" title="Repository" icon="link" subtitle="git.osgeo.org/gitea/postgis/postgis" />}}
 {{< /cards >}}
 
 

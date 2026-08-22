@@ -4,7 +4,10 @@ linkTitle: "plperl"
 description: "PL/Perl procedural language"
 weight: 3260
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plperl**](https://www.postgresql.org/docs/current/plperl.html) : PL/Perl procedural language

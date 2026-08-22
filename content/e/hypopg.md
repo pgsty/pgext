@@ -4,7 +4,10 @@ linkTitle: "hypopg"
 description: "Hypothetical indexes for PostgreSQL"
 weight: 2790
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**hypopg**](https://github.com/HypoPG/hypopg) : Hypothetical indexes for PostgreSQL
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hypopg` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.3` | {{< bg "18" "hypopg_18" "green" >}} {{< bg "17" "hypopg_17" "green" >}} {{< bg "16" "hypopg_16" "green" >}} {{< bg "15" "hypopg_15" "green" >}} {{< bg "14" "hypopg_14" "green" >}} | `hypopg_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.3` | {{< bg "18" "postgresql-18-hypopg" "green" >}} {{< bg "17" "postgresql-17-hypopg" "green" >}} {{< bg "16" "postgresql-16-hypopg" "green" >}} {{< bg "15" "postgresql-15-hypopg" "green" >}} {{< bg "14" "postgresql-14-hypopg" "green" >}} | `postgresql-$v-hypopg` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-hypopg : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-hypopg : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-hypopg : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -98,9 +103,10 @@ width: full
 | `postgresql-18-hypopg` | `1.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 56.7 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-hypopg` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.0 KiB | [postgresql-18-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-hypopg` | `1.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.2 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -140,9 +146,10 @@ width: full
 | `postgresql-17-hypopg` | `1.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 56.7 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-hypopg` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.1 KiB | [postgresql-17-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-hypopg` | `1.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.2 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -186,9 +193,10 @@ width: full
 | `postgresql-16-hypopg` | `1.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 56.9 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-hypopg` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.1 KiB | [postgresql-16-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-hypopg` | `1.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.3 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -236,9 +244,10 @@ width: full
 | `postgresql-15-hypopg` | `1.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.5 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-hypopg` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.7 KiB | [postgresql-15-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-hypopg` | `1.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.8 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -286,13 +295,14 @@ width: full
 | `postgresql-14-hypopg` | `1.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.5 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-hypopg` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.7 KiB | [postgresql-14-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-hypopg` | `1.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.8 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/HypoPG/hypopg" title="Repository" icon="github" subtitle="github.com/HypoPG/hypopg" >}}
+{{< card link="https://github.com/HypoPG/hypopg" title="Repository" icon="github" subtitle="github.com/HypoPG/hypopg" />}}
 {{< /cards >}}
 
 

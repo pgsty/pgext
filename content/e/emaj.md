@@ -4,7 +4,10 @@ linkTitle: "emaj"
 description: "Enables fine-grained write logging and time travel on subsets of the database."
 weight: 1050
 categories: ["TIME"]
-width: full
+languages: ["SQL"]
+licenses: ["GPL-3.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**emaj**](https://github.com/dalibo/emaj) : Enables fine-grained write logging and time travel on subsets of the database.
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `emaj` | `btree_gist`, `dblink` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.0` | {{< bg "18" "e-maj_18" "green" >}} {{< bg "17" "e-maj_17" "green" >}} {{< bg "16" "e-maj_16" "green" >}} {{< bg "15" "e-maj_15" "green" >}} {{< bg "14" "e-maj_14" "green" >}} | `e-maj_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.0` | {{< bg "18" "postgresql-18-emaj" "green" >}} {{< bg "17" "postgresql-17-emaj" "green" >}} {{< bg "16" "postgresql-16-emaj" "green" >}} {{< bg "15" "postgresql-15-emaj" "green" >}} {{< bg "14" "postgresql-14-emaj" "green" >}} | `postgresql-$v-emaj` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-18-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-17-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-16-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-15-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-14-emaj : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-18-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-17-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-16-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-15-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-14-emaj : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-18-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-17-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-16-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-15-emaj : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.0.0" "postgresql-14-emaj : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -96,9 +101,10 @@ width: full
 | `postgresql-18-emaj` | `5.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 210.0 KiB | [postgresql-18-emaj_5.0.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-18-emaj_5.0.0-1PIGSTY~noble_all.deb) |
 | `postgresql-18-emaj` | `5.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 209.7 KiB | [postgresql-18-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-18-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-emaj` | `5.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 209.7 KiB | [postgresql-18-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-18-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -149,9 +155,10 @@ width: full
 | `postgresql-17-emaj` | `5.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 210.0 KiB | [postgresql-17-emaj_5.0.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-17-emaj_5.0.0-1PIGSTY~noble_all.deb) |
 | `postgresql-17-emaj` | `5.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 209.7 KiB | [postgresql-17-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-17-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-emaj` | `5.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 209.7 KiB | [postgresql-17-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-17-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -222,9 +229,10 @@ width: full
 | `postgresql-16-emaj` | `5.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 210.0 KiB | [postgresql-16-emaj_5.0.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-16-emaj_5.0.0-1PIGSTY~noble_all.deb) |
 | `postgresql-16-emaj` | `5.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 209.7 KiB | [postgresql-16-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-16-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-emaj` | `5.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 209.7 KiB | [postgresql-16-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-16-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -299,9 +307,10 @@ width: full
 | `postgresql-15-emaj` | `5.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 210.0 KiB | [postgresql-15-emaj_5.0.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-15-emaj_5.0.0-1PIGSTY~noble_all.deb) |
 | `postgresql-15-emaj` | `5.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 209.7 KiB | [postgresql-15-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-15-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-emaj` | `5.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 209.7 KiB | [postgresql-15-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-15-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -376,14 +385,15 @@ width: full
 | `postgresql-14-emaj` | `5.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 209.9 KiB | [postgresql-14-emaj_5.0.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-14-emaj_5.0.0-1PIGSTY~noble_all.deb) |
 | `postgresql-14-emaj` | `5.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 209.6 KiB | [postgresql-14-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-14-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-emaj` | `5.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 209.6 KiB | [postgresql-14-emaj_5.0.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/emaj/postgresql-14-emaj_5.0.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/dalibo/emaj" title="Repository" icon="github" subtitle="github.com/dalibo/emaj" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="emaj-5.0.0.tar.gz" >}}
+{{< card link="https://github.com/dalibo/emaj" title="Repository" icon="github" subtitle="github.com/dalibo/emaj" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="emaj-5.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

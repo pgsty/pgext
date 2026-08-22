@@ -4,7 +4,10 @@ linkTitle: "pg_oidc_validator"
 description: "OAuth and OIDC token validator for PostgreSQL 18"
 weight: 7170
 categories: ["SEC"]
-width: full
+languages: ["C++"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_oidc_validator**](https://github.com/percona/pg_oidc_validator) : OAuth and OIDC token validator for PostgreSQL 18
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_oidc_validator` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_oidc_validator_18" "green" >}} {{< bg "17" "pg_oidc_validator_17" "red" >}} {{< bg "16" "pg_oidc_validator_16" "red" >}} {{< bg "15" "pg_oidc_validator_15" "red" >}} {{< bg "14" "pg_oidc_validator_14" "red" >}} | `pg_oidc_validator_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-oidc-validator" "green" >}} {{< bg "17" "postgresql-17-pg-oidc-validator" "red" >}} {{< bg "16" "postgresql-16-pg-oidc-validator" "red" >}} {{< bg "15" "postgresql-15-pg-oidc-validator" "red" >}} {{< bg "14" "postgresql-14-pg-oidc-validator" "red" >}} | `postgresql-$v-pg-oidc-validator` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,14 +84,15 @@ width: full
 | `postgresql-18-pg-oidc-validator` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 99.6 KiB | [postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-oidc-validator/postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-oidc-validator` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 120.9 KiB | [postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-oidc-validator/postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-oidc-validator` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 105.2 KiB | [postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-oidc-validator/postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/percona/pg_oidc_validator" title="Repository" icon="github" subtitle="github.com/percona/pg_oidc_validator" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_oidc_validator-1.1.0.tar.gz" >}}
+{{< card link="https://github.com/percona/pg_oidc_validator" title="Repository" icon="github" subtitle="github.com/percona/pg_oidc_validator" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_oidc_validator-1.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

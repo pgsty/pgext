@@ -4,7 +4,10 @@ linkTitle: "pg_lake"
 description: "Data lake extension by Snowflake"
 weight: 2560
 categories: ["OLAP"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_lake**](https://github.com/Snowflake-Labs/pg_lake) : Data lake extension by Snowflake
@@ -39,6 +42,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_lake` | `pg_lake_copy`, `pg_lake_table` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4.0` | {{< bg "18" "pg_lake_18" "green" >}} {{< bg "17" "pg_lake_17" "green" >}} {{< bg "16" "pg_lake_16" "green" >}} {{< bg "15" "pg_lake_15" "red" >}} {{< bg "14" "pg_lake_14" "red" >}} | `pg_lake_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4.0` | {{< bg "18" "postgresql-18-pg-lake" "green" >}} {{< bg "17" "postgresql-17-pg-lake" "green" >}} {{< bg "16" "postgresql-16-pg-lake" "green" >}} {{< bg "15" "postgresql-15-pg-lake" "red" >}} {{< bg "14" "postgresql-14-pg-lake" "red" >}} | `postgresql-$v-pg-lake` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,10 +63,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,9 +85,10 @@ width: full
 | `postgresql-18-pg-lake` | `3.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 18.2 MiB | [postgresql-18-pg-lake_3.4.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lake/postgresql-18-pg-lake_3.4.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-lake` | `3.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.0 MiB | [postgresql-18-pg-lake_3.4.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-18-pg-lake_3.4.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-lake` | `3.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.9 MiB | [postgresql-18-pg-lake_3.4.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-18-pg-lake_3.4.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -100,9 +106,10 @@ width: full
 | `postgresql-17-pg-lake` | `3.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 18.2 MiB | [postgresql-17-pg-lake_3.4.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lake/postgresql-17-pg-lake_3.4.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-lake` | `3.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.0 MiB | [postgresql-17-pg-lake_3.4.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-17-pg-lake_3.4.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-lake` | `3.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.8 MiB | [postgresql-17-pg-lake_3.4.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-17-pg-lake_3.4.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -120,14 +127,15 @@ width: full
 | `postgresql-16-pg-lake` | `3.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 18.2 MiB | [postgresql-16-pg-lake_3.4.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lake/postgresql-16-pg-lake_3.4.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-lake` | `3.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.0 MiB | [postgresql-16-pg-lake_3.4.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-16-pg-lake_3.4.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-lake` | `3.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.8 MiB | [postgresql-16-pg-lake_3.4.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-16-pg-lake_3.4.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/Snowflake-Labs/pg_lake" title="Repository" icon="github" subtitle="github.com/Snowflake-Labs/pg_lake" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_lake-3.4.0.tar.gz" >}}
+{{< card link="https://github.com/Snowflake-Labs/pg_lake" title="Repository" icon="github" subtitle="github.com/Snowflake-Labs/pg_lake" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_lake-3.4.0.tar.gz" />}}
 {{< /cards >}}
 
 

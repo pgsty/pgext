@@ -4,7 +4,10 @@ linkTitle: "pg_duckdb"
 description: "DuckDB Embedded in Postgres"
 weight: 2430
 categories: ["OLAP"]
-width: full
+languages: ["C++"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_duckdb**](https://github.com/duckdb/pg_duckdb) : DuckDB Embedded in Postgres
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_duckdb` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "pg_duckdb_18" "green" >}} {{< bg "17" "pg_duckdb_17" "green" >}} {{< bg "16" "pg_duckdb_16" "green" >}} {{< bg "15" "pg_duckdb_15" "green" >}} {{< bg "14" "pg_duckdb_14" "green" >}} | `pg_duckdb_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} | `postgresql-$v-pg-duckdb` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-pg-duckdb` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 14.5 MiB | [postgresql-18-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-duckdb` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.3 MiB | [postgresql-18-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-duckdb` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.2 MiB | [postgresql-18-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -103,9 +109,10 @@ width: full
 | `postgresql-17-pg-duckdb` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 14.5 MiB | [postgresql-17-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duckdb/postgresql-17-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-duckdb` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.3 MiB | [postgresql-17-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-17-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-duckdb` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.2 MiB | [postgresql-17-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-17-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,9 +132,10 @@ width: full
 | `postgresql-16-pg-duckdb` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 14.5 MiB | [postgresql-16-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duckdb/postgresql-16-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-duckdb` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.3 MiB | [postgresql-16-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-16-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-duckdb` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.1 MiB | [postgresql-16-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-16-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,9 +155,10 @@ width: full
 | `postgresql-15-pg-duckdb` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 14.5 MiB | [postgresql-15-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duckdb/postgresql-15-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-duckdb` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.3 MiB | [postgresql-15-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-15-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-duckdb` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.2 MiB | [postgresql-15-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-15-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -169,14 +178,15 @@ width: full
 | `postgresql-14-pg-duckdb` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 14.5 MiB | [postgresql-14-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-duckdb` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.3 MiB | [postgresql-14-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-duckdb` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.2 MiB | [postgresql-14-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_1.1.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/duckdb/pg_duckdb" title="Repository" icon="github" subtitle="github.com/duckdb/pg_duckdb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.1.1.tar.gz" >}}
+{{< card link="https://github.com/duckdb/pg_duckdb" title="Repository" icon="github" subtitle="github.com/duckdb/pg_duckdb" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.1.1.tar.gz" />}}
 {{< /cards >}}
 
 

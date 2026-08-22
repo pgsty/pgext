@@ -4,7 +4,10 @@ linkTitle: "hll"
 description: "type for storing hyperloglog data"
 weight: 2700
 categories: ["FEAT"]
-width: full
+languages: ["C++"]
+licenses: ["Apache-2.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**hll**](https://github.com/citusdata/postgresql-hll) : type for storing hyperloglog data
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.21` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hll` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.21` | {{< bg "18" "hll_18" "green" >}} {{< bg "17" "hll_17" "green" >}} {{< bg "16" "hll_16" "green" >}} {{< bg "15" "hll_15" "green" >}} {{< bg "14" "hll_14" "green" >}} | `hll_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.21` | {{< bg "18" "postgresql-18-hll" "green" >}} {{< bg "17" "postgresql-17-hll" "green" >}} {{< bg "16" "postgresql-16-hll" "green" >}} {{< bg "15" "postgresql-15-hll" "green" >}} {{< bg "14" "postgresql-14-hll" "green" >}} | `postgresql-$v-hll` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.21" "postgresql-18-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-17-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-16-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-15-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-14-hll : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.21" "postgresql-18-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-17-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-16-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-15-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-14-hll : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.21" "postgresql-18-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-17-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-16-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-15-hll : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.21" "postgresql-14-hll : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -129,9 +134,10 @@ width: full
 | `postgresql-18-hll` | `2.21` | [u26.aarch64](/os/u26.aarch64) | pgdg | 75.1 KiB | [postgresql-18-hll_2.21-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-18-hll_2.21-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-hll` | `2.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.3 KiB | [postgresql-18-hll_2.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-18-hll_2.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-hll` | `2.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.2 KiB | [postgresql-18-hll_2.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-18-hll_2.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -203,9 +209,10 @@ width: full
 | `postgresql-17-hll` | `2.21` | [u26.aarch64](/os/u26.aarch64) | pgdg | 75.1 KiB | [postgresql-17-hll_2.21-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-17-hll_2.21-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-hll` | `2.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.3 KiB | [postgresql-17-hll_2.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-17-hll_2.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-hll` | `2.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.1 KiB | [postgresql-17-hll_2.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-17-hll_2.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -277,9 +284,10 @@ width: full
 | `postgresql-16-hll` | `2.21` | [u26.aarch64](/os/u26.aarch64) | pgdg | 75.1 KiB | [postgresql-16-hll_2.21-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-16-hll_2.21-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-hll` | `2.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.4 KiB | [postgresql-16-hll_2.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-16-hll_2.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-hll` | `2.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.3 KiB | [postgresql-16-hll_2.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-16-hll_2.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -355,9 +363,10 @@ width: full
 | `postgresql-15-hll` | `2.21` | [u26.aarch64](/os/u26.aarch64) | pgdg | 76.3 KiB | [postgresql-15-hll_2.21-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-15-hll_2.21-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-hll` | `2.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 75.5 KiB | [postgresql-15-hll_2.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-15-hll_2.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-hll` | `2.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 75.3 KiB | [postgresql-15-hll_2.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-15-hll_2.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -432,13 +441,14 @@ width: full
 | `postgresql-14-hll` | `2.21` | [u26.aarch64](/os/u26.aarch64) | pgdg | 76.2 KiB | [postgresql-14-hll_2.21-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-14-hll_2.21-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-hll` | `2.20` | [u26.aarch64](/os/u26.aarch64) | pgdg | 75.4 KiB | [postgresql-14-hll_2.20-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-14-hll_2.20-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-hll` | `2.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 75.2 KiB | [postgresql-14-hll_2.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-hll/postgresql-14-hll_2.19-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/citusdata/postgresql-hll" title="Repository" icon="github" subtitle="github.com/citusdata/postgresql-hll" >}}
+{{< card link="https://github.com/citusdata/postgresql-hll" title="Repository" icon="github" subtitle="github.com/citusdata/postgresql-hll" />}}
 {{< /cards >}}
 
 

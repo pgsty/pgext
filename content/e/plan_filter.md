@@ -4,7 +4,10 @@ linkTitle: "plan_filter"
 description: "filter statements by their execution plans."
 weight: 2810
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_plan_filter**](https://github.com/pgexperts/pg_plan_filter) : filter statements by their execution plans.
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_plan_filter` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_plan_filter_18" "green" >}} {{< bg "17" "pg_plan_filter_17" "green" >}} {{< bg "16" "pg_plan_filter_16" "green" >}} {{< bg "15" "pg_plan_filter_15" "green" >}} {{< bg "14" "pg_plan_filter_14" "green" >}} | `pg_plan_filter_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-plan-filter" "green" >}} {{< bg "17" "postgresql-17-pg-plan-filter" "green" >}} {{< bg "16" "postgresql-16-pg-plan-filter" "green" >}} {{< bg "15" "postgresql-15-pg-plan-filter" "green" >}} {{< bg "14" "postgresql-14-pg-plan-filter" "green" >}} | `postgresql-$v-pg-plan-filter` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-plan-filter : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-plan-filter : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-plan-filter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-plan-filter : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pg-plan-filter` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.2 KiB | [postgresql-18-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-plan-filter/postgresql-18-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-plan-filter` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.8 KiB | [postgresql-18-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-18-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-plan-filter` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-18-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-18-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pg-plan-filter` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-17-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-plan-filter/postgresql-17-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-plan-filter` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.8 KiB | [postgresql-17-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-17-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-plan-filter` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-17-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-17-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pg-plan-filter` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-16-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-plan-filter/postgresql-16-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-plan-filter` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.8 KiB | [postgresql-16-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-16-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-plan-filter` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-16-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-16-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pg-plan-filter` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-15-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-plan-filter/postgresql-15-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-plan-filter` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.8 KiB | [postgresql-15-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-15-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-plan-filter` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-15-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-15-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pg-plan-filter` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.2 KiB | [postgresql-14-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-plan-filter/postgresql-14-pg-plan-filter_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-plan-filter` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.8 KiB | [postgresql-14-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-14-pg-plan-filter_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-plan-filter` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-14-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-plan-filter/postgresql-14-pg-plan-filter_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgexperts/pg_plan_filter" title="Repository" icon="github" subtitle="github.com/pgexperts/pg_plan_filter" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_plan_filter.tar.gz" >}}
+{{< card link="https://github.com/pgexperts/pg_plan_filter" title="Repository" icon="github" subtitle="github.com/pgexperts/pg_plan_filter" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_plan_filter.tar.gz" />}}
 {{< /cards >}}
 
 

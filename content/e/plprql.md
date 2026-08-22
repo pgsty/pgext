@@ -4,7 +4,10 @@ linkTitle: "plprql"
 description: "Use PRQL in PostgreSQL - Pipelined Relational Query Language"
 weight: 3040
 categories: ["LANG"]
-width: full
+languages: ["Rust"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**plprql**](https://github.com/kaspermarstal/plprql) : Use PRQL in PostgreSQL - Pipelined Relational Query Language
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plprql` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.0.1` | {{< bg "18" "plprql_18" "green" >}} {{< bg "17" "plprql_17" "green" >}} {{< bg "16" "plprql_16" "green" >}} {{< bg "15" "plprql_15" "green" >}} {{< bg "14" "plprql_14" "green" >}} | `plprql_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.0.1` | {{< bg "18" "postgresql-18-plprql" "green" >}} {{< bg "17" "postgresql-17-plprql" "green" >}} {{< bg "16" "postgresql-16-plprql" "green" >}} {{< bg "15" "postgresql-15-plprql" "green" >}} {{< bg "14" "postgresql-14-plprql" "green" >}} | `postgresql-$v-plprql` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-18-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-17-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-16-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-15-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-14-plprql : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-18-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-17-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-16-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-15-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-14-plprql : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-18-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-17-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-16-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-15-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.1" "postgresql-14-plprql : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-plprql` | `18.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.2 MiB | [postgresql-18-plprql_18.0.1-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plprql/postgresql-18-plprql_18.0.1-4PIGSTY~noble_arm64.deb) |
 | `postgresql-18-plprql` | `18.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.4 MiB | [postgresql-18-plprql_18.0.1-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-18-plprql_18.0.1-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-plprql` | `18.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.2 MiB | [postgresql-18-plprql_18.0.1-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-18-plprql_18.0.1-4PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-plprql` | `18.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.2 MiB | [postgresql-17-plprql_18.0.1-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plprql/postgresql-17-plprql_18.0.1-4PIGSTY~noble_arm64.deb) |
 | `postgresql-17-plprql` | `18.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.4 MiB | [postgresql-17-plprql_18.0.1-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-17-plprql_18.0.1-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-plprql` | `18.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.2 MiB | [postgresql-17-plprql_18.0.1-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-17-plprql_18.0.1-4PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-plprql` | `18.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.2 MiB | [postgresql-16-plprql_18.0.1-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plprql/postgresql-16-plprql_18.0.1-4PIGSTY~noble_arm64.deb) |
 | `postgresql-16-plprql` | `18.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.4 MiB | [postgresql-16-plprql_18.0.1-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-16-plprql_18.0.1-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-plprql` | `18.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.1 MiB | [postgresql-16-plprql_18.0.1-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-16-plprql_18.0.1-4PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-plprql` | `18.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.2 MiB | [postgresql-15-plprql_18.0.1-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plprql/postgresql-15-plprql_18.0.1-4PIGSTY~noble_arm64.deb) |
 | `postgresql-15-plprql` | `18.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.4 MiB | [postgresql-15-plprql_18.0.1-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-15-plprql_18.0.1-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-plprql` | `18.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.1 MiB | [postgresql-15-plprql_18.0.1-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-15-plprql_18.0.1-4PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-plprql` | `18.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.2 MiB | [postgresql-14-plprql_18.0.1-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plprql/postgresql-14-plprql_18.0.1-4PIGSTY~noble_arm64.deb) |
 | `postgresql-14-plprql` | `18.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.4 MiB | [postgresql-14-plprql_18.0.1-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-14-plprql_18.0.1-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-plprql` | `18.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.1 MiB | [postgresql-14-plprql_18.0.1-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/plprql/postgresql-14-plprql_18.0.1-4PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/kaspermarstal/plprql" title="Repository" icon="github" subtitle="github.com/kaspermarstal/plprql" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plprql-18.0.1.tar.gz" >}}
+{{< card link="https://github.com/kaspermarstal/plprql" title="Repository" icon="github" subtitle="github.com/kaspermarstal/plprql" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plprql-18.0.1.tar.gz" />}}
 {{< /cards >}}
 
 

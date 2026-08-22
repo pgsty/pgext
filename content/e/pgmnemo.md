@@ -4,7 +4,10 @@ linkTitle: "pgmnemo"
 description: "Single-plan multimodal agent memory for PostgreSQL"
 weight: 1950
 categories: ["RAG"]
-width: full
+languages: ["SQL"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgmnemo**](https://github.com/pgmnemo/pgmnemo) : Single-plan multimodal agent memory for PostgreSQL
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.16.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgmnemo` | `vector` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.16.1` | {{< bg "18" "pgmnemo_18" "green" >}} {{< bg "17" "pgmnemo_17" "green" >}} {{< bg "16" "pgmnemo_16" "red" >}} {{< bg "15" "pgmnemo_15" "red" >}} {{< bg "14" "pgmnemo_14" "red" >}} | `pgmnemo_$v` | `pgvector_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.16.1` | {{< bg "18" "postgresql-18-pgmnemo" "green" >}} {{< bg "17" "postgresql-17-pgmnemo" "green" >}} {{< bg "16" "postgresql-16-pgmnemo" "red" >}} {{< bg "15" "postgresql-15-pgmnemo" "red" >}} {{< bg "14" "postgresql-14-pgmnemo" "red" >}} | `postgresql-$v-pgmnemo` | `postgresql-$v-pgvector` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-18-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-17-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-16-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-15-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-14-pgmnemo : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-18-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-17-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-16-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-15-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-14-pgmnemo : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-18-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-17-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-16-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-15-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-14-pgmnemo : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -87,9 +92,10 @@ width: full
 | `postgresql-18-pgmnemo` | `0.16.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 165.8 KiB | [postgresql-18-pgmnemo_0.16.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmnemo/postgresql-18-pgmnemo_0.16.1-1PIGSTY~noble_all.deb) |
 | `postgresql-18-pgmnemo` | `0.16.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 165.7 KiB | [postgresql-18-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-18-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-pgmnemo` | `0.16.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 165.7 KiB | [postgresql-18-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-18-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -115,9 +121,10 @@ width: full
 | `postgresql-17-pgmnemo` | `0.16.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 165.8 KiB | [postgresql-17-pgmnemo_0.16.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmnemo/postgresql-17-pgmnemo_0.16.1-1PIGSTY~noble_all.deb) |
 | `postgresql-17-pgmnemo` | `0.16.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 165.6 KiB | [postgresql-17-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-17-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-pgmnemo` | `0.16.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 165.6 KiB | [postgresql-17-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-17-pgmnemo_0.16.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,9 +144,10 @@ width: full
 | `postgresql-16-pgmnemo` | `0.12.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 124.8 KiB | [postgresql-16-pgmnemo_0.12.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmnemo/postgresql-16-pgmnemo_0.12.1-1PIGSTY~noble_all.deb) |
 | `postgresql-16-pgmnemo` | `0.12.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 124.9 KiB | [postgresql-16-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-16-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-pgmnemo` | `0.12.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 124.9 KiB | [postgresql-16-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-16-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -159,9 +167,10 @@ width: full
 | `postgresql-15-pgmnemo` | `0.12.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 124.8 KiB | [postgresql-15-pgmnemo_0.12.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmnemo/postgresql-15-pgmnemo_0.12.1-1PIGSTY~noble_all.deb) |
 | `postgresql-15-pgmnemo` | `0.12.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 124.9 KiB | [postgresql-15-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-15-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-pgmnemo` | `0.12.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 124.9 KiB | [postgresql-15-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-15-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -181,14 +190,15 @@ width: full
 | `postgresql-14-pgmnemo` | `0.12.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 124.8 KiB | [postgresql-14-pgmnemo_0.12.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmnemo/postgresql-14-pgmnemo_0.12.1-1PIGSTY~noble_all.deb) |
 | `postgresql-14-pgmnemo` | `0.12.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 124.9 KiB | [postgresql-14-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-14-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-pgmnemo` | `0.12.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 124.9 KiB | [postgresql-14-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmnemo/postgresql-14-pgmnemo_0.12.1-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgmnemo/pgmnemo" title="Repository" icon="github" subtitle="github.com/pgmnemo/pgmnemo" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmnemo-0.16.1.tar.gz" >}}
+{{< card link="https://github.com/pgmnemo/pgmnemo" title="Repository" icon="github" subtitle="github.com/pgmnemo/pgmnemo" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmnemo-0.16.1.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -1,6 +1,7 @@
 ---
 title: "By Category"
 weight: 100
+page_width: full
 ---
 
 The 576 packaged PostgreSQL extensions (in 471 package families) are organized into 16 categories.

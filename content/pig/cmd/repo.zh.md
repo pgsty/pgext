@@ -1,7 +1,7 @@
 ---
 title: "命令：repo"
 description: 如何使用 pig repo 子命令管理软件仓库？
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 610
 ---
 

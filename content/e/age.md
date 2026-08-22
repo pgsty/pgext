@@ -4,7 +4,10 @@ linkTitle: "age"
 description: "AGE graph database extension"
 weight: 2600
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**age**](https://github.com/apache/age) : AGE graph database extension
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `age` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "age_18" "green" >}} {{< bg "17" "age_17" "green" >}} {{< bg "16" "age_16" "red" >}} {{< bg "15" "age_15" "red" >}} {{< bg "14" "age_14" "red" >}} | `age_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.0` | {{< bg "18" "postgresql-18-age" "green" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "red" >}} {{< bg "15" "postgresql-15-age" "red" >}} {{< bg "14" "postgresql-14-age" "red" >}} | `postgresql-$v-age` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-age : AVAIL 3" "blue" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-age : AVAIL 2" "green" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-age : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-age : AVAIL 3" "blue" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-age : AVAIL 2" "green" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-age : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-age : AVAIL 3" "blue" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-age : AVAIL 2" "green" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-age : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -120,9 +125,10 @@ width: full
 | `postgresql-18-age` | `1.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 771.3 KiB | [postgresql-18-age_1.8.0~rc0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18-age/postgresql-18-age_1.8.0~rc0-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-age` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 710.1 KiB | [postgresql-18-age_1.7.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/age/postgresql-18-age_1.7.0-2PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-age` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 656.3 KiB | [postgresql-18-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18-age/postgresql-18-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -176,9 +182,10 @@ width: full
 | `postgresql-17-age` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 679.2 KiB | [postgresql-17-age_1.7.0~rc0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17-age/postgresql-17-age_1.7.0~rc0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-age` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 710.4 KiB | [postgresql-17-age_1.7.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/age/postgresql-17-age_1.7.0-2PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-age` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 655.3 KiB | [postgresql-17-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17-age/postgresql-17-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -208,9 +215,10 @@ width: full
 | `postgresql-16-age` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 656.4 KiB | [postgresql-16-age_1.6.0~rc0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-16-age/postgresql-16-age_1.6.0~rc0-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-age` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 674.8 KiB | [postgresql-16-age_1.6.0~rc0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-16-age/postgresql-16-age_1.6.0~rc0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-age` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 654.0 KiB | [postgresql-16-age_1.6.0~rc0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-16-age/postgresql-16-age_1.6.0~rc0-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -240,9 +248,10 @@ width: full
 | `postgresql-15-age` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 661.5 KiB | [postgresql-15-age_1.6.0~rc0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-15-age/postgresql-15-age_1.6.0~rc0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-age` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 679.3 KiB | [postgresql-15-age_1.6.0~rc0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-15-age/postgresql-15-age_1.6.0~rc0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-age` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 658.2 KiB | [postgresql-15-age_1.6.0~rc0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-15-age/postgresql-15-age_1.6.0~rc0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -272,14 +281,15 @@ width: full
 | `postgresql-14-age` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 660.7 KiB | [postgresql-14-age_1.6.0~rc0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14-age/postgresql-14-age_1.6.0~rc0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-age` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 678.1 KiB | [postgresql-14-age_1.6.0~rc0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14-age/postgresql-14-age_1.6.0~rc0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-age` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 657.7 KiB | [postgresql-14-age_1.6.0~rc0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14-age/postgresql-14-age_1.6.0~rc0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/apache/age" title="Repository" icon="github" subtitle="github.com/apache/age" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="age-PG18-v1.8.0-rc0.tar.gz" >}}
+{{< card link="https://github.com/apache/age" title="Repository" icon="github" subtitle="github.com/apache/age" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="age-PG18-v1.8.0-rc0.tar.gz" />}}
 {{< /cards >}}
 
 

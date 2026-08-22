@@ -4,7 +4,10 @@ linkTitle: "pg_show_plans"
 description: "show query plans of all currently running SQL statements"
 weight: 6210
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_show_plans**](https://github.com/cybertec-postgresql/pg_show_plans) : show query plans of all currently running SQL statements
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_show_plans` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.8` | {{< bg "18" "pg_show_plans_18" "green" >}} {{< bg "17" "pg_show_plans_17" "green" >}} {{< bg "16" "pg_show_plans_16" "green" >}} {{< bg "15" "pg_show_plans_15" "green" >}} {{< bg "14" "pg_show_plans_14" "green" >}} | `pg_show_plans_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.8` | {{< bg "18" "postgresql-18-show-plans" "green" >}} {{< bg "17" "postgresql-17-show-plans" "green" >}} {{< bg "16" "postgresql-16-show-plans" "green" >}} {{< bg "15" "postgresql-15-show-plans" "green" >}} {{< bg "14" "postgresql-14-show-plans" "green" >}} | `postgresql-$v-show-plans` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.1.8" "postgresql-18-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-17-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-16-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-15-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-14-show-plans : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.1.8" "postgresql-18-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-17-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-16-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-15-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-14-show-plans : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.1.8" "postgresql-18-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-17-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-16-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-15-show-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.8" "postgresql-14-show-plans : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -105,9 +110,10 @@ width: full
 | `postgresql-18-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.3 KiB | [postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-show-plans` | `2.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-18-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.6 KiB | [postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,9 +171,10 @@ width: full
 | `postgresql-17-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.4 KiB | [postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-show-plans` | `2.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-17-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -229,9 +236,10 @@ width: full
 | `postgresql-16-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.4 KiB | [postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-show-plans` | `2.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-16-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -293,9 +301,10 @@ width: full
 | `postgresql-15-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.4 KiB | [postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-show-plans` | `2.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-15-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -357,14 +366,15 @@ width: full
 | `postgresql-14-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.1 KiB | [postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-show-plans` | `2.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.5 KiB | [postgresql-14-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.4 KiB | [postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/cybertec-postgresql/pg_show_plans" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_show_plans" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_show_plans-2.1.8.tar.gz" >}}
+{{< card link="https://github.com/cybertec-postgresql/pg_show_plans" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_show_plans" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_show_plans-2.1.8.tar.gz" />}}
 {{< /cards >}}
 
 

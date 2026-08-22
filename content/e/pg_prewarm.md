@@ -4,7 +4,10 @@ linkTitle: "pg_prewarm"
 description: "prewarm relation data"
 weight: 5890
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_prewarm**](https://www.postgresql.org/docs/current/pgprewarm.html) : prewarm relation data

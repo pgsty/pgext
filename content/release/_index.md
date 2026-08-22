@@ -6,15 +6,15 @@ weight: 800
 
 
 {{< cards cols=2 >}}
-{{< card link="https://pig.pgsty.com/release/"                         title="PIG Release"    subtitle="Changelog of the PG Package Manager"      icon="sparkles" >}}
-{{< card link="https://pigsty.io/docs/about/release" title="Pigsty Release" subtitle="Battery-Included PostgreSQL Distribution" icon="play"     >}}
+{{< card link="https://pig.pgsty.com/release/"                         title="PIG Release"    subtitle="Changelog of the PG Package Manager"      icon="sparkles" />}}
+{{< card link="https://pigsty.io/docs/about/release" title="Pigsty Release" subtitle="Battery-Included PostgreSQL Distribution" icon="play" />}}
 {{< /cards >}}
 
 
 {{< cards >}}
-{{< card link="/release/rpm"   title="RPM Changelog"   subtitle="Changelog of EL RPM Packages" icon="sparkles"  >}}
-{{< card link="/release/deb"   title="DEB Changelog"   subtitle="Changelog of Debian Packages" icon="play"      >}}
-{{< card link="/release/infra" title="Infra Changelog" subtitle="Changelog of OS-Generic Packages"  icon="save" >}}
+{{< card link="/release/rpm"   title="RPM Changelog"   subtitle="Changelog of EL RPM Packages" icon="sparkles" />}}
+{{< card link="/release/deb"   title="DEB Changelog"   subtitle="Changelog of Debian Packages" icon="play" />}}
+{{< card link="/release/infra" title="Infra Changelog" subtitle="Changelog of OS-Generic Packages"  icon="save" />}}
 {{< /cards >}}
 
 

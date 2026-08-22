@@ -4,7 +4,10 @@ linkTitle: "pg_proctab"
 description: "PostgreSQL extension to access the OS process table"
 weight: 6450
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgnodemx**](https://github.com/markwkm/pg_proctab) : PostgreSQL extension to access the OS process table
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgnodemx` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "pgnodemx_18" "green" >}} {{< bg "17" "pgnodemx_17" "green" >}} {{< bg "16" "pgnodemx_16" "green" >}} {{< bg "15" "pgnodemx_15" "green" >}} {{< bg "14" "pgnodemx_14" "green" >}} | `pgnodemx_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pgnodemx" "green" >}} {{< bg "17" "postgresql-17-pgnodemx" "green" >}} {{< bg "16" "postgresql-16-pgnodemx" "green" >}} {{< bg "15" "postgresql-15-pgnodemx" "green" >}} {{< bg "14" "postgresql-14-pgnodemx" "green" >}} | `postgresql-$v-pgnodemx` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,13 +61,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/markwkm/pg_proctab" title="Repository" icon="github" subtitle="github.com/markwkm/pg_proctab" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgnodemx-2.0.1.tar.gz" >}}
+{{< card link="https://github.com/markwkm/pg_proctab" title="Repository" icon="github" subtitle="github.com/markwkm/pg_proctab" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgnodemx-2.0.1.tar.gz" />}}
 {{< /cards >}}
 
 

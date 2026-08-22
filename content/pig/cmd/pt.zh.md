@@ -1,7 +1,7 @@
 ---
 title: "pig pt"
 description: "透明运行 patronictl，附带 Pigsty 服务、配置与日志辅助命令"
-icon: RefreshCw
+icon: fa-solid fa-arrows-rotate
 weight: 650
 ---
 

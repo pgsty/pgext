@@ -4,7 +4,9 @@ linkTitle: "pg_analytics"
 description: "Postgres for analytics, powered by DuckDB"
 weight: 2420
 categories: ["OLAP"]
-width: full
+languages: ["Rust"]
+licenses: ["PostgreSQL"]
+page_width: full
 ---
 
 [**pg_analytics**](https://github.com/paradedb/pg_analytics) : Postgres for analytics, powered by DuckDB
@@ -37,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.7` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_analytics` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.7` | {{< bg "18" "pg_analytics_18" "red" >}} {{< bg "17" "pg_analytics_17" "green" >}} {{< bg "16" "pg_analytics_16" "green" >}} {{< bg "15" "pg_analytics_15" "green" >}} {{< bg "14" "pg_analytics_14" "green" >}} | `pg_analytics_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.7` | {{< bg "18" "postgresql-18-pg-analytics" "red" >}} {{< bg "17" "postgresql-17-pg-analytics" "green" >}} {{< bg "16" "postgresql-16-pg-analytics" "green" >}} {{< bg "15" "postgresql-15-pg-analytics" "green" >}} {{< bg "14" "postgresql-14-pg-analytics" "green" >}} | `postgresql-$v-pg-analytics` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-analytics : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.7" "postgresql-17-pg-analytics : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.7" "postgresql-16-pg-analytics : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.7" "postgresql-15-pg-analytics : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.7" "postgresql-14-pg-analytics : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-analytics : MISS 0" "red" >}}      |
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-analytics : MISS 0" "red" >}}      |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG17" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -74,9 +78,10 @@ width: full
 | `postgresql-17-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
 | `postgresql-17-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.6 MiB | [postgresql-17-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_amd64.deb) |
 | `postgresql-17-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -90,9 +95,10 @@ width: full
 | `postgresql-16-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
 | `postgresql-16-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.6 MiB | [postgresql-16-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_amd64.deb) |
 | `postgresql-16-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -106,9 +112,10 @@ width: full
 | `postgresql-15-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
 | `postgresql-15-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.5 MiB | [postgresql-15-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_amd64.deb) |
 | `postgresql-15-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -122,13 +129,14 @@ width: full
 | `postgresql-14-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
 | `postgresql-14-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.6 MiB | [postgresql-14-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_amd64.deb) |
 | `postgresql-14-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.1 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/paradedb/pg_analytics" title="Repository" icon="github" subtitle="github.com/paradedb/pg_analytics" >}}
+{{< card link="https://github.com/paradedb/pg_analytics" title="Repository" icon="github" subtitle="github.com/paradedb/pg_analytics" />}}
 {{< /cards >}}
 
 

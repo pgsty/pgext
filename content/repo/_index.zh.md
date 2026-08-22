@@ -1,9 +1,9 @@
 ---
 title: 软件仓库
 description: 用于交付 PostgreSQL 扩展的基础设施和软件包仓库
-icon: Warehouse
+icon: fa-solid fa-warehouse
 weight: 300
-breadcrumbs: false
+breadcrumb: false
 ---
 
 
@@ -12,8 +12,8 @@ Pigsty 为 16 个 [Linux 平台目标](/zh/os)（8 个发行版大版本，各�
 Pigsty 扩展仓库旨在与 [PGDG](https://www.postgresql.org/download/linux/) 官方仓库配合使用，共同使用时可以安装多达 [575 个已打包 PostgreSQL 扩展](/zh/list)。
 
 {{< cards cols=2 >}}
-{{< card link="/zh/repo/pgsql"  title="PGSQL Repo" subtitle="Pigsty PG 扩展仓库" icon="play"     >}}
-{{< card link="/zh/repo/infra"  title="INFRA Repo" subtitle="Pigsty 基础设施仓库" icon="sparkles" >}}
+{{< card link="/zh/repo/pgsql"  title="PGSQL Repo" subtitle="Pigsty PG 扩展仓库" icon="play" />}}
+{{< card link="/zh/repo/infra"  title="INFRA Repo" subtitle="Pigsty 基础设施仓库" icon="sparkles" />}}
 {{< /cards >}}
 
 |  OS / Arch   |  OS  |                                                                                                    x86_64                                                                                                    |                                                                                                   aarch64                                                                                                    |
@@ -32,16 +32,16 @@ Pigsty 扩展仓库旨在与 [PGDG](https://www.postgresql.org/download/linux/) 
 
 你可以使用 [**`pig`**](https://pig.pgsty.com/zh) 命令行工具来方便的启用 infra 和 pgsql 仓库，
 
-{{< tabs >}}
+{{< tabs group="mirror" default="mirror" >}}
 
-{{< tab name="默认" >}}
+{{< tab label="默认" value="global" >}}
 ```bash tab="pig"
 curl https://repo.pigsty.io/pig | bash      # 下载安装最新版本的 pig 命令行工具
 pig repo add all -u                         # 添加 Linux / PGDG / Pigsty 仓库并更新缓存
 ```
 {{< /tab >}}
 
-{{< tab name="镜像" selected=true >}}
+{{< tab label="镜像" value="mirror" >}}
 ```bash tab="pig"
 curl https://repo.pigsty.cc/pig | bash      # 从中国镜像站下载安装最新版本的 pig 命令行工具
 pig repo add -u                             # 添加 Linux / PGDG / Pigsty 仓库并更新缓存
@@ -54,8 +54,8 @@ pig repo add -u                             # 添加 Linux / PGDG / Pigsty 仓�
 
 您也可以使用经典的 `apt` / `dnf` / `yum` 命令 ，将它们 [手工添加](#手工添加) 到系统中。
 
-{{< tabs >}}
-{{< tab name="APT" selected=true >}}
+{{< tabs group="pkgmgr" >}}
+{{< tab label="APT" value="apt" >}}
 ```bash tab="apt"
 # 将 Pigsty 的 GPG 公钥添加到系统密钥链中，以验证软件包签名
 curl -fsSL https://repo.pigsty.io/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
@@ -72,7 +72,7 @@ sudo apt update
 ```
 {{< /tab >}}
 
-{{< tab name="DNF/YUM" >}}
+{{< tab label="DNF/YUM" value="dnf" >}}
 ```bash tab="yum"
 # 将 Pigsty 的 GPG 公钥添加到系统密钥链中，以验证软件包签名
 curl -fsSL https://repo.pigsty.io/key | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty >/dev/null

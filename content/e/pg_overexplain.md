@@ -4,7 +4,10 @@ linkTitle: "pg_overexplain"
 description: "Allow EXPLAIN to dump even more details"
 weight: 6880
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_overexplain**](https://www.postgresql.org/docs/devel/pgoverexplain.html) : Allow EXPLAIN to dump even more details

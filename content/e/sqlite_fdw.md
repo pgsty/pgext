@@ -4,7 +4,10 @@ linkTitle: "sqlite_fdw"
 description: "SQLite Foreign Data Wrapper"
 weight: 8640
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**sqlite_fdw**](https://github.com/pgspider/sqlite_fdw) : SQLite Foreign Data Wrapper
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `sqlite_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "sqlite_fdw_18" "green" >}} {{< bg "17" "sqlite_fdw_17" "green" >}} {{< bg "16" "sqlite_fdw_16" "green" >}} {{< bg "15" "sqlite_fdw_15" "green" >}} {{< bg "14" "sqlite_fdw_14" "green" >}} | `sqlite_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "postgresql-18-sqlite-fdw" "green" >}} {{< bg "17" "postgresql-17-sqlite-fdw" "green" >}} {{< bg "16" "postgresql-16-sqlite-fdw" "green" >}} {{< bg "15" "postgresql-15-sqlite-fdw" "green" >}} {{< bg "14" "postgresql-14-sqlite-fdw" "green" >}} | `postgresql-$v-sqlite-fdw` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-18-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-17-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-16-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-15-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-14-sqlite-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-18-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-17-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-16-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-15-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-14-sqlite-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-18-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-17-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-16-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-15-sqlite-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.5.0" "postgresql-14-sqlite-fdw : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-sqlite-fdw` | `2.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 157.5 KiB | [postgresql-18-sqlite-fdw_2.5.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-18-sqlite-fdw_2.5.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-sqlite-fdw` | `2.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 158.2 KiB | [postgresql-18-sqlite-fdw_2.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-18-sqlite-fdw_2.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-sqlite-fdw` | `2.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 156.0 KiB | [postgresql-18-sqlite-fdw_2.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-18-sqlite-fdw_2.5.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -111,9 +117,10 @@ width: full
 | `postgresql-17-sqlite-fdw` | `2.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 156.8 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-sqlite-fdw` | `2.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 157.8 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-sqlite-fdw` | `2.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 155.9 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +150,10 @@ width: full
 | `postgresql-16-sqlite-fdw` | `2.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 155.1 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-sqlite-fdw` | `2.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 155.7 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-sqlite-fdw` | `2.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 153.5 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -183,9 +191,10 @@ width: full
 | `postgresql-15-sqlite-fdw` | `2.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 157.2 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-sqlite-fdw` | `2.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 157.1 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-sqlite-fdw` | `2.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 155.5 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -224,14 +233,15 @@ width: full
 | `postgresql-14-sqlite-fdw` | `2.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 157.4 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-sqlite-fdw` | `2.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 157.5 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-sqlite-fdw` | `2.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 155.8 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgspider/sqlite_fdw" title="Repository" icon="github" subtitle="github.com/pgspider/sqlite_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="sqlite_fdw-2.5.0.tar.gz" >}}
+{{< card link="https://github.com/pgspider/sqlite_fdw" title="Repository" icon="github" subtitle="github.com/pgspider/sqlite_fdw" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="sqlite_fdw-2.5.0.tar.gz" />}}
 {{< /cards >}}
 
 

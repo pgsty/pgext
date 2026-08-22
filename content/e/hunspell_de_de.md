@@ -4,7 +4,10 @@ linkTitle: "hunspell_de_de"
 description: "German Hunspell Dictionary"
 weight: 2271
 categories: ["FTS"]
-width: full
+languages: ["Data"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**hunspell**](https://github.com/postgrespro/hunspell_dicts) : German Hunspell Dictionary
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hunspell` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "hunspell_18" "green" >}} {{< bg "17" "hunspell_17" "green" >}} {{< bg "16" "hunspell_16" "green" >}} {{< bg "15" "hunspell_15" "green" >}} {{< bg "14" "hunspell_14" "green" >}} | `hunspell_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-hunspell" "green" >}} {{< bg "17" "postgresql-17-hunspell" "green" >}} {{< bg "16" "postgresql-16-hunspell" "green" >}} {{< bg "15" "postgresql-15-hunspell" "green" >}} {{< bg "14" "postgresql-14-hunspell" "green" >}} | `postgresql-$v-hunspell` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,13 +59,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell : AVAIL 1" "green" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/postgrespro/hunspell_dicts" title="Repository" icon="github" subtitle="github.com/postgrespro/hunspell_dicts" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hunspell-1.0.tar.gz" >}}
+{{< card link="https://github.com/postgrespro/hunspell_dicts" title="Repository" icon="github" subtitle="github.com/postgrespro/hunspell_dicts" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hunspell-1.0.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "count_distinct"
 description: "An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate"
 weight: 4630
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["BSD-2-Clause"]
+repos: ["MIXED"]
+page_width: full
 ---
 
 [**count_distinct**](https://github.com/tvondra/count_distinct) : An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `count_distinct` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "count_distinct_18" "green" >}} {{< bg "17" "count_distinct_17" "green" >}} {{< bg "16" "count_distinct_16" "green" >}} {{< bg "15" "count_distinct_15" "green" >}} {{< bg "14" "count_distinct_14" "green" >}} | `count_distinct_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "postgresql-18-count-distinct" "green" >}} {{< bg "17" "postgresql-17-count-distinct" "green" >}} {{< bg "16" "postgresql-16-count-distinct" "green" >}} {{< bg "15" "postgresql-15-count-distinct" "green" >}} {{< bg "14" "postgresql-14-count-distinct" "green" >}} | `postgresql-$v-count-distinct` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-18-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-17-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-16-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-15-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-14-count-distinct : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-18-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-17-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-16-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-15-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-14-count-distinct : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-18-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-17-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-16-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-15-count-distinct : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.2" "postgresql-14-count-distinct : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -89,9 +94,10 @@ width: full
 | `postgresql-18-count-distinct` | `3.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.7 KiB | [postgresql-18-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/count-distinct/postgresql-18-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-count-distinct` | `3.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.4 KiB | [postgresql-18-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-18-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-count-distinct` | `3.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.7 KiB | [postgresql-18-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-18-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +127,10 @@ width: full
 | `postgresql-17-count-distinct` | `3.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.6 KiB | [postgresql-17-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/count-distinct/postgresql-17-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-count-distinct` | `3.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.4 KiB | [postgresql-17-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-17-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-count-distinct` | `3.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.6 KiB | [postgresql-17-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-17-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -153,9 +160,10 @@ width: full
 | `postgresql-16-count-distinct` | `3.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.6 KiB | [postgresql-16-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/count-distinct/postgresql-16-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-count-distinct` | `3.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.4 KiB | [postgresql-16-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-16-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-count-distinct` | `3.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.6 KiB | [postgresql-16-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-16-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -185,9 +193,10 @@ width: full
 | `postgresql-15-count-distinct` | `3.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.4 KiB | [postgresql-15-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/count-distinct/postgresql-15-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-count-distinct` | `3.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.2 KiB | [postgresql-15-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-15-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-count-distinct` | `3.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.4 KiB | [postgresql-15-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-15-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -216,14 +225,15 @@ width: full
 | `postgresql-14-count-distinct` | `3.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.4 KiB | [postgresql-14-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/count-distinct/postgresql-14-count-distinct_3.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-count-distinct` | `3.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.1 KiB | [postgresql-14-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-14-count-distinct_3.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-count-distinct` | `3.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.3 KiB | [postgresql-14-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/count-distinct/postgresql-14-count-distinct_3.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/tvondra/count_distinct" title="Repository" icon="github" subtitle="github.com/tvondra/count_distinct" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="count_distinct-3.0.2.tar.gz" >}}
+{{< card link="https://github.com/tvondra/count_distinct" title="Repository" icon="github" subtitle="github.com/tvondra/count_distinct" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="count_distinct-3.0.2.tar.gz" />}}
 {{< /cards >}}
 
 

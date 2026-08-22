@@ -4,7 +4,10 @@ linkTitle: "pgx_ulid"
 description: "ulid type and methods"
 weight: 4510
 categories: ["FUNC"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgx_ulid**](https://github.com/pksunkara/pgx_ulid) : ulid type and methods
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgx_ulid` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.3` | {{< bg "18" "pgx_ulid_18" "green" >}} {{< bg "17" "pgx_ulid_17" "green" >}} {{< bg "16" "pgx_ulid_16" "green" >}} {{< bg "15" "pgx_ulid_15" "green" >}} {{< bg "14" "pgx_ulid_14" "green" >}} | `pgx_ulid_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.3` | {{< bg "18" "postgresql-18-pgx-ulid" "green" >}} {{< bg "17" "postgresql-17-pgx-ulid" "green" >}} {{< bg "16" "postgresql-16-pgx-ulid" "green" >}} {{< bg "15" "postgresql-15-pgx-ulid" "green" >}} {{< bg "14" "postgresql-14-pgx-ulid" "green" >}} | `postgresql-$v-pgx-ulid` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pgx-ulid` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 713.2 KiB | [postgresql-18-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgx-ulid/postgresql-18-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgx-ulid` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 798.6 KiB | [postgresql-18-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-18-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgx-ulid` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 710.9 KiB | [postgresql-18-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-18-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-pgx-ulid` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 710.8 KiB | [postgresql-17-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgx-ulid/postgresql-17-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgx-ulid` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 797.4 KiB | [postgresql-17-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-17-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgx-ulid` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 709.1 KiB | [postgresql-17-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-17-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-pgx-ulid` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 709.3 KiB | [postgresql-16-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgx-ulid/postgresql-16-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgx-ulid` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 797.4 KiB | [postgresql-16-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-16-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgx-ulid` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 708.8 KiB | [postgresql-16-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-16-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-pgx-ulid` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 704.7 KiB | [postgresql-15-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgx-ulid/postgresql-15-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgx-ulid` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 789.2 KiB | [postgresql-15-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-15-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgx-ulid` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 702.1 KiB | [postgresql-15-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-15-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-pgx-ulid` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 701.8 KiB | [postgresql-14-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgx-ulid/postgresql-14-pgx-ulid_0.2.3-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgx-ulid` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 787.0 KiB | [postgresql-14-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-14-pgx-ulid_0.2.3-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgx-ulid` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 700.2 KiB | [postgresql-14-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgx-ulid/postgresql-14-pgx-ulid_0.2.3-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pksunkara/pgx_ulid" title="Repository" icon="github" subtitle="github.com/pksunkara/pgx_ulid" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgx_ulid-0.2.3.tar.gz" >}}
+{{< card link="https://github.com/pksunkara/pgx_ulid" title="Repository" icon="github" subtitle="github.com/pksunkara/pgx_ulid" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgx_ulid-0.2.3.tar.gz" />}}
 {{< /cards >}}
 
 

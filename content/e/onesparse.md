@@ -4,7 +4,10 @@ linkTitle: "onesparse"
 description: "Sparse linear algebra and graph extension for PostgreSQL 18"
 weight: 2620
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**one_sparse**](https://github.com/OneSparse/OneSparse) : Sparse linear algebra and graph extension for PostgreSQL 18
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `one_sparse` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "onesparse_18" "green" >}} {{< bg "17" "onesparse_17" "red" >}} {{< bg "16" "onesparse_16" "red" >}} {{< bg "15" "onesparse_15" "red" >}} {{< bg "14" "onesparse_14" "red" >}} | `onesparse_$v` | `graphblas`, `lagraph` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-onesparse" "green" >}} {{< bg "17" "postgresql-17-onesparse" "red" >}} {{< bg "16" "postgresql-16-onesparse" "red" >}} {{< bg "15" "postgresql-15-onesparse" "red" >}} {{< bg "14" "postgresql-14-onesparse" "red" >}} | `postgresql-$v-onesparse` | `libgraphblas10`, `liblagraph1`, `liblagraphx1` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-onesparse : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-onesparse : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-onesparse : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-onesparse : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-onesparse : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-onesparse : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-onesparse : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,14 +85,15 @@ width: full
 | `postgresql-18-onesparse` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 634.9 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-onesparse` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 657.7 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-onesparse` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 642.3 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/OneSparse/OneSparse" title="Repository" icon="github" subtitle="github.com/OneSparse/OneSparse" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="onesparse-1.0.0.tar.gz" >}}
+{{< card link="https://github.com/OneSparse/OneSparse" title="Repository" icon="github" subtitle="github.com/OneSparse/OneSparse" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="onesparse-1.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

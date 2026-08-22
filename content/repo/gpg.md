@@ -1,7 +1,7 @@
 ---
 title: GPG Key
 description: Import the GPG key for Pigsty repository
-icon: KeyRound
+icon: fa-solid fa-key
 weight: 500
 ---
 

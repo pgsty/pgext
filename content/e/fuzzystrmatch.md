@@ -4,7 +4,10 @@ linkTitle: "fuzzystrmatch"
 description: "determine similarities and distance between strings"
 weight: 2380
 categories: ["FTS"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**fuzzystrmatch**](https://www.postgresql.org/docs/current/fuzzystrmatch.html) : determine similarities and distance between strings

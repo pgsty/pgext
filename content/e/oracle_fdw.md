@@ -4,7 +4,10 @@ linkTitle: "oracle_fdw"
 description: "foreign data wrapper for Oracle access"
 weight: 8610
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**oracle_fdw**](https://github.com/laurenz/oracle_fdw) : foreign data wrapper for Oracle access
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `oracle_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.0` | {{< bg "18" "oracle_fdw_18" "green" >}} {{< bg "17" "oracle_fdw_17" "green" >}} {{< bg "16" "oracle_fdw_16" "green" >}} {{< bg "15" "oracle_fdw_15" "green" >}} {{< bg "14" "oracle_fdw_14" "green" >}} | `oracle_fdw_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.0` | {{< bg "18" "postgresql-18-oracle-fdw" "green" >}} {{< bg "17" "postgresql-17-oracle-fdw" "green" >}} {{< bg "16" "postgresql-16-oracle-fdw" "green" >}} {{< bg "15" "postgresql-15-oracle-fdw" "green" >}} {{< bg "14" "postgresql-14-oracle-fdw" "green" >}} | `postgresql-$v-oracle-fdw` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.9.0" "postgresql-18-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-17-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-16-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-15-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-14-oracle-fdw : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.9.0" "postgresql-18-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-17-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-16-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-15-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-14-oracle-fdw : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.9.0" "postgresql-18-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-17-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-16-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-15-oracle-fdw : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.9.0" "postgresql-14-oracle-fdw : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -98,9 +103,10 @@ width: full
 | `postgresql-18-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.5 KiB | [postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-oracle-fdw` | `2.9.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.8 KiB | [postgresql-18-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.7 KiB | [postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -146,9 +152,10 @@ width: full
 | `postgresql-17-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.4 KiB | [postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-oracle-fdw` | `2.9.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.8 KiB | [postgresql-17-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.7 KiB | [postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -198,9 +205,10 @@ width: full
 | `postgresql-16-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.5 KiB | [postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-oracle-fdw` | `2.9.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.8 KiB | [postgresql-16-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.8 KiB | [postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -256,9 +264,10 @@ width: full
 | `postgresql-15-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 76.0 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-oracle-fdw` | `2.9.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 69.7 KiB | [postgresql-15-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 69.6 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -315,14 +324,15 @@ width: full
 | `postgresql-14-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 76.4 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-oracle-fdw` | `2.9.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.1 KiB | [postgresql-14-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.9.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 69.9 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/laurenz/oracle_fdw" title="Repository" icon="github" subtitle="github.com/laurenz/oracle_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="oracle_fdw-ORACLE_FDW_2_8_0.tar.gz" >}}
+{{< card link="https://github.com/laurenz/oracle_fdw" title="Repository" icon="github" subtitle="github.com/laurenz/oracle_fdw" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="oracle_fdw-ORACLE_FDW_2_8_0.tar.gz" />}}
 {{< /cards >}}
 
 

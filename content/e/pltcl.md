@@ -4,7 +4,10 @@ linkTitle: "pltcl"
 description: "PL/Tcl procedural language"
 weight: 3240
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pltcl**](https://www.postgresql.org/docs/current/pltcl.html) : PL/Tcl procedural language

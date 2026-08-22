@@ -4,7 +4,10 @@ linkTitle: "explain_ui"
 description: "easily jump into a visual plan UI for any SQL query"
 weight: 6540
 categories: ["STAT"]
-width: full
+languages: ["Rust"]
+licenses: ["Unknown"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_explain_ui**](https://github.com/davidgomes/pg-explain-ui) : easily jump into a visual plan UI for any SQL query
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_explain_ui` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "pg_explain_ui_18" "green" >}} {{< bg "17" "pg_explain_ui_17" "green" >}} {{< bg "16" "pg_explain_ui_16" "green" >}} {{< bg "15" "pg_explain_ui_15" "green" >}} {{< bg "14" "pg_explain_ui_14" "green" >}} | `pg_explain_ui_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "postgresql-18-pg-explain-ui" "green" >}} {{< bg "17" "postgresql-17-pg-explain-ui" "green" >}} {{< bg "16" "postgresql-16-pg-explain-ui" "green" >}} {{< bg "15" "postgresql-15-pg-explain-ui" "green" >}} {{< bg "14" "postgresql-14-pg-explain-ui" "green" >}} | `postgresql-$v-pg-explain-ui` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.7 MiB | [postgresql-18-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-18-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.7 MiB | [postgresql-18-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.7 MiB | [postgresql-17-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-17-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.7 MiB | [postgresql-17-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.7 MiB | [postgresql-16-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-16-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.7 MiB | [postgresql-16-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.7 MiB | [postgresql-15-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-15-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-15-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.6 MiB | [postgresql-14-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-4PGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-14-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-4PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-14-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-4PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/davidgomes/pg-explain-ui" title="Repository" icon="github" subtitle="github.com/davidgomes/pg-explain-ui" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_explain_ui-0.0.2.tar.gz" >}}
+{{< card link="https://github.com/davidgomes/pg-explain-ui" title="Repository" icon="github" subtitle="github.com/davidgomes/pg-explain-ui" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_explain_ui-0.0.2.tar.gz" />}}
 {{< /cards >}}
 
 

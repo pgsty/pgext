@@ -4,7 +4,10 @@ linkTitle: "tablefunc"
 description: "functions that manipulate whole tables, including crosstab"
 weight: 2590
 categories: ["OLAP"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**tablefunc**](https://www.postgresql.org/docs/current/tablefunc.html) : functions that manipulate whole tables, including crosstab

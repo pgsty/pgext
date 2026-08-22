@@ -4,7 +4,10 @@ linkTitle: "pg_failover_slots"
 description: "PG Failover Slots extension"
 weight: 9540
 categories: ["ETL"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_failover_slots**](https://github.com/EnterpriseDB/pg_failover_slots) : PG Failover Slots extension
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_failover_slots` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "18" "pg_failover_slots_18" "green" >}} {{< bg "17" "pg_failover_slots_17" "green" >}} {{< bg "16" "pg_failover_slots_16" "green" >}} {{< bg "15" "pg_failover_slots_15" "green" >}} {{< bg "14" "pg_failover_slots_14" "green" >}} | `pg_failover_slots_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "18" "postgresql-18-pg-failover-slots" "green" >}} {{< bg "17" "postgresql-17-pg-failover-slots" "green" >}} {{< bg "16" "postgresql-16-pg-failover-slots" "green" >}} {{< bg "15" "postgresql-15-pg-failover-slots" "green" >}} {{< bg "14" "postgresql-14-pg-failover-slots" "green" >}} | `postgresql-$v-pg-failover-slots` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -109,9 +114,10 @@ width: full
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 39.3 KiB | [postgresql-18-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -161,9 +167,10 @@ width: full
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 39.3 KiB | [postgresql-17-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -217,9 +224,10 @@ width: full
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 39.3 KiB | [postgresql-16-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -277,9 +285,10 @@ width: full
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 39.3 KiB | [postgresql-15-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -337,14 +346,15 @@ width: full
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 39.3 KiB | [postgresql-14-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-2PGSTY~resolute_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.1 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/EnterpriseDB/pg_failover_slots" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/pg_failover_slots" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_failover_slots-1.2.1.tar.gz" >}}
+{{< card link="https://github.com/EnterpriseDB/pg_failover_slots" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/pg_failover_slots" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_failover_slots-1.2.1.tar.gz" />}}
 {{< /cards >}}
 
 

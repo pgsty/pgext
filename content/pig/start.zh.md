@@ -1,9 +1,9 @@
 ---
 title: 上手
 description: 快速上手 pig，PostgreSQL 包管理器
-icon: Play
+icon: fa-solid fa-play
 weight: 200
-breadcrumbs: false
+breadcrumb: false
 ---
 
 下面是一个简单的上手教程，带您体验 PIG 包管理器的核心能力。

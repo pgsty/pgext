@@ -1,7 +1,8 @@
 ---
 title: "扩展列表"
-breadcrumbs: false
-excludeSearch: true
+breadcrumb: false
+page_width: full
+search_exclude: true
 comments: false
 weight: 900
 ---

@@ -4,7 +4,10 @@ linkTitle: "floatfile"
 description: "Simple file storage for arrays of floats"
 weight: 4280
 categories: ["UTIL"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**floatfile**](https://github.com/pjungwir/floatfile) : Simple file storage for arrays of floats
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `floatfile` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "floatfile_18" "green" >}} {{< bg "17" "floatfile_17" "green" >}} {{< bg "16" "floatfile_16" "green" >}} {{< bg "15" "floatfile_15" "green" >}} {{< bg "14" "floatfile_14" "green" >}} | `floatfile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "postgresql-18-floatfile" "green" >}} {{< bg "17" "postgresql-17-floatfile" "green" >}} {{< bg "16" "postgresql-16-floatfile" "green" >}} {{< bg "15" "postgresql-15-floatfile" "green" >}} {{< bg "14" "postgresql-14-floatfile" "green" >}} | `postgresql-$v-floatfile` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.8 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.3 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.8 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.3 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.8 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.3 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.6 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.2 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.5 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.5 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.2 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pjungwir/floatfile" title="Repository" icon="github" subtitle="github.com/pjungwir/floatfile" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="floatfile-1.3.1.tar.gz" >}}
+{{< card link="https://github.com/pjungwir/floatfile" title="Repository" icon="github" subtitle="github.com/pjungwir/floatfile" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="floatfile-1.3.1.tar.gz" />}}
 {{< /cards >}}
 
 

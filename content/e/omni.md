@@ -4,7 +4,10 @@ linkTitle: "omni"
 description: "Advanced adapter for Postgres extensions"
 weight: 2940
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**omnigres**](https://github.com/omnigres/omnigres) : Advanced adapter for Postgres extensions
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.14` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `omnigres` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `20251108` | {{< bg "18" "omnigres_18" "green" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} | `omnigres_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `20251108` | {{< bg "18" "postgresql-18-omnigres" "green" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} | `postgresql-$v-omnigres` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-omnigres` | `20251108` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-18-omnigres_20251108-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-18-omnigres_20251108-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-omnigres` | `20251108` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-18-omnigres_20251108-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-18-omnigres_20251108-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-omnigres` | `20251108` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.2 MiB | [postgresql-18-omnigres_20251108-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-18-omnigres_20251108-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -103,9 +109,10 @@ width: full
 | `postgresql-17-omnigres` | `20251108` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-17-omnigres_20251108-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-17-omnigres_20251108-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-omnigres` | `20251108` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-17-omnigres_20251108-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-17-omnigres_20251108-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-omnigres` | `20251108` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.2 MiB | [postgresql-17-omnigres_20251108-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-17-omnigres_20251108-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,9 +132,10 @@ width: full
 | `postgresql-16-omnigres` | `20251108` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-16-omnigres_20251108-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-16-omnigres_20251108-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-omnigres` | `20251108` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-16-omnigres_20251108-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-16-omnigres_20251108-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-omnigres` | `20251108` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.2 MiB | [postgresql-16-omnigres_20251108-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-16-omnigres_20251108-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,9 +155,10 @@ width: full
 | `postgresql-15-omnigres` | `20251108` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-15-omnigres_20251108-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-15-omnigres_20251108-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-omnigres` | `20251108` | [u26.x86_64](/os/u26.x86_64) | pigsty | 173.1 KiB | [postgresql-15-omnigres_20251108-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-15-omnigres_20251108-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-omnigres` | `20251108` | [u26.aarch64](/os/u26.aarch64) | pigsty | 119.7 KiB | [postgresql-15-omnigres_20251108-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-15-omnigres_20251108-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -169,14 +178,15 @@ width: full
 | `postgresql-14-omnigres` | `20251108` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-14-omnigres_20251108-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-14-omnigres_20251108-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-omnigres` | `20251108` | [u26.x86_64](/os/u26.x86_64) | pigsty | 173.2 KiB | [postgresql-14-omnigres_20251108-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-14-omnigres_20251108-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-omnigres` | `20251108` | [u26.aarch64](/os/u26.aarch64) | pigsty | 126.7 KiB | [postgresql-14-omnigres_20251108-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnigres/postgresql-14-omnigres_20251108-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/omnigres/omnigres" title="Repository" icon="github" subtitle="github.com/omnigres/omnigres" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="omnigres-20251108.tar.gz" >}}
+{{< card link="https://github.com/omnigres/omnigres" title="Repository" icon="github" subtitle="github.com/omnigres/omnigres" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="omnigres-20251108.tar.gz" />}}
 {{< /cards >}}
 
 

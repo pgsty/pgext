@@ -4,7 +4,10 @@ linkTitle: "tsm_system_rows"
 description: "TABLESAMPLE method which accepts number of rows as a limit"
 weight: 4910
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**tsm_system_rows**](https://www.postgresql.org/docs/current/tsm-system-rows.html) : TABLESAMPLE method which accepts number of rows as a limit

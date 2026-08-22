@@ -1,9 +1,9 @@
 ---
 title: 安装
 description: 如何下载与安装 pig 包管理器
-icon: Download
+icon: fa-solid fa-download
 weight: 300
-breadcrumbs: false
+breadcrumb: false
 ---
 
 ## 脚本安装

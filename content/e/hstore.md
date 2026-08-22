@@ -4,7 +4,10 @@ linkTitle: "hstore"
 description: "data type for storing sets of (key, value) pairs"
 weight: 3970
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**hstore**](https://www.postgresql.org/docs/current/hstore.html) : data type for storing sets of (key, value) pairs

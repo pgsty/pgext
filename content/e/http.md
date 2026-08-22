@@ -4,7 +4,10 @@ linkTitle: "http"
 description: "HTTP client for PostgreSQL, allows web page retrieval inside the database."
 weight: 4070
 categories: ["UTIL"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_http**](https://github.com/pramsey/pgsql-http) : HTTP client for PostgreSQL, allows web page retrieval inside the database.
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_http` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.2` | {{< bg "18" "pgsql_http_18" "green" >}} {{< bg "17" "pgsql_http_17" "green" >}} {{< bg "16" "pgsql_http_16" "green" >}} {{< bg "15" "pgsql_http_15" "green" >}} {{< bg "14" "pgsql_http_14" "green" >}} | `pgsql_http_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.2` | {{< bg "18" "postgresql-18-http" "green" >}} {{< bg "17" "postgresql-17-http" "green" >}} {{< bg "16" "postgresql-16-http" "green" >}} {{< bg "15" "postgresql-15-http" "green" >}} {{< bg "14" "postgresql-14-http" "green" >}} | `postgresql-$v-http` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.7.2" "postgresql-18-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-17-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-16-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-15-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-14-http : AVAIL 4" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.7.2" "postgresql-18-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-17-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-16-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-15-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-14-http : AVAIL 4" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.7.2" "postgresql-18-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-17-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-16-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-15-http : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.2" "postgresql-14-http : AVAIL 4" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -124,9 +129,10 @@ width: full
 | `postgresql-18-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 50.2 KiB | [postgresql-18-http_1.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 52.9 KiB | [postgresql-18-http_1.7.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-http/postgresql-18-http_1.7.1-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-http` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 49.9 KiB | [postgresql-18-http_1.7.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -206,9 +212,10 @@ width: full
 | `postgresql-17-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 50.3 KiB | [postgresql-17-http_1.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.0 KiB | [postgresql-17-http_1.7.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-http/postgresql-17-http_1.7.1-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-http` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 50.0 KiB | [postgresql-17-http_1.7.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -292,9 +299,10 @@ width: full
 | `postgresql-16-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 50.0 KiB | [postgresql-16-http_1.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 52.7 KiB | [postgresql-16-http_1.7.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-http/postgresql-16-http_1.7.1-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-16-http` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 50.1 KiB | [postgresql-16-http_1.7.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -378,9 +386,10 @@ width: full
 | `postgresql-15-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.0 KiB | [postgresql-15-http_1.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.7 KiB | [postgresql-15-http_1.7.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-http/postgresql-15-http_1.7.1-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-15-http` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 50.8 KiB | [postgresql-15-http_1.7.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -464,14 +473,15 @@ width: full
 | `postgresql-14-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.0 KiB | [postgresql-14-http_1.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-http` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.7 KiB | [postgresql-14-http_1.7.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-http/postgresql-14-http_1.7.1-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-14-http` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 50.8 KiB | [postgresql-14-http_1.7.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pramsey/pgsql-http" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-http" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-http-1.7.1.tar.gz" >}}
+{{< card link="https://github.com/pramsey/pgsql-http" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-http" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-http-1.7.1.tar.gz" />}}
 {{< /cards >}}
 
 

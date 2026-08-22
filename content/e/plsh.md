@@ -4,7 +4,10 @@ linkTitle: "plsh"
 description: "PL/sh procedural language"
 weight: 3080
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**plsh**](https://github.com/petere/plsh) : PL/sh procedural language
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20220917` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plsh` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20220917` | {{< bg "18" "plsh_18" "green" >}} {{< bg "17" "plsh_17" "green" >}} {{< bg "16" "plsh_16" "green" >}} {{< bg "15" "plsh_15" "green" >}} {{< bg "14" "plsh_14" "green" >}} | `plsh_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20220917` | {{< bg "18" "postgresql-18-plsh" "green" >}} {{< bg "17" "postgresql-17-plsh" "green" >}} {{< bg "16" "postgresql-16-plsh" "green" >}} {{< bg "15" "postgresql-15-plsh" "green" >}} {{< bg "14" "postgresql-14-plsh" "green" >}} | `postgresql-$v-plsh` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 27.2 KiB | [postgresql-18-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.8 KiB | [postgresql-18-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.3 KiB | [postgresql-18-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,9 +113,10 @@ width: full
 | `postgresql-17-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 27.2 KiB | [postgresql-17-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.7 KiB | [postgresql-17-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.3 KiB | [postgresql-17-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -133,9 +140,10 @@ width: full
 | `postgresql-16-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 27.1 KiB | [postgresql-16-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.7 KiB | [postgresql-16-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.3 KiB | [postgresql-16-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -159,9 +167,10 @@ width: full
 | `postgresql-15-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.9 KiB | [postgresql-15-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.5 KiB | [postgresql-15-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.0 KiB | [postgresql-15-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -186,13 +195,14 @@ width: full
 | `postgresql-14-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.8 KiB | [postgresql-14-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.5 KiB | [postgresql-14-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.0 KiB | [postgresql-14-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/petere/plsh" title="Repository" icon="github" subtitle="github.com/petere/plsh" >}}
+{{< card link="https://github.com/petere/plsh" title="Repository" icon="github" subtitle="github.com/petere/plsh" />}}
 {{< /cards >}}
 
 

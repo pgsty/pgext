@@ -4,7 +4,10 @@ linkTitle: "gzip"
 description: "gzip and gunzip functions."
 weight: 4010
 categories: ["UTIL"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_gzip**](https://github.com/pramsey/pgsql-gzip) : gzip and gunzip functions.
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_gzip` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.0` | {{< bg "18" "pgsql_gzip_18" "green" >}} {{< bg "17" "pgsql_gzip_17" "green" >}} {{< bg "16" "pgsql_gzip_16" "green" >}} {{< bg "15" "pgsql_gzip_15" "green" >}} {{< bg "14" "pgsql_gzip_14" "green" >}} | `pgsql_gzip_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-gzip" "green" >}} {{< bg "17" "postgresql-17-gzip" "green" >}} {{< bg "16" "postgresql-16-gzip" "green" >}} {{< bg "15" "postgresql-15-gzip" "green" >}} {{< bg "14" "postgresql-14-gzip" "green" >}} | `postgresql-$v-gzip` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-14-gzip : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-14-gzip : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-gzip : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-14-gzip : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -95,9 +100,10 @@ width: full
 | `postgresql-18-gzip` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.7 KiB | [postgresql-18-gzip_1.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-gzip` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.2 KiB | [postgresql-18-gzip_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-gzip` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-18-gzip_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -135,9 +141,10 @@ width: full
 | `postgresql-17-gzip` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.7 KiB | [postgresql-17-gzip_1.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-gzip` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.2 KiB | [postgresql-17-gzip_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-gzip` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-17-gzip_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -175,9 +182,10 @@ width: full
 | `postgresql-16-gzip` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.7 KiB | [postgresql-16-gzip_1.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-gzip` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.2 KiB | [postgresql-16-gzip_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-gzip` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-16-gzip_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -215,9 +223,10 @@ width: full
 | `postgresql-15-gzip` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.7 KiB | [postgresql-15-gzip_1.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-gzip` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.2 KiB | [postgresql-15-gzip_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-gzip` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-15-gzip_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -255,14 +264,15 @@ width: full
 | `postgresql-14-gzip` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.7 KiB | [postgresql-14-gzip_1.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-gzip` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.2 KiB | [postgresql-14-gzip_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-gzip` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.1 KiB | [postgresql-14-gzip_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pramsey/pgsql-gzip" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-gzip" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-gzip-1.1.0.tar.gz" >}}
+{{< card link="https://github.com/pramsey/pgsql-gzip" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-gzip" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-gzip-1.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

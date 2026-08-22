@@ -4,7 +4,10 @@ linkTitle: "icu_ext"
 description: "Access ICU functions"
 weight: 4240
 categories: ["UTIL"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**icu_ext**](https://github.com/dverite/icu_ext) : Access ICU functions
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.11.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `icu_ext` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.11.0` | {{< bg "18" "icu_ext_18" "green" >}} {{< bg "17" "icu_ext_17" "green" >}} {{< bg "16" "icu_ext_16" "green" >}} {{< bg "15" "icu_ext_15" "green" >}} {{< bg "14" "icu_ext_14" "green" >}} | `icu_ext_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.11.0` | {{< bg "18" "postgresql-18-icu-ext" "green" >}} {{< bg "17" "postgresql-17-icu-ext" "green" >}} {{< bg "16" "postgresql-16-icu-ext" "green" >}} {{< bg "15" "postgresql-15-icu-ext" "green" >}} {{< bg "14" "postgresql-14-icu-ext" "green" >}} | `postgresql-$v-icu-ext` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.11.0" "postgresql-18-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-17-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-16-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-15-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-14-icu-ext : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.11.0" "postgresql-18-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-17-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-16-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-15-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-14-icu-ext : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.11.0" "postgresql-18-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-17-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-16-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-15-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-14-icu-ext : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -113,9 +118,10 @@ width: full
 | `postgresql-18-icu-ext` | `1.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.5 KiB | [postgresql-18-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.5 KiB | [postgresql-18-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.6 KiB | [postgresql-18-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -171,9 +177,10 @@ width: full
 | `postgresql-17-icu-ext` | `1.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.3 KiB | [postgresql-17-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.5 KiB | [postgresql-17-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.6 KiB | [postgresql-17-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -229,9 +236,10 @@ width: full
 | `postgresql-16-icu-ext` | `1.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.4 KiB | [postgresql-16-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.3 KiB | [postgresql-16-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.6 KiB | [postgresql-16-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -287,9 +295,10 @@ width: full
 | `postgresql-15-icu-ext` | `1.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.4 KiB | [postgresql-15-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.4 KiB | [postgresql-15-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.7 KiB | [postgresql-15-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -345,14 +354,15 @@ width: full
 | `postgresql-14-icu-ext` | `1.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.8 KiB | [postgresql-14-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.11.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.6 KiB | [postgresql-14-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 92.0 KiB | [postgresql-14-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/dverite/icu_ext" title="Repository" icon="github" subtitle="github.com/dverite/icu_ext" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="icu_ext-1.11.0.tar.gz" >}}
+{{< card link="https://github.com/dverite/icu_ext" title="Repository" icon="github" subtitle="github.com/dverite/icu_ext" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="icu_ext-1.11.0.tar.gz" />}}
 {{< /cards >}}
 
 

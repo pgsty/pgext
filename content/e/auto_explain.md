@@ -4,7 +4,10 @@ linkTitle: "auto_explain"
 description: "Provides a means for logging execution plans of slow statements automatically"
 weight: 6980
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**auto_explain**](https://www.postgresql.org/docs/current/auto-explain.html) : Provides a means for logging execution plans of slow statements automatically

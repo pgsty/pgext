@@ -4,7 +4,10 @@ linkTitle: "pgsql_tweaks"
 description: "Some functions and views for daily usage"
 weight: 4200
 categories: ["UTIL"]
-width: full
+languages: ["SQL"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgsql_tweaks**](https://codeberg.org/pgsql_tweaks/pgsql_tweaks) : Some functions and views for daily usage
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsql_tweaks` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.5` | {{< bg "18" "pgsql_tweaks_18" "green" >}} {{< bg "17" "pgsql_tweaks_17" "green" >}} {{< bg "16" "pgsql_tweaks_16" "green" >}} {{< bg "15" "pgsql_tweaks_15" "green" >}} {{< bg "14" "pgsql_tweaks_14" "green" >}} | `pgsql_tweaks_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pgsql-tweaks" "green" >}} {{< bg "17" "postgresql-17-pgsql-tweaks" "green" >}} {{< bg "16" "postgresql-16-pgsql-tweaks" "green" >}} {{< bg "15" "postgresql-15-pgsql-tweaks" "green" >}} {{< bg "14" "postgresql-14-pgsql-tweaks" "green" >}} | `postgresql-$v-pgsql-tweaks` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-18-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-17-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-16-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-15-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-14-pgsql-tweaks : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-18-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-17-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-16-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-15-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-14-pgsql-tweaks : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-18-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-17-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-16-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-15-pgsql-tweaks : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.5" "postgresql-14-pgsql-tweaks : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +106,10 @@ width: full
 | `postgresql-18-pgsql-tweaks` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.8 KiB | [postgresql-18-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-tweaks/postgresql-18-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgsql-tweaks` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.8 KiB | [postgresql-18-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-18-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgsql-tweaks` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-18-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-18-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -177,9 +183,10 @@ width: full
 | `postgresql-17-pgsql-tweaks` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.8 KiB | [postgresql-17-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-tweaks/postgresql-17-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgsql-tweaks` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.8 KiB | [postgresql-17-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-17-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgsql-tweaks` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-17-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-17-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -261,9 +268,10 @@ width: full
 | `postgresql-16-pgsql-tweaks` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.8 KiB | [postgresql-16-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-tweaks/postgresql-16-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgsql-tweaks` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.8 KiB | [postgresql-16-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-16-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgsql-tweaks` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-16-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-16-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -345,9 +353,10 @@ width: full
 | `postgresql-15-pgsql-tweaks` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.8 KiB | [postgresql-15-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-tweaks/postgresql-15-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgsql-tweaks` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.8 KiB | [postgresql-15-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-15-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgsql-tweaks` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-15-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-15-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -432,14 +441,15 @@ width: full
 | `postgresql-14-pgsql-tweaks` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.8 KiB | [postgresql-14-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-tweaks/postgresql-14-pgsql-tweaks_1.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgsql-tweaks` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.8 KiB | [postgresql-14-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-14-pgsql-tweaks_1.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgsql-tweaks` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-14-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgsql-tweaks/postgresql-14-pgsql-tweaks_1.0.5-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" title="Repository" icon="link" subtitle="codeberg.org/pgsql_tweaks/pgsql_tweaks" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql_tweaks-1.0.5.tar.gz" >}}
+{{< card link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" title="Repository" icon="link" subtitle="codeberg.org/pgsql_tweaks/pgsql_tweaks" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql_tweaks-1.0.5.tar.gz" />}}
 {{< /cards >}}
 
 

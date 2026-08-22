@@ -4,7 +4,10 @@ linkTitle: "amcheck"
 description: "functions for verifying relation integrity"
 weight: 5980
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**amcheck**](https://www.postgresql.org/docs/current/amcheck.html) : functions for verifying relation integrity

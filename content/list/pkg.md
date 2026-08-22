@@ -1,7 +1,8 @@
 ---
 title: "Packages"
 weight: 20
-excludeSearch: true
+page_width: full
+search_exclude: true
 comments: false
 ---
 

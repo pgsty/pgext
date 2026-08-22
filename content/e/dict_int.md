@@ -4,7 +4,10 @@ linkTitle: "dict_int"
 description: "text search dictionary template for integers"
 weight: 4980
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**dict_int**](https://www.postgresql.org/docs/current/dict-int.html) : text search dictionary template for integers

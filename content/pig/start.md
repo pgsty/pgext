@@ -1,9 +1,9 @@
 ---
 title: Get Started
 description: Quick start guide for PIG, the PostgreSQL package manager
-icon: Play
+icon: fa-solid fa-play
 weight: 200
-breadcrumbs: false
+breadcrumb: false
 ---
 
 Here is a simple getting started tutorial to help you experience the core capabilities of the PIG package manager.

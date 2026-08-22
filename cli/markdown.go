@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// Markdown shortcode generators for Hugo/Hextra theme
+// Markdown shortcode generators for the OINK-themed Hugo site
 
 // Badge generates badge shortcode with optional icon
 func Badge(content, color, alt, link, icon string) string {
@@ -199,17 +199,28 @@ func CardShortcode(title, subtitle, link, icon string) string {
 		parts = append(parts, fmt.Sprintf(`subtitle="%s"`, subtitle))
 	}
 
-	return fmt.Sprintf(`{{< card %s >}}`, strings.Join(parts, " "))
+	// OINK's card takes its description from the inner body, so every call
+	// site must be closed or self-closed; the catalog uses `subtitle=`.
+	return fmt.Sprintf(`{{< card %s />}}`, strings.Join(parts, " "))
 }
 
-// TabsShortcode generates tabs container
-func TabsShortcode(content string) string {
-	return fmt.Sprintf(`{{< tabs >}}%s{{< /tabs >}}`, content)
+// TabsShortcode generates a tabs container. A non-empty group syncs the
+// reader's choice across every tab set naming that group, on this page and on
+// every other page they visit, so picking a PostgreSQL major once is enough.
+func TabsShortcode(group, content string) string {
+	if group == "" {
+		return fmt.Sprintf(`{{< tabs >}}%s{{< /tabs >}}`, content)
+	}
+	return fmt.Sprintf(`{{< tabs group=%q >}}%s{{< /tabs >}}`, group, content)
 }
 
-// TabShortcode generates individual tab content
-func TabShortcode(name, content string) string {
-	return fmt.Sprintf("\n{{< tab name=%q >}}\n%s\n{{< /tab >}}", name, content)
+// TabShortcode generates one tab. The value is the stable identity a group
+// syncs on, and is required exactly when the parent tabs declares a group.
+func TabShortcode(label, value, content string) string {
+	if value == "" {
+		return fmt.Sprintf("\n{{< tab label=%q >}}\n%s\n{{< /tab >}}", label, content)
+	}
+	return fmt.Sprintf("\n{{< tab label=%q value=%q >}}\n%s\n{{< /tab >}}", label, value, content)
 }
 
 // TripleQuote wraps content in triple backticks (```) for code blocks

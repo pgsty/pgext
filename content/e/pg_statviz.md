@@ -4,7 +4,10 @@ linkTitle: "pg_statviz"
 description: "Capture PostgreSQL statistics snapshots for time-series analysis and visualization"
 weight: 6080
 categories: ["STAT"]
-width: full
+languages: ["SQL"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_statviz**](https://github.com/vyruss/pg_statviz) : Capture PostgreSQL statistics snapshots for time-series analysis and visualization
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_statviz` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.9` | {{< bg "18" "pg_statviz_extension_18" "green" >}} {{< bg "17" "pg_statviz_extension_17" "red" >}} {{< bg "16" "pg_statviz_extension_16" "green" >}} {{< bg "15" "pg_statviz_extension_15" "green" >}} {{< bg "14" "pg_statviz_extension_14" "green" >}} | `pg_statviz_extension_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1` | {{< bg "18" "postgresql-18-statviz" "green" >}} {{< bg "17" "postgresql-17-statviz" "green" >}} {{< bg "16" "postgresql-16-statviz" "green" >}} {{< bg "15" "postgresql-15-statviz" "green" >}} {{< bg "14" "postgresql-14-statviz" "green" >}} | `postgresql-$v-statviz` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.1" "postgresql-18-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-17-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-16-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-15-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-14-statviz : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.1" "postgresql-18-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-17-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-16-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-15-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-14-statviz : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.1" "postgresql-18-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-17-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-16-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-15-statviz : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1" "postgresql-14-statviz : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -94,9 +99,10 @@ width: full
 | `postgresql-18-statviz` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-18-statviz_1.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-18-statviz_1.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-18-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.7 KiB | [postgresql-18-statviz_1.0-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-18-statviz_1.0-2.pgdg26.04+1_all.deb) |
 | `postgresql-18-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.6 KiB | [postgresql-18-statviz_1.0-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-18-statviz_1.0-1.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -124,9 +130,10 @@ width: full
 | `postgresql-17-statviz` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-17-statviz_1.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-17-statviz_1.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-17-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.7 KiB | [postgresql-17-statviz_1.0-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-17-statviz_1.0-2.pgdg26.04+1_all.deb) |
 | `postgresql-17-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.6 KiB | [postgresql-17-statviz_1.0-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-17-statviz_1.0-1.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -171,9 +178,10 @@ width: full
 | `postgresql-16-statviz` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-16-statviz_1.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-16-statviz_1.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-16-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.7 KiB | [postgresql-16-statviz_1.0-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-16-statviz_1.0-2.pgdg26.04+1_all.deb) |
 | `postgresql-16-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.6 KiB | [postgresql-16-statviz_1.0-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-16-statviz_1.0-1.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -226,9 +234,10 @@ width: full
 | `postgresql-15-statviz` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-15-statviz_1.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-15-statviz_1.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-15-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.7 KiB | [postgresql-15-statviz_1.0-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-15-statviz_1.0-2.pgdg26.04+1_all.deb) |
 | `postgresql-15-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.6 KiB | [postgresql-15-statviz_1.0-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-15-statviz_1.0-1.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -281,13 +290,14 @@ width: full
 | `postgresql-14-statviz` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.8 KiB | [postgresql-14-statviz_1.1-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-14-statviz_1.1-1.pgdg26.04+1_all.deb) |
 | `postgresql-14-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.7 KiB | [postgresql-14-statviz_1.0-2.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-14-statviz_1.0-2.pgdg26.04+1_all.deb) |
 | `postgresql-14-statviz` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.6 KiB | [postgresql-14-statviz_1.0-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-statviz/postgresql-14-statviz_1.0-1.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/vyruss/pg_statviz" title="Repository" icon="github" subtitle="github.com/vyruss/pg_statviz" >}}
+{{< card link="https://github.com/vyruss/pg_statviz" title="Repository" icon="github" subtitle="github.com/vyruss/pg_statviz" />}}
 {{< /cards >}}
 
 

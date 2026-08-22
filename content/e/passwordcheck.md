@@ -4,7 +4,10 @@ linkTitle: "passwordcheck"
 description: "checks user passwords and reject weak password"
 weight: 7990
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**passwordcheck**](https://www.postgresql.org/docs/current/passwordcheck.html) : checks user passwords and reject weak password

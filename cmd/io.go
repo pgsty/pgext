@@ -29,7 +29,7 @@ var ioCmd = &cobra.Command{
 	Short: "Generate Hugo/Docsy content for pigsty.io",
 	Long: `Generate Hugo/Docsy-compatible markdown files for pigsty.io English documentation site.
 
-This command generates native Markdown content without Hextra shortcodes,
+This command generates native Markdown content without the catalog shortcodes,
 suitable for the Hugo Docsy theme used by pigsty.io. Run without a
 subcommand to generate all pigsty.io extension content.`,
 	Example: `  pgext gen io page       # Generate extension detail pages

@@ -1,7 +1,7 @@
 ---
 title: "pig inventory"
 description: "检视、编辑、校验、体检并与 CMDB 交换 Pigsty 配置清单"
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 645
 ---
 

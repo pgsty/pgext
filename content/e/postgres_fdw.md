@@ -4,7 +4,10 @@ linkTitle: "postgres_fdw"
 description: "foreign-data wrapper for remote PostgreSQL servers"
 weight: 8990
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**postgres_fdw**](https://www.postgresql.org/docs/current/postgres-fdw.html) : foreign-data wrapper for remote PostgreSQL servers

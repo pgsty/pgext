@@ -4,7 +4,10 @@ linkTitle: "file_fdw"
 description: "foreign-data wrapper for flat file access"
 weight: 8980
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**file_fdw**](https://www.postgresql.org/docs/current/file-fdw.html) : foreign-data wrapper for flat file access

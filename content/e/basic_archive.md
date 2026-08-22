@@ -4,7 +4,10 @@ linkTitle: "basic_archive"
 description: "an example of an archive module"
 weight: 5940
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**basic_archive**](https://www.postgresql.org/docs/current/basic-archive.html) : an example of an archive module

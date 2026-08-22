@@ -1,7 +1,7 @@
 ---
 title: "命令参考"
 description: pig CLI 命令参考概览
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 600
 ---
 

@@ -4,7 +4,10 @@ linkTitle: "pg_profile"
 description: "PostgreSQL load profile repository and report builder"
 weight: 6000
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["BSD-2-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_profile**](https://github.com/zubkov-andrei/pg_profile) : PostgreSQL load profile repository and report builder
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `4.15` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_profile` | `dblink`, `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.15` | {{< bg "18" "pg_profile_18" "green" >}} {{< bg "17" "pg_profile_17" "green" >}} {{< bg "16" "pg_profile_16" "green" >}} {{< bg "15" "pg_profile_15" "green" >}} {{< bg "14" "pg_profile_14" "green" >}} | `pg_profile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.11` | {{< bg "18" "postgresql-18-pg-profile" "green" >}} {{< bg "17" "postgresql-17-pg-profile" "green" >}} {{< bg "16" "postgresql-16-pg-profile" "green" >}} {{< bg "15" "postgresql-15-pg-profile" "green" >}} {{< bg "14" "postgresql-14-pg-profile" "green" >}} | `postgresql-$v-pg-profile` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.11" "postgresql-18-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-17-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-16-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-15-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-14-pg-profile : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.11" "postgresql-18-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-17-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-16-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-15-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-14-pg-profile : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.11" "postgresql-18-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-17-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-16-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-15-pg-profile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.11" "postgresql-14-pg-profile : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -94,9 +99,10 @@ width: full
 | `postgresql-18-pg-profile` | `4.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 191.6 KiB | [postgresql-18-pg-profile_4.11-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-18-pg-profile_4.11-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-profile` | `4.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 191.4 KiB | [postgresql-18-pg-profile_4.11-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-18-pg-profile_4.11-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-profile` | `4.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 191.4 KiB | [postgresql-18-pg-profile_4.11-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-18-pg-profile_4.11-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -142,9 +148,10 @@ width: full
 | `postgresql-17-pg-profile` | `4.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 191.6 KiB | [postgresql-17-pg-profile_4.11-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-17-pg-profile_4.11-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-profile` | `4.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 191.5 KiB | [postgresql-17-pg-profile_4.11-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-17-pg-profile_4.11-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-profile` | `4.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 191.5 KiB | [postgresql-17-pg-profile_4.11-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-17-pg-profile_4.11-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -198,9 +205,10 @@ width: full
 | `postgresql-16-pg-profile` | `4.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 191.6 KiB | [postgresql-16-pg-profile_4.11-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-16-pg-profile_4.11-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-profile` | `4.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 191.4 KiB | [postgresql-16-pg-profile_4.11-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-16-pg-profile_4.11-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-profile` | `4.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 191.4 KiB | [postgresql-16-pg-profile_4.11-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-16-pg-profile_4.11-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -254,9 +262,10 @@ width: full
 | `postgresql-15-pg-profile` | `4.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 191.6 KiB | [postgresql-15-pg-profile_4.11-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-15-pg-profile_4.11-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-profile` | `4.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 191.4 KiB | [postgresql-15-pg-profile_4.11-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-15-pg-profile_4.11-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-profile` | `4.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 191.4 KiB | [postgresql-15-pg-profile_4.11-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-15-pg-profile_4.11-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -310,14 +319,15 @@ width: full
 | `postgresql-14-pg-profile` | `4.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 191.6 KiB | [postgresql-14-pg-profile_4.11-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-14-pg-profile_4.11-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-profile` | `4.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 191.5 KiB | [postgresql-14-pg-profile_4.11-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-14-pg-profile_4.11-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-profile` | `4.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 191.5 KiB | [postgresql-14-pg-profile_4.11-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-profile/postgresql-14-pg-profile_4.11-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/zubkov-andrei/pg_profile" title="Repository" icon="github" subtitle="github.com/zubkov-andrei/pg_profile" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_profile-4.11.tar.gz" >}}
+{{< card link="https://github.com/zubkov-andrei/pg_profile" title="Repository" icon="github" subtitle="github.com/zubkov-andrei/pg_profile" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_profile-4.11.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -6,15 +6,15 @@ weight: 800
 
 
 {{< cards cols=2 >}}
-{{< card link="https://pig.pgsty.com/zh/release/"                         title="PIG 发布记录"    subtitle="PG 包管理器发布历史"          icon="sparkles" >}}
-{{< card link="https://pigsty.io/docs/about/release" title="Pigsty 发布记录" subtitle="开箱即用的 PostgreSQL 发行版" icon="play"     >}}
+{{< card link="https://pig.pgsty.com/zh/release/"                         title="PIG 发布记录"    subtitle="PG 包管理器发布历史"          icon="sparkles" />}}
+{{< card link="https://pigsty.io/docs/about/release" title="Pigsty 发布记录" subtitle="开箱即用的 PostgreSQL 发行版" icon="play" />}}
 {{< /cards >}}
 
 
 {{< cards >}}
-{{< card link="/zh/release/rpm"   title="RPM 发布记录"   subtitle="EL RPM 软件包变更记录" icon="sparkles"       >}}
-{{< card link="/zh/release/deb"   title="DEB 发布记录"   subtitle="Debian 软件包变更记录" icon="play"           >}}
-{{< card link="/zh/release/infra" title="Infra 发布记录" subtitle="与OS版本无关的通用软件包变更记录"  icon="save"  >}}
+{{< card link="/zh/release/rpm"   title="RPM 发布记录"   subtitle="EL RPM 软件包变更记录" icon="sparkles" />}}
+{{< card link="/zh/release/deb"   title="DEB 发布记录"   subtitle="Debian 软件包变更记录" icon="play" />}}
+{{< card link="/zh/release/infra" title="Infra 发布记录" subtitle="与OS版本无关的通用软件包变更记录"  icon="save" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "pg_duration"
 description: "data type for representing durations"
 weight: 3850
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_duration**](https://github.com/jkosh44/pg_duration) : data type for representing durations
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_duration` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "pg_duration_18" "green" >}} {{< bg "17" "pg_duration_17" "green" >}} {{< bg "16" "pg_duration_16" "red" >}} {{< bg "15" "pg_duration_15" "red" >}} {{< bg "14" "pg_duration_14" "red" >}} | `pg_duration_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "postgresql-18-pg-duration" "green" >}} {{< bg "17" "postgresql-17-pg-duration" "green" >}} {{< bg "16" "postgresql-16-pg-duration" "red" >}} {{< bg "15" "postgresql-15-pg-duration" "red" >}} {{< bg "14" "postgresql-14-pg-duration" "red" >}} | `postgresql-$v-pg-duration` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-18-pg-duration : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-17-pg-duration : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-duration : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-duration : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-duration : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-18-pg-duration : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-17-pg-duration : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-duration : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-duration : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-duration : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-18-pg-duration : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-17-pg-duration : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-duration : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-duration : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-duration : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pg-duration` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 30.3 KiB | [postgresql-18-pg-duration_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duration/postgresql-18-pg-duration_1.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-duration` | `1.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 30.5 KiB | [postgresql-18-pg-duration_1.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duration/postgresql-18-pg-duration_1.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-duration` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 30.0 KiB | [postgresql-18-pg-duration_1.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duration/postgresql-18-pg-duration_1.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,14 +105,15 @@ width: full
 | `postgresql-17-pg-duration` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 30.3 KiB | [postgresql-17-pg-duration_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-duration/postgresql-17-pg-duration_1.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-duration` | `1.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 30.5 KiB | [postgresql-17-pg-duration_1.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duration/postgresql-17-pg-duration_1.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-duration` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 30.0 KiB | [postgresql-17-pg-duration_1.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-duration/postgresql-17-pg-duration_1.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/jkosh44/pg_duration" title="Repository" icon="github" subtitle="github.com/jkosh44/pg_duration" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duration-1.0.2.tar.gz" >}}
+{{< card link="https://github.com/jkosh44/pg_duration" title="Repository" icon="github" subtitle="github.com/jkosh44/pg_duration" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duration-1.0.2.tar.gz" />}}
 {{< /cards >}}
 
 

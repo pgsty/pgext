@@ -4,7 +4,10 @@ linkTitle: "btree_gin"
 description: "support for indexing common datatypes in GIN"
 weight: 4950
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**btree_gin**](https://www.postgresql.org/docs/current/btree-gin.html) : support for indexing common datatypes in GIN

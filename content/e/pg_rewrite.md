@@ -4,7 +4,10 @@ linkTitle: "pg_rewrite"
 description: "Tool allows read write to the table during the rewriting"
 weight: 5020
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_rewrite**](https://github.com/cybertec-postgresql/pg_rewrite) : Tool allows read write to the table during the rewriting
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rewrite` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "pg_rewrite_18" "green" >}} {{< bg "17" "pg_rewrite_17" "green" >}} {{< bg "16" "pg_rewrite_16" "green" >}} {{< bg "15" "pg_rewrite_15" "green" >}} {{< bg "14" "pg_rewrite_14" "green" >}} | `pg_rewrite_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "postgresql-18-pg-rewrite" "green" >}} {{< bg "17" "postgresql-17-pg-rewrite" "green" >}} {{< bg "16" "postgresql-16-pg-rewrite" "green" >}} {{< bg "15" "postgresql-15-pg-rewrite" "green" >}} {{< bg "14" "postgresql-14-pg-rewrite" "green" >}} | `postgresql-$v-pg-rewrite` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.2" "postgresql-18-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-pg-rewrite : AVAIL 4" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.2" "postgresql-18-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-pg-rewrite : AVAIL 4" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.2" "postgresql-18-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-pg-rewrite : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-pg-rewrite : AVAIL 4" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -129,9 +134,10 @@ width: full
 | `postgresql-18-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.5 KiB | [postgresql-18-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.4 KiB | [postgresql-18-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.3 KiB | [postgresql-18-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -201,9 +207,10 @@ width: full
 | `postgresql-17-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.0 KiB | [postgresql-17-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.6 KiB | [postgresql-17-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.7 KiB | [postgresql-17-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -279,9 +286,10 @@ width: full
 | `postgresql-16-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.1 KiB | [postgresql-16-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb) |
 | `postgresql-16-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.6 KiB | [postgresql-16-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.6 KiB | [postgresql-16-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -357,9 +365,10 @@ width: full
 | `postgresql-15-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 73.8 KiB | [postgresql-15-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb) |
 | `postgresql-15-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.1 KiB | [postgresql-15-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.2 KiB | [postgresql-15-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -435,14 +444,15 @@ width: full
 | `postgresql-14-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 73.8 KiB | [postgresql-14-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.2-2PIGSTY~resolute_arm64.deb) |
 | `postgresql-14-pg-rewrite` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.3 KiB | [postgresql-14-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.4 KiB | [postgresql-14-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/cybertec-postgresql/pg_rewrite" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_rewrite" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rewrite-REL2_2.tar.gz" >}}
+{{< card link="https://github.com/cybertec-postgresql/pg_rewrite" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_rewrite" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rewrite-REL2_2.tar.gz" />}}
 {{< /cards >}}
 
 

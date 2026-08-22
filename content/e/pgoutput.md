@@ -4,7 +4,10 @@ linkTitle: "pgoutput"
 description: "Logical Replication output plugin"
 weight: 9980
 categories: ["ETL"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pgoutput**](https://www.postgresql.org/docs/current/protocol-logical-replication.html) : Logical Replication output plugin

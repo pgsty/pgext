@@ -4,7 +4,10 @@ linkTitle: "plprofiler"
 description: "server-side support for profiling PL/pgSQL functions"
 weight: 3070
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["Artistic-1.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**plprofiler**](https://github.com/bigsql/plprofiler) : server-side support for profiling PL/pgSQL functions
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plprofiler` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.5` | {{< bg "18" "plprofiler_18" "green" >}} {{< bg "17" "plprofiler_17" "green" >}} {{< bg "16" "plprofiler_16" "green" >}} {{< bg "15" "plprofiler_15" "green" >}} {{< bg "14" "plprofiler_14" "green" >}} | `plprofiler_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.5` | {{< bg "18" "postgresql-18-plprofiler" "green" >}} {{< bg "17" "postgresql-17-plprofiler" "green" >}} {{< bg "16" "postgresql-16-plprofiler" "green" >}} {{< bg "15" "postgresql-15-plprofiler" "green" >}} {{< bg "14" "postgresql-14-plprofiler" "green" >}} | `postgresql-$v-plprofiler` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.2.5" "postgresql-18-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-17-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-16-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-15-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-14-plprofiler : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.2.5" "postgresql-18-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-17-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-16-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-15-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-14-plprofiler : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.5" "postgresql-18-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-17-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-16-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-15-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-14-plprofiler : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -89,9 +94,10 @@ width: full
 | `postgresql-18-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.4 KiB | [postgresql-18-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-18-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -124,9 +130,10 @@ width: full
 | `postgresql-17-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.6 KiB | [postgresql-17-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-17-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.8 KiB | [postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -159,9 +166,10 @@ width: full
 | `postgresql-16-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.5 KiB | [postgresql-16-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-16-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.8 KiB | [postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -202,9 +210,10 @@ width: full
 | `postgresql-15-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.7 KiB | [postgresql-15-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-15-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.0 KiB | [postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.1 KiB | [postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -245,13 +254,14 @@ width: full
 | `postgresql-14-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.3 KiB | [postgresql-14-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-14-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.8 KiB | [postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.8 KiB | [postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/bigsql/plprofiler" title="Repository" icon="github" subtitle="github.com/bigsql/plprofiler" >}}
+{{< card link="https://github.com/bigsql/plprofiler" title="Repository" icon="github" subtitle="github.com/bigsql/plprofiler" />}}
 {{< /cards >}}
 
 

@@ -2,7 +2,8 @@
 title: 操作系统
 description: 支持的 Linux 系统与发行版大版本
 weight: 300
-breadcrumbs: false
+page_width: full
+breadcrumb: false
 ---
 
 | 系统                                                                                       | 厂商     | 大版本 |   小版本   | 全名                | PG 大版本                                                                                                                                                                                                            |                       备注                        |

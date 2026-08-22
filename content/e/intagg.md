@@ -4,7 +4,10 @@ linkTitle: "intagg"
 description: "integer aggregator and enumerator (obsolete)"
 weight: 4970
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**intagg**](https://www.postgresql.org/docs/current/intagg.html) : integer aggregator and enumerator (obsolete)

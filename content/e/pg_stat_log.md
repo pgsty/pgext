@@ -4,7 +4,10 @@ linkTitle: "pg_stat_log"
 description: "Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE."
 weight: 6040
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_stat_log**](https://github.com/fabriziomello/pg_stat_log) : Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE.
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stat_log` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1` | {{< bg "18" "pg_stat_log_18" "green" >}} {{< bg "17" "pg_stat_log_17" "red" >}} {{< bg "16" "pg_stat_log_16" "red" >}} {{< bg "15" "pg_stat_log_15" "red" >}} {{< bg "14" "pg_stat_log_14" "red" >}} | `pg_stat_log_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1` | {{< bg "18" "postgresql-18-stat-log" "green" >}} {{< bg "17" "postgresql-17-stat-log" "red" >}} {{< bg "16" "postgresql-16-stat-log" "red" >}} {{< bg "15" "postgresql-15-stat-log" "red" >}} {{< bg "14" "postgresql-14-stat-log" "red" >}} | `postgresql-$v-stat-log` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.1" "postgresql-18-stat-log : AVAIL 2" "blue" >}} | {{< bg "N/A" "postgresql-17-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stat-log : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.1" "postgresql-18-stat-log : AVAIL 2" "blue" >}} | {{< bg "N/A" "postgresql-17-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stat-log : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.1" "postgresql-18-stat-log : AVAIL 2" "blue" >}} | {{< bg "N/A" "postgresql-17-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stat-log : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -95,13 +100,14 @@ width: full
 | `postgresql-18-stat-log` | `0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 42.2 KiB | [postgresql-18-stat-log_0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-log/postgresql-18-stat-log_0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-stat-log` | `0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 42.3 KiB | [postgresql-18-stat-log_0.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-log/postgresql-18-stat-log_0.1-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-stat-log` | `0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 42.2 KiB | [postgresql-18-stat-log_0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-log/postgresql-18-stat-log_0.1-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/fabriziomello/pg_stat_log" title="Repository" icon="github" subtitle="github.com/fabriziomello/pg_stat_log" >}}
+{{< card link="https://github.com/fabriziomello/pg_stat_log" title="Repository" icon="github" subtitle="github.com/fabriziomello/pg_stat_log" />}}
 {{< /cards >}}
 
 

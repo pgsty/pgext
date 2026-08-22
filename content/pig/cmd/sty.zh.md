@@ -1,7 +1,7 @@
 ---
 title: "CMD: sty"
 description: 如何使用 pig sty 子命令管理 Pigsty
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 630
 ---
 

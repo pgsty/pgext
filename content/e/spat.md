@@ -4,7 +4,9 @@ linkTitle: "spat"
 description: "Redis-like In-Memory DB Embedded in Postgres"
 weight: 9400
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["AGPL-3.0"]
+page_width: full
 ---
 
 [**spat**](https://github.com/Florents-Tselai/spat) : Redis-like In-Memory DB Embedded in Postgres
@@ -36,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0a4` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `spat` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.0a4` | {{< bg "18" "spat_18" "red" >}} {{< bg "17" "spat_17" "green" >}} {{< bg "16" "spat_16" "red" >}} {{< bg "15" "spat_15" "red" >}} {{< bg "14" "spat_14" "red" >}} | `spat_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0a4` | {{< bg "18" "postgresql-18-spat" "red" >}} {{< bg "17" "postgresql-17-spat" "green" >}} {{< bg "16" "postgresql-16-spat" "red" >}} {{< bg "15" "postgresql-15-spat" "red" >}} {{< bg "14" "postgresql-14-spat" "red" >}} | `postgresql-$v-spat` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 | {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG17" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -75,14 +79,15 @@ width: full
 | `postgresql-17-spat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-spat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.6 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-spat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/Florents-Tselai/spat" title="Repository" icon="github" subtitle="github.com/Florents-Tselai/spat" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="spat-0.1.0a4.tar.gz" >}}
+{{< card link="https://github.com/Florents-Tselai/spat" title="Repository" icon="github" subtitle="github.com/Florents-Tselai/spat" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="spat-0.1.0a4.tar.gz" />}}
 {{< /cards >}}
 
 

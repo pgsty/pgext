@@ -4,7 +4,10 @@ linkTitle: "bloom"
 description: "bloom access method - signature file based index"
 weight: 2990
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**bloom**](https://www.postgresql.org/docs/current/bloom.html) : bloom access method - signature file based index

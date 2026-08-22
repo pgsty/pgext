@@ -4,7 +4,10 @@ linkTitle: "tzf"
 description: "Fast lookup timezone name by GPS coordinates"
 weight: 1680
 categories: ["GIS"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_tzf**](https://github.com/ringsaturn/pg-tzf) : Fast lookup timezone name by GPS coordinates
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tzf` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pg_tzf_18" "green" >}} {{< bg "17" "pg_tzf_17" "green" >}} {{< bg "16" "pg_tzf_16" "green" >}} {{< bg "15" "pg_tzf_15" "green" >}} {{< bg "14" "pg_tzf_14" "green" >}} | `pg_tzf_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-tzf" "green" >}} {{< bg "17" "postgresql-17-tzf" "green" >}} {{< bg "16" "postgresql-16-tzf" "green" >}} {{< bg "15" "postgresql-15-tzf" "green" >}} {{< bg "14" "postgresql-14-tzf" "green" >}} | `postgresql-$v-tzf` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-tzf : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-tzf : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-tzf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-tzf : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-tzf` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.4 MiB | [postgresql-18-tzf_0.3.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/tzf/postgresql-18-tzf_0.3.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-tzf` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.5 MiB | [postgresql-18-tzf_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-18-tzf_0.3.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-tzf` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.4 MiB | [postgresql-18-tzf_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-18-tzf_0.3.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-tzf` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.4 MiB | [postgresql-17-tzf_0.3.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/tzf/postgresql-17-tzf_0.3.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-tzf` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.5 MiB | [postgresql-17-tzf_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-17-tzf_0.3.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-tzf` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.4 MiB | [postgresql-17-tzf_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-17-tzf_0.3.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-tzf` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.4 MiB | [postgresql-16-tzf_0.3.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/tzf/postgresql-16-tzf_0.3.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-tzf` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.5 MiB | [postgresql-16-tzf_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-16-tzf_0.3.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-tzf` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.4 MiB | [postgresql-16-tzf_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-16-tzf_0.3.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-tzf` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.4 MiB | [postgresql-15-tzf_0.3.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/tzf/postgresql-15-tzf_0.3.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-tzf` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.5 MiB | [postgresql-15-tzf_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-15-tzf_0.3.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-tzf` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.4 MiB | [postgresql-15-tzf_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-15-tzf_0.3.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-tzf` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.4 MiB | [postgresql-14-tzf_0.3.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/tzf/postgresql-14-tzf_0.3.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-tzf` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.5 MiB | [postgresql-14-tzf_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-14-tzf_0.3.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-tzf` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.4 MiB | [postgresql-14-tzf_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/tzf/postgresql-14-tzf_0.3.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/ringsaturn/pg-tzf" title="Repository" icon="github" subtitle="github.com/ringsaturn/pg-tzf" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-tzf-0.3.0.tar.gz" >}}
+{{< card link="https://github.com/ringsaturn/pg-tzf" title="Repository" icon="github" subtitle="github.com/ringsaturn/pg-tzf" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-tzf-0.3.0.tar.gz" />}}
 {{< /cards >}}
 
 

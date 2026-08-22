@@ -3,7 +3,7 @@ title: "OS: el8.aarch64"
 linkTitle: "el8.aarch64"
 description: "PostgreSQL Extension Availability for RockyLinux 8 ARM"
 weight: 721
-width: full
+page_width: full
 ---
 
 This page shows the availability of PostgreSQL extensions for **RockyLinux 8 ARM** (`el8.aarch64`) Platform.
@@ -417,3 +417,4 @@ This page shows the availability of PostgreSQL extensions for **RockyLinux 8 ARM
 | {{< ext "repmgr" "repmgr" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} |
 | {{< ext "pg_fact_loader" "pg_fact_loader" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} |
 | {{< ext "pg_bulkload" "pg_bulkload" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} |
+{.matrix}

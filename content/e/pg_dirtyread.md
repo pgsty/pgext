@@ -4,7 +4,10 @@ linkTitle: "pg_dirtyread"
 description: "Read dead but unvacuumed rows from table"
 weight: 5050
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_dirtyread**](https://github.com/df7cb/pg_dirtyread) : Read dead but unvacuumed rows from table
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dirtyread` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.8` | {{< bg "18" "pg_dirtyread_18" "green" >}} {{< bg "17" "pg_dirtyread_17" "green" >}} {{< bg "16" "pg_dirtyread_16" "green" >}} {{< bg "15" "pg_dirtyread_15" "green" >}} {{< bg "14" "pg_dirtyread_14" "green" >}} | `pg_dirtyread_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8` | {{< bg "18" "postgresql-18-dirtyread" "green" >}} {{< bg "17" "postgresql-17-dirtyread" "green" >}} {{< bg "16" "postgresql-16-dirtyread" "green" >}} {{< bg "15" "postgresql-15-dirtyread" "green" >}} {{< bg "14" "postgresql-14-dirtyread" "green" >}} | `postgresql-$v-dirtyread` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.8" "postgresql-18-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-17-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-16-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-15-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-14-dirtyread : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.8" "postgresql-18-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-17-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-16-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-15-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-14-dirtyread : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.8" "postgresql-18-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-17-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-16-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-15-dirtyread : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.8" "postgresql-14-dirtyread : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -97,9 +102,10 @@ width: full
 | `postgresql-18-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.3 KiB | [postgresql-18-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-dirtyread` | `2.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.5 KiB | [postgresql-18-dirtyread_2.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.8 KiB | [postgresql-18-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -139,9 +145,10 @@ width: full
 | `postgresql-17-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.1 KiB | [postgresql-17-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-dirtyread` | `2.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.4 KiB | [postgresql-17-dirtyread_2.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.7 KiB | [postgresql-17-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -181,9 +188,10 @@ width: full
 | `postgresql-16-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.1 KiB | [postgresql-16-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-dirtyread` | `2.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.4 KiB | [postgresql-16-dirtyread_2.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.7 KiB | [postgresql-16-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -223,9 +231,10 @@ width: full
 | `postgresql-15-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.2 KiB | [postgresql-15-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-dirtyread` | `2.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.5 KiB | [postgresql-15-dirtyread_2.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.9 KiB | [postgresql-15-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -265,14 +274,15 @@ width: full
 | `postgresql-14-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.2 KiB | [postgresql-14-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-dirtyread` | `2.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.5 KiB | [postgresql-14-dirtyread_2.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.9 KiB | [postgresql-14-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/df7cb/pg_dirtyread" title="Repository" icon="github" subtitle="github.com/df7cb/pg_dirtyread" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_dirtyread-2.8.tar.gz" >}}
+{{< card link="https://github.com/df7cb/pg_dirtyread" title="Repository" icon="github" subtitle="github.com/df7cb/pg_dirtyread" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_dirtyread-2.8.tar.gz" />}}
 {{< /cards >}}
 
 

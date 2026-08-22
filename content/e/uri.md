@@ -4,7 +4,10 @@ linkTitle: "uri"
 description: "URI Data type for PostgreSQL"
 weight: 3790
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_uri**](https://github.com/petere/pguri) : URI Data type for PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20251029` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_uri` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20251029` | {{< bg "18" "pguri_18" "green" >}} {{< bg "17" "pguri_17" "green" >}} {{< bg "16" "pguri_16" "green" >}} {{< bg "15" "pguri_15" "green" >}} {{< bg "14" "pguri_14" "green" >}} | `pguri_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20251029` | {{< bg "18" "postgresql-18-pg-uri" "green" >}} {{< bg "17" "postgresql-17-pg-uri" "green" >}} {{< bg "16" "postgresql-16-pg-uri" "green" >}} {{< bg "15" "postgresql-15-pg-uri" "green" >}} {{< bg "14" "postgresql-14-pg-uri" "green" >}} | `postgresql-$v-pg-uri` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-18-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-17-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-16-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-15-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-14-pg-uri : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-18-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-17-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-16-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-15-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-14-pg-uri : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-18-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-17-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-16-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-15-pg-uri : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20251029" "postgresql-14-pg-uri : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -91,9 +96,10 @@ width: full
 | `postgresql-18-pg-uri` | `1.20251029` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.4 KiB | [postgresql-18-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-uri/postgresql-18-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-uri` | `1.20251029` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.6 KiB | [postgresql-18-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-18-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-uri` | `1.20251029` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.4 KiB | [postgresql-18-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-18-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,9 +131,10 @@ width: full
 | `postgresql-17-pg-uri` | `1.20251029` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.4 KiB | [postgresql-17-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-uri/postgresql-17-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-uri` | `1.20251029` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.5 KiB | [postgresql-17-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-17-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-uri` | `1.20251029` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.3 KiB | [postgresql-17-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-17-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -159,9 +166,10 @@ width: full
 | `postgresql-16-pg-uri` | `1.20251029` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.4 KiB | [postgresql-16-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-uri/postgresql-16-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-uri` | `1.20251029` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.5 KiB | [postgresql-16-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-16-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-uri` | `1.20251029` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.3 KiB | [postgresql-16-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-16-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -194,9 +202,10 @@ width: full
 | `postgresql-15-pg-uri` | `1.20251029` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.3 KiB | [postgresql-15-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-uri/postgresql-15-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-uri` | `1.20251029` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.5 KiB | [postgresql-15-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-15-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-uri` | `1.20251029` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.3 KiB | [postgresql-15-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-15-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -229,14 +238,15 @@ width: full
 | `postgresql-14-pg-uri` | `1.20251029` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.2 KiB | [postgresql-14-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-uri/postgresql-14-pg-uri_1.20251029-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-uri` | `1.20251029` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-14-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-14-pg-uri_1.20251029-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-uri` | `1.20251029` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.3 KiB | [postgresql-14-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uri/postgresql-14-pg-uri_1.20251029-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/petere/pguri" title="Repository" icon="github" subtitle="github.com/petere/pguri" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pguri-1.20251029.tar.gz" >}}
+{{< card link="https://github.com/petere/pguri" title="Repository" icon="github" subtitle="github.com/petere/pguri" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pguri-1.20251029.tar.gz" />}}
 {{< /cards >}}
 
 

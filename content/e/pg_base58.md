@@ -4,7 +4,10 @@ linkTitle: "pg_base58"
 description: "Base58 Encoder/Decoder Extension for PostgreSQL"
 weight: 4830
 categories: ["FUNC"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_base58**](https://github.com/Fell-x27/pg_base58) : Base58 Encoder/Decoder Extension for PostgreSQL
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_base58` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_base58_18" "green" >}} {{< bg "17" "pg_base58_17" "green" >}} {{< bg "16" "pg_base58_16" "green" >}} {{< bg "15" "pg_base58_15" "green" >}} {{< bg "14" "pg_base58_14" "green" >}} | `pg_base58_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-base58" "green" >}} {{< bg "17" "postgresql-17-pg-base58" "green" >}} {{< bg "16" "postgresql-16-pg-base58" "green" >}} {{< bg "15" "postgresql-15-pg-base58" "green" >}} {{< bg "14" "postgresql-14-pg-base58" "green" >}} | `postgresql-$v-pg-base58` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-base58 : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-base58 : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-base58 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-base58 : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pg-base58` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 661.1 KiB | [postgresql-18-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-base58/postgresql-18-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-base58` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 744.7 KiB | [postgresql-18-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-18-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-base58` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 660.3 KiB | [postgresql-18-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-18-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pg-base58` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 659.6 KiB | [postgresql-17-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-base58/postgresql-17-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-base58` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 743.5 KiB | [postgresql-17-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-17-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-base58` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 658.0 KiB | [postgresql-17-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-17-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pg-base58` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 658.6 KiB | [postgresql-16-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-base58/postgresql-16-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-base58` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 742.8 KiB | [postgresql-16-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-16-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-base58` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 656.9 KiB | [postgresql-16-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-16-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pg-base58` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 652.2 KiB | [postgresql-15-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-base58/postgresql-15-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-base58` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 735.7 KiB | [postgresql-15-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-15-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-base58` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 650.9 KiB | [postgresql-15-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-15-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pg-base58` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 650.6 KiB | [postgresql-14-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-base58/postgresql-14-pg-base58_0.0.1-5PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-base58` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 734.0 KiB | [postgresql-14-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-14-pg-base58_0.0.1-5PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-base58` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 649.2 KiB | [postgresql-14-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-base58/postgresql-14-pg-base58_0.0.1-5PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/Fell-x27/pg_base58" title="Repository" icon="github" subtitle="github.com/Fell-x27/pg_base58" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_base58-0.0.1.tar.gz" >}}
+{{< card link="https://github.com/Fell-x27/pg_base58" title="Repository" icon="github" subtitle="github.com/Fell-x27/pg_base58" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_base58-0.0.1.tar.gz" />}}
 {{< /cards >}}
 
 

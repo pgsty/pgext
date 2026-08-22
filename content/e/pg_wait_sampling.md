@@ -4,7 +4,10 @@ linkTitle: "pg_wait_sampling"
 description: "sampling based statistics of wait events"
 weight: 6280
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_wait_sampling**](https://github.com/postgrespro/pg_wait_sampling) : sampling based statistics of wait events
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.1.11` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_wait_sampling` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.11` | {{< bg "18" "pg_wait_sampling_18" "green" >}} {{< bg "17" "pg_wait_sampling_17" "green" >}} {{< bg "16" "pg_wait_sampling_16" "green" >}} {{< bg "15" "pg_wait_sampling_15" "green" >}} {{< bg "14" "pg_wait_sampling_14" "green" >}} | `pg_wait_sampling_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.11` | {{< bg "18" "postgresql-18-pg-wait-sampling" "green" >}} {{< bg "17" "postgresql-17-pg-wait-sampling" "green" >}} {{< bg "16" "postgresql-16-pg-wait-sampling" "green" >}} {{< bg "15" "postgresql-15-pg-wait-sampling" "green" >}} {{< bg "14" "postgresql-14-pg-wait-sampling" "green" >}} | `postgresql-$v-pg-wait-sampling` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.1.11" "postgresql-18-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-17-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-16-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-15-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-14-pg-wait-sampling : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.1.11" "postgresql-18-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-17-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-16-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-15-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-14-pg-wait-sampling : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.1.11" "postgresql-18-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-17-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-16-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-15-pg-wait-sampling : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.11" "postgresql-14-pg-wait-sampling : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -111,9 +116,10 @@ width: full
 | `postgresql-18-pg-wait-sampling` | `1.1.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.9 KiB | [postgresql-18-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-18-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-wait-sampling` | `1.1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.4 KiB | [postgresql-18-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-18-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-wait-sampling` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.3 KiB | [postgresql-18-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-18-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -179,9 +185,10 @@ width: full
 | `postgresql-17-pg-wait-sampling` | `1.1.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.0 KiB | [postgresql-17-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-17-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-wait-sampling` | `1.1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.6 KiB | [postgresql-17-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-17-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-wait-sampling` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.2 KiB | [postgresql-17-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-17-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -251,9 +258,10 @@ width: full
 | `postgresql-16-pg-wait-sampling` | `1.1.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.0 KiB | [postgresql-16-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-16-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-wait-sampling` | `1.1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.7 KiB | [postgresql-16-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-16-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-wait-sampling` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.4 KiB | [postgresql-16-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-16-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -323,9 +331,10 @@ width: full
 | `postgresql-15-pg-wait-sampling` | `1.1.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-15-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-15-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-wait-sampling` | `1.1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.8 KiB | [postgresql-15-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-15-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-wait-sampling` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.5 KiB | [postgresql-15-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-15-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -396,14 +405,15 @@ width: full
 | `postgresql-14-pg-wait-sampling` | `1.1.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-14-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-14-pg-wait-sampling_1.1.11-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-wait-sampling` | `1.1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.8 KiB | [postgresql-14-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-14-pg-wait-sampling_1.1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-wait-sampling` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 37.6 KiB | [postgresql-14-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-wait-sampling/postgresql-14-pg-wait-sampling_1.1.9-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/postgrespro/pg_wait_sampling" title="Repository" icon="github" subtitle="github.com/postgrespro/pg_wait_sampling" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_wait_sampling-1.1.11.tar.gz" >}}
+{{< card link="https://github.com/postgrespro/pg_wait_sampling" title="Repository" icon="github" subtitle="github.com/postgrespro/pg_wait_sampling" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_wait_sampling-1.1.11.tar.gz" />}}
 {{< /cards >}}
 
 

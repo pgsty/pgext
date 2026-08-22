@@ -4,7 +4,10 @@ linkTitle: "pglogical_ticker"
 description: "Have an accurate view on pglogical replication delay"
 weight: 9510
 categories: ["ETL"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pglogical_ticker**](https://github.com/enova/pglogical_ticker) : Have an accurate view on pglogical replication delay
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglogical_ticker` | `pglogical` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "pglogical_ticker_18" "green" >}} {{< bg "17" "pglogical_ticker_17" "green" >}} {{< bg "16" "pglogical_ticker_16" "green" >}} {{< bg "15" "pglogical_ticker_15" "green" >}} {{< bg "14" "pglogical_ticker_14" "green" >}} | `pglogical_ticker_$v` | `pglogical_$v` |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "18" "postgresql-18-pglogical-ticker" "green" >}} {{< bg "17" "postgresql-17-pglogical-ticker" "green" >}} {{< bg "16" "postgresql-16-pglogical-ticker" "green" >}} {{< bg "15" "postgresql-15-pglogical-ticker" "green" >}} {{< bg "14" "postgresql-14-pglogical-ticker" "green" >}} | `postgresql-$v-pglogical-ticker` | `postgresql-$v-pglogical` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PGDG 1.4.1" "postgresql-17-pglogical-ticker : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-16-pglogical-ticker : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-15-pglogical-ticker : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-14-pglogical-ticker : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-pglogical-ticker : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-pglogical-ticker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-pglogical-ticker : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-pglogical-ticker` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-18-pglogical-ticker_1.4.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglogical-ticker/postgresql-18-pglogical-ticker_1.4.1-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pglogical-ticker` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 19.9 KiB | [postgresql-18-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-18-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pglogical-ticker` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.3 KiB | [postgresql-18-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-18-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -106,9 +112,10 @@ width: full
 | `postgresql-17-pglogical-ticker` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.0 KiB | [postgresql-17-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical-ticker/postgresql-17-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pglogical-ticker` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 19.9 KiB | [postgresql-17-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-17-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pglogical-ticker` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.3 KiB | [postgresql-17-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-17-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -131,9 +138,10 @@ width: full
 | `postgresql-16-pglogical-ticker` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.0 KiB | [postgresql-16-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical-ticker/postgresql-16-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pglogical-ticker` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 19.9 KiB | [postgresql-16-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-16-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pglogical-ticker` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.2 KiB | [postgresql-16-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-16-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -156,9 +164,10 @@ width: full
 | `postgresql-15-pglogical-ticker` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.1 KiB | [postgresql-15-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical-ticker/postgresql-15-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pglogical-ticker` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 19.9 KiB | [postgresql-15-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-15-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pglogical-ticker` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.2 KiB | [postgresql-15-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-15-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -181,14 +190,15 @@ width: full
 | `postgresql-14-pglogical-ticker` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.0 KiB | [postgresql-14-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical-ticker/postgresql-14-pglogical-ticker_1.4.1-8.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pglogical-ticker` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 19.9 KiB | [postgresql-14-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-14-pglogical-ticker_1.4.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pglogical-ticker` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.2 KiB | [postgresql-14-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglogical-ticker/postgresql-14-pglogical-ticker_1.4.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/enova/pglogical_ticker" title="Repository" icon="github" subtitle="github.com/enova/pglogical_ticker" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical_ticker-1.4.1.tar.gz" >}}
+{{< card link="https://github.com/enova/pglogical_ticker" title="Repository" icon="github" subtitle="github.com/enova/pglogical_ticker" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical_ticker-1.4.1.tar.gz" />}}
 {{< /cards >}}
 
 

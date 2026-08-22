@@ -4,7 +4,10 @@ linkTitle: "pg_tracing"
 description: "Distributed Tracing for PostgreSQL"
 weight: 6010
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_tracing**](https://github.com/DataDog/pg_tracing) : Distributed Tracing for PostgreSQL
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tracing` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.3` | {{< bg "18" "pg_tracing_18" "green" >}} {{< bg "17" "pg_tracing_17" "green" >}} {{< bg "16" "pg_tracing_16" "green" >}} {{< bg "15" "pg_tracing_15" "green" >}} {{< bg "14" "pg_tracing_14" "green" >}} | `pg_tracing_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.3` | {{< bg "18" "postgresql-18-pg-tracing" "green" >}} {{< bg "17" "postgresql-17-pg-tracing" "green" >}} {{< bg "16" "postgresql-16-pg-tracing" "green" >}} {{< bg "15" "postgresql-15-pg-tracing" "green" >}} {{< bg "14" "postgresql-14-pg-tracing" "green" >}} | `postgresql-$v-pg-tracing` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-tracing : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-tracing : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-tracing : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pg-tracing` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 109.2 KiB | [postgresql-18-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tracing/postgresql-18-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-tracing` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 109.5 KiB | [postgresql-18-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-18-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-tracing` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 108.0 KiB | [postgresql-18-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-18-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pg-tracing` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 109.2 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-tracing` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 109.6 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-tracing` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 108.0 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pg-tracing` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 109.1 KiB | [postgresql-16-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tracing/postgresql-16-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-tracing` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 109.6 KiB | [postgresql-16-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-16-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-tracing` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 107.9 KiB | [postgresql-16-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-16-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pg-tracing` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 112.4 KiB | [postgresql-15-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tracing/postgresql-15-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-tracing` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 112.1 KiB | [postgresql-15-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-15-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-tracing` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 111.0 KiB | [postgresql-15-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-15-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pg-tracing` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 113.9 KiB | [postgresql-14-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tracing/postgresql-14-pg-tracing_0.1.3-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-tracing` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 113.1 KiB | [postgresql-14-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-14-pg-tracing_0.1.3-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-tracing` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 112.8 KiB | [postgresql-14-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tracing/postgresql-14-pg-tracing_0.1.3-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/DataDog/pg_tracing" title="Repository" icon="github" subtitle="github.com/DataDog/pg_tracing" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tracing-0.1.3.tar.gz" >}}
+{{< card link="https://github.com/DataDog/pg_tracing" title="Repository" icon="github" subtitle="github.com/DataDog/pg_tracing" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tracing-0.1.3.tar.gz" />}}
 {{< /cards >}}
 
 

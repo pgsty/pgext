@@ -4,7 +4,10 @@ linkTitle: "babelfishpg_common"
 description: "SQL Server Transact SQL Datatype Support"
 weight: 9300
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**babelfish**](https://babelfishpg.org/) : SQL Server Transact SQL Datatype Support
@@ -38,6 +41,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `babelfish` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.0.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `antlr4-runtime413` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.0.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `libantlr4-runtime413` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,10 +62,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 6.0.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.4.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 6.0.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.4.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 6.0.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.4.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `babelfish-18` | `6.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.4 MiB | [babelfish-18_6.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/babelfish-18/babelfish-18_6.0.0-1PIGSTY~noble_arm64.deb) |
 | `babelfish-18` | `6.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.6 MiB | [babelfish-18_6.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-18/babelfish-18_6.0.0-1PIGSTY~resolute_amd64.deb) |
 | `babelfish-18` | `6.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 MiB | [babelfish-18_6.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-18/babelfish-18_6.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -103,14 +109,15 @@ width: full
 | `babelfish-17` | `5.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.0 MiB | [babelfish-17_5.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/babelfish-17/babelfish-17_5.4.0-1PIGSTY~noble_arm64.deb) |
 | `babelfish-17` | `5.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.2 MiB | [babelfish-17_5.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-17/babelfish-17_5.4.0-1PIGSTY~resolute_amd64.deb) |
 | `babelfish-17` | `5.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.8 MiB | [babelfish-17_5.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-17/babelfish-17_5.4.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://babelfishpg.org/" title="Repository" icon="link" subtitle="babelfishpg.org/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-17-17.7-5.4.0.tar.gz" >}}
+{{< card link="https://babelfishpg.org/" title="Repository" icon="link" subtitle="babelfishpg.org/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-17-17.7-5.4.0.tar.gz" />}}
 {{< /cards >}}
 
 

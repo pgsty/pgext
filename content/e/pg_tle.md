@@ -4,7 +4,10 @@ linkTitle: "pg_tle"
 description: "Trusted Language Extensions for PostgreSQL"
 weight: 3000
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_tle**](https://github.com/aws/pg_tle) : Trusted Language Extensions for PostgreSQL
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tle` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "pg_tle_18" "green" >}} {{< bg "17" "pg_tle_17" "green" >}} {{< bg "16" "pg_tle_16" "green" >}} {{< bg "15" "pg_tle_15" "green" >}} {{< bg "14" "pg_tle_14" "green" >}} | `pg_tle_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pg-tle" "green" >}} {{< bg "17" "postgresql-17-pg-tle" "green" >}} {{< bg "16" "postgresql-16-pg-tle" "green" >}} {{< bg "15" "postgresql-15-pg-tle" "green" >}} {{< bg "14" "postgresql-14-pg-tle" "green" >}} | `postgresql-$v-pg-tle` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-18-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-17-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-16-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-15-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-14-pg-tle : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-18-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-17-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-16-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-15-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-14-pg-tle : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-18-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-17-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-16-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-15-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.2" "postgresql-14-pg-tle : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -90,9 +95,10 @@ width: full
 | `postgresql-18-pg-tle` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 159.8 KiB | [postgresql-18-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tle/postgresql-18-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-tle` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 160.8 KiB | [postgresql-18-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-18-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-tle` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 158.6 KiB | [postgresql-18-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-18-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -130,9 +136,10 @@ width: full
 | `postgresql-17-pg-tle` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 159.8 KiB | [postgresql-17-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tle/postgresql-17-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-tle` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 160.7 KiB | [postgresql-17-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-17-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-tle` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 158.6 KiB | [postgresql-17-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-17-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -170,9 +177,10 @@ width: full
 | `postgresql-16-pg-tle` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 159.9 KiB | [postgresql-16-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tle/postgresql-16-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-tle` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 160.8 KiB | [postgresql-16-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-16-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-tle` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 158.6 KiB | [postgresql-16-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-16-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -210,9 +218,10 @@ width: full
 | `postgresql-15-pg-tle` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 166.2 KiB | [postgresql-15-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tle/postgresql-15-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-tle` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 167.1 KiB | [postgresql-15-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-15-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-tle` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 164.5 KiB | [postgresql-15-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-15-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -250,14 +259,15 @@ width: full
 | `postgresql-14-pg-tle` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 167.0 KiB | [postgresql-14-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tle/postgresql-14-pg-tle_1.5.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-tle` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 167.7 KiB | [postgresql-14-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-14-pg-tle_1.5.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-tle` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 165.0 KiB | [postgresql-14-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tle/postgresql-14-pg-tle_1.5.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/aws/pg_tle" title="Repository" icon="github" subtitle="github.com/aws/pg_tle" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tle-1.5.2.tar.gz" >}}
+{{< card link="https://github.com/aws/pg_tle" title="Repository" icon="github" subtitle="github.com/aws/pg_tle" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tle-1.5.2.tar.gz" />}}
 {{< /cards >}}
 
 

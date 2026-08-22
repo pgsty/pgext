@@ -4,7 +4,10 @@ linkTitle: "repmgr"
 description: "Replication manager for PostgreSQL"
 weight: 9710
 categories: ["ETL"]
-width: full
+languages: ["C"]
+licenses: ["GPL-3.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**repmgr**](https://github.com/EnterpriseDB/repmgr) : Replication manager for PostgreSQL
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `repmgr` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "repmgr_18" "green" >}} {{< bg "17" "repmgr_17" "green" >}} {{< bg "16" "repmgr_16" "green" >}} {{< bg "15" "repmgr_15" "green" >}} {{< bg "14" "repmgr_14" "green" >}} | `repmgr_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "postgresql-18-repmgr" "green" >}} {{< bg "17" "postgresql-17-repmgr" "green" >}} {{< bg "16" "postgresql-16-repmgr" "green" >}} {{< bg "15" "postgresql-15-repmgr" "green" >}} {{< bg "14" "postgresql-14-repmgr" "green" >}} | `postgresql-$v-repmgr` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 5.5.0" "postgresql-18-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-17-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-16-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-15-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-14-repmgr : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 5.5.0" "postgresql-18-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-17-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-16-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-15-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-14-repmgr : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 5.5.0" "postgresql-18-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-17-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-16-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-15-repmgr : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.0" "postgresql-14-repmgr : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -86,9 +91,10 @@ width: full
 | `postgresql-18-repmgr` | `5.5.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 208.1 KiB | [postgresql-18-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-18-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-repmgr` | `5.5.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 233.7 KiB | [postgresql-18-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-18-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-repmgr` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 209.4 KiB | [postgresql-18-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-18-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -111,9 +117,10 @@ width: full
 | `postgresql-17-repmgr` | `5.5.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 207.5 KiB | [postgresql-17-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-17-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-repmgr` | `5.5.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 234.1 KiB | [postgresql-17-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-17-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-repmgr` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 209.8 KiB | [postgresql-17-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-17-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -140,9 +147,10 @@ width: full
 | `postgresql-16-repmgr` | `5.5.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 205.4 KiB | [postgresql-16-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-16-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-repmgr` | `5.5.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 231.3 KiB | [postgresql-16-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-16-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-repmgr` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 207.4 KiB | [postgresql-16-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-16-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -176,9 +184,10 @@ width: full
 | `postgresql-15-repmgr` | `5.5.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 206.1 KiB | [postgresql-15-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-15-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-repmgr` | `5.5.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 231.4 KiB | [postgresql-15-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-15-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-repmgr` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 206.2 KiB | [postgresql-15-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-15-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -217,13 +226,14 @@ width: full
 | `postgresql-14-repmgr` | `5.5.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 205.5 KiB | [postgresql-14-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-14-repmgr_5.5.0+debpgdg-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-repmgr` | `5.5.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.7 KiB | [postgresql-14-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-14-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-repmgr` | `5.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 206.6 KiB | [postgresql-14-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/repmgr/postgresql-14-repmgr_5.5.0+debpgdg-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/EnterpriseDB/repmgr" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/repmgr" >}}
+{{< card link="https://github.com/EnterpriseDB/repmgr" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/repmgr" />}}
 {{< /cards >}}
 
 

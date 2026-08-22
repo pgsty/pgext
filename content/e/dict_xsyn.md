@@ -4,7 +4,10 @@ linkTitle: "dict_xsyn"
 description: "text search dictionary template for extended synonym processing"
 weight: 4900
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**dict_xsyn**](https://www.postgresql.org/docs/current/dict-xsyn.html) : text search dictionary template for extended synonym processing

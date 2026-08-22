@@ -4,7 +4,10 @@ linkTitle: "sslinfo"
 description: "information about SSL certificates"
 weight: 6920
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**sslinfo**](https://www.postgresql.org/docs/current/sslinfo.html) : information about SSL certificates

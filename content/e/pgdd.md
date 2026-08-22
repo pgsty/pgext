@@ -4,7 +4,10 @@ linkTitle: "pgdd"
 description: "Introspect pg data dictionary via standard SQL"
 weight: 5130
 categories: ["ADMIN"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgdd**](https://github.com/rustprooflabs/pgdd) : Introspect pg data dictionary via standard SQL
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgdd` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "pgdd_18" "green" >}} {{< bg "17" "pgdd_17" "green" >}} {{< bg "16" "pgdd_16" "green" >}} {{< bg "15" "pgdd_15" "green" >}} {{< bg "14" "pgdd_14" "green" >}} | `pgdd_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "postgresql-18-pgdd" "green" >}} {{< bg "17" "postgresql-17-pgdd" "green" >}} {{< bg "16" "postgresql-16-pgdd" "green" >}} {{< bg "15" "postgresql-15-pgdd" "green" >}} {{< bg "14" "postgresql-14-pgdd" "green" >}} | `postgresql-$v-pgdd` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-15-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-14-pgdd : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-15-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-14-pgdd : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-15-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-14-pgdd : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -78,9 +83,10 @@ width: full
 | `postgresql-18-pgdd` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 654.5 KiB | [postgresql-18-pgdd_0.6.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdd/postgresql-18-pgdd_0.6.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgdd` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 736.3 KiB | [postgresql-18-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-18-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgdd` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 654.3 KiB | [postgresql-18-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-18-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -100,9 +106,10 @@ width: full
 | `postgresql-17-pgdd` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 653.2 KiB | [postgresql-17-pgdd_0.6.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdd/postgresql-17-pgdd_0.6.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgdd` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 731.2 KiB | [postgresql-17-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-17-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgdd` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 652.0 KiB | [postgresql-17-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-17-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -122,9 +129,10 @@ width: full
 | `postgresql-16-pgdd` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 652.6 KiB | [postgresql-16-pgdd_0.6.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdd/postgresql-16-pgdd_0.6.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgdd` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 732.9 KiB | [postgresql-16-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-16-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgdd` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 650.7 KiB | [postgresql-16-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-16-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -144,9 +152,10 @@ width: full
 | `postgresql-15-pgdd` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 646.4 KiB | [postgresql-15-pgdd_0.6.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdd/postgresql-15-pgdd_0.6.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgdd` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 724.9 KiB | [postgresql-15-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-15-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgdd` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 645.0 KiB | [postgresql-15-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-15-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -166,14 +175,15 @@ width: full
 | `postgresql-14-pgdd` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 645.3 KiB | [postgresql-14-pgdd_0.6.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdd/postgresql-14-pgdd_0.6.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgdd` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 724.0 KiB | [postgresql-14-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-14-pgdd_0.6.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgdd` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 642.9 KiB | [postgresql-14-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdd/postgresql-14-pgdd_0.6.1-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/rustprooflabs/pgdd" title="Repository" icon="github" subtitle="github.com/rustprooflabs/pgdd" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgdd-0.6.1.tar.gz" >}}
+{{< card link="https://github.com/rustprooflabs/pgdd" title="Repository" icon="github" subtitle="github.com/rustprooflabs/pgdd" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgdd-0.6.1.tar.gz" />}}
 {{< /cards >}}
 
 

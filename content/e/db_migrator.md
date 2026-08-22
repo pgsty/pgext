@@ -4,7 +4,10 @@ linkTitle: "db_migrator"
 description: "Tools to migrate other databases to PostgreSQL"
 weight: 9550
 categories: ["ETL"]
-width: full
+languages: ["SQL"]
+licenses: ["BSD-3-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**db_migrator**](https://github.com/cybertec-postgresql/db_migrator) : Tools to migrate other databases to PostgreSQL
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `db_migrator` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "db_migrator_18" "green" >}} {{< bg "17" "db_migrator_17" "green" >}} {{< bg "16" "db_migrator_16" "green" >}} {{< bg "15" "db_migrator_15" "green" >}} {{< bg "14" "db_migrator_14" "green" >}} | `db_migrator_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-db-migrator" "green" >}} {{< bg "17" "postgresql-17-db-migrator" "green" >}} {{< bg "16" "postgresql-16-db-migrator" "green" >}} {{< bg "15" "postgresql-15-db-migrator" "green" >}} {{< bg "14" "postgresql-14-db-migrator" "green" >}} | `postgresql-$v-db-migrator` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-db-migrator : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-db-migrator : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-db-migrator : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-db-migrator : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-db-migrator` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.2 KiB | [postgresql-18-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/db-migrator/postgresql-18-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-db-migrator` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 21.1 KiB | [postgresql-18-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-18-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-db-migrator` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.1 KiB | [postgresql-18-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-18-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-db-migrator` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.2 KiB | [postgresql-17-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/db-migrator/postgresql-17-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-db-migrator` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 21.2 KiB | [postgresql-17-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-17-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-db-migrator` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.2 KiB | [postgresql-17-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-17-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-db-migrator` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.2 KiB | [postgresql-16-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/db-migrator/postgresql-16-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-db-migrator` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 21.2 KiB | [postgresql-16-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-16-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-db-migrator` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.2 KiB | [postgresql-16-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-16-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-db-migrator` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.2 KiB | [postgresql-15-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/db-migrator/postgresql-15-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-db-migrator` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 21.2 KiB | [postgresql-15-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-15-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-db-migrator` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.2 KiB | [postgresql-15-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-15-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-db-migrator` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.2 KiB | [postgresql-14-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/db-migrator/postgresql-14-db-migrator_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-db-migrator` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 21.2 KiB | [postgresql-14-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-14-db-migrator_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-db-migrator` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.2 KiB | [postgresql-14-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/db-migrator/postgresql-14-db-migrator_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/cybertec-postgresql/db_migrator" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/db_migrator" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="db_migrator-RELEASE_1_0_0.tar.gz" >}}
+{{< card link="https://github.com/cybertec-postgresql/db_migrator" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/db_migrator" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="db_migrator-RELEASE_1_0_0.tar.gz" />}}
 {{< /cards >}}
 
 

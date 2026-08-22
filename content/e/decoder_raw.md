@@ -4,7 +4,10 @@ linkTitle: "decoder_raw"
 description: "Output plugin for logical replication in Raw SQL format"
 weight: 9660
 categories: ["ETL"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**decoder_raw**](https://github.com/michaelpq/pg_plugins/blob/main/decoder_raw/) : Output plugin for logical replication in Raw SQL format
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `decoder_raw` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "decoder_raw_18" "green" >}} {{< bg "17" "decoder_raw_17" "green" >}} {{< bg "16" "decoder_raw_16" "green" >}} {{< bg "15" "decoder_raw_15" "green" >}} {{< bg "14" "decoder_raw_14" "green" >}} | `decoder_raw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-decoder-raw" "green" >}} {{< bg "17" "postgresql-17-decoder-raw" "green" >}} {{< bg "16" "postgresql-16-decoder-raw" "green" >}} {{< bg "15" "postgresql-15-decoder-raw" "green" >}} {{< bg "14" "postgresql-14-decoder-raw" "green" >}} | `postgresql-$v-decoder-raw` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-decoder-raw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-decoder-raw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-decoder-raw : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-decoder-raw` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 17.3 KiB | [postgresql-18-decoder-raw_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/decoder-raw/postgresql-18-decoder-raw_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-decoder-raw` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 17.1 KiB | [postgresql-18-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-18-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-decoder-raw` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.3 KiB | [postgresql-18-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-18-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-decoder-raw` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 17.3 KiB | [postgresql-17-decoder-raw_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/decoder-raw/postgresql-17-decoder-raw_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-decoder-raw` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 17.0 KiB | [postgresql-17-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-17-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-decoder-raw` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.3 KiB | [postgresql-17-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-17-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-decoder-raw` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 17.3 KiB | [postgresql-16-decoder-raw_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/decoder-raw/postgresql-16-decoder-raw_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-decoder-raw` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 17.1 KiB | [postgresql-16-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-16-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-decoder-raw` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.4 KiB | [postgresql-16-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-16-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-decoder-raw` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 17.0 KiB | [postgresql-15-decoder-raw_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/decoder-raw/postgresql-15-decoder-raw_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-decoder-raw` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.7 KiB | [postgresql-15-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-15-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-decoder-raw` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.1 KiB | [postgresql-15-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-15-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-decoder-raw` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 17.4 KiB | [postgresql-14-decoder-raw_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/decoder-raw/postgresql-14-decoder-raw_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-decoder-raw` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 17.3 KiB | [postgresql-14-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-14-decoder-raw_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-decoder-raw` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.4 KiB | [postgresql-14-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/decoder-raw/postgresql-14-decoder-raw_1.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/michaelpq/pg_plugins/blob/main/decoder_raw/" title="Repository" icon="github" subtitle="github.com/michaelpq/pg_plugins/blob/main/decoder_raw/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="decoder_raw-1.0.tar.gz" >}}
+{{< card link="https://github.com/michaelpq/pg_plugins/blob/main/decoder_raw/" title="Repository" icon="github" subtitle="github.com/michaelpq/pg_plugins/blob/main/decoder_raw/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="decoder_raw-1.0.tar.gz" />}}
 {{< /cards >}}
 
 

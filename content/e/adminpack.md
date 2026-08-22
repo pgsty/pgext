@@ -4,7 +4,10 @@ linkTitle: "adminpack"
 description: "administrative functions for PostgreSQL"
 weight: 5970
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**adminpack**](https://www.postgresql.org/docs/16/adminpack.html) : administrative functions for PostgreSQL

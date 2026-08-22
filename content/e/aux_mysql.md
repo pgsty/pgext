@@ -4,7 +4,10 @@ linkTitle: "aux_mysql"
 description: "MySQL Supplementary Extension"
 weight: 9420
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["GPL-3.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**openhalo**](https://github.com/HaloTech-Co-Ltd/openHalo) : MySQL Supplementary Extension
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "green" >}} | `openhalo` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} {{< bg "14" "openhalodb-14" "green" >}} | `openhalodb-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} {{< bg "14" "openhalodb-14" "green" >}} | `openhalodb-$v` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG14" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,14 +85,15 @@ width: full
 | `openhalodb-14` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.5 MiB | [openhalodb-14_1.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~noble_arm64.deb) |
 | `openhalodb-14` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.7 MiB | [openhalodb-14_1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~resolute_amd64.deb) |
 | `openhalodb-14` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.5 MiB | [openhalodb-14_1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/HaloTech-Co-Ltd/openHalo" title="Repository" icon="github" subtitle="github.com/HaloTech-Co-Ltd/openHalo" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="openhalodb-1.0.tar.gz" >}}
+{{< card link="https://github.com/HaloTech-Co-Ltd/openHalo" title="Repository" icon="github" subtitle="github.com/HaloTech-Co-Ltd/openHalo" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="openhalodb-1.0.tar.gz" />}}
 {{< /cards >}}
 
 

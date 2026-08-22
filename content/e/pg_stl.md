@@ -4,7 +4,10 @@ linkTitle: "pg_stl"
 description: "Time series analysis functions for PostgreSQL"
 weight: 1130
 categories: ["TIME"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_stl**](https://github.com/nadyaloseva/pg_ts_analysis) : Time series analysis functions for PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stl` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_stl_18" "green" >}} {{< bg "17" "pg_stl_17" "green" >}} {{< bg "16" "pg_stl_16" "green" >}} {{< bg "15" "pg_stl_15" "red" >}} {{< bg "14" "pg_stl_14" "red" >}} | `pg_stl_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-stl" "green" >}} {{< bg "17" "postgresql-17-pg-stl" "green" >}} {{< bg "16" "postgresql-16-pg-stl" "green" >}} {{< bg "15" "postgresql-15-pg-stl" "red" >}} {{< bg "14" "postgresql-14-pg-stl" "red" >}} | `postgresql-$v-pg-stl` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-stl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-stl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-stl : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stl : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stl : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-stl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-stl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-stl : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stl : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stl : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-stl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-stl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-stl : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stl : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stl : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-stl` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-18-pg-stl_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stl/postgresql-18-pg-stl_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-stl` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.7 KiB | [postgresql-18-pg-stl_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stl/postgresql-18-pg-stl_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-stl` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.4 KiB | [postgresql-18-pg-stl_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stl/postgresql-18-pg-stl_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-pg-stl` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-17-pg-stl_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stl/postgresql-17-pg-stl_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-stl` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.7 KiB | [postgresql-17-pg-stl_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stl/postgresql-17-pg-stl_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-stl` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.4 KiB | [postgresql-17-pg-stl_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stl/postgresql-17-pg-stl_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,14 +130,15 @@ width: full
 | `postgresql-16-pg-stl` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-16-pg-stl_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stl/postgresql-16-pg-stl_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-stl` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.7 KiB | [postgresql-16-pg-stl_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stl/postgresql-16-pg-stl_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-stl` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.4 KiB | [postgresql-16-pg-stl_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stl/postgresql-16-pg-stl_1.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/nadyaloseva/pg_ts_analysis" title="Repository" icon="github" subtitle="github.com/nadyaloseva/pg_ts_analysis" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stl-1.0.0.tar.gz" >}}
+{{< card link="https://github.com/nadyaloseva/pg_ts_analysis" title="Repository" icon="github" subtitle="github.com/nadyaloseva/pg_ts_analysis" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stl-1.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

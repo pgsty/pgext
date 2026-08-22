@@ -4,7 +4,10 @@ linkTitle: "pg_stat_statements"
 description: "track planning and execution statistics of all SQL statements executed"
 weight: 6990
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_stat_statements**](https://www.postgresql.org/docs/current/pgstatstatements.html) : track planning and execution statistics of all SQL statements executed

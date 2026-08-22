@@ -4,7 +4,10 @@ linkTitle: "btree_gist"
 description: "support for indexing common datatypes in GiST"
 weight: 4940
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**btree_gist**](https://www.postgresql.org/docs/current/btree-gist.html) : support for indexing common datatypes in GiST

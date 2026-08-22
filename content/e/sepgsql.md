@@ -4,7 +4,10 @@ linkTitle: "sepgsql"
 description: "label-based mandatory access control (MAC) based on SELinux security policy."
 weight: 7960
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**sepgsql**](https://www.postgresql.org/docs/current/sepgsql.html) : label-based mandatory access control (MAC) based on SELinux security policy.

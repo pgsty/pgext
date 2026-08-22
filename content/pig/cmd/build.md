@@ -1,7 +1,7 @@
 ---
 title: "CMD: build"
 description: How to setup building infrastructure with pig build subcommand?
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 640
 ---
 

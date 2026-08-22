@@ -4,7 +4,10 @@ linkTitle: "tsm_system_time"
 description: "TABLESAMPLE method which accepts time in milliseconds as a limit"
 weight: 4890
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**tsm_system_time**](https://www.postgresql.org/docs/current/tsm-system-time.html) : TABLESAMPLE method which accepts time in milliseconds as a limit

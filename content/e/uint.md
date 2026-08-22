@@ -4,7 +4,10 @@ linkTitle: "uint"
 description: "unsigned integer types"
 weight: 3730
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["MIXED"]
+page_width: full
 ---
 
 [**pguint**](https://github.com/petere/pguint) : unsigned integer types
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pguint` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "pguint_18" "green" >}} {{< bg "17" "pguint_17" "green" >}} {{< bg "16" "pguint_16" "green" >}} {{< bg "15" "pguint_15" "green" >}} {{< bg "14" "pguint_14" "green" >}} | `pguint_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "postgresql-18-pguint" "green" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} | `postgresql-$v-pguint` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-18-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-17-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-16-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-15-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-14-pguint : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-18-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-17-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-16-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-15-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-14-pguint : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-18-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-17-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-16-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-15-pguint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.20250815" "postgresql-14-pguint : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -89,9 +94,10 @@ width: full
 | `postgresql-18-pguint` | `1.20250815` | [u24.aarch64](/os/u24.aarch64) | pigsty | 175.4 KiB | [postgresql-18-pguint_1.20250815-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pguint/postgresql-18-pguint_1.20250815-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pguint` | `1.20250815` | [u26.x86_64](/os/u26.x86_64) | pigsty | 179.1 KiB | [postgresql-18-pguint_1.20250815-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-18-pguint_1.20250815-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pguint` | `1.20250815` | [u26.aarch64](/os/u26.aarch64) | pigsty | 177.7 KiB | [postgresql-18-pguint_1.20250815-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-18-pguint_1.20250815-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -127,9 +133,10 @@ width: full
 | `postgresql-17-pguint` | `1.20250815` | [u24.aarch64](/os/u24.aarch64) | pigsty | 175.5 KiB | [postgresql-17-pguint_1.20250815-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pguint/postgresql-17-pguint_1.20250815-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pguint` | `1.20250815` | [u26.x86_64](/os/u26.x86_64) | pigsty | 179.2 KiB | [postgresql-17-pguint_1.20250815-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-17-pguint_1.20250815-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pguint` | `1.20250815` | [u26.aarch64](/os/u26.aarch64) | pigsty | 177.6 KiB | [postgresql-17-pguint_1.20250815-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-17-pguint_1.20250815-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -169,9 +176,10 @@ width: full
 | `postgresql-16-pguint` | `1.20250815` | [u24.aarch64](/os/u24.aarch64) | pigsty | 175.5 KiB | [postgresql-16-pguint_1.20250815-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pguint/postgresql-16-pguint_1.20250815-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pguint` | `1.20250815` | [u26.x86_64](/os/u26.x86_64) | pigsty | 179.2 KiB | [postgresql-16-pguint_1.20250815-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-16-pguint_1.20250815-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pguint` | `1.20250815` | [u26.aarch64](/os/u26.aarch64) | pigsty | 177.7 KiB | [postgresql-16-pguint_1.20250815-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-16-pguint_1.20250815-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -207,9 +215,10 @@ width: full
 | `postgresql-15-pguint` | `1.20250815` | [u24.aarch64](/os/u24.aarch64) | pigsty | 176.2 KiB | [postgresql-15-pguint_1.20250815-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pguint/postgresql-15-pguint_1.20250815-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pguint` | `1.20250815` | [u26.x86_64](/os/u26.x86_64) | pigsty | 178.4 KiB | [postgresql-15-pguint_1.20250815-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-15-pguint_1.20250815-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pguint` | `1.20250815` | [u26.aarch64](/os/u26.aarch64) | pigsty | 177.2 KiB | [postgresql-15-pguint_1.20250815-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-15-pguint_1.20250815-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -229,14 +238,15 @@ width: full
 | `postgresql-14-pguint` | `1.20250815` | [u24.aarch64](/os/u24.aarch64) | pigsty | 148.8 KiB | [postgresql-14-pguint_1.20250815-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pguint/postgresql-14-pguint_1.20250815-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pguint` | `1.20250815` | [u26.x86_64](/os/u26.x86_64) | pigsty | 178.5 KiB | [postgresql-14-pguint_1.20250815-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-14-pguint_1.20250815-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pguint` | `1.20250815` | [u26.aarch64](/os/u26.aarch64) | pigsty | 177.4 KiB | [postgresql-14-pguint_1.20250815-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pguint/postgresql-14-pguint_1.20250815-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/petere/pguint" title="Repository" icon="github" subtitle="github.com/petere/pguint" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pguint-1.20250815.tar.gz" >}}
+{{< card link="https://github.com/petere/pguint" title="Repository" icon="github" subtitle="github.com/petere/pguint" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pguint-1.20250815.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -1,7 +1,7 @@
 ---
 title: "pig pitr"
 description: "使用 pig pitr 命令执行编排式时间点恢复（PITR）"
-icon: Clock
+icon: fa-solid fa-clock
 weight: 670
 ---
 

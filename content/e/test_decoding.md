@@ -4,7 +4,10 @@ linkTitle: "test_decoding"
 description: "SQL-based test/example module for WAL logical decoding"
 weight: 9970
 categories: ["ETL"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**test_decoding**](https://www.postgresql.org/docs/current/test-decoding.html) : SQL-based test/example module for WAL logical decoding

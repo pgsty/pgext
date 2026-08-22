@@ -4,7 +4,10 @@ linkTitle: "pg_when"
 description: "Natural language time parsing for PostgreSQL"
 weight: 1120
 categories: ["TIME"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_when**](https://github.com/frectonz/pg-when) : Natural language time parsing for PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_when` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.10` | {{< bg "18" "pg_when_18" "green" >}} {{< bg "17" "pg_when_17" "green" >}} {{< bg "16" "pg_when_16" "green" >}} {{< bg "15" "pg_when_15" "green" >}} {{< bg "14" "pg_when_14" "green" >}} | `pg_when_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.10` | {{< bg "18" "postgresql-18-pg-when" "green" >}} {{< bg "17" "postgresql-17-pg-when" "green" >}} {{< bg "16" "postgresql-16-pg-when" "green" >}} {{< bg "15" "postgresql-15-pg-when" "green" >}} {{< bg "14" "postgresql-14-pg-when" "green" >}} | `postgresql-$v-pg-when` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-14-pg-when : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-14-pg-when : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-15-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.10" "postgresql-14-pg-when : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-when` | `0.1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 877.5 KiB | [postgresql-18-pg-when_0.1.10-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-18-pg-when_0.1.10-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-when` | `0.1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 964.5 KiB | [postgresql-18-pg-when_0.1.10-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-18-pg-when_0.1.10-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-when` | `0.1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 875.7 KiB | [postgresql-18-pg-when_0.1.10-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-18-pg-when_0.1.10-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-pg-when` | `0.1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 874.8 KiB | [postgresql-17-pg-when_0.1.10-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-17-pg-when_0.1.10-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-when` | `0.1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 962.8 KiB | [postgresql-17-pg-when_0.1.10-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-17-pg-when_0.1.10-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-when` | `0.1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 873.7 KiB | [postgresql-17-pg-when_0.1.10-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-17-pg-when_0.1.10-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-pg-when` | `0.1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 875.1 KiB | [postgresql-16-pg-when_0.1.10-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-16-pg-when_0.1.10-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-when` | `0.1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 961.5 KiB | [postgresql-16-pg-when_0.1.10-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-16-pg-when_0.1.10-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-when` | `0.1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 872.2 KiB | [postgresql-16-pg-when_0.1.10-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-16-pg-when_0.1.10-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-pg-when` | `0.1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 868.4 KiB | [postgresql-15-pg-when_0.1.10-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-15-pg-when_0.1.10-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-when` | `0.1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 953.1 KiB | [postgresql-15-pg-when_0.1.10-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-15-pg-when_0.1.10-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-when` | `0.1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 866.1 KiB | [postgresql-15-pg-when_0.1.10-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-15-pg-when_0.1.10-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-pg-when` | `0.1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 866.2 KiB | [postgresql-14-pg-when_0.1.10-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-14-pg-when_0.1.10-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-when` | `0.1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 952.0 KiB | [postgresql-14-pg-when_0.1.10-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-14-pg-when_0.1.10-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-when` | `0.1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 863.7 KiB | [postgresql-14-pg-when_0.1.10-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-14-pg-when_0.1.10-1PGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/frectonz/pg-when" title="Repository" icon="github" subtitle="github.com/frectonz/pg-when" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_when-0.1.10.tar.gz" >}}
+{{< card link="https://github.com/frectonz/pg-when" title="Repository" icon="github" subtitle="github.com/frectonz/pg-when" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_when-0.1.10.tar.gz" />}}
 {{< /cards >}}
 
 

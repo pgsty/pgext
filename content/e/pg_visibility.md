@@ -4,7 +4,10 @@ linkTitle: "pg_visibility"
 description: "examine the visibility map (VM) and page-level visibility info"
 weight: 6960
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_visibility**](https://www.postgresql.org/docs/current/pgvisibility.html) : examine the visibility map (VM) and page-level visibility info

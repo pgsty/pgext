@@ -4,7 +4,10 @@ linkTitle: "auth_delay"
 description: "pause briefly before reporting authentication failure"
 weight: 7970
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**auth_delay**](https://www.postgresql.org/docs/current/auth-delay.html) : pause briefly before reporting authentication failure

@@ -2,6 +2,7 @@ package cli
 
 import (
 	"database/sql"
+	"fmt"
 	"strings"
 	"testing"
 )
@@ -91,31 +92,32 @@ func TestPackageStatusRenderersUseTriStateColors(t *testing.T) {
 	}
 }
 
-func TestGlobalMatrixLetterLineUsesPackageNameAndLeadLink(t *testing.T) {
-	row := &GlobalMatrixRow{
-		Pkg: "pg_duckdb",
-		Ext: "pg_duckdb",
-		Cells: map[string]map[int]GlobalMatrixCell{
-			"el9.x86_64": {
-				14: {Code: "B"},
-				15: {Code: "G"},
-			},
-			"u24.x86_64": {
-				14: {Code: "."},
-				15: {Code: "R"},
-			},
-		},
-	}
-	osVersions := []OSVersion{{OS: "el9.x86_64"}, {OS: "u24.x86_64"}}
-	pgVersions := []int{14, 15}
+func TestGlobalMatrixPageIsFrontMatterOnly(t *testing.T) {
+	g := &GlobalMatrixGenerator{}
 
-	got := formatGlobalMatrixLetterLine(row, osVersions, pgVersions)
-	want := "[pg_duckdb](https://pigsty.io/ext/e/pg_duckdb) | BG | .R"
-	if got != want {
-		t.Fatalf("letter line = %q, want %q", got, want)
+	for _, tc := range []struct{ locale, title string }{
+		{"en", "Global Matrix"},
+		{"zh", "全局矩阵"},
+	} {
+		page := g.renderPage(tc.locale)
+
+		// The grid is drawn by the site's `matrix` layout from the JSON
+		// export, so the page carries the layout and nothing else: no table,
+		// no stylesheet, no second copy of the rows.
+		if !strings.Contains(page, "layout: matrix") {
+			t.Fatalf("%s page does not select the matrix layout:\n%s", tc.locale, page)
+		}
+		if !strings.Contains(page, fmt.Sprintf("title: %q", tc.title)) {
+			t.Fatalf("%s page title = %s, want %q", tc.locale, page, tc.title)
+		}
+		if strings.Contains(page, "<table") || strings.Contains(page, "<style") {
+			t.Fatalf("%s page still embeds markup:\n%s", tc.locale, page)
+		}
+		if len(page) > 1024 {
+			t.Fatalf("%s page is %d bytes, want a front matter stub", tc.locale, len(page))
+		}
 	}
 }
-
 func TestGlobalMatrixStandaloneHTMLIsPresentationPage(t *testing.T) {
 	row := &GlobalMatrixRow{
 		Pkg: "pg_duckdb",

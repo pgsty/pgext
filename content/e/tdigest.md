@@ -4,7 +4,10 @@ linkTitle: "tdigest"
 description: "Provides tdigest aggregate function."
 weight: 4700
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**tdigest**](https://github.com/tvondra/tdigest) : Provides tdigest aggregate function.
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `tdigest` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.4` | {{< bg "18" "tdigest_18" "green" >}} {{< bg "17" "tdigest_17" "green" >}} {{< bg "16" "tdigest_16" "green" >}} {{< bg "15" "tdigest_15" "green" >}} {{< bg "14" "tdigest_14" "green" >}} | `tdigest_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.4` | {{< bg "18" "postgresql-18-tdigest" "green" >}} {{< bg "17" "postgresql-17-tdigest" "green" >}} {{< bg "16" "postgresql-16-tdigest" "green" >}} {{< bg "15" "postgresql-15-tdigest" "green" >}} {{< bg "14" "postgresql-14-tdigest" "green" >}} | `postgresql-$v-tdigest` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.4.4" "postgresql-18-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-17-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-16-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-15-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-tdigest : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.4.4" "postgresql-18-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-17-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-16-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-15-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-tdigest : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.4.4" "postgresql-18-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-17-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-16-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-15-tdigest : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-tdigest : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -97,9 +102,10 @@ width: full
 | `postgresql-18-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.3 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-tdigest` | `1.4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 59.0 KiB | [postgresql-18-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.9 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +149,10 @@ width: full
 | `postgresql-17-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-tdigest` | `1.4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 59.0 KiB | [postgresql-17-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -185,9 +192,10 @@ width: full
 | `postgresql-16-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-tdigest` | `1.4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 59.0 KiB | [postgresql-16-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -231,9 +239,10 @@ width: full
 | `postgresql-15-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-tdigest` | `1.4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 59.0 KiB | [postgresql-15-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.7 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -277,13 +286,14 @@ width: full
 | `postgresql-14-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-tdigest` | `1.4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 58.9 KiB | [postgresql-14-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/tvondra/tdigest" title="Repository" icon="github" subtitle="github.com/tvondra/tdigest" >}}
+{{< card link="https://github.com/tvondra/tdigest" title="Repository" icon="github" subtitle="github.com/tvondra/tdigest" />}}
 {{< /cards >}}
 
 

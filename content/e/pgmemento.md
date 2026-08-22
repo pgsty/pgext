@@ -4,7 +4,10 @@ linkTitle: "pgmemento"
 description: "Transaction-based audit trail with schema versioning"
 weight: 7190
 categories: ["SEC"]
-width: full
+languages: ["SQL"]
+licenses: ["LGPL-3.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pgmemento**](https://github.com/pgMemento/pgMemento) : Transaction-based audit trail with schema versioning
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.7.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmemento` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.7.4` | {{< bg "18" "pgmemento_18" "green" >}} {{< bg "17" "pgmemento_17" "green" >}} {{< bg "16" "pgmemento_16" "green" >}} {{< bg "15" "pgmemento_15" "green" >}} {{< bg "14" "pgmemento_14" "green" >}} | `pgmemento_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.7.4` | {{< bg "18" "postgresql-18-pgmemento" "green" >}} {{< bg "17" "postgresql-17-pgmemento" "green" >}} {{< bg "16" "postgresql-16-pgmemento" "green" >}} {{< bg "15" "postgresql-15-pgmemento" "green" >}} {{< bg "14" "postgresql-14-pgmemento" "green" >}} | `postgresql-$v-pgmemento` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-18-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-17-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-16-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-15-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-14-pgmemento : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-18-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-17-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-16-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-15-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-14-pgmemento : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-18-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-17-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-16-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-15-pgmemento : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.4" "postgresql-14-pgmemento : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,9 +85,10 @@ width: full
 | `postgresql-18-pgmemento` | `0.7.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-18-pgmemento_0.7.4-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmemento/postgresql-18-pgmemento_0.7.4-1PIGSTY~noble_all.deb) |
 | `postgresql-18-pgmemento` | `0.7.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.0 KiB | [postgresql-18-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-18-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-pgmemento` | `0.7.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.0 KiB | [postgresql-18-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-18-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -102,9 +108,10 @@ width: full
 | `postgresql-17-pgmemento` | `0.7.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-17-pgmemento_0.7.4-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmemento/postgresql-17-pgmemento_0.7.4-1PIGSTY~noble_all.deb) |
 | `postgresql-17-pgmemento` | `0.7.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.1 KiB | [postgresql-17-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-17-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-pgmemento` | `0.7.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.1 KiB | [postgresql-17-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-17-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -124,9 +131,10 @@ width: full
 | `postgresql-16-pgmemento` | `0.7.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-16-pgmemento_0.7.4-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmemento/postgresql-16-pgmemento_0.7.4-1PIGSTY~noble_all.deb) |
 | `postgresql-16-pgmemento` | `0.7.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.0 KiB | [postgresql-16-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-16-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-pgmemento` | `0.7.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.0 KiB | [postgresql-16-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-16-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -146,9 +154,10 @@ width: full
 | `postgresql-15-pgmemento` | `0.7.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-15-pgmemento_0.7.4-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmemento/postgresql-15-pgmemento_0.7.4-1PIGSTY~noble_all.deb) |
 | `postgresql-15-pgmemento` | `0.7.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.0 KiB | [postgresql-15-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-15-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-pgmemento` | `0.7.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.0 KiB | [postgresql-15-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-15-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -168,14 +177,15 @@ width: full
 | `postgresql-14-pgmemento` | `0.7.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-14-pgmemento_0.7.4-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmemento/postgresql-14-pgmemento_0.7.4-1PIGSTY~noble_all.deb) |
 | `postgresql-14-pgmemento` | `0.7.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.0 KiB | [postgresql-14-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-14-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-pgmemento` | `0.7.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.0 KiB | [postgresql-14-pgmemento_0.7.4-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmemento/postgresql-14-pgmemento_0.7.4-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgMemento/pgMemento" title="Repository" icon="github" subtitle="github.com/pgMemento/pgMemento" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmemento-0.7.4.tar.gz" >}}
+{{< card link="https://github.com/pgMemento/pgMemento" title="Repository" icon="github" subtitle="github.com/pgMemento/pgMemento" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmemento-0.7.4.tar.gz" />}}
 {{< /cards >}}
 
 

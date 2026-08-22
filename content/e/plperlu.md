@@ -4,7 +4,10 @@ linkTitle: "plperlu"
 description: "PL/PerlU untrusted procedural language"
 weight: 3270
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plperlu**](https://www.postgresql.org/docs/current/plperl.html) : PL/PerlU untrusted procedural language

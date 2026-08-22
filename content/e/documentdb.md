@@ -4,7 +4,10 @@ linkTitle: "documentdb"
 description: "API surface for DocumentDB for PostgreSQL"
 weight: 9000
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**documentdb**](https://github.com/documentdb/documentdb) : API surface for DocumentDB for PostgreSQL
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.114` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `documentdb` | `documentdb_core`, `pg_cron`, `postgis`, `tsm_system_rows`, `vector` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.114` | {{< bg "18" "documentdb_18" "green" >}} {{< bg "17" "documentdb_17" "green" >}} {{< bg "16" "documentdb_16" "green" >}} {{< bg "15" "documentdb_15" "green" >}} {{< bg "14" "documentdb_14" "red" >}} | `documentdb_$v` | `postgresql$v-contrib`, `pg_cron_$v`, `pgvector_$v`, `rum_$v`, `postgis36_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.114` | {{< bg "18" "postgresql-18-documentdb" "green" >}} {{< bg "17" "postgresql-17-documentdb" "green" >}} {{< bg "16" "postgresql-16-documentdb" "green" >}} {{< bg "15" "postgresql-15-documentdb" "green" >}} {{< bg "14" "postgresql-14-documentdb" "red" >}} | `postgresql-$v-documentdb` | `postgresql-$v-cron`, `postgresql-$v-pgvector`, `postgresql-$v-rum`, `postgresql-$v-postgis-3` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.114" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.114" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.114" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.114" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.114" "postgresql-18-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.114" "postgresql-17-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.114" "postgresql-16-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.114" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.114" "postgresql-18-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.114" "postgresql-17-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.114" "postgresql-16-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.114" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -92,9 +97,10 @@ width: full
 | `postgresql-18-documentdb` | `0.114` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 MiB | [postgresql-18-documentdb_0.114-0PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/documentdb/postgresql-18-documentdb_0.114-0PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-documentdb` | `0.113` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.7 MiB | [postgresql-18-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-18-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-documentdb` | `0.112` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.7 MiB | [postgresql-18-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-18-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -126,9 +132,10 @@ width: full
 | `postgresql-17-documentdb` | `0.114` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 MiB | [postgresql-17-documentdb_0.114-0PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/documentdb/postgresql-17-documentdb_0.114-0PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-documentdb` | `0.113` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.7 MiB | [postgresql-17-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-17-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-documentdb` | `0.112` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.7 MiB | [postgresql-17-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-17-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -160,9 +167,10 @@ width: full
 | `postgresql-16-documentdb` | `0.114` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 MiB | [postgresql-16-documentdb_0.114-0PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/documentdb/postgresql-16-documentdb_0.114-0PIGSTY~resolute_arm64.deb) |
 | `postgresql-16-documentdb` | `0.113` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.7 MiB | [postgresql-16-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-16-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-documentdb` | `0.112` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.7 MiB | [postgresql-16-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-16-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -194,14 +202,15 @@ width: full
 | `postgresql-15-documentdb` | `0.114` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 MiB | [postgresql-15-documentdb_0.114-0PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/documentdb/postgresql-15-documentdb_0.114-0PIGSTY~resolute_arm64.deb) |
 | `postgresql-15-documentdb` | `0.113` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.8 MiB | [postgresql-15-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-15-documentdb_0.113-0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-documentdb` | `0.112` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.7 MiB | [postgresql-15-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-15-documentdb_0.112-0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/documentdb/documentdb" title="Repository" icon="github" subtitle="github.com/documentdb/documentdb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.114-0.tar.gz" >}}
+{{< card link="https://github.com/documentdb/documentdb" title="Repository" icon="github" subtitle="github.com/documentdb/documentdb" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.114-0.tar.gz" />}}
 {{< /cards >}}
 
 

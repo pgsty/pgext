@@ -4,7 +4,10 @@ linkTitle: "pg_logicalinspect"
 description: "Logical decoding components inspection"
 weight: 6890
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_logicalinspect**](https://www.postgresql.org/docs/devel/pglogicalinspect.html) : Logical decoding components inspection

@@ -1,7 +1,8 @@
 ---
 title: "按语言"
 description: "按实现语言组织的 PostgreSQL 扩展"
-excludeSearch: true
+page_width: full
+search_exclude: true
 weight: 200
 ---
 

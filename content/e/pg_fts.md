@@ -4,7 +4,10 @@ linkTitle: "pg_fts"
 description: "Full-text search with BM25 and BM25F ranking"
 weight: 2220
 categories: ["FTS"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_fts**](https://codeberg.org/gregburd/pg_fts) : Full-text search with BM25 and BM25F ranking
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_fts` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pg_fts_18" "green" >}} {{< bg "17" "pg_fts_17" "green" >}} {{< bg "16" "pg_fts_16" "red" >}} {{< bg "15" "pg_fts_15" "red" >}} {{< bg "14" "pg_fts_14" "red" >}} | `pg_fts_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pg-fts" "green" >}} {{< bg "17" "postgresql-17-pg-fts" "green" >}} {{< bg "16" "postgresql-16-pg-fts" "red" >}} {{< bg "15" "postgresql-15-pg-fts" "red" >}} {{< bg "14" "postgresql-14-pg-fts" "red" >}} | `postgresql-$v-pg-fts` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-fts : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-fts : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-fts : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-fts : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-pg-fts` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 253.2 KiB | [postgresql-18-pg-fts_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-fts/postgresql-18-pg-fts_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-fts` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 256.5 KiB | [postgresql-18-pg-fts_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fts/postgresql-18-pg-fts_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-fts` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 252.6 KiB | [postgresql-18-pg-fts_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fts/postgresql-18-pg-fts_0.2.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,14 +107,15 @@ width: full
 | `postgresql-17-pg-fts` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 253.1 KiB | [postgresql-17-pg-fts_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-fts/postgresql-17-pg-fts_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-fts` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 256.5 KiB | [postgresql-17-pg-fts_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fts/postgresql-17-pg-fts_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-fts` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 252.5 KiB | [postgresql-17-pg-fts_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fts/postgresql-17-pg-fts_0.2.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://codeberg.org/gregburd/pg_fts" title="Repository" icon="link" subtitle="codeberg.org/gregburd/pg_fts" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fts-0.2.0.tar.gz" >}}
+{{< card link="https://codeberg.org/gregburd/pg_fts" title="Repository" icon="link" subtitle="codeberg.org/gregburd/pg_fts" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fts-0.2.0.tar.gz" />}}
 {{< /cards >}}
 
 

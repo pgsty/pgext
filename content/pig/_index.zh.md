@@ -1,11 +1,11 @@
 ---
 title: "PIG 1.7 文档"
 description: PostgreSQL 扩展生态包管理器与管理命令行工具
-icon: PiggyBank
-full: true
+icon: fa-solid fa-piggy-bank
+page_width: full
 cascade:
   type: docs
-breadcrumbs: false
+breadcrumb: false
 comments: false
 weight: 100
 ---

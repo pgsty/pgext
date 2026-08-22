@@ -4,7 +4,10 @@ linkTitle: "etcd_fdw"
 description: "Foreign data wrapper for etcd"
 weight: 8660
 categories: ["FDW"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**etcd_fdw**](https://github.com/cybertec-postgresql/etcd_fdw) : Foreign data wrapper for etcd
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `etcd_fdw` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "etcd_fdw_18" "green" >}} {{< bg "17" "etcd_fdw_17" "green" >}} {{< bg "16" "etcd_fdw_16" "green" >}} {{< bg "15" "etcd_fdw_15" "green" >}} {{< bg "14" "etcd_fdw_14" "green" >}} | `etcd_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-etcd-fdw" "green" >}} {{< bg "17" "postgresql-17-etcd-fdw" "green" >}} {{< bg "16" "postgresql-16-etcd-fdw" "green" >}} {{< bg "15" "postgresql-15-etcd-fdw" "green" >}} {{< bg "14" "postgresql-14-etcd-fdw" "green" >}} | `postgresql-$v-etcd-fdw` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-etcd-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-etcd-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-etcd-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-etcd-fdw : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-etcd-fdw` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-18-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/etcd-fdw/postgresql-18-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-etcd-fdw` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-18-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-18-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-etcd-fdw` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-18-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-18-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-etcd-fdw` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-17-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/etcd-fdw/postgresql-17-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-etcd-fdw` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-17-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-17-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-etcd-fdw` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-17-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-17-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-etcd-fdw` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-16-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/etcd-fdw/postgresql-16-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-etcd-fdw` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-16-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-16-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-etcd-fdw` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-16-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-16-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-etcd-fdw` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-15-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/etcd-fdw/postgresql-15-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-etcd-fdw` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-15-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-15-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-etcd-fdw` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-15-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-15-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-etcd-fdw` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-14-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/etcd-fdw/postgresql-14-etcd-fdw_0.0.1-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-etcd-fdw` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-14-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-14-etcd-fdw_0.0.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-etcd-fdw` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-14-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/etcd-fdw/postgresql-14-etcd-fdw_0.0.1-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/cybertec-postgresql/etcd_fdw" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/etcd_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="etcd_fdw-0.0.1.tar.gz" >}}
+{{< card link="https://github.com/cybertec-postgresql/etcd_fdw" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/etcd_fdw" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="etcd_fdw-0.0.1.tar.gz" />}}
 {{< /cards >}}
 
 

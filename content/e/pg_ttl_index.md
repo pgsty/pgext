@@ -4,7 +4,10 @@ linkTitle: "pg_ttl_index"
 description: "Automatic data expiration with TTL indexes"
 weight: 2730
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_ttl_index**](https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl) : Automatic data expiration with TTL indexes
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_ttl_index` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.0` | {{< bg "18" "pg_ttl_index_18" "green" >}} {{< bg "17" "pg_ttl_index_17" "green" >}} {{< bg "16" "pg_ttl_index_16" "green" >}} {{< bg "15" "pg_ttl_index_15" "green" >}} {{< bg "14" "pg_ttl_index_14" "red" >}} | `pg_ttl_index_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.0` | {{< bg "18" "postgresql-18-ttl-index" "green" >}} {{< bg "17" "postgresql-17-ttl-index" "green" >}} {{< bg "16" "postgresql-16-ttl-index" "green" >}} {{< bg "15" "postgresql-15-ttl-index" "green" >}} {{< bg "14" "postgresql-14-ttl-index" "red" >}} | `postgresql-$v-ttl-index` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-18-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-17-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-16-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-15-ttl-index : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-ttl-index : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-18-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-17-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-16-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-15-ttl-index : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-ttl-index : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-18-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-17-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-16-ttl-index : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.0.0" "postgresql-15-ttl-index : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-ttl-index : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-ttl-index` | `3.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.5 KiB | [postgresql-18-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-18-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-ttl-index` | `3.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.7 KiB | [postgresql-18-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-18-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-ttl-index` | `3.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.6 KiB | [postgresql-18-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-18-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-ttl-index` | `3.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.5 KiB | [postgresql-17-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-17-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-ttl-index` | `3.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.7 KiB | [postgresql-17-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-17-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-ttl-index` | `3.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.5 KiB | [postgresql-17-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-17-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-ttl-index` | `3.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.5 KiB | [postgresql-16-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-16-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-ttl-index` | `3.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.7 KiB | [postgresql-16-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-16-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-ttl-index` | `3.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.5 KiB | [postgresql-16-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-16-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,14 +153,15 @@ width: full
 | `postgresql-15-ttl-index` | `3.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.7 KiB | [postgresql-15-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-15-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-ttl-index` | `3.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 14.0 KiB | [postgresql-15-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-15-ttl-index_3.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-ttl-index` | `3.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.7 KiB | [postgresql-15-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/ttl-index/postgresql-15-ttl-index_3.0.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" title="Repository" icon="github" subtitle="github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgres-extensions-pg_ttl-3.0.0.tar.gz" >}}
+{{< card link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" title="Repository" icon="github" subtitle="github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgres-extensions-pg_ttl-3.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

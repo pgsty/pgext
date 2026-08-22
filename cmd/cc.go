@@ -46,7 +46,7 @@ var ccCmd = &cobra.Command{
 	Short: "Generate Hugo/Docsy content for pigsty.cc",
 	Long: `Generate Hugo/Docsy-compatible markdown files for pigsty.cc Chinese documentation site.
 
-This command generates native Markdown content without Hextra shortcodes,
+This command generates native Markdown content without the catalog shortcodes,
 suitable for the Hugo Docsy theme used by pigsty.cc. Run without a
 subcommand to generate all pigsty.cc extension content.`,
 	Example: `  pgext gen cc page       # Generate extension detail pages

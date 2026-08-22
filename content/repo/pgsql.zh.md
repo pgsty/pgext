@@ -1,7 +1,7 @@
 ---
 title: PGSQL 仓库
 description: PostgreSQL 扩展和内核分支仓库
-icon: Database
+icon: fa-solid fa-database
 weight: 100
 ---
 

@@ -4,7 +4,10 @@ linkTitle: "plpython3u"
 description: "PL/Python3U untrusted procedural language"
 weight: 3290
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plpython3u**](https://www.postgresql.org/docs/current/plpython.html) : PL/Python3U untrusted procedural language

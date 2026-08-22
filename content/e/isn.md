@@ -4,7 +4,10 @@ linkTitle: "isn"
 description: "data types for international product numbering standards"
 weight: 3930
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**isn**](https://www.postgresql.org/docs/current/isn.html) : data types for international product numbering standards

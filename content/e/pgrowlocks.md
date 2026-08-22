@@ -4,7 +4,10 @@ linkTitle: "pgrowlocks"
 description: "show row-level locking information"
 weight: 6910
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pgrowlocks**](https://www.postgresql.org/docs/current/pgrowlocks.html) : show row-level locking information

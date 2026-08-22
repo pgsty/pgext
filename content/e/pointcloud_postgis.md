@@ -4,7 +4,10 @@ linkTitle: "pointcloud_postgis"
 description: "integration for pointcloud LIDAR data and PostGIS geometry data"
 weight: 1521
 categories: ["GIS"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pointcloud**](https://github.com/pgpointcloud/pointcloud) : integration for pointcloud LIDAR data and PostGIS geometry data
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pointcloud` | `postgis`, `pointcloud` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "pointcloud_18" "green" >}} {{< bg "17" "pointcloud_17" "green" >}} {{< bg "16" "pointcloud_16" "green" >}} {{< bg "15" "pointcloud_15" "green" >}} {{< bg "14" "pointcloud_14" "green" >}} | `pointcloud_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "postgresql-18-pointcloud" "green" >}} {{< bg "17" "postgresql-17-pointcloud" "green" >}} {{< bg "16" "postgresql-16-pointcloud" "green" >}} {{< bg "15" "postgresql-15-pointcloud" "green" >}} {{< bg "14" "postgresql-14-pointcloud" "green" >}} | `postgresql-$v-pointcloud` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,13 +60,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgpointcloud/pointcloud" title="Repository" icon="github" subtitle="github.com/pgpointcloud/pointcloud" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pointcloud-1.2.5.tar.gz" >}}
+{{< card link="https://github.com/pgpointcloud/pointcloud" title="Repository" icon="github" subtitle="github.com/pgpointcloud/pointcloud" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pointcloud-1.2.5.tar.gz" />}}
 {{< /cards >}}
 
 

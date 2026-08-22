@@ -4,7 +4,10 @@ linkTitle: "pg_trgm"
 description: "text similarity measurement and index searching based on trigrams"
 weight: 2390
 categories: ["FTS"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pg_trgm**](https://www.postgresql.org/docs/current/pgtrgm.html) : text similarity measurement and index searching based on trigrams

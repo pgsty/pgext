@@ -4,7 +4,10 @@ linkTitle: "pageinspect"
 description: "inspect the contents of database pages at a low level"
 weight: 6900
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**pageinspect**](https://www.postgresql.org/docs/current/pageinspect.html) : inspect the contents of database pages at a low level

@@ -4,7 +4,10 @@ linkTitle: "system_stats"
 description: "EnterpriseDB system statistics for PostgreSQL"
 weight: 6420
 categories: ["STAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**system_stats**](https://github.com/EnterpriseDB/system_stats) : EnterpriseDB system statistics for PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `system_stats` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.1` | {{< bg "18" "system_stats_18" "green" >}} {{< bg "17" "system_stats_17" "green" >}} {{< bg "16" "system_stats_16" "green" >}} {{< bg "15" "system_stats_15" "green" >}} {{< bg "14" "system_stats_14" "green" >}} | `system_stats_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.1` | {{< bg "18" "postgresql-18-system-stats" "green" >}} {{< bg "17" "postgresql-17-system-stats" "green" >}} {{< bg "16" "postgresql-16-system-stats" "green" >}} {{< bg "15" "postgresql-15-system-stats" "green" >}} {{< bg "14" "postgresql-14-system-stats" "green" >}} | `postgresql-$v-system-stats` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.1" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.1" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.1" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.1" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -113,9 +118,10 @@ width: full
 | `postgresql-18-system-stats` | `4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 69.8 KiB | [postgresql-18-system-stats_4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-18-system-stats_4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-system-stats` | `4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 70.1 KiB | [postgresql-18-system-stats_4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-18-system-stats_4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-system-stats` | `4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 69.1 KiB | [postgresql-18-system-stats_4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-18-system-stats_4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -169,9 +175,10 @@ width: full
 | `postgresql-17-system-stats` | `4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 69.6 KiB | [postgresql-17-system-stats_4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-17-system-stats_4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-system-stats` | `4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 70.0 KiB | [postgresql-17-system-stats_4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-17-system-stats_4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-system-stats` | `4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 69.0 KiB | [postgresql-17-system-stats_4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-17-system-stats_4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -229,9 +236,10 @@ width: full
 | `postgresql-16-system-stats` | `4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 69.6 KiB | [postgresql-16-system-stats_4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-16-system-stats_4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-system-stats` | `4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 69.8 KiB | [postgresql-16-system-stats_4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-16-system-stats_4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-system-stats` | `4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 69.0 KiB | [postgresql-16-system-stats_4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-16-system-stats_4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -293,9 +301,10 @@ width: full
 | `postgresql-15-system-stats` | `4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.0 KiB | [postgresql-15-system-stats_4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-15-system-stats_4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-system-stats` | `4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.3 KiB | [postgresql-15-system-stats_4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-15-system-stats_4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-system-stats` | `4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 70.4 KiB | [postgresql-15-system-stats_4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-15-system-stats_4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -356,14 +365,15 @@ width: full
 | `postgresql-14-system-stats` | `4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 70.8 KiB | [postgresql-14-system-stats_4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-14-system-stats_4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-system-stats` | `4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.2 KiB | [postgresql-14-system-stats_4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-14-system-stats_4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-system-stats` | `4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 70.3 KiB | [postgresql-14-system-stats_4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-14-system-stats_4.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/EnterpriseDB/system_stats" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/system_stats" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="system_stats-4.1.tar.gz" >}}
+{{< card link="https://github.com/EnterpriseDB/system_stats" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/system_stats" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="system_stats-4.1.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "dblink"
 description: "connect to other PostgreSQL databases from within a database"
 weight: 8970
 categories: ["FDW"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**dblink**](https://www.postgresql.org/docs/current/dblink.html) : connect to other PostgreSQL databases from within a database

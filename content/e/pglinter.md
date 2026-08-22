@@ -4,7 +4,10 @@ linkTitle: "pglinter"
 description: "PostgreSQL Linting and Analysis Extension"
 weight: 5090
 categories: ["ADMIN"]
-width: full
+languages: ["Rust"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pglinter**](https://github.com/pmpetit/pglinter) : PostgreSQL Linting and Analysis Extension
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglinter` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "pglinter_18" "green" >}} {{< bg "17" "pglinter_17" "green" >}} {{< bg "16" "pglinter_16" "green" >}} {{< bg "15" "pglinter_15" "green" >}} {{< bg "14" "pglinter_14" "green" >}} | `pglinter_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "postgresql-18-pglinter" "green" >}} {{< bg "17" "postgresql-17-pglinter" "green" >}} {{< bg "16" "postgresql-16-pglinter" "green" >}} {{< bg "15" "postgresql-15-pglinter" "green" >}} {{< bg "14" "postgresql-14-pglinter" "green" >}} | `postgresql-$v-pglinter` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pglinter : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pglinter : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pglinter : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.6 KiB | [postgresql-18-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-18-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.0 KiB | [postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.8 KiB | [postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.1 KiB | [postgresql-17-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-17-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.4 KiB | [postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.7 KiB | [postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.0 KiB | [postgresql-16-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-16-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.2 KiB | [postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.7 KiB | [postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.0 KiB | [postgresql-15-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-15-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.2 KiB | [postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.7 KiB | [postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 393.9 KiB | [postgresql-14-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-14-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.3 KiB | [postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.6 KiB | [postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pmpetit/pglinter" title="Repository" icon="github" subtitle="github.com/pmpetit/pglinter" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglinter-2.0.0.tar.gz" >}}
+{{< card link="https://github.com/pmpetit/pglinter" title="Repository" icon="github" subtitle="github.com/pmpetit/pglinter" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglinter-2.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

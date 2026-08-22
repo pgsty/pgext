@@ -4,7 +4,10 @@ linkTitle: "babelfishpg_tsql"
 description: "SQL Server Transact SQL compatibility"
 weight: 9310
 categories: ["SIM"]
-width: full
+languages: ["C"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**babelfish**](https://babelfishpg.org/) : SQL Server Transact SQL compatibility
@@ -39,6 +42,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `babelfish` | `babelfishpg_common`, `uuid-ossp` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.0.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `antlr4-runtime413` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.0.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `libantlr4-runtime413` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,13 +63,14 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 6.0.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.4.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 6.0.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.4.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 6.0.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.4.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
+{.matrix}
 
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://babelfishpg.org/" title="Repository" icon="link" subtitle="babelfishpg.org/" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-17-17.7-5.4.0.tar.gz" >}}
+{{< card link="https://babelfishpg.org/" title="Repository" icon="link" subtitle="babelfishpg.org/" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-17-17.7-5.4.0.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "omnisketch"
 description: "data structure for on-line agg of data into approximate sketch"
 weight: 4640
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**omnisketch**](https://github.com/tvondra/omnisketch) : data structure for on-line agg of data into approximate sketch
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `omnisketch` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "omnisketch_18" "green" >}} {{< bg "17" "omnisketch_17" "green" >}} {{< bg "16" "omnisketch_16" "green" >}} {{< bg "15" "omnisketch_15" "green" >}} {{< bg "14" "omnisketch_14" "green" >}} | `omnisketch_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "postgresql-18-omnisketch" "green" >}} {{< bg "17" "postgresql-17-omnisketch" "green" >}} {{< bg "16" "postgresql-16-omnisketch" "green" >}} {{< bg "15" "postgresql-15-omnisketch" "green" >}} {{< bg "14" "postgresql-14-omnisketch" "green" >}} | `postgresql-$v-omnisketch` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-18-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-17-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-16-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-15-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-14-omnisketch : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-18-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-17-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-16-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-15-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-14-omnisketch : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-18-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-17-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-16-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-15-omnisketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.2" "postgresql-14-omnisketch : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-omnisketch` | `1.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.8 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-omnisketch` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-omnisketch` | `1.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.8 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-omnisketch` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.1 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-omnisketch` | `1.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.8 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-omnisketch` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.0 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-omnisketch` | `1.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.9 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-omnisketch` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-omnisketch` | `1.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.9 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-omnisketch` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/tvondra/omnisketch" title="Repository" icon="github" subtitle="github.com/tvondra/omnisketch" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="omnisketch-1.0.2.tar.gz" >}}
+{{< card link="https://github.com/tvondra/omnisketch" title="Repository" icon="github" subtitle="github.com/tvondra/omnisketch" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="omnisketch-1.0.2.tar.gz" />}}
 {{< /cards >}}
 
 

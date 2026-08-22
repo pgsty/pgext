@@ -4,7 +4,10 @@ linkTitle: "jsquery"
 description: "data type for jsonb inspection"
 weight: 2770
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**jsquery**](https://github.com/postgrespro/jsquery) : data type for jsonb inspection
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `jsquery` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "jsquery_18" "green" >}} {{< bg "17" "jsquery_17" "green" >}} {{< bg "16" "jsquery_16" "green" >}} {{< bg "15" "jsquery_15" "green" >}} {{< bg "14" "jsquery_14" "green" >}} | `jsquery_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "postgresql-18-jsquery" "green" >}} {{< bg "17" "postgresql-17-jsquery" "green" >}} {{< bg "16" "postgresql-16-jsquery" "green" >}} {{< bg "15" "postgresql-15-jsquery" "green" >}} {{< bg "14" "postgresql-14-jsquery" "green" >}} | `postgresql-$v-jsquery` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 119.9 KiB | [postgresql-18-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 121.6 KiB | [postgresql-18-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 118.2 KiB | [postgresql-18-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,9 +113,10 @@ width: full
 | `postgresql-17-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 119.8 KiB | [postgresql-17-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 121.7 KiB | [postgresql-17-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 118.2 KiB | [postgresql-17-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -133,9 +140,10 @@ width: full
 | `postgresql-16-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 119.5 KiB | [postgresql-16-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 121.3 KiB | [postgresql-16-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 118.0 KiB | [postgresql-16-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -159,9 +167,10 @@ width: full
 | `postgresql-15-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 121.2 KiB | [postgresql-15-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.3 KiB | [postgresql-15-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.7 KiB | [postgresql-15-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -185,14 +194,15 @@ width: full
 | `postgresql-14-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 121.3 KiB | [postgresql-14-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.2 KiB | [postgresql-14-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.6 KiB | [postgresql-14-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/postgrespro/jsquery" title="Repository" icon="github" subtitle="github.com/postgrespro/jsquery" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="jsquery-1.2.tar.gz" >}}
+{{< card link="https://github.com/postgrespro/jsquery" title="Repository" icon="github" subtitle="github.com/postgrespro/jsquery" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="jsquery-1.2.tar.gz" />}}
 {{< /cards >}}
 
 

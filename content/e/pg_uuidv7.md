@@ -4,7 +4,10 @@ linkTitle: "pg_uuidv7"
 description: "Create UUIDv7 values in postgres"
 weight: 4520
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["MPL-2.0"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_uuidv7**](https://github.com/fboulnois/pg_uuidv7) : Create UUIDv7 values in postgres
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_uuidv7` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "pg_uuidv7_18" "green" >}} {{< bg "17" "pg_uuidv7_17" "green" >}} {{< bg "16" "pg_uuidv7_16" "green" >}} {{< bg "15" "pg_uuidv7_15" "green" >}} {{< bg "14" "pg_uuidv7_14" "green" >}} | `pg_uuidv7_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "postgresql-18-pg-uuidv7" "green" >}} {{< bg "17" "postgresql-17-pg-uuidv7" "green" >}} {{< bg "16" "postgresql-16-pg-uuidv7" "green" >}} {{< bg "15" "postgresql-15-pg-uuidv7" "green" >}} {{< bg "14" "postgresql-14-pg-uuidv7" "green" >}} | `postgresql-$v-pg-uuidv7` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.7.0" "postgresql-18-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-pg-uuidv7 : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.7.0" "postgresql-18-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-pg-uuidv7 : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.7.0" "postgresql-18-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-pg-uuidv7 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-pg-uuidv7 : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -96,9 +101,10 @@ width: full
 | `postgresql-18-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.2 KiB | [postgresql-18-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-18-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-18-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-18-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.7 KiB | [postgresql-18-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-18-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -141,9 +147,10 @@ width: full
 | `postgresql-17-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.1 KiB | [postgresql-17-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-17-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-17-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-17-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.7 KiB | [postgresql-17-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-17-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -202,9 +209,10 @@ width: full
 | `postgresql-16-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.1 KiB | [postgresql-16-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-16-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-16-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-16-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.7 KiB | [postgresql-16-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-16-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -272,9 +280,10 @@ width: full
 | `postgresql-15-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.1 KiB | [postgresql-15-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-15-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-15-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-15-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.7 KiB | [postgresql-15-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-15-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -342,14 +351,15 @@ width: full
 | `postgresql-14-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.1 KiB | [postgresql-14-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-14-pg-uuidv7_1.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-14-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-14-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.7 KiB | [postgresql-14-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-uuidv7/postgresql-14-pg-uuidv7_1.7.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/fboulnois/pg_uuidv7" title="Repository" icon="github" subtitle="github.com/fboulnois/pg_uuidv7" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_uuidv7-1.7.0.tar.gz" >}}
+{{< card link="https://github.com/fboulnois/pg_uuidv7" title="Repository" icon="github" subtitle="github.com/fboulnois/pg_uuidv7" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_uuidv7-1.7.0.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -1,9 +1,9 @@
 ---
 title: Repository
 description: The infrastructure to deliver PostgreSQL Extensions
-icon: Warehouse
+icon: fa-solid fa-warehouse
 weight: 300
-breadcrumbs: false
+breadcrumb: false
 ---
 
 
@@ -14,8 +14,8 @@ Group ([PGDG](https://www.postgresql.org/download/linux/)) repo.
 Together, they can provide up to [575 packaged PostgreSQL extensions](https://ext.pgsty.com/list) out-of-the-box.
 
 {{< cards cols=2 >}}
-{{< card link="/repo/pgsql"  title="PGSQL Repo" subtitle="Pigsty Extension Repository"  icon="play"     >}}
-{{< card link="/repo/infra"  title="INFRA Repo" subtitle="Pigsty Infrastructure Repo"   icon="sparkles" >}}
+{{< card link="/repo/pgsql"  title="PGSQL Repo" subtitle="Pigsty Extension Repository"  icon="play" />}}
+{{< card link="/repo/infra"  title="INFRA Repo" subtitle="Pigsty Infrastructure Repo"   icon="sparkles" />}}
 {{< /cards >}}
 
 |  OS / Arch   |  OS  |                                                                                                    x86_64                                                                                                    |                                                                                                   aarch64                                                                                                    |
@@ -33,8 +33,8 @@ Together, they can provide up to [575 packaged PostgreSQL extensions](https://ex
 
 You can enable the pigsty [infra](/repo/infra) & [pgsql](/repo/pgsql) repo with the [pig](https://pig.pgsty.com) CLI tool:
 
-{{< tabs >}}
-{{< tab name="Default" selected=true >}}
+{{< tabs group="mirror" >}}
+{{< tab label="Default" value="global" >}}
 
 ```bash tab="pig"
 curl https://repo.pigsty.io/pig | bash      # download and install the pig CLI tool
@@ -43,7 +43,7 @@ pig repo add all -u                         # add linux, pgdg, pigsty repo and u
 
 {{< /tab >}}
 
-{{< tab name="Mirror" >}}
+{{< tab label="Mirror" value="mirror" >}}
 
 ```bash tab="pig"
 curl https://repo.pigsty.cc/pig | bash      # download from mirror site
@@ -57,8 +57,8 @@ pig repo add -u                             # add linux, pgdg, pigsty repo and u
 
 You can also add these repo to your system [manually](#manual-install) with default `apt`, `dnf`, `yum` approach.
 
-{{< tabs >}}
-{{< tab name="APT" selected=true >}}
+{{< tabs group="pkgmgr" >}}
+{{< tab label="APT" value="apt" >}}
 
 ```bash tab="apt"
 # Add Pigsty's GPG public key to your system keychain to verify package signatures
@@ -77,7 +77,7 @@ sudo apt update
 
 {{< /tab >}}
 
-{{< tab name="DNF/YUM" >}}
+{{< tab label="DNF/YUM" value="dnf" >}}
 
 ```bash tab="yum"
 # Add Pigsty's GPG public key to your system keychain to verify package signatures

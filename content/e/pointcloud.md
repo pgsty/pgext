@@ -4,7 +4,10 @@ linkTitle: "pointcloud"
 description: "data type for lidar point clouds"
 weight: 1520
 categories: ["GIS"]
-width: full
+languages: ["C"]
+licenses: ["BSD-3-Clause"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pointcloud**](https://github.com/pgpointcloud/pointcloud) : data type for lidar point clouds
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pointcloud` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "pointcloud_18" "green" >}} {{< bg "17" "pointcloud_17" "green" >}} {{< bg "16" "pointcloud_16" "green" >}} {{< bg "15" "pointcloud_15" "green" >}} {{< bg "14" "pointcloud_14" "green" >}} | `pointcloud_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "postgresql-18-pointcloud" "green" >}} {{< bg "17" "postgresql-17-pointcloud" "green" >}} {{< bg "16" "postgresql-16-pointcloud" "green" >}} {{< bg "15" "postgresql-15-pointcloud" "green" >}} {{< bg "14" "postgresql-14-pointcloud" "green" >}} | `postgresql-$v-pointcloud` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -93,9 +98,10 @@ width: full
 | `postgresql-18-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 95.8 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.4 KiB | [postgresql-18-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.6 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -129,9 +135,10 @@ width: full
 | `postgresql-17-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.1 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.4 KiB | [postgresql-17-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,9 +172,10 @@ width: full
 | `postgresql-16-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.0 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.4 KiB | [postgresql-16-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -201,9 +209,10 @@ width: full
 | `postgresql-15-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.2 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-15-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.1 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -237,14 +246,15 @@ width: full
 | `postgresql-14-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.2 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-14-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.0 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgpointcloud/pointcloud" title="Repository" icon="github" subtitle="github.com/pgpointcloud/pointcloud" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pointcloud-1.2.5.tar.gz" >}}
+{{< card link="https://github.com/pgpointcloud/pointcloud" title="Repository" icon="github" subtitle="github.com/pgpointcloud/pointcloud" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pointcloud-1.2.5.tar.gz" />}}
 {{< /cards >}}
 
 

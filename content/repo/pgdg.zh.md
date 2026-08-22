@@ -1,7 +1,7 @@
 ---
 title: PGDG 仓库
 description: "The official PostgreSQL APT/YUM repository"
-icon: Database
+icon: fa-solid fa-database
 weight: 400
 ---
 

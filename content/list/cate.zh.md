@@ -1,6 +1,7 @@
 ---
 title: "按分类"
 weight: 100
+page_width: full
 ---
 
 576 个已打包 PostgreSQL 扩展（归属 471 个包族）划分为 16 个分类。

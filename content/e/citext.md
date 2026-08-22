@@ -4,7 +4,10 @@ linkTitle: "citext"
 description: "data type for case-insensitive character strings"
 weight: 3980
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**citext**](https://www.postgresql.org/docs/current/citext.html) : data type for case-insensitive character strings

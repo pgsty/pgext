@@ -4,7 +4,10 @@ linkTitle: "pgpool_adm"
 description: "Administrative functions for pgPool"
 weight: 5900
 categories: ["ADMIN"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pgpool**](https://pgpool.net/) : Administrative functions for pgPool
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgpool` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.2` | {{< bg "18" "pgpool-II-pg18-extensions" "green" >}} {{< bg "17" "pgpool-II-pg17-extensions" "green" >}} {{< bg "16" "pgpool-II-pg16-extensions" "green" >}} {{< bg "15" "pgpool-II-pg15-extensions" "green" >}} {{< bg "14" "pgpool-II-pg14-extensions" "green" >}} | `pgpool-II-pg$v-extensions` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.2` | {{< bg "18" "postgresql-18-pgpool2" "green" >}} {{< bg "17" "postgresql-17-pgpool2" "green" >}} {{< bg "16" "postgresql-16-pgpool2" "green" >}} {{< bg "15" "postgresql-15-pgpool2" "green" >}} {{< bg "14" "postgresql-14-pgpool2" "green" >}} | `postgresql-$v-pgpool2` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.7.2" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.7.2" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.7.2" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.2" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -156,9 +161,10 @@ width: full
 | `postgresql-18-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-18-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-18-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgpool2` | `4.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.6 KiB | [postgresql-18-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-18-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgpool2` | `4.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.4 KiB | [postgresql-18-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-18-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -282,9 +288,10 @@ width: full
 | `postgresql-17-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-17-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-17-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgpool2` | `4.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.5 KiB | [postgresql-17-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-17-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgpool2` | `4.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.4 KiB | [postgresql-17-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-17-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -420,9 +427,10 @@ width: full
 | `postgresql-16-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-16-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-16-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgpool2` | `4.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.6 KiB | [postgresql-16-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-16-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgpool2` | `4.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.4 KiB | [postgresql-16-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-16-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -569,9 +577,10 @@ width: full
 | `postgresql-15-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-15-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-15-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgpool2` | `4.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.6 KiB | [postgresql-15-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-15-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgpool2` | `4.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.4 KiB | [postgresql-15-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-15-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -723,13 +732,14 @@ width: full
 | `postgresql-14-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-14-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-14-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgpool2` | `4.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.6 KiB | [postgresql-14-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-14-pgpool2_4.7.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgpool2` | `4.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 155.4 KiB | [postgresql-14-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-14-pgpool2_4.7.0-1.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://pgpool.net/" title="Repository" icon="link" subtitle="pgpool.net/" >}}
+{{< card link="https://pgpool.net/" title="Repository" icon="link" subtitle="pgpool.net/" />}}
 {{< /cards >}}
 
 

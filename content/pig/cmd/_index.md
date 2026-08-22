@@ -1,7 +1,7 @@
 ---
 title: "CMD Docs"
 description: Overview of the pig CLI command reference
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 600
 ---
 

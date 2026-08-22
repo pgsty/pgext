@@ -4,7 +4,10 @@ linkTitle: "ogr_fdw"
 description: "foreign-data wrapper for GIS data access"
 weight: 1550
 categories: ["GIS"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**ogr_fdw**](https://github.com/pramsey/pgsql-ogr-fdw) : foreign-data wrapper for GIS data access
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `ogr_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "ogr_fdw_18" "green" >}} {{< bg "17" "ogr_fdw_17" "green" >}} {{< bg "16" "ogr_fdw_16" "green" >}} {{< bg "15" "ogr_fdw_15" "green" >}} {{< bg "14" "ogr_fdw_14" "green" >}} | `ogr_fdw_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "postgresql-18-ogr-fdw" "green" >}} {{< bg "17" "postgresql-17-ogr-fdw" "green" >}} {{< bg "16" "postgresql-16-ogr-fdw" "green" >}} {{< bg "15" "postgresql-15-ogr-fdw" "green" >}} {{< bg "14" "postgresql-14-ogr-fdw" "green" >}} | `postgresql-$v-ogr-fdw` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.1.9" "postgresql-18-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-17-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-16-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-15-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-14-ogr-fdw : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.1.9" "postgresql-18-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-17-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-16-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-15-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-14-ogr-fdw : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.1.9" "postgresql-18-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-17-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-16-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-15-ogr-fdw : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.1.9" "postgresql-14-ogr-fdw : AVAIL 3" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -116,9 +121,10 @@ width: full
 | `postgresql-18-ogr-fdw` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 87.5 KiB | [postgresql-18-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-18-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-ogr-fdw` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 87.2 KiB | [postgresql-18-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-18-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-ogr-fdw` | `1.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 87.3 KiB | [postgresql-18-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-18-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -188,9 +194,10 @@ width: full
 | `postgresql-17-ogr-fdw` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 87.1 KiB | [postgresql-17-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-17-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-ogr-fdw` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 87.3 KiB | [postgresql-17-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-17-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-ogr-fdw` | `1.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 86.9 KiB | [postgresql-17-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-17-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -263,9 +270,10 @@ width: full
 | `postgresql-16-ogr-fdw` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 87.0 KiB | [postgresql-16-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-16-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-ogr-fdw` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 86.9 KiB | [postgresql-16-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-16-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-ogr-fdw` | `1.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 87.1 KiB | [postgresql-16-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-16-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -346,9 +354,10 @@ width: full
 | `postgresql-15-ogr-fdw` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 88.2 KiB | [postgresql-15-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-15-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-ogr-fdw` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 88.2 KiB | [postgresql-15-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-15-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-ogr-fdw` | `1.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 88.0 KiB | [postgresql-15-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-15-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -432,13 +441,14 @@ width: full
 | `postgresql-14-ogr-fdw` | `1.1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 88.0 KiB | [postgresql-14-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-14-ogr-fdw_1.1.9-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-ogr-fdw` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 88.0 KiB | [postgresql-14-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-14-ogr-fdw_1.1.8-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-ogr-fdw` | `1.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 88.3 KiB | [postgresql-14-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-ogr-fdw/postgresql-14-ogr-fdw_1.1.7-3.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pramsey/pgsql-ogr-fdw" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-ogr-fdw" >}}
+{{< card link="https://github.com/pramsey/pgsql-ogr-fdw" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-ogr-fdw" />}}
 {{< /cards >}}
 
 

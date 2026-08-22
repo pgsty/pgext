@@ -4,7 +4,10 @@ linkTitle: "ltree"
 description: "data type for hierarchical tree-like structures"
 weight: 3960
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**ltree**](https://www.postgresql.org/docs/current/ltree.html) : data type for hierarchical tree-like structures

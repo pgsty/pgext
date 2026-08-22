@@ -5,6 +5,7 @@ package cli
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -125,18 +126,38 @@ func (g *ExtensionGenerator) generateFrontmatter(ext *Extension) string {
 		subtitle = fmt.Sprintf("**%s** : %s", ext.Pkg, ext.EnDesc.String)
 	}
 
+	// The four catalog dimensions are Hugo taxonomies, so every dimension the
+	// site filters by — category, language, licence, repository — has real
+	// term pages instead of a hand-written index.
+	dims := ""
+	dims += taxonomyLine("languages", ext.Lang)
+	dims += taxonomyLine("licenses", ext.License)
+	dims += taxonomyLine("repos", ext.Repo)
 	return fmt.Sprintf(`---
 title: "%s"
 linkTitle: "%s"
 description: "%s"
 weight: %d
 categories: ["%s"]
-width: full
+%spage_width: full
 ---
 
 %s
 
-`, ext.Name, ext.Name, desc, ext.ID, categoryTitle, subtitle)
+`, ext.Name, ext.Name, desc, ext.ID, categoryTitle, dims, subtitle)
+}
+
+// taxonomyLine emits one front matter taxonomy line, or nothing when the
+// catalog has no value for that dimension: an empty term page helps no one.
+func taxonomyLine(key string, value sql.NullString) string {
+	if !value.Valid {
+		return ""
+	}
+	v := strings.TrimSpace(value.String)
+	if v == "" {
+		return ""
+	}
+	return fmt.Sprintf("%s: [%q]\n", key, v)
 }
 
 func (g *ExtensionGenerator) generateOverview(ext *Extension) string {
@@ -340,7 +361,10 @@ func (g *ExtensionGenerator) generatePackagesTable(ext *Extension, packages []*P
 		b.WriteString(row)
 		b.WriteString("\n")
 	}
-	b.WriteString("\n")
+	// `{.packages}` is the site's own table marker: the theme passes an unknown
+	// class straight through to the table element, which is all the stylesheet
+	// needs to give the delivery summary its own column rhythm.
+	b.WriteString("{.packages}\n\n")
 
 	return b.String()
 }
@@ -565,7 +589,10 @@ func (g *ExtensionGenerator) generateAvailabilityMatrix(packages []*PkgInfo, bin
 		b.WriteString("\n")
 	}
 
-	b.WriteString("\n")
+	// `{.matrix}` gives the table OINK's matrix presentation: a sticky header
+	// row and sticky first column, so the OS label stays visible while the
+	// reader scrolls sixteen platforms against five majors.
+	b.WriteString("{.matrix}\n\n")
 	return b.String()
 }
 
@@ -626,13 +653,14 @@ func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages
 				body.WriteString(fmt.Sprintf("| `%s` | `%s` | [%s](/os/%s) | %s | %s | [%s](%s) |\n",
 					pkg.Name, pkg.Version, pkg.OS, pkg.OS, org, sizeStr, fileName, url))
 			}
+			body.WriteString("{.downloads}\n")
 		} else {
 			body.WriteString("*No packages available for this PostgreSQL version.*\n")
 		}
-		tabContent += TabShortcode(fmt.Sprintf("PG%d", pg), body.String())
+		tabContent += TabShortcode(fmt.Sprintf("PG%d", pg), fmt.Sprintf("pg%d", pg), body.String())
 	}
 
-	b.WriteString(TabsShortcode(tabContent))
+	b.WriteString(TabsShortcode("pgmajor", tabContent))
 	b.WriteString("\n")
 
 	return b.String()

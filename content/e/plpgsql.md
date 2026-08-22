@@ -4,7 +4,10 @@ linkTitle: "plpgsql"
 description: "PL/pgSQL procedural language"
 weight: 3280
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plpgsql**](https://www.postgresql.org/docs/current/plpgsql.html) : PL/pgSQL procedural language

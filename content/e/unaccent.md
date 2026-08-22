@@ -4,7 +4,10 @@ linkTitle: "unaccent"
 description: "text search dictionary that removes accents"
 weight: 4990
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**unaccent**](https://www.postgresql.org/docs/current/unaccent.html) : text search dictionary that removes accents

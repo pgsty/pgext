@@ -4,7 +4,10 @@ linkTitle: "pgfr_record"
 description: "Server-side PostgreSQL performance flight recorder"
 weight: 6060
 categories: ["STAT"]
-width: full
+languages: ["SQL"]
+licenses: ["Apache-2.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_flight_recorder**](https://github.com/dventimisupabase/pg_flight_recorder) : Server-side PostgreSQL performance flight recorder
@@ -40,6 +43,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_flight_recorder` | `pg_cron` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "pg_flight_recorder_18" "green" >}} {{< bg "17" "pg_flight_recorder_17" "green" >}} {{< bg "16" "pg_flight_recorder_16" "green" >}} {{< bg "15" "pg_flight_recorder_15" "green" >}} {{< bg "14" "pg_flight_recorder_14" "red" >}} | `pg_flight_recorder_$v` | `pg_cron_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "postgresql-18-pg-flight-recorder" "green" >}} {{< bg "17" "postgresql-17-pg-flight-recorder" "green" >}} {{< bg "16" "postgresql-16-pg-flight-recorder" "green" >}} {{< bg "15" "postgresql-15-pg-flight-recorder" "green" >}} {{< bg "14" "postgresql-14-pg-flight-recorder" "red" >}} | `postgresql-$v-pg-flight-recorder` | `postgresql-$v-cron` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,10 +64,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-18-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-17-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-16-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-15-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-flight-recorder : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-18-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-17-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-16-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-15-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-flight-recorder : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-18-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-17-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-16-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.29.2" "postgresql-15-pg-flight-recorder : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-flight-recorder : N/A 0" "gray" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -83,9 +88,10 @@ width: full
 | `postgresql-18-pg-flight-recorder` | `2.29.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 80.7 KiB | [postgresql-18-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-flight-recorder/postgresql-18-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb) |
 | `postgresql-18-pg-flight-recorder` | `2.29.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.7 KiB | [postgresql-18-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-18-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-pg-flight-recorder` | `2.29.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.7 KiB | [postgresql-18-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-18-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -105,9 +111,10 @@ width: full
 | `postgresql-17-pg-flight-recorder` | `2.29.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 80.7 KiB | [postgresql-17-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-flight-recorder/postgresql-17-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb) |
 | `postgresql-17-pg-flight-recorder` | `2.29.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.7 KiB | [postgresql-17-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-17-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-pg-flight-recorder` | `2.29.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.7 KiB | [postgresql-17-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-17-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -127,9 +134,10 @@ width: full
 | `postgresql-16-pg-flight-recorder` | `2.29.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 80.7 KiB | [postgresql-16-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-flight-recorder/postgresql-16-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb) |
 | `postgresql-16-pg-flight-recorder` | `2.29.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.7 KiB | [postgresql-16-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-16-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-pg-flight-recorder` | `2.29.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.7 KiB | [postgresql-16-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-16-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -149,14 +157,15 @@ width: full
 | `postgresql-15-pg-flight-recorder` | `2.29.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 80.7 KiB | [postgresql-15-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-flight-recorder/postgresql-15-pg-flight-recorder_2.29.2-1PIGSTY~noble_all.deb) |
 | `postgresql-15-pg-flight-recorder` | `2.29.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.7 KiB | [postgresql-15-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-15-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-pg-flight-recorder` | `2.29.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.7 KiB | [postgresql-15-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-flight-recorder/postgresql-15-pg-flight-recorder_2.29.2-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/dventimisupabase/pg_flight_recorder" title="Repository" icon="github" subtitle="github.com/dventimisupabase/pg_flight_recorder" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_flight_recorder-2.29.2.tar.gz" >}}
+{{< card link="https://github.com/dventimisupabase/pg_flight_recorder" title="Repository" icon="github" subtitle="github.com/dventimisupabase/pg_flight_recorder" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_flight_recorder-2.29.2.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -4,7 +4,10 @@ linkTitle: "autoinc"
 description: "functions for autoincrementing fields"
 weight: 4881
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**autoinc**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-AUTOINC) : functions for autoincrementing fields

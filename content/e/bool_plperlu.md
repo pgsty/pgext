@@ -4,7 +4,10 @@ linkTitle: "bool_plperlu"
 description: "transform between bool and plperlu"
 weight: 3271
 categories: ["LANG"]
-width: full
+languages: ["C"]
+licenses: ["PostgreSQL"]
+repos: ["CONTRIB"]
+page_width: full
 ---
 
 [**plperlu**](https://www.postgresql.org/docs/current/plperl.html) : transform between bool and plperlu

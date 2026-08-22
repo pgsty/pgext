@@ -4,7 +4,10 @@ linkTitle: "ddlx"
 description: "DDL eXtractor functions"
 weight: 5080
 categories: ["ADMIN"]
-width: full
+languages: ["SQL"]
+licenses: ["PostgreSQL"]
+repos: ["MIXED"]
+page_width: full
 ---
 
 [**pg_ddlx**](https://github.com/lacanoid/pgddl) : DDL eXtractor functions
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.30` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ddlx` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.30` | {{< bg "18" "ddlx_18" "green" >}} {{< bg "17" "ddlx_17" "green" >}} {{< bg "16" "ddlx_16" "green" >}} {{< bg "15" "ddlx_15" "green" >}} {{< bg "14" "ddlx_14" "green" >}} | `ddlx_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.30` | {{< bg "18" "postgresql-18-ddlx" "green" >}} {{< bg "17" "postgresql-17-ddlx" "green" >}} {{< bg "16" "postgresql-16-ddlx" "green" >}} {{< bg "15" "postgresql-15-ddlx" "green" >}} {{< bg "14" "postgresql-14-ddlx" "green" >}} | `postgresql-$v-ddlx` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,9 +86,10 @@ width: full
 | `postgresql-18-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.9 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.9 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -117,9 +123,10 @@ width: full
 | `postgresql-17-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.9 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.9 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,9 +172,10 @@ width: full
 | `postgresql-16-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.8 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.8 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.8 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -221,9 +229,10 @@ width: full
 | `postgresql-15-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.8 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.8 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.8 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -277,14 +286,15 @@ width: full
 | `postgresql-14-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.6 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.6 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.6 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/lacanoid/pgddl" title="Repository" icon="github" subtitle="github.com/lacanoid/pgddl" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgddl-0.30.tar.gz" >}}
+{{< card link="https://github.com/lacanoid/pgddl" title="Repository" icon="github" subtitle="github.com/lacanoid/pgddl" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgddl-0.30.tar.gz" />}}
 {{< /cards >}}
 
 

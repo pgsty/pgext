@@ -4,7 +4,10 @@ linkTitle: "table_version"
 description: "PostgreSQL table versioning extension"
 weight: 1060
 categories: ["TIME"]
-width: full
+languages: ["SQL"]
+licenses: ["BSD-3-Clause"]
+repos: ["MIXED"]
+page_width: full
 ---
 
 [**table_version**](https://github.com/linz/postgresql-tableversion) : PostgreSQL table versioning extension
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `table_version` | `plpgsql` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "table_version_18" "green" >}} {{< bg "17" "table_version_17" "green" >}} {{< bg "16" "table_version_16" "green" >}} {{< bg "15" "table_version_15" "green" >}} {{< bg "14" "table_version_14" "green" >}} | `table_version_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "postgresql-18-table-version" "green" >}} {{< bg "17" "postgresql-17-table-version" "green" >}} {{< bg "16" "postgresql-16-table-version" "green" >}} {{< bg "15" "postgresql-15-table-version" "green" >}} {{< bg "14" "postgresql-14-table-version" "green" >}} | `postgresql-$v-table-version` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-18-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-17-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-16-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-15-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-14-table-version : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-18-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-17-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-16-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-15-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-14-table-version : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-18-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-17-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-16-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-15-table-version : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.1" "postgresql-14-table-version : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -89,9 +94,10 @@ width: full
 | `postgresql-18-table-version` | `1.11.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-18-table-version_1.11.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/table-version/postgresql-18-table-version_1.11.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-table-version` | `1.11.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.2 KiB | [postgresql-18-table-version_1.11.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-18-table-version_1.11.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-table-version` | `1.11.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.2 KiB | [postgresql-18-table-version_1.11.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-18-table-version_1.11.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +129,10 @@ width: full
 | `postgresql-17-table-version` | `1.11.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-17-table-version_1.11.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/table-version/postgresql-17-table-version_1.11.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-table-version` | `1.11.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.2 KiB | [postgresql-17-table-version_1.11.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-17-table-version_1.11.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-table-version` | `1.11.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.2 KiB | [postgresql-17-table-version_1.11.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-17-table-version_1.11.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -156,9 +163,10 @@ width: full
 | `postgresql-16-table-version` | `1.11.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-16-table-version_1.11.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/table-version/postgresql-16-table-version_1.11.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-table-version` | `1.11.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.2 KiB | [postgresql-16-table-version_1.11.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-16-table-version_1.11.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-table-version` | `1.11.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.2 KiB | [postgresql-16-table-version_1.11.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-16-table-version_1.11.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -189,9 +197,10 @@ width: full
 | `postgresql-15-table-version` | `1.11.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-15-table-version_1.11.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/table-version/postgresql-15-table-version_1.11.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-table-version` | `1.11.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.2 KiB | [postgresql-15-table-version_1.11.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-15-table-version_1.11.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-table-version` | `1.11.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.2 KiB | [postgresql-15-table-version_1.11.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-15-table-version_1.11.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -222,14 +231,15 @@ width: full
 | `postgresql-14-table-version` | `1.11.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.5 KiB | [postgresql-14-table-version_1.11.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/table-version/postgresql-14-table-version_1.11.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-table-version` | `1.11.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.1 KiB | [postgresql-14-table-version_1.11.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-14-table-version_1.11.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-table-version` | `1.11.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.1 KiB | [postgresql-14-table-version_1.11.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/table-version/postgresql-14-table-version_1.11.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/linz/postgresql-tableversion" title="Repository" icon="github" subtitle="github.com/linz/postgresql-tableversion" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql-tableversion-1.11.1.tar.gz" >}}
+{{< card link="https://github.com/linz/postgresql-tableversion" title="Repository" icon="github" subtitle="github.com/linz/postgresql-tableversion" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql-tableversion-1.11.1.tar.gz" />}}
 {{< /cards >}}
 
 

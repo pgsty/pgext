@@ -1,7 +1,8 @@
 ---
 title: "By Language"
 description: "PostgreSQL extensions organized by implementation language"
-excludeSearch: true
+page_width: full
+search_exclude: true
 weight: 200
 ---
 

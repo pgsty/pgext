@@ -4,7 +4,10 @@ linkTitle: "duckdb_fdw"
 description: "DuckDB Foreign Data Wrapper"
 weight: 2470
 categories: ["OLAP"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**duckdb_fdw**](https://github.com/alitrack/duckdb_fdw) : DuckDB Foreign Data Wrapper
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `duckdb_fdw` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.3` | {{< bg "18" "duckdb_fdw_18" "green" >}} {{< bg "17" "duckdb_fdw_17" "green" >}} {{< bg "16" "duckdb_fdw_16" "green" >}} {{< bg "15" "duckdb_fdw_15" "green" >}} {{< bg "14" "duckdb_fdw_14" "green" >}} | `duckdb_fdw_$v` | `pg_duckdb_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.3` | {{< bg "18" "postgresql-18-duckdb-fdw" "green" >}} {{< bg "17" "postgresql-17-duckdb-fdw" "green" >}} {{< bg "16" "postgresql-16-duckdb-fdw" "green" >}} {{< bg "15" "postgresql-15-duckdb-fdw" "green" >}} {{< bg "14" "postgresql-14-duckdb-fdw" "green" >}} | `postgresql-$v-duckdb-fdw` | `postgresql-$v-pg-duckdb` |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-18-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-17-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-16-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-15-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-14-duckdb-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-18-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-17-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-16-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-15-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-14-duckdb-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-18-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-17-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-16-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-15-duckdb-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.3" "postgresql-14-duckdb-fdw : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-duckdb-fdw` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 210.4 KiB | [postgresql-18-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/duckdb-fdw/postgresql-18-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-duckdb-fdw` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 212.9 KiB | [postgresql-18-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-18-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-duckdb-fdw` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 209.6 KiB | [postgresql-18-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-18-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-duckdb-fdw` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 210.1 KiB | [postgresql-17-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/duckdb-fdw/postgresql-17-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-duckdb-fdw` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 212.6 KiB | [postgresql-17-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-17-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-duckdb-fdw` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 209.2 KiB | [postgresql-17-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-17-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-duckdb-fdw` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 210.2 KiB | [postgresql-16-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/duckdb-fdw/postgresql-16-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-duckdb-fdw` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 212.6 KiB | [postgresql-16-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-16-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-duckdb-fdw` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 208.9 KiB | [postgresql-16-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-16-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-duckdb-fdw` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 222.3 KiB | [postgresql-15-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/duckdb-fdw/postgresql-15-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-duckdb-fdw` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 224.2 KiB | [postgresql-15-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-15-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-duckdb-fdw` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 220.7 KiB | [postgresql-15-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-15-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-duckdb-fdw` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 222.4 KiB | [postgresql-14-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/duckdb-fdw/postgresql-14-duckdb-fdw_1.4.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-duckdb-fdw` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 224.2 KiB | [postgresql-14-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-14-duckdb-fdw_1.4.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-duckdb-fdw` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 220.6 KiB | [postgresql-14-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/duckdb-fdw/postgresql-14-duckdb-fdw_1.4.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/alitrack/duckdb_fdw" title="Repository" icon="github" subtitle="github.com/alitrack/duckdb_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="duckdb_fdw-1.4.3.tar.gz" >}}
+{{< card link="https://github.com/alitrack/duckdb_fdw" title="Repository" icon="github" subtitle="github.com/alitrack/duckdb_fdw" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="duckdb_fdw-1.4.3.tar.gz" />}}
 {{< /cards >}}
 
 

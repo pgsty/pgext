@@ -4,7 +4,10 @@ linkTitle: "typeid"
 description: "Allows to use TypeIDs in Postgres natively"
 weight: 4580
 categories: ["FUNC"]
-width: full
+languages: ["Rust"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_typeid**](https://github.com/blitss/typeid-postgres) : Allows to use TypeIDs in Postgres natively
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_typeid` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pg_typeid_18" "green" >}} {{< bg "17" "pg_typeid_17" "green" >}} {{< bg "16" "pg_typeid_16" "green" >}} {{< bg "15" "pg_typeid_15" "green" >}} {{< bg "14" "pg_typeid_14" "green" >}} | `pg_typeid_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-typeid" "green" >}} {{< bg "17" "postgresql-17-typeid" "green" >}} {{< bg "16" "postgresql-16-typeid" "green" >}} {{< bg "15" "postgresql-15-typeid" "green" >}} {{< bg "14" "postgresql-14-typeid" "green" >}} | `postgresql-$v-typeid` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 707.4 KiB | [postgresql-18-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 795.0 KiB | [postgresql-18-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 706.1 KiB | [postgresql-18-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 705.9 KiB | [postgresql-17-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 792.2 KiB | [postgresql-17-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 704.1 KiB | [postgresql-17-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 705.0 KiB | [postgresql-16-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 790.3 KiB | [postgresql-16-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 703.0 KiB | [postgresql-16-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 699.1 KiB | [postgresql-15-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 783.8 KiB | [postgresql-15-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 697.1 KiB | [postgresql-15-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 697.8 KiB | [postgresql-14-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 781.3 KiB | [postgresql-14-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 695.8 KiB | [postgresql-14-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/blitss/typeid-postgres" title="Repository" icon="github" subtitle="github.com/blitss/typeid-postgres" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="typeid-postgres-0.3.0.tar.gz" >}}
+{{< card link="https://github.com/blitss/typeid-postgres" title="Repository" icon="github" subtitle="github.com/blitss/typeid-postgres" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="typeid-postgres-0.3.0.tar.gz" />}}
 {{< /cards >}}
 
 

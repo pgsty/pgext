@@ -4,7 +4,10 @@ linkTitle: "mimeo"
 description: "Extension for specialized, per-table replication between PostgreSQL instances"
 weight: 9700
 categories: ["ETL"]
-width: full
+languages: ["SQL"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**mimeo**](https://github.com/omniti-labs/mimeo) : Extension for specialized, per-table replication between PostgreSQL instances
@@ -37,6 +40,7 @@ width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mimeo` | `dblink` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "mimeo_18" "green" >}} {{< bg "17" "mimeo_17" "green" >}} {{< bg "16" "mimeo_16" "green" >}} {{< bg "15" "mimeo_15" "green" >}} {{< bg "14" "mimeo_14" "green" >}} | `mimeo_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "postgresql-18-mimeo" "green" >}} {{< bg "17" "postgresql-17-mimeo" "green" >}} {{< bg "16" "postgresql-16-mimeo" "green" >}} {{< bg "15" "postgresql-15-mimeo" "green" >}} {{< bg "14" "postgresql-14-mimeo" "green" >}} | `postgresql-$v-mimeo` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,10 +61,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5.1" "postgresql-18-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-17-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-16-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-15-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-14-mimeo : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5.1" "postgresql-18-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-17-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-16-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-15-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-14-mimeo : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.1" "postgresql-18-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-17-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-16-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-15-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-14-mimeo : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,9 +85,10 @@ width: full
 | `postgresql-18-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-18-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-18-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-18-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.6 KiB | [postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-18-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.6 KiB | [postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -102,9 +108,10 @@ width: full
 | `postgresql-17-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-17-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-17-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-17-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.7 KiB | [postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-17-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.7 KiB | [postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -124,9 +131,10 @@ width: full
 | `postgresql-16-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-16-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-16-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-16-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.6 KiB | [postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-16-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.6 KiB | [postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -146,9 +154,10 @@ width: full
 | `postgresql-15-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-15-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-15-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-15-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.7 KiB | [postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-15-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.7 KiB | [postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -168,14 +177,15 @@ width: full
 | `postgresql-14-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.6 KiB | [postgresql-14-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-14-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-14-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.7 KiB | [postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-14-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.7 KiB | [postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/omniti-labs/mimeo" title="Repository" icon="github" subtitle="github.com/omniti-labs/mimeo" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mimeo-1.5.1.tar.gz" >}}
+{{< card link="https://github.com/omniti-labs/mimeo" title="Repository" icon="github" subtitle="github.com/omniti-labs/mimeo" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mimeo-1.5.1.tar.gz" />}}
 {{< /cards >}}
 
 

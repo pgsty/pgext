@@ -4,7 +4,10 @@ linkTitle: "noset"
 description: "Module for blocking SET variables for non-super users."
 weight: 7420
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["AGPL-3.0"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_noset**](https://gitlab.com/ongresinc/extensions/noset) : Module for blocking SET variables for non-super users.
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_noset` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "noset_18" "green" >}} {{< bg "17" "noset_17" "green" >}} {{< bg "16" "noset_16" "green" >}} {{< bg "15" "noset_15" "green" >}} {{< bg "14" "noset_14" "green" >}} | `noset_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-noset" "green" >}} {{< bg "17" "postgresql-17-noset" "green" >}} {{< bg "16" "postgresql-16-noset" "green" >}} {{< bg "15" "postgresql-15-noset" "green" >}} {{< bg "14" "postgresql-14-noset" "green" >}} | `postgresql-$v-noset` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-noset : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-noset : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-noset : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-noset : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-noset` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.9 KiB | [postgresql-18-noset_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/noset/postgresql-18-noset_0.3.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-noset` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.2 KiB | [postgresql-18-noset_0.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-18-noset_0.3.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-noset` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.9 KiB | [postgresql-18-noset_0.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-18-noset_0.3.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-noset` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.9 KiB | [postgresql-17-noset_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/noset/postgresql-17-noset_0.3.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-noset` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.2 KiB | [postgresql-17-noset_0.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-17-noset_0.3.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-noset` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.9 KiB | [postgresql-17-noset_0.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-17-noset_0.3.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-noset` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.9 KiB | [postgresql-16-noset_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/noset/postgresql-16-noset_0.3.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-noset` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.2 KiB | [postgresql-16-noset_0.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-16-noset_0.3.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-noset` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.9 KiB | [postgresql-16-noset_0.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-16-noset_0.3.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-noset` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.9 KiB | [postgresql-15-noset_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/noset/postgresql-15-noset_0.3.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-noset` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.2 KiB | [postgresql-15-noset_0.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-15-noset_0.3.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-noset` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.9 KiB | [postgresql-15-noset_0.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-15-noset_0.3.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-noset` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.9 KiB | [postgresql-14-noset_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/noset/postgresql-14-noset_0.3.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-noset` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.1 KiB | [postgresql-14-noset_0.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-14-noset_0.3.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-noset` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.9 KiB | [postgresql-14-noset_0.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/noset/postgresql-14-noset_0.3.0-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://gitlab.com/ongresinc/extensions/noset" title="Repository" icon="link" subtitle="gitlab.com/ongresinc/extensions/noset" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="noset-v0.3.0.tar.gz" >}}
+{{< card link="https://gitlab.com/ongresinc/extensions/noset" title="Repository" icon="link" subtitle="gitlab.com/ongresinc/extensions/noset" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="noset-v0.3.0.tar.gz" />}}
 {{< /cards >}}
 
 

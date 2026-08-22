@@ -4,7 +4,10 @@ linkTitle: "currency"
 description: "Custom PostgreSQL currency type in 1Byte"
 weight: 3680
 categories: ["TYPE"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_currency**](https://github.com/adjust/pg-currency) : Custom PostgreSQL currency type in 1Byte
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_currency` | `plpgsql` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_currency_18" "green" >}} {{< bg "17" "pg_currency_17" "green" >}} {{< bg "16" "pg_currency_16" "green" >}} {{< bg "15" "pg_currency_15" "green" >}} {{< bg "14" "pg_currency_14" "green" >}} | `pg_currency_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-currency" "green" >}} {{< bg "17" "postgresql-17-pg-currency" "green" >}} {{< bg "16" "postgresql-16-pg-currency" "green" >}} {{< bg "15" "postgresql-15-pg-currency" "green" >}} {{< bg "14" "postgresql-14-pg-currency" "green" >}} | `postgresql-$v-pg-currency` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-18-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-currency : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-18-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-currency : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-18-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-currency : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-currency : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -78,9 +83,10 @@ width: full
 | `postgresql-18-pg-currency` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.7 KiB | [postgresql-18-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-currency/postgresql-18-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-currency` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-18-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-18-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-currency` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.9 KiB | [postgresql-18-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-18-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -100,9 +106,10 @@ width: full
 | `postgresql-17-pg-currency` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.7 KiB | [postgresql-17-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-currency/postgresql-17-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-currency` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-17-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-17-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-currency` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-17-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-17-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -122,9 +129,10 @@ width: full
 | `postgresql-16-pg-currency` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.7 KiB | [postgresql-16-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-currency/postgresql-16-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-currency` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-16-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-16-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-currency` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-16-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-16-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -144,9 +152,10 @@ width: full
 | `postgresql-15-pg-currency` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.8 KiB | [postgresql-15-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-currency/postgresql-15-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-currency` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-15-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-15-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-currency` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-15-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-15-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -166,14 +175,15 @@ width: full
 | `postgresql-14-pg-currency` | `0.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.8 KiB | [postgresql-14-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-currency/postgresql-14-pg-currency_0.0.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-currency` | `0.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-14-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-14-pg-currency_0.0.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-currency` | `0.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.8 KiB | [postgresql-14-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-currency/postgresql-14-pg-currency_0.0.3-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/adjust/pg-currency" title="Repository" icon="github" subtitle="github.com/adjust/pg-currency" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-currency-0.0.3.tar.gz" >}}
+{{< card link="https://github.com/adjust/pg-currency" title="Repository" icon="github" subtitle="github.com/adjust/pg-currency" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-currency-0.0.3.tar.gz" />}}
 {{< /cards >}}
 
 

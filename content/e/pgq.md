@@ -4,7 +4,10 @@ linkTitle: "pgq"
 description: "Generic queue for PostgreSQL"
 weight: 2650
 categories: ["FEAT"]
-width: full
+languages: ["C"]
+licenses: ["ISC"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pgq**](https://github.com/pgq/pgq) : Generic queue for PostgreSQL
@@ -35,6 +38,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgq` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.5.1` | {{< bg "18" "pgq_18" "green" >}} {{< bg "17" "pgq_17" "green" >}} {{< bg "16" "pgq_16" "green" >}} {{< bg "15" "pgq_15" "green" >}} {{< bg "14" "pgq_14" "green" >}} | `pgq_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.5.1` | {{< bg "18" "postgresql-18-pgq3" "green" >}} {{< bg "17" "postgresql-17-pgq3" "green" >}} {{< bg "16" "postgresql-16-pgq3" "green" >}} {{< bg "15" "postgresql-15-pgq3" "green" >}} {{< bg "14" "postgresql-14-pgq3" "green" >}} | `postgresql-$v-pgq3` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,10 +59,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.5.1" "postgresql-18-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-17-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-16-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-15-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-14-pgq3 : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.5.1" "postgresql-18-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-17-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-16-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-15-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-14-pgq3 : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.5.1" "postgresql-18-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-17-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-16-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-15-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-14-pgq3 : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -82,9 +87,10 @@ width: full
 | `postgresql-18-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.6 KiB | [postgresql-18-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-18-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.8 KiB | [postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.1 KiB | [postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -108,9 +114,10 @@ width: full
 | `postgresql-17-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.3 KiB | [postgresql-17-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-17-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.6 KiB | [postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.0 KiB | [postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -134,9 +141,10 @@ width: full
 | `postgresql-16-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.4 KiB | [postgresql-16-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-16-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.7 KiB | [postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.0 KiB | [postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -164,9 +172,10 @@ width: full
 | `postgresql-15-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.0 KiB | [postgresql-15-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-15-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.4 KiB | [postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.5 KiB | [postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -197,13 +206,14 @@ width: full
 | `postgresql-14-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.9 KiB | [postgresql-14-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-14-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.3 KiB | [postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.4 KiB | [postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/pgq/pgq" title="Repository" icon="github" subtitle="github.com/pgq/pgq" >}}
+{{< card link="https://github.com/pgq/pgq" title="Repository" icon="github" subtitle="github.com/pgq/pgq" />}}
 {{< /cards >}}
 
 

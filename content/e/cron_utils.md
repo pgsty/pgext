@@ -4,7 +4,10 @@ linkTitle: "cron_utils"
 description: "Parse cron expressions and compute previous or next trigger times"
 weight: 1140
 categories: ["TIME"]
-width: full
+languages: ["SQL"]
+licenses: ["MIT"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**cron_utils**](https://github.com/Myshkouski/pg-cron-utils) : Parse cron expressions and compute previous or next trigger times
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `cron_utils` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "cron_utils_18" "green" >}} {{< bg "17" "cron_utils_17" "green" >}} {{< bg "16" "cron_utils_16" "green" >}} {{< bg "15" "cron_utils_15" "green" >}} {{< bg "14" "cron_utils_14" "green" >}} | `cron_utils_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-cron-utils" "green" >}} {{< bg "17" "postgresql-17-cron-utils" "green" >}} {{< bg "16" "postgresql-16-cron-utils" "green" >}} {{< bg "15" "postgresql-15-cron-utils" "green" >}} {{< bg "14" "postgresql-14-cron-utils" "green" >}} | `postgresql-$v-cron-utils` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-cron-utils : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-cron-utils : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-cron-utils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-cron-utils : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,9 +84,10 @@ width: full
 | `postgresql-18-cron-utils` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.5 KiB | [postgresql-18-cron-utils_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/cron-utils/postgresql-18-cron-utils_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-18-cron-utils` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 5.5 KiB | [postgresql-18-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-18-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-cron-utils` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 KiB | [postgresql-18-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-18-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,9 +107,10 @@ width: full
 | `postgresql-17-cron-utils` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.5 KiB | [postgresql-17-cron-utils_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/cron-utils/postgresql-17-cron-utils_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-17-cron-utils` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 5.5 KiB | [postgresql-17-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-17-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-cron-utils` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 KiB | [postgresql-17-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-17-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,9 +130,10 @@ width: full
 | `postgresql-16-cron-utils` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.5 KiB | [postgresql-16-cron-utils_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/cron-utils/postgresql-16-cron-utils_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-16-cron-utils` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 5.5 KiB | [postgresql-16-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-16-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-cron-utils` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 KiB | [postgresql-16-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-16-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,9 +153,10 @@ width: full
 | `postgresql-15-cron-utils` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.5 KiB | [postgresql-15-cron-utils_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/cron-utils/postgresql-15-cron-utils_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-15-cron-utils` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 5.5 KiB | [postgresql-15-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-15-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-cron-utils` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 KiB | [postgresql-15-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-15-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -167,14 +176,15 @@ width: full
 | `postgresql-14-cron-utils` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.5 KiB | [postgresql-14-cron-utils_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/cron-utils/postgresql-14-cron-utils_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-14-cron-utils` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 5.5 KiB | [postgresql-14-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-14-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-cron-utils` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.5 KiB | [postgresql-14-cron-utils_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/cron-utils/postgresql-14-cron-utils_0.1.0-1PIGSTY~resolute_all.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/Myshkouski/pg-cron-utils" title="Repository" icon="github" subtitle="github.com/Myshkouski/pg-cron-utils" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="cron_utils-0.1.0.tar.gz" >}}
+{{< card link="https://github.com/Myshkouski/pg-cron-utils" title="Repository" icon="github" subtitle="github.com/Myshkouski/pg-cron-utils" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="cron_utils-0.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

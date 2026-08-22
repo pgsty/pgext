@@ -4,7 +4,10 @@ linkTitle: "pg_pwhash"
 description: "Advanced password hashing methods for PostgreSQL"
 weight: 7330
 categories: ["SEC"]
-width: full
+languages: ["C"]
+licenses: ["MIT"]
+repos: ["PGDG"]
+page_width: full
 ---
 
 [**pg_pwhash**](https://github.com/cybertec-postgresql/pg_pwhash) : Advanced password hashing methods for PostgreSQL
@@ -36,6 +39,7 @@ width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_pwhash` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "pg_pwhash_18" "green" >}} {{< bg "17" "pg_pwhash_17" "green" >}} {{< bg "16" "pg_pwhash_16" "green" >}} {{< bg "15" "pg_pwhash_15" "green" >}} {{< bg "14" "pg_pwhash_14" "green" >}} | `pg_pwhash_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "postgresql-18-pg-pwhash" "green" >}} {{< bg "17" "postgresql-17-pg-pwhash" "green" >}} {{< bg "16" "postgresql-16-pg-pwhash" "green" >}} {{< bg "15" "postgresql-15-pg-pwhash" "green" >}} {{< bg "14" "postgresql-14-pg-pwhash" "green" >}} | `postgresql-$v-pg-pwhash` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -56,10 +60,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-pg-pwhash : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0" "postgresql-18-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-pg-pwhash : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-pg-pwhash : AVAIL 1" "blue" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -87,9 +92,10 @@ width: full
 | `postgresql-18-pg-pwhash` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 54.7 KiB | [postgresql-18-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-18-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb) |
 | `postgresql-18-pg-pwhash` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 56.9 KiB | [postgresql-18-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-18-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb) |
 | `postgresql-18-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.5 KiB | [postgresql-18-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-18-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -117,9 +123,10 @@ width: full
 | `postgresql-17-pg-pwhash` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 54.8 KiB | [postgresql-17-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-17-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb) |
 | `postgresql-17-pg-pwhash` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.0 KiB | [postgresql-17-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-17-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb) |
 | `postgresql-17-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.5 KiB | [postgresql-17-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-17-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,9 +154,10 @@ width: full
 | `postgresql-16-pg-pwhash` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 54.7 KiB | [postgresql-16-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-16-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb) |
 | `postgresql-16-pg-pwhash` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.0 KiB | [postgresql-16-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-16-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb) |
 | `postgresql-16-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.5 KiB | [postgresql-16-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-16-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -177,9 +185,10 @@ width: full
 | `postgresql-15-pg-pwhash` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 55.2 KiB | [postgresql-15-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-15-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb) |
 | `postgresql-15-pg-pwhash` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.4 KiB | [postgresql-15-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-15-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb) |
 | `postgresql-15-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.9 KiB | [postgresql-15-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-15-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -207,13 +216,14 @@ width: full
 | `postgresql-14-pg-pwhash` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 55.1 KiB | [postgresql-14-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-14-pg-pwhash_1.0-2.pgdg24.04+3_arm64.deb) |
 | `postgresql-14-pg-pwhash` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.4 KiB | [postgresql-14-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-14-pg-pwhash_1.0-2.pgdg26.04+3_amd64.deb) |
 | `postgresql-14-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.9 KiB | [postgresql-14-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-14-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/cybertec-postgresql/pg_pwhash" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_pwhash" >}}
+{{< card link="https://github.com/cybertec-postgresql/pg_pwhash" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/pg_pwhash" />}}
 {{< /cards >}}
 
 

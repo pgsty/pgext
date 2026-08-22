@@ -2,7 +2,8 @@
 title: Platform
 description: Support Linux OS & Distribution Major Versions
 weight: 300
-breadcrumbs: false
+page_width: full
+breadcrumb: false
 ---
 
 | OS                                                                                       | Vendor | Major |  Minor  | Fullname          | PG Major Version                                                                                                                                                                                                  |                     Comment                     |

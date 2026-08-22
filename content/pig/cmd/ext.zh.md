@@ -1,7 +1,7 @@
 ---
 title: "CMD: ext"
 description: 如何使用 pig ext 子命令管理扩展
-icon: SquareTerminal
+icon: fa-solid fa-terminal
 weight: 620
 ---
 

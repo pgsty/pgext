@@ -4,7 +4,10 @@ linkTitle: "quantile"
 description: "Quantile aggregation function"
 weight: 4610
 categories: ["FUNC"]
-width: full
+languages: ["C"]
+licenses: ["BSD-2-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**quantile**](https://github.com/tvondra/quantile) : Quantile aggregation function
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `quantile` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.8` | {{< bg "18" "quantile_18" "green" >}} {{< bg "17" "quantile_17" "green" >}} {{< bg "16" "quantile_16" "green" >}} {{< bg "15" "quantile_15" "green" >}} {{< bg "14" "quantile_14" "green" >}} | `quantile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.8` | {{< bg "18" "postgresql-18-quantile" "green" >}} {{< bg "17" "postgresql-17-quantile" "green" >}} {{< bg "16" "postgresql-16-quantile" "green" >}} {{< bg "15" "postgresql-15-quantile" "green" >}} {{< bg "14" "postgresql-14-quantile" "green" >}} | `postgresql-$v-quantile` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-18-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-17-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-16-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-15-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-14-quantile : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-18-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-17-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-16-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-15-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-14-quantile : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-18-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-17-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-16-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-15-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.8" "postgresql-14-quantile : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.2 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-quantile` | `1.1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.5 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-quantile` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.2 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-quantile` | `1.1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-quantile` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.9 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-quantile` | `1.1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-quantile` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.0 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.9 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-quantile` | `1.1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.6 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-quantile` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.0 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.0 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-quantile` | `1.1.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.6 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-quantile` | `1.1.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.0 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/tvondra/quantile" title="Repository" icon="github" subtitle="github.com/tvondra/quantile" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="quantile-1.1.8.tar.gz" >}}
+{{< card link="https://github.com/tvondra/quantile" title="Repository" icon="github" subtitle="github.com/tvondra/quantile" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="quantile-1.1.8.tar.gz" />}}
 {{< /cards >}}
 
 

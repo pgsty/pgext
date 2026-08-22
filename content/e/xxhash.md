@@ -4,7 +4,10 @@ linkTitle: "xxhash"
 description: "xxhash functions for PostgreSQL"
 weight: 4430
 categories: ["UTIL"]
-width: full
+languages: ["C"]
+licenses: ["BSD-2-Clause"]
+repos: ["PIGSTY"]
+page_width: full
 ---
 
 [**pg_xxhash**](https://github.com/hatarist/pg_xxhash) : xxhash functions for PostgreSQL
@@ -34,6 +37,7 @@ width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_xxhash` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_xxhash_18" "green" >}} {{< bg "17" "pg_xxhash_17" "green" >}} {{< bg "16" "pg_xxhash_16" "green" >}} {{< bg "15" "pg_xxhash_15" "green" >}} {{< bg "14" "pg_xxhash_14" "green" >}} | `pg_xxhash_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-xxhash" "green" >}} {{< bg "17" "postgresql-17-pg-xxhash" "green" >}} {{< bg "16" "postgresql-16-pg-xxhash" "green" >}} {{< bg "15" "postgresql-15-pg-xxhash" "green" >}} {{< bg "14" "postgresql-14-pg-xxhash" "green" >}} | `postgresql-$v-pg-xxhash` | - |
+{.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,10 +58,11 @@ width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-xxhash : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-xxhash : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-xxhash : AVAIL 1" "green" >}} |
+{.matrix}
 
 
-{{< tabs >}}
-{{< tab name="PG18" >}}
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,9 +82,10 @@ width: full
 | `postgresql-18-pg-xxhash` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 67.4 KiB | [postgresql-18-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-xxhash/postgresql-18-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-xxhash` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.6 KiB | [postgresql-18-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-18-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-xxhash` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 68.3 KiB | [postgresql-18-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-18-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG17" >}}
+{{< tab label="PG17" value="pg17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,9 +105,10 @@ width: full
 | `postgresql-17-pg-xxhash` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 67.4 KiB | [postgresql-17-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-xxhash/postgresql-17-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-xxhash` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.6 KiB | [postgresql-17-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-17-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-xxhash` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 68.4 KiB | [postgresql-17-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-17-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG16" >}}
+{{< tab label="PG16" value="pg16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,9 +128,10 @@ width: full
 | `postgresql-16-pg-xxhash` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 67.4 KiB | [postgresql-16-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-xxhash/postgresql-16-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-xxhash` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.6 KiB | [postgresql-16-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-16-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-xxhash` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 68.4 KiB | [postgresql-16-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-16-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG15" >}}
+{{< tab label="PG15" value="pg15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -143,9 +151,10 @@ width: full
 | `postgresql-15-pg-xxhash` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 78.4 KiB | [postgresql-15-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-xxhash/postgresql-15-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-xxhash` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 74.8 KiB | [postgresql-15-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-15-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-xxhash` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 79.1 KiB | [postgresql-15-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-15-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}
-{{< tab name="PG14" >}}
+{{< tab label="PG14" value="pg14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -165,14 +174,15 @@ width: full
 | `postgresql-14-pg-xxhash` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 78.6 KiB | [postgresql-14-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-xxhash/postgresql-14-pg-xxhash_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-xxhash` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 74.8 KiB | [postgresql-14-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-14-pg-xxhash_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-xxhash` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 79.3 KiB | [postgresql-14-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-xxhash/postgresql-14-pg-xxhash_0.0.1-1PIGSTY~resolute_arm64.deb) |
+{.downloads}
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/hatarist/pg_xxhash" title="Repository" icon="github" subtitle="github.com/hatarist/pg_xxhash" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_xxhash-0.0.1.tar.gz" >}}
+{{< card link="https://github.com/hatarist/pg_xxhash" title="Repository" icon="github" subtitle="github.com/hatarist/pg_xxhash" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_xxhash-0.0.1.tar.gz" />}}
 {{< /cards >}}
 
 
