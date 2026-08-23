@@ -41,7 +41,7 @@ Download a single-binary release for Linux / macOS (amd64 / arm64) from the
 [release page](https://github.com/pgsty/pgext/releases), or `deb` / `rpm` packages
 if you prefer a package manager.
 
-Build from source (Go 1.26+, no CGO required):
+Build from source (Go 1.27+, no CGO required):
 
 ```bash
 git clone https://github.com/pgsty/pgext.git
