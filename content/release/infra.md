@@ -6,6 +6,12 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-08-30
+
+| Name    | Old | New                                        | Comment                                                                  |
+|:--------|:----|:-------------------------------------------|:-------------------------------------------------------------------------|
+| tailcat | -   | 0.0.0-20260830010511-7c2a6ea60429         | Untagged source and offline vendor pinned; dual-arch static RPM/DEB built |
+
 ## 2026-08-12
 
 | Name                    | Old      | New      | Comment                                                       |
