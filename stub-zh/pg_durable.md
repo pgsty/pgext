@@ -2,10 +2,11 @@
 
 来源：
 
-- [官方v0.2.3 README](https://github.com/microsoft/pg_durable/blob/v0.2.3/README.md)
-- [v0.2.3用户指南](https://github.com/microsoft/pg_durable/blob/v0.2.3/USER_GUIDE.md)
-- [v0.2.3发布说明](https://github.com/microsoft/pg_durable/releases/tag/v0.2.3)
-- [从v0.2.2到v0.2.3的升级SQL](https://github.com/microsoft/pg_durable/blob/v0.2.3/sql/pg_durable--0.2.2--0.2.3.sql)
+- [PGXN 0.2.6 README](https://pgxn.org/dist/pg_durable/0.2.6/README.html)
+- [0.2.6 用户指南](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/USER_GUIDE.md)
+- [0.2.6 变更日志](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/CHANGELOG.md)
+- [pg_durable 控制文件](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/pg_durable.control)
+- [0.2.5 至 0.2.6 升级 SQL](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/sql/pg_durable--0.2.5--0.2.6.sql)
 
 `pg_durable` 在PostgreSQL中运行持久、容错的SQL工作流。一个工作流是一系列SQL步骤、定时器、信号、条件和并行分支组成的图，通过`df.start()`提交。执行状态会在PostgreSQL中进行检查点记录，因此在崩溃、重启或重试后不会重复已完成的步骤。
 
@@ -57,11 +58,13 @@ SELECT df.cancel('a1b2c3d4', 'No longer needed');
 - `df.signal()`、`df.wait_for_completion()`、`df.explain()` 及实例检查函数操作正在运行或存储的实例。
 - `df.setvar()`、`df.getvar()`、`df.unsetvar()` 和 `df.clearvars()` 管理在调用`df.start()`时捕获的用户变量。
 
-### v0.2.3边界
+### 0.2.6 版本边界
 
-- 新鲜安装v0.2.3将提供程序对象放置在`_duroxide`中；从0.2.2或更早版本升级后保留`duroxide`。`df.duroxide_schema()`报告当前活动的模式。
-- 深度超过256级或节点数大于10,000的工作流被拒绝。条件查询返回空行时评估为假。
-- 在执行`df.grant_usage()`后重新运行`ALTER EXTENSION ... UPDATE`，因为所有函数上的权限不会自动包含后来添加的函数。
-- `{name}`变量替换是原始SQL文本替换；不要将不可信输入放置在这样的变量中。通过`$name`进行命名步骤结果替换执行SQL转义。
-- `df.http()`可用性和出站策略是编译时特性。其限制不会对任意SQL或其他已安装的扩展进行沙盒化。
-- 上游将该项目标记为预览版，发布的v0.2.3 Docker镜像用于评估和学习而非生产环境。
+- 上游源码安装与发布镜像使用 `pgrx` 0.16.1，支持 PostgreSQL 17 与 18。扩展仍要求 `shared_preload_libraries`、重启以及超级用户工作角色。
+- 经由 0.2.4 与 0.2.5 的升级包含会破坏重放的工作流变更。升级前应排空或取消运行中的 JOIN、RACE、循环与 `df.wait_for_schedule()` 工作；0.2.4 的 `df.nodes` 键迁移还会获取 `ACCESS EXCLUSIVE` 锁。
+- `df.start(..., transaction_mode => 'new')` 会在调用者事务之外持久化独立启动。集群默认最多并发启动两个，由 `pg_durable.max_new_transaction_starts` 与 `pg_durable.new_transaction_start_timeout` 控制。
+- 0.2.6 从左到右只解析一次变量替换，所以变量值引入的令牌形文本不会再次扫描。它仍是原始 SQL 替换；绝不能把不可信输入放进 `{name}` 变量。通过 `$name` 的命名步骤结果替换会执行 SQL 转义。
+- 未公开的 `df.ensure_durofut(text)` 辅助函数已移除。升级前应删除或改写客户自有的依赖对象。
+- 在 `ALTER EXTENSION ... UPDATE` 后重新运行 `df.grant_usage()`，因为对全部函数的授权不会自动覆盖后来新增的函数。
+- `df.http()` 与 `df.http_multipart()` 的可用性和出站策略是编译时特性。其限制不会沙箱化任意 SQL 或其他已安装扩展。
+- 项目仍处于 1.0 之前，上游发布的 Docker 镜像用于评估与学习，而不是生产。应阅读每个相邻版本的升级警告，不要假设未经测试的跨版本跳跃可安全重放。

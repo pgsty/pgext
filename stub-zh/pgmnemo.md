@@ -2,15 +2,17 @@
 
 来源：
 
-- [pgmnemo v0.16.1 README](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/README.md)
-- [pgmnemo v0.16.1 使用指南](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/docs/USAGE.md)
-- [pgmnemo v0.16.1 SQL 参考](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.16.1 变更日志](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/CHANGELOG.md)
-- [pgmnemo v0.16.1 控制文件](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/extension/pgmnemo.control)
+- [pgmnemo v0.20.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/README.md)
+- [pgmnemo v0.20.0 发行说明](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.20.0)
+- [pgmnemo v0.20.0 使用指南](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/USAGE.md)
+- [pgmnemo v0.20.0 SQL 参考](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.20.0 变更日志](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/CHANGELOG.md)
+- [pgmnemo v0.20.0 控制文件](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo.control)
+- [v0.19.1 到 v0.20.0 升级 SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo--0.19.1--0.20.0.sql)
 
 pgmnemo 将智能体记忆存储在 PostgreSQL 中，并通过向量、BM25 风格文本、图、元数据、时间、来源和结果置信度等信号进行检索。它安装在 pgmnemo 模式中，依赖 vector 扩展，当前 SQL API 要求使用 1024 维嵌入。
 
-版本 0.16.1 保留了 0.14 的语料库维护接口，并新增情境指纹、经验证的情境召回、实体键提取和以实体为中心的召回。
+版本 0.20.0 保留了语料库维护、情境与实体召回接口，并为 `recall_hybrid()` 新增两个可选候选集扩展器：因果边广度优先扩展和实体键 GIN 扩展。两者默认均关闭，返回结果现在会标明每个候选项的检索路径。
 
 ### 安装
 
@@ -20,7 +22,7 @@ pgmnemo 将智能体记忆存储在 PostgreSQL 中，并通过向量、BM25 风�
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-v0.16.1 控制文件将 pgmnemo 标记为受信任，将其安装到模式 `pgmnemo`，要求 `vector`，且不可重定位。
+v0.20.0 控制文件将 pgmnemo 标记为受信任，将其安装到模式 `pgmnemo`，要求 `vector`，且不可重定位。
 
 ### 写入一条经验
 
@@ -41,7 +43,7 @@ v0.16.1 控制文件将 pgmnemo 标记为受信任，将其安装到模式 `pgmn
 
 混合召回会结合嵌入与文本信号：
 
-    SELECT lesson_id, topic, score, match_confidence
+    SELECT lesson_id, topic, score, match_confidence, retrieval_source
     FROM pgmnemo.recall_hybrid(
       '<1024-dimensional vector literal>'::vector(1024),
       'JWT rotation key compromise',
@@ -116,6 +118,33 @@ SELECT * FROM pgmnemo.recall_entity('failure:INFRA_FAILURE', 10);
 
 这些提取器是确定性分类器，而不是语义实体解析。应规范化应用词汇并检查生成的键，再决定是否将它们用于租户隔离或授权判断。
 
+### 可选的图与实体候选集扩展
+
+版本 0.20.0 可以引入原 ANN 与 BM25 候选集之外的条目。图扩展从排名靠前的 ANN 锚点出发，只沿 `causal` 边遍历，并受深度上限和每节点枢纽上限限制。实体扩展使用 `metadata.entity_keys` 中已建 GIN 索引的键。两个主权重的默认值均为 `0.0`，因此升级不会启用任何扩展路径。
+
+评估新路径时，建议使用事务局部设置：
+
+```sql
+BEGIN;
+SET LOCAL pgmnemo.graph_expand_weight = '0.15';
+SET LOCAL pgmnemo.graph_expand_depth = '1';
+SET LOCAL pgmnemo.graph_expand_ann_k = '15';
+SET LOCAL pgmnemo.graph_expand_per_node = '10';
+SET LOCAL pgmnemo.graph_entity_expand_weight = '0.10';
+SET LOCAL pgmnemo.graph_entity_min_overlap = '1';
+SET LOCAL pgmnemo.graph_entity_max_expansion = '50';
+
+SELECT lesson_id, score, retrieval_source
+FROM pgmnemo.recall_hybrid(
+  query_embedding := '<1024-dimensional vector literal>'::vector(1024),
+  query_text := 'JWT rotation key compromise',
+  k := 10
+);
+ROLLBACK;
+```
+
+`retrieval_source` 是第 18 个输出列，取值为 `ann`、`graph` 或 `entity`。图深度限于 1 或 2，ANN 锚点超采样范围为 10-50，每节点枢纽上限范围为 3-50。实体扩展至少要求一个重叠键，并使用配置的每键候选项上限。应将这些权重视为与工作负载相关的排序控制：v0.20.0 发行版刻意不对这些可选路径作通用召回率或延迟保证。
+
 ### 配置索引
 
 - pgmnemo.confidence_mode：默认为 posterior；additive 保留旧版计算方式。
@@ -125,12 +154,28 @@ SELECT * FROM pgmnemo.recall_entity('failure:INFRA_FAILURE', 10);
 - pgmnemo.disable_hybrid 和 pgmnemo.ef_search：召回策略与 HNSW 搜索宽度。
 - pgmnemo.track_recall_recency：召回是否更新 last_recalled_at 和 recall_count。
 - pgmnemo.max_query_text_chars、pgmnemo.tenant_id 和 pgmnemo.test_project_floor：文本、租户和可选测试项目控制。
+- pgmnemo.graph_expand_weight、pgmnemo.graph_expand_depth、pgmnemo.graph_expand_ann_k 和 pgmnemo.graph_expand_per_node：因果边候选集扩展、深度、ANN 锚点与每节点枢纽上限。
+- pgmnemo.graph_entity_expand_weight、pgmnemo.graph_entity_min_overlap 和 pgmnemo.graph_entity_max_expansion：实体键 GIN 扩展、最小重叠数与每键候选项上限。
 
 旧版 confidence-delta 设置已弃用，在 posterior 模式下会被忽略。
 
+### 升级到 0.20.0
+
+从 0.19.1 升级时，使用软件包提供的扩展更新路径：
+
+```sql
+ALTER EXTENSION pgmnemo UPDATE TO '0.20.0';
+
+SELECT extversion
+FROM pg_extension
+WHERE extname = 'pgmnemo';
+```
+
+升级脚本会删除并重建 11 参数的 `recall_hybrid()`，因为它增加 `retrieval_source` 后，返回结构从 17 列变为 18 列。它还会删除并重建 `stats()`，后者增加七个图扩展设置，返回结构从 19 列增至 26 列。升级前应检查位置式行映射、wrapper、prepared consumer 和精确列数断言。按名选取稳定列的调用方不受影响。
+
 ### 注意事项
 
-- pgmnemo 0.16.1 应使用 PostgreSQL 17 或 18。带标签的变更日志指出，0.10 系列引入的语法使旧有的 PostgreSQL 14-16 兼容性声明不再准确；当前 Pigsty 软件包面向 17-18。
+- pgmnemo 0.20.0 应使用 PostgreSQL 17 或 18。带标签的变更日志指出，0.10 系列引入的语法使旧有的 PostgreSQL 14-16 兼容性声明不再准确；当前 Pigsty 软件包面向 17-18。
 
 语料库维护操作默认为只读：
 

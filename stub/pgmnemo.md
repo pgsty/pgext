@@ -2,15 +2,17 @@
 
 Sources:
 
-- [pgmnemo v0.16.1 README](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/README.md)
-- [pgmnemo v0.16.1 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/docs/USAGE.md)
-- [pgmnemo v0.16.1 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.16.1 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/CHANGELOG.md)
-- [pgmnemo v0.16.1 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.16.1/extension/pgmnemo.control)
+- [pgmnemo v0.20.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/README.md)
+- [pgmnemo v0.20.0 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.20.0)
+- [pgmnemo v0.20.0 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/USAGE.md)
+- [pgmnemo v0.20.0 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.20.0 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/CHANGELOG.md)
+- [pgmnemo v0.20.0 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo.control)
+- [v0.19.1 to v0.20.0 upgrade SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo--0.19.1--0.20.0.sql)
 
 pgmnemo stores agent memory in PostgreSQL and retrieves it through vector, BM25-style text, graph, metadata, temporal, provenance, and outcome-confidence signals. It installs into schema pgmnemo, requires the vector extension, and expects 1024-dimensional embeddings in its current SQL API.
 
-Version 0.16.1 retains the 0.14 corpus-maintenance surface and adds situation fingerprints, verified situation recall, entity-key extraction, and entity-centered recall.
+Version 0.20.0 retains the corpus-maintenance, situation, and entity recall surfaces and adds two opt-in candidate-pool expanders to `recall_hybrid()`: causal-edge breadth-first expansion and entity-key GIN expansion. Both are disabled by default, and the result now identifies each candidate's retrieval path.
 
 ### Install
 
@@ -20,7 +22,7 @@ Version 0.16.1 retains the 0.14 corpus-maintenance surface and adds situation fi
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-The v0.16.1 control file marks pgmnemo as trusted, installs it in schema `pgmnemo`, requires `vector`, and is not relocatable.
+The v0.20.0 control file marks pgmnemo as trusted, installs it in schema `pgmnemo`, requires `vector`, and is not relocatable.
 
 ### Ingest a Lesson
 
@@ -41,7 +43,7 @@ When pgmnemo.gate_strict is enforce, commit_sha or artifact_hash provenance is r
 
 Hybrid recall combines embedding and text signals:
 
-    SELECT lesson_id, topic, score, match_confidence
+    SELECT lesson_id, topic, score, match_confidence, retrieval_source
     FROM pgmnemo.recall_hybrid(
       '<1024-dimensional vector literal>'::vector(1024),
       'JWT rotation key compromise',
@@ -116,6 +118,33 @@ SELECT * FROM pgmnemo.recall_entity('failure:INFRA_FAILURE', 10);
 
 These extractors are deterministic classifiers, not semantic entity resolution. Normalize application vocabulary and inspect the generated keys before relying on them for tenancy or authorization decisions.
 
+### Opt-in Graph and Entity Pool Expansion
+
+Version 0.20.0 can add candidates that lie outside the original ANN and BM25 pool. The graph variant starts from top ANN anchors and follows only `causal` edges, with a depth cap and a per-node hub cap. The entity variant uses the GIN-indexed keys in `metadata.entity_keys`. Both master weights default to `0.0`, so upgrading does not enable either expansion path.
+
+Use transaction-local settings while evaluating the new paths:
+
+```sql
+BEGIN;
+SET LOCAL pgmnemo.graph_expand_weight = '0.15';
+SET LOCAL pgmnemo.graph_expand_depth = '1';
+SET LOCAL pgmnemo.graph_expand_ann_k = '15';
+SET LOCAL pgmnemo.graph_expand_per_node = '10';
+SET LOCAL pgmnemo.graph_entity_expand_weight = '0.10';
+SET LOCAL pgmnemo.graph_entity_min_overlap = '1';
+SET LOCAL pgmnemo.graph_entity_max_expansion = '50';
+
+SELECT lesson_id, score, retrieval_source
+FROM pgmnemo.recall_hybrid(
+  query_embedding := '<1024-dimensional vector literal>'::vector(1024),
+  query_text := 'JWT rotation key compromise',
+  k := 10
+);
+ROLLBACK;
+```
+
+`retrieval_source` is the 18th output column and reports `ann`, `graph`, or `entity`. Graph depth is limited to 1 or 2, ANN anchor oversampling to 10-50, and the per-node hub cap to 3-50. Entity expansion requires at least one overlapping key and applies its configured per-key candidate limit. Treat the weights as workload-specific ranking controls: the v0.20.0 release deliberately makes no general recall or latency guarantee for these opt-in paths.
+
 ### Configuration Index
 
 - pgmnemo.confidence_mode: posterior by default; additive retains the legacy calculation.
@@ -125,12 +154,28 @@ These extractors are deterministic classifiers, not semantic entity resolution. 
 - pgmnemo.disable_hybrid and pgmnemo.ef_search: recall strategy and HNSW search breadth.
 - pgmnemo.track_recall_recency: whether recall updates last_recalled_at and recall_count.
 - pgmnemo.max_query_text_chars, pgmnemo.tenant_id, and pgmnemo.test_project_floor: text, tenancy, and optional test-project controls.
+- pgmnemo.graph_expand_weight, pgmnemo.graph_expand_depth, pgmnemo.graph_expand_ann_k, and pgmnemo.graph_expand_per_node: causal-edge candidate expansion, depth, ANN anchors, and per-node hub cap.
+- pgmnemo.graph_entity_expand_weight, pgmnemo.graph_entity_min_overlap, and pgmnemo.graph_entity_max_expansion: entity-key GIN expansion, minimum overlap, and per-key candidate limit.
 
 The older confidence-delta settings are deprecated and ignored in posterior mode.
 
+### Upgrade to 0.20.0
+
+Upgrade from 0.19.1 with the packaged extension update path:
+
+```sql
+ALTER EXTENSION pgmnemo UPDATE TO '0.20.0';
+
+SELECT extversion
+FROM pg_extension
+WHERE extname = 'pgmnemo';
+```
+
+The upgrade script drops and recreates the 11-argument `recall_hybrid()` because its return shape changes from 17 to 18 columns by adding `retrieval_source`. It also drops and recreates `stats()`, whose return shape grows from 19 to 26 columns with the seven graph-expansion settings. Review positional row mappings, wrappers, prepared consumers, and exact column-count checks before upgrading. Callers that select stable columns by name are unaffected.
+
 ### Caveats
 
-- Use PostgreSQL 17 or 18 for pgmnemo 0.16.1. The tagged changelog notes that syntax introduced in the 0.10 line makes older PostgreSQL 14-16 compatibility claims inaccurate; current Pigsty packages target 17-18.
+- Use PostgreSQL 17 or 18 for pgmnemo 0.20.0. The tagged changelog notes that syntax introduced in the 0.10 line makes older PostgreSQL 14-16 compatibility claims inaccurate; current Pigsty packages target 17-18.
 
 Corpus-maintenance operations are read-only by default:
 

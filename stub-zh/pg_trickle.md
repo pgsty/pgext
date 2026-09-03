@@ -3,11 +3,21 @@
 
 ## 用法
 
-来源：[README v0.81.0](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/README.md)、[v0.81.0 版本说明](https://github.com/trickle-labs/pg-trickle/releases/tag/v0.81.0)、[SQL 参考](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/SQL_REFERENCE.md)、[配置指南](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/CONFIGURATION.md)、[GUC 目录](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/GUC_CATALOG.md)、[Cargo.toml](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/Cargo.toml)
+来源：
 
-`pg_trickle` 为 PostgreSQL 18 提供流表（stream table）：它们是可正常查询的表，内容由定义它们的 SQL 查询维护。扩展会在可行时使用增量视图维护，也可以回退到全量重算，并支持在同一事务内维护的 `IMMEDIATE` 模式。
+- [pg_trickle v0.87.16 发行说明](https://github.com/trickle-labs/pg-trickle/releases/tag/v0.87.16)
+- [pg_trickle v0.87.16 README](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/README.md)
+- [pg_trickle v0.87.16 SQL 参考](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/docs/SQL_REFERENCE.md)
+- [pg_trickle v0.87.16 配置指南](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/docs/CONFIGURATION.md)
+- [pg_trickle v0.87.16 GUC 目录](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/docs/GUC_CATALOG.md)
+- [pg_trickle v0.87.16 变更日志](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/CHANGELOG.md)
+- [pg_trickle v0.87.15 至 v0.87.16 升级 SQL](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/sql/pg_trickle--0.87.15--0.87.16.sql)
+- [pg_trickle v0.87.16 控制文件](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/pg_trickle.control)
+- [pg_trickle v0.87.16 Cargo 元数据](https://github.com/trickle-labs/pg-trickle/blob/v0.87.16/Cargo.toml)
 
-上游 v0.81.0 仍处于 1.0 之前的阶段，并说明 API 与配置项在稳定的 1.0 版本发布前仍可能变化。Rust 包名为 `pg_trickle`，版本 `0.81.0`，使用 Rust 2024 版，默认启用 `pg18` 特性，并固定 `pgrx = 0.18.0`。README 中的构建前提是 PostgreSQL 18.x，以及带 pgrx 0.18.x 的 Rust 1.85+。
+`pg_trickle` v0.87.16 为 PostgreSQL 18 提供流表（stream table）：它们是可正常查询的表，内容由定义它们的 SQL 查询维护。扩展会在可行时使用增量视图维护，也可以回退到全量重算，并支持在同一事务内维护的 `IMMEDIATE` 模式。
+
+上游 v0.87.16 仍处于 1.0 之前的阶段，并说明 API 与配置项在稳定的 1.0 版本发布前仍可能变化。Rust 包名为 `pg_trickle`，版本 `0.87.16`，使用 Rust 2024 版，默认启用 `pg18` 特性，并固定 `pgrx = 0.18.0`。README 中的构建前提是 PostgreSQL 18.x，以及带 pgrx 0.18.x 的 Rust 1.85+。
 
 ### 启用扩展
 
@@ -67,6 +77,23 @@ SELECT pgtrickle.create_stream_table(
 );
 ```
 
+### 声明新鲜度目标
+
+版本 0.86.0 为函数式创建、修改与预览 API 增加了 `target_freshness`。正数时间间隔会被转换为现有调度与截止时间控制；`'on_commit'` 选择同一事务内的 `IMMEDIATE` 维护，`'manual'` 则关闭定时刷新。不要同时传入非默认 `schedule` 与 `target_freshness`。由于日历月份的长度不固定，包含月份的时间间隔会被拒绝；该版本也明确尚未实现闭环新鲜度控制。
+
+```sql
+SELECT pgtrickle.create_stream_table(
+    name             => 'fresh_totals',
+    query            => 'SELECT region, SUM(amount) AS total FROM orders GROUP BY region',
+    target_freshness => '5m'
+);
+
+SELECT pgtrickle.alter_stream_table(
+    'fresh_totals',
+    target_freshness => 'on_commit'
+);
+```
+
 ### 生命周期、SQL 覆盖与操作符
 
 ```sql
@@ -119,6 +146,9 @@ SELECT * FROM pgtrickle.tune_recommendations();
 SELECT * FROM pgtrickle.preview_stream_table(
     'SELECT region, SUM(amount) FROM orders GROUP BY region'
 );
+SELECT pgtrickle.explain('regional_totals');
+SELECT pgtrickle.explain_json('regional_totals');
+SELECT * FROM pgtrickle.pg_stat_pgtrickle;
 ```
 
 其他已记录的视图和目录表包括 `pgtrickle.stream_tables_info`、`pgtrickle.quick_health`、`pgtrickle.pgt_cdc_status`、`pgtrickle.pgt_stream_tables`、`pgtrickle.pgt_dependencies`、`pgtrickle.pgt_refresh_history`、`pgtrickle.pgt_change_tracking`、`pgtrickle.pgt_source_gates` 和 `pgtrickle.pgt_refresh_groups`。
@@ -156,7 +186,7 @@ SELECT pgtrickle.set_relay_outbox(
 
 ### 重要 GUC
 
-v0.81.0 版本记录了 129 个配置参数。常见运维 GUC 包括：
+生成的目录包含大量配置参数。常见运维 GUC 包括：
 
 - `pg_trickle.enabled`
 - `pg_trickle.cdc_mode`
@@ -190,7 +220,9 @@ v0.81.0 版本记录了 129 个配置参数。常见运维 GUC 包括：
 - `pg_trickle.max_dynamic_refresh_workers`
 - `pg_trickle.max_concurrent_refreshes`
 - `pg_trickle.worker_pool_size`
-- `pg_trickle.merge_batch_size`
+- `pg_trickle.pipeline_batch_size`
+- `pg_trickle.memory_budget_mb`
+- `pg_trickle.load_shed_threshold`
 - `pg_trickle.change_buffer_schema`
 - `pg_trickle.foreign_table_polling`
 - `pg_trickle.matview_polling`
@@ -204,6 +236,9 @@ v0.81.0 版本记录了 129 个配置参数。常见运维 GUC 包括：
 - `pg_trickle.enable_trace_propagation`
 - `pg_trickle.otel_endpoint`
 - `pg_trickle.trace_id`
+- `pg_trickle.explain_annotations`
+- `pg_trickle.warn_join_sources`
+- `pg_trickle.warn_write_path_overhead_us`
 - `pg_trickle.cdc_capture_mode`
 - `pg_trickle.commit_timestamp_tracking`
 - `pg_trickle.l1_cache_max_entries`
@@ -212,16 +247,37 @@ v0.81.0 版本记录了 129 个配置参数。常见运维 GUC 包括：
 
 `pg_trickle.event_driven_wake` 和 `pg_trickle.wake_debounce_ms` 为升级兼容而保留，但已正式废弃且没有效果，因为 PostgreSQL 后台工作进程不能使用 `LISTEN`；调度器使用基于锁存器的轮询。
 
-### v0.81.0 运维说明
+### 诊断、0.87 变更与升级
 
-v0.81.0 增加了面向运维人员的自省与调优辅助函数，包括 `pgtrickle.commit_latency_stats()`、`pgtrickle.tune_recommendations()` 和 `pgtrickle.preview_stream_table(query text)`。它还通过 `pg_trickle.l1_cache_max_entries` 增加有界 LRU DVM 缓存，新增 `pg_trickle.merge_batch_size` GUC，并为内存不足和锁超时场景增加自愈熔断设置。
+`pgtrickle.explain()` 会以有界文本说明一个流表请求与实际使用的刷新模式、待处理变更、主要成本、预期刷新时间、延迟、下次刷新时间和最近一次 FULL 回退原因。`pgtrickle.explain_json()` 会以结构化格式返回相同快照，并附上证据来源与样本数量，便于自动化处理。当前实现仍把写路径开销报告为未知；`pg_trickle.warn_write_path_overhead_us` 预留给兼容的触发器开销采样统计，默认值为 `0.0`，即关闭这项告警。
 
-版本说明指出这些新代码路径不需要模式迁移；替换扩展二进制后，现有安装使用 `ALTER EXTENSION pg_trickle UPDATE` 升级。
+`pgtrickle.pg_stat_pgtrickle` 提供有界的累计刷新计数、耗时百分位、当前延迟、目标新鲜度、回退详情、最近运维错误与计数器重置时间，无需扫描完整刷新历史。流表所有者可用 `pgtrickle.stat_reset()` 重置一张表的计数器；用 `pgtrickle.stat_reset_all()` 重置所有表则要求超级用户或扩展所有者权限。
+
+```sql
+SELECT pgtrickle.explain('regional_totals');
+SELECT pgtrickle.explain_json('regional_totals');
+SELECT * FROM pgtrickle.pg_stat_pgtrickle;
+
+SELECT pgtrickle.stat_reset(42);
+SELECT pgtrickle.stat_reset_all();
+```
+
+设置 `pg_trickle.explain_annotations = on` 可以让 PostgreSQL `EXPLAIN` 附带简洁的延迟与刷新模式属性；该设置默认关闭。创建与预览告警现在会指出必然使用 FULL 的计划、缺少源表行身份、行级安全、连接源过多及其他昂贵或不安全的查询形态。`pg_trickle.warn_join_sources` 默认为 `6`，设为 `0` 可关闭该告警。
+
+0.87 版本通过游标管道限制普通 MERGE 工作量，使 `pg_trickle.pipeline_batch_size` 成为规范设置，加入内存预算与负载丢弃控制，并围绕原始调用者及流表所有者加固生命周期、快照、发布和刷新执行。0.87.16 将 V2 行身份贯穿新建或重建的流表存储、触发器/WAL 捕获、刷新、差分与 `IMMEDIATE` 路径。既有 V1 物理状态会失败关闭，且不会原地转换。
+
+安装 v0.87.16 二进制与 SQL 文件后，应在每个数据库中应用目录迁移：
+
+```sql
+ALTER EXTENSION pg_trickle UPDATE TO '0.87.16';
+```
+
+0.87.16 迁移新增探针版本元数据，并把既有身份元数据标记为未知，使 V2 运行时不能消费 V1 关系。它不会重建这些关系；上游把该流程安排在 0.87.17。应先备份并按相邻升级脚本执行，不要假定从更老版本跨越升级安全。跨过 0.87.10 前，应运行 `pgtrickle.lifecycle_preflight()` 并应用其修复建议。`pgtrickle.migrate()` 是只读函数，不能替代 `ALTER EXTENSION`。
 
 ### 注意事项
 
-- `pg_trickle` v0.81.0 仅支持 PostgreSQL 18；发布包以 `pg18` 命名，Cargo 默认启用 `pg18` pgrx 特性。
-- Pigsty 构建使用 `pgrx` 0.18.0；重新构建软件包时需要防止链接器垃圾回收移除 pgrx 模式元数据。
+- `pg_trickle` v0.87.16 仅支持 PostgreSQL 18；发布包以 `pg18` 命名，Cargo 默认启用 `pg18` pgrx 特性。
+- 上游 Cargo 元数据固定使用 `pgrx` 0.18.0；从源码构建时应使用兼容的 pgrx 工具链，并防止链接器垃圾回收移除 pgrx 模式元数据。
 - 扩展控制文件标记为 `superuser = true` 且 `trusted = false`。
 - 不允许对流表直接执行 DML，因为其内容由刷新引擎管理。
 - `IMMEDIATE` 模式绕过 CDC，使用语句级 IVM 触发器；WAL CDC 是异步的，不能与事务内维护兼容。

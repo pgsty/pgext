@@ -2,16 +2,18 @@
 
 Sources:
 
-- [pgGraph v1.0.0 README](https://github.com/evokoa/pggraph/blob/v1.0.0/README.md)
-- [v1.0.0 release notes](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/release-notes.mdx)
-- [SQL API Reference](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/api-reference.mdx)
-- [Schema Registration](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/schema-registration.mdx)
-- [Administration and Security](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/administration-and-security.mdx)
-- [v0.1.8 to v1.0.0 migration guide](https://github.com/evokoa/pggraph/blob/v1.0.0/docs/user_guide/migration-1-0.mdx)
+- [pgGraph v1.2.0 README](https://github.com/Evokoa/pgGraph/blob/v1.2.0/README.md)
+- [v1.2.0 release notes](https://github.com/Evokoa/pgGraph/releases/tag/v1.2.0)
+- [SQL API Reference](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/api-reference.mdx)
+- [Schema Registration](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/schema-registration.mdx)
+- [Administration and Security](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/administration-and-security.mdx)
+- [Troubleshooting](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/troubleshooting.mdx)
+- [Extension control file](https://github.com/Evokoa/pgGraph/blob/v1.2.0/graph/graph.control)
+- [v1.1.0 to v1.2.0 upgrade SQL](https://github.com/Evokoa/pgGraph/blob/v1.2.0/graph/sql/graph--1.1.0--1.2.0.sql)
 
 `pggraph` is the package and PGXN distribution name, but the installed PostgreSQL extension is `graph`. The extension builds derived graph artifacts from ordinary PostgreSQL tables, keeps those tables as the source of truth, and exposes graph search, traversal, shortest path, GQL-style reads, and selected mapped writes through the `graph` schema.
 
-v1.0.0 is the first production release. It supports PostgreSQL 14-18, named graphs, graph-scoped grants and quotas, durable synchronization, bounded traversal and analytics, maintenance jobs, and selected GQL read/write profiles. It does not claim full ISO GQL, full openCypher, or a public SQL/PGQ `GRAPH_TABLE` surface. Standard PostgreSQL SQLSTATEs are paired with stable `PGxxx` details for application diagnostics.
+Version 1.2.0 supports PostgreSQL 14-18, named graphs, graph-scoped grants and quotas, durable synchronization, bounded traversal and analytics, maintenance jobs, and selected GQL read/write profiles. It also removes the historical 254-label relationship-type ceiling through a bounded open-vocabulary type dictionary. It does not claim full ISO GQL, full openCypher, or a public SQL/PGQ `GRAPH_TABLE` surface. Standard PostgreSQL SQLSTATEs are paired with stable `PGxxx` details for application diagnostics.
 
 ### Basic Graph Build
 
@@ -117,6 +119,31 @@ FROM graph.shortest_path(
 
 With `hydrate := false`, graph functions return compact graph coordinates. With hydration enabled, PostgreSQL source-table ACLs and RLS still govern which source rows are visible. Stale coordinates fail closed rather than fabricating rows.
 
+### Relationship Types and Registration Recovery
+
+Version 1.2.0 permits up to 1,000,000 distinct relationship types in one graph. Each UTF-8 label is limited to 1,024 bytes, the cumulative dictionary is limited to 256 MiB, and relationship-type filter arrays are limited to 4,096 entries and 4 MiB before allocation. `graph.status()` returns only the first 64 committed types as a preview; page the complete effective dictionary in stable ID order with:
+
+```sql
+SELECT type_id, label
+FROM graph.edge_types(after_type_id := 0, max_rows := 1000);
+```
+
+Dynamic labels committed through trigger-backed synchronization are interned by `graph.apply_sync()` without requiring a blanket rebuild. An absent relationship type returns no match, while an ambiguous endpoint mapping fails closed.
+
+The zero-argument reset removes the selected graph's derived engine and artifacts but preserves registrations. Use the boolean overload only to recover from stale relation identities after a table recreation or logical restore:
+
+```sql
+SELECT graph.reset();
+
+-- This also clears table, edge, and filter registrations for the selected graph.
+SELECT graph.reset(true);
+-- Reapply reviewed graph.add_table(...), graph.add_edge(...), and
+-- graph.add_filter_column(...) calls before rebuilding.
+SELECT * FROM graph.build();
+```
+
+Neither form modifies PostgreSQL source tables or other named graphs. `graph.reset(true)` is destructive to the selected graph's registration catalog, so keep the reviewed registration SQL before using it.
+
 ### GQL Queries and Relationship Writes
 
 ```sql
@@ -148,32 +175,23 @@ SELECT * FROM graph.projection_status();
 
 Graph administration covers catalog mutation, builds, sync replay, maintenance, quotas, runtime graph loading, and global analytics. Named graph privileges are `read`, `write`, `build`, and `admin`, but graph `read` is not enough by itself: hydrated reads still require `SELECT` on source tables. A selected graph tenant also scopes traversal, search, GQL, and Cypher calls unless an explicit matching tenant is supplied.
 
-### Migrating from the Alpha Release
+### Upgrading to 1.2.0
 
-The v0.1.8 to v1.0.0 transition is source-preserving but is not an in-place catalog or binary update. Back up and test a restore, inventory registrations and dependents, stop graph writers and schedulers, then preflight the drop in a transaction:
-
-```sql
-BEGIN;
-DROP EXTENSION graph;
-ROLLBACK;
-```
-
-After reviewing every dependent object, remove the alpha extension, install v1.0.0, reapply only reviewed public registration calls, and rebuild from the PostgreSQL source tables:
+The 1.1.0 to 1.2.0 catalog update is additive: it installs `graph.edge_types()` and `graph.reset(boolean)` without replacing existing function objects, owners, or explicit grants.
 
 ```sql
-DROP EXTENSION graph CASCADE;
-CREATE EXTENSION graph VERSION '1.0.0';
+ALTER EXTENSION graph UPDATE TO '1.2.0';
 
--- Reapply graph.add_table(...), graph.add_edge(...), and related calls.
-SELECT * FROM graph.build();
-SELECT * FROM graph.status();
+SELECT extversion
+FROM pg_extension
+WHERE extname = 'graph';
 ```
 
-`CASCADE` can remove application views, functions, generated synchronization objects, and other dependents. Alpha catalogs, `.pggraph` files, manifests, and projection segments are not v1.0.0 portable state. Rollback requires restoring the tested backup with the matching alpha package, then rebuilding its graph state.
+Existing v6 artifacts remain readable. New builds publish v7 artifacts; rebuild when the base artifact itself must represent more than 254 relationship types. In-place downgrade is unsupported because a 1.1 binary cannot read v7 artifacts. Rollback requires restoring the pre-upgrade PostgreSQL backup with the matching 1.1.0 package and rebuilding derived graph state from the restored source tables.
 
 ### Caveats
 
 - Source tables remain the source of truth. Graph artifacts, projection files, sync state, and runtime engines are derived and rebuildable.
 - Use `graph.build()` or graph-scoped build helpers after registration changes, and use sync/maintenance APIs when relying on incremental projection state.
 - Internal catalog tables such as `graph._graphs`, grants, quotas, jobs, sync logs, and projection metadata are implementation details; use public SQL functions instead.
-- v1.0.0 uses Rust 1.96 and `cargo-pgrx` 0.19.1 for source builds. PostgreSQL 14 through 18 are supported upstream, with PostgreSQL 17 as the default release-gate target.
+- Version 1.2.0 uses Rust 1.96 and `cargo-pgrx` 0.19.1 for source builds. PostgreSQL 14 through 18 are supported upstream, with PostgreSQL 17 as the default release-gate target.

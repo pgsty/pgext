@@ -2,10 +2,11 @@
 
 Sources:
 
-- [Official v0.2.3 README](https://github.com/microsoft/pg_durable/blob/v0.2.3/README.md)
-- [v0.2.3 user guide](https://github.com/microsoft/pg_durable/blob/v0.2.3/USER_GUIDE.md)
-- [v0.2.3 release notes](https://github.com/microsoft/pg_durable/releases/tag/v0.2.3)
-- [v0.2.2 to v0.2.3 upgrade SQL](https://github.com/microsoft/pg_durable/blob/v0.2.3/sql/pg_durable--0.2.2--0.2.3.sql)
+- [PGXN 0.2.6 README](https://pgxn.org/dist/pg_durable/0.2.6/README.html)
+- [0.2.6 user guide](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/USER_GUIDE.md)
+- [0.2.6 changelog](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/CHANGELOG.md)
+- [pg_durable control file](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/pg_durable.control)
+- [0.2.5 to 0.2.6 upgrade SQL](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/sql/pg_durable--0.2.5--0.2.6.sql)
 
 `pg_durable` runs durable, fault-tolerant SQL workflows inside PostgreSQL. A workflow is a graph of SQL steps, timers, signals, conditions, and parallel branches submitted with `df.start()`. Execution state is checkpointed in PostgreSQL so completed steps are not repeated after a crash, restart, or retry.
 
@@ -57,11 +58,13 @@ SELECT df.cancel('a1b2c3d4', 'No longer needed');
 - `df.signal()`, `df.wait_for_completion()`, `df.explain()`, and the instance-inspection functions operate on running or stored instances.
 - `df.setvar()`, `df.getvar()`, `df.unsetvar()`, and `df.clearvars()` manage per-user variables captured when `df.start()` is called.
 
-### Version 0.2.3 Boundaries
+### Version 0.2.6 Boundaries
 
-- Fresh v0.2.3 installs place provider objects in `_duroxide`; installations upgraded from 0.2.2 or earlier keep `duroxide`. `df.duroxide_schema()` reports the active schema.
-- Graphs deeper than 256 levels or larger than 10,000 nodes are rejected. A condition query returning no rows evaluates as false.
+- Upstream source installation and published images support PostgreSQL 17 and 18 with `pgrx` 0.16.1. The extension still requires `shared_preload_libraries`, a restart, and a superuser worker role.
+- Upgrades through 0.2.4 and 0.2.5 contain replay-breaking workflow changes. Drain or cancel in-flight JOIN, RACE, loop, and `df.wait_for_schedule()` work before upgrading; the 0.2.4 `df.nodes` key migration also takes an `ACCESS EXCLUSIVE` lock.
+- `df.start(..., transaction_mode => 'new')` persists an independent start outside the caller transaction. Cluster-wide admission defaults to two concurrent starts and is controlled by `pg_durable.max_new_transaction_starts` and `pg_durable.new_transaction_start_timeout`.
+- Variable substitution is resolved once from left to right in 0.2.6, so token-shaped text introduced by a value is not rescanned. It remains raw SQL substitution; never place untrusted input in `{name}` variables. Named step-result substitution through `$name` performs SQL escaping.
+- The undocumented `df.ensure_durofut(text)` helper was removed. Drop or rewrite customer-owned dependent objects before upgrading.
 - Re-run `df.grant_usage()` after `ALTER EXTENSION ... UPDATE`, because grants on all functions do not automatically include functions added later.
-- Variable `{name}` substitution is raw SQL text substitution; never place untrusted input in such variables. Named step-result substitution through `$name` performs SQL escaping.
-- `df.http()` availability and egress policy are compile-time features. Its restrictions do not sandbox arbitrary SQL or other installed extensions.
-- Upstream labels the project preview, and the published v0.2.3 Docker images are for evaluation and learning rather than production.
+- `df.http()` and `df.http_multipart()` availability and egress policy are compile-time features. Their restrictions do not sandbox arbitrary SQL or other installed extensions.
+- The project remains pre-1.0, and upstream's published Docker images are for evaluation and learning rather than production. Read every adjacent upgrade warning instead of assuming an untested multi-version jump is replay-safe.
