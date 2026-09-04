@@ -913,6 +913,10 @@ def batch_for(build_class: str, recipe: str) -> tuple[str, str]:
 
 
 def debug_policy(fmt: str, recipe: str, noarch: bool) -> str:
+    if recipe == "libduckdb":
+        if fmt == "rpm":
+            return "required:non-empty-debuginfo; debugsource=N/A:upstream-prebuilt-no-source"
+        return "N/A:upstream-prebuilt; dh_strip --no-automatic-dbgsym"
     if noarch or (fmt == "deb" and recipe in {"pgsodium-libsodium", "polarstore"}):
         return "N/A:no-native-ELF"
     if fmt == "rpm":
