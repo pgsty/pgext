@@ -1107,6 +1107,16 @@ def main() -> int:
                             }
                             if conflict_record not in source_conflicts:
                                 source_conflicts.append(conflict_record)
+                            if template in {"omnigres_$v", "postgresql-$v-omnigres"}:
+                                blocker = {
+                                    "format": fmt,
+                                    "package": template,
+                                    "catalog_repo": side_repo,
+                                    "catalog_extensions": sorted(row["name"] for row in rows),
+                                    "reason": "Omnigres catalog rows select multiple source archives",
+                                }
+                                if blocker not in unmatched:
+                                    unmatched.append(blocker)
                         build_class = classify(recipe, rows, noarch, pgdg_gap)
                         batch, shard_policy = batch_for(build_class, recipe)
                         manifests.append(
