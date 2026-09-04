@@ -83,6 +83,14 @@ SUPPORT = {
         ("lagraph", "lagraph", [], ["lagraph-1.2.2.tar.gz"], None, "graphblas"),
         ("scws", "scws", [], ["scws-1.2.3.tar.bz2"], None, "zhparser"),
         ("libfq", "libfq", [], ["libfq-0.6.2.tar.gz"], None, "libfq"),
+        (
+            "libduckdb",
+            "libduckdb",
+            [],
+            ["libduckdb-1.5.5-amd64.tar.gz", "libduckdb-1.5.5-arm64.tar.gz"],
+            None,
+            "libduckdb",
+        ),
         ("libpgfeutils14", "libpgfeutils14", [14], ["postgresql-14.23.tar.gz"], None, "libpgfeutils"),
         ("libpgfeutils15", "libpgfeutils15", [15], ["postgresql-15.18.tar.gz"], None, "libpgfeutils"),
         ("libpgfeutils16", "libpgfeutils16", [16], ["postgresql-16.14.tar.gz"], None, "libpgfeutils"),
@@ -119,6 +127,14 @@ SUPPORT = {
         ("lagraph", "lagraph", [], ["lagraph-1.2.2.tar.gz"], None, "graphblas"),
         ("scws", "scws", [], ["scws-1.2.3.tar.bz2"], None, "zhparser"),
         ("libfq", "libfq", [], ["libfq-0.6.2.tar.gz"], None, "libfq"),
+        (
+            "libduckdb",
+            "libduckdb",
+            [],
+            ["libduckdb-1.5.5-amd64.tar.gz", "libduckdb-1.5.5-arm64.tar.gz"],
+            None,
+            "libduckdb",
+        ),
         (
             "pgsodium-libsodium",
             "pgsodium-libsodium",
@@ -166,6 +182,7 @@ SUPPORT_RECIPES = {
     "scws",
     "zhparser",
     "libfq",
+    "libduckdb",
     "firebird_fdw",
     "libpgfeutils14",
     "libpgfeutils15",
@@ -1184,6 +1201,12 @@ def main() -> int:
             for platform in platforms:
                 if allowed_platforms is not None and platform not in allowed_platforms:
                     continue
+                job_sources = list(sources)
+                if recipe == "libduckdb":
+                    asset_suffix = "-arm64.tar.gz" if platform.endswith(".aarch64") else "-amd64.tar.gz"
+                    job_sources = [source for source in sources if source.endswith(asset_suffix)]
+                    if len(job_sources) != 1:
+                        raise RuntimeError(f"libduckdb source mapping failed for {platform}: {job_sources}")
                 rule_effects[f"{fmt}:explicit_support_jobs_added"] += 1
                 rule_effects[f"{fmt}:explicit_support_pg_abi_added"] += len(pgs)
                 manifests.append(
@@ -1196,7 +1219,7 @@ def main() -> int:
                         "pg_versions": pgs,
                         "build_class": "support",
                         "batch": "B10",
-                        "source": sources,
+                        "source": job_sources,
                         "source_sha256": {},
                         "source_provenance": {},
                         "repo_sha": repo_sha[fmt],
