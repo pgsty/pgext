@@ -207,6 +207,8 @@ HEAVY_RECIPES = {
     "timescaledb",
 }
 
+RPM_MAIN_BITCODE_PILOTS = {"acdat", "supautils", "pllua"}
+
 LINUX_OWNED = {
     "ansible",
     "haproxy",
@@ -921,7 +923,15 @@ def main() -> int:
                                 "dependency_group": dependency_group(recipe),
                                 "release_policy": release_policy(fmt, recipe, platform, rows, pgdg_gap),
                                 "debug_policy": debug_policy(fmt, recipe, noarch),
-                                "artifact_guard": "bin/verify-extension-job.sh run" if fmt == "deb" else "",
+                                "artifact_guard": (
+                                    "bin/verify-extension-job.sh run"
+                                    if fmt == "deb"
+                                    else (
+                                        "bin/verify-rpm-extension-job.sh"
+                                        if recipe in RPM_MAIN_BITCODE_PILOTS
+                                        else ""
+                                    )
+                                ),
                                 "artifact_package_template": template,
                                 "job_kind": "extension",
                                 "build_target": build_target(fmt, recipe, job_pg),
@@ -1172,6 +1182,8 @@ def main() -> int:
             "rdkit": "RPM EL9/10 202603.6; DEB D12/U22 legacy PG17-18, D13/U24 PGDG, U26 202603.6 PG14-17",
             "pg_net": "DEB Jammy 0.9.2; D12/D13/U24/U26 0.20.5",
             "pg_strom": "current 6.1/PG15-18 is PGDG-covered; local 3.5/PG14 recipe is quarantined",
+            "rpm_main_bitcode_pilots": sorted(RPM_MAIN_BITCODE_PILOTS),
+            "rpm_main_bitcode_policy": "pilot jobs default to LLVM enabled; rpmspec exact packages plus debug; bitcode in main; extension llvmjit RPM and runtime LLVM dependencies forbidden",
         },
         "jobs": dict(by_format),
         "pg_abi_units": dict(abi_by_format),
