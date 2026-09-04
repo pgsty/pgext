@@ -243,6 +243,18 @@ EXPLICIT_QUARANTINE = {
     "spat",
     "postgresql_anonymizer",
     "pg_monetdb",
+    "pg_strom",
+}
+
+QUARANTINE_REASONS = {
+    "pg_strom": (
+        "local recipe is the legacy 3.5 PostgreSQL 14 compatibility port; "
+        "current 6.1 PostgreSQL 15-18 packages are owned by PGDG"
+    ),
+}
+
+CATALOG_RECIPE_QUARANTINE = {
+    ("rpm", "pg_strom_$v"): QUARANTINE_REASONS["pg_strom"],
 }
 
 SUPERSEDED_RECIPES = {
@@ -275,7 +287,6 @@ SOURCE_OVERRIDES = {
     ("rpm", "pg_auto_failover_$v"): ["pg_auto_failover-2.2.tar.gz"],
     ("rpm", "pgl_ddl_deploy_$v"): ["pgl_ddl_deploy-2.2.1.tar.gz"],
     ("deb", "postgresql-$v-pgl-ddl-deploy"): ["pgl_ddl_deploy-2.2.1.tar.gz"],
-    ("rpm", "pg_strom_$v"): ["v3.5.tar.gz"],
     ("rpm", "pgmemcache_$v"): ["pgmemcache-2.3.0.tar.gz"],
     ("rpm", "h3-pg_$v"): ["h3-pg-4.2.3.tar.gz"],
 }
@@ -440,6 +451,9 @@ def recipe_path(fmt: str, recipe: str) -> str:
 
 
 def map_recipe(fmt: str, template: str, rows: list[dict[str, str]], inventory: set[str]) -> tuple[str | None, str]:
+    if (fmt, template) in CATALOG_RECIPE_QUARANTINE:
+        return None, "explicit_quarantine"
+
     if template in ALIASES[fmt]:
         recipe = ALIASES[fmt][template]
         return (recipe if recipe in inventory else None, "explicit_alias")
@@ -797,13 +811,19 @@ def main() -> int:
                             for platform in platforms
                         )
                     if has_gap:
+                        reason = (
+                            f"{side_repo} package has a build coordinate but no active "
+                            "spec/recipe or explicit alias"
+                        )
+                        if mapping_kind == "explicit_quarantine":
+                            reason = CATALOG_RECIPE_QUARANTINE[(fmt, template)]
                         unmatched.append(
                             {
                                 "format": fmt,
                                 "package": template,
                                 "catalog_repo": side_repo,
                                 "catalog_extensions": sorted(row["name"] for row in rows),
-                                "reason": f"{side_repo} package has a build coordinate but no active spec/recipe or explicit alias",
+                                "reason": reason,
                             }
                         )
                     continue
@@ -1095,6 +1115,8 @@ def main() -> int:
                 item["reason"] = SUPERSEDED_RECIPES[recipe]
                 classifications["superseded"].append(item)
             elif recipe in EXPLICIT_QUARANTINE:
+                if recipe in QUARANTINE_REASONS:
+                    item["reason"] = QUARANTINE_REASONS[recipe]
                 classifications["explicit_quarantine"].append(item)
             else:
                 item["reason"] = "active recipe/spec has no catalog package-template or explicit B10 product mapping"
@@ -1149,6 +1171,7 @@ def main() -> int:
             "standard_shard": "sha256(recipe UTF-8) mod 2; B30=0, B31=1",
             "rdkit": "RPM EL9/10 202603.6; DEB D12/U22 legacy PG17-18, D13/U24 PGDG, U26 202603.6 PG14-17",
             "pg_net": "DEB Jammy 0.9.2; D12/D13/U24/U26 0.20.5",
+            "pg_strom": "current 6.1/PG15-18 is PGDG-covered; local 3.5/PG14 recipe is quarantined",
         },
         "jobs": dict(by_format),
         "pg_abi_units": dict(abi_by_format),
