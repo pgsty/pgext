@@ -428,6 +428,7 @@ LINUX_OWNED = {
 
 EXPLICIT_EXCLUDE = {
     "cri-dockerd",
+    "hydra",
     "keepalived",
     "percona-telemetry-agent",
     "python3-cdiff",
