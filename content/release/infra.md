@@ -6,6 +6,59 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-09-19
+
+Local build batch; all downloads used the port 8118 proxy. This entry does not imply publication to the live repository.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| agentsview | 0.41.1 | 0.43.0 | Verified and built dual-architecture RPM/DEB |
+| alertmanager | 0.34.0 | 0.34.1 | Verified and built dual-architecture RPM/DEB |
+| cargo-pgrx-0192 | - | 0.19.2 | New exact 0.19.2 slot; 0191 retained; native EL8 builds |
+| claude | 2.1.252 | 2.1.278 | Downloaded through port 8118, manifest verified; version executed on both Linux architectures |
+| cloudflared | 2026.8.3 | 2026.9.1 | Verified and built dual-architecture RPM/DEB |
+| code | 1.135.0 | 1.138.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| code-server | 4.135.0 | 4.137.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| codex | 0.152.0 | 0.155.1 | Verified and built dual-architecture RPM/DEB |
+| crush | 0.92.0 | 0.95.0 | Verified and built dual-architecture RPM/DEB |
+| dblab | 0.49.0 | 0.50.0 | Verified and built dual-architecture RPM/DEB |
+| garage | 2.3.0 | 2.4.1 | Verified and built dual-architecture RPM/DEB |
+| golang | 1.27.0 | 1.27.1 | Verified and built dual-architecture RPM/DEB |
+| grafana | 13.2.0 | 13.2.2 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| grafana-plugins | 13.0.0 | 13.2.2 | Curated bundle: 10 plugins updated, 4 retained; official ZIP SHA256 verified |
+| grafana-victorialogs-ds | 0.31.0 | 0.32.0 | Verified and built dual-architecture RPM/DEB |
+| grafana-victoriametrics-ds | 0.25.2 | 0.26.1 | Verified and built dual-architecture RPM/DEB |
+| hugo | 0.165.0 | 0.166.0 | Verified and built dual-architecture RPM/DEB |
+| k3s | 1.36.4 | 1.37.0 | Upstream v1.37.0+k3s1; images updated together; stable channel remains 1.36.4 |
+| k3s-images | 1.36.4 | 1.37.0 | Dual-architecture air-gap images pinned to v1.37.0+k3s1 |
+| kafka-exporter | 1.9.0 | 1.10.0 | Verified and built dual-architecture RPM/DEB |
+| logcli | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
+| loki | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
+| loki-canary | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
+| mcli | 20260901000000.0.0 | 20260916000000.0.0 | Maps to RELEASE.2026-09-16T00-00-00Z |
+| mcp-toolbox | 1.8.0 | 1.12.0 | New cached-binary recipe; dual-arch CGO source builds targeting glibc 2.28 |
+| mtail | 3.4.10 | 3.4.12 | Verified and built dual-architecture RPM/DEB |
+| nodejs | 24.20.0 | 24.21.0 | Node.js 24 LTS |
+| opencode | 1.18.25 | 1.18.31 | Verified and built dual-architecture RPM/DEB |
+| pev2 | 1.23.0 | 1.24.0 | Verified and built noarch RPM/DEB |
+| pg-hardstorage | 1.3.4 | 1.4.2 | Verified and built dual-architecture RPM/DEB |
+| pgschema | 1.12.5 | 1.13.0 | Verified and built dual-architecture RPM/DEB |
+| pgstream | 1.4.1 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
+| pig | 1.8.0 | 1.8.1 | Verified and built dual-architecture RPM/DEB |
+| postgrest | 16.2 | 16.3 | Verified and built dual-architecture RPM/DEB |
+| rclone | 1.75.0 | 1.75.1 | Verified and built dual-architecture RPM/DEB |
+| redis-exporter | 1.90.0 | 1.91.1 | Verified and built dual-architecture RPM/DEB |
+| rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
+| rustfs | 1.0.0-rc.4 | 1.0.0 | Stable 1.0.0 replaces rc.4; prerelease package metadata removed |
+| sabiql | 2.0.1 | 3.0.1 | Adds MySQL support; Oracle MySQL CLI 8.4 is required for MySQL connections |
+| seaweedfs | 4.45 | 4.47 | Verified and built dual-architecture RPM/DEB |
+| silo | 20260806000000.0.0 | 20260916000000.0.0 | Official native dual-arch RPM/DEB; upstream security and correctness release |
+| stalwart | 0.16.20 | 0.16.22 | Verified and built dual-architecture RPM/DEB |
+| tailcat | 0.4.0 | 0.6.0 | Verified and built dual-architecture RPM/DEB |
+| uv | 0.12.8 | 0.12.17 | Verified and built dual-architecture RPM/DEB |
+| victoria-metrics | 1.151.0 | 1.152.0 | Single-node, cluster, and vmutils packages updated together |
+| victoria-traces | 0.10.0 | 0.11.1 | Verified and built dual-architecture RPM/DEB |
+
 ## 2026-09-01
 
 | Name                    | Old                                      | New                  | Comment                                                        |

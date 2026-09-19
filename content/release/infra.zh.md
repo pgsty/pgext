@@ -1,3 +1,56 @@
+## 2026-09-19
+
+本地构建批次；下载均经 8118 代理。此记录不表示软件包已发布到在线仓库。
+
+| 名称 | 旧版本 | 新版本 | 备注 |
+|---|---|---|---|
+| agentsview | 0.41.1 | 0.43.0 | 已校验并构建双架构 RPM/DEB |
+| alertmanager | 0.34.0 | 0.34.1 | 已校验并构建双架构 RPM/DEB |
+| cargo-pgrx-0192 | - | 0.19.2 | 新增独立 0.19.2 版本槽，保留 0191；EL8 原生构建 |
+| claude | 2.1.252 | 2.1.278 | 通过 8118 下载，官方 manifest 校验；两种 Linux 架构实测版本 |
+| cloudflared | 2026.8.3 | 2026.9.1 | 已校验并构建双架构 RPM/DEB |
+| code | 1.135.0 | 1.138.0 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| code-server | 4.135.0 | 4.137.0 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| codex | 0.152.0 | 0.155.1 | 已校验并构建双架构 RPM/DEB |
+| crush | 0.92.0 | 0.95.0 | 已校验并构建双架构 RPM/DEB |
+| dblab | 0.49.0 | 0.50.0 | 已校验并构建双架构 RPM/DEB |
+| garage | 2.3.0 | 2.4.1 | 已校验并构建双架构 RPM/DEB |
+| golang | 1.27.0 | 1.27.1 | 已校验并构建双架构 RPM/DEB |
+| grafana | 13.2.0 | 13.2.2 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| grafana-plugins | 13.0.0 | 13.2.2 | 人工合集更新 10 个插件，保留另外 4 个；已核验官方 ZIP SHA256 |
+| grafana-victorialogs-ds | 0.31.0 | 0.32.0 | 已校验并构建双架构 RPM/DEB |
+| grafana-victoriametrics-ds | 0.25.2 | 0.26.1 | 已校验并构建双架构 RPM/DEB |
+| hugo | 0.165.0 | 0.166.0 | 已校验并构建双架构 RPM/DEB |
+| k3s | 1.36.4 | 1.37.0 | 上游 v1.37.0+k3s1；与镜像包同步更新；stable 通道仍为 1.36.4 |
+| k3s-images | 1.36.4 | 1.37.0 | 精确匹配 v1.37.0+k3s1 的双架构 air-gap 镜像 |
+| kafka-exporter | 1.9.0 | 1.10.0 | 已校验并构建双架构 RPM/DEB |
+| logcli | 3.7.7 | 3.7.8 | 已校验并构建双架构 RPM/DEB |
+| loki | 3.7.7 | 3.7.8 | 已校验并构建双架构 RPM/DEB |
+| loki-canary | 3.7.7 | 3.7.8 | 已校验并构建双架构 RPM/DEB |
+| mcli | 20260901000000.0.0 | 20260916000000.0.0 | 对应 RELEASE.2026-09-16T00-00-00Z |
+| mcp-toolbox | 1.8.0 | 1.12.0 | 新增本仓库缓存打包配方；双架构 CGO 源码构建，glibc 2.28 |
+| mtail | 3.4.10 | 3.4.12 | 已校验并构建双架构 RPM/DEB |
+| nodejs | 24.20.0 | 24.21.0 | Node.js 24 LTS |
+| opencode | 1.18.25 | 1.18.31 | 已校验并构建双架构 RPM/DEB |
+| pev2 | 1.23.0 | 1.24.0 | 已校验并构建 noarch RPM/DEB |
+| pg-hardstorage | 1.3.4 | 1.4.2 | 已校验并构建双架构 RPM/DEB |
+| pgschema | 1.12.5 | 1.13.0 | 已校验并构建双架构 RPM/DEB |
+| pgstream | 1.4.1 | 1.5.0 | 已校验并构建双架构 RPM/DEB |
+| pig | 1.8.0 | 1.8.1 | 已校验并构建双架构 RPM/DEB |
+| postgrest | 16.2 | 16.3 | 已校验并构建双架构 RPM/DEB |
+| rclone | 1.75.0 | 1.75.1 | 已校验并构建双架构 RPM/DEB |
+| redis-exporter | 1.90.0 | 1.91.1 | 已校验并构建双架构 RPM/DEB |
+| rust-toolchain | 1.97.1 | 1.98.1 | 官方签名校验、双架构 ELF ABI 检查 |
+| rustfs | 1.0.0-rc.4 | 1.0.0 | 从 rc.4 升至 1.0.0 正式版，移除 rc 打包标记 |
+| sabiql | 2.0.1 | 3.0.1 | 新增 MySQL 支持；连接 MySQL 需 Oracle MySQL CLI 8.4 |
+| seaweedfs | 4.45 | 4.47 | 已校验并构建双架构 RPM/DEB |
+| silo | 20260806000000.0.0 | 20260916000000.0.0 | 官方原生双架构 RPM/DEB；安全与正确性修复版本 |
+| stalwart | 0.16.20 | 0.16.22 | 已校验并构建双架构 RPM/DEB |
+| tailcat | 0.4.0 | 0.6.0 | 已校验并构建双架构 RPM/DEB |
+| uv | 0.12.8 | 0.12.17 | 已校验并构建双架构 RPM/DEB |
+| victoria-metrics | 1.151.0 | 1.152.0 | 同步构建单机、集群和 vmutils 三个软件包 |
+| victoria-traces | 0.10.0 | 0.11.1 | 已校验并构建双架构 RPM/DEB |
+
 ## 2026-09-01
 
 | 名称                      | 旧值                                       | 新值                   | 备注                                      |
