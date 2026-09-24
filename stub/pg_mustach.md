@@ -2,27 +2,32 @@
 
 Sources:
 
-- [Upstream README](https://github.com/RekGRpth/pg_mustach/blob/fc36a2203d2007fd93a4d1d6a49e8c24f02fd8e2/README.md)
-- [Extension control file](https://github.com/RekGRpth/pg_mustach/blob/fc36a2203d2007fd93a4d1d6a49e8c24f02fd8e2/pg_mustach.control)
-- [SQL API](https://github.com/RekGRpth/pg_mustach/blob/fc36a2203d2007fd93a4d1d6a49e8c24f02fd8e2/pg_mustach--1.0.sql)
-- [C implementation](https://github.com/RekGRpth/pg_mustach/blob/fc36a2203d2007fd93a4d1d6a49e8c24f02fd8e2/pg_mustach.c)
-- [Distribution metadata](https://github.com/RekGRpth/pg_mustach/blob/fc36a2203d2007fd93a4d1d6a49e8c24f02fd8e2/META.json)
+- [README](https://api.pgxn.org/src/pg_mustach/pg_mustach-2.0.0/README.md)
+- [Control file](https://api.pgxn.org/src/pg_mustach/pg_mustach-2.0.0/pg_mustach.control)
+- [SQL](https://api.pgxn.org/src/pg_mustach/pg_mustach-2.0.0/pg_mustach--2.0.sql)
 
-`pg_mustach` renders Mustache templates from PostgreSQL `json` values through the C `mustach` library. The short two-argument form returns rendered text:
+`pg_mustach` 2.0 renders Mustache templates from `jsonb` through libmustach 2 or newer. It adds prepared templates and replaces the older JSON-library-specific adapters with a unified interface.
 
-### Render a template
+### Core Workflow
 
 ```sql
 CREATE EXTENSION pg_mustach;
-
-SELECT mustach(
-  '{"name":"PostgreSQL"}'::json,
-  'Hello {{name}}!'
-);
+SELECT mustach('{"name":"PostgreSQL"}'::jsonb, 'Hello {{name}}!');
+BEGIN;
+SELECT mustach_template('Hello {{name}}!', 'greeting');
+SELECT mustach_json('{"name":"Ada"}'::jsonb, tplname := 'greeting');
+SELECT mustach_free('greeting');
+COMMIT;
 ```
 
-The extension also exposes `mustach_cjson()`, `mustach_jansson()`, and `mustach_json_c()` adapters. Session-local process flags are changed by the `mustach_with_*()` functions; `mustach_with_noextensions()` resets the flags, while the other switches enable individual Mustach extensions. These flag changes are not transaction-scoped.
+### Templates and Flags
 
-Every renderer also has a three-argument overload that accepts a server-side filename and opens it for writing as the PostgreSQL operating-system account. The install SQL does not revoke default `EXECUTE`, so revoke or tightly grant all filename overloads before allowing non-administrators to use the extension. Template output and errors also need resource limits when JSON or templates are untrusted.
+`mustach` renders directly. `mustach_template` prepares a named template or the unnamed slot; `mustach_json` renders it, and `mustach_free` releases it. Use the named argument `tplname` explicitly: a positional second text argument can resolve to the file-writing overload instead.
 
-The catalog/control object version is `1.0`, while the same commit's `META.json` reports distribution version `1.0.16`. Keep those version channels distinct when packaging or upgrading.
+`pg_mustach.transaction` defaults to true, so prepared templates are cleared at transaction end. A preparation in one autocommit statement will not survive to the next statement. Set it false only when intentionally managing session-local lifetime, especially with connection pools. `pg_mustach.flags` and `mustach_set_flags` control rendering flags; `mustach_with_*` helpers return flag values.
+
+### Upgrade and Access
+
+The control version is `2.0`, while the PGXN distribution is 2.0.0. Review the shipped upgrade SQL before migrating applications from `json` adapters to `jsonb`. File-output overloads write on the server and require superuser privileges. The extension is relocatable and needs no preload. Bound template size and output volume for untrusted inputs.
+
+Local-file partials are separately controlled by the superuser-only `pg_mustach.whitelist` prefix list. Ordinary roles need an explicit matching grant; a nonempty list also restricts superusers. The whitelist does not authorize file-output overloads.

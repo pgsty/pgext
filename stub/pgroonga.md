@@ -1,62 +1,39 @@
-
-
-
 ## Usage
 
-- https://pgroonga.github.io/
-- [News](https://pgroonga.github.io/news/): It lists release information.
-- [Overview](https://pgroonga.github.io/overview/): It describes about PGroonga.
-- [Install](https://pgroonga.github.io/install/): It describes how to install PGroonga.
-- [Upgrade](https://pgroonga.github.io/upgrade/): It describes how to upgrade PGroonga.
-- [Uninstall](https://pgroonga.github.io/uninstall/): It describes how to uninstall PGroonga.
-- [Tutorial](https://pgroonga.github.io/tutorial/): It describes how to use PGroonga step by step.
-- [FAQ](https://pgroonga.github.io/faq/): Frequently asked questions.
-- [How to](https://pgroonga.github.io/how-to/): It describes about useful information for specific situations.
-- [Reference](https://pgroonga.github.io/reference/): It describes details for each features such as options, functions and operators.
-- [Troubleshooting](https://pgroonga.github.io/troubleshooting/): It describes how to fix troubles.
-- [Community](https://pgroonga.github.io/community/): It introduces about PGroonga community.
-- [Users](https://pgroonga.github.io/users/): It lists PGroonga users.
-- [Development](https://pgroonga.github.io/development/): It describes how to develop PGroonga.
+Sources:
 
-Here's a quick [tutorial](https://pgroonga.github.io/tutorial/) about how to use PGroonga:
+- [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga.sql)
+- [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga.control)
+- [Official tutorial](https://pgroonga.github.io/tutorial/)
+- [Version 4.0.9 release](https://github.com/pgroonga/pgroonga/releases/tag/4.0.9)
+- [Upgrade guidance](https://pgroonga.github.io/upgrade/)
+
+`pgroonga` 4.0.9 provides Groonga-backed indexes for multilingual full-text search. It installs the `pgroonga` access method and SQL operators; ordinary use does not require shared preload.
+
+### Core Workflow
+
+Install compatible PGroonga and Groonga libraries, then create the extension as an administrator:
 
 ```sql
-CREATE EXTENSION IF NOT EXISTS pgroonga;
-
-CREATE TABLE memos
-(
-    id      integer,
-    content text
-);
-
-CREATE INDEX pgroonga_content_index ON memos USING pgroonga (content);
-
-INSERT INTO memos VALUES (1, 'PostgreSQL is a relational database management system.');
-INSERT INTO memos VALUES (2, 'Groonga is a fast full text search engine that supports all languages.');
-INSERT INTO memos VALUES (3, 'PGroonga is a PostgreSQL extension that uses Groonga as index.');
-INSERT INTO memos VALUES (4, 'There is groonga command.');
-
-SET enable_seqscan = off;
-
--- now let's query pgroonga
-
-SELECT * FROM memos WHERE content &@ 'engine';
---  id |                                content                                 
--- ----+------------------------------------------------------------------------
---   2 | Groonga is a fast full text search engine that supports all languages.
--- (1 row)
-
-SELECT * FROM memos WHERE content &@~ 'PGroonga OR PostgreSQL';
---  id |                            content                             
--- ----+----------------------------------------------------------------
---   3 | PGroonga is a PostgreSQL extension that uses Groonga as index.
---   1 | PostgreSQL is a relational database management system.
--- (2 rows)
-
-SELECT * FROM memos WHERE content LIKE '%engine%';
---  id |                                content                                 
--- ----+------------------------------------------------------------------------
---   2 | Groonga is a fast full text search engine that supports all languages.
--- (1 row)
+CREATE EXTENSION pgroonga;
+CREATE TABLE search_notes (id bigint PRIMARY KEY, body text);
+CREATE INDEX search_notes_body_idx ON search_notes USING pgroonga (body);
+INSERT INTO search_notes VALUES (1, 'PostgreSQL supports full text search');
+SELECT id, body FROM search_notes WHERE body &@ 'PostgreSQL';
+SELECT id, body, pgroonga_score(tableoid, ctid) AS score
+FROM search_notes WHERE body &@~ 'PostgreSQL OR Groonga'
+ORDER BY score DESC;
 ```
 
+### Important Objects
+
+- `&@` matches a keyword; `&@~` accepts Groonga query syntax. Supported LIKE/ILIKE searches can also use the index, with rechecks where required.
+- `pgroonga_score(tableoid, ctid)` retrieves search scores. Confirm the intended index plan when using score-based ordering.
+- `pgroonga_highlight_html()` and `pgroonga_query_extract_keywords()` produce highlighted search results; `pgroonga_snippet_html()` provides surrounding text.
+- New in 4.0.9, `pgroonga_physical_table_names(partitioned_index, prefix)` returns a text array of Groonga command arguments identifying the physical tables behind partition indexes. This release also increments `pg_stat_user_indexes.idx_scan` for PGroonga scans.
+
+### Maintenance and Privileges
+
+The 4.0.9 control file declares neither trusted installation nor relocatability; do not assume ordinary users can install it or move it between schemas. Index creation and queries follow the relevant table privileges. Match the extension and Groonga libraries to the target PostgreSQL build and follow upstream upgrade guidance before replacing binaries.
+
+PGroonga manages derived index files in addition to table data. Plan disk capacity and backup/recovery procedures accordingly. Use REINDEX for index repair where appropriate. The separate `pgroonga_database` module is a recovery tool for damaged internal Groonga databases and is not needed for normal searches. Do not disable sequential scans globally merely to force an index in production.

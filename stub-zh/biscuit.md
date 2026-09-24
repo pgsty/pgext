@@ -2,6 +2,10 @@
 
 来源：
 
+- [Biscuit 3.1.0 README](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/README.md)
+- [Biscuit 3.1.0 CHANGELOG](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/CHANGELOG.md)
+- [Biscuit 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.1.0.sql)
+- [Biscuit 3.0.0 to 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.0.0--3.1.0.sql)
 - [PGXN 上的 Biscuit 3.0.0](https://pgxn.org/dist/biscuit/3.0.0/)
 - [Biscuit 3.0.0 发行说明](https://github.com/CrystallineCore/Biscuit/releases/tag/v3.0.0)
 - [Biscuit 3.0.0 README](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/README.md)
@@ -12,7 +16,7 @@
 - [Biscuit 3.0.0 安装 SQL](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/sql/biscuit.sql)
 - [Biscuit 2.5.0 至 3.0.0 升级 SQL](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/sql/biscuit--2.5.0--3.0.0.sql)
 
-`biscuit` 3.0.0 是面向 PostgreSQL 16 及以上版本的定位位图索引访问方法，用于精确执行 `LIKE` 与 `ILIKE` 过滤。它尤其适合锚定模式、`_` 通配符、长度谓词和多列合取条件。3.0.0 把索引状态保存在有 WAL 日志的关系页面中，因此崩溃恢复、时间点恢复、物理复制和热备读取都使用 PostgreSQL 的常规恢复路径。它不需要 `shared_preload_libraries`，也无需重启。
+`biscuit` 3.1.0 是面向 PostgreSQL 16 及以上版本的定位位图索引访问方法，用于精确执行 `LIKE` 与 `ILIKE` 过滤。它尤其适合锚定模式、`_` 通配符、长度谓词和多列合取条件。3.0.0 把索引状态保存在有 WAL 日志的关系页面中，因此崩溃恢复、时间点恢复、物理复制和热备读取都使用 PostgreSQL 的常规恢复路径。它不需要 `shared_preload_libraries`，也无需重启。
 
 项目仍处于积极开发阶段，并建议使用有代表性的负载进行预发布测试。其每连接内存、写放大和缓存重载特性更适合读多写少的分析负载，而不适合持续更新的 OLTP 表或超大连接池。
 
@@ -42,7 +46,7 @@ WHERE body LIKE 'timeout%';
 - `biscuit_like_ops` 只索引 `LIKE` 和 `NOT LIKE`。
 - `biscuit_ilike_ops` 只索引 `ILIKE` 和 `NOT ILIKE`。
 
-Biscuit 返回无需堆表复查的精确结果，但它是过滤索引：不提供有序、反向、仅索引或唯一扫描，不能用于 `CLUSTER`，也不支持正则表达式、相似度搜索、模糊搜索或区域设置感知的排序规则。对选择性前缀查询，带 `text_pattern_ops` 的 B-tree 通常更合适；`pg_trgm` 则专用于非锚定子串、正则表达式和相似度搜索。
+Biscuit 是过滤索引：不提供有序、反向、仅索引或唯一扫描，不能用于 `CLUSTER`，也不支持相似度搜索、模糊搜索或通用的区域设置感知排序规则。对选择性前缀查询，带 `text_pattern_ops` 的 B-tree 通常更合适；`pg_trgm` 则专用于非锚定子串、正则表达式和相似度搜索。
 
 ### 诊断与配置
 
@@ -69,3 +73,14 @@ REINDEX INDEX CONCURRENTLY public.message_body_biscuit_idx;
 ```
 
 未经修补的上游 3.0.0 归档只携带并安装 `2.5.0--3.0.0` 这一步，而早期稳定软件包暴露的目录版本为 `2.4.0` 或 `2.4.1`。Pigsty 的 3.0.0 RPM 与 DEB 软件包会先恢复缺失的目录升级路径，再应用上游步骤。使用其他源码构建或软件包时，应在 `ALTER EXTENSION` 前检查 `pg_extension_update_paths('biscuit')`；无论 SQL 路径是否可用，强制要求的 `REINDEX` 或 `REINDEX CONCURRENTLY` 都仍是独立的手工操作。
+
+### 3.1.0 版本变化
+
+3.1.0 增加 `~`、`!~`、`~*` 和 `!~*` 运算符类条目，但只可能加速能精确改写为 `LIKE` 通配模式的正则表达式。支持锚点、字面量、点号与部分重复形式，不支持分支、方括号字符类、分组与反向引用。不支持的表达式仍保持 PostgreSQL 语义，通常使用顺序扫描。区分大小写的 `~` 与 `!~` 可以精确匹配；`~*` 仅接受适当排序规则下的纯 ASCII 模式，并要求执行器重检；`!~*` 不会被加速。较窄的运算符类仍保留各自的大小写边界。
+
+```sql
+ALTER EXTENSION biscuit UPDATE TO '3.1.0';
+SELECT id, body FROM message WHERE body ~ '^timeout.*$';
+```
+
+从 3.0.0 升级会添加 SQL 运算符族条目，但不改变索引格式，因此无需因格式变化重建索引。前述 2.x 升至 3.0.0 的重建要求仍然适用。该版修复 HOT 链与部分索引构建正确性、锚定匹配恢复和待处理列表内存安全问题。无日志 Biscuit 索引在崩溃恢复后仍需执行 `REINDEX`。

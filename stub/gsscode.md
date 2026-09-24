@@ -2,45 +2,32 @@
 
 Sources:
 
-- [PGXN 1.0.0 README](https://pgxn.org/dist/gsscode/1.0.0/README.html)
-- [gsscode control file](https://api.pgxn.org/src/gsscode/gsscode-1.0.0/gsscode.control)
-- [gsscode 1.0.0 SQL definitions](https://api.pgxn.org/src/gsscode/gsscode-1.0.0/gsscode--1.0.0.sql)
-- [PostgreSQL license](https://api.pgxn.org/src/gsscode/gsscode-1.0.0/LICENSE)
+- [README](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/README.md)
+- [Control file](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode.control)
+- [SQL](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode--1.1.1.sql)
 
-`gsscode` stores a nine-character UK Office for National Statistics/Government Statistical Service geography code in 32 bits. Use it when canonical GSS codes need compact storage, btree ordering, exact comparison, or indexed country/type-prefix matching; it validates the code shape, not whether a particular code exists in the ONS register.
+`gsscode` packs a nine-character UK ONS/GSS geography code into 32 bits. Version 1.1.1 includes the corrected prefix-search semantics: a prefix predicate is not equality and must not occupy the btree equality strategy.
 
 ### Core Workflow
 
 ```sql
 CREATE EXTENSION gsscode;
-
-CREATE TABLE areas (
-    code gsscode PRIMARY KEY,
-    label text NOT NULL
-);
-
-INSERT INTO areas VALUES ('E01000001', 'Example LSOA');
-
+CREATE TABLE areas (code gsscode PRIMARY KEY, label text);
+INSERT INTO areas VALUES ('E01000001', 'Example area');
 SELECT code, country(code), gss_type(code), area(code)
 FROM areas
-WHERE code % 'E01';
+WHERE code >= gsscode_range_lower('E01')
+  AND code < gsscode_range_upper('E01');
 ```
 
-The `%` operator accepts a country letter, a three-character country/type prefix, a complete code, or an array of prefixes. It belongs to the `gsscode_ops` btree family, so a btree index can answer a supported prefix predicate directly. `!%` is its negation.
+### Matching and Registry
 
-### Objects and Registry Data
+`%` and `!%` remain Boolean prefix filters, including array forms, but no longer accelerate prefix matching through a btree index by themselves. Use `gsscode_range_lower` and `gsscode_range_upper` for a genuine half-open range. Invalid prefix lengths raise an error.
 
-- `gsscode` is the packed type; its text form is always the uppercase nine-character representation.
-- `is_valid(text)` checks the accepted lexical form without raising an input error.
-- `country(gsscode)`, `gss_type(gsscode)`, and `area(gsscode)` return the packed components.
-- `description(...)` and `type_info(...)` look up the three-character geography type in `gsscode_types`.
-- `isnan(gsscode)` identifies ONS reserved codes whose six-digit area component is `999999`.
-- `left(gsscode, integer)` plus `~`, `~*`, `!~`, and `!~*` preserve common text-query syntax after a column conversion.
+`is_valid`, `country`, `gss_type`, and `area` inspect lexical form or packed components. `description` and `type_info` consult the private `gsscode_types` registry; `isnan` recognizes reserved area codes. Text-compatible regular expressions and `left` are available but do not automatically use the base type’s btree index.
 
-`gsscode_types` contains the small shipped registry of geography types, not the hundreds of thousands of individual area names. PostgreSQL includes this table in extension configuration dumps so locally refreshed rows survive dump and restore.
+### Upgrade and Boundaries
 
-### Boundaries
+Existing 1.0.0 installations should run `ALTER EXTENSION gsscode UPDATE` after installing current files to remove the unsound operator-family entry. Replacing the library alone does not perform this catalog repair.
 
-Input must be exactly one letter followed by eight digits. Arithmetic packing deliberately accepts future country/type combinations, so successful parsing does not prove that ONS assigned the code. General regular expressions and `left(...)` render the value as text and do not use the packed prefix operator class; prefer `%` for indexable literal-prefix searches or create an expression index for a recurring `left(...)` predicate.
-
-The 1.0.0 release does not publish a PostgreSQL-major support matrix. Validate the build against the target server before deployment. Refreshing `gsscode_types` is optional and belongs to the separate `gsscode_ons_refresh` extension.
+Valid input shape does not prove that ONS assigned the code. Registry refresh belongs to `gsscode_ons_refresh`, whose control version remains 1.0.0. The core extension is relocatable and needs no preload; the release does not declare a PostgreSQL-major matrix.

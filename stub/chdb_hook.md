@@ -2,10 +2,11 @@
 
 Sources:
 
-- [PGXN 0.1.0 README](https://pgxn.org/dist/chdb/0.1.0/README.html)
-- [chdb_hook 0.1.0 documentation](https://pgxn.org/dist/chdb/0.1.0/doc/chdb_hook.html)
-- [chdb 0.1.0 distribution metadata](https://api.pgxn.org/src/chdb/chdb-0.1.0/META.json)
-- [Apache 2.0 license](https://api.pgxn.org/src/chdb/chdb-0.1.0/LICENSE.md)
+- [PGXN 0.1.1 README](https://pgxn.org/dist/chdb/0.1.1/README.html)
+- [chdb_hook 0.1.1 documentation](https://pgxn.org/dist/chdb/0.1.1/doc/chdb_hook.html)
+- [chdb 0.1.1 distribution metadata](https://api.pgxn.org/src/chdb/chdb-0.1.1/META.json)
+- [Apache 2.0 license](https://api.pgxn.org/src/chdb/chdb-0.1.1/LICENSE.md)
+- [0.1.1 changelog](https://api.pgxn.org/src/chdb/chdb-0.1.1/CHANGELOG.md)
 
 `chdb_hook` is the headless module shipped by the `chdb` distribution. It intercepts URL-based `COPY` and selected `CREATE TABLE` statements so chDB can read or write local files, HTTP resources, S3, Google Cloud Storage, Azure Blob/ABFS, and HDFS formats. It has no control file and creates no SQL objects.
 
@@ -36,4 +37,8 @@ The `structure_from` and `copy_from` table options can infer columns or populate
 
 Loading `chdb_hook` changes parsing and execution of ordinary PostgreSQL commands for the session. Granting server-file roles also gives access to cloud and HTTP paths through the hook, so combine it only with trusted SQL callers and constrained network egress. The format bridge has documented NULL, array, JSON, geometry, time, Protobuf, Parquet, Arrow, and encoding edge cases; test representative round trips before migration or backup use.
 
-Version 0.1.0 depends on the same helper and libchdb 26.7.0 or newer as `chdb`, and supports PostgreSQL 16 or newer on Linux or macOS. A helper failure aborts the initiating operation. Large imports and exports can consume substantial memory, CPU, disk, and network bandwidth, so set chDB resource limits and monitor the host.
+Version 0.1.1 depends on the same helper and libchdb 26.7.0 or newer as `chdb`, and supports PostgreSQL 15 or newer on Linux or macOS. A helper failure aborts the initiating operation. Large imports and exports can consume substantial memory, CPU, disk, and network bandwidth, so set chDB resource limits and monitor the host.
+
+### Version 0.1.1
+
+This is a binary-only update; the `chdb` control version remains `0.1` and no extension SQL update is needed. PostgreSQL 15 support is added. Large unsigned and 128/256-bit integers map to `numeric`; BFloat16 and interval types gain mappings. String conversion validates database encoding, and timestamp text export uses ISO-8601 with documented timezone handling. Test representative round trips after replacing and reloading the binaries.

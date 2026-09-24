@@ -2,40 +2,34 @@
 
 Sources:
 
-- [Official upstream README](https://github.com/pgelephant/ram/blob/be10315f3dd94f5492a26c596787b36d1410c2f6/pgraft/README.md)
-- [Official extension control file (pgraft.control)](https://github.com/pgelephant/ram/blob/be10315f3dd94f5492a26c596787b36d1410c2f6/pgraft/pgraft.control)
-- [Official extension SQL (pgraft--1.0.sql)](https://github.com/pgelephant/ram/blob/be10315f3dd94f5492a26c596787b36d1410c2f6/pgraft/pgraft--1.0.sql)
+- [README.md](https://github.com/pgElephant/pgraft/blob/bc816afee21018a6836356fcc8d2cbf44753be54/README.md)
+- [pgraft.control](https://github.com/pgElephant/pgraft/blob/bc816afee21018a6836356fcc8d2cbf44753be54/pgraft.control)
+- [pgraft--2.0.0.sql](https://github.com/pgElephant/pgraft/blob/bc816afee21018a6836356fcc8d2cbf44753be54/pgraft--2.0.0.sql)
+- [docs/user-guide/configuration.md](https://github.com/pgElephant/pgraft/blob/bc816afee21018a6836356fcc8d2cbf44753be54/docs/user-guide/configuration.md)
 
-`pgraft` — **pgraft** is a high-performance PostgreSQL extension that implements Raft consensus protocol for distributed PostgreSQL clusters. It enables automatic leader election, log replication, and fault tolerance across multiple PostgreSQL instances. Use it when administering or automating the database behavior described above. Use the pinned upstream revision linked above as the API boundary and test it on the target PostgreSQL build.
+`pgraft` provides Raft consensus, leader election, and replicated key-value state through C and Go libraries. The pinned 2.0.0 source succeeds the older RAM subproject and targets PostgreSQL 14–18; it does not make arbitrary application tables replicate automatically.
 
-### Core Workflow
+### Configure and Enable
+
+On every node, preload `pgraft` and configure a unique `pgraft.name`, the same ordered `pgraft.initial_cluster` list and `pgraft.initial_cluster_token`, local `pgraft.listen_peer_urls`, and durable `pgraft.data_dir`. Configure peer connectivity and restart the server. Then enable the SQL API in the database.
 
 ```sql
 CREATE EXTENSION pgraft;
+SELECT * FROM pgraft.get_cluster_status();
+SELECT * FROM pgraft.get_nodes();
+SELECT pgraft.is_leader(), pgraft.get_leader();
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+### SQL Operations
 
-### Important Objects
+`pgraft.kv_put` and `pgraft.kv_delete` mutate key-value state on the leader. `pgraft.kv_get` reads local state. `pgraft.add_node` and `pgraft.remove_node` change membership and must also be issued on the leader. `pgraft.log_get_replication_status` and `pgraft.log_get_stats` inspect replication. Preserve logs, snapshots, and HardState in the configured durable directory; membership and recovery require quorum-aware operation.
 
-- `pgraft_add_node(node_id integer, address text, port integer)` is an extension function and returns `boolean`.
-- `pgraft_get_cluster_status()` is an extension function and returns `TABLE`.
-- `pgraft_get_leader()` is an extension function and returns `bigint`.
-- `pgraft_get_nodes()` is an extension function and returns `TABLE`.
-- `pgraft_get_queue_status()` is an extension function and returns `TABLE`.
-- `pgraft_get_term()` is an extension function and returns `integer`.
-- `pgraft_get_version()` is an extension function and returns `text`.
-- `pgraft_get_worker_state()` is an extension function and returns `text`.
-- `pgraft_init()` is an extension function and returns `boolean`.
-- `pgraft_is_leader()` is an extension function and returns `boolean`.
-- `pgraft_log_append(term bigint, data text)` is an extension function and returns `boolean`.
-- `pgraft_log_apply(index bigint)` is an extension function and returns `boolean`.
-- `pgraft_log_commit(index bigint)` is an extension function and returns `boolean`.
-- `pgraft_log_get_entry(index bigint)` is an extension function and returns `text`.
+### Upgrade Boundary
 
-### Requirements and Caveats
+Version 2.0.0 moves the old unqualified function names into the `pgraft` schema and removes their prefix. For example, `pgraft_get_cluster_status` becomes `pgraft.get_cluster_status`. Update application calls with the extension upgrade; dependent objects can block the upgrade because it does not cascade.
 
-- The reviewed control file declares default version `1.0`.
-- The control file marks the extension as relocatable.
-- The control file does not require superuser-only installation.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+```sql
+ALTER EXTENSION pgraft UPDATE TO '2.0.0';
+```
+
+Restart after installing and upgrading so both native libraries reload together. Mutating functions are no longer executable by `PUBLIC`; grant only needed operations. These notes describe pinned 2.0.0 source, while the repository’s published release list still shows 1.0 releases.

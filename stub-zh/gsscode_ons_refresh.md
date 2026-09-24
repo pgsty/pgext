@@ -2,9 +2,9 @@
 
 来源：
 
-- [PGXN 1.0.0 README](https://pgxn.org/dist/gsscode/1.0.0/README.html)
-- [gsscode_ons_refresh 控制文件](https://api.pgxn.org/src/gsscode/gsscode-1.0.0/gsscode_ons_refresh.control)
-- [gsscode_ons_refresh 1.0.0 SQL 定义](https://api.pgxn.org/src/gsscode/gsscode-1.0.0/gsscode_ons_refresh--1.0.0.sql)
+- [PGXN 1.1.1 README](https://pgxn.org/dist/gsscode/1.1.1/README.html)
+- [gsscode_ons_refresh 控制文件](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode_ons_refresh.control)
+- [gsscode_ons_refresh 1.0.0 SQL 定义](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode_ons_refresh--1.0.0.sql)
 
 `gsscode_ons_refresh` 是可选配套扩展，用于刷新 `gsscode` 使用的 `gsscode_types` 登记表。只有希望在数据库内完成刷新时才需要它；核心压缩类型与操作符并不依赖它。
 

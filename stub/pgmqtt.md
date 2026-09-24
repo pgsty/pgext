@@ -2,11 +2,11 @@
 
 Sources:
 
-- [pgmqtt 0.4.1 README](https://github.com/RayElg/pgmqtt/blob/0.4.1/README.md)
-- [pgmqtt 0.4.1 interfaces](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/interfaces.md)
-- [pgmqtt 0.4.1 configuration](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/configuration.md)
-- [pgmqtt 0.4.1 limitations](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/limitations.md)
-- [pgmqtt 0.4.1 release notes](https://github.com/RayElg/pgmqtt/releases/tag/0.4.1)
+- [pgmqtt 0.5.1 README](https://github.com/RayElg/pgmqtt/blob/0.5.1/README.md)
+- [pgmqtt 0.5.1 interfaces](https://github.com/RayElg/pgmqtt/blob/0.5.1/docs/interfaces.md)
+- [pgmqtt 0.5.1 configuration](https://github.com/RayElg/pgmqtt/blob/0.5.1/docs/configuration.md)
+- [pgmqtt 0.5.1 limitations](https://github.com/RayElg/pgmqtt/blob/0.5.1/docs/limitations.md)
+- [pgmqtt 0.5.1 release notes](https://github.com/RayElg/pgmqtt/releases/tag/0.5.1)
 
 pgmqtt embeds an MQTT broker in PostgreSQL. It can publish INSERT, UPDATE, and DELETE changes through logical decoding and can map inbound MQTT topics and JSON payloads to table writes. Use it when database and MQTT integration justify running a network broker inside the PostgreSQL server process.
 
@@ -35,7 +35,7 @@ Create an outbound mapping:
       1
     );
 
-The mapping publishes row changes to topics such as orders/insert. The interface also accepts a QoS and template type where supported. Version 0.4.1 drains CDC changes in batches of up to 4096 records.
+The mapping publishes row changes to topics such as orders/insert. The interface also accepts a QoS and template type where supported. Version 0.5.1 drains CDC changes in batches of up to 4096 records.
 
 Inspect or remove outbound mappings:
 
@@ -79,11 +79,13 @@ pgmqtt_status reports listener, client, subscription, retained-message, CDC, inb
 
 - MQTT 5.0 and 3.1.1 are supported. QoS 0 and 1 are implemented; requested QoS 2 is downgraded to QoS 1.
 - CDC covers INSERT, UPDATE, and DELETE, not DDL or TRUNCATE. DELETE payloads may require REPLICA IDENTITY FULL.
-- The CDC ring has a finite capacity of 8192 and drops the oldest records on overflow. The QoS 0 topic buffer is capped at 4096 and also drops oldest entries; QoS 1 buffering can grow without a fixed bound.
+- The CDC ring has a finite capacity of 8192 and drops the oldest records on overflow. The QoS 0 topic buffer is capped at 4096 and also drops oldest entries; the per-client pending queue disconnects clients above 50,000 messages.
 - The community edition documents TLS through a proxy, while native TLS and some JWT features are enterprise boundaries. Verify the edition before setting listener expectations.
 
-### Version 0.4.1 and Operations
+### Version 0.5.1 and Operations
 
-The 0.4 line consolidates HTTP/worker handling and reduces panic paths; 0.4.1 raises CDC batch processing to 4096. These changes improve throughput and structure but do not make the embedded broker lossless under every overload or crash.
+Version 0.5.1 publishes tested upstream artifacts for PostgreSQL 15–18. Some server builds expose output_plugin_libraries and reject unlisted logical decoding plugins. If the worker reports that pgmqtt may not be used as an output plugin, follow the release instructions to add it to that build’s allowlist and reload configuration. Do not add this setting to a server that does not provide it.
+
+The optional enterprise multiprocess topology also requires pgmqtt.experimental_multiprocess at startup and a full restart when changed. It introduces a separate CDC worker and a table-backed outbox; it does not remove the documented overflow limits of every other message path. All pgmqtt GUCs require superuser access.
 
 Running a broker inside PostgreSQL expands the database network and resource boundary. Isolate listener interfaces, enforce authentication and topic ACLs, monitor worker lag and dropped buffers, and test failover and restart behavior before production use.

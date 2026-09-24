@@ -2,9 +2,11 @@
 
 来源：
 
-- [官方文档](https://github.com/commandprompt/pgcolumnar/blob/0e4884c18a678bf0a990e6a7dfcdd47248d9111d/README.md)
-- [扩展控制文件](https://github.com/commandprompt/pgcolumnar/blob/0e4884c18a678bf0a990e6a7dfcdd47248d9111d/pgcolumnar.control)
-- [官方仓库](https://github.com/commandprompt/pgcolumnar)
+- [README](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/README.md)
+- [Control file / 控制文件](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/pgcolumnar.control)
+- [SQL](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/pgcolumnar--1.0-alpha4.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/CHANGELOG.md)
+- [docs/limitations.md](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/docs/limitations.md)
 
 `pgcolumnar` 原生列式表访问方法，支持压缩、向量化扫描与 Parquet 工作流。
 
@@ -57,3 +59,7 @@ SELECT count(*), avg(kind) FROM events WHERE kind = 3;
 - 预加载 `pgcolumnar` 会改变集群启动状态；配置与重启应和 `CREATE EXTENSION` 分开实施。
 - 扩展会在 `pgcolumnar` 下固定或创建模式对象；权限与备份审查应包含这些对象。
 - 目录生命周期为 preview；生产使用前应测试升级、备份恢复与服务器兼容性。
+
+### Alpha 4 升级
+
+控制版本为 `1.0-alpha4`，PGXN 发行版本为 1.0.0-alpha.4。安装匹配文件后，应在每个数据库中运行 `ALTER EXTENSION pgcolumnar UPDATE`，仅替换共享库并不足够。Alpha 4 增加 Hilbert 聚簇和更多正确性修复。PostgreSQL 19 的验证基于 beta2。应保留可重新加载的原始数据，上游仍未普遍承诺未来磁盘格式变更的兼容性。部分旧限制页面的发布标签尚未更新，版本以控制文件和当前变更日志为准。

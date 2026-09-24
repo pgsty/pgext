@@ -2,15 +2,16 @@
 
 来源：
 
-- [货币模型文档](https://github.com/pt-immer/kamu-public-crates/blob/kamu-money-pg-v0.2.0/crates/money-core/README.md)
-- [扩展控制文件](https://github.com/pt-immer/kamu-public-crates/blob/kamu-money-pg-v0.2.0/extensions/money-pg/kamu-money-pg/kmoney.control)
-- [扩展清单](https://github.com/pt-immer/kamu-public-crates/blob/kamu-money-pg-v0.2.0/extensions/money-pg/kamu-money-pg/Cargo.toml)
+- [README.md](https://github.com/pt-immer/kamu-money-pg/blob/a83ceeaeb6d5c97cb6071c23c47bec172306842a/README.md)
+- [DESIGN.md](https://github.com/pt-immer/kamu-money-pg/blob/a83ceeaeb6d5c97cb6071c23c47bec172306842a/DESIGN.md)
+- [kamu-money-pg/kmoney.control](https://github.com/pt-immer/kamu-money-pg/blob/a83ceeaeb6d5c97cb6071c23c47bec172306842a/kamu-money-pg/kmoney.control)
+- [kamu-money-pg/Cargo.toml](https://github.com/pt-immer/kamu-money-pg/blob/a83ceeaeb6d5c97cb6071c23c47bec172306842a/kamu-money-pg/Cargo.toml)
 
 `kmoney` 提供定长、18 位小数的货币类型；每个 SQL 类型编码一个 ISO 4217 币种，并另有用于交换的混合币种载体。
 
 ### 启用
 
-0.2.0 版本为 PostgreSQL 15–18 提供大版本 feature。安装匹配的 pgrx 构件后，以超级用户创建不可迁移、非 trusted 的扩展：
+0.2.1 版本为 PostgreSQL 15–18 提供大版本 feature。安装匹配的 pgrx 构件后，以超级用户创建不可迁移、非 trusted 的扩展：
 
 ```sql
 CREATE EXTENSION kmoney;
@@ -41,4 +42,6 @@ FROM kmoney_usd_div('10.00'::kmoney_usd, 3, 'half_even');
 SELECT unnest(kmoney_usd_allocate('10.00'::kmoney_usd, ARRAY[1,1,1]));
 ```
 
-0.2.0 有意不提供 B-tree 或 hash 操作符类，因此这些自定义类型不能直接支撑普通 B-tree/hash 索引。取值范围限制为 `numeric(36,18)` 的数量级，并会拒绝过高精度，而不是静默舍入。
+0.2.1 有意不提供 B-tree 或 hash 操作符类，因此这些自定义类型不能直接支撑普通 B-tree/hash 索引。取值范围限制为 `numeric(36,18)` 的数量级，并会拒绝过高精度，而不是静默舍入。
+
+扩展现已迁移到独立的 kamu-money-pg 仓库。0.2.1 工作空间通过上游记录的 YugabyteDB 分支使用 pgrx 0.19.2，PostgreSQL 15–18 的类型和算术约定保持不变。

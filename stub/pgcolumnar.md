@@ -2,9 +2,11 @@
 
 Sources:
 
-- [Official documentation](https://github.com/commandprompt/pgcolumnar/blob/0e4884c18a678bf0a990e6a7dfcdd47248d9111d/README.md)
-- [Extension control file](https://github.com/commandprompt/pgcolumnar/blob/0e4884c18a678bf0a990e6a7dfcdd47248d9111d/pgcolumnar.control)
-- [Official repository](https://github.com/commandprompt/pgcolumnar)
+- [README](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/README.md)
+- [Control file](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/pgcolumnar.control)
+- [SQL](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/pgcolumnar--1.0-alpha4.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/CHANGELOG.md)
+- [docs/limitations.md](https://api.pgxn.org/src/pgcolumnar/pgcolumnar-1.0.0-alpha.4/docs/limitations.md)
 
 `pgcolumnar` Native column-oriented table access method with compression, vectorized scans, and Parquet workflows.
 
@@ -57,3 +59,7 @@ The reviewed install surface includes these prominent objects:
 - Preloading `pgcolumnar` changes cluster startup state; stage configuration and restart changes separately from `CREATE EXTENSION`.
 - The extension fixes or creates schema objects under `pgcolumnar`; include them in privilege and backup review.
 - Catalog lifecycle is preview; test upgrades, dump/restore, and server compatibility before production use.
+
+### Alpha 4 Upgrade
+
+The control version is `1.0-alpha4`, distributed on PGXN as 1.0.0-alpha.4. Install matching files and run `ALTER EXTENSION pgcolumnar UPDATE` in each database; replacing the library alone is insufficient. Alpha 4 adds Hilbert clustering and further correctness fixes. PostgreSQL 19 evidence is against beta2. Keep original data reloadable: the project still provides no general promise of compatibility across future on-disk format changes. Some older limitation-page release labels remain stale; the control file and current changelog identify this release.

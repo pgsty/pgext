@@ -1,51 +1,29 @@
-
-
-
 ## 用法
 
-> [PGroonga 文档](https://pgroonga.github.io/) | [GitHub: pgroonga/pgroonga](https://github.com/pgroonga/pgroonga)
+来源：
 
-`pgroonga_database` 是 [PGroonga](https://pgroonga.github.io/) 项目的子扩展。它为 PGroonga 提供数据库管理功能，PGroonga 使 PostgreSQL 成为支持所有语言的快速全文搜索平台。
+- [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga_database.sql)
+- [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga_database.control)
+- [Version 4.0.9 implementation](https://github.com/pgroonga/pgroonga/blob/4.0.9/src/pgroonga-database.c)
+- [Official recovery procedure](https://pgroonga.github.io/reference/functions/pgroonga-database-remove.html)
 
-PGroonga 是一个全面的全文搜索解决方案，以 [Groonga](https://groonga.org/) 作为后端。它开箱即用地支持所有语言（包括中日韩 CJK），并提供丰富功能：
+`pgroonga_database` 4.0.9 是用于恢复损坏的 PGroonga 内部数据库的辅助扩展。它只提供一个 SQL 函数，用来删除数据库目录及适用表空间目录中的 PGroonga 文件，不提供搜索访问方法。
 
-- 支持所有语言的快速全文搜索
-- 丰富的查询语法（查询语言、脚本语法）
-- JSON 搜索
-- 感知 HTML/XML 标签的高亮
-- 相似搜索
-- 同义词扩展
-- 自动补全
-- 查询日志分析
+### 恢复流程
 
-PGroonga 文档非常详尽，涵盖数百页。详细用法、API 参考、运算符、函数和调优指南请参见官方文档：
+普通索引损坏可能只需 REINDEX 即可修复。只有内部 Groonga 数据库本身损坏、确定需要重建时，才使用此模块。安排恢复窗口，先断开所有使用 PGroonga 的会话；文件被删除时，残留会话可能崩溃。
 
-- [PGroonga 官方文档](https://pgroonga.github.io/)
-- [入门指南](https://pgroonga.github.io/install/)
-- [教程](https://pgroonga.github.io/tutorial/)
-- [使用指南](https://pgroonga.github.io/how-to/)
-- [参考手册](https://pgroonga.github.io/reference/)
-
-## 快速开始
+在尚未打开任何 PGroonga 索引的新管理连接中执行：
 
 ```sql
 CREATE EXTENSION pgroonga_database;
-CREATE EXTENSION pgroonga;
-
--- 创建包含文本内容的表
-CREATE TABLE memos (
-  id integer,
-  content text
-);
-
--- 创建 PGroonga 索引
-CREATE INDEX pgroonga_content_index ON memos USING pgroonga (content);
-
--- 插入数据
-INSERT INTO memos VALUES (1, 'PostgreSQL is a relational database management system.');
-INSERT INTO memos VALUES (2, 'Groonga is a fast full text search engine that supports all languages.');
-INSERT INTO memos VALUES (3, 'PGroonga is a PostgreSQL extension that uses Groonga as its backend.');
-
--- 全文搜索
-SELECT * FROM memos WHERE content &@~ 'PostgreSQL OR Groonga';
+SELECT pgroonga_database_remove();
 ```
+
+执行后立即断开该连接，再建立新连接，对**每一个** PGroonga 索引执行 REINDEX，从 PostgreSQL 表数据重新创建内部数据库。完成所有受影响索引的重建和检查后，再恢复应用流量。
+
+### 返回值与边界
+
+`pgroonga_database_remove()` 完成时返回 true，失败时报错。它直接删除内部文件，既不导出文件，也不重建索引。不要在清理连接中使用其他 PGroonga 功能。此操作不是例行清理、卸载命令，也不能仅靠包裹在 SQL 事务中就保证安全。
+
+控制文件未将扩展标记为受信任或可迁移模式。C 实现在遍历位置时检查表空间所有权，应使用拥有所需位置的管理员，并确认清理和全量索引重建完成。模块不需要预加载，仅应为恢复任务启用。

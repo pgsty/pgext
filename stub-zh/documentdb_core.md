@@ -2,10 +2,10 @@
 
 来源：
 
-- [DocumentDB v0.114-0 README](https://github.com/documentdb/documentdb/blob/v0.114-0/README.md)
-- [`documentdb_core`控制文件](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_core/documentdb_core.control)
-- [BSON SQL定义](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
-- [官方预加载助手](https://github.com/documentdb/documentdb/blob/v0.114-0/scripts/preload_libraries.sh)
+- [DocumentDB v0.117-0 README](https://github.com/documentdb/documentdb/blob/v0.117-0/README.md)
+- [`documentdb_core`控制文件](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_core/documentdb_core.control)
+- [BSON SQL定义](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
+- [官方预加载助手](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
 
 `documentdb_core`是DocumentDB使用的低层BSON类型和操作符层。通常它作为`documentdb`的依赖项安装，自身不提供集合CRUD、MongoDB网络协议或网关。
 
@@ -57,4 +57,4 @@ SELECT documentdb_core.bson_get_value_text(
 
 BSON比较、索引和数值语义遵循DocumentDB的实现，不应假设与PostgreSQL `jsonb`匹配。大多数对象是`documentdb`的基础架构；寻求集合和MongoDB命令的应用程序应使用父扩展或网关而非直接构建在内部类型上。
 
-版本0.114-0保持`documentdb_core`与整个DocumentDB堆栈一致。上游变更日志未标识此发布单独的用户核心API迁移，因此没有新的独立工作流程声明。
+使用 SQL 扩展版本 0.117-0，并与其他 DocumentDB 组件保持匹配。核心层仍提供 BSON 基础能力，集合操作和网关工作流由上层扩展承担。

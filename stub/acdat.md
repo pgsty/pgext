@@ -2,13 +2,14 @@
 
 Sources:
 
-- [Official README v0.1.0](https://github.com/Vonng/ac/blob/v0.1.0/README.md)
-- [Extension control file](https://github.com/Vonng/ac/blob/v0.1.0/acdat.control)
-- [Versioned installation SQL](https://github.com/Vonng/ac/blob/v0.1.0/sql/acdat--0.1.0.sql)
-- [Official usage guide](https://github.com/Vonng/ac/blob/v0.1.0/docs/usage.md)
-- [Runnable SQL demonstration](https://github.com/Vonng/ac/blob/v0.1.0/examples/demo.sql)
+- [Official release v0.1.1](https://github.com/pgsty/acdat/releases/tag/v0.1.1)
+- [Official README v0.1.1](https://github.com/pgsty/acdat/blob/v0.1.1/README.md)
+- [Extension control file](https://github.com/pgsty/acdat/blob/v0.1.1/acdat.control)
+- [Versioned installation SQL](https://github.com/pgsty/acdat/blob/v0.1.1/sql/acdat--0.1.1.sql)
+- [Official usage guide](https://github.com/pgsty/acdat/blob/v0.1.1/docs/USAGE.md)
+- [Runnable SQL demonstration](https://github.com/pgsty/acdat/blob/v0.1.1/examples/demo.sql)
 
-`acdat` 0.1.0 compiles a large dictionary of exact literal patterns into an immutable Aho-Corasick Double-Array machine, then scans each `text` or `bytea` value once for matching or replacement. It is designed for stable, repeatedly used dictionaries such as policy rules, indicators of compromise, entity names, and redaction aliases.
+`acdat` 0.1.1 compiles a large dictionary of exact literal patterns into an immutable Aho-Corasick Double-Array machine, then scans each `text` or `bytea` value once for matching or replacement. It is designed for stable, repeatedly used dictionaries such as policy rules, indicators of compromise, entity names, and redaction aliases.
 
 ### Core Workflow
 
@@ -86,7 +87,9 @@ Application tables remain the source of truth. Logical dumps include catalog met
 
 ### Compatibility and Safety
 
-Version 0.1.0 is tested on PostgreSQL 14 through 18. It needs no preload or server restart, has no external extension dependency, and defines no GUC. The control file fixes the schema to `acdat`, sets `relocatable = false` and `trusted = false`, so `CREATE EXTENSION` requires a superuser.
+Version 0.1.1 is tested on PostgreSQL 14 through 18. It needs no preload or server restart, has no external extension dependency, and defines no GUC. The control file fixes the schema to `acdat`, sets `relocatable = false` and `trusted = false`, so `CREATE EXTENSION` requires a superuser.
+
+The 0.1.1 release preserves the 0.1.0 SQL API and format-major-1 machine compatibility and ships the `0.1.0 -> 0.1.1` extension update path. It also adds cancellable compilation, a conservative build-work budget, and a faster materialized scan path without changing the stored machine contract.
 
 ACDAT indexes the pattern dictionary, not the document table: scanning a large existing table still reads its candidate rows. Matching is exact and case-sensitive; the extension does not provide regular expressions, fuzzy matching, tokenization, automatic case folding, Unicode normalization, or a document-side index. The text engine supports UTF-8 and single-byte server encodings, while binary data should use the bytea interface. Materialize `(document_id, pattern_id)` hits into an application table when repeated reverse lookup is required.
 

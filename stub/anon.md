@@ -2,10 +2,12 @@
 
 Sources:
 
-- [PostgreSQL Anonymizer 3.1.3 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/README.md)
-- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/docs/masking_functions.md)
-- [3.1.3 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.1.3/CHANGELOG.md)
+- [PostgreSQL Anonymizer 3.2.2 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.2/README.md)
+- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.2/docs/masking_functions.md)
+- [3.2.2 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.2/CHANGELOG.md)
 - [Official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/)
+- [3.2.2 upgrade guide](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.2/docs/UPGRADE.md)
+- [3.2 series release announcement](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.2/NEWS.md)
 
 `anon` is PostgreSQL Anonymizer. It applies declarative masking rules for protected query access, produces anonymized data sets, and provides pseudonymization and randomized-response helpers. Use it when realistic data must remain useful without exposing the original sensitive values; treat masking policy, role grants, and access to the unmasked database as part of the security boundary.
 
@@ -56,4 +58,6 @@ Queries made as `reporting` see the transformed values. Privileged users still s
 
 `anon` is superuser-installed and non-relocatable. Test every policy with the same grants and connection path used by the intended consumer. Randomization is not automatically deterministic; use a confirmed pseudonymization function when stable equality is required. Static anonymization is destructive, so run it on a copy and verify constraints and application behavior afterward.
 
-Version 3.1.3 reruns missing ARM builds and changes release metadata, with no new SQL workflow. The material delta since 3.1.1 is the 3.1.2 security hardening for `anon.hash` and `anon.digest`; deployments using those functions should upgrade rather than relying on the old labels.
+Version 3.2.0 introduces localized deterministic `anon.seeded_*` functions; the older `anon.pseudo_*` family is deprecated. It fixes three upstream-reported security vulnerabilities and defaults to refusing masking operations executed by superusers. Use a dedicated non-superuser masking role. Setting `anon.nosuperuser` to false removes that barrier and is not the recommended upgrade path. The masking-rule JSON format changed; re-export rules after upgrading. This documentation describes upstream 3.2.2 even where distribution packages remain on an earlier version.
+
+Versions 3.2.1 and 3.2.2 restore missing ARM builds, including PostgreSQL 19; they add no further SQL workflow changes.

@@ -1,9 +1,11 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/orioledb/orioledb), [beta16 release](https://github.com/orioledb/orioledb/releases/tag/beta16), [patched PostgreSQL tree](https://github.com/orioledb/postgres)
+Sources:
+
+- [beta17 README](https://github.com/orioledb/orioledb/blob/beta17/README.md)
+- [beta17 release](https://github.com/orioledb/orioledb/releases/tag/beta17)
+- [Control file](https://github.com/orioledb/orioledb/blob/beta17/orioledb.control)
+- [Patched PostgreSQL](https://github.com/orioledb/postgres)
 
 OrioleDB is a new storage engine for PostgreSQL that provides modern approaches to database capacity, capabilities, and performance. It uses undo log-based MVCC, copy-on-write checkpoints, and row-level WAL to eliminate bloat and the need for VACUUM.
 
@@ -33,7 +35,7 @@ CREATE TABLE my_table (
 ) USING orioledb;
 ```
 
-All standard PostgreSQL operations work on OrioleDB tables:
+Use ordinary DML on OrioleDB tables, subject to the documented compatibility limits:
 
 ```sql
 INSERT INTO my_table (name, value) VALUES ('test', 42);
@@ -68,4 +70,4 @@ CREATE DATABASE mydb LOCALE_PROVIDER icu ICU_LOCALE 'en' TEMPLATE template0;
 
 ### Version Notes
 
-OrioleDB 1.8-beta16 bumps the extension SQL version to `1.8`, bases patched PostgreSQL builds on 16.13, 17.9, and 18.4, and adds PostgreSQL 18 support. New user-facing surfaces include `orioledb.serializable` for SERIALIZABLE support and `verify_orioledb(regclass, boolean)` for `pg_amcheck` integration. The release also includes recovery, replication, index-scan, vacuum, and DDL correctness fixes.
+OrioleDB beta17 uses extension SQL version `1.9` and patched PostgreSQL bases 16.15, 17.11, and 18.6. It adds concurrent creation/rebuilding of native btree indexes, cross-major upgrade support, page checksums, and parallel index/bitmap scans, together with recovery and DDL correctness fixes. Follow the beta17 binary and storage compatibility instructions before upgrading; a new SQL version does not make the engine usable on an unpatched PostgreSQL server.

@@ -1,11 +1,13 @@
-
-
-
 ## Usage
 
-- Sources: [project README](https://github.com/rdkit/rdkit/blob/master/README.md), [cartridge docs](https://www.rdkit.org/docs/Cartridge.html), [2025.03.6 release](https://github.com/rdkit/rdkit/releases/tag/Release_2025.03.6)
+Sources:
 
-RDKit ships a PostgreSQL cartridge for cheminformatics storage, search, fingerprints, and descriptors. The cartridge docs remain the main upstream usage reference; the 2025.03.6 release notes do not call out cartridge-specific user-facing changes.
+- [Cartridge documentation](https://github.com/rdkit/rdkit/blob/Release_2026_03_6/Docs/Book/Cartridge.md)
+- [Control](https://github.com/rdkit/rdkit/blob/Release_2026_03_6/Code/PgSQL/rdkit/rdkit.control)
+- [SQL template](https://github.com/rdkit/rdkit/blob/Release_2026_03_6/Code/PgSQL/rdkit/rdkit.sql.in)
+- [Upgrade script](https://github.com/rdkit/rdkit/blob/Release_2026_03_6/Code/PgSQL/rdkit/update_sql/rdkit--4.7.0--4.8.0.sql.in)
+
+`rdkit` provides molecular types, substructure search, fingerprints and chemical descriptors. This page follows the PostgreSQL cartridge shipped in RDKit 2026.03.6.
 
 ### Create The Extension
 
@@ -50,3 +52,7 @@ The cartridge docs also expose validation and descriptor helpers such as:
 - `mol_numrings()`
 
 These functions are the main user-facing surface for SQL analytics on molecular structures.
+
+### Version and Upgrade Boundary
+
+The RDKit toolkit release 2026.03.6 contains SQL extension version `4.8.0`; these are different version namespaces. The upstream `4.7.0` to `4.8.0` SQL template changes function costs, but its `fmcs_smiles` statement has a line comment that swallows the cost clause and terminator. Do not assume an unpatched `ALTER EXTENSION rdkit UPDATE` path works: verify the installed upgrade script and test the update on a restored copy first. A packaging patch is distinct from the upstream source.

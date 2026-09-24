@@ -2,13 +2,14 @@
 
 来源：
 
-- [官方 README v0.1.0](https://github.com/Vonng/ac/blob/v0.1.0/README.md)
-- [扩展控制文件](https://github.com/Vonng/ac/blob/v0.1.0/acdat.control)
-- [版本化安装 SQL](https://github.com/Vonng/ac/blob/v0.1.0/sql/acdat--0.1.0.sql)
-- [官方使用指南](https://github.com/Vonng/ac/blob/v0.1.0/docs/usage.md)
-- [可执行 SQL 演示](https://github.com/Vonng/ac/blob/v0.1.0/examples/demo.sql)
+- [官方版本 v0.1.1](https://github.com/pgsty/acdat/releases/tag/v0.1.1)
+- [官方 README v0.1.1](https://github.com/pgsty/acdat/blob/v0.1.1/README.md)
+- [扩展控制文件](https://github.com/pgsty/acdat/blob/v0.1.1/acdat.control)
+- [版本化安装 SQL](https://github.com/pgsty/acdat/blob/v0.1.1/sql/acdat--0.1.1.sql)
+- [官方使用指南](https://github.com/pgsty/acdat/blob/v0.1.1/docs/USAGE.md)
+- [可执行 SQL 演示](https://github.com/pgsty/acdat/blob/v0.1.1/examples/demo.sql)
 
-`acdat` 0.1.0 将大规模精确字面量模式词典编译为不可变的 Aho-Corasick Double-Array machine，再对每个 `text` 或 `bytea` 值执行一次扫描以完成匹配或替换。它适合策略规则、失陷指标、实体名称、脱敏别名等稳定且会被反复使用的词典。
+`acdat` 0.1.1 将大规模精确字面量模式词典编译为不可变的 Aho-Corasick Double-Array machine，再对每个 `text` 或 `bytea` 值执行一次扫描以完成匹配或替换。它适合策略规则、失陷指标、实体名称、脱敏别名等稳定且会被反复使用的词典。
 
 ### 核心流程
 
@@ -86,7 +87,9 @@ WHERE name = 'moderation';
 
 ### 兼容性与安全
 
-0.1.0 已在 PostgreSQL 14 至 18 上测试，不需要预加载或重启服务器，没有外部扩展依赖，也不定义 GUC。控制文件将 schema 固定为 `acdat`，并设置 `relocatable = false` 和 `trusted = false`，因此 `CREATE EXTENSION` 需要超级用户。
+0.1.1 已在 PostgreSQL 14 至 18 上测试，不需要预加载或重启服务器，没有外部扩展依赖，也不定义 GUC。控制文件将 schema 固定为 `acdat`，并设置 `relocatable = false` 和 `trusted = false`，因此 `CREATE EXTENSION` 需要超级用户。
+
+0.1.1 保持 0.1.0 SQL API 与 format-major-1 machine 兼容，并提供 `0.1.0 -> 0.1.1` 扩展升级路径；同时加入可取消编译、保守的构建工作量预算和更快的物化扫描路径，而不改变持久化 machine 契约。
 
 ACDAT 索引的是模式词典，而不是文档表：扫描已有大表时仍需读取候选行。匹配是精确且区分大小写的；扩展不提供正则表达式、模糊匹配、分词、自动大小写折叠、Unicode 规范化或文档侧索引。文本引擎支持 UTF-8 和单字节服务器编码，二进制数据应使用 bytea 接口。需要反复反向查询时，应将 `(document_id, pattern_id)` 命中物化到应用表中。
 

@@ -5,18 +5,18 @@
 
 来源：
 
-- [pgGraph v1.2.0 README](https://github.com/Evokoa/pgGraph/blob/v1.2.0/README.md)
-- [v1.2.0 发行说明](https://github.com/Evokoa/pgGraph/releases/tag/v1.2.0)
-- [SQL API 参考](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/api-reference.mdx)
-- [Schema 注册](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/schema-registration.mdx)
-- [管理与安全](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/administration-and-security.mdx)
-- [故障排查](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/troubleshooting.mdx)
-- [扩展控制文件](https://github.com/Evokoa/pgGraph/blob/v1.2.0/graph/graph.control)
-- [v1.1.0 到 v1.2.0 升级 SQL](https://github.com/Evokoa/pgGraph/blob/v1.2.0/graph/sql/graph--1.1.0--1.2.0.sql)
+- [pgGraph v1.2.1 README](https://github.com/Evokoa/pgGraph/blob/v1.2.1/README.md)
+- [v1.2.1 发行说明](https://github.com/Evokoa/pgGraph/releases/tag/v1.2.1)
+- [SQL API 参考](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/api-reference.mdx)
+- [Schema 注册](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/schema-registration.mdx)
+- [管理与安全](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/administration-and-security.mdx)
+- [故障排查](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/troubleshooting.mdx)
+- [扩展控制文件](https://github.com/Evokoa/pgGraph/blob/v1.2.1/graph/graph.control)
+- [v1.2.0 到 v1.2.1 升级 SQL](https://github.com/Evokoa/pgGraph/blob/v1.2.1/graph/sql/graph--1.2.0--1.2.1.sql)
 
 `pggraph` 是包名与 PGXN 发行名，但安装到 PostgreSQL 中的扩展名是 `graph`。它从普通 PostgreSQL 表构建派生图产物，并以源表作为事实来源，通过 `graph` schema 提供图搜索、遍历、最短路径、GQL 风格读取，以及部分映射式写入。
 
-版本 1.2.0 支持 PostgreSQL 14-18、命名图、按图隔离的授权与配额、持久同步、有界遍历与分析、维护任务，以及选定的 GQL 读写 profile。它还通过有边界的开放词汇类型字典，移除了历史上 254 个关系标签的上限。它不声明支持完整 ISO GQL、完整 openCypher 或公开 SQL/PGQ `GRAPH_TABLE` surface。标准 PostgreSQL SQLSTATE 会与稳定的 `PGxxx` detail 配对，供应用诊断。
+版本 1.2.1 支持 PostgreSQL 14-18、命名图、按图隔离的授权与配额、持久同步、有界遍历与分析、维护任务，以及选定的 GQL 读写 profile。它还通过有边界的开放词汇类型字典，移除了历史上 254 个关系标签的上限。它不声明支持完整 ISO GQL、完整 openCypher 或公开 SQL/PGQ `GRAPH_TABLE` surface。标准 PostgreSQL SQLSTATE 会与稳定的 `PGxxx` detail 配对，供应用诊断。
 
 ### 基本图构建
 
@@ -178,19 +178,20 @@ SELECT * FROM graph.projection_status();
 
 图管理覆盖 catalog 变更、构建、同步回放、维护、配额、运行时图加载和全局分析。命名图权限包括 `read`、`write`、`build`、`admin`，但图级 `read` 本身不够：hydrated 读取仍需要源表 `SELECT` 权限。选中图的 tenant 也会默认约束遍历、搜索、GQL 与 Cypher 调用，除非显式传入匹配的 tenant。
 
-### 升级到 1.2.0
+### 升级到 1.2.1
 
-1.1.0 到 1.2.0 的 catalog 更新是加法式的：它会安装 `graph.edge_types()` 和 `graph.reset(boolean)`，但不替换已有函数对象、owner 或显式授权。
+安装匹配的 1.2.1 软件包前先备份 PostgreSQL，再更新各数据库，并重建每个已注册图。命名图也必须逐一选中后重建：
 
 ```sql
-ALTER EXTENSION graph UPDATE TO '1.2.0';
-
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'graph';
+ALTER EXTENSION graph UPDATE TO '1.2.1';
+SELECT * FROM graph.build();
+SELECT extversion FROM pg_extension WHERE extname = 'graph';
+SELECT * FROM graph.status();
 ```
 
-已有 v6 产物仍可读取。新构建会发布 v7 产物；当基础产物本身需要表示超过 254 种关系类型时，应重新构建。不支持就地降级，因为 1.1 binary 无法读取 v7 产物。回滚需要使用匹配的 1.1.0 软件包恢复升级前的 PostgreSQL 备份，再从恢复后的源表重建派生图状态。
+此次重建是必需步骤，用于建立数据库级文件根目录、目录来源校验和事务化代际状态；旧产物不会自动接管，源表和注册信息仍是权威来源。逻辑恢复后也需重建。更新保留既有 SQL 对象标识、所有者与显式授权。不支持就地替换二进制降级；回滚应恢复升级前备份与匹配的旧软件包，再重建派生图状态。
+
+新增的 `graph.sync_retention()` 是所选图的管理员诊断接口，报告同步日志保留与清理阻碍，但不会执行清理或获取写锁。版本 1.2.1 还修复了同步回放、事务回滚、数据库间产物隔离与部分 GQL 查询结果问题。
 
 ### 注意事项
 

@@ -2,10 +2,10 @@
 
 Sources:
 
-- [DocumentDB v0.114-0 README](https://github.com/documentdb/documentdb/blob/v0.114-0/README.md)
-- [`documentdb_core` control file](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_core/documentdb_core.control)
-- [BSON SQL definitions](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
-- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.114-0/scripts/preload_libraries.sh)
+- [DocumentDB v0.117-0 README](https://github.com/documentdb/documentdb/blob/v0.117-0/README.md)
+- [`documentdb_core` control file](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_core/documentdb_core.control)
+- [BSON SQL definitions](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
+- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
 
 `documentdb_core` is the low-level BSON type and operator layer used by DocumentDB. It is normally installed as a dependency of `documentdb`; by itself it does not provide collection CRUD, the MongoDB wire protocol, or the gateway.
 
@@ -57,4 +57,4 @@ Use explicit schema qualification unless `documentdb_core` is in `search_path`.
 
 BSON comparison, indexing, and numeric semantics follow DocumentDB's implementation and should not be assumed to match PostgreSQL `jsonb`. Most objects are infrastructure for `documentdb`; applications seeking collections and MongoDB commands should use the parent extension or gateway rather than building directly on internal types.
 
-Version 0.114-0 keeps `documentdb_core` aligned with the rest of the DocumentDB stack. The upstream changelog does not identify a separate end-user core API migration for this release, so no new standalone workflow is claimed.
+Use SQL extension version 0.117-0 with matching DocumentDB components. This core layer continues to supply BSON infrastructure; collection and gateway workflows belong to the parent extension.

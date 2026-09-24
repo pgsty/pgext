@@ -1,11 +1,15 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/plv8/plv8/blob/r3.2/README.md)，[Docs site](https://plv8.github.io/)，[Built-ins](https://github.com/plv8/plv8/blob/r3.2/docs/BUILTINS.md)，[Runtime configuration](https://github.com/plv8/plv8/blob/r3.2/docs/CONFIGURATION.md)，[Tag v3.2.4](https://github.com/plv8/plv8/tree/v3.2.4)
+来源：
 
-`plv8` 是 PostgreSQL 的 trusted JavaScript procedural language，由 V8 引擎驱动。上游当前将扩展标记为 `v3.2.4`；Pigsty 的 `3.2.4-2` 包版本只是打包修订，不代表新的上游扩展发布。
+- [README](https://github.com/plv8/plv8/blob/v3.2.5/README.md)
+- [Built-ins](https://github.com/plv8/plv8/blob/v3.2.5/docs/BUILTINS.md)
+- [Configuration](https://github.com/plv8/plv8/blob/v3.2.5/docs/CONFIGURATION.md)
+- [Changes](https://github.com/plv8/plv8/blob/v3.2.5/Changes)
+- [Control](https://github.com/plv8/plv8/blob/v3.2.5/plv8.control.common)
+- [SQL template](https://github.com/plv8/plv8/blob/v3.2.5/plv8.sql.common)
+
+`plv8` 基于 V8 为 PostgreSQL 提供可信的 JavaScript 存储过程语言。本文依据上游 3.2.5，包含有效用户上下文相关的崩溃修复与 PostgreSQL 19 支持。
 
 ### 基本使用
 
@@ -49,6 +53,8 @@ SET plv8.memory_limit = 512;
 
 ### 注意事项
 
-- 当前文档说明支持 PostgreSQL 13 及以上版本。
+- 3.2.5 的 CI 矩阵覆盖 PostgreSQL 14–19；上游主版本支持与下游软件包可用范围需分别看待。
+- 创建扩展需要超级用户；所安装的 JavaScript 语言属于可信语言，并不意味着普通用户可直接安装该扩展。安装 SQL 撤销了 PUBLIC 对 `plv8_info()` 的执行权限。
+- 3.2.5 修复了缓存函数经 `SECURITY DEFINER`、`SET ROLE` 切换有效用户或在 `plv8_reset()` 后执行时的崩溃，也修复了异常消息无法转换为字符串时的崩溃。
 - 每个 session 都有独立的全局 JavaScript runtime；切换 role 会初始化单独的 runtime context。
 - `plv8.execution_timeout` 仅在扩展以 execution-timeout 支持编译时生效。

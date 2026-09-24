@@ -1,11 +1,15 @@
-
-
-
 ## Usage
 
-Source: [README](https://github.com/plv8/plv8/blob/r3.2/README.md), [Docs site](https://plv8.github.io/), [Built-ins](https://github.com/plv8/plv8/blob/r3.2/docs/BUILTINS.md), [Runtime configuration](https://github.com/plv8/plv8/blob/r3.2/docs/CONFIGURATION.md), [Tag v3.2.4](https://github.com/plv8/plv8/tree/v3.2.4)
+Sources:
 
-`plv8` is a trusted JavaScript procedural language for PostgreSQL, powered by the V8 engine. Upstream currently tags the extension as `v3.2.4`; Pigsty's `3.2.4-2` package version is a packaging revision rather than a new upstream extension release.
+- [README](https://github.com/plv8/plv8/blob/v3.2.5/README.md)
+- [Built-ins](https://github.com/plv8/plv8/blob/v3.2.5/docs/BUILTINS.md)
+- [Configuration](https://github.com/plv8/plv8/blob/v3.2.5/docs/CONFIGURATION.md)
+- [Changes](https://github.com/plv8/plv8/blob/v3.2.5/Changes)
+- [Control](https://github.com/plv8/plv8/blob/v3.2.5/plv8.control.common)
+- [SQL template](https://github.com/plv8/plv8/blob/v3.2.5/plv8.sql.common)
+
+`plv8` provides a trusted JavaScript procedural language powered by V8. This page follows upstream 3.2.5, including its effective-user crash fixes and PostgreSQL 19 support.
 
 ### Basic use
 
@@ -49,6 +53,8 @@ SET plv8.memory_limit = 512;
 
 ### Caveats
 
-- Current docs state support for PostgreSQL 13 and above.
+- The 3.2.5 CI matrix covers PostgreSQL 14–19. PostgreSQL-major support is separate from the versions available in downstream packages.
+- Creating the extension requires a superuser; the installed JavaScript language is trusted, which does not make the extension itself installable by an unprivileged user. `plv8_info()` has its public execution privilege revoked by the installation SQL.
+- Version 3.2.5 fixes crashes when a cached function runs under a different effective user via `SECURITY DEFINER` or `SET ROLE`, or after `plv8_reset()`, and when an exception message cannot be converted to a string.
 - Each session has its own global JavaScript runtime; switching roles initializes a separate runtime context.
 - `plv8.execution_timeout` only applies when the extension is compiled with execution-timeout support.

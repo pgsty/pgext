@@ -2,38 +2,63 @@
 
 来源：
 
-- [Official database.dev 包页面](https://database.dev/dventimi/pg_partition_magician)
+- [database.dev package](https://database.dev/dventimi/pg_partition_magician)
+- [Version 0.6.0 release SQL](https://github.com/dventimisupabase/pg_partition_magician/releases/download/v0.6.0/pg_partition_magician--0.6.0.sql)
+- [Version 0.6.0 control file](https://github.com/dventimisupabase/pg_partition_magician/blob/v0.6.0/pgpm_core/extension.control)
+- [Version 0.6.0 README](https://github.com/dventimisupabase/pg_partition_magician/blob/v0.6.0/README.md)
+- [Version 0.6.0 guide](https://github.com/dventimisupabase/pg_partition_magician/blob/v0.6.0/docs/guide.md)
+- [Version 0.6.0 API reference](https://github.com/dventimisupabase/pg_partition_magician/blob/v0.6.0/docs/reference.md)
+- [Version 0.6.0 changelog](https://github.com/dventimisupabase/pg_partition_magician/blob/v0.6.0/CHANGELOG.md)
 
-`dventimi@pg_partition_magician` — Pure-SQL 在线 RANGE 分区管理器（时间 / ID / UUIDv7），由 pg_cron 驱动。请使用它来对应相应的分析或存储工作流。在集成到应用程序 SQL 之前，必须先安装并验证其扩展依赖项。
+`dventimi@pg_partition_magician` 使用 SQL 和 PL/pgSQL 管理原生 RANGE 分区，支持时间、数值、UUIDv7 以及符合编码要求的文本键。转换时会将原表保留为有明确边界的历史分区；把这部分历史数据拆成更小的分区是另一项操作。
 
-### 核心工作流
+### 启用与核心工作流
+
+本条目对应 database.dev 包。虽然 GitHub 所有者名为 `dventimisupabase`，registry 中的注册名称仍为 `dventimi@pg_partition_magician`。其 `0.6.0` 版本的 registry 安装内容与官方发布 SQL 一致。在已配置 database.dev 安装器和 `pg_tle` 的环境中，先注册包，再使用带双引号的扩展名称启用。必须先在当前数据库中启用依赖的 `pg_cron` 扩展。
 
 ```sql
-CREATE EXTENSION "dventimi@pg_partition_magician";
+SELECT dbdev.install('dventimi@pg_partition_magician');
+CREATE EXTENSION "dventimi@pg_partition_magician" VERSION '0.6.0';
+SELECT pgpm.version();
 ```
 
-在目标数据库中安装扩展，当可用时运行最小的上游示例，并在将其集成到应用程序 SQL 之前验证已安装的版本和返回值。
+下面假设已有 `public.events` 表，其中 `created_at` 列非空且随写入单调增长。主键或唯一约束必须包含该列；没有主键或唯一约束的表也受支持。转换必须在自动提交模式下作为顶层语句执行：`pgpm.transmute` 会在不同阶段之间提交事务，不能放入外层事务。
+
+```sql
+CALL pgpm.transmute(
+  p_parent   => 'public.events',
+  p_control  => 'created_at',
+  p_interval => interval '1 month',
+  p_obtain   => 7,
+  p_retain   => NULL
+);
+SELECT pgpm.schedule();
+SELECT * FROM pgpm.status();
+SELECT pgpm.resume('public.events');
+```
+
+转换后，表的定时维护默认处于暂停状态。恢复维护前应检查分区边界。此例无限期保留历史分区。`pgpm.schedule()` 会创建两个独立调度的维护任务，默认均每分钟运行一次。
 
 ### 重要对象
 
-- `pgpm._adopt` 是一个扩展函数。
-- `pgpm._create_partition` 是一个扩展函数。
-- `pgpm._decode` 是一个扩展函数。
-- `pgpm._encode` 是一个扩展函数。
-- `pgpm._frontier_native` 是一个扩展函数。
-- `pgpm._grid_floor` 是一个扩展函数。
-- `pgpm._grid_next` 是一个扩展函数。
-- `pgpm._native_gt` 是一个扩展函数。
-- `pgpm._native_type` 是一个扩展函数。
-- `pgpm._part_name` 是一个扩展函数。
-- `pgpm._ts_to_uuid` 是一个扩展函数。
-- `pgpm._uuid_to_ts` 是一个扩展函数。
-- `pgpm.adopt(p_parent regclass, p_control name, p_interval interval, p_premake int default 4, p_retention interval default null, p_keep_default boolean default true, p_drain_batch int default 5000, p_anchor timestamptz default '2000-01-01 00:00:00+00', p_paused boolean def…)` 是一个扩展函数并返回 `regclass`。
-- `pgpm.adopt_by_id(p_parent regclass, p_control name, p_step bigint, p_premake int default 4, p_retention bigint default null, p_keep_default boolean default true, p_drain_batch int default 5000, p_anchor bigint default 0, p_paused boolean default true, p_incoming_fks text defau…)` 是一个扩展函数并返回 `regclass`。
+| 对象 | 用途 |
+| --- | --- |
+| `pgpm.transmute` | 转换普通表并登记分区策略。 |
+| `pgpm.obtain`, `pgpm.extend_to` | 创建未来分区；在已知键值将大幅跳跃之前主动扩展覆盖范围。 |
+| `pgpm.set_regrain`, `pgpm.regrain_history` | 启用分批历史拆分，或手动驱动历史拆分。 |
+| `pgpm.set_retain`, `pgpm.retain` | 设置或执行保留策略；符合条件的旧分区会被删除。 |
+| `pgpm.pause`, `pgpm.resume` | 暂停或恢复某张表的定时维护。 |
+| `pgpm.schedule`, `pgpm.unschedule` | 在安装调度器的数据库中管理维护任务。 |
+| `pgpm.status()`, `pgpm.config`, `pgpm.log` | 检查分区覆盖范围、策略、进度与失败记录。 |
+| `pgpm.version()`, `pgpm.installed` | 查看已安装的实现版本和 SQL 安装历史。 |
 
-### 要求与注意事项
+### 要求与运行边界
 
-- 该目录记录版本为 `0.1.0`。
-- 先安装确认的扩展依赖项：`pg_cron`。
-- 这是一个 database.dev/pg_tle 包；在发出引用的 `CREATE EXTENSION` 身份之前，请先注册或生成其包迁移。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况。
+- 上游测试覆盖 PostgreSQL 15–18。对象位于固定的 `pgpm` 模式。扩展使用 SQL 和 PL/pgSQL，自身不含共享库；定时运行依赖服务器既有的 `pg_cron` 配置。
+- 安装和表转换需要相应的模式、DDL 权限与表所有权。调度和维护应由有权操作目标表并使用调度器的角色执行；这些 SQL 例程不提供提权封装。
+- 转换会扫描原表以验证边界，并短暂持有目录操作所需的锁。转换期间，超出这些边界的写入会失败。应为并发插入预留足够的边界余量，并检查引用目标表的外键：默认拒绝此类外键，除非选择文档规定的保留模式。
+- 不设 DEFAULT 分区。过晚或超前、落在已有范围之外的键值会导致写入失败；应监控覆盖范围，并在主动跳跃键值之前调用 `pgpm.extend_to`。任意回填更早的键值不符合单调键设计。
+- 历史拆分会复制行、产生 WAL，并临时占用额外磁盘空间。可以长期保留原始的大分区，但其范围内的细粒度分区裁剪和保留策略要等拆分后才能生效。保留策略会删除数据，应明确配置并做好相应备份。归档是独立的可选模块。
+- 从 0.5.0 之前的版本升级时，须重新运行 `pgpm.schedule()`。未来分区的创建已移到独立任务；仅安装新 SQL 不会注册该任务。独立 SQL 安装方式支持重新执行安装文件；database.dev 方式则需要使用已注册包的安装或更新路径。
+
+0.6.0 使用关系 OID 约束分区操作，并在安装时回填 `pgpm.part.child_oid`。归档、写阻断、保留策略及超表切换遇到名称指向错误对象时会停止。`fail_archive_identity`、`fail_write_block_identity` 和 `fail_retain_identity` 事件会计入 `status().retain_drop_failures`，且不会自动清除。应调查记录中的对象身份不匹配；从 0.5.0 升级无需额外手工迁移步骤。

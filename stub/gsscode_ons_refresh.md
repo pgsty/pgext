@@ -2,9 +2,9 @@
 
 Sources:
 
-- [PGXN 1.0.0 README](https://pgxn.org/dist/gsscode/1.0.0/README.html)
-- [gsscode_ons_refresh control file](https://api.pgxn.org/src/gsscode/gsscode-1.0.0/gsscode_ons_refresh.control)
-- [gsscode_ons_refresh 1.0.0 SQL definitions](https://api.pgxn.org/src/gsscode/gsscode-1.0.0/gsscode_ons_refresh--1.0.0.sql)
+- [PGXN 1.1.1 README](https://pgxn.org/dist/gsscode/1.1.1/README.html)
+- [gsscode_ons_refresh control file](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode_ons_refresh.control)
+- [gsscode_ons_refresh 1.0.0 SQL definitions](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode_ons_refresh--1.0.0.sql)
 
 `gsscode_ons_refresh` is the optional companion that refreshes the `gsscode_types` registry used by `gsscode`. It is useful only when an installation wants an in-database refresh; the core packed type and operators do not require it.
 

@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Biscuit 3.1.0 README](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/README.md)
+- [Biscuit 3.1.0 CHANGELOG](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/CHANGELOG.md)
+- [Biscuit 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.1.0.sql)
+- [Biscuit 3.0.0 to 3.1.0 SQL](https://api.pgxn.org/src/biscuit/biscuit-3.1.0/sql/biscuit--3.0.0--3.1.0.sql)
 - [Biscuit 3.0.0 on PGXN](https://pgxn.org/dist/biscuit/3.0.0/)
 - [Biscuit 3.0.0 release](https://github.com/CrystallineCore/Biscuit/releases/tag/v3.0.0)
 - [Biscuit 3.0.0 README](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/README.md)
@@ -12,7 +16,7 @@ Sources:
 - [Biscuit 3.0.0 installation SQL](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/sql/biscuit.sql)
 - [Biscuit 2.5.0 to 3.0.0 upgrade SQL](https://github.com/CrystallineCore/Biscuit/blob/v3.0.0/sql/biscuit--2.5.0--3.0.0.sql)
 
-`biscuit` 3.0.0 is a PostgreSQL 16+ positional-bitmap index access method for exact `LIKE` and `ILIKE` filtering. It is strongest for anchored patterns, `_` wildcards, length predicates, and multi-column conjunctions. Version 3.0.0 stores index state in WAL-logged relation pages, so crash recovery, point-in-time recovery, physical replication, and hot-standby reads use PostgreSQL's ordinary recovery path. It does not require `shared_preload_libraries` or a restart.
+`biscuit` 3.1.0 is a PostgreSQL 16+ positional-bitmap index access method for exact `LIKE` and `ILIKE` filtering. It is strongest for anchored patterns, `_` wildcards, length predicates, and multi-column conjunctions. Version 3.0.0 stores index state in WAL-logged relation pages, so crash recovery, point-in-time recovery, physical replication, and hot-standby reads use PostgreSQL's ordinary recovery path. It does not require `shared_preload_libraries` or a restart.
 
 The project remains under active development and recommends representative staging tests. Its per-connection memory, write amplification, and cache-reload behavior make it best suited to read-mostly analytical workloads rather than continuously updated OLTP tables or very large connection pools.
 
@@ -42,7 +46,7 @@ Expression and multi-column indexes are supported. The query must use expression
 - `biscuit_like_ops` indexes only `LIKE` and `NOT LIKE`.
 - `biscuit_ilike_ops` indexes only `ILIKE` and `NOT ILIKE`.
 
-Biscuit returns exact matches without a heap recheck, but it is a filtering index: it does not provide ordered, backward, index-only, or unique scans, cannot back `CLUSTER`, and does not support regular expressions, similarity search, fuzzy search, or locale-aware collation. A B-tree with `text_pattern_ops` is usually a better fit for selective prefix lookups, while `pg_trgm` is designed for unanchored substring, regular-expression, and similarity searches.
+Biscuit is a filtering index: it does not provide ordered, backward, index-only, or unique scans, cannot back `CLUSTER`, and does not support similarity search, fuzzy search, or general locale-aware collation. A B-tree with `text_pattern_ops` is usually a better fit for selective prefix lookups, while `pg_trgm` is designed for unanchored substring, regular-expression, and similarity searches.
 
 ### Diagnostics and Configuration
 
@@ -69,3 +73,14 @@ REINDEX INDEX CONCURRENTLY public.message_body_biscuit_idx;
 ```
 
 The unpatched upstream 3.0.0 archive ships and installs only the `2.5.0--3.0.0` step, while earlier stable packages exposed catalog versions `2.4.0` or `2.4.1`. Pigsty's 3.0.0 RPM and DEB packages restore that missing catalog path before applying the upstream step. For another source build or package, inspect `pg_extension_update_paths('biscuit')` before `ALTER EXTENSION`; regardless of the available SQL path, the mandatory `REINDEX` or `REINDEX CONCURRENTLY` remains a separate manual operation.
+
+### Version 3.1.0
+
+Version 3.1.0 adds `~`, `!~`, `~*`, and `!~*` operator-class entries, but only regexes exactly reducible to a `LIKE` glob are candidates for acceleration. Anchors, literals, dots, and selected repetition forms are supported; alternation, bracket classes, groups, and backreferences are not. Unsupported expressions retain PostgreSQL semantics and normally use a sequential scan. Case-sensitive `~` and `!~` can be exact. `~*` is limited to pure-ASCII patterns under a suitable collation and needs an executor recheck; `!~*` is not accelerated. Narrow operator classes retain their case-sensitivity boundary.
+
+```sql
+ALTER EXTENSION biscuit UPDATE TO '3.1.0';
+SELECT id, body FROM message WHERE body ~ '^timeout.*$';
+```
+
+The update from 3.0.0 adds SQL operator-family entries without changing the index format, so it does not require a format rebuild. The earlier 2.x-to-3.0.0 rebuild requirement above still applies. This release fixes HOT-chain and partial-index build correctness, anchored-match recovery, and pending-list memory safety. Unlogged Biscuit indexes still require `REINDEX` after crash recovery.

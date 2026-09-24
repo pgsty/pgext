@@ -2,10 +2,10 @@
 
 Sources:
 
-- [DocumentDB v0.114-0 README](https://github.com/documentdb/documentdb/blob/v0.114-0/README.md)
-- [DocumentDB v0.114-0 changelog](https://github.com/documentdb/documentdb/blob/v0.114-0/CHANGELOG.md)
-- [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v0.114-0/pg_documentdb/documentdb.control)
-- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.114-0/scripts/preload_libraries.sh)
+- [DocumentDB v0.117-0 README](https://github.com/documentdb/documentdb/blob/v0.117-0/README.md)
+- [DocumentDB v0.117-0 changelog](https://github.com/documentdb/documentdb/blob/v0.117-0/CHANGELOG.md)
+- [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb/documentdb.control)
+- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
 
 `documentdb` is the public PostgreSQL API extension for DocumentDB, an open-source MongoDB-compatible document database built on PostgreSQL. It stores BSON documents and implements CRUD, aggregation, full-text, geospatial, and vector workflows. MongoDB drivers require the separate DocumentDB gateway; installing this extension alone exposes the PostgreSQL API, not a wire-protocol listener.
 
@@ -14,13 +14,14 @@ Sources:
 The official deployment helper preloads the core and API libraries with `pg_cron`. Restart PostgreSQL after changing this setting:
 
 ```conf
-shared_preload_libraries = 'pg_cron, pg_documentdb_core, pg_documentdb'
+shared_preload_libraries = 'pg_cron, pg_documentdb_core, pg_documentdb, pg_documentdb_extended_rum'
 ```
 
 Install the public extension and its declared dependencies:
 
 ```sql
 CREATE EXTENSION documentdb CASCADE;
+CREATE EXTENSION documentdb_extended_rum;
 ```
 
 `CASCADE` can install `documentdb_core`, `pg_cron`, `tsm_system_rows`, `vector`, and `postgis` when their files are present. Installation is superuser-only and non-relocatable.
@@ -58,6 +59,6 @@ For application compatibility, run the gateway and use a supported MongoDB drive
 
 ### Version and Operational Notes
 
-The v0.114-0 tagged changelog enables schema validation by default, fixes validator propagation and caching, and enables non-blocking unique ordered-index builds. It also records gateway configuration, connectivity-check, TLS, and credential-handling improvements. Two RUM optimizations in that changelog remain feature-flagged and disabled by default; do not describe them as active behavior.
+The 0.117-0 release adds collation-aware grouping and min/max behavior, and includes the JSON Schema enum and oneOf support introduced in 0.116-0. Scalar aggregate index pushdown is feature-flagged and disabled by default. The default `documentdb.rum_library_load_option` is now `require_documentdb_extended_rum` on all supported PostgreSQL majors, so deployments must supply the matching extended RUM library.
 
 MongoDB compatibility is not identical to every MongoDB server version. Test operators, index behavior, transactions, schema validation, authentication, and driver behavior used by the application. Match `documentdb`, `documentdb_core`, gateway, and optional distributed/index components to the same release line.

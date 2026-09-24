@@ -2,18 +2,18 @@
 
 Sources:
 
-- [pgGraph v1.2.0 README](https://github.com/Evokoa/pgGraph/blob/v1.2.0/README.md)
-- [v1.2.0 release notes](https://github.com/Evokoa/pgGraph/releases/tag/v1.2.0)
-- [SQL API Reference](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/api-reference.mdx)
-- [Schema Registration](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/schema-registration.mdx)
-- [Administration and Security](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/administration-and-security.mdx)
-- [Troubleshooting](https://github.com/Evokoa/pgGraph/blob/v1.2.0/docs/user_guide/troubleshooting.mdx)
-- [Extension control file](https://github.com/Evokoa/pgGraph/blob/v1.2.0/graph/graph.control)
-- [v1.1.0 to v1.2.0 upgrade SQL](https://github.com/Evokoa/pgGraph/blob/v1.2.0/graph/sql/graph--1.1.0--1.2.0.sql)
+- [pgGraph v1.2.1 README](https://github.com/Evokoa/pgGraph/blob/v1.2.1/README.md)
+- [v1.2.1 release notes](https://github.com/Evokoa/pgGraph/releases/tag/v1.2.1)
+- [SQL API Reference](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/api-reference.mdx)
+- [Schema Registration](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/schema-registration.mdx)
+- [Administration and Security](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/administration-and-security.mdx)
+- [Troubleshooting](https://github.com/Evokoa/pgGraph/blob/v1.2.1/docs/user_guide/troubleshooting.mdx)
+- [Extension control file](https://github.com/Evokoa/pgGraph/blob/v1.2.1/graph/graph.control)
+- [v1.2.0 to v1.2.1 upgrade SQL](https://github.com/Evokoa/pgGraph/blob/v1.2.1/graph/sql/graph--1.2.0--1.2.1.sql)
 
 `pggraph` is the package and PGXN distribution name, but the installed PostgreSQL extension is `graph`. The extension builds derived graph artifacts from ordinary PostgreSQL tables, keeps those tables as the source of truth, and exposes graph search, traversal, shortest path, GQL-style reads, and selected mapped writes through the `graph` schema.
 
-Version 1.2.0 supports PostgreSQL 14-18, named graphs, graph-scoped grants and quotas, durable synchronization, bounded traversal and analytics, maintenance jobs, and selected GQL read/write profiles. It also removes the historical 254-label relationship-type ceiling through a bounded open-vocabulary type dictionary. It does not claim full ISO GQL, full openCypher, or a public SQL/PGQ `GRAPH_TABLE` surface. Standard PostgreSQL SQLSTATEs are paired with stable `PGxxx` details for application diagnostics.
+Version 1.2.1 supports PostgreSQL 14-18, named graphs, graph-scoped grants and quotas, durable synchronization, bounded traversal and analytics, maintenance jobs, and selected GQL read/write profiles. It also removes the historical 254-label relationship-type ceiling through a bounded open-vocabulary type dictionary. It does not claim full ISO GQL, full openCypher, or a public SQL/PGQ `GRAPH_TABLE` surface. Standard PostgreSQL SQLSTATEs are paired with stable `PGxxx` details for application diagnostics.
 
 ### Basic Graph Build
 
@@ -175,19 +175,20 @@ SELECT * FROM graph.projection_status();
 
 Graph administration covers catalog mutation, builds, sync replay, maintenance, quotas, runtime graph loading, and global analytics. Named graph privileges are `read`, `write`, `build`, and `admin`, but graph `read` is not enough by itself: hydrated reads still require `SELECT` on source tables. A selected graph tenant also scopes traversal, search, GQL, and Cypher calls unless an explicit matching tenant is supplied.
 
-### Upgrading to 1.2.0
+### Upgrading to 1.2.1
 
-The 1.1.0 to 1.2.0 catalog update is additive: it installs `graph.edge_types()` and `graph.reset(boolean)` without replacing existing function objects, owners, or explicit grants.
+Back up PostgreSQL before installing the matching 1.2.1 package. Update each database and rebuild every registered graph. Named graphs must each be selected before their rebuild:
 
 ```sql
-ALTER EXTENSION graph UPDATE TO '1.2.0';
-
-SELECT extversion
-FROM pg_extension
-WHERE extname = 'graph';
+ALTER EXTENSION graph UPDATE TO '1.2.1';
+SELECT * FROM graph.build();
+SELECT extversion FROM pg_extension WHERE extname = 'graph';
+SELECT * FROM graph.status();
 ```
 
-Existing v6 artifacts remain readable. New builds publish v7 artifacts; rebuild when the base artifact itself must represent more than 254 relationship types. In-place downgrade is unsupported because a 1.1 binary cannot read v7 artifacts. Rollback requires restoring the pre-upgrade PostgreSQL backup with the matching 1.1.0 package and rebuilding derived graph state from the restored source tables.
+This rebuild is mandatory for database-scoped file roots, catalog provenance checks, and transactional generation state. Earlier artifacts are not adopted automatically; source tables and registrations remain authoritative. Logical restores also require rebuilding. The update preserves existing SQL object identities, owners, and explicit grants. In-place binary downgrade is unsupported: restore the pre-upgrade backup with its matching older package, then rebuild derived graph state.
+
+New `graph.sync_retention()` is an administrator diagnostic for the selected graph's sync-log retention and pruning blockers. It neither prunes nor takes the writer lock. Version 1.2.1 also fixes sync replay, transaction rollback, cross-database artifact isolation, and several GQL result-correctness issues.
 
 ### Caveats
 

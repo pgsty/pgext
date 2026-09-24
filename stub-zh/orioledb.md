@@ -1,9 +1,11 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/orioledb/orioledb)、[beta16 release](https://github.com/orioledb/orioledb/releases/tag/beta16)、[patched PostgreSQL tree](https://github.com/orioledb/postgres)
+来源：
+
+- [beta17 README](https://github.com/orioledb/orioledb/blob/beta17/README.md)
+- [beta17 release](https://github.com/orioledb/orioledb/releases/tag/beta17)
+- [Control file](https://github.com/orioledb/orioledb/blob/beta17/orioledb.control)
+- [Patched PostgreSQL](https://github.com/orioledb/postgres)
 
 OrioleDB 是 PostgreSQL 的新型存储引擎，为数据库容量、能力和性能提供现代化方案。它使用基于撤销日志的 MVCC、写时复制检查点和行级 WAL，消除了膨胀问题和 VACUUM 的需求。
 
@@ -33,7 +35,7 @@ CREATE TABLE my_table (
 ) USING orioledb;
 ```
 
-所有标准 PostgreSQL 操作均可用于 OrioleDB 表：
+可在上游兼容性限制内对 OrioleDB 表使用普通 DML：
 
 ```sql
 INSERT INTO my_table (name, value) VALUES ('test', 42);
@@ -48,7 +50,7 @@ OrioleDB 表仅支持 **ICU**、**C** 和 **POSIX** 排序规则。为避免在�
 
 ```sql
 CREATE DATABASE mydb LOCALE 'C' TEMPLATE template0;
--- 或
+-- OR
 CREATE DATABASE mydb LOCALE_PROVIDER icu ICU_LOCALE 'en' TEMPLATE template0;
 ```
 
@@ -68,4 +70,4 @@ CREATE DATABASE mydb LOCALE_PROVIDER icu ICU_LOCALE 'en' TEMPLATE template0;
 
 ### 版本说明
 
-OrioleDB 1.8-beta16 将扩展 SQL version 提升到 `1.8`，patched PostgreSQL builds 基于 16.13、17.9 和 18.4，并增加 PostgreSQL 18 支持。新的用户可见接口包括用于 SERIALIZABLE 支持的 `orioledb.serializable`，以及用于 `pg_amcheck` 集成的 `verify_orioledb(regclass, boolean)`。该版本还包含 recovery、replication、index-scan、vacuum 和 DDL correctness 修复。
+OrioleDB beta17 使用扩展 SQL 版本 `1.9`，补丁版 PostgreSQL 基于 16.15、17.11 和 18.6。新增原生 B-tree 索引的并发创建与重建、跨主版本升级支持、页面校验和，以及并行索引与位图扫描，并修复恢复和 DDL 正确性问题。升级前须遵循 beta17 的二进制和存储兼容说明；SQL 版本更新不意味着可以在未打补丁的 PostgreSQL 上运行。
