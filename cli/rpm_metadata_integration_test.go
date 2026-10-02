@@ -17,7 +17,7 @@ func TestRPMPrimaryCacheAndParseIntegration(t *testing.T) {
 	if err := QueryRowContext(ctx, "SELECT id FROM pgext.repository WHERE type='rpm' ORDER BY id LIMIT 1").Scan(&repoID); err != nil {
 		t.Fatal(err)
 	}
-	if _, err := ExecSQLContext(ctx, `INSERT INTO pgext.repo_data (id,data,etag,extra) VALUES ($1,$2,'legacy','{"retained":"yes"}')`, repoID, []byte("old payload")); err != nil {
+	if _, err := ExecSQLContext(ctx, `INSERT INTO pgext.repo_data (id,data,etag,extra) VALUES ($1,$2,'legacy','{"retained":"yes","compressed_size":123,"open_size":456}')`, repoID, []byte("old payload")); err != nil {
 		t.Fatal(err)
 	}
 	compressed := compressPrimaryFixture(t, "zstd")
@@ -43,6 +43,11 @@ func TestRPMPrimaryCacheAndParseIntegration(t *testing.T) {
 	}
 	if string(stored) != primaryXMLFixture || descriptor["format"] != rpmPrimaryFormat || descriptor["retained"] != "yes" || lastMod.Valid {
 		t.Fatalf("incorrect cache replacement: %v, lastMod=%v", descriptor, lastMod)
+	}
+	for _, key := range []string{"compressed_size", "open_size"} {
+		if _, exists := descriptor[key]; exists {
+			t.Fatalf("cache retained obsolete manifest field %s: %v", key, descriptor)
+		}
 	}
 	repos, err := fetcher.loadRepositories(ctx)
 	if err != nil {

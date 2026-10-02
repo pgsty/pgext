@@ -163,6 +163,9 @@ func readMetadata(reader io.Reader, limit int64) ([]byte, error) {
 
 func verifyMetadataChecksum(data []byte, checksum MetadataChecksum) error {
 	if strings.TrimSpace(checksum.Text) == "" {
+		if checksum.Type != "" {
+			return fmt.Errorf("%s metadata checksum is empty", checksum.Type)
+		}
 		return nil
 	}
 	var h hash.Hash

@@ -238,6 +238,14 @@ func TestRPMPrimaryRejectsCorruptMetadata(t *testing.T) {
 		mutate func(*RepoMDData) []byte
 	}{
 		{"compressed checksum", func(p *RepoMDData) []byte { p.Checksum = MetadataChecksum{Type: "sha256", Text: "bad"}; return good }},
+		{"empty compressed checksum", func(p *RepoMDData) []byte {
+			p.Checksum = MetadataChecksum{Type: "sha256", Text: " "}
+			return good
+		}},
+		{"empty open checksum", func(p *RepoMDData) []byte {
+			p.OpenChecksum = MetadataChecksum{Type: "sha256"}
+			return good
+		}},
 		{"open checksum", func(p *RepoMDData) []byte {
 			p.OpenChecksum = MetadataChecksum{Type: "sha256", Text: "bad"}
 			return good

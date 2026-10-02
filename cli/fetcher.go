@@ -565,7 +565,7 @@ func saveRepositoryMetadata(ctx context.Context, id string, data []byte, etag st
             etag = EXCLUDED.etag,
             last_modified = EXCLUDED.last_modified,
             extra = CASE WHEN EXCLUDED.extra IS NULL THEN repo_data.extra
-                         ELSE COALESCE(repo_data.extra, '{}'::jsonb) || EXCLUDED.extra END,
+                         ELSE (COALESCE(repo_data.extra, '{}'::jsonb) - 'compressed_size' - 'open_size') || EXCLUDED.extra END,
             update_at = CURRENT_TIMESTAMP
     `, id, data, len(data), etag, lastMod, descriptor)
 	return err
