@@ -61,23 +61,12 @@ func TestParseNoPkgFlag(t *testing.T) {
 	}
 }
 
-func TestKeepTempCompatibilityFlags(t *testing.T) {
-	for _, command := range []struct {
-		name string
-		cmd  flagLookup
-	}{
-		{"init", initCmd},
-		{"reload", reloadCmd},
-		{"rescan", rescanCmd},
-		{"parse", parseCmd},
-	} {
-		keepTemp := command.cmd.Flags().Lookup("keep-temp")
-		if keepTemp == nil || keepTemp.Shorthand != "k" {
-			t.Errorf("%s --keep-temp/-k is not registered correctly", command.name)
-		}
-		legacy := command.cmd.Flags().Lookup("keep")
-		if legacy == nil || legacy.Deprecated == "" {
-			t.Errorf("%s --keep is not a deprecated compatibility alias", command.name)
+func TestPipelineCommandsHaveNoTemporaryDatabaseFlags(t *testing.T) {
+	for _, command := range []*cobra.Command{initCmd, reloadCmd, rescanCmd, parseCmd} {
+		for _, name := range []string{"keep", "keep-temp"} {
+			if command.Flags().Lookup(name) != nil {
+				t.Errorf("%s still exposes obsolete --%s", command.Name(), name)
+			}
 		}
 	}
 }

@@ -4,13 +4,9 @@ Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 package cli
 
 import (
-	"bytes"
-	"compress/bzip2"
 	"context"
-	"crypto/sha256"
 	"database/sql"
-	"encoding/hex"
-	"encoding/xml"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -28,13 +24,15 @@ const MaxFileSize = 500 * 1024 * 1024
 
 // RepoMetadata represents a package repository with cached metadata
 type RepoMetadata struct {
-	ID          string
-	Type        string // rpm or deb
-	MetadataURL string
-	MirrorURL   string
-	CachedETag  sql.NullString
-	CachedTime  sql.NullTime
-	CachedSize  sql.NullInt64
+	ID               string
+	Type             string // rpm or deb
+	MetadataURL      string
+	MirrorURL        string
+	CachedETag       sql.NullString
+	CachedTime       sql.NullTime
+	CachedSize       sql.NullInt64
+	CachedPrimary    *RPMMetadataCache
+	CachedDataSHA256 sql.NullString
 }
 
 // FetchResult represents the result of fetching a repository
@@ -45,6 +43,7 @@ type FetchResult struct {
 	LastMod    time.Time
 	Updated    bool
 	Error      error
+	Extra      *RPMMetadataCache
 }
 
 // FetchOptions contains options for fetch operation
@@ -175,7 +174,7 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 		fallbackColumn = "r.default_meta"
 	}
 
-	query := fmt.Sprintf(`SELECT r.id,r.type,%s as url,COALESCE(%s, '') as mirror_url,d.etag,d.last_modified,d.size 
+	query := fmt.Sprintf(`SELECT r.id,r.type,%s as url,COALESCE(%s, '') as mirror_url,d.etag,d.last_modified,d.size,d.extra,encode(sha256(d.data), 'hex')
 		FROM pgext.repository r LEFT JOIN pgext.repo_data d ON r.id = d.id
 		WHERE %s IS NOT NULL ORDER BY r.id `, urlColumn, fallbackColumn, urlColumn)
 
@@ -188,6 +187,7 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 	var repos []*RepoMetadata
 	for rows.Next() {
 		repo := &RepoMetadata{}
+		var extra []byte
 		err := rows.Scan(
 			&repo.ID,
 			&repo.Type,
@@ -196,9 +196,17 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 			&repo.CachedETag,
 			&repo.CachedTime,
 			&repo.CachedSize,
+			&extra,
+			&repo.CachedDataSHA256,
 		)
 		if err != nil {
 			return nil, fmt.Errorf("scan repository metadata: %w", err)
+		}
+		if len(extra) > 0 {
+			var cached RPMMetadataCache
+			if json.Unmarshal(extra, &cached) == nil && cached.Format == rpmPrimaryFormat {
+				repo.CachedPrimary = &cached
+			}
 		}
 		repos = append(repos, repo)
 	}
@@ -327,7 +335,7 @@ func (f *Fetcher) fetchWithRetry(ctx context.Context, repo *RepoMetadata) *Fetch
 // fetchOne fetches a single repository
 func (f *Fetcher) fetchOne(ctx context.Context, repo *RepoMetadata) *FetchResult {
 	// Check if we should skip (not forced and have cache)
-	if !f.force && repo.CachedETag.Valid {
+	if repo.Type == "deb" && !f.force && repo.CachedETag.Valid {
 		// Check if modified using conditional request
 		modified, err := f.checkModified(ctx, repo)
 		if err != nil {
@@ -368,63 +376,44 @@ func (f *Fetcher) fetchRPM(ctx context.Context, repo *RepoMetadata) *FetchResult
 }
 
 func (f *Fetcher) fetchRPMFromMetadataURL(ctx context.Context, repo *RepoMetadata, metadataURL string) *FetchResult {
-	// Parse repomd.xml to find primary.sqlite.bz2
 	repomd, err := f.fetchRepoMD(ctx, metadataURL)
 	if err != nil {
 		return &FetchResult{Repository: repo, Error: fmt.Errorf("fetch repomd.xml: %w", err)}
 	}
-
-	// Find primary_db URL
-	primaryDB := repomd.FindPrimaryDB()
-	if primaryDB == nil {
-		return &FetchResult{Repository: repo, Error: fmt.Errorf("primary_db not found in repomd.xml")}
+	primary, err := repomd.FindPrimary()
+	if err != nil {
+		return &FetchResult{Repository: repo, Error: err}
 	}
-
-	// Construct full URL for primary.sqlite.bz2
-	baseURL := strings.TrimSuffix(metadataURL, "repodata/repomd.xml")
-	primaryURL := baseURL + primaryDB.Location.Href
-
-	// Download primary.sqlite.bz2
-	resp, err := f.download(ctx, primaryURL, repo)
+	primaryURL, err := rpmPrimaryURL(repomd.SourceURL, primary.Location.Href)
+	if err != nil {
+		return &FetchResult{Repository: repo, Error: err}
+	}
+	// The manifest's content checksum, rather than validators from a different
+	// URL or metadata format, determines whether the cached XML is current.
+	if !f.force && repo.hasCurrentPrimary(primary, primaryURL) {
+		return &FetchResult{Repository: repo, Updated: false}
+	}
+	resp, err := f.download(ctx, primaryURL, nil)
 	if err != nil {
 		return &FetchResult{Repository: repo, Error: err}
 	}
 	defer resp.Body.Close()
-
-	// Handle 304 Not Modified
-	if resp.StatusCode == http.StatusNotModified {
-		return &FetchResult{Repository: repo, Updated: false}
+	if resp.StatusCode != http.StatusOK {
+		return &FetchResult{Repository: repo, Error: fmt.Errorf("primary XML HTTP %d without a reusable cache", resp.StatusCode)}
 	}
-
-	// Read and decompress
-	compressed, err := io.ReadAll(io.LimitReader(resp.Body, MaxFileSize))
+	compressed, err := readMetadata(resp.Body, MaxFileSize)
 	if err != nil {
-		return &FetchResult{Repository: repo, Error: fmt.Errorf("read response: %w", err)}
+		return &FetchResult{Repository: repo, Error: fmt.Errorf("read primary XML: %w", err)}
 	}
-
-	// Decompress bzip2
-	decompressed, err := io.ReadAll(bzip2.NewReader(bytes.NewReader(compressed)))
+	data, extra, err := decodeRPMPrimary(ctx, compressed, primary, primaryURL)
 	if err != nil {
-		return &FetchResult{Repository: repo, Error: fmt.Errorf("decompress: %w", err)}
+		return &FetchResult{Repository: repo, Error: err}
 	}
-
-	// Verify checksum if provided
-	if primaryDB.OpenChecksum.Text != "" {
-		if !f.verifyChecksum(decompressed, primaryDB.OpenChecksum.Text) {
-			return &FetchResult{Repository: repo, Error: fmt.Errorf("checksum verification failed")}
-		}
-	}
-
-	// Parse response headers
-	etag := normalizeETag(resp.Header.Get("ETag"))
 	lastMod, _ := http.ParseTime(resp.Header.Get("Last-Modified"))
-
+	logrus.Debugf("Validated primary XML for %s: %d packages (%s)", repo.ID, extra.PackageCount, extra.Compression)
 	return &FetchResult{
-		Repository: repo,
-		Data:       decompressed,
-		ETag:       etag,
-		LastMod:    lastMod,
-		Updated:    true,
+		Repository: repo, Data: data, Extra: extra,
+		ETag: normalizeETag(resp.Header.Get("ETag")), LastMod: lastMod, Updated: true,
 	}
 }
 
@@ -540,47 +529,45 @@ func (f *Fetcher) fetchRepoMD(ctx context.Context, url string) (*RepoMD, error) 
 		return nil, fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
 
-	var repomd RepoMD
-	if err := xml.NewDecoder(resp.Body).Decode(&repomd); err != nil {
-		return nil, fmt.Errorf("parse XML: %w", err)
+	repomd, err := parseRPMManifest(resp.Body)
+	if err != nil {
+		return nil, err
 	}
 
-	return &repomd, nil
+	repomd.SourceURL = resp.Request.URL.String()
+	return repomd, nil
 }
 
-// verifyChecksum verifies SHA256 checksum
-func (f *Fetcher) verifyChecksum(data []byte, expected string) bool {
-	hash := sha256.Sum256(data)
-	actual := hex.EncodeToString(hash[:])
-	return actual == expected
-}
-
-// saveMetadata saves repository metadata to database
+// saveMetadata stores the uncompressed package payload and its source identity.
 func (f *Fetcher) saveMetadata(ctx context.Context, result *FetchResult) error {
-	query := `
-		INSERT INTO pgext.repo_data (id, data, size, etag, last_modified, update_at)
-		VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP)
-		ON CONFLICT (id) DO UPDATE SET
-			data = EXCLUDED.data,
-			size = EXCLUDED.size,
-			etag = EXCLUDED.etag,
-			last_modified = EXCLUDED.last_modified,
-			update_at = CURRENT_TIMESTAMP
-	`
-
 	var lastMod *time.Time
 	if !result.LastMod.IsZero() {
 		lastMod = &result.LastMod
 	}
+	return saveRepositoryMetadata(ctx, result.Repository.ID, result.Data, result.ETag, lastMod, result.Extra)
+}
 
-	_, err := ExecSQLContext(ctx, query,
-		result.Repository.ID,
-		result.Data,
-		len(result.Data),
-		result.ETag,
-		lastMod,
-	)
-
+func saveRepositoryMetadata(ctx context.Context, id string, data []byte, etag string, lastMod *time.Time, extra *RPMMetadataCache) error {
+	var descriptor any
+	if extra != nil {
+		raw, err := json.Marshal(extra)
+		if err != nil {
+			return fmt.Errorf("encode primary XML cache descriptor: %w", err)
+		}
+		descriptor = string(raw)
+	}
+	_, err := ExecSQLContext(ctx, `
+        INSERT INTO pgext.repo_data (id, data, size, etag, last_modified, extra, update_at)
+        VALUES ($1, $2, $3, $4, $5, $6::jsonb, CURRENT_TIMESTAMP)
+        ON CONFLICT (id) DO UPDATE SET
+            data = EXCLUDED.data,
+            size = EXCLUDED.size,
+            etag = EXCLUDED.etag,
+            last_modified = EXCLUDED.last_modified,
+            extra = CASE WHEN EXCLUDED.extra IS NULL THEN repo_data.extra
+                         ELSE COALESCE(repo_data.extra, '{}'::jsonb) || EXCLUDED.extra END,
+            update_at = CURRENT_TIMESTAMP
+    `, id, data, len(data), etag, lastMod, descriptor)
 	return err
 }
 
@@ -588,38 +575,6 @@ func (f *Fetcher) saveMetadata(ctx context.Context, result *FetchResult) error {
 func (f *Fetcher) updateFetchTime(ctx context.Context) error {
 	_, err := ExecSQLContext(ctx, "UPDATE pgext.status SET fetch_time = CURRENT_TIMESTAMP")
 	return err
-}
-
-// RepoMD represents YUM repository metadata structure
-type RepoMD struct {
-	XMLName xml.Name     `xml:"repomd"`
-	Data    []RepoMDData `xml:"data"`
-}
-
-// RepoMDData represents a data entry in repomd.xml
-type RepoMDData struct {
-	Type     string `xml:"type,attr"`
-	Location struct {
-		Href string `xml:"href,attr"`
-	} `xml:"location"`
-	Checksum struct {
-		Type string `xml:"type,attr"`
-		Text string `xml:",chardata"`
-	} `xml:"checksum"`
-	OpenChecksum struct {
-		Type string `xml:"type,attr"`
-		Text string `xml:",chardata"`
-	} `xml:"open-checksum"`
-}
-
-// FindPrimaryDB finds the primary_db entry in repomd
-func (r *RepoMD) FindPrimaryDB() *RepoMDData {
-	for i := range r.Data {
-		if r.Data[i].Type == "primary_db" {
-			return &r.Data[i]
-		}
-	}
-	return nil
 }
 
 // normalizeETag normalizes an ETag value for consistent storage and comparison

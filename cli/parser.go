@@ -16,8 +16,6 @@ import (
 
 // ParseOptions contains options for parse operation
 type ParseOptions struct {
-	KeepTemp   bool // Keep temporary DNF SQLite files for debugging
-	Keep       bool // Deprecated: use KeepTemp. Retained for source compatibility.
 	Parallel   int  // Number of parallel workers
 	BestEffort bool // Allow a partial result when at least one repository succeeds
 }
@@ -35,9 +33,6 @@ func NewParser(opts ParseOptions) *Parser {
 
 // NewParserContext creates a parser that honors caller cancellation.
 func NewParserContext(ctx context.Context, opts ParseOptions) *Parser {
-	if opts.Keep {
-		opts.KeepTemp = true
-	}
 	// Apply defaults
 	if opts.Parallel <= 0 {
 		opts.Parallel = 8
@@ -290,7 +285,7 @@ func (p *Parser) parseOneRepository(repo RepositoryData, stage *packageStaging) 
 	// Create new parser instance for each repository to avoid concurrent access issues
 	switch repo.Type {
 	case "rpm":
-		dnfParser := newDNFParser(p.ctx, stage.dnf, p.opts.KeepTemp)
+		dnfParser := newDNFParser(p.ctx, stage.dnf)
 		count, err = dnfParser.ParseRepository(repo.ID, repo.Data)
 	case "deb":
 		aptParser := newAPTParser(p.ctx, stage.apt)

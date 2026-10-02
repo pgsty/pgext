@@ -14,7 +14,6 @@ import (
 var (
 	initForce      bool
 	initBestEffort bool
-	initKeepTemp   bool
 )
 
 // schemaCmd initializes the pgext schema
@@ -54,7 +53,7 @@ var initCmd = &cobra.Command{
 	Short: "complete setup: schema + reload",
 	Long: `Perform complete initialization:
 1. Initialize the pgext schema if it does not exist
-2. Fetch repository metadata
+2. Fetch RPM primary XML and APT Packages metadata
 3. Parse repository data into pgext.apt, pgext.dnf, and pgext.bin
 4. Generate availability info pgext.pkg
 
@@ -103,7 +102,6 @@ The parsed package tables and availability matrix are published atomically.
 		logrus.Info("steps 3-4/4: parsing repository data and generating package matrix...")
 		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
 			Parallel:   workers,
-			KeepTemp:   initKeepTemp,
 			BestEffort: initBestEffort,
 		})
 		if err := parser.ParseAndRecap(); err != nil {
@@ -161,9 +159,6 @@ func init() {
 	initCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
 	initCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 	initCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
-	initCmd.Flags().BoolVarP(&initKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
-	initCmd.Flags().BoolVar(&initKeepTemp, "keep", false, "deprecated alias for --keep-temp")
-	_ = initCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
 	initCmd.Flags().BoolVar(&initBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
 
 	// reload command flags
@@ -171,8 +166,5 @@ func init() {
 	reloadCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
 	reloadCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 	reloadCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
-	reloadCmd.Flags().BoolVarP(&reloadKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
-	reloadCmd.Flags().BoolVar(&reloadKeepTemp, "keep", false, "deprecated alias for --keep-temp")
-	_ = reloadCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
 	reloadCmd.Flags().BoolVar(&reloadBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
 }

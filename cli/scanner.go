@@ -4,18 +4,11 @@ Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 package cli
 
 import (
-	"bytes"
-	"compress/bzip2"
 	"context"
-	"crypto/sha256"
-	"encoding/hex"
-	"encoding/xml"
 	"fmt"
-	"io"
 	"os"
 	"path/filepath"
 	"strings"
-	"time"
 
 	"github.com/sirupsen/logrus"
 	"golang.org/x/sync/errgroup"
@@ -42,6 +35,7 @@ type ScanResult struct {
 	Data       []byte
 	Updated    bool
 	Error      error
+	Extra      *RPMMetadataCache
 }
 
 // NewScanner creates a new repository scanner
@@ -309,56 +303,32 @@ func (s *Scanner) urlToLocalPath(url string) (string, error) {
 
 // scanRPM scans RPM repository metadata from local filesystem
 func (s *Scanner) scanRPM(ctx context.Context, repo *RepoMetadata, repomdPath string) *ScanResult {
-	// Check if file exists
-	if _, err := os.Stat(repomdPath); err != nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("repomd.xml not found: %w", err)}
-	}
-
-	// Read and parse repomd.xml
 	repomd, err := s.parseRepoMDFile(repomdPath)
 	if err != nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("parse repomd.xml: %w", err)}
+		return &ScanResult{Repository: repo, Error: fmt.Errorf("read repomd.xml: %w", err)}
 	}
-
-	// Find primary_db entry
-	primaryDB := repomd.FindPrimaryDB()
-	if primaryDB == nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("primary_db not found in repomd.xml")}
-	}
-
-	// Construct path to primary.sqlite.bz2
-	repoDir := filepath.Dir(repomdPath)
-	primaryPath := filepath.Join(repoDir, "..", primaryDB.Location.Href)
-
-	// Check if primary.sqlite.bz2 exists
-	if _, err := os.Stat(primaryPath); err != nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("primary.sqlite.bz2 not found: %w", err)}
-	}
-
-	// Read compressed file
-	compressed, err := os.ReadFile(primaryPath)
+	primary, err := repomd.FindPrimary()
 	if err != nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("read primary.sqlite.bz2: %w", err)}
+		return &ScanResult{Repository: repo, Error: err}
 	}
-
-	// Decompress bzip2
-	decompressed, err := io.ReadAll(bzip2.NewReader(bytes.NewReader(compressed)))
+	primaryPath, err := rpmPrimaryPath(repomdPath, primary.Location.Href)
 	if err != nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("decompress: %w", err)}
+		return &ScanResult{Repository: repo, Error: err}
 	}
-
-	// Verify checksum if provided
-	if primaryDB.OpenChecksum.Text != "" {
-		if !s.verifyChecksum(decompressed, primaryDB.OpenChecksum.Text) {
-			return &ScanResult{Repository: repo, Error: fmt.Errorf("checksum verification failed")}
-		}
+	file, err := os.Open(primaryPath)
+	if err != nil {
+		return &ScanResult{Repository: repo, Error: fmt.Errorf("open primary XML: %w", err)}
 	}
-
-	return &ScanResult{
-		Repository: repo,
-		Data:       decompressed,
-		Updated:    true,
+	defer file.Close()
+	compressed, err := readMetadata(file, MaxFileSize)
+	if err != nil {
+		return &ScanResult{Repository: repo, Error: fmt.Errorf("read primary XML: %w", err)}
 	}
+	data, extra, err := decodeRPMPrimary(ctx, compressed, primary, primaryPath)
+	if err != nil {
+		return &ScanResult{Repository: repo, Error: err}
+	}
+	return &ScanResult{Repository: repo, Data: data, Extra: extra, Updated: true}
 }
 
 // scanDEB scans DEB repository metadata from local filesystem
@@ -383,51 +353,18 @@ func (s *Scanner) scanDEB(ctx context.Context, repo *RepoMetadata, packagesPath 
 
 // parseRepoMDFile reads and parses repomd.xml from local file
 func (s *Scanner) parseRepoMDFile(path string) (*RepoMD, error) {
-	data, err := os.ReadFile(path)
+	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
 	}
 
-	var repomd RepoMD
-	if err := xml.Unmarshal(data, &repomd); err != nil {
-		return nil, fmt.Errorf("parse XML: %w", err)
-	}
-
-	return &repomd, nil
+	defer file.Close()
+	return parseRPMManifest(file)
 }
 
-// verifyChecksum verifies SHA256 checksum
-func (s *Scanner) verifyChecksum(data []byte, expected string) bool {
-	hash := sha256.Sum256(data)
-	actual := hex.EncodeToString(hash[:])
-	return actual == expected
-}
-
-// saveMetadata saves repository metadata to database
+// saveMetadata stores a validated local payload without HTTP validators.
 func (s *Scanner) saveMetadata(ctx context.Context, result *ScanResult) error {
-	query := `
-		INSERT INTO pgext.repo_data (id, data, size, etag, last_modified, update_at)
-		VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP)
-		ON CONFLICT (id) DO UPDATE SET
-			data = EXCLUDED.data,
-			size = EXCLUDED.size,
-			etag = EXCLUDED.etag,
-			last_modified = EXCLUDED.last_modified,
-			update_at = CURRENT_TIMESTAMP
-	`
-
-	// Use file modification time as last_modified
-	lastMod := time.Now()
-
-	_, err := ExecSQLContext(ctx, query,
-		result.Repository.ID,
-		result.Data,
-		len(result.Data),
-		"", // No ETag for local files
-		&lastMod,
-	)
-
-	return err
+	return saveRepositoryMetadata(ctx, result.Repository.ID, result.Data, "", nil, result.Extra)
 }
 
 // updateFetchTime updates the fetch timestamp in status table

@@ -54,10 +54,3 @@ func TestRunReportBestEffortStillPropagatesCancellation(t *testing.T) {
 		}
 	}
 }
-
-func TestLegacyKeepOptionMapsToKeepTemp(t *testing.T) {
-	parser := NewParser(ParseOptions{Keep: true})
-	if !parser.opts.KeepTemp {
-		t.Fatal("deprecated ParseOptions.Keep did not enable KeepTemp")
-	}
-}

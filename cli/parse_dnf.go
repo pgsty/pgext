@@ -7,62 +7,31 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"os"
 
 	"github.com/jackc/pgx/v5"
-	"github.com/sirupsen/logrus"
-	_ "modernc.org/sqlite"
 )
 
-// DNFParser handles parsing of DNF/YUM repository metadata
+// DNFParser parses RPM primary XML metadata into PostgreSQL.
 type DNFParser struct {
-	ctx      context.Context
-	tx       pgx.Tx
-	table    string
-	keepTemp bool
+	ctx   context.Context
+	tx    pgx.Tx
+	table string
 }
 
 // NewDNFParser creates a new DNF parser
 func NewDNFParser(ctx context.Context) *DNFParser {
-	return newDNFParser(ctx, liveTable("dnf"), false)
+	return newDNFParser(ctx, liveTable("dnf"))
 }
 
-func newDNFParser(ctx context.Context, table string, keepTemp bool) *DNFParser {
-	return &DNFParser{ctx: ctx, table: table, keepTemp: keepTemp}
+func newDNFParser(ctx context.Context, table string) *DNFParser {
+	return &DNFParser{ctx: ctx, table: table}
 }
 
 // ParseRepository parses a single DNF/YUM repository
 func (p *DNFParser) ParseRepository(repoID string, data []byte) (int, error) {
-	// Create temporary SQLite file
-	tmpFile, err := os.CreateTemp("", fmt.Sprintf("dnf-%s-*.db", repoID))
+	packages, err := p.extractPrimaryXML(data)
 	if err != nil {
-		return 0, fmt.Errorf("create temp file: %w", err)
-	}
-	tmpPath := tmpFile.Name()
-	if p.keepTemp {
-		logrus.Infof("keeping DNF SQLite metadata for %s at %s", repoID, tmpPath)
-	} else {
-		defer os.Remove(tmpPath)
-	}
-
-	// Write SQLite data to temp file
-	if _, err := tmpFile.Write(data); err != nil {
-		tmpFile.Close()
-		return 0, fmt.Errorf("write temp file: %w", err)
-	}
-	tmpFile.Close()
-
-	// Open SQLite database
-	sqliteDB, err := sql.Open("sqlite", "file:"+tmpPath+"?mode=ro")
-	if err != nil {
-		return 0, fmt.Errorf("open sqlite: %w", err)
-	}
-	defer sqliteDB.Close()
-
-	// Extract packages from SQLite
-	packages, err := p.extractPackages(sqliteDB)
-	if err != nil {
-		return 0, fmt.Errorf("extract packages: %w", err)
+		return 0, fmt.Errorf("parse RPM primary XML: %w; refresh cached metadata with pgext fetch or pgext scan", err)
 	}
 
 	if len(packages) == 0 {
@@ -95,48 +64,6 @@ func (p *DNFParser) ParseRepository(repoID string, data []byte) (int, error) {
 	}
 
 	return count, nil
-}
-
-// extractPackages reads package data from SQLite database
-func (p *DNFParser) extractPackages(db *sql.DB) ([]DNFPackage, error) {
-	query := `
-		SELECT
-			pkgKey, pkgId, name, arch, version, epoch, release,
-			summary, description, url, time_file, time_build,
-			rpm_license, rpm_vendor, rpm_group, rpm_buildhost,
-			rpm_sourcerpm, rpm_header_start, rpm_header_end,
-			rpm_packager, size_package, size_installed, size_archive,
-			location_href, location_base, checksum_type
-		FROM packages
-		ORDER BY name, version DESC
-	`
-
-	rows, err := db.QueryContext(p.ctx, query)
-	if err != nil {
-		return nil, fmt.Errorf("query packages: %w", err)
-	}
-	defer rows.Close()
-
-	var packages []DNFPackage
-
-	for rows.Next() {
-		var pkg DNFPackage
-		err := rows.Scan(
-			&pkg.PkgKey, &pkg.PkgId, &pkg.Name, &pkg.Arch, &pkg.Version,
-			&pkg.Epoch, &pkg.Release, &pkg.Summary, &pkg.Description, &pkg.URL,
-			&pkg.TimeFile, &pkg.TimeBuild, &pkg.RPMLicense, &pkg.RPMVendor,
-			&pkg.RPMGroup, &pkg.RPMBuildHost, &pkg.RPMSourceRPM, &pkg.RPMHeaderStart,
-			&pkg.RPMHeaderEnd, &pkg.RPMPackager, &pkg.SizePackage, &pkg.SizeInstalled,
-			&pkg.SizeArchive, &pkg.LocationHref, &pkg.LocationBase, &pkg.ChecksumType,
-		)
-		if err != nil {
-			return nil, fmt.Errorf("scan package: %w", err)
-		}
-
-		packages = append(packages, pkg)
-	}
-
-	return packages, rows.Err()
 }
 
 // insertPackages inserts DNF packages into the database

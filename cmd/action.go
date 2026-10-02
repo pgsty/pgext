@@ -14,13 +14,10 @@ import (
 
 var (
 	reloadBestEffort bool
-	reloadKeepTemp   bool
 	rescanBestEffort bool
-	rescanKeepTemp   bool
 	fetchBestEffort  bool
 	scanBestEffort   bool
 	parseBestEffort  bool
-	parseKeepTemp    bool
 	parseNoPkg       bool
 )
 
@@ -29,7 +26,7 @@ var reloadCmd = &cobra.Command{
 	Use:   "reload",
 	Short: "reload data: fetch + parse",
 	Long: `Reload all package data from repositories:
-1. Fetch repository metadata (respecting cache)
+1. Fetch RPM primary XML and APT Packages metadata (respecting cache)
 2. Parse repository data into pgext.apt, pgext.dnf, and pgext.bin
 3. Generate the pgext.pkg availability matrix
 
@@ -67,7 +64,6 @@ The parsed package tables and availability matrix are published atomically.
 		logrus.Info("steps 2-3/3: parsing repository data and generating package matrix...")
 		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
 			Parallel:   workers,
-			KeepTemp:   reloadKeepTemp,
 			BestEffort: reloadBestEffort,
 		})
 		if err := parser.ParseAndRecap(); err != nil {
@@ -85,7 +81,7 @@ var rescanCmd = &cobra.Command{
 	Use:   "rescan",
 	Short: "reload data from local repo: scan + parse",
 	Long: `Reload package data from local Pigsty repository metadata:
-1. Scan local Pigsty repository metadata
+1. Scan local Pigsty RPM primary XML and APT Packages metadata
 2. Parse repository data into pgext.apt, pgext.dnf, and pgext.bin
 3. Generate the pgext.pkg availability matrix
 
@@ -99,7 +95,6 @@ The parsed package tables and availability matrix are published atomically.
   pgext rescan                     # rescan from default ~/pgsty/repo
   pgext rescan --dir /path/to/repo # rescan from custom directory
   pgext rescan -p 8                # use 8 parallel workers
-  pgext rescan -k                  # keep temporary DNF SQLite files
   pgext rescan --best-effort       # publish a partial catalog if some repos fail
 `,
 	Args:    cobra.NoArgs,
@@ -125,7 +120,6 @@ The parsed package tables and availability matrix are published atomically.
 		logrus.Info("steps 2-3/3: parsing repository data and generating package matrix...")
 		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
 			Parallel:   workers,
-			KeepTemp:   rescanKeepTemp,
 			BestEffort: rescanBestEffort,
 		})
 		if err := parser.ParseAndRecap(); err != nil {
@@ -144,8 +138,10 @@ var fetchCmd = &cobra.Command{
 	Short: "fetch repository metadata from upstream",
 	Long: `Fetch repository metadata from configured package repositories.
 
-Downloads and caches repository metadata files (repomd.xml, Packages, etc.).
-Uses HTTP conditional requests (ETag, Last-Modified) to avoid unnecessary downloads.
+RPM: read repomd.xml and cache its primary XML (plain/gzip/bzip2/xz/zstd).
+Reuse validated RPM caches when the manifest checksum and source URL match.
+APT: cache Packages text, using HTTP conditional requests when possible.
+Legacy RPM caches are refreshed automatically.
 Use --force to ignore cache and re-download all repositories.`,
 	Example: `
   pgext fetch                   # fetch with cache
@@ -198,9 +194,12 @@ var parseCmd = &cobra.Command{
 	Short: "parse repository data and build the package catalog",
 	Long: `Parse cached repository metadata and build a complete package catalog.
 
+RPM caches must contain primary XML; refresh old caches with pgext fetch or
+pgext scan before parsing. APT caches contain Packages text.
+
 By default this atomically publishes:
 - pgext.apt: Debian/Ubuntu packages
-- pgext.dnf: RPM packages (EL, Fedora)
+- pgext.dnf: RPM packages parsed from primary XML (EL, Fedora)
 - pgext.bin: Unified binary package information
 - pgext.pkg: Extension availability across PostgreSQL and operating systems
 
@@ -210,7 +209,6 @@ is run. Uses parallel workers for faster processing.`,
 	Example: `
   pgext parse                   # build and atomically publish the complete catalog
   pgext parse -p 8              # use 8 parallel workers
-  pgext parse -k                # keep temporary DNF SQLite files
   pgext parse --best-effort     # publish a partial catalog from successful repositories
   pgext parse --no-pkg          # stop after apt, dnf, and bin; pkg becomes stale
 `,
@@ -219,7 +217,6 @@ is run. Uses parallel workers for faster processing.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
 			Parallel:   workers,
-			KeepTemp:   parseKeepTemp,
 			BestEffort: parseBestEffort,
 		})
 
@@ -257,8 +254,9 @@ var scanCmd = &cobra.Command{
 	Short: "scan local Pigsty repository metadata",
 	Long: `Scan Pigsty repository metadata from local filesystem.
 
-Reads repository metadata files from a local Pigsty repository directory
-instead of downloading from the network. Only processes repositories with
+Reads RPM primary XML named by repomd.xml and APT Packages text from a local
+Pigsty repository directory. RPM compression and integrity checks match fetch.
+Only processes repositories with
 org = 'pigsty'. Converts repository URLs like:
   https://repo.pigsty.io/apt/pgsql/bookworm/dists/bookworm/main/binary-arm64/Packages
 to local paths:
@@ -300,9 +298,6 @@ func init() {
 
 	// parse command flags
 	parseCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
-	parseCmd.Flags().BoolVarP(&parseKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
-	parseCmd.Flags().BoolVar(&parseKeepTemp, "keep", false, "deprecated alias for --keep-temp")
-	_ = parseCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
 	parseCmd.Flags().BoolVar(&parseBestEffort, "best-effort", false, "publish a partial catalog from repositories that parse successfully")
 	parseCmd.Flags().BoolVarP(&parseNoPkg, "no-pkg", "N", false, "stop after apt, dnf, and bin; leaves pgext.pkg stale")
 
@@ -314,9 +309,6 @@ func init() {
 	// rescan command flags
 	rescanCmd.Flags().StringVar(&scanDir, "dir", "~/pgsty/repo", "local repository directory")
 	rescanCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
-	rescanCmd.Flags().BoolVarP(&rescanKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
-	rescanCmd.Flags().BoolVar(&rescanKeepTemp, "keep", false, "deprecated alias for --keep-temp")
-	_ = rescanCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
 	rescanCmd.Flags().BoolVar(&rescanBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
 }
 
