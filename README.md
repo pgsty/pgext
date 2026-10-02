@@ -72,6 +72,30 @@ pgext purge                   # drop the pgext schema
 
 Run `pgext help <command>` for details on any command.
 
+## Repository Metadata
+
+RPM repositories must publish a `primary` XML entry in `repodata/repomd.xml`.
+Both upstream fetching and local scanning read the file named by that entry,
+with support for uncompressed XML, gzip, bzip2, xz, and zstd. PGEXT validates
+the declared checksums, sizes, and package count before replacing a cache.
+It does not read `primary_db` and does not require a SQLite driver.
+
+`pgext.repo_data.data` stores uncompressed primary XML for RPM repositories
+and uncompressed `Packages` text for APT repositories. RPM cache descriptors
+in `extra` record the source URL, compression, manifest checksums, content hash,
+and package count. Every RPM fetch reads the current manifest; an unchanged
+primary checksum can reuse a validated cache from the same source URL.
+
+After upgrading from a release that cached RPM databases, run `pgext fetch`
+(or `pgext scan` for local Pigsty repositories), then `pgext parse`.
+Old RPM caches refresh automatically without reusing their HTTP validators.
+`pgext reload` performs the upstream refresh and parse together. Parsing an
+unrefreshed legacy cache fails with instructions to refresh it.
+
+XML is parsed directly, so the former `--keep-temp`, `--keep`, and `-k`
+options have been removed. Parsed package tables and the availability matrix
+continue to update atomically after the selected failure policy passes.
+
 ## Links
 
 - Catalog website: [ext.pgsty.com](https://ext.pgsty.com)

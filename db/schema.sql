@@ -149,7 +149,7 @@ COMMENT ON COLUMN pgext.repository.extra IS 'Extended metadata in JSONB format f
 -----------------------------------
 -- Repository Raw Metadata
 -----------------------------------
--- Store raw repository metadata files (sqlite.bz2 for YUM, Packages for APT)
+-- Store uncompressed RPM primary XML and APT Packages metadata.
 -- DROP TABLE IF EXISTS pgext.repo_data;
 CREATE TABLE IF NOT EXISTS pgext.repo_data
 (
@@ -162,12 +162,12 @@ CREATE TABLE IF NOT EXISTS pgext.repo_data
     update_at     TIMESTAMP DEFAULT now()::DATE                      -- Local record update timestamp
 );
 
-COMMENT ON TABLE pgext.repo_data IS 'Raw repository metadata cache table';
+COMMENT ON TABLE pgext.repo_data IS 'Uncompressed RPM primary XML and APT Packages metadata cache';
 COMMENT ON COLUMN pgext.repo_data.id IS 'Repository identifier in format os_code.os_arch.org (e.g., d12.arm.pigsty, el9.x86_64.pgdg)';
-COMMENT ON COLUMN pgext.repo_data.etag IS 'HTTP ETag header value for efficient cache validation and conditional requests';
-COMMENT ON COLUMN pgext.repo_data.size IS 'Size of repository metadata file in bytes, used for cache management';
-COMMENT ON COLUMN pgext.repo_data.extra IS 'Additional metadata for caching (compression, format, etc.) in JSONB format';
-COMMENT ON COLUMN pgext.repo_data.data IS 'Raw binary repository metadata (repomd.xml for YUM, Packages file for APT)';
+COMMENT ON COLUMN pgext.repo_data.etag IS 'Payload HTTP ETag; APT uses conditional requests, RPM uses manifest checksums and source URL';
+COMMENT ON COLUMN pgext.repo_data.size IS 'Size of the uncompressed cached metadata payload in bytes';
+COMMENT ON COLUMN pgext.repo_data.extra IS 'RPM primary XML cache descriptor: format, source_url, compression, checksum, open_checksum, content_sha256, package_count and declared sizes';
+COMMENT ON COLUMN pgext.repo_data.data IS 'Uncompressed primary XML for RPM repositories; uncompressed Packages text for APT repositories';
 COMMENT ON COLUMN pgext.repo_data.last_modified IS 'HTTP Last-Modified timestamp from upstream repository source';
 COMMENT ON COLUMN pgext.repo_data.update_at IS 'Local timestamp when this record was last updated or refreshed';
 
@@ -674,12 +674,12 @@ COMMENT ON COLUMN pgext.counter.download IS 'Accumulated package download count 
 -----------------------------------
 -- YUM Packages
 -----------------------------------
--- Parsed YUM/RPM repository package metadata from repomd.xml primary database
+-- Parsed RPM package metadata from the primary XML named by repomd.xml.
 -- DROP TABLE IF EXISTS pgext.dnf;
 CREATE TABLE IF NOT EXISTS pgext.dnf
 (
     repo             TEXT    NOT NULL REFERENCES pgext.repository (id), -- Repository identifier
-    pkg_key          INTEGER NOT NULL,                                  -- Package key from repodata
+    pkg_key          INTEGER NOT NULL,                                  -- One-based package ordinal in primary XML
     pkg_id           TEXT    NOT NULL,                                  -- Package checksum identifier
     name             TEXT    NOT NULL,                                  -- RPM package name
     arch             TEXT,                                              -- Target architecture (x86_64, aarch64, noarch)
@@ -707,9 +707,9 @@ CREATE TABLE IF NOT EXISTS pgext.dnf
     checksum_type    TEXT,                                              -- Checksum algorithm (sha256, etc.)
     PRIMARY KEY (repo, pkg_key)
 );
-COMMENT ON TABLE pgext.dnf IS 'YUM/RPM Package Metadata Parsed from Repository Primary Database';
+COMMENT ON TABLE pgext.dnf IS 'RPM package metadata parsed from repository primary XML';
 COMMENT ON COLUMN pgext.dnf.repo IS 'Repository identifier (foreign key to pgext.repository)';
-COMMENT ON COLUMN pgext.dnf.pkg_key IS 'Unique package key within repository from repodata primary.xml';
+COMMENT ON COLUMN pgext.dnf.pkg_key IS 'One-based package ordinal within this primary XML snapshot; not a stable package identifier';
 COMMENT ON COLUMN pgext.dnf.pkg_id IS 'Package checksum identifier used for integrity verification';
 COMMENT ON COLUMN pgext.dnf.name IS 'RPM package name (e.g., postgresql17-pgvector)';
 COMMENT ON COLUMN pgext.dnf.arch IS 'Target CPU architecture: x86_64, aarch64, or noarch for arch-independent packages';
