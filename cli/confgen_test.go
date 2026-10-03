@@ -1508,7 +1508,7 @@ func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 
 func TestRPMTemplateReplacementReposOptOutOfModularFiltering(t *testing.T) {
 	repos := map[string]string{
-		"nginx":   "name: nginx          ,description: 'Nginx Repo'         ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }",
+		"nginx":   "name: nginx          ,description: 'Nginx Repo'         ,module: nginx   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }",
 		"percona": "name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.percona.com/ppg-18.4/yum/release/$releasever/RPMS/$basearch'  } ,meta: { module_hotfixes: 1 }",
 		"mysql":   "name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/'       ,china: 'https://mirrors.ustc.edu.cn/mysql-repo/yum/mysql-8.4-community/el/$releasever/$basearch/' } ,meta: { module_hotfixes: 1 }",
 		"redis":   "name: redis          ,description: 'Redis'              ,module: redis   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://rpmfind.net/linux/remi/enterprise/$releasever/redis72/$basearch/' } ,meta: { module_hotfixes: 1 }",
