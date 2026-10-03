@@ -6,6 +6,40 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-09-29
+
+Local build batch: 26 recipes upgraded and cargo-pgrx-0193 added, producing 116 RPM/DEB artifacts for 29 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| agentsview | 0.43.0 | 0.44.0 | Verified and built dual-architecture RPM/DEB |
+| cargo-pgrx-0193 | - | 0.19.3 | New exact 0.19.3 slot; 0191/0192 retained; native EL8 source builds for both architectures |
+| claude | 2.1.278 | 2.1.284 | Downloaded via port 8888; official manifest SHA256 and both Linux binary versions verified |
+| cloudflared | 2026.9.1 | 2026.9.3 | Verified and built dual-architecture RPM/DEB |
+| code | 1.138.0 | 1.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| code-server | 4.137.0 | 4.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| codex | 0.155.1 | 0.159.0 | Verified and built dual-architecture RPM/DEB |
+| crush | 0.95.0 | 0.96.1 | Verified and built dual-architecture RPM/DEB |
+| dblab | 0.50.0 | 0.51.0 | Verified and built dual-architecture RPM/DEB |
+| duckdb | 1.5.5 | 1.5.6 | Verified and built dual-architecture RPM/DEB |
+| etcd | 3.7.1 | 3.7.2 | Verified and built dual-architecture RPM/DEB |
+| headscale | 0.29.3 | 0.29.4 | Verified and built dual-architecture RPM/DEB |
+| hugo | 0.166.0 | 0.167.0 | Verified and built dual-architecture RPM/DEB |
+| mtail | 3.4.12 | 3.4.14 | Verified and built dual-architecture RPM/DEB |
+| openbao | 2.6.2 | 2.7.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| opencode | 1.18.31 | 1.18.33 | Verified and built dual-architecture RPM/DEB |
+| pgschema | 1.13.0 | 1.13.1 | Verified and built dual-architecture RPM/DEB |
+| postgrest | 16.3 | 16.4 | Verified and built dual-architecture RPM/DEB |
+| prometheus | 3.14.0 | 3.15.0 | Verified and built dual-architecture RPM/DEB |
+| rainfrog | 0.4.5 | 0.4.6 | Verified and built dual-architecture RPM/DEB |
+| redis-exporter | 1.91.1 | 1.92.1 | Verified and built dual-architecture RPM/DEB |
+| seaweedfs | 4.47 | 4.48 | Verified and built dual-architecture RPM/DEB |
+| sow | 0.4.0 | 0.5.0 | Existing 0.3/0.4 Managed workspaces require explicit migration |
+| stalwart | 0.16.22 | 0.16.24 | Verified and built dual-architecture RPM/DEB |
+| tailcat | 0.6.0 | 0.7.0 | Verified and built dual-architecture RPM/DEB |
+| uv | 0.12.17 | 0.12.20 | Verified and built dual-architecture RPM/DEB |
+| victoria-metrics | 1.152.0 | 1.153.0 | Single-node, cluster, and vmutils packages updated together |
+
 ## 2026-09-19
 
 Local build batch; all downloads used the port 8118 proxy. This entry does not imply publication to the live repository.
