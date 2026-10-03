@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1651** | {{< badge content="mobilitydb_datagen" link="https://github.com/MobilityDB/MobilityDB" >}} | {{< ext "mobilitydb_datagen" "mobilitydb" >}} | `1.3.0` | {{< category "GIS" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **1651** | {{< badge content="mobilitydb_datagen" link="https://github.com/MobilityDB/MobilityDB" >}} | {{< ext "mobilitydb_datagen" "mobilitydb" >}} | `1.3.1` | {{< category "GIS" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,35 +31,37 @@ page_width: full
 |   **See Also**    | {{< ext "pgrouting" >}} {{< ext "faker" >}} {{< ext "random" >}} {{< ext "h3" >}} {{< ext "pg_polyline" >}} {{< ext "dbt2" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 |    **Siblings**   | {{< ext "mobilitydb" >}} |
 
+> [!Note] Pigsty 1.3.1 bundles MobilityDB DataGen; upgrading from 1.2 to 1.3 requires upstream backup/restore.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mobilitydb` | `mobilitydb` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "mobilitydb_18" "green" >}} {{< bg "17" "mobilitydb_17" "green" >}} {{< bg "16" "mobilitydb_16" "green" >}} {{< bg "15" "mobilitydb_15" "green" >}} {{< bg "14" "mobilitydb_14" "green" >}} | `mobilitydb_$v` | `postgis36_$v` |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "postgresql-18-mobilitydb" "green" >}} {{< bg "17" "postgresql-17-mobilitydb" "green" >}} {{< bg "16" "postgresql-16-mobilitydb" "green" >}} {{< bg "15" "postgresql-15-mobilitydb" "green" >}} {{< bg "14" "postgresql-14-mobilitydb" "green" >}} | `postgresql-$v-mobilitydb` | `postgresql-$v-postgis-3` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mobilitydb` | `mobilitydb` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "mobilitydb_18" "green" >}} {{< bg "17" "mobilitydb_17" "green" >}} {{< bg "16" "mobilitydb_16" "green" >}} {{< bg "15" "mobilitydb_15" "green" >}} {{< bg "14" "mobilitydb_14" "green" >}} | `mobilitydb_$v` | `postgis36_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "postgresql-18-mobilitydb" "green" >}} {{< bg "17" "postgresql-17-mobilitydb" "green" >}} {{< bg "16" "postgresql-16-mobilitydb" "green" >}} {{< bg "15" "postgresql-15-mobilitydb" "green" >}} {{< bg "14" "postgresql-14-mobilitydb" "green" >}} | `postgresql-$v-mobilitydb` | `postgresql-$v-postgis-3` |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-18-mobilitydb : AVAIL 1" "green" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-mobilitydb : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-mobilitydb : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-mobilitydb : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-mobilitydb : AVAIL 1" "blue" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-18-mobilitydb : AVAIL 1" "green" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-mobilitydb : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-mobilitydb : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-mobilitydb : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-mobilitydb : AVAIL 1" "blue" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 2" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 2" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "green" >}} |
 {.matrix}
 
 
@@ -67,12 +69,12 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/MobilityDB/MobilityDB" title="Repository" icon="github" subtitle="github.com/MobilityDB/MobilityDB" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mobilitydb-1.3.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mobilitydb-1.3.1.tar.gz" />}}
 {{< /cards >}}
 
 
 ```bash
-pig build pkg mobilitydb;		# build rpm
+pig build pkg mobilitydb;		# build rpm/deb
 ```
 
 
@@ -105,14 +107,16 @@ pig install mobilitydb_datagen -v 14;   # install for PG 14
 CREATE EXTENSION mobilitydb_datagen CASCADE; -- requires mobilitydb
 ```
 
-
-
-
 ## Usage
 
-Sources: [repository](https://github.com/MobilityDB/MobilityDB), [synthetic data generator docs](https://docs.mobilitydb.com/MobilityDB/develop/apb.html), [control file](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/mobilitydb_datagen.in.control), [temporal generators](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/temporal/random_temporal.sql), [temporal point generators](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/geo/random_tpoint.sql)
+Sources:
 
-`mobilitydb_datagen` provides PL/pgSQL functions for generating synthetic PostgreSQL, PostGIS, and MobilityDB values. It is mainly useful for regression data, demos, and benchmark fixtures that need random temporal values or trajectories.
+- [Version 1.3.1 data-generator manual](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/doc/data_generator.xml)
+- [Extension control file](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/mobilitydb_datagen.in.control)
+- [Temporal generators](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/temporal/random_temporal.sql)
+- [Temporal point generators](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/geo/random_tpoint.sql)
+
+`mobilitydb_datagen` 1.3.1 provides PL/pgSQL functions for generating synthetic PostgreSQL, PostGIS, and MobilityDB values. It is mainly useful for regression data, demos, and benchmark fixtures that need random temporal values or trajectories.
 
 ```sql
 -- After the main MobilityDB extension is loaded:
@@ -172,5 +176,7 @@ FROM generate_series(1, 1000) AS vehicle_id;
 ### Caveats
 
 - The control file requires the main `mobilitydb` extension; `mobilitydb_datagen` is not standalone.
-- The package row in `db/extension.csv` lists version `1.3.0`, package `mobilitydb`, and PostgreSQL support for 14 through 18.
+- The generator is distributed with `mobilitydb` version `1.3.1`. Keep the dependency and generator files aligned; build flags and package availability determine which optional type families are present.
 - Upstream docs intentionally omit detailed parameter lists for many generator functions and point users to the SQL source files for exact signatures.
+
+The generator functions create synthetic values, not reproducible application datasets by default. Set a deliberate random seed when comparing runs, and review bounds, time zones, interpolation, and SRID for the workload.

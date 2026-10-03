@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2490** | {{< badge content="pg_ducklake" link="https://github.com/relytcloud/pg_ducklake" >}} | {{< ext "pg_ducklake" >}} | `1.0.0` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
+| **2490** | {{< badge content="pg_ducklake" link="https://github.com/relytcloud/pg_ducklake" >}} | {{< ext "pg_ducklake" >}} | `1.0.2` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -35,9 +35,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ducklake` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_ducklake_18" "green" >}} {{< bg "17" "pg_ducklake_17" "green" >}} {{< bg "16" "pg_ducklake_16" "green" >}} {{< bg "15" "pg_ducklake_15" "green" >}} {{< bg "14" "pg_ducklake_14" "green" >}} | `pg_ducklake_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-ducklake" "green" >}} {{< bg "17" "postgresql-17-pg-ducklake" "green" >}} {{< bg "16" "postgresql-16-pg-ducklake" "green" >}} {{< bg "15" "postgresql-15-pg-ducklake" "green" >}} {{< bg "14" "postgresql-14-pg-ducklake" "green" >}} | `postgresql-$v-pg-ducklake` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ducklake` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "pg_ducklake_18" "green" >}} {{< bg "17" "pg_ducklake_17" "green" >}} {{< bg "16" "pg_ducklake_16" "green" >}} {{< bg "15" "pg_ducklake_15" "green" >}} {{< bg "14" "pg_ducklake_14" "green" >}} | `pg_ducklake_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "postgresql-18-pg-ducklake" "green" >}} {{< bg "17" "postgresql-17-pg-ducklake" "green" >}} {{< bg "16" "postgresql-16-pg-ducklake" "green" >}} {{< bg "15" "postgresql-15-pg-ducklake" "green" >}} {{< bg "14" "postgresql-14-pg-ducklake" "green" >}} | `postgresql-$v-pg-ducklake` | - |
 {.packages}
 
 
@@ -173,7 +173,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/relytcloud/pg_ducklake" title="Repository" icon="github" subtitle="github.com/relytcloud/pg_ducklake" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ducklake-1.0.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ducklake-1.0.2.tar.gz CRoaring-4.7.1-amalgamation.tar.gz" />}}
 {{< /cards >}}
 
 

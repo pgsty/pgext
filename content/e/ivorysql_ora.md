@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pgtt" >}} {{< ext "db_migrator" >}} |
 |    **Siblings**   | {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} |
 
-> [!Note] compatible with PostgreSQL 18.4
+> [!Note] compatible with PostgreSQL 18.6
 
 
 ## Packages
@@ -40,29 +40,29 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `ivorysql` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.4` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.6` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.6` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 5.4" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
 {.matrix}
 
 
@@ -71,22 +71,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ivorysql-18` | `5.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 24.6 MiB | [ivorysql-18-5.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ivorysql-18-5.4-1PIGSTY.el8.x86_64.rpm) |
-| `ivorysql-18` | `5.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 24.1 MiB | [ivorysql-18-5.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ivorysql-18-5.4-1PIGSTY.el8.aarch64.rpm) |
-| `ivorysql-18` | `5.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.0 MiB | [ivorysql-18-5.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ivorysql-18-5.4-1PIGSTY.el9.x86_64.rpm) |
-| `ivorysql-18` | `5.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 MiB | [ivorysql-18-5.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ivorysql-18-5.4-1PIGSTY.el9.aarch64.rpm) |
-| `ivorysql-18` | `5.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.2 MiB | [ivorysql-18-5.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ivorysql-18-5.4-1PIGSTY.el10.x86_64.rpm) |
-| `ivorysql-18` | `5.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 23.0 MiB | [ivorysql-18-5.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ivorysql-18-5.4-1PIGSTY.el10.aarch64.rpm) |
-| `ivorysql-18` | `5.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 23.0 MiB | [ivorysql-18_5.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~bookworm_amd64.deb) |
-| `ivorysql-18` | `5.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.4 MiB | [ivorysql-18_5.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~bookworm_arm64.deb) |
-| `ivorysql-18` | `5.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 20.9 MiB | [ivorysql-18_5.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~trixie_amd64.deb) |
-| `ivorysql-18` | `5.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 20.4 MiB | [ivorysql-18_5.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~trixie_arm64.deb) |
-| `ivorysql-18` | `5.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.1 MiB | [ivorysql-18_5.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~jammy_amd64.deb) |
-| `ivorysql-18` | `5.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 24.8 MiB | [ivorysql-18_5.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~jammy_arm64.deb) |
-| `ivorysql-18` | `5.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 23.2 MiB | [ivorysql-18_5.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~noble_amd64.deb) |
-| `ivorysql-18` | `5.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 23.0 MiB | [ivorysql-18_5.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~noble_arm64.deb) |
-| `ivorysql-18` | `5.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.8 MiB | [ivorysql-18_5.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~resolute_amd64.deb) |
-| `ivorysql-18` | `5.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.5 MiB | [ivorysql-18_5.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/ivorysql-18/ivorysql-18_5.4-1PIGSTY~resolute_arm64.deb) |
+| `ivorysql-18` | `5.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 24.1 MiB | [ivorysql-18-5.6-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ivorysql-18-5.6-1PGSTY.el8.x86_64.rpm) |
+| `ivorysql-18` | `5.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 23.6 MiB | [ivorysql-18-5.6-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ivorysql-18-5.6-1PGSTY.el8.aarch64.rpm) |
+| `ivorysql-18` | `5.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.0 MiB | [ivorysql-18-5.6-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ivorysql-18-5.6-1PGSTY.el9.x86_64.rpm) |
+| `ivorysql-18` | `5.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 MiB | [ivorysql-18-5.6-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ivorysql-18-5.6-1PGSTY.el9.aarch64.rpm) |
+| `ivorysql-18` | `5.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 MiB | [ivorysql-18-5.6-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ivorysql-18-5.6-1PGSTY.el10.x86_64.rpm) |
+| `ivorysql-18` | `5.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.9 MiB | [ivorysql-18-5.6-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ivorysql-18-5.6-1PGSTY.el10.aarch64.rpm) |
+| `ivorysql-18` | `5.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 22.7 MiB | [ivorysql-18_5.6-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~bookworm_amd64.deb) |
+| `ivorysql-18` | `5.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.1 MiB | [ivorysql-18_5.6-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~bookworm_arm64.deb) |
+| `ivorysql-18` | `5.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 20.7 MiB | [ivorysql-18_5.6-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~trixie_amd64.deb) |
+| `ivorysql-18` | `5.6` | [d13.aarch64](/os/d13.aarch64) | pigsty | 20.1 MiB | [ivorysql-18_5.6-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~trixie_arm64.deb) |
+| `ivorysql-18` | `5.6` | [u22.x86_64](/os/u22.x86_64) | pigsty | 24.8 MiB | [ivorysql-18_5.6-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~jammy_amd64.deb) |
+| `ivorysql-18` | `5.6` | [u22.aarch64](/os/u22.aarch64) | pigsty | 24.5 MiB | [ivorysql-18_5.6-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~jammy_arm64.deb) |
+| `ivorysql-18` | `5.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.9 MiB | [ivorysql-18_5.6-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~noble_amd64.deb) |
+| `ivorysql-18` | `5.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.7 MiB | [ivorysql-18_5.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~noble_arm64.deb) |
+| `ivorysql-18` | `5.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.5 MiB | [ivorysql-18_5.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~resolute_amd64.deb) |
+| `ivorysql-18` | `5.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.2 MiB | [ivorysql-18_5.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/ivorysql-18/ivorysql-18_5.6-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}
@@ -95,7 +95,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" title="Repository" icon="github" subtitle="github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="ivorysql-5.4.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="ivorysql-5.6.tar.gz" />}}
 {{< /cards >}}
 
 

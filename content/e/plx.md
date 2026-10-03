@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3140** | {{< badge content="plx" link="https://github.com/commandprompt/plx" >}} | {{< ext "plx" >}} | `1.3.1` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3140** | {{< badge content="plx" link="https://github.com/commandprompt/plx" >}} | {{< ext "plx" >}} | `2.0.1` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,16 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plisql" >}} {{< ext "plpgsql_wrap" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} |
 
-> [!Note] Uses PostgreSQL's built-in PL/pgSQL call handler; no control-file dependency is declared.
+> [!Note] Package 2.0.1; SQL version 2.0.0.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plx` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "plx_18" "green" >}} {{< bg "17" "plx_17" "green" >}} {{< bg "16" "plx_16" "green" >}} {{< bg "15" "plx_15" "green" >}} {{< bg "14" "plx_14" "green" >}} | `plx_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "postgresql-18-plx" "green" >}} {{< bg "17" "postgresql-17-plx" "green" >}} {{< bg "16" "postgresql-16-plx" "green" >}} {{< bg "15" "postgresql-15-plx" "green" >}} {{< bg "14" "postgresql-14-plx" "green" >}} | `postgresql-$v-plx` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plx` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "plx_18" "green" >}} {{< bg "17" "plx_17" "green" >}} {{< bg "16" "plx_16" "green" >}} {{< bg "15" "plx_15" "green" >}} {{< bg "14" "plx_14" "green" >}} | `plx_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "postgresql-18-plx" "green" >}} {{< bg "17" "postgresql-17-plx" "green" >}} {{< bg "16" "postgresql-16-plx" "green" >}} {{< bg "15" "postgresql-15-plx" "green" >}} {{< bg "14" "postgresql-14-plx" "green" >}} | `postgresql-$v-plx` | - |
 {.packages}
 
 
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/commandprompt/plx" title="Repository" icon="github" subtitle="github.com/commandprompt/plx" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plx-1.3.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plx-2.0.1.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -225,11 +225,11 @@ CREATE EXTENSION plx;
 
 Sources:
 
-- [plx 1.3.1 README](https://github.com/commandprompt/plx/blob/v1.3.1/README.md)
-- [plx documentation](https://commandprompt.github.io/plx/)
-- [plx user guide](https://github.com/commandprompt/plx/blob/v1.3.1/doc/USERGUIDE.md)
-- [plx limitations](https://github.com/commandprompt/plx/blob/v1.3.1/doc/LIMITATIONS.md)
-- [plx 1.3.1 release](https://github.com/commandprompt/plx/releases/tag/v1.3.1)
+- [PGXN plx 2.0.1 README](https://pgxn.org/dist/plx/2.0.1/README.html)
+- [plx 2.0.1 user guide](https://api.pgxn.org/src/plx/plx-2.0.1/doc/USERGUIDE.md)
+- [plx 2.0.1 compatibility notes](https://api.pgxn.org/src/plx/plx-2.0.1/doc/COMPATIBILITY.md)
+- [plx 2.0.1 changelog](https://api.pgxn.org/src/plx/plx-2.0.1/CHANGELOG.md)
+- [plx control file](https://api.pgxn.org/src/plx/plx-2.0.1/plx.control)
 
 `plx` provides familiar procedural-language dialects that transpile to ordinary PL/pgSQL when `CREATE FUNCTION` runs. PostgreSQL stores and executes the generated PL/pgSQL with its built-in trusted handler; no Ruby, PHP, JavaScript, Python, Go, COBOL, Oracle, or SQL Server runtime is loaded into the backend.
 
@@ -317,4 +317,4 @@ The builder remains correct on PostgreSQL 13-17, but its in-place optimization r
 - Parameters and return types must be PostgreSQL types. Type inference for locals is limited; explicitly declare types for calls and compound expressions.
 - SQL uses three-valued logic and PostgreSQL numeric/string semantics. Source-language truthiness and string concatenation with `+` are not reproduced.
 - Locals are hoisted into one PL/pgSQL `DECLARE` block, so block-local scope and redeclaration with a different type are unavailable.
-- Version 1.3.1 is a code-only safety release: it adds lexer/string-builder capacity guards, stack-depth checks, bounded indentation handling, and fixes for raw-string, PHP interpolation, and non-decimal integer literal parsing. After installing the binary, run `ALTER EXTENSION plx UPDATE TO '1.3.1'`.
+- Distribution 2.0.1 installs extension version 2.0.0; 2.0.1 changes PGXN packaging only and has no SQL upgrade of its own. Version 2.0.0 changes interpolation in `plxruby`, `plxphp`, `plxjs`, `plxts`, `plxpython3`, and `plxgo`: a NULL operand now makes the whole interpolated string NULL instead of silently becoming an empty string. Run `ALTER EXTENSION plx UPDATE TO '2.0.0'`, then redeploy affected functions because existing generated PL/pgSQL in `pg_proc.prosrc` is not rewritten by the extension update.

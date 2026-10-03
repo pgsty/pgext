@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7040** | {{< badge content="passwordpolicy" link="https://github.com/fmbiete/passwordpolicy" >}} | {{< ext "passwordpolicy" >}} | `2.0.5` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7040** | {{< badge content="passwordpolicy" link="https://github.com/fmbiete/passwordpolicy" >}} | {{< ext "passwordpolicy" >}} | `2.0.6` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,16 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_pwhash" >}} {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "credcheck" >}} {{< ext "chkpass" >}} {{< ext "pg_enigma" >}} {{< ext "column_encrypt" >}} |
 
-> [!Note] PGDG RPM and Pigsty DEB package fmbiete/passwordpolicy 2.0.5; requires shared_preload_libraries and cracklib runtime.
+> [!Note] Requires preload and cracklib dictionaries.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `passwordpolicy` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "passwordpolicy_18" "green" >}} {{< bg "17" "passwordpolicy_17" "green" >}} {{< bg "16" "passwordpolicy_16" "green" >}} {{< bg "15" "passwordpolicy_15" "green" >}} {{< bg "14" "passwordpolicy_14" "green" >}} | `passwordpolicy_$v` | `cracklib` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.5` | {{< bg "18" "postgresql-18-passwordpolicy" "green" >}} {{< bg "17" "postgresql-17-passwordpolicy" "green" >}} {{< bg "16" "postgresql-16-passwordpolicy" "green" >}} {{< bg "15" "postgresql-15-passwordpolicy" "green" >}} {{< bg "14" "postgresql-14-passwordpolicy" "green" >}} | `postgresql-$v-passwordpolicy` | `cracklib-runtime`, `libcrack2` |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `passwordpolicy` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "passwordpolicy_18" "green" >}} {{< bg "17" "passwordpolicy_17" "green" >}} {{< bg "16" "passwordpolicy_16" "green" >}} {{< bg "15" "passwordpolicy_15" "green" >}} {{< bg "14" "passwordpolicy_14" "green" >}} | `passwordpolicy_$v` | `cracklib-dicts` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.6` | {{< bg "18" "postgresql-18-passwordpolicy" "green" >}} {{< bg "17" "postgresql-17-passwordpolicy" "green" >}} {{< bg "16" "postgresql-16-passwordpolicy" "green" >}} {{< bg "15" "postgresql-15-passwordpolicy" "green" >}} {{< bg "14" "postgresql-14-passwordpolicy" "green" >}} | `postgresql-$v-passwordpolicy` | `cracklib-runtime`, `libcrack2` |
 {.packages}
 
 
@@ -224,7 +224,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/fmbiete/passwordpolicy" title="Repository" icon="github" subtitle="github.com/fmbiete/passwordpolicy" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="passwordpolicy-2.0.5.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="passwordpolicy-2.0.6.tar.gz" />}}
 {{< /cards >}}
 
 

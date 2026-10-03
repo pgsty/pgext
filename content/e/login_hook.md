@@ -6,7 +6,7 @@ weight: 7360
 categories: ["SEC"]
 languages: ["C"]
 licenses: ["GPL-3.0"]
-repos: ["PGDG"]
+repos: ["MIXED"]
 page_width: full
 ---
 
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7360** | {{< badge content="login_hook" link="https://github.com/splendiddata/login_hook" >}} | {{< ext "login_hook" >}} | `1.7` | {{< category "SEC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **7360** | {{< badge content="login_hook" link="https://github.com/splendiddata/login_hook" >}} | {{< ext "login_hook" >}} | `1.8` | {{< category "SEC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -35,9 +35,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `login_hook` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7` | {{< bg "18" "login_hook_18" "green" >}} {{< bg "17" "login_hook_17" "green" >}} {{< bg "16" "login_hook_16" "green" >}} {{< bg "15" "login_hook_15" "green" >}} {{< bg "14" "login_hook_14" "green" >}} | `login_hook_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "postgresql-18-login-hook" "green" >}} {{< bg "17" "postgresql-17-login-hook" "green" >}} {{< bg "16" "postgresql-16-login-hook" "green" >}} {{< bg "15" "postgresql-15-login-hook" "green" >}} {{< bg "14" "postgresql-14-login-hook" "green" >}} | `postgresql-$v-login-hook` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `login_hook` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8` | {{< bg "18" "login_hook_18" "green" >}} {{< bg "17" "login_hook_17" "green" >}} {{< bg "16" "login_hook_16" "green" >}} {{< bg "15" "login_hook_15" "green" >}} {{< bg "14" "login_hook_14" "green" >}} | `login_hook_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "postgresql-18-login-hook" "green" >}} {{< bg "17" "postgresql-17-login-hook" "green" >}} {{< bg "16" "postgresql-16-login-hook" "green" >}} {{< bg "15" "postgresql-15-login-hook" "green" >}} {{< bg "14" "postgresql-14-login-hook" "green" >}} | `postgresql-$v-login-hook` | - |
 {.packages}
 
 
@@ -227,7 +227,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/splendiddata/login_hook" title="Repository" icon="github" subtitle="github.com/splendiddata/login_hook" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="login_hook-1.7.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="login_hook-1.8.tar.gz" />}}
 {{< /cards >}}
 
 

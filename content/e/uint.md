@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3730** | {{< badge content="uint" link="https://github.com/petere/pguint" >}} | {{< ext "uint" "pguint" >}} | `1.20250815` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3730** | {{< badge content="uint" link="https://github.com/petere/pguint" >}} | {{< ext "uint" "pguint" >}} | `1.20260630` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -36,9 +36,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pguint` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "pguint_18" "green" >}} {{< bg "17" "pguint_17" "green" >}} {{< bg "16" "pguint_16" "green" >}} {{< bg "15" "pguint_15" "green" >}} {{< bg "14" "pguint_14" "green" >}} | `pguint_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "postgresql-18-pguint" "green" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} | `postgresql-$v-pguint` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.20260630` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pguint` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20260630` | {{< bg "18" "pguint_18" "green" >}} {{< bg "17" "pguint_17" "green" >}} {{< bg "16" "pguint_16" "green" >}} {{< bg "15" "pguint_15" "green" >}} {{< bg "14" "pguint_14" "green" >}} | `pguint_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20260630` | {{< bg "18" "postgresql-18-pguint" "green" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} | `postgresql-$v-pguint` | - |
 {.packages}
 
 
@@ -246,7 +246,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/petere/pguint" title="Repository" icon="github" subtitle="github.com/petere/pguint" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pguint-1.20250815.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pguint-1.20260630.tar.gz" />}}
 {{< /cards >}}
 
 

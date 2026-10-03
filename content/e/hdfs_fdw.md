@@ -6,7 +6,7 @@ weight: 8740
 categories: ["FDW"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
-repos: ["PGDG"]
+repos: ["MIXED"]
 page_width: full
 ---
 

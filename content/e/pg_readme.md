@@ -6,7 +6,7 @@ weight: 4300
 categories: ["UTIL"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
-repos: ["PGDG"]
+repos: ["MIXED"]
 page_width: full
 ---
 
@@ -31,7 +31,7 @@ page_width: full
 |   **See Also**    | {{< ext "ddlx" >}} {{< ext "pg_render" >}} {{< ext "schedoc" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pgpdf" >}} {{< ext "pg_get_functiondef" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_query_rewrite" >}} |
 |    **Siblings**   | {{< ext "pg_readme_test_extension" >}} |
 
-> [!Note] Catalog release is 0.7.1; PGDG remains the RPM maintainer at 0.7.0, so the PIGSTY 0.7.1 RPM must not be published; PIGSTY maintains the 0.7.1 DEB package.
+> [!Note] RPM: PGDG 0.7.1; DEB: PIGSTY 0.7.1.
 
 
 ## Packages
@@ -39,19 +39,19 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_readme` | `hstore` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.7.0` | {{< bg "18" "pg_readme_18" "green" >}} {{< bg "17" "pg_readme_17" "green" >}} {{< bg "16" "pg_readme_16" "green" >}} {{< bg "15" "pg_readme_15" "green" >}} {{< bg "14" "pg_readme_14" "green" >}} | `pg_readme_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.7.1` | {{< bg "18" "pg_readme_18" "green" >}} {{< bg "17" "pg_readme_17" "green" >}} {{< bg "16" "pg_readme_16" "green" >}} {{< bg "15" "pg_readme_15" "green" >}} {{< bg "14" "pg_readme_14" "green" >}} | `pg_readme_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "postgresql-18-pg-readme" "green" >}} {{< bg "17" "postgresql-17-pg-readme" "green" >}} {{< bg "16" "postgresql-16-pg-readme" "green" >}} {{< bg "15" "postgresql-15-pg-readme" "green" >}} {{< bg "14" "postgresql-14-pg-readme" "green" >}} | `postgresql-$v-pg-readme` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 0.7.0" "pg_readme_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_14 : AVAIL 1" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 0.7.0" "pg_readme_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_14 : AVAIL 1" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 0.7.0" "pg_readme_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_14 : AVAIL 2" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 0.7.0" "pg_readme_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_14 : AVAIL 2" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 0.7.0" "pg_readme_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_14 : AVAIL 2" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 0.7.0" "pg_readme_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.0" "pg_readme_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 0.7.1" "pg_readme_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 0.7.1" "pg_readme_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_14 : AVAIL 2" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 0.7.1" "pg_readme_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_14 : AVAIL 3" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 0.7.1" "pg_readme_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 0.7.1" "pg_readme_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 0.7.1" "pg_readme_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.7.1" "pg_readme_14 : AVAIL 3" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
@@ -70,14 +70,20 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_readme_18` | `0.7.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.5 KiB | [pg_readme_18-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_readme_18-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 31.5 KiB | [pg_readme_18-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_readme_18-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_18` | `0.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 32.4 KiB | [pg_readme_18-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_readme_18-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.5 KiB | [pg_readme_18-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_readme_18-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_18` | `0.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 31.7 KiB | [pg_readme_18-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_readme_18-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_18-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_readme_18-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_18-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_readme_18-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_18` | `0.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.7 KiB | [pg_readme_18-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_readme_18-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [pg_readme_18-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_readme_18-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [pg_readme_18-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_readme_18-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_18` | `0.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.0 KiB | [pg_readme_18-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_readme_18-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.0 KiB | [pg_readme_18-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_readme_18-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.4 KiB | [pg_readme_18-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_readme_18-0.7.0-1PGDG.rhel10.noarch.rpm) |
+| `pg_readme_18` | `0.7.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.9 KiB | [pg_readme_18-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_readme_18-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_readme_18-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_readme_18-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_18` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [pg_readme_18-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_readme_18-0.7.0-1PGDG.rhel10.noarch.rpm) |
 | `postgresql-18-pg-readme` | `0.7.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 19.5 KiB | [postgresql-18-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-readme/postgresql-18-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb) |
@@ -97,14 +103,20 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_readme_17` | `0.7.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.5 KiB | [pg_readme_17-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_readme_17-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 31.5 KiB | [pg_readme_17-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_readme_17-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_17` | `0.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 32.4 KiB | [pg_readme_17-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_readme_17-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.5 KiB | [pg_readme_17-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_readme_17-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_17` | `0.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 31.7 KiB | [pg_readme_17-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_readme_17-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_17-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_readme_17-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_17-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_readme_17-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_17` | `0.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.7 KiB | [pg_readme_17-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_readme_17-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [pg_readme_17-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_readme_17-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.8 KiB | [pg_readme_17-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_readme_17-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_17` | `0.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.0 KiB | [pg_readme_17-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_readme_17-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.0 KiB | [pg_readme_17-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_readme_17-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.4 KiB | [pg_readme_17-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_readme_17-0.7.0-1PGDG.rhel10.noarch.rpm) |
+| `pg_readme_17` | `0.7.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.9 KiB | [pg_readme_17-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_readme_17-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_readme_17-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_readme_17-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_17` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [pg_readme_17-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_readme_17-0.7.0-1PGDG.rhel10.noarch.rpm) |
 | `postgresql-17-pg-readme` | `0.7.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 19.5 KiB | [postgresql-17-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-readme/postgresql-17-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb) |
@@ -124,14 +136,20 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_readme_16` | `0.7.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.5 KiB | [pg_readme_16-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_readme_16-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 31.5 KiB | [pg_readme_16-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_readme_16-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_16` | `0.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 32.4 KiB | [pg_readme_16-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_readme_16-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.5 KiB | [pg_readme_16-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_readme_16-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_16` | `0.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 31.7 KiB | [pg_readme_16-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_readme_16-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_16-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_readme_16-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_16-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_readme_16-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_16` | `0.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.7 KiB | [pg_readme_16-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_readme_16-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.8 KiB | [pg_readme_16-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_readme_16-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.8 KiB | [pg_readme_16-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_readme_16-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_16` | `0.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.0 KiB | [pg_readme_16-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_readme_16-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.0 KiB | [pg_readme_16-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_readme_16-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.4 KiB | [pg_readme_16-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_readme_16-0.7.0-1PGDG.rhel10.noarch.rpm) |
+| `pg_readme_16` | `0.7.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.9 KiB | [pg_readme_16-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_readme_16-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_readme_16-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_readme_16-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_16` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [pg_readme_16-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_readme_16-0.7.0-1PGDG.rhel10.noarch.rpm) |
 | `postgresql-16-pg-readme` | `0.7.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 19.5 KiB | [postgresql-16-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-readme/postgresql-16-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb) |
@@ -151,14 +169,20 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_readme_15` | `0.7.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.5 KiB | [pg_readme_15-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_readme_15-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 31.5 KiB | [pg_readme_15-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_readme_15-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_15` | `0.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 32.4 KiB | [pg_readme_15-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_readme_15-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.5 KiB | [pg_readme_15-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_readme_15-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_15` | `0.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 31.7 KiB | [pg_readme_15-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_readme_15-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_15-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_readme_15-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_15-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_readme_15-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_15` | `0.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.7 KiB | [pg_readme_15-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_readme_15-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [pg_readme_15-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_readme_15-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.8 KiB | [pg_readme_15-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_readme_15-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_15` | `0.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.0 KiB | [pg_readme_15-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_readme_15-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.0 KiB | [pg_readme_15-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_readme_15-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.4 KiB | [pg_readme_15-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_readme_15-0.7.0-1PGDG.rhel10.noarch.rpm) |
+| `pg_readme_15` | `0.7.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.9 KiB | [pg_readme_15-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_readme_15-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_readme_15-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_readme_15-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_15` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [pg_readme_15-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_readme_15-0.7.0-1PGDG.rhel10.noarch.rpm) |
 | `postgresql-15-pg-readme` | `0.7.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 19.5 KiB | [postgresql-15-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-readme/postgresql-15-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb) |
@@ -178,14 +202,20 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_readme_14` | `0.7.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.5 KiB | [pg_readme_14-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_readme_14-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 31.5 KiB | [pg_readme_14-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_readme_14-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_14` | `0.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 32.4 KiB | [pg_readme_14-0.7.1-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_readme_14-0.7.1-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.5 KiB | [pg_readme_14-0.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_readme_14-0.7.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_readme_14` | `0.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 31.7 KiB | [pg_readme_14-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_readme_14-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_14-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_readme_14-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.8 KiB | [pg_readme_14-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_readme_14-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_14` | `0.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.7 KiB | [pg_readme_14-0.7.1-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_readme_14-0.7.1-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [pg_readme_14-0.7.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_readme_14-0.7.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.8 KiB | [pg_readme_14-0.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_readme_14-0.7.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_readme_14` | `0.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.0 KiB | [pg_readme_14-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_readme_14-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.0 KiB | [pg_readme_14-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_readme_14-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.4 KiB | [pg_readme_14-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_readme_14-0.7.0-1PGDG.rhel10.noarch.rpm) |
+| `pg_readme_14` | `0.7.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.9 KiB | [pg_readme_14-0.7.1-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_readme_14-0.7.1-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_readme_14-0.7.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_readme_14-0.7.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_readme_14` | `0.7.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [pg_readme_14-0.7.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_readme_14-0.7.0-1PGDG.rhel10.noarch.rpm) |
 | `postgresql-14-pg-readme` | `0.7.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 19.5 KiB | [postgresql-14-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-readme/postgresql-14-pg-readme_0.7.1-1PIGSTY~bookworm_all.deb) |

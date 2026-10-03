@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**hydra**](https://github.com/hydradatabase/hydra) : Hydra Columnar extension
+[**hydra**](https://github.com/hydradatabase/columnar) : Hydra Columnar extension
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2410** | {{< badge content="columnar" link="https://github.com/hydradatabase/hydra" >}} | {{< ext "columnar" "hydra" >}} | `1.1.2` | {{< category "OLAP" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
+| **2410** | {{< badge content="columnar" link="https://github.com/hydradatabase/columnar" >}} | {{< ext "columnar" "hydra" >}} | `1.1.2` | {{< category "OLAP" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -137,7 +137,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/hydradatabase/hydra" title="Repository" icon="github" subtitle="github.com/hydradatabase/hydra" />}}
+{{< card link="https://github.com/hydradatabase/columnar" title="Repository" icon="github" subtitle="github.com/hydradatabase/columnar" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hydra-1.1.2.tar.gz" />}}
 {{< /cards >}}
 
@@ -173,9 +173,6 @@ pig install columnar -v 14;   # install for PG 14
 ```sql
 CREATE EXTENSION columnar;
 ```
-
-
-
 
 ## Usage
 
@@ -310,5 +307,5 @@ SELECT columnar.vacuum_full('public', 0.1, 25);
 - This extension is obsolete in Pigsty metadata and conflicts with `citus`/`citus_columnar` style columnar storage. Avoid installing conflicting columnar table access methods in the same PostgreSQL major unless you have tested the exact combination.
 - Pigsty packages `hydra`/`columnar` for PostgreSQL 14-16; PostgreSQL 17 and 18 are marked unsupported locally.
 - Hydra 1.1.x added update/delete and upsert improvements, but the project itself still describes columnar storage as unsuitable for frequent large updates, small transactions, and OLTP-style single-row workloads.
-- Unsupported or limited areas include logical decoding, unlogged columnar tables, serializable isolation, some scan types, and many non-btree/non-hash indexes. Check constraints and index-backed constraints carefully before relying on them.
+- Inherited Citus storage documentation does not fully describe Hydra index support: the Hydra changelog explicitly adds GIN, GiST, SP-GiST, and RUM indexes. Logical decoding, unlogged tables, serializable isolation, and some scan paths remain limited; verify the exact feature and constraint combination.
 - The `columnar` schema contains internal metadata tables such as `columnar.options`, `columnar.stripe`, `columnar.chunk_group`, and `columnar.chunk`. Query public views/functions for inspection, but do not mutate metadata tables directly.

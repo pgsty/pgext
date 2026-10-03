@@ -6,7 +6,7 @@ weight: 9700
 categories: ["ETL"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
-repos: ["PIGSTY"]
+repos: ["MIXED"]
 page_width: full
 ---
 

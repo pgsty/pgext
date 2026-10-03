@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2566** | {{< badge content="pg_lake_table" link="https://github.com/Snowflake-Labs/pg_lake/tree/main/pg_lake_table" >}} | {{< ext "pg_lake_table" "pg_lake" >}} | `3.4` | {{< category "OLAP" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2566** | {{< badge content="pg_lake_table" link="https://github.com/Snowflake-Labs/pg_lake/tree/main/pg_lake_table" >}} | {{< ext "pg_lake_table" "pg_lake" >}} | `3.5` | {{< category "OLAP" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,16 +33,16 @@ page_width: full
 |   **See Also**    | {{< ext "pg_ducklake" >}} {{< ext "pg_mooncake" >}} {{< ext "columnar" >}} {{< ext "pg_parquet" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} {{< ext "pg_sorted_heap" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "file_fdw" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] pg_extension_base auto-loads pg_lake_engine, pg_lake_iceberg, and pg_lake_table in dependency order. Extension SQL/control version is 3.4; source and DEB/RPM package version is 3.4.0.
+> [!Note] Lake table component. Package 3.5.3; SQL 3.5.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_lake` | `btree_gist`, `pg_lake_engine`, `pg_lake_iceberg` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4.0` | {{< bg "18" "pg_lake_18" "green" >}} {{< bg "17" "pg_lake_17" "green" >}} {{< bg "16" "pg_lake_16" "green" >}} {{< bg "15" "pg_lake_15" "red" >}} {{< bg "14" "pg_lake_14" "red" >}} | `pg_lake_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4.0` | {{< bg "18" "postgresql-18-pg-lake" "green" >}} {{< bg "17" "postgresql-17-pg-lake" "green" >}} {{< bg "16" "postgresql-16-pg-lake" "green" >}} {{< bg "15" "postgresql-15-pg-lake" "red" >}} {{< bg "14" "postgresql-14-pg-lake" "red" >}} | `postgresql-$v-pg-lake` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_lake` | `btree_gist`, `pg_lake_engine`, `pg_lake_iceberg` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.5.3` | {{< bg "18" "pg_lake_18" "green" >}} {{< bg "17" "pg_lake_17" "green" >}} {{< bg "16" "pg_lake_16" "green" >}} {{< bg "15" "pg_lake_15" "red" >}} {{< bg "14" "pg_lake_14" "red" >}} | `pg_lake_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.5.3` | {{< bg "18" "postgresql-18-pg-lake" "green" >}} {{< bg "17" "postgresql-17-pg-lake" "green" >}} {{< bg "16" "postgresql-16-pg-lake" "green" >}} {{< bg "15" "postgresql-15-pg-lake" "red" >}} {{< bg "14" "postgresql-14-pg-lake" "red" >}} | `postgresql-$v-pg-lake` | - |
 {.packages}
 
 
@@ -50,20 +50,20 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_lake_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_lake_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.0" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "pg_lake_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_lake_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lake_14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.3" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
 {.matrix}
 
 
@@ -71,7 +71,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/Snowflake-Labs/pg_lake/tree/main/pg_lake_table" title="Repository" icon="github" subtitle="github.com/Snowflake-Labs/pg_lake/tree/main/pg_lake_table" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_lake-3.4.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_lake-3.5.3.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -118,12 +118,16 @@ CREATE EXTENSION pg_lake_table CASCADE; -- requires btree_gist, pg_lake_engine, 
 
 Sources:
 
-- [Official data-lake file query guide](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/query-data-lake-files.md)
-- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/iceberg-tables.md)
-- [Version 3.4 control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_table/pg_lake_table.control)
-- [FDW, server, utility, and access-method SQL](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_table/pg_lake_table--3.0.sql)
+- [Official data-lake file query guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/query-data-lake-files.md)
+- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/iceberg-tables.md)
+- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table.control)
+- [3.4 to 3.5 catalog indexes](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table--3.4--3.5.sql)
+- [FDW, server, utility, and access-method SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table--3.0.sql)
 
 `pg_lake_table` exposes object-store files as PostgreSQL foreign tables and provides the `USING iceberg` table syntax. It owns the `pg_lake` and `pg_lake_iceberg` foreign servers, file inspection/cache utilities, table catalogs, and transaction hooks; Iceberg metadata encoding is delegated to `pg_lake_iceberg`.
+
+
+The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
 
 ### Query External Files
 
@@ -181,3 +185,5 @@ FROM lake_file.preview('s3://analytics-bucket/events/sample.parquet');
 - External tables are references to files, not imported copies. File replacement, cross-region access, and cache invalidation can change latency or results independently of PostgreSQL catalog state.
 - Iceberg inserts are optimized for batches rather than single rows. Use a staging heap table for high-rate row-at-a-time ingestion and periodically flush batches.
 - Internal `lake_table.*` catalogs track files, field IDs, partitions, and recovery state. Do not modify them directly.
+
+Version `3.5` adds indexes to file-deletion mappings, column statistics, and partition-value catalogs to avoid repeated child-catalog scans during bulk removal. Apply the SQL migration as well as installing the new library.

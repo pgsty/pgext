@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1960** | {{< badge content="pgcontext" link="https://pgxn.org/dist/pgContext/0.2.0/" >}} | {{< ext "pgcontext" >}} | `0.2.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **1960** | {{< badge content="pgcontext" link="https://pgxn.org/dist/pgContext/0.2.0/" >}} | {{< ext "pgcontext" >}} | `0.3.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,20 +28,19 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgcontext` |
-|    **Need By**    | {{< ext "pgcontext_pgvector" >}} |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vectorize" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pgmnemo" >}} {{< ext "pg_summarize" >}} |
 |    **Siblings**   | {{< ext "pgcontext_pgvector" >}} |
 
-> [!Note] Upstream 0.2.0 and PIGSTY packages support PostgreSQL 17 and 18; pgcontext_pgvector ships in the same package.
+> [!Note] PG17-18; 0.3.0 is clean-install-only and retires pgcontext_pgvector.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pgcontext_18" "green" >}} {{< bg "17" "pgcontext_17" "green" >}} {{< bg "16" "pgcontext_16" "red" >}} {{< bg "15" "pgcontext_15" "red" >}} {{< bg "14" "pgcontext_14" "red" >}} | `pgcontext_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pgcontext" "green" >}} {{< bg "17" "postgresql-17-pgcontext" "green" >}} {{< bg "16" "postgresql-16-pgcontext" "red" >}} {{< bg "15" "postgresql-15-pgcontext" "red" >}} {{< bg "14" "postgresql-14-pgcontext" "red" >}} | `postgresql-$v-pgcontext` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pgcontext_18" "green" >}} {{< bg "17" "pgcontext_17" "green" >}} {{< bg "16" "pgcontext_16" "red" >}} {{< bg "15" "pgcontext_15" "red" >}} {{< bg "14" "pgcontext_14" "red" >}} | `pgcontext_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-pgcontext" "green" >}} {{< bg "17" "postgresql-17-pgcontext" "green" >}} {{< bg "16" "postgresql-16-pgcontext" "red" >}} {{< bg "15" "postgresql-15-pgcontext" "red" >}} {{< bg "14" "postgresql-14-pgcontext" "red" >}} | `postgresql-$v-pgcontext` | - |
 {.packages}
 
 
@@ -118,7 +117,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://pgxn.org/dist/pgContext/0.2.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/pgContext/0.2.0/" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcontext-0.2.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcontext-0.3.0.tar.gz" />}}
 {{< /cards >}}
 
 

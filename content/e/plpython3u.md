@@ -28,7 +28,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|    **Need By**    | {{< ext "hstore_plpython3u" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "omni_python" >}} {{< ext "pg4ml" >}} |
+|    **Need By**    | {{< ext "hstore_plpython3u" >}} {{< ext "jev" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "omni_python" >}} {{< ext "pg4ml" >}} |
 |   **See Also**    | {{< ext "plperl" >}} {{< ext "plperlu" >}} {{< ext "pllua" >}} {{< ext "pltcl" >}} {{< ext "plsh" >}} {{< ext "pljava" >}} {{< ext "plr" >}} {{< ext "plxslt" >}} {{< ext "plpgsql" >}} {{< ext "plv8" >}} |
 |    **Siblings**   | {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "hstore_plpython3u" >}} |
 

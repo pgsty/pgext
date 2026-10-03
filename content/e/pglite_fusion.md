@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3590** | {{< badge content="pglite_fusion" link="https://github.com/frectonz/pglite-fusion" >}} | {{< ext "pglite_fusion" >}} | `0.0.6` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **3590** | {{< badge content="pglite_fusion" link="https://github.com/frectonz/pglite-fusion" >}} | {{< ext "pglite_fusion" >}} | `0.0.7` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglite_fusion` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.6` | {{< bg "18" "pglite_fusion_18" "green" >}} {{< bg "17" "pglite_fusion_17" "green" >}} {{< bg "16" "pglite_fusion_16" "green" >}} {{< bg "15" "pglite_fusion_15" "green" >}} {{< bg "14" "pglite_fusion_14" "green" >}} | `pglite_fusion_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.6` | {{< bg "18" "postgresql-18-pglite-fusion" "green" >}} {{< bg "17" "postgresql-17-pglite-fusion" "green" >}} {{< bg "16" "postgresql-16-pglite-fusion" "green" >}} {{< bg "15" "postgresql-15-pglite-fusion" "green" >}} {{< bg "14" "postgresql-14-pglite-fusion" "green" >}} | `postgresql-$v-pglite-fusion` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglite_fusion` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "pglite_fusion_18" "green" >}} {{< bg "17" "pglite_fusion_17" "green" >}} {{< bg "16" "pglite_fusion_16" "green" >}} {{< bg "15" "pglite_fusion_15" "green" >}} {{< bg "14" "pglite_fusion_14" "green" >}} | `pglite_fusion_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "postgresql-18-pglite-fusion" "green" >}} {{< bg "17" "postgresql-17-pglite-fusion" "green" >}} {{< bg "16" "postgresql-16-pglite-fusion" "green" >}} {{< bg "15" "postgresql-15-pglite-fusion" "green" >}} {{< bg "14" "postgresql-14-pglite-fusion" "green" >}} | `postgresql-$v-pglite-fusion` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/frectonz/pglite-fusion" title="Repository" icon="github" subtitle="github.com/frectonz/pglite-fusion" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglite-fusion-0.0.6.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglite-fusion-0.0.7.tar.gz" />}}
 {{< /cards >}}
 
 

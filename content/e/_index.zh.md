@@ -7,12 +7,12 @@ comments: false
 weight: 900
 ---
 
-共有 575 个已打包的 PostgreSQL 扩展：
+共有 584 个已打包的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
 | {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "TIME" >}} | 时序数据库扩展插件 |
-| {{< ext "timescaledb_toolkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
+| {{< ext "timescaledb_toolkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "TIME" >}} | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | {{< ext "timeseries" "pg_timeseries" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | 时序数据API封装 |
 | {{< ext "periods" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
 | {{< ext "temporal_tables" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | 时态表功能支持 |
@@ -40,7 +40,7 @@ weight: 900
 | {{< ext "h3_postgis" "pg_h3" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | H3与PostGIS集成的扩展插件 |
 | {{< ext "q3c" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Q3C天空索引插件 |
 | {{< ext "ogr_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | GIS 数据外部数据源包装器 |
-| {{< ext "geoip" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
+| {{< ext "geoip" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "GIS" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | {{< ext "pg_polyline" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | Google快速Polyline编码解码扩展 |
 | {{< ext "pg_eviltransform" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | 基于PostGIS ST_Transform 的 BD09/GCJ02 坐标转换扩展 |
 | {{< ext "pg_geohash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | 使用GeoHash处理空间坐标的函数包 |
@@ -67,6 +67,8 @@ weight: 900
 | {{< ext "pg_summarize" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 使用LLM对文本字段进行总结 |
 | {{< ext "pg_tiktoken" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | {{< ext "pg_tiktoken_c" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
+| {{< ext "pg_grammar_guard" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | 根据实时目录生成语法并检测已批准语法的漂移 |
+| {{< ext "jev" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "RAG" >}} | 通过 TypeSafe 实现自然语言行过滤、排序和分类 |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | {{< category "RAG" >}} | PG4ML是一个机器学习框架 |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
 | {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | PostgreSQL 单计划多模态智能体记忆扩展 |
@@ -74,8 +76,8 @@ weight: 900
 | {{< ext "pgcontext_pgvector" "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 | {{< ext "pg_turbovec" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 基于 TurboQuant 压缩量化的 PostgreSQL 向量类型与 ANN 索引访问方法。 |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
-| {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
-| {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | PGGroonga 数据库管理模块 |
+| {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "FTS" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
+| {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | PGGroonga 数据库管理模块 |
 | {{< ext "pg_bigm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FTS" >}} | 基于二字组的多语言全文检索扩展 |
 | {{< ext "zhparser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | 中文分词，全文搜索解析器 |
 | {{< ext "pg_bestmatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | 在数据库内生成BM25稀疏向量 |
@@ -89,6 +91,7 @@ weight: 900
 | {{< ext "pg_fts" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | {{< ext "pg_cjk_parser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
 | {{< ext "pg_jieba" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | 基于 cppjieba 的中文全文检索分词器 |
+| {{< ext "acdat" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | 在 PostgreSQL 中编译 Aho-Corasick 双数组机，实现精确多模式匹配与替换 |
 | {{< ext "hunspell_cs_cz" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell捷克语全文检索词典 |
 | {{< ext "hunspell_de_de" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell德语全文检索词典 |
 | {{< ext "hunspell_en_us" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell英语全文检索词典 |
@@ -114,7 +117,7 @@ weight: 900
 | {{< ext "pg_fkpart" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "OLAP" >}} | 按外键实用程序进行表分区的扩展 |
 | {{< ext "pg_partman" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | {{< ext "plproxy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 作为过程语言实现的数据库分区 |
-| {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 使用GPU与NVMe加速大数据处理 |
+| {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 使用GPU与NVMe加速大数据处理 |
 | {{< ext "pg_orca" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | PostgreSQL ORCA 查询优化器扩展 |
 | {{< ext "pg_sorted_heap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 带 zone map 剪枝和内置向量搜索的有序堆表访问方法 |
 | {{< ext "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "OLAP" >}} | Snowflake 开源的 PostgreSQL 数据湖与 Iceberg 集成扩展 |
@@ -150,9 +153,9 @@ weight: 900
 | {{< ext "plan_filter" "pg_plan_filter" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | 使用执行计划代价过滤阻止特定查询语句 |
 | {{< ext "pg_variables" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | 提供标量、数组和记录类型的会话变量 |
 | {{< ext "imgsmlr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | 使用Haar小波分析计算图片相似度 |
-| {{< ext "pg_ivm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 增量维护的物化视图 |
+| {{< ext "pg_ivm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | 增量维护的物化视图 |
 | {{< ext "pg_incremental" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | 增量处理流式事件 |
-| {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 为 PostgreSQL 18 提供流式表与差分视图维护 |
+| {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | 为 PostgreSQL 18 提供流式表与差分视图维护 |
 | {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
 | {{< ext "pg_disorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
 | {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 为普通 PostgreSQL 主键读取提供事务感知的共享内存缓存 |
@@ -303,6 +306,7 @@ weight: 900
 | {{< ext "pg_html5_email_address" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "UTIL" >}} | 验证Email是否符合HTML5规范的扩展 |
 | {{< ext "url_encode" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 提供URL编码解码函数 |
 | {{< ext "pgsql_tweaks" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 一些日常会用到的便利函数与视图 |
+| {{< ext "pg_relation_sql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-------" color="blue" >}} | {{< category "UTIL" >}} | 根据 PostgreSQL 外键生成可内联的关系导航 SQL 函数 |
 | {{< ext "pg_extra_time" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 一些关于日期与时间的扩展函数 |
 | {{< ext "pgpcre" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | PCRE/Perl风格的正则表达式支持 |
 | {{< ext "re2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | 使用 RE2 的 ClickHouse 兼容正则函数 |
@@ -358,7 +362,7 @@ weight: 900
 | {{< ext "arraymath" "pg_arraymath" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 数组逐元素数学运算符包 |
 | {{< ext "pg_math" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 使用GSL库的数学统计函数 |
 | {{< ext "random" "pg_random" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 随机数生成器 |
-| {{< ext "base36" "pg_base36" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Base36编码解码扩展 |
+| {{< ext "base36" "pg_base36" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Base36编码解码扩展 |
 | {{< ext "base62" "pg_base62" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Base62编码解码扩展 |
 | {{< ext "pg_base58" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Base58 编码/解码函数 |
 | {{< ext "financial" "pg_financial" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 金融领域聚合函数 |
@@ -393,14 +397,15 @@ weight: 900
 | {{< ext "pg_checksums" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s---r" color="blue" >}} | {{< category "ADMIN" >}} | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | 将集群设置为只读 |
 | {{< ext "pgdd" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
-| {{< ext "pg_permissions" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 查看对象权限并将其与期望状态进行比较 |
+| {{< ext "pg_permissions" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 查看对象权限并将其与期望状态进行比较 |
 | {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | PG 自动故障迁移 |
 | {{< ext "pg_catcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 用于诊断系统目录是否损坏的工具 |
 | {{< ext "pre_prepare" "preprepare" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 在服务端预先准备好PreparedStatement备用 |
 | {{< ext "pg_upless" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "ADMIN" >}} | 检测表上的无用UPDATE |
 | {{< ext "pgcozy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 根据先前的pg_buffercache快照预热内存缓冲区 |
-| {{< ext "pg_orphaned" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 处理孤儿文件的扩展插件 |
-| {{< ext "pg_crash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | 向数据库进程随机发送信号模拟故障 |
+| {{< ext "pg_orphaned" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 处理孤儿文件的扩展插件 |
+| {{< ext "pg_crash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | 向数据库进程随机发送信号模拟故障 |
+| {{< ext "macavity" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 为 PostgreSQL 测试集群提供确定性的会话内故障注入 |
 | {{< ext "pg_cheat_funcs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 一些超级实用的作弊函数 |
 | {{< ext "fio" "pg_fio" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL文件IO函数包 |
 | {{< ext "qos" "pg_qos" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
@@ -409,7 +414,9 @@ weight: 900
 | {{< ext "online_advisor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "ADMIN" >}} | 在线建议缺失索引、扩展统计信息与预备语句 |
 | {{< ext "pg_column_tetris" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 强制采用最优列对齐顺序，以减少 PostgreSQL 行数据中的填充浪费。 |
 | {{< ext "cat_tools" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 用于操作 PostgreSQL 系统目录的工具集 |
+| {{< ext "pg_living_assertions" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 保存可执行 SQL 检查、核验日期和断言变更历史 |
 | {{< ext "pg_savior" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 阻止不带条件的全表更新以避免意外事故 |
+| {{< ext "pg_circuit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | 针对危险 SQL 语句提供运行时观察、告警和拦截 |
 | {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | {{< ext "pg_strict" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
 | {{< ext "pg_drop_events" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
@@ -417,7 +424,7 @@ weight: 900
 | {{< ext "pgelog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 通过伪自治事务实现扩展日志记录 |
 | {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | {{< ext "pg_prewarm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sLd--" color="blue" >}} | {{< category "ADMIN" >}} | 预热关系数据 |
-| {{< ext "pgpool_adm" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | PGPool 管理函数 |
+| {{< ext "pgpool_adm" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "ADMIN" >}} | PGPool 管理函数 |
 | {{< ext "pgpool_recovery" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | PGPool辅助扩展，从v4.3提供的恢复函数 |
 | {{< ext "pgpool_regclass" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | PGPool辅助扩展，RegClass替代 |
 | {{< ext "lo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | 大对象维护 |
@@ -427,7 +434,7 @@ weight: 900
 | {{< ext "adminpack" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL 管理函数集合 |
 | {{< ext "amcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 校验关系完整性 |
 | {{< ext "pg_surgery" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 对损坏的关系进行手术 |
-| {{< ext "pg_profile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL 数据库负载记录与AWR报表工具 |
+| {{< ext "pg_profile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL 数据库负载记录与AWR报表工具 |
 | {{< ext "pg_tracing" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL分布式Tracing |
 | {{< ext "pg_stat_ch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 | {{< ext "pg_stat_backtrace" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "STAT" >}} | 捕获或记录 PostgreSQL 进程的 C 层调用栈 |
@@ -530,7 +537,7 @@ weight: 900
 | {{< ext "kafka_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Kafka外部数据源包装器 |
 | {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | hdfs 外部数据包装器 |
 | {{< ext "firebird_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Firebird外部数据源包装器 |
-| {{< ext "rdf_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
+| {{< ext "rdf_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
 | {{< ext "aws_s3" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FDW" >}} | 从S3导入导出数据的外部数据源包装器 |
 | {{< ext "log_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 访问PostgreSQL日志文件的FDW |
 | {{< ext "dblink" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FDW" >}} | 从数据库内连接到其他 PostgreSQL 数据库 |
@@ -561,9 +568,11 @@ weight: 900
 | {{< ext "babelfishpg_common" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server 数据类型兼容扩展 |
 | {{< ext "babelfishpg_tsql" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server SQL语法兼容性扩展 |
 | {{< ext "babelfishpg_tds" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server TDS线缆协议兼容扩展 |
-| {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | SQL Server 货币数据类型兼容扩展 |
+| {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | SQL Server 货币数据类型兼容扩展 |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | 为PG提供memcached兼容接口 |
 | {{< ext "aux_mysql" "openhalo" >}} | {{< pgver "18,17,16,15,14" "r,r,r,r,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | MySQL兼容辅助扩展模块 |
+| {{< ext "pgs3" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
+| {{< ext "kafgres" >}} | {{< pgver "18,17,16,15,14" "r,r,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 | {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL逻辑复制：三方扩展实现 |
 | {{< ext "pglogical_origin" "pglogical" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | pglogical复制延迟以秒计的精确视图 |
@@ -575,7 +584,7 @@ weight: 900
 | {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL 多主逻辑复制扩展 |
 | {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | {{< ext "pgclone" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | 在不同环境间克隆 PostgreSQL 数据库、模式、表和函数 |
-| {{< ext "pgmqtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
+| {{< ext "pgmqtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | {{< ext "wal2mongo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
 | {{< ext "decoderbufs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ETL" >}} | 将WAL逻辑解码为ProtocolBuffer协议的消息 |

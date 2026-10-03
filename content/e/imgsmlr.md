@@ -38,7 +38,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `imgsmlr` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "imgsmlr_18" "green" >}} {{< bg "17" "imgsmlr_17" "green" >}} {{< bg "16" "imgsmlr_16" "green" >}} {{< bg "15" "imgsmlr_15" "green" >}} {{< bg "14" "imgsmlr_14" "green" >}} | `imgsmlr_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-imgsmlr" "green" >}} {{< bg "17" "postgresql-17-imgsmlr" "green" >}} {{< bg "16" "postgresql-16-imgsmlr" "green" >}} {{< bg "15" "postgresql-15-imgsmlr" "green" >}} {{< bg "14" "postgresql-14-imgsmlr" "green" >}} | `postgresql-$v-imgsmlr` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0+git20180223.c484a15` | {{< bg "18" "postgresql-18-imgsmlr" "green" >}} {{< bg "17" "postgresql-17-imgsmlr" "green" >}} {{< bg "16" "postgresql-16-imgsmlr" "green" >}} {{< bg "15" "postgresql-15-imgsmlr" "green" >}} {{< bg "14" "postgresql-14-imgsmlr" "green" >}} | `postgresql-$v-imgsmlr` | - |
 {.packages}
 
 
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/postgrespro/imgsmlr" title="Repository" icon="github" subtitle="github.com/postgrespro/imgsmlr" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="imgsmlr-1.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="imgsmlr-1.0+git20180223.c484a15.tar.gz" />}}
 {{< /cards >}}
 
 

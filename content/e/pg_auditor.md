@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7130** | {{< badge content="pg_auditor" link="https://github.com/kouber/pg_auditor" >}} | {{< ext "pg_auditor" >}} | `0.2` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "SQL" >}} |
+| **7130** | {{< badge content="pg_auditor" link="https://github.com/kouber/pg_auditor" >}} | {{< ext "pg_auditor" >}} | `0.3` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -38,9 +38,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_auditor` | `hstore` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2` | {{< bg "18" "pg_auditor_18" "green" >}} {{< bg "17" "pg_auditor_17" "green" >}} {{< bg "16" "pg_auditor_16" "green" >}} {{< bg "15" "pg_auditor_15" "green" >}} {{< bg "14" "pg_auditor_14" "green" >}} | `pg_auditor_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2` | {{< bg "18" "postgresql-18-pg-auditor" "green" >}} {{< bg "17" "postgresql-17-pg-auditor" "green" >}} {{< bg "16" "postgresql-16-pg-auditor" "green" >}} {{< bg "15" "postgresql-15-pg-auditor" "green" >}} {{< bg "14" "postgresql-14-pg-auditor" "green" >}} | `postgresql-$v-pg-auditor` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_auditor` | `hstore` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3` | {{< bg "18" "pg_auditor_18" "green" >}} {{< bg "17" "pg_auditor_17" "green" >}} {{< bg "16" "pg_auditor_16" "green" >}} {{< bg "15" "pg_auditor_15" "green" >}} {{< bg "14" "pg_auditor_14" "green" >}} | `pg_auditor_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3+git20250228.7c2edff` | {{< bg "18" "postgresql-18-pg-auditor" "green" >}} {{< bg "17" "postgresql-17-pg-auditor" "green" >}} {{< bg "16" "postgresql-16-pg-auditor" "green" >}} {{< bg "15" "postgresql-15-pg-auditor" "green" >}} {{< bg "14" "postgresql-14-pg-auditor" "green" >}} | `postgresql-$v-pg-auditor` | - |
 {.packages}
 
 
@@ -186,7 +186,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/kouber/pg_auditor" title="Repository" icon="github" subtitle="github.com/kouber/pg_auditor" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_auditor-0.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_auditor-0.3+git20250228.7c2edff.tar.gz" />}}
 {{< /cards >}}
 
 

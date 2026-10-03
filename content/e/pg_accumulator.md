@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4845** | {{< badge content="pg_accumulator" link="https://github.com/Treedo/pg_accumulator" >}} | {{< ext "pg_accumulator" >}} | `1.1.3` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4845** | {{< badge content="pg_accumulator" link="https://github.com/Treedo/pg_accumulator" >}} | {{< ext "pg_accumulator" >}} | `1.2.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -36,9 +36,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_accumulator` | `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.3` | {{< bg "18" "pg_accumulator_18" "green" >}} {{< bg "17" "pg_accumulator_17" "green" >}} {{< bg "16" "pg_accumulator_16" "green" >}} {{< bg "15" "pg_accumulator_15" "green" >}} {{< bg "14" "pg_accumulator_14" "green" >}} | `pg_accumulator_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.3` | {{< bg "18" "postgresql-18-pg-accumulator" "green" >}} {{< bg "17" "postgresql-17-pg-accumulator" "green" >}} {{< bg "16" "postgresql-16-pg-accumulator" "green" >}} {{< bg "15" "postgresql-15-pg-accumulator" "green" >}} {{< bg "14" "postgresql-14-pg-accumulator" "green" >}} | `postgresql-$v-pg-accumulator` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_accumulator` | `plpgsql` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_accumulator_18" "green" >}} {{< bg "17" "pg_accumulator_17" "green" >}} {{< bg "16" "pg_accumulator_16" "green" >}} {{< bg "15" "pg_accumulator_15" "green" >}} {{< bg "14" "pg_accumulator_14" "green" >}} | `pg_accumulator_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-accumulator" "green" >}} {{< bg "17" "postgresql-17-pg-accumulator" "green" >}} {{< bg "16" "postgresql-16-pg-accumulator" "green" >}} {{< bg "15" "postgresql-15-pg-accumulator" "green" >}} {{< bg "14" "postgresql-14-pg-accumulator" "green" >}} | `postgresql-$v-pg-accumulator` | - |
 {.packages}
 
 
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/Treedo/pg_accumulator" title="Repository" icon="github" subtitle="github.com/Treedo/pg_accumulator" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_accumulator-1.1.3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_accumulator-1.2.0.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9560** | {{< badge content="pgactive" link="https://github.com/aws/pgactive" >}} | {{< ext "pgactive" >}} | `2.1.7` | {{< category "ETL" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **9560** | {{< badge content="pgactive" link="https://github.com/aws/pgactive" >}} | {{< ext "pgactive" >}} | `2.1.9` | {{< category "ETL" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,16 +30,16 @@ page_width: full
 |    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "pglogical" >}} {{< ext "spock" >}} {{< ext "mimeo" >}} {{< ext "pgoutput" >}} {{< ext "postgres_fdw" >}} {{< ext "repmgr" >}} {{< ext "pg_failover_slots" >}} {{< ext "citus" >}} {{< ext "pgautofailover" >}} {{< ext "bgw_replstatus" >}} |
 
-> [!Note] require libpgfeutils
+> [!Note] Package 2.1.9; SQL version 2.1.8.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgactive` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.7` | {{< bg "18" "pgactive_18" "green" >}} {{< bg "17" "pgactive_17" "green" >}} {{< bg "16" "pgactive_16" "green" >}} {{< bg "15" "pgactive_15" "green" >}} {{< bg "14" "pgactive_14" "green" >}} | `pgactive_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.7` | {{< bg "18" "postgresql-18-pgactive" "green" >}} {{< bg "17" "postgresql-17-pgactive" "green" >}} {{< bg "16" "postgresql-16-pgactive" "green" >}} {{< bg "15" "postgresql-15-pgactive" "green" >}} {{< bg "14" "postgresql-14-pgactive" "green" >}} | `postgresql-$v-pgactive` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgactive` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.9` | {{< bg "18" "pgactive_18" "green" >}} {{< bg "17" "pgactive_17" "green" >}} {{< bg "16" "pgactive_16" "green" >}} {{< bg "15" "pgactive_15" "green" >}} {{< bg "14" "pgactive_14" "green" >}} | `pgactive_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.9` | {{< bg "18" "postgresql-18-pgactive" "green" >}} {{< bg "17" "postgresql-17-pgactive" "green" >}} {{< bg "16" "postgresql-16-pgactive" "green" >}} {{< bg "15" "postgresql-15-pgactive" "green" >}} {{< bg "14" "postgresql-14-pgactive" "green" >}} | `postgresql-$v-pgactive` | - |
 {.packages}
 
 
@@ -185,7 +185,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/aws/pgactive" title="Repository" icon="github" subtitle="github.com/aws/pgactive" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgactive-2.1.7.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgactive-2.1.9.tar.gz" />}}
 {{< /cards >}}
 
 

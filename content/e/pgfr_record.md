@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6060** | {{< badge content="pgfr_record" link="https://github.com/dventimisupabase/pg_flight_recorder" >}} | {{< ext "pgfr_record" "pg_flight_recorder" >}} | `2.29.2` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+| **6060** | {{< badge content="pgfr_record" link="https://github.com/dventimisupabase/pg_flight_recorder" >}} | {{< ext "pgfr_record" "pg_flight_recorder" >}} | `2.32.1` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,16 +33,16 @@ page_width: full
 |   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "logerrors" >}} {{< ext "pgelog" >}} |
 |    **Siblings**   | {{< ext "pgfr_analyze" >}} |
 
-> [!Note] Package normalizes the upstream 0.0.0 control version to 2.29.2; run SELECT pgfr_record.enable() after CREATE EXTENSION. The downstream install patch defers scheduling until the CREATE transaction commits and guards optional pg_stat_statements.
+> [!Note] Package 2.32.1; call pgfr_record.enable() after installation.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_flight_recorder` | `pg_cron` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "pg_flight_recorder_18" "green" >}} {{< bg "17" "pg_flight_recorder_17" "green" >}} {{< bg "16" "pg_flight_recorder_16" "green" >}} {{< bg "15" "pg_flight_recorder_15" "green" >}} {{< bg "14" "pg_flight_recorder_14" "red" >}} | `pg_flight_recorder_$v` | `pg_cron_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.29.2` | {{< bg "18" "postgresql-18-pg-flight-recorder" "green" >}} {{< bg "17" "postgresql-17-pg-flight-recorder" "green" >}} {{< bg "16" "postgresql-16-pg-flight-recorder" "green" >}} {{< bg "15" "postgresql-15-pg-flight-recorder" "green" >}} {{< bg "14" "postgresql-14-pg-flight-recorder" "red" >}} | `postgresql-$v-pg-flight-recorder` | `postgresql-$v-cron` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.32.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_flight_recorder` | `pg_cron` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.32.1` | {{< bg "18" "pg_flight_recorder_18" "green" >}} {{< bg "17" "pg_flight_recorder_17" "green" >}} {{< bg "16" "pg_flight_recorder_16" "green" >}} {{< bg "15" "pg_flight_recorder_15" "green" >}} {{< bg "14" "pg_flight_recorder_14" "red" >}} | `pg_flight_recorder_$v` | `pg_cron_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.32.1` | {{< bg "18" "postgresql-18-pg-flight-recorder" "green" >}} {{< bg "17" "postgresql-17-pg-flight-recorder" "green" >}} {{< bg "16" "postgresql-16-pg-flight-recorder" "green" >}} {{< bg "15" "postgresql-15-pg-flight-recorder" "green" >}} {{< bg "14" "postgresql-14-pg-flight-recorder" "red" >}} | `postgresql-$v-pg-flight-recorder` | `postgresql-$v-cron` |
 {.packages}
 
 
@@ -165,7 +165,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/dventimisupabase/pg_flight_recorder" title="Repository" icon="github" subtitle="github.com/dventimisupabase/pg_flight_recorder" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_flight_recorder-2.29.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_flight_recorder-2.32.1.tar.gz" />}}
 {{< /cards >}}
 
 

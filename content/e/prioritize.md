@@ -29,8 +29,6 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_kpart" >}} {{< ext "pg_readonly" >}} {{< ext "qos" >}} {{< ext "block_copy_command" >}} {{< ext "safeupdate" >}} {{< ext "pg_command_fw" >}} {{< ext "pg_strict" >}} {{< ext "pg_hint_plan" >}} |
 
-> [!Note] no pg 14 on el9
-
 
 ## Packages
 
@@ -235,38 +233,36 @@ pig install prioritize -v 14;   # install for PG 14
 CREATE EXTENSION prioritize;
 ```
 
-
-
-
 ## Usage
 
-> [prioritize: get and set the priority of PostgreSQL backends](https://github.com/schmiddy/pg_prioritize)
+Sources:
 
-The `prioritize` extension exposes `getpriority()` and `setpriority()` system calls for PostgreSQL backends, allowing you to `renice` backend processes from SQL.
+- [Official README](https://github.com/schmiddy/pg_prioritize/blob/c160271202ca8a713dea10cf1cc30448db786533/README.md)
+- [SQL functions](https://github.com/schmiddy/pg_prioritize/blob/c160271202ca8a713dea10cf1cc30448db786533/prioritize.sql.in)
+- [Control file](https://github.com/schmiddy/pg_prioritize/blob/c160271202ca8a713dea10cf1cc30448db786533/prioritize.control)
 
-### Get Backend Priority
+`prioritize` exposes operating-system priority controls for PostgreSQL backend processes. Use it to lower the scheduling priority of selected sessions; it is not a PostgreSQL query scheduler.
+
+### Inspect and Adjust a Backend
 
 ```sql
+CREATE EXTENSION prioritize;
 SELECT get_backend_priority(pg_backend_pid());
-```
-
-Any user may query the priority of any backend.
-
-### Set Backend Priority
-
-```sql
 SELECT set_backend_priority(pg_backend_pid(), 10);
 ```
 
-Superusers can set the priority of any backend. Unprivileged users can only adjust backends with the same role.
+Any user may query a backend's priority. A PostgreSQL superuser may request adjustments for any backend; other users may adjust only backends running under the same database role.
 
-Note: priority can only be raised (higher numeric value = lower OS priority). Only root can lower the numeric priority value, and PostgreSQL processes should not run as root.
-
-### Batch Operations
+### Adjust Related Sessions
 
 ```sql
--- Increase priority of all current user's backends by 5
 SELECT set_backend_priority(pid, get_backend_priority(pid) + 5)
-  FROM pg_stat_activity
-  WHERE usename = CURRENT_USER;
+FROM pg_stat_activity
+WHERE usename = CURRENT_USER;
 ```
+
+Increasing the numeric nice value lowers operating-system scheduling priority. The example therefore reduces those backends' priority, rather than speeding them up.
+
+### Privileges and Limits
+
+Installation requires a superuser, with no preload or restart. Operating-system permissions still apply: ordinary PostgreSQL processes normally cannot lower the numeric nice value to increase priority. Database superuser privileges do not confer root privileges. Review platform scheduling policy and process identity before using bulk adjustments. The control file uses SQL version 1.0; distribution package version 1.0.4 is separate.

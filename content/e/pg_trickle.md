@@ -17,49 +17,50 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2860** | {{< badge content="pg_trickle" link="https://github.com/trickle-labs/pg-trickle" >}} | {{< ext "pg_trickle" >}} | `0.81.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2860** | {{< badge content="pg_trickle" link="https://github.com/trickle-labs/pg-trickle" >}} | {{< ext "pg_trickle" >}} | `0.108.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pgtrickle` `pgtrickle_changes` |
 |   **See Also**    | {{< ext "pg_ivm" >}} {{< ext "pg_incremental" >}} {{< ext "timescaledb" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_partman" >}} {{< ext "pg_ttl_index" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_lake" >}} |
 
-> [!Note] PG18 only; pgrx schema metadata must be kept from linker garbage collection.
+> [!Note] PG18 only; requires preload and ships pg_trickle_dump. Follow the packaged upgrade guide.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.81.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_trickle` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.81.0` | {{< bg "18" "pg_trickle_18" "green" >}} {{< bg "17" "pg_trickle_17" "red" >}} {{< bg "16" "pg_trickle_16" "red" >}} {{< bg "15" "pg_trickle_15" "red" >}} {{< bg "14" "pg_trickle_14" "red" >}} | `pg_trickle_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.81.0` | {{< bg "18" "postgresql-18-pg-trickle" "green" >}} {{< bg "17" "postgresql-17-pg-trickle" "red" >}} {{< bg "16" "postgresql-16-pg-trickle" "red" >}} {{< bg "15" "postgresql-15-pg-trickle" "red" >}} {{< bg "14" "postgresql-14-pg-trickle" "red" >}} | `postgresql-$v-pg-trickle` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.108.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_trickle` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.108.1` | {{< bg "18" "pg_trickle_18" "green" >}} {{< bg "17" "pg_trickle_17" "red" >}} {{< bg "16" "pg_trickle_16" "red" >}} {{< bg "15" "pg_trickle_15" "red" >}} {{< bg "14" "pg_trickle_14" "red" >}} | `pg_trickle_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.108.1` | {{< bg "18" "postgresql-18-pg-trickle" "green" >}} {{< bg "17" "postgresql-17-pg-trickle" "red" >}} {{< bg "16" "postgresql-16-pg-trickle" "red" >}} {{< bg "15" "postgresql-15-pg-trickle" "red" >}} {{< bg "14" "postgresql-14-pg-trickle" "red" >}} | `postgresql-$v-pg-trickle` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.81.0" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "pg_trickle_18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_trickle_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_trickle_14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.108.1" "postgresql-18-pg-trickle : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-trickle : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-trickle : N/A 0" "gray" >}} |
 {.matrix}
 
 
@@ -68,22 +69,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_trickle_18` | `0.81.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.9 MiB | [pg_trickle_18-0.81.0-3PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_trickle_18-0.81.0-3PIGSTY.el8.x86_64.rpm) |
-| `pg_trickle_18` | `0.81.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.4 MiB | [pg_trickle_18-0.81.0-3PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_trickle_18-0.81.0-3PIGSTY.el8.aarch64.rpm) |
-| `pg_trickle_18` | `0.81.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.9 MiB | [pg_trickle_18-0.81.0-3PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_trickle_18-0.81.0-3PIGSTY.el9.x86_64.rpm) |
-| `pg_trickle_18` | `0.81.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.6 MiB | [pg_trickle_18-0.81.0-3PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_trickle_18-0.81.0-3PIGSTY.el9.aarch64.rpm) |
-| `pg_trickle_18` | `0.81.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.9 MiB | [pg_trickle_18-0.81.0-3PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_trickle_18-0.81.0-3PIGSTY.el10.x86_64.rpm) |
-| `pg_trickle_18` | `0.81.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.6 MiB | [pg_trickle_18-0.81.0-3PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_trickle_18-0.81.0-3PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.1 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.4 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.1 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.4 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-3PIGSTY~resolute_arm64.deb) |
+| `pg_trickle_18` | `0.108.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 6.5 MiB | [pg_trickle_18-0.108.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_trickle_18-0.108.1-1PGSTY.el8.x86_64.rpm) |
+| `pg_trickle_18` | `0.108.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 5.4 MiB | [pg_trickle_18-0.108.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_trickle_18-0.108.1-1PGSTY.el8.aarch64.rpm) |
+| `pg_trickle_18` | `0.108.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 6.4 MiB | [pg_trickle_18-0.108.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_trickle_18-0.108.1-1PGSTY.el9.x86_64.rpm) |
+| `pg_trickle_18` | `0.108.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 5.6 MiB | [pg_trickle_18-0.108.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_trickle_18-0.108.1-1PGSTY.el9.aarch64.rpm) |
+| `pg_trickle_18` | `0.108.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 6.4 MiB | [pg_trickle_18-0.108.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_trickle_18-0.108.1-1PGSTY.el10.x86_64.rpm) |
+| `pg_trickle_18` | `0.108.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 5.6 MiB | [pg_trickle_18-0.108.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_trickle_18-0.108.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 5.6 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.6 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 5.6 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 4.6 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 6.1 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.4 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 6.1 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.4 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.1 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-trickle` | `0.108.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.3 MiB | [postgresql-18-pg-trickle_0.108.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.108.1-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}
@@ -92,7 +93,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/trickle-labs/pg-trickle" title="Repository" icon="github" subtitle="github.com/trickle-labs/pg-trickle" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_trickle-0.81.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_trickle-0.108.1.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -132,23 +133,26 @@ shared_preload_libraries = 'pg_trickle';
 CREATE EXTENSION pg_trickle;
 ```
 
-
-
-
 ## Usage
 
-Sources: [README v0.81.0](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/README.md), [v0.81.0 release notes](https://github.com/trickle-labs/pg-trickle/releases/tag/v0.81.0), [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/SQL_REFERENCE.md), [configuration guide](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/CONFIGURATION.md), [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/GUC_CATALOG.md), [Cargo.toml](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/Cargo.toml)
+Sources:
 
-`pg_trickle` provides stream tables for PostgreSQL 18: regular queryable tables whose contents are maintained from a defining SQL query. It uses incremental view maintenance when possible, can fall back to full recompute, and also supports `IMMEDIATE` mode for same-transaction maintenance.
+- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.108.0--0.108.1.sql)
+- [Version 0.108.1 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/README.md)
+- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/SQL_REFERENCE.md)
+- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/CONFIGURATION.md)
+- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/GUC_CATALOG.md)
+- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/UPGRADING.md)
+- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/pg_trickle.control)
+- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.107.0--0.108.0.sql)
 
-Upstream v0.81.0 is still pre-1.0 and says APIs and configuration options may change before a stable 1.0 release. The Rust package is `pg_trickle` version `0.81.0`, uses Rust edition 2024, defaults to the `pg18` feature, and pins `pgrx = 0.18.0`. Build prerequisites in the README are PostgreSQL 18.x plus Rust 1.85+ with pgrx 0.18.x.
+`pg_trickle` 0.108.1 maintains stream tables on PostgreSQL 18: ordinary queryable tables derived from a SQL query, refreshed incrementally when supported or recomputed in full. Tables may depend on other stream tables, forming a dependency graph. Same-transaction maintenance is also available.
 
 ### Enable the Extension
 
-Add the extension to PostgreSQL startup configuration and restart:
+Append `pg_trickle` to `shared_preload_libraries` and restart PostgreSQL, then install as a superuser. Size the background-worker pool for the deployment; the upstream example uses eight workers.
 
-```sql
--- postgresql.conf
+```ini
 shared_preload_libraries = 'pg_trickle'
 max_worker_processes = 8
 ```
@@ -157,208 +161,57 @@ max_worker_processes = 8
 CREATE EXTENSION pg_trickle;
 ```
 
-`shared_preload_libraries` is required because the extension registers GUCs and a background worker at startup. `wal_level = logical` and replication slots are not required by default: `pg_trickle.cdc_mode = 'auto'` starts with trigger-based CDC and transitions to WAL-based capture only when logical WAL is available.
+The default `pg_trickle.cdc_mode` is `trigger`: transactional change capture needs neither logical WAL nor replication slots. Opt-in `auto` starts with triggers and can move eligible sources to receipt-backed WAL capture. Explicit `wal` also falls back to triggers when admission or logical-decoding prerequisites fail. These choices have different write overhead and operational requirements.
 
-### Create and Refresh Stream Tables
+### Create and Refresh a Stream Table
 
 ```sql
-CREATE TABLE orders (
-    id int PRIMARY KEY,
-    region text,
-    amount numeric
-);
-
+CREATE TABLE orders (id bigint PRIMARY KEY, region text, amount numeric);
 SELECT pgtrickle.create_stream_table(
-    'regional_totals',
-    'SELECT region, SUM(amount) AS total, COUNT(*) AS cnt
-     FROM orders GROUP BY region'
+    name => 'regional_totals',
+    query => 'SELECT region, SUM(amount) AS total, COUNT(*) AS cnt FROM orders GROUP BY region',
+    schedule => '30s',
+    refresh_mode => 'AUTO'
 );
-
-SELECT * FROM regional_totals;
+INSERT INTO orders VALUES (1, 'east', 10);
 SELECT pgtrickle.refresh_stream_table('regional_totals');
+SELECT * FROM regional_totals;
 ```
 
-The main refresh modes are `AUTO`, `DIFFERENTIAL`, `FULL`, and `IMMEDIATE`. `AUTO` chooses differential maintenance when the query is differentiable and falls back to full recompute when needed. `DIFFERENTIAL` applies deltas only. `FULL` truncates and reloads from the defining query. `IMMEDIATE` uses statement-level IVM triggers and is maintained inside the same transaction as base-table DML.
+`initialize` defaults to true, so creation populates the result. `schedule` accepts durations, cron expressions such as `@hourly`, or the default `calculated` schedule inherited from downstream dependents. `AUTO` selects differential maintenance where possible and can fall back to full refresh. `DIFFERENTIAL` rejects queries it cannot maintain incrementally; `FULL` truncates and reloads the result.
 
-```sql
-SELECT pgtrickle.create_stream_table(
-    'regional_totals_live',
-    'SELECT region, SUM(amount) AS total, COUNT(*) AS cnt
-     FROM orders GROUP BY region',
-    schedule => NULL,
-    refresh_mode => 'IMMEDIATE'
-);
-```
+`IMMEDIATE` uses statement-level triggers inside the base-table write transaction. It does not use WAL capture and rejects an effective explicit WAL request. Use the documented query-admission rules for joins, aggregates, subqueries, recursive queries, and other supported shapes; support is not a promise that every SQL expression is differentiable.
 
-Schedules accept duration strings such as `'30s'`, `'5m'`, `'1h'`, cron expressions such as `'@hourly'`, or the default `'calculated'` schedule inherited from downstream dependents.
+### Lifecycle and Monitoring
 
-```sql
-SELECT pgtrickle.create_stream_table(
-    name         => 'hourly_totals',
-    query        => 'SELECT region, SUM(amount) AS total FROM orders GROUP BY region',
-    schedule     => '@hourly',
-    refresh_mode => 'FULL'
-);
-```
-
-### Lifecycle, SQL Coverage, and Operators
-
-```sql
-SELECT pgtrickle.alter_stream_table(
-    'regional_totals',
-    query => 'SELECT region, SUM(amount) AS total FROM orders GROUP BY region'
-);
-
-SELECT pgtrickle.drop_stream_table('regional_totals');
-```
-
-The SQL reference documents lifecycle calls such as `pgtrickle.create_stream_table()`, `pgtrickle.create_stream_table_if_not_exists()`, `pgtrickle.create_or_replace_stream_table()`, `pgtrickle.bulk_create()`, `pgtrickle.alter_stream_table()`, `pgtrickle.drop_stream_table()`, `pgtrickle.resume_stream_table()`, `pgtrickle.refresh_stream_table()`, and `pgtrickle.repair_stream_table()`.
-
-Release `0.81.0` also documents preset wrappers for common refresh profiles:
-
-```sql
-SELECT pgtrickle.create_stream_table_realtime(
-    'regional_totals_rt',
-    'SELECT region, SUM(amount) AS total FROM orders GROUP BY region'
-);
-
-SELECT pgtrickle.create_stream_table_batch(
-    'regional_totals_batch',
-    'SELECT region, SUM(amount) AS total FROM orders GROUP BY region'
-);
-
-SELECT pgtrickle.create_stream_table_cost_optimized(
-    'regional_totals_cost',
-    'SELECT region, SUM(amount) AS total FROM orders GROUP BY region'
-);
-```
-
-The documented SQL coverage includes joins, aggregates, window functions, set operations, scalar and table subqueries, CTEs including `WITH RECURSIVE`, LATERAL/SRFs, `JSON_TABLE`, TopK queries with `ORDER BY ... LIMIT`, views as sources, tables without primary keys, and stream-table dependency DAGs. No custom SQL operator is the main user-facing API; users primarily interact through functions, views, catalog tables, GUCs, and normal SQL queries over stream tables.
-
-### Operations and Introspection
+`pgtrickle.alter_stream_table` changes definitions or refresh policy, and `pgtrickle.drop_stream_table` removes managed tables. `pgtrickle.repair_stream_table` repairs missing capture infrastructure and resets maintenance state after events such as restore or operator DDL. Use lifecycle APIs instead of direct writes or foreign keys against managed stream tables.
 
 ```sql
 SELECT * FROM pgtrickle.pgt_status();
-SELECT * FROM pgtrickle.refresh_timeline(20);
 SELECT * FROM pgtrickle.health_check();
-SELECT * FROM pgtrickle.health_summary();
-SELECT * FROM pgtrickle.pg_stat_stream_tables;
-SELECT * FROM pgtrickle.change_buffer_sizes();
 SELECT * FROM pgtrickle.dependency_tree();
 SELECT * FROM pgtrickle.explain_st('regional_totals');
-SELECT * FROM pgtrickle.slot_health();
-SELECT * FROM pgtrickle.check_cdc_health();
-SELECT * FROM pgtrickle.commit_latency_stats();
-SELECT * FROM pgtrickle.tune_recommendations();
-SELECT * FROM pgtrickle.preview_stream_table(
-    'SELECT region, SUM(amount) FROM orders GROUP BY region'
-);
 ```
 
-Other documented views and catalog tables include `pgtrickle.stream_tables_info`, `pgtrickle.quick_health`, `pgtrickle.pgt_cdc_status`, `pgtrickle.pgt_stream_tables`, `pgtrickle.pgt_dependencies`, `pgtrickle.pgt_refresh_history`, `pgtrickle.pgt_change_tracking`, `pgtrickle.pgt_source_gates`, and `pgtrickle.pgt_refresh_groups`.
+Lifecycle functions require explicit execution grants and ownership checks; administrator-wide operations are restricted to the extension owner or superuser. Arbitrary-SQL helpers preserve caller privileges. Capture triggers add work to source writes, and refresh failures can accumulate change buffers, so monitor health and storage instead of treating a schedule as a hard freshness guarantee.
 
-### Outbox, Inbox, Relay, and Snapshots
+### External Coordination and Output Deltas
 
-`pg_trickle` can publish stream-table deltas through the transactional outbox pattern and consume idempotent inbox tables.
+`orchestration_mode` selects `MANAGED` scheduling or `EXTERNAL` coordination. External coordination cannot be combined with immediate maintenance. `pgtrickle.integration_capabilities` advertises the available contracts; version 0.108.0 exposes Graph V1 1.2 and Delta V1 1.1.
+
+`pgtrickle.output_delta_consumer_status` reports consumers, while `pgtrickle.validate_output_delta_consumer` checks whether a consumer can resume. `pgtrickle.request_output_delta_resnapshot`, `pgtrickle.begin_output_delta_resnapshot`, and `pgtrickle.ack_output_delta_resnapshot` manage rebuilding a baseline. A resnapshot is fenced by database-instance identity, output-contract digest, and row-identity version. Follow the exact SQL reference signatures and acknowledgement protocol before advancing external delivery.
+
+### Upgrade to 0.108.1
+
+Install the new library and extension files before applying the packaged migration:
 
 ```sql
-SELECT pgtrickle.enable_outbox('public.regional_totals');
-SELECT pgtrickle.create_consumer_group('billing_workers', 'public.regional_totals');
-SELECT * FROM pgtrickle.poll_outbox('billing_workers', 'worker-1');
-SELECT pgtrickle.commit_offset('billing_workers', 'worker-1', 42);
-
-SELECT pgtrickle.create_inbox('orders_inbox');
-SELECT pgtrickle.inbox_health('orders_inbox');
+ALTER EXTENSION pg_trickle UPDATE TO '0.108.1';
+SELECT * FROM pgtrickle.output_delta_consumer_status();
 ```
 
-The SQL reference also documents snapshot operations and relay configuration helpers:
+The upgrade preserves consumers, cursors, batches, and typed payload while adding resnapshot fences. A 0.106.1 installation can traverse the packaged 0.107.0 migration. Validate every consumer before resuming delivery; `INVALIDATED` or `RESNAPSHOT_REQUIRED` requires a new acknowledged baseline. Older releases through 0.105.2 had documented differential-result bugs for certain query shapes; upgrading does not automatically repair previously materialized rows. Use the upgrade guide’s comparison and repair procedure where applicable.
 
-```sql
-SELECT pgtrickle.snapshot_stream_table('public.regional_totals');
-SELECT pgtrickle.restore_from_snapshot(
-    'public.regional_totals',
-    'pgtrickle.regional_totals_snapshot'
-);
+### Version 0.108.1
 
-SELECT pgtrickle.set_relay_outbox(
-    'orders-to-nats',
-    'public.regional_totals',
-    'relay_group_1',
-    '{"type": "nats", "subject": "orders.deltas", "url": "nats://nats:4222"}'::jsonb
-);
-```
-
-### Important GUCs
-
-The v0.81.0 release documents 129 configuration parameters. Common operational GUCs include:
-
-- `pg_trickle.enabled`
-- `pg_trickle.cdc_mode`
-- `pg_trickle.scheduler_interval_ms`
-- `pg_trickle.min_schedule_seconds`
-- `pg_trickle.default_schedule_seconds`
-- `pg_trickle.max_consecutive_errors`
-- `pg_trickle.wal_transition_timeout`
-- `pg_trickle.slot_lag_warning_threshold_mb`
-- `pg_trickle.slot_lag_critical_threshold_mb`
-- `pg_trickle.differential_max_change_ratio`
-- `pg_trickle.refresh_strategy`
-- `pg_trickle.cost_model_safety_margin`
-- `pg_trickle.planner_aggressive`
-- `pg_trickle.merge_join_strategy`
-- `pg_trickle.merge_strategy`
-- `pg_trickle.auto_backoff`
-- `pg_trickle.tiered_scheduling`
-- `pg_trickle.cleanup_use_truncate`
-- `pg_trickle.block_source_ddl`
-- `pg_trickle.buffer_alert_threshold`
-- `pg_trickle.compact_threshold`
-- `pg_trickle.max_buffer_rows`
-- `pg_trickle.auto_index`
-- `pg_trickle.aggregate_fast_path`
-- `pg_trickle.template_cache`
-- `pg_trickle.buffer_partitioning`
-- `pg_trickle.ivm_topk_max_limit`
-- `pg_trickle.ivm_recursive_max_depth`
-- `pg_trickle.parallel_refresh_mode`
-- `pg_trickle.max_dynamic_refresh_workers`
-- `pg_trickle.max_concurrent_refreshes`
-- `pg_trickle.worker_pool_size`
-- `pg_trickle.merge_batch_size`
-- `pg_trickle.change_buffer_schema`
-- `pg_trickle.foreign_table_polling`
-- `pg_trickle.matview_polling`
-- `pg_trickle.log_delta_sql`
-- `pg_trickle.metrics_port`
-- `pg_trickle.outbox_enabled`
-- `pg_trickle.inbox_enabled`
-- `pg_trickle.citus_st_lock_lease_ms`
-- `pg_trickle.citus_worker_retry_ticks`
-- `pg_trickle.enable_vector_agg`
-- `pg_trickle.enable_trace_propagation`
-- `pg_trickle.otel_endpoint`
-- `pg_trickle.trace_id`
-- `pg_trickle.cdc_capture_mode`
-- `pg_trickle.commit_timestamp_tracking`
-- `pg_trickle.l1_cache_max_entries`
-- `pg_trickle.self_heal_oom`
-- `pg_trickle.self_heal_lock_timeout`
-
-`pg_trickle.event_driven_wake` and `pg_trickle.wake_debounce_ms` are preserved for upgrade compatibility but are formally deprecated and have no effect, because PostgreSQL background workers cannot use `LISTEN`; the scheduler uses latch-based polling.
-
-### v0.81.0 Operator Notes
-
-The v0.81.0 release adds operator-facing introspection and tuning helpers including `pgtrickle.commit_latency_stats()`, `pgtrickle.tune_recommendations()`, and `pgtrickle.preview_stream_table(query text)`. It also adds bounded LRU DVM caches through `pg_trickle.l1_cache_max_entries`, a `pg_trickle.merge_batch_size` GUC, and self-healing circuit-breaker settings for out-of-memory and lock-timeout cases.
-
-The release notes say no schema migration is needed for the new code paths; upgrade existing installations with `ALTER EXTENSION pg_trickle UPDATE` after replacing the extension binaries.
-
-### Caveats
-
-- `pg_trickle` v0.81.0 is PostgreSQL 18 only; the release packages are named for `pg18`, and Cargo defaults to the `pg18` pgrx feature.
-- Pigsty builds use `pgrx` 0.18.0; keep pgrx schema metadata from linker garbage collection when rebuilding packages.
-- The extension control file marks it `superuser = true` and `trusted = false`.
-- Direct DML on stream tables is not allowed because their contents are managed by the refresh engine.
-- `IMMEDIATE` mode bypasses CDC and uses statement-level IVM triggers; WAL CDC is asynchronous and incompatible with in-transaction maintenance.
-- Materialized views in `DIFFERENTIAL` mode require `pg_trickle.matview_polling = on`; `FULL` mode works without that snapshot-comparison path.
-- `LIMIT` or `OFFSET` without `ORDER BY` is rejected for stream-table definitions; use `ORDER BY ... LIMIT` for TopK.
-- Volatile functions are rejected by default in defining queries according to `pg_trickle.volatile_function_policy`.
+This patch keeps downstream `IMMEDIATE` tables current after upstream FULL refresh or truncation, recovers missing change buffers, and fixes unintended suspension after source schema changes and scalar-subquery differential refresh. PostgreSQL 18.6 support is added. After installing matching files run `ALTER EXTENSION pg_trickle UPDATE TO '0.108.1'` and verify dependent stream-table results and capture health.

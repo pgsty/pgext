@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/cybertec-postgresql/etcd_fdw" title="Repository" icon="github" subtitle="github.com/cybertec-postgresql/etcd_fdw" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="etcd_fdw-0.0.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="etcd_fdw-0.0.1.tar.gz wrappers-0.6.2.tar.gz" />}}
 {{< /cards >}}
 
 

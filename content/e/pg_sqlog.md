@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6500** | {{< badge content="pg_sqlog" link="https://github.com/kouber/pg_sqlog" >}} | {{< ext "pg_sqlog" >}} | `1.6` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "SQL" >}} |
+| **6500** | {{< badge content="pg_sqlog" link="https://github.com/kouber/pg_sqlog" >}} | {{< ext "pg_sqlog" >}} | `1.7` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -38,9 +38,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_sqlog` | `file_fdw` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "pg_sqlog_18" "green" >}} {{< bg "17" "pg_sqlog_17" "green" >}} {{< bg "16" "pg_sqlog_16" "green" >}} {{< bg "15" "pg_sqlog_15" "green" >}} {{< bg "14" "pg_sqlog_14" "green" >}} | `pg_sqlog_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "postgresql-18-pg-sqlog" "green" >}} {{< bg "17" "postgresql-17-pg-sqlog" "green" >}} {{< bg "16" "postgresql-16-pg-sqlog" "green" >}} {{< bg "15" "postgresql-15-pg-sqlog" "green" >}} {{< bg "14" "postgresql-14-pg-sqlog" "green" >}} | `postgresql-$v-pg-sqlog` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_sqlog` | `file_fdw` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "pg_sqlog_18" "green" >}} {{< bg "17" "pg_sqlog_17" "green" >}} {{< bg "16" "pg_sqlog_16" "green" >}} {{< bg "15" "pg_sqlog_15" "green" >}} {{< bg "14" "pg_sqlog_14" "green" >}} | `pg_sqlog_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7+git20241118.b016539` | {{< bg "18" "postgresql-18-pg-sqlog" "green" >}} {{< bg "17" "postgresql-17-pg-sqlog" "green" >}} {{< bg "16" "postgresql-16-pg-sqlog" "green" >}} {{< bg "15" "postgresql-15-pg-sqlog" "green" >}} {{< bg "14" "postgresql-14-pg-sqlog" "green" >}} | `postgresql-$v-pg-sqlog` | - |
 {.packages}
 
 
@@ -186,7 +186,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/kouber/pg_sqlog" title="Repository" icon="github" subtitle="github.com/kouber/pg_sqlog" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_sqlog-1.6.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_sqlog-1.7+git20241118.b016539.tar.gz" />}}
 {{< /cards >}}
 
 

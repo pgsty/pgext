@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4310** | {{< badge content="ddl_historization" link="https://github.com/rodo/pg_ddl_historization" >}} | {{< ext "ddl_historization" >}} | `0.2` | {{< category "UTIL" >}} | {{< license "GPL-2.0" >}} | {{< language "SQL" >}} |
+| **4310** | {{< badge content="ddl_historization" link="https://github.com/rodo/pg_ddl_historization" >}} | {{< ext "ddl_historization" >}} | `1.0.0` | {{< category "UTIL" >}} | {{< license "GPL-2.0" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -36,9 +36,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `ddl_historization` | `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2` | {{< bg "18" "ddl_historization_18" "green" >}} {{< bg "17" "ddl_historization_17" "green" >}} {{< bg "16" "ddl_historization_16" "green" >}} {{< bg "15" "ddl_historization_15" "green" >}} {{< bg "14" "ddl_historization_14" "green" >}} | `ddl_historization_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2` | {{< bg "18" "postgresql-18-ddl-historization" "green" >}} {{< bg "17" "postgresql-17-ddl-historization" "green" >}} {{< bg "16" "postgresql-16-ddl-historization" "green" >}} {{< bg "15" "postgresql-15-ddl-historization" "green" >}} {{< bg "14" "postgresql-14-ddl-historization" "green" >}} | `postgresql-$v-ddl-historization` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `ddl_historization` | `plpgsql` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "ddl_historization_18" "green" >}} {{< bg "17" "ddl_historization_17" "green" >}} {{< bg "16" "ddl_historization_16" "green" >}} {{< bg "15" "ddl_historization_15" "green" >}} {{< bg "14" "ddl_historization_14" "green" >}} | `ddl_historization_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0+git20241205.18eb9a4` | {{< bg "18" "postgresql-18-ddl-historization" "green" >}} {{< bg "17" "postgresql-17-ddl-historization" "green" >}} {{< bg "16" "postgresql-16-ddl-historization" "green" >}} {{< bg "15" "postgresql-15-ddl-historization" "green" >}} {{< bg "14" "postgresql-14-ddl-historization" "green" >}} | `postgresql-$v-ddl-historization` | - |
 {.packages}
 
 
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/rodo/pg_ddl_historization" title="Repository" icon="github" subtitle="github.com/rodo/pg_ddl_historization" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ddl_historization-0.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ddl_historization-1.0.0+git20241205.18eb9a4.tar.gz" />}}
 {{< /cards >}}
 
 

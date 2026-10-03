@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3660** | {{< badge content="country" link="https://github.com/adjust/pg-country" >}} | {{< ext "country" "pg_country" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3660** | {{< badge content="country" link="https://github.com/adjust/pg-country" >}} | {{< ext "country" "pg_country" >}} | `0.0.4` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_country` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_country_18" "green" >}} {{< bg "17" "pg_country_17" "green" >}} {{< bg "16" "pg_country_16" "green" >}} {{< bg "15" "pg_country_15" "green" >}} {{< bg "14" "pg_country_14" "green" >}} | `pg_country_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-country" "green" >}} {{< bg "17" "postgresql-17-pg-country" "green" >}} {{< bg "16" "postgresql-16-pg-country" "green" >}} {{< bg "15" "postgresql-15-pg-country" "green" >}} {{< bg "14" "postgresql-14-pg-country" "green" >}} | `postgresql-$v-pg-country` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_country` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "pg_country_18" "green" >}} {{< bg "17" "pg_country_17" "green" >}} {{< bg "16" "pg_country_16" "green" >}} {{< bg "15" "pg_country_15" "green" >}} {{< bg "14" "pg_country_14" "green" >}} | `pg_country_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "postgresql-18-pg-country" "green" >}} {{< bg "17" "postgresql-17-pg-country" "green" >}} {{< bg "16" "postgresql-16-pg-country" "green" >}} {{< bg "15" "postgresql-15-pg-country" "green" >}} {{< bg "14" "postgresql-14-pg-country" "green" >}} | `postgresql-$v-pg-country` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/adjust/pg-country" title="Repository" icon="github" subtitle="github.com/adjust/pg-country" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-country-0.0.3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-country-0.0.4.tar.gz" />}}
 {{< /cards >}}
 
 

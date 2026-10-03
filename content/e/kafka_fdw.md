@@ -36,7 +36,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `kafka_fdw` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "kafka_fdw_18" "green" >}} {{< bg "17" "kafka_fdw_17" "green" >}} {{< bg "16" "kafka_fdw_16" "green" >}} {{< bg "15" "kafka_fdw_15" "green" >}} {{< bg "14" "kafka_fdw_14" "green" >}} | `kafka_fdw_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-kafka-fdw" "green" >}} {{< bg "17" "postgresql-17-kafka-fdw" "green" >}} {{< bg "16" "postgresql-16-kafka-fdw" "green" >}} {{< bg "15" "postgresql-15-kafka-fdw" "green" >}} {{< bg "14" "postgresql-14-kafka-fdw" "green" >}} | `postgresql-$v-kafka-fdw` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3+git20251030.8615082` | {{< bg "18" "postgresql-18-kafka-fdw" "green" >}} {{< bg "17" "postgresql-17-kafka-fdw" "green" >}} {{< bg "16" "postgresql-16-kafka-fdw" "green" >}} {{< bg "15" "postgresql-15-kafka-fdw" "green" >}} {{< bg "14" "postgresql-14-kafka-fdw" "green" >}} | `postgresql-$v-kafka-fdw` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/adjust/kafka_fdw" title="Repository" icon="github" subtitle="github.com/adjust/kafka_fdw" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="kafka_fdw-0.0.3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="kafka_fdw-0.0.3+git20251030.8615082.tar.gz" />}}
 {{< /cards >}}
 
 

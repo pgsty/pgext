@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6520** | {{< badge content="pgmeminfo" link="https://github.com/okbob/pgmeminfo" >}} | {{< ext "pgmeminfo" >}} | `1.0.0` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **6520** | {{< badge content="pgmeminfo" link="https://github.com/okbob/pgmeminfo" >}} | {{< ext "pgmeminfo" >}} | `1.0.1` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,16 +29,14 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "system_stats" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} |
 
-> [!Note] no pg14 on el8/9 pgdg repo
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmeminfo` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pgmeminfo_18" "green" >}} {{< bg "17" "pgmeminfo_17" "green" >}} {{< bg "16" "pgmeminfo_16" "green" >}} {{< bg "15" "pgmeminfo_15" "green" >}} {{< bg "14" "pgmeminfo_14" "green" >}} | `pgmeminfo_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pgmeminfo" "green" >}} {{< bg "17" "postgresql-17-pgmeminfo" "green" >}} {{< bg "16" "postgresql-16-pgmeminfo" "green" >}} {{< bg "15" "postgresql-15-pgmeminfo" "green" >}} {{< bg "14" "postgresql-14-pgmeminfo" "green" >}} | `postgresql-$v-pgmeminfo` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmeminfo` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "pgmeminfo_18" "green" >}} {{< bg "17" "pgmeminfo_17" "green" >}} {{< bg "16" "pgmeminfo_16" "green" >}} {{< bg "15" "pgmeminfo_15" "green" >}} {{< bg "14" "pgmeminfo_14" "green" >}} | `pgmeminfo_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pgmeminfo" "green" >}} {{< bg "17" "postgresql-17-pgmeminfo" "green" >}} {{< bg "16" "postgresql-16-pgmeminfo" "green" >}} {{< bg "15" "postgresql-15-pgmeminfo" "green" >}} {{< bg "14" "postgresql-14-pgmeminfo" "green" >}} | `postgresql-$v-pgmeminfo` | - |
 {.packages}
 
 
@@ -234,7 +232,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/okbob/pgmeminfo" title="Repository" icon="github" subtitle="github.com/okbob/pgmeminfo" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmeminfo-VERSION_1_0_0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmeminfo-VERSION_1_0_1.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -271,33 +269,32 @@ pig install pgmeminfo -v 14;   # install for PG 14
 CREATE EXTENSION pgmeminfo;
 ```
 
-
-
-
 ## Usage
 
-> [pgmeminfo: PostgreSQL memory context information](https://github.com/okbob/pgmeminfo)
+Sources:
 
-pgmeminfo provides functions to inspect PostgreSQL backend memory usage and memory context hierarchies.
+- [1.0.1 README](https://github.com/okbob/pgmeminfo/blob/VERSION_1_0_1/README.md)
+- [Installation SQL](https://github.com/okbob/pgmeminfo/blob/VERSION_1_0_1/pgmeminfo--1.0.sql)
+- [Control file](https://github.com/okbob/pgmeminfo/blob/VERSION_1_0_1/pgmeminfo.control)
 
-### Functions
+`pgmeminfo` reports allocator statistics and the memory-context hierarchy of the current PostgreSQL backend. It does not aggregate memory across the cluster.
 
-**Memory information overview:**
+### Inspect Memory
+
+Have a superuser install the extension, then inspect the current connection:
 
 ```sql
--- Show overall memory info
+CREATE EXTENSION pgmeminfo;
 SELECT * FROM pgmeminfo();
-```
-
-**Memory context hierarchy:**
-
-```sql
--- Show cumulative memory context sizes
 SELECT * FROM pgmeminfo_contexts();
-
--- Show memory contexts to a specific depth
 SELECT * FROM pgmeminfo_contexts(deep => 1);
-
--- Show all contexts without accumulation
 SELECT * FROM pgmeminfo_contexts(deep => -1, accum_mode => 'off');
 ```
+
+`pgmeminfo()` returns allocator counters such as `arena`, `uordblks`, `fordblks`, and `keepcost`. They are allocator-specific measurements, not process RSS or an estimate of free cluster memory.
+
+`pgmeminfo_contexts(deep, accum_mode)` returns context names, parents, levels and byte counts. The default accumulation mode is `all`; `off` reports contexts without descendant accumulation, while `deep => -1` removes the depth limit.
+
+### Operation and Version
+
+No preload or restart is required. Upstream release 1.0.1 keeps SQL extension version 1.0; do not use package release 1.0.1 as an SQL update target. Context names and output values can change as the backend executes queries. Review function access if internal context names should not be visible to ordinary users.

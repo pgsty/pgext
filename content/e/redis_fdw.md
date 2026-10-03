@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8710** | {{< badge content="redis_fdw" link="https://github.com/pg-redis-fdw/redis_fdw" >}} | {{< ext "redis_fdw" >}} | `1.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8710** | {{< badge content="redis_fdw" link="https://github.com/pg-redis-fdw/redis_fdw" >}} | {{< ext "redis_fdw" >}} | `2.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -36,9 +36,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `redis_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "redis_fdw_18" "green" >}} {{< bg "17" "redis_fdw_17" "green" >}} {{< bg "16" "redis_fdw_16" "green" >}} {{< bg "15" "redis_fdw_15" "green" >}} {{< bg "14" "redis_fdw_14" "green" >}} | `redis_fdw_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-redis-fdw" "green" >}} {{< bg "17" "postgresql-17-redis-fdw" "green" >}} {{< bg "16" "postgresql-16-redis-fdw" "green" >}} {{< bg "15" "postgresql-15-redis-fdw" "green" >}} {{< bg "14" "postgresql-14-redis-fdw" "green" >}} | `postgresql-$v-redis-fdw` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `redis_fdw` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "redis_fdw_18" "green" >}} {{< bg "17" "redis_fdw_17" "green" >}} {{< bg "16" "redis_fdw_16" "green" >}} {{< bg "15" "redis_fdw_15" "green" >}} {{< bg "14" "redis_fdw_14" "green" >}} | `redis_fdw_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0+git20260808.ff37a7c8` | {{< bg "18" "postgresql-18-redis-fdw" "green" >}} {{< bg "17" "postgresql-17-redis-fdw" "green" >}} {{< bg "16" "postgresql-16-redis-fdw" "green" >}} {{< bg "15" "postgresql-15-redis-fdw" "green" >}} {{< bg "14" "postgresql-14-redis-fdw" "green" >}} | `postgresql-$v-redis-fdw` | - |
 {.packages}
 
 
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pg-redis-fdw/redis_fdw" title="Repository" icon="github" subtitle="github.com/pg-redis-fdw/redis_fdw" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="redis_fdw-1.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="redis_fdw-2.0+git20260808.ff37a7c8.tar.gz" />}}
 {{< /cards >}}
 
 

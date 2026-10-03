@@ -6,7 +6,7 @@ weight: 4230
 categories: ["UTIL"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
-repos: ["PIGSTY"]
+repos: ["PGDG"]
 page_width: full
 ---
 
@@ -29,23 +29,25 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "re2" >}} {{< ext "omni_regex" >}} {{< ext "pg_similarity" >}} {{< ext "fuzzystrmatch" >}} {{< ext "smlar" >}} {{< ext "biscuit" >}} {{< ext "pg_bigm" >}} |
 
+> [!Note] PGDG supplies RPM and DEB packages for PostgreSQL 14-18, including EL10. The Pigsty RPM recipe remains limited to EL8/EL9 because it uses legacy PCRE 1.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.20190509` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgpcre` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20190509` | {{< bg "18" "pgpcre_18" "green" >}} {{< bg "17" "pgpcre_17" "green" >}} {{< bg "16" "pgpcre_16" "green" >}} {{< bg "15" "pgpcre_15" "green" >}} {{< bg "14" "pgpcre_14" "green" >}} | `pgpcre_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20190509` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgpcre` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20190509` | {{< bg "18" "pgpcre_18" "green" >}} {{< bg "17" "pgpcre_17" "green" >}} {{< bg "16" "pgpcre_16" "green" >}} {{< bg "15" "pgpcre_15" "green" >}} {{< bg "14" "pgpcre_14" "green" >}} | `pgpcre_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20190509` | {{< bg "18" "postgresql-18-pgpcre" "green" >}} {{< bg "17" "postgresql-17-pgpcre" "green" >}} {{< bg "16" "postgresql-16-pgpcre" "green" >}} {{< bg "15" "postgresql-15-pgpcre" "green" >}} {{< bg "14" "postgresql-14-pgpcre" "green" >}} | `postgresql-$v-pgpcre` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_14 : AVAIL 2" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20190509" "pgpcre_14 : AVAIL 2" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 3" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 1" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 2" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 4" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 0.20190509" "pgpcre_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.20190509" "pgpcre_14 : AVAIL 4" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
@@ -67,15 +69,11 @@ page_width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgpcre_18` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.4 KiB | [pgpcre_18-0.20190509-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgpcre_18-0.20190509-3PGDG.rhel8.x86_64.rpm) |
-| `pgpcre_18` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pigsty | 16.4 KiB | [pgpcre_18-0.20190509-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpcre_18-0.20190509-1PIGSTY.el8.x86_64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.2 KiB | [pgpcre_18-0.20190509-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgpcre_18-0.20190509-3PGDG.rhel8.aarch64.rpm) |
-| `pgpcre_18` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pigsty | 16.5 KiB | [pgpcre_18-0.20190509-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpcre_18-0.20190509-1PIGSTY.el8.aarch64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.9 KiB | [pgpcre_18-0.20190509-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgpcre_18-0.20190509-6PGDG.rhel9.8.x86_64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.6 KiB | [pgpcre_18-0.20190509-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgpcre_18-0.20190509-3PGDG.rhel9.x86_64.rpm) |
-| `pgpcre_18` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.3 KiB | [pgpcre_18-0.20190509-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpcre_18-0.20190509-1PIGSTY.el9.x86_64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.6 KiB | [pgpcre_18-0.20190509-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgpcre_18-0.20190509-6PGDG.rhel9.8.aarch64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.2 KiB | [pgpcre_18-0.20190509-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgpcre_18-0.20190509-3PGDG.rhel9.aarch64.rpm) |
-| `pgpcre_18` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.2 KiB | [pgpcre_18-0.20190509-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpcre_18-0.20190509-1PIGSTY.el9.aarch64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_18-0.20190509-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgpcre_18-0.20190509-6PGDG.rhel10.2.x86_64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_18-0.20190509-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgpcre_18-0.20190509-4PGDG.rhel10.x86_64.rpm) |
 | `pgpcre_18` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.0 KiB | [pgpcre_18-0.20190509-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgpcre_18-0.20190509-3PGDG.rhel10.x86_64.rpm) |
@@ -99,15 +97,11 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpcre_17` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pigsty | 16.4 KiB | [pgpcre_17-0.20190509-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpcre_17-0.20190509-1PIGSTY.el8.x86_64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.1 KiB | [pgpcre_17-0.20190509-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgpcre_17-0.20190509-1PGDG.rhel8.x86_64.rpm) |
-| `pgpcre_17` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pigsty | 16.5 KiB | [pgpcre_17-0.20190509-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpcre_17-0.20190509-1PIGSTY.el8.aarch64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.0 KiB | [pgpcre_17-0.20190509-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgpcre_17-0.20190509-1PGDG.rhel8.aarch64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.9 KiB | [pgpcre_17-0.20190509-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgpcre_17-0.20190509-6PGDG.rhel9.8.x86_64.rpm) |
-| `pgpcre_17` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.3 KiB | [pgpcre_17-0.20190509-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpcre_17-0.20190509-1PIGSTY.el9.x86_64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pgpcre_17-0.20190509-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgpcre_17-0.20190509-1PGDG.rhel9.x86_64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.6 KiB | [pgpcre_17-0.20190509-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgpcre_17-0.20190509-6PGDG.rhel9.8.aarch64.rpm) |
-| `pgpcre_17` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.2 KiB | [pgpcre_17-0.20190509-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpcre_17-0.20190509-1PIGSTY.el9.aarch64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.1 KiB | [pgpcre_17-0.20190509-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgpcre_17-0.20190509-1PGDG.rhel9.aarch64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_17-0.20190509-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgpcre_17-0.20190509-6PGDG.rhel10.2.x86_64.rpm) |
 | `pgpcre_17` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_17-0.20190509-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgpcre_17-0.20190509-4PGDG.rhel10.x86_64.rpm) |
@@ -134,15 +128,11 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpcre_16` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pigsty | 16.4 KiB | [pgpcre_16-0.20190509-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpcre_16-0.20190509-1PIGSTY.el8.x86_64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.1 KiB | [pgpcre_16-0.20190509-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgpcre_16-0.20190509-1PGDG.rhel8.x86_64.rpm) |
-| `pgpcre_16` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pigsty | 16.5 KiB | [pgpcre_16-0.20190509-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpcre_16-0.20190509-1PIGSTY.el8.aarch64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.0 KiB | [pgpcre_16-0.20190509-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgpcre_16-0.20190509-1PGDG.rhel8.aarch64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.9 KiB | [pgpcre_16-0.20190509-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgpcre_16-0.20190509-6PGDG.rhel9.8.x86_64.rpm) |
-| `pgpcre_16` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.3 KiB | [pgpcre_16-0.20190509-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpcre_16-0.20190509-1PIGSTY.el9.x86_64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pgpcre_16-0.20190509-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgpcre_16-0.20190509-1PGDG.rhel9.x86_64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.6 KiB | [pgpcre_16-0.20190509-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgpcre_16-0.20190509-6PGDG.rhel9.8.aarch64.rpm) |
-| `pgpcre_16` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.2 KiB | [pgpcre_16-0.20190509-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpcre_16-0.20190509-1PIGSTY.el9.aarch64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.1 KiB | [pgpcre_16-0.20190509-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgpcre_16-0.20190509-1PGDG.rhel9.aarch64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_16-0.20190509-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgpcre_16-0.20190509-6PGDG.rhel10.2.x86_64.rpm) |
 | `pgpcre_16` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_16-0.20190509-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgpcre_16-0.20190509-4PGDG.rhel10.x86_64.rpm) |
@@ -169,15 +159,11 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpcre_15` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pigsty | 16.4 KiB | [pgpcre_15-0.20190509-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpcre_15-0.20190509-1PIGSTY.el8.x86_64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.1 KiB | [pgpcre_15-0.20190509-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgpcre_15-0.20190509-1PGDG.rhel8.x86_64.rpm) |
-| `pgpcre_15` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pigsty | 16.5 KiB | [pgpcre_15-0.20190509-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpcre_15-0.20190509-1PIGSTY.el8.aarch64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.0 KiB | [pgpcre_15-0.20190509-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgpcre_15-0.20190509-1PGDG.rhel8.aarch64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.9 KiB | [pgpcre_15-0.20190509-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgpcre_15-0.20190509-6PGDG.rhel9.8.x86_64.rpm) |
-| `pgpcre_15` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.3 KiB | [pgpcre_15-0.20190509-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpcre_15-0.20190509-1PIGSTY.el9.x86_64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pgpcre_15-0.20190509-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgpcre_15-0.20190509-1PGDG.rhel9.x86_64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.6 KiB | [pgpcre_15-0.20190509-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgpcre_15-0.20190509-6PGDG.rhel9.8.aarch64.rpm) |
-| `pgpcre_15` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.3 KiB | [pgpcre_15-0.20190509-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpcre_15-0.20190509-1PIGSTY.el9.aarch64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.1 KiB | [pgpcre_15-0.20190509-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgpcre_15-0.20190509-1PGDG.rhel9.aarch64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.0 KiB | [pgpcre_15-0.20190509-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgpcre_15-0.20190509-6PGDG.rhel10.2.x86_64.rpm) |
 | `pgpcre_15` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_15-0.20190509-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgpcre_15-0.20190509-4PGDG.rhel10.x86_64.rpm) |
@@ -204,15 +190,11 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpcre_14` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pigsty | 16.4 KiB | [pgpcre_14-0.20190509-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpcre_14-0.20190509-1PIGSTY.el8.x86_64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.0 KiB | [pgpcre_14-0.20190509-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgpcre_14-0.20190509-1PGDG.rhel8.x86_64.rpm) |
-| `pgpcre_14` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pigsty | 16.5 KiB | [pgpcre_14-0.20190509-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpcre_14-0.20190509-1PIGSTY.el8.aarch64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.0 KiB | [pgpcre_14-0.20190509-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgpcre_14-0.20190509-1PGDG.rhel8.aarch64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.9 KiB | [pgpcre_14-0.20190509-6PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgpcre_14-0.20190509-6PGDG.rhel9.8.x86_64.rpm) |
-| `pgpcre_14` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.3 KiB | [pgpcre_14-0.20190509-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpcre_14-0.20190509-1PIGSTY.el9.x86_64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pgpcre_14-0.20190509-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgpcre_14-0.20190509-1PGDG.rhel9.x86_64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.6 KiB | [pgpcre_14-0.20190509-6PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgpcre_14-0.20190509-6PGDG.rhel9.8.aarch64.rpm) |
-| `pgpcre_14` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.2 KiB | [pgpcre_14-0.20190509-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpcre_14-0.20190509-1PIGSTY.el9.aarch64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.1 KiB | [pgpcre_14-0.20190509-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgpcre_14-0.20190509-1PGDG.rhel9.aarch64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.1 KiB | [pgpcre_14-0.20190509-6PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgpcre_14-0.20190509-6PGDG.rhel10.2.x86_64.rpm) |
 | `pgpcre_14` | `0.20190509` | [el10.x86_64](/os/el10.x86_64) | pgdg | 18.0 KiB | [pgpcre_14-0.20190509-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgpcre_14-0.20190509-4PGDG.rhel10.x86_64.rpm) |
@@ -251,10 +233,10 @@ pig build pkg pgpcre;		# build rpm
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add both repo and update cache
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):

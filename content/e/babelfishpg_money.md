@@ -22,7 +22,7 @@ page_width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -30,7 +30,7 @@ page_width: full
 |   **See Also**    | {{< ext "currency" >}} {{< ext "financial" >}} {{< ext "pg_accumulator" >}} {{< ext "omni_ledger" >}} {{< ext "tds_fdw" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} |
 |    **Siblings**   | {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} |
 
-> [!Note] special case: this extension only works on wiltondb kernel fork
+> [!Note] PG17: Babelfish 5.7.0; PG18: 6.2.0. Package fields use PG18.
 
 
 ## Packages
@@ -38,8 +38,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `babelfish` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.0.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `antlr4-runtime413` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.0.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `libantlr4-runtime413` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.2.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `antlr4-runtime413` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.2.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `libantlr4-runtime413` |
 {.packages}
 
 
@@ -68,7 +68,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://babelfishpg.org/" title="Repository" icon="link" subtitle="babelfishpg.org/" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-17-17.7-5.4.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-18-18.4-6.2.0.tar.gz babelfish-17-17.10-5.7.0.tar.gz" />}}
 {{< /cards >}}
 
 

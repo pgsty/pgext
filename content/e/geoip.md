@@ -6,7 +6,7 @@ weight: 1560
 categories: ["GIS"]
 languages: ["SQL"]
 licenses: ["BSD-2-Clause"]
-repos: ["MIXED"]
+repos: ["PIGSTY"]
 page_width: full
 ---
 
@@ -17,12 +17,12 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1560** | {{< badge content="geoip" link="https://github.com/tvondra/geoip" >}} | {{< ext "geoip" >}} | `0.3.0` | {{< category "GIS" >}} | {{< license "BSD-2-Clause" >}} | {{< language "SQL" >}} |
+| **1560** | {{< badge content="geoip" link="https://github.com/tvondra/geoip" >}} | {{< ext "geoip" >}} | `0.4.0` | {{< category "GIS" >}} | {{< license "BSD-2-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -38,9 +38,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `geoip` | `ip4r` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "geoip_18" "green" >}} {{< bg "17" "geoip_17" "green" >}} {{< bg "16" "geoip_16" "green" >}} {{< bg "15" "geoip_15" "green" >}} {{< bg "14" "geoip_14" "green" >}} | `geoip_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-geoip" "green" >}} {{< bg "17" "postgresql-17-geoip" "green" >}} {{< bg "16" "postgresql-16-geoip" "green" >}} {{< bg "15" "postgresql-15-geoip" "green" >}} {{< bg "14" "postgresql-14-geoip" "green" >}} | `postgresql-$v-geoip` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `geoip` | `ip4r` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "geoip_18" "green" >}} {{< bg "17" "geoip_17" "green" >}} {{< bg "16" "geoip_16" "green" >}} {{< bg "15" "geoip_15" "green" >}} {{< bg "14" "geoip_14" "green" >}} | `geoip_$v` | `ip4r_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0+git20250804.fcad7f1` | {{< bg "18" "postgresql-18-geoip" "green" >}} {{< bg "17" "postgresql-17-geoip" "green" >}} {{< bg "16" "postgresql-16-geoip" "green" >}} {{< bg "15" "postgresql-15-geoip" "green" >}} {{< bg "14" "postgresql-14-geoip" "green" >}} | `postgresql-$v-geoip` | `postgresql-$v-ip4r` |
 {.packages}
 
 
@@ -194,7 +194,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/tvondra/geoip" title="Repository" icon="github" subtitle="github.com/tvondra/geoip" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="geoip-0.3.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="geoip-0.4.0+git20250804.fcad7f1.tar.gz" />}}
 {{< /cards >}}
 
 

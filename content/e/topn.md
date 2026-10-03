@@ -29,8 +29,6 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "count_distinct" >}} {{< ext "hll" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "weighted_statistics" >}} |
 
-> [!Note] Latest PGDG RPM/catalog version is 2.7.1; EL8/EL9 x86_64, Pigsty DEB, and Pigsty source remain on 2.7.0.
-
 
 ## Packages
 
@@ -38,7 +36,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `topn` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.1` | {{< bg "18" "topn_18" "green" >}} {{< bg "17" "topn_17" "green" >}} {{< bg "16" "topn_16" "green" >}} {{< bg "15" "topn_15" "green" >}} {{< bg "14" "topn_14" "green" >}} | `topn_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.0` | {{< bg "18" "postgresql-18-topn" "green" >}} {{< bg "17" "postgresql-17-topn" "green" >}} {{< bg "16" "postgresql-16-topn" "green" >}} {{< bg "15" "postgresql-15-topn" "green" >}} {{< bg "14" "postgresql-14-topn" "green" >}} | `postgresql-$v-topn` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.1` | {{< bg "18" "postgresql-18-topn" "green" >}} {{< bg "17" "postgresql-17-topn" "green" >}} {{< bg "16" "postgresql-16-topn" "green" >}} {{< bg "15" "postgresql-15-topn" "green" >}} {{< bg "14" "postgresql-14-topn" "green" >}} | `postgresql-$v-topn` | - |
 {.packages}
 
 
@@ -235,12 +233,12 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/citusdata/postgresql-topn" title="Repository" icon="github" subtitle="github.com/citusdata/postgresql-topn" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql-topn-2.7.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql-topn-2.7.1.tar.gz" />}}
 {{< /cards >}}
 
 
 ```bash
-pig build pkg topn;		# build deb
+pig build pkg topn;		# build rpm/deb
 ```
 
 

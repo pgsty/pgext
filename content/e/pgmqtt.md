@@ -17,49 +17,49 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9620** | {{< badge content="pgmqtt" link="https://github.com/RayElg/pgmqtt" >}} | {{< ext "pgmqtt" >}} | `0.4.1` | {{< category "ETL" >}} | {{< license "Elastic-2.0" >}} | {{< language "Rust" >}} |
+| **9620** | {{< badge content="pgmqtt" link="https://github.com/RayElg/pgmqtt" >}} | {{< ext "pgmqtt" >}} | `0.5.1` | {{< category "ETL" >}} | {{< license "Elastic-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "pgq" >}} {{< ext "kafka_fdw" >}} {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "tcn" >}} {{< ext "redis" >}} {{< ext "test_decoding" >}} |
 
-> [!Note] requires wal_level = logical for CDC.
+> [!Note] Requires preload for broker/CDC. CDC requires logical WAL; affected PostgreSQL releases also require pgmqtt in output_plugin_libraries.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmqtt` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "pgmqtt_18" "green" >}} {{< bg "17" "pgmqtt_17" "green" >}} {{< bg "16" "pgmqtt_16" "green" >}} {{< bg "15" "pgmqtt_15" "green" >}} {{< bg "14" "pgmqtt_14" "green" >}} | `pgmqtt_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "postgresql-18-pgmqtt" "green" >}} {{< bg "17" "postgresql-17-pgmqtt" "green" >}} {{< bg "16" "postgresql-16-pgmqtt" "green" >}} {{< bg "15" "postgresql-15-pgmqtt" "green" >}} {{< bg "14" "postgresql-14-pgmqtt" "green" >}} | `postgresql-$v-pgmqtt` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmqtt` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.1` | {{< bg "18" "pgmqtt_18" "green" >}} {{< bg "17" "pgmqtt_17" "green" >}} {{< bg "16" "pgmqtt_16" "green" >}} {{< bg "15" "pgmqtt_15" "green" >}} {{< bg "14" "pgmqtt_14" "green" >}} | `pgmqtt_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.1` | {{< bg "18" "postgresql-18-pgmqtt" "green" >}} {{< bg "17" "postgresql-17-pgmqtt" "green" >}} {{< bg "16" "postgresql-16-pgmqtt" "green" >}} {{< bg "15" "postgresql-15-pgmqtt" "green" >}} {{< bg "14" "postgresql-14-pgmqtt" "green" >}} | `postgresql-$v-pgmqtt` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "pgmqtt_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-18-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-17-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-pgmqtt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-pgmqtt : AVAIL 1" "green" >}} |
 {.matrix}
 
 
@@ -68,22 +68,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmqtt_18` | `0.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_18-0.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_18-0.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmqtt_18` | `0.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.2 MiB | [pgmqtt_18-0.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_18-0.4.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgmqtt_18` | `0.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.5 MiB | [pgmqtt_18-0.4.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_18-0.4.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgmqtt_18` | `0.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.3 MiB | [pgmqtt_18-0.4.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_18-0.4.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmqtt_18` | `0.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_18-0.4.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_18-0.4.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgmqtt_18` | `0.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.3 MiB | [pgmqtt_18-0.4.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_18-0.4.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.0 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.5 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.0 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.5 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.2 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.9 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.2 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.9 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.2 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-pgmqtt` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.9 MiB | [postgresql-18-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb) |
+| `pgmqtt_18` | `0.5.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_18-0.5.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_18-0.5.1-1PGSTY.el8.x86_64.rpm) |
+| `pgmqtt_18` | `0.5.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.1 MiB | [pgmqtt_18-0.5.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_18-0.5.1-1PGSTY.el8.aarch64.rpm) |
+| `pgmqtt_18` | `0.5.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.6 MiB | [pgmqtt_18-0.5.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_18-0.5.1-1PGSTY.el9.x86_64.rpm) |
+| `pgmqtt_18` | `0.5.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.2 MiB | [pgmqtt_18-0.5.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_18-0.5.1-1PGSTY.el9.aarch64.rpm) |
+| `pgmqtt_18` | `0.5.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_18-0.5.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_18-0.5.1-1PGSTY.el10.x86_64.rpm) |
+| `pgmqtt_18` | `0.5.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.2 MiB | [pgmqtt_18-0.5.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_18-0.5.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.1 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.6 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.1 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.6 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.4 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.0 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.3 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-pgmqtt` | `0.5.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-18-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-18-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -91,22 +91,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmqtt_17` | `0.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_17-0.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_17-0.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmqtt_17` | `0.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.2 MiB | [pgmqtt_17-0.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_17-0.4.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgmqtt_17` | `0.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.5 MiB | [pgmqtt_17-0.4.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_17-0.4.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgmqtt_17` | `0.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.3 MiB | [pgmqtt_17-0.4.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_17-0.4.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmqtt_17` | `0.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_17-0.4.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_17-0.4.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgmqtt_17` | `0.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.3 MiB | [pgmqtt_17-0.4.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_17-0.4.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.9 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.5 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.9 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.5 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.2 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.9 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.2 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.9 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.2 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-pgmqtt` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.9 MiB | [postgresql-17-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb) |
+| `pgmqtt_17` | `0.5.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_17-0.5.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_17-0.5.1-1PGSTY.el8.x86_64.rpm) |
+| `pgmqtt_17` | `0.5.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.1 MiB | [pgmqtt_17-0.5.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_17-0.5.1-1PGSTY.el8.aarch64.rpm) |
+| `pgmqtt_17` | `0.5.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.6 MiB | [pgmqtt_17-0.5.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_17-0.5.1-1PGSTY.el9.x86_64.rpm) |
+| `pgmqtt_17` | `0.5.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.2 MiB | [pgmqtt_17-0.5.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_17-0.5.1-1PGSTY.el9.aarch64.rpm) |
+| `pgmqtt_17` | `0.5.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_17-0.5.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_17-0.5.1-1PGSTY.el10.x86_64.rpm) |
+| `pgmqtt_17` | `0.5.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.2 MiB | [pgmqtt_17-0.5.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_17-0.5.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.1 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.6 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.1 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.6 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.4 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.0 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.3 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-17-pgmqtt` | `0.5.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-17-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-17-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -114,22 +114,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmqtt_16` | `0.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_16-0.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_16-0.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmqtt_16` | `0.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.2 MiB | [pgmqtt_16-0.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_16-0.4.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgmqtt_16` | `0.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.5 MiB | [pgmqtt_16-0.4.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_16-0.4.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgmqtt_16` | `0.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.3 MiB | [pgmqtt_16-0.4.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_16-0.4.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmqtt_16` | `0.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_16-0.4.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_16-0.4.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgmqtt_16` | `0.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.3 MiB | [pgmqtt_16-0.4.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_16-0.4.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.9 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.5 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.9 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.5 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.2 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.9 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.2 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.9 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.2 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-pgmqtt` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.9 MiB | [postgresql-16-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb) |
+| `pgmqtt_16` | `0.5.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_16-0.5.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_16-0.5.1-1PGSTY.el8.x86_64.rpm) |
+| `pgmqtt_16` | `0.5.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.1 MiB | [pgmqtt_16-0.5.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_16-0.5.1-1PGSTY.el8.aarch64.rpm) |
+| `pgmqtt_16` | `0.5.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.6 MiB | [pgmqtt_16-0.5.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_16-0.5.1-1PGSTY.el9.x86_64.rpm) |
+| `pgmqtt_16` | `0.5.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.2 MiB | [pgmqtt_16-0.5.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_16-0.5.1-1PGSTY.el9.aarch64.rpm) |
+| `pgmqtt_16` | `0.5.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_16-0.5.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_16-0.5.1-1PGSTY.el10.x86_64.rpm) |
+| `pgmqtt_16` | `0.5.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.2 MiB | [pgmqtt_16-0.5.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_16-0.5.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.1 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.6 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.1 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.6 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.3 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.0 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.3 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-16-pgmqtt` | `0.5.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-16-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-16-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -137,22 +137,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmqtt_15` | `0.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_15-0.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_15-0.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmqtt_15` | `0.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.2 MiB | [pgmqtt_15-0.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_15-0.4.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgmqtt_15` | `0.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.5 MiB | [pgmqtt_15-0.4.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_15-0.4.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgmqtt_15` | `0.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.3 MiB | [pgmqtt_15-0.4.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_15-0.4.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmqtt_15` | `0.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_15-0.4.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_15-0.4.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgmqtt_15` | `0.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.3 MiB | [pgmqtt_15-0.4.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_15-0.4.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.9 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.5 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.9 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.5 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.2 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.9 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.2 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.9 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.2 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-pgmqtt` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.9 MiB | [postgresql-15-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb) |
+| `pgmqtt_15` | `0.5.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_15-0.5.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_15-0.5.1-1PGSTY.el8.x86_64.rpm) |
+| `pgmqtt_15` | `0.5.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.0 MiB | [pgmqtt_15-0.5.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_15-0.5.1-1PGSTY.el8.aarch64.rpm) |
+| `pgmqtt_15` | `0.5.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.5 MiB | [pgmqtt_15-0.5.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_15-0.5.1-1PGSTY.el9.x86_64.rpm) |
+| `pgmqtt_15` | `0.5.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.2 MiB | [pgmqtt_15-0.5.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_15-0.5.1-1PGSTY.el9.aarch64.rpm) |
+| `pgmqtt_15` | `0.5.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_15-0.5.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_15-0.5.1-1PGSTY.el10.x86_64.rpm) |
+| `pgmqtt_15` | `0.5.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.2 MiB | [pgmqtt_15-0.5.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_15-0.5.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.0 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.6 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.0 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.6 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.3 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.0 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.3 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-15-pgmqtt` | `0.5.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-15-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-15-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -160,22 +160,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmqtt_14` | `0.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_14-0.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_14-0.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmqtt_14` | `0.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.2 MiB | [pgmqtt_14-0.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_14-0.4.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgmqtt_14` | `0.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.5 MiB | [pgmqtt_14-0.4.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_14-0.4.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgmqtt_14` | `0.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.3 MiB | [pgmqtt_14-0.4.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_14-0.4.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmqtt_14` | `0.4.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_14-0.4.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_14-0.4.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgmqtt_14` | `0.4.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.3 MiB | [pgmqtt_14-0.4.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_14-0.4.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.9 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.5 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.9 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.5 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.2 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.9 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.2 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.9 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.2 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pgmqtt` | `0.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.9 MiB | [postgresql-14-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.4.1-1PIGSTY~resolute_arm64.deb) |
+| `pgmqtt_14` | `0.5.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 3.6 MiB | [pgmqtt_14-0.5.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmqtt_14-0.5.1-1PGSTY.el8.x86_64.rpm) |
+| `pgmqtt_14` | `0.5.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 3.0 MiB | [pgmqtt_14-0.5.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmqtt_14-0.5.1-1PGSTY.el8.aarch64.rpm) |
+| `pgmqtt_14` | `0.5.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 3.5 MiB | [pgmqtt_14-0.5.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmqtt_14-0.5.1-1PGSTY.el9.x86_64.rpm) |
+| `pgmqtt_14` | `0.5.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 3.2 MiB | [pgmqtt_14-0.5.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmqtt_14-0.5.1-1PGSTY.el9.aarch64.rpm) |
+| `pgmqtt_14` | `0.5.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 3.5 MiB | [pgmqtt_14-0.5.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmqtt_14-0.5.1-1PGSTY.el10.x86_64.rpm) |
+| `pgmqtt_14` | `0.5.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 3.2 MiB | [pgmqtt_14-0.5.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmqtt_14-0.5.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.0 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 2.6 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.0 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 2.6 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 3.3 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.0 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 3.3 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-14-pgmqtt` | `0.5.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-14-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmqtt/postgresql-14-pgmqtt_0.5.1-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/RayElg/pgmqtt" title="Repository" icon="github" subtitle="github.com/RayElg/pgmqtt" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmqtt-0.4.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmqtt-0.5.1.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -215,6 +215,13 @@ pig install pgmqtt -v 14;   # install for PG 14
 ```
 
 
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```ini
+shared_preload_libraries = 'pgmqtt';
+```
+
+
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
@@ -225,11 +232,11 @@ CREATE EXTENSION pgmqtt;
 
 Sources:
 
-- [pgmqtt 0.4.1 README](https://github.com/RayElg/pgmqtt/blob/0.4.1/README.md)
-- [pgmqtt 0.4.1 interfaces](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/interfaces.md)
-- [pgmqtt 0.4.1 configuration](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/configuration.md)
-- [pgmqtt 0.4.1 limitations](https://github.com/RayElg/pgmqtt/blob/0.4.1/docs/limitations.md)
-- [pgmqtt 0.4.1 release notes](https://github.com/RayElg/pgmqtt/releases/tag/0.4.1)
+- [pgmqtt 0.5.1 README](https://github.com/RayElg/pgmqtt/blob/0.5.1/README.md)
+- [pgmqtt 0.5.1 interfaces](https://github.com/RayElg/pgmqtt/blob/0.5.1/docs/interfaces.md)
+- [pgmqtt 0.5.1 configuration](https://github.com/RayElg/pgmqtt/blob/0.5.1/docs/configuration.md)
+- [pgmqtt 0.5.1 limitations](https://github.com/RayElg/pgmqtt/blob/0.5.1/docs/limitations.md)
+- [pgmqtt 0.5.1 release notes](https://github.com/RayElg/pgmqtt/releases/tag/0.5.1)
 
 pgmqtt embeds an MQTT broker in PostgreSQL. It can publish INSERT, UPDATE, and DELETE changes through logical decoding and can map inbound MQTT topics and JSON payloads to table writes. Use it when database and MQTT integration justify running a network broker inside the PostgreSQL server process.
 
@@ -239,8 +246,9 @@ Set logical WAL and preload the worker, then restart PostgreSQL:
 
     wal_level = logical
     shared_preload_libraries = 'pgmqtt'
+    pgmqtt.database = 'postgres'
 
-Create the extension after restart:
+After restart, connect to the database named by pgmqtt.database (postgres by default) and create the extension there. Its worker tables, mappings, and logical slot belong to that configured database; create the mapped application tables there too:
 
     CREATE EXTENSION pgmqtt;
 
@@ -258,7 +266,7 @@ Create an outbound mapping:
       1
     );
 
-The mapping publishes row changes to topics such as orders/insert. The interface also accepts a QoS and template type where supported. Version 0.4.1 drains CDC changes in batches of up to 4096 records.
+The mapping publishes row changes to topics such as orders/insert. The interface also accepts a QoS and template type where supported. Version 0.5.1 drains CDC changes in batches of up to 4096 records.
 
 Inspect or remove outbound mappings:
 
@@ -272,7 +280,8 @@ Map captured topic segments and JSON fields to a target table:
     SELECT pgmqtt_add_inbound_mapping(
       'sensor/{site_id}/temperature',
       'sensor_readings',
-      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb
+      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb,
+      mapping_name => 'temp_readings'
     );
 
 Inbound mappings support insert and documented upsert/delete modes with options such as target_schema, conflict_columns, mapping_name, and template_type. Grant the worker role only the required table privileges and validate payload types and constraints.
@@ -302,11 +311,13 @@ pgmqtt_status reports listener, client, subscription, retained-message, CDC, inb
 
 - MQTT 5.0 and 3.1.1 are supported. QoS 0 and 1 are implemented; requested QoS 2 is downgraded to QoS 1.
 - CDC covers INSERT, UPDATE, and DELETE, not DDL or TRUNCATE. DELETE payloads may require REPLICA IDENTITY FULL.
-- The CDC ring has a finite capacity of 8192 and drops the oldest records on overflow. The QoS 0 topic buffer is capped at 4096 and also drops oldest entries; QoS 1 buffering can grow without a fixed bound.
+- The CDC ring has a finite capacity of 8192 and drops the oldest records on overflow. The QoS 0 topic buffer is capped at 4096 and also drops oldest entries; the per-client pending queue disconnects clients above 50,000 messages.
 - The community edition documents TLS through a proxy, while native TLS and some JWT features are enterprise boundaries. Verify the edition before setting listener expectations.
 
-### Version 0.4.1 and Operations
+### Version 0.5.1 and Operations
 
-The 0.4 line consolidates HTTP/worker handling and reduces panic paths; 0.4.1 raises CDC batch processing to 4096. These changes improve throughput and structure but do not make the embedded broker lossless under every overload or crash.
+Version 0.5.1 publishes tested upstream artifacts for PostgreSQL 15–18. Some server builds expose output_plugin_libraries and reject unlisted logical decoding plugins. If the worker reports that pgmqtt may not be used as an output plugin, follow the release instructions to add it to that build’s allowlist and reload configuration. Do not add this setting to a server that does not provide it.
+
+The optional enterprise multiprocess topology also requires pgmqtt.experimental_multiprocess at startup and a full restart when changed. It introduces a separate CDC worker and a table-backed outbox; it does not remove the documented overflow limits of every other message path. All pgmqtt GUCs require superuser access.
 
 Running a broker inside PostgreSQL expands the database network and resource boundary. Isolate listener interfaces, enforce authentication and topic ACLs, monitor worker lag and dropped buffers, and test failover and restart behavior before production use.

@@ -6,7 +6,7 @@ weight: 7170
 categories: ["SEC"]
 languages: ["C++"]
 licenses: ["Apache-2.0"]
-repos: ["PIGSTY"]
+repos: ["MIXED"]
 page_width: full
 ---
 
@@ -29,15 +29,15 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} {{< ext "pgsodium" >}} {{< ext "pguecc" >}} |
 
-> [!Note] Configure oauth_validator_libraries=pg_oidc_validator; 1.1.0 adds discovery_url_override; RPM is available on EL10 only while DEB covers all supported Debian and Ubuntu targets.
+> [!Note] PG18 only; configure oauth_validator_libraries. RPM: PGDG; DEB: PIGSTY.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_oidc_validator` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_oidc_validator_18" "green" >}} {{< bg "17" "pg_oidc_validator_17" "red" >}} {{< bg "16" "pg_oidc_validator_16" "red" >}} {{< bg "15" "pg_oidc_validator_15" "red" >}} {{< bg "14" "pg_oidc_validator_14" "red" >}} | `pg_oidc_validator_$v` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_oidc_validator` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.0` | {{< bg "18" "pg_oidc_validator_18" "green" >}} {{< bg "17" "pg_oidc_validator_17" "red" >}} {{< bg "16" "pg_oidc_validator_16" "red" >}} {{< bg "15" "pg_oidc_validator_15" "red" >}} {{< bg "14" "pg_oidc_validator_14" "red" >}} | `pg_oidc_validator_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-oidc-validator" "green" >}} {{< bg "17" "postgresql-17-pg-oidc-validator" "red" >}} {{< bg "16" "postgresql-16-pg-oidc-validator" "red" >}} {{< bg "15" "postgresql-15-pg-oidc-validator" "red" >}} {{< bg "14" "postgresql-14-pg-oidc-validator" "red" >}} | `postgresql-$v-pg-oidc-validator` | - |
 {.packages}
 
@@ -46,10 +46,10 @@ page_width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_oidc_validator_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_oidc_validator_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "pg_oidc_validator_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "pg_oidc_validator_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "pg_oidc_validator_18 : AVAIL 3" "green" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "pg_oidc_validator_18 : AVAIL 3" "green" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.1.0" "pg_oidc_validator_18 : AVAIL 1" "blue" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.1.0" "pg_oidc_validator_18 : AVAIL 1" "blue" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.1.0" "pg_oidc_validator_18 : AVAIL 5" "blue" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "pg_oidc_validator_18 : AVAIL 4" "green" >}} | {{< bg "N/A" "pg_oidc_validator_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_oidc_validator_14 : N/A 0" "gray" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
@@ -68,10 +68,15 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_oidc_validator_18` | `1.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 498.4 KiB | [pg_oidc_validator_18-1.1.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_oidc_validator_18-1.1.0-1PGDG.rhel9.8.x86_64.rpm) |
+| `pg_oidc_validator_18` | `1.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 460.8 KiB | [pg_oidc_validator_18-1.1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_oidc_validator_18-1.1.0-1PGDG.rhel9.8.aarch64.rpm) |
+| `pg_oidc_validator_18` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 540.5 KiB | [pg_oidc_validator_18-1.1.0-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_oidc_validator_18-1.1.0-2PGDG.rhel10.2.x86_64.rpm) |
 | `pg_oidc_validator_18` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 142.6 KiB | [pg_oidc_validator_18-1.1.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_oidc_validator_18-1.1.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_oidc_validator_18` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 540.3 KiB | [pg_oidc_validator_18-1.1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_oidc_validator_18-1.1.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_oidc_validator_18` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 173.5 KiB | [pg_oidc_validator_18-1.0.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_oidc_validator_18-1.0.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_oidc_validator_18` | `0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 173.1 KiB | [pg_oidc_validator_18-0.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_oidc_validator_18-0.2-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_oidc_validator_18` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 129.5 KiB | [pg_oidc_validator_18-1.1.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_oidc_validator_18-1.1.0-1PGSTY.el10.aarch64.rpm) |
+| `pg_oidc_validator_18` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 498.3 KiB | [pg_oidc_validator_18-1.1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_oidc_validator_18-1.1.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_oidc_validator_18` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 155.4 KiB | [pg_oidc_validator_18-1.0.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_oidc_validator_18-1.0.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_oidc_validator_18` | `0.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 154.9 KiB | [pg_oidc_validator_18-0.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_oidc_validator_18-0.2-1PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql-18-pg-oidc-validator` | `1.1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 108.8 KiB | [postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-oidc-validator/postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~bookworm_amd64.deb) |

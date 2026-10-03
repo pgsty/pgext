@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2870** | {{< badge content="pg_durable" link="https://github.com/microsoft/pg_durable" >}} | {{< ext "pg_durable" >}} | `0.2.3` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+| **2870** | {{< badge content="pg_durable" link="https://github.com/microsoft/pg_durable" >}} | {{< ext "pg_durable" >}} | `0.2.8` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,40 +27,40 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `df` `duroxide` |
+|    **Schemas**    | `pg_catalog` `df` `duroxide` |
 |   **See Also**    | {{< ext "pg_task" >}} {{< ext "pgmq" >}} {{< ext "pg_background" >}} {{< ext "ulak" >}} {{< ext "pgmb" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_retry" >}} {{< ext "fsm_core" >}} {{< ext "pglock" >}} |
 
-> [!Note] Requires shared_preload_libraries=pg_durable and a superuser worker role.
+> [!Note] Requires preload and a superuser worker role; pgrx 0.19.2.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_durable` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.3` | {{< bg "18" "pg_durable_18" "green" >}} {{< bg "17" "pg_durable_17" "green" >}} {{< bg "16" "pg_durable_16" "green" >}} {{< bg "15" "pg_durable_15" "green" >}} {{< bg "14" "pg_durable_14" "green" >}} | `pg_durable_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.3` | {{< bg "18" "postgresql-18-pg-durable" "green" >}} {{< bg "17" "postgresql-17-pg-durable" "green" >}} {{< bg "16" "postgresql-16-pg-durable" "green" >}} {{< bg "15" "postgresql-15-pg-durable" "green" >}} {{< bg "14" "postgresql-14-pg-durable" "green" >}} | `postgresql-$v-pg-durable` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_durable` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.8` | {{< bg "18" "pg_durable_18" "green" >}} {{< bg "17" "pg_durable_17" "green" >}} {{< bg "16" "pg_durable_16" "green" >}} {{< bg "15" "pg_durable_15" "green" >}} {{< bg "14" "pg_durable_14" "green" >}} | `pg_durable_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.8` | {{< bg "18" "postgresql-18-pg-durable" "green" >}} {{< bg "17" "postgresql-17-pg-durable" "green" >}} {{< bg "16" "postgresql-16-pg-durable" "green" >}} {{< bg "15" "postgresql-15-pg-durable" "green" >}} {{< bg "14" "postgresql-14-pg-durable" "green" >}} | `postgresql-$v-pg-durable` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "pg_durable_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.3" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "pg_durable_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-18-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-17-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-16-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-15-pg-durable : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.8" "postgresql-14-pg-durable : AVAIL 1" "green" >}} |
 {.matrix}
 
 
@@ -69,22 +69,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_durable_18` | `0.2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [pg_durable_18-0.2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_18-0.2.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_durable_18` | `0.2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.3 MiB | [pg_durable_18-0.2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_18-0.2.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_durable_18` | `0.2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.5 MiB | [pg_durable_18-0.2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_18-0.2.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_durable_18` | `0.2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.4 MiB | [pg_durable_18-0.2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_18-0.2.3-1PIGSTY.el9.aarch64.rpm) |
-| `pg_durable_18` | `0.2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.5 MiB | [pg_durable_18-0.2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_18-0.2.3-1PIGSTY.el10.x86_64.rpm) |
-| `pg_durable_18` | `0.2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.5 MiB | [pg_durable_18-0.2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_18-0.2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-durable` | `0.2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.7 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.2 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.7 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.2 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.0 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.7 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.0 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.8 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-durable` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.7 MiB | [postgresql-18-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb) |
+| `pg_durable_18` | `0.2.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.1 MiB | [pg_durable_18-0.2.8-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_18-0.2.8-1PGSTY.el8.x86_64.rpm) |
+| `pg_durable_18` | `0.2.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.1 MiB | [pg_durable_18-0.2.8-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_18-0.2.8-1PGSTY.el8.aarch64.rpm) |
+| `pg_durable_18` | `0.2.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.0 MiB | [pg_durable_18-0.2.8-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_18-0.2.8-1PGSTY.el9.x86_64.rpm) |
+| `pg_durable_18` | `0.2.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [pg_durable_18-0.2.8-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_18-0.2.8-1PGSTY.el9.aarch64.rpm) |
+| `pg_durable_18` | `0.2.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.0 MiB | [pg_durable_18-0.2.8-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_18-0.2.8-1PGSTY.el10.x86_64.rpm) |
+| `pg_durable_18` | `0.2.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [pg_durable_18-0.2.8-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_18-0.2.8-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-durable` | `0.2.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.2 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.3 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.2 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.3 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.6 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.6 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.6 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-durable` | `0.2.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -92,22 +92,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_durable_17` | `0.2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [pg_durable_17-0.2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_17-0.2.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_durable_17` | `0.2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.3 MiB | [pg_durable_17-0.2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_17-0.2.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_durable_17` | `0.2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.5 MiB | [pg_durable_17-0.2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_17-0.2.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_durable_17` | `0.2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.4 MiB | [pg_durable_17-0.2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_17-0.2.3-1PIGSTY.el9.aarch64.rpm) |
-| `pg_durable_17` | `0.2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.5 MiB | [pg_durable_17-0.2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_17-0.2.3-1PIGSTY.el10.x86_64.rpm) |
-| `pg_durable_17` | `0.2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.4 MiB | [pg_durable_17-0.2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_17-0.2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pg-durable` | `0.2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.7 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.2 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.7 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.2 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.0 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.8 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.0 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.8 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-pg-durable` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.7 MiB | [postgresql-17-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb) |
+| `pg_durable_17` | `0.2.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.1 MiB | [pg_durable_17-0.2.8-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_17-0.2.8-1PGSTY.el8.x86_64.rpm) |
+| `pg_durable_17` | `0.2.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.0 MiB | [pg_durable_17-0.2.8-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_17-0.2.8-1PGSTY.el8.aarch64.rpm) |
+| `pg_durable_17` | `0.2.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.0 MiB | [pg_durable_17-0.2.8-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_17-0.2.8-1PGSTY.el9.x86_64.rpm) |
+| `pg_durable_17` | `0.2.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [pg_durable_17-0.2.8-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_17-0.2.8-1PGSTY.el9.aarch64.rpm) |
+| `pg_durable_17` | `0.2.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.0 MiB | [pg_durable_17-0.2.8-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_17-0.2.8-1PGSTY.el10.x86_64.rpm) |
+| `pg_durable_17` | `0.2.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [pg_durable_17-0.2.8-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_17-0.2.8-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-durable` | `0.2.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.2 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.3 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.2 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.3 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.6 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.9 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.6 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.6 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-durable` | `0.2.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-17-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -115,22 +115,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_durable_16` | `0.2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [pg_durable_16-0.2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_16-0.2.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_durable_16` | `0.2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.3 MiB | [pg_durable_16-0.2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_16-0.2.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_durable_16` | `0.2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.5 MiB | [pg_durable_16-0.2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_16-0.2.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_durable_16` | `0.2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.4 MiB | [pg_durable_16-0.2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_16-0.2.3-1PIGSTY.el9.aarch64.rpm) |
-| `pg_durable_16` | `0.2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.5 MiB | [pg_durable_16-0.2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_16-0.2.3-1PIGSTY.el10.x86_64.rpm) |
-| `pg_durable_16` | `0.2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.5 MiB | [pg_durable_16-0.2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_16-0.2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pg-durable` | `0.2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.7 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.2 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.7 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.2 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.0 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.8 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.0 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.8 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-pg-durable` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.7 MiB | [postgresql-16-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb) |
+| `pg_durable_16` | `0.2.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.1 MiB | [pg_durable_16-0.2.8-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_16-0.2.8-1PGSTY.el8.x86_64.rpm) |
+| `pg_durable_16` | `0.2.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.0 MiB | [pg_durable_16-0.2.8-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_16-0.2.8-1PGSTY.el8.aarch64.rpm) |
+| `pg_durable_16` | `0.2.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.0 MiB | [pg_durable_16-0.2.8-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_16-0.2.8-1PGSTY.el9.x86_64.rpm) |
+| `pg_durable_16` | `0.2.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [pg_durable_16-0.2.8-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_16-0.2.8-1PGSTY.el9.aarch64.rpm) |
+| `pg_durable_16` | `0.2.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.0 MiB | [pg_durable_16-0.2.8-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_16-0.2.8-1PGSTY.el10.x86_64.rpm) |
+| `pg_durable_16` | `0.2.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [pg_durable_16-0.2.8-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_16-0.2.8-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-durable` | `0.2.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.2 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.3 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.2 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.3 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.6 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.9 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.6 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.6 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-durable` | `0.2.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-16-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -138,22 +138,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_durable_15` | `0.2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [pg_durable_15-0.2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_15-0.2.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_durable_15` | `0.2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.3 MiB | [pg_durable_15-0.2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_15-0.2.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_durable_15` | `0.2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.5 MiB | [pg_durable_15-0.2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_15-0.2.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_durable_15` | `0.2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.4 MiB | [pg_durable_15-0.2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_15-0.2.3-1PIGSTY.el9.aarch64.rpm) |
-| `pg_durable_15` | `0.2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.5 MiB | [pg_durable_15-0.2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_15-0.2.3-1PIGSTY.el10.x86_64.rpm) |
-| `pg_durable_15` | `0.2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.4 MiB | [pg_durable_15-0.2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_15-0.2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pg-durable` | `0.2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.7 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.2 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.7 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.2 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.0 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.7 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.0 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.8 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-pg-durable` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.7 MiB | [postgresql-15-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb) |
+| `pg_durable_15` | `0.2.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.1 MiB | [pg_durable_15-0.2.8-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_15-0.2.8-1PGSTY.el8.x86_64.rpm) |
+| `pg_durable_15` | `0.2.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.0 MiB | [pg_durable_15-0.2.8-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_15-0.2.8-1PGSTY.el8.aarch64.rpm) |
+| `pg_durable_15` | `0.2.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.0 MiB | [pg_durable_15-0.2.8-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_15-0.2.8-1PGSTY.el9.x86_64.rpm) |
+| `pg_durable_15` | `0.2.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.2 MiB | [pg_durable_15-0.2.8-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_15-0.2.8-1PGSTY.el9.aarch64.rpm) |
+| `pg_durable_15` | `0.2.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.0 MiB | [pg_durable_15-0.2.8-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_15-0.2.8-1PGSTY.el10.x86_64.rpm) |
+| `pg_durable_15` | `0.2.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [pg_durable_15-0.2.8-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_15-0.2.8-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-durable` | `0.2.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.2 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.3 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.2 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.3 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.6 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.9 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.6 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.6 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-durable` | `0.2.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-15-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -161,22 +161,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_durable_14` | `0.2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [pg_durable_14-0.2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_14-0.2.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_durable_14` | `0.2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.3 MiB | [pg_durable_14-0.2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_14-0.2.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_durable_14` | `0.2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.5 MiB | [pg_durable_14-0.2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_14-0.2.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_durable_14` | `0.2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.5 MiB | [pg_durable_14-0.2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_14-0.2.3-1PIGSTY.el9.aarch64.rpm) |
-| `pg_durable_14` | `0.2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.5 MiB | [pg_durable_14-0.2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_14-0.2.3-1PIGSTY.el10.x86_64.rpm) |
-| `pg_durable_14` | `0.2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.4 MiB | [pg_durable_14-0.2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_14-0.2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-durable` | `0.2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 3.6 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.2 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 3.6 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.2 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.0 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.7 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.0 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.8 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-durable` | `0.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.7 MiB | [postgresql-14-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.3-1PIGSTY~resolute_arm64.deb) |
+| `pg_durable_14` | `0.2.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.1 MiB | [pg_durable_14-0.2.8-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_durable_14-0.2.8-1PGSTY.el8.x86_64.rpm) |
+| `pg_durable_14` | `0.2.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.0 MiB | [pg_durable_14-0.2.8-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_durable_14-0.2.8-1PGSTY.el8.aarch64.rpm) |
+| `pg_durable_14` | `0.2.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.0 MiB | [pg_durable_14-0.2.8-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_durable_14-0.2.8-1PGSTY.el9.x86_64.rpm) |
+| `pg_durable_14` | `0.2.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.2 MiB | [pg_durable_14-0.2.8-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_durable_14-0.2.8-1PGSTY.el9.aarch64.rpm) |
+| `pg_durable_14` | `0.2.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.0 MiB | [pg_durable_14-0.2.8-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_durable_14-0.2.8-1PGSTY.el10.x86_64.rpm) |
+| `pg_durable_14` | `0.2.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [pg_durable_14-0.2.8-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_durable_14-0.2.8-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pg-durable` | `0.2.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.2 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.3 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.2 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 3.3 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~trixie_arm64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.6 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.9 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.6 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.6 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-durable` | `0.2.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.8 MiB | [postgresql-14-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.8-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}
@@ -185,7 +185,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/microsoft/pg_durable" title="Repository" icon="github" subtitle="github.com/microsoft/pg_durable" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_durable-0.2.3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_durable-0.2.8.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -233,10 +233,11 @@ CREATE EXTENSION pg_durable;
 
 Sources:
 
-- [Official v0.2.3 README](https://github.com/microsoft/pg_durable/blob/v0.2.3/README.md)
-- [v0.2.3 user guide](https://github.com/microsoft/pg_durable/blob/v0.2.3/USER_GUIDE.md)
-- [v0.2.3 release notes](https://github.com/microsoft/pg_durable/releases/tag/v0.2.3)
-- [v0.2.2 to v0.2.3 upgrade SQL](https://github.com/microsoft/pg_durable/blob/v0.2.3/sql/pg_durable--0.2.2--0.2.3.sql)
+- [PGXN 0.2.6 README](https://pgxn.org/dist/pg_durable/0.2.6/README.html)
+- [0.2.6 user guide](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/USER_GUIDE.md)
+- [0.2.6 changelog](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/CHANGELOG.md)
+- [pg_durable control file](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/pg_durable.control)
+- [0.2.5 to 0.2.6 upgrade SQL](https://api.pgxn.org/src/pg_durable/pg_durable-0.2.6/sql/pg_durable--0.2.5--0.2.6.sql)
 
 `pg_durable` runs durable, fault-tolerant SQL workflows inside PostgreSQL. A workflow is a graph of SQL steps, timers, signals, conditions, and parallel branches submitted with `df.start()`. Execution state is checkpointed in PostgreSQL so completed steps are not repeated after a crash, restart, or retry.
 
@@ -288,11 +289,13 @@ SELECT df.cancel('a1b2c3d4', 'No longer needed');
 - `df.signal()`, `df.wait_for_completion()`, `df.explain()`, and the instance-inspection functions operate on running or stored instances.
 - `df.setvar()`, `df.getvar()`, `df.unsetvar()`, and `df.clearvars()` manage per-user variables captured when `df.start()` is called.
 
-### Version 0.2.3 Boundaries
+### Version 0.2.6 Boundaries
 
-- Fresh v0.2.3 installs place provider objects in `_duroxide`; installations upgraded from 0.2.2 or earlier keep `duroxide`. `df.duroxide_schema()` reports the active schema.
-- Graphs deeper than 256 levels or larger than 10,000 nodes are rejected. A condition query returning no rows evaluates as false.
+- Upstream source installation and published images support PostgreSQL 17 and 18 with `pgrx` 0.16.1. The extension still requires `shared_preload_libraries`, a restart, and a superuser worker role.
+- Upgrades through 0.2.4 and 0.2.5 contain replay-breaking workflow changes. Drain or cancel in-flight JOIN, RACE, loop, and `df.wait_for_schedule()` work before upgrading; the 0.2.4 `df.nodes` key migration also takes an `ACCESS EXCLUSIVE` lock.
+- `df.start(..., transaction_mode => 'new')` persists an independent start outside the caller transaction. Cluster-wide admission defaults to two concurrent starts and is controlled by `pg_durable.max_new_transaction_starts` and `pg_durable.new_transaction_start_timeout`.
+- Variable substitution is resolved once from left to right in 0.2.6, so token-shaped text introduced by a value is not rescanned. It remains raw SQL substitution; never place untrusted input in `{name}` variables. Named step-result substitution through `$name` performs SQL escaping.
+- The undocumented `df.ensure_durofut(text)` helper was removed. Drop or rewrite customer-owned dependent objects before upgrading.
 - Re-run `df.grant_usage()` after `ALTER EXTENSION ... UPDATE`, because grants on all functions do not automatically include functions added later.
-- Variable `{name}` substitution is raw SQL text substitution; never place untrusted input in such variables. Named step-result substitution through `$name` performs SQL escaping.
-- `df.http()` availability and egress policy are compile-time features. Its restrictions do not sandbox arbitrary SQL or other installed extensions.
-- Upstream labels the project preview, and the published v0.2.3 Docker images are for evaluation and learning rather than production.
+- `df.http()` and `df.http_multipart()` availability and egress policy are compile-time features. Their restrictions do not sandbox arbitrary SQL or other installed extensions.
+- The project remains pre-1.0, and upstream's published Docker images are for evaluation and learning rather than production. Read every adjacent upgrade warning instead of assuming an untested multi-version jump is replay-safe.

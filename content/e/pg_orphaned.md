@@ -22,7 +22,7 @@ page_width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -36,7 +36,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_orphaned` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_orphaned_18" "green" >}} {{< bg "17" "pg_orphaned_17" "green" >}} {{< bg "16" "pg_orphaned_16" "green" >}} {{< bg "15" "pg_orphaned_15" "green" >}} {{< bg "14" "pg_orphaned_14" "green" >}} | `pg_orphaned_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pg-orphaned" "green" >}} {{< bg "17" "postgresql-17-pg-orphaned" "green" >}} {{< bg "16" "postgresql-16-pg-orphaned" "green" >}} {{< bg "15" "postgresql-15-pg-orphaned" "green" >}} {{< bg "14" "postgresql-14-pg-orphaned" "green" >}} | `postgresql-$v-pg-orphaned` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0+git20260427` | {{< bg "18" "postgresql-18-pg-orphaned" "green" >}} {{< bg "17" "postgresql-17-pg-orphaned" "green" >}} {{< bg "16" "postgresql-16-pg-orphaned" "green" >}} {{< bg "15" "postgresql-15-pg-orphaned" "green" >}} {{< bg "14" "postgresql-14-pg-orphaned" "green" >}} | `postgresql-$v-pg-orphaned` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/bdrouvot/pg_orphaned" title="Repository" icon="github" subtitle="github.com/bdrouvot/pg_orphaned" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_orphaned-1.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_orphaned-git20260427.tar.gz" />}}
 {{< /cards >}}
 
 

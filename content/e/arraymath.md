@@ -36,7 +36,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_arraymath` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1` | {{< bg "18" "pg_arraymath_18" "green" >}} {{< bg "17" "pg_arraymath_17" "green" >}} {{< bg "16" "pg_arraymath_16" "green" >}} {{< bg "15" "pg_arraymath_15" "green" >}} {{< bg "14" "pg_arraymath_14" "green" >}} | `pg_arraymath_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1` | {{< bg "18" "postgresql-18-pg-arraymath" "green" >}} {{< bg "17" "postgresql-17-pg-arraymath" "green" >}} {{< bg "16" "postgresql-16-pg-arraymath" "green" >}} {{< bg "15" "postgresql-15-pg-arraymath" "green" >}} {{< bg "14" "postgresql-14-pg-arraymath" "green" >}} | `postgresql-$v-pg-arraymath` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1+git20260702.4822319` | {{< bg "18" "postgresql-18-pg-arraymath" "green" >}} {{< bg "17" "postgresql-17-pg-arraymath" "green" >}} {{< bg "16" "postgresql-16-pg-arraymath" "green" >}} {{< bg "15" "postgresql-15-pg-arraymath" "green" >}} {{< bg "14" "postgresql-14-pg-arraymath" "green" >}} | `postgresql-$v-pg-arraymath` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pramsey/pgsql-arraymath" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-arraymath" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-arraymath-1.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-arraymath-1.1+git20260702.4822319.tar.gz" />}}
 {{< /cards >}}
 
 

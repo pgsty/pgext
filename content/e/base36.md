@@ -17,12 +17,12 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4800** | {{< badge content="base36" link="https://github.com/adjust/pg-base36" >}} | {{< ext "base36" "pg_base36" >}} | `1.0.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4800** | {{< badge content="base36" link="https://github.com/adjust/pg-base36" >}} | {{< ext "base36" "pg_base36" >}} | `1.1.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -34,9 +34,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_base36` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_base36_18" "green" >}} {{< bg "17" "pg_base36_17" "green" >}} {{< bg "16" "pg_base36_16" "green" >}} {{< bg "15" "pg_base36_15" "green" >}} {{< bg "14" "pg_base36_14" "green" >}} | `pg_base36_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-base36" "green" >}} {{< bg "17" "postgresql-17-base36" "green" >}} {{< bg "16" "postgresql-16-base36" "green" >}} {{< bg "15" "postgresql-15-base36" "green" >}} {{< bg "14" "postgresql-14-base36" "green" >}} | `postgresql-$v-base36` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_base36` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "pg_base36_18" "green" >}} {{< bg "17" "pg_base36_17" "green" >}} {{< bg "16" "pg_base36_16" "green" >}} {{< bg "15" "pg_base36_15" "green" >}} {{< bg "14" "pg_base36_14" "green" >}} | `pg_base36_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-base36" "green" >}} {{< bg "17" "postgresql-17-base36" "green" >}} {{< bg "16" "postgresql-16-base36" "green" >}} {{< bg "15" "postgresql-15-base36" "green" >}} {{< bg "14" "postgresql-14-base36" "green" >}} | `postgresql-$v-base36` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/adjust/pg-base36" title="Repository" icon="github" subtitle="github.com/adjust/pg-base36" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-base36-1.0.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-base36-1.1.1.tar.gz" />}}
 {{< /cards >}}
 
 

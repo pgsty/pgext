@@ -27,20 +27,19 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **Requires**    | {{< ext "pgcontext" >}} {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pgml" >}} |
 |    **Siblings**   | {{< ext "pgcontext" >}} |
 
-> [!Note] Optional control shipped by pgcontext 0.2.0; requires pgcontext and vector.
+> [!Note] Removed in pgcontext 0.3.0; migrate to pgcontext.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | `pgcontext`, `vector` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pgcontext_18" "green" >}} {{< bg "17" "pgcontext_17" "green" >}} {{< bg "16" "pgcontext_16" "red" >}} {{< bg "15" "pgcontext_15" "red" >}} {{< bg "14" "pgcontext_14" "red" >}} | `pgcontext_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pgcontext" "green" >}} {{< bg "17" "postgresql-17-pgcontext" "green" >}} {{< bg "16" "postgresql-16-pgcontext" "red" >}} {{< bg "15" "postgresql-15-pgcontext" "red" >}} {{< bg "14" "postgresql-14-pgcontext" "red" >}} | `postgresql-$v-pgcontext` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | - | {{< bg "18" "pgcontext_18" "red" >}} {{< bg "17" "pgcontext_17" "red" >}} {{< bg "16" "pgcontext_16" "red" >}} {{< bg "15" "pgcontext_15" "red" >}} {{< bg "14" "pgcontext_14" "red" >}} | `pgcontext_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | - | {{< bg "18" "postgresql-18-pgcontext" "red" >}} {{< bg "17" "postgresql-17-pgcontext" "red" >}} {{< bg "16" "postgresql-16-pgcontext" "red" >}} {{< bg "15" "postgresql-15-pgcontext" "red" >}} {{< bg "14" "postgresql-14-pgcontext" "red" >}} | `postgresql-$v-pgcontext` | - |
 {.packages}
 
 
@@ -69,13 +68,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://pgxn.org/dist/pgContext/0.2.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/pgContext/0.2.0/" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcontext-0.2.0.tar.gz" />}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg pgcontext;		# build rpm/deb
-```
 
 
 ## Install
@@ -101,7 +94,7 @@ pig install pgcontext_pgvector -v 17;   # install for PG 17
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pgcontext_pgvector CASCADE; -- requires pgcontext, vector
+CREATE EXTENSION pgcontext_pgvector;
 ```
 
 ## Usage

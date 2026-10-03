@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2470** | {{< badge content="duckdb_fdw" link="https://github.com/alitrack/duckdb_fdw" >}} | {{< ext "duckdb_fdw" >}} | `1.4.3` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **2470** | {{< badge content="duckdb_fdw" link="https://github.com/alitrack/duckdb_fdw" >}} | {{< ext "duckdb_fdw" >}} | `2.0.1` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,16 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_clickhouse" >}} {{< ext "pg_parquet" >}} {{< ext "pg_lake" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_stat_ch" >}} |
 
-> [!Note] depend on pg_duckdb's libduckdb, memory mode is break
+> [!Note] Uses libduckdb 1.5.5; no longer depends on pg_duckdb.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `duckdb_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.3` | {{< bg "18" "duckdb_fdw_18" "green" >}} {{< bg "17" "duckdb_fdw_17" "green" >}} {{< bg "16" "duckdb_fdw_16" "green" >}} {{< bg "15" "duckdb_fdw_15" "green" >}} {{< bg "14" "duckdb_fdw_14" "green" >}} | `duckdb_fdw_$v` | `pg_duckdb_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.3` | {{< bg "18" "postgresql-18-duckdb-fdw" "green" >}} {{< bg "17" "postgresql-17-duckdb-fdw" "green" >}} {{< bg "16" "postgresql-16-duckdb-fdw" "green" >}} {{< bg "15" "postgresql-15-duckdb-fdw" "green" >}} {{< bg "14" "postgresql-14-duckdb-fdw" "green" >}} | `postgresql-$v-duckdb-fdw` | `postgresql-$v-pg-duckdb` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `duckdb_fdw` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "duckdb_fdw_18" "green" >}} {{< bg "17" "duckdb_fdw_17" "green" >}} {{< bg "16" "duckdb_fdw_16" "green" >}} {{< bg "15" "duckdb_fdw_15" "green" >}} {{< bg "14" "duckdb_fdw_14" "green" >}} | `duckdb_fdw_$v` | `libduckdb` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1+git20260529.9354241` | {{< bg "18" "postgresql-18-duckdb-fdw" "green" >}} {{< bg "17" "postgresql-17-duckdb-fdw" "green" >}} {{< bg "16" "postgresql-16-duckdb-fdw" "green" >}} {{< bg "15" "postgresql-15-duckdb-fdw" "green" >}} {{< bg "14" "postgresql-14-duckdb-fdw" "green" >}} | `postgresql-$v-duckdb-fdw` | `libduckdb` |
 {.packages}
 
 
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/alitrack/duckdb_fdw" title="Repository" icon="github" subtitle="github.com/alitrack/duckdb_fdw" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="duckdb_fdw-1.4.3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="duckdb_fdw-2.0.1+git20260529.9354241.tar.gz duckdb-1.5.5-headers.tar.gz" />}}
 {{< /cards >}}
 
 

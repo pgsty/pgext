@@ -29,15 +29,15 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_orca" >}} {{< ext "columnar" >}} {{< ext "citus" >}} {{< ext "pg_clickhouse" >}} {{< ext "storage_engine" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
 
-> [!Note] RPM only: version 6.1 is available for PostgreSQL 15-18; PostgreSQL 14 remains on 3.5; no DEB package is available.
+> [!Note] RPM only: PGDG provides version 6.1 for PostgreSQL 15-18; the local 3.5/PG14 compatibility spec is a quarantined legacy orphan and is not scheduled; no DEB package is available.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_strom` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "pg_strom_18" "green" >}} {{< bg "17" "pg_strom_17" "green" >}} {{< bg "16" "pg_strom_16" "green" >}} {{< bg "15" "pg_strom_15" "green" >}} {{< bg "14" "pg_strom_14" "green" >}} | `pg_strom_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_strom` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "pg_strom_18" "green" >}} {{< bg "17" "pg_strom_17" "green" >}} {{< bg "16" "pg_strom_16" "green" >}} {{< bg "15" "pg_strom_15" "green" >}} {{< bg "14" "pg_strom_14" "red" >}} | `pg_strom_$v` | - |
 {.packages}
 
 
@@ -166,6 +166,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/heterodb/pg-strom" title="Repository" icon="github" subtitle="github.com/heterodb/pg-strom" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_strom-6.1.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -186,7 +187,6 @@ pig install pg_strom -v 18;   # install for PG 18
 pig install pg_strom -v 17;   # install for PG 17
 pig install pg_strom -v 16;   # install for PG 16
 pig install pg_strom -v 15;   # install for PG 15
-pig install pg_strom -v 14;   # install for PG 14
 
 ```
 

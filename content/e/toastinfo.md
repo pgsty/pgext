@@ -34,9 +34,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `toastinfo` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `toastinfo` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "toastinfo_18" "green" >}} {{< bg "17" "toastinfo_17" "green" >}} {{< bg "16" "toastinfo_16" "green" >}} {{< bg "15" "toastinfo_15" "green" >}} {{< bg "14" "toastinfo_14" "green" >}} | `toastinfo_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7` | {{< bg "18" "postgresql-18-toastinfo" "green" >}} {{< bg "17" "postgresql-17-toastinfo" "green" >}} {{< bg "16" "postgresql-16-toastinfo" "green" >}} {{< bg "15" "postgresql-15-toastinfo" "green" >}} {{< bg "14" "postgresql-14-toastinfo" "green" >}} | `postgresql-$v-toastinfo` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "postgresql-18-toastinfo" "green" >}} {{< bg "17" "postgresql-17-toastinfo" "green" >}} {{< bg "16" "postgresql-16-toastinfo" "green" >}} {{< bg "15" "postgresql-15-toastinfo" "green" >}} {{< bg "14" "postgresql-14-toastinfo" "green" >}} | `postgresql-$v-toastinfo` | - |
 {.packages}
 
 

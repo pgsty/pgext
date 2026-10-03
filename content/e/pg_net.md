@@ -328,7 +328,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/pg_net" title="Repository" icon="github" subtitle="github.com/supabase/pg_net" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_net-0.20.5.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_net-0.20.5.tar.gz pg_net-0.9.2.tar.gz" />}}
 {{< /cards >}}
 
 

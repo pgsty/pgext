@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2810** | {{< badge content="plan_filter" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< ext "plan_filter" "pg_plan_filter" >}} | `0.0.1` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2810** | {{< badge content="plan_filter" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< ext "plan_filter" "pg_plan_filter" >}} | `1.0.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_plan_filter` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_plan_filter_18" "green" >}} {{< bg "17" "pg_plan_filter_17" "green" >}} {{< bg "16" "pg_plan_filter_16" "green" >}} {{< bg "15" "pg_plan_filter_15" "green" >}} {{< bg "14" "pg_plan_filter_14" "green" >}} | `pg_plan_filter_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-plan-filter" "green" >}} {{< bg "17" "postgresql-17-pg-plan-filter" "green" >}} {{< bg "16" "postgresql-16-pg-plan-filter" "green" >}} {{< bg "15" "postgresql-15-pg-plan-filter" "green" >}} {{< bg "14" "postgresql-14-pg-plan-filter" "green" >}} | `postgresql-$v-pg-plan-filter` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_plan_filter` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_plan_filter_18" "green" >}} {{< bg "17" "pg_plan_filter_17" "green" >}} {{< bg "16" "pg_plan_filter_16" "green" >}} {{< bg "15" "pg_plan_filter_15" "green" >}} {{< bg "14" "pg_plan_filter_14" "green" >}} | `pg_plan_filter_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-plan-filter" "green" >}} {{< bg "17" "postgresql-17-pg-plan-filter" "green" >}} {{< bg "16" "postgresql-16-pg-plan-filter" "green" >}} {{< bg "15" "postgresql-15-pg-plan-filter" "green" >}} {{< bg "14" "postgresql-14-pg-plan-filter" "green" >}} | `postgresql-$v-pg-plan-filter` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgexperts/pg_plan_filter" title="Repository" icon="github" subtitle="github.com/pgexperts/pg_plan_filter" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_plan_filter.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_plan_filter-1.0.0.tar.gz" />}}
 {{< /cards >}}
 
 

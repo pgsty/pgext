@@ -17,26 +17,28 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1010** | {{< badge content="timescaledb_toolkit" link="https://github.com/timescale/timescaledb-toolkit" >}} | {{< ext "timescaledb_toolkit" >}} | `1.23.0` | {{< category "TIME" >}} | {{< license "Timescale" >}} | {{< language "Rust" >}} |
+| **1010** | {{< badge content="timescaledb_toolkit" link="https://github.com/timescale/timescaledb-toolkit" >}} | {{< ext "timescaledb_toolkit" >}} | `1.26.0` | {{< category "TIME" >}} | {{< license "Timescale" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "pg_stl" >}} {{< ext "first_last_agg" >}} {{< ext "extra_window_functions" >}} {{< ext "quantile" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "tablefunc" >}} |
 
+> [!Note] PG16-18; trusted; pgrx 0.19.2.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.23.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `timescaledb_toolkit` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.23.0` | {{< bg "18" "timescaledb-toolkit_18" "green" >}} {{< bg "17" "timescaledb-toolkit_17" "green" >}} {{< bg "16" "timescaledb-toolkit_16" "green" >}} {{< bg "15" "timescaledb-toolkit_15" "green" >}} {{< bg "14" "timescaledb-toolkit_14" "red" >}} | `timescaledb-toolkit_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.23.0` | {{< bg "18" "postgresql-18-timescaledb-toolkit" "green" >}} {{< bg "17" "postgresql-17-timescaledb-toolkit" "green" >}} {{< bg "16" "postgresql-16-timescaledb-toolkit" "green" >}} {{< bg "15" "postgresql-15-timescaledb-toolkit" "green" >}} {{< bg "14" "postgresql-14-timescaledb-toolkit" "red" >}} | `postgresql-$v-timescaledb-toolkit` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.26.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `timescaledb_toolkit` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.26.0` | {{< bg "18" "timescaledb-toolkit_18" "green" >}} {{< bg "17" "timescaledb-toolkit_17" "green" >}} {{< bg "16" "timescaledb-toolkit_16" "green" >}} {{< bg "15" "timescaledb-toolkit_15" "red" >}} {{< bg "14" "timescaledb-toolkit_14" "red" >}} | `timescaledb-toolkit_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.26.0` | {{< bg "18" "postgresql-18-timescaledb-toolkit" "green" >}} {{< bg "17" "postgresql-17-timescaledb-toolkit" "green" >}} {{< bg "16" "postgresql-16-timescaledb-toolkit" "green" >}} {{< bg "15" "postgresql-15-timescaledb-toolkit" "red" >}} {{< bg "14" "postgresql-14-timescaledb-toolkit" "red" >}} | `postgresql-$v-timescaledb-toolkit` | - |
 {.packages}
 
 
@@ -172,7 +174,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/timescale/timescaledb-toolkit" title="Repository" icon="github" subtitle="github.com/timescale/timescaledb-toolkit" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="timescaledb-toolkit-1.23.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="timescaledb-toolkit-1.26.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -197,7 +199,6 @@ pig install timescaledb_toolkit;		# install via package name, for the active PG 
 pig install timescaledb_toolkit -v 18;   # install for PG 18
 pig install timescaledb_toolkit -v 17;   # install for PG 17
 pig install timescaledb_toolkit -v 16;   # install for PG 16
-pig install timescaledb_toolkit -v 15;   # install for PG 15
 
 ```
 

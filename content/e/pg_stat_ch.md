@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6020** | {{< badge content="pg_stat_ch" link="https://github.com/ClickHouse/pg_stat_ch" >}} | {{< ext "pg_stat_ch" >}} | `0.3.6` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
+| **6020** | {{< badge content="pg_stat_ch" link="https://github.com/ClickHouse/pg_stat_ch" >}} | {{< ext "pg_stat_ch" >}} | `0.4.0` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -36,9 +36,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stat_ch` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.6` | {{< bg "18" "pg_stat_ch_18" "green" >}} {{< bg "17" "pg_stat_ch_17" "green" >}} {{< bg "16" "pg_stat_ch_16" "green" >}} {{< bg "15" "pg_stat_ch_15" "red" >}} {{< bg "14" "pg_stat_ch_14" "red" >}} | `pg_stat_ch_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.6` | {{< bg "18" "postgresql-18-pg-stat-ch" "green" >}} {{< bg "17" "postgresql-17-pg-stat-ch" "green" >}} {{< bg "16" "postgresql-16-pg-stat-ch" "green" >}} {{< bg "15" "postgresql-15-pg-stat-ch" "red" >}} {{< bg "14" "postgresql-14-pg-stat-ch" "red" >}} | `postgresql-$v-pg-stat-ch` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stat_ch` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "pg_stat_ch_18" "green" >}} {{< bg "17" "pg_stat_ch_17" "green" >}} {{< bg "16" "pg_stat_ch_16" "green" >}} {{< bg "15" "pg_stat_ch_15" "red" >}} {{< bg "14" "pg_stat_ch_14" "red" >}} | `pg_stat_ch_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "postgresql-18-pg-stat-ch" "green" >}} {{< bg "17" "postgresql-17-pg-stat-ch" "green" >}} {{< bg "16" "postgresql-16-pg-stat-ch" "green" >}} {{< bg "15" "postgresql-15-pg-stat-ch" "red" >}} {{< bg "14" "postgresql-14-pg-stat-ch" "red" >}} | `postgresql-$v-pg-stat-ch` | - |
 {.packages}
 
 
@@ -132,7 +132,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ClickHouse/pg_stat_ch" title="Repository" icon="github" subtitle="github.com/ClickHouse/pg_stat_ch" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_ch-0.3.6.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_ch-0.4.0.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5820** | {{< badge content="safeupdate" link="https://github.com/eradman/pg-safeupdate" >}} | {{< ext "safeupdate" >}} | `1.5` | {{< category "ADMIN" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
+| **5820** | {{< badge content="safeupdate" link="https://github.com/eradman/pg-safeupdate" >}} | {{< ext "safeupdate" >}} | `1.7` | {{< category "ADMIN" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `safeupdate` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "safeupdate_18" "green" >}} {{< bg "17" "safeupdate_17" "green" >}} {{< bg "16" "safeupdate_16" "green" >}} {{< bg "15" "safeupdate_15" "green" >}} {{< bg "14" "safeupdate_14" "green" >}} | `safeupdate_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-safeupdate" "green" >}} {{< bg "17" "postgresql-17-pg-safeupdate" "green" >}} {{< bg "16" "postgresql-16-pg-safeupdate" "green" >}} {{< bg "15" "postgresql-15-pg-safeupdate" "green" >}} {{< bg "14" "postgresql-14-pg-safeupdate" "green" >}} | `postgresql-$v-pg-safeupdate` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `safeupdate` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7` | {{< bg "18" "safeupdate_18" "green" >}} {{< bg "17" "safeupdate_17" "green" >}} {{< bg "16" "safeupdate_16" "green" >}} {{< bg "15" "safeupdate_15" "green" >}} {{< bg "14" "safeupdate_14" "green" >}} | `safeupdate_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "postgresql-18-pg-safeupdate" "green" >}} {{< bg "17" "postgresql-17-pg-safeupdate" "green" >}} {{< bg "16" "postgresql-16-pg-safeupdate" "green" >}} {{< bg "15" "postgresql-15-pg-safeupdate" "green" >}} {{< bg "14" "postgresql-14-pg-safeupdate" "green" >}} | `postgresql-$v-pg-safeupdate` | - |
 {.packages}
 
 
@@ -219,12 +219,12 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/eradman/pg-safeupdate" title="Repository" icon="github" subtitle="github.com/eradman/pg-safeupdate" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-safeupdate-1.5.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-safeupdate-1.7.tar.gz" />}}
 {{< /cards >}}
 
 
 ```bash
-pig build pkg safeupdate;		# build deb
+pig build pkg safeupdate;		# build rpm/deb
 ```
 
 

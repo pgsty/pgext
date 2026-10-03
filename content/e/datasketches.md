@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ddsketch" >}} {{< ext "count_distinct" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "omnisketch" >}} {{< ext "hll" >}} |
 
-> [!Note] Built against Apache DataSketches C++ core 5.0.0.
+> [!Note] Built against DataSketches C++ core 5.2.0.
 
 
 ## Packages
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/apache/datasketches-postgresql" title="Repository" icon="github" subtitle="github.com/apache/datasketches-postgresql" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="apache-datasketches-postgresql-1.7.0-src.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="apache-datasketches-postgresql-1.7.0-src.tar.gz apache-datasketches-cpp-5.2.0-src.tar.gz" />}}
 {{< /cards >}}
 
 

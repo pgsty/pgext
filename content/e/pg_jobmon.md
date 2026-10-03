@@ -6,7 +6,7 @@ weight: 7160
 categories: ["SEC"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
-repos: ["PGDG"]
+repos: ["MIXED"]
 page_width: full
 ---
 

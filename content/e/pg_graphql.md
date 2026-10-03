@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2740** | {{< badge content="pg_graphql" link="https://github.com/supabase/pg_graphql" >}} | {{< ext "pg_graphql" >}} | `1.6.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2740** | {{< badge content="pg_graphql" link="https://github.com/supabase/pg_graphql" >}} | {{< ext "pg_graphql" >}} | `1.6.2` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -37,9 +37,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_graphql` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.1` | {{< bg "18" "pg_graphql_18" "green" >}} {{< bg "17" "pg_graphql_17" "green" >}} {{< bg "16" "pg_graphql_16" "green" >}} {{< bg "15" "pg_graphql_15" "green" >}} {{< bg "14" "pg_graphql_14" "green" >}} | `pg_graphql_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.1` | {{< bg "18" "postgresql-18-pg-graphql" "green" >}} {{< bg "17" "postgresql-17-pg-graphql" "green" >}} {{< bg "16" "postgresql-16-pg-graphql" "green" >}} {{< bg "15" "postgresql-15-pg-graphql" "green" >}} {{< bg "14" "postgresql-14-pg-graphql" "green" >}} | `postgresql-$v-pg-graphql` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_graphql` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.2` | {{< bg "18" "pg_graphql_18" "green" >}} {{< bg "17" "pg_graphql_17" "green" >}} {{< bg "16" "pg_graphql_16" "green" >}} {{< bg "15" "pg_graphql_15" "green" >}} {{< bg "14" "pg_graphql_14" "green" >}} | `pg_graphql_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.2` | {{< bg "18" "postgresql-18-pg-graphql" "green" >}} {{< bg "17" "postgresql-17-pg-graphql" "green" >}} {{< bg "16" "postgresql-16-pg-graphql" "green" >}} {{< bg "15" "postgresql-15-pg-graphql" "green" >}} {{< bg "14" "postgresql-14-pg-graphql" "green" >}} | `postgresql-$v-pg-graphql` | - |
 {.packages}
 
 
@@ -185,7 +185,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/pg_graphql" title="Repository" icon="github" subtitle="github.com/supabase/pg_graphql" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_graphql-1.6.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_graphql-1.6.2.tar.gz" />}}
 {{< /cards >}}
 
 

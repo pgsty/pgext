@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3680** | {{< badge content="currency" link="https://github.com/adjust/pg-currency" >}} | {{< ext "currency" "pg_currency" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3680** | {{< badge content="currency" link="https://github.com/adjust/pg-currency" >}} | {{< ext "currency" "pg_currency" >}} | `0.0.4` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -35,9 +35,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_currency` | `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_currency_18" "green" >}} {{< bg "17" "pg_currency_17" "green" >}} {{< bg "16" "pg_currency_16" "green" >}} {{< bg "15" "pg_currency_15" "green" >}} {{< bg "14" "pg_currency_14" "green" >}} | `pg_currency_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-currency" "green" >}} {{< bg "17" "postgresql-17-pg-currency" "green" >}} {{< bg "16" "postgresql-16-pg-currency" "green" >}} {{< bg "15" "postgresql-15-pg-currency" "green" >}} {{< bg "14" "postgresql-14-pg-currency" "green" >}} | `postgresql-$v-pg-currency` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_currency` | `plpgsql` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "pg_currency_18" "green" >}} {{< bg "17" "pg_currency_17" "green" >}} {{< bg "16" "pg_currency_16" "green" >}} {{< bg "15" "pg_currency_15" "green" >}} {{< bg "14" "pg_currency_14" "green" >}} | `pg_currency_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "postgresql-18-pg-currency" "green" >}} {{< bg "17" "postgresql-17-pg-currency" "green" >}} {{< bg "16" "postgresql-16-pg-currency" "green" >}} {{< bg "15" "postgresql-15-pg-currency" "green" >}} {{< bg "14" "postgresql-14-pg-currency" "green" >}} | `postgresql-$v-pg-currency` | - |
 {.packages}
 
 
@@ -183,7 +183,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/adjust/pg-currency" title="Repository" icon="github" subtitle="github.com/adjust/pg-currency" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-currency-0.0.3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-currency-0.0.4.tar.gz" />}}
 {{< /cards >}}
 
 

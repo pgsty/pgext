@@ -6,7 +6,7 @@ weight: 3210
 categories: ["LANG"]
 languages: ["Python"]
 licenses: ["PostgreSQL"]
-repos: ["PGDG"]
+repos: ["MIXED"]
 page_width: full
 ---
 

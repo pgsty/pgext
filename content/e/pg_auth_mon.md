@@ -6,7 +6,7 @@ weight: 7150
 categories: ["SEC"]
 languages: ["C"]
 licenses: ["MIT"]
-repos: ["PGDG"]
+repos: ["MIXED"]
 page_width: full
 ---
 
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7150** | {{< badge content="pg_auth_mon" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< ext "pg_auth_mon" >}} | `3.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7150** | {{< badge content="pg_auth_mon" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< ext "pg_auth_mon" >}} | `5.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,14 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "set_user" >}} {{< ext "login_hook" >}} {{< ext "pg_session_jwt" >}} {{< ext "auth_delay" >}} {{< ext "logerrors" >}} {{< ext "pg_stat_log" >}} {{< ext "pgelog" >}} {{< ext "pgaudit" >}} {{< ext "pg_permissions" >}} |
 
+> [!Note] SQL version 1.1; requires preload.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_auth_mon` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_auth_mon` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.0` | {{< bg "18" "pg_auth_mon_18" "green" >}} {{< bg "17" "pg_auth_mon_17" "green" >}} {{< bg "16" "pg_auth_mon_16" "green" >}} {{< bg "15" "pg_auth_mon_15" "green" >}} {{< bg "14" "pg_auth_mon_14" "green" >}} | `pg_auth_mon_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0` | {{< bg "18" "postgresql-18-pg-auth-mon" "green" >}} {{< bg "17" "postgresql-17-pg-auth-mon" "green" >}} {{< bg "16" "postgresql-16-pg-auth-mon" "green" >}} {{< bg "15" "postgresql-15-pg-auth-mon" "green" >}} {{< bg "14" "postgresql-14-pg-auth-mon" "green" >}} | `postgresql-$v-pg-auth-mon` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0` | {{< bg "18" "postgresql-18-pg-auth-mon" "green" >}} {{< bg "17" "postgresql-17-pg-auth-mon" "green" >}} {{< bg "16" "postgresql-16-pg-auth-mon" "green" >}} {{< bg "15" "postgresql-15-pg-auth-mon" "green" >}} {{< bg "14" "postgresql-14-pg-auth-mon" "green" >}} | `postgresql-$v-pg-auth-mon` | - |
 {.packages}
 
 
@@ -209,12 +211,12 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/RafiaSabih/pg_auth_mon" title="Repository" icon="github" subtitle="github.com/RafiaSabih/pg_auth_mon" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_auth_mon-3.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_auth_mon-5.0.tar.gz" />}}
 {{< /cards >}}
 
 
 ```bash
-pig build pkg pg_auth_mon;		# build deb
+pig build pkg pg_auth_mon;		# build rpm/deb
 ```
 
 

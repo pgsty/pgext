@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1680** | {{< badge content="tzf" link="https://github.com/ringsaturn/pg-tzf" >}} | {{< ext "tzf" "pg_tzf" >}} | `0.3.0` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **1680** | {{< badge content="tzf" link="https://github.com/ringsaturn/pg-tzf" >}} | {{< ext "tzf" "pg_tzf" >}} | `0.3.1` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tzf` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pg_tzf_18" "green" >}} {{< bg "17" "pg_tzf_17" "green" >}} {{< bg "16" "pg_tzf_16" "green" >}} {{< bg "15" "pg_tzf_15" "green" >}} {{< bg "14" "pg_tzf_14" "green" >}} | `pg_tzf_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-tzf" "green" >}} {{< bg "17" "postgresql-17-tzf" "green" >}} {{< bg "16" "postgresql-16-tzf" "green" >}} {{< bg "15" "postgresql-15-tzf" "green" >}} {{< bg "14" "postgresql-14-tzf" "green" >}} | `postgresql-$v-tzf` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tzf` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "pg_tzf_18" "green" >}} {{< bg "17" "pg_tzf_17" "green" >}} {{< bg "16" "pg_tzf_16" "green" >}} {{< bg "15" "pg_tzf_15" "green" >}} {{< bg "14" "pg_tzf_14" "green" >}} | `pg_tzf_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "postgresql-18-tzf" "green" >}} {{< bg "17" "postgresql-17-tzf" "green" >}} {{< bg "16" "postgresql-16-tzf" "green" >}} {{< bg "15" "postgresql-15-tzf" "green" >}} {{< bg "14" "postgresql-14-tzf" "green" >}} | `postgresql-$v-tzf` | - |
 {.packages}
 
 
@@ -182,7 +182,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ringsaturn/pg-tzf" title="Repository" icon="github" subtitle="github.com/ringsaturn/pg-tzf" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-tzf-0.3.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-tzf-0.3.1.tar.gz" />}}
 {{< /cards >}}
 
 

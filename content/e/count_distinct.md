@@ -6,7 +6,7 @@ weight: 4630
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["BSD-2-Clause"]
-repos: ["MIXED"]
+repos: ["PIGSTY"]
 page_width: full
 ---
 
@@ -29,14 +29,12 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "hll" >}} {{< ext "intagg" >}} {{< ext "intarray" >}} |
 
-> [!Note] no pg14 on el8/9 pgdg
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `count_distinct` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `count_distinct` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "count_distinct_18" "green" >}} {{< bg "17" "count_distinct_17" "green" >}} {{< bg "16" "count_distinct_16" "green" >}} {{< bg "15" "count_distinct_15" "green" >}} {{< bg "14" "count_distinct_14" "green" >}} | `count_distinct_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "postgresql-18-count-distinct" "green" >}} {{< bg "17" "postgresql-17-count-distinct" "green" >}} {{< bg "16" "postgresql-16-count-distinct" "green" >}} {{< bg "15" "postgresql-15-count-distinct" "green" >}} {{< bg "14" "postgresql-14-count-distinct" "green" >}} | `postgresql-$v-count-distinct` | - |
 {.packages}
@@ -270,12 +268,13 @@ pig install count_distinct -v 14;   # install for PG 14
 CREATE EXTENSION count_distinct;
 ```
 
-
-
-
 ## Usage
 
-> [count_distinct: alternative to COUNT(DISTINCT ...) with better performance](https://github.com/tvondra/count_distinct)
+Sources:
+
+- [v3.0.2 README](https://github.com/tvondra/count_distinct/blob/v3.0.2/README.md)
+- [v3.0.2 aggregate definitions](https://github.com/tvondra/count_distinct/blob/v3.0.2/sql/count_distinct--3.0.2.sql)
+- [Control file](https://github.com/tvondra/count_distinct/blob/v3.0.2/count_distinct.control)
 
 Provides an alternative to `COUNT(DISTINCT ...)` that avoids sorting and supports parallel aggregation.
 
@@ -298,7 +297,7 @@ CREATE EXTENSION count_distinct;
 CREATE TABLE test_table (id INT, val INT);
 INSERT INTO test_table
 SELECT mod(i, 1000), (1000 * random())::int
-FROM generate_series(1, 10000000) s(i);
+FROM generate_series(1, 10000) s(i);
 
 -- Instead of:  SELECT id, COUNT(DISTINCT val) FROM test_table GROUP BY 1;
 -- Use:
@@ -310,3 +309,7 @@ SELECT id, array_agg_distinct(val) FROM test_table GROUP BY 1;
 -- Count distinct elements across arrays
 SELECT count_distinct_elements(ARRAY[1, 2, 2, 3]);
 ```
+
+### Types, Memory and Version
+
+Version 3.0.2 accepts fixed-length values passed by value, such as integers, and arrays of those values; it is not a general replacement for distinct text aggregation. Hashing a larger value first makes collisions possible and changes the result into an estimate. These aggregates keep their state in RAM and cannot reliably enforce `work_mem`; high cardinality or many concurrent groups can exhaust memory. Compare correctness, plans and memory use with the built-in aggregate on the actual workload rather than assuming a speedup. The control file is relocatable and has no preload requirement; C-extension installation normally needs a superuser.

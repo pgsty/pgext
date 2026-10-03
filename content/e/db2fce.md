@@ -6,7 +6,7 @@ weight: 9200
 categories: ["SIM"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
-repos: ["PIGSTY"]
+repos: ["MIXED"]
 page_width: full
 ---
 

@@ -6,7 +6,7 @@ weight: 5120
 categories: ["ADMIN"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
-repos: ["PGDG"]
+repos: ["MIXED"]
 page_width: full
 ---
 
@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_kpart" >}} {{< ext "prioritize" >}} {{< ext "qos" >}} {{< ext "pg_permissions" >}} {{< ext "set_user" >}} {{< ext "pg_roast" >}} {{< ext "pg_command_fw" >}} {{< ext "pg_hint_plan" >}} |
 
-> [!Note] Latest PGDG RPM/catalog version is 1.0.6; PIGSTY DEB and source remain on 1.0.5.
+> [!Note] Requires preload.
 
 
 ## Packages
@@ -38,7 +38,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_readonly` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.6` | {{< bg "18" "pg_readonly_18" "green" >}} {{< bg "17" "pg_readonly_17" "green" >}} {{< bg "16" "pg_readonly_16" "green" >}} {{< bg "15" "pg_readonly_15" "green" >}} {{< bg "14" "pg_readonly_14" "green" >}} | `pg_readonly_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pg-readonly" "green" >}} {{< bg "17" "postgresql-17-pg-readonly" "green" >}} {{< bg "16" "postgresql-16-pg-readonly" "green" >}} {{< bg "15" "postgresql-15-pg-readonly" "green" >}} {{< bg "14" "postgresql-14-pg-readonly" "green" >}} | `postgresql-$v-pg-readonly` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "postgresql-18-pg-readonly" "green" >}} {{< bg "17" "postgresql-17-pg-readonly" "green" >}} {{< bg "16" "postgresql-16-pg-readonly" "green" >}} {{< bg "15" "postgresql-15-pg-readonly" "green" >}} {{< bg "14" "postgresql-14-pg-readonly" "green" >}} | `postgresql-$v-pg-readonly` | - |
 {.packages}
 
 
@@ -318,12 +318,12 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pierreforstmann/pg_readonly" title="Repository" icon="github" subtitle="github.com/pierreforstmann/pg_readonly" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_readonly-1.0.5.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_readonly-1.0.6.tar.gz" />}}
 {{< /cards >}}
 
 
 ```bash
-pig build pkg pg_readonly;		# build deb
+pig build pkg pg_readonly;		# build rpm/deb
 ```
 
 

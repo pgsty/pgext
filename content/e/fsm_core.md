@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**fsm_core**](https://github.com/Nirajkashyap/fsm/tree/main/packages/database-src-extension/fsm_core) : Finite state machine toolkit for PostgreSQL
+[**fsm_core**](https://github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core) : Finite state machine toolkit for PostgreSQL
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2690** | {{< badge content="fsm_core" link="https://github.com/Nirajkashyap/fsm/tree/main/packages/database-src-extension/fsm_core" >}} | {{< ext "fsm_core" >}} | `1.1.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+| **2690** | {{< badge content="fsm_core" link="https://github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" >}} | {{< ext "fsm_core" >}} | `1.1.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -162,7 +162,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/Nirajkashyap/fsm/tree/main/packages/database-src-extension/fsm_core" title="Repository" icon="github" subtitle="github.com/Nirajkashyap/fsm/tree/main/packages/database-src-extension/fsm_core" />}}
+{{< card link="https://github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" title="Repository" icon="github" subtitle="github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="fsm_core-1.1.0.tar.gz" />}}
 {{< /cards >}}
 
@@ -199,23 +199,19 @@ pig install fsm_core -v 15;   # install for PG 15
 CREATE EXTENSION fsm_core CASCADE; -- requires ltree, pgmq, pg_jsonschema
 ```
 
-
-
-
 ## Usage
 
 Sources:
 
-- [fsm_core PGXN README](https://github.com/pgfsm/fsm/blob/main/packages/database-src/pgxn-dist/README.md)
-- [PGXN control file](https://github.com/pgfsm/fsm/blob/main/packages/database-src/pgxn-dist/fsm_core.control)
-- [1.1.0 SQL definition](https://github.com/pgfsm/fsm/blob/main/packages/database-src/pgxn-dist/fsm_core--1.1.0.sql)
-- [Supabase 1.1.1-1.1.3 migrations](https://github.com/pgfsm/fsm/tree/main/packages/database-src/supabase/migrations)
-- [worker execution ADR](https://github.com/pgfsm/fsm/blob/main/apps/fsm-core-worker-ts/docs/ADR-001-worker-execution-model.md)
-- [example definitions README](https://github.com/pgfsm/fsm/blob/main/apps/fsm-core-example/README.md)
+- [Official PGXN1.1.0 distribution](https://pgxn.org/dist/fsm_core/1.1.0/)
+- [1.1.0 README](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/README.md)
+- [1.1.0 control](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/fsm_core.control)
+- [1.1.0 SQL](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/fsm_core--1.1.0.sql)
+- [1.1.0 metadata](https://api.pgxn.org/src/fsm_core/fsm_core-1.1.0/META.json)
 
-`fsm_core` is a finite-state-machine toolkit that stores FSM definitions, instances, transitions, dispatch queues, and event logs inside PostgreSQL. A machine definition is loaded from JSON, instances are created by name and version, and events are sent through SQL functions with optional `pgmq` queues or the newer scheduler dispatch path.
+`fsm_core` is a finite-state-machine toolkit that stores FSM definitions, instances, transitions, and event logs inside PostgreSQL. A machine definition is loaded from JSON, instances are created by name and version, and events are sent through SQL functions with optional `pgmq` queues.
 
-The PGXN packaged extension still declares `default_version = '1.1.0'` and requires PostgreSQL 15+, `ltree`, and `pgmq`. The repository's `packages/database-src` project is at `1.1.3` and contains Supabase migration files through `fsm_core--1.1.2--1.1.3.sql`; the Rust/pgrx directory is explicitly marked not currently used. Treat the PGXN distribution as the packaged source and the Supabase migrations as main-branch material.
+This document describes the PGXN 1.1.0 distribution, which requires PostgreSQL 15 or later, `ltree` 1.2 or later and `pgmq` 1.4.4 or later. The fixed schema is `fsm_core`; installation requires a superuser. No preload or restart is required by this SQL extension. Current repository migrations are a separate source and may expose a different API.
 
 ### Core Tables and Types
 
@@ -227,7 +223,6 @@ The PGXN packaged extension still declares `default_version = '1.1.0'` and requi
 - `fsm_core.fsm_instance` for running instances.
 - `fsm_core.fsm_instance_lock` for advisory/concurrency state.
 - `fsm_core.fsm_instance_queue_event_logs` and `fsm_core.fsm_promise_queue_event_logs` for queued event history.
-- `fsm_core.fsm_dispatch_queue` and `fsm_core.fsm_daemon_node` in the main-branch scheduler path.
 
 ### Load a Machine Definition
 
@@ -241,7 +236,7 @@ SELECT fsm_core.load_fsm_from_json_v2(
 );
 ```
 
-`load_fsm_from_json_v2()` validates JSON with `fsm_core.fsm_json_schema()`, caches the raw definition in `fsm_json`, then expands states and transitions. Upstream examples keep immutable version folders such as `fsm/creditCheck/v01/xstate-fsm.json` and `fsm/creditCheck/v02/xstate-fsm.json`; keep deployed versions immutable so existing instances continue against their original definition.
+`load_fsm_from_json_v2()` checks JSON against `fsm_core.fsm_json_schema()`, expands states and transitions, then caches the raw definition in `fsm_json`. In 1.1.0, JSON-schema violations produce a NOTICE and loading continues; the schema-validation exception is commented out. Validate definitions before loading rather than relying on this check to reject every invalid definition. Keep deployed definitions and version identifiers stable so existing instances continue against their original definition. Set the psql variable fsm_json to your validated machine JSON before running the example.
 
 ### Create an Instance
 
@@ -251,18 +246,20 @@ SELECT fsm_core.create_fsm_instance_from_name_v2(
   input_fsm_version  := 'v01',
   input_fsm_context  := '{"applicant_id":"a-42"}'::jsonb,
   create_pgmq_queue  := true
-);
+) AS creation_result
+\gset
+SELECT :'creation_result'::jsonb AS creation_status;
+SELECT :'creation_result'::jsonb ->> 'fsm_instance_id' AS fsm_instance_id
+\gset
 ```
 
-The PGXN 1.1.0 function checks that the named FSM exists, inserts an `fsm_instance`, copies transition authorization rows for that instance, and, when `create_pgmq_queue` is true, creates a `pgmq` queue named by the instance UUID and sends `initialTransition_event`.
-
-The main-branch Supabase schema also has a scheduler-oriented path where instance creation can enqueue work through `fsm_core.enqueue_fsm_dispatch_v2()` instead of relying only on per-instance `pgmq` queues.
+The PGXN 1.1.0 function checks that the named FSM exists, inserts an `fsm_instance`, and copies transition authorization rows. When `create_pgmq_queue` is true, it attempts to create a `pgmq` queue named by the instance UUID and send `initialTransition_event`. Queue creation and initial-event failures are caught and reported in the returned JSON. Before sending further events, require `queue_created` to be true and inspect `send_event_result`, `message` and `extra_message` to confirm the initial event succeeded. The psql example retains the returned `fsm_instance_id` for the next call.
 
 ### Send Events
 
 ```sql
 SELECT fsm_core.send_event_to_fsm_queue_with_event_logs_v2(
-  input_fsm_instance_id                 := '00000000-0000-0000-0000-000000000000'::uuid,
+  input_fsm_instance_id                 := :'fsm_instance_id'::uuid,
   input_fsm_instance_id_fsm_type         := 'workflow',
   input_fsm_instance_id_fsm_version      := 'v01',
   input_send_to_parent_queue_id          := fsm_core.pg_system_queue_uuid(),
@@ -276,23 +273,6 @@ SELECT fsm_core.send_event_to_fsm_queue_with_event_logs_v2(
 ```
 
 This helper writes to the instance queue with `pgmq.send()` and records the event in `fsm_instance_queue_event_logs`. For nested FSM and promise flows, `send_event_to_queue_from_fsm_instance_id_v2()` dispatches to the child-FSM or promise queue helper based on `fsmtype`.
-
-### Scheduler Dispatch Path
-
-```sql
-SELECT fsm_core.enqueue_fsm_dispatch_v2(
-  input_instance_id   := '00000000-0000-0000-0000-000000000000'::uuid,
-  input_fsm_name      := 'creditCheck',
-  input_fsm_version   := 'v01',
-  input_dispatch_type := 'start'
-);
-
-SELECT fsm_core.schedule_next_pending();
-```
-
-The newer worker design uses `fsm_dispatch_queue` as the source of pending work and `fsm_daemon_node` as the registry of available fsmlet nodes. `enqueue_fsm_dispatch_v2()` inserts a pending dispatch row and emits `pg_notify('fsm_scheduler_work', instance_id)`. `schedule_next_pending()` selects pending rows with `FOR UPDATE SKIP LOCKED`, chooses a daemon under its concurrency limit, marks the row scheduled, and notifies `fsm_fsmlet_work_<daemon_id>`.
-
-This scheduler path appears in the main-branch Supabase schema and worker ADR, not in the PGXN 1.1.0 packaged SQL.
 
 ### Resolve and Step State
 
@@ -313,10 +293,10 @@ SELECT fsm_core.macrostep_v2(
 
 The SQL surface also includes lower-level `microstep_v2()`, `fsm_worker_v2()`, lock helpers, archive helpers, and v1 compatibility functions. Prefer v2 entry points for new usage when both versions are present.
 
-### Dependency and Source Caveats
+### Dependencies and Operation
 
-- Enable `ltree` and `pgmq` before `fsm_core`; account for `pg_jsonschema` because upstream Supabase setup and Pigsty package dependencies list it, even though the PGXN control file only declares `ltree, pgmq`.
-- `pgmq` queues and `fsm_dispatch_queue` rows are part of the async execution model, so queue names, retention, and scheduler cleanup should be operated like application data.
-- The upstream repo has no release tag for `1.1.0` or `1.1.3`; the authoritative packaged source for PGXN is `packages/database-src/pgxn-dist`.
-- The `packages/database-src-extension` Rust/pgrx tree is exploratory and marked not currently used. Do not treat it as the active extension implementation.
-- Public docs are sparse compared with the SQL surface. Treat unlisted helper functions as internal unless the SQL definition, Supabase migration, or worker ADR demonstrates their role.
+Enable `ltree` and `pgmq` before installing `fsm_core`. The release README also requires `pg_jsonschema` 0.3.3 or later, although the control and META dependency lists omit it. The JSON loader calls `fsm_core.jsonschema_validation_errors`, which is not defined by the distribution's SQL script; verify that the documented JSON-schema helper is available in that schema before loading definitions. Installing a dependency into a different schema alone does not provide that qualified function.
+
+Queued events persist as application data. Supplying `create_pgmq_queue => true` requests the per-instance queue and its initial event; check the returned status before proceeding. A consumer still needs to process queued work. Sending an event does not by itself guarantee that an asynchronous worker has executed the transition. Review queue retention, consumers and permissions together.
+
+Inspect function and table grants before exposing machine creation or arbitrary event submission to application roles. The SQL surface also contains legacy v1 and lower-level helpers; use the verified v2 entry points for this release.

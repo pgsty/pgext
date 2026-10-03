@@ -5,7 +5,7 @@ description: "Postgres extension for libsodium functions"
 weight: 7020
 categories: ["SEC"]
 languages: ["C"]
-licenses: ["BSD-3-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7020** | {{< badge content="pgsodium" link="https://github.com/michelp/pgsodium" >}} | {{< ext "pgsodium" >}} | `3.1.11` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **7020** | {{< badge content="pgsodium" link="https://github.com/michelp/pgsodium" >}} | {{< ext "pgsodium" >}} | `3.1.11` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,7 +31,7 @@ page_width: full
 |    **Need By**    | {{< ext "supabase_vault" >}} |
 |   **See Also**    | {{< ext "pgcrypto" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgcryptokey" >}} {{< ext "pgsmcrypto" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_tde" >}} {{< ext "pg_enigma" >}} |
 
-> [!Note] +fix missing pg17
+> [!Note] Uses private libsodium 1.0.22; no external runtime dependency.
 
 
 ## Packages
@@ -40,7 +40,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.1.11` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsodium` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.1.11` | {{< bg "18" "pgsodium_18" "green" >}} {{< bg "17" "pgsodium_17" "green" >}} {{< bg "16" "pgsodium_16" "green" >}} {{< bg "15" "pgsodium_15" "green" >}} {{< bg "14" "pgsodium_14" "green" >}} | `pgsodium_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "postgresql-18-pgsodium" "green" >}} {{< bg "17" "postgresql-17-pgsodium" "green" >}} {{< bg "16" "postgresql-16-pgsodium" "green" >}} {{< bg "15" "postgresql-15-pgsodium" "green" >}} {{< bg "14" "postgresql-14-pgsodium" "green" >}} | `postgresql-$v-pgsodium` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.11` | {{< bg "18" "postgresql-18-pgsodium" "green" >}} {{< bg "17" "postgresql-17-pgsodium" "green" >}} {{< bg "16" "postgresql-16-pgsodium" "green" >}} {{< bg "15" "postgresql-15-pgsodium" "green" >}} {{< bg "14" "postgresql-14-pgsodium" "green" >}} | `postgresql-$v-pgsodium` | - |
 {.packages}
 
 

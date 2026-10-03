@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**vchord**](https://github.com/tensorchord/VectorChord) : Vector database plugin for Postgres, written in Rust
+[**vchord**](https://github.com/supervc-stack/VectorChord) : Vector database plugin for Postgres, written in Rust
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1810** | {{< badge content="vchord" link="https://github.com/tensorchord/VectorChord" >}} | {{< ext "vchord" >}} | `1.1.1` | {{< category "RAG" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+| **1810** | {{< badge content="vchord" link="https://github.com/supervc-stack/VectorChord" >}} | {{< ext "vchord" >}} | `1.1.1` | {{< category "RAG" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -182,7 +182,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/tensorchord/VectorChord" title="Repository" icon="github" subtitle="github.com/tensorchord/VectorChord" />}}
+{{< card link="https://github.com/supervc-stack/VectorChord" title="Repository" icon="github" subtitle="github.com/supervc-stack/VectorChord" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="VectorChord-1.1.1.tar.gz" />}}
 {{< /cards >}}
 
@@ -227,176 +227,74 @@ shared_preload_libraries = 'vchord';
 CREATE EXTENSION vchord CASCADE; -- requires vector
 ```
 
-
-
-
 ## Usage
 
-- https://github.com/tensorchord/VectorChord
-- Launch Blog: [VectorChord: Store 400k Vectors for $1 in PostgreSQL](https://blog.pgvecto.rs/vectorchord-store-400k-vectors-for-1-in-postgresql)
+Sources:
 
-Add this extension to shared_preload_libraries in postgresql.conf
+- [1.1.1 README](https://github.com/supervc-stack/VectorChord/blob/1.1.1/README.md)
+- [Control and dependency](https://github.com/supervc-stack/VectorChord/blob/1.1.1/vchord.control)
+- [Preload requirement](https://github.com/supervc-stack/VectorChord/blob/1.1.1/src/lib.rs)
+- [1.1.1 SQL objects](https://github.com/supervc-stack/VectorChord/blob/1.1.1/sql/install/vchord--1.1.1.sql)
+- [Query settings](https://github.com/supervc-stack/VectorChord/blob/1.1.1/src/index/gucs.rs)
+- [1.1.1 migration](https://github.com/supervc-stack/VectorChord/blob/1.1.1/sql/upgrade/vchord--1.1.0--1.1.1.sql)
+- [1.1.1 release notes](https://github.com/supervc-stack/VectorChord/releases/tag/1.1.1)
+
+`vchord` adds approximate vector indexes to PostgreSQL using pgvector's types. It provides the partition-based `vchordrq` and graph-based `vchordg` access methods. The extension requires `vector`, shared preloading, and superuser privileges to create.
+
+### Create and Query an Index
+
+Add the library to the existing preload list, preserving other entries, and restart PostgreSQL:
+
+```conf
+shared_preload_libraries = 'vchord'
+```
 
 ```sql
 CREATE EXTENSION vchord CASCADE;
+CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3));
+INSERT INTO items(embedding) VALUES ('[1,2,3]'), ('[4,5,6]');
+CREATE INDEX items_embedding_idx ON items
+USING vchordrq (embedding vector_l2_ops);
+
+SELECT id FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5;
+SELECT vchordrq_prewarm('items_embedding_idx'::regclass);
 ```
 
-Create Index on embedding:
+Use `vector_l2_ops` with `<->`, `vector_ip_ops` with `<#>`, and `vector_cosine_ops` with `<=>`. The inner-product operator returns a negative value for ascending index ordering. The same operator classes can be used with the graph access method; choose one index design for the workload:
 
 ```sql
-CREATE INDEX ON gist_train USING vchordrq (embedding vector_l2_ops) WITH (options = $$
-residual_quantization = true
-[build.internal]
-lists = [4096]
-spherical_centroids = false
-build_threads = 8
-$$);
+CREATE INDEX items_embedding_graph_idx ON items
+USING vchordg (embedding vector_l2_ops);
 ```
 
---------
+### Range Queries and Tuning
 
-## Docs
-
-### Query
-
-The query statement is exactly the same as pgvector. VectorChord supports any filter operation and WHERE/JOIN clauses like pgvecto.rs with VBASE.
+The extension supplies explicit sphere predicates for range search:
 
 ```sql
-SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5;
-```
+SELECT id FROM items
+WHERE embedding <<->> sphere('[1,2,3]'::vector, 0.5);
 
-Supported distance functions are:
-
-- `<->` - L2 distance
-- `<#>` - (negative) inner product
-- `<=>` - cosine distance
-
-
-> Due to the limitation of postgresql query planner, we cannot support the range query like `SELECT embedding <-> '[3,1,2]' as distance WHERE distance < 0.1 ORDER BY distance` directly.
-
-To query vectors within a certain distance range, you can use the following syntax.
-
-```sql
--- Query vectors within a certain distance range
--- sphere(center, radius) means the vectors within the sphere with the center and radius, aka range query
--- <<->> is L2 distance, <<#>> is inner product, <<=>> is cosine distance
-SELECT vec FROM t WHERE vec <<->> sphere('[0.24, 0.24, 0.24]'::vector, 0.012) 
-```
-
-### Query Performance Tuning
-
-You can fine-tune the search performance by adjusting the `probes` and `epsilon` parameters:
-
-```sql
--- Set probes to control the number of lists scanned.
--- Recommended range: 3%–10% of the total `lists` value.
-SET vchordrq.probes = 100;
-
--- Set epsilon to control the reranking precision.
--- Smaller value means less rerank for faster speed, larger value for higher recall.
--- Recommended range: 0.0–4.0. Default value is 1.9.
+SET vchordrq.probes = '100';
 SET vchordrq.epsilon = 1.9;
+SET vchordg.ef_search = 64;
 ```
 
-And for postgres's setting
-```sql
--- If using SSDs, set `effective_io_concurrency` to 200 for faster disk I/O.
-SET effective_io_concurrency = 200;
+`<<->>`, `<<#>>`, and `<<=>>` are sphere predicates for L2, inner product, and cosine metrics. Probe counts depend on the partition layout; tune them with representative data. The epsilon setting controls the reranking tradeoff. The graph search setting controls its candidate search breadth. Both index methods are approximate: check recall, filters, and query plans before choosing settings.
 
--- Disable JIT (Just-In-Time Compilation) as it offers minimal benefit (1–2%) 
--- and adds overhead for single-query workloads.
-SET jit = off;
+### Quantization in 1.1.1
 
--- Allocate at least 25% of total memory to `shared_buffers`. 
--- For disk-heavy workloads, you can increase this to up to 90% of total memory. You may also want to disable swap with network storage to avoid io hang.
--- Note: A restart is required for this setting to take effect.
-ALTER SYSTEM SET shared_buffers = '8GB';
-```
-
-### Indexing prewarm
-
-To prewarm the index, you can use the following SQL. It will significantly improve performance when using limited memory.
+`rabitq8` and `rabitq4` store quantized vectors. `quantize_to_rabitq8` and `quantize_to_rabitq4` accept `vector` or `halfvec`. Version 1.1.1 adds `dequantize_to_vector` and `dequantize_to_halfvec` overloads for both quantized types:
 
 ```sql
--- vchordrq_prewarm(index_name::regclass) to prewarm the index into the shared buffer
-SELECT vchordrq_prewarm('gist_train_embedding_idx'::regclass);
+SELECT dequantize_to_vector(quantize_to_rabitq8('[1,2,3]'::vector));
+SELECT dequantize_to_halfvec(quantize_to_rabitq4('[1,2,3]'::halfvec));
 ```
 
-
-### Index Build Time
-
-Index building can be parallelized using `build_threads` in the index options and PostgreSQL settings. Optimize parallelism using the following settings:
+Quantization loses precision; dequantization returns an approximation. The release also replaces the quantization implementation. Install matching library and SQL files, restart for the preloaded library, then update each database:
 
 ```sql
--- Set this to the number of CPU cores available for parallel operations.
-SET max_parallel_maintenance_workers = 8;
-SET max_parallel_workers = 8;
-
--- Adjust the total number of worker processes.
--- Note: A restart is required for this setting to take effect.
-ALTER SYSTEM SET max_worker_processes = 8;
+ALTER EXTENSION vchord UPDATE TO '1.1.1';
 ```
 
-### Indexing Progress
-
-
-You can check the indexing progress by querying the `pg_stat_progress_create_index` view.
-
-```sql
-SELECT phase, round(100.0 * blocks_done / nullif(blocks_total, 0), 1) AS "%" FROM pg_stat_progress_create_index;
-```
-
-### External Index Precomputation
-
-Unlike an internal build, external index precomputation performs the partitioning work outside PostgreSQL and inserts the resulting centroids into a PostgreSQL table. This can reduce database-side build time and memory use for large datasets.
-
-To get started, you need to do a clustering of vectors using `faiss`, `scikit-learn` or any other clustering library.
-
-The centroids should be preset in a table of any name with 3 columns:
-- id(integer): id of each centroid, should be unique
-- parent(integer, nullable): parent id of each centroid, should be NULL for normal clustering
-- vector(vector): representation of each centroid, `pgvector` vector type
-
-And example could be like this:
-
-```sql
--- Create table of centroids
-CREATE TABLE public.centroids (id integer NOT NULL UNIQUE, parent integer, vector vector(768));
--- Insert centroids into it
-INSERT INTO public.centroids (id, parent, vector) VALUES (1, NULL, '{0.1, 0.2, 0.3, ..., 0.768}');
-INSERT INTO public.centroids (id, parent, vector) VALUES (2, NULL, '{0.4, 0.5, 0.6, ..., 0.768}');
-INSERT INTO public.centroids (id, parent, vector) VALUES (3, NULL, '{0.7, 0.8, 0.9, ..., 0.768}');
--- ...
-
--- Create index using the external centroid table
-CREATE INDEX ON gist_train USING vchordrq (embedding vector_l2_ops) WITH (options = $$
-[build.external]
-table = 'public.centroids'
-$$);
-```
-
-For the complete workflow and table requirements, see the official [External Build documentation](https://docs.vectorchord.ai/vectorchord/usage/external-index-precomputation.html).
-
-
-
-------
-
-## Limitations
-
-- Architecture Compatibility: The fast-scan kernel is optimized for x86_64 architectures. While it runs on aarch64, performance may be lower.
-
-
-------
-
-## Build
-
-Building this extension requires [clang-17+](https://github.com/tensorchord/VectorChord/issues/188)
-
-Which is available on EL 8/9, Ubuntu 24.04 directly, but require manual installation on Ubuntu 22.04 / Debian 12.
-
-For example, install clang-18 on Ubuntu 22 / Debian 12 and set it as the default clang:
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://apt.llvm.org/llvm.sh | bash -s -- 18
-sudo update-alternatives --install /usr/bin/clang clang $(which clang-18) 255
-```
+The 1.1.0-to-1.1.1 script adds these four conversion overloads and declares no index-format migration. Earlier-version upgrade requirements depend on the starting version. Index construction and prewarming consume resources; schedule them for the dataset size. `vchordg_prewarm` is the corresponding graph-index helper. The control is relocatable, so qualify extension objects or include their installation schema in the search path when installed outside the usual schema.

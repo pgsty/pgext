@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**vchord_bm25**](https://github.com/tensorchord/VectorChord-bm25) : A postgresql extension for bm25 ranking algorithm
+[**vchord_bm25**](https://github.com/supervc-stack/VectorChord-bm25) : A postgresql extension for bm25 ranking algorithm
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2150** | {{< badge content="vchord_bm25" link="https://github.com/tensorchord/VectorChord-bm25" >}} | {{< ext "vchord_bm25" >}} | `0.3.0` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+| **2150** | {{< badge content="vchord_bm25" link="https://github.com/supervc-stack/VectorChord-bm25" >}} | {{< ext "vchord_bm25" >}} | `0.3.0` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -184,7 +184,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/tensorchord/VectorChord-bm25" title="Repository" icon="github" subtitle="github.com/tensorchord/VectorChord-bm25" />}}
+{{< card link="https://github.com/supervc-stack/VectorChord-bm25" title="Repository" icon="github" subtitle="github.com/supervc-stack/VectorChord-bm25" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="VectorChord-bm25-0.3.0.tar.gz" />}}
 {{< /cards >}}
 
@@ -229,112 +229,74 @@ shared_preload_libraries = 'vchord_bm25';
 CREATE EXTENSION vchord_bm25;
 ```
 
-
-
-
 ## Usage
 
-> [GitHub: tensorchord/VectorChord-bm25](https://github.com/tensorchord/VectorChord-bm25)
+Sources:
 
-VectorChord-BM25 is a PostgreSQL extension for the BM25 ranking algorithm, implemented via Block-WeakAnd algorithms. It is designed to work together with [pg_tokenizer](https://github.com/tensorchord/pg_tokenizer.rs) for customized text tokenization.
+- [0.3.0 README](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/README.md)
+- [Control file](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/vchord_bm25.control)
+- [0.3.0 SQL objects](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/sql/install/vchord_bm25--0.3.0.sql)
+- [Query settings](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/src/guc.rs)
+- [0.3.0 migration](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/sql/vchord_bm25--0.2.2--0.3.0.sql)
+- [0.3.0 release](https://github.com/supervc-stack/VectorChord-bm25/releases/tag/0.3.0)
+- [Tokenizer installation](https://github.com/supervc-stack/pg_tokenizer.rs/blob/0.1.1/docs/01-installation.md)
+- [Tokenizer models](https://github.com/supervc-stack/pg_tokenizer.rs/blob/0.1.1/docs/06-model.md)
 
-## Architecture
+`vchord_bm25` provides BM25 ranking with a sparse token-frequency type and the `bm25` index access method. Tokenization is supplied separately, commonly by pg_tokenizer. Extension objects live in the fixed `bm25_catalog` schema, and creation requires superuser privileges.
 
-The extension comprises three main components:
+### Core Workflow
 
-1. **Tokenizer**: Converts text into `bm25vector` (sparse vectors storing vocabulary IDs and term frequencies)
-2. **bm25vector**: A custom data type for storing tokenized text
-3. **bm25vector indexes**: Accelerate search and ranking operations
+The example uses pg_tokenizer, which requires preloading and a restart. Preserve existing entries in the preload list:
 
-## Quick Start
+```conf
+shared_preload_libraries = 'pg_tokenizer'
+```
 
 ```sql
--- Enable required extensions
-CREATE EXTENSION IF NOT EXISTS pg_tokenizer CASCADE;
-CREATE EXTENSION IF NOT EXISTS vchord_bm25 CASCADE;
+CREATE EXTENSION pg_tokenizer;
+CREATE EXTENSION vchord_bm25;
+SET search_path = public, tokenizer_catalog, bm25_catalog;
 
--- Create a tokenizer (e.g., LLMLingua2 for English)
-SELECT create_tokenizer('tokenizer1', $$
-model = "llmlingua2"
+SELECT create_tokenizer('english', $$
+model = "bert_base_uncased"
 $$);
-
--- Create a table with text content
 CREATE TABLE documents (
-  id SERIAL PRIMARY KEY,
-  passage TEXT,
-  embedding bm25vector
+    id bigserial PRIMARY KEY,
+    passage text,
+    embedding bm25vector
 );
+INSERT INTO documents(passage) VALUES ('PostgreSQL full text search');
+UPDATE documents SET embedding = tokenize(passage, 'english')::bm25vector;
+CREATE INDEX documents_bm25 ON documents USING bm25 (embedding bm25_ops);
 
--- Tokenize text passages into bm25vectors
-UPDATE documents SET embedding = tokenize(passage, 'tokenizer1');
-
--- Create a BM25 index
-CREATE INDEX documents_embedding_bm25 ON documents USING bm25 (embedding bm25_ops);
-
--- Query with BM25 ranking
-SELECT id, passage, embedding <&> to_bm25query('documents_embedding_bm25', tokenize('search query', 'tokenizer1')) AS score
+SELECT id, passage,
+       embedding <&> to_bm25query('documents_bm25',
+           tokenize('PostgreSQL', 'english')::bm25vector) AS score
 FROM documents
 ORDER BY score
 LIMIT 10;
 ```
 
-**Note**: BM25 scores in VectorChord-BM25 are negative, with more negative scores indicating greater relevance.
+The index supplies corpus statistics to `to_bm25query`; the score from `<&>` is negative, so ascending order returns greater relevance first. Use the same tokenizer/model for documents and queries. Update stored token vectors when source text changes, or use the tokenizer's maintenance-trigger helper. Changing the vocabulary requires retokenizing stored documents before rebuilding their index.
 
-## The `<&>` Operator
+### Types, Functions, and Search Limits
 
-The `<&>` operator computes the BM25 relevance score between a stored `bm25vector` and a query `bm25vector`. Queries must be wrapped in `to_bm25query()` which takes the index name and the tokenized query:
-
-```sql
--- Basic search query
--- to_bm25query(index_name, tokenized_query)
-SELECT id, passage, embedding <&> to_bm25query('documents_embedding_bm25', tokenize('database system', 'tokenizer1')) AS score
-FROM documents
-ORDER BY score
-LIMIT 10;
-```
-
-## Language Support
-
-VectorChord-BM25 supports multiple languages through different tokenizer configurations:
-
-| Language | Approach | Model/Pre-tokenizer |
-|----------|----------|---------------------|
-| English | Pre-trained model | `model = "llmlingua2"` or `model = "bert_base_uncased"` |
-| Chinese | Custom model with Jieba pre-tokenizer | `[pre_tokenizer.jieba]` |
-| Japanese | Custom model with Lindera pre-tokenizer | Lindera with IPADIC dictionary |
-| Custom | User-trained models via text analyzers | `create_custom_model_tokenizer_and_trigger()` |
-
-### Chinese Text Search Example
-
-Chinese text requires a custom model with a Jieba pre-tokenizer (not a pre-trained model):
+- `bm25vector` stores token IDs and frequencies; the integer-array cast aggregates duplicate IDs and discards token order.
+- `bm25query` binds the query vector to an index. `to_bm25query(regclass, bm25vector)` constructs it; `bm25_ops` is the index operator class.
+- `bm25_catalog.bm25_limit` defaults to 100 and limits candidates returned by the index. Increase it for larger SQL limits or restrictive filters; changing SQL LIMIT alone does not increase this candidate budget.
+- `bm25_catalog.enable_index` controls use of the index; `bm25_catalog.enable_prefilter` controls prefiltering. Both default to true.
+- `bm25_catalog.segment_growing_max_page_size` defaults to 4096 pages before sealing a growing segment.
 
 ```sql
--- Create a text analyzer with Jieba pre-tokenizer
-SELECT create_text_analyzer('zh_text_analyzer', $$
-[pre_tokenizer.jieba]
-$$);
-
--- Create a custom model tokenizer that trains on your corpus
-SELECT create_custom_model_tokenizer_and_trigger(
-    tokenizer_name => 'zh_tokenizer',
-    model_name => 'zh_model',
-    text_analyzer_name => 'zh_text_analyzer',
-    table_name => 'documents',
-    source_column => 'passage',
-    target_column => 'embedding'
-);
+SET bm25_catalog.bm25_limit = 1000;
 ```
 
-### Custom Tokenizer Models
+The access-method name is global: this extension cannot coexist in a database with another extension that creates the same bm25 access method, including pg_textsearch and the compatibility alias in pg_search. Sparse frequencies do not preserve positions for phrase matching. Chinese text can use a custom corpus model with a Jieba pre-tokenizer; Japanese Lindera support depends on the tokenizer build and dictionary configuration.
 
-For domain-specific terminology, you can create text analyzers with stopwords, stemming, and other filters, then train custom models on your corpus using `create_custom_model_tokenizer_and_trigger()`.
+### Upgrade to 0.3.0
 
-## Comparison with Alternatives
+```sql
+ALTER EXTENSION vchord_bm25 UPDATE TO '0.3.0';
+```
 
-| Feature | VectorChord-BM25 | PostgreSQL tsvector + ts_rank |
-|---------|-------------------|-------------------------------|
-| Ranking algorithm | BM25 | tf-idf variant |
-| Custom tokenizers | Yes (via pg_tokenizer) | Limited to built-in configs |
-| Index type | Dedicated BM25 index | GIN index |
-| Native PostgreSQL | Yes (extension) | Built-in |
-| Language support | Extensible via models | Via text search configs |
+The 0.2.2-to-0.3.0 migration adds `bm25_page_inspect(regclass, integer)`, returning diagnostic page text. The release changes sealed-segment page allocation for small tokens and does not document a mandatory index rebuild. Install matching extension files before updating database objects; replacing the preloaded tokenizer library also requires a restart. Keep tokenization and ranking upgrades compatible and check representative query results.

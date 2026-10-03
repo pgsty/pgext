@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7500** | {{< badge content="pg_tde" link="https://github.com/percona/pg_tde" >}} | {{< ext "pg_tde" >}} | `2.2.1` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7500** | {{< badge content="pg_tde" link="https://github.com/percona/pg_tde" >}} | {{< ext "pg_tde" >}} | `2.2.2` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,16 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_enigma" >}} {{< ext "supabase_vault" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "anon" >}} {{< ext "pgcrypto" >}} {{< ext "pgsmcrypto" >}} |
 
-> [!Note] works on percona postgres tde fork
+> [!Note] Percona PostgreSQL 18.6 only; requires preload.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tde` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.4` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.4` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tde` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
 {.packages}
 
 
@@ -92,8 +92,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/percona/pg_tde" title="Repository" icon="github" subtitle="github.com/percona/pg_tde" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="percona-pg_tde18-2.2.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="percona-postgresql-18.6.tar.gz percona-pg_tde18-2.2.2.tar.gz pgtde-pg-config percona-postgis-3.5.7.tar.gz percona-pgvector_18-0.8.6.tar.gz percona-wal2json-2.6.tar.gz percona-pg_repack-1.5.3.tar.gz percona-pgaudit-18.0.tar.gz percona-pgaudit18_set_user-4.2.0.tar.gz percona-pg-stat-monitor18-2.3.2.tar.gz percona-pg_gather-33.tar.gz pgtde-sfcgal-config" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_tde;		# build rpm/deb
+```
 
 
 ## Install
