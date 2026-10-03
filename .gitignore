@@ -56,11 +56,17 @@ resources/
 __pycache__/
 vars/
 
+# Cloud catalog work deferred to a separate commit
+/cloud/
+
 bin/*
 !bin/load-stub
 !bin/dump-stub
 !bin/stub_doc.py
 !bin/test_stub_doc.py
+!bin/test_rebuild_manifest.py
 !bin/github_activity.py
 !bin/github_activity_acceptance.py
 !bin/test_github_activity.py
+
+_vendor/
