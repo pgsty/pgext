@@ -52,7 +52,7 @@ EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
 
 在本地笔记本电脑的 4 核虚拟机上，查询耗时从 8 秒降至 4 秒：
 
-```
+```text
 postgres@el9:5432/postgres=# SET duckdb.force_execution = true;
 EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
 SET

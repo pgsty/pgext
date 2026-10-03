@@ -23,7 +23,7 @@ CREATE EXTENSION dict_xsyn;
 
 ### 规则文件格式
 
-```
+```text
 word syn1 syn2 syn3
 ```
 

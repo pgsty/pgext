@@ -15,13 +15,13 @@ pg_catcheck -h localhost -p 5432 -d mydb
 
 未发现问题时的正常输出：
 
-```
+```text
 progress: done (0 inconsistencies, 0 warnings, 0 errors)
 ```
 
 ### 存在损坏时的示例输出
 
-```
+```text
 notice: pg_class row has invalid relnamespace "24580": no matching entry in pg_namespace
 row identity: oid="24581" relname="foo" relkind="r"
 notice: pg_type row has invalid typnamespace "24580": no matching entry in pg_namespace

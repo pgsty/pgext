@@ -34,7 +34,7 @@ CREATE EXTENSION IF NOT EXISTS pg_smtp_client CASCADE;
 
 您可以为上表中标注的部分参数配置系统级默认值，方法如下：
 
-```
+```sql
 ALTER SYSTEM SET smtp_client.server TO 'smtp.example.com';
 ALTER SYSTEM SET smtp_client.port TO 587;
 ALTER SYSTEM SET smtp_client.tls TO true;

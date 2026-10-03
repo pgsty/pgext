@@ -14,7 +14,7 @@
 
 该扩展使用一个通用触发器函数来维护系统时段时态表的行为：
 
-```
+```text
 versioning(<system_period_column_name>, <history_table_name>, <adjust>)
 ```
 

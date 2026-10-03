@@ -34,7 +34,7 @@ Use the `smtp_client.send_email()` function to send an email.
 
 You can configure the following system-wide default values for some of the parameters (as indiciated in the table above) like this:
 
-```
+```sql
 ALTER SYSTEM SET smtp_client.server TO 'smtp.example.com';
 ALTER SYSTEM SET smtp_client.port TO 587;
 ALTER SYSTEM SET smtp_client.tls TO true;

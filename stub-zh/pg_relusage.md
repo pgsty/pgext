@@ -16,7 +16,7 @@ SELECT * FROM pg_stats LIMIT 1;
 ```
 
 产生日志输出：
-```
+```text
 relations used: pg_stats,pg_statistic,pg_class,pg_attribute,pg_namespace
 ```
 

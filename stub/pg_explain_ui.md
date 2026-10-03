@@ -30,7 +30,7 @@ SELECT explain_ui($$SELECT * FROM pgbench_accounts;$$);
 
 You'll get an URL for the visual plan:
 
-```
+```text
 postgres@u22:5432/postgres=# SELECT explain_ui($$SELECT * FROM pgbench_accounts;$$);
                     explain_ui
 --------------------------------------------------
@@ -40,4 +40,4 @@ postgres@u22:5432/postgres=# SELECT explain_ui($$SELECT * FROM pgbench_accounts;
 Time: 2284.667 ms (00:02.285)
 ```
 
-Click or open that [URL]( https://explain.dalibo.com/plan/05377227a29f0418) with your browser. 
+Click or open that [URL]( https://explain.dalibo.com/plan/05377227a29f0418) with your browser.

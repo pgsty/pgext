@@ -14,7 +14,7 @@ A temporal table is a table that records the period of time when a row is valid.
 
 The extension uses a general trigger function to maintain system-period temporal table behaviour:
 
-```
+```text
 versioning(<system_period_column_name>, <history_table_name>, <adjust>)
 ```
 

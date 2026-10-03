@@ -13,12 +13,12 @@
 
 ## 函数
 
-```
+```text
 float4 smlar(anyarray, anyarray)
 ```
 计算两个数组的相似度。数组应为相同类型。
 
-```
+```text
 float4 smlar(anyarray, anyarray, bool useIntersect)
 ```
 计算两个复合类型数组的相似度。复合类型格式如下：
@@ -29,7 +29,7 @@ CREATE TYPE type_name AS (element_name anytype, weight_name FLOAT4);
 
 `useIntersect` 选项指定分母中仅使用交集元素。
 
-```
+```text
 float4 smlar(anyarray a, anyarray b, text formula)
 ```
 通过给定公式计算两个数组的相似度。公式中的预定义变量：
@@ -46,27 +46,27 @@ SELECT smlar('{1,4,6}'::int[], '{5,4,6}', 'N.i / sqrt(N.a * N.b)');
 -- 这两个调用是等价的。
 ```
 
-```
+```text
 anyarray % anyarray
 ```
 如果数组的相似度大于阈值限制则返回 true。
 
-```
+```text
 text[] tsvector2textarray(tsvector)
 ```
 将 tsvector 类型转换为文本数组。
 
-```
+```text
 anyarray array_unique(anyarray)
 ```
 排序并去重数组。
 
-```
+```text
 float4 inarray(anyarray, anyelement)
 ```
 如果第二个参数不存在于第一个参数中返回零，否则返回 1.0。
 
-```
+```text
 float4 inarray(anyarray, anyelement, float4, float4)
 ```
 如果第二个参数不存在于第一个参数中返回第四个参数，否则返回第三个参数。
@@ -76,22 +76,22 @@ float4 inarray(anyarray, anyelement, float4, float4)
 
 ## GUC 配置变量
 
-```
+```text
 smlar.threshold  FLOAT
 ```
 相似度低于阈值的数组不被 `%` 运算视为相似。
 
-```
+```text
 smlar.persistent_cache  BOOL
 ```
 全局统计缓存存储在事务无关的内存中。
 
-```
+```text
 smlar.type  STRING
 ```
 相似度公式类型：`cosine`（默认）、`tfidf`、`overlap`。
 
-```
+```text
 smlar.stattable  STRING
 ```
 存储集合级统计数据的表名。表应定义为：
@@ -105,7 +105,7 @@ CREATE TABLE table_name (
 
 值为 null 的行表示文档总数。仅用于 `smlar.type = 'tfidf'`。
 
-```
+```text
 smlar.tf_method  STRING
 ```
 词频计算方法。取值：
@@ -115,14 +115,14 @@ smlar.tf_method  STRING
 
 仅用于 `smlar.type = 'tfidf'`。
 
-```
+```text
 smlar.idf_plus_one  BOOL
 ```
 如果为 false（默认），idf 计算为 `log(d/df)`。如果为 true，计算为 `log(1+d/df)`。仅用于 `smlar.type = 'tfidf'`。
 
 强烈建议在 `postgresql.conf` 中添加：
 
-```
+```ini
 smlar.threshold = 0.6  # 或其他 > 0 且 < 1 的值
 ```
 

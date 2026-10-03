@@ -21,7 +21,7 @@ CREATE EXTENSION tcn;
 
 ### 通知载荷格式
 
-```
+```text
 "table_name",operation,"column"='value',"column"='value'
 ```
 

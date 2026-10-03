@@ -18,7 +18,7 @@ SET auto_explain.log_analyze = true;
 
 或在 `postgresql.conf` 中为所有会话配置：
 
-```
+```ini
 session_preload_libraries = 'auto_explain'
 auto_explain.log_min_duration = '3s'
 ```
@@ -43,7 +43,7 @@ auto_explain.log_min_duration = '3s'
 
 ### 日志输出示例
 
-```
+```text
 LOG:  duration: 3.651 ms  plan:
   Query Text: SELECT count(*) FROM pg_class, pg_index
               WHERE oid = indrelid AND indisunique;

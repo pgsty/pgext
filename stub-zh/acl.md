@@ -22,7 +22,7 @@ ACL 以 ACE 类型的 PostgreSQL 数组形式存储（例如 `ace[]`）。
 
 ### ACE 格式
 
-```
+```text
 [type]/[flags]/[who]=[mask]
 ```
 

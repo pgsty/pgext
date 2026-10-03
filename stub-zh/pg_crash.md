@@ -11,7 +11,7 @@ pg_crash 是一个混沌工程扩展，定期向 PostgreSQL 后端进程发送 k
 
 添加到 `postgresql.conf`：
 
-```
+```ini
 shared_preload_libraries = 'pg_crash'
 
 # 要发送的 POSIX 信号（空格分隔）

@@ -63,7 +63,7 @@ INSERT INTO pdfs VALUES ('pgintro', '/tmp/sample.pdf');
 
 ### 字符串函数和运算符
 
-标准的 PostgreSQL [字符串函数和运算符](https://www.postgresql.org/docs/17/functions-string.html)均可正常使用：
+标准的 PostgreSQL [字符串函数和运算符](https://www.postgresql.org/docs/17/functions-string.html) 均可正常使用：
 
 ```sql
 SELECT 'Below is the PDF we received ' || '/tmp/pgintro.pdf'::pdf;
@@ -257,17 +257,17 @@ SELECT pdf_version('/tmp/pgintro.pdf');
 安装 [poppler](https://poppler.freedesktop.org) 依赖
 
 **Linux**
-```
+```bash
 sudo apt install -y libpoppler-glib-dev pkg-config
 ```
 
 **Homebrew/MacOS**
 
-```
+```bash
 brew install poppler pkgconf
 ```
 
-```
+```bash
 cd /tmp
 git clone https://github.com/Florents-Tselai/pgpdf.git
 cd pgpdf

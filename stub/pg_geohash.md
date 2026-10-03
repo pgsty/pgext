@@ -42,7 +42,7 @@ ORDER BY 2 DESC
 LIMIT 10;
 ```
 
-```
+```text
  geohash | count
 ---------+-------
  dp3w7   | 72404

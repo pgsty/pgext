@@ -58,7 +58,7 @@ SELECT pg_tracing_reset();
 
 在 `postgresql.conf` 中配置：
 
-```
+```ini
 pg_tracing.otel_endpoint = http://127.0.0.1:4318/v1/traces
 pg_tracing.otel_naptime = 2000
 ```

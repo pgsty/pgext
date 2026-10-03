@@ -17,7 +17,7 @@ pg_bulkload sample_csv.ctl
 
 输出：
 
-```
+```text
 NOTICE: BULK LOAD START
 NOTICE: BULK LOAD END
     0 Rows skipped.

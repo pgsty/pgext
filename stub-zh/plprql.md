@@ -57,7 +57,7 @@ SELECT prql_to_sql('from matches | filter player == "Player1"');
 
 PRQL 使用管道式转换：
 
-```
+```text
 from employees                    # 数据源
 filter department == "Engineering" # 行过滤
 derive monthly_salary = salary / 12 # 计算列

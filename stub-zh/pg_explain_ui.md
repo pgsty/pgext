@@ -30,7 +30,7 @@ SELECT explain_ui($$SELECT * FROM pgbench_accounts;$$);
 
 执行后会返回一个可视化执行计划的 URL：
 
-```
+```text
 postgres@u22:5432/postgres=# SELECT explain_ui($$SELECT * FROM pgbench_accounts;$$);
                     explain_ui
 --------------------------------------------------

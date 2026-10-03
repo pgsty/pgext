@@ -11,7 +11,7 @@ pre_prepare 在连接建立时自动准备 SQL 语句，使客户端可以直接
 
 在 `postgresql.conf` 中配置：
 
-```
+```ini
 preprepare.relation = 'preprepare.statements'
 preprepare.at_init = on    -- 连接时自动准备（需要 local_preload_libraries）
 ```

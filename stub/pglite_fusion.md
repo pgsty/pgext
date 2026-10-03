@@ -134,6 +134,7 @@ CREATE TABLE people (
 -----
 
 ### `get_sqlite_text`
+
 Extracts a text value from a specific column in a row returned by `query_sqlite`. Use this function to retrieve text values from query results.
 
 #### Parameters:

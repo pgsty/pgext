@@ -43,7 +43,7 @@ SET pgaudit.log = 'all, -misc';
 ```
 
 输出示例：
-```
+```text
 AUDIT: SESSION,1,1,DDL,CREATE TABLE,TABLE,public.account,create table account(...)
 AUDIT: SESSION,2,1,READ,SELECT,,,select * from account
 ```

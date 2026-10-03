@@ -5,7 +5,7 @@
 
 请注意，`cron.database` 必须在将 `pg_cron` 添加到 `shared_preload_libraries` 之前设置好。
 
-```
+```sql
 -- 每周六凌晨 3:30（GMT）删除过期数据
 SELECT cron.schedule('30 3 * * 6', $$DELETE FROM events WHERE event_time < now() - interval '1 week'$$);
  schedule
@@ -50,7 +50,7 @@ SELECT cron.schedule('process-payroll', '0 12 $ * *', 'CALL process_payroll()');
 
 Crontab 格式说明：
 
-```
+```text
  ┌───────────── 分钟 (0 - 59)
  │ ┌────────────── 小时 (0 - 23)
  │ │ ┌─────────────── 日期 (1 - 31) 或月末最后一天 ($)

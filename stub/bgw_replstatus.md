@@ -20,7 +20,7 @@ nc localhost 5400
 
 ### HAProxy Configuration Example
 
-```
+```haproxy
 frontend test
     bind 127.0.0.1:5999
     default_backend pgcluster
