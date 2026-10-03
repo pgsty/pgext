@@ -511,7 +511,6 @@ SOURCE_OVERRIDES = {
     ("rpm", "pgl_ddl_deploy_$v"): ["pgl_ddl_deploy-2.2.1.tar.gz"],
     ("deb", "postgresql-$v-pgl-ddl-deploy"): ["pgl_ddl_deploy-2.2.1.tar.gz"],
     ("rpm", "pgmemcache_$v"): ["pgmemcache-2.3.0.tar.gz"],
-    ("rpm", "h3-pg_$v"): ["h3-pg-4.2.3.tar.gz"],
 }
 
 DEB_SUPPORT_PRIMARY = {
@@ -593,12 +592,75 @@ def parse_pg_array(value: str) -> list[int]:
     return sorted(set(result))
 
 
-def load_pgdg_state() -> tuple[set[tuple[str, str, int]], dict[str, str]]:
-    # pgext.pkg is an aggregate availability matrix.  Its org/version summary
-    # fields may be null after a staged parser refresh, so prove PGDG ownership
-    # against the immutable lower-level package rows and repository dimension.
+def stable_mobility_release(version: str) -> tuple[int, int, int] | None:
+    """Recognize released MobilityDB versions, retaining prerelease markers."""
+    match = re.fullmatch(
+        r"(?:\d+:)?(\d+)\.(\d+)\.(\d+)(?:\+(?:dfsg|ds)\d*)?(?:-\d[\w.+~]*)?",
+        version,
+    )
+    if not match or re.search(r"alpha|beta|rc|pre|dev", version, re.IGNORECASE):
+        return None
+    return tuple(int(part) for part in match.groups())
+
+
+def pgdg_build_reasons(
+    fmt: str,
+    rows: list[dict[str, str]],
+    platform: str,
+    pg: int,
+    available: dict[tuple[str, str, str, int], set[str]],
+) -> tuple[str, ...]:
+    """Select package supplements using the members declared for this PG."""
+    expected = [
+        row for row in rows
+        if pg in parse_pg_array(row.get(f"{fmt}_pg", ""))
+        and pg in parse_pg_array(row.get("pg_ver", ""))
+    ]
+    if not expected:
+        return ()
+    # The curated overall repo label does not replace format-specific ownership.
+    if any(row.get(f"{fmt}_repo") != "PGDG" for row in expected):
+        return ("format_primary",)
+
+    reasons: set[str] = set()
+    for row in expected:
+        versions = available.get((fmt, row["pkg"], platform, pg), set())
+        if not versions:
+            reasons.add(f"missing_package:{row['pkg']}")
+            continue
+        if fmt != "deb" or row["pkg"] != "mobilitydb":
+            continue
+        released = [stable_mobility_release(version) for version in versions]
+        # Reviewed PGDG MobilityDB 1.2 packages omit DataGen; 1.3 includes it.
+        if row["name"] == "mobilitydb_datagen" and not any(
+            version is not None and version >= (1, 3, 0) for version in released
+        ):
+            reasons.add("missing_companion:mobilitydb_datagen")
+        # Only the existing DEB PG18 security supplement is retained.  This
+        # ends when any released PGDG fixed package is available, including
+        # when older vulnerable packages remain in the same repository.
+        # https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.1
+        if pg == 18 and (1, 3, 0) in released and not any(
+            version is not None and version >= (1, 3, 1) for version in released
+        ):
+            reasons.add("security:CVE-2026-102639")
+    return tuple(sorted(reasons))
+
+
+def supplement_origin(side_repo: str, reasons: tuple[str, ...]) -> str:
+    if side_repo != "PGDG":
+        return "catalog_pigsty"
+    if any(reason.startswith("security:") for reason in reasons):
+        return "catalog_pgdg_security_supplement"
+    return "catalog_pgdg_gap"
+
+
+def load_pgdg_state() -> tuple[dict[tuple[str, str, str, int], set[str]], dict[str, str]]:
+    # pkg contains lead-package rows, not a payload inventory of every member.
+    # Keep package-level, format-specific coverage and raw versions.  Prove
+    # ownership against bin/repository rather than the matrix's winning org.
     query = (
-        "select distinct p.ext,p.os,p.pg "
+        "select distinct r.type,p.pkg,p.os,p.pg,b.ver "
         "from pgext.pkg p "
         "join pgext.bin b on b.pg=p.pg and b.os=p.os and b.name=p.name "
         "join pgext.repository r on r.id=b.repo "
@@ -624,10 +686,11 @@ def load_pgdg_state() -> tuple[set[tuple[str, str, int]], dict[str, str]]:
             query,
         ]
     )
-    available = {
-        (ext, os_name, int(pg))
-        for ext, os_name, pg in (line.split("|") for line in output.splitlines() if line)
-    }
+    available: dict[tuple[str, str, str, int], set[str]] = collections.defaultdict(set)
+    for line in output.splitlines():
+        if line:
+            fmt, package, os_name, pg, version = line.split("|")
+            available[(fmt, package, os_name, int(pg))].add(version)
     stamp_query = (
         "select type||'.'||org,min(update_at)::text||'/'||max(update_at)::text "
         "from pgext.repository join pgext.repo_data using(id) "
@@ -654,7 +717,7 @@ def load_pgdg_state() -> tuple[set[tuple[str, str, int]], dict[str, str]]:
         ]
     )
     stamps = dict(line.split("|", 1) for line in stamp_output.splitlines() if line)
-    return available, stamps
+    return dict(available), stamps
 
 
 def recipe_inventory(fmt: str, rpm_repo: pathlib.Path, deb_repo: pathlib.Path) -> set[str]:
@@ -924,7 +987,14 @@ def debug_policy(fmt: str, recipe: str, noarch: bool) -> str:
     return "required:non-empty-dbgsym"
 
 
-def release_policy(fmt: str, recipe: str, platform: str, rows: list[dict[str, str]], pgdg_gap: bool) -> str:
+def release_policy(
+    fmt: str,
+    recipe: str,
+    platform: str,
+    rows: list[dict[str, str]],
+    pgdg_gap: bool,
+    supplement_reasons: tuple[str, ...] = (),
+) -> str:
     if recipe == "pg_net":
         if fmt == "deb" and platform.startswith("u22."):
             return "legacy 0.9.2-2PGSTY for Jammy"
@@ -943,6 +1013,11 @@ def release_policy(fmt: str, recipe: str, platform: str, rows: list[dict[str, st
         return "PGDG-gap only; package version=1.2.1; extension version=1.2; current release must end PGSTY"
     versions = sorted({row.get(f"{fmt}_ver", "") for row in rows if row.get(f"{fmt}_ver", "")})
     prefix = "PGDG-gap only; " if pgdg_gap else ""
+    if any(reason.startswith("security:") for reason in supplement_reasons):
+        prefix = (
+            "PGDG security supplement only: MobilityDB DEB PG18 CVE-2026-102639; "
+            "ends when PGDG stable >=1.3.1 is available; "
+        )
     return prefix + "version=" + ",".join(versions or ["recipe-defined"]) + "; current release must end PGSTY"
 
 
@@ -1032,7 +1107,7 @@ def main() -> int:
                         has_gap = any(
                             platform not in os_exclude
                             and any(
-                                not any((row["name"], platform, pg) in pgdg_available for row in rows)
+                                pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)
                                 for pg in pg_versions
                             )
                             for platform in platforms
@@ -1096,7 +1171,7 @@ def main() -> int:
                         selected_pg = [
                             pg
                             for pg in selected_pg
-                            if not any((row["name"], platform, pg) in pgdg_available for row in rows)
+                            if pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)
                         ]
                         rule_effects[f"{fmt}:pgdg_covered_pg_abi_removed"] += (
                             len(before_pgdg_filter) - len(selected_pg)
@@ -1115,6 +1190,11 @@ def main() -> int:
                         else [selected_pg]
                     )
                     for job_pg in pg_slices:
+                        supplement_reasons = tuple(sorted({
+                            reason
+                            for pg in job_pg
+                            for reason in pgdg_build_reasons(fmt, rows, platform, pg, pgdg_available)
+                        })) if pgdg_gap else ()
                         sources, conflicts = source_list(
                             fmt, template, recipe, rows, job_pg, platform
                         )
@@ -1156,7 +1236,9 @@ def main() -> int:
                                 "source_provenance": {},
                                 "repo_sha": repo_sha[fmt],
                                 "dependency_group": dependency_group(recipe),
-                                "release_policy": release_policy(fmt, recipe, platform, rows, pgdg_gap),
+                                "release_policy": release_policy(
+                                    fmt, recipe, platform, rows, pgdg_gap, supplement_reasons
+                                ),
                                 "debug_policy": debug_policy(fmt, recipe, noarch),
                                 "artifact_guard": (
                                     "bin/verify-extension-job.sh run"
@@ -1171,7 +1253,8 @@ def main() -> int:
                                 "job_kind": "extension",
                                 "build_target": build_target(fmt, recipe, job_pg),
                                 "status": "pending_gate",
-                                "origin": "catalog_pgdg_gap" if side_repo == "PGDG" else "catalog_pigsty",
+                                "origin": supplement_origin(side_repo, supplement_reasons),
+                                "supplement_reasons": list(supplement_reasons),
                                 "catalog_extensions": sorted(names),
                                 "mapping": mapping_kind,
                                 "os_exclude": sorted(os_exclude),
@@ -1238,6 +1321,7 @@ def main() -> int:
                         "build_target": "-",
                         "status": "pending_gate",
                         "origin": "explicit_support",
+                        "supplement_reasons": [],
                         "catalog_extensions": [],
                         "mapping": "explicit_B10_allowlist",
                         "os_exclude": [],
@@ -1311,6 +1395,7 @@ def main() -> int:
         "build_target",
         "status",
         "origin",
+        "supplement_reasons",
         "catalog_extensions",
         "mapping",
         "shard_policy",
@@ -1320,7 +1405,7 @@ def main() -> int:
         writer.writeheader()
         for row in manifests:
             flat = {key: row[key] for key in csv_fields}
-            for key in ("pg_versions", "source", "catalog_extensions"):
+            for key in ("pg_versions", "source", "catalog_extensions", "supplement_reasons"):
                 flat[key] = " ".join(map(str, flat[key]))
             flat["source_sha256"] = " ".join(
                 f"{source}={digest or 'MISSING'}" for source, digest in sorted(row["source_sha256"].items())
