@@ -49,6 +49,26 @@ func TestPackageStagingIntegration(t *testing.T) {
 		}
 	}
 
+	// Use a catalog package so the org/version UPDATE actually matches a row.
+	// A live sentinel also detects an UPDATE that escaped the staging rewrite.
+	fixture := selectRecapFixture(t, ctx)
+	if _, err := ExecSQLContext(ctx, fmt.Sprintf(`
+		INSERT INTO %s (pg, os, name, repo, ver, version)
+		VALUES ($1, $2, $3, $4, '1.2.3', '1.2.3')
+	`, stage.bin), fixture.pg, fixture.os, fixture.packageName, fixture.repo); err != nil {
+		t.Fatalf("seed staged catalog package: %v", err)
+	}
+	if _, err := ExecSQLContext(ctx, `
+		INSERT INTO pgext.pkg (pg, os, name, pkg, state, org, version, count)
+		VALUES ($1, $2, $3, $4, 'AVAIL', 'sentinel', '0.0.0', 1)
+	`, fixture.pg, fixture.os, fixture.packageName, fixture.pkg); err != nil {
+		t.Fatalf("seed live package sentinel: %v", err)
+	}
+	var wantOrg string
+	if err := QueryRowContext(ctx, "SELECT org FROM pgext.repository WHERE id = $1", fixture.repo).Scan(&wantOrg); err != nil {
+		t.Fatalf("read fixture repository: %v", err)
+	}
+
 	var before, after sql.NullString
 	if err := QueryRowContext(ctx, "SELECT recap_time::text FROM pgext.status WHERE id = 0").Scan(&before); err != nil {
 		t.Fatalf("read recap timestamp before staged build: %v", err)
@@ -61,6 +81,25 @@ func TestPackageStagingIntegration(t *testing.T) {
 	}
 	if before != after {
 		t.Fatalf("staged pkg build changed live recap timestamp: before=%v after=%v", before, after)
+	}
+	var liveOrg, liveVersion string
+	if err := QueryRowContext(ctx, `
+		SELECT org, version FROM pgext.pkg WHERE pg = $1 AND os = $2 AND pkg = $3
+	`, fixture.pg, fixture.os, fixture.pkg).Scan(&liveOrg, &liveVersion); err != nil {
+		t.Fatalf("read live package sentinel: %v", err)
+	}
+	if liveOrg != "sentinel" || liveVersion != "0.0.0" {
+		t.Fatalf("staged build changed live package: org=%q version=%q", liveOrg, liveVersion)
+	}
+	var state string
+	var org, version sql.NullString
+	if err := QueryRowContext(ctx, fmt.Sprintf(`
+		SELECT state, org, version FROM %s WHERE pg = $1 AND os = $2 AND pkg = $3
+	`, stage.pkg), fixture.pg, fixture.os, fixture.pkg).Scan(&state, &org, &version); err != nil {
+		t.Fatalf("read staged package metadata: %v", err)
+	}
+	if state != "AVAIL" || !org.Valid || org.String != wantOrg || !version.Valid || version.String != "1.2.3" {
+		t.Fatalf("staged package lost availability metadata: state=%q org=%v version=%v", state, org, version)
 	}
 }
 

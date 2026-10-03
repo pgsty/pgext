@@ -32,9 +32,11 @@ UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'p
 UPDATE pgext.pkg SET count = (SELECT COUNT(*) FROM pgext.bin b WHERE b.pg = pkg.pg AND b.os = pkg.os AND b.name = pkg.name);
 
 -- 'step 4/5: update pgext.pkg org and version ...';
-UPDATE pgext.pkg SET org = sub.org, version = sub.version, hide = sub.hide
+-- PGDG non-free packages are hidden by default, but TimescaleDB remains in the
+-- default extension groups even when its newest RPM comes from PGNF.
+UPDATE pgext.pkg AS p SET org = sub.org, version = sub.version, hide = sub.hide AND p.pkg <> 'timescaledb'
 FROM (SELECT DISTINCT ON (pg,os,name) pg,os,name,org,version,hide FROM pgext.bin b,LATERAL (SELECT org, position('pgnf' in id) > 0 AS hide FROM pgext.repository r WHERE r.id = b.repo) ORDER BY pg,os,name,ver::pgext.version USING OPERATOR (pgext.>)) sub
-WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
+WHERE p.pg = sub.pg AND p.os = sub.os AND p.name = sub.name;
 
 -- 'step 5/5: update pgext.pkg state ...';
 UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;

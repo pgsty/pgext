@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS pgext.extension
     license     TEXT,                     -- Software license (PostgreSQL, MIT, Apache-2.0, etc.)
     tags        TEXT[],                   -- Additional classification tags
     version     TEXT,                     -- Latest available version of this extension
-    repo        TEXT,                     -- Source repository type (github, gitlab, etc.)
+    repo        TEXT,                     -- Principal package supplier (PGDG, PIGSTY, MIXED, CONTRIB)
     lang        TEXT,                     -- Primary programming language (C, SQL, PLpgSQL, Rust, etc.)
     contrib     BOOLEAN,                  -- Whether this is a PostgreSQL contrib extension
     lead        BOOLEAN,                  -- Whether this is the lead extension in its package
@@ -227,12 +227,12 @@ CREATE TABLE IF NOT EXISTS pgext.extension
     require_by  TEXT[],                   -- Extensions that depend on this extension
     see_also    TEXT[],                   -- Related or similar extensions
     rpm_ver     TEXT,                     -- Latest RPM package version
-    rpm_repo    TEXT,                     -- RPM repository source (PGDG, PIGSTY, etc.)
+    rpm_repo    TEXT,                     -- Principal RPM supplier; Pigsty gap builds do not replace PGDG
     rpm_pkg     TEXT,                     -- RPM package name template ($v for PG version)
     rpm_pg      TEXT[],                   -- PostgreSQL versions available in RPM
     rpm_deps    TEXT[],                   -- RPM package dependencies
     deb_ver     TEXT,                     -- Latest DEB package version
-    deb_repo    TEXT,                     -- DEB repository source (PGDG, PIGSTY, etc.)
+    deb_repo    TEXT,                     -- Principal DEB supplier; independent of local build capability
     deb_pkg     TEXT,                     -- DEB package name template ($v for PG version)
     deb_deps    TEXT[],                   -- DEB package dependencies
     deb_pg      TEXT[],                   -- PostgreSQL versions available in DEB
@@ -257,7 +257,7 @@ COMMENT ON COLUMN pgext.extension.url IS 'Extension homepage or source code repo
 COMMENT ON COLUMN pgext.extension.license IS 'Software license (e.g., PostgreSQL, MIT, Apache-2.0, GPL, BSD)';
 COMMENT ON COLUMN pgext.extension.tags IS 'Additional classification tags as string array for flexible categorization';
 COMMENT ON COLUMN pgext.extension.version IS 'Latest available version of this extension';
-COMMENT ON COLUMN pgext.extension.repo IS 'Source repository hosting platform (github, gitlab, bitbucket, etc.)';
+COMMENT ON COLUMN pgext.extension.repo IS 'Principal package supplier (PGDG, PIGSTY, MIXED, CONTRIB); local gap builds do not change the principal supplier';
 COMMENT ON COLUMN pgext.extension.lang IS 'Primary implementation language (C, SQL, PLpgSQL, Rust, Go, Python, etc.)';
 COMMENT ON COLUMN pgext.extension.contrib IS 'Whether this is an official PostgreSQL contrib extension';
 COMMENT ON COLUMN pgext.extension.lead IS 'Whether this is the primary/lead extension in a multi-extension package';
@@ -273,17 +273,17 @@ COMMENT ON COLUMN pgext.extension.requires IS 'Array of extension dependencies (
 COMMENT ON COLUMN pgext.extension.require_by IS 'Array of extensions that depend on this extension (reverse dependency list)';
 COMMENT ON COLUMN pgext.extension.see_also IS 'Array of related or similar extensions (for discovery and comparison)';
 COMMENT ON COLUMN pgext.extension.rpm_ver IS 'Latest available RPM package version';
-COMMENT ON COLUMN pgext.extension.rpm_repo IS 'RPM repository source (PGDG, PIGSTY, EPEL, etc.)';
+COMMENT ON COLUMN pgext.extension.rpm_repo IS 'Principal RPM package supplier (PGDG, PIGSTY, EPEL, etc.); independent of local SPEC/build capability';
 COMMENT ON COLUMN pgext.extension.rpm_pkg IS 'RPM package name template where $v is replaced with PostgreSQL major version';
-COMMENT ON COLUMN pgext.extension.rpm_pg IS 'Array of PostgreSQL versions available as RPM packages';
+COMMENT ON COLUMN pgext.extension.rpm_pg IS 'PostgreSQL package range across RPM suppliers; not limited to the current Pigsty build batch';
 COMMENT ON COLUMN pgext.extension.rpm_deps IS 'Array of RPM package dependencies (system libraries and other packages)';
 COMMENT ON COLUMN pgext.extension.deb_ver IS 'Latest available DEB package version';
-COMMENT ON COLUMN pgext.extension.deb_repo IS 'DEB repository source (PGDG, PIGSTY, etc.)';
+COMMENT ON COLUMN pgext.extension.deb_repo IS 'Principal DEB package supplier (PGDG, PIGSTY, etc.); independent of local recipe/build capability';
 COMMENT ON COLUMN pgext.extension.deb_pkg IS 'DEB package name template where $v is replaced with PostgreSQL major version';
 COMMENT ON COLUMN pgext.extension.deb_deps IS 'Array of DEB package dependencies (system libraries and other packages)';
-COMMENT ON COLUMN pgext.extension.deb_pg IS 'Array of PostgreSQL versions available as DEB packages';
+COMMENT ON COLUMN pgext.extension.deb_pg IS 'PostgreSQL package range across DEB suppliers; not limited to the current Pigsty build batch';
 COMMENT ON COLUMN pgext.extension.source IS 'Source code tarball filename if built and distributed by Pigsty';
-COMMENT ON COLUMN pgext.extension.extra IS 'Additional extension metadata stored as JSONB for extensibility';
+COMMENT ON COLUMN pgext.extension.extra IS 'Additional metadata; rpm/deb flags indicate local build recipes, not repository ownership or publication';
 COMMENT ON COLUMN pgext.extension.en_desc IS 'English description of extension functionality and purpose';
 COMMENT ON COLUMN pgext.extension.zh_desc IS 'Chinese description of extension functionality and purpose';
 COMMENT ON COLUMN pgext.extension.comment IS 'Additional notes, special instructions, or warnings';
@@ -1001,9 +1001,9 @@ COMMENT ON COLUMN pgext.matrix.data IS 'Compact wire row: p=package, e=lead exte
 SET search_path TO pgext, public;
 CREATE DOMAIN pgext.version AS TEXT;
 
--- Optimized version comparison following RPM/DEB rules
--- Handles: epoch, tilde (~) for pre-releases, caret (^), and standard segments
-CREATE OR REPLACE FUNCTION pgext.version_compare(v1 TEXT, v2 TEXT) RETURNS INTEGER AS $$
+-- Segment comparison shared by upstream versions and package releases.
+-- Handles: epoch, tilde (~) for pre-releases, caret (^), and standard segments.
+CREATE OR REPLACE FUNCTION pgext.version_segment_compare(v1 TEXT, v2 TEXT) RETURNS INTEGER AS $$
 DECLARE
     epoch1 INT := 0; epoch2 INT := 0; pos INT;
     ver1 TEXT; ver2 TEXT;
@@ -1081,6 +1081,21 @@ BEGIN
             END IF;
         END LOOP;
     RETURN 0;
+END;
+$$ LANGUAGE plpgsql IMMUTABLE STRICT PARALLEL SAFE;
+
+-- Compare the upstream version before its package release. Treating the dash
+-- like a dot would incorrectly rank 1.2-2 above 1.2.1-1. Split only once:
+-- Debian upstream versions can themselves contain dashes.
+CREATE OR REPLACE FUNCTION pgext.version_compare(v1 TEXT, v2 TEXT) RETURNS INTEGER AS $$
+DECLARE
+    parts1 TEXT[] := regexp_match(v1, '^(.*)-([^-]*)$');
+    parts2 TEXT[] := regexp_match(v2, '^(.*)-([^-]*)$');
+    cmp INTEGER;
+BEGIN
+    cmp := pgext.version_segment_compare(coalesce(parts1[1], v1), coalesce(parts2[1], v2));
+    IF cmp <> 0 THEN RETURN cmp; END IF;
+    RETURN pgext.version_segment_compare(coalesce(parts1[2], ''), coalesce(parts2[2], ''));
 END;
 $$ LANGUAGE plpgsql IMMUTABLE STRICT PARALLEL SAFE;
 

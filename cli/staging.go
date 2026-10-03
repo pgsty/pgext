@@ -200,8 +200,10 @@ func stagedReloadSQL(sqlContent, pkgTable, binTable string) (string, error) {
 
 	// UPDATE statements must retain the logical `pkg` relation name because
 	// correlated subqueries in reload.sql refer to pkg.pg/pkg.os/pkg.name.
+	// Preserve explicit aliases too, so those updates cannot target live pkg.
 	sqlContent = strings.ReplaceAll(sqlContent, "TRUNCATE pgext.pkg", "TRUNCATE "+pkgTable)
 	sqlContent = strings.ReplaceAll(sqlContent, "INSERT INTO pgext.pkg", "INSERT INTO "+pkgTable)
+	sqlContent = strings.ReplaceAll(sqlContent, "UPDATE pgext.pkg AS ", "UPDATE "+pkgTable+" AS ")
 	sqlContent = strings.ReplaceAll(sqlContent, "UPDATE pgext.pkg SET", "UPDATE "+pkgTable+" AS pkg SET")
 	sqlContent = strings.ReplaceAll(sqlContent, "pgext.bin", binTable)
 	sqlContent = strings.ReplaceAll(sqlContent, recapStatusStatement, "")
