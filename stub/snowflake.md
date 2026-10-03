@@ -5,11 +5,14 @@
 
 Sources:
 
-- [snowflake v2.5.0 README](https://github.com/pgEdge/snowflake/blob/v2.5.0/README.md)
-- [Creating a Snowflake sequence](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/creating.md)
-- [Converting PostgreSQL sequences](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/converting.md)
-- [Function reference](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/snowflake_functions.md)
-- [v2.5.0 changelog](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/changelog.md)
+- [snowflake v2.6.0 README](https://github.com/pgEdge/snowflake/blob/v2.6.0/README.md)
+- [Creating a Snowflake sequence](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/creating.md)
+- [Converting PostgreSQL sequences](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/converting.md)
+- [Function reference](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/snowflake_functions.md)
+- [v2.6.0 changelog](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/changelog.md)
+- [v2.6.0 C implementation](https://github.com/pgEdge/snowflake/blob/v2.6.0/snowflake.c)
+- [Tagged SQL API definitions](https://github.com/pgEdge/snowflake/blob/v2.6.0/snowflake--2.3.sql)
+- [v2.6.0 control file](https://github.com/pgEdge/snowflake/blob/v2.6.0/snowflake.control)
 
 `snowflake` generates distributed `bigint` identifiers from a timestamp, a per-node identifier, and an in-millisecond counter. Existing PostgreSQL sequences can be converted so table defaults continue using `nextval(...)` while producing Snowflake IDs.
 
@@ -51,33 +54,36 @@ SELECT id, snowflake.format(id) FROM orders;
 |---|---|
 | `snowflake.nextval([sequence regclass])` | Generate the next Snowflake ID (uses internal sequence if none specified) |
 | `snowflake.currval([sequence regclass])` | Return the current value of the sequence |
-| `snowflake.get_epoch(snowflake int8)` | Extract the timestamp as epoch (seconds since 2023-01-01) |
+| `snowflake.get_epoch(snowflake int8)` | Return Unix epoch seconds since 1970-01-01, with millisecond precision |
 | `snowflake.get_count(snowflake int8)` | Extract the count part (resets per millisecond) |
 | `snowflake.get_node(snowflake int8)` | Extract the node identifier |
-| `snowflake.format(snowflake int8)` | Return a JSONB with `node`, `ts`, and `count` fields |
+| `snowflake.format(snowflake int8)` | Return JSONB fields `id` (node identifier), `ts`, and `count` |
 
 ### Examples
 
 ```sql
 -- Generate a snowflake ID
 SELECT snowflake.nextval();
--- 136169504773242881
 
 -- Use an already converted named sequence
 SELECT snowflake.nextval('orders_id_seq'::regclass);
 
--- Extract components
-SELECT snowflake.get_epoch(136169504773242881);
+-- Decode a fixed example: node 1, count 0
+SET TIME ZONE 'UTC';
+SELECT snowflake.get_epoch(136169504773246976);
 -- 1704996539.845
 
-SELECT to_timestamp(snowflake.get_epoch(136169504773242881));
--- 2024-01-11 13:08:59.845-05
+SELECT to_timestamp(snowflake.get_epoch(136169504773246976));
+-- 2024-01-11 18:08:59.845+00
 
-SELECT snowflake.get_node(136169504773242881);
+SELECT snowflake.get_node(136169504773246976);
 -- 1
 
-SELECT snowflake.format(136169504773242881);
--- {"id": 1, "ts": "2024-01-11 13:08:59.845-05", "count": 0}
+SELECT snowflake.get_count(136169504773246976);
+-- 0
+
+SELECT snowflake.format(136169504773246976);
+-- {"id": 1, "ts": "2024-01-11 18:08:59.845+00", "count": 0}
 
 -- Use as default column
 CREATE TABLE direct_ids (
@@ -104,3 +110,7 @@ Version `2.5.0` fixes dump/restore of converted sequences whose `MAXVALUE` was l
 - A Snowflake generator can emit at most 4096 counter values per millisecond. Do not configure a sequence increment above 4096.
 - Keep the node identifier stable and unique for the lifetime of concurrent writers; record it as part of cluster provisioning and failover procedures.
 - Install the same extension version on every node before logical replication or rolling changes involving converted sequence definitions.
+
+Version 2.6.0 adds PostgreSQL 19 support; the current Pigsty pgEdge bundle covers PostgreSQL 15–18. Assign `snowflake.node` within 1–1023; its default is intentionally invalid. The control file fixes schema `snowflake` and does not require shared preload. The 2.5.0 dump/restore repair remains relevant when upgrading converted sequences from earlier releases.
+
+Use an administrator to install the C extension and convert identity definitions. ID generation requires USAGE or UPDATE on the selected sequence; the current value is defined only after that sequence has generated an ID in the same session.

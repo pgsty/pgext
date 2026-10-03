@@ -2,12 +2,14 @@
 
 来源：
 
-- [官方pg_lake架构概述](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/README.md#architecture)
-- [版本3.4控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_engine/pg_lake_engine.control)
-- [基础SQL对象](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_engine/pg_lake_engine--3.0.sql)
-- [版本3.4清理队列变更](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_engine/pg_lake_engine--3.3--3.4.sql)
+- [官方pg_lake架构概述](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md#architecture)
+- [版本3.5控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine.control)
+- [基础SQL对象](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.0.sql)
+- [3.5 清理重试状态迁移](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.4--3.5.sql)
 
 `pg_lake_engine`是pg_lake表、复制和Iceberg扩展共享的执行层。它重写符合条件的PostgreSQL工作以供`pgduck_server`使用，映射PostgreSQL和DuckDB值，并跟踪在中止或表变更后必须删除的远程文件。它是内部依赖项而非独立的分析接口。
+
+pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
 
 ### 部署边界
 
@@ -43,5 +45,5 @@ FROM external_events;
 
 - `__lake__internal__nsp__`函数是规划器/解析器占位符，不是受支持的直接SQL API。
 - 不要手动更新或删除队列行。清理函数需要扩展的对象存储凭证和特权角色，并且仅应在操作工具文档中指定的情况下调用。
-- 版本`3.4`将`resolve_metadata`添加到删除队列，以便在`VACUUM`期间可以将Iceberg元数据展开为精确引用的文件，从而将对象存储遍历移出`DROP`路径。
+- 版本 `3.5` 在 `lake_engine.deletion_queue` 中新增 `last_attempt_at`。清理重试由 `pg_lake_engine.vacuum_file_remove_retry_interval` 控制间隔，`pg_lake_engine.vacuum_file_remove_max_retries` 限制实际尝试次数，而不是统计无关的 VACUUM 执行轮次。
 - 角色是集群范围的对象，在一个数据库中可能会超出扩展实例的存在；在移除pg_lake时需单独审查成员资格。

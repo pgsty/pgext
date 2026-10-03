@@ -1,30 +1,29 @@
-
-
-
 ## 用法
 
-> [pgmeminfo: PostgreSQL 内存上下文信息](https://github.com/okbob/pgmeminfo)
+来源：
 
-pgmeminfo 提供函数来检查 PostgreSQL 后端的内存使用情况和内存上下文层次结构。
+- [1.0.1 README](https://github.com/okbob/pgmeminfo/blob/VERSION_1_0_1/README.md)
+- [Installation SQL](https://github.com/okbob/pgmeminfo/blob/VERSION_1_0_1/pgmeminfo--1.0.sql)
+- [Control file](https://github.com/okbob/pgmeminfo/blob/VERSION_1_0_1/pgmeminfo.control)
 
-### 函数
+`pgmeminfo` 报告当前 PostgreSQL 后端的内存分配器统计及内存上下文层级，不汇总整个集群的内存。
 
-**内存信息概览：**
+### 检查内存
+
+由超级用户安装扩展，然后检查当前连接：
 
 ```sql
--- 显示整体内存信息
+CREATE EXTENSION pgmeminfo;
 SELECT * FROM pgmeminfo();
-```
-
-**内存上下文层次结构：**
-
-```sql
--- 显示累积的内存上下文大小
 SELECT * FROM pgmeminfo_contexts();
-
--- 显示指定深度的内存上下文
 SELECT * FROM pgmeminfo_contexts(deep => 1);
-
--- 显示所有上下文（不累积）
 SELECT * FROM pgmeminfo_contexts(deep => -1, accum_mode => 'off');
 ```
+
+`pgmeminfo()` 返回 `arena`、`uordblks`、`fordblks`、`keepcost` 等分配器计数。这些指标与内存分配器相关，不是进程 RSS，也不能用于估算集群空闲内存。
+
+`pgmeminfo_contexts(deep, accum_mode)` 返回上下文名称、父节点、层级和字节计数。默认累积模式为 `all`；`off` 不累加后代上下文，`deep => -1` 取消层级深度限制。
+
+### 运行与版本
+
+不需要预加载或重启。上游发布版本 1.0.1 保持 SQL 扩展版本 1.0；不要把安装包版本 1.0.1 用作 SQL 升级目标。后端执行查询时，上下文名称和统计值可能变化。如果不希望普通用户查看内部上下文名称，应检查函数访问权限。

@@ -2,10 +2,10 @@
 
 来源：
 
-- [Official v0.0.4 README](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.4/README.md)
-- [v0.0.4 release notes](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.4)
-- [v0.0.4 control file](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.4/pg_eviltransform.control)
-- [v0.0.4 upgrade SQL](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.4/pg_eviltransform--0.0.3--0.0.4.sql)
+- [Official v0.0.7 README](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/README.md)
+- [v0.0.7 release notes](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.7)
+- [v0.0.7 control file](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/pg_eviltransform.control)
+- [v0.0.7 upgrade SQL](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/pg_eviltransform--0.0.6--0.0.7.sql)
 
 `pg_eviltransform` 扩展了 PostGIS，增加了涉及中国 GCJ-02 和 BD-09 系统的坐标转换。版本 `0.0.4` 还通过 `ST_JenksBins` 数组和聚合重载添加了精确的 Jenks 自然断点分类。
 
@@ -29,6 +29,14 @@ SELECT ST_EvilTransform(
 ```
 
 自定义 SRID 为：`990001` 对应 GCJ-02，`990002` 对应 BD-09。当两端均未使用自定义系统时，`ST_EvilTransform` 将委托给 PostGIS 的 `ST_Transform`；否则在必要时通过 WGS84 (`4326`) 转换。
+
+0.0.7 在文本重载中新增地理坐标系 CGCS2000 的别名 `CGCS2000`、`CGCS-2000`、`4490` 和 `EPSG:4490`，由 PostGIS/PROJ 选择基准转换。使用 CGCS2000 高斯克吕格投影分带时，应传入该分带明确的整数 EPSG SRID。
+
+```sql
+SELECT ST_EvilTransform(
+    ST_SetSRID('POINT(120 30)'::geometry, 4326), 'CGCS2000'
+);
+```
 
 ### Jenks 自然断点
 
@@ -55,3 +63,7 @@ FROM measurements;
 - PostGIS 是运行时先决条件，在安装 `pg_eviltransform` 之前必须已安装。
 - Jenks 输入必须是有限的且 `breaks` 至少为一。`numeric` 值会被转换为有限的 `f64`，因此返回的边界值为浮点数。
 - 当唯一值的数量不超过 `breaks` 时，结果将是排序后的唯一值集合；没有有效输入行将返回 `NULL`。
+
+### 0.0.7 兼容性
+
+0.0.6 到 0.0.7 的升级 SQL 更新坐标系名称解析函数。上游使用 pgrx 0.19.3，支持 PostgreSQL 14-18 和 PostgreSQL 19 beta4。`ST_JenksBins` 接口不变；软件包与构建元数据同上游发行版分别维护。

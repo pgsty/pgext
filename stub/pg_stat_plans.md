@@ -1,9 +1,11 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/pganalyze/pg_stat_plans/blob/main/README.md), [v2.1.0 release](https://github.com/pganalyze/pg_stat_plans/releases/tag/v2.1.0), [SQL objects](https://github.com/pganalyze/pg_stat_plans/blob/main/pg_stat_plans--2.0.sql)
+Sources:
+
+- [2.1.1 README](https://github.com/pganalyze/pg_stat_plans/blob/v2.1.1/README.md)
+- [2.1.1 changelog](https://github.com/pganalyze/pg_stat_plans/blob/v2.1.1/CHANGELOG.md)
+- [SQL2.1 upgrade](https://github.com/pganalyze/pg_stat_plans/blob/v2.1.1/pg_stat_plans--2.0--2.1.sql)
+- [Visibility checks](https://github.com/pganalyze/pg_stat_plans/blob/v2.1.1/pg_stat_plans.c)
 
 `pg_stat_plans` tracks aggregate statistics for PostgreSQL plan shapes. It hashes planned query trees into plan IDs, stores example `EXPLAIN` text in shared memory, and helps identify when the same query ID is executed with different plans.
 
@@ -20,7 +22,7 @@ pg_stat_plans.compress = 'zstd'
 CREATE EXTENSION pg_stat_plans;
 ```
 
-Using `pg_stat_statements` alongside it is recommended so plan IDs can be correlated with query text.
+Restart after changing the preload list. Using `pg_stat_statements` alongside it is recommended so plan IDs can be correlated with query text. Optional zstd compression requires a build with zstd support.
 
 ### Query Plans
 
@@ -29,7 +31,7 @@ SELECT *
 FROM pg_stat_plans;
 ```
 
-The view exposes `userid`, `dbid`, `toplevel`, `queryid`, `planid`, `calls`, `total_exec_time`, and `plan`. To omit stored plan text for lighter queries:
+The view exposes `userid`, `dbid`, `toplevel`, `queryid`, `planid`, `calls`, `total_exec_time`, `plan`, and `plan_advice`. To omit stored plan text for lighter queries:
 
 ```sql
 SELECT *
@@ -64,3 +66,11 @@ Important settings include `pg_stat_plans.max`, `pg_stat_plans.max_size`, `pg_st
 ### Notes
 
 Statistics use PostgreSQL's cumulative statistics system, so counters are flushed at transaction end and may be delayed. Plan IDs describe plan shape and can change when partitions, casts, or expression details change.
+
+### Version, Memory and Visibility
+
+Release 2.1.1 uses SQL extension version 2.1. After installing new files and reloading the library at restart, update existing SQL objects with `ALTER EXTENSION pg_stat_plans UPDATE`. The 2.1 upgrade drops and recreates the function and views; dependent user objects can prevent the update.
+
+`pg_stat_plans.max_plan_memory` limits total plan-text storage. A full memory budget or oversized plan text can leave the text empty while counters remain tracked. `pg_stat_plans.plan_advice` requires PostgreSQL 19 or later and `pg_plan_advice` in the preload list.
+
+Plan text and query IDs for other users require superuser access or `pg_read_all_stats`; otherwise only the caller's own query details are shown. The reset function is not granted to PUBLIC. Collected plan text can contain sensitive constants; restrict monitoring privileges accordingly.

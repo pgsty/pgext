@@ -2,13 +2,14 @@
 
 Sources:
 
-- [pgvector v0.8.6 README](https://github.com/pgvector/pgvector/blob/v0.8.6/README.md)
-- [pgvector v0.8.6 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.6/CHANGELOG.md)
-- [Changes from v0.8.5 to v0.8.6](https://github.com/pgvector/pgvector/compare/v0.8.5...v0.8.6)
+- [vector.control](https://github.com/pgvector/pgvector/blob/f37c13f68b57d2c3472b2214fbcff699d6d34876/vector.control)
+- [pgvector v0.8.7 README](https://github.com/pgvector/pgvector/blob/f37c13f68b57d2c3472b2214fbcff699d6d34876/README.md)
+- [pgvector v0.8.7 CHANGELOG](https://github.com/pgvector/pgvector/blob/f37c13f68b57d2c3472b2214fbcff699d6d34876/CHANGELOG.md)
+- [Changes from v0.8.5 to v0.8.7](https://github.com/pgvector/pgvector/compare/v0.8.5...v0.8.7)
 
 `pgvector` provides vector similarity search inside PostgreSQL. The extension name is `vector`, while Pigsty packages it as `pgvector`. It supports exact search, approximate nearest-neighbor search with HNSW and IVFFlat indexes, and multiple vector representations for dense, half-precision, binary, and sparse embeddings.
 
-Version `0.8.6` is a focused correctness release. It retains the 0.8.x HNSW iterative-scan and maintenance improvements documented in the current README.
+Version `0.8.7` is a focused correctness release. It retains the 0.8.x HNSW iterative-scan and maintenance improvements documented in the current README.
 
 ### Create and Query Vectors
 
@@ -160,3 +161,7 @@ HNSW indexes can be large and expensive to build. Use `maintenance_work_mem` for
 - Approximate indexes trade exact recall for speed. Validate recall with representative data and query filters.
 - Build IVFFlat after loading data. If data distribution changes substantially, rebuild the index.
 - Keep pgvector updated when using HNSW with heavy writes and vacuum activity; the `0.8.x` line includes important HNSW maintenance fixes.
+
+### Version 0.8.7
+
+Version 0.8.7 additionally fixes an IVFFlat build buffer overflow and averaging an empty set. Install the new library/SQL files and run `ALTER EXTENSION vector UPDATE`. No index-format migration or mandatory index rebuild is documented for 0.8.7.

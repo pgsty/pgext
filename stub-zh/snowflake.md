@@ -2,11 +2,14 @@
 
 来源：
 
-- [snowflake v2.5.0 README](https://github.com/pgEdge/snowflake/blob/v2.5.0/README.md)
-- [创建 Snowflake 序列](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/creating.md)
-- [转换 PostgreSQL 序列](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/converting.md)
-- [函数参考](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/snowflake_functions.md)
-- [v2.5.0 更新日志](https://github.com/pgEdge/snowflake/blob/v2.5.0/docs/changelog.md)
+- [snowflake v2.6.0 README](https://github.com/pgEdge/snowflake/blob/v2.6.0/README.md)
+- [创建 Snowflake 序列](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/creating.md)
+- [转换 PostgreSQL 序列](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/converting.md)
+- [函数参考](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/snowflake_functions.md)
+- [v2.6.0 更新日志](https://github.com/pgEdge/snowflake/blob/v2.6.0/docs/changelog.md)
+- [v2.6.0 C 实现](https://github.com/pgEdge/snowflake/blob/v2.6.0/snowflake.c)
+- [对应标签的 SQL API 定义](https://github.com/pgEdge/snowflake/blob/v2.6.0/snowflake--2.3.sql)
+- [v2.6.0 控制文件](https://github.com/pgEdge/snowflake/blob/v2.6.0/snowflake.control)
 
 `snowflake` 生成分布式 `bigint` 标识符，从时间戳、节点标识符和毫秒计数器中产生。现有的 PostgreSQL 序列可以被转换，使得表的默认值继续使用 `nextval(...)` 同时生产 Snowflake ID。
 
@@ -48,33 +51,36 @@ SELECT id, snowflake.format(id) FROM orders;
 |---|---|
 | `snowflake.nextval([sequence regclass])` | 生成下一个 Snowflake ID（如果没有指定序列，则使用内部序列） |
 | `snowflake.currval([sequence regclass])` | 返回序列的当前值 |
-| `snowflake.get_epoch(snowflake int8)` | 提取时间戳为纪元（自2023-01-01以来的秒数） |
+| `snowflake.get_epoch(snowflake int8)` | 返回自 1970-01-01 起的 Unix 纪元秒数，精度为毫秒 |
 | `snowflake.get_count(snowflake int8)` | 提取计数值部分（每毫秒重置） |
 | `snowflake.get_node(snowflake int8)` | 提取节点标识符 |
-| `snowflake.format(snowflake int8)` | 返回包含 `node`、`ts` 和 `count` 字段的 JSONB |
+| `snowflake.format(snowflake int8)` | 返回 JSONB 字段 `id`（节点标识符）、`ts` 和 `count` |
 
 ### 示例
 
 ```sql
 -- Generate a snowflake ID
 SELECT snowflake.nextval();
--- 136169504773242881
 
 -- Use an already converted named sequence
 SELECT snowflake.nextval('orders_id_seq'::regclass);
 
--- Extract components
-SELECT snowflake.get_epoch(136169504773242881);
+-- Decode a fixed example: node 1, count 0
+SET TIME ZONE 'UTC';
+SELECT snowflake.get_epoch(136169504773246976);
 -- 1704996539.845
 
-SELECT to_timestamp(snowflake.get_epoch(136169504773242881));
--- 2024-01-11 13:08:59.845-05
+SELECT to_timestamp(snowflake.get_epoch(136169504773246976));
+-- 2024-01-11 18:08:59.845+00
 
-SELECT snowflake.get_node(136169504773242881);
+SELECT snowflake.get_node(136169504773246976);
 -- 1
 
-SELECT snowflake.format(136169504773242881);
--- {"id": 1, "ts": "2024-01-11 13:08:59.845-05", "count": 0}
+SELECT snowflake.get_count(136169504773246976);
+-- 0
+
+SELECT snowflake.format(136169504773246976);
+-- {"id": 1, "ts": "2024-01-11 18:08:59.845+00", "count": 0}
 
 -- Use as default column
 CREATE TABLE direct_ids (
@@ -101,3 +107,7 @@ WHERE column_default LIKE 'snowflake.nextval(%';
 - Snowflake 生成器每毫秒最多可以发出 4096 个计数值。不要将序列增量配置为超过 4096。
 - 保持节点标识符在整个并发写入的生命周期内稳定且唯一；将其作为集群规划和故障转移流程的一部分进行记录。
 - 在逻辑复制或涉及转换后序列定义的滚动更改之前，在每个节点上安装相同的扩展版本。
+
+2.6.0 新增 PostgreSQL 19 支持；当前 Pigsty pgEdge 组合包覆盖 PostgreSQL 15–18。`snowflake.node` 必须位于 1–1023，默认值有意设为无效。控制文件固定使用 `snowflake` 模式，无需共享预加载。从更早版本升级已经转换过的序列时，仍须关注 2.5.0 的导出与恢复修复。
+
+应由管理员安装 C 扩展并转换 identity 定义。生成 ID 需要目标序列的 USAGE 或 UPDATE 权限；只有同一会话中该序列已经生成过 ID 后，当前值才有定义。

@@ -2,13 +2,15 @@
 
 来源：
 
-- [pg_extension_updater 官方 README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/README.md)
-- [3.4 版控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/pg_extension_updater.control)
-- [工作进程注册 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/pg_extension_updater--1.1.sql)
-- [更新器实现与配置](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/src/pg_extension_updater.c)
-- [pg_extension_base 预加载文档](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_base/README.md)
+- [pg_extension_updater 官方 README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/README.md)
+- [3.5 版控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/pg_extension_updater.control)
+- [工作进程注册 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/pg_extension_updater--1.1.sql)
+- [更新器实现与配置](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/src/pg_extension_updater.c)
+- [pg_extension_base 预加载文档](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/README.md)
 
 `pg_extension_updater` 会在数据库生命周期工作进程启动时，对已安装版本与可用默认版本不同的每个扩展执行 `ALTER EXTENSION ... UPDATE`。它用于减少部署新扩展文件后 SQL 与二进制版本不一致的问题；它不会安装缺失的扩展，也不能替代发布测试。
+
+pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
 
 ### 启用自动更新
 
@@ -38,5 +40,5 @@ CREATE EXTENSION pg_extension_updater CASCADE;
 
 - 自动迁移可能执行任何已安装扩展提供的升级 SQL。在生产数据库启用前，应验证软件包及升级路径。
 - 应独立审查扩展依赖变化，并按应用需求制作备份；某项警告不会回滚其他已经成功的扩展更新。
-- `3.4` 版没有面向用户的强制更新函数，也没有逐扩展允许列表。
-- 与 `3.3` 相比，`3.4` 没有改变更新器的 SQL API。
+- `3.5` 版没有面向用户的强制更新函数，也没有逐扩展允许列表。
+- 更新器从 `3.4` 到 `3.5` 的迁移脚本为空；自动更新仍依赖每个已安装扩展经过审查的升级脚本。

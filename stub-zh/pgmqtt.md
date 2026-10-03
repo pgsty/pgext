@@ -16,8 +16,9 @@ pgmqtt 将一个 MQTT 代理嵌入到 PostgreSQL 中。它可以通过逻辑解�
 
     wal_level = logical
     shared_preload_libraries = 'pgmqtt'
+    pgmqtt.database = 'postgres'
 
-重启后创建扩展：
+重启后连接到 pgmqtt.database 指定的数据库（默认为 postgres），在其中创建扩展。工作进程使用的表、映射和逻辑复制槽都属于该数据库，映射的业务表也应建在这里：
 
     CREATE EXTENSION pgmqtt;
 
@@ -49,7 +50,8 @@ pgmqtt 将一个 MQTT 代理嵌入到 PostgreSQL 中。它可以通过逻辑解�
     SELECT pgmqtt_add_inbound_mapping(
       'sensor/{site_id}/temperature',
       'sensor_readings',
-      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb
+      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb,
+      mapping_name => 'temp_readings'
     );
 
 传入映射支持插入和文档中描述的 UPSERT 或 DELETE 模式，具有如 target_schema、conflict_columns、mapping_name 和 template_type 等选项。仅授予工作进程所需的表权限，并验证数据包类型和约束。

@@ -2,11 +2,13 @@
 
 来源：
 
-- [官方 pg_registry README](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_registry/README.md)
-- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_registry/pg_registry.control)
-- [SQL API 与存储定义](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_registry/src/lib.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
+- [官方 pg_registry README](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_registry/README.md)
+- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_registry/pg_registry.control)
+- [SQL API 与存储定义](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_registry/src/lib.rs)
 
-`pg_registry` 版本 `0.2.0` 在 PostgreSQL 中保存带版本的 JSON Schema、验证 JSONB 值、从表生成模式，并为配套流处理集成记录模式到主题或表到主题的绑定。
+`pg_registry` 版本 `0.3.0` 在 PostgreSQL 中保存带版本的 JSON Schema、验证 JSONB 值、从表生成模式，并为配套流处理集成记录模式到主题或表到主题的绑定。
 
 ### 核心流程
 
@@ -34,3 +36,7 @@ SELECT pgregistry.bind_schema_to_topic(
 ### 运维说明
 
 对象位于不可重定位的 `pgregistry` 模式中，control 文件要求超级用户安装。`STRICT` 与 `LOG` 是保存下来的验证模式，但 Kafka 流量中的实际执行依赖配套集成读取这些绑定；`pg_registry` 本身不会启动 Kafka 客户端。生成的模式和表遵循文档所列 PostgreSQL 到 JSON 类型映射，但可能无法保留所有域、约束、生成表达式或应用不变量。生产使用前应审查生成的 DDL 以及模式管理函数的访问权限。
+
+### 0.3.0 版本边界
+
+这是采用 Matroid Source Available License 1.0 的无支持概念验证项目，API 可能变化。0.3.0 是新的升级起点：旧 0.2.0 安装需要预演数据迁移／重建，不能直接执行普通 ALTER EXTENSION UPDATE。遵循上游这一破坏性路径前，必须备份数据并检查依赖。

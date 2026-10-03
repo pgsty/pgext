@@ -1,9 +1,10 @@
-
-
-
 ## Usage
 
-Sources: [README](https://github.com/supabase/supautils/blob/master/README.md), [homepage](https://supabase.github.io/supautils/), [releases](https://github.com/supabase/supautils/releases)
+Sources:
+
+- [v3.4.4 README](https://github.com/supabase/supautils/blob/v3.4.4/README.md)
+- [v3.4.4 release](https://github.com/supabase/supautils/releases/tag/v3.4.4)
+- [Version restriction implementation](https://github.com/supabase/supautils/blob/v3.4.4/src/extensions.c)
 
 `supautils` is a loadable library that unlocks selected superuser-only PostgreSQL features for non-superusers through configuration. Upstream emphasizes that it adds no tables, functions, or security labels to the database.
 
@@ -77,11 +78,10 @@ supautils.reserved_roles = 'connector, storage_admin'
 supautils.reserved_memberships = 'pg_read_server_files'
 ```
 
-### Release notes
+### Version Selection and Operational Boundaries
 
-- `v3.2.1` was released on 2026-04-02 and its published notes are maintenance-oriented; no new user-facing SQL surface is described there.
-- `v3.2.0` added a hint when a `GRANT` privilege is missing.
+`supautils.restrict_extension_versions` controls explicit version clauses for non-superusers: `off` allows them, `warn` ignores them and selects the control-file default with a warning, and `error` rejects them. This applies to both extension creation and upgrades; superusers and the configured proxy superuser are exempt. Omitting an explicit version remains allowed subject to normal privilege checks.
 
-### Caveat
+Cluster preload requires a restart; role-specific session preload applies to new connections. Do not run CREATE EXTENSION for supautils itself. Source release 3.4.4 is a library update and has no SQL extension-update step. It avoids ACCESS EXCLUSIVE locks during allowlisted-table policy checks and restores the caller's role on every exit from an elevated region.
 
-This extension is configuration-driven. When documenting it, prefer the GUCs and behavior guarantees in the README over implying database objects that upstream explicitly says it does not create.
+Review allowed extensions and custom scripts as trusted code because their operations run with delegated superuser privileges. Enhanced privilege hints do not work for views on PostgreSQL 18 according to the tagged README. Test role transitions, event-trigger ownership and reserved-role protections before broadening grants.

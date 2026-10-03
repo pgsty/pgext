@@ -2,14 +2,14 @@
 
 Sources:
 
-- [pg_statviz v1.2 release](https://github.com/vyruss/pg_statviz/releases/tag/v1.2)
-- [pg_statviz v1.2 README](https://github.com/vyruss/pg_statviz/blob/v1.2/README.md)
-- [pg_statviz v1.2 installation SQL](https://github.com/vyruss/pg_statviz/blob/v1.2/pg_statviz--1.2.sql)
-- [pg_statviz v1.1 to v1.2 upgrade SQL](https://github.com/vyruss/pg_statviz/blob/v1.2/pg_statviz--1.1--1.2.sql)
-- [pg_statviz v1.2 control file](https://github.com/vyruss/pg_statviz/blob/v1.2/pg_statviz.control)
-- [pg_statviz v1.2 metadata](https://github.com/vyruss/pg_statviz/blob/v1.2/META.json)
-- [pg_statviz v1.2 Python package metadata](https://github.com/vyruss/pg_statviz/blob/v1.2/pyproject.toml)
-- [pg_statviz v1.2 AI provider implementation](https://github.com/vyruss/pg_statviz/blob/v1.2/src/pg_statviz/libs/ai.py)
+- [pg_statviz v1.2.1 release](https://github.com/vyruss/pg_statviz/releases/tag/v1.2.1)
+- [pg_statviz v1.2.1 README](https://github.com/vyruss/pg_statviz/blob/v1.2.1/README.md)
+- [pg_statviz v1.2 installation SQL](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pg_statviz--1.2.sql)
+- [pg_statviz v1.1 to v1.2 upgrade SQL](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pg_statviz--1.1--1.2.sql)
+- [pg_statviz v1.2 control file](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pg_statviz.control)
+- [pg_statviz v1.2 metadata](https://github.com/vyruss/pg_statviz/blob/v1.2.1/META.json)
+- [pg_statviz v1.2.1 Python package metadata](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pyproject.toml)
+- [pg_statviz v1.2.1 AI provider implementation](https://github.com/vyruss/pg_statviz/blob/v1.2.1/src/pg_statviz/libs/ai.py)
 - [Official PGXN v1.2.0 distribution](https://pgxn.org/dist/pg_statviz/1.2.0/README.html)
 
 `pg_statviz` v1.2 (distributed by PGXN as 1.2.0) is a pure SQL and PL/pgSQL statistics snapshot extension plus a separately installed Python visualization utility. The extension stores cumulative and dynamic PostgreSQL statistics in the fixed `pgstatviz` schema; the utility reads a selected time range and generates charts or optional AI-assisted HTML reports. It requires PostgreSQL 13 or later and supports PostgreSQL through version 19, needs no `shared_preload_libraries`, and does not require a restart. The utility requires Python 3.11 or later.
@@ -85,3 +85,7 @@ pg_statviz analyze \
 ```
 
 For a cloud provider, the request can include chart images and summarized series together with the captured PostgreSQL version, primary/standby role, hostname, relevant configuration values, deterministic findings, user or role names, and replication identifiers. Treat that as an explicit operational-data export: review provider retention and regional policy, minimize the selected time range, secure generated HTML and PNG files, and use an approved outbound path. The prompt's data envelopes reduce prompt-injection risk but do not provide confidentiality, authorization, or a substitute for provider governance.
+
+### 1.2.1 Companion-Utility Fix
+
+Source tag 1.2.1 retains SQL/control version 1.2 and Python package metadata version 1.2. Its only code change relative to 1.2 is the local Ollama client compatibility fix: the utility omits the `think` argument for ollama-python below 0.5.0 or when version metadata is unavailable. Installing the updated utility addresses that failure; an additional SQL extension update beyond 1.2 is not required.

@@ -1,9 +1,13 @@
-
-
-
 ## Usage
 
-> [pgq: Generic high-performance lockless queue for PostgreSQL](https://github.com/pgq/pgq)
+Sources:
+
+- [PgQ 3.5.2 README](https://github.com/pgq/pgq/blob/v3.5.2/README.rst)
+- [Control and installation privileges](https://github.com/pgq/pgq/blob/v3.5.2/pgq.control)
+- [Batch acquisition API](https://github.com/pgq/pgq/blob/v3.5.2/functions/pgq.next_batch.sql)
+- [Batch events API](https://github.com/pgq/pgq/blob/v3.5.2/functions/pgq.get_batch_events.sql)
+- [Retry API](https://github.com/pgq/pgq/blob/v3.5.2/functions/pgq.event_retry.sql)
+- [Version 3.5.2 release](https://github.com/pgq/pgq/releases/tag/v3.5.2)
 
 PgQ is a PostgreSQL extension that provides a generic, high-performance lockless queue with a simple SQL function API. It uses a producer-consumer model with batch-based event processing.
 
@@ -107,3 +111,9 @@ PgQ requires a ticker daemon (`pgqd`) to run in the background for creating batc
 | `pgq.finish_batch(batch_id)` | Mark batch as processed |
 | `pgq.get_queue_info([name])` | Get queue statistics |
 | `pgq.get_consumer_info(queue)` | Get consumer statistics |
+
+### Version and Access Boundaries
+
+Upstream `3.5.2` supports PostgreSQL 10 through 19; the 3.5.2 release adds PostgreSQL 19 support without a documented SQL API change. The catalog currently tracks package version `3.5.1`, so verify installed files before selecting an extension update target. The control file requires superuser installation and is non-relocatable. The API uses the `pgq` schema; review queue-management and consumer privileges for each application role.
+
+A consumer advances only after `pgq.finish_batch` succeeds. Make event processing and acknowledgement atomic when possible, and handle repeated delivery when external side effects cannot share the database transaction.

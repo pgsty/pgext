@@ -2,11 +2,13 @@
 
 Sources:
 
-- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_ledger/pg_ledger.control)
-- [Ledger SQL API and transaction checks](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_ledger/src/lib.rs)
-- [Account-rule implementation](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_ledger/src/rules.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
+- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_ledger/pg_ledger.control)
+- [Ledger SQL API and transaction checks](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_ledger/src/lib.rs)
+- [Account-rule implementation](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_ledger/src/rules.rs)
 
-`pg_ledger` version `0.2.0` is a double-entry accounting engine in the fixed `pgledger` schema. It records immutable journal headers and lines, checks transaction-level debit/credit balance, manages currencies and fiscal periods, and can generate entries from rules attached to application tables.
+`pg_ledger` version `0.3.0` is a double-entry accounting engine in the fixed `pgledger` schema. It records immutable journal headers and lines, checks transaction-level debit/credit balance, manages currencies and fiscal periods, and can generate entries from rules attached to application tables.
 
 ### Core Workflow
 
@@ -31,3 +33,7 @@ The central type is `pgledger.ledgeramount`, with arithmetic, comparisons, B-tre
 ### Operational Notes
 
 The extension rejects unbalanced ledger activity before commit when `pg_ledger.enabled` is on. `pg_ledger.strict_mode` controls whether mutations of ledger-amount columns without rules raise an error; both are superuser-settable session GUCs. Journal tables are protected by immutability triggers, so corrections use `reverse` rather than UPDATE or DELETE. The control file is non-relocatable and superuser-only. Validate rule-generated accounts, rounding, savepoints, fiscal closing, backup/restore, and application authorization before treating the journal as an accounting control.
+
+### Version 0.3.0 Boundary
+
+This is an unsupported proof of concept under Matroid Source Available License 1.0. APIs may change. Version 0.3.0 is the new upgrade baseline: earlier 0.2.0 installations require a rehearsed data migration/recreation, not ordinary ALTER EXTENSION UPDATE. Back up data and dependencies before following that destructive upstream path.

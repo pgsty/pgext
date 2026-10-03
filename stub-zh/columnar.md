@@ -1,6 +1,3 @@
-
-
-
 ## 用法
 
 来源：
@@ -134,5 +131,5 @@ SELECT columnar.vacuum_full('public', 0.1, 25);
 - Pigsty 元数据中该扩展已 obsolete，并且与 `citus` / `citus_columnar` 一类列式存储存在冲突。除非已验证具体组合，否则不要在同一 PostgreSQL 大版本中混装多个冲突的列式表访问方法。
 - Pigsty 仅为 PostgreSQL 14-16 保留 `hydra` / `columnar` 包；本地已将 PostgreSQL 17 和 18 标记为不支持。
 - Hydra 1.1.x 已改进 update/delete 与 upsert 支持，但项目文档仍明确列式存储不适合频繁大规模更新、小事务和 OLTP 单行读写负载。
-- 受限或不支持的场景包括 logical decoding、unlogged columnar table、serializable isolation、部分 scan 类型，以及许多非 btree / hash 索引。依赖约束和索引型约束前应先实测。
+- 继承自 Citus 的存储文档未完整反映 Hydra 的索引能力：Hydra 变更日志明确新增了 GIN、GiST、SP-GiST 和 RUM 索引支持。逻辑解码、unlogged 表、可串行化隔离及部分扫描路径仍有限制，应验证实际使用的功能与约束组合。
 - `columnar` schema 中包含 `columnar.options`、`columnar.stripe`、`columnar.chunk_group`、`columnar.chunk` 等内部元数据表。可以通过公开函数查看，但不要直接修改这些元数据表。

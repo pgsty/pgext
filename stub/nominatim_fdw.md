@@ -2,9 +2,9 @@
 
 Sources:
 
-- [nominatim_fdw v2.1 README](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.1/README.md)
-- [nominatim_fdw v2.1 changelog](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.1/CHANGELOG.md)
-- [nominatim_fdw v2.1 control file](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.1/nominatim_fdw.control)
+- [nominatim_fdw v2.3 README](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.3/README.md)
+- [nominatim_fdw v2.3 changelog](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.3/CHANGELOG.md)
+- [nominatim_fdw v2.3 control file](https://github.com/jimjonesbr/nominatim_fdw/blob/v2.3/nominatim_fdw.control)
 - [Official Nominatim API overview](https://nominatim.org/release-docs/develop/api/Overview/)
 - [OpenStreetMap Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/)
 
@@ -79,16 +79,27 @@ FROM nominatim_lookup(
 
 All endpoint functions are `STRICT`: an explicit SQL `NULL` argument returns no rows without sending a request. In 2.0 they are correctly declared `VOLATILE`, because responses are remote and can change.
 
-### Version 2.1 Changes and Caveats
+### Version 2.3 Changes and Caveats
 
 Version 2.0 validates reverse coordinates, adds `email`, `polygon_threshold`, and `entrances`, exposes dependency settings, and fixes JSON escaping for returned detail fields. It also has user-visible compatibility changes: reverse output uses `display_name`; `addressparts` becomes `addressdetails`; address details default to true for reverse and lookup; and version output is shorter.
 
-After installing the 2.1 package files, upgrade existing databases:
+After installing the 2.3 extension files, upgrade existing databases:
 
 ```sql
-ALTER EXTENSION nominatim_fdw UPDATE TO '2.1';
+ALTER EXTENSION nominatim_fdw UPDATE TO '2.3';
 ```
 
 Version 2.1 adds Basic-auth mapping and initializes libcurl once per PostgreSQL backend instead of relying on implicit per-request initialization. The libcurl fix requires no new SQL or preload setting.
 
-Each call performs network I/O in the database statement. Use finite timeouts, constrain who can create or alter servers, and avoid invoking a public service once per row in a large query. The upstream build requires PostgreSQL 10 or newer, libxml2 2.5 or newer, and libcurl 7.74 or newer.
+Each call performs network I/O in the database statement. Use finite timeouts, constrain who can create or alter servers, and avoid invoking a public service once per row in a large query. The upstream build requires PostgreSQL 10 or newer, libxml2 2.6.0 or newer, and libcurl 7.74 or newer.
+
+### 2.3 Privileges and Request Limits
+
+The SQL/control version is 2.3; the PGXN distribution version is 2.3.0. Query functions now enforce foreign-server `USAGE`; grant it to roles that need access:
+
+```sql
+GRANT USAGE ON FOREIGN SERVER osm TO app_user;
+ALTER SERVER osm OPTIONS (ADD max_response_size '10485760');
+```
+
+`max_response_size` is in bytes, defaults to 0 for no additional limit, and accepts a maximum of 1 GiB. 2.3 allows only HTTP/HTTPS and rejects CR/LF in request headers; `polygon_threshold` must be finite and nonnegative. `zoom` preserves -1 as the default and clamps other values to 0–18. It also fixes response encoding, XML root validation and cleanup after cancellation. The catalog version does not imply that existing 2.2.0 packages contain these fixes.

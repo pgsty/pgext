@@ -2,12 +2,13 @@
 
 来源：
 
-- [官方 v1.13 README](https://github.com/jimjonesbr/oai_fdw/blob/v1.13/README.md)
-- [官方 v1.13 控制文件](https://github.com/jimjonesbr/oai_fdw/blob/v1.13/oai_fdw.control)
-- [官方 v1.13 更新日志](https://github.com/jimjonesbr/oai_fdw/blob/v1.13/CHANGELOG.md)
+- [CHANGELOG.md](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
+- [官方 v1.15 README](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/README.md)
+- [官方 v1.15 控制文件](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/oai_fdw.control)
+- [官方 v1.15 更新日志](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
 - [官方 OAI-PMH 规范](https://www.openarchives.org/OAI/openarchivesprotocol.html)
 
-`oai_fdw` 1.13 是一个通过 HTTP 或 HTTPS 从 OAI-PMH 2.0 仓库采集元数据的外部数据包装器。它把 OAI 记录头和 XML 内容映射到外部表列，支持按仓库或 set 自动生成表，也可以把采集记录复制到本地表。
+`oai_fdw` 1.15 是一个通过 HTTP 或 HTTPS 从 OAI-PMH 2.0 仓库采集元数据的外部数据包装器。它把 OAI 记录头和 XML 内容映射到外部表列，支持按仓库或 set 自动生成表，也可以把采集记录复制到本地表。
 
 ### 核心流程
 
@@ -53,3 +54,7 @@ LIMIT 100;
 查询会同步发出远程请求并解析不可信 XML。延迟、分页、服务限流、重定向、畸形响应及仓库变化都会影响结果。应把凭据放在最小权限 user mapping 中，限制创建或修改 server 的权限，并把可配置 URL/代理视为具有 SSRF 影响的出站网络访问。
 
 OAI-PMH 是采集协议，不是事务数据库 API。重复扫描可能看到变化中的页面和删除记录；本地副本也会过期。应记录采集窗口与标识符，使刷新可重启，并显式协调删除/状态记录。1.13 版需要匹配的 libcurl/libxml2 构建依赖，还应针对每个目标仓库的元数据格式进行测试。
+
+### 1.15 版本变化
+
+HTTP 429 与 503 重试遵循退避及 Retry-After，from/until 校验和时间戳粒度检查更加严格。会检查服务器 USAGE 权限及视图所有者的用户映射，并修复采集时间窗口和取消处理。持续低速传输达到文档中的五分钟阈值后会中止。安装匹配文件后执行 `ALTER EXTENSION oai_fdw UPDATE`。PGXN 分发版本为 1.15.0，SQL／控制版本则为 1.15。

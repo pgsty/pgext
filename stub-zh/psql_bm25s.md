@@ -1,13 +1,19 @@
-
-
-
 ## 用法
 
-来源：[README v0.4.13](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/README.md), [API reference](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/api-reference.md), [query semantics](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/query-semantics.md), [input types](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/input-types.md), [index parameters](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/index-parameters.md), [index policy](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/index-policy.md)
+来源：
+
+- [README v0.4.14](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/README.md)
+- [API reference](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/api-reference.md)
+- [query semantics](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/query-semantics.md)
+- [input types](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/input-types.md)
+- [index parameters](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/index-parameters.md)
+- [index policy](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/index-policy.md)
+- [Control file](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/psql_bm25s.control)
+- [Upgrade SQL](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/sql/psql_bm25s--0.4.11--0.4.14.sql)
 
 `psql_bm25s` 是 PostgreSQL 原生索引访问方法，用于 BM25 系列的词法检索。它通过基于语料库统计信息的排序、精确的 top-k 检索 API，以及适用于可变表的 PostgreSQL 存储和维护行为，保持明确的 BM25 语义。
 
-本目录为 PostgreSQL 17 和 18 打包版本 `0.4.13`。
+本目录为 PostgreSQL 17 和 18 打包版本 `0.4.14`。
 
 ### 基本搜索
 
@@ -174,3 +180,11 @@ ORDER BY h.score DESC, d.id;
 - `eventual` 和 `manual` 一致性策略会有意牺牲即时新鲜度，以换取更低的前台成本或显式刷新控制。
 - 逻辑复制遵循 PostgreSQL 行为：表行会复制，但索引关系不会作为逻辑数据对象复制，因此应在订阅端创建或重建索引。
 - 可选的预加载共享缓存需要修改 PostgreSQL 配置并重启，因为共享内存区在服务器启动时分配。
+
+### 升级到 0.4.14
+
+安装匹配的扩展文件后，在每个数据库中执行扩展更新。0.4.11 到 0.4.14 的迁移脚本声明 SQL 接口不变，本次发布未声明强制重建索引要求。
+
+```sql
+ALTER EXTENSION psql_bm25s UPDATE TO '0.4.14';
+```

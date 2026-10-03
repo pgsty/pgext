@@ -2,15 +2,16 @@
 
 来源：
 
-- [Version 0.108.0 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/README.md)
-- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/SQL_REFERENCE.md)
-- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/CONFIGURATION.md)
-- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/GUC_CATALOG.md)
-- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/UPGRADING.md)
-- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/pg_trickle.control)
-- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/sql/pg_trickle--0.107.0--0.108.0.sql)
+- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.108.0--0.108.1.sql)
+- [Version 0.108.1 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/README.md)
+- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/SQL_REFERENCE.md)
+- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/CONFIGURATION.md)
+- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/GUC_CATALOG.md)
+- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/UPGRADING.md)
+- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/pg_trickle.control)
+- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.107.0--0.108.0.sql)
 
-`pg_trickle` 0.108.0 在 PostgreSQL 18 上维护流式表：由 SQL 查询定义、可以常规查询的数据表；在支持时增量刷新，也可全量重算。流式表可依赖其他流式表，形成依赖图，同时支持在同一事务中维护结果。
+`pg_trickle` 0.108.1 在 PostgreSQL 18 上维护流式表：由 SQL 查询定义、可以常规查询的数据表；在支持时增量刷新，也可全量重算。流式表可依赖其他流式表，形成依赖图，同时支持在同一事务中维护结果。
 
 ### 启用扩展
 
@@ -70,8 +71,12 @@ SELECT * FROM pgtrickle.explain_st('regional_totals');
 先安装新的库和扩展文件，再执行随版本提供的迁移：
 
 ```sql
-ALTER EXTENSION pg_trickle UPDATE TO '0.108.0';
+ALTER EXTENSION pg_trickle UPDATE TO '0.108.1';
 SELECT * FROM pgtrickle.output_delta_consumer_status();
 ```
 
 升级保留消费者、游标、批次和类型化载荷，并新增快照重建校验。0.106.1 可通过随包提供的 0.107.0 迁移继续升级。恢复投递前应逐一验证消费者；出现 `INVALIDATED` 或 `RESNAPSHOT_REQUIRED` 时，必须创建并确认新的基线。0.105.2 及以前的部分版本存在文档列明的特定查询形态差分结果错误；升级不会自动修复已经物化的错误行。适用时应按升级指南进行比较和修复。
+
+### 0.108.1 版本变化
+
+本补丁修复上游 FULL 刷新或截断后下游 `IMMEDIATE` 表未及时更新的问题，支持恢复缺失的变更缓冲区，并修复源模式变更后的意外挂起及标量子查询增量刷新。同时增加 PostgreSQL 18.6 支持。安装匹配文件后执行 `ALTER EXTENSION pg_trickle UPDATE TO '0.108.1'`，并检查依赖流表结果及变更捕获状态。

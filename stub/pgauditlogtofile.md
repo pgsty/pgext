@@ -2,8 +2,10 @@
 
 Sources:
 
-- [pgauditlogtofile v1.8.5 README](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.5/README.md)
-- [Changes from v1.8.4 to v1.8.5](https://github.com/fmbiete/pgauditlogtofile/compare/v1.8.4...v1.8.5)
+- [pgauditlogtofile v1.8.7 README](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/README.md)
+- [v1.8.7 JSON output](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/logtofile_json.c)
+- [v1.8.7 rotation handling](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/logtofile_log.c)
+- [SQL version generation](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/Makefile)
 
 pgauditlogtofile is a pgAudit add-on that routes pgAudit records to a dedicated CSV or JSON file. Use it to separate audit retention and access controls from the ordinary PostgreSQL server log while keeping pgAudit's event selection and semantics.
 
@@ -62,3 +64,9 @@ Version 1.8.5 improves background-worker signaling, hook restoration, and Postgr
 - Ensure the PostgreSQL operating-system account can create the destination and that file permissions meet the audit policy.
 - Abrupt backend or host failure can leave the last compressed file incomplete; validate ingestion behavior.
 - Enabling timing, memory, connection, or verbose pgAudit classes can materially increase overhead and log volume.
+
+### 1.8.7 Output and Upgrade Boundary
+
+Source release 1.8.7 retains SQL extension version 1.8. Install the matching library and restart PostgreSQL to load it; do not use 1.8.7 as an SQL update target.
+
+Compared with 1.8.5, JSON output adds `custom.debug_query` and `custom.cursor_pos` when the statement is not hidden, source-location fields at verbose error verbosity, and `custom.application_name`. Review parsers and access controls for these extra query and source details. Rotation handling also reopens the current audit filename during backend exit without attempting unsafe lightweight locking.

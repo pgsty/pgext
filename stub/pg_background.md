@@ -1,9 +1,10 @@
-
-
-
 ## Usage
 
-Sources: [official README](https://github.com/vibhorkum/pg_background/blob/master/README.md), [v2.0 release notes](https://github.com/vibhorkum/pg_background/releases/tag/v2.0), [migration guide](https://github.com/vibhorkum/pg_background/blob/v2.0/docs/MIGRATION.md).
+Sources:
+
+- [v2.0.4 README](https://github.com/vibhorkum/pg_background/blob/v2.0.4/README.md)
+- [v2.0.4 release](https://github.com/vibhorkum/pg_background/releases/tag/v2.0.4)
+- [v2.0.4 SQL API](https://github.com/vibhorkum/pg_background/blob/v2.0.4/extension/pg_background--2.0.sql)
 
 `pg_background` executes SQL inside PostgreSQL background worker processes. Workers run independent transactions inside the server, which is useful for asynchronous maintenance, autonomous side effects, bounded long-running tasks, and progress-tracked jobs.
 
@@ -28,16 +29,16 @@ FROM pg_background_run(
 
 ### Launch And Fetch Results
 
-Use the launch/result pattern when the background SQL returns rows:
+Use the launch/result pattern when the background SQL returns rows. In psql, `\gset` saves the handle for subsequent commands:
 
 ```sql
-SELECT * FROM pg_background_launch(
+SELECT pid, cookie FROM pg_background_launch(
   'SELECT count(*) FROM large_table',
   queue_size := 65536,
   label := 'count-large-table'
-) AS h;
+) \gset bg_
 
-SELECT * FROM pg_background_result(h.pid, h.cookie) AS (count bigint);
+SELECT * FROM pg_background_result(:bg_pid, :bg_cookie) AS (count bigint);
 ```
 
 Results can be consumed once. Keep both `pid` and `cookie`; the cookie protects later calls from PID reuse.
@@ -74,13 +75,13 @@ Convenience helpers include `pg_background_run_query`, `pg_background_drain`, `p
 Report progress from inside the worker SQL, then poll it from the launcher:
 
 ```sql
-SELECT * FROM pg_background_launch($$
+SELECT pid, cookie FROM pg_background_launch($$
   SELECT pg_background_report_progress(0, 'starting');
   SELECT pg_sleep(1);
   SELECT pg_background_report_progress(100, 'done');
-$$) AS h;
+$$) \gset bg_
 
-SELECT * FROM pg_background_get_progress(h.pid, h.cookie);
+SELECT * FROM pg_background_get_progress(:bg_pid, :bg_cookie);
 ```
 
 `pg_background_report_progress` is the 2.0 name; the earlier `pg_background_progress` name was hard-renamed.
@@ -101,8 +102,14 @@ SET pg_background.worker_timeout = '5min';
 
 ### Caveats
 
-- Pigsty packages `pg_background` 2.0 for PostgreSQL 14-18; upstream 2.0 also validates PostgreSQL 19 beta.
+- Upstream release 2.0.4 retains SQL/control version 2.0 and targets PostgreSQL 14-18 plus PostgreSQL 19 beta.
 - Upgrades from pre-1.8 installs must first reach the 1.8/1.10 release line before updating to 2.0.
 - The original v1 PID-only API was removed. Unsuffixed names now have cookie-protected semantics and return/use `(pid, cookie)`.
 - `pg_background_cancel_v2_grace` and `pg_background_wait_v2_timeout` are folded into `pg_background_cancel(..., grace_ms)` and `pg_background_wait(..., timeout_ms)`.
 - `pg_background_status_v2` was removed; use `pg_background_outcome(pid, cookie)`.
+
+### 2.0.4 Changes and Privileges
+
+2.0.4 fixes visibility between commands in one worker, complex result-type transport, and command completion tags. A nonzero `pg_background.worker_timeout` bounds the whole SQL string, excluding commit; when zero, `statement_timeout` applies to each statement separately. Start new workers after installing the updated library to use these fixes.
+
+Installation requires a superuser. PUBLIC receives no execution rights by default; an administrator grants `pgbackground_role` or uses `pg_background_grant_privileges`. Workers commit independently, so rolling back the caller does not undo completed background operations.

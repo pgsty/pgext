@@ -2,11 +2,11 @@
 
 来源：
 
-- [Spock v5.0.10 README](https://github.com/pgEdge/spock/blob/v5.0.10/README.md)
-- [Getting started](https://github.com/pgEdge/spock/blob/v5.0.10/docs/getting_started.md)
-- [Configuration reference](https://github.com/pgEdge/spock/blob/v5.0.10/docs/configuring.md)
-- [Limitations](https://github.com/pgEdge/spock/blob/v5.0.10/docs/limitations.md)
-- [Release notes](https://github.com/pgEdge/spock/blob/v5.0.10/docs/spock_release_notes.md)
+- [Spock v5.0.12 README](https://github.com/pgEdge/spock/blob/v5.0.12/README.md)
+- [Getting started](https://github.com/pgEdge/spock/blob/v5.0.12/docs/getting_started.md)
+- [Configuration reference](https://github.com/pgEdge/spock/blob/v5.0.12/docs/configuring.md)
+- [Limitations](https://github.com/pgEdge/spock/blob/v5.0.12/docs/limitations.md)
+- [Release notes](https://github.com/pgEdge/spock/blob/v5.0.12/docs/spock_release_notes.md)
 
 `spock` 为 PostgreSQL 15 至 18 提供了主动-主动逻辑复制。每个参与的数据库都是一个 Spock 节点；通过在节点之间创建有向订阅，形成一个多主拓扑结构。
 
@@ -98,6 +98,24 @@ SELECT spock.repset_add_all_tables('default', '{public}');
 - 主动-主动冲突处理依赖于提交时间戳和策略。在生产使用前，请测试同时插入和更新操作，特别是空值唯一键。
 - 上游文档中在 README 中列出了平台/构建要求；请验证每个节点上使用的 PostgreSQL 构建和 Spock 包是兼容的。
 
-### 版本 5.0.10
+### 5.0.12 版本与升级
 
-`5.0.10` 是 5.0 系列的一个补丁版本。其发布说明包括修复了包含 `NULL` 的唯一索引、`NULLS NOT DISTINCT` 冲突处理、在索引删除后刷新缓存的索引元数据、异常路径内存处理以及用于滚动补丁升级期间使用的数值版本检查。将每个节点升级到兼容的补丁级别，并在滚动更改后验证订阅。
+Spock 要求应用上游 README 中对应版本的 PostgreSQL 内核补丁，仅匹配大版本并不充分。所有节点都应使用兼容内核，例如匹配的 pgEdge 构建。修改共享预加载需要重启。5.0.12 初步支持 PostgreSQL 19，但上游明确不支持将该测试版用于生产；当前 Pigsty pgEdge 构建覆盖 15–18。
+
+带有输出插件安全修复的 PostgreSQL 要求将 `spock_output` 纳入 `output_plugin_libraries`，包括将来可能成为发布端的物理备库。先确认参数是否存在：
+
+```sql
+SELECT current_setting('output_plugin_libraries', true);
+```
+
+仅当查询返回非空值时才加入插件，并保留其他必需条目：
+
+```conf
+output_plugin_libraries = 'pgoutput, test_decoding, spock_output'
+```
+
+旧服务器遇到未知参数会无法启动；允许列表检查也作用于已有复制槽恢复解码的过程，因此应在 PostgreSQL 小版本升级前安排这个设置。
+
+5.0.12 补丁没有模式变化。它在不推进复制源位置的情况下重试临时应用错误，修复重放、异常处理和生成列复制，并校验接收到的元组元数据。永久性的模式差异仍须修复；应用进程反复重启不代表复制健康。每个节点升级后，应检查复制延迟、异常状态和订阅。
+
+5.0.11 引入 `spock.use_native_failover_slots`，修改后需要重启；原生复制槽行为依赖 PostgreSQL 17 或更新版本，故障切换配置还须遵循专门的上游操作指南。不能仅因为集群有备库就启用它。

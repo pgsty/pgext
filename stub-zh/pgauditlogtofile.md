@@ -2,8 +2,10 @@
 
 来源：
 
-- [pgauditlogtofile v1.8.5 README](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.5/README.md)
-- [Changes from v1.8.4 to v1.8.5](https://github.com/fmbiete/pgauditlogtofile/compare/v1.8.4...v1.8.5)
+- [pgauditlogtofile v1.8.7 README](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/README.md)
+- [v1.8.7 JSON output](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/logtofile_json.c)
+- [v1.8.7 rotation handling](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/logtofile_log.c)
+- [SQL version generation](https://github.com/fmbiete/pgauditlogtofile/blob/v1.8.7/Makefile)
 
 pgauditlogtofile 是 pgAudit 的一个扩展，用于将 pgAudit 记录路由到专用的 CSV 或 JSON 文件。使用它可以在保留审计记录和访问控制的同时，与普通 PostgreSQL 服务器日志分开。
 
@@ -62,3 +64,9 @@ PostgreSQL 配置重新加载会旋转审计文件。该扩展的后台工作进
 - 确保 PostgreSQL 操作系统帐户可以创建目标，并且文件权限符合审计策略。
 - 突然的后端或主机故障可能会使最后一个压缩文件不完整；验证摄取行为。
 - 启用时间、内存、连接或详细 pgAudit 类别会显著增加开销和日志量。
+
+### 1.8.7 输出与升级边界
+
+源码发布版 1.8.7 保持 SQL 扩展版本 1.8。安装匹配的库并重启 PostgreSQL，以加载新版本；不要把 1.8.7 当作 SQL 升级目标。
+
+与 1.8.5 相比，JSON 输出在语句未被隐藏时加入 `custom.debug_query`、`custom.cursor_pos`，在详细错误日志级别加入源码位置字段，并加入 `custom.application_name`。应检查解析器和访问控制，妥善处理额外的查询与源码细节。轮换处理还会在后端退出时重新打开当前审计文件名，并避免不安全的轻量锁操作。

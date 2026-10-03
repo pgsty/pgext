@@ -1,11 +1,13 @@
-
-
-
 ## Usage
 
-Sources: [repository](https://github.com/MobilityDB/MobilityDB), [synthetic data generator docs](https://docs.mobilitydb.com/MobilityDB/develop/apb.html), [control file](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/mobilitydb_datagen.in.control), [temporal generators](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/temporal/random_temporal.sql), [temporal point generators](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/geo/random_tpoint.sql)
+Sources:
 
-`mobilitydb_datagen` provides PL/pgSQL functions for generating synthetic PostgreSQL, PostGIS, and MobilityDB values. It is mainly useful for regression data, demos, and benchmark fixtures that need random temporal values or trajectories.
+- [Version 1.3.1 data-generator manual](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/doc/data_generator.xml)
+- [Extension control file](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/mobilitydb_datagen.in.control)
+- [Temporal generators](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/temporal/random_temporal.sql)
+- [Temporal point generators](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/geo/random_tpoint.sql)
+
+`mobilitydb_datagen` 1.3.1 provides PL/pgSQL functions for generating synthetic PostgreSQL, PostGIS, and MobilityDB values. It is mainly useful for regression data, demos, and benchmark fixtures that need random temporal values or trajectories.
 
 ```sql
 -- After the main MobilityDB extension is loaded:
@@ -65,5 +67,7 @@ FROM generate_series(1, 1000) AS vehicle_id;
 ### Caveats
 
 - The control file requires the main `mobilitydb` extension; `mobilitydb_datagen` is not standalone.
-- The package row in `db/extension.csv` lists version `1.3.0`, package `mobilitydb`, and PostgreSQL support for 14 through 18.
+- The generator is distributed with `mobilitydb` version `1.3.1`. Keep the dependency and generator files aligned; build flags and package availability determine which optional type families are present.
 - Upstream docs intentionally omit detailed parameter lists for many generator functions and point users to the SQL source files for exact signatures.
+
+The generator functions create synthetic values, not reproducible application datasets by default. Set a deliberate random seed when comparing runs, and review bounds, time zones, interpolation, and SRID for the workload.

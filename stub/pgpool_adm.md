@@ -1,51 +1,54 @@
-
-
-
 ## Usage
 
-> [pgpool_adm: Administrative functions for pgPool](https://pgpool.net/)
+Sources:
 
-The `pgpool_adm` extension provides SQL-callable wrapper functions for Pgpool-II PCP (Pgpool Control Protocol) commands, enabling administration of Pgpool-II from within PostgreSQL.
+- [Pgpool-II 4.7.3 control](https://github.com/pgpool/pgpool2/blob/V4_7_3/src/sql/pgpool_adm/pgpool_adm.control)
+- [SQL API 1.6](https://github.com/pgpool/pgpool2/blob/V4_7_3/src/sql/pgpool_adm/pgpool_adm--1.6.sql)
+- [PCP node reference](https://github.com/pgpool/pgpool2/blob/V4_7_3/doc/src/sgml/ref/pgpool_adm_pcp_node_info.sgml)
+- [Foreign-server setup](https://github.com/pgpool/pgpool2/blob/V4_7_3/src/sql/pgpool_adm/pgpool_adm.c)
 
-### Available Functions
+`pgpool_adm` exposes SQL wrappers for Pgpool-II PCP administration. A reachable Pgpool-II PCP service and appropriate PCP credentials are required; installing the extension does not deploy Pgpool-II.
 
-| Function | Description |
-|----------|-------------|
-| `pgpool_adm_pcp_node_info` | Display information on a given backend node |
-| `pgpool_adm_pcp_health_check_stats` | Display health check statistics for a node |
-| `pgpool_adm_pcp_pool_status` | Retrieve parameters from pgpool.conf |
-| `pgpool_adm_pcp_node_count` | Get the number of backend nodes |
-| `pgpool_adm_pcp_attach_node` | Attach a backend node |
-| `pgpool_adm_pcp_detach_node` | Detach a backend node |
-| `pgpool_adm_pcp_proc_info` | Display Pgpool-II child process information |
-
-### Call Methods
-
-Functions support two calling conventions:
-
-**Direct parameters** (hostname, port, username, password, plus function-specific args):
+### Install and Inspect a Node
 
 ```sql
-SELECT * FROM pgpool_adm_pcp_node_info('localhost', 9898, 'admin', 'password', 0);
-SELECT * FROM pgpool_adm_pcp_node_count('localhost', 9898, 'admin', 'password');
-SELECT * FROM pgpool_adm_pcp_pool_status('localhost', 9898, 'admin', 'password');
+CREATE EXTENSION pgpool_adm;
+
+SELECT * FROM pcp_node_info(
+  node_id => 0, host => 'localhost', port => 9898,
+  username => 'pcp_admin', password => 'example-password');
+SELECT pcp_node_count(
+  host => 'localhost', port => 9898,
+  username => 'pcp_admin', password => 'example-password');
 ```
 
-**Foreign server reference** (uses port 9898 and credentials from `~/.pcppass`):
+The actual SQL names are `pcp_node_info`, `pcp_health_check_stats`, `pcp_pool_status`, `pcp_node_count`, `pcp_attach_node`, `pcp_detach_node`, and `pcp_proc_info`. The documentation page names may carry a package prefix; that prefix is not part of these SQL functions.
+
+### Credential and Server References
+
+The direct overload accepts host, port, username and password, with node ID first where required. Other overloads accept a foreign-server reference through the `pcp_server` argument. Configure that server and user mapping according to the source implementation; do not assume a client-side `.pcppass` file supplies credentials to the database backend.
 
 ```sql
-SELECT * FROM pgpool_adm_pcp_node_info(server_name := 'pgpool_server', node_id := 0);
-SELECT * FROM pgpool_adm_pcp_node_count(server_name := 'pgpool_server');
+SELECT * FROM pcp_node_info(node_id => 0, pcp_server => 'pgpool_server');
+SELECT pcp_node_count(pcp_server => 'pgpool_server');
 ```
 
-### Node Management
+The usual PCP port is 9898. Credential handling and network access occur on the PostgreSQL server. Literal passwords can enter SQL logs and activity views; prefer the configured server-reference path where suitable.
+
+### Manage Nodes
 
 ```sql
--- Detach a backend node
-SELECT pgpool_adm_pcp_detach_node('localhost', 9898, 'admin', 'password', 1);
-
--- Re-attach a backend node
-SELECT pgpool_adm_pcp_attach_node('localhost', 9898, 'admin', 'password', 1);
+SELECT pcp_detach_node(
+  node_id => 1, gracefully => true,
+  host => 'localhost', port => 9898,
+  username => 'pcp_admin', password => 'example-password');
+SELECT pcp_attach_node(
+  node_id => 1, host => 'localhost', port => 9898,
+  username => 'pcp_admin', password => 'example-password');
 ```
 
-The default PCP communication port is 9898. Credentials can be managed via the `.pcppass` file in the user's home directory.
+Detaching or attaching nodes changes Pgpool-II routing and can affect application traffic. Restrict function access and PCP credentials to administrators. A database transaction rollback does not undo an external PCP operation.
+
+### Version and Loading
+
+Have a superuser install the extension. It needs no preload or PostgreSQL restart. Pgpool-II package release 4.7.3 ships SQL extension version 1.6; update existing databases using `ALTER EXTENSION pgpool_adm UPDATE` after installing matching files, rather than specifying 4.7.3 as an SQL version.

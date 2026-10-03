@@ -2,14 +2,13 @@
 
 Sources:
 
-- [pg_turbovec v1.29.0 README](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/README.md)
-- [pg_turbovec v1.29.0 changelog](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/CHANGELOG.md)
-- [pg_turbovec v1.29.0 control file](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/pg_turbovec.control)
-- [Partitioned-scale guide](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/docs/PARTITIONED_SCALE.md)
-- [Filtering guide](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/docs/FILTERING.md)
-- [Pigsty package matrix](https://pgext.cloud/ext/pg_turbovec)
+- [v2.10.3 README](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/README.md)
+- [v2.10.3 changelog](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/CHANGELOG.md)
+- [Upgrade matrix](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/docs/UPGRADING.md)
+- [Control file](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/pg_turbovec.control)
+- [Filtering guide](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/docs/FILTERING.md)
 
-`pg_turbovec` 1.29.0 provides a dense `turbovec.vector` type and a `turbovec` nearest-neighbor index access method. It quantizes floating-point coordinates to 2, 3, or 4 bits and reranks candidates against heap vectors. Use it for storage-constrained cosine or inner-product search; choose the index kind deliberately because the default flat scan is linear in row count.
+`pg_turbovec` 2.10.3 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
 
 ### Create and Query Vectors
 
@@ -19,83 +18,68 @@ SET search_path = public, turbovec;
 
 CREATE TABLE items (
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  embedding turbovec.vector
+  embedding turbovec.vector CHECK (turbovec.vector_dims(embedding) = 8)
 );
-
-INSERT INTO items (embedding)
-VALUES ('[1,2,3]'), ('[4,5,6]');
-
-SELECT id, embedding <=> '[3,1,2]'::turbovec.vector AS cosine_distance
-FROM items
-ORDER BY embedding <=> '[3,1,2]'::turbovec.vector
-LIMIT 10;
-```
-
-Distance operators are `<->` for L2, `<#>` for negative inner product, `<=>` for cosine distance, and `<+>` for L1. The current index supports inner-product and cosine ordering; L2 and L1 are exact-only operations.
-
-The `turbovec.vector` type accepts 1–16,000 coordinates. Indexed vectors must have a fixed dimension that is a multiple of 8; use a check constraint or application validation when the column itself is variable-dimensional.
-
-### Choose and Build an Index Kind
-
-```sql
--- Default flat quantized scan
-CREATE INDEX items_embedding_flat_idx ON items
-USING turbovec (embedding vec_cosine_ops)
+INSERT INTO items (embedding) VALUES
+  ('[1,2,3,4,5,6,7,8]'),
+  ('[2,1,3,5,4,7,6,8]'),
+  ('[8,7,6,5,4,3,2,1]');
+CREATE INDEX items_embedding_idx ON items
+USING turbovec (embedding turbovec.vec_cosine_ops)
 WITH (bit_width = 4);
 
--- Out-of-core IVF alternative
-CREATE INDEX items_embedding_ivf_idx ON items
-USING turbovec (embedding vec_cosine_ops)
-WITH (bit_width = 4, lists = 1024);
-
--- Navigable-graph alternative
-CREATE INDEX items_embedding_graph_idx ON items
-USING turbovec (embedding vec_cosine_ops)
-WITH (bit_width = 4, graph = true);
-
-SET turbovec.probes = 32;
-
-SELECT id
+SELECT id, embedding <=> '[1,2,3,4,5,6,7,8]'::turbovec.vector AS distance
 FROM items
-ORDER BY embedding <=> '[3,1,2]'::turbovec.vector
-LIMIT 10;
+ORDER BY embedding <=> '[1,2,3,4,5,6,7,8]'::turbovec.vector
+LIMIT 3;
 ```
 
-These `CREATE INDEX` statements are alternatives, not a recommendation to keep all three. The default flat kind performs an `O(n * dim)` quantized scan and can reach exact recall after heap reranking, but it is a poor latency choice at large row counts. `WITH (lists = N)` enables an out-of-core IVF layer; `WITH (graph = true)` enables the Vamana graph for lower-latency ANN at moderate scale.
+Indexed vectors must have a consistent dimension that is a multiple of 8; the type accepts up to 16,000 coordinates. The example uses eight-dimensional vectors so it is valid for indexing. Use `turbovec.vec_cosine_ops` with `<=>` and `turbovec.vec_ip_ops` with `<#>`; `<->` and `<+>` also provide exact distance operators.
 
-Use `vec_cosine_ops` with `<=>` or `vec_ip_ops` with `<#>`. `bit_width = 4` is the default and generally favors recall; 2-bit indexes are smaller but need workload-specific recall testing. Three-bit indexes are also supported. `CREATE INDEX CONCURRENTLY` is supported.
+### Choose an Index and Tune Queries
 
-Important tuning controls include `turbovec.probes`, `turbovec.search_k`, `turbovec.oversample`, `turbovec.hi_dim_rerank`, `turbovec.iterative_scan`, and `turbovec.cache_size_mb`. Change one dimension at a time and compare approximate results with an exact baseline.
+- `lists = 0` is the default flat quantized scan. Candidate reranking does not guarantee exact recall for every dataset.
+- `WITH (lists = N)` enables IVF. Train on enough representative rows, choose the cell count for the corpus, and measure recall against an exact baseline; increasing the cell count alone does not ensure faster queries.
+- `bit_width = 4` is the default. Two- and three-bit quantization are also available. `bit_width = 1` uses centered sign binary quantization, supports IVF, and reranks from the heap; it is a different scheme from TurboQuant.
+- `WITH (graph = true)` is deprecated. Prefer flat or IVF for new indexes and consult the upstream migration guide for an existing graph index.
 
-### Filtering and Partitioning
+Indexes and queries can run without preload, but upstream recommends adding the library to `shared_preload_libraries` for its tuning GUCs. Merge it with existing entries and restart PostgreSQL; do not replace other required libraries:
 
-Use PostgreSQL partial indexes for stable filter values, the documented `turbovec.knn(..., allowed)` surface for an explicit candidate allowlist, or iterative scan for normal filtered `ORDER BY ... LIMIT` queries.
-
-Version 1.29 documents native PostgreSQL partitioning for larger-than-single-table datasets. A parent query can use `Merge Append` across per-partition TurboVec indexes:
+```conf
+shared_preload_libraries = 'pg_turbovec'
+```
 
 ```sql
-SELECT id
-FROM partitioned_items
-ORDER BY embedding <=> $1::turbovec.vector
-LIMIT 20;
+SELECT count(*) FROM pg_settings WHERE name LIKE 'turbovec.%';
+SET turbovec.probes = 16;
+SET turbovec.search_k = 64;
 ```
 
-Build, vacuum, and reindex each partition independently. Partition pruning based on a coarse vector quantizer is only a design in 1.29.0, not a shipped feature.
+The settings query must return a nonzero count. A custom dotted parameter accepted by SET is not proof that the extension's GUC registered. Important controls are `turbovec.probes`, `turbovec.search_k`, `turbovec.oversample`, `turbovec.iterative_scan` and `turbovec.cache_size_mb`. Use partial indexes for stable filters or the documented allowlist/iterative-scan paths; compare filtered results with an exact baseline. Native partitions have separate indexes that must each be maintained.
 
-### Version and Integrity Boundaries
+### Upgrade from 1.x to 2.10.3
 
-- The control file installs objects in schema `turbovec`, is not relocatable, and does not require `shared_preload_libraries` or a server restart.
-- Upstream v1.29 targets PostgreSQL 13-18 and labels PostgreSQL 19 support experimental; current Pigsty 1.29.0 packages cover PostgreSQL 14-18 and provide the matching OpenBLAS-linked binary.
-- Upstream 1.28.4 fixes persisted row-count drift that could corrupt the index ID table and adds `turbovec.turbovec_check(regclass)`. An already corrupt index still needs `REINDEX` or drop/recreate recovery.
-- Version 1.29.0 is additive, keeps wire format 7, and does not require reindexing when upgrading from a healthy 1.28.4 index. `ALTER EXTENSION pg_turbovec UPDATE TO '1.29.0'` is sufficient after the new files are installed.
-- Although the 1.29 reloption parser accepts `bit_width = 1`, end-to-end one-bit indexing is not implemented and `CREATE INDEX` intentionally errors. Use `bit_width = 2`, `bit_width = 3`, or `bit_width = 4`.
-- The on-disk ID table still has a documented crash-safety gap after an unclean shutdown. Treat integrity errors as actionable and follow the upstream recovery guidance.
+Schedule a maintenance window and retain the heap vectors plus a verified backup. Install the matching new binaries, update the SQL extension, and restart PostgreSQL so every backend uses the new library:
 
 ```sql
-SELECT *
-FROM turbovec.turbovec_check('items_embedding_flat_idx'::regclass);
-
-REINDEX INDEX CONCURRENTLY items_embedding_flat_idx;
+ALTER EXTENSION pg_turbovec UPDATE TO '2.10.3';
 ```
 
-Only the index owner can run the integrity checker. Alert on `is_corrupt` and rebuild the affected index when the checker or a scan reports corruption; a successful version upgrade does not repair an already damaged index.
+The index format changed from 7 to 8 in 2.0.0. Old indexes cannot be read in place: **rebuild every TurboVec index from the heap before resuming queries**, including every partition's index. In psql, generate and run the rebuild statements:
+
+```sql
+SELECT format('REINDEX INDEX %I.%I;', n.nspname, c.relname)
+FROM pg_class c
+JOIN pg_am a ON a.oid = c.relam
+JOIN pg_namespace n ON n.oid = c.relnamespace
+WHERE a.amname = 'turbovec';
+\gexec
+```
+
+This is ordinary blocking REINDEX. If choosing concurrent rebuilding, issue each command as a separate top-level statement, outside a transaction block or DO function, and plan for old-format scans to fail until the rebuilt index is available. Do not treat the SQL extension update alone as a completed 1.x migration.
+
+The 2.10.2-to-2.10.3 patch preserves format 8 and does not itself require reindexing. Earlier transitions still need the actions in the upstream upgrade matrix. An already corrupted index needs repair even when a patch preserves its format; `turbovec.turbovec_check(regclass)` reports detected corruption and a reason.
+
+### Compatibility and Maintenance
+
+The control file fixes objects in schema `turbovec`, sets `superuser = false`, and is not relocatable. Upstream covers PostgreSQL 13–18 and labels PostgreSQL 19 experimental in this release; current Pigsty packages cover 14–18. Binary replacement, tuning preload and major-format migration have separate restart/rebuild requirements. Version 2.10.3 parallelizes cold-backend code repacking; it does not change existing index bytes. Budget index-build memory, temporary space, WAL and vacuum work from the actual corpus, rather than treating upstream benchmark numbers as guarantees.

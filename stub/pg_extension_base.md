@@ -2,12 +2,15 @@
 
 Sources:
 
-- [Official pg_extension_base README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_base/README.md)
-- [Version 3.4 control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_base/pg_extension_base.control)
-- [SQL API definition](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_base/pg_extension_base--1.6.sql)
-- [pg_lake build and preload guide](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/building-from-source.md)
+- [Official pg_extension_base README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/README.md)
+- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/pg_extension_base.control)
+- [SQL API definition](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/pg_extension_base--1.6.sql)
+- [3.4 to 3.5 worker-state upgrade](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/pg_extension_base--3.4--3.5.sql)
+- [pg_lake build and preload guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/building-from-source.md)
 
 `pg_extension_base` is Snowflake's infrastructure extension for other PostgreSQL extensions. It provides control-file-driven library preloading, database-scoped lifecycle workers, dependency-aware updates, and short-lived attached workers. Application users normally install it as a dependency of `pg_lake`; extension developers use its C and SQL APIs directly.
+
+The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
 
 ### Enable the Infrastructure
 
@@ -65,4 +68,4 @@ The base infrastructure starts the worker after server startup, `CREATE EXTENSIO
 - Lifecycle worker functions run as superuser and outside a transaction. They must start their own transactions, check interrupts, and avoid trusting user-controlled SQL.
 - Worker termination around failed `DROP` operations is best effort; worker code must tolerate the extension briefly disappearing or a stop being reversed.
 - `run_attached` is for bounded work that may commit independently of the caller. It is not a detached job queue for long-running tasks.
-- Version `3.4` changes no user-facing SQL objects relative to `3.3`; its upgrade script is intentionally empty.
+- Version `3.5` adds `failure_count` to `extension_base.list_base_workers()` so worker restart backoff can be observed. Its upgrade drops and recreates that function; review dependent database objects and explicit grants before migration.

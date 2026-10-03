@@ -2,12 +2,15 @@
 
 Sources:
 
-- [Official pg_map README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_map/README.md)
-- [Version 3.4 control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_map/pg_map.control)
-- [Base SQL definition](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_map/pg_map--1.2.sql)
-- [Official extension tests and examples](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_map/tests/pytests/extension_test.py)
+- [Official pg_map README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/README.md)
+- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/pg_map.control)
+- [Base SQL definition](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/pg_map--1.2.sql)
+- [Official extension tests and examples](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/tests/pytests/extension_test.py)
 
 `pg_map` generates strongly typed key/value map domains from PostgreSQL types. A generated map is an array of composite key/value pairs, with type-specific extraction, cardinality, entry, and operator functions. It is used by pg_lake for nested data but can also be used directly.
+
+
+The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
 
 ### Create and Use a Map Type
 
@@ -53,4 +56,4 @@ FROM map_type.entries(
 - A call to `map_type.create` creates PostgreSQL types, functions, and operators. Treat it as schema DDL and run it in migrations rather than per-request code.
 - Generated objects are registered as dependencies of `pg_map`; dropping the extension can remove them and columns that depend on them when `CASCADE` is used.
 - Map values use PostgreSQL composite-array syntax. Duplicate-key and ordering semantics should be tested for the application's chosen construction path rather than assumed from JSON objects.
-- Version `3.4` changes no map SQL API relative to `3.3`.
+- The `3.4` to `3.5` map SQL migration is empty; the generated map API remains unchanged.

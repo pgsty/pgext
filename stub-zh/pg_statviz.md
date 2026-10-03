@@ -2,14 +2,14 @@
 
 来源：
 
-- [pg_statviz v1.2 发行说明](https://github.com/vyruss/pg_statviz/releases/tag/v1.2)
-- [pg_statviz v1.2 README](https://github.com/vyruss/pg_statviz/blob/v1.2/README.md)
-- [pg_statviz v1.2 安装 SQL](https://github.com/vyruss/pg_statviz/blob/v1.2/pg_statviz--1.2.sql)
-- [pg_statviz v1.1 至 v1.2 升级 SQL](https://github.com/vyruss/pg_statviz/blob/v1.2/pg_statviz--1.1--1.2.sql)
-- [pg_statviz v1.2 控制文件](https://github.com/vyruss/pg_statviz/blob/v1.2/pg_statviz.control)
-- [pg_statviz v1.2 元数据](https://github.com/vyruss/pg_statviz/blob/v1.2/META.json)
-- [pg_statviz v1.2 Python 软件包元数据](https://github.com/vyruss/pg_statviz/blob/v1.2/pyproject.toml)
-- [pg_statviz v1.2 AI 服务商实现](https://github.com/vyruss/pg_statviz/blob/v1.2/src/pg_statviz/libs/ai.py)
+- [pg_statviz v1.2.1 发行说明](https://github.com/vyruss/pg_statviz/releases/tag/v1.2.1)
+- [pg_statviz v1.2.1 README](https://github.com/vyruss/pg_statviz/blob/v1.2.1/README.md)
+- [pg_statviz v1.2 安装 SQL](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pg_statviz--1.2.sql)
+- [pg_statviz v1.1 至 v1.2 升级 SQL](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pg_statviz--1.1--1.2.sql)
+- [pg_statviz v1.2 控制文件](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pg_statviz.control)
+- [pg_statviz v1.2 元数据](https://github.com/vyruss/pg_statviz/blob/v1.2.1/META.json)
+- [pg_statviz v1.2.1 Python 软件包元数据](https://github.com/vyruss/pg_statviz/blob/v1.2.1/pyproject.toml)
+- [pg_statviz v1.2.1 AI 服务商实现](https://github.com/vyruss/pg_statviz/blob/v1.2.1/src/pg_statviz/libs/ai.py)
 - [正式 PGXN v1.2.0 分发](https://pgxn.org/dist/pg_statviz/1.2.0/README.html)
 
 `pg_statviz` v1.2（PGXN 分发版本为 1.2.0）由一个纯 SQL 与 PL/pgSQL 的统计快照扩展和一个单独安装的 Python 可视化工具组成。扩展把 PostgreSQL 的累积及动态统计保存在固定的 `pgstatviz` 模式中；工具读取选定时间范围，并生成图表或可选的 AI 辅助 HTML 报告。它要求 PostgreSQL 13 或以上版本，支持到 PostgreSQL 19，不需要 `shared_preload_libraries`，也无需重启。工具要求 Python 3.11 或以上版本。
@@ -85,3 +85,7 @@ pg_statviz analyze \
 ```
 
 使用云服务商时，请求可能包含图表图像和汇总时间序列，以及采集到的 PostgreSQL 版本、主库/备库角色、主机名、相关配置值、确定性检查结果、用户或角色名称和复制标识符。应把这视为一次明确的运维数据导出：审查服务商保留与区域政策，缩小所选时间范围，保护生成的 HTML 与 PNG 文件，并使用获准的出站路径。提示词中的数据封装可以降低提示注入风险，但不提供机密性或授权能力，也不能替代服务商治理。
+
+### 1.2.1 配套工具修复
+
+源码标签 1.2.1 保持 SQL/控制文件版本 1.2，以及 Python 包元数据版本 1.2。与 1.2 相比，唯一的代码变化是本地 Ollama 客户端兼容修复：ollama-python 低于 0.5.0 或无法读取版本元数据时，工具省略 `think` 参数。安装更新后的工具即可解决这个失败；不需要在 1.2 之外再执行 SQL 扩展升级。

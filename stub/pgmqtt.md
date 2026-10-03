@@ -16,8 +16,9 @@ Set logical WAL and preload the worker, then restart PostgreSQL:
 
     wal_level = logical
     shared_preload_libraries = 'pgmqtt'
+    pgmqtt.database = 'postgres'
 
-Create the extension after restart:
+After restart, connect to the database named by pgmqtt.database (postgres by default) and create the extension there. Its worker tables, mappings, and logical slot belong to that configured database; create the mapped application tables there too:
 
     CREATE EXTENSION pgmqtt;
 
@@ -49,7 +50,8 @@ Map captured topic segments and JSON fields to a target table:
     SELECT pgmqtt_add_inbound_mapping(
       'sensor/{site_id}/temperature',
       'sensor_readings',
-      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb
+      '{"site_id":"{site_id}","value":"$.temperature"}'::jsonb,
+      mapping_name => 'temp_readings'
     );
 
 Inbound mappings support insert and documented upsert/delete modes with options such as target_schema, conflict_columns, mapping_name, and template_type. Grant the worker role only the required table privileges and validate payload types and constraints.

@@ -1,74 +1,60 @@
-
-
-
 ## Usage
 
-> [lolor: Logical-replication-friendly replacement for PostgreSQL large objects](https://github.com/pgEdge/lolor)
+Sources:
 
-Makes PostgreSQL large objects compatible with logical replication by storing them in non-catalog tables.
+- [v1.2.2 README](https://github.com/pgEdge/lolor/blob/v1.2.2/README.md)
+- [Control file](https://github.com/pgEdge/lolor/blob/v1.2.2/lolor.control)
+- [Version 1.2.2 migration](https://github.com/pgEdge/lolor/blob/v1.2.2/lolor--1.2.1--1.2.2.sql)
+- [Usage reference](https://github.com/pgEdge/lolor/blob/v1.2.2/docs/using_lolor.md)
+- [Release notes](https://github.com/pgEdge/lolor/blob/v1.2.2/docs/lolor_release_notes.md)
+`lolor` 1.2.2 stores large-object chunks and metadata in ordinary tables so logical replication can include them. Enabling it replaces the database's native large-object routines; it is a database-wide behavior change, not an independent object store.
 
-### Enabling
+### Configure and Enable
+
+Assign each writing node a distinct nonzero `lolor.node` before creating large objects. Upstream documents values from 1 through 2^28. Configure the server's parameter and create the extension in each participating database:
+
+```conf
+lolor.node = 1
+```
 
 ```sql
 CREATE EXTENSION lolor;
-```
-
-Configure the node identifier in `postgresql.conf`:
-
-```ini
-lolor.node = 1  -- unique node ID (1 to 2^28)
-```
-
-Optionally adjust the search path:
-
-```sql
 SET search_path = lolor, "$user", public, pg_catalog;
 ```
 
-### Large Object Operations
+The control file fixes schema `lolor`, declares trusted installation and disallows relocation. The upstream README requires PostgreSQL 16 or newer; the current Pigsty pgEdge bundle has separately tested builds for 15–18. That packaging result does not establish support for arbitrary stock PostgreSQL 15 installations.
 
-Once installed, the standard `lo_*` functions are redirected to use lolor's tables:
+### Large Object Workflow
 
 ```sql
--- Create a large object
-SELECT lo_create(0);
-
--- Import a file into a large object
-SELECT lo_import('/path/to/file.bin');
-
--- Export a large object to a file
-SELECT lo_export(oid, '/path/to/output.bin');
-
--- Open, read, write, seek, close
-SELECT lo_open(oid, x'40000'::int);  -- INV_WRITE
-SELECT lowrite(fd, 'data'::bytea);
-SELECT loread(fd, 1024);
-SELECT lo_close(fd);
-
--- Delete a large object
-SELECT lo_unlink(oid);
+WITH created AS (
+  SELECT lo_from_bytea(0, convert_to('example data', 'UTF8')) AS oid
+)
+SELECT oid, convert_from(lo_get(oid), 'UTF8') AS contents FROM created;
 ```
 
-### Replication Setup
+Standard calls such as `lo_create()`, `lo_get()`, `lo_put()` and `lo_unlink()` use the replacement routines. Descriptor-based access through `lo_open()`, `loread()`, `lowrite()` and `lo_close()` must stay within the same transaction. File import/export operates on server-side paths and remains subject to the relevant function and filesystem privileges.
 
-Add lolor tables to your replication set:
+The extension uses `lolor.pg_largeobject` and `lolor.pg_largeobject_metadata`. Existing catalog routines are retained with renamed originals so disabling or removing the extension can restore the native function names.
+
+### Replication
+
+With a configured Spock replication set, include both tables:
 
 ```sql
--- For spock/pgedge replication
 SELECT spock.repset_add_table('default', 'lolor.pg_largeobject');
 SELECT spock.repset_add_table('default', 'lolor.pg_largeobject_metadata');
 ```
 
-### Internal Tables
+Install compatible versions and coordinate node identifiers and object ownership on every node. Creating the extension alone does not create a logical-replication topology.
 
-The extension manages large objects in:
+### Upgrade and Boundaries
 
-- `lolor.pg_largeobject` - stores object data chunks
-- `lolor.pg_largeobject_metadata` - stores object metadata
+Version 1.2.2 repairs extension and major-version upgrade behavior and adds `lolor.disable()`, `lolor.enable()` and `lolor.is_enabled()`. Update lolor **before** running pg_upgrade; the fix does not retroactively repair a major upgrade already attempted with older extension files:
 
-### Limitations
+```sql
+ALTER EXTENSION lolor UPDATE TO '1.2.2';
+SELECT lolor.is_enabled();
+```
 
-- Native PostgreSQL large object functionality cannot be used while lolor is active
-- Migration of existing native large objects to lolor is not supported
-- `ALTER LARGE OBJECT`, `GRANT ON LARGE OBJECT`, `COMMENT ON LARGE OBJECT`, and `REVOKE ON LARGE OBJECT` are not supported
-- Requires PostgreSQL 16 or newer
+Disabling changes which native function names are active; it does not migrate stored large objects. Native large-object migration is not provided. Native large-object functionality and lolor storage cannot be used interchangeably while lolor is enabled. Upstream excludes ALTER LARGE OBJECT, GRANT ON LARGE OBJECT, COMMENT ON LARGE OBJECT and REVOKE ON LARGE OBJECT. Plan backup, restore and replication for both ordinary tables.

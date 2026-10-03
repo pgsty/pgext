@@ -2,12 +2,14 @@
 
 Sources:
 
-- [Official pg_lake architecture overview](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/README.md#architecture)
-- [Version 3.4 control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_engine/pg_lake_engine.control)
-- [Base SQL objects](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_engine/pg_lake_engine--3.0.sql)
-- [Version 3.4 cleanup-queue change](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_engine/pg_lake_engine--3.3--3.4.sql)
+- [Official pg_lake architecture overview](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md#architecture)
+- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine.control)
+- [Base SQL objects](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.0.sql)
+- [3.5 cleanup retry-state migration](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.4--3.5.sql)
 
 `pg_lake_engine` is the shared execution layer used by the pg_lake table, copy, and Iceberg extensions. It rewrites eligible PostgreSQL work for `pgduck_server`, maps PostgreSQL and DuckDB values, and tracks remote files that must be removed after aborts or table changes. It is an internal dependency rather than a standalone analytics interface.
+
+The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
 
 ### Deployment Boundary
 
@@ -43,5 +45,5 @@ Use `to_postgres()` only when an expression cannot or should not be pushed down;
 
 - The `__lake__internal__nsp__` functions are planner/deparser placeholders and are not a supported direct SQL API.
 - Do not manually update or delete queue rows. Cleanup functions need the extension's object-store credentials and privilege roles and should be invoked only as documented by operational tooling.
-- Version `3.4` adds `resolve_metadata` to the deletion queue so Iceberg metadata can be expanded into exact referenced files during `VACUUM`, moving object-store traversal off the `DROP` path.
+- Version `3.5` adds `last_attempt_at` to `lake_engine.deletion_queue`. Cleanup retries are spaced by `pg_lake_engine.vacuum_file_remove_retry_interval`; `pg_lake_engine.vacuum_file_remove_max_retries` limits attempts instead of counting unrelated VACUUM passes.
 - Roles are cluster-wide objects and can outlive an extension instance in one database; review memberships separately when removing pg_lake.

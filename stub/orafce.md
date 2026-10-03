@@ -1,114 +1,35 @@
-
-
-
 ## Usage
 
-> [orafce: Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS](https://github.com/orafce/orafce)
+Sources:
 
-### Date Functions
+- [README.asciidoc](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/README.asciidoc)
+- [orafce.control](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/orafce.control)
+- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/orafce--4.16.sql)
+- [4.16.12 release notes](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_12)
+- [File-access implementation](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/file.c)
 
-```sql
-SELECT add_months(date '2005-05-31', 1);        -- 2005-06-30
-SELECT last_day(date '2005-05-24');              -- 2005-05-31
-SELECT next_day(date '2005-05-24', 'monday');    -- 2005-05-30
-SELECT months_between(date '1995-02-02', date '1995-01-01'); -- 1.032...
-SELECT trunc(date '2005-07-12', 'iw');           -- 2005-07-11
-SELECT round(date '2005-07-12', 'yyyy');         -- 2006-01-01
-```
+`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.16.12 still uses control and SQL extension version 4.16; the two numbers describe different layers.
 
-### Oracle DATE Data Type
+### Core Workflow
 
 ```sql
-SET search_path TO oracle, "$user", public, pg_catalog;
-CREATE TABLE t (col1 date);
-INSERT INTO t VALUES('2014-06-24 12:12:11'::date);  -- includes time component
-```
-
-### String Functions (NVL, DECODE, etc.)
-
-```sql
-SELECT nvl('A', 'B');            -- A
-SELECT nvl(NULL, 'B');           -- B
-SELECT decode(1, 1, 'one', 2, 'two', 'other');  -- one
-SELECT lnnvl(true);              -- false
-SELECT nanvl(0.0/0.0, 999);     -- 999
-```
-
-### DUAL Table
-
-```sql
-SELECT * FROM dual;
-```
-
-### Package DBMS_OUTPUT
-
-```sql
+CREATE EXTENSION orafce;
+SELECT oracle.add_months(date '2026-01-31', 1);
+SELECT oracle.nvl(NULL::text, 'fallback');
+SELECT oracle.decode(1, 1, 'one', 2, 'two', 'other');
 SELECT dbms_output.enable();
 SELECT dbms_output.put_line('Hello');
-SELECT dbms_output.get_line(line, status);  -- retrieves output
+SELECT * FROM dbms_output.get_line();
 ```
 
-### Package DBMS_PIPE
+### Types and Packages
 
-```sql
-SELECT dbms_pipe.create_pipe('my_pipe');
-SELECT dbms_pipe.pack_message('message text');
-SELECT dbms_pipe.send_message('my_pipe');
--- In another session:
-SELECT dbms_pipe.receive_message('my_pipe');
-SELECT dbms_pipe.unpack_message_text();
-```
+Use `oracle.date` when an Oracle-style date must retain the time of day. Date functions include `oracle.add_months`, `oracle.last_day`, `oracle.next_day`, `oracle.months_between`, rounding and truncation. Qualify `oracle.decode`, `oracle.greatest` and `oracle.least` explicitly because PostgreSQL parser handling can otherwise select built-in semantics.
 
-### Package DBMS_ALERT
+`dbms_output` manages buffered output; `dbms_pipe` and `dbms_alert` support session communication. `dbms_sql` exposes dynamic cursors and typed column retrieval. `dbms_utility`, `dbms_assert`, `plvstr`, `plvchr` and `plvsubst` supply diagnostic, validation and string helpers. These compatibility functions do not turn PostgreSQL into Oracle or provide an Oracle procedural-language runtime.
 
-```sql
-CALL dbms_alert.register('my_alert');
--- In another session:
-CALL dbms_alert.signal('my_alert', 'Alert message');
--- Back in first session:
-CALL dbms_alert.waitone('my_alert', name, message, status, 60);
-```
+### File Access and 4.16.12 Changes
 
-### Package DBMS_UTILITY
+`utl_file` accesses server-side files within administrator-configured allowed directories; restrict grants and file-system permissions. The implementation rejects parent-directory references that remain after path canonicalization. Avoid parent references in file paths. The 4.16.12 release specifically fixes possible crashes in `dbms_sql`.
 
-```sql
-SELECT dbms_utility.format_call_stack();
-```
-
-### Package UTL_FILE
-
-```sql
-CALL utl_file.fopen('/tmp', 'test.txt', 'w');
-CALL utl_file.put_line(f, 'Hello World');
-CALL utl_file.fclose(f);
-```
-
-### Package PLVstr / PLVchr
-
-```sql
-SELECT plvstr.left('Hello World', 5);     -- Hello
-SELECT plvstr.right('Hello World', 5);    -- World
-SELECT plvstr.rvrs('Hello');              -- olleH
-SELECT plvchr.nth('Hello', 3);            -- l
-SELECT plvchr.first('Hello');             -- H
-SELECT plvchr.last('Hello');              -- o
-```
-
-### Package PLVsubst
-
-```sql
-SELECT plvsubst.string('My name is %s %s.', ARRAY['Pavel','Stehule']);
--- My name is Pavel Stehule.
-```
-
-### DBMS_ASSERT (SQL Injection Protection)
-
-```sql
-SELECT dbms_assert.enquote_literal('some value');
-SELECT dbms_assert.schema_name('public');
-SELECT dbms_assert.object_name('my_table');
-```
-
-### VARCHAR2 and NVARCHAR2 Types
-
-The extension provides Oracle-compatible `varchar2` and `nvarchar2` data types that enforce the declared length in bytes (varchar2) or characters (nvarchar2).
+Installation requires a superuser and creates fixed schemas; no preload is required. Follow the upstream configuration guidance before altering `search_path`. Since the SQL version remains 4.16, an installed 4.16 extension need not acquire a new SQL version merely because its binary distribution was patched. Reconnect as required to use the updated library and verify behavior against the exact installed distribution.

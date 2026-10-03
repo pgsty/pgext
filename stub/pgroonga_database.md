@@ -24,6 +24,6 @@ Disconnect that connection immediately afterward. In another fresh connection, r
 
 ### Return Value and Boundaries
 
-`pgroonga_database_remove()` returns true on completion and raises an error on failure. It removes the internal files directly; it neither exports them nor rebuilds indexes. Do not use other PGroonga features in the cleanup connection. This is not a routine vacuum, an uninstall command, or an action that can be made safe merely by wrapping the call in a SQL transaction.
+`pgroonga_database_remove()` returns true when it reaches the end of its cleanup loop. If a tablespace ownership check fails, the loop stops and the function can still return true; this result alone does not prove that every location was cleaned. Other failures can raise errors. It removes the internal files directly; it neither exports them nor rebuilds indexes. Do not use other PGroonga features in the cleanup connection. This is not a routine vacuum, an uninstall command, or an action that can be made safe merely by wrapping the call in a SQL transaction.
 
 The control file does not mark the extension trusted or relocatable. The C implementation checks tablespace ownership when traversing locations. Use an administrator who owns the required locations and verify that the cleanup and full reindex completed. The module has no preload requirement; enable it only for the recovery task.

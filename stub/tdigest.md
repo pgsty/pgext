@@ -1,76 +1,32 @@
-
-
-
 ## Usage
 
 Sources:
 
-- [tdigest v1.4.4 README](https://github.com/tvondra/tdigest/blob/v1.4.4/README.md)
-- [v1.4.4 release](https://github.com/tvondra/tdigest/releases/tag/v1.4.4)
-- [Extension control file](https://github.com/tvondra/tdigest/blob/v1.4.4/tdigest.control)
+- [README.md](https://github.com/tvondra/tdigest/blob/c0af713163e78fe7d7717559fd4862adcb8162d7/README.md)
+- [tdigest.control](https://github.com/tvondra/tdigest/blob/c0af713163e78fe7d7717559fd4862adcb8162d7/tdigest.control)
+- [Changes](https://github.com/tvondra/tdigest/blob/c0af713163e78fe7d7717559fd4862adcb8162d7/Changes)
+- [tdigest--1.4.6--1.4.7.sql](https://github.com/tvondra/tdigest/blob/c0af713163e78fe7d7717559fd4862adcb8162d7/tdigest--1.4.6--1.4.7.sql)
 
-`tdigest` implements an approximate, mergeable t-digest for online rank statistics such as quantiles, percentile ranks, and trimmed means. It supports parallel aggregation and storing pre-aggregated digests for later rollups.
+`tdigest` 1.4.7 supplies approximate, mergeable rank statistics. Store partial digests and combine them to calculate quantiles without sorting the complete original data.
+
+### Core Workflow
 
 ```sql
 CREATE EXTENSION tdigest;
+SELECT tdigest_percentile(v, 100, ARRAY[0.5, 0.95, 0.99])
+FROM generate_series(1, 1000) AS g(v);
+CREATE TABLE digest_daily AS
+SELECT current_date AS day, tdigest(v, 100) AS digest
+FROM generate_series(1, 1000) AS g(v);
+SELECT tdigest_percentile(digest, 0.95) FROM digest_daily;
 ```
 
-### Direct Aggregation Functions
+### Functions and Accuracy
 
-| Function | Description |
-|---|---|
-| `tdigest_percentile(value, compression, quantile)` | Estimate a single percentile |
-| `tdigest_percentile(value, compression, quantiles[])` | Estimate multiple percentiles |
-| `tdigest_percentile_of(value, compression, value)` | Estimate percentile rank of a value |
-| `tdigest_percentile_of(value, compression, values[])` | Estimate percentile ranks of multiple values |
+`tdigest(value, compression)` builds a digest; `tdigest(digest)` merges stored digests. `tdigest_percentile` estimates quantiles and `tdigest_percentile_of` estimates ranks, with scalar and array forms. `tdigest_add` and `tdigest_union` update or combine digests; `tdigest_count`, `tdigest_sum` and `tdigest_avg` report counts and trimmed aggregates. The low and high arguments to trimmed aggregates are quantile thresholds, not raw value bounds. `tdigest_is_valid` checks serialized values.
 
-### Pre-aggregation Functions
+`compression` must be between 10 and 10000. Higher values trade memory and CPU for generally better accuracy, but do not provide a fixed error bound. Validate estimates against exact results on representative data and use consistent compression when merging states.
 
-| Function | Description |
-|---|---|
-| `tdigest(value, compression)` | Build a t-digest from values |
-| `tdigest_percentile(digest, quantile)` | Estimate percentile from a pre-built digest |
-| `tdigest_percentile(digest, quantiles[])` | Estimate multiple percentiles from a pre-built digest |
+### Upgrade and Boundaries
 
-### Incremental Update Functions
-
-| Function | Description |
-|---|---|
-| `tdigest_add(digest, value)` | Add a single value to an existing digest |
-| `tdigest_add(digest, values[])` | Add an array of values to an existing digest |
-| `tdigest_union(digest, digest)` | Merge two digests |
-
-### Utility Functions
-
-| Function | Description |
-|---|---|
-| `tdigest_count(digest)` | Return the number of items in the digest |
-| `tdigest_sum(digest, low, high)` | Trimmed sum within a value range |
-| `tdigest_avg(digest, low, high)` | Trimmed average within a value range |
-
-### Parameters
-
-- `compression` -- controls accuracy (higher = more accurate, larger digest). Error is roughly `1/compression`.
-
-### Examples
-
-```sql
--- Instead of: SELECT percentile_cont(0.95) WITHIN GROUP (ORDER BY a) FROM t;
-SELECT tdigest_percentile(a, 100, 0.95) FROM t;
-
--- Multiple percentiles
-SELECT tdigest_percentile(a, 100, ARRAY[0.5, 0.95, 0.99]) FROM t;
-
--- Pre-aggregate for fast repeated queries
-CREATE TABLE p AS SELECT a, b, tdigest(c, 100) AS d FROM t GROUP BY a, b;
-
--- Query pre-aggregated data (~1.5ms vs ~7s for exact)
-SELECT a, tdigest_percentile(d, 0.95) FROM p GROUP BY a ORDER BY a;
-```
-
-### Caveats
-
-- Results are estimates. Validate the chosen compression against exact `percentile_cont` results on representative data before setting accuracy targets.
-- Higher compression usually improves tail accuracy but increases state size and CPU cost.
-- Stored digests can be merged across groups and time windows. Version `1.4.4` fixes combining digests created with different parameters, so use that patch level when heterogeneous states may meet.
-- Version `1.4.4` also strengthens text-input parsing and validation and adds PostgreSQL 19 build/test coverage; malformed serialized digests that older builds accepted may now be rejected.
+Version 1.4.7 fixes closely spaced percentile interpolation, large-count inverse ranks, reusable-state finalization and NULL-compression handling, and marks more scalar functions parallel safe. Upgrade the installed library and SQL together with `ALTER EXTENSION tdigest UPDATE TO '1.4.7'`. Review stored digests with `tdigest_is_valid`; older malformed values can be rejected by the stricter validation. Installation requires superuser rights; the extension is relocatable and requires no preload. The release metadata sets PostgreSQL 13 as the minimum, and the changelog records PostgreSQL 19 build fixes without making a broad performance guarantee.

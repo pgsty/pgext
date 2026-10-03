@@ -1,13 +1,19 @@
-
-
-
 ## Usage
 
-Sources: [README v0.4.13](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/README.md), [API reference](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/api-reference.md), [query semantics](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/query-semantics.md), [input types](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/input-types.md), [index parameters](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/index-parameters.md), [index policy](https://github.com/Intelligent-Internet/psql_bm25s/blob/v0.4.13/docs/index-policy.md)
+Sources:
+
+- [README v0.4.14](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/README.md)
+- [API reference](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/api-reference.md)
+- [query semantics](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/query-semantics.md)
+- [input types](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/input-types.md)
+- [index parameters](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/index-parameters.md)
+- [index policy](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/docs/index-policy.md)
+- [Control file](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/psql_bm25s.control)
+- [Upgrade SQL](https://github.com/Intelligent-Internet/Evoke/blob/v0.4.14/sql/psql_bm25s--0.4.11--0.4.14.sql)
 
 `psql_bm25s` is a PostgreSQL-native index access method for BM25-family lexical retrieval. It keeps the BM25 contract explicit through corpus-statistics-driven ranking, exact top-k retrieval APIs, and PostgreSQL storage/maintenance behavior for mutable tables.
 
-Version `0.4.13` is packaged for PostgreSQL 17 and 18 in this catalog.
+Version `0.4.14` is packaged for PostgreSQL 17 and 18 in this catalog.
 
 ### Basic Search
 
@@ -174,3 +180,11 @@ Related global GUCs include:
 - `eventual` and `manual` consistency deliberately trade immediate freshness for lower foreground cost or explicit refresh control.
 - Logical replication follows PostgreSQL behavior: table rows replicate, but index relations do not replicate as logical data objects, so indexes should be created or rebuilt on subscribers.
 - The optional shared-preload cache requires PostgreSQL configuration and a restart because the shared arena is allocated at server start.
+
+### Upgrade to 0.4.14
+
+After installing matching extension files, run the extension update in each database. The versioned migration from 0.4.11 to 0.4.14 declares an unchanged SQL surface; the release does not document a mandatory index rebuild.
+
+```sql
+ALTER EXTENSION psql_bm25s UPDATE TO '0.4.14';
+```

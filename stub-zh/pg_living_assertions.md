@@ -2,11 +2,15 @@
 
 来源：
 
-- [PGXN 0.4.2](https://pgxn.org/dist/pg_living_assertions/0.4.2/)
+- [README.md](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/README.md)
+- [pg_living_assertions.control](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions.control)
+- [pg_living_assertions--0.4.1--0.5.0.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions--0.4.1--0.5.0.sql)
+- [pg_living_assertions--0.5.0--0.5.1.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions--0.5.0--0.5.1.sql)
+- [test/sql/read_only.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/test/sql/read_only.sql)
 
-`pg_living_assertions` 保存 SQL 检查、结果、核验时间和定义替换历史。它是无需预加载的纯 SQL 扩展，本包支持 PostgreSQL 14–18。发行包 0.4.2 保留 SQL 扩展版本 0.4.1。
+`pg_living_assertions` 0.5.1 保存 SQL 检查、结论、核验时间与替换历史。检查按需运行，并非每次写入都求值的 SQL ASSERTION 约束。此扩展为纯 SQL 实现，无需预加载。
 
-### 登记与核验
+### 注册与核验
 
 ```sql
 CREATE EXTENSION pg_living_assertions;
@@ -17,10 +21,16 @@ SELECT living_assertions.run('simple_check');
 SELECT name, state, age FROM living_assertions.status;
 ```
 
-检查必须返回一行，其中包含布尔结果和可选的详情字符串。STABLE 求值器拒绝写入。检查按请求运行，并非在每次数据变化时执行的 SQL ASSERTION 约束。
-
 ### 结果与历史
 
-`living_assertions.run_all()` 执行已登记检查。`living_assertions.state()` 区分成立、失效、未知、检查报错、未检查、已停用和未登记。`living_assertions.stale()` 查找过期结果，并单独标记从未运行的检查。
+每个检查必须返回恰好一行，包含布尔列 `holds` 和可选文本列 `detail`。`living_assertions.run_all()` 执行已注册检查。`living_assertions.state()` 区分成立、失效、未知、报错、未检查、已退役与未注册；`living_assertions.stale()` 区分从未检查与结果过期。`living_assertions.declare_unchanged()` 保存表达式以供后续文本比较，因此作者必须自行规范化输出。定义通过附带原因的替换保留历史，结果与注册表数据包含在数据库备份中。
 
-只有受信任的管理员才应登记或修改检查 SQL，因为后续调用者会以自己的权限执行这些 SQL。定义通过填写原因来替换，不会静默改写；判断成功与否时也应考虑结果年龄。数据库转储包含登记信息及已有结果。
+### 执行与权限
+
+从 0.5.0 起，求值器以只读方式在始终回滚的子事务中执行，并保留检查结论。这修复了旧求值器仅依赖 STABLE、无法阻止易变函数副作用的问题。它不是不可信 SQL 的沙箱：临时序列变更、会话级咨询锁与外部副作用仍可能保留。仅应授权可信管理员注册检查；检查使用后续调用者的权限执行。注册表属于扩展所有者，写入函数默认撤销 `PUBLIC` 执行权限。
+
+### 升级
+
+安装匹配的文件后，执行 `ALTER EXTENSION pg_living_assertions UPDATE TO '0.5.1'`。0.4.1→0.5.0→0.5.1 升级链替换求值函数，不修改注册表结构。最后的补丁在 `run()` 中限定行类型名称，防止类型缓存失效后在断言自身的无关搜索路径中重新解析类型。
+
+全新安装也使用较早的基础 SQL 脚本并依次应用包内升级链，因此必须安装完整且版本匹配的脚本集。

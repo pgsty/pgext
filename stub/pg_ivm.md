@@ -2,10 +2,10 @@
 
 Sources:
 
-- [Official v1.15 README](https://github.com/sraoss/pg_ivm/blob/v1.15/README.md)
-- [v1.15 release notes](https://github.com/sraoss/pg_ivm/releases/tag/v1.15)
-- [v1.14 to v1.15 upgrade SQL](https://github.com/sraoss/pg_ivm/blob/v1.15/pg_ivm--1.14--1.15.sql)
-- [pg_ivm_dump_metadata utility](https://github.com/sraoss/pg_ivm/blob/v1.15/scripts/pg_ivm_dump_metadata)
+- [Official v1.16 README](https://github.com/sraoss/pg_ivm/blob/v1.16/README.md)
+- [v1.16 release notes](https://github.com/sraoss/pg_ivm/releases/tag/v1.16)
+- [1.15 to 1.16 upgrade SQL](https://github.com/sraoss/pg_ivm/blob/v1.16/pg_ivm--1.15--1.16.sql)
+- [pg_ivm_dump_metadata utility](https://github.com/sraoss/pg_ivm/blob/v1.16/scripts/pg_ivm_dump_metadata)
 
 `pg_ivm` provides immediate incremental view maintenance for PostgreSQL. An Incrementally Maintainable Materialized View (IMMV) is stored as a table with triggers and metadata in the `pgivm` schema; base-table changes update the IMMV inside the same transaction instead of recomputing the complete query.
 
@@ -21,6 +21,13 @@ shared_preload_libraries = 'pg_ivm'
 
 ```sql
 CREATE EXTENSION pg_ivm;
+
+CREATE TABLE accounts (
+    account_id bigint PRIMARY KEY,
+    branch_id integer NOT NULL,
+    balance numeric NOT NULL
+);
+INSERT INTO accounts VALUES (42, 1, 1000);
 
 SELECT pgivm.create_immv(
     'account_totals',
@@ -59,3 +66,11 @@ The script emits `pgivm.restore_immv()` calls. Restore the table data first, the
 - Creation and refresh take `AccessExclusiveLock`. Upstream warns about consistency risks for creation under `REPEATABLE READ` or `SERIALIZABLE`; use `READ COMMITTED` or refresh afterward.
 - `restore_immv()` fails when the relation is already registered or its table definition does not match the supplied query.
 - Version 1.15 also fixes incorrect maintenance after repeated trigger-driven modifications and a v1.14 outer-join maintenance crash.
+
+### Upgrade to 1.16
+
+Version 1.16 adds PostgreSQL 19 support and fixes a crash when maintaining and dropping an IMMV in one transaction, maintenance involving columns without default equality operators, large OID handling, and maintenance lock-release timing. Install matching files and ensure modifying sessions load the new library, then run:
+
+```sql
+ALTER EXTENSION pg_ivm UPDATE TO '1.16';
+```

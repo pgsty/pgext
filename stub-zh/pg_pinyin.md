@@ -2,13 +2,15 @@
 
 来源：
 
-- [pg_pinyin v0.0.5 README](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/readme.md)
-- [pg_pinyin v0.0.5 control file](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/pg_pinyin.control)
-- [0.0.4到0.0.5升级SQL](https://github.com/aiyou178/pg_pinyin/blob/v0.0.5/pg_pinyin--0.0.4--0.0.5.sql)
+- [pg_pinyin v0.0.8 README](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/readme.md)
+- [pg_pinyin v0.0.8 control file](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/pg_pinyin.control)
+- [0.0.7 到 0.0.8 升级 SQL](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/pg_pinyin--0.0.7--0.0.8.sql)
+- [0.0.8 parallel read-only regression](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/test/pgtap/04_parallel_read_only.sql)
+- [0.0.8 implementation](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/src/lib.rs)
 
 pg_pinyin 对中文文本进行拉丁化，并提供分词器和查询辅助工具，适用于搜索应用。使用 pg_pinyin 可以创建稳定的拼音搜索键、分汉字文本或扩展拼音输入为 pg_search 正则表达式查询。
 
-版本 0.0.5 主要是打包和工具链更新；其升级脚本未对 SQL 系统目录进行更改，因此用户面向的 API 与 0.0.4 保持兼容。
+0.0.8 修复了并行拼音转换、分词器转换及后缀词典查询中的只读 SPI 调用。该版本使用 pgrx 0.19.3，支持 PostgreSQL 14-18 和 PostgreSQL 19 beta4。随版本提供的 0.0.7 到 0.0.8 迁移脚本不修改 SQL 对象，运行时修复位于共享库中。安装新版本扩展文件后，执行 ALTER EXTENSION pg_pinyin UPDATE TO '0.0.8'。Pigsty 包元数据单独维护。
 
 ### 创建扩展
 
@@ -22,9 +24,9 @@ pg_pinyin 对中文文本进行拉丁化，并提供分词器和查询辅助工�
 
     SELECT pinyin_char_romanize('重庆');
     SELECT pinyin_word_romanize('重庆火锅');
-    SELECT pinyin_word_romanize('重庆火锅', ' ');
+    SELECT pinyin_word_romanize('重庆火锅', '_custom');
 
-这两个函数接受一个可选后缀，该后缀插入到每个发出的拼音单元之后。字符模式是每字符确定性的；词模式使用捆绑的词典来解决上下文发音。
+可选的 suffix 参数用于选择自定义词典表，不是输出分隔符。例如，_custom 对应 pinyin.pinyin_mapping_custom 和 pinyin.pinyin_words_custom，其中的条目优先于内置词典。词模式使用词典分词处理上下文读音。修改这些表后，调用 public.pinyin_clear_suffix_cache('_custom') 清理后缀词典缓存。
 
 ### 使用 pg_search 分词器输入
 

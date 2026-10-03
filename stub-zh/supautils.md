@@ -1,9 +1,10 @@
-
-
-
 ## 用法
 
-来源：[README](https://github.com/supabase/supautils/blob/master/README.md)，[主页](https://supabase.github.io/supautils/)，[发行版](https://github.com/supabase/supautils/releases)
+来源：
+
+- [v3.4.4 README](https://github.com/supabase/supautils/blob/v3.4.4/README.md)
+- [v3.4.4 release](https://github.com/supabase/supautils/releases/tag/v3.4.4)
+- [Version restriction implementation](https://github.com/supabase/supautils/blob/v3.4.4/src/extensions.c)
 
 `supautils` 是一个可加载库，允许通过配置把部分原本仅限超级用户的 PostgreSQL 能力安全地开放给非超级用户。上游特别强调：它不会在数据库里创建表、函数或安全标签。
 
@@ -77,11 +78,10 @@ supautils.reserved_roles = 'connector, storage_admin'
 supautils.reserved_memberships = 'pg_read_server_files'
 ```
 
-### 发布说明
+### 版本选择与运行边界
 
-- `v3.2.1` 发布于 2026-04-02，公开说明以维护类改动为主，没有新增用户可见 SQL 接口。
-- `v3.2.0` 新增了缺失 `GRANT` 权限时的提示。
+`supautils.restrict_extension_versions` 控制非超级用户是否可以显式指定版本：`off` 允许；`warn` 忽略指定值，发出警告并选择控制文件默认版本；`error` 拒绝。这同时适用于扩展创建和升级；超级用户及配置的代理超级用户不受约束。不显式指定版本的操作仍可执行，但须通过普通权限检查。
 
-### 注意事项
+集群预加载需要重启；角色级会话预加载对新连接生效。不要为 supautils 本身执行 CREATE EXTENSION。源码发布版 3.4.4 是库更新，没有 SQL 扩展升级步骤。它避免在允许列表中的表上检查策略时获取 ACCESS EXCLUSIVE 锁，并在退出提权区间的每条路径上恢复调用者角色。
 
-这是一个强配置驱动的扩展。编写说明时应优先依据 README 中的 GUC 和行为保证，不要暗示任何上游已明确声明“不会创建”的数据库对象。
+允许的扩展和自定义脚本会使用代理超级用户权限，应把它们作为可信代码审查。带标签的 README 说明 PostgreSQL 18 的视图不支持增强权限提示。扩大授权前，应测试角色切换、事件触发器所有权和保留角色保护。

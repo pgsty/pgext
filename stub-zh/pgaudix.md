@@ -2,34 +2,32 @@
 
 来源：
 
-- [官方上游 README](https://github.com/sipesistemas/pgaudix/blob/95d386c4329e76e78ee67e2478a6660673193960/README.md)
-- [官方扩展控制文件 (pgaudix.control)](https://github.com/sipesistemas/pgaudix/blob/95d386c4329e76e78ee67e2478a6660673193960/pgaudix.control)
-- [官方扩展 SQL (pgaudix--0.1.0--0.2.0.sql)](https://github.com/sipesistemas/pgaudix/blob/95d386c4329e76e78ee67e2478a6660673193960/pgaudix--0.1.0--0.2.0.sql)
+- [README.md](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/README.md)
+- [pgaudix.control](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/pgaudix.control)
+- [pgaudix--1.0.0.sql](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/pgaudix--1.0.0.sql)
 
-`pgaudix` — 一个原生的 PostgreSQL 扩展，用于自动表审计。它将表列镜像到审计表中，并在源表结构发生变化时自动保持同步。在实现相应的安全、审计或访问控制工作流时使用它。请使用上述链接的上游固定版本作为 API 边界，并在目标 PostgreSQL 构建上进行测试。
+`pgaudix` 1.0.0 将普通表的行镜像到审计表，并同步支持的 DDL 变更。此版本明确拒绝分区表、分区和使用继承的表。
 
 ### 核心工作流
 
 ```sql
 CREATE EXTENSION pgaudix;
+CREATE TABLE audit_example (id bigint PRIMARY KEY, amount numeric);
+SELECT pgaudix.enable('audit_example'::regclass);
+INSERT INTO audit_example VALUES (1, 10);
+UPDATE audit_example SET amount = 20 WHERE id = 1;
+SELECT audit_operation, id, amount FROM audit_example_audit ORDER BY audit_id;
+SELECT * FROM pgaudix.status();
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小示例，并在将其集成到应用程序 SQL 中之前验证已安装的版本和返回值。
+### 权限与身份
 
-### 重要对象
+上游要求 PostgreSQL 16 及以上版本。安装需要超级用户，无需预加载。函数不向 `PUBLIC` 开放执行权限。对需要使用 `pgaudix.enable`、`pgaudix.disable` 与 `pgaudix.status` 的表所有者，应分别授予模式使用权和指定函数执行权；审计表读取权限另行授予。
 
-- `pgaudix.audit_trigger()` 是一个扩展函数，返回 `trigger`。
-- `pgaudix.ddl_sync()` 是一个扩展函数，返回 `event_trigger`。
-- `pgaudix.disable(target_table regclass, drop_data boolean DEFAULT false)` 是一个扩展函数，返回 `void`。
-- `pgaudix.drop_cleanup()` 是一个扩展函数，返回 `event_trigger`。
-- `pgaudix.enable(target_table regclass)` 是一个扩展函数，返回 `void`。
-- `pgaudix.status()` 是一个扩展函数，返回 `TABLE`。
-- `pgaudix.truncate_trigger()` 是一个扩展函数，返回 `trigger`。
-- `pgaudix.monitored_tables` 是一个由扩展安装或管理的表。
+`pgaudix.app_user` 与 `pgaudix.app_user_ip` 可在事务内记录应用提供的身份信息。这些值属于应用自行声明的信息，与已认证的数据库角色和客户端地址不同。
 
-### 要求与注意事项
+### 保留与升级
 
-- 控制文件声明默认版本为 `0.2.0`。
-- 控制文件标记该扩展为不可重定位。
-- 控制文件要求超级用户进行安装。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况与固定源代码中的信息一致。
+`pgaudix.disable(table)` 停止审计但保留历史；传入 `drop_data := true` 会删除审计表。删除源列或源表可能删除对应历史；如果需要保留，应先停用审计。更新操作记录新行，清空操作仅记录一次操作而不保留逐行删除内容。扩展不自动实施保留策略。
+
+所核验发布仅包含 1.0.0 安装脚本，没有从 0.2.0 升级的路径。不能假定 `ALTER EXTENSION` 会无损迁移，应先保全已有审计数据并明确规划迁移。恢复扩展依赖及镜像表结构时，需要服务器已具备扩展共享库。未发现明确的上游许可证。

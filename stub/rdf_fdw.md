@@ -1,18 +1,15 @@
-
-
-
 ## Usage
 
 Sources:
 
-- [PGXN rdf_fdw 2.7.0](https://pgxn.org/dist/rdf_fdw/2.7.0/)
-- [rdf_fdw 2.7 README](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/README.md)
-- [rdf_fdw 2.7 changelog](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/CHANGELOG.md)
-- [rdf_fdw 2.7 control file](https://github.com/jimjonesbr/rdf_fdw/blob/v2.7/rdf_fdw.control)
+- [PGXN rdf_fdw 3.0.0](https://pgxn.org/dist/rdf_fdw/3.0.0/)
+- [rdf_fdw 3.0 README](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/README.md)
+- [rdf_fdw 3.0 changelog](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/CHANGELOG.md)
+- [rdf_fdw 3.0 control file](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/rdf_fdw.control)
 
 `rdf_fdw` is a PostgreSQL foreign data wrapper for querying RDF triplestores over SPARQL endpoints. It exposes SPARQL result variables as foreign-table columns, supports pushdown for common SQL clauses, includes a native `rdfnode` type for RDF terms, provides SPARQL 1.1 helper functions, and can perform SPARQL `INSERT`, `UPDATE`, and `DELETE` through writable foreign tables.
 
-v2.6.0 adds Bearer-token authentication through `USER MAPPING`, a `max_response_size` server option to cap HTTP response bodies, BCE date/timestamp cast handling, and many `rdfnode` parser/comparison fixes. v2.7 fixes RDF literal escaping for runs of trailing backslashes so literal content cannot break out into generated SPARQL syntax. It also initializes libcurl once per PostgreSQL backend instead of once per request.
+Distribution 3.0.0 provides SQL extension 3.0. This release repairs RDF comparison, arithmetic and pushdown correctness. `GROUP BY`, `DISTINCT`, `UNION` and unique constraints distinguish RDF term spelling; `sparql.uri()` now returns `rdfnode`, so text assignments need an explicit cast. Some unsafe pushdown cases execute locally.
 
 ### Create the Extension
 
@@ -20,14 +17,14 @@ v2.6.0 adds Bearer-token authentication through `USER MAPPING`, a `max_response_
 CREATE EXTENSION IF NOT EXISTS rdf_fdw;
 
 SELECT rdf_fdw_version();
-SELECT * FROM rdf_fdw_settings();
+SELECT * FROM rdf_fdw_settings;
 ```
 
-To install or update to the exact SQL version:
+Before upgrading from 2.x, save and drop indexes on `rdfnode` columns, and dependent views, materialized views or SQL-body functions that sort, group or deduplicate them. Recreate these objects after the upgrade; `REINDEX` alone is insufficient. Use the appropriate command for a fresh installation or a prepared upgrade:
 
 ```sql
-CREATE EXTENSION rdf_fdw WITH VERSION '2.7';
-ALTER EXTENSION rdf_fdw UPDATE TO '2.7';
+CREATE EXTENSION rdf_fdw WITH VERSION '3.0';
+ALTER EXTENSION rdf_fdw UPDATE TO '3.0';
 ```
 
 ### Register a SPARQL Endpoint
@@ -55,7 +52,7 @@ Useful server options include:
 - `request_timeout`: complete HTTP request timeout.
 - `max_response_size`: maximum response body size in bytes; `0` means unlimited.
 - `readonly`: prevents `INSERT`, `UPDATE`, and `DELETE` before requests reach the endpoint.
-- `request_redirect` and `request_max_redirect`: redirect behavior.
+- `request_max_redirect`: `0` refuses redirects; a positive value enables and limits them. `-1` is rejected. `request_redirect` is deprecated.
 
 Use `max_response_size` for public or untrusted endpoints because `rdf_fdw` loads retrieved RDF data into memory before converting it for PostgreSQL.
 
@@ -147,19 +144,30 @@ SELECT sparql.add_prefix('default', 'xsd',  'http://www.w3.org/2001/XMLSchema#')
 
 ### Data Modification
 
-Writable foreign tables can translate PostgreSQL `INSERT`, `UPDATE`, and `DELETE` into SPARQL UPDATE requests when the foreign table has the required SPARQL update pattern.
+Writable foreign tables translate PostgreSQL `INSERT`, `UPDATE`, and `DELETE` into SPARQL UPDATE requests. The example assumes an administrator-created rdf_write server connected to a writable endpoint you control; keep the public DBpedia server read-only. Every update-pattern variable must map to a non-null `rdfnode` column, and `sparql_update_pattern` is mandatory.
 
 ```sql
-ALTER FOREIGN TABLE dbpedia_films OPTIONS (ADD readonly 'false');
-
-INSERT INTO dbpedia_films(film, name)
-VALUES (
+CREATE FOREIGN TABLE writable_triples (
+  subject rdfnode OPTIONS (variable '?s'),
+  predicate rdfnode OPTIONS (variable '?p'),
+  object rdfnode OPTIONS (variable '?o')
+)
+SERVER rdf_write
+OPTIONS (
+  sparql 'SELECT ?s ?p ?o WHERE { ?s ?p ?o }',
+  sparql_update_pattern '?s ?p ?o .',
+  readonly 'false'
+);
+INSERT INTO writable_triples(subject, predicate, object) VALUES (
   '<http://example.org/film/1>'::rdfnode,
+  '<http://www.w3.org/2000/01/rdf-schema#label>'::rdfnode,
   '"Example Film"@en'::rdfnode
 );
 ```
 
-Use `readonly = true` at the server or table level when an endpoint should never receive writes.
+Use `readonly = true` to disable writes for a server or table. An explicit table setting of `readonly = false` overrides a server setting of `readonly = true`; enforce read-only access at the remote endpoint with its credentials and access controls when writes must be prohibited.
+
+Each remote write is committed immediately by the triplestore. PostgreSQL ROLLBACK does not undo it; plan application-level compensation and do not assume cross-system atomicity.
 
 ### Clone a Foreign Table
 
@@ -190,4 +198,4 @@ The `sparql` schema implements many SPARQL 1.1 functions and aggregates, includi
 - Prefer `rdfnode` columns. Native PostgreSQL typed columns are deprecated for RDF terms and will lose IRI/language/datatype information.
 - Store secrets in `USER MAPPING`; do not put proxy credentials or endpoint tokens into `SERVER` options.
 - Public SPARQL endpoints can be slow or rate-limited. Use `connect_timeout`, `request_timeout`, retries, and local materialization when needed.
-- Upgrade to 2.7 before accepting untrusted literal content in pushed-down filters or writable foreign-table operations; the libcurl lifecycle fix is internal and adds no new SQL configuration.
+- The extension is not relocatable in 3.0 and also creates the fixed `sparql` schema. Review the 3.0 migration requirements before changing existing installations.

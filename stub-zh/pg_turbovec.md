@@ -2,16 +2,15 @@
 
 来源：
 
-- [pg_turbovec v1.29.0 README](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/README.md)
-- [pg_turbovec v1.29.0 变更日志](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/CHANGELOG.md)
-- [pg_turbovec v1.29.0 控制文件](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/pg_turbovec.control)
-- [分区扩展指南](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/docs/PARTITIONED_SCALE.md)
-- [过滤指南](https://codeberg.org/gregburd/pg_turbovec/src/tag/v1.29.0/docs/FILTERING.md)
-- [Pigsty 软件包矩阵](https://pgext.cloud/ext/pg_turbovec)
+- [v2.10.3 README](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/README.md)
+- [v2.10.3 变更日志](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/CHANGELOG.md)
+- [升级矩阵](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/docs/UPGRADING.md)
+- [控制文件](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/pg_turbovec.control)
+- [过滤指南](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/docs/FILTERING.md)
 
-`pg_turbovec` 1.29.0 提供稠密的 `turbovec.vector` 类型和 `turbovec` 最近邻索引访问方法。它将浮点坐标量化为 2、3 或 4 位，并使用堆向量对候选项重新排序。适合存储受限的余弦或内积搜索；应有意识地选择索引种类，因为默认平坦扫描的成本随行数线性增长。
+`pg_turbovec` 2.10.3 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
 
-### 创建与查询向量
+### 创建和查询向量
 
 ```sql
 CREATE EXTENSION pg_turbovec;
@@ -19,83 +18,68 @@ SET search_path = public, turbovec;
 
 CREATE TABLE items (
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  embedding turbovec.vector
+  embedding turbovec.vector CHECK (turbovec.vector_dims(embedding) = 8)
 );
-
-INSERT INTO items (embedding)
-VALUES ('[1,2,3]'), ('[4,5,6]');
-
-SELECT id, embedding <=> '[3,1,2]'::turbovec.vector AS cosine_distance
-FROM items
-ORDER BY embedding <=> '[3,1,2]'::turbovec.vector
-LIMIT 10;
-```
-
-距离操作符包括：`<->` 表示 L2，`<#>` 表示负内积，`<=>` 表示余弦距离，`<+>` 表示 L1。当前索引支持按内积和余弦排序；L2 与 L1 只能执行精确运算。
-
-`turbovec.vector` 类型接受 1–16,000 个坐标。建立索引的向量必须具有固定维度，且维度是 8 的倍数；当列本身是变长维度时，应使用检查约束或应用层校验。
-
-### 选择并构建索引种类
-
-```sql
--- Default flat quantized scan
-CREATE INDEX items_embedding_flat_idx ON items
-USING turbovec (embedding vec_cosine_ops)
+INSERT INTO items (embedding) VALUES
+  ('[1,2,3,4,5,6,7,8]'),
+  ('[2,1,3,5,4,7,6,8]'),
+  ('[8,7,6,5,4,3,2,1]');
+CREATE INDEX items_embedding_idx ON items
+USING turbovec (embedding turbovec.vec_cosine_ops)
 WITH (bit_width = 4);
 
--- Out-of-core IVF alternative
-CREATE INDEX items_embedding_ivf_idx ON items
-USING turbovec (embedding vec_cosine_ops)
-WITH (bit_width = 4, lists = 1024);
-
--- Navigable-graph alternative
-CREATE INDEX items_embedding_graph_idx ON items
-USING turbovec (embedding vec_cosine_ops)
-WITH (bit_width = 4, graph = true);
-
-SET turbovec.probes = 32;
-
-SELECT id
+SELECT id, embedding <=> '[1,2,3,4,5,6,7,8]'::turbovec.vector AS distance
 FROM items
-ORDER BY embedding <=> '[3,1,2]'::turbovec.vector
-LIMIT 10;
+ORDER BY embedding <=> '[1,2,3,4,5,6,7,8]'::turbovec.vector
+LIMIT 3;
 ```
 
-这些 `CREATE INDEX` 语句是可选方案，不表示建议同时保留三种索引。默认平坦种类执行 `O(n * dim)` 量化扫描，经堆重排后可以达到精确召回，但在大行数下并非良好的延迟选择。`WITH (lists = N)` 启用可完全流出内存的 IVF 层；`WITH (graph = true)` 启用 Vamana 图，以便在中等规模下实现更低延迟的 ANN。
+索引中的向量必须具有一致的维度，且维度为 8 的倍数；该类型最多接受 16,000 个坐标。示例使用八维向量，因此能够建立索引。将 `turbovec.vec_cosine_ops` 与 `<=>` 配合使用，将 `turbovec.vec_ip_ops` 与 `<#>` 配合使用；`<->` 和 `<+>` 还提供精确距离运算。
 
-将 `vec_cosine_ops` 与 `<=>` 搭配，或将 `vec_ip_ops` 与 `<#>` 搭配。`bit_width = 4` 是默认值，通常更有利于召回率；2 位索引更小，但需要针对具体工作负载测试召回率。也支持三位索引。支持 `CREATE INDEX CONCURRENTLY`。
+### 选择索引并调优查询
 
-重要的调优控制项包括 `turbovec.probes`、`turbovec.search_k`、`turbovec.oversample`、`turbovec.hi_dim_rerank`、`turbovec.iterative_scan` 和 `turbovec.cache_size_mb`。每次只改变一个维度，并将近似结果与精确基线进行比较。
+- `lists = 0` 是默认的平坦量化扫描；候选项重新排序并不保证任意数据集都达到精确召回率。
+- `WITH (lists = N)` 启用 IVF。应使用足够的代表性数据训练，根据语料选择单元数量，并与精确搜索基线比较召回率；增加单元数量本身不保证查询更快。
+- 默认 `bit_width = 4`，也支持二位、三位量化。`bit_width = 1` 使用经过均值中心化的符号二值量化，支持 IVF，并从堆中重新排序；它与 TurboQuant 是不同的方案。
+- `WITH (graph = true)` 已弃用。新索引优先选择平坦或 IVF；已有图索引应查阅上游迁移指南。
 
-### 过滤与分区
+无需预加载也能建立索引和查询，但上游建议将库加入 `shared_preload_libraries`，使调优 GUC 正确注册。应与已有条目合并并重启 PostgreSQL，不要替换其他必需的库：
 
-对于稳定的过滤值，使用 PostgreSQL 部分索引；对于显式候选允许列表，使用文档所述的 `turbovec.knn(..., allowed)` 接口；对于普通的带过滤条件 `ORDER BY ... LIMIT` 查询，则使用迭代扫描。
-
-版本 1.29 记录了如何使用原生 PostgreSQL 分区来处理超出单表规模的数据集。父表查询可在各分区的 TurboVec 索引之间使用 `Merge Append`：
+```conf
+shared_preload_libraries = 'pg_turbovec'
+```
 
 ```sql
-SELECT id
-FROM partitioned_items
-ORDER BY embedding <=> $1::turbovec.vector
-LIMIT 20;
+SELECT count(*) FROM pg_settings WHERE name LIKE 'turbovec.%';
+SET turbovec.probes = 16;
+SET turbovec.search_k = 64;
 ```
 
-应分别为每个分区执行构建、vacuum 和 reindex。基于粗粒度向量量化器的分区裁剪在 1.29.0 中仅是设计方案，并非已经交付的功能。
+设置查询必须返回非零数量；SET 接受带点号的占位参数，并不证明扩展的 GUC 已注册。重要参数包括 `turbovec.probes`、`turbovec.search_k`、`turbovec.oversample`、`turbovec.iterative_scan` 和 `turbovec.cache_size_mb`。稳定的过滤条件可使用部分索引，也可使用文档所述的允许列表或迭代扫描路径；应将过滤结果与精确基线比较。原生分区的索引需要分别维护。
 
-### 版本与完整性边界
+### 从 1.x 升级到 2.10.3
 
-- 控制文件将对象安装到模式 `turbovec`，不可重定位，且不要求 `shared_preload_libraries` 或重启服务器。
-- 上游 v1.29 面向 PostgreSQL 13-18，并将 PostgreSQL 19 支持标记为实验性；当前 Pigsty 1.29.0 软件包覆盖 PostgreSQL 14-18，并提供匹配的 OpenBLAS 链接二进制文件。
-- 上游 1.28.4 修复了持久化行数漂移问题，该问题可能破坏索引 ID 表；同时新增 `turbovec.turbovec_check(regclass)`。已经损坏的索引仍须通过 `REINDEX` 或删除后重建来恢复。
-- 版本 1.29.0 是增量更新，保持 wire format 7；从健康的 1.28.4 索引升级时不要求重建。安装新文件后，执行 `ALTER EXTENSION pg_turbovec UPDATE TO '1.29.0'` 即可。
-- 虽然 1.29 的 reloption 解析器接受 `bit_width = 1`，但端到端一位索引尚未实现，`CREATE INDEX` 会主动报错。请使用 `bit_width = 2`、`bit_width = 3` 或 `bit_width = 4`。
-- 磁盘上的 ID 表在非正常关机后仍存在有文档记录的崩溃安全缺口。应认真处理完整性错误，并遵循上游恢复指南。
+安排维护窗口，保留堆中的向量以及经过验证的备份。安装匹配的新二进制文件、更新 SQL 扩展，然后重启 PostgreSQL，确保所有后端使用新库：
 
 ```sql
-SELECT *
-FROM turbovec.turbovec_check('items_embedding_flat_idx'::regclass);
-
-REINDEX INDEX CONCURRENTLY items_embedding_flat_idx;
+ALTER EXTENSION pg_turbovec UPDATE TO '2.10.3';
 ```
 
-只有索引所有者可以运行完整性检查器。应针对 `is_corrupt` 告警；当检查器或扫描报告损坏时，重建受影响的索引。成功升级版本不会修复已经损坏的索引。
+2.0.0 将索引格式从 7 改为 8。旧索引无法原地读取：**恢复查询前，必须从堆数据重建每一个 TurboVec 索引**，包括每个分区上的索引。在 psql 中生成并执行重建语句：
+
+```sql
+SELECT format('REINDEX INDEX %I.%I;', n.nspname, c.relname)
+FROM pg_class c
+JOIN pg_am a ON a.oid = c.relam
+JOIN pg_namespace n ON n.oid = c.relnamespace
+WHERE a.amname = 'turbovec';
+\gexec
+```
+
+这里使用普通的阻塞式 REINDEX。如果选择并发重建，应在事务块和 DO 函数之外逐条执行顶层命令，并考虑新索引可用前旧格式扫描仍会失败。不能把 SQL 扩展更新成功当作完成了 1.x 迁移。
+
+2.10.2 到 2.10.3 的补丁升级保留格式 8，本身不要求重建。更早版本之间的升级仍应遵循上游升级矩阵。即使补丁保持格式兼容，已经损坏的索引仍须修复；`turbovec.turbovec_check(regclass)` 会报告检测到的损坏及原因。
+
+### 兼容性与维护
+
+控制文件将对象固定在 `turbovec` 模式中，设置 `superuser = false`，且不支持重定位。上游覆盖 PostgreSQL 13–18，并在本版本将 PostgreSQL 19 标记为实验性；当前 Pigsty 包覆盖 14–18。替换二进制文件、预加载调优和跨索引格式迁移分别涉及重启与重建要求。2.10.3 并行执行冷后端的编码重排，不改变已有索引字节。应按实际语料规划索引构建内存、临时空间、WAL 和 vacuum 工作量，不要将上游测试数字当作性能保证。

@@ -2,11 +2,13 @@
 
 来源：
 
-- [官方 pg_prob README](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_prob/README.md)
-- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_prob/pg_prob.control)
-- [上游端到端示例](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_prob/example.md)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
+- [官方 pg_prob README](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/README.md)
+- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/pg_prob.control)
+- [上游端到端示例](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/example.md)
 
-`pg_prob` 版本 `0.2.0` 增加了用于 SQL 蒙特卡洛建模的 `pgprob.dist` 概率类型。分布可以构造、通过算术组合、跨行聚合、采样和汇总，无需把包含不确定性的业务数据移出 PostgreSQL。
+`pg_prob` 版本 `0.3.0` 增加了用于 SQL 蒙特卡洛建模的 `pgprob.dist` 概率类型。分布可以构造、通过算术组合、跨行聚合、采样和汇总，无需把包含不确定性的业务数据移出 PostgreSQL。
 
 ### 核心流程
 
@@ -28,3 +30,7 @@ FROM estimate;
 ### 运维说明
 
 蒙特卡洛结果是估计值：样本数量同时决定误差与执行成本，若需可复现运行必须显式提供种子。对 `dist` 的算术会传播建模的不确定性，但模型假设与相关关系仍由调用方负责。扩展固定安装在 `pgprob` 模式中、不可重定位，且不限定超级用户安装。将结果用于财务或运维决策前，应以观测数据验证参数，并在目标工作负载上对大样本量进行基准测试。
+
+### 0.3.0 版本边界
+
+这是采用 Matroid Source Available License 1.0 的无支持概念验证项目，API 可能变化。0.3.0 是新的升级起点：旧 0.2.0 安装需要预演数据迁移／重建，不能直接执行普通 ALTER EXTENSION UPDATE。遵循上游这一破坏性路径前，必须备份数据并检查依赖。

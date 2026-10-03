@@ -2,12 +2,13 @@
 
 Sources:
 
-- [Official v1.13 README](https://github.com/jimjonesbr/oai_fdw/blob/v1.13/README.md)
-- [Official v1.13 control file](https://github.com/jimjonesbr/oai_fdw/blob/v1.13/oai_fdw.control)
-- [Official v1.13 changelog](https://github.com/jimjonesbr/oai_fdw/blob/v1.13/CHANGELOG.md)
+- [CHANGELOG.md](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
+- [Official v1.15 README](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/README.md)
+- [Official v1.15 control file](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/oai_fdw.control)
+- [Official v1.15 changelog](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
 - [Official OAI-PMH specification](https://www.openarchives.org/OAI/openarchivesprotocol.html)
 
-`oai_fdw` 1.13 is a foreign data wrapper for harvesting metadata from OAI-PMH 2.0 repositories over HTTP or HTTPS. It maps OAI record headers and XML content to foreign-table columns, supports automatic table generation for repositories or sets, and can copy harvested records into local tables.
+`oai_fdw` 1.15 is a foreign data wrapper for harvesting metadata from OAI-PMH 2.0 repositories over HTTP or HTTPS. It maps OAI record headers and XML content to foreign-table columns, supports automatic table generation for repositories or sets, and can copy harvested records into local tables.
 
 ### Core Workflow
 
@@ -53,3 +54,7 @@ Version 1.13 moves `proxy_user` and `proxy_password` to the user mapping. Reposi
 Queries perform synchronous remote requests and parse untrusted XML. Latency, pagination, server throttling, redirects, malformed responses, and repository changes affect results. Store credentials in narrowly scoped user mappings, restrict who may create or alter servers, and treat configurable URLs/proxies as outbound-network access with SSRF implications.
 
 OAI-PMH is a harvesting protocol, not a transactional database API. Repeated scans can observe changing pages and deletions; local copies become stale. Record harvest windows and identifiers, make refreshes restartable, and reconcile deleted/status records explicitly. Version 1.13 requires matching libcurl/libxml2 build dependencies and should be tested against each target repository’s metadata format.
+
+### Version 1.15
+
+HTTP 429 and 503 retries respect backoff/Retry-After; from/until validation and timestamp granularity are stricter. Server USAGE and view-owner user mappings are checked. Harvest windows and cancellation handling are corrected, and stalled transfers abort after the documented five-minute low-speed threshold. Install matching files and apply `ALTER EXTENSION oai_fdw UPDATE`. PGXN calls this distribution 1.15.0, while the SQL/control version is 1.15.

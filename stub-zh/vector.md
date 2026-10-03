@@ -2,13 +2,14 @@
 
 来源：
 
-- [pgvector v0.8.6 README](https://github.com/pgvector/pgvector/blob/v0.8.6/README.md)
-- [pgvector v0.8.6 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.6/CHANGELOG.md)
-- [从 v0.8.5 到 v0.8.6 的变更](https://github.com/pgvector/pgvector/compare/v0.8.5...v0.8.6)
+- [vector.control](https://github.com/pgvector/pgvector/blob/f37c13f68b57d2c3472b2214fbcff699d6d34876/vector.control)
+- [pgvector v0.8.7 README](https://github.com/pgvector/pgvector/blob/f37c13f68b57d2c3472b2214fbcff699d6d34876/README.md)
+- [pgvector v0.8.7 CHANGELOG](https://github.com/pgvector/pgvector/blob/f37c13f68b57d2c3472b2214fbcff699d6d34876/CHANGELOG.md)
+- [从 v0.8.5 到 v0.8.7 的变更](https://github.com/pgvector/pgvector/compare/v0.8.5...v0.8.7)
 
 `pgvector` 在 PostgreSQL 内提供向量相似性搜索。扩展名为 `vector`，Pigsty 将其打包为 `pgvector`。它支持精确搜索、使用 HNSW 与 IVFFlat 索引的近似最近邻搜索，以及用于稠密、半精度、二进制和稀疏嵌入的多种向量表示。
 
-版本 `0.8.6` 是一个专注于正确性的修复版本，同时保留了当前 README 中介绍的 0.8.x HNSW 迭代扫描与维护改进。
+版本 `0.8.7` 是一个专注于正确性的修复版本，同时保留了当前 README 中介绍的 0.8.x HNSW 迭代扫描与维护改进。
 
 ### 创建与查询向量
 
@@ -160,3 +161,7 @@ HNSW 索引可能很大，构建成本也可能很高。构建时使用 `mainten
 - 近似索引以精确召回率换取速度。请使用有代表性的数据和查询过滤条件验证召回率。
 - 应在数据加载后构建 IVFFlat。如果数据分布发生显著变化，请重建索引。
 - 在高强度写入和 vacuum 活动场景中使用 HNSW 时，请及时更新 pgvector；`0.8.x` 系列包含重要的 HNSW 维护修复。
+
+### 0.8.7 版本变化
+
+0.8.7 进一步修复 IVFFlat 构建缓冲区溢出及空集合求平均问题。安装新的库与 SQL 文件后执行 `ALTER EXTENSION vector UPDATE`。0.8.7 未声明索引格式迁移或强制重建索引要求。

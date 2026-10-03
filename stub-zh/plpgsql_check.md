@@ -2,14 +2,14 @@
 
 来源：
 
-- [plpgsql_check 2.10.4 README](https://github.com/okbob/plpgsql_check/blob/v2.10.4/README.md)
-- [plpgsql_check 2.10.4 发行版](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.4)
-- [plpgsql_check 2.10.4 控制文件](https://github.com/okbob/plpgsql_check/blob/v2.10.4/plpgsql_check.control)
-- [plpgsql_check 2.10.3 到 2.10.4 的变更](https://github.com/okbob/plpgsql_check/compare/v2.10.3...v2.10.4)
+- [plpgsql_check 2.10.11 README](https://github.com/okbob/plpgsql_check/blob/v2.10.11/README.md)
+- [plpgsql_check 2.10.11 发行版](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.11)
+- [plpgsql_check 2.10.11 控制文件](https://github.com/okbob/plpgsql_check/blob/v2.10.11/plpgsql_check.control)
+- [plpgsql_check 2.10.10 到 2.10.11 的变更](https://github.com/okbob/plpgsql_check/compare/v2.10.10...v2.10.11)
 
 `plpgsql_check` 是面向 PL/pgSQL 的检查器、代码规范检查器、性能分析器、跟踪器和覆盖率工具。它利用 PostgreSQL 自身的解析器和执行器基础设施分析 PL/pgSQL 函数体，因此许多原本只会在运行时出现的问题，可以在开发或 CI 阶段被发现。
 
-软件包发行版 2.10.4 安装的 SQL 扩展版本为 `2.10`。该发行版还会在依赖项输出中报告被用作声明类型的关系。
+软件包发行版 2.10.11 安装的 SQL 扩展版本为 `2.10`。此版本修复误报并整理检查器内部代码。支持 PostgreSQL 14–19。
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -177,4 +177,6 @@ FROM plpgsql_check_function(
 - 主动检查不强制要求预加载，但共享性能分析器存储以及可靠的跟踪器/性能分析器初始化需要预加载。
 - 跟踪器输出可能包含函数参数和局部变量值；不要在敏感的生产工作负载中广泛启用。
 - 检查器无法完美理解所有动态 SQL 字符串。请使用编译指示记录预期的动态对象，以减少误报。
-- 发行版 2.10.2 和 2.10.3 修复了分析复合参数时可能发生的崩溃，以及为带多态参数的函数生成覆盖率或性能分析报告时可能发生的崩溃。版本 2.10.4 保留这些修复并改进了依赖项报告。
+- 发行版 2.10.2 和 2.10.3 修复了分析复合参数时可能发生的崩溃，以及为带多态参数的函数生成覆盖率或性能分析报告时可能发生的崩溃。版本 2.10.11 保留这些先前的修复，并修正了更多误报。
+
+发行包 META 将许可证标为 BSD，但随包 LICENSE 文件使用 MIT 正文；目录以随包许可证文件为准。

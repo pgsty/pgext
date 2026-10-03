@@ -2,10 +2,10 @@
 
 来源：
 
-- [官方v1.15 README](https://github.com/sraoss/pg_ivm/blob/v1.15/README.md)
-- [v1.15 发行说明](https://github.com/sraoss/pg_ivm/releases/tag/v1.15)
-- [从v1.14到v1.15的升级SQL](https://github.com/sraoss/pg_ivm/blob/v1.15/pg_ivm--1.14--1.15.sql)
-- [pg_ivm_dump_metadata 工具](https://github.com/sraoss/pg_ivm/blob/v1.15/scripts/pg_ivm_dump_metadata)
+- [官方 v1.16 README](https://github.com/sraoss/pg_ivm/blob/v1.16/README.md)
+- [v1.16 发行说明](https://github.com/sraoss/pg_ivm/releases/tag/v1.16)
+- [1.15 to 1.16 upgrade SQL](https://github.com/sraoss/pg_ivm/blob/v1.16/pg_ivm--1.15--1.16.sql)
+- [pg_ivm_dump_metadata 工具](https://github.com/sraoss/pg_ivm/blob/v1.16/scripts/pg_ivm_dump_metadata)
 
 `pg_ivm` 为 PostgreSQL 提供了即时增量视图维护功能。增量可维护材料化视图（IMMV）以表的形式存储在 `pgivm` 模式中，带有触发器和元数据；基表的变化会在同一个事务中更新 IMMV 而不是重新计算整个查询。
 
@@ -21,6 +21,13 @@ shared_preload_libraries = 'pg_ivm'
 
 ```sql
 CREATE EXTENSION pg_ivm;
+
+CREATE TABLE accounts (
+    account_id bigint PRIMARY KEY,
+    branch_id integer NOT NULL,
+    balance numeric NOT NULL
+);
+INSERT INTO accounts VALUES (42, 1, 1000);
 
 SELECT pgivm.create_immv(
     'account_totals',
@@ -59,3 +66,11 @@ pg_ivm_dump_metadata -d application > pg_ivm_metadata.sql
 - 创建和刷新需要 `AccessExclusiveLock`。上游警告在 `REPEATABLE READ` 或 `SERIALIZABLE` 下创建的一致性风险；使用 `READ COMMITTED` 或者在之后进行刷新。
 - 当关系已注册或其表定义与提供的查询不符时，`restore_immv()` 会失败。
 - 1.15 版还修复了多次触发驱动修改后的不正确维护和 v1.14 的外连接维护崩溃问题。
+
+### 1.16 升级
+
+1.16 增加 PostgreSQL 19 支持，修复同一事务内维护后删除 IMMV 时的崩溃、无默认等值操作符列导致的维护失败、大 OID 处理以及增量维护锁释放时序问题。安装匹配的新文件并确保相关会话加载新动态库后，执行：
+
+```sql
+ALTER EXTENSION pg_ivm UPDATE TO '1.16';
+```

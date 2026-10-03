@@ -2,11 +2,13 @@
 
 来源：
 
-- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_ledger/pg_ledger.control)
-- [账本 SQL API 与事务检查](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_ledger/src/lib.rs)
-- [账户规则实现](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_ledger/src/rules.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
+- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_ledger/pg_ledger.control)
+- [账本 SQL API 与事务检查](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_ledger/src/lib.rs)
+- [账户规则实现](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_ledger/src/rules.rs)
 
-`pg_ledger` 版本 `0.2.0` 是固定安装在 `pgledger` 模式中的复式记账引擎。它记录不可变的日记账头与明细行，检查事务级借贷平衡，管理币种与会计期间，并可通过附着在应用表上的规则生成分录。
+`pg_ledger` 版本 `0.3.0` 是固定安装在 `pgledger` 模式中的复式记账引擎。它记录不可变的日记账头与明细行，检查事务级借贷平衡，管理币种与会计期间，并可通过附着在应用表上的规则生成分录。
 
 ### 核心流程
 
@@ -31,3 +33,7 @@ SELECT * FROM pgledger.journal_entries();
 ### 运维说明
 
 启用 `pg_ledger.enabled` 时，扩展会在提交前拒绝不平衡的账本活动。`pg_ledger.strict_mode` 控制修改没有规则的账本金额列时是否报错；两者都是超级用户可设置的会话 GUC。日记账表由不可变触发器保护，因此更正应使用 `reverse`，而不是 UPDATE 或 DELETE。control 文件不可重定位且仅限超级用户安装。在把日记账当作会计控制前，应验证规则生成的账户、舍入、保存点、期间关闭、备份恢复及应用授权。
+
+### 0.3.0 版本边界
+
+这是采用 Matroid Source Available License 1.0 的无支持概念验证项目，API 可能变化。0.3.0 是新的升级起点：旧 0.2.0 安装需要预演数据迁移／重建，不能直接执行普通 ALTER EXTENSION UPDATE。遵循上游这一破坏性路径前，必须备份数据并检查依赖。

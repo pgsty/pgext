@@ -2,17 +2,20 @@
 
 来源：
 
-- [官方 pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/README.md)
-- [版本 3.4 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake/pg_lake.control)
-- [官方构建和启动指南](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/building-from-source.md)
-- [官方项目文档索引](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/README.md)
+- [官方 pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md)
+- [版本 3.5 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake/pg_lake.control)
+- [官方构建和启动指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/building-from-source.md)
+- [官方项目文档索引](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/README.md)
+- [pg_lake v3.5.3 发布说明](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.3)
 - [DuckDB Secret 管理器](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
 
 `pg_lake` 是 Snowflake PostgreSQL 湖仓套件的顶层扩展。它会安装查询对象存储文件和创建事务型 Iceberg 表所需的表访问、Iceberg、COPY、查询引擎、扩展基础设施和映射组件。PostgreSQL 扩展负责查询规划与事务协调，独立的本地 `pgduck_server` 进程则使用 DuckDB 执行向量化计算。
 
+pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
+
 ### 启动打包版服务栈
 
-版本 `3.4` 支持 PostgreSQL 16 至 18。PIGSTY 的 RPM 与 DEB 包会安装扩展文件和带版本路径的 `pgduck_server` 二进制，但目前不会安装或自动启动 `systemd` 服务；执行 `CREATE EXTENSION` 也不会拉起 `pgduck_server`。
+版本 `3.5` 支持 PostgreSQL 16 至 18。PIGSTY 的 RPM 与 DEB 包会安装扩展文件和带版本路径的 `pgduck_server` 二进制，但目前不会安装或自动启动 `systemd` 服务；执行 `CREATE EXTENSION` 也不会拉起 `pgduck_server`。
 
 将 `pg_extension_base` 加入 `shared_preload_libraries`，然后重启 PostgreSQL：
 
@@ -137,3 +140,18 @@ SELECT count(*) FROM external_events;
 - 默认内存上限为系统内存的 80%。当 PostgreSQL 与 `pgduck_server` 共用生产主机时，应显式设置 `--memory_limit`。
 - Iceberg 写入会按语句创建 Parquet 文件。应批量插入并定期运行 `VACUUM`，避免产生大量小文件。
 - PostgreSQL 扩展、`pgduck_server`、对象存储数据和 Iceberg 目录共同构成一个部署单元。单独创建扩展并不能证明外部服务可用；备份和升级时也应分别核验这些组件。
+
+### 升级服务栈
+
+部署同一 `3.5.3` 发布的扩展文件与 `pgduck_server`，然后重启已经加载旧动态库的进程。在每个数据库执行迁移，并检查各组件版本：
+
+```sql
+ALTER EXTENSION pg_lake UPDATE TO '3.5';
+SELECT extname, extversion
+FROM pg_extension
+WHERE extname LIKE 'pg_lake%'
+   OR extname IN ('pg_extension_base', 'pg_extension_updater', 'pg_map')
+ORDER BY extname;
+```
+
+`3.5.3` 补丁加强了对象删除时的凭据选择，并避免发布无表名的目录条目。它仍使用 SQL 版本 `3.5`，因此仅凭 SQL 版本不能证明补丁级二进制已部署到位。

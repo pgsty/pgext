@@ -2,10 +2,10 @@
 
 Sources:
 
-- [pgsentinel 1.4.2 README](https://github.com/pgsentinel/pgsentinel/blob/v1.4.2/README.md)
-- [pgsentinel 1.4.2 release](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.4.2)
-- [pgsentinel 1.4.1 to 1.4.2 changes](https://github.com/pgsentinel/pgsentinel/compare/v1.4.1...v1.4.2)
-- [pgsentinel control file](https://github.com/pgsentinel/pgsentinel/blob/v1.4.2/src/pgsentinel.control)
+- [pgsentinel 1.5.1 README](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/README.md)
+- [pgsentinel 1.5.1 release](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.5.1)
+- [1.5.1 upgrade SQL](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel--1.5.0--1.5.1.sql)
+- [pgsentinel control file](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel.control)
 
 `pgsentinel` records active session history by sampling `pg_stat_activity` at regular intervals and linking activity with `pg_stat_statements` query statistics. It keeps recent samples in shared-memory ring buffers managed by a background worker.
 
@@ -85,9 +85,14 @@ ORDER BY 3 DESC;
 | `pgsentinel_pgssh.max_entries` | 1000 | Ring buffer for pg_stat_statements history |
 | `pgsentinel_pgssh.enable` | `false` | Enable pg_stat_statements history |
 
-### Version and Operational Notes
+### Version and Privilege Changes
 
-- Release 1.4.2 fixes query-statistics history on PostgreSQL 17, whose `pg_stat_statements` view renamed block I/O timing columns to `shared_blk_read_time` and `shared_blk_write_time`.
-- The same release adds PostgreSQL 19 build compatibility without changing the SQL views or GUC surface.
-- Ring-buffer history is memory-resident and finite; increase the entry limits only after accounting for shared-memory use, and export samples externally when longer retention is required.
-- Query text can contain literal parameter values. Restrict access to the history views when statements may include sensitive data.
+Version 1.5.0 separates `queryid` from `nested_queryid`: on PostgreSQL 16 and later the former comes from the activity query identifier, while the latter identifies the inner parsed statement; they match on older versions. The upgrade recreates the history view, so inspect dependent views and grants first.
+
+Version 1.5.1 revokes PUBLIC execution of `get_parsedinfo(int)` because it can expose other backends' query text and literals. Apply the SQL upgrade after installing the new files, and grant access only to roles that need it:
+
+```sql
+ALTER EXTENSION pgsentinel UPDATE TO '1.5.1';
+```
+
+History remains in finite shared-memory ring buffers; export it for long-term retention. Sampled query text can contain sensitive values, so review access to history views as well. Upstream CI covers PostgreSQL 10–19.

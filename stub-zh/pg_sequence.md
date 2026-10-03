@@ -2,25 +2,24 @@
 
 来源：
 
-- [官方上游 README](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/README.md)
-- [官方扩展控制文件 (pg_sequence.control)](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_sequence/pg_sequence.control)
-- [官方实现源代码](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_sequence/src/lib.rs)
+- [README.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/README.md)
+- [extensions/pg_sequence/pg_sequence.control](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_sequence/pg_sequence.control)
+- [extensions/pg_sequence/src/definition.rs](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_sequence/src/definition.rs)
+- [extensions/pg_sequence/src/generate.rs](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_sequence/src/generate.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
 
-`pg_sequence` — ERP 文档编号使用格式化、限定和自增的序列。当 SQL 需要这些特殊功能或聚合时使用它。上游明确表示该项目尚未准备好用于生产环境。
+`pg_sequence` 0.3.0 在 `pgsequence` 中保存文档编号规则，支持前后缀、格式、作用域及按年／月重置。
 
-### 核心工作流
+### 核心用法
 
 ```sql
 CREATE EXTENSION pg_sequence;
+SELECT pgsequence.create_sequence('invoice');
+SELECT pgsequence.next_val('invoice', 'customer-a');
+SELECT pgsequence.next_formatted('invoice', 'customer-a');
 ```
 
-在目标数据库中安装扩展，如果有可用的最小上游示例，请运行该示例，并在将其集成到应用程序 SQL 中之前验证已安装的版本和返回值。
+### 运行边界
 
-### 要求与注意事项
-
-- 该目录记录了版本 `0.2.0`。
-- 控制文件将该扩展标记为不可重定位。
-- 控制文件不要求超级用户安装。
-- 上游明确表示该项目尚未准备好用于生产环境。
-- 上游将该项目描述为概念验证项目。
-- 在生产使用之前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况，以匹配固定源代码。
+控制文件不可重定位，不限定超级用户安装，无需预加载。`create_sequence`、`alter_sequence` 和 `drop_sequence` 管理定义，`next_val`、`next_formatted`、`current_val` 与 `preview` 提供计数接口。返回的 `seq_id` 类型支持比较和索引。应限制重置与规则修改权限，并使作用域键符合业务唯一性要求。这是采用 Matroid Source Available License 1.0 的无支持概念验证项目，API 可能变化。0.3.0 是新的升级起点：旧 0.2.0 安装需要预演数据迁移／重建，不能直接执行普通 ALTER EXTENSION UPDATE。遵循上游这一破坏性路径前，必须备份数据并检查依赖。

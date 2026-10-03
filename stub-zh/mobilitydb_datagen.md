@@ -1,18 +1,20 @@
-
-
-
 ## 用法
 
-来源：[repository](https://github.com/MobilityDB/MobilityDB), [synthetic data generator docs](https://docs.mobilitydb.com/MobilityDB/develop/apb.html), [control file](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/mobilitydb_datagen.in.control), [temporal generators](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/temporal/random_temporal.sql), [temporal point generators](https://github.com/MobilityDB/MobilityDB/blob/master/mobilitydb/datagen/geo/random_tpoint.sql)
+来源：
 
-`mobilitydb_datagen` 提供 PL/pgSQL 函数，用来生成合成的 PostgreSQL、PostGIS 和 MobilityDB 值。它主要适用于需要随机 temporal value 或轨迹的回归数据、演示和基准测试 fixture。
+- [1.3.1 数据生成器手册](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/doc/data_generator.xml)
+- [扩展控制文件](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/mobilitydb_datagen.in.control)
+- [时态值生成器](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/temporal/random_temporal.sql)
+- [时态点生成器](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/datagen/geo/random_tpoint.sql)
+
+`mobilitydb_datagen` 1.3.1 提供 PL/pgSQL 函数，用来生成合成的 PostgreSQL、PostGIS 和 MobilityDB 值。它主要适用于需要随机时态值或轨迹的回归数据、演示和基准测试数据集。
 
 ```sql
 -- After the main MobilityDB extension is loaded:
 CREATE EXTENSION mobilitydb_datagen;
 ```
 
-### 生成随机 Temporal 值
+### 生成随机时态值
 
 ```sql
 -- A random temporal float sequence.
@@ -65,5 +67,7 @@ FROM generate_series(1, 1000) AS vehicle_id;
 ### 注意事项
 
 - control file 要求主 `mobilitydb` 扩展已存在；`mobilitydb_datagen` 不是独立扩展。
-- `db/extension.csv` 中的包行列出版本 `1.3.0`、package `mobilitydb`，并支持 PostgreSQL 14 到 18。
+- 生成器随 `mobilitydb` 版本 `1.3.1` 分发。应保持依赖与生成器文件一致；可选类型族是否存在取决于构建开关及软件包可用性。
 - 上游文档有意省略许多生成器函数的详细参数列表，并让用户查看 SQL 源文件确认精确签名。
+
+生成器默认产生随机合成值，并不保证应用数据集可重现。比较多次运行时应设置明确的随机种子，并核对边界、时区、插值方式和 SRID 是否符合工作负载。

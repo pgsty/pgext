@@ -1,318 +1,89 @@
-
-
-
 ## 用法
 
-来源：[仓库 README](https://github.com/MobilityDB/MobilityDB)、[MobilityDB 1.3 手册](https://mobilitydb.github.io/MobilityDB/master/)、[v1.3.0 版本](https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.0)
+来源：
 
-MobilityDB 使用时态和时空数据类型扩展 PostgreSQL 与 PostGIS，使车辆轨迹、传感器读数和随时间变化属性等移动对象数据能够高效存储、索引和查询。
+- [MobilityDB v1.3.1 README](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/README.md)
+- [扩展控制文件](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/sql/mobilitydb.in.control)
+- [1.3 版迁移手册](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/doc/introduction.xml)
+- [时空 API](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/doc/temporal_spatial_p1.xml)
+- [1.3.1 发布与升级说明](https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.1)
+- [1.3.0 至 1.3.1 SQL 迁移](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/sql/mobilitydb--1.3.0--1.3.1.sql)
 
-**关键文档：**
+`mobilitydb` 1.3.1 为 PostgreSQL 与 PostGIS 增加时态值和移动对象轨迹，可存储随时间变化的属性、还原指定时刻的位置，并为时空边界建立索引。该补丁修复了可能导致后端崩溃的二进制输入漏洞，1.3.0 用户应升级。
 
-- [MobilityDB 手册](https://mobilitydb.github.io/MobilityDB/master/)
-- [时态类型](https://mobilitydb.github.io/MobilityDB/master/ch04.html)
-- [时空类型](https://mobilitydb.github.io/MobilityDB/master/ch07.html)
-- [时态姿态](https://mobilitydb.github.io/MobilityDB/master/ch11.html)
-- [时态圆形缓冲区](https://mobilitydb.github.io/MobilityDB/master/ch13.html)
-- [索引](https://mobilitydb.github.io/MobilityDB/master/ch10s02.html)
-- [MobilityDB 教程](https://mobilitydb.com/documentation/)
-- [API 参考](https://mobilitydb.github.io/MobilityDB/master/)
+### 启用扩展
 
-### 入门
+该发布要求 PostgreSQL 14 及以上、PostGIS 3 及以上，并新增 PostgreSQL 19 构建支持。软件包可用性另行记录。上游要求加载匹配的 PostGIS 动态库，并建议采用以下锁配额：
 
-MobilityDB 要求 PostGIS。启用两个扩展：
+```conf
+shared_preload_libraries = 'postgis-3'
+max_locks_per_transaction = 128
+```
+
+将 PostGIS 库加入现有预加载列表，重启 PostgreSQL，再使用获授权的管理角色在目标数据库启用两个扩展：
 
 ```sql
 CREATE EXTENSION postgis;
 CREATE EXTENSION mobilitydb;
 ```
 
-### 时态类型
+### 存储与查询轨迹
 
-MobilityDB 为基础类型提供对应的时态变体：
-
-| 时态类型 | 基础类型 | 说明 |
-|---------------|-----------|-------------|
-| `tbool`       | `boolean` | 随时间变化的布尔值 |
-| `tint`        | `integer` | 随时间变化的整数 |
-| `tfloat`      | `float`   | 随时间变化的浮点数 |
-| `ttext`       | `text`    | 随时间变化的文本 |
-| `tgeometry`   | `geometry` | 随时间变化的任意几何对象 |
-| `tgeography`  | `geography` | 随时间变化的任意地理对象 |
-| `tgeompoint`  | `geometry(Point)` | 随时间变化的几何点 |
-| `tgeogpoint`  | `geography(Point)` | 随时间变化的地理点 |
-| `tnpoint`     | 网络点 | 随时间变化的网络点 |
-| `tcbuffer`    | 圆形缓冲区 | 随时间变化的圆形缓冲区 |
-| `tpose`       | 姿态 | 随时间变化的点位置和方向 |
-| `trgeometry`  | 刚性几何对象 | 随时间变化的刚性几何对象 |
-
-MobilityDB 1.3 增加了 `tgeometry`、`tgeography`、`tcbuffer`、`tpose` 和 `trgeometry`。`tgeometry` 与 `tgeography` 支持离散插值或阶梯插值，不支持任意几何对象的线性插值。1.3 版本说明将 `tcbuffer`、`tpose` 和 `trgeometry` 标记为实验性功能。
-
-### 时态子类型
-
-每种时态类型都可根据值随时间变化的方式表示为不同子类型：
-
-| 子类型 | 说明 | 示例 |
-|---------|-------------|---------|
-| **Instant** | 单个时间戳上的单个值 | `'25.5@2025-01-01 08:00'` |
-| **Sequence** | 一个时间区间上的连续值 | `'[25.5@08:00, 28.1@09:00, 30.0@10:00]'` |
-| **SequenceSet** | 一组互不重叠的序列 | `'{[25.5@08:00, 28.1@09:00], [30.0@11:00, 31.2@12:00]}'` |
-
-序列使用方括号表示包含边界 `[`，使用圆括号表示排除边界 `(`，与 PostgreSQL 范围类型相同。
-
-### 创建时态值
-
-**瞬时值：**
+示例使用投影坐标和完整 UTC 时间戳。应用应选择合适的坐标参考系；地理坐标采用不同的距离语义。
 
 ```sql
-SELECT tfloat '25.5@2025-06-01 08:00:00+00';
-SELECT tgeompoint 'SRID=4326;Point(2.3522 48.8566)@2025-06-01 08:00:00+00';
-```
-
-**序列值（连续插值）：**
-
-```sql
-SELECT tfloat '[20.0@2025-06-01 08:00, 25.5@2025-06-01 09:00, 22.0@2025-06-01 10:00]';
-```
-
-**离散序列（阶梯插值）：**
-
-```sql
-SELECT tint 'Interp=Step;[10@2025-06-01 08:00, 20@2025-06-01 09:00, 15@2025-06-01 10:00]';
-```
-
-**序列集值：**
-
-```sql
-SELECT tfloat '{[20.0@08:00, 25.5@09:00], [22.0@11:00, 28.0@12:00]}';
-```
-
-**从组件构造：**
-
-```sql
-SELECT tgeompoint_inst(ST_Point(2.3522, 48.8566, 4326), '2025-06-01 08:00+00');
-SELECT tgeompoint_seq(ARRAY[
-    tgeompoint_inst(ST_Point(2.3522, 48.8566, 4326), '2025-06-01 08:00+00'),
-    tgeompoint_inst(ST_Point(2.2945, 48.8584, 4326), '2025-06-01 08:30+00'),
-    tgeompoint_inst(ST_Point(2.3364, 48.8606, 4326), '2025-06-01 09:00+00')
-]);
-```
-
-### 时态操作
-
-**提取指定时间的值：**
-
-```sql
-SELECT valueAtTimestamp(temp, '2025-06-01 08:30:00+00')
-FROM (SELECT tfloat '[20.0@08:00, 30.0@09:00]' AS temp) t;
--- Returns 25.0 (linear interpolation)
-```
-
-**限制到某个时间段：**
-
-```sql
-SELECT atTime(trip, tstzspan '[2025-06-01 08:00, 2025-06-01 09:00]')
-FROM trips;
-```
-
-**获取时态值的时间跨度：**
-
-```sql
-SELECT duration(trip), startTimestamp(trip), endTimestamp(trip)
-FROM trips;
-```
-
-**时态比较：**
-
-```sql
--- Time periods when temperature exceeded 30 degrees
-SELECT atValue(temperature, true)
-FROM (SELECT tfloat '[20@08:00, 35@09:00, 25@10:00]' #> 30.0 AS temperature) t;
-```
-
-### 时空操作
-
-**轨迹：将空间路径提取为几何对象：**
-
-```sql
-SELECT ST_AsText(trajectory(trip))
-FROM trips
-WHERE vehicle_id = 42;
-```
-
-**速度计算：**
-
-```sql
--- Speed in units per second (m/s for geographic points)
-SELECT speed(trip)
-FROM trips
-WHERE vehicle_id = 42;
-```
-
-**轨迹长度：**
-
-```sql
-SELECT length(trip)
-FROM trips
-WHERE vehicle_id = 42;
-```
-
-**时空边界框（stbox）：**
-
-```sql
--- Get the space-time bounding box
-SELECT stbox(trip)
-FROM trips;
-
--- Construct an stbox for querying
-SELECT stbox(
-    ST_MakeEnvelope(2.2, 48.8, 2.4, 48.9, 4326),
-    tstzspan '[2025-06-01, 2025-06-02]'
+CREATE TABLE trips (
+    trip_id bigint PRIMARY KEY,
+    trip tgeompoint NOT NULL
 );
-```
 
-**空间限制：区域内的值：**
+INSERT INTO trips VALUES (
+    1,
+    tgeompoint 'SRID=3857;[Point(0 0)@2026-01-01 08:00:00+00,
+                         Point(1000 0)@2026-01-01 09:00:00+00]'
+);
 
-```sql
--- Portions of a trip within a polygon
-SELECT atGeometry(trip, ST_Buffer(ST_Point(2.35, 48.86, 4326), 0.01))
+SELECT valueAtTimestamp(trip, '2026-01-01 08:30:00+00'),
+       ST_AsText(trajectory(trip)),
+       length(trip),
+       speed(trip)
 FROM trips;
-```
 
-**两个时态点之间的距离：**
+CREATE INDEX trips_space_time_idx ON trips USING gist (trip);
 
-```sql
-SELECT distance(t1.trip, t2.trip)
-FROM trips t1, trips t2
-WHERE t1.vehicle_id = 1 AND t2.vehicle_id = 2;
-```
-
-**最近接近距离和时间：**
-
-```sql
-SELECT nearestApproachDistance(t1.trip, t2.trip),
-       nearestApproachInstant(t1.trip, t2.trip)
-FROM trips t1, trips t2
-WHERE t1.vehicle_id = 1 AND t2.vehicle_id = 2;
-```
-
-### 索引
-
-MobilityDB 支持 GiST 和 SP-GiST 索引，用于高效执行时态与时空查询。
-
-**时态类型（时间维度）的 SP-GiST 索引：**
-
-```sql
-CREATE INDEX ON measurements USING spgist(temperature);
-```
-
-**时空类型（空间与时间）的 GiST 索引：**
-
-```sql
-CREATE INDEX ON trips USING gist(trip);
-```
-
-这些索引可加速边界框查询、时态重叠检查和时空相交查询：
-
-```sql
--- Uses GiST index for space-time filtering
-SELECT vehicle_id
+SELECT trip_id
 FROM trips
 WHERE trip && stbox(
-    ST_MakeEnvelope(2.2, 48.8, 2.4, 48.9, 4326),
-    tstzspan '[2025-06-01, 2025-06-02]'
+    ST_MakeEnvelope(-100, -100, 1100, 100, 3857),
+    tstzspan '[2026-01-01 08:00:00+00, 2026-01-01 09:00:00+00]'
 );
 ```
 
-### 示例：车辆跟踪
+边界框操作符可提供索引过滤。若边界重叠不足以满足业务条件，还应补充相应的精确时态或空间谓词。
 
-存储和查询车辆 GPS 轨迹的完整示例：
+### 类型与函数索引
+
+- `tbool`、`tint`、`tfloat`、`ttext`：随时间变化的标量值。
+- `tgeompoint`、`tgeogpoint`：移动的几何或地理点；构建了可选类型族时，`tnpoint` 表示路网点。
+- `tgeometry`、`tgeography`：任意变化的空间值，支持离散或阶梯插值。
+- `tcbuffer`、`tpose`、`trgeometry`：1.3 系列的可选实验性空间类型族，不应假定所有构建都包含它们。
+- 瞬时值、序列和序列集分别表示一个时间点、一个序列或多个互不重叠的序列。线性插值是否可用取决于类型。
+- `valueAtTimestamp`、`startTimestamp`、`endTimestamp`、`duration`：查看时态范围及值。
+- `atTime`、`atGeometry`：按时间域或几何范围裁剪值。
+- `trajectory`、`length`、`speed`：查看空间路径与运动情况。
+- `twAvg`、`tUnion`：时间加权汇总与时态聚合。
+- GiST 与 SP-GiST 操作符类可加速其支持的时间与时空边界查询。
+
+### 升级与安全边界
+
+安装新动态库与 SQL 文件后，在每个数据库执行更新：
 
 ```sql
-CREATE TABLE vehicles (
-    vehicle_id  INT PRIMARY KEY,
-    plate       TEXT,
-    type        TEXT
-);
-
-CREATE TABLE trips (
-    trip_id     BIGSERIAL PRIMARY KEY,
-    vehicle_id  INT REFERENCES vehicles(vehicle_id),
-    trip        tgeompoint,
-    trip_date   DATE
-);
-
-CREATE INDEX ON trips USING gist(trip);
-
--- Insert a trip as a sequence of GPS points
-INSERT INTO trips (vehicle_id, trip, trip_date) VALUES (
-    1,
-    tgeompoint_seq(ARRAY[
-        tgeompoint_inst(ST_Point(2.3522, 48.8566, 4326), '2025-06-01 08:00+00'),
-        tgeompoint_inst(ST_Point(2.2945, 48.8584, 4326), '2025-06-01 08:15+00'),
-        tgeompoint_inst(ST_Point(2.3364, 48.8606, 4326), '2025-06-01 08:30+00'),
-        tgeompoint_inst(ST_Point(2.3488, 48.8534, 4326), '2025-06-01 08:45+00')
-    ]),
-    '2025-06-01'
-);
-
--- Where was vehicle 1 at 08:20?
-SELECT valueAtTimestamp(trip, '2025-06-01 08:20+00')
-FROM trips WHERE vehicle_id = 1 AND trip_date = '2025-06-01';
-
--- What was the average speed?
-SELECT twAvg(speed(trip))
-FROM trips WHERE vehicle_id = 1 AND trip_date = '2025-06-01';
-
--- Total distance traveled
-SELECT length(trip)
-FROM trips WHERE vehicle_id = 1 AND trip_date = '2025-06-01';
-
--- Get the full trajectory as a LineString
-SELECT ST_AsGeoJSON(trajectory(trip))
-FROM trips WHERE vehicle_id = 1 AND trip_date = '2025-06-01';
+ALTER EXTENSION mobilitydb UPDATE TO '1.3.1';
+SELECT extversion FROM pg_extension WHERE extname = 'mobilitydb';
 ```
 
-### 示例：时空相交查询
-
-查找在给定时间窗口内经过特定区域的所有行程：
-
-```sql
--- Define area of interest: a circle around the Eiffel Tower
-WITH area AS (
-    SELECT ST_Buffer(ST_Point(2.2945, 48.8584, 4326)::geography, 500)::geometry AS geom
-)
-SELECT t.vehicle_id,
-       t.trip_date,
-       atGeometry(t.trip, a.geom) AS trip_in_area,
-       length(atGeometry(t.trip, a.geom)) AS distance_in_area
-FROM trips t, area a
-WHERE t.trip && stbox(
-    a.geom,
-    tstzspan '[2025-06-01 07:00+00, 2025-06-01 10:00+00]'
-)
-  AND eIntersects(t.trip, a.geom)
-ORDER BY t.trip_date;
-```
-
-### 聚合函数
-
-MobilityDB 提供时态聚合函数：
-
-```sql
--- Time-weighted average of a temporal float
-SELECT twAvg(temperature) FROM sensor_data WHERE sensor_id = 1;
-
--- Merge multiple temporal points into one
-SELECT tUnion(trip) FROM trips WHERE vehicle_id = 1 AND trip_date = '2025-06-01';
-
--- Centroid of a set of temporal points at each timestamp
-SELECT tCentroid(trip) FROM trips WHERE trip_date = '2025-06-01';
-```
-
-### 注意事项
-
-- 目录中的软件包名和扩展名都是 `mobilitydb`，版本为 `1.3.0`；打包矩阵面向 PostgreSQL 14 到 18，并要求 `postgis`。
-- v1.3.0 增加 PostgreSQL 18 和 PostGIS 3.6 支持，但迁移说明指出二进制格式相较 MobilityDB 1.2 已改变，因此从 1.2 升级需要备份并恢复。
-- 上游源码构建说明展示了在加载 MobilityDB 前设置 `shared_preload_libraries = 'postgis-3'` 和 `max_locks_per_transaction = 128`。对于未使用打包默认值的集群，请验证这些设置。
-- 本地软件包元数据仍带有整理备注 `need another schema`；上游文档未确认必须使用单独模式，因此在该备注解决前应避免给出特定模式的指导。
+- 1.3.1 修复 CVE-2026-102639：畸形 WKB 时态值、集合或跨度输入可能越界读取并导致后端崩溃。仅执行 SQL 迁移不能替换有漏洞的动态库；应重新连接或重启已加载旧二进制的进程。
+- 迁移会移除五个同基础类型间的 `<->` 操作符及其 `set_distance` 函数，因为它们与 `btree_gist` 提供的操作符冲突。更新前应检查依赖对象，必要时使用对应的 `btree_gist` 操作符。
+- 从 1.2 系列升级到 1.3 会改变时态值的二进制格式，必须按照上游流程备份与恢复。1.3.0 至 1.3.1 的原地 SQL 更新不能替代跨主系列迁移。
+- 坐标系、插值、时间空洞、包含边界及单位都会影响结果。应按数据模型验证，不能将所有轨迹都视为连续的地理路径。

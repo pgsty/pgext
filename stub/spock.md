@@ -5,11 +5,11 @@
 
 Sources:
 
-- [Spock v5.0.10 README](https://github.com/pgEdge/spock/blob/v5.0.10/README.md)
-- [Getting started](https://github.com/pgEdge/spock/blob/v5.0.10/docs/getting_started.md)
-- [Configuration reference](https://github.com/pgEdge/spock/blob/v5.0.10/docs/configuring.md)
-- [Limitations](https://github.com/pgEdge/spock/blob/v5.0.10/docs/limitations.md)
-- [Release notes](https://github.com/pgEdge/spock/blob/v5.0.10/docs/spock_release_notes.md)
+- [Spock v5.0.12 README](https://github.com/pgEdge/spock/blob/v5.0.12/README.md)
+- [Getting started](https://github.com/pgEdge/spock/blob/v5.0.12/docs/getting_started.md)
+- [Configuration reference](https://github.com/pgEdge/spock/blob/v5.0.12/docs/configuring.md)
+- [Limitations](https://github.com/pgEdge/spock/blob/v5.0.12/docs/limitations.md)
+- [Release notes](https://github.com/pgEdge/spock/blob/v5.0.12/docs/spock_release_notes.md)
 
 `spock` provides active-active logical replication for PostgreSQL 15 through 18. Each participating database is a Spock node; a multi-master topology is formed by creating directed subscriptions between nodes.
 
@@ -101,6 +101,24 @@ SELECT spock.repset_add_all_tables('default', '{public}');
 - Active-active conflict handling depends on commit timestamps and policy. Test simultaneous inserts and updates, especially nullable unique keys, before production use.
 - Upstream documents platform/build requirements in the README; verify that the PostgreSQL build and Spock package used on every node are compatible.
 
-### Version 5.0.10
+### Version 5.0.12 and Upgrades
 
-`5.0.10` is a patch release in the 5.0 line. Its release notes include fixes for unique indexes containing `NULL`, `NULLS NOT DISTINCT` conflict handling, refreshing cached index metadata after an index is dropped, exception-path memory handling, and numerical version checks used during rolling patch upgrades. Upgrade every node to a compatible patch level and validate subscriptions after the rolling change.
+Spock requires the version-specific PostgreSQL core patches described in the upstream README; matching the major version alone is insufficient. Use a compatible core, such as the matching pgEdge build, on every node. Shared preload changes require a restart. Upstream adds preliminary PostgreSQL 19 support in 5.0.12 but explicitly excludes production support for that beta; current Pigsty pgEdge builds cover 15–18.
+
+PostgreSQL servers carrying the output-plugin security fix require `spock_output` in `output_plugin_libraries`, including on physical standbys that may become publishers. Check that the parameter exists first:
+
+```sql
+SELECT current_setting('output_plugin_libraries', true);
+```
+
+Only when the query returns a non-null value, add the plugin while retaining other required entries:
+
+```conf
+output_plugin_libraries = 'pgoutput, test_decoding, spock_output'
+```
+
+An unknown parameter prevents older servers from starting. The allowlist check also applies when decoding resumes on an existing slot, so plan this setting before a PostgreSQL minor-version upgrade.
+
+The 5.0.12 patch has no schema changes. It retries transient apply failures without advancing the replication origin, repairs replay/exception handling and generated-column replication, and validates received tuple metadata. Permanent schema drift still needs repair; a restarting worker is not evidence that replication is healthy. Review replication lag, exception state and subscriptions after upgrading each node.
+
+Version 5.0.11 introduced `spock.use_native_failover_slots`; changing it requires a restart. Its native-slot behavior depends on PostgreSQL 17 or later, and failover setup needs the dedicated upstream runbook. Do not enable it merely because a cluster has a standby.

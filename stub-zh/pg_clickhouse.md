@@ -2,15 +2,14 @@
 
 来源：
 
-- [pg_clickhouse v0.10.0 README](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/README.md)
-- [pg_clickhouse v0.10.0 参考文档](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/doc/pg_clickhouse.md)
-- [pg_clickhouse v0.10.0 教程](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/doc/tutorial.md)
-- [pg_clickhouse v0.10.0 变更日志](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/CHANGELOG.md)
-- [pg_clickhouse v0.10.0 控制文件](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/pg_clickhouse.control)
-- [pg_clickhouse 0.3 至 0.10 升级 SQL](https://github.com/ClickHouse/pg_clickhouse/blob/v0.10.0/sql/pg_clickhouse--0.3--0.10.sql)
-- [Pigsty pg_clickhouse 软件包矩阵](https://pgext.cloud/ext/pg_clickhouse)
+- [pg_clickhouse v0.11.0 README](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/README.md)
+- [pg_clickhouse v0.11.0 参考文档](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/doc/pg_clickhouse.md)
+- [pg_clickhouse v0.11.0 教程](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/doc/tutorial.md)
+- [pg_clickhouse v0.11.0 变更日志](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/CHANGELOG.md)
+- [pg_clickhouse v0.11.0 控制文件](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/pg_clickhouse.control)
+- [0.10 to 0.11 upgrade SQL](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/sql/pg_clickhouse--0.10--0.11.sql)
 
-`pg_clickhouse` 0.10.0 通过 `clickhouse_fdw` 外部数据封装器把 ClickHouse 表暴露给 PostgreSQL。上游面向 PostgreSQL 13 及以上版本与 ClickHouse 23.3 及以上版本；当前 Pigsty 软件包覆盖 PostgreSQL 14–18。正常使用无需预加载；`session_preload_libraries` 与 `shared_preload_libraries` 只是可选的连接启动优化。
+`pg_clickhouse` 0.11.0 通过 `clickhouse_fdw` 外部数据封装器把 ClickHouse 表暴露给 PostgreSQL。上游面向 PostgreSQL 14 及以上版本与 ClickHouse 23.3 及以上版本；软件包可用性另行记录。正常使用无需预加载；`session_preload_libraries` 与 `shared_preload_libraries` 只是可选的连接启动优化。
 
 ### 连接 PostgreSQL 与 ClickHouse
 
@@ -34,7 +33,7 @@ CREATE SCHEMA taxi;
 IMPORT FOREIGN SCHEMA taxi FROM SERVER taxi_srv INTO taxi;
 ```
 
-必填的 `driver` 选项可取 `binary` 或 `http`。常用服务器选项包括 `host`、`port`、`dbname`、`compression`、`secure` 与 `min_tls_version`；用户映射接受 `user` 和 `password`。0.10 版本已弃用并忽略 `fetch_size`，因为两个驱动现在都流式处理相同的 Native 格式。
+必填的 `driver` 选项可取 `binary` 或 `http`。常用服务器选项包括 `host`、`port`、`dbname`、`compression`、`secure` 与 `min_tls_version`；用户映射接受 `user` 和 `password`。0.11 版本删除了 `fetch_size`，两个驱动均流式处理 Native 格式。
 
 `IMPORT FOREIGN SCHEMA` 支持 `LIMIT TO (...)` 与 `EXCEPT (...)`。导入的混合大小写标识符会保留引号，引用时必须使用匹配的引号。
 
@@ -76,7 +75,7 @@ CALL clickhouse_perform(
 SELECT clickhouse_server_version('taxi_srv');
 ```
 
-`clickhouse_query(server, sql)` 按调用方提供的列定义返回行，而 `clickhouse_perform(server, sql)` 会丢弃结果。两者都能执行任意远端 SQL，因此 `EXECUTE` 已从 `PUBLIC` 撤销，只应按最小范围授权。`clickhouse_raw_query()` 已弃用，应改用这两个接口。
+`clickhouse_query(server, sql)` 按调用方提供的列定义返回行，而 `clickhouse_perform(server, sql)` 会丢弃结果。两者都能执行任意远端 SQL，因此 `EXECUTE` 已从 `PUBLIC` 撤销，只应按最小范围授权。0.11 已删除 `clickhouse_raw_query()`，须迁移到这两个接口。
 
 ### 下推与会话设置
 
@@ -87,12 +86,14 @@ SELECT clickhouse_server_version('taxi_srv');
 ### 升级与运维边界
 
 ```sql
-ALTER EXTENSION pg_clickhouse UPDATE TO '0.10';
+ALTER EXTENSION pg_clickhouse UPDATE TO '0.11';
 SELECT pgch_version();
 ```
 
-扩展 SQL 版本是 `0.10`，而 `pgch_version()` 返回完整的库版本 `0.10.0`。从 SQL 版本 `0.3` 升级的安装，在部署新文件后必须执行 `ALTER EXTENSION`。
+扩展 SQL 版本为 `0.11`，`pgch_version()` 返回库版本 `0.11.0`。安装匹配文件后须执行 `ALTER EXTENSION`，从 SQL 目录中移除废弃函数。
 
 把 `pg_clickhouse` 放入 `session_preload_libraries` 时，新会话会自动加载它；放入 `shared_preload_libraries` 时，更换动态库需要重启 PostgreSQL。与需要注册 postmaster 钩子的扩展不同，这两个设置都不是强制要求。
 
 文档化的写入接口仍不包括轻量级 `UPDATE` 与 `DELETE`。应把直接远端 SQL 视为特权操作，使用贴近生产的数据验证 NULL 与类型相关的下推，并在依赖受版本约束的优化前核对 PostgreSQL 和 ClickHouse 版本。
+
+0.11 默认拒绝来自 ClickHouse 的无效数据库编码文本或 JSON。服务器选项 `encoding_check` 可取 `fail`、`replace`、`remove` 或 `truncate`；后三者会改变返回数据，应按业务语义明确选择。导入类型还改进了大整数、时间间隔以及数组、Tuple、Map、Nested 的映射；已有外部表定义不会自动随推断规则变化，应逐列核对。

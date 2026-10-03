@@ -2,12 +2,14 @@
 
 Sources:
 
-- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/iceberg-tables.md)
-- [Version 3.4 control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_iceberg/pg_lake_iceberg.control)
-- [Iceberg metadata SQL API](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_iceberg/pg_lake_iceberg--3.0.sql)
-- [Version 3.4 catalog FDW SQL](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_iceberg/pg_lake_iceberg--3.3--3.4.sql)
+- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/iceberg-tables.md)
+- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg.control)
+- [Iceberg metadata SQL API](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg--3.0.sql)
+- [Version 3.4 catalog FDW SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg--3.3--3.4.sql)
 
 `pg_lake_iceberg` implements Iceberg metadata, snapshots, manifests, partition specifications, and catalog integration inside PostgreSQL. The familiar `CREATE TABLE ... USING iceberg` syntax is exposed by the dependent `pg_lake_table` component; users normally install both through `pg_lake`.
+
+The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
 
 ### Create and Inspect an Iceberg Table
 
@@ -74,3 +76,5 @@ WITH (catalog = 'my_polaris');
 - External modifications to `iceberg_tables` are blocked by default because changing metadata behind pg_lake can break transaction and query-engine consistency.
 - Iceberg writes should be batched. Each statement can add Parquet files and snapshots; regular `VACUUM` compacts small files and expires data according to table/GUC policy.
 - Iceberg has narrower representations for some PostgreSQL values. The default `out_of_range_values = 'error'` preserves integrity; `clamp` silently changes out-of-range temporal values and replaces some unsupported values with `NULL`.
+
+The `3.4` to `3.5` Iceberg SQL migration is empty, while patch-level catalog and object-deletion fixes require the matching `3.5.3` binaries.

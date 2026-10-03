@@ -1,9 +1,11 @@
-
-
-
 ## Usage
 
-> [plr: load R interpreter and execute R script from within a database](https://github.com/postgres-plr/plr)
+Sources:
+
+- [8.4.8.7 README](https://github.com/postgres-plr/plr/blob/REL8_4_8_7/README.md)
+- [Versioned user guide](https://github.com/postgres-plr/plr/blob/REL8_4_8_7/userguide.md)
+- [Control file](https://github.com/postgres-plr/plr/blob/REL8_4_8_7/plr.control)
+- [Version 8.4.8.7 SQL](https://github.com/postgres-plr/plr/blob/REL8_4_8_7/plr--8.4.8.7.sql)
 
 `plr` enables writing PostgreSQL functions in the R programming language, providing full access to R's statistical and data analysis capabilities.
 
@@ -36,10 +38,10 @@ SELECT sd(ARRAY[1.0, 2.0, 3.0, 4.0, 5.0]);
 
 ### Argument Handling
 
-- Arguments are available as `arg1`, `arg2`, ... or by named parameter
-- NULL arguments become R `NA` values (unless function is `STRICT`)
+- Unnamed arguments are available as `arg1`, `arg2`, ...; an explicitly named parameter replaces its corresponding `argN` variable.
+- Scalar SQL NULL becomes R NULL; null array elements become R `NA`. A `STRICT` function skips calls with a whole NULL argument, not arrays containing null elements.
 - Composite types (rows) are passed as R data.frames
-- Arrays are passed as R vectors
+- One-dimensional arrays become R vectors; two-dimensional arrays become matrices and three-dimensional arrays become R arrays. Higher dimensions are unsupported.
 
 ```sql
 CREATE OR REPLACE FUNCTION r_max(integer, integer) RETURNS integer AS '
@@ -66,22 +68,30 @@ SELECT * FROM test_spi('SELECT oid, typname FROM pg_type LIMIT 5')
   AS t(oid oid, typname name);
 ```
 
-Prepared statements:
+Initialize the type OID variables in the same connection before calling a function that prepares a parameterized query:
 
 ```sql
--- Prepare
-sp <<- pg.spi.prepare('SELECT * FROM pg_type WHERE typname = $1', c(NAMEOID))
--- Execute
-pg.spi.execp(sp, list('text'))
+SELECT load_r_typenames();
+
+CREATE OR REPLACE FUNCTION lookup_type(type_name text)
+RETURNS SETOF record AS $$
+sp <- pg.spi.prepare(
+  'SELECT oid, typname FROM pg_type WHERE typname = $1',
+  c(NAMEOID)
+)
+pg.spi.execp(sp, list(type_name))
+$$ LANGUAGE plr;
+
+SELECT * FROM lookup_type('text') AS t(oid oid, typname name);
 ```
 
 ### Set-Returning Functions
 
-Return a data.frame for set-returning functions:
+Return an R vector for a set of scalar values:
 
 ```sql
 CREATE OR REPLACE FUNCTION get_numbers(n int) RETURNS SETOF integer AS '
-1:arg1
+1:n
 ' LANGUAGE plr;
 
 SELECT * FROM get_numbers(5);
@@ -109,7 +119,7 @@ Persist data across function calls using R's global environment:
 
 ```sql
 CREATE OR REPLACE FUNCTION set_state(key text, val text) RETURNS void AS '
-assign(arg1, arg2, env=.GlobalEnv)
+assign(key, val, env=.GlobalEnv)
 ' LANGUAGE plr;
 ```
 
@@ -124,3 +134,9 @@ SELECT plr_version();        -- PL/R version
 ### Trigger Functions
 
 PL/R supports trigger functions with access to `pg.tg.name`, `pg.tg.relname`, `pg.tg.when`, `pg.tg.level`, `pg.tg.op`, `pg.tg.new`, and `pg.tg.old`.
+
+### Runtime and Privileges
+
+This page follows PL/R 8.4.8.7. PL/R is an untrusted language: creating its functions requires a superuser, and R code runs with the PostgreSQL operating-system user's access to files and processes. Review function bodies and EXECUTE grants accordingly. The R shared library must be available, and upstream requires `R_HOME` in the PostgreSQL server process environment before startup on Unix systems. Adding it only to an interactive client shell does not configure the server.
+
+SQL scalar NULL converts to R NULL, while null elements within an array convert to R NA; declaring a function STRICT prevents calls with null arguments. R global state belongs to a backend process, not to all sessions or to a durable database table. Upstream revokes PUBLIC execution of environment-changing helpers including `plr_set_rhome(text)`; use an administrator-managed runtime rather than exposing these helpers to application roles. Normal usage does not require shared preload.

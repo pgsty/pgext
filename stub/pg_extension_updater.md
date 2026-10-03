@@ -2,13 +2,15 @@
 
 Sources:
 
-- [Official pg_extension_updater README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/README.md)
-- [Version 3.4 control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/pg_extension_updater.control)
-- [Worker registration SQL](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/pg_extension_updater--1.1.sql)
-- [Updater implementation and configuration](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_updater/src/pg_extension_updater.c)
-- [pg_extension_base preload documentation](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_extension_base/README.md)
+- [Official pg_extension_updater README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/README.md)
+- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/pg_extension_updater.control)
+- [Worker registration SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/pg_extension_updater--1.1.sql)
+- [Updater implementation and configuration](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_updater/src/pg_extension_updater.c)
+- [pg_extension_base preload documentation](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/README.md)
 
 `pg_extension_updater` runs `ALTER EXTENSION ... UPDATE` for each extension whose installed version differs from its available default version when the database lifecycle worker starts. It is intended to reduce SQL/binary version mismatches after new extension files are deployed; it does not install missing extensions or replace release testing.
+
+The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
 
 ### Enable Automatic Updates
 
@@ -38,5 +40,5 @@ Creating it in `template1` causes new databases cloned from that template to con
 
 - Automatic migration can execute arbitrary upgrade SQL supplied by every installed extension. Validate packages and upgrade paths before enabling it on production databases.
 - Review extension dependency changes and take application-specific backups independently; a warning does not roll back unrelated successful extension updates.
-- There is no user-facing force-update function or per-extension allowlist in version `3.4`.
-- Version `3.4` changes no updater SQL API relative to `3.3`.
+- There is no user-facing force-update function or per-extension allowlist in version `3.5`.
+- The `3.4` to `3.5` updater migration is empty; automatic updates still depend on reviewed upgrade scripts for each installed extension.

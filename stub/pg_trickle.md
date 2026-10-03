@@ -2,15 +2,16 @@
 
 Sources:
 
-- [Version 0.108.0 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/README.md)
-- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/SQL_REFERENCE.md)
-- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/CONFIGURATION.md)
-- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/GUC_CATALOG.md)
-- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/docs/UPGRADING.md)
-- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/pg_trickle.control)
-- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.0/sql/pg_trickle--0.107.0--0.108.0.sql)
+- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.108.0--0.108.1.sql)
+- [Version 0.108.1 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/README.md)
+- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/SQL_REFERENCE.md)
+- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/CONFIGURATION.md)
+- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/GUC_CATALOG.md)
+- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/UPGRADING.md)
+- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/pg_trickle.control)
+- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.107.0--0.108.0.sql)
 
-`pg_trickle` 0.108.0 maintains stream tables on PostgreSQL 18: ordinary queryable tables derived from a SQL query, refreshed incrementally when supported or recomputed in full. Tables may depend on other stream tables, forming a dependency graph. Same-transaction maintenance is also available.
+`pg_trickle` 0.108.1 maintains stream tables on PostgreSQL 18: ordinary queryable tables derived from a SQL query, refreshed incrementally when supported or recomputed in full. Tables may depend on other stream tables, forming a dependency graph. Same-transaction maintenance is also available.
 
 ### Enable the Extension
 
@@ -65,13 +66,17 @@ Lifecycle functions require explicit execution grants and ownership checks; admi
 
 `pgtrickle.output_delta_consumer_status` reports consumers, while `pgtrickle.validate_output_delta_consumer` checks whether a consumer can resume. `pgtrickle.request_output_delta_resnapshot`, `pgtrickle.begin_output_delta_resnapshot`, and `pgtrickle.ack_output_delta_resnapshot` manage rebuilding a baseline. A resnapshot is fenced by database-instance identity, output-contract digest, and row-identity version. Follow the exact SQL reference signatures and acknowledgement protocol before advancing external delivery.
 
-### Upgrade to 0.108.0
+### Upgrade to 0.108.1
 
 Install the new library and extension files before applying the packaged migration:
 
 ```sql
-ALTER EXTENSION pg_trickle UPDATE TO '0.108.0';
+ALTER EXTENSION pg_trickle UPDATE TO '0.108.1';
 SELECT * FROM pgtrickle.output_delta_consumer_status();
 ```
 
 The upgrade preserves consumers, cursors, batches, and typed payload while adding resnapshot fences. A 0.106.1 installation can traverse the packaged 0.107.0 migration. Validate every consumer before resuming delivery; `INVALIDATED` or `RESNAPSHOT_REQUIRED` requires a new acknowledged baseline. Older releases through 0.105.2 had documented differential-result bugs for certain query shapes; upgrading does not automatically repair previously materialized rows. Use the upgrade guide’s comparison and repair procedure where applicable.
+
+### Version 0.108.1
+
+This patch keeps downstream `IMMEDIATE` tables current after upstream FULL refresh or truncation, recovers missing change buffers, and fixes unintended suspension after source schema changes and scalar-subquery differential refresh. PostgreSQL 18.6 support is added. After installing matching files run `ALTER EXTENSION pg_trickle UPDATE TO '0.108.1'` and verify dependent stream-table results and capture health.

@@ -2,11 +2,14 @@
 
 来源：
 
-- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_streaming/pg_streaming.control)
-- [管道 SQL API 与 worker 初始化](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_streaming/src/lib.rs)
-- [管道定义类型](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_streaming/src/dsl/types.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
+- [extensions/pg_streaming/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_streaming/pgbrew.toml)
+- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_streaming/pg_streaming.control)
+- [管道 SQL API 与 worker 初始化](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_streaming/src/lib.rs)
+- [管道定义类型](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_streaming/src/dsl/types.rs)
 
-`pg_streaming` 版本 `0.2.0` 是声明式流处理引擎，其管道、状态、偏移量、错误与指标都保留在 PostgreSQL 中并可查询。管道把输入连接到处理器链和输出，并由协调、执行与定时后台工作进程运行。
+`pg_streaming` 版本 `0.3.0` 是声明式流处理引擎，其管道、状态、偏移量、错误与指标都保留在 PostgreSQL 中并可查询。管道把输入连接到处理器链和输出，并由协调、执行与定时后台工作进程运行。
 
 ### 核心流程
 
@@ -43,3 +46,9 @@ SELECT pgstreams.stop('active_orders');
 ### 运维说明
 
 固定的 `pgstreams` 模式和后台工作进程注册要求超级用户安装与服务器级规划。加入库或改变 worker 数量需要重启；应为一个协调 worker、配置数量的执行 worker 及一个定时 worker 预留足够的 `max_worker_processes` 容量。管道表达式和连接器定义在高权限数据库服务中执行，因此应限制管道与密钥管理权限。生产使用前，应针对每种连接器测试投递保证、检查点、重试、迟到数据、模式演进和故障恢复。
+
+### 0.3.0 版本边界
+
+这是采用 Matroid Source Available License 1.0 的无支持概念验证项目，API 可能变化。0.3.0 是新的升级起点：旧 0.2.0 安装需要预演数据迁移／重建，不能直接执行普通 ALTER EXTENSION UPDATE。遵循上游这一破坏性路径前，必须备份数据并检查依赖。
+
+新增 `call` 输出可通过配置的 `set_role` 执行受控调用。Modbus TCP、Siemens S7 输入及写入输出会访问外部设备，启用前应限制连接器配置并确认操作授权。

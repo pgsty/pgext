@@ -1,9 +1,13 @@
-
-
-
 ## 用法
 
-> [pgq: PostgreSQL 通用高性能无锁队列](https://github.com/pgq/pgq)
+来源：
+
+- [PgQ 3.5.2 README](https://github.com/pgq/pgq/blob/v3.5.2/README.rst)
+- [控制文件与安装权限](https://github.com/pgq/pgq/blob/v3.5.2/pgq.control)
+- [批次获取 API](https://github.com/pgq/pgq/blob/v3.5.2/functions/pgq.next_batch.sql)
+- [批次事件 API](https://github.com/pgq/pgq/blob/v3.5.2/functions/pgq.get_batch_events.sql)
+- [重试 API](https://github.com/pgq/pgq/blob/v3.5.2/functions/pgq.event_retry.sql)
+- [3.5.2 版发布说明](https://github.com/pgq/pgq/releases/tag/v3.5.2)
 
 PgQ 是一个 PostgreSQL 扩展，提供通用的高性能无锁队列，带有简单的 SQL 函数 API。它使用生产者-消费者模型，基于批次进行事件处理。
 
@@ -21,13 +25,13 @@ CREATE EXTENSION pgq;
 ### 队列管理
 
 ```sql
--- 创建队列
+-- Create a queue
 SELECT pgq.create_queue('myqueue');
 
--- 删除队列
+-- Drop a queue
 SELECT pgq.drop_queue('myqueue');
 
--- 获取队列信息
+-- Get queue info
 SELECT * FROM pgq.get_queue_info();
 SELECT * FROM pgq.get_queue_info('myqueue');
 ```
@@ -35,23 +39,23 @@ SELECT * FROM pgq.get_queue_info('myqueue');
 ### 消费者注册
 
 ```sql
--- 在队列上注册消费者
+-- Register a consumer on a queue
 SELECT pgq.register_consumer('myqueue', 'myconsumer');
 
--- 注销消费者
+-- Unregister a consumer
 SELECT pgq.unregister_consumer('myqueue', 'myconsumer');
 
--- 获取消费者信息
+-- Get consumer info
 SELECT * FROM pgq.get_consumer_info('myqueue');
 ```
 
 ### 生产事件
 
 ```sql
--- 向队列插入事件
+-- Insert an event into a queue
 SELECT pgq.insert_event('myqueue', 'event_type', 'event_data');
 
--- 插入带额外字段的事件
+-- Insert with extra fields
 SELECT pgq.insert_event('myqueue', 'event_type', 'event_data',
                          'extra1', 'extra2', 'extra3', 'extra4');
 ```
@@ -59,32 +63,32 @@ SELECT pgq.insert_event('myqueue', 'event_type', 'event_data',
 ### 消费事件
 
 ```sql
--- 获取下一批事件（返回 batch_id，无新批次时返回 NULL）
+-- Get the next batch of events (returns batch_id or NULL if no new batches)
 SELECT pgq.next_batch('myqueue', 'myconsumer');
 
--- 从批次中获取事件
+-- Get events from the batch
 SELECT * FROM pgq.get_batch_events(:batch_id);
 
--- 重试失败的事件（在指定间隔后重新出现）
+-- Retry a failed event (will reappear after the specified interval)
 SELECT pgq.event_retry(:batch_id, :event_id, :retry_seconds);
 
--- 标记批次完成
+-- Mark batch as done
 SELECT pgq.finish_batch(:batch_id);
 ```
 
 ### 典型消费者循环
 
 ```sql
--- 1. 获取下一批次
+-- 1. Get next batch
 SELECT pgq.next_batch('myqueue', 'myconsumer') AS batch_id;
 
--- 2. 如果 batch_id 不为 NULL，获取事件
+-- 2. If batch_id is not NULL, get events
 SELECT * FROM pgq.get_batch_events(:batch_id);
 
--- 3. 处理事件，重试失败的
+-- 3. Process events, retry failures
 SELECT pgq.event_retry(:batch_id, :event_id, 60);
 
--- 4. 完成批次
+-- 4. Finish the batch
 SELECT pgq.finish_batch(:batch_id);
 ```
 
@@ -107,3 +111,9 @@ PgQ 需要在后台运行心跳守护进程（`pgqd`），用于创建批次边�
 | `pgq.finish_batch(batch_id)` | 标记批次已处理 |
 | `pgq.get_queue_info([name])` | 获取队列统计信息 |
 | `pgq.get_consumer_info(queue)` | 获取消费者统计信息 |
+
+### 版本与访问边界
+
+上游 `3.5.2` 支持 PostgreSQL 10 至 19；3.5.2 新增 PostgreSQL 19 支持，未记载 SQL API 变化。目录当前记录的软件包版本为 `3.5.1`，选择扩展升级目标前须确认已安装文件。控制文件要求由超级用户安装，且不允许迁移模式。API 使用 `pgq` 模式；应逐一检查应用角色的队列管理与消费权限。
+
+只有 `pgq.finish_batch` 成功后，消费者位置才会前进。尽可能让事件处理与确认在同一事务内完成；外部副作用无法加入数据库事务时，应处理重复投递。

@@ -1,9 +1,11 @@
-
-
-
 ## Usage
 
-> [pgtap: Unit testing for PostgreSQL](https://github.com/theory/pgtap)
+Sources:
+
+- [v1.3.4 README](https://github.com/theory/pgtap/blob/v1.3.4/README.md)
+- [v1.3.4 release history](https://github.com/theory/pgtap/blob/v1.3.4/Changes)
+- [Control file](https://github.com/theory/pgtap/blob/v1.3.4/pgtap.control)
+- [SQL definitions](https://github.com/theory/pgtap/blob/v1.3.4/sql/pgtap.sql.in)
 
 `pgtap` is a unit testing framework for PostgreSQL that produces TAP (Test Anything Protocol) output, providing hundreds of assertion functions for testing database objects and query results.
 
@@ -30,7 +32,7 @@ Use `no_plan()` when the test count is not known in advance:
 ```sql
 BEGIN;
 SELECT * FROM no_plan();
--- ... tests ...
+SELECT ok(2 > 1, 'comparison works');
 SELECT * FROM finish();
 ROLLBACK;
 ```
@@ -108,9 +110,17 @@ pg_prove -d mydb --ext .sql --recurse tests/
 
 ```sql
 CREATE FUNCTION test_my_feature() RETURNS SETOF text AS $$
+BEGIN
   RETURN NEXT ok(1 = 1, 'basic check');
-  RETURN NEXT is(my_func(1), 42, 'function works');
+  RETURN NEXT is(abs(-1), 1, 'absolute value works');
+END;
 $$ LANGUAGE plpgsql;
 
 SELECT * FROM runtests('test_my_feature');
 ```
+
+### Version 1.3.4 and Test Boundaries
+
+Version 1.3.4 adds `index_is_partial()` and name/name overloads of `has_composite()` and `hasnt_composite()`, and repairs several older upgrade paths. Install the matching scripts before `ALTER EXTENSION pgtap UPDATE TO '1.3.4'`. The control file requires `plpgsql`, sets `superuser = false`, and permits relocation; shared preload is unnecessary. A role still needs CREATE on the database and suitable privileges for the objects a test exercises.
+
+Run tests against disposable fixtures or an isolated test database. Transaction rollback does not undo external actions performed by the functions being tested. The pg_prove client must be installed separately; extension installation alone does not provide that runner.

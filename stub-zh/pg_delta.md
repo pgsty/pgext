@@ -2,40 +2,28 @@
 
 来源：
 
-- [官方上游 README](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_delta/README.md)
-- [官方扩展控制文件 (pg_delta.control)](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_delta/pg_delta.control)
-- [官方实现源代码](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_delta/src/lib.rs)
+- [extensions/pg_delta/README.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/README.md)
+- [extensions/pg_delta/pg_delta.control](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/pg_delta.control)
+- [extensions/pg_delta/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/src/lib.rs)
+- [extensions/pg_delta/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/pgbrew.toml)
+- [docs/pg_delta.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/docs/pg_delta.md)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
 
-`pg_delta` — PostgreSQL 与 Delta Lake 的流式集成。在 PostgreSQL 和 Delta Lake 表之间双向传输数据。当需要从 PostgreSQL 移动、转换或集成相应数据时使用它。请使用上述链接的上游固定版本作为 API 边界，并在目标 PostgreSQL 构建上进行测试。
+`pg_delta` 0.3.0 通过读取、导出和受管理的流将 PostgreSQL 与 Delta Lake 集成。新增索引模式登记 Delta 事务日志并裁剪文件，以 FDW 原地查询。
 
-### 核心工作流
+### 核心用法
+
+```conf
+shared_preload_libraries = 'pg_delta'
+```
 
 ```sql
 CREATE EXTENSION pg_delta;
+SELECT * FROM delta.list_tables();
+SELECT delta.status();
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小示例，并在将其集成到应用程序 SQL 中之前验证已安装的版本和返回值。
+### 运行边界
 
-### 重要对象
-
-- `create_table` 是一个扩展函数。
-- `drop_export` 是一个扩展函数。
-- `drop_table` 是一个扩展函数。
-- `export` 是一个扩展函数。
-- `export_table` 是一个扩展函数。
-- `extension_docs()` 是一个扩展函数。
-- `history` 是一个扩展函数。
-- `info` 是一个扩展函数。
-- `list_exports()` 是一个扩展函数。
-- `list_tables()` 是一个扩展函数。
-- `read` 是一个扩展函数。
-- `refresh` 是一个扩展函数。
-- `schema` 是一个扩展函数。
-- `status()` 是一个扩展函数。
-
-### 要求与注意事项
-
-- 该目录记录版本 `0.2.0`。
-- 控制文件将扩展标记为不可重定位。
-- 控制文件要求超级用户进行安装。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况与固定源代码中的信息一致。
+安装需要超级用户。流管理器要求预加载 `pg_delta` 并重启，应明确配置工作数据库和存储凭据。`delta` 模式提供表／流创建、刷新、状态、历史与导出接口，索引模式使用 `pg_delta_server`。云路径和 SQL 定义属于特权操作。手册将基于逻辑复制的 CDC 导出标为未实现；轮询和快照模式各有更新／删除及恢复语义。这是采用 Matroid Source Available License 1.0 的无支持概念验证项目，API 可能变化。0.3.0 是新的升级起点：旧 0.2.0 安装需要预演数据迁移／重建，不能直接执行普通 ALTER EXTENSION UPDATE。遵循上游这一破坏性路径前，必须备份数据并检查依赖。

@@ -28,7 +28,7 @@ pgextwlist 允许选定的非超级用户在明确的允许列表范围内运行
     COMMENT ON EXTENSION hstore IS 'approved utility';
     DROP EXTENSION hstore;
 
-未在 extwlist.extensions 中命名的扩展将被拒绝。
+不在 extwlist.extensions 中的扩展按 PostgreSQL 原有权限规则处理。可信扩展保留正常安装路径；允许列表控制的是提权路径。
 
 ### 限制数据库所有权
 
@@ -64,5 +64,3 @@ pgextwlist 允许选定的非超级用户在明确的允许列表范围内运行
 - 支持 CREATE EXTENSION, DROP EXTENSION, ALTER EXTENSION UPDATE 和 COMMENT ON EXTENSION。不支持 ALTER EXTENSION ADD 和 DROP。
 - 通过提升路径创建的对象的所有权根据扩展/启动超级用户的行为确定，不一定由请求的角色拥有。
 - 在添加名称之前，请审查扩展 SQL 和自定义脚本。将扩展列入白名单会赋予调用者其安装和更新脚本所体现的权力。
-
-文档结束

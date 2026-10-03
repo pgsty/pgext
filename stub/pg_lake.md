@@ -2,17 +2,20 @@
 
 Sources:
 
-- [Official pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/README.md)
-- [Version 3.4 control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake/pg_lake.control)
-- [Official build and startup guide](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/building-from-source.md)
-- [Official project documentation index](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/README.md)
+- [Official pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md)
+- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake/pg_lake.control)
+- [Official build and startup guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/building-from-source.md)
+- [Official project documentation index](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/README.md)
+- [pg_lake v3.5.3 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.3)
 - [DuckDB secrets manager](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
 
 `pg_lake` is the top-level extension for Snowflake's PostgreSQL lakehouse stack. It installs the table, Iceberg, copy, query-engine, extension-base, and map components needed to query object-store files and create transactional Iceberg tables. The PostgreSQL extensions orchestrate planning and transactions while a separate local `pgduck_server` process executes vectorized work with DuckDB.
 
+The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
+
 ### Start the Packaged Stack
 
-Version `3.4` supports PostgreSQL 16 through 18. The PIGSTY RPM and DEB packages install the extension files and a versioned `pgduck_server` binary, but they do not currently install or auto-start a `systemd` service. Running `CREATE EXTENSION` does not start `pgduck_server` either.
+Version `3.5` supports PostgreSQL 16 through 18. The PIGSTY RPM and DEB packages install the extension files and a versioned `pgduck_server` binary, but they do not currently install or auto-start a `systemd` service. Running `CREATE EXTENSION` does not start `pgduck_server` either.
 
 Add `pg_extension_base` to `shared_preload_libraries` and restart PostgreSQL:
 
@@ -137,3 +140,18 @@ SELECT count(*) FROM external_events;
 - The default memory limit is 80 percent of system memory. Set `--memory_limit` explicitly when PostgreSQL and `pgduck_server` share a production host.
 - Iceberg writes create Parquet files per statement. Batch inserts and run regular `VACUUM` to avoid many small files.
 - The PostgreSQL extensions, `pgduck_server`, object-store data, and Iceberg catalog form one deployment unit. Back up and upgrade them as separate evidence layers; creating the extension alone does not prove the external services are usable.
+
+### Upgrade the Stack
+
+Deploy matching `3.5.3` extension files and `pgduck_server`, then restart the processes that have loaded the old libraries. In each database run the extension migration and check every component version:
+
+```sql
+ALTER EXTENSION pg_lake UPDATE TO '3.5';
+SELECT extname, extversion
+FROM pg_extension
+WHERE extname LIKE 'pg_lake%'
+   OR extname IN ('pg_extension_base', 'pg_extension_updater', 'pg_map')
+ORDER BY extname;
+```
+
+The `3.5.3` patch hardens object deletion credential selection and avoids publishing nameless catalog entries. It retains SQL version `3.5`, so SQL version alone cannot prove that the matching patch-level binaries are deployed.

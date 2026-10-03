@@ -2,10 +2,11 @@
 
 来源：
 
-- [TimescaleDB v2.29.1 README](https://github.com/timescale/timescaledb/blob/2.29.1/README.md)
+- [TimescaleDB v2.30.2 README](https://github.com/timescale/timescaledb/blob/2.30.2/README.md)
 - [TimescaleDB 2.29.0 发行说明](https://github.com/timescale/timescaledb/releases/tag/2.29.0)
-- [TimescaleDB 2.29.1 安全与缺陷修复版本](https://github.com/timescale/timescaledb/releases/tag/2.29.1)
-- [TimescaleDB v2.29.1 控制文件](https://github.com/timescale/timescaledb/blob/2.29.1/timescaledb.control.in)
+- [TimescaleDB 2.30.2 发布说明](https://github.com/timescale/timescaledb/releases/tag/2.30.2)
+- [2.30.2 版变更日志](https://github.com/timescale/timescaledb/blob/2.30.2/CHANGELOG.md)
+- [TimescaleDB v2.30.2 控制文件](https://github.com/timescale/timescaledb/blob/2.30.2/timescaledb.control.in)
 - [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/)
 - [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/)
 - [连续聚合 API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)
@@ -13,6 +14,14 @@
 - [TimescaleDB GUC](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
 
 `timescaledb` 是用于时序与事件分析的 PostgreSQL 扩展。当前文档重点介绍 `CREATE TABLE ... WITH (tsdb.hypertable)`、连续聚合、自动化作业，以及将数据块迁移到列存储的用法。
+
+### 启用扩展
+
+将 `timescaledb` 加入现有预加载列表，重启 PostgreSQL 后再创建扩展。版本 `2.30.2` 支持 PostgreSQL 16、17 和 18。
+
+```conf
+shared_preload_libraries = 'timescaledb'
+```
 
 ### 超表
 
@@ -62,7 +71,6 @@ SELECT add_continuous_aggregate_policy(
   schedule_interval => INTERVAL '1 hour'
 );
 
-SELECT add_job('user_defined_action', '1h');
 ```
 
 - 连续聚合要求在超表的时间维度上使用 `time_bucket(...)`。
@@ -101,10 +109,17 @@ SET timescaledb.enable_columnar_scan_filter_pushdown = on;
 
 `timescaledb.enable_direct_compress_insert` 和 `timescaledb.enable_direct_compress_copy` 可在写入期间启用技术预览版的直接压缩。TimescaleDB 2.27.0 新增了 `timescaledb.enable_cagg_rewrites` 与 `timescaledb.cagg_rewrites_debug_info`，并说明 `timescaledb.enable_columnar_scan_filter_pushdown` 默认启用。
 
-### 版本 2.29.1 与注意事项
+### 版本 2.30.2 与升级
 
 - TimescaleDB 2.29 支持 PostgreSQL 16、17 和 18。PostgreSQL 15 支持止于 2.28 系列，因此在将 PG15 数据库迁移到 2.29 之前，应先升级 PostgreSQL。
 - 版本 2.29.0 新增 `compact_chunk()` 以及用于合并小型列存储批次的压实策略，并优化了 DML 数据块排除和小 `LIMIT` 列存储扫描。在现有工作负载上启用压实策略之前，请先审阅发行说明。
 - 2.29 系列新增了 `alter_job(..., config_merge => ...)`、直接压缩与无序重压缩控制，以及分层连续聚合的并发刷新策略。
-- 应使用 2.29.1，而不是 2.29.0。该版本修复了权限检查缺失、畸形压缩数据处理、多个崩溃路径，以及 `compact_chunk` 批次限制验证问题；上游建议所有 2.29.0 安装均进行升级。
+- 2.30 系列新增面向 LIMIT 查询的 `DeferredChunkAppend`，并支持并发压实期间的 DML。2.30.2 修复了数据块合并与压缩查询崩溃、删除模式后遗留压缩块，以及非确定性文本排序规则处理问题。细粒度刷新选项现统一使用 `timescaledb.cagg_granular_refresh_*` 前缀；应核对已有相关配置。
 - 控制文件将 `timescaledb` 标记为受信任且不可重定位。服务器库仍须根据打包部署配置进行预加载，并重启 PostgreSQL。
+
+安装匹配的软件包后，使用新的 `psql -X` 连接执行迁移，避免启动命令提前加载旧库。在每个数据库更新并核对 SQL 版本：
+
+```sql
+ALTER EXTENSION timescaledb UPDATE TO '2.30.2';
+SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
+```

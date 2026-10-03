@@ -2,11 +2,13 @@
 
 Sources:
 
-- [Official eidos_oauth README](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/README.md)
-- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/eidos_oauth.control)
-- [Validator implementation](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/eidos_oauth/src/validator.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
+- [Official eidos_oauth README](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/eidos_oauth/README.md)
+- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/eidos_oauth/eidos_oauth.control)
+- [Validator implementation](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/eidos_oauth/src/validator.rs)
 
-`eidos_oauth` version `0.2.0` validates OAuth bearer JWTs for PostgreSQL 18 connection authentication. It verifies signatures through a remote JWKS endpoint, checks configured issuer and audience claims, returns an authentication identity, and exposes claims as session GUCs for authorization policies.
+`eidos_oauth` version `0.3.0` validates OAuth bearer JWTs for PostgreSQL 18 connection authentication. It verifies signatures through a remote JWKS endpoint, checks configured issuer and audience claims, returns an authentication identity, and exposes claims as session GUCs for authorization policies.
 
 ### Core Workflow
 
@@ -39,3 +41,7 @@ The SQL helpers are `oauth_validate_token`, `oauth_get_claim`, `oauth_inject_cla
 ### Operational Notes
 
 The connection validator API requires PostgreSQL 18. The source describes `oauth_inject_claims` as a testing or pre-18 helper, not as a replacement for PostgreSQL 18 OAuth authentication. The control file is non-relocatable and superuser-only. Configuration changes use SIGHUP-context GUCs, but adding the libraries requires a restart. Protect the JWKS endpoint, test key rotation and outage behavior, restrict refresh and token-testing functions, and write RLS policies that treat injected claims as authentication context rather than trusted application input.
+
+### Version 0.3.0 Boundary
+
+This is an unsupported proof of concept under Matroid Source Available License 1.0. APIs may change. Version 0.3.0 is the new upgrade baseline: earlier 0.2.0 installations require a rehearsed data migration/recreation, not ordinary ALTER EXTENSION UPDATE. Back up data and dependencies before following that destructive upstream path.

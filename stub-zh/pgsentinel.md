@@ -2,10 +2,10 @@
 
 来源：
 
-- [pgsentinel 1.4.2 README](https://github.com/pgsentinel/pgsentinel/blob/v1.4.2/README.md)
-- [pgsentinel 1.4.2 发行版](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.4.2)
-- [pgsentinel 1.4.1 到 1.4.2 的更改](https://github.com/pgsentinel/pgsentinel/compare/v1.4.1...v1.4.2)
-- [pgsentinel 控制文件](https://github.com/pgsentinel/pgsentinel/blob/v1.4.2/src/pgsentinel.control)
+- [pgsentinel 1.5.1 README](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/README.md)
+- [pgsentinel 1.5.1 发行版](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.5.1)
+- [1.5.1 upgrade SQL](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel--1.5.0--1.5.1.sql)
+- [pgsentinel 控制文件](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel.control)
 
 `pgsentinel` 通过在固定时间间隔内采样 `pg_stat_activity` 并将活动与 `pg_stat_statements` 查询统计信息关联来记录活跃会话历史。它最近的样本存储在由后台工作进程管理的共享内存环形缓冲区中。
 
@@ -85,9 +85,14 @@ ORDER BY 3 DESC;
 | `pgsentinel_pgssh.max_entries` | 1000 | pg_stat_statements 历史的环形缓冲区大小 |
 | `pgsentinel_pgssh.enable` | `false` | 启用 pg_stat_statements 历史 |
 
-### 版本和操作注意事项
+### 版本和权限变化
 
-- 发行版 1.4.2 修复了 PostgreSQL 17 上的查询统计历史问题，其 `pg_stat_statements` 视图将阻塞 I/O 时间列重命名为 `shared_blk_read_time` 和 `shared_blk_write_time`。
-- 同一发行版在不改变 SQL 视图或 GUC 表面的情况下增加了对 PostgreSQL 19 的构建兼容性。
-- 环形缓冲区历史是内存驻留且有限的；只有在考虑共享内存使用情况后才能增加条目限制，并在需要更长保留时间时导出样本。
-- 查询文本可以包含字面量参数值。当语句可能包括敏感数据时，应限制对历史视图的访问。
+1.5.0 将 `queryid` 与 `nested_queryid` 分开：PostgreSQL 16 及以上的前者来自活动查询标识，后者来自内层解析语句；更早版本中二者一致。升级会重建历史视图，须先检查依赖视图及授权。
+
+1.5.1 撤销 `get_parsedinfo(int)` 的 PUBLIC 执行权限，因为它能返回其他后端的查询文本及字面量。安装新文件后必须应用 SQL 升级，并仅向确有需要的角色授权：
+
+```sql
+ALTER EXTENSION pgsentinel UPDATE TO '1.5.1';
+```
+
+历史记录位于有限的共享内存环形缓冲区中，需要长期保留时应另行导出。采样查询文本可能包含敏感值，还应检查历史视图的访问权限。上游 CI 覆盖 PostgreSQL 10–19。

@@ -1,9 +1,10 @@
-
-
-
 ## 用法
 
-来源：[official README](https://github.com/vibhorkum/pg_background/blob/master/README.md)、[v2.0 release notes](https://github.com/vibhorkum/pg_background/releases/tag/v2.0)、[migration guide](https://github.com/vibhorkum/pg_background/blob/v2.0/docs/MIGRATION.md)。
+来源：
+
+- [v2.0.4 README](https://github.com/vibhorkum/pg_background/blob/v2.0.4/README.md)
+- [v2.0.4 release](https://github.com/vibhorkum/pg_background/releases/tag/v2.0.4)
+- [v2.0.4 SQL API](https://github.com/vibhorkum/pg_background/blob/v2.0.4/extension/pg_background--2.0.sql)
 
 `pg_background` 在 PostgreSQL 后台工作进程中执行 SQL。工作进程在服务器内部运行独立事务，适合异步维护、自主副作用、有边界的长时间任务，以及可跟踪进度的作业。
 
@@ -28,19 +29,19 @@ FROM pg_background_run(
 
 ### 启动并获取结果
 
-当后台 SQL 会返回行时，使用 launch/result 模式：
+当后台 SQL 返回行时，使用 launch/result 模式。在 psql 中，`\gset` 将句柄保存为后续命令可用的变量：
 
 ```sql
-SELECT * FROM pg_background_launch(
+SELECT pid, cookie FROM pg_background_launch(
   'SELECT count(*) FROM large_table',
   queue_size := 65536,
   label := 'count-large-table'
-) AS h;
+) \gset bg_
 
-SELECT * FROM pg_background_result(h.pid, h.cookie) AS (count bigint);
+SELECT * FROM pg_background_result(:bg_pid, :bg_cookie) AS (count bigint);
 ```
 
-结果只能消费一次。请同时保存 `pid` 和 `cookie`；`cookie` 用来避免后续调用受到 PID 重用影响。
+结果只能消费一次。请同时保存 `pid` 和 `cookie`；cookie 用来避免后续调用受到 PID 重用影响。
 
 ### 即发即忘
 
@@ -74,13 +75,13 @@ SELECT * FROM pg_background_submit(
 在工作进程 SQL 内报告进度，再由启动方轮询：
 
 ```sql
-SELECT * FROM pg_background_launch($$
+SELECT pid, cookie FROM pg_background_launch($$
   SELECT pg_background_report_progress(0, 'starting');
   SELECT pg_sleep(1);
   SELECT pg_background_report_progress(100, 'done');
-$$) AS h;
+$$) \gset bg_
 
-SELECT * FROM pg_background_get_progress(h.pid, h.cookie);
+SELECT * FROM pg_background_get_progress(:bg_pid, :bg_cookie);
 ```
 
 `pg_background_report_progress` 是 2.0 名称；更早的 `pg_background_progress` 名称已经硬重命名。
@@ -101,8 +102,14 @@ SET pg_background.worker_timeout = '5min';
 
 ### 注意事项
 
-- Pigsty 为 PostgreSQL 14-18 打包 `pg_background` 2.0；上游 2.0 也验证了 PostgreSQL 19 beta。
+- 上游发行版 2.0.4 保留 SQL/control 版本 2.0，面向 PostgreSQL 14-18 和 PostgreSQL 19 beta。
 - 从 1.8 之前的安装升级时，必须先升级到 1.8/1.10 发布线，再更新到 2.0。
 - 原始 v1 的仅 PID API 已移除。不带后缀的名称现在具备 cookie 保护语义，并返回/使用 `(pid, cookie)`。
 - `pg_background_cancel_v2_grace` 和 `pg_background_wait_v2_timeout` 已合并进 `pg_background_cancel(..., grace_ms)` 和 `pg_background_wait(..., timeout_ms)`。
 - `pg_background_status_v2` 已移除；请使用 `pg_background_outcome(pid, cookie)`。
+
+### 2.0.4 更新与权限
+
+2.0.4 修复同一工作进程内多条命令之间的数据可见性、复杂结果类型的传输和命令完成标签。`pg_background.worker_timeout` 非零时限制整个 SQL 字符串的执行时间（不含提交）；为零时由 `statement_timeout` 分别限制每条语句。安装新版库后启动新的工作进程才能使用修复。
+
+安装需要超级用户。默认不向 PUBLIC 开放调用权限；由管理员授予 `pgbackground_role`，或使用 `pg_background_grant_privileges`。后台事务独立提交，调用者回滚不会撤销已经完成的后台操作。

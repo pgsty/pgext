@@ -2,40 +2,28 @@
 
 Sources:
 
-- [Official upstream README](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_delta/README.md)
-- [Official extension control file (pg_delta.control)](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_delta/pg_delta.control)
-- [Official implementation source](https://github.com/matroidbe/pg_extensions-releases/blob/bbc2398a3e45c722beef6dd26f698bc2a017e241/extensions/pg_delta/src/lib.rs)
+- [extensions/pg_delta/README.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/README.md)
+- [extensions/pg_delta/pg_delta.control](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/pg_delta.control)
+- [extensions/pg_delta/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/src/lib.rs)
+- [extensions/pg_delta/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_delta/pgbrew.toml)
+- [docs/pg_delta.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/docs/pg_delta.md)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
 
-`pg_delta` — Delta Lake streaming integration for PostgreSQL. Stream data bidirectionally between Postgres and Delta Lake tables. Use it when moving, transforming, or integrating the corresponding data from PostgreSQL. Use the pinned upstream revision linked above as the API boundary and test it on the target PostgreSQL build.
+`pg_delta` 0.3.0 integrates PostgreSQL with Delta Lake through reads, exports and managed streams. The new index mode catalogs the Delta transaction log and prunes files for in-place FDW queries.
 
 ### Core Workflow
 
-```sql
-CREATE EXTENSION pg_delta;
+```conf
+shared_preload_libraries = 'pg_delta'
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+```sql
+CREATE EXTENSION pg_delta;
+SELECT * FROM delta.list_tables();
+SELECT delta.status();
+```
 
-### Important Objects
+### Operational Boundaries
 
-- `create_table` is an extension function.
-- `drop_export` is an extension function.
-- `drop_table` is an extension function.
-- `export` is an extension function.
-- `export_table` is an extension function.
-- `extension_docs()` is an extension function.
-- `history` is an extension function.
-- `info` is an extension function.
-- `list_exports()` is an extension function.
-- `list_tables()` is an extension function.
-- `read` is an extension function.
-- `refresh` is an extension function.
-- `schema` is an extension function.
-- `status()` is an extension function.
-
-### Requirements and Caveats
-
-- The catalog records version `0.2.0`.
-- The control file marks the extension as non-relocatable.
-- The control file requires a superuser for installation.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+Superuser installation is required. Preload `pg_delta` and restart for its stream manager. Configure the worker database and storage credentials deliberately. The `delta` schema exposes table/stream creation, refresh, status, history and export interfaces; index mode uses `pg_delta_server`. Access to cloud paths and SQL definitions is privileged. The manual marks logical-replication CDC export as not implemented; polling and snapshot modes have their own update/delete and recovery behavior. This is an unsupported proof of concept under Matroid Source Available License 1.0. APIs may change. Version 0.3.0 is the new upgrade baseline: earlier 0.2.0 installations require a rehearsed data migration/recreation, not ordinary ALTER EXTENSION UPDATE. Back up data and dependencies before following that destructive upstream path.

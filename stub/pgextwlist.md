@@ -28,7 +28,7 @@ Reconnect after changing local_preload_libraries. A whitelisted user can then ru
     COMMENT ON EXTENSION hstore IS 'approved utility';
     DROP EXTENSION hstore;
 
-An extension not named in extwlist.extensions is rejected.
+Extensions outside extwlist.extensions fall through to PostgreSQL's normal privilege checks. Trusted extensions retain their ordinary installation path; the allowlist controls the elevated path.
 
 ### Restrict Database Ownership
 

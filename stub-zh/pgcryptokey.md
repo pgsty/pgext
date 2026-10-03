@@ -1,52 +1,47 @@
-
-
-
 ## 用法
 
-> [pgcryptokey: PostgreSQL 加密密钥管理](https://momjian.us/download/pgcryptokey/)
+来源：
 
-`pgcryptokey` 在 PostgreSQL 内部管理加密数据密钥。密钥以加密方式存储，通过访问密码保护，支持系统级和会话级密钥访问。
+- [Official 0.85 source archive](https://momjian.us/download/pgcryptokey/pgcryptokey-0.85.tar.gz)
+- [Official project directory](https://momjian.us/download/pgcryptokey/)
 
-```sql
-CREATE EXTENSION pgcryptokey;
-```
+`pgcryptokey` 管理由访问密码包裹的数据加密密钥。它把包裹后的密钥保存在数据库表中，并结合 `pgcrypto` 完成加密、密钥轮换和重新加密。
 
-### 密钥管理函数
-
-| 函数 | 描述 |
-|----------|-------------|
-| `create_cryptokey(name, byte_len)` | 生成新的加密密钥 |
-| `set_cryptokey(name)` | 设置当前活动密钥 |
-| `get_cryptokey(name)` | 获取密钥材料 |
-| `drop_cryptokey(name)` | 删除密钥 |
-| `supersede_cryptokey()` | 轮换到新密钥（相同访问密码） |
-| `change_key_access_password()` | 更新密钥认证凭据 |
-| `reencrypt_data()` | 使用不同密钥重新加密数据 |
-
-### 会话控制
-
-| 函数 | 描述 |
-|----------|-------------|
-| `get_shared_key()` | 建立客户端/服务器共享密钥（仅 SSL/Unix） |
-| `set_session_access_password()` | 客户端提供的密码认证 |
-
-### 典型工作流程
+### 安装和解锁
 
 ```sql
--- 创建密钥
-SELECT create_cryptokey('mykey', 32);
-
--- 设置活动密钥
-SELECT set_cryptokey('mykey');
-
--- 使用 pgcrypto 函数和托管密钥加密数据
-UPDATE secrets SET data = pgp_sym_encrypt(plaintext, get_cryptokey('mykey'));
-
--- 解密数据
-SELECT pgp_sym_decrypt(data, get_cryptokey('mykey')) FROM secrets;
-
--- 轮换密钥
-SELECT supersede_cryptokey();
+CREATE EXTENSION pgcryptokey CASCADE;
 ```
 
-访问密码可以在数据库启动时配置以实现系统级访问，也可以由各个客户端按会话配置以实现细粒度安全控制。
+依赖扩展是 `pgcrypto`。源码发布版 0.85 使用 SQL 扩展版本 1.0，安装需要超级用户。在客户端模式中，应先按照上游流程，使用 `get_shared_key()` 和 `set_session_access_password(encrypted_password)` 建立会话访问密码。共享密钥交换仅支持 SSL 或 Unix 域套接字连接；加密密码参数使用十六进制编码。
+
+启动模式则预加载 `pgcryptokey_acpass`，执行受保护的服务器端密码获取脚本，并需要重启。这种模式让访问密码在整个服务器范围内生效且只读。应选择一种模式；服务器运行期间不能混用启动和客户端模式。
+
+### 创建和使用密钥
+
+解锁密钥访问后：
+
+```sql
+SELECT create_cryptokey('app-key', 32);
+SELECT set_cryptokey('app-key');
+
+CREATE TEMP TABLE secrets(ciphertext bytea);
+INSERT INTO secrets VALUES
+  (pgp_sym_encrypt('example', get_cryptokey('app-key')));
+SELECT pgp_sym_decrypt(ciphertext, get_cryptokey('app-key'))
+FROM secrets;
+```
+
+密钥长度单位为字节。可以按名称或整数密钥 ID 选择密钥；按名称查找只定位当前未被替代的密钥。
+
+### 轮换和重新加密
+
+`supersede_cryptokey(name, byte_len)` 及其密钥 ID 重载创建替代密钥并返回 ID。新旧密钥最初使用相同的访问密码。修改包裹密码时，应使用整数密钥 ID 重载 `change_key_access_password(key_id, new_encrypted_password)`。会话必须已经设置共享密钥和当前访问密码；新密码必须用共享密钥加密，并使用十六进制编码。
+
+源码发布版 0.85 的名称重载调用了未定义的 `change_access_password` 函数，无法完成密码修改。应使用上面的整数重载。
+
+`reencrypt_data(data, old_key_id, new_key_id)` 和 `reencrypt_data_bytea(data, old_key_id, new_key_id)` 迁移加密值。应在密文旁保留原密钥 ID，并在调用 `drop_cryptokey(name)` 或密钥 ID 重载前验证重新加密结果；删除密钥可能让残留密文无法读取。
+
+### 安全边界
+
+应保护密钥表、函数授权、访问密码获取脚本和备份。上游指出，所有用户都能查看启动模式的 `pgcryptokey.access_password`；使用包裹密钥仍需要表权限。`get_cryptokey(name)` 返回原始密钥材料，不应通过普通查询、日志或应用追踪暴露其结果。这种设计不隔离可信数据库管理员对密钥的访问。

@@ -1,33 +1,33 @@
-
-
-
 ## Usage
 
-> [passwordcheck_cracklib: Strengthen PostgreSQL user password checks with cracklib](https://github.com/devrimgunduz/passwordcheck_cracklib)
+Sources:
 
-`passwordcheck_cracklib` is like the regular PostgreSQL `passwordcheck` module, except it is built with cracklib for more strict password checks. It checks users' passwords whenever they are set with `CREATE ROLE` or `ALTER ROLE`. If a password is considered too weak, it will be rejected and the command will terminate with an error.
+- [3.2.1 README](https://github.com/devrimgunduz/passwordcheck_cracklib/blob/3.2.1/README.md)
+- [3.2.1 password hook](https://github.com/devrimgunduz/passwordcheck_cracklib/blob/3.2.1/passwordcheck_cracklib.c)
+- [PostgreSQL passwordcheck manual](https://www.postgresql.org/docs/18/passwordcheck.html)
 
-### Configuration
+`passwordcheck_cracklib` checks passwords supplied through `CREATE ROLE` and `ALTER ROLE` with CrackLib. It is a server hook library, with no SQL extension objects.
 
-Add the library to `shared_preload_libraries` in `postgresql.conf`:
+### Enable the Hook
+
+Add it to the existing preload list and restart PostgreSQL:
 
 ```ini
 shared_preload_libraries = '$libdir/passwordcheck_cracklib'
 ```
 
-Restart PostgreSQL to activate.
+Do not run `CREATE EXTENSION passwordcheck_cracklib`. CrackLib's library and dictionary must be available to the PostgreSQL operating-system account.
 
-### How It Works
-
-Once loaded, any `CREATE ROLE` or `ALTER ROLE` command that sets a password will have the password checked against cracklib's dictionary. Weak or easily guessable passwords will be rejected automatically.
+### Password Checks
 
 ```sql
--- This will be rejected if the password is too weak
-CREATE ROLE myuser WITH LOGIN PASSWORD 'password123';
--- ERROR: password is easily cracked
-
--- A strong password will be accepted
-CREATE ROLE myuser WITH LOGIN PASSWORD 'X9#kLm$vQ2!pR7';
+CREATE ROLE app_user LOGIN PASSWORD 'password123';
 ```
 
-No `CREATE EXTENSION` is required -- this is a shared library module only.
+Weak plaintext passwords cause an error. The hook checks length, the relationship to the username, character composition, and the CrackLib dictionary. A password passing those checks is not a guarantee of resistance to every attack.
+
+### Security Boundary
+
+Dictionary checks require the plaintext password at password-change time. When a client supplies an already hashed password, the module cannot perform full strength checks; its remaining check is whether the password equals the username. Enforce the intended password-change path and protect the connection carrying plaintext passwords.
+
+Existing passwords are not scanned retroactively. The hook also chains to a previously installed password-check hook; review other credential-policy libraries before loading them together.
