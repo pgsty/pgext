@@ -27,8 +27,13 @@ theme:
 	hugo --gc --printPathWarnings --panicOnWarning
 
 # strict build: any theme or content warning fails the build
-check:
+check: check-stubs
 	hugo --gc --minify --printPathWarnings --panicOnWarning
+
+check-stubs:
+	go run . gen lint
+
+.PHONY: check-stubs
 
 # quick release: build linux/amd64, ship to jp, restart service
 d: amd 2j rs

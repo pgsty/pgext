@@ -33,15 +33,17 @@ func NewCCPageGenerator(cache *ExtensionCache, outputDir, stubDir string) *CCPag
 
 // GenerateExtensionPage generates a single extension page (Chinese only)
 func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extension) error {
+	stubContent, err := ReadValidatedStub(filepath.Join(g.StubDir, ext.Name+".md"))
+	if err != nil {
+		return err
+	}
 	content, err := g.generateExtensionContent(ctx, ext)
 	if err != nil {
 		return err
 	}
 
-	// Append stub content if exists
-	stubPath := filepath.Join(g.StubDir, ext.Name+".md")
-	if stubContent, err := os.ReadFile(stubPath); err == nil && len(stubContent) > 0 {
-		content += "\n" + string(stubContent)
+	if stubContent != "" {
+		content += "\n" + stubContent
 	}
 
 	return WriteMarkdownFile(filepath.Join(g.OutputDir, "e", ext.Name+".md"), content)

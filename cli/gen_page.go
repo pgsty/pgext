@@ -34,6 +34,11 @@ func NewExtensionGenerator(cache *ExtensionCache, outputDir string) *ExtensionGe
 
 // GenerateExtensionPage generates a single extension detail page
 func (g *ExtensionGenerator) GenerateExtensionPage(ctx context.Context, ext *Extension) error {
+	stubPath := filepath.Join(filepath.Dir(g.OutputDir), "..", "stub", ext.Name+".md")
+	stubContent, err := ReadValidatedStub(stubPath)
+	if err != nil {
+		return err
+	}
 	// Load package and binary data
 	packages, err := LoadPackages(ctx, ext.Pkg)
 	if err != nil {
@@ -51,9 +56,8 @@ func (g *ExtensionGenerator) GenerateExtensionPage(ctx context.Context, ext *Ext
 	content := g.generateExtensionContent(ext, packages, binaries, siblings)
 
 	// Append stub content if exists
-	stubPath := filepath.Join(filepath.Dir(g.OutputDir), "..", "stub", fmt.Sprintf("%s.md", ext.Name))
-	if stubContent, err := os.ReadFile(stubPath); err == nil && len(stubContent) > 0 {
-		content += "\n" + string(stubContent)
+	if stubContent != "" {
+		content += "\n" + stubContent
 		logrus.Debugf("Appended stub content for %s", ext.Name)
 	}
 

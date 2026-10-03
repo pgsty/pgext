@@ -71,6 +71,10 @@ If no extension names are provided, generates pages for all extensions.`,
 			logrus.Infof("Generating pages for %d specified extensions...", len(extensionsToGenerate))
 		}
 
+		if err := cli.ValidateExtensionStubs(ioStubDir, extensionsToGenerate); err != nil {
+			return err
+		}
+
 		successCount := 0
 		var failedExtensions []string
 		for i, ext := range extensionsToGenerate {
@@ -196,6 +200,9 @@ var ioAllCmd = &cobra.Command{
 	Example: `  pgext gen io all    # Generate all content`,
 	Args:    cobra.NoArgs,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
+		if err := cli.ValidateExtensionStubs(ioStubDir, cache.ReadyExtensions()); err != nil {
+			return err
+		}
 		var errors []error
 		var wg sync.WaitGroup
 		var mu sync.Mutex
