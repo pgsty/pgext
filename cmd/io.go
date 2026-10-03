@@ -1,7 +1,7 @@
 /*
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
-`gen io` command - generates Hugo/Docsy content for pigsty.io (English only)
+`gen io` command - generates OINK content for pigsty.io (English only)
 */
 package cmd
 
@@ -26,11 +26,11 @@ var (
 // ioCmd represents the gen io command
 var ioCmd = &cobra.Command{
 	Use:   "io",
-	Short: "Generate Hugo/Docsy content for pigsty.io",
-	Long: `Generate Hugo/Docsy-compatible markdown files for pigsty.io English documentation site.
+	Short: "Generate OINK content for pigsty.io",
+	Long: `Generate OINK-native Markdown files for pigsty.io English documentation site.
 
-This command generates native Markdown content without the catalog shortcodes,
-suitable for the Hugo Docsy theme used by pigsty.io. Run without a
+This command generates OINK cards and tabs alongside the documentation site's
+extension helpers. Run without a
 subcommand to generate all pigsty.io extension content.`,
 	Example: `  pgext gen io page       # Generate extension detail pages
   pgext gen io list       # Generate all list pages
@@ -44,7 +44,7 @@ subcommand to generate all pigsty.io extension content.`,
 var ioPageCmd = &cobra.Command{
 	Use:   "page [extension-names...]",
 	Short: "Generate extension detail pages for pigsty.io",
-	Long: `Generate Hugo/Docsy markdown detail pages for PostgreSQL extensions.
+	Long: `Generate OINK Markdown detail pages for PostgreSQL extensions.
 If no extension names are provided, generates pages for all extensions.`,
 	Example: `  pgext gen io page              # Generate pages for all extensions
   pgext gen io page vector       # Generate page for pgvector's vector extension

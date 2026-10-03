@@ -1,7 +1,7 @@
 /*
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
-CC (pigsty.cc) Markdown generators - CSS class-based badges for Hugo/Docsy
+CC (pigsty.cc) Markdown generators - CSS class-based badges for OINK
 Uses semantic CSS classes instead of inline styles
 */
 package cli

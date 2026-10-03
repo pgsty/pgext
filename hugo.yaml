@@ -1,6 +1,6 @@
 #==============================================================#
 # File      :   hugo.yaml
-# Desc      :   PGEXT.CLOUD static site configuration (OINK 0.6.0)
+# Desc      :   PGEXT.CLOUD static site configuration (OINK 1.1.0)
 # Path      :   hugo.yaml
 # Copyright (C) 2019-2026 Ruohang Feng
 #==============================================================#
@@ -39,6 +39,8 @@ security:
 #---------------------------------------------------------------#
 # OINK theme module
 #---------------------------------------------------------------#
+# Resolve the pinned module instead of the retained legacy vendor snapshot.
+ignoreVendorPaths: 'github.com/pgsty/oink'
 module:
   hugoVersion:
     extended: true

@@ -2,7 +2,7 @@
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
 IO Page Generator - generates extension detail pages for pigsty.io (English only)
-Uses CSS classes and Hugo/Docsy shortcodes (tabpane) for styling
+Uses CSS classes and OINK native Markdown components for styling
 */
 package cli
 
@@ -577,49 +577,38 @@ func (g *IOPageGenerator) generateInstall(ext *Extension) string {
 	}
 
 	b.WriteString("Install the extension using [**pig**](https://pig.pgsty.com) or `apt/yum/dnf`:\n\n")
-	b.WriteString("{{< tabpane text=true persist=header >}}\n")
 
 	// Tab: Install (simple install)
-	b.WriteString("{{% tab header=\"Install\" %}}\n")
-	b.WriteString("```bash\n")
+	b.WriteString("```bash {tab=\"Install\" group=\"extension-install\" value=\"install\"}\n")
 	b.WriteString(fmt.Sprintf("pig install %s;          # Install for current active PG version\n", ext.Pkg))
-	b.WriteString("```\n")
-	b.WriteString("{{% /tab %}}\n")
+	b.WriteString("```\n\n")
 
 	// Tab: pig (per-version)
-	b.WriteString("{{% tab header=\"pig\" %}}\n")
-	b.WriteString("```bash\n")
+	b.WriteString("```bash {tab=\"pig\" value=\"pig\"}\n")
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf("pig ext install -y %s -v %d  # PG %d\n", ext.Pkg, pg, pg))
 	}
-	b.WriteString("```\n")
-	b.WriteString("{{% /tab %}}\n")
+	b.WriteString("```\n\n")
 
 	// Tab: dnf (RPM)
 	if ext.RpmRepo.Valid || ext.RpmVer.Valid || len(ext.RpmPg) > 0 {
-		b.WriteString("{{% tab header=\"dnf\" %}}\n")
-		b.WriteString("```bash\n")
+		b.WriteString("```bash {tab=\"dnf\" value=\"dnf\"}\n")
 		for _, pg := range pgVersions {
 			pkgName := strings.ReplaceAll(rpmPkg, "$v", fmt.Sprintf("%d", pg))
 			b.WriteString(fmt.Sprintf("dnf install -y %s       # PG %d\n", pkgName, pg))
 		}
-		b.WriteString("```\n")
-		b.WriteString("{{% /tab %}}\n")
+		b.WriteString("```\n\n")
 	}
 
 	// Tab: apt (DEB)
 	if ext.DebRepo.Valid || ext.DebVer.Valid || len(ext.DebPg) > 0 {
-		b.WriteString("{{% tab header=\"apt\" %}}\n")
-		b.WriteString("```bash\n")
+		b.WriteString("```bash {tab=\"apt\" value=\"apt\"}\n")
 		for _, pg := range pgVersions {
 			pkgName := strings.ReplaceAll(debPkg, "$v", fmt.Sprintf("%d", pg))
 			b.WriteString(fmt.Sprintf("apt install -y %s   # PG %d\n", pkgName, pg))
 		}
-		b.WriteString("```\n")
-		b.WriteString("{{% /tab %}}\n")
+		b.WriteString("```\n\n")
 	}
-
-	b.WriteString("{{< /tabpane >}}\n\n")
 
 	// Shared preload libraries
 	if ext.NeedLoad {

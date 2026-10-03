@@ -18,15 +18,12 @@ dev:
 #==============================================================#
 # Theme (OINK)
 #==============================================================#
-# The site renders with the OINK Hugo module, vendored into _vendor/. The
-# vendored copy is what `hugo` actually reads, which keeps the build working
-# even after `go mod tidy` drops the theme from go.mod (it provides no Go
-# packages, so tidy always does). Upgrading is therefore two steps, and
-# `hugo mod vendor` is the one that takes effect.
+# The site renders with the OINK Hugo module pinned in go.mod. hugo.yaml
+# bypasses the retained legacy _vendor/ snapshot. The theme has no Go
+# packages, so run `make theme` after `go mod tidy` removes its dependency.
 t: theme
 theme:
 	hugo mod get -u github.com/pgsty/oink
-	hugo mod vendor
 	hugo --gc --printPathWarnings --panicOnWarning
 
 # strict build: any theme or content warning fails the build

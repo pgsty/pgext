@@ -518,7 +518,7 @@ a.pgx-b {
 // The availability matrix: `{.matrix}` gives it a sticky header and a sticky
 // first column from the theme; this only quiets the cells inside it.
 //
-// The table is never boxed into its own scroller. A platform page is one
+// On wide screens the table is not boxed into its own scroller. A platform page is one
 // table of several hundred rows and reads as a single sheet — so the page
 // scrolls, and the header pins below the site header instead of below the
 // top edge of a viewport-within-the-viewport.
@@ -546,6 +546,26 @@ a.pgx-b {
       inset-block-start: var(--pgx-navbar-h);
       background: var(--bg-raise);
     }
+  }
+}
+
+// Keep wide matrices inside the article on phones while the page continues
+// to scroll vertically through every extension row.
+@media (max-width: 767.98px) {
+  .td-content .td-table-scroll--matrix,
+  .mx-page .mx-matrix {
+    max-inline-size: 100%;
+    overflow-x: auto;
+  }
+
+  .td-content .td-table-scroll--matrix {
+    > table thead th {
+      inset-block-start: 0;
+    }
+  }
+
+  .mx-page .mx-matrix {
+    --mx-top: 0px;
   }
 }
 
