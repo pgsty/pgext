@@ -15,19 +15,19 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 418 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 72 | 纯 SQL 扩展和函数 |
-| {{< language "Rust" >}} | 57 | 使用 pgrx 框架用 Rust 编写的扩展 |
-| {{< language "C++" >}} | 15 | 使用 C++ 特性和库的扩展 |
+| {{< language "C" >}} | 421 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 75 | 纯 SQL 扩展和函数 |
+| {{< language "Rust" >}} | 59 | 使用 pgrx 框架用 Rust 编写的扩展 |
+| {{< language "C++" >}} | 14 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
-| {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
+| {{< language "Python" >}} | 3 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
 | {{< language "PLpgSQL" >}} | 1 | 使用 PLpgSQL 编写的扩展 |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="418 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="421 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -70,12 +70,14 @@ weight: 200
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
 | 2220 | {{< alias "pg_fts" >}} | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | 2230 | {{< alias "pg_cjk_parser" >}} | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
+| 2250 | {{< alias "acdat" >}} | 在 PostgreSQL 中编译 Aho-Corasick 双数组机，实现精确多模式匹配与替换 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2400 | {{< alias "citus" >}} | 将 PostgreSQL 横向扩展为分布式数据库 |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 开源列式存储扩展 |
 | 2450 | {{< alias "storage_engine" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
 | 2510 | {{< alias "pg_partman" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
@@ -305,6 +307,7 @@ weight: 200
 | 5170 | {{< alias "pre_prepare" "preprepare" >}} | 在服务端预先准备好PreparedStatement备用 |
 | 5200 | {{< alias "pg_orphaned" >}} | 处理孤儿文件的扩展插件 |
 | 5210 | {{< alias "pg_crash" >}} | 向数据库进程随机发送信号模拟故障 |
+| 5215 | {{< alias "macavity" >}} | 为 PostgreSQL 测试集群提供确定性的会话内故障注入 |
 | 5220 | {{< alias "pg_cheat_funcs" >}} | 一些超级实用的作弊函数 |
 | 5230 | {{< alias "fio" "pg_fio" >}} | PostgreSQL文件IO函数包 |
 | 5240 | {{< alias "qos" "pg_qos" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
@@ -312,6 +315,7 @@ weight: 200
 | 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
 | 5270 | {{< alias "online_advisor" >}} | 在线建议缺失索引、扩展统计信息与预备语句 |
 | 5810 | {{< alias "pg_savior" >}} | 阻止不带条件的全表更新以避免意外事故 |
+| 5815 | {{< alias "pg_circuit" >}} | 针对危险 SQL 语句提供运行时观察、告警和拦截 |
 | 5820 | {{< alias "safeupdate" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | 5860 | {{< alias "table_log" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5880 | {{< alias "pgagent" >}} | PostgreSQL任务调度工具，与PGADMIN配合使用 |
@@ -326,7 +330,6 @@ weight: 200
 | 5970 | {{< alias "adminpack" >}} | PostgreSQL 管理函数集合 |
 | 5980 | {{< alias "amcheck" >}} | 校验关系完整性 |
 | 5990 | {{< alias "pg_surgery" >}} | 对损坏的关系进行手术 |
-| 6000 | {{< alias "pg_profile" >}} | PostgreSQL 数据库负载记录与AWR报表工具 |
 | 6010 | {{< alias "pg_tracing" >}} | PostgreSQL分布式Tracing |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | 捕获或记录 PostgreSQL 进程的 C 层调用栈 |
 | 6040 | {{< alias "pg_stat_log" >}} | 按后端类型、数据库、用户、日志级别与 SQLSTATE 统计 PostgreSQL 日志消息。 |
@@ -454,7 +457,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="72 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="75 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -476,6 +479,7 @@ weight: 200
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
 | 1700 | {{< alias "qdgc" >}} | 用纯 SQL 编码、解码、遍历和填充扩展四分之一度网格单元（QDGC）编码。 |
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 为 QDGC 增加 PostGIS geometry/geography 绑定与区域到网格单元的填充能力。 |
+| 1890 | {{< alias "pg_grammar_guard" >}} | 根据实时目录生成语法并检测已批准语法的漂移 |
 | 1950 | {{< alias "pgmnemo" >}} | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 2500 | {{< alias "pg_fkpart" >}} | 按外键实用程序进行表分区的扩展 |
 | 2660 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
@@ -510,8 +514,10 @@ weight: 200
 | 5190 | {{< alias "pgcozy" >}} | 根据先前的pg_buffercache快照预热内存缓冲区 |
 | 5280 | {{< alias "pg_column_tetris" >}} | 强制采用最优列对齐顺序，以减少 PostgreSQL 行数据中的填充浪费。 |
 | 5290 | {{< alias "cat_tools" >}} | 用于操作 PostgreSQL 系统目录的工具集 |
+| 5300 | {{< alias "pg_living_assertions" >}} | 保存可执行 SQL 检查、核验日期和断言变更历史 |
 | 5850 | {{< alias "pg_drop_events" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
 | 5870 | {{< alias "pgelog" >}} | 通过伪自治事务实现扩展日志记录 |
+| 6000 | {{< alias "pg_profile" >}} | PostgreSQL 数据库负载记录与AWR报表工具 |
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | 基于 pg_cron 的服务端 PostgreSQL 性能飞行记录器 |
 | 6061 | {{< alias "pgfr_analyze" "pg_flight_recorder" >}} | pgfr_record 采集数据的报告与性能分析函数 |
 | 6080 | {{< alias "pg_statviz" >}} | 采集 PostgreSQL 统计快照，用于时序分析与可视化 |
@@ -535,7 +541,7 @@ weight: 200
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="57 个扩展" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="59 个扩展" color="gray" icon="cube" >}}
 
 使用 pgrx 框架用 Rust 编写的扩展
 
@@ -597,11 +603,13 @@ weight: 200
 | 7430 | {{< alias "block_copy_command" >}} | 通过可配置的 ProcessUtility hook 阻止 COPY 命令 |
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
+| 9430 | {{< alias "pgs3" >}} | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
+| 9440 | {{< alias "kafgres" >}} | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 | 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="15 个扩展" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="14 个扩展" color="gray" icon="cube" >}}
 
 使用 C++ 特性和库的扩展
 
@@ -610,7 +618,6 @@ weight: 200
 | 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
 | 2240 | {{< alias "pg_jieba" >}} | 基于 cppjieba 的中文全文检索分词器 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
-| 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
 | 2490 | {{< alias "pg_ducklake" >}} | 基于 DuckDB 与 Parquet 的 DuckLake 湖仓一体扩展 |
 | 2540 | {{< alias "pg_orca" >}} | PostgreSQL ORCA 查询优化器扩展 |
 | 2700 | {{< alias "hll" >}} | hyperloglog 数据类型 |
@@ -644,12 +651,13 @@ weight: 200
 
 ## Python
 
-{{< language "Python" >}} {{< badge content="2 个扩展" color="gray" icon="cube" >}}
+{{< language "Python" >}} {{< badge content="3 个扩展" color="gray" icon="cube" >}}
 
 使用 Python 编写的扩展
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
+| 1900 | {{< alias "jev" >}} | 通过 TypeSafe 实现自然语言行过滤、排序和分类 |
 | 3210 | {{< alias "faker" >}} | 插入生成的测试伪造数据，Python库的包装 |
 | 6870 | {{< alias "powa" >}} | PostgreSQL 工作负载分析器-核心 |
 

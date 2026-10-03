@@ -15,19 +15,19 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 418 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 72 | Pure SQL extensions and functions |
-| {{< language "Rust" >}} | 57 | Extensions written in Rust with the pgrx framework |
-| {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
+| {{< language "C" >}} | 421 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 75 | Pure SQL extensions and functions |
+| {{< language "Rust" >}} | 59 | Extensions written in Rust with the pgrx framework |
+| {{< language "C++" >}} | 14 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
-| {{< language "Python" >}} | 2 | Extensions written in Python |
+| {{< language "Python" >}} | 3 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
 | {{< language "PLpgSQL" >}} | 1 | Extensions written in PLpgSQL |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="418 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="421 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -70,12 +70,14 @@ The traditional PostgreSQL extension language
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL extension for BM25-family lexical retrieval |
 | 2220 | {{< alias "pg_fts" >}} | Full-text search with BM25 and BM25F ranking |
 | 2230 | {{< alias "pg_cjk_parser" >}} | CJK bigram parser derived from PostgreSQL full-text search |
+| 2250 | {{< alias "acdat" >}} | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | Hydra Columnar extension |
 | 2450 | {{< alias "storage_engine" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
+| 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
 | 2510 | {{< alias "pg_partman" >}} | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | Database partitioning implemented as procedural language |
@@ -305,6 +307,7 @@ The traditional PostgreSQL extension language
 | 5170 | {{< alias "pre_prepare" "preprepare" >}} | Pre Prepare your Statement server side |
 | 5200 | {{< alias "pg_orphaned" >}} | Deal with orphaned files |
 | 5210 | {{< alias "pg_crash" >}} | Send random signals to random processes |
+| 5215 | {{< alias "macavity" >}} | Deterministic session-local fault injection for PostgreSQL test clusters |
 | 5220 | {{< alias "pg_cheat_funcs" >}} | Provides cheat (but useful) functions |
 | 5230 | {{< alias "fio" "pg_fio" >}} | PostgreSQL File I/O Functions |
 | 5240 | {{< alias "qos" "pg_qos" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
@@ -312,6 +315,7 @@ The traditional PostgreSQL extension language
 | 5260 | {{< alias "pgdisablelogerror" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 | 5270 | {{< alias "online_advisor" >}} | Suggest missing indexes and extended statistics online |
 | 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
+| 5815 | {{< alias "pg_circuit" >}} | Runtime observation, warnings and blocking for dangerous SQL statements |
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
 | 5860 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
 | 5880 | {{< alias "pgagent" >}} | A PostgreSQL job scheduler |
@@ -326,7 +330,6 @@ The traditional PostgreSQL extension language
 | 5970 | {{< alias "adminpack" >}} | administrative functions for PostgreSQL |
 | 5980 | {{< alias "amcheck" >}} | functions for verifying relation integrity |
 | 5990 | {{< alias "pg_surgery" >}} | extension to perform surgery on a damaged relation |
-| 6000 | {{< alias "pg_profile" >}} | PostgreSQL load profile repository and report builder |
 | 6010 | {{< alias "pg_tracing" >}} | Distributed Tracing for PostgreSQL |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | Capture or log C-level stack backtraces of PostgreSQL processes |
 | 6040 | {{< alias "pg_stat_log" >}} | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
@@ -454,7 +457,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="72 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="75 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -476,6 +479,7 @@ Pure SQL extensions and functions
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
 | 1700 | {{< alias "qdgc" >}} | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
+| 1890 | {{< alias "pg_grammar_guard" >}} | Catalog-derived grammars and approved grammar drift checks |
 | 1950 | {{< alias "pgmnemo" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
 | 2660 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
@@ -510,8 +514,10 @@ Pure SQL extensions and functions
 | 5190 | {{< alias "pgcozy" >}} | Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL. |
 | 5280 | {{< alias "pg_column_tetris" >}} | Enforce optimal column alignment to minimize row padding |
 | 5290 | {{< alias "cat_tools" >}} | Tools for interfacing with the PostgreSQL catalog |
+| 5300 | {{< alias "pg_living_assertions" >}} | Executable SQL checks with verdict dates and assertion history |
 | 5850 | {{< alias "pg_drop_events" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
 | 5870 | {{< alias "pgelog" >}} | Extended logging via pseudo-autonomous transactions |
+| 6000 | {{< alias "pg_profile" >}} | PostgreSQL load profile repository and report builder |
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | Server-side PostgreSQL performance flight recorder |
 | 6061 | {{< alias "pgfr_analyze" "pg_flight_recorder" >}} | Reporting and analysis functions for pgfr_record |
 | 6080 | {{< alias "pg_statviz" >}} | Capture PostgreSQL statistics snapshots for time-series analysis and visualization |
@@ -535,7 +541,7 @@ Pure SQL extensions and functions
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="57 Extensions" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="59 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -597,11 +603,13 @@ Extensions written in Rust with the pgrx framework
 | 7430 | {{< alias "block_copy_command" >}} | Block COPY commands via a configurable ProcessUtility hook |
 | 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
 | 8660 | {{< alias "etcd_fdw" >}} | Foreign data wrapper for etcd |
+| 9430 | {{< alias "pgs3" >}} | S3-compatible object storage endpoint implemented inside PostgreSQL |
+| 9440 | {{< alias "kafgres" >}} | Kafka protocol broker embedded in PostgreSQL |
 | 9620 | {{< alias "pgmqtt" >}} | CDC-to-MQTT broker for PostgreSQL |
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="15 Extensions" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="14 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -610,7 +618,6 @@ Extensions leveraging C++ features and libraries
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 2240 | {{< alias "pg_jieba" >}} | Chinese full-text search parser based on cppjieba |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
-| 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2490 | {{< alias "pg_ducklake" >}} | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
 | 2540 | {{< alias "pg_orca" >}} | ORCA query optimizer as a PostgreSQL extension |
 | 2700 | {{< alias "hll" >}} | type for storing hyperloglog data |
@@ -644,12 +651,13 @@ Data-only extensions
 
 ## Python
 
-{{< language "Python" >}} {{< badge content="2 Extensions" color="gray" icon="cube" >}}
+{{< language "Python" >}} {{< badge content="3 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Python
 
 | ID | Extension | Description |
 |:---:|:---|:---|
+| 1900 | {{< alias "jev" >}} | Natural-language row filtering, ranking and classification through TypeSafe |
 | 3210 | {{< alias "faker" >}} | Wrapper for the Faker Python library |
 | 6870 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
 
