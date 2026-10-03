@@ -10,6 +10,7 @@ columns:
       - { label: 按分类, url: list/cate/ }
       - { label: 按语言, url: list/lang/ }
       - { label: 按许可证, url: list/license/ }
+      - { label: "PGEXT.CLOUD", url: "https://pgext.cloud/", external: true }
   - title: 软件包
     links:
       - { label: 平台支持, url: os/ }
@@ -19,15 +20,18 @@ columns:
       - { label: GPG 密钥, url: repo/gpg/ }
   - title: 工具
     links:
-      - { label: PIG 包管理器, url: pig/ }
+      - { label: pig 包管理器, url: pig/ }
       - { label: 快速上手, url: pig/start/ }
       - { label: 命令参考, url: pig/cmd/ }
       - { label: 发布日志, url: release/ }
-      - { label: 扩展宇宙, url: galaxy/ }
-  - title: 项目
+      - { label: 扩展宇宙, url: ../galaxy/ }
+      - { label: "PIG 官网", url: "https://pig.pgsty.com/zh/", external: true }
+  - title: "项目与资源"
     links:
       - { label: 关于, url: about/ }
       - { label: pgsty/pgext, url: 'https://github.com/pgsty/pgext', external: true }
       - { label: Pigsty 发行版, url: 'https://pigsty.cc', external: true }
       - { label: RPM 构建规范, url: 'https://github.com/pgsty/rpm', external: true }
       - { label: DEB 构建规范, url: 'https://github.com/pgsty/deb', external: true }
+      - { label: "PG 中文文档", url: "https://pgsql.cc/docs/", external: true }
+      - { label: "PG 知识图谱", url: "https://pg.center/docs/reference/", external: true }

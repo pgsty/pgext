@@ -1242,8 +1242,8 @@ function footerHTML() {
     + '<p>' + bi('PostgreSQL Extension Catalog.', 'PostgreSQL 扩展目录') + '</p>'
     + '<span class="footer-snap">snapshot ' + esc(META.generated || '—') + '</span></div>'
     + group(bi('Catalog', '目录'), [['/matrix', t('nav.matrix')], ['/list', t('nav.browse')], ['/about', t('nav.about')]])
-    + group(bi('Resources', '资源'), [['/api/v1/meta', 'API', true], ['https://github.com/pgsty/pgext', 'GitHub', true], ['https://github.com/pgsty/pgext/blob/main/db/universe.csv', bi('Raw Data', '原始数据'), true]])
-    + group('Pigsty', [['https://pigsty.io', 'pigsty.io', true], ['https://pigsty.cc', 'pigsty.cc', true], [bi('https://pig.pgsty.com', 'https://pig.pgsty.com/zh'), 'pig.pgsty.com', true], ['https://pgext.cloud', 'pgext.cloud', true]])
+    + group(bi('Resources', '资源'), [['/api/v1/meta', 'API', true], ['https://github.com/pgsty/pgext', 'GitHub', true], ['https://github.com/pgsty/pgext/blob/main/db/universe.csv', bi('Raw Data', '原始数据'), true], ['https://pg.center/docs/reference/', bi('PG Center', 'PG 知识图谱'), true], ['https://pgsql.cc/docs/', bi('PGSQL.CC', 'PG 中文文档'), true]])
+    + group('Pigsty', [['https://pigsty.io', 'pigsty.io', true], ['https://pigsty.cc', 'pigsty.cc', true], [bi('https://pig.pgsty.com', 'https://pig.pgsty.com/zh'), 'pig.pgsty.com', true], [bi('https://ext.pgsty.com/', 'https://ext.pgsty.com/zh/'), bi('Extension documentation', '扩展文档'), true]])
     + '</div>'
     + '<div class="wrap footer-bottom">'
     + '<span>© 2018-2026 <a href="https://pigsty.io" target="_blank" rel="noopener">Pigsty</a> · <a href="https://vonng.com/en" target="_blank" rel="noopener">Ruohang Feng</a></span>'
