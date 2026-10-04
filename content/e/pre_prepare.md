@@ -233,7 +233,7 @@ pre_prepare automatically prepares SQL statements at connection time so clients 
 
 Configure in `postgresql.conf`:
 
-```
+```ini
 preprepare.relation = 'preprepare.statements'
 preprepare.at_init = on    -- auto-prepare on connection (requires local_preload_libraries)
 ```

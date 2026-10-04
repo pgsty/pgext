@@ -2,7 +2,7 @@
 title: "aggs_for_vecs"
 linkTitle: "aggs_for_vecs"
 description: "Aggregate functions for array inputs"
-weight: 4740
+weight: 4750
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4740** | {{< badge content="aggs_for_vecs" link="https://github.com/pjungwir/aggs_for_vecs" >}} | {{< ext "aggs_for_vecs" >}} | `1.4.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4750** | {{< badge content="aggs_for_vecs" link="https://github.com/pjungwir/aggs_for_vecs" >}} | {{< ext "aggs_for_vecs" >}} | `1.4.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

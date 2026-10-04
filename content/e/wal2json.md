@@ -266,7 +266,6 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/eulerto/wal2json" title="Repository" icon="github" subtitle="github.com/eulerto/wal2json" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="wal2json-2.6.tar.gz" />}}
 {{< /cards >}}
 
 

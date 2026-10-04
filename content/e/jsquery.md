@@ -202,7 +202,6 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/postgrespro/jsquery" title="Repository" icon="github" subtitle="github.com/postgrespro/jsquery" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="jsquery-1.2.tar.gz" />}}
 {{< /cards >}}
 
 

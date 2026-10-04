@@ -2,7 +2,7 @@
 title: "pg_pinyin"
 linkTitle: "pg_pinyin"
 description: "Pinyin romanization and search helpers for PostgreSQL"
-weight: 2190
+weight: 2200
 categories: ["FTS"]
 languages: ["Rust"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2190** | {{< badge content="pg_pinyin" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< ext "pg_pinyin" >}} | `0.0.8` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **2200** | {{< badge content="pg_pinyin" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< ext "pg_pinyin" >}} | `0.0.8` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

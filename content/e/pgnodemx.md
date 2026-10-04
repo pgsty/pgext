@@ -2,7 +2,7 @@
 title: "pgnodemx"
 linkTitle: "pgnodemx"
 description: "Capture node OS metrics via SQL queries"
-weight: 6440
+weight: 6450
 categories: ["STAT"]
 languages: ["C"]
 licenses: ["Apache-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6440** | {{< badge content="pgnodemx" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< ext "pgnodemx" >}} | `2.0.1` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **6450** | {{< badge content="pgnodemx" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< ext "pgnodemx" >}} | `2.0.1` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "system_stats" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgsentinel" >}} {{< ext "pg_datasentinel" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "pgpool_adm" >}} |
+|   **See Also**    | {{< ext "system_stats" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgsentinel" >}} {{< ext "pg_datasentinel" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "pgpool_adm" >}} {{< ext "pgexporter_ext" >}} {{< ext "pg_statvfs" >}} |
 |    **Siblings**   | {{< ext "pg_proctab" >}} |
 
 > [!Note] Package/source version 2.0.1 ships SQL/control version 2.0. PIGSTY RPM and PGDG DEB cover PostgreSQL 14-18 and also ship the pg_proctab compatibility stub; the release tarball reports pgnodemx_version() as none. shared_preload_libraries=pgnodemx is required.

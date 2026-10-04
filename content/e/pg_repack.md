@@ -345,7 +345,7 @@ CREATE EXTENSION pg_repack;
 ## About
 
 - GitHub Repo: [`reorg/pg_repack`](https://github.com/reorg/pg_repack)
-- [**HomePage**](https://reorg.github.io/pg_repack/) 
+- [**HomePage**](https://reorg.github.io/pg_repack/)
 
 pg_repack is a PostgreSQL extension which lets you remove bloat from
 tables and indexes, and optionally restore the physical order of clustered
@@ -435,13 +435,13 @@ version.
 
 ## Usage
 
-```
+```text
 pg_repack [OPTION]... [DBNAME]
 ```
 
 The following options can be specified in `OPTIONS`.
 
-```
+```text
 Options:
   -a, --all                          repack all databases
   -t, --table=TABLE                  repack specific table only

@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9100** | {{< badge content="orafce" link="https://github.com/orafce/orafce" >}} | {{< ext "orafce" >}} | `4.16.12` | {{< category "SIM" >}} | {{< license "0BSD" >}} | {{< language "C" >}} |
+| **9100** | {{< badge content="orafce" link="https://github.com/orafce/orafce" >}} | {{< ext "orafce" >}} | `4.16.13` | {{< category "SIM" >}} | {{< license "0BSD" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,12 +29,14 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ivorysql_ora" >}} {{< ext "db2fce" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "tds_fdw" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} |
 
+> [!Note] Upstream distribution 4.16.13 fixes possible dbms_sql crashes; SQL/control version is 4.16. Published PGDG RPM/DEB baseline remains 4.16.12.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.12` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `orafce` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.13` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `orafce` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.12` | {{< bg "18" "orafce_18" "green" >}} {{< bg "17" "orafce_17" "green" >}} {{< bg "16" "orafce_16" "green" >}} {{< bg "15" "orafce_15" "green" >}} {{< bg "14" "orafce_14" "green" >}} | `orafce_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.12` | {{< bg "18" "postgresql-18-orafce" "green" >}} {{< bg "17" "postgresql-17-orafce" "green" >}} {{< bg "16" "postgresql-16-orafce" "green" >}} {{< bg "15" "postgresql-15-orafce" "green" >}} {{< bg "14" "postgresql-14-orafce" "green" >}} | `postgresql-$v-orafce` | - |
 {.packages}
@@ -931,13 +933,14 @@ CREATE EXTENSION orafce;
 
 Sources:
 
-- [README.asciidoc](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/README.asciidoc)
-- [orafce.control](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/orafce.control)
-- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/orafce--4.16.sql)
+- [4.16.13 release](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_13)
+- [README.asciidoc](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/README.asciidoc)
+- [orafce.control](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce.control)
+- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce--4.16.sql)
 - [4.16.12 release notes](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_12)
-- [File-access implementation](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/file.c)
+- [File-access implementation](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/file.c)
 
-`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.16.12 still uses control and SQL extension version 4.16; the two numbers describe different layers.
+`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.16.13 still uses control and SQL extension version 4.16; the two numbers describe different layers.
 
 ### Core Workflow
 
@@ -962,3 +965,7 @@ Use `oracle.date` when an Oracle-style date must retain the time of day. Date fu
 `utl_file` accesses server-side files within administrator-configured allowed directories; restrict grants and file-system permissions. The implementation rejects parent-directory references that remain after path canonicalization. Avoid parent references in file paths. The 4.16.12 release specifically fixes possible crashes in `dbms_sql`.
 
 Installation requires a superuser and creates fixed schemas; no preload is required. Follow the upstream configuration guidance before altering `search_path`. Since the SQL version remains 4.16, an installed 4.16 extension need not acquire a new SQL version merely because its binary distribution was patched. Reconnect as required to use the updated library and verify behavior against the exact installed distribution.
+
+### 4.16.13 Patch
+
+Distribution 4.16.13 fixes additional possible `dbms_sql` crashes. The control version remains 4.16; update the library distribution without inventing a 4.16.13 SQL upgrade.

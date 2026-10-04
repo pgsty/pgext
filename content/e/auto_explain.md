@@ -73,7 +73,7 @@ SET auto_explain.log_analyze = true;
 
 Or in `postgresql.conf` for all sessions:
 
-```
+```ini
 session_preload_libraries = 'auto_explain'
 auto_explain.log_min_duration = '3s'
 ```
@@ -98,7 +98,7 @@ auto_explain.log_min_duration = '3s'
 
 ### Example Log Output
 
-```
+```text
 LOG:  duration: 3.651 ms  plan:
   Query Text: SELECT count(*) FROM pg_class, pg_index
               WHERE oid = indrelid AND indisunique;

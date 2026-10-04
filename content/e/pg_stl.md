@@ -2,7 +2,7 @@
 title: "pg_stl"
 linkTitle: "pg_stl"
 description: "Time series analysis functions for PostgreSQL"
-weight: 1130
+weight: 1140
 categories: ["TIME"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1130** | {{< badge content="pg_stl" link="https://github.com/nadyaloseva/pg_ts_analysis" >}} | {{< ext "pg_stl" >}} | `1.0.0` | {{< category "TIME" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **1140** | {{< badge content="pg_stl" link="https://github.com/nadyaloseva/pg_ts_analysis" >}} | {{< ext "pg_stl" >}} | `1.0.0` | {{< category "TIME" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

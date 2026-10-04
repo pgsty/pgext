@@ -2,7 +2,7 @@
 title: "first_last_agg"
 linkTitle: "first_last_agg"
 description: "first() and last() aggregate functions"
-weight: 4710
+weight: 4720
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4710** | {{< badge content="first_last_agg" link="https://github.com/wulczer/first_last_agg" >}} | {{< ext "first_last_agg" >}} | `0.1.4` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4720** | {{< badge content="first_last_agg" link="https://github.com/wulczer/first_last_agg" >}} | {{< ext "first_last_agg" >}} | `0.1.4` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

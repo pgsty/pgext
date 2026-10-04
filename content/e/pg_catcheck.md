@@ -267,13 +267,13 @@ pg_catcheck -h localhost -p 5432 -d mydb
 
 Normal output when no issues are found:
 
-```
+```text
 progress: done (0 inconsistencies, 0 warnings, 0 errors)
 ```
 
 ### Example Output with Corruption
 
-```
+```text
 notice: pg_class row has invalid relnamespace "24580": no matching entry in pg_namespace
 row identity: oid="24581" relname="foo" relkind="r"
 notice: pg_type row has invalid typnamespace "24580": no matching entry in pg_namespace

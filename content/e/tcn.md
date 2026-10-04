@@ -71,7 +71,7 @@ Optional parameter: custom channel name (defaults to `tcn`).
 
 ### Notification Payload Format
 
-```
+```text
 "table_name",operation,"column"='value',"column"='value'
 ```
 

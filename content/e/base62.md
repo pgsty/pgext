@@ -2,7 +2,7 @@
 title: "base62"
 linkTitle: "base62"
 description: "Base62 extension for PostgreSQL"
-weight: 4810
+weight: 4820
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4810** | {{< badge content="base62" link="https://github.com/adjust/pg-base62" >}} | {{< ext "base62" "pg_base62" >}} | `0.0.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4820** | {{< badge content="base62" link="https://github.com/adjust/pg-base62" >}} | {{< ext "base62" "pg_base62" >}} | `0.0.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "base36" >}} {{< ext "pg_base58" >}} {{< ext "pg_hashids" >}} {{< ext "url_encode" >}} {{< ext "pg_slug_gen" >}} {{< ext "typeid" >}} {{< ext "pgqr" >}} |
+|   **See Also**    | {{< ext "base36" >}} {{< ext "pg_base58" >}} {{< ext "pg_hashids" >}} {{< ext "url_encode" >}} {{< ext "pg_slug_gen" >}} {{< ext "typeid" >}} {{< ext "pgqr" >}} {{< ext "pg_lexo" >}} |
 
 
 ## Packages

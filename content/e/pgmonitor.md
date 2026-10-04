@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "pg_stat_monitor" >}} {{< ext "system_stats" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "pgpool_adm" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_kcache" >}} |
+|   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "pg_stat_monitor" >}} {{< ext "system_stats" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "pgpool_adm" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgtelemetry" >}} {{< ext "pgexporter_ext" >}} |
 
 > [!Note] Metric objects work without preloading; the optional background worker requires shared_preload_libraries=pgmonitor_bgw.
 

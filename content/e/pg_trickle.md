@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `pgtrickle` `pgtrickle_changes` |
 |   **See Also**    | {{< ext "pg_ivm" >}} {{< ext "pg_incremental" >}} {{< ext "timescaledb" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_partman" >}} {{< ext "pg_ttl_index" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_lake" >}} |
 
-> [!Note] PG18 only; requires preload and ships pg_trickle_dump. Follow the packaged upgrade guide.
+> [!Note] PG18 only; requires preload and ships pg_trickle_dump. Follow the packaged upgrade guide. v0.108.2 is tag-only as of 2026-10-04; the current GitHub Release and packaged baseline remain 0.108.1.
 
 
 ## Packages

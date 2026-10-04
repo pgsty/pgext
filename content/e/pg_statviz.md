@@ -2,7 +2,7 @@
 title: "pg_statviz"
 linkTitle: "pg_statviz"
 description: "Capture PostgreSQL statistics snapshots for time-series analysis and visualization"
-weight: 6080
+weight: 6090
 categories: ["STAT"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6080** | {{< badge content="pg_statviz" link="https://github.com/vyruss/pg_statviz" >}} | {{< ext "pg_statviz" >}} | `1.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **6090** | {{< badge content="pg_statviz" link="https://github.com/vyruss/pg_statviz" >}} | {{< ext "pg_statviz" >}} | `1.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

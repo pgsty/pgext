@@ -223,6 +223,7 @@ CREATE EXTENSION pg_rrf;
 
 
 ## Usage
+
 > Sources: [README](https://github.com/yuiseki/pg_rrf/blob/main/README.md), [v0.0.3 release](https://github.com/yuiseki/pg_rrf/releases/tag/v0.0.3)
 
 `pg_rrf` provides Reciprocal Rank Fusion functions for hybrid search score fusion.

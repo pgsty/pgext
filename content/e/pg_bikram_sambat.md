@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pg_bikram_sambat**](https://github.com/LeohangRai/pg_bikram_sambat) : Bikram Sambat date type and AD/BS conversion functions
+[**pg_bikram_sambat**](https://pgxn.org/dist/pg_bikram_sambat/0.1.0/) : Bikram Sambat date type and AD/BS conversion functions
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3860** | {{< badge content="pg_bikram_sambat" link="https://github.com/LeohangRai/pg_bikram_sambat" >}} | {{< ext "pg_bikram_sambat" >}} | `0.1.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3860** | {{< badge content="pg_bikram_sambat" link="https://pgxn.org/dist/pg_bikram_sambat/0.1.0/" >}} | {{< ext "pg_bikram_sambat" >}} | `0.1.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,6 +28,8 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgcalendar" >}} {{< ext "pg_rrule" >}} {{< ext "pg_duration" >}} {{< ext "timestamp9" >}} {{< ext "pg_when" >}} {{< ext "cron_utils" >}} {{< ext "pg_cron" >}} |
+
+> [!Note] Former GitHub repository is unavailable; authoritative 0.1.0 sources remain on PGXN.
 
 
 ## Packages
@@ -181,7 +183,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/LeohangRai/pg_bikram_sambat" title="Repository" icon="github" subtitle="github.com/LeohangRai/pg_bikram_sambat" />}}
+{{< card link="https://pgxn.org/dist/pg_bikram_sambat/0.1.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/pg_bikram_sambat/0.1.0/" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_bikram_sambat-0.1.0.tar.gz" />}}
 {{< /cards >}}
 

@@ -2,7 +2,7 @@
 title: "uri"
 linkTitle: "uri"
 description: "URI Data type for PostgreSQL"
-weight: 3790
+weight: 3800
 categories: ["TYPE"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3790** | {{< badge content="uri" link="https://github.com/petere/pguri" >}} | {{< ext "uri" "pg_uri" >}} | `1.20251029` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3800** | {{< badge content="uri" link="https://github.com/petere/pguri" >}} | {{< ext "uri" "pg_uri" >}} | `1.20251029` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

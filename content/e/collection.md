@@ -2,7 +2,7 @@
 title: "collection"
 linkTitle: "collection"
 description: "Memory optimized data type to be used inside of plpglsql func"
-weight: 3690
+weight: 3700
 categories: ["TYPE"]
 languages: ["C"]
 licenses: ["Apache-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3690** | {{< badge content="collection" link="https://github.com/aws/pgcollection" >}} | {{< ext "collection" "pgcollection" >}} | `2.1.3` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **3700** | {{< badge content="collection" link="https://github.com/aws/pgcollection" >}} | {{< ext "collection" "pgcollection" >}} | `2.1.3` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgbson" >}} {{< ext "intarray" >}} {{< ext "hstore" >}} {{< ext "arraymath" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "floatvec" >}} {{< ext "pg_projection" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "intarray" >}} {{< ext "hstore" >}} {{< ext "arraymath" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "floatvec" >}} {{< ext "pg_projection" >}} {{< ext "istore" >}} |
 
 
 ## Packages

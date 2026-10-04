@@ -31,7 +31,7 @@ page_width: full
 |   **See Also**    | {{< ext "spock" >}} {{< ext "pgactive" >}} {{< ext "pgoutput" >}} {{< ext "mimeo" >}} {{< ext "wal2json" >}} {{< ext "test_decoding" >}} {{< ext "postgres_fdw" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} |
 |    **Siblings**   | {{< ext "pglogical" >}} |
 
-> [!Note] Latest PGDG DEB/catalog version is 2.4.7; PGDG RPM and Pigsty source remain on 2.4.6.
+> [!Note] Latest PGDG DEB/catalog version is 2.4.7; PGDG RPM remains on 2.4.6.
 
 
 ## Packages
@@ -69,7 +69,6 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/2ndQuadrant/pglogical" title="Repository" icon="github" subtitle="github.com/2ndQuadrant/pglogical" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical-2.4.6.tar.gz" />}}
 {{< /cards >}}
 
 

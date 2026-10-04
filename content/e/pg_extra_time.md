@@ -2,7 +2,7 @@
 title: "pg_extra_time"
 linkTitle: "pg_extra_time"
 description: "Some date time functions and operators that,"
-weight: 4220
+weight: 4230
 categories: ["UTIL"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4220** | {{< badge content="pg_extra_time" link="https://github.com/bigsmoke/pg_extra_time" >}} | {{< ext "pg_extra_time" >}} | `2.1.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **4230** | {{< badge content="pg_extra_time" link="https://github.com/bigsmoke/pg_extra_time" >}} | {{< ext "pg_extra_time" >}} | `2.1.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

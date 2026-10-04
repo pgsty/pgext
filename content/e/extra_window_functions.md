@@ -2,7 +2,7 @@
 title: "extra_window_functions"
 linkTitle: "extra_window_functions"
 description: "Extra Window Functions for PostgreSQL"
-weight: 4720
+weight: 4730
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4720** | {{< badge content="extra_window_functions" link="https://github.com/xocolatl/extra_window_functions" >}} | {{< ext "extra_window_functions" >}} | `2.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4730** | {{< badge content="extra_window_functions" link="https://github.com/xocolatl/extra_window_functions" >}} | {{< ext "extra_window_functions" >}} | `2.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

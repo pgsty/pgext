@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "vasco" >}} {{< ext "xicor" >}} {{< ext "pg_math" >}} {{< ext "quantile" >}} {{< ext "fbsql" >}} {{< ext "lower_quantile" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} |
+|   **See Also**    | {{< ext "vasco" >}} {{< ext "xicor" >}} {{< ext "pg_math" >}} {{< ext "quantile" >}} {{< ext "fbsql" >}} {{< ext "lower_quantile" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "pg_statkit" >}} |
 
 
 ## Packages

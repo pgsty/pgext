@@ -2,7 +2,7 @@
 title: "cron_utils"
 linkTitle: "cron_utils"
 description: "Parse cron expressions and compute previous or next trigger times"
-weight: 1140
+weight: 1150
 categories: ["TIME"]
 languages: ["SQL"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1140** | {{< badge content="cron_utils" link="https://github.com/Myshkouski/pg-cron-utils" >}} | {{< ext "cron_utils" >}} | `0.1.0` | {{< category "TIME" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
+| **1150** | {{< badge content="cron_utils" link="https://github.com/Myshkouski/pg-cron-utils" >}} | {{< ext "cron_utils" >}} | `0.1.0` | {{< category "TIME" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

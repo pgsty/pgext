@@ -31,6 +31,8 @@ page_width: full
 |   **Requires**    | {{< ext "pg_cron" >}} {{< ext "http" >}} |
 |   **See Also**    | {{< ext "pgmq" >}} {{< ext "redis" >}} {{< ext "ulak" >}} {{< ext "pgq" >}} {{< ext "pgmqtt" >}} {{< ext "redis_fdw" >}} {{< ext "tcn" >}} {{< ext "pg_durable" >}} {{< ext "fsm_core" >}} {{< ext "kafka_fdw" >}} |
 
+> [!Note] Upstream GitHub repository is archived.
+
 
 ## Packages
 

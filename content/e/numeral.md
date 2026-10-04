@@ -2,7 +2,7 @@
 title: "numeral"
 linkTitle: "numeral"
 description: "numeral datatypes extension"
-weight: 3710
+weight: 3730
 categories: ["TYPE"]
 languages: ["C"]
 licenses: ["GPL-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3710** | {{< badge content="numeral" link="https://github.com/df7cb/postgresql-numeral" >}} | {{< ext "numeral" >}} | `1.3` | {{< category "TYPE" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **3730** | {{< badge content="numeral" link="https://github.com/df7cb/postgresql-numeral" >}} | {{< ext "numeral" >}} | `1.3` | {{< category "TYPE" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

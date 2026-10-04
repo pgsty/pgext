@@ -28,7 +28,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "flux" >}} {{< ext "format" >}} {{< ext "hstore_hash_ops" >}} {{< ext "hstore_ops" >}} {{< ext "hstore_pllua" >}} {{< ext "hstore_plluau" >}} {{< ext "hstore_plperl" >}} {{< ext "hstore_plperlu" >}} {{< ext "hstore_plpython2u" >}} {{< ext "hstore_plpython3u" >}} {{< ext "hstore_plpythonu" >}} {{< ext "hstore_plruby" >}} {{< ext "json_enhancements_with_hstore" >}} {{< ext "mbus" >}} {{< ext "meta_triggers" >}} {{< ext "numhstore" >}} {{< ext "pg_auditor" >}} {{< ext "pg_readme" >}} {{< ext "pg_rowalesce" >}} {{< ext "pg_utility_trigger_functions" >}} {{< ext "pg_xenophile" >}} {{< ext "sys_syn_dblink" >}} |
-|   **See Also**    | {{< ext "pgbson" >}} {{< ext "collection" >}} {{< ext "jsonschema" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
+|   **See Also**    | {{< ext "pgbson" >}} {{< ext "collection" >}} {{< ext "jsonschema" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "istore" >}} |
 
 
 ## Packages

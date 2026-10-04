@@ -2,7 +2,7 @@
 title: "pg_wait_sampling"
 linkTitle: "pg_wait_sampling"
 description: "sampling based statistics of wait events"
-weight: 6280
+weight: 6290
 categories: ["STAT"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6280** | {{< badge content="pg_wait_sampling" link="https://github.com/postgrespro/pg_wait_sampling" >}} | {{< ext "pg_wait_sampling" >}} | `1.1.11` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6290** | {{< badge content="pg_wait_sampling" link="https://github.com/postgrespro/pg_wait_sampling" >}} | {{< ext "pg_wait_sampling" >}} | `1.1.11` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

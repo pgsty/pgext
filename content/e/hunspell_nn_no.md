@@ -2,7 +2,7 @@
 title: "hunspell_nn_no"
 linkTitle: "hunspell_nn_no"
 description: "Norwegian (norsk) Hunspell Dictionary"
-weight: 2276
+weight: 2286
 categories: ["FTS"]
 languages: ["Data"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2276** | {{< badge content="hunspell_nn_no" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_nn_no" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2286** | {{< badge content="hunspell_nn_no" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_nn_no" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

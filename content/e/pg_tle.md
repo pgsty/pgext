@@ -322,7 +322,7 @@ CREATE EXTENSION pg_tle;
 
 Add `pg_tle` to `shared_preload_libraries` in `postgresql.conf`:
 
-```
+```ini
 shared_preload_libraries = 'pg_tle'
 ```
 

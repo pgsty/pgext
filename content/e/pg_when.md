@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pgcalendar" >}} {{< ext "pg_rrule" >}} {{< ext "cron_utils" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_dispatch" >}} |
+|   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pgcalendar" >}} {{< ext "pg_rrule" >}} {{< ext "cron_utils" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_dispatch" >}} {{< ext "edtf_postgres" >}} |
 
 > [!Note] Upstream 0.1.10 supports PostgreSQL 13-18 and pins pgrx 0.18.1; PIGSTY packages PostgreSQL 14-18 with a locked pgrx 0.19.1 compatibility update.
 

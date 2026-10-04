@@ -2,7 +2,7 @@
 title: "vchord_bm25"
 linkTitle: "vchord_bm25"
 description: "A postgresql extension for bm25 ranking algorithm"
-weight: 2150
+weight: 2160
 categories: ["FTS"]
 languages: ["Rust"]
 licenses: ["AGPL-3.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2150** | {{< badge content="vchord_bm25" link="https://github.com/supervc-stack/VectorChord-bm25" >}} | {{< ext "vchord_bm25" >}} | `0.3.0` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+| **2160** | {{< badge content="vchord_bm25" link="https://github.com/supervc-stack/VectorChord-bm25" >}} | {{< ext "vchord_bm25" >}} | `0.3.0` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

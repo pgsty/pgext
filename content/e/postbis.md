@@ -2,7 +2,7 @@
 title: "postbis"
 linkTitle: "postbis"
 description: "Adds compressed DNA, RNA, amino-acid, and aligned sequence types with casts, operators, indexes, and bioinformatics functions."
-weight: 3760
+weight: 3780
 categories: ["TYPE"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3760** | {{< badge content="postbis" link="https://github.com/no0p/postbis" >}} | {{< ext "postbis" >}} | `1.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3780** | {{< badge content="postbis" link="https://github.com/no0p/postbis" >}} | {{< ext "postbis" >}} | `1.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "zhparser"
 linkTitle: "zhparser"
 description: "a parser for full-text search of Chinese"
-weight: 2130
+weight: 2140
 categories: ["FTS"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2130** | {{< badge content="zhparser" link="https://github.com/amutu/zhparser" >}} | {{< ext "zhparser" >}} | `2.3` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2140** | {{< badge content="zhparser" link="https://github.com/amutu/zhparser" >}} | {{< ext "zhparser" >}} | `2.3` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

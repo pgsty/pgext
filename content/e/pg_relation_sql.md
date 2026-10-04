@@ -2,7 +2,7 @@
 title: "pg_relation_sql"
 linkTitle: "pg_relation_sql"
 description: "Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations"
-weight: 4210
+weight: 4220
 categories: ["UTIL"]
 languages: ["PLpgSQL"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4210** | {{< badge content="pg_relation_sql" link="https://github.com/asmgit/pg_relation_sql" >}} | {{< ext "pg_relation_sql" >}} | `0.2.2` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "PLpgSQL" >}} |
+| **4220** | {{< badge content="pg_relation_sql" link="https://github.com/asmgit/pg_relation_sql" >}} | {{< ext "pg_relation_sql" >}} | `0.2.2` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "PLpgSQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

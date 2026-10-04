@@ -86,7 +86,7 @@ SELECT * FROM pg_logical_slot_get_changes('test_slot', NULL, NULL);
 
 ### Output Format
 
-```
+```text
 BEGIN 1234
 table public.test_table: INSERT: id[integer]:1 data[text]:'hello'
 table public.test_table: UPDATE: id[integer]:1 data[text]:'world'

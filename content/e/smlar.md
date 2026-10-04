@@ -236,12 +236,12 @@ The `smlar` extension provides effective similarity search on PostgreSQL arrays 
 
 ## Functions
 
-```
+```text
 float4 smlar(anyarray, anyarray)
 ```
 Computes similarity of two arrays. Arrays should be the same type.
 
-```
+```text
 float4 smlar(anyarray, anyarray, bool useIntersect)
 ```
 Computes similarity of two arrays of composite types. Composite type looks like:
@@ -252,7 +252,7 @@ CREATE TYPE type_name AS (element_name anytype, weight_name FLOAT4);
 
 The `useIntersect` option points to use only intersected elements in the denominator.
 
-```
+```text
 float4 smlar(anyarray a, anyarray b, text formula)
 ```
 Computes similarity of two arrays by a given formula. Predefined variables in formula:
@@ -269,27 +269,27 @@ SELECT smlar('{1,4,6}'::int[], '{5,4,6}', 'N.i / sqrt(N.a * N.b)');
 -- These two calls are equivalent.
 ```
 
-```
+```text
 anyarray % anyarray
 ```
 Returns true if similarity of the arrays is greater than the threshold limit.
 
-```
+```text
 text[] tsvector2textarray(tsvector)
 ```
 Transforms tsvector type to text array.
 
-```
+```text
 anyarray array_unique(anyarray)
 ```
 Sort and unique array.
 
-```
+```text
 float4 inarray(anyarray, anyelement)
 ```
 Returns zero if second argument does not present in the first one and 1.0 in opposite case.
 
-```
+```text
 float4 inarray(anyarray, anyelement, float4, float4)
 ```
 Returns fourth argument if second argument does not present in the first one and third argument in opposite case.
@@ -299,22 +299,22 @@ Returns fourth argument if second argument does not present in the first one and
 
 ## GUC Configuration Variables
 
-```
+```text
 smlar.threshold  FLOAT
 ```
 Arrays with similarity lower than threshold are not similar by `%` operation.
 
-```
+```text
 smlar.persistent_cache  BOOL
 ```
 Cache of global stat is stored in transaction-independent memory.
 
-```
+```text
 smlar.type  STRING
 ```
 Type of similarity formula: `cosine` (default), `tfidf`, `overlap`.
 
-```
+```text
 smlar.stattable  STRING
 ```
 Name of table storing set-wide statistic. Table should be defined as:
@@ -328,7 +328,7 @@ CREATE TABLE table_name (
 
 A row with null value means total number of documents. Used only for `smlar.type = 'tfidf'`.
 
-```
+```text
 smlar.tf_method  STRING
 ```
 Calculation method for term frequency. Values:
@@ -338,14 +338,14 @@ Calculation method for term frequency. Values:
 
 Used only for `smlar.type = 'tfidf'`.
 
-```
+```text
 smlar.idf_plus_one  BOOL
 ```
 If false (default), calculate idf as `log(d/df)`. If true, as `log(1+d/df)`. Used only for `smlar.type = 'tfidf'`.
 
 It is highly recommended to add to `postgresql.conf`:
 
-```
+```ini
 smlar.threshold = 0.6  # or any other value > 0 and < 1
 ```
 

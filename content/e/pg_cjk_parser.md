@@ -2,7 +2,7 @@
 title: "pg_cjk_parser"
 linkTitle: "pg_cjk_parser"
 description: "CJK bigram parser derived from PostgreSQL full-text search"
-weight: 2230
+weight: 2240
 categories: ["FTS"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2230** | {{< badge content="pg_cjk_parser" link="https://github.com/huangjimmy/pg_cjk_parser" >}} | {{< ext "pg_cjk_parser" >}} | `0.1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2240** | {{< badge content="pg_cjk_parser" link="https://github.com/huangjimmy/pg_cjk_parser" >}} | {{< ext "pg_cjk_parser" >}} | `0.1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

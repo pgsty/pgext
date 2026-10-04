@@ -2,7 +2,7 @@
 title: "hunspell_nl_nl"
 linkTitle: "hunspell_nl_nl"
 description: "Dutch Hunspell Dictionary"
-weight: 2275
+weight: 2285
 categories: ["FTS"]
 languages: ["Data"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2275** | {{< badge content="hunspell_nl_nl" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_nl_nl" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2285** | {{< badge content="hunspell_nl_nl" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_nl_nl" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

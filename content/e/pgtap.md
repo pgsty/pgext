@@ -28,6 +28,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
+|    **Need By**    | {{< ext "pgsqlmock" >}} |
 |   **See Also**    | {{< ext "faker" >}} {{< ext "dbt2" >}} {{< ext "pg_mockable" >}} {{< ext "pgsqlmock" >}} {{< ext "omni_test" >}} {{< ext "random" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 
 

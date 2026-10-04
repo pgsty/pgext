@@ -2,7 +2,7 @@
 title: "pg_kpart"
 linkTitle: "pg_kpart"
 description: "Reject full partition scans that omit the partition key"
-weight: 7450
+weight: 7460
 categories: ["SEC"]
 languages: ["C"]
 licenses: ["ISC"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7450** | {{< badge content="pg_kpart" link="https://github.com/hexacluster/pg_kpart" >}} | {{< ext "pg_kpart" >}} | `1.0` | {{< category "SEC" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
+| **7460** | {{< badge content="pg_kpart" link="https://github.com/hexacluster/pg_kpart" >}} | {{< ext "pg_kpart" >}} | `1.0` | {{< category "SEC" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

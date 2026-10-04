@@ -2,7 +2,7 @@
 title: "floatvec"
 linkTitle: "floatvec"
 description: "Math for vectors (arrays) of numbers"
-weight: 4730
+weight: 4740
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4730** | {{< badge content="floatvec" link="https://github.com/pjungwir/floatvec" >}} | {{< ext "floatvec" >}} | `1.1.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4740** | {{< badge content="floatvec" link="https://github.com/pjungwir/floatvec" >}} | {{< ext "floatvec" >}} | `1.1.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "pg_track_settings"
 linkTitle: "pg_track_settings"
 description: "Track settings changes"
-weight: 6260
+weight: 6270
 categories: ["STAT"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6260** | {{< badge content="pg_track_settings" link="https://github.com/rjuju/pg_track_settings" >}} | {{< ext "pg_track_settings" >}} | `2.1.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **6270** | {{< badge content="pg_track_settings" link="https://github.com/rjuju/pg_track_settings" >}} | {{< ext "pg_track_settings" >}} | `2.1.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

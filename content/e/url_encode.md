@@ -2,7 +2,7 @@
 title: "url_encode"
 linkTitle: "url_encode"
 description: "url_encode, url_decode functions"
-weight: 4190
+weight: 4200
 categories: ["UTIL"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4190** | {{< badge content="url_encode" link="https://github.com/okbob/url_encode" >}} | {{< ext "url_encode" >}} | `1.2.5` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4200** | {{< badge content="url_encode" link="https://github.com/okbob/url_encode" >}} | {{< ext "url_encode" >}} | `1.2.5` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

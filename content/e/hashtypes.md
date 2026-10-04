@@ -2,7 +2,7 @@
 title: "hashtypes"
 linkTitle: "hashtypes"
 description: "sha1, md5 and other data types for PostgreSQL"
-weight: 3750
+weight: 3770
 categories: ["TYPE"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3750** | {{< badge content="hashtypes" link="https://github.com/adjust/hashtypes/" >}} | {{< ext "hashtypes" >}} | `0.1.5` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3770** | {{< badge content="hashtypes" link="https://github.com/adjust/hashtypes/" >}} | {{< ext "hashtypes" >}} | `0.1.5` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

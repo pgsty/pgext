@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pg_cjk_parser" >}} {{< ext "pg_jieba" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_pinyin" >}} {{< ext "unaccent" >}} {{< ext "pg_trgm" >}} {{< ext "dict_xsyn" >}} {{< ext "biscuit" >}} |
+|   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pg_cjk_parser" >}} {{< ext "pg_jieba" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_pinyin" >}} {{< ext "unaccent" >}} {{< ext "pg_trgm" >}} {{< ext "dict_xsyn" >}} {{< ext "biscuit" >}} {{< ext "vgram" >}} |
 
 
 ## Packages

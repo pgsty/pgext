@@ -2,7 +2,7 @@
 title: "pgpcre"
 linkTitle: "pgpcre"
 description: "Perl Compatible Regular Expression functions"
-weight: 4230
+weight: 4240
 categories: ["UTIL"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4230** | {{< badge content="pgpcre" link="https://github.com/petere/pgpcre" >}} | {{< ext "pgpcre" >}} | `0.20190509` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4240** | {{< badge content="pgpcre" link="https://github.com/petere/pgpcre" >}} | {{< ext "pgpcre" >}} | `0.20190509` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

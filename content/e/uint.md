@@ -2,7 +2,7 @@
 title: "uint"
 linkTitle: "uint"
 description: "unsigned integer types"
-weight: 3730
+weight: 3750
 categories: ["TYPE"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3730** | {{< badge content="uint" link="https://github.com/petere/pguint" >}} | {{< ext "uint" "pguint" >}} | `1.20260630` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3750** | {{< badge content="uint" link="https://github.com/petere/pguint" >}} | {{< ext "uint" "pguint" >}} | `1.20260630` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

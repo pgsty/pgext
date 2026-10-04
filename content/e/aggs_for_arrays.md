@@ -2,7 +2,7 @@
 title: "aggs_for_arrays"
 linkTitle: "aggs_for_arrays"
 description: "Various functions for computing statistics on arrays of numbers"
-weight: 4750
+weight: 4760
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4750** | {{< badge content="aggs_for_arrays" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< ext "aggs_for_arrays" >}} | `1.3.3` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4760** | {{< badge content="aggs_for_arrays" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< ext "aggs_for_arrays" >}} | `1.3.3` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "pg_smtp_client"
 linkTitle: "pg_smtp_client"
 description: "PostgreSQL extension to send email using SMTP"
-weight: 4170
+weight: 4180
 categories: ["UTIL"]
 languages: ["Rust"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4170** | {{< badge content="pg_smtp_client" link="https://github.com/brianpursley/pg_smtp_client" >}} | {{< ext "pg_smtp_client" >}} | `0.2.1` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **4180** | {{< badge content="pg_smtp_client" link="https://github.com/brianpursley/pg_smtp_client" >}} | {{< ext "pg_smtp_client" >}} | `0.2.1` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `smtp_client` |
 |   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "emailaddr" >}} {{< ext "pg_utl_smtp" >}} {{< ext "omni_email" >}} {{< ext "uri" >}} {{< ext "ip4r" >}} {{< ext "url_encode" >}} |
+
+> [!Note] Upstream GitHub repository is archived.
 
 
 ## Packages
@@ -256,7 +258,7 @@ Use the `smtp_client.send_email()` function to send an email.
 
 You can configure the following system-wide default values for some of the parameters (as indiciated in the table above) like this:
 
-```
+```sql
 ALTER SYSTEM SET smtp_client.server TO 'smtp.example.com';
 ALTER SYSTEM SET smtp_client.port TO 587;
 ALTER SYSTEM SET smtp_client.tls TO true;

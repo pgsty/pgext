@@ -2,7 +2,7 @@
 title: "pg_policy"
 linkTitle: "pg_policy"
 description: "Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls"
-weight: 7440
+weight: 7450
 categories: ["SEC"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7440** | {{< badge content="pg_policy" link="https://github.com/rahiakil/pg-policy" >}} | {{< ext "pg_policy" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **7450** | {{< badge content="pg_policy" link="https://github.com/rahiakil/pg-policy" >}} | {{< ext "pg_policy" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "datasketches"
 linkTitle: "datasketches"
 description: "Approximate analytics sketches and aggregates for PostgreSQL"
-weight: 4690
+weight: 4700
 categories: ["FUNC"]
 languages: ["C++"]
 licenses: ["Apache-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4690** | {{< badge content="datasketches" link="https://github.com/apache/datasketches-postgresql" >}} | {{< ext "datasketches" >}} | `1.7.0` | {{< category "FUNC" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
+| **4700** | {{< badge content="datasketches" link="https://github.com/apache/datasketches-postgresql" >}} | {{< ext "datasketches" >}} | `1.7.0` | {{< category "FUNC" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

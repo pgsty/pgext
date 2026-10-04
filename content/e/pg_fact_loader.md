@@ -4,25 +4,25 @@ linkTitle: "pg_fact_loader"
 description: "build fact tables with Postgres"
 weight: 9820
 categories: ["ETL"]
-languages: ["C"]
+languages: ["PLpgSQL"]
 licenses: ["MIT"]
 repos: ["PGDG"]
 page_width: full
 ---
 
-[**pg_fact_loader**](https://github.com/enova/pg_fact_loader) : build fact tables with Postgres
+[**pg_fact_loader**](https://sources.debian.org/src/pg-fact-loader/2.0.1-5/) : build fact tables with Postgres
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9820** | {{< badge content="pg_fact_loader" link="https://github.com/enova/pg_fact_loader" >}} | {{< ext "pg_fact_loader" >}} | `2.0.1` | {{< category "ETL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **9820** | {{< badge content="pg_fact_loader" link="https://sources.debian.org/src/pg-fact-loader/2.0.1-5/" >}} | {{< ext "pg_fact_loader" >}} | `2.0.1` | {{< category "ETL" >}} | {{< license "MIT" >}} | {{< language "PLpgSQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `fact_loader` |
 |   **See Also**    | {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_parquet" >}} {{< ext "aws_s3" >}} {{< ext "pg_lake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_csv" >}} {{< ext "omni_csv" >}} |
 
-> [!Note] PGDG provides the regular DEB channel; Pigsty fills the missing PostgreSQL 18 packages on Debian/Ubuntu and builds PG14-18 for Ubuntu 26.04 (Resolute).
+> [!Note] PGDG provides the regular DEB channel; Pigsty fills the missing PostgreSQL 18 packages on Debian/Ubuntu and builds PG14-18 for Ubuntu 26.04 (Resolute). Upstream GitHub repository is unavailable; Debian preserves the 2.0.1 source. SQL/control version is 2.0; this is a pure SQL/PLpgSQL extension without a shared library.
 
 
 ## Packages
@@ -223,7 +223,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/enova/pg_fact_loader" title="Repository" icon="github" subtitle="github.com/enova/pg_fact_loader" />}}
+{{< card link="https://sources.debian.org/src/pg-fact-loader/2.0.1-5/" title="Repository" icon="link" subtitle="sources.debian.org/src/pg-fact-loader/2.0.1-5/" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fact_loader-2.0.1.tar.gz" />}}
 {{< /cards >}}
 

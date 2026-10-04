@@ -284,7 +284,7 @@ EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
 
 The result would be 8s -> 4s on 4c VM on local laptop) :
 
-```
+```text
 postgres@el9:5432/postgres=# SET duckdb.force_execution = true;
 EXPLAIN ANALYZE SELECT count(*) FROM pgbench_accounts;
 SET
@@ -346,4 +346,3 @@ SELECT duckdb.create_simple_secret(
     endpoint := 'https://sss.pigsty:9000', url_style := 'path' 
 );
 ```
-

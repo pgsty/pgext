@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "sslinfo" >}} {{< ext "pg_oidc_validator" >}} {{< ext "oidc_validator" >}} {{< ext "pguecc" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "pgsodium" >}} {{< ext "login_hook" >}} |
+|   **See Also**    | {{< ext "sslinfo" >}} {{< ext "pg_oidc_validator" >}} {{< ext "oidc_validator" >}} {{< ext "pguecc" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "pgsodium" >}} {{< ext "login_hook" >}} {{< ext "libx509pq" >}} |
 
 > [!Note] PGDG packages remain absent for PG18 on EL8 x86_64.
 

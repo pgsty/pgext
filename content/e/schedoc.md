@@ -257,7 +257,7 @@ SELECT * FROM schedoc_column_comments;
 
 Result:
 
-```
+```text
  databasename | tablename | columnname | status
 --------------+-----------+------------+---------
  mydb         | my_table  | id         | private

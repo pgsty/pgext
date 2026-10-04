@@ -2,7 +2,7 @@
 title: "pg_math"
 linkTitle: "pg_math"
 description: "GSL statistical functions for postgresql"
-weight: 4780
+weight: 4790
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["GPL-3.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4780** | {{< badge content="pg_math" link="https://github.com/chanukyasds/pg_math" >}} | {{< ext "pg_math" >}} | `1.1.0` | {{< category "FUNC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **4790** | {{< badge content="pg_math" link="https://github.com/chanukyasds/pg_math" >}} | {{< ext "pg_math" >}} | `1.1.0` | {{< category "FUNC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

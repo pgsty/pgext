@@ -2,7 +2,7 @@
 title: "acdat"
 linkTitle: "acdat"
 description: "Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL"
-weight: 2250
+weight: 2260
 categories: ["FTS"]
 languages: ["C"]
 licenses: ["Apache-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2250** | {{< badge content="acdat" link="https://github.com/pgsty/acdat" >}} | {{< ext "acdat" >}} | `0.1.1` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2260** | {{< badge content="acdat" link="https://github.com/pgsty/acdat" >}} | {{< ext "acdat" >}} | `0.1.1` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

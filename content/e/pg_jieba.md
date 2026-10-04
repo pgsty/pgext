@@ -2,7 +2,7 @@
 title: "pg_jieba"
 linkTitle: "pg_jieba"
 description: "Chinese full-text search parser based on cppjieba"
-weight: 2240
+weight: 2250
 categories: ["FTS"]
 languages: ["C++"]
 licenses: ["BSD-3-Clause"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2240** | {{< badge content="pg_jieba" link="https://github.com/jaiminpan/pg_jieba" >}} | {{< ext "pg_jieba" >}} | `1.1.0` | {{< category "FTS" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C++" >}} |
+| **2250** | {{< badge content="pg_jieba" link="https://github.com/jaiminpan/pg_jieba" >}} | {{< ext "pg_jieba" >}} | `1.1.0` | {{< category "FTS" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

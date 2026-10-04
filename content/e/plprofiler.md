@@ -317,7 +317,7 @@ CREATE EXTENSION plprofiler;
 
 Add to `postgresql.conf`:
 
-```
+```ini
 shared_preload_libraries = 'plprofiler'
 ```
 

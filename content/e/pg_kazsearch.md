@@ -2,7 +2,7 @@
 title: "pg_kazsearch"
 linkTitle: "pg_kazsearch"
 description: "Kazakh full-text search extension for PostgreSQL"
-weight: 2200
+weight: 2210
 categories: ["FTS"]
 languages: ["Rust"]
 licenses: ["LGPL-3.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2200** | {{< badge content="pg_kazsearch" link="https://github.com/darkhanakh/pg-kazsearch" >}} | {{< ext "pg_kazsearch" >}} | `2.3.0` | {{< category "FTS" >}} | {{< license "LGPL-3.0" >}} | {{< language "Rust" >}} |
+| **2210** | {{< badge content="pg_kazsearch" link="https://github.com/darkhanakh/pg-kazsearch" >}} | {{< ext "pg_kazsearch" >}} | `2.3.0` | {{< category "FTS" >}} | {{< license "LGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

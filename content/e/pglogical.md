@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "spock" >}} {{< ext "pgactive" >}} {{< ext "mimeo" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} {{< ext "pgoutput" >}} {{< ext "pglogical_ticker" >}} {{< ext "pg_failover_slots" >}} {{< ext "postgres_fdw" >}} {{< ext "db_migrator" >}} {{< ext "pgclone" >}} {{< ext "lolor" >}} |
 |    **Siblings**   | {{< ext "pglogical_origin" >}} |
 
-> [!Note] PGDG RPM and DEB/catalog versions are aligned at 2.4.8; Pigsty source remains on 2.4.6.
+> [!Note] PGDG RPM and DEB/catalog versions are aligned at 2.4.8.
 
 
 ## Packages
@@ -348,7 +348,6 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/2ndQuadrant/pglogical" title="Repository" icon="github" subtitle="github.com/2ndQuadrant/pglogical" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical-2.4.6.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -2,7 +2,7 @@
 title: "fbsql"
 linkTitle: "fbsql"
 description: "Closure-preserving formula-based statistical modeling in SQL"
-weight: 4695
+weight: 4705
 categories: ["FUNC"]
 languages: ["SQL"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4695** | {{< badge content="fbsql" link="https://github.com/dsc-chiba-u/FbSQL" >}} | {{< ext "fbsql" >}} | `0.1.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
+| **4705** | {{< badge content="fbsql" link="https://github.com/dsc-chiba-u/FbSQL" >}} | {{< ext "fbsql" >}} | `0.1.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

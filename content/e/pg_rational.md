@@ -2,7 +2,7 @@
 title: "pg_rational"
 linkTitle: "pg_rational"
 description: "bigint fractions"
-weight: 3720
+weight: 3740
 categories: ["TYPE"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3720** | {{< badge content="pg_rational" link="https://github.com/begriffs/pg_rational" >}} | {{< ext "pg_rational" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3740** | {{< badge content="pg_rational" link="https://github.com/begriffs/pg_rational" >}} | {{< ext "pg_rational" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

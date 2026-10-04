@@ -325,7 +325,7 @@ pg_crash is a chaos engineering extension that periodically sends kill signals t
 
 Add to `postgresql.conf`:
 
-```
+```ini
 shared_preload_libraries = 'pg_crash'
 
 # POSIX signals to send (space-separated)

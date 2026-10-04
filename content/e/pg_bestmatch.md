@@ -2,7 +2,7 @@
 title: "pg_bestmatch"
 linkTitle: "pg_bestmatch"
 description: "Generate BM25 sparse vector inside PostgreSQL"
-weight: 2140
+weight: 2150
 categories: ["FTS"]
 languages: ["Rust"]
 licenses: ["Apache-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2140** | {{< badge content="pg_bestmatch" link="https://github.com/tensorchord/pg_bestmatch.rs" >}} | {{< ext "pg_bestmatch" >}} | `0.0.2` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2150** | {{< badge content="pg_bestmatch" link="https://github.com/tensorchord/pg_bestmatch.rs" >}} | {{< ext "pg_bestmatch" >}} | `0.0.2` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

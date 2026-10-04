@@ -73,7 +73,7 @@ CREATE EXTENSION dict_xsyn;
 
 ### Rules File Format
 
-```
+```text
 word syn1 syn2 syn3
 ```
 

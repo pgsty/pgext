@@ -2,7 +2,7 @@
 title: "psql_bm25s"
 linkTitle: "psql_bm25s"
 description: "PostgreSQL extension for BM25-family lexical retrieval"
-weight: 2210
+weight: 2220
 categories: ["FTS"]
 languages: ["C"]
 licenses: ["Apache-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2210** | {{< badge content="psql_bm25s" link="https://github.com/Intelligent-Internet/Evoke" >}} | {{< ext "psql_bm25s" >}} | `0.4.14` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2220** | {{< badge content="psql_bm25s" link="https://github.com/Intelligent-Internet/Evoke" >}} | {{< ext "psql_bm25s" >}} | `0.4.14` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

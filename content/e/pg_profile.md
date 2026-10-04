@@ -477,7 +477,7 @@ SELECT * FROM v_sample_timings;
 
 ### Recommended Settings
 
-```
+```ini
 track_activities = on
 track_counts = on
 track_io_timing = on

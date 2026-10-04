@@ -2,7 +2,7 @@
 title: "hunspell_fr"
 linkTitle: "hunspell_fr"
 description: "French Hunspell Dictionary"
-weight: 2273
+weight: 2283
 categories: ["FTS"]
 languages: ["Data"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2273** | {{< badge content="hunspell_fr" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_fr" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2283** | {{< badge content="hunspell_fr" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_fr" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

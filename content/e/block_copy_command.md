@@ -2,7 +2,7 @@
 title: "block_copy_command"
 linkTitle: "block_copy_command"
 description: "Block COPY commands via a configurable ProcessUtility hook"
-weight: 7430
+weight: 7440
 categories: ["SEC"]
 languages: ["Rust"]
 licenses: ["BSD-3-Clause"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7430** | {{< badge content="block_copy_command" link="https://github.com/rustwizard/block_copy_command" >}} | {{< ext "block_copy_command" >}} | `0.1.5` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "Rust" >}} |
+| **7440** | {{< badge content="block_copy_command" link="https://github.com/rustwizard/block_copy_command" >}} | {{< ext "block_copy_command" >}} | `0.1.5` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "argm"
 linkTitle: "argm"
 description: "argmax, argmin, and anyold aggregate functions"
-weight: 4755
+weight: 4765
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4755** | {{< badge content="argm" link="https://github.com/bashtanov/argm" >}} | {{< ext "argm" >}} | `1.1.1` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4765** | {{< badge content="argm" link="https://github.com/bashtanov/argm" >}} | {{< ext "argm" >}} | `1.1.1` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

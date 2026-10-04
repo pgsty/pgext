@@ -2,7 +2,7 @@
 title: "hunspell_ru_ru"
 linkTitle: "hunspell_ru_ru"
 description: "Russian Hunspell Dictionary"
-weight: 2278
+weight: 2288
 categories: ["FTS"]
 languages: ["Data"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2278** | {{< badge content="hunspell_ru_ru" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_ru_ru" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2288** | {{< badge content="hunspell_ru_ru" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_ru_ru" "hunspell" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "db_migrator" >}} {{< ext "db2fce" >}} {{< ext "pg_statement_rollback" >}} {{< ext "mysql_fdw" >}} {{< ext "orafce" >}} {{< ext "postgres_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "informix_fdw" >}} |
 
-> [!Note] Latest PGDG RPM/catalog version is 18.2.0; Pigsty source remains 18.1.1; no DEB package is available.
+> [!Note] Latest PGDG RPM/catalog version is 18.2.0; no DEB package is available.
 
 
 ## Packages
@@ -198,7 +198,6 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pg-fdw/db2_fdw" title="Repository" icon="github" subtitle="github.com/pg-fdw/db2_fdw" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="db2_fdw-18.1.1.tar.gz" />}}
 {{< /cards >}}
 
 

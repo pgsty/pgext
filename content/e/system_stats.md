@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgmonitor" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} |
+|   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgmonitor" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} {{< ext "pgexporter_ext" >}} {{< ext "pg_statvfs" >}} |
 
 > [!Note] PGDG RPM and PIGSTY DEB package/source version 4.1 cover PostgreSQL 14-18; SQL/control version is 4.0.
 

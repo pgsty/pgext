@@ -2,7 +2,7 @@
 title: "base36"
 linkTitle: "base36"
 description: "Integer Base36 types"
-weight: 4800
+weight: 4810
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4800** | {{< badge content="base36" link="https://github.com/adjust/pg-base36" >}} | {{< ext "base36" "pg_base36" >}} | `1.1.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4810** | {{< badge content="base36" link="https://github.com/adjust/pg-base36" >}} | {{< ext "base36" "pg_base36" >}} | `1.1.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

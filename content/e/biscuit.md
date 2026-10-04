@@ -2,7 +2,7 @@
 title: "biscuit"
 linkTitle: "biscuit"
 description: "IAM-LIKE pattern matching with bitmap indexing"
-weight: 2170
+weight: 2180
 categories: ["FTS"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2170** | {{< badge content="biscuit" link="https://github.com/CrystallineCore/Biscuit" >}} | {{< ext "biscuit" "pg_biscuit" >}} | `3.1.0` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **2180** | {{< badge content="biscuit" link="https://github.com/CrystallineCore/Biscuit" >}} | {{< ext "biscuit" "pg_biscuit" >}} | `3.1.0` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -332,7 +332,6 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/laurenz/oracle_fdw" title="Repository" icon="github" subtitle="github.com/laurenz/oracle_fdw" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="oracle_fdw-ORACLE_FDW_2_8_0.tar.gz" />}}
 {{< /cards >}}
 
 

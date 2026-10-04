@@ -2,7 +2,7 @@
 title: "pgsql_tweaks"
 linkTitle: "pgsql_tweaks"
 description: "Some functions and views for daily usage"
-weight: 4200
+weight: 4210
 categories: ["UTIL"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4200** | {{< badge content="pgsql_tweaks" link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" >}} | {{< ext "pgsql_tweaks" >}} | `1.0.5` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **4210** | {{< badge content="pgsql_tweaks" link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" >}} | {{< ext "pgsql_tweaks" >}} | `1.0.5` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

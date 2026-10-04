@@ -2,7 +2,7 @@
 title: "pg_tokenizer"
 linkTitle: "pg_tokenizer"
 description: "Tokenizers for full-text search"
-weight: 2160
+weight: 2170
 categories: ["FTS"]
 languages: ["Rust"]
 licenses: ["Apache-2.0"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2160** | {{< badge content="pg_tokenizer" link="https://github.com/supervc-stack/pg_tokenizer.rs" >}} | {{< ext "pg_tokenizer" >}} | `0.1.1` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2170** | {{< badge content="pg_tokenizer" link="https://github.com/supervc-stack/pg_tokenizer.rs" >}} | {{< ext "pg_tokenizer" >}} | `0.1.1` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

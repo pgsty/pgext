@@ -28,7 +28,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|    **Need By**    | {{< ext "documentdb" >}} {{< ext "pg_dispatch" >}} {{< ext "pglock" >}} {{< ext "pgmb" >}} {{< ext "timeseries" >}} {{< ext "vectorize" >}} |
+|    **Need By**    | {{< ext "documentdb" >}} {{< ext "pg_dispatch" >}} {{< ext "pgfr_record" >}} {{< ext "pglock" >}} {{< ext "pgmb" >}} {{< ext "timeseries" >}} {{< ext "vectorize" >}} |
 |   **See Also**    | {{< ext "pgagent" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_later" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_durable" >}} {{< ext "pg_background" >}} {{< ext "pg_when" >}} {{< ext "cron_utils" >}} |
 
 > [!Note] require cron.database_name
@@ -495,7 +495,7 @@ CREATE EXTENSION pg_cron;
 
 beware that `cron.database` has to be set before adding to `shared_preload_libraries`
 
-```
+```sql
 -- Delete old data on Saturday at 3:30am (GMT)
 SELECT cron.schedule('30 3 * * 6', $$DELETE FROM events WHERE event_time < now() - interval '1 week'$$);
  schedule
@@ -540,7 +540,7 @@ SELECT cron.schedule('process-payroll', '0 12 $ * *', 'CALL process_payroll()');
 
 Crontab format:
 
-```
+```text
  ┌───────────── min (0 - 59)
  │ ┌────────────── hour (0 - 23)
  │ │ ┌─────────────── day of month (1 - 31) or last day of the month ($)

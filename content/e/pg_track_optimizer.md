@@ -2,7 +2,7 @@
 title: "pg_track_optimizer"
 linkTitle: "pg_track_optimizer"
 description: "Track planning decisions in comparison with  execution reality"
-weight: 6270
+weight: 6280
 categories: ["STAT"]
 languages: ["C"]
 licenses: ["MIT"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6270** | {{< badge content="pg_track_optimizer" link="https://github.com/danolivo/pg_track_optimizer" >}} | {{< ext "pg_track_optimizer" >}} | `0.9.2` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **6280** | {{< badge content="pg_track_optimizer" link="https://github.com/danolivo/pg_track_optimizer" >}} | {{< ext "pg_track_optimizer" >}} | `0.9.2` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

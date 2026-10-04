@@ -2,7 +2,7 @@
 title: "pg_html5_email_address"
 linkTitle: "pg_html5_email_address"
 description: "PostgreSQL email validation that is consistent with the HTML5 spec"
-weight: 4180
+weight: 4190
 categories: ["UTIL"]
 languages: ["SQL"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4180** | {{< badge content="pg_html5_email_address" link="https://github.com/bigsmoke/pg_html5_email_address" >}} | {{< ext "pg_html5_email_address" >}} | `1.2.3` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **4190** | {{< badge content="pg_html5_email_address" link="https://github.com/bigsmoke/pg_html5_email_address" >}} | {{< ext "pg_html5_email_address" >}} | `1.2.3` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

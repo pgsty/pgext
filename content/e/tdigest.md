@@ -2,7 +2,7 @@
 title: "tdigest"
 linkTitle: "tdigest"
 description: "Provides tdigest aggregate function."
-weight: 4700
+weight: 4710
 categories: ["FUNC"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4700** | {{< badge content="tdigest" link="https://github.com/tvondra/tdigest" >}} | {{< ext "tdigest" >}} | `1.4.7` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4710** | {{< badge content="tdigest" link="https://github.com/tvondra/tdigest" >}} | {{< ext "tdigest" >}} | `1.4.7` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

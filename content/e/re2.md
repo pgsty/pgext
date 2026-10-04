@@ -2,7 +2,7 @@
 title: "re2"
 linkTitle: "re2"
 description: "ClickHouse-compatible regex functions using RE2"
-weight: 4235
+weight: 4245
 categories: ["UTIL"]
 languages: ["C++"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4235** | {{< badge content="re2" link="https://github.com/ClickHouse/pg_re2" >}} | {{< ext "re2" >}} | `0.4.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C++" >}} |
+| **4245** | {{< badge content="re2" link="https://github.com/ClickHouse/pg_re2" >}} | {{< ext "re2" >}} | `0.4.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

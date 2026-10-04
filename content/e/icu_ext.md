@@ -2,7 +2,7 @@
 title: "icu_ext"
 linkTitle: "icu_ext"
 description: "Access ICU functions"
-weight: 4240
+weight: 4250
 categories: ["UTIL"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4240** | {{< badge content="icu_ext" link="https://github.com/dverite/icu_ext" >}} | {{< ext "icu_ext" >}} | `1.11.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4250** | {{< badge content="icu_ext" link="https://github.com/dverite/icu_ext" >}} | {{< ext "icu_ext" >}} | `1.11.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -253,7 +253,6 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/EnterpriseDB/mysql_fdw" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/mysql_fdw" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mysql_fdw-REL-2_9_3.tar.gz" />}}
 {{< /cards >}}
 
 
