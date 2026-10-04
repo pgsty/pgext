@@ -6,6 +6,9 @@
 # vendored theme's assets/third_party/bootstrap/dist/)
 /dist/
 
+reports/
+research_notes/
+
 # Binary (root only: a bare `pgext` pattern also swallows the site's
 # layouts/_partials/pgext/ directory)
 /pgext
