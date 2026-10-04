@@ -127,7 +127,7 @@ Pig v1.8.0 ships with a release-time catalog snapshot. Refresh it with `pig ext 
 ```bash
 $ pig ext reload
 $ pig ext list
-✓ Found 575 extensions
+✓ Found 600 extensions
 Name                Status     Version     Cate   Flags   License         Repo     PGVer  Package                               Description
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 timescaledb         available  2.29.1      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
@@ -139,7 +139,7 @@ pg_bulkload         available  3.1.23      ETL    bds---  BSD 3-Clause    PIGSTY
 test_decoding       available  -           ETL    --s--x  PostgreSQL      CONTRIB  14-18  postgresql-18                         SQL-based test/example module for WAL logical decoding
 pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
 
-(575 Rows)
+(600 Rows)
 ```
 
 All extension metadata is defined in a data file named [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv).

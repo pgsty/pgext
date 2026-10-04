@@ -22,7 +22,7 @@ page_width: wide
 `pig repo add all -u` 会替你写好这些仓库文件，但它们本身就是普通的 APT / DNF 仓库，手工添加同样可以。
 
 {{< cards cols=4 >}}
-{{< card link="/repo/pgsql" title="PGSQL 仓库" icon="database" subtitle="576 个已打包扩展，按发行版代号各成一路" />}}
+{{< card link="/repo/pgsql" title="PGSQL 仓库" icon="database" subtitle="600 个已打包扩展，按发行版代号各成一路" />}}
 {{< card link="/repo/infra" title="INFRA 仓库" icon="cube" subtitle="与操作系统无关的基础设施软件包，pig 本身也在其中" />}}
 {{< card link="/repo/pgdg" title="PGDG 仓库" icon="cloud-download" subtitle="这些扩展所针对构建的上游 PostgreSQL 内核仓库" />}}
 {{< card link="/repo/gpg" title="GPG 密钥" icon="key" subtitle="签名公钥、指纹，以及如何校验一个软件包" />}}
@@ -35,7 +35,7 @@ page_width: wide
 每个扩展页面都自带一张下载表：一行一个平台与 PostgreSQL 大版本组合，给出确切的文件名、体积，以及指向仓库的直链。
 
 {{< cards cols=4 >}}
-{{< card link="/e" title="扩展清单" icon="clipboard-list" subtitle="全部 576 个已打包扩展，各自带有分平台下载表" />}}
+{{< card link="/e" title="扩展清单" icon="clipboard-list" subtitle="全部 600 个已打包扩展，各自带有分平台下载表" />}}
 {{< card link="/os" title="按平台" icon="server" subtitle="16 个 Linux 目标上分别有哪些扩展可用" />}}
 {{< card link="/os/matrix" title="可用性矩阵" icon="view-grid" subtitle="所有软件包 × 所有操作系统 × 所有大版本" />}}
 {{< card link="/matrix/pgext-global-matrix.csv" title="矩阵 CSV" icon="document-download" subtitle="同一张网格的原始数据，另有 JSON 导出" />}}

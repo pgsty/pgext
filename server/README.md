@@ -12,6 +12,8 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
 连接串优先级：`--db` > 全局 `-d/--database` > 环境变量 `PGURL` > `postgres:///data`。
 前提：目标库已有完整 `pgext` schema 与目录数据（`pgext init`）。
 
+共收录 **2507** 个 PostgreSQL 扩展，其中 **600** 个已打包。
+
 ## 架构
 
 ```

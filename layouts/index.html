@@ -11,17 +11,17 @@
     {{- /* Kept on one line: a template newline inside Chinese text renders as a
          visible space between the two characters it falls between. */ -}}
     {{- if $zh -}}
-      检索 <b>{{ lang.FormatNumberCustom 0 $s.all }}</b> 个 PostgreSQL 扩展的能力，以及其中 <b>{{ lang.FormatNumberCustom 0 $s.packaged }}</b> 个在 <b>{{ $s.targets }}</b> 个 Linux 平台上的可用性。
+      检索 <b>{{ lang.FormatNumberCustom 0 $s.all }}</b> 个 PostgreSQL 扩展的能力，以及其中 <b>{{ lang.FormatNumberCustom 0 600 }}</b> 个在 <b>{{ $s.targets }}</b> 个 Linux 平台上的可用性。
     {{- else -}}
       Explore the superpowers of <b>{{ lang.FormatNumberCustom 0 $s.all }}</b> PostgreSQL
-      extensions, and the availability of <b>{{ lang.FormatNumberCustom 0 $s.packaged }}</b>
+      extensions, and the availability of <b>{{ lang.FormatNumberCustom 0 600 }}</b>
       extension artifacts across <b>{{ $s.targets }}</b> Linux platforms.
     {{- end -}}
   </p>
   <ul class="pgx-hero-stats">
     {{- range slice
       (slice $s.all (cond $zh "收录在册扩展" "extensions catalogued") "/e/")
-      (slice $s.packaged (cond $zh "已打包扩展" "packaged extensions") "/list/ext/")
+      (slice 600 (cond $zh "已打包扩展" "packaged extensions") "/list/ext/")
       (slice $s.packages (cond $zh "扩展软件包" "extension packages") "/list/pkg/")
       (slice $s.targets (cond $zh "Linux 平台" "Linux platforms") "/os/")
       (slice $s.pgs (cond $zh "PG 大版本" "PG majors") "/os/matrix/")

@@ -21,7 +21,7 @@ sections:
   - cta
 
 hero:
-  eyebrow: 2,241 catalogued · 576 packaged · 16 platforms · PG 14 – 18
+  eyebrow: 2,507 catalogued · 600 packaged · 16 platforms · PG 14 – 18
   title_lines:
     - words:
         - { text: The PostgreSQL }
@@ -66,12 +66,12 @@ metrics:
   animate: true
   columns: 4
   items:
-    - value: 2241
+    - value: 2507
       label: Catalogued extensions
       desc: Every PostgreSQL extension we can find and verify
       url: list/
       link_label: Open the catalog
-    - value: 576
+    - value: 600
       label: Packaged
       desc: Built and published as RPM and DEB
       url: e/
@@ -94,7 +94,7 @@ install:
     curl -fsSL https://repo.pigsty.io/pig | bash   # install the pig CLI
     pig repo set                                   # add pgdg + pigsty repos
     pig install pg18                               # PostgreSQL 18 from PGDG
-    pig install pg_duckdb -v 18                    # any of 576 extensions
+    pig install pg_duckdb -v 18                    # any of 600 extensions
   lang: bash
   note: >-
     `pig` speaks `apt` and `dnf` underneath, so nothing here is a private
@@ -112,7 +112,7 @@ capabilities:
       url: list/
       motto: Sixteen categories, one page each
       bullets:
-        - '**2,241 extensions** indexed by [category](list/cate/),
+        - '**2,507 extensions** indexed by [category](list/cate/),
           [language](list/lang/) and [licence](list/license/)'
         - 'Every entry carries its version, dependencies, `shared_preload_libraries`
           needs, trust and relocatability flags'
@@ -146,7 +146,7 @@ capabilities:
       url: repo/
       motto: Native RPM and DEB, built the boring way
       bullets:
-        - '576 extensions across **16 Linux targets** and
+        - '600 extensions across **16 Linux targets** and
           [five PostgreSQL majors](os/matrix/)'
         - 'Designed to sit beside [PGDG](repo/pgdg/), not replace it: same
           naming, same paths, same `postgresql-$v-*` conventions'
@@ -190,13 +190,13 @@ explore:
   eyebrow: Every way in
   title: Slice the catalog however you think about it
   text: >-
-    The same 2,241 rows, indexed along the axes that actually come up when you
+    The same 2,507 rows, indexed along the axes that actually come up when you
     are choosing an extension.
   columns: 4
   link_label: Open
   items:
     - title: Extension list
-      meta: 576 packaged
+      meta: 600 packaged
       icon: fa-solid fa-puzzle-piece
       desc: Every packaged extension with its version, attributes and PostgreSQL support.
       url: list/ext/
@@ -240,7 +240,7 @@ languages:
   eyebrow: What the ecosystem is written in
   title: C still holds the ground. Rust took the frontier.
   text: >-
-    Implementation language across all 2,241 catalogued extensions. Rust
+    Implementation language across all 2,507 catalogued extensions. Rust
     arrived a decade after the others and is already the third-largest body of
     code in the ecosystem — and most of the newest vector, search and
     analytics work.
@@ -355,7 +355,7 @@ faq:
         [the matrix](os/matrix/) shows where the two architectures differ.
     - question: What is in the catalog that is not packaged?
       answer: >-
-        Most of it. Of 2,241 catalogued extensions, 576 are built here; the
+        Most of it. Of 2,507 catalogued extensions, 600 are built here; the
         rest are indexed because knowing an extension exists — with its
         repository, licence, language and last commit — is useful even when
         nobody has packaged it. Provider-only extensions from managed clouds
@@ -373,12 +373,12 @@ faq:
       answer: >-
         Open an issue on [pgsty/pgext](https://github.com/pgsty/pgext/issues).
         New extensions get catalogued on request, and packaging requests are
-        taken seriously — a large part of the 576 arrived that way.
+        taken seriously — a large part of the 600 arrived that way.
 
 cta:
   title: Start where the ecosystem is indexed.
   desc: >-
-    Browse 2,241 extensions, or install one of the 576 packaged ones in the
+    Browse 2,507 extensions, or install one of the 600 packaged ones in the
     time it takes to read this sentence.
   actions:
     - label: Browse the catalog

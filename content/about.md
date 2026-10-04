@@ -22,8 +22,8 @@ your distribution used to be an afternoon's work per extension.
 ## What it provides
 
 {{< cards cols=3 >}}
-{{< card link="/list" title="Catalog" icon="clipboard-list" subtitle="2,241 catalogued extensions, indexed by category, language and licence" />}}
-{{< card link="/repo" title="Repository" icon="warehouse" subtitle="576 of them built as signed RPM and DEB across 16 Linux targets" />}}
+{{< card link="/list" title="Catalog" icon="clipboard-list" subtitle="2,507 catalogued extensions, indexed by category, language and licence" />}}
+{{< card link="/repo" title="Repository" icon="warehouse" subtitle="600 of them built as signed RPM and DEB across 16 Linux targets" />}}
 {{< card link="/pig" title="Package manager" icon="cash" subtitle="One CLI that installs the kernel and its extensions by canonical name" />}}
 {{< /cards >}}
 
@@ -68,6 +68,6 @@ PGEXT.CLOUD is maintained by [**PGSTY**](https://github.com/pgsty) /
 The most useful contribution is a correction. If an extension is missing, a
 version is stale, a licence is wrong, or a package fails to install, open an
 issue on [pgsty/pgext](https://github.com/pgsty/pgext/issues) — a large share
-of the 576 packaged extensions arrived exactly that way.
+of the 600 packaged extensions arrived exactly that way.
 
 Further reading: [***PostgreSQL is eating the Database World***](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4).

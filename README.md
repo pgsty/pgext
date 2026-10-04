@@ -5,8 +5,8 @@
 [![Release](https://img.shields.io/github/v/release/pgsty/pgext?color=teal)](https://github.com/pgsty/pgext/releases)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
-**pgext** catalogs the PostgreSQL extension universe: 2,230 extensions, including
-575 packaged extensions, with metadata, dependencies, categories, and exact package
+**pgext** catalogs the PostgreSQL extension universe: 2,507 extensions, including
+600 packaged extensions, with metadata, dependencies, categories, and exact package
 availability across PostgreSQL versions, operating systems, and repositories
 (PGDG / Pigsty, APT / YUM).
 

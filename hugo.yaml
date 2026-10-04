@@ -164,7 +164,7 @@ languages:
     title: PGEXT.CLOUD
     params:
       description: >-
-        The PostgreSQL extension universe: 2,499 catalogued extensions, 584
+        The PostgreSQL extension universe: 2,507 catalogued extensions, 600
         packaged as native RPM/DEB across 16 Linux platforms.
       ui:
         alt_site: { label: 简体中文, url: /zh/ }
@@ -484,7 +484,7 @@ languages:
     title: PGEXT.CLOUD
     params:
       description: >-
-        PostgreSQL 扩展宇宙：收录 2499 个扩展，其中 584 个已在 16 个 Linux
+        PostgreSQL 扩展宇宙：收录 2507 个扩展，其中 600 个已在 16 个 Linux
         平台上打包为原生 RPM / DEB 软件包。
       ui:
         alt_site: { label: English, url: / }
@@ -847,7 +847,7 @@ params:
     # Sidebar
     #
     # The tree roots at the current top-level section rather than the whole
-    # site: `/e` alone holds 575 sibling pages, and re-emitting that list on
+    # site: `/e` alone holds 600 sibling pages, and re-emitting that list on
     # every page of every other section is pure weight.
     sidebar_root_enabled: false
     sidebar_root_menu: true

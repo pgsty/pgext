@@ -26,7 +26,7 @@ channel fits how you manage the machine.
 and DNF repositories and can be added by hand.
 
 {{< cards cols=4 >}}
-{{< card link="/repo/pgsql" title="PGSQL Repo" icon="database" subtitle="576 packaged extensions, one repository per distribution codename" />}}
+{{< card link="/repo/pgsql" title="PGSQL Repo" icon="database" subtitle="600 packaged extensions, one repository per distribution codename" />}}
 {{< card link="/repo/infra" title="INFRA Repo" icon="cube" subtitle="OS-generic infrastructure packages, including pig itself" />}}
 {{< card link="/repo/pgdg" title="PGDG Repo" icon="cloud-download" subtitle="The upstream PostgreSQL kernel repository these are built against" />}}
 {{< card link="/repo/gpg" title="GPG Keys" icon="key" subtitle="Signing keys, fingerprints, and how to verify a package" />}}
@@ -42,7 +42,7 @@ PostgreSQL major, with the exact filename, size, and a direct link into the
 repository.
 
 {{< cards cols=4 >}}
-{{< card link="/e" title="Extension list" icon="clipboard-list" subtitle="All 576 packaged extensions, with per-platform download tables" />}}
+{{< card link="/e" title="Extension list" icon="clipboard-list" subtitle="All 600 packaged extensions, with per-platform download tables" />}}
 {{< card link="/os" title="By platform" icon="server" subtitle="What is available on each of the 16 Linux targets" />}}
 {{< card link="/os/matrix" title="Availability matrix" icon="view-grid" subtitle="Every package against every OS and PostgreSQL major" />}}
 {{< card link="/matrix/pgext-global-matrix.csv" title="Matrix as CSV" icon="document-download" subtitle="The same grid as raw data, alongside a JSON export" />}}

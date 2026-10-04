@@ -5,7 +5,7 @@ The whole catalog — every extension, packaged or not — has to reach the brow
 for the console to answer instantly, so the payload is positional and interned:
 dimension values become indices into small dictionaries, PostgreSQL support
 becomes one bit-field, and only the current language's description is carried.
-That turns roughly 2,200 rows into a couple of hundred kilobytes before
+That turns 2,507 rows into a couple of hundred kilobytes before
 compression.
 
 Returns the published resource, so the caller can emit its URL.
@@ -127,7 +127,7 @@ Row layout — assets/js/pgext-catalog.js must agree with it:
 
   {{- /* Rows accumulate as JSON text rather than as nested slices: Hugo's
        `append` flattens a slice argument, and a slice of maps would repeat
-       every key 2,200 times in the payload. */ -}}
+       every key 2,507 times in the payload. */ -}}
   {{- $out = $out | append (jsonify (dict "noHTMLEscape" true) (slice
     $name
     (cond (eq $pkg $name) "" $pkg)

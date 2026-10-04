@@ -23,7 +23,7 @@ sections:
   - cta
 
 hero:
-  eyebrow: 收录 2241 个 · 打包 576 个 · 16 个平台 · PG 14 – 18
+  eyebrow: 收录 2507 个 · 打包 600 个 · 16 个平台 · PG 14 – 18
   title_lines:
     - words:
         - { text: PostgreSQL }
@@ -62,12 +62,12 @@ metrics:
   animate: true
   columns: 4
   items:
-    - value: 2241
+    - value: 2507
       label: 收录扩展
       desc: 能找到、能核实的 PostgreSQL 扩展
       url: list/
       link_label: 打开目录
-    - value: 576
+    - value: 600
       label: 已打包
       desc: 已构建并发布为 RPM / DEB
       url: e/
@@ -90,7 +90,7 @@ install:
     curl -fsSL https://repo.pigsty.io/pig | bash   # 安装 pig 命令行工具
     pig repo set                                   # 添加 PGDG 与 Pigsty 仓库
     pig install pg18                               # 从 PGDG 安装 PostgreSQL 18
-    pig install pg_duckdb -v 18                    # 576 个扩展，任选
+    pig install pg_duckdb -v 18                    # 600 个扩展，任选
   lang: bash
   note: '`pig` 底层说的就是 `apt` 和 `dnf`，这里没有任何私有包格式 —— 同样的软件包，手工安装一样可以。'
 
@@ -104,7 +104,7 @@ capabilities:
       url: list/
       motto: 十六个分类，一类一页
       bullets:
-        - '**2241 个扩展**，按 [分类](list/cate/)、[语言](list/lang/) 与 [许可证](list/license/) 建立索引'
+        - '**2507 个扩展**，按 [分类](list/cate/)、[语言](list/lang/) 与 [许可证](list/license/) 建立索引'
         - '每一条都带着版本、依赖、是否需要 `shared_preload_libraries`、是否可信、能否重定位'
         - '同族扩展互相关联 —— `postgis` 和它的四个兄弟读起来是一个项目，而不是五行互不相干的记录'
       value: 以前要花一下午的调研，现在一分钟。
@@ -135,7 +135,7 @@ capabilities:
       url: repo/
       motto: 原生 RPM 与 DEB，用最无聊的方式构建
       bullets:
-        - '576 个扩展 × **16 个 Linux 目标** × [五个 PostgreSQL 大版本](os/matrix/)'
+        - '600 个扩展 × **16 个 Linux 目标** × [五个 PostgreSQL 大版本](os/matrix/)'
         - '设计目标是与 [PGDG](repo/pgdg/) 并存而非取代：相同的命名、相同的路径、相同的 `postgresql-$v-*` 约定'
         - '所有软件包均已签名，整个仓库通过全球 CDN 分发'
       value: 你原来的 apt / dnf 工作流，一点都不用改。
@@ -173,12 +173,12 @@ capabilities:
 explore:
   eyebrow: 各种入口
   title: 按你思考问题的方式来切这份目录
-  text: 同样的 2241 条记录，沿着你挑选扩展时真正会用到的几条轴线重新组织。
+  text: 同样的 2507 条记录，沿着你挑选扩展时真正会用到的几条轴线重新组织。
   columns: 4
   link_label: 打开
   items:
     - title: 扩展清单
-      meta: 576 个已打包
+      meta: 600 个已打包
       icon: fa-solid fa-puzzle-piece
       desc: 每一个已打包扩展的版本、属性与 PostgreSQL 大版本支持情况。
       url: list/ext/
@@ -221,7 +221,7 @@ explore:
 languages:
   eyebrow: 这个生态是用什么写的
   title: C 守住了腹地，Rust 拿下了边疆。
-  text: 全部 2241 个收录扩展的实现语言分布。Rust 比其它语言晚来了十年，如今已是生态中第三大的代码体量 —— 而且几乎垄断了最新的向量、检索与分析类扩展。
+  text: 全部 2507 个收录扩展的实现语言分布。Rust 比其它语言晚来了十年，如今已是生态中第三大的代码体量 —— 而且几乎垄断了最新的向量、检索与分析类扩展。
   unit: 个
   items:
     - label: C
@@ -307,15 +307,15 @@ faq:
     - question: 覆盖哪些平台和 PostgreSQL 版本？
       answer: '八个发行版大版本 —— RockyLinux 8 / 9 / 10，Debian 12 / 13，Ubuntu 22.04 / 24.04 / 26.04 —— 每个都提供 `x86_64` 与 `aarch64` 两种架构，合起来就是上面那 16 个目标；每个目标上覆盖 PostgreSQL 14 到 18。ARM 是一等公民而非附带品：[矩阵页](os/matrix/) 会明确标出两种架构的差异之处。'
     - question: 目录里那些没打包的是什么？
-      answer: 大多数都没打包。2241 个收录扩展中有 576 个在这里构建，其余之所以收录，是因为「知道它存在」本身就有价值 —— 仓库地址、许可证、实现语言、最后一次提交，即便没人打包也值得记录。托管云厂商专有的扩展同样收录，并明确标注。
+      answer: 大多数都没打包。2507 个收录扩展中有 600 个在这里构建，其余之所以收录，是因为「知道它存在」本身就有价值 —— 仓库地址、许可证、实现语言、最后一次提交，即便没人打包也值得记录。托管云厂商专有的扩展同样收录，并明确标注。
     - question: 有没有闭源或收费的部分？
       answer: '没有。构建规范（[RPM](https://github.com/pgsty/rpm)、[DEB](https://github.com/pgsty/deb)）、这份目录、`pig` 命令行工具全部开源，仓库本身免费使用。少数**被收录的**扩展自身采用源码可见或传染性许可证 —— [许可证索引](list/license/) 按约束强度排序，装之前就能看清楚。'
     - question: 发现缺了或者错了，怎么办？
-      answer: '去 [pgsty/pgext](https://github.com/pgsty/pgext/issues) 提 issue。新扩展可以按需收录，打包请求也会被认真对待 —— 那 576 个里有相当一部分正是这么来的。'
+      answer: '去 [pgsty/pgext](https://github.com/pgsty/pgext/issues) 提 issue。新扩展可以按需收录，打包请求也会被认真对待 —— 那 600 个里有相当一部分正是这么来的。'
 
 cta:
   title: 从一份被索引过的生态开始。
-  desc: 浏览 2241 个扩展，或者在读完这句话的时间里，装上 576 个已打包扩展中的任意一个。
+  desc: 浏览 2507 个扩展，或者在读完这句话的时间里，装上 600 个已打包扩展中的任意一个。
   actions:
     - label: 浏览扩展目录
       url: list/

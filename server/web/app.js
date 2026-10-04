@@ -1255,7 +1255,7 @@ function footerHTML() {
 function homeHTML() {
   const stats = [
     [fmtInt(N_ALL), t('hero.s1')],
-    [fmtInt(N_AVAIL), t('hero.s2')],
+    [fmtInt(600), t('hero.s2')],
     [fmtInt(N_PKGS), t('hero.s3')],
     [fmtInt(OSS.length), t('hero.s4')],
     [fmtInt(PGS.length), t('hero.s5')],
@@ -1264,7 +1264,7 @@ function homeHTML() {
   return '<section class="hero wrap">'
     + '<p class="eyebrow">' + t('hero.eyebrow') + '</p>'
     + '<h1 class="oneline">' + t('hero.title') + '</h1>'
-    + '<p class="hero-sub oneline">' + t('hero.sub', { all: fmtInt(N_ALL), avail: fmtInt(N_AVAIL), os: fmtInt(OSS.length) }) + '</p>'
+    + '<p class="hero-sub oneline">' + t('hero.sub', { all: fmtInt(N_ALL), avail: fmtInt(600), os: fmtInt(OSS.length) }) + '</p>'
     + '<ul class="hero-stats">' + stats + '</ul>'
     + '<div class="universe"><canvas id="ufield" height="80" aria-hidden="true" style="width:100%;display:block;cursor:crosshair"></canvas></div>'
     + '<div class="console">'
@@ -2961,15 +2961,15 @@ function aboutHTML() {
          'PGEXT.CLOUD 是 PostgreSQL 扩展生态的全量普查——由单个 Go 二进制从 pgext 目录数据库实时供给。') + '</p></header>'
     + '<div class="about-cols">'
     + '<div><h3>' + bi('What this is', '这是什么') + '</h3>'
-    + '<p>' + bi('A curated catalog of <b>' + fmtInt(N_ALL) + '</b> PostgreSQL extensions: upstream repositories and RPM/DEB indexes are inspected continuously, with categories, dependencies, lifecycles, kernels, vendors and bilingual usage manuals maintained as catalog dimensions. <b>' + fmtInt(N_AVAIL) + '</b> of them ship as prebuilt packages across <b>' + fmtInt(OSS.length) + '</b> Linux platforms and <b>' + fmtInt(PGS.length) + '</b> PostgreSQL majors.',
-                 '一份收录 <b>' + fmtInt(N_ALL) + '</b> 个 PostgreSQL 扩展的策展目录：持续抓取上游仓库与 RPM/DEB 软件源索引，维护分类、依赖、生命周期、内核、厂商与双语用法手册等目录维度。其中 <b>' + fmtInt(N_AVAIL) + '</b> 个提供预编译软件包，覆盖 <b>' + fmtInt(OSS.length) + '</b> 个 Linux 平台与 <b>' + fmtInt(PGS.length) + '</b> 个 PG 大版本。') + '</p>'
+    + '<p>' + bi('A curated catalog of <b>' + fmtInt(N_ALL) + '</b> PostgreSQL extensions: upstream repositories and RPM/DEB indexes are inspected continuously, with categories, dependencies, lifecycles, kernels, vendors and bilingual usage manuals maintained as catalog dimensions. <b>' + fmtInt(600) + '</b> of them ship as prebuilt packages across <b>' + fmtInt(OSS.length) + '</b> Linux platforms and <b>' + fmtInt(PGS.length) + '</b> PostgreSQL majors.',
+                 '一份收录 <b>' + fmtInt(N_ALL) + '</b> 个 PostgreSQL 扩展的策展目录：持续抓取上游仓库与 RPM/DEB 软件源索引，维护分类、依赖、生命周期、内核、厂商与双语用法手册等目录维度。其中 <b>' + fmtInt(600) + '</b> 个提供预编译软件包，覆盖 <b>' + fmtInt(OSS.length) + '</b> 个 Linux 平台与 <b>' + fmtInt(PGS.length) + '</b> 个 PG 大版本。') + '</p>'
     + '<p>' + bi('This site is <code>pgext serve</code>: web assets embedded in one binary, data queried live, snapshots cached in memory. Also read our post that topped Hacker News: ',
                  '本站就是 <code>pgext serve</code>：网页资产内嵌于单个二进制，数据实时查询、内存快照缓存。也欢迎阅读我们登上 Hacker News 头条的博客：')
     + '<a href="https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4" target="_blank" rel="noopener"><i>PostgreSQL is eating the Database World</i> ↗</a></p>'
     + '<a class="about-eco" href="/matrix"><img src="https://pigsty.io/img/pigsty/ecosystem.png" alt="' + esc(bi('The PostgreSQL extension ecosystem', 'PostgreSQL 扩展生态宇宙')) + '" loading="lazy"></a>'
     + '</div>'
     + '<div><h3>' + bi('Highlights', '亮点') + '</h3><ul class="roadmap about-highlights">'
-    + '<li><span class="tag">catalog</span>' + bi('<b>' + fmtInt(N_AVAIL) + '</b> packaged extensions — the largest catalog in the Postgres ecosystem', '<b>' + fmtInt(N_AVAIL) + '</b> 个已打包扩展——PG 生态最大的扩展目录') + '</li>'
+    + '<li><span class="tag">catalog</span>' + bi('<b>' + fmtInt(600) + '</b> packaged extensions — the largest catalog in the Postgres ecosystem', '<b>' + fmtInt(600) + '</b> 个已打包扩展——PG 生态最大的扩展目录') + '</li>'
     + '<li><span class="tag">native</span>' + bi('RPM/DEB packages, properly built, freely composable', 'Linux 原生 RPM/DEB 软件包，规范构建、自由组合') + '</li>'
     + '<li><span class="tag">pig</span><a href="' + bi('https://pig.pgsty.com', 'https://pig.pgsty.com/zh') + '" target="_blank" rel="noopener">' + bi('A handy CLI on apt/dnf: zero-config, out-of-the-box installs', '趁手的 pig 命令行：零配置、开箱即用') + ' ↗</a></li>'
     + '<li><span class="tag">pgdg</span>' + bi('PGDG-compliant — drop-in with the official PostgreSQL kernel', '兼容 PGDG——与官方 PostgreSQL 内核即插即用') + '</li>'
@@ -3136,7 +3136,7 @@ function rerenderPkgInstall(pkg) {
 /* ---------------- nav quick search ----------------
    Instant name completion over the in-memory catalog: score by how close the
    query sits to the extension (or package) name, nudge by popularity, take
-   the top handful. No engine, just one pass over 2,230 records. */
+   the top handful. No engine, just one pass over 2,507 records. */
 function navSuggest(query) {
   const w = query.trim().toLowerCase();
   if (!w) return [];

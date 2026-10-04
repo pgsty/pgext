@@ -15,8 +15,8 @@ breadcrumb: false
 ## 它提供什么
 
 {{< cards cols=3 >}}
-{{< card link="/list" title="扩展目录" icon="clipboard-list" subtitle="收录 2241 个扩展，按分类、语言与许可证建立索引" />}}
-{{< card link="/repo" title="软件仓库" icon="warehouse" subtitle="其中 576 个已构建为签名 RPM / DEB，覆盖 16 个 Linux 目标" />}}
+{{< card link="/list" title="扩展目录" icon="clipboard-list" subtitle="收录 2507 个扩展，按分类、语言与许可证建立索引" />}}
+{{< card link="/repo" title="软件仓库" icon="warehouse" subtitle="其中 600 个已构建为签名 RPM / DEB，覆盖 16 个 Linux 目标" />}}
 {{< card link="/pig" title="包管理器" icon="cash" subtitle="一个命令行工具，用扩展本名安装内核与扩展" />}}
 {{< /cards >}}
 
@@ -53,6 +53,6 @@ PGEXT.CLOUD 由 [**PGSTY**](https://github.com/pgsty) / [**Vonng**](https://vonn
 
 ## 参与贡献
 
-最有用的贡献是一处订正。如果发现扩展缺失、版本过期、许可证标错，或者某个软件包装不上，请到 [pgsty/pgext](https://github.com/pgsty/pgext/issues) 提一个 issue —— 那 576 个已打包扩展里，有相当一部分正是这么来的。
+最有用的贡献是一处订正。如果发现扩展缺失、版本过期、许可证标错，或者某个软件包装不上，请到 [pgsty/pgext](https://github.com/pgsty/pgext/issues) 提一个 issue —— 那 600 个已打包扩展里，有相当一部分正是这么来的。
 
 延伸阅读：[***PostgreSQL 正在吞噬数据库世界***](https://pigsty.cc/blog/db/pg-is-eating-db-world/)。

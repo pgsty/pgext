@@ -438,7 +438,7 @@ a.pgx-b {
 // ---------------------------------------------------------------------------
 // 4 · Catalogue tables — psql density
 //
-// The generated pages are data sheets: 576-row extension lists, 16 × 5
+// The generated pages are data sheets: long extension lists, 16 × 5
 // availability matrices, per-major package tables. They get the dynamic
 // catalogue's table: a mono header rule, tight rows, and a wash on hover.
 // ---------------------------------------------------------------------------
