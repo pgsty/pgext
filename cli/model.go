@@ -63,6 +63,15 @@ func (e *Extension) IsReady() bool {
 	return !e.State.Valid || e.State.String != "not-ready"
 }
 
+// UsesPGDGOnly reports whether install instructions can omit the Pigsty repo.
+// The curated overall supplier can remain PGDG even when one package family
+// comes from Pigsty, as with pgexporter_ext on Debian/Ubuntu.
+func (e *Extension) UsesPGDGOnly() bool {
+	return e.Repo.Valid && e.Repo.String == "PGDG" &&
+		(!e.RpmRepo.Valid || e.RpmRepo.String != "PIGSTY") &&
+		(!e.DebRepo.Valid || e.DebRepo.String != "PIGSTY")
+}
+
 // GetZhDesc returns the Chinese description, falling back to English description, then extension name
 func (e *Extension) GetZhDesc() string {
 	if e.ZhDesc.Valid && e.ZhDesc.String != "" {

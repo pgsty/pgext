@@ -599,7 +599,7 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 	}
 
 	// Determine repo setup text
-	if ext.Repo.Valid && ext.Repo.String == "PGDG" {
+	if ext.UsesPGDGOnly() {
 		b.WriteString("您可以直接安装 `" + ext.Pkg + "` 扩展包的预置二进制包，首先确保 [**PGDG**](/docs/repo/pgdg) 仓库已经添加并启用：\n\n")
 		b.WriteString("```bash\npig repo add pgdg -u          # 添加 PGDG 仓库并更新缓存\n```\n\n")
 	} else {

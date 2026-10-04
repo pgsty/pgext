@@ -768,7 +768,7 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	}
 
 	// Build the Repo Section based on extension repo
-	if ext.Repo.Valid && ext.Repo.String == "PGDG" {
+	if ext.UsesPGDGOnly() {
 		b.WriteString("Make sure [**PGDG**](/repo/pgdg) repo available:\n\n")
 		b.WriteString(TripleQuoteBash("pig repo add pgdg -u    # add pgdg repo and update cache"))
 	} else {

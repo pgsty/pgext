@@ -1554,7 +1554,8 @@ function installHTML(e, full) {
   const createSQL = full.need_ddl ? 'CREATE EXTENSION ' + ident + cascade + ';' : '';
   const libs = (full.preload_libs || []).length ? full.preload_libs : ((full.libs || []).length ? full.libs : [e.name]);
   const repoName = String(full.repo || '').toUpperCase();
-  const repoCmd = full.contrib || !full.packaged ? '' : (repoName === 'PGDG' ? 'pig repo add pgdg -u' : 'pig repo add pgsql -u');
+  const pgdgOnly = repoName === 'PGDG' && ![full.rpm_repo, full.deb_repo].some(repo => String(repo || '').toUpperCase() === 'PIGSTY');
+  const repoCmd = full.contrib || !full.packaged ? '' : (pgdgOnly ? 'pig repo add pgdg -u' : 'pig repo add pgsql -u');
   const loadConfig = full.need_load ? "shared_preload_libraries = '" + libs.join(', ') + "'" : '';
   const code = mdCodeHTML;
 

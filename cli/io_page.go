@@ -545,7 +545,7 @@ func (g *IOPageGenerator) generateInstall(ext *Extension) string {
 	}
 
 	// Determine repo setup text
-	if ext.Repo.Valid && ext.Repo.String == "PGDG" {
+	if ext.UsesPGDGOnly() {
 		b.WriteString("You can install `" + ext.Pkg + "` directly. First, make sure the [**PGDG**](/docs/repo/pgdg) repository is added and enabled:\n\n")
 		b.WriteString("```bash\npig repo add pgdg -u          # Add PGDG repo and update cache\n```\n\n")
 	} else {
