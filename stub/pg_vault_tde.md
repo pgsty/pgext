@@ -2,84 +2,29 @@
 
 Sources:
 
-- [pg_vault_tde 1.7.0 README](https://api.pgxn.org/src/pg_vault_tde/pg_vault_tde-1.7.0/README.md)
-- [pg_vault_tde v1.7.0 release](https://github.com/labmiriade/pg_vault_tde/releases/tag/v1.7.0)
-- [pg_vault_tde 1.7 control file](https://api.pgxn.org/src/pg_vault_tde/pg_vault_tde-1.7.0/pg_vault_tde.control)
-- [pg_vault_tde operator documentation](https://api.pgxn.org/src/pg_vault_tde/pg_vault_tde-1.7.0/doc/pg_vault_tde.md)
+- [pg_vault_tde.control](https://github.com/labmiriade/pg_vault_tde/blob/2520a0d80fc3c4d905f57e47e2d871ed7e6b0e7d/pg_vault_tde.control)
+- [README.md](https://github.com/labmiriade/pg_vault_tde/blob/2520a0d80fc3c4d905f57e47e2d871ed7e6b0e7d/README.md)
+- [doc/pg_vault_tde.md](https://github.com/labmiriade/pg_vault_tde/blob/2520a0d80fc3c4d905f57e47e2d871ed7e6b0e7d/doc/pg_vault_tde.md)
 
-`pg_vault_tde` adds transparent tuple encryption for PostgreSQL 17 and 18 through the `encrypted_heap` table access method. It encrypts user-column data with AES-256-GCM before storage and manages per-relation data-encryption keys through HashiCorp Vault/OpenBao, a local PKCS#12 wallet, or—in v1.7—a PKCS#11 HSM. MVCC tuple headers remain plaintext.
+`pg_vault_tde` distribution 1.7.2 encrypts table values with AES-256-GCM through `encrypted_heap`, using Vault/OpenBao, a local PKCS#12 wallet or PKCS#11. SQL/control version remains 1.7. PostgreSQL 17–18, OpenSSL 3 and libcurl are required. Configure the key provider and authentication, preload the library, and restart before creating it as a superuser.
 
-### Configure and Install
+### Core Workflow
 
-```conf
+```ini
 shared_preload_libraries = 'pg_vault_tde'
-pg_vault_tde.kms_provider = 'vault'
-pg_vault_tde.vault_url = 'https://vault.example.com:8200'
-pg_vault_tde.vault_transit_mount = 'transit'
-pg_vault_tde.vault_key_name = 'pg-tde-dek'
-pg_vault_tde.vault_ca_cert = '/etc/ssl/vault/ca.pem'
 ```
-
-Configure Vault authentication through the documented token, AppRole, or Kubernetes settings without committing secrets to PostgreSQL configuration. Restart PostgreSQL, then create the extension:
 
 ```sql
 CREATE EXTENSION pg_vault_tde;
 SELECT * FROM pg_vault_tde_health_check();
+CREATE TABLE customer_secrets (id bigint, secret text) USING encrypted_heap;
+CREATE INDEX customer_secrets_id_idx ON customer_secrets USING tde_btree (id);
 ```
 
-`kms_provider` has no usable default and must be set explicitly. The extension requires OpenSSL 3 and libcurl in addition to PostgreSQL server files.
+### Operational Boundaries
 
-### Create an Encrypted Table
+This example assumes a configured provider. `pg_vault_tde_health_check`, `pg_vault_tde_verify_integrity`, `pg_vault_tde_get_rotation_status` and encrypted-size helpers expose operational state. `tde_btree` supports encrypted equality lookup, not ordering/range or index-only scans. Numeric and nondeterministic-collation encrypted indexes are unsupported; audit old unique/exclusion constraints because their checks may be ineffective. Plain indexes can expose keys, and pg_dump/COPY produce decrypted output. Protect external wallets/KMS and use the matching encrypted-backup tools where supported. Tuple headers, statistics, logs and query results are outside this protection.
 
-```sql
-CREATE TABLE customer_secrets (
-  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
-  email text,
-  ssn text
-) USING encrypted_heap;
-```
+Before replacing an older library or restarting, follow the upstream recovery checklist: earlier rotated tables may depend on keys held only in memory; concurrent rotation may require copying data while still readable, and rotated out-of-line values need the specified rewrite. Version 1.7.0 TOAST upgrades also have a separate export requirement. Check rotated/partial indexes and wallet ownership. After upgrading to 1.7.2, every pre-existing encrypted table needs VACUUM FULL to migrate its tuple layout; reserve a maintenance window and extra disk space. When `pg_vault_tde.toast_custom_rmgr` is enabled, the WAL ID changes from 128 to 161: clean shutdown, coordinated primary/standby upgrade, slot drainage and a new base backup are required. There is no rolling upgrade across those WAL formats.
 
-Encryption is table-level: ordinary `heap` tables are unchanged. Tuple values, TOAST data, and WAL representations are encrypted; tuple headers required for MVCC remain visible.
-
-### Indexes
-
-Use `tde_btree` for equality lookup without storing plaintext keys:
-
-```sql
-CREATE UNIQUE INDEX customer_secrets_id_tde_idx
-ON customer_secrets USING tde_btree (id);
-
-CREATE INDEX customer_secrets_email_tde_idx
-ON customer_secrets USING tde_btree (email);
-```
-
-`tde_btree` uses deterministic AES-256-SIV and supports equality, not range ordering or index-only scans. Other access methods on an `encrypted_heap` table are rejected by default because they would write plaintext index keys. `PRIMARY KEY` and `UNIQUE` table constraints still create native btree indexes and produce a warning; decide whether that exposure is acceptable before defining them.
-
-### Integrity and Rotation
-
-```sql
-SELECT * FROM pg_vault_tde_verify_integrity('customer_secrets');
-SELECT * FROM pg_vault_tde_encrypted_size('customer_secrets');
-
-SELECT pg_vault_tde_rotate_online('customer_secrets', 1000);
-SELECT * FROM pg_vault_tde_get_rotation_status('customer_secrets');
-
-SELECT pg_vault_tde_rotate_kek();
-```
-
-Online DEK rotation re-encrypts a table in batches and rebuilds its `tde_btree` indexes. KEK rotation re-wraps per-table DEKs without rewriting tuples. Restrict these operations, monitor completion, and avoid concurrent key-catalog restoration.
-
-### Provider and Backup Boundaries
-
-- The local wallet defaults outside `PGDATA`; copy and protect it separately because plain `pg_basebackup` does not include it.
-- Version 1.7 adds the `pkcs11` provider and `pg_vault_tde_pkcs11_keygen()`. The standalone `pg_dump_tde` and `pg_restore_tde` tools do not support PKCS#11 in this release.
-- Plain `pg_dump` and `COPY ... TO` read decrypted rows and therefore produce plaintext without a warning. Use the supplied encrypted logical-backup tools where supported.
-- Physical backups contain encrypted relation bytes and wrapped DEKs, but not the KEK. Provision access to the Vault/HSM or copy the local wallet separately. The key-sealing functions and `pg_basebackup_tde` wrapper can accompany a physical backup with a tamper-evident DEK bundle.
-
-### Critical Caveats
-
-- Never toggle `pg_vault_tde.enabled` while an `encrypted_heap` table contains rows written under the other setting. The extension does not rewrite existing rows and mixed formats can be silently misread as corruption.
-- Ordinary indexes, statistics, logs, query results, client traffic, temporary work, and backups can expose plaintext outside the encrypted heap. TDE is one storage-layer control, not end-to-end encryption.
-- `tde_btree` disables range semantics, and encrypted tables disable HOT updates in the current design; benchmark update-heavy workloads and index maintenance.
-- Keep KMS credentials, wallet passphrases, HSM PINs, KEKs, sealed bundles, and restore procedures under separate access controls. A backup without the matching key path is unrecoverable.
-- Package release 1.7.0 installs SQL extension version `1.7`, is not relocatable, requires preloading and a restart, and supports PostgreSQL 17-18 only.
+Run key-management operations one at a time. Table rotation keeps reads available but blocks writes for one transaction; logical slots must decode the rotation before a restart or another rotation. Version 1.7.2 tightens caller privileges, but upstream documents remaining SECURITY DEFINER wrapper limitations; follow the listed grants/revokes. Do not toggle `pg_vault_tde.enabled` on a populated encrypted table. These catalog updates do not perform an operational upgrade or change the Pigsty package baseline.

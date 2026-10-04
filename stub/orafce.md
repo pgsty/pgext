@@ -2,13 +2,14 @@
 
 Sources:
 
-- [README.asciidoc](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/README.asciidoc)
-- [orafce.control](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/orafce.control)
-- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/orafce--4.16.sql)
+- [4.16.13 release](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_13)
+- [README.asciidoc](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/README.asciidoc)
+- [orafce.control](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce.control)
+- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce--4.16.sql)
 - [4.16.12 release notes](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_12)
-- [File-access implementation](https://github.com/orafce/orafce/blob/d905cb474fb8e2e31589f3c75940a3b9e7feb014/file.c)
+- [File-access implementation](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/file.c)
 
-`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.16.12 still uses control and SQL extension version 4.16; the two numbers describe different layers.
+`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.16.13 still uses control and SQL extension version 4.16; the two numbers describe different layers.
 
 ### Core Workflow
 
@@ -33,3 +34,7 @@ Use `oracle.date` when an Oracle-style date must retain the time of day. Date fu
 `utl_file` accesses server-side files within administrator-configured allowed directories; restrict grants and file-system permissions. The implementation rejects parent-directory references that remain after path canonicalization. Avoid parent references in file paths. The 4.16.12 release specifically fixes possible crashes in `dbms_sql`.
 
 Installation requires a superuser and creates fixed schemas; no preload is required. Follow the upstream configuration guidance before altering `search_path`. Since the SQL version remains 4.16, an installed 4.16 extension need not acquire a new SQL version merely because its binary distribution was patched. Reconnect as required to use the updated library and verify behavior against the exact installed distribution.
+
+### 4.16.13 Patch
+
+Distribution 4.16.13 fixes additional possible `dbms_sql` crashes. The control version remains 4.16; update the library distribution without inventing a 4.16.13 SQL upgrade.

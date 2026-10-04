@@ -2,6 +2,8 @@
 
 来源：
 
+- [0.26.0 migration notes](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/docs/project/changelog/0.26.0.mdx)
+- [0.26.0 SQL upgrade](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/pg_search/sql/pg_search--0.25.11--0.26.0.sql)
 - [pg_search v0.25.11 README](https://github.com/paradedb/paradedb/blob/v0.25.11/pg_search/README.md)
 - [pg_search v0.25.11 发行说明](https://github.com/paradedb/paradedb/releases/tag/v0.25.11)
 - [PGXN 0.25.11 元数据](https://api.pgxn.org/src/pg_search/pg_search-0.25.11/META.json)
@@ -14,11 +16,11 @@
 - [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.25.11 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.26.0 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
-```conf
+```ini
 shared_preload_libraries = 'pg_search'
 ```
 
@@ -103,3 +105,9 @@ LIMIT 20;
 - 0.25.11 修复取消或终止搜索扫描时的后端崩溃，并将 `STRING_AGG` 的空分隔符按空字符串处理。
 - `CREATE EXTENSION pg_search CASCADE` 可以安装所需的 `vector` 扩展，但仍须先为所有服务器进程配置预加载并重启。仅通过 `LOAD` 或 `session_preload_libraries` 加载并不充分。
 - 使用不同字段选项重建索引后，查询计划、分词和排名都可能变化。在上线前，请使用符合生产形态的数据测试相关性与向量召回率。
+
+### 0.26.0 迁移
+
+0.26.0 将向量存储改为格式 4。更新库与 SQL 扩展后，必须重建所有包含向量列的索引，包括关闭量化的索引。在完成重建前，向量查询会报需重建错误，写入仍可继续，并支持 `REINDEX CONCURRENTLY`。至少 64 维的向量默认启用量化，其设置仅在创建或重建索引时生效。保存了 `centroid_ratio` 或 `training_samples_per_centroid` 的索引需使用 `training_sample_ratio` 和 `max_leaf_size` 重新创建。含多个正则分词列的索引也应重建以修正模式选择。
+
+此版本新增 beta 状态的 `partition_by` 索引分区、连接上的窗口聚合下推，以及可选的 `paradedb.spill_to_disk`。聚合的 `visibility` 默认是 `transaction`，`raw` 跳过 MVCC 检查，不能将其结果当作事务可见结果。应用上线前应复核排序、召回率、执行计划与存储需求。

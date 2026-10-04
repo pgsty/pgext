@@ -2,51 +2,55 @@
 
 Sources:
 
-- [Official README](https://github.com/pgexporter/pgexporter_ext/blob/c73074eb5b7aa2768e1a41045905c01ebcdab197/README.md)
-- [Official getting-started guide](https://github.com/pgexporter/pgexporter_ext/blob/c73074eb5b7aa2768e1a41045905c01ebcdab197/doc/GETTING_STARTED.md)
-- [Extension control file and SQL scripts](https://github.com/pgexporter/pgexporter_ext/tree/c73074eb5b7aa2768e1a41045905c01ebcdab197/sql)
-- [Metric implementation](https://github.com/pgexporter/pgexporter_ext/blob/c73074eb5b7aa2768e1a41045905c01ebcdab197/src/pgexporter_ext/lib.c)
-- [Filesystem and log implementation](https://github.com/pgexporter/pgexporter_ext/blob/c73074eb5b7aa2768e1a41045905c01ebcdab197/src/pgexporter_ext/utils.c)
+- [Version 0.2.5 README](https://github.com/pgexporter/pgexporter_ext/blob/0.2.5/README.md)
+- [Version 0.2.5 setup guide](https://github.com/pgexporter/pgexporter_ext/blob/0.2.5/doc/GETTING_STARTED.md)
+- [Version 0.2.5 SQL definitions](https://github.com/pgexporter/pgexporter_ext/tree/0.2.5/sql)
+- [Version 0.2.3 SQL definitions](https://github.com/pgexporter/pgexporter_ext/tree/0.2.3/sql)
+- [Version 0.2.4 SQL definitions](https://github.com/pgexporter/pgexporter_ext/tree/0.2.4/sql)
+- [Version 0.2.5 filesystem implementation](https://github.com/pgexporter/pgexporter_ext/blob/0.2.5/src/pgexporter_ext/utils.c)
 
-`pgexporter_ext` exposes Linux host, filesystem, PostgreSQL log, and FIPS information through SQL for collection by pgexporter. Its functions execute inside PostgreSQL with the server operating-system account's access, so treat the granted monitoring role as host-observation privilege rather than ordinary database read access.
+`pgexporter_ext` exposes Linux host and filesystem metrics through SQL for collection by pgexporter. The examples below apply to the packaged 0.2.3–0.2.5 APIs. Functions run with the PostgreSQL operating-system account's access, so restrict the monitoring role to trusted users.
 
 ### Setup and Core Workflow
 
-Follow upstream's supported setup: preload the module, restart PostgreSQL, install it in the `postgres` database, and grant the built-in monitoring role to the exporter login.
+The upstream setup guide configures the module in `shared_preload_libraries`, followed by a PostgreSQL restart. Preserve any other libraries already configured.
 
-```conf
+```ini
 shared_preload_libraries = 'pgexporter_ext'
 ```
+
+In the `postgres` database, a privileged administrator installs the extension and grants monitoring access to the existing exporter login:
 
 ```sql
 CREATE EXTENSION pgexporter_ext;
 GRANT pg_monitor TO pgexporter;
 
 SET ROLE pgexporter;
-SELECT pgexporter_ext_version();
-SELECT * FROM pgexporter_ext_get_functions();
-SELECT * FROM pgexporter_ext_os_info();
-SELECT * FROM pgexporter_ext_load_avg();
+SELECT pgexporter_version_ext();
+SELECT * FROM pgexporter_get_functions();
+SELECT * FROM pgexporter_os_info();
+SELECT * FROM pgexporter_load_avg();
+RESET ROLE;
 ```
 
-The installation scripts revoke public execution and grant the functions to `pg_monitor`. Review the consequences before granting that predefined role; it already includes broad PostgreSQL monitoring capabilities.
+The SQL scripts revoke public execution and grant it to `pg_monitor`. That predefined role also grants broad PostgreSQL monitoring access. The release includes a base installation script and an upgrade chain; PostgreSQL can use that chain when installing the default version with `CREATE EXTENSION`.
 
-### Metric Families
+### Metric Functions
 
-- `pgexporter_ext_version()`, `pgexporter_ext_is_supported(text)`, and `pgexporter_ext_get_functions()` provide discovery and capability metadata.
-- `pgexporter_ext_os_info()`, `pgexporter_ext_cpu_info()`, `pgexporter_ext_memory_info()`, `pgexporter_ext_network_info()`, and `pgexporter_ext_load_avg()` expose host information.
-- `pgexporter_ext_used_space(text)`, `pgexporter_ext_free_space(text)`, and `pgexporter_ext_total_space(text)` inspect caller-supplied filesystem paths.
-- `pgexporter_ext_fips()` reports whether the linked OpenSSL context is in FIPS mode.
-- The `pgexporter_ext_log_*()` family counts occurrences of PostgreSQL severity strings from `DEBUG5` through `PANIC` in the configured log directory.
+- `pgexporter_information_ext()` and `pgexporter_version_ext()` return extension information and version text.
+- `pgexporter_get_functions()` lists metric names, whether they take input, descriptions, and types. `pgexporter_is_supported(text)` checks a metric name.
+- `pgexporter_os_info()`, `pgexporter_cpu_info()`, `pgexporter_memory_info()`, `pgexporter_network_info()`, and `pgexporter_load_avg()` return host metrics.
+- `pgexporter_used_space(text)`, `pgexporter_free_space(text)`, and `pgexporter_total_space(text)` return byte counts for a filesystem path.
 
-### Cost and Security Boundaries
+```sql
+SELECT pgexporter_is_supported('pgexporter_load_avg');
+SELECT pgexporter_free_space('/var/lib/postgresql');
+```
 
-The path functions traverse directories or call filesystem-stat APIs as the PostgreSQL operating-system user. A `pg_monitor` member can probe arbitrary paths accessible to that account and infer their existence or size. Restrict database login and network access accordingly.
+Choose a path that exists on the server and is accessible to its operating-system account. These releases do not provide the later FIPS or log-count APIs.
 
-Every log-count function synchronously scans every regular file in `log_directory`, including gzip, bzip2, LZ4, and Zstandard files, and counts severity substrings rather than parsing structured PostgreSQL log records. Frequent scrapes or a large retained log set can impose severe CPU, I/O, decompression, and query-latency costs. The current source defines `pgexporter.log_cache_refresh_interval`, but the log functions still call the full scan directly; do not assume the GUC provides effective caching.
+### Operational Boundaries
 
-### Version and Packaging Caveat
+Filesystem calls use the server's filesystem view, which may be a container rather than the host. The used-space function walks directories, so large trees can make scrapes expensive. A `pg_monitor` member can inspect accessible paths; restrict database access and choose collection paths deliberately.
 
-The reviewed control file declares version `0.3.1`, but the same source tree contains only a base `pgexporter_ext--0.1.0.sql` plus incremental upgrade scripts; it has no base `pgexporter_ext--0.3.1.sql`. A direct `CREATE EXTENSION pgexporter_ext` from an unmodified current source installation can therefore fail. Verify that the distributed package supplies a valid base script, or install version `0.1.0` and test the complete `ALTER EXTENSION ... UPDATE` chain in a disposable database before rollout.
-
-Upstream reports PostgreSQL 13+ on Linux and the current build declares C17 plus OpenSSL and compression-library dependencies. Use a package built for the exact PostgreSQL major and operating system, then validate function availability and scrape cost on the actual host.
+Upstream lists Linux and PostgreSQL 13+; this catalog supplies packages for PostgreSQL 14–18. Use the exact PostgreSQL-major package. The principal RPM supplier is PGDG at 0.2.4 (EL8 PostgreSQL 14–16 use 0.2.3), while Pigsty supplies DEB 0.2.5; enable the Pigsty repository as well when following the cross-platform installation instructions.

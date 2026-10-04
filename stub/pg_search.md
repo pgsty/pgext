@@ -2,6 +2,8 @@
 
 Sources:
 
+- [0.26.0 migration notes](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/docs/project/changelog/0.26.0.mdx)
+- [0.26.0 SQL upgrade](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/pg_search/sql/pg_search--0.25.11--0.26.0.sql)
 - [pg_search v0.25.11 README](https://github.com/paradedb/paradedb/blob/v0.25.11/pg_search/README.md)
 - [pg_search v0.25.11 release](https://github.com/paradedb/paradedb/releases/tag/v0.25.11)
 - [PGXN 0.25.11 metadata](https://api.pgxn.org/src/pg_search/pg_search-0.25.11/META.json)
@@ -14,11 +16,11 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.25.11 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.26.0 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
-```conf
+```ini
 shared_preload_libraries = 'pg_search'
 ```
 
@@ -103,3 +105,9 @@ LIMIT 20;
 - Version 0.25.11 fixes a backend crash when a search scan is cancelled or terminated and treats a null `STRING_AGG` delimiter as an empty separator.
 - `CREATE EXTENSION pg_search CASCADE` can install the required `vector` extension, but every server process still needs the preload configuration and restart first. Loading it only with `LOAD` or `session_preload_libraries` is insufficient.
 - Query plans, tokenization, and ranking can change when an index is rebuilt with different field options. Test relevance and vector recall with production-shaped data before rollout.
+
+### 0.26.0 Migration
+
+Version 0.26.0 changes vector storage to format 4. After updating the library and SQL extension, rebuild every index containing a vector field, including indexes with quantization disabled. Until rebuilt, vector queries fail with a rebuild-required error; writes continue and `REINDEX CONCURRENTLY` is supported. Quantization defaults on for vectors with at least 64 dimensions. Its settings take effect only during index creation or rebuilding. Indexes storing `centroid_ratio` or `training_samples_per_centroid` must be recreated using `training_sample_ratio` and `max_leaf_size`. Rebuild indexes with multiple regex-tokenized fields to correct pattern selection as well.
+
+The release adds beta `partition_by` index partitioning, window-aggregate pushdown over joins, and opt-in `paradedb.spill_to_disk`. Aggregate `visibility` defaults to `transaction`; `raw` skips MVCC checks and must not be mistaken for transaction-visible results. Recheck ranking, recall, plans and storage requirements before application rollout.
