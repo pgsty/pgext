@@ -282,10 +282,10 @@ page_width: full
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
