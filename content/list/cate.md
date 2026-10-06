@@ -107,7 +107,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 |:---:|:---|:---|:---|
 | 2100 | {{< alias "pg_search" >}} | 0.26.0 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.9 | Use Groonga as index, fast full text search platform for all languages! |
-| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.9 | PGroonga database management module |
+| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.9 | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "vgram" >}} | 1.0 | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | 2140 | {{< alias "zhparser" >}} | 2.3 | a parser for full-text search of Chinese |
@@ -209,7 +209,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2900 | {{< alias "provsql" >}} | 1.12.0 | Semiring provenance and probability management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.10 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
-| 2930 | {{< alias "rdkit" >}} | 202603.6 | Cheminformatics functionality for PostgreSQL. |
+| 2930 | {{< alias "rdkit" >}} | 202609.1 | Cheminformatics functionality for PostgreSQL. |
 | 2940 | {{< alias "omni" "omnigres" >}} | 0.2.14 | Advanced adapter for Postgres extensions |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | 0.1.3 | Basic session management |
 | 2942 | {{< alias "omni_aws" "omnigres" >}} | 0.1.2 | Amazon Web Services APIs (S3) |
@@ -268,7 +268,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.2 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.10.11 | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.10.12 | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |

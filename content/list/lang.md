@@ -15,19 +15,19 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 429 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 77 | Pure SQL extensions and functions |
+| {{< language "C" >}} | 427 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 78 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 63 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
-| {{< language "Python" >}} | 3 | Extensions written in Python |
-| {{< language "PLpgSQL" >}} | 2 | Extensions written in PLpgSQL |
+| {{< language "PLpgSQL" >}} | 4 | Extensions written in PLpgSQL |
+| {{< language "Python" >}} | 2 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="429 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="427 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -44,9 +44,7 @@ The traditional PostgreSQL extension language
 | 1501 | {{< alias "postgis_topology" "postgis" >}} | PostGIS topology spatial types and functions |
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS raster types and functions |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL functions |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger geocoder and reverse geocoder |
 | 1505 | {{< alias "address_standardizer" "postgis" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | Address Standardizer US dataset example |
 | 1520 | {{< alias "pointcloud" >}} | data type for lidar point clouds |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | integration for pointcloud LIDAR data and PostGIS geometry data |
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3 bindings for PostgreSQL |
@@ -62,7 +60,7 @@ The traditional PostgreSQL extension language
 | 1880 | {{< alias "pg_tiktoken_c" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
 | 1930 | {{< alias "pg4ml" >}} | Machine learning framework for PostgreSQL |
 | 2110 | {{< alias "pgroonga" >}} | Use Groonga as index, fast full text search platform for all languages! |
-| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGroonga database management module |
+| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "vgram" >}} | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | 2140 | {{< alias "zhparser" >}} | a parser for full-text search of Chinese |
@@ -465,7 +463,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="77 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="78 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -476,6 +474,7 @@ Pure SQL extensions and functions
 | 1060 | {{< alias "table_version" >}} | PostgreSQL table versioning extension |
 | 1100 | {{< alias "pg_dispatch" >}} | Asynchronous SQL dispatcher built on pg_cron |
 | 1150 | {{< alias "cron_utils" >}} | Parse cron expressions and compute previous or next trigger times |
+| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | Address Standardizer US dataset example |
 | 1560 | {{< alias "geoip" >}} | IP-based geolocation query |
 | 1600 | {{< alias "pghydro" >}} | Drainage network analysis core for PostgreSQL and PostGIS |
 | 1601 | {{< alias "pgh_raster" "pghydro" >}} | Raster hydrology extension for PgHydro |
@@ -664,9 +663,22 @@ Data-only extensions
 | 2288 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Russian Hunspell Dictionary |
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
 
+## PLpgSQL
+
+{{< language "PLpgSQL" >}} {{< badge content="4 Extensions" color="gray" icon="cube" >}}
+
+Extensions written in PLpgSQL
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger geocoder and reverse geocoder |
+| 4220 | {{< alias "pg_relation_sql" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
+| 6870 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
+| 9820 | {{< alias "pg_fact_loader" >}} | build fact tables with Postgres |
+
 ## Python
 
-{{< language "Python" >}} {{< badge content="3 Extensions" color="gray" icon="cube" >}}
+{{< language "Python" >}} {{< badge content="2 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Python
 
@@ -674,18 +686,6 @@ Extensions written in Python
 |:---:|:---|:---|
 | 1900 | {{< alias "jev" >}} | Natural-language row filtering, ranking and classification through a Jev-compatible API |
 | 3210 | {{< alias "faker" >}} | Wrapper for the Faker Python library |
-| 6870 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
-
-## PLpgSQL
-
-{{< language "PLpgSQL" >}} {{< badge content="2 Extensions" color="gray" icon="cube" >}}
-
-Extensions written in PLpgSQL
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 4220 | {{< alias "pg_relation_sql" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
-| 9820 | {{< alias "pg_fact_loader" >}} | build fact tables with Postgres |
 
 ## Java
 

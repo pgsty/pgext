@@ -12,7 +12,7 @@ comments: false
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
 | **ALL** | 600 | 142 | 441 | 71 | 0 | 592 | 580 | 566 | 540 | 518 |
 | **EL** | 599 | 141 | 441 | 71 | 1 | 590 | 577 | 565 | 539 | 518 |
-| **Debian** | 597 | 101 | 425 | 71 | 3 | 586 | 576 | 563 | 537 | 516 |
+| **Debian** | 597 | 101 | 425 | 71 | 3 | 587 | 576 | 563 | 537 | 516 |
 
 ## Categories
 
@@ -57,13 +57,13 @@ There are 600 packaged PostgreSQL extensions:
 | {{< ext "edtf_postgres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | EDTF validation, normalization, date bounds, and temporal relations |
 | {{< ext "pg_stl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | Time series analysis functions for PostgreSQL |
 | {{< ext "cron_utils" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Parse cron expressions and compute previous or next trigger times |
-| {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostGIS geometry and geography spatial types and functions |
+| {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | PostGIS geometry and geography spatial types and functions |
 | {{< ext "postgis_topology" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostGIS topology spatial types and functions |
 | {{< ext "postgis_raster" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostGIS raster types and functions |
 | {{< ext "postgis_sfcgal" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PostGIS SFCGAL functions |
-| {{< ext "postgis_tiger_geocoder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | PostGIS tiger geocoder and reverse geocoder |
+| {{< ext "postgis_tiger_geocoder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | PostGIS tiger geocoder and reverse geocoder |
 | {{< ext "address_standardizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| {{< ext "address_standardizer_data_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Address Standardizer US dataset example |
+| {{< ext "address_standardizer_data_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Address Standardizer US dataset example |
 | {{< ext "pgrouting" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | pgRouting Extension |
 | {{< ext "pointcloud" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | data type for lidar point clouds |
 | {{< ext "pointcloud_postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | integration for pointcloud LIDAR data and PostGIS geometry data |
@@ -108,7 +108,7 @@ There are 600 packaged PostgreSQL extensions:
 | {{< ext "pg_turbovec" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Full text search for PostgreSQL using BM25 |
 | {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | Use Groonga as index, fast full text search platform for all languages! |
-| {{< ext "pgroonga_database" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PGroonga database management module |
+| {{< ext "pgroonga_database" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Recovery helper for removing a damaged PGroonga internal database |
 | {{< ext "pg_bigm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | create 2-gram (bigram) index for faster full text search. |
 | {{< ext "vgram" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | {{< ext "zhparser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | a parser for full-text search of Chinese |
@@ -510,7 +510,7 @@ There are 600 packaged PostgreSQL extensions:
 | {{< ext "explain_ui" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | easily jump into a visual plan UI for any SQL query |
 | {{< ext "pg_relusage" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | Log all the queries that reference a particular column |
 | {{< ext "pagevis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Visualise database pages in ascii code |
-| {{< ext "powa" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL Workload Analyser-core |
+| {{< ext "powa" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL Workload Analyser-core |
 | {{< ext "pg_overexplain" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="c-sL---" color="blue" >}} | Allow EXPLAIN to dump even more details |
 | {{< ext "pg_logicalinspect" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="c-s-d--" color="blue" >}} | Logical decoding components inspection |
 | {{< ext "pageinspect" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | inspect the contents of database pages at a low level |

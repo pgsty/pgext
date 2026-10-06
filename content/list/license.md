@@ -68,7 +68,7 @@ PostgreSQL extension categorized by license.
 | 1890 | {{< alias "pg_grammar_guard" >}} | Catalog-derived grammars and approved grammar drift checks |
 | 1900 | {{< alias "jev" >}} | Natural-language row filtering, ranking and classification through a Jev-compatible API |
 | 2110 | {{< alias "pgroonga" >}} | Use Groonga as index, fast full text search platform for all languages! |
-| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGroonga database management module |
+| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "vgram" >}} | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | 2140 | {{< alias "zhparser" >}} | a parser for full-text search of Chinese |

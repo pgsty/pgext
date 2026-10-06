@@ -15,19 +15,19 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 429 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 77 | 纯 SQL 扩展和函数 |
+| {{< language "C" >}} | 427 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 78 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 63 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 15 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
-| {{< language "Python" >}} | 3 | 使用 Python 编写的扩展 |
-| {{< language "PLpgSQL" >}} | 2 | 使用 PLpgSQL 编写的扩展 |
+| {{< language "PLpgSQL" >}} | 4 | 使用 PLpgSQL 编写的扩展 |
+| {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="429 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="427 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -44,9 +44,7 @@ weight: 200
 | 1501 | {{< alias "postgis_topology" "postgis" >}} | PostGIS 拓扑空间类型和函数 |
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS 光栅类型和函数 |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL 函数 |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
 | 1505 | {{< alias "address_standardizer" "postgis" >}} | 地址标准化函数。 |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 地址标准化函数：美国数据集示例 |
 | 1520 | {{< alias "pointcloud" >}} | 提供激光雷达点云数据类型支持 |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 将激光雷达点云与PostGIS几何类型相集成 |
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3六边形层级索引支持 |
@@ -62,7 +60,7 @@ weight: 200
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
 | 1930 | {{< alias "pg4ml" >}} | PG4ML是一个机器学习框架 |
 | 2110 | {{< alias "pgroonga" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
-| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGGroonga 数据库管理模块 |
+| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "vgram" >}} | 用于 LIKE/ILIKE 检索的可变长度字组 GIN 索引与统计信息 |
 | 2140 | {{< alias "zhparser" >}} | 中文分词，全文搜索解析器 |
@@ -465,7 +463,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="77 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="78 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -476,6 +474,7 @@ weight: 200
 | 1060 | {{< alias "table_version" >}} | PostgreSQL 版本控制表扩展 |
 | 1100 | {{< alias "pg_dispatch" >}} | 基于 pg_cron 的异步 SQL 分发器 |
 | 1150 | {{< alias "cron_utils" >}} | 解析 Cron 表达式并计算上一次或下一次触发时间 |
+| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 地址标准化函数：美国数据集示例 |
 | 1560 | {{< alias "geoip" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | 1600 | {{< alias "pghydro" >}} | PostgreSQL/PostGIS 排水网络分析核心扩展 |
 | 1601 | {{< alias "pgh_raster" "pghydro" >}} | PgHydro 栅格水文分析扩展 |
@@ -664,9 +663,22 @@ weight: 200
 | 2288 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Hunspell俄语全文检索词典 |
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
 
+## PLpgSQL
+
+{{< language "PLpgSQL" >}} {{< badge content="4 个扩展" color="gray" icon="cube" >}}
+
+使用 PLpgSQL 编写的扩展
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
+| 4220 | {{< alias "pg_relation_sql" >}} | 根据 PostgreSQL 外键生成可内联的关系导航 SQL 函数 |
+| 6870 | {{< alias "powa" >}} | PostgreSQL 工作负载分析器-核心 |
+| 9820 | {{< alias "pg_fact_loader" >}} | 在 Postgres 中构建事实表 |
+
 ## Python
 
-{{< language "Python" >}} {{< badge content="3 个扩展" color="gray" icon="cube" >}}
+{{< language "Python" >}} {{< badge content="2 个扩展" color="gray" icon="cube" >}}
 
 使用 Python 编写的扩展
 
@@ -674,18 +686,6 @@ weight: 200
 |:---:|:---|:---|
 | 1900 | {{< alias "jev" >}} | 通过兼容 Jev 的 API 实现自然语言行过滤、排序和分类 |
 | 3210 | {{< alias "faker" >}} | 插入生成的测试伪造数据，Python库的包装 |
-| 6870 | {{< alias "powa" >}} | PostgreSQL 工作负载分析器-核心 |
-
-## PLpgSQL
-
-{{< language "PLpgSQL" >}} {{< badge content="2 个扩展" color="gray" icon="cube" >}}
-
-使用 PLpgSQL 编写的扩展
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 4220 | {{< alias "pg_relation_sql" >}} | 根据 PostgreSQL 外键生成可内联的关系导航 SQL 函数 |
-| 9820 | {{< alias "pg_fact_loader" >}} | 在 Postgres 中构建事实表 |
 
 ## Java
 

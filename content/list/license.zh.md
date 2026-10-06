@@ -68,7 +68,7 @@ page_width: full
 | 1890 | {{< alias "pg_grammar_guard" >}} | 根据实时目录生成语法并检测已批准语法的漂移 |
 | 1900 | {{< alias "jev" >}} | 通过兼容 Jev 的 API 实现自然语言行过滤、排序和分类 |
 | 2110 | {{< alias "pgroonga" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
-| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGGroonga 数据库管理模块 |
+| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "vgram" >}} | 用于 LIKE/ILIKE 检索的可变长度字组 GIN 索引与统计信息 |
 | 2140 | {{< alias "zhparser" >}} | 中文分词，全文搜索解析器 |

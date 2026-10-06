@@ -7,7 +7,7 @@ comments: false
 ---
 
 The packaged PostgreSQL extension catalog contains **600** extensions and **431** packages.
-The full PGEXT.CLOUD directory contains **2507** extensions.
+The full PGEXT.CLOUD directory contains **2551** extensions.
 
 ## Extension Stat
 
@@ -15,7 +15,7 @@ The full PGEXT.CLOUD directory contains **2507** extensions.
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
 | **ALL** | 600 | 142 | 441 | 71 | 0 | 592 | 580 | 566 | 540 | 518 |
 | **EL** | 599 | 141 | 441 | 71 | 1 | 590 | 577 | 565 | 539 | 518 |
-| **Debian** | 597 | 101 | 425 | 71 | 3 | 586 | 576 | 563 | 537 | 516 |
+| **Debian** | 597 | 101 | 425 | 71 | 3 | 587 | 576 | 563 | 537 | 516 |
 
 ## Package Stat
 
@@ -25,7 +25,7 @@ The full PGEXT.CLOUD directory contains **2507** extensions.
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
 | **ALL** | 431 | 130 | 353 | 0 | 0 | 425 | 420 | 408 | 390 | 375 |
 | **EL** | 430 | 129 | 353 | 0 | 62 | 424 | 418 | 407 | 389 | 375 |
-| **Debian** | 428 | 90 | 338 | 0 | 64 | 420 | 417 | 405 | 387 | 373 |
+| **Debian** | 428 | 90 | 338 | 0 | 64 | 421 | 417 | 405 | 387 | 373 |
 
 ## Categories
 

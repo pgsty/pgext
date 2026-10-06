@@ -107,7 +107,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 2100 | {{< alias "pg_search" >}} | 0.26.0 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.9 | 使用Groonga，面向所有语言的高速全文检索平台 |
-| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.9 | PGGroonga 数据库管理模块 |
+| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.9 | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "vgram" >}} | 1.0 | 用于 LIKE/ILIKE 检索的可变长度字组 GIN 索引与统计信息 |
 | 2140 | {{< alias "zhparser" >}} | 2.3 | 中文分词，全文搜索解析器 |
@@ -209,7 +209,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2900 | {{< alias "provsql" >}} | 1.12.0 | PostgreSQL 半环溯源、概率与不确定性管理扩展 |
 | 2910 | {{< alias "orioledb" >}} | 1.10 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
-| 2930 | {{< alias "rdkit" >}} | 202603.6 | 在PostgreSQL化学领域数据管理功能 |
+| 2930 | {{< alias "rdkit" >}} | 202609.1 | 在PostgreSQL化学领域数据管理功能 |
 | 2940 | {{< alias "omni" "omnigres" >}} | 0.2.14 | PostgreSQL即平台，Omnigres主扩展与加载器 |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | 0.1.3 | Omnigres 基础会话认证管理模块 |
 | 2942 | {{< alias "omni_aws" "omnigres" >}} | 0.1.2 | Omnigres AWS S3 API封装 |
@@ -268,7 +268,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | 3040 | {{< alias "plprql" >}} | 18.0.2 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.10.11 | PL/pgSQL 函数的附加校验、性能分析与诊断工具 |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.10.12 | PL/pgSQL 函数的附加校验、性能分析与诊断工具 |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | 剖析 PL/pgSQL 函数 |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh 程序语言 |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | Java 程序语言 |
