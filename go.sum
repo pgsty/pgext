@@ -12,8 +12,8 @@ github.com/jackc/puddle/v2 v2.2.2 h1:PR8nw+E/1w0GLuRFSmiioY6UooMp6KJv0/61nB7icHo
 github.com/jackc/puddle/v2 v2.2.2/go.mod h1:vriiEXHvEE654aYKXXjOvZM39qJ0q+azkZFrfEOc3H4=
 github.com/klauspost/compress v1.20.1 h1:T7kKElXUMXrUJ2E9QhQhxFtcK5rPyLdsGZvdbLMPdiQ=
 github.com/klauspost/compress v1.20.1/go.mod h1:LUdAzn7YLVvxLpc7y3V1m40wESHTgc1422pwwBSKYuI=
-github.com/pgsty/oink v1.1.0 h1:121L5g57ChRCPyidzEBBcln2Co+0zYRQ+XDDXjymd0Q=
-github.com/pgsty/oink v1.1.0/go.mod h1:pHvbUhJCfseB41n5RGwsF7abT3i32VSTpofLQoq4b7Y=
+github.com/pgsty/oink v1.2.0 h1:KAb7BVfNG8Ws/RXjXfKjoxSYWA47Is+4U6QPL6T/K+4=
+github.com/pgsty/oink v1.2.0/go.mod h1:pHvbUhJCfseB41n5RGwsF7abT3i32VSTpofLQoq4b7Y=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/russross/blackfriday/v2 v2.1.0/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/sirupsen/logrus v1.10.2 h1:G2SED73/qrAu6YwbdxOD6peLkCBI3z7L+ykJFTXJBBo=
