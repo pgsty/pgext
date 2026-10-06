@@ -1,3 +1,32 @@
+## 2026-10-05
+
+本地构建批次：升级 22 套配方，共 24 个软件包、96 个 RPM/DEB 制品。所有下载均经 8888 Xray 代理；MCP Toolbox 已完成双架构 CGO 源码构建。96 个制品均已导入本地 `repo/apt/infra` 与 `repo/yum/infra` 仓库，完成 Pigsty RPM/索引签名及双架构 APT/DNF 客户端验证。下表的原始字节保留指缓存和构建制品，仓库 RPM 副本另行签名。尚未执行在线上传。
+
+| 名称 | 旧版本 | 新版本 | 备注 |
+|---|---|---|---|
+| caddy | 2.11.4 | 2.11.7 | 已校验并构建双架构 RPM/DEB |
+| claude | 2.1.284 | 2.1.289 | 官方 manifest SHA256 与双架构实际版本已核验 |
+| code | 1.139.1 | 1.140.0 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| code-server | 4.139.1 | 4.140.0 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| codex | 0.159.0 | 0.160.0 | 已校验并构建双架构 RPM/DEB |
+| crush | 0.96.1 | 0.97.1 | 已校验并构建双架构 RPM/DEB |
+| grafana | 13.2.2 | 13.2.3 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| k3s | 1.37.0 | 1.37.1 | 上游 v1.37.1+k3s1；stable 通道为 1.36.5+k3s1 |
+| k3s-images | 1.37.0 | 1.37.1 | 双架构 air-gap 镜像与 K3s 同步，精确依赖已更新 |
+| maddy | 0.9.5 | 0.9.6 | 已校验并构建双架构 RPM/DEB |
+| mcp-toolbox | 1.12.0 | 1.13.1 | Go 1.27.1 + CGO + Zig 0.15.2 双架构源码构建，glibc 2.28 目标；发行号 2PGSTY，保留仓库已有构建 |
+| mtail | 3.4.14 | 3.4.15 | 已校验并构建双架构 RPM/DEB |
+| openbao | 2.7.0 | 2.7.1 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| opencode | 1.18.33 | 1.18.34 | 已校验并构建双架构 RPM/DEB |
+| opentofu | 1.12.6 | 1.13.1 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| pg-hardstorage | 1.4.2 | 1.5.0 | 已校验并构建双架构 RPM/DEB |
+| redis-exporter | 1.92.1 | 1.93.0 | 已校验并构建双架构 RPM/DEB |
+| rust-toolchain | 1.98.1 | 1.99.0 | 官方签名验证；双架构 ELF ABI 检查通过 |
+| rustfs | 1.0.0 | 1.0.1 | 已校验并构建双架构 RPM/DEB |
+| uv | 0.12.20 | 0.12.23 | 已校验并构建双架构 RPM/DEB |
+| victoria-logs | 1.52.0 | 1.53.0 | 同步升级 victoria-logs、vlogscli、vlagent 三个包 |
+| victoria-traces | 0.11.1 | 0.12.0 | 已校验并构建双架构 RPM/DEB |
+
 ## 2026-09-29
 
 本地构建批次：升级 26 套配方，新增 cargo-pgrx-0193，共 29 个软件包、116 个 RPM/DEB 制品。下载均经 8888 Xray 代理；MCP Toolbox 单独处理。此记录不表示软件包已发布到在线仓库。

@@ -6,6 +6,35 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-10-05
+
+Local build batch: 22 recipes upgraded, producing 96 RPM/DEB artifacts for 24 packages. All downloads used the port 8888 Xray proxy; MCP Toolbox was built from source for both architectures with CGO enabled. All 96 artifacts were imported into the local `repo/apt/infra` and `repo/yum/infra` repositories, with Pigsty RPM/metadata signatures and dual-architecture APT/DNF client verification. Vendor byte preservation below refers to the cached/build artifacts; repository RPM copies are signed separately. Online upload has not been performed.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| caddy | 2.11.4 | 2.11.7 | Verified and built dual-architecture RPM/DEB |
+| claude | 2.1.284 | 2.1.289 | Official manifest SHA256 and both Linux binary versions verified |
+| code | 1.139.1 | 1.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| code-server | 4.139.1 | 4.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| codex | 0.159.0 | 0.160.0 | Verified and built dual-architecture RPM/DEB |
+| crush | 0.96.1 | 0.97.1 | Verified and built dual-architecture RPM/DEB |
+| grafana | 13.2.2 | 13.2.3 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| k3s | 1.37.0 | 1.37.1 | Upstream v1.37.1+k3s1; stable channel remains 1.36.5+k3s1 |
+| k3s-images | 1.37.0 | 1.37.1 | Dual-arch air-gap images and exact K3s dependency updated together |
+| maddy | 0.9.5 | 0.9.6 | Verified and built dual-architecture RPM/DEB |
+| mcp-toolbox | 1.12.0 | 1.13.1 | Dual-arch source build with Go 1.27.1, CGO and Zig 0.15.2; glibc 2.28 target; release 2PGSTY preserves the existing repository build |
+| mtail | 3.4.14 | 3.4.15 | Verified and built dual-architecture RPM/DEB |
+| openbao | 2.7.0 | 2.7.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| opencode | 1.18.33 | 1.18.34 | Verified and built dual-architecture RPM/DEB |
+| opentofu | 1.12.6 | 1.13.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| pg-hardstorage | 1.4.2 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
+| redis-exporter | 1.92.1 | 1.93.0 | Verified and built dual-architecture RPM/DEB |
+| rust-toolchain | 1.98.1 | 1.99.0 | Upstream signatures and dual-architecture ELF ABI checks passed |
+| rustfs | 1.0.0 | 1.0.1 | Verified and built dual-architecture RPM/DEB |
+| uv | 0.12.20 | 0.12.23 | Verified and built dual-architecture RPM/DEB |
+| victoria-logs | 1.52.0 | 1.53.0 | victoria-logs, vlogscli and vlagent updated together |
+| victoria-traces | 0.11.1 | 0.12.0 | Verified and built dual-architecture RPM/DEB |
+
 ## 2026-09-29
 
 Local build batch: 26 recipes upgraded and cargo-pgrx-0193 added, producing 116 RPM/DEB artifacts for 29 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
