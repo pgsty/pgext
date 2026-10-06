@@ -58,7 +58,11 @@ jobs:
 
       - name: Check go.mod is tidy
         run: |
+          # OINK is used by Hugo, so Go's import-based tidy removes it.
+          oink_version="$(go list -m -f '{{.Version}}' github.com/pgsty/oink)"
           go mod tidy
+          go mod edit -require="github.com/pgsty/oink@${oink_version}"
+          go mod download github.com/pgsty/oink
           git diff --exit-code -- go.mod go.sum
 
   package:
