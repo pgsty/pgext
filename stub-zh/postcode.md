@@ -2,22 +2,31 @@
 
 来源：
 
-- [上游 README](https://github.com/patchsoft/postcode/blob/13ccded329c2e12081987d197cfe44413c35bd4e/README.md)
-- [扩展 control 文件](https://github.com/patchsoft/postcode/blob/13ccded329c2e12081987d197cfe44413c35bd4e/postcode.control)
-- [SQL 安装脚本](https://github.com/patchsoft/postcode/blob/13ccded329c2e12081987d197cfe44413c35bd4e/postcode--1.3.0.sql)
-- [PGXN 发布页面](https://pgxn.org/dist/postcode/)
+- [README.md](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/README.md)
+- [postcode.control](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/postcode.control)
+- [postcode--2.0.1.sql](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/postcode--2.0.1.sql)
+- [META.json](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/META.json)
+- [.github/workflows/test.yml](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/.github/workflows/test.yml)
+- [CHANGELOG.md](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/CHANGELOG.md)
 
-`postcode` `1.3.0` 版提供紧凑的 `postcode` 与 `dps` 类型，分别表示英国邮编和投递点后缀。它会规范化输入，提供 B-tree 比较支持，用 `%` 执行部分匹配，并提供验证与格式化辅助函数。
+`postcode` 2.0.1 是原 patchsoft 项目在 PGXN 上由维护分叉延续的版本。它保留紧凑的英国 `postcode` 及投递点后缀 `dps` 类型，并新增 64 位国际 `postal_code` 类型。带国家代码的文本形式可以区分含义不同的各国邮编。
 
-### 示例
+### 核心用法
 
 ```sql
 CREATE EXTENSION postcode;
+SELECT 'SW1A 1AA'::postcode;
+SELECT 'US-90210-1234'::postal_code, 'CA-K1A 0B1'::postal_code;
 CREATE TABLE addresses (code postcode);
 INSERT INTO addresses VALUES ('SW1A 1AA'), ('LS2 4AA');
-SELECT postcode_validate('SW1A 1AA');
-SELECT * FROM addresses WHERE code % 'SW1A';
-SELECT to_char(code, 'AD SW') FROM addresses;
+SELECT * FROM addresses
+WHERE code >= range_lower('SW1A') AND code < range_upper('SW1A');
 ```
 
-语法验证不能证明邮编当前已分配或地址真实存在；此类结论必须用当前权威地址数据集复核。部分形式可能存在歧义（例如邮区与扇区），因此应用代码应明确允许的输入层级。上游版本发布于 2015 年，没有当前兼容矩阵，内置的英国邮编格式假设也可能已经过时。
+### 运行边界
+
+`postcode` 支持格式化、校验及 B-tree 索引。`%` 前缀过滤在常量片段上可使用规划器支持；`range_lower` 与 `range_upper` 可明确表达索引范围。早期 1.3.0 错误地将前缀匹配注册为 B-tree 相等关系，维护版本修复了这个问题及一个堆溢出缺陷。替换库后应执行 `ALTER EXTENSION postcode UPDATE`；仅替换二进制不会修复 SQL 运算符元数据。
+
+国际 `postal_code` 值必须包含国家代码，形式见上方示例。`country` 提取国家代码，`postal_prefix`、`lower_bound` 与 `upper_bound` 支持前缀操作。`is_valid_postal_code` 和 `to_postal_code` 用于导入不洁净输入，也可用国家类型修饰符约束列。格式合法不代表该邮编实际分配或地址真实存在。
+
+该发行版测试 PostgreSQL 14–18。安装需要超级用户，扩展可迁移模式，不要求预加载。2.0 以追加方式升级，保留原有英国类型与已存储值。

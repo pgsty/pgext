@@ -2,16 +2,17 @@
 
 来源：
 
-- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.108.0--0.108.1.sql)
-- [Version 0.108.1 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/README.md)
-- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/SQL_REFERENCE.md)
-- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/CONFIGURATION.md)
-- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/GUC_CATALOG.md)
-- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/docs/UPGRADING.md)
-- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/pg_trickle.control)
-- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.1/sql/pg_trickle--0.107.0--0.108.0.sql)
+- [0.108.2 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.108.1--0.108.2.sql)
+- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.108.0--0.108.1.sql)
+- [Version 0.108.2 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/README.md)
+- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/SQL_REFERENCE.md)
+- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/CONFIGURATION.md)
+- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/GUC_CATALOG.md)
+- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/UPGRADING.md)
+- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/pg_trickle.control)
+- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.107.0--0.108.0.sql)
 
-`pg_trickle` 0.108.1 在 PostgreSQL 18 上维护流式表：由 SQL 查询定义、可以常规查询的数据表；在支持时增量刷新，也可全量重算。流式表可依赖其他流式表，形成依赖图，同时支持在同一事务中维护结果。
+`pg_trickle` 0.108.2 在 PostgreSQL 18 上维护流式表：由 SQL 查询定义、可以常规查询的数据表；在支持时增量刷新，也可全量重算。流式表可依赖其他流式表，形成依赖图，同时支持在同一事务中维护结果。
 
 ### 启用扩展
 
@@ -66,12 +67,12 @@ SELECT * FROM pgtrickle.explain_st('regional_totals');
 
 `pgtrickle.output_delta_consumer_status` 报告消费者状态，`pgtrickle.validate_output_delta_consumer` 检查消费者能否恢复。`pgtrickle.request_output_delta_resnapshot`、`pgtrickle.begin_output_delta_resnapshot` 和 `pgtrickle.ack_output_delta_resnapshot` 管理基线重建。重新获取快照时，会校验数据库实例身份、输出契约摘要和行标识版本。推进外部投递前应遵循 SQL 参考中的准确签名与确认协议。
 
-### 升级至 0.108.0
+### 升级至 0.108.2
 
 先安装新的库和扩展文件，再执行随版本提供的迁移：
 
 ```sql
-ALTER EXTENSION pg_trickle UPDATE TO '0.108.1';
+ALTER EXTENSION pg_trickle UPDATE TO '0.108.2';
 SELECT * FROM pgtrickle.output_delta_consumer_status();
 ```
 
@@ -79,4 +80,8 @@ SELECT * FROM pgtrickle.output_delta_consumer_status();
 
 ### 0.108.1 版本变化
 
-本补丁修复上游 FULL 刷新或截断后下游 `IMMEDIATE` 表未及时更新的问题，支持恢复缺失的变更缓冲区，并修复源模式变更后的意外挂起及标量子查询增量刷新。同时增加 PostgreSQL 18.6 支持。安装匹配文件后执行 `ALTER EXTENSION pg_trickle UPDATE TO '0.108.1'`，并检查依赖流表结果及变更捕获状态。
+本补丁修复上游 FULL 刷新或截断后下游 `IMMEDIATE` 表未及时更新的问题，支持恢复缺失的变更缓冲区，并修复源模式变更后的意外挂起及标量子查询增量刷新。同时增加 PostgreSQL 18.6 支持。安装匹配文件后执行 `ALTER EXTENSION pg_trickle UPDATE TO '0.108.2'`，并检查依赖流表结果及变更捕获状态。
+
+### 0.108.2 与行身份 V3
+
+0.108.2 的迁移通过 `pgtrickle.encode_row_id_v3` 修复空格填充字符类型的身份编码。已有流表会被标记为需要重新初始化，在受保护的 FULL 重建完成前阻止差分维护。现有输出增量消费者及持久游标被保留，但消费者会进入 `RESNAPSHOT_REQUIRED`，旧的重新快照令牌会被清除。恢复外部消费前必须建立并确认新基线，外部刷新客户端还须获取新的图契约摘要；应为全量重新计算预留资源，并在升级后核对维护结果。迁移替换捕获哨兵，但保留排队的变更行。

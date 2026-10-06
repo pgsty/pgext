@@ -2,17 +2,18 @@
 
 来源：
 
-- [sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql)
-- [sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql)
-- [README.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/README.md)
-- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/pg_tviews.control)
-- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/Cargo.toml)
-- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/CHANGELOG.md)
-- [scripts/migrate-from-0.1.0.sql](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/scripts/migrate-from-0.1.0.sql)
-- [docs/reference/read-contract.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/docs/reference/read-contract.md)
-- [docs/operations/replication.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/docs/operations/replication.md)
+- [sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql)
+- [sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql)
+- [sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql)
+- [README.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/README.md)
+- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/pg_tviews.control)
+- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/Cargo.toml)
+- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/CHANGELOG.md)
+- [scripts/migrate-from-0.1.0.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/scripts/migrate-from-0.1.0.sql)
+- [docs/reference/read-contract.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/docs/reference/read-contract.md)
+- [docs/operations/replication.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/docs/operations/replication.md)
 
-`pg_tviews` 0.1.0-beta.23 通过查询分析与基表触发器在事务内维护派生 TVIEW 表。扩展对象现在全部位于固定的 `tviews` 模式，SQL 版本也与发布版本一致。
+`pg_tviews` 0.1.0-beta.24 通过查询分析与基表触发器在事务内维护派生 TVIEW 表。扩展对象现在全部位于固定的 `tviews` 模式，SQL 版本也与发布版本一致。
 
 ### 核心用法
 
@@ -45,3 +46,7 @@ SELECT * FROM tviews.pg_tviews_reregister_all();
 ### beta.23 行身份
 
 beta.23 将各 TVIEW 的唯一行身份记录在 `tviews.registry.identity`；`DISTINCT ON` 视图使用单列键，复合键或表达式键会被拒绝。该版本修复多组写入、键值变化及向父 TVIEW 的传播。重新登记还会调整主键／唯一索引，应为这些表结构变化安排执行窗口。
+
+### beta.24 生成列
+
+beta.24 修复 PostgreSQL 18 虚拟生成列的依赖跟踪与刷新键映射。安装配套共享库后，执行 ALTER EXTENSION UPDATE 和 `tviews.pg_tviews_reregister_all()`，重新生成已有 TVIEW 的元数据与触发器。这是扩展自身的更新，不会为旧版 PostgreSQL 增加虚拟生成列。

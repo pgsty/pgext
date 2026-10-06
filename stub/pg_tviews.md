@@ -2,17 +2,18 @@
 
 Sources:
 
-- [sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql)
-- [sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql)
-- [README.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/README.md)
-- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/pg_tviews.control)
-- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/Cargo.toml)
-- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/CHANGELOG.md)
-- [scripts/migrate-from-0.1.0.sql](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/scripts/migrate-from-0.1.0.sql)
-- [docs/reference/read-contract.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/docs/reference/read-contract.md)
-- [docs/operations/replication.md](https://github.com/fraiseql/pg_tviews/blob/718b26b3e122816ccd72c3c48bb2082624fd9ef3/docs/operations/replication.md)
+- [sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql)
+- [sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql)
+- [sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql)
+- [README.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/README.md)
+- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/pg_tviews.control)
+- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/Cargo.toml)
+- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/CHANGELOG.md)
+- [scripts/migrate-from-0.1.0.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/scripts/migrate-from-0.1.0.sql)
+- [docs/reference/read-contract.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/docs/reference/read-contract.md)
+- [docs/operations/replication.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/docs/operations/replication.md)
 
-`pg_tviews` 0.1.0-beta.23 maintains derived TVIEW tables transactionally through analyzed queries and base-table triggers. All extension objects now live in the fixed `tviews` schema, and the SQL version matches the release.
+`pg_tviews` 0.1.0-beta.24 maintains derived TVIEW tables transactionally through analyzed queries and base-table triggers. All extension objects now live in the fixed `tviews` schema, and the SQL version matches the release.
 
 ### Core Workflow
 
@@ -45,3 +46,7 @@ SELECT * FROM tviews.pg_tviews_reregister_all();
 ### beta.23 Row Identity
 
 beta.23 gives every TVIEW one recorded identity in `tviews.registry.identity`. A `DISTINCT ON` view uses its single column key; composite or expression keys are rejected. It fixes multi-group writes, key changes and propagation to parent TVIEWs. Re-registration also adjusts primary/unique indexes, so allow for its table changes.
+
+### beta.24 Generated Columns
+
+beta.24 repairs dependency tracking and refresh-key mapping for PostgreSQL 18 virtual generated columns. After installing the matching library, run ALTER EXTENSION UPDATE and `tviews.pg_tviews_reregister_all()` so existing TVIEW metadata and triggers are rebuilt. This is an extension update; it does not add virtual generated columns to older PostgreSQL releases.

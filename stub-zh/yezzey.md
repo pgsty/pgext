@@ -2,30 +2,34 @@
 
 来源：
 
-- [README](https://github.com/open-gpdb/yezzey/blob/2f0c013c888ecb078082522ffa9810cb962b0a1a/README.md)
-- [Control file / 控制文件](https://github.com/open-gpdb/yezzey/blob/2f0c013c888ecb078082522ffa9810cb962b0a1a/yezzey.control)
-- [yezzey.c](https://github.com/open-gpdb/yezzey/blob/2f0c013c888ecb078082522ffa9810cb962b0a1a/yezzey.c)
-- [yezzey--1.8.8.sql](https://github.com/open-gpdb/yezzey/blob/2f0c013c888ecb078082522ffa9810cb962b0a1a/yezzey--1.8.8.sql)
-- [yezzey--1.8.8--1.8.11.sql](https://github.com/open-gpdb/yezzey/blob/2f0c013c888ecb078082522ffa9810cb962b0a1a/yezzey--1.8.8--1.8.11.sql)
+- [README.md](https://github.com/open-gpdb/yezzey/blob/1d8e735a22aa92ac4d149fb48cb6ae5cc332d854/README.md)
+- [yezzey.control](https://github.com/open-gpdb/yezzey/blob/1d8e735a22aa92ac4d149fb48cb6ae5cc332d854/yezzey.control)
+- [yezzey--2.0.sql](https://github.com/open-gpdb/yezzey/blob/1d8e735a22aa92ac4d149fb48cb6ae5cc332d854/yezzey--2.0.sql)
+- [yezzey.c](https://github.com/open-gpdb/yezzey/blob/1d8e735a22aa92ac4d149fb48cb6ae5cc332d854/yezzey.c)
+- [docs/README.cleanup.md](https://github.com/open-gpdb/yezzey/blob/1d8e735a22aa92ac4d149fb48cb6ae5cc332d854/docs/README.cleanup.md)
 
-`yezzey` 将追加式表的数据转移到 S3，同时保留 Greenplum 或 Apache Cloudberry 中的查询能力。1.8.11 需要兼容的内核补丁和 YProxy，不适用于标准 PostgreSQL。
+`yezzey` 2.0 将追加式行存/列存表卸载至 S3，并保持 SQL 访问。它要求配套修改过的 OpenGPDB（Greenplum 6）或 Apache Cloudberry 内核与 YProxy，不适用于原版 PostgreSQL。项目发布号为 2.0.0，控制文件中的扩展版本为 2.0。
 
-### 启用
+### 核心用法
 
-在集群中部署匹配内核与 YProxy/S3 配置，将 `yezzey` 加入 `shared_preload_libraries` 并重启。初始化代码拒绝在服务器启动之外加载。`yezzey.yproxy_socket` 选择代理套接字，扩展 SQL 安装到目标数据库。
+```ini
+shared_preload_libraries = 'yezzey'
+```
 
 ```sql
 CREATE EXTENSION yezzey;
-CREATE TABLE archive_events (id integer, payload text)
+CREATE TABLE offload_demo (id integer)
   WITH (appendonly=true, orientation=column) DISTRIBUTED RANDOMLY;
-INSERT INTO archive_events VALUES (1, 'example');
-SELECT yezzey_define_offload_policy('public', 'archive_events');
-SELECT * FROM yezzey_offload_relation_status('archive_events');
-SELECT * FROM archive_events;
+INSERT INTO offload_demo VALUES (1);
+SELECT yezzey.offload_relation('offload_demo'::regclass);
+SELECT * FROM yezzey.offload_relation_status('offload_demo'::regclass);
+SELECT yezzey.load_relation('offload_demo'::regclass);
 ```
 
-### 对象与维护
+### 运行边界
 
-`yezzey_define_offload_policy` 配置卸载，`yezzey_load_relation` 将数据恢复到本地存储。`yezzey_offload_relation_status` 报告外部数据大小，`yezzey_relation_describe_external_storage_structure` 展示外部文件布局。支持范围仅限 AO/AOCO 表。
+须在数据库集群中预加载 `yezzey` 并重启，再创建扩展；事先配置兼容的 YProxy 端点与对象存储。OpenGPDB 分支为 OPENGPDB_STABLE，Cloudberry 实现在 master 分支。SQL 安装标记为 trusted，但集群配置、对象存储访问和表所有权仍有管理权限边界。
 
-卸载和回载可能获取较强的关系锁。读取依赖 YProxy 与对象存储可用性。备份恢复须同时覆盖引用的 S3 对象和数据库元数据。删除外部对象前应审查垃圾清理行为并先做试运行，破坏性清理模式需要更高权限。控制版本通过随附的 1.8.8 安装 SQL 和 1.8.11 升级 SQL 到达。
+`yezzey.offload_relation` 上传数据期间取得排他关系锁，`yezzey.load_relation` 恢复本地存储。`yezzey.offload_relation_status` 返回各段的字节计数，`yezzey.relation_describe_external_storage_structure` 列出外部文件。2.0 将旧的不带模式接口移动并重命名，须按新 SQL 定义修改调用方，并使用可恢复备份演练迁移。
+
+清理使用 `yezzey.vacuum`、`yezzey.vacuum_tablespace` 或 `yezzey.vacuum_relation`。先保持 `confirm` 为 false，检查请求后再决定删除；`crazyDrop` 是仅超级用户可用的激进模式。保留的备份仍可能需要外部对象，须遵守备份保留边界，并保证恢复系统或备用集群能够访问对象存储。SQL VACUUM 本身不意味着可以删除存储桶中的任意对象。

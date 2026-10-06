@@ -2,11 +2,11 @@
 
 Sources:
 
-- [README](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/README.md)
-- [Control file](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode.control)
-- [SQL](https://api.pgxn.org/src/gsscode/gsscode-1.1.1/gsscode--1.1.1.sql)
+- [README](https://api.pgxn.org/src/gsscode/gsscode-1.1.3/README.md)
+- [Control file](https://api.pgxn.org/src/gsscode/gsscode-1.1.3/gsscode.control)
+- [SQL](https://api.pgxn.org/src/gsscode/gsscode-1.1.3/gsscode--1.1.3.sql)
 
-`gsscode` packs a nine-character UK ONS/GSS geography code into 32 bits. Version 1.1.1 includes the corrected prefix-search semantics: a prefix predicate is not equality and must not occupy the btree equality strategy.
+`gsscode` packs a nine-character UK ONS/GSS geography code into 32 bits. Version 1.1.3 includes the corrected prefix-search semantics: a prefix predicate is not equality and must not occupy the btree equality strategy.
 
 ### Core Workflow
 
@@ -24,9 +24,11 @@ WHERE code >= gsscode_range_lower('E01')
 
 `%` and `!%` remain Boolean prefix filters, including array forms, but no longer accelerate prefix matching through a btree index by themselves. Use `gsscode_range_lower` and `gsscode_range_upper` for a genuine half-open range. Invalid prefix lengths raise an error.
 
-`is_valid`, `country`, `gss_type`, and `area` inspect lexical form or packed components. `description` and `type_info` consult the private `gsscode_types` registry; `isnan` recognizes reserved area codes. Text-compatible regular expressions and `left` are available but do not automatically use the base type’s btree index.
+`is_valid_gss`, `country`, `gss_type`, and `area` inspect lexical form or packed components. `description` and `type_info` consult the private `gsscode_types` registry; `isnan` recognizes reserved area codes. Text-compatible regular expressions and `left` are available but do not automatically use the base type’s btree index.
 
 ### Upgrade and Boundaries
+
+Version 1.1.3 renames `is_valid(text)` to `is_valid_gss(text)` to avoid collisions with other extensions. Update SQL callers after upgrading; the extension update preserves the function identity and dependencies. Version 1.1.2 also adds text equality and an assignment cast from text.
 
 Existing 1.0.0 installations should run `ALTER EXTENSION gsscode UPDATE` after installing current files to remove the unsound operator-family entry. Replacing the library alone does not perform this catalog repair.
 

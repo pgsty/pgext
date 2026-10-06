@@ -2,16 +2,17 @@
 
 来源：
 
-- [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/docs/volatility.md)
-- [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/docs/covariance.md)
-- [pgquant.control](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/pgquant.control)
-- [README.md](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/README.md)
-- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/Cargo.toml)
-- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/src/lib.rs)
-- [docs/returns.md](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/docs/returns.md)
-- [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/3c42fc3fc0f7630944b05c3a31a377835c2e1c6e/docs/risk.md)
+- [docs/factors.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/factors.md)
+- [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/volatility.md)
+- [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/covariance.md)
+- [pgquant.control](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/pgquant.control)
+- [README.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/README.md)
+- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/Cargo.toml)
+- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/src/lib.rs)
+- [docs/returns.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/returns.md)
+- [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/risk.md)
 
-`pgquant` 可计算简单／对数收益率、累计与年化收益率，以及历史、正态和 Student-t 分布下的 VaR/ES。0.1.5 新增波动率与协方差模型，因子构建和投资组合优化仍在计划中。
+`pgquant` 计算简单/对数收益率、累积与年化收益率，以及历史、Gaussian 和 Student-t VaR/ES。0.2.0 还提供波动率、协方差和因子构建；动量与投资组合优化仍属于计划功能。
 
 ### 核心用法
 
@@ -32,4 +33,16 @@ SELECT pgquant_es_t(0.001, 0.015, 5.0, 0.95);
 
 ```sql
 SELECT pgquant_ewma_vol(ARRAY[0.02,-0.01,0.03,-0.02]::float8[], 0.94);
+```
+
+### 因子构建
+
+`pgquant_portfolio_sort(query, num_buckets)` 要求依次返回 symbol TEXT、date DATE 和 characteristic_value DOUBLE PRECISION 三列，输出 symbol、date 和 bucket，bucket 1 包含最小值。`pgquant_construct_smb(query)` 与 `pgquant_construct_hml(query)` 接收 symbol、date、return DOUBLE PRECISION、size_bucket INT、btm_bucket INT 和 weight DOUBLE PRECISION。规模分桶使用 1/2，账面市值比分桶使用 1/2/3；结果为 date 及 smb_return 或 hml_return。须准备类型正确、时间对齐的面板，且只传入可信 SQL 文本。
+
+```sql
+SELECT * FROM pgquant_portfolio_sort(
+  $$ SELECT * FROM (VALUES
+     ('A'::text, DATE '2026-01-01', 100.0::float8),
+     ('B'::text, DATE '2026-01-01', 200.0::float8)
+  ) AS panel(symbol, date, characteristic_value) $$, 2);
 ```
