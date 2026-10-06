@@ -127,6 +127,9 @@ pig build rust -y                # force reinstall Rust (default does not reinst
 pig build rust -m                # use China mirror mode and write Cargo mirror config
 pig build pgrx                   # install PGRX framework
 pig build pgrx -b                # include PostgreSQL 19 beta pg_config during auto-detection
+pig build proxy                  # install or verify Xray
+pig build proxy client --from ./client.uri
+pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:443 --export ./client.uri
 
 # Build extensions
 pig build pkg citus              # complete build pipeline = get + dep + ext

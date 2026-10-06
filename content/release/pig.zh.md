@@ -6,6 +6,154 @@ breadcrumb: false
 ---
 
 
+## v1.9.0
+
+Pig `v1.9.0` 新增一键配置 Xray 客户端与服务端、自动准备 Pigsty 仓库签名公钥，
+并将内置扩展目录更新为 **600 条记录**。`cargo-pgrx` 默认版本升级到 `0.19.3`，
+内置 Pigsty 版本保持 `4.5.0`。
+
+### Xray 客户端与服务端
+
+- `pig build proxy` 安装或检查 Xray；`pig build proxy client` 配置
+  VLESS/REALITY/Vision HTTP/SOCKS 客户端；`pig build proxy server` 配置 Linux 服务端。
+  Linux 使用 systemd，macOS 客户端使用独立的用户 LaunchAgent。
+- 客户端支持标准 VLESS URI、`--from FILE/-` 或显式连接参数。首次客户端监听
+  `127.0.0.1:12345`，首次直连服务端监听 `0.0.0.0:443`；重复执行保留已有监听端点与服务端凭据。
+- 配置、属主、权限与服务状态一致时不改写文件、不重启服务。客户端连通性检查失败会恢复
+  原有受管文件与服务状态。替换不同的客户端配置需要 `--replace --yes`；两种角色均支持 `--plan`。
+- `server --export-only --export -` 只导出已有连接，不改变部署。导出文件权限为 `0600`；
+  显式导出到 stdout 要求文本输出。普通结果与计划不包含凭据。历史 VMess 位置参数形式
+  继续使用 V2Ray。
+
+```bash
+sudo pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:443 --export ./client.uri
+sudo pig build proxy client --from ./client.uri
+```
+
+前置条件、macOS 配置、凭据处理与公网入口边界见 [**`pig build`**](https://pig.pgsty.com/zh/build/#build-proxy)。
+
+### 仓库签名公钥
+
+- `repo add`、`repo set` 与 `sty boot` 在选中仓库需要时准备内置 Pigsty 公钥。
+  已有普通公钥文件直接复用；缺失的默认公钥离线写入
+  `/etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty` 或 `/etc/apt/keyrings/pigsty.asc`。
+- 隐式默认公钥准备失败时给出警告，仅对选中的 Pigsty 仓库回退签名检查。
+  默认公钥引用保持稳定，包括 APT 的 `signed-by`。
+- 显式指定的签名公钥引用必须有效；无效或不可用的公钥在仓库替换、缓存刷新之前报错。
+  EL 通过 `rpm --import` 导入显式引用。仅选择其他仓库时，不准备 Pigsty 公钥。
+
+签名检查默认值、公钥准备与元数据刷新的区别见 [**`pig repo`**](https://pig.pgsty.com/zh/repo/#仓库定义)。
+
+### 扩展目录与构建默认值
+
+- 内置目录共 **600 条记录**，相较 v1.8.1 快照新增 22 条。新增条目包括
+  `edtf_postgres`、`plphp`、`pg_lexo`、`pg_money`、`istore`、`colnames`、
+  `pg_statkit`、`pgtelemetry`、`pg_rusage`、`pgexporter_ext`、`pg_statvfs` 与 `libx509pq`，
+  同时刷新软件包版本与平台可用性元数据。
+- 目录总数包含保留的生命周期记录。能否安装取决于扩展状态与操作系统、架构、PostgreSQL
+  版本矩阵；600 并非每个平台都能安装的扩展数量。
+- `pig build pgrx` 默认使用 `cargo-pgrx 0.19.3`；显式 `-v` 与扩展目录中的专用版本要求继续有效。
+- 延续 v1.8.1 的平台调试包默认策略。`--nodbg` 可禁用 RPM 的 `debuginfo`/`debugsource`
+  与 DEB 的 `dbgsym`；`-s|--symbol` 保留为已弃用的兼容空操作。
+
+### 兼容性
+
+没有移除已有命令或参数。新增 Xray 角色命令使用 VLESS/REALITY/Vision，历史 VMess
+位置参数命令保持 V2Ray 行为。服务端配置成功只证明本地监听与服务就绪；防火墙、Nginx、
+云安全组与公网连通性仍由操作者单独配置和验证。
+
+发布制品：[v1.9.0](https://github.com/pgsty/pig/releases/tag/v1.9.0)
+
+### 验证
+
+经过验证的 [v1.9.0 标签](https://github.com/pgsty/pig/tree/v1.9.0) 指向源码提交
+[`9eb5488`](https://github.com/pgsty/pig/commit/9eb5488847ea34827a74c9f8bb7b2dd3778f5190)。该精确提交通过
+[完整 CI](https://github.com/pgsty/pig/actions/runs/37483835198)，覆盖随机顺序测试、命令 race 回归、
+vet、静态分析、漏洞扫描与发布 snapshot。[Release 工作流](https://github.com/pgsty/pig/actions/runs/37484632240)
+生成八个 Linux/macOS 压缩包与 RPM/DEB 安装包，下载后已逐一验证 SHA-256。
+
+### 校验和
+
+```checksums {base="https://github.com/pgsty/pig/releases/download/v1.9.0"}
+d0d80bd23a654308598f265ce4b4d4f78d6156c113ce6aa00f82bfc9519a180f  pig-1.9.0-1.aarch64.rpm
+e3b25640c9e528f2b883f7e5f4838640a8897857fa22dc1324aca69b72966a7c  pig-1.9.0-1.x86_64.rpm
+d7eb266e1b8ab60d20ac582c6b0e3741b7e8516ce1a56df447c0285b3e5dcab9  pig-v1.9.0.darwin-amd64.tar.gz
+096284577d0493ddba871b51e820654b358c7f4eb9c11175674a1d21b2718824  pig-v1.9.0.darwin-arm64.tar.gz
+a4b5ffca540bc4f924f86398bcad6cb7221ac7520b54b1d3fd32c9877d9cafd2  pig-v1.9.0.linux-amd64.tar.gz
+ddfa80fbb34f6738dd68e0d04cd92355711330f6896cd650df7d71b012788def  pig-v1.9.0.linux-arm64.tar.gz
+3d955a24a8ff805ee2b6da6428e2b882f97104e2fb597785225269443071d93a  pig_1.9.0-1_amd64.deb
+c175b37552147e64590309801800826a0075ae8285ed78178c2adcaec3741471  pig_1.9.0-1_arm64.deb
+```
+
+## v1.8.1
+
+Pig `v1.8.1` 是 [v1.8.0](https://pig.pgsty.com/zh/release/pig-1.8.0/) 之上的安全、正确性与维护版本。
+本版本加固命令初始化、提权日志访问、仓库与构建流程、发布完整性，以及结构化输出脱敏；
+同时刷新内置扩展目录，并将构建工具链升级到 Go `1.27.1` 与 `cargo-pgrx 0.19.2`。
+内置 Pigsty 版本仍为 `4.5.0`。
+
+### CLI 安全与正确性
+
+- 只读且不依赖配置的命令不再要求 `HOME` 可写，也不会把创建 `~/.pig` 当作查询副作用；
+  叶子命令会保留自己声明的初始化策略。
+- `pig pg log`、`pig pt log` 与 `pig pb log` 通过 sudo 切换数据库 OS 用户时完整保留参数，
+  并拒绝不安全的日志文件链接。
+- `pig do` 在执行前校验 Pigsty 名称，并拒绝 Ansible 保留的集群目标。
+- PostgreSQL 原生角色检测绑定到用户选中的实例，而不是无关的本机默认实例。
+- 结构化结果会遮盖凭据、许可证材料与构建代理标识符，同时保持真实的失败状态。
+
+### 仓库与构建加固
+
+- 仓库添加与删除在任一请求失败时整体返回失败，对模块选择去重，并保持替换边界。
+- 离线缓存包拒绝不安全路径、链接、特殊文件与不完整输入；归档解压继续采用有根、失败关闭的实现。
+  生产路径迁移到结构化结果后，删除了仅由测试引用的旧导出缓存包装。
+- 构建源码与制品校验会拒绝不完整或不安全输入；`pig build proxy` 使用软件包提供的服务契约，
+  参数保持可选，结构化输出不再泄露秘密标识符。
+- 自更新会验证发布校验和；发布工具拒绝脏工作区、错误 tag，以及覆盖不可变制品。
+
+### 工具链与扩展目录
+
+- `pig build ext` 与 `pig build pkg` 默认保留平台调试包；使用 `--nodbg` 显式省略。
+  `-s|--symbol` 保留为已弃用的兼容空操作。
+
+- Go 升级到 `1.27.1`，Logrus 升级到 `1.10.2`，GoReleaser 升级到 `2.18.0`，
+  golangci-lint 升级到 `2.13.2`。
+- `pig build pgrx` 默认安装 `cargo-pgrx 0.19.2`；如果某个扩展的目录元数据要求旧版 pgrx，
+  仍可通过 `-v` 显式选择。
+- 内置目录从维护中的 pgext 视图刷新：新增 `acdat 0.1.0`，将已被取代的
+  `pgcontext_pgvector` 标记为 removed，并更新软件包版本、仓库归属、PostgreSQL 覆盖与可用性矩阵。
+
+### 验证
+
+本版本从源码提交
+[`1c6f524`](https://github.com/pgsty/pig/commit/1c6f52401accc8ad6d7e8ab51248895632d7629b)
+构建。该精确提交通过完整 [CI 工作流](https://github.com/pgsty/pig/actions/runs/33747971725)，
+覆盖随机顺序测试、命令 race 回归、vet、静态分析、死代码检查、漏洞扫描与 GoReleaser snapshot。
+随后 tag 通过 [Release 工作流](https://github.com/pgsty/pig/actions/runs/33748002429)，生成并发布
+RPM、DEB、macOS 与 Linux 制品。
+
+### 兼容性提醒
+
+- 本版本没有移除 CLI 命令或参数。
+- 如果旧脚本依赖只读命令顺便创建本地配置，应改为显式准备所需状态。
+- pgrx 默认值变为 `0.19.2`；构建特定扩展时，仍以该扩展的目录元数据为准。
+
+### 校验和
+
+```checksums {base="https://github.com/pgsty/pig/releases/download/v1.8.1"}
+4154b3e49cb499e57d7c7b1ab4ae5e45d03d5d0c2ffe26d6ade64e46db6923cf  pig-1.8.1-1.aarch64.rpm
+35c398f409d9293b4f8c0cdf949b19c62d06016ec7e724472143d2327199869d  pig-1.8.1-1.x86_64.rpm
+6c08b6a698191b8b6494a0f60880fb17cafa535bad12d5c544333e4625048455  pig-v1.8.1.darwin-amd64.tar.gz
+0fb6c86cc18a29aeb74e9d12e717c104087c6ecf5a43250dfcc71cd7681fb868  pig-v1.8.1.darwin-arm64.tar.gz
+9219e87433ebd239e0773ae7417fdd08e97bb511312e6747542bf46b6b1bbf2b  pig-v1.8.1.linux-amd64.tar.gz
+b30924880f21126ece3afc77ca75794a0ceb77964cdfd8bc20da72d9d3273078  pig-v1.8.1.linux-arm64.tar.gz
+6fc304501671921b18439223c630c7d4635b10ac75493d5c12a5987ff80c618e  pig_1.8.1-1_amd64.deb
+1a70cd71f6c1f443812fe30535427891513c0ba03be219ac21f1a3d6fd450051  pig_1.8.1-1_arm64.deb
+```
+
+发布制品：[v1.8.1](https://github.com/pgsty/pig/releases/tag/v1.8.1)
+
+
 ## v1.8.0
 
 Pig `v1.8.0` 将 Pigsty 控制节点的准备过程原生化。两条核心安装命令

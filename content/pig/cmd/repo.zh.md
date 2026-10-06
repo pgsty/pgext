@@ -124,6 +124,24 @@ Pigsty 中可用仓库的完整定义位于 [`cli/repo/assets/repo.yml`](https:/
 （主要是 Pigsty 与 PGDG 仓库）会覆盖模块流；渲染 EL7 YUM 配置时会移除该键。
 
 
+### 信任策略与配置归属
+
+仓库操作会改变主机的软件供应链配置。可以先用 `pig repo info MODULE` 查看 PIG 将要渲染的定义。未指定 `--remove` 时，`repo add` 会保留无关文件；`repo set` 则一定会先备份再替换现有定义，并刷新元数据，因此可能与 Ansible、镜像构建或其他配置管理方发生冲突。
+
+当所选模块包含当前平台可用的 `pigsty-infra` 或 `pigsty-pgsql` 仓库时，`repo add` 和 `repo set` 会准备 PIG 内嵌的 Pigsty 公钥，包括选择 `pigsty`、`infra`、`pgsql` 以及默认的 `all`。PIG 会先检查公钥文件是否存在，已有普通文件直接复用，不重新写入。文件缺失或检查失败（包括权限不足）时，在修改仓库定义前尝试安装。该步骤支持离线执行，不依赖 `curl`、`gpg` 或 `apt-key` 命令。
+
+- EL：`/etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty`
+- Debian / Ubuntu：`/etc/apt/keyrings/pigsty.asc`
+
+新安装的公钥文件权限为 `0644`。默认尽最大努力安装：失败只记录警告，并在结构化结果的 `data.warnings` 中保留，随后继续配置仓库。仅对所选 Pigsty 仓库降级：Debian/Ubuntu 使用 `trusted=yes`，EL 使用 `gpgcheck=0` 和 `repo_gpgcheck=0`。失败时仍保留默认密钥引用，使不同操作添加的 APT 定义保持相同的 `signed-by`，其他仓库定义保持不变。密钥不可用时，APT 可能告警并沿用旧索引；配置成功不代表刚刚下载了新索引。
+
+如果所选 Pigsty 仓库的元数据显式指定了非空密钥引用，就必须准备该引用实际指定的密钥。Debian/Ubuntu 的 `signed-by` 必须通过绝对路径指定已有普通密钥文件，多个文件以逗号分隔；默认 Pigsty 路径可由内嵌公钥安装。EL 会按需准备显式引用的默认公钥文件，再将 `gpgkey` 中列出的路径或不含变量的 URL 交给 `rpm --import`。准备失败会在备份、写入仓库和更新缓存之前返回错误。显式引用保持原样，不会静默降级；有效的自定义密钥不依赖默认密钥路径。只选择 `pgdg`、`node` 等其他仓库不会准备 Pigsty 公钥。
+
+默认自动安装只准备公钥文件及其仓库引用，不会导入 RPM 数据库或 APT 全局信任库；EL 显式配置 `gpgkey` 时会额外执行上述 RPM 导入。普通 `repo add/set` 在准备成功时保留原签名校验设置。[`pig sty boot`](https://pig.pgsty.com/zh/sty/#sty-boot) 在公钥准备成功时启用 Pigsty 签名校验，默认公钥失败时使用同样的告警与降级规则。详细边界见 [设计记录](https://pig.pgsty.com/zh/design/automatic-pigsty-repo-key/)。
+
+为了兼容离线仓库与镜像，PIG 内置元数据在 EL 上默认使用 `gpgcheck=0`，在 Debian/Ubuntu 上默认使用 `trusted=yes`；这些设置不会强制校验软件包签名。从 v1.7.0 起，普通 EL 仓库保留 DNF 原生模块过滤；只有显式声明 `module_hotfixes=1` 的定义（主要是 Pigsty 与 PGDG 仓库）会覆盖模块流，渲染 EL7 YUM 配置时还会移除该键。安全敏感环境应安装可信密钥、修改生成的仓库元数据以启用签名校验、固定批准的软件源，并通过既有配置管理体系维护这些设置。
+
+
 ## repo list
 
 `pig repo list` 将列出当前系统可用的所有仓库模块。

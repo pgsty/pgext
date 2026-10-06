@@ -16,8 +16,10 @@ Environment Setup:
   pig build repo --beta            # init build repo with PostgreSQL beta repo
   pig build tool  [mini|full|...]  # init build toolset
   pig build rust  [-y] [-m]        # install Rust toolchain
-  pig build pgrx  [-v <ver>] [-b]  # install & init pgrx (0.19.1)
-  pig build proxy [id@host:port ]  # init build proxy (optional)
+  pig build pgrx  [-v <ver>] [-b]  # install & init pgrx (0.19.3)
+  pig build proxy                  # install or verify Xray
+  pig build proxy client URI       # setup an HTTP/SOCKS client
+  pig build proxy server [flags]   # setup or export a REALITY server
 
 Package Building:
   pig build pkg   [ext|pkg...]     # complete pipeline: get + dep + ext
@@ -37,7 +39,7 @@ Quick Start:
 | `build tool`  | 初始化构建工具            | 需要 sudo 或 root 权限 |
 | `build rust`  | 安装 Rust 工具链        | 需要 sudo 或 root 权限 |
 | `build pgrx`  | 安装并初始化 pgrx        | 需要 sudo 或 root 权限 |
-| `build proxy` | 初始化构建代理            |                   |
+| `build proxy` | 设置 Xray 客户端与服务端 | Linux：root；macOS 客户端：普通用户 |
 | `build get`   | 下载源代码 tarball      |                   |
 | `build dep`   | 安装扩展构建依赖           | 需要 sudo 或 root 权限 |
 | `build ext`   | 构建扩展包              | 需要 sudo 或 root 权限 |
@@ -191,8 +193,8 @@ pig build rust -m                # 使用 rsproxy.cn 与 Cargo 镜像配置
 安装并初始化 PGRX（Rust 的 PostgreSQL 扩展框架）。
 
 ```bash
-pig build pgrx                   # 安装最新稳定版 (0.19.1)
-pig build pgrx -v 0.19.1         # 安装特定版本
+pig build pgrx                   # 安装默认版本 (0.19.3)
+pig build pgrx -v 0.19.3         # 安装特定版本
 pig build pgrx --pg 18,17,16     # 为指定 PG 版本初始化 pgrx
 pig build pgrx --pg init         # 只执行 cargo pgrx init，不传 PG 参数
 pig build pgrx -b                # 自动探测时包含 beta PostgreSQL pg_config
@@ -209,14 +211,115 @@ pig build pgrx -b                # 自动探测时包含 beta PostgreSQL pg_conf
 
 ## build proxy
 
-为受限互联网访问的构建环境设置代理配置。
+为互联网访问受限的构建环境设置 Xray 客户端与服务端，保留 `x` 别名。
+不带参数的 `pig build proxy` 只安装或确认 Xray。
+客户端与服务端角色命令从 PIG v1.9.0 起提供。
+协议与迁移契约参见 [Xray 设计记录](https://pig.pgsty.com/zh/design/xray-client-server/)。
+
+### 客户端
+
+一行命令按需安装 Xray、写入客户端配置、启动服务，并分别检查 HTTP 与 SOCKS 的 HTTPS 请求。
+首次监听默认使用 **`127.0.0.1:12345`**，同一端口提供 HTTP 和 SOCKS。
+已有受支持客户端省略 `--listen` 时保留原监听地址。
+协议采用 VLESS、RAW/TCP、REALITY 与 `xtls-rprx-vision`，使用 Chrome 指纹并禁用 mux。
 
 ```bash
-pig build proxy                  # 交互式设置
-pig build proxy user@host:8080   # 使用默认本地端口 127.0.0.1:12345
+pig build proxy client 'vless://UUID@proxy.example.com:443?encryption=none&security=reality&type=tcp&flow=xtls-rprx-vision&sni=www.sraoss.co.jp&fp=chrome&pbk=PUBLIC_KEY&sid=SHORT_ID&pqv=VERIFY_KEY'
+pig build proxy client --server proxy.example.com:443 --id UUID --sni www.sraoss.co.jp --public-key PUBLIC_KEY --short-id SHORT_ID --pqv VERIFY_KEY
+pig build proxy client --from ./client.uri
+pig build proxy client --from ./client.uri --listen 127.0.0.1:8888
+pig build proxy client --from ./client.uri --plan
+```
+
+连接输入三选一：位置参数 URI、直接连接参数，或 `--from FILE/-`。
+`client.uri` 只是包含一条标准 `vless://` URI 的文本文件，可以有末尾换行，文件名任意。
+`--from -` 从标准输入读取，不能混用不同输入方式。
+服务端启用 ML-DSA-65 时，`--pqv` 提供验证密钥。
+不支持的传输、重复 URI 参数及有歧义的输入会在设置前被拒绝。
+
+**Linux** 需要 root 或 `sudo`、运行中的 systemd，以及已配置的 Pigsty `xray` 软件仓库，
+例如先运行 `sudo pig repo add infra -u`。
+配置使用 `/etc/xray.json`，权限 0640、所有者 `root:xray`；服务使用 `xray` 账户及 PIG 管理的 systemd drop-in。
+**macOS** 使用普通用户运行，需要已有 Homebrew；配置使用 `~/.config/xray/pig-proxy.json`，
+权限 0600，服务由独立的 `com.pigsty.xray-proxy` LaunchAgent 管理。
+
+已有服务端可以直接把连接流入客户端设置。两端需要使用包含新增命令的 PIG 构建：
+
+```bash
+# Linux 客户端：远端只读取并导出现有服务端连接。
+ssh root@proxy.example.com 'pig build proxy server --host proxy.example.com --export-only --export -' | sudo pig build proxy client --from -
+# macOS 客户端：不加 sudo。
+ssh root@proxy.example.com 'pig build proxy server --host proxy.example.com --export-only --export -' | pig build proxy client --from -
+```
+
+输入、文件归属、权限与服务状态均匹配时，重复设置不改写文件或重启服务。
+受管理文件归属错误时会修复归属，不改变连接凭据。
+替换不同或不支持的已有客户端配置需要 `--replace --yes`；`--plan` 只预览，不安装、写文件或更改服务。
+设置会通过两个代理协议访问 `https://www.google.com/generate_204`，要求返回 HTTP 204，
+因此服务端必须能访问这个外网端点。检查失败时返回非零，并恢复原有受管理文件与服务状态；
+已经安装的软件包可能保留。
+
+生成的 Shell 文件提供 `po`、`px`、`pck`。在当前 Shell 中启用代理变量：
+
+```bash
+# Linux
+source /etc/profile.d/proxy.sh
+po
+# macOS
+source ~/.config/xray/proxy.sh
+po
+```
+
+### 服务端
+
+服务端设置支持 Linux，需要相同的软件包、root 与 systemd 条件。
+必须提供公网发布地址 `--host` 与 REALITY 伪装目标 `--target host:port`。
+首次直连默认监听 `0.0.0.0:443`；`--port` 改变发布的公网端口及首次直连监听端口，
+`--listen` 可指定独立的绑定地址。target 必须支持 TLS 1.3 与 HTTP/2。
+
+```bash
+# 直连公网入口，显式导出受保护的客户端 URI 文件。
+sudo pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:443 --export ./client.uri
+# 已有可信 PROXY protocol 前端的后端：127.0.0.1:9443。
+sudo pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:443 --proxy-protocol --export ./client.uri
+# 读取已有受支持服务端并输出连接，不更改部署。
+sudo pig build proxy server --host proxy.example.com --export-only --export -
+```
+
+首次设置生成 UUID、X25519 密钥对、short ID，以及 ML-DSA-65 seed 和验证密钥。
+SNI 默认取 target 主机名。重复设置保留全部认证字段、SNI 与协议设置；省略 `--listen` 时
+保留已有监听地址。配置、文件归属、权限和服务状态已经匹配时，不重写、不重启。
+相同 `--host` 与 `--port` 导出相同的规范 URI。
+target/SNI 冲突、已有材料损坏或有歧义时直接拒绝，不静默轮换凭据；不支持的已有服务端配置也会被拒绝。
+
+`--export-only` 必须指定 `--export`，不安装、不修改配置、不启动、重启或启用服务。
+它在进程内从现有私密材料推导客户端验证信息。
+要求受支持的 VLESS/REALITY inbound、账户、SNI 与 short ID 各自唯一明确。
+`--host` 与 `--port` 描述外部入口，不从 9443 等后端端口推断公网端口。
+只读模式不能与设置参数混用。
+
+`--export FILE` 写入权限 0600，不含服务端私钥或 seed。
+重复导出相同内容时不重写文件；已有文件内容不同时拒绝覆盖。
+`--export -` 显式向标准输出写一条完整凭据 URI，诊断写入标准错误。
+导出要求文本输出，不能与 JSON/YAML 混用；普通输出与计划不包含凭据。
+整个 URI 和直接认证参数都应按凭据处理，文件或标准输入可避免将它们保留为 Shell 参数。
+
+服务端成功只证明本机监听和服务就绪，公网可达性仍需要真实客户端请求确认。
+PIG 不设置 Nginx、防火墙或云安全组；`--proxy-protocol` 要求回环绑定与已有可信前端。
+端口冲突时失败，不停止其他服务，也不自动停止或删除已有 V2Ray。
+
+### 历史 VMess 形式
+
+历史位置参数语法继续保留 V2Ray/VMess 行为，首次客户端端口仍为 12345：
+
+```bash
+pig build proxy user@host:8080
 pig build proxy user@host:8080 127.0.0.1:1080
 ```
 
+这个 Linux 兼容路径仍需要提供 `vray` 的仓库，写入 `/etc/v2ray.json` 与 `/etc/profile.d/proxy.sh`，
+并重启 `v2ray`。需要 root 或 `sudo`；HTTPS 检查失败时返回非零。
+远端用户 ID 属于凭据，普通结果会脱敏。
 
 ## build get
 
@@ -265,18 +368,22 @@ pig build dep citus --pg 17,16   # 为特定 PG 版本
 
 编译扩展并创建安装包。
 
+调试包默认启用。包含编译产物的 RPM 构建通常会额外生成 `debuginfo` 与 `debugsource`，
+基于 Debhelper 的构建通常会额外生成 `dbgsym`。纯 SQL、架构无关或采用特殊配方的包可能没有
+可拆分的调试内容；包配方也可以做更窄的显式选择，PIG 不会改写 spec 或 `debian/rules`。
+
 ```bash
 pig build ext citus              # 构建单个扩展
 pig build ext citus pgvector     # 构建多个
 pig build ext citus --pg 17      # 为特定 PG 版本
-pig build ext citus -s           # 包含调试符号（仅 RPM）
+pig build ext citus --nodbg      # 显式省略自动调试包
 ```
 
 **选项：**
 
 - `--pg`：指定一个或多个 PostgreSQL 大版本
-- `-s|--symbol`：构建调试符号包（仅 RPM）
-
+- `--nodbg`：在 RPM 构建中禁用自动 `debuginfo` / `debugsource` 包，在 DEB 构建中禁用
+  `dbgsym` 包
 
 ## build pkg
 
@@ -286,19 +393,16 @@ pig build ext citus -s           # 包含调试符号（仅 RPM）
 pig build pkg citus              # 构建单个扩展
 pig build pkg citus pgvector     # 构建多个
 pig build pkg citus --pg 17,16   # 为多个 PG 版本
-pig build pkg citus -s           # 包含调试符号
+pig build pkg citus --nodbg      # 显式省略自动调试包
 pig build pkg citus -m           # 优先使用 pigsty.cc 中国镜像下载源码
-pig build pkg cloudberry         # 按顺序构建 cloudberry、backup、pxf
 ```
 
 **选项：**
 
 - `--pg`：指定一个或多个 PostgreSQL 大版本
-- `-s|--symbol`：构建调试符号包（仅 RPM）
+- `--nodbg`：在 RPM 构建中禁用自动 `debuginfo` / `debugsource` 包，在 DEB 构建中禁用
+  `dbgsym` 包
 - `-m|--mirror`：下载源码时优先使用 `pigsty.cc` 镜像
-
-`pig build pkg cloudberry` 是套件构建流程：先下载完整 Cloudberry 源码包，构建并安装本地核心产物，然后继续构建 `cloudberry-backup` 与 `cloudberry-pxf`。
-
 
 ## 常见工作流
 
@@ -389,7 +493,7 @@ export PG_CONFIG=/usr/pgsql-18/bin/pg_config
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # 更新 PGRX
-cargo install --locked cargo-pgrx@0.19.1
+cargo install --locked cargo-pgrx@0.19.3
 
 # 重新初始化 PGRX
 cargo pgrx init

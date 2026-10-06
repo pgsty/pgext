@@ -132,6 +132,9 @@ pig build rust -y                # 强制重装 Rust（默认不重装）
 pig build rust -m                # 使用中国镜像安装 Rust，并写入 Cargo 镜像配置
 pig build pgrx                   # 安装 PGRX 框架
 pig build pgrx -b                # 自动探测时包含 PostgreSQL 19 beta pg_config
+pig build proxy                  # 安装或检查 Xray
+pig build proxy client --from ./client.uri
+pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:443 --export ./client.uri
 
 # 构建扩展
 pig build pkg citus              # 完整构建流程 = get + dep + ext

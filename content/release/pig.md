@@ -6,6 +6,174 @@ breadcrumb: false
 ---
 
 
+## v1.9.0
+
+Pig `v1.9.0` adds one-command Xray client/server setup, automatic Pigsty repository-key
+preparation, and a refreshed **600-entry extension catalog**. The default `cargo-pgrx`
+version is now `0.19.3`; the embedded Pigsty version remains `4.5.0`.
+
+### Xray clients and servers
+
+- `pig build proxy` installs or verifies Xray. `pig build proxy client` configures a
+  VLESS/REALITY/Vision HTTP/SOCKS client; `pig build proxy server` configures a Linux server.
+  Linux uses systemd; the macOS client uses a dedicated user LaunchAgent.
+- Client input accepts a standard VLESS URI, `--from FILE/-`, or explicit connection flags.
+  The first client listener is `127.0.0.1:12345`; the first direct server listener is
+  `0.0.0.0:443`. Repeated setup preserves existing listeners and server credentials.
+- Matching configuration, ownership, permissions, and service state avoid rewrites and
+  restarts. Failed client connectivity checks restore prior managed files and service state.
+  Replacing a different client requires `--replace --yes`; `--plan` previews either role.
+- `server --export-only --export -` exports an existing connection without changing the
+  deployment. File exports use mode `0600`; explicit stdout export requires text output.
+  Ordinary results and plans omit credentials. The historical VMess positional form remains
+  available through V2Ray.
+
+```bash
+sudo pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:443 --export ./client.uri
+sudo pig build proxy client --from ./client.uri
+```
+
+See [`pig build`](https://pig.pgsty.com/build/#build-proxy) for prerequisites, macOS setup,
+credential handling, and the separate public-ingress boundary.
+
+### Repository keys
+
+- `repo add`, `repo set`, and `sty boot` prepare the embedded Pigsty public key when selected
+  repositories need it. Existing regular key files are reused; missing defaults are installed
+  offline at `/etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty` or `/etc/apt/keyrings/pigsty.asc`.
+- Implicit default-key failure emits a warning and falls back only for selected Pigsty
+  definitions. Default key references remain stable, including APT `signed-by`.
+- Explicit signing-key references are mandatory: invalid or unavailable keys fail before
+  repository replacement or cache refresh. EL imports explicit references with `rpm --import`.
+  Selecting unrelated repositories does not prepare the Pigsty key.
+
+See [`pig repo`](https://pig.pgsty.com/repo/#repository-definitions) for signature-enforcement
+defaults and the distinction between key preparation and metadata refresh.
+
+### Catalog and build defaults
+
+- The embedded catalog contains **600 entries**, adding 22 entries to the v1.8.1 snapshot.
+  New entries include `edtf_postgres`, `plphp`, `pg_lexo`, `pg_money`, `istore`, `colnames`,
+  `pg_statkit`, `pgtelemetry`, `pg_rusage`, `pgexporter_ext`, `pg_statvfs`, and `libx509pq`.
+  Package versions and platform-availability metadata are refreshed as well.
+- The catalog total includes retained lifecycle records. Installability depends on each
+  extension's state and OS/architecture/PostgreSQL matrix; 600 is not a per-platform count.
+- `pig build pgrx` defaults to `cargo-pgrx 0.19.3`. An explicit `-v` and extension-specific
+  catalog metadata continue to select another required version.
+- Platform debug packages remain enabled by default, as in v1.8.1. Use `--nodbg` for RPM
+  `debuginfo`/`debugsource` and DEB `dbgsym` suppression; `-s|--symbol` is a deprecated no-op.
+
+### Compatibility
+
+No existing command or flag is removed. New Xray role commands use VLESS/REALITY/Vision;
+existing positional VMess commands retain their V2Ray behavior. A server setup result verifies
+the local listener and service; firewall, Nginx, cloud security groups, and public reachability
+remain separate operator responsibilities.
+
+Release artifacts: [v1.9.0](https://github.com/pgsty/pig/releases/tag/v1.9.0)
+
+### Verification
+
+The verified [v1.9.0 tag](https://github.com/pgsty/pig/tree/v1.9.0) points to
+[`9eb5488`](https://github.com/pgsty/pig/commit/9eb5488847ea34827a74c9f8bb7b2dd3778f5190). The exact commit passed
+[full CI](https://github.com/pgsty/pig/actions/runs/37483835198), including randomized tests,
+command race regressions, vet, static analysis, vulnerability scanning, and a release snapshot.
+The [Release workflow](https://github.com/pgsty/pig/actions/runs/37484632240) produced eight
+Linux/macOS archives and RPM/DEB packages. Published downloads were verified against SHA-256.
+
+### Checksums
+
+```checksums {base="https://github.com/pgsty/pig/releases/download/v1.9.0"}
+d0d80bd23a654308598f265ce4b4d4f78d6156c113ce6aa00f82bfc9519a180f  pig-1.9.0-1.aarch64.rpm
+e3b25640c9e528f2b883f7e5f4838640a8897857fa22dc1324aca69b72966a7c  pig-1.9.0-1.x86_64.rpm
+d7eb266e1b8ab60d20ac582c6b0e3741b7e8516ce1a56df447c0285b3e5dcab9  pig-v1.9.0.darwin-amd64.tar.gz
+096284577d0493ddba871b51e820654b358c7f4eb9c11175674a1d21b2718824  pig-v1.9.0.darwin-arm64.tar.gz
+a4b5ffca540bc4f924f86398bcad6cb7221ac7520b54b1d3fd32c9877d9cafd2  pig-v1.9.0.linux-amd64.tar.gz
+ddfa80fbb34f6738dd68e0d04cd92355711330f6896cd650df7d71b012788def  pig-v1.9.0.linux-arm64.tar.gz
+3d955a24a8ff805ee2b6da6428e2b882f97104e2fb597785225269443071d93a  pig_1.9.0-1_amd64.deb
+c175b37552147e64590309801800826a0075ae8285ed78178c2adcaec3741471  pig_1.9.0-1_arm64.deb
+```
+
+## v1.8.1
+
+Pig `v1.8.1` is a safety, correctness, and maintenance release on top of
+[v1.8.0](https://pig.pgsty.com/release/pig-1.8.0/). It hardens command initialization, privileged log access,
+repository and build workflows, release integrity, and structured-output redaction. It also
+refreshes the embedded extension catalog and moves the build toolchain to Go `1.27.1` and
+`cargo-pgrx 0.19.2`. The embedded Pigsty version remains `4.5.0`.
+
+### CLI safety and correctness
+
+- Read-only and configuration-independent commands no longer require a writable `HOME` or create
+  `~/.pig` as a side effect. Leaf commands preserve their declared initialization policy.
+- `pig pg log`, `pig pt log`, and `pig pb log` preserve arguments through sudo execution as the
+  database OS user and reject unsafe log-file links.
+- `pig do` validates Pigsty names and rejects reserved Ansible cluster targets before execution.
+- Native PostgreSQL role detection is bound to the selected instance rather than an unrelated
+  local default.
+- Structured results redact credentials, license material, and build-proxy identifiers while
+  retaining truthful command failure.
+
+### Repository and build hardening
+
+- Repository add and remove operations now fail when any requested operation fails, deduplicate
+  module selections, and preserve replacement boundaries.
+- Offline cache bundles reject unsafe paths, links, special files, and incomplete inputs; archive
+  extraction remains rooted and fail-closed. The obsolete exported cache wrapper was removed after
+  production moved to the structured result path.
+- Build source and artifact validation rejects incomplete or unsafe inputs. `pig build proxy`
+  uses the package-provided service contract, treats its operands as optional, and keeps secret
+  identifiers out of structured output.
+- Self-update verifies release checksums, and release tooling refuses dirty or mismatched-tag
+  publication and immutable artifact replacement.
+
+### Toolchain and catalog
+
+- `pig build ext` and `pig build pkg` keep platform debug packages enabled by default;
+  use `--nodbg` to omit them. `-s|--symbol` remains a deprecated compatibility no-op.
+
+- Go is updated to `1.27.1`; Logrus to `1.10.2`; GoReleaser to `2.18.0`; and
+  golangci-lint to `2.13.2`.
+- `pig build pgrx` now installs `cargo-pgrx 0.19.2` by default. Use `-v` when an extension requires
+  an older pgrx line recorded in its catalog metadata.
+- The embedded catalog is refreshed from the maintained pgext view. It adds `acdat 0.1.0`, marks
+  the superseded `pgcontext_pgvector` entry removed, and updates package versions, repository
+  ownership, PostgreSQL coverage, and availability matrices.
+
+### Verification
+
+The release is built from source commit
+[`1c6f524`](https://github.com/pgsty/pig/commit/1c6f52401accc8ad6d7e8ab51248895632d7629b).
+The exact commit passed the full [CI workflow](https://github.com/pgsty/pig/actions/runs/33747971725),
+including randomized tests, command race regressions, vet, static analysis, dead-code detection,
+vulnerability scanning, and a GoReleaser snapshot. The tag then passed the
+[Release workflow](https://github.com/pgsty/pig/actions/runs/33748002429), which produced the
+published RPM, DEB, macOS, and Linux artifacts.
+
+### Compatibility notes
+
+- No CLI command or flag is removed in this release.
+- Scripts that previously depended on read-only commands creating local configuration should
+  create that state explicitly instead.
+- The pgrx default changes to `0.19.2`; extension-specific metadata remains authoritative when a
+  build requires another pgrx version.
+
+### Checksums
+
+```checksums {base="https://github.com/pgsty/pig/releases/download/v1.8.1"}
+4154b3e49cb499e57d7c7b1ab4ae5e45d03d5d0c2ffe26d6ade64e46db6923cf  pig-1.8.1-1.aarch64.rpm
+35c398f409d9293b4f8c0cdf949b19c62d06016ec7e724472143d2327199869d  pig-1.8.1-1.x86_64.rpm
+6c08b6a698191b8b6494a0f60880fb17cafa535bad12d5c544333e4625048455  pig-v1.8.1.darwin-amd64.tar.gz
+0fb6c86cc18a29aeb74e9d12e717c104087c6ecf5a43250dfcc71cd7681fb868  pig-v1.8.1.darwin-arm64.tar.gz
+9219e87433ebd239e0773ae7417fdd08e97bb511312e6747542bf46b6b1bbf2b  pig-v1.8.1.linux-amd64.tar.gz
+b30924880f21126ece3afc77ca75794a0ceb77964cdfd8bc20da72d9d3273078  pig-v1.8.1.linux-arm64.tar.gz
+6fc304501671921b18439223c630c7d4635b10ac75493d5c12a5987ff80c618e  pig_1.8.1-1_amd64.deb
+1a70cd71f6c1f443812fe30535427891513c0ba03be219ac21f1a3d6fd450051  pig_1.8.1-1_arm64.deb
+```
+
+Release artifacts: [v1.8.1](https://github.com/pgsty/pig/releases/tag/v1.8.1)
+
+
 ## v1.8.0
 
 Pig `v1.8.0` makes Pigsty controller setup native. The two core setup commands,

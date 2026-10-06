@@ -126,6 +126,24 @@ repositories—override module streams, and the key is removed when rendering
 EL7 YUM configuration.
 
 
+### Trust and configuration ownership
+
+Repository operations change the host's software-supply configuration. Use `pig repo info MODULE` to inspect the definitions PIG would render. `repo add` preserves unrelated files unless `--remove` is supplied; `repo set` always backs up and replaces existing definitions before refreshing metadata, so it can conflict with Ansible, image-build, or other configuration owners.
+
+`repo add` and `repo set` prepare PIG's embedded Pigsty public key when the selected modules contain an available `pigsty-infra` or `pigsty-pgsql` repository. This includes `pigsty`, `infra`, `pgsql`, and the default `all` selection. PIG first checks whether the key file exists and reuses an existing regular file without rewriting it. If the file is missing or the check fails, including a permission error, PIG attempts installation before modifying repository definitions. Installation works offline and requires no `curl`, `gpg`, or `apt-key` command.
+
+- EL: `/etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty`
+- Debian / Ubuntu: `/etc/apt/keyrings/pigsty.asc`
+
+New key files use mode `0644`. By default, installation is best-effort: failure emits a warning, recorded in structured output as `data.warnings`, and repository configuration continues. Only the selected Pigsty definitions fall back to `trusted=yes` on Debian/Ubuntu or `gpgcheck=0` and `repo_gpgcheck=0` on EL. The default key reference remains present on failure, so APT definitions added by different operations agree on `signed-by`. Other repository definitions are preserved. APT may warn and retain old indexes when the key becomes unavailable; successful configuration does not guarantee a fresh index download.
+
+If a selected Pigsty definition explicitly supplies a non-empty signing-key reference, preparation of that actual key is mandatory. On Debian/Ubuntu, `signed-by` must name existing regular keyring files by absolute path, separated by commas when needed; the default Pigsty path can be installed from the embedded key. On EL, PIG prepares an explicitly referenced default file if needed, then delegates the listed `gpgkey` paths or literal URLs to `rpm --import`. Preparation failure stops before backup, repository writes, or cache refresh. Explicit references are preserved and never silently downgraded. A valid custom key does not depend on the default key path. Selecting only other repositories, such as `pgdg` or `node`, does not prepare the Pigsty key.
+
+Implicit key installation only prepares the file and its repository reference; it does not import it into RPM's database or APT's global trust store. Explicit EL `gpgkey` metadata additionally requests the RPM import described above. Ordinary `repo add/set` operations preserve signature-checking settings when preparation succeeds. [`pig sty boot`](https://pig.pgsty.com/sty/#sty-boot) enables Pigsty signature checking when key preparation succeeds and uses the same warning-and-fallback rule on implicit-key failure. See the [design decision](https://pig.pgsty.com/design/automatic-pigsty-repo-key/).
+
+For compatibility with offline and mirrored repositories, PIG's built-in metadata defaults to `gpgcheck=0` on EL and `trusted=yes` on Debian/Ubuntu. This disables package-signature enforcement for those definitions. Since v1.7.0, ordinary EL repositories keep native DNF module filtering; only definitions that explicitly declare `module_hotfixes=1`—notably Pigsty and PGDG repositories—override module streams, and the key is removed when rendering EL7 YUM configuration. Security-sensitive deployments should install trusted keys, change the generated metadata to enforce signature verification, pin approved origins, and manage those settings through their normal configuration system.
+
+
 ## repo list
 
 `pig repo list` lists all repository modules available on the current system.
