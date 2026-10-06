@@ -118,8 +118,9 @@ The mapping is deliberate:
   converted to UTC calendar dates
 - a failed or blocked repository does not overwrite prior successful Universe
   data
-- packaged compatibility rows copy each non-null Universe Star value into
-  `pgext.extension.extra.star` while preserving every other `extra` key
+- compatibility rows copy each non-null Universe Star value into
+  `pgext.extension.extra.star`, including retained `removed` entries, while
+  preserving every other `extra` key and existing packaged/lifecycle decisions
 
 `last_release` keeps the newer of existing catalog evidence and GitHub's latest
 release-or-tag date; `last_active` does the same for the newest credible GitHub

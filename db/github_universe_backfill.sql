@@ -46,9 +46,10 @@ BEGIN
         SELECT 1
         FROM pgext.extension e
         LEFT JOIN pgext.universe u ON u.name = e.name
-        WHERE u.name IS NULL OR NOT u.packaged OR u.id <> e.id
+        WHERE u.name IS NULL OR u.id <> e.id
+           OR (NOT u.packaged AND e.state IS DISTINCT FROM 'removed')
     ) THEN
-        RAISE EXCEPTION 'packaged Extension/Universe identity mapping is incomplete or inconsistent';
+        RAISE EXCEPTION 'Extension/Universe identity or active packaged mapping is inconsistent';
     END IF;
 
     IF EXISTS (
@@ -192,6 +193,7 @@ CREATE TEMP TABLE q_extension_star_changed(
     id integer PRIMARY KEY
 ) ON COMMIT DROP;
 
+-- Retained removed rows still expose extra.star to legacy consumers.
 WITH changed AS (
     UPDATE pgext.extension e
     SET extra = jsonb_set(
@@ -204,7 +206,6 @@ WITH changed AS (
     FROM pgext.universe u
     WHERE u.name = e.name
       AND u.id = e.id
-      AND u.packaged
       AND u.stars IS NOT NULL
       AND e.extra->'star' IS DISTINCT FROM to_jsonb(u.stars)
     RETURNING e.id
@@ -234,7 +235,7 @@ BEGIN
         WHERE u.stars IS NOT NULL
           AND e.extra->'star' IS DISTINCT FROM to_jsonb(u.stars)
     ) THEN
-        RAISE EXCEPTION 'Extension extra.star differs from packaged Universe stars after backfill';
+        RAISE EXCEPTION 'Extension extra.star differs from Universe stars after backfill';
     END IF;
 END
 $postflight$;
