@@ -1,7 +1,7 @@
 ---
 title: "pgroonga_database"
 linkTitle: "pgroonga_database"
-description: "PGroonga database management module"
+description: "Recovery helper for removing a damaged PGroonga internal database"
 weight: 2111
 categories: ["FTS"]
 languages: ["C"]
@@ -10,7 +10,7 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pgroonga**](https://github.com/pgroonga/pgroonga) : PGroonga database management module
+[**pgroonga**](https://github.com/pgroonga/pgroonga) : Recovery helper for removing a damaged PGroonga internal database
 
 
 ## Overview

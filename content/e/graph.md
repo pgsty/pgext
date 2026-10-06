@@ -27,6 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `graph` |
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_liquid" >}} {{< ext "onesparse" >}} {{< ext "pgrdf" >}} {{< ext "ltree" >}} {{< ext "sparql" >}} |
 
 > [!Note] PGXN distribution and package are pggraph; installed extension name is graph.

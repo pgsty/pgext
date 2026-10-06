@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `pg_catalog` `df` `duroxide` |
+|    **Schemas**    | `pg_catalog` `df` `_duroxide` |
 |   **See Also**    | {{< ext "pg_task" >}} {{< ext "pgmq" >}} {{< ext "pg_background" >}} {{< ext "ulak" >}} {{< ext "pgmb" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_retry" >}} {{< ext "fsm_core" >}} {{< ext "pglock" >}} |
 
 > [!Note] Requires preload and a superuser worker role; pgrx 0.19.2.

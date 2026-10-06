@@ -68,7 +68,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://git.osgeo.org/gitea/postgis/postgis" title="Repository" icon="link" subtitle="git.osgeo.org/gitea/postgis/postgis" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgis-3.6.4.tar.gz postgis-3.6.4-en.pdf postgis36-filter-requires-perl-Pg.sh" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg postgis;		# build rpm/deb
+```
 
 
 ## Install

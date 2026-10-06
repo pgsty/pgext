@@ -27,13 +27,13 @@ weight: 900
 | {{< ext "edtf_postgres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "TIME" >}} | EDTF 日期校验、规范化、边界计算与时态关系 |
 | {{< ext "pg_stl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | PostgreSQL 时间序列分析函数 |
 | {{< ext "cron_utils" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TIME" >}} | 解析 Cron 表达式并计算上一次或下一次触发时间 |
-| {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS 几何和地理空间扩展 |
+| {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS 几何和地理空间扩展 |
 | {{< ext "postgis_topology" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS 拓扑空间类型和函数 |
 | {{< ext "postgis_raster" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS 光栅类型和函数 |
 | {{< ext "postgis_sfcgal" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | PostGIS SFCGAL 函数 |
-| {{< ext "postgis_tiger_geocoder" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "GIS" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
+| {{< ext "postgis_tiger_geocoder" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "GIS" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
 | {{< ext "address_standardizer" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | 地址标准化函数。 |
-| {{< ext "address_standardizer_data_us" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | 地址标准化函数：美国数据集示例 |
+| {{< ext "address_standardizer_data_us" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | 地址标准化函数：美国数据集示例 |
 | {{< ext "pgrouting" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | 提供寻路能力 |
 | {{< ext "pointcloud" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | 提供激光雷达点云数据类型支持 |
 | {{< ext "pointcloud_postgis" "pointcloud" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "GIS" >}} | 将激光雷达点云与PostGIS几何类型相集成 |
@@ -78,7 +78,7 @@ weight: 900
 | {{< ext "pg_turbovec" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 基于 TurboQuant 压缩量化的 PostgreSQL 向量类型与 ANN 索引访问方法。 |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
 | {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "FTS" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
-| {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | PGGroonga 数据库管理模块 |
+| {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | {{< ext "pg_bigm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FTS" >}} | 基于二字组的多语言全文检索扩展 |
 | {{< ext "vgram" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | 用于 LIKE/ILIKE 检索的可变长度字组 GIN 索引与统计信息 |
 | {{< ext "zhparser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | 中文分词，全文搜索解析器 |
@@ -480,7 +480,7 @@ weight: 900
 | {{< ext "explain_ui" "pg_explain_ui" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "STAT" >}} | 快速跳转至PEV查阅可视化执行计划 |
 | {{< ext "pg_relusage" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "STAT" >}} | 打印查询引用的表与列 |
 | {{< ext "pagevis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "STAT" >}} | 使用ASCII字符可视化数据库物理页面布局 |
-| {{< ext "powa" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL 工作负载分析器-核心 |
+| {{< ext "powa" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "STAT" >}} | PostgreSQL 工作负载分析器-核心 |
 | {{< ext "pg_overexplain" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "STAT" >}} | 允许 EXPLAIN 转储更多详细 |
 | {{< ext "pg_logicalinspect" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "STAT" >}} | 检视逻辑解码组件详情 |
 | {{< ext "pageinspect" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "STAT" >}} | 检查数据库页面二进制内容 |

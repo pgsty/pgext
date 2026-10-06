@@ -357,7 +357,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pgextwlist;		# build rpm
+pig build pkg pgextwlist;		# build rpm/deb
 ```
 
 

@@ -4,7 +4,7 @@ linkTitle: "postgis_tiger_geocoder"
 description: "PostGIS tiger geocoder and reverse geocoder"
 weight: 1504
 categories: ["GIS"]
-languages: ["C"]
+languages: ["PLpgSQL"]
 licenses: ["GPL-2.0"]
 repos: ["PGDG"]
 page_width: full
@@ -17,12 +17,12 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1504** | {{< badge content="postgis_tiger_geocoder" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_tiger_geocoder" "postgis" >}} | `3.6.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1504** | {{< badge content="postgis_tiger_geocoder" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_tiger_geocoder" "postgis" >}} | `3.6.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "PLpgSQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="----dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -31,6 +31,8 @@ page_width: full
 |   **Requires**    | {{< ext "postgis" >}} {{< ext "fuzzystrmatch" >}} |
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
 |    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
+
+> [!Note] Pure SQL/PLpgSQL extension with no extension-specific library. Control sets superuser=false and leaves trusted unset; a non-superuser can install it with the required privileges and dependencies. The catalog trusted flag retains the existing non-superuser-installable convention.
 
 
 ## Packages
@@ -68,7 +70,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://git.osgeo.org/gitea/postgis/postgis" title="Repository" icon="link" subtitle="git.osgeo.org/gitea/postgis/postgis" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgis-3.6.4.tar.gz postgis-3.6.4-en.pdf postgis36-filter-requires-perl-Pg.sh" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg postgis;		# build rpm/deb
+```
 
 
 ## Install

@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_clickhouse" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pgmonitor" >}} {{< ext "pg_datasentinel" >}} {{< ext "duckdb_fdw" >}} {{< ext "pgsentinel" >}} {{< ext "pgnodemx" >}} {{< ext "pg_duckdb" >}} {{< ext "system_stats" >}} {{< ext "pg_profile" >}} |
 
-> [!Note] freeze due to new vcpkg dependency stack
+> [!Note] Release/package 0.4.0 installs SQL extension 0.4. PG16-18; requires preload. Local RPM builds cover both EL8 architectures, using a private Bison 3.8.2 build tool there. Repository publication of 0.4.0 is pending; public indexes checked on 2026-10-06 still expose 0.3.6.
 
 
 ## Packages
@@ -44,12 +44,12 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "pg_stat_ch_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "pg_stat_ch_18 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.0" "pg_stat_ch_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_stat_ch_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_ch_14 : N/A 0" "gray" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stat-ch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-ch : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stat-ch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-ch : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-stat-ch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-ch : N/A 0" "gray" >}} |
@@ -68,10 +68,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_stat_ch_18` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 872.4 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_18-0.3.6-1PIGSTY.el9.x86_64.rpm) |
-| `pg_stat_ch_18` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 829.2 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_18-0.3.6-1PIGSTY.el9.aarch64.rpm) |
-| `pg_stat_ch_18` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.8 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_18-0.3.6-1PIGSTY.el10.x86_64.rpm) |
-| `pg_stat_ch_18` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 774.1 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_18-0.3.6-1PIGSTY.el10.aarch64.rpm) |
+| `pg_stat_ch_18` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.0 MiB | [pg_stat_ch_18-0.4.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_stat_ch_18-0.4.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_stat_ch_18` | `0.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 7.8 MiB | [pg_stat_ch_18-0.4.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_stat_ch_18-0.4.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_stat_ch_18` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 6.4 MiB | [pg_stat_ch_18-0.4.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_18-0.4.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_stat_ch_18` | `0.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 6.0 MiB | [pg_stat_ch_18-0.4.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_18-0.4.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_stat_ch_18` | `0.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 6.8 MiB | [pg_stat_ch_18-0.4.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_18-0.4.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_stat_ch_18` | `0.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 6.1 MiB | [pg_stat_ch_18-0.4.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_18-0.4.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 720.3 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 649.5 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 731.0 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb) |
@@ -89,10 +91,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_stat_ch_17` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 871.9 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_17-0.3.6-1PIGSTY.el9.x86_64.rpm) |
-| `pg_stat_ch_17` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 829.3 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_17-0.3.6-1PIGSTY.el9.aarch64.rpm) |
-| `pg_stat_ch_17` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.7 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_17-0.3.6-1PIGSTY.el10.x86_64.rpm) |
-| `pg_stat_ch_17` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 773.3 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_17-0.3.6-1PIGSTY.el10.aarch64.rpm) |
+| `pg_stat_ch_17` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.0 MiB | [pg_stat_ch_17-0.4.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_stat_ch_17-0.4.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_stat_ch_17` | `0.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 7.8 MiB | [pg_stat_ch_17-0.4.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_stat_ch_17-0.4.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_stat_ch_17` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 6.4 MiB | [pg_stat_ch_17-0.4.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_17-0.4.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_stat_ch_17` | `0.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 6.0 MiB | [pg_stat_ch_17-0.4.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_17-0.4.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_stat_ch_17` | `0.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 6.8 MiB | [pg_stat_ch_17-0.4.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_17-0.4.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_stat_ch_17` | `0.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 6.1 MiB | [pg_stat_ch_17-0.4.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_17-0.4.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 719.4 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 648.1 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 730.8 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb) |
@@ -110,10 +114,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_stat_ch_16` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 871.8 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_16-0.3.6-1PIGSTY.el9.x86_64.rpm) |
-| `pg_stat_ch_16` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 829.1 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_16-0.3.6-1PIGSTY.el9.aarch64.rpm) |
-| `pg_stat_ch_16` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.6 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_16-0.3.6-1PIGSTY.el10.x86_64.rpm) |
-| `pg_stat_ch_16` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 773.5 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_16-0.3.6-1PIGSTY.el10.aarch64.rpm) |
+| `pg_stat_ch_16` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.0 MiB | [pg_stat_ch_16-0.4.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_stat_ch_16-0.4.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_stat_ch_16` | `0.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 7.8 MiB | [pg_stat_ch_16-0.4.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_stat_ch_16-0.4.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_stat_ch_16` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 6.4 MiB | [pg_stat_ch_16-0.4.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_16-0.4.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_stat_ch_16` | `0.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 6.0 MiB | [pg_stat_ch_16-0.4.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_16-0.4.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_stat_ch_16` | `0.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 6.8 MiB | [pg_stat_ch_16-0.4.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_16-0.4.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_stat_ch_16` | `0.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 6.1 MiB | [pg_stat_ch_16-0.4.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_16-0.4.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 719.6 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 649.4 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 729.5 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb) |
@@ -132,7 +138,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ClickHouse/pg_stat_ch" title="Repository" icon="github" subtitle="github.com/ClickHouse/pg_stat_ch" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_ch-0.4.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_ch-0.4.0.tar.gz bison-3.8.2.tar.gz" />}}
 {{< /cards >}}
 
 

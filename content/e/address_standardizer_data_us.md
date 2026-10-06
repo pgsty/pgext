@@ -4,7 +4,7 @@ linkTitle: "address_standardizer_data_us"
 description: "Address Standardizer US dataset example"
 weight: 1506
 categories: ["GIS"]
-languages: ["C"]
+languages: ["SQL"]
 licenses: ["GPL-2.0"]
 repos: ["PGDG"]
 page_width: full
@@ -17,12 +17,12 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1506** | {{< badge content="address_standardizer_data_us" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "address_standardizer_data_us" "postgis" >}} | `3.6.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1506** | {{< badge content="address_standardizer_data_us" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "address_standardizer_data_us" "postgis" >}} | `3.6.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -66,7 +66,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://git.osgeo.org/gitea/postgis/postgis" title="Repository" icon="link" subtitle="git.osgeo.org/gitea/postgis/postgis" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgis-3.6.4.tar.gz postgis-3.6.4-en.pdf postgis36-filter-requires-perl-Pg.sh" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg postgis;		# build rpm/deb
+```
 
 
 ## Install

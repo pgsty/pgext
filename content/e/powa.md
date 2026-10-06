@@ -4,7 +4,7 @@ linkTitle: "powa"
 description: "PostgreSQL Workload Analyser-core"
 weight: 6870
 categories: ["STAT"]
-languages: ["Python"]
+languages: ["PLpgSQL"]
 licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
@@ -17,12 +17,12 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.3.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
+| **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.3.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "PLpgSQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -423,6 +423,13 @@ pig install powa -v 16;   # install for PG 16
 pig install powa -v 15;   # install for PG 15
 pig install powa -v 14;   # install for PG 14
 
+```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```ini
+shared_preload_libraries = 'pg_stat_statements, powa';
 ```
 
 
