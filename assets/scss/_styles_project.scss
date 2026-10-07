@@ -1,18 +1,16 @@
 // ===========================================================================
 // PGEXT.CLOUD — the catalogue's design system, on top of OINK
 //
-// The visual language is the one the dynamic catalogue at pgext.cloud already
-// uses: "the catalogue is a database". Paper ground, ink text, a transitional
-// serif for display and a coding face for every piece of data. Sixteen fixed
-// category hues and a warm-to-cool dimension scale carry meaning that no other
-// signal on the page carries.
+// Slate retains the dynamic catalogue's palette and serif display face. The
+// other OINK presets supply their own surfaces, text and typography. Sixteen
+// category hues and a warm-to-cool dimension scale keep their meaning in every
+// preset.
 //
 // The file has three jobs, in order:
 //
 //   1. declare the catalogue's own tokens (`--bg`, `--ink`, `--c-*`, `--h-*`);
-//   2. point OINK's tokens (`--bs-*`, `--td-*`) at them, so the whole shell —
-//      navbar, sidebar, cards, tables, footer — inherits the palette without a
-//      single template override;
+//   2. bridge OINK and catalogue tokens per preset, so the shell and catalogue
+//      components follow the same active palette without template overrides;
 //   3. add the catalogue components the theme has no equivalent for: the
 //      badge, the version strip, the search console, the extension wall.
 // ===========================================================================
@@ -166,7 +164,7 @@
 }
 
 // ---------------------------------------------------------------------------
-// 2 · OINK's tokens, pointed at the catalogue's
+// 2 · Preset-aware bridge between OINK and catalogue tokens
 // ---------------------------------------------------------------------------
 
 @mixin pgext-oink-bridge {
@@ -204,8 +202,7 @@
   --td-brand-mark-to: var(--c-TIME);
 }
 
-:root,
-:root[data-bs-theme='dark'] {
+:root[data-td-preset='slate'] {
   @include pgext-oink-bridge;
 
   // Display and headings take the transitional serif; data, metadata and the
@@ -218,6 +215,33 @@
   --td-meta-font-family: var(--td-code-font-family);
 }
 
+// Other presets own the shell palette. Point catalogue components at those
+// tokens instead of overwriting them; category and availability hues stay on
+// the light/dark palette above. Keep this separate from Slate to avoid cycles.
+:root:not([data-td-preset='slate']) {
+  --bg: var(--bs-body-bg);
+  --bg-rgb: var(--bs-body-bg-rgb);
+  --bg-card: var(--td-brand-elev);
+  --bg-raise: var(--bs-secondary-bg);
+  --bg-inset: var(--bs-tertiary-bg);
+  --bg-code: var(--td-pre-bg);
+  --fg-code: var(--bs-body-color);
+  --ink: var(--bs-body-color);
+  --ink-rgb: var(--bs-body-color-rgb);
+  --ink-2: var(--bs-secondary-color);
+  --ink-2-rgb: var(--bs-secondary-color-rgb);
+  --ink-3: var(--bs-tertiary-color);
+  --ink-3-rgb: var(--bs-tertiary-color-rgb);
+  --line: var(--bs-border-color);
+  --line-2: var(--td-brand-line-strong);
+  --accent: var(--bs-link-hover-color);
+  --accent-fg: var(--bs-link-color);
+  --accent-rgb: var(--bs-link-color-rgb);
+  --accent-wash: rgba(var(--bs-link-color-rgb), 0.08);
+  --shadow: var(--td-brand-shadow-sm);
+  --shadow-lift: var(--td-brand-shadow-md);
+}
+
 // Bootstrap paints the page ground from `--bs-body-bg`, but the theme's own
 // prepaint script writes a literal colour before CSS loads; restate it so the
 // first frame is paper, not white.
@@ -228,56 +252,58 @@ body {
 
 // OINK's headings are display-weight; the serif wants a lighter, roomier
 // setting to read as an almanac rather than a poster.
-.td-content h1,
-.td-content h2,
-.td-content h3,
-.td-shell-article > header h1,
-.td-page-title,
-.page-head h1 {
-  font-family: var(--td-display-font-family);
-  font-weight: 550;
-  letter-spacing: -0.012em;
-}
+:root[data-td-preset='slate'] {
+  .td-content h1,
+  .td-content h2,
+  .td-content h3,
+  .td-shell-article > header h1,
+  .td-page-title,
+  .page-head h1 {
+    font-family: var(--td-display-font-family);
+    font-weight: 550;
+    letter-spacing: -0.012em;
+  }
 
-// Section headings on catalog pages read as field labels, like the dynamic
-// site's `-- comment` eyebrows.
-.td-content h2 {
-  font-size: 1.62em;
-}
+  // Section headings on catalog pages read as field labels, like the dynamic
+  // site's `-- comment` eyebrows.
+  .td-content h2 {
+    font-size: 1.62em;
+  }
 
-.td-content h3 {
-  font-size: 1.24em;
-  font-weight: 600;
-}
+  .td-content h3 {
+    font-size: 1.24em;
+    font-weight: 600;
+  }
 
-// The chrome — navbar, sidebar, outline, breadcrumb, footer columns — is
-// data, so it takes the coding face at a small size.
-.td-nav-title,
-.td-shell-tree__row,
-.td-shell-toc a,
-.td-breadcrumb a,
-.td-breadcrumb span,
-.td-shell-root__title,
-.td-navbar-entry__label,
-.td-nav-menu__item-link,
-.footer-col a,
-.footer-col span {
-  font-family: var(--td-meta-font-family);
-}
+  // The chrome — navbar, sidebar, outline, breadcrumb, footer columns — is
+  // data, so it takes the coding face at a small size.
+  .td-nav-title,
+  .td-shell-tree__row,
+  .td-shell-toc a,
+  .td-breadcrumb a,
+  .td-breadcrumb span,
+  .td-shell-root__title,
+  .td-navbar-entry__label,
+  .td-nav-menu__item-link,
+  .footer-col a,
+  .footer-col span {
+    font-family: var(--td-meta-font-family);
+  }
 
-.td-shell-tree__row,
-.td-nav-menu__item-link {
-  font-size: 0.86em;
-}
+  .td-shell-tree__row,
+  .td-nav-menu__item-link {
+    font-size: 0.86em;
+  }
 
-// Inline code inherits the dynamic site's tinted chip rather than a plain
-// monospace run, so an identifier is legible inside dense prose.
-.td-content :not(pre) > code {
-  padding: 1px 5px;
-  border-radius: 4px;
-  background: var(--accent-wash);
-  color: var(--accent-fg);
-  font-size: 0.88em;
+  // Inline code inherits the dynamic site's tinted chip rather than a plain
+  // monospace run, so an identifier is legible inside dense prose.
+  .td-content :not(pre) > code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: var(--accent-wash);
+    color: var(--accent-fg);
+    font-size: 0.88em;
+  }
 }
 
 // ---------------------------------------------------------------------------

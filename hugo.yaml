@@ -842,6 +842,8 @@ params:
 
   ui:
     typography: technical
+    preset: paper
+    preset_menu: [paper, slate, ink, terminal]
     dark_mode: true
 
     # Sidebar
