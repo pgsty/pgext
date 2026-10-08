@@ -1,4 +1,5 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
+2026-10-09,pg_local_cache,2.0.4,3.1.0,PG14-18; preload; RESP API,PG14-18；需预加载；RESP 接口
 2026-10-06,acdat,0.1.1,0.1.1,PG14-18; First full production packaging of an existing extension; 80 main packages,PG14-18；已有扩展首次正式全量入库；80 主包
 2026-10-06,addressing_dictionary,,1.1,PG14-18; SQL-only,PG14-18；纯 SQL
 2026-10-06,agensgraph-18,,2.18.4.0,PG18.4; retains AgensGraph 17,PG18.4；保留 AgensGraph 17
