@@ -50,7 +50,7 @@ SELECT spock.repset_add_table('default', 'lolor.pg_largeobject_metadata');
 
 ### 升级与边界
 
-1.2.2 修复扩展升级和数据库大版本升级行为，并新增 `lolor.disable()`、`lolor.enable()` 和 `lolor.is_enabled()`。应当**先更新 lolor，再运行 pg_upgrade**；该修复不会追溯修复已经用旧扩展文件尝试的大版本升级：
+1.2.2 修复扩展升级和数据库大版本升级行为，并新增 `lolor.disable()`、`lolor.enable()` 和 `lolor.is_enabled()`。应当 **先更新 lolor，再运行 pg_upgrade**；该修复不会追溯修复已经用旧扩展文件尝试的大版本升级：
 
 ```sql
 ALTER EXTENSION lolor UPDATE TO '1.2.2';

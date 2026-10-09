@@ -5,7 +5,7 @@
 
 > [bloom: bloom 访问方法 - 基于签名文件的索引](https://www.postgresql.org/docs/current/bloom.html)
 
-`bloom` 扩展提供基于[布隆过滤器](https://en.wikipedia.org/wiki/Bloom_filter)的索引访问方法。布隆过滤器是一种空间高效的数据结构，用于测试元素是否属于集合，可能出现假阳性但不会有假阴性。
+`bloom` 扩展提供基于 [布隆过滤器](https://en.wikipedia.org/wiki/Bloom_filter) 的索引访问方法。布隆过滤器是一种空间高效的数据结构，用于测试元素是否属于集合，可能出现假阳性但不会有假阴性。
 
 布隆索引特别适用于有很多列的表，且查询会测试列的任意组合的场景。单个布隆索引可以替代多个 btree 索引，同时占用显著更少的空间。
 

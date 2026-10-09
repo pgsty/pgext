@@ -20,7 +20,7 @@ CREATE EXTENSION pgroonga_database;
 SELECT pgroonga_database_remove();
 ```
 
-执行后立即断开该连接，再建立新连接，对**每一个** PGroonga 索引执行 REINDEX，从 PostgreSQL 表数据重新创建内部数据库。完成所有受影响索引的重建和检查后，再恢复应用流量。
+执行后立即断开该连接，再建立新连接，对 **每一个** PGroonga 索引执行 REINDEX，从 PostgreSQL 表数据重新创建内部数据库。完成所有受影响索引的重建和检查后，再恢复应用流量。
 
 ### 返回值与边界
 

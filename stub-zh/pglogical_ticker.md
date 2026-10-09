@@ -25,7 +25,7 @@ CREATE EXTENSION pglogical_ticker;
 
 ### 部署 Ticker 表
 
-仅在**提供者**上运行（通过 pglogical 传播到订阅者）：
+仅在 **提供者** 上运行（通过 pglogical 传播到订阅者）：
 
 ```sql
 -- 部署 ticker 表（每个复制集一个）
@@ -61,13 +61,13 @@ SELECT pglogical_ticker.launch_if_repset_tables();
 
 ### 查看复制延迟
 
-在**提供者**上：
+在 **提供者** 上：
 
 ```sql
 SELECT * FROM pglogical_ticker.all_repset_tickers();
 ```
 
-在**订阅者**上：
+在 **订阅者** 上：
 
 ```sql
 SELECT * FROM pglogical_ticker.all_subscription_tickers();

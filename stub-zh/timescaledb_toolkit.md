@@ -5,7 +5,7 @@
 
 来源：[documentation index](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/docs/README.md)、[v1.23.0 release](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.23.0)、[Changelog](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/Changelog.md)
 
-TimescaleDB Toolkit 提供了一系列专用于时序数据分析的函数，采用**两步聚合模式**。大多数函数会先创建中间表示，再通过访问器函数进行查询，从而实现高效复用和多维分析。
+TimescaleDB Toolkit 提供了一系列专用于时序数据分析的函数，采用 **两步聚合模式**。大多数函数会先创建中间表示，再通过访问器函数进行查询，从而实现高效复用和多维分析。
 
 ### 近似分析
 

@@ -11,7 +11,7 @@
 
 本扩展正是为此而设计的。
 
-本扩展**不适用于**存储压缩场景。PostgreSQL 本身已经具备[元组压缩](https://www.postgresql.org/docs/current/storage-toast.html)机制，当元组足够大时会自动进行压缩，手动使用本函数预压缩数据并不会进一步减小存储空间。
+本扩展 **不适用于** 存储压缩场景。PostgreSQL 本身已经具备 [元组压缩](https://www.postgresql.org/docs/current/storage-toast.html) 机制，当元组足够大时会自动进行压缩，手动使用本函数预压缩数据并不会进一步减小存储空间。
 
 
 * `gzip(uncompressed BYTEA, [compression_level INTEGER])` 返回 `BYTEA`
@@ -30,7 +30,7 @@
     --------------------------------------------------------------------------
      \x1f8b08000000000000132bc9c82c5600a2dc4a851282ccd48a12002e7a22ff30000000
 
-等等，压缩后的输出怎么反而更长了？！其实并非如此，只是**看起来**更长罢了，因为十六进制表示中每个字节需要两个十六进制字符。原始字符串的十六进制表示如下：
+等等，压缩后的输出怎么反而更长了？！其实并非如此，只是 **看起来** 更长罢了，因为十六进制表示中每个字节需要两个十六进制字符。原始字符串的十六进制表示如下：
 
     > SELECT 'this is my this is my this is my this is my text'::bytea;
 

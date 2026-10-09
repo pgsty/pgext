@@ -5,7 +5,7 @@
 
 > [semver: 语义版本号数据类型](https://github.com/theory/pg-semver)
 
-`semver` 扩展提供了实现[语义版本号 2.0.0](https://semver.org/spec/v2.0.0.html)的数据类型。
+`semver` 扩展提供了实现 [语义版本号 2.0.0](https://semver.org/spec/v2.0.0.html) 的数据类型。
 
 ```sql
 CREATE EXTENSION semver;
