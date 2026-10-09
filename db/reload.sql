@@ -53,6 +53,9 @@ UPDATE pgext.pkg SET hide = true WHERE pkg in (SELECT pkg FROM pgext.extension W
 -- temporary unavailable
 UPDATE pgext.pkg SET hide = true WHERE pkg = 'ogr_fdw' and os in ('d12.x86_64', 'd12.aarch64', 'd13.x86_64', 'd13.aarch64', 'u24.x86_64', 'u24.aarch64', 'u26.x86_64', 'u26.aarch64');
 
+-- PL/PHP is opt-in on EL8/EL9 for both supported architectures
+UPDATE pgext.pkg SET hide = true WHERE pkg = 'plphp' AND os IN ('el8.x86_64', 'el8.aarch64', 'el9.x86_64', 'el9.aarch64');
+
 -- kernel-specific packages stay out of vanilla PostgreSQL package groups
 UPDATE pgext.pkg SET hide = true WHERE pkg IN (SELECT distinct pkg FROM pgext.extension WHERE tags @> '{fork}');
 
