@@ -2,11 +2,13 @@
 
 来源：
 
-- [README.md](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/README.md)
-- [pg_living_assertions.control](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions.control)
-- [pg_living_assertions--0.4.1--0.5.0.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions--0.4.1--0.5.0.sql)
-- [pg_living_assertions--0.5.0--0.5.1.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions--0.5.0--0.5.1.sql)
-- [test/sql/read_only.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/test/sql/read_only.sql)
+- [README.md](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/README.md)
+- [pg_living_assertions.control](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/pg_living_assertions.control)
+- [pg_living_assertions--0.4.1--0.5.0.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/pg_living_assertions--0.4.1--0.5.0.sql)
+- [pg_living_assertions--0.5.0--0.5.1.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/pg_living_assertions--0.5.0--0.5.1.sql)
+- [test/sql/read_only.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/test/sql/read_only.sql)
+- [License](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/CHANGELOG.md)
 
 `pg_living_assertions` 0.5.1 保存 SQL 检查、结论、核验时间与替换历史。检查按需运行，并非每次写入都求值的 SQL ASSERTION 约束。此扩展为纯 SQL 实现，无需预加载。
 
@@ -34,3 +36,7 @@ SELECT name, state, age FROM living_assertions.status;
 安装匹配的文件后，执行 `ALTER EXTENSION pg_living_assertions UPDATE TO '0.5.1'`。0.4.1→0.5.0→0.5.1 升级链替换求值函数，不修改注册表结构。最后的补丁在 `run()` 中限定行类型名称，防止类型缓存失效后在断言自身的无关搜索路径中重新解析类型。
 
 全新安装也使用较早的基础 SQL 脚本并依次应用包内升级链，因此必须安装完整且版本匹配的脚本集。
+
+### 0.5.4 的许可证变化
+
+0.5.4 改用 Apache-2.0；此前发布的版本（截至 0.5.3）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。

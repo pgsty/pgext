@@ -6,6 +6,8 @@ Sources:
 - [pg_promise_guard control file](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/pg_promise_guard.control)
 - [pg_promise_guard 0.2.0 SQL definitions](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/pg_promise_guard--0.2.0.sql)
 - [PostgreSQL license](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/LICENSE)
+- [License](https://github.com/Manuelreyesbravo/pg_promise_guard/blob/fb723160d8d2d4a43d0063fc4aa9bf26ea9c38d9/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_promise_guard/blob/fb723160d8d2d4a43d0063fc4aa9bf26ea9c38d9/CHANGELOG.md)
 
 `pg_promise_guard` reports schema guarantees that look present but are wholly or partly unenforced. It reads PostgreSQL catalogs only, making it suitable for a periodic integrity check after migrations, bulk loads, or operational overrides.
 
@@ -46,3 +48,7 @@ Version 0.2.0 requires `pg_living_assertions` and adds `promise_guard.watch`, re
 SELECT promise_guard.watch('public');
 SELECT * FROM living_assertions.status;
 ```
+
+### License Change in 0.2.3
+
+Version 0.2.3 adopts Apache-2.0. Previously published versions through 0.2.2 retain the PostgreSQL License. This release changes no database objects; its upgrade only records the version.

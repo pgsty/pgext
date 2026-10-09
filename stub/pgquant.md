@@ -2,17 +2,18 @@
 
 Sources:
 
-- [docs/factors.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/factors.md)
-- [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/volatility.md)
-- [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/covariance.md)
-- [pgquant.control](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/pgquant.control)
-- [README.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/README.md)
-- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/Cargo.toml)
-- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/src/lib.rs)
-- [docs/returns.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/returns.md)
-- [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/risk.md)
+- [docs/factors.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/factors.md)
+- [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/volatility.md)
+- [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/covariance.md)
+- [pgquant.control](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/pgquant.control)
+- [README.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/README.md)
+- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/Cargo.toml)
+- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/src/lib.rs)
+- [docs/returns.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/returns.md)
+- [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/risk.md)
+- [Portfolio optimization](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/optimization.md)
 
-`pgquant` computes simple/log returns, cumulative and annualized returns, and historical, Gaussian and Student-t VaR/ES. Version 0.2.0 also provides volatility, covariance and factor construction. Momentum and portfolio optimization remain planned.
+`pgquant` computes simple/log returns, cumulative and annualized returns, and historical, Gaussian and Student-t VaR/ES. Version 0.3.0 also provides volatility, covariance and factor construction. WML momentum and unconstrained mean-variance optimization are implemented; long-only optimization remains planned.
 
 ### Core Workflow
 
@@ -46,3 +47,11 @@ SELECT * FROM pgquant_portfolio_sort(
      ('B'::text, DATE '2026-01-01', 200.0::float8)
   ) AS panel(symbol, date, characteristic_value) $$, 2);
 ```
+
+### WML Momentum Factor
+
+`pgquant_construct_wml(query)` consumes symbol TEXT, date DATE, return DOUBLE PRECISION, size_bucket INT, mom_bucket INT and weight DOUBLE PRECISION columns. Momentum buckets are 1 for losers, 2 for neutral and 3 for winners; output is date and wml_return. Build a correctly typed size/momentum panel and supply trusted SQL. Version 0.3.0 includes WML, and unconstrained portfolio optimization is available.
+
+### Unconstrained Portfolio Optimization
+
+`pgquant_mv_optimize_unconstrained` takes expected returns, a flattened row-major covariance matrix, a risk-free rate and positive risk aversion. It returns risky-asset weights; they may be negative and need not sum to one. The residual allocation is to the risk-free asset. This is not a long-only optimizer.

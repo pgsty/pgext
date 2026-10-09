@@ -6,6 +6,8 @@
 - [pg_recall_guard 控制文件](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/pg_recall_guard.control)
 - [pg_recall_guard 0.2.0 SQL 定义](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/pg_recall_guard--0.2.0.sql)
 - [PostgreSQL 许可证](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/LICENSE)
+- [License](https://github.com/Manuelreyesbravo/pg_recall_guard/blob/7199bf8098f129e6769c0bdf642633c916c2d880/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_recall_guard/blob/7199bf8098f129e6769c0bdf642633c916c2d880/CHANGELOG.md)
 
 `pg_recall_guard` 用精确结果衡量近似最近邻索引的召回率，并记录运维人员认可的数值。它从 PostgreSQL 系统目录发现可排序的距离操作符，而不是写死某一种向量扩展。
 
@@ -43,3 +45,7 @@ SELECT * FROM recall_guard.check();
 每个样本查询都会执行精确扫描，因此大表上的测量可能很昂贵。应从较小的 `p_sample_size` 开始，把检查安排在低峰时段，并观察 I/O 与 CPU。样本来自被索引表，而非生产查询流量；它只是代理，不能替代工作负载跟踪。
 
 PGXN 元数据声明支持 PostgreSQL 13 及以上，上游测试则覆盖 18.6 与 19 beta，PostgreSQL 13 至 17 尚未测试。0.2.0 也没有经过生产工作负载的现场验证，已发布实验只覆盖有限的向量维度与索引设置。阈值应按工作负载设定，只能在独立质量测试后认可基线。
+
+### 0.2.3 的许可证变化
+
+0.2.3 改用 Apache-2.0；此前发布的版本（截至 0.2.2）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。

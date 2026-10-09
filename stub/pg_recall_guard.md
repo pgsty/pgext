@@ -6,6 +6,8 @@ Sources:
 - [pg_recall_guard control file](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/pg_recall_guard.control)
 - [pg_recall_guard 0.2.0 SQL definitions](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/pg_recall_guard--0.2.0.sql)
 - [PostgreSQL license](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/LICENSE)
+- [License](https://github.com/Manuelreyesbravo/pg_recall_guard/blob/7199bf8098f129e6769c0bdf642633c916c2d880/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_recall_guard/blob/7199bf8098f129e6769c0bdf642633c916c2d880/CHANGELOG.md)
 
 `pg_recall_guard` measures approximate-nearest-neighbor index recall against an exact baseline and records the value an operator approved. It discovers indexable distance-ordering operators from PostgreSQL catalogs instead of hard-coding one vector extension.
 
@@ -43,3 +45,7 @@ The implementation verifies that the approximate side actually uses the target i
 Each sampled query runs an exact scan, so measurement can be expensive on large tables. Start with a small `p_sample_size`, schedule checks away from peak load, and observe I/O and CPU. Samples come from the indexed table rather than production query traffic; they are a proxy, not a workload trace.
 
 PGXN metadata claims PostgreSQL 13 or newer, while upstream testing covers 18.6 and 19 beta. PostgreSQL 13 through 17 remain untested. Version 0.2.0 has not been field-validated on a production workload, and its published experiments cover a limited set of vector dimensions and index settings. Treat thresholds as workload-specific and approve a baseline only after independent quality testing.
+
+### License Change in 0.2.3
+
+Version 0.2.3 adopts Apache-2.0. Previously published versions through 0.2.2 retain the PostgreSQL License. This release changes no database objects; its upgrade only records the version.

@@ -2,11 +2,13 @@
 
 Sources:
 
-- [README.md](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/README.md)
-- [pg_living_assertions.control](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions.control)
-- [pg_living_assertions--0.4.1--0.5.0.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions--0.4.1--0.5.0.sql)
-- [pg_living_assertions--0.5.0--0.5.1.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/pg_living_assertions--0.5.0--0.5.1.sql)
-- [test/sql/read_only.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/7bf075c6de879b05ec0ed8d135304ece83519317/test/sql/read_only.sql)
+- [README.md](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/README.md)
+- [pg_living_assertions.control](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/pg_living_assertions.control)
+- [pg_living_assertions--0.4.1--0.5.0.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/pg_living_assertions--0.4.1--0.5.0.sql)
+- [pg_living_assertions--0.5.0--0.5.1.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/pg_living_assertions--0.5.0--0.5.1.sql)
+- [test/sql/read_only.sql](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/test/sql/read_only.sql)
+- [License](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_living_assertions/blob/2aaa5638d31109a51cf5ada8fbb0f830aacc8816/CHANGELOG.md)
 
 `pg_living_assertions` 0.5.1 stores SQL checks, verdicts, verification times and replacement history. These are checks run on demand, not SQL ASSERTION constraints evaluated on every write. It is a pure SQL extension with no preload requirement.
 
@@ -34,3 +36,7 @@ Since 0.5.0 the evaluator runs read-only inside a subtransaction that is always 
 After installing the matching files, use `ALTER EXTENSION pg_living_assertions UPDATE TO '0.5.1'`. The 0.4.1→0.5.0→0.5.1 chain replaces evaluator functions without changing registry tables. The final patch qualifies row types in `run()` so type-cache invalidation does not resolve them under an assertion's unrelated search path.
 
 Fresh installation also uses an earlier base SQL script followed by the packaged upgrade chain; keep the complete set of matching scripts installed.
+
+### License Change in 0.5.4
+
+Version 0.5.4 adopts Apache-2.0. Previously published versions through 0.5.3 retain the PostgreSQL License. This release changes no database objects; its upgrade only records the version.

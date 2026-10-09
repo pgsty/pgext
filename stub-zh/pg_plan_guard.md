@@ -6,6 +6,8 @@
 - [pg_plan_guard 控制文件](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/pg_plan_guard.control)
 - [pg_plan_guard 1.1 SQL 定义](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/pg_plan_guard--1.1.sql)
 - [PostgreSQL 许可证](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/LICENSE)
+- [License](https://github.com/Manuelreyesbravo/pg_plan_guard/blob/a9b8893ef82578eb7a3dede21c58bb72cb97fbf2/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_plan_guard/blob/a9b8893ef82578eb7a3dede21c58bb72cb97fbf2/CHANGELOG.md)
 
 `pg_plan_guard` 把认可的 PostgreSQL 19 计划形态保存为 plan-advice 文本，并在重新规划产生不同 advice 时报告漂移。它是关键查询的监控层，不是优化器，也不会自动选择基线。
 
@@ -46,3 +48,7 @@ SELECT * FROM plan_guard.status WHERE state <> 'ok';
 ### 持续断言集成
 
 控制版本 `1.1` 新增 `plan_guard.watch(name, query_sql, note)`，通过 `pg_living_assertions` 注册计划保持不变的断言。只有 `plan_guard.watch` 需要该配套扩展，普通捕获和验证仍可独立使用。调用可选函数前应显式安装配套扩展。PGXN 发行版本为 1.1.0。
+
+### 1.1.3 的许可证变化
+
+1.1.3 改用 Apache-2.0；此前发布的版本（截至 1.1.2）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。

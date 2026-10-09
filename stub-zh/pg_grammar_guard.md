@@ -3,6 +3,8 @@
 来源：
 
 - [PGXN 0.4.1](https://pgxn.org/dist/pg_grammar_guard/0.4.1/)
+- [License](https://github.com/Manuelreyesbravo/pg_grammar_guard/blob/2d55b1b58c24913195dcb9de2126dc8d3114c4fb/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_grammar_guard/blob/2d55b1b58c24913195dcb9de2126dc8d3114c4fb/CHANGELOG.md)
 
 `pg_grammar_guard` 根据目录中的标识符生成 GBNF 或 JSON Schema，并检测已批准语法的漂移。它是无需预加载的纯 SQL 扩展，本包支持 PostgreSQL 14–18。control 文件明确依赖 `pg_living_assertions`。
 
@@ -24,3 +26,7 @@ SELECT grammar_guard.grammar_for_json(ARRAY[
 `grammar_guard.watch()` 保存用于重建语法的查询，`grammar_guard.check_grammar()` 依据实时目录执行检查。可通过 `living_assertions.status` 查看结果及其年龄。
 
 只有受信任的管理员才应登记基线 SQL。语法能限制合法标识符，无法证明选择的表、关联或答案在语义上正确。旧 0.2 系列基线缺少原始生成查询，升级时需要人工重新批准。
+
+### 0.4.4 的许可证变化
+
+0.4.4 改用 Apache-2.0；此前发布的版本（截至 0.4.3）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。

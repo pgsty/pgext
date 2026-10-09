@@ -2,17 +2,18 @@
 
 来源：
 
-- [docs/factors.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/factors.md)
-- [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/volatility.md)
-- [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/covariance.md)
-- [pgquant.control](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/pgquant.control)
-- [README.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/README.md)
-- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/Cargo.toml)
-- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/src/lib.rs)
-- [docs/returns.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/returns.md)
-- [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/1973ed494fa0c1c59d7a145b342144d20010832d/docs/risk.md)
+- [docs/factors.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/factors.md)
+- [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/volatility.md)
+- [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/covariance.md)
+- [pgquant.control](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/pgquant.control)
+- [README.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/README.md)
+- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/Cargo.toml)
+- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/src/lib.rs)
+- [docs/returns.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/returns.md)
+- [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/risk.md)
+- [Portfolio optimization](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/optimization.md)
 
-`pgquant` 计算简单/对数收益率、累积与年化收益率，以及历史、Gaussian 和 Student-t VaR/ES。0.2.0 还提供波动率、协方差和因子构建；动量与投资组合优化仍属于计划功能。
+`pgquant` 计算简单/对数收益率、累积与年化收益率，以及历史、Gaussian 和 Student-t VaR/ES。0.3.0 还提供波动率、协方差和因子构建；WML 动量和无约束均值—方差优化已经实现，仅做多优化仍在计划中。
 
 ### 核心用法
 
@@ -46,3 +47,11 @@ SELECT * FROM pgquant_portfolio_sort(
      ('B'::text, DATE '2026-01-01', 200.0::float8)
   ) AS panel(symbol, date, characteristic_value) $$, 2);
 ```
+
+### WML 动量因子
+
+`pgquant_construct_wml(query)` 接收 symbol TEXT、date DATE、return DOUBLE PRECISION、size_bucket INT、mom_bucket INT 和 weight DOUBLE PRECISION 列。动量分组 1、2、3 分别表示输家、中性和赢家，输出为 date 与 wml_return。应准备类型正确、按规模与动量分组的数据面板，只传入受信任的 SQL。0.3.0 已实现 WML，无约束组合优化也已提供。
+
+### 无约束投资组合优化
+
+`pgquant_mv_optimize_unconstrained` 接收预期收益、按行展开的协方差矩阵、无风险利率和正的风险厌恶参数，返回风险资产权重。权重可以为负，也不保证总和为一，剩余比例分配给无风险资产。这不是仅做多优化器。

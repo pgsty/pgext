@@ -2,15 +2,15 @@
 
 Sources:
 
-- [v1.10.1 README](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/README.md)
-- [v1.10.1 extension control](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.10.1 changelog](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/CHANGELOG.md)
-- [v1.9.1 dump repair](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.10.1 SQL aliases](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.10.1 history functions](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.10.1 excision function](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.10.1 transaction functions](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.10.1 subscriptions](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [v1.11.1 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/README.md)
+- [v1.11.1 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.11.1 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.11.1 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.11.1 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.11.1 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.11.1 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.11.1 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
 
 `pg_mentat` implements a Datomic-compatible data model and Datalog query engine inside PostgreSQL. It stores immutable facts as typed datoms and exposes schema transactions, Datalog queries, pull expressions, time travel, transaction history, and permanent excision through SQL functions. Use it for applications that need this model; it is not a transparent replacement for relational tables or SQL.
 
@@ -93,7 +93,7 @@ Version 1.6.2 fixes deeply nested EDN causing stack exhaustion, non-superuser qu
 
 ### Requirements and Caveats
 
-- Upstream v1.10.1 supports PostgreSQL 13-18. Current Pigsty packages target PostgreSQL 14-18 and are rebuilt with pgrx 0.19.2; upstream's tagged source declares pgrx 0.17. Treat the packaged binary as the compatibility boundary.
+- Upstream v1.10.1 supports PostgreSQL 13-18. The upstream PostgreSQL crate declares pgrx 0.17; packaged binaries can use a different toolchain, so check their own compatibility metadata.
 - The extension is not relocatable and does not require `shared_preload_libraries`.
 - The optional `mentatd` HTTP/Datomic-wire daemon is an upstream companion program and is not included in the Pigsty `pg_mentat` package. SQL use of the extension does not require it.
 - Datalog compilation, pull recursion, full-text attributes, subscriptions, and history can have very different cost profiles. Inspect generated SQL with the documented explain helper and benchmark representative data.
@@ -118,3 +118,7 @@ ALTER EXTENSION pg_mentat UPDATE TO '1.10.1';
 ```
 
 Deployed databases still need the SQL extension update and a verified new logical backup.
+
+### 1.11.1 Packaging Correction
+
+Version 1.11.1 corrects Nix derivation version names and release provenance; it changes no PostgreSQL engine, storage or SQL behavior. The upgrade from 1.11.0 to 1.11.1 is a no-op. The DuckDB storage redesign in 1.11.0 is specific to the separate DuckDB extension. Earlier PostgreSQL upgrades and the logical-backup repair above remain relevant when coming from older versions.

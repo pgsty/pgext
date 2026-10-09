@@ -6,6 +6,8 @@
 - [pg_promise_guard 控制文件](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/pg_promise_guard.control)
 - [pg_promise_guard 0.2.0 SQL 定义](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/pg_promise_guard--0.2.0.sql)
 - [PostgreSQL 许可证](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/LICENSE)
+- [License](https://github.com/Manuelreyesbravo/pg_promise_guard/blob/fb723160d8d2d4a43d0063fc4aa9bf26ea9c38d9/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_promise_guard/blob/fb723160d8d2d4a43d0063fc4aa9bf26ea9c38d9/CHANGELOG.md)
 
 `pg_promise_guard` 用于报告看似存在、实际上完全或部分未执行的模式保证。它只读取 PostgreSQL 系统目录，适合在迁移、批量装载或运维临时绕过之后周期性检查完整性。
 
@@ -46,3 +48,7 @@ PGXN 元数据声明支持 PostgreSQL 13 及以上，但上游只测试过 18.6 
 SELECT promise_guard.watch('public');
 SELECT * FROM living_assertions.status;
 ```
+
+### 0.2.3 的许可证变化
+
+0.2.3 改用 Apache-2.0；此前发布的版本（截至 0.2.2）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。

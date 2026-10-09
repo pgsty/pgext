@@ -2,14 +2,15 @@
 
 Sources:
 
-- [README.md](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/README.md)
-- [pg_local_cache.control](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/pg_local_cache.control)
-- [sql/pg_local_cache--3.0.0.sql](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/sql/pg_local_cache--3.0.0.sql)
-- [sql/pg_local_cache--2.0.4--3.0.0.sql](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/sql/pg_local_cache--2.0.4--3.0.0.sql)
-- [docs/UPGRADING.md](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/docs/UPGRADING.md)
-- [CHANGELOG.md](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/README.md)
+- [pg_local_cache.control](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/pg_local_cache.control)
+- [sql/pg_local_cache--3.1.0.sql](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/sql/pg_local_cache--3.1.0.sql)
+- [sql/pg_local_cache--2.0.4--3.0.0.sql](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/sql/pg_local_cache--2.0.4--3.0.0.sql)
+- [docs/UPGRADING.md](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/docs/UPGRADING.md)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/CHANGELOG.md)
+- [3.0.0 to 3.1.0 upgrade](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/sql/pg_local_cache--3.0.0--3.1.0.sql)
 
-`pg_local_cache` 3.0.0 caches whole rows by their complete primary key in bounded shared memory. Cached reads now use authenticated RESP MGET; SQL `local_cache.mget` is removed and ordinary SELECT queries are not rewritten. PostgreSQL remains the durable source of truth.
+`pg_local_cache` 3.1.0 caches whole rows by their complete primary key in bounded shared memory. Cached reads now use authenticated RESP MGET; SQL `local_cache.mget` is removed and ordinary SELECT queries are not rewritten. PostgreSQL remains the durable source of truth.
 
 ### Core Workflow
 
@@ -44,4 +45,10 @@ Append the library to existing preload entries, provision a dedicated worker rol
 
 Supports PostgreSQL 14–18 on one writable primary. Non-loopback listeners require `pg_local_cache.tls` or explicit `pg_local_cache.allow_plaintext_network` opt-in. TLS uses separate certificate/key settings; a CA setting enables mutual TLS. The reloadable `pg_local_cache.enabled` switch disables caching.
 
-Before upgrading from 2.x, move SQL MGET callers to the RESP authorization model. Install matching 3.0.0 files, configure listener security, restart, confirm the library version and listener readiness, then run `ALTER EXTENSION pg_local_cache UPDATE` in each affected database. Dependencies on removed functions or the replaced metrics return type can block migration; the script deliberately avoids CASCADE. No downgrade script is supplied.
+Before upgrading from 2.x, move SQL MGET callers to the RESP authorization model. Install matching 3.1.0 files, configure listener security, restart, confirm the library version and listener readiness, then run `ALTER EXTENSION pg_local_cache UPDATE` in each affected database. Dependencies on removed functions or the replaced metrics return type can block migration; the script deliberately avoids CASCADE. No downgrade script is supplied.
+
+### Upgrade from 3.0.0 to 3.1.0
+
+Version 3.1.0 changes the shared-memory layout and fixes stale-read races and worker memory leaks. Restart PostgreSQL after installing the matching library, then update the extension in each database; the SQL migration itself changes no objects or attached-table mappings. Verify `pg_local_cache.binary_version` and `local_cache.health()` afterward.
+
+`pg_local_cache.cache_entries` now counts descriptors, while byte capacity comes from slab storage. Review `pg_local_cache.lock_partitions`, dirty-marker limits, the new `pg_local_cache.max_deferred_misses`, client slots and the process file-descriptor limit before restarting. MGET deduplicates misses, but single-flight waiters can use later transactions; a complete response is not guaranteed to share one snapshot.

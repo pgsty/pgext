@@ -6,6 +6,8 @@ Sources:
 - [pg_plan_guard control file](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/pg_plan_guard.control)
 - [pg_plan_guard 1.1 SQL definitions](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/pg_plan_guard--1.1.sql)
 - [PostgreSQL license](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/LICENSE)
+- [License](https://github.com/Manuelreyesbravo/pg_plan_guard/blob/a9b8893ef82578eb7a3dede21c58bb72cb97fbf2/LICENSE)
+- [Changelog](https://github.com/Manuelreyesbravo/pg_plan_guard/blob/a9b8893ef82578eb7a3dede21c58bb72cb97fbf2/CHANGELOG.md)
 
 `pg_plan_guard` captures an approved PostgreSQL 19 plan shape as plan-advice text and reports when replanning produces different advice. It is a monitoring layer for critical queries, not an optimizer or automatic baseline selector.
 
@@ -46,3 +48,7 @@ Queries are stored and replanned as executable SQL text, so parameterized applic
 ### Living Assertion Integration
 
 Control version `1.1` adds `plan_guard.watch(name, query_sql, note)`, which registers an unchanged-plan assertion through `pg_living_assertions`. That companion is required only for `plan_guard.watch`; ordinary capture and verification remain independent. Install the companion explicitly before using the optional function. The PGXN distribution version is 1.1.0.
+
+### License Change in 1.1.3
+
+Version 1.1.3 adopts Apache-2.0. Previously published versions through 1.1.2 retain the PostgreSQL License. This release changes no database objects; its upgrade only records the version.

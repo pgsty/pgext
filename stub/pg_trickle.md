@@ -2,15 +2,16 @@
 
 Sources:
 
-- [0.108.2 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.108.1--0.108.2.sql)
-- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.108.0--0.108.1.sql)
-- [Version 0.108.2 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/README.md)
-- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/SQL_REFERENCE.md)
-- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/CONFIGURATION.md)
-- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/GUC_CATALOG.md)
-- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/UPGRADING.md)
-- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/pg_trickle.control)
-- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.107.0--0.108.0.sql)
+- [0.108.3 migration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.108.2--0.108.3.sql)
+- [0.108.2 migration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.108.1--0.108.2.sql)
+- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.108.0--0.108.1.sql)
+- [Version 0.108.2 README](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/README.md)
+- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/SQL_REFERENCE.md)
+- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/CONFIGURATION.md)
+- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/GUC_CATALOG.md)
+- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/UPGRADING.md)
+- [Control file](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/pg_trickle.control)
+- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.107.0--0.108.0.sql)
 
 `pg_trickle` 0.108.2 maintains stream tables on PostgreSQL 18: ordinary queryable tables derived from a SQL query, refreshed incrementally when supported or recomputed in full. Tables may depend on other stream tables, forming a dependency graph. Same-transaction maintenance is also available.
 
@@ -85,3 +86,7 @@ This patch keeps downstream `IMMEDIATE` tables current after upstream FULL refre
 ### Version 0.108.2 and Row Identity V3
 
 The 0.108.2 migration fixes blank-padded character identity encoding through `pgtrickle.encode_row_id_v3`. It marks existing stream tables for reinitialization and blocks differential maintenance until a protected FULL rebuild. Existing output-delta consumers and durable cursors remain, but consumers move to `RESNAPSHOT_REQUIRED`; old resnapshot tokens are removed. Establish and acknowledge a new baseline before resuming external consumption. External refresh clients must fetch the new graph-contract digest. Budget for full recomputation and verify maintained results after upgrading. Queued change rows are retained while capture sentinels are replaced.
+
+### Version 0.108.3
+
+0.108.3 aligns FULL and DIFFERENTIAL row identity when a projection omits its source primary key, including duplicate visible rows. The UNION ALL fast path is restricted to a complete UNION ALL query. After `ALTER EXTENSION pg_trickle UPDATE TO '0.108.3'`, run a protected FULL refresh for every stream table marked for reinitialization, using `pgtrickle.refresh_stream_table`. Differential maintenance waits for that rebuild; queued CDC changes are retained. Verify output-delta consumer status and any required baseline before resuming delivery.

@@ -2,18 +2,19 @@
 
 来源：
 
-- [sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql)
-- [sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql)
-- [sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql)
-- [README.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/README.md)
-- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/pg_tviews.control)
-- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/Cargo.toml)
-- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/CHANGELOG.md)
-- [scripts/migrate-from-0.1.0.sql](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/scripts/migrate-from-0.1.0.sql)
-- [docs/reference/read-contract.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/docs/reference/read-contract.md)
-- [docs/operations/replication.md](https://github.com/fraiseql/pg_tviews/blob/39637679ade96d05dd8d789096438bed246624c7/docs/operations/replication.md)
+- [beta.25 migration](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/sql/pg_tviews--0.1.0-beta.24--0.1.0-beta.25.sql)
+- [sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/sql/pg_tviews--0.1.0-beta.23--0.1.0-beta.24.sql)
+- [sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/sql/pg_tviews--0.1.0-beta.21--0.1.0-beta.22.sql)
+- [sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/sql/pg_tviews--0.1.0-beta.22--0.1.0-beta.23.sql)
+- [README.md](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/README.md)
+- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/pg_tviews.control)
+- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/Cargo.toml)
+- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/CHANGELOG.md)
+- [scripts/migrate-from-0.1.0.sql](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/scripts/migrate-from-0.1.0.sql)
+- [docs/reference/read-contract.md](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/docs/reference/read-contract.md)
+- [docs/operations/replication.md](https://github.com/fraiseql/pg_tviews/blob/ef096bc3515652969bffb69bac69db4e86325193/docs/operations/replication.md)
 
-`pg_tviews` 0.1.0-beta.24 通过查询分析与基表触发器在事务内维护派生 TVIEW 表。扩展对象现在全部位于固定的 `tviews` 模式，SQL 版本也与发布版本一致。
+`pg_tviews` 0.1.0-beta.25 通过查询分析与基表触发器在事务内维护派生 TVIEW 表。扩展对象现在全部位于固定的 `tviews` 模式，SQL 版本也与发布版本一致。
 
 ### 核心用法
 
@@ -36,7 +37,7 @@ beta.23 的基本创建／刷新支持惰性加载，无需共享预加载；自
 
 ### beta.21–22 升级
 
-`pg_tviews.uncascaded_policy` 在创建时保存：`warn`（默认）、`error` 或 `full_refresh` 决定如何处理无法将写入映射到 TVIEW 键的基表。beta.22 修复 READ COMMITTED 刷新之间的更新丢失，以及若干外连接、CTE 和 DISTINCT ON 依赖路径。正常 beta 版本升级后需重新登记全部 TVIEW；旧 SQL 版本 0.1.0 仍需执行前述独立迁移。
+`pg_tviews.uncascaded_policy` 在创建时保存：`warn`（beta.25 之前的默认值）、`error` 或 `full_refresh` 决定如何处理无法将写入映射到 TVIEW 键的基表。beta.22 修复 READ COMMITTED 刷新之间的更新丢失，以及若干外连接、CTE 和 DISTINCT ON 依赖路径。正常 beta 版本升级后需重新登记全部 TVIEW；旧 SQL 版本 0.1.0 仍需执行前述独立迁移。
 
 ```sql
 ALTER EXTENSION pg_tviews UPDATE;
@@ -50,3 +51,7 @@ beta.23 将各 TVIEW 的唯一行身份记录在 `tviews.registry.identity`；`D
 ### beta.24 生成列
 
 beta.24 修复 PostgreSQL 18 虚拟生成列的依赖跟踪与刷新键映射。安装配套共享库后，执行 ALTER EXTENSION UPDATE 和 `tviews.pg_tviews_reregister_all()`，重新生成已有 TVIEW 的元数据与触发器。这是扩展自身的更新，不会为旧版 PostgreSQL 增加虚拟生成列。
+
+### beta.25 内部视图与策略
+
+内部视图从应用模式移至 `tviews.<schema>__tv_<entity>`，工具应通过 `tviews.registry.view` 查找它们。`pg_tviews.uncascaded_policy` 的默认值改为 `error`，已有 TVIEW 保留记录的策略，新定义如需接受无法级联的来源，必须显式声明策略。由超级用户或拥有全部内部视图的扩展所有者执行升级，然后运行 `tviews.pg_tviews_reregister_all()`。迁移后的视图继承对应 TVIEW 表的 SELECT 权限，只授予旧视图的权限可能丢失；应检查自定义 ACL，并按需授予对应 TVIEW 表的 SELECT 权限。

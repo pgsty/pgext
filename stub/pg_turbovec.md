@@ -2,13 +2,13 @@
 
 Sources:
 
-- [v2.10.3 README](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/README.md)
-- [v2.10.3 changelog](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/CHANGELOG.md)
-- [Upgrade matrix](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/docs/UPGRADING.md)
-- [Control file](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/pg_turbovec.control)
-- [Filtering guide](https://codeberg.org/gregburd/pg_turbovec/src/tag/v2.10.3/docs/FILTERING.md)
+- [v2.12.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/README.md)
+- [v2.12.0 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/CHANGELOG.md)
+- [Upgrade matrix](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/docs/UPGRADING.md)
+- [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/pg_turbovec.control)
+- [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.10.3 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
+`pg_turbovec` 2.12.0 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
 
 ### Create and Query Vectors
 
@@ -57,12 +57,12 @@ SET turbovec.search_k = 64;
 
 The settings query must return a nonzero count. A custom dotted parameter accepted by SET is not proof that the extension's GUC registered. Important controls are `turbovec.probes`, `turbovec.search_k`, `turbovec.oversample`, `turbovec.iterative_scan` and `turbovec.cache_size_mb`. Use partial indexes for stable filters or the documented allowlist/iterative-scan paths; compare filtered results with an exact baseline. Native partitions have separate indexes that must each be maintained.
 
-### Upgrade from 1.x to 2.10.3
+### Upgrade from 1.x to 2.12.0
 
 Schedule a maintenance window and retain the heap vectors plus a verified backup. Install the matching new binaries, update the SQL extension, and restart PostgreSQL so every backend uses the new library:
 
 ```sql
-ALTER EXTENSION pg_turbovec UPDATE TO '2.10.3';
+ALTER EXTENSION pg_turbovec UPDATE TO '2.12.0';
 ```
 
 The index format changed from 7 to 8 in 2.0.0. Old indexes cannot be read in place: **rebuild every TurboVec index from the heap before resuming queries**, including every partition's index. In psql, generate and run the rebuild statements:
@@ -83,3 +83,13 @@ The 2.10.2-to-2.10.3 patch preserves format 8 and does not itself require reinde
 ### Compatibility and Maintenance
 
 The control file fixes objects in schema `turbovec`, sets `superuser = false`, and is not relocatable. Upstream covers PostgreSQL 13–18 and labels PostgreSQL 19 experimental in this release; current Pigsty packages cover 14–18. Binary replacement, tuning preload and major-format migration have separate restart/rebuild requirements. Version 2.10.3 parallelizes cold-backend code repacking; it does not change existing index bytes. Budget index-build memory, temporary space, WAL and vacuum work from the actual corpus, rather than treating upstream benchmark numbers as guarantees.
+
+### 2.11.0 Upgrade
+
+Version 2.11.0 adopts staged 2/4-bit search on eligible hardware and large indexes; the approximate candidate set can change. It also fixes concurrent-write index corruption and per-scan memory leaks present in 2.10.3 and earlier. When upgrading a healthy format-8 index from 2.x, install matching files, update the extension and restart: the release changes neither SQL surface nor wire format and does not require routine REINDEX. Existing corruption still requires repair; this does not change the mandatory rebuild for 1.x indexes.
+
+### Distance Rounding in 2.12.0
+
+Vectorized exact-distance kernels change rounding for vector and halfvec inputs with eight or more dimensions. Very close neighbors can change order or cross a distance threshold; sparsevec operators are unchanged. Format 8 and existing index bytes are unchanged: update the SQL extension and reconnect or restart to load the new library, without a routine index rebuild.
+
+Expression indexes, partial-index predicates, stored generated columns and materialized views may retain older rounded results. Rebuild indexes, refresh views and recompute stored derived values if exact agreement with new calculations matters. Existing corruption still needs repair, and all 1.x indexes still require rebuilding. IVF indexes created empty or truncated do not train cells; load data and follow the upstream rebuild procedure.

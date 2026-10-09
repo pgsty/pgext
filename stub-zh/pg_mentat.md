@@ -2,15 +2,15 @@
 
 来源：
 
-- [v1.10.1 README](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/README.md)
-- [v1.10.1 extension control](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.10.1 changelog](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/CHANGELOG.md)
-- [v1.9.1 dump repair](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.10.1 SQL aliases](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.10.1 history functions](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.10.1 excision function](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.10.1 transaction functions](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.10.1 subscriptions](https://codeberg.org/gregburd/mentat/src/tag/v1.10.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [v1.11.1 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/README.md)
+- [v1.11.1 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.11.1 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.11.1 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.11.1 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.11.1 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.11.1 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.11.1 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
 
 `pg_mentat` 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
 
@@ -93,7 +93,7 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 ### 要求与注意事项
 
-- 上游 v1.10.1 支持 PostgreSQL 13-18。当前 Pigsty 软件包面向 PostgreSQL 14-18，并使用 pgrx 0.19.2 重新构建；上游标签源码声明使用 pgrx 0.17。请将打包后的二进制作为兼容性边界。
+- 上游 v1.10.1 支持 PostgreSQL 13-18。上游 PostgreSQL crate 声明使用 pgrx 0.17；软件包二进制可能使用不同工具链，应核对其自身的兼容性元数据。
 - 该扩展不可重定位，也不要求 `shared_preload_libraries`。
 - 可选的 `mentatd` HTTP/Datomic 线协议守护进程是上游配套程序，不包含在 Pigsty `pg_mentat` 软件包中。仅通过 SQL 使用扩展并不需要它。
 - Datalog 编译、递归 pull、全文属性、订阅和历史记录可能呈现截然不同的成本特征。请使用文档所述的 explain 辅助函数检查生成的 SQL，并在代表性数据上进行基准测试。
@@ -118,3 +118,7 @@ ALTER EXTENSION pg_mentat UPDATE TO '1.10.1';
 ```
 
 已部署数据库仍需执行 SQL 扩展升级并验证新的逻辑备份。
+
+### 1.11.1 的打包信息修正
+
+1.11.1 修正 Nix 派生包版本名称及发布溯源，不改变 PostgreSQL 引擎、存储或 SQL 行为。1.11.0 到 1.11.1 的升级不修改数据库对象。1.11.0 的 DuckDB 存储改造仅影响独立的 DuckDB 扩展；从更早版本升级时，仍需遵循上面的 PostgreSQL 升级和逻辑备份修复要求。

@@ -2,19 +2,20 @@
 
 来源：
 
-- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_ortools/Cargo.toml)
-- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_ortools/src/worker.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_ortools/pgbrew.toml)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/LICENSE)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_ortools/pgbrew.toml)
-- [官方 pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_ortools/README.md)
-- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_ortools/pg_ortools.control)
-- [SQL API 实现](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_ortools/src/lib.rs)
+- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/Cargo.toml)
+- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/src/worker.rs)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/crates/pg_bgworker/src/supervision.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/CHANGELOG.md)
+- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/pgbrew.toml)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/LICENSE)
+- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/pgbrew.toml)
+- [官方 pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/README.md)
+- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/pg_ortools.control)
+- [SQL API 实现](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/src/lib.rs)
+- [0.3.3 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/sql/pg_ortools--0.3.2--0.3.3.sql)
 
-`pg_ortools` 版本 `0.3.2` 用 SQL 定义混合整数与线性优化问题，并通过 HiGHS 求解。它适合有界指派、资源分配、可行性及目标优化工作负载，这些问题通常可表示为整数或布尔变量和线性约束。
+`pg_ortools` 版本 `0.3.3` 用 SQL 定义混合整数与线性优化问题，并通过 HiGHS 求解。它适合有界指派、资源分配、可行性及目标优化工作负载，这些问题通常可表示为整数或布尔变量和线性约束。
 
 ### 核心流程
 
@@ -57,3 +58,9 @@ SELECT pgortools.get_solution('example');
 ALTER EXTENSION pg_ortools UPDATE;
 SELECT * FROM pgortools.worker_status();
 ```
+
+### 0.3.3 的局部搜索
+
+仓库发布 0.5.1 包含扩展版本 0.3.3。类型约束 `assignment` 配合 `{"each": "slot"}` 可让每个班次恰好分配一名员工，同时允许员工承担多个班次。局部搜索会在内部转置问题并还原结果；`no_overlap`、`skill_match`、成本和 `pin_current` 保持调用方的方向约定，此模式拒绝 `group_balance`。类型约束配置无法解析时，现在会使求解失败，不再静默跳过。
+
+0.3.2 到 0.3.3 的 SQL 升级不修改对象。安装匹配的库并更新扩展；异步工作进程仍需预加载和重启。源码特性覆盖 PostgreSQL 14–18，已发布的瓶装包面向 PostgreSQL 18。

@@ -2,15 +2,16 @@
 
 来源：
 
-- [0.108.2 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.108.1--0.108.2.sql)
-- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.108.0--0.108.1.sql)
-- [Version 0.108.2 README](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/README.md)
-- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/SQL_REFERENCE.md)
-- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/CONFIGURATION.md)
-- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/GUC_CATALOG.md)
-- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/docs/UPGRADING.md)
-- [Control file](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/pg_trickle.control)
-- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/v0.108.2/sql/pg_trickle--0.107.0--0.108.0.sql)
+- [0.108.3 migration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.108.2--0.108.3.sql)
+- [0.108.2 migration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.108.1--0.108.2.sql)
+- [sql/pg_trickle--0.108.0--0.108.1.sql](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.108.0--0.108.1.sql)
+- [Version 0.108.2 README](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/README.md)
+- [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/SQL_REFERENCE.md)
+- [Configuration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/CONFIGURATION.md)
+- [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/GUC_CATALOG.md)
+- [Upgrade guide](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/docs/UPGRADING.md)
+- [Control file](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/pg_trickle.control)
+- [0.107.0 to 0.108.0 migration](https://github.com/trickle-labs/pg-trickle/blob/ce709f06327b4801f79fc48934bc96107b450907/sql/pg_trickle--0.107.0--0.108.0.sql)
 
 `pg_trickle` 0.108.2 在 PostgreSQL 18 上维护流式表：由 SQL 查询定义、可以常规查询的数据表；在支持时增量刷新，也可全量重算。流式表可依赖其他流式表，形成依赖图，同时支持在同一事务中维护结果。
 
@@ -85,3 +86,7 @@ SELECT * FROM pgtrickle.output_delta_consumer_status();
 ### 0.108.2 与行身份 V3
 
 0.108.2 的迁移通过 `pgtrickle.encode_row_id_v3` 修复空格填充字符类型的身份编码。已有流表会被标记为需要重新初始化，在受保护的 FULL 重建完成前阻止差分维护。现有输出增量消费者及持久游标被保留，但消费者会进入 `RESNAPSHOT_REQUIRED`，旧的重新快照令牌会被清除。恢复外部消费前必须建立并确认新基线，外部刷新客户端还须获取新的图契约摘要；应为全量重新计算预留资源，并在升级后核对维护结果。迁移替换捕获哨兵，但保留排队的变更行。
+
+### 0.108.3 版本
+
+0.108.3 修复投影省略来源主键时 FULL 与 DIFFERENTIAL 刷新的行身份不一致问题，也覆盖可见值重复的来源行。UNION ALL 快速路径现在只用于完整的 UNION ALL 查询。执行 `ALTER EXTENSION pg_trickle UPDATE TO '0.108.3'` 后，使用 `pgtrickle.refresh_stream_table` 为每张标记为待初始化的流表执行受保护的 FULL 刷新；差量维护会等待重建完成，排队的 CDC 变化会保留。恢复外部投递前仍需检查输出增量消费者状态与必要的基线。
