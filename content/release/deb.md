@@ -6,6 +6,31 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-10-11
+
+| Name | Old | New | Comment |
+|:---|:---|:---|:---|
+| arrow | 22.0.0 | 24.0.0 / 25.0.1 | Bookworm 24.0.0, others 25.0.1; includes compute/devel; imported locally |
+| groonga | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5, others 16.1.3; includes libgroonga-dev; imported locally |
+| groonga-tokenizer-mecab | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5, others 16.1.3; MeCab tokenizer; imported locally |
+| pg_background | 2.0.4-1PGSTY | 2.0.4-2PGSTY | PG14-18; remove downstream upgrade patch; built, import pending |
+| pg_fts | 1.9.0 | 1.12.0 | PG17-18; built, import pending |
+| pg_grammar_guard | 0.4.1 | 0.4.9 | PG14-18; Apache-2.0; built, import pending |
+| pg_living_assertions | 0.5.1 | 0.5.10 | PG14-18; SQL-only; Apache-2.0; built, import pending |
+| pg_local_cache | 2.0.4 | 3.1.0 | PG14-18; OpenSSL dependency; built, import pending |
+| pg_mentat | 1.10.3 | 1.11.1 | PG14-18; pgrx 0.19.3; built, import pending |
+| pg_search | 0.26.0 | 0.26.1 | PG15-18; pgrx 0.19.3; built, import pending |
+| pg_semver | 0.41.0 | 0.42.0 | PG14-18; new DEB recipe; imported locally |
+| pg_tle | 1.5.2 | 1.5.3 | PG14-18; built, import pending |
+| pg_trickle | 0.108.1 | 0.108.3 | PG18; pgrx 0.19.3; built, import pending |
+| pg_turbovec | 2.10.3 | 2.12.0 | PG14-18; pgrx 0.19.3; built, import pending |
+| pg_utl_smtp | 1.0.0 | 2.0.0 | PG14-18; IO::Socket::SSL dependency; built, import pending |
+| pgrdf | 0.6.39 | 0.6.40 | PG14-18; pgrx 0.19.3; built, import pending |
+| pgroonga | 4.0.9 | 4.1.0 | PG14-18; includes pgroonga_database; imported locally |
+| plpgsql_check | 2.10.11 | 2.10.14 | PG14-18; SQL version 2.10; imported locally |
+| rdkit | 202609.1-1PGSTY | 202609.1-2PGSTY | PG14-18; Debian 13, Ubuntu 24/26; remove downstream upgrade patch; built, import pending |
+| timescaledb | 2.30.2-1PGSTY | 2.30.2-2PGSTY | PG16-18; TSL; declare conflict with Apache package; built, import pending |
+
 ## 2026-10-06
 
 | Name | Old | New | Comment |

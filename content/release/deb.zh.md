@@ -6,6 +6,31 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+## 2026-10-11
+
+| 名称 | 旧版本 | 新版本 | 备注 |
+|:---|:---|:---|:---|
+| arrow | 22.0.0 | 24.0.0 / 25.0.1 | Bookworm 24.0.0，其余 25.0.1；含 compute/devel；本地已入库 |
+| groonga | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5，其余 16.1.3；含 libgroonga-dev；本地已入库 |
+| groonga-tokenizer-mecab | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5，其余 16.1.3；MeCab 分词插件；本地已入库 |
+| pg_background | 2.0.4-1PGSTY | 2.0.4-2PGSTY | PG14-18；移除下游升级补丁；已构建，待入库 |
+| pg_fts | 1.9.0 | 1.12.0 | PG17-18；已构建，待入库 |
+| pg_grammar_guard | 0.4.1 | 0.4.9 | PG14-18；Apache-2.0；已构建，待入库 |
+| pg_living_assertions | 0.5.1 | 0.5.10 | PG14-18；纯 SQL；Apache-2.0；已构建，待入库 |
+| pg_local_cache | 2.0.4 | 3.1.0 | PG14-18；OpenSSL 依赖；已构建，待入库 |
+| pg_mentat | 1.10.3 | 1.11.1 | PG14-18；pgrx 0.19.3；已构建，待入库 |
+| pg_search | 0.26.0 | 0.26.1 | PG15-18；pgrx 0.19.3；已构建，待入库 |
+| pg_semver | 0.41.0 | 0.42.0 | PG14-18；新增 DEB 配方；本地已入库 |
+| pg_tle | 1.5.2 | 1.5.3 | PG14-18；已构建，待入库 |
+| pg_trickle | 0.108.1 | 0.108.3 | PG18；pgrx 0.19.3；已构建，待入库 |
+| pg_turbovec | 2.10.3 | 2.12.0 | PG14-18；pgrx 0.19.3；已构建，待入库 |
+| pg_utl_smtp | 1.0.0 | 2.0.0 | PG14-18；IO::Socket::SSL 依赖；已构建，待入库 |
+| pgrdf | 0.6.39 | 0.6.40 | PG14-18；pgrx 0.19.3；已构建，待入库 |
+| pgroonga | 4.0.9 | 4.1.0 | PG14-18；含 pgroonga_database；本地已入库 |
+| plpgsql_check | 2.10.11 | 2.10.14 | PG14-18；SQL 版本 2.10；本地已入库 |
+| rdkit | 202609.1-1PGSTY | 202609.1-2PGSTY | PG14-18；Debian 13、Ubuntu 24/26；移除下游升级补丁；已构建，待入库 |
+| timescaledb | 2.30.2-1PGSTY | 2.30.2-2PGSTY | PG16-18；TSL；声明与 Apache 版冲突；已构建，待入库 |
+
 ## 2026-10-06
 
 | 名称 | 旧版本 | 新版本 | 备注 |
