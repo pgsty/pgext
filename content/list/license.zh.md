@@ -18,8 +18,8 @@ page_width: full
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 263 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 111 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "PostgreSQL" >}} | 261 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 113 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 104 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -46,7 +46,7 @@ page_width: full
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="263 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="261 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -65,7 +65,6 @@ page_width: full
 | 1800 | {{< alias "vector" "pgvector" >}} | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 在PostgreSQL中封装RAG向量检索服务 |
-| 1890 | {{< alias "pg_grammar_guard" >}} | 根据实时目录生成语法并检测已批准语法的漂移 |
 | 1900 | {{< alias "jev" >}} | 通过兼容 Jev 的 API 实现自然语言行过滤、排序和分类 |
 | 2110 | {{< alias "pgroonga" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
@@ -217,7 +216,6 @@ page_width: full
 | 5220 | {{< alias "pg_cheat_funcs" >}} | 一些超级实用的作弊函数 |
 | 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
 | 5270 | {{< alias "online_advisor" >}} | 在线建议缺失索引、扩展统计信息与预备语句 |
-| 5300 | {{< alias "pg_living_assertions" >}} | 保存可执行 SQL 检查、核验日期和断言变更历史 |
 | 5850 | {{< alias "pg_drop_events" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
 | 5860 | {{< alias "table_log" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5870 | {{< alias "pgelog" >}} | 通过伪自治事务实现扩展日志记录 |
@@ -320,7 +318,7 @@ page_width: full
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="111 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="113 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -332,6 +330,7 @@ page_width: full
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 为 QDGC 增加 PostGIS geometry/geography 绑定与区域到网格单元的填充能力。 |
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
+| 1890 | {{< alias "pg_grammar_guard" >}} | 根据实时目录生成语法并检测已批准语法的漂移 |
 | 1950 | {{< alias "pgmnemo" >}} | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 1960 | {{< alias "pgcontext" >}} | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
@@ -410,6 +409,7 @@ page_width: full
 | 4500 | {{< alias "pg_idkit" >}} | 生成各式各样的唯一标识符：UUIDv6, ULID, KSUID |
 | 4700 | {{< alias "datasketches" >}} | PostgreSQL 近似分析摘要数据结构与聚合函数 |
 | 5070 | {{< alias "pg_cooldown" >}} | 从缓冲区中移除特定关系的页面 |
+| 5300 | {{< alias "pg_living_assertions" >}} | 保存可执行 SQL 检查、核验日期和断言变更历史 |
 | 5810 | {{< alias "pg_savior" >}} | 阻止不带条件的全表更新以避免意外事故 |
 | 5815 | {{< alias "pg_circuit" >}} | 针对危险 SQL 语句提供运行时观察、告警和拦截 |
 | 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
@@ -469,7 +469,7 @@ page_width: full
 | 2640 | {{< alias "pgrdf" >}} | PostgreSQL 内 RDF、SPARQL、SHACL 与 OWL 推理扩展 |
 | 2760 | {{< alias "jsonschema" >}} | PostgreSQL JSON Schema 校验函数 |
 | 2765 | {{< alias "is_jsonb_valid" >}} | 原生 JSONB 校验，支持 JSON Schema 草案 4 与 7 |
-| 2890 | {{< alias "pg_local_cache" >}} | 为普通 PostgreSQL 主键读取提供事务感知的共享内存缓存 |
+| 2890 | {{< alias "pg_local_cache" >}} | 通过 RESP2 MGET 提供 PostgreSQL 主键整行读取的事务感知共享内存缓存 |
 | 2900 | {{< alias "provsql" >}} | PostgreSQL 半环溯源、概率与不确定性管理扩展 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 3020 | {{< alias "pllua" >}} | Lua 程序语言 |

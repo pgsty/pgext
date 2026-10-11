@@ -108,7 +108,7 @@ weight: 200
 | 2840 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
 | 2880 | {{< alias "pg_disorder" >}} | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
-| 2890 | {{< alias "pg_local_cache" >}} | 为普通 PostgreSQL 主键读取提供事务感知的共享内存缓存 |
+| 2890 | {{< alias "pg_local_cache" >}} | 通过 RESP2 MGET 提供 PostgreSQL 主键整行读取的事务感知共享内存缓存 |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
 | 2940 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Omnigres 基础会话认证管理模块 |

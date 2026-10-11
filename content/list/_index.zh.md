@@ -7,7 +7,7 @@ comments: false
 ---
 
 PostgreSQL 已打包扩展目录包含 **600** 个扩展和 **431** 个软件包。
-PGEXT.CLOUD 总目录收录 **2551** 个扩展。
+PGEXT.CLOUD 总目录收录 **2615** 个扩展。
 
 ## 扩展统计
 

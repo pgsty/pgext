@@ -1,7 +1,7 @@
 ---
 title: "pg_local_cache"
 linkTitle: "pg_local_cache"
-description: "Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads"
+description: "Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET"
 weight: 2890
 categories: ["FEAT"]
 languages: ["C"]
@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pg_local_cache**](https://github.com/profundium/pg_local_cache) : Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads
+[**pg_local_cache**](https://github.com/profundium/pg_local_cache) : Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2890** | {{< badge content="pg_local_cache" link="https://github.com/profundium/pg_local_cache" >}} | {{< ext "pg_local_cache" >}} | `2.0.4` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **2890** | {{< badge content="pg_local_cache" link="https://github.com/profundium/pg_local_cache" >}} | {{< ext "pg_local_cache" >}} | `3.1.0` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -36,9 +36,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_local_cache` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "pg_local_cache_18" "green" >}} {{< bg "17" "pg_local_cache_17" "green" >}} {{< bg "16" "pg_local_cache_16" "green" >}} {{< bg "15" "pg_local_cache_15" "green" >}} {{< bg "14" "pg_local_cache_14" "green" >}} | `pg_local_cache_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "postgresql-18-pg-local-cache" "green" >}} {{< bg "17" "postgresql-17-pg-local-cache" "green" >}} {{< bg "16" "postgresql-16-pg-local-cache" "green" >}} {{< bg "15" "postgresql-15-pg-local-cache" "green" >}} {{< bg "14" "postgresql-14-pg-local-cache" "green" >}} | `postgresql-$v-pg-local-cache` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_local_cache` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "pg_local_cache_18" "green" >}} {{< bg "17" "pg_local_cache_17" "green" >}} {{< bg "16" "pg_local_cache_16" "green" >}} {{< bg "15" "pg_local_cache_15" "green" >}} {{< bg "14" "pg_local_cache_14" "green" >}} | `pg_local_cache_$v` | `openssl-libs` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "postgresql-18-pg-local-cache" "green" >}} {{< bg "17" "postgresql-17-pg-local-cache" "green" >}} {{< bg "16" "postgresql-16-pg-local-cache" "green" >}} {{< bg "15" "postgresql-15-pg-local-cache" "green" >}} {{< bg "14" "postgresql-14-pg-local-cache" "green" >}} | `postgresql-$v-pg-local-cache` | `libssl3 | libssl3t64` |
 {.packages}
 
 
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/profundium/pg_local_cache" title="Repository" icon="github" subtitle="github.com/profundium/pg_local_cache" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_local_cache-2.0.4.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_local_cache-3.1.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -232,14 +232,15 @@ CREATE EXTENSION pg_local_cache;
 
 Sources:
 
-- [README.md](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/README.md)
-- [pg_local_cache.control](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/pg_local_cache.control)
-- [sql/pg_local_cache--3.0.0.sql](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/sql/pg_local_cache--3.0.0.sql)
-- [sql/pg_local_cache--2.0.4--3.0.0.sql](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/sql/pg_local_cache--2.0.4--3.0.0.sql)
-- [docs/UPGRADING.md](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/docs/UPGRADING.md)
-- [CHANGELOG.md](https://github.com/profundium/pg_local_cache/blob/940f796de41bf4ad22de3f8efc32dcf6d6b791b9/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/README.md)
+- [pg_local_cache.control](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/pg_local_cache.control)
+- [sql/pg_local_cache--3.1.0.sql](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/sql/pg_local_cache--3.1.0.sql)
+- [sql/pg_local_cache--2.0.4--3.0.0.sql](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/sql/pg_local_cache--2.0.4--3.0.0.sql)
+- [docs/UPGRADING.md](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/docs/UPGRADING.md)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/CHANGELOG.md)
+- [3.0.0 to 3.1.0 upgrade](https://api.pgxn.org/src/pg_local_cache/pg_local_cache-3.1.0/sql/pg_local_cache--3.0.0--3.1.0.sql)
 
-`pg_local_cache` 3.0.0 caches whole rows by their complete primary key in bounded shared memory. Cached reads now use authenticated RESP MGET; SQL `local_cache.mget` is removed and ordinary SELECT queries are not rewritten. PostgreSQL remains the durable source of truth.
+`pg_local_cache` 3.1.0 caches whole rows by their complete primary key in bounded shared memory. Cached reads now use authenticated RESP MGET; SQL `local_cache.mget` is removed and ordinary SELECT queries are not rewritten. PostgreSQL remains the durable source of truth.
 
 ### Core Workflow
 
@@ -274,4 +275,10 @@ Append the library to existing preload entries, provision a dedicated worker rol
 
 Supports PostgreSQL 14–18 on one writable primary. Non-loopback listeners require `pg_local_cache.tls` or explicit `pg_local_cache.allow_plaintext_network` opt-in. TLS uses separate certificate/key settings; a CA setting enables mutual TLS. The reloadable `pg_local_cache.enabled` switch disables caching.
 
-Before upgrading from 2.x, move SQL MGET callers to the RESP authorization model. Install matching 3.0.0 files, configure listener security, restart, confirm the library version and listener readiness, then run `ALTER EXTENSION pg_local_cache UPDATE` in each affected database. Dependencies on removed functions or the replaced metrics return type can block migration; the script deliberately avoids CASCADE. No downgrade script is supplied.
+Before upgrading from 2.x, move SQL MGET callers to the RESP authorization model. Install matching 3.1.0 files, configure listener security, restart, confirm the library version and listener readiness, then run `ALTER EXTENSION pg_local_cache UPDATE` in each affected database. Dependencies on removed functions or the replaced metrics return type can block migration; the script deliberately avoids CASCADE. No downgrade script is supplied.
+
+### Upgrade from 3.0.0 to 3.1.0
+
+Version 3.1.0 changes the shared-memory layout and fixes stale-read races and worker memory leaks. Restart PostgreSQL after installing the matching library, then update the extension in each database; the SQL migration itself changes no objects or attached-table mappings. Verify `pg_local_cache.binary_version` and `local_cache.health()` afterward.
+
+`pg_local_cache.cache_entries` now counts descriptors, while byte capacity comes from slab storage. Review `pg_local_cache.lock_partitions`, dirty-marker limits, the new `pg_local_cache.max_deferred_misses`, client slots and the process file-descriptor limit before restarting. MGET deduplicates misses, but single-flight waiters can use later transactions; a complete response is not guaranteed to share one snapshot.

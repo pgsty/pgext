@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9630** | {{< badge content="wal2json" link="https://github.com/eulerto/wal2json" >}} | {{< ext "wal2json" >}} | `2.6` | {{< category "ETL" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **9630** | {{< badge content="wal2json" link="https://github.com/eulerto/wal2json" >}} | {{< ext "wal2json" >}} | `2.7` | {{< category "ETL" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,25 +29,27 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "decoderbufs" >}} {{< ext "pgoutput" >}} {{< ext "test_decoding" >}} {{< ext "pgmqtt" >}} {{< ext "pgq" >}} {{< ext "kafka_fdw" >}} {{< ext "wal2mongo" >}} {{< ext "decoder_raw" >}} {{< ext "pg_walinspect" >}} {{< ext "pg_logicalinspect" >}} |
 
+> [!Note] Upstream/current RPM matrix 2.7; DEB matrix 2.6. Headless logical decoding plugin, no CREATE EXTENSION or preload. Requires wal2json in output_plugin_libraries on PostgreSQL 18.6/17.11/16.15/15.19/14.24 and later minors.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `wal2json` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "wal2json_18" "green" >}} {{< bg "17" "wal2json_17" "green" >}} {{< bg "16" "wal2json_16" "green" >}} {{< bg "15" "wal2json_15" "green" >}} {{< bg "14" "wal2json_14" "green" >}} | `wal2json_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `wal2json` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7` | {{< bg "18" "wal2json_18" "green" >}} {{< bg "17" "wal2json_17" "green" >}} {{< bg "16" "wal2json_16" "green" >}} {{< bg "15" "wal2json_15" "green" >}} {{< bg "14" "wal2json_14" "green" >}} | `wal2json_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "postgresql-18-wal2json" "green" >}} {{< bg "17" "postgresql-17-wal2json" "green" >}} {{< bg "16" "postgresql-16-wal2json" "green" >}} {{< bg "15" "postgresql-15-wal2json" "green" >}} {{< bg "14" "postgresql-14-wal2json" "green" >}} | `postgresql-$v-wal2json` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.6" "wal2json_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_14 : AVAIL 3" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.6" "wal2json_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.6" "wal2json_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_14 : AVAIL 2" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.6" "wal2json_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_14 : AVAIL 4" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.6" "wal2json_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_14 : AVAIL 2" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.6" "wal2json_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "wal2json_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.7" "wal2json_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_14 : AVAIL 4" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.7" "wal2json_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_14 : AVAIL 4" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.7" "wal2json_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_14 : AVAIL 3" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.7" "wal2json_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_14 : AVAIL 5" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.7" "wal2json_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.7" "wal2json_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.7" "wal2json_14 : AVAIL 3" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 2" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 2" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 2" "blue" >}} |
@@ -66,14 +68,20 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `wal2json_18` | `2.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 35.6 KiB | [wal2json_18-2.7-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/wal2json_18-2.7-1PGDG.rhel8.10.x86_64.rpm) |
 | `wal2json_18` | `2.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 33.3 KiB | [wal2json_18-2.6-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/wal2json_18-2.6-3PGDG.rhel8.x86_64.rpm) |
+| `wal2json_18` | `2.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 33.3 KiB | [wal2json_18-2.7-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/wal2json_18-2.7-1PGDG.rhel8.10.aarch64.rpm) |
 | `wal2json_18` | `2.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.4 KiB | [wal2json_18-2.6-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/wal2json_18-2.6-3PGDG.rhel8.aarch64.rpm) |
+| `wal2json_18` | `2.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.1 KiB | [wal2json_18-2.7-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/wal2json_18-2.7-1PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_18` | `2.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.1 KiB | [wal2json_18-2.6-5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/wal2json_18-2.6-5PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_18` | `2.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.1 KiB | [wal2json_18-2.6-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/wal2json_18-2.6-3PGDG.rhel9.x86_64.rpm) |
+| `wal2json_18` | `2.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.4 KiB | [wal2json_18-2.7-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/wal2json_18-2.7-1PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_18` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.5 KiB | [wal2json_18-2.6-5PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/wal2json_18-2.6-5PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_18` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.4 KiB | [wal2json_18-2.6-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/wal2json_18-2.6-3PGDG.rhel9.aarch64.rpm) |
+| `wal2json_18` | `2.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.5 KiB | [wal2json_18-2.7-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/wal2json_18-2.7-1PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_18` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [wal2json_18-2.6-5PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/wal2json_18-2.6-5PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_18` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.9 KiB | [wal2json_18-2.6-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/wal2json_18-2.6-3PGDG.rhel10.x86_64.rpm) |
+| `wal2json_18` | `2.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.7 KiB | [wal2json_18-2.7-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/wal2json_18-2.7-1PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_18` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [wal2json_18-2.6-5PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/wal2json_18-2.6-5PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_18` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [wal2json_18-2.6-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/wal2json_18-2.6-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-18-wal2json` | `2.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 56.3 KiB | [postgresql-18-wal2json_2.6-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-18-wal2json_2.6-4.pgdg12+1_amd64.deb) |
@@ -103,14 +111,20 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `wal2json_17` | `2.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 35.7 KiB | [wal2json_17-2.7-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/wal2json_17-2.7-1PGDG.rhel8.10.x86_64.rpm) |
 | `wal2json_17` | `2.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 33.3 KiB | [wal2json_17-2.6-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/wal2json_17-2.6-2PGDG.rhel8.x86_64.rpm) |
+| `wal2json_17` | `2.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 33.4 KiB | [wal2json_17-2.7-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/wal2json_17-2.7-1PGDG.rhel8.10.aarch64.rpm) |
 | `wal2json_17` | `2.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.5 KiB | [wal2json_17-2.6-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/wal2json_17-2.6-2PGDG.rhel8.aarch64.rpm) |
+| `wal2json_17` | `2.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.3 KiB | [wal2json_17-2.7-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/wal2json_17-2.7-1PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_17` | `2.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.2 KiB | [wal2json_17-2.6-5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/wal2json_17-2.6-5PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_17` | `2.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.5 KiB | [wal2json_17-2.6-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/wal2json_17-2.6-2PGDG.rhel9.x86_64.rpm) |
+| `wal2json_17` | `2.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.6 KiB | [wal2json_17-2.7-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/wal2json_17-2.7-1PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_17` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [wal2json_17-2.6-5PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/wal2json_17-2.6-5PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_17` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.9 KiB | [wal2json_17-2.6-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/wal2json_17-2.6-2PGDG.rhel9.aarch64.rpm) |
+| `wal2json_17` | `2.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.6 KiB | [wal2json_17-2.7-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/wal2json_17-2.7-1PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_17` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [wal2json_17-2.6-5PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/wal2json_17-2.6-5PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_17` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.0 KiB | [wal2json_17-2.6-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/wal2json_17-2.6-3PGDG.rhel10.x86_64.rpm) |
+| `wal2json_17` | `2.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.9 KiB | [wal2json_17-2.7-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/wal2json_17-2.7-1PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_17` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [wal2json_17-2.6-5PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/wal2json_17-2.6-5PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_17` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [wal2json_17-2.6-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/wal2json_17-2.6-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-wal2json` | `2.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 56.1 KiB | [postgresql-17-wal2json_2.6-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-17-wal2json_2.6-4.pgdg12+1_amd64.deb) |
@@ -140,17 +154,23 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `wal2json_16` | `2.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 35.7 KiB | [wal2json_16-2.7-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/wal2json_16-2.7-1PGDG.rhel8.10.x86_64.rpm) |
 | `wal2json_16` | `2.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 33.1 KiB | [wal2json_16-2.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/wal2json_16-2.6-1PGDG.rhel8.x86_64.rpm) |
 | `wal2json_16` | `2.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.7 KiB | [wal2json_16-2.5-3.rhel8.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/wal2json_16-2.5-3.rhel8.1.x86_64.rpm) |
+| `wal2json_16` | `2.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 33.5 KiB | [wal2json_16-2.7-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/wal2json_16-2.7-1PGDG.rhel8.10.aarch64.rpm) |
 | `wal2json_16` | `2.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.5 KiB | [wal2json_16-2.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/wal2json_16-2.6-1PGDG.rhel8.aarch64.rpm) |
 | `wal2json_16` | `2.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.0 KiB | [wal2json_16-2.5-3.rhel8.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/wal2json_16-2.5-3.rhel8.1.aarch64.rpm) |
+| `wal2json_16` | `2.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.3 KiB | [wal2json_16-2.7-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/wal2json_16-2.7-1PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_16` | `2.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.2 KiB | [wal2json_16-2.6-5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/wal2json_16-2.6-5PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_16` | `2.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 31.8 KiB | [wal2json_16-2.5-3.rhel9.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/wal2json_16-2.5-3.rhel9.1.x86_64.rpm) |
+| `wal2json_16` | `2.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.7 KiB | [wal2json_16-2.7-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/wal2json_16-2.7-1PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_16` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [wal2json_16-2.6-5PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/wal2json_16-2.6-5PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_16` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.8 KiB | [wal2json_16-2.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/wal2json_16-2.6-1PGDG.rhel9.aarch64.rpm) |
 | `wal2json_16` | `2.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.3 KiB | [wal2json_16-2.5-3.rhel9.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/wal2json_16-2.5-3.rhel9.1.aarch64.rpm) |
+| `wal2json_16` | `2.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.7 KiB | [wal2json_16-2.7-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/wal2json_16-2.7-1PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_16` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.7 KiB | [wal2json_16-2.6-5PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/wal2json_16-2.6-5PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_16` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.0 KiB | [wal2json_16-2.6-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/wal2json_16-2.6-3PGDG.rhel10.x86_64.rpm) |
+| `wal2json_16` | `2.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.9 KiB | [wal2json_16-2.7-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/wal2json_16-2.7-1PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_16` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [wal2json_16-2.6-5PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/wal2json_16-2.6-5PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_16` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [wal2json_16-2.6-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/wal2json_16-2.6-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-wal2json` | `2.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 56.1 KiB | [postgresql-16-wal2json_2.6-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-16-wal2json_2.6-4.pgdg12+1_amd64.deb) |
@@ -180,19 +200,25 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `wal2json_15` | `2.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 35.7 KiB | [wal2json_15-2.7-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/wal2json_15-2.7-1PGDG.rhel8.10.x86_64.rpm) |
 | `wal2json_15` | `2.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 33.2 KiB | [wal2json_15-2.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/wal2json_15-2.6-1PGDG.rhel8.x86_64.rpm) |
 | `wal2json_15` | `2.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.3 KiB | [wal2json_15-2.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/wal2json_15-2.5-1.rhel8.x86_64.rpm) |
+| `wal2json_15` | `2.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 33.5 KiB | [wal2json_15-2.7-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/wal2json_15-2.7-1PGDG.rhel8.10.aarch64.rpm) |
 | `wal2json_15` | `2.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.3 KiB | [wal2json_15-2.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/wal2json_15-2.6-1PGDG.rhel8.aarch64.rpm) |
 | `wal2json_15` | `2.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 30.6 KiB | [wal2json_15-2.5-2.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/wal2json_15-2.5-2.rhel8.aarch64.rpm) |
 | `wal2json_15` | `2.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 30.6 KiB | [wal2json_15-2.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/wal2json_15-2.5-1.rhel8.aarch64.rpm) |
+| `wal2json_15` | `2.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.3 KiB | [wal2json_15-2.7-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/wal2json_15-2.7-1PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_15` | `2.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.3 KiB | [wal2json_15-2.6-5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/wal2json_15-2.6-5PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_15` | `2.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.1 KiB | [wal2json_15-2.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/wal2json_15-2.5-1.rhel9.x86_64.rpm) |
+| `wal2json_15` | `2.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.7 KiB | [wal2json_15-2.7-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/wal2json_15-2.7-1PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_15` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [wal2json_15-2.6-5PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/wal2json_15-2.6-5PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_15` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [wal2json_15-2.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/wal2json_15-2.6-1PGDG.rhel9.aarch64.rpm) |
 | `wal2json_15` | `2.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.6 KiB | [wal2json_15-2.5-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/wal2json_15-2.5-2.rhel9.aarch64.rpm) |
 | `wal2json_15` | `2.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.5 KiB | [wal2json_15-2.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/wal2json_15-2.5-1.rhel9.aarch64.rpm) |
+| `wal2json_15` | `2.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.7 KiB | [wal2json_15-2.7-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/wal2json_15-2.7-1PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_15` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [wal2json_15-2.6-5PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/wal2json_15-2.6-5PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_15` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.0 KiB | [wal2json_15-2.6-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/wal2json_15-2.6-3PGDG.rhel10.x86_64.rpm) |
+| `wal2json_15` | `2.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.9 KiB | [wal2json_15-2.7-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/wal2json_15-2.7-1PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_15` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.1 KiB | [wal2json_15-2.6-5PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/wal2json_15-2.6-5PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_15` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.4 KiB | [wal2json_15-2.6-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/wal2json_15-2.6-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-wal2json` | `2.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 56.7 KiB | [postgresql-15-wal2json_2.6-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-15-wal2json_2.6-4.pgdg12+1_amd64.deb) |
@@ -222,20 +248,26 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `wal2json_14` | `2.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 35.8 KiB | [wal2json_14-2.7-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/wal2json_14-2.7-1PGDG.rhel8.10.x86_64.rpm) |
 | `wal2json_14` | `2.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 33.2 KiB | [wal2json_14-2.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/wal2json_14-2.6-1PGDG.rhel8.x86_64.rpm) |
 | `wal2json_14` | `2.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.4 KiB | [wal2json_14-2.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/wal2json_14-2.5-1.rhel8.x86_64.rpm) |
 | `wal2json_14` | `2.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.4 KiB | [wal2json_14-2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/wal2json_14-2.4-1.rhel8.x86_64.rpm) |
+| `wal2json_14` | `2.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 33.6 KiB | [wal2json_14-2.7-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.7-1PGDG.rhel8.10.aarch64.rpm) |
 | `wal2json_14` | `2.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.2 KiB | [wal2json_14-2.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.6-1PGDG.rhel8.aarch64.rpm) |
 | `wal2json_14` | `2.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 30.6 KiB | [wal2json_14-2.5-2.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.5-2.rhel8.aarch64.rpm) |
 | `wal2json_14` | `2.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 30.5 KiB | [wal2json_14-2.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.5-1.rhel8.aarch64.rpm) |
+| `wal2json_14` | `2.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.3 KiB | [wal2json_14-2.7-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/wal2json_14-2.7-1PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_14` | `2.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.4 KiB | [wal2json_14-2.6-5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/wal2json_14-2.6-5PGDG.rhel9.8.x86_64.rpm) |
 | `wal2json_14` | `2.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.1 KiB | [wal2json_14-2.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/wal2json_14-2.5-1.rhel9.x86_64.rpm) |
+| `wal2json_14` | `2.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.7 KiB | [wal2json_14-2.7-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/wal2json_14-2.7-1PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_14` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [wal2json_14-2.6-5PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/wal2json_14-2.6-5PGDG.rhel9.8.aarch64.rpm) |
 | `wal2json_14` | `2.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.7 KiB | [wal2json_14-2.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/wal2json_14-2.6-1PGDG.rhel9.aarch64.rpm) |
 | `wal2json_14` | `2.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.6 KiB | [wal2json_14-2.5-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/wal2json_14-2.5-2.rhel9.aarch64.rpm) |
 | `wal2json_14` | `2.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.6 KiB | [wal2json_14-2.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/wal2json_14-2.5-1.rhel9.aarch64.rpm) |
+| `wal2json_14` | `2.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.6 KiB | [wal2json_14-2.7-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/wal2json_14-2.7-1PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_14` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [wal2json_14-2.6-5PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/wal2json_14-2.6-5PGDG.rhel10.2.x86_64.rpm) |
 | `wal2json_14` | `2.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.9 KiB | [wal2json_14-2.6-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/wal2json_14-2.6-3PGDG.rhel10.x86_64.rpm) |
+| `wal2json_14` | `2.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.0 KiB | [wal2json_14-2.7-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/wal2json_14-2.7-1PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_14` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.2 KiB | [wal2json_14-2.6-5PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/wal2json_14-2.6-5PGDG.rhel10.2.aarch64.rpm) |
 | `wal2json_14` | `2.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.5 KiB | [wal2json_14-2.6-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/wal2json_14-2.6-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-wal2json` | `2.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 56.3 KiB | [postgresql-14-wal2json_2.6-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-14-wal2json_2.6-4.pgdg12+1_amd64.deb) |

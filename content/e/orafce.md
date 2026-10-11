@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ivorysql_ora" >}} {{< ext "db2fce" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "tds_fdw" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} |
 
-> [!Note] Upstream distribution 4.16.13 fixes possible dbms_sql crashes; SQL/control version is 4.16. Published PGDG RPM/DEB baseline remains 4.16.12.
+> [!Note] Upstream distribution 4.16.13 fixes possible dbms_sql crashes; SQL/control version is 4.16. Local PGDG package matrix has RPM 4.16.12 and DEB 4.16.13 on 2026-10-10.
 
 
 ## Packages
@@ -38,7 +38,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.13` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `orafce` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.12` | {{< bg "18" "orafce_18" "green" >}} {{< bg "17" "orafce_17" "green" >}} {{< bg "16" "orafce_16" "green" >}} {{< bg "15" "orafce_15" "green" >}} {{< bg "14" "orafce_14" "green" >}} | `orafce_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.12` | {{< bg "18" "postgresql-18-orafce" "green" >}} {{< bg "17" "postgresql-17-orafce" "green" >}} {{< bg "16" "postgresql-16-orafce" "green" >}} {{< bg "15" "postgresql-15-orafce" "green" >}} {{< bg "14" "postgresql-14-orafce" "green" >}} | `postgresql-$v-orafce` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16.13` | {{< bg "18" "postgresql-18-orafce" "green" >}} {{< bg "17" "postgresql-17-orafce" "green" >}} {{< bg "16" "postgresql-16-orafce" "green" >}} {{< bg "15" "postgresql-15-orafce" "green" >}} {{< bg "14" "postgresql-14-orafce" "green" >}} | `postgresql-$v-orafce` | - |
 {.packages}
 
 

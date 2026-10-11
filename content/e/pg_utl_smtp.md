@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9290** | {{< badge content="pg_utl_smtp" link="https://github.com/hexacluster/pg_utl_smtp" >}} | {{< ext "pg_utl_smtp" >}} | `1.0.0` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **9290** | {{< badge content="pg_utl_smtp" link="https://github.com/hexacluster/pg_utl_smtp" >}} | {{< ext "pg_utl_smtp" >}} | `2.0.0` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,27 +31,27 @@ page_width: full
 |   **Requires**    | {{< ext "plperlu" >}} |
 |   **See Also**    | {{< ext "pg_smtp_client" >}} {{< ext "omni_email" >}} {{< ext "orafce" >}} {{< ext "pg_html5_email_address" >}} {{< ext "emailaddr" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "db2fce" >}} |
 
-> [!Note] runtime requires plperlu and Perl Net::SMTP
+> [!Note] Upstream v2.0/SQL 2.0.0; maintained DEB recipe/source is 2.0.0 (pg_utl_smtp-2.0.tar.gz). Requires plperlu and Perl Net::SMTP; SSL/TLS needs IO::Socket::SSL >= 2.007. Asynchronous mode optionally requires pg_dbms_job >= 2.0.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_utl_smtp` | `plperlu` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "pg_utl_smtp_18" "green" >}} {{< bg "17" "pg_utl_smtp_17" "green" >}} {{< bg "16" "pg_utl_smtp_16" "green" >}} {{< bg "15" "pg_utl_smtp_15" "green" >}} {{< bg "14" "pg_utl_smtp_14" "green" >}} | `pg_utl_smtp_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-utl-smtp" "green" >}} {{< bg "17" "postgresql-17-utl-smtp" "green" >}} {{< bg "16" "postgresql-16-utl-smtp" "green" >}} {{< bg "15" "postgresql-15-utl-smtp" "green" >}} {{< bg "14" "postgresql-14-utl-smtp" "green" >}} | `postgresql-$v-utl-smtp` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_utl_smtp` | `plperlu` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0` | {{< bg "18" "pg_utl_smtp_18" "green" >}} {{< bg "17" "pg_utl_smtp_17" "green" >}} {{< bg "16" "pg_utl_smtp_16" "green" >}} {{< bg "15" "pg_utl_smtp_15" "green" >}} {{< bg "14" "pg_utl_smtp_14" "green" >}} | `pg_utl_smtp_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "postgresql-18-utl-smtp" "green" >}} {{< bg "17" "postgresql-17-utl-smtp" "green" >}} {{< bg "16" "postgresql-16-utl-smtp" "green" >}} {{< bg "15" "postgresql-15-utl-smtp" "green" >}} {{< bg "14" "postgresql-14-utl-smtp" "green" >}} | `postgresql-$v-utl-smtp` | `postgresql-plperl-$v`, `libio-socket-ssl-perl` |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_14 : AVAIL 1" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_14 : AVAIL 1" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_14 : AVAIL 3" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_14 : AVAIL 3" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pg_utl_smtp_14 : AVAIL 3" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_14 : AVAIL 2" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_14 : AVAIL 4" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_14 : AVAIL 4" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_14 : AVAIL 4" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_utl_smtp_14 : AVAIL 4" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-utl-smtp : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-utl-smtp : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-utl-smtp : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-utl-smtp : AVAIL 1" "green" >}} |
@@ -70,17 +70,23 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_utl_smtp_18` | `2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_18-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_utl_smtp_18-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_utl_smtp_18-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_18` | `2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.4 KiB | [pg_utl_smtp_18-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_utl_smtp_18-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_utl_smtp_18-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_18` | `2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.3 KiB | [pg_utl_smtp_18-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_utl_smtp_18-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_utl_smtp_18-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_utl_smtp_18-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_utl_smtp_18-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_18` | `2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.2 KiB | [pg_utl_smtp_18-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_utl_smtp_18-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_utl_smtp_18-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_utl_smtp_18-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_utl_smtp_18-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_18` | `2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_18-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_utl_smtp_18-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_utl_smtp_18-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_utl_smtp_18-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.9 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_utl_smtp_18-1.0-2PGDG.rhel10.0.noarch.rpm) |
+| `pg_utl_smtp_18` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 19.3 KiB | [pg_utl_smtp_18-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_utl_smtp_18-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_utl_smtp_18-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_utl_smtp_18-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_18-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_utl_smtp_18-1.0-2PGDG.rhel10.0.noarch.rpm) |
@@ -101,17 +107,23 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_utl_smtp_17` | `2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_17-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_utl_smtp_17-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_utl_smtp_17-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_17` | `2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.4 KiB | [pg_utl_smtp_17-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_utl_smtp_17-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_utl_smtp_17-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_17` | `2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.3 KiB | [pg_utl_smtp_17-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_utl_smtp_17-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_utl_smtp_17-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_utl_smtp_17-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_utl_smtp_17-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_17` | `2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.2 KiB | [pg_utl_smtp_17-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_utl_smtp_17-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_utl_smtp_17-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_utl_smtp_17-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_utl_smtp_17-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_17` | `2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_17-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_utl_smtp_17-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_utl_smtp_17-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_utl_smtp_17-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.9 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_utl_smtp_17-1.0-2PGDG.rhel10.0.noarch.rpm) |
+| `pg_utl_smtp_17` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 19.3 KiB | [pg_utl_smtp_17-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_utl_smtp_17-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_utl_smtp_17-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_utl_smtp_17-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_17-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_utl_smtp_17-1.0-2PGDG.rhel10.0.noarch.rpm) |
@@ -132,17 +144,23 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_utl_smtp_16` | `2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_16-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_utl_smtp_16-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_utl_smtp_16-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_16` | `2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.4 KiB | [pg_utl_smtp_16-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_utl_smtp_16-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_utl_smtp_16-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_16` | `2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.3 KiB | [pg_utl_smtp_16-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_utl_smtp_16-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_utl_smtp_16-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_utl_smtp_16-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_utl_smtp_16-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_16` | `2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.2 KiB | [pg_utl_smtp_16-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_utl_smtp_16-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_utl_smtp_16-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_utl_smtp_16-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_utl_smtp_16-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_16` | `2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_16-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_utl_smtp_16-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_utl_smtp_16-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_utl_smtp_16-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.9 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_utl_smtp_16-1.0-2PGDG.rhel10.0.noarch.rpm) |
+| `pg_utl_smtp_16` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 19.3 KiB | [pg_utl_smtp_16-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_utl_smtp_16-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_utl_smtp_16-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_utl_smtp_16-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_16-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_utl_smtp_16-1.0-2PGDG.rhel10.0.noarch.rpm) |
@@ -163,17 +181,23 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_utl_smtp_15` | `2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_15-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_utl_smtp_15-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_utl_smtp_15-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_15` | `2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.4 KiB | [pg_utl_smtp_15-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_utl_smtp_15-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_utl_smtp_15-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_15` | `2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.3 KiB | [pg_utl_smtp_15-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_utl_smtp_15-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_utl_smtp_15-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_utl_smtp_15-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_utl_smtp_15-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_15` | `2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.2 KiB | [pg_utl_smtp_15-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_utl_smtp_15-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_utl_smtp_15-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_utl_smtp_15-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_utl_smtp_15-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_15` | `2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_15-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_utl_smtp_15-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_utl_smtp_15-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_utl_smtp_15-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.9 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_utl_smtp_15-1.0-2PGDG.rhel10.0.noarch.rpm) |
+| `pg_utl_smtp_15` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 19.3 KiB | [pg_utl_smtp_15-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_utl_smtp_15-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_utl_smtp_15-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_utl_smtp_15-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_15-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_utl_smtp_15-1.0-2PGDG.rhel10.0.noarch.rpm) |
@@ -194,17 +218,23 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_utl_smtp_14` | `2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_14-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_utl_smtp_14-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_utl_smtp_14-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_14` | `2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.4 KiB | [pg_utl_smtp_14-2.0-1PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_utl_smtp_14-2.0-1PGDG.rhel8.10.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel8.10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_utl_smtp_14-1.0-2PGDG.rhel8.10.noarch.rpm) |
+| `pg_utl_smtp_14` | `2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.3 KiB | [pg_utl_smtp_14-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_utl_smtp_14-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_utl_smtp_14-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_utl_smtp_14-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_utl_smtp_14-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_14` | `2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.2 KiB | [pg_utl_smtp_14-2.0-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_utl_smtp_14-2.0-1PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_utl_smtp_14-1.0-2PGDG.rhel9.8.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel9.7.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_utl_smtp_14-1.0-2PGDG.rhel9.7.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel9.6.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_utl_smtp_14-1.0-2PGDG.rhel9.6.noarch.rpm) |
+| `pg_utl_smtp_14` | `2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 19.4 KiB | [pg_utl_smtp_14-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_utl_smtp_14-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_utl_smtp_14-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.6 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_utl_smtp_14-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.9 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_utl_smtp_14-1.0-2PGDG.rhel10.0.noarch.rpm) |
+| `pg_utl_smtp_14` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 19.3 KiB | [pg_utl_smtp_14-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_utl_smtp_14-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_utl_smtp_14-1.0-2PGDG.rhel10.2.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel10.1.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_utl_smtp_14-1.0-2PGDG.rhel10.1.noarch.rpm) |
 | `pg_utl_smtp_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.5 KiB | [pg_utl_smtp_14-1.0-2PGDG.rhel10.0.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_utl_smtp_14-1.0-2PGDG.rhel10.0.noarch.rpm) |
@@ -226,7 +256,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/hexacluster/pg_utl_smtp" title="Repository" icon="github" subtitle="github.com/hexacluster/pg_utl_smtp" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_utl_smtp-1.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_utl_smtp-2.0.tar.gz" />}}
 {{< /cards >}}
 
 

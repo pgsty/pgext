@@ -90,14 +90,14 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1860 | {{< alias "pg_summarize" >}} | 0.0.1 | Text Summarization using LLMs. Built using pgrx |
 | 1870 | {{< alias "pg_tiktoken" >}} | 0.0.1 | tiktoken tokenizer for use with OpenAI models in postgres |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 1.1 | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
-| 1890 | {{< alias "pg_grammar_guard" >}} | 0.4.1 | Catalog-derived grammars and approved grammar drift checks |
+| 1890 | {{< alias "pg_grammar_guard" >}} | 0.4.9 | Catalog-derived grammars and approved grammar drift checks |
 | 1900 | {{< alias "jev" >}} | 0.2.1 | Natural-language row filtering, ranking and classification through a Jev-compatible API |
 | 1930 | {{< alias "pg4ml" >}} | 2.0 | Machine learning framework for PostgreSQL |
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | Run AL/ML workloads with SQL interface |
 | 1950 | {{< alias "pgmnemo" >}} | 0.20.0 | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | 0.3.0 | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
-| 1980 | {{< alias "pg_turbovec" >}} | 2.10.3 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
+| 1980 | {{< alias "pg_turbovec" >}} | 2.12.0 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 
 ## FTS
 
@@ -105,9 +105,9 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.26.0 | Full text search for PostgreSQL using BM25 |
-| 2110 | {{< alias "pgroonga" >}} | 4.0.9 | Use Groonga as index, fast full text search platform for all languages! |
-| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.9 | Recovery helper for removing a damaged PGroonga internal database |
+| 2100 | {{< alias "pg_search" >}} | 0.26.1 | Full text search for PostgreSQL using BM25 |
+| 2110 | {{< alias "pgroonga" >}} | 4.1.0 | Use Groonga as index, fast full text search platform for all languages! |
+| 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.1.0 | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "vgram" >}} | 1.0 | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | 2140 | {{< alias "zhparser" >}} | 2.3 | a parser for full-text search of Chinese |
@@ -119,7 +119,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | Pinyin romanization and search helpers for PostgreSQL |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | Kazakh full-text search extension for PostgreSQL |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL extension for BM25-family lexical retrieval |
-| 2230 | {{< alias "pg_fts" >}} | 1.9.0 | Full-text search with BM25 and BM25F ranking |
+| 2230 | {{< alias "pg_fts" >}} | 1.12.0 | Full-text search with BM25 and BM25F ranking |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | CJK bigram parser derived from PostgreSQL full-text search |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | Chinese full-text search parser based on cppjieba |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
@@ -179,7 +179,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2610 | {{< alias "pg_liquid" >}} | 0.1.7 | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | 1.0.0 | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | 2630 | {{< alias "graph" "pggraph" >}} | 1.2.1 | Graph database capabilities for PostgreSQL |
-| 2640 | {{< alias "pgrdf" >}} | 0.6.39 | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
+| 2640 | {{< alias "pgrdf" >}} | 0.6.40 | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2650 | {{< alias "pgq" >}} | 3.5.2 | Generic queue for PostgreSQL |
 | 2660 | {{< alias "pgmq" >}} | 1.13.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2670 | {{< alias "pgmb" >}} | 1.0.0 | A simple PostgreSQL Message Broker system |
@@ -202,10 +202,10 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | 1.16 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
-| 2860 | {{< alias "pg_trickle" >}} | 0.108.1 | Streaming tables and differential view maintenance for PostgreSQL 18 |
+| 2860 | {{< alias "pg_trickle" >}} | 0.108.3 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2870 | {{< alias "pg_durable" >}} | 0.2.8 | Durable SQL functions for PostgreSQL |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | Perturb unordered SELECT row order to expose order-dependent tests |
-| 2890 | {{< alias "pg_local_cache" >}} | 2.0.4 | Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads |
+| 2890 | {{< alias "pg_local_cache" >}} | 3.1.0 | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
 | 2900 | {{< alias "provsql" >}} | 1.12.0 | Semiring provenance and probability management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.10 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
@@ -250,7 +250,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
-| 2980 | {{< alias "pg_mentat" >}} | 1.10.3 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
+| 2980 | {{< alias "pg_mentat" >}} | 1.11.1 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
 
 ## LANG
@@ -259,7 +259,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 3000 | {{< alias "pg_tle" >}} | 1.5.2 | Trusted Language Extensions for PostgreSQL |
+| 3000 | {{< alias "pg_tle" >}} | 1.5.3 | Trusted Language Extensions for PostgreSQL |
 | 3010 | {{< alias "plv8" >}} | 3.2.5 | PL/JavaScript (v8) trusted procedural language |
 | 3011 | {{< alias "pljs" >}} | 1.0.5 | PL/JS trusted procedural language |
 | 3020 | {{< alias "pllua" >}} | 2.0.12 | Lua as a procedural language |
@@ -268,11 +268,11 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.2 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.10.12 | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.10.14 | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |
-| 3100 | {{< alias "plr" >}} | 8.4.8.7 | load R interpreter and execute R script from within a database |
+| 3100 | {{< alias "plr" >}} | 8.4.8.9 | load R interpreter and execute R script from within a database |
 | 3110 | {{< alias "plxslt" >}} | 0.20140221 | XSLT procedural language for PostgreSQL |
 | 3120 | {{< alias "pg_mockable" >}} | 1.1.0 | Create mockable wrappers for PostgreSQL functions in tests |
 | 3130 | {{< alias "pgsqlmock" >}} | 1.0.1 | Mocking and faking helpers for PostgreSQL unit tests |
@@ -310,7 +310,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 3500 | {{< alias "prefix" "pg_prefix" >}} | 1.2.11 | Prefix Range module for PostgreSQL |
-| 3510 | {{< alias "semver" "pg_semver" >}} | 0.41.0 | Semantic version data type |
+| 3510 | {{< alias "semver" "pg_semver" >}} | 0.42.0 | Semantic version data type |
 | 3520 | {{< alias "pg_text_semver" >}} | 1.2.1 | Semantic version domain and comparison operators for PostgreSQL |
 | 3530 | {{< alias "pg_lexo" >}} | 0.6.0 | Lexicographic position type for inserting and reordering list items |
 | 3550 | {{< alias "unit" "pgunit" >}} | 7.10 | SI units extension |
@@ -503,7 +503,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5270 | {{< alias "online_advisor" >}} | 1.0 | Suggest missing indexes and extended statistics online |
 | 5280 | {{< alias "pg_column_tetris" >}} | 0.1.0 | Enforce optimal column alignment to minimize row padding |
 | 5290 | {{< alias "cat_tools" >}} | 0.3.0 | Tools for interfacing with the PostgreSQL catalog |
-| 5300 | {{< alias "pg_living_assertions" >}} | 0.5.1 | Executable SQL checks with verdict dates and assertion history |
+| 5300 | {{< alias "pg_living_assertions" >}} | 0.5.10 | Executable SQL checks with verdict dates and assertion history |
 | 5810 | {{< alias "pg_savior" >}} | 0.1.0 | Postgres extension to save OOPS mistakes |
 | 5815 | {{< alias "pg_circuit" >}} | 0.1.0 | Runtime observation, warnings and blocking for dangerous SQL statements |
 | 5820 | {{< alias "safeupdate" >}} | 1.7 | Require criteria for UPDATE and DELETE |
@@ -514,8 +514,8 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | A PostgreSQL job scheduler |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | prewarm relation data |
 | 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.3 | Administrative functions for pgPool |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.2 | recovery functions for pgpool-II for V4.3 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.2 | replacement for regclass |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.3 | recovery functions for pgpool-II for V4.3 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.3 | replacement for regclass |
 | 5930 | {{< alias "lo" >}} | 1.1 | Large Object maintenance |
 | 5940 | {{< alias "basic_archive" >}} | - | an example of an archive module |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | adds a custom basebackup target called shell |
@@ -686,7 +686,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9250 | {{< alias "pg_dbms_lock" >}} | 2.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | 2.0 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.4 | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
-| 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP compatibility extension for PostgreSQL |
+| 9290 | {{< alias "pg_utl_smtp" >}} | 2.0.0 | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | 6.2.0 | SQL Server Transact SQL Datatype Support |
 | 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | 6.2.0 | SQL Server Transact SQL compatibility |
 | 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | 1.0.0 | SQL Server TDS protocol extension |
@@ -714,7 +714,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9580 | {{< alias "lolor" >}} | 1.2.2 | Logical-replication-friendly replacement for PostgreSQL large objects |
 | 9590 | {{< alias "pgclone" >}} | 4.4.2 | Clone PostgreSQL databases, schemas, tables, and functions across environments |
 | 9620 | {{< alias "pgmqtt" >}} | 0.5.1 | CDC-to-MQTT broker for PostgreSQL |
-| 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
+| 9630 | {{< alias "wal2json" >}} | 2.7 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |
 | 9650 | {{< alias "decoderbufs" >}} | 3.6.1 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | Output plugin for logical replication in Raw SQL format |

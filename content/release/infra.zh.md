@@ -1,3 +1,33 @@
+## 2026-10-10
+
+本地构建批次：升级 21 套配方，共 21 个软件包、80 个 RPM/DEB 制品。所有上游下载均经 8888 Xray 代理，并核验校验值；MCP Toolbox 已完成双架构 CGO 源码构建。制品版本、架构、SHA256、Claude 与 MCP Toolbox 实际版本均已验证。2026-10-11 已将 40 个 DEB 和 40 个已签名 RPM 导入本地 `repo/apt/infra` 与 `repo/yum/infra` 生产目录；其中 2 个 noarch RPM 分别放入两个 YUM 架构目录。Pigsty 包/索引签名与双架构 APT/DNF 客户端验证均通过。下表的原始字节保留指缓存和构建制品，仓库 RPM 副本另行签名。尚未执行在线同步。
+
+| 名称 | 旧版本 | 新版本 | 备注 |
+|---|---|---|---|
+| agentsview | 0.44.0 | 0.45.0 | 已校验并构建双架构 RPM/DEB |
+| blackbox-exporter | 0.28.0 | 0.29.0 | 已校验并构建双架构 RPM/DEB |
+| claude | 2.1.289 | 2.1.296 | 官方 manifest SHA256 与双架构实际版本已核验 |
+| cloudflared | 2026.9.3 | 2026.10.0 | 已校验并构建双架构 RPM/DEB |
+| code | 1.140.0 | 1.141.0 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| code-server | 4.140.0 | 4.141.0 | 官方原生双架构 DEB/RPM，保持原始字节 |
+| codex | 0.160.0 | 0.162.1 | 已校验并构建双架构 RPM/DEB |
+| crush | 0.97.1 | 0.98.1 | 已校验并构建双架构 RPM/DEB |
+| dblab | 0.51.0 | 0.52.1 | 已校验并构建双架构 RPM/DEB |
+| golang | 1.27.1 | 1.27.2 | 官方 SHA256 校验；包含上游安全修复 |
+| grafana-infinity-ds | 4.0.0 | 4.1.1 | 已校验并构建双架构 RPM/DEB |
+| grafana-plugins | 13.2.2 | 13.2.3 | noarch：JSON 数据源 1.4.2 → 1.4.3，其余 13 个插件文件保持不变 |
+| jmx-exporter | 1.6.0 | 1.7.0 | 官方 Java agent JAR 校验，构建 noarch RPM 与 all DEB |
+| mcp-toolbox | 1.13.1 | 1.14.0 | Go 1.27.2 + CGO + Zig 0.15.2 双架构源码构建，glibc 2.28 目标；发行号 1PGSTY |
+| opencode | 1.18.34 | 1.18.35 | 已校验并构建双架构 RPM/DEB |
+| pig | 1.8.1 | 1.9.0 | 已校验并构建双架构 RPM/DEB |
+| pushgateway | 1.11.3 | 1.11.4 | 已校验并构建双架构 RPM/DEB |
+| rclone | 1.75.1 | 1.75.2 | 已校验并构建双架构 RPM/DEB |
+| stalwart | 0.16.24 | 0.16.25 | 已校验并构建双架构 RPM/DEB |
+| uv | 0.12.23 | 0.13.0 | 已校验并构建双架构 RPM/DEB |
+| vector | 0.58.0 | 0.59.0 | 官方原生双架构 DEB/RPM，保持原始字节；升级前检查 0.59 兼容性变化 |
+
+Vector 0.59 包含配置和输入兼容性变化，例如移除 `http` / `greptimedb` 别名、Vector sink 布尔压缩配置和 Kubernetes 1.31 支持。部署前请查看[官方升级说明](https://vector.dev/highlights/2026-10-05-0-59-0-upgrade-guide/)。
+
 ## 2026-10-05
 
 本地构建批次：升级 22 套配方，共 24 个软件包、96 个 RPM/DEB 制品。所有下载均经 8888 Xray 代理；MCP Toolbox 已完成双架构 CGO 源码构建。96 个制品均已导入本地 `repo/apt/infra` 与 `repo/yum/infra` 仓库，完成 Pigsty RPM/索引签名及双架构 APT/DNF 客户端验证。下表的原始字节保留指缓存和构建制品，仓库 RPM 副本另行签名。尚未执行在线上传。

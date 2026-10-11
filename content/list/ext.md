@@ -192,7 +192,7 @@ There are 600 packaged PostgreSQL extensions:
 | {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Durable SQL functions for PostgreSQL |
 | {{< ext "pg_disorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
-| {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads |
+| {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
 | {{< ext "provsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | Semiring provenance and probability management for PostgreSQL |
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | OrioleDB, the next generation transactional engine |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | A suite of Cardano-related tools |
@@ -252,7 +252,7 @@ There are 600 packaged PostgreSQL extensions:
 | {{< ext "plprofiler" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | server-side support for profiling PL/pgSQL functions |
 | {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PL/sh procedural language |
 | {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PL/Java procedural language |
-| {{< ext "plr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | load R interpreter and execute R script from within a database |
+| {{< ext "plr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | load R interpreter and execute R script from within a database |
 | {{< ext "plxslt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | XSLT procedural language for PostgreSQL |
 | {{< ext "pg_mockable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Create mockable wrappers for PostgreSQL functions in tests |
 | {{< ext "pgsqlmock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Mocking and faking helpers for PostgreSQL unit tests |
@@ -465,9 +465,9 @@ There are 600 packaged PostgreSQL extensions:
 | {{< ext "pgelog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Extended logging via pseudo-autonomous transactions |
 | {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | A PostgreSQL job scheduler |
 | {{< ext "pg_prewarm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sLd--" color="blue" >}} | prewarm relation data |
-| {{< ext "pgpool_adm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Administrative functions for pgPool |
-| {{< ext "pgpool_recovery" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | recovery functions for pgpool-II for V4.3 |
-| {{< ext "pgpool_regclass" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | replacement for regclass |
+| {{< ext "pgpool_adm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Administrative functions for pgPool |
+| {{< ext "pgpool_recovery" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | recovery functions for pgpool-II for V4.3 |
+| {{< ext "pgpool_regclass" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | replacement for regclass |
 | {{< ext "lo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | Large Object maintenance |
 | {{< ext "basic_archive" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="c-s----" color="blue" >}} | an example of an archive module |
 | {{< ext "basebackup_to_shell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="c-s----" color="blue" >}} | adds a custom basebackup target called shell |

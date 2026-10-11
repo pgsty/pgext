@@ -108,7 +108,7 @@ The traditional PostgreSQL extension language
 | 2840 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
 | 2880 | {{< alias "pg_disorder" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
-| 2890 | {{< alias "pg_local_cache" >}} | Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads |
+| 2890 | {{< alias "pg_local_cache" >}} | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
 | 2940 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Basic session management |

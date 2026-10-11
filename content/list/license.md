@@ -18,8 +18,8 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 263 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 111 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "PostgreSQL" >}} | 261 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 113 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 104 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -46,7 +46,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="263 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="261 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -65,7 +65,6 @@ PostgreSQL extension categorized by license.
 | 1800 | {{< alias "vector" "pgvector" >}} | vector data type and ivfflat and hnsw access methods |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | The simplest way to do vector search on Postgres |
-| 1890 | {{< alias "pg_grammar_guard" >}} | Catalog-derived grammars and approved grammar drift checks |
 | 1900 | {{< alias "jev" >}} | Natural-language row filtering, ranking and classification through a Jev-compatible API |
 | 2110 | {{< alias "pgroonga" >}} | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | Recovery helper for removing a damaged PGroonga internal database |
@@ -217,7 +216,6 @@ PostgreSQL extension categorized by license.
 | 5220 | {{< alias "pg_cheat_funcs" >}} | Provides cheat (but useful) functions |
 | 5260 | {{< alias "pgdisablelogerror" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 | 5270 | {{< alias "online_advisor" >}} | Suggest missing indexes and extended statistics online |
-| 5300 | {{< alias "pg_living_assertions" >}} | Executable SQL checks with verdict dates and assertion history |
 | 5850 | {{< alias "pg_drop_events" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
 | 5860 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
 | 5870 | {{< alias "pgelog" >}} | Extended logging via pseudo-autonomous transactions |
@@ -320,7 +318,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="111 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="113 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -332,6 +330,7 @@ PostgreSQL extension categorized by license.
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
+| 1890 | {{< alias "pg_grammar_guard" >}} | Catalog-derived grammars and approved grammar drift checks |
 | 1950 | {{< alias "pgmnemo" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
@@ -410,6 +409,7 @@ PostgreSQL extension categorized by license.
 | 4500 | {{< alias "pg_idkit" >}} | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
 | 4700 | {{< alias "datasketches" >}} | Approximate analytics sketches and aggregates for PostgreSQL |
 | 5070 | {{< alias "pg_cooldown" >}} | remove buffered pages for specific relations |
+| 5300 | {{< alias "pg_living_assertions" >}} | Executable SQL checks with verdict dates and assertion history |
 | 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
 | 5815 | {{< alias "pg_circuit" >}} | Runtime observation, warnings and blocking for dangerous SQL statements |
 | 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
@@ -469,7 +469,7 @@ PostgreSQL extension categorized by license.
 | 2640 | {{< alias "pgrdf" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
 | 2765 | {{< alias "is_jsonb_valid" >}} | Native JSONB validation against JSON Schema drafts 4 and 7 |
-| 2890 | {{< alias "pg_local_cache" >}} | Transaction-aware shared-memory cache for ordinary PostgreSQL primary-key reads |
+| 2890 | {{< alias "pg_local_cache" >}} | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
 | 2900 | {{< alias "provsql" >}} | Semiring provenance and probability management for PostgreSQL |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3020 | {{< alias "pllua" >}} | Lua as a procedural language |

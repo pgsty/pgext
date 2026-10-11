@@ -5,7 +5,7 @@ description: "Catalog-derived grammars and approved grammar drift checks"
 weight: 1890
 categories: ["RAG"]
 languages: ["SQL"]
-licenses: ["PostgreSQL"]
+licenses: ["Apache-2.0"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1890** | {{< badge content="pg_grammar_guard" link="https://github.com/Manuelreyesbravo/pg_grammar_guard" >}} | {{< ext "pg_grammar_guard" >}} | `0.4.1` | {{< category "RAG" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **1890** | {{< badge content="pg_grammar_guard" link="https://github.com/Manuelreyesbravo/pg_grammar_guard" >}} | {{< ext "pg_grammar_guard" >}} | `0.4.9` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,16 +30,16 @@ page_width: full
 |    **Schemas**    | `grammar_guard` |
 |   **Requires**    | {{< ext "pg_living_assertions" >}} |
 
-> [!Note] Requires pg_living_assertions, despite older README text claiming no dependencies.
+> [!Note] Requires pg_living_assertions >= 0.5.9.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_grammar_guard` | `pg_living_assertions` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "pg_grammar_guard_18" "green" >}} {{< bg "17" "pg_grammar_guard_17" "green" >}} {{< bg "16" "pg_grammar_guard_16" "green" >}} {{< bg "15" "pg_grammar_guard_15" "green" >}} {{< bg "14" "pg_grammar_guard_14" "green" >}} | `pg_grammar_guard_$v` | `pg_living_assertions_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "postgresql-18-pg-grammar-guard" "green" >}} {{< bg "17" "postgresql-17-pg-grammar-guard" "green" >}} {{< bg "16" "postgresql-16-pg-grammar-guard" "green" >}} {{< bg "15" "postgresql-15-pg-grammar-guard" "green" >}} {{< bg "14" "postgresql-14-pg-grammar-guard" "green" >}} | `postgresql-$v-pg-grammar-guard` | `postgresql-$v-pg-living-assertions` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_grammar_guard` | `pg_living_assertions` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.9` | {{< bg "18" "pg_grammar_guard_18" "green" >}} {{< bg "17" "pg_grammar_guard_17" "green" >}} {{< bg "16" "pg_grammar_guard_16" "green" >}} {{< bg "15" "pg_grammar_guard_15" "green" >}} {{< bg "14" "pg_grammar_guard_14" "green" >}} | `pg_grammar_guard_$v` | `pg_living_assertions_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.9` | {{< bg "18" "postgresql-18-pg-grammar-guard" "green" >}} {{< bg "17" "postgresql-17-pg-grammar-guard" "green" >}} {{< bg "16" "postgresql-16-pg-grammar-guard" "green" >}} {{< bg "15" "postgresql-15-pg-grammar-guard" "green" >}} {{< bg "14" "postgresql-14-pg-grammar-guard" "green" >}} | `postgresql-$v-pg-grammar-guard` | `postgresql-$v-pg-living-assertions` |
 {.packages}
 
 
@@ -185,7 +185,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/Manuelreyesbravo/pg_grammar_guard" title="Repository" icon="github" subtitle="github.com/Manuelreyesbravo/pg_grammar_guard" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_grammar_guard-0.4.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_grammar_guard-0.4.9.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -226,11 +226,13 @@ CREATE EXTENSION pg_grammar_guard CASCADE; -- requires pg_living_assertions
 
 Sources:
 
-- [PGXN 0.4.1](https://pgxn.org/dist/pg_grammar_guard/0.4.1/)
+- [README.md](https://api.pgxn.org/src/pg_grammar_guard/pg_grammar_guard-0.4.8/README.md)
+- [pg_grammar_guard.control](https://api.pgxn.org/src/pg_grammar_guard/pg_grammar_guard-0.4.8/pg_grammar_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_grammar_guard/pg_grammar_guard-0.4.8/CHANGELOG.md)
 
-`pg_grammar_guard` generates GBNF or JSON Schema from catalog identifiers and detects drift from approved grammars. It is pure SQL, needs no preload and is packaged for PostgreSQL 14–18. Its control file requires `pg_living_assertions`.
+`pg_grammar_guard` 0.4.8 creates GBNF or JSON Schema from catalog identifiers and watches approved grammars for drift. It is pure SQL and requires `pg_living_assertions` 0.5.9 or later.
 
-### Generate a grammar
+### Core Workflow
 
 ```sql
 CREATE EXTENSION pg_grammar_guard CASCADE;
@@ -241,10 +243,6 @@ SELECT grammar_guard.grammar_for_json(ARRAY[
 ]::grammar_guard.grammar_field[]);
 ```
 
-The catalog helpers enumerate actual tables, columns and enum labels. Generation supports nested objects and bounded arrays; open-ended values such as arbitrary SQL or file paths need separate validation.
+### Operational Boundaries
 
-### Detect changes
-
-`grammar_guard.watch()` stores the query that rebuilds a grammar, and `grammar_guard.check_grammar()` evaluates it against the live catalog. Results and their age are available through `living_assertions.status`.
-
-Register baseline SQL only through trusted administrators. A grammar limits valid identifiers; it cannot prove that a selected table, join or answer is semantically correct. Baselines from the old 0.2 series lack the original generating query and require manual re-approval when upgrading.
+`grammar_guard.catalog_tables()` and `grammar_guard.catalog_columns()` expose catalog names; `grammar_guard.grammar_for_json()` assembles typed fields, nested structures and bounded arrays. `grammar_guard.watch()` records the SQL that regenerates a grammar, and `grammar_guard.check_grammar()` compares it with the approved state in `living_assertions.status`. The generating query resolves with its author search path and executes as that author. Input NULLs, empty/duplicate field names, empty pivots and invalid bounds are rejected; `max_items` is capped at 1000. Version 0.4.8 changes canonical fingerprints, and the ordered catalog list can make an existing watch fail once: inspect and re-approve it. A grammar controls allowed tokens, not semantic correctness or authorization. Register trusted SQL only. No preload is required. Current Apache-2.0 licensing begins at 0.4.4; earlier releases retain their original license.

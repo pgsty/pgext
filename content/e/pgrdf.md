@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2640** | {{< badge content="pgrdf" link="https://github.com/styk-tv/pgRDF" >}} | {{< ext "pgrdf" >}} | `0.6.39` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **2640** | {{< badge content="pgrdf" link="https://github.com/styk-tv/pgRDF" >}} | {{< ext "pgrdf" >}} | `0.6.40` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -37,9 +37,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.39` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrdf` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.39` | {{< bg "18" "pgrdf_18" "green" >}} {{< bg "17" "pgrdf_17" "green" >}} {{< bg "16" "pgrdf_16" "green" >}} {{< bg "15" "pgrdf_15" "green" >}} {{< bg "14" "pgrdf_14" "green" >}} | `pgrdf_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.39` | {{< bg "18" "postgresql-18-pgrdf" "green" >}} {{< bg "17" "postgresql-17-pgrdf" "green" >}} {{< bg "16" "postgresql-16-pgrdf" "green" >}} {{< bg "15" "postgresql-15-pgrdf" "green" >}} {{< bg "14" "postgresql-14-pgrdf" "green" >}} | `postgresql-$v-pgrdf` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.40` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrdf` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.40` | {{< bg "18" "pgrdf_18" "green" >}} {{< bg "17" "pgrdf_17" "green" >}} {{< bg "16" "pgrdf_16" "green" >}} {{< bg "15" "pgrdf_15" "green" >}} {{< bg "14" "pgrdf_14" "green" >}} | `pgrdf_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.40` | {{< bg "18" "postgresql-18-pgrdf" "green" >}} {{< bg "17" "postgresql-17-pgrdf" "green" >}} {{< bg "16" "postgresql-16-pgrdf" "green" >}} {{< bg "15" "postgresql-15-pgrdf" "green" >}} {{< bg "14" "postgresql-14-pgrdf" "green" >}} | `postgresql-$v-pgrdf` | - |
 {.packages}
 
 
@@ -185,7 +185,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/styk-tv/pgRDF" title="Repository" icon="github" subtitle="github.com/styk-tv/pgRDF" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgrdf-0.6.39.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgrdf-0.6.40.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -233,16 +233,17 @@ CREATE EXTENSION pgrdf;
 
 Sources:
 
-- [0.6.39 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.39)
-- [pgrdf.control](https://github.com/styk-tv/pgRDF/blob/a1dce7bd7c4d1138f713c5b73e9d498aa279612b/pgrdf.control)
-- [README.md](https://github.com/styk-tv/pgRDF/blob/a1dce7bd7c4d1138f713c5b73e9d498aa279612b/README.md)
-- [Cargo.toml](https://github.com/styk-tv/pgRDF/blob/a1dce7bd7c4d1138f713c5b73e9d498aa279612b/Cargo.toml)
-- [guide/01-install.md](https://github.com/styk-tv/pgRDF/blob/a1dce7bd7c4d1138f713c5b73e9d498aa279612b/guide/01-install.md)
-- [guide/tour.md](https://github.com/styk-tv/pgRDF/blob/a1dce7bd7c4d1138f713c5b73e9d498aa279612b/guide/tour.md)
-- [guide/05-graphs.md](https://github.com/styk-tv/pgRDF/blob/a1dce7bd7c4d1138f713c5b73e9d498aa279612b/guide/05-graphs.md)
-- [guide/06-validation-recipes.md](https://github.com/styk-tv/pgRDF/blob/a1dce7bd7c4d1138f713c5b73e9d498aa279612b/guide/06-validation-recipes.md)
+- [0.6.40 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.40)
+- [pgrdf.control](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/pgrdf.control)
+- [README.md](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/README.md)
+- [Cargo.toml](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/Cargo.toml)
+- [guide/01-install.md](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/guide/01-install.md)
+- [guide/tour.md](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/guide/tour.md)
+- [guide/05-graphs.md](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/guide/05-graphs.md)
+- [guide/06-validation-recipes.md](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/guide/06-validation-recipes.md)
+- [0.6.39 to 0.6.40 upgrade](https://github.com/styk-tv/pgRDF/blob/eefe44a459407c0d391b44baebe8905baaf7f9de/sql/pgrdf--0.6.39--0.6.40.sql)
 
-`pgrdf` 0.6.39 stores RDF graphs in PostgreSQL with Turtle/TriG/N-Quads ingestion, SPARQL queries and updates, SHACL validation, and RDFS/OWL reasoning. Preload `pgrdf` and restart before creating the extension as a superuser.
+`pgrdf` 0.6.40 stores RDF graphs in PostgreSQL with Turtle/TriG/N-Quads ingestion, SPARQL queries and updates, SHACL validation, and RDFS/OWL reasoning. Preload `pgrdf` and restart before creating the extension as a superuser.
 
 ### Core Workflow
 
@@ -263,3 +264,7 @@ SELECT * FROM pgrdf.surface();
 ### Operational Boundaries
 
 The fixed `pgrdf` schema provides `add_graph`, `graph_id`, `parse_turtle`, `load_turtle`, `sparql`, `materialize`, `validate`, `stats` and `surface`. File loaders read server-side paths; grant access deliberately. `can_clear_graphs()` reports graph-clear privileges. Non-owner graph writes require the documented underlying table grants; graph locks still apply. `shacl_capability()` reports the supported validation surface, and path-depth/truncation settings bound traversal. Source features cover PostgreSQL 14–18; published Linux binaries target PG18. Version 0.6.39 allocates graph IDs from a non-reusing sequence; the IRI is the graph identity, and gaps are normal. After installing the matching library, run `ALTER EXTENSION pgrdf UPDATE` in each database. A newer library rejects old SQL with SQLSTATE 55000. Do not use the broken 0.6.35–0.6.38 PGXN source archives. Preserve graph/dictionary data together in verified backups.
+
+### Ownership Repair in 0.6.40
+
+The 0.6.39 upgrade could leave `_pgrdf_graph_id_seq` owned by the upgrade executor after storage tables had been transferred to another role, preventing new graph creation. Version 0.6.40 aligns that sequence with the owner of `_pgrdf_quads`; granting sequence usage alone is insufficient. `pgrdf.ownership_drift()` reports mismatched storage owners and proposed repair commands. Review them before applying role changes. Upgrade SQL in each database after installing matching binaries; versions 0.6.34–0.6.38 can upgrade directly to 0.6.40.

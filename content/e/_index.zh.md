@@ -162,7 +162,7 @@ weight: 900
 | {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | 为 PostgreSQL 18 提供流式表与差分视图维护 |
 | {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
 | {{< ext "pg_disorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
-| {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 为普通 PostgreSQL 主键读取提供事务感知的共享内存缓存 |
+| {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 通过 RESP2 MGET 提供 PostgreSQL 主键整行读取的事务感知共享内存缓存 |
 | {{< ext "provsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL 半环溯源、概率与不确定性管理扩展 |
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | OrioleDB，下一代事务处理引擎 |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -222,7 +222,7 @@ weight: 900
 | {{< ext "plprofiler" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "LANG" >}} | 剖析 PL/pgSQL 函数 |
 | {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | PL/sh 程序语言 |
 | {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | Java 程序语言 |
-| {{< ext "plr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | 从数据库中加载R语言解释器并执行R脚本 |
+| {{< ext "plr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | 从数据库中加载R语言解释器并执行R脚本 |
 | {{< ext "plxslt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "LANG" >}} | XSLT 存储过程语言 |
 | {{< ext "pg_mockable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "LANG" >}} | 为测试创建可 Mock 的 PostgreSQL 函数包装器 |
 | {{< ext "pgsqlmock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "LANG" >}} | 为 PostgreSQL 单元测试提供函数 Mock、表和视图伪造能力 |
@@ -435,9 +435,9 @@ weight: 900
 | {{< ext "pgelog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | 通过伪自治事务实现扩展日志记录 |
 | {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | {{< ext "pg_prewarm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sLd--" color="blue" >}} | {{< category "ADMIN" >}} | 预热关系数据 |
-| {{< ext "pgpool_adm" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "ADMIN" >}} | PGPool 管理函数 |
-| {{< ext "pgpool_recovery" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | PGPool辅助扩展，从v4.3提供的恢复函数 |
-| {{< ext "pgpool_regclass" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "ADMIN" >}} | PGPool辅助扩展，RegClass替代 |
+| {{< ext "pgpool_adm" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PGPool 管理函数 |
+| {{< ext "pgpool_recovery" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PGPool辅助扩展，从v4.3提供的恢复函数 |
+| {{< ext "pgpool_regclass" "pgpool" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PGPool辅助扩展，RegClass替代 |
 | {{< ext "lo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | 大对象维护 |
 | {{< ext "basic_archive" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ADMIN" >}} | 归档模块样例 |
 | {{< ext "basebackup_to_shell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ADMIN" >}} | 添加一种备份到Shell终端到基础备份方式 |
