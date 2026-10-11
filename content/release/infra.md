@@ -6,35 +6,31 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-10-10
-
-Local build batch: 21 recipes upgraded, producing 80 RPM/DEB artifacts for 21 packages. All upstream downloads used the port 8888 Xray proxy and were checksum-verified; MCP Toolbox was built from source for both architectures with CGO enabled. Artifact versions, architectures, SHA256, and the actual Claude/MCP Toolbox binary versions were verified. On 2026-10-11, all 40 DEB inputs and 40 signed RPMs were imported into the local `repo/apt/infra` and `repo/yum/infra` production directories; the two noarch RPMs are present in both YUM architecture directories. Pigsty package/index signatures and native APT/DNF checks passed for both architectures. Vendor byte preservation refers to cached/build artifacts; repository RPM copies are signed separately. Online synchronization has not been performed.
+## 2026-10-11
 
 | Name | Old | New | Comment |
-|---|---|---|---|
-| agentsview | 0.44.0 | 0.45.0 | Verified and built dual-architecture RPM/DEB |
-| blackbox-exporter | 0.28.0 | 0.29.0 | Verified and built dual-architecture RPM/DEB |
-| claude | 2.1.289 | 2.1.296 | Official manifest SHA256 and both Linux binary versions verified |
-| cloudflared | 2026.9.3 | 2026.10.0 | Verified and built dual-architecture RPM/DEB |
-| code | 1.140.0 | 1.141.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| code-server | 4.140.0 | 4.141.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| codex | 0.160.0 | 0.162.1 | Verified and built dual-architecture RPM/DEB |
-| crush | 0.97.1 | 0.98.1 | Verified and built dual-architecture RPM/DEB |
-| dblab | 0.51.0 | 0.52.1 | Verified and built dual-architecture RPM/DEB |
-| golang | 1.27.1 | 1.27.2 | Official SHA256 verified; includes upstream security fixes |
-| grafana-infinity-ds | 4.0.0 | 4.1.1 | Verified and built dual-architecture RPM/DEB |
-| grafana-plugins | 13.2.2 | 13.2.3 | Noarch bundle: JSON datasource 1.4.2 to 1.4.3; files of the other 13 plugins preserved |
-| jmx-exporter | 1.6.0 | 1.7.0 | Official Java agent JAR verified; built noarch RPM and all DEB |
-| mcp-toolbox | 1.13.1 | 1.14.0 | Dual-arch source build with Go 1.27.2, CGO and Zig 0.15.2; glibc 2.28 target; release 1PGSTY |
-| opencode | 1.18.34 | 1.18.35 | Verified and built dual-architecture RPM/DEB |
-| pig | 1.8.1 | 1.9.0 | Verified and built dual-architecture RPM/DEB |
-| pushgateway | 1.11.3 | 1.11.4 | Verified and built dual-architecture RPM/DEB |
-| rclone | 1.75.1 | 1.75.2 | Verified and built dual-architecture RPM/DEB |
-| stalwart | 0.16.24 | 0.16.25 | Verified and built dual-architecture RPM/DEB |
-| uv | 0.12.23 | 0.13.0 | Verified and built dual-architecture RPM/DEB |
-| vector | 0.58.0 | 0.59.0 | Official native dual-arch DEB/RPM preserved byte-for-byte; review 0.59 compatibility changes |
-
-Vector 0.59 includes configuration and input compatibility changes, including removal of the `http` / `greptimedb` aliases, boolean compression settings in the Vector sink, and Kubernetes 1.31 support. Review the [official upgrade guide](https://vector.dev/highlights/2026-10-05-0-59-0-upgrade-guide/) before deployment.
+|:---|:---|:---|:---|
+| agentsview | 0.44.0 | 0.45.0 | Both architectures; imported locally |
+| blackbox-exporter | 0.28.0 | 0.29.0 | Both architectures; imported locally |
+| claude | 2.1.289 | 2.1.296 | Both architectures; imported locally |
+| cloudflared | 2026.9.3 | 2026.10.0 | Both architectures; imported locally |
+| code | 1.140.0 | 1.141.0 | Upstream DEB/RPM; imported locally |
+| code-server | 4.140.0 | 4.141.0 | Upstream DEB/RPM; imported locally |
+| codex | 0.160.0 | 0.162.1 | Both architectures; imported locally |
+| crush | 0.97.1 | 0.98.1 | Both architectures; imported locally |
+| dblab | 0.51.0 | 0.52.1 | Both architectures; imported locally |
+| golang | 1.27.1 | 1.27.2 | Both architectures; imported locally |
+| grafana-infinity-ds | 4.0.0 | 4.1.1 | Both architectures; imported locally |
+| grafana-plugins | 13.2.2 | 13.2.3 | Noarch; JSON datasource 1.4.3; imported locally |
+| jmx-exporter | 1.6.0 | 1.7.0 | Noarch; imported locally |
+| mcp-toolbox | 1.13.1 | 1.14.0 | CGO source build; glibc 2.28; imported locally |
+| opencode | 1.18.34 | 1.18.35 | Both architectures; imported locally |
+| pig | 1.8.1 | 1.9.0 | Both architectures; imported locally |
+| pushgateway | 1.11.3 | 1.11.4 | Both architectures; imported locally |
+| rclone | 1.75.1 | 1.75.2 | Both architectures; imported locally |
+| stalwart | 0.16.24 | 0.16.25 | Both architectures; imported locally |
+| uv | 0.12.23 | 0.13.0 | Both architectures; imported locally |
+| vector | 0.58.0 | 0.59.0 | Upstream DEB/RPM; imported locally |
 
 ## 2026-10-05
 
