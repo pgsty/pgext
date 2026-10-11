@@ -2,6 +2,9 @@
 
 来源：
 
+- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/CHANGELOG.md)
+- [doc/chdb_hook.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/doc/chdb_hook.md)
+
 - [PGXN 0.1.2 README](https://pgxn.org/dist/chdb/0.1.2/README.html)
 - [chdb_hook 0.1.2 文档](https://pgxn.org/dist/chdb/0.1.2/doc/chdb_hook.html)
 - [chdb 0.1.2 发行元数据](https://api.pgxn.org/src/chdb/chdb-0.1.2/META.json)
@@ -44,3 +47,7 @@ FROM 's3://datasets-documentation/my-test-bucket-768/some_prefix/some_file_1.csv
 这是二进制更新，`chdb` 控制版本仍为 `0.1`，无需执行扩展 SQL 升级。新增 Tuple、Map、未展开 Nested 与复合类型的映射，以及更多 LowCardinality 和参数化 JSON 类型转换。数组与复合类型有不同形状，应声明与数据对应的目标列类型并验证代表性值。
 
 `COPY` 新增 `encoding_check` 选项，可取 `fail`、`replace`、`remove` 或 `truncate`。URL 来源的 `COPY FROM` 若带 `WHERE` 现在会报错，避免静默忽略过滤条件。构建时的 `NO_FILE_SCHEME` 可以关闭本地文件 URL 支持；实际可用协议因此取决于所安装的二进制。
+
+### 0.1.3 二进制发布
+
+发行版 0.1.3 保留声明的时间及时间戳精度，在 COPY FROM 时应用 PostgreSQL 会话 `TimeZone`，并在推断与装载之间保留 Azure SAS 令牌。这是纯二进制更新，`chdb` 的 SQL/control 版本仍为 0.1，无需执行 ALTER EXTENSION 升级。已发布的 `chdb_hook` 仍为无 SQL 对象模块。

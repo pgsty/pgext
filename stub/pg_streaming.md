@@ -2,6 +2,10 @@
 
 Sources:
 
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/CHANGELOG.md)
+- [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/extensions/pg_streaming/Cargo.toml)
+- [extensions/pg_streaming/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/extensions/pg_streaming/src/lib.rs)
+
 - [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/Cargo.toml)
 - [extensions/pg_streaming/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/worker.rs)
 - [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/crates/pg_bgworker/src/supervision.rs)
@@ -14,7 +18,7 @@ Sources:
 - [Pipeline SQL API and worker initialization](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/lib.rs)
 - [Pipeline definition types](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/dsl/types.rs)
 
-`pg_streaming` version `0.3.2` is a declarative stream-processing engine whose pipelines, state, offsets, errors, and metrics remain queryable in PostgreSQL. Pipelines connect inputs to processor chains and outputs, then run under coordinator, executor, and timer background workers.
+`pg_streaming` version `0.3.3` is a declarative stream-processing engine whose pipelines, state, offsets, errors, and metrics remain queryable in PostgreSQL. Pipelines connect inputs to processor chains and outputs, then run under coordinator, executor, and timer background workers.
 
 ### Core Workflow
 
@@ -72,3 +76,7 @@ Install matching libraries, restart PostgreSQL to initialize the new shared memo
 ALTER EXTENSION pg_streaming UPDATE;
 SELECT * FROM pgstreams.worker_status();
 ```
+
+### Raw-Zone Ingestion in 0.3.3
+
+Repository release 0.6.0 contains extension 0.3.3. OpenDAL gains `parse_as: parquet` and `parse_as: listing`, with `order: lexicographic` resuming in the middle of a file. Unreadable files stop progress so later files cannot overtake them. Records include `source_file` and `source_row` for replay deduplication; `pgstreams.replay(name, after)` rewinds a stopped pipeline. Private S3 access for the arrays lane remains unsupported.

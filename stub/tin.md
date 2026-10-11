@@ -2,12 +2,13 @@
 
 Sources:
 
-- [README](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/README.md)
-- [Control file](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/postgres/tin.control)
-- [Cargo.toml](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/Cargo.toml)
-- [postgres/src/lib.rs](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/postgres/src/lib.rs)
+- [README](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/README.md)
+- [Control file](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/postgres/tin.control)
+- [Cargo.toml](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/Cargo.toml)
+- [postgres/src/lib.rs](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/postgres/src/lib.rs)
+- [PlanetScale TIN and Lead](https://planetscale.com/docs/postgres/search)
 
-`tin` is the extension name of Lead, a TIN-compatible text-search implementation for development, CI, and staging. Version 1.0.3 deliberately trades performance for a small reference implementation and is unsuitable for production search.
+`tin` is the extension name of Lead, a TIN-compatible text-search implementation for development, CI, and staging. The reviewed 1.0.6 source snapshot deliberately trades performance for a small reference implementation and is unsuitable for production search.
 
 ### Core Workflow
 
@@ -29,3 +30,7 @@ Every index scan returns all heap pages as lossy candidates. PostgreSQL rechecks
 ### Requirements
 
 The reviewed source targets PostgreSQL 17 and 18. Installation requires a superuser; objects use the fixed `tin` schema. The library loads on demand and needs no preload or restart. Keep realistic data volumes in mind when using it in tests.
+
+PlanetScale documents TIN as its production search implementation and Lead as the local development substitute. Both use the canonical extension name `tin`; this catalog entry tracks the open-source Lead implementation. Its source-snapshot version is not a claim about the version deployed by PlanetScale.
+
+The current source adds a trailing `stemmer` argument to `tin.tokenize`, `tin.ql_parse`, `tin.highlight`, and `tin.highlight_ansi`, while keeping the earlier signatures under names ending in `_v1_0_3`. Changing an index's `stemmer` requires `REINDEX`. A score call must be at the same query level as its matching `==>` predicate.

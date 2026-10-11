@@ -2,28 +2,23 @@
 
 来源：
 
-- [官方上游 README](https://github.com/hyperiondb/hyperiondb/blob/b0ea5e901de4a5f417721981b3ecbfece1664c3a/README.md)
-- [官方扩展控制文件 (pg_replica.control)](https://github.com/hyperiondb/hyperiondb/blob/b0ea5e901de4a5f417721981b3ecbfece1664c3a/pg_replica.control)
-- [官方实现源代码](https://github.com/hyperiondb/hyperiondb/blob/b0ea5e901de4a5f417721981b3ecbfece1664c3a/src/lib.rs)
+- [README.md](https://api.pgxn.org/src/pg_replica/pg_replica-0.7.4/README.md)
+- [pg_replica.control](https://api.pgxn.org/src/pg_replica/pg_replica-0.7.4/pg_replica.control)
+- [Cargo.toml](https://api.pgxn.org/src/pg_replica/pg_replica-0.7.4/Cargo.toml)
 
-`pg_replica` — 一个 PostgreSQL 扩展，为一组 **纯正的 Postgres** 节点提供自动、共识驱动的故障转移功能 —— 全集群复制（表、角色、DDL，一切内容）并内置了 Raft 组，无需外部依赖：无需 etcd、Consul 或 Kubernetes。在管理或自动化上述数据库行为时使用它。使用上述链接的上游固定版本作为 API 边界，并在目标 PostgreSQL 构建上进行测试。
+`pg_replica` 0.7.4 为 PostgreSQL 物理复制增加内置 Raft 领导者选举与故障转移。它面向 PostgreSQL 18，要求配置集群、预加载并重启；创建扩展本身不会建立复制。
 
-### 核心工作流
+### 核心用法
+
+```ini
+shared_preload_libraries = 'pg_replica'
+```
 
 ```sql
 CREATE EXTENSION pg_replica;
+SELECT replica.status();
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小示例，并在将其集成到应用程序 SQL 之前验证安装的版本和返回值。
+### 运行边界
 
-### 重要对象
-
-- `rotate_credential` 是一个扩展函数。
-- `status()` 是一个扩展函数。
-
-### 要求与注意事项
-
-- 表格记录版本 `0.7.0`。
-- 控制文件将扩展标记为不可重定位。
-- 控制文件要求超级用户进行安装。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和故障情况，与固定源代码进行比对。
+`replica.status()` 显示领导者与复制状态。`replica.rotate_credential()` 在当前主库修改凭据，在备库上不执行变更。进程重启仍由监督程序管理，客户端需要重连与路由逻辑。基于多数派的同步持久性需主动启用，异步模式不能宣称无数据丢失。节点重新加入可能执行 rewind 或完整基础备份，将恢复节点指定为主库可能丢弃原主库的数据。启用后台工作进程前，应核对成员关系、凭据、隔离与恢复流程。安装要求超级用户。

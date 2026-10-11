@@ -2,12 +2,13 @@
 
 来源：
 
-- [README](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/README.md)
-- [Control file / 控制文件](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/postgres/tin.control)
-- [Cargo.toml](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/Cargo.toml)
-- [postgres/src/lib.rs](https://github.com/planetscale/lead/blob/bd95c7e51b6afce81396790852ee2f2c169570ad/postgres/src/lib.rs)
+- [README](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/README.md)
+- [Control file / 控制文件](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/postgres/tin.control)
+- [Cargo.toml](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/Cargo.toml)
+- [postgres/src/lib.rs](https://github.com/planetscale/lead/blob/e3ed2f4ce1388167b0254a0c0c706a61d0a37d83/postgres/src/lib.rs)
+- [PlanetScale TIN and Lead](https://planetscale.com/docs/postgres/search)
 
-`tin` 是 Lead 的扩展名，提供兼容 TIN 的文本搜索，适合开发、CI 和预发布测试。1.0.3 版有意采用简单参考实现，牺牲查询性能，不适合生产搜索。
+`tin` 是 Lead 的扩展名，提供兼容 TIN 的文本搜索，适合开发、CI 和预发布测试。本次核验的 1.0.6 源码快照有意采用简单参考实现，牺牲查询性能，不适合生产搜索。
 
 ### 核心工作流
 
@@ -29,3 +30,7 @@ FROM documents WHERE body ==> 'beer' ORDER BY score DESC;
 ### 使用要求
 
 审核源码的目标版本是 PostgreSQL 17 和 18。安装需要超级用户，对象使用固定的 `tin` 模式。库按需加载，无需预加载或重启；测试时仍需控制数据规模。
+
+PlanetScale 的文档将 TIN 定位为生产搜索实现，将 Lead 定位为本地开发替代品。两者使用同一个规范扩展名 `tin`；本目录条目跟踪开源 Lead 实现。源码快照版本不代表 PlanetScale 线上部署的版本。
+
+当前源码为 `tin.tokenize`、`tin.ql_parse`、`tin.highlight` 和 `tin.highlight_ansi` 增加了末尾的 `stemmer` 参数，并以 `_v1_0_3` 结尾的函数名保留旧签名。修改索引的 `stemmer` 后需要执行 `REINDEX`。评分调用必须与对应的 `==>` 搜索条件处于同一查询层级。

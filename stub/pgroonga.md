@@ -2,13 +2,16 @@
 
 Sources:
 
+- [Release 4.1.0](https://github.com/pgroonga/pgroonga/releases/tag/4.1.0)
+- [Control](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/pgroonga.control)
+
 - [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga.sql)
 - [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga.control)
 - [Official tutorial](https://pgroonga.github.io/tutorial/)
 - [Version 4.0.9 release](https://github.com/pgroonga/pgroonga/releases/tag/4.0.9)
 - [Upgrade guidance](https://pgroonga.github.io/upgrade/)
 
-`pgroonga` 4.0.9 provides Groonga-backed indexes for multilingual full-text search. It installs the `pgroonga` access method and SQL operators; ordinary use does not require shared preload.
+`pgroonga` 4.1.0 provides Groonga-backed indexes for multilingual full-text search. It installs the `pgroonga` access method and SQL operators; ordinary use does not require shared preload.
 
 ### Core Workflow
 
@@ -45,3 +48,7 @@ The current Pigsty EL8 and EL9 packages have a confirmed coexistence limit with 
 Changing load order is not a complete fix: automatic session preload still produced backend-exit crashes on EL9 aarch64. Avoid enabling both stacks in the same backend until a compatible dependency combination is verified; isolate their use when necessary. The tested EL10 and Debian/Ubuntu combinations did not reproduce this failure, which does not establish compatibility for arbitrary other dependency versions. This is a Pigsty package-stack boundary, not an upstream requirement to preload PGroonga for ordinary search.
 
 MeCab tokenization additionally needs the matching Groonga tokenizer plugin and dictionary. Installing the PostgreSQL extension alone does not supply every optional tokenizer; verify the requested tokenizer before building an index that names it.
+
+### Version 4.1.0
+
+Version 4.1.0 fixes another session running VACUUM/ANALYZE before CREATE INDEX commits, which could remove index data. An index already affected may need REINDEX. Direct Groonga calls can use `pgroonga_tuple_is_alive` in `post_filter` with Groonga 16.1.3 or later. This source release does not change the separately documented Pigsty dependency-stack limitation.

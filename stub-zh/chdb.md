@@ -2,6 +2,9 @@
 
 来源：
 
+- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/CHANGELOG.md)
+- [doc/chdb.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/doc/chdb.md)
+
 - [PGXN 0.1.2 README](https://pgxn.org/dist/chdb/0.1.2/README.html)
 - [chdb 0.1 文档](https://pgxn.org/dist/chdb/0.1.2/doc/chdb.html)
 - [chdb 控制文件](https://api.pgxn.org/src/chdb/chdb-0.1.2/chdb.control)
@@ -44,3 +47,7 @@ SELECT pgchdb_version();
 ### 0.1.2 版本变化
 
 这是二进制更新，`chdb` 控制版本仍为 `0.1`，无需执行扩展 SQL 升级。新增 Tuple、Map、未展开 Nested 与复合类型的映射，以及更多 LowCardinality 和参数化 JSON 类型转换。数组与复合类型有不同形状，应声明与数据对应的目标列类型并验证代表性值。
+
+### 0.1.3 二进制发布
+
+发行版 0.1.3 保留声明的时间及时间戳精度，在 COPY FROM 时应用 PostgreSQL 会话 `TimeZone`，并在推断与装载之间保留 Azure SAS 令牌。这是纯二进制更新，`chdb` 的 SQL/control 版本仍为 0.1，无需执行 ALTER EXTENSION 升级。已发布的 `chdb_hook` 仍为无 SQL 对象模块。

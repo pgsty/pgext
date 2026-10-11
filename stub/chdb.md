@@ -2,6 +2,9 @@
 
 Sources:
 
+- [CHANGELOG.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/CHANGELOG.md)
+- [doc/chdb.md](https://api.pgxn.org/src/chdb/chdb-0.1.3/doc/chdb.md)
+
 - [PGXN 0.1.2 README](https://pgxn.org/dist/chdb/0.1.2/README.html)
 - [chdb 0.1 documentation](https://pgxn.org/dist/chdb/0.1.2/doc/chdb.html)
 - [chdb control file](https://api.pgxn.org/src/chdb/chdb-0.1.2/chdb.control)
@@ -44,3 +47,7 @@ Version 0.1.2 requires PostgreSQL 15 or newer and libchdb 26.7.0 or newer on Lin
 ### Version 0.1.2
 
 This is a binary-only update: the `chdb` control version remains `0.1`, with no extension SQL upgrade required. New mappings cover Tuple, Map, unflattened Nested and composite types, plus additional LowCardinality and parameterized JSON conversions. Arrays and composites have different shapes; declare matching destination types and test representative values.
+
+### Binary Release 0.1.3
+
+Distribution 0.1.3 preserves declared time/timestamp precision, applies the PostgreSQL session `TimeZone` during COPY FROM and preserves Azure SAS tokens across inference/loading. It is a binary-only update: the `chdb` SQL/control version stays 0.1 and needs no ALTER EXTENSION upgrade. The released `chdb_hook` module remains headless.

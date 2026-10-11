@@ -2,16 +2,14 @@
 
 来源：
 
-- [PGXN 1.1.0 README](https://pgxn.org/dist/pg_plan_guard/1.1.0/README.html)
-- [pg_plan_guard 控制文件](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/pg_plan_guard.control)
-- [pg_plan_guard 1.1 SQL 定义](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/pg_plan_guard--1.1.sql)
-- [PostgreSQL 许可证](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.0/LICENSE)
-- [License](https://github.com/Manuelreyesbravo/pg_plan_guard/blob/a9b8893ef82578eb7a3dede21c58bb72cb97fbf2/LICENSE)
-- [Changelog](https://github.com/Manuelreyesbravo/pg_plan_guard/blob/a9b8893ef82578eb7a3dede21c58bb72cb97fbf2/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/README.md)
+- [pg_plan_guard.control](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/pg_plan_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/CHANGELOG.md)
+- [pg_plan_guard--1.1.8--1.1.9.sql](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/pg_plan_guard--1.1.8--1.1.9.sql)
 
-`pg_plan_guard` 把认可的 PostgreSQL 19 计划形态保存为 plan-advice 文本，并在重新规划产生不同 advice 时报告漂移。它是关键查询的监控层，不是优化器，也不会自动选择基线。
+`pg_plan_guard` 1.1.9 保存认可的 PostgreSQL 19 计划 advice，在重新规划已有查询时检测变化。它要求加载 `pg_plan_advice` 模块，不支持 PostgreSQL 18。
 
-### 核心流程
+### 核心用法
 
 ```sql
 LOAD 'pg_plan_advice';
@@ -27,28 +25,10 @@ SELECT * FROM plan_guard.verify();
 SELECT * FROM plan_guard.status WHERE state <> 'ok';
 ```
 
-`plan_guard.capture(...)` 使用 `EXPLAIN (PLAN_ADVICE)`，不会执行查询。`plan_guard.verify(...)` 重新规划已存 SQL，比较生成的 advice，记录漂移或错误状态转换，并在某个基线无法规划时继续处理其他项。
+### 运行边界
 
-### 对象与可选 Stash
+`plan_guard.capture()` 保存查询、advice、作者和搜索路径。`plan_guard.verify()` 重新规划，`plan_guard.status` 提供状态；`plan_guard.drift_log` 记录状态转换并拒绝修改。规划在只读且回滚的子事务中以记录的作者身份执行，检查角色须有权切换到该身份。1.1.7 之前的基线没有作者记录，必须重新捕获，否则返回错误。安装会拒绝使用由无关普通角色预先创建的模式。规划可能调用函数，因此仍须只保存可信 SQL 并审查基线。`plan_guard.watch()` 可选使用 `pg_living_assertions`，普通捕获和验证不依赖它。`plan_guard.sync_stash()` 额外要求预加载 `pg_stash_advice`、重启并配置 stash。Apache-2.0 从 1.1.3 开始适用。
 
-- `plan_guard.baselines` 保存认可的查询文本、advice、可读计划与当前状态。
-- `plan_guard.drift_log` 是只追加的状态转换历史。
-- `plan_guard.status` 是监控视图。
-- `plan_guard.advice_for(...)` 与 `plan_guard.query_id_for(...)` 暴露底层规划信息。
-- `plan_guard.sync_stash(...)` 把认可 advice 复制到 `pg_stash_advice` stash。
+### 1.1.9 的角色隔离
 
-扩展撤销了会规划已存 SQL 的函数对 public 的执行权限。只有能够规划所有已存查询并更新基线表的角色，才应获得捕获与验证权限。
-
-### 要求与边界
-
-`pg_plan_guard` 要求 PostgreSQL 19 与 `pg_plan_advice` 模块，不能在 PostgreSQL 18 上使用。通过 `plan_guard.sync_stash(...)` 应用 advice 还需要把 `pg_stash_advice` 加入 `shared_preload_libraries`，并设置非空的 `pg_stash_advice.stash_name`。验证只检测漂移；除非配置这条可选 stash 路径，否则不会强制执行计划。
-
-查询以可执行 SQL 文本保存并重新规划，因此参数化应用查询需要具有代表性的字面量。基线也可能认可劣质计划，批准前应审查捕获的 advice。虽然 `EXPLAIN` 不执行查询，规划仍可能获取目录锁、调用规划钩子，并在模式或权限变更后失败。
-
-### 持续断言集成
-
-控制版本 `1.1` 新增 `plan_guard.watch(name, query_sql, note)`，通过 `pg_living_assertions` 注册计划保持不变的断言。只有 `plan_guard.watch` 需要该配套扩展，普通捕获和验证仍可独立使用。调用可选函数前应显式安装配套扩展。PGXN 发行版本为 1.1.0。
-
-### 1.1.3 的许可证变化
-
-1.1.3 改用 Apache-2.0；此前发布的版本（截至 1.1.2）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。
+1.1.9 在需要角色隔离时，通过作者拥有的临时 `SECURITY DEFINER` 函数规划已保存的 SQL。规划器求值的函数不能再通过重置角色或会话授权取回执行者身份。临时函数在只读规划子事务中创建并回滚。需要该执行环境时，作者须拥有数据库的 `TEMP` 权限，执行者须有权代理作者；权限不足会记录为基线错误。这修复了 1.1.7/1.1.8 中重置角色的逃逸路径，但保存的 SQL 仍须可信。

@@ -2,6 +2,10 @@
 
 来源：
 
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/CHANGELOG.md)
+- [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/extensions/pg_streaming/Cargo.toml)
+- [extensions/pg_streaming/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/extensions/pg_streaming/src/lib.rs)
+
 - [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/Cargo.toml)
 - [extensions/pg_streaming/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/worker.rs)
 - [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/crates/pg_bgworker/src/supervision.rs)
@@ -14,7 +18,7 @@
 - [管道 SQL API 与 worker 初始化](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/lib.rs)
 - [管道定义类型](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/dsl/types.rs)
 
-`pg_streaming` 版本 `0.3.2` 是声明式流处理引擎，其管道、状态、偏移量、错误与指标都保留在 PostgreSQL 中并可查询。管道把输入连接到处理器链和输出，并由协调、执行与定时后台工作进程运行。
+`pg_streaming` 版本 `0.3.3` 是声明式流处理引擎，其管道、状态、偏移量、错误与指标都保留在 PostgreSQL 中并可查询。管道把输入连接到处理器链和输出，并由协调、执行与定时后台工作进程运行。
 
 ### 核心流程
 
@@ -72,3 +76,7 @@ SELECT pgstreams.stop('active_orders');
 ALTER EXTENSION pg_streaming UPDATE;
 SELECT * FROM pgstreams.worker_status();
 ```
+
+### 0.3.3 原始数据区读取
+
+仓库发布 0.6.0 包含扩展 0.3.3。OpenDAL 新增 `parse_as: parquet` 与 `parse_as: listing`，`order: lexicographic` 可在文件中途恢复。不可读文件会停止推进，避免后续文件越过它。记录包含用于回放去重的 `source_file` 和 `source_row`，`pgstreams.replay(name, after)` 可回退已停止的管道。数组读取通道仍不支持私有 S3。

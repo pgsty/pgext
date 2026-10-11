@@ -2,10 +2,10 @@
 
 Sources:
 
-- [Upstream README](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/readme.md)
-- [Extension control file](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/morpheme_funcs.control)
-- [Cargo package metadata](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/Cargo.toml)
-- [Rust implementation](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/src/lib.rs)
+- [Upstream README](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/readme.md)
+- [Extension control file](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/morpheme_funcs.control)
+- [Cargo package metadata](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/Cargo.toml)
+- [Rust implementation](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/src/lib.rs)
 
 `morpheme_funcs` version `0.0.0` is a Rust/pgrx wrapper around MeCab for Japanese morphological tokenization. `to_morpheme_array(text)` returns a sorted set of unique morphemes, while `calculate_similar_score(text,text)` computes the Jaccard ratio of the two unique-token sets.
 

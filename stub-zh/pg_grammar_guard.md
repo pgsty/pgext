@@ -2,13 +2,13 @@
 
 来源：
 
-- [PGXN 0.4.1](https://pgxn.org/dist/pg_grammar_guard/0.4.1/)
-- [License](https://github.com/Manuelreyesbravo/pg_grammar_guard/blob/2d55b1b58c24913195dcb9de2126dc8d3114c4fb/LICENSE)
-- [Changelog](https://github.com/Manuelreyesbravo/pg_grammar_guard/blob/2d55b1b58c24913195dcb9de2126dc8d3114c4fb/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_grammar_guard/pg_grammar_guard-0.4.8/README.md)
+- [pg_grammar_guard.control](https://api.pgxn.org/src/pg_grammar_guard/pg_grammar_guard-0.4.8/pg_grammar_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_grammar_guard/pg_grammar_guard-0.4.8/CHANGELOG.md)
 
-`pg_grammar_guard` 根据目录中的标识符生成 GBNF 或 JSON Schema，并检测已批准语法的漂移。它是无需预加载的纯 SQL 扩展，本包支持 PostgreSQL 14–18。control 文件明确依赖 `pg_living_assertions`。
+`pg_grammar_guard` 0.4.8 根据目录标识符生成 GBNF 或 JSON Schema，并监测已批准语法的漂移。它以纯 SQL 实现，要求 `pg_living_assertions` 0.5.9 或更新版本。
 
-### 生成语法
+### 核心用法
 
 ```sql
 CREATE EXTENSION pg_grammar_guard CASCADE;
@@ -19,14 +19,6 @@ SELECT grammar_guard.grammar_for_json(ARRAY[
 ]::grammar_guard.grammar_field[]);
 ```
 
-目录辅助函数枚举实际存在的表、列和枚举标签。生成器支持嵌套对象和有界数组；任意 SQL、文件路径等开放集合仍需单独验证。
+### 运行边界
 
-### 检测变化
-
-`grammar_guard.watch()` 保存用于重建语法的查询，`grammar_guard.check_grammar()` 依据实时目录执行检查。可通过 `living_assertions.status` 查看结果及其年龄。
-
-只有受信任的管理员才应登记基线 SQL。语法能限制合法标识符，无法证明选择的表、关联或答案在语义上正确。旧 0.2 系列基线缺少原始生成查询，升级时需要人工重新批准。
-
-### 0.4.4 的许可证变化
-
-0.4.4 改用 Apache-2.0；此前发布的版本（截至 0.4.3）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。
+`grammar_guard.catalog_tables()` 与 `grammar_guard.catalog_columns()` 提供目录名称，`grammar_guard.grammar_for_json()` 组合带类型的字段、嵌套结构与有界数组。`grammar_guard.watch()` 保存重建语法的 SQL，`grammar_guard.check_grammar()` 与认可状态比较，结果见 `living_assertions.status`。生成查询使用作者的搜索路径并以作者身份执行。NULL 输入、空或重复字段名、空 pivot 及无效边界会被拒绝，`max_items` 上限为 1000。0.4.8 改变了规范化指纹，有序目录列表也可能使已有监测首次检查失效，应核实后重新批准。语法只约束合法词元，不保证语义正确或访问授权；仅登记可信 SQL。无需预加载。Apache-2.0 从 0.4.4 开始适用，更早版本保留原许可证。

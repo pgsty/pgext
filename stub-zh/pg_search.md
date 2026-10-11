@@ -2,6 +2,9 @@
 
 来源：
 
+- [Release 0.26.1](https://github.com/paradedb/paradedb/releases/tag/v0.26.1)
+- [Control](https://github.com/paradedb/paradedb/blob/529c77e9dffe4bd86b6b7971c019bb26b8eadbfa/pg_search/pg_search.control)
+
 - [0.26.0 migration notes](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/docs/project/changelog/0.26.0.mdx)
 - [0.26.0 SQL upgrade](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/pg_search/sql/pg_search--0.25.11--0.26.0.sql)
 - [pg_search v0.25.11 README](https://github.com/paradedb/paradedb/blob/v0.25.11/pg_search/README.md)
@@ -111,3 +114,7 @@ LIMIT 20;
 0.26.0 将向量存储改为格式 4。更新库与 SQL 扩展后，必须重建所有包含向量列的索引，包括关闭量化的索引。在完成重建前，向量查询会报需重建错误，写入仍可继续，并支持 `REINDEX CONCURRENTLY`。至少 64 维的向量默认启用量化，其设置仅在创建或重建索引时生效。保存了 `centroid_ratio` 或 `training_samples_per_centroid` 的索引需使用 `training_sample_ratio` 和 `max_leaf_size` 重新创建。含多个正则分词列的索引也应重建以修正模式选择。
 
 此版本新增 beta 状态的 `partition_by` 索引分区、连接上的窗口聚合下推，以及可选的 `paradedb.spill_to_disk`。聚合的 `visibility` 默认是 `transaction`，`raw` 跳过 MVCC 检查，不能将其结果当作事务可见结果。应用上线前应复核排序、召回率、执行计划与存储需求。
+
+### 0.26.1 版本
+
+0.26.1 修复聚合与过滤结果、通用计划中的 RLS 行为及缓存处理。它未取消 0.26.0 的迁移要求：跨越该版本升级时，应重建每个含向量字段的索引，使用已移除向量选项的索引须重新创建。仍须保留 vector 依赖及服务器预加载、重启配置。

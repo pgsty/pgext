@@ -2,6 +2,10 @@
 
 Sources:
 
+- [docs/optimization.md](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/docs/optimization.md)
+- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/Cargo.toml)
+- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/src/lib.rs)
+
 - [docs/factors.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/factors.md)
 - [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/volatility.md)
 - [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/covariance.md)
@@ -13,7 +17,7 @@ Sources:
 - [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/risk.md)
 - [Portfolio optimization](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/optimization.md)
 
-`pgquant` computes simple/log returns, cumulative and annualized returns, and historical, Gaussian and Student-t VaR/ES. Version 0.3.0 also provides volatility, covariance and factor construction. WML momentum and unconstrained mean-variance optimization are implemented; long-only optimization remains planned.
+`pgquant` computes simple/log returns, cumulative and annualized returns, and historical, Gaussian and Student-t VaR/ES. Version 0.5.1 also provides volatility, covariance and factor construction. WML momentum and unconstrained mean-variance optimization are implemented; long-only optimization and Black-Litterman models are implemented.
 
 ### Core Workflow
 
@@ -55,3 +59,7 @@ SELECT * FROM pgquant_portfolio_sort(
 ### Unconstrained Portfolio Optimization
 
 `pgquant_mv_optimize_unconstrained` takes expected returns, a flattened row-major covariance matrix, a risk-free rate and positive risk aversion. It returns risky-asset weights; they may be negative and need not sum to one. The residual allocation is to the risk-free asset. This is not a long-only optimizer.
+
+### Portfolio Optimization in 0.5.1
+
+long-only quadratic programming adds constrained quadratic programming. Black-Litterman functions compute posterior returns/covariance, and 0.5.1 adds Idzorek view-confidence calibration; risk parity remains planned. Supply dimensionally consistent arrays and valid covariance/confidence inputs. These numerical models do not establish the suitability of a portfolio.

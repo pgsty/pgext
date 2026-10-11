@@ -2,12 +2,16 @@
 
 来源：
 
+- [pgroonga_database.control](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/pgroonga_database.control)
+- [data/pgroonga_database.sql](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/data/pgroonga_database.sql)
+- [src/pgroonga-database.c](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/src/pgroonga-database.c)
+
 - [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga_database.sql)
 - [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga_database.control)
 - [Version 4.0.9 implementation](https://github.com/pgroonga/pgroonga/blob/4.0.9/src/pgroonga-database.c)
 - [Official recovery procedure](https://pgroonga.github.io/reference/functions/pgroonga-database-remove.html)
 
-`pgroonga_database` 4.0.9 是用于恢复损坏的 PGroonga 内部数据库的辅助扩展。它只提供一个 SQL 函数，用来删除数据库目录及适用表空间目录中的 PGroonga 文件，不提供搜索访问方法。
+`pgroonga_database` 4.1.0 是用于恢复损坏的 PGroonga 内部数据库的辅助扩展。它只提供一个 SQL 函数，用来删除数据库目录及适用表空间目录中的 PGroonga 文件，不提供搜索访问方法。
 
 ### 恢复流程
 
@@ -27,3 +31,7 @@ SELECT pgroonga_database_remove();
 `pgroonga_database_remove()` 结束清理循环时返回 true。表空间所有权检查未通过时，循环会提前停止，但函数仍可能返回 true，因此不能仅凭返回值认定所有位置都已清理。其他失败可能报错。它直接删除内部文件，既不导出文件，也不重建索引。不要在清理连接中使用其他 PGroonga 功能。此操作不是例行清理、卸载命令，也不能仅靠包裹在 SQL 事务中就保证安全。
 
 控制文件未将扩展标记为受信任或可迁移模式。C 实现在遍历位置时检查表空间所有权，应使用拥有所需位置的管理员，并确认清理和全量索引重建完成。模块不需要预加载，仅应为恢复任务启用。
+
+### 4.1.0 版本
+
+control 版本随 PGroonga 同步到 4.1.0。恢复辅助函数仍会删除内部文件，上述断开连接并重建索引的流程保持不变。

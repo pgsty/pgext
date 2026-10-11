@@ -1,85 +1,24 @@
-
-
-
 ## Usage
 
-> [pg_tle: Trusted Language Extensions for PostgreSQL](https://github.com/aws/pg_tle)
+Sources:
 
-`pg_tle` lets you create and manage PostgreSQL extensions using trusted languages (SQL, PL/pgSQL, PL/v8, PL/Perl) without requiring filesystem access or server restarts.
+- [README.md](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/README.md)
+- [pg_tle.control.in](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/pg_tle.control.in)
+- [pg_tle--1.5.2--1.5.3.sql](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/pg_tle--1.5.2--1.5.3.sql)
 
-Add `pg_tle` to `shared_preload_libraries` in `postgresql.conf`:
+`pg_tle` 1.5.3 manages extensions written in trusted PostgreSQL languages. Native installation needs shared preload and a server restart; subsequent TLE definitions are stored in the database. Upstream documents PostgreSQL 12 through 19 Beta 4.
+
+### Core Workflow
 
 ```ini
 shared_preload_libraries = 'pg_tle'
 ```
 
-### Install a TLE Extension
-
 ```sql
-SELECT pgtle.install_extension(
-  'my_extension',      -- extension name
-  '1.0',               -- version
-  'My custom extension', -- description
-  $_pgtle_$
-    CREATE FUNCTION my_func() RETURNS text AS $$
-      SELECT 'hello from my_extension';
-    $$ LANGUAGE SQL;
-  $_pgtle_$
-);
+CREATE EXTENSION pg_tle;
+SELECT pgtle.available_extensions();
 ```
 
-### Manage Extension Versions
+### Operational Boundaries
 
-```sql
--- Add an upgrade path
-SELECT pgtle.install_update_path(
-  'my_extension',  -- extension name
-  '1.0',           -- from version
-  '1.1',           -- to version
-  $_pgtle_$
-    CREATE OR REPLACE FUNCTION my_func() RETURNS text AS $$
-      SELECT 'hello from my_extension v1.1';
-    $$ LANGUAGE SQL;
-  $_pgtle_$
-);
-
--- Set default version
-SELECT pgtle.set_default_version('my_extension', '1.1');
-```
-
-### Use the TLE Extension
-
-```sql
-CREATE EXTENSION my_extension;
-SELECT my_func();  -- 'hello from my_extension'
-ALTER EXTENSION my_extension UPDATE TO '1.1';
-```
-
-### Remove a TLE Extension
-
-```sql
-DROP EXTENSION my_extension;
-SELECT pgtle.uninstall_extension('my_extension');
-```
-
-### Hooks and Features
-
-Register custom hooks (e.g., password check hooks):
-
-```sql
-SELECT pgtle.register_feature('my_password_check', 'passcheck');
-SELECT pgtle.unregister_feature('my_password_check', 'passcheck');
-```
-
-### Key Functions
-
-| Function | Description |
-|----------|-------------|
-| `pgtle.install_extension()` | Install a new TLE extension |
-| `pgtle.install_update_path()` | Add an upgrade path between versions |
-| `pgtle.set_default_version()` | Set the default version for an extension |
-| `pgtle.uninstall_extension()` | Remove a TLE extension |
-| `pgtle.register_feature()` | Register a feature hook |
-| `pgtle.unregister_feature()` | Unregister a feature hook |
-| `pgtle.available_extensions()` | List available TLE extensions |
-| `pgtle.available_extension_versions()` | List available versions |
+`pgtle.install_extension()` stores an extension definition; `CREATE EXTENSION` enables it in a database. `pgtle.install_update_path()` and `pgtle.set_default_version()` manage versions, while `pgtle.available_extensions()` lists definitions. `pgtle.set_extension_schema()` sets schema metadata for a managed extension in 1.5.3, which also tightens identifier validation. TLE administration is restricted through `pgtle_admin`; executing an installed extension still follows PostgreSQL language and object privileges. Dropping an installed extension and uninstalling its TLE definition are separate operations. Only use trusted extension code and review dependencies and upgrade SQL.

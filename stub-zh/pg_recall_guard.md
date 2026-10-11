@@ -2,16 +2,14 @@
 
 来源：
 
-- [PGXN 0.2.0 README](https://pgxn.org/dist/pg_recall_guard/0.2.0/README.html)
-- [pg_recall_guard 控制文件](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/pg_recall_guard.control)
-- [pg_recall_guard 0.2.0 SQL 定义](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/pg_recall_guard--0.2.0.sql)
-- [PostgreSQL 许可证](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.0/LICENSE)
-- [License](https://github.com/Manuelreyesbravo/pg_recall_guard/blob/7199bf8098f129e6769c0bdf642633c916c2d880/LICENSE)
-- [Changelog](https://github.com/Manuelreyesbravo/pg_recall_guard/blob/7199bf8098f129e6769c0bdf642633c916c2d880/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.9/README.md)
+- [pg_recall_guard.control](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.9/pg_recall_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.9/CHANGELOG.md)
+- [pg_recall_guard--0.2.8--0.2.9.sql](https://api.pgxn.org/src/pg_recall_guard/pg_recall_guard-0.2.9/pg_recall_guard--0.2.8--0.2.9.sql)
 
-`pg_recall_guard` 用精确结果衡量近似最近邻索引的召回率，并记录运维人员认可的数值。它从 PostgreSQL 系统目录发现可排序的距离操作符，而不是写死某一种向量扩展。
+`pg_recall_guard` 0.2.9 将近似最近邻结果与精确扫描比较，并保存认可的索引基线。它从 PostgreSQL 目录发现距离运算符，依赖 `tsm_system_rows`。
 
-### 核心流程
+### 核心用法
 
 ```sql
 CREATE EXTENSION pg_recall_guard CASCADE;
@@ -28,24 +26,10 @@ SELECT recall_guard.approve(
 SELECT * FROM recall_guard.check();
 ```
 
-`CASCADE` 会在可用时安装所需的 contrib 扩展 `tsm_system_rows`。`recall_guard.approve(...)` 测量所选索引并保存认可基线。`recall_guard.check()` 重新测量全部基线，返回基线值、当前召回率、漂移与判定。
+### 运行边界
 
-### 对象与测量
+`recall_guard.vector_indexes` 列出可用索引，`recall_guard.approve()` 保存测量结果与搜索设置，`recall_guard.check()` 复用这些设置，`recall_guard.measure()` 执行单次比较。等距离邻居均计为命中，因此按旧版重复向量行为批准的基线可能需要重新批准。样本来自非 NULL 向量，`k` 范围为 1–1000，`sample_size` 范围为 1–10000。部分索引、表达式索引和临时索引会被拒绝。行级安全将基线和测量结果的访问限制为有权读取的表。每个样本执行精确计算并持有关系锁，应谨慎安排。样本不能替代真实查询流量，按名称绑定的基线也可能跨越索引替换。尽管元数据声明 PG13+，上游测试仅覆盖 PostgreSQL 18.6/19 beta。这是无需预加载的纯 SQL 扩展，Apache-2.0 从 0.2.3 开始适用。
 
-- `recall_guard.vector_indexes` 列出通过 `pg_amop` 暴露排序操作符的索引。
-- `recall_guard.measure(...)` 抽取查询向量，将索引最近邻与精确顺序扫描结果比较。
-- `recall_guard.baselines` 保存认可的设置与召回率。
-- `recall_guard.measurements` 保存后续观测值。
-- `recall_guard.evaluate_query(...)` 是底层比较辅助函数。
+### 0.2.9 的状态值变化
 
-实现会验证近似侧确实使用目标索引，并确认真值侧没有使用它。每个样本行自身的零距离匹配会被排除，避免这种必然命中抬高召回率。
-
-### 成本与边界
-
-每个样本查询都会执行精确扫描，因此大表上的测量可能很昂贵。应从较小的 `p_sample_size` 开始，把检查安排在低峰时段，并观察 I/O 与 CPU。样本来自被索引表，而非生产查询流量；它只是代理，不能替代工作负载跟踪。
-
-PGXN 元数据声明支持 PostgreSQL 13 及以上，上游测试则覆盖 18.6 与 19 beta，PostgreSQL 13 至 17 尚未测试。0.2.0 也没有经过生产工作负载的现场验证，已发布实验只覆盖有限的向量维度与索引设置。阈值应按工作负载设定，只能在独立质量测试后认可基线。
-
-### 0.2.3 的许可证变化
-
-0.2.3 改用 Apache-2.0；此前发布的版本（截至 0.2.2）仍保留 PostgreSQL License。本次不改变数据库对象，升级脚本只记录新版本。
+0.2.9 修改了 `recall_guard.check()` 返回的状态值：`degradado` 改为 `degraded`，`critico` 改为 `critical`，`NO SE PUDO MEDIR: <error>` 改为 `COULD NOT MEASURE: <error>`；`ok` 保持不变。按旧词匹配的监控过滤条件需要更新。升级脚本用英文重新定义函数和注释，不增删公开对象。

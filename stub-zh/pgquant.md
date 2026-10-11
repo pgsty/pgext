@@ -2,6 +2,10 @@
 
 来源：
 
+- [docs/optimization.md](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/docs/optimization.md)
+- [Cargo.toml](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/Cargo.toml)
+- [src/lib.rs](https://github.com/pranshu05/pgQuant/blob/2e9ccbef42a5e121224831b02854005e4736f457/src/lib.rs)
+
 - [docs/factors.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/factors.md)
 - [docs/volatility.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/volatility.md)
 - [docs/covariance.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/covariance.md)
@@ -13,7 +17,7 @@
 - [docs/risk.md](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/risk.md)
 - [Portfolio optimization](https://github.com/pranshu05/pgQuant/blob/cbb28e372b248cff7c28f0b989f478180b1d99e9/docs/optimization.md)
 
-`pgquant` 计算简单/对数收益率、累积与年化收益率，以及历史、Gaussian 和 Student-t VaR/ES。0.3.0 还提供波动率、协方差和因子构建；WML 动量和无约束均值—方差优化已经实现，仅做多优化仍在计划中。
+`pgquant` 计算简单/对数收益率、累积与年化收益率，以及历史、Gaussian 和 Student-t VaR/ES。0.5.1 还提供波动率、协方差和因子构建；WML 动量和无约束均值—方差优化已经实现，仅做多优化与 Black-Litterman 模型已经实现。
 
 ### 核心用法
 
@@ -55,3 +59,7 @@ SELECT * FROM pgquant_portfolio_sort(
 ### 无约束投资组合优化
 
 `pgquant_mv_optimize_unconstrained` 接收预期收益、按行展开的协方差矩阵、无风险利率和正的风险厌恶参数，返回风险资产权重。权重可以为负，也不保证总和为一，剩余比例分配给无风险资产。这不是仅做多优化器。
+
+### 0.5.1 的投资组合优化
+
+只做多的二次规划 增加带约束的二次规划；Black-Litterman 函数计算后验收益与协方差，0.5.1 新增 Idzorek 观点置信度校准，风险平价仍在计划中。须提供维度一致的数组及有效的协方差和置信度输入。这些数值模型本身不能证明投资组合适用性。

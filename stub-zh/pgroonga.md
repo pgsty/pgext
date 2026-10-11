@@ -2,13 +2,16 @@
 
 来源：
 
+- [Release 4.1.0](https://github.com/pgroonga/pgroonga/releases/tag/4.1.0)
+- [Control](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/pgroonga.control)
+
 - [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga.sql)
 - [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga.control)
 - [Official tutorial](https://pgroonga.github.io/tutorial/)
 - [Version 4.0.9 release](https://github.com/pgroonga/pgroonga/releases/tag/4.0.9)
 - [Upgrade guidance](https://pgroonga.github.io/upgrade/)
 
-`pgroonga` 4.0.9 使用 Groonga 索引实现多语言全文检索，安装 `pgroonga` 访问方法及 SQL 操作符，普通使用不需要共享预加载。
+`pgroonga` 4.1.0 使用 Groonga 索引实现多语言全文检索，安装 `pgroonga` 访问方法及 SQL 操作符，普通使用不需要共享预加载。
 
 ### 核心流程
 
@@ -45,3 +48,7 @@ PGroonga 除表数据外还管理派生索引文件，应据此规划磁盘容�
 改变加载顺序不是完整修复：EL9 aarch64 的自动会话预加载仍出现后端退出崩溃。在验证兼容依赖组合前，应避免在同一个后端启用两套依赖，必要时隔离使用。本轮测试的 EL10 和 Debian/Ubuntu 组合未复现该故障，但不能据此推广到任意其他依赖版本。这是 Pigsty 软件包依赖栈的边界，不是上游要求普通 PGroonga 搜索必须预加载。
 
 MeCab 分词还需要匹配的 Groonga 分词插件和词典。仅安装 PostgreSQL 扩展并不会提供全部可选分词器；在建立指定分词器的索引前，应确认它可用。
+
+### 4.1.0 版本
+
+4.1.0 修复其他会话在 CREATE INDEX 提交前执行 VACUUM/ANALYZE 导致索引数据被移除的问题，已经受影响的索引可能需要 REINDEX。直接调用 Groonga 时，搭配 Groonga 16.1.3 或更新版本可在 `post_filter` 中使用 `pgroonga_tuple_is_alive`。这次源码发布不改变另行记录的 Pigsty 依赖栈限制。

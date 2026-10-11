@@ -2,14 +2,14 @@
 
 来源：
 
-- [plpgsql_check 2.10.11 README](https://github.com/okbob/plpgsql_check/blob/v2.10.11/README.md)
-- [plpgsql_check 2.10.11 发行版](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.11)
-- [plpgsql_check 2.10.11 控制文件](https://github.com/okbob/plpgsql_check/blob/v2.10.11/plpgsql_check.control)
-- [plpgsql_check 2.10.10 到 2.10.11 的变更](https://github.com/okbob/plpgsql_check/compare/v2.10.10...v2.10.11)
+- [README.md](https://github.com/okbob/plpgsql_check/blob/ccdbcce9de51f01e1138c270aeb9fe4e26c6e911/README.md)
+- [Control](https://github.com/okbob/plpgsql_check/blob/ccdbcce9de51f01e1138c270aeb9fe4e26c6e911/plpgsql_check.control)
+- [Release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.14)
+- [Changes](https://github.com/okbob/plpgsql_check/compare/v2.10.13...v2.10.14)
 
 `plpgsql_check` 是面向 PL/pgSQL 的检查器、代码规范检查器、性能分析器、跟踪器和覆盖率工具。它利用 PostgreSQL 自身的解析器和执行器基础设施分析 PL/pgSQL 函数体，因此许多原本只会在运行时出现的问题，可以在开发或 CI 阶段被发现。
 
-软件包发行版 2.10.11 安装的 SQL 扩展版本为 `2.10`。此版本修复误报并整理检查器内部代码。支持 PostgreSQL 14–19。
+上游发行版 2.10.14 安装的 SQL 扩展版本仍为 `2.10`。README 覆盖 PostgreSQL 14–20，其中包含开发版本；这不代表对应二进制软件包已经可用。
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -126,7 +126,7 @@ SELECT plpgsql_profiler_reset_all();
 
 要共享性能分析器统计信息并确保可靠的早期初始化，请在 `plpgsql_check` 之前预加载 `plpgsql`：
 
-```conf
+```ini
 shared_preload_libraries = 'plpgsql,plpgsql_check'
 ```
 
@@ -177,6 +177,16 @@ FROM plpgsql_check_function(
 - 主动检查不强制要求预加载，但共享性能分析器存储以及可靠的跟踪器/性能分析器初始化需要预加载。
 - 跟踪器输出可能包含函数参数和局部变量值；不要在敏感的生产工作负载中广泛启用。
 - 检查器无法完美理解所有动态 SQL 字符串。请使用编译指示记录预期的动态对象，以减少误报。
-- 发行版 2.10.2 和 2.10.3 修复了分析复合参数时可能发生的崩溃，以及为带多态参数的函数生成覆盖率或性能分析报告时可能发生的崩溃。版本 2.10.11 保留这些先前的修复，并修正了更多误报。
+- 发行版 2.10.2 和 2.10.3 修复了分析复合参数时可能发生的崩溃，以及为带多态参数的函数生成覆盖率或性能分析报告时可能发生的崩溃。版本 2.10.14 保留这些先前的修复，并修正了更多误报。
 
 发行包 META 将许可证标为 BSD，但随包 LICENSE 文件使用 MIT 正文；目录以随包许可证文件为准。
+
+### 2.10.14 的变化
+
+性能分析报告中的动态 SQL 查询标识默认关闭，仅在需要时启用 `plpgsql_check.profiler_show_dynquery_query_id`。本版还改善格式字符串与多态类型检查，并修复执行计划保留及重试过程中的泄漏。分支覆盖率会区分 IF/ELSIF 条件求值失败与真正进入隐式 ELSE 分支。
+
+```sql
+SET plpgsql_check.profiler_show_dynquery_query_id = on;
+```
+
+SQL 版本仍为 `2.10`，替换兼容的库文件本身不要求执行扩展迁移。应重新连接使用旧库的会话；共享预加载的实例需要重启。修改运行中的服务器前应先演练升级。

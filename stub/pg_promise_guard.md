@@ -2,14 +2,11 @@
 
 Sources:
 
-- [PGXN 0.2.0 README](https://pgxn.org/dist/pg_promise_guard/0.2.0/README.html)
-- [pg_promise_guard control file](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/pg_promise_guard.control)
-- [pg_promise_guard 0.2.0 SQL definitions](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/pg_promise_guard--0.2.0.sql)
-- [PostgreSQL license](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.0/LICENSE)
-- [License](https://github.com/Manuelreyesbravo/pg_promise_guard/blob/fb723160d8d2d4a43d0063fc4aa9bf26ea9c38d9/LICENSE)
-- [Changelog](https://github.com/Manuelreyesbravo/pg_promise_guard/blob/fb723160d8d2d4a43d0063fc4aa9bf26ea9c38d9/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/README.md)
+- [pg_promise_guard.control](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/pg_promise_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/CHANGELOG.md)
 
-`pg_promise_guard` reports schema guarantees that look present but are wholly or partly unenforced. It reads PostgreSQL catalogs only, making it suitable for a periodic integrity check after migrations, bulk loads, or operational overrides.
+`pg_promise_guard` 0.2.8 scans system catalogs for declared guarantees that are no longer fully enforced. It requires `pg_living_assertions`, uses pure SQL and needs no preload.
 
 ### Core Workflow
 
@@ -23,32 +20,11 @@ SELECT promise_guard.promises_kept('app');
 SELECT * FROM promise_guard.check_promises('app');
 ```
 
-`promise_guard.promise_breaks` is the database-wide view. `promise_guard.check_promises(text)` optionally limits results to one schema, while `promise_guard.promises_kept(text)` returns false only when at least one current breach is present.
-
-### Findings
-
-- An invalid unique index is a `breach` because uniqueness is not being enforced.
-- A disabled user trigger is a `breach` because its declared behavior is inactive.
-- Row-level security enabled but not forced is a `breach` because the table owner can bypass policies.
-- A `NOT VALID` check or foreign-key constraint is a `gap`: new rows are checked, but existing rows were not validated.
-
-The result type `promise_break` includes the finding kind, object, relation, severity, and explanation. Extension-owned objects are skipped so the check focuses on application schema state.
-
-### Boundaries
-
-The check reads catalogs without scanning user tables or taking application locks. It reports current state, not who or when changed it. It does not verify physical index integrity, permissions, default privileges, `search_path` shadowing, or historical enforcement; use tools such as `amcheck` and a separate security audit for those questions.
-
-PGXN metadata claims PostgreSQL 13 or newer, but upstream has only tested 18.6 and 19 beta. Validate PostgreSQL 13 through 17 locally before relying on the result. The extension is pure SQL, needs no preload or shared library, and requires `pg_living_assertions`.
-
-### Persistent Scan Status
-
-Version 0.2.0 requires `pg_living_assertions` and adds `promise_guard.watch`, recording scan results and their age through living assertions. Only breaches make the verdict false; gaps remain distinct. The catalog scan itself stays stateless. This release also fixes internal name resolution so calls work with an independent caller search path.
-
 ```sql
 SELECT promise_guard.watch('public');
 SELECT * FROM living_assertions.status;
 ```
 
-### License Change in 0.2.3
+### Operational Boundaries
 
-Version 0.2.3 adopts Apache-2.0. Previously published versions through 0.2.2 retain the PostgreSQL License. This release changes no database objects; its upgrade only records the version.
+`promise_guard.check_promises()` returns breaches and gaps; `promise_guard.promises_kept()` is false only for breaches, and `promise_guard.watch()` records the verdict in living assertions. Only READ COMMITTED is accepted, and nonexistent schemas raise errors. Disabled triggers, unenforced constraints and inactive policies/rules can be breaches. Replica-only triggers, unvalidated history and a ready-but-invalid unique index can be gaps; failed indexes that accept duplicates remain breaches. Only objects of superuser-owned extensions are excluded. Old watches from before 0.2.7 should be retired and recreated to adopt catalog-first name resolution. The scan does not prove physical integrity or audit all privileges. PGXN claims PostgreSQL 13+, while documented tests cover 18.6 and 19 beta. Current Apache-2.0 licensing starts at 0.2.3.

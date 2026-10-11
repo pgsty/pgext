@@ -2,10 +2,10 @@
 
 来源：
 
-- [上游 README](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/readme.md)
-- [扩展 control 文件](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/morpheme_funcs.control)
-- [Cargo 软件包元数据](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/Cargo.toml)
-- [Rust 实现](https://github.com/cystal-dot/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/src/lib.rs)
+- [上游 README](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/readme.md)
+- [扩展 control 文件](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/morpheme_funcs.control)
+- [Cargo 软件包元数据](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/Cargo.toml)
+- [Rust 实现](https://github.com/snmdesu/morpheme_funcs/blob/c7607a5affb6a1d3688c92f36aa6456efc648f48/src/lib.rs)
 
 `morpheme_funcs` `0.0.0` 版是用 Rust/pgrx 编写的 MeCab 封装，用于日语形态素切分。`to_morpheme_array(text)` 返回排序后的唯一形态素集合，`calculate_similar_score(text,text)` 计算两个唯一词元集合的 Jaccard 比率。
 

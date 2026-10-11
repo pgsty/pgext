@@ -2,6 +2,9 @@
 
 Sources:
 
+- [Release 0.26.1](https://github.com/paradedb/paradedb/releases/tag/v0.26.1)
+- [Control](https://github.com/paradedb/paradedb/blob/529c77e9dffe4bd86b6b7971c019bb26b8eadbfa/pg_search/pg_search.control)
+
 - [0.26.0 migration notes](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/docs/project/changelog/0.26.0.mdx)
 - [0.26.0 SQL upgrade](https://github.com/paradedb/paradedb/blob/aa7f9dd407018036d144a54a3f875c5a00d20cda/pg_search/sql/pg_search--0.25.11--0.26.0.sql)
 - [pg_search v0.25.11 README](https://github.com/paradedb/paradedb/blob/v0.25.11/pg_search/README.md)
@@ -111,3 +114,7 @@ LIMIT 20;
 Version 0.26.0 changes vector storage to format 4. After updating the library and SQL extension, rebuild every index containing a vector field, including indexes with quantization disabled. Until rebuilt, vector queries fail with a rebuild-required error; writes continue and `REINDEX CONCURRENTLY` is supported. Quantization defaults on for vectors with at least 64 dimensions. Its settings take effect only during index creation or rebuilding. Indexes storing `centroid_ratio` or `training_samples_per_centroid` must be recreated using `training_sample_ratio` and `max_leaf_size`. Rebuild indexes with multiple regex-tokenized fields to correct pattern selection as well.
 
 The release adds beta `partition_by` index partitioning, window-aggregate pushdown over joins, and opt-in `paradedb.spill_to_disk`. Aggregate `visibility` defaults to `transaction`; `raw` skips MVCC checks and must not be mistaken for transaction-visible results. Recheck ranking, recall, plans and storage requirements before application rollout.
+
+### Version 0.26.1
+
+Version 0.26.1 fixes aggregate/filter correctness, RLS behaviour in generic plans and cache handling. It does not remove the 0.26.0 migration requirement: when crossing that release, rebuild every index containing a vector field and recreate indexes using removed vector options. Keep the required vector dependency and server preload/restart configuration.
