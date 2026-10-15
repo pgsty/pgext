@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "hstore_plruby" >}} {{< ext "jsonb_plruby" >}} {{< ext "ltree_plruby" >}} |
-|   **See Also**    | {{< ext "jsonb_plruby" >}} {{< ext "hstore_plruby" >}} {{< ext "ltree_plruby" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "plv8" >}} {{< ext "plrust" >}} {{< ext "plphp" >}} |
+|   **See Also**    | {{< ext "jsonb_plruby" >}} {{< ext "hstore_plruby" >}} {{< ext "ltree_plruby" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "plv8" >}} `plrust` {{< ext "plphp" >}} |
 |    **Siblings**   | {{< ext "jsonb_plruby" >}} {{< ext "hstore_plruby" >}} {{< ext "ltree_plruby" >}} |
 
 > [!Note] Extension control default_version is 2.5 while the project and package version is 2.5.0; PL/Ruby embeds MRI Ruby 3.x, is untrusted and superuser-only, and requires no preload. RPM builds also provide an llvmjit subpackage.
@@ -204,7 +204,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install plruby;		# install via package name, for the active PG version
@@ -218,7 +218,7 @@ pig install plruby -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION plruby;

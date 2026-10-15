@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "ai" >}} {{< ext "alloydb_scann" >}} {{< ext "avocado" >}} {{< ext "documentdb" >}} {{< ext "embedding_search" >}} {{< ext "hybrid_search" >}} {{< ext "maludb_core" >}} {{< ext "pg_cuvs" >}} {{< ext "pg_diskann" >}} {{< ext "pg_gembed" >}} {{< ext "pg_knowledge_graph" >}} {{< ext "pg_llm" >}} {{< ext "pg_llm_helper" >}} {{< ext "pg_search" >}} {{< ext "pg_semantic_cache" >}} {{< ext "pg_sentence_transformer" >}} {{< ext "pg_splade" >}} {{< ext "pg_turboquant" >}} {{< ext "pgedge_vectorizer" >}} {{< ext "pgmnemo" >}} {{< ext "pgpu" >}} {{< ext "pgturbohybrid" >}} {{< ext "pgvecutils" >}} {{< ext "rag" >}} {{< ext "rag_bge_small_en_v15" >}} {{< ext "rag_jina_reranker_v1_tiny_en" >}} {{< ext "rds_ai" >}} {{< ext "rds_embedding" >}} {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} |
+|    **Need By**    | `ai` `alloydb_scann` `avocado` {{< ext "documentdb" >}} `embedding_search` `hybrid_search` `maludb_core` `pg_cuvs` `pg_diskann` `pg_gembed` `pg_knowledge_graph` `pg_llm` `pg_llm_helper` {{< ext "pg_search" >}} `pg_semantic_cache` `pg_sentence_transformer` `pg_splade` `pg_turboquant` `pgedge_vectorizer` {{< ext "pgmnemo" >}} `pgpu` `pgturbohybrid` `pgvecutils` `rag` `rag_bge_small_en_v15` `rag_jina_reranker_v1_tiny_en` `rds_ai` `rds_embedding` {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} |
 |   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} |
 
 > [!Note] PGDG is the principal supplier by explicit catalog policy: RPM and DEB 0.8.7 cover PostgreSQL 14-18. Pigsty recipes are retained for confirmed gaps only.
@@ -698,7 +698,7 @@ Make sure [**PGDG**](/repo/pgdg) repo available:
 pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install pgvector;		# install via package name, for the active PG version
@@ -713,7 +713,7 @@ pig install vector -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION vector;

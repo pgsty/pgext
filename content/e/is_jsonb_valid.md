@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "postgres-json-schema" >}} {{< ext "jsquery" >}} |
+|   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} `postgres-json-schema` {{< ext "jsquery" >}} |
 
 > [!Note] Remote $ref and format validation are unsupported; local $ref resolution is limited. Ships two libraries under one extension identity.
 
@@ -201,7 +201,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install is_jsonb_valid;		# install via package name, for the active PG version
@@ -215,7 +215,7 @@ pig install is_jsonb_valid -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION is_jsonb_valid;

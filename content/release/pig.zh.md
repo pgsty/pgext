@@ -1588,7 +1588,7 @@ pig 0.3.0 随 Pigsty [3.3.0](https://github.com/Vonng/pigsty/releases/tag/v3.3.0
 
 **新扩展**
 
-[`ext.pgsty.com`](https://ext.pgsty.com/) 目录正在迁移到 [`https://ext.pgsty.com/list`](https://ext.pgsty.com/ext)，包含更多信息！
+[`ext.pgsty.com`](https://ext.pgsty.com/) 目录正在迁移到 [`https://ext.pgsty.com/list`](https://ext.pgsty.com/list/)，包含更多信息！
 
 **校验和**
 
@@ -1737,7 +1737,7 @@ v0.1.3，常规更新，现在可用 390 个扩展！
 - 将 [`citus`](https://github.com/citusdata/citus/tree/v13.0.0) 升级到 13.0.0，支持 PostgreSQL 17。
 - 将 [`pgml`](https://github.com/postgresml/postgresml/releases/tag/v2.10.0) 升级到 2.10.0
 - 将 [`pg_extra_time`](https://ext.pgsty.com/e/pg_extra_time) 升级到 2.0.0
-- 将 [`pg_vectorize`](https://ext.pgsty.com/e/pg_vectorize) 升级到 0.20.0
+- 将 [`pg_vectorize`](https://ext.pgsty.com/e/vectorize/) 升级到 0.20.0
 
 ```bash
 curl https://repo.pigsty.io/pig | bash
@@ -2042,6 +2042,6 @@ sudo yum makecache; sudo yum install -y pig
 - [`pllua`](https://ext.pgsty.com/e/pllua) 在 `el8.aarch64` 上对 pg 14,15 缺失
 - [`topn`](https://ext.pgsty.com/e/topn) 在 `el8.aarch64` 和 `el9.aarch64` 上对 pg14 缺失，以及所有 `deb.aarch64`
 - [`pg_partman`](https://ext.pgsty.com/e/pg_partman) 和 [`timeseries`](https://ext.pgsty.com/e/timeseries) 在 `u24` 上对 pg14 缺失
-- [`wiltondb`](https://ext.pgsty.com/e/wiltondb) 在 `d12` 上缺失
+- [`wiltondb`](https://github.com/wiltondb/wiltondb) 在 `d12` 上缺失
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.0.1

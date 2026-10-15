@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "babelfishpg_tsql" >}} {{< ext "bundle" >}} {{< ext "datalink" >}} {{< ext "launchql-extension-verify" >}} {{< ext "launchql-inflection" >}} {{< ext "launchql-jwt-claims" >}} {{< ext "npm" >}} {{< ext "pg_abris" >}} {{< ext "pg_dms" >}} {{< ext "provsql" >}} {{< ext "ruid" >}} {{< ext "skitch-extension-jobs" >}} {{< ext "skitch-extension-verify" >}} {{< ext "supa_audit" >}} {{< ext "types" >}} |
+|    **Need By**    | {{< ext "babelfishpg_tsql" >}} `bundle` `datalink` `launchql-extension-verify` `launchql-inflection` `launchql-jwt-claims` `npm` `pg_abris` `pg_dms` {{< ext "provsql" >}} `ruid` `skitch-extension-jobs` `skitch-extension-verify` `supa_audit` `types` |
 |   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "snowflake" >}} {{< ext "pg_uuid_v8" >}} {{< ext "typeid" >}} |
 
 
@@ -43,7 +43,7 @@ page_width: full
 ## Install
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION uuid-ossp;

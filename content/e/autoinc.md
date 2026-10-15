@@ -42,7 +42,7 @@ page_width: full
 ## Install
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION autoinc;

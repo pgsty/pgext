@@ -84,7 +84,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install pg_xenophile;		# install via package name, for the active PG version
@@ -99,7 +99,7 @@ pig install l10n_table_dependent_extension -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION l10n_table_dependent_extension CASCADE; -- requires pg_xenophile

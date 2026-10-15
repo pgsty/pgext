@@ -27,12 +27,14 @@ theme, and the rendered markup is the theme's own so it inherits the card CSS.
   {{- $href := "" -}}
   {{- $external := false -}}
   {{- if isset .Params "link" -}}
-    {{- $link := strings.TrimSpace (printf "%v" (.Get "link")) -}}
-    {{- if hasPrefix $link "/" -}}
-      {{- $href = relLangURL $link -}}
-    {{- else if $link -}}
-      {{- $href = $link -}}
-      {{- $external = not (hasPrefix $link "#") -}}
+    {{- $url := partial "content/url.html" (dict "name" .Name "parameter" "link" "position" .Position "value" (.Get "link") "kind" "link") -}}
+    {{- $href = $url.href -}}
+    {{- $external = $url.external -}}
+    {{- /* Only content pages have language variants; shared static files do not. */ -}}
+    {{- if and $url.valid (not $url.scheme) (hasPrefix $url.raw "/") -}}
+      {{- with $.Page.Site.GetPage $url.path -}}
+        {{- $href = relLangURL $url.raw -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
   {{- $icon := "" -}}
@@ -48,7 +50,8 @@ theme, and the rendered markup is the theme's own so it inherits the card CSS.
     {{- with $body }}{{ $line = printf "%s — %s" $line (replaceRE `\s*\n\s*` " " .) }}{{ end }}
 - {{ $line | safeHTML }}
   {{- else -}}
-    {{- $id := printf "td-card-%s-%d" (md5 .Page.RelPermalink | truncate 8 "") .Ordinal -}}
+    {{- $scope := partial "content/shortcode-ordinal.html" . -}}
+    {{- $id := printf "td-card-%s-%s" (md5 .Page.RelPermalink | truncate 8 "") $scope -}}
 <article id="{{ $id }}" class="td-content-card">
 <div class="td-content-card__body">
 <div class="td-content-card__head">
@@ -57,7 +60,7 @@ theme, and the rendered markup is the theme's own so it inherits the card CSS.
 {{- with $badge }}<span class="td-content-card__badge">{{ . }}</span>{{ end -}}
 </div>
 {{- if $body }}
-<div class="td-content-card__description">{{ partial "content/render-block.html" (dict "page" .Page "scope" (printf "card%d" .Ordinal) "content" $body "origin" (printf "shortcode %q at %s" .Name .Position)) }}</div>
+<div class="td-content-card__description">{{ partial "content/render-block.html" (dict "page" .Page "scope" (printf "card-%s" $scope) "content" $body "origin" (printf "shortcode %q at %s" .Name .Position)) }}</div>
 {{- end }}
 </div>
 </article>

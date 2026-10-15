@@ -247,6 +247,20 @@ func (g *ExtensionGenerator) generateAttributes(ext *Extension) string {
 `, attrBadge, hasBin, hasLib, needLoad, needDDL, relocatable, trusted)
 }
 
+// Relationship metadata can include extensions outside the generated catalog.
+// Keep their names visible without linking to pages this site does not publish.
+func (g *ExtensionGenerator) extensionReference(name string) string {
+	if name == "" {
+		return ""
+	}
+	if g.Cache != nil {
+		if ext, ok := g.Cache.ExtMap[name]; ok && ext != nil && ext.IsReady() {
+			return ExtShortcode(name, "")
+		}
+	}
+	return fmt.Sprintf("`%s`", name)
+}
+
 func (g *ExtensionGenerator) generateRelationships(ext *Extension, siblings []*Extension) string {
 	if len(ext.Schemas) == 0 && len(ext.Requires) == 0 && len(ext.RequireBy) == 0 && len(ext.SeeAlso) == 0 && len(siblings) == 0 {
 		return ""
@@ -267,7 +281,7 @@ func (g *ExtensionGenerator) generateRelationships(ext *Extension, siblings []*E
 	if len(ext.Requires) > 0 {
 		requires := make([]string, len(ext.Requires))
 		for i, e := range ext.Requires {
-			requires[i] = ExtShortcode(e, "")
+			requires[i] = g.extensionReference(e)
 		}
 		b.WriteString(fmt.Sprintf("|   **Requires**    | %s |\n", strings.Join(requires, " ")))
 	}
@@ -275,7 +289,7 @@ func (g *ExtensionGenerator) generateRelationships(ext *Extension, siblings []*E
 	if len(ext.RequireBy) > 0 {
 		requireBy := make([]string, len(ext.RequireBy))
 		for i, e := range ext.RequireBy {
-			requireBy[i] = ExtShortcode(e, "")
+			requireBy[i] = g.extensionReference(e)
 		}
 		b.WriteString(fmt.Sprintf("|    **Need By**    | %s |\n", strings.Join(requireBy, " ")))
 	}
@@ -283,7 +297,7 @@ func (g *ExtensionGenerator) generateRelationships(ext *Extension, siblings []*E
 	if len(ext.SeeAlso) > 0 {
 		seeAlso := make([]string, len(ext.SeeAlso))
 		for i, e := range ext.SeeAlso {
-			seeAlso[i] = ExtShortcode(e, "")
+			seeAlso[i] = g.extensionReference(e)
 		}
 		b.WriteString(fmt.Sprintf("|   **See Also**    | %s |\n", strings.Join(seeAlso, " ")))
 	}
@@ -291,7 +305,7 @@ func (g *ExtensionGenerator) generateRelationships(ext *Extension, siblings []*E
 	if len(siblings) > 0 {
 		siblingLinks := make([]string, len(siblings))
 		for i, sib := range siblings {
-			siblingLinks[i] = ExtShortcode(sib.Name, "")
+			siblingLinks[i] = g.extensionReference(sib.Name)
 		}
 		b.WriteString(fmt.Sprintf("|    **Siblings**   | %s |\n", strings.Join(siblingLinks, " ")))
 	}
@@ -778,7 +792,7 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	b.WriteString("\n\n")
 
 	// Build install commands
-	b.WriteString("[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):\n\n")
+	b.WriteString("[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):\n\n")
 	installScript := fmt.Sprintf("pig install %s;\t\t# install via package name, for the active PG version\n", ext.Pkg)
 	if ext.Name != ext.Pkg {
 		installScript = installScript + fmt.Sprintf("pig install %s;\t\t# install by extension name, for the current active PG version\n", ext.Name)
@@ -798,7 +812,7 @@ func (g *ExtensionGenerator) generateLoadCreate(ext *Extension) string {
 	var b strings.Builder
 	// Add shared_preload_libraries section if needed
 	if ext.NeedLoad {
-		b.WriteString("\n[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):\n\n")
+		b.WriteString("\n[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):\n\n")
 
 		// Build the list of libraries to load
 		libSet := make(map[string]bool)
@@ -840,7 +854,7 @@ func (g *ExtensionGenerator) generateLoadCreate(ext *Extension) string {
 
 	// Add CREATE section
 	if ext.NeedDDL {
-		b.WriteString("\n[**Create**](https://ext.pgsty.com/usage/create) this extension with:\n\n")
+		b.WriteString("\n[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:\n\n")
 		if len(ext.Requires) > 0 {
 			b.WriteString(TripleQuoteSQL(fmt.Sprintf("CREATE EXTENSION %s CASCADE; -- requires %s", ext.Name, strings.Join(ext.Requires, ", "))))
 		} else {

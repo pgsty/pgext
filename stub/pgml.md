@@ -7,7 +7,7 @@
 
 After installing the `pgml` extension and python dependencies on all cluster nodes, you can enable `pgml` on the PostgreSQL cluster.
 
-[Edit the cluster configuration](/docs/pgsql/admin/patroni/#edit-config) with `patronictl`, add `pgml` to `shared_preload_libraries`, and specify your `venv` directory in `pgml.venv`:
+[Edit the cluster configuration](https://pigsty.io/docs/pgsql/admin/patroni/#edit-config) with `patronictl`, add `pgml` to `shared_preload_libraries`, and specify your `venv` directory in `pgml.venv`:
 
 ```yaml
 shared_preload_libraries: pgml, timescaledb, pg_stat_statements, auto_explain

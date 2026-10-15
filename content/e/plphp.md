@@ -27,8 +27,8 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "bytea_plphp" >}} {{< ext "hstore_plphp" >}} {{< ext "jsonb_plphp" >}} |
-|   **See Also**    | {{< ext "plruby" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "plv8" >}} {{< ext "jsonb_plphp" >}} {{< ext "hstore_plphp" >}} {{< ext "bytea_plphp" >}} |
+|    **Need By**    | `bytea_plphp` `hstore_plphp` `jsonb_plphp` |
+|   **See Also**    | {{< ext "plruby" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "plv8" >}} `jsonb_plphp` `hstore_plphp` `bytea_plphp` |
 
 > [!Note] Uses non-ZTS PHP embed. EL8/EL9 RPMs require the PHP 8.2/8.3 module streams respectively; DEBs pin the matching PHP embed runtime for each OS. No preload or fixed schema. The three optional transforms are not included in this package.
 
@@ -202,7 +202,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install plphp;		# install via package name, for the active PG version
@@ -216,7 +216,7 @@ pig install plphp -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION plphp;

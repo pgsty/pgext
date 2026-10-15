@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "describe_resultset" >}} {{< ext "colnames" >}} {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "pglinter" >}} |
+|   **See Also**    | `describe_resultset` {{< ext "colnames" >}} {{< ext "ddlx" >}} {{< ext "pg_readme" >}} {{< ext "pglinter" >}} |
 
 > [!Note] Uses PostgreSQL parser and analyzer without invoking the executor; upstream and PIGSTY packages require PostgreSQL 17 or newer.
 
@@ -132,7 +132,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install pg_describe;		# install via package name, for the active PG version
@@ -143,7 +143,7 @@ pig install pg_describe -v 17;   # install for PG 17
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION pg_describe;

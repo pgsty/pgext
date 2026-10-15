@@ -112,3 +112,5 @@ continue to update atomically after the selected failure policy passes.
 ## License
 
 [Apache License 2.0](LICENSE) © [Ruohang Feng](https://vonng.com)
+
+Local theme regression preview: run `make dev` with the sibling `../oink` checkout, or set `THEME_DIR=/path/to/oink`. This disables both Go and Hugo workspaces and uses the current local theme; the published module pin is unchanged.

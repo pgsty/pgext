@@ -28,7 +28,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `mentat` |
-|   **See Also**    | {{< ext "pg_fts" >}} {{< ext "pg_tre" >}} {{< ext "pg_infer" >}} {{< ext "rum" >}} {{< ext "pg_trgm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "vector" >}} {{< ext "postgis" >}} |
+|   **See Also**    | {{< ext "pg_fts" >}} `pg_tre` `pg_infer` {{< ext "rum" >}} {{< ext "pg_trgm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "vector" >}} {{< ext "postgis" >}} |
 
 > [!Note] No mentatd binary; integrations are optional. pgrx 0.19.3.
 
@@ -202,7 +202,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install pg_mentat;		# install via package name, for the active PG version
@@ -216,7 +216,7 @@ pig install pg_mentat -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION pg_mentat;

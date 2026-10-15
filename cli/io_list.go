@@ -1220,8 +1220,8 @@ weight: 20
 	// License badges
 	b.WriteString(fmt.Sprintf("| %s | %s | %s | %s | %s | %s | %s |\n",
 		CCLicenseBadge("MIT"), CCLicenseBadge("ISC"), CCLicenseBadge("PostgreSQL"),
-		CCLicenseBadge("BSD 0-Clause"), CCLicenseBadge("BSD 2-Clause"), CCLicenseBadge("BSD 3-Clause"),
-		CCLicenseBadge("Artistic")))
+		CCLicenseBadge("0BSD"), CCLicenseBadge("BSD 2-Clause"), CCLicenseBadge("BSD 3-Clause"),
+		CCLicenseBadge("Artistic-1.0")+" "+CCLicenseBadge("Artistic-2.0")))
 	b.WriteString("|:------:|:------:|:------:|:------:|:------:|:------:|:------:|\n")
 	b.WriteString("{.full-width}\n\n")
 	b.WriteString(fmt.Sprintf("| %s | %s | %s | %s | %s | %s | %s | %s |\n",

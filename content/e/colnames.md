@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_describe" >}} {{< ext "describe_resultset" >}} {{< ext "get_column" >}} {{< ext "pltoolbox" >}} {{< ext "hstore" >}} |
+|   **See Also**    | {{< ext "pg_describe" >}} `describe_resultset` `get_column` `pltoolbox` {{< ext "hstore" >}} |
 
 > [!Note] Distribution 1.7.1 retains extension version 1.7.0; colnames(record) returns name[]. No preload or runtime extension dependencies. Upstream release lists PG8.2-17; PG14-18 verified across all 16 PGSTY target platforms.
 
@@ -201,7 +201,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install colnames;		# install via package name, for the active PG version
@@ -215,7 +215,7 @@ pig install colnames -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION colnames;

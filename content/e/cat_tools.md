@@ -29,8 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `cat_tools` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|    **Need By**    | {{< ext "extension_drop" >}} {{< ext "object_reference" >}} |
-|   **See Also**    | {{< ext "pg_catalog_get_defs" >}} {{< ext "pg_global_catalog" >}} {{< ext "meta_triggers" >}} {{< ext "pg_catcheck" >}} {{< ext "pgdd" >}} {{< ext "ddlx" >}} {{< ext "meta" >}} {{< ext "object_reference" >}} |
+|    **Need By**    | `extension_drop` `object_reference` |
+|   **See Also**    | `pg_catalog_get_defs` `pg_global_catalog` `meta_triggers` {{< ext "pg_catcheck" >}} {{< ext "pgdd" >}} {{< ext "ddlx" >}} {{< ext "meta" >}} `object_reference` |
 
 > [!Note] Promoted from a source-only universe row to PIGSTY RPM and DEB packages at 0.3.0; control fixes schema cat_tools and META declares the plpgsql runtime dependency.
 
@@ -204,7 +204,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install cat_tools;		# install via package name, for the active PG version
@@ -218,7 +218,7 @@ pig install cat_tools -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION cat_tools CASCADE; -- requires plpgsql

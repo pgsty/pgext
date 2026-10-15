@@ -1,3 +1,4 @@
+THEME_DIR ?= ../oink
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-10-30
@@ -13,7 +14,7 @@ PGURL="postgres:///data"
 
 # run hugo dev server (1313)
 dev:
-	hugo serve
+	GOWORK=off HUGO_MODULE_WORKSPACE=off HUGO_MODULE_REPLACEMENTS='github.com/pgsty/oink -> $(abspath $(THEME_DIR))' hugo serve
 
 #==============================================================#
 # Theme (OINK)

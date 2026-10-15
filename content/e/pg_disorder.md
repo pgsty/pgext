@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "pg_simula" >}} {{< ext "pg_fiu" >}} {{< ext "pg_crash" >}} |
+|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} `pg_simula` `pg_fiu` {{< ext "pg_crash" >}} |
 
 > [!Note] Headless loadable module with no control file and no CREATE EXTENSION step; intended only for test databases; load per session with session_preload_libraries and never enable globally in production.
 
@@ -201,7 +201,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install pg_disorder;		# install via package name, for the active PG version
@@ -215,7 +215,7 @@ pig install pg_disorder -v 14;   # install for PG 14
 ```
 
 
-[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```ini
 shared_preload_libraries = 'pg_disorder';

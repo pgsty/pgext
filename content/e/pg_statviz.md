@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgstatviz` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | {{< ext "pgsampler" >}} {{< ext "pgmonitor" >}} {{< ext "pg_mon" >}} {{< ext "timescaledb" >}} {{< ext "town" >}} {{< ext "pg_stl" >}} |
+|   **See Also**    | `pgsampler` {{< ext "pgmonitor" >}} `pg_mon` {{< ext "timescaledb" >}} `town` {{< ext "pg_stl" >}} |
 
 > [!Note] Package/source 1.2.1 installs SQL extension 1.2. PIGSTY provides all RPM targets and Ubuntu 22.04 DEB; other DEB targets use PGDG 1.2.1. Pure SQL/PLpgSQL; no preload or Python CLI in the extension package.
 
@@ -385,7 +385,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install pg_statviz;		# install via package name, for the active PG version
@@ -399,7 +399,7 @@ pig install pg_statviz -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION pg_statviz CASCADE; -- requires plpgsql

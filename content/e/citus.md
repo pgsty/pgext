@@ -28,7 +28,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|    **Need By**    | {{< ext "cigration" >}} {{< ext "documentdb_distributed" >}} |
+|    **Need By**    | `cigration` {{< ext "documentdb_distributed" >}} |
 |   **See Also**    | {{< ext "plproxy" >}} {{< ext "pgspider_ext" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_partman" >}} {{< ext "timescaledb" >}} {{< ext "pg_ttl_index" >}} {{< ext "pgactive" >}} {{< ext "spock" >}} {{< ext "pg_fkpart" >}} {{< ext "db_migrator" >}} |
 |    **Siblings**   | {{< ext "citus_columnar" >}} |
 
@@ -538,7 +538,7 @@ Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 pig repo add pgsql -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](https://pig.pgsty.com):
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
 pig install citus;		# install via package name, for the active PG version
@@ -550,14 +550,14 @@ pig install citus -v 16;   # install for PG 16
 ```
 
 
-[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```ini
 shared_preload_libraries = 'citus';
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
 CREATE EXTENSION citus;

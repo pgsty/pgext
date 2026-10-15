@@ -1636,9 +1636,9 @@ And `pig` 0.3.0 is shipped with Pigsty [3.3.0](https://github.com/Vonng/pigsty/r
 
 **New Extensions**
 
-The [`ext.pgsty.com`](https://ext.pgsty.com/) catalog is moving to [`https://ext.pgsty.com/list`](https://ext.pgsty.com/ext) with more information!
+The [`ext.pgsty.com`](https://ext.pgsty.com/) catalog is moving to [`https://ext.pgsty.com/list`](https://ext.pgsty.com/list/) with more information!
 
-[![ecosystem](/img/pigsty/ecosystem.gif)](https://pigsty.io/about/ext)
+[![ecosystem](/ecosystem.gif)](https://pigsty.io/about/ext)
 
 **Checksums**
 
@@ -1787,7 +1787,7 @@ v0.1.3, routine update, with 390 extensions available now!
 - Bump [`citus`](https://github.com/citusdata/citus/tree/v13.0.0) to 13.0.0 with PostgreSQL 17 support.
 - Bump [`pgml`](https://github.com/postgresml/postgresml/releases/tag/v2.10.0) to 2.10.0
 - Bump [`pg_extra_time`](https://ext.pgsty.com/e/pg_extra_time) to 2.0.0
-- Bump [`pg_vectorize`](https://ext.pgsty.com/e/pg_vectorize) to 0.20.0
+- Bump [`pg_vectorize`](https://ext.pgsty.com/e/vectorize/) to 0.20.0
 
 ```bash
 curl https://repo.pigsty.io/pig | bash
@@ -2093,6 +2093,6 @@ Here are some bad cases and limitations for the above distros:
 - [`pllua`](https://ext.pgsty.com/e/pllua) is missing on `el8.aarch64` for pg 14,15
 - [`topn`](https://ext.pgsty.com/e/topn) is missing on `el8.aarch64` and `el9.aarch64` for pg14, and all `deb.aarch64`
 - [`pg_partman`](https://ext.pgsty.com/e/pg_partman) and [`timeseries`](https://ext.pgsty.com/e/timeseries) is missing on `u24` for pg14
-- [`wiltondb`](https://ext.pgsty.com/e/wiltondb) is missing on `d12`
+- [`wiltondb`](https://github.com/wiltondb/wiltondb) is missing on `d12`
 
 Release: https://github.com/pgsty/pig/releases/tag/v0.0.1
