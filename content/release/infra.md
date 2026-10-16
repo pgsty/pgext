@@ -6,6 +6,31 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-10-16
+
+| Name | Old | New | Comment |
+|:---|:---|:---|:---|
+| claude | 2.1.296 | 2.1.301 | Official checksums and actual Linux binary versions verified for both architectures; imported locally |
+| cloudflared | 2026.10.0 | 2026.10.1 | Both architectures; imported locally |
+| code | 1.141.0 | 1.142.0 | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed |
+| codex | 0.162.1 | 0.163.0 | Both architectures; imported locally |
+| dblab | 0.52.1 | 0.53.0 | Both architectures; imported locally |
+| grafana | 13.2.3 | 13.2.4 | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed |
+| grafana-victorialogs-ds | 0.32.0 | 0.33.0 | Both architectures; imported locally |
+| headscale | 0.29.4 | 0.29.5 | Both architectures; imported locally |
+| hugo | 0.167.0 | 0.168.0 | Both architectures; imported locally |
+| kafka | 4.3.1 | 4.4.0 | Noarch RPM and all DEB; upstream SHA512 verified; imported locally |
+| mtail | 3.4.15 | 3.4.16 | Both architectures; imported locally |
+| nodejs | 24.21.0 | 24.22.0 | Both architectures; imported locally |
+| opencode | 1.18.35 | 1.19.2 | Both architectures; imported locally |
+| pgschema | 1.13.1 | 1.13.3 | Both architectures; imported locally |
+| redis-exporter | 1.93.0 | 1.94.0 | Both architectures; imported locally |
+| rust-toolchain | 1.99.0 | 1.99.1 | Upstream signatures and dual-architecture ELF ABI checks passed; imported locally |
+| stalwart | 0.16.25 | 0.16.26 | Both architectures; imported locally |
+| timescaledb-tools | 0.19.0-1PGSTY | 0.19.0-2PGSTY | parallel-copy 0.13.0 to 0.13.1, built with Go 1.27.2; tune remains 0.19.0; package release incremented; imported locally |
+| uv | 0.13.0 | 0.13.1 | Both architectures; imported locally |
+| victoria-metrics | 1.153.0 | 1.154.0 | Updates victoria-metrics, victoria-metrics-cluster and vmutils together; imported locally |
+
 ## 2026-10-11
 
 | Name | Old | New | Comment |
