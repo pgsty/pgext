@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6040** | {{< badge content="pg_stat_log" link="https://github.com/fabriziomello/pg_stat_log" >}} | {{< ext "pg_stat_log" >}} | `0.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6040** | {{< badge content="pg_stat_log" link="https://github.com/fabriziomello/pg_stat_log" >}} | {{< ext "pg_stat_log" >}} | `0.3` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,25 +29,27 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgelog" >}} {{< ext "logerrors" >}} {{< ext "pg_sqlog" >}} {{< ext "log_fdw" >}} {{< ext "pgaudit" >}} {{< ext "pgdisablelogerror" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "pgfr_record" >}} |
 
+> [!Note] PostgreSQL 18+; shared preload and restart required. Upgrading 0.1/0.2 to 0.3 resets all cumulative statistics; SQL upgrade recreates the view/function, requiring dependent views and custom grants to be restored.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stat_log` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.2` | {{< bg "18" "pg_stat_log_18" "green" >}} {{< bg "17" "pg_stat_log_17" "red" >}} {{< bg "16" "pg_stat_log_16" "red" >}} {{< bg "15" "pg_stat_log_15" "red" >}} {{< bg "14" "pg_stat_log_14" "red" >}} | `pg_stat_log_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stat_log` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.3` | {{< bg "18" "pg_stat_log_18" "green" >}} {{< bg "17" "pg_stat_log_17" "red" >}} {{< bg "16" "pg_stat_log_16" "red" >}} {{< bg "15" "pg_stat_log_15" "red" >}} {{< bg "14" "pg_stat_log_14" "red" >}} | `pg_stat_log_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.2` | {{< bg "18" "postgresql-18-stat-log" "green" >}} {{< bg "17" "postgresql-17-stat-log" "red" >}} {{< bg "16" "postgresql-16-stat-log" "red" >}} {{< bg "15" "postgresql-15-stat-log" "red" >}} {{< bg "14" "postgresql-14-stat-log" "red" >}} | `postgresql-$v-stat-log` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 0.2" "pg_stat_log_18 : AVAIL 2" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 0.2" "pg_stat_log_18 : AVAIL 2" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 0.2" "pg_stat_log_18 : AVAIL 4" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 0.2" "pg_stat_log_18 : AVAIL 4" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 0.2" "pg_stat_log_18 : AVAIL 4" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 0.2" "pg_stat_log_18 : AVAIL 4" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 0.3" "pg_stat_log_18 : AVAIL 3" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 0.3" "pg_stat_log_18 : AVAIL 3" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 0.3" "pg_stat_log_18 : AVAIL 5" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 0.3" "pg_stat_log_18 : AVAIL 5" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 0.3" "pg_stat_log_18 : AVAIL 5" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 0.3" "pg_stat_log_18 : AVAIL 5" "blue" >}} | {{< bg "N/A" "pg_stat_log_17 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_stat_log_14 : N/A 0" "gray" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 0.2" "postgresql-18-stat-log : AVAIL 3" "blue" >}} | {{< bg "N/A" "postgresql-17-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stat-log : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 0.2" "postgresql-18-stat-log : AVAIL 3" "blue" >}} | {{< bg "N/A" "postgresql-17-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stat-log : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 0.2" "postgresql-18-stat-log : AVAIL 3" "blue" >}} | {{< bg "N/A" "postgresql-17-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stat-log : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stat-log : N/A 0" "gray" >}} |
@@ -66,22 +68,28 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_stat_log_18` | `0.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 29.0 KiB | [pg_stat_log_18-0.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_stat_log_18-0.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_stat_log_18` | `0.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.0 KiB | [pg_stat_log_18-0.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_stat_log_18-0.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 23.2 KiB | [pg_stat_log_18-0.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_stat_log_18-0.1-1PGDG.rhel8.10.x86_64.rpm) |
+| `pg_stat_log_18` | `0.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 28.7 KiB | [pg_stat_log_18-0.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_stat_log_18-0.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_stat_log_18` | `0.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.9 KiB | [pg_stat_log_18-0.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_stat_log_18-0.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.1 KiB | [pg_stat_log_18-0.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_stat_log_18-0.1-1PGDG.rhel8.10.aarch64.rpm) |
+| `pg_stat_log_18` | `0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 29.6 KiB | [pg_stat_log_18-0.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_stat_log_18-0.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_stat_log_18` | `0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.3 KiB | [pg_stat_log_18-0.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_stat_log_18-0.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.4 KiB | [pg_stat_log_18-0.1-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_stat_log_18-0.1-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.5 KiB | [pg_stat_log_18-0.1-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_stat_log_18-0.1-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.6 KiB | [pg_stat_log_18-0.1-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_stat_log_18-0.1-1PGDG.rhel9.6.x86_64.rpm) |
+| `pg_stat_log_18` | `0.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.4 KiB | [pg_stat_log_18-0.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_stat_log_18-0.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_stat_log_18` | `0.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.1 KiB | [pg_stat_log_18-0.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_stat_log_18-0.2-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.4 KiB | [pg_stat_log_18-0.1-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_stat_log_18-0.1-1PGDG.rhel9.8.aarch64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.4 KiB | [pg_stat_log_18-0.1-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_stat_log_18-0.1-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.5 KiB | [pg_stat_log_18-0.1-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_stat_log_18-0.1-1PGDG.rhel9.6.aarch64.rpm) |
+| `pg_stat_log_18` | `0.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.6 KiB | [pg_stat_log_18-0.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_stat_log_18-0.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_stat_log_18` | `0.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.4 KiB | [pg_stat_log_18-0.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_stat_log_18-0.2-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.5 KiB | [pg_stat_log_18-0.1-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_stat_log_18-0.1-1PGDG.rhel10.2.x86_64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.5 KiB | [pg_stat_log_18-0.1-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_stat_log_18-0.1-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.9 KiB | [pg_stat_log_18-0.1-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_stat_log_18-0.1-1PGDG.rhel10.0.x86_64.rpm) |
+| `pg_stat_log_18` | `0.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 29.7 KiB | [pg_stat_log_18-0.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_stat_log_18-0.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_stat_log_18` | `0.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 24.4 KiB | [pg_stat_log_18-0.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_stat_log_18-0.2-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pg_stat_log_18-0.1-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_stat_log_18-0.1-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_stat_log_18` | `0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pg_stat_log_18-0.1-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_stat_log_18-0.1-1PGDG.rhel10.1.aarch64.rpm) |
