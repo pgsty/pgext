@@ -2,20 +2,20 @@
 
 来源：
 
-- [extensions/pg_s3/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_s3/Cargo.toml)
-- [extensions/pg_s3/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_s3/src/lib.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [extensions/pg_s3/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_s3/pgbrew.toml)
-- [extensions/pg_s3/pg_s3.control](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_s3/pg_s3.control)
-- [README.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/README.md)
-- [extensions/pg_s3/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_s3/Cargo.toml)
-- [extensions/pg_s3/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_s3/src/lib.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/LICENSE)
-- [extensions/pg_s3/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_s3/pgbrew.toml)
+- [extensions/pg_s3/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_s3/Cargo.toml)
+- [extensions/pg_s3/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_s3/src/lib.rs)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/crates/pg_bgworker/src/supervision.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
+- [extensions/pg_s3/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_s3/pgbrew.toml)
+- [extensions/pg_s3/pg_s3.control](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_s3/pg_s3.control)
+- [README.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/README.md)
+- [extensions/pg_s3/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_s3/Cargo.toml)
+- [extensions/pg_s3/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_s3/src/lib.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/LICENSE)
+- [extensions/pg_s3/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_s3/pgbrew.toml)
 
-`pg_s3` 0.3.2 提供实验性的 S3 兼容 HTTP API，在 `pgs3` 中保存桶／对象元数据，在本地磁盘保存二进制内容。
+`pg_s3` 0.3.3 提供实验性的 S3 兼容 HTTP API，在 `pgs3` 中保存桶／对象元数据，在本地磁盘保存二进制内容。
 
 ### 核心用法
 
@@ -50,3 +50,7 @@ SELECT * FROM pgs3.list_buckets();
 ALTER EXTENSION pg_s3 UPDATE;
 SELECT * FROM pgs3.worker_status();
 ```
+
+### 0.3.3 的空闲工作进程
+
+仓库发布 0.7.2 包含扩展版本 0.3.3。只读轮询或未领取到作业的轮询不再仅因使用 SPI 桥接而分配事务 ID，实际写入行时仍会分配，因而空闲轮询不再产生空提交 WAL。 新的桥接请求会唤醒工作进程的 latch；无请求时主循环可休眠至多 100 ms。 安装匹配的共享库、重启预加载的工作进程并更新 SQL 扩展。既有权限、外部服务和 0.3.0 之前版本的迁移边界仍然适用。

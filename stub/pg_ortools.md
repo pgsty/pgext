@@ -2,20 +2,20 @@
 
 Sources:
 
-- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/Cargo.toml)
-- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/src/worker.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/CHANGELOG.md)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/pgbrew.toml)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/LICENSE)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/pgbrew.toml)
-- [Official pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/README.md)
-- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/pg_ortools.control)
-- [SQL API implementation](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/src/lib.rs)
-- [0.3.3 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/038890bbceedba1fc1e7f19c5cd5036610a6432a/extensions/pg_ortools/sql/pg_ortools--0.3.2--0.3.3.sql)
+- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/Cargo.toml)
+- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/src/worker.rs)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/crates/pg_bgworker/src/supervision.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
+- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pgbrew.toml)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/LICENSE)
+- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pgbrew.toml)
+- [Official pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/README.md)
+- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pg_ortools.control)
+- [SQL API implementation](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/src/lib.rs)
+- [0.3.3 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/sql/pg_ortools--0.3.2--0.3.3.sql)
 
-`pg_ortools` version `0.3.3` defines mixed-integer and linear optimization problems in SQL and solves them with HiGHS. Use it for bounded assignment, allocation, feasibility, and objective-optimization workloads that are naturally represented as integer or Boolean variables and linear constraints.
+`pg_ortools` version `0.3.4` defines mixed-integer and linear optimization problems in SQL and solves them with HiGHS. Use it for bounded assignment, allocation, feasibility, and objective-optimization workloads that are naturally represented as integer or Boolean variables and linear constraints.
 
 ### Core Workflow
 
@@ -64,3 +64,7 @@ SELECT * FROM pgortools.worker_status();
 Repository release 0.5.1 contains extension 0.3.3. The typed constraint `assignment` with `{"each": "slot"}` gives every shift one employee while allowing an employee to take multiple shifts. Local search transposes the problem internally and maps results back; `no_overlap`, `skill_match`, costs and `pin_current` keep the caller’s orientation, while `group_balance` is rejected in this mode. Invalid typed-constraint configuration now fails the solve rather than being silently skipped.
 
 The 0.3.2 to 0.3.3 SQL upgrade changes no objects. Install matching libraries and update the extension; asynchronous workers still require preload and restart. Source features cover PostgreSQL 14–18; published bottles target PostgreSQL 18.
+
+### Idle Workers in 0.3.4
+
+Repository release 0.7.2 contains extension 0.3.4. Read-only or empty-claim polls no longer allocate a transaction ID merely because they use the SPI bridge; an actual row write still does. This removes empty commit WAL from idle polling. Install matching libraries, restart the preloaded workers, and update the SQL extension. The existing privilege, external-service and pre-0.3.0 migration boundaries remain.

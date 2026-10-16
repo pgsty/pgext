@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/README.md)
-- [postcode.control](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/postcode.control)
-- [postcode--2.0.1.sql](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/postcode--2.0.1.sql)
-- [META.json](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/META.json)
-- [.github/workflows/test.yml](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/.github/workflows/test.yml)
-- [CHANGELOG.md](https://github.com/ztz88f5f6h-glitch/pg-uk-postcodes/blob/6570ec483670afc164d08fb5a5bcc4ae6f56ca5a/CHANGELOG.md)
+- [README.md](https://github.com/John-Cameron-Burns/pg-postcode/blob/40f86f6567a25d2ef8beb3bfe80230b923d691a3/README.md)
+- [postcode.control](https://github.com/John-Cameron-Burns/pg-postcode/blob/40f86f6567a25d2ef8beb3bfe80230b923d691a3/postcode.control)
+- [postcode--2.1.0.sql](https://github.com/John-Cameron-Burns/pg-postcode/blob/40f86f6567a25d2ef8beb3bfe80230b923d691a3/postcode--2.1.0.sql)
+- [META.json](https://github.com/John-Cameron-Burns/pg-postcode/blob/40f86f6567a25d2ef8beb3bfe80230b923d691a3/META.json)
+- [.github/workflows/test.yml](https://github.com/John-Cameron-Burns/pg-postcode/blob/40f86f6567a25d2ef8beb3bfe80230b923d691a3/.github/workflows/test.yml)
+- [CHANGELOG.md](https://github.com/John-Cameron-Burns/pg-postcode/blob/40f86f6567a25d2ef8beb3bfe80230b923d691a3/CHANGELOG.md)
 
-`postcode` 2.0.1 is the maintained PGXN continuation of the original patchsoft project. It retains the compact UK `postcode` and delivery-point-suffix `dps` types and adds the 64-bit international `postal_code` type. The country-qualified text form distinguishes otherwise ambiguous national codes.
+`postcode` 2.1.0 is the maintained PGXN continuation of the original patchsoft project. It retains the compact UK `postcode` and delivery-point-suffix `dps` types and adds the 64-bit international `postal_code` type. The country-qualified text form distinguishes otherwise ambiguous national codes.
 
 ### Core Workflow
 
@@ -30,3 +30,5 @@ WHERE code >= range_lower('SW1A') AND code < range_upper('SW1A');
 For international values, `postal_code` requires a country code, such as the examples above. `country` extracts it; `postal_prefix`, `lower_bound` and `upper_bound` support prefixes. `is_valid_postal_code` and `to_postal_code` help ingest dirty input, and a country typmod can constrain a column. Format validation is not proof of allocation or address existence.
 
 The release tests PostgreSQL 14–18. Installation is superuser-only, the extension is relocatable and no preload is required. Existing UK types and stored values are retained by the additive 2.0 upgrade.
+
+Version 2.1.0 adds `part`, `parts` and `prefix_of` to both postal types. Cast string literals explicitly because those overloads are ambiguous for untyped text. `postal_code_parts` lists available names. `to_char(postcode, text)` is deprecated but remains in 2.x. This release also fixes a use-after-free when compiling very large custom patterns; built-in patterns are not affected. Run `ALTER EXTENSION postcode UPDATE` after installing the new library; the 2.1 upgrade preserves existing stored values.

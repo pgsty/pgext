@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-600 个已打包 PostgreSQL 扩展（归属 495 个包族）划分为 16 个分类。
+603 个已打包 PostgreSQL 扩展（归属 495 个包族）划分为 16 个分类。
 
 
 
@@ -97,7 +97,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 1950 | {{< alias "pgmnemo" >}} | 0.20.0 | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 1960 | {{< alias "pgcontext" >}} | 0.3.0 | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
-| 1980 | {{< alias "pg_turbovec" >}} | 2.12.0 | 基于 TurboQuant 压缩量化的 PostgreSQL 向量类型与 ANN 索引访问方法。 |
+| 1980 | {{< alias "pg_turbovec" >}} | 2.12.1 | 基于 TurboQuant 压缩量化的 PostgreSQL 向量类型与 ANN 索引访问方法。 |
+| 1990 | {{< alias "pg_vectorsearch" >}} | 0.1.0 | 使用 PRISM 索引与 RaBitQ 量化的近似向量检索 |
 
 ## FTS
 
@@ -119,7 +120,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | PostgreSQL 拼音转写与检索辅助扩展 |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | PostgreSQL 哈萨克语全文检索扩展 |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
-| 2230 | {{< alias "pg_fts" >}} | 1.12.0 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
+| 2230 | {{< alias "pg_fts" >}} | 1.13.0 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | 基于 cppjieba 的中文全文检索分词器 |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | 在 PostgreSQL 中编译 Aho-Corasick 双数组机，实现精确多模式匹配与替换 |
@@ -134,6 +135,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2287 | {{< alias "hunspell_pt_pt" "hunspell" >}} | 1.0 | Hunspell葡萄牙语全文检索词典 |
 | 2288 | {{< alias "hunspell_ru_ru" "hunspell" >}} | 1.0 | Hunspell俄语全文检索词典 |
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | 1.0 | Hunspell俄语全文检索词典（来自AOT.ru小组） |
+| 2290 | {{< alias "textsearch_intl" >}} | 1.0 | 结合 ICU 分词、规范化与 n-gram 匹配的多语言全文检索 |
+| 2300 | {{< alias "pg_icu_parser" >}} | 1.0 | 使用 ICU 边界分析的全文搜索解析器 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | 文本相似度测量函数与模糊检索 |
 
@@ -203,7 +206,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2840 | {{< alias "pg_ivm" >}} | 1.16 | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | 增量处理流式事件 |
 | 2860 | {{< alias "pg_trickle" >}} | 0.108.3 | 为 PostgreSQL 18 提供流式表与差分视图维护 |
-| 2870 | {{< alias "pg_durable" >}} | 0.2.8 | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
+| 2870 | {{< alias "pg_durable" >}} | 0.2.9 | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
 | 2890 | {{< alias "pg_local_cache" >}} | 3.1.0 | 通过 RESP2 MGET 提供 PostgreSQL 主键整行读取的事务感知共享内存缓存 |
 | 2900 | {{< alias "provsql" >}} | 1.12.0 | PostgreSQL 半环溯源、概率与不确定性管理扩展 |
@@ -216,8 +219,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | 0.1.0 | Omnigres CloudEvents 支持 |
 | 2944 | {{< alias "omni_containers" "omnigres" >}} | 0.2.0 | Omnigres Docker容器管理模块 |
 | 2945 | {{< alias "omni_credentials" "omnigres" >}} | 0.2.0 | Omnigres 应用密钥管理模块 |
-| 2946 | {{< alias "omni_csv" >}} | 0.1.1 | Omnigres CSV 工具箱 |
-| 2947 | {{< alias "omni_datasets" >}} | 0.1.0 | Omnigres 数据库置备工具 |
+| 2946 | {{< alias "omni_csv" "omnigres" >}} | 0.1.1 | Omnigres CSV 工具箱 |
+| 2947 | {{< alias "omni_datasets" "omnigres" >}} | 0.1.0 | Omnigres 数据库置备工具 |
 | 2948 | {{< alias "omni_email" "omnigres" >}} | 0.1.0 | Omnigres Email 框架 |
 | 2949 | {{< alias "omni_http" "omnigres" >}} | 0.1.0 | Omnigres 基本HTTP类型 |
 | 2950 | {{< alias "omni_httpc" "omnigres" >}} | 0.1.11 | Omnigres HTTP客户端 |
@@ -237,7 +240,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2964 | {{< alias "omni_seq" "omnigres" >}} | 0.1.1 | Omnigres 分布式整型序列号 |
 | 2965 | {{< alias "omni_service" "omnigres" >}} | 0.1.0 | Omnigres 服务管理器 |
 | 2966 | {{< alias "omni_session" "omnigres" >}} | 0.2.0 | Omnigres 会话管理器 |
-| 2967 | {{< alias "omni_shmem" >}} | 0.1.0 | Omnigres 共享内存管理 |
+| 2967 | {{< alias "omni_shmem" "omnigres" >}} | 0.1.0 | Omnigres 共享内存管理 |
 | 2968 | {{< alias "omni_sql" "omnigres" >}} | 0.5.3 | Omnigres SQL编程组件 |
 | 2969 | {{< alias "omni_sqlite" "omnigres" >}} | 0.2.2 | Omnigres 嵌入的SQLite支持 |
 | 2970 | {{< alias "omni_test" "omnigres" >}} | 0.4.0 | Omnigres 测试框架 |
@@ -250,7 +253,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Omnigres 通用Worker池 |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | Omnigres XML工具包 |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | Omnigres YAML工具包 |
-| 2980 | {{< alias "pg_mentat" >}} | 1.11.1 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
+| 2980 | {{< alias "pg_mentat" >}} | 1.14.0 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom 索引-基于指纹的索引 |
 
 ## LANG
@@ -268,7 +271,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | 3040 | {{< alias "plprql" >}} | 18.0.2 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.10.14 | PL/pgSQL 函数的附加校验、性能分析与诊断工具 |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.10 | PL/pgSQL 函数的附加校验、性能分析与诊断工具 |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | 剖析 PL/pgSQL 函数 |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh 程序语言 |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | Java 程序语言 |
@@ -563,7 +566,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6520 | {{< alias "pgmeminfo" >}} | 1.0.1 | 显示内存使用情况 |
 | 6530 | {{< alias "toastinfo" >}} | 1.7 | 显示TOAST字段的详细信息 |
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | 快速跳转至PEV查阅可视化执行计划 |
-| 6850 | {{< alias "pg_relusage" >}} | 0.0.1 | 打印查询引用的表与列 |
+| 6850 | {{< alias "pg_relusage" >}} | 1.0.1 | 打印查询引用的表与列 |
 | 6860 | {{< alias "pagevis" >}} | 0.1 | 使用ASCII字符可视化数据库物理页面布局 |
 | 6870 | {{< alias "powa" >}} | 5.3.0 | PostgreSQL 工作负载分析器-核心 |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | 允许 EXPLAIN 转储更多详细 |
@@ -710,8 +713,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9540 | {{< alias "pg_failover_slots" >}} | 1.2.1 | 在Failover过程中保留复制槽 |
 | 9550 | {{< alias "db_migrator" >}} | 1.0.0 | 使用FDW从其他DBMS迁移到PostgreSQL |
 | 9560 | {{< alias "pgactive" >}} | 2.1.9 | PostgreSQL多主逻辑复制 |
-| 9570 | {{< alias "spock" >}} | 5.0.12 | PostgreSQL 多主逻辑复制扩展 |
-| 9580 | {{< alias "lolor" >}} | 1.2.2 | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
+| 9570 | {{< alias "spock" >}} | 5.0.13 | PostgreSQL 多主逻辑复制扩展 |
+| 9580 | {{< alias "lolor" >}} | 1.2.3 | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | 9590 | {{< alias "pgclone" >}} | 4.4.2 | 在不同环境间克隆 PostgreSQL 数据库、模式、表和函数 |
 | 9620 | {{< alias "pgmqtt" >}} | 0.5.1 | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
 | 9630 | {{< alias "wal2json" >}} | 2.7 | 用逻辑解码捕获 JSON 格式的 CDC 变更 |

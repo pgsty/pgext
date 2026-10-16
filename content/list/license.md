@@ -18,7 +18,7 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 261 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 263 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 113 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 104 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
@@ -30,9 +30,9 @@ PostgreSQL extension categorized by license.
 | {{< license "Unknown" >}} | 5 | [License Text](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [License Text](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [License Text](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
+| {{< license "MPL-2.0" >}} | 2 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "Artistic-2.0" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 2 | [License Text](#) | Unknown license |
-| {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
 | {{< license "MIT OR Apache-2.0" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "Apache-2.0 OR PostgreSQL" >}} | 1 | [License Text](#) | Unknown license |
@@ -46,7 +46,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="261 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="263 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -66,6 +66,7 @@ PostgreSQL extension categorized by license.
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | The simplest way to do vector search on Postgres |
 | 1900 | {{< alias "jev" >}} | Natural-language row filtering, ranking and classification through a Jev-compatible API |
+| 1990 | {{< alias "pg_vectorsearch" >}} | Approximate vector search with PRISM indexes and RaBitQ quantization |
 | 2110 | {{< alias "pgroonga" >}} | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | create 2-gram (bigram) index for faster full text search. |
@@ -84,6 +85,7 @@ PostgreSQL extension categorized by license.
 | 2287 | {{< alias "hunspell_pt_pt" "hunspell" >}} | Portuguese Hunspell Dictionary |
 | 2288 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Russian Hunspell Dictionary |
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
+| 2290 | {{< alias "textsearch_intl" >}} | Multilingual full text search with ICU segmentation, normalization and n-gram matching |
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
@@ -365,8 +367,8 @@ PostgreSQL extension categorized by license.
 | 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | CloudEvents support |
 | 2944 | {{< alias "omni_containers" "omnigres" >}} | Docker container management |
 | 2945 | {{< alias "omni_credentials" "omnigres" >}} | Application credential management |
-| 2946 | {{< alias "omni_csv" >}} | CSV toolkit |
-| 2947 | {{< alias "omni_datasets" >}} | Dataset provisioning |
+| 2946 | {{< alias "omni_csv" "omnigres" >}} | CSV toolkit |
+| 2947 | {{< alias "omni_datasets" "omnigres" >}} | Dataset provisioning |
 | 2948 | {{< alias "omni_email" "omnigres" >}} | E-mail framework |
 | 2949 | {{< alias "omni_http" "omnigres" >}} | Basic HTTP types |
 | 2950 | {{< alias "omni_httpc" "omnigres" >}} | HTTP client |
@@ -386,7 +388,7 @@ PostgreSQL extension categorized by license.
 | 2964 | {{< alias "omni_seq" "omnigres" >}} | Distributed integer sequences |
 | 2965 | {{< alias "omni_service" "omnigres" >}} | Service management |
 | 2966 | {{< alias "omni_session" "omnigres" >}} | Session management |
-| 2967 | {{< alias "omni_shmem" >}} | Shared Memory Management |
+| 2967 | {{< alias "omni_shmem" "omnigres" >}} | Shared Memory Management |
 | 2968 | {{< alias "omni_sql" "omnigres" >}} | Programmatic SQL manipulation |
 | 2969 | {{< alias "omni_sqlite" "omnigres" >}} | Embedded SQLite |
 | 2970 | {{< alias "omni_test" "omnigres" >}} | Testing framework |
@@ -763,6 +765,19 @@ PostgreSQL extension categorized by license.
 | 1000 | {{< alias "timescaledb" >}} | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 
+## MPL-2.0
+
+
+
+| {{< license "MPL-2.0" >}} | {{< badge content="2 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MPL-2.0" icon="scale" >}} | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 2300 | {{< alias "pg_icu_parser" >}} | Full text search parser using ICU boundary analysis |
+| 4520 | {{< alias "pg_uuidv7" >}} | Create UUIDv7 values in postgres |
+
 ## Artistic-2.0
 
 
@@ -788,18 +803,6 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 9440 | {{< alias "kafgres" >}} | Kafka protocol broker embedded in PostgreSQL |
 | 9620 | {{< alias "pgmqtt" >}} | CDC-to-MQTT broker for PostgreSQL |
-
-## MPL-2.0
-
-
-
-| {{< license "MPL-2.0" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MPL-2.0" icon="scale" >}} | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 4520 | {{< alias "pg_uuidv7" >}} | Create UUIDv7 values in postgres |
 
 ## LGPL-2.1
 

@@ -1,44 +1,31 @@
-
-
-
 ## 用法
 
-> [pg_relusage: 记录 SQL 语句实际使用的关系](https://github.com/adept/pg_relusage)
+来源：
 
-pg_relusage 挂钩到查询执行器，记录每个 SQL 语句实际使用的关系（表、视图、索引等）。与语句日志不同，它在视图展开和未使用的连接消除之后报告关系。
+- [README.md](https://github.com/adept/pg_relusage/blob/017ca90bc08aa131d074017511ea9ed6ab89d6d3/README.md)
+- [Control file](https://github.com/adept/pg_relusage/blob/017ca90bc08aa131d074017511ea9ed6ab89d6d3/pg_relusage.control)
+- [Implementation](https://github.com/adept/pg_relusage/blob/017ca90bc08aa131d074017511ea9ed6ab89d6d3/pg_relusage.c)
 
-### 工作原理
+`pg_relusage` 1.0.2 记录执行计划简化后语句使用的关系，支持 PostgreSQL 10–18，不定义 SQL 对象。加载共享库才会启用功能；可选的 CREATE EXTENSION 仅登记安装状态。
 
-加载后，每个 SQL 语句会产生一条列出所有引用关系的日志消息：
-
-```sql
-SELECT * FROM pg_stats LIMIT 1;
-```
-
-产生日志输出：
-```text
-relations used: pg_stats,pg_statistic,pg_class,pg_attribute,pg_namespace
-```
-
-### 加载
+### 核心用法
 
 ```sql
--- 按会话加载
 LOAD 'pg_relusage';
-
--- 或在 postgresql.conf 中全局配置
-shared_preload_libraries = 'pg_relusage'
+SET pg_relusage.nested_statements = 'fold';
+SET pg_relusage.log_level = 'notice';
+CREATE TABLE relusage_demo (id integer);
+SELECT * FROM relusage_demo;
 ```
 
-### 配置
+### 运行边界
 
-| 参数 | 默认值 | 描述 |
-|-----------|---------|-------------|
-| `pg_relusage.log_level` | `LOG` | 关系消息的日志级别 |
-| `pg_relusage.rel_kinds` | `'riSvmfp'` | 要报告的关系类型（来自 `pg_class.relkind` 的单字母代码） |
+全部设置都需要超级用户：`pg_relusage.enabled` 默认 on，`pg_relusage.log_level` 默认 log，`pg_relusage.rel_kinds` 默认 riSvmfp。`pg_relusage.nested_statements` 可选 `all`（默认，每条语句单独记录）、`top`（忽略嵌套语句）或 `fold`（将嵌套关系合并到外层日志）。1.0.1 修复子事务失败后 fold 模式的处理。
 
-关系类型代码：`r` = 表，`i` = 索引，`S` = 序列，`v` = 视图，`m` = 物化视图，`f` = 外部表，`p` = 分区表。
+用 `session_preload_libraries` 可在新会话中加载，无需重启；用 `shared_preload_libraries` 覆盖全部会话则需要重启，应保留已有预加载项。LOAD 通常要求超级用户。日志不包含 SQL 文本，可配置 `log_line_prefix` 标识客户端。
 
-### 使用场景
+系统目录不记录。规划或执行器启动时被排除的关系不记录，但执行过程中跳过的分区仍可能出现。向分区表 INSERT 时只记录父表。COMMIT 时的延迟触发器、COPY FROM 触发器及规划器调用的函数按顶层语句处理。DDL 与维护命令不记录。日志中暂未出现某对象，并不足以证明可以删除它。
 
-该扩展适用于发现遗留数据库中未使用的对象。通过分析一段时间内记录的关系使用情况，可以识别应用程序实际访问了哪些表、视图和索引。
+### 1.0.2 与分区表
+
+1.0.2 降低了涉及大量分区时的关系集合检查与分区匹配开销，日志格式和配置不变。替换共享库后，使用共享预加载的实例需要重启，使用会话预加载或 LOAD 的连接需要重新连接。若曾用 CREATE EXTENSION 登记安装，还应执行 `ALTER EXTENSION pg_relusage UPDATE`。

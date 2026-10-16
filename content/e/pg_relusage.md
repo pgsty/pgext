@@ -17,26 +17,28 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6850** | {{< badge content="pg_relusage" link="https://github.com/adept/pg_relusage" >}} | {{< ext "pg_relusage" >}} | `0.0.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6850** | {{< badge content="pg_relusage" link="https://github.com/adept/pg_relusage" >}} | {{< ext "pg_relusage" >}} | `1.0.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sL--r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "hypopg" >}} {{< ext "pg_stat_statements" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_upless" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_track_optimizer" >}} {{< ext "plan_filter" >}} |
 
+> [!Note] LOAD or session/shared preload enables logging; CREATE EXTENSION is optional and defines no SQL objects.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_relusage` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_relusage_18" "green" >}} {{< bg "17" "pg_relusage_17" "green" >}} {{< bg "16" "pg_relusage_16" "green" >}} {{< bg "15" "pg_relusage_15" "green" >}} {{< bg "14" "pg_relusage_14" "green" >}} | `pg_relusage_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-relusage" "green" >}} {{< bg "17" "postgresql-17-pg-relusage" "green" >}} {{< bg "16" "postgresql-16-pg-relusage" "green" >}} {{< bg "15" "postgresql-15-pg-relusage" "green" >}} {{< bg "14" "postgresql-14-pg-relusage" "green" >}} | `postgresql-$v-pg-relusage` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_relusage` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "pg_relusage_18" "green" >}} {{< bg "17" "pg_relusage_17" "green" >}} {{< bg "16" "pg_relusage_16" "green" >}} {{< bg "15" "pg_relusage_15" "green" >}} {{< bg "14" "pg_relusage_14" "green" >}} | `pg_relusage_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-relusage" "green" >}} {{< bg "17" "postgresql-17-pg-relusage" "green" >}} {{< bg "16" "postgresql-16-pg-relusage" "green" >}} {{< bg "15" "postgresql-15-pg-relusage" "green" >}} {{< bg "14" "postgresql-14-pg-relusage" "green" >}} | `postgresql-$v-pg-relusage` | - |
 {.packages}
 
 
@@ -182,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/adept/pg_relusage" title="Repository" icon="github" subtitle="github.com/adept/pg_relusage" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_relusage-0.0.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_relusage-1.0.1.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -224,47 +226,34 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
-
-
-
 ## Usage
 
-> [pg_relusage: log relations actually used by SQL statements](https://github.com/adept/pg_relusage)
+Sources:
 
-pg_relusage hooks into the query executor and logs which relations (tables, views, indexes, etc.) are actually used by each SQL statement. Unlike the statement log, it reports relations after view expansion and unused join elimination.
+- [README.md](https://github.com/adept/pg_relusage/blob/017ca90bc08aa131d074017511ea9ed6ab89d6d3/README.md)
+- [Control file](https://github.com/adept/pg_relusage/blob/017ca90bc08aa131d074017511ea9ed6ab89d6d3/pg_relusage.control)
+- [Implementation](https://github.com/adept/pg_relusage/blob/017ca90bc08aa131d074017511ea9ed6ab89d6d3/pg_relusage.c)
 
-### How It Works
+`pg_relusage` 1.0.2 logs relations used by statements after plan simplification. It supports PostgreSQL 10–18 and defines no SQL objects. Loading the library enables it; optional CREATE EXTENSION only records installation.
 
-Once loaded, each SQL statement emits a log message listing all referenced relations:
-
-```sql
-SELECT * FROM pg_stats LIMIT 1;
-```
-
-Produces log output:
-```text
-relations used: pg_stats,pg_statistic,pg_class,pg_attribute,pg_namespace
-```
-
-### Loading
+### Core Workflow
 
 ```sql
--- Per-session
 LOAD 'pg_relusage';
-
--- Or globally in postgresql.conf
-shared_preload_libraries = 'pg_relusage'
+SET pg_relusage.nested_statements = 'fold';
+SET pg_relusage.log_level = 'notice';
+CREATE TABLE relusage_demo (id integer);
+SELECT * FROM relusage_demo;
 ```
 
-### Configuration
+### Operational Boundaries
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `pg_relusage.log_level` | `LOG` | Log level for relation messages |
-| `pg_relusage.rel_kinds` | `'riSvmfp'` | Relation kinds to report (one-letter codes from `pg_class.relkind`) |
+All settings require superuser: `pg_relusage.enabled` defaults on, `pg_relusage.log_level` defaults log and `pg_relusage.rel_kinds` defaults riSvmfp. `pg_relusage.nested_statements` accepts `all` (default: each statement), `top` (ignore nested statements) or `fold` (merge nested relations into the outer log). Version 1.0.1 fixes fold handling after a failed subtransaction.
 
-Relation kind codes: `r` = table, `i` = index, `S` = sequence, `v` = view, `m` = materialized view, `f` = foreign table, `p` = partitioned table.
+Use `session_preload_libraries` for new sessions without a restart, or `shared_preload_libraries` for all sessions with a restart; preserve existing preload entries. LOAD normally requires superuser. Log messages omit SQL text, so configure `log_line_prefix` to identify the client.
 
-### Use Case
+System catalogs are excluded. Relations eliminated by planning or startup pruning are excluded, but partitions skipped later during execution can still appear. INSERT into a partitioned table reports only its parent. Deferred triggers at COMMIT, COPY FROM triggers and planner-invoked functions are treated as top-level statements. DDL and maintenance commands are excluded. A quiet log alone does not prove an object can be dropped.
 
-This extension is useful for discovering unused objects in legacy databases. By analyzing the logged relation usage over time, you can identify which tables, views, and indexes are actually accessed by your application.
+### 1.0.2 and Partitioned Tables
+
+Version 1.0.2 reduces relation-membership and partition-matching overhead for statements involving many partitions. Log format and settings are unchanged. Replace the library and restart if using shared preload, or reconnect when using session preload or LOAD. If installation was recorded with CREATE EXTENSION, also run `ALTER EXTENSION pg_relusage UPDATE`.

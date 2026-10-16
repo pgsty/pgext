@@ -1,9 +1,14 @@
-
-
-
 ## Usage
 
-> [pg_hint_plan: Give PostgreSQL ability to manually force some decisions in execution plans](https://github.com/ossc-db/pg_hint_plan)
+Sources:
+
+- [README.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/README.md)
+- [pg_hint_plan.control](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/pg_hint_plan.control)
+- [docs/hint_list.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/hint_list.md)
+- [docs/installation.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/installation.md)
+- [docs/requirements.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/requirements.md)
+- [docs/functional_limitations.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/functional_limitations.md)
+
 
 `pg_hint_plan` overrides the PostgreSQL query planner's decisions using SQL comment hints, allowing you to force specific scan methods, join strategies, and join orders.
 
@@ -94,3 +99,9 @@ SELECT * FROM my_table WHERE id = 42;
 | `pg_hint_plan.debug_print` | Print debug info for applied hints | off |
 | `pg_hint_plan.parse_messages` | Log level for hint parsing messages | INFO |
 | `pg_hint_plan.message_level` | Log level for debug messages | LOG |
+
+### Loading and PostgreSQL Version Branches
+
+Version 1.9.0 requires PostgreSQL 19. Use 1.8.1 for PG18, 1.7.2 for PG17, 1.6.3 for PG16, 1.5.4 for PG15 or 1.4.5 for PG14; do not install the PG19 build on an older server.
+
+`LOAD 'pg_hint_plan'` activates hints in the current session without CREATE EXTENSION. Global preload requires a restart. To use the hint table, additionally run `CREATE EXTENSION pg_hint_plan` and enable `pg_hint_plan.enable_hint_table`. Hints cannot force a non-executable plan and query IDs ignore hint comments; verify actual plans with EXPLAIN. The current releases fix parser-loop, interrupt and planner error-path handling.

@@ -2,14 +2,13 @@
 
 来源：
 
-- [4.16.13 release](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_13)
-- [README.asciidoc](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/README.asciidoc)
-- [orafce.control](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce.control)
-- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce--4.16.sql)
-- [4.16.12 发布说明](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_12)
-- [文件访问实现](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/file.c)
+- [README.asciidoc](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/README.asciidoc)
+- [orafce.control](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce.control)
+- [orafce--4.17.sql](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce--4.17.sql)
+- [orafce--4.16--4.17.sql](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce--4.16--4.17.sql)
+- [file.c](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/file.c)
 
-`orafce` 提供兼容 Oracle 的函数、类型与工具包。发行版 4.16.13 仍使用控制文件和 SQL 扩展版本 4.16；两个版本号分别描述不同层次。
+`orafce` 提供兼容 Oracle 的函数、类型与工具包。发行版 4.17.1 使用控制文件和 SQL 扩展版本 4.17；两个版本号分别描述不同层次。
 
 ### 核心工作流
 
@@ -33,8 +32,12 @@ SELECT * FROM dbms_output.get_line();
 
 `utl_file` 在管理员配置的允许目录内访问服务端文件；应限制授权与文件系统权限。实现会拒绝路径规范化后仍然存在的父目录引用，文件路径应避免使用父目录引用。4.16.12 发布说明明确列出的修复是 `dbms_sql` 可能发生的崩溃。
 
-安装需要超级用户，并创建固定模式；无需预加载。修改 `search_path` 前应遵循上游配置说明。SQL 版本仍为 4.16，因此已经安装的 4.16 扩展不会仅因二进制发行版修补就获得新的 SQL 版本。应按需重新连接以使用更新后的共享库，并对照实际安装的发行版验证行为。
+安装需要超级用户，并创建固定模式；无需预加载。修改 `search_path` 前应遵循上游配置说明。4.16 系列修补版没有改变 SQL 版本；升级到 4.17 系列则需要执行对应的 SQL 升级。应按需重新连接以使用更新后的共享库，并对照实际安装的发行版验证行为。
 
 ### 4.16.13 修补
 
 发行版 4.16.13 进一步修复可能发生的 `dbms_sql` 崩溃。control 版本仍为 4.16，应更新共享库发行版，不要使用不存在的 4.16.13 SQL 升级版本。
+
+### 4.17 兼容对象
+
+发行版 4.17.1 新增 `utl_raw` 字节操作，包括 `utl_raw.cast_to_raw`、`utl_raw.cast_to_varchar2`、`utl_raw.substr` 和按位函数。`utl_raw.substr` 会拒绝空值、非法起点、非正长度及越过末尾的范围。还新增 `oracle.hextoraw`、`oracle.rawtohex`、`oracle.empty_clob`、`oracle.empty_blob` 和 `oracle.from_tz`。USER_TABLES 与 USER_TAB_COLUMNS 现仅返回当前模式的对象。安装新发行版后执行 `ALTER EXTENSION orafce UPDATE TO '4.17'`，并重新连接以使用新库。

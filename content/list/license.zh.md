@@ -18,7 +18,7 @@ page_width: full
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 261 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 263 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 113 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 104 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [许可证文本](#) | Unknown license |
@@ -30,9 +30,9 @@ page_width: full
 | {{< license "Unknown" >}} | 5 | [许可证文本](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [许可证文本](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [许可证文本](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
+| {{< license "MPL-2.0" >}} | 2 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "Artistic-2.0" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 2 | [许可证文本](#) | Unknown license |
-| {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
 | {{< license "MIT OR Apache-2.0" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "Apache-2.0 OR PostgreSQL" >}} | 1 | [许可证文本](#) | Unknown license |
@@ -46,7 +46,7 @@ page_width: full
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="261 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="263 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -66,6 +66,7 @@ page_width: full
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 在PostgreSQL中封装RAG向量检索服务 |
 | 1900 | {{< alias "jev" >}} | 通过兼容 Jev 的 API 实现自然语言行过滤、排序和分类 |
+| 1990 | {{< alias "pg_vectorsearch" >}} | 使用 PRISM 索引与 RaBitQ 量化的近似向量检索 |
 | 2110 | {{< alias "pgroonga" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
@@ -84,6 +85,7 @@ page_width: full
 | 2287 | {{< alias "hunspell_pt_pt" "hunspell" >}} | Hunspell葡萄牙语全文检索词典 |
 | 2288 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Hunspell俄语全文检索词典 |
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
+| 2290 | {{< alias "textsearch_intl" >}} | 结合 ICU 分词、规范化与 n-gram 匹配的多语言全文检索 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2480 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
@@ -365,8 +367,8 @@ page_width: full
 | 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | Omnigres CloudEvents 支持 |
 | 2944 | {{< alias "omni_containers" "omnigres" >}} | Omnigres Docker容器管理模块 |
 | 2945 | {{< alias "omni_credentials" "omnigres" >}} | Omnigres 应用密钥管理模块 |
-| 2946 | {{< alias "omni_csv" >}} | Omnigres CSV 工具箱 |
-| 2947 | {{< alias "omni_datasets" >}} | Omnigres 数据库置备工具 |
+| 2946 | {{< alias "omni_csv" "omnigres" >}} | Omnigres CSV 工具箱 |
+| 2947 | {{< alias "omni_datasets" "omnigres" >}} | Omnigres 数据库置备工具 |
 | 2948 | {{< alias "omni_email" "omnigres" >}} | Omnigres Email 框架 |
 | 2949 | {{< alias "omni_http" "omnigres" >}} | Omnigres 基本HTTP类型 |
 | 2950 | {{< alias "omni_httpc" "omnigres" >}} | Omnigres HTTP客户端 |
@@ -386,7 +388,7 @@ page_width: full
 | 2964 | {{< alias "omni_seq" "omnigres" >}} | Omnigres 分布式整型序列号 |
 | 2965 | {{< alias "omni_service" "omnigres" >}} | Omnigres 服务管理器 |
 | 2966 | {{< alias "omni_session" "omnigres" >}} | Omnigres 会话管理器 |
-| 2967 | {{< alias "omni_shmem" >}} | Omnigres 共享内存管理 |
+| 2967 | {{< alias "omni_shmem" "omnigres" >}} | Omnigres 共享内存管理 |
 | 2968 | {{< alias "omni_sql" "omnigres" >}} | Omnigres SQL编程组件 |
 | 2969 | {{< alias "omni_sqlite" "omnigres" >}} | Omnigres 嵌入的SQLite支持 |
 | 2970 | {{< alias "omni_test" "omnigres" >}} | Omnigres 测试框架 |
@@ -763,6 +765,19 @@ page_width: full
 | 1000 | {{< alias "timescaledb" >}} | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 
+## MPL-2.0
+
+
+
+| {{< license "MPL-2.0" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MPL-2.0" icon="scale" >}} | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 2300 | {{< alias "pg_icu_parser" >}} | 使用 ICU 边界分析的全文搜索解析器 |
+| 4520 | {{< alias "pg_uuidv7" >}} | UUIDv7 支持 |
+
 ## Artistic-2.0
 
 
@@ -788,18 +803,6 @@ page_width: full
 |:---:|:---|:---|
 | 9440 | {{< alias "kafgres" >}} | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 | 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
-
-## MPL-2.0
-
-
-
-| {{< license "MPL-2.0" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MPL-2.0" icon="scale" >}} | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 4520 | {{< alias "pg_uuidv7" >}} | UUIDv7 支持 |
 
 ## LGPL-2.1
 

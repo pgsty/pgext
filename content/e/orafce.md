@@ -44,12 +44,12 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 4.16.12" "orafce_18 : AVAIL 10" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_17 : AVAIL 18" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_16 : AVAIL 27" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_15 : AVAIL 27" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_14 : AVAIL 27" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 4.16.12" "orafce_18 : AVAIL 10" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_17 : AVAIL 18" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_16 : AVAIL 27" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_15 : AVAIL 27" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_14 : AVAIL 27" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 4.16.12" "orafce_18 : AVAIL 15" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_17 : AVAIL 23" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_16 : AVAIL 32" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_15 : AVAIL 32" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_14 : AVAIL 32" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 4.16.12" "orafce_18 : AVAIL 15" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_17 : AVAIL 23" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_16 : AVAIL 32" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_15 : AVAIL 32" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_14 : AVAIL 32" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 4.16.12" "orafce_18 : AVAIL 15" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_17 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_16 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_15 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_14 : AVAIL 16" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 4.16.12" "orafce_18 : AVAIL 15" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_17 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_16 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_15 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.16.12" "orafce_14 : AVAIL 16" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 4.17.1" "orafce_18 : AVAIL 11" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_17 : AVAIL 19" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_16 : AVAIL 28" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_15 : AVAIL 28" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_14 : AVAIL 28" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 4.17.1" "orafce_18 : AVAIL 11" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_17 : AVAIL 19" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_16 : AVAIL 28" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_15 : AVAIL 28" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_14 : AVAIL 28" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 4.17.1" "orafce_18 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_17 : AVAIL 24" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_16 : AVAIL 33" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_15 : AVAIL 33" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_14 : AVAIL 33" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 4.17.1" "orafce_18 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_17 : AVAIL 24" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_16 : AVAIL 33" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_15 : AVAIL 33" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_14 : AVAIL 33" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 4.17.1" "orafce_18 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_17 : AVAIL 17" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_16 : AVAIL 17" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_15 : AVAIL 17" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_14 : AVAIL 17" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 4.17.1" "orafce_18 : AVAIL 16" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_17 : AVAIL 17" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_16 : AVAIL 17" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_15 : AVAIL 17" "blue" >}} | {{< bg "PGDG 4.17.1" "orafce_14 : AVAIL 17" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 4.16.13" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 4.16.13" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 4.16.13" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.13" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
@@ -68,6 +68,7 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `orafce_18` | `4.17.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 162.1 KiB | [orafce_18-4.17.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/orafce_18-4.17.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_18` | `4.16.12` | [el8.x86_64](/os/el8.x86_64) | pgdg | 156.9 KiB | [orafce_18-4.16.12-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/orafce_18-4.16.12-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_18` | `4.16.11` | [el8.x86_64](/os/el8.x86_64) | pgdg | 155.7 KiB | [orafce_18-4.16.11-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/orafce_18-4.16.11-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_18` | `4.16.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 154.9 KiB | [orafce_18-4.16.10-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/orafce_18-4.16.10-1PGDG.rhel8.10.x86_64.rpm) |
@@ -78,6 +79,7 @@ page_width: full
 | `orafce_18` | `4.16.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 152.6 KiB | [orafce_18-4.16.2-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/orafce_18-4.16.2-2PGDG.rhel8.x86_64.rpm) |
 | `orafce_18` | `4.14.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 151.3 KiB | [orafce_18-4.14.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/orafce_18-4.14.6-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_18` | `4.14.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 151.3 KiB | [orafce_18-4.14.5-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/orafce_18-4.14.5-1PGDG.rhel8.x86_64.rpm) |
+| `orafce_18` | `4.17.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 154.4 KiB | [orafce_18-4.17.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/orafce_18-4.17.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_18` | `4.16.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 149.7 KiB | [orafce_18-4.16.12-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/orafce_18-4.16.12-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_18` | `4.16.11` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.8 KiB | [orafce_18-4.16.11-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/orafce_18-4.16.11-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_18` | `4.16.10` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.4 KiB | [orafce_18-4.16.10-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/orafce_18-4.16.10-1PGDG.rhel8.10.aarch64.rpm) |
@@ -88,6 +90,7 @@ page_width: full
 | `orafce_18` | `4.16.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 148.2 KiB | [orafce_18-4.16.2-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/orafce_18-4.16.2-2PGDG.rhel8.aarch64.rpm) |
 | `orafce_18` | `4.14.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 146.9 KiB | [orafce_18-4.14.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/orafce_18-4.14.6-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_18` | `4.14.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 147.0 KiB | [orafce_18-4.14.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/orafce_18-4.14.5-1PGDG.rhel8.aarch64.rpm) |
+| `orafce_18` | `4.17.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 157.1 KiB | [orafce_18-4.17.1-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/orafce_18-4.17.1-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_18` | `4.16.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 152.9 KiB | [orafce_18-4.16.12-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/orafce_18-4.16.12-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_18` | `4.16.11` | [el9.x86_64](/os/el9.x86_64) | pgdg | 151.5 KiB | [orafce_18-4.16.11-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/orafce_18-4.16.11-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_18` | `4.16.10` | [el9.x86_64](/os/el9.x86_64) | pgdg | 150.9 KiB | [orafce_18-4.16.10-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/orafce_18-4.16.10-1PGDG.rhel9.8.x86_64.rpm) |
@@ -103,6 +106,7 @@ page_width: full
 | `orafce_18` | `4.16.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 150.0 KiB | [orafce_18-4.16.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/orafce_18-4.16.1-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_18` | `4.14.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 148.9 KiB | [orafce_18-4.14.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/orafce_18-4.14.6-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_18` | `4.14.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 148.7 KiB | [orafce_18-4.14.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/orafce_18-4.14.5-1PGDG.rhel9.x86_64.rpm) |
+| `orafce_18` | `4.17.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 152.1 KiB | [orafce_18-4.17.1-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/orafce_18-4.17.1-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_18` | `4.16.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 147.9 KiB | [orafce_18-4.16.12-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/orafce_18-4.16.12-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_18` | `4.16.11` | [el9.aarch64](/os/el9.aarch64) | pgdg | 149.4 KiB | [orafce_18-4.16.11-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/orafce_18-4.16.11-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_18` | `4.16.10` | [el9.aarch64](/os/el9.aarch64) | pgdg | 148.8 KiB | [orafce_18-4.16.10-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/orafce_18-4.16.10-1PGDG.rhel9.8.aarch64.rpm) |
@@ -118,6 +122,7 @@ page_width: full
 | `orafce_18` | `4.16.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 147.7 KiB | [orafce_18-4.16.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/orafce_18-4.16.1-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_18` | `4.14.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 146.6 KiB | [orafce_18-4.14.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/orafce_18-4.14.6-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_18` | `4.14.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 146.6 KiB | [orafce_18-4.14.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/orafce_18-4.14.5-1PGDG.rhel9.aarch64.rpm) |
+| `orafce_18` | `4.17.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 157.9 KiB | [orafce_18-4.17.1-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/orafce_18-4.17.1-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_18` | `4.16.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.6 KiB | [orafce_18-4.16.12-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/orafce_18-4.16.12-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_18` | `4.16.11` | [el10.x86_64](/os/el10.x86_64) | pgdg | 152.0 KiB | [orafce_18-4.16.11-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/orafce_18-4.16.11-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_18` | `4.16.10` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.7 KiB | [orafce_18-4.16.10-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/orafce_18-4.16.10-1PGDG.rhel10.2.x86_64.rpm) |
@@ -133,6 +138,7 @@ page_width: full
 | `orafce_18` | `4.16.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 150.9 KiB | [orafce_18-4.16.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/orafce_18-4.16.1-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_18` | `4.14.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 150.1 KiB | [orafce_18-4.14.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/orafce_18-4.14.6-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_18` | `4.14.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 149.9 KiB | [orafce_18-4.14.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/orafce_18-4.14.5-1PGDG.rhel10.x86_64.rpm) |
+| `orafce_18` | `4.17.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 153.4 KiB | [orafce_18-4.17.1-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/orafce_18-4.17.1-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_18` | `4.16.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 149.1 KiB | [orafce_18-4.16.12-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/orafce_18-4.16.12-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_18` | `4.16.11` | [el10.aarch64](/os/el10.aarch64) | pgdg | 150.2 KiB | [orafce_18-4.16.11-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/orafce_18-4.16.11-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_18` | `4.16.10` | [el10.aarch64](/os/el10.aarch64) | pgdg | 149.8 KiB | [orafce_18-4.16.10-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/orafce_18-4.16.10-1PGDG.rhel10.2.aarch64.rpm) |
@@ -185,6 +191,7 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `orafce_17` | `4.17.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 162.0 KiB | [orafce_17-4.17.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/orafce_17-4.17.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_17` | `4.16.12` | [el8.x86_64](/os/el8.x86_64) | pgdg | 156.8 KiB | [orafce_17-4.16.12-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/orafce_17-4.16.12-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_17` | `4.16.11` | [el8.x86_64](/os/el8.x86_64) | pgdg | 155.7 KiB | [orafce_17-4.16.11-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/orafce_17-4.16.11-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_17` | `4.16.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 155.0 KiB | [orafce_17-4.16.10-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/orafce_17-4.16.10-1PGDG.rhel8.10.x86_64.rpm) |
@@ -203,6 +210,7 @@ page_width: full
 | `orafce_17` | `4.13.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 147.8 KiB | [orafce_17-4.13.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/orafce_17-4.13.3-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_17` | `4.13.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 147.6 KiB | [orafce_17-4.13.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/orafce_17-4.13.2-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_17` | `4.13.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 147.4 KiB | [orafce_17-4.13.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/orafce_17-4.13.0-1PGDG.rhel8.x86_64.rpm) |
+| `orafce_17` | `4.17.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 154.3 KiB | [orafce_17-4.17.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/orafce_17-4.17.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_17` | `4.16.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 149.7 KiB | [orafce_17-4.16.12-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/orafce_17-4.16.12-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_17` | `4.16.11` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.8 KiB | [orafce_17-4.16.11-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/orafce_17-4.16.11-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_17` | `4.16.10` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.3 KiB | [orafce_17-4.16.10-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/orafce_17-4.16.10-1PGDG.rhel8.10.aarch64.rpm) |
@@ -221,6 +229,7 @@ page_width: full
 | `orafce_17` | `4.13.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 142.6 KiB | [orafce_17-4.13.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/orafce_17-4.13.3-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_17` | `4.13.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 142.5 KiB | [orafce_17-4.13.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/orafce_17-4.13.2-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_17` | `4.13.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 142.3 KiB | [orafce_17-4.13.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/orafce_17-4.13.0-1PGDG.rhel8.aarch64.rpm) |
+| `orafce_17` | `4.17.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 156.8 KiB | [orafce_17-4.17.1-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/orafce_17-4.17.1-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_17` | `4.16.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 152.8 KiB | [orafce_17-4.16.12-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/orafce_17-4.16.12-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_17` | `4.16.11` | [el9.x86_64](/os/el9.x86_64) | pgdg | 151.4 KiB | [orafce_17-4.16.11-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/orafce_17-4.16.11-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_17` | `4.16.10` | [el9.x86_64](/os/el9.x86_64) | pgdg | 150.8 KiB | [orafce_17-4.16.10-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/orafce_17-4.16.10-1PGDG.rhel9.8.x86_64.rpm) |
@@ -244,6 +253,7 @@ page_width: full
 | `orafce_17` | `4.13.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 143.4 KiB | [orafce_17-4.13.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/orafce_17-4.13.3-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_17` | `4.13.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 143.1 KiB | [orafce_17-4.13.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/orafce_17-4.13.2-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_17` | `4.13.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 143.1 KiB | [orafce_17-4.13.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/orafce_17-4.13.0-1PGDG.rhel9.x86_64.rpm) |
+| `orafce_17` | `4.17.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 152.0 KiB | [orafce_17-4.17.1-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/orafce_17-4.17.1-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_17` | `4.16.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 147.8 KiB | [orafce_17-4.16.12-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/orafce_17-4.16.12-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_17` | `4.16.11` | [el9.aarch64](/os/el9.aarch64) | pgdg | 149.4 KiB | [orafce_17-4.16.11-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/orafce_17-4.16.11-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_17` | `4.16.10` | [el9.aarch64](/os/el9.aarch64) | pgdg | 148.8 KiB | [orafce_17-4.16.10-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/orafce_17-4.16.10-1PGDG.rhel9.8.aarch64.rpm) |
@@ -267,6 +277,7 @@ page_width: full
 | `orafce_17` | `4.13.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 141.3 KiB | [orafce_17-4.13.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/orafce_17-4.13.3-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_17` | `4.13.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 141.1 KiB | [orafce_17-4.13.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/orafce_17-4.13.2-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_17` | `4.13.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 140.8 KiB | [orafce_17-4.13.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/orafce_17-4.13.0-1PGDG.rhel9.aarch64.rpm) |
+| `orafce_17` | `4.17.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 158.0 KiB | [orafce_17-4.17.1-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/orafce_17-4.17.1-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_17` | `4.16.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.5 KiB | [orafce_17-4.16.12-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/orafce_17-4.16.12-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_17` | `4.16.11` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.9 KiB | [orafce_17-4.16.11-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/orafce_17-4.16.11-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_17` | `4.16.10` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.8 KiB | [orafce_17-4.16.10-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/orafce_17-4.16.10-1PGDG.rhel10.2.x86_64.rpm) |
@@ -283,6 +294,7 @@ page_width: full
 | `orafce_17` | `4.14.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 150.0 KiB | [orafce_17-4.14.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/orafce_17-4.14.6-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_17` | `4.14.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 149.7 KiB | [orafce_17-4.14.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/orafce_17-4.14.4-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_17` | `4.14.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 149.6 KiB | [orafce_17-4.14.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/orafce_17-4.14.3-2PGDG.rhel10.x86_64.rpm) |
+| `orafce_17` | `4.17.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 153.2 KiB | [orafce_17-4.17.1-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/orafce_17-4.17.1-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_17` | `4.16.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 148.9 KiB | [orafce_17-4.16.12-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/orafce_17-4.16.12-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_17` | `4.16.11` | [el10.aarch64](/os/el10.aarch64) | pgdg | 150.1 KiB | [orafce_17-4.16.11-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/orafce_17-4.16.11-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_17` | `4.16.10` | [el10.aarch64](/os/el10.aarch64) | pgdg | 149.8 KiB | [orafce_17-4.16.10-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/orafce_17-4.16.10-1PGDG.rhel10.2.aarch64.rpm) |
@@ -336,6 +348,7 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `orafce_16` | `4.17.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 162.0 KiB | [orafce_16-4.17.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/orafce_16-4.17.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_16` | `4.16.12` | [el8.x86_64](/os/el8.x86_64) | pgdg | 157.0 KiB | [orafce_16-4.16.12-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/orafce_16-4.16.12-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_16` | `4.16.11` | [el8.x86_64](/os/el8.x86_64) | pgdg | 155.7 KiB | [orafce_16-4.16.11-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/orafce_16-4.16.11-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_16` | `4.16.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 155.0 KiB | [orafce_16-4.16.10-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/orafce_16-4.16.10-1PGDG.rhel8.10.x86_64.rpm) |
@@ -363,6 +376,7 @@ page_width: full
 | `orafce_16` | `4.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 143.4 KiB | [orafce_16-4.9.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/orafce_16-4.9.2-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_16` | `4.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 143.4 KiB | [orafce_16-4.9.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/orafce_16-4.9.1-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_16` | `4.9.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 143.2 KiB | [orafce_16-4.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/orafce_16-4.9.0-1PGDG.rhel8.x86_64.rpm) |
+| `orafce_16` | `4.17.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 154.3 KiB | [orafce_16-4.17.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/orafce_16-4.17.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_16` | `4.16.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 149.7 KiB | [orafce_16-4.16.12-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/orafce_16-4.16.12-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_16` | `4.16.11` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.8 KiB | [orafce_16-4.16.11-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/orafce_16-4.16.11-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_16` | `4.16.10` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.4 KiB | [orafce_16-4.16.10-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/orafce_16-4.16.10-1PGDG.rhel8.10.aarch64.rpm) |
@@ -390,6 +404,7 @@ page_width: full
 | `orafce_16` | `4.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 138.5 KiB | [orafce_16-4.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/orafce_16-4.9.2-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_16` | `4.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 138.4 KiB | [orafce_16-4.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/orafce_16-4.9.1-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_16` | `4.9.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 138.2 KiB | [orafce_16-4.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/orafce_16-4.9.0-1PGDG.rhel8.aarch64.rpm) |
+| `orafce_16` | `4.17.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 157.0 KiB | [orafce_16-4.17.1-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.17.1-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_16` | `4.16.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 152.7 KiB | [orafce_16-4.16.12-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.16.12-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_16` | `4.16.11` | [el9.x86_64](/os/el9.x86_64) | pgdg | 151.5 KiB | [orafce_16-4.16.11-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.16.11-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_16` | `4.16.10` | [el9.x86_64](/os/el9.x86_64) | pgdg | 150.9 KiB | [orafce_16-4.16.10-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.16.10-1PGDG.rhel9.8.x86_64.rpm) |
@@ -422,6 +437,7 @@ page_width: full
 | `orafce_16` | `4.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 139.7 KiB | [orafce_16-4.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.9.2-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | `4.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 139.5 KiB | [orafce_16-4.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.9.1-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | `4.9.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 139.5 KiB | [orafce_16-4.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.9.0-1PGDG.rhel9.x86_64.rpm) |
+| `orafce_16` | `4.17.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 151.9 KiB | [orafce_16-4.17.1-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.17.1-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_16` | `4.16.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 147.8 KiB | [orafce_16-4.16.12-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.16.12-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_16` | `4.16.11` | [el9.aarch64](/os/el9.aarch64) | pgdg | 149.3 KiB | [orafce_16-4.16.11-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.16.11-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_16` | `4.16.10` | [el9.aarch64](/os/el9.aarch64) | pgdg | 148.8 KiB | [orafce_16-4.16.10-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.16.10-1PGDG.rhel9.8.aarch64.rpm) |
@@ -454,6 +470,7 @@ page_width: full
 | `orafce_16` | `4.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 137.3 KiB | [orafce_16-4.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.9.2-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | `4.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 137.2 KiB | [orafce_16-4.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.9.1-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | `4.9.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 137.1 KiB | [orafce_16-4.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.9.0-1PGDG.rhel9.aarch64.rpm) |
+| `orafce_16` | `4.17.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 158.0 KiB | [orafce_16-4.17.1-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/orafce_16-4.17.1-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_16` | `4.16.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.4 KiB | [orafce_16-4.16.12-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/orafce_16-4.16.12-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_16` | `4.16.11` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.9 KiB | [orafce_16-4.16.11-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/orafce_16-4.16.11-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_16` | `4.16.10` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.7 KiB | [orafce_16-4.16.10-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/orafce_16-4.16.10-1PGDG.rhel10.2.x86_64.rpm) |
@@ -470,6 +487,7 @@ page_width: full
 | `orafce_16` | `4.14.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 149.8 KiB | [orafce_16-4.14.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/orafce_16-4.14.6-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_16` | `4.14.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 149.6 KiB | [orafce_16-4.14.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/orafce_16-4.14.4-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_16` | `4.14.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 149.6 KiB | [orafce_16-4.14.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/orafce_16-4.14.3-2PGDG.rhel10.x86_64.rpm) |
+| `orafce_16` | `4.17.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 153.3 KiB | [orafce_16-4.17.1-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/orafce_16-4.17.1-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_16` | `4.16.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 148.9 KiB | [orafce_16-4.16.12-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/orafce_16-4.16.12-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_16` | `4.16.11` | [el10.aarch64](/os/el10.aarch64) | pgdg | 150.0 KiB | [orafce_16-4.16.11-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/orafce_16-4.16.11-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_16` | `4.16.10` | [el10.aarch64](/os/el10.aarch64) | pgdg | 149.6 KiB | [orafce_16-4.16.10-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/orafce_16-4.16.10-1PGDG.rhel10.2.aarch64.rpm) |
@@ -523,6 +541,7 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `orafce_15` | `4.17.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 162.1 KiB | [orafce_15-4.17.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.17.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_15` | `4.16.12` | [el8.x86_64](/os/el8.x86_64) | pgdg | 157.0 KiB | [orafce_15-4.16.12-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.16.12-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_15` | `4.16.11` | [el8.x86_64](/os/el8.x86_64) | pgdg | 155.9 KiB | [orafce_15-4.16.11-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.16.11-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_15` | `4.16.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 155.2 KiB | [orafce_15-4.16.10-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.16.10-1PGDG.rhel8.10.x86_64.rpm) |
@@ -550,6 +569,7 @@ page_width: full
 | `orafce_15` | `4.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 145.1 KiB | [orafce_15-4.9.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.9.2-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | `4.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 145.0 KiB | [orafce_15-4.9.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.9.1-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | `4.9.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 144.9 KiB | [orafce_15-4.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.9.0-1PGDG.rhel8.x86_64.rpm) |
+| `orafce_15` | `4.17.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 154.4 KiB | [orafce_15-4.17.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/orafce_15-4.17.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_15` | `4.16.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 149.7 KiB | [orafce_15-4.16.12-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/orafce_15-4.16.12-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_15` | `4.16.11` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.9 KiB | [orafce_15-4.16.11-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/orafce_15-4.16.11-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_15` | `4.16.10` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.3 KiB | [orafce_15-4.16.10-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/orafce_15-4.16.10-1PGDG.rhel8.10.aarch64.rpm) |
@@ -577,6 +597,7 @@ page_width: full
 | `orafce_15` | `4.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 140.3 KiB | [orafce_15-4.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/orafce_15-4.9.2-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_15` | `4.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 140.1 KiB | [orafce_15-4.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/orafce_15-4.9.1-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_15` | `4.9.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 140.0 KiB | [orafce_15-4.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/orafce_15-4.9.0-1PGDG.rhel8.aarch64.rpm) |
+| `orafce_15` | `4.17.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 157.1 KiB | [orafce_15-4.17.1-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/orafce_15-4.17.1-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_15` | `4.16.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 152.9 KiB | [orafce_15-4.16.12-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/orafce_15-4.16.12-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_15` | `4.16.11` | [el9.x86_64](/os/el9.x86_64) | pgdg | 151.8 KiB | [orafce_15-4.16.11-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/orafce_15-4.16.11-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_15` | `4.16.10` | [el9.x86_64](/os/el9.x86_64) | pgdg | 151.1 KiB | [orafce_15-4.16.10-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/orafce_15-4.16.10-1PGDG.rhel9.8.x86_64.rpm) |
@@ -609,6 +630,7 @@ page_width: full
 | `orafce_15` | `4.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 144.2 KiB | [orafce_15-4.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/orafce_15-4.9.2-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_15` | `4.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 144.2 KiB | [orafce_15-4.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/orafce_15-4.9.1-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_15` | `4.9.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 144.2 KiB | [orafce_15-4.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/orafce_15-4.9.0-1PGDG.rhel9.x86_64.rpm) |
+| `orafce_15` | `4.17.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 151.9 KiB | [orafce_15-4.17.1-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/orafce_15-4.17.1-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_15` | `4.16.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 148.0 KiB | [orafce_15-4.16.12-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/orafce_15-4.16.12-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_15` | `4.16.11` | [el9.aarch64](/os/el9.aarch64) | pgdg | 149.5 KiB | [orafce_15-4.16.11-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/orafce_15-4.16.11-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_15` | `4.16.10` | [el9.aarch64](/os/el9.aarch64) | pgdg | 148.9 KiB | [orafce_15-4.16.10-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/orafce_15-4.16.10-1PGDG.rhel9.8.aarch64.rpm) |
@@ -641,6 +663,7 @@ page_width: full
 | `orafce_15` | `4.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 141.8 KiB | [orafce_15-4.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/orafce_15-4.9.2-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_15` | `4.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 141.5 KiB | [orafce_15-4.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/orafce_15-4.9.1-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_15` | `4.9.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 141.5 KiB | [orafce_15-4.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/orafce_15-4.9.0-1PGDG.rhel9.aarch64.rpm) |
+| `orafce_15` | `4.17.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 158.6 KiB | [orafce_15-4.17.1-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/orafce_15-4.17.1-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_15` | `4.16.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 154.1 KiB | [orafce_15-4.16.12-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/orafce_15-4.16.12-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_15` | `4.16.11` | [el10.x86_64](/os/el10.x86_64) | pgdg | 152.5 KiB | [orafce_15-4.16.11-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/orafce_15-4.16.11-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_15` | `4.16.10` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.8 KiB | [orafce_15-4.16.10-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/orafce_15-4.16.10-1PGDG.rhel10.2.x86_64.rpm) |
@@ -657,6 +680,7 @@ page_width: full
 | `orafce_15` | `4.14.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 150.2 KiB | [orafce_15-4.14.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/orafce_15-4.14.6-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_15` | `4.14.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 150.1 KiB | [orafce_15-4.14.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/orafce_15-4.14.4-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_15` | `4.14.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 150.0 KiB | [orafce_15-4.14.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/orafce_15-4.14.3-2PGDG.rhel10.x86_64.rpm) |
+| `orafce_15` | `4.17.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 153.7 KiB | [orafce_15-4.17.1-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/orafce_15-4.17.1-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_15` | `4.16.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 149.4 KiB | [orafce_15-4.16.12-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/orafce_15-4.16.12-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_15` | `4.16.11` | [el10.aarch64](/os/el10.aarch64) | pgdg | 150.5 KiB | [orafce_15-4.16.11-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/orafce_15-4.16.11-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_15` | `4.16.10` | [el10.aarch64](/os/el10.aarch64) | pgdg | 150.0 KiB | [orafce_15-4.16.10-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/orafce_15-4.16.10-1PGDG.rhel10.2.aarch64.rpm) |
@@ -710,6 +734,7 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `orafce_14` | `4.17.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 163.2 KiB | [orafce_14-4.17.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.17.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_14` | `4.16.12` | [el8.x86_64](/os/el8.x86_64) | pgdg | 158.4 KiB | [orafce_14-4.16.12-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.16.12-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_14` | `4.16.11` | [el8.x86_64](/os/el8.x86_64) | pgdg | 157.0 KiB | [orafce_14-4.16.11-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.16.11-1PGDG.rhel8.10.x86_64.rpm) |
 | `orafce_14` | `4.16.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 156.2 KiB | [orafce_14-4.16.10-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.16.10-1PGDG.rhel8.10.x86_64.rpm) |
@@ -737,6 +762,7 @@ page_width: full
 | `orafce_14` | `4.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 146.3 KiB | [orafce_14-4.9.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.9.2-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | `4.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 146.2 KiB | [orafce_14-4.9.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.9.1-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | `4.9.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 146.0 KiB | [orafce_14-4.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.9.0-1PGDG.rhel8.x86_64.rpm) |
+| `orafce_14` | `4.17.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 155.3 KiB | [orafce_14-4.17.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.17.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_14` | `4.16.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 150.6 KiB | [orafce_14-4.16.12-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.16.12-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_14` | `4.16.11` | [el8.aarch64](/os/el8.aarch64) | pgdg | 152.0 KiB | [orafce_14-4.16.11-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.16.11-1PGDG.rhel8.10.aarch64.rpm) |
 | `orafce_14` | `4.16.10` | [el8.aarch64](/os/el8.aarch64) | pgdg | 151.4 KiB | [orafce_14-4.16.10-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.16.10-1PGDG.rhel8.10.aarch64.rpm) |
@@ -764,6 +790,7 @@ page_width: full
 | `orafce_14` | `4.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 141.2 KiB | [orafce_14-4.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.9.2-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | `4.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 140.9 KiB | [orafce_14-4.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.9.1-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | `4.9.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 140.8 KiB | [orafce_14-4.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.9.0-1PGDG.rhel8.aarch64.rpm) |
+| `orafce_14` | `4.17.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 158.0 KiB | [orafce_14-4.17.1-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/orafce_14-4.17.1-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_14` | `4.16.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 153.9 KiB | [orafce_14-4.16.12-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/orafce_14-4.16.12-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_14` | `4.16.11` | [el9.x86_64](/os/el9.x86_64) | pgdg | 152.6 KiB | [orafce_14-4.16.11-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/orafce_14-4.16.11-1PGDG.rhel9.8.x86_64.rpm) |
 | `orafce_14` | `4.16.10` | [el9.x86_64](/os/el9.x86_64) | pgdg | 152.0 KiB | [orafce_14-4.16.10-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/orafce_14-4.16.10-1PGDG.rhel9.8.x86_64.rpm) |
@@ -796,6 +823,7 @@ page_width: full
 | `orafce_14` | `4.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 145.6 KiB | [orafce_14-4.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/orafce_14-4.9.2-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_14` | `4.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 145.5 KiB | [orafce_14-4.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/orafce_14-4.9.1-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_14` | `4.9.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 145.4 KiB | [orafce_14-4.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/orafce_14-4.9.0-1PGDG.rhel9.x86_64.rpm) |
+| `orafce_14` | `4.17.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 153.0 KiB | [orafce_14-4.17.1-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/orafce_14-4.17.1-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_14` | `4.16.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 148.9 KiB | [orafce_14-4.16.12-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/orafce_14-4.16.12-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_14` | `4.16.11` | [el9.aarch64](/os/el9.aarch64) | pgdg | 150.4 KiB | [orafce_14-4.16.11-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/orafce_14-4.16.11-1PGDG.rhel9.8.aarch64.rpm) |
 | `orafce_14` | `4.16.10` | [el9.aarch64](/os/el9.aarch64) | pgdg | 150.0 KiB | [orafce_14-4.16.10-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/orafce_14-4.16.10-1PGDG.rhel9.8.aarch64.rpm) |
@@ -828,6 +856,7 @@ page_width: full
 | `orafce_14` | `4.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 142.5 KiB | [orafce_14-4.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/orafce_14-4.9.2-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_14` | `4.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 142.4 KiB | [orafce_14-4.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/orafce_14-4.9.1-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_14` | `4.9.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 142.4 KiB | [orafce_14-4.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/orafce_14-4.9.0-1PGDG.rhel9.aarch64.rpm) |
+| `orafce_14` | `4.17.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 159.9 KiB | [orafce_14-4.17.1-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/orafce_14-4.17.1-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_14` | `4.16.12` | [el10.x86_64](/os/el10.x86_64) | pgdg | 155.3 KiB | [orafce_14-4.16.12-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/orafce_14-4.16.12-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_14` | `4.16.11` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.6 KiB | [orafce_14-4.16.11-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/orafce_14-4.16.11-1PGDG.rhel10.2.x86_64.rpm) |
 | `orafce_14` | `4.16.10` | [el10.x86_64](/os/el10.x86_64) | pgdg | 153.2 KiB | [orafce_14-4.16.10-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/orafce_14-4.16.10-1PGDG.rhel10.2.x86_64.rpm) |
@@ -844,6 +873,7 @@ page_width: full
 | `orafce_14` | `4.14.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.4 KiB | [orafce_14-4.14.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/orafce_14-4.14.6-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_14` | `4.14.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.2 KiB | [orafce_14-4.14.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/orafce_14-4.14.4-1PGDG.rhel10.x86_64.rpm) |
 | `orafce_14` | `4.14.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 151.1 KiB | [orafce_14-4.14.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/orafce_14-4.14.3-2PGDG.rhel10.x86_64.rpm) |
+| `orafce_14` | `4.17.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 154.7 KiB | [orafce_14-4.17.1-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/orafce_14-4.17.1-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_14` | `4.16.12` | [el10.aarch64](/os/el10.aarch64) | pgdg | 150.3 KiB | [orafce_14-4.16.12-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/orafce_14-4.16.12-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_14` | `4.16.11` | [el10.aarch64](/os/el10.aarch64) | pgdg | 151.5 KiB | [orafce_14-4.16.11-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/orafce_14-4.16.11-1PGDG.rhel10.2.aarch64.rpm) |
 | `orafce_14` | `4.16.10` | [el10.aarch64](/os/el10.aarch64) | pgdg | 151.0 KiB | [orafce_14-4.16.10-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/orafce_14-4.16.10-1PGDG.rhel10.2.aarch64.rpm) |
@@ -933,14 +963,13 @@ CREATE EXTENSION orafce;
 
 Sources:
 
-- [4.16.13 release](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_13)
-- [README.asciidoc](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/README.asciidoc)
-- [orafce.control](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce.control)
-- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce--4.16.sql)
-- [4.16.12 release notes](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_12)
-- [File-access implementation](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/file.c)
+- [README.asciidoc](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/README.asciidoc)
+- [orafce.control](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce.control)
+- [orafce--4.17.sql](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce--4.17.sql)
+- [orafce--4.16--4.17.sql](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce--4.16--4.17.sql)
+- [file.c](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/file.c)
 
-`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.16.13 still uses control and SQL extension version 4.16; the two numbers describe different layers.
+`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.17.1 uses control and SQL extension version 4.17; the two numbers describe different layers.
 
 ### Core Workflow
 
@@ -964,8 +993,12 @@ Use `oracle.date` when an Oracle-style date must retain the time of day. Date fu
 
 `utl_file` accesses server-side files within administrator-configured allowed directories; restrict grants and file-system permissions. The implementation rejects parent-directory references that remain after path canonicalization. Avoid parent references in file paths. The 4.16.12 release specifically fixes possible crashes in `dbms_sql`.
 
-Installation requires a superuser and creates fixed schemas; no preload is required. Follow the upstream configuration guidance before altering `search_path`. Since the SQL version remains 4.16, an installed 4.16 extension need not acquire a new SQL version merely because its binary distribution was patched. Reconnect as required to use the updated library and verify behavior against the exact installed distribution.
+Installation requires a superuser and creates fixed schemas; no preload is required. Follow the upstream configuration guidance before altering `search_path`. The 4.16 patch releases did not change the SQL version; upgrading to the 4.17 series does require its SQL upgrade. Reconnect as required to use the updated library and verify behavior against the exact installed distribution.
 
 ### 4.16.13 Patch
 
 Distribution 4.16.13 fixes additional possible `dbms_sql` crashes. The control version remains 4.16; update the library distribution without inventing a 4.16.13 SQL upgrade.
+
+### 4.17 Compatibility Objects
+
+Distribution 4.17.1 adds `utl_raw` byte operations, including `utl_raw.cast_to_raw`, `utl_raw.cast_to_varchar2`, `utl_raw.substr` and bitwise functions. `utl_raw.substr` rejects a null value, invalid start, nonpositive length or a range past the end. `oracle.hextoraw`, `oracle.rawtohex`, `oracle.empty_clob`, `oracle.empty_blob` and `oracle.from_tz` are also added. USER_TABLES and USER_TAB_COLUMNS now restrict their results to the current schema. After installing the new distribution, run `ALTER EXTENSION orafce UPDATE TO '4.17'` and reconnect to use the new library.

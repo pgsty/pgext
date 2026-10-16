@@ -2,13 +2,14 @@
 
 来源：
 
-- [v2.12.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/README.md)
-- [v2.12.0 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/CHANGELOG.md)
-- [升级矩阵](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/docs/UPGRADING.md)
-- [控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/pg_turbovec.control)
-- [过滤指南](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.12.0/docs/FILTERING.md)
+- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/docs/PRODUCTION.md)
+- [v2.13.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/README.md)
+- [v2.12.0 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/CHANGELOG.md)
+- [升级矩阵](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/docs/UPGRADING.md)
+- [控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/pg_turbovec.control)
+- [过滤指南](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.12.0 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
+`pg_turbovec` 2.13.0 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
 
 ### 创建和查询向量
 
@@ -57,12 +58,12 @@ SET turbovec.search_k = 64;
 
 设置查询必须返回非零数量；SET 接受带点号的占位参数，并不证明扩展的 GUC 已注册。重要参数包括 `turbovec.probes`、`turbovec.search_k`、`turbovec.oversample`、`turbovec.iterative_scan` 和 `turbovec.cache_size_mb`。稳定的过滤条件可使用部分索引，也可使用文档所述的允许列表或迭代扫描路径；应将过滤结果与精确基线比较。原生分区的索引需要分别维护。
 
-### 从 1.x 升级到 2.12.0
+### 从 1.x 升级到 2.12.1
 
 安排维护窗口，保留堆中的向量以及经过验证的备份。安装匹配的新二进制文件、更新 SQL 扩展，然后重启 PostgreSQL，确保所有后端使用新库：
 
 ```sql
-ALTER EXTENSION pg_turbovec UPDATE TO '2.12.0';
+ALTER EXTENSION pg_turbovec UPDATE TO '2.12.1';
 ```
 
 2.0.0 将索引格式从 7 改为 8。旧索引无法原地读取：**恢复查询前，必须从堆数据重建每一个 TurboVec 索引**，包括每个分区上的索引。在 psql 中生成并执行重建语句：
@@ -93,3 +94,13 @@ WHERE a.amname = 'turbovec';
 向量化精确距离内核改变八维及以上 vector 和 halfvec 输入的舍入结果。距离极近的邻居可能改变排序或跨越距离阈值，sparsevec 运算符不变。格式 8 和已有索引字节保持不变：更新 SQL 扩展并重新连接或重启以加载新库，无需例行重建索引。
 
 表达式索引、部分索引谓词、存储生成列和物化视图可能保留旧的舍入结果。如果要求与新计算严格一致，应重建相关索引、刷新视图并重新计算存储的派生值。既有损坏仍需修复，所有 1.x 索引仍须重建。在空表上创建或被截断的 IVF 索引不会训练单元，应先装载数据，再按上游流程重建。
+
+### 2.12.1 召回修复
+
+2.12.1 将 turbovec 更新到 1.1.2，修复向量具有明显共同方向时分阶段搜索的召回损失。适用硬件上的候选集合可能变化，精确重排分数不变。本版还修复 Nix 构建，上游 pgrx 升至 0.19.3，CI 覆盖 PostgreSQL 19beta4。SQL 对象、GUC 和格式 8 均不变。更新扩展后重新连接以加载新库；健康的 2.x 索引无需 REINDEX。上述 1.x 重建与既有损坏修复要求仍适用。
+
+### 2.13.0 限制扫描线程
+
+`turbovec.scan_parallelism` 现用于限制 flat、IVF、ColBERT ANN 和 1-bit 扫描、`turbovec.knn()` 以及首次打开索引时的编码重排；已弃用的 graph 路径保持原状。默认值 0 最多使用四个核心，调低设置后在当前会话生效。调优时应权衡并发吞吐量与单条查询的延迟。
+
+原本不生效的 `turbovec.search_concurrency` 设置已移除。对这一带点名称执行 SET 成功，可能只是 PostgreSQL 接受了占位参数，并不表示参数有效。2.13.0 还修复了外存 IVF 码本缓存的竞争问题。安装匹配文件、执行 `ALTER EXTENSION pg_turbovec UPDATE TO '2.13.0'`，再重新连接或重启。健康的格式 8 索引无需 REINDEX；上述 1.x 索引重建要求仍适用。

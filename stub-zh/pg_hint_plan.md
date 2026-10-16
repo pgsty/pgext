@@ -1,9 +1,14 @@
-
-
-
 ## 用法
 
-> [pg_hint_plan: 赋予 PostgreSQL 手动干预执行计划的能力](https://github.com/ossc-db/pg_hint_plan)
+来源：
+
+- [README.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/README.md)
+- [pg_hint_plan.control](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/pg_hint_plan.control)
+- [docs/hint_list.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/hint_list.md)
+- [docs/installation.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/installation.md)
+- [docs/requirements.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/requirements.md)
+- [docs/functional_limitations.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/functional_limitations.md)
+
 
 `pg_hint_plan` 通过 SQL 注释提示覆盖 PostgreSQL 查询规划器的决策，允许你强制指定扫描方法、连接策略和连接顺序。
 
@@ -55,27 +60,27 @@ ORDER BY a.aid;
 ### 连接顺序提示
 
 ```sql
--- 简单的左深连接顺序
+-- Simple left-deep join order
 /*+ Leading(a b c) */
 
--- 带嵌套的显式连接树
+-- Explicit join tree with nesting
 /*+ Leading((a (b c))) */
 ```
 
 ### 行数修正
 
 ```sql
-/*+ Rows(a b #100) */    -- 设置为绝对数量
-/*+ Rows(a b +100) */    -- 增加估计值
-/*+ Rows(a b -100) */    -- 减少估计值
-/*+ Rows(a b *2.0) */    -- 倍乘估计值
+/*+ Rows(a b #100) */    -- Set to absolute number
+/*+ Rows(a b +100) */    -- Add to estimate
+/*+ Rows(a b -100) */    -- Subtract from estimate
+/*+ Rows(a b *2.0) */    -- Multiply estimate
 ```
 
 ### 并行查询控制
 
 ```sql
-/*+ Parallel(table 4 hard) */   -- 强制 4 个并行工作进程
-/*+ Parallel(table 0 hard) */   -- 禁用并行
+/*+ Parallel(table 4 hard) */   -- Force 4 parallel workers
+/*+ Parallel(table 0 hard) */   -- Disable parallelism
 ```
 
 ### GUC 参数覆盖
@@ -94,3 +99,9 @@ SELECT * FROM my_table WHERE id = 42;
 | `pg_hint_plan.debug_print` | 打印已应用提示的调试信息 | off |
 | `pg_hint_plan.parse_messages` | 提示解析消息的日志级别 | INFO |
 | `pg_hint_plan.message_level` | 调试消息的日志级别 | LOG |
+
+### 加载与 PostgreSQL 版本分支
+
+1.9.0 要求 PostgreSQL 19。PG18 使用 1.8.1，PG17 使用 1.7.2，PG16 使用 1.6.3，PG15 使用 1.5.4，PG14 使用 1.4.5；不能把 PG19 构建安装到旧版服务器。
+
+`LOAD 'pg_hint_plan'` 可直接在当前会话启用提示，无需 CREATE EXTENSION。全局预加载需要重启。使用提示表时，还须执行 `CREATE EXTENSION pg_hint_plan` 并启用 `pg_hint_plan.enable_hint_table`。提示不能强制不可执行的计划，查询 ID 也忽略提示注释；应使用 EXPLAIN 核验实际计划。本轮发布修复解析循环、中断及规划器错误路径处理。

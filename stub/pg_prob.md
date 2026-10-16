@@ -2,13 +2,15 @@
 
 Sources:
 
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
-- [Official pg_prob README](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/README.md)
-- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/pg_prob.control)
-- [End-to-end upstream example](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/example.md)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/LICENSE)
+- [extensions/pg_prob/pg_prob.control](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/pg_prob.control)
+- [extensions/pg_prob/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/Cargo.toml)
+- [extensions/pg_prob/README.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/README.md)
+- [extensions/pg_prob/sql/pg_prob--0.3.0--0.3.1.sql](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/sql/pg_prob--0.3.0--0.3.1.sql)
+- [extensions/pg_prob/example.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/example.md)
 
-`pg_prob` version `0.3.0` adds the `pgprob.dist` probabilistic type for Monte Carlo modeling in SQL. Distributions can be constructed, combined arithmetically, aggregated across rows, sampled, and summarized without moving uncertain business data out of PostgreSQL.
+`pg_prob` version `0.3.1` provides the `pgprob.dist` probabilistic type for Monte Carlo modeling in SQL. Distributions can be constructed, combined arithmetically, aggregated across rows, sampled, and summarized without moving uncertain business data out of PostgreSQL.
 
 ### Core Workflow
 
@@ -34,3 +36,9 @@ Monte Carlo answers are estimates: sample count controls both error and executio
 ### Version 0.3.0 Boundary
 
 This is an unsupported proof of concept under Matroid Source Available License 1.0. APIs may change. Version 0.3.0 is the new upgrade baseline: earlier 0.2.0 installations require a rehearsed data migration/recreation, not ordinary ALTER EXTENSION UPDATE. Back up data and dependencies before following that destructive upstream path.
+
+### Changes in This Release
+
+Source feature declarations cover PostgreSQL 14–18. The repository release is 0.7.0, while each extension retains its own SQL version; this does not establish Pigsty package availability.
+
+Version 0.3.1 marks random sampling and statistics functions `VOLATILE`, preventing an unseeded constant-argument call from reusing one draw throughout a query. Explicit seeds remain reproducible. `pert` now uses standard PERT Beta parameters when the mode is the interval midpoint. After installing matching libraries, run `ALTER EXTENSION pg_prob UPDATE TO '0.3.1'` on 0.3.0 databases so existing SQL functions receive the new volatility markings.

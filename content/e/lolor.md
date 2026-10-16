@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9580** | {{< badge content="lolor" link="https://github.com/pgEdge/lolor" >}} | {{< ext "lolor" >}} | `1.2.2` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **9580** | {{< badge content="lolor" link="https://github.com/pgEdge/lolor" >}} | {{< ext "lolor" >}} | `1.2.3` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,14 +30,14 @@ page_width: full
 |    **Schemas**    | `lolor` |
 |   **See Also**    | {{< ext "lo" >}} {{< ext "pglogical" >}} {{< ext "spock" >}} {{< ext "mimeo" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} {{< ext "pg_surgery" >}} {{< ext "pg_repack" >}} |
 
-> [!Note] works on pgedge kernel fork. Requires lolor.node
+> [!Note] Bundled with pgEdge 15.19/16.15/17.11/18.6 release 3PGSTY; requires lolor.node.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `lolor` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `lolor` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
 {.packages}
@@ -162,7 +162,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgEdge/lolor" title="Repository" icon="github" subtitle="github.com/pgEdge/lolor" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="lolor-1.2.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="lolor-1.2.3.tar.gz" />}}
 {{< /cards >}}
 
 

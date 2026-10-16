@@ -15,7 +15,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 427 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 430 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 78 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 63 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 15 | 使用 C++ 特性和库的扩展 |
@@ -27,7 +27,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="427 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="430 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -59,6 +59,7 @@ weight: 200
 | 1850 | {{< alias "smlar" >}} | 高效的相似度搜索函数 |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | 使用 C 实现的 PostgreSQL 高性能 tiktoken BPE 分词扩展 |
 | 1930 | {{< alias "pg4ml" >}} | PG4ML是一个机器学习框架 |
+| 1990 | {{< alias "pg_vectorsearch" >}} | 使用 PRISM 索引与 RaBitQ 量化的近似向量检索 |
 | 2110 | {{< alias "pgroonga" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
@@ -70,6 +71,8 @@ weight: 200
 | 2230 | {{< alias "pg_fts" >}} | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
 | 2260 | {{< alias "acdat" >}} | 在 PostgreSQL 中编译 Aho-Corasick 双数组机，实现精确多模式匹配与替换 |
+| 2290 | {{< alias "textsearch_intl" >}} | 结合 ICU 分词、规范化与 n-gram 匹配的多语言全文检索 |
+| 2300 | {{< alias "pg_icu_parser" >}} | 使用 ICU 边界分析的全文搜索解析器 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2400 | {{< alias "citus" >}} | 将 PostgreSQL 横向扩展为分布式数据库 |
@@ -116,8 +119,8 @@ weight: 200
 | 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | Omnigres CloudEvents 支持 |
 | 2944 | {{< alias "omni_containers" "omnigres" >}} | Omnigres Docker容器管理模块 |
 | 2945 | {{< alias "omni_credentials" "omnigres" >}} | Omnigres 应用密钥管理模块 |
-| 2946 | {{< alias "omni_csv" >}} | Omnigres CSV 工具箱 |
-| 2947 | {{< alias "omni_datasets" >}} | Omnigres 数据库置备工具 |
+| 2946 | {{< alias "omni_csv" "omnigres" >}} | Omnigres CSV 工具箱 |
+| 2947 | {{< alias "omni_datasets" "omnigres" >}} | Omnigres 数据库置备工具 |
 | 2948 | {{< alias "omni_email" "omnigres" >}} | Omnigres Email 框架 |
 | 2949 | {{< alias "omni_http" "omnigres" >}} | Omnigres 基本HTTP类型 |
 | 2950 | {{< alias "omni_httpc" "omnigres" >}} | Omnigres HTTP客户端 |
@@ -137,7 +140,7 @@ weight: 200
 | 2964 | {{< alias "omni_seq" "omnigres" >}} | Omnigres 分布式整型序列号 |
 | 2965 | {{< alias "omni_service" "omnigres" >}} | Omnigres 服务管理器 |
 | 2966 | {{< alias "omni_session" "omnigres" >}} | Omnigres 会话管理器 |
-| 2967 | {{< alias "omni_shmem" >}} | Omnigres 共享内存管理 |
+| 2967 | {{< alias "omni_shmem" "omnigres" >}} | Omnigres 共享内存管理 |
 | 2968 | {{< alias "omni_sql" "omnigres" >}} | Omnigres SQL编程组件 |
 | 2969 | {{< alias "omni_sqlite" "omnigres" >}} | Omnigres 嵌入的SQLite支持 |
 | 2970 | {{< alias "omni_test" "omnigres" >}} | Omnigres 测试框架 |

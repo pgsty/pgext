@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9570** | {{< badge content="spock" link="https://github.com/pgEdge/spock" >}} | {{< ext "spock" >}} | `5.0.12` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **9570** | {{< badge content="spock" link="https://github.com/pgEdge/spock" >}} | {{< ext "spock" >}} | `5.0.13` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,14 +30,14 @@ page_width: full
 |    **Schemas**    | `spock` |
 |   **See Also**    | {{< ext "pglogical" >}} {{< ext "pgactive" >}} {{< ext "mimeo" >}} {{< ext "pgoutput" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} {{< ext "postgres_fdw" >}} {{< ext "lolor" >}} {{< ext "citus" >}} {{< ext "plproxy" >}} |
 
-> [!Note] Bundled with pgEdge 15.19/16.15/17.11/18.6.
+> [!Note] Bundled with pgEdge 15.19/16.15/17.11/18.6 release 3PGSTY; requires shared_preload_libraries=spock.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.12` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `spock` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.13` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `spock` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
 {.packages}
@@ -162,7 +162,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgEdge/spock" title="Repository" icon="github" subtitle="github.com/pgEdge/spock" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="spock-5.0.12.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="spock-5.0.13.tar.gz" />}}
 {{< /cards >}}
 
 

@@ -2,13 +2,15 @@
 
 来源：
 
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
-- [官方 pg_prob README](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/README.md)
-- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/pg_prob.control)
-- [上游端到端示例](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_prob/example.md)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/LICENSE)
+- [extensions/pg_prob/pg_prob.control](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/pg_prob.control)
+- [extensions/pg_prob/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/Cargo.toml)
+- [extensions/pg_prob/README.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/README.md)
+- [extensions/pg_prob/sql/pg_prob--0.3.0--0.3.1.sql](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/sql/pg_prob--0.3.0--0.3.1.sql)
+- [extensions/pg_prob/example.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_prob/example.md)
 
-`pg_prob` 版本 `0.3.0` 增加了用于 SQL 蒙特卡洛建模的 `pgprob.dist` 概率类型。分布可以构造、通过算术组合、跨行聚合、采样和汇总，无需把包含不确定性的业务数据移出 PostgreSQL。
+`pg_prob` 版本 `0.3.1` 提供用于 SQL 蒙特卡洛建模的 `pgprob.dist` 概率类型。分布可以构造、通过算术组合、跨行聚合、采样和汇总，无需把包含不确定性的业务数据移出 PostgreSQL。
 
 ### 核心流程
 
@@ -34,3 +36,9 @@ FROM estimate;
 ### 0.3.0 版本边界
 
 这是采用 Matroid Source Available License 1.0 的无支持概念验证项目，API 可能变化。0.3.0 是新的升级起点：旧 0.2.0 安装需要预演数据迁移／重建，不能直接执行普通 ALTER EXTENSION UPDATE。遵循上游这一破坏性路径前，必须备份数据并检查依赖。
+
+### 本次版本变化
+
+源代码声明 PostgreSQL 14–18 功能开关。仓库发布版本为 0.7.0，各扩展保留各自的 SQL 版本；这不代表 Pigsty 软件包已构建。
+
+0.3.1 将随机采样及统计函数改为 `VOLATILE`，避免无种子的常量参数调用在整条查询中复用同一次抽样；显式种子仍可复现结果。`pert` 的众数位于区间中点时，现采用标准 PERT Beta 参数。安装匹配库后，在 0.3.0 数据库执行 `ALTER EXTENSION pg_prob UPDATE TO '0.3.1'`，使已有 SQL 函数也获得新波动性标记。

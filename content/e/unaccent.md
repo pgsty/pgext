@@ -27,6 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Need By**    | {{< ext "textsearch_intl" >}} |
 |   **See Also**    | {{< ext "dict_xsyn" >}} {{< ext "dict_int" >}} {{< ext "pg_tokenizer" >}} {{< ext "pgroonga" >}} {{< ext "icu_ext" >}} {{< ext "pg_xenophile" >}} {{< ext "citext" >}} {{< ext "pg_trgm" >}} |
 
 

@@ -15,7 +15,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 427 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 430 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 78 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 63 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
@@ -27,7 +27,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="427 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="430 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -59,6 +59,7 @@ The traditional PostgreSQL extension language
 | 1850 | {{< alias "smlar" >}} | Effective similarity search |
 | 1880 | {{< alias "pg_tiktoken_c" >}} | Fast tiktoken BPE tokenizer for PostgreSQL implemented in C |
 | 1930 | {{< alias "pg4ml" >}} | Machine learning framework for PostgreSQL |
+| 1990 | {{< alias "pg_vectorsearch" >}} | Approximate vector search with PRISM indexes and RaBitQ quantization |
 | 2110 | {{< alias "pgroonga" >}} | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | create 2-gram (bigram) index for faster full text search. |
@@ -70,6 +71,8 @@ The traditional PostgreSQL extension language
 | 2230 | {{< alias "pg_fts" >}} | Full-text search with BM25 and BM25F ranking |
 | 2240 | {{< alias "pg_cjk_parser" >}} | CJK bigram parser derived from PostgreSQL full-text search |
 | 2260 | {{< alias "acdat" >}} | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
+| 2290 | {{< alias "textsearch_intl" >}} | Multilingual full text search with ICU segmentation, normalization and n-gram matching |
+| 2300 | {{< alias "pg_icu_parser" >}} | Full text search parser using ICU boundary analysis |
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
@@ -116,8 +119,8 @@ The traditional PostgreSQL extension language
 | 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | CloudEvents support |
 | 2944 | {{< alias "omni_containers" "omnigres" >}} | Docker container management |
 | 2945 | {{< alias "omni_credentials" "omnigres" >}} | Application credential management |
-| 2946 | {{< alias "omni_csv" >}} | CSV toolkit |
-| 2947 | {{< alias "omni_datasets" >}} | Dataset provisioning |
+| 2946 | {{< alias "omni_csv" "omnigres" >}} | CSV toolkit |
+| 2947 | {{< alias "omni_datasets" "omnigres" >}} | Dataset provisioning |
 | 2948 | {{< alias "omni_email" "omnigres" >}} | E-mail framework |
 | 2949 | {{< alias "omni_http" "omnigres" >}} | Basic HTTP types |
 | 2950 | {{< alias "omni_httpc" "omnigres" >}} | HTTP client |
@@ -137,7 +140,7 @@ The traditional PostgreSQL extension language
 | 2964 | {{< alias "omni_seq" "omnigres" >}} | Distributed integer sequences |
 | 2965 | {{< alias "omni_service" "omnigres" >}} | Service management |
 | 2966 | {{< alias "omni_session" "omnigres" >}} | Session management |
-| 2967 | {{< alias "omni_shmem" >}} | Shared Memory Management |
+| 2967 | {{< alias "omni_shmem" "omnigres" >}} | Shared Memory Management |
 | 2968 | {{< alias "omni_sql" "omnigres" >}} | Programmatic SQL manipulation |
 | 2969 | {{< alias "omni_sqlite" "omnigres" >}} | Embedded SQLite |
 | 2970 | {{< alias "omni_test" "omnigres" >}} | Testing framework |

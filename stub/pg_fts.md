@@ -2,17 +2,13 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.12.0/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.12.0/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.12.0/CHANGELOG.md)
-- [pg_fts--1.11.0--1.12.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.12.0/pg_fts--1.11.0--1.12.0.sql)
+- [1.14.0 upgrade](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.0/pg_fts--1.13.0--1.14.0.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.0/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.0/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.0/CHANGELOG.md)
+- [pg_fts--1.14.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.0/pg_fts--1.14.0.sql)
 
-- [README.md](https://github.com/gburd/pg_fts/blob/8bccf0ce75f04b3af559b34d635a5f71e0d2d04e/README.md)
-- [pg_fts.control](https://github.com/gburd/pg_fts/blob/8bccf0ce75f04b3af559b34d635a5f71e0d2d04e/pg_fts.control)
-- [CHANGELOG.md](https://github.com/gburd/pg_fts/blob/8bccf0ce75f04b3af559b34d635a5f71e0d2d04e/CHANGELOG.md)
-- [pg_fts--1.9.1--1.10.0.sql](https://github.com/gburd/pg_fts/blob/8bccf0ce75f04b3af559b34d635a5f71e0d2d04e/pg_fts--1.9.1--1.10.0.sql)
-
-`pg_fts` 1.12.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17 and 18 are supported; PostgreSQL 19/master CI is best-effort. The control is trusted and relocatable, and core use needs no shared preload.
+`pg_fts` 1.14.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17 and 18 are supported; PostgreSQL 19/master CI is best-effort. The control is trusted and relocatable, and core use needs no shared preload.
 
 ### Search and Rank
 
@@ -47,3 +43,15 @@ Version 1.11.0 fixes wrong-result cases and concurrent insert/VACUUM/merge failu
 ### Version 1.12.0
 
 Version 1.12.0 caches the segment dictionary index in each backend, charging it against `pg_fts.doclen_cache_mb`; a segment that does not fit falls back to the page-chain lookup. Changes to that budget now take effect without waiting for a segment-directory change. There is no index-format change, no new SQL object and no REINDEX requirement. A cancellation or error during cache reconstruction can leave memory allocated until that backend exits; this known limitation does not change query results.
+
+### Compound Proximity and 1.13.0 Fixes
+
+Queries now support unordered `w/N`, ordered `p/N`, exact-gap `<N>`, adjacency `<->`, and same-position `<0>`. Either operand can be a term, phrase, OR group or another proximity group; direct AND/NOT operands are rejected. Quoted phrases preserve removed-stopword gaps. Ranked prefix, fuzzy and regex searches now include all matching rows, and pending documents participate in ranking; expansion-only matches can still score zero because scores use literal query terms.
+
+This release fixes malformed binary-query crashes, non-ASCII fuzzy matching and a positional-scan double free during concurrent merges. Install matching files and run `ALTER EXTENSION pg_fts UPDATE TO '1.13.0'`; no index-format change or routine REINDEX is required.
+
+### 1.14.0 Vacuum and Write-Load Fixes
+
+Version 1.14.0 bounds posting-list vacuum batches by `maintenance_work_mem` and skips tail truncation during parallel VACUUM. Deferred free space remains reusable and can be reclaimed by a later non-parallel VACUUM or `fts_vacuum()`. The new `fts_matchsel` estimator improves ranked-search plan selection. `pg_fts.pending_flush_threshold` defaults to 20000 pending documents; 0 disables insert-triggered flushing. The insert path attempts the maintenance lock without waiting.
+
+Install matching files and run `ALTER EXTENSION pg_fts UPDATE TO '1.14.0'` to rewire the match operators. Index format is unchanged; routine REINDEX is unnecessary.

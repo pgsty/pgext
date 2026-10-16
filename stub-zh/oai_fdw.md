@@ -2,13 +2,13 @@
 
 来源：
 
-- [CHANGELOG.md](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
-- [官方 v1.15 README](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/README.md)
-- [官方 v1.15 控制文件](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/oai_fdw.control)
-- [官方 v1.15 更新日志](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
+- [CHANGELOG.md](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/CHANGELOG.md)
+- [官方 v1.16 README](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/README.md)
+- [官方 v1.16 控制文件](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/oai_fdw.control)
+- [官方 v1.16 更新日志](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/CHANGELOG.md)
 - [官方 OAI-PMH 规范](https://www.openarchives.org/OAI/openarchivesprotocol.html)
 
-`oai_fdw` 1.15 是一个通过 HTTP 或 HTTPS 从 OAI-PMH 2.0 仓库采集元数据的外部数据包装器。它把 OAI 记录头和 XML 内容映射到外部表列，支持按仓库或 set 自动生成表，也可以把采集记录复制到本地表。
+`oai_fdw` 1.16 是一个通过 HTTP 或 HTTPS 从 OAI-PMH 2.0 仓库采集元数据的外部数据包装器。它把 OAI 记录头和 XML 内容映射到外部表列，支持按仓库或 set 自动生成表，也可以把采集记录复制到本地表。
 
 ### 核心流程
 
@@ -58,3 +58,7 @@ OAI-PMH 是采集协议，不是事务数据库 API。重复扫描可能看到�
 ### 1.15 版本变化
 
 HTTP 429 与 503 重试遵循退避及 Retry-After，from/until 校验和时间戳粒度检查更加严格。会检查服务器 USAGE 权限及视图所有者的用户映射，并修复采集时间窗口和取消处理。持续低速传输达到文档中的五分钟阈值后会中止。安装匹配文件后执行 `ALTER EXTENSION oai_fdw UPDATE`。PGXN 分发版本为 1.15.0，SQL／控制版本则为 1.15。
+
+### 1.16 响应限制
+
+可用 server 选项 `max_response_size` 限制响应字节数；即使未配置更小的上限，也有 1 GB 的硬限制。超过上限会中止请求。该 FDW 只读，INSERT、UPDATE 和 DELETE 现在立即报错。GetRecord 估计行数上限为 1，EXPLAIN 显示 server 标识。发行版 1.16.0 使用 SQL 版本 1.16；安装匹配文件后执行 `ALTER EXTENSION oai_fdw UPDATE TO '1.16'`。

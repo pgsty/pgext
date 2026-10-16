@@ -2,20 +2,18 @@
 
 Sources:
 
-- [extensions/pg_xarray/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/Cargo.toml)
-- [extensions/pg_xarray/src/server/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/src/server/worker.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [extensions/pg_xarray/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/pgbrew.toml)
-- [README.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/README.md)
-- [extensions/pg_xarray/pg_xarray.control](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/pg_xarray.control)
-- [extensions/pg_xarray/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/src/lib.rs)
-- [extensions/pg_xarray/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/pgbrew.toml)
-- [extensions/pg_xarray/demo/01_register_local.sql](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/demo/01_register_local.sql)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/LICENSE)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/LICENSE)
+- [extensions/pg_xarray/pg_xarray.control](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/pg_xarray.control)
+- [extensions/pg_xarray/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/Cargo.toml)
+- [extensions/pg_xarray/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/src/lib.rs)
+- [extensions/pg_xarray/sql/pg_xarray--0.4.2--0.5.0.sql](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/sql/pg_xarray--0.4.2--0.5.0.sql)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/crates/pg_bgworker/src/supervision.rs)
+- [extensions/pg_xarray/src/server/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/src/server/worker.rs)
+- [extensions/pg_xarray/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/pgbrew.toml)
+- [extensions/pg_xarray/demo/01_register_local.sql](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/demo/01_register_local.sql)
 
-`pg_xarray` 0.4.2 catalogs scientific datasets, variables, chunks and meshes in `pgx`, with scientific-array queries and optional WMS serving.
+`pg_xarray` 0.5.0 catalogs scientific datasets, variables, chunks and meshes in `pgx`, with scientific-array queries and optional WMS serving.
 
 ### Core Workflow
 
@@ -32,7 +30,7 @@ Requires `postgis` and superuser installation. Dataset/file registration points 
 
 ### Current Release and Upgrade
 
-Extension version 0.4.2 uses `pg_xarray.database` for background workers. Create the extension in that database; a worker now waits instead of repeatedly exiting when it is absent. Changing restart-sensitive worker configuration requires a restart. The chunk catalog now includes `chunk_key` in deduplication; after upgrading, re-register affected Zarr variables to recover missing levels or tiles. From extension 0.3.0 onward, install matching files and use ALTER EXTENSION UPDATE. Earlier versions still require the migration described above. Withdrawn repository 0.4.0 bottles must be replaced by 0.5.0; upstream bottles do not imply Pigsty package availability.
+Extension version 0.5.0 uses `pg_xarray.database` for background workers. Create the extension in that database; a worker now waits instead of repeatedly exiting when it is absent. Changing restart-sensitive worker configuration requires a restart. The chunk catalog now includes `chunk_key` in deduplication; after upgrading, re-register affected Zarr variables to recover missing levels or tiles. From extension 0.3.0 onward, install matching files and use ALTER EXTENSION UPDATE. Earlier versions still require the migration described above.
 
 ### Worker Supervision
 
@@ -44,3 +42,9 @@ Install matching libraries, restart PostgreSQL to initialize the new shared memo
 ALTER EXTENSION pg_xarray UPDATE;
 SELECT * FROM pgx.worker_status();
 ```
+
+### Changes in This Release
+
+Source feature declarations cover PostgreSQL 14–18. The repository release is 0.7.0, while each extension retains its own SQL version; this does not establish Pigsty package availability.
+
+Version 0.5.0 applies the SELAFIN IPARAM origin. The new `register_file` argument `transform` accepts a 2D affine in `ST_Affine` order, mapping model-local coordinates to the chosen SRID. Re-registering moves the mesh and its extent, so check coordinate parameters first. WMS GetMap accepts `COLORSCALERANGE`, `BELOWMINCOLOR` and `ABOVEMAXCOLOR`; `xarray_to_png` adds `below_min` and `above_max`. Capabilities now reports geographic extents in degrees, and responses carry `Access-Control-Allow-Origin: *`; review the external access boundary when deploying.

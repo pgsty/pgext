@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**omni_datasets**](https://docs.omnigres.org/omni_datasets/northwind/) : Dataset provisioning
+[**omnigres**](https://docs.omnigres.org/omni_datasets/northwind/) : Dataset provisioning
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2947** | {{< badge content="omni_datasets" link="https://docs.omnigres.org/omni_datasets/northwind/" >}} | {{< ext "omni_datasets" >}} | `0.1.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2947** | {{< badge content="omni_datasets" link="https://docs.omnigres.org/omni_datasets/northwind/" >}} | {{< ext "omni_datasets" "omnigres" >}} | `0.1.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,13 +29,14 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `omni_datasets` |
 |   **See Also**    | {{< ext "faker" >}} {{< ext "pg_fact_loader" >}} {{< ext "db_migrator" >}} {{< ext "postgres_fdw" >}} {{< ext "dbt2" >}} |
+|    **Siblings**   | {{< ext "omni" >}} {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_cloudevents" >}} {{< ext "omni_containers" >}} {{< ext "omni_credentials" >}} {{< ext "omni_csv" >}} {{< ext "omni_email" >}} {{< ext "omni_http" >}} {{< ext "omni_httpc" >}} {{< ext "omni_httpd" >}} {{< ext "omni_id" >}} {{< ext "omni_json" >}} {{< ext "omni_kube" >}} {{< ext "omni_ledger" >}} {{< ext "omni_manifest" >}} {{< ext "omni_mimetypes" >}} {{< ext "omni_os" >}} {{< ext "omni_polyfill" >}} {{< ext "omni_python" >}} {{< ext "omni_regex" >}} {{< ext "omni_rest" >}} {{< ext "omni_schema" >}} {{< ext "omni_seq" >}} {{< ext "omni_service" >}} {{< ext "omni_session" >}} {{< ext "omni_shmem" >}} {{< ext "omni_sql" >}} {{< ext "omni_sqlite" >}} {{< ext "omni_test" >}} {{< ext "omni_txn" >}} {{< ext "omni_types" >}} {{< ext "omni_var" >}} {{< ext "omni_vfs" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "omni_web" >}} {{< ext "omni_worker" >}} {{< ext "omni_xml" >}} {{< ext "omni_yaml" >}} |
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `omni_datasets` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `omnigres` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `20260212` | {{< bg "18" "omnigres_18" "green" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} | `omnigres_$v` | `postgresql$v-contrib`, `postgresql$v-plpython3`, `python3-pip` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `20260212` | {{< bg "18" "postgresql-18-omnigres" "green" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} | `postgresql-$v-omnigres` | `postgresql-plpython3-$v`, `python3-pip` |
 {.packages}
@@ -43,22 +44,22 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} | {{< bg "N/A" "N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 20251108" "omnigres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 20251108" "omnigres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 20251108" "omnigres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 20251108" "omnigres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 20251108" "omnigres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 20251108" "omnigres_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "omnigres_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 20251108" "postgresql-18-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20251108" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
 {.matrix}
 
 
@@ -71,7 +72,7 @@ page_width: full
 
 
 ```bash
-pig build pkg omni_datasets;		# build rpm/deb
+pig build pkg omnigres;		# build rpm/deb
 ```
 
 
@@ -86,7 +87,8 @@ pig repo add pgsql -u   # add both repo and update cache
 [**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
-pig install omni_datasets;		# install via package name, for the active PG version
+pig install omnigres;		# install via package name, for the active PG version
+pig install omni_datasets;		# install by extension name, for the current active PG version
 
 pig install omni_datasets -v 18;   # install for PG 18
 pig install omni_datasets -v 17;   # install for PG 17

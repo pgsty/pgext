@@ -2,13 +2,13 @@
 
 Sources:
 
-- [CHANGELOG.md](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
-- [Official v1.15 README](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/README.md)
-- [Official v1.15 control file](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/oai_fdw.control)
-- [Official v1.15 changelog](https://github.com/jimjonesbr/oai_fdw/blob/11298cb8d9d30581d2e803ab8d980d74a6c46783/CHANGELOG.md)
+- [CHANGELOG.md](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/CHANGELOG.md)
+- [Official v1.16 README](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/README.md)
+- [Official v1.16 control file](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/oai_fdw.control)
+- [Official v1.16 changelog](https://github.com/jimjonesbr/oai_fdw/blob/206169ac1cc2ea9a35d92e9a3ade9d82ec01d18c/CHANGELOG.md)
 - [Official OAI-PMH specification](https://www.openarchives.org/OAI/openarchivesprotocol.html)
 
-`oai_fdw` 1.15 is a foreign data wrapper for harvesting metadata from OAI-PMH 2.0 repositories over HTTP or HTTPS. It maps OAI record headers and XML content to foreign-table columns, supports automatic table generation for repositories or sets, and can copy harvested records into local tables.
+`oai_fdw` 1.16 is a foreign data wrapper for harvesting metadata from OAI-PMH 2.0 repositories over HTTP or HTTPS. It maps OAI record headers and XML content to foreign-table columns, supports automatic table generation for repositories or sets, and can copy harvested records into local tables.
 
 ### Core Workflow
 
@@ -58,3 +58,7 @@ OAI-PMH is a harvesting protocol, not a transactional database API. Repeated sca
 ### Version 1.15
 
 HTTP 429 and 503 retries respect backoff/Retry-After; from/until validation and timestamp granularity are stricter. Server USAGE and view-owner user mappings are checked. Harvest windows and cancellation handling are corrected, and stalled transfers abort after the documented five-minute low-speed threshold. Install matching files and apply `ALTER EXTENSION oai_fdw UPDATE`. PGXN calls this distribution 1.15.0, while the SQL/control version is 1.15.
+
+### 1.16 Response Limits
+
+Use the server option `max_response_size` to bound response bytes; a hard 1 GB ceiling applies even without a smaller configured limit. Exceeding the cap aborts the request. The FDW is read-only: INSERT, UPDATE and DELETE now fail immediately. GetRecord row estimates are capped at one, and EXPLAIN includes the server identity. Distribution 1.16.0 uses SQL version 1.16; install matching files and run `ALTER EXTENSION oai_fdw UPDATE TO '1.16'`.

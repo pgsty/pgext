@@ -2,15 +2,15 @@
 
 来源：
 
-- [v1.11.1 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/README.md)
-- [v1.11.1 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.11.1 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.11.1 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.11.1 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.11.1 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.11.1 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.11.1 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [v1.14.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/README.md)
+- [v1.14.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.14.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.14.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.14.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.14.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.14.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.14.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
 
 `pg_mentat` 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
 
@@ -93,7 +93,7 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 ### 要求与注意事项
 
-- 上游 v1.10.1 支持 PostgreSQL 13-18。上游 PostgreSQL crate 声明使用 pgrx 0.17；软件包二进制可能使用不同工具链，应核对其自身的兼容性元数据。
+- 上游 v1.14.0 支持 PostgreSQL 13-18。上游 PostgreSQL crate 声明使用 pgrx 0.17；软件包二进制可能使用不同工具链，应核对其自身的兼容性元数据。
 - 该扩展不可重定位，也不要求 `shared_preload_libraries`。
 - 可选的 `mentatd` HTTP/Datomic 线协议守护进程是上游配套程序，不包含在 Pigsty `pg_mentat` 软件包中。仅通过 SQL 使用扩展并不需要它。
 - Datalog 编译、递归 pull、全文属性、订阅和历史记录可能呈现截然不同的成本特征。请使用文档所述的 explain 辅助函数检查生成的 SQL，并在代表性数据上进行基准测试。
@@ -101,7 +101,7 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 ### 1.10.1 API 与索引
 
-项目已迁移到 gregburd/mentat。新的核心函数为 `edn_t`、`edn_q`、`edn_pull` 和可选脚本接口 `edn_eval`；`mentat.t`、`mentat.q` 便利别名继续可用，旧的 `mentat_*` 名称已弃用。`edn_q_rows` 每行返回一个 JSONB 数组，但一次调用仍会在内存中生成完整结果。
+项目已迁移到 gregburd/mentat。新的核心函数为 `edn_t`、`edn_q`、`edn_pull` 和可选脚本接口 `edn_eval`；`mentat.t`、`mentat.q` 便利别名继续可用，仅 `mentat_transact`、`mentat_query`、`mentat_pull` 和可选的 `mentat_eval` 已弃用。`edn_q_rows` 每行返回一个 JSONB 数组，但一次调用仍会在内存中生成完整结果。
 
 `mentat.auto_index` 可设为 `off`、`schema`（默认）或 `adaptive`。当前值表会建立 AVET 索引；自适应模式管理历史属性的部分索引，记录在 `mentat.managed_indexes` 中。`mentat_tune_indexes` 默认只报告计划，显式关闭 dry-run 后才应用；仅回收自己管理的索引，默认空闲窗口为 7 天。
 
@@ -111,10 +111,10 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 1.9.1 修复了一项重要备份缺陷：更早版本未注册扩展成员表的数据，`pg_dump` 的逻辑备份会漏掉 mentat 数据，恢复后存储为空。升级后应立即重新生成并验证逻辑备份；旧备份不会自动得到修复。物理备份不受该缺陷影响。
 
-安装新版文件后，通过升级链更新到 1.10.1。升级会建立索引并可能阻塞写入，应安排维护窗口：
+安装新版文件后，通过升级链更新到 1.14.0。升级会建立索引并可能阻塞写入，应安排维护窗口：
 
 ```sql
-ALTER EXTENSION pg_mentat UPDATE TO '1.10.1';
+ALTER EXTENSION pg_mentat UPDATE TO '1.14.0';
 ```
 
 已部署数据库仍需执行 SQL 扩展升级并验证新的逻辑备份。
@@ -122,3 +122,11 @@ ALTER EXTENSION pg_mentat UPDATE TO '1.10.1';
 ### 1.11.1 的打包信息修正
 
 1.11.1 修正 Nix 派生包版本名称及发布溯源，不改变 PostgreSQL 引擎、存储或 SQL 行为。1.11.0 到 1.11.1 的升级不修改数据库对象。1.11.0 的 DuckDB 存储改造仅影响独立的 DuckDB 扩展；从更早版本升级时，仍需遵循上面的 PostgreSQL 升级和逻辑备份修复要求。
+
+### 1.13–1.14 集成与事务函数
+
+可选的 `pg_fts` 与 `pg_turbovec` 集成提供 `mentat.create_fts_index`、`mentat.attach_turbovec_attribute` 和 `mentat.create_turbovec_index`；两者都不是必需依赖。1.14.0 修正向量辅助函数，改用维度 CHECK 约束，并新增 `bm25-match` / `turbovec-near` Datalog 连接。TurboVec 维度必须能被 8 整除。
+
+启用 `script` 的构建可用 `:db/fn` 定义返回事务数据的事务函数，读取的是事务开始时的数据库状态。执行受 `mentat.script_max_*` 和 `mentat.txfn_max_depth`（默认 16）限制。`:db/retractEntity` 现会撤回指向目标实体的引用，但保留引用方实体。EXPLAIN 辅助函数现能正确处理集合、元组和关系输入。升级到 1.14.0 会加入函数属性并替换向量辅助函数，无需数据迁移。
+
+由于源码使用的 pgrx 解析器拒绝该键，上游发布打包流程会向成品控制文件注入 `trusted = true`。依赖普通用户安装能力前，应检查实际安装的控制文件；源码构建与发布成品的可信设置可能不同。

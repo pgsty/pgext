@@ -1,4 +1,22 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
+2026-10-15,groonga,16.1.3-1.el9,16.1.3-1.el9.PGSTY.1,"EL9, both architectures; includes libs/devel; fixes simdjson ABI; imported locally",仅 EL9 双架构；含 libs/devel；修复 simdjson ABI；本地已入库
+2026-10-15,groonga-tokenizer-mecab,16.1.3-1.el9,16.1.3-1.el9.PGSTY.1,"EL9, both architectures; matches Groonga rebuild; imported locally",仅 EL9 双架构；与 Groonga 配套；本地已入库
+2026-10-15,lolor,1.2.2,1.2.3,Updated with pgEdge 15-18; DEB includes a PG18 compatibility package,随 pgEdge 15-18 更新；DEB 含 PG18 兼容包
+2026-10-15,pg_durable,0.2.8,0.2.9,PG14-18; preload required; imported locally,PG14-18；需预加载；本地已入库
+2026-10-15,pg_fts,1.9.0,1.13.0,PG17-18; imported locally,PG17-18；本地已入库
+2026-10-15,pg_icu_parser,,1.0.0,"PG14-18; EL8/9/10 x86_64/aarch64; PG18 compatibility fix; imported locally; PG14-18; Debian 12/13, Ubuntu 22.04/24.04/26.04 amd64/arm64; PG18 compatibility fix; imported locally",PG14-18；EL8/9/10 x86_64/aarch64；修复 PG18 兼容性；本地已入库；PG14-18；Debian 12/13、Ubuntu 22.04/24.04/26.04 amd64/arm64；修复 PG18 兼容性；本地已入库
+2026-10-15,pg_mentat,1.10.3,1.14.0,PG14-18; pgrx 0.19.3; imported locally,PG14-18；pgrx 0.19.3；本地已入库
+2026-10-15,pg_relusage,0.0.1,1.0.1,PG14-18; loading required; imported locally,PG14-18；需加载；本地已入库
+2026-10-15,pg_turbovec,2.10.3,2.12.1,PG14-18; pgrx 0.19.3; imported locally,PG14-18；pgrx 0.19.3；本地已入库
+2026-10-15,pg_vectorsearch,,0.1.0,PG18; alpha; imported locally,PG18；Alpha；本地已入库
+2026-10-15,pgedge-15,15.19-2PGSTY,15.19-3PGSTY,Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally,含 Spock 5.0.13、LOLOR 1.2.3；本地已入库
+2026-10-15,pgedge-16,16.15-2PGSTY,16.15-3PGSTY,Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally,含 Spock 5.0.13、LOLOR 1.2.3；本地已入库
+2026-10-15,pgedge-17,17.11-2PGSTY,17.11-3PGSTY,Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally,含 Spock 5.0.13、LOLOR 1.2.3；本地已入库
+2026-10-15,pgedge-18,18.6-2PGSTY,18.6-3PGSTY,Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally,含 Spock 5.0.13、LOLOR 1.2.3；本地已入库
+2026-10-15,pgroonga,4.1.0-1PGSTY.el9,4.1.0-2PGSTY.el9,"EL9, both architectures; PG14-18; requires rebuilt Groonga; imported locally",仅 EL9 双架构；PG14-18；要求修复版 Groonga；本地已入库
+2026-10-15,plpgsql_check,2.10.14,2.10.15,PG14-18; SQL version 2.10; imported locally,PG14-18；SQL 版本 2.10；本地已入库
+2026-10-15,spock,5.0.12,5.0.13,Updated with pgEdge 15-18; DEB includes a PG18 compatibility package; preload required,随 pgEdge 15-18 更新；DEB 含 PG18 兼容包；需预加载
+2026-10-15,textsearch_intl,,1.0.0,"PG14-18; EL8/9/10 x86_64/aarch64; unreleased snapshot; imported locally; PG14-18; Debian 12/13, Ubuntu 22.04/24.04/26.04 amd64/arm64; unreleased snapshot; imported locally",PG14-18；EL8/9/10 x86_64/aarch64；未发布快照；本地已入库；PG14-18；Debian 12/13、Ubuntu 22.04/24.04/26.04 amd64/arm64；未发布快照；本地已入库
 2026-10-03,acdat,0.1.1,0.1.1,PG14-18; First full production packaging of an existing extension; 80 main packages,PG14-18；已有扩展首次正式全量入库；80 主包
 2026-10-03,jsonschema,0.1.9,0.1.10,PG14-18,PG14-18
 2026-10-03,kafgres,0.1.0,0.3.0,PG16,PG16

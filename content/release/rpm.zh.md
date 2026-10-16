@@ -6,6 +6,29 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
+## 2026-10-15
+
+| 名称 | 旧版本 | 新版本 | 备注 |
+|:---|:---|:---|:---|
+| groonga | 16.1.3-1.el9 | 16.1.3-1.el9.PGSTY.1 | 仅 EL9 双架构；含 libs/devel；修复 simdjson ABI；本地已入库 |
+| groonga-tokenizer-mecab | 16.1.3-1.el9 | 16.1.3-1.el9.PGSTY.1 | 仅 EL9 双架构；与 Groonga 配套；本地已入库 |
+| lolor | 1.2.2 | 1.2.3 | 随 pgEdge 15-18 更新 |
+| pg_durable | 0.2.8 | 0.2.9 | PG14-18；需预加载；本地已入库 |
+| pg_fts | 1.9.0 | 1.13.0 | PG17-18；本地已入库 |
+| pg_icu_parser | - | 1.0.0 | PG14-18；EL8/9/10 x86_64/aarch64；修复 PG18 兼容性；本地已入库 |
+| pg_mentat | 1.10.3 | 1.14.0 | PG14-18；pgrx 0.19.3；本地已入库 |
+| pg_relusage | 0.0.1 | 1.0.1 | PG14-18；需加载；本地已入库 |
+| pg_turbovec | 2.10.3 | 2.12.1 | PG14-18；pgrx 0.19.3；本地已入库 |
+| pg_vectorsearch | - | 0.1.0 | PG18；Alpha；本地已入库 |
+| pgedge-15 | 15.19-2PGSTY | 15.19-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
+| pgedge-16 | 16.15-2PGSTY | 16.15-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
+| pgedge-17 | 17.11-2PGSTY | 17.11-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
+| pgedge-18 | 18.6-2PGSTY | 18.6-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
+| pgroonga | 4.1.0-1PGSTY.el9 | 4.1.0-2PGSTY.el9 | 仅 EL9 双架构；PG14-18；要求修复版 Groonga；本地已入库 |
+| plpgsql_check | 2.10.14 | 2.10.15 | PG14-18；SQL 版本 2.10；本地已入库 |
+| spock | 5.0.12 | 5.0.13 | 随 pgEdge 15-18 更新；需预加载 |
+| textsearch_intl | - | 1.0.0 | PG14-18；EL8/9/10 x86_64/aarch64；未发布快照；本地已入库 |
+
 ## 2026-10-11
 
 | 名称 | 旧版本 | 新版本 | 备注 |

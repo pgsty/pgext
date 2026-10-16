@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2980** | {{< badge content="pg_mentat" link="https://codeberg.org/gregburd/mentat" >}} | {{< ext "pg_mentat" >}} | `1.11.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2980** | {{< badge content="pg_mentat" link="https://codeberg.org/gregburd/mentat" >}} | {{< ext "pg_mentat" >}} | `1.14.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -37,9 +37,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_mentat` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "pg_mentat_18" "green" >}} {{< bg "17" "pg_mentat_17" "green" >}} {{< bg "16" "pg_mentat_16" "green" >}} {{< bg "15" "pg_mentat_15" "green" >}} {{< bg "14" "pg_mentat_14" "green" >}} | `pg_mentat_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "postgresql-18-pg-mentat" "green" >}} {{< bg "17" "postgresql-17-pg-mentat" "green" >}} {{< bg "16" "postgresql-16-pg-mentat" "green" >}} {{< bg "15" "postgresql-15-pg-mentat" "green" >}} {{< bg "14" "postgresql-14-pg-mentat" "green" >}} | `postgresql-$v-pg-mentat` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_mentat` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "18" "pg_mentat_18" "green" >}} {{< bg "17" "pg_mentat_17" "green" >}} {{< bg "16" "pg_mentat_16" "green" >}} {{< bg "15" "pg_mentat_15" "green" >}} {{< bg "14" "pg_mentat_14" "green" >}} | `pg_mentat_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "18" "postgresql-18-pg-mentat" "green" >}} {{< bg "17" "postgresql-17-pg-mentat" "green" >}} {{< bg "16" "postgresql-16-pg-mentat" "green" >}} {{< bg "15" "postgresql-15-pg-mentat" "green" >}} {{< bg "14" "postgresql-14-pg-mentat" "green" >}} | `postgresql-$v-pg-mentat` | - |
 {.packages}
 
 
@@ -185,7 +185,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/mentat" title="Repository" icon="link" subtitle="codeberg.org/gregburd/mentat" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_mentat-1.11.1.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_mentat-1.14.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -226,15 +226,15 @@ CREATE EXTENSION pg_mentat;
 
 Sources:
 
-- [v1.11.1 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/README.md)
-- [v1.11.1 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.11.1 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.11.1 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.11.1 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.11.1 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.11.1 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.11.1 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.11.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [v1.14.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/README.md)
+- [v1.14.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.14.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.14.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.14.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.14.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.14.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.14.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
 
 `pg_mentat` implements a Datomic-compatible data model and Datalog query engine inside PostgreSQL. It stores immutable facts as typed datoms and exposes schema transactions, Datalog queries, pull expressions, time travel, transaction history, and permanent excision through SQL functions. Use it for applications that need this model; it is not a transparent replacement for relational tables or SQL.
 
@@ -317,7 +317,7 @@ Version 1.6.2 fixes deeply nested EDN causing stack exhaustion, non-superuser qu
 
 ### Requirements and Caveats
 
-- Upstream v1.10.1 supports PostgreSQL 13-18. The upstream PostgreSQL crate declares pgrx 0.17; packaged binaries can use a different toolchain, so check their own compatibility metadata.
+- Upstream v1.14.0 supports PostgreSQL 13-18. The upstream PostgreSQL crate declares pgrx 0.17; packaged binaries can use a different toolchain, so check their own compatibility metadata.
 - The extension is not relocatable and does not require `shared_preload_libraries`.
 - The optional `mentatd` HTTP/Datomic-wire daemon is an upstream companion program and is not included in the Pigsty `pg_mentat` package. SQL use of the extension does not require it.
 - Datalog compilation, pull recursion, full-text attributes, subscriptions, and history can have very different cost profiles. Inspect generated SQL with the documented explain helper and benchmark representative data.
@@ -325,7 +325,7 @@ Version 1.6.2 fixes deeply nested EDN causing stack exhaustion, non-superuser qu
 
 ### 1.10.1 APIs and Indexes
 
-The project moved to gregburd/mentat. The new core names are `edn_t`, `edn_q`, `edn_pull`, and optional scripting entry point `edn_eval`; convenience aliases `mentat.t` and `mentat.q` remain available, while older `mentat_*` names are deprecated. `edn_q_rows` returns one JSONB array per row but still materializes the complete result within a call.
+The project moved to gregburd/mentat. The new core names are `edn_t`, `edn_q`, `edn_pull`, and optional scripting entry point `edn_eval`; convenience aliases `mentat.t` and `mentat.q` remain available, while only `mentat_transact`, `mentat_query`, `mentat_pull` and optional `mentat_eval` are deprecated. `edn_q_rows` returns one JSONB array per row but still materializes the complete result within a call.
 
 `mentat.auto_index` accepts `off`, `schema` (default), or `adaptive`. Current-value tables receive AVET indexes; adaptive mode manages partial history-attribute indexes recorded in `mentat.managed_indexes`. `mentat_tune_indexes` reports a plan by default and applies it only when dry-run is explicitly disabled. It drops only its managed indexes, with a default idle window of seven days.
 
@@ -335,10 +335,10 @@ Aggregates now follow Datalog set semantics: summing 1, 1, 1, 3 yields 4 instead
 
 1.9.1 fixes an important backup defect: earlier versions did not register extension-member table data, so logical `pg_dump` backups omitted mentat data and restored empty stores. Take and verify a new logical backup immediately after upgrading; older backups are not repaired retroactively. Physical backups are unaffected by this defect.
 
-After installing the new files, update through the available upgrade chain to 1.10.1. The upgrade builds indexes and can block writes; schedule a maintenance window:
+After installing the new files, update through the upgrade chain to 1.14.0. The upgrade builds indexes and can block writes; schedule a maintenance window:
 
 ```sql
-ALTER EXTENSION pg_mentat UPDATE TO '1.10.1';
+ALTER EXTENSION pg_mentat UPDATE TO '1.14.0';
 ```
 
 Deployed databases still need the SQL extension update and a verified new logical backup.
@@ -346,3 +346,11 @@ Deployed databases still need the SQL extension update and a verified new logica
 ### 1.11.1 Packaging Correction
 
 Version 1.11.1 corrects Nix derivation version names and release provenance; it changes no PostgreSQL engine, storage or SQL behavior. The upgrade from 1.11.0 to 1.11.1 is a no-op. The DuckDB storage redesign in 1.11.0 is specific to the separate DuckDB extension. Earlier PostgreSQL upgrades and the logical-backup repair above remain relevant when coming from older versions.
+
+### 1.13–1.14 Integration and Transaction Functions
+
+Optional `pg_fts` and `pg_turbovec` integrations add `mentat.create_fts_index`, `mentat.attach_turbovec_attribute` and `mentat.create_turbovec_index`; neither extension is mandatory. Version 1.14.0 fixes the vector helper to use a dimension CHECK constraint, and adds `bm25-match` / `turbovec-near` Datalog joins. TurboVec dimensions must be divisible by 8.
+
+In `script` builds, `:db/fn` defines a transaction function that returns transaction data and sees the database at transaction start. It runs under `mentat.script_max_*` limits and `mentat.txfn_max_depth` (default 16). `:db/retractEntity` now retracts inbound references while retaining the referring entities. EXPLAIN helpers now honor collection, tuple and relation inputs. Upgrading to 1.14.0 adds the function attribute and replaces the vector helper without a data migration.
+
+Upstream release packaging injects `trusted = true` into the shipped control file because the source pgrx parser rejects that key. Check the installed control file before relying on non-superuser installation; a source build and a release artifact need not have identical trust settings.

@@ -2,20 +2,18 @@
 
 来源：
 
-- [extensions/pg_xarray/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/Cargo.toml)
-- [extensions/pg_xarray/src/server/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/src/server/worker.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [extensions/pg_xarray/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/pgbrew.toml)
-- [README.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/README.md)
-- [extensions/pg_xarray/pg_xarray.control](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/pg_xarray.control)
-- [extensions/pg_xarray/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/src/lib.rs)
-- [extensions/pg_xarray/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/pgbrew.toml)
-- [extensions/pg_xarray/demo/01_register_local.sql](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_xarray/demo/01_register_local.sql)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/LICENSE)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/LICENSE)
+- [extensions/pg_xarray/pg_xarray.control](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/pg_xarray.control)
+- [extensions/pg_xarray/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/Cargo.toml)
+- [extensions/pg_xarray/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/src/lib.rs)
+- [extensions/pg_xarray/sql/pg_xarray--0.4.2--0.5.0.sql](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/sql/pg_xarray--0.4.2--0.5.0.sql)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/crates/pg_bgworker/src/supervision.rs)
+- [extensions/pg_xarray/src/server/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/src/server/worker.rs)
+- [extensions/pg_xarray/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/pgbrew.toml)
+- [extensions/pg_xarray/demo/01_register_local.sql](https://github.com/matroidbe/pg_extensions-releases/blob/76ba568872dcf082e73690057e5404beed27b189/extensions/pg_xarray/demo/01_register_local.sql)
 
-`pg_xarray` 0.4.2 在 `pgx` 中登记科学数据集、变量、数据块和网格，提供科学数组查询与可选的 WMS 服务。
+`pg_xarray` 0.5.0 在 `pgx` 中登记科学数据集、变量、数据块和网格，提供科学数组查询与可选的 WMS 服务。
 
 ### 核心用法
 
@@ -32,7 +30,7 @@ SELECT * FROM pgx.list_datasets();
 
 ### 当前版本与升级
 
-扩展版本 0.4.2 通过 `pg_xarray.database` 选择后台工作进程使用的数据库。应在该库创建扩展；扩展尚不存在时，工作进程会等待，不再反复退出。调整需要重启的工作进程配置后须重启。 chunk 目录去重键现在包含 `chunk_key`；升级后重新登记受影响的 Zarr 变量，恢复此前缺失的层级或瓦片。 对扩展 0.3.0 及之后的版本，安装匹配文件后使用 ALTER EXTENSION UPDATE；更早版本仍需前述迁移。 已撤回的仓库 0.4.0 二进制应替换为 0.5.0；上游二进制不代表 Pigsty 软件包可用性。
+扩展版本 0.5.0 通过 `pg_xarray.database` 选择后台工作进程使用的数据库。应在该库创建扩展；扩展尚不存在时，工作进程会等待，不再反复退出。调整需要重启的工作进程配置后须重启。 chunk 目录去重键现在包含 `chunk_key`；升级后重新登记受影响的 Zarr 变量，恢复此前缺失的层级或瓦片。 对扩展 0.3.0 及之后的版本，安装匹配文件后使用 ALTER EXTENSION UPDATE；更早版本仍需前述迁移。
 
 ### 工作进程监督
 
@@ -44,3 +42,9 @@ SELECT * FROM pgx.list_datasets();
 ALTER EXTENSION pg_xarray UPDATE;
 SELECT * FROM pgx.worker_status();
 ```
+
+### 本次版本变化
+
+源代码声明 PostgreSQL 14–18 功能开关。仓库发布版本为 0.7.0，各扩展保留各自的 SQL 版本；这不代表 Pigsty 软件包已构建。
+
+0.5.0 读取 SELAFIN 的 IPARAM 原点；`register_file` 新增 `transform` 参数，按 `ST_Affine` 顺序提供二维仿射变换，将模型局部坐标映射到指定 SRID。重新登记会移动网格及其范围，执行前应核对坐标参数。WMS GetMap 支持 `COLORSCALERANGE`、`BELOWMINCOLOR` 和 `ABOVEMAXCOLOR`；`xarray_to_png` 对应增加 `below_min` 与 `above_max`。Capabilities 的地理范围改为度，响应携带 `Access-Control-Allow-Origin: *`；部署时应核对外部访问边界。

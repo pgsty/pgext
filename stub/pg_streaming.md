@@ -2,23 +2,23 @@
 
 Sources:
 
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/CHANGELOG.md)
-- [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/extensions/pg_streaming/Cargo.toml)
-- [extensions/pg_streaming/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/f716914e8a8fb22faf4e932944b6411753b294fa/extensions/pg_streaming/src/lib.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
+- [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/Cargo.toml)
+- [extensions/pg_streaming/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/src/lib.rs)
 
-- [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/Cargo.toml)
-- [extensions/pg_streaming/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/worker.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [extensions/pg_streaming/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/pgbrew.toml)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/LICENSE)
-- [extensions/pg_streaming/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/pgbrew.toml)
-- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/pg_streaming.control)
-- [Pipeline SQL API and worker initialization](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/lib.rs)
-- [Pipeline definition types](https://github.com/matroidbe/pg_extensions-releases/blob/b1987c769e0cc26730ad345bf252e74c93dec069/extensions/pg_streaming/src/dsl/types.rs)
+- [extensions/pg_streaming/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/Cargo.toml)
+- [extensions/pg_streaming/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/src/worker.rs)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/crates/pg_bgworker/src/supervision.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
+- [extensions/pg_streaming/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/pgbrew.toml)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/LICENSE)
+- [extensions/pg_streaming/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/pgbrew.toml)
+- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/pg_streaming.control)
+- [Pipeline SQL API and worker initialization](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/src/lib.rs)
+- [Pipeline definition types](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_streaming/src/dsl/types.rs)
 
-`pg_streaming` version `0.3.3` is a declarative stream-processing engine whose pipelines, state, offsets, errors, and metrics remain queryable in PostgreSQL. Pipelines connect inputs to processor chains and outputs, then run under coordinator, executor, and timer background workers.
+`pg_streaming` version `0.3.4` is a declarative stream-processing engine whose pipelines, state, offsets, errors, and metrics remain queryable in PostgreSQL. Pipelines connect inputs to processor chains and outputs, then run under coordinator, executor, and timer background workers.
 
 ### Core Workflow
 
@@ -80,3 +80,7 @@ SELECT * FROM pgstreams.worker_status();
 ### Raw-Zone Ingestion in 0.3.3
 
 Repository release 0.6.0 contains extension 0.3.3. OpenDAL gains `parse_as: parquet` and `parse_as: listing`, with `order: lexicographic` resuming in the middle of a file. Unreadable files stop progress so later files cannot overtake them. Records include `source_file` and `source_row` for replay deduplication; `pgstreams.replay(name, after)` rewinds a stopped pipeline. Private S3 access for the arrays lane remains unsupported.
+
+### Idle Workers in 0.3.4
+
+Repository release 0.7.2 contains extension 0.3.4. Read-only or empty-claim polls no longer allocate a transaction ID merely because they use the SPI bridge; an actual row write still does. This removes empty commit WAL from idle polling. Idle executor polls back off from `pg_streaming.poll_interval_ms` (default 10 ms) to `pg_streaming.idle_poll_interval_ms` (default 250 ms). Install matching libraries, restart the preloaded workers, and update the SQL extension. The existing privilege, external-service and pre-0.3.0 migration boundaries remain.

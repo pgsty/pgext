@@ -6,6 +6,29 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-10-15
+
+| Name | Old | New | Comment |
+|:---|:---|:---|:---|
+| groonga | 16.1.3-1.el9 | 16.1.3-1.el9.PGSTY.1 | EL9, both architectures; includes libs/devel; fixes simdjson ABI; imported locally |
+| groonga-tokenizer-mecab | 16.1.3-1.el9 | 16.1.3-1.el9.PGSTY.1 | EL9, both architectures; matches Groonga rebuild; imported locally |
+| lolor | 1.2.2 | 1.2.3 | Updated with pgEdge 15-18 |
+| pg_durable | 0.2.8 | 0.2.9 | PG14-18; preload required; imported locally |
+| pg_fts | 1.9.0 | 1.13.0 | PG17-18; imported locally |
+| pg_icu_parser | - | 1.0.0 | PG14-18; EL8/9/10 x86_64/aarch64; PG18 compatibility fix; imported locally |
+| pg_mentat | 1.10.3 | 1.14.0 | PG14-18; pgrx 0.19.3; imported locally |
+| pg_relusage | 0.0.1 | 1.0.1 | PG14-18; loading required; imported locally |
+| pg_turbovec | 2.10.3 | 2.12.1 | PG14-18; pgrx 0.19.3; imported locally |
+| pg_vectorsearch | - | 0.1.0 | PG18; alpha; imported locally |
+| pgedge-15 | 15.19-2PGSTY | 15.19-3PGSTY | Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally |
+| pgedge-16 | 16.15-2PGSTY | 16.15-3PGSTY | Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally |
+| pgedge-17 | 17.11-2PGSTY | 17.11-3PGSTY | Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally |
+| pgedge-18 | 18.6-2PGSTY | 18.6-3PGSTY | Includes Spock 5.0.13 and LOLOR 1.2.3; imported locally |
+| pgroonga | 4.1.0-1PGSTY.el9 | 4.1.0-2PGSTY.el9 | EL9, both architectures; PG14-18; requires rebuilt Groonga; imported locally |
+| plpgsql_check | 2.10.14 | 2.10.15 | PG14-18; SQL version 2.10; imported locally |
+| spock | 5.0.12 | 5.0.13 | Updated with pgEdge 15-18; preload required |
+| textsearch_intl | - | 1.0.0 | PG14-18; EL8/9/10 x86_64/aarch64; unreleased snapshot; imported locally |
+
 ## 2026-10-11
 
 | Name | Old | New | Comment |

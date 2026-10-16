@@ -2,14 +2,13 @@
 
 Sources:
 
-- [4.16.13 release](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_13)
-- [README.asciidoc](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/README.asciidoc)
-- [orafce.control](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce.control)
-- [orafce--4.16.sql](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/orafce--4.16.sql)
-- [4.16.12 release notes](https://github.com/orafce/orafce/releases/tag/VERSION_4_16_12)
-- [File-access implementation](https://github.com/orafce/orafce/blob/e538f81acccf73bd9c40977e22e8c4984e452622/file.c)
+- [README.asciidoc](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/README.asciidoc)
+- [orafce.control](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce.control)
+- [orafce--4.17.sql](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce--4.17.sql)
+- [orafce--4.16--4.17.sql](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/orafce--4.16--4.17.sql)
+- [file.c](https://github.com/orafce/orafce/blob/542aed2e0297898cc9844fede3c4452f894b37ed/file.c)
 
-`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.16.13 still uses control and SQL extension version 4.16; the two numbers describe different layers.
+`orafce` provides Oracle-compatible functions, types and utility packages. Distribution 4.17.1 uses control and SQL extension version 4.17; the two numbers describe different layers.
 
 ### Core Workflow
 
@@ -33,8 +32,12 @@ Use `oracle.date` when an Oracle-style date must retain the time of day. Date fu
 
 `utl_file` accesses server-side files within administrator-configured allowed directories; restrict grants and file-system permissions. The implementation rejects parent-directory references that remain after path canonicalization. Avoid parent references in file paths. The 4.16.12 release specifically fixes possible crashes in `dbms_sql`.
 
-Installation requires a superuser and creates fixed schemas; no preload is required. Follow the upstream configuration guidance before altering `search_path`. Since the SQL version remains 4.16, an installed 4.16 extension need not acquire a new SQL version merely because its binary distribution was patched. Reconnect as required to use the updated library and verify behavior against the exact installed distribution.
+Installation requires a superuser and creates fixed schemas; no preload is required. Follow the upstream configuration guidance before altering `search_path`. The 4.16 patch releases did not change the SQL version; upgrading to the 4.17 series does require its SQL upgrade. Reconnect as required to use the updated library and verify behavior against the exact installed distribution.
 
 ### 4.16.13 Patch
 
 Distribution 4.16.13 fixes additional possible `dbms_sql` crashes. The control version remains 4.16; update the library distribution without inventing a 4.16.13 SQL upgrade.
+
+### 4.17 Compatibility Objects
+
+Distribution 4.17.1 adds `utl_raw` byte operations, including `utl_raw.cast_to_raw`, `utl_raw.cast_to_varchar2`, `utl_raw.substr` and bitwise functions. `utl_raw.substr` rejects a null value, invalid start, nonpositive length or a range past the end. `oracle.hextoraw`, `oracle.rawtohex`, `oracle.empty_clob`, `oracle.empty_blob` and `oracle.from_tz` are also added. USER_TABLES and USER_TAB_COLUMNS now restrict their results to the current schema. After installing the new distribution, run `ALTER EXTENSION orafce UPDATE TO '4.17'` and reconnect to use the new library.

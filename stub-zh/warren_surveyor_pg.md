@@ -2,12 +2,13 @@
 
 来源：
 
-- [warren-surveyor-pg/README.md](https://github.com/soulstompp/warren-surveyor/blob/59f4d0f475cd6a8ed6811be945b9738c35932eca/warren-surveyor-pg/README.md)
-- [warren-surveyor-pg/Cargo.toml](https://github.com/soulstompp/warren-surveyor/blob/59f4d0f475cd6a8ed6811be945b9738c35932eca/warren-surveyor-pg/Cargo.toml)
-- [warren-surveyor-pg/src/lib.rs](https://github.com/soulstompp/warren-surveyor/blob/59f4d0f475cd6a8ed6811be945b9738c35932eca/warren-surveyor-pg/src/lib.rs)
-- [warren-surveyor-pg/warren_surveyor_pg.control](https://github.com/soulstompp/warren-surveyor/blob/59f4d0f475cd6a8ed6811be945b9738c35932eca/warren-surveyor-pg/warren_surveyor_pg.control)
+- [warren-surveyor-pg/README.md](https://github.com/soulstompp/warren-surveyor/blob/28d23dcf80108be20e35d7104b94b3062bf63b7f/warren-surveyor-pg/README.md)
+- [warren-surveyor-pg/Cargo.toml](https://github.com/soulstompp/warren-surveyor/blob/28d23dcf80108be20e35d7104b94b3062bf63b7f/warren-surveyor-pg/Cargo.toml)
+- [warren-surveyor-pg/src/lib.rs](https://github.com/soulstompp/warren-surveyor/blob/28d23dcf80108be20e35d7104b94b3062bf63b7f/warren-surveyor-pg/src/lib.rs)
+- [warren-surveyor-pg/warren_surveyor_pg.control](https://github.com/soulstompp/warren-surveyor/blob/28d23dcf80108be20e35d7104b94b3062bf63b7f/warren-surveyor-pg/warren_surveyor_pg.control)
+- [warren-surveyor-pg/CHANGELOG.md](https://github.com/soulstompp/warren-surveyor/blob/28d23dcf80108be20e35d7104b94b3062bf63b7f/warren-surveyor-pg/CHANGELOG.md)
 
-`warren_surveyor_pg` 0.1.0 提供 `surveyor` 索引访问方法。其标记索引不存储用户数据，也不会出现在查询扫描中；规划钩子读取现有索引以改进估算，同时启用随附的查询等价改写钩子。
+`warren_surveyor_pg` 0.1.1 提供 `surveyor` 索引访问方法。其标记索引不存储用户数据，也不会出现在查询扫描中；规划钩子读取现有索引以改进估算，同时启用随附的查询等价改写钩子。
 
 ### 核心用法
 
@@ -24,6 +25,6 @@ EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM survey_demo WHERE id = 42;
 
 在表的唯一键上创建标记索引，保留实际的 B-tree/GIN/GiST 索引，并分析表。参与的会话须在规划前载入库；示例用 `LOAD` 启用当前会话。会话预加载可用于后续连接，无须全局重启。安装要求超级用户。
 
-README 面向 PostgreSQL 18；Cargo 另有 PostgreSQL 19 构建特性，但这不代表经过验证的兼容承诺。测量增加规划阶段的 I/O 和 CPU 开销，不保证改善所有工作负载。应同时检查估算与实际行数，以及规划和执行阶段的缓冲区读写。`warren_surveyor_pg.planning_read_limit` 限制读取量，达到边界后使用原估算；递归查询可能在规划期间按所述预算执行。
+0.1.1 支持 PostgreSQL 14–18；较旧分支至少需要 14.19、15.14、16.10 或 17.6。Cargo 还提供 PostgreSQL 19 特性，但文档没有承诺其兼容性。在 14 和 15 上，更新 surveyor 所含列会失去 HOT 更新资格，从 16 起没有此限制。既有安装须执行 `ALTER EXTENSION warren_surveyor_pg UPDATE`。测量增加规划阶段的 I/O 和 CPU 开销，不保证改善所有工作负载。应同时检查估算与实际行数，以及规划和执行阶段的缓冲区读写。`warren_surveyor_pg.planning_read_limit` 限制读取量，达到边界后使用原估算；递归查询可能在规划期间按所述预算执行。
 
-扩展只改写其认为等价的查询结构。全面启用前应对代表性负载比较结果集与执行计划。这是初始源码版本，与 `pg_warrendex` 是不同扩展。
+扩展只改写其认为等价的查询结构。全面启用前应对代表性负载比较结果集与执行计划。这是早期源码版本，与 `pg_warrendex` 是不同扩展。
