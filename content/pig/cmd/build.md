@@ -5,113 +5,77 @@ icon: fa-solid fa-terminal
 weight: 640
 ---
 
-The `pig build` command simplifies the full workflow for building PostgreSQL extensions from source. It provides build infrastructure setup, dependency management, and compilation environments for standard and custom PostgreSQL extensions across supported operating systems.
+`pig build` downloads sources, installs dependencies, and produces RPM/DEB packages using Pigsty build recipes. Use it on an EL, Debian, or Ubuntu build host. Rust, pgrx, and the Xray client also support their respective macOS workflows.
 
-```bash
-pig build - Build Postgres Extension
-
-Environment Setup:
-  pig build spec                   # init build spec and directory (~ext)
-  pig build repo                   # init build repo (=repo set -ru)
-  pig build repo  [--beta]         # init build repo with PostgreSQL beta repo
-  pig build tool  [mini|full|...]  # init build toolset
-  pig build rust  [-y] [-m]        # install Rust toolchain
-  pig build pgrx  [-v <ver>] [-b]  # install & init pgrx (0.19.3)
-  pig build proxy                  # install or verify Xray
-  pig build proxy client URI       # setup an HTTP/SOCKS client
-  pig build proxy server [flags]   # setup or export a REALITY server
-
-Package Building:
-  pig build pkg   [ext|pkg...]     # complete pipeline: get + dep + ext
-  pig build get   [ext|pkg...]     # download extension source tarball
-  pig build dep   [ext|pkg...]     # install extension build dependencies
-  pig build ext   [ext|pkg...]     # build extension package
-
-Quick Start:
-  pig build spec                   # setup build spec and directory
-  pig build pkg citus              # build citus extension
-```
-
-| Command       | Description                              | Notes                 |
-|:--------------|:-----------------------------------------|:----------------------|
-| `build spec`  | Initialize build specification directory |                       |
-| `build repo`  | Initialize required repositories         | Requires sudo or root |
-| `build tool`  | Initialize build tools                   | Requires sudo or root |
-| `build rust`  | Install Rust toolchain                   | Requires sudo or root |
-| `build pgrx`  | Install and initialize pgrx              | Requires sudo or root |
+| Command | Description | Notes |
+|:---|:---|:---|
+| `build spec` | Initialize build specification directory | |
+| `build repo` | Initialize required repositories | Requires sudo or root |
+| `build tool` | Initialize build tools | Requires sudo or root |
+| `build rust` | Install Rust toolchain | Current user |
+| `build pgrx` | Install and initialize pgrx | Current user |
 | `build proxy` | Set up Xray clients and servers | Linux: root; macOS client: regular user |
-| `build get`   | Download source tarballs                 |                       |
-| `build dep`   | Install extension build dependencies     | Requires sudo or root |
-| `build ext`   | Build extension packages                 | Requires sudo or root |
-| `build pkg`   | Complete pipeline: get, dep, ext         | Requires sudo or root |
+| `build get` | Download source tarballs | |
+| `build dep` | Install extension build dependencies | Requires sudo or root |
+| `build ext` | Build extension packages | Current user |
+| `build pkg` | Complete pipeline: get, dep, ext | Requires sudo or root |
 {.full-width}
-
 
 ## Quick Start
 
-The fastest way to set up a build environment and build an extension:
+If the build host needs package repositories, run `pig build repo`. This backs up and replaces existing repository definitions.
+Skip this step if suitable repositories are already configured.
+
+Then install the build tools, download the recipes, and build an extension:
 
 ```bash
-# Step 1: initialize build specs
-pig build spec
-
-# Step 2: build an extension with the complete pipeline
-pig build pkg citus
-
-# Built packages will be placed under:
-# - EL: ~/ext/pkg/ (also available via ~/rpmbuild/RPMS/)
-# - Debian: ~/ext/pkg/ (also available via ~/debbuild/DEBS/)
+pig build tool                  # install build tools and PostgreSQL development packages
+pig build spec                  # download recipes and prepare directories
+pig build pkg citus --pg 18     # download, install dependencies, and build for PG 18
 ```
 
-For finer control:
+Packages are written under `~/ext/pkg/`; RPM outputs may be in architecture subdirectories.
+
+To run each build stage separately:
 
 ```bash
-# Environment setup
-pig build spec                   # initialize build specs
-pig build repo                   # configure repositories
-pig build tool                   # install build tools
-
-# Build steps
-pig build get citus              # download source
-pig build dep citus              # install dependencies
-pig build ext citus              # build package
-
-# Or run all three steps at once
-pig build pkg citus              # get + dep + ext
+pig build get citus
+pig build dep citus --pg 18
+pig build ext citus --pg 18
 ```
 
+`build pkg` combines these three stages. It does not install the general build tools or download build recipes.
 
 ## Build Infrastructure
 
 ### Directory Layout
 
+```filetree {title="PIG build directories"}
+- ~/ext/
+  - pkg/   {open=false}
+  - src/   {open=false}
+  - log/   {open=false}
+  - tmp/   {open=false}
+- ~/rpmbuild/
+  - RPMS -> ~/ext/pkg
+  - SOURCES -> ~/ext/src
+  - SPECS/   {open=false}
+  - BUILD/   {open=false}
+  - BUILDROOT/   {open=false}
+  - SRPMS/   {open=false}
+- ~/debbuild/
+  - DEBS -> ~/ext/pkg
+  - SOURCES -> ~/ext/src
+  - SPECS/   {open=false}
+  - BUILD/   {open=false}
 ```
-~/ext/                           # real working directory
-├── pkg/                         # built package output
-├── src/                         # source tarball downloads
-├── log/                         # build logs
-└── tmp/                         # temporary files
 
-~/rpmbuild/                      # EL build directory
-├── RPMS -> ~/ext/pkg            # RPM output symlink
-├── SOURCES -> ~/ext/src         # source symlink
-├── SPECS/
-├── BUILD/
-├── BUILDROOT/
-└── SRPMS/
-
-~/debbuild/                      # Debian / Ubuntu build directory
-├── DEBS -> ~/ext/pkg            # DEB output symlink
-├── SOURCES -> ~/ext/src         # source symlink
-├── SPECS/
-└── BUILD/
-```
+`~/ext/` is the real working directory: `pkg` stores built packages, `src` stores source tarballs, and `log` / `tmp` hold build logs and temporary files. The platform-specific trees link their output and source directories back into it.
 
 **Build output locations:**
 
 - **EL systems**: `~/ext/pkg/`, also accessible through `~/rpmbuild/RPMS/`
 - **Debian systems**: `~/ext/pkg/`, also accessible through `~/debbuild/DEBS/`
-
 
 ## build spec
 
@@ -132,24 +96,22 @@ pig build spec -m                # prefer the pigsty.cc China mirror
 
 **Working directory:** `~/ext/` stores sources, packages, logs, and temporary files. The platform packaging directory is `~/rpmbuild/` or `~/debbuild/`.
 
-
 ## build repo
 
 Initialize package repositories required for building extensions.
 
 ```bash
-pig build repo                   # equivalent to: pig repo set -ru
-pig build repo -m                # use China mirrors (Tencent Cloud first for PGDG)
-pig build repo -b                # include PostgreSQL beta repository
+pig build repo                   # equivalent to: pig repo set
+pig build repo -m                # select the bundled China-region mirrors
+pig build repo --beta            # also enable the PostgreSQL 19 beta repo module
 ```
 
-**What it does:** initializes build repositories with `pig repo set -ru`: remove old repositories, add required repositories, and refresh package caches.
+**What it does:** initializes build repositories with `pig repo set`: remove old repositories, add required repositories, and refresh package caches. `--beta/-b` appends the `beta` module for explicit PostgreSQL 19 beta builds; the stable default path still uses PG14-18.
 
 **Options:**
 
-- `-m|--mirror`: prefer China mirrors (Tencent Cloud first for PGDG).
-- `-b|--beta`: include the PostgreSQL beta repository module, currently for PG19 beta builds.
-
+- `-b|--beta`: additionally enable PostgreSQL beta repository modules
+- `-m|--mirror`: select the bundled `china` repository definitions
 
 ## build tool
 
@@ -159,36 +121,27 @@ Install development tools and compilers.
 pig build tool                   # install default toolset
 pig build tool mini              # minimal toolset
 pig build tool full              # full toolset
-pig build tool rust              # add Rust development tools
-pig build tool -b                # include PostgreSQL beta build packages
+pig build rust                   # install Rust separately
+pig build tool --beta            # add PG19 beta build dependencies
 ```
 
 **Toolsets:**
 
-- **Minimal (`mini`)**: GCC/Clang compilers, Make, core build tools, PostgreSQL development headers, and basic libraries.
-- **Default**: minimal tools plus extra compilers, development libraries, and packaging tools such as `rpmbuild` and `dpkg-dev`.
-- **Full (`full`)**: default tools plus language-specific development tools and advanced debugging or profiling utilities.
-
-On EL systems, the default build toolset installs explicit PostgreSQL development/server packages for the stable active majors. Use `--beta` when you also need the current beta major.
-
+- **Minimal (`mini`)**: build tools and libraries, with PostgreSQL and PGDG packages removed from the install list.
+- **Default / `full`**: Make, CMake, development libraries, packaging tools, and PostgreSQL build dependencies. EL selects PG14-18 server/devel packages; Debian/Ubuntu uses `postgresql-all` and `postgresql-server-dev-all`.
+- **`--beta`**: adds explicit PG19 beta server/devel packages. `mini` still excludes PostgreSQL packages.
 
 ## build rust
 
 Install the Rust toolchain required by Rust-based extensions.
 
 ```bash
-pig build rust                   # install with confirmation
+pig build rust                   # install if Cargo is absent
 pig build rust -y                # force reinstall Rust toolchain
-pig build rust -m                # use rsproxy.cn and Cargo mirror config
+pig build rust -m                # use China mirror mode and write Cargo mirror config
 ```
 
-**Installed components:** Rust compiler (`rustc`), Cargo, Rust standard library, and development tools.
-
-**Options:**
-
-- `-y|--yes`: force Rust reinstallation even if Cargo already exists.
-- `-m|--mirror`: download `rustup` from the China mirror and write `~/.cargo/config.toml` for `rsproxy.cn`.
-
+PIG installs Rust through rustup for the current user, without an interactive prompt. If `~/.cargo/bin/cargo` exists, it skips installation unless `-y` is set. `-m` uses `rsproxy.cn` for rustup and writes Cargo mirror configuration, including when Rust is already installed.
 
 ## build pgrx
 
@@ -199,24 +152,22 @@ pig build pgrx                   # install default version (0.19.3)
 pig build pgrx -v 0.19.3         # install a specific pgrx version
 pig build pgrx --pg 18,17,16     # initialize pgrx for selected PG versions
 pig build pgrx --pg init         # run cargo pgrx init without PG arguments
-pig build pgrx -b                # include beta PostgreSQL pg_config in auto-detect
+pig build pgrx -b                # include PostgreSQL 19 beta pg_config during auto-detection
 ```
 
-**Prerequisites:** Rust toolchain and PostgreSQL development headers must be installed first.
-
-**Options:**
-
-- `-v|--pgrx`: cargo-pgrx version to install.
-- `--pg`: comma-separated PostgreSQL majors, `init` for no PostgreSQL arguments, or empty for auto-detection.
-- `-b|--beta`: include the current beta major during auto-detection.
-
+**Prerequisites:** Rust toolchain and PostgreSQL development headers must be installed first. Default auto-detection only covers stable PG14-18; use `-b|--beta`, or explicitly pass `--pg 19`, when PG19 beta is required.
 
 ## build proxy
 
+A matching macOS LaunchAgent generated by the older source without a management comment can
+upgrade without `--replace`. Recognition compares the complete generated plist; a comment alone
+does not grant ownership. Foreign or edited service files require `--replace --yes`. After the
+one-time comment migration, identical execution leaves the service running without a restart.
+This compatibility statement covers the verified old source format, not every released binary.
+
 Set up Xray clients and servers for build environments with restricted internet access.
 The `x` alias is retained. With no arguments, `pig build proxy` installs or verifies Xray only.
-The client and server role commands are available from PIG v1.9.0.
-See the [Xray design record](https://pig.pgsty.com/design/xray-client-server/) for the protocol and migration contract.
+See the [Xray design record](https://pig.pgsty.com/design/xray-client-server/) for the design rationale.
 
 ### Client
 
@@ -246,8 +197,7 @@ Pigsty `xray` package configured first, for example `sudo pig repo add infra -u`
 systemd drop-in. On **macOS**, run as your regular user with Homebrew available. Setup uses
 `~/.config/xray/pig-proxy.json` with mode 0600 and its own `com.pigsty.xray-proxy` LaunchAgent.
 
-For an already configured server, stream the connection directly into client setup. Both ends must
-use a PIG build containing these commands:
+For an existing server, pass its connection URI directly to client setup:
 
 ```bash
 # Linux client: the remote command only reads and exports the existing server connection.
@@ -256,13 +206,9 @@ ssh root@proxy.example.com 'pig build proxy server --host proxy.example.com --ex
 ssh root@proxy.example.com 'pig build proxy server --host proxy.example.com --export-only --export -' | pig build proxy client --from -
 ```
 
-Repeated setup with matching input, ownership, permissions, and service state leaves files and the
-running service unchanged. Incorrect managed-file ownership is repaired without changing connection
-credentials. A different or unsupported existing client configuration requires `--replace --yes`; `--plan` previews the
-operation without installation, writes, or service changes. Setup checks both proxy protocols using
-`https://www.google.com/generate_204` and requires HTTP 204, so the server needs outbound access to
-that endpoint. A failed check returns nonzero and restores prior managed files and service state;
-an installed package may remain.
+Repeated setup reuses matching configuration and service state. To replace a different client configuration, use `--replace --yes`. Use `--plan` to preview the operation.
+
+After setup, PIG requests `https://www.google.com/generate_204` through both HTTP and SOCKS and requires HTTP 204. If the checks fail, PIG restores the previous configuration and service state. Any installed package remains.
 
 The generated shell file defines `po`, `px`, and `pck`. To enable proxy variables in the calling shell:
 
@@ -291,30 +237,20 @@ sudo pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:4
 sudo pig build proxy server --host proxy.example.com --export-only --export -
 ```
 
-First setup generates a UUID, X25519 key pair, short ID, and ML-DSA-65 seed and verification key.
-SNI defaults to the target hostname. Repeating setup retains all authentication fields, SNI, and
-protocol settings; an omitted `--listen` retains the existing listener. Matching configuration, file
-ownership and permissions, and service state require no rewrite or restart. With the same `--host` and `--port`, export returns the
-same canonical URI. Conflicting target/SNI or malformed and ambiguous existing material is rejected
-instead of silently rotating credentials. An existing unsupported server configuration is refused.
+First setup generates a UUID, X25519 key pair, short ID, and ML-DSA-65 seed and verification key. SNI defaults to the `--target` hostname. Repeated setup preserves these credentials. If you omit `--listen`, it also preserves the listener; specify `--listen` to change it. Matching configuration does not restart the service. Conflicting targets or unsupported existing configurations produce an error.
 
-`--export-only` requires `--export` and does not install, modify configuration, start, restart, or
-enable the service. It derives client verification material from the existing private material in
-process. One supported VLESS/REALITY inbound, account, SNI, and short ID must be unambiguous.
-`--host` and `--port` describe the external endpoint; a backend port such as 9443 is not inferred as
-the public port. Do not combine this read-only mode with setup options.
+Connection export options:
 
-`--export FILE` writes mode 0600 and never includes the server private key or seed. Re-exporting
-identical content succeeds without rewriting; a different existing file is refused. `--export -`
-explicitly prints one complete credential URI on stdout; diagnostics stay on stderr. Export requires
-text output and cannot be combined with JSON/YAML. Ordinary output and plans contain no credentials.
-Treat the whole URI and direct authentication flags as credentials; file/stdin input avoids retaining
-them as shell arguments.
+| Option | Purpose |
+|:---|:---|
+| `--export FILE` | Write a client URI with mode `0600`; identical content can be exported again, but different content is not overwritten |
+| `--export -` | Print the complete client URI on stdout and diagnostics on stderr |
+| `--export-only` | Read and export existing configuration without changing files or services; requires `--export` |
+| `--plan` | Preview setup |
 
-Server success proves its local listener and service, with public reachability pending a real client
-request. PIG does not configure Nginx, firewall rules, or cloud security groups. `--proxy-protocol`
-requires loopback binding and an existing trusted frontend. Port conflicts fail without stopping
-another service. Existing V2Ray is not automatically stopped or removed.
+Export requires text output. The URI contains client credentials, so pass it through a file or stdin. It does not contain the server's private key or seed. When exporting an existing server, `--host` and `--port` specify the public endpoint the client reaches, not the backend listener.
+
+After setup, test connectivity from a real client. Open the required firewall or cloud security-group rules. `--proxy-protocol` requires an existing trusted frontend and a loopback listener. PIG does not stop another service that occupies the port or remove an existing V2Ray installation.
 
 ### Historical VMess form
 
@@ -348,14 +284,11 @@ Some source packages do not map directly to extension names, so `pig build get` 
 ```bash
 pig build get pdu                # download pdu-3.0.25.12.tar.gz
 pig build get pgdog              # download pgdog-0.1.32.tar.gz
-pig build get pgedge-17          # download PostgreSQL 17 plus pgEdge suite sources
-pig build get babelfish-18       # download Babelfish PG18 source bundle
-pig build get orioledb-16        # download OrioleDB plus PG16 patch bundle
+pig build get pgedge             # download both PostgreSQL and spock sources
 pig build get onesparse          # download onesparse, graphblas, and lagraph
 ```
 
-Common special source aliases include: `babelfish` / `babelfish-17` / `babelfish-18`, `ivorysql`, `orioledb` / `orioledb-16` / `orioledb-17` / `orioledb-18`, `cloudberry` / `cloudberry-backup` / `cloudberry-pxf`, `pgedge` / `pgedge-15` / `pgedge-16` / `pgedge-17` / `pgedge-18`, `polardb`, `polarstore`, `zlog`, `pdu`, `pgdog`, `rdkit`, `onesparse`, `libpgfeutils`, and `libfq`.
-
+Common special source aliases include: `babelfish`, `agensgraph`, `orioledb`, `cloudberry`, `pgedge`, `pdu`, `pgdog`, `rdkit`, `onesparse`, and `libpgfeutils`.
 
 ## build dep
 
@@ -371,10 +304,19 @@ pig build dep citus --pg 17,16   # for selected PG versions
 
 - `--pg`: specify one or more PostgreSQL major versions. If omitted, pig infers versions from extension metadata or local PostgreSQL installations.
 
+For a list such as `--pg 17,16`, version-specific dependency names are expanded for every
+selected major version and duplicates are removed before installation. The same dependency
+step is used by `build pkg`.
 
 ## build ext
 
 Compile extensions and create installation packages.
+
+For `build ext` and `build pkg`, omitting `--pg` retains version selection from extension
+metadata and platform exceptions; Debian/Ubuntu also consider locally installed PG versions.
+Package-matrix gaps do not remove build targets. An explicit `--pg` selects the requested versions.
+Debian/Ubuntu builds preserve the inherited `PATH` order and append the current user's
+`~/.cargo/bin` when that directory exists, so an explicitly selected toolchain keeps precedence.
 
 Debug packages are enabled by default. Compiled RPM builds normally add `debuginfo` and
 `debugsource` packages, while Debhelper-based builds normally add a `dbgsym` package. Pure SQL,
@@ -396,7 +338,7 @@ pig build ext citus --nodbg      # explicitly omit automatic debug packages
 
 ## build pkg
 
-Run the complete build pipeline: download, dependency installation, and build.
+Download sources, install dependencies, then build each requested package. A source-download failure stops that package. A dependency-install failure produces a warning and the build still runs, because the dependencies may already be present.
 
 ```bash
 pig build pkg citus              # build one extension
@@ -415,114 +357,63 @@ pig build pkg citus -m           # prefer the pigsty.cc China mirror for sources
 
 ## Common Workflows
 
-### Workflow 1: Build a Standard Extension
+### Build and install a local package
+
+After preparing the environment in Quick Start, build for the target PostgreSQL version:
 
 ```bash
-# 1. Set up the build environment once
-pig build spec
-pig build repo
-pig build tool
-
-# 2. Build the extension
-pig build pkg pg_partman
-
-# 3. Install the built package
-sudo rpm -ivh ~/ext/pkg/pg_partman*.rpm  # EL
-sudo dpkg -i ~/ext/pkg/*partman*.deb     # Debian
+pig build pkg pg_partman --pg 18
+find ~/ext/pkg -type f -name '*partman*'
 ```
 
-### Workflow 2: Build a Rust Extension
+Select the package that matches the target PostgreSQL version and architecture, then install it with the system package manager. Replace these placeholder paths with the actual package path:
 
 ```bash
-# 1. Set up Rust environment
-pig build spec
-pig build tool
-pig build rust                   # add -y only if you need to force reinstall
-pig build pgrx
-
-# 2. Build Rust extension
-pig build pkg pgmq
-
-# 3. Install
-sudo pig ext add pgmq
+sudo dnf install /absolute/path/to/package.rpm   # EL
+sudo apt install /absolute/path/to/package.deb   # Debian / Ubuntu
 ```
 
-### Workflow 3: Build Multiple Versions
+`pig ext add NAME` installs from configured repositories. Use a file path as shown above to install the package you just built.
+
+### Build a Rust extension
+
+In a prepared build environment, install Rust and the pgrx version required by the recipe for the current user:
 
 ```bash
-# Build for multiple PostgreSQL versions
+pig build rust
+pig build pgrx --pg 18
+pig build pkg pgmq --pg 18
+```
+
+Add `-m` to `build rust` to use China mirrors. If the recipe requires a specific pgrx version, run `pig build pgrx -v VERSION --pg 18`. Install the local package as described above.
+
+### Build for multiple PostgreSQL versions
+
+```bash
 pig build pkg citus --pg 15,16,17
-
-# Results in packages for each version:
-# citus_15-*.rpm
-# citus_16-*.rpm
-# citus_17-*.rpm
 ```
 
+PIG produces packages for each major version. Each version needs matching development packages and recipe support.
+
+### Build for PostgreSQL 19 beta
+
+```bash
+pig build repo --beta
+pig build tool --beta
+pig build pgrx -b                # only for Rust/pgrx extensions
+pig build pkg EXTENSION --pg 19
+```
+
+Replace `EXTENSION` with one that supports the selected version. The beta version comes from PIG's current embedded configuration.
 
 ## Troubleshooting
 
-### Build Tools Not Found
+| Problem | Action |
+|:---|:---|
+| Missing build tools | Run `pig build tool`; install any additional compiler required by the recipe |
+| Missing extension dependencies | Run `pig build dep NAME --pg MAJOR`; check the reported packages and repositories |
+| PostgreSQL headers not found | Run `pig ext add pg18-devel`, then select the matching target with `--pg 18` |
+| Wrong pgrx version | Run `pig build pgrx -v VERSION --pg MAJOR` with the version required by the recipe |
+| Stale source archive | Run `pig build get NAME -f`; first check that the catalog's source version matches the recipe |
 
-```bash
-# Install build tools
-pig build tool
-
-# For specific compiler sets
-sudo dnf groupinstall "Development Tools"  # EL
-sudo apt install build-essential          # Debian
-```
-
-### Missing Dependencies
-
-```bash
-# Install extension dependencies
-pig build dep <extension>
-
-# Check error messages for specific packages
-# Install manually if needed
-sudo dnf install <package>  # EL
-sudo apt install <package>  # Debian
-```
-
-### PostgreSQL Headers Not Found
-
-```bash
-# Install PostgreSQL development package
-sudo pig ext install pg18-devel
-
-# Or specify pg_config path
-export PG_CONFIG=/usr/pgsql-18/bin/pg_config
-```
-
-### Rust/PGRX Issues
-
-```bash
-# Reinstall Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Update PGRX
-cargo install --locked cargo-pgrx@0.19.3
-
-# Reinitialize PGRX
-cargo pgrx init
-```
-
-
-## Extension Build Matrix
-
-### Common Extensions to Build
-
-| Extension       |    Type     | Build Time | Complexity | Special Requirements |
-|:----------------|:-----------:|:-----------|:-----------|:---------------------|
-| pg_repack       |      C      | Fast       | Simple     | None                 |
-| pg_partman      | SQL/PLPGSQL | Fast       | Simple     | None                 |
-| citus           |      C      | Medium     | Medium     | None                 |
-| timescaledb     |      C      | Slow       | Complex    | CMake                |
-| postgis         |      C      | Very slow  | Complex    | GDAL, GEOS, Proj     |
-| pg_duckdb       |     C++     | Medium     | Medium     | C++17 compiler       |
-| pgroonga        |      C      | Medium     | Medium     | Groonga libraries    |
-| pgvector        |      C      | Fast       | Simple     | None                 |
-| plpython3       |      C      | Medium     | Medium     | Python development   |
-| pgrx extensions |    Rust     | Slow       | Complex    | Rust, PGRX           |
-{.full-width}
+Build logs are in `~/ext/log/`. Build time depends on the recipe, CPU, memory, parallelism, and caches. PostGIS, pg_duckdb, and Rust extensions usually need more resources.

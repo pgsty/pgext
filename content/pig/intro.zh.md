@@ -6,61 +6,76 @@ weight: 100
 breadcrumb: false
 ---
 
-你是否曾因安装或升级 PostgreSQL 扩展而头疼？翻查过时的文档、晦涩难懂的配置脚本，或是在 GitHub 上苦寻分支与补丁？
-Postgres 丰富的扩展生态同时意味着复杂的部署流程 —— 在多发行版、多架构环境下尤为棘手。而 PIG 可以为您解决这些烦恼。
+PIG 是 PostgreSQL 与扩展的命令行管理工具。它将扩展名转换为 RPM 或 DEB 软件包名，再调用 `apt`、`dnf` 或 `yum` 完成安装。
 
-这正是 **Pig** 诞生的初衷。Pig 由 Go 语言开发，致力于一站式管理 Postgres 及其 [600 个已打包扩展](/zh/list/)。
-无论是 TimescaleDB、Citus、PGVector，还是 30+ Rust 扩展，亦或 自建 Supabase 所需的全部组件 —— Pig 统一的 CLI 让一切触手可及。
-它彻底告别源码编译与杂乱仓库，直接提供版本对齐的 RPM/DEB 包，完美兼容 Debian、Ubuntu、RedHat 等主流发行版，支持 x86 与 Arm 架构，无需猜测，无需折腾。
+扩展目录收录了 [{{< param pig_catalog_count >}} 个条目](https://pigsty.cc/ext/list/)。PIG 根据 PostgreSQL 大版本、操作系统和 CPU 架构选择对应包名，也提供源码构建、本地 PostgreSQL 管理、备份恢复和 Pigsty 管理命令。
 
-Pig 并非重复造轮子，而是充分利用系统原生包管理器（APT、YUM、DNF），严格遵循 [PGDG 官方](/zh/repo/pgdg/) 打包规范，确保无缝集成。
-你无需在"标准做法"与"快捷方式"之间权衡；Pig 尊重现有仓库，遵循操作系统最佳实践，与现有仓库和软件包和谐共存。
-如果你的 Linux 系统和 PostgreSQL 大版本不在 [支持的列表](#linux-兼容性) 中，你还可以使用 [`pig build`](https://pig.pgsty.com/zh/build/) 直接针对特定组合编译扩展。
+## 可以做什么
 
-想让你的 Postgres 如虎添翼、远离繁琐？欢迎访问 [PIG 官方文档](https://pig.pgsty.com/zh) 获取文档、指南，并查阅庞大的 [扩展列表](/zh/list/)，
-让你的本地 Postgres 数据库一键进化为全能的多模态数据中台。
-如果说 [Postgres 的未来是无可匹敌的可扩展性](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)，那么 Pig 就是帮你解锁它的神灯。毕竟，从没有人抱怨 "扩展太多"。
+| 任务 | 命令 | 参考文档 |
+|:---|:---|:---|
+| 查找扩展，检查是否有包可用 | `pig ext list`、`pig ext avail` | [扩展管理](/zh/pig/cmd/ext/) |
+| 添加 PGDG 与 Pigsty 仓库 | `pig repo add pgsql -u` | [软件仓库](/zh/pig/cmd/repo/) |
+| 安装 PostgreSQL 18 与 pgvector | `pig install -v 18 pg18 vector` | [快速上手](/zh/pig/start/) |
+| 从源码构建扩展包 | `pig build pkg NAME` | [构建](/zh/pig/cmd/build/) |
+| 启动、检查或停止本地 PostgreSQL 实例 | `pig pg` | [PostgreSQL](/zh/pig/cmd/pg/) |
+| 管理 Patroni 集群 | `pig pt` | [Patroni](/zh/pig/cmd/pt/) |
+| 备份或恢复实例 | `pig pb`、`pig pitr` | [pgBackRest](/zh/pig/cmd/pb/)、[PITR](/zh/pig/cmd/pitr/) |
+| 配置 Pigsty 并执行剧本 | `pig sty`、`pig inventory`、`pig do` | [Pigsty](/zh/pig/cmd/sty/) |
 
-## 自动化友好
+从[上手教程](/zh/pig/start/)开始，安装 PostgreSQL 并启用第一个扩展。
 
-PIG 的命令体系可直接用于自动化脚本：参数风格统一、输出稳定，并在高风险操作中提供 `--plan` 预览或确认步骤，减少误操作风险。
+## 软件包如何安装
 
+例如，为 PostgreSQL 18 安装 pgvector：
 
-> 《[ANNOUNCE pig: The Postgres Extension Wizard](https://www.postgresql.org/about/news/announce-pig-the-postgres-extension-wizard-2988/)》
+```bash
+sudo pig install vector -v 18
+```
 
+PIG 将 `vector` 转换为 EL 上的 `pgvector_18`，或 Debian、Ubuntu 上的 `postgresql-18-pgvector`。系统包管理器负责解析依赖并安装文件。
 
---------
+要启用扩展，连接目标数据库后执行：
+
+```sql
+CREATE EXTENSION vector;
+```
+
+部分扩展还需要设置 `shared_preload_libraries` 并重启 PostgreSQL。用 `pig ext info NAME` 查看这些要求。升级与移除的操作见[软件包层与数据库层](/zh/pig/cmd/ext/#软件包层与数据库层)。
+
+PIG 只在执行命令时运行。PostgreSQL 与已安装的扩展可以独立运行。你也可以直接用 `apt` 或 `dnf` 访问 [Pigsty 软件仓库](https://pigsty.cc/docs/repo/pgsql/)。
 
 ## Linux 兼容性
 
-PIG 与 Pigsty 扩展仓库支持以下 Linux 发行版和 PostgreSQL 版本组合：
+软件仓库覆盖以下 Linux 版本上的 PostgreSQL **14–18**。每个发行版均提供 **x86_64** 和 **aarch64** 两种架构的软件包。
 
-| OS 代码          | 厂商     | 大版本 |   小版本   | 全名                | PG 版本 |   备注   |
-|:---------------|:-------|:---:|:-------:|:------------------|:------|:------:|
-| `el7.x86_64`   | EL     |  7  |   7.9   | CentOS 7 x86      | 13-15 |  EOL   |
-| `el8.x86_64`   | EL     |  8  |  8.10   | RockyLinux 8 x86  | 14-18 | 即将 EOL |
-| `el8.aarch64`  | EL     |  8  |  8.10   | RockyLinux 8 ARM  | 14-18 | 即将 EOL |
-| `el9.x86_64`   | EL     |  9  |   9.7   | RockyLinux 9 x86  | 14-18 |   ✅    |
-| `el9.aarch64`  | EL     |  9  |   9.7   | RockyLinux 9 ARM  | 14-18 |   ✅    |
-| `el10.x86_64`  | EL     | 10  |  10.1   | RockyLinux 10 x86 | 14-18 |   ✅    |
-| `el10.aarch64` | EL     | 10  |  10.1   | RockyLinux 10 ARM | 14-18 |   ✅    |
-| `d11.x86_64`   | Debian | 11  |  11.11  | Debian 11 x86     | 14-18 |  EOL   |
-| `d11.aarch64`  | Debian | 11  |  11.11  | Debian 11 ARM     | 14-18 |  EOL   |
-| `d12.x86_64`   | Debian | 12  |  12.13  | Debian 12 x86     | 14-18 |   ✅    |
-| `d12.aarch64`  | Debian | 12  |  12.13  | Debian 12 ARM     | 14-18 |   ✅    |
-| `d13.x86_64`   | Debian | 13  |  13.3   | Debian 13 x86     | 14-18 |   ✅    |
-| `d13.aarch64`  | Debian | 13  |  13.3   | Debian 13 ARM     | 14-18 |   ✅    |
-| `u22.x86_64`   | Ubuntu | 22  | 22.04.5 | Ubuntu 22.04 x86  | 14-18 |   ✅    |
-| `u22.aarch64`  | Ubuntu | 22  | 22.04.5 | Ubuntu 22.04 ARM  | 14-18 |   ✅    |
-| `u24.x86_64`   | Ubuntu | 24  | 24.04.4 | Ubuntu 24.04 x86  | 14-18 |   ✅    |
-| `u24.aarch64`  | Ubuntu | 24  | 24.04.4 | Ubuntu 24.04 ARM  | 14-18 |   ✅    |
-| `u26.x86_64`   | Ubuntu | 26  | 26.04.0 | Ubuntu 26.04 x86  | 14-18 |   ✅    |
-| `u26.aarch64`  | Ubuntu | 26  | 26.04.0 | Ubuntu 26.04 ARM  | 14-18 |   ✅    |
-{.full-width}
+| OS 代码 | 发行版 | 版本 |
+|:---|:---|:---|
+| `el8` | RHEL、Rocky Linux、AlmaLinux | 8 |
+| `el9` | RHEL、Rocky Linux、AlmaLinux | 9 |
+| `el10` | RHEL、Rocky Linux、AlmaLinux | 10 |
+| `d12` | Debian | 12 |
+| `d13` | Debian | 13 |
+| `u22` | Ubuntu | 22.04 LTS |
+| `u24` | Ubuntu | 24.04 LTS |
+| `u26` | Ubuntu | 26.04 LTS |
 
-**说明：**
+不同扩展支持的版本与平台组合有所不同。在目标主机上查询：
 
-- **EL** 指 RHEL 兼容发行版，包括 RHEL、CentOS、RockyLinux、AlmaLinux、OracleLinux 等
-- **EOL** 表示该操作系统已经或即将停止支持，建议升级到更新版本
-- **✅** 表示完整支持，推荐使用
-- PG 版本 14-18 表示支持 PostgreSQL 14、15、16、17、18 五个大版本
+```bash
+pig ext avail vector
+```
+
+{{< param pig_catalog_count >}} 个目录条目中包含已打包的 SQL 工具，以及已移除扩展的保留记录。官网与 CLI 使用同一[目录条目计数口径](/zh/pig/cmd/ext/#catalog-count)。选择软件包时，请查看条目状态和可用矩阵。EL 7 与 Debian 11 不在当前软件包矩阵中。
+
+macOS 版支持目录查询、配置清单编辑等操作。PostgreSQL 软件包安装使用 Linux 包管理器。二进制下载见[安装](/zh/pig/install/)。
+
+## 选择工作流
+
+- **在已有主机上安装：** 用 `pig repo add pgsql -u` 添加仓库，再安装所需软件包。
+- **统一配置新主机的仓库：** 用 `pig repo set` 备份并替换现有仓库定义。
+- **构建软件包：** 准备构建主机，再用 [`pig build`](/zh/pig/cmd/build/) 执行维护好的构建规格。
+- **准备离线安装：** 用 `pig ext import` 收集软件包，用 `pig repo create` 生成索引，再用 `pig repo cache` 打包。详见[离线仓库](/zh/pig/cmd/repo/)。
+- **编写脚本或 Agent 工作流：** 用 `pig -o json --help` 查看命令能力，再按[命令参考](/zh/pig/cmd/)选择输出格式与计划选项。
+
+[设计归档](https://pig.pgsty.com/zh/design/)解释主要实现决策，[发布注记](/zh/release/pig/)记录各版本的变化。

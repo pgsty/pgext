@@ -6,139 +6,132 @@ weight: 300
 breadcrumb: false
 ---
 
+可通过 Linux 安装脚本、系统软件包或发布压缩包安装 PIG。当前版本为 **v{{< param pig_version >}}**，全部发布文件见[下载页](https://pig.pgsty.com/zh/download/)。
+
 ## 脚本安装
 
-安装 `pig` 最简单的方式是运行以下安装脚本：
-
-**默认安装**（Cloudflare CDN）：
-
-```bash
-curl -fsSL https://repo.pigsty.io/pig | bash
-```
-
-**中国镜像**：
+在 Linux 上执行：
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/pig | bash
 ```
 
-该脚本会从 Pigsty [软件仓库](/zh/repo/) 下载最新版 `pig` 的 RPM / DEB 包，并通过 `rpm` 或 `dpkg` 进行安装。
-脚本安装面向 Linux x86_64 / aarch64 的 RPM / DEB 系发行版；macOS 可使用发布压缩包中的二进制。
-
-
-## 指定版本
-
-您可以指定已经发布到所选镜像的特定版本，将版本号作为参数传入即可：
-
-**默认安装**（Cloudflare CDN）：
+中国大陆以外可使用：
 
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s X.Y.Z
+curl -fsSL https://repo.pigsty.io/pig | bash
 ```
 
-**中国镜像**：
+脚本检测 CPU 架构，下载 RPM 或 DEB 包，再调用 `rpm` 或 `dpkg` 安装。安装需要 root 或 `sudo` 权限。
+
+检查安装后的版本：
 
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s X.Y.Z
+pig version
 ```
 
-镜像发布可能晚于 GitHub Release；如需精确获取当前版本，请使用下方 GitHub 制品。
+指定已发布版本时，将版本号作为参数传入：
 
+```bash
+curl -fsSL https://repo.pigsty.cc/pig | bash -s {{< param pig_version >}}
+```
 
 ## 发布产物下载
 
-当前 `v1.9.0` 安装包（`RPM`/`DEB`/压缩包）可从以下位置获取：
+在[下载页](https://pig.pgsty.com/zh/download/#packages)或 [GitHub Release](https://github.com/pgsty/pig/releases/tag/v{{< param pig_version >}}) 中选择对应操作系统与架构的文件。
 
-- [GitHub Release](https://github.com/pgsty/pig/releases/tag/v1.9.0)
-- [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.9.0/checksums.txt)
+| 系统 | 格式 | 架构名称 |
+|:---|:---|:---|
+| EL | RPM | `x86_64`、`aarch64` |
+| Debian、Ubuntu | DEB | `amd64`、`arm64` |
+| Linux | tar.gz | `amd64`、`arm64` |
+| macOS | tar.gz | `amd64`（Intel）、`arm64`（Apple Silicon） |
 
-直接下载时使用 `https://github.com/pgsty/pig/releases/download/v1.9.0/<filename>`。
+使用发布压缩包时，解压并将 `pig` 可执行文件放入 `PATH` 中的目录。例如，在 Apple Silicon 上执行：
 
-```text
-v1.9.0
-├── pig_1.9.0-1_amd64.deb
-├── pig_1.9.0-1_arm64.deb
-├── pig-1.9.0-1.aarch64.rpm
-├── pig-1.9.0-1.x86_64.rpm
-├── pig-v1.9.0.linux-amd64.tar.gz
-├── pig-v1.9.0.linux-arm64.tar.gz
-├── pig-v1.9.0.darwin-amd64.tar.gz
-└── pig-v1.9.0.darwin-arm64.tar.gz
+```bash
+curl -fLO https://github.com/pgsty/pig/releases/download/v{{< param pig_version >}}/pig-v{{< param pig_version >}}.darwin-arm64.tar.gz
+tar -xzf pig-v{{< param pig_version >}}.darwin-arm64.tar.gz
+sudo mkdir -p /usr/local/bin
+sudo install -m 0755 pig /usr/local/bin/pig
+pig version
 ```
 
-将其解压后，将二进制文件放入您的 PATH 系统路径中即可。
-对应的 Pigsty 镜像目录会在软件仓库同步后可用；使用锁定版本的安装命令前，请先检查目标 URL。
+每个版本提供 [SHA-256 校验和](https://github.com/pgsty/pig/releases/download/v{{< param pig_version >}}/checksums.txt)。Linux 用 `sha256sum`，macOS 用 `shasum -a 256` 计算下载文件的哈希，再与清单比对。
 
+macOS 版支持目录查询、配置清单编辑等不依赖 Linux 包管理器的操作。安装 PostgreSQL 软件包请使用[受支持的 Linux 主机](/zh/pig/intro/#linux-兼容性)。
 
 ## 仓库安装
 
-`pig` 软件位于 [`pigsty-infra`](/zh/repo/infra/) 仓库中。你可以将该仓库添加到操作系统后，使用操作系统的包管理器进行安装：
+要用系统包管理器维护 PIG，先添加 [Pigsty Infra 仓库](https://pigsty.cc/docs/repo/infra/)。按主机选择对应标签页：
 
-### YUM
-
-对于 RHEL，RockyLinux，CentOS，Alma Linux，OracleLinux 等 EL 系发行版：
-
-```bash
-sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'
-[pigsty-infra]
-name=Pigsty Infra for $basearch
-baseurl=https://repo.pigsty.io/yum/infra/$basearch
-enabled = 1
-gpgcheck = 0
-module_hotfixes=1
-EOF
-
-sudo yum makecache;
-sudo yum install -y pig
-```
-
-### APT
-
-对于 Debian，Ubuntu 等 DEB 系发行版：
-
-```bash
+```bash {tab="APT (Debian / Ubuntu)" group="install-pig-repository" value="apt" copy="all"}
 sudo tee /etc/apt/sources.list.d/pigsty-infra.list > /dev/null <<EOF
-deb [trusted=yes] https://repo.pigsty.io/apt/infra generic main
+deb [trusted=yes] https://repo.pigsty.cc/apt/infra generic main
 EOF
 
-sudo apt update;
+sudo apt update
 sudo apt install -y pig
 ```
 
+```bash {tab="DNF (EL)" value="dnf" copy="all"}
+sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'
+[pigsty-infra]
+name=Pigsty Infra for $basearch
+baseurl=https://repo.pigsty.cc/yum/infra/$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+EOF
+
+sudo dnf makecache
+sudo dnf install -y pig
+```
+
+这些仓库定义关闭了 Pigsty 仓库的签名校验。密钥处理与校验设置见[仓库密钥](/zh/pig/cmd/repo/#repo-key)。
 
 ## 更新
 
-若要将现有 `pig` 版本升级至最新可用版本，可以使用以下命令：
+在 Linux 上更新 PIG 程序：
 
 ```bash
-pig update            # 将 pig 自身升级到最新版
-pig update -m         # 通过 pigsty.cc 镜像升级
+sudo pig update
 ```
 
-若要将现有 `pig` 的扩展数据升级至最新可用版本，可以使用以下命令：
+加 `-m` 使用中国镜像，加 `-v {{< param pig_version >}}` 选择该版本。macOS 压缩包安装请下载新版归档并替换已安装的可执行文件。
+
+单独刷新扩展目录：
 
 ```bash
-pig ext reload        # 将 pig 扩展数据更新至最新版本
+pig ext reload
 ```
 
+此命令更新目录元数据，已安装的软件包保持不变。
 
 ## 卸载
 
+按安装方式选择对应命令：
+
 ```bash
-apt remove -y pig     # Debian / Ubuntu 等 Debian 系统
-yum remove -y pig     # RHEL / CentOS / RockyLinux 等 EL 系发行版
-rm -rf /usr/bin/pig   # 若直接使用二进制安装，删除二进制文件即可
+sudo apt remove pig              # Debian / Ubuntu 软件包
+sudo dnf remove pig              # EL 软件包
+sudo rm /usr/local/bin/pig        # 安装在此路径的归档二进制
 ```
 
+如果归档二进制安装在其他位置，删除对应文件即可。PostgreSQL 及其扩展可以继续运行。
 
 ## 构建
 
-你也可以自行构建 `pig`。`pig` 使用 Go 语言开发，构建非常容易，源码托管在 [github.com/pgsty/pig](https://github.com/pgsty/pig)
+安装 Git、Make，以及项目 [go.mod](https://github.com/pgsty/pig/blob/v{{< param pig_version >}}/go.mod) 指定的 Go 工具链。构建当前发布版本：
 
 ```bash
-git clone https://github.com/pgsty/pig.git; cd pig
+git clone --branch v{{< param pig_version >}} https://github.com/pgsty/pig.git
+cd pig
 go mod download
 make build
+./pig version
 ```
 
-所有 RPM / DEB 包都通过 GitHub CI/CD 流程使用 goreleaser 自动化构建。
+`make build` 在当前目录生成适用于本机平台的 `pig`。发布流程通过 GoReleaser 生成 RPM、DEB 和 tar.gz 文件。
+
+接下来按[上手教程](/zh/pig/start/)安装 PostgreSQL 并启用扩展。

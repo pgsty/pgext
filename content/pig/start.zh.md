@@ -6,385 +6,116 @@ weight: 200
 breadcrumb: false
 ---
 
-下面是一个简单的上手教程，带您体验 PIG 包管理器的核心能力。
+本教程安装 PostgreSQL 18 和 pgvector，启动本地测试实例，并在数据库中启用扩展。
 
-## 简短版本
+准备一台[受支持的 Linux 测试主机](/zh/pig/intro/#linux-兼容性)，确保能联网并已安装 `curl`。你需要 root 或 `sudo` 权限。按顺序执行以下命令。
 
-```bash
-curl -fsSL https://repo.pigsty.io/pig | bash   # 从 Cloudflare 安装 PIG
-pig repo set                                   # 一次性设置好 Linux, Pigsty + PGDG 仓库（覆盖式！）
-pig install -v 18 -y pg18 pg_duckdb vector     # 安装 PG 18 内核，pg_duckdb, pgvector 扩展……
-```
-
-
-## 安装
-
-您可以使用以下命令 [**一键安装**](https://pig.pgsty.com/zh/install/) `pig`：
-
-**中国大陆**：
+## 安装 PIG {#安装}
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/pig | bash
+pig version
 ```
 
-**全球网站**（Cloudflare CDN）：
+中国大陆以外可使用 `https://repo.pigsty.io/pig`。安装脚本会选择与主机匹配的 RPM 或 DEB 包。其他方式见[安装](/zh/pig/install/)。
+
+## 检查主机 {#检查环境}
 
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash
+pig status
 ```
 
+查看操作系统代码、CPU 架构和已检测到的 PostgreSQL 安装。此命令也会测试软件仓库的连通性。
 
+## 添加仓库 {#添加仓库}
 
-PIG 二进制包大约 5 MB，在 Linux 上会自动使用 `rpm` 或 `dpkg` 安装所选镜像中的最新可用版本。下方示例输出中的 `X.Y.Z` 代表该镜像版本：
+添加 PGDG 与 Pigsty PostgreSQL 仓库，并刷新软件包元数据：
 
 ```bash
-$ curl -fsSL https://repo.pigsty.cc/pig | bash
-[INFO] kernel = Linux
-[INFO] machine = x86_64
-[INFO] package = deb
-[INFO] pkg_url = https://repo.pigsty.cc/pkg/pig/vX.Y.Z/pig_X.Y.Z-1_amd64.deb
-[INFO] download = /tmp/pig_X.Y.Z-1_amd64.deb
-[INFO] downloading pig vX.Y.Z
-curl -fSL https://repo.pigsty.cc/pkg/pig/vX.Y.Z/pig_X.Y.Z-1_amd64.deb -o /tmp/pig_X.Y.Z-1_amd64.deb
-######################################################################## 100.0%
-[INFO] installing: dpkg -i /tmp/pig_X.Y.Z-1_amd64.deb
-(Reading database ... 166001 files and directories currently installed.)
-Preparing to unpack /tmp/pig_X.Y.Z-1_amd64.deb ...
-Unpacking pig (X.Y.Z-1) ...
-Setting up pig (X.Y.Z-1) ...
-[INFO] pig vX.Y.Z installed successfully
-check https://pgext.cloud for details
+sudo pig repo add pgsql --update
 ```
 
+需要中国镜像时，在命令后加上 `--mirror`。
 
-
-## 检查环境
-
-PIG 是一个由 Go 编写的二进制程序，默认安装路径为 `/usr/bin/pig`，`pig version` 会打印版本信息：
+## 安装 PostgreSQL 与 pgvector {#安装-pg}
 
 ```bash
-$ pig version
-pig version 1.9.0 linux/amd64
+sudo pig install -v 18 pg18 vector
 ```
 
-使用 `pig status` 命令，会打印当前环境的状态，操作系统代码，PG 的安装情况，仓库的可访问性与延迟。
+检查包管理器列出的变更并确认。
+
+`pg18` 选择 PostgreSQL 18 软件包，`vector` 选择 pgvector。`-v 18` 指定扩展使用的 PostgreSQL 大版本。
+
+检查已安装的扩展文件：
 
 ```bash
-$ pig status
-# [Configuration] ================================
-Pig Version      : 1.9.0
-Pig Config       : /home/vagrant/.pig/config.yml
-Log Level        : info
-Log Path         : stderr
-
-# [OS Environment] ===============================
-OS Distro Code   : u26
-OS OSArch        : arm64
-OS Package Type  : deb
-OS Vendor ID     : ubuntu
-OS Version       : 26
-OS Version Full  : 26.04
-OS Version Code  : resolute
-
-# [PG Environment] ===============================
-Installed:
-* PostgreSQL 18.4 (Ubuntu 18.4-1.pgdg26.04+1)  72  Extensions
-
-Active:
-PG Version      :  PostgreSQL 18.4 (Ubuntu 18.4-1.pgdg26.04+1)
-Config Path     :  /usr/lib/postgresql/18/bin/pg_config
-Binary Path     :  /usr/lib/postgresql/18/bin
-Library Path    :  /usr/lib/postgresql/18/lib
-Extension Path  :  /usr/share/postgresql/18/extension
-
-# [Pigsty Environment] ===========================
-Inventory Path   : Not Found
-Pigsty Home      : Not Found
-
-# [Network Conditions] ===========================
-pigsty.cc  ping ok: 376 ms
-pigsty.io  ping ok: 1270 ms
-Internet Access   :  true
-Pigsty Repo       :  pigsty.io
-Inferred Region   :  china
-Latest Pigsty Ver :  4.5.0
+pig ext status -v 18
 ```
 
-## 自动化建议
+## 启动测试实例 {#start-a-test-instance}
 
-对于生产环境恢复任务，建议先使用 `--plan` 预览 PITR 执行计划，再决定是否实际执行：
+本教程使用 `/pg/data-demo` 和 `15432` 端口，以避开 `5432` 端口上的默认集群。请使用尚未占用的目录和端口。
+
+创建空的数据目录，并将所有者设为操作系统用户 `postgres`：
 
 ```bash
-pig pitr -d --plan            # 仅预览恢复步骤，不执行
-pig pitr -d -y                # 跳过确认（自动化场景）
+sudo install -d -m 700 -o postgres -g postgres /pg/data-demo
+sudo pig pg init -v 18 -D /pg/data-demo
 ```
 
-
-## 列出扩展
-
-Pig v1.9.0 内置的是发布时的目录快照。先用 `pig ext reload` 刷新，再通过 `pig ext list` 打印当前 PG 扩展目录。
+在 `15432` 端口启动实例：
 
 ```bash
-$ pig ext reload
-$ pig ext list
-✓ Found 600 extensions
-Name                Status     Version     Cate   Flags   License         Repo     PGVer  Package                               Description
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-timescaledb         available  2.29.1      TIME   -dslt-  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-tsl         Enables scalable inserts and complex queries for time-series dat
-timescaledb_toolkit available  1.23.0      TIME   -ds---  Timescale       PIGSTY   15-18  postgresql-18-timescaledb-toolkit     Library of analytical hyperfunctions, time-series pipelining, an
-timeseries          available  0.2.1       TIME   -d----  PostgreSQL      PIGSTY   14-18  postgresql-18-pg-timeseries           Convenience API for time series stack
-periods             available  1.2.3       TIME   -ds---  PostgreSQL      PIGSTY   14-18  postgresql-18-periods                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
-........
-pg_bulkload         available  3.1.23      ETL    bds---  BSD 3-Clause    PIGSTY   14-18  postgresql-18-pg-bulkload             pg_bulkload is a high speed data loading utility for PostgreSQL
-test_decoding       available  -           ETL    --s--x  PostgreSQL      CONTRIB  14-18  postgresql-18                         SQL-based test/example module for WAL logical decoding
-pgoutput            available  -           ETL    --s---  PostgreSQL      CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
-
-(600 Rows)
+sudo pig pg start -v 18 -D /pg/data-demo -O '-p 15432'
+sudo pig pg status -v 18 -D /pg/data-demo
 ```
 
-所有的扩展元数据都在一份名为 [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv) 的数据文件中定义，
-这份文件会随着 pig 版本发布不断更新，您可以直接使用 [`pig ext reload`](https://pig.pgsty.com/zh/ext/#ext-reload) 命令更新这份数据文件。
-更新后的文件会默认放置于 `~/.pig/extension.csv` 中，您可以查阅与更改；在线最新版目录可在 [**pigsty.io/ext/data/extension.csv**](https://pigsty.io/ext/data/extension.csv) 获取。
+## 启用并测试 pgvector {#enable-and-test-pgvector}
 
-
-
-
-## 添加仓库
-
-要想安装扩展，首先需要添加上游仓库。[`pig repo`](https://pig.pgsty.com/zh/repo/) 可用于管理 Linux APT/YUM/DNF 软件仓库配置。
-
-您可以使用简单粗暴直接的版本 [`pig repo set`](https://pig.pgsty.com/zh/repo/#repo-set) 覆盖式写入现有仓库配置，该命令确保系统中只存在必须的仓库配置：
+连接测试实例：
 
 ```bash
-pig repo set                # 一次性配置好所有仓库，包括 Linux 系统仓库，PGDG，PIGSTY (PGSQL+INFRA) 仓库
+sudo pig pg psql -v 18 -D /pg/data-demo
 ```
 
-> **警告**：`pig repo set` 会备份并清理现有的仓库配置，然后添加所需的仓库，实现 Overwrite 语义，请务必注意！
+PIG 从指定数据目录读取实例的连接信息。在 `psql` 提示符下执行：
 
+```sql
+CREATE EXTENSION vector;
+SELECT extname, extversion FROM pg_extension WHERE extname = 'vector';
+SELECT '[1,2,3]'::vector <-> '[4,5,6]'::vector AS distance;
+```
 
-或者选择使用温和的 [`pig repo add`](https://pig.pgsty.com/zh/repo/#repo-add) 添加所需的仓库：
+第一个查询返回已安装的 pgvector 版本，第二个查询返回约为 `5.196` 的距离值。输入 `\q` 退出 `psql`。
+
+`CREATE EXTENSION` 在当前连接的数据库中启用扩展。其他数据库需要 pgvector 时，也要分别执行此语句。
+
+完成测试后停止实例：
 
 ```bash
-pig repo add pgdg pigsty     # 添加 PGDG 官方仓库 和 PIGSTY 补充仓库
-pig repo add pgsql           # 【可选】您也可以选择将 PGDG 和 PIGSTY 合在一起，当成一个 "pgsql" 模块整体添加
-pig repo update              # 更新缓存：apt update / yum makecache
+sudo pig pg stop -v 18 -D /pg/data-demo
 ```
 
-PIG 会检测您的网络环境，并选择使用 Cloudflare 全球 CDN，或者中国境内云 CDN，但您可以通过 `--region` 参数强制指定区域。
+数据保留在 `/pg/data-demo` 中。再次执行启动命令即可继续使用。服务配置与其他操作见 [PostgreSQL 管理](/zh/pig/cmd/pg/)。
+
+## 查找更多扩展 {#列出扩展}
 
 ```bash
-pig repo set      --region=china              # 使用中国区域镜像仓库加速下载
-pig repo set      --mirror                    # 使用中国镜像（PGDG 首选腾讯云）
-pig repo add pgdg --region=default --update   # 强制指定使用 PGDG 上游仓库
+pig ext list                 # 列出扩展目录
+pig ext list duckdb          # 按名称或描述搜索
+pig ext info pg_duckdb       # 查看元数据和启用要求
+pig ext avail pg_duckdb      # 查看软件包可用矩阵
 ```
 
-PIG 本身不支持离线安装，您可以自行下载 RPM/DEB 包，拷贝到网络隔离的生产服务器安装。
-相关项目 PIGSTY 提供本地软件仓库，支持可以使用 pig 从本地软件仓库安装已经下载好的扩展。
+安装其他扩展前，用 `info` 查看启用要求，用 `avail` 检查软件包是否可用。
 
+## 选择软件包与版本 {#别名翻译}
 
+需要其他 PostgreSQL 大版本时，替换上述命令中的 `18`。
+软件包组、版本选择和已有安装的处理方式见[扩展安装](/zh/pig/cmd/ext/#ext-add)。
 
-## 安装 PG
+## 检查与更新 {#显示扩展}
 
-添加仓库后，您可以使用 [`pig ext add`](https://pig.pgsty.com/zh/ext/#ext-add) 子命令安装扩展（以及相关软件包）
-
-```bash
-pig ext add -v 18 -y pgsql timescaledb postgis vector pg_duckdb pg_mooncake # 安装 PG 18 内核与扩展，自动确认
-
-# 该命令会自动执行翻译，将软件包翻译为
-INFO[20:34:44] translate alias 'pgsql' to package: postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl
-INFO[20:34:44] translate extension 'timescaledb' to package: timescaledb-tsl_18
-INFO[20:34:44] translate extension 'postgis' to package: postgis36_18
-INFO[20:34:44] translate extension 'vector' to package: pgvector_18
-INFO[20:34:44] translate extension 'pg_duckdb' to package: pg_duckdb_18
-INFO[20:34:44] translate extension 'pg_mooncake' to package: pg_mooncake_18
-INFO[20:34:44] installing packages: dnf install -y postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl timescaledb-tsl_18 postgis36_18 pgvector_18 pg_duckdb_18 pg_mooncake_18
-```
-
-这里使用了 "别名翻译" 机制，将清爽的 PG 内核/扩展 逻辑包名翻译为实际的 RPM/DEB 列表。如果您不需要别名翻译机制，可以直接使用 `apt/dnf` 安装，
-或者使用变体 `pig install` 的  `-n|--no-translation` 参数：
-
-```bash
-pig install vector     # 带有翻译机制，安装当前 PG 18 对应的 pgvector_18 或 postgresql-18-pgvector
-pig install vector -n  # 关闭翻译机制，安装名为 vector 的日志收集组件（来自 pigsty-infra 仓库）
-```
-
-
-
-
-## 别名翻译
-
-PostgreSQL 内核与扩展对应着一系列的 RPM/DEB 包，记住这些包是一件麻烦事，所以 pig 提供了许多常用的别名，帮助您简化安装过程：
-
-例如在 EL 系统上， 下面的别名将会被翻译为右侧的对应 RPM 包列表：
-
-```yaml
-pgsql:        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl"
-pg18:         "postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl"
-pg18-client:  "postgresql18"
-pg18-server:  "postgresql18-server postgresql18-libs postgresql18-contrib"
-pg18-devel:   "postgresql18-devel"
-pg18-basic:   "pg_repack_18 wal2json_18 pgvector_18"
-pg17-mini:    "postgresql17 postgresql17-server postgresql17-libs postgresql17-contrib"
-pg16-full:    "postgresql16 postgresql16-server postgresql16-libs postgresql16-contrib postgresql16-plperl postgresql16-plpython3 postgresql16-pltcl postgresql16-llvmjit postgresql16-test postgresql16-devel"
-pg15-main:    "postgresql15 postgresql15-server postgresql15-libs postgresql15-contrib postgresql15-plperl postgresql15-plpython3 postgresql15-pltcl pg_repack_15 wal2json_15 pgvector_15"
-pg14-core:    "postgresql14 postgresql14-server postgresql14-libs postgresql14-contrib postgresql14-plperl postgresql14-plpython3 postgresql14-pltcl"
-```
-
-注意这里的 `$v` 占位符会被替换为 PG 大版本号，因此当您使用 `pgsql` 别名时，`$v` 会被实际替代为 18，17 这样的大版本号。
-因此，当您安装 `pg18-server` 别名时，EL 上实际安装的是 `postgresql18-server`, `postgresql18-libs`, `postgresql18-contrib`，在 Debian / Ubuntu 上安装的是 `postgresql-18`，pig 会处理好所有细节。
-
-<details>
-<summary>常用 PostgreSQL 别名</summary>
-
-[EL 使用的别名翻译列表](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L206)
-
-```bash
-"pgsql":        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl",
-"pgsql-mini":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib",
-"pgsql-core":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl",
-"pgsql-full":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit postgresql$v-test postgresql$v-devel",
-"pgsql-main":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl pg_repack_$v wal2json_$v pgvector_$v",
-"pgsql-client": "postgresql$v",
-"pgsql-server": "postgresql$v-server postgresql$v-libs postgresql$v-contrib",
-"pgsql-devel":  "postgresql$v-devel",
-"pgsql-basic":  "pg_repack_$v wal2json_$v pgvector_$v",
-```
-
-[Debian / Ubuntu 系统使用的别名翻译](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L270)
-
-```bash
-"pgsql":        "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v",
-"pgsql-mini":   "postgresql-$v postgresql-client-$v",
-"pgsql-core":   "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v",
-"pgsql-full":   "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v postgresql-server-dev-$v",
-"pgsql-main":   "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v postgresql-$v-repack postgresql-$v-wal2json postgresql-$v-pgvector",
-"pgsql-client": "postgresql-client-$v",
-"pgsql-server": "postgresql-$v",
-"pgsql-devel":  "postgresql-server-dev-$v",
-"pgsql-basic":  "postgresql-$v-repack postgresql-$v-wal2json postgresql-$v-pgvector",
-```
-
-上面这些别名可以直接使用，并通过参数实例化大版本号，也可以使用另一种带有大版本号的别名变体：即将 `pgsql` 替换为 `pg18`, `pg17`, `pgxx` 等具体大版本号。
-当前活跃支持的 PostgreSQL 主版本范围为 **14-18**，例如对于 PostgreSQL 18，可以直接使用下面这些别名：
-
-| `pgsql`        | `pg18`        | `pg17`        | `pg16`        | `pg15`        | `pg14`        |
-|:---------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-| `pgsql`        | **`pg18`**    | `pg17`        | `pg16`        | `pg15`        | `pg14`        |
-| `pgsql-mini`   | `pg18-mini`   | `pg17-mini`   | `pg16-mini`   | `pg15-mini`   | `pg14-mini`   |
-| `pgsql-core`   | `pg18-core`   | `pg17-core`   | `pg16-core`   | `pg15-core`   | `pg14-core`   |
-| `pgsql-full`   | `pg18-full`   | `pg17-full`   | `pg16-full`   | `pg15-full`   | `pg14-full`   |
-| `pgsql-main`   | `pg18-main`   | `pg17-main`   | `pg16-main`   | `pg15-main`   | `pg14-main`   |
-| `pgsql-client` | `pg18-client` | `pg17-client` | `pg16-client` | `pg15-client` | `pg14-client` |
-| `pgsql-server` | `pg18-server` | `pg17-server` | `pg16-server` | `pg15-server` | `pg14-server` |
-| `pgsql-devel`  | `pg18-devel`  | `pg17-devel`  | `pg16-devel`  | `pg15-devel`  | `pg14-devel`  |
-| `pgsql-basic`  | `pg18-basic`  | `pg17-basic`  | `pg16-basic`  | `pg15-basic`  | `pg14-basic`  |
-{.full-width}
-
-</details>
-
-
-
-## 安装扩展
-
-pig 会检测当前系统环境中的 PostgreSQL 安装情况。如果检测到环境中（以 `PATH` 中的 `pg_config` 为准）有活跃的 PG 安装，那么 pig 会自动安装对应 PG 大版本所需的扩展，无需您显式指定 PG 大版本。
-
-```bash
-pig install pg_smtp_client          # 更简单
-pig install pg_smtp_client -v 18    # 显示指定大版本，更稳定可靠
-pig install pg_smtp_client -p /usr/lib/postgresql/16/bin/pg_config   # 另一种指定 PG 版本的方式
-dnf install pg_smtp_client_18       # 最直接……，但并非所有扩展都这么简单……
-```
-
-提示：如需将特定大版本的 PostgreSQL 内核二进制加入 `PATH`，可用 `pig ext link` 命令：
-
-```bash
-pig ext link pg18             # 创建 /usr/pgsql 软链接，并写入 /etc/profile.d/pgsql.sh
-. /etc/profile.d/pgsql.sh     # 立即生效，更新 PATH 环境变量
-```
-
-如果你想要安装特定版本的软件，可以使用 `name=ver` 的语法：
-
-```bash
-pig ext add -v 18 pgvector=0.7.2 # install pgvector 0.7.2 for PG 18
-pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor version
-```
-
-> **警告**：请注意，目前只有 PGDG YUM 仓库提供扩展历史版本，PIGSTY 仓库与 PGDG APT 仓库都只提供扩展的 **最新版本**。
-
-
-
-
-## 显示扩展
-
-[`pig ext status`](https://pig.pgsty.com/zh/ext/#ext-status) 命令可以用于显示当前安装的扩展。
-
-```bash
-$ pig ext status
-
-✓ PostgreSQL 18: 72 extensions installed (3 shown)
-PostgreSQL 18: PostgreSQL 18.4 (Ubuntu 18.4-1.pgdg26.04+1)
-  Binary: /usr/lib/postgresql/18/bin
-  Extension: /usr/share/postgresql/18/extension
-
-Extension Stat: 3 Installed (PGDG 3, PIGSTY 0) + 69 CONTRIB = 72 Total
-
-Name       Version  Cate   Flags   License       Repo  Package                 Description
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-pg_repack  1.5.3    ADMIN  bds---  PostgreSQL    PGDG  postgresql-18-repack    Reorganize tables in PostgreSQL databases with minimal locks
-vector     0.8.4    RAG    -ds--r  PostgreSQL    PGDG  postgresql-18-pgvector  vector data type and ivfflat and hnsw access methods
-wal2json   2.6      ETL    --s--x  BSD 3-Clause  PGDG  postgresql-18-wal2json  Changing data capture in JSON format
-```
-
-如果您的当前系统路径中找不到 PostgreSQL（以 `PATH` 中的 `pg_config` 为准），建议显式通过 `-v|-p` 指定 PG 大版本号或 `pg_config` 路径，以避免版本探测歧义。
-
-
-
-## 扫描扩展
-
-[`pig ext scan`](https://pig.pgsty.com/zh/ext/#ext-scan) 提供更底层的扩展扫描功能，将扫描指定 PostgreSQL 目录下的共享库，从而发现安装了哪些扩展：
-
-```bash
-$ pig ext scan
-
-Installed:
-- PostgreSQL 18.4 (Ubuntu 18.4-1.pgdg26.04+1)  72 Extensions
-
-Active:
-PG Version      :  PostgreSQL 18.4 (Ubuntu 18.4-1.pgdg26.04+1)
-Config Path     :  /usr/lib/postgresql/18/bin/pg_config
-Binary Path     :  /usr/lib/postgresql/18/bin
-Library Path    :  /usr/lib/postgresql/18/lib
-Extension Path  :  /usr/share/postgresql/18/extension
-
-Name       Version  SharedLibs      Description                                                        Meta
-----       -------  ----------      -----------                                                        ----
-pg_repack  1.5.3    pg_repack.so    Reorganize tables in PostgreSQL databases with minimal locks        module_pathname=$libdir/pg_repack relocatable=false lib=pg_repack.so
-vector     0.8.4    vector.so       vector data type and ivfflat and hnsw access methods                relocatable=true lib=vector.so
-wal2json   2.6      wal2json.so     Changing data capture in JSON format                                lib=wal2json.so
-...
-```
-
-
-
-## 容器实战
-
-您可以创建一台全新的虚拟机，或者使用下面的 Docker 容器进行功能测试，创建一个 `d13` 目录，创建 `Dockerfile`：
-
-```dockerfile
-FROM debian:13
-USER root
-WORKDIR /root/
-CMD ["/bin/bash"]
-
-RUN apt update && apt install -y ca-certificates curl && curl https://repo.pigsty.io/pig | bash
-```
-
-```bash
-docker build -t d13:latest .
-docker run -it d13:latest /bin/bash
-
-pig repo set --region=china    # 添加中国区域的仓库
-pig repo set --mirror          # 使用中国镜像（PGDG 首选腾讯云）
-pig install -y pg18            # 安装 PGDG 18 内核包
-pig install -y postgis timescaledb pgvector pg_duckdb
-```
+`pig ext status -v 18` 列出已安装的扩展文件。要查看数据库中已启用的扩展，在 `psql` 中执行 `\dx`。
+需要升级软件包及数据库中的扩展对象时，参阅[扩展更新](/zh/pig/cmd/ext/#ext-update)。

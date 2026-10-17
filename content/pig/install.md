@@ -6,139 +6,132 @@ weight: 300
 breadcrumb: false
 ---
 
-## Script Installation
+Install PIG with the Linux installer, a system package, or a release archive. The current version is **v{{< param pig_version >}}**. The [download page](https://pig.pgsty.com/download/) lists all release files.
 
-The simplest way to install `pig` is to run the following installation script:
+## Script installation
 
-**Default Installation** (Cloudflare CDN):
+On Linux, run:
 
 ```bash
 curl -fsSL https://repo.pigsty.io/pig | bash
 ```
 
-**China Mirror**:
+In mainland China, use:
 
 ```bash
 curl -fsSL https://repo.pigsty.cc/pig | bash
 ```
 
-This script downloads the latest `pig` RPM/DEB package from the Pigsty [software repository](/repo/) and installs it using `rpm` or `dpkg`.
-Script installation targets Linux x86_64 / aarch64 RPM or DEB distributions. On macOS, use the binary from the release tarball.
+The script detects the architecture, downloads the RPM or DEB package, and installs it with `rpm` or `dpkg`. Installation requires root or `sudo` access.
 
-
-## Specify Version
-
-You can request a particular version that is already published on the selected mirror by passing the version number as an argument:
-
-**Default Installation** (Cloudflare CDN):
+Check the installed version:
 
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s X.Y.Z
+pig version
 ```
 
-**China Mirror**:
+To select a published version, pass its version number:
 
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s X.Y.Z
+curl -fsSL https://repo.pigsty.io/pig | bash -s {{< param pig_version >}}
 ```
 
-Mirror publication can lag the GitHub release. For the exact current release, use the GitHub artifacts below.
+## Download release artifacts
 
+Choose a file for your operating system and architecture on the [download page](https://pig.pgsty.com/download/#packages) or [GitHub release](https://github.com/pgsty/pig/releases/tag/v{{< param pig_version >}}).
 
-## Download Release Artifacts
+| System | Format | Architecture names |
+|:---|:---|:---|
+| EL | RPM | `x86_64`, `aarch64` |
+| Debian, Ubuntu | DEB | `amd64`, `arm64` |
+| Linux | tar.gz | `amd64`, `arm64` |
+| macOS | tar.gz | `amd64` (Intel), `arm64` (Apple Silicon) |
 
-Current `v1.9.0` installation packages (`RPM`/`DEB`/tarball) are available from:
-
-- [GitHub Release](https://github.com/pgsty/pig/releases/tag/v1.9.0)
-- [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.9.0/checksums.txt)
-
-Use `https://github.com/pgsty/pig/releases/download/v1.9.0/<filename>` for direct downloads.
-
-```text
-v1.9.0
-├── pig_1.9.0-1_amd64.deb
-├── pig_1.9.0-1_arm64.deb
-├── pig-1.9.0-1.aarch64.rpm
-├── pig-1.9.0-1.x86_64.rpm
-├── pig-v1.9.0.linux-amd64.tar.gz
-├── pig-v1.9.0.linux-arm64.tar.gz
-├── pig-v1.9.0.darwin-amd64.tar.gz
-└── pig-v1.9.0.darwin-arm64.tar.gz
-```
-
-After extracting, place the binary file in your system PATH.
-The equivalent Pigsty mirror directory becomes available after repository synchronization; check the target URL before using a version-pinned installer command.
-
-
-## Repository Installation
-
-The `pig` software is located in the [`pigsty-infra`](/repo/infra/) repository. You can add this repository to your operating system and then install using the OS package manager:
-
-### YUM
-
-For RHEL, RockyLinux, CentOS, Alma Linux, OracleLinux, and other EL distributions:
+For a release archive, extract it and install the `pig` executable in a directory on your `PATH`. For example, on Apple Silicon:
 
 ```bash
-sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'
-[pigsty-infra]
-name=Pigsty Infra for $basearch
-baseurl=https://repo.pigsty.io/yum/infra/$basearch
-enabled = 1
-gpgcheck = 0
-module_hotfixes=1
-EOF
-
-sudo yum makecache;
-sudo yum install -y pig
+curl -fLO https://github.com/pgsty/pig/releases/download/v{{< param pig_version >}}/pig-v{{< param pig_version >}}.darwin-arm64.tar.gz
+tar -xzf pig-v{{< param pig_version >}}.darwin-arm64.tar.gz
+sudo mkdir -p /usr/local/bin
+sudo install -m 0755 pig /usr/local/bin/pig
+pig version
 ```
 
-### APT
+The release includes [SHA-256 checksums](https://github.com/pgsty/pig/releases/download/v{{< param pig_version >}}/checksums.txt). Use `sha256sum` on Linux or `shasum -a 256` on macOS to compare your downloaded file with its listed hash.
 
-For Debian, Ubuntu, and other DEB distributions:
+The macOS binary supports catalog queries, inventory editing, and other commands that do not need Linux package managers. Install PostgreSQL packages on a [supported Linux host](/pig/intro/#linux-compatibility).
 
-```bash
+## Repository installation
+
+To manage PIG with the system package manager, add the [Pigsty Infra repository](https://pigsty.io/docs/repo/infra/). Choose the tab for your host:
+
+```bash {tab="APT (Debian / Ubuntu)" group="install-pig-repository" value="apt" copy="all"}
 sudo tee /etc/apt/sources.list.d/pigsty-infra.list > /dev/null <<EOF
 deb [trusted=yes] https://repo.pigsty.io/apt/infra generic main
 EOF
 
-sudo apt update;
+sudo apt update
 sudo apt install -y pig
 ```
 
+```bash {tab="DNF (EL)" value="dnf" copy="all"}
+sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'
+[pigsty-infra]
+name=Pigsty Infra for $basearch
+baseurl=https://repo.pigsty.io/yum/infra/$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+EOF
+
+sudo dnf makecache
+sudo dnf install -y pig
+```
+
+These definitions disable signature checks for the Pigsty repository. For key handling and verification settings, see [repository keys](/pig/cmd/repo/#repo-key).
 
 ## Update
 
-To upgrade an existing `pig` version to the latest available version, use the following command:
+On Linux, update the executable with:
 
 ```bash
-pig update            # Upgrade pig itself to the latest version
-pig update -m         # Upgrade through the pigsty.cc mirror
+sudo pig update
 ```
 
-To update the extension data of an existing `pig` to the latest available version, use the following command:
+Use `-m` for the China mirror or `-v {{< param pig_version >}}` to select that version. For an archive installation on macOS, download the new archive and replace the installed executable.
+
+Refresh the extension catalog separately:
 
 ```bash
-pig ext reload        # Update pig extension data to the latest version
+pig ext reload
 ```
 
+This updates catalog metadata, leaving installed packages unchanged.
 
 ## Uninstall
 
+Choose the command that matches your installation:
+
 ```bash
-apt remove -y pig     # Debian / Ubuntu and other Debian-based systems
-yum remove -y pig     # RHEL / CentOS / RockyLinux and other EL distributions
-rm -rf /usr/bin/pig   # If installed directly from binary, just delete the binary file
+sudo apt remove pig              # Debian / Ubuntu package
+sudo dnf remove pig              # EL package
+sudo rm /usr/local/bin/pig        # Archive installed at this path
 ```
 
+If you installed the archive elsewhere, remove that executable instead. PostgreSQL and its extensions continue to run without PIG.
 
-## Build from Source
+## Build from source
 
-You can also build `pig` yourself. `pig` is developed in Go and is very easy to build. The source code is hosted at [github.com/pgsty/pig](https://github.com/pgsty/pig)
+Install Git, Make, and the Go toolchain specified in the project's [go.mod](https://github.com/pgsty/pig/blob/v{{< param pig_version >}}/go.mod). Build the current release:
 
 ```bash
-git clone https://github.com/pgsty/pig.git; cd pig
+git clone --branch v{{< param pig_version >}} https://github.com/pgsty/pig.git
+cd pig
 go mod download
 make build
+./pig version
 ```
 
-All RPM/DEB packages are automatically built through GitHub CI/CD workflow using goreleaser.
+`make build` produces `./pig` for the current platform. The release workflow uses GoReleaser to produce RPM, DEB, and tar.gz files.
+
+Continue with [Getting started](/pig/start/) to install PostgreSQL and enable an extension.

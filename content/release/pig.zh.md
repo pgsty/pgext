@@ -5,6 +5,168 @@ weight: 100
 breadcrumb: false
 ---
 
+最新稳定版本是 [v1.10.0](https://github.com/pgsty/pig/releases/tag/v1.10.0)。
+
+|       版本        |     日期     | 摘要                                              |                                                     GitHub |
+|:---------------:|:----------:|-------------------------------------------------|-----------------------------------------------------------:|
+| [v1.10.0](#v1100) | 2026-10-17 | 603 条目录记录，PostgreSQL 目标与恢复安全、Inventory 保真、自动化修复 | [v1.10.0](https://github.com/pgsty/pig/releases/tag/v1.10.0) |
+| [v1.9.0](#v190) | 2026-10-06 | 600 条扩展记录、Xray 角色、公钥准备、pgrx 0.19.3 | [v1.9.0](https://github.com/pgsty/pig/releases/tag/v1.9.0) |
+| [v1.8.1](#v181) | 2026-09-03 | CLI 与仓库安全、默认调试包、pgrx 0.19.2 | [v1.8.1](https://github.com/pgsty/pig/releases/tag/v1.8.1) |
+| [v1.8.0](#v180) | 2026-08-14 | 原生 `sty boot` 与 `sty conf`，575 个已打包扩展           | [v1.8.0](https://github.com/pgsty/pig/releases/tag/v1.8.0) |
+| [v1.7.0](#v170) | 2026-08-12 | EL 模块策略、中国镜像与 EL7 兼容目录，575 个扩展                  | [v1.7.0](https://github.com/pgsty/pig/releases/tag/v1.7.0) |
+| [v1.6.2](#v162) | 2026-08-11 | 572 个扩展，Grafana schema v2，SOW 优先的软件仓库生成         | [v1.6.2](https://github.com/pgsty/pig/releases/tag/v1.6.2) |
+| [v1.6.1](#v161) | 2026-07-30 | 扩展目录刷新，内置 Pigsty 版本对齐到 4.5.0                    | [v1.6.1](https://github.com/pgsty/pig/releases/tag/v1.6.1) |
+| [v1.6.0](#v160) | 2026-07-28 | 562 个已打包扩展，pt 原生透传，inventory 与 CMDB，Grafana 管理  | [v1.6.0](https://github.com/pgsty/pig/releases/tag/v1.6.0) |
+| [v1.5.1](#v151) | 2026-07-08 | PG 内核分支包更新，镜像模式，修复若干问题                          | [v1.5.1](https://github.com/pgsty/pig/releases/tag/v1.5.1) |
+| [v1.5.0](#v150) | 2026-07-04 | 531 个扩展，pigsty v4.4，pg/pb/pt/pitr 重做，clone/fork | [v1.5.0](https://github.com/pgsty/pig/releases/tag/v1.5.0) |
+| [v1.4.2](#v142) | 2026-06-18 | 524 个扩展，PG19 beta，pgrx 0.18.1，Patroni 修复        | [v1.4.2](https://github.com/pgsty/pig/releases/tag/v1.4.2) |
+| [v1.4.1](#v141) | 2026-05-01 | 510 个扩展，支持 Ubuntu 26.04，仓库校准                    | [v1.4.1](https://github.com/pgsty/pig/releases/tag/v1.4.1) |
+| [v1.4.0](#v140) | 2026-04-19 | 510 个扩展，pgrx 0.18.0，更多构建规格                      | [v1.4.0](https://github.com/pgsty/pig/releases/tag/v1.4.0) |
+| [v1.3.4](#v134) | 2026-04-14 | 504 扩展更新与发布产物校验和刷新                              | [v1.3.4](https://github.com/pgsty/pig/releases/tag/v1.3.4) |
+| [v1.3.3](#v133) | 2026-04-10 | 481 扩展与 Go 1.26.2 更新                            | [v1.3.3](https://github.com/pgsty/pig/releases/tag/v1.3.3) |
+| [v1.3.2](#v132) | 2026-03-23 | 例行元数据更新，新增 `pg tune` 与构建别名                      | [v1.3.2](https://github.com/pgsty/pig/releases/tag/v1.3.2) |
+| [v1.3.1](#v131) | 2026-03-05 | PG13 退役，支持窗口统一为 PG14-18，扩展增至 464                | [v1.3.1](https://github.com/pgsty/pig/releases/tag/v1.3.1) |
+| [v1.3.0](#v130) | 2026-02-27 | 构建链路强化，扩展增至 461，新内核支持                           | [v1.3.0](https://github.com/pgsty/pig/releases/tag/v1.3.0) |
+| [v1.2.0](#v120) | 2026-02-23 | 统一别名，例行更新，计划模式，仓库修复                             | [v1.2.0](https://github.com/pgsty/pig/releases/tag/v1.2.0) |
+| [v1.1.1](https://pig.pgsty.com/zh/release/pig-1.1.1/) | 2026-02-14 | 修复路径、符号链接与构建目录迁移问题 | [v1.1.1](https://github.com/pgsty/pig/releases/tag/v1.1.1) |
+| [v1.1.0](#v110) | 2026-02-12 | 451 扩展，Agent-Native CLI 框架                      | [v1.1.0](https://github.com/pgsty/pig/releases/tag/v1.1.0) |
+| [v1.0.0](#v100) | 2026-01-26 | 444, 新增 pg/pt/pb/pitr 子命令，可用性矩阵                 | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
+| [v0.9.0](#v090) | 2025-12-28 | 重命名 sty deploy 并扩展 sty conf 参数 | [v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0) |
+| [v0.8.1](https://pig.pgsty.com/zh/release/pig-0.8.1/) | 2025-12-27 | 将 llvmjit 恢复到 pgsql-full 别名 | [v0.8.1](https://github.com/pgsty/pig/releases/tag/v0.8.1) |
+| [v0.8.0](#v080) | 2025-12-26 | 440 extensions，移除 sysupdate 仓库                  | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
+| [v0.7.5](#v075) | 2025-12-12 | 常规扩展更新，使用修复后的阿里云镜像                              | [v0.7.5](https://github.com/pgsty/pig/releases/tag/v0.7.5) |
+| [v0.7.4](#v074) | 2025-12-01 | 更新 ivory/pgtde 内核与 pgdg extras 仓库               | [v0.7.4](https://github.com/pgsty/pig/releases/tag/v0.7.4) |
+| [v0.7.3](#v073) | 2025-11-24 | 修复 el10 & debian13 仓库配置                         | [v0.7.3](https://github.com/pgsty/pig/releases/tag/v0.7.3) |
+| [v0.7.2](#v072) | 2025-11-20 | 437 个扩展，修复 pig build 的一些问题                      | [v0.7.2](https://github.com/pgsty/pig/releases/tag/v0.7.2) |
+| [v0.7.1](#v071) | 2025-11-10 | 新网站，改进容器内的使用体验                                  | [v0.7.1](https://github.com/pgsty/pig/releases/tag/v0.7.1) |
+| [v0.7.0](#v070) | 2025-11-05 | 强化 build 能力，大批量包更新                              | [v0.7.0](https://github.com/pgsty/pig/releases/tag/v0.7.0) |
+| [v0.6.2](#v062) | 2025-10-03 | 正式提供 PG 18 支持                                   | [v0.6.2](https://github.com/pgsty/pig/releases/tag/v0.6.2) |
+| [v0.6.1](#v061) | 2025-08-14 | CI/CD, el10 存根，PGDG 中国镜像                        | [v0.6.1](https://github.com/pgsty/pig/releases/tag/v0.6.1) |
+| [v0.6.0](#v060) | 2025-07-17 | 423 个扩展，percona pg_tde，mcp 工具箱                  | [v0.6.0](https://github.com/pgsty/pig/releases/tag/v0.6.0) |
+| [v0.5.0](#v050) | 2025-06-30 | 422 个扩展，新的扩展目录                                  | [v0.5.0](https://github.com/pgsty/pig/releases/tag/v0.5.0) |
+| [v0.4.2](#v042) | 2025-05-27 | 421 个扩展，halo 和 oriole deb                       | [v0.4.2](https://github.com/pgsty/pig/releases/tag/v0.4.2) |
+| [v0.4.1](#v041) | 2025-05-07 | 414 个扩展，pg18 别名支持                               | [v0.4.1](https://github.com/pgsty/pig/releases/tag/v0.4.1) |
+| [v0.4.0](#v040) | 2025-05-01 | do 和 pt 子命令，halo 和 orioledb                     | [v0.4.0](https://github.com/pgsty/pig/releases/tag/v0.4.0) |
+| [v0.3.4](#v034) | 2025-04-05 | 常规更新                                            | [v0.3.4](https://github.com/pgsty/pig/releases/tag/v0.3.4) |
+| [v0.3.3](#v033) | 2025-03-25 | 别名、仓库、依赖                                        | [v0.3.3](https://github.com/pgsty/pig/releases/tag/v0.3.3) |
+| [v0.3.2](#v032) | 2025-03-21 | 新扩展                                             | [v0.3.2](https://github.com/pgsty/pig/releases/tag/v0.3.2) |
+| [v0.3.1](#v031) | 2025-03-19 | 轻微错误修复                                          | [v0.3.1](https://github.com/pgsty/pig/releases/tag/v0.3.1) |
+| [v0.3.0](#v030) | 2025-02-24 | 新主页和扩展目录                                        | [v0.3.0](https://github.com/pgsty/pig/releases/tag/v0.3.0) |
+| [v0.2.2](#v022) | 2025-02-22 | 404 个扩展                                         | [v0.2.2](https://github.com/pgsty/pig/releases/tag/v0.2.2) |
+| [v0.2.0](#v020) | 2025-02-14 | 400 个扩展                                         | [v0.2.0](https://github.com/pgsty/pig/releases/tag/v0.2.0) |
+| [v0.1.4](#v014) | 2025-02-12 | 常规错误修复                                          | [v0.1.4](https://github.com/pgsty/pig/releases/tag/v0.1.4) |
+| [v0.1.3](#v013) | 2025-01-23 | 390 个扩展                                         | [v0.1.3](https://github.com/pgsty/pig/releases/tag/v0.1.3) |
+| [v0.1.2](#v012) | 2025-01-12 | anon 扩展和其他 350 个扩展                              | [v0.1.2](https://github.com/pgsty/pig/releases/tag/v0.1.2) |
+| [v0.1.1](https://pig.pgsty.com/zh/release/pig-0.1.1/) | 2025-01-09 | 更新扩展列表                                          | [v0.1.1](https://github.com/pgsty/pig/releases/tag/v0.1.1) |
+| [v0.1.0](#v010) | 2024-12-29 | repo、ext、sty 和自更新                               | [v0.1.0](https://github.com/pgsty/pig/releases/tag/v0.1.0) |
+| [v0.0.1](#v001) | 2024-12-23 | 创世发布                                            | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
+
+--------
+
+## v1.10.0
+
+Pig `v1.10.0` 集中修复现有命令的正确性与安全边界：操作前验证 PostgreSQL 目标，
+保留 Inventory 来源与 YAML 类型，让仓库、扩展及自动化结果准确反映实际执行情况。
+内嵌目录从 **600 条增至 603 条记录**。内置 Pigsty 保持 `4.5.0`，默认 `cargo-pgrx` 保持 `0.19.3`。
+
+### PostgreSQL 目标与维护命令
+
+- 显式 `-D` 将 `psql`、`ps`、`kill`、`vacuum`、`analyze`、`freeze`、`repack` 绑定到所选实例，
+  包括 `--all` 枚举数据库的连接。启动 SQL 客户端前，PIG 检查 PID、数据目录、端口、socket
+  与进程身份。运行元数据无效、过期、来自其他目录或无法确认时直接失败，不回退到另一实例。
+- 未指定 `-D` 时，这些 SQL 命令保留原生客户端的连接默认值。`pg clone` 与 `pg fork`
+  继续使用各自的端口参数。提升后的时间线检查使用所选实例或其控制数据；无法解析时保留未知状态。
+- 计划与确认重试命令保留数据目录、PostgreSQL 版本、操作系统用户和维护选项。
+  `VACUUM FULL` 计划正确标明必须确认。
+- 维护命令的位置参数只接受数据库名称。包含 `=` 或以 `postgres://`、`postgresql://`
+  开头的值在规划或执行前被拒绝，错误信息不回显该值。空格和非 ASCII 名称继续受支持。
+  生成的命令将名称放在 `--` 后，避免把名为 `--all` 的数据库解释成命令选项。
+- `vacuum`、`analyze`、`freeze --all` 在开始维护前验证完整数据库列表。
+  需要连接串或被此边界拒绝的数据库名时，请使用原生客户端。
+
+目标选择见 [`pig pg`](/zh/pig/cmd/pg/#全局参数)，数据库名称规则见
+[维护命令](/zh/pig/cmd/pg/#数据库维护命令)。
+
+### 运行状态、恢复与 fork 安全
+
+- 权限失败、PID 元数据损坏、进程身份无法验证时，报告错误或未知状态，不能据此授权强制初始化、
+  恢复或 fork 替换。`pg status` 对权限失败返回 `130201`（退出码 `3`），其他运行探测失败
+  返回 `130808`（退出码 `1`）。计划将无法确认的前置条件标为 `unknown`。
+- 拒绝 PITR 确认或输入到达 EOF 时，在停止服务、恢复、启动之前返回 `161001`（退出码 `7`）。
+  未知状态不能提供可用于强制终止的 PID，也不能视为启动成功。恢复后的 SQL 检查要求目标已验证。
+- 替换非空的非托管 fork 目录，需要有效的归属元数据，且其中显式记录的目标路径必须匹配。
+  缺失、损坏或不匹配的元数据不能授权删除。运行中目标以及源目标路径关系的保护继续有效。
+- Clone 与 fork 必要时以所选数据库操作系统用户执行路径检查，支持权限为 `0700` 的私有数据目录。
+  无法访问或解析的路径不能绕过校验。托管孤儿副本仍可通过其托管名称清理。
+- 以数据库用户写文件时，使用私有的同目录临时文件并精确替换目标。新文件权限为 `0600`；
+  拒绝目录与符号链接目标，替换时不会覆盖指向旧文件的其他硬链接所见的内容。
+
+[PITR 参考](/zh/pig/cmd/pitr/)介绍托管恢复流程；[`pig pb restore`](/zh/pig/cmd/pb/#pb-restore) 仍是独立的恢复原语。
+
+### Inventory 与 Pigsty
+
+- `sty deploy` 与 `do` 显式向 Ansible 传递已解析的 Inventory 路径。命令行和环境变量中的
+  相对路径以调用者工作目录为基准；带引号的 `~/` 路径在解析前展开。选中的来源缺失或无效时，
+  不会静默回退到其他清单。
+- `pg_users[].roles` 同时保留角色名称字符串与结构化授权，包括授权状态及可选的
+  `admin`、`set`、`inherit` 属性。
+- 编辑、序列化与 CMDB 导出保留可能被 YAML 消费端解释成数字、日期或时间戳的字符串。
+  已有时间戳标量保留原始源码表示。独立 PyYAML 检查验证输出仍为字符串类型。
+- `sty conf --proxy` 接受 HTTP、HTTPS、ALL、NO 代理变量的大写与小写形式；HTTP、HTTPS
+  缺失时都会回退到 ALL_PROXY。版本补全按点分段匹配，指定 `1.1` 不会误选 `1.10`。
+
+详情见 [Inventory 来源选择](/zh/pig/cmd/inventory/#source-selection)与 [`pig sty`](/zh/pig/cmd/sty/)。
+
+### 软件仓库与扩展
+
+- 仓库命令在改文件前验证完整操作数列表。空值、逗号列表中的空项、不安全的仓库名在修改前失败。
+  只有真正不带参数的 `repo rm` 才备份全部仓库文件；`repo rm all` 展开为 `node`、`pgsql`、
+  `infra` 三个模块。删除结果保留原始请求，区分不存在的目标和实际删除的文件。
+  备份全部仓库后也会按 `--update` 刷新缓存。
+- 创建仓库时保留文档 RPM。调试包仍通过 `--nodbg` 排除，包名含 `-docs` 或 `-doc`
+  本身不会将其判为调试包。
+- 默认扩展列表、可用性摘要、刷新结果统计全部目录记录，包括 SQL 工具和保留的生命周期记录。
+  总数表示目录覆盖范围，不表示某台主机可以安装或能通过 `CREATE EXTENSION` 启用的扩展数。
+- 文本、JSON、YAML 共用可用性规则。已覆盖的 Linux 平台以包矩阵为准，矩阵缺项即不可用，
+  架构别名统一处理。macOS 状态仅表示声明的 PostgreSQL 版本支持，不承诺存在 RPM/DEB 包。
+  `ext list -v` 选择判断状态时使用的版本，不会过滤掉不可用记录。
+- `ext import` 在任何请求包无法解析或下载时返回失败，同时保留已成功下载的文件，报告完成与
+  失败部分。APT 虚拟依赖标记不再进入下载包名列表。已安装库扫描也能识别没有控制文件的目录条目。
+- 目录新增 `pg_icu_parser`、`pg_vectorsearch`、`textsearch_intl` 三条记录，同时刷新已有条目的
+  版本和平台元数据。安装前可用 `pig ext avail NAME` 检查目标。
+
+详情见 [`pig repo`](/zh/pig/cmd/repo/)与 [`pig ext`](/zh/pig/cmd/ext/)。
+
+### 构建与自动化
+
+- 多版本构建依赖按每个选定的 PostgreSQL 大版本展开包名，去重后安装。默认构建目标继续遵循
+  扩展元数据与本地安装规则，不会因包矩阵缺包而丢失。
+- Debian/Ubuntu 构建保留继承的 `PATH` 顺序，当前用户的 `~/.cargo/bin` 存在时追加到末尾，
+  保留用户已选工具链的优先级。
+- Xray 设置识别完整旧服务定义，包括旧渲染器生成的无 marker macOS plist。
+  注释本身不能证明归属；被修改或外来的定义仍需要显式替换。配置一致的重复执行保留运行中的服务。
+- JSON/YAML 输出及 `PIG_NON_INTERACTIVE=1` 在 PIG 管理的适配器中一致禁用提示输入，
+  使用非交互 sudo。明确的数据输入通道仍可用；原生 Patronictl 转发保留交互和退出契约。
+- CMDB 连接串、旧 VMess 凭据、许可证密钥不会进入常规参数与失败详情。
+  显式凭据导出与 Inventory 原文显示保留文档约定的敏感输出行为。
+- Exporter HTTP 4xx/5xx 返回失败，仅包含数字状态码与标准说明，不包含响应体或自定义状态文本。
+  `pig update` 在不支持的平台上明确报错。命令帮助与中英文参考文档同步校准。
+- 更新 Go 依赖与验证工具。CI 增加 Linux 权限、实例边界和独立 YAML 消费端验收。
+
+详情见 [`pig build`](/zh/pig/cmd/build/)、[`pig pe`](/zh/pig/cmd/pe/)与[全局命令行为](/zh/pig/cmd/)。
+
+### 升级注意事项
+
+已有命令名和参数继续可用。自动化脚本需要处理部分导入失败、HTTP 错误、恢复取消和
+PostgreSQL 状态无法确定时纠正后的失败状态。仓库操作数必须有效，需要确认的操作仍须显式确认，
+维护命令应传入数据库名称。名称以 `-` 开头时，把全部选项放在前面，再写 `--` 和数据库名。
+
+按[安装文档](/zh/pig/install/)升级。
+
+发布制品：[v1.10.0](https://github.com/pgsty/pig/releases/tag/v1.10.0)
+
+--------
+
 
 ## v1.9.0
 

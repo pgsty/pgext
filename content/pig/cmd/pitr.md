@@ -5,371 +5,254 @@ icon: fa-solid fa-terminal
 weight: 680
 ---
 
-The `pig pitr` command performs point-in-time recovery through pgBackRest and conservatively handles the local PostgreSQL and Patroni lifecycle. Unlike the lower-level `pig pb restore`, `pig pitr` runs pre-restore checks, stops Patroni and PostgreSQL when needed, executes restore, then decides whether to start PostgreSQL based on the selected options.
+Use `pig pitr` to restore a local PostgreSQL instance from pgBackRest backups.
+For a managed restore, PIG stops services as needed and restores the data.
+By default, it then starts PostgreSQL and leaves Patroni stopped for you to verify the recovered database.
 
-Note: for a managed default data directory, `pig pitr` leaves Patroni stopped after recovery. Validate the restored result first, then manually restore Patroni management. This command does not automatically rejoin a Patroni cluster, perform failover, or validate cluster member state.
+Recovery replaces data in the target directory. Start with `--plan` to check the directory,
+backup source, recovery target, and service actions.
 
-```bash
-pig pitr - Perform PITR with pgBackRest restore and conservative PostgreSQL stop/start handling.
+## Before recovery
 
-For the managed default data directory, this command may:
-  1. Stop Patroni only to keep the target PGDATA offline during restore
-  2. Ensure PostgreSQL is stopped (fast stop with retry; destructive fallback only with --force-stop)
-  3. Execute pgbackrest restore
-  4. Start PostgreSQL unless --no-restart is used
-  5. Leave Patroni stopped; provide post-restore guidance
+You need an installed pgBackRest, a readable configuration file, a usable backup,
+and the archived WAL needed to reach the target. The default config path is
+`/etc/pgbackrest/pgbackrest.conf`. Select another file with `-c` and a stanza with `-s`.
 
-Recovery Targets (at least one required):
-  --default, -d      Recover to end of WAL stream (latest)
-  --immediate, -I    Recover to backup consistency point
-  --time, -t         Recover to specific timestamp
-  --name             Recover to named restore point
-  --lsn              Recover to specific LSN
-  --xid              Recover to specific transaction ID
+Run the commands on the host that contains the target data directory. PIG runs PostgreSQL and
+pgBackRest operations as `--dbsu`, then `$PIG_DBSU`, then `postgres`.
+Service operations require root privileges, directly or through sudo.
 
-Backup and Target Options:
-  --set, -b          Select backup set to start recovery from
-  --target-action    Action when target is reached: pause, promote, shutdown
-  --target-timeline  Recover along timeline: latest, current, N, or 0xN
-
-Use --no-restart with --target-action=shutdown because PostgreSQL exits
-after reaching the recovery target.
-
-Custom -D side restores require --no-restart. The custom directory must
-already exist, be owned by the configured DBSU (postgres by default), and
-be writable by that user. Pig does not create this directory automatically.
-
-Additional pgBackRest arguments:
-  Put raw pgBackRest restore arguments after -- so Cobra stops parsing them.
-  Example: pig pitr -d -- --delta
-
-Time Format:
-  - Full: "2025-01-01 12:00:00+08"
-  - Date only: "2025-01-01" (defaults to 00:00:00)
-  - Time only: "12:00:00" (defaults to today)
-
-Examples:
-  pig pitr -d                                      # Recover to latest
-  pig pitr -t "2025-01-01 12:00:00+08"            # Recover to time
-  pig pitr -d --plan                               # Preview plan
-  pig pitr -d -y                                   # Skip y/yes confirmation
-  pig pitr -d --no-restart                         # Leave PostgreSQL stopped
-  pig pitr -d -D /tmp/pg-restore --no-restart      # Side restore
-```
-
-
-## Overview
-
-The default target of `pig pitr` is the Pigsty-managed primary data directory. A typical workflow:
-
-1. Validate recovery target parameters. One of `-d/-I/-t/--name/--lsn/--xid` is required.
-2. Resolve pgBackRest configuration and target data directory.
-3. For default data-directory recovery, stop Patroni if it is running.
-4. Ensure PostgreSQL is stopped.
-5. Run `pgbackrest restore`.
-6. Start PostgreSQL unless `--no-restart` is specified.
-7. Print post-recovery validation and Patroni recovery guidance.
-
-**Comparison with `pig pb restore`:**
-
-| Feature | `pig pitr` | `pig pb restore` |
+| Task | `pig pitr` | `pig pb restore` |
 |:---|:---|:---|
-| Stop Patroni | Automatic for default data-directory recovery | Manual |
-| Stop PostgreSQL | Checks and stops automatically | Must be pre-stopped |
-| Start PostgreSQL | Automatic by default, can be disabled with `--no-restart` | Manual |
-| Patroni recovery | Not automatic; restore manually after verification | Not handled |
-| Use case | Production recovery orchestration | Low-level restore or scripting |
+| Stop Patroni for a managed restore | Automatic if active | Operator stops it |
+| Stop PostgreSQL | Checks and stops it | Requires it to be stopped |
+| Restore backup files | pgBackRest | pgBackRest |
+| Start PostgreSQL | Automatic unless `--no-restart` | Operator starts it |
+| Return the instance to Patroni | Operator verifies and resumes management | Operator handles it |
 {.full-width}
 
+Use [`pig pb restore`](/pig/cmd/pb/#pb-restore) when you want to manage service shutdown and startup yourself.
 
-## Quick Start
+## Quick start
+
+This example restores an existing managed data directory to a chosen time.
+Replace the timestamp with your recovery target:
 
 ```bash
-# Most common: recover to the end of the WAL stream
-pig pitr -d
+# Inspect available backups
+pig pb info
 
-# Recover to a specific point in time
-pig pitr -t "2025-01-01 12:00:00+08"
+# Check the recovery plan
+pig pitr -t "2025-01-15 09:30:00+08" --plan -- --delta
 
-# Recover to the backup consistency point
-pig pitr -I
+# Restore the data and start PostgreSQL
+pig pitr -t "2025-01-15 09:30:00+08" -- --delta
 
-# Preview the execution plan without running
-pig pitr -d --plan
-
-# Skip confirmation, suitable for automation
-pig pitr -d -y
-
-# Recover from a specific backup set
-pig pitr -d -b 20251225-120000F
-
-# Restore the default data directory but do not start PostgreSQL afterward
-pig pitr -d --no-restart
-
-# Side restore: restore to a custom directory without touching Patroni or /pg/data
-install -d -m 700 -o postgres -g postgres /tmp/pg-restore
-pig pitr -d -D /tmp/pg-restore --no-restart
-
-# Extra native pgBackRest restore arguments go after --
-pig pitr -d -- --delta
+# Connect to the recovered instance; use its actual data directory
+pig pg psql -D /pg/data
 ```
 
+`--delta` lets pgBackRest restore over an existing directory by comparing file checksums.
+PIG asks for `y` or `yes` before recovery. Use `--yes` for execution without a prompt.
+
+For a time, name, LSN, transaction ID, or immediate target, PostgreSQL normally pauses when it
+reaches the target. Inspect the data before promotion. See [post-recovery actions](#post-recovery-actions).
 
 ## Parameters
 
-### Recovery Target
+### Recovery target
 
-At least one recovery target is required.
+Choose exactly one target. Without a target, PIG returns an error and shows help in text mode.
 
-| Parameter | Short | Description |
+| Option | Short | Description |
 |:---|:---|:---|
-| `--default` | `-d` | Recover to the end of the WAL stream, the latest data |
+| `--default` | `-d` | Recover to the end of available WAL |
 | `--immediate` | `-I` | Recover to the backup consistency point |
-| `--time` | `-t` | Recover to a specific timestamp |
+| `--time` | `-t` | Recover to a timestamp |
 | `--name` | | Recover to a named restore point |
-| `--lsn` | | Recover to a specific LSN |
-| `--xid` | | Recover to a specific transaction ID |
+| `--lsn` | | Recover to an LSN, such as `0/7C82CB8` |
+| `--xid` | | Recover to a positive transaction ID |
 {.full-width}
 
-### Backup And Target Options
+`--set` selects a backup; it does not select a recovery target.
 
-| Parameter | Short | Description |
+### Backup and target options
+
+| Option | Short | Description |
 |:---|:---|:---|
-| `--set` | `-b` | Start recovery from a specific backup set |
-| `--target-action` | | Action when the recovery target is reached: pause/promote/shutdown |
-| `--target-timeline` | `-T` | Recovery timeline: latest/current/N/0xN |
-| `--exclusive` | `-X` | Exclusive mode: stop before target |
+| `--set` | `-b` | Backup label from `pig pb info` |
+| `--target-action` | | Action at the target: `pause`, `promote`, or `shutdown` |
+| `--target-timeline` | `-T` | Timeline: `latest`, `current`, a positive integer, or `0xHEX` |
+| `--exclusive` | `-X` | Stop before a time, LSN, or transaction ID target |
 {.full-width}
 
-Use `--target-action=shutdown` with `--no-restart`, because PostgreSQL exits after reaching that recovery target. `--target-action` cannot be used with `--default`, because `--default` already means recovery to the end of WAL. `--exclusive/-X` requires a precise stop-before target: `--time`, `--lsn`, or `--xid`.
+Use `--no-restart` with `--target-action=shutdown`. Start PostgreSQL manually when you are ready
+for WAL replay; it will shut down after reaching the target.
 
-Native pgBackRest restore arguments after `--` cannot override recovery target, lifecycle, data directory, repository, config, or selection parameters managed by Pig. Use Pig's first-class parameters for these semantics. This restriction is consistent with the `pig pb restore` passthrough blocklist.
+`--target-action` cannot be combined with `--default`. `--exclusive` requires `--time`, `--lsn`, or `--xid`.
 
-### Flow Control
+### Flow control
 
-| Parameter | Short | Description |
-|:---|:---|:---|
-| `--no-restart` | | Do not start PostgreSQL after restore |
-| `--plan` | | Show execution plan only, do not execute |
-| `--yes` | `-y` | Skip interactive y/yes confirmation |
-| `--timeout` | | PostgreSQL startup/recovery wait timeout, default 120 seconds |
-| `--force-stop` | | Allow immediate shutdown and kill fallback if fast stop fails |
+| Option | Short | Default | Description |
+|:---|:---|:---|:---|
+| `--no-restart` | | false | Leave PostgreSQL stopped after restoring files |
+| `--plan` | | false | Inspect the plan without changing data or services |
+| `--yes` | `-y` | false | Skip confirmation |
+| `--timeout` | | 120 | Startup and recovery wait timeout, in seconds |
+| `--force-stop` | | false | Allow immediate shutdown and process termination if fast shutdown fails |
 {.full-width}
 
 ### Configuration
 
-| Parameter | Short | Description |
+| Option | Short | Default or source |
 |:---|:---|:---|
-| `--stanza` | `-s` | pgBackRest stanza name |
-| `--config` | `-c` | pgBackRest config file path |
-| `--repo` | `-r` | Repository number |
-| `--dbsu` | `-U` | Database superuser, default `postgres` |
-| `--data` | `-D` | Target data directory |
+| `--stanza` | `-s` | First stanza in the config file; specify it when several exist |
+| `--config` | `-c` | `/etc/pgbackrest/pgbackrest.conf` |
+| `--repo` | `-r` | Repository selected by pgBackRest |
+| `--dbsu` | `-U` | PostgreSQL operating-system user: `$PIG_DBSU`, then `postgres` |
+| `--data` | `-D` | Target directory; configured `pg1-path`, then `$PGDATA`, then `/pg/data` |
 {.full-width}
 
+### Native restore options
 
-## Time Format
-
-The `--time` parameter supports multiple formats and completes missing parts using the current timezone:
-
-| Format | Example | Description |
-|:---|:---|:---|
-| Full | `2025-01-01 12:00:00+08` | Complete timestamp with timezone |
-| Date time without timezone | `2025-01-01 12:00:00` | Adds the current local timezone automatically; `T` separator is also accepted |
-| Date only | `2025-01-01` | Completes to 00:00:00 on that date |
-| Time only | `12:00:00` | Completes to that time today |
-{.full-width}
-
-Plan output and replayable next-action commands normalize date-only and time-only targets into deterministic timestamps with timezone. This rule is consistent with `pig pb restore --plan`.
-
-
-## Managed Directory And Side Restore
-
-The managed PostgreSQL data directory comes from the effective pgBackRest `pg1-path` and command parameters. It is not hardcoded to `/pg/data`. For example, if managed PGDATA is `/var/lib/pgsql/18/data`, the command still treats it as a managed restore. Path comparison resolves symlinks as the database superuser when needed, so a symlink to managed PGDATA is not mistaken for a side restore.
-
-An explicit `-D/--data` that resolves to a path different from the managed directory is a side restore. Side restores must use `--no-restart`; they do not stop Patroni and do not manage the default PostgreSQL service. After restore, handle the side instance manually with commands such as `pg_ctl -D <dir> -o "-p 5433" start`, `pg_ctl -D <dir> status`, and `pgbackrest --pg1-path=<dir> stanza-create`. The side-restore directory must already exist and be owned by the DBSU. Unlike managed PGDATA, it does not need a pre-existing `PG_VERSION` marker. Pig does not create this directory automatically because it needs a concrete path for destructive-restore classification, owner checks, and safe guidance before restore.
-
-```bash
-install -d -m 700 -o postgres -g postgres /tmp/pg-restore
-pig pitr -d -D /tmp/pg-restore --no-restart
-```
-
-For managed PGDATA outside `/pg/data`, post-restore runbook commands explicitly include the effective data directory:
-
-```bash
-pig pg start -D /var/lib/pgsql/18/data
-pig pg psql -D /var/lib/pgsql/18/data
-pig pg promote -D /var/lib/pgsql/18/data
-```
-
-`pig pg psql -D <dir>` reads `postmaster.pid` under that directory and uses the recorded port and socket directory to connect to the restored instance. If postmaster information cannot be resolved, it does not silently fall back to the default connection target.
-
-
-## Execution Flow
-
-### Phase 1: Pre-Checks
-
-- Validate recovery target parameters; missing targets only print help and return an error.
-- Resolve effective pgBackRest config, stanza, repository, and managed `pg1-path`.
-- Check that the managed data directory exists and is initialized.
-- For side restore, check that the custom data directory exists and is owned by the DBSU.
-- Verify the selected stanza is healthy and has backups; if `--set` is specified, verify that backup set exists.
-- Detect Patroni service state and PostgreSQL runtime state.
-
-### Phase 2: Patroni Handling
-
-For managed data-directory recovery, if Patroni is running, the command stops Patroni so the target PGDATA stays offline during restore. Patroni remains stopped after recovery. A custom `-D` side restore does not touch the managed data directory and therefore does not stop Patroni.
-
-### Phase 3: Ensure PostgreSQL Is Stopped
-
-The command first waits for PostgreSQL to exit after Patroni stops, then retries `pg_ctl stop -m fast`. If PostgreSQL still cannot stop, it does not use more aggressive methods by default. Only explicit `--force-stop` allows immediate shutdown and final kill fallback.
-
-### Phase 4: Restore
-
-The command runs pgBackRest restore and maps recovery target, backup set, timeline, target action, and related options into `pgbackrest restore`. Native pgBackRest arguments can be placed after `--`:
+Put extra pgBackRest arguments after `--`:
 
 ```bash
 pig pitr -d -- --delta
 ```
 
-### Phase 5: Start Or Stay Stopped
+Use PIG flags for the recovery target, data directory, config, stanza, and repository.
+Arguments that override these settings are rejected, including `--repoN-*` and `--recovery-option`.
+Other restore options, such as `--delta`, `--tablespace-map`, `--link-map`, and `--link-all`, can be forwarded.
 
-Unless `--no-restart` is specified, the command starts PostgreSQL after restore and waits for recovery completion. For `--default` and `--target-action=promote`, it waits until `pg_is_in_recovery()` becomes false on the recovered instance. Recovery and subsequent SQL probes bind to the port recorded in `postmaster.pid` for the restored data directory and use the socket directory there when present. Use `--no-restart` when:
+## Time format
 
-- Running a custom `-D` side restore, because the restored config still keeps the original port and must be started manually on a free port.
-- Using `--target-action=shutdown`, because PostgreSQL exits after reaching the recovery target.
-- You need to inspect the restored directory before deciding whether to start.
+PIG fills in missing date or timezone fields using the local date and timezone:
 
+| Format | Example | Interpretation |
+|:---|:---|:---|
+| Full timestamp | `2025-01-01 12:00:00+08` | Explicit date, time, and timezone |
+| No timezone | `2025-01-01 12:00:00` | Local timezone; a `T` separator also works |
+| Date only | `2025-01-01` | Midnight on that date |
+| Time only | `12:00:00` | That time today |
+{.full-width}
 
-## Examples
+Use a full timestamp with timezone in scripts. Plans and suggested follow-up commands expand
+short forms to a full timestamp so that rerunning the command keeps the same target.
 
-### Scenario 1: Recover Dropped Data
+## Managed directory and side restore
 
-```bash
-# 1. View available backups
-pig pb info
+The managed directory comes from `pg1-path` in the selected stanza, then `$PGDATA`, then `/pg/data`.
+It must already contain an initialized PostgreSQL instance. An explicit `-D` that resolves to this
+same path is still a managed restore, including a symlink to it.
 
-# 2. Preview recovery plan
-pig pitr -t "2025-01-15 09:30:00+08" --plan
+An explicit `-D` that resolves to a different path selects a **side restore**.
+PIG leaves Patroni and the managed instance alone. The side directory must exist, belong to the
+selected operating-system user, and be writable by that user. It can be empty.
 
-# 3. Execute recovery
-pig pitr -t "2025-01-15 09:30:00+08"
+The `-D` option selects only the data directory. If the backup contains tablespaces or external links, map them to separate paths.
+Add pgBackRest's `--tablespace-map` and `--link-map` options after `--` in the restore command.
 
-# 4. Verify data
-pig pg psql
-SELECT * FROM important_table;
-```
-
-### Scenario 2: Recover To Latest
-
-```bash
-pig pitr -d
-```
-
-### Scenario 3: Recover To Backup Consistency Point
-
-```bash
-pig pitr -I
-```
-
-### Scenario 4: Keep Stopped After Restore
+A side restore requires `--no-restart`. The restored configuration retains the original port;
+start it manually with a free port:
 
 ```bash
-pig pitr -d --no-restart
+# Prepare the directory as root or through sudo
+sudo install -d -m 700 -o postgres -g postgres /tmp/pg-restore
 
-# PostgreSQL and Patroni both remain stopped; inspect directory or logs before starting
-pig pg start
-```
-
-### Scenario 5: Custom Directory Side Restore
-
-```bash
-install -d -m 700 -o postgres -g postgres /tmp/pg-restore
+# Restore backup files into the side directory
 pig pitr -d -D /tmp/pg-restore --no-restart
 
-# Start the side restore manually on a free port
-pg_ctl -D /tmp/pg-restore -o "-p 5433" start
+# Start the side instance on a free port
+pig pg start -D /tmp/pg-restore -O "-p 5433"
+pig pg psql -D /tmp/pg-restore
 ```
 
+`pig pg psql -D` reads the restored directory's `postmaster.pid` to select its port and socket.
+It returns an error if it cannot resolve that instance.
 
-## Execution Plan Example
+## Execution flow
 
-Running `pig pitr -d --plan` shows a plan like:
+1. Validate options, configuration, target directory, stanza health, and available backups.
+   If `--set` is given, check that the backup label exists.
+2. Show the operation and request confirmation, unless `--yes` is given.
+3. For a managed restore, stop an active Patroni service.
+4. Wait for PostgreSQL to stop, then retry fast shutdown if needed. Use `--force-stop` to allow
+   immediate shutdown and a final process-termination attempt.
+5. Run `pgbackrest restore`.
+6. Start PostgreSQL unless `--no-restart` is given. For `--default` or `--target-action=promote`,
+   wait until `pg_is_in_recovery()` is false. For other targets, verify recovery progress yourself.
+7. Print commands for data verification and the remaining recovery steps.
 
-```text
-══════════════════════════════════════════════════════════════════
- PITR Execution Plan
-══════════════════════════════════════════════════════════════════
+Declining confirmation or reaching EOF returns `CodePITRConfirmationRequired` (`161001`, exit
+status `7`) before stopping Patroni or PostgreSQL, restoring data, or starting PostgreSQL.
 
-Current State:
-  Data Directory:  /pg/data
-  Database User:   postgres
-  Patroni Service: active
-  PostgreSQL:      running (PID: 12345)
+An indeterminate PostgreSQL runtime state is an error, not proof that the instance is stopped.
+PIG will not restore over an unverified instance or use an unverified PID for forced termination.
+After restoration, an unknown runtime state cannot count as successful startup and prevents
+follow-up SQL checks against an unverified connection target.
 
-Recovery Target:
-  Latest (end of WAL stream)
+`--plan` runs the prechecks and returns the planned actions. It needs access to the configuration,
+data directory, and backup repository, but does not stop services or restore data.
 
-Execution Steps:
-  [1] Stop Patroni service
-  [2] Ensure PostgreSQL is stopped
-  [3] Execute pgBackRest restore
-  [4] Start PostgreSQL
-  [5] Print post-restore guidance
+## More examples
 
-══════════════════════════════════════════════════════════════════
-```
-
-
-## Post-Recovery Actions
-
-After successful recovery, verify data before restoring orchestration:
+Run one recovery command for the target you need:
 
 ```bash
-# Verify data
-pig pg psql
+# Latest available state, restoring over an existing directory
+pig pitr -d -- --delta
 
-# If recovered to a manual target and promotion is needed
-pig pg promote
+# Backup consistency point
+pig pitr -I -- --delta
 
-# Restore Patroni management only after validation
-systemctl start patroni
+# Use a specific backup label
+pig pitr -d -b 20251225-120000F -- --delta
 
-# Re-create pgBackRest stanza if needed
-pig pb create
+# Restore files, then inspect them before starting PostgreSQL
+pig pitr -d --no-restart -- --delta
+
+# Promote automatically after a time target
+pig pitr -t "2025-01-15 09:30:00+08" --target-action=promote -- --delta
 ```
 
-Leaving Patroni stopped after managed data-directory recovery is intentional. It prevents restored old state from re-entering HA orchestration before validation.
+## Post-recovery actions {#post-recovery-actions}
 
+1. Connect to the restored instance. Use its actual data directory:
 
-## Safety Mechanisms
+   ```bash
+   pig pg psql -D /pg/data
+   ```
 
-**Recovery target required:** Without `-d/-I/-t/--name/--lsn/--xid`, the command only shows help and does not run restore.
+2. Check recovery state, then verify the tables and records you need:
 
-**Confirmation:** In text mode, destructive recovery asks for interactive `y`/`yes` confirmation before execution. Automation can use `-y|--yes`. Structured output mode does not prompt interactively; it must use `--yes` to execute or `--plan` to preview.
+   ```sql
+   SELECT pg_is_in_recovery() AS recovering,
+          CASE WHEN pg_is_in_recovery() THEN pg_is_wal_replay_paused() END AS paused;
+   ```
 
-**Patroni boundary:** For managed data-directory recovery, the command stops Patroni when needed to prevent Patroni from restarting PostgreSQL during restore. It does not automatically rejoin Patroni after recovery.
+3. If recovery is paused at the intended target and you want a writable primary, promote it:
 
-**Side restore boundary:** A custom `-D` side restore must use `--no-restart` because the restored PostgreSQL config still uses the original port. Side restore does not manage Patroni or the default PostgreSQL service.
+   ```bash
+   pig pg promote -D /pg/data
+   ```
 
-**Failure boundary:** If restore fails after Patroni has been stopped, Patroni remains stopped and the target data directory may be partially restored. Fix the underlying issue and rerun PITR, or validate the recovery state first; do not start Patroni before confirmation. If restore has run but PostgreSQL startup fails, inspect PostgreSQL and pgBackRest logs and validate the data directory before deciding whether to restore Patroni management.
+4. For a Patroni-managed cluster, reconcile the restored instance with the cluster's recovery plan,
+   then resume Patroni with `pig pt svc start`. Handle other members and application routing
+   as part of that plan.
 
-**Structured output:** Structured execution requires `--yes`; `--plan` is the preview path. After successful execution, structured PITR results put post-restore actions in the Result envelope's `next_actions`, not inside `data`. `data` includes `requested_data_dir`, `effective_data_dir`, `managed_data_dir`, and `side_restore` so automation can distinguish user input from the actual recovery target.
+If a managed restore fails after stopping Patroni, Patroni stays stopped. The target directory can contain a partial restore. Inspect PostgreSQL and pgBackRest logs, fix the failure, and complete recovery before
+starting Patroni. A startup timeout also needs investigation; it does not undo the restored files.
 
+## Structured output
 
-## Design Notes
+Use `--plan -o json` to inspect a structured plan. Use `--yes -o json` to execute without interaction.
+YAML is also available.
 
-- `pig pitr` calls pgBackRest restore and handles local Patroni/PostgreSQL stop and optional start.
-- `pig pitr` is not a cluster recovery controller. It does not handle Patroni failover, rejoin, VIP, or application traffic switching.
-- Use [`pig pb restore`](https://pig.pgsty.com/pb/#pb-restore) when you need lower-level restore semantics or fine-grained scripting control.
-- Use [`pig pt switchover CLUSTER`](https://pig.pgsty.com/pt/) or [`pig pt failover CLUSTER --candidate MEMBER`](https://pig.pgsty.com/pt/) when you need manual Patroni cluster switching (native patronictl passthrough since v1.6.0; the cluster name is required).
+Successful results include `requested_data_dir`, `effective_data_dir`, `managed_data_dir`, and
+`side_restore` in `data`. Follow-up commands are in the result's top-level `next_actions` field.
 
-**Privilege execution:**
+## Design record
 
-- If the current user is the DBSU: execute directly.
-- If the current user is root: execute with `su - postgres -c`.
-- Other users: execute with `sudo -inu postgres --`.
-
-**Platform support:**
-
-This command is designed for Linux and depends on pgBackRest, systemd for managed service scenarios, and data/log paths accessible by the DBSU.
+[PIG's Operations CLI Safety Contract](https://pig.pgsty.com/design/ops-cli-safety/) explains the separate roles of
+`pig pb restore` and `pig pitr`.

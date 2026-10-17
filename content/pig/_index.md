@@ -1,5 +1,5 @@
 ---
-title: PIG CLI
+title: "PIG 1.10.0 Documentation"
 description: The Missing Package Manager for PostgreSQL Extensions
 icon: fa-solid fa-piggy-bank
 page_width: full
@@ -10,77 +10,57 @@ comments: false
 weight: 100
 ---
 
-— ***Postgres Install Genius, the missing extension package manager for PostgreSQL ecosystem***
+Current stable version: **v{{< param pig_version >}}**. Read the [release notes](/release/pig/#v1100).
 
-{{< cards >}}
-{{< card link="https://pig.pgsty.com/intro"   title="Introduction" subtitle="Why we need a package manager" icon="sparkles" />}}
-{{< card link="https://pig.pgsty.com/start"   title="Get Started"  subtitle="Tutorial and examples"         icon="play" />}}
-{{< card link="https://pig.pgsty.com/install" title="Installation" subtitle="Install in different ways" icon="save" />}}
-{{< /cards >}}
+PIG provides commands to find, install, and build PostgreSQL extension packages. It also manages PostgreSQL, Patroni, pgBackRest, and Pigsty workflows. Package installation uses the system's `apt`, `dnf`, or `yum`.
 
+## Start here
 
+| Your task | Page |
+|:---|:---|
+| Install PostgreSQL and enable your first extension | [Getting started](/pig/start/) |
+| Learn what PIG does and which platforms it supports | [Introduction](/pig/intro/) |
+| Download, install, update, or remove PIG | [Installation](/pig/install/) |
+| Look up commands, options, and automation features | [Command reference](/pig/cmd/) |
 
-## Quick Start
+## Install PostgreSQL and extensions
 
-[Install](https://pig.pgsty.com/install) `pig` with a single command
-
-{{< tabs >}}
-{{< tab label="Default" >}}
-```bash tab="Default"
-curl -fsSL https://repo.pigsty.io/pig | bash     # via Cloudflare
-```
-{{< /tab >}}
-{{< tab label="Mirror" >}}
-```bash tab="Mirror"
-curl -fsSL https://repo.pigsty.cc/pig | bash     # via China Mirror
-```
-{{< /tab >}}
-{{< /tabs >}}
-
-
-Then it's ready to use, assume you want to install the [**`pg_duckdb`**](/e/pg_duckdb/) extension:
+On a Linux host with root or `sudo` access, run:
 
 ```bash
-$ pig repo set                  # overwrite Linux, Pigsty + PGDG repo in one-pass!
-$ pig install pg18              # install PostgreSQL 18 kernel package from official PGDG repo
-$ pig install pg_duckdb -v 18   # install pg_duckdb extension for PG 18 from pigsty repo
-$ pig install -y postgis timescaledb  # install some extension for active postgres installation
-$ pig install -y vector         # use both pkg and ext name to install extensions
+curl -fsSL https://repo.pigsty.io/pig | bash
+sudo pig repo add pgsql --update
+sudo pig install -v 18 pg18 vector
 ```
 
+In mainland China, use `https://repo.pigsty.cc/pig` for the installer. These commands install PostgreSQL 18 and pgvector packages. Continue with [Getting started](/pig/start/) to start a test instance and enable the extension with `CREATE EXTENSION vector`.
 
-## CLI Usage
+## Command reference
 
-Check sub-commands [documentation](https://pig.pgsty.com/cmd/) with `pig help <command>`
+| Task | Command |
+|:---|:---|
+| Configure APT/DNF repositories | [`pig repo`](/pig/cmd/repo/) |
+| Query the catalog, install, or update extension packages | [`pig ext`](/pig/cmd/ext/), [`pig install`](/pig/cmd/#pig-install) |
+| Build extension packages from source | [`pig build`](/pig/cmd/build/) |
+| Manage local PostgreSQL instances and databases | [`pig pg`](/pig/cmd/pg/) |
+| Manage Patroni clusters through patronictl | [`pig pt`](/pig/cmd/pt/) |
+| Inspect or reload pg_exporter | [`pig pe`](/pig/cmd/pe/) |
+| Back up and restore with pgBackRest | [`pig pb`](/pig/cmd/pb/) |
+| Run point-in-time recovery | [`pig pitr`](/pig/cmd/pitr/) |
+| Install and configure Pigsty, manage Grafana | [`pig sty`](/pig/cmd/sty/) |
+| Read, edit, and validate Pigsty inventory | [`pig inventory`](/pig/cmd/inventory/) |
+| Run Pigsty administration playbooks | [`pig do`](/pig/cmd/do/) |
+| Collect host, database, and backup status | [`pig context`](/pig/cmd/#pig-context) |
 
-{{< cards cols="4" >}}
-{{< card link="https://pig.pgsty.com/repo"  title="pig repo"  subtitle="Manage software repositories" icon="library" />}}
-{{< card link="https://pig.pgsty.com/ext"   title="pig ext"   subtitle="Manage postgres extensions"   icon="cube" />}}
-{{< card link="https://pig.pgsty.com/build" title="pig build" subtitle="Build extension from source"  icon="view-grid" />}}
-{{< card link="https://pig.pgsty.com/sty"   title="pig sty"   subtitle="Manage pigsty installation"   icon="cloud-download" />}}
-{{< /cards >}}
+Run `pig help <command>` for command help. For automation, use `pig -o json --help` to inspect command capabilities, then select the relevant output and plan options.
 
-{{< cards cols="4" >}}
-{{< card link="https://pig.pgsty.com/pg"    title="pig pg"    subtitle="Manage local PostgreSQL"      icon="database" />}}
-{{< card link="https://pig.pgsty.com/pt"    title="pig pt"    subtitle="Run patronictl transparently" icon="refresh" />}}
-{{< card link="https://pig.pgsty.com/pb"    title="pig pb"    subtitle="Manage pgBackRest backup"     icon="archive" />}}
-{{< card link="https://pig.pgsty.com/pitr"  title="pig pitr"  subtitle="Orchestrated PITR recovery"   icon="clock" />}}
-{{< /cards >}}
+## Find more information
 
-{{< cards cols="4" >}}
-{{< card link="https://pig.pgsty.com/inventory" title="pig inventory" subtitle="Edit & validate pigsty.yml" icon="clipboard-list" />}}
-{{< /cards >}}
+Press {{< kbd "Ctrl" "K" >}} ({{< kbd "⌘" "K" >}} on macOS) to search the site. Press {{< kbd "/" >}} for page actions. An AI assistant action sends the public page URL and a reading prompt to the selected service.
 
+- [Design Records](https://pig.pgsty.com/design/): implementation decisions, trade-offs, and proposals.
+- [Release notes](/release/pig/): changes and download files for each version.
+- [Extension catalog](https://pigsty.io/ext/list/): extension descriptions and package information.
+- [GitHub Issues](https://github.com/pgsty/pig/issues): report a problem or request a feature.
 
-
-## About
-
-The `pig` CLI is developed by [Vonng](https://blog.vonng.com/en/), and open-sourced under the [Apache License 2.0](https://github.com/pgsty/pig/?tab=Apache-2.0-1-ov-file#readme).
-
-You can also check the [pigsty](https://pgsty.com) project, which makes it even smoother to deliver all these [extensions](/list) in an IaC way:
-
-{{< cards cols=4 >}}
-{{< card link="https://github.com/pgsty/pgext"  title="PGEXT"  icon="github" subtitle="This Website and Extension Catalog" />}}
-{{< card link="https://github.com/pgsty/pig"    title="PIG"    icon="github" subtitle="The PostgreSQL Package Manager" />}}
-{{< card link="https://github.com/pgsty/pigsty" title="PIGSTY" icon="github" subtitle="The Battery-Included PostgreSQL Distribution" />}}
-{{< /cards >}}
+PIG is developed by [Vonng](https://vonng.com/en/) and released under [Apache 2.0](https://github.com/pgsty/pig/blob/main/LICENSE). [Pigsty](https://pigsty.io/) provides PostgreSQL deployment, monitoring, backups, and high availability.

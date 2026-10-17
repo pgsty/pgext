@@ -5,46 +5,16 @@ icon: fa-solid fa-terminal
 weight: 670
 ---
 
-The `pig pgbackrest` command (alias `pig pb`) manages pgBackRest backups and provides low-level restore primitives.
-It wraps common `pgbackrest` operations for a simplified backup management experience. All commands run as the database superuser (default `postgres`).
-For orchestrated point-in-time recovery on managed clusters, prefer [`pig pitr`](https://pig.pgsty.com/pitr/).
+`pig pgbackrest` (alias `pig pb`) creates backups, restores data, and manages pgBackRest stanzas.
+It runs pgBackRest as the PostgreSQL operating-system user, selected by `--dbsu` or `$PIG_DBSU`
+(default `postgres`).
 
-```bash
-pig pb - Manage pgBackRest backup and point-in-time recovery.
+Before the first backup, install pgBackRest and configure the stanza and repository in `pgbackrest.conf`.
+A *stanza* groups the backup configuration for one PostgreSQL cluster.
+In PostgreSQL, enable `archive_mode` and set `archive_command` to call pgBackRest.
 
-Information:
-  pig pb info                      show backup info
-  pig pb list                      list backups
-  pig pb list repo                 list configured repositories
-  pig pb list stanza               list all stanzas
-
-Backup & Restore:
-  pig pb backup                    create backup (auto: full/incr)
-  pig pb backup full               create full backup
-  pig pb restore                   low-level restore primitive
-  pig pb restore -t "..."          restore to specific time
-  pig pb expire                    cleanup expired backups
-
-Stanza Management:
-  pig pb create                    create stanza (first-time setup)
-  pig pb upgrade                   upgrade stanza (after PG upgrade)
-  pig pb delete                    delete stanza (DANGEROUS!)
-
-Control:
-  pig pb check                     verify backup integrity
-  pig pb start                     enable pgBackRest operations
-  pig pb stop                      disable pgBackRest operations
-  pig pb log                       view pgBackRest logs
-
-Examples:
-  pig pb info                      # show all backup info
-  pig pb backup                    # auto: full if none, else incr
-  pig pb backup full               # full backup
-  pig pb restore -d                # restore to latest (end of WAL)
-  pig pb restore -t "2025-01-01 12:00:00+08"  # restore to time
-  pig pb create                    # initialize stanza
-  pig pb expire                    # cleanup per retention policy
-```
+Use [`pig pitr`](/pig/cmd/pitr/) when recovery must also stop Patroni and PostgreSQL, then restart PostgreSQL.
+Use `pig pb restore` when you manage those steps yourself.
 
 ## Command Overview
 
@@ -53,7 +23,7 @@ Examples:
 | Command | Alias | Description | Implementation |
 |:---|:---|:---|:---|
 | `pb info` | `i` | Show backup repository info | `pgbackrest info` |
-| `pb list` | `ls` | List backup sets, repos, and stanzas | `pgbackrest info` |
+| `pb list` | `ls` | List backup sets, repos, and stanzas | `pgbackrest info` and configuration |
 {.full-width}
 
 **Backup & Restore**:
@@ -61,7 +31,7 @@ Examples:
 | Command | Alias | Description | Implementation |
 |:---|:---|:---|:---|
 | `pb backup` | `b` | Create backup | `pgbackrest backup` |
-| `pb restore` | `r` | Low-level restore primitive | `pgbackrest restore` |
+| `pb restore` | `r` | Restore backup files | `pgbackrest restore` |
 | `pb expire` | `e` | Clean up expired backups | `pgbackrest expire` |
 {.full-width}
 
@@ -71,53 +41,34 @@ Examples:
 |:---|:---|:---|:---|
 | `pb create` | `c` | Create stanza (first-time setup) | `pgbackrest stanza-create` |
 | `pb upgrade` | `u` | Upgrade stanza after PG major upgrade | `pgbackrest stanza-upgrade` |
-| `pb delete` | `d` | Delete stanza (dangerous!) | `pgbackrest stanza-delete` |
+| `pb delete` | `d` | Delete stanza and its backups | `pgbackrest stanza-delete` |
 {.full-width}
 
 **Control Commands**:
 
 | Command | Alias | Description | Implementation |
 |:---|:---|:---|:---|
-| `pb check` | `ck` | Verify backup repository integrity | `pgbackrest check` |
+| `pb check` | `ck` | Check stanza configuration and WAL archiving | `pgbackrest check` |
 | `pb start` | `up` | Enable pgBackRest operations | `pgbackrest start` |
 | `pb stop` | `dw` | Disable pgBackRest operations | `pgbackrest stop` |
 | `pb log` | `l` | View logs | latest log snapshot / tail |
 {.full-width}
 
+## Create the first backup {#quick-start}
 
-## Quick Start
+After configuring pgBackRest and WAL archiving, create the stanza and check the configuration:
 
 ```bash
-# View backup info
-pig pb info                          # Show all backup info
-pig pb info -o json                  # Result-wrapped structured JSON output
-pig pb info --raw --raw-output json  # Native pgBackRest JSON output
-pig pb ls                            # List all backups
-pig pb ls repo                       # List configured repos
-pig pb ls stanza                     # List all stanzas
-
-# Create backup (must run on primary)
-pig pb backup                        # Auto mode: full if none, else incr
-pig pb backup full                   # Full backup
-pig pb backup diff                   # Differential backup
-pig pb backup incr                   # Incremental backup
-
-# Restore (low-level restore primitive, at least one recovery target is required)
-pig pb restore -d                    # Restore to latest (end of WAL)
-pig pb restore -I                    # Restore to backup consistency point
-pig pb restore -t "2025-01-01 12:00:00+08"  # Restore to specific time
-pig pb restore --name savepoint      # Restore to named restore point
-
-# Stanza management
-pig pb create                        # Initialize stanza
-pig pb upgrade                       # Upgrade stanza after PG major upgrade
-pig pb check                         # Verify repository integrity
-
-# Cleanup
-pig pb expire                        # Clean up per retention policy
-pig pb expire --plan                 # Preview cleanup plan only
+pig pb create
+pig pb check
 ```
 
+If the check succeeds, create a full backup and inspect it:
+
+```bash
+pig pb backup full
+pig pb info
+```
 
 ## Global Options
 
@@ -128,18 +79,18 @@ These options apply to all `pig pb` subcommands:
 | `--stanza` | `-s` | pgBackRest stanza name (auto-detected) |
 | `--config` | `-c` | Config file path |
 | `--repo` | `-r` | Repository number (multi-repo scenario) |
-| `--dbsu` | `-U` | Database superuser (default: `$PIG_DBSU` or `postgres`) |
+| `--dbsu` | `-U` | PostgreSQL operating-system user (default: `$PIG_DBSU` or `postgres`) |
 {.full-width}
 
 **Stanza Auto-Detection:**
 
-If `-s` is not specified, pig auto-detects the stanza name from the config file:
+If `-s` is not specified, PIG detects the stanza name from the config file:
 
 1. Read the config file (default `/etc/pgbackrest/pgbackrest.conf`)
 2. Find sections that do not start with `[global*]`
 3. Use the first stanza found
 
-If the config file contains multiple stanzas, pig emits a warning and uses the first one. In that case, specify `--stanza` explicitly.
+If the config file contains multiple stanzas, PIG emits a warning and uses the first one. In that case, specify `--stanza` explicitly.
 
 **Multi-Repo Support:**
 
@@ -150,7 +101,6 @@ pig pb backup -r 1                   # Backup to repo1
 pig pb backup -r 2                   # Backup to repo2
 pig pb info -r 2                     # View repo2 backup info
 ```
-
 
 ## Information Commands
 
@@ -173,7 +123,6 @@ pig pb info --set 20250101-120000F   # Show details for a specific backup set
 | `--set` | | Show details for a specific backup set |
 {.full-width}
 
-
 ### pb ls
 
 List resources in the backup repository.
@@ -194,12 +143,11 @@ pig pb ls stanza                     # List all stanzas
 | stanza | List all stanzas | Parse pgbackrest.conf |
 {.full-width}
 
-
 ## Backup Commands
 
 ### pb backup
 
-Create a physical backup. Backups can only run on the primary instance.
+Create a physical backup. PIG checks that the local instance is a primary before running pgBackRest.
 
 ```bash
 pig pb backup                        # Auto mode
@@ -220,25 +168,26 @@ pig pb backup --force                # Skip primary role check
 
 | Type | Description |
 |:---|:---|
-| (empty) | Auto mode: full if no backup exists, otherwise incremental |
+| (empty) | Use pgBackRest configuration; by default, incremental, or full when no full backup exists |
 | full | Full backup: backup all data |
 | diff | Differential backup: changes since the last full backup |
 | incr | Incremental backup: changes since the last backup of any type |
 {.full-width}
 
-**Primary Check:**
-
-Before running a backup, the command automatically checks whether the current instance is primary. If it is a replica, the command exits with an error. Use `--force` to skip this check.
-
+A replica, stopped instance, or unknown role fails this check. Use `--force` only when you intend
+to delegate role handling to your pgBackRest configuration. It skips the PIG check; pgBackRest still
+applies its own backup requirements.
 
 ### pb expire
 
-Clean up expired backups and WAL archives according to the retention policy.
+Remove backups and WAL archives according to the configured retention policy.
+Use an exact backup label with `--set`; this also expires backups that depend on that set.
+WAL retention still applies during this operation. See the [pgBackRest expire reference](https://pgbackrest.org/command.html#command-expire).
 
 ```bash
 pig pb expire                        # Clean up per policy
-pig pb expire --set 20250101-*       # Delete a specific backup set
-pig pb expire --set 20250101-* -y    # Skip confirmation when deleting backup set
+pig pb expire --set 20250101-120000F       # Delete a specific backup set
+pig pb expire --set 20250101-120000F -y    # Skip confirmation when deleting backup set
 pig pb expire --plan                 # Preview cleanup plan only, do not delete
 ```
 
@@ -251,6 +200,9 @@ pig pb expire --plan                 # Preview cleanup plan only, do not delete
 | `--yes` | `-y` | Skip confirmation prompt when used with `--set` |
 {.full-width}
 
+`--plan` runs a pgBackRest dry run. With structured output, the PIG plan includes the dry-run
+output when it is available. Review that output to see the affected backups.
+
 **Retention Policy:**
 
 Retention policy is configured in `pgbackrest.conf`:
@@ -262,13 +214,13 @@ repo1-retention-diff=4               # Differential backups to retain
 repo1-retention-archive=2            # WAL archive retention policy
 ```
 
-
 ## Restore Commands
 
 ### pb restore
 
-Restore from backup with recovery target support.
-At least one recovery target (`-d/-I/-t/--name/--lsn/--xid`) must be specified explicitly. Without parameters, help is shown.
+Restore backup files into the target data directory. PostgreSQL must be stopped.
+Select exactly one recovery target: `-d`, `-I`, `-t`, `--name`, `--lsn`, or `--xid`.
+A missing target returns an error; text mode also shows help.
 
 ```bash
 # Recovery target (mutually exclusive options)
@@ -285,9 +237,9 @@ pig pb restore --xid 12345           # Restore to transaction ID
 pig pb restore -b 20251225-120000F -d  # Restore from specific backup set to latest
 
 # Other options
-pig pb restore -t "..." -X           # Exclusive mode (stop before target)
-pig pb restore -t "..." --target-action=promote  # Promote after reaching target
-pig pb restore -t "..." -T current   # Recover along current timeline
+pig pb restore -t "2025-01-01 12:00:00+08" -X           # Exclusive mode (stop before target)
+pig pb restore -t "2025-01-01 12:00:00+08" --target-action=promote  # Promote after reaching target
+pig pb restore -t "2025-01-01 12:00:00+08" -T current   # Recover along current timeline
 pig pb restore -d --plan             # Preview restore plan only
 pig pb restore -d -y                 # Skip interactive y/yes confirmation
 pig pb restore -d -- --delta         # Pass native pgBackRest restore args after --
@@ -321,7 +273,10 @@ pig pb restore -d -- --delta         # Pass native pgBackRest restore args after
 
 **Combination Rules:** `--target-action` cannot be used with `--default`, because `--default` already means recovery to the end of the WAL stream. `--exclusive/-X` must be used with an explicit stop target: `--time`, `--lsn`, or `--xid`.
 
-Native pgBackRest restore args after `--` cannot override recovery targets, lifecycle, data directory, repository, config, or selection semantics already managed by Pig. Use Pig's first-class options for those semantics. Tablespace/link migration options such as `--tablespace-map`, `--link-map`, and `--link-all` can still be passed through.
+Set the target, data directory, stanza, repository, and config through PIG options.
+PIG rejects native arguments that would override them, including `--repoN-*` and `--recovery-option`.
+Pass other restore options after `--`, for example `--delta`, `--tablespace-map`, `--link-map`, or `--link-all`.
+Use `-- --delta` to restore over an existing data directory with checksum-based file reuse.
 
 **Time Formats:**
 
@@ -342,14 +297,22 @@ Supports multiple time formats and auto-completes timezones (including non-integ
 4. Execute pgbackrest restore
 5. Provide post-restore guidance
 
-**Important:** Stop PostgreSQL before restore. If the PGDATA is managed by Patroni, use [`pig pitr`](https://pig.pgsty.com/pitr/) to orchestrate Patroni, PostgreSQL, and pgBackRest:
+For a standalone instance at `/pg/data`, inspect the plan, stop the instance, then restore:
 
 ```bash
-pig pg stop                          # Stop PostgreSQL
-pig pb restore -t "..."              # Execute restore
-pig pg start                         # Start PostgreSQL
+pig pb restore -D /pg/data -t "2025-01-01 12:00:00+08" --plan
+pig pg stop -D /pg/data
+pig pb restore -D /pg/data -t "2025-01-01 12:00:00+08" -- --delta
+pig pg start -D /pg/data
+pig pg psql -D /pg/data
 ```
 
+For another path, pass the same `-D` to each command. Verify the recovered data before promotion.
+When Patroni is active for the managed directory, `pb restore` refuses the operation;
+use [`pig pitr`](/pig/cmd/pitr/).
+
+Text mode asks for `y` or `yes` before restore. In scripts with `-o json` or `-o yaml`,
+add `--yes` to execute, or use `--plan` to inspect the operation.
 
 ## Stanza Management Commands
 
@@ -371,7 +334,6 @@ pig pb create --force                # Force create
 | `--force` | `-f` | Force create |
 {.full-width}
 
-
 ### pb upgrade
 
 Update stanza after a PostgreSQL major version upgrade.
@@ -392,7 +354,6 @@ pig pb upgrade --no-online           # Upgrade when PostgreSQL is not running
 
 After a PostgreSQL major version upgrade (for example, 16 -> 17), run this command to update stanza metadata.
 
-
 ### pb delete
 
 Delete a stanza and all its backups.
@@ -411,23 +372,18 @@ pig pb delete --plan                 # Preview delete plan
 | `--yes` | `-y` | Skip interactive y/yes confirmation |
 {.full-width}
 
-**Warning:** This is a **destructive and irreversible** operation. All backups will be permanently deleted.
-
-The command includes multiple safety mechanisms:
-
-1. In text mode, it requires interactive `y`/`yes` confirmation unless `--yes` is specified
-2. Structured output mode requires explicit `--yes`
-3. If the config file contains multiple stanzas and `--stanza` is not specified, pig refuses to auto-select a deletion target
-
+Deletion permanently removes the selected stanza's backups. In text mode, enter `y` or `yes`
+to confirm, or use `--yes`. Structured execution requires `--yes`.
+When the configuration has several stanzas, select one with `--stanza`.
 
 ## Control Commands
 
 ### pb check
 
-Verify backup repository integrity and configuration.
+Check stanza configuration, repository access, and WAL archiving.
 
 ```bash
-pig pb check                         # Verify repository
+pig pb check                         # Check configuration and archiving
 ```
 
 This command checks:
@@ -436,6 +392,8 @@ This command checks:
 - Repository accessibility
 - Stanza configuration validity
 
+`check` does not read every backup file to verify its contents. Use pgBackRest
+[`verify`](https://pgbackrest.org/command.html#command-verify) when you need backup and archive checksum verification.
 
 ### pb start
 
@@ -446,7 +404,6 @@ pig pb start                         # Enable operations
 ```
 
 Use this command after `pb stop` to resume normal operations.
-
 
 ### pb stop
 
@@ -467,7 +424,6 @@ pig pb stop --force                  # Terminate running operations
 **Use Case:**
 
 Use this command during system maintenance to prevent new backup operations from starting.
-
 
 ## Log Commands
 
@@ -499,54 +455,30 @@ pig pb log cat                       # Alias for show
 | Option | Short | Default | Description |
 |:---|:---|:---|:---|
 | `--lines` | `-n` | 50 | Number of lines to show |
-| `--follow` | `-f` | false | Makes parent command `pb log` follow; no-op in `pb log tail` because tail always follows |
+| `--follow` | `-f` | false | Follow with `pb log`; `pb log tail` always follows |
 {.full-width}
 
 **Permission Handling:**
 
 If the current user does not have permission to read the log directory, the command automatically retries with `sudo`.
 
+## Paths and privileges
 
-## Design Notes
-
-**Command Execution:**
-
-All `pig pb` commands run as the database superuser (DBSU), because pgBackRest needs access to PostgreSQL data files and WAL archives.
-
-Execution logic:
-
-- If the current user is DBSU: execute directly
-- If the current user is root: use `su - postgres -c "..."` to execute
-- Other users: use `sudo -inu postgres -- ...` to execute
-
-**Relationship with pgbackrest:**
-
-`pig pb` is not a complete wrapper for `pgbackrest`; it is a higher-level abstraction for common operations:
-
-- Auto-detect stanza name without specifying it every time
-- Auto-check primary role before backup
-- Show restore plan and require interactive `y`/`yes` confirmation before restore
-- Provide user-friendly time format input
-- Provide post-restore guidance
-
-For full `pgbackrest` functionality, use the `pgbackrest` command directly.
-
-**Default Configuration Paths:**
-
-| Config | Default |
+| Setting | Default |
 |:---|:---|
-| Config file | `/etc/pgbackrest/pgbackrest.conf` |
-| Log directory | `/pg/log/pgbackrest` |
-| Data directory | `pg1-path` from config, or `$PGDATA`, or `/pg/data` |
+| Configuration file | `/etc/pgbackrest/pgbackrest.conf` |
+| Log directory | Configured `log-path`, then `/pg/log/pgbackrest` |
+| Restore data directory | `--data`, configured `pg1-path`, `$PGDATA`, then `/pg/data` |
 {.full-width}
 
-**Security Considerations:**
+PIG runs pgBackRest directly when the current user is the selected database operating-system user.
+From root, it uses `su`; from another account, it uses `sudo -H -u`.
+The user must be able to read the configuration and access the data and repository paths.
 
-- `pb delete` requires interactive `y`/`yes` confirmation when `--yes` is not specified, and `--stanza` must be explicit under multi-stanza configs
-- `pb restore` requires an explicit recovery target, validates `--time`, and requires interactive `y`/`yes` confirmation when `--yes` is not specified
-- `pb backup` checks primary role by default to prevent running on a replica
-- `pb log tail` does not support structured output; use `pb log show -n N -o json` when a JSONL snapshot is required
+These commands use Linux and Pigsty defaults. Set the configuration path and stanza explicitly
+for other layouts. For pgBackRest operations without a PIG command, run `pgbackrest` directly.
 
-**Platform Support:**
+## Design record
 
-This command is designed for Linux systems and depends on Pigsty's default directory layout.
+[PIG's Operations CLI Safety Contract](https://pig.pgsty.com/design/ops-cli-safety/) explains the boundary between
+the low-level `pb restore` primitive and the orchestrated `pig pitr` workflow.
