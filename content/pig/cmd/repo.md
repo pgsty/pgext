@@ -80,6 +80,11 @@ If the host already has working OS repositories, add `pgsql` for PGDG and Pigsty
 `repo add`, `repo set`, and `repo info` accept comma-separated names and surrounding whitespace.
 Explicit empty names, including an empty argument or `node,`, reject the whole request before
 repository operations. An empty argument is not equivalent to omitting the arguments.
+For `repo add` and `repo set`, module names may contain only ASCII letters, digits, underscores, and
+hyphens. An unsafe name such as `../escape` rejects the whole request before key installation or
+repository changes. A syntactically valid but unknown module retains the existing behavior:
+`repo add` adds valid modules and returns failure for unknown ones; `repo set` and
+`repo add --remove` reject the whole request.
 
 ## Repository Definitions
 
