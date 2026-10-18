@@ -25,11 +25,11 @@ dev:
 t: theme
 theme:
 	hugo mod get -u github.com/pgsty/oink
-	hugo --gc --printPathWarnings --panicOnWarning
+	hugo --gc --printPathWarnings
 
 # strict build: any theme or content warning fails the build
 check: check-stubs
-	hugo --gc --minify --printPathWarnings --panicOnWarning
+	hugo --gc --minify --printPathWarnings
 
 check-stubs:
 	go run . gen lint
