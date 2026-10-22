@@ -26,7 +26,7 @@ The user revoked automatic Claude / Claude Code / Opus review on 2026-10-01 beca
 
 ## Coding Style & Naming Conventions
 
-Format Go code with `gofmt` (Go 1.25) and keep imports sorted via `goimports`. Use descriptive exported names for shared structs (e.g., `BinaryPackage`) and lower-case verb/noun pairs for Cobra commands (`reload`, `status`). Stick with `logrus` for logging to stay compatible with the root setup. Hugo Markdown files remain lower-case with front matter matching existing sections, and Python helpers should follow snake_case and PEP 8.
+Format Go code with `gofmt` (Go 1.27.3) and keep imports sorted via `goimports`. Use descriptive exported names for shared structs (e.g., `BinaryPackage`) and lower-case verb/noun pairs for Cobra commands (`reload`, `status`). Stick with `logrus` for logging to stay compatible with the root setup. Hugo Markdown files remain lower-case with front matter matching existing sections, and Python helpers should follow snake_case and PEP 8.
 
 ## Testing Guidelines
 
