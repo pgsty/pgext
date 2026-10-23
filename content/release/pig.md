@@ -119,7 +119,7 @@ does not update an existing PIG binary.
 
 ### Checksums
 
-```checksums
+```checksums {base="https://github.com/pgsty/pig/releases/download/v1.10.1"}
 fbd58de4cd1fa767c6d2b15d4fcb029fe38c90a0d12db2e387b7f698b5c8a69d  pig-1.10.1-1.aarch64.rpm
 7955e93744fcc2d4cce9044102c2bd7ca470388a0556d3220a624f78e38c629b  pig-1.10.1-1.x86_64.rpm
 31fea0e9513e551e2be8dc99a8fc0f77de4bdfe40e66dadc206e227254bb7942  pig-v1.10.1.darwin-amd64.tar.gz
