@@ -31,6 +31,8 @@ page_width: full
 |    **Need By**    | {{< ext "fsm_core" >}} {{< ext "pg_later" >}} {{< ext "vectorize" >}} |
 |   **See Also**    | {{< ext "redis" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "redis_fdw" >}} {{< ext "pg_durable" >}} {{< ext "pgq" >}} {{< ext "tcn" >}} {{< ext "pgmqtt" >}} {{< ext "pgmemcache" >}} {{< ext "fsm_core" >}} |
 
+> [!Note] SQL-only. 1.13.1 hardens search_path and removes pg_monitor access to message payloads; run ALTER EXTENSION UPDATE and inspect privilege-revocation warnings. Also fixes mixed-case queue notifications.
+
 
 ## Packages
 

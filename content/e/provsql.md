@@ -27,6 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `provsql` |
 |   **Requires**    | {{< ext "uuid-ossp" >}} |
 |   **See Also**    | {{< ext "pgmemento" >}} {{< ext "ddl_historization" >}} {{< ext "table_log" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} {{< ext "pgaudit" >}} {{< ext "pgmnemo" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} |
 

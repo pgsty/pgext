@@ -102,7 +102,7 @@ pig install documentdb_distributed -v 16;   # install for PG 16
 [**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```ini
-shared_preload_libraries = 'citus, pg_documentdb, pg_documentdb_core';
+shared_preload_libraries = 'citus, pg_documentdb_core, pg_cron, pg_documentdb';
 ```
 
 

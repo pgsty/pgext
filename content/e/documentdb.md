@@ -27,12 +27,13 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `documentdb_api` `documentdb_api_internal` `documentdb_api_catalog` `documentdb_data` `documentdb_api_v2` `documentdb_api_internal_admin` `documentdb_api_internal_readwrite` `documentdb_api_internal_readonly` `documentdb_api_internal_bgworker` |
 |   **Requires**    | {{< ext "documentdb_core" >}} {{< ext "pg_cron" >}} {{< ext "postgis" >}} {{< ext "tsm_system_rows" >}} {{< ext "vector" >}} |
 |    **Need By**    | {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
 |   **See Also**    | {{< ext "pgbson" >}} {{< ext "jsquery" >}} {{< ext "pg_projection" >}} {{< ext "mongo_fdw" >}} {{< ext "pgjq" >}} {{< ext "pg_graphql" >}} {{< ext "omni_rest" >}} {{< ext "pg_jsonschema" >}} {{< ext "pg_net" >}} {{< ext "jsonschema" >}} |
 |    **Siblings**   | {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
 
-> [!Note] DocumentDB 1.0 packages install SQL 1.0-0. PGSTY supports PostgreSQL 16-18; PG15 is excluded due to the libbson allocation alignment failure. The OSS package includes documentdb, documentdb_core and documentdb_extended_rum only.
+> [!Note] DocumentDB 1.0 packages install SQL 1.0-0. PGSTY supports PostgreSQL 16-18; PG15 is excluded due to the libbson allocation alignment failure. The OSS package includes documentdb, documentdb_core and documentdb_extended_rum only. External RUM is a package dependency on PG16/17 only, not PG18.
 
 
 ## Packages
@@ -244,7 +245,7 @@ pig install documentdb -v 16;   # install for PG 16
 [**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```ini
-shared_preload_libraries = 'pg_documentdb, pg_documentdb_core, pg_cron';
+shared_preload_libraries = 'pg_documentdb_core, pg_cron, pg_documentdb';
 ```
 
 
