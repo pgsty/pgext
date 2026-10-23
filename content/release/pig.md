@@ -5,10 +5,11 @@ weight: 100
 breadcrumb: false
 ---
 
-The latest stable version is [v1.10.0](https://github.com/pgsty/pig/releases/tag/v1.10.0).
+The latest stable version is [v1.10.1](https://github.com/pgsty/pig/releases/tag/v1.10.1).
 
 |     Version     |    Date    | Summary                                                            |                           GitHub                           |
 |:---------------:|:----------:|--------------------------------------------------------------------|:----------------------------------------------------------:|
+| [v1.10.1](#v1101) | 2026-10-22 | Go 1.27.3 and inherited tooling dependency updates | [v1.10.1](https://github.com/pgsty/pig/releases/tag/v1.10.1) |
 | [v1.10.0](#v1100) | 2026-10-17 | 603 catalog entries, PostgreSQL target and recovery safety, faithful Inventory, automation fixes | [v1.10.0](https://github.com/pgsty/pig/releases/tag/v1.10.0) |
 | [v1.9.0](#v190) | 2026-10-06 | 600 catalog entries, Xray roles, repository keys, pgrx 0.19.3 | [v1.9.0](https://github.com/pgsty/pig/releases/tag/v1.9.0) |
 | [v1.8.1](#v181) | 2026-09-03 | CLI/repository safety, debug packages by default, pgrx 0.19.2 | [v1.8.1](https://github.com/pgsty/pig/releases/tag/v1.8.1) |
@@ -62,6 +63,32 @@ The latest stable version is [v1.10.0](https://github.com/pgsty/pig/releases/tag
 | [v0.0.1](#v001) | 2024-12-23 | Genesis Release                                                    | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
 
 --------
+
+## v1.10.1
+
+Pig `v1.10.1` is a maintenance release for the Go toolchain and dependencies.
+
+### Go toolchain and dependencies
+
+- Upgrade the Go toolchain from `1.27.2` to `1.27.3`. CI and release builds use the version specified in `go.mod`.
+- Update inherited tooling dependencies through version-specific module replacements:
+
+| Module | Previous | Updated |
+|:-------|:---------|:--------|
+| `github.com/cpuguy83/go-md2man/v2` | `v2.0.6` | `v2.0.7` |
+| `github.com/stretchr/objx` | `v0.1.0` | `v0.8.0` |
+| `golang.org/x/mod` | `v0.41.0` | `v0.42.0` |
+| `golang.org/x/tools` | `v0.51.0` | `v0.52.0` |
+
+### Compatibility
+
+Commands, flags, and configuration remain compatible with `v1.10.0`. The embedded catalog
+remains at **603 records**, embedded Pigsty at `4.5.0`, and default `cargo-pgrx` at `0.19.3`.
+
+Building from source requires Go `1.27.3` or later. Prebuilt packages do not require a local Go installation.
+
+Release artifacts: [v1.10.1](https://github.com/pgsty/pig/releases/tag/v1.10.1)
+
 
 ## v1.10.0
 

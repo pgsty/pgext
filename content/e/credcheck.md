@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7310** | {{< badge content="credcheck" link="https://github.com/HexaCluster/credcheck" >}} | {{< ext "credcheck" >}} | `5.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7310** | {{< badge content="credcheck" link="https://github.com/HexaCluster/credcheck" >}} | {{< ext "credcheck" >}} | `6.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,13 +29,15 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_pwhash" >}} {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "passwordpolicy" >}} {{< ext "chkpass" >}} {{< ext "pg_enigma" >}} {{< ext "column_encrypt" >}} |
 
+> [!Note] Upstream release v6.0 and PGDG RPM 6.0 use SQL/control version 6.0.0; PGDG DEB remains 5.0.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `credcheck` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7` | {{< bg "18" "credcheck_18" "green" >}} {{< bg "17" "credcheck_17" "green" >}} {{< bg "16" "credcheck_16" "green" >}} {{< bg "15" "credcheck_15" "green" >}} {{< bg "14" "credcheck_14" "green" >}} | `credcheck_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `credcheck` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.0` | {{< bg "18" "credcheck_18" "green" >}} {{< bg "17" "credcheck_17" "green" >}} {{< bg "16" "credcheck_16" "green" >}} {{< bg "15" "credcheck_15" "green" >}} {{< bg "14" "credcheck_14" "green" >}} | `credcheck_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.0` | {{< bg "18" "postgresql-18-credcheck" "green" >}} {{< bg "17" "postgresql-17-credcheck" "green" >}} {{< bg "16" "postgresql-16-credcheck" "green" >}} {{< bg "15" "postgresql-15-credcheck" "green" >}} {{< bg "14" "postgresql-14-credcheck" "green" >}} | `postgresql-$v-credcheck` | - |
 {.packages}
 
@@ -760,11 +762,11 @@ CREATE EXTENSION credcheck;
 
 Sources:
 
-- [v5.0 README](https://github.com/HexaCluster/credcheck/blob/v5.0/README.md)
-- [v5.0 changelog](https://github.com/HexaCluster/credcheck/blob/v5.0/ChangeLog)
-- [SQL objects 5.0.0](https://github.com/HexaCluster/credcheck/blob/v5.0/sql/credcheck--5.0.0.sql)
-- [Password history WAL implementation](https://github.com/HexaCluster/credcheck/blob/v5.0/credcheck.c)
-- [Login-event setup](https://github.com/HexaCluster/credcheck/blob/v5.0/event_trigger.sql)
+- [v6.0 README](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/README.md)
+- [v6.0 changelog](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/ChangeLog)
+- [SQL objects 6.0.0](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/sql/credcheck--6.0.0.sql)
+- [Password history WAL implementation](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/credcheck.c)
+- [Login-event setup](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/event_trigger.sql)
 
 `credcheck` enforces username and plaintext-password rules during role creation, password changes and role renames. It also tracks password reuse, bans repeated authentication failures and can require a password change at first login. Configure policy as a superuser; the defaults do not enforce a comprehensive password-strength policy.
 
@@ -786,7 +788,7 @@ CREATE ROLE app_user LOGIN PASSWORD 'example-Strong-Pass#123';
 SELECT rolename, password_date FROM pg_password_history;
 ```
 
-The interval is in days. Installing the SQL extension is separate from loading the server-wide hooks. Upstream release 5.0 uses SQL extension version 5.0.0; installing upgraded files requires a restart to reload the library.
+The interval is in days. Installing the SQL extension is separate from loading the server-wide hooks. Upstream release 6.0 uses SQL extension version 6.0.0; installing upgraded files requires a restart to reload the library.
 
 ### Policy Index
 
@@ -807,7 +809,7 @@ CrackLib strength checking is available only when the library was built with tha
 
 ### Password History and Replication
 
-History contains SHA-256 password hashes, is shared across databases, and is persisted in `$PGDATA/pg_password_history`. Include that file in backup planning and protect access to the SQL history view, which is granted to PUBLIC by default. `credcheck.history_max_size` changes the shared-memory capacity and requires a restart.
+History contains SHA-256 password hashes, is shared across databases, and is persisted in `$PGDATA/pg_password_history`. Include that file in backup planning and protect access to the SQL history view, which in 6.0 is revoked from PUBLIC and granted to pg_read_all_stats. `credcheck.history_max_size` changes the history capacity and requires a restart.
 
 Version 5.0 replicates history changes through custom WAL resource manager ID 150 on PostgreSQL 15 and later. Keep the matching library preloaded on replicas and recovery servers that replay its WAL. Earlier PostgreSQL versions retain the file-backed history path without this replication support. History-reset and timestamp-test functions reject execution during recovery.
 
@@ -841,3 +843,11 @@ Use the actual parameter `credcheck.disallow_change_password` to prohibit passwo
 ### Plaintext Boundary
 
 Strength and reuse checks need plaintext at password-change time. Already hashed passwords are rejected by default, including passwords sent by psql's `\password`. Setting `credcheck.encrypted_password_allowed` accepts them without providing equivalent plaintext checks. Protect the password-change connection and do not assume existing credentials are scanned retroactively. Username checks are skipped when creating a role without a password or renaming a role with no password.
+
+### Upgrade and New Interfaces in 6.0
+
+6.0 moves password history into an integer-indexed hash table in an mmap file. The first upgraded startup imports 5.x history and renames the old file to pg_password_history.legacy-migrated; this happens on both primary and standby. Preserve and verify the history backup before upgrading. After installing matching libraries and restarting, run `ALTER EXTENSION credcheck UPDATE TO '6.0.0'` in databases using its SQL objects. Current SQL revokes PUBLIC access to the history function/view and grants view access to pg_read_all_stats; review existing custom grants.
+
+`credcheck.password_valid_min` sets a short initial password lifetime for new roles; the default 0 disables it. Existing roles changing their password retain the previous lifetime policy. New `pg_check_password(username, password)` checks candidate credentials, raising an error on a violation and returning true on acceptance; it does not evaluate password reuse history.
+
+`credcheck.lastlog` defaults off. When enabled, pg_lastlog exposes sessions and server startup/shutdown events; optional SQL tracking records query text, so define access and retention deliberately. PgBouncer integration for failed-attempt limits and first-login password changes needs the documented extra SQL and pooler hooks; preload alone does not configure it. `credcheck.no_password_logging` now masks password literals while retaining the error statement structure. This release also fixes self-ALTER ROLE privilege escalation and memory defects.

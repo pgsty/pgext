@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-The 603 packaged PostgreSQL extensions (in 495 package families) are organized into 16 categories.
+The 615 packaged PostgreSQL extensions (in 507 package families) are organized into 16 categories.
 
 
 
@@ -19,7 +19,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.30.2 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.31.0 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.26.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -97,7 +97,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1950 | {{< alias "pgmnemo" >}} | 0.20.0 | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | 0.3.0 | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
-| 1980 | {{< alias "pg_turbovec" >}} | 2.12.1 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
+| 1980 | {{< alias "pg_turbovec" >}} | 2.14.1 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 | 1990 | {{< alias "pg_vectorsearch" >}} | 0.1.0 | Approximate vector search with PRISM indexes and RaBitQ quantization |
 
 ## FTS
@@ -106,7 +106,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.26.1 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.26.3 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.1.0 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.1.0 | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -120,7 +120,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | Pinyin romanization and search helpers for PostgreSQL |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | Kazakh full-text search extension for PostgreSQL |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL extension for BM25-family lexical retrieval |
-| 2230 | {{< alias "pg_fts" >}} | 1.13.0 | Full-text search with BM25 and BM25F ranking |
+| 2230 | {{< alias "pg_fts" >}} | 1.14.1 | Full-text search with BM25 and BM25F ranking |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | CJK bigram parser derived from PostgreSQL full-text search |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | Chinese full-text search parser based on cppjieba |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
@@ -137,6 +137,9 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | 1.0 | Russian Hunspell Dictionary (from AOT.ru group) |
 | 2290 | {{< alias "textsearch_intl" >}} | 1.0 | Multilingual full text search with ICU segmentation, normalization and n-gram matching |
 | 2300 | {{< alias "pg_icu_parser" >}} | 1.0 | Full text search parser using ICU boundary analysis |
+| 2310 | {{< alias "tin" "lead" >}} | 1.0.6 | TIN-compatible text search for development and testing |
+| 2320 | {{< alias "stannum" >}} | 0.1.0 | Experimental TINQL text search with BM25 and segmented indexes |
+| 2330 | {{< alias "pg_tre" >}} | 4.5.1 | Native PostgreSQL index access method for approximate regular-expression matching |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
 
@@ -170,6 +173,8 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2565 | {{< alias "pg_lake_iceberg" "pg_lake" >}} | 3.5 | Iceberg implementation in Postgres |
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.5 | Data lake tables and Iceberg tables |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.5 | Copy to/from data lake files |
+| 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
+| 2580 | {{< alias "pg_improv" >}} | 0.10.0 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
 
 ## FEAT
@@ -184,7 +189,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2630 | {{< alias "graph" "pggraph" >}} | 1.2.1 | Graph database capabilities for PostgreSQL |
 | 2640 | {{< alias "pgrdf" >}} | 0.6.40 | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2650 | {{< alias "pgq" >}} | 3.5.2 | Generic queue for PostgreSQL |
-| 2660 | {{< alias "pgmq" >}} | 1.13.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2660 | {{< alias "pgmq" >}} | 1.13.1 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2670 | {{< alias "pgmb" >}} | 1.0.0 | A simple PostgreSQL Message Broker system |
 | 2680 | {{< alias "ulak" >}} | 0.2.0 | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
 | 2690 | {{< alias "fsm_core" >}} | 1.1.0 | Finite state machine toolkit for PostgreSQL |
@@ -194,22 +199,23 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2730 | {{< alias "pg_ttl_index" >}} | 3.0.0 | Automatic data expiration with TTL indexes |
 | 2740 | {{< alias "pg_graphql" >}} | 1.6.2 | Add in-database GraphQL support |
 | 2750 | {{< alias "pg_jsonschema" >}} | 0.3.4 | PostgreSQL extension providing JSON Schema validation |
-| 2760 | {{< alias "jsonschema" >}} | 0.1.10 | JSON Schema validation functions for PostgreSQL |
+| 2760 | {{< alias "jsonschema" >}} | 0.1.11 | JSON Schema validation functions for PostgreSQL |
 | 2765 | {{< alias "is_jsonb_valid" >}} | 0.1.4 | Native JSONB validation against JSON Schema drafts 4 and 7 |
 | 2770 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |
-| 2780 | {{< alias "pg_hint_plan" >}} | 1.8.0 | Give PostgreSQL ability to manually force some decisions in execution plans. |
+| 2780 | {{< alias "pg_hint_plan" >}} | 1.8.1 | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2790 | {{< alias "hypopg" >}} | 1.4.3 | Hypothetical indexes for PostgreSQL |
 | 2800 | {{< alias "index_advisor" >}} | 0.2.0 | Query index advisor |
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | filter statements by their execution plans. |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
-| 2840 | {{< alias "pg_ivm" >}} | 1.16 | incremental view maintenance on PostgreSQL |
+| 2840 | {{< alias "pg_ivm" >}} | 1.17 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
 | 2860 | {{< alias "pg_trickle" >}} | 0.108.3 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2870 | {{< alias "pg_durable" >}} | 0.2.9 | Durable SQL functions for PostgreSQL |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | Perturb unordered SELECT row order to expose order-dependent tests |
 | 2890 | {{< alias "pg_local_cache" >}} | 3.1.0 | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
-| 2900 | {{< alias "provsql" >}} | 1.12.0 | Semiring provenance and probability management for PostgreSQL |
+| 2895 | {{< alias "pg_kv" >}} | 0.1.0 | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
+| 2900 | {{< alias "provsql" >}} | 1.13.0 | Semiring provenance and probability management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.10 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
 | 2930 | {{< alias "rdkit" >}} | 202609.1 | Cheminformatics functionality for PostgreSQL. |
@@ -253,7 +259,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
-| 2980 | {{< alias "pg_mentat" >}} | 1.14.0 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
+| 2980 | {{< alias "pg_mentat" >}} | 1.17.2 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
 
 ## LANG
@@ -289,7 +295,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3200 | {{< alias "pgtap" >}} | 1.3.4 | Unit testing for PostgreSQL |
 | 3210 | {{< alias "faker" >}} | 0.5.3 | Wrapper for the Faker Python library |
 | 3220 | {{< alias "dbt2" >}} | 0.62.0 | OSDL-DBT-2 test kit |
-| 3230 | {{< alias "pg_regresql" >}} | 2.0.0 | Trust pg_class statistics for planning instead of physical relation size |
+| 3230 | {{< alias "pg_regresql" >}} | 2.1.0 | Trust pg_class statistics for planning instead of physical relation size |
 | 3240 | {{< alias "pltcl" >}} | 1.0 | PL/Tcl procedural language |
 | 3250 | {{< alias "pltclu" "pltcl" >}} | 1.0 | PL/TclU untrusted procedural language |
 | 3260 | {{< alias "plperl" >}} | 1.0 | PL/Perl procedural language |
@@ -316,6 +322,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3510 | {{< alias "semver" "pg_semver" >}} | 0.42.0 | Semantic version data type |
 | 3520 | {{< alias "pg_text_semver" >}} | 1.2.1 | Semantic version domain and comparison operators for PostgreSQL |
 | 3530 | {{< alias "pg_lexo" >}} | 0.6.0 | Lexicographic position type for inserting and reordering list items |
+| 3540 | {{< alias "codesystem" >}} | 0.2.0 | Hierarchical classification code types with validation and revision tracking |
 | 3550 | {{< alias "unit" "pgunit" >}} | 7.10 | SI units extension |
 | 3570 | {{< alias "pgpdf" >}} | 0.1.0 | PDF type with meta admin & Full-Text Search |
 | 3590 | {{< alias "pglite_fusion" >}} | 0.0.7 | Embed an SQLite database in your PostgreSQL table |
@@ -348,7 +355,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | RRULE field type for PostgreSQL |
 | 3890 | {{< alias "pgcalendar" >}} | 1.1.0 | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 3900 | {{< alias "timestamp9" >}} | 1.4.0 | timestamp nanosecond resolution |
-| 3910 | {{< alias "pgbson" >}} | 2.1.0 | BSON data type and accessor functions for PostgreSQL |
+| 3910 | {{< alias "pgbson" >}} | 2.2.0 | BSON data type and accessor functions for PostgreSQL |
 | 3920 | {{< alias "chkpass" >}} | 1.0 | data type for auto-encrypted passwords |
 | 3930 | {{< alias "isn" >}} | 1.2 | data types for international product numbering standards |
 | 3940 | {{< alias "seg" >}} | 1.4 | data type for representing line segments or floating-point intervals |
@@ -375,13 +382,14 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4120 | {{< alias "pg_protobuf" >}} | 1.0 | Protobuf support for PostgreSQL |
 | 4130 | {{< alias "pgproto" >}} | 0.5.0 | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
 | 4140 | {{< alias "pglock" >}} | 1.0.0 | Lightweight distributed lock service inside PostgreSQL |
+| 4145 | {{< alias "pg_lease" >}} | 0.1.0 | SQL leases with TTL expiry and monotonically increasing fencing epochs |
 | 4150 | {{< alias "pgjq" >}} | 0.1.0 | Use jq in Postgres |
 | 4160 | {{< alias "pg_json_diff" >}} | 1.0 | JSONB diff, JSON Patch, and JSON Merge Patch functions |
 | 4170 | {{< alias "pgjwt" >}} | 0.2.0 | JSON Web Token API for Postgresql |
 | 4180 | {{< alias "pg_smtp_client" >}} | 0.2.1 | PostgreSQL extension to send email using SMTP |
 | 4190 | {{< alias "pg_html5_email_address" >}} | 1.2.3 | PostgreSQL email validation that is consistent with the HTML5 spec |
 | 4200 | {{< alias "url_encode" >}} | 1.2.5 | url_encode, url_decode functions |
-| 4210 | {{< alias "pgsql_tweaks" >}} | 1.0.5 | Some functions and views for daily usage |
+| 4210 | {{< alias "pgsql_tweaks" >}} | 1.1.0 | Some functions and views for daily usage |
 | 4220 | {{< alias "pg_relation_sql" >}} | 0.2.2 | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
 | 4230 | {{< alias "pg_extra_time" >}} | 2.1.0 | Some date time functions and operators that, |
 | 4240 | {{< alias "pgpcre" >}} | 0.20190509 | Perl Compatible Regular Expression functions |
@@ -437,6 +445,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4700 | {{< alias "datasketches" >}} | 1.7.0 | Approximate analytics sketches and aggregates for PostgreSQL |
 | 4705 | {{< alias "fbsql" >}} | 0.1.0 | Closure-preserving formula-based statistical modeling in SQL |
 | 4710 | {{< alias "tdigest" >}} | 1.4.7 | Provides tdigest aggregate function. |
+| 4715 | {{< alias "hdr_histogram" >}} | 1.0 | HDR histogram type, percentile queries and mergeable aggregation. |
 | 4720 | {{< alias "first_last_agg" >}} | 0.1.4 | first() and last() aggregate functions |
 | 4730 | {{< alias "extra_window_functions" >}} | 2.0 | Extra Window Functions for PostgreSQL |
 | 4740 | {{< alias "floatvec" >}} | 1.1.1 | Math for vectors (arrays) of numbers |
@@ -453,6 +462,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4840 | {{< alias "financial" "pg_financial" >}} | 1.0.1 | Financial aggregate functions |
 | 4845 | {{< alias "pg_accumulator" >}} | 1.2.0 | Accumulation registers for balance and turnover tracking in PostgreSQL |
 | 4850 | {{< alias "convert" "pg_convert" >}} | 0.1.0 | conversion functions for spatial, routing and other specialized uses |
+| 4855 | {{< alias "pg_try_cast" >}} | 1.0 | Text conversion with NULL or a typed fallback on conversion errors. |
 | 4860 | {{< alias "parray_gin" >}} | 1.5.0 | GIN index operator class and partial-match operators for text arrays |
 | 4880 | {{< alias "refint" >}} | 1.0 | functions for implementing referential integrity (obsolete) |
 | 4881 | {{< alias "autoinc" >}} | 1.0 | functions for autoincrementing fields |
@@ -537,7 +547,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | Distributed Tracing for PostgreSQL |
 | 6020 | {{< alias "pg_stat_ch" >}} | 0.4.0 | Export PostgreSQL query telemetry to ClickHouse |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | 1.0.0 | Capture or log C-level stack backtraces of PostgreSQL processes |
-| 6040 | {{< alias "pg_stat_log" >}} | 0.2 | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
+| 6040 | {{< alias "pg_stat_log" >}} | 0.3 | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
 | 6050 | {{< alias "pg_stat_plans" >}} | 2.1.1 | Track per-plan call counts, execution times, and example EXPLAIN texts. |
 | 6060 | {{< alias "pgfr_record" "pg_flight_recorder" >}} | 2.32.1 | Server-side PostgreSQL performance flight recorder |
 | 6061 | {{< alias "pgfr_analyze" "pg_flight_recorder" >}} | 2.32.1 | Reporting and analysis functions for pgfr_record |
@@ -566,7 +576,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6520 | {{< alias "pgmeminfo" >}} | 1.0.1 | show memory usage |
 | 6530 | {{< alias "toastinfo" >}} | 1.7 | show details on toasted datums |
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | easily jump into a visual plan UI for any SQL query |
-| 6850 | {{< alias "pg_relusage" >}} | 1.0.1 | Log all the queries that reference a particular column |
+| 6850 | {{< alias "pg_relusage" >}} | 1.0.2 | Log all the queries that reference a particular column |
 | 6860 | {{< alias "pagevis" >}} | 0.1 | Visualise database pages in ascii code |
 | 6870 | {{< alias "powa" >}} | 5.3.0 | PostgreSQL Workload Analyser-core |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | Allow EXPLAIN to dump even more details |
@@ -592,6 +602,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7010 | {{< alias "supautils" >}} | 3.4.4 | Extension that secures a cluster on a cloud environment |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.11 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "column_encrypt" >}} | 4.0 | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
+| 7035 | {{< alias "encsearch" >}} | 0.1.1 | Experimental encrypted text search using AEAD ciphers and keyed blind indexes |
 | 7040 | {{< alias "passwordpolicy" >}} | 2.0.6 | Dynamically configurable PostgreSQL password complexity checks. |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
 | 7060 | {{< alias "pg_session_jwt" >}} | 0.5.0 | Manage authentication sessions using JWTs |
@@ -608,7 +619,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7170 | {{< alias "pg_oidc_validator" >}} | 1.1.0 | OAuth and OIDC token validator for PostgreSQL 18 |
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 0.1.0 | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
 | 7190 | {{< alias "pgmemento" >}} | 0.7.4 | Transaction-based audit trail with schema versioning |
-| 7310 | {{< alias "credcheck" >}} | 5.0 | credcheck - postgresql plain text credential checker |
+| 7310 | {{< alias "credcheck" >}} | 6.0 | credcheck - postgresql plain text credential checker |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | Advanced password hashing methods for PostgreSQL |
 | 7360 | {{< alias "login_hook" >}} | 1.8 | login_hook - hook to execute login_hook.login() at login time |
@@ -668,12 +679,12 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 9000 | {{< alias "documentdb" >}} | 0.117 | API surface for DocumentDB for PostgreSQL |
-| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.117 | Core API surface for DocumentDB on PostgreSQL |
+| 9000 | {{< alias "documentdb" >}} | 1.0 | API surface for DocumentDB for PostgreSQL |
+| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 1.0 | Core API surface for DocumentDB on PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.116 | Multi-Node API surface for DocumentDB |
-| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.117 | DocumentDB Extended RUM index access method |
+| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 1.0 | DocumentDB Extended RUM index access method |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | MongoDB-like read projections for JSONB in PostgreSQL |
-| 9100 | {{< alias "orafce" >}} | 4.16.13 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
+| 9100 | {{< alias "orafce" >}} | 4.17.1 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.6 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.6 | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.6 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
@@ -685,6 +696,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 1.0 | Support GB18030-2022 and UTF-8 conversion |
 | 9200 | {{< alias "db2fce" >}} | 0.0.17 | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
 | 9210 | {{< alias "plpgsql_wrap" >}} | 1.0 | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
+| 9220 | {{< alias "pg_synonym" >}} | 1.0 | Table and view aliases synchronized with target DDL. |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 1.0.0 | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 2.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | 2.0 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |

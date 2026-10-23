@@ -37,7 +37,7 @@ DATE_ALIGN = {"2025-09-04": "2025-09-06"}
 # runtime dependencies and tooling that have no extension package page.
 # They keep their literal (cleaned) package name.
 KNOWN_NON_CATALOG = {
-    "agensgraph", "antlr4_runtime413", "babelfishpg", "cloudberry",
+    "agensgraph", "antlr4_runtime413", "arrow", "babelfishpg", "cloudberry",
     "cloudberry_backup", "cloudberry_pxf", "oriolepg", "pdu", "pgdog",
     "pgedge", "polardb", "openhalodb",
 }
@@ -162,6 +162,11 @@ class Normalizer:
     def resolve(self, raw: str):
         """Return the list of catalog package names for one raw table name."""
         key = ALIASES.get(raw.lower(), raw.lower())
+
+        # Runtime/tooling package names take precedence over catalog homonyms
+        # (Apache Arrow packages are unrelated to the pg_arrow extension).
+        if key in KNOWN_NON_CATALOG:
+            return [key]
 
         # wildcard rows: `omni_*` → the omni package; `hunspell_*` → every
         # hunspell_* package in the catalog

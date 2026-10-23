@@ -31,35 +31,37 @@ page_width: full
 |   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "citus" >}} {{< ext "pg_projection" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_extended_rum" >}} |
 
+> [!Note] Internal Citus component; not shipped in the PGSTY DocumentDB 1.0 OSS packages. Historical 0.116 package metadata is retained; no current packaged availability is claimed. PGSTY DocumentDB supports PostgreSQL 16-18.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `documentdb` | `citus`, `documentdb_core`, `documentdb` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "documentdb_18" "green" >}} {{< bg "17" "documentdb_17" "green" >}} {{< bg "16" "documentdb_16" "green" >}} {{< bg "15" "documentdb_15" "green" >}} {{< bg "14" "documentdb_14" "red" >}} | `documentdb_$v` | `postgresql$v-contrib`, `pg_cron_$v`, `pgvector_$v`, `rum_$v`, `postgis36_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "postgresql-18-documentdb" "green" >}} {{< bg "17" "postgresql-17-documentdb" "green" >}} {{< bg "16" "postgresql-16-documentdb" "green" >}} {{< bg "15" "postgresql-15-documentdb" "green" >}} {{< bg "14" "postgresql-14-documentdb" "red" >}} | `postgresql-$v-documentdb` | `postgresql-$v-cron`, `postgresql-$v-pgvector`, `postgresql-$v-rum`, `postgresql-$v-postgis-3` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `documentdb` | `citus`, `documentdb_core`, `documentdb` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "documentdb_18" "red" >}} {{< bg "17" "documentdb_17" "red" >}} {{< bg "16" "documentdb_16" "red" >}} {{< bg "15" "documentdb_15" "red" >}} {{< bg "14" "documentdb_14" "red" >}} | `documentdb_$v` | `postgresql$v-contrib`, `pg_cron_$v`, `pgvector_$v`, `rum_$v`, `postgis36_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "postgresql-18-documentdb" "red" >}} {{< bg "17" "postgresql-17-documentdb" "red" >}} {{< bg "16" "postgresql-16-documentdb" "red" >}} {{< bg "15" "postgresql-15-documentdb" "red" >}} {{< bg "14" "postgresql-14-documentdb" "red" >}} | `postgresql-$v-documentdb` | `postgresql-$v-cron`, `postgresql-$v-pgvector`, `postgresql-$v-rum`, `postgresql-$v-postgis-3` |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.117" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.117" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.117" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.117" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.117" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.117" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.117" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.117" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.0" "postgresql-18-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.117" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.117" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.117" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.117" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0" "postgresql-18-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-documentdb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0" "documentdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "documentdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "documentdb_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "documentdb_14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 4" "green" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 4" "green" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.117" "postgresql-15-documentdb : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 4" "green" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-documentdb : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-documentdb : AVAIL 4" "green" >}} | {{< bg "PGDG 1.0" "postgresql-15-documentdb : AVAIL 4" "blue" >}} | {{< bg "N/A" "postgresql-14-documentdb : N/A 0" "gray" >}} |
 {.matrix}
 
 
@@ -93,7 +95,6 @@ pig install documentdb_distributed;		# install by extension name, for the curren
 pig install documentdb_distributed -v 18;   # install for PG 18
 pig install documentdb_distributed -v 17;   # install for PG 17
 pig install documentdb_distributed -v 16;   # install for PG 16
-pig install documentdb_distributed -v 15;   # install for PG 15
 
 ```
 
@@ -115,10 +116,10 @@ CREATE EXTENSION documentdb_distributed CASCADE; -- requires citus, documentdb_c
 
 Sources:
 
-- [`documentdb_distributed` v0.117-0 control file](https://github.com/documentdb/documentdb/blob/v0.117-0/internal/pg_documentdb_distributed/documentdb_distributed.control)
-- [DocumentDB package scope](https://github.com/documentdb/documentdb/blob/v0.117-0/packaging/README.md)
-- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
-- [DocumentDB v0.117-0 changelog](https://github.com/documentdb/documentdb/blob/v0.117-0/CHANGELOG.md)
+- [`documentdb_distributed` v1.0-0 control file](https://github.com/documentdb/documentdb/blob/v1.0-0/internal/pg_documentdb_distributed/documentdb_distributed.control)
+- [DocumentDB package scope](https://github.com/documentdb/documentdb/blob/v1.0-0/packaging/README.md)
+- [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
+- [DocumentDB v1.0-0 changelog](https://github.com/documentdb/documentdb/blob/v1.0-0/CHANGELOG.md)
 
 `documentdb_distributed` is DocumentDB's internal multi-node execution layer. It integrates the public `documentdb` API with Citus; it is not a standalone document API and does not add a separate client workflow.
 
@@ -126,7 +127,7 @@ Sources:
 
 All nodes need matching builds of Citus, `documentdb_core`, `documentdb`, and `documentdb_distributed`. The official helper places the libraries in preload order; restart every node after changing it:
 
-```conf
+```ini
 shared_preload_libraries = 'pg_cron, citus, pg_documentdb_core, pg_documentdb, pg_documentdb_distributed, pg_documentdb_extended_rum'
 ```
 

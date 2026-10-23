@@ -69,22 +69,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgedge-18` | `18.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 12.6 MiB | [pgedge-18-18.6-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-18-18.6-2PGSTY.el8.x86_64.rpm) |
-| `pgedge-18` | `18.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 12.2 MiB | [pgedge-18-18.6-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-18-18.6-2PGSTY.el8.aarch64.rpm) |
-| `pgedge-18` | `18.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 12.0 MiB | [pgedge-18-18.6-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-18-18.6-2PGSTY.el9.x86_64.rpm) |
-| `pgedge-18` | `18.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.7 MiB | [pgedge-18-18.6-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-18-18.6-2PGSTY.el9.aarch64.rpm) |
-| `pgedge-18` | `18.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 12.1 MiB | [pgedge-18-18.6-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-18-18.6-2PGSTY.el10.x86_64.rpm) |
-| `pgedge-18` | `18.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.9 MiB | [pgedge-18-18.6-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-18-18.6-2PGSTY.el10.aarch64.rpm) |
-| `pgedge-18` | `18.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.3 MiB | [pgedge-18_18.6-2PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~bookworm_amd64.deb) |
-| `pgedge-18` | `18.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 MiB | [pgedge-18_18.6-2PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~bookworm_arm64.deb) |
-| `pgedge-18` | `18.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.3 MiB | [pgedge-18_18.6-2PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~trixie_amd64.deb) |
-| `pgedge-18` | `18.6` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.8 MiB | [pgedge-18_18.6-2PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~trixie_arm64.deb) |
-| `pgedge-18` | `18.6` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.6 MiB | [pgedge-18_18.6-2PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~jammy_amd64.deb) |
-| `pgedge-18` | `18.6` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.4 MiB | [pgedge-18_18.6-2PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~jammy_arm64.deb) |
-| `pgedge-18` | `18.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.4 MiB | [pgedge-18_18.6-2PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~noble_amd64.deb) |
-| `pgedge-18` | `18.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 MiB | [pgedge-18_18.6-2PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~noble_arm64.deb) |
-| `pgedge-18` | `18.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.5 MiB | [pgedge-18_18.6-2PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~resolute_amd64.deb) |
-| `pgedge-18` | `18.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.3 MiB | [pgedge-18_18.6-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.6-2PGSTY~resolute_arm64.deb) |
+| `pgedge-18` | `18.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 12.6 MiB | [pgedge-18-18.6-3PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-18-18.6-3PGSTY.el8.x86_64.rpm) |
+| `pgedge-18` | `18.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 12.2 MiB | [pgedge-18-18.6-3PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-18-18.6-3PGSTY.el8.aarch64.rpm) |
+| `pgedge-18` | `18.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 12.0 MiB | [pgedge-18-18.6-3PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-18-18.6-3PGSTY.el9.x86_64.rpm) |
+| `pgedge-18` | `18.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.8 MiB | [pgedge-18-18.6-3PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-18-18.6-3PGSTY.el9.aarch64.rpm) |
+| `pgedge-18` | `18.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 12.1 MiB | [pgedge-18-18.6-3PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-18-18.6-3PGSTY.el10.x86_64.rpm) |
+| `pgedge-18` | `18.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.9 MiB | [pgedge-18-18.6-3PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-18-18.6-3PGSTY.el10.aarch64.rpm) |
+| `pgedge-18` | `18.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.3 MiB | [pgedge-18_18.6-3PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~bookworm_amd64.deb) |
+| `pgedge-18` | `18.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 MiB | [pgedge-18_18.6-3PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~bookworm_arm64.deb) |
+| `pgedge-18` | `18.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.3 MiB | [pgedge-18_18.6-3PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~trixie_amd64.deb) |
+| `pgedge-18` | `18.6` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.8 MiB | [pgedge-18_18.6-3PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~trixie_arm64.deb) |
+| `pgedge-18` | `18.6` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.6 MiB | [pgedge-18_18.6-3PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~jammy_amd64.deb) |
+| `pgedge-18` | `18.6` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.4 MiB | [pgedge-18_18.6-3PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~jammy_arm64.deb) |
+| `pgedge-18` | `18.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.4 MiB | [pgedge-18_18.6-3PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~noble_amd64.deb) |
+| `pgedge-18` | `18.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 MiB | [pgedge-18_18.6-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~noble_arm64.deb) |
+| `pgedge-18` | `18.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.5 MiB | [pgedge-18_18.6-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~resolute_amd64.deb) |
+| `pgedge-18` | `18.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.3 MiB | [pgedge-18_18.6-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -92,22 +92,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgedge-17` | `17.11` | [el8.x86_64](/os/el8.x86_64) | pigsty | 12.2 MiB | [pgedge-17-17.11-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-17-17.11-2PGSTY.el8.x86_64.rpm) |
-| `pgedge-17` | `17.11` | [el8.aarch64](/os/el8.aarch64) | pigsty | 11.8 MiB | [pgedge-17-17.11-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-17-17.11-2PGSTY.el8.aarch64.rpm) |
-| `pgedge-17` | `17.11` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.7 MiB | [pgedge-17-17.11-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-17-17.11-2PGSTY.el9.x86_64.rpm) |
-| `pgedge-17` | `17.11` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.5 MiB | [pgedge-17-17.11-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-17-17.11-2PGSTY.el9.aarch64.rpm) |
-| `pgedge-17` | `17.11` | [el10.x86_64](/os/el10.x86_64) | pigsty | 11.8 MiB | [pgedge-17-17.11-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-17-17.11-2PGSTY.el10.x86_64.rpm) |
-| `pgedge-17` | `17.11` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.6 MiB | [pgedge-17-17.11-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-17-17.11-2PGSTY.el10.aarch64.rpm) |
-| `pgedge-17` | `17.11` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.0 MiB | [pgedge-17_17.11-2PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~bookworm_amd64.deb) |
-| `pgedge-17` | `17.11` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.5 MiB | [pgedge-17_17.11-2PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~bookworm_arm64.deb) |
-| `pgedge-17` | `17.11` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.0 MiB | [pgedge-17_17.11-2PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~trixie_amd64.deb) |
-| `pgedge-17` | `17.11` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.5 MiB | [pgedge-17_17.11-2PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~trixie_arm64.deb) |
-| `pgedge-17` | `17.11` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.3 MiB | [pgedge-17_17.11-2PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~jammy_amd64.deb) |
-| `pgedge-17` | `17.11` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.1 MiB | [pgedge-17_17.11-2PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~jammy_arm64.deb) |
-| `pgedge-17` | `17.11` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.2 MiB | [pgedge-17_17.11-2PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~noble_amd64.deb) |
-| `pgedge-17` | `17.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.0 MiB | [pgedge-17_17.11-2PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~noble_arm64.deb) |
-| `pgedge-17` | `17.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.2 MiB | [pgedge-17_17.11-2PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~resolute_amd64.deb) |
-| `pgedge-17` | `17.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.9 MiB | [pgedge-17_17.11-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.11-2PGSTY~resolute_arm64.deb) |
+| `pgedge-17` | `17.11` | [el8.x86_64](/os/el8.x86_64) | pigsty | 12.2 MiB | [pgedge-17-17.11-3PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-17-17.11-3PGSTY.el8.x86_64.rpm) |
+| `pgedge-17` | `17.11` | [el8.aarch64](/os/el8.aarch64) | pigsty | 11.7 MiB | [pgedge-17-17.11-3PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-17-17.11-3PGSTY.el8.aarch64.rpm) |
+| `pgedge-17` | `17.11` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.7 MiB | [pgedge-17-17.11-3PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-17-17.11-3PGSTY.el9.x86_64.rpm) |
+| `pgedge-17` | `17.11` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.5 MiB | [pgedge-17-17.11-3PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-17-17.11-3PGSTY.el9.aarch64.rpm) |
+| `pgedge-17` | `17.11` | [el10.x86_64](/os/el10.x86_64) | pigsty | 11.8 MiB | [pgedge-17-17.11-3PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-17-17.11-3PGSTY.el10.x86_64.rpm) |
+| `pgedge-17` | `17.11` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.6 MiB | [pgedge-17-17.11-3PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-17-17.11-3PGSTY.el10.aarch64.rpm) |
+| `pgedge-17` | `17.11` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.0 MiB | [pgedge-17_17.11-3PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~bookworm_amd64.deb) |
+| `pgedge-17` | `17.11` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.5 MiB | [pgedge-17_17.11-3PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~bookworm_arm64.deb) |
+| `pgedge-17` | `17.11` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.0 MiB | [pgedge-17_17.11-3PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~trixie_amd64.deb) |
+| `pgedge-17` | `17.11` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.5 MiB | [pgedge-17_17.11-3PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~trixie_arm64.deb) |
+| `pgedge-17` | `17.11` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.3 MiB | [pgedge-17_17.11-3PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~jammy_amd64.deb) |
+| `pgedge-17` | `17.11` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.1 MiB | [pgedge-17_17.11-3PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~jammy_arm64.deb) |
+| `pgedge-17` | `17.11` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.1 MiB | [pgedge-17_17.11-3PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~noble_amd64.deb) |
+| `pgedge-17` | `17.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.0 MiB | [pgedge-17_17.11-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~noble_arm64.deb) |
+| `pgedge-17` | `17.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.2 MiB | [pgedge-17_17.11-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~resolute_amd64.deb) |
+| `pgedge-17` | `17.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.9 MiB | [pgedge-17_17.11-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -115,22 +115,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgedge-16` | `16.15` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.5 MiB | [pgedge-16-16.15-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-16-16.15-2PGSTY.el8.x86_64.rpm) |
-| `pgedge-16` | `16.15` | [el8.aarch64](/os/el8.aarch64) | pigsty | 11.1 MiB | [pgedge-16-16.15-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-16-16.15-2PGSTY.el8.aarch64.rpm) |
-| `pgedge-16` | `16.15` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.2 MiB | [pgedge-16-16.15-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-16-16.15-2PGSTY.el9.x86_64.rpm) |
-| `pgedge-16` | `16.15` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.9 MiB | [pgedge-16-16.15-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-16-16.15-2PGSTY.el9.aarch64.rpm) |
-| `pgedge-16` | `16.15` | [el10.x86_64](/os/el10.x86_64) | pigsty | 11.3 MiB | [pgedge-16-16.15-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-16-16.15-2PGSTY.el10.x86_64.rpm) |
-| `pgedge-16` | `16.15` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.1 MiB | [pgedge-16-16.15-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-16-16.15-2PGSTY.el10.aarch64.rpm) |
-| `pgedge-16` | `16.15` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.5 MiB | [pgedge-16_16.15-2PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~bookworm_amd64.deb) |
-| `pgedge-16` | `16.15` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.0 MiB | [pgedge-16_16.15-2PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~bookworm_arm64.deb) |
-| `pgedge-16` | `16.15` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.5 MiB | [pgedge-16_16.15-2PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~trixie_amd64.deb) |
-| `pgedge-16` | `16.15` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.1 MiB | [pgedge-16_16.15-2PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~trixie_arm64.deb) |
-| `pgedge-16` | `16.15` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.8 MiB | [pgedge-16_16.15-2PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~jammy_amd64.deb) |
-| `pgedge-16` | `16.15` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.6 MiB | [pgedge-16_16.15-2PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~jammy_arm64.deb) |
-| `pgedge-16` | `16.15` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.7 MiB | [pgedge-16_16.15-2PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~noble_amd64.deb) |
-| `pgedge-16` | `16.15` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.5 MiB | [pgedge-16_16.15-2PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~noble_arm64.deb) |
-| `pgedge-16` | `16.15` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.7 MiB | [pgedge-16_16.15-2PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~resolute_amd64.deb) |
-| `pgedge-16` | `16.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.4 MiB | [pgedge-16_16.15-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.15-2PGSTY~resolute_arm64.deb) |
+| `pgedge-16` | `16.15` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.5 MiB | [pgedge-16-16.15-3PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-16-16.15-3PGSTY.el8.x86_64.rpm) |
+| `pgedge-16` | `16.15` | [el8.aarch64](/os/el8.aarch64) | pigsty | 11.1 MiB | [pgedge-16-16.15-3PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-16-16.15-3PGSTY.el8.aarch64.rpm) |
+| `pgedge-16` | `16.15` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.2 MiB | [pgedge-16-16.15-3PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-16-16.15-3PGSTY.el9.x86_64.rpm) |
+| `pgedge-16` | `16.15` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.0 MiB | [pgedge-16-16.15-3PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-16-16.15-3PGSTY.el9.aarch64.rpm) |
+| `pgedge-16` | `16.15` | [el10.x86_64](/os/el10.x86_64) | pigsty | 11.2 MiB | [pgedge-16-16.15-3PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-16-16.15-3PGSTY.el10.x86_64.rpm) |
+| `pgedge-16` | `16.15` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.1 MiB | [pgedge-16-16.15-3PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-16-16.15-3PGSTY.el10.aarch64.rpm) |
+| `pgedge-16` | `16.15` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.5 MiB | [pgedge-16_16.15-3PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~bookworm_amd64.deb) |
+| `pgedge-16` | `16.15` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.0 MiB | [pgedge-16_16.15-3PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~bookworm_arm64.deb) |
+| `pgedge-16` | `16.15` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.5 MiB | [pgedge-16_16.15-3PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~trixie_amd64.deb) |
+| `pgedge-16` | `16.15` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.1 MiB | [pgedge-16_16.15-3PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~trixie_arm64.deb) |
+| `pgedge-16` | `16.15` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.8 MiB | [pgedge-16_16.15-3PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~jammy_amd64.deb) |
+| `pgedge-16` | `16.15` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.6 MiB | [pgedge-16_16.15-3PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~jammy_arm64.deb) |
+| `pgedge-16` | `16.15` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.7 MiB | [pgedge-16_16.15-3PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~noble_amd64.deb) |
+| `pgedge-16` | `16.15` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.5 MiB | [pgedge-16_16.15-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~noble_arm64.deb) |
+| `pgedge-16` | `16.15` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.7 MiB | [pgedge-16_16.15-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~resolute_amd64.deb) |
+| `pgedge-16` | `16.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [pgedge-16_16.15-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -138,22 +138,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgedge-15` | `15.19` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.3 MiB | [pgedge-15-15.19-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-15-15.19-2PGSTY.el8.x86_64.rpm) |
-| `pgedge-15` | `15.19` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.9 MiB | [pgedge-15-15.19-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-15-15.19-2PGSTY.el8.aarch64.rpm) |
-| `pgedge-15` | `15.19` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.2 MiB | [pgedge-15-15.19-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-15-15.19-2PGSTY.el9.x86_64.rpm) |
-| `pgedge-15` | `15.19` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.0 MiB | [pgedge-15-15.19-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-15-15.19-2PGSTY.el9.aarch64.rpm) |
-| `pgedge-15` | `15.19` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.3 MiB | [pgedge-15-15.19-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-15-15.19-2PGSTY.el10.x86_64.rpm) |
-| `pgedge-15` | `15.19` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.1 MiB | [pgedge-15-15.19-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-15-15.19-2PGSTY.el10.aarch64.rpm) |
-| `pgedge-15` | `15.19` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.5 MiB | [pgedge-15_15.19-2PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~bookworm_amd64.deb) |
-| `pgedge-15` | `15.19` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.2 MiB | [pgedge-15_15.19-2PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~bookworm_arm64.deb) |
-| `pgedge-15` | `15.19` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.6 MiB | [pgedge-15_15.19-2PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~trixie_amd64.deb) |
-| `pgedge-15` | `15.19` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.2 MiB | [pgedge-15_15.19-2PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~trixie_arm64.deb) |
-| `pgedge-15` | `15.19` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.9 MiB | [pgedge-15_15.19-2PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~jammy_amd64.deb) |
-| `pgedge-15` | `15.19` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.7 MiB | [pgedge-15_15.19-2PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~jammy_arm64.deb) |
-| `pgedge-15` | `15.19` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.8 MiB | [pgedge-15_15.19-2PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~noble_amd64.deb) |
-| `pgedge-15` | `15.19` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.6 MiB | [pgedge-15_15.19-2PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~noble_arm64.deb) |
-| `pgedge-15` | `15.19` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.8 MiB | [pgedge-15_15.19-2PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~resolute_amd64.deb) |
-| `pgedge-15` | `15.19` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.6 MiB | [pgedge-15_15.19-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.19-2PGSTY~resolute_arm64.deb) |
+| `pgedge-15` | `15.19` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.3 MiB | [pgedge-15-15.19-3PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-15-15.19-3PGSTY.el8.x86_64.rpm) |
+| `pgedge-15` | `15.19` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.9 MiB | [pgedge-15-15.19-3PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-15-15.19-3PGSTY.el8.aarch64.rpm) |
+| `pgedge-15` | `15.19` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.3 MiB | [pgedge-15-15.19-3PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-15-15.19-3PGSTY.el9.x86_64.rpm) |
+| `pgedge-15` | `15.19` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.1 MiB | [pgedge-15-15.19-3PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-15-15.19-3PGSTY.el9.aarch64.rpm) |
+| `pgedge-15` | `15.19` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.3 MiB | [pgedge-15-15.19-3PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-15-15.19-3PGSTY.el10.x86_64.rpm) |
+| `pgedge-15` | `15.19` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.1 MiB | [pgedge-15-15.19-3PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-15-15.19-3PGSTY.el10.aarch64.rpm) |
+| `pgedge-15` | `15.19` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.5 MiB | [pgedge-15_15.19-3PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~bookworm_amd64.deb) |
+| `pgedge-15` | `15.19` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.2 MiB | [pgedge-15_15.19-3PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~bookworm_arm64.deb) |
+| `pgedge-15` | `15.19` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.6 MiB | [pgedge-15_15.19-3PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~trixie_amd64.deb) |
+| `pgedge-15` | `15.19` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.2 MiB | [pgedge-15_15.19-3PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~trixie_arm64.deb) |
+| `pgedge-15` | `15.19` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.9 MiB | [pgedge-15_15.19-3PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~jammy_amd64.deb) |
+| `pgedge-15` | `15.19` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.7 MiB | [pgedge-15_15.19-3PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~jammy_arm64.deb) |
+| `pgedge-15` | `15.19` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.8 MiB | [pgedge-15_15.19-3PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~noble_amd64.deb) |
+| `pgedge-15` | `15.19` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.6 MiB | [pgedge-15_15.19-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~noble_arm64.deb) |
+| `pgedge-15` | `15.19` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.8 MiB | [pgedge-15_15.19-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~resolute_amd64.deb) |
+| `pgedge-15` | `15.19` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.6 MiB | [pgedge-15_15.19-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}

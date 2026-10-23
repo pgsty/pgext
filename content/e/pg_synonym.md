@@ -1,0 +1,235 @@
+---
+title: "pg_synonym"
+linkTitle: "pg_synonym"
+description: "Table and view aliases synchronized with target DDL."
+weight: 9220
+categories: ["SIM"]
+languages: ["SQL"]
+licenses: ["PostgreSQL"]
+repos: ["PIGSTY"]
+page_width: full
+---
+
+[**pg_synonym**](https://github.com/Mazuco/pg_synonym) : Table and view aliases synchronized with target DDL.
+
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **9220** | {{< badge content="pg_synonym" link="https://github.com/Mazuco/pg_synonym" >}} | {{< ext "pg_synonym" >}} | `1.0` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|    **Schemas**    | `synonym` |
+
+> [!Note] Release 1.0.0 installs SQL 1.0. Requires PG15+ and superuser installation for event triggers; no preload. Invoker-security views retain target privileges/RLS; manual synonym view edits can break synchronization.
+
+
+## Packages
+
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
+|:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_synonym` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_synonym_18" "green" >}} {{< bg "17" "pg_synonym_17" "green" >}} {{< bg "16" "pg_synonym_16" "green" >}} {{< bg "15" "pg_synonym_15" "green" >}} {{< bg "14" "pg_synonym_14" "red" >}} | `pg_synonym_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-synonym" "green" >}} {{< bg "17" "postgresql-17-pg-synonym" "green" >}} {{< bg "16" "postgresql-16-pg-synonym" "green" >}} {{< bg "15" "postgresql-15-pg-synonym" "green" >}} {{< bg "14" "postgresql-14-pg-synonym" "red" >}} | `postgresql-$v-pg-synonym` | - |
+{.packages}
+
+
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_synonym_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_synonym_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_synonym_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_synonym_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_synonym_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_synonym_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_synonym_14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
+{.matrix}
+
+
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_synonym_18` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.7 KiB | [pg_synonym_18-1.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_synonym_18-1.0.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_synonym_18` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 29.8 KiB | [pg_synonym_18-1.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_synonym_18-1.0.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_synonym_18` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.7 KiB | [pg_synonym_18-1.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_synonym_18-1.0.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_synonym_18` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_synonym_18-1.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_synonym_18-1.0.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_synonym_18` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.8 KiB | [pg_synonym_18-1.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_synonym_18-1.0.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_synonym_18` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.0 KiB | [pg_synonym_18-1.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_synonym_18-1.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 22.2 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.5 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 22.2 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 22.5 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 22.9 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 22.9 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.4 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.5 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
+
+{{< /tab >}}
+{{< tab label="PG17" value="pg17" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_synonym_17` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.6 KiB | [pg_synonym_17-1.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_synonym_17-1.0.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_synonym_17` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 29.8 KiB | [pg_synonym_17-1.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_synonym_17-1.0.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_synonym_17` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.7 KiB | [pg_synonym_17-1.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_synonym_17-1.0.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_synonym_17` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_synonym_17-1.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_synonym_17-1.0.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_synonym_17` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.8 KiB | [pg_synonym_17-1.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_synonym_17-1.0.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_synonym_17` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.0 KiB | [pg_synonym_17-1.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_synonym_17-1.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 22.2 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.4 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 22.2 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 22.4 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.3 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 23.3 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.3 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.4 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
+
+{{< /tab >}}
+{{< tab label="PG16" value="pg16" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_synonym_16` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.6 KiB | [pg_synonym_16-1.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_synonym_16-1.0.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_synonym_16` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 29.8 KiB | [pg_synonym_16-1.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_synonym_16-1.0.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_synonym_16` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.7 KiB | [pg_synonym_16-1.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_synonym_16-1.0.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_synonym_16` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_synonym_16-1.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_synonym_16-1.0.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_synonym_16` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.8 KiB | [pg_synonym_16-1.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_synonym_16-1.0.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_synonym_16` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.0 KiB | [pg_synonym_16-1.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_synonym_16-1.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 22.2 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.4 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 22.2 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 22.4 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.3 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 23.3 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.3 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.6 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
+
+{{< /tab >}}
+{{< tab label="PG15" value="pg15" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_synonym_15` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.6 KiB | [pg_synonym_15-1.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_synonym_15-1.0.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_synonym_15` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 29.8 KiB | [pg_synonym_15-1.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_synonym_15-1.0.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_synonym_15` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.7 KiB | [pg_synonym_15-1.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_synonym_15-1.0.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_synonym_15` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_synonym_15-1.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_synonym_15-1.0.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_synonym_15` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.8 KiB | [pg_synonym_15-1.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_synonym_15-1.0.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_synonym_15` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.0 KiB | [pg_synonym_15-1.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_synonym_15-1.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 22.2 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.8 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 22.2 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 22.4 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.3 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 23.3 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.3 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.4 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
+{.downloads}
+
+{{< /tab >}}{{< /tabs >}}
+
+## Source
+
+{{< cards cols=3 >}}
+{{< card link="https://github.com/Mazuco/pg_synonym" title="Repository" icon="github" subtitle="github.com/Mazuco/pg_synonym" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_synonym-1.0.0.tar.gz" />}}
+{{< /cards >}}
+
+
+```bash
+pig build pkg pg_synonym;		# build rpm/deb
+```
+
+
+## Install
+
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
+
+```bash
+pig repo add pgsql -u   # add both repo and update cache
+```
+
+[**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
+
+```bash
+pig install pg_synonym;		# install via package name, for the active PG version
+
+pig install pg_synonym -v 18;   # install for PG 18
+pig install pg_synonym -v 17;   # install for PG 17
+pig install pg_synonym -v 16;   # install for PG 16
+pig install pg_synonym -v 15;   # install for PG 15
+
+```
+
+
+[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
+
+```sql
+CREATE EXTENSION pg_synonym;
+```
+
+## Usage
+
+Sources:
+
+- [Official source](https://github.com/Mazuco/pg_synonym/blob/77fa1f92327d2c26f21000293b623941f946dd2f/README.md)
+- [Official source](https://github.com/Mazuco/pg_synonym/blob/77fa1f92327d2c26f21000293b623941f946dd2f/pg_synonym.control)
+- [Official source](https://github.com/Mazuco/pg_synonym/blob/77fa1f92327d2c26f21000293b623941f946dd2f/pg_synonym--1.0.sql)
+
+`pg_synonym` maintains table and view aliases as invoker-security views. Release 1.0.0 installs extension version 1.0; PostgreSQL 15 or later and superuser installation are required. It needs no preload or server restart.
+
+### Core Workflow
+
+```sql
+CREATE EXTENSION pg_synonym;
+CREATE SCHEMA app;
+CREATE SCHEMA erp;
+CREATE TABLE erp.customers (id bigint PRIMARY KEY, name text);
+SELECT synonym.create('app.customer', 'erp.customers');
+INSERT INTO app.customer VALUES (1, 'Ada');
+SELECT * FROM app.customer;
+SELECT * FROM synonym.list;
+```
+
+All helpers live in the `synonym` schema.
+
+### Operations and Permissions
+
+`synonym.create` can register an alias before its target exists; event triggers resolve it later. Target renames follow the object identity, and supported column changes rebuild the alias. `synonym.refresh()` reconciles aliases manually. `synonym.drop` removes one, with optional `if_exists => true`.
+
+Access through an alias still checks target permissions and row security. Creating an alias requires creation rights in its schema and usage rights on the target schema. Removing one requires ownership, role membership or superuser rights.
+
+### Boundaries
+
+Targets include ordinary, partitioned and foreign tables, views and materialized views. Aliases to aliases, cross-database objects, functions and sequences are unsupported. Use a query for copying data out; the alias is not a substitute for target DDL or truncation. Merging through a view requires PostgreSQL 17 or later.
+
+Manual changes to an alias view can break synchronization. Dependent views may block destructive target changes, and rebuilding an alias can reset grants applied directly to it. Dropping the extension leaves ordinary alias views behind; plan their cleanup separately.

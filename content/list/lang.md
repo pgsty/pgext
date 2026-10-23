@@ -15,9 +15,9 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 430 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 78 | Pure SQL extensions and functions |
-| {{< language "Rust" >}} | 63 | Extensions written in Rust with the pgrx framework |
+| {{< language "C" >}} | 434 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 80 | Pure SQL extensions and functions |
+| {{< language "Rust" >}} | 69 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "PLpgSQL" >}} | 4 | Extensions written in PLpgSQL |
@@ -27,7 +27,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="430 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="434 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -73,6 +73,7 @@ The traditional PostgreSQL extension language
 | 2260 | {{< alias "acdat" >}} | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
 | 2290 | {{< alias "textsearch_intl" >}} | Multilingual full text search with ICU segmentation, normalization and n-gram matching |
 | 2300 | {{< alias "pg_icu_parser" >}} | Full text search parser using ICU boundary analysis |
+| 2330 | {{< alias "pg_tre" >}} | Native PostgreSQL index access method for approximate regular-expression matching |
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
@@ -192,6 +193,7 @@ The traditional PostgreSQL extension language
 | 3293 | {{< alias "hstore_plpython3u" "plpython3u" >}} | transform between hstore and plpython3u |
 | 3500 | {{< alias "prefix" "pg_prefix" >}} | Prefix Range module for PostgreSQL |
 | 3510 | {{< alias "semver" "pg_semver" >}} | Semantic version data type |
+| 3540 | {{< alias "codesystem" >}} | Hierarchical classification code types with validation and revision tracking |
 | 3550 | {{< alias "unit" "pgunit" >}} | SI units extension |
 | 3570 | {{< alias "pgpdf" >}} | PDF type with meta admin & Full-Text Search |
 | 3610 | {{< alias "md5hash" >}} | type for storing 128-bit binary data inline |
@@ -268,6 +270,7 @@ The traditional PostgreSQL extension language
 | 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
 | 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | High-performance weighted statistics functions for sparse data |
 | 4710 | {{< alias "tdigest" >}} | Provides tdigest aggregate function. |
+| 4715 | {{< alias "hdr_histogram" >}} | HDR histogram type, percentile queries and mergeable aggregation. |
 | 4720 | {{< alias "first_last_agg" >}} | first() and last() aggregate functions |
 | 4730 | {{< alias "extra_window_functions" >}} | Extra Window Functions for PostgreSQL |
 | 4740 | {{< alias "floatvec" >}} | Math for vectors (arrays) of numbers |
@@ -282,6 +285,7 @@ The traditional PostgreSQL extension language
 | 4820 | {{< alias "base62" "pg_base62" >}} | Base62 extension for PostgreSQL |
 | 4840 | {{< alias "financial" "pg_financial" >}} | Financial aggregate functions |
 | 4845 | {{< alias "pg_accumulator" >}} | Accumulation registers for balance and turnover tracking in PostgreSQL |
+| 4855 | {{< alias "pg_try_cast" >}} | Text conversion with NULL or a typed fallback on conversion errors. |
 | 4860 | {{< alias "parray_gin" >}} | GIN index operator class and partial-match operators for text arrays |
 | 4880 | {{< alias "refint" >}} | functions for implementing referential integrity (obsolete) |
 | 4881 | {{< alias "autoinc" >}} | functions for autoincrementing fields |
@@ -466,7 +470,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="78 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="80 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -506,6 +510,7 @@ Pure SQL extensions and functions
 | 3830 | {{< alias "debversion" >}} | Debian version number data type |
 | 3890 | {{< alias "pgcalendar" >}} | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 4140 | {{< alias "pglock" >}} | Lightweight distributed lock service inside PostgreSQL |
+| 4145 | {{< alias "pg_lease" >}} | SQL leases with TTL expiry and monotonically increasing fencing epochs |
 | 4170 | {{< alias "pgjwt" >}} | JSON Web Token API for Postgresql |
 | 4190 | {{< alias "pg_html5_email_address" >}} | PostgreSQL email validation that is consistent with the HTML5 spec |
 | 4210 | {{< alias "pgsql_tweaks" >}} | Some functions and views for daily usage |
@@ -545,6 +550,7 @@ Pure SQL extensions and functions
 | 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
 | 9090 | {{< alias "pg_projection" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9200 | {{< alias "db2fce" >}} | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
+| 9220 | {{< alias "pg_synonym" >}} | Table and view aliases synchronized with target DDL. |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
@@ -553,7 +559,7 @@ Pure SQL extensions and functions
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="63 Extensions" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="69 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -582,8 +588,12 @@ Extensions written in Rust with the pgrx framework
 | 2170 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
 | 2200 | {{< alias "pg_pinyin" >}} | Pinyin romanization and search helpers for PostgreSQL |
 | 2210 | {{< alias "pg_kazsearch" >}} | Kazakh full-text search extension for PostgreSQL |
+| 2310 | {{< alias "tin" "lead" >}} | TIN-compatible text search for development and testing |
+| 2320 | {{< alias "stannum" >}} | Experimental TINQL text search with BM25 and segmented indexes |
 | 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
 | 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
+| 2570 | {{< alias "pg_table_range" >}} | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
+| 2580 | {{< alias "pg_improv" >}} | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2630 | {{< alias "graph" "pggraph" >}} | Graph database capabilities for PostgreSQL |
 | 2640 | {{< alias "pgrdf" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2740 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
@@ -591,6 +601,7 @@ Extensions written in Rust with the pgrx framework
 | 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
 | 2860 | {{< alias "pg_trickle" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2870 | {{< alias "pg_durable" >}} | Durable SQL functions for PostgreSQL |
+| 2895 | {{< alias "pg_kv" >}} | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 2980 | {{< alias "pg_mentat" >}} | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
@@ -610,6 +621,7 @@ Extensions written in Rust with the pgrx framework
 | 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
 | 5830 | {{< alias "pg_strict" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
+| 7035 | {{< alias "encsearch" >}} | Experimental encrypted text search using AEAD ciphers and keyed blind indexes |
 | 7060 | {{< alias "pg_session_jwt" >}} | Manage authentication sessions using JWTs |
 | 7070 | {{< alias "anon" "pg_anon" >}} | PostgreSQL Anonymizer (anon) extension |
 | 7080 | {{< alias "pgsmcrypto" >}} | PostgreSQL SM Algorithm Extension |

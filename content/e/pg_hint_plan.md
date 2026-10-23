@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2780** | {{< badge content="pg_hint_plan" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< ext "pg_hint_plan" >}} | `1.8.0` | {{< category "FEAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **2780** | {{< badge content="pg_hint_plan" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< ext "pg_hint_plan" >}} | `1.8.1` | {{< category "FEAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,13 +30,15 @@ page_width: full
 |    **Schemas**    | `hint_plan` |
 |   **See Also**    | {{< ext "hypopg" >}} {{< ext "online_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "plan_filter" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} {{< ext "pg_regresql" >}} {{< ext "pg_track_optimizer" >}} |
 
+> [!Note] PG18 uses 1.8.1; PG14-17 use separate 1.4.5/1.5.4/1.6.3/1.7.2 RPM branches. DEB remains on the previous branch releases; upstream 1.9.0 targets PG19.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_hint_plan` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.0` | {{< bg "18" "pg_hint_plan_18" "green" >}} {{< bg "17" "pg_hint_plan_17" "green" >}} {{< bg "16" "pg_hint_plan_16" "green" >}} {{< bg "15" "pg_hint_plan_15" "green" >}} {{< bg "14" "pg_hint_plan_14" "green" >}} | `pg_hint_plan_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_hint_plan` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.1` | {{< bg "18" "pg_hint_plan_18" "green" >}} {{< bg "17" "pg_hint_plan_17" "green" >}} {{< bg "16" "pg_hint_plan_16" "green" >}} {{< bg "15" "pg_hint_plan_15" "green" >}} {{< bg "14" "pg_hint_plan_14" "green" >}} | `pg_hint_plan_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.0` | {{< bg "18" "postgresql-18-pg-hint-plan" "green" >}} {{< bg "17" "postgresql-17-pg-hint-plan" "green" >}} {{< bg "16" "postgresql-16-pg-hint-plan" "green" >}} {{< bg "15" "postgresql-15-pg-hint-plan" "green" >}} {{< bg "14" "postgresql-14-pg-hint-plan" "green" >}} | `postgresql-$v-pg-hint-plan` | - |
 {.packages}
 

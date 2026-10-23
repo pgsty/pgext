@@ -5,10 +5,11 @@ weight: 100
 breadcrumb: false
 ---
 
-最新稳定版本是 [v1.10.0](https://github.com/pgsty/pig/releases/tag/v1.10.0)。
+最新稳定版本是 [v1.10.1](https://github.com/pgsty/pig/releases/tag/v1.10.1)。
 
 |       版本        |     日期     | 摘要                                              |                                                     GitHub |
 |:---------------:|:----------:|-------------------------------------------------|-----------------------------------------------------------:|
+| [v1.10.1](#v1101) | 2026-10-22 | 升级 Go 1.27.3，更新间接工具依赖 | [v1.10.1](https://github.com/pgsty/pig/releases/tag/v1.10.1) |
 | [v1.10.0](#v1100) | 2026-10-17 | 603 条目录记录，PostgreSQL 目标与恢复安全、Inventory 保真、自动化修复 | [v1.10.0](https://github.com/pgsty/pig/releases/tag/v1.10.0) |
 | [v1.9.0](#v190) | 2026-10-06 | 600 条扩展记录、Xray 角色、公钥准备、pgrx 0.19.3 | [v1.9.0](https://github.com/pgsty/pig/releases/tag/v1.9.0) |
 | [v1.8.1](#v181) | 2026-09-03 | CLI 与仓库安全、默认调试包、pgrx 0.19.2 | [v1.8.1](https://github.com/pgsty/pig/releases/tag/v1.8.1) |
@@ -62,6 +63,32 @@ breadcrumb: false
 | [v0.0.1](#v001) | 2024-12-23 | 创世发布                                            | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
 
 --------
+
+## v1.10.1
+
+Pig `v1.10.1` 是针对 Go 工具链与依赖更新的维护版本。
+
+### Go 工具链与依赖
+
+- Go 工具链从 `1.27.2` 升级到 `1.27.3`。CI 与发布构建使用 `go.mod` 指定的版本。
+- 通过限定原版本的模块替换，更新间接工具依赖：
+
+| 模块 | 原版本 | 新版本 |
+|:-----|:-------|:-------|
+| `github.com/cpuguy83/go-md2man/v2` | `v2.0.6` | `v2.0.7` |
+| `github.com/stretchr/objx` | `v0.1.0` | `v0.8.0` |
+| `golang.org/x/mod` | `v0.41.0` | `v0.42.0` |
+| `golang.org/x/tools` | `v0.51.0` | `v0.52.0` |
+
+### 兼容性
+
+命令、参数与配置保持和 `v1.10.0` 兼容。内嵌目录仍为 **603 条记录**，
+内置 Pigsty 保持 `4.5.0`，默认 `cargo-pgrx` 保持 `0.19.3`。
+
+从源码构建需要 Go `1.27.3` 或更高版本。使用预编译软件包无需在本机安装 Go。
+
+发布制品：[v1.10.1](https://github.com/pgsty/pig/releases/tag/v1.10.1)
+
 
 ## v1.10.0
 

@@ -6,252 +6,320 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-10-24
+
+This batch combines the updates from October 22–24, 2026, covering **44 packages**, including **4 new additions**. Repeated upgrades are consolidated from the version before this batch to the final version.
+
+| Name                     | Old            | New            | Comment                                                                    |
+|:-------------------------|:---------------|:---------------|:---------------------------------------------------------------------------|
+| agentsview               | 0.45.0         | 0.46.1         | RPM/DEB for both architectures                                             |
+| barn                     | 0.9.0          | 0.9.1          | Native upstream packages; retains the 0.x prerelease label                 |
+| blackbox-exporter        | 0.29.0         | 0.29.1         | RPM/DEB for both architectures                                             |
+| claude                   | 2.1.303        | 2.1.309        | Latest channel; official checksums and both binary versions verified       |
+| cloudflared              | 2026.10.1      | 2026.10.3      | RPM/DEB for both architectures                                             |
+| code                     | 1.142.0        | 1.143.1        | Native upstream DEB/RPM; original bytes and checksums verified             |
+| codex                    | 0.163.0        | 0.164.0        | RPM/DEB for both architectures                                             |
+| duckdb                   | 1.5.6          | 2.0.0          | 2.0 stable release; uses the new upstream tar.gz artifacts                 |
+| etcd                     | 3.7.2          | 3.7.3          | RPM/DEB for both architectures                                             |
+| golang                   | 1.27.2         | 1.27.3         | RPM/DEB for both architectures                                             |
+| grafana-infinity-ds      | 4.1.1          | 4.1.3          | RPM/DEB for both architectures                                             |
+| juicefs                  | 1.4.1          | 1.4.2          | RPM/DEB for both architectures                                             |
+| kafka-exporter           | 1.10.0         | 1.11.0         | RPM/DEB for both architectures                                             |
+| logcli                   | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
+| loki                     | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
+| loki-canary              | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
+| mcp-toolbox              | 1.14.0         | 1.15.0         | CGO source build; glibc 2.28; installation and upgrade checks passed       |
+| mongodb-exporter         | 0.53.0         | 0.54.0         | RPM/DEB for both architectures                                             |
+| mysqld-exporter          | 0.20.0         | 0.21.0         | Some Untyped metrics become Counter/Gauge; review metric type changes      |
+| nodejs                   | 24.22.0        | 24.22.1        | 24.x LTS security update                                                   |
+| opencode                 | 1.19.3         | 1.19.4         | Includes Bun security fixes; amd64 uses the baseline artifact              |
+| opentofu                 | 1.13.1         | 1.13.2         | Native upstream DEB/RPM; package name is tofu                              |
+| pev2                     | 1.24.0         | 1.25.0         | Architecture independent: noarch RPM / all DEB                             |
+| pg-exporter              | 1.4.1          | 1.5.0          | RPM/DEB for both architectures                                             |
+| pgbot                    | —              | 0.9.0          | New; PostgreSQL diagnostics and JSON/MCP; optional AI; beta                |
+| pggo                     | —              | 0.1.1          | New; JSON SQL CLI for scripts and agents                                   |
+| pgsync                   | —              | 0.1.1          | New; PostgreSQL snapshot and CDC; controlled beta; bootstrap needs pg_dump |
+| pgterm                   | —              | 0.4.0          | New; database TUI, SQL and diagnostics; pairs with pgbot; beta             |
+| postgrest                | 16.4           | 16.5           | RPM/DEB for both architectures                                             |
+| prometheus               | 3.15.0         | 3.15.1         | Includes matching console templates and libraries                          |
+| promtail                 | 3.6.7          | 3.6.11         | Backfills the 3.6.11 artifacts; remains EOL                                |
+| redis-exporter           | 1.94.0         | 1.95.0         | RPM/DEB for both architectures                                             |
+| sabiql                   | 3.0.1          | 3.0.2          | RPM/DEB for both architectures                                             |
+| silo                     | 20261018000000 | 20261024000000 | S3 object storage service; native RPM/DEB for both architectures           |
+| kes                      | 20261018000000 | 20261024000000 | Key encryption service; native RPM/DEB for both architectures              |
+| mcli                     | 20261018000000 | 20261024000000 | mc object storage command-line client                                      |
+| sow                      | 0.6.0          | 0.6.1          | RPM/DEB for both architectures                                             |
+| uv                       | 0.13.1         | 0.13.5         | RPM/DEB for both architectures                                             |
+| vector                   | 0.59.0         | 0.60.0         | Native upstream DEB/RPM for both architectures                             |
+| victoria-metrics         | 1.154.0        | 1.154.1        | VictoriaMetrics single-node server                                         |
+| victoria-metrics-cluster | 1.154.0        | 1.154.1        | VictoriaMetrics cluster components; upgraded with the single-node server   |
+| victoria-traces          | 0.12.0         | 0.12.1         | RPM/DEB for both architectures                                             |
+| vmutils                  | 1.154.0        | 1.154.1        | VictoriaMetrics utilities; upgraded with the main package                  |
+| xray                     | 26.3.27        | 26.10.21       | Upstream Latest emergency security update; versioned cache filenames       |
+
+## 2026-10-19
+
+| Name                    | Old                | New                | Comment                                                                                                                              |
+|:------------------------|:-------------------|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| barn                    | —                  | 0.9.0              | New; upstream prerelease; native DEB/RPM for both architectures; imported locally; repository RPM copies signed                      |
+| claude                  | 2.1.301            | 2.1.303            | Official checksums and actual Linux binary versions verified for both architectures; imported locally                                |
+| grafana-victorialogs-ds | 0.33.0             | 0.33.1             | Both architectures; imported locally                                                                                                 |
+| kes                     | —                  | 20261018000000.0.0 | New PGSTY KES package; native DEB/RPM for both architectures; original bytes and upstream RPM signatures preserved; imported locally |
+| mcli                    | 20260916000000.0.0 | 20261018000000.0.0 | Both architectures; imported locally                                                                                                 |
+| mtail                   | 3.4.16             | 3.4.17             | Both architectures; imported locally                                                                                                 |
+| opencode                | 1.19.2             | 1.19.3             | Both architectures; imported locally                                                                                                 |
+| pig                     | 1.9.0              | 1.10.0             | Both architectures; imported locally                                                                                                 |
+| rustfs                  | 1.0.1              | 1.0.3              | Both architectures; imported locally                                                                                                 |
+| silo                    | 20260916000000.0.0 | 20261018000000.0.0 | Formal release; native DEB/RPM for both architectures; original bytes and upstream RPM signatures preserved; imported locally        |
+| sow                     | 0.5.0              | 0.6.0              | Both architectures; imported locally                                                                                                 |
+| stalwart                | 0.16.26            | 0.16.27            | Both architectures; imported locally                                                                                                 |
+
 ## 2026-10-16
 
-| Name | Old | New | Comment |
-|:---|:---|:---|:---|
-| claude | 2.1.296 | 2.1.301 | Official checksums and actual Linux binary versions verified for both architectures; imported locally |
-| cloudflared | 2026.10.0 | 2026.10.1 | Both architectures; imported locally |
-| code | 1.141.0 | 1.142.0 | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed |
-| codex | 0.162.1 | 0.163.0 | Both architectures; imported locally |
-| dblab | 0.52.1 | 0.53.0 | Both architectures; imported locally |
-| grafana | 13.2.3 | 13.2.4 | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed |
-| grafana-victorialogs-ds | 0.32.0 | 0.33.0 | Both architectures; imported locally |
-| headscale | 0.29.4 | 0.29.5 | Both architectures; imported locally |
-| hugo | 0.167.0 | 0.168.0 | Both architectures; imported locally |
-| kafka | 4.3.1 | 4.4.0 | Noarch RPM and all DEB; upstream SHA512 verified; imported locally |
-| mtail | 3.4.15 | 3.4.16 | Both architectures; imported locally |
-| nodejs | 24.21.0 | 24.22.0 | Both architectures; imported locally |
-| opencode | 1.18.35 | 1.19.2 | Both architectures; imported locally |
-| pgschema | 1.13.1 | 1.13.3 | Both architectures; imported locally |
-| redis-exporter | 1.93.0 | 1.94.0 | Both architectures; imported locally |
-| rust-toolchain | 1.99.0 | 1.99.1 | Upstream signatures and dual-architecture ELF ABI checks passed; imported locally |
-| stalwart | 0.16.25 | 0.16.26 | Both architectures; imported locally |
-| timescaledb-tools | 0.19.0-1PGSTY | 0.19.0-2PGSTY | parallel-copy 0.13.0 to 0.13.1, built with Go 1.27.2; tune remains 0.19.0; package release incremented; imported locally |
-| uv | 0.13.0 | 0.13.1 | Both architectures; imported locally |
-| victoria-metrics | 1.153.0 | 1.154.0 | Updates victoria-metrics, victoria-metrics-cluster and vmutils together; imported locally |
+| Name                    | Old           | New           | Comment                                                                                                                  |
+|:------------------------|:--------------|:--------------|:-------------------------------------------------------------------------------------------------------------------------|
+| claude                  | 2.1.296       | 2.1.301       | Official checksums and actual Linux binary versions verified for both architectures; imported locally                    |
+| cloudflared             | 2026.10.0     | 2026.10.1     | Both architectures; imported locally                                                                                     |
+| code                    | 1.141.0       | 1.142.0       | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed                           |
+| codex                   | 0.162.1       | 0.163.0       | Both architectures; imported locally                                                                                     |
+| dblab                   | 0.52.1        | 0.53.0        | Both architectures; imported locally                                                                                     |
+| grafana                 | 13.2.3        | 13.2.4        | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed                           |
+| grafana-victorialogs-ds | 0.32.0        | 0.33.0        | Both architectures; imported locally                                                                                     |
+| headscale               | 0.29.4        | 0.29.5        | Both architectures; imported locally                                                                                     |
+| hugo                    | 0.167.0       | 0.168.0       | Both architectures; imported locally                                                                                     |
+| kafka                   | 4.3.1         | 4.4.0         | Noarch RPM and all DEB; upstream SHA512 verified; imported locally                                                       |
+| mtail                   | 3.4.15        | 3.4.16        | Both architectures; imported locally                                                                                     |
+| nodejs                  | 24.21.0       | 24.22.0       | Both architectures; imported locally                                                                                     |
+| opencode                | 1.18.35       | 1.19.2        | Both architectures; imported locally                                                                                     |
+| pgschema                | 1.13.1        | 1.13.3        | Both architectures; imported locally                                                                                     |
+| redis-exporter          | 1.93.0        | 1.94.0        | Both architectures; imported locally                                                                                     |
+| rust-toolchain          | 1.99.0        | 1.99.1        | Upstream signatures and dual-architecture ELF ABI checks passed; imported locally                                        |
+| stalwart                | 0.16.25       | 0.16.26       | Both architectures; imported locally                                                                                     |
+| timescaledb-tools       | 0.19.0-1PGSTY | 0.19.0-2PGSTY | parallel-copy 0.13.0 to 0.13.1, built with Go 1.27.2; tune remains 0.19.0; package release incremented; imported locally |
+| uv                      | 0.13.0        | 0.13.1        | Both architectures; imported locally                                                                                     |
+| victoria-metrics        | 1.153.0       | 1.154.0       | Updates victoria-metrics, victoria-metrics-cluster and vmutils together; imported locally                                |
 
 ## 2026-10-11
 
-| Name | Old | New | Comment |
-|:---|:---|:---|:---|
-| agentsview | 0.44.0 | 0.45.0 | Both architectures; imported locally |
-| blackbox-exporter | 0.28.0 | 0.29.0 | Both architectures; imported locally |
-| claude | 2.1.289 | 2.1.296 | Both architectures; imported locally |
-| cloudflared | 2026.9.3 | 2026.10.0 | Both architectures; imported locally |
-| code | 1.140.0 | 1.141.0 | Upstream DEB/RPM; imported locally |
-| code-server | 4.140.0 | 4.141.0 | Upstream DEB/RPM; imported locally |
-| codex | 0.160.0 | 0.162.1 | Both architectures; imported locally |
-| crush | 0.97.1 | 0.98.1 | Both architectures; imported locally |
-| dblab | 0.51.0 | 0.52.1 | Both architectures; imported locally |
-| golang | 1.27.1 | 1.27.2 | Both architectures; imported locally |
-| grafana-infinity-ds | 4.0.0 | 4.1.1 | Both architectures; imported locally |
-| grafana-plugins | 13.2.2 | 13.2.3 | Noarch; JSON datasource 1.4.3; imported locally |
-| jmx-exporter | 1.6.0 | 1.7.0 | Noarch; imported locally |
-| mcp-toolbox | 1.13.1 | 1.14.0 | CGO source build; glibc 2.28; imported locally |
-| opencode | 1.18.34 | 1.18.35 | Both architectures; imported locally |
-| pig | 1.8.1 | 1.9.0 | Both architectures; imported locally |
-| pushgateway | 1.11.3 | 1.11.4 | Both architectures; imported locally |
-| rclone | 1.75.1 | 1.75.2 | Both architectures; imported locally |
-| stalwart | 0.16.24 | 0.16.25 | Both architectures; imported locally |
-| uv | 0.12.23 | 0.13.0 | Both architectures; imported locally |
-| vector | 0.58.0 | 0.59.0 | Upstream DEB/RPM; imported locally |
+| Name                | Old      | New       | Comment                                         |
+|:--------------------|:---------|:----------|:------------------------------------------------|
+| agentsview          | 0.44.0   | 0.45.0    | Both architectures; imported locally            |
+| blackbox-exporter   | 0.28.0   | 0.29.0    | Both architectures; imported locally            |
+| claude              | 2.1.289  | 2.1.296   | Both architectures; imported locally            |
+| cloudflared         | 2026.9.3 | 2026.10.0 | Both architectures; imported locally            |
+| code                | 1.140.0  | 1.141.0   | Upstream DEB/RPM; imported locally              |
+| code-server         | 4.140.0  | 4.141.0   | Upstream DEB/RPM; imported locally              |
+| codex               | 0.160.0  | 0.162.1   | Both architectures; imported locally            |
+| crush               | 0.97.1   | 0.98.1    | Both architectures; imported locally            |
+| dblab               | 0.51.0   | 0.52.1    | Both architectures; imported locally            |
+| golang              | 1.27.1   | 1.27.2    | Both architectures; imported locally            |
+| grafana-infinity-ds | 4.0.0    | 4.1.1     | Both architectures; imported locally            |
+| grafana-plugins     | 13.2.2   | 13.2.3    | Noarch; JSON datasource 1.4.3; imported locally |
+| jmx-exporter        | 1.6.0    | 1.7.0     | Noarch; imported locally                        |
+| mcp-toolbox         | 1.13.1   | 1.14.0    | CGO source build; glibc 2.28; imported locally  |
+| opencode            | 1.18.34  | 1.18.35   | Both architectures; imported locally            |
+| pig                 | 1.8.1    | 1.9.0     | Both architectures; imported locally            |
+| pushgateway         | 1.11.3   | 1.11.4    | Both architectures; imported locally            |
+| rclone              | 1.75.1   | 1.75.2    | Both architectures; imported locally            |
+| stalwart            | 0.16.24  | 0.16.25   | Both architectures; imported locally            |
+| uv                  | 0.12.23  | 0.13.0    | Both architectures; imported locally            |
+| vector              | 0.58.0   | 0.59.0    | Upstream DEB/RPM; imported locally              |
 
 ## 2026-10-05
 
 Local build batch: 22 recipes upgraded, producing 96 RPM/DEB artifacts for 24 packages. All downloads used the port 8888 Xray proxy; MCP Toolbox was built from source for both architectures with CGO enabled. All 96 artifacts were imported into the local `repo/apt/infra` and `repo/yum/infra` repositories, with Pigsty RPM/metadata signatures and dual-architecture APT/DNF client verification. Vendor byte preservation below refers to the cached/build artifacts; repository RPM copies are signed separately. Online upload has not been performed.
 
-| Name | Old | New | Comment |
-|---|---|---|---|
-| caddy | 2.11.4 | 2.11.7 | Verified and built dual-architecture RPM/DEB |
-| claude | 2.1.284 | 2.1.289 | Official manifest SHA256 and both Linux binary versions verified |
-| code | 1.139.1 | 1.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| code-server | 4.139.1 | 4.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| codex | 0.159.0 | 0.160.0 | Verified and built dual-architecture RPM/DEB |
-| crush | 0.96.1 | 0.97.1 | Verified and built dual-architecture RPM/DEB |
-| grafana | 13.2.2 | 13.2.3 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| k3s | 1.37.0 | 1.37.1 | Upstream v1.37.1+k3s1; stable channel remains 1.36.5+k3s1 |
-| k3s-images | 1.37.0 | 1.37.1 | Dual-arch air-gap images and exact K3s dependency updated together |
-| maddy | 0.9.5 | 0.9.6 | Verified and built dual-architecture RPM/DEB |
-| mcp-toolbox | 1.12.0 | 1.13.1 | Dual-arch source build with Go 1.27.1, CGO and Zig 0.15.2; glibc 2.28 target; release 2PGSTY preserves the existing repository build |
-| mtail | 3.4.14 | 3.4.15 | Verified and built dual-architecture RPM/DEB |
-| openbao | 2.7.0 | 2.7.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| opencode | 1.18.33 | 1.18.34 | Verified and built dual-architecture RPM/DEB |
-| opentofu | 1.12.6 | 1.13.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| pg-hardstorage | 1.4.2 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
-| redis-exporter | 1.92.1 | 1.93.0 | Verified and built dual-architecture RPM/DEB |
-| rust-toolchain | 1.98.1 | 1.99.0 | Upstream signatures and dual-architecture ELF ABI checks passed |
-| rustfs | 1.0.0 | 1.0.1 | Verified and built dual-architecture RPM/DEB |
-| uv | 0.12.20 | 0.12.23 | Verified and built dual-architecture RPM/DEB |
-| victoria-logs | 1.52.0 | 1.53.0 | victoria-logs, vlogscli and vlagent updated together |
-| victoria-traces | 0.11.1 | 0.12.0 | Verified and built dual-architecture RPM/DEB |
+| Name            | Old     | New     | Comment                                                                                                                              |
+|-----------------|---------|---------|--------------------------------------------------------------------------------------------------------------------------------------|
+| caddy           | 2.11.4  | 2.11.7  | Verified and built dual-architecture RPM/DEB                                                                                         |
+| claude          | 2.1.284 | 2.1.289 | Official manifest SHA256 and both Linux binary versions verified                                                                     |
+| code            | 1.139.1 | 1.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte                                                                            |
+| code-server     | 4.139.1 | 4.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte                                                                            |
+| codex           | 0.159.0 | 0.160.0 | Verified and built dual-architecture RPM/DEB                                                                                         |
+| crush           | 0.96.1  | 0.97.1  | Verified and built dual-architecture RPM/DEB                                                                                         |
+| grafana         | 13.2.2  | 13.2.3  | Official native dual-arch DEB/RPM preserved byte-for-byte                                                                            |
+| k3s             | 1.37.0  | 1.37.1  | Upstream v1.37.1+k3s1; stable channel remains 1.36.5+k3s1                                                                            |
+| k3s-images      | 1.37.0  | 1.37.1  | Dual-arch air-gap images and exact K3s dependency updated together                                                                   |
+| maddy           | 0.9.5   | 0.9.6   | Verified and built dual-architecture RPM/DEB                                                                                         |
+| mcp-toolbox     | 1.12.0  | 1.13.1  | Dual-arch source build with Go 1.27.1, CGO and Zig 0.15.2; glibc 2.28 target; release 2PGSTY preserves the existing repository build |
+| mtail           | 3.4.14  | 3.4.15  | Verified and built dual-architecture RPM/DEB                                                                                         |
+| openbao         | 2.7.0   | 2.7.1   | Official native dual-arch DEB/RPM preserved byte-for-byte                                                                            |
+| opencode        | 1.18.33 | 1.18.34 | Verified and built dual-architecture RPM/DEB                                                                                         |
+| opentofu        | 1.12.6  | 1.13.1  | Official native dual-arch DEB/RPM preserved byte-for-byte                                                                            |
+| pg-hardstorage  | 1.4.2   | 1.5.0   | Verified and built dual-architecture RPM/DEB                                                                                         |
+| redis-exporter  | 1.92.1  | 1.93.0  | Verified and built dual-architecture RPM/DEB                                                                                         |
+| rust-toolchain  | 1.98.1  | 1.99.0  | Upstream signatures and dual-architecture ELF ABI checks passed                                                                      |
+| rustfs          | 1.0.0   | 1.0.1   | Verified and built dual-architecture RPM/DEB                                                                                         |
+| uv              | 0.12.20 | 0.12.23 | Verified and built dual-architecture RPM/DEB                                                                                         |
+| victoria-logs   | 1.52.0  | 1.53.0  | victoria-logs, vlogscli and vlagent updated together                                                                                 |
+| victoria-traces | 0.11.1  | 0.12.0  | Verified and built dual-architecture RPM/DEB                                                                                         |
 
 ## 2026-09-29
 
 Local build batch: 26 recipes upgraded and cargo-pgrx-0193 added, producing 116 RPM/DEB artifacts for 29 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
-| Name | Old | New | Comment |
-|---|---|---|---|
-| agentsview | 0.43.0 | 0.44.0 | Verified and built dual-architecture RPM/DEB |
-| cargo-pgrx-0193 | - | 0.19.3 | New exact 0.19.3 slot; 0191/0192 retained; native EL8 source builds for both architectures |
-| claude | 2.1.278 | 2.1.284 | Downloaded via port 8888; official manifest SHA256 and both Linux binary versions verified |
-| cloudflared | 2026.9.1 | 2026.9.3 | Verified and built dual-architecture RPM/DEB |
-| code | 1.138.0 | 1.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| code-server | 4.137.0 | 4.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| codex | 0.155.1 | 0.159.0 | Verified and built dual-architecture RPM/DEB |
-| crush | 0.95.0 | 0.96.1 | Verified and built dual-architecture RPM/DEB |
-| dblab | 0.50.0 | 0.51.0 | Verified and built dual-architecture RPM/DEB |
-| duckdb | 1.5.5 | 1.5.6 | Verified and built dual-architecture RPM/DEB |
-| etcd | 3.7.1 | 3.7.2 | Verified and built dual-architecture RPM/DEB |
-| headscale | 0.29.3 | 0.29.4 | Verified and built dual-architecture RPM/DEB |
-| hugo | 0.166.0 | 0.167.0 | Verified and built dual-architecture RPM/DEB |
-| mtail | 3.4.12 | 3.4.14 | Verified and built dual-architecture RPM/DEB |
-| openbao | 2.6.2 | 2.7.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| opencode | 1.18.31 | 1.18.33 | Verified and built dual-architecture RPM/DEB |
-| pgschema | 1.13.0 | 1.13.1 | Verified and built dual-architecture RPM/DEB |
-| postgrest | 16.3 | 16.4 | Verified and built dual-architecture RPM/DEB |
-| prometheus | 3.14.0 | 3.15.0 | Verified and built dual-architecture RPM/DEB |
-| rainfrog | 0.4.5 | 0.4.6 | Verified and built dual-architecture RPM/DEB |
-| redis-exporter | 1.91.1 | 1.92.1 | Verified and built dual-architecture RPM/DEB |
-| seaweedfs | 4.47 | 4.48 | Verified and built dual-architecture RPM/DEB |
-| sow | 0.4.0 | 0.5.0 | Existing 0.3/0.4 Managed workspaces require explicit migration |
-| stalwart | 0.16.22 | 0.16.24 | Verified and built dual-architecture RPM/DEB |
-| tailcat | 0.6.0 | 0.7.0 | Verified and built dual-architecture RPM/DEB |
-| uv | 0.12.17 | 0.12.20 | Verified and built dual-architecture RPM/DEB |
-| victoria-metrics | 1.152.0 | 1.153.0 | Single-node, cluster, and vmutils packages updated together |
+| Name             | Old      | New      | Comment                                                                                    |
+|------------------|----------|----------|--------------------------------------------------------------------------------------------|
+| agentsview       | 0.43.0   | 0.44.0   | Verified and built dual-architecture RPM/DEB                                               |
+| cargo-pgrx-0193  | -        | 0.19.3   | New exact 0.19.3 slot; 0191/0192 retained; native EL8 source builds for both architectures |
+| claude           | 2.1.278  | 2.1.284  | Downloaded via port 8888; official manifest SHA256 and both Linux binary versions verified |
+| cloudflared      | 2026.9.1 | 2026.9.3 | Verified and built dual-architecture RPM/DEB                                               |
+| code             | 1.138.0  | 1.139.1  | Official native dual-arch DEB/RPM preserved byte-for-byte                                  |
+| code-server      | 4.137.0  | 4.139.1  | Official native dual-arch DEB/RPM preserved byte-for-byte                                  |
+| codex            | 0.155.1  | 0.159.0  | Verified and built dual-architecture RPM/DEB                                               |
+| crush            | 0.95.0   | 0.96.1   | Verified and built dual-architecture RPM/DEB                                               |
+| dblab            | 0.50.0   | 0.51.0   | Verified and built dual-architecture RPM/DEB                                               |
+| duckdb           | 1.5.5    | 1.5.6    | Verified and built dual-architecture RPM/DEB                                               |
+| etcd             | 3.7.1    | 3.7.2    | Verified and built dual-architecture RPM/DEB                                               |
+| headscale        | 0.29.3   | 0.29.4   | Verified and built dual-architecture RPM/DEB                                               |
+| hugo             | 0.166.0  | 0.167.0  | Verified and built dual-architecture RPM/DEB                                               |
+| mtail            | 3.4.12   | 3.4.14   | Verified and built dual-architecture RPM/DEB                                               |
+| openbao          | 2.6.2    | 2.7.0    | Official native dual-arch DEB/RPM preserved byte-for-byte                                  |
+| opencode         | 1.18.31  | 1.18.33  | Verified and built dual-architecture RPM/DEB                                               |
+| pgschema         | 1.13.0   | 1.13.1   | Verified and built dual-architecture RPM/DEB                                               |
+| postgrest        | 16.3     | 16.4     | Verified and built dual-architecture RPM/DEB                                               |
+| prometheus       | 3.14.0   | 3.15.0   | Verified and built dual-architecture RPM/DEB                                               |
+| rainfrog         | 0.4.5    | 0.4.6    | Verified and built dual-architecture RPM/DEB                                               |
+| redis-exporter   | 1.91.1   | 1.92.1   | Verified and built dual-architecture RPM/DEB                                               |
+| seaweedfs        | 4.47     | 4.48     | Verified and built dual-architecture RPM/DEB                                               |
+| sow              | 0.4.0    | 0.5.0    | Existing 0.3/0.4 Managed workspaces require explicit migration                             |
+| stalwart         | 0.16.22  | 0.16.24  | Verified and built dual-architecture RPM/DEB                                               |
+| tailcat          | 0.6.0    | 0.7.0    | Verified and built dual-architecture RPM/DEB                                               |
+| uv               | 0.12.17  | 0.12.20  | Verified and built dual-architecture RPM/DEB                                               |
+| victoria-metrics | 1.152.0  | 1.153.0  | Single-node, cluster, and vmutils packages updated together                                |
 
 ## 2026-09-19
 
 Local build batch; all downloads used the port 8118 proxy. This entry does not imply publication to the live repository.
 
-| Name | Old | New | Comment |
-|---|---|---|---|
-| agentsview | 0.41.1 | 0.43.0 | Verified and built dual-architecture RPM/DEB |
-| alertmanager | 0.34.0 | 0.34.1 | Verified and built dual-architecture RPM/DEB |
-| cargo-pgrx-0192 | - | 0.19.2 | New exact 0.19.2 slot; 0191 retained; native EL8 builds |
-| claude | 2.1.252 | 2.1.278 | Downloaded through port 8118, manifest verified; version executed on both Linux architectures |
-| cloudflared | 2026.8.3 | 2026.9.1 | Verified and built dual-architecture RPM/DEB |
-| code | 1.135.0 | 1.138.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| code-server | 4.135.0 | 4.137.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| codex | 0.152.0 | 0.155.1 | Verified and built dual-architecture RPM/DEB |
-| crush | 0.92.0 | 0.95.0 | Verified and built dual-architecture RPM/DEB |
-| dblab | 0.49.0 | 0.50.0 | Verified and built dual-architecture RPM/DEB |
-| garage | 2.3.0 | 2.4.1 | Verified and built dual-architecture RPM/DEB |
-| golang | 1.27.0 | 1.27.1 | Verified and built dual-architecture RPM/DEB |
-| grafana | 13.2.0 | 13.2.2 | Official native dual-arch DEB/RPM preserved byte-for-byte |
-| grafana-plugins | 13.0.0 | 13.2.2 | Curated bundle: 10 plugins updated, 4 retained; official ZIP SHA256 verified |
-| grafana-victorialogs-ds | 0.31.0 | 0.32.0 | Verified and built dual-architecture RPM/DEB |
-| grafana-victoriametrics-ds | 0.25.2 | 0.26.1 | Verified and built dual-architecture RPM/DEB |
-| hugo | 0.165.0 | 0.166.0 | Verified and built dual-architecture RPM/DEB |
-| k3s | 1.36.4 | 1.37.0 | Upstream v1.37.0+k3s1; images updated together; stable channel remains 1.36.4 |
-| k3s-images | 1.36.4 | 1.37.0 | Dual-architecture air-gap images pinned to v1.37.0+k3s1 |
-| kafka-exporter | 1.9.0 | 1.10.0 | Verified and built dual-architecture RPM/DEB |
-| logcli | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
-| loki | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
-| loki-canary | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
-| mcli | 20260901000000.0.0 | 20260916000000.0.0 | Maps to RELEASE.2026-09-16T00-00-00Z |
-| mcp-toolbox | 1.8.0 | 1.12.0 | New cached-binary recipe; dual-arch CGO source builds targeting glibc 2.28 |
-| mtail | 3.4.10 | 3.4.12 | Verified and built dual-architecture RPM/DEB |
-| nodejs | 24.20.0 | 24.21.0 | Node.js 24 LTS |
-| opencode | 1.18.25 | 1.18.31 | Verified and built dual-architecture RPM/DEB |
-| pev2 | 1.23.0 | 1.24.0 | Verified and built noarch RPM/DEB |
-| pg-hardstorage | 1.3.4 | 1.4.2 | Verified and built dual-architecture RPM/DEB |
-| pgschema | 1.12.5 | 1.13.0 | Verified and built dual-architecture RPM/DEB |
-| pgstream | 1.4.1 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
-| pig | 1.8.0 | 1.8.1 | Verified and built dual-architecture RPM/DEB |
-| postgrest | 16.2 | 16.3 | Verified and built dual-architecture RPM/DEB |
-| rclone | 1.75.0 | 1.75.1 | Verified and built dual-architecture RPM/DEB |
-| redis-exporter | 1.90.0 | 1.91.1 | Verified and built dual-architecture RPM/DEB |
-| rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
-| rustfs | 1.0.0-rc.4 | 1.0.0 | Stable 1.0.0 replaces rc.4; prerelease package metadata removed |
-| sabiql | 2.0.1 | 3.0.1 | Adds MySQL support; Oracle MySQL CLI 8.4 is required for MySQL connections |
-| seaweedfs | 4.45 | 4.47 | Verified and built dual-architecture RPM/DEB |
-| silo | 20260806000000.0.0 | 20260916000000.0.0 | Official native dual-arch RPM/DEB; upstream security and correctness release |
-| stalwart | 0.16.20 | 0.16.22 | Verified and built dual-architecture RPM/DEB |
-| tailcat | 0.4.0 | 0.6.0 | Verified and built dual-architecture RPM/DEB |
-| uv | 0.12.8 | 0.12.17 | Verified and built dual-architecture RPM/DEB |
-| victoria-metrics | 1.151.0 | 1.152.0 | Single-node, cluster, and vmutils packages updated together |
-| victoria-traces | 0.10.0 | 0.11.1 | Verified and built dual-architecture RPM/DEB |
+| Name                       | Old                | New                | Comment                                                                                       |
+|----------------------------|--------------------|--------------------|-----------------------------------------------------------------------------------------------|
+| agentsview                 | 0.41.1             | 0.43.0             | Verified and built dual-architecture RPM/DEB                                                  |
+| alertmanager               | 0.34.0             | 0.34.1             | Verified and built dual-architecture RPM/DEB                                                  |
+| cargo-pgrx-0192            | -                  | 0.19.2             | New exact 0.19.2 slot; 0191 retained; native EL8 builds                                       |
+| claude                     | 2.1.252            | 2.1.278            | Downloaded through port 8118, manifest verified; version executed on both Linux architectures |
+| cloudflared                | 2026.8.3           | 2026.9.1           | Verified and built dual-architecture RPM/DEB                                                  |
+| code                       | 1.135.0            | 1.138.0            | Official native dual-arch DEB/RPM preserved byte-for-byte                                     |
+| code-server                | 4.135.0            | 4.137.0            | Official native dual-arch DEB/RPM preserved byte-for-byte                                     |
+| codex                      | 0.152.0            | 0.155.1            | Verified and built dual-architecture RPM/DEB                                                  |
+| crush                      | 0.92.0             | 0.95.0             | Verified and built dual-architecture RPM/DEB                                                  |
+| dblab                      | 0.49.0             | 0.50.0             | Verified and built dual-architecture RPM/DEB                                                  |
+| garage                     | 2.3.0              | 2.4.1              | Verified and built dual-architecture RPM/DEB                                                  |
+| golang                     | 1.27.0             | 1.27.1             | Verified and built dual-architecture RPM/DEB                                                  |
+| grafana                    | 13.2.0             | 13.2.2             | Official native dual-arch DEB/RPM preserved byte-for-byte                                     |
+| grafana-plugins            | 13.0.0             | 13.2.2             | Curated bundle: 10 plugins updated, 4 retained; official ZIP SHA256 verified                  |
+| grafana-victorialogs-ds    | 0.31.0             | 0.32.0             | Verified and built dual-architecture RPM/DEB                                                  |
+| grafana-victoriametrics-ds | 0.25.2             | 0.26.1             | Verified and built dual-architecture RPM/DEB                                                  |
+| hugo                       | 0.165.0            | 0.166.0            | Verified and built dual-architecture RPM/DEB                                                  |
+| k3s                        | 1.36.4             | 1.37.0             | Upstream v1.37.0+k3s1; images updated together; stable channel remains 1.36.4                 |
+| k3s-images                 | 1.36.4             | 1.37.0             | Dual-architecture air-gap images pinned to v1.37.0+k3s1                                       |
+| kafka-exporter             | 1.9.0              | 1.10.0             | Verified and built dual-architecture RPM/DEB                                                  |
+| logcli                     | 3.7.7              | 3.7.8              | Verified and built dual-architecture RPM/DEB                                                  |
+| loki                       | 3.7.7              | 3.7.8              | Verified and built dual-architecture RPM/DEB                                                  |
+| loki-canary                | 3.7.7              | 3.7.8              | Verified and built dual-architecture RPM/DEB                                                  |
+| mcli                       | 20260901000000.0.0 | 20260916000000.0.0 | Maps to RELEASE.2026-09-16T00-00-00Z                                                          |
+| mcp-toolbox                | 1.8.0              | 1.12.0             | New cached-binary recipe; dual-arch CGO source builds targeting glibc 2.28                    |
+| mtail                      | 3.4.10             | 3.4.12             | Verified and built dual-architecture RPM/DEB                                                  |
+| nodejs                     | 24.20.0            | 24.21.0            | Node.js 24 LTS                                                                                |
+| opencode                   | 1.18.25            | 1.18.31            | Verified and built dual-architecture RPM/DEB                                                  |
+| pev2                       | 1.23.0             | 1.24.0             | Verified and built noarch RPM/DEB                                                             |
+| pg-hardstorage             | 1.3.4              | 1.4.2              | Verified and built dual-architecture RPM/DEB                                                  |
+| pgschema                   | 1.12.5             | 1.13.0             | Verified and built dual-architecture RPM/DEB                                                  |
+| pgstream                   | 1.4.1              | 1.5.0              | Verified and built dual-architecture RPM/DEB                                                  |
+| pig                        | 1.8.0              | 1.8.1              | Verified and built dual-architecture RPM/DEB                                                  |
+| postgrest                  | 16.2               | 16.3               | Verified and built dual-architecture RPM/DEB                                                  |
+| rclone                     | 1.75.0             | 1.75.1             | Verified and built dual-architecture RPM/DEB                                                  |
+| redis-exporter             | 1.90.0             | 1.91.1             | Verified and built dual-architecture RPM/DEB                                                  |
+| rust-toolchain             | 1.97.1             | 1.98.1             | Upstream signature verification and dual-architecture ELF ABI checks                          |
+| rustfs                     | 1.0.0-rc.4         | 1.0.0              | Stable 1.0.0 replaces rc.4; prerelease package metadata removed                               |
+| sabiql                     | 2.0.1              | 3.0.1              | Adds MySQL support; Oracle MySQL CLI 8.4 is required for MySQL connections                    |
+| seaweedfs                  | 4.45               | 4.47               | Verified and built dual-architecture RPM/DEB                                                  |
+| silo                       | 20260806000000.0.0 | 20260916000000.0.0 | Official native dual-arch RPM/DEB; upstream security and correctness release                  |
+| stalwart                   | 0.16.20            | 0.16.22            | Verified and built dual-architecture RPM/DEB                                                  |
+| tailcat                    | 0.4.0              | 0.6.0              | Verified and built dual-architecture RPM/DEB                                                  |
+| uv                         | 0.12.8             | 0.12.17            | Verified and built dual-architecture RPM/DEB                                                  |
+| victoria-metrics           | 1.151.0            | 1.152.0            | Single-node, cluster, and vmutils packages updated together                                   |
+| victoria-traces            | 0.10.0             | 0.11.1             | Verified and built dual-architecture RPM/DEB                                                  |
 
 ## 2026-09-01
 
-| Name                    | Old                                      | New                  | Comment                                                        |
-|:------------------------|:-----------------------------------------|:---------------------|:---------------------------------------------------------------|
-| claude                  | 2.1.241                                  | 2.1.252              | Official manifest verified through proxy; dual-arch built      |
-| cloudflared             | 2026.8.2                                 | 2026.8.3             | Verified binaries repacked as dual-arch RPM/DEB                |
-| code                    | 1.134.0                                  | 1.135.0              | Official native DEB/RPM preserved byte-for-byte                |
-| code-server             | 4.133.0                                  | 4.135.0              | Checksum-pinned official native DEB/RPM                        |
-| codex                   | 0.149.0                                  | 0.152.0              | Stable tag `rust-v0.152.0`; dual-arch RPM/DEB built            |
-| crush                   | 0.91.0                                   | 0.92.0               | Official tarballs repacked with legal files                    |
-| dblab                   | 0.48.1                                   | 0.49.0               | Verified release assets; dual-arch RPM/DEB built               |
-| k3s                     | 1.36.3                                   | 1.36.4               | Upstream `v1.36.4+k3s1`; dual-arch RPM/DEB built               |
-| k3s-images              | 1.36.3                                   | 1.36.4               | Exact-match dual-architecture air-gap images built             |
-| logcli                  | 3.7.6                                    | 3.7.7                | Dual-architecture RPM/DEB built                                |
-| loki                    | 3.7.6                                    | 3.7.7                | Dual-architecture RPM/DEB built                                |
-| loki-canary             | 3.7.6                                    | 3.7.7                | Dual-architecture RPM/DEB built                                |
-| mcli                    | 20260806000000.0.0                       | 20260901000000.0.0   | pgsty fork release assets rebuilt as `1PGSTY` RPM/DEB          |
-| mtail                   | 3.4.9                                    | 3.4.10               | Dual-architecture RPM/DEB built                                |
-| nodejs                  | 24.19.0                                  | 24.20.0              | Node.js 24 LTS archives verified and rebuilt                   |
-| opencode                | 1.18.21                                  | 1.18.25              | Dual-architecture RPM/DEB built                                |
-| pg-hardstorage          | 1.2.4                                    | 1.3.4                | Verified static binaries repacked as `1PGSTY` RPM/DEB          |
-| pg-timetable            | 7.0.0                                    | 7.1.0                | Dual-architecture RPM/DEB built                                |
-| pgschema                | 1.12.4                                   | 1.12.5               | Verified raw binaries repacked as `1PGSTY` RPM/DEB             |
-| rainfrog                | 0.4.4                                    | 0.4.5                | Dual-architecture RPM/DEB built                                |
-| redis-exporter          | 1.89.0                                   | 1.90.0               | Dual-architecture RPM/DEB built                                |
-| rustfs                  | 1.0.0-rc.3                               | 1.0.0-rc.4           | Latest non-preview prerelease; packaged as `1.0.0~rc4`         |
-| seaweedfs               | 4.44                                     | 4.45                 | Dual-architecture RPM/DEB built                                |
-| sow                     | 0.3.0                                    | 0.4.0                | Dual-architecture RPM/DEB built                                |
-| sql-studio              | 0.1.51                                   | 0.1.53               | Dual-architecture RPM/DEB built                                |
-| stalwart                | 0.16.18                                  | 0.16.20              | Dual-architecture RPM/DEB built                                |
-| tailcat                 | 0.0.0-20260830010511-7c2a6ea60429       | 0.4.0                | Official release tarballs replace the pinned source snapshot  |
-| uv                      | 0.12.5                                   | 0.12.8               | Dual-architecture RPM/DEB built                                |
-| vector                  | 0.57.0                                   | 0.58.0               | Official native DEB/RPM preserved byte-for-byte                |
-| victoria-metrics        | 1.150.0                                  | 1.151.0              | Single-node, cluster, and vmutils packages built               |
+| Name             | Old                               | New                | Comment                                                      |
+|:-----------------|:----------------------------------|:-------------------|:-------------------------------------------------------------|
+| claude           | 2.1.241                           | 2.1.252            | Official manifest verified through proxy; dual-arch built    |
+| cloudflared      | 2026.8.2                          | 2026.8.3           | Verified binaries repacked as dual-arch RPM/DEB              |
+| code             | 1.134.0                           | 1.135.0            | Official native DEB/RPM preserved byte-for-byte              |
+| code-server      | 4.133.0                           | 4.135.0            | Checksum-pinned official native DEB/RPM                      |
+| codex            | 0.149.0                           | 0.152.0            | Stable tag `rust-v0.152.0`; dual-arch RPM/DEB built          |
+| crush            | 0.91.0                            | 0.92.0             | Official tarballs repacked with legal files                  |
+| dblab            | 0.48.1                            | 0.49.0             | Verified release assets; dual-arch RPM/DEB built             |
+| k3s              | 1.36.3                            | 1.36.4             | Upstream `v1.36.4+k3s1`; dual-arch RPM/DEB built             |
+| k3s-images       | 1.36.3                            | 1.36.4             | Exact-match dual-architecture air-gap images built           |
+| logcli           | 3.7.6                             | 3.7.7              | Dual-architecture RPM/DEB built                              |
+| loki             | 3.7.6                             | 3.7.7              | Dual-architecture RPM/DEB built                              |
+| loki-canary      | 3.7.6                             | 3.7.7              | Dual-architecture RPM/DEB built                              |
+| mcli             | 20260806000000.0.0                | 20260901000000.0.0 | pgsty fork release assets rebuilt as `1PGSTY` RPM/DEB        |
+| mtail            | 3.4.9                             | 3.4.10             | Dual-architecture RPM/DEB built                              |
+| nodejs           | 24.19.0                           | 24.20.0            | Node.js 24 LTS archives verified and rebuilt                 |
+| opencode         | 1.18.21                           | 1.18.25            | Dual-architecture RPM/DEB built                              |
+| pg-hardstorage   | 1.2.4                             | 1.3.4              | Verified static binaries repacked as `1PGSTY` RPM/DEB        |
+| pg-timetable     | 7.0.0                             | 7.1.0              | Dual-architecture RPM/DEB built                              |
+| pgschema         | 1.12.4                            | 1.12.5             | Verified raw binaries repacked as `1PGSTY` RPM/DEB           |
+| rainfrog         | 0.4.4                             | 0.4.5              | Dual-architecture RPM/DEB built                              |
+| redis-exporter   | 1.89.0                            | 1.90.0             | Dual-architecture RPM/DEB built                              |
+| rustfs           | 1.0.0-rc.3                        | 1.0.0-rc.4         | Latest non-preview prerelease; packaged as `1.0.0~rc4`       |
+| seaweedfs        | 4.44                              | 4.45               | Dual-architecture RPM/DEB built                              |
+| sow              | 0.3.0                             | 0.4.0              | Dual-architecture RPM/DEB built                              |
+| sql-studio       | 0.1.51                            | 0.1.53             | Dual-architecture RPM/DEB built                              |
+| stalwart         | 0.16.18                           | 0.16.20            | Dual-architecture RPM/DEB built                              |
+| tailcat          | 0.0.0-20260830010511-7c2a6ea60429 | 0.4.0              | Official release tarballs replace the pinned source snapshot |
+| uv               | 0.12.5                            | 0.12.8             | Dual-architecture RPM/DEB built                              |
+| vector           | 0.57.0                            | 0.58.0             | Official native DEB/RPM preserved byte-for-byte              |
+| victoria-metrics | 1.150.0                           | 1.151.0            | Single-node, cluster, and vmutils packages built             |
 
 ## 2026-08-30
 
-| Name    | Old | New                                        | Comment                                                                  |
-|:--------|:----|:-------------------------------------------|:-------------------------------------------------------------------------|
-| tailcat | -   | 0.0.0-20260830010511-7c2a6ea60429         | Untagged source and offline vendor pinned; dual-arch static RPM/DEB built |
+| Name    | Old | New                               | Comment                                                                   |
+|:--------|:----|:----------------------------------|:--------------------------------------------------------------------------|
+| tailcat | -   | 0.0.0-20260830010511-7c2a6ea60429 | Untagged source and offline vendor pinned; dual-arch static RPM/DEB built |
 
 ## 2026-08-24
 
-| Name                    | Old        | New        | Comment                                                     |
-|:------------------------|:-----------|:-----------|:------------------------------------------------------------|
-| agentsview              | 0.40.1     | 0.41.1     | Verified release assets; dual-arch RPM/DEB built            |
-| alertmanager            | 0.33.1     | 0.34.0     | Verified release assets; dual-arch RPM/DEB built            |
-| claude                  | 2.1.227    | 2.1.241    | Official manifest verified through proxy; dual-arch built    |
-| cloudflared             | 2026.7.3   | 2026.8.2   | Verified binaries repacked as dual-arch RPM/DEB             |
-| code                    | 1.133.0    | 1.134.0    | Official native DEB/RPM preserved byte-for-byte             |
-| code-server             | 4.132.0    | 4.133.0    | Checksum-pinned official native DEB/RPM                     |
-| codex                   | 0.147.0    | 0.149.0    | Stable tag `rust-v0.149.0`; dual-arch RPM/DEB built         |
-| crush                   | 0.88.1     | 0.91.0     | Official tarballs repacked with legal files                 |
-| dblab                   | 0.47.4     | 0.48.1     | Verified release assets; dual-arch RPM/DEB built            |
-| golang                  | 1.26.5     | 1.27.0     | Official stable toolchain archives verified and rebuilt     |
-| grafana                 | 13.1.3     | 13.2.0     | Official native OSS DEB/RPM preserved byte-for-byte         |
-| grafana-infinity-ds     | 3.11.3     | 4.0.0      | Dual-architecture plugin RPM/DEB built                      |
-| hugo                    | 0.164.0    | 0.165.0    | Extended dual-architecture RPM/DEB built                    |
-| mongodb-exporter        | 0.52.0     | 0.53.0     | Dual-architecture RPM/DEB built                             |
-| mtail                   | 3.4.7      | 3.4.9      | Dual-architecture RPM/DEB built                             |
-| mysqld-exporter         | 0.19.0     | 0.20.0     | Dual-architecture RPM/DEB built                             |
-| nginx-exporter          | 1.5.1      | 1.5.3      | Dual-architecture RPM/DEB built                             |
-| opencode                | 1.18.16    | 1.18.21    | Dual-architecture RPM/DEB built                             |
-| openbao                 | -          | 2.6.2      | New checksum-pinned official native DEB/RPM recipe          |
-| opentofu                | -          | 1.12.6     | New checksum-pinned official native DEB/RPM recipe          |
-| pg-hardstorage          | 1.2.1      | 1.2.4      | Verified static binaries repacked as `1PGSTY` RPM/DEB       |
-| pgschema                | 1.12.2     | 1.12.4     | Verified raw binaries repacked as `1PGSTY` RPM/DEB          |
-| pgstream                | 1.3.1      | 1.4.1      | Dual-architecture RPM/DEB built                             |
-| pig                     | 1.7.0      | 1.8.0      | Dual-architecture RPM/DEB built                             |
-| postgrest               | 16.1       | 16.2       | Static dual-architecture RPM/DEB; PostgreSQL 14+            |
-| prometheus              | 3.13.2     | 3.14.0     | Dual-architecture RPM/DEB built                             |
-| rainfrog                | 0.4.3      | 0.4.4      | Dual-architecture RPM/DEB built                             |
-| rustfs                  | 1.0.0-rc.1 | 1.0.0-rc.3 | Verified prerelease assets; packaged as `1.0.0~rc3-1PGSTY`  |
-| sabiql                  | 1.15.1     | 2.0.1      | Dual-architecture RPM/DEB built                             |
-| seaweedfs               | 4.41       | 4.44       | Dual-architecture RPM/DEB built                             |
-| stalwart                | 0.16.17    | 0.16.18    | Dual-architecture RPM/DEB built                             |
-| uv                      | 0.12.3     | 0.12.5     | Dual-architecture RPM/DEB built                             |
-| v2ray                   | 5.52.0     | 5.53.0     | Dual-architecture RPM/DEB built                             |
-| victoria-metrics        | 1.149.0    | 1.150.0    | Single-node, cluster, and vmutils packages built            |
+| Name                | Old        | New        | Comment                                                    |
+|:--------------------|:-----------|:-----------|:-----------------------------------------------------------|
+| agentsview          | 0.40.1     | 0.41.1     | Verified release assets; dual-arch RPM/DEB built           |
+| alertmanager        | 0.33.1     | 0.34.0     | Verified release assets; dual-arch RPM/DEB built           |
+| claude              | 2.1.227    | 2.1.241    | Official manifest verified through proxy; dual-arch built  |
+| cloudflared         | 2026.7.3   | 2026.8.2   | Verified binaries repacked as dual-arch RPM/DEB            |
+| code                | 1.133.0    | 1.134.0    | Official native DEB/RPM preserved byte-for-byte            |
+| code-server         | 4.132.0    | 4.133.0    | Checksum-pinned official native DEB/RPM                    |
+| codex               | 0.147.0    | 0.149.0    | Stable tag `rust-v0.149.0`; dual-arch RPM/DEB built        |
+| crush               | 0.88.1     | 0.91.0     | Official tarballs repacked with legal files                |
+| dblab               | 0.47.4     | 0.48.1     | Verified release assets; dual-arch RPM/DEB built           |
+| golang              | 1.26.5     | 1.27.0     | Official stable toolchain archives verified and rebuilt    |
+| grafana             | 13.1.3     | 13.2.0     | Official native OSS DEB/RPM preserved byte-for-byte        |
+| grafana-infinity-ds | 3.11.3     | 4.0.0      | Dual-architecture plugin RPM/DEB built                     |
+| hugo                | 0.164.0    | 0.165.0    | Extended dual-architecture RPM/DEB built                   |
+| mongodb-exporter    | 0.52.0     | 0.53.0     | Dual-architecture RPM/DEB built                            |
+| mtail               | 3.4.7      | 3.4.9      | Dual-architecture RPM/DEB built                            |
+| mysqld-exporter     | 0.19.0     | 0.20.0     | Dual-architecture RPM/DEB built                            |
+| nginx-exporter      | 1.5.1      | 1.5.3      | Dual-architecture RPM/DEB built                            |
+| opencode            | 1.18.16    | 1.18.21    | Dual-architecture RPM/DEB built                            |
+| openbao             | -          | 2.6.2      | New checksum-pinned official native DEB/RPM recipe         |
+| opentofu            | -          | 1.12.6     | New checksum-pinned official native DEB/RPM recipe         |
+| pg-hardstorage      | 1.2.1      | 1.2.4      | Verified static binaries repacked as `1PGSTY` RPM/DEB      |
+| pgschema            | 1.12.2     | 1.12.4     | Verified raw binaries repacked as `1PGSTY` RPM/DEB         |
+| pgstream            | 1.3.1      | 1.4.1      | Dual-architecture RPM/DEB built                            |
+| pig                 | 1.7.0      | 1.8.0      | Dual-architecture RPM/DEB built                            |
+| postgrest           | 16.1       | 16.2       | Static dual-architecture RPM/DEB; PostgreSQL 14+           |
+| prometheus          | 3.13.2     | 3.14.0     | Dual-architecture RPM/DEB built                            |
+| rainfrog            | 0.4.3      | 0.4.4      | Dual-architecture RPM/DEB built                            |
+| rustfs              | 1.0.0-rc.1 | 1.0.0-rc.3 | Verified prerelease assets; packaged as `1.0.0~rc3-1PGSTY` |
+| sabiql              | 1.15.1     | 2.0.1      | Dual-architecture RPM/DEB built                            |
+| seaweedfs           | 4.41       | 4.44       | Dual-architecture RPM/DEB built                            |
+| stalwart            | 0.16.17    | 0.16.18    | Dual-architecture RPM/DEB built                            |
+| uv                  | 0.12.3     | 0.12.5     | Dual-architecture RPM/DEB built                            |
+| v2ray               | 5.52.0     | 5.53.0     | Dual-architecture RPM/DEB built                            |
+| victoria-metrics    | 1.149.0    | 1.150.0    | Single-node, cluster, and vmutils packages built           |
 
 ## 2026-08-12
 

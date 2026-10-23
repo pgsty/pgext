@@ -17,50 +17,50 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2980** | {{< badge content="pg_mentat" link="https://codeberg.org/gregburd/mentat" >}} | {{< ext "pg_mentat" >}} | `1.14.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2980** | {{< badge content="pg_mentat" link="https://codeberg.org/gregburd/mentat" >}} | {{< ext "pg_mentat" >}} | `1.17.2` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `mentat` |
-|   **See Also**    | {{< ext "pg_fts" >}} `pg_tre` `pg_infer` {{< ext "rum" >}} {{< ext "pg_trgm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "vector" >}} {{< ext "postgis" >}} |
+|   **See Also**    | {{< ext "pg_fts" >}} {{< ext "pg_tre" >}} `pg_infer` {{< ext "rum" >}} {{< ext "pg_trgm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "vector" >}} {{< ext "postgis" >}} |
 
-> [!Note] No mentatd binary; integrations are optional. pgrx 0.19.3.
+> [!Note] 1.17.2 fixes trusted-installation privilege escalation in 1.17.0-1.17.1; upgrading cannot undo an already exploited install. create_store writes remain broken; use store_id rows. PGSTY packages support PostgreSQL 14-18.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_mentat` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "18" "pg_mentat_18" "green" >}} {{< bg "17" "pg_mentat_17" "green" >}} {{< bg "16" "pg_mentat_16" "green" >}} {{< bg "15" "pg_mentat_15" "green" >}} {{< bg "14" "pg_mentat_14" "green" >}} | `pg_mentat_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.14.0` | {{< bg "18" "postgresql-18-pg-mentat" "green" >}} {{< bg "17" "postgresql-17-pg-mentat" "green" >}} {{< bg "16" "postgresql-16-pg-mentat" "green" >}} {{< bg "15" "postgresql-15-pg-mentat" "green" >}} {{< bg "14" "postgresql-14-pg-mentat" "green" >}} | `postgresql-$v-pg-mentat` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.17.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_mentat` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.17.2` | {{< bg "18" "pg_mentat_18" "green" >}} {{< bg "17" "pg_mentat_17" "green" >}} {{< bg "16" "pg_mentat_16" "green" >}} {{< bg "15" "pg_mentat_15" "green" >}} {{< bg "14" "pg_mentat_14" "green" >}} | `pg_mentat_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.17.2` | {{< bg "18" "postgresql-18-pg-mentat" "green" >}} {{< bg "17" "postgresql-17-pg-mentat" "green" >}} {{< bg "16" "postgresql-16-pg-mentat" "green" >}} {{< bg "15" "postgresql-15-pg-mentat" "green" >}} {{< bg "14" "postgresql-14-pg-mentat" "green" >}} | `postgresql-$v-pg-mentat` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "pg_mentat_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.3" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "pg_mentat_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-18-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-17-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-16-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-15-pg-mentat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.17.2" "postgresql-14-pg-mentat : AVAIL 1" "green" >}} |
 {.matrix}
 
 
@@ -69,22 +69,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mentat_18` | `1.10.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 1.8 MiB | [pg_mentat_18-1.10.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_18-1.10.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_mentat_18` | `1.10.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 1.5 MiB | [pg_mentat_18-1.10.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_18-1.10.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_mentat_18` | `1.10.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 1.7 MiB | [pg_mentat_18-1.10.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_18-1.10.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_mentat_18` | `1.10.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 1.6 MiB | [pg_mentat_18-1.10.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_18-1.10.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_mentat_18` | `1.10.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 1.7 MiB | [pg_mentat_18-1.10.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_18-1.10.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_mentat_18` | `1.10.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 1.6 MiB | [pg_mentat_18-1.10.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_18-1.10.3-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.5 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.3 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.5 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.3 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.6 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.5 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.6 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.6 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-mentat` | `1.10.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.5 MiB | [postgresql-18-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb) |
+| `pg_mentat_18` | `1.17.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 2.7 MiB | [pg_mentat_18-1.17.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_18-1.17.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_mentat_18` | `1.17.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 2.3 MiB | [pg_mentat_18-1.17.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_18-1.17.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_mentat_18` | `1.17.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 2.6 MiB | [pg_mentat_18-1.17.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_18-1.17.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_mentat_18` | `1.17.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 2.4 MiB | [pg_mentat_18-1.17.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_18-1.17.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_mentat_18` | `1.17.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 2.6 MiB | [pg_mentat_18-1.17.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_18-1.17.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_mentat_18` | `1.17.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 2.4 MiB | [pg_mentat_18-1.17.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_18-1.17.2-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.2 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.9 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.2 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.9 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 2.5 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.2 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-mentat` | `1.17.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-18-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-18-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -92,22 +92,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mentat_17` | `1.10.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 1.7 MiB | [pg_mentat_17-1.10.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_17-1.10.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_mentat_17` | `1.10.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 1.5 MiB | [pg_mentat_17-1.10.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_17-1.10.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_mentat_17` | `1.10.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 1.7 MiB | [pg_mentat_17-1.10.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_17-1.10.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_mentat_17` | `1.10.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 1.6 MiB | [pg_mentat_17-1.10.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_17-1.10.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_mentat_17` | `1.10.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 1.7 MiB | [pg_mentat_17-1.10.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_17-1.10.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_mentat_17` | `1.10.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 1.6 MiB | [pg_mentat_17-1.10.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_17-1.10.3-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.5 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.3 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.5 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.3 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.6 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.5 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.6 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.6 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb) |
-| `postgresql-17-pg-mentat` | `1.10.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.5 MiB | [postgresql-17-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb) |
+| `pg_mentat_17` | `1.17.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 2.7 MiB | [pg_mentat_17-1.17.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_17-1.17.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_mentat_17` | `1.17.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 2.3 MiB | [pg_mentat_17-1.17.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_17-1.17.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_mentat_17` | `1.17.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 2.6 MiB | [pg_mentat_17-1.17.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_17-1.17.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_mentat_17` | `1.17.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 2.4 MiB | [pg_mentat_17-1.17.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_17-1.17.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_mentat_17` | `1.17.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 2.6 MiB | [pg_mentat_17-1.17.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_17-1.17.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_mentat_17` | `1.17.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 2.4 MiB | [pg_mentat_17-1.17.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_17-1.17.2-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.2 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.9 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.2 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.9 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 2.5 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.2 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-mentat` | `1.17.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-17-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-17-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -115,22 +115,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mentat_16` | `1.10.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 1.7 MiB | [pg_mentat_16-1.10.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_16-1.10.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_mentat_16` | `1.10.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 1.5 MiB | [pg_mentat_16-1.10.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_16-1.10.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_mentat_16` | `1.10.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 1.7 MiB | [pg_mentat_16-1.10.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_16-1.10.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_mentat_16` | `1.10.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 1.6 MiB | [pg_mentat_16-1.10.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_16-1.10.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_mentat_16` | `1.10.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 1.7 MiB | [pg_mentat_16-1.10.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_16-1.10.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_mentat_16` | `1.10.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 1.6 MiB | [pg_mentat_16-1.10.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_16-1.10.3-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.5 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.3 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.5 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.3 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.6 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.5 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.6 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.6 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb) |
-| `postgresql-16-pg-mentat` | `1.10.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.5 MiB | [postgresql-16-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb) |
+| `pg_mentat_16` | `1.17.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 2.7 MiB | [pg_mentat_16-1.17.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_16-1.17.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_mentat_16` | `1.17.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 2.3 MiB | [pg_mentat_16-1.17.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_16-1.17.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_mentat_16` | `1.17.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 2.6 MiB | [pg_mentat_16-1.17.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_16-1.17.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_mentat_16` | `1.17.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 2.4 MiB | [pg_mentat_16-1.17.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_16-1.17.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_mentat_16` | `1.17.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 2.6 MiB | [pg_mentat_16-1.17.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_16-1.17.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_mentat_16` | `1.17.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 2.4 MiB | [pg_mentat_16-1.17.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_16-1.17.2-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.2 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.9 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.2 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.9 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 2.5 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.2 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-mentat` | `1.17.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-16-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-16-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -138,22 +138,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mentat_15` | `1.10.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 1.7 MiB | [pg_mentat_15-1.10.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_15-1.10.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_mentat_15` | `1.10.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 1.5 MiB | [pg_mentat_15-1.10.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_15-1.10.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_mentat_15` | `1.10.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 1.7 MiB | [pg_mentat_15-1.10.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_15-1.10.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_mentat_15` | `1.10.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 1.6 MiB | [pg_mentat_15-1.10.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_15-1.10.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_mentat_15` | `1.10.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 1.7 MiB | [pg_mentat_15-1.10.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_15-1.10.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_mentat_15` | `1.10.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 1.6 MiB | [pg_mentat_15-1.10.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_15-1.10.3-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.5 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.3 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.5 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.3 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.6 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.5 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.6 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.6 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb) |
-| `postgresql-15-pg-mentat` | `1.10.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.5 MiB | [postgresql-15-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb) |
+| `pg_mentat_15` | `1.17.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 2.7 MiB | [pg_mentat_15-1.17.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_15-1.17.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_mentat_15` | `1.17.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 2.3 MiB | [pg_mentat_15-1.17.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_15-1.17.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_mentat_15` | `1.17.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 2.6 MiB | [pg_mentat_15-1.17.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_15-1.17.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_mentat_15` | `1.17.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 2.4 MiB | [pg_mentat_15-1.17.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_15-1.17.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_mentat_15` | `1.17.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 2.6 MiB | [pg_mentat_15-1.17.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_15-1.17.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_mentat_15` | `1.17.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 2.4 MiB | [pg_mentat_15-1.17.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_15-1.17.2-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.2 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.9 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.2 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.9 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 2.4 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.2 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-mentat` | `1.17.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-15-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-15-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -161,22 +161,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mentat_14` | `1.10.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 1.7 MiB | [pg_mentat_14-1.10.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_14-1.10.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_mentat_14` | `1.10.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 1.5 MiB | [pg_mentat_14-1.10.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_14-1.10.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_mentat_14` | `1.10.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 1.7 MiB | [pg_mentat_14-1.10.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_14-1.10.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_mentat_14` | `1.10.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 1.6 MiB | [pg_mentat_14-1.10.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_14-1.10.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_mentat_14` | `1.10.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 1.7 MiB | [pg_mentat_14-1.10.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_14-1.10.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_mentat_14` | `1.10.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 1.6 MiB | [pg_mentat_14-1.10.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_14-1.10.3-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.4 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.3 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.4 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.3 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.6 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.5 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.6 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.5 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.6 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-mentat` | `1.10.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.5 MiB | [postgresql-14-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.10.3-1PGSTY~resolute_arm64.deb) |
+| `pg_mentat_14` | `1.17.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 2.7 MiB | [pg_mentat_14-1.17.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mentat_14-1.17.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_mentat_14` | `1.17.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 2.3 MiB | [pg_mentat_14-1.17.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mentat_14-1.17.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_mentat_14` | `1.17.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 2.6 MiB | [pg_mentat_14-1.17.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mentat_14-1.17.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_mentat_14` | `1.17.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 2.4 MiB | [pg_mentat_14-1.17.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mentat_14-1.17.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_mentat_14` | `1.17.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 2.6 MiB | [pg_mentat_14-1.17.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mentat_14-1.17.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_mentat_14` | `1.17.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 2.4 MiB | [pg_mentat_14-1.17.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mentat_14-1.17.2-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 2.2 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.9 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 2.2 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.9 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~trixie_arm64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 2.4 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.2 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.2 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.4 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-mentat` | `1.17.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.2 MiB | [postgresql-14-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mentat/postgresql-14-pg-mentat_1.17.2-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}
@@ -185,7 +185,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/mentat" title="Repository" icon="link" subtitle="codeberg.org/gregburd/mentat" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_mentat-1.14.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_mentat-1.17.2.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -226,15 +226,15 @@ CREATE EXTENSION pg_mentat;
 
 Sources:
 
-- [v1.14.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/README.md)
-- [v1.14.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.14.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.14.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.14.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.14.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.14.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.14.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [v1.17.2 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/README.md)
+- [v1.17.2 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.17.2 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.17.2 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.17.2 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.17.2 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.17.2 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.17.2 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/subscriptions.rs)
 
 `pg_mentat` implements a Datomic-compatible data model and Datalog query engine inside PostgreSQL. It stores immutable facts as typed datoms and exposes schema transactions, Datalog queries, pull expressions, time travel, transaction history, and permanent excision through SQL functions. Use it for applications that need this model; it is not a transparent replacement for relational tables or SQL.
 
@@ -317,7 +317,7 @@ Version 1.6.2 fixes deeply nested EDN causing stack exhaustion, non-superuser qu
 
 ### Requirements and Caveats
 
-- Upstream v1.14.0 supports PostgreSQL 13-18. The upstream PostgreSQL crate declares pgrx 0.17; packaged binaries can use a different toolchain, so check their own compatibility metadata.
+- Upstream v1.17.1 declares PostgreSQL 13-19 Cargo features, adding PG19 support tested on 19rc1. It uses pgrx 0.19.3; check the selected release artifacts for actual binary coverage.
 - The extension is not relocatable and does not require `shared_preload_libraries`.
 - The optional `mentatd` HTTP/Datomic-wire daemon is an upstream companion program and is not included in the Pigsty `pg_mentat` package. SQL use of the extension does not require it.
 - Datalog compilation, pull recursion, full-text attributes, subscriptions, and history can have very different cost profiles. Inspect generated SQL with the documented explain helper and benchmark representative data.
@@ -335,10 +335,10 @@ Aggregates now follow Datalog set semantics: summing 1, 1, 1, 3 yields 4 instead
 
 1.9.1 fixes an important backup defect: earlier versions did not register extension-member table data, so logical `pg_dump` backups omitted mentat data and restored empty stores. Take and verify a new logical backup immediately after upgrading; older backups are not repaired retroactively. Physical backups are unaffected by this defect.
 
-After installing the new files, update through the upgrade chain to 1.14.0. The upgrade builds indexes and can block writes; schedule a maintenance window:
+After installing the new files, update through the upgrade chain to 1.17.2. The upgrade builds indexes and can block writes; schedule a maintenance window:
 
 ```sql
-ALTER EXTENSION pg_mentat UPDATE TO '1.14.0';
+ALTER EXTENSION pg_mentat UPDATE TO '1.17.2';
 ```
 
 Deployed databases still need the SQL extension update and a verified new logical backup.
@@ -353,4 +353,18 @@ Optional `pg_fts` and `pg_turbovec` integrations add `mentat.create_fts_index`, 
 
 In `script` builds, `:db/fn` defines a transaction function that returns transaction data and sees the database at transaction start. It runs under `mentat.script_max_*` limits and `mentat.txfn_max_depth` (default 16). `:db/retractEntity` now retracts inbound references while retaining the referring entities. EXPLAIN helpers now honor collection, tuple and relation inputs. Upgrading to 1.14.0 adds the function attribute and replaces the vector helper without a data migration.
 
-Upstream release packaging injects `trusted = true` into the shipped control file because the source pgrx parser rejects that key. Check the installed control file before relying on non-superuser installation; a source build and a release artifact need not have identical trust settings.
+From 1.17.0, controls use `superuser = true` with `trusted = true`, fixing trusted installation by ordinary users. The installer receives schema usage and grantable table/sequence privileges; public access is not granted automatically. The failure caused by combining `superuser = false` with the trust flag in older releases no longer describes the new release.
+
+### PostgreSQL 19 in 1.16.0
+
+1.16.0 adds PostgreSQL 19 support and moves to pgrx 0.19.3. From 1.15.0, `ALTER EXTENSION pg_mentat UPDATE TO '1.16.0'` is a no-schema-change upgrade. The SQL data model and scripting boundary are unchanged. The DuckDB fixes in 1.15.0 concern the separate DuckDB backend, not PostgreSQL storage. Pigsty's current built package remains 1.14.0; the catalog's upstream version does not imply a new package release.
+
+### Query and Privilege Boundaries in 1.17.1
+
+Version 1.17.0 fixes predicates over computed values and `get-else` / `missing?` in multi-clause queries. Version 1.17.1 primarily updates the separate DuckDB backend and build dependencies, with no PostgreSQL behavior change. Trusted installation does not open every administrative operation to ordinary roles; enabling row security and applying index tuning still have owner or superuser restrictions.
+
+Upstream still lists missing projection tables in the `create_store()` write path. Use the `store_id` row-based path in `mentat.stores` for multiple stores, rather than assuming that helper is fixed. Non-superuser dump/restore workflows need the correct owner role and verification of both data and privileges.
+
+### 1.17.2 Installation Security Fix
+
+1.17.2 fixes a trusted-installation privilege escalation affecting 1.17.0–1.17.1: unqualified calls in the install script could resolve to functions planted by a database owner and execute as superuser. The fix qualifies built-ins and pins the search path. The upgrade step changes no schema, but cannot undo an installation that was already exploited. If a non-superuser installed an affected version where it could create public-schema functions, audit matching functions outside the system schema and superuser roles. This upstream fix does not imply that older packaged releases were updated.

@@ -7,7 +7,7 @@ comments: false
 weight: 900
 ---
 
-There are 603 packaged PostgreSQL extensions:
+There are 615 packaged PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
@@ -108,6 +108,9 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "hunspell_ru_ru_aot" "hunspell" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
 | {{< ext "textsearch_intl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Multilingual full text search with ICU segmentation, normalization and n-gram matching |
 | {{< ext "pg_icu_parser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Full text search parser using ICU boundary analysis |
+| {{< ext "tin" "lead" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | TIN-compatible text search for development and testing |
+| {{< ext "stannum" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Experimental TINQL text search with BM25 and segmented indexes |
+| {{< ext "pg_tre" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Native PostgreSQL index access method for approximate regular-expression matching |
 | {{< ext "fuzzystrmatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "FTS" >}} | determine similarities and distance between strings |
 | {{< ext "pg_trgm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "FTS" >}} | text similarity measurement and index searching based on trigrams |
 | {{< ext "citus" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Distributed PostgreSQL as an extension |
@@ -134,6 +137,8 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "pg_lake_iceberg" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Iceberg implementation in Postgres |
 | {{< ext "pg_lake_table" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Data lake tables and Iceberg tables |
 | {{< ext "pg_lake_copy" "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Copy to/from data lake files |
+| {{< ext "pg_table_range" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
+| {{< ext "pg_improv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "OLAP" >}} | functions that manipulate whole tables, including crosstab |
 | {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | AGE graph database extension |
 | {{< ext "pg_liquid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
@@ -166,6 +171,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Durable SQL functions for PostgreSQL |
 | {{< ext "pg_disorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
 | {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
+| {{< ext "pg_kv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
 | {{< ext "provsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "FEAT" >}} | Semiring provenance and probability management for PostgreSQL |
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | OrioleDB, the next generation transactional engine |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | A suite of Cardano-related tools |
@@ -210,7 +216,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Generalized worker pool |
 | {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | XML toolkit |
 | {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | YAML toolkit |
-| {{< ext "pg_mentat" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
+| {{< ext "pg_mentat" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FEAT" >}} | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | {{< ext "bloom" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FEAT" >}} | bloom access method - signature file based index |
 | {{< ext "pg_tle" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "LANG" >}} | Trusted Language Extensions for PostgreSQL |
 | {{< ext "plv8" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/JavaScript (v8) trusted procedural language |
@@ -259,6 +265,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "semver" "pg_semver" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Semantic version data type |
 | {{< ext "pg_text_semver" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TYPE" >}} | Semantic version domain and comparison operators for PostgreSQL |
 | {{< ext "pg_lexo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | Lexicographic position type for inserting and reordering list items |
+| {{< ext "codesystem" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Hierarchical classification code types with validation and revision tracking |
 | {{< ext "unit" "pgunit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | SI units extension |
 | {{< ext "pgpdf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLdtr" color="blue" >}} | {{< category "TYPE" >}} | PDF type with meta admin & Full-Text Search |
 | {{< ext "pglite_fusion" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "TYPE" >}} | Embed an SQLite database in your PostgreSQL table |
@@ -311,6 +318,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "pg_protobuf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Protobuf support for PostgreSQL |
 | {{< ext "pgproto" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
 | {{< ext "pglock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "UTIL" >}} | Lightweight distributed lock service inside PostgreSQL |
+| {{< ext "pg_lease" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "UTIL" >}} | SQL leases with TTL expiry and monotonically increasing fencing epochs |
 | {{< ext "pgjq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | Use jq in Postgres |
 | {{< ext "pg_json_diff" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | JSONB diff, JSON Patch, and JSON Merge Patch functions |
 | {{< ext "pgjwt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | JSON Web Token API for Postgresql |
@@ -366,6 +374,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "datasketches" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Approximate analytics sketches and aggregates for PostgreSQL |
 | {{< ext "fbsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FUNC" >}} | Closure-preserving formula-based statistical modeling in SQL |
 | {{< ext "tdigest" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Provides tdigest aggregate function. |
+| {{< ext "hdr_histogram" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | HDR histogram type, percentile queries and mergeable aggregation. |
 | {{< ext "first_last_agg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | first() and last() aggregate functions |
 | {{< ext "extra_window_functions" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Extra Window Functions for PostgreSQL |
 | {{< ext "floatvec" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Math for vectors (arrays) of numbers |
@@ -382,6 +391,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "financial" "pg_financial" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Financial aggregate functions |
 | {{< ext "pg_accumulator" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Accumulation registers for balance and turnover tracking in PostgreSQL |
 | {{< ext "convert" "pg_convert" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | conversion functions for spatial, routing and other specialized uses |
+| {{< ext "pg_try_cast" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | Text conversion with NULL or a typed fallback on conversion errors. |
 | {{< ext "parray_gin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | GIN index operator class and partial-match operators for text arrays |
 | {{< ext "refint" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FUNC" >}} | functions for implementing referential integrity (obsolete) |
 | {{< ext "autoinc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FUNC" >}} | functions for autoincrementing fields |
@@ -500,6 +510,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "supautils" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | Extension that secures a cluster on a cloud environment |
 | {{< ext "pgsodium" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Postgres extension for libsodium functions |
 | {{< ext "column_encrypt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
+| {{< ext "encsearch" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Experimental encrypted text search using AEAD ciphers and keyed blind indexes |
 | {{< ext "passwordpolicy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Dynamically configurable PostgreSQL password complexity checks. |
 | {{< ext "supabase_vault" "pg_vault" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Supabase Vault Extension |
 | {{< ext "pg_session_jwt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SEC" >}} | Manage authentication sessions using JWTs |
@@ -562,10 +573,10 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "dblink" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FDW" >}} | connect to other PostgreSQL databases from within a database |
 | {{< ext "file_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for flat file access |
 | {{< ext "postgres_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote PostgreSQL servers |
-| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | API surface for DocumentDB for PostgreSQL |
-| {{< ext "documentdb_core" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Core API surface for DocumentDB on PostgreSQL |
-| {{< ext "documentdb_distributed" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Multi-Node API surface for DocumentDB |
-| {{< ext "documentdb_extended_rum" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | DocumentDB Extended RUM index access method |
+| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | API surface for DocumentDB for PostgreSQL |
+| {{< ext "documentdb_core" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Core API surface for DocumentDB on PostgreSQL |
+| {{< ext "documentdb_distributed" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Multi-Node API surface for DocumentDB |
+| {{< ext "documentdb_extended_rum" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | DocumentDB Extended RUM index access method |
 | {{< ext "pg_projection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SIM" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
 | {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
@@ -579,6 +590,7 @@ There are 603 packaged PostgreSQL extensions:
 | {{< ext "gb18030_2022" "ivorysql" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support GB18030-2022 and UTF-8 conversion |
 | {{< ext "db2fce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
 | {{< ext "plpgsql_wrap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
+| {{< ext "pg_synonym" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Table and view aliases synchronized with target DDL. |
 | {{< ext "pg_dbms_metadata" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | {{< ext "pg_dbms_lock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |

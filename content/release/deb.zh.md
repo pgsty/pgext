@@ -6,370 +6,400 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+## 2026-10-24
+
+| 名称             | 旧版本 | 新版本 | 备注                                     |
+|:-----------------|:-------|:-------|:-----------------------------------------|
+| documentdb       | 0.117  | 1.0    | PG16-18；移除 PG15；含 core/extended_rum |
+| haproxy          | 3.4.4  | 3.4.7  | DEB 文档随主包交付                       |
+| hdr_histogram    | -      | 1.0.0  | PG14-18；SQL 版本 1.0                    |
+| ivorysql-contrib | 5.4    | 5.6    | PG18（IvorySQL）；含 38 个扩展           |
+| jsonschema       | 0.1.10 | 0.1.11 | PG14-18；pgrx 0.19.3                     |
+| lead             | -      | 1.0.6  | PG17-18；扩展名 tin；开发快照            |
+| pg_fts           | 1.13.0 | 1.14.1 | PG17-18                                  |
+| pg_improv        | -      | 0.10.0 | PG15-18；公式增量重算                    |
+| pg_ivm           | 1.16   | 1.17   | PG14-18                                  |
+| pg_kv            | -      | 0.1.0  | PG15-18；非持久化共享内存 KV             |
+| pg_mentat        | 1.14.0 | 1.17.2 | PG14-18；修复可信安装的搜索路径问题      |
+| pg_regresql      | 2.0.0  | 2.1.0  | PG14-18；SQL 版本 2.0                    |
+| pg_relusage      | 1.0.1  | 1.0.2  | PG14-18；需加载                          |
+| pg_search        | 0.26.1 | 0.26.3 | PG15-18；pgrx 0.19.3；需预加载           |
+| pg_synonym       | -      | 1.0.0  | PG15-18；SQL 版本 1.0                    |
+| pg_try_cast      | -      | 1.0.0  | PG16-18；SQL 版本 1.0                    |
+| pg_turbovec      | 2.12.1 | 2.14.1 | PG14-18；修复并发与 VACUUM 问题          |
+| pgbson           | 2.1.0  | 2.2.0  | PG14-18                                  |
+| pgdog            | 0.1.57 | 0.1.62 | PostgreSQL 连接池                        |
+| pgmq             | 1.13.0 | 1.13.1 | PG14-18；纯 SQL                          |
+| pgsql_tweaks     | 1.0.5  | 1.1.0  | PG14-18；纯 SQL                          |
+| provsql          | 1.12.0 | 1.13.0 | PG14-18                                  |
+| stannum          | -      | 0.1.0  | PG17-18；开发快照                        |
+| timescaledb      | 2.30.2 | 2.31.0 | PG16-18；TSL                             |
+| valkey           | 9.1.1  | 9.1.2  | 含开发子包                               |
+
 ## 2026-10-15
 
-| 名称 | 旧版本 | 新版本 | 备注 |
-|:---|:---|:---|:---|
-| lolor | 1.2.2 | 1.2.3 | 随 pgEdge 15-18 更新；含 PG18 兼容包 |
-| pg_durable | 0.2.8 | 0.2.9 | PG14-18；需预加载；本地已入库 |
-| pg_fts | 1.9.0 | 1.13.0 | PG17-18；本地已入库 |
-| pg_icu_parser | - | 1.0.0 | PG14-18；Debian 12/13、Ubuntu 22.04/24.04/26.04 amd64/arm64；修复 PG18 兼容性；本地已入库 |
-| pg_mentat | 1.10.3 | 1.14.0 | PG14-18；pgrx 0.19.3；本地已入库 |
-| pg_relusage | 0.0.1 | 1.0.1 | PG14-18；需加载；本地已入库 |
-| pg_turbovec | 2.10.3 | 2.12.1 | PG14-18；pgrx 0.19.3；本地已入库 |
-| pg_vectorsearch | - | 0.1.0 | PG18；Alpha；本地已入库 |
-| pgedge-15 | 15.19-2PGSTY | 15.19-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
-| pgedge-16 | 16.15-2PGSTY | 16.15-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
-| pgedge-17 | 17.11-2PGSTY | 17.11-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
-| pgedge-18 | 18.6-2PGSTY | 18.6-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库 |
-| plpgsql_check | 2.10.14 | 2.10.15 | PG14-18；SQL 版本 2.10；本地已入库 |
-| spock | 5.0.12 | 5.0.13 | 随 pgEdge 15-18 更新；含 PG18 兼容包；需预加载 |
-| textsearch_intl | - | 1.0.0 | PG14-18；Debian 12/13、Ubuntu 22.04/24.04/26.04 amd64/arm64；未发布快照；本地已入库 |
+| 名称            | 旧版本       | 新版本       | 备注                                                                                      |
+|:----------------|:-------------|:-------------|:------------------------------------------------------------------------------------------|
+| lolor           | 1.2.2        | 1.2.3        | 随 pgEdge 15-18 更新；含 PG18 兼容包                                                      |
+| pg_durable      | 0.2.8        | 0.2.9        | PG14-18；需预加载；本地已入库                                                             |
+| pg_fts          | 1.9.0        | 1.13.0       | PG17-18；本地已入库                                                                       |
+| pg_icu_parser   | -            | 1.0.0        | PG14-18；Debian 12/13、Ubuntu 22.04/24.04/26.04 amd64/arm64；修复 PG18 兼容性；本地已入库 |
+| pg_mentat       | 1.10.3       | 1.14.0       | PG14-18；pgrx 0.19.3；本地已入库                                                          |
+| pg_relusage     | 0.0.1        | 1.0.1        | PG14-18；需加载；本地已入库                                                               |
+| pg_turbovec     | 2.10.3       | 2.12.1       | PG14-18；pgrx 0.19.3；本地已入库                                                          |
+| pg_vectorsearch | -            | 0.1.0        | PG18；Alpha；本地已入库                                                                   |
+| pgedge-15       | 15.19-2PGSTY | 15.19-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库                                                  |
+| pgedge-16       | 16.15-2PGSTY | 16.15-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库                                                  |
+| pgedge-17       | 17.11-2PGSTY | 17.11-3PGSTY | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库                                                  |
+| pgedge-18       | 18.6-2PGSTY  | 18.6-3PGSTY  | 含 Spock 5.0.13、LOLOR 1.2.3；本地已入库                                                  |
+| plpgsql_check   | 2.10.14      | 2.10.15      | PG14-18；SQL 版本 2.10；本地已入库                                                        |
+| spock           | 5.0.12       | 5.0.13       | 随 pgEdge 15-18 更新；含 PG18 兼容包；需预加载                                            |
+| textsearch_intl | -            | 1.0.0        | PG14-18；Debian 12/13、Ubuntu 22.04/24.04/26.04 amd64/arm64；未发布快照；本地已入库       |
 
 ## 2026-10-11
 
-| 名称 | 旧版本 | 新版本 | 备注 |
-|:---|:---|:---|:---|
-| arrow | 22.0.0 | 24.0.0 / 25.0.1 | Bookworm 24.0.0，其余 25.0.1；含 compute/devel；本地已入库 |
-| groonga | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5，其余 16.1.3；含 libgroonga-dev；本地已入库 |
-| groonga-tokenizer-mecab | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5，其余 16.1.3；MeCab 分词插件；本地已入库 |
-| pg_background | 2.0.4-1PGSTY | 2.0.4-2PGSTY | PG14-18；移除下游升级补丁；已构建，待入库 |
-| pg_fts | 1.9.0 | 1.12.0 | PG17-18；已构建，待入库 |
-| pg_grammar_guard | 0.4.1 | 0.4.9 | PG14-18；Apache-2.0；已构建，待入库 |
-| pg_living_assertions | 0.5.1 | 0.5.10 | PG14-18；纯 SQL；Apache-2.0；已构建，待入库 |
-| pg_local_cache | 2.0.4 | 3.1.0 | PG14-18；OpenSSL 依赖；已构建，待入库 |
-| pg_mentat | 1.10.3 | 1.11.1 | PG14-18；pgrx 0.19.3；已构建，待入库 |
-| pg_search | 0.26.0 | 0.26.1 | PG15-18；pgrx 0.19.3；已构建，待入库 |
-| pg_semver | 0.41.0 | 0.42.0 | PG14-18；新增 DEB 配方；本地已入库 |
-| pg_tle | 1.5.2 | 1.5.3 | PG14-18；已构建，待入库 |
-| pg_trickle | 0.108.1 | 0.108.3 | PG18；pgrx 0.19.3；已构建，待入库 |
-| pg_turbovec | 2.10.3 | 2.12.0 | PG14-18；pgrx 0.19.3；已构建，待入库 |
-| pg_utl_smtp | 1.0.0 | 2.0.0 | PG14-18；IO::Socket::SSL 依赖；已构建，待入库 |
-| pgrdf | 0.6.39 | 0.6.40 | PG14-18；pgrx 0.19.3；已构建，待入库 |
-| pgroonga | 4.0.9 | 4.1.0 | PG14-18；含 pgroonga_database；本地已入库 |
-| plpgsql_check | 2.10.11 | 2.10.14 | PG14-18；SQL 版本 2.10；本地已入库 |
-| rdkit | 202609.1-1PGSTY | 202609.1-2PGSTY | PG14-18；Debian 13、Ubuntu 24/26；移除下游升级补丁；已构建，待入库 |
-| timescaledb | 2.30.2-1PGSTY | 2.30.2-2PGSTY | PG16-18；TSL；声明与 Apache 版冲突；已构建，待入库 |
+| 名称                    | 旧版本                   | 新版本          | 备注                                                               |
+|:------------------------|:-------------------------|:----------------|:-------------------------------------------------------------------|
+| arrow                   | 22.0.0                   | 24.0.0 / 25.0.1 | Bookworm 24.0.0，其余 25.0.1；含 compute/devel；本地已入库         |
+| groonga                 | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5，其余 16.1.3；含 libgroonga-dev；本地已入库        |
+| groonga-tokenizer-mecab | 15.1.7 / 15.1.9 / 16.0.0 | 16.0.5 / 16.1.3 | Bookworm 16.0.5，其余 16.1.3；MeCab 分词插件；本地已入库           |
+| pg_background           | 2.0.4-1PGSTY             | 2.0.4-2PGSTY    | PG14-18；移除下游升级补丁；已构建，待入库                          |
+| pg_fts                  | 1.9.0                    | 1.12.0          | PG17-18；已构建，待入库                                            |
+| pg_grammar_guard        | 0.4.1                    | 0.4.9           | PG14-18；Apache-2.0；已构建，待入库                                |
+| pg_living_assertions    | 0.5.1                    | 0.5.10          | PG14-18；纯 SQL；Apache-2.0；已构建，待入库                        |
+| pg_local_cache          | 2.0.4                    | 3.1.0           | PG14-18；OpenSSL 依赖；已构建，待入库                              |
+| pg_mentat               | 1.10.3                   | 1.11.1          | PG14-18；pgrx 0.19.3；已构建，待入库                               |
+| pg_search               | 0.26.0                   | 0.26.1          | PG15-18；pgrx 0.19.3；已构建，待入库                               |
+| pg_semver               | 0.41.0                   | 0.42.0          | PG14-18；新增 DEB 配方；本地已入库                                 |
+| pg_tle                  | 1.5.2                    | 1.5.3           | PG14-18；已构建，待入库                                            |
+| pg_trickle              | 0.108.1                  | 0.108.3         | PG18；pgrx 0.19.3；已构建，待入库                                  |
+| pg_turbovec             | 2.10.3                   | 2.12.0          | PG14-18；pgrx 0.19.3；已构建，待入库                               |
+| pg_utl_smtp             | 1.0.0                    | 2.0.0           | PG14-18；IO::Socket::SSL 依赖；已构建，待入库                      |
+| pgrdf                   | 0.6.39                   | 0.6.40          | PG14-18；pgrx 0.19.3；已构建，待入库                               |
+| pgroonga                | 4.0.9                    | 4.1.0           | PG14-18；含 pgroonga_database；本地已入库                          |
+| plpgsql_check           | 2.10.11                  | 2.10.14         | PG14-18；SQL 版本 2.10；本地已入库                                 |
+| rdkit                   | 202609.1-1PGSTY          | 202609.1-2PGSTY | PG14-18；Debian 13、Ubuntu 24/26；移除下游升级补丁；已构建，待入库 |
+| timescaledb             | 2.30.2-1PGSTY            | 2.30.2-2PGSTY   | PG16-18；TSL；声明与 Apache 版冲突；已构建，待入库                 |
 
 ## 2026-10-06
 
-| 名称 | 旧版本 | 新版本 | 备注 |
-|:---|:---|:---|:---|
-| acdat | 0.1.1 | 0.1.1 | PG14-18；已有扩展首次正式全量入库；80 主包 |
-| addressing_dictionary | - | 1.1 | PG14-18；纯 SQL |
-| agensgraph-18 | - | 2.18.4.0 | PG18.4；保留 AgensGraph 17 |
-| babelfish-17 | 5.4.0 | 5.7.0 | PG17.11；含四个配套扩展 |
-| babelfish-18 | 6.0.0 | 6.2.0 | PG18.6；含四个配套扩展 |
-| colnames | - | 1.7.1 | PG14-18；SQL 1.7.0 |
-| edtf_postgres | - | 1.2.3 | PG14-18 |
-| is_jsonb_valid | - | 0.1.4 | PG14-18 |
-| istore | - | 0.1.12 | PG14-18 |
-| jev | 0.2.0 | 0.2.1 | PG14-17 |
-| jsonschema | 0.1.9 | 0.1.10 | PG14-18 |
-| kafgres | 0.1.0 | 0.3.0 | PG16 |
-| libx509pq | - | 1.3 | PG14-18 |
-| lolor | 1.2.2 | 1.2.2 | PG15-18；随 pgEdge 重构建；SQL 版本不变 |
-| macavity | 0.1.0 | 0.2.0 | PG16-18；故障注入；仅限测试 |
-| mobilitydb | 1.3.0 | 1.3.1 | PG14-18；含 mobilitydb_datagen；补齐 32 个 DEB |
-| nominatim_fdw | 2.2.0 | 2.3 | PG14-18；RPM 主供 PGDG；同版本 Pigsty 补位包并存 |
-| orioledb-16 | 1.8-beta16 | 1.10~beta19 | PG16.15；含 OrioleDB 扩展 |
-| orioledb-17 | 1.8-beta16 | 1.10~beta19 | PG17.11；含 OrioleDB 扩展 |
-| orioledb-18 | 1.8-beta16 | 1.10~beta19 | PG18.6；含 OrioleDB 扩展 |
-| passwordcheck_cracklib | 3.2.0 | 3.2.1 | PG14-18 |
-| pg_anon | 3.2.2 | 3.2.3 | PG14-18；扩展名 anon；按上游 drop/recreate 流程升级 |
-| pg_background | 2.0.3 | 2.0.4 | PG14-18；恢复最新主包，补齐全平台 |
-| pg_clickhouse | 0.10.0 | 0.11.0 | PG14-18；SQL 版本 0.11 |
-| pg_eviltransform | 0.0.5 | 0.0.7 | PG14-18 |
-| pg_fts | 1.8.3 | 1.9.0 | PG17-18 |
-| pg_h3 | 4.2.3 | 4.5.0 | PG14-18；含 h3_postgis；新增 50 个 DEB；按上游迁移指南升级 |
-| pg_ivm | 1.15 | 1.16 | PG14-18；恢复最新主包，补齐全平台 |
-| pg_json_diff | - | 1.0 | PG14-18 |
-| pg_lake | 3.5.1 | 3.5.3 | PG16-18；含 8 个 SQL 扩展；SQL 仍为 3.5 |
-| pg_lexo | - | 0.6.1 | PG16-18；SQL 0.6.0；修复序号生成与排序 |
-| pg_living_assertions | 0.4.2 | 0.5.1 | PG14-18 |
-| pg_mentat | 1.6.0 | 1.10.3 | PG14-18 |
-| pg_money | - | 0.3.0 | PG14-18 |
-| pg_pinyin | 0.0.6 | 0.0.8 | PG14-18 |
-| pg_profile | 4.16 | 4.16 | PG14-18；纯 SQL；DEB 版本保持 4.16；本周恢复 RPM 覆盖 |
-| pg_rusage | - | 1.0 | PG14-18 |
-| pg_search | 0.25.9 | 0.26.0 | PG15-18；需预加载 |
-| pg_statkit | - | 1.1.0 | PG14-17 |
-| pg_statvfs | - | 1.0 | PG14-18 |
-| pg_statviz | 1.2.1 | 1.2.1 | PG14-18；SQL 版本 1.2；补齐 Ubuntu 22.04；5 个 all 主包覆盖 10 坐标；其余采用 PGDG |
-| pg_textsearch | 1.4.0 | 1.5.1 | PG17-18；RPM 采用 PGDG；DEB 由 Pigsty 提供 |
-| pg_trickle | 0.107.0 | 0.108.1 | PG18 |
-| pg_turbovec | 2.2.2 | 2.10.3 | PG14-18；2.x 保持 wire v8；从 1.x 升级需 REINDEX |
-| pg_vault_tde | 1.7.1 | 1.7.2 | PG17-18 |
-| pgedge-15 | 15.19-1PGSTY | 15.19-2PGSTY | PG15；内核版本不变；更新内置 Spock |
-| pgedge-16 | 16.15-1PGSTY | 16.15-2PGSTY | PG16；内核版本不变；更新内置 Spock |
-| pgedge-17 | 17.11-1PGSTY | 17.11-2PGSTY | PG17；内核版本不变；更新内置 Spock |
-| pgedge-18 | 18.6-1PGSTY | 18.6-2PGSTY | PG18；内核版本不变；更新内置 Spock |
-| pgexporter_ext | - | 0.2.5 | PG14-18；新增 DEB；RPM 沿用 PGDG |
-| pgextwlist | 1.19 | 1.20 | PG14-18；新增 1.20 DEB 配方；正式包采用 PGDG |
-| pggraph | 1.2.0 | 1.2.1 | PG14-18；扩展名 graph；修正 DEB SQL 文件验收 |
-| pgmqtt | 0.5.0 | 0.5.1 | PG14-18；需预加载；CDC 需 logical WAL |
-| pgrdf | 0.6.36 | 0.6.39 | PG14-18 |
-| pgroonga | 4.0.8 | 4.0.9 | PG14-18；EL8/9 与 PostGIS Raster 同后端共存限制仍在 |
-| pgs3 | 0.1.1 | 0.1.1 | PG17-18；已有扩展首次正式全量入库；32 主包；alpha |
-| pgsentinel | 1.5.0 | 1.5.1 | PG14-18；配方更新；正式包采用 PGDG；移出重复 Pigsty 包 |
-| pgtde-18 | 18.4 | 18.6 | Percona 18.6.1；pg_tde 2.2.2 |
-| pgtde-18-contrib | 18.4 | 18.6 | pg_stat_monitor 2.4.0；vector 0.8.6 |
-| pgtelemetry | - | 1.7 | PG14-18；纯 SQL；依赖 pg_stat_statements |
-| pgvector | 0.8.6 | 0.8.6 | PG14-18；DEB 0.8.6 仍采用 PGDG；配方 0.8.7；按约定移出 Pigsty 包 |
-| pgvectorscale | 0.9.1 | 0.9.1 | PG14-18；扩展名 vectorscale；同版本重构建、订正目录旧标签 |
-| plpgsql_check | 2.10.10 | 2.10.11 | PG14-18；配方更新；正式包采用 PGDG |
-| plphp | - | 2.6 | PG14-18；修正嵌入运行库依赖 |
-| plv8 | 3.2.4 | 3.2.5 | PG14-18；修复 EL10 LTO 构建 |
-| polardb-17 | 17.10.1.0 | 17.11.1.0 | PG17.11；含配套扩展 |
-| rdf_fdw | 2.7.0 | 3.0.0 | PG14-18；SQL 版本 3.0 |
-| rdkit | 202503.6 | 202609.1 | PG14-18；Debian 13、Ubuntu 24/26；Debian 12、Ubuntu 22 保留 202303.3 |
-| session_variable | 3.5 | 3.6 | PG14-18 |
-| snowflake | 2.6.0 | 2.6.0 | PG15-18；随 pgEdge 重构建；订正旧目录 2.5.0 标签 |
-| spock | 5.0.11 | 5.0.12 | PG15-18；随 pgEdge 内核分发；修复 DEB 文件归属冲突 |
-| supautils | 3.4.3 | 3.4.4 | PG14-18 |
-| timescaledb | 2.30.1 | 2.30.2 | PG16-18；TSL；PG14 固定 2.19.3，PG15 固定 2.28.3 |
-| vgram | - | 1.0 | PG14-18 |
+| 名称                   | 旧版本       | 新版本       | 备注                                                                               |
+|:-----------------------|:-------------|:-------------|:-----------------------------------------------------------------------------------|
+| acdat                  | 0.1.1        | 0.1.1        | PG14-18；已有扩展首次正式全量入库；80 主包                                         |
+| addressing_dictionary  | -            | 1.1          | PG14-18；纯 SQL                                                                    |
+| agensgraph-18          | -            | 2.18.4.0     | PG18.4；保留 AgensGraph 17                                                         |
+| babelfish-17           | 5.4.0        | 5.7.0        | PG17.11；含四个配套扩展                                                            |
+| babelfish-18           | 6.0.0        | 6.2.0        | PG18.6；含四个配套扩展                                                             |
+| colnames               | -            | 1.7.1        | PG14-18；SQL 1.7.0                                                                 |
+| edtf_postgres          | -            | 1.2.3        | PG14-18                                                                            |
+| is_jsonb_valid         | -            | 0.1.4        | PG14-18                                                                            |
+| istore                 | -            | 0.1.12       | PG14-18                                                                            |
+| jev                    | 0.2.0        | 0.2.1        | PG14-17                                                                            |
+| jsonschema             | 0.1.9        | 0.1.10       | PG14-18                                                                            |
+| kafgres                | 0.1.0        | 0.3.0        | PG16                                                                               |
+| libx509pq              | -            | 1.3          | PG14-18                                                                            |
+| lolor                  | 1.2.2        | 1.2.2        | PG15-18；随 pgEdge 重构建；SQL 版本不变                                            |
+| macavity               | 0.1.0        | 0.2.0        | PG16-18；故障注入；仅限测试                                                        |
+| mobilitydb             | 1.3.0        | 1.3.1        | PG14-18；含 mobilitydb_datagen；补齐 32 个 DEB                                     |
+| nominatim_fdw          | 2.2.0        | 2.3          | PG14-18；RPM 主供 PGDG；同版本 Pigsty 补位包并存                                   |
+| orioledb-16            | 1.8-beta16   | 1.10~beta19  | PG16.15；含 OrioleDB 扩展                                                          |
+| orioledb-17            | 1.8-beta16   | 1.10~beta19  | PG17.11；含 OrioleDB 扩展                                                          |
+| orioledb-18            | 1.8-beta16   | 1.10~beta19  | PG18.6；含 OrioleDB 扩展                                                           |
+| passwordcheck_cracklib | 3.2.0        | 3.2.1        | PG14-18                                                                            |
+| pg_anon                | 3.2.2        | 3.2.3        | PG14-18；扩展名 anon；按上游 drop/recreate 流程升级                                |
+| pg_background          | 2.0.3        | 2.0.4        | PG14-18；恢复最新主包，补齐全平台                                                  |
+| pg_clickhouse          | 0.10.0       | 0.11.0       | PG14-18；SQL 版本 0.11                                                             |
+| pg_eviltransform       | 0.0.5        | 0.0.7        | PG14-18                                                                            |
+| pg_fts                 | 1.8.3        | 1.9.0        | PG17-18                                                                            |
+| pg_h3                  | 4.2.3        | 4.5.0        | PG14-18；含 h3_postgis；新增 50 个 DEB；按上游迁移指南升级                         |
+| pg_ivm                 | 1.15         | 1.16         | PG14-18；恢复最新主包，补齐全平台                                                  |
+| pg_json_diff           | -            | 1.0          | PG14-18                                                                            |
+| pg_lake                | 3.5.1        | 3.5.3        | PG16-18；含 8 个 SQL 扩展；SQL 仍为 3.5                                            |
+| pg_lexo                | -            | 0.6.1        | PG16-18；SQL 0.6.0；修复序号生成与排序                                             |
+| pg_living_assertions   | 0.4.2        | 0.5.1        | PG14-18                                                                            |
+| pg_mentat              | 1.6.0        | 1.10.3       | PG14-18                                                                            |
+| pg_money               | -            | 0.3.0        | PG14-18                                                                            |
+| pg_pinyin              | 0.0.6        | 0.0.8        | PG14-18                                                                            |
+| pg_profile             | 4.16         | 4.16         | PG14-18；纯 SQL；DEB 版本保持 4.16；本周恢复 RPM 覆盖                              |
+| pg_rusage              | -            | 1.0          | PG14-18                                                                            |
+| pg_search              | 0.25.9       | 0.26.0       | PG15-18；需预加载                                                                  |
+| pg_statkit             | -            | 1.1.0        | PG14-17                                                                            |
+| pg_statvfs             | -            | 1.0          | PG14-18                                                                            |
+| pg_statviz             | 1.2.1        | 1.2.1        | PG14-18；SQL 版本 1.2；补齐 Ubuntu 22.04；5 个 all 主包覆盖 10 坐标；其余采用 PGDG |
+| pg_textsearch          | 1.4.0        | 1.5.1        | PG17-18；RPM 采用 PGDG；DEB 由 Pigsty 提供                                         |
+| pg_trickle             | 0.107.0      | 0.108.1      | PG18                                                                               |
+| pg_turbovec            | 2.2.2        | 2.10.3       | PG14-18；2.x 保持 wire v8；从 1.x 升级需 REINDEX                                   |
+| pg_vault_tde           | 1.7.1        | 1.7.2        | PG17-18                                                                            |
+| pgedge-15              | 15.19-1PGSTY | 15.19-2PGSTY | PG15；内核版本不变；更新内置 Spock                                                 |
+| pgedge-16              | 16.15-1PGSTY | 16.15-2PGSTY | PG16；内核版本不变；更新内置 Spock                                                 |
+| pgedge-17              | 17.11-1PGSTY | 17.11-2PGSTY | PG17；内核版本不变；更新内置 Spock                                                 |
+| pgedge-18              | 18.6-1PGSTY  | 18.6-2PGSTY  | PG18；内核版本不变；更新内置 Spock                                                 |
+| pgexporter_ext         | -            | 0.2.5        | PG14-18；新增 DEB；RPM 沿用 PGDG                                                   |
+| pgextwlist             | 1.19         | 1.20         | PG14-18；新增 1.20 DEB 配方；正式包采用 PGDG                                       |
+| pggraph                | 1.2.0        | 1.2.1        | PG14-18；扩展名 graph；修正 DEB SQL 文件验收                                       |
+| pgmqtt                 | 0.5.0        | 0.5.1        | PG14-18；需预加载；CDC 需 logical WAL                                              |
+| pgrdf                  | 0.6.36       | 0.6.39       | PG14-18                                                                            |
+| pgroonga               | 4.0.8        | 4.0.9        | PG14-18；EL8/9 与 PostGIS Raster 同后端共存限制仍在                                |
+| pgs3                   | 0.1.1        | 0.1.1        | PG17-18；已有扩展首次正式全量入库；32 主包；alpha                                  |
+| pgsentinel             | 1.5.0        | 1.5.1        | PG14-18；配方更新；正式包采用 PGDG；移出重复 Pigsty 包                             |
+| pgtde-18               | 18.4         | 18.6         | Percona 18.6.1；pg_tde 2.2.2                                                       |
+| pgtde-18-contrib       | 18.4         | 18.6         | pg_stat_monitor 2.4.0；vector 0.8.6                                                |
+| pgtelemetry            | -            | 1.7          | PG14-18；纯 SQL；依赖 pg_stat_statements                                           |
+| pgvector               | 0.8.6        | 0.8.6        | PG14-18；DEB 0.8.6 仍采用 PGDG；配方 0.8.7；按约定移出 Pigsty 包                   |
+| pgvectorscale          | 0.9.1        | 0.9.1        | PG14-18；扩展名 vectorscale；同版本重构建、订正目录旧标签                          |
+| plpgsql_check          | 2.10.10      | 2.10.11      | PG14-18；配方更新；正式包采用 PGDG                                                 |
+| plphp                  | -            | 2.6          | PG14-18；修正嵌入运行库依赖                                                        |
+| plv8                   | 3.2.4        | 3.2.5        | PG14-18；修复 EL10 LTO 构建                                                        |
+| polardb-17             | 17.10.1.0    | 17.11.1.0    | PG17.11；含配套扩展                                                                |
+| rdf_fdw                | 2.7.0        | 3.0.0        | PG14-18；SQL 版本 3.0                                                              |
+| rdkit                  | 202503.6     | 202609.1     | PG14-18；Debian 13、Ubuntu 24/26；Debian 12、Ubuntu 22 保留 202303.3               |
+| session_variable       | 3.5          | 3.6          | PG14-18                                                                            |
+| snowflake              | 2.6.0        | 2.6.0        | PG15-18；随 pgEdge 重构建；订正旧目录 2.5.0 标签                                   |
+| spock                  | 5.0.11       | 5.0.12       | PG15-18；随 pgEdge 内核分发；修复 DEB 文件归属冲突                                 |
+| supautils              | 3.4.3        | 3.4.4        | PG14-18                                                                            |
+| timescaledb            | 2.30.1       | 2.30.2       | PG16-18；TSL；PG14 固定 2.19.3，PG15 固定 2.28.3                                   |
+| vgram                  | -            | 1.0          | PG14-18                                                                            |
 
 ## 2026-09-24
 
-| 名称 | 旧版本 | 新版本 | 备注 |
-|:---|:---|:---|:---|
-| biscuit | 3.0.0 | 3.1.0 | PG16-18 |
-| ddlx | 0.30 | 0.31 | PG14-18；纯 SQL |
-| documentdb | 0.114 | 0.117 | PG15-18 |
-| ivorysql-18 | 5.4 | 5.6 | PG18.6 内核 |
-| jev | - | 0.2.0 | PG14-17；PL/Python、TypeSafe |
-| kafgres | - | 0.1.0 | PG16；Kafka broker；ELv2 |
-| log_fdw | 1.4 | 1.5 | PG14-18 |
-| macavity | - | 0.1.0 | PG16-18；仅限测试 |
-| nominatim_fdw | 2.1.0 | 2.2.0 | PG14-18；SQL 2.2 |
-| pg_circuit | - | 0.1.0 | PG16-18；需预加载 |
-| pg_curl | 2.4.5 | 2.4.6 | PG14-18；SQL 2.4.1 |
-| pg_durable | 0.2.3 | 0.2.8 | PG14-18 |
-| pg_fts | 0.2.0 | 1.8.3 | PG17-18 |
-| pg_grammar_guard | - | 0.4.1 | PG14-18；依赖 pg_living_assertions |
-| pg_lake | 3.4.0 | 3.5.1 | PG16-18；SQL 3.5 |
-| pg_living_assertions | - | 0.4.2 | PG14-18；SQL 0.4.1 |
-| pg_local_cache | 1.3.0 | 2.0.4 | PG14-18；需预加载 |
-| pg_profile | 4.11 | 4.16 | PG14-18；纯 SQL |
-| pg_search | 0.25.2 | 0.25.9 | PG15-18；需预加载 |
-| pg_stat_monitor | 2.3.2 | 2.4.0 | PG14-18；需预加载 |
-| pg_task | 2.1.29 | 3.0.0 | PG14-18；需预加载 |
-| pg_trickle | 0.81.0 | 0.107.0 | PG18；需 V2 迁移 |
-| pg_vault_tde | 1.7.0 | 1.7.1 | PG17-18；升级前导出 |
-| pgmq | 1.12.0 | 1.13.0 | PG14-18；纯 SQL |
-| pgrdf | 0.6.20 | 0.6.36 | PG14-18 |
-| plpgsql_check | 2.10.4 | 2.10.10 | PG14-18 |
-| plprql | 18.0.1 | 18.0.2 | PG14-18 |
-| psql_bm25s | 0.4.13 | 0.4.14 | PG17-18 |
-| timescaledb | 2.29.1 | 2.30.1 | PG16-18；TSL |
-| ulak | 0.0.2 | 0.2.0 | PG14-18；需预加载 |
-| vectorize | 0.26.2 | 0.27.1 | PG14-18；SQL 0.23.0；多行处理修复 |
-| wrappers | 0.6.2 | 0.6.3 | PG14-18 |
+| 名称                 | 旧版本 | 新版本  | 备注                               |
+|:---------------------|:-------|:--------|:-----------------------------------|
+| biscuit              | 3.0.0  | 3.1.0   | PG16-18                            |
+| ddlx                 | 0.30   | 0.31    | PG14-18；纯 SQL                    |
+| documentdb           | 0.114  | 0.117   | PG15-18                            |
+| ivorysql-18          | 5.4    | 5.6     | PG18.6 内核                        |
+| jev                  | -      | 0.2.0   | PG14-17；PL/Python、TypeSafe       |
+| kafgres              | -      | 0.1.0   | PG16；Kafka broker；ELv2           |
+| log_fdw              | 1.4    | 1.5     | PG14-18                            |
+| macavity             | -      | 0.1.0   | PG16-18；仅限测试                  |
+| nominatim_fdw        | 2.1.0  | 2.2.0   | PG14-18；SQL 2.2                   |
+| pg_circuit           | -      | 0.1.0   | PG16-18；需预加载                  |
+| pg_curl              | 2.4.5  | 2.4.6   | PG14-18；SQL 2.4.1                 |
+| pg_durable           | 0.2.3  | 0.2.8   | PG14-18                            |
+| pg_fts               | 0.2.0  | 1.8.3   | PG17-18                            |
+| pg_grammar_guard     | -      | 0.4.1   | PG14-18；依赖 pg_living_assertions |
+| pg_lake              | 3.4.0  | 3.5.1   | PG16-18；SQL 3.5                   |
+| pg_living_assertions | -      | 0.4.2   | PG14-18；SQL 0.4.1                 |
+| pg_local_cache       | 1.3.0  | 2.0.4   | PG14-18；需预加载                  |
+| pg_profile           | 4.11   | 4.16    | PG14-18；纯 SQL                    |
+| pg_search            | 0.25.2 | 0.25.9  | PG15-18；需预加载                  |
+| pg_stat_monitor      | 2.3.2  | 2.4.0   | PG14-18；需预加载                  |
+| pg_task              | 2.1.29 | 3.0.0   | PG14-18；需预加载                  |
+| pg_trickle           | 0.81.0 | 0.107.0 | PG18；需 V2 迁移                   |
+| pg_vault_tde         | 1.7.0  | 1.7.1   | PG17-18；升级前导出                |
+| pgmq                 | 1.12.0 | 1.13.0  | PG14-18；纯 SQL                    |
+| pgrdf                | 0.6.20 | 0.6.36  | PG14-18                            |
+| plpgsql_check        | 2.10.4 | 2.10.10 | PG14-18                            |
+| plprql               | 18.0.1 | 18.0.2  | PG14-18                            |
+| psql_bm25s           | 0.4.13 | 0.4.14  | PG17-18                            |
+| timescaledb          | 2.29.1 | 2.30.1  | PG16-18；TSL                       |
+| ulak                 | 0.0.2  | 0.2.0   | PG14-18；需预加载                  |
+| vectorize            | 0.26.2 | 0.27.1  | PG14-18；SQL 0.23.0；多行处理修复  |
+| wrappers             | 0.6.2  | 0.6.3   | PG14-18                            |
 
 ## 2026-08-14
 
-| 名称                | 旧版本   | 新版本    | 备注                                                        |
-|:------------------|:------|:-------|:----------------------------------------------------------|
-| emailaddr         | 0     | 0      | 许可证元数据：`LicenseRef-Upstream-No-License`；r3；PG14-18        |
-| explain_ui        | 0.0.2 | 0.0.2  | 许可证元数据：`LicenseRef-Upstream-No-License`；r4；PG14-18        |
-| oidc_validator    | 0.1.0 | 0.1.0  | Rust 模块；`LicenseRef-Upstream-No-License`；r2；PG18          |
-| pg_failover_slots | 1.2.1 | 1.2.1  | 许可证元数据：`PostgreSQL`；r2；需预加载；PG14-18                       |
-| pg_geohash        | 1.0   | 1.0    | 许可证元数据：`MIT`；r4；修复 SQL 文件名与目标 PG ABI；PG14-18              |
-| pg_oidc_validator | 0.2   | 1.1.0  | PG18 OAuth 校验模块；新增 `discovery_url_override` 与 GSSAPI 构建依赖 |
-| pg_relation_sql   | -     | 0.2.2  | 独立 SQL；不支持 `CREATE EXTENSION`；Architecture: all；PG14-18   |
-| pg_summarize      | 0.0.1 | 0.0.1  | 许可证元数据：`LicenseRef-Upstream-No-License`；r6；PG14-18        |
-| pg_when           | 0.1.9 | 0.1.10 | GitHub/PGXN 同一发行版；上游 pgrx 0.18.1，打包使用 0.19.1；PG14-18      |
-| smlar             | 1.0   | 1.0    | 许可证元数据：`LicenseRef-Upstream-No-License`；r2；PG14-18        |
-| unit              | 7.10  | 7.10   | 许可证元数据：`GPL-3.0-or-later`；r7；PG14-18                      |
+| 名称              | 旧版本 | 新版本 | 备注                                                                  |
+|:------------------|:-------|:-------|:----------------------------------------------------------------------|
+| emailaddr         | 0      | 0      | 许可证元数据：`LicenseRef-Upstream-No-License`；r3；PG14-18           |
+| explain_ui        | 0.0.2  | 0.0.2  | 许可证元数据：`LicenseRef-Upstream-No-License`；r4；PG14-18           |
+| oidc_validator    | 0.1.0  | 0.1.0  | Rust 模块；`LicenseRef-Upstream-No-License`；r2；PG18                 |
+| pg_failover_slots | 1.2.1  | 1.2.1  | 许可证元数据：`PostgreSQL`；r2；需预加载；PG14-18                     |
+| pg_geohash        | 1.0    | 1.0    | 许可证元数据：`MIT`；r4；修复 SQL 文件名与目标 PG ABI；PG14-18        |
+| pg_oidc_validator | 0.2    | 1.1.0  | PG18 OAuth 校验模块；新增 `discovery_url_override` 与 GSSAPI 构建依赖 |
+| pg_relation_sql   | -      | 0.2.2  | 独立 SQL；不支持 `CREATE EXTENSION`；Architecture: all；PG14-18       |
+| pg_summarize      | 0.0.1  | 0.0.1  | 许可证元数据：`LicenseRef-Upstream-No-License`；r6；PG14-18           |
+| pg_when           | 0.1.9  | 0.1.10 | GitHub/PGXN 同一发行版；上游 pgrx 0.18.1，打包使用 0.19.1；PG14-18    |
+| smlar             | 1.0    | 1.0    | 许可证元数据：`LicenseRef-Upstream-No-License`；r2；PG14-18           |
+| unit              | 7.10   | 7.10   | 许可证元数据：`GPL-3.0-or-later`；r7；PG14-18                         |
 
 ## 2026-08-12
 
-| 名称             | 旧版本               | 新版本              | 备注                                                |
-|:---------------|:------------------|:-----------------|:--------------------------------------------------|
+| 名称           | 旧版本            | 新版本           | 备注                                                  |
+|:---------------|:------------------|:-----------------|:------------------------------------------------------|
 | biscuit        | 2.4.3             | 3.0.0            | PG16-18；2.x 索引需 REINDEX                           |
-| cat_tools      | -                 | 0.3.0            | 纯 SQL；PG14-18                                     |
-| citus          | 14.1.0            | 14.2.0           | 含 citus_columnar；PG16-18                          |
-| pg_clickhouse  | 0.3.2             | 0.10.0           | PG14-18                                           |
-| pg_describe    | -                 | 1.0.0            | PG17-18                                           |
-| pg_disorder    | -                 | 0.1.0            | PG14-18                                           |
-| pg_local_cache | -                 | 1.3.0            | PG14-18；需预加载；仅单主                                  |
-| pg_mentat      | -                 | 1.5.7            | PG14-18                                           |
-| pg_policy      | -                 | 0.1.0            | 纯 SQL；PG14-18                                     |
-| pg_rational    | 0.0.2             | 0.0.3            | PGDG；PG14-18                                      |
-| pg_readme      | 0.7.0             | 0.7.1            | 含 pg_readme_test_extension；PG14-18                |
-| pg_search      | 0.25.0            | 0.25.2           | PG15-18；pgrx 0.19.1；需预加载                          |
-| pg_squeeze     | 1.9.2             | 1.9.4            | PGDG；PG14-18                                      |
-| pg_statviz     | -                 | 1.1              | PGDG；PG14-18（U22 除外）；非默认包组                        |
-| pg_turbovec    | -                 | 1.29.0           | PG14-18；pgrx 0.19.1                               |
-| pg_uuid_v8     | 1.0.0             | 1.1.0            | PG14-18；含 1.0 至 1.1 升级脚本                          |
-| pg_vault_tde   | -                 | 1.7.0            | PG17-18；需预加载                                      |
+| cat_tools      | -                 | 0.3.0            | 纯 SQL；PG14-18                                       |
+| citus          | 14.1.0            | 14.2.0           | 含 citus_columnar；PG16-18                            |
+| pg_clickhouse  | 0.3.2             | 0.10.0           | PG14-18                                               |
+| pg_describe    | -                 | 1.0.0            | PG17-18                                               |
+| pg_disorder    | -                 | 0.1.0            | PG14-18                                               |
+| pg_local_cache | -                 | 1.3.0            | PG14-18；需预加载；仅单主                             |
+| pg_mentat      | -                 | 1.5.7            | PG14-18                                               |
+| pg_policy      | -                 | 0.1.0            | 纯 SQL；PG14-18                                       |
+| pg_rational    | 0.0.2             | 0.0.3            | PGDG；PG14-18                                         |
+| pg_readme      | 0.7.0             | 0.7.1            | 含 pg_readme_test_extension；PG14-18                  |
+| pg_search      | 0.25.0            | 0.25.2           | PG15-18；pgrx 0.19.1；需预加载                        |
+| pg_squeeze     | 1.9.2             | 1.9.4            | PGDG；PG14-18                                         |
+| pg_statviz     | -                 | 1.1              | PGDG；PG14-18（U22 除外）；非默认包组                 |
+| pg_turbovec    | -                 | 1.29.0           | PG14-18；pgrx 0.19.1                                  |
+| pg_uuid_v8     | 1.0.0             | 1.1.0            | PG14-18；含 1.0 至 1.1 升级脚本                       |
+| pg_vault_tde   | -                 | 1.7.0            | PG17-18；需预加载                                     |
 | pgbson         | 2.0.4             | 2.1.0            | 源码包 postgresbson；PG14-18                          |
-| pgmnemo        | 0.15.0            | 0.16.1           | PG17-18                                           |
-| plpgsql_check  | 2.10.3            | 2.10.4           | PG14-18                                           |
+| pgmnemo        | 0.15.0            | 0.16.1           | PG17-18                                               |
+| plpgsql_check  | 2.10.3            | 2.10.4           | PG14-18                                               |
 | plruby         | -                 | 2.5.0            | 含 jsonb_plruby、hstore_plruby、ltree_plruby；PG14-18 |
 | polardb-17     | 17.10.1.0-1PIGSTY | 17.10.1.0-2PGSTY | 重构建；PG17                                          |
-| polarstore     | 1.2.42-1PIGSTY    | 1.2.42-2PGSTY    | 重构建                                               |
-| provsql        | 1.11.0            | 1.12.0           | PG14-18                                           |
-| q3c            | 2.0.4             | 2.0.5            | PGDG；PG14-18                                      |
-| timescaledb    | 2.29.0            | 2.29.1           | PG16-18                                           |
-| vector         | 0.8.6             | 0.8.6            | PGDG 仓库刷新；PG14-18                                 |
-| zlog           | 1.2.18-1PIGSTY    | 1.2.18-2PGSTY    | 重构建                                               |
+| polarstore     | 1.2.42-1PIGSTY    | 1.2.42-2PGSTY    | 重构建                                                |
+| provsql        | 1.11.0            | 1.12.0           | PG14-18                                               |
+| q3c            | 2.0.4             | 2.0.5            | PGDG；PG14-18                                         |
+| timescaledb    | 2.29.0            | 2.29.1           | PG16-18                                               |
+| vector         | 0.8.6             | 0.8.6            | PGDG 仓库刷新；PG14-18                                |
+| zlog           | 1.2.18-1PIGSTY    | 1.2.18-2PGSTY    | 重构建                                                |
 
 ## 2026-07-30
 
-| 扩展名              | 旧版本    | 新版本    | 备注                                             |
-|:-----------------|:-------|:-------|:-----------------------------------------------|
-| emaj             | 4.7.1  | 5.0.0  | PG14-18                                        |
-| graph            | 0.1.8  | 1.0.0  | pggraph；PG14-18；pgrx 0.19.1                    |
-| nominatim_fdw    | 2.0.0  | 2.1.0  | PG14-18                                        |
-| pg_column_tetris | -      | 0.1.0  | 纯 SQL；PG14-18                                  |
-| pg_net           | 0.20.5 | 0.20.5 | D12/D13/U24/U26：0.20.5；U22：0.9.2；r2 尚未入库       |
-| pg_partman       | 5.4.2  | 5.5.0  | 使用 `postgresql-PGVERSION-partman` 包名           |
+| 扩展名           | 旧版本 | 新版本 | 备注                                                |
+|:-----------------|:-------|:-------|:----------------------------------------------------|
+| emaj             | 4.7.1  | 5.0.0  | PG14-18                                             |
+| graph            | 0.1.8  | 1.0.0  | pggraph；PG14-18；pgrx 0.19.1                       |
+| nominatim_fdw    | 2.0.0  | 2.1.0  | PG14-18                                             |
+| pg_column_tetris | -      | 0.1.0  | 纯 SQL；PG14-18                                     |
+| pg_net           | 0.20.5 | 0.20.5 | D12/D13/U24/U26：0.20.5；U22：0.9.2；r2 尚未入库    |
+| pg_partman       | 5.4.2  | 5.5.0  | 使用 `postgresql-PGVERSION-partman` 包名            |
 | pg_rewrite       | 2.0.0  | 2.2    | 包名改为 `postgresql-PGVERSION-pg-rewrite`；PG14-18 |
-| pg_search        | 0.24.3 | 0.25.0 | PG15-18；pgrx 0.19.1；新增 pgvector/OpenBLAS 依赖    |
-| pgactive         | 2.1.7  | 2.1.7  | 修复 PG14-18 构建；r2 尚未入库                          |
-| pgcontext        | -      | 0.2.0  | PG17-18；pgrx 0.19.1；可选 pgvector 兼容桥            |
-| pgmnemo          | 0.13.0 | 0.15.0 | PG17-18；依赖 pgvector >= 0.7.0                   |
-| pgmp             | -      | 1.0.6  | PG14-18；依赖 GMP                                 |
-| pgwasm           | -      | 0.1.0  | PG14-18                                        |
-| pgzint           | -      | 0.2.0  | 仅 D13/U26；依赖 Zint >= 2.14；尚未入库                 |
-| plpgsql_check    | 2.10.1 | 2.10.3 | PG14-18；预加载改为可选                                |
+| pg_search        | 0.24.3 | 0.25.0 | PG15-18；pgrx 0.19.1；新增 pgvector/OpenBLAS 依赖   |
+| pgactive         | 2.1.7  | 2.1.7  | 修复 PG14-18 构建；r2 尚未入库                      |
+| pgcontext        | -      | 0.2.0  | PG17-18；pgrx 0.19.1；可选 pgvector 兼容桥          |
+| pgmnemo          | 0.13.0 | 0.15.0 | PG17-18；依赖 pgvector >= 0.7.0                     |
+| pgmp             | -      | 1.0.6  | PG14-18；依赖 GMP                                   |
+| pgwasm           | -      | 0.1.0  | PG14-18                                             |
+| pgzint           | -      | 0.2.0  | 仅 D13/U26；依赖 Zint >= 2.14；尚未入库             |
+| plpgsql_check    | 2.10.1 | 2.10.3 | PG14-18；预加载改为可选                             |
 | postbis          | -      | 1.0    | PG14-18 兼容补丁；r2                                |
-| qdgc             | -      | 0.1.0  | PG14-18；包含 qdgc_postgis                        |
-| rdf_fdw          | 2.6.0  | 2.7.0  | PG14-18                                        |
-| timescaledb      | 2.28.3 | 2.29.0 | PG16-18                                        |
-| timeseries       | 0.2.1  | 0.2.1  | 修正 partman/cron 推荐依赖与文档；r3                     |
+| qdgc             | -      | 0.1.0  | PG14-18；包含 qdgc_postgis                          |
+| rdf_fdw          | 2.6.0  | 2.7.0  | PG14-18                                             |
+| timescaledb      | 2.28.3 | 2.29.0 | PG16-18                                             |
+| timeseries       | 0.2.1  | 0.2.1  | 修正 partman/cron 推荐依赖与文档；r3                |
 | vector           | 0.8.5  | 0.8.6  | PG14-18；0.8.6 尚未入库                             |
 
 ## 2026-07-24
 
 本批次记录 2026-07-07 至 2026-07-24 期间的扩展变化，包括新增扩展、版本升级、Rust/pgrx 重构建，以及软件包矩阵缺口修复。版本未变化的条目表示打包或覆盖范围发生变化；包版本与 SQL 扩展版本不同时，仅在必要处注明。
 
-| 扩展名                     | 旧版本      | 新版本      | 备注                                                  |
-|:------------------------|:---------|:---------|:----------------------------------------------------|
-| argm                    | -        | 1.1.1    | PG14-18                                             |
-| cron_utils              | -        | 0.1.0    | 纯 SQL；PG14-18                                       |
-| fbsql                   | -        | 0.1.0    | 依赖 PL/R；PG16-18                                     |
-| oidc_validator          | -        | 0.1.0    | Rust OIDC；PG18                                      |
-| online_advisor          | -        | 1.0      | PG14-18                                             |
-| pg_cjk_parser           | -        | 0.1.0    | PG14-18                                             |
-| pg_extension_base       | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_extension_updater    | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_fts                  | -        | 0.2.0    | PG17-18                                             |
-| pg_jieba                | -        | 1.1.0    | 包 2.0.1；SQL 1.1.0；PG14-18                           |
-| pg_kpart                | -        | 1.0      | PG14-18                                             |
-| pg_lake                 | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_lake_copy            | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_lake_engine          | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_lake_iceberg         | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_lake_table           | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_map                  | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                    |
-| pg_oidc_validator       | -        | 0.2      | Percona OIDC；PG18；DEB 全平台，RPM 仅 EL10                |
-| pg_roast                | -        | 1.0      | PG14-18                                             |
-| pg_tiktoken_c           | -        | 1.1      | PG14-18                                             |
-| pgfr_analyze            | -        | 2.29.2   | pg_flight_recorder；PG15-18                          |
-| pgfr_record             | -        | 2.29.2   | pg_flight_recorder；PG15-18                          |
-| pgmemento               | -        | 0.7.4    | 纯 SQL；PG14-18                                       |
-| pgmonitor               | -        | 2.2.0    | PG14-18                                             |
-| pgsqlmock               | -        | 1.0.1    | PG14-18                                             |
-| plx                     | -        | 1.3.1    | PG14-18                                             |
-| anon                    | 3.1.1    | 3.1.3    | pgrx 0.19.1；PG14-18                                 |
-| block_copy_command      | 0.1.5    | 0.1.5    | pgrx 0.19.1；PG14-18                                 |
-| convert                 | 0.1.0    | 0.1.0    | pgrx 0.19.1；PG14-18                                 |
-| etcd_fdw                | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                 |
-| explain_ui              | 0.0.2    | 0.0.2    | pgrx 0.19.1；PG14-18                                 |
-| graph                   | 0.1.7    | 0.1.8    | pgrx 0.19.1；PG14-18                                 |
-| jsonschema              | 0.1.9    | 0.1.9    | pgrx 0.19.1；PG14-18                                 |
-| pg_base58               | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_bestmatch            | 0.0.2    | 0.0.2    | pgrx 0.19.1；PG14-18                                 |
-| pg_cardano              | 1.2.0    | 1.2.0    | pgrx 0.19.1；PG15-18                                 |
-| pg_command_fw           | 0.1.0    | 0.1.0    | pgrx 0.19.1；PG15-18                                 |
-| pg_durable              | 0.2.2    | 0.2.3    | pgrx 0.19.1；PG14-18                                 |
-| pg_enigma               | 0.5.0    | 0.5.0    | pgrx 0.19.1；PG14-18                                 |
-| pg_eviltransform        | 0.0.2    | 0.0.4    | pgrx 0.19.1；PG14-18                                 |
-| pg_graphql              | 1.6.1    | 1.6.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_idkit                | 0.4.0    | 0.4.0    | pgrx 0.19.1；PG14-18                                 |
-| pg_jsonschema           | 0.3.4    | 0.3.4    | pgrx 0.19.1；PG14-18                                 |
-| pg_kazsearch            | 2.2.0    | 2.3.0    | pgrx 0.19.1；PG16-18                                 |
-| pg_later                | 0.4.0    | 0.4.0    | pgrx 0.19.1；PG14-18                                 |
-| pg_mooncake             | 0.2.0    | 0.2.0    | pgrx 0.19.1；PG14-18                                 |
-| pg_parquet              | 0.5.1    | 0.5.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_pinyin               | 0.0.4    | 0.0.5    | pgrx 0.19.1；PG14-18                                 |
-| pg_polyline             | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_render               | 0.1.3    | 0.1.3    | pgrx 0.19.1；PG14-18                                 |
-| pg_rrf                  | 0.0.3    | 0.0.3    | pgrx 0.19.1；PG14-18                                 |
-| pg_search               | 0.24.0   | 0.24.3   | pgrx 0.19.1；PG15-18                                 |
-| pg_session_jwt          | 0.5.0    | 0.5.0    | pgrx 0.19.1；PG14-18                                 |
-| pg_smtp_client          | 0.2.1    | 0.2.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_strict               | 1.0.5    | 1.0.5    | pgrx 0.19.1；PG14-18                                 |
-| pg_summarize            | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_tiktoken             | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_tokenizer            | 0.1.1    | 0.1.1    | pgrx 0.19.1；PG14-18                                 |
-| pg_trickle              | 0.81.0   | 0.81.0   | pgrx 0.19.1；PG18                                    |
-| pg_when                 | 0.1.9    | 0.1.9    | pgrx 0.19.1；PG14-18                                 |
-| pgdd                    | 0.6.1    | 0.6.1    | pgrx 0.19.1；PG14-18                                 |
-| pglinter                | 2.0.0    | 2.0.0    | pgrx 0.19.1；PG14-18                                 |
-| pglite_fusion           | 0.0.6    | 0.0.6    | pgrx 0.19.1；PG14-18                                 |
-| pgmqtt                  | 0.3.0    | 0.4.1    | pgrx 0.19.1；PG14-18                                 |
-| pgrdf                   | 0.6.4    | 0.6.20   | pgrx 0.19.1；PG14-18                                 |
-| pgsmcrypto              | 0.1.1    | 0.1.1    | pgrx 0.19.1；PG14-18                                 |
-| pgx_ulid                | 0.2.3    | 0.2.3    | pgrx 0.19.1；PG14-18                                 |
-| plprql                  | 18.0.1   | 18.0.1   | pgrx 0.19.1；PG14-18                                 |
-| timescaledb_toolkit     | 1.23.0   | 1.23.0   | pgrx 0.19.1；PG15-18                                 |
-| typeid                  | 0.3.0    | 0.3.0    | pgrx 0.19.1；PG14-18                                 |
-| tzf                     | 0.3.0    | 0.3.0    | pgrx 0.19.1；PG14-18                                 |
-| vchord                  | 1.1.1    | 1.1.1    | pgrx 0.19.1；PG14-18                                 |
-| vchord_bm25             | 0.3.0    | 0.3.0    | pgrx 0.19.1；PG14-18                                 |
-| vectorize               | 0.26.2   | 0.26.2   | pgrx 0.19.1；PG14-18                                 |
-| vectorscale             | 0.9.0    | 0.9.0    | pgrx 0.19.1；PG14-18                                 |
-| wrappers                | 0.6.1    | 0.6.2    | pgrx 0.19.1；PG14-18                                 |
-| babelfishpg_tsql        | 5.5.0    | 5.4.0    | 目录修正为 5.4.0；PG17-18                                 |
-| biscuit                 | 2.4.1    | 2.4.3    | 包 2.4.3；SQL 2.4.1；PG16-18                           |
-| decoderbufs             | 3.5.0    | 3.6.0    | DEB 3.6.0；RPM 3.5.0；PG14-18                         |
-| documentdb              | 0.113    | 0.114    | PG15-18；16 平台                                       |
-| documentdb_core         | 0.113    | 0.114    | PG15-18；16 平台                                       |
-| documentdb_distributed  | 0.113    | 0.114    | PG15-18；16 平台                                       |
-| documentdb_extended_rum | 0.113    | 0.114    | PG15-18；16 平台                                       |
-| http                    | 1.7.1    | 1.7.2    | PG14-18                                             |
-| jdbc_fdw                | 0.4.0    | 0.5.0    | 包 0.5.0；SQL 1.2；PG14-18；16 平台                       |
-| nominatim_fdw           | 1.3      | 2.0.0    | PG14-18；16 平台                                       |
-| odbc_fdw                | 0.5.1    | 0.6.1    | 包 0.6.1；SQL 0.5.2；PG14-18                           |
-| ogr_fdw                 | 1.1.8    | 1.1.9    | PG14-18                                             |
-| pg_dbms_errlog          | 2.2      | 2.4      | PG14-18                                             |
-| pg_ivm                  | 1.14     | 1.15     | PG14-18                                             |
-| pg_net                  | 0.20.3   | 0.20.5   | D12/D13/U24/U26：0.20.5；U22：0.9.2（libcurl）；PG14-18   |
-| pg_statement_rollback   | 1.5      | 1.6      | PG14-18                                             |
-| pg_tde                  | 2.1      | 2.2      | Percona；PG17-18                                     |
-| pgauditlogtofile        | 1.8.4    | 1.8.5    | PG14-18                                             |
-| pgbson                  | 2.0.2    | 2.0.4    | 包 2.0.4；SQL 2.0；PG14-18                             |
-| pgclone                 | 4.3.2    | 4.4.2    | PG14-18                                             |
-| pgextwlist              | 1.19     | 1.20     | PG14-18                                             |
-| pgmnemo                 | 0.12.1   | 0.13.0   | PG17-18                                             |
-| pgmq                    | 1.11.1   | 1.12.0   | PG14-18                                             |
-| pgsentinel              | 1.4.1    | 1.4.2    | RPM 1.4.2；DEB 1.4.0；U26 1.4.1；PG14-18               |
-| plpgsql_check           | 2.9.2    | 2.10.1   | PG14-18                                             |
-| plproxy                 | 2.11.0   | 2.12.0   | PG14-18                                             |
-| powa                    | 5.1.2    | 5.2.0    | DEB 5.2.0；RPM 5.1.0；PG14-18                         |
-| provsql                 | 1.10.0   | 1.11.0   | PG14-18                                             |
-| re2                     | 0.3.0    | 0.4.1    | PG16-18                                             |
-| snowflake               | 2.4      | 2.5.0    | pgEdge；PG15-18                                      |
-| spock                   | 5.0.6    | 5.0.10   | pgEdge；PG15-18                                      |
-| system_stats            | 4.0      | 4.1      | PG14-18；10 个 DEB 目标                                 |
-| tdigest                 | 1.4.3    | 1.4.4    | PG14-18                                             |
-| timescaledb             | 2.28.2   | 2.28.3   | PG15-18：2.28.3；PG14：2.19.3；6 个 EL                   |
-| vector                  | 0.8.4    | 0.8.5    | PG14-18                                             |
-| babelfishpg_money       | 1.1.0    | 1.1.0    | Babelfish：+PG18                                     |
-| babelfishpg_tds         | 1.0.0    | 1.0.0    | Babelfish：+PG18                                     |
-| citus                   | 14.1.0   | 14.1.0   | Citus 13.0.0；EL10 双架构 RPM PG14                      |
-| dbt2                    | 0.61.7   | 0.61.7   | +DEB PG14-18；+EL8 双架构 RPM PG17-18                   |
-| decoder_raw             | 1.0      | 1.0      | EL10/D13；PG14-16；双架构                                |
-| faker                   | 0.5.3    | 0.5.3    | +DEB PG14-18；D12/U22：python3-fake-factory 22.0.0    |
-| gb18030_2022            | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                             |
-| h3                      | 4.2.3    | 4.2.3    | EL8 x86_64 RPM PG17-18                              |
-| hdfs_fdw                | 2.3.3    | 2.3.3    | +DEB PG14-18                                        |
-| hstore_pllua            | 2.0.12   | 2.0.12   | +RPM 6 个 EL PG14-18                                 |
-| hstore_plluau           | 2.0.12   | 2.0.12   | +RPM 6 个 EL PG14-18                                 |
+| 扩展名                  | 旧版本   | 新版本   | 备注                                                         |
+|:------------------------|:---------|:---------|:-------------------------------------------------------------|
+| argm                    | -        | 1.1.1    | PG14-18                                                      |
+| cron_utils              | -        | 0.1.0    | 纯 SQL；PG14-18                                              |
+| fbsql                   | -        | 0.1.0    | 依赖 PL/R；PG16-18                                           |
+| oidc_validator          | -        | 0.1.0    | Rust OIDC；PG18                                              |
+| online_advisor          | -        | 1.0      | PG14-18                                                      |
+| pg_cjk_parser           | -        | 0.1.0    | PG14-18                                                      |
+| pg_extension_base       | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_extension_updater    | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_fts                  | -        | 0.2.0    | PG17-18                                                      |
+| pg_jieba                | -        | 1.1.0    | 包 2.0.1；SQL 1.1.0；PG14-18                                 |
+| pg_kpart                | -        | 1.0      | PG14-18                                                      |
+| pg_lake                 | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_lake_copy            | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_lake_engine          | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_lake_iceberg         | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_lake_table           | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_map                  | -        | 3.4      | pg_lake 3.4；PG16-18；RPM 仅 EL9/10                          |
+| pg_oidc_validator       | -        | 0.2      | Percona OIDC；PG18；DEB 全平台，RPM 仅 EL10                  |
+| pg_roast                | -        | 1.0      | PG14-18                                                      |
+| pg_tiktoken_c           | -        | 1.1      | PG14-18                                                      |
+| pgfr_analyze            | -        | 2.29.2   | pg_flight_recorder；PG15-18                                  |
+| pgfr_record             | -        | 2.29.2   | pg_flight_recorder；PG15-18                                  |
+| pgmemento               | -        | 0.7.4    | 纯 SQL；PG14-18                                              |
+| pgmonitor               | -        | 2.2.0    | PG14-18                                                      |
+| pgsqlmock               | -        | 1.0.1    | PG14-18                                                      |
+| plx                     | -        | 1.3.1    | PG14-18                                                      |
+| anon                    | 3.1.1    | 3.1.3    | pgrx 0.19.1；PG14-18                                         |
+| block_copy_command      | 0.1.5    | 0.1.5    | pgrx 0.19.1；PG14-18                                         |
+| convert                 | 0.1.0    | 0.1.0    | pgrx 0.19.1；PG14-18                                         |
+| etcd_fdw                | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                         |
+| explain_ui              | 0.0.2    | 0.0.2    | pgrx 0.19.1；PG14-18                                         |
+| graph                   | 0.1.7    | 0.1.8    | pgrx 0.19.1；PG14-18                                         |
+| jsonschema              | 0.1.9    | 0.1.9    | pgrx 0.19.1；PG14-18                                         |
+| pg_base58               | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_bestmatch            | 0.0.2    | 0.0.2    | pgrx 0.19.1；PG14-18                                         |
+| pg_cardano              | 1.2.0    | 1.2.0    | pgrx 0.19.1；PG15-18                                         |
+| pg_command_fw           | 0.1.0    | 0.1.0    | pgrx 0.19.1；PG15-18                                         |
+| pg_durable              | 0.2.2    | 0.2.3    | pgrx 0.19.1；PG14-18                                         |
+| pg_enigma               | 0.5.0    | 0.5.0    | pgrx 0.19.1；PG14-18                                         |
+| pg_eviltransform        | 0.0.2    | 0.0.4    | pgrx 0.19.1；PG14-18                                         |
+| pg_graphql              | 1.6.1    | 1.6.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_idkit                | 0.4.0    | 0.4.0    | pgrx 0.19.1；PG14-18                                         |
+| pg_jsonschema           | 0.3.4    | 0.3.4    | pgrx 0.19.1；PG14-18                                         |
+| pg_kazsearch            | 2.2.0    | 2.3.0    | pgrx 0.19.1；PG16-18                                         |
+| pg_later                | 0.4.0    | 0.4.0    | pgrx 0.19.1；PG14-18                                         |
+| pg_mooncake             | 0.2.0    | 0.2.0    | pgrx 0.19.1；PG14-18                                         |
+| pg_parquet              | 0.5.1    | 0.5.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_pinyin               | 0.0.4    | 0.0.5    | pgrx 0.19.1；PG14-18                                         |
+| pg_polyline             | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_render               | 0.1.3    | 0.1.3    | pgrx 0.19.1；PG14-18                                         |
+| pg_rrf                  | 0.0.3    | 0.0.3    | pgrx 0.19.1；PG14-18                                         |
+| pg_search               | 0.24.0   | 0.24.3   | pgrx 0.19.1；PG15-18                                         |
+| pg_session_jwt          | 0.5.0    | 0.5.0    | pgrx 0.19.1；PG14-18                                         |
+| pg_smtp_client          | 0.2.1    | 0.2.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_strict               | 1.0.5    | 1.0.5    | pgrx 0.19.1；PG14-18                                         |
+| pg_summarize            | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_tiktoken             | 0.0.1    | 0.0.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_tokenizer            | 0.1.1    | 0.1.1    | pgrx 0.19.1；PG14-18                                         |
+| pg_trickle              | 0.81.0   | 0.81.0   | pgrx 0.19.1；PG18                                            |
+| pg_when                 | 0.1.9    | 0.1.9    | pgrx 0.19.1；PG14-18                                         |
+| pgdd                    | 0.6.1    | 0.6.1    | pgrx 0.19.1；PG14-18                                         |
+| pglinter                | 2.0.0    | 2.0.0    | pgrx 0.19.1；PG14-18                                         |
+| pglite_fusion           | 0.0.6    | 0.0.6    | pgrx 0.19.1；PG14-18                                         |
+| pgmqtt                  | 0.3.0    | 0.4.1    | pgrx 0.19.1；PG14-18                                         |
+| pgrdf                   | 0.6.4    | 0.6.20   | pgrx 0.19.1；PG14-18                                         |
+| pgsmcrypto              | 0.1.1    | 0.1.1    | pgrx 0.19.1；PG14-18                                         |
+| pgx_ulid                | 0.2.3    | 0.2.3    | pgrx 0.19.1；PG14-18                                         |
+| plprql                  | 18.0.1   | 18.0.1   | pgrx 0.19.1；PG14-18                                         |
+| timescaledb_toolkit     | 1.23.0   | 1.23.0   | pgrx 0.19.1；PG15-18                                         |
+| typeid                  | 0.3.0    | 0.3.0    | pgrx 0.19.1；PG14-18                                         |
+| tzf                     | 0.3.0    | 0.3.0    | pgrx 0.19.1；PG14-18                                         |
+| vchord                  | 1.1.1    | 1.1.1    | pgrx 0.19.1；PG14-18                                         |
+| vchord_bm25             | 0.3.0    | 0.3.0    | pgrx 0.19.1；PG14-18                                         |
+| vectorize               | 0.26.2   | 0.26.2   | pgrx 0.19.1；PG14-18                                         |
+| vectorscale             | 0.9.0    | 0.9.0    | pgrx 0.19.1；PG14-18                                         |
+| wrappers                | 0.6.1    | 0.6.2    | pgrx 0.19.1；PG14-18                                         |
+| babelfishpg_tsql        | 5.5.0    | 5.4.0    | 目录修正为 5.4.0；PG17-18                                    |
+| biscuit                 | 2.4.1    | 2.4.3    | 包 2.4.3；SQL 2.4.1；PG16-18                                 |
+| decoderbufs             | 3.5.0    | 3.6.0    | DEB 3.6.0；RPM 3.5.0；PG14-18                                |
+| documentdb              | 0.113    | 0.114    | PG15-18；16 平台                                             |
+| documentdb_core         | 0.113    | 0.114    | PG15-18；16 平台                                             |
+| documentdb_distributed  | 0.113    | 0.114    | PG15-18；16 平台                                             |
+| documentdb_extended_rum | 0.113    | 0.114    | PG15-18；16 平台                                             |
+| http                    | 1.7.1    | 1.7.2    | PG14-18                                                      |
+| jdbc_fdw                | 0.4.0    | 0.5.0    | 包 0.5.0；SQL 1.2；PG14-18；16 平台                          |
+| nominatim_fdw           | 1.3      | 2.0.0    | PG14-18；16 平台                                             |
+| odbc_fdw                | 0.5.1    | 0.6.1    | 包 0.6.1；SQL 0.5.2；PG14-18                                 |
+| ogr_fdw                 | 1.1.8    | 1.1.9    | PG14-18                                                      |
+| pg_dbms_errlog          | 2.2      | 2.4      | PG14-18                                                      |
+| pg_ivm                  | 1.14     | 1.15     | PG14-18                                                      |
+| pg_net                  | 0.20.3   | 0.20.5   | D12/D13/U24/U26：0.20.5；U22：0.9.2（libcurl）；PG14-18      |
+| pg_statement_rollback   | 1.5      | 1.6      | PG14-18                                                      |
+| pg_tde                  | 2.1      | 2.2      | Percona；PG17-18                                             |
+| pgauditlogtofile        | 1.8.4    | 1.8.5    | PG14-18                                                      |
+| pgbson                  | 2.0.2    | 2.0.4    | 包 2.0.4；SQL 2.0；PG14-18                                   |
+| pgclone                 | 4.3.2    | 4.4.2    | PG14-18                                                      |
+| pgextwlist              | 1.19     | 1.20     | PG14-18                                                      |
+| pgmnemo                 | 0.12.1   | 0.13.0   | PG17-18                                                      |
+| pgmq                    | 1.11.1   | 1.12.0   | PG14-18                                                      |
+| pgsentinel              | 1.4.1    | 1.4.2    | RPM 1.4.2；DEB 1.4.0；U26 1.4.1；PG14-18                     |
+| plpgsql_check           | 2.9.2    | 2.10.1   | PG14-18                                                      |
+| plproxy                 | 2.11.0   | 2.12.0   | PG14-18                                                      |
+| powa                    | 5.1.2    | 5.2.0    | DEB 5.2.0；RPM 5.1.0；PG14-18                                |
+| provsql                 | 1.10.0   | 1.11.0   | PG14-18                                                      |
+| re2                     | 0.3.0    | 0.4.1    | PG16-18                                                      |
+| snowflake               | 2.4      | 2.5.0    | pgEdge；PG15-18                                              |
+| spock                   | 5.0.6    | 5.0.10   | pgEdge；PG15-18                                              |
+| system_stats            | 4.0      | 4.1      | PG14-18；10 个 DEB 目标                                      |
+| tdigest                 | 1.4.3    | 1.4.4    | PG14-18                                                      |
+| timescaledb             | 2.28.2   | 2.28.3   | PG15-18：2.28.3；PG14：2.19.3；6 个 EL                       |
+| vector                  | 0.8.4    | 0.8.5    | PG14-18                                                      |
+| babelfishpg_money       | 1.1.0    | 1.1.0    | Babelfish：+PG18                                             |
+| babelfishpg_tds         | 1.0.0    | 1.0.0    | Babelfish：+PG18                                             |
+| citus                   | 14.1.0   | 14.1.0   | Citus 13.0.0；EL10 双架构 RPM PG14                           |
+| dbt2                    | 0.61.7   | 0.61.7   | +DEB PG14-18；+EL8 双架构 RPM PG17-18                        |
+| decoder_raw             | 1.0      | 1.0      | EL10/D13；PG14-16；双架构                                    |
+| faker                   | 0.5.3    | 0.5.3    | +DEB PG14-18；D12/U22：python3-fake-factory 22.0.0           |
+| gb18030_2022            | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                                  |
+| h3                      | 4.2.3    | 4.2.3    | EL8 x86_64 RPM PG17-18                                       |
+| hdfs_fdw                | 2.3.3    | 2.3.3    | +DEB PG14-18                                                 |
+| hstore_pllua            | 2.0.12   | 2.0.12   | +RPM 6 个 EL PG14-18                                         |
+| hstore_plluau           | 2.0.12   | 2.0.12   | +RPM 6 个 EL PG14-18                                         |
 | hunspell_cs_cz          | 1.0      | 1.0      | hunspell 合包；10 词典；16 平台；PG14-18                     |
 | hunspell_de_de          | 1.0      | 1.0      | hunspell 合包；10 词典；16 平台；PG14-18                     |
 | hunspell_en_us          | 1.0      | 1.0      | hunspell 合包；10 词典；16 平台；PG14-18                     |
@@ -380,36 +410,36 @@ weight: 300
 | hunspell_pt_pt          | 1.0      | 1.0      | 16 平台；pt_pt.stop 避免内核冲突                             |
 | hunspell_ru_ru          | 1.0      | 1.0      | hunspell 合包；10 词典；16 平台；PG14-18                     |
 | hunspell_ru_ru_aot      | 1.0      | 1.0      | hunspell 合包；10 词典；16 平台；PG14-18                     |
-| imgsmlr                 | 1.0      | 1.0      | EL10/D13；PG14-18；双架构                                |
-| ivorysql_ora            | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                             |
-| mobilitydb              | 1.3.0    | 1.3.0    | +RPM 6 个 EL PG14-18；+U22 DEB PG18                   |
-| mobilitydb_datagen      | 1.3.0    | 1.3.0    | 随 mobilitydb；+RPM 6 个 EL；+U22 DEB PG18              |
-| omni                    | 0.2.14   | 0.2.14   | 20251108；EL10 PG14-18；EL8/9、D12/U22 PG18            |
-| ora_btree_gin           | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                             |
-| ora_btree_gist          | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                             |
-| pg_dbms_job             | 2.0      | 2.0      | +DEB PG14-18                                        |
-| pg_dbms_lock            | 2.0      | 2.0      | +DEB PG14-18                                        |
-| pg_dbms_metadata        | 1.0.0    | 1.0.0    | +DEB PG14-18；+EL8 aarch64 RPM PG15                  |
-| pg_fact_loader          | 2.0.1    | 2.0.1    | U26 DEB PG14-18                                     |
-| pg_get_functiondef      | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                             |
-| pg_strom                | 6.1      | 6.1      | pg_strom 3.5；EL10 x86_64 PG14                       |
-| pgautofailover          | 2.2      | 2.2      | 6 个 EL RPM：+PG18                                    |
-| pgbouncer_fdw           | 1.4.0    | 1.4.0    | +DEB PG14-18                                        |
-| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | 10 个 DEB：+PG18；U26 PG14-17                          |
-| pgspider_ext            | 1.3.0    | 1.3.0    | 10 个 DEB：+PG18；支持 PG15-18                           |
-| pglogical_ticker        | 1.4.1    | 1.4.1    | 6 个 EL RPM PG14-17                                  |
-| pgmemcache              | 2.3.0    | 2.3.0    | EL8 aarch64 RPM PG14-15                             |
-| pgml                    | 2.10.0   | 2.10.0   | EL10/D13/U26；PG14-17；双架构                            |
-| plisql                  | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                             |
-| pllua                   | 2.0.12   | 2.0.12   | 6 个 EL：+PG18；EL8 aarch64：+PG14-15                   |
+| imgsmlr                 | 1.0      | 1.0      | EL10/D13；PG14-18；双架构                                    |
+| ivorysql_ora            | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                                  |
+| mobilitydb              | 1.3.0    | 1.3.0    | +RPM 6 个 EL PG14-18；+U22 DEB PG18                          |
+| mobilitydb_datagen      | 1.3.0    | 1.3.0    | 随 mobilitydb；+RPM 6 个 EL；+U22 DEB PG18                   |
+| omni                    | 0.2.14   | 0.2.14   | 20251108；EL10 PG14-18；EL8/9、D12/U22 PG18                  |
+| ora_btree_gin           | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                                  |
+| ora_btree_gist          | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                                  |
+| pg_dbms_job             | 2.0      | 2.0      | +DEB PG14-18                                                 |
+| pg_dbms_lock            | 2.0      | 2.0      | +DEB PG14-18                                                 |
+| pg_dbms_metadata        | 1.0.0    | 1.0.0    | +DEB PG14-18；+EL8 aarch64 RPM PG15                          |
+| pg_fact_loader          | 2.0.1    | 2.0.1    | U26 DEB PG14-18                                              |
+| pg_get_functiondef      | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                                  |
+| pg_strom                | 6.1      | 6.1      | pg_strom 3.5；EL10 x86_64 PG14                               |
+| pgautofailover          | 2.2      | 2.2      | 6 个 EL RPM：+PG18                                           |
+| pgbouncer_fdw           | 1.4.0    | 1.4.0    | +DEB PG14-18                                                 |
+| pgl_ddl_deploy          | 2.2.1    | 2.2.1    | 10 个 DEB：+PG18；U26 PG14-17                                |
+| pgspider_ext            | 1.3.0    | 1.3.0    | 10 个 DEB：+PG18；支持 PG15-18                               |
+| pglogical_ticker        | 1.4.1    | 1.4.1    | 6 个 EL RPM PG14-17                                          |
+| pgmemcache              | 2.3.0    | 2.3.0    | EL8 aarch64 RPM PG14-15                                      |
+| pgml                    | 2.10.0   | 2.10.0   | EL10/D13/U26；PG14-17；双架构                                |
+| plisql                  | 1.0      | 1.0      | IvorySQL 5.4；PG18；16 平台                                  |
+| pllua                   | 2.0.12   | 2.0.12   | 6 个 EL：+PG18；EL8 aarch64：+PG14-15                        |
 | rdkit                   | 202503.6 | 202503.6 | D12/U22 PG17-18：202303.3；U26 PG14-17：202503.6；运行时不变 |
-| sqlite_fdw              | 2.5.0    | 2.5.0    | 10 个 DEB：+PG18；支持 PG14-18                           |
-| sslutils                | 1.4      | 1.4      | EL8 双架构 RPM PG18                                    |
-| wal2mongo               | 1.0.7    | 1.0.7    | 10 个 DEB：+PG17-18；支持 PG14-18                        |
+| sqlite_fdw              | 2.5.0    | 2.5.0    | 10 个 DEB：+PG18；支持 PG14-18                               |
+| sslutils                | 1.4      | 1.4      | EL8 双架构 RPM PG18                                          |
+| wal2mongo               | 1.0.7    | 1.0.7    | 10 个 DEB：+PG17-18；支持 PG14-18                            |
 
 ## 2026-07-07
 
-| 包名                | 旧版本        | 新版本        | 备注           |
+| 包名              | 旧版本     | 新版本     | 备注         |
 |:------------------|:-----------|:-----------|:-------------|
 | polardb-17        | 17.9.1.0   | 17.10.1.0  | PG 17        |
 | agensgraph-17     | 2.16.0     | 2.17.0     | PG 17.10     |
@@ -424,7 +454,7 @@ weight: 300
 | orioledb-17       | 1.8-beta16 | 1.8-beta16 | PG 17        |
 | orioledb-18       | 1.8-beta16 | 1.8-beta16 | PG 18        |
 | ivorysql-18       | 5.0        | 5.4        | PG 18        |
-| cloudberry        | 2.1.0-1    | 2.1.0-2    | 重构建          |
+| cloudberry        | 2.1.0-1    | 2.1.0-2    | 重构建       |
 | cloudberry-backup | 2.1.0-1    | 2.1.0-2    | backup       |
 | cloudberry-pxf    | 2.1.0-1    | 2.1.0-2    | PXF          |
 
@@ -432,220 +462,220 @@ weight: 300
 
 更新 DEB 扩展包，并将上一批次的 documentdb 与 biscuit 更新计入本批次。
 
-| 包名            | 旧版本      | 新版本     | 备注                     |
-|:--------------|:---------|:--------|:-----------------------|
-| timescaledb   | 2.28.0   | 2.28.2  | PG 15-18               |
-| documentdb    | 0.110    | 0.113   | PG 15-18               |
-| citus         | 14.0.0-4 | 14.1.0  | PG 16-18               |
-| pgvector      | 0.8.3    | 0.8.4   | PG 14-18               |
-| plpgsql_check | 2.9.1    | 2.9.2   | PG 14-18               |
+| 包名          | 旧版本   | 新版本  | 备注                        |
+|:--------------|:---------|:--------|:----------------------------|
+| timescaledb   | 2.28.0   | 2.28.2  | PG 15-18                    |
+| documentdb    | 0.110    | 0.113   | PG 15-18                    |
+| citus         | 14.0.0-4 | 14.1.0  | PG 16-18                    |
+| pgvector      | 0.8.3    | 0.8.4   | PG 14-18                    |
+| plpgsql_check | 2.9.1    | 2.9.2   | PG 14-18                    |
 | roaringbitmap | 1.1.0    | 1.2.0-2 | PG 14-18，llvm-lto 打包修复 |
-| biscuit       | 2.3.0    | 2.4.1   | PG 16-18               |
-| pgmnemo       | 0.8.3    | 0.12.1  | PG 14-18               |
-| pg_ivm        | 1.14     | 1.15    | PG 14-18               |
+| biscuit       | 2.3.0    | 2.4.1   | PG 16-18                    |
+| pgmnemo       | 0.8.3    | 0.12.1  | PG 14-18                    |
+| pg_ivm        | 1.14     | 1.15    | PG 14-18                    |
 | rdf_fdw       | 2.5.0    | 2.6.0   | PG 14-18，libcurl 兼容补丁  |
 
 ## 2026-06-18
 
 更新 Rust 扩展 pgrx 版本到 0.18.1
 
-| 包名                  | 旧版本        | 新版本        | 备注                    |
-|:--------------------|:-----------|:-----------|:----------------------|
-| timescaledb         | 2.27.2     | 2.28.0     | PG 15-18              |
-| timeseries          | 0.2.0      | 0.2.1      | PG 14-18              |
-| documentdb          | 0.110      | 0.112      | PG 15-18              |
-| pg_clickhouse       | 0.3.1      | 0.3.2      | PG 14-18              |
-| biscuit             | 2.2.2      | 2.3.0      | PG 16-18              |
-| pg_http             | 1.7.0      | 1.7.1      | PG 14-18              |
-| pg_gzip             | 1.0.0      | 1.1.0      | PG 14-18              |
-| pgvector            | 0.8.2      | 0.8.3      | PG 14-18              |
-| age                 | 1.7.0      | 1.7.0      | PG 17-18              |
-| mongo_fdw           | -          | 5.5.3      | 新增，PG 14-18           |
-| orioledb            | 1.7-beta15 | 1.8-beta16 | 为 PG 16、17、18 构建      |
-| etcd_fdw            | 0.0.0      | 0.0.1      | PG 14-18，pgrx 0.18.1  |
-| pg_anon             | 3.0.13     | 3.1.1      | PG 14-18，pgrx 0.18.1  |
-| pg_graphql          | 1.5.12     | 1.6.1      | PG 14-18，pgrx 0.18.1  |
-| pg_kazsearch        | 2.0.0      | 2.2.0      | PG 16-18，pgrx 0.18.1  |
-| pg_session_jwt      | 0.4.0      | 0.5.0      | PG 14-18，pgrx 0.18.1  |
-| pg_tzf              | 0.2.4      | 0.3.0      | PG 14-18，pgrx 0.18.1  |
-| pg_vectorize        | 0.26.1     | 0.26.2     | PG 14-18，pgrx 0.18.1  |
-| pglinter            | 1.1.2      | 2.0.0      | PG 14-18，pgrx 0.18.1  |
-| pgmqtt              | 0.1.0      | 0.3.0      | PG 14-18，pgrx 0.18.1  |
-| timescaledb_toolkit | 1.22.0     | 1.23.0     | PG 15-18，pgrx 0.18.1  |
-| wrappers            | 0.6.0      | 0.6.1      | PG 14-18，pgrx 0.18.1  |
-| pgrdf               | 0.5.0      | 0.6.4      | PG 14-17，pgrx 0.18.1  |
-| pg_ducklake         | -          | 1.0.0      | 新增，PG 14-18           |
-| pg_mockable         | -          | 1.1.0      | 新增，PG 14-18           |
+| 包名                | 旧版本     | 新版本     | 备注                      |
+|:--------------------|:-----------|:-----------|:--------------------------|
+| timescaledb         | 2.27.2     | 2.28.0     | PG 15-18                  |
+| timeseries          | 0.2.0      | 0.2.1      | PG 14-18                  |
+| documentdb          | 0.110      | 0.112      | PG 15-18                  |
+| pg_clickhouse       | 0.3.1      | 0.3.2      | PG 14-18                  |
+| biscuit             | 2.2.2      | 2.3.0      | PG 16-18                  |
+| pg_http             | 1.7.0      | 1.7.1      | PG 14-18                  |
+| pg_gzip             | 1.0.0      | 1.1.0      | PG 14-18                  |
+| pgvector            | 0.8.2      | 0.8.3      | PG 14-18                  |
+| age                 | 1.7.0      | 1.7.0      | PG 17-18                  |
+| mongo_fdw           | -          | 5.5.3      | 新增，PG 14-18            |
+| orioledb            | 1.7-beta15 | 1.8-beta16 | 为 PG 16、17、18 构建     |
+| etcd_fdw            | 0.0.0      | 0.0.1      | PG 14-18，pgrx 0.18.1     |
+| pg_anon             | 3.0.13     | 3.1.1      | PG 14-18，pgrx 0.18.1     |
+| pg_graphql          | 1.5.12     | 1.6.1      | PG 14-18，pgrx 0.18.1     |
+| pg_kazsearch        | 2.0.0      | 2.2.0      | PG 16-18，pgrx 0.18.1     |
+| pg_session_jwt      | 0.4.0      | 0.5.0      | PG 14-18，pgrx 0.18.1     |
+| pg_tzf              | 0.2.4      | 0.3.0      | PG 14-18，pgrx 0.18.1     |
+| pg_vectorize        | 0.26.1     | 0.26.2     | PG 14-18，pgrx 0.18.1     |
+| pglinter            | 1.1.2      | 2.0.0      | PG 14-18，pgrx 0.18.1     |
+| pgmqtt              | 0.1.0      | 0.3.0      | PG 14-18，pgrx 0.18.1     |
+| timescaledb_toolkit | 1.22.0     | 1.23.0     | PG 15-18，pgrx 0.18.1     |
+| wrappers            | 0.6.0      | 0.6.1      | PG 14-18，pgrx 0.18.1     |
+| pgrdf               | 0.5.0      | 0.6.4      | PG 14-17，pgrx 0.18.1     |
+| pg_ducklake         | -          | 1.0.0      | 新增，PG 14-18            |
+| pg_mockable         | -          | 1.1.0      | 新增，PG 14-18            |
 | pg_stat_backtrace   | -          | 1.0.0      | 新增，PG 14-18，libunwind |
-| multicorn           | -          | 3.2        | 新增，PG 14-18           |
-| passwordpolicy      | -          | 2.0.5      | 新增，PG 14-18           |
-| pgdisablelogerror   | -          | 1.0        | 新增，PG 14-18           |
-| plpgsql_wrap        | -          | 1.0        | 新增，PG 14-18           |
+| multicorn           | -          | 3.2        | 新增，PG 14-18            |
+| passwordpolicy      | -          | 2.0.5      | 新增，PG 14-18            |
+| pgdisablelogerror   | -          | 1.0        | 新增，PG 14-18            |
+| plpgsql_wrap        | -          | 1.0        | 新增，PG 14-18            |
 
 ## 2026-06-12
 
 补充了 Ubuntu 26.04 Resolute 的大部分扩展内核包
 
-| 包名             | 旧版本    | 新版本    | 备注                        |
-|:---------------|:-------|:-------|:--------------------------|
-| firebird_fdw   | 1.4.1  | 1.4.2  | PG 14-18                  |
-| pg_background  | 1.9.2  | 2.0    | PG 14-18                  |
-| pg_clickhouse  | 0.3.0  | 0.3.1  | PG 14-18                  |
-| pg_dirtyread   | 2.7    | 2.8    | PG 14-18，仅 RPM            |
-| pg_net         | 0.20.2 | 0.20.3 | PG 14-18，仅 EL10           |
-| pg_search      | 0.23.1 | 0.24.0 | PG 15-18                  |
-| pg_stat_ch     | 0.3.6  | 0.3.6  | PG 16-18，仅 EL9/EL10，重建    |
-| pg_trickle     | 0.40.0 | 0.81.0 | 仅 PG 18                   |
-| plpgsql_check  | 2.9.0  | 2.9.1  | PG 14-18                  |
-| provsql        | 1.8.0  | 1.9.0  | PG 14-18                  |
-| re2            | 0.1.1  | 0.3.0  | PG 16-18                  |
-| storage_engine | 2.3.0  | 2.4.0  | PG 15-18                  |
-| timescaledb    | 2.27.0 | 2.27.2 | PG 15-18                  |
-| pggraph        | 0.1.5  | 0.1.7  | PG 14-18                  |
-| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18                  |
-| pgsql_tweaks   | 1.0.2  | 1.0.3  | PG 14-18                  |
+| 包名           | 旧版本 | 新版本 | 备注                          |
+|:---------------|:-------|:-------|:------------------------------|
+| firebird_fdw   | 1.4.1  | 1.4.2  | PG 14-18                      |
+| pg_background  | 1.9.2  | 2.0    | PG 14-18                      |
+| pg_clickhouse  | 0.3.0  | 0.3.1  | PG 14-18                      |
+| pg_dirtyread   | 2.7    | 2.8    | PG 14-18，仅 RPM              |
+| pg_net         | 0.20.2 | 0.20.3 | PG 14-18，仅 EL10             |
+| pg_search      | 0.23.1 | 0.24.0 | PG 15-18                      |
+| pg_stat_ch     | 0.3.6  | 0.3.6  | PG 16-18，仅 EL9/EL10，重建   |
+| pg_trickle     | 0.40.0 | 0.81.0 | 仅 PG 18                      |
+| plpgsql_check  | 2.9.0  | 2.9.1  | PG 14-18                      |
+| provsql        | 1.8.0  | 1.9.0  | PG 14-18                      |
+| re2            | 0.1.1  | 0.3.0  | PG 16-18                      |
+| storage_engine | 2.3.0  | 2.4.0  | PG 15-18                      |
+| timescaledb    | 2.27.0 | 2.27.2 | PG 15-18                      |
+| pggraph        | 0.1.5  | 0.1.7  | PG 14-18                      |
+| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18                      |
+| pgsql_tweaks   | 1.0.2  | 1.0.3  | PG 14-18                      |
 | pg_orca        | -      | 1.0.0  | 新增，仅 PG 18                |
-| pg_projection  | -      | 1.0.0  | 新增，PG 14-18               |
-| pg_sorted_heap | -      | 0.14.0 | 新增，PG 16-18               |
-| pg_stl         | -      | 1.0.0  | 新增，PG 16-18               |
-| pg_uuid_v8     | -      | 1.0.0  | 新增，PG 14-18               |
-| pg_pinyin      | -      | 0.0.4  | 新增，PG 14-18               |
+| pg_projection  | -      | 1.0.0  | 新增，PG 14-18                |
+| pg_sorted_heap | -      | 0.14.0 | 新增，PG 16-18                |
+| pg_stl         | -      | 1.0.0  | 新增，PG 16-18                |
+| pg_uuid_v8     | -      | 1.0.0  | 新增，PG 14-18                |
+| pg_pinyin      | -      | 0.0.4  | 新增，PG 14-18                |
 | pg_task        | -      | 2.1.29 | 新增，PG 14-18，pcre2grep fix |
-| pg_extra_time  | -      | 2.1.0  | 新增，PG 14-18               |
-| fsm_core       | -      | 1.1.0  | 新增，PG 15-18               |
+| pg_extra_time  | -      | 2.1.0  | 新增，PG 14-18                |
+| fsm_core       | -      | 1.1.0  | 新增，PG 15-18                |
 
 ## 2026-05-01
 
-| 包名               | 旧版本    | 新版本    | 备注                                                        |
-|:-----------------|:-------|:-------|:----------------------------------------------------------|
+| 包名             | 旧版本 | 新版本 | 备注                                                               |
+|:-----------------|:-------|:-------|:-------------------------------------------------------------------|
 | pg_pathcheck     | -      | 0.9.1  | 新增 planner Path 诊断模块，PG 17-18，需 shared_preload_libraries  |
-| pg_bikram_sambat | -      | 0.1.0  | 新增 Bikram Sambat 日期类型与 AD/BS 转换函数                         |
-| timescaledb      | 2.26.3 | 2.26.4 | TSL 小版本更新                                                 |
+| pg_bikram_sambat | -      | 0.1.0  | 新增 Bikram Sambat 日期类型与 AD/BS 转换函数                       |
+| timescaledb      | 2.26.3 | 2.26.4 | TSL 小版本更新                                                     |
 | storage_engine   | 1.2.3  | 1.3.4  | PGXN 更新，列式与行压缩 table access method                        |
-| pgproto          | 0.3.3  | 0.5.0  | PGXN 更新，原生 Protobuf 支持，C/PGXS 构建                          |
-| pg_savior        | 0.0.1  | 0.1.0  | PGXN 更新，防误删/高风险 DDL/DML hook，需 preload 或 LOAD             |
+| pgproto          | 0.3.3  | 0.5.0  | PGXN 更新，原生 Protobuf 支持，C/PGXS 构建                         |
+| pg_savior        | 0.0.1  | 0.1.0  | PGXN 更新，防误删/高风险 DDL/DML hook，需 preload 或 LOAD          |
 | pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 全文搜索更新，PG 17-18，需 shared_preload_libraries |
-| pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx 更新，仅 PG 18                                      |
-| pgedge           | 17.9   | 18.3   | 针对 18 重新构建                                                |
-| spock            | 5.0.5  | 5.0.6  | 针对 18 重新构建                                                |
-| lolor            | 1.2.2  | 1.2.2  | 针对 18 重新构建                                                |
-| snowflake        | 2.4    | 2.4    | 针对 18 重新构建                                                |
+| pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx 更新，仅 PG 18                                           |
+| pgedge           | 17.9   | 18.3   | 针对 18 重新构建                                                   |
+| spock            | 5.0.5  | 5.0.6  | 针对 18 重新构建                                                   |
+| lolor            | 1.2.2  | 1.2.2  | 针对 18 重新构建                                                   |
+| snowflake        | 2.4    | 2.4    | 针对 18 重新构建                                                   |
 
 已完成 Debian 12/13 与 Ubuntu 22.04/24.04/26.04 在 amd64 和 arm64 上的构建。
 
 
 ## 2026-04-25
 
-| 包名             | 旧版本    | 新版本    | 备注                      |
-|:---------------|:-------|:-------|:------------------------|
-| documentdb     | 0.109  | 0.110  | 升级到上游版本，PG 15-18        |
-| pg_trickle     | 0.20.0 | 0.31.0 | 升级，仅 PG 18，pgrx 0.18.0  |
+| 包名           | 旧版本 | 新版本 | 备注                        |
+|:---------------|:-------|:-------|:----------------------------|
+| documentdb     | 0.109  | 0.110  | 升级到上游版本，PG 15-18    |
+| pg_trickle     | 0.20.0 | 0.31.0 | 升级，仅 PG 18，pgrx 0.18.0 |
 | pg_search      | 0.23.0 | 0.23.1 | 升级，PG 15-18，pgrx 0.18.0 |
-| pg_ivm         | 1.13   | 1.14   | 升级，PG 14-18             |
+| pg_ivm         | 1.13   | 1.14   | 升级，PG 14-18              |
 | prefix         | 1.2.10 | 1.2.11 | 升级，PG 14-18，PGDG        |
 | credcheck      | 4.6    | 4.7    | 升级，PG 14-18，PGDG        |
 | pg_dbms_job    | 1.5    | 2.0    | 升级，PG 14-18，PGDG        |
-| storage_engine | 1.0.7  | 1.2.3  | 升级，PG 14-18             |
-| pgmq           | 1.11.0 | 1.11.1 | 升级，PG 14-18             |
-| parray_gin     | 1.4.0  | 1.5.0  | 升级，PG 14-18             |
-| rdf_fdw        | 2.4.0  | 2.5.0  | 升级，PG 14-18             |
-| pg_accumulator | -      | 1.1.3  | 新增，PG 14-18             |
+| storage_engine | 1.0.7  | 1.2.3  | 升级，PG 14-18              |
+| pgmq           | 1.11.0 | 1.11.1 | 升级，PG 14-18              |
+| parray_gin     | 1.4.0  | 1.5.0  | 升级，PG 14-18              |
+| rdf_fdw        | 2.4.0  | 2.5.0  | 升级，PG 14-18              |
+| pg_accumulator | -      | 1.1.3  | 新增，PG 14-18              |
 
 新增 Ubuntu 26.04 支持
 
 
 ## 2026-04-19
 
-| 包名                | 旧版本    | 新版本    | 备注                          |
-|:------------------|:-------|:-------|:----------------------------|
-| storage_engine    | -      | 1.0.7  | 新增，PG 14-18                 |
-| re2               | -      | 0.1.1  | 新增，PG 16-18                 |
-| ulak              | -      | 0.0.2  | 新增，PG 14-18                 |
-| cloudberry        | 2.0.0  | 2.1.0  | 升级，并拆分 backup / pxf 子包      |
-| cloudberry-backup | -      | 2.1.0  | 新增配套子包                      |
-| cloudberry-pxf    | -      | 2.1.0  | 新增配套子包                      |
+| 包名              | 旧版本 | 新版本 | 备注                               |
+|:------------------|:-------|:-------|:-----------------------------------|
+| storage_engine    | -      | 1.0.7  | 新增，PG 14-18                     |
+| re2               | -      | 0.1.1  | 新增，PG 16-18                     |
+| ulak              | -      | 0.0.2  | 新增，PG 14-18                     |
+| cloudberry        | 2.0.0  | 2.1.0  | 升级，并拆分 backup / pxf 子包     |
+| cloudberry-backup | -      | 2.1.0  | 新增配套子包                       |
+| cloudberry-pxf    | -      | 2.1.0  | 新增配套子包                       |
 | oriolepg          | 17.16  | 17.18  | 内核升级，适配 orioledb beta15/1.7 |
-| orioledb          | 1.6    | 1.7    | 升级，配套 oriolepg 17.18        |
-| postgis           | 3.6.2  | 3.6.3  | 升级                          |
-| timescaledb       | 2.26.2 | 2.26.3 | 升级                          |
-| pg_search         | 0.22.6 | 0.23.0 | 升级                          |
-| pg_trickle        | 0.17.0 | 0.20.0 | 升级，仅 PG 18                  |
-| pg_clickhouse     | 0.1.10 | 0.2.0  | 升级                          |
-| pg_stat_ch        | 0.3.4  | 0.3.6  | 升级，PG 16-18                 |
-| pgclone           | 3.6.0  | 4.0.0  | 升级                          |
-| pgproto           | 0.2.4  | 0.3.3  | 升级                          |
-| pgxicor           | 0.1.0  | 0.1.1  | 升级                          |
+| orioledb          | 1.6    | 1.7    | 升级，配套 oriolepg 17.18          |
+| postgis           | 3.6.2  | 3.6.3  | 升级                               |
+| timescaledb       | 2.26.2 | 2.26.3 | 升级                               |
+| pg_search         | 0.22.6 | 0.23.0 | 升级                               |
+| pg_trickle        | 0.17.0 | 0.20.0 | 升级，仅 PG 18                     |
+| pg_clickhouse     | 0.1.10 | 0.2.0  | 升级                               |
+| pg_stat_ch        | 0.3.4  | 0.3.6  | 升级，PG 16-18                     |
+| pgclone           | 3.6.0  | 4.0.0  | 升级                               |
+| pgproto           | 0.2.4  | 0.3.3  | 升级                               |
+| pgxicor           | 0.1.0  | 0.1.1  | 升级                               |
 
 
 ## 2026-04-14
 
-| 包名                 | 旧版本    | 新版本      | 备注                                     |
-|:-------------------|:-------|:---------|:---------------------------------------|
+| 包名               | 旧版本 | 新版本   | 备注                                       |
+|:-------------------|:-------|:---------|:-------------------------------------------|
 | block_copy_command | -      | 0.1.5    | 新增，PG 14-18，Rust/pgrx 0.17.0           |
 | pg_kazsearch       | -      | 2.0.0    | 新增，PG 16-18，Rust/pgrx 0.17.0           |
 | pg_rrf             | -      | 0.0.3    | 新增，PG 14-17，Rust/pgrx 0.16.1 -> 0.17.0 |
 | pgmqtt             | -      | 0.1.0    | 新增，PG 14-18，Rust/pgrx 0.16.1 -> 0.17.0 |
 | pg_when            | -      | 0.1.9    | 新增，PG 14-18，Rust/pgrx 0.17.0           |
-| provsql            | -      | 1.2.3    | 新增，PG 14-18                            |
-| pg_isok            | -      | 1.4.1    | 新增，PG 14-18                            |
-| pg_byteamagic      | -      | 0.2.4    | 新增，PG 14-18                            |
-| logical_ddl        | -      | 0.1.0    | 新增，PG 14-18                            |
-| datasketches       | -      | 1.7.0    | 新增，PG 14-18                            |
-| pg_text_semver     | -      | 1.2.1    | 新增，PG 14-18                            |
-| external_file      | -      | 1.2      | 新增，PG 14-18                            |
-| pg_query_rewrite   | -      | 0.0.5    | 新增，PG 14-18                            |
-| pghydro            | -      | 6.6      | 新增，PG 14-18                            |
-| pg_datasentinel    | -      | 1.0      | 新增，PG 15-18                            |
+| provsql            | -      | 1.2.3    | 新增，PG 14-18                             |
+| pg_isok            | -      | 1.4.1    | 新增，PG 14-18                             |
+| pg_byteamagic      | -      | 0.2.4    | 新增，PG 14-18                             |
+| logical_ddl        | -      | 0.1.0    | 新增，PG 14-18                             |
+| datasketches       | -      | 1.7.0    | 新增，PG 14-18                             |
+| pg_text_semver     | -      | 1.2.1    | 新增，PG 14-18                             |
+| external_file      | -      | 1.2      | 新增，PG 14-18                             |
+| pg_query_rewrite   | -      | 0.0.5    | 新增，PG 14-18                             |
+| pghydro            | -      | 6.6      | 新增，PG 14-18                             |
+| pg_datasentinel    | -      | 1.0      | 新增，PG 15-18                             |
 | onesparse          | -      | 1.0.0    | 新增，仅 PG 18                             |
-| rdkit              | -      | 202503.6 | 新增，PG 14-18                            |
-| pg_dispatch        | -      | 0.1.5    | 新增，PG 14-18                            |
-| pg_fsql            | -      | 1.1.0    | 新增，PG 14-18                            |
-| pg_liquid          | -      | 0.1.7    | 新增，PG 14-18                            |
-| pg_regresql        | -      | 2.0.0    | 新增，PG 14-18                            |
-| pg_slug_gen        | -      | 1.0.0    | 新增，PG 15-18                            |
-| pg_stat_ch         | -      | 0.3.4    | 新增，PG 16-18                            |
-| pg_variables       | -      | 1.2.5    | 新增，PG 14-18                            |
-| pgcalendar         | -      | 1.1.0    | 新增，PG 14-18                            |
-| pgclone            | -      | 3.6.0    | 新增，PG 14-18                            |
-| pgelog             | -      | 1.0.2    | 新增，PG 14-18                            |
-| pglock             | -      | 1.0.0    | 新增，PG 14-18                            |
-| pgproto            | -      | 0.2.4    | 新增，PG 14-18                            |
-| postgresbson       | -      | 2.0.2    | 新增，PG 14-18                            |
-| rdf_fdw            | -      | 2.4.0    | 新增，PG 14-18                            |
-| parray_gin         | -      | 1.4.0    | 新增，PG 14-18                            |
-| timescaledb        | 2.25.2 | 2.26.2   | 升级                                     |
-| pg_background      | 1.8    | 1.9.2    | 升级                                     |
-| pg_ivm             | 1.13   | 1.14     | 升级                                     |
-| system_stats       | 3.2    | 4.0      | 升级                                     |
-| nominatim_fdw      | 1.1.0  | 1.2      | 升级                                     |
-| pg_textsearch      | 0.5.0  | 1.0.0    | 升级                                     |
-| pg_clickhouse      | 0.1.5  | 0.1.10   | 升级                                     |
-| pg_search          | 0.22.2 | 0.22.6   | 升级                                     |
-| pg_store_plans     | 1.9    | 1.10     | 升级                                     |
-| pg_tzf             | 0.2.3  | 0.2.4    | 升级，Rust/pgrx 0.17.0                    |
-| pg_anon            | 3.0.1  | 3.0.13   | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
-| pg_cardano         | 1.1.1  | 1.2.0    | 升级，Rust/pgrx 0.17.0                    |
-| pg_strict          | 1.0.3  | 1.0.5    | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
-| pg_vectorize       | 0.26.0 | 0.26.1   | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
-| pglinter           | 1.1.1  | 1.1.2    | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
-| pgx_ulid           | 0.2.2  | 0.2.3    | 升级，Rust/pgrx 0.17.0                    |
-| wrappers           | 0.5.7  | 0.6.0    | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
-| pg_trickle         | 0.16.0 | 0.17.0   | 升级，Rust/pgrx 0.17.0                    |
-| supautils          | 3.1.0  | 3.2.1    | 升级                                     |
-| ddl_historization  | 0.0.7  | 0.2      | 升级                                     |
-| pg_incremental     | 1.4.1  | 1.5.0    | 升级                                     |
-| pg_failover_slots  | 1.2.0  | 1.2.1    | 升级                                     |
-| PolarDB            | 15.15  | 17.9.1.0 | PG 15 -> 17                            |
+| rdkit              | -      | 202503.6 | 新增，PG 14-18                             |
+| pg_dispatch        | -      | 0.1.5    | 新增，PG 14-18                             |
+| pg_fsql            | -      | 1.1.0    | 新增，PG 14-18                             |
+| pg_liquid          | -      | 0.1.7    | 新增，PG 14-18                             |
+| pg_regresql        | -      | 2.0.0    | 新增，PG 14-18                             |
+| pg_slug_gen        | -      | 1.0.0    | 新增，PG 15-18                             |
+| pg_stat_ch         | -      | 0.3.4    | 新增，PG 16-18                             |
+| pg_variables       | -      | 1.2.5    | 新增，PG 14-18                             |
+| pgcalendar         | -      | 1.1.0    | 新增，PG 14-18                             |
+| pgclone            | -      | 3.6.0    | 新增，PG 14-18                             |
+| pgelog             | -      | 1.0.2    | 新增，PG 14-18                             |
+| pglock             | -      | 1.0.0    | 新增，PG 14-18                             |
+| pgproto            | -      | 0.2.4    | 新增，PG 14-18                             |
+| postgresbson       | -      | 2.0.2    | 新增，PG 14-18                             |
+| rdf_fdw            | -      | 2.4.0    | 新增，PG 14-18                             |
+| parray_gin         | -      | 1.4.0    | 新增，PG 14-18                             |
+| timescaledb        | 2.25.2 | 2.26.2   | 升级                                       |
+| pg_background      | 1.8    | 1.9.2    | 升级                                       |
+| pg_ivm             | 1.13   | 1.14     | 升级                                       |
+| system_stats       | 3.2    | 4.0      | 升级                                       |
+| nominatim_fdw      | 1.1.0  | 1.2      | 升级                                       |
+| pg_textsearch      | 0.5.0  | 1.0.0    | 升级                                       |
+| pg_clickhouse      | 0.1.5  | 0.1.10   | 升级                                       |
+| pg_search          | 0.22.2 | 0.22.6   | 升级                                       |
+| pg_store_plans     | 1.9    | 1.10     | 升级                                       |
+| pg_tzf             | 0.2.3  | 0.2.4    | 升级，Rust/pgrx 0.17.0                     |
+| pg_anon            | 3.0.1  | 3.0.13   | 升级，Rust/pgrx 0.16.1 -> 0.17.0           |
+| pg_cardano         | 1.1.1  | 1.2.0    | 升级，Rust/pgrx 0.17.0                     |
+| pg_strict          | 1.0.3  | 1.0.5    | 升级，Rust/pgrx 0.16.1 -> 0.17.0           |
+| pg_vectorize       | 0.26.0 | 0.26.1   | 升级，Rust/pgrx 0.16.1 -> 0.17.0           |
+| pglinter           | 1.1.1  | 1.1.2    | 升级，Rust/pgrx 0.16.1 -> 0.17.0           |
+| pgx_ulid           | 0.2.2  | 0.2.3    | 升级，Rust/pgrx 0.17.0                     |
+| wrappers           | 0.5.7  | 0.6.0    | 升级，Rust/pgrx 0.16.1 -> 0.17.0           |
+| pg_trickle         | 0.16.0 | 0.17.0   | 升级，Rust/pgrx 0.17.0                     |
+| supautils          | 3.1.0  | 3.2.1    | 升级                                       |
+| ddl_historization  | 0.0.7  | 0.2      | 升级                                       |
+| pg_incremental     | 1.4.1  | 1.5.0    | 升级                                       |
+| pg_failover_slots  | 1.2.0  | 1.2.1    | 升级                                       |
+| PolarDB            | 15.15  | 17.9.1.0 | PG 15 -> 17                                |
 
 ## 2026-03-21
 
-| 包名                 | 旧版本     | 新版本       | 备注 |
-|:-------------------|:--------|:----------|:---|
-| pg_search          | 0.21.12 | 0.22.2    |    |
-| pg_track_optimizer | 0.9.1   | 0.9.2     |    |
-| pgcollection       | 1.0.0   | 2.0.0     |    |
-| pg_ttl_index       | 2.0.0   | 3.0.0     |    |
-| pg_clickhouse      | 0.1.4   | 0.1.5     |    |
+| 包名               | 旧版本  | 新版本    | 备注 |
+|:-------------------|:--------|:----------|:-----|
+| pg_search          | 0.21.12 | 0.22.2    |      |
+| pg_track_optimizer | 0.9.1   | 0.9.2     |      |
+| pgcollection       | 1.0.0   | 2.0.0     |      |
+| pg_ttl_index       | 2.0.0   | 3.0.0     |      |
+| pg_clickhouse      | 0.1.4   | 0.1.5     |      |
 | pdu                |         | 3.0.25.12 | 新增 |
 | pgdog              |         | 0.1.32    | 新增 |
 
@@ -654,65 +684,65 @@ weight: 300
 
 移除了所有扩展对 PG 13 的支持。
 
-| 包名               | 旧版本     | 新版本     | 备注              |
-|:-----------------|:--------|:--------|:----------------|
-| aggs_for_vecs    | 1.4.0   | 1.4.1   | 上游版本升级，PG 14-18 |
-| timescaledb      | 2.25.1  | 2.25.2  | 上游版本升级，PG 15-18 |
-| vchord           | 1.1.0   | 1.1.1   | 上游版本升级，PG 14-18 |
-| vchord_bm25      | 0.3.0-1 | 0.3.0-2 | 打包修复，PG 14-18   |
-| pg_pinyin        | -       | 0.0.2   | 新增扩展包，PG 14-18  |
-| pg_eviltransform | -       | 0.0.2   | 新增扩展包，并对齐版本号    |
-| qos              | -       | 1.0.0   | 新增扩展包，PG 15-18  |
+| 包名             | 旧版本  | 新版本  | 备注                     |
+|:-----------------|:--------|:--------|:-------------------------|
+| aggs_for_vecs    | 1.4.0   | 1.4.1   | 上游版本升级，PG 14-18   |
+| timescaledb      | 2.25.1  | 2.25.2  | 上游版本升级，PG 15-18   |
+| vchord           | 1.1.0   | 1.1.1   | 上游版本升级，PG 14-18   |
+| vchord_bm25      | 0.3.0-1 | 0.3.0-2 | 打包修复，PG 14-18       |
+| pg_pinyin        | -       | 0.0.2   | 新增扩展包，PG 14-18     |
+| pg_eviltransform | -       | 0.0.2   | 新增扩展包，并对齐版本号 |
+| qos              | -       | 1.0.0   | 新增扩展包，PG 15-18     |
 
 ## 2026-02-27
 
-| 包名                | 旧版本      | 新版本      | 备注                    |
-|:------------------|:---------|:---------|:----------------------|
-| timescaledb       | 2.25.0   | 2.25.1   |                       |
-| citus             | 14.0.0-3 | 14.0.0-4 | 使用最新官方版本重新构建          |
+| 包名              | 旧版本   | 新版本   | 备注                         |
+|:------------------|:---------|:---------|:-----------------------------|
+| timescaledb       | 2.25.0   | 2.25.1   |                              |
+| citus             | 14.0.0-3 | 14.0.0-4 | 使用最新官方版本重新构建     |
 | age               | 1.7.0    | 1.7.0    | 新增 PG 17 的 1.7.0 版本支持 |
 | pg_background     | -        | 1.8      | 仅提供 DEB 包，没有 RPM      |
-| pgmq              | 1.10.0   | 1.10.1   | 当前没有该扩展包              |
-| pg_search         | 0.21.6   | 0.21.9   | 直接下载使用                |
-| oriolepg          | 17.11    | 17.16    | OriolePG 内核更新         |
-| orioledb          | beta12   | beta14   | 配套 OriolePG 17.16     |
+| pgmq              | 1.10.0   | 1.10.1   | 当前没有该扩展包             |
+| pg_search         | 0.21.6   | 0.21.9   | 直接下载使用                 |
+| oriolepg          | 17.11    | 17.16    | OriolePG 内核更新            |
+| orioledb          | beta12   | beta14   | 配套 OriolePG 17.16          |
 | openhalo          | 14.10    | 1.0      | 更新并重命名，14.18          |
-| pgedge            | -        | 17.9     | 新增多主边缘分布式内核           |
+| pgedge            | -        | 17.9     | 新增多主边缘分布式内核       |
 | spock             | -        | 5.0.5    | 新增，pgEdge 核心扩展        |
 | lolor             | -        | 1.2.2    | 新增，pgEdge 核心扩展        |
 | snowflake         | -        | 2.4      | 新增，pgEdge 核心扩展        |
-| babelfishpg       | -        | 5.5.0    | 新增 BabelfishPG 包组     |
-| babelfish         | -        | 5.5.0    | 新增 Babelfish 兼容包      |
+| babelfishpg       | -        | 5.5.0    | 新增 BabelfishPG 包组        |
+| babelfish         | -        | 5.5.0    | 新增 Babelfish 兼容包        |
 | antlr4-runtime413 | -        | 4.13     | 新增 Babelfish 依赖运行时    |
 
 ## 2026-02-12
 
-| 名称                 | 旧版本        | 新版本          | 备注                    |
-|:-------------------|:-----------|:-------------|:----------------------|
-| timescaledb        | 2.24.0     | 2.25.0       |                       |
-| pg_incremental     | 1.2.0      | 1.4.1        |                       |
-| pg_bigm            | 1.2        | 1.2-20250903 |                       |
+| 名称               | 旧版本     | 新版本       | 备注                      |
+|:-------------------|:-----------|:-------------|:--------------------------|
+| timescaledb        | 2.24.0     | 2.25.0       |                           |
+| pg_incremental     | 1.2.0      | 1.4.1        |                           |
+| pg_bigm            | 1.2        | 1.2-20250903 |                           |
 | pg_net             | 0.20.0     | 0.20.2       | ubuntu22 libcurl 版本过低 |
-| pgmq               | 1.9.0      | 1.10.0       |                       |
-| pg_textsearch      | 0.4.0      | 0.5.0        |                       |
-| pljs               | 1.0.4      | 1.0.5        |                       |
-| sslutils           | 1.4-1      | 1.4-2        |                       |
-| supautils          | 3.0.2      | 3.1.0        |                       |
-| pg_math            | 1.0        | 1.1.0        |                       |
-| pgsentinel         | 1.3.1      | 1.4.0        |                       |
-| pg_uri             | 1.20151224 | 1.20251029   |                       |
-| pgcollection       | 1.1.0      | 1.1.1        |                       |
-| pg_readonly        | 1.0.3      | 1.0.4        |                       |
-| timestamp9         | 1.4.0-1    | 1.4.0-2      | 重新构建，修复依赖问题           |
-| plprql             | 18.0.0     | 18.0.1       |                       |
-| pglinter           | 1.0.1      | 1.1.0        |                       |
-| pg_jsonschema      | 0.3.3      | 0.3.4        |                       |
-| pg_anon            | 2.5.1      | 3.0.1        |                       |
-| pg_search          | 0.21.4     | 0.21.6       |                       |
-| pg_graphql         | 1.5.12-1   | 1.5.12-2     | 切换至官方 release         |
-| pg_summarize       | 0.0.1-2    | 0.0.1-3      | 重新构建，修复 pg18 问题       |
-| nominatim_fdw      |            | 1.1.0        | 新增，与 PGDG YUM 同步      |
-| pg_utl_smtp        |            | 1.0.0        | 新增，与 PGDG YUM 同步      |
+| pgmq               | 1.9.0      | 1.10.0       |                           |
+| pg_textsearch      | 0.4.0      | 0.5.0        |                           |
+| pljs               | 1.0.4      | 1.0.5        |                           |
+| sslutils           | 1.4-1      | 1.4-2        |                           |
+| supautils          | 3.0.2      | 3.1.0        |                           |
+| pg_math            | 1.0        | 1.1.0        |                           |
+| pgsentinel         | 1.3.1      | 1.4.0        |                           |
+| pg_uri             | 1.20151224 | 1.20251029   |                           |
+| pgcollection       | 1.1.0      | 1.1.1        |                           |
+| pg_readonly        | 1.0.3      | 1.0.4        |                           |
+| timestamp9         | 1.4.0-1    | 1.4.0-2      | 重新构建，修复依赖问题    |
+| plprql             | 18.0.0     | 18.0.1       |                           |
+| pglinter           | 1.0.1      | 1.1.0        |                           |
+| pg_jsonschema      | 0.3.3      | 0.3.4        |                           |
+| pg_anon            | 2.5.1      | 3.0.1        |                           |
+| pg_search          | 0.21.4     | 0.21.6       |                           |
+| pg_graphql         | 1.5.12-1   | 1.5.12-2     | 切换至官方 release        |
+| pg_summarize       | 0.0.1-2    | 0.0.1-3      | 重新构建，修复 pg18 问题  |
+| nominatim_fdw      |            | 1.1.0        | 新增，与 PGDG YUM 同步    |
+| pg_utl_smtp        |            | 1.0.0        | 新增，与 PGDG YUM 同步    |
 | pg_strict          | -          | 1.0.2        | 新增 Rust 扩展            |
 | pg_track_optimizer | -          | 0.9.1        | 新增扩展                  |
 | pgmb               | -          | 1.0.0        | 新增扩展                  |
@@ -720,88 +750,88 @@ weight: 300
 
 ## 2026-01-25
 
-| 名称            | 旧版本            | 新版本            | 备注        |
-|:--------------|:---------------|:---------------|:----------|
+| 名称          | 旧版本         | 新版本         | 备注         |
+|:--------------|:---------------|:---------------|:-------------|
 | age           | 1.6.0          | 1.7.0          | 仅支持 PG 18 |
-| citus         | 14.0.0-1PIGSTY | 14.0.0-2PIGSTY | 官方分支版本    |
-| pg_clickhouse | 0.1.2          | 0.1.3          |           |
-| pgmq          | 1.8.1          | 1.9.0          |           |
-| pg_search     | 0.21.2         | 0.21.4         |           |
+| citus         | 14.0.0-1PIGSTY | 14.0.0-2PIGSTY | 官方分支版本 |
+| pg_clickhouse | 0.1.2          | 0.1.3          |              |
+| pgmq          | 1.8.1          | 1.9.0          |              |
+| pg_search     | 0.21.2         | 0.21.4         |              |
 
 ## 2026-01-16
 
-| 名称                      |  旧版本   |  新版本   | 备注            |
-|:------------------------|:------:|:------:|:--------------|
-| etcd_fdw                |        | 0.0.0  | 新增            |
-| pg_ttl_index            |        | 0.1.0  | 新增            |
-| citus                   | 13.2.0 | 14.0.0 | +pg18，预发布     |
-| pg_search               | 0.20.5 | 0.21.2 | +pg18         |
-| pg_clickhouse           | 0.1.0  | 0.1.2  |               |
-| pg_textsearch           | 0.1.0  | 0.4.0  |               |
-| pg_convert              | 0.0.5  | 0.1.0  |               |
-| pg_timeseries           | 0.1.8  | 0.2.0  |               |
-| biscuit                 | 2.0.1  | 2.2.2  |               |
-| pgmq                    | 1.8.0  | 1.8.1  |               |
+| 名称                    | 旧版本 | 新版本 | 备注                |
+|:------------------------|:------:|:------:|:--------------------|
+| etcd_fdw                |        | 0.0.0  | 新增                |
+| pg_ttl_index            |        | 0.1.0  | 新增                |
+| citus                   | 13.2.0 | 14.0.0 | +pg18，预发布       |
+| pg_search               | 0.20.5 | 0.21.2 | +pg18               |
+| pg_clickhouse           | 0.1.0  | 0.1.2  |                     |
+| pg_textsearch           | 0.1.0  | 0.4.0  |                     |
+| pg_convert              | 0.0.5  | 0.1.0  |                     |
+| pg_timeseries           | 0.1.8  | 0.2.0  |                     |
+| biscuit                 | 2.0.1  | 2.2.2  |                     |
+| pgmq                    | 1.8.0  | 1.8.1  |                     |
 | documentdb              | 0.107  | 0.109  | +pg18, 使用微软版本 |
-| pg_bulkload             | 3.1.22 | 3.1.23 | +pg18         |
-| age                     |   -    | 1.6.0  | +pg18 PGDG    |
-| pgsentinel              | 1.2.0  | 1.3.1  | PGDG          |
-| pljs                    |   -    | 1.0.4  | PGDG          |
-| pg_partman              | 5.3.0  | 5.4.0  | PGDG          |
-| pgfincore               |   -    | 1.3.1  | PGDG          |
-| documentdb_extended_rum |        | 0.109  | 新增            |
-| mobilitydb_datagen      |        | 1.3.0  | 新增            |
+| pg_bulkload             | 3.1.22 | 3.1.23 | +pg18               |
+| age                     |   -    | 1.6.0  | +pg18 PGDG          |
+| pgsentinel              | 1.2.0  | 1.3.1  | PGDG                |
+| pljs                    |   -    | 1.0.4  | PGDG                |
+| pg_partman              | 5.3.0  | 5.4.0  | PGDG                |
+| pgfincore               |   -    | 1.3.1  | PGDG                |
+| documentdb_extended_rum |        | 0.109  | 新增                |
+| mobilitydb_datagen      |        | 1.3.0  | 新增                |
 
 
 ## 2025-12-25
 
-| 名称            |   旧版本   |   新版本   | 备注      |
-|:--------------|:-------:|:-------:|:--------|
-| pg_duckdb     |  1.1.0  |  1.1.1  |         |
-| pg_search     | 0.20.4  | 0.20.5  |         |
-| vchord_bm25   |  0.2.2  |  0.3.0  |         |
-| pg_semver     | 0.40.0  | 0.41.0  |         |
-| pg_timeseries |  0.1.7  |  0.1.8  |         |
+| 名称          | 旧版本  | 新版本  | 备注      |
+|:--------------|:-------:|:-------:|:----------|
+| pg_duckdb     |  1.1.0  |  1.1.1  |           |
+| pg_search     | 0.20.4  | 0.20.5  |           |
+| vchord_bm25   |  0.2.2  |  0.3.0  |           |
+| pg_semver     | 0.40.0  | 0.41.0  |           |
+| pg_timeseries |  0.1.7  |  0.1.8  |           |
 | supautils     | 3.0.2-1 | 3.0.2-2 | 修复 pg18 |
 | pg_summarize  | 0.0.1-1 | 0.0.1-2 | 修复 pg18 |
 
 
 ## 2025-12-16
 
-| 名称                                                            |   旧版本   |   新版本   | 备注         |
-|:--------------------------------------------------------------|:-------:|:-------:|:-----------|
-| [pg_textsearch](https://github.com/timescale/pg_textsearch)   |    -    |  0.1.0  | 新增         |
-| [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) |    -    |  0.1.0  | 新增         |
-| [pg_ai_query](https://github.com/benodiwal/pg_ai_query)       |    -    |  0.1.1  | 新增         |
-| timescaledb                                                   | 2.23.1  | 2.24.0  |            |
-| pg_search                                                     | 0.20.0  | 0.20.4  |            |
+| 名称                                                          | 旧版本  | 新版本  | 备注           |
+|:--------------------------------------------------------------|:-------:|:-------:|:---------------|
+| [pg_textsearch](https://github.com/timescale/pg_textsearch)   |    -    |  0.1.0  | 新增           |
+| [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) |    -    |  0.1.0  | 新增           |
+| [pg_ai_query](https://github.com/benodiwal/pg_ai_query)       |    -    |  0.1.1  | 新增           |
+| timescaledb                                                   | 2.23.1  | 2.24.0  |                |
+| pg_search                                                     | 0.20.0  | 0.20.4  |                |
 | pg_duckdb                                                     | 1.1.0-1 | 1.1.0-2 | 官方版本       |
-| pg_biscuit                                                    |   1.0   |  2.0.1  | 新仓库        |
+| pg_biscuit                                                    |   1.0   |  2.0.1  | 新仓库         |
 | pg_convert                                                    |  0.0.4  |  0.0.5  | 移除旧版PG支持 |
 | pgdd                                                          |  0.6.0  |  0.6.1  | 移除旧版PG支持 |
-| pglinter                                                      |  1.0.0  |  1.0.1  |            |
-| pg_session_jwt                                                |  0.3.3  |  0.4.0  |            |
-| pg_anon                                                       |  2.4.1  |  2.5.1  |            |
-| pg_enigma                                                     |  0.4.0  |  0.5.0  |            |
-| wrappers                                                      |  0.5.6  |  0.5.7  |            |
-| pg_vectorize                                                  | 0.25.0  | 0.26.0  | 修复 pg18    |
-| pg_tiktoken                                                   |    -    |    -    | 修复 pg18    |
-| pg_tzf                                                        |    -    |    -    | 修复 pg18    |
-| pglite_fusion                                                 |    -    |    -    | 修复 pg18    |
-| pgsmcrypto                                                    |    -    |    -    | 修复 pg18    |
-| pgx_ulid                                                      |    -    |    -    | 修复 pg18    |
-| plprql                                                        |    -    |    -    | 修复 pg18    |
+| pglinter                                                      |  1.0.0  |  1.0.1  |                |
+| pg_session_jwt                                                |  0.3.3  |  0.4.0  |                |
+| pg_anon                                                       |  2.4.1  |  2.5.1  |                |
+| pg_enigma                                                     |  0.4.0  |  0.5.0  |                |
+| wrappers                                                      |  0.5.6  |  0.5.7  |                |
+| pg_vectorize                                                  | 0.25.0  | 0.26.0  | 修复 pg18      |
+| pg_tiktoken                                                   |    -    |    -    | 修复 pg18      |
+| pg_tzf                                                        |    -    |    -    | 修复 pg18      |
+| pglite_fusion                                                 |    -    |    -    | 修复 pg18      |
+| pgsmcrypto                                                    |    -    |    -    | 修复 pg18      |
+| pgx_ulid                                                      |    -    |    -    | 修复 pg18      |
+| plprql                                                        |    -    |    -    | 修复 pg18      |
 
 
 ## 2025-12-04
 
-| 名称      | 旧版本 | 新版本 | 备注               |
-|:--------|:---:|:---:|:-----------------|
-| synchdb |  -  | 1.3 | 仅支持 Ubuntu 22/24 |
+| 名称    | 旧版本 | 新版本 | 备注                |
+|:--------|:------:|:------:|:--------------------|
+| synchdb |   -    |  1.3   | 仅支持 Ubuntu 22/24 |
 
 ## 2025-11-20
 
-| 名称                     |  旧版本   |  新版本   | 备注                         |
+| 名称                   | 旧版本 | 新版本 | 备注                       |
 |:-----------------------|:------:|:------:|:---------------------------|
 | vchord                 | 0.5.3  | 1.0.0  |                            |
 | pg_later               | 0.3.1  | 0.4.0  |                            |
@@ -827,7 +857,7 @@ weight: 300
 
 为几乎所有扩展添加 PostgreSQL 18 支持
 
-| 名称                    |    旧版本     |    新版本     | 备注    |
+| 名称                  |   旧版本   |   新版本   | 备注  |
 |:----------------------|:----------:|:----------:|:------|
 | omni_csv              |     -      |   0.1.1    | new   |
 | omni_datasets         |     -      |   0.1.0    | new   |
@@ -926,7 +956,7 @@ weight: 300
 
 ## 2025-09-06
 
-|      名称       |   旧版本   |   新版本   | 备注                     |
+|     名称      | 旧版本  | 新版本  | 备注                   |
 |:-------------:|:-------:|:-------:|:-----------------------|
 |  timesacledb  | 2.21.1  | 2.22.0  |                        |
 |     citus     | 13.1.0  | 13.2.0  |                        |
@@ -954,7 +984,7 @@ weight: 300
 
 ## 2025-07-24
 
-|          名称           |    旧版本     |         新版本         | 备注                            |
+|         名称          |   旧版本   |       新版本        | 备注                          |
 |:---------------------:|:----------:|:-------------------:|:------------------------------|
 |       OrioleDB        | beta11 1.4 |     beta12 1.5      | work with oriolepg 17.11      |
 |       OriolePG        |    17.9    |        17.11        | work with orioledb 1.5 beta12 |
@@ -971,7 +1001,7 @@ weight: 300
 
 ## 2025-07-04
 
-|       名称        |  旧版本   |    新版本     | 备注                 |
+|      名称       | 旧版本 |   新版本   | 备注               |
 |:---------------:|:------:|:----------:|:-------------------|
 |    orioledb     |        | 1.4 beta11 | rebuild            |
 |  pgvectorscale  | 0.7.1  |   0.7.1    | rebuild to fix bug |
@@ -983,7 +1013,7 @@ weight: 300
 
 ## 2025-06-24
 
-|     名称      |   旧版本   |                                  新版本                                   | 备注                |
+|    名称     | 旧版本  |                                 新版本                                 | 备注              |
 |:-----------:|:-------:|:----------------------------------------------------------------------:|:------------------|
 |    citus    | 13.0.3  |                                 13.1.0                                 |                   |
 | timescaledb | 2.20.0  |                                 2.21.0                                 |                   |
@@ -994,108 +1024,108 @@ weight: 300
 
 ## 2025-05-26
 
-|       名称        |   旧版本    |                           新版本                           | 备注 |
-|:---------------:|:--------:|:-------------------------------------------------------:|:---|
-|      pgdd       |  0.5.0   |     [0.6.0](https://github.com/rustprooflabs/pgdd)      |    |
-|     convert     |    -     |    [0.0.4](https://github.com/rustprooflabs/convert)    |    |
-|    pg_idkit     |  0.2.0   |     [0.3.0](https://github.com/VADOSWARE/pg_idkit)      |    |
-| pg_tokenizer.rs |    -     | [0.1.0](https://github.com/tensorchord/pg_tokenizer.rs) |    |
-|    pg_render    |    -     |      [0.1.2](https://github.com/mkaski/pg_render)       |    |
-|    pgx_ulid     |    -     |     [0.2.0](https://github.com/pksunkara/pgx_ulid)      |    |
-|     pg_ivm      |  1.10.0  |       [1.11.0](https://github.com/sraoss/pg_ivm)        |    |
-|    orioledb     | 1.4.0b10 |    [1.4.0b11](https://github.com/orioledb/orioledb)     |    |
+|      名称       |  旧版本  |                         新版本                          | 备注 |
+|:---------------:|:--------:|:-------------------------------------------------------:|:-----|
+|      pgdd       |  0.5.0   |     [0.6.0](https://github.com/rustprooflabs/pgdd)      |      |
+|     convert     |    -     |    [0.0.4](https://github.com/rustprooflabs/convert)    |      |
+|    pg_idkit     |  0.2.0   |     [0.3.0](https://github.com/VADOSWARE/pg_idkit)      |      |
+| pg_tokenizer.rs |    -     | [0.1.0](https://github.com/tensorchord/pg_tokenizer.rs) |      |
+|    pg_render    |    -     |      [0.1.2](https://github.com/mkaski/pg_render)       |      |
+|    pgx_ulid     |    -     |     [0.2.0](https://github.com/pksunkara/pgx_ulid)      |      |
+|     pg_ivm      |  1.10.0  |       [1.11.0](https://github.com/sraoss/pg_ivm)        |      |
+|    orioledb     | 1.4.0b10 |    [1.4.0b11](https://github.com/orioledb/orioledb)     |      |
 
 
 ## 2025-05-22
 
-|      名称      | 旧版本 |                                          新版本                                           | 备注 |
-|:------------:|:---:|:--------------------------------------------------------------------------------------:|:--:|
-|  openhalodb  |  -  |                       [14.10](https://github.com/pgsty/openHalo)                       |    |
-|     spat     |  -  |                   [0.1.0a4](https://github.com/Florents-Tselai/spat)                   |    |
-|  pgsentinel  |  -  |         [1.1.0](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.1.0)          |    |
-| timescaledb  |  -  |         [2.20.0](https://github.com/timescale/timescaledb/releases/tag/2.20.0)         |    |
-|  sqlite_fdw  |  -  |          [2.5.0](https://github.com/pgspider/sqlite_fdw/releases/tag/v2.5.0)           |    |
-|  documentdb  |  -  | [0.103.0](https://github.com/FerretDB/documentdb/releases/tag/v0.103.0-ferretdb-2.2.0) |    |
-|     tzf      |  -  |           [0.2.2](https://github.com/ringsaturn/pg-tzf/releases/tag/v0.2.2)            |    |
-| pg_vectorize |  -  |        [0.22.2](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.22.2)        |    |
-|   wrappers   |  -  |           [0.5.0](https://github.com/supabase/wrappers/releases/tag/v0.5.0)            |    |
+|     名称     | 旧版本 |                                         新版本                                         | 备注 |
+|:------------:|:------:|:--------------------------------------------------------------------------------------:|:----:|
+|  openhalodb  |   -    |                       [14.10](https://github.com/pgsty/openHalo)                       |      |
+|     spat     |   -    |                   [0.1.0a4](https://github.com/Florents-Tselai/spat)                   |      |
+|  pgsentinel  |   -    |         [1.1.0](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.1.0)          |      |
+| timescaledb  |   -    |         [2.20.0](https://github.com/timescale/timescaledb/releases/tag/2.20.0)         |      |
+|  sqlite_fdw  |   -    |          [2.5.0](https://github.com/pgspider/sqlite_fdw/releases/tag/v2.5.0)           |      |
+|  documentdb  |   -    | [0.103.0](https://github.com/FerretDB/documentdb/releases/tag/v0.103.0-ferretdb-2.2.0) |      |
+|     tzf      |   -    |           [0.2.2](https://github.com/ringsaturn/pg-tzf/releases/tag/v0.2.2)            |      |
+| pg_vectorize |   -    |        [0.22.2](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.22.2)        |      |
+|   wrappers   |   -    |           [0.5.0](https://github.com/supabase/wrappers/releases/tag/v0.5.0)            |      |
 
 
 ## 2025-05-07
 
-|         名称          | 旧版本 |                                               新版本                                                | 备注 |
-|:-------------------:|:---:|:------------------------------------------------------------------------------------------------:|:--:|
-|      omnigres       |  -  | [20250507](https://github.com/omnigres/omnigres/commit/413feff21f9f7310023d8cfd92b83f2a251b1aa4) |    |
-|        citus        |  -  |                [12.0.3](https://github.com/citusdata/citus/releases/tag/v13.0.3)                 |    |
-|     timescaledb     |  -  |              [2.19.3](https://github.com/timescale/timescaledb/releases/tag/2.19.3)              |    |
-|      supautils      |  -  |                [2.9.1](https://github.com/supabase/supautils/releases/tag/v2.9.1)                |    |
-|      pg_envvar      |  -  |                 [1.0.1](https://github.com/theory/pg-envvar/releases/tag/v1.0.1)                 |    |
-|    pgcollection     |  -  |                 [1.0.0](https://github.com/aws/pgcollection/releases/tag/v1.0.0)                 |    |
-|    aggs_for_vecs    |  -  |              [1.4.0](https://github.com/pjungwir/aggs_for_vecs/releases/tag/1.4.0)               |    |
-|     pg_tracing      |  -  |                [0.1.3](https://github.com/DataDog/pg_tracing/releases/tag/v0.1.3)                |    |
-|        pgmq         |  -  |                    [1.5.1](https://github.com/pgmq/pgmq/releases/tag/v1.5.1)                     |    |
-|       tzf-pg        |  -  |                [0.2.0](https://github.com/ringsaturn/tzf-pg/releases/tag/v0.2.0)                 |    |
-|      pg_search      |  -  |              [0.15.18](https://github.com/paradedb/paradedb/releases/tag/v0.15.18)               |    |
-|        anon         |  -  |   [2.1.1](https://gitlab.com/dalibo/postgresql_anonymizer/-/tree/latest/debian?ref_type=heads)   |    |
-|     pg_parquet      |  -  |              [0.4.0](https://github.com/CrunchyData/pg_parquet/releases/tag/v0.3.2)              |    |
-|     pg_cardano      |  -  |                 [1.0.5](https://github.com/Fell-x27/pg_cardano/commits/master/)                  |    |
-|    pglite_fusion    |  -  |              [0.0.5](https://github.com/frectonz/pglite-fusion/releases/tag/v0.0.5)              |    |
-|     vchord_bm25     |  -  |           [0.2.1](https://github.com/tensorchord/VectorChord-bm25/releases/tag/0.2.1)            |    |
-|       vchord        |  -  |              [0.3.0](https://github.com/tensorchord/VectorChord/releases/tag/0.3.0)              |    |
-| timescaledb-toolkit |  -  |          [1.21.0](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.21.0)          |    |
-|    pgvectorscale    |  -  |              [0.7.1](https://github.com/timescale/pgvectorscale/releases/tag/0.7.1)              |    |
-|   pg_session_jwt    |  -  |           [0.3.1](https://github.com/neondatabase/pg_session_jwt/releases/tag/v0.3.1)            |    |
+|        名称         | 旧版本 |                                              新版本                                              | 备注 |
+|:-------------------:|:------:|:------------------------------------------------------------------------------------------------:|:----:|
+|      omnigres       |   -    | [20250507](https://github.com/omnigres/omnigres/commit/413feff21f9f7310023d8cfd92b83f2a251b1aa4) |      |
+|        citus        |   -    |                [12.0.3](https://github.com/citusdata/citus/releases/tag/v13.0.3)                 |      |
+|     timescaledb     |   -    |              [2.19.3](https://github.com/timescale/timescaledb/releases/tag/2.19.3)              |      |
+|      supautils      |   -    |                [2.9.1](https://github.com/supabase/supautils/releases/tag/v2.9.1)                |      |
+|      pg_envvar      |   -    |                 [1.0.1](https://github.com/theory/pg-envvar/releases/tag/v1.0.1)                 |      |
+|    pgcollection     |   -    |                 [1.0.0](https://github.com/aws/pgcollection/releases/tag/v1.0.0)                 |      |
+|    aggs_for_vecs    |   -    |              [1.4.0](https://github.com/pjungwir/aggs_for_vecs/releases/tag/1.4.0)               |      |
+|     pg_tracing      |   -    |                [0.1.3](https://github.com/DataDog/pg_tracing/releases/tag/v0.1.3)                |      |
+|        pgmq         |   -    |                    [1.5.1](https://github.com/pgmq/pgmq/releases/tag/v1.5.1)                     |      |
+|       tzf-pg        |   -    |                [0.2.0](https://github.com/ringsaturn/tzf-pg/releases/tag/v0.2.0)                 |      |
+|      pg_search      |   -    |              [0.15.18](https://github.com/paradedb/paradedb/releases/tag/v0.15.18)               |      |
+|        anon         |   -    |   [2.1.1](https://gitlab.com/dalibo/postgresql_anonymizer/-/tree/latest/debian?ref_type=heads)   |      |
+|     pg_parquet      |   -    |              [0.4.0](https://github.com/CrunchyData/pg_parquet/releases/tag/v0.3.2)              |      |
+|     pg_cardano      |   -    |                 [1.0.5](https://github.com/Fell-x27/pg_cardano/commits/master/)                  |      |
+|    pglite_fusion    |   -    |              [0.0.5](https://github.com/frectonz/pglite-fusion/releases/tag/v0.0.5)              |      |
+|     vchord_bm25     |   -    |           [0.2.1](https://github.com/tensorchord/VectorChord-bm25/releases/tag/0.2.1)            |      |
+|       vchord        |   -    |              [0.3.0](https://github.com/tensorchord/VectorChord/releases/tag/0.3.0)              |      |
+| timescaledb-toolkit |   -    |          [1.21.0](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.21.0)          |      |
+|    pgvectorscale    |   -    |              [0.7.1](https://github.com/timescale/pgvectorscale/releases/tag/0.7.1)              |      |
+|   pg_session_jwt    |   -    |           [0.3.1](https://github.com/neondatabase/pg_session_jwt/releases/tag/v0.3.1)            |      |
 
 
 ## 2025-03-20
 
-|        名称         |  旧版本  |  新版本   | 备注 |
-|:-----------------:|:-----:|:------:|:--:|
-|    timescaledb    |   -   | 2.19.0 |    |
-|       citus       |   -   | 13.0.2 |    |
-|    documentdb     |   -   | 1.102  |    |
-|   pg_analytics    |   -   | 0.3.7  |    |
-|     pg_search     |   -   | 0.15.8 |    |
-|      pg_ivm       |   -   |  1.10  |    |
-|       emaj        |   -   | 4.6.0  |    |
-|   pgsql_tweaks    |   -   | 0.11.0 |    |
-|   pgvectorscale   |   -   | 0.6.0  |    |
-|  pg_session_jwt   |   -   | 0.2.0  |    |
-|     wrappers      |   -   | 0.4.5  |    |
-|    pg_parquet     |   -   | 0.3.1  |    |
-|      vchord       |   -   | 0.2.2  |    |
-|      pg_tle       | 1.2.0 | 1.5.0  |    |
-|     supautils     | 2.5.0 | 2.6.0  |    |
-|     sslutils      |  1.3  |  1.4   |    |
-|    pg_profile     |  4.7  |  4.8   |    |
-|   pg_jsonschema   | 0.3.2 | 0.3.3  |    |
-|  pg_incremental   | 1.1.1 | 1.2.0  |    |
-| ddl_historization |  0.7  | 0.0.7  |    |
-|     pg_sqlog      | 3.1.7 |  1.6   |    |
-|     pg_random     |   -   |   -    |    |
-|  pg_stat_monitor  | 2.1.0 | 2.1.1  |    |
-|    pg_profile     |  4.7  |  4.8   |    |
+|       名称        | 旧版本 | 新版本 | 备注 |
+|:-----------------:|:------:|:------:|:----:|
+|    timescaledb    |   -    | 2.19.0 |      |
+|       citus       |   -    | 13.0.2 |      |
+|    documentdb     |   -    | 1.102  |      |
+|   pg_analytics    |   -    | 0.3.7  |      |
+|     pg_search     |   -    | 0.15.8 |      |
+|      pg_ivm       |   -    |  1.10  |      |
+|       emaj        |   -    | 4.6.0  |      |
+|   pgsql_tweaks    |   -    | 0.11.0 |      |
+|   pgvectorscale   |   -    | 0.6.0  |      |
+|  pg_session_jwt   |   -    | 0.2.0  |      |
+|     wrappers      |   -    | 0.4.5  |      |
+|    pg_parquet     |   -    | 0.3.1  |      |
+|      vchord       |   -    | 0.2.2  |      |
+|      pg_tle       | 1.2.0  | 1.5.0  |      |
+|     supautils     | 2.5.0  | 2.6.0  |      |
+|     sslutils      |  1.3   |  1.4   |      |
+|    pg_profile     |  4.7   |  4.8   |      |
+|   pg_jsonschema   | 0.3.2  | 0.3.3  |      |
+|  pg_incremental   | 1.1.1  | 1.2.0  |      |
+| ddl_historization |  0.7   | 0.0.7  |      |
+|     pg_sqlog      | 3.1.7  |  1.6   |      |
+|     pg_random     |   -    |   -    |      |
+|  pg_stat_monitor  | 2.1.0  | 2.1.1  |      |
+|    pg_profile     |  4.7   |  4.8   |      |
 
 
 
 ## 2024-10-16
 
-|       名称        | 旧版本 |     新版本      | 备注 |
-|:---------------:|:---:|:------------:|:--:|
-|     pg_ivm      |  -  |     1.9      |    |
-|  pg_timeseries  |  -  |    0.1.6     |    |
-|      pgmq       |  -  |    1.4.4     |    |
-|   pg_protobuf   |  -  |    16 17     |    |
-|    pg_uuidv7    |  -  |     1.6      |    |
-|   pg_readonly   |  -  |    latest    |    |
-|      pgddl      |  -  |     0.28     |    |
-|  pg_safeupdate  |  -  |    latest    |    |
-| pg_stat_monitor |  -  |     2.1      |    |
-|   pg_profile    |  -  |     4.7      |    |
-|  system_stats   |  -  |     3.2      |    |
-|   pg_auth_mon   |  -  |     3.0      |    |
-|   login_hook    |  -  |     1.6      |    |
-|    logerrors    |  -  |    2.1.3     |    |
-|   pg-orphaned   |  -  |    latest    |    |
-|    pgnodemx     |  -  |     1.7      |    |
-|    sslutils     |  -  | 1.4 (+16,17) |    |
+|      名称       | 旧版本 |    新版本    | 备注 |
+|:---------------:|:------:|:------------:|:----:|
+|     pg_ivm      |   -    |     1.9      |      |
+|  pg_timeseries  |   -    |    0.1.6     |      |
+|      pgmq       |   -    |    1.4.4     |      |
+|   pg_protobuf   |   -    |    16 17     |      |
+|    pg_uuidv7    |   -    |     1.6      |      |
+|   pg_readonly   |   -    |    latest    |      |
+|      pgddl      |   -    |     0.28     |      |
+|  pg_safeupdate  |   -    |    latest    |      |
+| pg_stat_monitor |   -    |     2.1      |      |
+|   pg_profile    |   -    |     4.7      |      |
+|  system_stats   |   -    |     3.2      |      |
+|   pg_auth_mon   |   -    |     3.0      |      |
+|   login_hook    |   -    |     1.6      |      |
+|    logerrors    |   -    |    2.1.3     |      |
+|   pg-orphaned   |   -    |    latest    |      |
+|    pgnodemx     |   -    |     1.7      |      |
+|    sslutils     |   -    | 1.4 (+16,17) |      |
