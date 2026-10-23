@@ -2,14 +2,14 @@
 
 来源：
 
-- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/docs/PRODUCTION.md)
-- [v2.13.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/README.md)
-- [v2.12.0 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/CHANGELOG.md)
-- [升级矩阵](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/docs/UPGRADING.md)
-- [控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/pg_turbovec.control)
-- [过滤指南](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.13.0/docs/FILTERING.md)
+- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/PRODUCTION.md)
+- [v2.14.1 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/README.md)
+- [v2.14.1 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/CHANGELOG.md)
+- [升级矩阵](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/UPGRADING.md)
+- [控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/pg_turbovec.control)
+- [过滤指南](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/FILTERING.md)
 
-`pg_turbovec` 2.13.0 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
+`pg_turbovec` 2.14.1 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
 
 ### 创建和查询向量
 
@@ -101,6 +101,18 @@ WHERE a.amname = 'turbovec';
 
 ### 2.13.0 限制扫描线程
 
-`turbovec.scan_parallelism` 现用于限制 flat、IVF、ColBERT ANN 和 1-bit 扫描、`turbovec.knn()` 以及首次打开索引时的编码重排；已弃用的 graph 路径保持原状。默认值 0 最多使用四个核心，调低设置后在当前会话生效。调优时应权衡并发吞吐量与单条查询的延迟。
+`turbovec.scan_parallelism` 现用于限制 flat、IVF、ColBERT ANN 和 1-bit 扫描、`turbovec.knn()` 以及首次打开索引时的编码重排；已弃用的 graph 路径保持原状。在 2.13.0 中，默认值 0 最多使用四个核心，调低设置后在当前会话生效。调优时应权衡并发吞吐量与单条查询的延迟。
 
 原本不生效的 `turbovec.search_concurrency` 设置已移除。对这一带点名称执行 SET 成功，可能只是 PostgreSQL 接受了占位参数，并不表示参数有效。2.13.0 还修复了外存 IVF 码本缓存的竞争问题。安装匹配文件、执行 `ALTER EXTENSION pg_turbovec UPDATE TO '2.13.0'`，再重新连接或重启。健康的格式 8 索引无需 REINDEX；上述 1.x 索引重建要求仍适用。
+
+### 2.14.0 并发默认值与候选重排
+
+`turbovec.scan_parallelism = 0` 现在默认使用单线程，以减少高并发下的 CPU 过度竞争；它并未消除各后端私有解码缓存的内存开销。低并发场景可以显式增大线程数，但应衡量查询延迟与整体吞吐量的取舍。
+
+新增的 `turbovec.rerank_multiplier` 默认 16.0，范围为 1.0–1024.0；精确重排的候选窗口由请求的数量和 oversample 决定，不再按向量维数设置下限。候选集合可能变化，应重新验证召回率。安装匹配文件后执行 `ALTER EXTENSION pg_turbovec UPDATE TO '2.14.0'` 并重新连接以加载库及新默认值。格式仍为 8，健康的 2.x 索引无须例行 REINDEX；此前的 1.x 迁移与损坏修复要求不变。
+
+### 2.14.1 的写入与 VACUUM 正确性修复
+
+2.14.1 修复并发提交后的后端缓存过期、插入刷盘时丢失 IVF 墓碑、写事务未结束时 VACUUM 清空索引后旧行重新出现，以及退化 IVF 扫描忽略墓碑的问题。精确评分与格式 8 均未改变。安装匹配文件，执行 `ALTER EXTENSION pg_turbovec UPDATE TO '2.14.1'`，并回收长期保持的数据库连接，使其重新加载库与缓存。
+
+两种历史状态需要执行一次 REINDEX：旧版中在 VACUUM 后又接受插入的 IVF 索引，以及写事务尚未结束时被 VACUUM 清空的任何索引。可在停止写入的表上执行 `VACUUM (INDEX_CLEANUP ON)`，再用 `turbovec.turbovec_check(regclass)` 比较估算的存活索引条目数与实际覆盖的堆表行数。计数须包含向量非空条件和部分索引谓词；索引条目多于覆盖行数时需要 REINDEX。其他健康的 2.x 索引无须例行重建；1.x 升级重建和已有损坏修复的要求仍然适用。

@@ -2,10 +2,10 @@
 
 Sources:
 
-- [Official v1.16 README](https://github.com/sraoss/pg_ivm/blob/v1.16/README.md)
-- [v1.16 release notes](https://github.com/sraoss/pg_ivm/releases/tag/v1.16)
-- [1.15 to 1.16 upgrade SQL](https://github.com/sraoss/pg_ivm/blob/v1.16/pg_ivm--1.15--1.16.sql)
-- [pg_ivm_dump_metadata utility](https://github.com/sraoss/pg_ivm/blob/v1.16/scripts/pg_ivm_dump_metadata)
+- [Official v1.17 README](https://github.com/sraoss/pg_ivm/blob/v1.17/README.md)
+- [v1.17 release notes](https://github.com/sraoss/pg_ivm/releases/tag/v1.17)
+- [1.16 to 1.17 upgrade SQL](https://github.com/sraoss/pg_ivm/blob/v1.17/pg_ivm--1.16--1.17.sql)
+- [pg_ivm_dump_metadata utility](https://github.com/sraoss/pg_ivm/blob/v1.17/scripts/pg_ivm_dump_metadata)
 
 `pg_ivm` provides immediate incremental view maintenance for PostgreSQL. An Incrementally Maintainable Materialized View (IMMV) is stored as a table with triggers and metadata in the `pgivm` schema; base-table changes update the IMMV inside the same transaction instead of recomputing the complete query.
 
@@ -13,7 +13,7 @@ Sources:
 
 Load the library for every session that can modify an IMMV's base tables. A cluster-wide setup requires a restart:
 
-```conf
+```ini
 shared_preload_libraries = 'pg_ivm'
 ```
 
@@ -48,12 +48,12 @@ SELECT * FROM account_totals;
 - `pgivm.create_immv(name, query)`: creates and populates an IMMV, returning its row count.
 - `pgivm.refresh_immv(name, with_data)`: fully rebuilds the IMMV; `false` disables maintenance until a later populated refresh.
 - `pgivm.get_immv_def(regclass)`: returns the stored view definition.
-- `pgivm.restore_immv(name, query, populate)`: version 1.15 function that reconstructs metadata, triggers, and indexes for an existing IMMV table.
+- `pgivm.restore_immv(name, query, populate, replace)`: reconstructs metadata, triggers, and indexes for an existing IMMV table; 1.17 adds the optional replacement flag.
 - `pgivm.get_create_immv_commands()` and `pgivm.get_restore_immv_commands()`: emit SQL for rebuilding IMMVs or restoring their metadata.
 
 Version 1.15 includes a helper for dump or `pg_upgrade` workflows:
 
-```shell
+```bash
 pg_ivm_dump_metadata -d application > pg_ivm_metadata.sql
 ```
 
@@ -64,7 +64,7 @@ The script emits `pgivm.restore_immv()` calls. Restore the table data first, the
 - Supported definitions include selected joins, `DISTINCT`, simple subqueries/CTEs, and built-in `count`, `sum`, `avg`, `min`, and `max` aggregates. Unsupported constructs include `HAVING`, window functions, `ORDER BY`, `LIMIT/OFFSET`, set operations, `DISTINCT ON`, and user-defined aggregates.
 - Efficient maintenance depends on a suitable unique index. `create_immv()` creates one automatically only when the definition supplies usable grouping, distinct, or base-table primary-key columns.
 - Creation and refresh take `AccessExclusiveLock`. Upstream warns about consistency risks for creation under `REPEATABLE READ` or `SERIALIZABLE`; use `READ COMMITTED` or refresh afterward.
-- `restore_immv()` fails when the relation is already registered or its table definition does not match the supplied query.
+- `restore_immv()` fails on an already registered relation unless `replace = true`; that option requires a superuser. Without replacement the caller must own the IMMV. A table-definition mismatch still fails.
 - Version 1.15 also fixes incorrect maintenance after repeated trigger-driven modifications and a v1.14 outer-join maintenance crash.
 
 ### Upgrade to 1.16
@@ -74,3 +74,21 @@ Version 1.16 adds PostgreSQL 19 support and fixes a crash when maintaining and d
 ```sql
 ALTER EXTENSION pg_ivm UPDATE TO '1.16';
 ```
+
+### Upgrade to 1.17
+
+Upstream supports PostgreSQL 13–19. Version 1.17 fixes the restored IMMV population flag, preventing duplicate maintenance triggers after a later refresh; it also improves automatic unique-index derivation, rejects set-returning target lists and fixes index-creation crashes with LATERAL subqueries.
+
+Install matching files, ensure modifying sessions use the new library, then update each database:
+
+```sql
+ALTER EXTENSION pg_ivm UPDATE TO '1.17';
+```
+
+For a PostgreSQL major upgrade, put the new option first when exporting metadata before the upgrade:
+
+```bash
+pg_ivm_dump_metadata --pg-upgrade application > pg_ivm_metadata.sql
+```
+
+The generated restore calls replace the old catalog entries left by the major upgrade. Run the saved SQL after completing the upgrade, as a superuser. The IMMV tables and their data must already be present; replacement is not a substitute for restoring the data.

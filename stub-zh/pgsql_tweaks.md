@@ -1,11 +1,19 @@
-
-
-
 ## 用法
 
-来源：[Codeberg README](https://codeberg.org/pgsql_tweaks/pgsql_tweaks)、[documentation site](https://rtfm.pgsql-tweaks.org)、[Codeberg tags](https://codeberg.org/pgsql_tweaks/pgsql_tweaks/tags)。
+来源：
 
-`pgsql_tweaks` 在 `pgsql_tweaks` 模式中提供面向 DBA 的辅助函数和视图。上游测试矩阵覆盖 PostgreSQL 14 到 PostgreSQL 19 beta 1；Pigsty 为 PostgreSQL 14-18 打包。
+- [官方资料](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/README.md)
+- [官方资料](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/pgsql_tweaks.control)
+- [官方资料](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/makefile)
+- [官方资料](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/sql/out/versions/pgsql_tweaks--1.1.0.sql)
+
+`pgsql_tweaks` 1.1.0 在 `pgsql_tweaks` 模式中提供面向 DBA 的辅助函数和视图。上游测试矩阵覆盖 PostgreSQL 14 到 PostgreSQL 19rc1；Pigsty 为 PostgreSQL 14-18 打包。
+
+### 启用
+
+```sql
+CREATE EXTENSION pgsql_tweaks;
+```
 
 ### 数据类型检查函数
 
@@ -86,4 +94,4 @@ SELECT pgsql_tweaks.get_markdown_doku_by_schema('pgsql_tweaks');
 ### 注意事项
 
 - 部分视图/函数依赖额外的 PostgreSQL 随附模块；上游列出了 `pg_stat_statements` 和 `pgstattuple`。
-- Codeberg 的 `v1.0.3` tag 说明添加了发布文件；从 README 和 tag 元数据中没有识别出实质性的面向用户函数或视图变化。
+- 本发行包为纯 SQL 实现，不需要预加载共享库。安装新扩展文件后，使用 `ALTER EXTENSION pgsql_tweaks UPDATE TO '1.1.0'` 更新已有实例；执行辅助函数仍需对应对象或统计信息的读取权限。

@@ -2,10 +2,10 @@
 
 来源：
 
-- [`documentdb_distributed` v0.117-0 控制文件](https://github.com/documentdb/documentdb/blob/v0.117-0/internal/pg_documentdb_distributed/documentdb_distributed.control)
-- [DocumentDB 包范围](https://github.com/documentdb/documentdb/blob/v0.117-0/packaging/README.md)
-- [官方预加载助手](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
-- [DocumentDB v0.117-0 更新日志](https://github.com/documentdb/documentdb/blob/v0.117-0/CHANGELOG.md)
+- [`documentdb_distributed` v1.0-0 控制文件](https://github.com/documentdb/documentdb/blob/v1.0-0/internal/pg_documentdb_distributed/documentdb_distributed.control)
+- [DocumentDB 包范围](https://github.com/documentdb/documentdb/blob/v1.0-0/packaging/README.md)
+- [官方预加载助手](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
+- [DocumentDB v1.0-0 更新日志](https://github.com/documentdb/documentdb/blob/v1.0-0/CHANGELOG.md)
 
 `documentdb_distributed` 是 DocumentDB 的内部多节点执行层。它将公共 `documentdb` API 与 Citus 集成；它不是一个独立的文档 API，并不会增加单独的客户端工作流程。
 
@@ -13,7 +13,7 @@
 
 所有节点需要匹配版本的 Citus、`documentdb_core`、`documentdb` 和 `documentdb_distributed`。官方助手会将库按预加载顺序放置；在更改后，请重启每个节点：
 
-```conf
+```ini
 shared_preload_libraries = 'pg_cron, citus, pg_documentdb_core, pg_documentdb, pg_documentdb_distributed, pg_documentdb_extended_rum'
 ```
 

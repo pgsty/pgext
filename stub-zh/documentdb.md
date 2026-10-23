@@ -2,10 +2,11 @@
 
 来源：
 
-- [DocumentDB v0.117-0 README](https://github.com/documentdb/documentdb/blob/v0.117-0/README.md)
-- [DocumentDB v0.117-0 changelog](https://github.com/documentdb/documentdb/blob/v0.117-0/CHANGELOG.md)
-- [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb/documentdb.control)
-- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
+- [DocumentDB v1.0-0 README](https://github.com/documentdb/documentdb/blob/v1.0-0/README.md)
+- [DocumentDB v1.0-0 changelog](https://github.com/documentdb/documentdb/blob/v1.0-0/CHANGELOG.md)
+- [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb/documentdb.control)
+- [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
+- [DocumentDB 1.0 release](https://github.com/documentdb/documentdb/releases/tag/v1.0-0)
 
 `documentdb` 是 PostgreSQL 的公共 API 扩展，用于 DocumentDB，这是一个基于 PostgreSQL 开源的 MongoDB 兼容文档数据库。它存储 BSON 文档并实现 CRUD、聚合、全文搜索、地理空间和向量工作流。MongoDB 驱动程序需要单独的 DocumentDB 网关；仅安装此扩展不会暴露 Wire-Protocol 监听器，而是 PostgreSQL API。
 
@@ -13,7 +14,7 @@
 
 官方部署助手使用 `pg_cron` 预加载核心库和 API 库。更改此设置后，请重启 PostgreSQL：
 
-```conf
+```ini
 shared_preload_libraries = 'pg_cron, pg_documentdb_core, pg_documentdb, pg_documentdb_extended_rum'
 ```
 
@@ -59,6 +60,8 @@ FROM documentdb_api_catalog.bson_aggregation_find(
 
 ### 版本与运行注意事项
 
-0.117-0 增加了考虑排序规则的分组与最小/最大值处理，并包含 0.116-0 引入的 JSON Schema enum 与 oneOf 支持。标量聚合索引下推受功能开关控制，默认关闭。所有受支持 PostgreSQL 主版本的 `documentdb.rum_library_load_option` 现在默认是 `require_documentdb_extended_rum`，部署时须提供匹配的扩展 RUM 库。
+1.0-0 是首个正式可用的发行系列。它修复了零批量读取的权限检查、合并与输出目标的写权限，以及崩溃、地理排序和索引清理问题。自定义角色 CRUD 与连接后嵌套查找仍受设置控制，默认关闭。应使用匹配的全部库，并应用该版本的升级 SQL。
+
+官方 DocumentDB Local 容器默认启用使用情况遥测；原生软件包不受影响。容器中可设置 DOCUMENTDB_USAGE_TELEMETRY=false、NO_ANALYTICS=1 或 DO_NOT_TRACK=1 禁用。
 
 MongoDB 兼容性并不等同于所有 MongoDB 服务器版本。应测试应用实际使用的操作符、索引行为、事务、模式验证、身份验证和驱动行为。请确保 `documentdb`、`documentdb_core`、网关及可选的分布式/索引组件来自同一发行系列。

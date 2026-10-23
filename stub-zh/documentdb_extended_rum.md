@@ -2,10 +2,10 @@
 
 来源：
 
-- [DocumentDB Extended RUM README](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_extended_rum/README.md)
-- [`documentdb_extended_rum` 控制文件](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_extended_rum/documentdb_extended_rum.control)
-- [访问方法SQL定义](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_extended_rum/sql/documentdb_extended_rum--0.106-0.sql)
-- [DocumentDB v0.117-0变更日志](https://github.com/documentdb/documentdb/blob/v0.117-0/CHANGELOG.md)
+- [DocumentDB Extended RUM README](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_extended_rum/README.md)
+- [`documentdb_extended_rum` 控制文件](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_extended_rum/documentdb_extended_rum.control)
+- [访问方法SQL定义](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_extended_rum/sql/documentdb_extended_rum--0.106-0.sql)
+- [DocumentDB v1.0-0变更日志](https://github.com/documentdb/documentdb/blob/v1.0-0/CHANGELOG.md)
 
 `documentdb_extended_rum` 是DocumentDB的扩展RUM索引访问方法。它是由DocumentDB索引层选择的实现组件，而不是通用的应用程序索引或替代安装 `documentdb`。
 
@@ -13,7 +13,7 @@
 
 该库只能从 `shared_preload_libraries` 初始化。在基础DocumentDB库之后预加载它并重启PostgreSQL：
 
-```conf
+```ini
 shared_preload_libraries = 'pg_cron, pg_documentdb_core, pg_documentdb, pg_documentdb_extended_rum'
 documentdb.rum_library_load_option = 'require_documentdb_extended_rum'
 ```
@@ -38,4 +38,4 @@ DocumentDB部署工具通常会管理此配置。现有数据库应遵循特定�
 
 安装和升级此组件时，请确保与 `documentdb` 和 `documentdb_core` 二进制文件版本匹配。除非遵循上游开发指导，否则不要直接使用其内部操作符类构建索引；通过DocumentDB API创建和管理索引以保持元数据的一致性。
 
-在 0.117-0 中，所有受支持 PostgreSQL 主版本的 `documentdb.rum_library_load_option` 默认均为 `require_documentdb_extended_rum`。本版本改进了空倒排页回收，并保护清理期间尚未完成的页分裂。更新日志中注明受开关控制的性能功能仍取决于各自配置，不应直接套用其他版本的配置。
+在 1.0-0 中，`documentdb.rum_library_load_option` 继续默认使用 `require_documentdb_extended_rum`。本版本修复了清理时并发根页分裂的处理，恢复清理延迟与中断检查，并默认启用定向倒排树剪枝与空条目叶页回收。应应用匹配的升级 SQL，并通过受支持的 DocumentDB 操作验证现有索引。

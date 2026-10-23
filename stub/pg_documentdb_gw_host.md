@@ -2,25 +2,27 @@
 
 Sources:
 
-- [Official upstream README](https://github.com/documentdb/documentdb/blob/fd46318bf292780238eac4ef2f9e0011f7234539/README.md)
-- [Official extension control file (pg_documentdb_gw_host.control)](https://github.com/documentdb/documentdb/blob/fd46318bf292780238eac4ef2f9e0011f7234539/pg_documentdb_gw_host/pg_documentdb_gw_host.control)
-- [Official implementation source](https://github.com/documentdb/documentdb/blob/fd46318bf292780238eac4ef2f9e0011f7234539/pg_documentdb_gw_host/src/lib.rs)
+- [Extension control](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_gw_host/pg_documentdb_gw_host.control)
+- [Cargo version and supported majors](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_gw_host/Cargo.toml)
+- [Worker initialization](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_gw_host/src/bgworker.rs)
+- [Required settings](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_gw_host/src/gucs.rs)
+- [Official README](https://github.com/documentdb/documentdb/blob/v1.0-0/README.md)
 
-`pg_documentdb_gw_host` — pg documentdb gw host: Created by pgrx. Use it when porting or emulating the corresponding database API. Its extension dependencies must be installed and validated first.
+`pg_documentdb_gw_host` hosts the DocumentDB wire-protocol gateway in a PostgreSQL background worker. Its extension version remains 0.1.0 in DocumentDB 1.0-0. The source declares PostgreSQL 15–18 support and uses pgrx 0.16.0; confirm that the chosen distribution actually includes this optional module.
 
-### Core Workflow
+### Enable the Worker
+
+Install matching DocumentDB dependencies and SQL objects as a superuser:
 
 ```sql
+CREATE EXTENSION documentdb CASCADE;
 CREATE EXTENSION pg_documentdb_gw_host;
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+SQL installation alone does not enable a persistent gateway. Add `pg_documentdb_gw_host` to the deployment's existing `shared_preload_libraries`, configure `documentdb_gateway.database` to the database containing the extension, and set `documentdb_gateway.setup_configuration_file` to a valid gateway configuration file on the database host. Both settings are superuser-only and have postmaster context: apply them before restarting PostgreSQL.
 
-### Requirements and Caveats
+### Operational Boundaries
 
-- The catalog records version `0.1.0`.
-- Install the confirmed extension dependencies first: `documentdb`.
-- The control file marks the extension as non-relocatable.
-- The control file requires a superuser for installation.
-- The control file marks the extension as not trusted.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+The worker connects to the configured database and starts the gateway using its setup and TLS configuration. Missing settings or invalid configuration prevent startup. Database connection failures cause the worker to shut down rather than stay idle; the registered worker has a one-second restart interval, so inspect repeated startup errors.
+
+This module is not a separate collection API. Use DocumentDB client protocols through the configured gateway endpoint; do not expose its listener until authentication, TLS, network access and the connection budget are configured. Keep its matching base extension and gateway libraries together during upgrades.

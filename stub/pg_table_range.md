@@ -2,9 +2,10 @@
 
 Sources:
 
-- [Upstream README](https://github.com/bitner/pg_table_range/blob/bd20fd89667c50ddb476c19434d7ae65390654ef/README.md)
-- [Version and PostgreSQL feature matrix](https://github.com/bitner/pg_table_range/blob/bd20fd89667c50ddb476c19434d7ae65390654ef/Cargo.toml)
-- [Planner-hook and GUC registration](https://github.com/bitner/pg_table_range/blob/bd20fd89667c50ddb476c19434d7ae65390654ef/src/lib.rs)
+- [Upstream README](https://github.com/bitner/pg_table_range/blob/v0.1.2/README.md)
+- [Version and PostgreSQL feature matrix](https://github.com/bitner/pg_table_range/blob/v0.1.2/Cargo.toml)
+- [Planner-hook and GUC registration](https://github.com/bitner/pg_table_range/blob/v0.1.2/src/lib.rs)
+- [0.1.2 upgrade and correctness fixes](https://github.com/bitner/pg_table_range/blob/v0.1.2/CHANGELOG.md)
 
 pg_table_range is an experimental PostgreSQL 16–18 extension for planning-time partition pruning on columns that are not partition keys. Its table_range index access method stores each partition's actual scalar minimum and maximum, range extent, or PostGIS geometry extent. A planner hook removes a partition only when its summary proves that the partition cannot match.
 
@@ -31,9 +32,20 @@ WHERE val >= 250;
 RESET table_range.enable_pruning;
 ```
 
-The index is never selected to scan rows; it owns compact summaries used by the planner. Inserts widen summaries automatically. Deletes remain safe but can leave them wider than live data until VACUUM or REINDEX tightens them.
+The index is never selected to scan rows; it owns compact summaries used by the planner. Inserts widen summaries automatically. Deletes remain safe but can leave them wider than live data until REINDEX tightens them; VACUUM does not rebuild summaries.
 
 Supported pruning predicates include scalar comparisons, BETWEEN, null tests, constant IN or ANY lists, and overlap for range and PostGIS geometry types. Unsupported expressions conservatively keep the partition.
+
+### Upgrade from 0.1.1
+
+Version 0.1.2 fixes missing rows and backend crashes in 0.1.1. Install the new binaries and restart PostgreSQL so no backend still runs the old code. Then update the extension and rebuild every table_range index, using the parent index for partitioned tables:
+
+```sql
+ALTER EXTENSION pg_table_range UPDATE TO '0.1.2';
+REINDEX INDEX events_tr;
+```
+
+Old summaries are ignored until rebuilt, keeping all partitions rather than risking incorrect pruning. Partial indexes are rejected. REINDEX is also the way to tighten summaries after deletes.
 
 ### Caveats
 

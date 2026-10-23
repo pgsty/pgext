@@ -2,17 +2,17 @@
 
 Sources:
 
-- [0.4.0 migration](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/sql/postvec--0.4.0--0.5.0.sql)
-- [postvec/README.md](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/README.md)
-- [postvec/postvec.control](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/postvec.control)
-- [postvec/Cargo.toml](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/Cargo.toml)
-- [README.md](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/README.md)
-- [postvec/src/api/search.rs](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/src/api/search.rs)
-- [postvec/src/api/registry.rs](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/src/api/registry.rs)
-- [postvec/src/api/status.rs](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/src/api/status.rs)
-- [postvec/sql/postvec--0.2.0--0.3.0.sql](https://github.com/univec-ai/postvec/blob/bb9988f08ab6c4056b96ca64b6f20dcca418e948/postvec/sql/postvec--0.2.0--0.3.0.sql)
+- [0.5.0 to 0.6.0 migration](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/sql/postvec--0.5.0--0.6.0.sql)
+- [postvec/README.md](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/README.md)
+- [postvec/postvec.control](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/postvec.control)
+- [postvec/Cargo.toml](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/Cargo.toml)
+- [README.md](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/README.md)
+- [postvec/src/api/search.rs](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/src/api/search.rs)
+- [postvec/src/api/registry.rs](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/src/api/registry.rs)
+- [postvec/src/api/status.rs](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/src/api/status.rs)
+- [postvec/sql/postvec--0.2.0--0.3.0.sql](https://github.com/univec-ai/postvec/blob/63746985c44ef84a4210b09fdac590fbb22c2392/postvec/sql/postvec--0.2.0--0.3.0.sql)
 
-`postvec` 0.5.0 asynchronously maintains embedding columns and combines lexical and semantic search. The reviewed release is postvec-v0.4.0-1; the package suffix is separate from the extension version.
+`postvec` 0.6.0 asynchronously maintains embedding columns and combines lexical and semantic search. The reviewed release is postvec-v0.6.0-1; the package suffix is separate from the extension version.
 
 ### Enablement and Core Workflow
 
@@ -42,8 +42,8 @@ JOIN docs d ON d.id = s.pk_value::bigint ORDER BY s.rrf_score DESC;
 
 Management requires table ownership or superuser rights. Review row-security restrictions because the worker uses elevated privileges. Remote inference transmits source text outside the database host. The extension uses the PostgreSQL license, while the separate server and downloaded models have their own terms.
 
-### Version 0.5.0 Upgrade
+### Version 0.6.0 Upgrade
 
-Install matching library and extension files, restart to load the preloaded library, then run `ALTER EXTENSION postvec UPDATE TO '0.5.0'`. The 0.4.0-to-0.5.0 migration takes the extension schema advisory lock and declares no additional schema changes. Check worker health, pending work and search results after upgrading.
+Install matching library and extension files, restart to load the preloaded library, then run `ALTER EXTENSION postvec UPDATE TO '0.6.0'`. The 0.5.0-to-0.6.0 migration takes the extension schema advisory lock and declares no additional schema changes. Check worker health, pending work and search results after upgrading.
 
 Use `postvec.mode = 'embedded'` for local inference or `postvec.mode = 'grpc'` for the separate server. Optional hosted providers transmit input to that provider and require credentials on the inference host. When crossing older releases, apply the intervening migrations: 0.3.0 hardens trigger `search_path` and canonicalizes primary keys, which can requeue backfill. Ambiguous historical keys remain in `jobs_dead` until resolved.

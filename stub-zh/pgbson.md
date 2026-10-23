@@ -2,11 +2,11 @@
 
 来源：
 
-- [pgbson 2.1.0 README](https://api.pgxn.org/src/bson/bson-2.1.0/README.md)
-- [pgbson 2.1 控制文件](https://api.pgxn.org/src/bson/bson-2.1.0/pgbson.control)
-- [pgbson 2.1 SQL API](https://api.pgxn.org/src/bson/bson-2.1.0/pgbson--2.1.sql)
+- [pgbson 2.2.0 README](https://api.pgxn.org/src/bson/bson-2.2.0/README.md)
+- [pgbson 2.2 控制文件](https://api.pgxn.org/src/bson/bson-2.2.0/pgbson.control)
+- [pgbson 2.2 SQL API](https://api.pgxn.org/src/bson/bson-2.2.0/pgbson--2.2.sql)
 
-`pgbson` 添加了 BSON 数据类型、带类型的点路径访问器、JSON 风格的导航、类型转换、比较操作符，以及 btree/hash 索引。当二进制往返保真度或 BSON 特有的标量类型至关重要时，请使用 BSON；如果主要需求是 PostgreSQL 原生 JSON 索引，请使用 `jsonb`。PGXN 发行版本为 `2.1.0`，而 SQL 扩展版本为 `2.1`。
+`pgbson` 添加了 BSON 数据类型、带类型的点路径访问器、JSON 风格的导航、类型转换、比较操作符，以及 btree/hash 索引。当二进制往返保真度或 BSON 特有的标量类型至关重要时，请使用 BSON；如果主要需求是 PostgreSQL 原生 JSON 索引，请使用 `jsonb`。PGXN 发行版本为 `2.2.0`，而 SQL 扩展版本为 `2.2`。
 
 ### 安装并存储 BSON
 
@@ -65,7 +65,7 @@ CREATE INDEX events_payload_hash_idx ON events USING hash (payload);
 ### 升级与注意事项
 
 ```sql
-ALTER EXTENSION pgbson UPDATE TO '2.1';
+ALTER EXTENSION pgbson UPDATE TO '2.2';
 ```
 
 - 安装 2.1 共享库不会更新已有 2.0 扩展的 SQL 对象；安装文件后应执行扩展更新。
@@ -73,3 +73,11 @@ ALTER EXTENSION pgbson UPDATE TO '2.1';
 - BSON 到 JSON/JSONB 的转换使用 Extended JSON。BSON 与 JSONB 的类型、相等和排序语义不同，因此这种转换并非对所有工作流都无损。
 - 在 2.1 中，BSON 日期时间上的 `->>` 会包含末尾的 `Z`；`bson_get_datetime()` 保持不变。请检查会比较旧文本格式的客户端。
 - BSON 顶层值是文档，不能是裸数组或标量。`bson_get_value` 使用 `_` 包装，以便在该限制下返回任意嵌套形态。
+
+### 2.1.1 二进制修复
+
+发行版 2.1.1 保留 SQL 版本 2.1，安装新库并重新连接即可，已有 2.1 实例无需 SQL 扩展更新。它修复 BSON 二进制接收函数读取错误内存而导致后端崩溃的问题，影响二进制 COPY 和以二进制发送参数的驱动；文本输入不受该缺陷影响。`bson_get_datetime` 对超出 PostgreSQL timestamp 范围的日期现在返回 NULL。`bson_get_string` 与 `->>` 遇到嵌入的 NUL 时会截断，这属于文档澄清，行为未变。
+
+### 2.2.0 当前升级边界
+
+2.2.0 的 SQL 版本为 2.2，比较函数改为 C 实现，消除通过 `search_path` 同名函数劫持比较过程的风险。先安装新共享库，再执行上面的 SQL 更新；已有索引无需因此重建。该版本包含 2.1.2 的 libbson 兼容性、字符编码转换和无效输入处理修复。无效 UTF-8 的检查范围仍受所用 libbson 版本影响，旧版本的键检查不等同于完整字符串值验证。使用匹配的新库和 SQL 文件，不应把早期 2.1.1 的“无需 SQL 升级”说明套用于此次升级。

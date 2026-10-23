@@ -2,10 +2,10 @@
 
 来源：
 
-- [PGMQ v1.12.0 README](https://github.com/pgmq/pgmq/blob/v1.12.0/README.md)
-- [PGMQ v1.12.0 发行说明](https://github.com/pgmq/pgmq/releases/tag/v1.12.0)
-- [版本 1.12.0 迁移 SQL](https://github.com/pgmq/pgmq/blob/v1.12.0/pgmq-extension/sql/pgmq--1.11.1--1.12.0.sql)
-- [PGMQ 文档](https://pgmq.github.io/pgmq/)
+- [官方资料](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/README.md)
+- [官方资料](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/pgmq.control)
+- [官方资料](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/sql/pgmq--1.13.0--1.13.1.sql)
+- [官方资料](https://github.com/pgmq/pgmq/releases/tag/v1.13.1)
 
 pgmq 实现了持久化消息队列，作为 PostgreSQL 表和 SQL 函数。它支持延迟投递、可见性超时、FIFO 组、消息头、轮询、主题和归档功能。当需要将队列事务与同一数据库中的关系变化协调起来时，请使用此扩展。
 
@@ -77,3 +77,15 @@ pop 读取消息并立即删除，仅当允许在调用后丢失消息时才适�
 - 归档或删除已完成的消息并强制执行归档保留策略。
 - 长期轮询会占用数据库连接。根据消费者数量调整连接池大小和轮询间隔。
 - 保持队列名称符合 pgmq 的标识符规则；调用 API 而不是从不可信输入构造表名。
+
+### 1.13.1 升级与安全修复
+
+安装匹配的扩展文件后，在每个使用库执行：
+
+```sql
+ALTER EXTENSION pgmq UPDATE TO '1.13.1';
+```
+
+1.13.1 固定函数的 `search_path` 并限定内部对象的模式名，防止同名对象影响函数执行。`pg_monitor` 不再拥有消息表全部列的读取权限，监控权限缩小到元数据、可见时间、入队时间和消息标识序列。升级脚本也会清理已有及默认权限；撤销失败时可能仅发出警告，应检查升级日志并核对实际授权。该版本还修复混合大小写队列名称的插入通知。
+
+扩展本身为 SQL 实现，无需预加载；队列创建与管理仍受 PostgreSQL 权限控制。上游版本更新不代表 Pigsty 软件包已经更新。

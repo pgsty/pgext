@@ -1,18 +1,17 @@
-
-
-
 ## Usage
 
 Sources:
 
-- [jsonschema v0.1.10 README](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/README.md)
-- [documentation](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/doc/jsonschema.md)
-- [control file](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/jsonschema.control)
-- [Cargo manifest](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/Cargo.toml)
+- [jsonschema v0.1.11 README](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/README.md)
+- [documentation](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/doc/jsonschema.md)
+- [control file](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/jsonschema.control)
+- [Cargo manifest](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/Cargo.toml)
 
 `jsonschema` validates JSON and JSONB values against JSON Schema inside PostgreSQL. It is the `theory/pg-jsonschema-boon` extension and is distinct from Supabase `pg_jsonschema`, although it provides compatibility wrappers named `json_matches_schema()` and `jsonb_matches_schema()`.
 
 The extension supports JSON Schema draft 4, draft 6, draft 7, draft 2019-09, and draft 2020-12 through the Rust `boon` validator. It has no runtime dependency beyond PostgreSQL.
+
+Version 0.1.11 supports PostgreSQL 13–19 and uses pgrx 0.19.3. Installation requires a superuser; no shared preload is required. Remote schema retrieval is disabled: supply referenced schemas explicitly.
 
 ### Validate a Schema and a Document
 

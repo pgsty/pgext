@@ -1,18 +1,17 @@
-
-
-
 ## 用法
 
 来源：
 
-- [jsonschema v0.1.10 README](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/README.md)
-- [documentation](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/doc/jsonschema.md)
-- [control file](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/jsonschema.control)
-- [Cargo manifest](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.10/Cargo.toml)
+- [jsonschema v0.1.11 README](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/README.md)
+- [documentation](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/doc/jsonschema.md)
+- [control file](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/jsonschema.control)
+- [Cargo manifest](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.11/Cargo.toml)
 
 `jsonschema` 在 PostgreSQL 内根据 JSON Schema 校验 JSON 和 JSONB 值。它是 `theory/pg-jsonschema-boon` 扩展，不同于 Supabase `pg_jsonschema`，但提供了名为 `json_matches_schema()` 和 `jsonb_matches_schema()` 的兼容包装函数。
 
 该扩展通过 Rust `boon` 校验器支持 JSON Schema draft 4、draft 6、draft 7、draft 2019-09 和 draft 2020-12。运行时除了 PostgreSQL 之外没有其他依赖。
+
+0.1.11 支持 PostgreSQL 13–19，使用 pgrx 0.19.3。安装要求超级用户，无需共享预加载。扩展禁用远程模式获取；引用的模式须显式提供。
 
 ### 校验 Schema 与文档
 

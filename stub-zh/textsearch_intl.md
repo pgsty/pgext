@@ -2,19 +2,19 @@
 
 来源：
 
-- [README.md](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/README.md)
-- [textsearch_intl--1.0.sql](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/textsearch_intl--1.0.sql)
-- [textsearch_intl.control](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/textsearch_intl.control)
-- [META.json](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/META.json)
-- [LICENSE](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/LICENSE)
+- [README.md](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/README.md)
+- [textsearch_intl--1.0.sql](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/textsearch_intl--1.0.sql)
+- [textsearch_intl.control](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/textsearch_intl.control)
+- [META.json](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/META.json)
+- [LICENSE](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/LICENSE)
 - [改名提交](https://github.com/benjaminsanborn/textsearch_intl/commit/b023b27aa16b82fc3c1b80ef0928e9f185e7f43e)
-- [PGXN icu_parser 1.1.0](https://pgxn.org/dist/icu_parser/1.1.0/)
+- [PGXN textsearch_intl 1.0.1](https://pgxn.org/dist/textsearch_intl/1.0.1/)
 
 `textsearch_intl` 将 ICU 分词、规范化和 n-gram 匹配组合为多语言全文检索功能。它要求 PostgreSQL 14 或更新版本、UTF8 数据库、ICU 和 `unaccent`；上游 CI 覆盖 PostgreSQL 14–18。
 
 ### 名称与版本
 
-项目于 2026-10-09 将 `icu_parser` 改名为 `textsearch_intl`，并重新开始版本编号：当前源码的 SQL/control 版本为 `1.0`，META 版本为 `1.0.0`。GitHub/PGXN 最新已发布版本仍是旧名 `icu_parser` 的发行包 `1.1.0`，其 SQL 版本为 `1.1`。新名称尚无发布标签，也没有从旧名称升级的 SQL 脚本。
+项目于 2026-10-09 从 `icu_parser` 改名为 `textsearch_intl` 并重新编号。2026-10-22 已正式发布新的 PGXN 分发 1.0.1；SQL/control 版本仍为 `1.0`，不能把分发版本误作 SQL 升级目标。旧名称没有直接的 SQL 升级脚本，迁移前需检查依赖对象并制定重建步骤。
 
 ### 核心用法
 

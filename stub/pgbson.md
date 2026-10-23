@@ -2,11 +2,11 @@
 
 Sources:
 
-- [pgbson 2.1.0 README](https://api.pgxn.org/src/bson/bson-2.1.0/README.md)
-- [pgbson 2.1 control file](https://api.pgxn.org/src/bson/bson-2.1.0/pgbson.control)
-- [pgbson 2.1 SQL API](https://api.pgxn.org/src/bson/bson-2.1.0/pgbson--2.1.sql)
+- [pgbson 2.2.0 README](https://api.pgxn.org/src/bson/bson-2.2.0/README.md)
+- [pgbson 2.2 control file](https://api.pgxn.org/src/bson/bson-2.2.0/pgbson.control)
+- [pgbson 2.2 SQL API](https://api.pgxn.org/src/bson/bson-2.2.0/pgbson--2.2.sql)
 
-`pgbson` adds a BSON data type, typed dot-path accessors, JSON-style navigation, casts, comparison operators, and btree/hash indexing. The PGXN distribution release is `2.1.0`, while the SQL extension version is `2.1`. Use BSON when binary round-trip fidelity or BSON-specific scalar types matter; use `jsonb` when PostgreSQL-native JSON indexing is the primary requirement.
+`pgbson` adds a BSON data type, typed dot-path accessors, JSON-style navigation, casts, comparison operators, and btree/hash indexing. The PGXN distribution release is `2.2.0`, while the SQL extension version is `2.2`. Use BSON when binary round-trip fidelity or BSON-specific scalar types matter; use `jsonb` when PostgreSQL-native JSON indexing is the primary requirement.
 
 ### Install and Store BSON
 
@@ -65,7 +65,7 @@ Version 2.1 provides logical comparison operators `=`, `<>`, `<`, `<=`, `>`, and
 ### Upgrade and Caveats
 
 ```sql
-ALTER EXTENSION pgbson UPDATE TO '2.1';
+ALTER EXTENSION pgbson UPDATE TO '2.2';
 ```
 
 - Installing a 2.1 shared library does not update an existing 2.0 extension's SQL objects; run the extension update after installing the files.
@@ -73,3 +73,11 @@ ALTER EXTENSION pgbson UPDATE TO '2.1';
 - BSON-to-JSON/JSONB casts use Extended JSON. BSON and JSONB have different type, equality, and ordering semantics, so conversion is not lossless for every workflow.
 - In 2.1, `->>` on a BSON datetime includes the trailing `Z`; `bson_get_datetime()` is unchanged. Check clients that compare the old text form.
 - BSON top-level values are documents, not bare arrays or scalars. `bson_get_value` uses its `_` wrapper to return any nested shape within that restriction.
+
+### Binary Fixes in 2.1.1
+
+Distribution 2.1.1 retains SQL version 2.1: install the new library and reconnect, with no SQL extension update for an existing 2.1 installation. It fixes the BSON binary receive function reading the wrong memory and crashing a backend, affecting binary COPY and drivers sending binary parameters; text input was unaffected. `bson_get_datetime` now returns NULL for dates outside PostgreSQL timestamp range. Truncation at embedded NUL in `bson_get_string` and `->>` is newly documented, not new behavior.
+
+### Current Upgrade Boundary in 2.2.0
+
+Distribution 2.2.0 installs SQL version 2.2. Comparison functions now use C implementations, removing comparison hijacking through same-name functions on `search_path`. Install the new library before applying the SQL update above; existing indexes do not need rebuilding for this change. The release includes 2.1.2 fixes for libbson compatibility, encoding conversion and invalid input handling. Invalid UTF-8 validation still depends on the libbson version: old key validation does not establish full string-value validation. Use matching library and SQL files; the earlier 2.1.1 no-SQL-update note does not apply to this upgrade.

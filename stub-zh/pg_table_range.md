@@ -2,9 +2,10 @@
 
 来源：
 
-- [上游 README](https://github.com/bitner/pg_table_range/blob/bd20fd89667c50ddb476c19434d7ae65390654ef/README.md)
-- [版本与 PostgreSQL 特性矩阵](https://github.com/bitner/pg_table_range/blob/bd20fd89667c50ddb476c19434d7ae65390654ef/Cargo.toml)
-- [规划器钩子与 GUC 注册](https://github.com/bitner/pg_table_range/blob/bd20fd89667c50ddb476c19434d7ae65390654ef/src/lib.rs)
+- [上游 README](https://github.com/bitner/pg_table_range/blob/v0.1.2/README.md)
+- [版本与 PostgreSQL 特性矩阵](https://github.com/bitner/pg_table_range/blob/v0.1.2/Cargo.toml)
+- [规划器钩子与 GUC 注册](https://github.com/bitner/pg_table_range/blob/v0.1.2/src/lib.rs)
+- [0.1.2 upgrade and correctness fixes](https://github.com/bitner/pg_table_range/blob/v0.1.2/CHANGELOG.md)
 
 pg_table_range 是面向 PostgreSQL 16–18 的实验性扩展，用于在规划期按非分区键列剪枝。其 table_range 索引访问方法保存每个分区的实际标量最小值与最大值、范围外延，或 PostGIS 几何外延。只有当摘要能够证明分区不可能匹配时，规划器钩子才会移除它。
 
@@ -31,9 +32,20 @@ WHERE val >= 250;
 RESET table_range.enable_pruning;
 ```
 
-该索引永远不会被选中来扫描行；它拥有供规划器使用的紧凑摘要。插入会自动拓宽摘要。删除仍然安全，但可能让摘要比实际存活数据更宽，直到 VACUUM 或 REINDEX 将其收紧。
+该索引永远不会被选中来扫描行；它拥有供规划器使用的紧凑摘要。插入会自动拓宽摘要。删除仍然安全，但可能让摘要比实际存活数据更宽，直到 REINDEX 将其收紧；VACUUM 不会重建摘要。
 
 受支持的剪枝谓词包括标量比较、BETWEEN、空值测试、常量 IN 或 ANY 列表，以及范围与 PostGIS 几何类型的重叠。不受支持的表达式会保守地保留分区。
+
+### 从 0.1.1 升级
+
+0.1.2 修复了 0.1.1 的漏行与后端崩溃问题。先安装新二进制文件并重启 PostgreSQL，确保所有后端都不再运行旧代码。随后升级扩展，并重建每个 table_range 索引；分区表应重建父索引：
+
+```sql
+ALTER EXTENSION pg_table_range UPDATE TO '0.1.2';
+REINDEX INDEX events_tr;
+```
+
+重建前会忽略旧摘要，保留全部分区，以免错误剪枝。此版本拒绝部分索引。删除后如需收紧摘要，也应使用 REINDEX。
 
 ### 注意事项
 

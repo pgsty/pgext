@@ -1,11 +1,19 @@
-
-
-
 ## Usage
 
-Sources: [Codeberg README](https://codeberg.org/pgsql_tweaks/pgsql_tweaks), [documentation site](https://rtfm.pgsql-tweaks.org), [Codeberg tags](https://codeberg.org/pgsql_tweaks/pgsql_tweaks/tags).
+Sources:
 
-`pgsql_tweaks` provides DBA-oriented helper functions and views in the `pgsql_tweaks` schema. The upstream test matrix covers PostgreSQL 14 through PostgreSQL 19 beta 1; Pigsty packages it for PostgreSQL 14-18.
+- [Official source](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/README.md)
+- [Official source](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/pgsql_tweaks.control)
+- [Official source](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/makefile)
+- [Official source](https://api.pgxn.org/src/pgsql_tweaks/pgsql_tweaks-1.1.0/sql/out/versions/pgsql_tweaks--1.1.0.sql)
+
+`pgsql_tweaks` 1.1.0 provides DBA-oriented helper functions and views in the `pgsql_tweaks` schema. The upstream test matrix covers PostgreSQL 14 through PostgreSQL 19rc1; Pigsty packages it for PostgreSQL 14-18.
+
+### Enablement
+
+```sql
+CREATE EXTENSION pgsql_tweaks;
+```
 
 ### Data Type Check Functions
 
@@ -86,4 +94,4 @@ SELECT pgsql_tweaks.get_markdown_doku_by_schema('pgsql_tweaks');
 ### Caveats
 
 - Some views/functions depend on additional PostgreSQL supplied modules; upstream lists `pg_stat_statements` and `pgstattuple`.
-- The Codeberg tag for `v1.0.3` says release files were added; no material user-facing function or view delta was identified from the README and tag metadata.
+- This distribution is pure SQL and needs no preloaded shared library. After installing matching files, use `ALTER EXTENSION pgsql_tweaks UPDATE TO '1.1.0'` for an existing installation. Helpers still require the relevant object or statistics privileges.

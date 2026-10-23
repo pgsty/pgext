@@ -2,10 +2,11 @@
 
 Sources:
 
-- [DocumentDB v0.117-0 README](https://github.com/documentdb/documentdb/blob/v0.117-0/README.md)
-- [DocumentDB v0.117-0 changelog](https://github.com/documentdb/documentdb/blob/v0.117-0/CHANGELOG.md)
-- [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb/documentdb.control)
-- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
+- [DocumentDB v1.0-0 README](https://github.com/documentdb/documentdb/blob/v1.0-0/README.md)
+- [DocumentDB v1.0-0 changelog](https://github.com/documentdb/documentdb/blob/v1.0-0/CHANGELOG.md)
+- [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb/documentdb.control)
+- [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
+- [DocumentDB 1.0 release](https://github.com/documentdb/documentdb/releases/tag/v1.0-0)
 
 `documentdb` is the public PostgreSQL API extension for DocumentDB, an open-source MongoDB-compatible document database built on PostgreSQL. It stores BSON documents and implements CRUD, aggregation, full-text, geospatial, and vector workflows. MongoDB drivers require the separate DocumentDB gateway; installing this extension alone exposes the PostgreSQL API, not a wire-protocol listener.
 
@@ -13,7 +14,7 @@ Sources:
 
 The official deployment helper preloads the core and API libraries with `pg_cron`. Restart PostgreSQL after changing this setting:
 
-```conf
+```ini
 shared_preload_libraries = 'pg_cron, pg_documentdb_core, pg_documentdb, pg_documentdb_extended_rum'
 ```
 
@@ -59,6 +60,8 @@ For application compatibility, run the gateway and use a supported MongoDB drive
 
 ### Version and Operational Notes
 
-The 0.117-0 release adds collation-aware grouping and min/max behavior, and includes the JSON Schema enum and oneOf support introduced in 0.116-0. Scalar aggregate index pushdown is feature-flagged and disabled by default. The default `documentdb.rum_library_load_option` is now `require_documentdb_extended_rum` on all supported PostgreSQL majors, so deployments must supply the matching extended RUM library.
+Release 1.0-0 adds the first generally available release line. It fixes permission checks for zero-batch reads and write permissions for merge/output targets, along with crash, geospatial ordering and index-vacuum bugs. Custom role CRUD and post-join nested lookup remain disabled by default behind their settings. Match all libraries and apply the release upgrade SQL.
+
+The official DocumentDB Local container enables usage telemetry by default; native packages are unaffected. Set DOCUMENTDB_USAGE_TELEMETRY=false, NO_ANALYTICS=1 or DO_NOT_TRACK=1 to disable it in the container.
 
 MongoDB compatibility is not identical to every MongoDB server version. Test operators, index behavior, transactions, schema validation, authentication, and driver behavior used by the application. Match `documentdb`, `documentdb_core`, gateway, and optional distributed/index components to the same release line.

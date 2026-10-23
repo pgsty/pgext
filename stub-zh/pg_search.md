@@ -2,6 +2,12 @@
 
 来源：
 
+- [0.26.3 release](https://github.com/paradedb/paradedb/releases/tag/v0.26.3)
+
+- [docs/project/changelog/0.26.2.mdx](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/docs/project/changelog/0.26.2.mdx)
+- [pg_search/sql/pg_search--0.26.1--0.26.2.sql](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/sql/pg_search--0.26.1--0.26.2.sql)
+- [pg_search/Cargo.toml](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/Cargo.toml)
+
 - [Release 0.26.1](https://github.com/paradedb/paradedb/releases/tag/v0.26.1)
 - [Control](https://github.com/paradedb/paradedb/blob/529c77e9dffe4bd86b6b7971c019bb26b8eadbfa/pg_search/pg_search.control)
 
@@ -19,7 +25,7 @@
 - [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.0 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.26.2 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
@@ -118,3 +124,13 @@ LIMIT 20;
 ### 0.26.1 版本
 
 0.26.1 修复聚合与过滤结果、通用计划中的 RLS 行为及缓存处理。它未取消 0.26.0 的迁移要求：跨越该版本升级时，应重建每个含向量字段的索引，使用已移除向量选项的索引须重新创建。仍须保留 vector 依赖及服务器预加载、重启配置。
+
+### 0.26.2 聚合与位图更新
+
+`pdb.combine_agg(pdb.agg(...)) OVER ()` 可在 GROUP BY 分组间计算全局分面与聚合，聚合 FILTER 中的搜索操作符也可下推。新的 posting bitmaps 默认启用，用于符合条件的常见词 AND/OR 计数查询；字段选项 `bitmap_postings=false` 控制存储，`paradedb.enable_bitmap_postings = off` 可在查询时禁用而不重建索引。
+
+此版本修复通用预备计划中的搜索操作符、并行扫描重复执行时的错误结果或崩溃，以及同步备库缺失时后台合并阻碍主库快速关闭的问题。范围过滤的得分修正也可能改变排名。安装匹配库后更新 SQL 扩展，并按预加载库的维护流程重启；跨越 0.26.0 时仍须遵循前述向量索引迁移要求。
+
+### 0.26.3 行为修复
+
+0.26.3 修复了整数范围边界、空关系、较大 LIMIT、MPP 连接分面，以及扫描、向量训练和 VACUUM 中的取消处理；索引构建和写入现在拒绝超出范围的日期。升级恢复旧范围分词器，并修正表情符号过滤的配置行为。连接扫描新增窗口函数 FILTER 与易变投影支持。检查依赖这些边界行为的查询，并按上游升级流程更新每个数据库中的 SQL 扩展。上游版本与当前已构建软件包版本应分别核对。

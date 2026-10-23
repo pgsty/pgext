@@ -2,10 +2,10 @@
 
 Sources:
 
-- [DocumentDB v0.117-0 README](https://github.com/documentdb/documentdb/blob/v0.117-0/README.md)
-- [`documentdb_core` control file](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_core/documentdb_core.control)
-- [BSON SQL definitions](https://github.com/documentdb/documentdb/blob/v0.117-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
-- [Official preload helper](https://github.com/documentdb/documentdb/blob/v0.117-0/scripts/preload_libraries.sh)
+- [DocumentDB v1.0-0 README](https://github.com/documentdb/documentdb/blob/v1.0-0/README.md)
+- [`documentdb_core` control file](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_core/documentdb_core.control)
+- [BSON SQL definitions](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
+- [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
 
 `documentdb_core` is the low-level BSON type and operator layer used by DocumentDB. It is normally installed as a dependency of `documentdb`; by itself it does not provide collection CRUD, the MongoDB wire protocol, or the gateway.
 
@@ -13,7 +13,7 @@ Sources:
 
 `pg_documentdb_core` must be loaded through `shared_preload_libraries`, followed by a PostgreSQL restart:
 
-```conf
+```ini
 shared_preload_libraries = 'pg_documentdb_core'
 ```
 
@@ -57,4 +57,4 @@ Use explicit schema qualification unless `documentdb_core` is in `search_path`.
 
 BSON comparison, indexing, and numeric semantics follow DocumentDB's implementation and should not be assumed to match PostgreSQL `jsonb`. Most objects are infrastructure for `documentdb`; applications seeking collections and MongoDB commands should use the parent extension or gateway rather than building directly on internal types.
 
-Use SQL extension version 0.117-0 with matching DocumentDB components. This core layer continues to supply BSON infrastructure; collection and gateway workflows belong to the parent extension.
+Use SQL extension version 1.0-0 with matching DocumentDB components. This core layer continues to supply BSON infrastructure; collection and gateway workflows belong to the parent extension.

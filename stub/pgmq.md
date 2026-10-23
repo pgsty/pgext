@@ -2,10 +2,10 @@
 
 Sources:
 
-- [PGMQ v1.12.0 README](https://github.com/pgmq/pgmq/blob/v1.12.0/README.md)
-- [PGMQ v1.12.0 release notes](https://github.com/pgmq/pgmq/releases/tag/v1.12.0)
-- [Version 1.12.0 migration SQL](https://github.com/pgmq/pgmq/blob/v1.12.0/pgmq-extension/sql/pgmq--1.11.1--1.12.0.sql)
-- [PGMQ documentation](https://pgmq.github.io/pgmq/)
+- [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/README.md)
+- [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/pgmq.control)
+- [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/sql/pgmq--1.13.0--1.13.1.sql)
+- [Official source](https://github.com/pgmq/pgmq/releases/tag/v1.13.1)
 
 pgmq implements durable message queues as PostgreSQL tables and SQL functions. It supports delayed delivery, visibility timeouts, FIFO groups, message headers, polling, topics, and archival. Use it when queue transactions should be coordinated with relational changes in the same database.
 
@@ -77,3 +77,15 @@ For queue jobs, archive rows are stored in pgmq.a_<queue_name>. Treat those tabl
 - Archive or delete completed messages and enforce an archive-retention policy.
 - Long polling holds a database connection. Size connection pools and polling intervals for the number of consumers.
 - Keep queue names within pgmq's identifier rules; call the API rather than constructing table names from untrusted input.
+
+### 1.13.1 Upgrade and Security Fixes
+
+After installing matching extension files, update each database using it:
+
+```sql
+ALTER EXTENSION pgmq UPDATE TO '1.13.1';
+```
+
+Version 1.13.1 fixes function `search_path` and qualifies internal objects to prevent same-name objects from influencing execution. `pg_monitor` no longer gets whole-message-table reads; monitoring access is limited to metadata, visibility/enqueue timestamps and message-id sequences. The upgrade also cleans existing and default grants. Revocation failures can be warnings rather than fatal errors, so inspect the upgrade log and verify the resulting grants. Mixed-case queue names also receive an insert-notification fix.
+
+The extension is implemented in SQL and needs no preload; PostgreSQL privileges still govern queue creation and management. An upstream version update does not establish availability of updated Pigsty packages.

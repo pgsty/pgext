@@ -2,21 +2,17 @@
 
 Sources:
 
-- [extensions/pg_ml/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/Cargo.toml)
-- [extensions/pg_ml/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/src/lib.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
-- [extensions/pg_ml/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/pgbrew.toml)
-- [extensions/pg_ml/pg_ml.control](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/pg_ml.control)
-- [README.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/README.md)
-- [extensions/pg_ml/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/Cargo.toml)
-- [extensions/pg_ml/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/src/lib.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/LICENSE)
-- [extensions/pg_ml/README.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/README.md)
-- [extensions/pg_ml/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ml/pgbrew.toml)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_ml/Cargo.toml)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_ml/src/lib.rs)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/crates/pg_bgworker/src/supervision.rs)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/CHANGELOG.md)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_ml/pgbrew.toml)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_ml/pg_ml.control)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/README.md)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/LICENSE)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_ml/README.md)
 
-`pg_ml` 0.3.3 manages PyCaret experiments, model training and prediction through `pgml`, using a managed Python environment and background jobs.
+`pg_ml` 0.3.4 manages PyCaret experiments, model training and prediction through `pgml`, using a managed Python environment and background jobs.
 
 ### Core Workflow
 
@@ -55,3 +51,7 @@ SELECT * FROM pgml.worker_status();
 ### Idle Workers in 0.3.3
 
 Repository release 0.7.2 contains extension 0.3.3. Read-only or empty-claim polls no longer allocate a transaction ID merely because they use the SPI bridge; an actual row write still does. This removes empty commit WAL from idle polling. Install matching libraries, restart the preloaded workers, and update the SQL extension. The existing privilege, external-service and pre-0.3.0 migration boundaries remain.
+
+### macOS Workers in 0.3.4
+
+Repository release 0.7.3 contains extension 0.3.4 and fixes the macOS worker's Python interpreter environment. The macOS virtual environment excludes CatBoost where a suitable ARM64 wheel is unavailable; XGBoost and LightGBM also require libomp. Do not assume identical model availability across platforms; inspect the actual environment after setup. PostgreSQL features cover 14–18, with the existing preload, restart and worker-database requirements unchanged.

@@ -2,15 +2,15 @@
 
 Sources:
 
-- [extensions/pg_feature/pg_feature.control](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_feature/pg_feature.control)
-- [README.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/README.md)
-- [extensions/pg_feature/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_feature/Cargo.toml)
-- [extensions/pg_feature/src/lib.rs](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_feature/src/lib.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/LICENSE)
-- [extensions/pg_feature/README.md](https://github.com/matroidbe/pg_extensions-releases/blob/2617326c54d1ef3c51cf996b2e2ef1123aefae25/extensions/pg_feature/README.md)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_feature/pg_feature.control)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/README.md)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_feature/Cargo.toml)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_feature/src/lib.rs)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/CHANGELOG.md)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/LICENSE)
+- [Official source](https://github.com/matroidbe/pg_extensions-releases/blob/f6caae20c3500dcb2b8419ed68f9b380333b552b/extensions/pg_feature/README.md)
 
-`pg_feature` 0.3.0 provides relational feature synthesis in `pgft`. Register table relationships and time indexes, then produce features using aggregations and temporal cutoffs.
+`pg_feature` 0.4.0 provides relational feature synthesis in `pgft`. Register table relationships and time indexes, then produce features using aggregations and temporal cutoffs.
 
 ### Core Workflow
 
@@ -28,3 +28,7 @@ SELECT * FROM pgft.list_features('event_features');
 ### Operational Boundaries
 
 The control does not require superuser-only installation, but object-creation privileges still apply. No preload or Python runtime is required. `set_time_index` and `add_relationship` establish metadata; `synthesize_features` creates feature outputs, and `list_features` inspects definitions. Registered timestamps and cutoffs must prevent future-data leakage. Materialized outputs require explicit refresh, and generated SQL/relationships need review before use on large or sensitive tables. This is an unsupported proof of concept under Matroid Source Available License 1.0. APIs may change. Version 0.3.0 is the new upgrade baseline: earlier 0.2.0 installations require a rehearsed data migration/recreation, not ordinary ALTER EXTENSION UPDATE. Back up data and dependencies before following that destructive upstream path.
+
+### Consistency Fixes in 0.4.0
+
+Repository release 0.7.3 contains extension 0.4.0, fixing agreement between training matrices and live feature SQL, depth-two computed features, cutoffs and windows. Column counts must retain null semantics rather than becoming counts of all rows. The upgrade preserves stored cutoff intervals without a cascading drop. Validate generated SQL and training/online results against representative data. PostgreSQL features cover 14–18; installations on 0.3.0 or later use matching upgrade files, while earlier versions retain the migration boundary above.

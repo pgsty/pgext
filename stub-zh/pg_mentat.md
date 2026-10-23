@@ -2,15 +2,15 @@
 
 来源：
 
-- [v1.14.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/README.md)
-- [v1.14.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.14.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.14.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.14.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.14.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.14.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.14.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.14.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [v1.17.2 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/README.md)
+- [v1.17.2 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.17.2 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.17.2 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.17.2 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.17.2 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.17.2 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.17.2 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/subscriptions.rs)
 
 `pg_mentat` 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
 
@@ -93,7 +93,7 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 ### 要求与注意事项
 
-- 上游 v1.14.0 支持 PostgreSQL 13-18。上游 PostgreSQL crate 声明使用 pgrx 0.17；软件包二进制可能使用不同工具链，应核对其自身的兼容性元数据。
+- 上游 v1.17.1 的 Cargo 特性覆盖 PostgreSQL 13-19，新增 PG19 支持并在 19rc1 上测试。当前使用 pgrx 0.19.3；具体二进制覆盖范围需核对所选发行包。
 - 该扩展不可重定位，也不要求 `shared_preload_libraries`。
 - 可选的 `mentatd` HTTP/Datomic 线协议守护进程是上游配套程序，不包含在 Pigsty `pg_mentat` 软件包中。仅通过 SQL 使用扩展并不需要它。
 - Datalog 编译、递归 pull、全文属性、订阅和历史记录可能呈现截然不同的成本特征。请使用文档所述的 explain 辅助函数检查生成的 SQL，并在代表性数据上进行基准测试。
@@ -111,10 +111,10 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 1.9.1 修复了一项重要备份缺陷：更早版本未注册扩展成员表的数据，`pg_dump` 的逻辑备份会漏掉 mentat 数据，恢复后存储为空。升级后应立即重新生成并验证逻辑备份；旧备份不会自动得到修复。物理备份不受该缺陷影响。
 
-安装新版文件后，通过升级链更新到 1.14.0。升级会建立索引并可能阻塞写入，应安排维护窗口：
+安装新版文件后，通过升级链更新到 1.17.1。升级会建立索引并可能阻塞写入，应安排维护窗口：
 
 ```sql
-ALTER EXTENSION pg_mentat UPDATE TO '1.14.0';
+ALTER EXTENSION pg_mentat UPDATE TO '1.17.2';
 ```
 
 已部署数据库仍需执行 SQL 扩展升级并验证新的逻辑备份。
@@ -129,4 +129,18 @@ ALTER EXTENSION pg_mentat UPDATE TO '1.14.0';
 
 启用 `script` 的构建可用 `:db/fn` 定义返回事务数据的事务函数，读取的是事务开始时的数据库状态。执行受 `mentat.script_max_*` 和 `mentat.txfn_max_depth`（默认 16）限制。`:db/retractEntity` 现会撤回指向目标实体的引用，但保留引用方实体。EXPLAIN 辅助函数现能正确处理集合、元组和关系输入。升级到 1.14.0 会加入函数属性并替换向量辅助函数，无需数据迁移。
 
-由于源码使用的 pgrx 解析器拒绝该键，上游发布打包流程会向成品控制文件注入 `trusted = true`。依赖普通用户安装能力前，应检查实际安装的控制文件；源码构建与发布成品的可信设置可能不同。
+从 1.17.0 起，控制文件使用 `superuser = true` 与 `trusted = true`，修复普通用户可信安装失败的问题。安装者获得模式使用权及表、序列的可转授权权限，公共角色不会自动获得访问权；旧版本中 `superuser = false` 与可信标记组合导致的失败不再适用于新版。
+
+### 1.16.0 与 PostgreSQL 19
+
+1.16.0 新增 PostgreSQL 19 支持，并升级到 pgrx 0.19.3；从 1.15.0 执行 `ALTER EXTENSION pg_mentat UPDATE TO '1.16.0'` 是无模式变更的升级。SQL 数据模型和脚本特性边界不变。1.15.0 的 DuckDB 修复针对独立 DuckDB 后端，不表示 PostgreSQL 存储发生变化。Pigsty 当前构建包仍为 1.14.0，目录中的上游版本不代表新包已经发布。
+
+### 1.17.1 的查询与权限边界
+
+1.17.0 修复计算值上的谓词，以及多条件查询中的 `get-else` 和 `missing?`。1.17.1 主要更新独立 DuckDB 后端和构建依赖，不改变 PostgreSQL 行为。可信安装不代表所有管理操作都对普通角色开放，启用行级安全与实际调整索引仍有所有者或超级用户限制。
+
+上游仍列出 `create_store()` 写入路径缺少投影表的问题；多存储应使用 `mentat.stores` 中的 `store_id` 记录路径，不要把该辅助函数当作已修复。普通用户备份及恢复应使用正确的所有者角色，并验证数据与权限。
+
+### 1.17.2 安装修复
+
+1.17.2 修复了 1.17.0–1.17.1 的可信安装提权漏洞：安装脚本中未限定模式的函数调用可能被数据库所有者预先创建的同名函数劫持。新版限定内置函数并固定搜索路径。升级步骤本身没有模式变化，但不能撤销已经发生的恶意安装。如果非超级用户曾在可创建公共模式函数的数据库中安装受影响版本，应审查非系统模式的同名函数与超级用户角色。旧软件包版本不能据此被视为已更新。

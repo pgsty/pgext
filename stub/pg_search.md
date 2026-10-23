@@ -2,6 +2,12 @@
 
 Sources:
 
+- [0.26.3 release](https://github.com/paradedb/paradedb/releases/tag/v0.26.3)
+
+- [docs/project/changelog/0.26.2.mdx](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/docs/project/changelog/0.26.2.mdx)
+- [pg_search/sql/pg_search--0.26.1--0.26.2.sql](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/sql/pg_search--0.26.1--0.26.2.sql)
+- [pg_search/Cargo.toml](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/Cargo.toml)
+
 - [Release 0.26.1](https://github.com/paradedb/paradedb/releases/tag/v0.26.1)
 - [Control](https://github.com/paradedb/paradedb/blob/529c77e9dffe4bd86b6b7971c019bb26b8eadbfa/pg_search/pg_search.control)
 
@@ -19,7 +25,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.0 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.26.2 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -118,3 +124,13 @@ The release adds beta `partition_by` index partitioning, window-aggregate pushdo
 ### Version 0.26.1
 
 Version 0.26.1 fixes aggregate/filter correctness, RLS behaviour in generic plans and cache handling. It does not remove the 0.26.0 migration requirement: when crossing that release, rebuild every index containing a vector field and recreate indexes using removed vector options. Keep the required vector dependency and server preload/restart configuration.
+
+### Aggregates and Bitmaps in 0.26.2
+
+`pdb.combine_agg(pdb.agg(...)) OVER ()` computes global facets and aggregates across GROUP BY groups, and search operators in aggregate FILTER clauses can be pushed down. New posting bitmaps are enabled by default for eligible count queries combining common terms with AND/OR. The field option `bitmap_postings=false` controls storage; `paradedb.enable_bitmap_postings = off` disables their query use without rebuilding the index.
+
+This release fixes search operators in generic prepared plans, wrong results or crashes when parallel scans are rescanned, and background merges blocking fast primary shutdown when a synchronous standby is missing. Corrected range-filter scores can also change ranking. Install matching libraries, update the SQL extension and restart through the normal preload-library maintenance procedure. Crossing 0.26.0 still requires the vector-index migration described above.
+
+### 0.26.3 Behavior Fixes
+
+0.26.3 fixes integer range boundaries, empty relations, larger LIMIT values, MPP join facets, and cancellation during scans, vector training and VACUUM. Index creation and inserts now reject out-of-range dates. The upgrade restores legacy range tokenizers and corrects configured emoji removal. Join scans add support for window-function FILTERs and volatile projections. Review queries that depend on these boundary behaviors and follow the upstream SQL-extension upgrade procedure in each database. Check upstream and currently built package versions separately.

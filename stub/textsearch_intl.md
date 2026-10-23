@@ -2,19 +2,19 @@
 
 Sources:
 
-- [README.md](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/README.md)
-- [textsearch_intl--1.0.sql](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/textsearch_intl--1.0.sql)
-- [textsearch_intl.control](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/textsearch_intl.control)
-- [META.json](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/META.json)
-- [LICENSE](https://github.com/benjaminsanborn/textsearch_intl/blob/3cc6bf9a9c22a3946802e95ff472678bb1c2c60d/LICENSE)
+- [README.md](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/README.md)
+- [textsearch_intl--1.0.sql](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/textsearch_intl--1.0.sql)
+- [textsearch_intl.control](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/textsearch_intl.control)
+- [META.json](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/META.json)
+- [LICENSE](https://github.com/benjaminsanborn/textsearch_intl/blob/6efb0a28a5f6643b46ecd2e9b8de75c30fb82680/LICENSE)
 - [Rename commit](https://github.com/benjaminsanborn/textsearch_intl/commit/b023b27aa16b82fc3c1b80ef0928e9f185e7f43e)
-- [PGXN icu_parser 1.1.0](https://pgxn.org/dist/icu_parser/1.1.0/)
+- [PGXN textsearch_intl 1.0.1](https://pgxn.org/dist/textsearch_intl/1.0.1/)
 
 `textsearch_intl` combines ICU word segmentation, normalization and n-gram matching for multilingual text search. It requires PostgreSQL 14 or later, a UTF8 database, ICU and `unaccent`; upstream CI covers PostgreSQL 14–18.
 
 ### Name and Version
 
-The project renamed `icu_parser` to `textsearch_intl` on 2026-10-09 and restarted versioning: the current source has SQL/control version `1.0` and META version `1.0.0`. The latest published GitHub/PGXN release is still the old `icu_parser` distribution `1.1.0`, with SQL version `1.1`. The renamed source has no release tag or SQL upgrade script from the old name.
+The project renamed `icu_parser` to `textsearch_intl` on 2026-10-09 and restarted versioning. The renamed PGXN distribution 1.0.1 was published on 2026-10-22. Its SQL/control version remains `1.0`; the distribution number is not a SQL upgrade target. There is no direct SQL upgrade script from the old name: inspect dependent objects and plan their recreation before migrating.
 
 ### Core Workflow
 

@@ -2,11 +2,11 @@
 
 来源：
 
-- [v5.0 README](https://github.com/HexaCluster/credcheck/blob/v5.0/README.md)
-- [v5.0 changelog](https://github.com/HexaCluster/credcheck/blob/v5.0/ChangeLog)
-- [SQL objects 5.0.0](https://github.com/HexaCluster/credcheck/blob/v5.0/sql/credcheck--5.0.0.sql)
-- [Password history WAL implementation](https://github.com/HexaCluster/credcheck/blob/v5.0/credcheck.c)
-- [Login-event setup](https://github.com/HexaCluster/credcheck/blob/v5.0/event_trigger.sql)
+- [v6.0 README](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/README.md)
+- [v6.0 changelog](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/ChangeLog)
+- [SQL objects 6.0.0](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/sql/credcheck--6.0.0.sql)
+- [Password history WAL implementation](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/credcheck.c)
+- [Login-event setup](https://github.com/HexaCluster/credcheck/blob/ac9127dfe0892579a42bd2255638f9948074a151/event_trigger.sql)
 
 `credcheck` 在角色创建、密码修改和角色重命名时检查用户名与明文密码，还能限制密码重用、封禁多次认证失败的用户，并要求首次登录修改密码。策略由超级用户配置；默认值不构成完整的密码强度策略。
 
@@ -28,7 +28,7 @@ CREATE ROLE app_user LOGIN PASSWORD 'example-Strong-Pass#123';
 SELECT rolename, password_date FROM pg_password_history;
 ```
 
-时间间隔单位为天。安装 SQL 扩展与加载服务器范围的钩子是两个步骤。上游发布版 5.0 使用 SQL 扩展版本 5.0.0；安装升级文件后需要重启，以重新加载库。
+时间间隔单位为天。安装 SQL 扩展与加载服务器范围的钩子是两个步骤。上游发布版 6.0 使用 SQL 扩展版本 6.0.0；安装升级文件后需要重启，以重新加载库。
 
 ### 策略索引
 
@@ -49,7 +49,7 @@ CrackLib 强度检查仅在库编译时启用相应支持且字典可用时生�
 
 ### 密码历史与复制
 
-历史记录保存 SHA-256 密码散列，在数据库间共享，并持久化到 `$PGDATA/pg_password_history`。应将该文件纳入备份，并保护 SQL 历史视图的访问权限；该视图默认向 PUBLIC 授予查询权限。`credcheck.history_max_size` 改变共享内存容量，需要重启。
+历史记录保存 SHA-256 密码散列，在数据库间共享，并持久化到 `$PGDATA/pg_password_history`。应将该文件纳入备份，并保护 SQL 历史视图的访问权限；6.0 中该视图撤回 PUBLIC 权限，并向 pg_read_all_stats 授予查询权限。`credcheck.history_max_size` 改变历史容量，需要重启。
 
 5.0 在 PostgreSQL 15 及以上通过编号 150 的自定义 WAL 资源管理器复制历史变化。重放这些 WAL 的副本和恢复服务器应预加载匹配的库。较早 PostgreSQL 版本保留文件持久化历史，但没有这项复制支持。历史重置和时间戳测试函数在恢复期间拒绝执行。
 
@@ -83,3 +83,11 @@ ALTER ROLE app_user SET credcheck_internal.force_change_password = true;
 ### 明文边界
 
 强度与重用检查需要在修改密码时获得明文。默认拒绝已计算散列的密码，包括 psql 的 `\password` 提交的密码。启用 `credcheck.encrypted_password_allowed` 可以接受它们，但不会提供等效的明文检查。应保护密码修改连接，也不要假设扩展会追溯扫描已有凭证。创建无密码角色，或重命名没有密码的角色时，会跳过用户名检查。
+
+### 6.0 升级与新接口
+
+6.0 将密码历史迁移到 mmap 文件中的整数索引哈希表。首次升级启动会导入 5.x 历史，并把旧文件重命名为 pg_password_history.legacy-migrated；主库和备库都执行该迁移。升级前保留并验证历史文件备份。安装匹配库并重启后，在使用 SQL 对象的数据库执行 `ALTER EXTENSION credcheck UPDATE TO '6.0.0'`。当前 SQL 会撤回历史函数和视图的 PUBLIC 权限，并将视图查询权授予 pg_read_all_stats；复查已有定制授权。
+
+`credcheck.password_valid_min` 为新建角色设置较短的初始密码有效期，默认 0 表示关闭；既有角色修改密码仍使用原有效期策略。新函数 `pg_check_password(username, password)` 检查候选凭证，违规时报错、通过时返回 true，不检查密码重用历史。
+
+`credcheck.lastlog` 默认关闭，启用后可用 pg_lastlog 查看会话与服务器启动、关闭事件；可选 SQL 跟踪会记录查询文本，应明确访问权限和保留范围。PgBouncer 的失败次数和首次登录改密集成需要按官方文档配置额外 SQL 与连接池钩子，预加载扩展不会自动完成。`credcheck.no_password_logging` 现在遮蔽密码字面量而保留错误语句结构。此版还修复自助 ALTER ROLE 权限提升和内存缺陷。
