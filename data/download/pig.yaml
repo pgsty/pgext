@@ -6,7 +6,7 @@
 # Checksums are deliberately not copied in — the release's own checksums.txt
 # is linked instead, so there is one authority for them.
 
-version: 1.10.1
+version: 1.10.2
 repo: pgsty/pig
 published: true
 
@@ -72,8 +72,8 @@ channels:
     note: >-
       RPM, DEB and tarballs for Linux and macOS on both architectures.
       Verify against the release's own
-      [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.10.1/checksums.txt).
-    note_zh: '面向 Linux 与 macOS、双架构的 RPM、DEB 与压缩包。请对照该发布自带的 [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.10.1/checksums.txt) 校验。'
+      [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.10.2/checksums.txt).
+    note_zh: '面向 Linux 与 macOS、双架构的 RPM、DEB 与压缩包。请对照该发布自带的 [checksums.txt](https://github.com/pgsty/pig/releases/download/v1.10.2/checksums.txt) 校验。'
     steps:
       - title: Linux x86_64 tarball
         title_zh: Linux x86_64 压缩包

@@ -1,5 +1,5 @@
 ---
-title: "PIG 1.10.1 Documentation"
+title: "PIG 1.10.2 Documentation"
 description: The Missing Package Manager for PostgreSQL Extensions
 icon: fa-solid fa-piggy-bank
 page_width: full
@@ -10,9 +10,9 @@ comments: false
 weight: 100
 ---
 
-Documentation version: **v{{< param pig_version >}}**. Read the [release notes](/release/pig/#v1101).
+Documentation version: **v{{< param pig_version >}}**. Read the [release notes](/release/pig/#v1102).
 
-This maintenance release updates Go to `1.27.3` and refreshes the embedded extension catalog to **{{< param pig_catalog_count >}} entries**.
+This release adds `pg_nanotime` and refreshes extension versions and package metadata, bringing the embedded catalog to **{{< param pig_catalog_count >}} entries**.
 
 PIG provides commands to find, install, and build PostgreSQL extension packages. It also manages PostgreSQL, Patroni, pgBackRest, and Pigsty workflows. Package installation uses the system's `apt`, `dnf`, or `yum`.
 
