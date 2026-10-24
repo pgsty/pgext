@@ -2,12 +2,12 @@
 
 来源：
 
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/README.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/CHANGELOG.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/pg_sift.control)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/sql/pg_sift--3.2.sql)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/README.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/CHANGELOG.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/pg_sift.control)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/sql/pg_sift--3.2.sql)
 
-`pg_sift` 发行版 3.2.2 安装的 SQL 扩展版本为 3.2，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。支持 PostgreSQL 17–18，PG19 仍为实验支持。首次安装需要超级用户，但无需预加载或重启服务器。
+`pg_sift` 发行版 3.2.3 安装的 SQL 扩展版本为 3.2，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。支持 PostgreSQL 17–18，PG19 仍为实验支持。首次安装需要超级用户，但无需预加载或重启服务器。
 
 ### 文本检索
 
@@ -62,3 +62,7 @@ ALTER EXTENSION pg_sift UPDATE TO '3.2';
 ```sql
 ALTER FUNCTION sift.table_paths_drop() SECURITY DEFINER SET search_path = pg_catalog, pg_temp;
 ```
+
+### 3.2.3 动态库修复
+
+3.2.3 保持 SQL 版本 3.2，修复关系缓存生命周期错误；该错误在并发目录或缓存活动期间可能导致后端崩溃或堆内存损坏。新版还会在规划器钩子加载过晚时，对新后端的首条普通 SELECT 重新规划。首条带绑定参数的查询仍需可选的会话/共享预加载才能避免这一规划限制。替换动态库后应重新连接旧会话；3.2.3 没有引入新 SQL 版本，也不要求例行重建索引。

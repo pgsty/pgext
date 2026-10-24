@@ -24,7 +24,7 @@ page_width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] Testing release; destructive crash action affects the entire instance. Disposable test clusters only.
+> [!Note] Test clusters only; a crash affects the instance; 0.2 breaks arm/disarm/status; reconnect, restore grants.
 
 
 ## Packages

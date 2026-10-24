@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `graph` |
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_liquid" >}} {{< ext "onesparse" >}} {{< ext "pgrdf" >}} {{< ext "ltree" >}} {{< ext "sparql" >}} |
 
-> [!Note] PGXN distribution and package are pggraph; installed extension name is graph.
+> [!Note] pkg pggraph; 1.2.1: update extension, rebuild all registered graphs.
 
 
 ## Packages

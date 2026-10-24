@@ -28,9 +28,9 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `turbovec` |
-|   **See Also**    | `pg_turboquant` {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} |
+|   **See Also**    | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} |
 
-> [!Note] 2.14.1 fixes concurrent-write/VACUUM stale reads and resurrected index entries. After upgrading, recycle backends; REINDEX older IVF indexes inserted into after VACUUM, or any index emptied by VACUUM while a writer was open. Built with pgrx 0.19.3 for PostgreSQL 14-18.
+> [!Note] 2.14.1: recycle backends; REINDEX old IVF inserted into after VACUUM, or any index emptied by VACUUM with a writer open; PG19 experimental.
 
 
 ## Packages

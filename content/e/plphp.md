@@ -27,8 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | `bytea_plphp` `hstore_plphp` `jsonb_plphp` |
-|   **See Also**    | {{< ext "plruby" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "plv8" >}} `jsonb_plphp` `hstore_plphp` `bytea_plphp` |
+|   **See Also**    | {{< ext "plruby" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "plv8" >}} |
 
 > [!Note] Uses non-ZTS PHP embed. EL8/EL9 RPMs require the PHP 8.2/8.3 module streams respectively; DEBs pin the matching PHP embed runtime for each OS. No preload or fixed schema. The three optional transforms are not included in this package.
 

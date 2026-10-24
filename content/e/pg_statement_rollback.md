@@ -30,6 +30,8 @@ page_width: full
 |    **Need By**    | {{< ext "pg_dbms_errlog" >}} |
 |   **See Also**    | {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "pgtt" >}} {{< ext "ivorysql_ora" >}} {{< ext "session_variable" >}} {{< ext "db_migrator" >}} {{< ext "db2_fdw" >}} {{< ext "babelfishpg_common" >}} {{< ext "tds_fdw" >}} |
 
+> [!Note] Module-only pkg 1.6; source control 1.6.0 is not installed.
+
 
 ## Packages
 

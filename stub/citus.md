@@ -2,23 +2,25 @@
 
 Sources:
 
-- [Citus v14.2.0 release](https://github.com/citusdata/citus/releases/tag/v14.2.0)
-- [Citus v14.2.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.2.0/CHANGELOG.md)
-- [Citus v14.2.0 control file](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/distributed/citus.control)
+- [Citus v14.3.0 release](https://github.com/citusdata/citus/releases/tag/v14.3.0)
+- [Citus v14.3.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.3.0/CHANGELOG.md)
+- [Citus v14.3.0 control file](https://github.com/citusdata/citus/blob/v14.3.0/src/backend/distributed/citus.control)
+- [Citus v14.3.0 README](https://github.com/citusdata/citus/blob/v14.3.0/README.md)
 - [What is Citus?](https://docs.citusdata.com/en/stable/get_started/what_is_citus.html)
 - [Citus Utility Functions](https://docs.citusdata.com/en/stable/develop/api_udf.html)
+- [Citus upgrade procedure](https://docs.citusdata.com/en/stable/admin_guide/upgrading_citus.html)
 
 Citus turns PostgreSQL into a distributed database by sharding tables across worker nodes while keeping PostgreSQL SQL, indexes, extensions, transactions, and operational tooling as the user-facing surface. It is commonly used for multi-tenant SaaS databases, real-time analytics, time-series/event workloads, and distributed microservice schemas.
 
-The local Pigsty catalog packages Citus as `citus` and exposes the lead extension `citus`; the same package also contains `citus_columnar`. Citus is a preload extension, so every node must load the library before `CREATE EXTENSION`.
+The extension name is `citus`. Release 14.3.0 uses SQL/control version `14.3-1` and supports PostgreSQL 16-18. Every node must preload the library before a superuser runs `CREATE EXTENSION`; the extension is not relocatable.
 
 ### Enable Citus
 
-```conf
+```ini
 shared_preload_libraries = 'citus'
 ```
 
-Restart PostgreSQL on the coordinator and workers, then create the extension in the database:
+Preserve any other required preload libraries. Restart PostgreSQL on the coordinator and workers, then create the extension in each participating database:
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS citus;
@@ -150,7 +152,7 @@ SELECT citus_cluster_changes_unblock();
 
 Pair these functions with regular PostgreSQL backup discipline: consistent checkpoints, WAL archiving, snapshot ordering across nodes, and a tested restore procedure.
 
-### Version 14.2 Operations
+### Administrative Controls
 
 Citus 14.2 adds the superuser-only `citus_internal.distribute_object()` repair helper for supported database objects whose metadata was not propagated correctly. Treat it as a targeted recovery operation, not as the normal distribution API.
 
@@ -158,9 +160,29 @@ The release also adds `citus.allow_unsafe_insert_select_pushdown` for explicitly
 
 ### Caveats
 
-- Pigsty local metadata currently tracks Citus 14.x for PostgreSQL 16-18; Citus 14 dropped PostgreSQL 15 support.
+- Citus 14 supports PostgreSQL 16-18 and dropped PostgreSQL 15 support.
 - `shared_preload_libraries = 'citus'` must be set before extension creation. A plain `CREATE EXTENSION citus` is not enough on a fresh server.
 - Choose the distribution column carefully. Primary keys and unique constraints on distributed tables generally need to include the distribution column.
 - Cross-shard joins, repartition joins, distributed DDL, and multi-shard writes are powerful but have different planning and locking behavior from single-node PostgreSQL.
-- Citus includes its own columnar storage surface through `citus_columnar`; Pigsty metadata marks it as conflicting with Hydra `columnar`.
+- The distribution also provides `citus_columnar`; its storage and maintenance requirements are separate from distributing row tables.
 - The cluster-change blocking functions are operational tools for backups. Do not leave a cluster blocked after a failed backup script.
+
+### Release 14.3 and Upgrades
+
+Release 14.3.0 merges sorted worker results for multi-shard ORDER BY queries and fetches rows in smaller batches where possible. It adds `citus.enable_or_clause_arm_pruning` to prune irrelevant OR-clause arms per shard. It also restricts internal metadata cleanup to superusers, uses an empty search path for internal SPI queries, and replays object definitions under their owner's restricted execution context.
+
+Coordinate the upgrade across all nodes. After installing matching binaries and restarting PostgreSQL, run the SQL update in each database containing Citus:
+
+```sql
+ALTER EXTENSION citus UPDATE TO '14.3-1';
+SELECT extversion FROM pg_extension WHERE extname = 'citus';
+SELECT citus_version();
+```
+
+Finish the cluster upgrade on the coordinator:
+
+```sql
+CALL citus_finish_citus_upgrade();
+```
+
+Use the SQL/control version in ALTER EXTENSION, not the package version. If both Citus and PostgreSQL need upgrading, complete the Citus upgrade first and follow the separate PostgreSQL-major upgrade procedure.

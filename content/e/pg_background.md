@@ -30,6 +30,8 @@ page_width: full
 |    **Need By**    | {{< ext "pg_dbms_lock" >}} |
 |   **See Also**    | {{< ext "pg_task" >}} {{< ext "pg_durable" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_retry" >}} {{< ext "pglock" >}} {{< ext "pgmq" >}} {{< ext "ulak" >}} {{< ext "omni_worker" >}} {{< ext "pg_cron" >}} |
 
+> [!Note] pkg 2.0.4; SQL 2.0.
+
 
 ## Packages
 

@@ -5,7 +5,7 @@ description: "QoS resource governor extension for PostgreSQL sessions and querie
 weight: 5240
 categories: ["ADMIN"]
 languages: ["C"]
-licenses: ["GPL-3.0"]
+licenses: ["GPL-3.0-or-later"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5240** | {{< badge content="qos" link="https://github.com/appstonia/pg_qos" >}} | {{< ext "qos" "pg_qos" >}} | `1.1.0` | {{< category "ADMIN" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **5240** | {{< badge content="qos" link="https://github.com/appstonia/pg_qos" >}} | {{< ext "qos" "pg_qos" >}} | `1.1.0` | {{< category "ADMIN" >}} | {{< license "GPL-3.0-or-later" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_kpart" >}} {{< ext "pg_readonly" >}} {{< ext "prioritize" >}} {{< ext "block_copy_command" >}} {{< ext "safeupdate" >}} {{< ext "pg_command_fw" >}} {{< ext "pg_strict" >}} {{< ext "pg_hint_plan" >}} |
 
-> [!Note] Upstream PG15-18; RPM also carries PG14. Requires preload.
+> [!Note] pkg 1.1.0; SQL 1.1; preload; upgrade library, restart, update extension; CPU affinity Linux-only.
 
 
 ## Packages
@@ -37,7 +37,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_qos` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_qos_18" "green" >}} {{< bg "17" "pg_qos_17" "green" >}} {{< bg "16" "pg_qos_16" "green" >}} {{< bg "15" "pg_qos_15" "green" >}} {{< bg "14" "pg_qos_14" "green" >}} | `pg_qos_$v` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_qos_18" "green" >}} {{< bg "17" "pg_qos_17" "green" >}} {{< bg "16" "pg_qos_16" "green" >}} {{< bg "15" "pg_qos_15" "green" >}} {{< bg "14" "pg_qos_14" "red" >}} | `pg_qos_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-qos" "green" >}} {{< bg "17" "postgresql-17-qos" "green" >}} {{< bg "16" "postgresql-16-qos" "green" >}} {{< bg "15" "postgresql-15-qos" "green" >}} {{< bg "14" "postgresql-14-qos" "red" >}} | `postgresql-$v-qos` | - |
 {.packages}
 

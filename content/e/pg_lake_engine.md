@@ -33,7 +33,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_clickhouse" >}} {{< ext "columnar" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] Query engine using pgduck_server. Package 3.5.3; SQL 3.5.
+> [!Note] pkg 3.5.3; SQL 3.5; auto-loaded; DuckDB needs matching PG-major pgduck_server.
 
 
 ## Packages

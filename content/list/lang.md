@@ -15,7 +15,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 434 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 435 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 80 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 69 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
@@ -27,7 +27,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="434 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="435 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -106,7 +106,7 @@ The traditional PostgreSQL extension language
 | 2770 | {{< alias "jsquery" >}} | data type for jsonb inspection |
 | 2780 | {{< alias "pg_hint_plan" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2790 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
-| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | filter statements by their execution plans. |
+| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | Cooperative statement and transaction guards based on estimated plan cost |
 | 2820 | {{< alias "pg_variables" >}} | Session-scoped variables with scalar, array, and record types |
 | 2830 | {{< alias "imgsmlr" >}} | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
@@ -202,7 +202,7 @@ The traditional PostgreSQL extension language
 | 3650 | {{< alias "pg_sphere" "pgsphere" >}} | spherical objects with useful functions, operators and index support |
 | 3660 | {{< alias "country" "pg_country" >}} | Country data type, ISO 3166-1 |
 | 3680 | {{< alias "currency" "pg_currency" >}} | Custom PostgreSQL currency type in 1Byte |
-| 3700 | {{< alias "collection" "pgcollection" >}} | Memory optimized data type to be used inside of plpglsql func |
+| 3700 | {{< alias "collection" "pgcollection" >}} | Associative-array data types for high-performance PL/pgSQL workflows |
 | 3710 | {{< alias "istore" >}} | Integer key/value types with arithmetic, aggregation, and GIN indexing |
 | 3720 | {{< alias "pgmp" >}} | Multiple Precision Arithmetic extension |
 | 3730 | {{< alias "numeral" >}} | numeral datatypes extension |
@@ -217,6 +217,7 @@ The traditional PostgreSQL extension language
 | 3820 | {{< alias "acl" "pg_acl" >}} | ACL Data type |
 | 3850 | {{< alias "pg_duration" >}} | data type for representing durations |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat date type and AD/BS conversion functions |
+| 3870 | {{< alias "pg_nanotime" >}} | Nanosecond timestamp and fixed-duration interval types |
 | 3880 | {{< alias "pg_rrule" >}} | RRULE field type for PostgreSQL |
 | 3900 | {{< alias "timestamp9" >}} | timestamp nanosecond resolution |
 | 3910 | {{< alias "pgbson" >}} | BSON data type and accessor functions for PostgreSQL |
@@ -600,7 +601,7 @@ Extensions written in Rust with the pgrx framework
 | 2750 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
 | 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
 | 2860 | {{< alias "pg_trickle" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
-| 2870 | {{< alias "pg_durable" >}} | Durable SQL functions for PostgreSQL |
+| 2870 | {{< alias "pg_durable" >}} | SQL-native durable orchestrations for PostgreSQL |
 | 2895 | {{< alias "pg_kv" >}} | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 2980 | {{< alias "pg_mentat" >}} | Datomic-compatible data model and Datalog query engine inside PostgreSQL |

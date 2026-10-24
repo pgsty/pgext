@@ -1,59 +1,28 @@
-
-
-
 ## 用法
 
-> [index_advisor: 查询索引顾问](https://github.com/supabase/index_advisor)
+来源：
 
-`index_advisor` 分析 SQL 查询并推荐能够改善执行时间的索引，报告创建建议索引前后的成本估算以及相应的 DDL 语句。
+- [Official source](https://github.com/supabase/index_advisor/blob/b41d1f5f42f8909091edd6752d1f5006d6535db3/README.md)
+- [Official source](https://github.com/supabase/index_advisor/blob/b41d1f5f42f8909091edd6752d1f5006d6535db3/index_advisor.control)
+- [Official source](https://github.com/supabase/index_advisor/blob/b41d1f5f42f8909091edd6752d1f5006d6535db3/index_advisor--0.2.0--0.2.1.sql)
 
-### 函数
+`index_advisor` 0.2.1 使用 HypoPG 比较假想索引建立前后的规划器成本。它返回建议，不保证实际执行时间，也不会创建建议的物理索引。
 
-```sql
-index_advisor(query text)
-RETURNS TABLE (
-    startup_cost_before jsonb,
-    startup_cost_after  jsonb,
-    total_cost_before   jsonb,
-    total_cost_after    jsonb,
-    index_statements    text[],
-    errors              text[]
-)
-```
+### 基本流程
 
-### 基本示例
+先以所需权限安装依赖 `hypopg`。该 SQL 扩展不需要预加载或重启。
 
 ```sql
-CREATE TABLE book (
-    id    int  PRIMARY KEY,
-    title text NOT NULL
-);
-
-SELECT * FROM index_advisor('
-    SELECT book.id FROM book WHERE title = $1
-');
+CREATE EXTENSION hypopg;
+CREATE EXTENSION index_advisor;
+CREATE TABLE book (id bigint PRIMARY KEY, title text NOT NULL);
+SELECT * FROM index_advisor('SELECT id FROM book WHERE title = $1');
 ```
 
-返回成本改善情况和推荐的 `CREATE INDEX` 语句。
+`index_advisor(query text)` 接受带参数的查询，返回建立索引前后的启动成本、总成本、`index_statements` 和 `errors`。创建索引前应检查建议 DDL 和实际负载。视图及物化视图支持取决于顾问能否解析到底层表。
 
-### 多表示例
+### 0.2.1 修复与边界
 
-```sql
-SELECT * FROM index_advisor('
-    SELECT book.id, book.title, publisher.name, author.name, review.body
-    FROM book
-    JOIN publisher ON book.publisher_id = publisher.id
-    JOIN author    ON book.author_id = author.id
-    JOIN review    ON book.id = review.book_id
-    WHERE author.id = $1 AND publisher.id = $2
-');
-```
+0.2.1 修复 HypoPG 安装在其他模式时的函数限定、注释移除的非贪婪匹配，以及仅清理顾问自身预备语句的行为。安装新 SQL 文件后，执行 `ALTER EXTENSION index_advisor UPDATE TO '0.2.1'` 更新已有数据库。
 
-输出包含跨多个关联表的索引推荐，以及创建前后的成本对比。
-
-### 功能特性
-
-- 支持使用 `$1`、`$2` 语法的参数化查询
-- 支持物化视图
-- 能够解析视图背后的底层表和列
-- 依赖 HypoPG 进行假想索引评估
+应以明确的表访问权限和有代表性的统计信息进行分析。规划成本不能覆盖全部运维代价；额外索引消耗磁盘并增加写入开销，上线前应针对实际查询形式验证。

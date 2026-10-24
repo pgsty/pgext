@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-The 615 packaged PostgreSQL extensions (in 507 package families) are organized into 16 categories.
+The 616 packaged PostgreSQL extensions (in 508 package families) are organized into 16 categories.
 
 
 
@@ -139,7 +139,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2300 | {{< alias "pg_icu_parser" >}} | 1.0 | Full text search parser using ICU boundary analysis |
 | 2310 | {{< alias "tin" "lead" >}} | 1.0.6 | TIN-compatible text search for development and testing |
 | 2320 | {{< alias "stannum" >}} | 0.1.0 | Experimental TINQL text search with BM25 and segmented indexes |
-| 2330 | {{< alias "pg_tre" >}} | 4.5.1 | Native PostgreSQL index access method for approximate regular-expression matching |
+| 2330 | {{< alias "pg_tre" >}} | 4.5.2 | Native PostgreSQL index access method for approximate regular-expression matching |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
 
@@ -149,14 +149,14 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2400 | {{< alias "citus" >}} | 14.2.0 | Distributed PostgreSQL as an extension |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.2.0 | Citus columnar storage engine |
+| 2400 | {{< alias "citus" >}} | 14.3-1 | Distributed PostgreSQL as an extension |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.3-1 | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | Hydra Columnar extension |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
 | 2450 | {{< alias "storage_engine" >}} | 2.4.0 | colcompress and rowcompress Table Access Methods with vectorized execution |
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.11 | Interfaces to query ClickHouse databases from PostgreSQL |
-| 2470 | {{< alias "duckdb_fdw" >}} | 2.0.1 | DuckDB Foreign Data Wrapper |
+| 2470 | {{< alias "duckdb_fdw" >}} | 2.0.2 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2490 | {{< alias "pg_ducklake" >}} | 1.0.2 | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
@@ -205,13 +205,13 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2780 | {{< alias "pg_hint_plan" >}} | 1.8.1 | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2790 | {{< alias "hypopg" >}} | 1.4.3 | Hypothetical indexes for PostgreSQL |
 | 2800 | {{< alias "index_advisor" >}} | 0.2.0 | Query index advisor |
-| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | filter statements by their execution plans. |
+| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | Cooperative statement and transaction guards based on estimated plan cost |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | 1.17 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
 | 2860 | {{< alias "pg_trickle" >}} | 0.108.3 | Streaming tables and differential view maintenance for PostgreSQL 18 |
-| 2870 | {{< alias "pg_durable" >}} | 0.2.9 | Durable SQL functions for PostgreSQL |
+| 2870 | {{< alias "pg_durable" >}} | 0.2.9 | SQL-native durable orchestrations for PostgreSQL |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | Perturb unordered SELECT row order to expose order-dependent tests |
 | 2890 | {{< alias "pg_local_cache" >}} | 3.1.0 | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
 | 2895 | {{< alias "pg_kv" >}} | 0.1.0 | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
@@ -259,7 +259,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
-| 2980 | {{< alias "pg_mentat" >}} | 1.17.2 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
+| 2980 | {{< alias "pg_mentat" >}} | 1.18.0 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
 
 ## LANG
@@ -336,7 +336,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n toolbox |
 | 3680 | {{< alias "currency" "pg_currency" >}} | 0.0.4 | Custom PostgreSQL currency type in 1Byte |
 | 3690 | {{< alias "pg_money" >}} | 0.3.0 | Exact currency-aware monetary types, arithmetic, and allocation |
-| 3700 | {{< alias "collection" "pgcollection" >}} | 2.1.3 | Memory optimized data type to be used inside of plpglsql func |
+| 3700 | {{< alias "collection" "pgcollection" >}} | 2.1.3 | Associative-array data types for high-performance PL/pgSQL workflows |
 | 3710 | {{< alias "istore" >}} | 0.1.12 | Integer key/value types with arithmetic, aggregation, and GIN indexing |
 | 3720 | {{< alias "pgmp" >}} | 1.0.6 | Multiple Precision Arithmetic extension |
 | 3730 | {{< alias "numeral" >}} | 1.3 | numeral datatypes extension |
@@ -352,6 +352,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3830 | {{< alias "debversion" >}} | 1.2.0 | Debian version number data type |
 | 3850 | {{< alias "pg_duration" >}} | 1.0.2 | data type for representing durations |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | 0.1.0 | Bikram Sambat date type and AD/BS conversion functions |
+| 3870 | {{< alias "pg_nanotime" >}} | 0.2.0 | Nanosecond timestamp and fixed-duration interval types |
 | 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | RRULE field type for PostgreSQL |
 | 3890 | {{< alias "pgcalendar" >}} | 1.1.0 | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 3900 | {{< alias "timestamp9" >}} | 1.4.0 | timestamp nanosecond resolution |

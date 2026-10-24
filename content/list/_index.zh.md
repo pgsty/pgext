@@ -6,16 +6,16 @@ search_exclude: true
 comments: false
 ---
 
-PostgreSQL 已打包扩展目录包含 **615** 个扩展和 **446** 个软件包。
-PGEXT.CLOUD 总目录收录 **2665** 个扩展。
+PostgreSQL 已打包扩展目录包含 **616** 个扩展和 **447** 个软件包。
+PGEXT.CLOUD 总目录收录 **2670** 个扩展。
 
 ## 扩展统计
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 615 | 142 | 456 | 71 | 0 | 606 | 594 | 576 | 544 | 523 |
-| **EL** | 614 | 141 | 456 | 71 | 1 | 603 | 590 | 574 | 543 | 523 |
-| **Debian** | 607 | 101 | 435 | 71 | 8 | 596 | 584 | 569 | 539 | 519 |
+| **ALL** | 616 | 142 | 457 | 71 | 0 | 606 | 595 | 576 | 544 | 522 |
+| **EL** | 615 | 141 | 457 | 71 | 1 | 604 | 591 | 574 | 544 | 522 |
+| **Debian** | 609 | 101 | 437 | 71 | 7 | 598 | 586 | 569 | 540 | 520 |
 
 ## 扩展包统计
 
@@ -23,9 +23,9 @@ PGEXT.CLOUD 总目录收录 **2665** 个扩展。
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 446 | 130 | 368 | 0 | 0 | 439 | 434 | 418 | 397 | 380 |
-| **EL** | 445 | 129 | 368 | 0 | 62 | 438 | 432 | 417 | 396 | 380 |
-| **Debian** | 438 | 90 | 348 | 0 | 69 | 431 | 426 | 412 | 392 | 376 |
+| **ALL** | 447 | 130 | 369 | 0 | 0 | 440 | 435 | 418 | 397 | 379 |
+| **EL** | 446 | 129 | 369 | 0 | 62 | 439 | 433 | 417 | 397 | 379 |
+| **Debian** | 440 | 90 | 350 | 0 | 68 | 433 | 428 | 412 | 393 | 377 |
 
 ## 分类
 
@@ -45,5 +45,5 @@ PGEXT.CLOUD 总目录收录 **2665** 个扩展。
 | {{< category sim >}} | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} {{< ext "pg_projection" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} {{< ext "db2fce" >}} {{< ext "plpgsql_wrap" >}} {{< ext "pg_synonym" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "pgmemcache" >}} {{< ext "aux_mysql" >}} {{< ext "pgs3" >}} {{< ext "kafgres" >}} |
 | {{< category stat >}} | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "pg_stat_log" >}} {{< ext "pg_stat_plans" >}} {{< ext "pgfr_record" >}} {{< ext "pgfr_analyze" >}} {{< ext "pgmonitor" >}} {{< ext "pgtelemetry" >}} {{< ext "pg_statviz" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_rusage" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} {{< ext "system_stats" >}} {{< ext "pgexporter_ext" >}} {{< ext "meta" >}} {{< ext "pgnodemx" >}} {{< ext "pg_proctab" >}} {{< ext "pg_statvfs" >}} {{< ext "pg_sqlog" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgmeminfo" >}} {{< ext "toastinfo" >}} {{< ext "explain_ui" >}} {{< ext "pg_relusage" >}} {{< ext "pagevis" >}} {{< ext "powa" >}} {{< ext "pg_overexplain" >}} {{< ext "pg_logicalinspect" >}} {{< ext "pageinspect" >}} {{< ext "pgrowlocks" >}} {{< ext "sslinfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_walinspect" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} |
 | {{< category time >}} | {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_background" >}} {{< ext "pg_when" >}} {{< ext "edtf_postgres" >}} {{< ext "pg_stl" >}} {{< ext "cron_utils" >}} |
-| {{< category type >}} | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pg_text_semver" >}} {{< ext "pg_lexo" >}} {{< ext "codesystem" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} {{< ext "pgfaceting" >}} {{< ext "pg_sphere" >}} {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "l10n_table_dependent_extension" >}} {{< ext "currency" >}} {{< ext "pg_money" >}} {{< ext "collection" >}} {{< ext "istore" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "hashtypes" >}} {{< ext "postbis" >}} {{< ext "ip4r" >}} {{< ext "uri" >}} {{< ext "emailaddr" >}} {{< ext "acl" >}} {{< ext "debversion" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_rrule" >}} {{< ext "pgcalendar" >}} {{< ext "timestamp9" >}} {{< ext "pgbson" >}} {{< ext "chkpass" >}} {{< ext "isn" >}} {{< ext "seg" >}} {{< ext "cube" >}} {{< ext "ltree" >}} {{< ext "hstore" >}} {{< ext "citext" >}} {{< ext "xml2" >}} |
+| {{< category type >}} | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pg_text_semver" >}} {{< ext "pg_lexo" >}} {{< ext "codesystem" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} {{< ext "pgfaceting" >}} {{< ext "pg_sphere" >}} {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "l10n_table_dependent_extension" >}} {{< ext "currency" >}} {{< ext "pg_money" >}} {{< ext "collection" >}} {{< ext "istore" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "hashtypes" >}} {{< ext "postbis" >}} {{< ext "ip4r" >}} {{< ext "uri" >}} {{< ext "emailaddr" >}} {{< ext "acl" >}} {{< ext "debversion" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_nanotime" >}} {{< ext "pg_rrule" >}} {{< ext "pgcalendar" >}} {{< ext "timestamp9" >}} {{< ext "pgbson" >}} {{< ext "chkpass" >}} {{< ext "isn" >}} {{< ext "seg" >}} {{< ext "cube" >}} {{< ext "ltree" >}} {{< ext "hstore" >}} {{< ext "citext" >}} {{< ext "xml2" >}} |
 | {{< category util >}} | {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pg_retry" >}} {{< ext "pg_fsql" >}} {{< ext "pg_protobuf" >}} {{< ext "pgproto" >}} {{< ext "pglock" >}} {{< ext "pg_lease" >}} {{< ext "pgjq" >}} {{< ext "pg_json_diff" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "pg_html5_email_address" >}} {{< ext "url_encode" >}} {{< ext "pgsql_tweaks" >}} {{< ext "pg_relation_sql" >}} {{< ext "pg_extra_time" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "icu_ext" >}} {{< ext "pgqr" >}} {{< ext "envvar" >}} {{< ext "byteamagic" >}} {{< ext "floatfile" >}} {{< ext "external_file" >}} {{< ext "pg_render" >}} {{< ext "pg_readme" >}} {{< ext "pg_readme_test_extension" >}} {{< ext "ddl_historization" >}} {{< ext "data_historization" >}} {{< ext "schedoc" >}} {{< ext "pg_isok" >}} {{< ext "pg_describe" >}} {{< ext "colnames" >}} {{< ext "hashlib" >}} {{< ext "xxhash" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "sparql" >}} |

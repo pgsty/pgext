@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_enigma" >}} {{< ext "supabase_vault" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "anon" >}} {{< ext "pgcrypto" >}} {{< ext "pgsmcrypto" >}} |
 
-> [!Note] Percona PostgreSQL 18.6 only; requires preload.
+> [!Note] Percona PG18.6 kernel + preload; pkg 2.2.2; SQL 2.2.
 
 
 ## Packages

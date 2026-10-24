@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "uint128" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "unit" >}} {{< ext "pg_rational" >}} {{< ext "seg" >}} {{< ext "cube" >}} |
 
-> [!Note] no pg14 for el8/el9 pgdg repo
+> [!Note] pkg 1.20260630; SQL 0; PGDG gap: PG14 RPM/EL8-9.
 
 
 ## Packages

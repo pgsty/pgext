@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `pg_catalog` `pgivm` |
 |   **See Also**    | {{< ext "pg_incremental" >}} {{< ext "pg_trickle" >}} {{< ext "timescaledb" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_partman" >}} {{< ext "pg_ttl_index" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_lake" >}} |
 
-> [!Note] Add pg_ivm to shared_preload_libraries or session_preload_libraries for correct maintenance.
+> [!Note] Preload in every writing session; restore_immv(replace=true) needs superuser.
 
 
 ## Packages

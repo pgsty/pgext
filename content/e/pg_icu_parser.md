@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "pg_fts" >}} {{< ext "pgroonga" >}} {{< ext "zhparser" >}} `thai_parser` {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} |
+|   **See Also**    | {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "pg_fts" >}} {{< ext "pgroonga" >}} {{< ext "zhparser" >}} {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} |
 
 > [!Note] SQL/control version 1.0; upstream release 1.0.0. Local RPM/DEB builds support PG14-18 with a PG18 encoding-API compatibility patch and explicit ICU linkage. ts_headline is unsupported. PIGSTY PG14-18 packages verified across EL8/9/10, Debian 12/13 and Ubuntu 22.04/24.04/26.04 on x86_64/amd64 and aarch64/arm64; all 16 platforms imported into the local PIGSTY repository.
 

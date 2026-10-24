@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pgelog" >}} {{< ext "logerrors" >}} {{< ext "pg_stat_log" >}} {{< ext "table_log" >}} {{< ext "pgmemento" >}} {{< ext "pg_auditor" >}} {{< ext "pg_roast" >}} {{< ext "pg_permissions" >}} {{< ext "pg_drop_events" >}} |
 
+> [!Note] pkg 1.8.7; SQL 1.8; preload required.
+
 
 ## Packages
 

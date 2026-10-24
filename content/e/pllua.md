@@ -32,6 +32,8 @@ page_width: full
 |   **See Also**    | {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "plperl" >}} {{< ext "plperlu" >}} {{< ext "pgwasm" >}} {{< ext "plpython3u" >}} {{< ext "pltcl" >}} {{< ext "pg_tle" >}} |
 |    **Siblings**   | {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} |
 
+> [!Note] pkg 2.0.12; SQL 2.0.
+
 
 ## Packages
 

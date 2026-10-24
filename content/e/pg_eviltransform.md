@@ -31,6 +31,8 @@ page_width: full
 |   **Requires**    | {{< ext "postgis" >}} |
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "h3" >}} {{< ext "pg_geohash" >}} {{< ext "pg_polyline" >}} {{< ext "earthdistance" >}} {{< ext "qdgc" >}} {{< ext "convert" >}} {{< ext "pgrouting" >}} {{< ext "nominatim_fdw" >}} {{< ext "q3c" >}} |
 
+> [!Note] PG19 support is beta.
+
 
 ## Packages
 

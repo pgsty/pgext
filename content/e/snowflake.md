@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `snowflake` |
 |   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuid_v8" >}} {{< ext "uuid-ossp" >}} {{< ext "typeid" >}} {{< ext "permuteseq" >}} |
 
-> [!Note] Bundled with pgEdge 15.19/16.15/17.11/18.6; set snowflake.node.
+> [!Note] pgEdge kernel required; set snowflake.node=1..1023 before snowflake.nextval().
 
 
 ## Packages

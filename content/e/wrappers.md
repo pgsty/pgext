@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "odbc_fdw" >}} {{< ext "multicorn" >}} {{< ext "jdbc_fdw" >}} |
 
+> [!Note] Upstream 0.6.4/pkg 0.6.3; installed wrapper set depends on build features.
+
 
 ## Packages
 
@@ -219,16 +221,13 @@ pig install wrappers -v 14;   # install for PG 14
 CREATE EXTENSION wrappers;
 ```
 
-
-
-
 ## Usage
 
 Sources:
 
-- [Wrappers v0.6.2 README](https://github.com/supabase/wrappers/blob/v0.6.2/README.md)
+- [Wrappers v0.6.4 README](https://github.com/supabase/wrappers/blob/v0.6.4/README.md)
 - [Official FDW documentation](https://fdw.dev/)
-- [v0.6.2 release](https://github.com/supabase/wrappers/releases/tag/v0.6.2)
+- [v0.6.4 release](https://github.com/supabase/wrappers/releases/tag/v0.6.4)
 - [MongoDB FDW documentation](https://fdw.dev/catalog/mongodb/)
 - [Security guidance](https://fdw.dev/guides/security/)
 
@@ -286,3 +285,7 @@ Wrapper-specific pages remain the authority for server options, foreign-table co
 - The docs warn that logical restores can fail when materialized views depend on foreign tables, so avoid that pattern or rely on physical backups.
 - Foreign tables do not provide a security boundary by themselves. Keep them in private schemas, grant access deliberately, use the least-privileged remote credentials available, and apply Row Level Security to local tables that expose or cache remote data.
 - Keep API keys and tokens in the supported secret store or per-request credential mechanism instead of embedding them in SQL checked into source control.
+
+### 0.6.4 Update
+
+The 0.6.4 release updates embedded DuckDB to 1.5.6 and repairs the Shopify/Paddle WASM interface definitions. The upstream Cargo manifest exposes PostgreSQL 13–18 targets and pgrx 0.19.2; packaged build choices can differ. The available wrappers depend on enabled build features. Upgrade the installed extension with matching library/SQL files and review the specific wrapper documentation before changing server options.

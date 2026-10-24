@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-615 个已打包 PostgreSQL 扩展（归属 507 个包族）划分为 16 个分类。
+616 个已打包 PostgreSQL 扩展（归属 508 个包族）划分为 16 个分类。
 
 
 
@@ -139,7 +139,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2300 | {{< alias "pg_icu_parser" >}} | 1.0 | 使用 ICU 边界分析的全文搜索解析器 |
 | 2310 | {{< alias "tin" "lead" >}} | 1.0.6 | 用于开发测试的 TIN 兼容文本搜索扩展 |
 | 2320 | {{< alias "stannum" >}} | 0.1.0 | 提供 TINQL、BM25 与分段索引的实验性文本搜索扩展 |
-| 2330 | {{< alias "pg_tre" >}} | 4.5.1 | 面向近似正则匹配的 PostgreSQL 原生索引访问方法 |
+| 2330 | {{< alias "pg_tre" >}} | 4.5.2 | 面向近似正则匹配的 PostgreSQL 原生索引访问方法 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | 文本相似度测量函数与模糊检索 |
 
@@ -149,14 +149,14 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2400 | {{< alias "citus" >}} | 14.2.0 | 将 PostgreSQL 横向扩展为分布式数据库 |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.2.0 | Citus 列式存储引擎 |
+| 2400 | {{< alias "citus" >}} | 14.3-1 | 将 PostgreSQL 横向扩展为分布式数据库 |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.3-1 | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | 开源列式存储扩展 |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | PostgreSQL列式存储表 |
 | 2450 | {{< alias "storage_engine" >}} | 2.4.0 | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.11 | 从PostgreSQL中查询ClickHouse的接口 |
-| 2470 | {{< alias "duckdb_fdw" >}} | 2.0.1 | DuckDB 外部数据源包装器 |
+| 2470 | {{< alias "duckdb_fdw" >}} | 2.0.2 | DuckDB 外部数据源包装器 |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2490 | {{< alias "pg_ducklake" >}} | 1.0.2 | 基于 DuckDB 与 Parquet 的 DuckLake 湖仓一体扩展 |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
@@ -205,13 +205,13 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2780 | {{< alias "pg_hint_plan" >}} | 1.8.1 | 添加强制指定执行计划的能力 |
 | 2790 | {{< alias "hypopg" >}} | 1.4.3 | 假设索引，用于创建一个虚拟索引检验执行计划 |
 | 2800 | {{< alias "index_advisor" >}} | 0.2.0 | 查询索引建议器 |
-| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | 使用执行计划代价过滤阻止特定查询语句 |
+| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | 基于计划估算成本的语句与事务负载保护 |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | 提供标量、数组和记录类型的会话变量 |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
 | 2840 | {{< alias "pg_ivm" >}} | 1.17 | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | 增量处理流式事件 |
 | 2860 | {{< alias "pg_trickle" >}} | 0.108.3 | 为 PostgreSQL 18 提供流式表与差分视图维护 |
-| 2870 | {{< alias "pg_durable" >}} | 0.2.9 | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
+| 2870 | {{< alias "pg_durable" >}} | 0.2.9 | PostgreSQL 内的 SQL 原生持久化工作流编排扩展 |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | 扰动无 ORDER BY 查询的行序以暴露依赖隐式顺序的测试 |
 | 2890 | {{< alias "pg_local_cache" >}} | 3.1.0 | 通过 RESP2 MGET 提供 PostgreSQL 主键整行读取的事务感知共享内存缓存 |
 | 2895 | {{< alias "pg_kv" >}} | 0.1.0 | 共享内存键值缓存、令牌桶限流与有序集合。 |
@@ -259,7 +259,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Omnigres 通用Worker池 |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | Omnigres XML工具包 |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | Omnigres YAML工具包 |
-| 2980 | {{< alias "pg_mentat" >}} | 1.17.2 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
+| 2980 | {{< alias "pg_mentat" >}} | 1.18.0 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom 索引-基于指纹的索引 |
 
 ## LANG
@@ -336,7 +336,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n 工具包 |
 | 3680 | {{< alias "currency" "pg_currency" >}} | 0.0.4 | 使用1字节表示的货币数据类型 |
 | 3690 | {{< alias "pg_money" >}} | 0.3.0 | 精确的带币种金额类型、算术与金额分摊 |
-| 3700 | {{< alias "collection" "pgcollection" >}} | 2.1.3 | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
+| 3700 | {{< alias "collection" "pgcollection" >}} | 2.1.3 | 面向高性能 PL/pgSQL 工作流的关联数组数据类型 |
 | 3710 | {{< alias "istore" >}} | 0.1.12 | 支持算术、聚合与 GIN 索引的整数键值类型 |
 | 3720 | {{< alias "pgmp" >}} | 1.0.6 | 多精度算术扩展 |
 | 3730 | {{< alias "numeral" >}} | 1.3 | 数值类型扩展 |
@@ -352,6 +352,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3830 | {{< alias "debversion" >}} | 1.2.0 | Debian版本号数据类型 |
 | 3850 | {{< alias "pg_duration" >}} | 1.0.2 | 用于表示时间段的强化数据类型 |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | 0.1.0 | Bikram Sambat 日期类型与公历/尼泊尔历转换函数 |
+| 3870 | {{< alias "pg_nanotime" >}} | 0.2.0 | 纳秒时间戳与固定时长间隔类型 |
 | 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | 日历重复规则RRULE数据类型 |
 | 3890 | {{< alias "pgcalendar" >}} | 1.1.0 | 为 PostgreSQL 提供循环日程、投影与例外处理的日历扩展 |
 | 3900 | {{< alias "timestamp9" >}} | 1.4.0 | 纳秒分辨率时间戳 |

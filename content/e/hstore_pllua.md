@@ -31,6 +31,8 @@ page_width: full
 |   **See Also**    | {{< ext "hstore" >}} {{< ext "hstore_plpython3u" >}} {{< ext "hstore_plperl" >}} {{< ext "hstore_plperlu" >}} |
 |    **Siblings**   | {{< ext "pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} |
 
+> [!Note] PL/Lua pkg 2.0.12; SQL 1.0; no fixed schema.
+
 
 ## Packages
 

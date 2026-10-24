@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | `ai` `alloydb_scann` `avocado` {{< ext "documentdb" >}} `embedding_search` `hybrid_search` `maludb_core` `pg_cuvs` `pg_diskann` `pg_gembed` `pg_knowledge_graph` `pg_llm` `pg_llm_helper` {{< ext "pg_search" >}} `pg_semantic_cache` `pg_sentence_transformer` `pg_splade` `pg_turboquant` `pgedge_vectorizer` {{< ext "pgmnemo" >}} `pgpu` `pgturbohybrid` `pgvecutils` `rag` `rag_bge_small_en_v15` `rag_jina_reranker_v1_tiny_en` `rds_ai` `rds_embedding` {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} |
+|    **Need By**    | {{< ext "documentdb" >}} {{< ext "pg_search" >}} {{< ext "pgcontext_pgvector" >}} {{< ext "pgmnemo" >}} {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} |
 |   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} |
 
 > [!Note] PGDG is the principal supplier by explicit catalog policy: RPM and DEB 0.8.7 cover PostgreSQL 14-18. Pigsty recipes are retained for confirmed gaps only.

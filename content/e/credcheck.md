@@ -5,7 +5,7 @@ description: "credcheck - postgresql plain text credential checker"
 weight: 7310
 categories: ["SEC"]
 languages: ["C"]
-licenses: ["MIT"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7310** | {{< badge content="credcheck" link="https://github.com/HexaCluster/credcheck" >}} | {{< ext "credcheck" >}} | `6.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7310** | {{< badge content="credcheck" link="https://github.com/HexaCluster/credcheck" >}} | {{< ext "credcheck" >}} | `6.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_pwhash" >}} {{< ext "passwordcheck" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "passwordpolicy" >}} {{< ext "chkpass" >}} {{< ext "pg_enigma" >}} {{< ext "column_encrypt" >}} |
 
-> [!Note] Upstream release v6.0 and PGDG RPM 6.0 use SQL/control version 6.0.0; PGDG DEB remains 5.0.
+> [!Note] pkg 6.0; SQL 6.0.0; restart then update extension; migrates 5.x history; PgBouncer needs setup.
 
 
 ## Packages

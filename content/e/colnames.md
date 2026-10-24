@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_describe" >}} `describe_resultset` `get_column` `pltoolbox` {{< ext "hstore" >}} |
+|   **See Also**    | {{< ext "pg_describe" >}} {{< ext "hstore" >}} |
 
 > [!Note] Distribution 1.7.1 retains extension version 1.7.0; colnames(record) returns name[]. No preload or runtime extension dependencies. Upstream release lists PG8.2-17; PG14-18 verified across all 16 PGSTY target platforms.
 

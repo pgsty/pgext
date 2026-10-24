@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `graphql` |
 |   **See Also**    | {{< ext "omni_rest" >}} {{< ext "documentdb" >}} {{< ext "pg_net" >}} {{< ext "http" >}} {{< ext "pg_jsonschema" >}} {{< ext "pgjwt" >}} {{< ext "pg_session_jwt" >}} |
 
-> [!Note] not an official release by Vonng.
+> [!Note] Source/recipes use pgrx 0.19.2.
 
 
 ## Packages

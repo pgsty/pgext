@@ -10,8 +10,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 | Name                    | Old              | New              | Comment                                                       |
 |:------------------------|:-----------------|:-----------------|:--------------------------------------------------------------|
+| citus                   | 14.2.0           | 14.3.0           | PG16-18; includes citus_columnar                             |
 | codesystem              | -                | 0.2.1            | PG14-18; SQL version 0.2.0                                    |
 | documentdb              | 0.117            | 1.0              | PG16-18; drops PG15; includes core/extended_rum               |
+| duckdb_fdw              | 1.4.3            | 2.0.2            | PG15-18; DuckDB 2.0.0; conflicts with pg_duckdb              |
 | encsearch               | -                | 0.1.1            | PG17; encrypted search                                        |
 | groonga                 | 16.1.3           | 16.1.4           | EL9, both architectures; includes libs/devel                  |
 | groonga-tokenizer-mecab | 16.1.3           | 16.1.4           | EL9, both architectures; MeCab tokenizer                      |
@@ -26,13 +28,14 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pg_ivm                  | 1.16             | 1.17             | PG14-18                                                       |
 | pg_kv                   | -                | 0.1.0            | PG15-18; non-persistent shared-memory KV                      |
 | pg_lease                | -                | 0.1.0            | PG14-18; SQL-only                                             |
-| pg_mentat               | 1.14.0           | 1.17.2           | PG14-18; fixes trusted-install search path                    |
+| pg_mentat               | 1.14.0           | 1.18.0           | PG14-18; fixes trusted-install search path                    |
+| pg_nanotime             | -                | 0.2.0            | PG17-18; nanosecond timestamps; preview                      |
 | pg_regresql             | 2.0.0            | 2.1.0            | PG14-18; SQL version 2.0                                      |
 | pg_relusage             | 1.0.1            | 1.0.2            | PG14-18; loading required                                     |
 | pg_search               | 0.26.1           | 0.26.3           | PG15-18; pgrx 0.19.3; preload required                        |
 | pg_synonym              | -                | 1.0.0            | PG15-18; SQL version 1.0                                      |
 | pg_table_range          | -                | 0.1.2            | PG16-18; range pruning                                        |
-| pg_tre                  | -                | 4.5.1            | PG17-18; approximate regular expressions                      |
+| pg_tre                  | -                | 4.5.2            | PG17-18; approximate regular expressions                      |
 | pg_try_cast             | -                | 1.0.0            | PG16-18; SQL version 1.0                                      |
 | pg_turbovec             | 2.12.1           | 2.14.1           | PG14-18; concurrency/VACUUM fixes                             |
 | pgbson                  | 2.1.0            | 2.2.0            | PG14-18; RPM package postgresbson                             |

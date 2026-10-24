@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `hint_plan` |
 |   **See Also**    | {{< ext "hypopg" >}} {{< ext "online_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "plan_filter" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} {{< ext "pg_regresql" >}} {{< ext "pg_track_optimizer" >}} |
 
-> [!Note] PG18 uses 1.8.1; PG14-17 use separate 1.4.5/1.5.4/1.6.3/1.7.2 RPM branches. DEB remains on the previous branch releases; upstream 1.9.0 targets PG19.
+> [!Note] PG14-18 RPM: 1.4.5/1.5.4/1.6.3/1.7.2/1.8.1; PG18 DEB 1.8.0; 1.9.0 is PG19-only.
 
 
 ## Packages

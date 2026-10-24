@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "hypopg" >}} {{< ext "pg_stat_statements" >}} {{< ext "index_advisor" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_upless" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_track_optimizer" >}} {{< ext "plan_filter" >}} |
 
-> [!Note] LOAD or session/shared preload enables logging; CREATE EXTENSION is optional and defines no SQL objects.
+> [!Note] LOAD/preload enables logging; CREATE EXTENSION only records installation.
 
 
 ## Packages

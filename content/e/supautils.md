@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_command_fw" >}} {{< ext "pgextwlist" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} {{< ext "noset" >}} {{< ext "sepgsql" >}} |
 
-> [!Note] Hook library only; no CREATE EXTENSION objects.
+> [!Note] Module-only; no CREATE EXTENSION.
 
 
 ## Packages

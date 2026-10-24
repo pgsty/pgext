@@ -2,39 +2,38 @@
 
 来源：
 
-- [官方上游 README](https://github.com/fenoman/pg_xclaim/blob/e26926e06a9442b8554e6032e22a8080360d5d1d/README.md)
-- [官方扩展控制文件 (pg_xclaim.control)](https://github.com/fenoman/pg_xclaim/blob/e26926e06a9442b8554e6032e22a8080360d5d1d/pg_xclaim.control)
-- [官方扩展 SQL (pg_xclaim--1.0.0-rc1.sql)](https://github.com/fenoman/pg_xclaim/blob/e26926e06a9442b8554e6032e22a8080360d5d1d/sql/pg_xclaim--1.0.0-rc1.sql)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/README.md)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/pg_xclaim.control)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/CHANGELOG.md)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/sql/pg_xclaim--1.0.0-rc1--1.0.0-rc2.sql)
+- [Official source](https://github.com/Fenoman/pg_xclaim/blob/49e5bc3982de87bf94b3108fa7ce29ae813a07b2/sql/pg_xclaim--1.0.0-rc2--1.0.0-rc3.sql)
 
-`pg_xclaim` — **实验性** PostgreSQL 扩展：一种自定义的事务性 claim 存储机制，使用自己的分区共享内存哈希表。当应用程序需要此特定数据库功能时，请使用此扩展。上游明确表示此扩展尚未准备好用于生产环境。
+`pg_xclaim` 1.0.0-rc3 是面向 PostgreSQL 16–18 的实验性共享内存认领机制，在独立命名空间内提供不等待、持续到事务结束的互斥。它不是持久化队列，其键也不与 PostgreSQL 咨询锁互通。
 
-### 核心工作流
+### 基本流程
+
+将动态库加入已有预加载列表并保留其他项目，重启 PostgreSQL 后由超级用户创建扩展。副本也应保留预加载：恢复期间调用会失败，但提升后即可使用。
+
+```ini
+shared_preload_libraries = 'pg_xclaim'
+```
 
 ```sql
 CREATE EXTENSION pg_xclaim;
+BEGIN;
+SELECT xclaim.try(1, 100);
+SELECT xclaim.count();
+COMMIT;
 ```
 
-在目标数据库中安装扩展，当可用时运行上游提供的最小示例，并在将其集成到应用程序 SQL 之前验证已安装的版本和返回值。
+`xclaim.try` 返回真，表示当前顶层事务持有认领；同一所有者重复获取会成功，顶层事务提交或回滚时释放。认领不会随保存点回滚释放，这与咨询事务锁不同。应统一迁移所有参与调用的位置，避免混用彼此独立的锁命名空间。
 
-### 重要对象
+### 对象与限制
 
-- `xclaim.count()` 是一个扩展函数，返回 `int8`。
-- `xclaim.debug()` 是一个扩展函数，返回 `TABLE`。
-- `xclaim.debug_inject_stale(scope int4, key int4)` 是一个扩展函数，返回 `void`。
-- `xclaim.debug_snapshot()` 是一个扩展函数，返回 `TABLE`。
-- `xclaim.session_reset()` 是一个扩展函数，返回 `void`。
-- `xclaim.stats()` 是一个扩展函数，返回 `TABLE`。
-- `xclaim.try(classid int4, objid int4)` 是一个扩展函数，返回 `boolean`。
-- `xclaim.try(key int8)` 是一个扩展函数，返回 `boolean`。
-- `xclaim.try_many(classid int4, objids int4[])` 是一个扩展函数，返回 `boolean[]`。
-- `xclaim.try_many(keys int8[])` 是一个扩展函数，返回 `boolean[]`。
+`xclaim.try` 接受一个 bigint 键或两个 int4 键，两种形式使用不同命名空间。`xclaim.try_many` 按输入顺序返回布尔数组，部分成功的认领会保留到事务结束。如果需要全部成功或全部失败，应在任一失败时回滚整个事务。NULL 输入会报错。
 
-### 要求与注意事项
+`xclaim.stats` 和 `xclaim.debug_snapshot` 是有角色限制的监控函数；详细调试与过期认领注入是超级用户工具，注入仅用于测试。`xclaim.session_reset` 用于异常恢复，不应当作常规连接池重置命令。按文档限制共享容量及每个后端的认领数量；禁用扩展可能取消互斥保护。
 
-- 控制文件声明默认版本为 `1.0.0-rc1`。
-- 控制文件标记此扩展为不可重定位。
-- 控制文件要求超级用户进行安装。
-- 控制文件标记此扩展为不受信任。
-- 上游明确表示该项目尚未准备好用于生产环境。
-- 上游将项目的一部分或全部标记为实验性。
-- 在生产使用之前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况，以匹配固定源。
+### rc3 升级
+
+rc2 修复后端退出清理和分配失败处理；rc3 增加 Tantor SE 18 构建兼容性，没有新增 SQL 对象。安装匹配文件、重启服务，再在各数据库执行 `ALTER EXTENSION pg_xclaim UPDATE TO '1.0.0-rc3'`。该版本仍是候选版，采用前应测试故障与容量边界。

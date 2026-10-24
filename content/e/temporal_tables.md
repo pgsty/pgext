@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "periods" >}} {{< ext "table_version" >}} {{< ext "data_historization" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "emaj" >}} {{< ext "old_snapshot" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_visibility" >}} {{< ext "ddl_historization" >}} |
 
-> [!Note] PGDG packages remain absent for PG17 on EL8 x86_64/aarch64.
+> [!Note] PGDG gap: PG17/EL8/{x86_64,aarch64}.
 
 
 ## Packages

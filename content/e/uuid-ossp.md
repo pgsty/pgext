@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "babelfishpg_tsql" >}} `bundle` `datalink` `launchql-extension-verify` `launchql-inflection` `launchql-jwt-claims` `npm` `pg_abris` `pg_dms` {{< ext "provsql" >}} `ruid` `skitch-extension-jobs` `skitch-extension-verify` `supa_audit` `types` |
+|    **Need By**    | {{< ext "babelfishpg_tsql" >}} {{< ext "provsql" >}} |
 |   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "snowflake" >}} {{< ext "pg_uuid_v8" >}} {{< ext "typeid" >}} |
 
 

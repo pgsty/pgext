@@ -27,11 +27,10 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
 |   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "pg_similarity" >}} {{< ext "fuzzystrmatch" >}} {{< ext "smlar" >}} {{< ext "pg_bigm" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "pgroonga" >}} |
 
-> [!Note] 3.1.0 adds exact LIKE-decomposable regex and correctness fixes; 3.0.0 indexes need no format rebuild, while 2.x migration requires REINDEX; unlogged indexes need REINDEX after crash recovery.
+> [!Note] REINDEX 2.x and crash-recovered unlogged indexes; 3.0 format unchanged.
 
 
 ## Packages

@@ -1,59 +1,28 @@
-
-
-
 ## Usage
 
-> [index_advisor: Query index advisor](https://github.com/supabase/index_advisor)
+Sources:
 
-`index_advisor` analyzes a SQL query and recommends indexes that would improve its execution time, reporting before/after cost estimates and the DDL statements to create the suggested indexes.
+- [Official source](https://github.com/supabase/index_advisor/blob/b41d1f5f42f8909091edd6752d1f5006d6535db3/README.md)
+- [Official source](https://github.com/supabase/index_advisor/blob/b41d1f5f42f8909091edd6752d1f5006d6535db3/index_advisor.control)
+- [Official source](https://github.com/supabase/index_advisor/blob/b41d1f5f42f8909091edd6752d1f5006d6535db3/index_advisor--0.2.0--0.2.1.sql)
 
-### Function
+`index_advisor` 0.2.1 uses HypoPG to compare planner costs with hypothetical indexes. It returns recommendations, not measured execution-time guarantees, and does not create the recommended physical indexes.
 
-```sql
-index_advisor(query text)
-RETURNS TABLE (
-    startup_cost_before jsonb,
-    startup_cost_after  jsonb,
-    total_cost_before   jsonb,
-    total_cost_after    jsonb,
-    index_statements    text[],
-    errors              text[]
-)
-```
+### Core Workflow
 
-### Basic Example
+Install the required `hypopg` extension first, with the privileges its installation requires. This SQL extension needs no preload or restart.
 
 ```sql
-CREATE TABLE book (
-    id    int  PRIMARY KEY,
-    title text NOT NULL
-);
-
-SELECT * FROM index_advisor('
-    SELECT book.id FROM book WHERE title = $1
-');
+CREATE EXTENSION hypopg;
+CREATE EXTENSION index_advisor;
+CREATE TABLE book (id bigint PRIMARY KEY, title text NOT NULL);
+SELECT * FROM index_advisor('SELECT id FROM book WHERE title = $1');
 ```
 
-Returns cost improvements and the recommended `CREATE INDEX` statement.
+`index_advisor(query text)` accepts a parameterized query and returns before/after startup and total cost values, `index_statements` and `errors`. Inspect the suggested DDL and real workload before creating an index. View and materialized-view support depends on what the advisor can resolve to underlying tables.
 
-### Multi-Table Example
+### 0.2.1 Corrections and Limits
 
-```sql
-SELECT * FROM index_advisor('
-    SELECT book.id, book.title, publisher.name, author.name, review.body
-    FROM book
-    JOIN publisher ON book.publisher_id = publisher.id
-    JOIN author    ON book.author_id = author.id
-    JOIN review    ON book.id = review.book_id
-    WHERE author.id = $1 AND publisher.id = $2
-');
-```
+Version 0.2.1 fixes qualification of HypoPG calls when HypoPG uses another schema, non-greedy removal of comments, and cleanup of the advisor's own prepared statement. Update installed databases with `ALTER EXTENSION index_advisor UPDATE TO '0.2.1'` after installing the new SQL files.
 
-The output includes multiple index recommendations across the joined tables with before/after cost comparisons.
-
-### Features
-
-- Supports parameterized queries using `$1`, `$2` syntax
-- Handles materialized views
-- Resolves underlying tables and columns behind views
-- Depends on HypoPG for hypothetical index evaluation
+Run analysis with deliberate table permissions and representative statistics. Planning cost does not account for every operational cost: additional indexes consume disk and slow writes, and should be validated against production query shapes before deployment.

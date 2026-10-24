@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pg_parquet" >}} {{< ext "pg_bulkload" >}} {{< ext "file_fdw" >}} {{< ext "aws_s3" >}} |
 
+> [!Note] pkg 1.1.1; SQL 1.0.
+
 
 ## Packages
 

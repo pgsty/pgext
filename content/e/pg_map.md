@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "hstore" >}} {{< ext "pgbson" >}} {{< ext "collection" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "intarray" >}} {{< ext "arraymath" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pg_projection" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] Snowflake pg_lake provider. Package 3.5.3; SQL 3.5.
+> [!Note] pg_lake provider, not semenikhind/pg_map; pkg 3.5.3; SQL 3.5.
 
 
 ## Packages

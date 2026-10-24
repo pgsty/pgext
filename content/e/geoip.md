@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "ip4r" >}} |
 |   **See Also**    | {{< ext "postgis_tiger_geocoder" >}} {{< ext "tzf" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_geohash" >}} |
 
-> [!Note] no pg17 on el9, no legacy branch on el8
+> [!Note] pkg 0.3.0; source/SQL 0.4.0; rebuild needed; PGDG gaps: EL9 PG17, legacy EL8.
 
 
 ## Packages

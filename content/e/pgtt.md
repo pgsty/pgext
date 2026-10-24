@@ -30,6 +30,8 @@ page_width: full
 |    **Schemas**    | `pgtt_schema` |
 |   **See Also**    | {{< ext "orafce" >}} {{< ext "db2fce" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "db_migrator" >}} |
 
+> [!Note] pkg 4.6; SQL 4.6.0.
+
 
 ## Packages
 

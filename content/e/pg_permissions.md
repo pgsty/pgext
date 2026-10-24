@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "set_user" >}} {{< ext "pg_roast" >}} {{< ext "pg_readonly" >}} {{< ext "pgaudit" >}} {{< ext "pg_command_fw" >}} {{< ext "acl" >}} {{< ext "pg_auditor" >}} {{< ext "pg_snakeoil" >}} |
 
-> [!Note] Package 1.4.1; SQL version 1.4.
+> [!Note] pkg 1.4.1; SQL 1.4.
 
 
 ## Packages

@@ -10,14 +10,14 @@ repos: ["PGDG"]
 page_width: full
 ---
 
-[**powa**](https://github.com/powa-team/powa) : PostgreSQL Workload Analyser-core
+[**powa**](https://github.com/powa-team/powa-archivist) : PostgreSQL Workload Analyser-core
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.3.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "PLpgSQL" >}} |
+| **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa-archivist" >}} | {{< ext "powa" >}} | `5.3.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "PLpgSQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,11 +27,10 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "pg_stat_statements" >}} {{< ext "btree_gist" >}} |
 |   **See Also**    | {{< ext "pg_stat_plans" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_track_optimizer" >}} {{< ext "auto_explain" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_qualstats" >}} |
 
-> [!Note] RPM: PGDG 5.1.0; DEB: PGDG 5.3.0.
+> [!Note] Local: preload powa+pg_stat_statements and restart; remote: powa-collector.
 
 
 ## Packages
@@ -400,7 +399,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/powa-team/powa" title="Repository" icon="github" subtitle="github.com/powa-team/powa" />}}
+{{< card link="https://github.com/powa-team/powa-archivist" title="Repository" icon="github" subtitle="github.com/powa-team/powa-archivist" />}}
 {{< /cards >}}
 
 

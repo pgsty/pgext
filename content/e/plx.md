@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plisql" >}} {{< ext "plpgsql_wrap" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} |
 
-> [!Note] Package 2.0.1; SQL version 2.0.0.
+> [!Note] pkg 2.0.1; SQL 2.0.0; changed NULL interpolation needs function DDL redeployment.
 
 
 ## Packages

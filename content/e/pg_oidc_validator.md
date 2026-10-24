@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} {{< ext "pgsodium" >}} {{< ext "pguecc" >}} |
 
-> [!Note] PG18 only; configure oauth_validator_libraries. RPM: PGDG; DEB: PIGSTY.
+> [!Note] oauth_validator_libraries=pg_oidc_validator.
 
 
 ## Packages

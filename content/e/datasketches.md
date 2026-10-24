@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ddsketch" >}} {{< ext "count_distinct" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "omnisketch" >}} {{< ext "hll" >}} |
 
-> [!Note] Built against DataSketches C++ core 5.2.0.
+> [!Note] DataSketches C++ core 5.2.0.
 
 
 ## Packages

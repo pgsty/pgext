@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "pg_stat_log" >}} {{< ext "pg_wait_sampling" >}} |
 |    **Siblings**   | {{< ext "pgfr_record" >}} |
 
-> [!Note] Analyzer component from package 2.32.1.
+> [!Note] pkg 2.32.1 overrides upstream control 0.0.0.
 
 
 ## Packages

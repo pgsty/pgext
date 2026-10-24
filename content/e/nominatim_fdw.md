@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "rdf_fdw" >}} |
 
-> [!Note] SQL/control and tagged release version 2.3; PGXN distribution 2.3.0. Maintained in the local RPM and DEB recipes.
+> [!Note] SQL/tag 2.3; PGXN 2.3.0; foreign-server USAGE required.
 
 
 ## Packages

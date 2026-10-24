@@ -30,6 +30,8 @@ page_width: full
 |    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "pljs" >}} {{< ext "pllua" >}} {{< ext "pgwasm" >}} {{< ext "pg_tle" >}} |
 
+> [!Note] Upstream PG19 support; packages PG14-18.
+
 
 ## Packages
 

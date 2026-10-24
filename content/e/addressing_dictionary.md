@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} `postal` {{< ext "unaccent" >}} {{< ext "hunspell_en_us" >}} |
+|   **See Also**    | {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "unaccent" >}} {{< ext "hunspell_en_us" >}} |
 
 > [!Note] SQL and dictionary data only; no shared library. PostgreSQL 14-18 verified in PGSTY builds; upstream declares no current major-version matrix.
 

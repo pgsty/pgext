@@ -30,6 +30,8 @@ page_width: full
 |   **Requires**    | {{< ext "pgcrypto" >}} |
 |   **See Also**    | {{< ext "pgsodium" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "pg_tde" >}} {{< ext "pgcrypto" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgsmcrypto" >}} |
 
+> [!Note] pkg 0.85; SQL 1.0.
+
 
 ## Packages
 

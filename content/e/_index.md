@@ -7,7 +7,7 @@ comments: false
 weight: 900
 ---
 
-There are 615 packaged PostgreSQL extensions:
+There are 616 packaged PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
@@ -74,7 +74,7 @@ There are 615 packaged PostgreSQL extensions:
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | Run AL/ML workloads with SQL interface |
 | {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | Single-plan multimodal agent memory for PostgreSQL |
 | {{< ext "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
-| {{< ext "pgcontext_pgvector" "pgcontext" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
+| {{< ext "pgcontext_pgvector" "pgcontext" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | {{< ext "pg_turbovec" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 | {{< ext "pg_vectorsearch" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Approximate vector search with PRISM indexes and RaBitQ quantization |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full text search for PostgreSQL using BM25 |
@@ -120,7 +120,7 @@ There are 615 packaged PostgreSQL extensions:
 | {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Columnstore Table in Postgres |
 | {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
 | {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
-| {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Foreign Data Wrapper |
+| {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Foreign Data Wrapper |
 | {{< ext "pg_parquet" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | copy data between Postgres and Parquet |
 | {{< ext "pg_ducklake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
 | {{< ext "pg_fkpart" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "OLAP" >}} | Table partitioning by foreign key utility |
@@ -162,13 +162,13 @@ There are 615 packaged PostgreSQL extensions:
 | {{< ext "pg_hint_plan" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | {{< ext "hypopg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Hypothetical indexes for PostgreSQL |
 | {{< ext "index_advisor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FEAT" >}} | Query index advisor |
-| {{< ext "plan_filter" "pg_plan_filter" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | filter statements by their execution plans. |
+| {{< ext "plan_filter" "pg_plan_filter" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | Cooperative statement and transaction guards based on estimated plan cost |
 | {{< ext "pg_variables" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Session-scoped variables with scalar, array, and record types |
 | {{< ext "imgsmlr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Image similarity with haar |
 | {{< ext "pg_ivm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | incremental view maintenance on PostgreSQL |
 | {{< ext "pg_incremental" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Incremental Processing by Crunchy Data |
 | {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "FEAT" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
-| {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Durable SQL functions for PostgreSQL |
+| {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | SQL-native durable orchestrations for PostgreSQL |
 | {{< ext "pg_disorder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "FEAT" >}} | Perturb unordered SELECT row order to expose order-dependent tests |
 | {{< ext "pg_local_cache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
 | {{< ext "pg_kv" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
@@ -279,7 +279,7 @@ There are 615 packaged PostgreSQL extensions:
 | {{< ext "l10n_table_dependent_extension" "pg_xenophile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "TYPE" >}} | PostgreSQL l10n toolbox |
 | {{< ext "currency" "pg_currency" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Custom PostgreSQL currency type in 1Byte |
 | {{< ext "pg_money" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Exact currency-aware monetary types, arithmetic, and allocation |
-| {{< ext "collection" "pgcollection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Memory optimized data type to be used inside of plpglsql func |
+| {{< ext "collection" "pgcollection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Associative-array data types for high-performance PL/pgSQL workflows |
 | {{< ext "istore" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Integer key/value types with arithmetic, aggregation, and GIN indexing |
 | {{< ext "pgmp" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Multiple Precision Arithmetic extension |
 | {{< ext "numeral" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | numeral datatypes extension |
@@ -295,6 +295,7 @@ There are 615 packaged PostgreSQL extensions:
 | {{< ext "debversion" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Debian version number data type |
 | {{< ext "pg_duration" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | data type for representing durations |
 | {{< ext "pg_bikram_sambat" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Bikram Sambat date type and AD/BS conversion functions |
+| {{< ext "pg_nanotime" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | Nanosecond timestamp and fixed-duration interval types |
 | {{< ext "pg_rrule" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TYPE" >}} | RRULE field type for PostgreSQL |
 | {{< ext "pgcalendar" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TYPE" >}} | Recurring calendar, schedule, and exception management for PostgreSQL |
 | {{< ext "timestamp9" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TYPE" >}} | timestamp nanosecond resolution |

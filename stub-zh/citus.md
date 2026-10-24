@@ -2,23 +2,25 @@
 
 来源：
 
-- [Citus v14.2.0 发行说明](https://github.com/citusdata/citus/releases/tag/v14.2.0)
-- [Citus v14.2.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.2.0/CHANGELOG.md)
-- [Citus v14.2.0 控制文件](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/distributed/citus.control)
+- [Citus v14.3.0 发行说明](https://github.com/citusdata/citus/releases/tag/v14.3.0)
+- [Citus v14.3.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.3.0/CHANGELOG.md)
+- [Citus v14.3.0 控制文件](https://github.com/citusdata/citus/blob/v14.3.0/src/backend/distributed/citus.control)
+- [Citus v14.3.0 README](https://github.com/citusdata/citus/blob/v14.3.0/README.md)
 - [什么是 Citus？](https://docs.citusdata.com/en/stable/get_started/what_is_citus.html)
 - [Citus 实用函数](https://docs.citusdata.com/en/stable/develop/api_udf.html)
+- [Citus 升级流程](https://docs.citusdata.com/en/stable/admin_guide/upgrading_citus.html)
 
 Citus 通过把表分片到工作节点，将 PostgreSQL 转换为分布式数据库，同时仍以 PostgreSQL SQL、索引、扩展、事务和运维工具作为面向用户的接口。它常用于多租户 SaaS 数据库、实时分析、时序/事件工作负载和分布式微服务模式。
 
-本地 Pigsty 目录将 Citus 打包为 `citus`，并提供主扩展 `citus`；同一软件包还包含 `citus_columnar`。Citus 是预加载扩展，因此每个节点都必须在执行 `CREATE EXTENSION` 之前加载其库。
+扩展名称为 `citus`。14.3.0 发行版使用 SQL/control 版本 `14.3-1`，支持 PostgreSQL 16-18。每个节点都必须先预加载库，再由超级用户执行 `CREATE EXTENSION`；扩展不可重定位。
 
 ### 启用 Citus
 
-```conf
+```ini
 shared_preload_libraries = 'citus'
 ```
 
-在协调节点和工作节点上重启 PostgreSQL，然后在数据库中创建扩展：
+保留其他必需的预加载库。在协调节点和工作节点上重启 PostgreSQL，然后在每个参与的数据库中创建扩展：
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS citus;
@@ -150,7 +152,7 @@ SELECT citus_cluster_changes_unblock();
 
 应将这些函数与常规 PostgreSQL 备份规范配合使用：一致检查点、WAL 归档、跨节点快照顺序，以及经过测试的恢复流程。
 
-### 版本 14.2 运维
+### 管理控制
 
 Citus 14.2 新增了仅限超级用户使用的 `citus_internal.distribute_object()` 修复辅助函数，用于处理元数据未正确传播的受支持数据库对象。应将它视为针对性的恢复操作，而不是常规分布 API。
 
@@ -158,9 +160,29 @@ Citus 14.2 新增了仅限超级用户使用的 `citus_internal.distribute_objec
 
 ### 注意事项
 
-- Pigsty 本地元数据当前跟踪面向 PostgreSQL 16-18 的 Citus 14.x；Citus 14 已停止支持 PostgreSQL 15。
+- Citus 14 支持 PostgreSQL 16-18，已停止支持 PostgreSQL 15。
 - 必须在创建扩展之前设置 `shared_preload_libraries = 'citus'`。在全新服务器上，仅执行 `CREATE EXTENSION citus` 并不充分。
 - 应仔细选择分布列。分布式表上的主键和唯一约束通常需要包含分布列。
 - 跨分片连接、重分区连接、分布式 DDL 和多分片写入功能强大，但其规划与锁行为不同于单节点 PostgreSQL。
-- Citus 通过 `citus_columnar` 提供自己的列存储接口；Pigsty 元数据将其标记为与 Hydra `columnar` 冲突。
+- 同一发行项目还提供 `citus_columnar`；其存储与维护要求独立于行存表的分布操作。
 - 集群变更阻塞函数是用于备份的运维工具。备份脚本失败后，不要让集群一直处于阻塞状态。
+
+### 14.3 发行版与升级
+
+14.3.0 可为跨分片 ORDER BY 查询合并工作节点的有序结果，并在适用时分小批读取结果。新增的 `citus.enable_or_clause_arm_pruning` 可按分片裁剪无关的 OR 子句分支。该版本还将内部元数据清理限制为超级用户操作，为内部 SPI 查询使用空搜索路径，并在对象所有者的受限执行上下文中重放对象定义。
+
+升级须协调所有节点。安装匹配的二进制文件并重启 PostgreSQL 后，在每个包含 Citus 的数据库中执行 SQL 升级：
+
+```sql
+ALTER EXTENSION citus UPDATE TO '14.3-1';
+SELECT extversion FROM pg_extension WHERE extname = 'citus';
+SELECT citus_version();
+```
+
+随后在协调节点完成集群升级：
+
+```sql
+CALL citus_finish_citus_upgrade();
+```
+
+ALTER EXTENSION 使用 SQL/control 版本号，而不是软件包版本号。如果 Citus 和 PostgreSQL 都需要升级，应先完成 Citus 升级，再按独立的 PostgreSQL 主版本升级流程操作。

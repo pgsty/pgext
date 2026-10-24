@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vectorscale" >}} |
 
-> [!Note] Alpha 0.1.0 for testing; packaged for PostgreSQL 18 only. Requires OpenBLAS; no pgvector dependency. No in-place upgrade from earlier release candidates.
+> [!Note] Alpha; PG18 packages; OpenBLAS required; no pgvector dependency; no in-place RC upgrade.
 
 
 ## Packages

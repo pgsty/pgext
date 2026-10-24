@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_tle" >}} {{< ext "pgextwlist" >}} {{< ext "pg_readme" >}} {{< ext "ddlx" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_command_fw" >}} {{< ext "supautils" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] Optional startup updater. Package 3.5.3; SQL 3.5.
+> [!Note] pkg 3.5.3; SQL 3.5; optional startup updater via pg_extension_base, outside pg_lake CASCADE.
 
 
 ## Packages

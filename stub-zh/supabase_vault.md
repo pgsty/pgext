@@ -1,52 +1,30 @@
-
-
-
 ## 用法
 
-> [supabase_vault: Supabase 的加密密钥存储](https://github.com/supabase/vault)
+来源：
 
-Supabase Vault 提供 `vault.secrets` 表来存储静态加密的敏感信息（API 密钥、令牌等）。通过 `vault.decrypted_secrets` 视图即时解密。
+- [Official source](https://github.com/supabase/vault/blob/2f05b9be4dcac774a458d5a9e6acae794eb6b8c4/README.md)
+- [Official source](https://github.com/supabase/vault/blob/2f05b9be4dcac774a458d5a9e6acae794eb6b8c4/supabase_vault.control.in)
+- [Official source](https://github.com/supabase/vault/blob/2f05b9be4dcac774a458d5a9e6acae794eb6b8c4/Makefile)
+- [Official source](https://github.com/supabase/vault/blob/2f05b9be4dcac774a458d5a9e6acae794eb6b8c4/sql/supabase_vault--0.3.1--0.3.2.sql)
 
-```sql
-CREATE EXTENSION supabase_vault CASCADE;
-```
+`supabase_vault` 0.3.2 在 PostgreSQL 中保存加密秘密，并通过受权限控制的视图提供解密结果。固定模式为 `vault`，当前版本不再依赖 `pgsodium`。上游测试 PostgreSQL 14–19。由超级用户安装，无须预加载或重启。
 
-### 存储密钥
+### 基本流程
 
-```sql
-INSERT INTO vault.secrets (secret) VALUES ('s3kre3t_k3y') RETURNING *;
-
--- 或使用辅助函数：
-SELECT vault.create_secret('another_s3kre3t');
-
--- 带可选名称和描述：
-SELECT vault.create_secret('my_secret', 'unique_name', 'This is the description');
-```
-
-### 读取密钥
-
-`vault.secrets` 表以加密方式存储数据。使用 `vault.decrypted_secrets` 视图读取解密后的值：
+以下值均为演示字符串，不是真实凭据：
 
 ```sql
-SELECT * FROM vault.decrypted_secrets ORDER BY created_at DESC LIMIT 3;
--- 包含 `decrypted_secret` 列，其中为明文值
+CREATE EXTENSION supabase_vault;
+SELECT vault.create_secret('example-secret', 'api_token', 'Demo only');
+SELECT name, decrypted_secret FROM vault.decrypted_secrets WHERE name = 'api_token';
+SELECT vault.update_secret(id, 'replacement-example', 'api_token', 'Rotated demo')
+FROM vault.secrets WHERE name = 'api_token';
 ```
 
-### 更新密钥
+`vault.create_secret` 返回秘密 UUID，可接受名称与描述；`vault.update_secret` 更新指定 UUID。`vault.secrets` 保存密文和元数据，`vault.decrypted_secrets` 向获准读取的角色提供明文。应明确限制辅助函数与解密视图的权限。
 
-```sql
-SELECT vault.update_secret(
-    '7095d222-efe5-4cd5-b5c6-5755b451e223',
-    'n3w_upd@ted_s3kret',
-    'updated_unique_name',
-    'This is the updated description'
-);
-```
+### 安全与升级
 
-### 安全提示
+0.3.2 将秘密创建和更新辅助函数搜索路径中的 `pg_temp` 移到最后。安装对应文件后，在每个数据库执行 `ALTER EXTENSION supabase_vault UPDATE TO '0.3.2'`。
 
-关闭语句日志以防止密钥出现在日志中：
-
-```sql
-ALTER SYSTEM SET statement_log = 'none';
-```
+静态加密不能阻止有权查询的角色读取明文。秘密字面量和返回值可能进入数据库日志、客户端历史或应用遥测；应使用文档规定的秘密处理流程，并正确配置这些系统。保护加密密钥环境，验证备份恢复行为。不能因为存储表加密，就把解密视图的访问视为安全。

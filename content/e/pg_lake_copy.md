@@ -33,7 +33,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_parquet" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "file_fdw" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_csv" >}} {{< ext "omni_csv" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_duckdb" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} |
 
-> [!Note] Lake COPY component. Package 3.5.3; SQL 3.5.
+> [!Note] pkg 3.5.3; SQL 3.5; auto-loaded by pg_extension_base in dependency order.
 
 
 ## Packages

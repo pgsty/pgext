@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_tle" >}} {{< ext "pg_readme" >}} {{< ext "pgextwlist" >}} {{< ext "ddlx" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pg_command_fw" >}} {{< ext "supautils" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] pg_lake preload entry point. Package 3.5.3; SQL 3.5.
+> [!Note] pkg 3.5.3; SQL 3.5; preload manages pg_lake modules/workers.
 
 
 ## Packages

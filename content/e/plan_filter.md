@@ -1,7 +1,7 @@
 ---
 title: "plan_filter"
 linkTitle: "plan_filter"
-description: "filter statements by their execution plans."
+description: "Cooperative statement and transaction guards based on estimated plan cost"
 weight: 2810
 categories: ["FEAT"]
 languages: ["C"]
@@ -10,7 +10,7 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pg_plan_filter**](https://github.com/pgexperts/pg_plan_filter) : filter statements by their execution plans.
+[**pg_plan_filter**](https://github.com/pgexperts/pg_plan_filter) : Cooperative statement and transaction guards based on estimated plan cost
 
 
 ## Overview
@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_hint_plan" >}} {{< ext "pg_kpart" >}} {{< ext "pg_command_fw" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "block_copy_command" >}} {{< ext "pg_stat_plans" >}} {{< ext "pg_readonly" >}} |
 
-> [!Note] Maintained RPM/DEB recipes and versioned source are 1.0.0; local package matrix on 2026-10-10 has RPM 1.0.0 and DEB 0.0.1. Retain maintained DEB 1.0.0; repository publication is a separate check.
+> [!Note] Not a security boundary: planner costs are user-settable; limits default off; DEB indexed 0.0.1/recipe 1.0.0.
 
 
 ## Packages

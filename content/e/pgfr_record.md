@@ -33,7 +33,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_stat_log" >}} {{< ext "pg_tracing" >}} {{< ext "pg_stat_backtrace" >}} {{< ext "logerrors" >}} {{< ext "pgelog" >}} |
 |    **Siblings**   | {{< ext "pgfr_analyze" >}} |
 
-> [!Note] Package 2.32.1; call pgfr_record.enable() after installation.
+> [!Note] pkg 2.32.1 overrides control 0.0.0; call pgfr_record.enable() after CREATE; scheduling waits for commit.
 
 
 ## Packages

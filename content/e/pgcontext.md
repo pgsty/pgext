@@ -10,14 +10,14 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pgcontext**](https://pgxn.org/dist/pgContext/0.2.0/) : Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables.
+[**pgcontext**](https://pgxn.org/dist/pgcontext/0.3.0/) : Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables.
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1960** | {{< badge content="pgcontext" link="https://pgxn.org/dist/pgContext/0.2.0/" >}} | {{< ext "pgcontext" >}} | `0.3.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **1960** | {{< badge content="pgcontext" link="https://pgxn.org/dist/pgcontext/0.3.0/" >}} | {{< ext "pgcontext" >}} | `0.3.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,10 +28,11 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgcontext` |
+|    **Need By**    | {{< ext "pgcontext_pgvector" >}} |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vectorize" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pgmnemo" >}} {{< ext "pg_summarize" >}} |
 |    **Siblings**   | {{< ext "pgcontext_pgvector" >}} |
 
-> [!Note] PG17-18; 0.3.0 is clean-install-only and retires pgcontext_pgvector.
+> [!Note] 0.3.0 requires clean install; no 0.1/0.2 upgrade; pgcontext_pgvector retired.
 
 
 ## Packages
@@ -116,7 +117,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://pgxn.org/dist/pgContext/0.2.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/pgContext/0.2.0/" />}}
+{{< card link="https://pgxn.org/dist/pgcontext/0.3.0/" title="Repository" icon="link" subtitle="pgxn.org/dist/pgcontext/0.3.0/" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcontext-0.3.0.tar.gz" />}}
 {{< /cards >}}
 

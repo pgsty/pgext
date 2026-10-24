@@ -2,12 +2,12 @@
 
 来源：
 
-- [Citus v14.2.0 columnar 控制文件](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/columnar/citus_columnar.control)
-- [Citus v14.2.0 columnar 选项辅助函数](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/columnar/sql/udfs/alter_columnar_table_set/latest.sql)
+- [Citus v14.3.0 columnar 控制文件](https://github.com/citusdata/citus/blob/v14.3.0/src/backend/columnar/citus_columnar.control)
+- [Citus v14.3.0 columnar 选项辅助函数](https://github.com/citusdata/citus/blob/v14.3.0/src/backend/columnar/sql/udfs/alter_columnar_table_set/latest.sql)
 - [Citus 列存储文档](https://docs.citusdata.com/en/stable/admin_guide/table_management.html#columnar-storage)
-- [Citus v14.2.0 发行说明](https://github.com/citusdata/citus/releases/tag/v14.2.0)
+- [Citus v14.3.0 发行说明](https://github.com/citusdata/citus/releases/tag/v14.3.0)
 
-`citus_columnar` 为 PostgreSQL 提供面向追加写入的列式表访问方法。它随 Citus 14.2 软件包交付，但属于独立扩展：软件包版本为 `14.2.0`，而扩展控制版本为 `14.2-1`。适用于以扫描为主，且工作负载符合其写入与功能限制的归档或分析表。
+`citus_columnar` 为 PostgreSQL 提供面向追加写入的列式表访问方法。它随 Citus 14.3 软件包交付，但属于独立扩展：软件包版本为 `14.3.0`，而扩展控制版本为 `14.3-1`。适用于以扫描为主，且工作负载符合其写入与功能限制的归档或分析表。
 
 ### 创建列存储表
 
@@ -74,4 +74,8 @@ SELECT alter_columnar_table_set(
 - TOAST 不可用；大值会保持行内存储，并可能触及 PostgreSQL 行大小限制。
 - 不支持行锁、`AFTER ... FOR EACH ROW` 触发器、可串行化隔离、逻辑解码、外键、非日志表以及多种扫描类型。采用该访问方法前，应检查当前上游限制列表。
 - 不应把普通堆表在索引、vacuum、复制、触发器和约束方面的惯例直接套用到列存储上。应使用有代表性的列存储表验证每项必需的数据库功能。
-- 扩展安装在 `pg_catalog` 中，不可重定位，SQL 版本为 `14.2-1`；检查或更新 `pg_extension` 时应使用该版本，而不是软件包版本 `14.2.0`。
+- 扩展安装在 `pg_catalog` 中，不可重定位，SQL 版本为 `14.3-1`；检查或更新 `pg_extension` 时应使用该版本，而不是软件包版本 `14.3.0`。
+
+### 14.3 可见性修复
+
+14.3.0 修复列存条带 xmin 可见性。应在整个部署中安装匹配的动态库与 SQL 更新，使用扩展版本 `14.3-1`；此修复并未取消上述访问方法限制。

@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_readme" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_get_functiondef" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_query_rewrite" >}} {{< ext "ddl_historization" >}} {{< ext "data_historization" >}} |
 
-> [!Note] Upstream intentionally ships no control file or CREATE EXTENSION path; execute the packaged relation_sql.sql in each database; relation_sql('install') requires superuser only for its optional event trigger.
+> [!Note] No control; run relation_sql.sql per DB; auto-sync needs superuser, otherwise sync manually.
 
 
 ## Packages

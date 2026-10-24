@@ -1,7 +1,7 @@
 ---
 title: "collection"
 linkTitle: "collection"
-description: "Memory optimized data type to be used inside of plpglsql func"
+description: "Associative-array data types for high-performance PL/pgSQL workflows"
 weight: 3700
 categories: ["TYPE"]
 languages: ["C"]
@@ -10,7 +10,7 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pgcollection**](https://github.com/aws/pgcollection) : Memory optimized data type to be used inside of plpglsql func
+[**pgcollection**](https://github.com/aws/pgcollection) : Associative-array data types for high-performance PL/pgSQL workflows
 
 
 ## Overview
@@ -28,6 +28,8 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgbson" >}} {{< ext "intarray" >}} {{< ext "hstore" >}} {{< ext "arraymath" >}} {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "floatvec" >}} {{< ext "pg_projection" >}} {{< ext "istore" >}} |
+
+> [!Note] PGXN misnames it pgcollection; pkg 2.1.3, repos may lag.
 
 
 ## Packages

@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgmq" >}} {{< ext "redis" >}} {{< ext "redis_fdw" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "pgq" >}} {{< ext "tcn" >}} {{< ext "pgmqtt" >}} {{< ext "pg_durable" >}} |
 
-> [!Note] PGDG packages remain absent for PG14 on EL8 aarch64.
+> [!Note] PGDG gap: PG14/EL8/aarch64.
 
 
 ## Packages

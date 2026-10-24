@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "sslinfo" >}} {{< ext "pg_oidc_validator" >}} {{< ext "oidc_validator" >}} {{< ext "pguecc" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "pgsodium" >}} {{< ext "login_hook" >}} {{< ext "libx509pq" >}} |
 
-> [!Note] PGDG packages remain absent for PG18 on EL8 x86_64.
+> [!Note] Source/recipe 1.4.1; indexed packages lag; PGDG gap: PG18/EL8/x86_64; rebuild needed.
 
 
 ## Packages

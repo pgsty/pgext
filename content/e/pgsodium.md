@@ -28,10 +28,9 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pgsodium` |
-|    **Need By**    | {{< ext "supabase_vault" >}} |
 |   **See Also**    | {{< ext "pgcrypto" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "pgcryptokey" >}} {{< ext "pgsmcrypto" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_tde" >}} {{< ext "pg_enigma" >}} |
 
-> [!Note] Uses private libsodium 1.0.22; no external runtime dependency.
+> [!Note] Private libsodium 1.0.22; no external runtime dependency.
 
 
 ## Packages

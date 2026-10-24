@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "pglogical" >}} {{< ext "spock" >}} {{< ext "mimeo" >}} {{< ext "pgoutput" >}} {{< ext "postgres_fdw" >}} {{< ext "repmgr" >}} {{< ext "pg_failover_slots" >}} {{< ext "citus" >}} {{< ext "pgautofailover" >}} {{< ext "bgw_replstatus" >}} |
 
-> [!Note] Package 2.1.9; SQL version 2.1.8.
+> [!Note] pkg 2.1.9; SQL 2.1.8; build needs libpgfeutils.
 
 
 ## Packages

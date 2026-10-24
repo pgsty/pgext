@@ -51,19 +51,19 @@
     }
   ],
   "stats": {
-    "Rows": 446,
+    "Rows": 447,
     "OS": 16,
     "PG": 5,
-    "Cells": 35680,
+    "Cells": 35760,
     "Counts": {
-      ".": 2812,
-      "B": 8224,
-      "G": 24644
+      ".": 2840,
+      "B": 8200,
+      "G": 24720
     },
     "pgdg_counts": {
-      ".": 2812,
+      ".": 2840,
       "B": 9814,
-      "R": 23054
+      "R": 23106
     }
   },
   "rows": [
@@ -2983,40 +2983,40 @@
       "ext": "pg_tre",
       "url": "https://pigsty.io/ext/e/pg_tre",
       "groups": {
-        "d12.aarch64": ".....",
-        "d12.x86_64": ".....",
-        "d13.aarch64": ".....",
-        "d13.x86_64": ".....",
+        "d12.aarch64": "...GG",
+        "d12.x86_64": "...GG",
+        "d13.aarch64": "...GG",
+        "d13.x86_64": "...GG",
         "el10.aarch64": "...GG",
         "el10.x86_64": "...GG",
         "el8.aarch64": "...GG",
         "el8.x86_64": "...GG",
         "el9.aarch64": "...GG",
         "el9.x86_64": "...GG",
-        "u22.aarch64": ".....",
-        "u22.x86_64": ".....",
-        "u24.aarch64": ".....",
-        "u24.x86_64": ".....",
-        "u26.aarch64": ".....",
-        "u26.x86_64": "....."
+        "u22.aarch64": "...GG",
+        "u22.x86_64": "...GG",
+        "u24.aarch64": "...GG",
+        "u24.x86_64": "...GG",
+        "u26.aarch64": "...GG",
+        "u26.x86_64": "...GG"
       },
       "pgdg_groups": {
-        "d12.aarch64": ".....",
-        "d12.x86_64": ".....",
-        "d13.aarch64": ".....",
-        "d13.x86_64": ".....",
+        "d12.aarch64": "...RR",
+        "d12.x86_64": "...RR",
+        "d13.aarch64": "...RR",
+        "d13.x86_64": "...RR",
         "el10.aarch64": "...RR",
         "el10.x86_64": "...RR",
         "el8.aarch64": "...RR",
         "el8.x86_64": "...RR",
         "el9.aarch64": "...RR",
         "el9.x86_64": "...RR",
-        "u22.aarch64": ".....",
-        "u22.x86_64": ".....",
-        "u24.aarch64": ".....",
-        "u24.x86_64": ".....",
-        "u26.aarch64": ".....",
-        "u26.x86_64": "....."
+        "u22.aarch64": "...RR",
+        "u22.x86_64": "...RR",
+        "u24.aarch64": "...RR",
+        "u24.x86_64": "...RR",
+        "u26.aarch64": "...RR",
+        "u26.x86_64": "...RR"
       }
     },
     {
@@ -3028,12 +3028,12 @@
         "d12.x86_64": "GGGGG",
         "d13.aarch64": "GGGGG",
         "d13.x86_64": "GGGGG",
-        "el10.aarch64": "GBBBB",
-        "el10.x86_64": "GBBBB",
-        "el8.aarch64": "BBBBB",
-        "el8.x86_64": "BBBBB",
-        "el9.aarch64": "BBBBB",
-        "el9.x86_64": "BBBBB",
+        "el10.aarch64": "GGGGG",
+        "el10.x86_64": "GGGGG",
+        "el8.aarch64": "BGGGG",
+        "el8.x86_64": "BGGGG",
+        "el9.aarch64": "BGGGG",
+        "el9.x86_64": "BGGGG",
         "u22.aarch64": "GGGGG",
         "u22.x86_64": "GGGGG",
         "u24.aarch64": "GGGGG",
@@ -7568,6 +7568,47 @@
         "u24.x86_64": "RRRRR",
         "u26.aarch64": "RRRRR",
         "u26.x86_64": "RRRRR"
+      }
+    },
+    {
+      "pkg": "pg_nanotime",
+      "ext": "pg_nanotime",
+      "url": "https://pigsty.io/ext/e/pg_nanotime",
+      "groups": {
+        "d12.aarch64": "...GG",
+        "d12.x86_64": "...GG",
+        "d13.aarch64": "...GG",
+        "d13.x86_64": "...GG",
+        "el10.aarch64": "...GG",
+        "el10.x86_64": "...GG",
+        "el8.aarch64": "...GG",
+        "el8.x86_64": "...GG",
+        "el9.aarch64": "...GG",
+        "el9.x86_64": "...GG",
+        "u22.aarch64": "...GG",
+        "u22.x86_64": "...GG",
+        "u24.aarch64": "...GG",
+        "u24.x86_64": "...GG",
+        "u26.aarch64": "...GG",
+        "u26.x86_64": "...GG"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "...RR",
+        "d12.x86_64": "...RR",
+        "d13.aarch64": "...RR",
+        "d13.x86_64": "...RR",
+        "el10.aarch64": "...RR",
+        "el10.x86_64": "...RR",
+        "el8.aarch64": "...RR",
+        "el8.x86_64": "...RR",
+        "el9.aarch64": "...RR",
+        "el9.x86_64": "...RR",
+        "u22.aarch64": "...RR",
+        "u22.x86_64": "...RR",
+        "u24.aarch64": "...RR",
+        "u24.x86_64": "...RR",
+        "u26.aarch64": "...RR",
+        "u26.x86_64": "...RR"
       }
     },
     {

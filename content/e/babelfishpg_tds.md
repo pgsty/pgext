@@ -31,7 +31,7 @@ page_width: full
 |   **See Also**    | {{< ext "tds_fdw" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "orafce" >}} {{< ext "db2fce" >}} |
 |    **Siblings**   | {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_money" >}} |
 
-> [!Note] PG17: Babelfish 5.7.0; PG18: 6.2.0. Package fields use PG18.
+> [!Note] Babelfish kernel: PG17.11/5.7.0, PG18.6/6.2.0; packages follow PG18.
 
 
 ## Packages
@@ -69,7 +69,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://babelfishpg.org/" title="Repository" icon="link" subtitle="babelfishpg.org/" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-18-18.4-6.2.0.tar.gz babelfish-17-17.10-5.7.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="babelfish-18-18.6-6.2.0.tar.gz babelfish-17-17.11-5.7.0.tar.gz" />}}
 {{< /cards >}}
 
 

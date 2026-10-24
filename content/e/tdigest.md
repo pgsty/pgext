@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ddsketch" >}} {{< ext "count_distinct" >}} {{< ext "topn" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "hll" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "weighted_statistics" >}} |
 
+> [!Note] Compression is not an error bound; PostgreSQL license (PGXN labels it bsd).
+
 
 ## Packages
 

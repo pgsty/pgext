@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_ducklake" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_parquet" >}} {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_clickhouse" >}} {{< ext "columnar" >}} |
 |    **Siblings**   | {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] PG16-18; preload pg_extension_base and run pgduck_server. Package 3.5.3; SQL 3.5.
+> [!Note] pkg 3.5.3; upstream 3.5.7; SQL 3.5; PG16-18; OpenSSL 3/no EL8; preload pg_extension_base; run matching pgduck_server; DuckDB hook/COPY order matters.
 
 
 ## Packages

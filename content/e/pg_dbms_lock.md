@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "pg_background" >}} |
 |   **See Also**    | {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_utl_smtp" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "orafce" >}} {{< ext "pg_cron" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} |
 
-> [!Note] Requires pg_background >= 2.0; the PIGSTY DEB carries a downstream pg_background v2 API compatibility patch.
+> [!Note] pkg 2.0; SQL 2.0.0; pg_background>=2.0; Pigsty DEB patches the v2 API.
 
 
 ## Packages

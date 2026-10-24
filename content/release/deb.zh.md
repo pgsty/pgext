@@ -10,7 +10,9 @@ weight: 300
 
 | 名称             | 旧版本 | 新版本 | 备注                                     |
 |:-----------------|:-------|:-------|:-----------------------------------------|
+| citus            | 14.2.0 | 14.3.0 | PG16-18；含 citus_columnar             |
 | documentdb       | 0.117  | 1.0    | PG16-18；移除 PG15；含 core/extended_rum |
+| duckdb_fdw       | 1.4.3  | 2.0.2  | PG15-18；DuckDB 2.0.0；与 pg_duckdb 互斥  |
 | haproxy          | 3.4.4  | 3.4.7  | DEB 文档随主包交付                       |
 | hdr_histogram    | -      | 1.0.0  | PG14-18；SQL 版本 1.0                    |
 | ivorysql-contrib | 5.4    | 5.6    | PG18（IvorySQL）；含 38 个扩展           |
@@ -20,11 +22,13 @@ weight: 300
 | pg_improv        | -      | 0.10.0 | PG15-18；公式增量重算                    |
 | pg_ivm           | 1.16   | 1.17   | PG14-18                                  |
 | pg_kv            | -      | 0.1.0  | PG15-18；非持久化共享内存 KV             |
-| pg_mentat        | 1.14.0 | 1.17.2 | PG14-18；修复可信安装的搜索路径问题      |
+| pg_mentat        | 1.14.0 | 1.18.0 | PG14-18；修复可信安装的搜索路径问题      |
+| pg_nanotime      | -      | 0.2.0  | PG17-18；纳秒时间戳；预览版                    |
 | pg_regresql      | 2.0.0  | 2.1.0  | PG14-18；SQL 版本 2.0                    |
 | pg_relusage      | 1.0.1  | 1.0.2  | PG14-18；需加载                          |
 | pg_search        | 0.26.1 | 0.26.3 | PG15-18；pgrx 0.19.3；需预加载           |
 | pg_synonym       | -      | 1.0.0  | PG15-18；SQL 版本 1.0                    |
+| pg_tre           | -      | 4.5.2  | PG17-18；近似正则匹配                       |
 | pg_try_cast      | -      | 1.0.0  | PG16-18；SQL 版本 1.0                    |
 | pg_turbovec      | 2.12.1 | 2.14.1 | PG14-18；修复并发与 VACUUM 问题          |
 | pgbson           | 2.1.0  | 2.2.0  | PG14-18                                  |

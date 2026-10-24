@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `pgtle` |
 |   **See Also**    | {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "pgwasm" >}} {{< ext "pllua" >}} {{< ext "pg_extension_base" >}} {{< ext "pgextwlist" >}} {{< ext "pg_readme" >}} |
 
-> [!Note] Maintained RPM/DEB recipes and source are 1.5.3; flex required to build. Preload/restart required. Local indexed matrix on 2026-10-10 has RPM 1.5.3 and DEB 1.5.2; publication is checked separately.
+> [!Note] Preload/restart; build needs flex; RPM 1.5.3, indexed DEB 1.5.2, recipe 1.5.3; PG19 beta.
 
 
 ## Packages

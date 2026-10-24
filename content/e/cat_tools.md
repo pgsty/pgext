@@ -29,8 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `cat_tools` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|    **Need By**    | `extension_drop` `object_reference` |
-|   **See Also**    | `pg_catalog_get_defs` `pg_global_catalog` `meta_triggers` {{< ext "pg_catcheck" >}} {{< ext "pgdd" >}} {{< ext "ddlx" >}} {{< ext "meta" >}} `object_reference` |
+|   **See Also**    | {{< ext "pg_catcheck" >}} {{< ext "pgdd" >}} {{< ext "ddlx" >}} {{< ext "meta" >}} |
 
 > [!Note] Promoted from a source-only universe row to PIGSTY RPM and DEB packages at 0.3.0; control fixes schema cat_tools and META declares the plpgsql runtime dependency.
 

@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "system_stats" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} |
 
+> [!Note] pkg 1.0.1; SQL 1.0.
+
 
 ## Packages
 

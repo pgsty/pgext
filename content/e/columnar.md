@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} {{< ext "pg_sorted_heap" >}} {{< ext "citus_columnar" >}} |
 
-> [!Note] conflict with citus columnar, obsolete, no longer maintained
+> [!Note] Unmaintained; conflicts with citus_columnar; pkg 1.1.2, SQL 11.1-11.
 
 
 ## Packages

@@ -31,7 +31,7 @@ page_width: full
 |   **See Also**    | {{< ext "ddlx" >}} {{< ext "pg_render" >}} {{< ext "schedoc" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} {{< ext "pgpdf" >}} {{< ext "pg_get_functiondef" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_query_rewrite" >}} |
 |    **Siblings**   | {{< ext "pg_readme_test_extension" >}} |
 
-> [!Note] RPM: PGDG 0.7.1; DEB: PIGSTY 0.7.1.
+> [!Note] PGDG RPM/Pigsty DEB; Pigsty RPM fills gaps only.
 
 
 ## Packages

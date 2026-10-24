@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `anon` |
 |   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_tde" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} |
 
-> [!Note] ALTER EXTENSION UPDATE is unsupported; follow the upstream drop/recreate and masking-rule migration guide for 3.2.
+> [!Note] No in-place update; drop/recreate and migrate masking rules.
 
 
 ## Packages

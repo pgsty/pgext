@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_tde" >}} {{< ext "supabase_vault" >}} {{< ext "pgsodium" >}} {{< ext "column_encrypt" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} |
 
-> [!Note] Requires PostgreSQL 17+, OpenSSL 3, libcurl, and shared_preload_libraries=pg_vault_tde; RPM excludes EL8; includes pg_dump_tde, pg_restore_tde, and pg_basebackup_tde. Package 1.7.2; SQL control version 1.7. Export existing 1.7.0 encrypted TOAST data with the old binary before upgrading. Rewrite existing encrypted tables after upgrade; custom WAL users must coordinate primary/standby upgrades for resource-manager ID 128 to 161.
+> [!Note] pkg 1.7.2; SQL 1.7; PG17+, OpenSSL 3/no EL8; preload; export 1.7.0 encrypted TOAST with old binary; rewrite encrypted tables; coordinate custom WAL 128->161 on primary/standbys.
 
 
 ## Packages

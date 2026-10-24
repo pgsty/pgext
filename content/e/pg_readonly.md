@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_kpart" >}} {{< ext "prioritize" >}} {{< ext "qos" >}} {{< ext "pg_permissions" >}} {{< ext "set_user" >}} {{< ext "pg_roast" >}} {{< ext "pg_command_fw" >}} {{< ext "pg_hint_plan" >}} |
 
-> [!Note] Requires preload.
+> [!Note] Preload required; pkg 1.0.6, repos may retain 1.0.5.
 
 
 ## Packages

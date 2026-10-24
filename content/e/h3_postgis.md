@@ -31,7 +31,7 @@ page_width: full
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "qdgc" >}} {{< ext "pg_geohash" >}} {{< ext "pgrouting" >}} {{< ext "q3c" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "earthdistance" >}} {{< ext "mobilitydb" >}} |
 |    **Siblings**   | {{< ext "h3" >}} |
 
-> [!Note] RPM and DEB 4.5.0 require h3, postgis and postgis_raster; point coordinates use longitude, latitude.
+> [!Note] Points use longitude,latitude.
 
 
 ## Packages

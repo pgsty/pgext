@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} `postgres-json-schema` {{< ext "jsquery" >}} |
+|   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "jsquery" >}} |
 
 > [!Note] Remote $ref and format validation are unsupported; local $ref resolution is limited. Ships two libraries under one extension identity.
 

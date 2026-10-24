@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_text_semver" >}} {{< ext "debversion" >}} |
 
+> [!Note] 0.42.0 changes hashing; REINDEX all semver hash indexes.
+
 
 ## Packages
 

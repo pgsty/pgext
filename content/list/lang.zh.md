@@ -15,7 +15,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 434 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 435 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 80 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 69 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 15 | 使用 C++ 特性和库的扩展 |
@@ -27,7 +27,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="434 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="435 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -106,7 +106,7 @@ weight: 200
 | 2770 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
 | 2780 | {{< alias "pg_hint_plan" >}} | 添加强制指定执行计划的能力 |
 | 2790 | {{< alias "hypopg" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
-| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 使用执行计划代价过滤阻止特定查询语句 |
+| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 基于计划估算成本的语句与事务负载保护 |
 | 2820 | {{< alias "pg_variables" >}} | 提供标量、数组和记录类型的会话变量 |
 | 2830 | {{< alias "imgsmlr" >}} | 使用Haar小波分析计算图片相似度 |
 | 2840 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
@@ -202,7 +202,7 @@ weight: 200
 | 3650 | {{< alias "pg_sphere" "pgsphere" >}} | 球面对象函数、运算符与索引支持 |
 | 3660 | {{< alias "country" "pg_country" >}} | 国家代码数据类型，遵循ISO 3166-1标准 |
 | 3680 | {{< alias "currency" "pg_currency" >}} | 使用1字节表示的货币数据类型 |
-| 3700 | {{< alias "collection" "pgcollection" >}} | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
+| 3700 | {{< alias "collection" "pgcollection" >}} | 面向高性能 PL/pgSQL 工作流的关联数组数据类型 |
 | 3710 | {{< alias "istore" >}} | 支持算术、聚合与 GIN 索引的整数键值类型 |
 | 3720 | {{< alias "pgmp" >}} | 多精度算术扩展 |
 | 3730 | {{< alias "numeral" >}} | 数值类型扩展 |
@@ -217,6 +217,7 @@ weight: 200
 | 3820 | {{< alias "acl" "pg_acl" >}} | ACL数据类型 |
 | 3850 | {{< alias "pg_duration" >}} | 用于表示时间段的强化数据类型 |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat 日期类型与公历/尼泊尔历转换函数 |
+| 3870 | {{< alias "pg_nanotime" >}} | 纳秒时间戳与固定时长间隔类型 |
 | 3880 | {{< alias "pg_rrule" >}} | 日历重复规则RRULE数据类型 |
 | 3900 | {{< alias "timestamp9" >}} | 纳秒分辨率时间戳 |
 | 3910 | {{< alias "pgbson" >}} | 为 PostgreSQL 提供 BSON 数据类型及访问函数 |
@@ -600,7 +601,7 @@ weight: 200
 | 2750 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
 | 2760 | {{< alias "jsonschema" >}} | PostgreSQL JSON Schema 校验函数 |
 | 2860 | {{< alias "pg_trickle" >}} | 为 PostgreSQL 18 提供流式表与差分视图维护 |
-| 2870 | {{< alias "pg_durable" >}} | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
+| 2870 | {{< alias "pg_durable" >}} | PostgreSQL 内的 SQL 原生持久化工作流编排扩展 |
 | 2895 | {{< alias "pg_kv" >}} | 共享内存键值缓存、令牌桶限流与有序集合。 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 2980 | {{< alias "pg_mentat" >}} | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |

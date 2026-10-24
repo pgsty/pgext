@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "count_distinct" >}} {{< ext "hll" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "weighted_statistics" >}} |
 
+> [!Note] Some package coordinates may lag 2.7.1.
+
 
 ## Packages
 

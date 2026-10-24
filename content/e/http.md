@@ -30,6 +30,8 @@ page_width: full
 |    **Need By**    | {{< ext "pgmb" >}} |
 |   **See Also**    | {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "omni_httpc" >}} {{< ext "pg_graphql" >}} {{< ext "documentdb" >}} |
 
+> [!Note] pkg 1.7.2; SQL 1.7.
+
 
 ## Packages
 

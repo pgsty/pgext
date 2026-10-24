@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_stat_ch" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_lake" >}} {{< ext "hdfs_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "aws_s3" >}} {{< ext "pg_parquet" >}} |
 
-> [!Note] Release v0.11.0; SQL version 0.11; preloading is optional.
+> [!Note] pkg 0.11.0; SQL 0.11; update drops clickhouse_raw_query(); fetch_size removed; encoding_check=fail.
 
 
 ## Packages

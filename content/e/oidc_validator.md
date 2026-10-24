@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_oidc_validator" >}} {{< ext "pg_session_jwt" >}} {{< ext "pgjwt" >}} {{< ext "login_hook" >}} {{< ext "sslinfo" >}} {{< ext "sslutils" >}} {{< ext "pgsodium" >}} |
 
-> [!Note] Configure oauth_validator_libraries='oidc_validator'. no valid license, distribution suspend
+> [!Note] Distribution suspended: no upstream license grant; oauth_validator_libraries=oidc_validator.
 
 
 ## Packages

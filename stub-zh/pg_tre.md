@@ -2,16 +2,16 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/README.md)
-- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/pg_tre.control)
-- [sql/pg_tre--4.5.1.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/sql/pg_tre--4.5.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/CHANGELOG.md)
-- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/LIMITATIONS.md)
-- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/META.json)
-- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/.github/workflows/ci.yml)
-- [库初始化](https://codeberg.org/gregburd/pg_tre/src/tag/v4.5.1/src/module.c)
+- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/README.md)
+- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/pg_tre.control)
+- [sql/pg_tre--4.5.2.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/sql/pg_tre--4.5.2.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/CHANGELOG.md)
+- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/LIMITATIONS.md)
+- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/META.json)
+- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/.github/workflows/ci.yml)
+- [库初始化](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/src/module.c)
 
-`pg_tre` 4.5.1 在 PostgreSQL 17–19 上提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
+`pg_tre` 4.5.2 提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。上游支持 PostgreSQL 17–19；Pigsty 的 4.5.2 软件包面向 PostgreSQL 17–18。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
 
 ### 启用与查询
 
@@ -63,7 +63,7 @@ SELECT * FROM pg_tre_index_check('documents_body_tre'::regclass, 2);
 安装匹配文件，确保会话使用新库，再逐库更新：
 
 ```sql
-ALTER EXTENSION pg_tre UPDATE TO '4.5.1';
+ALTER EXTENSION pg_tre UPDATE TO '4.5.2';
 ```
 
 从 3.x 跨至 4.x 时，索引页格式虽然不变，WAL 记录类型却不兼容。替换库前必须干净停库；物理备库不能与主库运行不同主版本的扩展，须在主库升级后从新的基础备份重建，此边界不支持滚动升级。还须移除旧的 `wal_consistency_checking = 'pg_tre'` 设置，否则 4.x 无法启动；如需一致性检查，上游建议使用 `wal_consistency_checking = 'all'`。
@@ -71,3 +71,15 @@ ALTER EXTENSION pg_tre UPDATE TO '4.5.1';
 4.4 写入格式 11，并可读取格式 6–10。从这些格式升级无须例行重建；可选的 REINDEX 用于获得新的密集倒排表示。经过 4.4+ 写入后降级到 4.3，需要按旧格式重建受影响索引。更早版本的升级可能跨越其他边界，应检查更新日志。
 
 所有以大于 1 的 min_trigram_freq 构建的索引都必须 REINDEX；安装修复无法补回已省略的倒排条目。4.5 还会在此前受影响版本的索引上关闭过期的 SuRF 加速，立即恢复正确性；如需重新获得该加速，可选择重建。4.5.0 升至 4.5.1 不改变格式或普通查询行为，无须额外 REINDEX。含已删除元组 bloom 选项的旧索引定义，重建前仍须修正。
+
+### 4.5.2 正则表达式修复
+
+4.5.2 修复换行模式 `(?n)` 中的锚点和否定字符类，不改变索引格式；从 4.5.1 升级不需要额外 REINDEX。从更早的受影响版本升级时，仍须遵守上面的 WAL 迁移及遗漏倒排项重建要求。
+
+```sql
+SELECT E'a\nfoo' %~~ tre_pattern('(?n)^foo', 0) AS line_start,
+       E'foo\n' %~~ tre_pattern('(?n)foo$', 0) AS line_end,
+       E'\n' %~~ tre_pattern('(?n)[^x]', 0) AS negated_class;
+```
+
+预期结果依次为 true、true、false。修复同时作用于匹配函数和索引复核；未启用换行模式的模式保持原有行为。

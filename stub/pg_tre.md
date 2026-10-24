@@ -2,16 +2,16 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/README.md)
-- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/pg_tre.control)
-- [sql/pg_tre--4.5.1.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/sql/pg_tre--4.5.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/CHANGELOG.md)
-- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/LIMITATIONS.md)
-- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/META.json)
-- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.1/.github/workflows/ci.yml)
-- [Library initialization](https://codeberg.org/gregburd/pg_tre/src/tag/v4.5.1/src/module.c)
+- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/README.md)
+- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/pg_tre.control)
+- [sql/pg_tre--4.5.2.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/sql/pg_tre--4.5.2.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/CHANGELOG.md)
+- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/LIMITATIONS.md)
+- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/META.json)
+- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/.github/workflows/ci.yml)
+- [Library initialization](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/src/module.c)
 
-`pg_tre` 4.5.1 provides the `tre` native index access method for approximate regular-expression matching over text on PostgreSQL 17–19. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
+`pg_tre` 4.5.2 provides the `tre` native index access method for approximate regular-expression matching over text. Upstream supports PostgreSQL 17–19; Pigsty's 4.5.2 packages target PostgreSQL 17–18. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
 
 ### Enable and Search
 
@@ -63,7 +63,7 @@ SELECT * FROM pg_tre_index_check('documents_body_tre'::regclass, 2);
 Install matching files, ensure sessions use the new library, and update each database:
 
 ```sql
-ALTER EXTENSION pg_tre UPDATE TO '4.5.1';
+ALTER EXTENSION pg_tre UPDATE TO '4.5.2';
 ```
 
 Crossing from 3.x to 4.x changes WAL record types even though the index page format is unchanged. Shut down cleanly before replacing the library; a physical standby cannot run a different major extension version from its primary and must be rebuilt from a fresh base backup after the primary upgrade. There is no rolling upgrade across this boundary. Remove any old `wal_consistency_checking = 'pg_tre'` setting; it prevents startup in 4.x. Upstream recommends `wal_consistency_checking = 'all'` when consistency checking is needed.
@@ -71,3 +71,15 @@ Crossing from 3.x to 4.x changes WAL record types even though the index page for
 Version 4.4 writes format 11 and reads formats 6–10. Upgrading from those formats does not require a routine rebuild; optional REINDEX obtains the newer dense-posting representation. Downgrading to 4.3 after a 4.4+ write requires rebuilding the affected indexes for the older format. Older upgrades may cross additional boundaries described in the changelog.
 
 REINDEX every index built with min_trigram_freq greater than 1: installing the fix cannot restore omitted postings. Version 4.5 also disables stale SuRF acceleration on indexes from earlier affected versions, restoring correctness immediately; a rebuild is optional to regain that acceleration. Upgrading 4.5.0 to 4.5.1 changes neither format nor ordinary query behavior and requires no additional REINDEX. Old definitions using the removed tuple bloom options must still be corrected before rebuilding.
+
+### 4.5.2 Regex Correction
+
+Version 4.5.2 fixes newline-mode `(?n)` anchors and negated character classes. It retains the index format and needs no additional REINDEX when upgrading from 4.5.1. The older WAL-transition and omitted-posting rebuild requirements above still apply when crossing those affected versions.
+
+```sql
+SELECT E'a\nfoo' %~~ tre_pattern('(?n)^foo', 0) AS line_start,
+       E'foo\n' %~~ tre_pattern('(?n)foo$', 0) AS line_end,
+       E'\n' %~~ tre_pattern('(?n)[^x]', 0) AS negated_class;
+```
+
+The expected results are true, true and false. The fix affects matching and index rechecks alike; patterns without newline mode retain their previous behavior.

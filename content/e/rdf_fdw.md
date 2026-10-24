@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `sparql` |
 |   **See Also**    | {{< ext "pgrdf" >}} {{< ext "ogr_fdw" >}} {{< ext "sparql" >}} {{< ext "nominatim_fdw" >}} {{< ext "postgis" >}} {{< ext "mongo_fdw" >}} {{< ext "redis_fdw" >}} {{< ext "etcd_fdw" >}} {{< ext "xml2" >}} {{< ext "plxslt" >}} |
 
-> [!Note] Package 3.0.0; SQL extension 3.0. Upgrades from 2.x require the upstream rdfnode index and dependent-object migration; REINDEX alone is insufficient.
+> [!Note] pkg 3.0.0; SQL 3.0; recreate rdfnode indexes + sort/group dependents (REINDEX insufficient); sparql.uri returns rdfnode; request_max_redirect=-1 removed.
 
 
 ## Packages

@@ -2,9 +2,9 @@
 
 来源：
 
-- [Wrappers v0.6.2 README](https://github.com/supabase/wrappers/blob/v0.6.2/README.md)
+- [Wrappers v0.6.4 README](https://github.com/supabase/wrappers/blob/v0.6.4/README.md)
 - [官方FDW文档](https://fdw.dev/)
-- [v0.6.2版本发布说明](https://github.com/supabase/wrappers/releases/tag/v0.6.2)
+- [v0.6.4版本发布说明](https://github.com/supabase/wrappers/releases/tag/v0.6.4)
 - [MongoDB FDW文档](https://fdw.dev/catalog/mongodb/)
 - [安全指导](https://fdw.dev/guides/security/)
 
@@ -62,3 +62,7 @@ CREATE FOREIGN TABLE stripe_customers (
 - 文档警告说，当物化视图依赖外部表时，逻辑恢复可能会失败，请避免这种模式或依赖于物理备份。
 - 外部表本身不提供安全边界。请将它们保留在私有模式中，并谨慎授予访问权限，使用可用的最小特权远程凭证，并对暴露或缓存远程数据的本地表应用行级安全性。
 - 请将 API 密钥和令牌存储在支持的秘密存储中或每次请求的凭据机制中，而不是将其嵌入到版本控制系统中的 SQL 中。
+
+### 0.6.4 更新
+
+0.6.4 将内嵌 DuckDB 更新到 1.5.6，并修复 Shopify/Paddle 的 WASM 接口定义。上游 Cargo 清单提供 PostgreSQL 13–18 目标并使用 pgrx 0.19.2；打包构建选择可能不同。实际可用的封装器取决于启用的构建特性。应使用匹配的动态库和 SQL 文件升级扩展，修改服务器选项前核对具体封装器文档。

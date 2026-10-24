@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_datasentinel" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgmonitor" >}} {{< ext "system_stats" >}} {{< ext "pgnodemx" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} |
 
-> [!Note] Requires preload alongside pg_stat_statements.
+> [!Note] Preload with pg_stat_statements; restart; SQL update revokes PUBLIC EXECUTE on get_parsedinfo(int).
 
 
 ## Packages

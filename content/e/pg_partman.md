@@ -28,7 +28,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|    **Need By**    | `partman_to_cstore` {{< ext "timeseries" >}} |
+|    **Need By**    | {{< ext "timeseries" >}} |
 |   **See Also**    | {{< ext "timescaledb" >}} {{< ext "pg_ttl_index" >}} {{< ext "citus" >}} {{< ext "pg_fkpart" >}} {{< ext "timeseries" >}} {{< ext "pg_cron" >}} |
 
 

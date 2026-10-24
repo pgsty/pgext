@@ -2,17 +2,21 @@
 
 来源：
 
-- [v1.17.2 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/README.md)
-- [v1.17.2 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.17.2 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.17.2 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.17.2 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.17.2 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.17.2 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.17.2 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.17.2/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [v1.18.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/README.md)
+- [v1.18.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.18.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.18.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.18.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.18.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.18.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.18.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [1.18.0 upgrade SQL](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/sql/pg_mentat--1.17.2--1.18.0.sql)
+- [1.18.0 命名存储指南](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/docs/src/multi-tenancy.md)
+- [1.18.0 查询函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/src/functions/query.rs)
+- [1.18.0 pull 函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.18.0/crates/pg/pg_mentat/src/functions/pull.rs)
 
-`pg_mentat` 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
+`pg_mentat` 1.18.0 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
 
 ### 安装并定义模式
 
@@ -52,10 +56,10 @@ SELECT mentat.q('
 ### Pull、历史记录与假设事务
 
 ```sql
-SELECT mentat.pull('[*]', 10001);
-SELECT public.log('default', 1000001, 1000010);
+SELECT mentat.pull('[*]', 1000001);
+SELECT public.log('default', 1000000000001, 1000000000010);
 SELECT public.diff(
-  'default', 1000003, 1000007,
+  'default', 1000000000003, 1000000000007,
   '[:find ?name :where [?e :person/name ?name]]',
   '{}'::jsonb
 );
@@ -65,12 +69,22 @@ SELECT public.mentat_with('[
 ]');
 ```
 
-`mentat.pull` 返回实体形态的 JSON。`public.log` 返回事务区间内的历史，`public.diff` 比较指定 Datalog 查询在两个事务时点的结果，五个参数都必须提供。`public.mentat_with` 评估事务但不持久化。这些辅助函数在 v1.10.1 中导出到 public 模式，没有 mentat 模式别名。应使用自己存储中的实体和事务 ID。查询还可以使用文档所述的数据库参数，以某个事务时点或从某个事务之后开始求值。
+`mentat.pull` 返回实体形态的 JSON。`public.log` 返回事务区间内的历史，`public.diff` 比较指定 Datalog 查询在两个事务时点的结果，五个参数都必须提供。`public.mentat_with` 评估事务但不持久化。这些辅助函数在 1.18.0 中导出到 public 模式，没有 mentat 模式别名。应使用自己存储中的实体和事务 ID。
+
+1.18.0 还通过三参数重载提供历史 pull：
+
+```sql
+SELECT public.edn_pull(
+  '[*]', 1000001, '{"asOf": 1000000000003}'::jsonb
+);
+```
+
+`asOf` 读取某个事务时点的状态；`since` 选择在某个事务之后断言、当前仍存在的事实，而非期间出现过的所有历史值。组合使用时，只返回在指定区间内断言、到上界仍未撤回的事实。选项键区分大小写；`as_of` 等拼写错误现在会报错，不再静默返回当前数据。
 
 永久切除有意与通常的不可变历史机制分开：
 
 ```sql
-SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
+SELECT public.mentat_excise(ARRAY[1000042]::bigint[], 'default', NULL);
 ```
 
 执行切除前请检查目标实体和备份；该操作会永久移除 datom，适用于隐私擦除等要求。第一个参数是实体 ID 数组。实体所在分区必须允许切除；模式实体受保护，同批切除范围外的实体引用可能阻止操作。
@@ -93,15 +107,25 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 ### 要求与注意事项
 
-- 上游 v1.17.1 的 Cargo 特性覆盖 PostgreSQL 13-19，新增 PG19 支持并在 19rc1 上测试。当前使用 pgrx 0.19.3；具体二进制覆盖范围需核对所选发行包。
+- 上游 v1.18.0 的 Cargo 特性覆盖 PostgreSQL 13-19，使用 pgrx 0.19.3。Pigsty 的 1.18.0 软件包面向 PostgreSQL 14-18。
 - 该扩展不可重定位，也不要求 `shared_preload_libraries`。
 - 可选的 `mentatd` HTTP/Datomic 线协议守护进程是上游配套程序，不包含在 Pigsty `pg_mentat` 软件包中。仅通过 SQL 使用扩展并不需要它。
 - Datalog 编译、递归 pull、全文属性、订阅和历史记录可能呈现截然不同的成本特征。请使用文档所述的 explain 辅助函数检查生成的 SQL，并在代表性数据上进行基准测试。
 - 切除操作绕过通常的不可变历史模型。请限制权限并审计其使用。
 
-### 1.10.1 API 与索引
+### API 与索引
 
-项目已迁移到 gregburd/mentat。新的核心函数为 `edn_t`、`edn_q`、`edn_pull` 和可选脚本接口 `edn_eval`；`mentat.t`、`mentat.q` 便利别名继续可用，仅 `mentat_transact`、`mentat_query`、`mentat_pull` 和可选的 `mentat_eval` 已弃用。`edn_q_rows` 每行返回一个 JSONB 数组，但一次调用仍会在内存中生成完整结果。
+核心函数为 `edn_t`、`edn_q`、`edn_pull` 和可选脚本接口 `edn_eval`；`mentat.t`、`mentat.q` 便捷别名继续可用，较早的 `mentat_transact`、`mentat_query`、`mentat_pull` 和可选的 `mentat_eval` 已弃用。
+
+`edn_q_rows` 每行返回一个 JSONB 数组。1.18.0 分批读取结果并写入 PostgreSQL tuplestore，超过 `work_mem` 后可溢写临时文件，不再将完整结果保留在后端内存中。它仍会先物化结果再返回，并遵守 `mentat.max_result_rows` 限制。
+
+```sql
+SELECT row_data->>0 AS person_name
+FROM public.edn_q_rows(
+  '[:find ?name :where [?e :person/name ?name]]',
+  '{}'::jsonb
+) AS r(row_data);
+```
 
 `mentat.auto_index` 可设为 `off`、`schema`（默认）或 `adaptive`。当前值表会建立 AVET 索引；自适应模式管理历史属性的部分索引，记录在 `mentat.managed_indexes` 中。`mentat_tune_indexes` 默认只报告计划，显式关闭 dry-run 后才应用；仅回收自己管理的索引，默认空闲窗口为 7 天。
 
@@ -111,17 +135,13 @@ SELECT public.mentat_excise(ARRAY[10042]::bigint[], 'default', NULL);
 
 1.9.1 修复了一项重要备份缺陷：更早版本未注册扩展成员表的数据，`pg_dump` 的逻辑备份会漏掉 mentat 数据，恢复后存储为空。升级后应立即重新生成并验证逻辑备份；旧备份不会自动得到修复。物理备份不受该缺陷影响。
 
-安装新版文件后，通过升级链更新到 1.17.1。升级会建立索引并可能阻塞写入，应安排维护窗口：
+安装新版文件后，通过升级链更新到 1.18.0。升级会建立索引并可能阻塞写入，应安排维护窗口：
 
 ```sql
-ALTER EXTENSION pg_mentat UPDATE TO '1.17.2';
+ALTER EXTENSION pg_mentat UPDATE TO '1.18.0';
 ```
 
 已部署数据库仍需执行 SQL 扩展升级并验证新的逻辑备份。
-
-### 1.11.1 的打包信息修正
-
-1.11.1 修正 Nix 派生包版本名称及发布溯源，不改变 PostgreSQL 引擎、存储或 SQL 行为。1.11.0 到 1.11.1 的升级不修改数据库对象。1.11.0 的 DuckDB 存储改造仅影响独立的 DuckDB 扩展；从更早版本升级时，仍需遵循上面的 PostgreSQL 升级和逻辑备份修复要求。
 
 ### 1.13–1.14 集成与事务函数
 
@@ -131,16 +151,37 @@ ALTER EXTENSION pg_mentat UPDATE TO '1.17.2';
 
 从 1.17.0 起，控制文件使用 `superuser = true` 与 `trusted = true`，修复普通用户可信安装失败的问题。安装者获得模式使用权及表、序列的可转授权权限，公共角色不会自动获得访问权；旧版本中 `superuser = false` 与可信标记组合导致的失败不再适用于新版。
 
-### 1.16.0 与 PostgreSQL 19
-
-1.16.0 新增 PostgreSQL 19 支持，并升级到 pgrx 0.19.3；从 1.15.0 执行 `ALTER EXTENSION pg_mentat UPDATE TO '1.16.0'` 是无模式变更的升级。SQL 数据模型和脚本特性边界不变。1.15.0 的 DuckDB 修复针对独立 DuckDB 后端，不表示 PostgreSQL 存储发生变化。Pigsty 当前构建包仍为 1.14.0，目录中的上游版本不代表新包已经发布。
-
 ### 1.17.1 的查询与权限边界
 
 1.17.0 修复计算值上的谓词，以及多条件查询中的 `get-else` 和 `missing?`。1.17.1 主要更新独立 DuckDB 后端和构建依赖，不改变 PostgreSQL 行为。可信安装不代表所有管理操作都对普通角色开放，启用行级安全与实际调整索引仍有所有者或超级用户限制。
 
-上游仍列出 `create_store()` 写入路径缺少投影表的问题；多存储应使用 `mentat.stores` 中的 `store_id` 记录路径，不要把该辅助函数当作已修复。普通用户备份及恢复应使用正确的所有者角色，并验证数据与权限。
+旧版本的命名存储写入限制已在 1.18.0 修复，升级前应阅读下面的迁移边界。普通用户备份及恢复仍需使用正确的所有者角色，并验证数据与权限。
 
 ### 1.17.2 安装修复
 
 1.17.2 修复了 1.17.0–1.17.1 的可信安装提权漏洞：安装脚本中未限定模式的函数调用可能被数据库所有者预先创建的同名函数劫持。新版限定内置函数并固定搜索路径。升级步骤本身没有模式变化，但不能撤销已经发生的恶意安装。如果非超级用户曾在可创建公共模式函数的数据库中安装受影响版本，应审查非系统模式的同名函数与超级用户角色。旧软件包版本不能据此被视为已更新。
+
+### 1.18.0 命名存储与历史读取
+
+`create_store` 现在创建与默认存储具有同样表布局的可写命名存储。应使用 public 模式下带存储参数的函数；mentat 模式中的便捷别名仍访问默认存储。
+
+```sql
+SELECT public.create_store('tenant_demo');
+SELECT public.t('tenant_demo', '[
+  {:db/ident :sensor/value
+   :db/valueType :db.type/long
+   :db/cardinality :db.cardinality/one}
+]');
+SELECT public.t('tenant_demo', '[{:sensor/value 42}]');
+SELECT public.q(
+  'tenant_demo',
+  '[:find ?value :where [?e :sensor/value ?value]]',
+  '{}'::jsonb
+);
+```
+
+历史 `pull` 与查询操作遵循 `asOf` 和 `since`，未知选项键会被拒绝。命名存储仍拒绝文档列出的向量、几何及用户事务函数路径，因为这些路径会错误读取默认存储。新存储继承默认存储的授权，仅使用独立模式并不构成租户访问隔离。
+
+事务报告新增 `datoms_asserted` 和 `datoms_retracted`。重复断言未变化的值不计为变更；替换单值属性会同时报告一次撤回和一次断言。读取事务报告的应用应适配修正后的实际 datom 变更语义。
+
+升级将旧命名存储模式保留为 `mentat_<name>_pre118`，并创建新的空替代模式，对跳过的存储及相关订阅/物化视图给出警告。应检查警告并重建受影响的订阅/视图，不能假定旧数据已经迁移到替代模式。新增 `(store_id, tx)` 索引使用普通 CREATE INDEX，可能阻塞写入。大型部署可先按文档中的准确名称并发预建索引，并在升级前检查有效性。

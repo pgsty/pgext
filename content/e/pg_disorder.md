@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} `pg_simula` `pg_fiu` {{< ext "pg_crash" >}} |
+|   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "pg_crash" >}} |
 
 > [!Note] Headless loadable module with no control file and no CREATE EXTENSION step; intended only for test databases; load per session with session_preload_libraries and never enable globally in production.
 

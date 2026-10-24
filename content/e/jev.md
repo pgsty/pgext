@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpython3u" >}} |
 
-> [!Note] Requires plpython3u; TypeSafe endpoints require an API key, while local/other Jev-compatible endpoints can be keyless. Selected row contents are sent to the configured service. PG14-17.
+> [!Note] typesafe.ai needs an API key; configured endpoints receive row contents.
 
 
 ## Packages

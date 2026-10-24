@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "uuid-ossp" >}} |
 |   **See Also**    | {{< ext "pgmemento" >}} {{< ext "ddl_historization" >}} {{< ext "table_log" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} {{< ext "pgaudit" >}} {{< ext "pgmnemo" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} |
 
-> [!Note] Requires uuid-ossp and shared_preload_libraries=provsql; the control file marks the extension trusted and non-relocatable.
+> [!Note] Preload/restart; set_prob is write-once; EXCEPT ALL unsupported; back up circuit store files separately; PG19 RC.
 
 
 ## Packages

@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "faker" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "pgsqlmock" >}} {{< ext "omni_test" >}} {{< ext "random" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 
-> [!Note] Package 0.62.0; SQL version 0.46.0.
+> [!Note] pkg 0.62.0; SQL 0.46.0; stored functions only.
 
 
 ## Packages

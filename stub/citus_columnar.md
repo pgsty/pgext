@@ -2,12 +2,12 @@
 
 Sources:
 
-- [Citus v14.2.0 columnar control file](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/columnar/citus_columnar.control)
-- [Citus v14.2.0 columnar option helper](https://github.com/citusdata/citus/blob/v14.2.0/src/backend/columnar/sql/udfs/alter_columnar_table_set/latest.sql)
+- [Citus v14.3.0 columnar control file](https://github.com/citusdata/citus/blob/v14.3.0/src/backend/columnar/citus_columnar.control)
+- [Citus v14.3.0 columnar option helper](https://github.com/citusdata/citus/blob/v14.3.0/src/backend/columnar/sql/udfs/alter_columnar_table_set/latest.sql)
 - [Citus columnar-storage documentation](https://docs.citusdata.com/en/stable/admin_guide/table_management.html#columnar-storage)
-- [Citus v14.2.0 release](https://github.com/citusdata/citus/releases/tag/v14.2.0)
+- [Citus v14.3.0 release](https://github.com/citusdata/citus/releases/tag/v14.3.0)
 
-`citus_columnar` provides an append-oriented columnar table access method for PostgreSQL. It is shipped by the Citus 14.2 package but is a separate extension: the package release is `14.2.0`, while the extension control version is `14.2-1`. Use it for scan-heavy archival or analytical tables whose workload fits its write and feature restrictions.
+`citus_columnar` provides an append-oriented columnar table access method for PostgreSQL. It is shipped by the Citus 14.3 package but is a separate extension: the package release is `14.3.0`, while the extension control version is `14.3-1`. Use it for scan-heavy archival or analytical tables whose workload fits its write and feature restrictions.
 
 ### Create a Columnar Table
 
@@ -74,4 +74,8 @@ New settings affect newly written stripes. Rewrite existing data when old stripe
 - TOAST is not available; large values remain inline and can hit PostgreSQL's row-size limits.
 - Row locks, `AFTER ... FOR EACH ROW` triggers, serializable isolation, logical decoding, foreign keys, unlogged tables, and several scan types are unsupported. Check the current upstream limitation list before adopting the access method.
 - Ordinary heap assumptions about indexes, vacuum, replication, triggers, and constraints do not automatically apply. Validate every required database feature against a representative columnar table.
-- The extension installs in `pg_catalog`, is not relocatable, and has SQL version `14.2-1`; use that version when checking or updating `pg_extension`, not the package version `14.2.0`.
+- The extension installs in `pg_catalog`, is not relocatable, and has SQL version `14.3-1`; use that version when checking or updating `pg_extension`, not the package version `14.3.0`.
+
+### 14.3 Visibility Fix
+
+Release 14.3.0 corrects columnar stripe xmin visibility. Apply matching library and SQL updates throughout the deployment using extension version `14.3-1`; this does not remove the access-method restrictions above.

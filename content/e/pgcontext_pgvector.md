@@ -27,17 +27,18 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "pgcontext" >}} {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pgml" >}} |
 |    **Siblings**   | {{< ext "pgcontext" >}} |
 
-> [!Note] Removed in pgcontext 0.3.0; migrate to pgcontext.
+> [!Note] Retired in 0.3; use pgcontext.enable_pgvector_binding(); old 0.2: PG17, pgvector 0.8.x in public; no current packages.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | `pgcontext`, `vector` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | - | {{< bg "18" "pgcontext_18" "red" >}} {{< bg "17" "pgcontext_17" "red" >}} {{< bg "16" "pgcontext_16" "red" >}} {{< bg "15" "pgcontext_15" "red" >}} {{< bg "14" "pgcontext_14" "red" >}} | `pgcontext_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | - | {{< bg "18" "postgresql-18-pgcontext" "red" >}} {{< bg "17" "postgresql-17-pgcontext" "red" >}} {{< bg "16" "postgresql-16-pgcontext" "red" >}} {{< bg "15" "postgresql-15-pgcontext" "red" >}} {{< bg "14" "postgresql-14-pgcontext" "red" >}} | `postgresql-$v-pgcontext` | - |
 {.packages}
@@ -85,7 +86,6 @@ pig repo add pgsql -u   # add both repo and update cache
 pig install pgcontext;		# install via package name, for the active PG version
 pig install pgcontext_pgvector;		# install by extension name, for the current active PG version
 
-pig install pgcontext_pgvector -v 18;   # install for PG 18
 pig install pgcontext_pgvector -v 17;   # install for PG 17
 
 ```
@@ -94,7 +94,7 @@ pig install pgcontext_pgvector -v 17;   # install for PG 17
 [**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
-CREATE EXTENSION pgcontext_pgvector;
+CREATE EXTENSION pgcontext_pgvector CASCADE; -- requires pgcontext, vector
 ```
 
 ## Usage

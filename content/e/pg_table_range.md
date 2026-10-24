@@ -27,7 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **See Also**    | {{< ext "pg_kpart" >}} `pg_prttn_tools` {{< ext "qdgc" >}} `tab_tier` `brin4postgis` `planinstr` `pg_stash_advice` `pargres` `edb_foreignkeyconstraintmanager` `gogudb` |
+|   **See Also**    | {{< ext "pg_kpart" >}} {{< ext "qdgc" >}} |
 
 > [!Note] Experimental. 0.1.2 fixes missing rows and backend crashes. From 0.1.1: install new binaries, restart all backends, UPDATE extension, REINDEX each table_range index (parent for partitioned tables); old summaries are ignored until rebuilt.
 

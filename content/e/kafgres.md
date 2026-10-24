@@ -24,7 +24,7 @@ page_width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] PGSTY targets PG16; requires preload and broker readiness before topic SQL; segment logs need separate replication and archiving.
+> [!Note] Preload/restart; broker readiness required; replicate/archive segment data separately.
 
 
 ## Packages

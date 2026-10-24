@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgjq" >}} {{< ext "jsquery" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pg_projection" >}} {{< ext "hstore" >}} {{< ext "jsonb_plperl" >}} {{< ext "documentdb" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "jsonb_plperlu" >}} |
 
-> [!Note] PGXN distribution bson and SQL extension pgbson; package version 2.2.0 installs SQL version 2.2.
+> [!Note] PGXN bson 2.2.0; SQL 2.2; upgrade library then extension; no REINDEX.
 
 
 ## Packages

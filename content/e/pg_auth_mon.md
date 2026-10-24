@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "set_user" >}} {{< ext "login_hook" >}} {{< ext "pg_session_jwt" >}} {{< ext "auth_delay" >}} {{< ext "logerrors" >}} {{< ext "pg_stat_log" >}} {{< ext "pgelog" >}} {{< ext "pgaudit" >}} {{< ext "pg_permissions" >}} |
 
-> [!Note] SQL version 1.1; requires preload.
+> [!Note] pkg 5.0; SQL 1.1; preload required.
 
 
 ## Packages

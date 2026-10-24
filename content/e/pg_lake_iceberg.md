@@ -33,7 +33,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_ducklake" >}} {{< ext "pg_parquet" >}} {{< ext "pg_duckdb" >}} {{< ext "aws_s3" >}} {{< ext "file_fdw" >}} {{< ext "pg_bulkload" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_clickhouse" >}} |
 |    **Siblings**   | {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} |
 
-> [!Note] Iceberg component. Package 3.5.3; SQL 3.5.
+> [!Note] pkg 3.5.3; SQL 3.5; plpgsql required by install SQL, absent from control.
 
 
 ## Packages

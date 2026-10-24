@@ -2,12 +2,12 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/CHANGELOG.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/3e7fbf4aab7e4b1042ac83b106677dbc7377d501/sql/pg_sift--3.2.sql)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/README.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/CHANGELOG.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/pg_sift.control)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/sql/pg_sift--3.2.sql)
 
-`pg_sift` release 3.2.2 installs SQL extension version 3.2. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–18 are supported; PG19 remains experimental. Initial installation requires a superuser, but no preload or server restart.
+`pg_sift` release 3.2.3 installs SQL extension version 3.2. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–18 are supported; PG19 remains experimental. Initial installation requires a superuser, but no preload or server restart.
 
 ### Text Search
 
@@ -62,3 +62,7 @@ The event trigger in 3.2.0–3.2.2 also has a known privilege defect: roles othe
 ```sql
 ALTER FUNCTION sift.table_paths_drop() SECURITY DEFINER SET search_path = pg_catalog, pg_temp;
 ```
+
+### 3.2.3 Library Fix
+
+Release 3.2.3 retains SQL version 3.2 and fixes relation-cache lifetime errors that could crash a backend or corrupt heap memory during concurrent catalog/cache activity. It also replans a new backend's first plain SELECT when the planner hook was loaded too late. A first query with bound parameters still needs optional session/shared preloading to avoid this planning limitation. Replace the library and reconnect old sessions; no new SQL version or routine index rebuild is introduced by 3.2.3.

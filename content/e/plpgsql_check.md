@@ -30,7 +30,7 @@ page_width: full
 |   **Requires**    | {{< ext "plpgsql" >}} |
 |   **See Also**    | {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "pglinter" >}} {{< ext "pg_stat_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
 
-> [!Note] Distribution/package 2.10.15 installs SQL extension 2.10; maintained RPM/DEB recipes and source are 2.10.15. Core checks work after CREATE EXTENSION; LOAD or shared_preload_libraries is optional for passive mode and shared profiler features; META says BSD but the shipped LICENSE text is MIT.
+> [!Note] pkg 2.10.15; SQL 2.10; upstream PG14-20 includes development branches; packages PG14-18.
 
 
 ## Packages

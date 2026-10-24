@@ -1,7 +1,7 @@
 ---
 title: "pg_durable"
 linkTitle: "pg_durable"
-description: "Durable SQL functions for PostgreSQL"
+description: "SQL-native durable orchestrations for PostgreSQL"
 weight: 2870
 categories: ["FEAT"]
 languages: ["Rust"]
@@ -10,7 +10,7 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pg_durable**](https://github.com/microsoft/pg_durable) : Durable SQL functions for PostgreSQL
+[**pg_durable**](https://github.com/microsoft/pg_durable) : SQL-native durable orchestrations for PostgreSQL
 
 
 ## Overview
@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `pg_catalog` `df` `_duroxide` |
 |   **See Also**    | {{< ext "pg_task" >}} {{< ext "pgmq" >}} {{< ext "pg_background" >}} {{< ext "ulak" >}} {{< ext "pgmb" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_retry" >}} {{< ext "fsm_core" >}} {{< ext "pglock" >}} |
 
-> [!Note] Requires preload and a superuser worker role; pgrx 0.19.3.
+> [!Note] Preview; preload; superuser worker; fresh schema _duroxide, <=0.2.2 upgrades keep duroxide; upstream PG17-18, pkg PG14-18.
 
 
 ## Packages

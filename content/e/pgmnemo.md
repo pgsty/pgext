@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "pgcontext" >}} {{< ext "vector" >}} {{< ext "vectorize" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "pg_summarize" >}} {{< ext "provsql" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} |
 
-> [!Note] PG17-18; requires pgvector 0.7.0 or newer.
+> [!Note] pgvector>=0.7; 0.20 changes recall_hybrid()/stats() returns; expansion defaults off; mark_recalled() updates recency.
 
 
 ## Packages

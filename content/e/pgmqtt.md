@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "wal2json" >}} {{< ext "decoderbufs" >}} {{< ext "pgq" >}} {{< ext "kafka_fdw" >}} {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "tcn" >}} {{< ext "redis" >}} {{< ext "test_decoding" >}} |
 
-> [!Note] Requires preload for broker/CDC. CDC requires logical WAL; affected PostgreSQL releases also require pgmqtt in output_plugin_libraries.
+> [!Note] CDC: preload, wal_level=logical; allow pgmqtt in output_plugin_libraries if exposed; upstream 0.5.1/pkg 0.4.1.
 
 
 ## Packages

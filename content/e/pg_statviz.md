@@ -29,9 +29,9 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgstatviz` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
-|   **See Also**    | `pgsampler` {{< ext "pgmonitor" >}} `pg_mon` {{< ext "timescaledb" >}} `town` {{< ext "pg_stl" >}} |
+|   **See Also**    | {{< ext "pgmonitor" >}} {{< ext "timescaledb" >}} {{< ext "pg_stl" >}} |
 
-> [!Note] Package/source 1.2.1 installs SQL extension 1.2. PIGSTY provides all RPM targets and Ubuntu 22.04 DEB; other DEB targets use PGDG 1.2.1. Pure SQL/PLpgSQL; no preload or Python CLI in the extension package.
+> [!Note] Excluded from default package groups; pkg 1.2.1/SQL 1.2; no Python CLI; RPM Pigsty; DEB Pigsty u22/PGDG elsewhere.
 
 
 ## Packages

@@ -27,10 +27,11 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `pg_catalog` |
 |   **Requires**    | {{< ext "hstore" >}} {{< ext "plluau" >}} |
 |   **See Also**    | {{< ext "hstore" >}} {{< ext "hstore_plpython3u" >}} {{< ext "hstore_plperl" >}} {{< ext "hstore_plperlu" >}} |
 |    **Siblings**   | {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} |
+
+> [!Note] PL/Lua pkg 2.0.12; SQL 1.0; no fixed schema.
 
 
 ## Packages

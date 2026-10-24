@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `pgsql_tweaks` |
 |   **See Also**    | {{< ext "pgcalendar" >}} {{< ext "pg_math" >}} {{< ext "pg_extra_time" >}} {{< ext "pg_rrule" >}} |
 
-> [!Note] SQL-only package; creates the pgsql_tweaks schema and ships no shared library despite module_pathname in the control file. No preload required. Optional helpers use pg_stat_statements/pgstattuple.
+> [!Note] SQL-only despite module_pathname; no preload; META path is stale, control/Makefile select 1.1.0; PG19 RC.
 
 
 ## Packages
