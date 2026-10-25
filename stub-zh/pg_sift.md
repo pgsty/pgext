@@ -2,12 +2,14 @@
 
 来源：
 
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/README.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/CHANGELOG.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/pg_sift.control)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/sql/pg_sift--3.2.sql)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/README.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/UPGRADING.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/pg_sift.control)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/sql/pg_sift--3.3.sql)
+- [用法与安全](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/USAGE.md)
+- [支持版本](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/SUPPORT.md)
 
-`pg_sift` 发行版 3.2.3 安装的 SQL 扩展版本为 3.2，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。支持 PostgreSQL 17–18，PG19 仍为实验支持。首次安装需要超级用户，但无需预加载或重启服务器。
+`pg_sift` 发行版 3.3.0 安装的 SQL 扩展版本为 3.3，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，但无需预加载或重启服务器。
 
 ### 文本检索
 
@@ -24,7 +26,7 @@ WHERE body @@> 'postgresql AND search'
 ORDER BY score DESC LIMIT 10;
 ```
 
-`sift` 索引处理文本列或表达式，支持布尔、短语、前缀、通配符、正则与模糊查询。`sift.score(ctid)` 可用于扫描查询的输出或排序；3.2 也支持在过滤条件中与常量分数阈值比较。`sift.tokenize`、`sift.highlight` 与 `sift.facets` 分别提供分析、高亮和分面能力。`sift.sections` 与 `sift.field_query` 支持文档所述的字段权重流程，但不代表可以创建多列 BM25 索引。
+`sift` 索引处理文本列或表达式，支持布尔、短语、前缀、通配符、正则与模糊查询。`sift.score(ctid)` 可用于扫描查询的输出或排序；也支持在过滤条件中与常量分数阈值比较。`sift.tokenize`、`sift.highlight` 与 `sift.facets` 分别提供分析、高亮和分面能力。`sift.sections` 与 `sift.field_query` 支持文档所述的字段权重流程，但不代表可以创建多列 BM25 索引。
 
 ### 列式分析
 
@@ -35,34 +37,29 @@ SELECT category, count(*), sum(amount) FROM orders GROUP BY category;
 CREATE TABLE events (id bigint, kind text, amount numeric(10,2)) USING sift_table;
 ```
 
-`sift_col` 为普通表增加索引，`sift_table` 则直接以列格式存储表。符合条件的聚合与过滤使用 `Custom Scan (SiftAgg)`，其他情况保留普通执行计划，应检查实际计划。`sift.enable_agg = off` 可关闭聚合下推以作比较。3.1 扩展了日历分组、支持的 JSON 结构与元素汇总。可选 Vulkan 路径仍属实验功能，默认关闭，上游软件包也未启用。
+`sift_col` 为普通表增加索引，`sift_table` 则直接以列格式存储表。符合条件的聚合与过滤使用 `Custom Scan (SiftAgg)`，其他情况保留普通执行计划，应检查实际计划。`sift.enable_agg = off` 可关闭聚合下推以作比较。3.3 扩展了 top-N 排序、点查与小表连接，新建列索引默认启用预聚合。可选 Vulkan 路径仍属实验功能，默认关闭，上游软件包也未启用。
 
 ### 安全与维护
 
-受行级安全或安全屏障视图约束的角色，不能对相关关系使用索引全局 BM25 评分。旧分面接口拒绝 RLS 表，新的 SQL 分面接口有自己的限制。`sift.verify`、`sift.segments`、`sift.merge` 等维护操作需要表所有权或 MAINTAIN 权限。修改分析器或评分选项需要重建受影响的检索索引。
+受行级安全策略约束的角色默认不使用排名扫描。超级用户可通过 `sift.rls_scores = on` 显式启用；返回行仍遵循策略，但评分依赖整个索引的统计信息，包括隐藏行。启用前应评估这一信息边界。安全屏障及其他不支持的查询结构仍受文档所述限制。
 
-`write_buffer_limit` 替代旧名 `mutable_limit`，旧名保留为别名。清理操作管理无效行和索引段，备库回放索引截断时可能取消查询。原型测试配套模块不是生产扩展。编码、数据块大小、支持的列类型与访问方法限制应以对应版本文档为准。
+3.3 的安装与升级会将 `sift` 模式的使用权限授予 `PUBLIC`，各函数仍检查自身的表或索引访问权限。`sift.verify`、`sift.segments`、`sift.merge` 等维护操作需要表所有权或 MAINTAIN 权限。修改分析器或评分选项需要重建受影响的检索索引。
 
-### 升级到 3.2
+`sift.col_auto_merge` 与 `sift.table_auto_defrag` 现在默认开启。后台维护可能清理表并重写列索引，从而产生 WAL。列合并预算由 `sift.col_auto_merge_wal_pct` 控制，`sift.col_maintenance_status` 与 `sift.col_index_status` 可查看维护状态。关闭这两个自动维护开关可恢复旧版行为。
 
-安装匹配文件后，更新每个使用库：
+`write_buffer_limit` 替代旧名 `mutable_limit`，旧名保留为别名。备库回放索引截断时可能取消查询。通过逻辑复制发布列式表需要遵循上游预加载配置；基本文本检索和列式分析不要求预加载。
 
-```sql
-ALTER EXTENSION pg_sift UPDATE TO '3.2';
-```
+### 升级到 3.3
 
-已发布的 2.x/3.0 数据结构仍可读取，无需例行重建。新写入会采用新版 BM25、列索引和表格式，旧库会拒绝打开。在首次写入新格式之前，必须升级所有访问这些数据的服务器，包括备库。降级需要明确的重写与重建流程，没有反向 SQL 升级脚本。已加载旧库的会话应重新连接。若跨越较早的 1.x 版本，还应检查更新日志中已删除的短语索引选项，以及函数和视图依赖变更。
-
-### 3.2.2 修复与已知限制
-
-3.2.2 修复了分区或继承子表在行级安全下通过执行计划行数估计泄露隐藏数据统计的问题，影响上游 3.0.0–3.2.1。修复只需更换库，无需为此重建索引。3.2 增加聚合下推与列类型支持；新增存储格式可能不被旧库读取，升级前需检查所有读取这些数据的节点。
-
-3.2.0–3.2.2 的事件触发器还有已知权限缺陷：不是超级用户或扩展所有者的角色可能无法执行 DROP。上游给出的临时处理是由超级用户在每个数据库执行以下语句；从备份恢复后需重新检查。不要把尚未安装的后续 3.3 版本当作已修复。
+先运行上游升级预检查，安装匹配文件并更新每个数据库，再重启已加载旧动态库的进程，使所有读取方使用同一发布版本：
 
 ```sql
-ALTER FUNCTION sift.table_paths_drop() SECURITY DEFINER SET search_path = pg_catalog, pg_temp;
+ALTER EXTENSION pg_sift UPDATE TO '3.3';
+SELECT * FROM sift.upgrade_commands();
 ```
 
-### 3.2.3 动态库修复
+除使用 `analyzer = keyword` 的索引外，必须重建所有在 3.3 之前创建的文本索引：超过 255 字节的词的处理方式已改变，未重建的索引可能漏掉匹配行。升级过程会打印命令，并发索引重建应在事务块外逐条执行。建议的列索引重建可能改善性能，而建议的列式表重写可能持有排他锁；执行前需逐项评估。
 
-3.2.3 保持 SQL 版本 3.2，修复关系缓存生命周期错误；该错误在并发目录或缓存活动期间可能导致后端崩溃或堆内存损坏。新版还会在规划器钩子加载过晚时，对新后端的首条普通 SELECT 重新规划。首条带绑定参数的查询仍需可选的会话/共享预加载才能避免这一规划限制。替换动态库后应重新连接旧会话；3.2.3 没有引入新 SQL 版本，也不要求例行重建索引。
+默认的 `sift.col_format_minor = 15` 无法被 3.2 动态库读取。在写入新格式前，应升级所有读取方，包括备库。如果必须保留 3.2 兼容性，应遵循对应版本的降级指南，并在升级前设置服务器级格式上限；会话级限制无法影响后台工作进程。可选的点查 TID 目录需要格式 16。数据文件不会自动降级。
+
+3.3 的 SQL 迁移修复了旧版 DROP 事件触发器权限缺陷，之前的手动修正不再是单独的安装步骤。它也处理新后端首条带绑定参数的查询，扩展了 3.2.3 对普通查询的修复。

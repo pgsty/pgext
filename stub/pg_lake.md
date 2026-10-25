@@ -8,10 +8,11 @@ Sources:
 - [Official project documentation index](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/README.md)
 - [pg_lake v3.5.3 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.3)
 - [DuckDB secrets manager](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
+- [Upstream v3.5.8 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.8)
 
 `pg_lake` is the top-level extension for Snowflake's PostgreSQL lakehouse stack. It installs the table, Iceberg, copy, query-engine, extension-base, and map components needed to query object-store files and create transactional Iceberg tables. The PostgreSQL extensions orchestrate planning and transactions while a separate local `pgduck_server` process executes vectorized work with DuckDB.
 
-The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
+The packaged workflow below describes `3.5.3`; the latest reviewed upstream release is `3.5.8`, and the SQL extension version remains `3.5`. Keep the libraries and query server from the same release.
 
 ### Start the Packaged Stack
 
@@ -19,13 +20,13 @@ Version `3.5` supports PostgreSQL 16 through 18. The PIGSTY RPM and DEB packages
 
 Add `pg_extension_base` to `shared_preload_libraries` and restart PostgreSQL:
 
-```conf
+```ini
 shared_preload_libraries = 'pg_extension_base'
 ```
 
 `pgduck_server` listens on `/tmp/.s.PGSQL.5332` with mode `0770` by default. Run it as the PostgreSQL operating-system user so PostgreSQL can access the socket. Do not start it as an unrelated login user with the bare command.
 
-```shell
+```bash
 # Debian/Ubuntu with PostgreSQL 18; use 16 or 17 as appropriate.
 PG_LAKE_SERVER=/usr/lib/postgresql/18/bin/pgduck_server
 # RHEL-compatible systems use /usr/pgsql-18/bin/pgduck_server.
@@ -43,7 +44,7 @@ This command runs in the foreground and must remain running. Use a service super
 
 In another terminal, verify the query engine before creating the extensions:
 
-```shell
+```bash
 sudo -u postgres psql -X \
   "host=/tmp port=5332 dbname=postgres connect_timeout=2" \
   -c 'SELECT version();'
@@ -60,7 +61,7 @@ SELECT lake.version();
 
 Object-store credentials are resolved by `pgduck_server`, not by the PostgreSQL backend. AWS and GCP can use their normal credential chains. For a local S3-compatible endpoint such as MinIO, first create the bucket, connect directly to `pgduck_server`, and create a persistent DuckDB secret:
 
-```shell
+```bash
 sudo -u postgres psql -X -h /tmp -p 5332 -d postgres
 ```
 
@@ -155,3 +156,7 @@ ORDER BY extname;
 ```
 
 The `3.5.3` patch hardens object deletion credential selection and avoids publishing nameless catalog entries. It retains SQL version `3.5`, so SQL version alone cannot prove that the matching patch-level binaries are deployed.
+
+### Upstream 3.5.8 Changes
+
+Release 3.5.8 hardens catalog-provided secret endpoints and file paths, pins background-worker search paths, and adds validation for Iceberg metadata. It supports vended Azure SAS tokens and a custom Horizon TLS CA path through `pg_lake_iceberg.horizon_tls_ca_path`. The query server also handles invalid nested values and oversized results as errors instead of crashing. These are upstream changes; the documented 3.5.3 packages do not establish that these fixes are installed. Deploy matching extension libraries and query-server binaries when upgrading.

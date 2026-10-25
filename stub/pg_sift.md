@@ -2,12 +2,14 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/CHANGELOG.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/5b16552c2a062b57b6b397e0acaaca8cd825b3ba/sql/pg_sift--3.2.sql)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/README.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/UPGRADING.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/pg_sift.control)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/sql/pg_sift--3.3.sql)
+- [Usage and security](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/USAGE.md)
+- [Supported versions](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/SUPPORT.md)
 
-`pg_sift` release 3.2.3 installs SQL extension version 3.2. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–18 are supported; PG19 remains experimental. Initial installation requires a superuser, but no preload or server restart.
+`pg_sift` release 3.3.0 installs SQL extension version 3.3. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no preload or server restart.
 
 ### Text Search
 
@@ -24,7 +26,7 @@ WHERE body @@> 'postgresql AND search'
 ORDER BY score DESC LIMIT 10;
 ```
 
-The `sift` index handles a text column or expression, with boolean, phrase, prefix, wildcard, regex and fuzzy queries. Use `sift.score(ctid)` in the scanning query's output or ordering; 3.2 also supports comparisons with a constant score threshold in its filter. `sift.tokenize`, `sift.highlight` and `sift.facets` provide analysis, highlighting and facets. `sift.sections` and `sift.field_query` support the documented field-weight workflow; they do not create a multicolumn BM25 index.
+The `sift` index handles a text column or expression, with boolean, phrase, prefix, wildcard, regex and fuzzy queries. Use `sift.score(ctid)` in the scanning query's output or ordering; it also supports comparisons with a constant score threshold in its filter. `sift.tokenize`, `sift.highlight` and `sift.facets` provide analysis, highlighting and facets. `sift.sections` and `sift.field_query` support the documented field-weight workflow; they do not create a multicolumn BM25 index.
 
 ### Column Analytics
 
@@ -35,34 +37,29 @@ SELECT category, count(*), sum(amount) FROM orders GROUP BY category;
 CREATE TABLE events (id bigint, kind text, amount numeric(10,2)) USING sift_table;
 ```
 
-`sift_col` supplements an ordinary table; `sift_table` stores the table itself in column format. Eligible aggregates and filters use `Custom Scan (SiftAgg)`; other cases retain ordinary plans. Inspect the actual plan. `sift.enable_agg = off` disables aggregate pushdown for comparison. Version 3.1 extends calendar grouping, supported JSON shapes and element rollups. The optional Vulkan path is experimental and disabled by default, including in upstream packages.
+`sift_col` supplements an ordinary table; `sift_table` stores the table itself in column format. Eligible aggregates and filters use `Custom Scan (SiftAgg)`; other cases retain ordinary plans. Inspect the actual plan. `sift.enable_agg = off` disables aggregate pushdown for comparison. Version 3.3 expands top-N ordering, point lookups and joins to small tables. New column indexes enable pre-aggregates by default. The optional Vulkan path is experimental and disabled by default, including in upstream packages.
 
 ### Security and Maintenance
 
-Roles constrained by row security or security-barrier views cannot use index-wide BM25 scores for those relations. The older facets API rejects RLS tables; the newer SQL-based facet API has its own rules. `sift.verify`, `sift.segments`, `sift.merge` and related maintenance calls require table ownership or MAINTAIN privilege. Changing analyzers or scoring options requires rebuilding affected search indexes.
+Roles under row-level security do not get ranked scans by default. A superuser may opt in with `sift.rls_scores = on`; visible rows still obey the policy, but scores depend on statistics for the whole index, including hidden rows. Review that information boundary before enabling it. Security-barrier and other unsupported query shapes retain their documented limitations.
 
-`write_buffer_limit` replaces the older `mutable_limit` name, retained as an alias. Vacuum manages dead rows and segments; index truncation replay can cancel standby queries. The prototype test companion is not a production extension. Check encoding, block-size, supported column types and access-method restrictions in the versioned documentation.
+The 3.3 install and update grant schema usage on `sift` to `PUBLIC`; functions still enforce their own table/index permissions. `sift.verify`, `sift.segments`, `sift.merge` and related maintenance calls require table ownership or MAINTAIN privilege. Changing analyzers or scoring options requires rebuilding affected search indexes.
 
-### Upgrade to 3.2
+`sift.col_auto_merge` and `sift.table_auto_defrag` now default to on. Background maintenance can vacuum tables and rewrite column indexes, producing WAL. The column merge budget is controlled by `sift.col_auto_merge_wal_pct`, while `sift.col_maintenance_status` and `sift.col_index_status` expose maintenance state. Set the two automatic-maintenance switches to off to restore the older behavior.
 
-Install matching files, then update every database:
+`write_buffer_limit` replaces the older `mutable_limit` name, retained as an alias. Index truncation replay can cancel standby queries. Publishing a columnar table through logical replication requires the upstream preload configuration; basic text search and column analytics do not require preloading.
 
-```sql
-ALTER EXTENSION pg_sift UPDATE TO '3.2';
-```
+### Upgrade to 3.3
 
-Released 2.x/3.0 structures remain readable without a routine rebuild. New writes introduce newer BM25, column-index and table formats that older libraries refuse. Upgrade every server that opens the data, including standbys, before the first new-format write. Downgrading requires a deliberate rewrite/rebuild procedure; there is no reverse SQL update script. Reconnect sessions that loaded the older library. When crossing older 1.x versions, also check the removed phrase-index option and function/view dependency changes in the changelog.
-
-### 3.2.2 Fix and Known Limitation
-
-3.2.2 fixes leakage of hidden-row statistics through planner estimates on RLS-protected partition or inheritance children, affecting upstream 3.0.0–3.2.1. Replacing the library fixes this issue without rebuilding indexes. 3.2 expands aggregate pushdown and supported column types; new storage formats may be unreadable by older libraries, so check every node that reads the data before upgrading.
-
-The event trigger in 3.2.0–3.2.2 also has a known privilege defect: roles other than superusers or the extension owner can be unable to execute DROP. Upstream provides this temporary correction, run by a superuser in each database; recheck after restoring a backup. Do not assume the later 3.3 correction is already installed.
+Use the upstream upgrade preflight, install matching files, update each database, and restart processes that loaded the old library so that all readers use the same release:
 
 ```sql
-ALTER FUNCTION sift.table_paths_drop() SECURITY DEFINER SET search_path = pg_catalog, pg_temp;
+ALTER EXTENSION pg_sift UPDATE TO '3.3';
+SELECT * FROM sift.upgrade_commands();
 ```
 
-### 3.2.3 Library Fix
+Rebuild every pre-3.3 text index except those using `analyzer = keyword`: the treatment of words longer than 255 bytes changed, so unreconstructed indexes can miss matching rows. The update prints commands; run concurrent index rebuilds individually outside a transaction. A suggested column-index rebuild may improve performance, while a suggested columnar-table rewrite can take an exclusive lock. Review each command before running it.
 
-Release 3.2.3 retains SQL version 3.2 and fixes relation-cache lifetime errors that could crash a backend or corrupt heap memory during concurrent catalog/cache activity. It also replans a new backend's first plain SELECT when the planner hook was loaded too late. A first query with bound parameters still needs optional session/shared preloading to avoid this planning limitation. Replace the library and reconnect old sessions; no new SQL version or routine index rebuild is introduced by 3.2.3.
+The default `sift.col_format_minor = 15` is unreadable by 3.2 libraries. Upgrade all readers, including standbys, before new-format writes. If compatibility with 3.2 is required, follow the versioned downgrade guide and set the format limit server-wide before upgrading; a session-only limit does not reach background workers. Opt-in point TID directories require format 16. There is no automatic downgrade of data files.
+
+The 3.3 SQL migration fixes the earlier DROP event-trigger privilege defect; the prior manual workaround is no longer a separate installation step. It also handles a fresh backend's first query with bound parameters, extending the plain-query fix in 3.2.3.
