@@ -2,14 +2,14 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/UPGRADING.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/sql/pg_sift--3.3.sql)
-- [Usage and security](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/USAGE.md)
-- [Supported versions](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/SUPPORT.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/README.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/UPGRADING.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/pg_sift.control)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/sql/pg_sift--3.4.sql)
+- [Usage and security](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/USAGE.md)
+- [Supported versions](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/SUPPORT.md)
 
-`pg_sift` release 3.3.0 installs SQL extension version 3.3. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no preload or server restart.
+`pg_sift` release 3.4.2 installs SQL extension version 3.4. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
 
 ### Text Search
 
@@ -49,17 +49,25 @@ The 3.3 install and update grant schema usage on `sift` to `PUBLIC`; functions s
 
 `write_buffer_limit` replaces the older `mutable_limit` name, retained as an alias. Index truncation replay can cancel standby queries. Publishing a columnar table through logical replication requires the upstream preload configuration; basic text search and column analytics do not require preloading.
 
-### Upgrade to 3.3
+### Upgrading from Before 3.3
 
 Use the upstream upgrade preflight, install matching files, update each database, and restart processes that loaded the old library so that all readers use the same release:
 
 ```sql
-ALTER EXTENSION pg_sift UPDATE TO '3.3';
+ALTER EXTENSION pg_sift UPDATE TO '3.4';
 SELECT * FROM sift.upgrade_commands();
 ```
 
 Rebuild every pre-3.3 text index except those using `analyzer = keyword`: the treatment of words longer than 255 bytes changed, so unreconstructed indexes can miss matching rows. The update prints commands; run concurrent index rebuilds individually outside a transaction. A suggested column-index rebuild may improve performance, while a suggested columnar-table rewrite can take an exclusive lock. Review each command before running it.
 
-The default `sift.col_format_minor = 15` is unreadable by 3.2 libraries. Upgrade all readers, including standbys, before new-format writes. If compatibility with 3.2 is required, follow the versioned downgrade guide and set the format limit server-wide before upgrading; a session-only limit does not reach background workers. Opt-in point TID directories require format 16. There is no automatic downgrade of data files.
+The 3.3 default `sift.col_format_minor = 15` is unreadable by 3.2 libraries. Upgrade all readers, including standbys, before new-format writes. If compatibility with 3.2 is required, follow the versioned downgrade guide and set the format limit server-wide before upgrading; a session-only limit does not reach background workers. Opt-in point TID directories require format 16. There is no automatic downgrade of data files.
 
 The 3.3 SQL migration fixes the earlier DROP event-trigger privilege defect; the prior manual workaround is no longer a separate installation step. It also handles a fresh backend's first query with bound parameters, extending the plain-query fix in 3.2.3.
+
+### 3.4 Upgrade and Planning Changes
+
+Release 3.4.2 updates SQL extension version 3.4. Apply the supplied 3.3-to-3.4 SQL upgrade after installing matching files. It adds foreign-key-assisted column scans and refines IN-list and scan startup costing; unsupported or more expensive shapes keep the normal PostgreSQL plan. Fixes include incorrect aggregate-path ordering metadata, numeric sums at the signed 128-bit limit, and text-dictionary handling. Check the release-specific upgrade guide for existing indexes and preloaded processes; do not treat benchmark timings as workload guarantees.
+
+### 3.4.2 Maintenance Fixes
+
+Release 3.4.2 keeps SQL extension version 3.4. It fixes an `ORDER BY ... LIMIT` crash after columns are added with `ALTER TABLE`, improves grouped aggregate and range/IN scans, and repairs dictionary and column-maintenance edge cases. Install matching files on all readers before writing the newer column formats; the release does not change the existing 3.3-to-3.4 upgrade boundary.

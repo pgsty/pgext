@@ -2,13 +2,13 @@
 
 来源：
 
-- [1.14.1 upgrade](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/pg_fts--1.14.0--1.14.1.sql)
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/CHANGELOG.md)
-- [pg_fts--1.14.1.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/pg_fts--1.14.1.sql)
+- [1.14.2 upgrade](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/pg_fts--1.14.1--1.14.2.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/CHANGELOG.md)
+- [pg_fts--1.14.2.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/pg_fts--1.14.2.sql)
 
-`pg_fts` 1.14.1 通过专用 fts 倒排索引提供 BM25/BM25F 排序的全文检索。支持 PostgreSQL 17 与 18；PostgreSQL 19/master 的 CI 属于尽力支持。控制文件标记可信且可重定位，核心使用无需共享预加载。
+`pg_fts` 1.14.2 通过专用 fts 倒排索引提供 BM25/BM25F 排序的全文检索。支持 PostgreSQL 17 与 18；PostgreSQL 19/master 的 CI 属于尽力支持。控制文件标记可信且可重定位，核心使用无需共享预加载。
 
 ### 检索与排序
 
@@ -59,3 +59,7 @@ SELECT fts_vacuum('docs_fts');
 ### 1.14.1 计数与维护修复
 
 1.14.1 修复精确计数快路径误用部分索引、无效索引或当前快照不可用的新索引的问题，并纠正待合并文档导致的选择率估计偏差。VACUUM 在不能取得尾部截断所需的锁时不会继续搬移尾部页面，避免并发读负载下索引反而增长；内存批次限制也覆盖关闭文档长度旁表的配置。安装匹配文件后执行 `ALTER EXTENSION pg_fts UPDATE TO '1.14.1'`。从 1.14.0 升级不改变 SQL 对象或索引格式，无需例行 REINDEX。
+
+### 1.14.2：重建曾由 1.11.0 之前版本写入的索引
+
+1.14.2 只调整文档和扩展版本，SQL 升级脚本为空操作。所有曾由 1.10.0 或更早版本写入的索引都应执行 REINDEX：旧版本可能保留已回滚或死亡的待合并记录，造成误匹配，也可能漏掉刷新期间插入的行。原地更新扩展、VACUUM、fts_merge 和 fts_vacuum 都不能修复这些历史状态；少量检索词检查正常也不能证明索引完整。仅由 1.11.0 及以后版本创建和写入的索引不需要这项历史修复。

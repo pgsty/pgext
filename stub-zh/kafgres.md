@@ -4,12 +4,12 @@
 
 - [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/extension/sql/kafgres--0.2.0--0.3.0.sql)
 - [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/.github/workflows/ci.yml)
-- [README 0.3.0](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/README.md)
-- [Configuration 0.3.0](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/docs/configuration.md)
+- [README 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/README.md)
+- [Configuration 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/docs/configuration.md)
 
-- [0.3.0 release](https://github.com/RayElg/kafgres/releases/tag/0.3.0)
+- [0.3.0 release](https://github.com/RayElg/kafgres/releases/tag/0.3.1)
 
-`kafgres` 在 PostgreSQL 中提供 Kafka 协议代理。上游 0.3.0 构建并测试 PostgreSQL 13–18。需要超级用户安装、共享预加载及重启，许可为 Elastic License 2.0。
+`kafgres` 在 PostgreSQL 中提供 Kafka 协议代理。上游 0.3.1 构建并测试 PostgreSQL 13–18。需要超级用户安装、共享预加载及重启，许可为 Elastic License 2.0。
 
 ### 启用代理
 
@@ -45,3 +45,7 @@ CDC 还需要 `wal_level = logical`；部分 PostgreSQL 构建另外要求配置
 ### 0.3.0 升级
 
 安装匹配的 0.3.0 库并重启后，在 broker 数据库执行 `ALTER EXTENSION kafgres UPDATE`。SQL 升级收紧管理函数授权，并固定生产函数的 search_path。段存储引擎首次启动时会移除 0.2.0 的旧时间戳索引；旧段仍可通过扫描读取，新段生成当前格式的索引。
+
+### 0.3.1 的 CDC 安装边界
+
+CDC 需要 wal_level = logical。若 PostgreSQL 构建启用了输出插件允许列表，且代理报告不能把 kafgres 用作输出插件，应将其加入 output_plugin_libraries 并重载配置。库预加载仍需重启。已有事务式段记录应按上游 0.3.1 升级说明处理；单纯替换库不是存储迁移。

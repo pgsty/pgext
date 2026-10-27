@@ -2,28 +2,25 @@
 
 来源：
 
-- [官方上游 README](https://github.com/thomasdarimont/pgauthz/blob/9d4351743ecce44a1a76cafe796d7c85fa03cf31/extensions/pg-cel/README.md)
-- [官方扩展控制文件 (pg_cel.control)](https://github.com/thomasdarimont/pgauthz/blob/9d4351743ecce44a1a76cafe796d7c85fa03cf31/extensions/pg-cel/pg_cel.control)
-- [官方实现源码](https://github.com/thomasdarimont/pgauthz/blob/9d4351743ecce44a1a76cafe796d7c85fa03cf31/extensions/pg-cel/src/lib.rs)
+- [README](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/README.md)
+- [Control](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/pg_cel.control)
+- [Implementation](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/src/lib.rs)
+- [Cargo](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/Cargo.toml)
 
-`pg_cel` — 一个小型 pgrx PostgreSQL 扩展，用于评估 Common Expression Language (CEL) 表达式，因此可以使用 CEL 而不是原始 SQL 编写 pgauthz 条件。在实现相应的安全、审计或访问控制工作流时使用它。请使用上述链接的上游固定版本作为 API 边界，并在目标 PostgreSQL 构建上进行测试。
+`pg_cel` 0.2.0 为 pgauthz 求值 Common Expression Language 条件。它是 Rust/pgrx 共享库，默认构建 PostgreSQL 18，Cargo 声明 13–18 的特性开关。核心用法不需要预加载或重启。
 
-### 核心工作流
+### 求值条件
 
 ```sql
-CREATE EXTENSION pg_cel;
+CREATE SCHEMA IF NOT EXISTS authz;
+CREATE EXTENSION pg_cel SCHEMA authz;
+SELECT authz.cel_compile_check('request.age >= 18');
+SELECT authz.cel_eval_bool('request.age >= 18',
+                           '{"request":{"age":21}}');
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小示例，并在将其集成到应用程序 SQL 中之前验证已安装的版本和返回值。
+### 集成与失败边界
 
-### 重要对象
+`cel_compile_check` 拒绝语法错误表达式；`cel_eval_bool` 根据 JSON 输入求值，返回布尔值，结果不是布尔值时返回 NULL。编译或求值错误会产生 SQL 错误。策略调用方必须将错误、NULL 以及非 true 结果视为拒绝；pgauthz 引擎会如此处理，并要求函数位于 `authz`，而扩展本身允许迁移模式。
 
-- `cel_compile_check` 是一个扩展函数。
-- `cel_eval_bool` 是一个扩展函数。
-
-### 要求与注意事项
-
-- 审查后的控制文件声明默认版本为 `0.1.0`。
-- 控制文件将扩展标记为可重定位。
-- 控制文件不要求超级用户安装。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况与固定源代码中的信息一致。
+表达式求值没有外部副作用，输入变量名和类型必须匹配 JSON 上下文。这是 pgauthz 0.19.0 的可选 CEL 求值器，不替代引擎授权模型及其迁移。

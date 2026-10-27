@@ -2,14 +2,14 @@
 
 来源：
 
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/README.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/UPGRADING.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/pg_sift.control)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/sql/pg_sift--3.3.sql)
-- [用法与安全](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/USAGE.md)
-- [支持版本](https://github.com/brauliobo/pg_sift/blob/232ee801ac3cee2af973003df11afb71f6138530/docs/SUPPORT.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/README.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/UPGRADING.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/pg_sift.control)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/sql/pg_sift--3.4.sql)
+- [用法与安全](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/USAGE.md)
+- [支持版本](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/SUPPORT.md)
 
-`pg_sift` 发行版 3.3.0 安装的 SQL 扩展版本为 3.3，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，但无需预加载或重启服务器。
+`pg_sift` 发行版 3.4.2 安装的 SQL 扩展版本为 3.4，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
 
 ### 文本检索
 
@@ -49,17 +49,25 @@ CREATE TABLE events (id bigint, kind text, amount numeric(10,2)) USING sift_tabl
 
 `write_buffer_limit` 替代旧名 `mutable_limit`，旧名保留为别名。备库回放索引截断时可能取消查询。通过逻辑复制发布列式表需要遵循上游预加载配置；基本文本检索和列式分析不要求预加载。
 
-### 升级到 3.3
+### 从 3.3 之前版本升级
 
 先运行上游升级预检查，安装匹配文件并更新每个数据库，再重启已加载旧动态库的进程，使所有读取方使用同一发布版本：
 
 ```sql
-ALTER EXTENSION pg_sift UPDATE TO '3.3';
+ALTER EXTENSION pg_sift UPDATE TO '3.4';
 SELECT * FROM sift.upgrade_commands();
 ```
 
 除使用 `analyzer = keyword` 的索引外，必须重建所有在 3.3 之前创建的文本索引：超过 255 字节的词的处理方式已改变，未重建的索引可能漏掉匹配行。升级过程会打印命令，并发索引重建应在事务块外逐条执行。建议的列索引重建可能改善性能，而建议的列式表重写可能持有排他锁；执行前需逐项评估。
 
-默认的 `sift.col_format_minor = 15` 无法被 3.2 动态库读取。在写入新格式前，应升级所有读取方，包括备库。如果必须保留 3.2 兼容性，应遵循对应版本的降级指南，并在升级前设置服务器级格式上限；会话级限制无法影响后台工作进程。可选的点查 TID 目录需要格式 16。数据文件不会自动降级。
+3.3 默认的 `sift.col_format_minor = 15` 无法被 3.2 动态库读取。在写入新格式前，应升级所有读取方，包括备库。如果必须保留 3.2 兼容性，应遵循对应版本的降级指南，并在升级前设置服务器级格式上限；会话级限制无法影响后台工作进程。可选的点查 TID 目录需要格式 16。数据文件不会自动降级。
 
 3.3 的 SQL 迁移修复了旧版 DROP 事件触发器权限缺陷，之前的手动修正不再是单独的安装步骤。它也处理新后端首条带绑定参数的查询，扩展了 3.2.3 对普通查询的修复。
+
+### 3.4 升级与规划变化
+
+发行版 3.4.2 使用 SQL 扩展版本 3.4；安装匹配文件后执行所提供的 3.3 到 3.4 SQL 升级。新版本加入外键辅助的列扫描，调整 IN 列表与扫描启动成本；不能证明等价或成本更高的查询仍使用 PostgreSQL 普通计划。修复涵盖聚合路径排序元数据、达到有符号 128 位上限的 numeric 求和和文本字典处理。已有索引及预加载进程应按该发行版升级指南处理，基准测试耗时不能作为实际负载保证。
+
+### 3.4.2 维护修复
+
+3.4.2 继续使用 SQL 扩展版本 3.4，修复在 `ALTER TABLE` 添加列后进行 `ORDER BY ... LIMIT` 时的崩溃，改进分组聚合及范围/IN 扫描，并修复字典与列维护的边界问题。所有读取方都应先安装匹配文件，再写入更新后的列格式；3.3 到 3.4 的升级边界保持不变。

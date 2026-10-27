@@ -2,14 +2,13 @@
 
 来源：
 
-- [0.2.0 README](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/README.md)
-- [0.2.0 控制文件](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/pg_nanotime.control)
-- [0.2.0 SQL 对象](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/sql/pg_nanotime--0.2.0.sql)
-- [技术参考](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/docs/TECHNICAL.md)
-- [0.2.0 变更记录](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/CHANGELOG.md)
-- [PGXN 发布元数据](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/META.json)
+- [README](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/README.md)
+- [Control](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/pg_nanotime.control)
+- [SQL objects](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/sql/pg_nanotime--0.3.0.sql)
+- [Technical reference](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/docs/TECHNICAL.md)
+- [Changelog](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/CHANGELOG.md)
 
-`pg_nanotime` 0.2.0 在 PostgreSQL 17–18 中提供纳秒时间戳与时间间隔类型，适用于事件时间、延迟测量和外部纳秒数据。纳秒存储精度不代表系统时钟具有纳秒准确度。
+`pg_nanotime` 0.3.0 在 PostgreSQL 17–18 中提供纳秒时间戳与时间间隔类型，适用于事件时间、延迟测量和外部纳秒数据。纳秒存储精度不代表系统时钟具有纳秒准确度。
 
 ### 核心用法
 
@@ -70,10 +69,14 @@ shared_preload_libraries = 'pg_nanotime'
 
 ### 升级与迁移
 
-上游将 0.2.0 标记为 PGXN 测试版。替换库文件与 SQL 文件后，逐库执行升级：
+上游将 0.3.0 标记为 PGXN 测试版。替换库文件与 SQL 文件后，逐库执行升级：
 
 ```sql
-ALTER EXTENSION pg_nanotime UPDATE TO '0.2.0';
+ALTER EXTENSION pg_nanotime UPDATE TO '0.3.0';
 ```
 
 列转换辅助过程 `nanotime_migrate_column` 默认使用 16 字节类型，bigint 来源也一样；它通过 ALTER TABLE 修改列并重建索引。执行前应检查转换规则和锁开销。TimescaleDB 集成是可选功能；整数时间与连续聚合有各自的要求，不能仅凭能够存储纳秒时间戳就推断兼容。
+
+### 0.3.0 范围类型与 Timescale 辅助函数
+
+0.3.0 增加 `nanotstzrange` 与 `nanotsrange`，支持 multirange、GiST 和排他约束，并提供可选 TimescaleDB 集成的 `nanotime_timescale_setup()`，同时扩展范围构造和提取辅助函数。原有时间戳与间隔对象语义保持不变。应先替换匹配的库与 SQL 文件，再执行 `ALTER EXTENSION pg_nanotime UPDATE TO '0.3.0'`；范围索引和可选 TimescaleDB 配置需单独评估。

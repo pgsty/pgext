@@ -4,12 +4,12 @@ Sources:
 
 - [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/extension/sql/kafgres--0.2.0--0.3.0.sql)
 - [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/.github/workflows/ci.yml)
-- [README 0.3.0](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/README.md)
-- [Configuration 0.3.0](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/docs/configuration.md)
+- [README 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/README.md)
+- [Configuration 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/docs/configuration.md)
 
-- [0.3.0 release](https://github.com/RayElg/kafgres/releases/tag/0.3.0)
+- [0.3.1 release](https://github.com/RayElg/kafgres/releases/tag/0.3.1)
 
-`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.0 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
+`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.1 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
 
 ### Enable the broker
 
@@ -45,3 +45,7 @@ Version 0.3.0 defaults `kafgres.fsync_before_ack` to on and `kafgres.relaxed_pro
 ### 0.3.0 Upgrade
 
 Install the matching 0.3.0 library, restart, then run `ALTER EXTENSION kafgres UPDATE` in the broker database. The SQL update restricts administrative-function grants and pins the producer search path. The first segment-engine start removes old-format timestamp indexes from 0.2.0; old segments remain readable by scanning, while new segments receive current indexes.
+
+### 0.3.1 CDC Installation Boundary
+
+CDC needs wal_level = logical. On PostgreSQL builds that enforce output-plugin allowlists, permit kafgres in output_plugin_libraries and reload configuration if the broker reports that it may not be used as an output plugin. Library preloading still needs a restart. Follow the upstream 0.3.1 upgrade notes for existing transactional segment records; copying the library alone is not a storage migration.

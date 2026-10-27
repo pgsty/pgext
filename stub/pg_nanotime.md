@@ -2,14 +2,13 @@
 
 Sources:
 
-- [0.2.0 README](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/README.md)
-- [0.2.0 control file](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/pg_nanotime.control)
-- [0.2.0 SQL objects](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/sql/pg_nanotime--0.2.0.sql)
-- [Technical reference](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/docs/TECHNICAL.md)
-- [0.2.0 changelog](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/CHANGELOG.md)
-- [PGXN release metadata](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/META.json)
+- [README](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/README.md)
+- [Control](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/pg_nanotime.control)
+- [SQL objects](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/sql/pg_nanotime--0.3.0.sql)
+- [Technical reference](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/docs/TECHNICAL.md)
+- [Changelog](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/CHANGELOG.md)
 
-`pg_nanotime` 0.2.0 provides nanosecond timestamp and interval types on PostgreSQL 17–18 for event timestamps, latency measurements and externally supplied nanosecond data. Nanosecond storage precision does not imply nanosecond clock accuracy.
+`pg_nanotime` 0.3.0 provides nanosecond timestamp and interval types on PostgreSQL 17–18 for event timestamps, latency measurements and externally supplied nanosecond data. Nanosecond storage precision does not imply nanosecond clock accuracy.
 
 ### Core Workflow
 
@@ -70,10 +69,14 @@ Preserve other libraries already in the setting. Ordinary types and clocks do no
 
 ### Upgrade and Migration
 
-Upstream marks 0.2.0 as a PGXN testing release. After replacing library and SQL files, update each database:
+Upstream marks 0.3.0 as a PGXN testing release. After replacing library and SQL files, update each database:
 
 ```sql
-ALTER EXTENSION pg_nanotime UPDATE TO '0.2.0';
+ALTER EXTENSION pg_nanotime UPDATE TO '0.3.0';
 ```
 
 The column-conversion helper `nanotime_migrate_column` defaults to the 16-byte type, even for a bigint source, and changes the column with ALTER TABLE, rebuilding its indexes. Review the conversion and locking cost before running it. TimescaleDB integration is optional; its integer-time and continuous-aggregate requirements are separate from merely storing nanosecond timestamps.
+
+### 0.3.0 Range Types and Timescale Helper
+
+Version 0.3.0 adds `nanotstzrange` and `nanotsrange` with multirange, GiST and exclusion-constraint support. It also adds `nanotime_timescale_setup()` for the optional TimescaleDB integration and extends the technical helpers for range construction and extraction. Existing timestamp and interval objects keep their prior semantics. Replace matching library and SQL files before running `ALTER EXTENSION pg_nanotime UPDATE TO '0.3.0'`; review any range indexes and the optional TimescaleDB setup separately.

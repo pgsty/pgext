@@ -2,28 +2,25 @@
 
 Sources:
 
-- [Official upstream README](https://github.com/thomasdarimont/pgauthz/blob/9d4351743ecce44a1a76cafe796d7c85fa03cf31/extensions/pg-cel/README.md)
-- [Official extension control file (pg_cel.control)](https://github.com/thomasdarimont/pgauthz/blob/9d4351743ecce44a1a76cafe796d7c85fa03cf31/extensions/pg-cel/pg_cel.control)
-- [Official implementation source](https://github.com/thomasdarimont/pgauthz/blob/9d4351743ecce44a1a76cafe796d7c85fa03cf31/extensions/pg-cel/src/lib.rs)
+- [README](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/README.md)
+- [Control](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/pg_cel.control)
+- [Implementation](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/src/lib.rs)
+- [Cargo](https://github.com/thomasdarimont/pgauthz/blob/64ffad245fdfed11cae42ccc3849082340b9b420/extensions/pg-cel/Cargo.toml)
 
-`pg_cel` — A small pgrx PostgreSQL extension that evaluates CEL (Common Expression Language) expressions, so pgauthz conditions can be written in CEL instead of raw SQL. Use it when implementing the corresponding security, audit, or access-control workflow. Use the pinned upstream revision linked above as the API boundary and test it on the target PostgreSQL build.
+`pg_cel` 0.2.0 evaluates Common Expression Language conditions for pgauthz. It is a Rust/pgrx shared library; PostgreSQL 18 is the default build, with Cargo features for 13–18. Core use does not require preload or restart.
 
-### Core Workflow
+### Evaluate a Condition
 
 ```sql
-CREATE EXTENSION pg_cel;
+CREATE SCHEMA IF NOT EXISTS authz;
+CREATE EXTENSION pg_cel SCHEMA authz;
+SELECT authz.cel_compile_check('request.age >= 18');
+SELECT authz.cel_eval_bool('request.age >= 18',
+                           '{"request":{"age":21}}');
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+### Integration and Failure Boundaries
 
-### Important Objects
+`cel_compile_check` rejects malformed expressions; `cel_eval_bool` evaluates against JSON input and returns a boolean or NULL for a non-boolean result. Compile or evaluation errors raise SQL errors. Policy callers must treat errors, NULL and non-true results as denial. The pgauthz engine does this and expects the functions in `authz`; the extension itself is relocatable.
 
-- `cel_compile_check` is an extension function.
-- `cel_eval_bool` is an extension function.
-
-### Requirements and Caveats
-
-- The reviewed control file declares default version `0.1.0`.
-- The control file marks the extension as relocatable.
-- The control file does not require superuser-only installation.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+The expression evaluator has no external side effects. Input variable names and types must match the JSON context. This is the optional CEL evaluator in pgauthz release 0.19.0, not a replacement for the engine's authorization model or its migrations.

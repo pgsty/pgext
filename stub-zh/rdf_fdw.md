@@ -2,14 +2,14 @@
 
 来源：
 
-- [PGXN rdf_fdw 3.0.0](https://pgxn.org/dist/rdf_fdw/3.0.0/)
-- [rdf_fdw 3.0 README](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/README.md)
-- [rdf_fdw 3.0 变更日志](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/CHANGELOG.md)
-- [rdf_fdw 3.0 控制文件](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/rdf_fdw.control)
+- [PGXN 3.1.0](https://pgxn.org/dist/rdf_fdw/3.1.0/)
+- [README](https://api.pgxn.org/src/rdf_fdw/rdf_fdw-3.1.0/README.md)
+- [CHANGELOG](https://api.pgxn.org/src/rdf_fdw/rdf_fdw-3.1.0/CHANGELOG.md)
+- [Control](https://api.pgxn.org/src/rdf_fdw/rdf_fdw-3.1.0/rdf_fdw.control)
 
 `rdf_fdw` 是通过 SPARQL endpoint 查询 RDF triplestore 的 PostgreSQL foreign data wrapper。它把 SPARQL 结果变量暴露为外部表列，支持常见 SQL 子句下推，提供用于 RDF term 的原生 `rdfnode` 类型，实现了多种 SPARQL 1.1 辅助函数，并可通过可写外部表执行 SPARQL `INSERT`、`UPDATE` 和 `DELETE`。
 
-发行包 3.0.0 对应 SQL 扩展版本 3.0。本次修复 RDF 比较、算术与下推正确性。`GROUP BY`、`DISTINCT`、`UNION` 和唯一约束按 RDF 项的书写形式区分；`sparql.uri()` 现在返回 `rdfnode`，赋值到文本列时需要显式转换。部分无法安全下推的条件改为本地执行。
+发行包 3.1.0 对应 SQL 扩展版本 3.1。3.0 系列修复 RDF 比较、算术与下推正确性。`GROUP BY`、`DISTINCT`、`UNION` 和唯一约束按 RDF 项的书写形式区分；`sparql.uri()` 现在返回 `rdfnode`，赋值到文本列时需要显式转换。部分无法安全下推的条件改为本地执行。
 
 ### 创建扩展
 
@@ -23,8 +23,8 @@ SELECT * FROM rdf_fdw_settings;
 从 2.x 升级前，先保存并删除 `rdfnode` 列上的索引，以及对其排序、分组或去重的依赖视图、物化视图或 SQL 函数体函数。升级后重建这些对象；仅执行 `REINDEX` 不够。新安装与已做好准备的升级应分别选择适用命令：
 
 ```sql
-CREATE EXTENSION rdf_fdw WITH VERSION '3.0';
-ALTER EXTENSION rdf_fdw UPDATE TO '3.0';
+CREATE EXTENSION rdf_fdw WITH VERSION '3.1';
+ALTER EXTENSION rdf_fdw UPDATE TO '3.1';
 ```
 
 ### 注册 SPARQL Endpoint
@@ -199,3 +199,7 @@ CALL rdf_fdw_clone_table(
 - 密钥应放在 `USER MAPPING`；不要把代理凭据或 endpoint token 写进 `SERVER` options。
 - 公共 SPARQL endpoint 可能慢或有速率限制。需要时使用 `connect_timeout`、`request_timeout`、重试和本地物化。
 - 3.0 中扩展不可重定位，且会创建固定的 `sparql` 模式。修改已有安装前，应核对 3.0 的迁移要求。
+
+### 3.1 的凭据、下推与重试
+
+通过视图查询时，现在使用视图所有者的用户映射，security_invoker 视图除外；必要时应在升级前为所有者创建映射。扫描开始时才加载凭据，避免缓存计划继续使用已修改的凭据或角色。所有分支都可下推的 OR 条件可在远端执行；压缩响应按解压后的大小计入 max_response_size。HTTP 429、502、503 按 Retry-After 或指数退避进行有界重试。远端写入同样会重试并立即提交，PostgreSQL 回滚无法撤销它们，应核对端点的重复写入和补偿行为。从 2.x 跨越 3.0 边界时，上述迁移步骤仍然适用。

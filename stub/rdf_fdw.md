@@ -2,14 +2,14 @@
 
 Sources:
 
-- [PGXN rdf_fdw 3.0.0](https://pgxn.org/dist/rdf_fdw/3.0.0/)
-- [rdf_fdw 3.0 README](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/README.md)
-- [rdf_fdw 3.0 changelog](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/CHANGELOG.md)
-- [rdf_fdw 3.0 control file](https://github.com/jimjonesbr/rdf_fdw/blob/v3.0/rdf_fdw.control)
+- [PGXN 3.1.0](https://pgxn.org/dist/rdf_fdw/3.1.0/)
+- [README](https://api.pgxn.org/src/rdf_fdw/rdf_fdw-3.1.0/README.md)
+- [CHANGELOG](https://api.pgxn.org/src/rdf_fdw/rdf_fdw-3.1.0/CHANGELOG.md)
+- [Control](https://api.pgxn.org/src/rdf_fdw/rdf_fdw-3.1.0/rdf_fdw.control)
 
 `rdf_fdw` is a PostgreSQL foreign data wrapper for querying RDF triplestores over SPARQL endpoints. It exposes SPARQL result variables as foreign-table columns, supports pushdown for common SQL clauses, includes a native `rdfnode` type for RDF terms, provides SPARQL 1.1 helper functions, and can perform SPARQL `INSERT`, `UPDATE`, and `DELETE` through writable foreign tables.
 
-Distribution 3.0.0 provides SQL extension 3.0. This release repairs RDF comparison, arithmetic and pushdown correctness. `GROUP BY`, `DISTINCT`, `UNION` and unique constraints distinguish RDF term spelling; `sparql.uri()` now returns `rdfnode`, so text assignments need an explicit cast. Some unsafe pushdown cases execute locally.
+Distribution 3.1.0 provides SQL extension 3.1. The 3.0 series repairs RDF comparison, arithmetic and pushdown correctness. `GROUP BY`, `DISTINCT`, `UNION` and unique constraints distinguish RDF term spelling; `sparql.uri()` now returns `rdfnode`, so text assignments need an explicit cast. Some unsafe pushdown cases execute locally.
 
 ### Create the Extension
 
@@ -23,8 +23,8 @@ SELECT * FROM rdf_fdw_settings;
 Before upgrading from 2.x, save and drop indexes on `rdfnode` columns, and dependent views, materialized views or SQL-body functions that sort, group or deduplicate them. Recreate these objects after the upgrade; `REINDEX` alone is insufficient. Use the appropriate command for a fresh installation or a prepared upgrade:
 
 ```sql
-CREATE EXTENSION rdf_fdw WITH VERSION '3.0';
-ALTER EXTENSION rdf_fdw UPDATE TO '3.0';
+CREATE EXTENSION rdf_fdw WITH VERSION '3.1';
+ALTER EXTENSION rdf_fdw UPDATE TO '3.1';
 ```
 
 ### Register a SPARQL Endpoint
@@ -199,3 +199,7 @@ The `sparql` schema implements many SPARQL 1.1 functions and aggregates, includi
 - Store secrets in `USER MAPPING`; do not put proxy credentials or endpoint tokens into `SERVER` options.
 - Public SPARQL endpoints can be slow or rate-limited. Use `connect_timeout`, `request_timeout`, retries, and local materialization when needed.
 - The extension is not relocatable in 3.0 and also creates the fixed `sparql` schema. Review the 3.0 migration requirements before changing existing installations.
+
+### 3.1 Credentials, Pushdown and Retries
+
+Queries through a view now use the view owner's user mapping unless the view is security_invoker; create a mapping for that owner before upgrading where necessary. Credentials are loaded when a scan begins, so changed mappings and roles do not reuse cached credentials. Fully pushable OR clauses may run remotely, and compressed responses count against max_response_size after decompression. HTTP 429, 502 and 503 responses use bounded retries with Retry-After or exponential backoff. Remote writes are also retried and commit immediately; a PostgreSQL rollback cannot undo them. Review duplicate-write and compensation behavior for the endpoint. The 2.x migration steps above remain necessary when crossing the 3.0 boundary.

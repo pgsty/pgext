@@ -2,11 +2,11 @@
 
 Sources:
 
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.10.0/crates/pg_improv/README.md)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.10.0/crates/pg_improv/pg_improv.control)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.10.0/crates/pg_improv/Cargo.toml)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.11.0/crates/pg_improv/README.md)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.11.0/crates/pg_improv/pg_improv.control)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.11.0/crates/pg_improv/Cargo.toml)
 
-`pg_improv` 0.10.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
+`pg_improv` 0.11.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
 
 ### Core Workflow
 
@@ -38,3 +38,7 @@ Monitor `improv.status` and cap retained WAL with `max_slot_wal_keep_size`. Logi
 The `improv` language supports scalar formulas as well as model expressions, but not arbitrary SQL calls or external I/O. Formula errors normally become null; `improv.raise_errors` changes that policy. Numeric values and large integers pass through floating-point evaluation, so precision beyond 2^53 needs care. `improv.max_cells` limits loaded input cells.
 
 Back up model definitions and result state with database dumps and rehearse restoration; logical mode needs a fresh slot and recomputation after restore. Library upgrades require restarting preloaded processes and updating the extension SQL. Model computation is distinct from an application transaction's source-of-truth tables.
+
+### Ownership and Database-Wide Logical Sync in 0.11.0
+
+Each model now reads and writes as its owner; row-level security protects its catalog, items and cells. Only a superuser or a role allowed to act as the owner may change or recalculate that model. Grant improv_user to a model creator and grant the source-table privileges it needs; the administrator role does not automatically become every model owner. A shared result table still needs ordinary grants. what_if can reveal owner-visible data, so grant access deliberately. Logical models in one database now share one slot and publication. Upgrade with the matching library and SQL scripts, restore roles before model dumps, and monitor retained WAL.

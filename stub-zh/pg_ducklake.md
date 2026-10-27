@@ -3,7 +3,11 @@
 
 ## 用法
 
-来源：[README](https://github.com/relytcloud/pg_ducklake/blob/v1.0.0/README.md)、[v1.0.0 版本](https://github.com/relytcloud/pg_ducklake/releases/tag/v1.0.0)、[项目文档](https://github.com/relytcloud/pg_ducklake/tree/v1.0.0/pg_ducklake/docs)
+来源：
+
+- [README](https://github.com/relytcloud/pg_ducklake/blob/v1.0.3/README.md)
+- [Release 1.0.3](https://github.com/relytcloud/pg_ducklake/releases/tag/v1.0.3)
+- [Documentation](https://github.com/relytcloud/pg_ducklake/tree/v1.0.3/pg_ducklake/docs)
 
 `pg_ducklake` 为 PostgreSQL 增加 DuckLake 表。DuckLake 元数据存储在 PostgreSQL 中，表数据以 Parquet 格式存储并通过 DuckDB 查询，让 PostgreSQL SQL 客户端可以使用快照、时间旅行查询、分区、排序键和外部对象存储等湖仓功能。
 
@@ -109,3 +113,7 @@ SELECT * FROM my_ducklake.public.events;
 - README 列出的源码构建目标包括 Ubuntu 22.04-24.04 和 macOS。
 - 云凭据通过 `ducklake_secret` 外部服务器和逐用户映射存储；应像保护其他数据库密钥一样保护这些目录对象。
 - 对于从堆表到 DuckLake 的增量转换，上游指向单独的 `pg_duckpipe` 项目。
+
+### 1.0.3 的正确性与快照修复
+
+1.0.3 修复 auto_explain 导致查询失败、INSERT 执行两次或进程崩溃的问题，并修复非 C 文本排序规则下的过滤、连接及 real 列裁剪。后台维护会将替换后的文件保留到 delete_older_than 允许删除，以保护旧快照读者。直接插入及 COPY FROM STDIN 现在正确保存 numeric、数组值并维护列统计信息。再次运行凭据辅助函数会替换同类型、同范围的 secret，避免旧副本遮蔽新凭据。

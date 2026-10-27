@@ -2,9 +2,9 @@
 
 Sources:
 
-- [v3.4.4 README](https://github.com/supabase/supautils/blob/v3.4.4/README.md)
-- [v3.4.4 release](https://github.com/supabase/supautils/releases/tag/v3.4.4)
-- [Version restriction implementation](https://github.com/supabase/supautils/blob/v3.4.4/src/extensions.c)
+- [v4.0.0 README](https://github.com/supabase/supautils/blob/v4.0.0/README.md)
+- [v4.0.0 release](https://github.com/supabase/supautils/releases/tag/v4.0.0)
+- [Version restriction implementation](https://github.com/supabase/supautils/blob/v4.0.0/src/extensions.c)
 
 `supautils` is a loadable library that unlocks selected superuser-only PostgreSQL features for non-superusers through configuration. Upstream emphasizes that it adds no tables, functions, or security labels to the database.
 
@@ -42,7 +42,6 @@ For event triggers, the README says privileged-role triggers run for non-superus
 - `supautils.privileged_role_allowed_configs`
 - `supautils.privileged_extensions`
 - `supautils.extension_custom_scripts_path`
-- `supautils.constrained_extensions`
 - `supautils.extensions_parameter_overrides`
 - `supautils.policy_grants`
 - `supautils.drop_trigger_grants`
@@ -82,6 +81,10 @@ supautils.reserved_memberships = 'pg_read_server_files'
 
 `supautils.restrict_extension_versions` controls explicit version clauses for non-superusers: `off` allows them, `warn` ignores them and selects the control-file default with a warning, and `error` rejects them. This applies to both extension creation and upgrades; superusers and the configured proxy superuser are exempt. Omitting an explicit version remains allowed subject to normal privilege checks.
 
-Cluster preload requires a restart; role-specific session preload applies to new connections. Do not run CREATE EXTENSION for supautils itself. Source release 3.4.4 is a library update and has no SQL extension-update step. It avoids ACCESS EXCLUSIVE locks during allowlisted-table policy checks and restores the caller's role on every exit from an elevated region.
+Cluster preload requires a restart; role-specific session preload applies to new connections. Do not run CREATE EXTENSION for supautils itself. Source release 4.0.0 is a library update and has no SQL extension-update step. It avoids ACCESS EXCLUSIVE locks during allowlisted-table policy checks and restores the caller's role on every exit from an elevated region.
 
 Review allowed extensions and custom scripts as trusted code because their operations run with delegated superuser privileges. Enhanced privilege hints do not work for views on PostgreSQL 18 according to the tagged README. Test role transitions, event-trigger ownership and reserved-role protections before broadening grants.
+
+### 4.0 Migration
+
+Version 4.0.0 removes constrained-extension functionality; remove the old constrained_extensions configuration rather than relying on that mechanism. Global and per-extension custom scripts run in this order: global before-create, extension before-create, extension after-create, global after-create. The default_extension_install_schema setting prepends a default schema when no explicit SCHEMA or parameter override wins. The read-only supautils.version setting identifies the loaded library. These are library changes; restart or reconnect the processes that preload it, without CREATE EXTENSION for supautils itself.

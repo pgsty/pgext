@@ -8,11 +8,11 @@ Sources:
 - [Official project documentation index](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/README.md)
 - [pg_lake v3.5.3 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.3)
 - [DuckDB secrets manager](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
-- [Upstream v3.5.8 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.8)
+- [Upstream v3.5.9 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.9)
 
 `pg_lake` is the top-level extension for Snowflake's PostgreSQL lakehouse stack. It installs the table, Iceberg, copy, query-engine, extension-base, and map components needed to query object-store files and create transactional Iceberg tables. The PostgreSQL extensions orchestrate planning and transactions while a separate local `pgduck_server` process executes vectorized work with DuckDB.
 
-The packaged workflow below describes `3.5.3`; the latest reviewed upstream release is `3.5.8`, and the SQL extension version remains `3.5`. Keep the libraries and query server from the same release.
+The packaged workflow below describes `3.5.3`; the latest reviewed upstream release is `3.5.9`, and the SQL extension version remains `3.5`. Keep the libraries and query server from the same release.
 
 ### Start the Packaged Stack
 
@@ -157,6 +157,6 @@ ORDER BY extname;
 
 The `3.5.3` patch hardens object deletion credential selection and avoids publishing nameless catalog entries. It retains SQL version `3.5`, so SQL version alone cannot prove that the matching patch-level binaries are deployed.
 
-### Upstream 3.5.8 Changes
+### Upstream 3.5.9 Changes
 
-Release 3.5.8 hardens catalog-provided secret endpoints and file paths, pins background-worker search paths, and adds validation for Iceberg metadata. It supports vended Azure SAS tokens and a custom Horizon TLS CA path through `pg_lake_iceberg.horizon_tls_ca_path`. The query server also handles invalid nested values and oversized results as errors instead of crashing. These are upstream changes; the documented 3.5.3 packages do not establish that these fixes are installed. Deploy matching extension libraries and query-server binaries when upgrading.
+Release 3.5.9 hardens catalog-provided secret endpoints and file paths, pins background-worker search paths, and adds validation for Iceberg metadata. It supports vended Azure SAS tokens and a custom Horizon TLS CA path through `pg_lake_iceberg.horizon_tls_ca_path`. The query server also handles invalid nested values and oversized results as errors instead of crashing. These are upstream changes; the documented 3.5.3 packages do not establish that these fixes are installed. Deploy matching extension libraries and query-server binaries when upgrading.

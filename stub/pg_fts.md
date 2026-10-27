@@ -2,13 +2,13 @@
 
 Sources:
 
-- [1.14.1 upgrade](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/pg_fts--1.14.0--1.14.1.sql)
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/CHANGELOG.md)
-- [pg_fts--1.14.1.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.1/pg_fts--1.14.1.sql)
+- [1.14.2 upgrade](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/pg_fts--1.14.1--1.14.2.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/CHANGELOG.md)
+- [pg_fts--1.14.2.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.2/pg_fts--1.14.2.sql)
 
-`pg_fts` 1.14.1 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17 and 18 are supported; PostgreSQL 19/master CI is best-effort. The control is trusted and relocatable, and core use needs no shared preload.
+`pg_fts` 1.14.2 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17 and 18 are supported; PostgreSQL 19/master CI is best-effort. The control is trusted and relocatable, and core use needs no shared preload.
 
 ### Search and Rank
 
@@ -59,3 +59,7 @@ Install matching files and run `ALTER EXTENSION pg_fts UPDATE TO '1.14.0'` to re
 ### Counting and Maintenance Fixes in 1.14.1
 
 1.14.1 prevents the exact-count fast path from using partial, invalid or snapshot-ineligible new indexes, and corrects selectivity estimates inflated by pending documents. VACUUM no longer evacuates tail pages when it cannot acquire the truncation lock, avoiding index growth under concurrent readers; bounded memory batches also cover configurations without the document-length sidecar. Install matching files and run `ALTER EXTENSION pg_fts UPDATE TO '1.14.1'`. The upgrade from 1.14.0 changes neither SQL objects nor index format and needs no routine REINDEX.
+
+### 1.14.2: Rebuild Indexes Written Before 1.11.0
+
+Version 1.14.2 changes documentation and the extension version only; its SQL upgrade is a no-op. Rebuild every index that received writes under 1.10.0 or earlier with REINDEX. Those versions could leave false matches after aborted or dead pending inserts, and omit rows inserted during a flush. An in-place extension update, VACUUM, fts_merge or fts_vacuum cannot repair that old state. A clean result from probing a few terms is not proof that the index is sound. Indexes built and written only by 1.11.0 or later do not need this historical repair.

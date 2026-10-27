@@ -3,7 +3,11 @@
 
 ## Usage
 
-Sources: [README](https://github.com/relytcloud/pg_ducklake/blob/v1.0.0/README.md), [v1.0.0 release](https://github.com/relytcloud/pg_ducklake/releases/tag/v1.0.0), [project docs](https://github.com/relytcloud/pg_ducklake/tree/v1.0.0/pg_ducklake/docs)
+Sources:
+
+- [README](https://github.com/relytcloud/pg_ducklake/blob/v1.0.3/README.md)
+- [Release 1.0.3](https://github.com/relytcloud/pg_ducklake/releases/tag/v1.0.3)
+- [Documentation](https://github.com/relytcloud/pg_ducklake/tree/v1.0.3/pg_ducklake/docs)
 
 `pg_ducklake` adds DuckLake tables to PostgreSQL. DuckLake metadata lives in PostgreSQL while table data is stored in Parquet and queried through DuckDB, giving PostgreSQL SQL clients access to lakehouse features such as snapshots, time travel, partitioning, sort keys, and external object storage.
 
@@ -109,3 +113,7 @@ SELECT * FROM my_ducklake.public.events;
 - The README lists Ubuntu 22.04-24.04 and macOS as source-build targets.
 - Cloud credentials are stored through a `ducklake_secret` foreign server and per-user mappings; protect those catalog objects like other database secrets.
 - For incremental heap-to-DuckLake conversion, upstream points to the separate `pg_duckpipe` project.
+
+### 1.0.3 Correctness and Snapshot Fixes
+
+Version 1.0.3 fixes auto_explain interactions that could fail queries, execute INSERT twice or crash, and fixes filtering and joins on non-C text collations plus pruning of real columns. Background maintenance retains replaced files until delete_older_than permits deletion, protecting older readers. Direct inserts and COPY FROM STDIN now preserve numeric/array values and update column statistics correctly. Re-running a secret helper replaces a secret of the same type and scope, rather than leaving a duplicate that shadows new credentials.

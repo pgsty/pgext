@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://github.com/okbob/plpgsql_check/blob/ccdbcce9de51f01e1138c270aeb9fe4e26c6e911/README.md)
-- [Control](https://github.com/okbob/plpgsql_check/blob/ccdbcce9de51f01e1138c270aeb9fe4e26c6e911/plpgsql_check.control)
-- [Release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.14)
-- [Changes](https://github.com/okbob/plpgsql_check/compare/v2.10.13...v2.10.14)
+- [README.md](https://github.com/okbob/plpgsql_check/blob/9a5c0ec4babebd5eb8e0db104c54f7ddb43fcc07/README.md)
+- [Control](https://github.com/okbob/plpgsql_check/blob/9a5c0ec4babebd5eb8e0db104c54f7ddb43fcc07/plpgsql_check.control)
+- [Release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.16)
+- [Changes](https://github.com/okbob/plpgsql_check/compare/2.10.15...v2.10.16)
 
 `plpgsql_check` is a PL/pgSQL checker, linter, profiler, tracer, and coverage tool. It analyzes PL/pgSQL function bodies with PostgreSQL's own parser and executor infrastructure, so many problems that would otherwise appear only at runtime can be found during development or CI.
 
-Upstream distribution 2.10.14 installs SQL extension version `2.10`. The README covers PostgreSQL 14–20, including development targets; this is not a binary-package availability claim.
+Upstream distribution 2.10.16 installs SQL extension version `2.10`. The README covers PostgreSQL 14–20, including development targets; this is not a binary-package availability claim.
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -177,11 +177,11 @@ FROM plpgsql_check_function(
 - Preloading is optional for active checks, but required for shared profiler storage and robust tracer/profiler initialization.
 - Tracer output can include function arguments and local variable values; do not enable it broadly on sensitive production workloads.
 - The checker cannot perfectly understand every dynamic SQL string. Use pragmas to document expected dynamic objects and reduce false positives.
-- Releases 2.10.2 and 2.10.3 fixed possible crashes in composite-parameter analysis and in coverage or profiler reports for functions with polymorphic arguments. Version 2.10.14 retains those earlier fixes and corrects further false alarms.
+- Releases 2.10.2 and 2.10.3 fixed possible crashes in composite-parameter analysis and in coverage or profiler reports for functions with polymorphic arguments. Version 2.10.16 retains those earlier fixes and corrects further false alarms.
 
 The distribution META labels the license BSD, while its shipped LICENSE contains the MIT text; the catalog follows the shipped license file.
 
-### Changes in 2.10.14
+### Changes in 2.10.16
 
 Dynamic-SQL query IDs in profiler reports are now disabled by default. Enable `plpgsql_check.profiler_show_dynquery_query_id` only when needed. This release also improves format-string and polymorphic-type checking and fixes plan-retention and retry leaks. Branch coverage distinguishes failure while evaluating an IF/ELSIF condition from entering the implicit ELSE branch.
 
@@ -190,3 +190,7 @@ SET plpgsql_check.profiler_show_dynquery_query_id = on;
 ```
 
 The SQL version remains `2.10`: replacing the compatible library does not itself require an extension migration. Reconnect sessions using the old library; shared-preloaded installations require a restart. Rehearse upgrades before changing a live server.
+
+### 2.10.16 Correction
+
+Distribution 2.10.16 keeps SQL extension version 2.10 and fixes access to composite-variable tuple descriptors in passive mode. This is an upstream library release; it does not assert that a matching binary package is available.
