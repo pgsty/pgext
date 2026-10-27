@@ -6,60 +6,66 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-10-24
+## 2026-10-27
 
-This batch combines the updates from October 22–24, 2026, covering **48 packages**, including **4 new additions**. Repeated upgrades are consolidated from the version before this batch to the final version.
-
-| Name                     | Old            | New            | Comment                                                                    |
-|:-------------------------|:---------------|:---------------|:---------------------------------------------------------------------------|
-| agentsview               | 0.45.0         | 0.46.1         | RPM/DEB for both architectures                                             |
-| barn                     | 0.9.0          | 0.9.1          | Native upstream packages; retains the 0.x prerelease label                 |
-| blackbox-exporter        | 0.29.0         | 0.29.1         | RPM/DEB for both architectures                                             |
-| claude                   | 2.1.303        | 2.1.310        | Latest channel; official checksums and both binary versions verified       |
-| cloudflared              | 2026.10.1      | 2026.10.3      | RPM/DEB for both architectures                                             |
-| code                     | 1.142.0        | 1.143.1        | Native upstream DEB/RPM; original bytes and checksums verified             |
-| code-server              | 4.141.0        | 4.143.1        | Native upstream DEB/RPM for both architectures                             |
-| codex                    | 0.163.0        | 0.164.0        | RPM/DEB for both architectures                                             |
-| crush                    | 0.98.1         | 0.98.2         | RPM/DEB for both architectures                                             |
-| duckdb                   | 1.5.6          | 2.0.0          | 2.0 stable release; uses the new upstream tar.gz artifacts                 |
-| etcd                     | 3.7.2          | 3.7.3          | RPM/DEB for both architectures                                             |
-| golang                   | 1.27.2         | 1.27.3         | RPM/DEB for both architectures                                             |
-| grafana-infinity-ds      | 4.1.1          | 4.1.3          | RPM/DEB for both architectures                                             |
-| juicefs                  | 1.4.1          | 1.4.2          | RPM/DEB for both architectures                                             |
-| kafka-exporter           | 1.10.0         | 1.11.0         | RPM/DEB for both architectures                                             |
-| kes                      | 20261018000000 | 20261024000000 | Key encryption service; native RPM/DEB for both architectures              |
-| logcli                   | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
-| loki                     | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
-| loki-canary              | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
-| mcli                     | 20261018000000 | 20261024000000 | mc object storage command-line client                                      |
-| mcp-toolbox              | 1.14.0         | 1.15.0         | CGO source build; glibc 2.28; installation and upgrade checks passed       |
-| mongodb-exporter         | 0.53.0         | 0.54.0         | RPM/DEB for both architectures                                             |
-| mysqld-exporter          | 0.20.0         | 0.21.0         | Some Untyped metrics become Counter/Gauge; review metric type changes      |
-| nodejs                   | 24.22.0        | 24.22.1        | 24.x LTS security update                                                   |
-| opencode                 | 1.19.3         | 1.19.4         | Includes Bun security fixes; amd64 uses the baseline artifact              |
-| opentofu                 | 1.13.1         | 1.13.2         | Native upstream DEB/RPM; package name is tofu                              |
-| pev2                     | 1.24.0         | 1.25.0         | Architecture independent: noarch RPM / all DEB                             |
-| pg-exporter              | 1.4.1          | 1.5.0          | RPM/DEB for both architectures                                             |
-| pgbot                    | —              | 0.9.0          | New; PostgreSQL diagnostics and JSON/MCP; optional AI; beta                |
-| pggo                     | —              | 0.1.1          | New; JSON SQL CLI for scripts and agents                                   |
-| pgsync                   | —              | 0.1.1          | New; PostgreSQL snapshot and CDC; controlled beta; bootstrap needs pg_dump |
-| pgterm                   | —              | 0.4.0          | New; database TUI, SQL and diagnostics; pairs with pgbot; beta             |
-| pig                      | 1.10.0         | 1.10.1         | Maintenance update; Go 1.27.3; RPM/DEB for both architectures              |
-| postgrest                | 16.4           | 16.5           | RPM/DEB for both architectures                                             |
-| prometheus               | 3.15.0         | 3.15.1         | Includes matching console templates and libraries                          |
-| promtail                 | 3.6.7          | 3.6.11         | Backfills the 3.6.11 artifacts; remains EOL                                |
-| redis-exporter           | 1.94.0         | 1.95.0         | RPM/DEB for both architectures                                             |
-| sabiql                   | 3.0.1          | 3.0.2          | RPM/DEB for both architectures                                             |
-| seaweedfs                | 4.48           | 4.49           | RPM/DEB for both architectures; upstream Linux assets now available        |
-| silo                     | 20261018000000 | 20261024000000 | S3 object storage service; native RPM/DEB for both architectures           |
-| sow                      | 0.6.0          | 0.6.1          | RPM/DEB for both architectures                                             |
-| uv                       | 0.13.1         | 0.13.5         | RPM/DEB for both architectures                                             |
-| vector                   | 0.59.0         | 0.60.0         | Native upstream DEB/RPM for both architectures                             |
-| victoria-metrics         | 1.154.0        | 1.154.1        | VictoriaMetrics single-node server                                         |
-| victoria-metrics-cluster | 1.154.0        | 1.154.1        | VictoriaMetrics cluster components; upgraded with the single-node server   |
-| victoria-traces          | 0.12.0         | 0.12.1         | RPM/DEB for both architectures                                             |
-| vmutils                  | 1.154.0        | 1.154.1        | VictoriaMetrics utilities; upgraded with the main package                  |
-| xray                     | 26.3.27        | 26.10.21       | Upstream Latest emergency security update; versioned cache filenames       |
+| Name                     | Old                | New                | Comment                             |
+|:-------------------------|:-------------------|:-------------------|:------------------------------------|
+| silo                     | 20261018000000.0.0 | 20261026000000.0.0 | S3 object storage                   |
+| silo-console             | —                  | 2.5.1              | New standalone console              |
+| mcli                     | 20261018000000.0.0 | 20261026000000.0.0 | Native package; /usr/local/bin/mcli |
+| kes                      | 20261018000000.0.0 | 20261026000000.0.0 | Key management service              |
+| pig                      | 1.10.0             | 1.10.2             |                                     |
+| barn                     | 0.9.0              | 0.9.1              | 0.x prerelease                      |
+| sow                      | 0.6.0              | 0.6.1              |                                     |
+| agentsview               | 0.45.0             | 0.46.1             |                                     |
+| blackbox-exporter        | 0.29.0             | 0.29.1             |                                     |
+| claude                   | 2.1.303            | 2.1.311            | Official native binary              |
+| cloudflared              | 2026.10.1          | 2026.10.4          |                                     |
+| code                     | 1.142.0            | 1.143.1            |                                     |
+| code-server              | 4.141.0            | 4.143.1            |                                     |
+| codex                    | 0.163.0            | 0.164.0            |                                     |
+| crush                    | 0.98.1             | 0.98.2             |                                     |
+| dblab                    | 0.53.0             | 0.54.0             |                                     |
+| duckdb                   | 1.5.6              | 2.0.0              |                                     |
+| etcd                     | 3.7.2              | 3.7.3              |                                     |
+| garage                   | 2.4.1              | 2.5.0              |                                     |
+| golang                   | 1.27.2             | 1.27.3             |                                     |
+| grafana-infinity-ds      | 4.1.1              | 4.1.3              |                                     |
+| headscale                | 0.29.5             | 0.29.6             |                                     |
+| juicefs                  | 1.4.1              | 1.4.2              |                                     |
+| kafka-exporter           | 1.10.0             | 1.11.0             |                                     |
+| logcli                   | 3.7.8              | 3.7.9              |                                     |
+| loki                     | 3.7.8              | 3.7.9              |                                     |
+| loki-canary              | 3.7.8              | 3.7.9              |                                     |
+| mcp-toolbox              | 1.14.0             | 1.15.0             | CGO; glibc 2.28                     |
+| mongodb-exporter         | 0.53.0             | 0.54.0             |                                     |
+| mtail                    | 3.4.17             | 3.4.18             |                                     |
+| mysqld-exporter          | 0.20.0             | 0.21.0             | Metric type changes                 |
+| nodejs                   | 24.22.0            | 24.22.1            | 24.x LTS security update            |
+| openbao                  | 2.7.1              | 2.7.2              |                                     |
+| opencode                 | 1.19.3             | 1.19.4             | Bun security fixes                  |
+| opentofu                 | 1.13.1             | 1.13.2             | Package: tofu                       |
+| pev2                     | 1.24.0             | 1.25.0             | noarch RPM / all DEB                |
+| pg-exporter              | 1.4.1              | 1.5.0              |                                     |
+| pgbot                    | —                  | 0.9.0              | New; beta                           |
+| pggo                     | —                  | 0.1.1              | New                                 |
+| pgsync                   | —                  | 0.1.1              | New; beta                           |
+| pgterm                   | —                  | 0.4.0              | New; beta                           |
+| postgrest                | 16.4               | 16.5               |                                     |
+| prometheus               | 3.15.0             | 3.15.1             |                                     |
+| promtail                 | 3.6.7              | 3.6.11             | EOL artifact backfill               |
+| redis-exporter           | 1.94.0             | 1.96.0             |                                     |
+| rustfs                   | 1.0.3              | 1.0.4              |                                     |
+| sabiql                   | 3.0.1              | 3.0.2              |                                     |
+| seaweedfs                | 4.48               | 4.51               |                                     |
+| stalwart                 | 0.16.27            | 1.0.0              | Major release                       |
+| uv                       | 0.13.1             | 0.13.5             |                                     |
+| vector                   | 0.59.0             | 0.60.0             |                                     |
+| victoria-metrics         | 1.154.0            | 1.155.0            | Updated with cluster and vmutils    |
+| victoria-metrics-cluster | 1.154.0            | 1.155.0            |                                     |
+| vmutils                  | 1.154.0            | 1.155.0            |                                     |
+| victoria-traces          | 0.12.0             | 0.12.1             |                                     |
+| xray                     | 26.3.27            | 26.10.21           | Security update                     |
 
 ## 2026-10-19
 

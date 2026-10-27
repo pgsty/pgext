@@ -6,60 +6,66 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-10-24
+## 2026-10-27
 
-本批次合并 2026-10-22 至 2026-10-24 的更新，共 **48 个软件包**，其中 **4 个新增**。同一软件包的多次升级合并为更新前版本到最终版本。
-
-| 名称                     | 旧版本             | 新版本             | 备注                                                     |
-|:-------------------------|:-------------------|:-------------------|:---------------------------------------------------------|
-| agentsview               | 0.45.0             | 0.46.1             | 双架构 RPM/DEB                                           |
-| barn                     | 0.9.0              | 0.9.1              | 上游原生包；沿用 0.x 预发布标记                          |
-| blackbox-exporter        | 0.29.0             | 0.29.1             | 双架构 RPM/DEB                                           |
-| claude                   | 2.1.303            | 2.1.310            | latest 通道；官方校验值及双架构实际版本已核验            |
-| cloudflared              | 2026.10.1          | 2026.10.3          | 双架构 RPM/DEB                                           |
-| code                     | 1.142.0            | 1.143.1            | 上游原生 DEB/RPM；原始字节及校验值已核验                 |
-| code-server              | 4.141.0            | 4.143.1            | 上游原生双架构 DEB/RPM                                   |
-| codex                    | 0.163.0            | 0.164.0            | 双架构 RPM/DEB                                           |
-| crush                    | 0.98.1             | 0.98.2             | 双架构 RPM/DEB                                           |
-| duckdb                   | 1.5.6              | 2.0.0              | 2.0 正式版；采用新版 tar.gz 制品                         |
-| etcd                     | 3.7.2              | 3.7.3              | 双架构 RPM/DEB                                           |
-| golang                   | 1.27.2             | 1.27.3             | 双架构 RPM/DEB                                           |
-| grafana-infinity-ds      | 4.1.1              | 4.1.3              | 双架构 RPM/DEB                                           |
-| juicefs                  | 1.4.1              | 1.4.2              | 双架构 RPM/DEB                                           |
-| kafka-exporter           | 1.10.0             | 1.11.0             | 双架构 RPM/DEB                                           |
-| kes                      | 20261018000000.0.0 | 20261024000000.0.0 | 密钥加密服务；原生双架构 RPM/DEB                         |
-| logcli                   | 3.7.8              | 3.7.9              | 双架构 RPM/DEB                                           |
-| loki                     | 3.7.8              | 3.7.9              | 双架构 RPM/DEB                                           |
-| loki-canary              | 3.7.8              | 3.7.9              | 双架构 RPM/DEB                                           |
-| mcli                     | 20261018000000.0.0 | 20261024000000.0.0 | mc 对象存储命令行客户端                                  |
-| mcp-toolbox              | 1.14.0             | 1.15.0             | CGO 源码构建；glibc 2.28；安装与升级验证通过             |
-| mongodb-exporter         | 0.53.0             | 0.54.0             | 双架构 RPM/DEB                                           |
-| mysqld-exporter          | 0.20.0             | 0.21.0             | 部分 Untyped 指标改为 Counter/Gauge，注意指标类型变化    |
-| nodejs                   | 24.22.0            | 24.22.1            | 24.x LTS 安全更新                                        |
-| opencode                 | 1.19.3             | 1.19.4             | 包含 Bun 安全修复；amd64 使用 baseline 制品              |
-| opentofu                 | 1.13.1             | 1.13.2             | 上游原生 DEB/RPM；包名为 tofu                            |
-| pev2                     | 1.24.0             | 1.25.0             | 架构无关：noarch RPM / all DEB                           |
-| pg-exporter              | 1.4.1              | 1.5.0              | 双架构 RPM/DEB                                           |
-| pgbot                    | —                  | 0.9.0              | 新增；PostgreSQL 诊断、JSON/MCP；AI 可选；beta           |
-| pggo                     | —                  | 0.1.1              | 新增；面向脚本与 Agent 的 JSON SQL CLI                   |
-| pgsync                   | —                  | 0.1.1              | 新增；PostgreSQL 快照与 CDC；受控 beta；初始化需 pg_dump |
-| pgterm                   | —                  | 0.4.0              | 新增；数据库 TUI、SQL 与诊断；配套 pgbot；beta           |
-| pig                      | 1.10.0             | 1.10.1             | 维护更新；Go 1.27.3；双架构 RPM/DEB                      |
-| postgrest                | 16.4               | 16.5               | 双架构 RPM/DEB                                           |
-| prometheus               | 3.15.0             | 3.15.1             | 包含版本匹配的控制台模板与库                             |
-| promtail                 | 3.6.7              | 3.6.11             | 补齐 3.6.11 制品；仍为 EOL                               |
-| redis-exporter           | 1.94.0             | 1.95.0             | 双架构 RPM/DEB                                           |
-| sabiql                   | 3.0.1              | 3.0.2              | 双架构 RPM/DEB                                           |
-| seaweedfs                | 4.48               | 4.49               | 双架构 RPM/DEB；上游 Linux 制品已补齐                    |
-| silo                     | 20261018000000.0.0 | 20261024000000.0.0 | S3 对象存储服务；原生双架构 RPM/DEB                      |
-| sow                      | 0.6.0              | 0.6.1              | 双架构 RPM/DEB                                           |
-| uv                       | 0.13.1             | 0.13.5             | 双架构 RPM/DEB                                           |
-| vector                   | 0.59.0             | 0.60.0             | 上游原生双架构 DEB/RPM                                   |
-| victoria-metrics         | 1.154.0            | 1.154.1            | VictoriaMetrics 单机版                                   |
-| victoria-metrics-cluster | 1.154.0            | 1.154.1            | VictoriaMetrics 集群组件；与单机版同步升级               |
-| victoria-traces          | 0.12.0             | 0.12.1             | 双架构 RPM/DEB                                           |
-| vmutils                  | 1.154.0            | 1.154.1            | VictoriaMetrics 工具集；与主包同步升级                   |
-| xray                     | 26.3.27            | 26.10.21           | 上游 Latest 紧急安全更新；使用带版本号的缓存             |
+| 名称                     | 旧版本             | 新版本             | 备注                         |
+|:-------------------------|:-------------------|:-------------------|:-----------------------------|
+| silo                     | 20261018000000.0.0 | 20261026000000.0.0 | S3 对象存储                  |
+| silo-console             | —                  | 2.5.1              | 新增独立控制台               |
+| mcli                     | 20261018000000.0.0 | 20261026000000.0.0 | 原生包；/usr/local/bin/mcli  |
+| kes                      | 20261018000000.0.0 | 20261026000000.0.0 | 密钥管理服务                 |
+| pig                      | 1.10.0             | 1.10.2             |                              |
+| barn                     | 0.9.0              | 0.9.1              | 0.x 预发布                   |
+| sow                      | 0.6.0              | 0.6.1              |                              |
+| agentsview               | 0.45.0             | 0.46.1             |                              |
+| blackbox-exporter        | 0.29.0             | 0.29.1             |                              |
+| claude                   | 2.1.303            | 2.1.311            | 官方原生二进制               |
+| cloudflared              | 2026.10.1          | 2026.10.4          |                              |
+| code                     | 1.142.0            | 1.143.1            |                              |
+| code-server              | 4.141.0            | 4.143.1            |                              |
+| codex                    | 0.163.0            | 0.164.0            |                              |
+| crush                    | 0.98.1             | 0.98.2             |                              |
+| dblab                    | 0.53.0             | 0.54.0             |                              |
+| duckdb                   | 1.5.6              | 2.0.0              |                              |
+| etcd                     | 3.7.2              | 3.7.3              |                              |
+| garage                   | 2.4.1              | 2.5.0              |                              |
+| golang                   | 1.27.2             | 1.27.3             |                              |
+| grafana-infinity-ds      | 4.1.1              | 4.1.3              |                              |
+| headscale                | 0.29.5             | 0.29.6             |                              |
+| juicefs                  | 1.4.1              | 1.4.2              |                              |
+| kafka-exporter           | 1.10.0             | 1.11.0             |                              |
+| logcli                   | 3.7.8              | 3.7.9              |                              |
+| loki                     | 3.7.8              | 3.7.9              |                              |
+| loki-canary              | 3.7.8              | 3.7.9              |                              |
+| mcp-toolbox              | 1.14.0             | 1.15.0             | CGO；glibc 2.28              |
+| mongodb-exporter         | 0.53.0             | 0.54.0             |                              |
+| mtail                    | 3.4.17             | 3.4.18             |                              |
+| mysqld-exporter          | 0.20.0             | 0.21.0             | 指标类型变更                 |
+| nodejs                   | 24.22.0            | 24.22.1            | 24.x LTS 安全更新            |
+| openbao                  | 2.7.1              | 2.7.2              |                              |
+| opencode                 | 1.19.3             | 1.19.4             | Bun 安全修复                 |
+| opentofu                 | 1.13.1             | 1.13.2             | 包名 tofu                    |
+| pev2                     | 1.24.0             | 1.25.0             | noarch RPM / all DEB         |
+| pg-exporter              | 1.4.1              | 1.5.0              |                              |
+| pgbot                    | —                  | 0.9.0              | 新增；beta                   |
+| pggo                     | —                  | 0.1.1              | 新增                         |
+| pgsync                   | —                  | 0.1.1              | 新增；beta                   |
+| pgterm                   | —                  | 0.4.0              | 新增；beta                   |
+| postgrest                | 16.4               | 16.5               |                              |
+| prometheus               | 3.15.0             | 3.15.1             |                              |
+| promtail                 | 3.6.7              | 3.6.11             | 补齐 EOL 制品                |
+| redis-exporter           | 1.94.0             | 1.96.0             |                              |
+| rustfs                   | 1.0.3              | 1.0.4              |                              |
+| sabiql                   | 3.0.1              | 3.0.2              |                              |
+| seaweedfs                | 4.48               | 4.51               |                              |
+| stalwart                 | 0.16.27            | 1.0.0              | 大版本更新                   |
+| uv                       | 0.13.1             | 0.13.5             |                              |
+| vector                   | 0.59.0             | 0.60.0             |                              |
+| victoria-metrics         | 1.154.0            | 1.155.0            | 与 cluster、vmutils 同步更新 |
+| victoria-metrics-cluster | 1.154.0            | 1.155.0            |                              |
+| vmutils                  | 1.154.0            | 1.155.0            |                              |
+| victoria-traces          | 0.12.0             | 0.12.1             |                              |
+| xray                     | 26.3.27            | 26.10.21           | 安全更新                     |
 
 ## 2026-10-19
 
