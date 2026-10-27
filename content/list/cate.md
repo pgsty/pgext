@@ -32,7 +32,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1100 | {{< alias "pg_dispatch" >}} | 0.1.5 | Asynchronous SQL dispatcher built on pg_cron |
 | 1110 | {{< alias "pg_background" >}} | 2.0.4 | Run SQL queries in the background |
 | 1120 | {{< alias "pg_when" >}} | 0.1.10 | Natural language time parsing for PostgreSQL |
-| 1130 | {{< alias "edtf_postgres" >}} | 1.2.3 | EDTF validation, normalization, date bounds, and temporal relations |
+| 1130 | {{< alias "edtf_postgres" >}} | 1.3.2 | EDTF validation, normalization, date bounds, and temporal relations |
 | 1140 | {{< alias "pg_stl" >}} | 1.0.0 | Time series analysis functions for PostgreSQL |
 | 1150 | {{< alias "cron_utils" >}} | 0.1.0 | Parse cron expressions and compute previous or next trigger times |
 
@@ -120,7 +120,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | Pinyin romanization and search helpers for PostgreSQL |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | Kazakh full-text search extension for PostgreSQL |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL extension for BM25-family lexical retrieval |
-| 2230 | {{< alias "pg_fts" >}} | 1.14.1 | Full-text search with BM25 and BM25F ranking |
+| 2230 | {{< alias "pg_fts" >}} | 1.14.2 | Full-text search with BM25 and BM25F ranking |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | CJK bigram parser derived from PostgreSQL full-text search |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | Chinese full-text search parser based on cppjieba |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
@@ -158,7 +158,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.11 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 2.0.2 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
-| 2490 | {{< alias "pg_ducklake" >}} | 1.0.2 | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
+| 2490 | {{< alias "pg_ducklake" >}} | 1.0.3 | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
 | 2510 | {{< alias "pg_partman" >}} | 5.5.0 | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | 2.12.0 | Database partitioning implemented as procedural language |
@@ -174,7 +174,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.5 | Data lake tables and Iceberg tables |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.5 | Copy to/from data lake files |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
-| 2580 | {{< alias "pg_improv" >}} | 0.10.0 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
+| 2580 | {{< alias "pg_improv" >}} | 0.11.0 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
 
 ## FEAT
@@ -203,8 +203,8 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2765 | {{< alias "is_jsonb_valid" >}} | 0.1.4 | Native JSONB validation against JSON Schema drafts 4 and 7 |
 | 2770 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |
 | 2780 | {{< alias "pg_hint_plan" >}} | 1.8.1 | Give PostgreSQL ability to manually force some decisions in execution plans. |
-| 2790 | {{< alias "hypopg" >}} | 1.4.3 | Hypothetical indexes for PostgreSQL |
-| 2800 | {{< alias "index_advisor" >}} | 0.2.0 | Query index advisor |
+| 2790 | {{< alias "hypopg" >}} | 1.4.4 | Hypothetical indexes for PostgreSQL |
+| 2800 | {{< alias "index_advisor" >}} | 0.2.1 | Query index advisor |
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | Cooperative statement and transaction guards based on estimated plan cost |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
@@ -352,7 +352,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3830 | {{< alias "debversion" >}} | 1.2.0 | Debian version number data type |
 | 3850 | {{< alias "pg_duration" >}} | 1.0.2 | data type for representing durations |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | 0.1.0 | Bikram Sambat date type and AD/BS conversion functions |
-| 3870 | {{< alias "pg_nanotime" >}} | 0.2.0 | Nanosecond timestamp and fixed-duration interval types |
+| 3870 | {{< alias "pg_nanotime" >}} | 0.3.0 | Nanosecond timestamp and fixed-duration interval types |
 | 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | RRULE field type for PostgreSQL |
 | 3890 | {{< alias "pgcalendar" >}} | 1.1.0 | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 3900 | {{< alias "timestamp9" >}} | 1.4.0 | timestamp nanosecond resolution |
@@ -600,12 +600,12 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 3.2.1 | Strengthen PostgreSQL user password checks with cracklib |
-| 7010 | {{< alias "supautils" >}} | 3.4.4 | Extension that secures a cluster on a cloud environment |
+| 7010 | {{< alias "supautils" >}} | 4.0.0 | Extension that secures a cluster on a cloud environment |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.11 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "column_encrypt" >}} | 4.0 | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
 | 7035 | {{< alias "encsearch" >}} | 0.1.1 | Experimental encrypted text search using AEAD ciphers and keyed blind indexes |
 | 7040 | {{< alias "passwordpolicy" >}} | 2.0.6 | Dynamically configurable PostgreSQL password complexity checks. |
-| 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
+| 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.2 | Supabase Vault Extension |
 | 7060 | {{< alias "pg_session_jwt" >}} | 0.5.0 | Manage authentication sessions using JWTs |
 | 7070 | {{< alias "anon" "pg_anon" >}} | 3.2.3 | PostgreSQL Anonymizer (anon) extension |
 | 7080 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
@@ -647,7 +647,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 8500 | {{< alias "wrappers" >}} | 0.6.3 | Foreign data wrappers developed by Supabase |
+| 8500 | {{< alias "wrappers" >}} | 0.6.4 | Foreign data wrappers developed by Supabase |
 | 8510 | {{< alias "multicorn" >}} | 3.2 | Fetch foreign data in Python in your PostgreSQL server. |
 | 8520 | {{< alias "odbc_fdw" >}} | 0.5.2 | Foreign data wrapper for accessing remote databases using ODBC |
 | 8530 | {{< alias "jdbc_fdw" >}} | 1.2 | foreign-data wrapper for remote servers available over JDBC |
@@ -667,7 +667,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8730 | {{< alias "kafka_fdw" >}} | 0.0.3 | kafka Foreign Data Wrapper for CSV formatted messages |
 | 8740 | {{< alias "hdfs_fdw" >}} | 2.0.5 | foreign-data wrapper for remote hdfs servers |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.2 | Foreign data wrapper for Firebird |
-| 8760 | {{< alias "rdf_fdw" >}} | 3.0 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| 8760 | {{< alias "rdf_fdw" >}} | 3.1 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | 1.5 | foreign-data wrapper for Postgres log file access |
 | 8970 | {{< alias "dblink" >}} | 1.2 | connect to other PostgreSQL databases from within a database |
@@ -710,7 +710,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | memcached interface |
 | 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL Supplementary Extension |
 | 9430 | {{< alias "pgs3" >}} | 0.1.1 | S3-compatible object storage endpoint implemented inside PostgreSQL |
-| 9440 | {{< alias "kafgres" >}} | 0.3.0 | Kafka protocol broker embedded in PostgreSQL |
+| 9440 | {{< alias "kafgres" >}} | 0.3.1 | Kafka protocol broker embedded in PostgreSQL |
 
 ## ETL
 

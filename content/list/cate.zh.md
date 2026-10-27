@@ -32,7 +32,7 @@ page_width: full
 | 1100 | {{< alias "pg_dispatch" >}} | 0.1.5 | 基于 pg_cron 的异步 SQL 分发器 |
 | 1110 | {{< alias "pg_background" >}} | 2.0.4 | 在后台运行 SQL 查询 |
 | 1120 | {{< alias "pg_when" >}} | 0.1.10 | PostgreSQL 自然语言时间解析扩展 |
-| 1130 | {{< alias "edtf_postgres" >}} | 1.2.3 | EDTF 日期校验、规范化、边界计算与时态关系 |
+| 1130 | {{< alias "edtf_postgres" >}} | 1.3.2 | EDTF 日期校验、规范化、边界计算与时态关系 |
 | 1140 | {{< alias "pg_stl" >}} | 1.0.0 | PostgreSQL 时间序列分析函数 |
 | 1150 | {{< alias "cron_utils" >}} | 0.1.0 | 解析 Cron 表达式并计算上一次或下一次触发时间 |
 
@@ -120,7 +120,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | PostgreSQL 拼音转写与检索辅助扩展 |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | PostgreSQL 哈萨克语全文检索扩展 |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
-| 2230 | {{< alias "pg_fts" >}} | 1.14.1 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
+| 2230 | {{< alias "pg_fts" >}} | 1.14.2 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | 基于 cppjieba 的中文全文检索分词器 |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | 在 PostgreSQL 中编译 Aho-Corasick 双数组机，实现精确多模式匹配与替换 |
@@ -158,7 +158,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.11 | 从PostgreSQL中查询ClickHouse的接口 |
 | 2470 | {{< alias "duckdb_fdw" >}} | 2.0.2 | DuckDB 外部数据源包装器 |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
-| 2490 | {{< alias "pg_ducklake" >}} | 1.0.2 | 基于 DuckDB 与 Parquet 的 DuckLake 湖仓一体扩展 |
+| 2490 | {{< alias "pg_ducklake" >}} | 1.0.3 | 基于 DuckDB 与 Parquet 的 DuckLake 湖仓一体扩展 |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
 | 2510 | {{< alias "pg_partman" >}} | 5.5.0 | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 2.12.0 | 作为过程语言实现的数据库分区 |
@@ -174,7 +174,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.5 | 数据湖表和 Iceberg 表 |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.5 | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | 基于每个分区的数据范围在规划阶段裁剪分区，并支持非分区键列。 |
-| 2580 | {{< alias "pg_improv" >}} | 0.10.0 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
+| 2580 | {{< alias "pg_improv" >}} | 0.11.0 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
 
 ## FEAT
@@ -203,8 +203,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2765 | {{< alias "is_jsonb_valid" >}} | 0.1.4 | 原生 JSONB 校验，支持 JSON Schema 草案 4 与 7 |
 | 2770 | {{< alias "jsquery" >}} | 1.2 | 用于内省 JSONB 数据类型的查询类型 |
 | 2780 | {{< alias "pg_hint_plan" >}} | 1.8.1 | 添加强制指定执行计划的能力 |
-| 2790 | {{< alias "hypopg" >}} | 1.4.3 | 假设索引，用于创建一个虚拟索引检验执行计划 |
-| 2800 | {{< alias "index_advisor" >}} | 0.2.0 | 查询索引建议器 |
+| 2790 | {{< alias "hypopg" >}} | 1.4.4 | 假设索引，用于创建一个虚拟索引检验执行计划 |
+| 2800 | {{< alias "index_advisor" >}} | 0.2.1 | 查询索引建议器 |
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | 基于计划估算成本的语句与事务负载保护 |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | 提供标量、数组和记录类型的会话变量 |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
@@ -352,7 +352,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3830 | {{< alias "debversion" >}} | 1.2.0 | Debian版本号数据类型 |
 | 3850 | {{< alias "pg_duration" >}} | 1.0.2 | 用于表示时间段的强化数据类型 |
 | 3860 | {{< alias "pg_bikram_sambat" >}} | 0.1.0 | Bikram Sambat 日期类型与公历/尼泊尔历转换函数 |
-| 3870 | {{< alias "pg_nanotime" >}} | 0.2.0 | 纳秒时间戳与固定时长间隔类型 |
+| 3870 | {{< alias "pg_nanotime" >}} | 0.3.0 | 纳秒时间戳与固定时长间隔类型 |
 | 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | 日历重复规则RRULE数据类型 |
 | 3890 | {{< alias "pgcalendar" >}} | 1.1.0 | 为 PostgreSQL 提供循环日程、投影与例外处理的日历扩展 |
 | 3900 | {{< alias "timestamp9" >}} | 1.4.0 | 纳秒分辨率时间戳 |
@@ -600,12 +600,12 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 3.2.1 | 使用cracklib加固PG用户密码 |
-| 7010 | {{< alias "supautils" >}} | 3.4.4 | 用于在云环境中确保数据库集群的安全 |
+| 7010 | {{< alias "supautils" >}} | 4.0.0 | 用于在云环境中确保数据库集群的安全 |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.11 | 表数据加密存储 TDE |
 | 7030 | {{< alias "column_encrypt" >}} | 4.0 | 透明列级加密扩展，提供 encrypted_text 与 encrypted_bytea 类型 |
 | 7035 | {{< alias "encsearch" >}} | 0.1.1 | 使用 AEAD 加密与盲索引的实验性密文文本搜索 |
 | 7040 | {{< alias "passwordpolicy" >}} | 2.0.6 | 可动态配置的 PostgreSQL 密码复杂度检查扩展。 |
-| 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | 在 Vault 中存储加密凭证的扩展 (supabase) |
+| 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.2 | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7060 | {{< alias "pg_session_jwt" >}} | 0.5.0 | 使用JWT进行会话认证 |
 | 7070 | {{< alias "anon" "pg_anon" >}} | 3.2.3 | 数据匿名化处理工具 |
 | 7080 | {{< alias "pgsmcrypto" >}} | 0.1.1 | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
@@ -647,7 +647,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 8500 | {{< alias "wrappers" >}} | 0.6.3 | Supabase提供的外部数据源包装器捆绑包 |
+| 8500 | {{< alias "wrappers" >}} | 0.6.4 | Supabase提供的外部数据源包装器捆绑包 |
 | 8510 | {{< alias "multicorn" >}} | 3.2 | 用Python编写自定义的外部数据源包装器 |
 | 8520 | {{< alias "odbc_fdw" >}} | 0.5.2 | 访问ODBC可访问的任何外部数据源 |
 | 8530 | {{< alias "jdbc_fdw" >}} | 1.2 | 访问JDBC可访问的任何外部数据源 |
@@ -667,7 +667,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 8730 | {{< alias "kafka_fdw" >}} | 0.0.3 | Kafka外部数据源包装器 |
 | 8740 | {{< alias "hdfs_fdw" >}} | 2.0.5 | hdfs 外部数据包装器 |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.2 | Firebird外部数据源包装器 |
-| 8760 | {{< alias "rdf_fdw" >}} | 3.0 | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
+| 8760 | {{< alias "rdf_fdw" >}} | 3.1 | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | 从S3导入导出数据的外部数据源包装器 |
 | 8810 | {{< alias "log_fdw" >}} | 1.5 | 访问PostgreSQL日志文件的FDW |
 | 8970 | {{< alias "dblink" >}} | 1.2 | 从数据库内连接到其他 PostgreSQL 数据库 |
@@ -710,7 +710,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | 为PG提供memcached兼容接口 |
 | 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL兼容辅助扩展模块 |
 | 9430 | {{< alias "pgs3" >}} | 0.1.1 | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
-| 9440 | {{< alias "kafgres" >}} | 0.3.0 | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
+| 9440 | {{< alias "kafgres" >}} | 0.3.1 | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 
 ## ETL
 

@@ -17,44 +17,44 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3870** | {{< badge content="pg_nanotime" link="https://github.com/bunko666-cloud/pg_nanotime" >}} | {{< ext "pg_nanotime" >}} | `0.2.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3870** | {{< badge content="pg_nanotime" link="https://github.com/bunko666-cloud/pg_nanotime" >}} | {{< ext "pg_nanotime" >}} | `0.3.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] 0.2.0 is a PGXN testing release for PG17-18. Adds nanointerval aggregates, abs and generate_series. Ordinary types need no preload; cross-backend global clocks require preload/restart, and state is lost at restart.
+> [!Note] 0.3.0 is a PGXN testing release for PG17-18. Adds nanosecond timestamp ranges and GiST/exclusion support; TimescaleDB integration is optional. Ordinary types need no preload; cross-backend global clocks require preload/restart, and state is lost at restart.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_nanotime` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pg_nanotime_18" "green" >}} {{< bg "17" "pg_nanotime_17" "green" >}} {{< bg "16" "pg_nanotime_16" "red" >}} {{< bg "15" "pg_nanotime_15" "red" >}} {{< bg "14" "pg_nanotime_14" "red" >}} | `pg_nanotime_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pg-nanotime" "green" >}} {{< bg "17" "postgresql-17-pg-nanotime" "green" >}} {{< bg "16" "postgresql-16-pg-nanotime" "red" >}} {{< bg "15" "postgresql-15-pg-nanotime" "red" >}} {{< bg "14" "postgresql-14-pg-nanotime" "red" >}} | `postgresql-$v-pg-nanotime` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_nanotime` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pg_nanotime_18" "green" >}} {{< bg "17" "pg_nanotime_17" "green" >}} {{< bg "16" "pg_nanotime_16" "red" >}} {{< bg "15" "pg_nanotime_15" "red" >}} {{< bg "14" "pg_nanotime_14" "red" >}} | `pg_nanotime_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-pg-nanotime" "green" >}} {{< bg "17" "postgresql-17-pg-nanotime" "green" >}} {{< bg "16" "postgresql-16-pg-nanotime" "red" >}} {{< bg "15" "postgresql-15-pg-nanotime" "red" >}} {{< bg "14" "postgresql-14-pg-nanotime" "red" >}} | `postgresql-$v-pg-nanotime` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_nanotime_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_nanotime_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_nanotime_14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-nanotime : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-nanotime : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-nanotime : N/A 0" "gray" >}} |
 {.matrix}
 
 
@@ -63,22 +63,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_nanotime_18` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 107.5 KiB | [pg_nanotime_18-0.2.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_nanotime_18-0.2.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_nanotime_18` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 109.1 KiB | [pg_nanotime_18-0.2.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_nanotime_18-0.2.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_nanotime_18` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 111.3 KiB | [pg_nanotime_18-0.2.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_nanotime_18-0.2.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_nanotime_18` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 113.8 KiB | [pg_nanotime_18-0.2.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_nanotime_18-0.2.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_nanotime_18` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 111.5 KiB | [pg_nanotime_18-0.2.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_nanotime_18-0.2.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_nanotime_18` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 114.2 KiB | [pg_nanotime_18-0.2.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_nanotime_18-0.2.0-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 102.6 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 104.0 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 102.2 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 103.9 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 110.3 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 113.3 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 106.8 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 110.6 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 106.4 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-nanotime` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 104.8 KiB | [postgresql-18-pg-nanotime_0.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.2.0-1PGSTY~resolute_arm64.deb) |
+| `pg_nanotime_18` | `0.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 114.5 KiB | [pg_nanotime_18-0.3.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_nanotime_18-0.3.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_nanotime_18` | `0.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 116.2 KiB | [pg_nanotime_18-0.3.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_nanotime_18-0.3.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_nanotime_18` | `0.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.1 KiB | [pg_nanotime_18-0.3.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_nanotime_18-0.3.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_nanotime_18` | `0.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 120.6 KiB | [pg_nanotime_18-0.3.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_nanotime_18-0.3.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_nanotime_18` | `0.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 118.4 KiB | [pg_nanotime_18-0.3.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_nanotime_18-0.3.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_nanotime_18` | `0.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 121.1 KiB | [pg_nanotime_18-0.3.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_nanotime_18-0.3.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 110.5 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 111.9 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 109.9 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 111.8 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 118.0 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 121.1 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 114.6 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 118.5 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 113.9 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-nanotime` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 112.5 KiB | [postgresql-18-pg-nanotime_0.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-18-pg-nanotime_0.3.0-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -86,22 +86,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_nanotime_17` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 107.5 KiB | [pg_nanotime_17-0.2.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_nanotime_17-0.2.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_nanotime_17` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 109.0 KiB | [pg_nanotime_17-0.2.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_nanotime_17-0.2.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_nanotime_17` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 111.3 KiB | [pg_nanotime_17-0.2.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_nanotime_17-0.2.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_nanotime_17` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 113.7 KiB | [pg_nanotime_17-0.2.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_nanotime_17-0.2.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_nanotime_17` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 111.6 KiB | [pg_nanotime_17-0.2.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_nanotime_17-0.2.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_nanotime_17` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 114.2 KiB | [pg_nanotime_17-0.2.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_nanotime_17-0.2.0-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 102.6 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 104.0 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 102.3 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 103.7 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~trixie_arm64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 115.3 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 118.3 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 106.6 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 110.5 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~noble_arm64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 106.4 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~resolute_amd64.deb) |
-| `postgresql-17-pg-nanotime` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 104.8 KiB | [postgresql-17-pg-nanotime_0.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.2.0-1PGSTY~resolute_arm64.deb) |
+| `pg_nanotime_17` | `0.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 114.4 KiB | [pg_nanotime_17-0.3.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_nanotime_17-0.3.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_nanotime_17` | `0.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 116.1 KiB | [pg_nanotime_17-0.3.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_nanotime_17-0.3.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_nanotime_17` | `0.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.1 KiB | [pg_nanotime_17-0.3.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_nanotime_17-0.3.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_nanotime_17` | `0.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 120.6 KiB | [pg_nanotime_17-0.3.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_nanotime_17-0.3.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_nanotime_17` | `0.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 118.4 KiB | [pg_nanotime_17-0.3.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_nanotime_17-0.3.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_nanotime_17` | `0.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 121.0 KiB | [pg_nanotime_17-0.3.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_nanotime_17-0.3.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 110.4 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 111.8 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 110.0 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 111.6 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 123.0 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 126.1 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 114.5 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 118.4 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 113.9 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-nanotime` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 112.4 KiB | [postgresql-17-pg-nanotime_0.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-nanotime/postgresql-17-pg-nanotime_0.3.0-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}
@@ -110,7 +110,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/bunko666-cloud/pg_nanotime" title="Repository" icon="github" subtitle="github.com/bunko666-cloud/pg_nanotime" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_nanotime-0.2.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_nanotime-0.3.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -148,14 +148,13 @@ CREATE EXTENSION pg_nanotime;
 
 Sources:
 
-- [0.2.0 README](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/README.md)
-- [0.2.0 control file](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/pg_nanotime.control)
-- [0.2.0 SQL objects](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/sql/pg_nanotime--0.2.0.sql)
-- [Technical reference](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/docs/TECHNICAL.md)
-- [0.2.0 changelog](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/CHANGELOG.md)
-- [PGXN release metadata](https://github.com/bunko666-cloud/pg_nanotime/blob/f7583f4609223a53818a7841d5bc52903305ed2f/META.json)
+- [README](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/README.md)
+- [Control](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/pg_nanotime.control)
+- [SQL objects](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/sql/pg_nanotime--0.3.0.sql)
+- [Technical reference](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/docs/TECHNICAL.md)
+- [Changelog](https://github.com/bunko666-cloud/pg_nanotime/blob/9e1371a0645a381d915e3c485800392d9b78a49d/CHANGELOG.md)
 
-`pg_nanotime` 0.2.0 provides nanosecond timestamp and interval types on PostgreSQL 17–18 for event timestamps, latency measurements and externally supplied nanosecond data. Nanosecond storage precision does not imply nanosecond clock accuracy.
+`pg_nanotime` 0.3.0 provides nanosecond timestamp and interval types on PostgreSQL 17–18 for event timestamps, latency measurements and externally supplied nanosecond data. Nanosecond storage precision does not imply nanosecond clock accuracy.
 
 ### Core Workflow
 
@@ -216,10 +215,14 @@ Preserve other libraries already in the setting. Ordinary types and clocks do no
 
 ### Upgrade and Migration
 
-Upstream marks 0.2.0 as a PGXN testing release. After replacing library and SQL files, update each database:
+Upstream marks 0.3.0 as a PGXN testing release. After replacing library and SQL files, update each database:
 
 ```sql
-ALTER EXTENSION pg_nanotime UPDATE TO '0.2.0';
+ALTER EXTENSION pg_nanotime UPDATE TO '0.3.0';
 ```
 
 The column-conversion helper `nanotime_migrate_column` defaults to the 16-byte type, even for a bigint source, and changes the column with ALTER TABLE, rebuilding its indexes. Review the conversion and locking cost before running it. TimescaleDB integration is optional; its integer-time and continuous-aggregate requirements are separate from merely storing nanosecond timestamps.
+
+### 0.3.0 Range Types and Timescale Helper
+
+Version 0.3.0 adds `nanotstzrange` and `nanotsrange` with multirange, GiST and exclusion-constraint support. It also adds `nanotime_timescale_setup()` for the optional TimescaleDB integration and extends the technical helpers for range construction and extraction. Existing timestamp and interval objects keep their prior semantics. Replace matching library and SQL files before running `ALTER EXTENSION pg_nanotime UPDATE TO '0.3.0'`; review any range indexes and the optional TimescaleDB setup separately.

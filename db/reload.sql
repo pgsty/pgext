@@ -42,7 +42,7 @@ WHERE p.pg = sub.pg AND p.os = sub.os AND p.name = sub.name;
 UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 
 -- conflict with other extension, hide in list
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra', 'duckdb_fdw');
 
 -- too big, non-free, heavy extensions
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2', 'pgml', 'pljava', 'rdkit', 'jdbc_fdw', 'odbc_fdw', 'pg_strom', 'db_fdw', 'informix_fdw' , 'oracle_fdw', 'pg_statviz');

@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7010** | {{< badge content="supautils" link="https://github.com/supabase/supautils" >}} | {{< ext "supautils" >}} | `3.4.4` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **7010** | {{< badge content="supautils" link="https://github.com/supabase/supautils" >}} | {{< ext "supautils" >}} | `4.0.0` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,37 +29,37 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_command_fw" >}} {{< ext "pgextwlist" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} {{< ext "noset" >}} {{< ext "sepgsql" >}} |
 
-> [!Note] Module-only; no CREATE EXTENSION.
+> [!Note] Module-only; no CREATE EXTENSION. 4.0 removes constrained-extension functionality and adds global extension scripts and a default extension install schema. Restart preloaded processes after replacing the library.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `supautils` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4.4` | {{< bg "18" "supautils_18" "green" >}} {{< bg "17" "supautils_17" "green" >}} {{< bg "16" "supautils_16" "green" >}} {{< bg "15" "supautils_15" "green" >}} {{< bg "14" "supautils_14" "green" >}} | `supautils_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4.4` | {{< bg "18" "postgresql-18-supautils" "green" >}} {{< bg "17" "postgresql-17-supautils" "green" >}} {{< bg "16" "postgresql-16-supautils" "green" >}} {{< bg "15" "postgresql-15-supautils" "green" >}} {{< bg "14" "postgresql-14-supautils" "green" >}} | `postgresql-$v-supautils` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `supautils` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.0` | {{< bg "18" "supautils_18" "green" >}} {{< bg "17" "supautils_17" "green" >}} {{< bg "16" "supautils_16" "green" >}} {{< bg "15" "supautils_15" "green" >}} {{< bg "14" "supautils_14" "green" >}} | `supautils_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.0.0` | {{< bg "18" "postgresql-18-supautils" "green" >}} {{< bg "17" "postgresql-17-supautils" "green" >}} {{< bg "16" "postgresql-16-supautils" "green" >}} {{< bg "15" "postgresql-15-supautils" "green" >}} {{< bg "14" "postgresql-14-supautils" "green" >}} | `postgresql-$v-supautils` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "supautils_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.4.4" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "supautils_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "supautils_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-18-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-17-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-supautils : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-supautils : AVAIL 1" "green" >}} |
 {.matrix}
 
 
@@ -68,22 +68,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `supautils_18` | `3.4.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 102.0 KiB | [supautils_18-3.4.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_18-3.4.4-1PGSTY.el8.x86_64.rpm) |
-| `supautils_18` | `3.4.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 99.6 KiB | [supautils_18-3.4.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_18-3.4.4-1PGSTY.el8.aarch64.rpm) |
-| `supautils_18` | `3.4.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 102.3 KiB | [supautils_18-3.4.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_18-3.4.4-1PGSTY.el9.x86_64.rpm) |
-| `supautils_18` | `3.4.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 100.3 KiB | [supautils_18-3.4.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_18-3.4.4-1PGSTY.el9.aarch64.rpm) |
-| `supautils_18` | `3.4.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 103.3 KiB | [supautils_18-3.4.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_18-3.4.4-1PGSTY.el10.x86_64.rpm) |
-| `supautils_18` | `3.4.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 101.1 KiB | [supautils_18-3.4.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_18-3.4.4-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-18-supautils` | `3.4.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 95.0 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 92.9 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 95.0 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~trixie_amd64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 93.1 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~trixie_arm64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 101.4 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~jammy_amd64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 100.0 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~jammy_arm64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 99.1 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~noble_amd64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 97.4 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~noble_arm64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 99.0 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~resolute_amd64.deb) |
-| `postgresql-18-supautils` | `3.4.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 97.3 KiB | [postgresql-18-supautils_3.4.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-18-supautils_3.4.4-1PGSTY~resolute_arm64.deb) |
+| `supautils_18` | `4.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 96.5 KiB | [supautils_18-4.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_18-4.0.0-1PGSTY.el8.x86_64.rpm) |
+| `supautils_18` | `4.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 94.2 KiB | [supautils_18-4.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_18-4.0.0-1PGSTY.el8.aarch64.rpm) |
+| `supautils_18` | `4.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 97.3 KiB | [supautils_18-4.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_18-4.0.0-1PGSTY.el9.x86_64.rpm) |
+| `supautils_18` | `4.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 95.2 KiB | [supautils_18-4.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_18-4.0.0-1PGSTY.el9.aarch64.rpm) |
+| `supautils_18` | `4.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 98.3 KiB | [supautils_18-4.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_18-4.0.0-1PGSTY.el10.x86_64.rpm) |
+| `supautils_18` | `4.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 95.9 KiB | [supautils_18-4.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_18-4.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-supautils` | `4.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 89.9 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.8 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 90.0 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 87.9 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 96.6 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 95.0 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 93.8 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 92.4 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 93.9 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-supautils` | `4.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 92.2 KiB | [postgresql-18-supautils_4.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-18-supautils_4.0.0-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -91,22 +91,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `supautils_17` | `3.4.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 101.8 KiB | [supautils_17-3.4.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_17-3.4.4-1PGSTY.el8.x86_64.rpm) |
-| `supautils_17` | `3.4.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 99.5 KiB | [supautils_17-3.4.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_17-3.4.4-1PGSTY.el8.aarch64.rpm) |
-| `supautils_17` | `3.4.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 102.2 KiB | [supautils_17-3.4.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_17-3.4.4-1PGSTY.el9.x86_64.rpm) |
-| `supautils_17` | `3.4.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 100.2 KiB | [supautils_17-3.4.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_17-3.4.4-1PGSTY.el9.aarch64.rpm) |
-| `supautils_17` | `3.4.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 103.1 KiB | [supautils_17-3.4.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_17-3.4.4-1PGSTY.el10.x86_64.rpm) |
-| `supautils_17` | `3.4.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 101.0 KiB | [supautils_17-3.4.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_17-3.4.4-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-17-supautils` | `3.4.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 94.9 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 92.7 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 94.9 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~trixie_amd64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 93.0 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~trixie_arm64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 127.8 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~jammy_amd64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 125.8 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~jammy_arm64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 99.0 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~noble_amd64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 97.4 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~noble_arm64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 98.9 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~resolute_amd64.deb) |
-| `postgresql-17-supautils` | `3.4.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 97.2 KiB | [postgresql-17-supautils_3.4.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-17-supautils_3.4.4-1PGSTY~resolute_arm64.deb) |
+| `supautils_17` | `4.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 96.4 KiB | [supautils_17-4.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_17-4.0.0-1PGSTY.el8.x86_64.rpm) |
+| `supautils_17` | `4.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 94.0 KiB | [supautils_17-4.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_17-4.0.0-1PGSTY.el8.aarch64.rpm) |
+| `supautils_17` | `4.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 97.2 KiB | [supautils_17-4.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_17-4.0.0-1PGSTY.el9.x86_64.rpm) |
+| `supautils_17` | `4.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 95.1 KiB | [supautils_17-4.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_17-4.0.0-1PGSTY.el9.aarch64.rpm) |
+| `supautils_17` | `4.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 98.0 KiB | [supautils_17-4.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_17-4.0.0-1PGSTY.el10.x86_64.rpm) |
+| `supautils_17` | `4.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 95.8 KiB | [supautils_17-4.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_17-4.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-17-supautils` | `4.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 90.0 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.7 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 90.0 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 87.9 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 122.3 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 120.3 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 93.9 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 92.2 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 93.8 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-17-supautils` | `4.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 92.1 KiB | [postgresql-17-supautils_4.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-17-supautils_4.0.0-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -114,22 +114,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `supautils_16` | `3.4.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 102.0 KiB | [supautils_16-3.4.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_16-3.4.4-1PGSTY.el8.x86_64.rpm) |
-| `supautils_16` | `3.4.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 99.7 KiB | [supautils_16-3.4.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_16-3.4.4-1PGSTY.el8.aarch64.rpm) |
-| `supautils_16` | `3.4.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 102.4 KiB | [supautils_16-3.4.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_16-3.4.4-1PGSTY.el9.x86_64.rpm) |
-| `supautils_16` | `3.4.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 100.4 KiB | [supautils_16-3.4.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_16-3.4.4-1PGSTY.el9.aarch64.rpm) |
-| `supautils_16` | `3.4.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 103.3 KiB | [supautils_16-3.4.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_16-3.4.4-1PGSTY.el10.x86_64.rpm) |
-| `supautils_16` | `3.4.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 101.2 KiB | [supautils_16-3.4.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_16-3.4.4-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-16-supautils` | `3.4.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 95.0 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 92.8 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 95.1 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~trixie_amd64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 93.0 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~trixie_arm64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 125.1 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~jammy_amd64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 123.1 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~jammy_arm64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 99.1 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~noble_amd64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 97.5 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~noble_arm64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 99.1 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~resolute_amd64.deb) |
-| `postgresql-16-supautils` | `3.4.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 97.3 KiB | [postgresql-16-supautils_3.4.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-16-supautils_3.4.4-1PGSTY~resolute_arm64.deb) |
+| `supautils_16` | `4.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 96.7 KiB | [supautils_16-4.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_16-4.0.0-1PGSTY.el8.x86_64.rpm) |
+| `supautils_16` | `4.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 94.3 KiB | [supautils_16-4.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_16-4.0.0-1PGSTY.el8.aarch64.rpm) |
+| `supautils_16` | `4.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 97.6 KiB | [supautils_16-4.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_16-4.0.0-1PGSTY.el9.x86_64.rpm) |
+| `supautils_16` | `4.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 95.3 KiB | [supautils_16-4.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_16-4.0.0-1PGSTY.el9.aarch64.rpm) |
+| `supautils_16` | `4.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 98.2 KiB | [supautils_16-4.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_16-4.0.0-1PGSTY.el10.x86_64.rpm) |
+| `supautils_16` | `4.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 96.1 KiB | [supautils_16-4.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_16-4.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-16-supautils` | `4.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 90.1 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.8 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 90.1 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 88.1 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 120.6 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 118.4 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 94.1 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 94.2 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 94.2 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-16-supautils` | `4.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 92.3 KiB | [postgresql-16-supautils_4.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-16-supautils_4.0.0-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -137,22 +137,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `supautils_15` | `3.4.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 103.2 KiB | [supautils_15-3.4.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_15-3.4.4-1PGSTY.el8.x86_64.rpm) |
-| `supautils_15` | `3.4.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 100.9 KiB | [supautils_15-3.4.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_15-3.4.4-1PGSTY.el8.aarch64.rpm) |
-| `supautils_15` | `3.4.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 104.5 KiB | [supautils_15-3.4.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_15-3.4.4-1PGSTY.el9.x86_64.rpm) |
-| `supautils_15` | `3.4.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 102.5 KiB | [supautils_15-3.4.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_15-3.4.4-1PGSTY.el9.aarch64.rpm) |
-| `supautils_15` | `3.4.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.1 KiB | [supautils_15-3.4.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_15-3.4.4-1PGSTY.el10.x86_64.rpm) |
-| `supautils_15` | `3.4.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 103.2 KiB | [supautils_15-3.4.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_15-3.4.4-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-15-supautils` | `3.4.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 96.5 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 94.1 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 96.5 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~trixie_amd64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 94.5 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~trixie_arm64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 127.5 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~jammy_amd64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 125.2 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~jammy_arm64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 100.4 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~noble_amd64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 99.2 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~noble_arm64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 100.4 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~resolute_amd64.deb) |
-| `postgresql-15-supautils` | `3.4.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 99.1 KiB | [postgresql-15-supautils_3.4.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-15-supautils_3.4.4-1PGSTY~resolute_arm64.deb) |
+| `supautils_15` | `4.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 97.8 KiB | [supautils_15-4.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_15-4.0.0-1PGSTY.el8.x86_64.rpm) |
+| `supautils_15` | `4.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 95.5 KiB | [supautils_15-4.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_15-4.0.0-1PGSTY.el8.aarch64.rpm) |
+| `supautils_15` | `4.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 99.4 KiB | [supautils_15-4.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_15-4.0.0-1PGSTY.el9.x86_64.rpm) |
+| `supautils_15` | `4.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 97.1 KiB | [supautils_15-4.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_15-4.0.0-1PGSTY.el9.aarch64.rpm) |
+| `supautils_15` | `4.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 99.8 KiB | [supautils_15-4.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_15-4.0.0-1PGSTY.el10.x86_64.rpm) |
+| `supautils_15` | `4.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 97.9 KiB | [supautils_15-4.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_15-4.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-15-supautils` | `4.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 91.4 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 114.7 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 91.7 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 89.5 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 122.7 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 120.3 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 95.4 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 94.0 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 95.2 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-15-supautils` | `4.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 94.1 KiB | [postgresql-15-supautils_4.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-15-supautils_4.0.0-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}
@@ -160,22 +160,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `supautils_14` | `3.4.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 103.1 KiB | [supautils_14-3.4.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_14-3.4.4-1PGSTY.el8.x86_64.rpm) |
-| `supautils_14` | `3.4.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 100.8 KiB | [supautils_14-3.4.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_14-3.4.4-1PGSTY.el8.aarch64.rpm) |
-| `supautils_14` | `3.4.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 104.5 KiB | [supautils_14-3.4.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_14-3.4.4-1PGSTY.el9.x86_64.rpm) |
-| `supautils_14` | `3.4.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 102.4 KiB | [supautils_14-3.4.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_14-3.4.4-1PGSTY.el9.aarch64.rpm) |
-| `supautils_14` | `3.4.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.0 KiB | [supautils_14-3.4.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_14-3.4.4-1PGSTY.el10.x86_64.rpm) |
-| `supautils_14` | `3.4.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 103.3 KiB | [supautils_14-3.4.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_14-3.4.4-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-14-supautils` | `3.4.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 96.5 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 94.0 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 96.5 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~trixie_amd64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 94.5 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~trixie_arm64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 121.2 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~jammy_amd64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 118.8 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~jammy_arm64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 100.3 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~noble_amd64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 99.1 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~noble_arm64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 100.4 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~resolute_amd64.deb) |
-| `postgresql-14-supautils` | `3.4.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 99.1 KiB | [postgresql-14-supautils_3.4.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-14-supautils_3.4.4-1PGSTY~resolute_arm64.deb) |
+| `supautils_14` | `4.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 97.7 KiB | [supautils_14-4.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/supautils_14-4.0.0-1PGSTY.el8.x86_64.rpm) |
+| `supautils_14` | `4.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 95.4 KiB | [supautils_14-4.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/supautils_14-4.0.0-1PGSTY.el8.aarch64.rpm) |
+| `supautils_14` | `4.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 99.3 KiB | [supautils_14-4.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/supautils_14-4.0.0-1PGSTY.el9.x86_64.rpm) |
+| `supautils_14` | `4.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 97.1 KiB | [supautils_14-4.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/supautils_14-4.0.0-1PGSTY.el9.aarch64.rpm) |
+| `supautils_14` | `4.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 99.8 KiB | [supautils_14-4.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/supautils_14-4.0.0-1PGSTY.el10.x86_64.rpm) |
+| `supautils_14` | `4.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 97.8 KiB | [supautils_14-4.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/supautils_14-4.0.0-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-14-supautils` | `4.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 91.5 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 89.1 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 91.6 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~trixie_amd64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 89.4 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~trixie_arm64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 114.4 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~jammy_amd64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 112.4 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~jammy_arm64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 95.3 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~noble_amd64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 94.0 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~noble_arm64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 95.2 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~resolute_amd64.deb) |
+| `postgresql-14-supautils` | `4.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 94.1 KiB | [postgresql-14-supautils_4.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/supautils/postgresql-14-supautils_4.0.0-1PGSTY~resolute_arm64.deb) |
 {.downloads}
 
 {{< /tab >}}{{< /tabs >}}
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/supautils" title="Repository" icon="github" subtitle="github.com/supabase/supautils" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="supautils-3.4.4.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="supautils-4.0.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -230,9 +230,9 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 Sources:
 
-- [v3.4.4 README](https://github.com/supabase/supautils/blob/v3.4.4/README.md)
-- [v3.4.4 release](https://github.com/supabase/supautils/releases/tag/v3.4.4)
-- [Version restriction implementation](https://github.com/supabase/supautils/blob/v3.4.4/src/extensions.c)
+- [v4.0.0 README](https://github.com/supabase/supautils/blob/v4.0.0/README.md)
+- [v4.0.0 release](https://github.com/supabase/supautils/releases/tag/v4.0.0)
+- [Version restriction implementation](https://github.com/supabase/supautils/blob/v4.0.0/src/extensions.c)
 
 `supautils` is a loadable library that unlocks selected superuser-only PostgreSQL features for non-superusers through configuration. Upstream emphasizes that it adds no tables, functions, or security labels to the database.
 
@@ -270,7 +270,6 @@ For event triggers, the README says privileged-role triggers run for non-superus
 - `supautils.privileged_role_allowed_configs`
 - `supautils.privileged_extensions`
 - `supautils.extension_custom_scripts_path`
-- `supautils.constrained_extensions`
 - `supautils.extensions_parameter_overrides`
 - `supautils.policy_grants`
 - `supautils.drop_trigger_grants`
@@ -310,6 +309,10 @@ supautils.reserved_memberships = 'pg_read_server_files'
 
 `supautils.restrict_extension_versions` controls explicit version clauses for non-superusers: `off` allows them, `warn` ignores them and selects the control-file default with a warning, and `error` rejects them. This applies to both extension creation and upgrades; superusers and the configured proxy superuser are exempt. Omitting an explicit version remains allowed subject to normal privilege checks.
 
-Cluster preload requires a restart; role-specific session preload applies to new connections. Do not run CREATE EXTENSION for supautils itself. Source release 3.4.4 is a library update and has no SQL extension-update step. It avoids ACCESS EXCLUSIVE locks during allowlisted-table policy checks and restores the caller's role on every exit from an elevated region.
+Cluster preload requires a restart; role-specific session preload applies to new connections. Do not run CREATE EXTENSION for supautils itself. Source release 4.0.0 is a library update and has no SQL extension-update step. It avoids ACCESS EXCLUSIVE locks during allowlisted-table policy checks and restores the caller's role on every exit from an elevated region.
 
 Review allowed extensions and custom scripts as trusted code because their operations run with delegated superuser privileges. Enhanced privilege hints do not work for views on PostgreSQL 18 according to the tagged README. Test role transitions, event-trigger ownership and reserved-role protections before broadening grants.
+
+### 4.0 Migration
+
+Version 4.0.0 removes constrained-extension functionality; remove the old constrained_extensions configuration rather than relying on that mechanism. Global and per-extension custom scripts run in this order: global before-create, extension before-create, extension after-create, global after-create. The default_extension_install_schema setting prepends a default schema when no explicit SCHEMA or parameter override wins. The read-only supautils.version setting identifies the loaded library. These are library changes; restart or reconnect the processes that preload it, without CREATE EXTENSION for supautils itself.
