@@ -66,6 +66,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | vmutils                  | 1.154.0            | 1.155.0            |                              |
 | victoria-traces          | 0.12.0             | 0.12.1             |                              |
 | xray                     | 26.3.27            | 26.10.21           | 安全更新                     |
+{.wide .expand}
+
+
+
 
 ## 2026-10-19
 
@@ -83,6 +87,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | silo                    | 20260916000000.0.0 | 20261018000000.0.0 | 正式发布；原生双架构 DEB/RPM，保留原始字节与上游 RPM 签名；本地已入库       |
 | sow                     | 0.5.0              | 0.6.0              | 双架构；本地已入库                                                          |
 | stalwart                | 0.16.26            | 0.16.27            | 双架构；本地已入库                                                          |
+{.wide .expand}
+
+
+
 
 ## 2026-10-16
 
@@ -108,32 +116,40 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | timescaledb-tools       | 0.19.0-1PGSTY | 0.19.0-2PGSTY | parallel-copy 0.13.0 → 0.13.1，Go 1.27.2 源码构建；tune 仍为 0.19.0；发行号递增；本地已入库 |
 | uv                      | 0.13.0        | 0.13.1        | 双架构；本地已入库                                                                          |
 | victoria-metrics        | 1.153.0       | 1.154.0       | 同步更新 victoria-metrics、victoria-metrics-cluster、vmutils；本地已入库                    |
+{.wide .expand}
+
+
+
 
 ## 2026-10-11
 
-| 名称 | 旧版本 | 新版本 | 备注 |
-|:---|:---|:---|:---|
-| agentsview | 0.44.0 | 0.45.0 | 双架构；本地已入库 |
-| blackbox-exporter | 0.28.0 | 0.29.0 | 双架构；本地已入库 |
-| claude | 2.1.289 | 2.1.296 | 双架构；本地已入库 |
-| cloudflared | 2026.9.3 | 2026.10.0 | 双架构；本地已入库 |
-| code | 1.140.0 | 1.141.0 | 上游 DEB/RPM；本地已入库 |
-| code-server | 4.140.0 | 4.141.0 | 上游 DEB/RPM；本地已入库 |
-| codex | 0.160.0 | 0.162.1 | 双架构；本地已入库 |
-| crush | 0.97.1 | 0.98.1 | 双架构；本地已入库 |
-| dblab | 0.51.0 | 0.52.1 | 双架构；本地已入库 |
-| golang | 1.27.1 | 1.27.2 | 双架构；本地已入库 |
-| grafana-infinity-ds | 4.0.0 | 4.1.1 | 双架构；本地已入库 |
-| grafana-plugins | 13.2.2 | 13.2.3 | noarch；JSON datasource 1.4.3；本地已入库 |
-| jmx-exporter | 1.6.0 | 1.7.0 | noarch；本地已入库 |
-| mcp-toolbox | 1.13.1 | 1.14.0 | CGO 源码构建；glibc 2.28；本地已入库 |
-| opencode | 1.18.34 | 1.18.35 | 双架构；本地已入库 |
-| pig | 1.8.1 | 1.9.0 | 双架构；本地已入库 |
-| pushgateway | 1.11.3 | 1.11.4 | 双架构；本地已入库 |
-| rclone | 1.75.1 | 1.75.2 | 双架构；本地已入库 |
-| stalwart | 0.16.24 | 0.16.25 | 双架构；本地已入库 |
-| uv | 0.12.23 | 0.13.0 | 双架构；本地已入库 |
-| vector | 0.58.0 | 0.59.0 | 上游 DEB/RPM；本地已入库 |
+| 名称                | 旧版本   | 新版本    | 备注                                      |
+|:--------------------|:---------|:----------|:------------------------------------------|
+| agentsview          | 0.44.0   | 0.45.0    | 双架构；本地已入库                        |
+| blackbox-exporter   | 0.28.0   | 0.29.0    | 双架构；本地已入库                        |
+| claude              | 2.1.289  | 2.1.296   | 双架构；本地已入库                        |
+| cloudflared         | 2026.9.3 | 2026.10.0 | 双架构；本地已入库                        |
+| code                | 1.140.0  | 1.141.0   | 上游 DEB/RPM；本地已入库                  |
+| code-server         | 4.140.0  | 4.141.0   | 上游 DEB/RPM；本地已入库                  |
+| codex               | 0.160.0  | 0.162.1   | 双架构；本地已入库                        |
+| crush               | 0.97.1   | 0.98.1    | 双架构；本地已入库                        |
+| dblab               | 0.51.0   | 0.52.1    | 双架构；本地已入库                        |
+| golang              | 1.27.1   | 1.27.2    | 双架构；本地已入库                        |
+| grafana-infinity-ds | 4.0.0    | 4.1.1     | 双架构；本地已入库                        |
+| grafana-plugins     | 13.2.2   | 13.2.3    | noarch；JSON datasource 1.4.3；本地已入库 |
+| jmx-exporter        | 1.6.0    | 1.7.0     | noarch；本地已入库                        |
+| mcp-toolbox         | 1.13.1   | 1.14.0    | CGO 源码构建；glibc 2.28；本地已入库      |
+| opencode            | 1.18.34  | 1.18.35   | 双架构；本地已入库                        |
+| pig                 | 1.8.1    | 1.9.0     | 双架构；本地已入库                        |
+| pushgateway         | 1.11.3   | 1.11.4    | 双架构；本地已入库                        |
+| rclone              | 1.75.1   | 1.75.2    | 双架构；本地已入库                        |
+| stalwart            | 0.16.24  | 0.16.25   | 双架构；本地已入库                        |
+| uv                  | 0.12.23  | 0.13.0    | 双架构；本地已入库                        |
+| vector              | 0.58.0   | 0.59.0    | 上游 DEB/RPM；本地已入库                  |
+{.wide .expand}
+
+
+
 
 ## 2026-10-05
 
@@ -163,6 +179,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | uv              | 0.12.20 | 0.12.23 | 已校验并构建双架构 RPM/DEB                                                                    |
 | victoria-logs   | 1.52.0  | 1.53.0  | 同步升级 victoria-logs、vlogscli、vlagent 三个包                                              |
 | victoria-traces | 0.11.1  | 0.12.0  | 已校验并构建双架构 RPM/DEB                                                                    |
+{.wide .expand}
+
+
+
 
 ## 2026-09-29
 
@@ -197,6 +217,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | tailcat          | 0.6.0    | 0.7.0    | 已校验并构建双架构 RPM/DEB                                 |
 | uv               | 0.12.17  | 0.12.20  | 已校验并构建双架构 RPM/DEB                                 |
 | victoria-metrics | 1.152.0  | 1.153.0  | 同步升级单机、集群与 vmutils 三个包                        |
+{.wide .expand}
+
+
+
 
 ## 2026-09-19
 
@@ -250,6 +274,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | uv                         | 0.12.8             | 0.12.17            | 已校验并构建双架构 RPM/DEB                                   |
 | victoria-metrics           | 1.151.0            | 1.152.0            | 同步构建单机、集群和 vmutils 三个软件包                      |
 | victoria-traces            | 0.10.0             | 0.11.1             | 已校验并构建双架构 RPM/DEB                                   |
+{.wide .expand}
+
+
+
 
 ## 2026-09-01
 
@@ -285,12 +313,20 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | uv               | 0.12.5                            | 0.12.8             | 已构建双架构 RPM/DEB                               |
 | vector           | 0.57.0                            | 0.58.0             | 官方原生 DEB/RPM 保持逐字节不变                    |
 | victoria-metrics | 1.150.0                           | 1.151.0            | 已构建单机、集群与 vmutils 双架构软件包            |
+{.wide .expand}
+
+
+
 
 ## 2026-08-30
 
 | 名称    | 旧值 | 新值                              | 备注                                                              |
 |:--------|:-----|:----------------------------------|:------------------------------------------------------------------|
 | tailcat | -    | 0.0.0-20260830010511-7c2a6ea60429 | 上游尚无标签；固定源码提交与离线 vendor，已构建双架构静态 RPM/DEB |
+{.wide .expand}
+
+
+
 
 ## 2026-08-24
 
@@ -330,6 +366,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | uv                  | 0.12.3     | 0.12.5     | 已构建双架构 RPM/DEB                               |
 | v2ray               | 5.52.0     | 5.53.0     | 已构建双架构 RPM/DEB                               |
 | victoria-metrics    | 1.149.0    | 1.150.0    | 已构建单机、集群与 vmutils 双架构软件包            |
+{.wide .expand}
+
+
+
 
 ## 2026-08-12
 
@@ -345,6 +385,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | postgrest           | 16.0    | 16.1    | 双架构静态制品；最低支持 PostgreSQL 14             |
 | redis-exporter      | 1.88.0  | 1.89.0  | 已构建双架构 RPM/DEB                               |
 | sow                 | 0.2.0   | 0.3.0   | 官方双架构 RPM/DEB 已下载并核验                    |
+{.wide .expand}
+
+
+
 
 ## 2026-08-08
 
@@ -397,6 +441,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | xray                    | 26.3.27              | 26.7.28        | Latest dated release; built as dual-architecture RPM/DEB  |
 | pig                     | 1.6.0                | 1.6.1          | Refreshed extension catalog                               |
 | prometheus              | 3.13.1               | 3.13.2         | Security and stability release                            |
+{.wide .expand}
+
+
+
 
 ## 2026-07-30
 
@@ -427,6 +475,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | stalwart        | 0.16.14       | 0.16.15       |                                         |
 | uv              | 0.11.31       | 0.12.0        |                                         |
 | victoria-traces | 0.9.4         | 0.10.0        |                                         |
+{.wide .expand}
+
+
+
 
 ## 2026-07-23
 
@@ -447,6 +499,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | pg-hardstorage          | 1.0.12  | 1.0.13  |      |
 | crush                   | 0.85.0  | 0.86.0  |      |
 | code                    | 1.129.1 | 1.130.0 |      |
+{.wide .expand}
+
+
+
 
 ## 2026-07-20
 
@@ -474,6 +530,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | pev2                     | 1.22.0   | 1.23.0    | noarch 软件包                                    |
 | k3s                      | -        | 1.36.2    | 上游 `v1.36.2+k3s1`，支持 amd64 与 arm64         |
 | k3s-images               | -        | 1.36.2    | 与二进制精确匹配的系统镜像包，支持双架构         |
+{.wide .expand}
+
+
+
 
 ## 2026-07-16
 
@@ -501,6 +561,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | code           | 1.128.0  | 1.129.0  | 直链构建产物更新         |
 | code-server    | 4.127.0  | 4.128.0  | 直链构建产物更新         |
 | cloudflared    | 2026.7.1 | 2026.7.2 | 直链构建产物更新         |
+{.wide .expand}
+
+
+
 
 ## 2026-07-10
 
@@ -516,6 +580,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | crush       | 0.82.0   | 0.84.0   | 直链构建产物更新         |
 | rclone      | 1.74.3   | 1.74.4   | 直链构建产物更新         |
 | cloudflared | 2026.6.1 | 2026.7.1 | 直链构建产物更新         |
+{.wide .expand}
+
+
+
 
 ## 2026-07-08
 
@@ -546,6 +614,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | crush                      | 0.81.0  | 0.82.0  |      |
 | code                       | 1.127.0 | 1.128.0 |      |
 | pig                        | 1.5.0   | 1.5.1   |      |
+{.wide .expand}
+
+
+
 
 ## 2026-07-04
 
@@ -573,6 +645,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | code-server                | 4.125.0        | 4.127.0        |      |
 | pig                        | 1.4.2          | 1.5.0          |      |
 | minio                      | 20260417000000 | 20260618000000 |      |
+{.wide .expand}
+
+
+
 
 ## 2026-07-01
 
@@ -615,6 +691,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | cloudflared              | 2026.6.0 | 2026.6.1 |      |
 | crush                    | 0.76.0   | 0.79.1   |      |
 | genai-toolbox            | 1.1.0    | 1.5.0    |      |
+{.wide .expand}
+
+
 
 
 ## 2026-06-12
@@ -665,6 +744,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | code                       | 1.118.1  | 1.124.0  |                               |
 | code-server                | 4.118.0  | 4.123.0  |                               |
 | cloudflared                | 2026.3.0 | 2026.6.0 |                               |
+{.wide .expand}
+
+
 
 
 ## 2026-05-11
@@ -696,6 +778,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | rclone                   | 1.73.5   | 1.74.1   | 直链构建产物更新         |
 | code-server              | 4.117.0  | 4.118.0  | 直链构建产物更新         |
 | cloudflared              | 2026.2.0 | 2026.3.0 | 直链构建产物更新         |
+{.wide .expand}
+
+
 
 
 ## 2026-04-30
@@ -725,6 +810,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | vip-manager              | 4.0.0          | 4.2.0    | 直链元数据更新                         |
 | crush                    | 0.62.1         | 0.64.0   | 直链元数据更新                         |
 | code                     | 1.115.0        | 1.118.1  | 直链元数据更新                         |
+{.wide .expand}
+
+
+
 
 ## 2026-04-25
 
@@ -744,6 +833,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | rclone              | 1.73.4  | 1.73.5  | 直链元数据更新                 |
 | code-server         | 4.115.0 | 4.117.0 | 直链元数据更新                 |
 | pig                 | 1.4.0   | 1.4.1   | 仅更新元信息；构建产物单独处理 |
+{.wide .expand}
+
+
+
 
 ## 2026-04-19
 
@@ -770,6 +863,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | sabiql                     | 1.10.0          | 1.11.0         |                                     |
 | etcd                       | 3.6.8           | 3.6.10         | 统一软件包版本                      |
 | pig                        | 1.3.4           | 1.4.0          |                                     |
+{.wide .expand}
+
+
+
 
 ## 2026-04-14
 
@@ -822,6 +919,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | pg_exporter                | 1.2.1          | 1.2.2           | 直链元数据更新                              |
 | pig                        | 1.3.2          | 1.3.4           | 直链元数据更新                              |
 | pgflo                      | 0.0.15         | -               | 已移除                                      |
+{.wide .expand}
+
+
 
 
 ## 2026-03-21
@@ -873,6 +973,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | minio                    | 20260214       | 20260314       |      |
 | mcli                     | 20260213       | 20260313       |      |
 | claude                   | 2.1.68         | 2.1.81         |      |
+{.wide .expand}
+
+
+
 
 ## 2026-03-05
 
@@ -895,6 +999,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | gost                     | -              | 2.12.0         | 新增 |
 | sabiql                   | -              | 1.6.2          | 新增 |
 | agentsview               | -              | 0.10.0         | 新增 |
+{.wide .expand}
+
+
+
 
 ## 2026-02-26
 
@@ -921,6 +1029,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | claude                     | 2.1.45  | 2.1.59  |      |
 | codex                      | 0.104.0 | 0.105.0 |      |
 | pig                        | 1.2.0   | 1.3.0   |      |
+{.wide .expand}
+
+
 
 
 ## 2026-02-22
@@ -935,6 +1046,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | logcli                   | 3.6.5   | 3.6.6   |      |
 | opencode                 | 1.2.6   | 1.2.10  |      |
 | pig                      | 1.1.0   | 1.2.0   |      |
+{.wide .expand}
+
+
+
 
 ## 2026-02-18
 
@@ -960,6 +1075,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | rclone                     | 1.73.0         | 1.73.1         |      |
 | code-server                | 4.108.2        | 4.109.2        |      |
 | code                       | 1.109.2        | 1.109.4        |      |
+{.wide .expand}
+
+
+
 
 ## 2026-02-12
 
@@ -971,6 +1090,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | nodejs              | 24.13.0 | 24.13.1 |      |
 | opencode            | 1.1.53  | 1.1.59  |      |
 | golang              | 1.25.7  | 1.26.0  |      |
+{.wide .expand}
+
+
+
 
 ## 2026-02-08
 
@@ -1012,6 +1135,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | grafana                    | 12.3.1         | 12.3.2         |      |
 | pig                        | 1.0.0          | 1.1.0          |      |
 | cloudflared                | 2026.1.1       | 2026.2.0       |      |
+{.wide .expand}
+
+
+
 
 ## 2026-01-25
 
@@ -1031,6 +1158,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | headscale                  | -       | 0.27.1   | 新增 |
 | pig                        | 0.9.0   | 1.0.0    |      |
 | duckdb                     | 1.4.3   | 1.4.4    |      |
+{.wide .expand}
+
+
+
 
 ## 2026-01-16
 
@@ -1057,6 +1188,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | npgsqlrest                 | 3.3.0    | 3.4.3    |      |
 | genai-toolbox              | 0.24.0   | 0.25.0   |      |
 | pg_exporter                | 1.1.1    | 1.1.2    |      |
+{.wide .expand}
+
+
+
 
 ## 2026-01-08
 
@@ -1072,6 +1207,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | postgrest     | -      | 14.3    | 新增                    |
 | claude        | 2.0.76 | 2.1.1   | 新增                    |
 | genai-toolbox | 0.23.0 | 0.24.0  | 移除 Oracle C 驱动      |
+{.wide .expand}
+
+
+
 
 ## 2025-12-25
 
@@ -1089,6 +1228,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | alertmanager        | 0.29.0 | 0.30.0 |                    |
 | victorialogs        | 1.41.0 | 1.43.1 |                    |
 | pgbackrest_exporter | 0.21.0 | 0.22.0 |                    |
+{.wide .expand}
+
+
 
 
 ## 2025-12-16
@@ -1105,6 +1247,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | pig               | 0.7.4          | 0.8.0          |          |
 | genai-toolbox     | 0.22.0         | 0.23.0         |          |
 | minio             | 20250907161309 | 20251203120000 | by pgsty |
+{.wide .expand}
+
+
+
 
 ## 2025-12-04
 
@@ -1123,6 +1269,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | redis_exporter          | 1.80.0  | 1.80.1    |      |
 | mongodb_exporter        | 0.47.1  | 0.47.2    |      |
 | genai-toolbox           | 0.21.0  | 0.22.0    |      |
+{.wide .expand}
+
+
 
 
 ## 2025-11-20
@@ -1148,6 +1297,9 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | grafana-victorialogs-ds    | 0.21.4  | 0.22.1  |                |
 | grafana-victoriametrics-ds | 0.19.6  | 0.19.7  |                |
 | grafana-plugins            | 12.0.0  | 12.3.0  |                |
+{.wide .expand}
+
+
 
 
 ## 2025-11-08
@@ -1175,6 +1327,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | grafana-infinity-ds        |  3.5.0  |  3.6.0  |      |
 | pev2                       | 1.16.0  | 1.17.0  |      |
 | pig                        |  0.6.2  |  0.7.1  |      |
+{.wide .expand}
+
+
 
 
 ## 2025-10-18
@@ -1201,6 +1356,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | rclone                     |     1.70.3     |     1.71.1     |      |
 | minio                      | 20250723155402 | 20250907161309 |      |
 | mcli                       | 20250721052808 | 20250813083541 |      |
+{.wide .expand}
+
+
 
 
 ## 2025-08-15
@@ -1222,6 +1380,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | ferretdb                   |  2.3.1  |  2.5.0  |      |
 | tigerbeetle                | 0.16.50 | 0.16.54 |      |
 | genai-toolbox              |  0.9.0  | 0.12.0  |      |
+{.wide .expand}
+
+
 
 
 ## 2025-07-24
@@ -1233,6 +1394,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | minio    |   -    |    20250723155402    |                            |
 | mcli     |   -    |    20250721052808    |                            |
 | ivorysql |   -    | 4.5-0ffca11-20250709 | fix libxcrypt deps issue   |
+{.wide .expand}
+
+
 
 
 ## 2025-07-16
@@ -1251,6 +1415,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | pig                        |  0.5.0  |  0.6.0  |                              |
 | pev2                       | 1.15.0  | 1.16.0  |                              |
 | pg_exporter                |  1.0.0  |  1.0.1  |                              |
+{.wide .expand}
+
+
 
 
 ## 2025-07-04
@@ -1274,6 +1441,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | grafana-inifinity-ds       |  3.2.1  |  3.3.0  | -    |
 | victorialogs               | 1.22.2  | 1.24.0  | -    |
 | victoriametrics            | 1.117.1 | 1.120.0 | -    |
+{.wide .expand}
+
+
 
 
 ## 2025-06-01
@@ -1289,6 +1459,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | tigerbeetle             |   -    | 0.16.42 | -    |
 | grafana-victorialogs-ds |   -    | 0.17.0  | -    |
 | grafana-infinity-ds     |   -    |  3.2.2  | -    |
+{.wide .expand}
+
+
 
 
 ## 2025-05-22
@@ -1318,6 +1491,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | grafana-victoriametrics-ds |   -    |     0.15.1     | -                     |
 | grafana-infinity-ds        |   -    |     3.2.1      | -                     |
 | grafana_plugins            |   -    |     12.0.0     | -                     |
+{.wide .expand}
+
+
 
 
 ## 2025-04-23
@@ -1338,6 +1514,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | vector              |   -    |     0.46.1     | -    |
 | minio               |   -    | 20250422221226 | -    |
 | mcli                |   -    | 20250416181326 | -    |
+{.wide .expand}
+
+
 
 
 ## 2025-04-05
@@ -1357,6 +1536,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | victoriametrics  |   -    |    1.114.0     | -    |
 | minio            |   -    | 20250403145628 | -    |
 | mcli             |   -    | 20250403170756 | -    |
+{.wide .expand}
+
+
 
 
 ## 2025-03-23
@@ -1367,6 +1549,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | pgbackrest_exporter |   -    | 0.19.0 | rebuild |
 | victorialogs        |   -    | 1.17.0 | -       |
 | vslogcli            |   -    | 1.17.0 | -       |
+{.wide .expand}
+
+
 
 
 ## 2025-03-17
@@ -1396,6 +1581,10 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | timescaledb-event-streamer |   -    | 0.12.0  | new  |
 | restic                     |   -    | 0.17.3  | new  |
 | juicefs                    |   -    |  1.2.3  | new  |
+{.wide .expand}
+
+
+
 
 ## 2025-02-12
 
@@ -1419,6 +1608,9 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | minio               | 20241218131544 | 20250207232109 | -    |
 | mcli                | 20241121172154 | 20250208191421 | -    |
 | rclone              |     1.68.2     |     1.69.0     | -    |
+{.wide .expand}
+
+
 
 
 ## 2024-11-19
@@ -1437,3 +1629,4 @@ MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
 | tigerbeetle         |  16.8   | 0.16.13 | -    |
 | grafana             |    -    | 11.3.0  | -    |
 | vector              |    -    | 0.42.0  | -    |
+{.wide .expand}

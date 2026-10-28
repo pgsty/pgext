@@ -39,6 +39,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | stannum          | -      | 0.1.0  | PG17-18; development snapshot                   |
 | timescaledb      | 2.30.2 | 2.31.0 | PG16-18; TSL                                    |
 | valkey           | 9.1.1  | 9.1.2  | Includes development package                    |
+{.wide .expand}
+
+
+
 
 ## 2026-10-15
 
@@ -59,6 +63,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | plpgsql_check   | 2.10.14      | 2.10.15      | PG14-18; SQL version 2.10; imported locally                                                           |
 | spock           | 5.0.12       | 5.0.13       | Updated with pgEdge 15-18; includes PG18 compatibility package; preload required                      |
 | textsearch_intl | -            | 1.0.0        | PG14-18; Debian 12/13, Ubuntu 22.04/24.04/26.04 amd64/arm64; unreleased snapshot; imported locally    |
+{.wide .expand}
+
+
+
 
 ## 2026-10-11
 
@@ -84,6 +92,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | plpgsql_check           | 2.10.11                  | 2.10.14         | PG14-18; SQL version 2.10; imported locally                                              |
 | rdkit                   | 202609.1-1PGSTY          | 202609.1-2PGSTY | PG14-18; Debian 13, Ubuntu 24/26; remove downstream upgrade patch; built, import pending |
 | timescaledb             | 2.30.2-1PGSTY            | 2.30.2-2PGSTY   | PG16-18; TSL; declare conflict with Apache package; built, import pending                |
+{.wide .expand}
+
+
+
 
 ## 2026-10-06
 
@@ -163,6 +175,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | supautils              | 3.4.3        | 3.4.4        | PG14-18                                                                                                               |
 | timescaledb            | 2.30.1       | 2.30.2       | PG16-18; TSL; PG14 stays on 2.19.3 and PG15 on 2.28.3                                                                 |
 | vgram                  | -            | 1.0          | PG14-18                                                                                                               |
+{.wide .expand}
+
+
+
 
 ## 2026-09-24
 
@@ -200,24 +216,32 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | ulak                 | 0.0.2  | 0.2.0   | PG14-18; preload                       |
 | vectorize            | 0.26.2 | 0.27.1  | PG14-18; SQL 0.23.0; multi-row fix     |
 | wrappers             | 0.6.2  | 0.6.3   | PG14-18                                |
+{.wide .expand}
+
+
+
 
 ## 2026-08-14
 
 This batch adds `pg_relation_sql`, upgrades `pg_oidc_validator` and `pg_when`, and rebuilds existing packages after correcting license metadata. `pg_relation_sql` is standalone SQL and does not support `CREATE EXTENSION`.
 
-| Name                | Old   | New    | Comment                                                                                   |
-|:--------------------|:------|:-------|:------------------------------------------------------------------------------------------|
-| emailaddr           | 0     | 0      | License metadata: `LicenseRef-Upstream-No-License`; r3; PG14-18                           |
-| explain_ui          | 0.0.2 | 0.0.2  | License metadata: `LicenseRef-Upstream-No-License`; r4; PG14-18                           |
-| oidc_validator      | 0.1.0 | 0.1.0  | Rust module; `LicenseRef-Upstream-No-License`; r2; PG18                                   |
-| pg_failover_slots   | 1.2.1 | 1.2.1  | License metadata: `PostgreSQL`; r2; preload; PG14-18                                      |
-| pg_geohash          | 1.0   | 1.0    | License metadata: `MIT`; r4; fix SQL filename and target-PG ABI; PG14-18                  |
-| pg_oidc_validator   | 0.2   | 1.1.0  | PG18 OAuth validator module; add `discovery_url_override` and GSSAPI build dependency     |
-| pg_relation_sql     | -     | 0.2.2  | Standalone SQL; no `CREATE EXTENSION`; Architecture: all; PG14-18                         |
-| pg_summarize        | 0.0.1 | 0.0.1  | License metadata: `LicenseRef-Upstream-No-License`; r6; PG14-18                           |
-| pg_when             | 0.1.9 | 0.1.10 | GitHub/PGXN release; upstream pgrx 0.18.1, packaged with 0.19.1; PG14-18                  |
-| smlar               | 1.0   | 1.0    | License metadata: `LicenseRef-Upstream-No-License`; r2; PG14-18                           |
-| unit                | 7.10  | 7.10   | License metadata: `GPL-3.0-or-later`; r7; PG14-18                                         |
+| Name              | Old   | New    | Comment                                                                               |
+|:------------------|:------|:-------|:--------------------------------------------------------------------------------------|
+| emailaddr         | 0     | 0      | License metadata: `LicenseRef-Upstream-No-License`; r3; PG14-18                       |
+| explain_ui        | 0.0.2 | 0.0.2  | License metadata: `LicenseRef-Upstream-No-License`; r4; PG14-18                       |
+| oidc_validator    | 0.1.0 | 0.1.0  | Rust module; `LicenseRef-Upstream-No-License`; r2; PG18                               |
+| pg_failover_slots | 1.2.1 | 1.2.1  | License metadata: `PostgreSQL`; r2; preload; PG14-18                                  |
+| pg_geohash        | 1.0   | 1.0    | License metadata: `MIT`; r4; fix SQL filename and target-PG ABI; PG14-18              |
+| pg_oidc_validator | 0.2   | 1.1.0  | PG18 OAuth validator module; add `discovery_url_override` and GSSAPI build dependency |
+| pg_relation_sql   | -     | 0.2.2  | Standalone SQL; no `CREATE EXTENSION`; Architecture: all; PG14-18                     |
+| pg_summarize      | 0.0.1 | 0.0.1  | License metadata: `LicenseRef-Upstream-No-License`; r6; PG14-18                       |
+| pg_when           | 0.1.9 | 0.1.10 | GitHub/PGXN release; upstream pgrx 0.18.1, packaged with 0.19.1; PG14-18              |
+| smlar             | 1.0   | 1.0    | License metadata: `LicenseRef-Upstream-No-License`; r2; PG14-18                       |
+| unit              | 7.10  | 7.10   | License metadata: `GPL-3.0-or-later`; r7; PG14-18                                     |
+{.wide .expand}
+
+
+
 
 ## 2026-08-12
 
@@ -251,6 +275,10 @@ This batch adds `pg_relation_sql`, upgrades `pg_oidc_validator` and `pg_when`, a
 | timescaledb    | 2.29.0            | 2.29.1           | PG16-18                                                     |
 | vector         | 0.8.6             | 0.8.6            | PGDG repository refresh; PG14-18                            |
 | zlog           | 1.2.18-1PIGSTY    | 1.2.18-2PGSTY    | Rebuild                                                     |
+{.wide .expand}
+
+
+
 
 ## 2026-07-30
 
@@ -277,6 +305,10 @@ This batch adds `pg_relation_sql`, upgrades `pg_oidc_validator` and `pg_when`, a
 | timescaledb      | 2.28.3 | 2.29.0 | PG16-18                                                  |
 | timeseries       | 0.2.1  | 0.2.1  | Fix partman/cron Recommends and docs; r3                 |
 | vector           | 0.8.5  | 0.8.6  | PG14-18; 0.8.6 not indexed                               |
+{.wide .expand}
+
+
+
 
 ## 2026-07-24
 
@@ -442,27 +474,35 @@ This batch records extension changes from 2026-07-07 through 2026-07-24: new ext
 | sqlite_fdw              | 2.5.0    | 2.5.0    | 10 DEB: +PG18; PG14-18                                               |
 | sslutils                | 1.4      | 1.4      | EL8 RPM PG18, 2 arch                                                 |
 | wal2mongo               | 1.0.7    | 1.0.7    | 10 DEB: +PG17-18; PG14-18                                            |
+{.wide .expand}
+
+
+
 
 ## 2026-07-07
 
-| Package           | Old        | New        | Comment       |
-|:------------------|:-----------|:-----------|:--------------|
-| polardb-17        | 17.9.1.0   | 17.10.1.0  | PG 17         |
-| agensgraph-17     | 2.16.0     | 2.17.0     | PG 17.10      |
-| openhalodb-14     | 1.0-beta   | 1.0-2      | OpenHaloDB    |
-| babelfish-17      | 5.4.0      | 5.4.0      | PG 17.7       |
-| babelfish-18      | -          | 6.0.0      | PG 18.3       |
-| pgedge-15         | -          | 15.18      | Spock 5.0.10  |
-| pgedge-16         | -          | 16.14      | Spock 5.0.10  |
-| pgedge-17         | 17.9       | 17.10      | Spock 5.0.10  |
-| pgedge-18         | 18.3       | 18.4       | Spock 5.0.10  |
-| orioledb-16       | 1.8-beta16 | 1.8-beta16 | PG 16         |
-| orioledb-17       | 1.8-beta16 | 1.8-beta16 | PG 17         |
-| orioledb-18       | 1.8-beta16 | 1.8-beta16 | PG 18         |
-| ivorysql-18       | 5.0        | 5.4        | PG 18         |
-| cloudberry        | 2.1.0-1    | 2.1.0-2    | rebuild       |
-| cloudberry-backup | 2.1.0-1    | 2.1.0-2    | backup        |
-| cloudberry-pxf    | 2.1.0-1    | 2.1.0-2    | PXF           |
+| Package           | Old        | New        | Comment      |
+|:------------------|:-----------|:-----------|:-------------|
+| polardb-17        | 17.9.1.0   | 17.10.1.0  | PG 17        |
+| agensgraph-17     | 2.16.0     | 2.17.0     | PG 17.10     |
+| openhalodb-14     | 1.0-beta   | 1.0-2      | OpenHaloDB   |
+| babelfish-17      | 5.4.0      | 5.4.0      | PG 17.7      |
+| babelfish-18      | -          | 6.0.0      | PG 18.3      |
+| pgedge-15         | -          | 15.18      | Spock 5.0.10 |
+| pgedge-16         | -          | 16.14      | Spock 5.0.10 |
+| pgedge-17         | 17.9       | 17.10      | Spock 5.0.10 |
+| pgedge-18         | 18.3       | 18.4       | Spock 5.0.10 |
+| orioledb-16       | 1.8-beta16 | 1.8-beta16 | PG 16        |
+| orioledb-17       | 1.8-beta16 | 1.8-beta16 | PG 17        |
+| orioledb-18       | 1.8-beta16 | 1.8-beta16 | PG 18        |
+| ivorysql-18       | 5.0        | 5.4        | PG 18        |
+| cloudberry        | 2.1.0-1    | 2.1.0-2    | rebuild      |
+| cloudberry-backup | 2.1.0-1    | 2.1.0-2    | backup       |
+| cloudberry-pxf    | 2.1.0-1    | 2.1.0-2    | PXF          |
+{.wide .expand}
+
+
+
 
 ## 2026-07-01
 
@@ -478,6 +518,10 @@ This batch records extension changes from 2026-07-07 through 2026-07-24: new ext
 | pgmnemo       | 0.8.3    | 0.12.1  | PG 14-18                              |
 | pg_ivm        | 1.14     | 1.15    | PG 14-18                              |
 | rdf_fdw       | 2.5.0    | 2.6.0   | PG 14-18, libcurl compatibility patch |
+{.wide .expand}
+
+
+
 
 ## 2026-06-18
 
@@ -515,6 +559,10 @@ Updated Rust extension pgrx version to 0.18.1.
 | passwordpolicy      | -          | 2.0.5      | new, PG 14-18            |
 | pgdisablelogerror   | -          | 1.0        | new, PG 14-18            |
 | plpgsql_wrap        | -          | 1.0        | new, PG 14-18            |
+{.wide .expand}
+
+
+
 
 ## 2026-06-12
 
@@ -547,6 +595,10 @@ Added most Ubuntu 26.04 Resolute core extension packages.
 | pg_task        | -      | 2.1.29 | new, PG 14-18, pcre2grep fix     |
 | pg_extra_time  | -      | 2.1.0  | new, PG 14-18                    |
 | fsm_core       | -      | 1.1.0  | new, PG 15-18                    |
+{.wide .expand}
+
+
+
 
 ## 2026-05-01
 
@@ -564,6 +616,10 @@ Added most Ubuntu 26.04 Resolute core extension packages.
 | spock            | 5.0.5  | 5.0.6  | rebuilt for PG 18                                                                   |
 | lolor            | 1.2.2  | 1.2.2  | rebuilt for PG 18                                                                   |
 | snowflake        | 2.4    | 2.4    | rebuilt for PG 18                                                                   |
+{.wide .expand}
+
+
+
 
 Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 
@@ -583,6 +639,10 @@ Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 | parray_gin     | 1.4.0  | 1.5.0  | bump, PG 14-18                |
 | rdf_fdw        | 2.4.0  | 2.5.0  | bump, PG 14-18                |
 | pg_accumulator | -      | 1.1.3  | new, PG 14-18                 |
+{.wide .expand}
+
+
+
 
 ## 2026-04-19
 
@@ -604,6 +664,10 @@ Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 | storage_engine    | -      | 1.0.7  | new, PG 14-18                           |
 | re2               | -      | 0.1.1  | new, PG 16-18                           |
 | ulak              | -      | 0.0.2  | new, PG 14-18                           |
+{.wide .expand}
+
+
+
 
 ## 2026-04-14
 
@@ -664,6 +728,10 @@ Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 | pg_incremental     | 1.4.1  | 1.5.0    | bump                                 |
 | pg_failover_slots  | 1.2.0  | 1.2.1    | bump                                 |
 | PolarDB            | 15.15  | 17.9.1.0 | PG 15 -> 17                          |
+{.wide .expand}
+
+
+
 
 ## 2026-03-21
 
@@ -676,6 +744,10 @@ Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 | pg_clickhouse      | 0.1.4   | 0.1.5     |         |
 | pdu                |         | 3.0.25.12 | new     |
 | pgdog              |         | 0.1.32    | new     |
+{.wide .expand}
+
+
+
 
 ## 2026-03-05
 
@@ -690,6 +762,10 @@ Drop PG 13 support for all extensions
 | pg_pinyin        | -       | 0.0.2   | new package, PG 14-18        |
 | pg_eviltransform | -       | 0.0.2   | new package, version aligned |
 | qos              | -       | 1.0.0   | new package, PG 15-18        |
+{.wide .expand}
+
+
+
 
 ## 2026-02-27
 
@@ -711,6 +787,10 @@ Drop PG 13 support for all extensions
 | babelfishpg       | -        | 5.5.0    | new BabelfishPG package group        |
 | babelfish         | -        | 5.5.0    | new Babelfish compatibility package  |
 | antlr4-runtime413 | -        | 4.13     | new runtime dependency for Babelfish |
+{.wide .expand}
+
+
+
 
 ## 2026-02-12
 
@@ -743,6 +823,10 @@ Drop PG 13 support for all extensions
 | pg_strict          | -          | 1.0.2        | new Rust extension           |
 | pg_track_optimizer | -          | 0.9.1        | new extension                |
 | pgmb               | -          | 1.0.0        | new extension                |
+{.wide .expand}
+
+
+
 
 ## 2026-01-25
 
@@ -753,6 +837,10 @@ Drop PG 13 support for all extensions
 | pg_clickhouse | 0.1.2          | 0.1.3          |                         |
 | pgmq          | 1.8.1          | 1.9.0          |                         |
 | pg_search     | 0.21.2         | 0.21.4         |                         |
+{.wide .expand}
+
+
+
 
 ## 2026-01-16
 
@@ -777,6 +865,10 @@ Drop PG 13 support for all extensions
 | pgfincore               | -      | 1.3.1  | use PGDG              |
 | documentdb_extended_rum |        | 0.109  | new                   |
 | mobilitydb_datagen      |        | 1.3.0  | new                   |
+{.wide .expand}
+
+
+
 
 ## 2025-12-25
 
@@ -789,6 +881,10 @@ Drop PG 13 support for all extensions
 | pg_timeseries | 0.1.7   | 0.1.8   |          |
 | supautils     | 3.0.2-1 | 3.0.2-2 | fix pg18 |
 | pg_summarize  | 0.0.1-1 | 0.0.1-2 | fix pg18 |
+{.wide .expand}
+
+
+
 
 ## 2025-12-16
 
@@ -815,12 +911,20 @@ Drop PG 13 support for all extensions
 | pgsmcrypto                                                    | -       | -       | fix pg18         |
 | pgx_ulid                                                      | -       | -       | fix pg18         |
 | plprql                                                        | -       | -       | fix pg18         |
+{.wide .expand}
+
+
+
 
 ## 2025-12-04
 
 | Name    | Old | New | Comment           |
 |:--------|:----|:----|:------------------|
 | synchdb | -   | 1.3 | Ubuntu 22/24 only |
+{.wide .expand}
+
+
+
 
 ## 2025-11-20
 
@@ -845,6 +949,10 @@ Drop PG 13 support for all extensions
 | pgmq                   | 1.7.0  | 1.8.0  |                            |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
 | PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
+{.wide .expand}
+
+
+
 
 ## 2025-11-10
 
@@ -944,6 +1052,10 @@ Add PostgreSQL 18 support for almost all extensions
 | system_stats          |    3.2     |     -      | +pg18   |
 | topn                  |   2.7.0    |     -      | +pg18   |
 | zhparser              |    2.3     |     -      | +pg18   |
+{.wide .expand}
+
+
+
 
 ## 2025-09-06
 
@@ -971,6 +1083,10 @@ Add PostgreSQL 18 support for almost all extensions
 |   redis_fdw   |         |         | + pg18                 |
 |     emaj      |   4.6   |   4.7   |                        |
 | table_version | 1.11.0  | 1.11.1  |                        |
+{.wide .expand}
+
+
+
 
 ## 2025-07-24
 
@@ -987,6 +1103,10 @@ Add PostgreSQL 18 support for almost all extensions
 |     pgvectorscale     |   0.7.1    | 0.8.0 (pgrx 0.12.9) |                               |
 |       pg_search       |   0.15.8   |  0.17.0 (download)  | fix el icu dependency issue   |
 |      pg_profile       |   4.8.0    |       4.10.0        |                               |
+{.wide .expand}
+
+
+
 
 ## 2025-07-04
 
@@ -998,6 +1118,10 @@ Add PostgreSQL 18 support for almost all extensions
 |  pgsql-tweaks   | 0.11.1 |   0.11.3   |                    |
 |     pg_tle      | 1.5.0  |   1.5.1    |                    |
 |     pg_curl     |  2.4   |   2.4.5    |                    |
+{.wide .expand}
+
+
+
 
 ## 2025-06-24
 
@@ -1008,6 +1132,10 @@ Add PostgreSQL 18 support for almost all extensions
 |   vchord    |  0.3.0  | [0.4.3](https://github.com/tensorchord/VectorChord/releases/tag/0.4.3) |                   |
 |  pgactive   |    -    |                                 2.1.5                                  | require pgfeutils |
 | documentdb  | 0.103.0 |                                0.104.0                                 | add arm support   |
+{.wide .expand}
+
+
+
 
 ## 2025-05-26
 
@@ -1021,6 +1149,10 @@ Add PostgreSQL 18 support for almost all extensions
 |    pgx_ulid     |    -     |     [0.2.0](https://github.com/pksunkara/pgx_ulid)      |         |
 |     pg_ivm      |  1.10.0  |       [1.11.0](https://github.com/sraoss/pg_ivm)        |         |
 |    orioledb     | 1.4.0b10 |    [1.4.0b11](https://github.com/orioledb/orioledb)     |         |
+{.wide .expand}
+
+
+
 
 ## 2025-05-22
 
@@ -1035,6 +1167,10 @@ Add PostgreSQL 18 support for almost all extensions
 |     tzf      |  -  |           [0.2.2](https://github.com/ringsaturn/pg-tzf/releases/tag/v0.2.2)            |         |
 | pg_vectorize |  -  |        [0.22.2](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.22.2)        |         |
 |   wrappers   |  -  |           [0.5.0](https://github.com/supabase/wrappers/releases/tag/v0.5.0)            |         |
+{.wide .expand}
+
+
+
 
 ## 2025-05-07
 
@@ -1060,6 +1196,10 @@ Add PostgreSQL 18 support for almost all extensions
 | timescaledb-toolkit |  -  |          [1.21.0](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.21.0)          |         |
 |    pgvectorscale    |  -  |              [0.7.1](https://github.com/timescale/pgvectorscale/releases/tag/0.7.1)              |         |
 |   pg_session_jwt    |  -  |           [0.3.1](https://github.com/neondatabase/pg_session_jwt/releases/tag/v0.3.1)            |         |
+{.wide .expand}
+
+
+
 
 ## 2025-03-20
 
@@ -1089,6 +1229,10 @@ Add PostgreSQL 18 support for almost all extensions
 |     pg_random     |   -   |   -    |         |
 |  pg_stat_monitor  | 2.1.0 | 2.1.1  |         |
 |    pg_profile     |  4.7  |  4.8   |         |
+{.wide .expand}
+
+
+
 
 ## 2024-10-16
 
@@ -1111,3 +1255,4 @@ Add PostgreSQL 18 support for almost all extensions
 |   pg-orphaned   |  -  |    latest    |         |
 |    pgnodemx     |  -  |     1.7      |         |
 |    sslutils     |  -  | 1.4 (+16,17) |         |
+{.wide .expand}

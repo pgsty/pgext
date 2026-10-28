@@ -66,6 +66,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | vmutils                  | 1.154.0            | 1.155.0            |                                     |
 | victoria-traces          | 0.12.0             | 0.12.1             |                                     |
 | xray                     | 26.3.27            | 26.10.21           | Security update                     |
+{.wide .expand}
+
+
+
 
 ## 2026-10-19
 
@@ -83,6 +87,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | silo                    | 20260916000000.0.0 | 20261018000000.0.0 | Formal release; native DEB/RPM for both architectures; original bytes and upstream RPM signatures preserved; imported locally        |
 | sow                     | 0.5.0              | 0.6.0              | Both architectures; imported locally                                                                                                 |
 | stalwart                | 0.16.26            | 0.16.27            | Both architectures; imported locally                                                                                                 |
+{.wide .expand}
+
+
+
 
 ## 2026-10-16
 
@@ -108,6 +116,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | timescaledb-tools       | 0.19.0-1PGSTY | 0.19.0-2PGSTY | parallel-copy 0.13.0 to 0.13.1, built with Go 1.27.2; tune remains 0.19.0; package release incremented; imported locally |
 | uv                      | 0.13.0        | 0.13.1        | Both architectures; imported locally                                                                                     |
 | victoria-metrics        | 1.153.0       | 1.154.0       | Updates victoria-metrics, victoria-metrics-cluster and vmutils together; imported locally                                |
+{.wide .expand}
+
+
+
 
 ## 2026-10-11
 
@@ -134,6 +146,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | stalwart            | 0.16.24  | 0.16.25   | Both architectures; imported locally            |
 | uv                  | 0.12.23  | 0.13.0    | Both architectures; imported locally            |
 | vector              | 0.58.0   | 0.59.0    | Upstream DEB/RPM; imported locally              |
+{.wide .expand}
+
+
+
 
 ## 2026-10-05
 
@@ -163,6 +179,10 @@ Local build batch: 22 recipes upgraded, producing 96 RPM/DEB artifacts for 24 pa
 | uv              | 0.12.20 | 0.12.23 | Verified and built dual-architecture RPM/DEB                                                                                         |
 | victoria-logs   | 1.52.0  | 1.53.0  | victoria-logs, vlogscli and vlagent updated together                                                                                 |
 | victoria-traces | 0.11.1  | 0.12.0  | Verified and built dual-architecture RPM/DEB                                                                                         |
+{.wide .expand}
+
+
+
 
 ## 2026-09-29
 
@@ -197,6 +217,10 @@ Local build batch: 26 recipes upgraded and cargo-pgrx-0193 added, producing 116 
 | tailcat          | 0.6.0    | 0.7.0    | Verified and built dual-architecture RPM/DEB                                               |
 | uv               | 0.12.17  | 0.12.20  | Verified and built dual-architecture RPM/DEB                                               |
 | victoria-metrics | 1.152.0  | 1.153.0  | Single-node, cluster, and vmutils packages updated together                                |
+{.wide .expand}
+
+
+
 
 ## 2026-09-19
 
@@ -250,6 +274,10 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | uv                         | 0.12.8             | 0.12.17            | Verified and built dual-architecture RPM/DEB                                                  |
 | victoria-metrics           | 1.151.0            | 1.152.0            | Single-node, cluster, and vmutils packages updated together                                   |
 | victoria-traces            | 0.10.0             | 0.11.1             | Verified and built dual-architecture RPM/DEB                                                  |
+{.wide .expand}
+
+
+
 
 ## 2026-09-01
 
@@ -285,12 +313,20 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | uv               | 0.12.5                            | 0.12.8             | Dual-architecture RPM/DEB built                              |
 | vector           | 0.57.0                            | 0.58.0             | Official native DEB/RPM preserved byte-for-byte              |
 | victoria-metrics | 1.150.0                           | 1.151.0            | Single-node, cluster, and vmutils packages built             |
+{.wide .expand}
+
+
+
 
 ## 2026-08-30
 
 | Name    | Old | New                               | Comment                                                                   |
 |:--------|:----|:----------------------------------|:--------------------------------------------------------------------------|
 | tailcat | -   | 0.0.0-20260830010511-7c2a6ea60429 | Untagged source and offline vendor pinned; dual-arch static RPM/DEB built |
+{.wide .expand}
+
+
+
 
 ## 2026-08-24
 
@@ -330,22 +366,30 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | uv                  | 0.12.3     | 0.12.5     | Dual-architecture RPM/DEB built                            |
 | v2ray               | 5.52.0     | 5.53.0     | Dual-architecture RPM/DEB built                            |
 | victoria-metrics    | 1.149.0    | 1.150.0    | Single-node, cluster, and vmutils packages built           |
+{.wide .expand}
+
+
+
 
 ## 2026-08-12
 
-| Name                    | Old      | New      | Comment                                                       |
-|:------------------------|:---------|:---------|:--------------------------------------------------------------|
-| claude                  | 2.1.226  | 2.1.227  | Official manifest verified via proxy; dual-arch RPM/DEB built |
-| code-server             | 4.131.0  | 4.132.0  | Official dual-architecture RPM/DEB downloaded and verified    |
-| grafana-infinity-ds     | 3.11.2   | 3.11.3   | Built as dual-architecture RPM/DEB                            |
-| mtail                   | 3.4.6    | 3.4.7    | Built as dual-architecture RPM/DEB                            |
-| opencode                | 1.18.15  | 1.18.16  | Built as dual-architecture RPM/DEB                            |
-| pg-hardstorage          | 1.1.1    | 1.2.1    | Official dual-architecture RPM/DEB downloaded and verified    |
-| pig                     | 1.6.1    | 1.7.0    | Official dual-architecture RPM/DEB downloaded and verified    |
-| postgrest               | 16.0     | 16.1     | Static dual-architecture RPM/DEB; requires PostgreSQL 14+     |
-| redis-exporter          | 1.88.0   | 1.89.0   | Built as dual-architecture RPM/DEB                            |
-| sow                     | 0.2.0    | 0.3.0    | Official dual-architecture RPM/DEB downloaded and verified    |
-| stalwart                | 0.16.16  | 0.16.17  | Built as dual-architecture RPM/DEB                            |
+| Name                | Old     | New     | Comment                                                       |
+|:--------------------|:--------|:--------|:--------------------------------------------------------------|
+| claude              | 2.1.226 | 2.1.227 | Official manifest verified via proxy; dual-arch RPM/DEB built |
+| code-server         | 4.131.0 | 4.132.0 | Official dual-architecture RPM/DEB downloaded and verified    |
+| grafana-infinity-ds | 3.11.2  | 3.11.3  | Built as dual-architecture RPM/DEB                            |
+| mtail               | 3.4.6   | 3.4.7   | Built as dual-architecture RPM/DEB                            |
+| opencode            | 1.18.15 | 1.18.16 | Built as dual-architecture RPM/DEB                            |
+| pg-hardstorage      | 1.1.1   | 1.2.1   | Official dual-architecture RPM/DEB downloaded and verified    |
+| pig                 | 1.6.1   | 1.7.0   | Official dual-architecture RPM/DEB downloaded and verified    |
+| postgrest           | 16.0    | 16.1    | Static dual-architecture RPM/DEB; requires PostgreSQL 14+     |
+| redis-exporter      | 1.88.0  | 1.89.0  | Built as dual-architecture RPM/DEB                            |
+| sow                 | 0.2.0   | 0.3.0   | Official dual-architecture RPM/DEB downloaded and verified    |
+| stalwart            | 0.16.16 | 0.16.17 | Built as dual-architecture RPM/DEB                            |
+{.wide .expand}
+
+
+
 
 ## 2026-08-08
 
@@ -398,36 +442,44 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | xray                    | 26.3.27              | 26.7.28        | Latest dated release; built as dual-architecture RPM/DEB  |
 | pig                     | 1.6.0                | 1.6.1          | Refreshed extension catalog                               |
 | prometheus              | 3.13.1               | 3.13.2         | Security and stability release                            |
+{.wide .expand}
+
+
+
 
 ## 2026-07-30
 
-| Name              | Old           | New           | Comment                                              |
-|:------------------|:--------------|:--------------|:-----------------------------------------------------|
-| agentsview        | 0.38.1        | 0.39.0        |                                                      |
-| claude            | 2.1.218       | 2.1.220       |                                                      |
-| cloudflared       | 2026.7.2      | 2026.7.3      |                                                      |
-| code              | 1.130.0       | 1.131.0       |                                                      |
-| code-server       | 4.129.0       | 4.130.0       |                                                      |
-| codex             | 0.145.0       | 0.146.0       | Release tag `rust-v0.146.0`                          |
-| crush             | 0.86.0        | 0.87.0        |                                                      |
-| dblab             | 0.46.0        | 0.47.2        |                                                      |
-| etcd              | 3.7.0         | 3.7.1         |                                                      |
-| genai-toolbox     | 1.7.0         | 1.8.0         | Source build; Rocky 8/9 and Debian 12 verified       |
-| headscale         | 0.29.2        | 0.29.3        |                                                      |
-| nodejs            | 24.18.0       | 24.18.1       | Security release                                     |
-| opencode          | 1.18.4        | 1.18.9        |                                                      |
-| pg-exporter       | 1.4.0         | 1.4.1         | Official release artifacts                           |
-| pg-hardstorage    | 1.0.13        | 1.0.17        |                                                      |
-| pgschema          | 1.12.0        | 1.12.1        |                                                      |
-| pgstream          | 1.2.2         | 1.2.5         |                                                      |
-| pig               | 1.5.1         | 1.6.0         |                                                      |
-| postgrest         | 14.15         | 14.16         |                                                      |
-| rainfrog          | 0.3.20        | 0.4.2         |                                                      |
-| redis-exporter    | 1.87.0        | 1.88.0        |                                                      |
-| rustfs            | 1.0.0-beta.10 | 1.0.0-beta.11 | Preview releases excluded                            |
-| stalwart          | 0.16.14       | 0.16.15       |                                                      |
-| uv                | 0.11.31       | 0.12.0        |                                                      |
-| victoria-traces   | 0.9.4         | 0.10.0        |                                                      |
+| Name            | Old           | New           | Comment                                        |
+|:----------------|:--------------|:--------------|:-----------------------------------------------|
+| agentsview      | 0.38.1        | 0.39.0        |                                                |
+| claude          | 2.1.218       | 2.1.220       |                                                |
+| cloudflared     | 2026.7.2      | 2026.7.3      |                                                |
+| code            | 1.130.0       | 1.131.0       |                                                |
+| code-server     | 4.129.0       | 4.130.0       |                                                |
+| codex           | 0.145.0       | 0.146.0       | Release tag `rust-v0.146.0`                    |
+| crush           | 0.86.0        | 0.87.0        |                                                |
+| dblab           | 0.46.0        | 0.47.2        |                                                |
+| etcd            | 3.7.0         | 3.7.1         |                                                |
+| genai-toolbox   | 1.7.0         | 1.8.0         | Source build; Rocky 8/9 and Debian 12 verified |
+| headscale       | 0.29.2        | 0.29.3        |                                                |
+| nodejs          | 24.18.0       | 24.18.1       | Security release                               |
+| opencode        | 1.18.4        | 1.18.9        |                                                |
+| pg-exporter     | 1.4.0         | 1.4.1         | Official release artifacts                     |
+| pg-hardstorage  | 1.0.13        | 1.0.17        |                                                |
+| pgschema        | 1.12.0        | 1.12.1        |                                                |
+| pgstream        | 1.2.2         | 1.2.5         |                                                |
+| pig             | 1.5.1         | 1.6.0         |                                                |
+| postgrest       | 14.15         | 14.16         |                                                |
+| rainfrog        | 0.3.20        | 0.4.2         |                                                |
+| redis-exporter  | 1.87.0        | 1.88.0        |                                                |
+| rustfs          | 1.0.0-beta.10 | 1.0.0-beta.11 | Preview releases excluded                      |
+| stalwart        | 0.16.14       | 0.16.15       |                                                |
+| uv              | 0.11.31       | 0.12.0        |                                                |
+| victoria-traces | 0.9.4         | 0.10.0        |                                                |
+{.wide .expand}
+
+
+
 
 ## 2026-07-23
 
@@ -448,61 +500,72 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pg-hardstorage          | 1.0.12  | 1.0.13  |         |
 | crush                   | 0.85.0  | 0.86.0  |         |
 | code                    | 1.129.1 | 1.130.0 |         |
+{.wide .expand}
+
+
+
 
 ## 2026-07-20
 
-| Name                     | Old              | New              | Comment                                                                 |
-|:-------------------------|:-----------------|:-----------------|:------------------------------------------------------------------------|
-| pg-exporter              | 1.3.0            | 1.4.0            | Repackaged from the upstream Linux tarball                              |
-| victoria-metrics         | 1.147.0          | 1.148.0          | VictoriaMetrics main package                                            |
-| victoria-metrics-cluster | 1.147.0          | 1.148.0          | VictoriaMetrics companion package                                       |
-| vmutils                  | 1.147.0          | 1.148.0          | VictoriaMetrics companion package                                       |
-| victoria-logs            | 1.51.0           | 1.52.0           | VictoriaLogs main package                                               |
-| vlogscli                 | 1.51.0           | 1.52.0           | VictoriaLogs companion package                                          |
-| vlagent                  | 1.51.0           | 1.52.0           | VictoriaLogs companion package                                          |
-| grafana-victorialogs-ds  | 0.29.0           | 0.30.0           |                                                                         |
-| seaweedfs                | 4.39             | 4.40             |                                                                         |
-| rustfs                   | 1.0.0-b9         | 1.0.0-b10        | Prerelease line; preview releases excluded                              |
-| sabiql                   | 1.14.0           | 1.15.1           |                                                                         |
-| timescaledb-tools        | 0.19.0-1         | 0.19.0-2         | Bundles timescaledb-parallel-copy 0.13.0                                |
-| claude                   | 2.1.211          | 2.1.215          | Downloaded through the 8118 proxy and verified                          |
-| codex                    | 0.144.4          | 0.144.6          | Release tag `rust-v0.144.6`                                             |
-| genai-toolbox            | 1.6.0            | 1.7.0            | External build from official GCS binary and arm64 container artifact    |
-| opencode                 | 1.18.2           | 1.18.3           |                                                                         |
-| pg-hardstorage           | 1.0.10           | 1.0.12           | Direct-download artifacts                                               |
-| code                     | 1.129.0          | 1.129.1          | Direct-download artifacts                                               |
-| code-server              | 4.128.0          | 4.129.0          | Direct-download artifacts                                               |
-| pev2                     | 1.22.0           | 1.23.0           | Noarch package                                                          |
-| k3s                      | -                | 1.36.2           | Upstream `v1.36.2+k3s1`; amd64 and arm64                                |
-| k3s-images               | -                | 1.36.2           | Exact-match system image package for both architectures                 |
+| Name                     | Old      | New       | Comment                                                              |
+|:-------------------------|:---------|:----------|:---------------------------------------------------------------------|
+| pg-exporter              | 1.3.0    | 1.4.0     | Repackaged from the upstream Linux tarball                           |
+| victoria-metrics         | 1.147.0  | 1.148.0   | VictoriaMetrics main package                                         |
+| victoria-metrics-cluster | 1.147.0  | 1.148.0   | VictoriaMetrics companion package                                    |
+| vmutils                  | 1.147.0  | 1.148.0   | VictoriaMetrics companion package                                    |
+| victoria-logs            | 1.51.0   | 1.52.0    | VictoriaLogs main package                                            |
+| vlogscli                 | 1.51.0   | 1.52.0    | VictoriaLogs companion package                                       |
+| vlagent                  | 1.51.0   | 1.52.0    | VictoriaLogs companion package                                       |
+| grafana-victorialogs-ds  | 0.29.0   | 0.30.0    |                                                                      |
+| seaweedfs                | 4.39     | 4.40      |                                                                      |
+| rustfs                   | 1.0.0-b9 | 1.0.0-b10 | Prerelease line; preview releases excluded                           |
+| sabiql                   | 1.14.0   | 1.15.1    |                                                                      |
+| timescaledb-tools        | 0.19.0-1 | 0.19.0-2  | Bundles timescaledb-parallel-copy 0.13.0                             |
+| claude                   | 2.1.211  | 2.1.215   | Downloaded through the 8118 proxy and verified                       |
+| codex                    | 0.144.4  | 0.144.6   | Release tag `rust-v0.144.6`                                          |
+| genai-toolbox            | 1.6.0    | 1.7.0     | External build from official GCS binary and arm64 container artifact |
+| opencode                 | 1.18.2   | 1.18.3    |                                                                      |
+| pg-hardstorage           | 1.0.10   | 1.0.12    | Direct-download artifacts                                            |
+| code                     | 1.129.0  | 1.129.1   | Direct-download artifacts                                            |
+| code-server              | 4.128.0  | 4.129.0   | Direct-download artifacts                                            |
+| pev2                     | 1.22.0   | 1.23.0    | Noarch package                                                       |
+| k3s                      | -        | 1.36.2    | Upstream `v1.36.2+k3s1`; amd64 and arm64                             |
+| k3s-images               | -        | 1.36.2    | Exact-match system image package for both architectures              |
+{.wide .expand}
+
+
 
 
 ## 2026-07-16
 
-| Name             | Old      | New      | Comment                                        |
-|:-----------------|:---------|:---------|:-----------------------------------------------|
-| jmx-exporter     | -        | 1.6.0    | New noarch package                             |
-| node_exporter    | 1.11.1   | 1.12.1   |                                                |
-| redis_exporter   | 1.86.0   | 1.87.0   |                                                |
-| etcd             | 3.6.13   | 3.7.0    |                                                |
-| dblab            | 0.43.0   | 0.44.1   |                                                |
-| pgstream         | 1.1.1    | 1.2.0    |                                                |
-| rainfrog         | 0.3.19   | 0.3.20   |                                                |
-| rustfs           | 1.0.0-b8 | 1.0.0-b9 | Prerelease line                                |
-| agentsview       | 0.37.5   | 0.38.1   |                                                |
-| claude           | 2.1.206  | 2.1.211  | Downloaded through the 8118 proxy and verified |
-| codex            | 0.144.1  | 0.144.4  | Release tag `rust-v0.144.4`                    |
-| stalwart         | 0.16.12  | 0.16.13  |                                                |
-| npgsqlrest       | 3.20.0   | 3.21.0   |                                                |
-| postgrest        | 14.14    | 14.15    |                                                |
-| opencode         | 1.17.18  | 1.18.2   |                                                |
-| uv               | 0.11.28  | 0.11.29  |                                                |
-| vector           | 0.56.0   | 0.57.0   | Direct-download artifacts                      |
-| pg-hardstorage   | 1.0.8    | 1.0.10   | Direct-download artifacts                      |
-| crush            | 0.84.0   | 0.85.0   | Direct-download artifacts                      |
-| code             | 1.128.0  | 1.129.0  | Direct-download artifacts                      |
-| code-server      | 4.127.0  | 4.128.0  | Direct-download artifacts                      |
-| cloudflared      | 2026.7.1 | 2026.7.2 | Direct-download artifacts                      |
+| Name           | Old      | New      | Comment                                        |
+|:---------------|:---------|:---------|:-----------------------------------------------|
+| jmx-exporter   | -        | 1.6.0    | New noarch package                             |
+| node_exporter  | 1.11.1   | 1.12.1   |                                                |
+| redis_exporter | 1.86.0   | 1.87.0   |                                                |
+| etcd           | 3.6.13   | 3.7.0    |                                                |
+| dblab          | 0.43.0   | 0.44.1   |                                                |
+| pgstream       | 1.1.1    | 1.2.0    |                                                |
+| rainfrog       | 0.3.19   | 0.3.20   |                                                |
+| rustfs         | 1.0.0-b8 | 1.0.0-b9 | Prerelease line                                |
+| agentsview     | 0.37.5   | 0.38.1   |                                                |
+| claude         | 2.1.206  | 2.1.211  | Downloaded through the 8118 proxy and verified |
+| codex          | 0.144.1  | 0.144.4  | Release tag `rust-v0.144.4`                    |
+| stalwart       | 0.16.12  | 0.16.13  |                                                |
+| npgsqlrest     | 3.20.0   | 3.21.0   |                                                |
+| postgrest      | 14.14    | 14.15    |                                                |
+| opencode       | 1.17.18  | 1.18.2   |                                                |
+| uv             | 0.11.28  | 0.11.29  |                                                |
+| vector         | 0.56.0   | 0.57.0   | Direct-download artifacts                      |
+| pg-hardstorage | 1.0.8    | 1.0.10   | Direct-download artifacts                      |
+| crush          | 0.84.0   | 0.85.0   | Direct-download artifacts                      |
+| code           | 1.128.0  | 1.129.0  | Direct-download artifacts                      |
+| code-server    | 4.127.0  | 4.128.0  | Direct-download artifacts                      |
+| cloudflared    | 2026.7.1 | 2026.7.2 | Direct-download artifacts                      |
+{.wide .expand}
+
+
+
 
 ## 2026-07-10
 
@@ -518,6 +581,10 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | crush       | 0.82.0   | 0.84.0   | Direct-download artifacts                      |
 | rclone      | 1.74.3   | 1.74.4   | Direct-download artifacts                      |
 | cloudflared | 2026.6.1 | 2026.7.1 | Direct-download artifacts                      |
+{.wide .expand}
+
+
+
 
 ## 2026-07-08
 
@@ -548,6 +615,10 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | crush                      | 0.81.0  | 0.82.0  |         |
 | code                       | 1.127.0 | 1.128.0 |         |
 | pig                        | 1.5.0   | 1.5.1   |         |
+{.wide .expand}
+
+
+
 
 ## 2026-07-04
 
@@ -575,98 +646,109 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | code-server                | 4.125.0        | 4.127.0        |         |
 | pig                        | 1.4.2          | 1.5.0          |         |
 | minio                      | 20260417000000 | 20260618000000 |         |
+{.wide .expand}
+
+
+
 
 ## 2026-07-01
 
-| Name                     | Old            | New            | Comment |
-|:-------------------------|:---------------|:---------------|:--------|
-| agentsview               | 0.32.1         | 0.34.5         |         |
-| alertmanager             | 0.32.2         | 0.33.0         |         |
-| asciinema                | 3.2.0          | 3.2.1          |         |
-| claude                   | 2.1.172        | 2.1.187        |         |
-| codex                    | 0.139.0        | 0.142.0        |         |
-| dblab                    | 0.40.1         | 0.42.0         |         |
-| duckdb                   | 1.5.3          | 1.5.4          |         |
-| grafana-victorialogs-ds  | 0.28.0         | 0.29.0         |         |
-| headscale                | 0.28.0         | 0.29.1         |         |
-| hugo                     | 0.163.0        | 0.163.3        |         |
-| kafka                    | 4.3.0          | 4.3.1          |         |
-| nodejs                   | 24.16.0        | 24.18.0        |         |
-| npgsqlrest               | 3.16.3         | 3.18.1         |         |
-| opencode                 | 1.17.3         | 1.17.9         |         |
-| pev2                     | 1.21.0         | 1.22.0         |         |
-| pg_exporter              | 1.2.2          | 1.3.0          |         |
-| pgschema                 | 1.11.0         | 1.11.1         |         |
-| pgstream                 | 1.0.3          | 1.1.0          |         |
-| pig                      | 1.4.1          | 1.4.2          |         |
-| rainfrog                 | 0.3.18         | 0.3.19         |         |
-| sabiql                   | 1.12.3         | 1.13.0         |         |
-| seaweedfs                | 4.32           | 4.35           |         |
-| stalwart                 | 0.16.8         | 0.16.10        |         |
-| tigerbeetle              | 0.17.6         | 0.17.8         |         |
-| uv                       | 0.11.20        | 0.11.24        |         |
-| victoria-logs            | 1.50.0         | 1.51.0         |         |
-| vlagent                  | 1.50.0         | 1.51.0         |         |
-| vlogscli                 | 1.50.0         | 1.51.0         |         |
-| victoria-metrics         | 1.145.0        | 1.146.0        |         |
-| victoria-metrics-cluster | 1.145.0        | 1.146.0        |         |
-| vmutils                  | 1.145.0        | 1.146.0        |         |
-| victoria-traces          | 0.9.2          | 0.9.3          |         |
-| code                     | 1.124.0        | 1.125.1        |         |
-| code-server              | 4.123.0        | 4.125.0        |         |
-| cloudflared              | 2026.6.0       | 2026.6.1       |         |
-| crush                    | 0.76.0         | 0.79.1         |         |
-| genai-toolbox            | 1.1.0          | 1.5.0          |         |
+| Name                     | Old      | New      | Comment |
+|:-------------------------|:---------|:---------|:--------|
+| agentsview               | 0.32.1   | 0.34.5   |         |
+| alertmanager             | 0.32.2   | 0.33.0   |         |
+| asciinema                | 3.2.0    | 3.2.1    |         |
+| claude                   | 2.1.172  | 2.1.187  |         |
+| codex                    | 0.139.0  | 0.142.0  |         |
+| dblab                    | 0.40.1   | 0.42.0   |         |
+| duckdb                   | 1.5.3    | 1.5.4    |         |
+| grafana-victorialogs-ds  | 0.28.0   | 0.29.0   |         |
+| headscale                | 0.28.0   | 0.29.1   |         |
+| hugo                     | 0.163.0  | 0.163.3  |         |
+| kafka                    | 4.3.0    | 4.3.1    |         |
+| nodejs                   | 24.16.0  | 24.18.0  |         |
+| npgsqlrest               | 3.16.3   | 3.18.1   |         |
+| opencode                 | 1.17.3   | 1.17.9   |         |
+| pev2                     | 1.21.0   | 1.22.0   |         |
+| pg_exporter              | 1.2.2    | 1.3.0    |         |
+| pgschema                 | 1.11.0   | 1.11.1   |         |
+| pgstream                 | 1.0.3    | 1.1.0    |         |
+| pig                      | 1.4.1    | 1.4.2    |         |
+| rainfrog                 | 0.3.18   | 0.3.19   |         |
+| sabiql                   | 1.12.3   | 1.13.0   |         |
+| seaweedfs                | 4.32     | 4.35     |         |
+| stalwart                 | 0.16.8   | 0.16.10  |         |
+| tigerbeetle              | 0.17.6   | 0.17.8   |         |
+| uv                       | 0.11.20  | 0.11.24  |         |
+| victoria-logs            | 1.50.0   | 1.51.0   |         |
+| vlagent                  | 1.50.0   | 1.51.0   |         |
+| vlogscli                 | 1.50.0   | 1.51.0   |         |
+| victoria-metrics         | 1.145.0  | 1.146.0  |         |
+| victoria-metrics-cluster | 1.145.0  | 1.146.0  |         |
+| vmutils                  | 1.145.0  | 1.146.0  |         |
+| victoria-traces          | 0.9.2    | 0.9.3    |         |
+| code                     | 1.124.0  | 1.125.1  |         |
+| code-server              | 4.123.0  | 4.125.0  |         |
+| cloudflared              | 2026.6.0 | 2026.6.1 |         |
+| crush                    | 0.76.0   | 0.79.1   |         |
+| genai-toolbox            | 1.1.0    | 1.5.0    |         |
+{.wide .expand}
+
+
 
 
 ## 2026-06-12
 
-| Name                       | Old            | New            | Comment                                        |
-|:---------------------------|:---------------|:---------------|:-----------------------------------------------|
-| prometheus                 | 3.11.3         | 3.12.0         |                                                |
-| pushgateway                | 1.11.2         | 1.11.3         |                                                |
-| alertmanager               | 0.32.1         | 0.32.2         |                                                |
-| node_exporter              | 1.11.1         | 1.11.1         |                                                |
-| redis_exporter             | 1.83.0         | 1.86.0         |                                                |
-| victoria-metrics           | 1.143.0        | 1.145.0        |                                                |
-| victoria-metrics-cluster   | 1.143.0        | 1.145.0        |                                                |
-| vmutils                    | 1.143.0        | 1.145.0        |                                                |
-| victoria-traces            | 0.8.2          | 0.9.2          |                                                |
-| duckdb                     | 1.5.2          | 1.5.3          |                                                |
-| etcd                       | 3.6.11         | 3.6.12         |                                                |
-| restic                     | 0.18.1         | 0.19.0         |                                                |
-| tigerfs                    | 0.6.0          | 0.7.0          |                                                |
-| dblab                      | 0.38.0         | 0.40.1         |                                                |
-| pgstream                   | 1.0.2          | 1.0.3          |                                                |
-| tigerbeetle                | 0.17.4         | 0.17.6         |                                                |
-| grafana-victorialogs-ds    | 0.26.3         | 0.28.0         |                                                |
-| grafana-victoriametrics-ds | 0.24.0         | 0.25.0         |                                                |
-| kafka                      | 4.2.0          | 4.3.0          |                                                |
-| caddy                      | 2.11.2         | 2.11.4         |                                                |
-| hugo                       | 0.161.1        | 0.163.0        |                                                |
-| seaweedfs                  | 4.23           | 4.32           |                                                |
-| rustfs                     | 1.0.0-b2       | 1.0.0-b8       | prerelease line                                |
-| v2ray                      | 5.48.0         | 5.49.0         |                                                |
-| sabiql                     | 1.12.2         | 1.12.3         |                                                |
-| agentsview                 | 0.29.0         | 0.32.1         | upstream moved to kenn-io/agentsview           |
-| claude                     | 2.1.138        | 2.1.172        | downloaded through the 8118 proxy and verified |
-| codex                      | 0.130.0        | 0.139.0        | release tag `rust-v0.139.0`                    |
-| stalwart                   | 0.16.4         | 0.16.8         |                                                |
-| maddy                      | 0.9.4          | 0.9.5          |                                                |
-| npgsqlrest                 | 3.15.1         | 3.16.3         |                                                |
-| postgrest                  | 14.11          | 14.13          |                                                |
-| opencode                   | 1.14.48        | 1.17.3         |                                                |
-| uv                         | 0.11.13        | 0.11.20        |                                                |
-| golang                     | 1.26.3         | 1.26.4         |                                                |
-| nodejs                     | 24.15.0        | 24.16.0        | kept on the 24.x line                          |
-| grafana                    | 13.0.1         | 13.0.2         |                                                |
-| vector                     | 0.55.0         | 0.56.0         |                                                |
-| pgschema                   | 1.9.0          | 1.11.0         |                                                |
-| crush                      | 0.66.1         | 0.76.0         |                                                |
-| rclone                     | 1.74.1         | 1.74.3         |                                                |
-| code                       | 1.118.1        | 1.124.0        |                                                |
-| code-server                | 4.118.0        | 4.123.0        |                                                |
-| cloudflared                | 2026.3.0       | 2026.6.0       |                                                |
+| Name                       | Old      | New      | Comment                                        |
+|:---------------------------|:---------|:---------|:-----------------------------------------------|
+| prometheus                 | 3.11.3   | 3.12.0   |                                                |
+| pushgateway                | 1.11.2   | 1.11.3   |                                                |
+| alertmanager               | 0.32.1   | 0.32.2   |                                                |
+| node_exporter              | 1.11.1   | 1.11.1   |                                                |
+| redis_exporter             | 1.83.0   | 1.86.0   |                                                |
+| victoria-metrics           | 1.143.0  | 1.145.0  |                                                |
+| victoria-metrics-cluster   | 1.143.0  | 1.145.0  |                                                |
+| vmutils                    | 1.143.0  | 1.145.0  |                                                |
+| victoria-traces            | 0.8.2    | 0.9.2    |                                                |
+| duckdb                     | 1.5.2    | 1.5.3    |                                                |
+| etcd                       | 3.6.11   | 3.6.12   |                                                |
+| restic                     | 0.18.1   | 0.19.0   |                                                |
+| tigerfs                    | 0.6.0    | 0.7.0    |                                                |
+| dblab                      | 0.38.0   | 0.40.1   |                                                |
+| pgstream                   | 1.0.2    | 1.0.3    |                                                |
+| tigerbeetle                | 0.17.4   | 0.17.6   |                                                |
+| grafana-victorialogs-ds    | 0.26.3   | 0.28.0   |                                                |
+| grafana-victoriametrics-ds | 0.24.0   | 0.25.0   |                                                |
+| kafka                      | 4.2.0    | 4.3.0    |                                                |
+| caddy                      | 2.11.2   | 2.11.4   |                                                |
+| hugo                       | 0.161.1  | 0.163.0  |                                                |
+| seaweedfs                  | 4.23     | 4.32     |                                                |
+| rustfs                     | 1.0.0-b2 | 1.0.0-b8 | prerelease line                                |
+| v2ray                      | 5.48.0   | 5.49.0   |                                                |
+| sabiql                     | 1.12.2   | 1.12.3   |                                                |
+| agentsview                 | 0.29.0   | 0.32.1   | upstream moved to kenn-io/agentsview           |
+| claude                     | 2.1.138  | 2.1.172  | downloaded through the 8118 proxy and verified |
+| codex                      | 0.130.0  | 0.139.0  | release tag `rust-v0.139.0`                    |
+| stalwart                   | 0.16.4   | 0.16.8   |                                                |
+| maddy                      | 0.9.4    | 0.9.5    |                                                |
+| npgsqlrest                 | 3.15.1   | 3.16.3   |                                                |
+| postgrest                  | 14.11    | 14.13    |                                                |
+| opencode                   | 1.14.48  | 1.17.3   |                                                |
+| uv                         | 0.11.13  | 0.11.20  |                                                |
+| golang                     | 1.26.3   | 1.26.4   |                                                |
+| nodejs                     | 24.15.0  | 24.16.0  | kept on the 24.x line                          |
+| grafana                    | 13.0.1   | 13.0.2   |                                                |
+| vector                     | 0.55.0   | 0.56.0   |                                                |
+| pgschema                   | 1.9.0    | 1.11.0   |                                                |
+| crush                      | 0.66.1   | 0.76.0   |                                                |
+| rclone                     | 1.74.1   | 1.74.3   |                                                |
+| code                       | 1.118.1  | 1.124.0  |                                                |
+| code-server                | 4.118.0  | 4.123.0  |                                                |
+| cloudflared                | 2026.3.0 | 2026.6.0 |                                                |
+{.wide .expand}
+
+
+
 
 ## 2026-05-11
 
@@ -697,6 +779,9 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | rclone                   | 1.73.5   | 1.74.1   | Direct-download artifact refresh               |
 | code-server              | 4.117.0  | 4.118.0  | Direct-download artifact refresh               |
 | cloudflared              | 2026.2.0 | 2026.3.0 | Direct-download artifact refresh               |
+{.wide .expand}
+
+
 
 
 ## 2026-05-01
@@ -727,25 +812,32 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | crush                    | 0.62.1         | 0.64.0   | direct-download metadata refresh           |
 | code                     | 1.115.0        | 1.118.1  | direct-download metadata refresh           |
 | pig                      | 1.4.0          | 1.4.1    | metadata only                              |
+{.wide .expand}
+
+
 
 
 ## 2026-04-25
 
-| Name                  | Old     | New     | Comment                                      |
-|:----------------------|:--------|:--------|:---------------------------------------------|
-| grafana               | 13.0.0  | 13.0.1  | direct-download metadata refresh             |
-| vector                | 0.54.0  | 0.55.0  | direct-download metadata refresh             |
-| keepalived_exporter   | 1.7.0   | 1.7.1   |                                              |
-| seaweedfs             | 4.20    | 4.21    |                                              |
-| tigerbeetle           | 0.17.0  | 0.17.1  |                                              |
-| agentsview            | 0.22.2  | 0.25.0  |                                              |
-| claude                | 2.1.114 | 2.1.119 | downloaded through 8118 proxy and verified   |
-| codex                 | 0.121.0 | 0.125.0 |                                              |
-| stalwart              | 0.15.5  | 0.16.0  |                                              |
-| opencode              | 1.4.11  | 1.14.24 |                                              |
-| crush                 | 0.57.0  | 0.62.1  | direct-download metadata refresh             |
-| rclone                | 1.73.4  | 1.73.5  | direct-download metadata refresh             |
-| code-server           | 4.115.0 | 4.117.0 | direct-download metadata refresh             |
+| Name                | Old     | New     | Comment                                    |
+|:--------------------|:--------|:--------|:-------------------------------------------|
+| grafana             | 13.0.0  | 13.0.1  | direct-download metadata refresh           |
+| vector              | 0.54.0  | 0.55.0  | direct-download metadata refresh           |
+| keepalived_exporter | 1.7.0   | 1.7.1   |                                            |
+| seaweedfs           | 4.20    | 4.21    |                                            |
+| tigerbeetle         | 0.17.0  | 0.17.1  |                                            |
+| agentsview          | 0.22.2  | 0.25.0  |                                            |
+| claude              | 2.1.114 | 2.1.119 | downloaded through 8118 proxy and verified |
+| codex               | 0.121.0 | 0.125.0 |                                            |
+| stalwart            | 0.15.5  | 0.16.0  |                                            |
+| opencode            | 1.4.11  | 1.14.24 |                                            |
+| crush               | 0.57.0  | 0.62.1  | direct-download metadata refresh           |
+| rclone              | 1.73.4  | 1.73.5  | direct-download metadata refresh           |
+| code-server         | 4.115.0 | 4.117.0 | direct-download metadata refresh           |
+{.wide .expand}
+
+
+
 
 ## 2026-04-19
 
@@ -772,6 +864,10 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | sabiql                     | 1.10.0          | 1.11.0         |                                                         |
 | etcd                       | 3.6.8           | 3.6.10         | unified package version                                 |
 | pig                        | 1.3.4           | 1.4.0          |                                                         |
+{.wide .expand}
+
+
+
 
 ## 2026-04-14
 
@@ -822,6 +918,9 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pg_exporter                | 1.2.1          | 1.2.2           | direct-download metadata                     |
 | pig                        | 1.3.2          | 1.3.4           | direct-download metadata                     |
 | pgflo                      | 0.0.15         | -               | removed                                      |
+{.wide .expand}
+
+
 
 
 ## 2026-03-21
@@ -873,28 +972,36 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | minio                    | 20260214       | 20260314       |         |
 | mcli                     | 20260213       | 20260313       |         |
 | claude                   | 2.1.68         | 2.1.81         |         |
+{.wide .expand}
+
+
+
 
 ## 2026-03-05
 
-| Name                       | Old            | New            | Comment |
-|:---------------------------|:---------------|:---------------|:--------|
-| asciinema                  | 3.1.0          | 3.2.0          |         |
-| grafana-infinity-ds        | 3.7.2          | 3.7.3          |         |
-| victoria-metrics           | 1.136.0        | 1.137.0        |         |
-| victoria-metrics-cluster   | 1.136.0        | 1.137.0        |         |
-| vmutils                    | 1.136.0        | 1.137.0        |         |
-| hugo                       | 0.155.3        | 0.157.0        |         |
-| opencode                   | 1.2.15         | 1.2.17         |         |
-| rustfs                     | 1.0.0-alpha.83 | 1.0.0-alpha.85 |         |
-| seaweedfs                  | 4.13           | 4.15           |         |
-| tigerbeetle                | 0.16.74        | 0.16.75        |         |
-| uv                         | 0.10.4         | 0.10.8         |         |
-| codex                      | 0.105.0        | 0.110.0        |         |
-| claude                     | 2.1.59         | 2.1.68         |         |
-| xray                       | -              | 26.2.6         | new     |
-| gost                       | -              | 2.12.0         | new     |
-| sabiql                     | -              | 1.6.2          | new     |
-| agentsview                 | -              | 0.10.0         | new     |
+| Name                     | Old            | New            | Comment |
+|:-------------------------|:---------------|:---------------|:--------|
+| asciinema                | 3.1.0          | 3.2.0          |         |
+| grafana-infinity-ds      | 3.7.2          | 3.7.3          |         |
+| victoria-metrics         | 1.136.0        | 1.137.0        |         |
+| victoria-metrics-cluster | 1.136.0        | 1.137.0        |         |
+| vmutils                  | 1.136.0        | 1.137.0        |         |
+| hugo                     | 0.155.3        | 0.157.0        |         |
+| opencode                 | 1.2.15         | 1.2.17         |         |
+| rustfs                   | 1.0.0-alpha.83 | 1.0.0-alpha.85 |         |
+| seaweedfs                | 4.13           | 4.15           |         |
+| tigerbeetle              | 0.16.74        | 0.16.75        |         |
+| uv                       | 0.10.4         | 0.10.8         |         |
+| codex                    | 0.105.0        | 0.110.0        |         |
+| claude                   | 2.1.59         | 2.1.68         |         |
+| xray                     | -              | 26.2.6         | new     |
+| gost                     | -              | 2.12.0         | new     |
+| sabiql                   | -              | 1.6.2          | new     |
+| agentsview               | -              | 0.10.0         | new     |
+{.wide .expand}
+
+
+
 
 ## 2026-02-26
 
@@ -921,6 +1028,9 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | claude                     | 2.1.45  | 2.1.59  |         |
 | codex                      | 0.104.0 | 0.105.0 |         |
 | pig                        | 1.2.0   | 1.3.0   |         |
+{.wide .expand}
+
+
 
 
 ## 2026-02-22
@@ -935,6 +1045,9 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | logcli                   | 3.6.5   | 3.6.6   |         |
 | opencode                 | 1.2.6   | 1.2.10  |         |
 | pig                      | 1.1.0   | 1.2.0   |         |
+{.wide .expand}
+
+
 
 
 ## 2026-02-18
@@ -961,17 +1074,25 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | rclone                     | 1.73.0         | 1.73.1         |         |
 | code-server                | 4.108.2        | 4.109.2        |         |
 | code                       | 1.109.2        | 1.109.4        |         |
+{.wide .expand}
+
+
+
 
 ## 2026-02-12
 
-| Name                 | Old     | New     | Comment |
-|:---------------------|:--------|:--------|:--------|
-| alertmanager         | 0.31.0  | 0.31.1  |         |
-| tigerbeetle          | 0.16.70 | 0.16.72 |         |
-| grafana-infinity-ds  | 3.7.0   | 3.7.1   |         |
-| nodejs               | 24.13.0 | 24.13.1 |         |
-| opencode             | 1.1.53  | 1.1.59  |         |
-| golang               | 1.25.7  | 1.26.0  |         |
+| Name                | Old     | New     | Comment |
+|:--------------------|:--------|:--------|:--------|
+| alertmanager        | 0.31.0  | 0.31.1  |         |
+| tigerbeetle         | 0.16.70 | 0.16.72 |         |
+| grafana-infinity-ds | 3.7.0   | 3.7.1   |         |
+| nodejs              | 24.13.0 | 24.13.1 |         |
+| opencode            | 1.1.53  | 1.1.59  |         |
+| golang              | 1.25.7  | 1.26.0  |         |
+{.wide .expand}
+
+
+
 
 ## 2026-02-08
 
@@ -1013,6 +1134,9 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | grafana                    | 12.3.1         | 12.3.2         |         |
 | pig                        | 1.0.0          | 1.1.0          |         |
 | cloudflared                | 2026.1.1       | 2026.2.0       |         |
+{.wide .expand}
+
+
 
 
 ## 2026-01-25
@@ -1033,6 +1157,10 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | headscale                  | -       | 0.27.1   | new     |
 | pig                        | 0.9.0   | 1.0.0    |         |
 | duckdb                     | 1.4.3   | 1.4.4    |         |
+{.wide .expand}
+
+
+
 
 ## 2026-01-16
 
@@ -1059,21 +1187,28 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | npgsqlrest                 | 3.3.0    | 3.4.3    |         |
 | genai-toolbox              | 0.24.0   | 0.25.0   |         |
 | pg_exporter                | 1.1.1    | 1.1.2    |         |
+{.wide .expand}
+
+
+
 
 ## 2026-01-08
 
-| Name          | Old    | New      | Comment                   |
-|:--------------|:-------|:---------|:--------------------------|
-| code          | -      | 1.107.0  | new                       |
-| code-server   | -      | 4.107.0  | new                       |
-| golang        | -      | 1.25.5   | new                       |
-| nodejs        | -      | 24.12.0  | new                       |
-| opencode      | -      | 1.0.223  | new                       |
-| pg_exporter   | 1.1.0  | 1.1.1    | new pg_timeline collector |
-| npgsqlrest    | -      | 3.3.3    | new                       |
-| postgrest     | -      | 14.3     | new                       |
-| claude        | 2.0.76 | 2.1.1    | new                       |
-| genai-toolbox | 0.23.0 | 0.24.0   | removed Oracle C driver   |
+| Name          | Old    | New     | Comment                   |
+|:--------------|:-------|:--------|:--------------------------|
+| code          | -      | 1.107.0 | new                       |
+| code-server   | -      | 4.107.0 | new                       |
+| golang        | -      | 1.25.5  | new                       |
+| nodejs        | -      | 24.12.0 | new                       |
+| opencode      | -      | 1.0.223 | new                       |
+| pg_exporter   | 1.1.0  | 1.1.1   | new pg_timeline collector |
+| npgsqlrest    | -      | 3.3.3   | new                       |
+| postgrest     | -      | 14.3    | new                       |
+| claude        | 2.0.76 | 2.1.1   | new                       |
+| genai-toolbox | 0.23.0 | 0.24.0  | removed Oracle C driver   |
+{.wide .expand}
+
+
 
 
 ## 2025-12-25
@@ -1092,6 +1227,9 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | alertmanager        | 0.29.0 | 0.30.0 |                    |
 | victorialogs        | 1.41.0 | 1.43.1 |                    |
 | pgbackrest_exporter | 0.21.0 | 0.22.0 |                    |
+{.wide .expand}
+
+
 
 
 ## 2025-12-16
@@ -1108,6 +1246,10 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pig               | 0.7.4          | 0.8.0          |          |
 | genai-toolbox     | 0.22.0         | 0.23.0         |          |
 | minio             | 20250907161309 | 20251203120000 | by pgsty |
+{.wide .expand}
+
+
+
 
 ## 2025-12-04
 
@@ -1126,6 +1268,10 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | redis_exporter          | 1.80.0  | 1.80.1    |         |
 | mongodb_exporter        | 0.47.1  | 0.47.2    |         |
 | genai-toolbox           | 0.21.0  | 0.22.0    |         |
+{.wide .expand}
+
+
+
 
 ## 2025-11-20
 
@@ -1150,6 +1296,9 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | grafana-victorialogs-ds    | 0.21.4  | 0.22.1  |                |
 | grafana-victoriametrics-ds | 0.19.6  | 0.19.7  |                |
 | grafana-plugins            | 12.0.0  | 12.3.0  |                |
+{.wide .expand}
+
+
 
 
 ## 2025-11-08
@@ -1177,6 +1326,8 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | grafana-infinity-ds        |  3.5.0  |  3.6.0  |         |
 | pev2                       | 1.16.0  | 1.17.0  |         |
 | pig                        |  0.6.2  |  0.7.1  |         |
+{.wide .expand}
+
 
 
 
@@ -1204,6 +1355,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | rclone                     |     1.70.3     |     1.71.1     |         |
 | minio                      | 20250723155402 | 20250907161309 |         |
 | mcli                       | 20250721052808 | 20250813083541 |         |
+{.wide .expand}
+
+
 
 
 ## 2025-08-15
@@ -1225,6 +1379,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | ferretdb                   |  2.3.1  |  2.5.0  |         |
 | tigerbeetle                | 0.16.50 | 0.16.54 |         |
 | genai-toolbox              |  0.9.0  | 0.12.0  |         |
+{.wide .expand}
+
+
 
 
 ## 2025-07-24
@@ -1236,6 +1393,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | minio    |  -  |    20250723155402    |                            |
 | mcli     |  -  |    20250721052808    |                            |
 | ivorysql |  -  | 4.5-0ffca11-20250709 | fix libxcrypt deps issue   |
+{.wide .expand}
+
+
 
 
 ## 2025-07-16
@@ -1254,6 +1414,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | pig                        |  0.5.0  |  0.6.0  |                              |
 | pev2                       | 1.15.0  | 1.16.0  |                              |
 | pg_exporter                |  1.0.0  |  1.0.1  |                              |
+{.wide .expand}
+
+
 
 
 ## 2025-07-04
@@ -1277,6 +1440,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | grafana-inifinity-ds       |  3.2.1  |  3.3.0  | -       |
 | victorialogs               | 1.22.2  | 1.24.0  | -       |
 | victoriametrics            | 1.117.1 | 1.120.0 | -       |
+{.wide .expand}
+
+
 
 
 ## 2025-06-01
@@ -1292,6 +1458,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | tigerbeetle             |  -  | 0.16.42 | -       |
 | grafana-victorialogs-ds |  -  | 0.17.0  | -       |
 | grafana-infinity-ds     |  -  |  3.2.2  | -       |
+{.wide .expand}
+
+
 
 
 ## 2025-05-22
@@ -1321,6 +1490,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | grafana-victoriametrics-ds |  -  |     0.15.1     | -                               |
 | grafana-infinity-ds        |  -  |     3.2.1      | -                               |
 | grafana_plugins            |  -  |     12.0.0     | -                               |
+{.wide .expand}
+
+
 
 
 ## 2025-04-23
@@ -1341,6 +1513,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | vector              |  -  |     0.46.1     | -       |
 | minio               |  -  | 20250422221226 | -       |
 | mcli                |  -  | 20250416181326 | -       |
+{.wide .expand}
+
+
 
 
 ## 2025-04-05
@@ -1360,6 +1535,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | victoriametrics  |  -  |    1.114.0     | -       |
 | minio            |  -  | 20250403145628 | -       |
 | mcli             |  -  | 20250403170756 | -       |
+{.wide .expand}
+
+
 
 
 ## 2025-03-23
@@ -1370,6 +1548,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | pgbackrest_exporter |  -  | 0.19.0 | rebuild |
 | victorialogs        |  -  | 1.17.0 | -       |
 | vslogcli            |  -  | 1.17.0 | -       |
+{.wide .expand}
+
+
 
 
 ## 2025-03-17
@@ -1399,6 +1580,10 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | timescaledb-event-streamer |  -  | 0.12.0  | new     |
 | restic                     |  -  | 0.17.3  | new     |
 | juicefs                    |  -  |  1.2.3  | new     |
+{.wide .expand}
+
+
+
 
 ## 2025-02-12
 
@@ -1422,6 +1607,9 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | minio               | 20241218131544 | 20250207232109 | -       |
 | mcli                | 20241121172154 | 20250208191421 | -       |
 | rclone              |     1.68.2     |     1.69.0     | -       |
+{.wide .expand}
+
+
 
 
 ## 2024-11-19
@@ -1440,3 +1628,4 @@ MinIO no longer provider binary packages, pigsty will take over it since this re
 | tigerbeetle         |  16.8   | 0.16.13 | -       |
 | grafana             |    -    | 11.3.0  | -       |
 | vector              |    -    | 0.42.0  | -       |
+{.wide .expand}

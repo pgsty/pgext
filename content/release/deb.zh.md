@@ -10,9 +10,9 @@ weight: 300
 
 | 名称             | 旧版本 | 新版本 | 备注                                     |
 |:-----------------|:-------|:-------|:-----------------------------------------|
-| citus            | 14.2.0 | 14.3.0 | PG16-18；含 citus_columnar             |
+| citus            | 14.2.0 | 14.3.0 | PG16-18；含 citus_columnar               |
 | documentdb       | 0.117  | 1.0    | PG16-18；移除 PG15；含 core/extended_rum |
-| duckdb_fdw       | 1.4.3  | 2.0.2  | PG15-18；DuckDB 2.0.0；与 pg_duckdb 互斥  |
+| duckdb_fdw       | 1.4.3  | 2.0.2  | PG15-18；DuckDB 2.0.0；与 pg_duckdb 互斥 |
 | haproxy          | 3.4.4  | 3.4.7  | DEB 文档随主包交付                       |
 | hdr_histogram    | -      | 1.0.0  | PG14-18；SQL 版本 1.0                    |
 | ivorysql-contrib | 5.4    | 5.6    | PG18（IvorySQL）；含 38 个扩展           |
@@ -23,12 +23,12 @@ weight: 300
 | pg_ivm           | 1.16   | 1.17   | PG14-18                                  |
 | pg_kv            | -      | 0.1.0  | PG15-18；非持久化共享内存 KV             |
 | pg_mentat        | 1.14.0 | 1.18.0 | PG14-18；修复可信安装的搜索路径问题      |
-| pg_nanotime      | -      | 0.2.0  | PG17-18；纳秒时间戳；预览版                    |
+| pg_nanotime      | -      | 0.2.0  | PG17-18；纳秒时间戳；预览版              |
 | pg_regresql      | 2.0.0  | 2.1.0  | PG14-18；SQL 版本 2.0                    |
 | pg_relusage      | 1.0.1  | 1.0.2  | PG14-18；需加载                          |
 | pg_search        | 0.26.1 | 0.26.3 | PG15-18；pgrx 0.19.3；需预加载           |
 | pg_synonym       | -      | 1.0.0  | PG15-18；SQL 版本 1.0                    |
-| pg_tre           | -      | 4.5.2  | PG17-18；近似正则匹配                       |
+| pg_tre           | -      | 4.5.2  | PG17-18；近似正则匹配                    |
 | pg_try_cast      | -      | 1.0.0  | PG16-18；SQL 版本 1.0                    |
 | pg_turbovec      | 2.12.1 | 2.14.1 | PG14-18；修复并发与 VACUUM 问题          |
 | pgbson           | 2.1.0  | 2.2.0  | PG14-18                                  |
@@ -39,6 +39,10 @@ weight: 300
 | stannum          | -      | 0.1.0  | PG17-18；开发快照                        |
 | timescaledb      | 2.30.2 | 2.31.0 | PG16-18；TSL                             |
 | valkey           | 9.1.1  | 9.1.2  | 含开发子包                               |
+{.wide .expand}
+
+
+
 
 ## 2026-10-15
 
@@ -59,6 +63,10 @@ weight: 300
 | plpgsql_check   | 2.10.14      | 2.10.15      | PG14-18；SQL 版本 2.10；本地已入库                                                        |
 | spock           | 5.0.12       | 5.0.13       | 随 pgEdge 15-18 更新；含 PG18 兼容包；需预加载                                            |
 | textsearch_intl | -            | 1.0.0        | PG14-18；Debian 12/13、Ubuntu 22.04/24.04/26.04 amd64/arm64；未发布快照；本地已入库       |
+{.wide .expand}
+
+
+
 
 ## 2026-10-11
 
@@ -84,6 +92,10 @@ weight: 300
 | plpgsql_check           | 2.10.11                  | 2.10.14         | PG14-18；SQL 版本 2.10；本地已入库                                 |
 | rdkit                   | 202609.1-1PGSTY          | 202609.1-2PGSTY | PG14-18；Debian 13、Ubuntu 24/26；移除下游升级补丁；已构建，待入库 |
 | timescaledb             | 2.30.2-1PGSTY            | 2.30.2-2PGSTY   | PG16-18；TSL；声明与 Apache 版冲突；已构建，待入库                 |
+{.wide .expand}
+
+
+
 
 ## 2026-10-06
 
@@ -163,6 +175,10 @@ weight: 300
 | supautils              | 3.4.3        | 3.4.4        | PG14-18                                                                            |
 | timescaledb            | 2.30.1       | 2.30.2       | PG16-18；TSL；PG14 固定 2.19.3，PG15 固定 2.28.3                                   |
 | vgram                  | -            | 1.0          | PG14-18                                                                            |
+{.wide .expand}
+
+
+
 
 ## 2026-09-24
 
@@ -200,6 +216,10 @@ weight: 300
 | ulak                 | 0.0.2  | 0.2.0   | PG14-18；需预加载                  |
 | vectorize            | 0.26.2 | 0.27.1  | PG14-18；SQL 0.23.0；多行处理修复  |
 | wrappers             | 0.6.2  | 0.6.3   | PG14-18                            |
+{.wide .expand}
+
+
+
 
 ## 2026-08-14
 
@@ -216,6 +236,10 @@ weight: 300
 | pg_when           | 0.1.9  | 0.1.10 | GitHub/PGXN 同一发行版；上游 pgrx 0.18.1，打包使用 0.19.1；PG14-18    |
 | smlar             | 1.0    | 1.0    | 许可证元数据：`LicenseRef-Upstream-No-License`；r2；PG14-18           |
 | unit              | 7.10   | 7.10   | 许可证元数据：`GPL-3.0-or-later`；r7；PG14-18                         |
+{.wide .expand}
+
+
+
 
 ## 2026-08-12
 
@@ -249,6 +273,10 @@ weight: 300
 | timescaledb    | 2.29.0            | 2.29.1           | PG16-18                                               |
 | vector         | 0.8.6             | 0.8.6            | PGDG 仓库刷新；PG14-18                                |
 | zlog           | 1.2.18-1PIGSTY    | 1.2.18-2PGSTY    | 重构建                                                |
+{.wide .expand}
+
+
+
 
 ## 2026-07-30
 
@@ -275,6 +303,10 @@ weight: 300
 | timescaledb      | 2.28.3 | 2.29.0 | PG16-18                                             |
 | timeseries       | 0.2.1  | 0.2.1  | 修正 partman/cron 推荐依赖与文档；r3                |
 | vector           | 0.8.5  | 0.8.6  | PG14-18；0.8.6 尚未入库                             |
+{.wide .expand}
+
+
+
 
 ## 2026-07-24
 
@@ -440,6 +472,10 @@ weight: 300
 | sqlite_fdw              | 2.5.0    | 2.5.0    | 10 个 DEB：+PG18；支持 PG14-18                               |
 | sslutils                | 1.4      | 1.4      | EL8 双架构 RPM PG18                                          |
 | wal2mongo               | 1.0.7    | 1.0.7    | 10 个 DEB：+PG17-18；支持 PG14-18                            |
+{.wide .expand}
+
+
+
 
 ## 2026-07-07
 
@@ -461,6 +497,10 @@ weight: 300
 | cloudberry        | 2.1.0-1    | 2.1.0-2    | 重构建       |
 | cloudberry-backup | 2.1.0-1    | 2.1.0-2    | backup       |
 | cloudberry-pxf    | 2.1.0-1    | 2.1.0-2    | PXF          |
+{.wide .expand}
+
+
+
 
 ## 2026-07-01
 
@@ -478,6 +518,10 @@ weight: 300
 | pgmnemo       | 0.8.3    | 0.12.1  | PG 14-18                    |
 | pg_ivm        | 1.14     | 1.15    | PG 14-18                    |
 | rdf_fdw       | 2.5.0    | 2.6.0   | PG 14-18，libcurl 兼容补丁  |
+{.wide .expand}
+
+
+
 
 ## 2026-06-18
 
@@ -515,6 +559,10 @@ weight: 300
 | passwordpolicy      | -          | 2.0.5      | 新增，PG 14-18            |
 | pgdisablelogerror   | -          | 1.0        | 新增，PG 14-18            |
 | plpgsql_wrap        | -          | 1.0        | 新增，PG 14-18            |
+{.wide .expand}
+
+
+
 
 ## 2026-06-12
 
@@ -547,6 +595,10 @@ weight: 300
 | pg_task        | -      | 2.1.29 | 新增，PG 14-18，pcre2grep fix |
 | pg_extra_time  | -      | 2.1.0  | 新增，PG 14-18                |
 | fsm_core       | -      | 1.1.0  | 新增，PG 15-18                |
+{.wide .expand}
+
+
+
 
 ## 2026-05-01
 
@@ -564,6 +616,10 @@ weight: 300
 | spock            | 5.0.5  | 5.0.6  | 针对 18 重新构建                                                   |
 | lolor            | 1.2.2  | 1.2.2  | 针对 18 重新构建                                                   |
 | snowflake        | 2.4    | 2.4    | 针对 18 重新构建                                                   |
+{.wide .expand}
+
+
+
 
 已完成 Debian 12/13 与 Ubuntu 22.04/24.04/26.04 在 amd64 和 arm64 上的构建。
 
@@ -584,6 +640,10 @@ weight: 300
 | parray_gin     | 1.4.0  | 1.5.0  | 升级，PG 14-18              |
 | rdf_fdw        | 2.4.0  | 2.5.0  | 升级，PG 14-18              |
 | pg_accumulator | -      | 1.1.3  | 新增，PG 14-18              |
+{.wide .expand}
+
+
+
 
 新增 Ubuntu 26.04 支持
 
@@ -609,6 +669,9 @@ weight: 300
 | pgclone           | 3.6.0  | 4.0.0  | 升级                               |
 | pgproto           | 0.2.4  | 0.3.3  | 升级                               |
 | pgxicor           | 0.1.0  | 0.1.1  | 升级                               |
+{.wide .expand}
+
+
 
 
 ## 2026-04-14
@@ -670,6 +733,10 @@ weight: 300
 | pg_incremental     | 1.4.1  | 1.5.0    | 升级                                       |
 | pg_failover_slots  | 1.2.0  | 1.2.1    | 升级                                       |
 | PolarDB            | 15.15  | 17.9.1.0 | PG 15 -> 17                                |
+{.wide .expand}
+
+
+
 
 ## 2026-03-21
 
@@ -682,6 +749,9 @@ weight: 300
 | pg_clickhouse      | 0.1.4   | 0.1.5     |      |
 | pdu                |         | 3.0.25.12 | 新增 |
 | pgdog              |         | 0.1.32    | 新增 |
+{.wide .expand}
+
+
 
 
 ## 2026-03-05
@@ -697,6 +767,10 @@ weight: 300
 | pg_pinyin        | -       | 0.0.2   | 新增扩展包，PG 14-18     |
 | pg_eviltransform | -       | 0.0.2   | 新增扩展包，并对齐版本号 |
 | qos              | -       | 1.0.0   | 新增扩展包，PG 15-18     |
+{.wide .expand}
+
+
+
 
 ## 2026-02-27
 
@@ -718,6 +792,10 @@ weight: 300
 | babelfishpg       | -        | 5.5.0    | 新增 BabelfishPG 包组        |
 | babelfish         | -        | 5.5.0    | 新增 Babelfish 兼容包        |
 | antlr4-runtime413 | -        | 4.13     | 新增 Babelfish 依赖运行时    |
+{.wide .expand}
+
+
+
 
 ## 2026-02-12
 
@@ -750,6 +828,9 @@ weight: 300
 | pg_strict          | -          | 1.0.2        | 新增 Rust 扩展            |
 | pg_track_optimizer | -          | 0.9.1        | 新增扩展                  |
 | pgmb               | -          | 1.0.0        | 新增扩展                  |
+{.wide .expand}
+
+
 
 
 ## 2026-01-25
@@ -761,6 +842,10 @@ weight: 300
 | pg_clickhouse | 0.1.2          | 0.1.3          |              |
 | pgmq          | 1.8.1          | 1.9.0          |              |
 | pg_search     | 0.21.2         | 0.21.4         |              |
+{.wide .expand}
+
+
+
 
 ## 2026-01-16
 
@@ -785,6 +870,9 @@ weight: 300
 | pgfincore               |   -    | 1.3.1  | PGDG                |
 | documentdb_extended_rum |        | 0.109  | 新增                |
 | mobilitydb_datagen      |        | 1.3.0  | 新增                |
+{.wide .expand}
+
+
 
 
 ## 2025-12-25
@@ -798,6 +886,9 @@ weight: 300
 | pg_timeseries |  0.1.7  |  0.1.8  |           |
 | supautils     | 3.0.2-1 | 3.0.2-2 | 修复 pg18 |
 | pg_summarize  | 0.0.1-1 | 0.0.1-2 | 修复 pg18 |
+{.wide .expand}
+
+
 
 
 ## 2025-12-16
@@ -825,6 +916,9 @@ weight: 300
 | pgsmcrypto                                                    |    -    |    -    | 修复 pg18      |
 | pgx_ulid                                                      |    -    |    -    | 修复 pg18      |
 | plprql                                                        |    -    |    -    | 修复 pg18      |
+{.wide .expand}
+
+
 
 
 ## 2025-12-04
@@ -832,6 +926,10 @@ weight: 300
 | 名称    | 旧版本 | 新版本 | 备注                |
 |:--------|:------:|:------:|:--------------------|
 | synchdb |   -    |  1.3   | 仅支持 Ubuntu 22/24 |
+{.wide .expand}
+
+
+
 
 ## 2025-11-20
 
@@ -856,6 +954,10 @@ weight: 300
 | pgmq                   | 1.7.0  | 1.8.0  |                            |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
 | PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
+{.wide .expand}
+
+
+
 
 ## 2025-11-10
 
@@ -955,6 +1057,8 @@ weight: 300
 | system_stats          |    3.2     |     -      | +pg18 |
 | topn                  |   2.7.0    |     -      | +pg18 |
 | zhparser              |    2.3     |     -      | +pg18 |
+{.wide .expand}
+
 
 
 
@@ -984,6 +1088,9 @@ weight: 300
 |   redis_fdw   |         |         | + pg18                 |
 |     emaj      |   4.6   |   4.7   |                        |
 | table_version | 1.11.0  | 1.11.1  |                        |
+{.wide .expand}
+
+
 
 
 ## 2025-07-24
@@ -1001,6 +1108,9 @@ weight: 300
 |     pgvectorscale     |   0.7.1    | 0.8.0 (pgrx 0.12.9) |                               |
 |       pg_search       |   0.15.8   |  0.17.0 (download)  | fix el icu dependency issue   |
 |      pg_profile       |   4.8.0    |       4.10.0        |                               |
+{.wide .expand}
+
+
 
 
 ## 2025-07-04
@@ -1013,6 +1123,9 @@ weight: 300
 |  pgsql-tweaks   | 0.11.1 |   0.11.3   |                    |
 |     pg_tle      | 1.5.0  |   1.5.1    |                    |
 |     pg_curl     |  2.4   |   2.4.5    |                    |
+{.wide .expand}
+
+
 
 
 ## 2025-06-24
@@ -1024,6 +1137,9 @@ weight: 300
 |   vchord    |  0.3.0  | [0.4.3](https://github.com/tensorchord/VectorChord/releases/tag/0.4.3) |                   |
 |  pgactive   |    -    |                                 2.1.5                                  | require pgfeutils |
 | documentdb  | 0.103.0 |                                0.104.0                                 | add arm support   |
+{.wide .expand}
+
+
 
 
 ## 2025-05-26
@@ -1038,6 +1154,9 @@ weight: 300
 |    pgx_ulid     |    -     |     [0.2.0](https://github.com/pksunkara/pgx_ulid)      |      |
 |     pg_ivm      |  1.10.0  |       [1.11.0](https://github.com/sraoss/pg_ivm)        |      |
 |    orioledb     | 1.4.0b10 |    [1.4.0b11](https://github.com/orioledb/orioledb)     |      |
+{.wide .expand}
+
+
 
 
 ## 2025-05-22
@@ -1053,6 +1172,9 @@ weight: 300
 |     tzf      |   -    |           [0.2.2](https://github.com/ringsaturn/pg-tzf/releases/tag/v0.2.2)            |      |
 | pg_vectorize |   -    |        [0.22.2](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.22.2)        |      |
 |   wrappers   |   -    |           [0.5.0](https://github.com/supabase/wrappers/releases/tag/v0.5.0)            |      |
+{.wide .expand}
+
+
 
 
 ## 2025-05-07
@@ -1079,6 +1201,9 @@ weight: 300
 | timescaledb-toolkit |   -    |          [1.21.0](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.21.0)          |      |
 |    pgvectorscale    |   -    |              [0.7.1](https://github.com/timescale/pgvectorscale/releases/tag/0.7.1)              |      |
 |   pg_session_jwt    |   -    |           [0.3.1](https://github.com/neondatabase/pg_session_jwt/releases/tag/v0.3.1)            |      |
+{.wide .expand}
+
+
 
 
 ## 2025-03-20
@@ -1109,6 +1234,8 @@ weight: 300
 |     pg_random     |   -    |   -    |      |
 |  pg_stat_monitor  | 2.1.0  | 2.1.1  |      |
 |    pg_profile     |  4.7   |  4.8   |      |
+{.wide .expand}
+
 
 
 
@@ -1133,3 +1260,4 @@ weight: 300
 |   pg-orphaned   |   -    |    latest    |      |
 |    pgnodemx     |   -    |     1.7      |      |
 |    sslutils     |   -    | 1.4 (+16,17) |      |
+{.wide .expand}
