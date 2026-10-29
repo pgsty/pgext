@@ -199,7 +199,7 @@ page_width: full
 
 
 ```bash
-pig build pkg wal2mongo;		# build deb
+pig build pkg wal2mongo;		# build rpm/deb
 ```
 
 

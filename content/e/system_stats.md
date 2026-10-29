@@ -378,7 +378,7 @@ page_width: full
 
 
 ```bash
-pig build pkg system_stats;		# build deb
+pig build pkg system_stats;		# build rpm/deb
 ```
 
 

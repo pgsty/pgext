@@ -210,7 +210,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_dbms_metadata;		# build deb
+pig build pkg pg_dbms_metadata;		# build rpm/deb
 ```
 
 

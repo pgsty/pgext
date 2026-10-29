@@ -188,7 +188,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_mockable;		# build deb
+pig build pkg pg_mockable;		# build rpm/deb
 ```
 
 

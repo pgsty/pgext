@@ -189,7 +189,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_stat_backtrace;		# build deb
+pig build pkg pg_stat_backtrace;		# build rpm/deb
 ```
 
 

@@ -241,7 +241,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_readme;		# build deb
+pig build pkg pg_readme;		# build rpm/deb
 ```
 
 

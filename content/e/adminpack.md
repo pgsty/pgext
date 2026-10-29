@@ -27,6 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "pg_checksums" >}} {{< ext "amcheck" >}} {{< ext "pg_repack" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_surgery" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_pathcheck" >}} {{< ext "pg_isok" >}} {{< ext "pageinspect" >}} {{< ext "pg_squeeze" >}} |
 
 

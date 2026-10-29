@@ -244,7 +244,7 @@ page_width: full
 
 
 ```bash
-pig build pkg table_version;		# build deb
+pig build pkg table_version;		# build rpm/deb
 ```
 
 

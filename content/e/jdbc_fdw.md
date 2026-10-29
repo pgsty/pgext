@@ -195,7 +195,7 @@ page_width: full
 
 
 ```bash
-pig build pkg jdbc_fdw;		# build deb
+pig build pkg jdbc_fdw;		# build rpm/deb
 ```
 
 

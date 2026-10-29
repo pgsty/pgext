@@ -342,7 +342,7 @@ page_width: full
 
 
 ```bash
-pig build pkg plproxy;		# build rpm
+pig build pkg plproxy;		# build rpm/deb
 ```
 
 

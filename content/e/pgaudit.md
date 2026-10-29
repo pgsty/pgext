@@ -272,18 +272,25 @@ shared_preload_libraries = 'pgaudit';
 CREATE EXTENSION pgaudit;
 ```
 
-
-
-
 ## Usage
 
-> [pgaudit: Open Source PostgreSQL Audit Logging](https://github.com/pgaudit/pgaudit)
+Sources:
 
-pgAudit provides detailed session and/or object audit logging via the standard PostgreSQL logging facility, producing audit trails required for government, financial, or ISO certifications.
+- [pgAudit 18.0 README](https://github.com/pgaudit/pgaudit/blob/18.0/README.md)
+- [PostgreSQL 19 preview](https://github.com/pgaudit/pgaudit/releases/tag/19rc1)
+- [Preview control file](https://github.com/pgaudit/pgaudit/blob/2a7322004a90ebb8cf51d929e3dcf79e791b557e/pgaudit.control)
+
+`pgaudit` records session and object audit events through PostgreSQL logging. Choose the branch matching the server: 18.x for PostgreSQL 18, 17.x for 17, 16.x for 16, 1.7.x for 15 and 1.6.x for 14. Upstream 19rc1 is a preview for PostgreSQL 19 with SQL version 19.0; the catalog's packaged version remains stable 18.0.
+
+### Enable auditing
+
+Add `pgaudit` to `shared_preload_libraries` and restart the server. As a superuser, create the extension before setting `pgaudit.log`:
 
 ```sql
 CREATE EXTENSION pgaudit;
 ```
+
+Only a superuser can change audit settings. Size and protect the log volume: SQL text and parameters can contain sensitive information, and broad logging can consume substantial space. The extension provides audit records; it does not itself establish compliance.
 
 ### Configuration Parameters
 

@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9501** | {{< badge content="pglogical_origin" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< ext "pglogical_origin" "pglogical" >}} | `2.4.7` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **9501** | {{< badge content="pglogical_origin" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< ext "pglogical_origin" "pglogical" >}} | `2.4.8` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,16 +31,16 @@ page_width: full
 |   **See Also**    | {{< ext "spock" >}} {{< ext "pgactive" >}} {{< ext "pgoutput" >}} {{< ext "mimeo" >}} {{< ext "wal2json" >}} {{< ext "test_decoding" >}} {{< ext "postgres_fdw" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} |
 |    **Siblings**   | {{< ext "pglogical" >}} |
 
-> [!Note] Latest PGDG DEB/catalog version is 2.4.7; PGDG RPM remains on 2.4.6.
+> [!Note] Companion extension shipped in PGDG pglogical RPM/DEB 2.4.8; its own SQL/control version is 1.0.0.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglogical` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.6` | {{< bg "18" "pglogical_18" "green" >}} {{< bg "17" "pglogical_17" "green" >}} {{< bg "16" "pglogical_16" "green" >}} {{< bg "15" "pglogical_15" "green" >}} {{< bg "14" "pglogical_14" "green" >}} | `pglogical_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.7` | {{< bg "18" "postgresql-18-pglogical" "green" >}} {{< bg "17" "postgresql-17-pglogical" "green" >}} {{< bg "16" "postgresql-16-pglogical" "green" >}} {{< bg "15" "postgresql-15-pglogical" "green" >}} {{< bg "14" "postgresql-14-pglogical" "green" >}} | `postgresql-$v-pglogical` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglogical` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "pglogical_18" "green" >}} {{< bg "17" "pglogical_17" "green" >}} {{< bg "16" "pglogical_16" "green" >}} {{< bg "15" "pglogical_15" "green" >}} {{< bg "14" "pglogical_14" "green" >}} | `pglogical_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "postgresql-18-pglogical" "green" >}} {{< bg "17" "postgresql-17-pglogical" "green" >}} {{< bg "16" "postgresql-16-pglogical" "green" >}} {{< bg "15" "postgresql-15-pglogical" "green" >}} {{< bg "14" "postgresql-14-pglogical" "green" >}} | `postgresql-$v-pglogical` | - |
 {.packages}
 
 

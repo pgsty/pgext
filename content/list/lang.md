@@ -15,9 +15,9 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 435 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 438 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 80 | Pure SQL extensions and functions |
-| {{< language "Rust" >}} | 69 | Extensions written in Rust with the pgrx framework |
+| {{< language "Rust" >}} | 70 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "PLpgSQL" >}} | 4 | Extensions written in PLpgSQL |
@@ -27,7 +27,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="435 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="438 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -312,6 +312,7 @@ The traditional PostgreSQL extension language
 | 5070 | {{< alias "pg_cooldown" >}} | remove buffered pages for specific relations |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | Activate/deactivate/verify checksums in offline Postgres clusters |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
 | 5120 | {{< alias "pg_readonly" >}} | cluster database read only |
 | 5150 | {{< alias "pgautofailover" >}} | pg_auto_failover |
 | 5160 | {{< alias "pg_catcheck" >}} | Diagnosing system catalog corruption |
@@ -361,6 +362,7 @@ The traditional PostgreSQL extension language
 | 6450 | {{< alias "pgnodemx" >}} | Capture node OS metrics via SQL queries |
 | 6460 | {{< alias "pg_proctab" "pgnodemx" >}} | PostgreSQL extension to access the OS process table |
 | 6470 | {{< alias "pg_statvfs" >}} | Server filesystem capacity and inode statistics through statvfs |
+| 6480 | {{< alias "pg_stat_tcpinfo" >}} | Linux TCP connection statistics, latency and retransmissions |
 | 6510 | {{< alias "bgw_replstatus" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
 | 6520 | {{< alias "pgmeminfo" >}} | show memory usage |
 | 6530 | {{< alias "toastinfo" >}} | show details on toasted datums |
@@ -423,6 +425,7 @@ The traditional PostgreSQL extension language
 | 8740 | {{< alias "hdfs_fdw" >}} | foreign-data wrapper for remote hdfs servers |
 | 8750 | {{< alias "firebird_fdw" >}} | Foreign data wrapper for Firebird |
 | 8760 | {{< alias "rdf_fdw" >}} | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| 8770 | {{< alias "oai_fdw" >}} | Read-only OAI-PMH foreign data wrapper for metadata harvesting over HTTP/HTTPS. |
 | 8810 | {{< alias "log_fdw" >}} | foreign-data wrapper for Postgres log file access |
 | 8970 | {{< alias "dblink" >}} | connect to other PostgreSQL databases from within a database |
 | 8980 | {{< alias "file_fdw" >}} | foreign-data wrapper for flat file access |
@@ -560,7 +563,7 @@ Pure SQL extensions and functions
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="69 Extensions" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="70 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -630,6 +633,7 @@ Extensions written in Rust with the pgrx framework
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | PostgreSQL 18 OIDC bearer-token validator plugin written in Rust |
 | 7400 | {{< alias "pg_command_fw" >}} | DDL and utility command firewall for PostgreSQL |
 | 7440 | {{< alias "block_copy_command" >}} | Block COPY commands via a configurable ProcessUtility hook |
+| 7470 | {{< alias "pg_agent_gate" >}} | SQL proposal, verification and execution gate with human approval for agent roles. |
 | 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
 | 8660 | {{< alias "etcd_fdw" >}} | Foreign data wrapper for etcd |
 | 9430 | {{< alias "pgs3" >}} | S3-compatible object storage endpoint implemented inside PostgreSQL |

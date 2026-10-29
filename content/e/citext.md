@@ -17,24 +17,26 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3980** | {{< badge content="citext" link="https://www.postgresql.org/docs/current/citext.html" >}} | {{< ext "citext" >}} | `1.6` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3980** | {{< badge content="citext" link="https://www.postgresql.org/docs/current/citext.html" >}} | {{< ext "citext" >}} | `1.8` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "unaccent" >}} {{< ext "icu_ext" >}} {{< ext "pg_trgm" >}} {{< ext "pg_xenophile" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_cjk_parser" >}} {{< ext "dict_xsyn" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} {{< ext "pgpcre" >}} |
 
+> [!Note] SQL/control baseline 1.8 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+
 
 ## Packages
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.6" "PostgreSQL 18: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 17: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 16: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 15: version 1.6" "green" >}} | {{< bg "1.6" "PostgreSQL 14: version 1.6" "green" >}} |
+| {{< bg "1.8" "PostgreSQL 18: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 17: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 16: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 15: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 14: version 1.8" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

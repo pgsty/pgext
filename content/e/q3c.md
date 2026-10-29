@@ -487,7 +487,7 @@ page_width: full
 
 
 ```bash
-pig build pkg q3c;		# build rpm
+pig build pkg q3c;		# build rpm/deb
 ```
 
 

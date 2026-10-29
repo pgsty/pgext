@@ -17,24 +17,26 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6900** | {{< badge content="pageinspect" link="https://www.postgresql.org/docs/current/pageinspect.html" >}} | {{< ext "pageinspect" >}} | `1.12` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6900** | {{< badge content="pageinspect" link="https://www.postgresql.org/docs/current/pageinspect.html" >}} | {{< ext "pageinspect" >}} | `1.13` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pagevis" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "toastinfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_checksums" >}} {{< ext "pg_catcheck" >}} {{< ext "amcheck" >}} |
 
+> [!Note] SQL/control baseline 1.13 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+
 
 ## Packages
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.12" "PostgreSQL 18: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 17: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 16: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 15: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 14: version 1.12" "green" >}} |
+| {{< bg "1.13" "PostgreSQL 18: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 17: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 16: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 15: version 1.13" "green" >}} | {{< bg "1.13" "PostgreSQL 14: version 1.13" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

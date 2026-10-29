@@ -331,7 +331,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_ddlx;		# build deb
+pig build pkg pg_ddlx;		# build rpm/deb
 ```
 
 

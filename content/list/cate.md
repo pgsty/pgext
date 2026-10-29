@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-The 616 packaged PostgreSQL extensions (in 508 package families) are organized into 16 categories.
+The 620 packaged PostgreSQL extensions (in 512 package families) are organized into 16 categories.
 
 
 
@@ -97,7 +97,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1950 | {{< alias "pgmnemo" >}} | 0.20.0 | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | 0.3.0 | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
-| 1980 | {{< alias "pg_turbovec" >}} | 2.14.1 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
+| 1980 | {{< alias "pg_turbovec" >}} | 2.15.0 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 | 1990 | {{< alias "pg_vectorsearch" >}} | 0.1.0 | Approximate vector search with PRISM indexes and RaBitQ quantization |
 
 ## FTS
@@ -120,7 +120,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | Pinyin romanization and search helpers for PostgreSQL |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | Kazakh full-text search extension for PostgreSQL |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL extension for BM25-family lexical retrieval |
-| 2230 | {{< alias "pg_fts" >}} | 1.14.2 | Full-text search with BM25 and BM25F ranking |
+| 2230 | {{< alias "pg_fts" >}} | 1.14.3 | Full-text search with BM25 and BM25F ranking |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | CJK bigram parser derived from PostgreSQL full-text search |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | Chinese full-text search parser based on cppjieba |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
@@ -139,7 +139,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2300 | {{< alias "pg_icu_parser" >}} | 1.0 | Full text search parser using ICU boundary analysis |
 | 2310 | {{< alias "tin" "lead" >}} | 1.0.6 | TIN-compatible text search for development and testing |
 | 2320 | {{< alias "stannum" >}} | 0.1.0 | Experimental TINQL text search with BM25 and segmented indexes |
-| 2330 | {{< alias "pg_tre" >}} | 4.5.2 | Native PostgreSQL index access method for approximate regular-expression matching |
+| 2330 | {{< alias "pg_tre" >}} | 4.5.3 | Native PostgreSQL index access method for approximate regular-expression matching |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
 
@@ -174,7 +174,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.5 | Data lake tables and Iceberg tables |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.5 | Copy to/from data lake files |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
-| 2580 | {{< alias "pg_improv" >}} | 0.11.0 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
+| 2580 | {{< alias "pg_improv" >}} | 0.12.1 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
 
 ## FEAT
@@ -209,7 +209,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | 1.17 | incremental view maintenance on PostgreSQL |
-| 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
+| 2850 | {{< alias "pg_incremental" >}} | 1.6 | Incremental Processing by Crunchy Data |
 | 2860 | {{< alias "pg_trickle" >}} | 0.108.3 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2870 | {{< alias "pg_durable" >}} | 0.2.9 | SQL-native durable orchestrations for PostgreSQL |
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | Perturb unordered SELECT row order to expose order-dependent tests |
@@ -281,7 +281,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |
-| 3100 | {{< alias "plr" >}} | 8.4.8.9 | load R interpreter and execute R script from within a database |
+| 3100 | {{< alias "plr" >}} | 8.4.8.10 | load R interpreter and execute R script from within a database |
 | 3110 | {{< alias "plxslt" >}} | 0.20140221 | XSLT procedural language for PostgreSQL |
 | 3120 | {{< alias "pg_mockable" >}} | 1.1.0 | Create mockable wrappers for PostgreSQL functions in tests |
 | 3130 | {{< alias "pgsqlmock" >}} | 1.0.1 | Mocking and faking helpers for PostgreSQL unit tests |
@@ -328,7 +328,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3590 | {{< alias "pglite_fusion" >}} | 0.0.7 | Embed an SQLite database in your PostgreSQL table |
 | 3610 | {{< alias "md5hash" >}} | 1.0.1 | type for storing 128-bit binary data inline |
 | 3620 | {{< alias "asn1oid" >}} | 1.6 | asn1oid extension |
-| 3630 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 1.2.0 | support for Roaring Bitmaps |
+| 3630 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 1.3.0 | support for Roaring Bitmaps |
 | 3640 | {{< alias "pgfaceting" >}} | 0.2.0 | fast faceting queries using an inverted index |
 | 3650 | {{< alias "pg_sphere" "pgsphere" >}} | 1.5.2 | spherical objects with useful functions, operators and index support |
 | 3660 | {{< alias "country" "pg_country" >}} | 0.0.4 | Country data type, ISO 3166-1 |
@@ -358,13 +358,13 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3900 | {{< alias "timestamp9" >}} | 1.4.0 | timestamp nanosecond resolution |
 | 3910 | {{< alias "pgbson" >}} | 2.2.0 | BSON data type and accessor functions for PostgreSQL |
 | 3920 | {{< alias "chkpass" >}} | 1.0 | data type for auto-encrypted passwords |
-| 3930 | {{< alias "isn" >}} | 1.2 | data types for international product numbering standards |
+| 3930 | {{< alias "isn" >}} | 1.3 | data types for international product numbering standards |
 | 3940 | {{< alias "seg" >}} | 1.4 | data type for representing line segments or floating-point intervals |
 | 3950 | {{< alias "cube" >}} | 1.5 | data type for multidimensional cubes |
 | 3960 | {{< alias "ltree" >}} | 1.3 | data type for hierarchical tree-like structures |
 | 3970 | {{< alias "hstore" >}} | 1.8 | data type for storing sets of (key, value) pairs |
-| 3980 | {{< alias "citext" >}} | 1.6 | data type for case-insensitive character strings |
-| 3990 | {{< alias "xml2" >}} | 1.1 | XPath querying and XSLT |
+| 3980 | {{< alias "citext" >}} | 1.8 | data type for case-insensitive character strings |
+| 3990 | {{< alias "xml2" >}} | 1.2 | XPath querying and XSLT |
 
 ## UTIL
 
@@ -474,7 +474,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4910 | {{< alias "tsm_system_rows" >}} | 1.0 | TABLESAMPLE method which accepts number of rows as a limit |
 | 4920 | {{< alias "tcn" >}} | 1.0 | Triggered change notifications |
 | 4930 | {{< alias "uuid-ossp" >}} | 1.1 | generate universally unique identifiers (UUIDs) |
-| 4940 | {{< alias "btree_gist" >}} | 1.7 | support for indexing common datatypes in GiST |
+| 4940 | {{< alias "btree_gist" >}} | 1.8 | support for indexing common datatypes in GiST |
 | 4950 | {{< alias "btree_gin" >}} | 1.3 | support for indexing common datatypes in GIN |
 | 4960 | {{< alias "intarray" >}} | 1.5 | functions, operators, and index support for 1-D arrays of integers |
 | 4970 | {{< alias "intagg" >}} | 1.1 | integer aggregator and enumerator (obsolete) |
@@ -498,6 +498,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.4 | Activate/deactivate/verify checksums in offline Postgres clusters |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.0.0 | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.6 | cluster database read only |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | Introspect pg data dictionary via standard SQL |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4.1 | view object permissions and compare them with the desired state |
@@ -530,12 +531,12 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.3 | Administrative functions for pgPool |
 | 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.3 | recovery functions for pgpool-II for V4.3 |
 | 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.3 | replacement for regclass |
-| 5930 | {{< alias "lo" >}} | 1.1 | Large Object maintenance |
+| 5930 | {{< alias "lo" >}} | 1.2 | Large Object maintenance |
 | 5940 | {{< alias "basic_archive" >}} | - | an example of an archive module |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | adds a custom basebackup target called shell |
 | 5960 | {{< alias "old_snapshot" >}} | 1.0 | utilities in support of old_snapshot_threshold |
 | 5970 | {{< alias "adminpack" >}} | 2.1 | administrative functions for PostgreSQL |
-| 5980 | {{< alias "amcheck" >}} | 1.4 | functions for verifying relation integrity |
+| 5980 | {{< alias "amcheck" >}} | 1.5 | functions for verifying relation integrity |
 | 5990 | {{< alias "pg_surgery" >}} | 1.0 | extension to perform surgery on a damaged relation |
 
 ## STAT
@@ -572,6 +573,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6450 | {{< alias "pgnodemx" >}} | 2.0.1 | Capture node OS metrics via SQL queries |
 | 6460 | {{< alias "pg_proctab" "pgnodemx" >}} | 2.0.1 | PostgreSQL extension to access the OS process table |
 | 6470 | {{< alias "pg_statvfs" >}} | 1.0 | Server filesystem capacity and inode statistics through statvfs |
+| 6480 | {{< alias "pg_stat_tcpinfo" >}} | 1.1 | Linux TCP connection statistics, latency and retransmissions |
 | 6500 | {{< alias "pg_sqlog" >}} | 1.7 | Provide SQL interface to logs |
 | 6510 | {{< alias "bgw_replstatus" >}} | 1.0.8 | Small PostgreSQL background worker to report whether a node is a replication master or standby |
 | 6520 | {{< alias "pgmeminfo" >}} | 1.0.1 | show memory usage |
@@ -582,16 +584,16 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6870 | {{< alias "powa" >}} | 5.3.0 | PostgreSQL Workload Analyser-core |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | Allow EXPLAIN to dump even more details |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 1.0 | Logical decoding components inspection |
-| 6900 | {{< alias "pageinspect" >}} | 1.12 | inspect the contents of database pages at a low level |
+| 6900 | {{< alias "pageinspect" >}} | 1.13 | inspect the contents of database pages at a low level |
 | 6910 | {{< alias "pgrowlocks" >}} | 1.2 | show row-level locking information |
 | 6920 | {{< alias "sslinfo" >}} | 1.2 | information about SSL certificates |
-| 6930 | {{< alias "pg_buffercache" >}} | 1.5 | examine the shared buffer cache |
+| 6930 | {{< alias "pg_buffercache" >}} | 1.6 | examine the shared buffer cache |
 | 6940 | {{< alias "pg_walinspect" >}} | 1.1 | functions to inspect contents of PostgreSQL Write-Ahead Log |
-| 6950 | {{< alias "pg_freespacemap" >}} | 1.2 | examine the free space map (FSM) |
+| 6950 | {{< alias "pg_freespacemap" >}} | 1.3 | examine the free space map (FSM) |
 | 6960 | {{< alias "pg_visibility" >}} | 1.2 | examine the visibility map (VM) and page-level visibility info |
 | 6970 | {{< alias "pgstattuple" >}} | 1.5 | show tuple-level statistics |
 | 6980 | {{< alias "auto_explain" >}} | - | Provides a means for logging execution plans of slow statements automatically |
-| 6990 | {{< alias "pg_stat_statements" >}} | 1.11 | track planning and execution statistics of all SQL statements executed |
+| 6990 | {{< alias "pg_stat_statements" >}} | 1.12 | track planning and execution statistics of all SQL statements executed |
 
 ## SEC
 
@@ -634,11 +636,12 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7440 | {{< alias "block_copy_command" >}} | 0.1.5 | Block COPY commands via a configurable ProcessUtility hook |
 | 7450 | {{< alias "pg_policy" >}} | 0.1.0 | Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls |
 | 7460 | {{< alias "pg_kpart" >}} | 1.0 | Reject full partition scans that omit the partition key |
+| 7470 | {{< alias "pg_agent_gate" >}} | 0.3.0 | SQL proposal, verification and execution gate with human approval for agent roles. |
 | 7500 | {{< alias "pg_tde" >}} | 2.2.2 | Percona pg_tde access method |
 | 7510 | {{< alias "pg_vault_tde" >}} | 1.7.2 | Transparent Data Encryption for PostgreSQL through custom table and index access methods |
 | 7960 | {{< alias "sepgsql" >}} | - | label-based mandatory access control (MAC) based on SELinux security policy. |
 | 7970 | {{< alias "auth_delay" >}} | - | pause briefly before reporting authentication failure |
-| 7980 | {{< alias "pgcrypto" >}} | 1.3 | cryptographic functions |
+| 7980 | {{< alias "pgcrypto" >}} | 1.4 | cryptographic functions |
 | 7990 | {{< alias "passwordcheck" >}} | - | checks user passwords and reject weak password |
 
 ## FDW
@@ -668,11 +671,12 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8740 | {{< alias "hdfs_fdw" >}} | 2.0.5 | foreign-data wrapper for remote hdfs servers |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.2 | Foreign data wrapper for Firebird |
 | 8760 | {{< alias "rdf_fdw" >}} | 3.1 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| 8770 | {{< alias "oai_fdw" >}} | 1.16 | Read-only OAI-PMH foreign data wrapper for metadata harvesting over HTTP/HTTPS. |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | 1.5 | foreign-data wrapper for Postgres log file access |
 | 8970 | {{< alias "dblink" >}} | 1.2 | connect to other PostgreSQL databases from within a database |
 | 8980 | {{< alias "file_fdw" >}} | 1.0 | foreign-data wrapper for flat file access |
-| 8990 | {{< alias "postgres_fdw" >}} | 1.1 | foreign-data wrapper for remote PostgreSQL servers |
+| 8990 | {{< alias "postgres_fdw" >}} | 1.2 | foreign-data wrapper for remote PostgreSQL servers |
 
 ## SIM
 
@@ -719,7 +723,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 9500 | {{< alias "pglogical" >}} | 2.4.8 | PostgreSQL Logical Replication |
-| 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 2.4.7 | Dummy extension for compatibility when upgrading from Postgres 9.4 |
+| 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 2.4.8 | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | 9510 | {{< alias "pglogical_ticker" >}} | 1.4.1 | Have an accurate view on pglogical replication delay |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 2.2.1 | automated ddl deployment using pglogical |
 | 9530 | {{< alias "logical_ddl" >}} | 0.1.0 | Replicate supported DDL changes over PostgreSQL logical replication |
@@ -732,7 +736,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9620 | {{< alias "pgmqtt" >}} | 0.5.1 | CDC-to-MQTT broker for PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 2.7 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |
-| 9650 | {{< alias "decoderbufs" >}} | 3.6.1 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
+| 9650 | {{< alias "decoderbufs" >}} | 3.7.0 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | Output plugin for logical replication in Raw SQL format |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | Extension for specialized, per-table replication between PostgreSQL instances |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | Replication manager for PostgreSQL |

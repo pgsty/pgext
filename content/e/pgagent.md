@@ -27,6 +27,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pgagent` |
 |   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_later" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_background" >}} {{< ext "pg_durable" >}} |
 
 > [!Note] Deprecated upstream; the archived project will receive no further updates.

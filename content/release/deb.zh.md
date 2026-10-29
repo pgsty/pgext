@@ -6,15 +6,19 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
-## 2026-10-28
+## 2026-10-29
 
-| 名称                   | 旧版本 | 新版本 | 备注                                                   |
-|:-----------------------|:-------|:-------|:-------------------------------------------------------|
-| oai_fdw                | -      | 1.16.0 | PG14-18；OAI-PMH 外部数据包装器；SQL/control 版本 1.16 |
-| pg_agent_gate          | -      | 0.3.0  | 仅 PG18；预览版；pgrx 0.19.3；需预加载                 |
-| pg_improv              | 0.10.0 | 0.12.1 | PG15-18；pgrx 0.19.3；公式增量重算                     |
-| pg_integrity_checksums | -      | 2.0.0  | PG14-18；原 pg_checksums SQL 扩展更名                  |
-| pg_stat_tcpinfo        | -      | 1.1    | PG14-18；PGDG 仍为主供；本批补充 PGSTY 1.1 包          |
+| 名称                   | 旧版本 | 新版本 | 备注                              |
+|:-----------------------|:-------|:-------|:----------------------------------|
+| oai_fdw                | -      | 1.16.0 | PG14-18；OAI-PMH FDW；SQL 1.16    |
+| pg_agent_gate          | -      | 0.3.0  | PG18；预览版；需预加载            |
+| pg_fts                 | 1.14.2 | 1.14.3 | PG17-18                           |
+| pg_improv              | 0.10.0 | 0.12.1 | PG15-18                           |
+| pg_incremental         | 1.5.0  | 1.6.1  | PG16-18；SQL 1.6                  |
+| pg_integrity_checksums | -      | 2.0.0  | PG14-18；原 pg_checksums SQL 扩展 |
+| pg_stat_tcpinfo        | -      | 1.1    | PG14-18；PGDG 主供，Pigsty 补充   |
+| pg_tre                 | 4.5.2  | 4.5.3  | PG17-18                           |
+| pg_turbovec            | 2.14.1 | 2.15.0 | PG14-18                           |
 {.wide .expand}
 
 

@@ -15,9 +15,9 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 435 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 438 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 80 | 纯 SQL 扩展和函数 |
-| {{< language "Rust" >}} | 69 | 使用 pgrx 框架用 Rust 编写的扩展 |
+| {{< language "Rust" >}} | 70 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 15 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
 | {{< language "PLpgSQL" >}} | 4 | 使用 PLpgSQL 编写的扩展 |
@@ -27,7 +27,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="435 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="438 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -312,6 +312,7 @@ weight: 200
 | 5070 | {{< alias "pg_cooldown" >}} | 从缓冲区中移除特定关系的页面 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 获取和设置 PostgreSQL 后端的优先级 |
 | 5110 | {{< alias "pg_checksums" >}} | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 为 PostgreSQL 页面、行、表、索引与数据库提供物理和逻辑校验和。 |
 | 5120 | {{< alias "pg_readonly" >}} | 将集群设置为只读 |
 | 5150 | {{< alias "pgautofailover" >}} | PG 自动故障迁移 |
 | 5160 | {{< alias "pg_catcheck" >}} | 用于诊断系统目录是否损坏的工具 |
@@ -361,6 +362,7 @@ weight: 200
 | 6450 | {{< alias "pgnodemx" >}} | 使用SQL查询获取操作系统指标 |
 | 6460 | {{< alias "pg_proctab" "pgnodemx" >}} | 通过SQL接口访问操作系统进程表 |
 | 6470 | {{< alias "pg_statvfs" >}} | 通过 statvfs 查询服务器文件系统容量与 inode 统计 |
+| 6480 | {{< alias "pg_stat_tcpinfo" >}} | Linux TCP 连接统计、延迟与重传观测 |
 | 6510 | {{< alias "bgw_replstatus" >}} | 用于汇报本机主从状态的后台工作进程 |
 | 6520 | {{< alias "pgmeminfo" >}} | 显示内存使用情况 |
 | 6530 | {{< alias "toastinfo" >}} | 显示TOAST字段的详细信息 |
@@ -423,6 +425,7 @@ weight: 200
 | 8740 | {{< alias "hdfs_fdw" >}} | hdfs 外部数据包装器 |
 | 8750 | {{< alias "firebird_fdw" >}} | Firebird外部数据源包装器 |
 | 8760 | {{< alias "rdf_fdw" >}} | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
+| 8770 | {{< alias "oai_fdw" >}} | 通过 HTTP/HTTPS 采集 OAI-PMH 元数据的只读外部数据包装器。 |
 | 8810 | {{< alias "log_fdw" >}} | 访问PostgreSQL日志文件的FDW |
 | 8970 | {{< alias "dblink" >}} | 从数据库内连接到其他 PostgreSQL 数据库 |
 | 8980 | {{< alias "file_fdw" >}} | 访问外部文件的外部数据包装器 |
@@ -560,7 +563,7 @@ weight: 200
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="69 个扩展" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="70 个扩展" color="gray" icon="cube" >}}
 
 使用 pgrx 框架用 Rust 编写的扩展
 
@@ -630,6 +633,7 @@ weight: 200
 | 7180 | {{< alias "oidc_validator" "pg_oidc_validator_rust" >}} | 使用 Rust 与 pgrx 编写的 PostgreSQL 18 OIDC Bearer 令牌验证模块 |
 | 7400 | {{< alias "pg_command_fw" >}} | PostgreSQL 的 DDL 与 utility 命令防火墙 |
 | 7440 | {{< alias "block_copy_command" >}} | 通过可配置的 ProcessUtility hook 阻止 COPY 命令 |
+| 7470 | {{< alias "pg_agent_gate" >}} | 为 Agent 数据库角色提供 SQL 提议、校验、受控执行与人工审批。 |
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
 | 9430 | {{< alias "pgs3" >}} | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |

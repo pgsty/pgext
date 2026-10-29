@@ -17,24 +17,26 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5980** | {{< badge content="amcheck" link="https://www.postgresql.org/docs/current/amcheck.html" >}} | {{< ext "amcheck" >}} | `1.4` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5980** | {{< badge content="amcheck" link="https://www.postgresql.org/docs/current/amcheck.html" >}} | {{< ext "amcheck" >}} | `1.5` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_checksums" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_pathcheck" >}} {{< ext "pg_isok" >}} {{< ext "pg_surgery" >}} {{< ext "pageinspect" >}} {{< ext "adminpack" >}} {{< ext "pg_repack" >}} |
 
+> [!Note] SQL/control baseline 1.5 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+
 
 ## Packages
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.4" "PostgreSQL 18: version 1.4" "green" >}} | {{< bg "1.4" "PostgreSQL 17: version 1.4" "green" >}} | {{< bg "1.4" "PostgreSQL 16: version 1.4" "green" >}} | {{< bg "1.4" "PostgreSQL 15: version 1.4" "green" >}} | {{< bg "1.4" "PostgreSQL 14: version 1.4" "green" >}} |
+| {{< bg "1.5" "PostgreSQL 18: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 17: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 16: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 15: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 14: version 1.5" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

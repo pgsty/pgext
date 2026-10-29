@@ -224,7 +224,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_fkpart;		# build deb
+pig build pkg pg_fkpart;		# build rpm/deb
 ```
 
 

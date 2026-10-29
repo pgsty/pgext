@@ -30,7 +30,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_readme" >}} {{< ext "schedoc" >}} {{< ext "ddlx" >}} {{< ext "pgpdf" >}} {{< ext "pg_render" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} |
 |    **Siblings**   | {{< ext "pg_readme" >}} |
 
-> [!Note] Bundled test fixture; its control default_version is forever and it does not require hstore; package ownership follows pg_readme: PGDG RPM 0.7.0 and PIGSTY DEB 0.7.1.
+> [!Note] Bundled test fixture; control default_version is forever and it does not require hstore. Catalog version follows pg_readme 0.7.1; principal suppliers remain PGDG RPM and PIGSTY DEB.
 
 
 ## Packages
@@ -38,7 +38,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_readme` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.7.0` | {{< bg "18" "pg_readme_18" "green" >}} {{< bg "17" "pg_readme_17" "green" >}} {{< bg "16" "pg_readme_16" "green" >}} {{< bg "15" "pg_readme_15" "green" >}} {{< bg "14" "pg_readme_14" "green" >}} | `pg_readme_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.7.1` | {{< bg "18" "pg_readme_18" "green" >}} {{< bg "17" "pg_readme_17" "green" >}} {{< bg "16" "pg_readme_16" "green" >}} {{< bg "15" "pg_readme_15" "green" >}} {{< bg "14" "pg_readme_14" "green" >}} | `pg_readme_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "postgresql-18-pg-readme" "green" >}} {{< bg "17" "postgresql-17-pg-readme" "green" >}} {{< bg "16" "postgresql-16-pg-readme" "green" >}} {{< bg "15" "postgresql-15-pg-readme" "green" >}} {{< bg "14" "postgresql-14-pg-readme" "green" >}} | `postgresql-$v-pg-readme` | - |
 {.packages}
 
@@ -73,7 +73,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_readme;		# build deb
+pig build pkg pg_readme;		# build rpm/deb
 ```
 
 

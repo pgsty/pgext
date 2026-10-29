@@ -22,7 +22,7 @@ page_width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -277,6 +277,11 @@ page_width: full
 {{< card link="https://github.com/EnterpriseDB/mongo_fdw" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/mongo_fdw" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mongo_fdw-REL-5_5_3.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg mongo_fdw;		# build rpm/deb
+```
 
 
 ## Install

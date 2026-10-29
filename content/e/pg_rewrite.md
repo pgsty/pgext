@@ -457,7 +457,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pg_rewrite;		# build rpm
+pig build pkg pg_rewrite;		# build rpm/deb
 ```
 
 

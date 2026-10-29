@@ -231,6 +231,11 @@ page_width: full
 {{< /cards >}}
 
 
+```bash
+pig build pkg pgunit;		# build rpm/deb
+```
+
+
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

@@ -18,9 +18,9 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 269 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 113 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 106 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "PostgreSQL" >}} | 270 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 114 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 108 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 15 | [License Text](#) | Unknown license |
@@ -50,7 +50,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="269 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="270 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -253,6 +253,7 @@ PostgreSQL extension categorized by license.
 | 6410 | {{< alias "pgsentinel" >}} | active session history |
 | 6420 | {{< alias "system_stats" >}} | EnterpriseDB system statistics for PostgreSQL |
 | 6470 | {{< alias "pg_statvfs" >}} | Server filesystem capacity and inode statistics through statvfs |
+| 6480 | {{< alias "pg_stat_tcpinfo" >}} | Linux TCP connection statistics, latency and retransmissions |
 | 6510 | {{< alias "bgw_replstatus" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
 | 6530 | {{< alias "toastinfo" >}} | show details on toasted datums |
 | 6850 | {{< alias "pg_relusage" >}} | Log all the queries that reference a particular column |
@@ -330,7 +331,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="113 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="114 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -433,6 +434,7 @@ PostgreSQL extension categorized by license.
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | Supabase Vault Extension |
 | 7060 | {{< alias "pg_session_jwt" >}} | Manage authentication sessions using JWTs |
 | 7170 | {{< alias "pg_oidc_validator" >}} | OAuth and OIDC token validator for PostgreSQL 18 |
+| 7470 | {{< alias "pg_agent_gate" >}} | SQL proposal, verification and execution gate with human approval for agent roles. |
 | 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
 | 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | foreign-data wrapper for Postgres log file access |
@@ -454,7 +456,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="106 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="108 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -537,6 +539,7 @@ PostgreSQL extension categorized by license.
 | 4820 | {{< alias "base62" "pg_base62" >}} | Base62 extension for PostgreSQL |
 | 4830 | {{< alias "pg_base58" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
 | 4850 | {{< alias "convert" "pg_convert" >}} | conversion functions for spatial, routing and other specialized uses |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
 | 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
 | 5215 | {{< alias "macavity" >}} | Deterministic session-local fault injection for PostgreSQL test clusters |
 | 5250 | {{< alias "pg_pathcheck" >}} | Validate planner Path trees for freed or corrupt memory |
@@ -556,6 +559,7 @@ PostgreSQL extension categorized by license.
 | 8680 | {{< alias "nominatim_fdw" >}} | Nominatim Foreign Data Wrapper for PostgreSQL |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
 | 8760 | {{< alias "rdf_fdw" >}} | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| 8770 | {{< alias "oai_fdw" >}} | Read-only OAI-PMH foreign data wrapper for metadata harvesting over HTTP/HTTPS. |
 | 9000 | {{< alias "documentdb" >}} | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB on PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | Multi-Node API surface for DocumentDB |

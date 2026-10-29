@@ -17,12 +17,12 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4940** | {{< badge content="btree_gist" link="https://www.postgresql.org/docs/current/btree-gist.html" >}} | {{< ext "btree_gist" >}} | `1.7` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4940** | {{< badge content="btree_gist" link="https://www.postgresql.org/docs/current/btree-gist.html" >}} | {{< ext "btree_gist" >}} | `1.8` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -30,12 +30,14 @@ page_width: full
 |    **Need By**    | {{< ext "emaj" >}} {{< ext "omni_auth" >}} {{< ext "periods" >}} {{< ext "pg_lake_table" >}} {{< ext "pgautofailover" >}} {{< ext "powa" >}} |
 |   **See Also**    | {{< ext "ora_btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "parray_gin" >}} {{< ext "intarray" >}} {{< ext "rum" >}} {{< ext "bloom" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} |
 
+> [!Note] SQL/control baseline 1.8 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+
 
 ## Packages
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.7" "PostgreSQL 18: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 17: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 16: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 15: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 14: version 1.7" "green" >}} |
+| {{< bg "1.8" "PostgreSQL 18: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 17: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 16: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 15: version 1.8" "green" >}} | {{< bg "1.8" "PostgreSQL 14: version 1.8" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

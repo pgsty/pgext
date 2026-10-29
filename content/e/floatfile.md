@@ -187,7 +187,7 @@ page_width: full
 
 
 ```bash
-pig build pkg floatfile;		# build deb
+pig build pkg floatfile;		# build rpm/deb
 ```
 
 

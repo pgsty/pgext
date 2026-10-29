@@ -18,9 +18,9 @@ page_width: full
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 269 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 113 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 106 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "PostgreSQL" >}} | 270 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 114 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 108 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 15 | [许可证文本](#) | Unknown license |
@@ -50,7 +50,7 @@ page_width: full
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="269 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="270 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -253,6 +253,7 @@ page_width: full
 | 6410 | {{< alias "pgsentinel" >}} | 活跃会话历史 |
 | 6420 | {{< alias "system_stats" >}} | PostgreSQL 的系统统计函数 |
 | 6470 | {{< alias "pg_statvfs" >}} | 通过 statvfs 查询服务器文件系统容量与 inode 统计 |
+| 6480 | {{< alias "pg_stat_tcpinfo" >}} | Linux TCP 连接统计、延迟与重传观测 |
 | 6510 | {{< alias "bgw_replstatus" >}} | 用于汇报本机主从状态的后台工作进程 |
 | 6530 | {{< alias "toastinfo" >}} | 显示TOAST字段的详细信息 |
 | 6850 | {{< alias "pg_relusage" >}} | 打印查询引用的表与列 |
@@ -330,7 +331,7 @@ page_width: full
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="113 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="114 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -433,6 +434,7 @@ page_width: full
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7060 | {{< alias "pg_session_jwt" >}} | 使用JWT进行会话认证 |
 | 7170 | {{< alias "pg_oidc_validator" >}} | PostgreSQL 18 OAuth 与 OIDC 令牌验证模块 |
+| 7470 | {{< alias "pg_agent_gate" >}} | 为 Agent 数据库角色提供 SQL 提议、校验、受控执行与人工审批。 |
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | 8800 | {{< alias "aws_s3" >}} | 从S3导入导出数据的外部数据源包装器 |
 | 8810 | {{< alias "log_fdw" >}} | 访问PostgreSQL日志文件的FDW |
@@ -454,7 +456,7 @@ page_width: full
 
 
 
-| {{< license "MIT" >}} | {{< badge content="106 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="108 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -537,6 +539,7 @@ page_width: full
 | 4820 | {{< alias "base62" "pg_base62" >}} | Base62编码解码扩展 |
 | 4830 | {{< alias "pg_base58" >}} | Base58 编码/解码函数 |
 | 4850 | {{< alias "convert" "pg_convert" >}} | 用于空间里程等的公英制转换函数 |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 为 PostgreSQL 页面、行、表、索引与数据库提供物理和逻辑校验和。 |
 | 5130 | {{< alias "pgdd" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
 | 5215 | {{< alias "macavity" >}} | 为 PostgreSQL 测试集群提供确定性的会话内故障注入 |
 | 5250 | {{< alias "pg_pathcheck" >}} | 校验 planner Path 树，诊断已释放或损坏的内存引用 |
@@ -556,6 +559,7 @@ page_width: full
 | 8680 | {{< alias "nominatim_fdw" >}} | Nominatim 地理编码接口的 FDW 扩展 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 从PG向Redis发送Pub/Sub消息 |
 | 8760 | {{< alias "rdf_fdw" >}} | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
+| 8770 | {{< alias "oai_fdw" >}} | 通过 HTTP/HTTPS 采集 OAI-PMH 元数据的只读外部数据包装器。 |
 | 9000 | {{< alias "documentdb" >}} | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | DocumentDB多节点模式的API层 |

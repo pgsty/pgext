@@ -230,6 +230,11 @@ page_width: full
 {{< /cards >}}
 
 
+```bash
+pig build pkg pllua;		# build rpm
+```
+
+
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:

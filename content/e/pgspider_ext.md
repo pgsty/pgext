@@ -176,7 +176,7 @@ page_width: full
 
 
 ```bash
-pig build pkg pgspider_ext;		# build deb
+pig build pkg pgspider_ext;		# build rpm/deb
 ```
 
 

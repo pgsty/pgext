@@ -71,6 +71,11 @@ page_width: full
 {{< /cards >}}
 
 
+```bash
+pig build pkg pointcloud;		# build rpm
+```
+
+
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

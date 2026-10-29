@@ -6,15 +6,19 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
-## 2026-10-28
+## 2026-10-29
 
-| Name                   | Old    | New    | Comment                                                          |
-|:-----------------------|:-------|:-------|:-----------------------------------------------------------------|
-| oai_fdw                | -      | 1.16.0 | PG14-18; OAI-PMH FDW; SQL/control version 1.16                   |
-| pg_agent_gate          | -      | 0.3.0  | PG18 only; preview; pgrx 0.19.3; preload required                |
-| pg_improv              | 0.10.0 | 0.12.1 | PG15-18; pgrx 0.19.3; incremental formula evaluation             |
-| pg_integrity_checksums | -      | 2.0.0  | PG14-18; formerly the pg_checksums SQL extension                 |
-| pg_stat_tcpinfo        | -      | 1.1    | PG14-18; PGDG remains the principal provider; PGSTY 1.1 packages |
+| Name                   | Old    | New    | Comment                                          |
+|:-----------------------|:-------|:-------|:-------------------------------------------------|
+| oai_fdw                | -      | 1.16.0 | PG14-18; OAI-PMH FDW; SQL 1.16                   |
+| pg_agent_gate          | -      | 0.3.0  | PG18; preview; preload required                  |
+| pg_fts                 | 1.14.2 | 1.14.3 | PG17-18                                          |
+| pg_improv              | 0.10.0 | 0.12.1 | PG15-18                                          |
+| pg_incremental         | 1.5.0  | 1.6.1  | PG16-18; SQL 1.6                                 |
+| pg_integrity_checksums | -      | 2.0.0  | PG14-18; renamed from pg_checksums SQL extension |
+| pg_stat_tcpinfo        | -      | 1.1    | PG14-18; PGDG primary, Pigsty supplement         |
+| pg_tre                 | 4.5.2  | 4.5.3  | PG17-18                                          |
+| pg_turbovec            | 2.14.1 | 2.15.0 | PG14-18                                          |
 {.wide .expand}
 
 
