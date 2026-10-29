@@ -1,25 +1,23 @@
-
-
-
 ## 用法
 
-- 来源：[README](https://github.com/CrunchyData/pg_incremental/blob/main/README.md)，[v1.5.0 版本](https://github.com/CrunchyData/pg_incremental/releases/tag/v1.5.0)
+来源：
 
-`pg_incremental` 为只追加表和文件数据源定义恰好一次语义的增量流水线。上游文档记录了三类流水线：序列、时间区间和文件列表。
+- [官方 README](https://github.com/CrunchyData/pg_incremental/blob/v1.6.1/README.md)
+- [v1.6.1 发行版](https://github.com/CrunchyData/pg_incremental/releases/tag/v1.6.1)
+- [控制文件](https://github.com/CrunchyData/pg_incremental/blob/v1.6.1/pg_incremental.control)
 
-### 安装与调度模型
+`pg_incremental` 为只追加表和文件数据源定义恰好一次语义的增量流水线。它依赖 `pg_cron`，上游核验矩阵覆盖 PostgreSQL 17–18，支持序列、时间区间和文件列表三类流水线。
 
-上游 README 仍然使用基于 `pg_cron` 的调度模型，并通过下面的方式安装：
+### 安装与调度
 
 ```sql
 CREATE EXTENSION pg_incremental CASCADE;
+GRANT USAGE ON SCHEMA cron TO app_user;
 ```
 
-除非显式指定 `execute_immediately := false`，否则流水线会在创建时立刻运行一次，之后继续按 `pg_cron` 调度执行。README 还说明，即使没有新数据，每次调度执行也会出现在 `cron.job_run_details` 中。
+流水线默认创建时立即执行，随后由 `pg_cron` 调度；需要推迟首次运行时设置 `execute_immediately := false`。进度更新与流水线命令在同一事务中提交，命令失败不会推进已处理范围。
 
-### 序列流水线
-
-序列流水线用于处理可安全消费的序列值范围：
+### 流水线类型
 
 ```sql
 SELECT incremental.create_sequence_pipeline('event-aggregation', 'events', $$
@@ -31,45 +29,18 @@ SELECT incremental.create_sequence_pipeline('event-aggregation', 'events', $$
   ON CONFLICT (day) DO UPDATE
   SET event_count = events_agg.event_count + excluded.event_count
 $$);
-```
 
-README 记录了 `max_batch_size`，可用于限制每次运行处理的序列 ID 数量。
-
-### 时间区间流水线
-
-当命令希望把 `$1` 和 `$2` 作为时间区间边界接收时，可以使用时间窗口：
-
-```sql
-SELECT incremental.create_time_interval_pipeline('event-aggregation', '1 day', $$
-  INSERT INTO events_agg
-  SELECT event_time::date, count(DISTINCT event_id)
-  FROM events
-  WHERE event_time >= $1 AND event_time < $2
-  GROUP BY 1
+SELECT incremental.create_time_interval_pipeline('hourly-export', '1 hour', $$
+  SELECT export_events($1, $2)
 $$);
-```
 
-对于导出类任务，README 记录了 `batched := false`，这样每个时间区间都会单独执行。
-
-### 文件列表流水线
-
-文件列表流水线用于处理新发现的文件：
-
-```sql
-SELECT incremental.create_file_list_pipeline('event-import', 's3://mybucket/events/*.csv', $$
+SELECT incremental.create_file_list_pipeline('event-import', 's3://bucket/events/*.csv', $$
   SELECT import_events($1)
 $$);
 ```
 
-v1.5.0 为文件列表流水线增加了 `max_batches_per_run`。README 还记录了 `incremental.skip_file()`，可将坏文件永久标记为已处理。
+序列流水线传入安全的 `$1`/`$2` 范围，时间流水线传入区间边界，文件列表流水线传入新发现的文件。`max_batch_size`、`max_batches_per_run` 和 `batched := false` 可调整批次行为。`incremental.execute_pipeline`、`reset_pipeline`、`drop_pipeline` 以及状态视图用于运维控制。
 
-### 运维与监控
+### 1.6.1 安全修复
 
-README 记录了以下接口：
-
-- `CALL incremental.execute_pipeline(name)`：若存在新工作则执行一次。
-- `SELECT incremental.reset_pipeline(name)`：重置进度。
-- `SELECT incremental.drop_pipeline(name)`：删除流水线。
-- `incremental.sequence_pipelines`、`incremental.time_interval_pipelines`、`incremental.file_list_pipelines` 与 `incremental.processed_files` 等视图和表。
-
-v1.5.0 版本说明还提到修复了在未安装 `pg_cron` 环境下的 `DROP EXTENSION` 问题。
+1.6.1 修复 `_drop_trigger` 的 `search_path` 注入问题，要求创建和执行序列流水线的角色拥有序列 `SELECT` 或 `USAGE` 权限，并让文件列表函数以调用者身份执行。升级前应复核对象所有权和授权；本地包事实与该上游发行版分开维护。

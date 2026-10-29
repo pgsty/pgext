@@ -2,18 +2,19 @@
 
 Sources:
 
-- [pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/sql/pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql)
-- [pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/sql/pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql)
+- [pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql)
+- [pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql)
 
-- [README.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/README.md)
-- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/CHANGELOG.md)
-- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/pg_tviews.control)
-- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/Cargo.toml)
-- [sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql)
-- [docs/user-guides/operators.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/docs/user-guides/operators.md)
-- [docs/DEPRECATION_WARNINGS.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/docs/DEPRECATION_WARNINGS.md)
+- [README.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/README.md)
+- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/CHANGELOG.md)
+- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/pg_tviews.control)
+- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/Cargo.toml)
+- [sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql)
+- [docs/user-guides/operators.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/docs/user-guides/operators.md)
+- [docs/DEPRECATION_WARNINGS.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/docs/DEPRECATION_WARNINGS.md)
+- [beta.33 SQL update](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.32--0.1.0-beta.33.sql)
 
-`pg_tviews` 0.1.0-beta.32 maintains derived TVIEW tables transactionally from analyzed queries and base-table triggers. Objects live in the fixed `tviews` schema. This source supports PostgreSQL 16–18.
+`pg_tviews` 0.1.0-beta.33 maintains derived TVIEW tables transactionally from analyzed queries and base-table triggers. Objects live in the fixed `tviews` schema. This source supports PostgreSQL 16–18.
 
 ### Core Workflow
 
@@ -69,3 +70,7 @@ Install the matching library, restart through the preload-library procedure, and
 `tviews.pg_tviews_feed_gaps()` and queue-statistics field `feed_gaps` count committed transactions that skipped publication since cluster startup and require preload. Listeners should poll the counter and invalidate their entire cache when it changes. beta.32 removes per-session `publish_skipped`; use the new counter. `pg_tviews_flush_and_report` adds collections when publishing rows; invalidated_types covers an entire unlistable type and its collections, so stale row lists are not complete results.
 
 These releases also fix writes depending on privileges on unrelated TVIEW schemas and read the catalog as entities and plans to reduce unrelated TVIEW work. After a logical restore that omitted TVIEW table data, a later write reaching an empty TVIEW refills it when its source view has rows; this does not guarantee an immediately complete restored table.
+
+### beta.33 Partition Correctness
+
+Dropping a partition now removes its contribution from every TVIEW over the partition tree in the same statement. Foreign-partition drops refresh affected TVIEWs in full. Plain DETACH refreshes only the affected keys; ATTACH and concurrent DETACH retain full refreshes. Install matching library files and restart preloaded servers, then update from beta.32. The SQL update is a no-op and catalog revision 9 is unchanged, so this transition needs no TVIEW re-registration. Earlier migration requirements still apply when crossing their affected releases.

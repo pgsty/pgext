@@ -2,11 +2,11 @@
 
 来源：
 
-- [已复核 commit 的上游 README](https://github.com/kibae/pg_onnx/blob/ce634755381b3fb27b5724a3c58f39228d94eef8/README.md)
-- [函数参考](https://github.com/kibae/pg_onnx/blob/ce634755381b3fb27b5724a3c58f39228d94eef8/docs/functions.md)
-- [扩展源码](https://github.com/kibae/pg_onnx/tree/ce634755381b3fb27b5724a3c58f39228d94eef8/pg_onnx)
+- [已复核 commit 的上游 README](https://github.com/kibae/pg_onnx/blob/v1.31.1/README.md)
+- [函数参考](https://github.com/kibae/pg_onnx/blob/v1.31.1/docs/functions.md)
+- [扩展源码](https://github.com/kibae/pg_onnx/tree/v1.31.1/pg_onnx)
 
-`pg_onnx` 从 PostgreSQL 运行 ONNX 推理。动态后台工作进程托管 `onnxruntime-server`，并为每个导入模型复用一个运行时会话，避免每个客户端后端各自分配大型运行时。
+`pg_onnx` 从 PostgreSQL 运行 ONNX 推理。v1.31.1 发行版捆绑 `onnxruntime-server` 1.31.1；SQL 扩展模式仍为 1.2.1，支持 Ubuntu 上的 PostgreSQL 13–18 以及 macOS 上的 14–18。动态后台工作进程托管 `onnxruntime-server`，并为每个导入模型复用一个运行时会话，避免每个客户端后端各自分配大型运行时。
 
 ```sql
 CREATE EXTENSION pg_onnx;

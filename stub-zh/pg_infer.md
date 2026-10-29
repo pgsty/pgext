@@ -2,22 +2,22 @@
 
 来源：
 
-- [带标签的 README](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/README)
-- [扩展控制文件](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/pg_infer.control)
-- [Cargo 清单](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/Cargo.toml)
-- [扩展安装 SQL](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/sql/pg_infer--1.0.0.sql)
-- [模型注册实现](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/src/model_mgmt.rs)
-- [索引访问方法实现](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/src/am.rs)
-- [官方回归 SQL](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/sql/pg_infer.sql)
-- [Vindex 格式与模型数据](https://codeberg.org/gregburd/pg_infer/src/tag/v0.1.1-alpha/crates/infer-vindex/README.md)
+- [本次分发的 README](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/README)
+- [扩展控制文件](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/pg_infer.control)
+- [Cargo 清单](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/Cargo.toml)
+- [扩展安装 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/sql/pg_infer--0.1.3-alpha.sql)
+- [模型注册实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/model_mgmt.rs)
+- [索引访问方法实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/am.rs)
+- [官方回归 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/sql/pg_infer.sql)
+- [Vindex 格式与模型数据](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/crates/infer-vindex/README.md)
 
 `pg_infer` 是一个实验性 PostgreSQL 扩展，通过 SQL 暴露 Transformer 模型的特征、习得关联与相似度信号。它创建 `infer` 模式保存模型注册表，并提供 `infer` 索引访问方法，以便按模型语义对文本排序。它适合在 PostgreSQL 中检查外部准备的模型知识；扩展本身不包含模型或 vindex，其结果是随模型变化的信号，而非经过验证的事实。
 
 ### 版本与适用范围
 
-仓库标签为 `v0.1.1-alpha`，但该标签内 README 的横幅仍写着 `v0.1.0-alpha`。同一标签中的 `pg_infer.control` 声明 `default_version = '1.0.0'`，`Cargo.toml` 声明 `1.0.0`，而 `sql/pg_infer--1.0.0.sql` 安装的 SQL 版本也是 `1.0.0`。应把 SQL 版本和项目成熟度视为两个独立事实：上游 README 仍将项目标为实验性，警告 SQL API 可能变化，并说明 vindex 格式尚未冻结。
+PGXN 测试分发 `0.1.3-alpha` 的 `pg_infer.control`、`Cargo.toml` 与 `sql/pg_infer--0.1.3-alpha.sql` 均使用 `0.1.3-alpha`。README 横幅和 SQL 文件头仍提及旧版本。早期源码标签 `v0.1.1-alpha` 安装的 SQL 版本为 `1.0.0`，本次没有从该版本升级的脚本，应使用新数据库或经过明确审查的迁移。SQL API 与 vindex 格式仍处于实验阶段。
 
-带标签的 Cargo 清单只提供 `pg18` PostgreSQL 特性，并默认选择 `pg18`。因此，PostgreSQL 18 是该源码快照有证据支持的服务器目标；不要假定它兼容更早的大版本。
+本次分发的 Cargo 清单只提供 `pg18` PostgreSQL 特性，并默认选择 `pg18`。因此，PostgreSQL 18 是该源码快照有证据支持的服务器目标；不要假定它兼容更早的大版本。
 
 在每个需要使用它的数据库中安装扩展，然后检查已安装的 SQL 版本：
 
@@ -48,7 +48,7 @@ Vindex 是一个目录，其中包含为查询访问重新组织的模型配置�
 
 ### 查询模型知识
 
-设置 `infer.default_model` 后，可以不带模型参数调用查询函数；也可以传入 `model => 'name'` 显式选择模型。以下示例来自带标签的 API；返回行与分数完全取决于已注册的 vindex：
+设置 `infer.default_model` 后，可以不带模型参数调用查询函数；也可以传入 `model => 'name'` 显式选择模型。以下示例来自本次分发的 API；返回行与分数完全取决于已注册的 vindex：
 
 ```sql
 SELECT * FROM walk('The capital of France is', top => 10);
@@ -65,7 +65,7 @@ SELECT implies('France', 'Paris');
 
 ### 创建语义索引
 
-构建索引前必须先注册模型。带标签的访问方法接受一个文本列，并把所选模型名保存到元页中。使用距离操作符执行升序 top-N 查询：
+构建索引前必须先注册模型。本次分发的访问方法接受一个文本列，并把所选模型名保存到元页中。使用距离操作符执行升序 top-N 查询：
 
 ```sql
 CREATE TABLE documents (
@@ -108,8 +108,12 @@ LIMIT 5;
 
 ### 依赖与注意事项
 
-- 带标签的 Cargo 清单固定使用 `pgrx 0.17.0` 和 `rust-version = '1.80'`；带标签的 README 还要求从源码构建时使用 Rust nightly、PostgreSQL 18 或更高版本、OpenSSL 与 OpenBLAS。
-- 控制文件和带标签的安装说明均未声明 `shared_preload_libraries` 设置。正常使用从 `CREATE EXTENSION pg_infer` 开始；除非部署的确切构建给出证据，否则不要自行增加预加载或重启要求。
+- 本次分发的 Cargo 清单固定使用 `pgrx 0.17.0` 和 `rust-version = '1.80'`；本次分发的 README 还要求从源码构建时使用 Rust nightly、PostgreSQL 18 或更高版本、OpenSSL 与 OpenBLAS。
+- 控制文件和本次分发的安装说明均未声明 `shared_preload_libraries` 设置。正常使用从 `CREATE EXTENSION pg_infer` 开始；除非部署的确切构建给出证据，否则不要自行增加预加载或重启要求。
 - 注册表行和索引元页不能替代外部 vindex 目录。应确认故障切换或恢复后可能执行查询的每台服务器都具备模型数据、正确权限与有效路径。
 - Alpha README 明确警告 SQL 可能发生破坏性变化、vindex 格式尚未冻结、部分计算路径依赖特定硬件，而且该快照尚无成熟的生产部署。应使用代表性模型与查询进行测试，限制内存使用，并把升级视为兼容性敏感操作。
 - 关系、相似度和蕴含等输出反映的是所选模型与提取流水线。未经独立验证，不应把它们视为权威事实或用于影响重大的决策。
+
+### 远程模型
+
+`infer_create_model_remote` 注册外部 larql 服务器已经提供的模型；`infer_create_models_remote` 批量注册模型，`infer_create_model_grid` 则通过 `infer.grid_url` 解析模型。远程可用性、访问控制和模型存储由扩展外部管理。允许数据库角色注册远程模型前，应审查网络目标与超时设置。注册表保存的是引用，并非远程模型备份。

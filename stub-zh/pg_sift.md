@@ -2,12 +2,13 @@
 
 来源：
 
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/README.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/UPGRADING.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/pg_sift.control)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/sql/pg_sift--3.4.sql)
-- [用法与安全](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/USAGE.md)
-- [支持版本](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/SUPPORT.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/README.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/UPGRADING.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/pg_sift.control)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/sql/pg_sift--3.5.sql)
+- [用法与安全](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/USAGE.md)
+- [支持版本](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/SUPPORT.md)
+- [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v3.5.3)
 
 `pg_sift` 发行版 3.4.2 安装的 SQL 扩展版本为 3.4，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
 
@@ -71,3 +72,11 @@ SELECT * FROM sift.upgrade_commands();
 ### 3.4.2 维护修复
 
 3.4.2 继续使用 SQL 扩展版本 3.4，修复在 `ALTER TABLE` 添加列后进行 `ORDER BY ... LIMIT` 时的崩溃，改进分组聚合及范围/IN 扫描，并修复字典与列维护的边界问题。所有读取方都应先安装匹配文件，再写入更新后的列格式；3.3 到 3.4 的升级边界保持不变。
+
+### 3.5 发行版
+
+3.5.1 继续支持 PostgreSQL 17–19，SQL 升级边界为 `3.5`。3.5 系列增加列格式小版本以及规划器和维护行为变化；写入新格式前，应先在所有读取方安装匹配动态库。3.5.1 修复了无法启动并行 worker 时并行聚合扫描导致的后端崩溃。执行 `ALTER EXTENSION pg_sift UPDATE TO '3.5'` 前请遵循该发行版的升级指南。
+
+### 3.5.2–3.5.3 正确性修复
+
+3.5.2 修复列聚合读取分块词典及多个宽列时的崩溃和错误分组。3.5.3 修复通用计划中 ANY/ALL 测试使用 NULL 或紧凑文本数组参数时的崩溃或错误结果。应在所有读取节点安装 3.5.3，并重启服务，或重新连接所有已加载旧库的连接池与工作进程。SQL 仍为 3.5，这两个补丁版本无需额外 SQL 更新或 REINDEX。替换二进制前，`sift.enable_agg = off` 可使受影响语句恢复使用 PostgreSQL 自身计划。此前 3.5 的格式与升级边界仍然适用。

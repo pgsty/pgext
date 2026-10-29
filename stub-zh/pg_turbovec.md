@@ -2,14 +2,14 @@
 
 来源：
 
-- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/PRODUCTION.md)
-- [v2.14.1 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/README.md)
-- [v2.14.1 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/CHANGELOG.md)
-- [升级矩阵](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/UPGRADING.md)
-- [控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/pg_turbovec.control)
-- [过滤指南](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/FILTERING.md)
+- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/PRODUCTION.md)
+- [v2.15.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/README.md)
+- [v2.15.0 变更日志](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/CHANGELOG.md)
+- [升级矩阵](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/UPGRADING.md)
+- [控制文件](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/pg_turbovec.control)
+- [过滤指南](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.14.1 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
+`pg_turbovec` 2.15.0 提供 `turbovec.vector` 类型和紧凑向量索引，并用堆中的原始向量对候选项重新排序。平坦搜索扫描量化编码，IVF 则进一步只搜索选定的单元；除非候选集覆盖所有真实近邻，两者都属于近似搜索。**任何 1.x 索引升级到 2.x 都必须重建。**
 
 ### 创建和查询向量
 
@@ -116,3 +116,7 @@ WHERE a.amname = 'turbovec';
 2.14.1 修复并发提交后的后端缓存过期、插入刷盘时丢失 IVF 墓碑、写事务未结束时 VACUUM 清空索引后旧行重新出现，以及退化 IVF 扫描忽略墓碑的问题。精确评分与格式 8 均未改变。安装匹配文件，执行 `ALTER EXTENSION pg_turbovec UPDATE TO '2.14.1'`，并回收长期保持的数据库连接，使其重新加载库与缓存。
 
 两种历史状态需要执行一次 REINDEX：旧版中在 VACUUM 后又接受插入的 IVF 索引，以及写事务尚未结束时被 VACUUM 清空的任何索引。可在停止写入的表上执行 `VACUUM (INDEX_CLEANUP ON)`，再用 `turbovec.turbovec_check(regclass)` 比较估算的存活索引条目数与实际覆盖的堆表行数。计数须包含向量非空条件和部分索引谓词；索引条目多于覆盖行数时需要 REINDEX。其他健康的 2.x 索引无须例行重建；1.x 升级重建和已有损坏修复的要求仍然适用。
+
+### 2.15.0 的空 IVF 与扫描缓存
+
+在空表上构建的 IVF 索引现在会报告为退化状态；装载数据后扫描时，若旋转维数尚未初始化，会正确回退到 flat 扫描。外置存储的查询向量改为每个表达式只解码一次，并缓存 IVF 旋转矩阵。格式 8、评分与 SQL 对象不变。安装匹配文件、更新到 2.15.0 并回收加载旧库的连接；健康的 2.x 索引无须例行 REINDEX。如需训练后的单元，应在装载数据后重建原本空建的 IVF；若只为给已有空建索引增加新的退化报告标记，重建是可选的。此前的 1.x 迁移及损坏修复要求仍然适用。

@@ -2,16 +2,16 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/README.md)
-- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/pg_tre.control)
-- [sql/pg_tre--4.5.2.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/sql/pg_tre--4.5.2.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/CHANGELOG.md)
-- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/LIMITATIONS.md)
-- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/META.json)
-- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/.github/workflows/ci.yml)
-- [库初始化](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.2/src/module.c)
+- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/README.md)
+- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/pg_tre.control)
+- [sql/pg_tre--4.5.3.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/sql/pg_tre--4.5.3.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/CHANGELOG.md)
+- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/LIMITATIONS.md)
+- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/META.json)
+- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/.github/workflows/ci.yml)
+- [库初始化](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/src/module.c)
 
-`pg_tre` 4.5.2 提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。上游支持 PostgreSQL 17–19；Pigsty 的 4.5.2 软件包面向 PostgreSQL 17–18。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
+`pg_tre` 4.5.3 提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。上游支持 PostgreSQL 17–19；Pigsty 的 4.5.2 软件包面向 PostgreSQL 17–18。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
 
 ### 启用与查询
 
@@ -63,7 +63,7 @@ SELECT * FROM pg_tre_index_check('documents_body_tre'::regclass, 2);
 安装匹配文件，确保会话使用新库，再逐库更新：
 
 ```sql
-ALTER EXTENSION pg_tre UPDATE TO '4.5.2';
+ALTER EXTENSION pg_tre UPDATE TO '4.5.3';
 ```
 
 从 3.x 跨至 4.x 时，索引页格式虽然不变，WAL 记录类型却不兼容。替换库前必须干净停库；物理备库不能与主库运行不同主版本的扩展，须在主库升级后从新的基础备份重建，此边界不支持滚动升级。还须移除旧的 `wal_consistency_checking = 'pg_tre'` 设置，否则 4.x 无法启动；如需一致性检查，上游建议使用 `wal_consistency_checking = 'all'`。
@@ -83,3 +83,7 @@ SELECT E'a\nfoo' %~~ tre_pattern('(?n)^foo', 0) AS line_start,
 ```
 
 预期结果依次为 true、true、false。修复同时作用于匹配函数和索引复核；未启用换行模式的模式保持原有行为。
+
+### 4.5.3 安全修复
+
+当近似模式包含大量可达状态时，TRE 的固定工作列表可能溢出，导致后端崩溃，继而触发 postmaster 重启集群中的其他后端。4.5.3 在现有模式限制内动态扩展该列表。应安装匹配的库，替换仍使用旧库的会话，并将扩展 SQL 更新到 4.5.3。本补丁不改变磁盘格式，也不新增 REINDEX 要求；上面的旧版本迁移与损坏索引边界仍适用。

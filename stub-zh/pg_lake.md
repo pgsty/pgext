@@ -8,11 +8,11 @@
 - [官方项目文档索引](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/README.md)
 - [pg_lake v3.5.3 发布说明](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.3)
 - [DuckDB Secret 管理器](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
-- [上游 v3.5.9 发布说明](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.9)
+- [上游 v3.5.10 发布说明](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.10)
 
 `pg_lake` 是 Snowflake PostgreSQL 湖仓套件的顶层扩展。它会安装查询对象存储文件和创建事务型 Iceberg 表所需的表访问、Iceberg、COPY、查询引擎、扩展基础设施和映射组件。PostgreSQL 扩展负责查询规划与事务协调，独立的本地 `pgduck_server` 进程则使用 DuckDB 执行向量化计算。
 
-下述打包流程对应 `3.5.3`，本次核对的最新上游发布为 `3.5.9`，SQL 扩展版本仍为 `3.5`。动态库与查询服务器应使用同一发布版本。
+下述打包流程对应 `3.5.3`，本次核对的最新上游发布为 `3.5.10`，SQL 扩展版本仍为 `3.5`。动态库与查询服务器应使用同一发布版本。
 
 ### 启动打包版服务栈
 
@@ -157,6 +157,10 @@ ORDER BY extname;
 
 `3.5.3` 补丁加强了对象删除时的凭据选择，并避免发布无表名的目录条目。它仍使用 SQL 版本 `3.5`，因此仅凭 SQL 版本不能证明补丁级二进制已部署到位。
 
-### 上游 3.5.9 变化
+### 上游 3.5.10 变化
 
-3.5.9 加强了对目录返回的凭据端点与文件路径的限制，固定后台工作进程的搜索路径，并增加 Iceberg 元数据校验。它支持目录下发的 Azure SAS 令牌，以及通过 `pg_lake_iceberg.horizon_tls_ca_path` 设置自定义 Horizon TLS CA 路径。查询服务器也将无效嵌套值和过大结果处理为错误，避免崩溃。这些属于上游变化；文档所述的 3.5.3 软件包并不能证明这些修复已安装。升级时应部署互相匹配的扩展动态库和查询服务器二进制。
+3.5.10 加强了对目录返回的凭据端点与文件路径的限制，固定后台工作进程的搜索路径，并增加 Iceberg 元数据校验。它支持目录下发的 Azure SAS 令牌，以及通过 `pg_lake_iceberg.horizon_tls_ca_path` 设置自定义 Horizon TLS CA 路径。查询服务器也将无效嵌套值和过大结果处理为错误，避免崩溃。这些属于上游变化；文档所述的 3.5.3 软件包并不能证明这些修复已安装。升级时应部署互相匹配的扩展动态库和查询服务器二进制。
+
+### 3.5.10 变化
+
+上游 3.5.10 在目录停止下发凭据后清理缓存的临时凭据，保留对象存储中的 Iceberg 目录 URL，并将 Brotli 更新到 1.1.1 以修复 CVE-2026-111497。部署时应匹配扩展动态库和 `pgduck_server`，SQL 版本仍为 3.5。

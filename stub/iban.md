@@ -2,40 +2,43 @@
 
 Sources:
 
-- [Official PostgreSQL-IBAN README](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/31ee56f66b9df44e4fca083d83add588630af7a3/README.md)
-- [Version 1.1 extension SQL](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/31ee56f66b9df44e4fca083d83add588630af7a3/iban--1.1.sql)
-- [IBAN type and validator implementation](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/31ee56f66b9df44e4fca083d83add588630af7a3/iban.cpp)
+- [Official README](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/README.md)
+- [SQL 1.2](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/iban--1.2.sql)
+- [Upgrade from 1.1](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/iban--1.1--1.2.sql)
+- [Type and validator implementation](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/iban.cpp)
 
-`iban` adds an `iban` data type and `iban_validate(text)` for syntactic validation of International Bank Account Numbers. The input routine checks the country-specific BBAN shape and ISO 7064 mod-97 checksum, making the type useful for rejecting malformed values at the database boundary.
+`iban` SQL 1.2, distributed as upstream 1.2.0, adds a validated International Bank Account Number type and `iban_validate(text)`. Country-specific BBAN structure and a mod-97 checksum reject malformed values; successful validation does not prove account existence, ownership or payment-network reachability. Upstream supports PostgreSQL 14–18.
 
-### Store validated values
+### Store and Compare Values
 
 ```sql
 CREATE EXTENSION iban;
-
 CREATE TABLE beneficiaries (
     beneficiary_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    account_iban   iban NOT NULL
+    account_iban iban NOT NULL
 );
-
 INSERT INTO beneficiaries (account_iban)
-VALUES ('GB82WEST12345698765432');
-
+VALUES ('gb82 west 1234 5698 7654 32');
 SELECT account_iban, iban_validate(account_iban::text)
-FROM beneficiaries;
+FROM beneficiaries ORDER BY account_iban;
+CREATE INDEX beneficiaries_iban_idx ON beneficiaries (account_iban);
 ```
 
-Invalid text is rejected when cast or assigned to `iban`. To validate without raising an input error, call the boolean helper first:
+Text input is uppercased and plain spaces are removed, so the stored value in this example is GB82WEST12345698765432. Tabs, newlines and other whitespace are not removed. Input longer than 64 bytes is rejected; error output repeats at most 40 input bytes. Binary input is now validated and normalized by the same rules.
+
+### Objects
+
+- `iban_validate(text)` returns a validation result without storing a value.
+- `iban` supports casts to text types and comparison operators. `iban_cmp(iban, iban)` provides byte-order comparison.
+- Default btree and hash operator classes support ordering, equality, joins, grouping and keys; `iban_hash(iban)` and `iban_hash_extended(iban, bigint)` support hash operations.
+
+### Upgrade and Validation Boundaries
+
+Install matching files, ensure old-library sessions are replaced, then upgrade SQL and normalize rows stored by older versions:
 
 ```sql
-SELECT iban_validate('GB82WEST12345698765432'); -- true
-SELECT iban_validate('GB00INVALID');             -- false
+ALTER EXTENSION iban UPDATE TO '1.2';
+UPDATE beneficiaries SET account_iban = account_iban::text::iban;
 ```
 
-The extension supplies implicit casts from `iban` to `text` and `varchar`, plus an assignment cast to `bpchar`.
-
-### Validation boundaries
-
-Validation uppercases a temporary copy, but the input function stores the original representation. Lowercase letters can therefore validate while remaining lowercase on output. Spaces and visual separators are not normalized; canonicalize application input before storing it if a single display form is required.
-
-The country and BBAN rules are compiled into this release and may lag the current IBAN registry. A successful result confirms only the encoded structure and checksum—not that the account exists, is open, belongs to a named party, or is reachable by a payment network. The binary receive function does not repeat text-input validation, so only accept trusted PostgreSQL binary-protocol encoders for this custom type. Test the exact build and registry coverage required by the application before enforcing it as a long-lived domain rule.
+Review existing values and uniqueness collisions before rewriting production data or creating unique indexes: older rows may retain lowercase or noncanonical representations. Country rules are compiled into the extension and may lag registry changes; verify the countries required by the application against this exact release.

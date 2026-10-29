@@ -1,15 +1,22 @@
-
-
-
 ## 用法
 
-> [pgaudit: 开源 PostgreSQL 审计日志](https://github.com/pgaudit/pgaudit)
+来源：
 
-pgAudit 通过标准 PostgreSQL 日志功能提供详细的会话和/或对象审计日志，生成政府、金融或 ISO 认证所需的审计追踪。
+- [pgAudit 18.0 README](https://github.com/pgaudit/pgaudit/blob/18.0/README.md)
+- [PostgreSQL 19 预览版](https://github.com/pgaudit/pgaudit/releases/tag/19rc1)
+- [预览版控制文件](https://github.com/pgaudit/pgaudit/blob/2a7322004a90ebb8cf51d929e3dcf79e791b557e/pgaudit.control)
+
+`pgaudit` 通过 PostgreSQL 日志记录会话和对象审计事件。应选择匹配服务器的分支：PostgreSQL 18 对应 18.x，17 对应 17.x，16 对应 16.x，15 对应 1.7.x，14 对应 1.6.x。上游 19rc1 是面向 PostgreSQL 19 的预览版，SQL 版本为 19.0；目录中的打包版本仍为稳定的 18.0。
+
+### 启用审计
+
+将 `pgaudit` 加入 `shared_preload_libraries` 并重启服务器，再以超级用户创建扩展，之后才能设置 `pgaudit.log`：
 
 ```sql
 CREATE EXTENSION pgaudit;
 ```
+
+只有超级用户能修改审计设置。应规划并保护日志卷：SQL 文本和参数可能含敏感信息，广泛记录会占用大量磁盘。扩展提供审计记录，但本身并不等于满足合规要求。
 
 ### 配置参数
 

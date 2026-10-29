@@ -2,18 +2,19 @@
 
 来源：
 
-- [pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/sql/pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql)
-- [pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/sql/pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql)
+- [pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql)
+- [pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql)
 
-- [README.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/README.md)
-- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/CHANGELOG.md)
-- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/pg_tviews.control)
-- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/Cargo.toml)
-- [sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql)
-- [docs/user-guides/operators.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/docs/user-guides/operators.md)
-- [docs/DEPRECATION_WARNINGS.md](https://github.com/fraiseql/pg_tviews/blob/778346fb5df06a38f470901974d609d2b9dc26a6/docs/DEPRECATION_WARNINGS.md)
+- [README.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/README.md)
+- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/CHANGELOG.md)
+- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/pg_tviews.control)
+- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/Cargo.toml)
+- [sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql)
+- [docs/user-guides/operators.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/docs/user-guides/operators.md)
+- [docs/DEPRECATION_WARNINGS.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/docs/DEPRECATION_WARNINGS.md)
+- [beta.33 SQL 升级](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.32--0.1.0-beta.33.sql)
 
-`pg_tviews` 0.1.0-beta.32 通过解析后的查询与基础表触发器，在事务中维护派生的 TVIEW 表。对象固定在 `tviews` 模式中，当前源码支持 PostgreSQL 16–18。
+`pg_tviews` 0.1.0-beta.33 通过解析后的查询与基础表触发器，在事务中维护派生的 TVIEW 表。对象固定在 `tviews` 模式中，当前源码支持 PostgreSQL 16–18。
 
 ### 核心用法
 
@@ -69,3 +70,7 @@ SELECT * FROM tviews.pg_tviews_reregister_all();
 `tviews.pg_tviews_feed_gaps()` 和队列统计中的 `feed_gaps` 统计集群启动后提交但未发布通知的事务，依赖预加载。监听器应定期检查此计数，变化时使缓存全部失效。beta.32 移除了会话级 `publish_skipped`，使用者应改读新计数。`pg_tviews_flush_and_report` 在发布 rows 时新增 collections；invalidated_types 覆盖无法逐行列举的整个类型及其集合，不能把旧行列表当作完整结果。
 
 这些版本还修复了写入依赖其他 TVIEW 模式权限的问题，并按实体与计划读取目录，减少无关 TVIEW 对写入的影响。逻辑恢复时若省略 TVIEW 表数据，后续触及它的写入会在检测到源视图有数据时进行补填；不能将这个机制视为恢复后立即完整的保证。
+
+### beta.33 的分区正确性修复
+
+删除分区现在会在同一条语句中，从该分区树关联的所有 TVIEW 移除对应数据；删除外部分区会完整刷新受影响的 TVIEW。普通 DETACH 只刷新受影响的键，ATTACH 与并发 DETACH 仍采用完整刷新。安装匹配库文件并重启预加载服务器后，再从 beta.32 更新。SQL 升级是空操作，目录修订仍为 9，这次转换无须重新登记 TVIEW；跨越更早的受影响版本时，原有迁移要求仍适用。

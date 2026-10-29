@@ -2,14 +2,14 @@
 
 Sources:
 
-- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/PRODUCTION.md)
-- [v2.14.1 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/README.md)
-- [v2.14.1 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/CHANGELOG.md)
-- [Upgrade matrix](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/UPGRADING.md)
-- [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/pg_turbovec.control)
-- [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.14.1/docs/FILTERING.md)
+- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/PRODUCTION.md)
+- [v2.15.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/README.md)
+- [v2.15.0 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/CHANGELOG.md)
+- [Upgrade matrix](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/UPGRADING.md)
+- [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/pg_turbovec.control)
+- [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.14.1 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
+`pg_turbovec` 2.15.0 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
 
 ### Create and Query Vectors
 
@@ -116,3 +116,7 @@ New `turbovec.rerank_multiplier` defaults to 16.0, with a range of 1.0–1024.0.
 Version 2.14.1 fixes stale backend caches after overlapping commits, loss of IVF tombstones during insert flushes, resurrection of rows when VACUUM empties an index while a writer is open, and tombstone handling in degraded IVF scans. Exact scores and format 8 are unchanged. Install matching files, run `ALTER EXTENSION pg_turbovec UPDATE TO '2.14.1'`, and recycle long-lived database connections so their libraries and cached copies are replaced.
 
 Two histories require a one-time REINDEX: an IVF index that received inserts after VACUUM on an earlier release, and any index emptied by VACUUM while a writer transaction remained open. On a quiet table, `VACUUM (INDEX_CLEANUP ON)` followed by `turbovec.turbovec_check(regclass)` can help compare the estimated live index entries with the covered heap rows. Include the non-null vector condition and any partial-index predicate; excess index entries require REINDEX. Other healthy 2.x indexes need no routine rebuild. This does not remove the mandatory 1.x rebuild or repair of existing corruption.
+
+### 2.15.0 Empty IVF and Scan Caches
+
+An IVF index built empty is now reported as degraded, and scanning it after loading rows correctly falls back to a flat scan instead of failing when the rotation dimension is uninitialized. Query vectors stored out of line are decoded once per expression, and IVF rotation matrices are cached. Format 8, scoring and SQL objects remain unchanged. Install matching files, update to 2.15.0 and recycle old-library connections; healthy 2.x indexes need no routine REINDEX. Rebuild an empty-built IVF after loading if trained cells are wanted; adding only the new degraded-report flag to an existing empty build is optional. Earlier 1.x migration and corruption-repair requirements remain.

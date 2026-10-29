@@ -2,11 +2,11 @@
 
 Sources:
 
-- [Upstream README at the reviewed commit](https://github.com/kibae/pg_onnx/blob/ce634755381b3fb27b5724a3c58f39228d94eef8/README.md)
-- [Function reference](https://github.com/kibae/pg_onnx/blob/ce634755381b3fb27b5724a3c58f39228d94eef8/docs/functions.md)
-- [Extension source](https://github.com/kibae/pg_onnx/tree/ce634755381b3fb27b5724a3c58f39228d94eef8/pg_onnx)
+- [Upstream README at the reviewed commit](https://github.com/kibae/pg_onnx/blob/v1.31.1/README.md)
+- [Function reference](https://github.com/kibae/pg_onnx/blob/v1.31.1/docs/functions.md)
+- [Extension source](https://github.com/kibae/pg_onnx/tree/v1.31.1/pg_onnx)
 
-`pg_onnx` runs ONNX inference from PostgreSQL. A dynamic background worker hosts `onnxruntime-server` and reuses one runtime session per imported model, avoiding a separate large runtime allocation in every client backend.
+`pg_onnx` runs ONNX inference from PostgreSQL. Release v1.31.1 bundles `onnxruntime-server` 1.31.1; the SQL extension schema remains 1.2.1, with PostgreSQL 13–18 on Ubuntu and 14–18 on macOS. A dynamic background worker hosts `onnxruntime-server` and reuses one runtime session per imported model, avoiding a separate large runtime allocation in every client backend.
 
 ```sql
 CREATE EXTENSION pg_onnx;

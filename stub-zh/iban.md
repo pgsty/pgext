@@ -2,40 +2,43 @@
 
 来源：
 
-- [官方 PostgreSQL-IBAN README](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/31ee56f66b9df44e4fca083d83add588630af7a3/README.md)
-- [1.1 版扩展 SQL](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/31ee56f66b9df44e4fca083d83add588630af7a3/iban--1.1.sql)
-- [IBAN 类型与校验器实现](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/31ee56f66b9df44e4fca083d83add588630af7a3/iban.cpp)
+- [官方 README](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/README.md)
+- [SQL 1.2](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/iban--1.2.sql)
+- [1.1 升级脚本](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/iban--1.1--1.2.sql)
+- [类型与校验器实现](https://github.com/yorickdewid/PostgreSQL-IBAN/blob/6fa399864a71eb681ee2814e86686100ecfe095f/iban.cpp)
 
-`iban` 增加 `iban` 数据类型和 `iban_validate(text)`，用于国际银行账号的语法校验。输入函数会检查各国 BBAN 结构和 ISO 7064 mod-97 校验和，因此适合在数据库边界拒绝格式错误的值。
+`iban` 的 SQL 版本为 1.2，上游分发版本为 1.2.0。它增加经过校验的国际银行账号类型及 `iban_validate(text)`，通过各国 BBAN 结构与 mod-97 校验和拒绝格式错误的值。校验成功不代表账号存在、属于指定主体或能够通过支付网络访问。上游支持 PostgreSQL 14–18。
 
-### 存储已校验的值
+### 存储与比较
 
 ```sql
 CREATE EXTENSION iban;
-
 CREATE TABLE beneficiaries (
     beneficiary_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    account_iban   iban NOT NULL
+    account_iban iban NOT NULL
 );
-
 INSERT INTO beneficiaries (account_iban)
-VALUES ('GB82WEST12345698765432');
-
+VALUES ('gb82 west 1234 5698 7654 32');
 SELECT account_iban, iban_validate(account_iban::text)
-FROM beneficiaries;
+FROM beneficiaries ORDER BY account_iban;
+CREATE INDEX beneficiaries_iban_idx ON beneficiaries (account_iban);
 ```
 
-无效文本在转换或赋值给 `iban` 时会被拒绝。若希望校验失败时只返回布尔值而不触发输入错误，可先调用辅助函数：
+文本输入转换为大写并移除普通空格，因此示例保存为 GB82WEST12345698765432。制表符、换行和其他空白不会移除。超过 64 字节的输入被拒绝，错误消息最多回显输入的 40 字节。二进制输入现在也按相同规则校验和规范化。
+
+### 主要对象
+
+- `iban_validate(text)` 返回校验结果而不保存值。
+- `iban` 支持到文本类型的转换与比较运算符，`iban_cmp(iban, iban)` 按字节顺序比较。
+- 默认 btree 与 hash 运算符类支持排序、相等比较、连接、分组和键；`iban_hash(iban)` 与 `iban_hash_extended(iban, bigint)` 提供哈希支持。
+
+### 升级与校验边界
+
+安装匹配文件，替换仍加载旧库的会话，再升级 SQL，并规范化旧版本写入的行：
 
 ```sql
-SELECT iban_validate('GB82WEST12345698765432'); -- true
-SELECT iban_validate('GB00INVALID');             -- false
+ALTER EXTENSION iban UPDATE TO '1.2';
+UPDATE beneficiaries SET account_iban = account_iban::text::iban;
 ```
 
-扩展提供从 `iban` 到 `text` 和 `varchar` 的隐式转换，以及到 `bpchar` 的赋值转换。
-
-### 校验边界
-
-校验过程会把临时副本转换为大写，但输入函数保存原始表示。因此小写字母可能通过校验，输出时仍保持小写。空格和视觉分隔符不会被规范化；如果要求单一显示格式，应由应用在写入前完成规范化。
-
-国家与 BBAN 规则被编译进此版本，可能落后于当前 IBAN 注册表。校验成功只表示编码结构和校验和有效，并不证明账号存在、仍然开放、属于指定主体或能被支付网络访问。二进制接收函数不会重复文本输入校验，因此只有可信的 PostgreSQL 二进制协议编码器才应发送此自定义类型。把它作为长期域约束前，应测试实际构建与应用需要的注册表覆盖范围。
+在重写生产数据或创建唯一索引前，应检查已有值及规范化后的唯一性冲突：旧行可能仍保存小写或非规范表示。国家规则编译在扩展中，可能落后于注册表变化，应按本次确切版本检查应用需要的国家覆盖范围。

@@ -2,14 +2,15 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/UPGRADING.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/sql/pg_sift--3.4.sql)
-- [Usage and security](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/USAGE.md)
-- [Supported versions](https://github.com/brauliobo/pg_sift/blob/288643904639a2834a1cf92c6cfa7d4bbcaf41bf/docs/SUPPORT.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/README.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/UPGRADING.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/pg_sift.control)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/sql/pg_sift--3.5.sql)
+- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/USAGE.md)
+- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/SUPPORT.md)
+- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v3.5.3)
 
-`pg_sift` release 3.4.2 installs SQL extension version 3.4. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
+`pg_sift` release 3.5.3 installs SQL extension version 3.5. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
 
 ### Text Search
 
@@ -71,3 +72,11 @@ Release 3.4.2 updates SQL extension version 3.4. Apply the supplied 3.3-to-3.4 S
 ### 3.4.2 Maintenance Fixes
 
 Release 3.4.2 keeps SQL extension version 3.4. It fixes an `ORDER BY ... LIMIT` crash after columns are added with `ALTER TABLE`, improves grouped aggregate and range/IN scans, and repairs dictionary and column-maintenance edge cases. Install matching files on all readers before writing the newer column formats; the release does not change the existing 3.3-to-3.4 upgrade boundary.
+
+### 3.5 Release
+
+Release 3.5.1 keeps PostgreSQL 17–19 support and the SQL upgrade boundary at `3.5`. The 3.5 line adds column format minors and planner/maintenance changes; install the matching library on every reader before writing the newer formats. Release 3.5.1 fixes a backend crash in a parallel aggregate scan when no parallel worker can be launched. Follow the release-specific upgrade guide before applying `ALTER EXTENSION pg_sift UPDATE TO '3.5'`.
+
+### 3.5.2–3.5.3 Correctness Fixes
+
+3.5.2 fixes crashes and wrong groups when column aggregates read block dictionaries and several wide columns. 3.5.3 fixes crashes or wrong rows for generic plans with NULL or packed text-array parameters in ANY/ALL tests. Install 3.5.3 on every reader and restart servers or reconnect every pool and worker that loaded the old library. SQL remains 3.5: these two patch releases need neither an additional SQL update nor REINDEX. Until binaries are replaced, `sift.enable_agg = off` restores PostgreSQL's own plan for affected statements. The earlier 3.5 format and upgrade boundaries remain.
