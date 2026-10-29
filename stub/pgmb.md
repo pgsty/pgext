@@ -1,89 +1,67 @@
-
-
-
 ## Usage
 
-> [pgmb: A lightweight message broker system built inside PostgreSQL](https://github.com/fraruiz/pgmb)
+Sources:
+- [README](https://github.com/fraruiz/pgmb/blob/release/README.md)
+- [Control](https://github.com/fraruiz/pgmb/blob/release/pgmb.control)
+- [SQL](https://github.com/fraruiz/pgmb/blob/release/pgmb--1.0.0.sql)
+- [META.json](https://github.com/fraruiz/pgmb/blob/release/META.json)
 
-The `pgmb` extension provides an in-database message broker with HTTP-based worker dispatch, automatic retries, dead letter queues, and pattern-based routing.
+`pgmb` implements a SQL message broker with worker endpoints, routing-key patterns, queues and HTTP dispatch scheduled through `pg_cron`. The upstream repository is archived.
 
-```sql
-CREATE EXTENSION pgmb;  -- requires pg_cron and http extensions
+### Installation and compatibility
+
+The RPM revision `1.0.0-2PGSTY` requires `pgsql_http_N` and removes a redundant schema-creation statement. Earlier RPMs and existing DEB packages retain the upstream SQL and can fail at `CREATE EXTENSION pgmb` because the control file and install script both create the schema. Package installation alone does not establish that the extension can be created.
+
+Install as a superuser. The required extensions are `pg_cron` and `http`; `pgmb` itself does not require preload. Configure the scheduler for the database in which the extension will be used:
+
+```ini
+shared_preload_libraries = 'pg_cron'
+cron.database_name = 'postgres'
 ```
 
-### Register a Worker
+Restart PostgreSQL, connect to that database, and create the dependencies before the extension:
 
 ```sql
-SELECT pgmb.worker(
-    'order_processor',                     -- worker name
-    'http://localhost:8080/process',       -- endpoint URL
-    100                                    -- requests per second limit
-);
--- Returns: worker UUID
+CREATE EXTENSION pg_cron;
+CREATE EXTENSION http;
+CREATE EXTENSION pgmb;
 ```
 
-### Create a Queue
+### Register a queue and send a message
+
+The worker endpoint receives HTTP requests from the database server. Use a trusted endpoint and restrict who can register workers.
 
 ```sql
 SELECT pgmb.create(
-    'order_queue',                         -- queue name
-    'order.*',                             -- binding key pattern (supports * wildcard)
-    5,                                     -- max retries
-    '550e8400-e29b-41d4-a716-446655440000' -- worker UUID
+    'orders', 'order.*', 3,
+    pgmb.worker('order_worker', 'http://127.0.0.1:8080/worker', 100)
 );
--- Returns: queue UUID
-```
 
-### Send Messages
-
-```sql
--- Simple message
 SELECT pgmb.send(
-    gen_random_uuid(),
-    'order.created',
-    '{"order_id": 123, "amount": 45.67}'::jsonb
+    gen_random_uuid(), 'order.created', '{"order_id": 123}'::jsonb
 );
 
--- With custom headers
-SELECT pgmb.send(
-    gen_random_uuid(),
-    'order.created',
-    '{"order_id": 123}'::jsonb,
-    '{"source": "web", "priority": "high"}'::jsonb
-);
-
--- Delayed message (by timestamp or seconds)
-SELECT pgmb.send(
-    gen_random_uuid(),
-    'order.created',
-    '{"order_id": 123}'::jsonb,
-    '{}'::jsonb,
-    now() + interval '10 minutes'
-);
-```
-
-### API Reference
-
-| Function | Description |
-|----------|-------------|
-| `pgmb.worker(name, endpoint, rps)` | Register an HTTP worker endpoint |
-| `pgmb.create(name, binding_key, max_retries, worker_id)` | Create a queue with routing pattern |
-| `pgmb.send(id, routing_key, body)` | Send a message |
-| `pgmb.send(id, routing_key, body, headers)` | Send a message with headers |
-| `pgmb.send(id, routing_key, body, headers, delay)` | Send a delayed message |
-
-### How It Works
-
-1. Messages are inserted into `pgmb.messages` via `pgmb.send()`
-2. A trigger routes messages to matching queues based on routing key patterns
-3. `pg_cron` dispatches messages via HTTP POST to worker endpoints every second
-4. Failed messages are retried; after max retries they move to a dead letter queue
-
-### Monitoring
-
-```sql
 SELECT * FROM pgmb.workers;
 SELECT * FROM pgmb.queues;
-SELECT COUNT(*) FROM pgmb.order_queue WHERE acknoledge = false;
-SELECT * FROM pgmb.order_dead_letter_queue;
+SELECT * FROM pgmb.orders_queue;
+SELECT * FROM pgmb.orders_dead_letter_queue;
 ```
+
+The argument order for `pgmb.create` is name, binding pattern, maximum retries, then worker UUID. A trigger routes messages to matching queues, and queue creation registers a scheduler job.
+
+### API
+
+| Function | Purpose |
+|---|---|
+| `pgmb.worker(name, endpoint, rps)` | Register a worker and return its UUID; rps limits the batch size per dispatch. |
+| `pgmb.create(name, binding_key, max_retries, worker_id)` | Create a queue, its dead-letter table and scheduler job; return the queue UUID. |
+| `pgmb.send(id, routing_key, body)` | Store a JSONB message and route it to matching queues. |
+| `pgmb.send` overloads | Accept optional headers and an integer-seconds or timestamp delay. |
+| `pgmb.dispatch_messages(queue_id)` | Dispatch a batch; mark successful HTTP responses acknowledged, retry failures and move exhausted messages to the dead-letter table. |
+
+### Limits of version 1.0.0
+
+- Delays populate `enqueued_at`, but the dispatcher does not filter out future timestamps; the overloads do not guarantee delayed delivery.
+- Headers are stored with messages, but the dispatcher sends only the body using `http_post`; they are not forwarded as custom HTTP headers.
+- Retries use a counter on subsequent dispatches. The SQL does not implement exponential backoff.
+- HTTP effects are external to the database transaction. Review delivery and retention requirements before relying on this archived project.

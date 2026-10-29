@@ -2,13 +2,20 @@
 
 来源：
 
-- [README](https://github.com/Manuelreyesbravo/pg_phasevec/blob/2beae566ff111c205072463a7974099d6ca562d6/README.md)
-- [Control](https://github.com/Manuelreyesbravo/pg_phasevec/blob/2beae566ff111c205072463a7974099d6ca562d6/pg_phasevec.control)
-- [Base SQL](https://github.com/Manuelreyesbravo/pg_phasevec/blob/2beae566ff111c205072463a7974099d6ca562d6/sql/pg_phasevec--0.1.0.sql)
-- [0.16.0 SQL upgrade](https://github.com/Manuelreyesbravo/pg_phasevec/blob/2beae566ff111c205072463a7974099d6ca562d6/sql/pg_phasevec--0.15.0--0.16.0.sql)
+- [README](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/README.md)
+- [Control](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/pg_phasevec.control)
+- [Base SQL](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/sql/pg_phasevec--0.1.0.sql)
+- [0.16.0 SQL upgrade](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/sql/pg_phasevec--0.15.0--0.16.0.sql)
 - [PGXN release](https://pgxn.org/dist/pg_phasevec/0.16.0/)
+- [IVF implementation](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/src/phasevec_ivf.c)
+- [PostgreSQL 18 DSM interface](https://github.com/postgres/postgres/blob/REL_18_STABLE/src/include/storage/dsm_registry.h)
+- [PostgreSQL 18 LWLock interface](https://github.com/postgres/postgres/blob/REL_18_STABLE/src/include/storage/lwlock.h)
 
-`pg_phasevec` 在 PostgreSQL 行旁保存带来源的向量读数。每个读数记录已封存的读取器身份、精确文本哈希和时间；过期或来自其他读取器的读数不会参与检索。本版本面向 PostgreSQL 18 及更高版本，不发起网络调用。
+`pg_phasevec` 在 PostgreSQL 行旁保存带来源的向量读数。每个读数记录已封存的读取器身份、精确文本哈希和时间；过期或来自其他读取器的读数不会参与检索。上游声明要求 PostgreSQL 18 及更高版本，不发起网络调用；但 0.16.0 源码存在下述 PostgreSQL 18 兼容性问题。
+
+### PostgreSQL 18 兼容性
+
+0.16.0 无法在 PostgreSQL 18 上编译：IVF 实现以不兼容的签名调用 `LWLockNewTrancheId` 和 `GetNamedDSMSegment`，还调用了 PostgreSQL 18 未提供的 `GetNamedDSA`。原生编译与 LLVM 编译均失败。因此，声明的最低版本不能证明 PostgreSQL 18 实际可用；应等待上游兼容性修复，再使用下述安装流程。此处尚未验证其他 PostgreSQL 版本。
 
 ### 封存读取器并检索
 
