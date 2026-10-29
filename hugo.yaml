@@ -807,6 +807,7 @@ params:
 
   version: v1.1.0
   pig_version: 1.10.3
+  pigsty_version: 4.5.0
   pig_catalog_count: 620     # Records in the PIG bundled catalog
   productionURL: &productionURL https://ext.pgsty.com
   github_repo: https://github.com/pgsty/pgext
