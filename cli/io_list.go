@@ -1146,11 +1146,12 @@ func (g *IOListGenerator) GenerateOverviewPage(outputPath string) error {
 	// YAML Front Matter
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString(fmt.Sprintf(`---
-title: Pigsty Packaged Extension Catalog
-linkTitle: Pigsty Packaged Extension Catalog
+title: PG Extension Catalog
+linkTitle: PG Extension Catalog
+icon: fas fa-puzzle-piece
 description: >
   Extensions are the soul of PostgreSQL. Pigsty builds, packages, collects, and integrates %d PG ecosystem extensions for out-of-the-box use.
-weight: 20
+weight: 100
 %s
 ---
 

@@ -1146,11 +1146,12 @@ func (g *CCListGenerator) GenerateOverviewPage(outputPath string) error {
 	// YAML Front Matter
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString(fmt.Sprintf(`---
-title: Pigsty 已打包扩展目录
-linkTitle: Pigsty 已打包扩展目录
+title: PG 扩展目录
+linkTitle: PG 扩展目录
+icon: fas fa-puzzle-piece
 description: >
   扩展是 PostgreSQL 的灵魂所在，Pigsty 制作、打包、收录并整合了 %d 个 PG 生态扩展，供用户开箱即用。
-weight: 20
+weight: 100
 %s
 ---
 
