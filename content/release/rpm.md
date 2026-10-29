@@ -6,6 +6,21 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-10-28
+
+| Name                   | Old           | New          | Comment                                                          |
+|:-----------------------|:--------------|:-------------|:-----------------------------------------------------------------|
+| oai_fdw                | -             | 1.16.0       | PG14-18; OAI-PMH FDW; SQL/control version 1.16                   |
+| pg_agent_gate          | -             | 0.3.0        | PG18 only; preview; pgrx 0.19.3; preload required                |
+| pg_improv              | 0.10.0        | 0.12.1       | PG15-18; pgrx 0.19.3; incremental formula evaluation             |
+| pg_integrity_checksums | -             | 2.0.0        | PG14-18; formerly the pg_checksums SQL extension                 |
+| pg_stat_tcpinfo        | -             | 1.1          | PG14-18; PGDG remains the principal provider; PGSTY 1.1 packages |
+| pgmb                   | 1.0.0-1PIGSTY | 1.0.0-2PGSTY | PG14-18; noarch; fixes schema creation and pgsql_http dependency |
+{.wide .expand}
+
+
+
+
 ## 2026-10-24
 
 | Name                    | Old              | New              | Comment                                                       |

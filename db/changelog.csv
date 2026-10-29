@@ -1,4 +1,10 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
+2026-10-28,oai_fdw,,1.16.0,PG14-18; OAI-PMH FDW; SQL/control version 1.16,PG14-18；OAI-PMH 外部数据包装器；SQL/control 版本 1.16
+2026-10-28,pg_agent_gate,,0.3.0,PG18 only; preview; pgrx 0.19.3; preload required,仅 PG18；预览版；pgrx 0.19.3；需预加载
+2026-10-28,pg_improv,0.10.0,0.12.1,PG15-18; pgrx 0.19.3; incremental formula evaluation,PG15-18；pgrx 0.19.3；公式增量重算
+2026-10-28,pg_integrity_checksums,,2.0.0,PG14-18; formerly the pg_checksums SQL extension,PG14-18；原 pg_checksums SQL 扩展更名
+2026-10-28,pg_stat_tcpinfo,,1.1,PG14-18; PGDG remains the principal provider; PGSTY 1.1 packages,PG14-18；PGDG 仍为主供；本批补充 PGSTY 1.1 包
+2026-10-28,pgmb,1.0.0-1PIGSTY,1.0.0-2PGSTY,PG14-18; noarch; fixes schema creation and pgsql_http dependency,PG14-18；noarch；修复模式创建与 pgsql_http 依赖
 2026-10-24,codesystem,,0.2.1,PG14-18; SQL version 0.2.0,PG14-18；SQL 版本 0.2.0
 2026-10-24,documentdb,0.117,1.0,PG16-18; drops PG15; includes core/extended_rum,PG16-18；移除 PG15；含 core/extended_rum
 2026-10-24,encsearch,,0.1.1,PG17; encrypted search,PG17；加密搜索
