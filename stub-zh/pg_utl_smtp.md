@@ -1,9 +1,12 @@
-
-
-
 ## 用法
 
-> [pg_utl_smtp: PostgreSQL 的 Oracle UTL_SMTP 兼容扩展](https://github.com/hexacluster/pg_utl_smtp)
+来源：
+
+- [官方 README](https://github.com/hexacluster/pg_utl_smtp)
+- [v2.0.0 ChangeLog](https://github.com/hexacluster/pg_utl_smtp/blob/main/ChangeLog)
+- [扩展控制文件](https://github.com/hexacluster/pg_utl_smtp/blob/main/pg_utl_smtp.control)
+
+`pg_utl_smtp` 2.0.0 通过 `plperlu` 在 PostgreSQL 中提供 Oracle `UTL_SMTP` 兼容能力。2.0 版增加了通过 `utl_smtp.asynchronous`、`utl_smtp.mail_queue` 和 `utl_smtp.async_resend()` 实现的可选异步投递，并改进 SMTP 错误报告和 SSL/TLS 处理。
 
 ### 启用
 

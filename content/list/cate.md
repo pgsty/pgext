@@ -24,7 +24,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | temporal tables |
-| 1050 | {{< alias "emaj" >}} | 5.0.0 | Enables fine-grained write logging and time travel on subsets of the database. |
+| 1050 | {{< alias "emaj" >}} | 5.0.1 | Enables fine-grained write logging and time travel on subsets of the database. |
 | 1060 | {{< alias "table_version" >}} | 1.11.1 | PostgreSQL table versioning extension |
 | 1070 | {{< alias "pg_cron" >}} | 1.6.8 | Job scheduler for PostgreSQL |
 | 1080 | {{< alias "pg_task" >}} | 3.0.0 | execute any sql command at any specific time at background |
@@ -94,7 +94,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1900 | {{< alias "jev" >}} | 0.2.1 | Natural-language row filtering, ranking and classification through a Jev-compatible API |
 | 1930 | {{< alias "pg4ml" >}} | 2.0 | Machine learning framework for PostgreSQL |
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | Run AL/ML workloads with SQL interface |
-| 1950 | {{< alias "pgmnemo" >}} | 0.20.0 | Single-plan multimodal agent memory for PostgreSQL |
+| 1950 | {{< alias "pgmnemo" >}} | 0.21.0 | Single-plan multimodal agent memory for PostgreSQL |
 | 1960 | {{< alias "pgcontext" >}} | 0.3.0 | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | 1980 | {{< alias "pg_turbovec" >}} | 2.15.0 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
@@ -106,7 +106,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.26.3 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.26.4 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.1.0 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.1.0 | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -120,7 +120,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | Pinyin romanization and search helpers for PostgreSQL |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | Kazakh full-text search extension for PostgreSQL |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL extension for BM25-family lexical retrieval |
-| 2230 | {{< alias "pg_fts" >}} | 1.14.3 | Full-text search with BM25 and BM25F ranking |
+| 2230 | {{< alias "pg_fts" >}} | 1.15.1 | Full-text search with BM25 and BM25F ranking |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | CJK bigram parser derived from PostgreSQL full-text search |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | Chinese full-text search parser based on cppjieba |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
@@ -174,7 +174,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.5 | Data lake tables and Iceberg tables |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.5 | Copy to/from data lake files |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
-| 2580 | {{< alias "pg_improv" >}} | 0.12.1 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
+| 2580 | {{< alias "pg_improv" >}} | 0.12.2 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
 
 ## FEAT
@@ -498,7 +498,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.4 | Activate/deactivate/verify checksums in offline Postgres clusters |
-| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.0.0 | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.0.2 | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.6 | cluster database read only |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | Introspect pg data dictionary via standard SQL |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4.1 | view object permissions and compare them with the desired state |
@@ -609,7 +609,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7040 | {{< alias "passwordpolicy" >}} | 2.0.6 | Dynamically configurable PostgreSQL password complexity checks. |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.2 | Supabase Vault Extension |
 | 7060 | {{< alias "pg_session_jwt" >}} | 0.5.0 | Manage authentication sessions using JWTs |
-| 7070 | {{< alias "anon" "pg_anon" >}} | 3.2.3 | PostgreSQL Anonymizer (anon) extension |
+| 7070 | {{< alias "anon" "pg_anon" >}} | 3.3.2 | PostgreSQL Anonymizer (anon) extension |
 | 7080 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
 | 7090 | {{< alias "pg_enigma" >}} | 0.5.0 | Encrypted postgres data type |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |

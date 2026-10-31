@@ -2,9 +2,10 @@
 
 来源：
 
-- [README.md](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/README.md)
-- [pg_tle.control.in](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/pg_tle.control.in)
-- [pg_tle--1.5.2--1.5.3.sql](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/pg_tle--1.5.2--1.5.3.sql)
+- [v1.5.3 README](https://github.com/aws/pg_tle/blob/v1.5.3/README.md)
+- [v1.5.3 发布](https://github.com/aws/pg_tle/releases/tag/v1.5.3)
+- [1.5.2 至 1.5.3 SQL](https://github.com/aws/pg_tle/blob/v1.5.3/pg_tle--1.5.2--1.5.3.sql)
+- [v1.5.3 控制模板](https://github.com/aws/pg_tle/blob/v1.5.3/pg_tle.control.in)
 
 `pg_tle` 1.5.3 管理以 PostgreSQL 可信语言编写的扩展。原生组件安装需要共享预加载和服务器重启，之后的 TLE 定义存储在数据库中。上游文档支持 PostgreSQL 12 至 19 Beta 4。
 

@@ -1,11 +1,12 @@
-
-
-
 ## 用法
 
-> [login_hook: 在用户登录时执行代码，类似于 Oracle 的 after logon 触发器](https://github.com/splendiddata/login_hook)
+来源：
 
-`login_hook` 允许在用户登录数据库时执行自定义 PL/pgSQL 代码。
+- [官方 README](https://github.com/splendiddata/login_hook)
+- [1.7 至 1.8 迁移 SQL](https://github.com/splendiddata/login_hook/blob/master/login_hook--1.7--1.8.sql)
+- [扩展控制文件](https://github.com/splendiddata/login_hook/blob/master/login_hook.control)
+
+`login_hook` 1.8 允许在用户登录数据库时执行自定义 PL/pgSQL 代码。对于 PostgreSQL 17 及以上版本，如果需求允许，应优先使用原生登录事件触发器。
 
 ```sql
 CREATE EXTENSION login_hook;

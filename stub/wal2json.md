@@ -1,11 +1,13 @@
-
-
-
 ## Usage
 
-> [wal2json: Changing data capture in JSON format](https://github.com/eulerto/wal2json)
+Sources:
 
-A logical decoding output plugin that produces JSON-formatted change data capture from the PostgreSQL WAL.
+- [wal2json 2.7 release](https://github.com/eulerto/wal2json/releases/tag/wal2json_2_7)
+- [Official README](https://github.com/eulerto/wal2json)
+
+`wal2json` 2.7 is a logical decoding output plugin that produces JSON-formatted change data capture from the PostgreSQL WAL. It supports current PostgreSQL 18 and 19 development lines and is loaded as an output plugin, so it does not use `CREATE EXTENSION` or `shared_preload_libraries`.
+
+For PostgreSQL 18.6, 17.11, 16.15, 15.19, 14.24 and later minor releases affected by CVE-2026-6471, add `wal2json` to `output_plugin_libraries` as documented by the upstream release notes.
 
 ### Configuration
 

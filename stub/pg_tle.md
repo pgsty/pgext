@@ -2,9 +2,10 @@
 
 Sources:
 
-- [README.md](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/README.md)
-- [pg_tle.control.in](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/pg_tle.control.in)
-- [pg_tle--1.5.2--1.5.3.sql](https://github.com/aws/pg_tle/blob/6340fd2ef19a806dc0f2588d6aec10a0a12f7e8b/pg_tle--1.5.2--1.5.3.sql)
+- [v1.5.3 README](https://github.com/aws/pg_tle/blob/v1.5.3/README.md)
+- [v1.5.3 release](https://github.com/aws/pg_tle/releases/tag/v1.5.3)
+- [1.5.2 to 1.5.3 SQL](https://github.com/aws/pg_tle/blob/v1.5.3/pg_tle--1.5.2--1.5.3.sql)
+- [v1.5.3 control template](https://github.com/aws/pg_tle/blob/v1.5.3/pg_tle.control.in)
 
 `pg_tle` 1.5.3 manages extensions written in trusted PostgreSQL languages. Native installation needs shared preload and a server restart; subsequent TLE definitions are stored in the database. Upstream documents PostgreSQL 12 through 19 Beta 4.
 

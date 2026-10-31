@@ -6,9 +6,9 @@
 - [data/pgroonga_database.sql](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/data/pgroonga_database.sql)
 - [src/pgroonga-database.c](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/src/pgroonga-database.c)
 
-- [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga_database.sql)
-- [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga_database.control)
-- [Version 4.0.9 implementation](https://github.com/pgroonga/pgroonga/blob/4.0.9/src/pgroonga-database.c)
+- [Version 4.1.0 SQL](https://github.com/pgroonga/pgroonga/blob/4.1.0/data/pgroonga_database.sql)
+- [Version 4.1.0 control](https://github.com/pgroonga/pgroonga/blob/4.1.0/pgroonga_database.control)
+- [Version 4.1.0 implementation](https://github.com/pgroonga/pgroonga/blob/4.1.0/src/pgroonga-database.c)
 - [Official recovery procedure](https://pgroonga.github.io/reference/functions/pgroonga-database-remove.html)
 
 `pgroonga_database` 4.1.0 是用于恢复损坏的 PGroonga 内部数据库的辅助扩展。它只提供一个 SQL 函数，用来删除数据库目录及适用表空间目录中的 PGroonga 文件，不提供搜索访问方法。

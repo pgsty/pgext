@@ -2,13 +2,13 @@
 
 来源：
 
-- [1.14.3 upgrade](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.3/pg_fts--1.14.2--1.14.3.sql)
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.3/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.3/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.3/CHANGELOG.md)
-- [pg_fts--1.14.3.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.14.3/pg_fts--1.14.3.sql)
+- [1.15.0 到 1.15.1 升级](https://api.pgxn.org/src/pg_fts/pg_fts-1.15.1/pg_fts--1.15.0--1.15.1.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.15.1/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.15.1/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.15.1/CHANGELOG.md)
+- [pg_fts--1.15.1.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.15.1/pg_fts--1.15.1.sql)
 
-`pg_fts` 1.14.3 通过专用 fts 倒排索引提供 BM25/BM25F 排序的全文检索。支持 PostgreSQL 17 与 18；PostgreSQL 19/master 的 CI 属于尽力支持。控制文件标记可信且可重定位，核心使用无需共享预加载。
+`pg_fts` 1.15.1 通过专用 fts 倒排索引提供 BM25/BM25F 排序的全文检索。支持 PostgreSQL 17 与 18；PostgreSQL 19/master 的 CI 属于尽力支持。控制文件标记可信且可重定位，核心使用无需共享预加载。
 
 ### 检索与排序
 
@@ -69,3 +69,7 @@ SELECT fts_vacuum('docs_fts');
 1.14.3 修复频繁并发刷新待合并列表时的排序扫描后端崩溃，以及 BM25 评分器接收过短文档频率数组时的越界读取。同时修正待合并文档频率、部分索引的计划估算及部分布尔查询工作量。安装匹配文件，替换仍加载旧库的会话，再执行到 1.14.3 的空操作 SQL 升级。格式和 SQL 对象不变；上述历史 REINDEX 要求仍然适用。
 
 另一个并发刷新竞争仍未修复：排序扫描可能重复返回待合并行，并重复计算排序统计值。位图扫描、计数查询和匹配过滤会去除重复元组 ID，不受这一特定竞争影响。不要据此补丁认定并发刷新期间的排序结果已无重复。
+
+### 1.15.1 配置分析器修复
+
+1.15.1 修复配置分析器分块重解析在 16,383 个位置边界处分割 HTML 标记的问题。该版本不改变磁盘索引格式或 SQL 对象，SQL 升级为空操作。对于由 1.15.0 写入且标记跨越该边界的文档，应重新计算存储的 `ftsdoc` 并重建表达式索引。1.14.3 或更早版本产生的数据仍需执行 1.15.0 升级说明中的历史修复。

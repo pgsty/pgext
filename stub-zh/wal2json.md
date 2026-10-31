@@ -1,11 +1,13 @@
-
-
-
 ## 用法
 
-> [wal2json: JSON 格式的变更数据捕获](https://github.com/eulerto/wal2json)
+来源：
 
-一个逻辑解码输出插件，从 PostgreSQL WAL 生成 JSON 格式的变更数据捕获。
+- [wal2json 2.7 发布](https://github.com/eulerto/wal2json/releases/tag/wal2json_2_7)
+- [官方 README](https://github.com/eulerto/wal2json)
+
+`wal2json` 2.7 是一个逻辑解码输出插件，从 PostgreSQL WAL 生成 JSON 格式的变更数据捕获。它支持当前 PostgreSQL 18 和 19 开发分支，并作为输出插件加载，因此不使用 `CREATE EXTENSION` 或 `shared_preload_libraries`。
+
+对于受 CVE-2026-6471 影响的 PostgreSQL 18.6、17.11、16.15、15.19、14.24 及后续小版本，应按上游发布说明将 `wal2json` 加入 `output_plugin_libraries`。
 
 ### 配置
 

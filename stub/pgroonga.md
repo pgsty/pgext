@@ -5,10 +5,10 @@ Sources:
 - [Release 4.1.0](https://github.com/pgroonga/pgroonga/releases/tag/4.1.0)
 - [Control](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/pgroonga.control)
 
-- [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga.sql)
-- [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga.control)
+- [Version 4.1.0 SQL](https://github.com/pgroonga/pgroonga/blob/4.1.0/data/pgroonga.sql)
+- [Version 4.1.0 control](https://github.com/pgroonga/pgroonga/blob/4.1.0/pgroonga.control)
 - [Official tutorial](https://pgroonga.github.io/tutorial/)
-- [Version 4.0.9 release](https://github.com/pgroonga/pgroonga/releases/tag/4.0.9)
+- [Version 4.1.0 release](https://github.com/pgroonga/pgroonga/releases/tag/4.1.0)
 - [Upgrade guidance](https://pgroonga.github.io/upgrade/)
 
 `pgroonga` 4.1.0 provides Groonga-backed indexes for multilingual full-text search. It installs the `pgroonga` access method and SQL operators; ordinary use does not require shared preload.
@@ -37,7 +37,7 @@ ORDER BY score DESC;
 
 ### Maintenance and Privileges
 
-The 4.0.9 control file declares neither trusted installation nor relocatability; do not assume ordinary users can install it or move it between schemas. Index creation and queries follow the relevant table privileges. Match the extension and Groonga libraries to the target PostgreSQL build and follow upstream upgrade guidance before replacing binaries.
+The 4.1.0 control file declares neither trusted installation nor relocatability; do not assume ordinary users can install it or move it between schemas. Index creation and queries follow the relevant table privileges. Match the extension and Groonga libraries to the target PostgreSQL build and follow upstream upgrade guidance before replacing binaries.
 
 PGroonga manages derived index files in addition to table data. Plan disk capacity and backup/recovery procedures accordingly. Use REINDEX for index repair where appropriate. The separate `pgroonga_database` module is a recovery tool for damaged internal Groonga databases and is not needed for normal searches. Do not disable sequential scans globally merely to force an index in production.
 
@@ -51,4 +51,4 @@ MeCab tokenization additionally needs the matching Groonga tokenizer plugin and 
 
 ### Version 4.1.0
 
-Version 4.1.0 fixes another session running VACUUM/ANALYZE before CREATE INDEX commits, which could remove index data. An index already affected may need REINDEX. Direct Groonga calls can use `pgroonga_tuple_is_alive` in `post_filter` with Groonga 16.1.3 or later. This source release does not change the separately documented Pigsty dependency-stack limitation.
+Version 4.1.0 fixes another session running VACUUM/ANALYZE before CREATE INDEX commits, which could remove index data. An index already affected may need REINDEX. Direct Groonga calls can use `pgroonga_tuple_is_alive` in `post_filter` with Groonga 16.1.5 or later. This source release does not change the separately documented Pigsty dependency-stack limitation.

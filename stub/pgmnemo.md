@@ -2,15 +2,19 @@
 
 Sources:
 
-- [pgmnemo v0.20.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/README.md)
-- [pgmnemo v0.20.0 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.20.0)
-- [pgmnemo v0.20.0 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/USAGE.md)
-- [pgmnemo v0.20.0 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.20.0 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/CHANGELOG.md)
-- [pgmnemo v0.20.0 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo.control)
-- [v0.19.1 to v0.20.0 upgrade SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo--0.19.1--0.20.0.sql)
+- [pgmnemo v0.21.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/README.md)
+- [pgmnemo v0.21.0 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.21.0)
+- [pgmnemo v0.21.0 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/docs/USAGE.md)
+- [pgmnemo v0.21.0 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.21.0 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/CHANGELOG.md)
+- [pgmnemo v0.21.0 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/extension/pgmnemo.control)
+- [v0.20.0 to v0.21.0 upgrade SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/extension/pgmnemo--0.20.0--0.21.0.sql)
 
 pgmnemo stores agent memory in PostgreSQL and retrieves it through vector, BM25-style text, graph, metadata, temporal, provenance, and outcome-confidence signals. It installs into schema pgmnemo, requires the vector extension, and expects 1024-dimensional embeddings in its current SQL API.
+
+### Version 0.21.0
+
+Version 0.21.0 has no breaking SQL changes. It fixes `pg_dump` silently dropping the pgmnemo corpus by registering the `agent_lesson`, `mem_edge`, and `memory_ingest_log` tables and their associated sequences with `pg_extension_config_dump()`. Upgrade the extension before the next dump; the 0.20.0-to-0.21.0 migration is metadata-only and does not lock those tables.
 
 Version 0.20.0 retains the corpus-maintenance, situation, and entity recall surfaces and adds two opt-in candidate-pool expanders to `recall_hybrid()`: causal-edge breadth-first expansion and entity-key GIN expansion. Both are disabled by default, and the result now identifies each candidate's retrieval path.
 
@@ -22,7 +26,7 @@ Version 0.20.0 retains the corpus-maintenance, situation, and entity recall surf
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-The v0.20.0 control file marks pgmnemo as trusted, installs it in schema `pgmnemo`, requires `vector`, and is not relocatable.
+The v0.21.0 control file marks pgmnemo as trusted, installs it in schema `pgmnemo`, requires `vector`, and is not relocatable.
 
 ### Ingest a Lesson
 
@@ -158,6 +162,16 @@ ROLLBACK;
 - pgmnemo.graph_entity_expand_weight, pgmnemo.graph_entity_min_overlap, and pgmnemo.graph_entity_max_expansion: entity-key GIN expansion, minimum overlap, and per-key candidate limit.
 
 The older confidence-delta settings are deprecated and ignored in posterior mode.
+
+### Upgrade to 0.21.0
+
+Install the 0.21.0 package files and run:
+
+```sql
+ALTER EXTENSION pgmnemo UPDATE TO '0.21.0';
+```
+
+Run a representative `pg_dump` after the upgrade and confirm that the pgmnemo corpus is present in the dump. The migration does not rewrite corpus rows.
 
 ### Upgrade to 0.20.0
 

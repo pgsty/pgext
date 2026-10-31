@@ -2,12 +2,13 @@
 
 来源：
 
-- [README.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/README.md)
-- [pg_hint_plan.control](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/pg_hint_plan.control)
-- [docs/hint_list.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/hint_list.md)
-- [docs/installation.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/installation.md)
-- [docs/requirements.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/requirements.md)
-- [docs/functional_limitations.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/functional_limitations.md)
+- [PG18 1.8.1 发布](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL18_1_8_1)
+- [PG17 1.7.2 发布](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL17_1_7_2)
+- [PG16 1.6.3 发布](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL16_1_6_3)
+- [PG15 1.5.4 发布](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL15_1_5_4)
+- [PG14 1.4.5 发布](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL14_1_4_5)
+- [提示列表](https://github.com/ossc-db/pg_hint_plan/blob/master/docs/hint_list.md)
+- [安装与要求](https://github.com/ossc-db/pg_hint_plan/blob/master/docs/installation.md)
 
 
 `pg_hint_plan` 通过 SQL 注释提示覆盖 PostgreSQL 查询规划器的决策，允许你强制指定扫描方法、连接策略和连接顺序。

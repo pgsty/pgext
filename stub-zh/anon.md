@@ -2,12 +2,12 @@
 
 来源：
 
-- [PostgreSQL Anonymizer 3.2.3 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/README.md)
-- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/docs/masking_functions.md)
-- [3.2.3 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/CHANGELOG.md)
+- [PostgreSQL Anonymizer 3.3.2 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/README.md)
+- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/docs/masking_functions.md)
+- [3.3.2 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/CHANGELOG.md)
 - [Official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/)
-- [3.2.3 upgrade guide](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/docs/UPGRADE.md)
-- [3.2 series release announcement](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/NEWS.md)
+- [3.3.2 upgrade guide](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/docs/UPGRADE.md)
+- [3.3 series release announcement](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/NEWS.md)
 
 `anon` 是 PostgreSQL Anonymizer，它应用声明式的遮掩规则以实现受保护查询的访问，并生成匿名化数据集。同时提供伪名化和随机响应辅助功能。在必须保持现实数据有用性而不暴露原始敏感值时使用它；将遮掩策略、角色授权以及未遮掩数据库的访问视为安全边界的一部分。
 
@@ -57,6 +57,10 @@ SECURITY LABEL FOR anon ON COLUMN customer.phone
 ### 运营注意事项
 
 `anon` 是超级用户安装且不可重定位的。使用与预期消费者相同的授权和连接路径测试每项策略。随机化不是自动确定性的；当需要稳定相等时，请使用确认的伪名化函数。静态匿名化是破坏性的，因此在副本上运行它并在之后验证约束条件和应用程序行为。
+
+### 3.3.2 版本
+
+3.3.2 是 3.3 安全系列的后续发布，补回了缺失的 ARM 构建。3.3 系列禁止遮掩规则中的子查询，关闭透明动态遮掩的内联，并拒绝让被遮掩角色执行 SQL 标准函数体函数，同时修改 `anon.salt`。该系列没有就地升级路径：应按上游说明保存并迁移遮掩规则，然后在各数据库删除并重新创建扩展。
 
 3.2.0 引入可本地化的确定性 `anon.seeded_*` 函数，旧的 `anon.pseudo_*` 系列已弃用。该版修复了上游报告的三项安全漏洞，并默认拒绝由超级用户执行脱敏操作；应改用专用的非超级用户脱敏角色。将 `anon.nosuperuser` 设为 false 会撤销这一屏障，不是推荐的升级路径。脱敏规则 JSON 格式已改变，升级后应重新导出规则。本文描述发布版 3.2.3。
 

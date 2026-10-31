@@ -2,11 +2,11 @@
 
 来源：
 
-- [E-Maj 5.0.0 README](https://github.com/dalibo/emaj/blob/v5.0.0/README.md)
-- [E-Maj 5.0.0 变更日志](https://github.com/dalibo/emaj/blob/v5.0.0/CHANGES.md)
-- [E-Maj 快速入门](https://github.com/dalibo/emaj/blob/v5.0.0/docs/en/quickStart.rst)
-- [E-Maj 升级指南](https://github.com/dalibo/emaj/blob/v5.0.0/docs/en/upgrade.rst)
-- [E-Maj 设置指南](https://github.com/dalibo/emaj/blob/v5.0.0/docs/en/setup.rst)
+- [E-Maj 5.0.1 README](https://github.com/dalibo/emaj/blob/v5.0.1/README.md)
+- [E-Maj 5.0.1 变更日志](https://github.com/dalibo/emaj/blob/v5.0.1/CHANGES.md)
+- [E-Maj 快速入门](https://github.com/dalibo/emaj/blob/v5.0.1/docs/en/quickStart.rst)
+- [E-Maj 升级指南](https://github.com/dalibo/emaj/blob/v5.0.1/docs/en/upgrade.rst)
+- [E-Maj 设置指南](https://github.com/dalibo/emaj/blob/v5.0.1/docs/en/setup.rst)
 
 规范扩展名是 `emaj`；E-Maj 为一个协调表组记录表与序列变更，并可把整个表组回滚到命名标记。它适用于可重复测试、批处理保存点、变更检查与定向恢复，但 E-Maj 回滚不能替代 PostgreSQL 事务回滚或备份。
 
@@ -58,6 +58,10 @@ ALTER EXTENSION emaj UPDATE;
 - PHP 命令行客户端与 `emaj_uninstall.sql` 已移除。
 
 通过独立 SQL 脚本安装的环境没有相同的就地扩展升级路径；应遵循官方删除并重装流程。
+
+### 5.0.1 版本
+
+E-Maj 5.0.1 修复了 `emaj_adm` 获取超级用户能力的权限提升路径；现在 `emaj` schema 及其中的对象由 `emaj_adm` 所有。同时修复 `emajParallelRollback.pl` 围绕 `PREPARE TRANSACTION` 的错误。安装匹配文件后按正常扩展升级流程执行更新。
 
 ### 要求与注意事项
 

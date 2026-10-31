@@ -2,13 +2,13 @@
 
 来源：
 
-- [发行日志](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.1/CHANGELOG.md)
+- [发行日志](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/CHANGELOG.md)
 
-- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.1/crates/pg_improv/README.md)
-- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.1/crates/pg_improv/pg_improv.control)
-- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.1/crates/pg_improv/Cargo.toml)
+- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/README.md)
+- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/pg_improv.control)
+- [官方资料](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/Cargo.toml)
 
-`pg_improv` 0.12.1 将 PostgreSQL 表绑定到多维模型，计算公式并物化结果。它支持 PostgreSQL 15–18，安装需要超级用户。以下示例使用手工同步模式，无需预加载库。
+`pg_improv` 0.12.2 将 PostgreSQL 表绑定到多维模型，计算公式并物化结果。它支持 PostgreSQL 15–18，安装需要超级用户。以下示例使用手工同步模式，无需预加载库。
 
 ### 核心流程
 
@@ -44,6 +44,10 @@ SELECT * FROM improv.status('plan');
 ### 0.11.0 起的所有权与数据库级逻辑同步
 
 模型现在以其所有者身份读写，目录、维度项和单元格受到行级安全保护。只有超级用户或有权切换为所有者的角色才能修改和重算该模型。向创建者授予 improv_user 及必要的源表权限；管理员角色并不自动获得所有模型所有者的身份。共享结果表仍需普通表授权；what_if 可暴露所有者可读的数据，应谨慎授权。同一数据库的逻辑同步模型现在共用一个槽和发布。升级时配套更新库与 SQL，恢复模型转储前先恢复角色，并监控保留的 WAL。
+
+### 0.12.2 发行说明
+
+0.12.2 修复空闲的逻辑同步工作进程在每次轮询时重复读取模型目录的问题；本版没有其他代码变化。当前 Pigsty 软件包使用 pgrx 0.19.3 构建，而上游源码元数据仍声明 pgrx 0.17.0。
 
 ### 0.12.1 发行说明
 

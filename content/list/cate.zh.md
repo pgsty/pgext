@@ -24,7 +24,7 @@ page_width: full
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | 时态表功能支持 |
-| 1050 | {{< alias "emaj" >}} | 5.0.0 | 让数据库的子集具有细粒度日志和时间旅行功能 |
+| 1050 | {{< alias "emaj" >}} | 5.0.1 | 让数据库的子集具有细粒度日志和时间旅行功能 |
 | 1060 | {{< alias "table_version" >}} | 1.11.1 | PostgreSQL 版本控制表扩展 |
 | 1070 | {{< alias "pg_cron" >}} | 1.6.8 | 定时任务调度器 |
 | 1080 | {{< alias "pg_task" >}} | 3.0.0 | 在特定时间点在后台执行SQL命令 |
@@ -94,7 +94,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 1900 | {{< alias "jev" >}} | 0.2.1 | 通过兼容 Jev 的 API 实现自然语言行过滤、排序和分类 |
 | 1930 | {{< alias "pg4ml" >}} | 2.0 | PG4ML是一个机器学习框架 |
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | PostgresML：用SQL运行机器学习算法并训练模型 |
-| 1950 | {{< alias "pgmnemo" >}} | 0.20.0 | PostgreSQL 单计划多模态智能体记忆扩展 |
+| 1950 | {{< alias "pgmnemo" >}} | 0.21.0 | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 1960 | {{< alias "pgcontext" >}} | 0.3.0 | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 | 1980 | {{< alias "pg_turbovec" >}} | 2.15.0 | 基于 TurboQuant 压缩量化的 PostgreSQL 向量类型与 ANN 索引访问方法。 |
@@ -106,7 +106,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.26.3 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
+| 2100 | {{< alias "pg_search" >}} | 0.26.4 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
 | 2110 | {{< alias "pgroonga" >}} | 4.1.0 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.1.0 | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -120,7 +120,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | PostgreSQL 拼音转写与检索辅助扩展 |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | PostgreSQL 哈萨克语全文检索扩展 |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
-| 2230 | {{< alias "pg_fts" >}} | 1.14.3 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
+| 2230 | {{< alias "pg_fts" >}} | 1.15.1 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | 基于 cppjieba 的中文全文检索分词器 |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | 在 PostgreSQL 中编译 Aho-Corasick 双数组机，实现精确多模式匹配与替换 |
@@ -174,7 +174,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.5 | 数据湖表和 Iceberg 表 |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.5 | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | 基于每个分区的数据范围在规划阶段裁剪分区，并支持非分区键列。 |
-| 2580 | {{< alias "pg_improv" >}} | 0.12.1 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
+| 2580 | {{< alias "pg_improv" >}} | 0.12.2 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
 
 ## FEAT
@@ -498,7 +498,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PG数据库规则检查插件 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | 获取和设置 PostgreSQL 后端的优先级 |
 | 5110 | {{< alias "pg_checksums" >}} | 1.4 | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
-| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.0.0 | 为 PostgreSQL 页面、行、表、索引与数据库提供物理和逻辑校验和。 |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.0.2 | 为 PostgreSQL 页面、行、表、索引与数据库提供物理和逻辑校验和。 |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.6 | 将集群设置为只读 |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | 提供通过标准SQL查询数据库目录集簇的能力 |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4.1 | 查看对象权限并将其与期望状态进行比较 |
@@ -609,7 +609,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7040 | {{< alias "passwordpolicy" >}} | 2.0.6 | 可动态配置的 PostgreSQL 密码复杂度检查扩展。 |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.2 | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7060 | {{< alias "pg_session_jwt" >}} | 0.5.0 | 使用JWT进行会话认证 |
-| 7070 | {{< alias "anon" "pg_anon" >}} | 3.2.3 | 数据匿名化处理工具 |
+| 7070 | {{< alias "anon" "pg_anon" >}} | 3.3.2 | 数据匿名化处理工具 |
 | 7080 | {{< alias "pgsmcrypto" >}} | 0.1.1 | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | 7090 | {{< alias "pg_enigma" >}} | 0.5.0 | PostgreSQL 加密数据类型 |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | 提供审计功能 |

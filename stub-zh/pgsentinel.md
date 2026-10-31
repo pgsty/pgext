@@ -2,12 +2,12 @@
 
 来源：
 
-- [pgsentinel 1.5.1 README](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/README.md)
-- [pgsentinel 1.5.1 发行版](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.5.1)
-- [1.5.1 upgrade SQL](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel--1.5.0--1.5.1.sql)
-- [pgsentinel 控制文件](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel.control)
+- [v1.5.2 README](https://github.com/pgsentinel/pgsentinel/blob/v1.5.2/README.md)
+- [v1.5.2 发布](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.5.2)
+- [1.5.1 至 1.5.2 SQL](https://github.com/pgsentinel/pgsentinel/blob/v1.5.2/src/pgsentinel--1.5.1--1.5.2.sql)
+- [v1.5.2 控制文件](https://github.com/pgsentinel/pgsentinel/blob/v1.5.2/src/pgsentinel.control)
 
-`pgsentinel` 通过在固定时间间隔内采样 `pg_stat_activity` 并将活动与 `pg_stat_statements` 查询统计信息关联来记录活跃会话历史。它最近的样本存储在由后台工作进程管理的共享内存环形缓冲区中。
+`pgsentinel` 1.5.2 通过在固定时间间隔内采样 `pg_stat_activity` 并将活动与 `pg_stat_statements` 查询统计信息关联来记录活跃会话历史。它最近的样本存储在由后台工作进程管理的共享内存环形缓冲区中。1.5.2 版固定了工作进程的搜索路径，为查询补充模式限定，并限制 `ProcEntryArray` 的大小。
 
 ```ini
 shared_preload_libraries = 'pg_stat_statements,pgsentinel'
@@ -89,10 +89,10 @@ ORDER BY 3 DESC;
 
 1.5.0 将 `queryid` 与 `nested_queryid` 分开：PostgreSQL 16 及以上的前者来自活动查询标识，后者来自内层解析语句；更早版本中二者一致。升级会重建历史视图，须先检查依赖视图及授权。
 
-1.5.1 撤销 `get_parsedinfo(int)` 的 PUBLIC 执行权限，因为它能返回其他后端的查询文本及字面量。安装新文件后必须应用 SQL 升级，并仅向确有需要的角色授权：
+1.5.2 保留 1.5.1 的权限加固，并进一步收紧工作进程的搜索路径处理、查询模式限定和 `ProcEntryArray` 大小。安装新文件后必须应用 SQL 升级，并仅向确有需要的角色授权：
 
 ```sql
-ALTER EXTENSION pgsentinel UPDATE TO '1.5.1';
+ALTER EXTENSION pgsentinel UPDATE TO '1.5.2';
 ```
 
 历史记录位于有限的共享内存环形缓冲区中，需要长期保留时应另行导出。采样查询文本可能包含敏感值，还应检查历史视图的访问权限。上游 CI 覆盖 PostgreSQL 10–19。

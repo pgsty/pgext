@@ -1,9 +1,10 @@
-
-
-
 ## Usage
 
-> Sources: [pg_extra_time upstream README](https://github.com/bigsmoke/pg_extra_time), [PGXN pg_extra_time](https://pgxn.org/dist/pg_extra_time/).
+Sources:
+
+- [Official README](https://github.com/bigsmoke/pg_extra_time)
+- [PGXN distribution](https://pgxn.org/dist/pg_extra_time/)
+- [Extension control file](https://github.com/bigsmoke/pg_extra_time/blob/master/pg_extra_time.control)
 
 `pg_extra_time` provides small SQL functions and casts for date/time, interval, and range calculations that are awkward with PostgreSQL core functions alone.
 

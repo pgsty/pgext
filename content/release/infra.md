@@ -6,6 +6,20 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-10-30
+
+| Name         | Old       | New       | Comment                                       |
+|:-------------|:----------|:----------|:----------------------------------------------|
+| alertmanager | 0.34.1    | 0.34.2    | Dual-architecture RPM/DEB                     |
+| cloudflared  | 2026.10.5 | 2026.10.6 | Dual-architecture RPM/DEB                     |
+| code-server  | 4.143.1   | 4.144.0   | Upstream native DEB/RPM bytes preserved       |
+| nodejs       | 24.22.1   | 26.13.0   | Node.js 26 LTS; both architectures            |
+| pig          | 1.10.2    | 1.10.3    | Dual-architecture RPM/DEB                     |
+| stalwart     | 1.0.0     | 1.0.1     | Database migration still required from 0.16.x |
+| xray         | 26.10.21  | 26.10.29  | Dual-architecture RPM/DEB                     |
+{.wide .expand}
+
+
 ## 2026-10-28
 
 | Name                | Old       | New       | Comment |

@@ -1,11 +1,13 @@
-
-
-
 ## Usage
 
-Source: [Official manual](https://postgis.net/documentation/manual/), [current manual HTML](https://postgis.net/docs/postgis-en.html), [release notes](https://postgis.net/docs/release_notes.html), [patch release announcement](https://postgis.net/2026/04/PostGIS-Patch-Releases/)
+Sources:
 
-`postgis` adds spatial types, indexes, and SQL functions to PostgreSQL. The main user-facing split is between `geometry` for planar/projected work and `geography` for spherical calculations on longitude/latitude data.
+- [PostGIS 3.7.0 release](https://postgis.net/2026/10/PostGIS-3.7.0/)
+- [PostGIS 3.7 manual](https://postgis.net/docs/manual-3.7/)
+- [Official release notes](https://postgis.net/docs/release_notes.html)
+- [Current manual HTML](https://postgis.net/docs/postgis-en.html)
+
+`postgis` 3.7.0 adds spatial types, indexes, and SQL functions to PostgreSQL. The main user-facing split is between `geometry` for planar/projected work and `geography` for spherical calculations on longitude/latitude data. This major release requires PostgreSQL 14 or later, GEOS 3.10 or later, and PROJ 6.1 or later.
 
 ### Basic setup
 
@@ -46,4 +48,4 @@ The official manual continues to recommend GiST as the general-purpose spatial i
 ### Caveats
 
 - Use `geometry` in an appropriate projected SRID for planar distances and areas; use `geography` when you need meter-based spheroidal calculations.
-- `PostGIS 3.6.3` is a patch release dated 2026-04-14. The release notes describe fixes and a security hardening change, not a new stub-level usage surface, so this refresh mostly trims and aligns the stub with the current manual.
+- `PostGIS 3.7.0` is a major release. It drops PostgreSQL 12/13 and GEOS versions older than 3.10; review the topology tolerance changes and the move of `address_standardizer` and `tiger_geocoder` packaging before upgrading. After installing matching files, run `SELECT postgis_extensions_upgrade();` where the upstream upgrade procedure requires it.

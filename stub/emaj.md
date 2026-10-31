@@ -2,11 +2,11 @@
 
 Sources:
 
-- [E-Maj 5.0.0 README](https://github.com/dalibo/emaj/blob/v5.0.0/README.md)
-- [E-Maj 5.0.0 changelog](https://github.com/dalibo/emaj/blob/v5.0.0/CHANGES.md)
-- [E-Maj quick start](https://github.com/dalibo/emaj/blob/v5.0.0/docs/en/quickStart.rst)
-- [E-Maj upgrade guide](https://github.com/dalibo/emaj/blob/v5.0.0/docs/en/upgrade.rst)
-- [E-Maj setup guide](https://github.com/dalibo/emaj/blob/v5.0.0/docs/en/setup.rst)
+- [E-Maj 5.0.1 README](https://github.com/dalibo/emaj/blob/v5.0.1/README.md)
+- [E-Maj 5.0.1 changelog](https://github.com/dalibo/emaj/blob/v5.0.1/CHANGES.md)
+- [E-Maj quick start](https://github.com/dalibo/emaj/blob/v5.0.1/docs/en/quickStart.rst)
+- [E-Maj upgrade guide](https://github.com/dalibo/emaj/blob/v5.0.1/docs/en/upgrade.rst)
+- [E-Maj setup guide](https://github.com/dalibo/emaj/blob/v5.0.1/docs/en/setup.rst)
 
 The canonical extension name is `emaj`; E-Maj records table and sequence changes for a coordinated table group and can roll that group back to a named mark. It is useful for repeatable test runs, batch savepoints, change inspection, and targeted recovery, but an E-Maj rollback is not a replacement for PostgreSQL transaction rollback or backup.
 
@@ -58,6 +58,10 @@ The documented extension upgrade preserves logs and can run while groups remain 
 - The PHP command-line clients and `emaj_uninstall.sql` were removed.
 
 Installations made with the standalone SQL script do not have the same in-place extension upgrade path; follow the official delete-and-reinstall procedure.
+
+### Version 5.0.1
+
+E-Maj 5.0.1 fixes a privilege-escalation path in which `emaj_adm` could acquire superuser capability; the `emaj` schema and its contents are now owned by `emaj_adm`. It also fixes errors around `PREPARE TRANSACTION` in `emajParallelRollback.pl`. Apply the normal extension upgrade after installing the matching files.
 
 ### Requirements and Caveats
 

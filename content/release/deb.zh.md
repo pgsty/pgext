@@ -6,6 +6,40 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+## 2026-10-31
+
+| 名称                    | 旧版本                        | 新版本                        | 说明                                                                                                                                |
+|:------------------------|:------------------------------|:------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|
+| emaj                    | 5.0.0                         | 5.0.1                         | PG14-18；仅 RPM；未构建 DEB；DEB 保持 5.0.0                                                                                         |
+| groonga                 | 16.1.4                        | 16.1.5                        | 仅 RPM；未构建 DEB；DEB 保持原有版本                                                                                                |
+| groonga-tokenizer-mecab | 16.1.4                        | 16.1.5                        | 仅 RPM；未构建 DEB；DEB 保持原有版本                                                                                                |
+| pg_anon                 | 3.2.3                         | 3.3.2                         | PG14-18；仅 RPM；未构建 DEB；DEB 保持 3.2.3                                                                                         |
+| pg_fts                  | 1.14.3                        | 1.15.1                        | PG17-18；仅 RPM；未构建 DEB；DEB 保持 1.14.3                                                                                        |
+| pg_improv               | 0.12.1                        | 0.12.2                        | PG15-18；仅 RPM；未构建 DEB；DEB 保持 0.12.1                                                                                        |
+| pg_integrity_checksums  | 2.0.0                         | 2.0.2                         | PG14-18；仅 RPM；未构建 DEB；DEB 保持 2.0.0                                                                                         |
+| pg_search               | 0.26.3                        | 0.26.4                        | PG15-18；仅 RPM；未构建 DEB；DEB 保持 0.26.3                                                                                        |
+| pgmnemo                 | 0.20.0                        | 0.21.0                        | PG17-18；仅 RPM；未构建 DEB；DEB 保持 0.20.0                                                                                        |
+| pgroonga                | 4.1.0                         | 4.1.0                         | 仅 RPM 重建；未构建 DEB；DEB 保持 4.1.0                                                                                             |
+| count_distinct          | 3.0.2                         | 3.0.2                         | PGDG 当前覆盖 EL8/9/10 x86_64/aarch64；本轮变化是 EL8 单元格，PIGSTY 的 Debian/Ubuntu 单元格保持不变。                              |
+| login_hook              | 1.7                           | 1.8                           | PG14-17 的 EL8/9/10 x86_64/aarch64 使用 PGDG 1.8；PG18 仍为 PIGSTY 1.7。                                                            |
+| mobilitydb              | 1.3.1                         | 1.3.1                         | D12/D13/U24/U26 x86_64/aarch64 使用 PGDG 1.3.1；EL 与 U22 仍为 PIGSTY 1.3.1。                                                       |
+| pg_extra_time           | 2.1.0                         | 2.1.0                         | EL8/9/10 x86_64/aarch64 使用 PGDG 2.1.0；Debian/Ubuntu 仍为 PIGSTY 2.1.0。                                                          |
+| pg_hint_plan            | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG 提供 PG14-18 发布线；本轮刷新了 EL8 x86_64/aarch64，当前矩阵的其他操作系统单元格已有覆盖。PG19 仍使用独立的上游 1.9.0 发布线。 |
+| pg_ivm                  | 1.17                          | 1.17                          | D12/D13/U22/U24/U26 x86_64/aarch64 使用 PGDG 1.17；EL 仍为 PIGSTY 1.17。                                                            |
+| pg_net                  | 0.20.5                        | 0.20.5                        | EL10 x86_64/aarch64 新增 PGDG 0.20.5；其他支持单元格继续使用 PIGSTY。                                                               |
+| pg_rewrite              | 2.2                           | 2.2                           | PGDG 2.2 扩展覆盖 EL8/9/10；已有的 D/U PGDG 覆盖保持不变。                                                                          |
+| pg_stat_kcache          | 2.3.1                         | 2.3.2                         | PGDG RPM 元数据与包覆盖统一到 2.3.2，覆盖 EL/D/U x86_64/aarch64。                                                                   |
+| pg_tle                  | 1.5.2                         | 1.5.3                         | PGDG 1.5.3 覆盖 EL8/9/10；本轮新增 EL10 aarch64，D/U 仍使用 PIGSTY 1.5.2。                                                          |
+| pg_utl_smtp             | 1.0                           | 2.0                           | PGDG 2.0 覆盖 EL8/9/10；本轮新增 EL10 aarch64，D/U 仍使用 PIGSTY 1.0。                                                              |
+| pg_wait_sampling        | 1.1.11                        | 1.1.11                        | PGDG 1.1.11 扩展覆盖 EL8/9/10；已有的 D/U PGDG 覆盖保持不变。                                                                       |
+| pgrouting               | 4.0.1                         | 4.0.2                         | PGDG 当前覆盖所列 EL/D/U x86_64/aarch64 单元格；本轮将 D12/D13/U22/U24/U26 更新到 4.0.2。                                           |
+| pgsentinel              | 1.5.1                         | 1.5.2                         | PGDG 的 D/U 软件包更新到 1.5.2；EL 仍为 1.5.1。                                                                                     |
+| postgis                 | 3.6.4                         | 3.7.0                         | PGDG 的 D/U 软件包更新到 3.7.0；EL 仍为 3.6.4。上游主要版本更新；未执行本地重建。                                                   |
+| wal2json                | 2.6                           | 2.7                           | PGDG 的 D/U 与大多数 EL 单元格更新到 2.7；EL10 aarch64 仍为 2.6。                                                                   |
+{.wide .expand}
+
+
+
 ## 2026-10-29
 
 | 名称                   | 旧版本 | 新版本 | 备注                              |

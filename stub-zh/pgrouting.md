@@ -1,11 +1,12 @@
-
-
-
 ## 用法
 
-> [pgRouting - 基于 PostgreSQL 的路径规划](https://github.com/pgRouting/pgrouting)
+来源：
 
-pgRouting 扩展 PostGIS/PostgreSQL 地理空间数据库，提供地理空间路径规划和其他网络分析功能。
+- [v4.0.2 发布](https://github.com/pgRouting/pgrouting/releases/tag/v4.0.2)
+- [v4.0.2 README](https://github.com/pgRouting/pgrouting/blob/v4.0.2/README.md)
+- [官方文档](https://docs.pgrouting.org/latest/en/index.html)
+
+pgRouting 4.0.2 扩展 PostGIS/PostgreSQL 地理空间数据库，提供地理空间路径规划和其他网络分析功能。此版本修复了 `pgr_dijkstraVia` 与 `pgr_withPointsVia` 的分配失败问题，并统一了行驶距离相关函数对负距离的处理。
 
 该库包含以下特性：
 
@@ -71,7 +72,7 @@ SELECT * FROM pgr_dijkstra(
 
 --------
 
-## 函数族
+### 函数族
 
 ### Dijkstra - 最短路径
 
@@ -379,7 +380,7 @@ pgr_full_version()
 
 --------
 
-## 使用几何体
+### 使用几何体
 
 ### 构建路由拓扑
 
@@ -426,7 +427,7 @@ LEFT JOIN edges AS e ON r.edge = e.id;
 
 --------
 
-## 性能优化
+### 性能优化
 
 将查询限制在感兴趣的区域内，减少处理的边数：
 
@@ -442,7 +443,7 @@ SELECT * FROM pgr_dijkstra($$
 
 --------
 
-## 全对最短路径
+### 全对最短路径
 
 用于计算所有顶点对之间的距离：
 

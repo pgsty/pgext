@@ -1,11 +1,13 @@
-
-
-
 ## 用法
 
-来源：[Official manual](https://postgis.net/documentation/manual/)，[current manual HTML](https://postgis.net/docs/postgis-en.html)，[release notes](https://postgis.net/docs/release_notes.html)，[patch release announcement](https://postgis.net/2026/04/PostGIS-Patch-Releases/)
+来源：
 
-`postgis` 为 PostgreSQL 增加空间类型、索引与 SQL 函数。对用户来说，最主要的区分是：`geometry` 用于平面或投影坐标工作，`geography` 用于经纬度数据上的球面计算。
+- [PostGIS 3.7.0 发布](https://postgis.net/2026/10/PostGIS-3.7.0/)
+- [PostGIS 3.7 手册](https://postgis.net/docs/manual-3.7/)
+- [官方发布说明](https://postgis.net/docs/release_notes.html)
+- [当前手册 HTML](https://postgis.net/docs/postgis-en.html)
+
+`postgis` 3.7.0 为 PostgreSQL 增加空间类型、索引与 SQL 函数。对用户来说，最主要的区分是：`geometry` 用于平面或投影坐标工作，`geography` 用于经纬度数据上的球面计算。此主要版本要求 PostgreSQL 14 及以上、GEOS 3.10 及以上以及 PROJ 6.1 及以上。
 
 ### 基本设置
 
@@ -46,4 +48,4 @@ CREATE INDEX idx_sensors_geom ON sensors USING GIST (geom);
 ### 注意事项
 
 - 进行平面距离与面积计算时，应在合适的投影 SRID 中使用 `geometry`；需要以米为单位的球面计算时，应使用 `geography`。
-- `PostGIS 3.6.3` 是一个发布日期为 `2026-04-14` 的补丁版本。release notes 描述的是修复项与一项安全加固变更，而不是新的 stub 级使用接口，因此这次刷新主要是裁剪并对齐当前手册。
+- `PostGIS 3.7.0` 是一个主要版本，移除了对 PostgreSQL 12/13 以及低于 3.10 的 GEOS 的支持；升级前应检查拓扑容差语义变化，以及 `address_standardizer` 和 `tiger_geocoder` 软件包迁移。安装匹配文件后，按上游升级流程的要求执行 `SELECT postgis_extensions_upgrade();`。

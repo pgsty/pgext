@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5115** | {{< badge content="pg_integrity_checksums" link="https://github.com/VictorNagibator/pg_integrity_checksums" >}} | {{< ext "pg_integrity_checksums" >}} | `2.0.0` | {{< category "ADMIN" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **5115** | {{< badge content="pg_integrity_checksums" link="https://github.com/VictorNagibator/pg_integrity_checksums" >}} | {{< ext "pg_integrity_checksums" >}} | `2.0.2` | {{< category "ADMIN" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,27 +29,27 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "amcheck" >}} {{< ext "pg_checksums" >}} |
 
-> [!Note] Former pg_checksums SQL extension, unrelated to the core/PGDG utility. Old/new extensions cannot share a schema; follow MIGRATION.md. Superuser install; relation checks enforce SELECT and reject RLS; database checks require superuser. Logical checksums compare content; physical checksums depend on storage. PG14-18.
+> [!Note] Former pg_checksums SQL extension, unrelated to the core/PGDG utility. Old/new extensions cannot share a schema; follow MIGRATION.md. Superuser install; relation checks enforce SELECT and reject RLS; database checks require superuser. Logical checksums compare content; physical checksums depend on storage. PG14-18. 2.0.2 adds PostgreSQL 19 API compatibility without SQL object changes.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_integrity_checksums` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "pg_integrity_checksums_18" "green" >}} {{< bg "17" "pg_integrity_checksums_17" "green" >}} {{< bg "16" "pg_integrity_checksums_16" "green" >}} {{< bg "15" "pg_integrity_checksums_15" "green" >}} {{< bg "14" "pg_integrity_checksums_14" "green" >}} | `pg_integrity_checksums_$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_integrity_checksums` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.2` | {{< bg "18" "pg_integrity_checksums_18" "green" >}} {{< bg "17" "pg_integrity_checksums_17" "green" >}} {{< bg "16" "pg_integrity_checksums_16" "green" >}} {{< bg "15" "pg_integrity_checksums_15" "green" >}} {{< bg "14" "pg_integrity_checksums_14" "green" >}} | `pg_integrity_checksums_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "postgresql-18-pg-integrity-checksums" "green" >}} {{< bg "17" "postgresql-17-pg-integrity-checksums" "green" >}} {{< bg "16" "postgresql-16-pg-integrity-checksums" "green" >}} {{< bg "15" "postgresql-15-pg-integrity-checksums" "green" >}} {{< bg "14" "postgresql-14-pg-integrity-checksums" "green" >}} | `postgresql-$v-pg-integrity-checksums` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.2" "pg_integrity_checksums_14 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pg-integrity-checksums : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pg-integrity-checksums : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pg-integrity-checksums : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pg-integrity-checksums : AVAIL 1" "green" >}} |
@@ -68,12 +68,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_integrity_checksums_18` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 89.6 KiB | [pg_integrity_checksums_18-2.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_18-2.0.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_integrity_checksums_18` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 87.2 KiB | [pg_integrity_checksums_18-2.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_18-2.0.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_integrity_checksums_18` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 91.1 KiB | [pg_integrity_checksums_18-2.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_18-2.0.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_integrity_checksums_18` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 89.5 KiB | [pg_integrity_checksums_18-2.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_18-2.0.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_integrity_checksums_18` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 91.6 KiB | [pg_integrity_checksums_18-2.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_18-2.0.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_integrity_checksums_18` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 90.1 KiB | [pg_integrity_checksums_18-2.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_18-2.0.0-1PGSTY.el10.aarch64.rpm) |
+| `pg_integrity_checksums_18` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 93.3 KiB | [pg_integrity_checksums_18-2.0.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_18-2.0.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_integrity_checksums_18` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 90.9 KiB | [pg_integrity_checksums_18-2.0.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_18-2.0.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_integrity_checksums_18` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 94.5 KiB | [pg_integrity_checksums_18-2.0.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_18-2.0.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_integrity_checksums_18` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 93.3 KiB | [pg_integrity_checksums_18-2.0.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_18-2.0.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_integrity_checksums_18` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 95.2 KiB | [pg_integrity_checksums_18-2.0.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_18-2.0.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_integrity_checksums_18` | `2.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 93.8 KiB | [pg_integrity_checksums_18-2.0.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_18-2.0.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pg-integrity-checksums` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 82.6 KiB | [postgresql-18-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-18-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-integrity-checksums` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 81.1 KiB | [postgresql-18-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-18-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-integrity-checksums` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 82.7 KiB | [postgresql-18-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-integrity-checksums/postgresql-18-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb) |
@@ -91,12 +91,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_integrity_checksums_17` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 89.4 KiB | [pg_integrity_checksums_17-2.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_17-2.0.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_integrity_checksums_17` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 87.0 KiB | [pg_integrity_checksums_17-2.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_17-2.0.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_integrity_checksums_17` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 90.8 KiB | [pg_integrity_checksums_17-2.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_17-2.0.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_integrity_checksums_17` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 89.2 KiB | [pg_integrity_checksums_17-2.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_17-2.0.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_integrity_checksums_17` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 91.4 KiB | [pg_integrity_checksums_17-2.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_17-2.0.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_integrity_checksums_17` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 89.8 KiB | [pg_integrity_checksums_17-2.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_17-2.0.0-1PGSTY.el10.aarch64.rpm) |
+| `pg_integrity_checksums_17` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 93.1 KiB | [pg_integrity_checksums_17-2.0.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_17-2.0.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_integrity_checksums_17` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 90.8 KiB | [pg_integrity_checksums_17-2.0.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_17-2.0.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_integrity_checksums_17` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 94.3 KiB | [pg_integrity_checksums_17-2.0.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_17-2.0.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_integrity_checksums_17` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 93.0 KiB | [pg_integrity_checksums_17-2.0.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_17-2.0.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_integrity_checksums_17` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 94.9 KiB | [pg_integrity_checksums_17-2.0.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_17-2.0.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_integrity_checksums_17` | `2.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 93.6 KiB | [pg_integrity_checksums_17-2.0.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_17-2.0.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-integrity-checksums` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 82.4 KiB | [postgresql-17-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-17-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-integrity-checksums` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 80.9 KiB | [postgresql-17-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-17-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-integrity-checksums` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 82.5 KiB | [postgresql-17-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-integrity-checksums/postgresql-17-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb) |
@@ -114,12 +114,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_integrity_checksums_16` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 90.1 KiB | [pg_integrity_checksums_16-2.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_16-2.0.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_integrity_checksums_16` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 87.6 KiB | [pg_integrity_checksums_16-2.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_16-2.0.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_integrity_checksums_16` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 91.3 KiB | [pg_integrity_checksums_16-2.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_16-2.0.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_integrity_checksums_16` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 89.8 KiB | [pg_integrity_checksums_16-2.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_16-2.0.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_integrity_checksums_16` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 92.0 KiB | [pg_integrity_checksums_16-2.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_16-2.0.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_integrity_checksums_16` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 90.4 KiB | [pg_integrity_checksums_16-2.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_16-2.0.0-1PGSTY.el10.aarch64.rpm) |
+| `pg_integrity_checksums_16` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 93.7 KiB | [pg_integrity_checksums_16-2.0.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_16-2.0.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_integrity_checksums_16` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 91.3 KiB | [pg_integrity_checksums_16-2.0.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_16-2.0.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_integrity_checksums_16` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 94.7 KiB | [pg_integrity_checksums_16-2.0.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_16-2.0.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_integrity_checksums_16` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 93.6 KiB | [pg_integrity_checksums_16-2.0.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_16-2.0.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_integrity_checksums_16` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 95.4 KiB | [pg_integrity_checksums_16-2.0.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_16-2.0.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_integrity_checksums_16` | `2.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 94.2 KiB | [pg_integrity_checksums_16-2.0.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_16-2.0.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-integrity-checksums` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 82.9 KiB | [postgresql-16-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-16-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-integrity-checksums` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 81.4 KiB | [postgresql-16-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-16-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-integrity-checksums` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 83.0 KiB | [postgresql-16-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-integrity-checksums/postgresql-16-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb) |
@@ -137,12 +137,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_integrity_checksums_15` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 89.4 KiB | [pg_integrity_checksums_15-2.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_15-2.0.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_integrity_checksums_15` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 87.1 KiB | [pg_integrity_checksums_15-2.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_15-2.0.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_integrity_checksums_15` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 90.5 KiB | [pg_integrity_checksums_15-2.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_15-2.0.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_integrity_checksums_15` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 89.1 KiB | [pg_integrity_checksums_15-2.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_15-2.0.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_integrity_checksums_15` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 91.4 KiB | [pg_integrity_checksums_15-2.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_15-2.0.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_integrity_checksums_15` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 89.9 KiB | [pg_integrity_checksums_15-2.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_15-2.0.0-1PGSTY.el10.aarch64.rpm) |
+| `pg_integrity_checksums_15` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 93.2 KiB | [pg_integrity_checksums_15-2.0.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_15-2.0.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_integrity_checksums_15` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 90.8 KiB | [pg_integrity_checksums_15-2.0.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_15-2.0.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_integrity_checksums_15` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 94.2 KiB | [pg_integrity_checksums_15-2.0.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_15-2.0.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_integrity_checksums_15` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 93.0 KiB | [pg_integrity_checksums_15-2.0.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_15-2.0.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_integrity_checksums_15` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 94.9 KiB | [pg_integrity_checksums_15-2.0.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_15-2.0.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_integrity_checksums_15` | `2.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 93.5 KiB | [pg_integrity_checksums_15-2.0.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_15-2.0.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-integrity-checksums` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 82.4 KiB | [postgresql-15-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-15-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-integrity-checksums` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.9 KiB | [postgresql-15-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-15-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-integrity-checksums` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 82.8 KiB | [postgresql-15-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-integrity-checksums/postgresql-15-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb) |
@@ -160,12 +160,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_integrity_checksums_14` | `2.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 89.7 KiB | [pg_integrity_checksums_14-2.0.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_14-2.0.0-1PGSTY.el8.x86_64.rpm) |
-| `pg_integrity_checksums_14` | `2.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 87.6 KiB | [pg_integrity_checksums_14-2.0.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_14-2.0.0-1PGSTY.el8.aarch64.rpm) |
-| `pg_integrity_checksums_14` | `2.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 91.3 KiB | [pg_integrity_checksums_14-2.0.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_14-2.0.0-1PGSTY.el9.x86_64.rpm) |
-| `pg_integrity_checksums_14` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 89.9 KiB | [pg_integrity_checksums_14-2.0.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_14-2.0.0-1PGSTY.el9.aarch64.rpm) |
-| `pg_integrity_checksums_14` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 91.4 KiB | [pg_integrity_checksums_14-2.0.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_14-2.0.0-1PGSTY.el10.x86_64.rpm) |
-| `pg_integrity_checksums_14` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 90.5 KiB | [pg_integrity_checksums_14-2.0.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_14-2.0.0-1PGSTY.el10.aarch64.rpm) |
+| `pg_integrity_checksums_14` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 93.4 KiB | [pg_integrity_checksums_14-2.0.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_integrity_checksums_14-2.0.2-1PGSTY.el8.x86_64.rpm) |
+| `pg_integrity_checksums_14` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 91.3 KiB | [pg_integrity_checksums_14-2.0.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_integrity_checksums_14-2.0.2-1PGSTY.el8.aarch64.rpm) |
+| `pg_integrity_checksums_14` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 94.5 KiB | [pg_integrity_checksums_14-2.0.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_integrity_checksums_14-2.0.2-1PGSTY.el9.x86_64.rpm) |
+| `pg_integrity_checksums_14` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 93.6 KiB | [pg_integrity_checksums_14-2.0.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_integrity_checksums_14-2.0.2-1PGSTY.el9.aarch64.rpm) |
+| `pg_integrity_checksums_14` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 95.2 KiB | [pg_integrity_checksums_14-2.0.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_integrity_checksums_14-2.0.2-1PGSTY.el10.x86_64.rpm) |
+| `pg_integrity_checksums_14` | `2.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 94.2 KiB | [pg_integrity_checksums_14-2.0.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_integrity_checksums_14-2.0.2-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-integrity-checksums` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 82.5 KiB | [postgresql-14-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-14-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-integrity-checksums` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 80.7 KiB | [postgresql-14-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-integrity-checksums/postgresql-14-pg-integrity-checksums_2.0.0-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-integrity-checksums` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 82.7 KiB | [postgresql-14-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-integrity-checksums/postgresql-14-pg-integrity-checksums_2.0.0-1PGSTY~trixie_amd64.deb) |
@@ -184,7 +184,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/VictorNagibator/pg_integrity_checksums" title="Repository" icon="github" subtitle="github.com/VictorNagibator/pg_integrity_checksums" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_integrity_checksums-2.0.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_integrity_checksums-2.0.2.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -225,18 +225,22 @@ CREATE EXTENSION pg_integrity_checksums;
 
 Sources:
 
-- [PGXN metadata](https://api.pgxn.org/dist/pg_integrity_checksums/2.0.0/META.json)
-- [Official README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.0/README.md)
-- [Control file](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.0/pg_integrity_checksums.control)
-- [Migration guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.0/MIGRATION.md)
+- [PGXN metadata](https://api.pgxn.org/dist/pg_integrity_checksums/2.0.2/META.json)
+- [Official README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/README.md)
+- [Control file](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/pg_integrity_checksums.control)
+- [Migration guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/MIGRATION.md)
 
-`pg_integrity_checksums` computes physical and logical checksums for PostgreSQL pages, cells, tuples, tables, indexes and databases. It is a C extension for PostgreSQL 12–18 and reads relation storage directly, so installation and database-wide checks require a superuser.
+`pg_integrity_checksums` computes physical and logical checksums for PostgreSQL pages, cells, tuples, tables, indexes and databases. It is a C extension for PostgreSQL 12–19 upstream; Pigsty packages target PostgreSQL 14–18 and reads relation storage directly, so installation and database-wide checks require a superuser.
 
 ### Install and migrate
 
 ```sql
 CREATE EXTENSION pg_integrity_checksums;
 ```
+
+### Version 2.0.2
+
+Version 2.0.2 adds PostgreSQL 19 API compatibility by adapting the array iterator and table-scan calls. It changes no SQL objects, and the 2.0.1-to-2.0.2 SQL upgrade is a no-op. Pigsty builds cover PostgreSQL 14–18.
 
 Version 2.0.0 is the renamed continuation of the earlier `pg_checksums` extension. PostgreSQL has no `ALTER EXTENSION ... RENAME`; review dependent objects, drop the old extension, create the new one, and change the GUC prefix before using the new name:
 

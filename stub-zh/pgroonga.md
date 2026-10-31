@@ -5,10 +5,10 @@
 - [Release 4.1.0](https://github.com/pgroonga/pgroonga/releases/tag/4.1.0)
 - [Control](https://github.com/pgroonga/pgroonga/blob/47d0252f76dccbdc2ebeee9ed6cf941dd9552bcc/pgroonga.control)
 
-- [Version 4.0.9 SQL](https://github.com/pgroonga/pgroonga/blob/4.0.9/data/pgroonga.sql)
-- [Version 4.0.9 control](https://github.com/pgroonga/pgroonga/blob/4.0.9/pgroonga.control)
+- [Version 4.1.0 SQL](https://github.com/pgroonga/pgroonga/blob/4.1.0/data/pgroonga.sql)
+- [Version 4.1.0 control](https://github.com/pgroonga/pgroonga/blob/4.1.0/pgroonga.control)
 - [Official tutorial](https://pgroonga.github.io/tutorial/)
-- [Version 4.0.9 release](https://github.com/pgroonga/pgroonga/releases/tag/4.0.9)
+- [Version 4.1.0 release](https://github.com/pgroonga/pgroonga/releases/tag/4.1.0)
 - [Upgrade guidance](https://pgroonga.github.io/upgrade/)
 
 `pgroonga` 4.1.0 使用 Groonga 索引实现多语言全文检索，安装 `pgroonga` 访问方法及 SQL 操作符，普通使用不需要共享预加载。
@@ -37,7 +37,7 @@ ORDER BY score DESC;
 
 ### 维护与权限
 
-4.0.9 控制文件未声明受信任安装或可迁移模式，不应假定普通用户能安装扩展或将其移到其他模式。索引创建和查询仍需相应的表权限。应使扩展及 Groonga 库与目标 PostgreSQL 构建匹配，并在替换二进制前遵循上游升级说明。
+4.1.0 控制文件未声明受信任安装或可迁移模式，不应假定普通用户能安装扩展或将其移到其他模式。索引创建和查询仍需相应的表权限。应使扩展及 Groonga 库与目标 PostgreSQL 构建匹配，并在替换二进制前遵循上游升级说明。
 
 PGroonga 除表数据外还管理派生索引文件，应据此规划磁盘容量和备份恢复流程。适用时使用 REINDEX 修复索引。独立的 `pgroonga_database` 模块用于恢复损坏的内部 Groonga 数据库，正常搜索并不需要它。在生产环境中，不要为了强制使用索引而全局关闭顺序扫描。
 
@@ -51,4 +51,4 @@ MeCab 分词还需要匹配的 Groonga 分词插件和词典。仅安装 Postgre
 
 ### 4.1.0 版本
 
-4.1.0 修复其他会话在 CREATE INDEX 提交前执行 VACUUM/ANALYZE 导致索引数据被移除的问题，已经受影响的索引可能需要 REINDEX。直接调用 Groonga 时，搭配 Groonga 16.1.3 或更新版本可在 `post_filter` 中使用 `pgroonga_tuple_is_alive`。这次源码发布不改变另行记录的 Pigsty 依赖栈限制。
+4.1.0 修复其他会话在 CREATE INDEX 提交前执行 VACUUM/ANALYZE 导致索引数据被移除的问题，已经受影响的索引可能需要 REINDEX。直接调用 Groonga 时，搭配 Groonga 16.1.5 或更新版本可在 `post_filter` 中使用 `pgroonga_tuple_is_alive`。这次源码发布不改变另行记录的 Pigsty 依赖栈限制。

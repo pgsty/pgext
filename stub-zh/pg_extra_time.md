@@ -1,9 +1,10 @@
-
-
-
 ## 用法
 
-> 来源：[pg_extra_time upstream README](https://github.com/bigsmoke/pg_extra_time)、[PGXN pg_extra_time](https://pgxn.org/dist/pg_extra_time/)。
+来源：
+
+- [官方 README](https://github.com/bigsmoke/pg_extra_time)
+- [PGXN 分发页](https://pgxn.org/dist/pg_extra_time/)
+- [扩展控制文件](https://github.com/bigsmoke/pg_extra_time/blob/master/pg_extra_time.control)
 
 `pg_extra_time` 提供一组小型 SQL 函数和类型转换，用于处理 PostgreSQL 核心函数本身不太方便表达的日期/时间、interval 和 range 计算。
 

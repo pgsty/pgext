@@ -45,8 +45,8 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.8.0" "pg_hint_plan_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "pg_hint_plan_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.6.2" "pg_hint_plan_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.3" "pg_hint_plan_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.4" "pg_hint_plan_14 : AVAIL 3" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.8.0" "pg_hint_plan_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "pg_hint_plan_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.6.2" "pg_hint_plan_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.3" "pg_hint_plan_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.4" "pg_hint_plan_14 : AVAIL 3" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.8.1" "pg_hint_plan_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.2" "pg_hint_plan_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.3" "pg_hint_plan_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.5.4" "pg_hint_plan_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.4.5" "pg_hint_plan_14 : AVAIL 4" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.8.1" "pg_hint_plan_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7.2" "pg_hint_plan_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.3" "pg_hint_plan_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.5.4" "pg_hint_plan_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.4.5" "pg_hint_plan_14 : AVAIL 4" "blue" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.8.1" "pg_hint_plan_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7.2" "pg_hint_plan_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.6.3" "pg_hint_plan_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.5.4" "pg_hint_plan_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.4.5" "pg_hint_plan_14 : AVAIL 5" "blue" >}} |
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.8.1" "pg_hint_plan_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7.2" "pg_hint_plan_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.6.3" "pg_hint_plan_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.5.4" "pg_hint_plan_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.4.5" "pg_hint_plan_14 : AVAIL 5" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.8.1" "pg_hint_plan_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7.2" "pg_hint_plan_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.6.3" "pg_hint_plan_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.5.4" "pg_hint_plan_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.4.5" "pg_hint_plan_14 : AVAIL 4" "blue" >}} |
@@ -69,7 +69,9 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_hint_plan_18` | `1.8.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 57.7 KiB | [pg_hint_plan_18-1.8.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_hint_plan_18-1.8.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_hint_plan_18` | `1.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.3 KiB | [pg_hint_plan_18-1.8.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_hint_plan_18-1.8.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_hint_plan_18` | `1.8.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 54.3 KiB | [pg_hint_plan_18-1.8.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_hint_plan_18-1.8.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_hint_plan_18` | `1.8.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 51.7 KiB | [pg_hint_plan_18-1.8.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_hint_plan_18-1.8.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_18` | `1.8.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 56.1 KiB | [pg_hint_plan_18-1.8.1-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_hint_plan_18-1.8.1-1PGDG.rhel9.8.x86_64.rpm) |
 | `pg_hint_plan_18` | `1.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.6 KiB | [pg_hint_plan_18-1.8.0-5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_hint_plan_18-1.8.0-5PGDG.rhel9.8.x86_64.rpm) |
@@ -110,8 +112,10 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_hint_plan_17` | `1.7.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.4 KiB | [pg_hint_plan_17-1.7.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_hint_plan_17-1.7.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_hint_plan_17` | `1.7.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 53.2 KiB | [pg_hint_plan_17-1.7.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_hint_plan_17-1.7.1-1PGDG.rhel8.x86_64.rpm) |
 | `pg_hint_plan_17` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 51.4 KiB | [pg_hint_plan_17-1.7.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_hint_plan_17-1.7.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_hint_plan_17` | `1.7.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 52.2 KiB | [pg_hint_plan_17-1.7.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_hint_plan_17-1.7.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_hint_plan_17` | `1.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 50.0 KiB | [pg_hint_plan_17-1.7.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_hint_plan_17-1.7.1-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_17` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 48.2 KiB | [pg_hint_plan_17-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_hint_plan_17-1.7.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_17` | `1.7.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.0 KiB | [pg_hint_plan_17-1.7.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_hint_plan_17-1.7.2-1PGDG.rhel9.8.x86_64.rpm) |
@@ -157,9 +161,11 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_hint_plan_16` | `1.6.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.5 KiB | [pg_hint_plan_16-1.6.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_hint_plan_16-1.6.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_hint_plan_16` | `1.6.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 45.8 KiB | [pg_hint_plan_16-1.6.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_hint_plan_16-1.6.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_hint_plan_16` | `1.6.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.2 KiB | [pg_hint_plan_16-1.6.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_hint_plan_16-1.6.1-1PGDG.rhel8.x86_64.rpm) |
 | `pg_hint_plan_16` | `1.6.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 42.6 KiB | [pg_hint_plan_16-1.6.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_hint_plan_16-1.6.0-1PGDG.rhel8.x86_64.rpm) |
+| `pg_hint_plan_16` | `1.6.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 46.1 KiB | [pg_hint_plan_16-1.6.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_hint_plan_16-1.6.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_hint_plan_16` | `1.6.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 43.4 KiB | [pg_hint_plan_16-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_hint_plan_16-1.6.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_16` | `1.6.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 41.8 KiB | [pg_hint_plan_16-1.6.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_hint_plan_16-1.6.1-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_16` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 40.2 KiB | [pg_hint_plan_16-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_hint_plan_16-1.6.0-1PGDG.rhel8.aarch64.rpm) |
@@ -208,9 +214,11 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_hint_plan_15` | `1.5.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 47.8 KiB | [pg_hint_plan_15-1.5.4-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_hint_plan_15-1.5.4-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_hint_plan_15` | `1.5.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 45.3 KiB | [pg_hint_plan_15-1.5.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_hint_plan_15-1.5.3-1PGDG.rhel8.x86_64.rpm) |
 | `pg_hint_plan_15` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 43.7 KiB | [pg_hint_plan_15-1.5.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_hint_plan_15-1.5.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_hint_plan_15` | `1.5.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 48.9 KiB | [pg_hint_plan_15-1.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_hint_plan_15-1.5.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_hint_plan_15` | `1.5.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.5 KiB | [pg_hint_plan_15-1.5.4-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_hint_plan_15-1.5.4-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_hint_plan_15` | `1.5.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 43.0 KiB | [pg_hint_plan_15-1.5.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_hint_plan_15-1.5.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_15` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 41.5 KiB | [pg_hint_plan_15-1.5.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_hint_plan_15-1.5.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_15` | `1.5.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 46.6 KiB | [pg_hint_plan_15-1.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_hint_plan_15-1.5.1-1PGDG.rhel8.aarch64.rpm) |
@@ -259,9 +267,11 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_hint_plan_14` | `1.4.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 47.0 KiB | [pg_hint_plan_14-1.4.5-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_hint_plan_14-1.4.5-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_hint_plan_14` | `1.4.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.6 KiB | [pg_hint_plan_14-1.4.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_hint_plan_14-1.4.4-1PGDG.rhel8.x86_64.rpm) |
 | `pg_hint_plan_14` | `1.4.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 43.3 KiB | [pg_hint_plan_14-1.4.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_hint_plan_14-1.4.3-1PGDG.rhel8.x86_64.rpm) |
 | `pg_hint_plan_14` | `1.4.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 42.0 KiB | [pg_hint_plan_14-1.4.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_hint_plan_14-1.4.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_hint_plan_14` | `1.4.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 44.6 KiB | [pg_hint_plan_14-1.4.5-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_hint_plan_14-1.4.5-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_hint_plan_14` | `1.4.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 42.3 KiB | [pg_hint_plan_14-1.4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_hint_plan_14-1.4.4-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_14` | `1.4.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 41.0 KiB | [pg_hint_plan_14-1.4.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_hint_plan_14-1.4.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_hint_plan_14` | `1.4.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 39.7 KiB | [pg_hint_plan_14-1.4.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_hint_plan_14-1.4.2-1PGDG.rhel8.aarch64.rpm) |

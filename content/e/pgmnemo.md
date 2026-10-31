@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1950** | {{< badge content="pgmnemo" link="https://github.com/pgmnemo/pgmnemo" >}} | {{< ext "pgmnemo" >}} | `0.20.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+| **1950** | {{< badge content="pgmnemo" link="https://github.com/pgmnemo/pgmnemo" >}} | {{< ext "pgmnemo" >}} | `0.21.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,27 +31,27 @@ page_width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "pgcontext" >}} {{< ext "vector" >}} {{< ext "vectorize" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "pg_summarize" >}} {{< ext "provsql" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} |
 
-> [!Note] pgvector>=0.7; 0.20 changes recall_hybrid()/stats() returns; expansion defaults off; mark_recalled() updates recency.
+> [!Note] pgvector>=0.7; 0.20 changes recall_hybrid()/stats() returns; expansion defaults off; mark_recalled() updates recency. 0.21.0 registers corpus tables and sequences for pg_dump.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgmnemo` | `vector` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.0` | {{< bg "18" "pgmnemo_18" "green" >}} {{< bg "17" "pgmnemo_17" "green" >}} {{< bg "16" "pgmnemo_16" "red" >}} {{< bg "15" "pgmnemo_15" "red" >}} {{< bg "14" "pgmnemo_14" "red" >}} | `pgmnemo_$v` | `pgvector_$v` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.21.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgmnemo` | `vector` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.21.0` | {{< bg "18" "pgmnemo_18" "green" >}} {{< bg "17" "pgmnemo_17" "green" >}} {{< bg "16" "pgmnemo_16" "red" >}} {{< bg "15" "pgmnemo_15" "red" >}} {{< bg "14" "pgmnemo_14" "red" >}} | `pgmnemo_$v` | `pgvector_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.0` | {{< bg "18" "postgresql-18-pgmnemo" "green" >}} {{< bg "17" "postgresql-17-pgmnemo" "green" >}} {{< bg "16" "postgresql-16-pgmnemo" "red" >}} {{< bg "15" "postgresql-15-pgmnemo" "red" >}} {{< bg "14" "postgresql-14-pgmnemo" "red" >}} | `postgresql-$v-pgmnemo` | `postgresql-$v-pgvector` |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.16.1" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.21.0" "pgmnemo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "pgmnemo_14 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-18-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-17-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-16-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-15-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-14-pgmnemo : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-18-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-17-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-16-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-15-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-14-pgmnemo : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-18-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.16.1" "postgresql-17-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-16-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-15-pgmnemo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.1" "postgresql-14-pgmnemo : AVAIL 1" "green" >}} |
@@ -70,17 +70,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmnemo_18` | `0.16.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 195.3 KiB | [pgmnemo_18-0.16.1-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmnemo_18-0.16.1-1PIGSTY.el8.noarch.rpm) |
+| `pgmnemo_18` | `0.21.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 227.5 KiB | [pgmnemo_18-0.21.0-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmnemo_18-0.21.0-1PGSTY.el8.noarch.rpm) |
 | `pgmnemo_18` | `0.15.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 187.2 KiB | [pgmnemo_18-0.15.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmnemo_18-0.15.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmnemo_18` | `0.16.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 195.3 KiB | [pgmnemo_18-0.16.1-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmnemo_18-0.16.1-1PIGSTY.el8.noarch.rpm) |
+| `pgmnemo_18` | `0.21.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 227.5 KiB | [pgmnemo_18-0.21.0-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmnemo_18-0.21.0-1PGSTY.el8.noarch.rpm) |
 | `pgmnemo_18` | `0.15.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 187.2 KiB | [pgmnemo_18-0.15.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmnemo_18-0.15.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmnemo_18` | `0.16.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 176.1 KiB | [pgmnemo_18-0.16.1-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmnemo_18-0.16.1-1PIGSTY.el9.noarch.rpm) |
+| `pgmnemo_18` | `0.21.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 206.1 KiB | [pgmnemo_18-0.21.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmnemo_18-0.21.0-1PGSTY.el9.noarch.rpm) |
 | `pgmnemo_18` | `0.15.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 163.4 KiB | [pgmnemo_18-0.15.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmnemo_18-0.15.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmnemo_18` | `0.16.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 176.0 KiB | [pgmnemo_18-0.16.1-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmnemo_18-0.16.1-1PIGSTY.el9.noarch.rpm) |
+| `pgmnemo_18` | `0.21.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 206.1 KiB | [pgmnemo_18-0.21.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmnemo_18-0.21.0-1PGSTY.el9.noarch.rpm) |
 | `pgmnemo_18` | `0.15.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 163.3 KiB | [pgmnemo_18-0.15.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmnemo_18-0.15.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmnemo_18` | `0.16.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 176.3 KiB | [pgmnemo_18-0.16.1-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmnemo_18-0.16.1-1PIGSTY.el10.noarch.rpm) |
+| `pgmnemo_18` | `0.21.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 206.4 KiB | [pgmnemo_18-0.21.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmnemo_18-0.21.0-1PGSTY.el10.noarch.rpm) |
 | `pgmnemo_18` | `0.15.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 163.6 KiB | [pgmnemo_18-0.15.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmnemo_18-0.15.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgmnemo_18` | `0.16.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 176.3 KiB | [pgmnemo_18-0.16.1-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmnemo_18-0.16.1-1PIGSTY.el10.noarch.rpm) |
+| `pgmnemo_18` | `0.21.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 206.4 KiB | [pgmnemo_18-0.21.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmnemo_18-0.21.0-1PGSTY.el10.noarch.rpm) |
 | `pgmnemo_18` | `0.15.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 163.5 KiB | [pgmnemo_18-0.15.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmnemo_18-0.15.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pgmnemo` | `0.16.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 156.8 KiB | [postgresql-18-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmnemo/postgresql-18-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb) |
 | `postgresql-18-pgmnemo` | `0.16.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 156.8 KiB | [postgresql-18-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmnemo/postgresql-18-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb) |
@@ -99,17 +99,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmnemo_17` | `0.16.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 195.3 KiB | [pgmnemo_17-0.16.1-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmnemo_17-0.16.1-1PIGSTY.el8.noarch.rpm) |
+| `pgmnemo_17` | `0.21.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 227.5 KiB | [pgmnemo_17-0.21.0-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmnemo_17-0.21.0-1PGSTY.el8.noarch.rpm) |
 | `pgmnemo_17` | `0.15.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 187.2 KiB | [pgmnemo_17-0.15.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmnemo_17-0.15.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmnemo_17` | `0.16.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 195.3 KiB | [pgmnemo_17-0.16.1-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmnemo_17-0.16.1-1PIGSTY.el8.noarch.rpm) |
+| `pgmnemo_17` | `0.21.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 227.5 KiB | [pgmnemo_17-0.21.0-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmnemo_17-0.21.0-1PGSTY.el8.noarch.rpm) |
 | `pgmnemo_17` | `0.15.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 187.2 KiB | [pgmnemo_17-0.15.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmnemo_17-0.15.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmnemo_17` | `0.16.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 176.0 KiB | [pgmnemo_17-0.16.1-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmnemo_17-0.16.1-1PIGSTY.el9.noarch.rpm) |
+| `pgmnemo_17` | `0.21.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 206.1 KiB | [pgmnemo_17-0.21.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmnemo_17-0.21.0-1PGSTY.el9.noarch.rpm) |
 | `pgmnemo_17` | `0.15.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 163.4 KiB | [pgmnemo_17-0.15.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmnemo_17-0.15.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmnemo_17` | `0.16.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 176.0 KiB | [pgmnemo_17-0.16.1-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmnemo_17-0.16.1-1PIGSTY.el9.noarch.rpm) |
+| `pgmnemo_17` | `0.21.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 206.1 KiB | [pgmnemo_17-0.21.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmnemo_17-0.21.0-1PGSTY.el9.noarch.rpm) |
 | `pgmnemo_17` | `0.15.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 163.3 KiB | [pgmnemo_17-0.15.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmnemo_17-0.15.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmnemo_17` | `0.16.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 176.3 KiB | [pgmnemo_17-0.16.1-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmnemo_17-0.16.1-1PIGSTY.el10.noarch.rpm) |
+| `pgmnemo_17` | `0.21.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 206.4 KiB | [pgmnemo_17-0.21.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmnemo_17-0.21.0-1PGSTY.el10.noarch.rpm) |
 | `pgmnemo_17` | `0.15.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 163.6 KiB | [pgmnemo_17-0.15.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmnemo_17-0.15.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgmnemo_17` | `0.16.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 176.3 KiB | [pgmnemo_17-0.16.1-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmnemo_17-0.16.1-1PIGSTY.el10.noarch.rpm) |
+| `pgmnemo_17` | `0.21.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 206.4 KiB | [pgmnemo_17-0.21.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmnemo_17-0.21.0-1PGSTY.el10.noarch.rpm) |
 | `pgmnemo_17` | `0.15.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 163.5 KiB | [pgmnemo_17-0.15.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmnemo_17-0.15.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pgmnemo` | `0.16.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 156.8 KiB | [postgresql-17-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmnemo/postgresql-17-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb) |
 | `postgresql-17-pgmnemo` | `0.16.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 156.8 KiB | [postgresql-17-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmnemo/postgresql-17-pgmnemo_0.16.1-1PIGSTY~bookworm_all.deb) |
@@ -198,7 +198,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgmnemo/pgmnemo" title="Repository" icon="github" subtitle="github.com/pgmnemo/pgmnemo" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmnemo-0.20.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmnemo-0.21.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -236,15 +236,19 @@ CREATE EXTENSION pgmnemo CASCADE; -- requires vector
 
 Sources:
 
-- [pgmnemo v0.20.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/README.md)
-- [pgmnemo v0.20.0 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.20.0)
-- [pgmnemo v0.20.0 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/USAGE.md)
-- [pgmnemo v0.20.0 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.20.0 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/CHANGELOG.md)
-- [pgmnemo v0.20.0 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo.control)
-- [v0.19.1 to v0.20.0 upgrade SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo--0.19.1--0.20.0.sql)
+- [pgmnemo v0.21.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/README.md)
+- [pgmnemo v0.21.0 release notes](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.21.0)
+- [pgmnemo v0.21.0 usage guide](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/docs/USAGE.md)
+- [pgmnemo v0.21.0 SQL reference](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.21.0 changelog](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/CHANGELOG.md)
+- [pgmnemo v0.21.0 control file](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/extension/pgmnemo.control)
+- [v0.20.0 to v0.21.0 upgrade SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/extension/pgmnemo--0.20.0--0.21.0.sql)
 
 pgmnemo stores agent memory in PostgreSQL and retrieves it through vector, BM25-style text, graph, metadata, temporal, provenance, and outcome-confidence signals. It installs into schema pgmnemo, requires the vector extension, and expects 1024-dimensional embeddings in its current SQL API.
+
+### Version 0.21.0
+
+Version 0.21.0 has no breaking SQL changes. It fixes `pg_dump` silently dropping the pgmnemo corpus by registering the `agent_lesson`, `mem_edge`, and `memory_ingest_log` tables and their associated sequences with `pg_extension_config_dump()`. Upgrade the extension before the next dump; the 0.20.0-to-0.21.0 migration is metadata-only and does not lock those tables.
 
 Version 0.20.0 retains the corpus-maintenance, situation, and entity recall surfaces and adds two opt-in candidate-pool expanders to `recall_hybrid()`: causal-edge breadth-first expansion and entity-key GIN expansion. Both are disabled by default, and the result now identifies each candidate's retrieval path.
 
@@ -256,7 +260,7 @@ Version 0.20.0 retains the corpus-maintenance, situation, and entity recall surf
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-The v0.20.0 control file marks pgmnemo as trusted, installs it in schema `pgmnemo`, requires `vector`, and is not relocatable.
+The v0.21.0 control file marks pgmnemo as trusted, installs it in schema `pgmnemo`, requires `vector`, and is not relocatable.
 
 ### Ingest a Lesson
 
@@ -392,6 +396,16 @@ ROLLBACK;
 - pgmnemo.graph_entity_expand_weight, pgmnemo.graph_entity_min_overlap, and pgmnemo.graph_entity_max_expansion: entity-key GIN expansion, minimum overlap, and per-key candidate limit.
 
 The older confidence-delta settings are deprecated and ignored in posterior mode.
+
+### Upgrade to 0.21.0
+
+Install the 0.21.0 package files and run:
+
+```sql
+ALTER EXTENSION pgmnemo UPDATE TO '0.21.0';
+```
+
+Run a representative `pg_dump` after the upgrade and confirm that the pgmnemo corpus is present in the dump. The migration does not rewrite corpus rows.
 
 ### Upgrade to 0.20.0
 

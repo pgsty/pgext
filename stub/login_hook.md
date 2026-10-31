@@ -1,11 +1,12 @@
-
-
-
 ## Usage
 
-> [login_hook: Execute code on user login, comparable to Oracle's after logon trigger](https://github.com/splendiddata/login_hook)
+Sources:
 
-`login_hook` allows executing custom PL/pgSQL code whenever a user logs into the database.
+- [Official README](https://github.com/splendiddata/login_hook)
+- [1.7 to 1.8 migration SQL](https://github.com/splendiddata/login_hook/blob/master/login_hook--1.7--1.8.sql)
+- [Extension control file](https://github.com/splendiddata/login_hook/blob/master/login_hook.control)
+
+`login_hook` 1.8 allows executing custom PL/pgSQL code whenever a user logs into the database. For PostgreSQL 17 and later, prefer the native login event trigger where it meets the requirement.
 
 ```sql
 CREATE EXTENSION login_hook;

@@ -2,15 +2,19 @@
 
 来源：
 
-- [pgmnemo v0.20.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/README.md)
-- [pgmnemo v0.20.0 发行说明](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.20.0)
-- [pgmnemo v0.20.0 使用指南](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/USAGE.md)
-- [pgmnemo v0.20.0 SQL 参考](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/docs/SQL_REFERENCE.md)
-- [pgmnemo v0.20.0 变更日志](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/CHANGELOG.md)
-- [pgmnemo v0.20.0 控制文件](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo.control)
-- [v0.19.1 到 v0.20.0 升级 SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.20.0/extension/pgmnemo--0.19.1--0.20.0.sql)
+- [pgmnemo v0.21.0 README](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/README.md)
+- [pgmnemo v0.21.0 发行说明](https://github.com/pgmnemo/pgmnemo/releases/tag/v0.21.0)
+- [pgmnemo v0.21.0 使用指南](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/docs/USAGE.md)
+- [pgmnemo v0.21.0 SQL 参考](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/docs/SQL_REFERENCE.md)
+- [pgmnemo v0.21.0 变更日志](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/CHANGELOG.md)
+- [pgmnemo v0.21.0 控制文件](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/extension/pgmnemo.control)
+- [v0.20.0 到 v0.21.0 升级 SQL](https://github.com/pgmnemo/pgmnemo/blob/v0.21.0/extension/pgmnemo--0.20.0--0.21.0.sql)
 
 pgmnemo 将智能体记忆存储在 PostgreSQL 中，并通过向量、BM25 风格文本、图、元数据、时间、来源和结果置信度等信号进行检索。它安装在 pgmnemo 模式中，依赖 vector 扩展，当前 SQL API 要求使用 1024 维嵌入。
+
+### 0.21.0 版本
+
+0.21.0 没有破坏性 SQL 变化。该版本通过使用 `pg_extension_config_dump()` 注册 `agent_lesson`、`mem_edge`、`memory_ingest_log` 三张表及其关联序列，修复 `pg_dump` 静默丢失 pgmnemo 语料的问题。下一次转储前应先升级扩展；0.20.0 到 0.21.0 的迁移只更新元数据，不锁定这些表。
 
 版本 0.20.0 保留了语料库维护、情境与实体召回接口，并为 `recall_hybrid()` 新增两个可选候选集扩展器：因果边广度优先扩展和实体键 GIN 扩展。两者默认均关闭，返回结果现在会标明每个候选项的检索路径。
 
@@ -22,7 +26,7 @@ pgmnemo 将智能体记忆存储在 PostgreSQL 中，并通过向量、BM25 风�
     SELECT pgmnemo.version();
     SELECT * FROM pgmnemo.stats();
 
-v0.20.0 控制文件将 pgmnemo 标记为受信任，将其安装到模式 `pgmnemo`，要求 `vector`，且不可重定位。
+v0.21.0 控制文件将 pgmnemo 标记为受信任，将其安装到模式 `pgmnemo`，要求 `vector`，且不可重定位。
 
 ### 写入一条经验
 
@@ -158,6 +162,16 @@ ROLLBACK;
 - pgmnemo.graph_entity_expand_weight、pgmnemo.graph_entity_min_overlap 和 pgmnemo.graph_entity_max_expansion：实体键 GIN 扩展、最小重叠数与每键候选项上限。
 
 旧版 confidence-delta 设置已弃用，在 posterior 模式下会被忽略。
+
+### 升级到 0.21.0
+
+安装 0.21.0 软件包后执行：
+
+```sql
+ALTER EXTENSION pgmnemo UPDATE TO '0.21.0';
+```
+
+升级后执行一次有代表性的 `pg_dump`，确认转储中包含 pgmnemo 语料。迁移不会重写语料行。
 
 ### 升级到 0.20.0
 

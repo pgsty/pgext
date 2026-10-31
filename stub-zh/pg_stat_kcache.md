@@ -1,11 +1,12 @@
-
-
-
 ## 用法
 
-> [pg_stat_kcache: PostgreSQL 内核缓存统计](https://github.com/powa-team/pg_stat_kcache)
+来源：
 
-pg_stat_kcache 收集文件系统层实际读写的统计信息，以及每个查询的 CPU 使用情况。它依赖 `pg_stat_statements`。
+- [v2.3.2 发布](https://github.com/powa-team/pg_stat_kcache/releases/tag/REL2_3_2)
+- [官方 README](https://github.com/powa-team/pg_stat_kcache)
+- [扩展控制文件](https://github.com/powa-team/pg_stat_kcache/blob/master/pg_stat_kcache.control)
+
+`pg_stat_kcache` 2.3.2 收集文件系统层实际读写的统计信息，以及每个查询的 CPU 使用情况。它依赖 `pg_stat_statements`；此版本增加了 PostgreSQL 19 兼容性，并修复了 RHEL 系列系统上的安装问题。
 
 ### 视图
 

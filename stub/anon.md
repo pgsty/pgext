@@ -2,12 +2,12 @@
 
 Sources:
 
-- [PostgreSQL Anonymizer 3.2.3 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/README.md)
-- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/docs/masking_functions.md)
-- [3.2.3 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/CHANGELOG.md)
+- [PostgreSQL Anonymizer 3.3.2 README](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/README.md)
+- [Masking functions](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/docs/masking_functions.md)
+- [3.3.2 changelog](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/CHANGELOG.md)
 - [Official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/)
-- [3.2.3 upgrade guide](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/docs/UPGRADE.md)
-- [3.2 series release announcement](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.2.3/NEWS.md)
+- [3.3.2 upgrade guide](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/docs/UPGRADE.md)
+- [3.3 series release announcement](https://gitlab.com/dalibo/postgresql_anonymizer/-/blob/3.3.2/NEWS.md)
 
 `anon` is PostgreSQL Anonymizer. It applies declarative masking rules for protected query access, produces anonymized data sets, and provides pseudonymization and randomized-response helpers. Use it when realistic data must remain useful without exposing the original sensitive values; treat masking policy, role grants, and access to the unmasked database as part of the security boundary.
 
@@ -57,6 +57,10 @@ Queries made as `reporting` see the transformed values. Privileged users still s
 ### Operational Notes
 
 `anon` is superuser-installed and non-relocatable. Test every policy with the same grants and connection path used by the intended consumer. Randomization is not automatically deterministic; use a confirmed pseudonymization function when stable equality is required. Static anonymization is destructive, so run it on a copy and verify constraints and application behavior afterward.
+
+### Version 3.3.2
+
+Version 3.3.2 is the follow-up release to the 3.3 security series and restores the missing ARM build. The 3.3 series forbids subqueries in masking rules, disables inlining for transparent dynamic masking, rejects SQL-standard-body functions for masked roles, and changes `anon.salt`. There is no in-place update path: preserve and migrate masking rules, then drop and recreate the extension in each database as directed by upstream.
 
 Version 3.2.0 introduces localized deterministic `anon.seeded_*` functions; the older `anon.pseudo_*` family is deprecated. It fixes three upstream-reported security vulnerabilities and defaults to refusing masking operations executed by superusers. Use a dedicated non-superuser masking role. Setting `anon.nosuperuser` to false removes that barrier and is not the recommended upgrade path. The masking-rule JSON format changed; re-export rules after upgrading. This documentation describes release 3.2.3.
 

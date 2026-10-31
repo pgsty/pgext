@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2100** | {{< badge content="pg_search" link="https://github.com/paradedb/paradedb/tree/main/pg_search" >}} | {{< ext "pg_search" >}} | `0.26.3` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+| **2100** | {{< badge content="pg_search" link="https://github.com/paradedb/paradedb/tree/main/pg_search" >}} | {{< ext "pg_search" >}} | `0.26.4` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,27 +31,27 @@ page_width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "pg_textsearch" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_fts" >}} {{< ext "pgroonga" >}} {{< ext "pg_rrf" >}} {{< ext "psql_bm25s" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pgfaceting" >}} {{< ext "roaringbitmap" >}} {{< ext "rum" >}} |
 
-> [!Note] Requires preload and pgvector; conflicts with pg_textsearch and vchord_bm25. Built with pgrx 0.19.3.
+> [!Note] Requires preload and pgvector; conflicts with pg_textsearch and vchord_bm25. Built with pgrx 0.19.3. 0.26.4 adds array late materialization and join-scan improvements and fixes partitioned-search and window-function cases.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_search` | `vector` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.3` | {{< bg "18" "pg_search_18" "green" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} {{< bg "14" "pg_search_14" "red" >}} | `pg_search_$v` | `pgvector_$v` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_search` | `vector` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.4` | {{< bg "18" "pg_search_18" "green" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} {{< bg "14" "pg_search_14" "red" >}} | `pg_search_$v` | `pgvector_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.3` | {{< bg "18" "postgresql-18-pg-search" "green" >}} {{< bg "17" "postgresql-17-pg-search" "green" >}} {{< bg "16" "postgresql-16-pg-search" "green" >}} {{< bg "15" "postgresql-15-pg-search" "green" >}} {{< bg "14" "postgresql-14-pg-search" "red" >}} | `postgresql-$v-pg-search` | `postgresql-$v-pgvector` |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.4" "pg_search_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_search_14 : N/A 0" "gray" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-18-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-17-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-16-pg-search : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.3" "postgresql-15-pg-search : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-search : N/A 0" "gray" >}} |
@@ -70,12 +70,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_18` | `0.26.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 57.9 MiB | [pg_search_18-0.26.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_18-0.26.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_search_18` | `0.26.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.4 MiB | [pg_search_18-0.26.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_18-0.26.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_search_18` | `0.26.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.2 MiB | [pg_search_18-0.26.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_18-0.26.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_search_18` | `0.26.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.0 MiB | [pg_search_18-0.26.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_18-0.26.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_search_18` | `0.26.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 58.9 MiB | [pg_search_18-0.26.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_18-0.26.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_search_18` | `0.26.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.5 MiB | [pg_search_18-0.26.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_18-0.26.3-1PGSTY.el10.aarch64.rpm) |
+| `pg_search_18` | `0.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 58.2 MiB | [pg_search_18-0.26.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_18-0.26.4-1PGSTY.el8.x86_64.rpm) |
+| `pg_search_18` | `0.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.6 MiB | [pg_search_18-0.26.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_18-0.26.4-1PGSTY.el8.aarch64.rpm) |
+| `pg_search_18` | `0.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.7 MiB | [pg_search_18-0.26.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_18-0.26.4-1PGSTY.el9.x86_64.rpm) |
+| `pg_search_18` | `0.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.7 MiB | [pg_search_18-0.26.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_18-0.26.4-1PGSTY.el9.aarch64.rpm) |
+| `pg_search_18` | `0.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 59.6 MiB | [pg_search_18-0.26.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_18-0.26.4-1PGSTY.el10.x86_64.rpm) |
+| `pg_search_18` | `0.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.5 MiB | [pg_search_18-0.26.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_18-0.26.4-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pg-search` | `0.26.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 50.0 MiB | [postgresql-18-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-18-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-search` | `0.26.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 47.3 MiB | [postgresql-18-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-18-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-search` | `0.26.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 50.3 MiB | [postgresql-18-pg-search_0.26.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-18-pg-search_0.26.3-1PGSTY~trixie_amd64.deb) |
@@ -93,12 +93,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_17` | `0.26.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 57.9 MiB | [pg_search_17-0.26.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_17-0.26.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_search_17` | `0.26.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.4 MiB | [pg_search_17-0.26.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_17-0.26.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_search_17` | `0.26.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.1 MiB | [pg_search_17-0.26.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_17-0.26.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_search_17` | `0.26.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.7 MiB | [pg_search_17-0.26.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_17-0.26.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_search_17` | `0.26.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 59.0 MiB | [pg_search_17-0.26.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_17-0.26.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_search_17` | `0.26.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.2 MiB | [pg_search_17-0.26.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_17-0.26.3-1PGSTY.el10.aarch64.rpm) |
+| `pg_search_17` | `0.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 58.2 MiB | [pg_search_17-0.26.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_17-0.26.4-1PGSTY.el8.x86_64.rpm) |
+| `pg_search_17` | `0.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.6 MiB | [pg_search_17-0.26.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_17-0.26.4-1PGSTY.el8.aarch64.rpm) |
+| `pg_search_17` | `0.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.8 MiB | [pg_search_17-0.26.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_17-0.26.4-1PGSTY.el9.x86_64.rpm) |
+| `pg_search_17` | `0.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.8 MiB | [pg_search_17-0.26.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_17-0.26.4-1PGSTY.el9.aarch64.rpm) |
+| `pg_search_17` | `0.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 59.7 MiB | [pg_search_17-0.26.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_17-0.26.4-1PGSTY.el10.x86_64.rpm) |
+| `pg_search_17` | `0.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.6 MiB | [pg_search_17-0.26.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_17-0.26.4-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-search` | `0.26.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 50.1 MiB | [postgresql-17-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-17-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-search` | `0.26.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 47.2 MiB | [postgresql-17-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-17-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-search` | `0.26.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 50.3 MiB | [postgresql-17-pg-search_0.26.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-17-pg-search_0.26.3-1PGSTY~trixie_amd64.deb) |
@@ -116,12 +116,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_16` | `0.26.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 57.9 MiB | [pg_search_16-0.26.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_16-0.26.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_search_16` | `0.26.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.4 MiB | [pg_search_16-0.26.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_16-0.26.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_search_16` | `0.26.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.1 MiB | [pg_search_16-0.26.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_16-0.26.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_search_16` | `0.26.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.6 MiB | [pg_search_16-0.26.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_16-0.26.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_search_16` | `0.26.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 59.0 MiB | [pg_search_16-0.26.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_16-0.26.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_search_16` | `0.26.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.4 MiB | [pg_search_16-0.26.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_16-0.26.3-1PGSTY.el10.aarch64.rpm) |
+| `pg_search_16` | `0.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 58.2 MiB | [pg_search_16-0.26.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_16-0.26.4-1PGSTY.el8.x86_64.rpm) |
+| `pg_search_16` | `0.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.6 MiB | [pg_search_16-0.26.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_16-0.26.4-1PGSTY.el8.aarch64.rpm) |
+| `pg_search_16` | `0.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.6 MiB | [pg_search_16-0.26.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_16-0.26.4-1PGSTY.el9.x86_64.rpm) |
+| `pg_search_16` | `0.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.6 MiB | [pg_search_16-0.26.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_16-0.26.4-1PGSTY.el9.aarch64.rpm) |
+| `pg_search_16` | `0.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 59.7 MiB | [pg_search_16-0.26.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_16-0.26.4-1PGSTY.el10.x86_64.rpm) |
+| `pg_search_16` | `0.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.6 MiB | [pg_search_16-0.26.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_16-0.26.4-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-search` | `0.26.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 50.2 MiB | [postgresql-16-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-16-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-search` | `0.26.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 47.2 MiB | [postgresql-16-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-16-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-search` | `0.26.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 50.3 MiB | [postgresql-16-pg-search_0.26.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-16-pg-search_0.26.3-1PGSTY~trixie_amd64.deb) |
@@ -139,12 +139,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_search_15` | `0.26.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 57.9 MiB | [pg_search_15-0.26.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_15-0.26.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_search_15` | `0.26.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.3 MiB | [pg_search_15-0.26.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_15-0.26.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_search_15` | `0.26.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.2 MiB | [pg_search_15-0.26.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_15-0.26.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_search_15` | `0.26.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.5 MiB | [pg_search_15-0.26.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_15-0.26.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_search_15` | `0.26.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 59.1 MiB | [pg_search_15-0.26.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_15-0.26.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_search_15` | `0.26.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.7 MiB | [pg_search_15-0.26.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_15-0.26.3-1PGSTY.el10.aarch64.rpm) |
+| `pg_search_15` | `0.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 58.1 MiB | [pg_search_15-0.26.4-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_search_15-0.26.4-1PGSTY.el8.x86_64.rpm) |
+| `pg_search_15` | `0.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 54.6 MiB | [pg_search_15-0.26.4-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_search_15-0.26.4-1PGSTY.el8.aarch64.rpm) |
+| `pg_search_15` | `0.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 59.6 MiB | [pg_search_15-0.26.4-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_search_15-0.26.4-1PGSTY.el9.x86_64.rpm) |
+| `pg_search_15` | `0.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 57.8 MiB | [pg_search_15-0.26.4-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_search_15-0.26.4-1PGSTY.el9.aarch64.rpm) |
+| `pg_search_15` | `0.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 59.6 MiB | [pg_search_15-0.26.4-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_search_15-0.26.4-1PGSTY.el10.x86_64.rpm) |
+| `pg_search_15` | `0.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 57.6 MiB | [pg_search_15-0.26.4-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_search_15-0.26.4-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-search` | `0.26.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 50.1 MiB | [postgresql-15-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-15-pg-search_0.26.3-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-search` | `0.26.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 47.1 MiB | [postgresql-15-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-search/postgresql-15-pg-search_0.26.3-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-search` | `0.26.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 50.2 MiB | [postgresql-15-pg-search_0.26.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-search/postgresql-15-pg-search_0.26.3-1PGSTY~trixie_amd64.deb) |
@@ -163,7 +163,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/paradedb/paradedb/tree/main/pg_search" title="Repository" icon="github" subtitle="github.com/paradedb/paradedb/tree/main/pg_search" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_search-0.26.3.tar.gz pg_search_collect_third_party_licenses-0.26.3.py" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_search-0.26.4.tar.gz pg_search_collect_third_party_licenses-0.26.4.py" />}}
 {{< /cards >}}
 
 
@@ -210,7 +210,10 @@ CREATE EXTENSION pg_search CASCADE; -- requires vector
 
 Sources:
 
-- [0.26.3 release](https://github.com/paradedb/paradedb/releases/tag/v0.26.3)
+- [0.26.4 release]
+- [0.26.4 changelog](https://github.com/paradedb/paradedb/blob/v0.26.4/docs/project/changelog/0.26.4.mdx)
+- [pg_search 0.26.4 control](https://github.com/paradedb/paradedb/blob/v0.26.4/pg_search/pg_search.control)
+- [pg_search 0.26.4 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.4/pg_search/Cargo.toml)(https://github.com/paradedb/paradedb/releases/tag/v0.26.4)
 
 - [docs/project/changelog/0.26.2.mdx](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/docs/project/changelog/0.26.2.mdx)
 - [pg_search/sql/pg_search--0.26.1--0.26.2.sql](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/sql/pg_search--0.26.1--0.26.2.sql)
@@ -233,7 +236,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.2 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.26.4 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -342,3 +345,7 @@ This release fixes search operators in generic prepared plans, wrong results or 
 ### 0.26.3 Behavior Fixes
 
 0.26.3 fixes integer range boundaries, empty relations, larger LIMIT values, MPP join facets, and cancellation during scans, vector training and VACUUM. Index creation and inserts now reject out-of-range dates. The upgrade restores legacy range tokenizers and corrects configured emoji removal. Join scans add support for window-function FILTERs and volatile projections. Review queries that depend on these boundary behaviors and follow the upstream SQL-extension upgrade procedure in each database. Check upstream and currently built package versions separately.
+
+### 0.26.4 Performance and Stability
+
+Version 0.26.4 adds late materialization for array columns, makes eligible join scans use iterative rank-join for `ORDER BY` and `LIMIT`, and avoids quadratic CJK Lindera token consumption. It fixes wrong file paths in partitioned-table append searches, window-function cases, and helpers for partitioned indexes. The release notes do not introduce a new index-format migration; the 0.26.0 vector-index rebuild requirement still applies.

@@ -1,9 +1,12 @@
-
-
-
 ## Usage
 
-> [pg_utl_smtp: Oracle UTL_SMTP compatibility extension for PostgreSQL](https://github.com/hexacluster/pg_utl_smtp)
+Sources:
+
+- [Official README](https://github.com/hexacluster/pg_utl_smtp)
+- [v2.0.0 ChangeLog](https://github.com/hexacluster/pg_utl_smtp/blob/main/ChangeLog)
+- [Extension control file](https://github.com/hexacluster/pg_utl_smtp/blob/main/pg_utl_smtp.control)
+
+`pg_utl_smtp` 2.0.0 provides Oracle `UTL_SMTP` compatibility on PostgreSQL through `plperlu`. The 2.0 release adds optional asynchronous delivery through `utl_smtp.asynchronous`, the `utl_smtp.mail_queue` table, and `utl_smtp.async_resend()`; it also improves SMTP error reporting and SSL/TLS handling.
 
 ### Enabling
 

@@ -1,11 +1,12 @@
-
-
-
 ## 用法
 
-> [pg_wait_sampling: 基于采样的等待事件统计](https://github.com/postgrespro/pg_wait_sampling)
+来源：
 
-pg_wait_sampling 通过定期采样每个后端正在等待的事件来收集等待事件统计。它提供近期历史环形缓冲区和累积统计两种视图。
+- [官方 README](https://github.com/postgrespro/pg_wait_sampling)
+- [发布历史](https://github.com/postgrespro/pg_wait_sampling/releases)
+- [扩展控制文件](https://github.com/postgrespro/pg_wait_sampling/blob/master/pg_wait_sampling.control)
+
+`pg_wait_sampling` 1.1.11 通过定期采样每个后端正在等待的事件来收集等待事件统计。它提供近期历史环形缓冲区和累积统计两种视图；此版本修复了 `profile_period` 配置处理和采样频率取整问题。
 
 ### 视图
 

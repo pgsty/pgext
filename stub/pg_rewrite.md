@@ -1,11 +1,12 @@
-
-
-
 ## Usage
 
-> [pg_rewrite: Tool allows read write to the table during the rewriting](https://github.com/cybertec-postgresql/pg_rewrite)
+Sources:
 
-`pg_rewrite` requires `wal_level = logical` and must be added to `shared_preload_libraries`. Common use cases include changing column data types, partitioning tables, reordering columns, and moving tables to different tablespaces -- all while allowing concurrent reads and writes.
+- [Official README](https://github.com/cybertec-postgresql/pg_rewrite)
+- [Release history](https://github.com/cybertec-postgresql/pg_rewrite/releases)
+- [Extension control file](https://github.com/cybertec-postgresql/pg_rewrite/blob/master/pg_rewrite.control)
+
+`pg_rewrite` 2.2 requires `wal_level = logical` and must be added to `shared_preload_libraries`. It rewrites a table while allowing concurrent reads and writes, which is useful for changing column data types, partitioning tables, reordering columns, and moving tables to different tablespaces.
 
 ### Rewrite a Table
 

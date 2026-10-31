@@ -2,12 +2,13 @@
 
 Sources:
 
-- [README.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/README.md)
-- [pg_hint_plan.control](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/pg_hint_plan.control)
-- [docs/hint_list.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/hint_list.md)
-- [docs/installation.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/installation.md)
-- [docs/requirements.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/requirements.md)
-- [docs/functional_limitations.md](https://github.com/ossc-db/pg_hint_plan/blob/4d3e9164dc2dc1b10dfe0c5e7a3cfe7983a8688d/docs/functional_limitations.md)
+- [PG18 1.8.1 release](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL18_1_8_1)
+- [PG17 1.7.2 release](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL17_1_7_2)
+- [PG16 1.6.3 release](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL16_1_6_3)
+- [PG15 1.5.4 release](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL15_1_5_4)
+- [PG14 1.4.5 release](https://github.com/ossc-db/pg_hint_plan/releases/tag/REL14_1_4_5)
+- [Hint list](https://github.com/ossc-db/pg_hint_plan/blob/master/docs/hint_list.md)
+- [Installation and requirements](https://github.com/ossc-db/pg_hint_plan/blob/master/docs/installation.md)
 
 
 `pg_hint_plan` overrides the PostgreSQL query planner's decisions using SQL comment hints, allowing you to force specific scan methods, join strategies, and join orders.

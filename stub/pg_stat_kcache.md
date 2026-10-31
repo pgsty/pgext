@@ -1,11 +1,12 @@
-
-
-
 ## Usage
 
-> [pg_stat_kcache: kernel cache statistics for PostgreSQL](https://github.com/powa-team/pg_stat_kcache)
+Sources:
 
-pg_stat_kcache gathers statistics about real reads and writes done by the filesystem layer, as well as CPU usage per query. It requires `pg_stat_statements`.
+- [v2.3.2 release](https://github.com/powa-team/pg_stat_kcache/releases/tag/REL2_3_2)
+- [Official README](https://github.com/powa-team/pg_stat_kcache)
+- [Extension control file](https://github.com/powa-team/pg_stat_kcache/blob/master/pg_stat_kcache.control)
+
+`pg_stat_kcache` 2.3.2 gathers statistics about real reads and writes done by the filesystem layer, as well as CPU usage per query. It requires `pg_stat_statements`; this release adds PostgreSQL 19 compatibility and fixes installation on RHEL-family systems.
 
 ### Views
 

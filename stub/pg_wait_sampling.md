@@ -1,11 +1,12 @@
-
-
-
 ## Usage
 
-> [pg_wait_sampling: sampling based statistics of wait events](https://github.com/postgrespro/pg_wait_sampling)
+Sources:
 
-pg_wait_sampling collects wait event statistics by periodically sampling what each backend is waiting on. It provides both a recent history ring buffer and a cumulative profile.
+- [Official README](https://github.com/postgrespro/pg_wait_sampling)
+- [Release history](https://github.com/postgrespro/pg_wait_sampling/releases)
+- [Extension control file](https://github.com/postgrespro/pg_wait_sampling/blob/master/pg_wait_sampling.control)
+
+`pg_wait_sampling` 1.1.11 collects wait event statistics by periodically sampling what each backend is waiting on. It provides both a recent history ring buffer and a cumulative profile; this release fixes `profile_period` configuration handling and sampling-frequency rounding.
 
 ### Views
 

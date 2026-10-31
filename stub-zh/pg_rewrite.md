@@ -1,11 +1,12 @@
-
-
-
 ## 用法
 
-> [pg_rewrite: 允许在表重写期间继续读写的工具](https://github.com/cybertec-postgresql/pg_rewrite)
+来源：
 
-`pg_rewrite` 需要设置 `wal_level = logical`，并且必须添加到 `shared_preload_libraries` 中。常见用例包括更改列数据类型、分区表、重新排列列以及将表移动到不同的表空间——同时允许并发读写。
+- [官方 README](https://github.com/cybertec-postgresql/pg_rewrite)
+- [发布历史](https://github.com/cybertec-postgresql/pg_rewrite/releases)
+- [扩展控制文件](https://github.com/cybertec-postgresql/pg_rewrite/blob/master/pg_rewrite.control)
+
+`pg_rewrite` 2.2 要求 `wal_level = logical`，并且必须加入 `shared_preload_libraries`。它可以在允许并发读写的情况下重写表，适合修改列类型、分区、调整列顺序以及移动表到其他表空间。
 
 ### 重写表
 

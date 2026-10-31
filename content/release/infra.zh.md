@@ -6,6 +6,22 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-10-30
+
+本地构建批次：7 个软件包通过 8888 Xray 代理下载，完成双架构 RPM/DEB 构建与校验，共生成 28 个制品。当前仅保留在本地，尚未放入 APT/YUM 仓库或在线发布；`sealos` 继续锁定 5.0.1，`promtail` 和 `pgbackrest-exporter` 暂缓更新。
+
+| 名称         | 旧版本    | 新版本    | 备注                      |
+|:-------------|:----------|:----------|:--------------------------|
+| alertmanager | 0.34.1    | 0.34.2    | 双架构 RPM/DEB            |
+| cloudflared  | 2026.10.5 | 2026.10.6 | 双架构 RPM/DEB            |
+| code-server  | 4.143.1   | 4.144.0   | 保持上游原生 DEB/RPM 字节 |
+| nodejs       | 24.22.1   | 26.13.0   | Node.js 26 LTS；双架构    |
+| pig          | 1.10.2    | 1.10.3    | 双架构 RPM/DEB            |
+| stalwart     | 1.0.0     | 1.0.1     | 0.16.x 升级仍需迁移数据库 |
+| xray         | 26.10.21  | 26.10.29  | 双架构 RPM/DEB            |
+{.wide .expand}
+
+
 ## 2026-10-28
 
 | 名称                | 旧版本    | 新版本    | 备注 |
