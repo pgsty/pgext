@@ -10,9 +10,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 620 | 143 | 460 | 71 | 0 | 610 | 598 | 579 | 547 | 525 |
-| **EL** | 619 | 142 | 460 | 71 | 1 | 608 | 594 | 577 | 547 | 525 |
-| **Debian** | 613 | 102 | 440 | 71 | 7 | 602 | 589 | 572 | 543 | 523 |
+| **ALL** | 620 | 145 | 456 | 71 | 0 | 610 | 598 | 579 | 546 | 524 |
+| **EL** | 617 | 144 | 456 | 71 | 3 | 608 | 594 | 577 | 546 | 524 |
+| **Debian** | 611 | 104 | 436 | 71 | 9 | 602 | 589 | 572 | 542 | 522 |
 
 ## 分类
 
@@ -61,7 +61,7 @@ comments: false
 | {{< ext "postgis_topology" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostGIS 拓扑空间类型和函数 |
 | {{< ext "postgis_raster" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostGIS 光栅类型和函数 |
 | {{< ext "postgis_sfcgal" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PostGIS SFCGAL 函数 |
-| {{< ext "postgis_tiger_geocoder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
+| {{< ext "postgis_tiger_geocoder" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="----dt-" color="blue" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
 | {{< ext "address_standardizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 地址标准化函数。 |
 | {{< ext "address_standardizer_data_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | 地址标准化函数：美国数据集示例 |
 | {{< ext "pgrouting" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 提供寻路能力 |

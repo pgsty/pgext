@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6410** | {{< badge content="pgsentinel" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< ext "pgsentinel" >}} | `1.5.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6410** | {{< badge content="pgsentinel" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< ext "pgsentinel" >}} | `1.5.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,16 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_datasentinel" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgmonitor" >}} {{< ext "system_stats" >}} {{< ext "pgnodemx" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} |
 
-> [!Note] Preload with pg_stat_statements; restart; SQL update revokes PUBLIC EXECUTE on get_parsedinfo(int).
+> [!Note] PGDG D/U 1.5.2; EL 1.5.1. Preload with pg_stat_statements; 1.5.2 hardens search_path and ProcEntryArray.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsentinel` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsentinel` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "pgsentinel_18" "green" >}} {{< bg "17" "pgsentinel_17" "green" >}} {{< bg "16" "pgsentinel_16" "green" >}} {{< bg "15" "pgsentinel_15" "green" >}} {{< bg "14" "pgsentinel_14" "green" >}} | `pgsentinel_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
 {.packages}
 
 
@@ -476,12 +476,12 @@ CREATE EXTENSION pgsentinel;
 
 Sources:
 
-- [pgsentinel 1.5.1 README](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/README.md)
-- [pgsentinel 1.5.1 release](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.5.1)
-- [1.5.1 upgrade SQL](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel--1.5.0--1.5.1.sql)
-- [pgsentinel control file](https://github.com/pgsentinel/pgsentinel/blob/v1.5.1/src/pgsentinel.control)
+- [v1.5.2 README](https://github.com/pgsentinel/pgsentinel/blob/v1.5.2/README.md)
+- [v1.5.2 release](https://github.com/pgsentinel/pgsentinel/releases/tag/v1.5.2)
+- [1.5.1 to 1.5.2 SQL](https://github.com/pgsentinel/pgsentinel/blob/v1.5.2/src/pgsentinel--1.5.1--1.5.2.sql)
+- [v1.5.2 control file](https://github.com/pgsentinel/pgsentinel/blob/v1.5.2/src/pgsentinel.control)
 
-`pgsentinel` records active session history by sampling `pg_stat_activity` at regular intervals and linking activity with `pg_stat_statements` query statistics. It keeps recent samples in shared-memory ring buffers managed by a background worker.
+`pgsentinel` 1.5.2 records active session history by sampling `pg_stat_activity` at regular intervals and linking activity with `pg_stat_statements` query statistics. It keeps recent samples in shared-memory ring buffers managed by a background worker. Version 1.5.2 hardens the worker search path, schema-qualifies its queries, and bounds `ProcEntryArray` sizing.
 
 ```ini
 shared_preload_libraries = 'pg_stat_statements,pgsentinel'
@@ -563,10 +563,10 @@ ORDER BY 3 DESC;
 
 Version 1.5.0 separates `queryid` from `nested_queryid`: on PostgreSQL 16 and later the former comes from the activity query identifier, while the latter identifies the inner parsed statement; they match on older versions. The upgrade recreates the history view, so inspect dependent views and grants first.
 
-Version 1.5.1 revokes PUBLIC execution of `get_parsedinfo(int)` because it can expose other backends' query text and literals. Apply the SQL upgrade after installing the new files, and grant access only to roles that need it:
+Version 1.5.2 keeps the 1.5.1 privilege hardening and also tightens worker search-path handling, query qualification, and `ProcEntryArray` sizing. Apply the SQL upgrade after installing the new files, and grant access only to roles that need it:
 
 ```sql
-ALTER EXTENSION pgsentinel UPDATE TO '1.5.1';
+ALTER EXTENSION pgsentinel UPDATE TO '1.5.2';
 ```
 
 History remains in finite shared-memory ring buffers; export it for long-term retention. Sampled query text can contain sensitive values, so review access to history views as well. Upstream CI covers PostgreSQL 10–19.

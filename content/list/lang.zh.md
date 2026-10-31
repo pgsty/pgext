@@ -44,7 +44,7 @@ weight: 200
 | 1501 | {{< alias "postgis_topology" "postgis" >}} | PostGIS 拓扑空间类型和函数 |
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS 光栅类型和函数 |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL 函数 |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 地址标准化函数。 |
+| 1505 | {{< alias "address_standardizer" >}} | 地址标准化函数。 |
 | 1520 | {{< alias "pointcloud" >}} | 提供激光雷达点云数据类型支持 |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 将激光雷达点云与PostGIS几何类型相集成 |
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3六边形层级索引支持 |
@@ -485,7 +485,7 @@ weight: 200
 | 1060 | {{< alias "table_version" >}} | PostgreSQL 版本控制表扩展 |
 | 1100 | {{< alias "pg_dispatch" >}} | 基于 pg_cron 的异步 SQL 分发器 |
 | 1150 | {{< alias "cron_utils" >}} | 解析 Cron 表达式并计算上一次或下一次触发时间 |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 地址标准化函数：美国数据集示例 |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | 地址标准化函数：美国数据集示例 |
 | 1560 | {{< alias "geoip" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | 1600 | {{< alias "pghydro" >}} | PostgreSQL/PostGIS 排水网络分析核心扩展 |
 | 1601 | {{< alias "pgh_raster" "pghydro" >}} | PgHydro 栅格水文分析扩展 |
@@ -691,7 +691,7 @@ weight: 200
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
+| 1504 | {{< alias "postgis_tiger_geocoder" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
 | 4220 | {{< alias "pg_relation_sql" >}} | 根据 PostgreSQL 外键生成可内联的关系导航 SQL 函数 |
 | 6870 | {{< alias "powa" >}} | PostgreSQL 工作负载分析器-核心 |
 | 9820 | {{< alias "pg_fact_loader" >}} | 在 Postgres 中构建事实表 |

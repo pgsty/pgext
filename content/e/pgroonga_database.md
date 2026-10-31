@@ -30,7 +30,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_fts" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_rrf" >}} {{< ext "psql_bm25s" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} |
 |    **Siblings**   | {{< ext "pgroonga" >}} |
 
-> [!Note] Recovery helper bundled with PGroonga 4.1.0; EL9 RPM release 4PGSTY requires groonga-libs >= 16.1.5-1PGSTY.el9; EL8/EL10 use 2PGSTY.
+> [!Note] Bundled with PGroonga 4.1.0; EL9 4PGSTY needs groonga-libs >=16.1.5-1PGSTY.el9; EL8/10 use 2PGSTY.
 
 
 ## Packages

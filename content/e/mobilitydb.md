@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "h3" >}} {{< ext "pgrouting" >}} {{< ext "postgis" >}} {{< ext "pg_polyline" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "pointcloud" >}} {{< ext "pg_geohash" >}} {{< ext "qdgc" >}} {{< ext "pg_eviltransform" >}} |
 |    **Siblings**   | {{< ext "mobilitydb_datagen" >}} |
 
-> [!Note] Pigsty 1.3.1 includes the security fix; upgrading from 1.2 to 1.3 requires upstream backup/restore.
+> [!Note] PIGSTY 1.3.1 includes the security fix; 1.2 to 1.3 requires backup/restore. PGDG covers D12/D13/U24/U26; PIGSTY covers EL/U22.
 
 
 ## Packages

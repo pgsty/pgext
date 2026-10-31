@@ -30,7 +30,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_readme" >}} {{< ext "schedoc" >}} {{< ext "ddlx" >}} {{< ext "pgpdf" >}} {{< ext "pg_render" >}} {{< ext "pgdd" >}} {{< ext "meta" >}} |
 |    **Siblings**   | {{< ext "pg_readme" >}} |
 
-> [!Note] Bundled test fixture; control default_version is forever and it does not require hstore. Catalog version follows pg_readme 0.7.1; principal suppliers remain PGDG RPM and PIGSTY DEB.
+> [!Note] Test fixture; control default_version=forever; no hstore dependency. Catalog 0.7.1; PGDG RPM/PIGSTY DEB.
 
 
 ## Packages

@@ -30,7 +30,7 @@ page_width: full
 |    **Need By**    | {{< ext "column_encrypt" >}} {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_credentials" >}} {{< ext "omni_rest" >}} {{< ext "pg_dispatch" >}} {{< ext "pgcryptokey" >}} {{< ext "pgjwt" >}} |
 |   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgsmcrypto" >}} {{< ext "pgcryptokey" >}} {{< ext "pguecc" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pg_tde" >}} {{< ext "column_encrypt" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "hashlib" >}} {{< ext "xxhash" >}} |
 
-> [!Note] SQL/control baseline 1.4 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.4; older PostgreSQL majors may differ.
 
 
 ## Packages

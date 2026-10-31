@@ -30,6 +30,8 @@ page_width: full
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} |
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "mobilitydb" >}} {{< ext "h3" >}} {{< ext "pg_polyline" >}} {{< ext "q3c" >}} {{< ext "pointcloud" >}} {{< ext "qdgc" >}} {{< ext "pg_geohash" >}} {{< ext "pg_sphere" >}} {{< ext "pg_eviltransform" >}} |
 
+> [!Note] PGDG 4.0.2; this round adds D12/D13/U22/U24/U26 coverage.
+
 
 ## Packages
 
@@ -512,14 +514,15 @@ pig install pgrouting -v 14;   # install for PG 14
 CREATE EXTENSION pgrouting CASCADE; -- requires plpgsql, postgis
 ```
 
-
-
-
 ## Usage
 
-> [pgRouting - Routing on PostgreSQL](https://github.com/pgRouting/pgrouting)
+Sources:
 
-pgRouting extends the PostGIS/PostgreSQL geospatial database to provide geospatial routing and other network analysis functionality.
+- [v4.0.2 release](https://github.com/pgRouting/pgrouting/releases/tag/v4.0.2)
+- [v4.0.2 README](https://github.com/pgRouting/pgrouting/blob/v4.0.2/README.md)
+- [Official documentation](https://docs.pgrouting.org/latest/en/index.html)
+
+pgRouting 4.0.2 extends the PostGIS/PostgreSQL geospatial database to provide geospatial routing and other network analysis functionality. This release fixes allocation failures in `pgr_dijkstraVia` and `pgr_withPointsVia`, and makes negative-distance handling consistent in the driving-distance families.
 
 This library contains the following features:
 
@@ -585,7 +588,7 @@ SELECT * FROM pgr_dijkstra(
 
 --------
 
-## Function Families
+### Function Families
 
 ### Dijkstra - Shortest Path
 
@@ -893,7 +896,7 @@ pgr_full_version()
 
 --------
 
-## Working with Geometries
+### Working with Geometries
 
 ### Building a Routing Topology
 
@@ -940,7 +943,7 @@ LEFT JOIN edges AS e ON r.edge = e.id;
 
 --------
 
-## Performance Tips
+### Performance Tips
 
 Bound queries to the area of interest to reduce processed edges:
 
@@ -956,7 +959,7 @@ SELECT * FROM pgr_dijkstra($$
 
 --------
 
-## All Pairs Shortest Path
+### All Pairs Shortest Path
 
 For computing distances between all pairs of vertices:
 

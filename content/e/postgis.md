@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1500** | {{< badge content="postgis" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis" >}} | `3.6.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1500** | {{< badge content="postgis" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis" >}} | `3.7.0` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -29,16 +29,18 @@ page_width: full
 |:-----------------:|:----|
 |    **Need By**    | {{< ext "documentdb" >}} {{< ext "h3_postgis" >}} {{< ext "mobilitydb" >}} {{< ext "pg_eviltransform" >}} {{< ext "pgh_consistency" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_raster" >}} {{< ext "pghydro" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud_postgis" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "postgis_topology" >}} {{< ext "qdgc_postgis" >}} |
 |   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3" >}} {{< ext "mobilitydb" >}} {{< ext "ogr_fdw" >}} {{< ext "pointcloud" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_polyline" >}} {{< ext "earthdistance" >}} {{< ext "pg_eviltransform" >}} {{< ext "pg_geohash" >}} |
-|    **Siblings**   | {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
+|    **Siblings**   | {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} |
+
+> [!Note] DEB 3.7.0 on D/U; EL RPM and local recipe remain 3.6.4.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "postgis36_18" "green" >}} {{< bg "17" "postgis36_17" "green" >}} {{< bg "16" "postgis36_16" "green" >}} {{< bg "15" "postgis36_15" "green" >}} {{< bg "14" "postgis36_14" "green" >}} | `postgis36_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
 {.packages}
 
 
@@ -636,14 +638,16 @@ pig install postgis -v 14;   # install for PG 14
 CREATE EXTENSION postgis;
 ```
 
-
-
-
 ## Usage
 
-Source: [Official manual](https://postgis.net/documentation/manual/), [current manual HTML](https://postgis.net/docs/postgis-en.html), [release notes](https://postgis.net/docs/release_notes.html), [patch release announcement](https://postgis.net/2026/04/PostGIS-Patch-Releases/)
+Sources:
 
-`postgis` adds spatial types, indexes, and SQL functions to PostgreSQL. The main user-facing split is between `geometry` for planar/projected work and `geography` for spherical calculations on longitude/latitude data.
+- [PostGIS 3.7.0 release](https://postgis.net/2026/10/PostGIS-3.7.0/)
+- [PostGIS 3.7 manual](https://postgis.net/docs/manual-3.7/)
+- [Official release notes](https://postgis.net/docs/release_notes.html)
+- [Current manual HTML](https://postgis.net/docs/postgis-en.html)
+
+`postgis` 3.7.0 adds spatial types, indexes, and SQL functions to PostgreSQL. The main user-facing split is between `geometry` for planar/projected work and `geography` for spherical calculations on longitude/latitude data. This major release requires PostgreSQL 14 or later, GEOS 3.10 or later, and PROJ 6.1 or later.
 
 ### Basic setup
 
@@ -684,4 +688,4 @@ The official manual continues to recommend GiST as the general-purpose spatial i
 ### Caveats
 
 - Use `geometry` in an appropriate projected SRID for planar distances and areas; use `geography` when you need meter-based spheroidal calculations.
-- `PostGIS 3.6.3` is a patch release dated 2026-04-14. The release notes describe fixes and a security hardening change, not a new stub-level usage surface, so this refresh mostly trims and aligns the stub with the current manual.
+- `PostGIS 3.7.0` is a major release. It drops PostgreSQL 12/13 and GEOS versions older than 3.10; review the topology tolerance changes and the move of `address_standardizer` and `tiger_geocoder` packaging before upgrading. After installing matching files, run `SELECT postgis_extensions_upgrade();` where the upstream upgrade procedure requires it.

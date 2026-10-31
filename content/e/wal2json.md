@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "decoderbufs" >}} {{< ext "pgoutput" >}} {{< ext "test_decoding" >}} {{< ext "pgmqtt" >}} {{< ext "pgq" >}} {{< ext "kafka_fdw" >}} {{< ext "wal2mongo" >}} {{< ext "decoder_raw" >}} {{< ext "pg_walinspect" >}} {{< ext "pg_logicalinspect" >}} |
 
-> [!Note] Upstream/current RPM matrix 2.7; DEB matrix 2.6. Headless logical decoding plugin, no CREATE EXTENSION or preload. Requires wal2json in output_plugin_libraries on PostgreSQL 18.6/17.11/16.15/15.19/14.24 and later minors.
+> [!Note] Headless logical-decoding plugin; no CREATE EXTENSION/preload. PGDG 2.7 on D/U/most EL; EL10 aarch64 remains 2.6; use output_plugin_libraries.
 
 
 ## Packages
@@ -38,7 +38,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `wal2json` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7` | {{< bg "18" "wal2json_18" "green" >}} {{< bg "17" "wal2json_17" "green" >}} {{< bg "16" "wal2json_16" "green" >}} {{< bg "15" "wal2json_15" "green" >}} {{< bg "14" "wal2json_14" "green" >}} | `wal2json_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "postgresql-18-wal2json" "green" >}} {{< bg "17" "postgresql-17-wal2json" "green" >}} {{< bg "16" "postgresql-16-wal2json" "green" >}} {{< bg "15" "postgresql-15-wal2json" "green" >}} {{< bg "14" "postgresql-14-wal2json" "green" >}} | `postgresql-$v-wal2json` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7` | {{< bg "18" "postgresql-18-wal2json" "green" >}} {{< bg "17" "postgresql-17-wal2json" "green" >}} {{< bg "16" "postgresql-16-wal2json" "green" >}} {{< bg "15" "postgresql-15-wal2json" "green" >}} {{< bg "14" "postgresql-14-wal2json" "green" >}} | `postgresql-$v-wal2json` | - |
 {.packages}
 
 
@@ -372,14 +372,16 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
-
-
-
 ## Usage
 
-> [wal2json: Changing data capture in JSON format](https://github.com/eulerto/wal2json)
+Sources:
 
-A logical decoding output plugin that produces JSON-formatted change data capture from the PostgreSQL WAL.
+- [wal2json 2.7 release](https://github.com/eulerto/wal2json/releases/tag/wal2json_2_7)
+- [Official README](https://github.com/eulerto/wal2json)
+
+`wal2json` 2.7 is a logical decoding output plugin that produces JSON-formatted change data capture from the PostgreSQL WAL. It supports current PostgreSQL 18 and 19 development lines and is loaded as an output plugin, so it does not use `CREATE EXTENSION` or `shared_preload_libraries`.
+
+For PostgreSQL 18.6, 17.11, 16.15, 15.19, 14.24 and later minor releases affected by CVE-2026-6471, add `wal2json` to `output_plugin_libraries` as documented by the upstream release notes.
 
 ### Configuration
 

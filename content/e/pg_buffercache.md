@@ -30,7 +30,7 @@ page_width: full
 |    **Need By**    | {{< ext "pgcozy" >}} |
 |   **See Also**    | {{< ext "pgfincore" >}} {{< ext "pgcozy" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_cooldown" >}} {{< ext "toastinfo" >}} {{< ext "pagevis" >}} {{< ext "pageinspect" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} |
 
-> [!Note] SQL/control baseline 1.6 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.6; older PostgreSQL majors may differ.
 
 
 ## Packages

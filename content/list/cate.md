@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-The 620 packaged PostgreSQL extensions (in 512 package families) are organized into 16 categories.
+The 620 packaged PostgreSQL extensions (in 514 package families) are organized into 16 categories.
 
 
 
@@ -42,13 +42,13 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1500 | {{< alias "postgis" >}} | 3.6.4 | PostGIS geometry and geography spatial types and functions |
-| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.4 | PostGIS topology spatial types and functions |
-| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.4 | PostGIS raster types and functions |
-| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.4 | PostGIS SFCGAL functions |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.4 | PostGIS tiger geocoder and reverse geocoder |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.4 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.4 | Address Standardizer US dataset example |
+| 1500 | {{< alias "postgis" >}} | 3.7.0 | PostGIS geometry and geography spatial types and functions |
+| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.7.0 | PostGIS topology spatial types and functions |
+| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.7.0 | PostGIS raster types and functions |
+| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.7.0 | PostGIS SFCGAL functions |
+| 1504 | {{< alias "postgis_tiger_geocoder" >}} | 2025.2 | PostGIS tiger geocoder and reverse geocoder |
+| 1505 | {{< alias "address_standardizer" >}} | 3.7 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | 3.7 | Address Standardizer US dataset example |
 | 1510 | {{< alias "pgrouting" >}} | 4.0.2 | pgRouting Extension |
 | 1520 | {{< alias "pointcloud" >}} | 1.2.5 | data type for lidar point clouds |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | integration for pointcloud LIDAR data and PostGIS geometry data |
@@ -271,10 +271,10 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3000 | {{< alias "pg_tle" >}} | 1.5.3 | Trusted Language Extensions for PostgreSQL |
 | 3010 | {{< alias "plv8" >}} | 3.2.5 | PL/JavaScript (v8) trusted procedural language |
 | 3011 | {{< alias "pljs" >}} | 1.0.5 | PL/JS trusted procedural language |
-| 3020 | {{< alias "pllua" >}} | 2.0.12 | Lua as a procedural language |
-| 3021 | {{< alias "hstore_pllua" "pllua" >}} | 2.0.12 | Hstore transform for Lua |
-| 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua as an untrusted procedural language |
-| 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
+| 3020 | {{< alias "pllua" >}} | 2.0 | Lua as a procedural language |
+| 3021 | {{< alias "hstore_pllua" "pllua" >}} | 1.0 | Hstore transform for Lua |
+| 3030 | {{< alias "plluau" "pllua" >}} | 2.0 | Lua as an untrusted procedural language |
+| 3031 | {{< alias "hstore_plluau" "pllua" >}} | 1.0 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.2 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
 | 3060 | {{< alias "plpgsql_check" >}} | 2.10 | Additional validation, profiling, and diagnostics for PL/pgSQL functions |
@@ -566,7 +566,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6280 | {{< alias "pg_track_optimizer" >}} | 0.9.2 | Track planning decisions in comparison with execution reality |
 | 6290 | {{< alias "pg_wait_sampling" >}} | 1.1.11 | sampling based statistics of wait events |
 | 6400 | {{< alias "pg_datasentinel" >}} | 1.0 | Observability and activity monitoring extension for PostgreSQL |
-| 6410 | {{< alias "pgsentinel" >}} | 1.5.1 | active session history |
+| 6410 | {{< alias "pgsentinel" >}} | 1.5.2 | active session history |
 | 6420 | {{< alias "system_stats" >}} | 4.1 | EnterpriseDB system statistics for PostgreSQL |
 | 6430 | {{< alias "pgexporter_ext" >}} | 0.2.5 | Operating-system and host metrics for pgexporter |
 | 6440 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | Normalized, friendlier system catalog for PostgreSQL |
@@ -686,7 +686,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 |:---:|:---|:---|:---|
 | 9000 | {{< alias "documentdb" >}} | 1.0 | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 1.0 | Core API surface for DocumentDB on PostgreSQL |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.116 | Multi-Node API surface for DocumentDB |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 1.0-0 | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 1.0 | DocumentDB Extended RUM index access method |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9100 | {{< alias "orafce" >}} | 4.17.1 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
@@ -723,7 +723,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 9500 | {{< alias "pglogical" >}} | 2.4.8 | PostgreSQL Logical Replication |
-| 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 2.4.8 | Dummy extension for compatibility when upgrading from Postgres 9.4 |
+| 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 1.0.0 | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | 9510 | {{< alias "pglogical_ticker" >}} | 1.4.1 | Have an accurate view on pglogical replication delay |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 2.2.1 | automated ddl deployment using pglogical |
 | 9530 | {{< alias "logical_ddl" >}} | 0.1.0 | Replicate supported DDL changes over PostgreSQL logical replication |

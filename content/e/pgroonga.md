@@ -30,7 +30,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_fts" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_cjk_parser" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pg_jieba" >}} {{< ext "dict_xsyn" >}} {{< ext "unaccent" >}} |
 |    **Siblings**   | {{< ext "pgroonga_database" >}} |
 
-> [!Note] Requires Groonga >= 15.1.7, MessagePack and xxHash. EL9 RPM release 4PGSTY requires groonga-libs >= 16.1.5-1PGSTY.el9; EL8/EL10 use 2PGSTY. Rebuilt with Groonga 16.1.5 for system simdjson ABI 34.
+> [!Note] Needs Groonga >=15.1.7, MessagePack and xxHash. EL9 4PGSTY needs groonga-libs >=16.1.5-1PGSTY.el9; EL8/10 use 2PGSTY.
 
 
 ## Packages

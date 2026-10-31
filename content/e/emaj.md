@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "btree_gist" >}} {{< ext "dblink" >}} |
 |   **See Also**    | {{< ext "table_version" >}} {{< ext "pgmemento" >}} {{< ext "data_historization" >}} {{< ext "table_log" >}} {{< ext "ddl_historization" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} |
 
-> [!Note] Requires max_prepared_transactions. E-Maj 5.0.1 fixes emaj_adm privilege escalation and PREPARE TRANSACTION errors.
+> [!Note] Requires max_prepared_transactions; 5.0.1 fixes privilege escalation and PREPARE TRANSACTION errors.
 
 
 ## Packages

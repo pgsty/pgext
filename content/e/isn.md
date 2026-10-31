@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "icu_ext" >}} {{< ext "currency" >}} {{< ext "asn1oid" >}} {{< ext "uri" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_cjk_parser" >}} |
 
-> [!Note] SQL/control baseline 1.3 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.3; older PostgreSQL majors may differ.
 
 
 ## Packages

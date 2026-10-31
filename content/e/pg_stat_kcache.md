@@ -30,13 +30,15 @@ page_width: full
 |   **Requires**    | {{< ext "pg_stat_statements" >}} |
 |   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "system_stats" >}} {{< ext "pgmeminfo" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pg_datasentinel" >}} {{< ext "pgsentinel" >}} {{< ext "pg_rusage" >}} |
 
+> [!Note] PGDG 2.3.2 covers listed EL/D/U x86_64/aarch64; requires pg_stat_statements and preload.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_stat_kcache` | `pg_stat_statements` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.1` | {{< bg "18" "pg_stat_kcache_18" "green" >}} {{< bg "17" "pg_stat_kcache_17" "green" >}} {{< bg "16" "pg_stat_kcache_16" "green" >}} {{< bg "15" "pg_stat_kcache_15" "green" >}} {{< bg "14" "pg_stat_kcache_14" "green" >}} | `pg_stat_kcache_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "pg_stat_kcache_18" "green" >}} {{< bg "17" "pg_stat_kcache_17" "green" >}} {{< bg "16" "pg_stat_kcache_16" "green" >}} {{< bg "15" "pg_stat_kcache_15" "green" >}} {{< bg "14" "pg_stat_kcache_14" "green" >}} | `pg_stat_kcache_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "postgresql-18-pg-stat-kcache" "green" >}} {{< bg "17" "postgresql-17-pg-stat-kcache" "green" >}} {{< bg "16" "postgresql-16-pg-stat-kcache" "green" >}} {{< bg "15" "postgresql-15-pg-stat-kcache" "green" >}} {{< bg "14" "postgresql-14-pg-stat-kcache" "green" >}} | `postgresql-$v-pg-stat-kcache` | - |
 {.packages}
 
@@ -428,14 +430,15 @@ shared_preload_libraries = 'pg_stat_statements, pg_stat_kcache';
 CREATE EXTENSION pg_stat_kcache CASCADE; -- requires pg_stat_statements
 ```
 
-
-
-
 ## Usage
 
-> [pg_stat_kcache: kernel cache statistics for PostgreSQL](https://github.com/powa-team/pg_stat_kcache)
+Sources:
 
-pg_stat_kcache gathers statistics about real reads and writes done by the filesystem layer, as well as CPU usage per query. It requires `pg_stat_statements`.
+- [v2.3.2 release](https://github.com/powa-team/pg_stat_kcache/releases/tag/REL2_3_2)
+- [Official README](https://github.com/powa-team/pg_stat_kcache)
+- [Extension control file](https://github.com/powa-team/pg_stat_kcache/blob/master/pg_stat_kcache.control)
+
+`pg_stat_kcache` 2.3.2 gathers statistics about real reads and writes done by the filesystem layer, as well as CPU usage per query. It requires `pg_stat_statements`; this release adds PostgreSQL 19 compatibility and fixes installation on RHEL-family systems.
 
 ### Views
 

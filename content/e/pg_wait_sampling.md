@@ -6,7 +6,7 @@ weight: 6290
 categories: ["STAT"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
-repos: ["PIGSTY"]
+repos: ["PGDG"]
 page_width: full
 ---
 
@@ -29,16 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pgsentinel" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_datasentinel" >}} {{< ext "powa" >}} {{< ext "pgrowlocks" >}} {{< ext "pg_visibility" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_stat_plans" >}} |
 
-> [!Note] Package version 1.1.11; SQL/control version 1.1. shared_preload_libraries=pg_wait_sampling is required; Pigsty DEB builds are pending.
+> [!Note] PGDG 1.1.11 covers EL8-10 and current D/U; local build capability retained; preload required.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.11` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_wait_sampling` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.11` | {{< bg "18" "pg_wait_sampling_18" "green" >}} {{< bg "17" "pg_wait_sampling_17" "green" >}} {{< bg "16" "pg_wait_sampling_16" "green" >}} {{< bg "15" "pg_wait_sampling_15" "green" >}} {{< bg "14" "pg_wait_sampling_14" "green" >}} | `pg_wait_sampling_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.11` | {{< bg "18" "postgresql-18-pg-wait-sampling" "green" >}} {{< bg "17" "postgresql-17-pg-wait-sampling" "green" >}} {{< bg "16" "postgresql-16-pg-wait-sampling" "green" >}} {{< bg "15" "postgresql-15-pg-wait-sampling" "green" >}} {{< bg "14" "postgresql-14-pg-wait-sampling" "green" >}} | `postgresql-$v-pg-wait-sampling` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.11` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_wait_sampling` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.11` | {{< bg "18" "pg_wait_sampling_18" "green" >}} {{< bg "17" "pg_wait_sampling_17" "green" >}} {{< bg "16" "pg_wait_sampling_16" "green" >}} {{< bg "15" "pg_wait_sampling_15" "green" >}} {{< bg "14" "pg_wait_sampling_14" "green" >}} | `pg_wait_sampling_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.11` | {{< bg "18" "postgresql-18-pg-wait-sampling" "green" >}} {{< bg "17" "postgresql-17-pg-wait-sampling" "green" >}} {{< bg "16" "postgresql-16-pg-wait-sampling" "green" >}} {{< bg "15" "postgresql-15-pg-wait-sampling" "green" >}} {{< bg "14" "postgresql-14-pg-wait-sampling" "green" >}} | `postgresql-$v-pg-wait-sampling` | - |
 {.packages}
 
 
@@ -454,10 +454,10 @@ pig build pkg pg_wait_sampling;		# build rpm
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add both repo and update cache
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
 [**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
@@ -487,14 +487,15 @@ shared_preload_libraries = 'pg_wait_sampling';
 CREATE EXTENSION pg_wait_sampling;
 ```
 
-
-
-
 ## Usage
 
-> [pg_wait_sampling: sampling based statistics of wait events](https://github.com/postgrespro/pg_wait_sampling)
+Sources:
 
-pg_wait_sampling collects wait event statistics by periodically sampling what each backend is waiting on. It provides both a recent history ring buffer and a cumulative profile.
+- [Official README](https://github.com/postgrespro/pg_wait_sampling)
+- [Release history](https://github.com/postgrespro/pg_wait_sampling/releases)
+- [Extension control file](https://github.com/postgrespro/pg_wait_sampling/blob/master/pg_wait_sampling.control)
+
+`pg_wait_sampling` 1.1.11 collects wait event statistics by periodically sampling what each backend is waiting on. It provides both a recent history ring buffer and a cumulative profile; this release fixes `profile_period` configuration handling and sampling-frequency rounding.
 
 ### Views
 

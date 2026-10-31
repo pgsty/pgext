@@ -12,16 +12,16 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 451 | 131 | 372 | 0 | 0 | 444 | 438 | 421 | 400 | 382 |
-| **EL** | 450 | 130 | 372 | 0 | 62 | 443 | 436 | 420 | 400 | 382 |
-| **Debian** | 444 | 91 | 353 | 0 | 68 | 437 | 431 | 415 | 396 | 380 |
+| **ALL** | 453 | 135 | 370 | 0 | 0 | 446 | 440 | 423 | 401 | 383 |
+| **EL** | 452 | 134 | 370 | 0 | 62 | 445 | 438 | 422 | 401 | 383 |
+| **Debian** | 446 | 95 | 351 | 0 | 68 | 439 | 433 | 417 | 397 | 381 |
 
 ## 分类
 
 | **类别** | **数** | **扩展包** |
 |:------------:|:--------:|:---------------|
 | {{< category time >}} | 16 | {{< ext "timescaledb" "timescaledb" >}} {{< ext "timescaledb_toolkit" "timescaledb_toolkit" >}} {{< ext "timeseries" "pg_timeseries" >}} {{< ext "periods" "periods" >}} {{< ext "temporal_tables" "temporal_tables" >}} {{< ext "emaj" "emaj" >}} {{< ext "table_version" "table_version" >}} {{< ext "pg_cron" "pg_cron" >}} {{< ext "pg_task" "pg_task" >}} {{< ext "pg_later" "pg_later" >}} {{< ext "pg_dispatch" "pg_dispatch" >}} {{< ext "pg_background" "pg_background" >}} {{< ext "pg_when" "pg_when" >}} {{< ext "edtf_postgres" "edtf_postgres" >}} {{< ext "pg_stl" "pg_stl" >}} {{< ext "cron_utils" "cron_utils" >}} |
-| {{< category gis >}} | 15 | {{< ext "postgis" "postgis" >}} {{< ext "pgrouting" "pgrouting" >}} {{< ext "pointcloud" "pointcloud" >}} {{< ext "h3" "pg_h3" >}} {{< ext "q3c" "q3c" >}} {{< ext "ogr_fdw" "ogr_fdw" >}} {{< ext "geoip" "geoip" >}} {{< ext "pg_polyline" "pg_polyline" >}} {{< ext "pg_eviltransform" "pg_eviltransform" >}} {{< ext "pg_geohash" "pg_geohash" >}} {{< ext "pghydro" "pghydro" >}} {{< ext "mobilitydb" "mobilitydb" >}} {{< ext "tzf" "pg_tzf" >}} {{< ext "earthdistance" "earthdistance" >}} {{< ext "qdgc" "qdgc" >}} |
+| {{< category gis >}} | 17 | {{< ext "postgis" "postgis" >}} {{< ext "postgis_tiger_geocoder" "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" "address_standardizer" >}} {{< ext "pgrouting" "pgrouting" >}} {{< ext "pointcloud" "pointcloud" >}} {{< ext "h3" "pg_h3" >}} {{< ext "q3c" "q3c" >}} {{< ext "ogr_fdw" "ogr_fdw" >}} {{< ext "geoip" "geoip" >}} {{< ext "pg_polyline" "pg_polyline" >}} {{< ext "pg_eviltransform" "pg_eviltransform" >}} {{< ext "pg_geohash" "pg_geohash" >}} {{< ext "pghydro" "pghydro" >}} {{< ext "mobilitydb" "mobilitydb" >}} {{< ext "tzf" "pg_tzf" >}} {{< ext "earthdistance" "earthdistance" >}} {{< ext "qdgc" "qdgc" >}} |
 | {{< category rag >}} | 18 | {{< ext "vector" "pgvector" >}} {{< ext "vchord" "vchord" >}} {{< ext "vectorscale" "pgvectorscale" >}} {{< ext "vectorize" "pg_vectorize" >}} {{< ext "pg_similarity" "pg_similarity" >}} {{< ext "pg_rrf" "pg_rrf" >}} {{< ext "smlar" "smlar" >}} {{< ext "pg_summarize" "pg_summarize" >}} {{< ext "pg_tiktoken" "pg_tiktoken" >}} {{< ext "pg_tiktoken_c" "pg_tiktoken_c" >}} {{< ext "pg_grammar_guard" "pg_grammar_guard" >}} {{< ext "jev" "jev" >}} {{< ext "pg4ml" "pg4ml" >}} {{< ext "pgml" "pgml" >}} {{< ext "pgmnemo" "pgmnemo" >}} {{< ext "pgcontext" "pgcontext" >}} {{< ext "pg_turbovec" "pg_turbovec" >}} {{< ext "pg_vectorsearch" "pg_vectorsearch" >}} |
 | {{< category fts >}} | 26 | {{< ext "pg_search" "pg_search" >}} {{< ext "pgroonga" "pgroonga" >}} {{< ext "pg_bigm" "pg_bigm" >}} {{< ext "vgram" "vgram" >}} {{< ext "zhparser" "zhparser" >}} {{< ext "pg_bestmatch" "pg_bestmatch" >}} {{< ext "vchord_bm25" "vchord_bm25" >}} {{< ext "pg_tokenizer" "pg_tokenizer" >}} {{< ext "biscuit" "pg_biscuit" >}} {{< ext "pg_textsearch" "pg_textsearch" >}} {{< ext "pg_pinyin" "pg_pinyin" >}} {{< ext "pg_kazsearch" "pg_kazsearch" >}} {{< ext "psql_bm25s" "psql_bm25s" >}} {{< ext "pg_fts" "pg_fts" >}} {{< ext "pg_cjk_parser" "pg_cjk_parser" >}} {{< ext "pg_jieba" "pg_jieba" >}} {{< ext "acdat" "acdat" >}} {{< ext "addressing_dictionary" "addressing_dictionary" >}} {{< ext "hunspell_cs_cz" "hunspell" >}} {{< ext "textsearch_intl" "textsearch_intl" >}} {{< ext "pg_icu_parser" "pg_icu_parser" >}} {{< ext "tin" "lead" >}} {{< ext "stannum" "stannum" >}} {{< ext "pg_tre" "pg_tre" >}} {{< ext "fuzzystrmatch" "fuzzystrmatch" >}} {{< ext "pg_trgm" "pg_trgm" >}} |
 | {{< category olap >}} | 19 | {{< ext "citus" "citus" >}} {{< ext "columnar" "hydra" >}} {{< ext "pg_duckdb" "pg_duckdb" >}} {{< ext "pg_mooncake" "pg_mooncake" >}} {{< ext "storage_engine" "storage_engine" >}} {{< ext "pg_clickhouse" "pg_clickhouse" >}} {{< ext "duckdb_fdw" "duckdb_fdw" >}} {{< ext "pg_parquet" "pg_parquet" >}} {{< ext "pg_ducklake" "pg_ducklake" >}} {{< ext "pg_fkpart" "pg_fkpart" >}} {{< ext "pg_partman" "pg_partman" >}} {{< ext "plproxy" "plproxy" >}} {{< ext "pg_strom" "pg_strom" >}} {{< ext "pg_orca" "pg_orca" >}} {{< ext "pg_sorted_heap" "pg_sorted_heap" >}} {{< ext "pg_lake" "pg_lake" >}} {{< ext "pg_table_range" "pg_table_range" >}} {{< ext "pg_improv" "pg_improv" >}} {{< ext "tablefunc" "tablefunc" >}} |
@@ -39,7 +39,7 @@ comments: false
 
 ## 扩展包列表
 
-共有 451 个可用的 PostgreSQL 扩展包：
+共有 453 个可用的 PostgreSQL 扩展包：
 
 | 包 | 版本 | 仓库 | 分类 | RPM | DEB |
 |:---|:-----|:-----|:-----|:-----|:-----|
@@ -59,7 +59,9 @@ comments: false
 | {{< ext "edtf_postgres" >}} | `1.3.2` | {{< badge content="Link" link="https://github.com/monumental-archive/edtf/tree/v1.3.2/crates/edtf-postgres" >}} | {{< category "TIME" >}} | `edtf_postgres_$v` | `postgresql-$v-edtf-postgres` |
 | {{< ext "pg_stl" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/nadyaloseva/pg_ts_analysis" >}} | {{< category "TIME" >}} | `pg_stl_$v` | `postgresql-$v-pg-stl` |
 | {{< ext "cron_utils" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/Myshkouski/pg-cron-utils" >}} | {{< category "TIME" >}} | `cron_utils_$v` | `postgresql-$v-cron-utils` |
-| {{< ext "postgis" >}} | `3.6.4` | {{< badge content="Link" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< category "GIS" >}} | `postgis36_$v` | `postgresql-$v-postgis-3` |
+| {{< ext "postgis" >}} | `3.7.0` | {{< badge content="Link" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< category "GIS" >}} | `postgis36_$v` | `postgresql-$v-postgis-3` |
+| {{< ext "postgis_tiger_geocoder" >}} | `2025.2` | {{< badge content="Link" link="https://gitea.osgeo.org/postgis/postgis_tiger_geocoder" >}} | {{< category "GIS" >}} | `postgis_tiger_geocoder_$v` | `postgresql-$v-postgis-tiger-geocoder` |
+| {{< ext "address_standardizer" >}} | `3.7` | {{< badge content="Link" link="https://github.com/postgis/address_standardizer" >}} | {{< category "GIS" >}} | `address_standardizer_$v` | `postgresql-$v-address-standardizer` |
 | {{< ext "pgrouting" >}} | `4.0.2` | {{< badge content="Link" link="https://github.com/pgRouting/pgrouting" >}} | {{< category "GIS" >}} | `pgrouting_$v` | `postgresql-$v-pgrouting` |
 | {{< ext "pointcloud" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< category "GIS" >}} | `pointcloud_$v` | `postgresql-$v-pointcloud` |
 | {{< ext "h3" "pg_h3" >}} | `4.5.0` | {{< badge content="Link" link="https://github.com/postgis/h3-pg" >}} | {{< category "GIS" >}} | `h3-pg_$v` | `postgresql-$v-h3` |
@@ -179,7 +181,7 @@ comments: false
 | {{< ext "pg_tle" >}} | `1.5.3` | {{< badge content="Link" link="https://github.com/aws/pg_tle" >}} | {{< category "LANG" >}} | `pg_tle_$v` | `postgresql-$v-pg-tle` |
 | {{< ext "plv8" >}} | `3.2.5` | {{< badge content="Link" link="https://github.com/plv8/plv8" >}} | {{< category "LANG" >}} | `plv8_$v` | `postgresql-$v-plv8` |
 | {{< ext "pljs" >}} | `1.0.5` | {{< badge content="Link" link="https://github.com/plv8/pljs" >}} | {{< category "LANG" >}} | `pljs_$v` | `postgresql-$v-pljs` |
-| {{< ext "pllua" >}} | `2.0.12` | {{< badge content="Link" link="https://github.com/pllua/pllua" >}} | {{< category "LANG" >}} | `pllua_$v` | `postgresql-$v-pllua` |
+| {{< ext "pllua" >}} | `2.0` | {{< badge content="Link" link="https://github.com/pllua/pllua" >}} | {{< category "LANG" >}} | `pllua_$v` | `postgresql-$v-pllua` |
 | {{< ext "plprql" >}} | `18.0.2` | {{< badge content="Link" link="https://github.com/kaspermarstal/plprql" >}} | {{< category "LANG" >}} | `plprql_$v` | `postgresql-$v-plprql` |
 | {{< ext "pldbgapi" "pldebugger" >}} | `1.10` | {{< badge content="Link" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< category "LANG" >}} | `pldebugger_$v` | `postgresql-$v-pldebugger` |
 | {{< ext "plpgsql_check" >}} | `2.10` | {{< badge content="Link" link="https://github.com/okbob/plpgsql_check" >}} | {{< category "LANG" >}} | `plpgsql_check_$v` | `postgresql-$v-plpgsql-check` |
@@ -418,7 +420,7 @@ comments: false
 | {{< ext "pg_track_optimizer" >}} | `0.9.2` | {{< badge content="Link" link="https://github.com/danolivo/pg_track_optimizer" >}} | {{< category "STAT" >}} | `pg_track_optimizer_$v` | `postgresql-$v-pg-track-optimizer` |
 | {{< ext "pg_wait_sampling" >}} | `1.1.11` | {{< badge content="Link" link="https://github.com/postgrespro/pg_wait_sampling" >}} | {{< category "STAT" >}} | `pg_wait_sampling_$v` | `postgresql-$v-pg-wait-sampling` |
 | {{< ext "pg_datasentinel" >}} | `1.0` | {{< badge content="Link" link="https://github.com/datasentinel/pg_datasentinel" >}} | {{< category "STAT" >}} | `pg_datasentinel_$v` | `postgresql-$v-pg-datasentinel` |
-| {{< ext "pgsentinel" >}} | `1.5.1` | {{< badge content="Link" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< category "STAT" >}} | `pgsentinel_$v` | `postgresql-$v-pgsentinel` |
+| {{< ext "pgsentinel" >}} | `1.5.2` | {{< badge content="Link" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< category "STAT" >}} | `pgsentinel_$v` | `postgresql-$v-pgsentinel` |
 | {{< ext "system_stats" >}} | `4.1` | {{< badge content="Link" link="https://github.com/EnterpriseDB/system_stats" >}} | {{< category "STAT" >}} | `system_stats_$v` | `postgresql-$v-system-stats` |
 | {{< ext "pgexporter_ext" >}} | `0.2.5` | {{< badge content="Link" link="https://github.com/pgexporter/pgexporter_ext" >}} | {{< category "STAT" >}} | `pgexporter_ext_$v` | `postgresql-$v-pgexporter-ext` |
 | {{< ext "meta" "pg_meta" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/aquameta/meta" >}} | {{< category "STAT" >}} | `pg_meta_$v` | `postgresql-$v-pg-meta` |

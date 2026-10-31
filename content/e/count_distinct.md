@@ -29,6 +29,8 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ddsketch" >}} {{< ext "tdigest" >}} {{< ext "topn" >}} {{< ext "omnisketch" >}} {{< ext "datasketches" >}} {{< ext "hll" >}} {{< ext "intagg" >}} {{< ext "intarray" >}} |
 
+> [!Note] PGDG 3.0.2 on EL8-10; this round adds EL8 coverage; PIGSTY remains on D/U.
+
 
 ## Packages
 

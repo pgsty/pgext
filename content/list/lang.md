@@ -44,7 +44,7 @@ The traditional PostgreSQL extension language
 | 1501 | {{< alias "postgis_topology" "postgis" >}} | PostGIS topology spatial types and functions |
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS raster types and functions |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL functions |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
+| 1505 | {{< alias "address_standardizer" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
 | 1520 | {{< alias "pointcloud" >}} | data type for lidar point clouds |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | integration for pointcloud LIDAR data and PostGIS geometry data |
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3 bindings for PostgreSQL |
@@ -485,7 +485,7 @@ Pure SQL extensions and functions
 | 1060 | {{< alias "table_version" >}} | PostgreSQL table versioning extension |
 | 1100 | {{< alias "pg_dispatch" >}} | Asynchronous SQL dispatcher built on pg_cron |
 | 1150 | {{< alias "cron_utils" >}} | Parse cron expressions and compute previous or next trigger times |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | Address Standardizer US dataset example |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | Address Standardizer US dataset example |
 | 1560 | {{< alias "geoip" >}} | IP-based geolocation query |
 | 1600 | {{< alias "pghydro" >}} | Drainage network analysis core for PostgreSQL and PostGIS |
 | 1601 | {{< alias "pgh_raster" "pghydro" >}} | Raster hydrology extension for PgHydro |
@@ -691,7 +691,7 @@ Extensions written in PLpgSQL
 
 | ID | Extension | Description |
 |:---:|:---|:---|
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger geocoder and reverse geocoder |
+| 1504 | {{< alias "postgis_tiger_geocoder" >}} | PostGIS tiger geocoder and reverse geocoder |
 | 4220 | {{< alias "pg_relation_sql" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
 | 6870 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
 | 9820 | {{< alias "pg_fact_loader" >}} | build fact tables with Postgres |

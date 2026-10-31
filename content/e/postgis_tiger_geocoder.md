@@ -10,14 +10,14 @@ repos: ["PGDG"]
 page_width: full
 ---
 
-[**postgis**](https://git.osgeo.org/gitea/postgis/postgis) : PostGIS tiger geocoder and reverse geocoder
+[**postgis_tiger_geocoder**](https://gitea.osgeo.org/postgis/postgis_tiger_geocoder) : PostGIS tiger geocoder and reverse geocoder
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1504** | {{< badge content="postgis_tiger_geocoder" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_tiger_geocoder" "postgis" >}} | `3.6.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "PLpgSQL" >}} |
+| **1504** | {{< badge content="postgis_tiger_geocoder" link="https://gitea.osgeo.org/postgis/postgis_tiger_geocoder" >}} | {{< ext "postgis_tiger_geocoder" >}} | `2025.2` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "PLpgSQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,53 +30,111 @@ page_width: full
 |    **Schemas**    | `tiger` |
 |   **Requires**    | {{< ext "postgis" >}} {{< ext "fuzzystrmatch" >}} |
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
-|    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
 
-> [!Note] Pure SQL/PLpgSQL extension with no extension-specific library. Control sets superuser=false and leaves trusted unset; a non-superuser can install it with the required privileges and dependencies. The catalog trusted flag retains the existing non-superuser-installable convention.
+> [!Note] Standalone since PostGIS 3.7; control/package 2025.2; PG16+; no local recipe.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | `postgis`, `fuzzystrmatch` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "postgis36_18" "green" >}} {{< bg "17" "postgis36_17" "green" >}} {{< bg "16" "postgis36_16" "green" >}} {{< bg "15" "postgis36_15" "green" >}} {{< bg "14" "postgis36_14" "green" >}} | `postgis36_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2025.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `postgis_tiger_geocoder` | `postgis`, `fuzzystrmatch` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2025.2` | {{< bg "18" "postgis_tiger_geocoder_18" "green" >}} {{< bg "17" "postgis_tiger_geocoder_17" "green" >}} {{< bg "16" "postgis_tiger_geocoder_16" "green" >}} {{< bg "15" "postgis_tiger_geocoder_15" "red" >}} {{< bg "14" "postgis_tiger_geocoder_14" "red" >}} | `postgis_tiger_geocoder_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2025.2` | {{< bg "18" "postgresql-18-postgis-tiger-geocoder" "green" >}} {{< bg "17" "postgresql-17-postgis-tiger-geocoder" "green" >}} {{< bg "16" "postgresql-16-postgis-tiger-geocoder" "green" >}} {{< bg "15" "postgresql-15-postgis-tiger-geocoder" "red" >}} {{< bg "14" "postgresql-14-postgis-tiger-geocoder" "red" >}} | `postgresql-$v-postgis-tiger-geocoder` | - |
 {.packages}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 3.6.4" "postgis36_18 : AVAIL 7" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_17 : AVAIL 7" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_16 : AVAIL 7" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_15 : AVAIL 7" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_14 : AVAIL 7" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 3.6.4" "postgis36_18 : AVAIL 8" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_17 : AVAIL 8" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_16 : AVAIL 8" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_15 : AVAIL 8" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_14 : AVAIL 8" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 3.6.4" "postgis36_18 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_17 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_16 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_15 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_14 : AVAIL 14" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 3.6.4" "postgis36_18 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_17 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_16 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_15 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_14 : AVAIL 14" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 3.6.4" "postgis36_18 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_17 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_16 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_15 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_14 : AVAIL 13" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 3.6.4" "postgis36_18 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_17 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_16 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_15 : AVAIL 13" "blue" >}} | {{< bg "PGDG 3.6.4" "postgis36_14 : AVAIL 13" "blue" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "MISS" "postgis_tiger_geocoder_18 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_17 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_16 : MISS 0" "red" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "MISS" "postgis_tiger_geocoder_18 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_17 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_16 : MISS 0" "red" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2025.2" "postgresql-18-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-17-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgresql-16-postgis-tiger-geocoder : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgresql-15-postgis-tiger-geocoder : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-postgis-tiger-geocoder : N/A 0" "gray" >}} |
 {.matrix}
 
+
+{{< tabs group="pgmajor" >}}
+{{< tab label="PG18" value="pg18" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis_tiger_geocoder_18` | `2025.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 104.4 KiB | [postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm) |
+| `postgis_tiger_geocoder_18` | `2025.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 104.3 KiB | [postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm) |
+| `postgis_tiger_geocoder_18` | `2025.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.5 KiB | [postgis_tiger_geocoder_18-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/postgis_tiger_geocoder_18-2025.2-1PGDG.rhel10.2.noarch.rpm) |
+| `postgis_tiger_geocoder_18` | `2025.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 104.5 KiB | [postgis_tiger_geocoder_18-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/postgis_tiger_geocoder_18-2025.2-1PGDG.rhel10.2.noarch.rpm) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 94.9 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 94.9 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 95.1 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 95.1 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 95.0 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 95.0 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 95.1 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 95.1 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 95.0 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb) |
+| `postgresql-18-postgis-tiger-geocoder` | `2025.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.0 KiB | [postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-18-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb) |
+{.downloads}
+
+{{< /tab >}}
+{{< tab label="PG17" value="pg17" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis_tiger_geocoder_17` | `2025.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 104.4 KiB | [postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm) |
+| `postgis_tiger_geocoder_17` | `2025.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 104.3 KiB | [postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm) |
+| `postgis_tiger_geocoder_17` | `2025.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.6 KiB | [postgis_tiger_geocoder_17-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/postgis_tiger_geocoder_17-2025.2-1PGDG.rhel10.2.noarch.rpm) |
+| `postgis_tiger_geocoder_17` | `2025.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 104.5 KiB | [postgis_tiger_geocoder_17-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/postgis_tiger_geocoder_17-2025.2-1PGDG.rhel10.2.noarch.rpm) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 95.1 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 95.1 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb) |
+| `postgresql-17-postgis-tiger-geocoder` | `2025.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.9 KiB | [postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-17-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb) |
+{.downloads}
+
+{{< /tab >}}
+{{< tab label="PG16" value="pg16" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis_tiger_geocoder_16` | `2025.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 104.4 KiB | [postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm) |
+| `postgis_tiger_geocoder_16` | `2025.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 104.3 KiB | [postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm) |
+| `postgis_tiger_geocoder_16` | `2025.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.6 KiB | [postgis_tiger_geocoder_16-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/postgis_tiger_geocoder_16-2025.2-1PGDG.rhel10.2.noarch.rpm) |
+| `postgis_tiger_geocoder_16` | `2025.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 104.5 KiB | [postgis_tiger_geocoder_16-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/postgis_tiger_geocoder_16-2025.2-1PGDG.rhel10.2.noarch.rpm) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 95.0 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 95.0 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg12+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 95.0 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 95.0 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg13+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 94.9 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 94.9 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg22.04+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 95.2 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 95.2 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg24.04+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 94.9 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb) |
+| `postgresql-16-postgis-tiger-geocoder` | `2025.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.9 KiB | [postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis-tiger-geocoder/postgresql-16-postgis-tiger-geocoder_2025.2-1.pgdg26.04+1_all.deb) |
+{.downloads}
+
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://git.osgeo.org/gitea/postgis/postgis" title="Repository" icon="link" subtitle="git.osgeo.org/gitea/postgis/postgis" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgis-3.6.4.tar.gz postgis-3.6.4-en.pdf postgis36-filter-requires-perl-Pg.sh" />}}
+{{< card link="https://gitea.osgeo.org/postgis/postgis_tiger_geocoder" title="Repository" icon="link" subtitle="gitea.osgeo.org/postgis/postgis_tiger_geocoder" />}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg postgis;		# build rpm/deb
-```
 
 
 ## Install
@@ -90,14 +148,11 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 [**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
 
 ```bash
-pig install postgis;		# install via package name, for the active PG version
-pig install postgis_tiger_geocoder;		# install by extension name, for the current active PG version
+pig install postgis_tiger_geocoder;		# install via package name, for the active PG version
 
 pig install postgis_tiger_geocoder -v 18;   # install for PG 18
 pig install postgis_tiger_geocoder -v 17;   # install for PG 17
 pig install postgis_tiger_geocoder -v 16;   # install for PG 16
-pig install postgis_tiger_geocoder -v 15;   # install for PG 15
-pig install postgis_tiger_geocoder -v 14;   # install for PG 14
 
 ```
 

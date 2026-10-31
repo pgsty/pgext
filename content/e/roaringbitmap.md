@@ -30,7 +30,7 @@ page_width: full
 |    **Need By**    | {{< ext "pgfaceting" >}} |
 |   **See Also**    | {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pgfaceting" >}} {{< ext "pg_search" >}} {{< ext "bloom" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_fts" >}} |
 
-> [!Note] PGDG RPM package 1.3.0 installs SQL/control 1.3; the DEB package baseline remains 1.2.0. Local 1.3.0 recipes do not establish DEB publication.
+> [!Note] RPM 1.3.0 installs SQL/control 1.3; DEB baseline 1.2.0. Local 1.3.0 recipes do not imply DEB publication.
 
 
 ## Packages

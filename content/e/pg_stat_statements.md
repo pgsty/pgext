@@ -30,7 +30,7 @@ page_width: full
 |    **Need By**    | {{< ext "pg_stat_kcache" >}} {{< ext "pgtelemetry" >}} {{< ext "powa" >}} |
 |   **See Also**    | {{< ext "pg_stat_plans" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_store_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_show_plans" >}} {{< ext "powa" >}} {{< ext "explain_ui" >}} {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} {{< ext "pg_relusage" >}} {{< ext "pg_wait_sampling" >}} |
 
-> [!Note] SQL/control baseline 1.12 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.12; older PostgreSQL majors may differ.
 
 
 ## Packages

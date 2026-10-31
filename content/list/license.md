@@ -630,9 +630,9 @@ PostgreSQL extension categorized by license.
 | 1501 | {{< alias "postgis_topology" "postgis" >}} | PostGIS topology spatial types and functions |
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS raster types and functions |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL functions |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger geocoder and reverse geocoder |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | Address Standardizer US dataset example |
+| 1504 | {{< alias "postgis_tiger_geocoder" >}} | PostGIS tiger geocoder and reverse geocoder |
+| 1505 | {{< alias "address_standardizer" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | Address Standardizer US dataset example |
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 1540 | {{< alias "q3c" >}} | q3c sky indexing plugin |
 | 1600 | {{< alias "pghydro" >}} | Drainage network analysis core for PostgreSQL and PostGIS |

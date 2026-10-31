@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_checksums" >}} {{< ext "pg_catcheck" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_pathcheck" >}} {{< ext "pg_isok" >}} {{< ext "pg_surgery" >}} {{< ext "pageinspect" >}} {{< ext "adminpack" >}} {{< ext "pg_repack" >}} |
 
-> [!Note] SQL/control baseline 1.5 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.5; older PostgreSQL majors may differ.
 
 
 ## Packages

@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `anon` |
 |   **See Also**    | {{< ext "column_encrypt" >}} {{< ext "pg_tde" >}} {{< ext "supabase_vault" >}} {{< ext "pg_enigma" >}} {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} |
 
-> [!Note] No in-place update; drop/recreate and migrate masking rules. The 3.3 series adds security hardening; 3.3.2 restores the ARM build.
+> [!Note] No in-place upgrade; drop/recreate and migrate masking rules. 3.3 adds security hardening; 3.3.2 restores ARM build.
 
 
 ## Packages
