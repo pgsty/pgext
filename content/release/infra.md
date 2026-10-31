@@ -6,6 +6,25 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-01
+
+Local build batch: ten packages were downloaded through the port `8888` Xray proxy, verified against upstream digests, and built for both architectures as RPM/DEB, then imported into the local APT/YUM repositories, producing 40 artifacts. Online publication remains pending. `sealos` remains pinned at `5.0.1`; `promtail` and `pgbackrest-exporter` remain deferred.
+
+| Name                | Old       | New       | Comment                                       |
+| :------------------ | :-------- | :-------- | :-------------------------------------------- |
+| barn                | 0.9.1     | 0.9.3     | Upstream prerelease; native DEB/RPM bytes     |
+| claude              | 2.1.312   | 2.1.316   | Official manifest verified; dual-architecture |
+| cloudflared         | 2026.10.6 | 2026.10.7 | Dual-architecture RPM/DEB                     |
+| codex               | 0.165.0   | 0.166.0   | Dual-architecture RPM/DEB                     |
+| crush               | 0.98.2    | 0.99.0    | Dual-architecture RPM/DEB                     |
+| grafana-infinity-ds | 4.1.4     | 4.1.5     | Dual-architecture RPM/DEB                     |
+| headscale           | 0.29.6    | 0.29.7    | Dual-architecture RPM/DEB                     |
+| mtail               | 3.4.18    | 3.4.19    | Dual-architecture RPM/DEB                     |
+| vector              | 0.60.0    | 0.61.0    | Upstream native DEB/RPM bytes                 |
+| xray                | 26.10.29  | 26.10.31  | Dual-architecture RPM/DEB                     |
+{.wide .expand}
+
+
 ## 2026-10-30
 
 | Name         | Old       | New       | Comment                                       |

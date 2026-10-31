@@ -6,7 +6,6 @@ weight: 9020
 categories: ["SIM"]
 languages: ["C"]
 licenses: ["MIT"]
-repos: ["PIGSTY"]
 page_width: full
 ---
 
@@ -17,7 +16,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9020** | {{< badge content="documentdb_distributed" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb_distributed" "documentdb" >}} | `0.116` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **9020** | {{< badge content="documentdb_distributed" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb_distributed" "documentdb" >}} | `1.0-0` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,16 +30,14 @@ page_width: full
 |   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "citus" >}} {{< ext "pg_projection" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_extended_rum" >}} |
 
-> [!Note] Internal Citus component; not shipped in the PGSTY DocumentDB 1.0 OSS packages. Historical 0.116 package metadata is retained; no current packaged availability is claimed. PGSTY DocumentDB supports PostgreSQL 16-18.
+> [!Note] Obsolete; internal DocumentDB component, excluded from current OSS packages.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `documentdb` | `citus`, `documentdb_core`, `documentdb` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "documentdb_18" "red" >}} {{< bg "17" "documentdb_17" "red" >}} {{< bg "16" "documentdb_16" "red" >}} {{< bg "15" "documentdb_15" "red" >}} {{< bg "14" "documentdb_14" "red" >}} | `documentdb_$v` | `postgresql$v-contrib`, `pg_cron_$v`, `pgvector_$v`, `rum_$v`, `postgis36_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.116` | {{< bg "18" "postgresql-18-documentdb" "red" >}} {{< bg "17" "postgresql-17-documentdb" "red" >}} {{< bg "16" "postgresql-16-documentdb" "red" >}} {{< bg "15" "postgresql-15-documentdb" "red" >}} {{< bg "14" "postgresql-14-documentdb" "red" >}} | `postgresql-$v-documentdb` | `postgresql-$v-cron`, `postgresql-$v-pgvector`, `postgresql-$v-rum`, `postgresql-$v-postgis-3` |
+| **EXT** | {{< badge content="N/A" link="/repo/pgsql" >}} | `1.0-0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `documentdb` | `citus`, `documentdb_core`, `documentdb` |
 {.packages}
 
 
@@ -69,13 +66,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/documentdb/documentdb" title="Repository" icon="github" subtitle="github.com/documentdb/documentdb" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.116-0.tar.gz intelrdfpmath-applied-2.0u3-1.tar.gz" />}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg documentdb;		# build rpm/deb
-```
 
 
 ## Install

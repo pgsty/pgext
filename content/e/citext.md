@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "unaccent" >}} {{< ext "icu_ext" >}} {{< ext "pg_trgm" >}} {{< ext "pg_xenophile" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_cjk_parser" >}} {{< ext "dict_xsyn" >}} {{< ext "pgroonga" >}} {{< ext "pg_tokenizer" >}} {{< ext "pgpcre" >}} |
 
-> [!Note] SQL/control baseline 1.8 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.8; older PostgreSQL majors may differ.
 
 
 ## Packages

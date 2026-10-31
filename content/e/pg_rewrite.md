@@ -6,7 +6,7 @@ weight: 5020
 categories: ["ADMIN"]
 languages: ["C"]
 licenses: ["BSD-3-Clause"]
-repos: ["PIGSTY"]
+repos: ["PGDG"]
 page_width: full
 ---
 
@@ -29,16 +29,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_repack" >}} {{< ext "pgstattuple" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_dirtyread" >}} {{< ext "pg_column_tetris" >}} {{< ext "pg_visibility" >}} |
 
-> [!Note] Pigsty RPM and DEB package version 2.2; shared_preload_libraries=pg_rewrite and wal_level=logical are required.
+> [!Note] PGDG 2.2 covers EL8-10; all supported coordinates are now PGDG. Build capability retained; preload and wal_level=logical required.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rewrite` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "pg_rewrite_18" "green" >}} {{< bg "17" "pg_rewrite_17" "green" >}} {{< bg "16" "pg_rewrite_16" "green" >}} {{< bg "15" "pg_rewrite_15" "green" >}} {{< bg "14" "pg_rewrite_14" "green" >}} | `pg_rewrite_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2` | {{< bg "18" "postgresql-18-pg-rewrite" "green" >}} {{< bg "17" "postgresql-17-pg-rewrite" "green" >}} {{< bg "16" "postgresql-16-pg-rewrite" "green" >}} {{< bg "15" "postgresql-15-pg-rewrite" "green" >}} {{< bg "14" "postgresql-14-pg-rewrite" "green" >}} | `postgresql-$v-pg-rewrite` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rewrite` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "pg_rewrite_18" "green" >}} {{< bg "17" "pg_rewrite_17" "green" >}} {{< bg "16" "pg_rewrite_16" "green" >}} {{< bg "15" "pg_rewrite_15" "green" >}} {{< bg "14" "pg_rewrite_14" "green" >}} | `pg_rewrite_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "postgresql-18-pg-rewrite" "green" >}} {{< bg "17" "postgresql-17-pg-rewrite" "green" >}} {{< bg "16" "postgresql-16-pg-rewrite" "green" >}} {{< bg "15" "postgresql-15-pg-rewrite" "green" >}} {{< bg "14" "postgresql-14-pg-rewrite" "green" >}} | `postgresql-$v-pg-rewrite` | - |
 {.packages}
 
 
@@ -493,10 +493,10 @@ pig build pkg pg_rewrite;		# build rpm/deb
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add both repo and update cache
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
 [**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):
@@ -526,14 +526,15 @@ shared_preload_libraries = 'pg_rewrite';
 CREATE EXTENSION pg_rewrite;
 ```
 
-
-
-
 ## Usage
 
-> [pg_rewrite: Tool allows read write to the table during the rewriting](https://github.com/cybertec-postgresql/pg_rewrite)
+Sources:
 
-`pg_rewrite` requires `wal_level = logical` and must be added to `shared_preload_libraries`. Common use cases include changing column data types, partitioning tables, reordering columns, and moving tables to different tablespaces -- all while allowing concurrent reads and writes.
+- [Official README](https://github.com/cybertec-postgresql/pg_rewrite)
+- [Release history](https://github.com/cybertec-postgresql/pg_rewrite/releases)
+- [Extension control file](https://github.com/cybertec-postgresql/pg_rewrite/blob/master/pg_rewrite.control)
+
+`pg_rewrite` 2.2 requires `wal_level = logical` and must be added to `shared_preload_libraries`. It rewrites a table while allowing concurrent reads and writes, which is useful for changing column data types, partitioning tables, reordering columns, and moving tables to different tablespaces.
 
 ### Rewrite a Table
 

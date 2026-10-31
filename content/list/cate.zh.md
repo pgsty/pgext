@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-620 个已打包 PostgreSQL 扩展（归属 512 个包族）划分为 16 个分类。
+620 个已打包 PostgreSQL 扩展（归属 514 个包族）划分为 16 个分类。
 
 
 
@@ -42,13 +42,13 @@ page_width: full
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1500 | {{< alias "postgis" >}} | 3.6.4 | PostGIS 几何和地理空间扩展 |
-| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.4 | PostGIS 拓扑空间类型和函数 |
-| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.4 | PostGIS 光栅类型和函数 |
-| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.4 | PostGIS SFCGAL 函数 |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.4 | PostGIS tiger 地理编码器和反向地理编码器 |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.4 | 地址标准化函数。 |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.4 | 地址标准化函数：美国数据集示例 |
+| 1500 | {{< alias "postgis" >}} | 3.7.0 | PostGIS 几何和地理空间扩展 |
+| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.7.0 | PostGIS 拓扑空间类型和函数 |
+| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.7.0 | PostGIS 光栅类型和函数 |
+| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.7.0 | PostGIS SFCGAL 函数 |
+| 1504 | {{< alias "postgis_tiger_geocoder" >}} | 2025.2 | PostGIS tiger 地理编码器和反向地理编码器 |
+| 1505 | {{< alias "address_standardizer" >}} | 3.7 | 地址标准化函数。 |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | 3.7 | 地址标准化函数：美国数据集示例 |
 | 1510 | {{< alias "pgrouting" >}} | 4.0.2 | 提供寻路能力 |
 | 1520 | {{< alias "pointcloud" >}} | 1.2.5 | 提供激光雷达点云数据类型支持 |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | 将激光雷达点云与PostGIS几何类型相集成 |
@@ -271,10 +271,10 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3000 | {{< alias "pg_tle" >}} | 1.5.3 | AWS 可信语言扩展 |
 | 3010 | {{< alias "plv8" >}} | 3.2.5 | PL/JavaScript (v8) 可信过程程序语言 |
 | 3011 | {{< alias "pljs" >}} | 1.0.5 | PL/JS 可信过程程序语言 |
-| 3020 | {{< alias "pllua" >}} | 2.0.12 | Lua 程序语言 |
-| 3021 | {{< alias "hstore_pllua" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展 |
-| 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua 程序语言（不受信任的） |
-| 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
+| 3020 | {{< alias "pllua" >}} | 2.0 | Lua 程序语言 |
+| 3021 | {{< alias "hstore_pllua" "pllua" >}} | 1.0 | Lua 程序语言的Hstore适配扩展 |
+| 3030 | {{< alias "plluau" "pllua" >}} | 2.0 | Lua 程序语言（不受信任的） |
+| 3031 | {{< alias "hstore_plluau" "pllua" >}} | 1.0 | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | 3040 | {{< alias "plprql" >}} | 18.0.2 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | 用于调试 PL/pgSQL 函数的服务器端支持 |
 | 3060 | {{< alias "plpgsql_check" >}} | 2.10 | PL/pgSQL 函数的附加校验、性能分析与诊断工具 |
@@ -566,7 +566,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6280 | {{< alias "pg_track_optimizer" >}} | 0.9.2 | 跟踪规划器决策与实际执行的差距 |
 | 6290 | {{< alias "pg_wait_sampling" >}} | 1.1.11 | 基于采样的等待事件统计 |
 | 6400 | {{< alias "pg_datasentinel" >}} | 1.0 | PostgreSQL 可观测性与活动监控扩展 |
-| 6410 | {{< alias "pgsentinel" >}} | 1.5.1 | 活跃会话历史 |
+| 6410 | {{< alias "pgsentinel" >}} | 1.5.2 | 活跃会话历史 |
 | 6420 | {{< alias "system_stats" >}} | 4.1 | PostgreSQL 的系统统计函数 |
 | 6430 | {{< alias "pgexporter_ext" >}} | 0.2.5 | 为 pgexporter 提供操作系统与主机指标 |
 | 6440 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | 标准化，更友好的PostgreSQL系统目录视图 |
@@ -686,7 +686,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 9000 | {{< alias "documentdb" >}} | 1.0 | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 1.0 | 微软DocumentDB的核心API层实现 |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.116 | DocumentDB多节点模式的API层 |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 1.0-0 | DocumentDB多节点模式的API层 |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 1.0 | DocumentDB扩展RUM索引访问方法 |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | 9100 | {{< alias "orafce" >}} | 4.17.1 | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
@@ -723,7 +723,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 9500 | {{< alias "pglogical" >}} | 2.4.8 | PostgreSQL逻辑复制：三方扩展实现 |
-| 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 2.4.8 | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
+| 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 1.0.0 | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | 9510 | {{< alias "pglogical_ticker" >}} | 1.4.1 | pglogical复制延迟以秒计的精确视图 |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 2.2.1 | 使用 pglogical 执行自动 DDL 部署 |
 | 9530 | {{< alias "logical_ddl" >}} | 0.1.0 | 在 PostgreSQL 逻辑复制中复制受支持的 DDL 变更 |

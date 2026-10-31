@@ -39,7 +39,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_eviltransform` | `postgis` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "pg_eviltransform_18" "green" >}} {{< bg "17" "pg_eviltransform_17" "green" >}} {{< bg "16" "pg_eviltransform_16" "green" >}} {{< bg "15" "pg_eviltransform_15" "green" >}} {{< bg "14" "pg_eviltransform_14" "green" >}} | `pg_eviltransform_$v` | `postgis36_$v` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "pg_eviltransform_18" "green" >}} {{< bg "17" "pg_eviltransform_17" "green" >}} {{< bg "16" "pg_eviltransform_16" "green" >}} {{< bg "15" "pg_eviltransform_15" "green" >}} {{< bg "14" "pg_eviltransform_14" "green" >}} | `pg_eviltransform_$v` | `postgis37_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.7` | {{< bg "18" "postgresql-18-eviltransform" "green" >}} {{< bg "17" "postgresql-17-eviltransform" "green" >}} {{< bg "16" "postgresql-16-eviltransform" "green" >}} {{< bg "15" "postgresql-15-eviltransform" "green" >}} {{< bg "14" "postgresql-14-eviltransform" "green" >}} | `postgresql-$v-eviltransform` | `postgresql-$v-postgis` |
 {.packages}
 

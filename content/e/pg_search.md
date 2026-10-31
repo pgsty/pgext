@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "pg_textsearch" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_fts" >}} {{< ext "pgroonga" >}} {{< ext "pg_rrf" >}} {{< ext "psql_bm25s" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pgfaceting" >}} {{< ext "roaringbitmap" >}} {{< ext "rum" >}} |
 
-> [!Note] Requires preload and pgvector; conflicts with pg_textsearch and vchord_bm25. Built with pgrx 0.19.3. 0.26.4 adds array late materialization and join-scan improvements and fixes partitioned-search and window-function cases.
+> [!Note] Preload required; needs pgvector; conflicts with pg_textsearch/vchord_bm25. 0.26.4 fixes partitioned-search/window cases; built with pgrx 0.19.3.
 
 
 ## Packages

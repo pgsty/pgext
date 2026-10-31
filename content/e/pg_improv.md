@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `improv` |
 
-> [!Note] Superuser install; commit mode needs preload; logical mode also needs shared preload/restart, wal_level=logical and a worker database. Logical slots retain WAL; numeric results use float8. PG15-18; build pgrx 0.19.3, upstream 0.17.0. 0.12.2 fixes repeated model-catalog reads by idle logical-sync workers.
+> [!Note] Superuser install; commit mode needs preload. Logical mode needs preload/restart, wal_level=logical and a worker DB; slots retain WAL. PG15-18.
 
 
 ## Packages

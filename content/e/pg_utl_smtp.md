@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "plperlu" >}} |
 |   **See Also**    | {{< ext "pg_smtp_client" >}} {{< ext "omni_email" >}} {{< ext "orafce" >}} {{< ext "pg_html5_email_address" >}} {{< ext "emailaddr" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "db2fce" >}} |
 
-> [!Note] Upstream v2.0/SQL 2.0.0; maintained DEB recipe/source is 2.0.0 (pg_utl_smtp-2.0.tar.gz). Requires plperlu and Perl Net::SMTP; SSL/TLS needs IO::Socket::SSL >= 2.007. Asynchronous mode optionally requires pg_dbms_job >= 2.0.
+> [!Note] PGDG 2.0.0 on EL8-10; PIGSTY 1.0 on D/U. TLS needs plperlu, Net::SMTP and IO::Socket::SSL.
 
 
 ## Packages
@@ -293,12 +293,15 @@ pig install pg_utl_smtp -v 14;   # install for PG 14
 CREATE EXTENSION pg_utl_smtp CASCADE; -- requires plperlu
 ```
 
-
-
-
 ## Usage
 
-> [pg_utl_smtp: Oracle UTL_SMTP compatibility extension for PostgreSQL](https://github.com/hexacluster/pg_utl_smtp)
+Sources:
+
+- [Official README](https://github.com/hexacluster/pg_utl_smtp)
+- [v2.0.0 ChangeLog](https://github.com/hexacluster/pg_utl_smtp/blob/main/ChangeLog)
+- [Extension control file](https://github.com/hexacluster/pg_utl_smtp/blob/main/pg_utl_smtp.control)
+
+`pg_utl_smtp` 2.0.0 provides Oracle `UTL_SMTP` compatibility on PostgreSQL through `plperlu`. The 2.0 release adds optional asynchronous delivery through `utl_smtp.asynchronous`, the `utl_smtp.mail_queue` table, and `utl_smtp.async_resend()`; it also improves SMTP error reporting and SSL/TLS handling.
 
 ### Enabling
 

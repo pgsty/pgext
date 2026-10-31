@@ -6,6 +6,25 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-01
+
+本地构建批次：10 个软件包通过 `8888` Xray 代理下载，按上游校验值核验后完成双架构 RPM/DEB 构建，并已导入本地 APT/YUM 仓库，共生成 40 个制品。在线发布仍待后续处理；`sealos` 继续锁定 `5.0.1`，`promtail` 和 `pgbackrest-exporter` 暂缓更新。
+
+| 名称                | 旧版本    | 新版本    | 备注                              |
+| :------------------ | :-------- | :-------- | :-------------------------------- |
+| barn                | 0.9.1     | 0.9.3     | 上游预发布；保留原生 DEB/RPM 字节 |
+| claude              | 2.1.312   | 2.1.316   | 官方 manifest 已核验；双架构构建  |
+| cloudflared         | 2026.10.6 | 2026.10.7 | 双架构 RPM/DEB                    |
+| codex               | 0.165.0   | 0.166.0   | 双架构 RPM/DEB                    |
+| crush               | 0.98.2    | 0.99.0    | 双架构 RPM/DEB                    |
+| grafana-infinity-ds | 4.1.4     | 4.1.5     | 双架构 RPM/DEB                    |
+| headscale           | 0.29.6    | 0.29.7    | 双架构 RPM/DEB                    |
+| mtail               | 3.4.18    | 3.4.19    | 双架构 RPM/DEB                    |
+| vector              | 0.60.0    | 0.61.0    | 保留上游原生 DEB/RPM 字节         |
+| xray                | 26.10.29  | 26.10.31  | 双架构 RPM/DEB                    |
+{.wide .expand}
+
+
 ## 2026-10-30
 
 本地构建批次：7 个软件包通过 8888 Xray 代理下载，完成双架构 RPM/DEB 构建与校验，共生成 28 个制品。当前仅保留在本地，尚未放入 APT/YUM 仓库或在线发布；`sealos` 继续锁定 5.0.1，`promtail` 和 `pgbackrest-exporter` 暂缓更新。

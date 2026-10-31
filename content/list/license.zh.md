@@ -630,9 +630,9 @@ page_width: full
 | 1501 | {{< alias "postgis_topology" "postgis" >}} | PostGIS 拓扑空间类型和函数 |
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS 光栅类型和函数 |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL 函数 |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 地址标准化函数。 |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 地址标准化函数：美国数据集示例 |
+| 1504 | {{< alias "postgis_tiger_geocoder" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
+| 1505 | {{< alias "address_standardizer" >}} | 地址标准化函数。 |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | 地址标准化函数：美国数据集示例 |
 | 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
 | 1540 | {{< alias "q3c" >}} | Q3C天空索引插件 |
 | 1600 | {{< alias "pghydro" >}} | PostgreSQL/PostGIS 排水网络分析核心扩展 |

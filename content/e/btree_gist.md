@@ -30,7 +30,7 @@ page_width: full
 |    **Need By**    | {{< ext "emaj" >}} {{< ext "omni_auth" >}} {{< ext "periods" >}} {{< ext "pg_lake_table" >}} {{< ext "pgautofailover" >}} {{< ext "powa" >}} |
 |   **See Also**    | {{< ext "ora_btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "parray_gin" >}} {{< ext "intarray" >}} {{< ext "rum" >}} {{< ext "bloom" >}} {{< ext "db2fce" >}} {{< ext "orafce" >}} |
 
-> [!Note] SQL/control baseline 1.8 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.8; older PostgreSQL majors may differ.
 
 
 ## Packages

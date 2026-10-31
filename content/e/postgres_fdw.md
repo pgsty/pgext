@@ -30,7 +30,7 @@ page_width: full
 |    **Need By**    | {{< ext "omni_schema" >}} |
 |   **See Also**    | {{< ext "db_migrator" >}} {{< ext "pgspider_ext" >}} {{< ext "dblink" >}} {{< ext "mimeo" >}} {{< ext "pgclone" >}} {{< ext "pglogical" >}} {{< ext "mysql_fdw" >}} {{< ext "citus" >}} {{< ext "plproxy" >}} {{< ext "db2_fdw" >}} |
 
-> [!Note] SQL/control baseline 1.2 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.2; older PostgreSQL majors may differ.
 
 
 ## Packages

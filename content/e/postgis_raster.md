@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1502** | {{< badge content="postgis_raster" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_raster" "postgis" >}} | `3.6.4` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1502** | {{< badge content="postgis_raster" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_raster" "postgis" >}} | `3.7.0` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,16 +30,18 @@ page_width: full
 |   **Requires**    | {{< ext "postgis" >}} |
 |    **Need By**    | {{< ext "h3_postgis" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_raster" >}} |
 |   **See Also**    | {{< ext "pgh_raster" >}} {{< ext "pointcloud" >}} {{< ext "ogr_fdw" >}} {{< ext "pgrouting" >}} {{< ext "q3c" >}} {{< ext "h3" >}} |
-|    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
+|    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_sfcgal" >}} |
+
+> [!Note] EL9/EL10 PGDG RPM is 3.7.0; EL8 remains 3.6.4 because PGDG has no PostGIS 3.7 build; local recipe follows the same split.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | `postgis` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "postgis36_18" "green" >}} {{< bg "17" "postgis36_17" "green" >}} {{< bg "16" "postgis36_16" "green" >}} {{< bg "15" "postgis36_15" "green" >}} {{< bg "14" "postgis36_14" "green" >}} | `postgis36_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.4` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | `postgis` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgis37_18" "green" >}} {{< bg "17" "postgis37_17" "green" >}} {{< bg "16" "postgis37_16" "green" >}} {{< bg "15" "postgis37_15" "green" >}} {{< bg "14" "postgis37_14" "green" >}} | `postgis37_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
 {.packages}
 
 
@@ -68,7 +70,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://git.osgeo.org/gitea/postgis/postgis" title="Repository" icon="link" subtitle="git.osgeo.org/gitea/postgis/postgis" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgis-3.6.4.tar.gz postgis-3.6.4-en.pdf postgis36-filter-requires-perl-Pg.sh" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgis-3.7.0.tar.gz postgis-3.7.0-en.pdf postgis37-filter-requires-perl-Pg.sh" />}}
 {{< /cards >}}
 
 

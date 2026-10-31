@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pagevis" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "toastinfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_checksums" >}} {{< ext "pg_catcheck" >}} {{< ext "amcheck" >}} |
 
-> [!Note] SQL/control baseline 1.13 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.13; older PostgreSQL majors may differ.
 
 
 ## Packages

@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "pgcontext" >}} {{< ext "vector" >}} {{< ext "vectorize" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} {{< ext "pg_summarize" >}} {{< ext "provsql" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} |
 
-> [!Note] pgvector>=0.7; 0.20 changes recall_hybrid()/stats() returns; expansion defaults off; mark_recalled() updates recency. 0.21.0 registers corpus tables and sequences for pg_dump.
+> [!Note] pgvector>=0.7; 0.20 changes recall_hybrid()/stats(); 0.21.0 registers corpus tables/sequences for pg_dump.
 
 
 ## Packages

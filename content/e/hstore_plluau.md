@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3031** | {{< badge content="hstore_plluau" link="https://github.com/pllua/pllua" >}} | {{< ext "hstore_plluau" "pllua" >}} | `2.0.12` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3031** | {{< badge content="hstore_plluau" link="https://github.com/pllua/pllua" >}} | {{< ext "hstore_plluau" "pllua" >}} | `1.0` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -38,7 +38,7 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pllua` | `hstore`, `plluau` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pllua` | `hstore`, `plluau` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "pllua_18" "green" >}} {{< bg "17" "pllua_17" "green" >}} {{< bg "16" "pllua_16" "green" >}} {{< bg "15" "pllua_15" "green" >}} {{< bg "14" "pllua_14" "green" >}} | `pllua_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "postgresql-18-pllua" "green" >}} {{< bg "17" "postgresql-17-pllua" "green" >}} {{< bg "16" "postgresql-16-pllua" "green" >}} {{< bg "15" "postgresql-15-pllua" "green" >}} {{< bg "14" "postgresql-14-pllua" "green" >}} | `postgresql-$v-pllua` | - |
 {.packages}

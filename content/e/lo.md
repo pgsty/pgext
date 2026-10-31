@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "lolor" >}} {{< ext "pg_surgery" >}} {{< ext "pg_repack" >}} {{< ext "pglogical" >}} {{< ext "spock" >}} |
 
-> [!Note] SQL/control baseline 1.2 in PostgreSQL 18; older PostgreSQL majors may ship older extension versions.
+> [!Note] PG18 SQL/control baseline 1.2; older PostgreSQL majors may differ.
 
 
 ## Packages

@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "amcheck" >}} {{< ext "pg_checksums" >}} |
 
-> [!Note] Former pg_checksums SQL extension, unrelated to the core/PGDG utility. Old/new extensions cannot share a schema; follow MIGRATION.md. Superuser install; relation checks enforce SELECT and reject RLS; database checks require superuser. Logical checksums compare content; physical checksums depend on storage. PG14-18. 2.0.2 adds PostgreSQL 19 API compatibility without SQL object changes.
+> [!Note] Former pg_checksums; old/new schemas cannot coexist (MIGRATION.md). Superuser; relation checks need SELECT, reject RLS. PG14-18; 2.0.2 adds PG19 API support.
 
 
 ## Packages

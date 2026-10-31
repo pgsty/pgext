@@ -51,19 +51,20 @@
     }
   ],
   "stats": {
-    "Rows": 451,
+    "Rows": 453,
     "OS": 16,
     "PG": 5,
-    "Cells": 36080,
+    "Cells": 36240,
     "Counts": {
-      ".": 2904,
-      "B": 8536,
-      "G": 24640
+      ".": 2936,
+      "B": 8648,
+      "G": 24640,
+      "R": 16
     },
     "pgdg_counts": {
-      ".": 2904,
-      "B": 9894,
-      "R": 23282
+      ".": 2936,
+      "B": 10006,
+      "R": 23298
     }
   },
   "rows": [
@@ -754,6 +755,88 @@
         "el10.x86_64": "BBBBB",
         "el8.aarch64": "BBBBB",
         "el8.x86_64": "BBBBB",
+        "el9.aarch64": "BBBBB",
+        "el9.x86_64": "BBBBB",
+        "u22.aarch64": "BBBBB",
+        "u22.x86_64": "BBBBB",
+        "u24.aarch64": "BBBBB",
+        "u24.x86_64": "BBBBB",
+        "u26.aarch64": "BBBBB",
+        "u26.x86_64": "BBBBB"
+      }
+    },
+    {
+      "pkg": "postgis_tiger_geocoder",
+      "ext": "postgis_tiger_geocoder",
+      "url": "https://pigsty.io/ext/e/postgis_tiger_geocoder",
+      "groups": {
+        "d12.aarch64": "..BBB",
+        "d12.x86_64": "..BBB",
+        "d13.aarch64": "..BBB",
+        "d13.x86_64": "..BBB",
+        "el10.aarch64": "..BBB",
+        "el10.x86_64": "..BBB",
+        "el8.aarch64": "..RRR",
+        "el8.x86_64": "..RRR",
+        "el9.aarch64": "..BBB",
+        "el9.x86_64": "..BBB",
+        "u22.aarch64": "..BBB",
+        "u22.x86_64": "..BBB",
+        "u24.aarch64": "..BBB",
+        "u24.x86_64": "..BBB",
+        "u26.aarch64": "..BBB",
+        "u26.x86_64": "..BBB"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "..BBB",
+        "d12.x86_64": "..BBB",
+        "d13.aarch64": "..BBB",
+        "d13.x86_64": "..BBB",
+        "el10.aarch64": "..BBB",
+        "el10.x86_64": "..BBB",
+        "el8.aarch64": "..RRR",
+        "el8.x86_64": "..RRR",
+        "el9.aarch64": "..BBB",
+        "el9.x86_64": "..BBB",
+        "u22.aarch64": "..BBB",
+        "u22.x86_64": "..BBB",
+        "u24.aarch64": "..BBB",
+        "u24.x86_64": "..BBB",
+        "u26.aarch64": "..BBB",
+        "u26.x86_64": "..BBB"
+      }
+    },
+    {
+      "pkg": "address_standardizer",
+      "ext": "address_standardizer",
+      "url": "https://pigsty.io/ext/e/address_standardizer",
+      "groups": {
+        "d12.aarch64": "BBBBB",
+        "d12.x86_64": "BBBBB",
+        "d13.aarch64": "BBBBB",
+        "d13.x86_64": "BBBBB",
+        "el10.aarch64": "BBBBB",
+        "el10.x86_64": "BBBBB",
+        "el8.aarch64": "RRRRR",
+        "el8.x86_64": "RRRRR",
+        "el9.aarch64": "BBBBB",
+        "el9.x86_64": "BBBBB",
+        "u22.aarch64": "BBBBB",
+        "u22.x86_64": "BBBBB",
+        "u24.aarch64": "BBBBB",
+        "u24.x86_64": "BBBBB",
+        "u26.aarch64": "BBBBB",
+        "u26.x86_64": "BBBBB"
+      },
+      "pgdg_groups": {
+        "d12.aarch64": "BBBBB",
+        "d12.x86_64": "BBBBB",
+        "d13.aarch64": "BBBBB",
+        "d13.x86_64": "BBBBB",
+        "el10.aarch64": "BBBBB",
+        "el10.x86_64": "BBBBB",
+        "el8.aarch64": "RRRRR",
+        "el8.x86_64": "RRRRR",
         "el9.aarch64": "BBBBB",
         "el9.x86_64": "BBBBB",
         "u22.aarch64": "BBBBB",

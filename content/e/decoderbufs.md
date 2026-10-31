@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "wal2json" >}} {{< ext "decoder_raw" >}} {{< ext "pgoutput" >}} {{< ext "pgmqtt" >}} {{< ext "pg_protobuf" >}} {{< ext "pgq" >}} {{< ext "kafka_fdw" >}} {{< ext "test_decoding" >}} {{< ext "wal2mongo" >}} {{< ext "pgproto" >}} |
 
-> [!Note] Headless logical-decoding output plugin; no CREATE EXTENSION required. PGDG DEB package 3.7.0, RPM 3.5.0; bundled control version 0.1.0.
+> [!Note] Headless output plugin; no CREATE EXTENSION. PGDG DEB 3.7.0, RPM 3.5.0; bundled control 0.1.0.
 
 
 ## Packages

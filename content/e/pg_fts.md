@@ -29,7 +29,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_rrf" >}} {{< ext "pgroonga" >}} {{< ext "psql_bm25s" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} |
 
-> [!Note] SQL 1.15.1 fixes configured-analyzer chunked reparsing at the 16,383-position HTML boundary; SQL update is a no-op and the format is unchanged. Known unfixed concurrent-flush ranked scans can duplicate rows. No routine REINDEX for this patch; indexes written by 1.10.0 or earlier still require rebuilding.
+> [!Note] SQL 1.15.1 fixes the 16,383-position analyzer bug; no format change. Ranked scans may still duplicate rows; indexes from <=1.10.0 need REINDEX.
 
 
 ## Packages

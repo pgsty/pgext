@@ -30,7 +30,7 @@ page_width: full
 |    **Schemas**    | `net` |
 |   **See Also**    | {{< ext "http" >}} {{< ext "pg_curl" >}} {{< ext "omni_httpc" >}} {{< ext "pg_graphql" >}} {{< ext "documentdb" >}} |
 
-> [!Note] Package/source version 0.20.5 ships SQL/control version 0.20.4. PIGSTY 0.20.5 covers EL10 RPM and D12/D13/U24/U26 DEB for PostgreSQL 14-18; older PIGSTY platform cells remain on 0.9.2. shared_preload_libraries=pg_net is required.
+> [!Note] pkg 0.20.5, SQL 0.20.4; PGDG EL10 RPM and PIGSTY D12/D13/U24/U26 DEB updated. Older PIGSTY cells remain 0.9.2; preload required.
 
 
 ## Packages
@@ -382,12 +382,13 @@ shared_preload_libraries = 'pg_net';
 CREATE EXTENSION pg_net;
 ```
 
-
-
-
 ## Usage
 
-Sources: [official README](https://github.com/supabase/pg_net), [v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3).
+Sources:
+
+- [Official README](https://github.com/supabase/pg_net)
+- [v0.20.5 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.5)
+- [Extension control template](https://github.com/supabase/pg_net/blob/v0.20.5/pg_net.control.in)
 
 `pg_net` queues asynchronous HTTP and HTTPS requests from SQL. It creates the `net` schema, stores pending work in `net.http_request_queue`, and stores responses in `net._http_response`. A background worker uses `libcurl` to process queued requests.
 
@@ -483,7 +484,7 @@ SELECT net.worker_restart();
 
 ### Caveats
 
-- Pigsty metadata carries `pg_net` 0.20.3 for PostgreSQL 14-18, but local package notes say 0.20.3 is available only on `d12`, `d13`, `el10`, `u24`, and `u26`; `el8`, `el9`, and `u22` remain on 0.9.2 because of older `libcurl`.
+- The package matrix carries `pg_net` 0.20.5 for PostgreSQL 14-18 on EL10 RPM and D12/D13/U24/U26 DEB; EL8, EL9, and U22 remain on 0.9.2 because of older `libcurl`.
 - Upstream documents PostgreSQL 12+ compatibility, but this catalog row is packaged for PostgreSQL 14-18.
 - `pg_net` supports only one database per cluster through `pg_net.database_name`.
-- v0.20.3 is a worker/maintenance release: it flushes pgstat counters for autovacuum visibility and reports worker activity to `pg_stat_activity`; no new SQL request API was documented.
+- v0.20.5 adds PostgreSQL 19 beta 1 compatibility and fixes a macOS worker segfault; no new request API is documented.
