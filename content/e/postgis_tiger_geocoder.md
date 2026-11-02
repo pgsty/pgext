@@ -31,7 +31,7 @@ page_width: full
 |   **Requires**    | {{< ext "postgis" >}} {{< ext "fuzzystrmatch" >}} |
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
 
-> [!Note] Standalone since PostGIS 3.7; control/package 2025.2; PG16+; no local recipe.
+> [!Note] Standalone since PostGIS 3.7; PGDG 2025.2; PG16-18.
 
 
 ## Packages

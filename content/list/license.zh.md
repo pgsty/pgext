@@ -20,9 +20,9 @@ page_width: full
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 270 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 114 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 108 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 110 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [许可证文本](#) | Unknown license |
-| {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
+| {{< license "GPL-2.0" >}} | 19 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 15 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 11 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 9 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
@@ -456,7 +456,7 @@ page_width: full
 
 
 
-| {{< license "MIT" >}} | {{< badge content="108 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="110 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -465,6 +465,8 @@ page_width: full
 | 1080 | {{< alias "pg_task" >}} | 在特定时间点在后台执行SQL命令 |
 | 1120 | {{< alias "pg_when" >}} | PostgreSQL 自然语言时间解析扩展 |
 | 1150 | {{< alias "cron_utils" >}} | 解析 Cron 表达式并计算上一次或下一次触发时间 |
+| 1505 | {{< alias "address_standardizer" >}} | 地址标准化函数。 |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | 地址标准化函数：美国数据集示例 |
 | 1550 | {{< alias "ogr_fdw" >}} | GIS 数据外部数据源包装器 |
 | 1570 | {{< alias "pg_polyline" >}} | Google快速Polyline编码解码扩展 |
 | 1580 | {{< alias "pg_eviltransform" >}} | 基于PostGIS ST_Transform 的 BD09/GCJ02 坐标转换扩展 |
@@ -620,7 +622,7 @@ page_width: full
 
 
 
-| {{< license "GPL-2.0" >}} | {{< badge content="21 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "GPL-2.0" >}} | {{< badge content="19 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-2.0" icon="scale" >}} | Strong copyleft license requiring derivative works to be open source. |
 
@@ -631,8 +633,6 @@ page_width: full
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS 光栅类型和函数 |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL 函数 |
 | 1504 | {{< alias "postgis_tiger_geocoder" >}} | PostGIS tiger 地理编码器和反向地理编码器 |
-| 1505 | {{< alias "address_standardizer" >}} | 地址标准化函数。 |
-| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | 地址标准化函数：美国数据集示例 |
 | 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
 | 1540 | {{< alias "q3c" >}} | Q3C天空索引插件 |
 | 1600 | {{< alias "pghydro" >}} | PostgreSQL/PostGIS 排水网络分析核心扩展 |

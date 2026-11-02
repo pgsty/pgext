@@ -5,7 +5,7 @@ description: "Address Standardizer US dataset example"
 weight: 1506
 categories: ["GIS"]
 languages: ["SQL"]
-licenses: ["GPL-2.0"]
+licenses: ["MIT"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1506** | {{< badge content="address_standardizer_data_us" link="https://github.com/postgis/address_standardizer" >}} | {{< ext "address_standardizer_data_us" "address_standardizer" >}} | `3.7` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "SQL" >}} |
+| **1506** | {{< badge content="address_standardizer_data_us" link="https://github.com/postgis/address_standardizer" >}} | {{< ext "address_standardizer_data_us" "address_standardizer" >}} | `3.7` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,7 +30,7 @@ page_width: full
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "country" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
 |    **Siblings**   | {{< ext "address_standardizer" >}} |
 
-> [!Note] Standalone with address_standardizer since PostGIS 3.7; control 3.7/package 3.7.0; no local recipe.
+> [!Note] Bundled with address_standardizer since PostGIS 3.7; PGDG 3.7.0; PG14-18.
 
 
 ## Packages

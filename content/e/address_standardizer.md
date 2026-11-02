@@ -5,7 +5,7 @@ description: "Used to parse an address into constituent elements. Generally used
 weight: 1505
 categories: ["GIS"]
 languages: ["C"]
-licenses: ["GPL-2.0"]
+licenses: ["MIT"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1505** | {{< badge content="address_standardizer" link="https://github.com/postgis/address_standardizer" >}} | {{< ext "address_standardizer" >}} | `3.7` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1505** | {{< badge content="address_standardizer" link="https://github.com/postgis/address_standardizer" >}} | {{< ext "address_standardizer" >}} | `3.7` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -30,7 +30,7 @@ page_width: full
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "country" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} {{< ext "addressing_dictionary" >}} |
 |    **Siblings**   | {{< ext "address_standardizer_data_us" >}} |
 
-> [!Note] Standalone since PostGIS 3.7; control 3.7; PGDG package 3.7.0; no local recipe.
+> [!Note] Standalone since PostGIS 3.7; PGDG 3.7.0; PG14-18.
 
 
 ## Packages

@@ -20,9 +20,9 @@ PostgreSQL extension categorized by license.
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 270 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 114 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 108 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 110 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 34 | [License Text](#) | Unknown license |
-| {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
+| {{< license "GPL-2.0" >}} | 19 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 15 | [License Text](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 11 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 9 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
@@ -456,7 +456,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="108 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="110 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -465,6 +465,8 @@ PostgreSQL extension categorized by license.
 | 1080 | {{< alias "pg_task" >}} | execute any sql command at any specific time at background |
 | 1120 | {{< alias "pg_when" >}} | Natural language time parsing for PostgreSQL |
 | 1150 | {{< alias "cron_utils" >}} | Parse cron expressions and compute previous or next trigger times |
+| 1505 | {{< alias "address_standardizer" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
+| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | Address Standardizer US dataset example |
 | 1550 | {{< alias "ogr_fdw" >}} | foreign-data wrapper for GIS data access |
 | 1570 | {{< alias "pg_polyline" >}} | Fast Google Encoded Polyline encoding & decoding for postgres |
 | 1580 | {{< alias "pg_eviltransform" >}} | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
@@ -620,7 +622,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "GPL-2.0" >}} | {{< badge content="21 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "GPL-2.0" >}} | {{< badge content="19 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-2.0" icon="scale" >}} | Strong copyleft license requiring derivative works to be open source. |
 
@@ -631,8 +633,6 @@ PostgreSQL extension categorized by license.
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS raster types and functions |
 | 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | PostGIS SFCGAL functions |
 | 1504 | {{< alias "postgis_tiger_geocoder" >}} | PostGIS tiger geocoder and reverse geocoder |
-| 1505 | {{< alias "address_standardizer" >}} | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| 1506 | {{< alias "address_standardizer_data_us" "address_standardizer" >}} | Address Standardizer US dataset example |
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 1540 | {{< alias "q3c" >}} | q3c sky indexing plugin |
 | 1600 | {{< alias "pghydro" >}} | Drainage network analysis core for PostgreSQL and PostGIS |
