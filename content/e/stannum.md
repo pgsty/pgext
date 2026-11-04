@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2320** | {{< badge content="stannum" link="https://github.com/TeamSpringbird/stannum" >}} | {{< ext "stannum" >}} | `0.1.0` | {{< category "FTS" >}} | {{< license "AGPL-3.0-or-later" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `stannum` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "stannum_18" "green" >}} {{< bg "17" "stannum_17" "green" >}} {{< bg "16" "stannum_16" "red" >}} {{< bg "15" "stannum_15" "red" >}} {{< bg "14" "stannum_14" "red" >}} | `stannum_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-stannum" "green" >}} {{< bg "17" "postgresql-17-stannum" "green" >}} {{< bg "16" "postgresql-16-stannum" "red" >}} {{< bg "15" "postgresql-15-stannum" "red" >}} {{< bg "14" "postgresql-14-stannum" "red" >}} | `postgresql-$v-stannum` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-stannum : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-stannum : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-stannum : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stannum : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stannum : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-stannum : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-stannum : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-stannum : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stannum : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stannum : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-stannum : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-stannum : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-stannum : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-stannum : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-stannum : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-stannum` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-18-stannum_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/stannum/postgresql-18-stannum_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-stannum` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.2 MiB | [postgresql-18-stannum_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/stannum/postgresql-18-stannum_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-stannum` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-18-stannum_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/stannum/postgresql-18-stannum_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-stannum` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-17-stannum_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/stannum/postgresql-17-stannum_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-stannum` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.2 MiB | [postgresql-17-stannum_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/stannum/postgresql-17-stannum_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-stannum` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-17-stannum_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/stannum/postgresql-17-stannum_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -107,7 +107,7 @@ pig pg psql -D /pg/data
 | `--repo` | `-r` | 由 pgBackRest 选择仓库 |
 | `--dbsu` | `-U` | PostgreSQL 操作系统用户：`$PIG_DBSU`，其次为 `postgres` |
 | `--data` | `-D` | 目标目录；配置中的 `pg1-path`、`$PGDATA`、`/pg/data`，按此顺序选择 |
-{.full-width}
+{.full-width .wide .expand}
 
 ### 原生恢复参数
 

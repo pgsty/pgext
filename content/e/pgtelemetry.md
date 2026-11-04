@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6080** | {{< badge content="pgtelemetry" link="https://github.com/adjust/pg-telemetry" >}} | {{< ext "pgtelemetry" >}} | `1.7` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgtelemetry` | `pg_stat_statements`, `plpgsql` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "pgtelemetry_18" "green" >}} {{< bg "17" "pgtelemetry_17" "green" >}} {{< bg "16" "pgtelemetry_16" "green" >}} {{< bg "15" "pgtelemetry_15" "green" >}} {{< bg "14" "pgtelemetry_14" "green" >}} | `pgtelemetry_$v` | `postgresql$v-contrib` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "postgresql-18-pgtelemetry" "green" >}} {{< bg "17" "postgresql-17-pgtelemetry" "green" >}} {{< bg "16" "postgresql-16-pgtelemetry" "green" >}} {{< bg "15" "postgresql-15-pgtelemetry" "green" >}} {{< bg "14" "postgresql-14-pgtelemetry" "green" >}} | `postgresql-$v-pgtelemetry` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.7" "postgresql-18-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-17-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-16-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-15-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-14-pgtelemetry : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.7" "postgresql-18-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-17-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-16-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-15-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-14-pgtelemetry : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.7" "postgresql-18-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-17-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-16-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-15-pgtelemetry : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-14-pgtelemetry : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -86,7 +88,7 @@ page_width: full
 | `postgresql-18-pgtelemetry` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.6 KiB | [postgresql-18-pgtelemetry_1.7-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtelemetry/postgresql-18-pgtelemetry_1.7-1PGSTY~noble_all.deb) |
 | `postgresql-18-pgtelemetry` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.6 KiB | [postgresql-18-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-18-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
 | `postgresql-18-pgtelemetry` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.6 KiB | [postgresql-18-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-18-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -109,7 +111,7 @@ page_width: full
 | `postgresql-17-pgtelemetry` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.6 KiB | [postgresql-17-pgtelemetry_1.7-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtelemetry/postgresql-17-pgtelemetry_1.7-1PGSTY~noble_all.deb) |
 | `postgresql-17-pgtelemetry` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.7 KiB | [postgresql-17-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-17-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
 | `postgresql-17-pgtelemetry` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.7 KiB | [postgresql-17-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-17-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -132,7 +134,7 @@ page_width: full
 | `postgresql-16-pgtelemetry` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.6 KiB | [postgresql-16-pgtelemetry_1.7-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtelemetry/postgresql-16-pgtelemetry_1.7-1PGSTY~noble_all.deb) |
 | `postgresql-16-pgtelemetry` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.7 KiB | [postgresql-16-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-16-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
 | `postgresql-16-pgtelemetry` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.7 KiB | [postgresql-16-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-16-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -155,7 +157,7 @@ page_width: full
 | `postgresql-15-pgtelemetry` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.6 KiB | [postgresql-15-pgtelemetry_1.7-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtelemetry/postgresql-15-pgtelemetry_1.7-1PGSTY~noble_all.deb) |
 | `postgresql-15-pgtelemetry` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.7 KiB | [postgresql-15-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-15-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
 | `postgresql-15-pgtelemetry` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.7 KiB | [postgresql-15-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-15-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -178,7 +180,7 @@ page_width: full
 | `postgresql-14-pgtelemetry` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.8 KiB | [postgresql-14-pgtelemetry_1.7-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtelemetry/postgresql-14-pgtelemetry_1.7-1PGSTY~noble_all.deb) |
 | `postgresql-14-pgtelemetry` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.9 KiB | [postgresql-14-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-14-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
 | `postgresql-14-pgtelemetry` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.9 KiB | [postgresql-14-pgtelemetry_1.7-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtelemetry/postgresql-14-pgtelemetry_1.7-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

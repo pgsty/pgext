@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3730** | {{< badge content="numeral" link="https://github.com/df7cb/postgresql-numeral" >}} | {{< ext "numeral" >}} | `1.3` | {{< category "TYPE" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `numeral` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "postgresql-numeral_18" "green" >}} {{< bg "17" "postgresql-numeral_17" "green" >}} {{< bg "16" "postgresql-numeral_16" "green" >}} {{< bg "15" "postgresql-numeral_15" "green" >}} {{< bg "14" "postgresql-numeral_14" "green" >}} | `postgresql-numeral_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3` | {{< bg "18" "postgresql-18-numeral" "green" >}} {{< bg "17" "postgresql-17-numeral" "green" >}} {{< bg "16" "postgresql-16-numeral" "green" >}} {{< bg "15" "postgresql-15-numeral" "green" >}} {{< bg "14" "postgresql-14-numeral" "green" >}} | `postgresql-$v-numeral` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3" "postgresql-18-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-17-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-16-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-15-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-14-numeral : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3" "postgresql-18-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-17-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-16-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-15-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-14-numeral : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3" "postgresql-18-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-17-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-16-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-15-numeral : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3" "postgresql-14-numeral : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -102,7 +104,7 @@ page_width: full
 | `postgresql-18-numeral` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 73.7 KiB | [postgresql-18-numeral_1.3-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-18-numeral_1.3-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.4 KiB | [postgresql-18-numeral_1.3-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-18-numeral_1.3-9.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.8 KiB | [postgresql-18-numeral_1.3-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-18-numeral_1.3-8.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -145,7 +147,7 @@ page_width: full
 | `postgresql-17-numeral` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 73.9 KiB | [postgresql-17-numeral_1.3-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-17-numeral_1.3-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.4 KiB | [postgresql-17-numeral_1.3-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-17-numeral_1.3-9.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.9 KiB | [postgresql-17-numeral_1.3-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-17-numeral_1.3-8.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -188,7 +190,7 @@ page_width: full
 | `postgresql-16-numeral` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 73.9 KiB | [postgresql-16-numeral_1.3-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-16-numeral_1.3-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.4 KiB | [postgresql-16-numeral_1.3-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-16-numeral_1.3-9.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.9 KiB | [postgresql-16-numeral_1.3-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-16-numeral_1.3-8.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -231,7 +233,7 @@ page_width: full
 | `postgresql-15-numeral` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 75.7 KiB | [postgresql-15-numeral_1.3-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-15-numeral_1.3-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.0 KiB | [postgresql-15-numeral_1.3-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-15-numeral_1.3-9.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.4 KiB | [postgresql-15-numeral_1.3-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-15-numeral_1.3-8.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -273,7 +275,7 @@ page_width: full
 | `postgresql-14-numeral` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 75.6 KiB | [postgresql-14-numeral_1.3-8.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-14-numeral_1.3-8.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.0 KiB | [postgresql-14-numeral_1.3-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-14-numeral_1.3-9.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-numeral` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 74.3 KiB | [postgresql-14-numeral_1.3-8.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-numeral/postgresql-14-numeral_1.3-8.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

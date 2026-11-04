@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9330** | {{< badge content="babelfishpg_money" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_money" "babelfish" >}} | `1.1.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `babelfish` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.2.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `antlr4-runtime413` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.2.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `libantlr4-runtime413` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 6.2.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.7.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 6.2.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.7.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 6.2.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.7.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

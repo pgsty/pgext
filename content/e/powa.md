@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa-archivist" >}} | {{< ext "powa" >}} | `5.3.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "PLpgSQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `powa` | `plpgsql`, `pg_stat_statements`, `btree_gist` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.0` | {{< bg "18" "powa_18" "green" >}} {{< bg "17" "powa_17" "green" >}} {{< bg "16" "powa_16" "green" >}} {{< bg "15" "powa_15" "green" >}} {{< bg "14" "powa_14" "green" >}} | `powa_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.3.0` | {{< bg "18" "postgresql-18-powa" "green" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} {{< bg "14" "postgresql-14-powa" "green" >}} | `postgresql-$v-powa` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 5.3.0" "postgresql-18-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-17-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-16-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-15-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-14-powa : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 5.3.0" "postgresql-18-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-17-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-16-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-15-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-14-powa : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 5.3.0" "postgresql-18-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-17-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-16-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-15-powa : AVAIL 3" "blue" >}} | {{< bg "PGDG 5.3.0" "postgresql-14-powa : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -119,7 +121,7 @@ page_width: full
 | `postgresql-18-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.9 KiB | [postgresql-18-powa_5.3.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-18-powa_5.3.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.9 KiB | [postgresql-18-powa_5.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-18-powa_5.3.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-powa` | `5.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.4 KiB | [postgresql-18-powa_5.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-18-powa_5.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-17-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.8 KiB | [postgresql-17-powa_5.3.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-17-powa_5.3.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.8 KiB | [postgresql-17-powa_5.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-17-powa_5.3.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-powa` | `5.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.4 KiB | [postgresql-17-powa_5.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-17-powa_5.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -243,7 +245,7 @@ page_width: full
 | `postgresql-16-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.8 KiB | [postgresql-16-powa_5.3.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-16-powa_5.3.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.8 KiB | [postgresql-16-powa_5.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-16-powa_5.3.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-powa` | `5.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.4 KiB | [postgresql-16-powa_5.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-16-powa_5.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -316,7 +318,7 @@ page_width: full
 | `postgresql-15-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 62.3 KiB | [postgresql-15-powa_5.3.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-15-powa_5.3.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 62.3 KiB | [postgresql-15-powa_5.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-15-powa_5.3.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-powa` | `5.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 61.8 KiB | [postgresql-15-powa_5.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-15-powa_5.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -392,7 +394,7 @@ page_width: full
 | `postgresql-14-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 63.8 KiB | [postgresql-14-powa_5.3.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-14-powa_5.3.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-powa` | `5.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 63.8 KiB | [postgresql-14-powa_5.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-14-powa_5.3.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-powa` | `5.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 63.4 KiB | [postgresql-14-powa_5.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/powa-archivist/postgresql-14-powa_5.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

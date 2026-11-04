@@ -238,6 +238,7 @@ sudo yum makecache;
 |     [mongodb-exporter](https://github.com/percona/mongodb_exporter)     | 0.47.2  | Apache-2.0 | expose mongodb metrics             |
 |                [mtail](https://github.com/google/mtail)                 |  3.0.8  | Apache-2.0 | tail log and generate metrics      |
 |        [vector](https://github.com/vectordotdev/vector/releases)        | 0.52.0  |  MPL-2.0   | the versatile logging collector    |
+{.wide .expand}
 
 ### Object Storage
 
@@ -288,6 +289,7 @@ Pig the package manager, PostgreSQL tools, and other database related utils
 |                     [sabiql](https://github.com/riii111/sabiql)                       |  1.6.2  |    MIT     | Modern SQL client for PostgreSQL and MySQL         |
 |                 [postgrest](https://github.com/PostgREST/postgrest)                   |  14.3   |    MIT     | PostgreSQL RESTful API Server                      |
 |              [npgsqlrest](https://github.com/vb-consulting/NpgsqlRest)                |  3.4.3  |    MIT     | .NET PostgreSQL REST API Generator                 |
+{.wide .expand}
 
 
 ### AI

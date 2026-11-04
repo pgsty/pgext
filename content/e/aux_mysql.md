@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9420** | {{< badge content="aux_mysql" link="https://github.com/HaloTech-Co-Ltd/openHalo" >}} | {{< ext "aux_mysql" "openhalo" >}} | `1.5` | {{< category "SIM" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "green" >}} | `openhalo` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} {{< bg "14" "openhalodb-14" "green" >}} | `openhalodb-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "openhalodb-18" "red" >}} {{< bg "17" "openhalodb-17" "red" >}} {{< bg "16" "openhalodb-16" "red" >}} {{< bg "15" "openhalodb-15" "red" >}} {{< bg "14" "openhalodb-14" "green" >}} | `openhalodb-$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "openhalodb-18 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-17 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-16 : N/A 0" "gray" >}} | {{< bg "N/A" "openhalodb-15 : N/A 0" "gray" >}} | {{< bg "PIGSTY 1.0" "openhalodb-14 : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `openhalodb-14` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.5 MiB | [openhalodb-14_1.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~noble_arm64.deb) |
 | `openhalodb-14` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.7 MiB | [openhalodb-14_1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~resolute_amd64.deb) |
 | `openhalodb-14` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.5 MiB | [openhalodb-14_1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

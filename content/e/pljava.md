@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3090** | {{< badge content="pljava" link="https://github.com/tada/pljava" >}} | {{< ext "pljava" >}} | `1.6.10` | {{< category "LANG" >}} | {{< license "BSD-3-Clause" >}} | {{< language "Java" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pljava` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.10` | {{< bg "18" "pljava_18" "green" >}} {{< bg "17" "pljava_17" "green" >}} {{< bg "16" "pljava_16" "green" >}} {{< bg "15" "pljava_15" "green" >}} {{< bg "14" "pljava_14" "green" >}} | `pljava_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.10` | {{< bg "18" "postgresql-18-pljava" "green" >}} {{< bg "17" "postgresql-17-pljava" "green" >}} {{< bg "16" "postgresql-16-pljava" "green" >}} {{< bg "15" "postgresql-15-pljava" "green" >}} {{< bg "14" "postgresql-14-pljava" "green" >}} | `postgresql-$v-pljava` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.6.10" "postgresql-18-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-17-pljava : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-16-pljava : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-15-pljava : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-14-pljava : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.6.10" "postgresql-18-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-17-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-16-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-15-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-14-pljava : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.6.10" "postgresql-18-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-17-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-16-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-15-pljava : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.10" "postgresql-14-pljava : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -87,7 +89,7 @@ page_width: full
 | `postgresql-18-pljava` | `1.6.10` | [u24.aarch64](/os/u24.aarch64) | pgdg | 908.3 KiB | [postgresql-18-pljava_1.6.10-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-18-pljava_1.6.10-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pljava` | `1.6.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 911.7 KiB | [postgresql-18-pljava_1.6.10-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-18-pljava_1.6.10-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pljava` | `1.6.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 906.1 KiB | [postgresql-18-pljava_1.6.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-18-pljava_1.6.10-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-17-pljava` | `1.6.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 904.7 KiB | [postgresql-17-pljava_1.6.9-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-17-pljava_1.6.9-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pljava` | `1.6.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 911.8 KiB | [postgresql-17-pljava_1.6.10-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-17-pljava_1.6.10-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pljava` | `1.6.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 906.5 KiB | [postgresql-17-pljava_1.6.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-17-pljava_1.6.10-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -171,7 +173,7 @@ page_width: full
 | `postgresql-16-pljava` | `1.6.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 904.8 KiB | [postgresql-16-pljava_1.6.9-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-16-pljava_1.6.9-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pljava` | `1.6.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 911.6 KiB | [postgresql-16-pljava_1.6.10-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-16-pljava_1.6.10-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pljava` | `1.6.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 906.4 KiB | [postgresql-16-pljava_1.6.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-16-pljava_1.6.10-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -214,7 +216,7 @@ page_width: full
 | `postgresql-15-pljava` | `1.6.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 904.8 KiB | [postgresql-15-pljava_1.6.9-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-15-pljava_1.6.9-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pljava` | `1.6.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 911.8 KiB | [postgresql-15-pljava_1.6.10-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-15-pljava_1.6.10-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pljava` | `1.6.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 906.5 KiB | [postgresql-15-pljava_1.6.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-15-pljava_1.6.10-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -257,7 +259,7 @@ page_width: full
 | `postgresql-14-pljava` | `1.6.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 904.6 KiB | [postgresql-14-pljava_1.6.9-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-14-pljava_1.6.9-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pljava` | `1.6.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 911.7 KiB | [postgresql-14-pljava_1.6.10-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-14-pljava_1.6.10-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pljava` | `1.6.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 906.2 KiB | [postgresql-14-pljava_1.6.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pljava/postgresql-14-pljava_1.6.10-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

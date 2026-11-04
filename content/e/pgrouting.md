@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1510** | {{< badge content="pgrouting" link="https://github.com/pgRouting/pgrouting" >}} | {{< ext "pgrouting" >}} | `4.0.2` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C++" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrouting` | `plpgsql`, `postgis` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.0.2` | {{< bg "18" "pgrouting_18" "green" >}} {{< bg "17" "pgrouting_17" "green" >}} {{< bg "16" "pgrouting_16" "green" >}} {{< bg "15" "pgrouting_15" "green" >}} {{< bg "14" "pgrouting_14" "green" >}} | `pgrouting_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.0.2` | {{< bg "18" "postgresql-18-pgrouting" "green" >}} {{< bg "17" "postgresql-17-pgrouting" "green" >}} {{< bg "16" "postgresql-16-pgrouting" "green" >}} {{< bg "15" "postgresql-15-pgrouting" "green" >}} {{< bg "14" "postgresql-14-pgrouting" "green" >}} | `postgresql-$v-pgrouting` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.0.2" "postgresql-18-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-17-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-16-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-15-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-14-pgrouting : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.0.2" "postgresql-18-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-17-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-16-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-15-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-14-pgrouting : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.0.2" "postgresql-18-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-17-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-16-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-15-pgrouting : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.0.2" "postgresql-14-pgrouting : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -115,7 +117,7 @@ page_width: full
 | `postgresql-18-pgrouting` | `4.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 641.0 KiB | [postgresql-18-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-18-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgrouting` | `4.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.7 KiB | [postgresql-18-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-18-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgrouting` | `4.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.9 KiB | [postgresql-18-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-18-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -188,7 +190,7 @@ page_width: full
 | `postgresql-17-pgrouting` | `4.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 641.2 KiB | [postgresql-17-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-17-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgrouting` | `4.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.7 KiB | [postgresql-17-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-17-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgrouting` | `4.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.8 KiB | [postgresql-17-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-17-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -265,7 +267,7 @@ page_width: full
 | `postgresql-16-pgrouting` | `4.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 641.1 KiB | [postgresql-16-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-16-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgrouting` | `4.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.5 KiB | [postgresql-16-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-16-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgrouting` | `4.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.9 KiB | [postgresql-16-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-16-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -366,7 +368,7 @@ page_width: full
 | `postgresql-15-pgrouting` | `4.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 641.4 KiB | [postgresql-15-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-15-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgrouting` | `4.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.6 KiB | [postgresql-15-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-15-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgrouting` | `4.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.8 KiB | [postgresql-15-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-15-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -475,7 +477,7 @@ page_width: full
 | `postgresql-14-pgrouting` | `4.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 641.0 KiB | [postgresql-14-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-14-pgrouting_4.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgrouting` | `4.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.6 KiB | [postgresql-14-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-14-pgrouting_4.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgrouting` | `4.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 566.7 KiB | [postgresql-14-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgrouting/postgresql-14-pgrouting_4.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

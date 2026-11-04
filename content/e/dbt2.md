@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3220** | {{< badge content="dbt2" link="https://github.com/osdldbt/dbt2" >}} | {{< ext "dbt2" >}} | `0.62.0` | {{< category "LANG" >}} | {{< license "Artistic-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.62.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `dbt2` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.62.0` | {{< bg "18" "dbt2-pg18-extensions" "green" >}} {{< bg "17" "dbt2-pg17-extensions" "green" >}} {{< bg "16" "dbt2-pg16-extensions" "green" >}} {{< bg "15" "dbt2-pg15-extensions" "green" >}} {{< bg "14" "dbt2-pg14-extensions" "green" >}} | `dbt2-pg$v-extensions` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.62.0` | {{< bg "18" "postgresql-18-dbt2" "green" >}} {{< bg "17" "postgresql-17-dbt2" "green" >}} {{< bg "16" "postgresql-16-dbt2" "green" >}} {{< bg "15" "postgresql-15-dbt2" "green" >}} {{< bg "14" "postgresql-14-dbt2" "green" >}} | `postgresql-$v-dbt2` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-18-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-17-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-16-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-15-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-14-dbt2 : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-18-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-17-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-16-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-15-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-14-dbt2 : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-18-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-17-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-16-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-15-dbt2 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.61.7" "postgresql-14-dbt2 : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -94,7 +96,7 @@ page_width: full
 | `postgresql-18-dbt2` | `0.61.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 193.9 KiB | [postgresql-18-dbt2_0.61.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/dbt2-extensions/postgresql-18-dbt2_0.61.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-dbt2` | `0.61.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 196.7 KiB | [postgresql-18-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-18-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-dbt2` | `0.61.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 196.5 KiB | [postgresql-18-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-18-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-17-dbt2` | `0.61.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 192.8 KiB | [postgresql-17-dbt2_0.61.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/dbt2-extensions/postgresql-17-dbt2_0.61.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-dbt2` | `0.61.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 193.6 KiB | [postgresql-17-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-17-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-dbt2` | `0.61.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 193.1 KiB | [postgresql-17-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-17-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -172,7 +174,7 @@ page_width: full
 | `postgresql-16-dbt2` | `0.61.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 177.9 KiB | [postgresql-16-dbt2_0.61.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/dbt2-extensions/postgresql-16-dbt2_0.61.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-dbt2` | `0.61.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 180.1 KiB | [postgresql-16-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-16-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-dbt2` | `0.61.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 179.4 KiB | [postgresql-16-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-16-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -228,7 +230,7 @@ page_width: full
 | `postgresql-15-dbt2` | `0.61.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 171.3 KiB | [postgresql-15-dbt2_0.61.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/dbt2-extensions/postgresql-15-dbt2_0.61.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-dbt2` | `0.61.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 175.3 KiB | [postgresql-15-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-15-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-dbt2` | `0.61.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 174.5 KiB | [postgresql-15-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-15-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -284,7 +286,7 @@ page_width: full
 | `postgresql-14-dbt2` | `0.61.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 150.7 KiB | [postgresql-14-dbt2_0.61.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/dbt2-extensions/postgresql-14-dbt2_0.61.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-dbt2` | `0.61.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 155.4 KiB | [postgresql-14-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-14-dbt2_0.61.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-dbt2` | `0.61.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 154.8 KiB | [postgresql-14-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/dbt2-extensions/postgresql-14-dbt2_0.61.7-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

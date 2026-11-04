@@ -75,3 +75,4 @@ weight: 800
 | [v0.1.1](https://pig.pgsty.com/zh/release/pig-0.1.1/) | 2025-01-09 | 更新扩展列表                                          | [v0.1.1](https://github.com/pgsty/pig/releases/tag/v0.1.1) |
 | [v0.1.0](/zh/release/pig/#v010) | 2024-12-29 | repo、ext、sty 和自更新                               | [v0.1.0](https://github.com/pgsty/pig/releases/tag/v0.1.0) |
 | [v0.0.1](/zh/release/pig/#v001) | 2024-12-23 | 创世发布                                            | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
+{.wide .expand}

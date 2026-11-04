@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9540** | {{< badge content="pg_failover_slots" link="https://github.com/EnterpriseDB/pg_failover_slots" >}} | {{< ext "pg_failover_slots" >}} | `1.2.1` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sL--r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_failover_slots` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.1` | {{< bg "18" "pg_failover_slots_18" "green" >}} {{< bg "17" "pg_failover_slots_17" "green" >}} {{< bg "16" "pg_failover_slots_16" "green" >}} {{< bg "15" "pg_failover_slots_15" "green" >}} {{< bg "14" "pg_failover_slots_14" "green" >}} | `pg_failover_slots_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.1` | {{< bg "18" "postgresql-18-pg-failover-slots" "green" >}} {{< bg "17" "postgresql-17-pg-failover-slots" "green" >}} {{< bg "16" "postgresql-16-pg-failover-slots" "green" >}} {{< bg "15" "postgresql-15-pg-failover-slots" "green" >}} {{< bg "14" "postgresql-14-pg-failover-slots" "green" >}} | `postgresql-$v-pg-failover-slots` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -104,7 +106,7 @@ page_width: full
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 39.2 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -147,7 +149,7 @@ page_width: full
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 39.2 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -194,7 +196,7 @@ page_width: full
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 39.1 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -245,7 +247,7 @@ page_width: full
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 39.2 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -296,7 +298,7 @@ page_width: full
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 39.2 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.1 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

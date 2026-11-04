@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **8800** | {{< badge content="aws_s3" link="https://github.com/chimpler/postgres-aws-s3" >}} | {{< ext "aws_s3" >}} | `0.0.1` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `aws_s3` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "aws_s3_18" "green" >}} {{< bg "17" "aws_s3_17" "green" >}} {{< bg "16" "aws_s3_16" "green" >}} {{< bg "15" "aws_s3_15" "green" >}} {{< bg "14" "aws_s3_14" "green" >}} | `aws_s3_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-aws-s3" "green" >}} {{< bg "17" "postgresql-17-aws-s3" "green" >}} {{< bg "16" "postgresql-16-aws-s3" "green" >}} {{< bg "15" "postgresql-15-aws-s3" "green" >}} {{< bg "14" "postgresql-14-aws-s3" "green" >}} | `postgresql-$v-aws-s3` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-aws-s3 : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-aws-s3 : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-aws-s3 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-aws-s3 : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-aws-s3` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-aws-s3` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-aws-s3` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-aws-s3` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-aws-s3` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-aws-s3` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-aws-s3` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-aws-s3` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-aws-s3` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-aws-s3` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

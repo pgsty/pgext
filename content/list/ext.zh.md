@@ -13,6 +13,7 @@ comments: false
 | **ALL** | 620 | 145 | 456 | 71 | 0 | 610 | 598 | 579 | 546 | 524 |
 | **EL** | 617 | 144 | 456 | 71 | 3 | 608 | 594 | 577 | 546 | 524 |
 | **Debian** | 611 | 104 | 436 | 71 | 9 | 602 | 589 | 572 | 542 | 522 |
+{.wide .expand}
 
 ## 分类
 
@@ -34,6 +35,7 @@ comments: false
 | {{< category fdw >}} | 27 | {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "etcd_fdw" >}} {{< ext "informix_fdw" >}} {{< ext "nominatim_fdw" >}} {{< ext "mongo_fdw" >}} {{< ext "redis_fdw" >}} {{< ext "redis" >}} {{< ext "kafka_fdw" >}} {{< ext "hdfs_fdw" >}} {{< ext "firebird_fdw" >}} {{< ext "rdf_fdw" >}} {{< ext "oai_fdw" >}} {{< ext "aws_s3" >}} {{< ext "log_fdw" >}} {{< ext "dblink" >}} {{< ext "file_fdw" >}} {{< ext "postgres_fdw" >}} |
 | {{< category sim >}} | 31 | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} {{< ext "pg_projection" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} {{< ext "db2fce" >}} {{< ext "plpgsql_wrap" >}} {{< ext "pg_synonym" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "pgmemcache" >}} {{< ext "aux_mysql" >}} {{< ext "pgs3" >}} {{< ext "kafgres" >}} |
 | {{< category etl >}} | 22 | {{< ext "pglogical" >}} {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "logical_ddl" >}} {{< ext "pg_failover_slots" >}} {{< ext "db_migrator" >}} {{< ext "pgactive" >}} {{< ext "spock" >}} {{< ext "lolor" >}} {{< ext "pgclone" >}} {{< ext "pgmqtt" >}} {{< ext "wal2json" >}} {{< ext "wal2mongo" >}} {{< ext "decoderbufs" >}} {{< ext "decoder_raw" >}} {{< ext "mimeo" >}} {{< ext "repmgr" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_bulkload" >}} {{< ext "test_decoding" >}} {{< ext "pgoutput" >}} |
+{.wide .expand}
 
 ## 扩展列表
 
@@ -661,3 +663,4 @@ comments: false
 | {{< ext "pg_bulkload" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | 向 PostgreSQL 中高速加载数据 |
 | {{< ext "test_decoding" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | 基于SQL的WAL逻辑解码样例 |
 | {{< ext "pgoutput" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | PG内置的逻辑解码输出插件 |
+{.wide .expand}

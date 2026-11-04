@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1500** | {{< badge content="postgis" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis" >}} | `3.7.0` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgis37_18" "green" >}} {{< bg "17" "postgis37_17" "green" >}} {{< bg "16" "postgis37_16" "green" >}} {{< bg "15" "postgis37_15" "green" >}} {{< bg "14" "postgis37_14" "green" >}} | `postgis37_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -116,7 +118,7 @@ page_width: full
 | `postgresql-18-postgis-3` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 1.4 MiB | [postgresql-18-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-postgis-3` | `3.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-18-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -169,7 +171,7 @@ page_width: full
 | `postgresql-17-postgis-3` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 1.4 MiB | [postgresql-17-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-postgis-3` | `3.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-17-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -222,7 +224,7 @@ page_width: full
 | `postgresql-16-postgis-3` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 1.4 MiB | [postgresql-16-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-postgis-3` | `3.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.6 MiB | [postgresql-16-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.6 MiB | [postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -275,7 +277,7 @@ page_width: full
 | `postgresql-15-postgis-3` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 1.4 MiB | [postgresql-15-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-postgis-3` | `3.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.5 MiB | [postgresql-15-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.5 MiB | [postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -328,7 +330,7 @@ page_width: full
 | `postgresql-14-postgis-3` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 1.4 MiB | [postgresql-14-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.7.0+dfsg-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-postgis-3` | `3.6.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.4 MiB | [postgresql-14-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.4+dfsg-2.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.4 MiB | [postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

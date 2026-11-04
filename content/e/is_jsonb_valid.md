@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2765** | {{< badge content="is_jsonb_valid" link="https://github.com/furstenheim/is_jsonb_valid" >}} | {{< ext "is_jsonb_valid" >}} | `0.1.4` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `is_jsonb_valid` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.4` | {{< bg "18" "is_jsonb_valid_18" "green" >}} {{< bg "17" "is_jsonb_valid_17" "green" >}} {{< bg "16" "is_jsonb_valid_16" "green" >}} {{< bg "15" "is_jsonb_valid_15" "green" >}} {{< bg "14" "is_jsonb_valid_14" "green" >}} | `is_jsonb_valid_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.4` | {{< bg "18" "postgresql-18-is-jsonb-valid" "green" >}} {{< bg "17" "postgresql-17-is-jsonb-valid" "green" >}} {{< bg "16" "postgresql-16-is-jsonb-valid" "green" >}} {{< bg "15" "postgresql-15-is-jsonb-valid" "green" >}} {{< bg "14" "postgresql-14-is-jsonb-valid" "green" >}} | `postgresql-$v-is-jsonb-valid` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-18-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-17-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-16-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-15-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-14-is-jsonb-valid : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-18-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-17-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-16-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-15-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-14-is-jsonb-valid : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-18-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-17-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-16-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-15-is-jsonb-valid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "postgresql-14-is-jsonb-valid : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-is-jsonb-valid` | `0.1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 52.7 KiB | [postgresql-18-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/is-jsonb-valid/postgresql-18-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-is-jsonb-valid` | `0.1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 52.5 KiB | [postgresql-18-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-18-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-is-jsonb-valid` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 51.9 KiB | [postgresql-18-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-18-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-is-jsonb-valid` | `0.1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 52.6 KiB | [postgresql-17-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/is-jsonb-valid/postgresql-17-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-is-jsonb-valid` | `0.1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 52.4 KiB | [postgresql-17-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-17-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-is-jsonb-valid` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 51.8 KiB | [postgresql-17-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-17-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-is-jsonb-valid` | `0.1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 52.6 KiB | [postgresql-16-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/is-jsonb-valid/postgresql-16-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-is-jsonb-valid` | `0.1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 52.4 KiB | [postgresql-16-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-16-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-is-jsonb-valid` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 51.8 KiB | [postgresql-16-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-16-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-is-jsonb-valid` | `0.1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 52.5 KiB | [postgresql-15-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/is-jsonb-valid/postgresql-15-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-is-jsonb-valid` | `0.1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 52.5 KiB | [postgresql-15-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-15-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-is-jsonb-valid` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 51.8 KiB | [postgresql-15-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-15-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-is-jsonb-valid` | `0.1.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 54.6 KiB | [postgresql-14-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/is-jsonb-valid/postgresql-14-is-jsonb-valid_0.1.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-is-jsonb-valid` | `0.1.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 54.4 KiB | [postgresql-14-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-14-is-jsonb-valid_0.1.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-is-jsonb-valid` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.8 KiB | [postgresql-14-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/is-jsonb-valid/postgresql-14-is-jsonb-valid_0.1.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

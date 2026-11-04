@@ -19,7 +19,7 @@ weight: 640
 | `build dep` | Install extension build dependencies | Requires sudo or root |
 | `build ext` | Build extension packages | Current user |
 | `build pkg` | Complete pipeline: get, dep, ext | Requires sudo or root |
-{.full-width}
+{.full-width .wide .expand}
 
 ## Quick Start
 

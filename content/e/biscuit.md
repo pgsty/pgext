@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2180** | {{< badge content="biscuit" link="https://github.com/CrystallineCore/Biscuit" >}} | {{< ext "biscuit" "pg_biscuit" >}} | `3.1.0` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_biscuit` | `plpgsql` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "biscuit_18" "green" >}} {{< bg "17" "biscuit_17" "green" >}} {{< bg "16" "biscuit_16" "green" >}} {{< bg "15" "biscuit_15" "red" >}} {{< bg "14" "biscuit_14" "red" >}} | `biscuit_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "postgresql-18-biscuit" "green" >}} {{< bg "17" "postgresql-17-biscuit" "green" >}} {{< bg "16" "postgresql-16-biscuit" "green" >}} {{< bg "15" "postgresql-15-biscuit" "red" >}} {{< bg "14" "postgresql-14-biscuit" "red" >}} | `postgresql-$v-biscuit` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-biscuit : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-biscuit : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-biscuit : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-biscuit : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-biscuit : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-biscuit : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -111,7 +113,7 @@ page_width: full
 | `postgresql-18-biscuit` | `3.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 260.6 KiB | [postgresql-18-biscuit_3.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-18-biscuit_3.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-biscuit` | `3.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 263.4 KiB | [postgresql-18-biscuit_3.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-18-biscuit_3.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-biscuit` | `3.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 257.3 KiB | [postgresql-18-biscuit_3.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-18-biscuit_3.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -160,7 +162,7 @@ page_width: full
 | `postgresql-17-biscuit` | `3.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 260.2 KiB | [postgresql-17-biscuit_3.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-17-biscuit_3.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-biscuit` | `3.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 262.7 KiB | [postgresql-17-biscuit_3.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-17-biscuit_3.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-biscuit` | `3.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 256.7 KiB | [postgresql-17-biscuit_3.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-17-biscuit_3.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -209,7 +211,7 @@ page_width: full
 | `postgresql-16-biscuit` | `3.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 260.3 KiB | [postgresql-16-biscuit_3.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-16-biscuit_3.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-biscuit` | `3.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 262.9 KiB | [postgresql-16-biscuit_3.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-16-biscuit_3.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-biscuit` | `3.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 256.8 KiB | [postgresql-16-biscuit_3.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-16-biscuit_3.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4300** | {{< badge content="pg_readme" link="https://github.com/bigsmoke/pg_readme" >}} | {{< ext "pg_readme" >}} | `0.7.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_readme` | `hstore` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.7.1` | {{< bg "18" "pg_readme_18" "green" >}} {{< bg "17" "pg_readme_17" "green" >}} {{< bg "16" "pg_readme_16" "green" >}} {{< bg "15" "pg_readme_15" "green" >}} {{< bg "14" "pg_readme_14" "green" >}} | `pg_readme_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.7.1` | {{< bg "18" "postgresql-18-pg-readme" "green" >}} {{< bg "17" "postgresql-17-pg-readme" "green" >}} {{< bg "16" "postgresql-16-pg-readme" "green" >}} {{< bg "15" "postgresql-15-pg-readme" "green" >}} {{< bg "14" "postgresql-14-pg-readme" "green" >}} | `postgresql-$v-pg-readme` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-18-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-17-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-16-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-15-pg-readme : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.7.1" "postgresql-14-pg-readme : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -96,7 +98,7 @@ page_width: full
 | `postgresql-18-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-18-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-18-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-18-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-18-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-17-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-17-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-17-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-17-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-17-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -162,7 +164,7 @@ page_width: full
 | `postgresql-16-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-16-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-16-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-16-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-16-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -195,7 +197,7 @@ page_width: full
 | `postgresql-15-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-15-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-15-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-15-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-15-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -228,7 +230,7 @@ page_width: full
 | `postgresql-14-pg-readme` | `0.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.0 KiB | [postgresql-14-pg-readme_0.7.1-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-readme/postgresql-14-pg-readme_0.7.1-1PIGSTY~noble_all.deb) |
 | `postgresql-14-pg-readme` | `0.7.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.1 KiB | [postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-pg-readme` | `0.7.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 20.1 KiB | [postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-readme/postgresql-14-pg-readme_0.7.1-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3720** | {{< badge content="pgmp" link="https://github.com/dvarrazzo/pgmp/" >}} | {{< ext "pgmp" >}} | `1.0.6` | {{< category "TYPE" >}} | {{< license "LGPL-3.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmp` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "pgmp_18" "green" >}} {{< bg "17" "pgmp_17" "green" >}} {{< bg "16" "pgmp_16" "green" >}} {{< bg "15" "pgmp_15" "green" >}} {{< bg "14" "pgmp_14" "green" >}} | `pgmp_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "postgresql-18-pgmp" "green" >}} {{< bg "17" "postgresql-17-pgmp" "green" >}} {{< bg "16" "postgresql-16-pgmp" "green" >}} {{< bg "15" "postgresql-15-pgmp" "green" >}} {{< bg "14" "postgresql-14-pgmp" "green" >}} | `postgresql-$v-pgmp` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0.6" "postgresql-18-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-17-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-16-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-15-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-14-pgmp : AVAIL 4" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0.6" "postgresql-18-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-17-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-16-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-15-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-14-pgmp : AVAIL 4" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.6" "postgresql-18-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-17-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-16-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-15-pgmp : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.0.6" "postgresql-14-pgmp : AVAIL 4" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-18-pgmp` | `1.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 88.6 KiB | [postgresql-18-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmp/postgresql-18-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.7 KiB | [postgresql-18-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.9 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -197,7 +199,7 @@ page_width: full
 | `postgresql-17-pgmp` | `1.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 88.7 KiB | [postgresql-17-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmp/postgresql-17-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.6 KiB | [postgresql-17-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.9 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -265,7 +267,7 @@ page_width: full
 | `postgresql-16-pgmp` | `1.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 88.7 KiB | [postgresql-16-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmp/postgresql-16-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-16-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.7 KiB | [postgresql-16-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.8 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -333,7 +335,7 @@ page_width: full
 | `postgresql-15-pgmp` | `1.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 88.0 KiB | [postgresql-15-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmp/postgresql-15-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-15-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.3 KiB | [postgresql-15-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.5 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -400,7 +402,7 @@ page_width: full
 | `postgresql-14-pgmp` | `1.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.9 KiB | [postgresql-14-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgmp/postgresql-14-pgmp_1.0.6-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-14-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.2 KiB | [postgresql-14-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-5.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.3 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1520** | {{< badge content="pointcloud" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< ext "pointcloud" >}} | `1.2.5` | {{< category "GIS" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pointcloud` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "pointcloud_18" "green" >}} {{< bg "17" "pointcloud_17" "green" >}} {{< bg "16" "pointcloud_16" "green" >}} {{< bg "15" "pointcloud_15" "green" >}} {{< bg "14" "pointcloud_14" "green" >}} | `pointcloud_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "postgresql-18-pointcloud" "green" >}} {{< bg "17" "postgresql-17-pointcloud" "green" >}} {{< bg "16" "postgresql-16-pointcloud" "green" >}} {{< bg "15" "postgresql-15-pointcloud" "green" >}} {{< bg "14" "postgresql-14-pointcloud" "green" >}} | `postgresql-$v-pointcloud` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -104,7 +106,7 @@ page_width: full
 | `postgresql-18-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 95.8 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.4 KiB | [postgresql-18-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.6 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -147,7 +149,7 @@ page_width: full
 | `postgresql-17-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.1 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.4 KiB | [postgresql-17-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -190,7 +192,7 @@ page_width: full
 | `postgresql-16-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.0 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.4 KiB | [postgresql-16-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -233,7 +235,7 @@ page_width: full
 | `postgresql-15-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.2 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-15-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.1 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -276,7 +278,7 @@ page_width: full
 | `postgresql-14-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.2 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-14-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-4.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.0 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

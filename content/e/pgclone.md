@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9590** | {{< badge content="pgclone" link="https://github.com/valehdba/pgclone" >}} | {{< ext "pgclone" >}} | `4.4.2` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.4.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgclone` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.4.2` | {{< bg "18" "pgclone_18" "green" >}} {{< bg "17" "pgclone_17" "green" >}} {{< bg "16" "pgclone_16" "green" >}} {{< bg "15" "pgclone_15" "green" >}} {{< bg "14" "pgclone_14" "green" >}} | `pgclone_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.4.2` | {{< bg "18" "postgresql-18-pgclone" "green" >}} {{< bg "17" "postgresql-17-pgclone" "green" >}} {{< bg "16" "postgresql-16-pgclone" "green" >}} {{< bg "15" "postgresql-15-pgclone" "green" >}} {{< bg "14" "postgresql-14-pgclone" "green" >}} | `postgresql-$v-pgclone` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-18-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-17-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-16-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-15-pgclone : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.4.2" "postgresql-14-pgclone : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pgclone` | `4.4.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 214.2 KiB | [postgresql-18-pgclone_4.4.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgclone/postgresql-18-pgclone_4.4.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgclone` | `4.4.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 213.8 KiB | [postgresql-18-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-18-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgclone` | `4.4.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 212.6 KiB | [postgresql-18-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-18-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pgclone` | `4.4.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 213.9 KiB | [postgresql-17-pgclone_4.4.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgclone/postgresql-17-pgclone_4.4.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgclone` | `4.4.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 213.7 KiB | [postgresql-17-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-17-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgclone` | `4.4.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 212.4 KiB | [postgresql-17-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-17-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pgclone` | `4.4.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 213.9 KiB | [postgresql-16-pgclone_4.4.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgclone/postgresql-16-pgclone_4.4.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgclone` | `4.4.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 213.7 KiB | [postgresql-16-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-16-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgclone` | `4.4.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 212.4 KiB | [postgresql-16-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-16-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-pgclone` | `4.4.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 214.0 KiB | [postgresql-15-pgclone_4.4.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgclone/postgresql-15-pgclone_4.4.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgclone` | `4.4.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 213.8 KiB | [postgresql-15-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-15-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgclone` | `4.4.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 212.2 KiB | [postgresql-15-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-15-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-pgclone` | `4.4.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 213.5 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgclone` | `4.4.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 213.2 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgclone` | `4.4.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 211.8 KiB | [postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgclone/postgresql-14-pgclone_4.4.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

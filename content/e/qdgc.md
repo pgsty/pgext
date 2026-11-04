@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1700** | {{< badge content="qdgc" link="https://pgxn.org/dist/qdgc/0.1.0/" >}} | {{< ext "qdgc" >}} | `0.1.0` | {{< category "GIS" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `qdgc` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "qdgc_18" "green" >}} {{< bg "17" "qdgc_17" "green" >}} {{< bg "16" "qdgc_16" "green" >}} {{< bg "15" "qdgc_15" "green" >}} {{< bg "14" "qdgc_14" "green" >}} | `qdgc_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-qdgc" "green" >}} {{< bg "17" "postgresql-17-qdgc" "green" >}} {{< bg "16" "postgresql-16-qdgc" "green" >}} {{< bg "15" "postgresql-15-qdgc" "green" >}} {{< bg "14" "postgresql-14-qdgc" "green" >}} | `postgresql-$v-qdgc` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-qdgc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-qdgc : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -86,7 +88,7 @@ page_width: full
 | `postgresql-18-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-18-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-18-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-18-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-18-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -109,7 +111,7 @@ page_width: full
 | `postgresql-17-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-17-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-17-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-17-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-17-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -132,7 +134,7 @@ page_width: full
 | `postgresql-16-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-16-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-16-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-16-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-16-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -155,7 +157,7 @@ page_width: full
 | `postgresql-15-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-15-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-15-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-15-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-15-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -178,7 +180,7 @@ page_width: full
 | `postgresql-14-qdgc` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-14-qdgc` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-14-qdgc` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.5 KiB | [postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qdgc/postgresql-14-qdgc_0.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

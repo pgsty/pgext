@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5890** | {{< badge content="pg_prewarm" link="https://www.postgresql.org/docs/current/pgprewarm.html" >}} | {{< ext "pg_prewarm" >}} | `1.2` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -36,6 +38,7 @@ page_width: full
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
 | {{< bg "1.2" "PostgreSQL 18: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 17: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 16: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 15: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 14: version 1.2" "green" >}} |
+{.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 
@@ -121,5 +124,6 @@ SELECT autoprewarm_dump_now();  -- returns number of records written
 |-----------|---------|-------------|
 | `pg_prewarm.autoprewarm` | `true` | Enable autoprewarm background worker |
 | `pg_prewarm.autoprewarm_interval` | `300s` | Interval between `autoprewarm.blocks` file updates (0 = dump only at shutdown) |
+{.wide .expand}
 
 Buffer state is saved to `autoprewarm.blocks` in the data directory. After restart, two background workers reload the saved buffers.

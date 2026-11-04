@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1940** | {{< badge content="pgml" link="https://github.com/postgresml/postgresml" >}} | {{< ext "pgml" >}} | `2.10.0` | {{< category "RAG" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLdt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.10.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgml` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.10.0` | {{< bg "18" "pgml_18" "red" >}} {{< bg "17" "pgml_17" "green" >}} {{< bg "16" "pgml_16" "green" >}} {{< bg "15" "pgml_15" "green" >}} {{< bg "14" "pgml_14" "green" >}} | `pgml_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.10.0` | {{< bg "18" "postgresql-18-pgml" "red" >}} {{< bg "17" "postgresql-17-pgml" "green" >}} {{< bg "16" "postgresql-16-pgml" "green" >}} {{< bg "15" "postgresql-15-pgml" "green" >}} {{< bg "14" "postgresql-14-pgml" "green" >}} | `postgresql-$v-pgml` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-18-pgml : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-17-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-16-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-15-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-14-pgml : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-18-pgml : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-17-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-16-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-15-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-14-pgml : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-18-pgml : N/A 0" "gray" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-17-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-16-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-15-pgml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.10.0" "postgresql-14-pgml : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-17-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgml` | `2.10.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.7 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgml` | `2.10.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-16-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgml` | `2.10.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.7 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgml` | `2.10.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-15-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgml` | `2.10.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.7 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgml` | `2.10.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-14-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgml` | `2.10.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.7 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgml` | `2.10.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1960** | {{< badge content="pgcontext" link="https://pgxn.org/dist/pgcontext/0.3.0/" >}} | {{< ext "pgcontext" >}} | `0.3.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -42,7 +44,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pgcontext_18" "green" >}} {{< bg "17" "pgcontext_17" "green" >}} {{< bg "16" "pgcontext_16" "red" >}} {{< bg "15" "pgcontext_15" "red" >}} {{< bg "14" "pgcontext_14" "red" >}} | `pgcontext_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-pgcontext" "green" >}} {{< bg "17" "postgresql-17-pgcontext" "green" >}} {{< bg "16" "postgresql-16-pgcontext" "red" >}} {{< bg "15" "postgresql-15-pgcontext" "red" >}} {{< bg "14" "postgresql-14-pgcontext" "red" >}} | `postgresql-$v-pgcontext` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -63,7 +65,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -87,7 +89,7 @@ page_width: full
 | `postgresql-18-pgcontext` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-18-pgcontext_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcontext/postgresql-18-pgcontext_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgcontext` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-18-pgcontext_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcontext/postgresql-18-pgcontext_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgcontext` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-18-pgcontext_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcontext/postgresql-18-pgcontext_0.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -110,7 +112,7 @@ page_width: full
 | `postgresql-17-pgcontext` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.0 MiB | [postgresql-17-pgcontext_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcontext/postgresql-17-pgcontext_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgcontext` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.3 MiB | [postgresql-17-pgcontext_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcontext/postgresql-17-pgcontext_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgcontext` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.0 MiB | [postgresql-17-pgcontext_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcontext/postgresql-17-pgcontext_0.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

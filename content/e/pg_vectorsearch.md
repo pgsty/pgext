@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1990** | {{< badge content="pg_vectorsearch" link="https://github.com/timescale/pg_vectorsearch" >}} | {{< ext "pg_vectorsearch" >}} | `0.1.0` | {{< category "RAG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_vectorsearch` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_vectorsearch_18" "green" >}} {{< bg "17" "pg_vectorsearch_17" "red" >}} {{< bg "16" "pg_vectorsearch_16" "red" >}} {{< bg "15" "pg_vectorsearch_15" "red" >}} {{< bg "14" "pg_vectorsearch_14" "red" >}} | `pg_vectorsearch_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-vectorsearch" "green" >}} {{< bg "17" "postgresql-17-vectorsearch" "red" >}} {{< bg "16" "postgresql-16-vectorsearch" "red" >}} {{< bg "15" "postgresql-15-vectorsearch" "red" >}} {{< bg "14" "postgresql-14-vectorsearch" "red" >}} | `postgresql-$v-vectorsearch` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vectorsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-vectorsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-vectorsearch : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-vectorsearch` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 455.5 KiB | [postgresql-18-vectorsearch_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorsearch/postgresql-18-vectorsearch_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-vectorsearch` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 521.5 KiB | [postgresql-18-vectorsearch_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorsearch/postgresql-18-vectorsearch_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-vectorsearch` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 456.4 KiB | [postgresql-18-vectorsearch_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorsearch/postgresql-18-vectorsearch_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

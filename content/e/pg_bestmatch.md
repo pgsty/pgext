@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2150** | {{< badge content="pg_bestmatch" link="https://github.com/tensorchord/pg_bestmatch.rs" >}} | {{< ext "pg_bestmatch" >}} | `0.0.2` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_bestmatch` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "pg_bestmatch_18" "green" >}} {{< bg "17" "pg_bestmatch_17" "green" >}} {{< bg "16" "pg_bestmatch_16" "green" >}} {{< bg "15" "pg_bestmatch_15" "green" >}} {{< bg "14" "pg_bestmatch_14" "green" >}} | `pg_bestmatch_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "postgresql-18-pg-bestmatch" "green" >}} {{< bg "17" "postgresql-17-pg-bestmatch" "green" >}} {{< bg "16" "postgresql-16-pg-bestmatch" "green" >}} {{< bg "15" "postgresql-15-pg-bestmatch" "green" >}} {{< bg "14" "postgresql-14-pg-bestmatch" "green" >}} | `postgresql-$v-pg-bestmatch` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-bestmatch : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-bestmatch : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-bestmatch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-bestmatch : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -83,7 +85,7 @@ page_width: full
 | `postgresql-18-pg-bestmatch` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.0 MiB | [postgresql-18-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bestmatch/postgresql-18-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-bestmatch` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.1 MiB | [postgresql-18-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-18-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-bestmatch` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.0 MiB | [postgresql-18-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-18-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -106,7 +108,7 @@ page_width: full
 | `postgresql-17-pg-bestmatch` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.0 MiB | [postgresql-17-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bestmatch/postgresql-17-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-bestmatch` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.1 MiB | [postgresql-17-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-17-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-bestmatch` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.0 MiB | [postgresql-17-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-17-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-16-pg-bestmatch` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.0 MiB | [postgresql-16-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bestmatch/postgresql-16-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-bestmatch` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.1 MiB | [postgresql-16-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-16-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-bestmatch` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.0 MiB | [postgresql-16-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-16-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -152,7 +154,7 @@ page_width: full
 | `postgresql-15-pg-bestmatch` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 7.9 MiB | [postgresql-15-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bestmatch/postgresql-15-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-bestmatch` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.1 MiB | [postgresql-15-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-15-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-bestmatch` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.0 MiB | [postgresql-15-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-15-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -175,7 +177,7 @@ page_width: full
 | `postgresql-14-pg-bestmatch` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.0 MiB | [postgresql-14-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bestmatch/postgresql-14-pg-bestmatch_0.0.2-4PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-bestmatch` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.1 MiB | [postgresql-14-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-14-pg-bestmatch_0.0.2-4PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-bestmatch` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.0 MiB | [postgresql-14-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bestmatch/postgresql-14-pg-bestmatch_0.0.2-4PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

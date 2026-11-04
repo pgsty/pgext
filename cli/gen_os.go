@@ -6,7 +6,6 @@ package cli
 import (
 	"context"
 	"fmt"
-	"os"
 	"path/filepath"
 	"strings"
 
@@ -55,14 +54,14 @@ func (g *OSGenerator) GenerateOSPage(ctx context.Context, osName string) error {
 	// Generate English content
 	contentEn := g.generateOSContent(osInfo, packages, "en")
 	outputPathEn := filepath.Join(g.OutputDir, fmt.Sprintf("%s.md", osName))
-	if err := os.WriteFile(outputPathEn, []byte(contentEn), 0644); err != nil {
+	if err := WriteMarkdownFile(outputPathEn, contentEn); err != nil {
 		return fmt.Errorf("failed to write English file: %w", err)
 	}
 
 	// Generate Chinese content
 	contentZh := g.generateOSContent(osInfo, packages, "zh")
 	outputPathZh := filepath.Join(g.OutputDir, fmt.Sprintf("%s.zh.md", osName))
-	if err := os.WriteFile(outputPathZh, []byte(contentZh), 0644); err != nil {
+	if err := WriteMarkdownFile(outputPathZh, contentZh); err != nil {
 		return fmt.Errorf("failed to write Chinese file: %w", err)
 	}
 

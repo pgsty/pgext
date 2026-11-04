@@ -6,7 +6,6 @@ package cli
 import (
 	"context"
 	"fmt"
-	"os"
 	"sort"
 	"strings"
 )
@@ -120,7 +119,7 @@ func (g *ExtensionGenerator) GenerateExtensionList(locale, outputPath string) er
 	}
 
 	content := g.generateExtensionListContent(stats, categories, extensions, locale)
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 func (g *ExtensionGenerator) generateExtensionListContent(stats *CatalogStats, categories []CategoryExtensions, extensions []*Extension, locale string) string {
@@ -178,12 +177,12 @@ func (g *ExtensionGenerator) GenerateExtensionIndexPages(enPath, zhPath string) 
 	}
 
 	enContent := g.generateExtensionIndexContent(extensions, "en")
-	if err := os.WriteFile(enPath, []byte(enContent), 0644); err != nil {
+	if err := WriteMarkdownFile(enPath, enContent); err != nil {
 		return fmt.Errorf("failed to write English index: %w", err)
 	}
 
 	zhContent := g.generateExtensionIndexContent(extensions, "zh")
-	if err := os.WriteFile(zhPath, []byte(zhContent), 0644); err != nil {
+	if err := WriteMarkdownFile(zhPath, zhContent); err != nil {
 		return fmt.Errorf("failed to write Chinese index: %w", err)
 	}
 
@@ -338,7 +337,7 @@ func (g *ExtensionGenerator) GeneratePackageList(locale, outputPath string) erro
 	})
 
 	content := g.generatePackageListContent(stats, categories, packages, locale)
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 func (g *ExtensionGenerator) generatePackageListContent(stats *CatalogStats, categories []CategoryPackages, packages []*Extension, locale string) string {
@@ -476,7 +475,7 @@ func (g *ExtensionGenerator) GenerateCatalogPage(locale, outputPath string) erro
 	}
 
 	content := g.generateCatalogContent(stats, categories, universeTotal, locale)
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categories []CategoryExtensions, universeTotal int, locale string) string {
@@ -589,7 +588,7 @@ func (g *ListGenerator) GenerateCategoryList(locale, outputPath string) error {
 		b.WriteString(g.generateCategorySection(cat, exts, isZh))
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 func (g *ListGenerator) generateCategorySection(category *Category, extensions []*Extension, isZh bool) string {
@@ -727,7 +726,7 @@ func (g *ListGenerator) GenerateLanguageList(locale, outputPath string) error {
 		b.WriteString(g.generateLanguageSection(lc.lang, langMap[lc.lang], isZh))
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 func (g *ListGenerator) generateLanguageSection(lang string, extensions []*Extension, isZh bool) string {
@@ -849,7 +848,7 @@ func (g *ListGenerator) GenerateLicenseList(locale, outputPath string) error {
 		b.WriteString(g.generateLicenseSection(lic.name, lic.exts, isZh))
 	}
 
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(outputPath, b.String())
 }
 
 func sortLicenseItems(licenses []licenseItem) {

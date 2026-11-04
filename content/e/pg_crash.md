@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5210** | {{< badge content="pg_crash" link="https://github.com/cybertec-postgresql/pg_crash" >}} | {{< ext "pg_crash" >}} | `0.3` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_crash` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3` | {{< bg "18" "pg_crash_18" "green" >}} {{< bg "17" "pg_crash_17" "green" >}} {{< bg "16" "pg_crash_16" "green" >}} {{< bg "15" "pg_crash_15" "green" >}} {{< bg "14" "pg_crash_14" "green" >}} | `pg_crash_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3` | {{< bg "18" "postgresql-18-pg-crash" "green" >}} {{< bg "17" "postgresql-17-pg-crash" "green" >}} {{< bg "16" "postgresql-16-pg-crash" "green" >}} {{< bg "15" "postgresql-15-pg-crash" "green" >}} {{< bg "14" "postgresql-14-pg-crash" "green" >}} | `postgresql-$v-pg-crash` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.3" "postgresql-18-pg-crash : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-crash : AVAIL 3" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-crash : AVAIL 3" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-crash : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-crash : AVAIL 3" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -96,7 +98,7 @@ page_width: full
 | `postgresql-18-pg-crash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-18-pg-crash_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-crash/postgresql-18-pg-crash_1.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-18-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-18-pg-crash_0.3-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-18-pg-crash_0.3-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.0 KiB | [postgresql-18-pg-crash_0.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-18-pg-crash_0.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -137,7 +139,7 @@ page_width: full
 | `postgresql-17-pg-crash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-17-pg-crash_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-crash/postgresql-17-pg-crash_1.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-17-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-17-pg-crash_0.3-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-17-pg-crash_0.3-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.0 KiB | [postgresql-17-pg-crash_0.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-17-pg-crash_0.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -178,7 +180,7 @@ page_width: full
 | `postgresql-16-pg-crash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-16-pg-crash_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-crash/postgresql-16-pg-crash_1.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-16-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-16-pg-crash_0.3-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-16-pg-crash_0.3-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.0 KiB | [postgresql-16-pg-crash_0.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-16-pg-crash_0.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -219,7 +221,7 @@ page_width: full
 | `postgresql-15-pg-crash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-15-pg-crash_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-crash/postgresql-15-pg-crash_1.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-15-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-15-pg-crash_0.3-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-15-pg-crash_0.3-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.0 KiB | [postgresql-15-pg-crash_0.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-15-pg-crash_0.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -260,7 +262,7 @@ page_width: full
 | `postgresql-14-pg-crash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-14-pg-crash_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-crash/postgresql-14-pg-crash_1.0-1PIGSTY~resolute_arm64.deb) |
 | `postgresql-14-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-14-pg-crash_0.3-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-14-pg-crash_0.3-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-pg-crash` | `0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.0 KiB | [postgresql-14-pg-crash_0.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-crash/postgresql-14-pg-crash_0.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

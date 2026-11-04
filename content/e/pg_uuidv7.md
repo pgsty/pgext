@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4520** | {{< badge content="pg_uuidv7" link="https://github.com/fboulnois/pg_uuidv7" >}} | {{< ext "pg_uuidv7" >}} | `1.7.0` | {{< category "FUNC" >}} | {{< license "MPL-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_uuidv7` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "pg_uuidv7_18" "green" >}} {{< bg "17" "pg_uuidv7_17" "green" >}} {{< bg "16" "pg_uuidv7_16" "green" >}} {{< bg "15" "pg_uuidv7_15" "green" >}} {{< bg "14" "pg_uuidv7_14" "green" >}} | `pg_uuidv7_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "postgresql-18-pg-uuidv7" "green" >}} {{< bg "17" "postgresql-17-pg-uuidv7" "green" >}} {{< bg "16" "postgresql-16-pg-uuidv7" "green" >}} {{< bg "15" "postgresql-15-pg-uuidv7" "green" >}} {{< bg "14" "postgresql-14-pg-uuidv7" "green" >}} | `postgresql-$v-pg-uuidv7` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.7.0" "postgresql-18-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-pg-uuidv7 : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.7.0" "postgresql-18-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-pg-uuidv7 : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.7.0" "postgresql-18-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-pg-uuidv7 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-pg-uuidv7 : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -91,7 +93,7 @@ page_width: full
 | `postgresql-18-pg-uuidv7` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.5 KiB | [postgresql-18-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-18-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.6 KiB | [postgresql-18-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-18-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-18-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-18-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -127,7 +129,7 @@ page_width: full
 | `postgresql-17-pg-uuidv7` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.4 KiB | [postgresql-17-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-17-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.6 KiB | [postgresql-17-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-17-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-17-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-17-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -179,7 +181,7 @@ page_width: full
 | `postgresql-16-pg-uuidv7` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.5 KiB | [postgresql-16-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-16-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.6 KiB | [postgresql-16-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-16-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-16-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-16-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -240,7 +242,7 @@ page_width: full
 | `postgresql-15-pg-uuidv7` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.5 KiB | [postgresql-15-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-15-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.6 KiB | [postgresql-15-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-15-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-15-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-15-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -301,7 +303,7 @@ page_width: full
 | `postgresql-14-pg-uuidv7` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.5 KiB | [postgresql-14-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-14-pg-uuidv7_1.7.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pg-uuidv7` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.6 KiB | [postgresql-14-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-14-pg-uuidv7_1.7.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pg-uuidv7` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.5 KiB | [postgresql-14-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-uuidv7/postgresql-14-pg-uuidv7_1.7.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

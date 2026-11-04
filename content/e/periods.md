@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1030** | {{< badge content="periods" link="https://github.com/xocolatl/periods" >}} | {{< ext "periods" >}} | `1.2.3` | {{< category "TIME" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `periods` | `btree_gist` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.3` | {{< bg "18" "periods_18" "green" >}} {{< bg "17" "periods_17" "green" >}} {{< bg "16" "periods_16" "green" >}} {{< bg "15" "periods_15" "green" >}} {{< bg "14" "periods_14" "green" >}} | `periods_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.3` | {{< bg "18" "postgresql-18-periods" "green" >}} {{< bg "17" "postgresql-17-periods" "green" >}} {{< bg "16" "postgresql-16-periods" "green" >}} {{< bg "15" "postgresql-15-periods" "green" >}} {{< bg "14" "postgresql-14-periods" "green" >}} | `postgresql-$v-periods` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.3" "postgresql-18-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-17-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-16-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-15-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-14-periods : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.3" "postgresql-18-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-17-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-16-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-15-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-14-periods : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.3" "postgresql-18-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-17-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-16-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-15-periods : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.3" "postgresql-14-periods : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -83,7 +85,7 @@ page_width: full
 | `postgresql-18-periods` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.4 KiB | [postgresql-18-periods_1.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-18-periods_1.2.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-periods` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 46.0 KiB | [postgresql-18-periods_1.2.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-18-periods_1.2.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-periods` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.4 KiB | [postgresql-18-periods_1.2.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-18-periods_1.2.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -116,7 +118,7 @@ page_width: full
 | `postgresql-17-periods` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.3 KiB | [postgresql-17-periods_1.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-17-periods_1.2.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-periods` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 46.0 KiB | [postgresql-17-periods_1.2.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-17-periods_1.2.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-periods` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.4 KiB | [postgresql-17-periods_1.2.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-17-periods_1.2.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -149,7 +151,7 @@ page_width: full
 | `postgresql-16-periods` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.4 KiB | [postgresql-16-periods_1.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-16-periods_1.2.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-periods` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 46.0 KiB | [postgresql-16-periods_1.2.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-16-periods_1.2.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-periods` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.4 KiB | [postgresql-16-periods_1.2.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-16-periods_1.2.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -186,7 +188,7 @@ page_width: full
 | `postgresql-15-periods` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.3 KiB | [postgresql-15-periods_1.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-15-periods_1.2.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-periods` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 46.0 KiB | [postgresql-15-periods_1.2.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-15-periods_1.2.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-periods` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.4 KiB | [postgresql-15-periods_1.2.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-15-periods_1.2.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -222,7 +224,7 @@ page_width: full
 | `postgresql-14-periods` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.3 KiB | [postgresql-14-periods_1.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-14-periods_1.2.3-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-periods` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.9 KiB | [postgresql-14-periods_1.2.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-14-periods_1.2.3-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-periods` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.4 KiB | [postgresql-14-periods_1.2.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-periods/postgresql-14-periods_1.2.3-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

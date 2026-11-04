@@ -1,6 +1,6 @@
 #==============================================================#
 # File      :   hugo.yaml
-# Desc      :   PGEXT.CLOUD static site configuration (OINK 1.4.0)
+# Desc      :   PGEXT.CLOUD static site configuration (OINK 1.5.0)
 # Path      :   hugo.yaml
 # Copyright (C) 2019-2026 Ruohang Feng
 #==============================================================#
@@ -844,6 +844,7 @@ params:
     toc: true
 
   ui:
+    compare: true
     typography: technical
     preset: paper
     preset_menu: [paper, slate, ink, terminal]

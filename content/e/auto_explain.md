@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6980** | {{< badge content="auto_explain" link="https://www.postgresql.org/docs/current/auto-explain.html" >}} | {{< ext "auto_explain" >}} | `-` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -35,6 +37,7 @@ page_width: full
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
 | {{< bg "-" "PostgreSQL 18: version -" "green" >}} | {{< bg "-" "PostgreSQL 17: version -" "green" >}} | {{< bg "-" "PostgreSQL 16: version -" "green" >}} | {{< bg "-" "PostgreSQL 15: version -" "green" >}} | {{< bg "-" "PostgreSQL 14: version -" "green" >}} |
+{.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 
@@ -95,6 +98,7 @@ auto_explain.log_min_duration = '3s'
 | `auto_explain.log_nested_statements` | `off` | Log plans for statements inside functions |
 | `auto_explain.log_parameter_max_length` | `-1` | Parameter logging: `-1` = full, `0` = none |
 | `auto_explain.sample_rate` | `1` | Fraction of statements to explain (0.0 to 1.0) |
+{.wide .expand}
 
 ### Example Log Output
 

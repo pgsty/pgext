@@ -13,6 +13,7 @@ page_width: full
 |:---------------------------|:-----------------------------|:-----------------------------|:-------------------------------|:-------------------------------|:-------------------------------|
 | {{< license "Artistic-2.0" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
 | {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    |
+{.wide .expand}
 
 ## 概览
 
@@ -43,6 +44,7 @@ page_width: full
 | {{< license "Apache-2.0 OR PostgreSQL" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "Artistic-1.0" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "0BSD" >}} | 1 | [许可证文本](#) | Unknown license |
+{.wide .expand}
 
 ---------
 
@@ -326,6 +328,7 @@ page_width: full
 | 9700 | {{< alias "mimeo" >}} | 在PostgreSQL实例间进行表级复制 |
 | 9970 | {{< alias "test_decoding" >}} | 基于SQL的WAL逻辑解码样例 |
 | 9980 | {{< alias "pgoutput" >}} | PG内置的逻辑解码输出插件 |
+{.wide .expand}
 
 ## Apache-2.0
 
@@ -451,6 +454,7 @@ page_width: full
 | 9430 | {{< alias "pgs3" >}} | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
 | 9560 | {{< alias "pgactive" >}} | PostgreSQL多主逻辑复制 |
 | 9640 | {{< alias "wal2mongo" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
+{.wide .expand}
 
 ## MIT
 
@@ -572,6 +576,7 @@ page_width: full
 | 9530 | {{< alias "logical_ddl" >}} | 在 PostgreSQL 逻辑复制中复制受支持的 DDL 变更 |
 | 9650 | {{< alias "decoderbufs" >}} | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
 | 9820 | {{< alias "pg_fact_loader" >}} | 在 Postgres 中构建事实表 |
+{.wide .expand}
 
 ## BSD-3-Clause
 
@@ -617,6 +622,7 @@ page_width: full
 | 9550 | {{< alias "db_migrator" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9830 | {{< alias "pg_bulkload" >}} | 向 PostgreSQL 中高速加载数据 |
+{.wide .expand}
 
 ## GPL-2.0
 
@@ -647,6 +653,7 @@ page_width: full
 | 3550 | {{< alias "unit" "pgunit" >}} | SI 国标单位扩展 |
 | 3730 | {{< alias "numeral" >}} | 数值类型扩展 |
 | 4310 | {{< alias "ddl_historization" >}} | 用SQL将所有DDL变更写入到数据库表中 |
+{.wide .expand}
 
 ## BSD-2-Clause
 
@@ -673,6 +680,7 @@ page_width: full
 | 5040 | {{< alias "pg_squeeze" >}} | 从关系中删除未使用空间 |
 | 5110 | {{< alias "pg_checksums" >}} | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | 6440 | {{< alias "meta" "pg_meta" >}} | 标准化，更友好的PostgreSQL系统目录视图 |
+{.wide .expand}
 
 ## GPL-3.0
 
@@ -695,6 +703,7 @@ page_width: full
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
 | 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL兼容辅助扩展模块 |
 | 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
+{.wide .expand}
 
 ## AGPL-3.0
 

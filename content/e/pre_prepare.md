@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5170** | {{< badge content="pre_prepare" link="https://github.com/dimitri/preprepare" >}} | {{< ext "pre_prepare" "preprepare" >}} | `0.9` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `preprepare` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9` | {{< bg "18" "preprepare_18" "green" >}} {{< bg "17" "preprepare_17" "green" >}} {{< bg "16" "preprepare_16" "green" >}} {{< bg "15" "preprepare_15" "green" >}} {{< bg "14" "preprepare_14" "green" >}} | `preprepare_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.9` | {{< bg "18" "postgresql-18-preprepare" "green" >}} {{< bg "17" "postgresql-17-preprepare" "green" >}} {{< bg "16" "postgresql-16-preprepare" "green" >}} {{< bg "15" "postgresql-15-preprepare" "green" >}} {{< bg "14" "postgresql-14-preprepare" "green" >}} | `postgresql-$v-preprepare` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.9" "postgresql-18-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-17-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-16-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-15-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-14-preprepare : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.9" "postgresql-18-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-17-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-16-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-15-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-14-preprepare : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.9" "postgresql-18-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-17-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-16-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-15-preprepare : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.9" "postgresql-14-preprepare : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-preprepare` | `0.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.4 KiB | [postgresql-18-preprepare_0.9-10.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-18-preprepare_0.9-10.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-preprepare` | `0.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.5 KiB | [postgresql-18-preprepare_0.9-10.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-18-preprepare_0.9-10.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-preprepare` | `0.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.5 KiB | [postgresql-18-preprepare_0.9-10.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-18-preprepare_0.9-10.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-preprepare` | `0.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.3 KiB | [postgresql-17-preprepare_0.9-10.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-17-preprepare_0.9-10.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-preprepare` | `0.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.5 KiB | [postgresql-17-preprepare_0.9-10.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-17-preprepare_0.9-10.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-preprepare` | `0.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.5 KiB | [postgresql-17-preprepare_0.9-10.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-17-preprepare_0.9-10.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-preprepare` | `0.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.4 KiB | [postgresql-16-preprepare_0.9-10.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-16-preprepare_0.9-10.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-preprepare` | `0.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.5 KiB | [postgresql-16-preprepare_0.9-10.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-16-preprepare_0.9-10.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-preprepare` | `0.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.5 KiB | [postgresql-16-preprepare_0.9-10.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-16-preprepare_0.9-10.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-preprepare` | `0.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.4 KiB | [postgresql-15-preprepare_0.9-10.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-15-preprepare_0.9-10.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-preprepare` | `0.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.5 KiB | [postgresql-15-preprepare_0.9-10.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-15-preprepare_0.9-10.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-preprepare` | `0.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.5 KiB | [postgresql-15-preprepare_0.9-10.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-15-preprepare_0.9-10.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-preprepare` | `0.9` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.3 KiB | [postgresql-14-preprepare_0.9-10.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-14-preprepare_0.9-10.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-preprepare` | `0.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.5 KiB | [postgresql-14-preprepare_0.9-10.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-14-preprepare_0.9-10.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-preprepare` | `0.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.5 KiB | [postgresql-14-preprepare_0.9-10.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/preprepare/postgresql-14-preprepare_0.9-10.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

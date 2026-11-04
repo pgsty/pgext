@@ -20,7 +20,7 @@ weight: 610
 | `repo cache`  | 从本地仓库创建离线包      | 需要 sudo 或 root 权限 |
 | `repo boot`   | 从离线包引导仓库        | 需要 sudo 或 root 权限 |
 | `repo reload` | 刷新仓库目录          |                   |
-{.full-width}
+{.full-width .wide .expand}
 
 ## 快速入门
 
@@ -71,7 +71,7 @@ pig repo set
 |  `mysql`  | MySQL 仓库                | mysql                                             |
 |  `click`  | ClickHouse 仓库           | clickhouse                                        |
 | `gitlab`  | GitLab 仓库               | gitlab-ce, gitlab-ee                              |
-{.full-width}
+{.full-width .wide .expand}
 
 模块中的仓库会按当前操作系统与架构筛选。用 `pig repo list` 查看本机可用项。
 

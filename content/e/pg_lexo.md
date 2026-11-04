@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3530** | {{< badge content="pg_lexo" link="https://github.com/Blad3Mak3r/pg_lexo" >}} | {{< ext "pg_lexo" >}} | `0.6.0` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_lexo` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "pg_lexo_18" "green" >}} {{< bg "17" "pg_lexo_17" "green" >}} {{< bg "16" "pg_lexo_16" "green" >}} {{< bg "15" "pg_lexo_15" "red" >}} {{< bg "14" "pg_lexo_14" "red" >}} | `pg_lexo_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "postgresql-18-pg-lexo" "green" >}} {{< bg "17" "postgresql-17-pg-lexo" "green" >}} {{< bg "16" "postgresql-16-pg-lexo" "green" >}} {{< bg "15" "postgresql-15-pg-lexo" "red" >}} {{< bg "14" "postgresql-14-pg-lexo" "red" >}} | `postgresql-$v-pg-lexo` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-pg-lexo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-pg-lexo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-pg-lexo : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lexo : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lexo : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-pg-lexo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-pg-lexo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-pg-lexo : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lexo : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lexo : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-18-pg-lexo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-17-pg-lexo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.1" "postgresql-16-pg-lexo : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lexo : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lexo : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-lexo` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 250.3 KiB | [postgresql-18-pg-lexo_0.6.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lexo/postgresql-18-pg-lexo_0.6.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-lexo` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 356.6 KiB | [postgresql-18-pg-lexo_0.6.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lexo/postgresql-18-pg-lexo_0.6.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-lexo` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 249.6 KiB | [postgresql-18-pg-lexo_0.6.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lexo/postgresql-18-pg-lexo_0.6.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-lexo` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 250.0 KiB | [postgresql-17-pg-lexo_0.6.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lexo/postgresql-17-pg-lexo_0.6.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-lexo` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 356.4 KiB | [postgresql-17-pg-lexo_0.6.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lexo/postgresql-17-pg-lexo_0.6.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-lexo` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 249.5 KiB | [postgresql-17-pg-lexo_0.6.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lexo/postgresql-17-pg-lexo_0.6.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pg-lexo` | `0.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 256.6 KiB | [postgresql-16-pg-lexo_0.6.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lexo/postgresql-16-pg-lexo_0.6.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-lexo` | `0.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 362.9 KiB | [postgresql-16-pg-lexo_0.6.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lexo/postgresql-16-pg-lexo_0.6.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-lexo` | `0.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 256.0 KiB | [postgresql-16-pg-lexo_0.6.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lexo/postgresql-16-pg-lexo_0.6.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

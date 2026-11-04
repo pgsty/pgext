@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3540** | {{< badge content="codesystem" link="https://github.com/John-Cameron-Burns/pg-codesystem" >}} | {{< ext "codesystem" >}} | `0.2.0` | {{< category "TYPE" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 > [!Note] Distribution 0.2.1 keeps SQL/control 0.2.0; no extension upgrade from 0.2.0 is needed. Optional GSS entity updates and publisher-fetched ISIC/ISCO loaders need plpython3u, superuser installation and network access. Core extension dependencies unchanged. Upstream CI covers PG13-17; local EL9 aarch64 builds and regression checks additionally validate PG18.
 
@@ -33,7 +35,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `codesystem` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "codesystem_18" "green" >}} {{< bg "17" "codesystem_17" "green" >}} {{< bg "16" "codesystem_16" "green" >}} {{< bg "15" "codesystem_15" "green" >}} {{< bg "14" "codesystem_14" "green" >}} | `codesystem_$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,7 +56,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} | {{< bg "N/A" "codesystem : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -68,7 +70,7 @@ page_width: full
 | `codesystem_18` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 121.4 KiB | [codesystem_18-0.2.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/codesystem_18-0.2.1-1PGSTY.el9.aarch64.rpm) |
 | `codesystem_18` | `0.2.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 122.8 KiB | [codesystem_18-0.2.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/codesystem_18-0.2.1-1PGSTY.el10.x86_64.rpm) |
 | `codesystem_18` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 122.2 KiB | [codesystem_18-0.2.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/codesystem_18-0.2.1-1PGSTY.el10.aarch64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -81,7 +83,7 @@ page_width: full
 | `codesystem_17` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 121.4 KiB | [codesystem_17-0.2.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/codesystem_17-0.2.1-1PGSTY.el9.aarch64.rpm) |
 | `codesystem_17` | `0.2.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 122.9 KiB | [codesystem_17-0.2.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/codesystem_17-0.2.1-1PGSTY.el10.x86_64.rpm) |
 | `codesystem_17` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 122.2 KiB | [codesystem_17-0.2.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/codesystem_17-0.2.1-1PGSTY.el10.aarch64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -94,7 +96,7 @@ page_width: full
 | `codesystem_16` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 121.4 KiB | [codesystem_16-0.2.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/codesystem_16-0.2.1-1PGSTY.el9.aarch64.rpm) |
 | `codesystem_16` | `0.2.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 122.9 KiB | [codesystem_16-0.2.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/codesystem_16-0.2.1-1PGSTY.el10.x86_64.rpm) |
 | `codesystem_16` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 122.2 KiB | [codesystem_16-0.2.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/codesystem_16-0.2.1-1PGSTY.el10.aarch64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `codesystem_15` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 123.2 KiB | [codesystem_15-0.2.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/codesystem_15-0.2.1-1PGSTY.el9.aarch64.rpm) |
 | `codesystem_15` | `0.2.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 124.5 KiB | [codesystem_15-0.2.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/codesystem_15-0.2.1-1PGSTY.el10.x86_64.rpm) |
 | `codesystem_15` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 123.8 KiB | [codesystem_15-0.2.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/codesystem_15-0.2.1-1PGSTY.el10.aarch64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -120,7 +122,7 @@ page_width: full
 | `codesystem_14` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 123.1 KiB | [codesystem_14-0.2.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/codesystem_14-0.2.1-1PGSTY.el9.aarch64.rpm) |
 | `codesystem_14` | `0.2.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 124.5 KiB | [codesystem_14-0.2.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/codesystem_14-0.2.1-1PGSTY.el10.x86_64.rpm) |
 | `codesystem_14` | `0.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 123.8 KiB | [codesystem_14-0.2.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/codesystem_14-0.2.1-1PGSTY.el10.aarch64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

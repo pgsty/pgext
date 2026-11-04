@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4285** | {{< badge content="external_file" link="https://github.com/darold/external_file" >}} | {{< ext "external_file" >}} | `1.2` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `external_file` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "external_file_18" "green" >}} {{< bg "17" "external_file_17" "green" >}} {{< bg "16" "external_file_16" "green" >}} {{< bg "15" "external_file_15" "green" >}} {{< bg "14" "external_file_14" "green" >}} | `external_file_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "postgresql-18-external-file" "green" >}} {{< bg "17" "postgresql-17-external-file" "green" >}} {{< bg "16" "postgresql-16-external-file" "green" >}} {{< bg "15" "postgresql-15-external-file" "green" >}} {{< bg "14" "postgresql-14-external-file" "green" >}} | `postgresql-$v-external-file` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2" "postgresql-18-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-17-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-16-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-15-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-14-external-file : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2" "postgresql-18-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-17-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-16-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-15-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-14-external-file : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2" "postgresql-18-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-17-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-16-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-15-external-file : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2" "postgresql-14-external-file : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-external-file` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 7.1 KiB | [postgresql-18-external-file_1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/external-file/postgresql-18-external-file_1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-external-file` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 7.2 KiB | [postgresql-18-external-file_1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-18-external-file_1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-external-file` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.2 KiB | [postgresql-18-external-file_1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-18-external-file_1.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-external-file` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 7.2 KiB | [postgresql-17-external-file_1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/external-file/postgresql-17-external-file_1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-external-file` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 7.2 KiB | [postgresql-17-external-file_1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-17-external-file_1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-external-file` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.2 KiB | [postgresql-17-external-file_1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-17-external-file_1.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-16-external-file` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 7.1 KiB | [postgresql-16-external-file_1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/external-file/postgresql-16-external-file_1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-external-file` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 7.2 KiB | [postgresql-16-external-file_1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-16-external-file_1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-external-file` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.2 KiB | [postgresql-16-external-file_1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-16-external-file_1.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-15-external-file` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 7.1 KiB | [postgresql-15-external-file_1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/external-file/postgresql-15-external-file_1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-external-file` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 7.2 KiB | [postgresql-15-external-file_1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-15-external-file_1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-external-file` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.2 KiB | [postgresql-15-external-file_1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-15-external-file_1.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-14-external-file` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 7.1 KiB | [postgresql-14-external-file_1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/external-file/postgresql-14-external-file_1.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-external-file` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 7.2 KiB | [postgresql-14-external-file_1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-14-external-file_1.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-external-file` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 7.2 KiB | [postgresql-14-external-file_1.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/e/external-file/postgresql-14-external-file_1.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

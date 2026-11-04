@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7060** | {{< badge content="pg_session_jwt" link="https://github.com/neondatabase/pg_session_jwt" >}} | {{< ext "pg_session_jwt" >}} | `0.5.0` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_session_jwt` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "pg_session_jwt_18" "green" >}} {{< bg "17" "pg_session_jwt_17" "green" >}} {{< bg "16" "pg_session_jwt_16" "green" >}} {{< bg "15" "pg_session_jwt_15" "green" >}} {{< bg "14" "pg_session_jwt_14" "green" >}} | `pg_session_jwt_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "postgresql-18-pg-session-jwt" "green" >}} {{< bg "17" "postgresql-17-pg-session-jwt" "green" >}} {{< bg "16" "postgresql-16-pg-session-jwt" "green" >}} {{< bg "15" "postgresql-15-pg-session-jwt" "green" >}} {{< bg "14" "postgresql-14-pg-session-jwt" "green" >}} | `postgresql-$v-pg-session-jwt` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-pg-session-jwt : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-pg-session-jwt : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-pg-session-jwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-pg-session-jwt : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -83,7 +85,7 @@ page_width: full
 | `postgresql-18-pg-session-jwt` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 807.3 KiB | [postgresql-18-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-session-jwt/postgresql-18-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-session-jwt` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 885.7 KiB | [postgresql-18-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-18-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-session-jwt` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 806.2 KiB | [postgresql-18-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-18-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -106,7 +108,7 @@ page_width: full
 | `postgresql-17-pg-session-jwt` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 804.9 KiB | [postgresql-17-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-session-jwt/postgresql-17-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-session-jwt` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 882.8 KiB | [postgresql-17-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-17-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-session-jwt` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 803.8 KiB | [postgresql-17-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-17-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-16-pg-session-jwt` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 803.9 KiB | [postgresql-16-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-session-jwt/postgresql-16-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-session-jwt` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 883.0 KiB | [postgresql-16-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-16-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-session-jwt` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 802.8 KiB | [postgresql-16-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-16-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -152,7 +154,7 @@ page_width: full
 | `postgresql-15-pg-session-jwt` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 798.8 KiB | [postgresql-15-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-session-jwt/postgresql-15-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-session-jwt` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 877.2 KiB | [postgresql-15-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-15-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-session-jwt` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 796.7 KiB | [postgresql-15-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-15-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -175,7 +177,7 @@ page_width: full
 | `postgresql-14-pg-session-jwt` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 797.3 KiB | [postgresql-14-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-session-jwt/postgresql-14-pg-session-jwt_0.5.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-session-jwt` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 869.8 KiB | [postgresql-14-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-14-pg-session-jwt_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-session-jwt` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 794.1 KiB | [postgresql-14-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-session-jwt/postgresql-14-pg-session-jwt_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

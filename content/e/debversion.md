@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3830** | {{< badge content="debversion" link="https://github.com/ATIX-AG/postgresql-debversion-evr" >}} | {{< ext "debversion" >}} | `1.2.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -36,7 +38,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `debversion` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "postgresql-18-debversion" "green" >}} {{< bg "17" "postgresql-17-debversion" "green" >}} {{< bg "16" "postgresql-16-debversion" "green" >}} {{< bg "15" "postgresql-15-debversion" "green" >}} {{< bg "14" "postgresql-14-debversion" "green" >}} | `postgresql-$v-debversion` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -57,7 +59,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.0" "postgresql-18-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-debversion : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.0" "postgresql-18-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-debversion : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.0" "postgresql-18-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-17-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-16-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-15-debversion : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.0" "postgresql-14-debversion : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -75,7 +77,7 @@ page_width: full
 | `postgresql-18-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-18-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-18-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -92,7 +94,7 @@ page_width: full
 | `postgresql-17-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-17-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-17-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -109,7 +111,7 @@ page_width: full
 | `postgresql-16-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-16-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-16-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -126,7 +128,7 @@ page_width: full
 | `postgresql-15-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.1 KiB | [postgresql-15-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-15-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -143,7 +145,7 @@ page_width: full
 | `postgresql-14-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-debversion` | `1.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.0 KiB | [postgresql-14-debversion_1.2.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-debversion` | `1.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 14.1 KiB | [postgresql-14-debversion_1.2.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

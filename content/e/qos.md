@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5240** | {{< badge content="qos" link="https://github.com/appstonia/pg_qos" >}} | {{< ext "qos" "pg_qos" >}} | `1.1.0` | {{< category "ADMIN" >}} | {{< license "GPL-3.0-or-later" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_qos` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_qos_18" "green" >}} {{< bg "17" "pg_qos_17" "green" >}} {{< bg "16" "pg_qos_16" "green" >}} {{< bg "15" "pg_qos_15" "green" >}} {{< bg "14" "pg_qos_14" "red" >}} | `pg_qos_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-qos" "green" >}} {{< bg "17" "postgresql-17-qos" "green" >}} {{< bg "16" "postgresql-16-qos" "green" >}} {{< bg "15" "postgresql-15-qos" "green" >}} {{< bg "14" "postgresql-14-qos" "red" >}} | `postgresql-$v-qos` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-qos : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-qos : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-qos : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-qos : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-qos : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-qos : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-qos : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-qos` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.4 KiB | [postgresql-18-qos_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qos/postgresql-18-qos_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-qos` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.8 KiB | [postgresql-18-qos_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-18-qos_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-qos` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.4 KiB | [postgresql-18-qos_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-18-qos_1.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-qos` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.5 KiB | [postgresql-17-qos_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qos/postgresql-17-qos_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-qos` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 72.0 KiB | [postgresql-17-qos_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-17-qos_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-qos` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.6 KiB | [postgresql-17-qos_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-17-qos_1.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-qos` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.3 KiB | [postgresql-16-qos_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qos/postgresql-16-qos_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-qos` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.9 KiB | [postgresql-16-qos_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-16-qos_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-qos` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.4 KiB | [postgresql-16-qos_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-16-qos_1.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-qos` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.9 KiB | [postgresql-15-qos_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/qos/postgresql-15-qos_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-qos` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.8 KiB | [postgresql-15-qos_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-15-qos_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-qos` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.5 KiB | [postgresql-15-qos_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/q/qos/postgresql-15-qos_1.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

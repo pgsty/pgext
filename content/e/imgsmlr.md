@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2830** | {{< badge content="imgsmlr" link="https://github.com/postgrespro/imgsmlr" >}} | {{< ext "imgsmlr" >}} | `1.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `imgsmlr` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "imgsmlr_18" "green" >}} {{< bg "17" "imgsmlr_17" "green" >}} {{< bg "16" "imgsmlr_16" "green" >}} {{< bg "15" "imgsmlr_15" "green" >}} {{< bg "14" "imgsmlr_14" "green" >}} | `imgsmlr_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0+git20180223.c484a15` | {{< bg "18" "postgresql-18-imgsmlr" "green" >}} {{< bg "17" "postgresql-17-imgsmlr" "green" >}} {{< bg "16" "postgresql-16-imgsmlr" "green" >}} {{< bg "15" "postgresql-15-imgsmlr" "green" >}} {{< bg "14" "postgresql-14-imgsmlr" "green" >}} | `postgresql-$v-imgsmlr` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-imgsmlr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-imgsmlr : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-imgsmlr` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.7 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-imgsmlr` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-imgsmlr` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.7 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-imgsmlr` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-imgsmlr` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.7 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-imgsmlr` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-imgsmlr` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.7 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-imgsmlr` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-imgsmlr` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.7 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-imgsmlr` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.8 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -257,6 +259,7 @@ CREATE EXTENSION imgsmlr;
 |----------|------|-------|--------|-------------|
 | `<->` | pattern | pattern | float8 | Euclidean distance between two patterns |
 | `<->` | signature | signature | float8 | Euclidean distance between two signatures |
+{.wide .expand}
 
 The `signature` type supports GiST indexing with KNN on the `<->` operator.
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1503** | {{< badge content="postgis_sfcgal" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_sfcgal" "postgis" >}} | `3.7.0` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `postgis` | `postgis` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgis37_18" "green" >}} {{< bg "17" "postgis37_17" "green" >}} {{< bg "16" "postgis37_16" "green" >}} {{< bg "15" "postgis37_15" "green" >}} {{< bg "14" "postgis37_14" "green" >}} | `postgis37_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-postgis-3 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-postgis-3 : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

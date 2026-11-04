@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2220** | {{< badge content="psql_bm25s" link="https://github.com/Intelligent-Internet/Evoke" >}} | {{< ext "psql_bm25s" >}} | `0.4.14` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.14` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `psql_bm25s` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.14` | {{< bg "18" "psql_bm25s_18" "green" >}} {{< bg "17" "psql_bm25s_17" "green" >}} {{< bg "16" "psql_bm25s_16" "red" >}} {{< bg "15" "psql_bm25s_15" "red" >}} {{< bg "14" "psql_bm25s_14" "red" >}} | `psql_bm25s_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.14` | {{< bg "18" "postgresql-18-psql-bm25s" "green" >}} {{< bg "17" "postgresql-17-psql-bm25s" "green" >}} {{< bg "16" "postgresql-16-psql-bm25s" "red" >}} {{< bg "15" "postgresql-15-psql-bm25s" "red" >}} {{< bg "14" "postgresql-14-psql-bm25s" "red" >}} | `postgresql-$v-psql-bm25s` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.4.14" "postgresql-18-psql-bm25s : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.14" "postgresql-17-psql-bm25s : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-psql-bm25s : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-psql-bm25s : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-psql-bm25s : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.4.14" "postgresql-18-psql-bm25s : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.14" "postgresql-17-psql-bm25s : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-psql-bm25s : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-psql-bm25s : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-psql-bm25s : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.4.14" "postgresql-18-psql-bm25s : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.14" "postgresql-17-psql-bm25s : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-psql-bm25s : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-psql-bm25s : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-psql-bm25s : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-psql-bm25s` | `0.4.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 497.3 KiB | [postgresql-18-psql-bm25s_0.4.14-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/psql-bm25s/postgresql-18-psql-bm25s_0.4.14-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-psql-bm25s` | `0.4.14` | [u26.x86_64](/os/u26.x86_64) | pigsty | 506.9 KiB | [postgresql-18-psql-bm25s_0.4.14-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/psql-bm25s/postgresql-18-psql-bm25s_0.4.14-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-psql-bm25s` | `0.4.14` | [u26.aarch64](/os/u26.aarch64) | pigsty | 492.8 KiB | [postgresql-18-psql-bm25s_0.4.14-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/psql-bm25s/postgresql-18-psql-bm25s_0.4.14-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-psql-bm25s` | `0.4.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 497.4 KiB | [postgresql-17-psql-bm25s_0.4.14-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/psql-bm25s/postgresql-17-psql-bm25s_0.4.14-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-psql-bm25s` | `0.4.14` | [u26.x86_64](/os/u26.x86_64) | pigsty | 506.9 KiB | [postgresql-17-psql-bm25s_0.4.14-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/psql-bm25s/postgresql-17-psql-bm25s_0.4.14-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-psql-bm25s` | `0.4.14` | [u26.aarch64](/os/u26.aarch64) | pigsty | 492.8 KiB | [postgresql-17-psql-bm25s_0.4.14-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/psql-bm25s/postgresql-17-psql-bm25s_0.4.14-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

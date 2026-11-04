@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5880** | {{< badge content="pgagent" link="https://www.pgadmin.org/docs/pgadmin4/development/pgagent.html" >}} | {{< ext "pgagent" >}} | `4.2.3` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgagent` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "pgagent_18" "green" >}} {{< bg "17" "pgagent_17" "green" >}} {{< bg "16" "pgagent_16" "green" >}} {{< bg "15" "pgagent_15" "green" >}} {{< bg "14" "pgagent_14" "green" >}} | `pgagent_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "pgagent" "green" >}} {{< bg "17" "pgagent" "green" >}} {{< bg "16" "pgagent" "green" >}} {{< bg "15" "pgagent" "green" >}} {{< bg "14" "pgagent" "green" >}} | `pgagent` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.3" "pgagent : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -89,7 +91,7 @@ page_width: full
 | `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
 | `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
 | `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -120,7 +122,7 @@ page_width: full
 | `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
 | `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
 | `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
 | `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
 | `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -182,7 +184,7 @@ page_width: full
 | `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
 | `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
 | `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -215,7 +217,7 @@ page_width: full
 | `pgagent` | `4.2.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 78.8 KiB | [pgagent_4.2.3-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg24.04+1_arm64.deb) |
 | `pgagent` | `4.2.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 92.2 KiB | [pgagent_4.2.3-5.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_amd64.deb) |
 | `pgagent` | `4.2.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 79.0 KiB | [pgagent_4.2.3-5.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgagent/pgagent_4.2.3-5.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

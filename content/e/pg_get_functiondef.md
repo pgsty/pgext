@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9170** | {{< badge content="pg_get_functiondef" link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/pg_get_functiondef" >}} | {{< ext "pg_get_functiondef" "ivorysql" >}} | `1.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `ivorysql` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.6` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.6` | {{< bg "18" "ivorysql-18" "green" >}} {{< bg "17" "ivorysql-17" "red" >}} {{< bg "16" "ivorysql-16" "red" >}} {{< bg "15" "ivorysql-15" "red" >}} {{< bg "14" "ivorysql-14" "red" >}} | `ivorysql-$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 5.6" "ivorysql-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "ivorysql-17 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-16 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-15 : N/A 0" "gray" >}} | {{< bg "N/A" "ivorysql-14 : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

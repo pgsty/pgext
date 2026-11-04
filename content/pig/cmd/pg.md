@@ -421,7 +421,7 @@ pig pg kill --plan                # Preview connection termination plan
 | `--cancel` | `-c` | Cancel queries instead of terminating |
 | `--watch` | | Repeat every N seconds |
 | `--plan` | | Preview execution plan without terminating connections |
-{.full-width}
+{.full-width .wide .expand}
 
 `--state` accepts known connection states, including `idle in transaction` (quote values with spaces).
 `--query` matches query text without case sensitivity. A positive `--pid` selects that process
@@ -452,7 +452,7 @@ pig pg clone meta meta_fork --plan      # Preview clone plan
 | `--conn-limit` | | Connection limit for the new database (`-1` unlimited, `0` disallow connections) |
 | `--plan` | | Show execution plan only |
 | `--yes` | `-y` | Skip confirmation prompt |
-{.full-width}
+{.full-width .wide .expand}
 
 On PostgreSQL 18+ with `file_copy_method=clone` and a compatible filesystem, the copy can use
 copy-on-write (CoW). Otherwise it uses an ordinary copy. Use `pg fork` to copy an entire instance.
@@ -653,7 +653,7 @@ pig pg fork init dev --plan           # Show execution plan only
 | `pig pg fork start <name> or --dst-data <dir>` | `--dst-data`, `--dst-port`, `-t/--timeout`, `--plan` | Start existing fork |
 | `pig pg fork stop <name> or --dst-data <dir>` | `--dst-data`, `-m/--mode`, `-t/--timeout`, `--plan` | Stop existing fork |
 | `pig pg fork rm <name> or --dst-data <dir>` | `--dst-data`, `--stop`, `-m/--mode`, `-t/--timeout`, `-f/--force`, `-y/--yes`, `--plan` | Remove fork; running forks require `--stop` |
-{.full-width}
+{.full-width .wide .expand}
 
 **Behavior Notes:**
 

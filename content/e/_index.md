@@ -631,5 +631,6 @@ There are 620 packaged PostgreSQL extensions:
 | {{< ext "pg_bulkload" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | {{< category "ETL" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
 | {{< ext "test_decoding" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ETL" >}} | SQL-based test/example module for WAL logical decoding |
 | {{< ext "pgoutput" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | {{< category "ETL" >}} | Logical Replication output plugin |
+{.wide .expand}
 
 **Attribute Legend**: `c`:contrib `b`:bin `s`:lib `l`:load `d`:ddl `t`:trusted `r`:relocatable

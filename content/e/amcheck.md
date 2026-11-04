@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5980** | {{< badge content="amcheck" link="https://www.postgresql.org/docs/current/amcheck.html" >}} | {{< ext "amcheck" >}} | `1.5` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,6 +39,7 @@ page_width: full
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
 | {{< bg "1.5" "PostgreSQL 18: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 17: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 16: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 15: version 1.5" "green" >}} | {{< bg "1.5" "PostgreSQL 14: version 1.5" "green" >}} |
+{.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 
@@ -132,5 +135,6 @@ Returns rows for each detected problem:
 | `bt_index_parent_check(index, heapallindexed, rootdescend, checkunique)` | ShareLock | Comprehensive verification |
 | `gin_index_check(index)` | AccessShareLock | GIN index verification |
 | `verify_heapam(relation, on_error_stop, check_toast, skip, startblock, endblock)` | AccessShareLock | Table/heap corruption detection |
+{.wide .expand}
 
 All `amcheck` errors are true positives. Use `REINDEX` or point-in-time recovery for repair after diagnosing with `pageinspect`.

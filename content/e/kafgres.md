@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9440** | {{< badge content="kafgres" link="https://github.com/RayElg/kafgres" >}} | {{< ext "kafgres" >}} | `0.3.1` | {{< category "SIM" >}} | {{< license "Elastic-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 > [!Note] Preload/restart; broker readiness required; replicate/archive segment data separately.
 
@@ -34,7 +36,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `kafgres` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "kafgres_18" "red" >}} {{< bg "17" "kafgres_17" "red" >}} {{< bg "16" "kafgres_16" "green" >}} {{< bg "15" "kafgres_15" "red" >}} {{< bg "14" "kafgres_14" "red" >}} | `kafgres_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "postgresql-18-kafgres" "red" >}} {{< bg "17" "postgresql-17-kafgres" "red" >}} {{< bg "16" "postgresql-16-kafgres" "green" >}} {{< bg "15" "postgresql-15-kafgres" "red" >}} {{< bg "14" "postgresql-14-kafgres" "red" >}} | `postgresql-$v-kafgres` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,7 +57,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "postgresql-18-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-17-kafgres : N/A 0" "gray" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-kafgres : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-kafgres : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-kafgres : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -79,7 +81,7 @@ page_width: full
 | `postgresql-16-kafgres` | `0.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.8 MiB | [postgresql-16-kafgres_0.3.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafgres/postgresql-16-kafgres_0.3.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-kafgres` | `0.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.2 MiB | [postgresql-16-kafgres_0.3.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/k/kafgres/postgresql-16-kafgres_0.3.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-kafgres` | `0.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.8 MiB | [postgresql-16-kafgres_0.3.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/k/kafgres/postgresql-16-kafgres_0.3.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

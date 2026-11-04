@@ -222,7 +222,7 @@ When upgrading from v1.5.x, update older scripts to use patronictl syntax:
 | `pig pt list -W` / `-w 5`              | native `pig pt list --watch` (patronictl semantics)         |
 | aliases `ls/rs/rl/ri/so/fo/p/r/c`      | removed — use full native command names                     |
 | `--dbsu -U`                            | `--dbsu` (`-U` shorthand removed)                           |
-{.full-width}
+{.full-width .wide .expand}
 
 ## Requirements and privileges
 

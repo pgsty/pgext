@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4400** | {{< badge content="hashlib" link="https://github.com/markokr/pghashlib" >}} | {{< ext "hashlib" "pg_hashlib" >}} | `1.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_hashlib` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1` | {{< bg "18" "pg_hashlib_18" "green" >}} {{< bg "17" "pg_hashlib_17" "green" >}} {{< bg "16" "pg_hashlib_16" "green" >}} {{< bg "15" "pg_hashlib_15" "green" >}} {{< bg "14" "pg_hashlib_14" "green" >}} | `pg_hashlib_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1` | {{< bg "18" "postgresql-18-pg-hashlib" "green" >}} {{< bg "17" "postgresql-17-pg-hashlib" "green" >}} {{< bg "16" "postgresql-16-pg-hashlib" "green" >}} {{< bg "15" "postgresql-15-pg-hashlib" "green" >}} {{< bg "14" "postgresql-14-pg-hashlib" "green" >}} | `postgresql-$v-pg-hashlib` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-hashlib : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-hashlib : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-hashlib : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-hashlib : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-hashlib` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 48.6 KiB | [postgresql-18-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-hashlib/postgresql-18-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-hashlib` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 43.7 KiB | [postgresql-18-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-18-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-hashlib` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 43.6 KiB | [postgresql-18-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-18-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-hashlib` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 48.5 KiB | [postgresql-17-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-hashlib/postgresql-17-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-hashlib` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 43.7 KiB | [postgresql-17-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-17-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-hashlib` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 43.6 KiB | [postgresql-17-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-17-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pg-hashlib` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 48.5 KiB | [postgresql-16-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-hashlib/postgresql-16-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-hashlib` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 43.7 KiB | [postgresql-16-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-16-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-hashlib` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 43.6 KiB | [postgresql-16-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-16-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-pg-hashlib` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 48.5 KiB | [postgresql-15-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-hashlib/postgresql-15-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-hashlib` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 44.0 KiB | [postgresql-15-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-15-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-hashlib` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 44.2 KiB | [postgresql-15-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-15-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-pg-hashlib` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 48.5 KiB | [postgresql-14-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-hashlib/postgresql-14-pg-hashlib_1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-hashlib` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 43.9 KiB | [postgresql-14-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-14-pg-hashlib_1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-hashlib` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 44.2 KiB | [postgresql-14-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-hashlib/postgresql-14-pg-hashlib_1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -283,5 +285,6 @@ SELECT hash_int8(42::bigint); -- 64-bit hash of 64-bit integer
 | `lookup3be` | yes | 64 | Jenkins lookup3 big-endian |
 | `lookup3le` | yes | 64 | Jenkins lookup3 little-endian |
 | `pgsql84` | no | 64 | Hacked lookup3 in Postgres 8.4+ |
+{.wide .expand}
 
 Integer algorithms: `wang32`, `wang32mult`, `jenkins` (32-bit); `wang64`, `wang64to32` (64-bit). All are reversible (1:1 mapping), useful for creating random sort orders over unique IDs.

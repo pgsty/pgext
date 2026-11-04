@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4715** | {{< badge content="hdr_histogram" link="https://github.com/vovcke/pg_hdr_histogram" >}} | {{< ext "hdr_histogram" >}} | `1.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 > [!Note] Official v1.0.0 release asset installs control/SQL 1.0; the Git tag declares 1.0.0. Extension license is MIT; packages also include the CC0-1.0 HdrHistogram_c library. PG14-18; requires zlib. Default lossless merge depends on accumulator range/order; left mode can discard samples.
 
@@ -34,7 +36,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hdr_histogram` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "hdr_histogram_18" "green" >}} {{< bg "17" "hdr_histogram_17" "green" >}} {{< bg "16" "hdr_histogram_16" "green" >}} {{< bg "15" "hdr_histogram_15" "green" >}} {{< bg "14" "hdr_histogram_14" "green" >}} | `hdr_histogram_$v` | `zlib` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-hdr-histogram" "green" >}} {{< bg "17" "postgresql-17-hdr-histogram" "green" >}} {{< bg "16" "postgresql-16-hdr-histogram" "green" >}} {{< bg "15" "postgresql-15-hdr-histogram" "green" >}} {{< bg "14" "postgresql-14-hdr-histogram" "green" >}} | `postgresql-$v-hdr-histogram` | `zlib1g` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,7 +57,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-hdr-histogram : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-hdr-histogram : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-hdr-histogram : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-hdr-histogram : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -79,7 +81,7 @@ page_width: full
 | `postgresql-18-hdr-histogram` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.8 KiB | [postgresql-18-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdr-histogram/postgresql-18-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-hdr-histogram` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 68.7 KiB | [postgresql-18-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-18-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-hdr-histogram` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.1 KiB | [postgresql-18-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-18-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -102,7 +104,7 @@ page_width: full
 | `postgresql-17-hdr-histogram` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.8 KiB | [postgresql-17-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdr-histogram/postgresql-17-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-hdr-histogram` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 68.7 KiB | [postgresql-17-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-17-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-hdr-histogram` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.2 KiB | [postgresql-17-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-17-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -125,7 +127,7 @@ page_width: full
 | `postgresql-16-hdr-histogram` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 65.6 KiB | [postgresql-16-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdr-histogram/postgresql-16-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-hdr-histogram` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 68.7 KiB | [postgresql-16-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-16-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-hdr-histogram` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 65.2 KiB | [postgresql-16-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-16-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -148,7 +150,7 @@ page_width: full
 | `postgresql-15-hdr-histogram` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.4 KiB | [postgresql-15-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdr-histogram/postgresql-15-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-hdr-histogram` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 75.0 KiB | [postgresql-15-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-15-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-hdr-histogram` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.7 KiB | [postgresql-15-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-15-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -171,7 +173,7 @@ page_width: full
 | `postgresql-14-hdr-histogram` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.3 KiB | [postgresql-14-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdr-histogram/postgresql-14-hdr-histogram_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-hdr-histogram` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 75.0 KiB | [postgresql-14-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-14-hdr-histogram_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-hdr-histogram` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.6 KiB | [postgresql-14-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdr-histogram/postgresql-14-hdr-histogram_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

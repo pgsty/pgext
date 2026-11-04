@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9500** | {{< badge content="pglogical" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< ext "pglogical" >}} | `2.4.8` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -42,7 +44,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglogical` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "pglogical_18" "green" >}} {{< bg "17" "pglogical_17" "green" >}} {{< bg "16" "pglogical_16" "green" >}} {{< bg "15" "pglogical_15" "green" >}} {{< bg "14" "pglogical_14" "green" >}} | `pglogical_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "postgresql-18-pglogical" "green" >}} {{< bg "17" "postgresql-17-pglogical" "green" >}} {{< bg "16" "postgresql-16-pglogical" "green" >}} {{< bg "15" "postgresql-15-pglogical" "green" >}} {{< bg "14" "postgresql-14-pglogical" "green" >}} | `postgresql-$v-pglogical` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -63,7 +65,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.4.8" "postgresql-18-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-17-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-16-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-15-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-14-pglogical : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.4.8" "postgresql-18-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-17-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-16-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-15-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-14-pglogical : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.4.8" "postgresql-18-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-17-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-16-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-15-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-14-pglogical : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -117,7 +119,7 @@ page_width: full
 | `postgresql-18-pglogical` | `2.4.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 349.9 KiB | [postgresql-18-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pglogical` | `2.4.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 345.1 KiB | [postgresql-18-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pglogical` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 332.5 KiB | [postgresql-18-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -170,7 +172,7 @@ page_width: full
 | `postgresql-17-pglogical` | `2.4.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 349.7 KiB | [postgresql-17-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pglogical` | `2.4.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 345.3 KiB | [postgresql-17-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pglogical` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 332.0 KiB | [postgresql-17-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -223,7 +225,7 @@ page_width: full
 | `postgresql-16-pglogical` | `2.4.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 348.2 KiB | [postgresql-16-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pglogical` | `2.4.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 343.3 KiB | [postgresql-16-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pglogical` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 330.7 KiB | [postgresql-16-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -280,7 +282,7 @@ page_width: full
 | `postgresql-15-pglogical` | `2.4.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.0 KiB | [postgresql-15-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pglogical` | `2.4.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 346.0 KiB | [postgresql-15-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pglogical` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 333.1 KiB | [postgresql-15-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -340,7 +342,7 @@ page_width: full
 | `postgresql-14-pglogical` | `2.4.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 350.5 KiB | [postgresql-14-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pglogical` | `2.4.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 346.2 KiB | [postgresql-14-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pglogical` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 333.3 KiB | [postgresql-14-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

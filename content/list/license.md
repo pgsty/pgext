@@ -13,6 +13,7 @@ PostgreSQL extension categorized by license.
 |:---------------------------|:-----------------------------|:-----------------------------|:-------------------------------|:-------------------------------|:-------------------------------|
 | {{< license "Artistic-2.0" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
 | {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    |
+{.wide .expand}
 
 ## Summary
 
@@ -43,6 +44,7 @@ PostgreSQL extension categorized by license.
 | {{< license "Apache-2.0 OR PostgreSQL" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "Artistic-1.0" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "0BSD" >}} | 1 | [License Text](#) | Unknown license |
+{.wide .expand}
 
 ---------
 
@@ -326,6 +328,7 @@ PostgreSQL extension categorized by license.
 | 9700 | {{< alias "mimeo" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
 | 9970 | {{< alias "test_decoding" >}} | SQL-based test/example module for WAL logical decoding |
 | 9980 | {{< alias "pgoutput" >}} | Logical Replication output plugin |
+{.wide .expand}
 
 ## Apache-2.0
 
@@ -451,6 +454,7 @@ PostgreSQL extension categorized by license.
 | 9430 | {{< alias "pgs3" >}} | S3-compatible object storage endpoint implemented inside PostgreSQL |
 | 9560 | {{< alias "pgactive" >}} | Active-Active Replication Extension for PostgreSQL |
 | 9640 | {{< alias "wal2mongo" >}} | PostgreSQL logical decoding output plugin for MongoDB |
+{.wide .expand}
 
 ## MIT
 
@@ -572,6 +576,7 @@ PostgreSQL extension categorized by license.
 | 9530 | {{< alias "logical_ddl" >}} | Replicate supported DDL changes over PostgreSQL logical replication |
 | 9650 | {{< alias "decoderbufs" >}} | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
 | 9820 | {{< alias "pg_fact_loader" >}} | build fact tables with Postgres |
+{.wide .expand}
 
 ## BSD-3-Clause
 
@@ -617,6 +622,7 @@ PostgreSQL extension categorized by license.
 | 9550 | {{< alias "db_migrator" >}} | Tools to migrate other databases to PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | Changing data capture in JSON format |
 | 9830 | {{< alias "pg_bulkload" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
+{.wide .expand}
 
 ## GPL-2.0
 
@@ -647,6 +653,7 @@ PostgreSQL extension categorized by license.
 | 3550 | {{< alias "unit" "pgunit" >}} | SI units extension |
 | 3730 | {{< alias "numeral" >}} | numeral datatypes extension |
 | 4310 | {{< alias "ddl_historization" >}} | Historize the ddl changes inside PostgreSQL database |
+{.wide .expand}
 
 ## BSD-2-Clause
 
@@ -673,6 +680,7 @@ PostgreSQL extension categorized by license.
 | 5040 | {{< alias "pg_squeeze" >}} | A tool to remove unused space from a relation. |
 | 5110 | {{< alias "pg_checksums" >}} | Activate/deactivate/verify checksums in offline Postgres clusters |
 | 6440 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
+{.wide .expand}
 
 ## GPL-3.0
 
@@ -695,6 +703,7 @@ PostgreSQL extension categorized by license.
 | 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
 | 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL Supplementary Extension |
 | 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
+{.wide .expand}
 
 ## AGPL-3.0
 
@@ -715,6 +724,7 @@ PostgreSQL extension categorized by license.
 | 4340 | {{< alias "pg_isok" >}} | Query-based data integrity management and soft alerting for PostgreSQL |
 | 4600 | {{< alias "topn" >}} | type for top-n JSONB |
 | 7430 | {{< alias "noset" "pg_noset" >}} | Module for blocking SET variables for non-super users. |
+{.wide .expand}
 
 ## ISC
 
@@ -734,6 +744,7 @@ PostgreSQL extension categorized by license.
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9130 | {{< alias "pg_statement_rollback" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
+{.wide .expand}
 
 ## Unknown
 
@@ -778,6 +789,7 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 1000 | {{< alias "timescaledb" >}} | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
+{.wide .expand}
 
 ## MPL-2.0
 
@@ -892,6 +904,7 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 2330 | {{< alias "pg_tre" >}} | Native PostgreSQL index access method for approximate regular-expression matching |
+{.wide .expand}
 
 ## Apache-2.0 OR MIT
 
@@ -904,6 +917,7 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 2580 | {{< alias "pg_improv" >}} | Incremental multidimensional models and formula functions over PostgreSQL tables. |
+{.wide .expand}
 
 ## Apache-2.0 OR PostgreSQL
 
@@ -940,4 +954,5 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 9100 | {{< alias "orafce" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
+{.wide .expand}
 

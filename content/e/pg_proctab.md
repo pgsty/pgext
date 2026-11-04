@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6460** | {{< badge content="pg_proctab" link="https://github.com/markwkm/pg_proctab" >}} | {{< ext "pg_proctab" "pgnodemx" >}} | `2.0.1` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgnodemx` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "pgnodemx_18" "green" >}} {{< bg "17" "pgnodemx_17" "green" >}} {{< bg "16" "pgnodemx_16" "green" >}} {{< bg "15" "pgnodemx_15" "green" >}} {{< bg "14" "pgnodemx_14" "green" >}} | `pgnodemx_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pgnodemx" "green" >}} {{< bg "17" "postgresql-17-pgnodemx" "green" >}} {{< bg "16" "postgresql-16-pgnodemx" "green" >}} {{< bg "15" "postgresql-15-pgnodemx" "green" >}} {{< bg "14" "postgresql-14-pgnodemx" "green" >}} | `postgresql-$v-pgnodemx` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9300** | {{< badge content="babelfishpg_common" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_common" "babelfish" >}} | `6.2.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `babelfish` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.2.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `antlr4-runtime413` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `6.2.0` | {{< bg "18" "babelfish-18" "green" >}} {{< bg "17" "babelfish-17" "green" >}} {{< bg "16" "babelfish-16" "red" >}} {{< bg "15" "babelfish-15" "red" >}} {{< bg "14" "babelfish-14" "red" >}} | `babelfish-$v` | `libantlr4-runtime413` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 6.2.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.7.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 6.2.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.7.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 6.2.0" "babelfish-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 5.7.0" "babelfish-17 : AVAIL 1" "green" >}} | {{< bg "N/A" "babelfish-16 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-15 : N/A 0" "gray" >}} | {{< bg "N/A" "babelfish-14 : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -86,7 +88,7 @@ page_width: full
 | `babelfish-18` | `6.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.6 MiB | [babelfish-18_6.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/babelfish-18/babelfish-18_6.2.0-1PGSTY~noble_arm64.deb) |
 | `babelfish-18` | `6.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.9 MiB | [babelfish-18_6.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-18/babelfish-18_6.2.0-1PGSTY~resolute_amd64.deb) |
 | `babelfish-18` | `6.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.4 MiB | [babelfish-18_6.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-18/babelfish-18_6.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -109,7 +111,7 @@ page_width: full
 | `babelfish-17` | `5.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.9 MiB | [babelfish-17_5.7.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/b/babelfish-17/babelfish-17_5.7.0-1PGSTY~noble_arm64.deb) |
 | `babelfish-17` | `5.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.2 MiB | [babelfish-17_5.7.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-17/babelfish-17_5.7.0-1PGSTY~resolute_amd64.deb) |
 | `babelfish-17` | `5.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.7 MiB | [babelfish-17_5.7.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/b/babelfish-17/babelfish-17_5.7.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

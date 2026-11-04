@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3070** | {{< badge content="plprofiler" link="https://github.com/bigsql/plprofiler" >}} | {{< ext "plprofiler" >}} | `4.2.5` | {{< category "LANG" >}} | {{< license "Artistic-1.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plprofiler` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.5` | {{< bg "18" "plprofiler_18" "green" >}} {{< bg "17" "plprofiler_17" "green" >}} {{< bg "16" "plprofiler_16" "green" >}} {{< bg "15" "plprofiler_15" "green" >}} {{< bg "14" "plprofiler_14" "green" >}} | `plprofiler_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.5` | {{< bg "18" "postgresql-18-plprofiler" "green" >}} {{< bg "17" "postgresql-17-plprofiler" "green" >}} {{< bg "16" "postgresql-16-plprofiler" "green" >}} {{< bg "15" "postgresql-15-plprofiler" "green" >}} {{< bg "14" "postgresql-14-plprofiler" "green" >}} | `postgresql-$v-plprofiler` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.2.5" "postgresql-18-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-17-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-16-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-15-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-14-plprofiler : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.2.5" "postgresql-18-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-17-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-16-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-15-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-14-plprofiler : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.5" "postgresql-18-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-17-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-16-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-15-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-14-plprofiler : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -94,7 +96,7 @@ page_width: full
 | `postgresql-18-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.4 KiB | [postgresql-18-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-18-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-17-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.6 KiB | [postgresql-17-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-17-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.8 KiB | [postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -166,7 +168,7 @@ page_width: full
 | `postgresql-16-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.5 KiB | [postgresql-16-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-16-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.8 KiB | [postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -210,7 +212,7 @@ page_width: full
 | `postgresql-15-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.7 KiB | [postgresql-15-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-15-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.0 KiB | [postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.1 KiB | [postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -254,7 +256,7 @@ page_width: full
 | `postgresql-14-plprofiler` | `4.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.3 KiB | [postgresql-14-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-14-plprofiler_4.2.5-4.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-plprofiler` | `4.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.8 KiB | [postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.8 KiB | [postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-14-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

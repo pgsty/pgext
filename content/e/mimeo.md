@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9700** | {{< badge content="mimeo" link="https://github.com/omniti-labs/mimeo" >}} | {{< ext "mimeo" >}} | `1.5.1` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mimeo` | `dblink` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "mimeo_18" "green" >}} {{< bg "17" "mimeo_17" "green" >}} {{< bg "16" "mimeo_16" "green" >}} {{< bg "15" "mimeo_15" "green" >}} {{< bg "14" "mimeo_14" "green" >}} | `mimeo_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "postgresql-18-mimeo" "green" >}} {{< bg "17" "postgresql-17-mimeo" "green" >}} {{< bg "16" "postgresql-16-mimeo" "green" >}} {{< bg "15" "postgresql-15-mimeo" "green" >}} {{< bg "14" "postgresql-14-mimeo" "green" >}} | `postgresql-$v-mimeo` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5.1" "postgresql-18-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-17-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-16-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-15-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-14-mimeo : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5.1" "postgresql-18-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-17-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-16-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-15-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-14-mimeo : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.1" "postgresql-18-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-17-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-16-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-15-mimeo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.1" "postgresql-14-mimeo : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-18-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-18-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-18-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.6 KiB | [postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-18-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.6 KiB | [postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-18-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-17-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-17-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-17-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.7 KiB | [postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-17-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.7 KiB | [postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-17-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-16-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-16-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-16-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-16-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.6 KiB | [postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-16-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.6 KiB | [postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-16-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-15-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.7 KiB | [postgresql-15-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-15-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-15-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.7 KiB | [postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-15-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.7 KiB | [postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-15-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-14-mimeo` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 107.6 KiB | [postgresql-14-mimeo_1.5.1-20.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-14-mimeo_1.5.1-20.pgdg24.04+1_all.deb) |
 | `postgresql-14-mimeo` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 107.7 KiB | [postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
 | `postgresql-14-mimeo` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 107.7 KiB | [postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mimeo/postgresql-14-mimeo_1.5.1-20.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

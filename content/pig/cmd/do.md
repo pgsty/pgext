@@ -40,7 +40,7 @@ Inventory sources remain Ansible inputs; static Inventory commands do not execut
 | `node-pkg` | Install or update packages on selected nodes | selector, optional packages |
 | `repo-build` | Rebuild the Pigsty infrastructure repository | none |
 | `redis-add` / `redis-rm` | Add or remove Redis clusters, nodes, or instances | selector, optional ports |
-{.full-width}
+{.full-width .wide .expand}
 
 Run `pig do COMMAND --help` for the aliases and exact examples of one operation.
 

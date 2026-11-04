@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4650** | {{< badge content="ddsketch" link="https://github.com/tvondra/ddsketch" >}} | {{< ext "ddsketch" >}} | `1.0.1` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `ddsketch` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "ddsketch_18" "green" >}} {{< bg "17" "ddsketch_17" "green" >}} {{< bg "16" "ddsketch_16" "green" >}} {{< bg "15" "ddsketch_15" "green" >}} {{< bg "14" "ddsketch_14" "green" >}} | `ddsketch_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-ddsketch" "green" >}} {{< bg "17" "postgresql-17-ddsketch" "green" >}} {{< bg "16" "postgresql-16-ddsketch" "green" >}} {{< bg "15" "postgresql-15-ddsketch" "green" >}} {{< bg "14" "postgresql-14-ddsketch" "green" >}} | `postgresql-$v-ddsketch` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-18-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-17-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-ddsketch : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-18-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-17-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-ddsketch : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-18-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-17-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-ddsketch : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-ddsketch` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.0 KiB | [postgresql-18-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddsketch/postgresql-18-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-ddsketch` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 62.9 KiB | [postgresql-18-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-18-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-ddsketch` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 63.3 KiB | [postgresql-18-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-18-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-ddsketch` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.0 KiB | [postgresql-17-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddsketch/postgresql-17-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-ddsketch` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.1 KiB | [postgresql-17-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-17-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-ddsketch` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 63.5 KiB | [postgresql-17-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-17-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-ddsketch` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.0 KiB | [postgresql-16-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddsketch/postgresql-16-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-ddsketch` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.1 KiB | [postgresql-16-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-16-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-ddsketch` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 63.5 KiB | [postgresql-16-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-16-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-ddsketch` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.0 KiB | [postgresql-15-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddsketch/postgresql-15-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-ddsketch` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.4 KiB | [postgresql-15-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-15-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-ddsketch` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 63.5 KiB | [postgresql-15-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-15-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-ddsketch` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.9 KiB | [postgresql-14-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddsketch/postgresql-14-ddsketch_1.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-ddsketch` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.4 KiB | [postgresql-14-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-14-ddsketch_1.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-ddsketch` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 63.5 KiB | [postgresql-14-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddsketch/postgresql-14-ddsketch_1.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

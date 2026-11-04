@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4860** | {{< badge content="parray_gin" link="https://github.com/theirix/parray_gin" >}} | {{< ext "parray_gin" >}} | `1.5.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `parray_gin` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "parray_gin_18" "green" >}} {{< bg "17" "parray_gin_17" "green" >}} {{< bg "16" "parray_gin_16" "green" >}} {{< bg "15" "parray_gin_15" "green" >}} {{< bg "14" "parray_gin_14" "green" >}} | `parray_gin_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "postgresql-18-parray-gin" "green" >}} {{< bg "17" "postgresql-17-parray-gin" "green" >}} {{< bg "16" "postgresql-16-parray-gin" "green" >}} {{< bg "15" "postgresql-15-parray-gin" "green" >}} {{< bg "14" "postgresql-14-parray-gin" "green" >}} | `postgresql-$v-parray-gin` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-18-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-17-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-16-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-15-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-14-parray-gin : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-18-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-17-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-16-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-15-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-14-parray-gin : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-18-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-17-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-16-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-15-parray-gin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "postgresql-14-parray-gin : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-parray-gin` | `1.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.4 KiB | [postgresql-18-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/parray-gin/postgresql-18-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-parray-gin` | `1.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 30.9 KiB | [postgresql-18-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-18-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-parray-gin` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 30.9 KiB | [postgresql-18-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-18-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-parray-gin` | `1.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.5 KiB | [postgresql-17-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/parray-gin/postgresql-17-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-parray-gin` | `1.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.0 KiB | [postgresql-17-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-17-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-parray-gin` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.0 KiB | [postgresql-17-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-17-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-parray-gin` | `1.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.5 KiB | [postgresql-16-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/parray-gin/postgresql-16-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-parray-gin` | `1.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.0 KiB | [postgresql-16-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-16-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-parray-gin` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.0 KiB | [postgresql-16-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-16-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-parray-gin` | `1.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.5 KiB | [postgresql-15-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/parray-gin/postgresql-15-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-parray-gin` | `1.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.1 KiB | [postgresql-15-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-15-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-parray-gin` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.0 KiB | [postgresql-15-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-15-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-parray-gin` | `1.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.5 KiB | [postgresql-14-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/parray-gin/postgresql-14-parray-gin_1.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-parray-gin` | `1.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 31.0 KiB | [postgresql-14-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-14-parray-gin_1.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-parray-gin` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.0 KiB | [postgresql-14-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/parray-gin/postgresql-14-parray-gin_1.5.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

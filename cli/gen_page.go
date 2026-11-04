@@ -7,7 +7,6 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"os"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -63,7 +62,7 @@ func (g *ExtensionGenerator) GenerateExtensionPage(ctx context.Context, ext *Ext
 
 	// Write to file
 	outputPath := filepath.Join(g.OutputDir, fmt.Sprintf("%s.md", ext.Name))
-	return os.WriteFile(outputPath, []byte(content), 0644)
+	return WriteMarkdownFile(outputPath, content)
 }
 
 func (g *ExtensionGenerator) generateExtensionContent(ext *Extension, packages []*PkgInfo, binaries []*Binary, siblings []*Extension) string {

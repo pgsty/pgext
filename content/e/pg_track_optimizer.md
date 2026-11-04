@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6280** | {{< badge content="pg_track_optimizer" link="https://github.com/danolivo/pg_track_optimizer" >}} | {{< ext "pg_track_optimizer" >}} | `0.9.2` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_track_optimizer` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9.2` | {{< bg "18" "pg_track_optimizer_18" "green" >}} {{< bg "17" "pg_track_optimizer_17" "green" >}} {{< bg "16" "pg_track_optimizer_16" "red" >}} {{< bg "15" "pg_track_optimizer_15" "red" >}} {{< bg "14" "pg_track_optimizer_14" "red" >}} | `pg_track_optimizer_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9.2` | {{< bg "18" "postgresql-18-pg-track-optimizer" "green" >}} {{< bg "17" "postgresql-17-pg-track-optimizer" "green" >}} {{< bg "16" "postgresql-16-pg-track-optimizer" "red" >}} {{< bg "15" "postgresql-15-pg-track-optimizer" "red" >}} {{< bg "14" "postgresql-14-pg-track-optimizer" "red" >}} | `postgresql-$v-pg-track-optimizer` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-18-pg-track-optimizer : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-17-pg-track-optimizer : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-track-optimizer : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-track-optimizer : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-track-optimizer : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-18-pg-track-optimizer : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-17-pg-track-optimizer : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-track-optimizer : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-track-optimizer : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-track-optimizer : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-18-pg-track-optimizer : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-17-pg-track-optimizer : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-track-optimizer : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-track-optimizer : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-track-optimizer : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-pg-track-optimizer` | `0.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 60.3 KiB | [postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-track-optimizer/postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-track-optimizer` | `0.9.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.7 KiB | [postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-track-optimizer/postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-track-optimizer` | `0.9.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.3 KiB | [postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-track-optimizer/postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-pg-track-optimizer` | `0.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 60.1 KiB | [postgresql-17-pg-track-optimizer_0.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-track-optimizer/postgresql-17-pg-track-optimizer_0.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-track-optimizer` | `0.9.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.5 KiB | [postgresql-17-pg-track-optimizer_0.9.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-track-optimizer/postgresql-17-pg-track-optimizer_0.9.2-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-track-optimizer` | `0.9.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.1 KiB | [postgresql-17-pg-track-optimizer_0.9.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-track-optimizer/postgresql-17-pg-track-optimizer_0.9.2-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -228,3 +230,4 @@ SELECT * FROM pg_track_optimizer_status;
 | `pg_track_optimizer.log_min_error` | (none) | Error threshold for logging EXPLAIN |
 | `pg_track_optimizer.hash_mem` | (default) | Shared memory limit in KB |
 | `pg_track_optimizer.auto_flush` | `on` | Auto-save stats on backend shutdown |
+{.wide .expand}

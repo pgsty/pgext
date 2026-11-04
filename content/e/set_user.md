@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7370** | {{< badge content="set_user" link="https://github.com/pgaudit/set_user" >}} | {{< ext "set_user" >}} | `4.2.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `set_user` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "set_user_18" "green" >}} {{< bg "17" "set_user_17" "green" >}} {{< bg "16" "set_user_16" "green" >}} {{< bg "15" "set_user_15" "green" >}} {{< bg "14" "set_user_14" "green" >}} | `set_user_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "postgresql-18-set-user" "green" >}} {{< bg "17" "postgresql-17-set-user" "green" >}} {{< bg "16" "postgresql-16-set-user" "green" >}} {{< bg "15" "postgresql-15-set-user" "green" >}} {{< bg "14" "postgresql-14-set-user" "green" >}} | `postgresql-$v-set-user` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.2.0" "postgresql-18-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-17-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-16-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-15-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-14-set-user : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.2.0" "postgresql-18-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-17-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-16-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-15-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-14-set-user : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.0" "postgresql-18-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-17-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-16-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-15-set-user : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.0" "postgresql-14-set-user : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -96,7 +98,7 @@ page_width: full
 | `postgresql-18-set-user` | `4.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.4 KiB | [postgresql-18-set-user_4.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-18-set-user_4.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.9 KiB | [postgresql-18-set-user_4.2.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-18-set-user_4.2.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.0 KiB | [postgresql-18-set-user_4.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-18-set-user_4.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -133,7 +135,7 @@ page_width: full
 | `postgresql-17-set-user` | `4.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.5 KiB | [postgresql-17-set-user_4.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-17-set-user_4.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.0 KiB | [postgresql-17-set-user_4.2.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-17-set-user_4.2.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.1 KiB | [postgresql-17-set-user_4.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-17-set-user_4.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-16-set-user` | `4.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.5 KiB | [postgresql-16-set-user_4.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-16-set-user_4.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.0 KiB | [postgresql-16-set-user_4.2.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-16-set-user_4.2.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.1 KiB | [postgresql-16-set-user_4.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-16-set-user_4.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -219,7 +221,7 @@ page_width: full
 | `postgresql-15-set-user` | `4.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.1 KiB | [postgresql-15-set-user_4.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-15-set-user_4.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.6 KiB | [postgresql-15-set-user_4.2.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-15-set-user_4.2.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.7 KiB | [postgresql-15-set-user_4.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-15-set-user_4.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -267,7 +269,7 @@ page_width: full
 | `postgresql-14-set-user` | `4.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.1 KiB | [postgresql-14-set-user_4.2.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-14-set-user_4.2.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.6 KiB | [postgresql-14-set-user_4.2.0-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-14-set-user_4.2.0-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-set-user` | `4.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.7 KiB | [postgresql-14-set-user_4.2.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-set-user/postgresql-14-set-user_4.2.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -342,6 +344,7 @@ shared_preload_libraries = 'set_user'
 | `set_user.superuser_allowlist` | `*` | Roles allowed to escalate to superuser |
 | `set_user.nosuperuser_target_allowlist` | `*` | Roles allowed as non-superuser targets |
 | `set_user.superuser_audit_tag` | `AUDIT` | Tag appended to log_line_prefix on escalation |
+{.wide .expand}
 
 ### Functions
 

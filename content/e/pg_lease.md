@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4145** | {{< badge content="pg_lease" link="https://pgxn.org/dist/pg_lease/0.1.0/" >}} | {{< ext "pg_lease" >}} | `0.1.0` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_lease` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_lease_18" "green" >}} {{< bg "17" "pg_lease_17" "green" >}} {{< bg "16" "pg_lease_16" "green" >}} {{< bg "15" "pg_lease_15" "green" >}} {{< bg "14" "pg_lease_14" "green" >}} | `pg_lease_$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} | {{< bg "N/A" "pg_lease : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -74,7 +76,7 @@ page_width: full
 | `pg_lease_18` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 KiB | [pg_lease_18-0.1.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_lease_18-0.1.0-1PGSTY.el9.noarch.rpm) |
 | `pg_lease_18` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.9 KiB | [pg_lease_18-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_lease_18-0.1.0-1PGSTY.el10.noarch.rpm) |
 | `pg_lease_18` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.9 KiB | [pg_lease_18-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_lease_18-0.1.0-1PGSTY.el10.noarch.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -87,7 +89,7 @@ page_width: full
 | `pg_lease_17` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 KiB | [pg_lease_17-0.1.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_lease_17-0.1.0-1PGSTY.el9.noarch.rpm) |
 | `pg_lease_17` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.9 KiB | [pg_lease_17-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_lease_17-0.1.0-1PGSTY.el10.noarch.rpm) |
 | `pg_lease_17` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.9 KiB | [pg_lease_17-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_lease_17-0.1.0-1PGSTY.el10.noarch.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -100,7 +102,7 @@ page_width: full
 | `pg_lease_16` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 KiB | [pg_lease_16-0.1.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_lease_16-0.1.0-1PGSTY.el9.noarch.rpm) |
 | `pg_lease_16` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.9 KiB | [pg_lease_16-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_lease_16-0.1.0-1PGSTY.el10.noarch.rpm) |
 | `pg_lease_16` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.9 KiB | [pg_lease_16-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_lease_16-0.1.0-1PGSTY.el10.noarch.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -113,7 +115,7 @@ page_width: full
 | `pg_lease_15` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 KiB | [pg_lease_15-0.1.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_lease_15-0.1.0-1PGSTY.el9.noarch.rpm) |
 | `pg_lease_15` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.9 KiB | [pg_lease_15-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_lease_15-0.1.0-1PGSTY.el10.noarch.rpm) |
 | `pg_lease_15` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.9 KiB | [pg_lease_15-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_lease_15-0.1.0-1PGSTY.el10.noarch.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -126,7 +128,7 @@ page_width: full
 | `pg_lease_14` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.8 KiB | [pg_lease_14-0.1.0-1PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_lease_14-0.1.0-1PGSTY.el9.noarch.rpm) |
 | `pg_lease_14` | `0.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.9 KiB | [pg_lease_14-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_lease_14-0.1.0-1PGSTY.el10.noarch.rpm) |
 | `pg_lease_14` | `0.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.9 KiB | [pg_lease_14-0.1.0-1PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_lease_14-0.1.0-1PGSTY.el10.noarch.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

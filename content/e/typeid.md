@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4580** | {{< badge content="typeid" link="https://github.com/blitss/typeid-postgres" >}} | {{< ext "typeid" "pg_typeid" >}} | `0.4.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_typeid` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "pg_typeid_18" "green" >}} {{< bg "17" "pg_typeid_17" "green" >}} {{< bg "16" "pg_typeid_16" "green" >}} {{< bg "15" "pg_typeid_15" "green" >}} {{< bg "14" "pg_typeid_14" "green" >}} | `pg_typeid_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "postgresql-18-typeid" "green" >}} {{< bg "17" "postgresql-17-typeid" "green" >}} {{< bg "16" "postgresql-16-typeid" "green" >}} {{< bg "15" "postgresql-15-typeid" "green" >}} {{< bg "14" "postgresql-14-typeid" "green" >}} | `postgresql-$v-typeid` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 707.4 KiB | [postgresql-18-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 795.0 KiB | [postgresql-18-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 706.1 KiB | [postgresql-18-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 705.9 KiB | [postgresql-17-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 792.2 KiB | [postgresql-17-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 704.1 KiB | [postgresql-17-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 705.0 KiB | [postgresql-16-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 790.3 KiB | [postgresql-16-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 703.0 KiB | [postgresql-16-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 699.1 KiB | [postgresql-15-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 783.8 KiB | [postgresql-15-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 697.1 KiB | [postgresql-15-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 697.8 KiB | [postgresql-14-typeid_0.3.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 781.3 KiB | [postgresql-14-typeid_0.3.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 695.8 KiB | [postgresql-14-typeid_0.3.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -247,6 +249,7 @@ CREATE EXTENSION typeid;
 | `typeid_has_prefix(typeid, prefix TEXT)` | `BOOLEAN` | Check if a TypeID has a specific prefix |
 | `typeid_is_nil_prefix(typeid)` | `BOOLEAN` | Check if a TypeID has a nil prefix |
 | `typeid_generate_batch(prefix TEXT, count INTEGER)` | `SETOF typeid` | Generate a batch of TypeIDs |
+{.wide .expand}
 
 ### Operators
 

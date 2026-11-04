@@ -20,7 +20,7 @@ weight: 610
 | `repo cache` | Create offline package from local repo | Requires sudo or root |
 | `repo boot` | Bootstrap repository from offline package | Requires sudo or root |
 | `repo reload` | Refresh repository catalog | |
-{.full-width}
+{.full-width .wide .expand}
 
 ## Quick Start
 
@@ -71,7 +71,7 @@ In pig, APT/YUM repositories are organized as **modules**: groups of repositorie
 | `mysql` | MySQL repository | mysql |
 | `click` | ClickHouse repository | clickhouse |
 | `gitlab` | GitLab repository | gitlab-ce, gitlab-ee |
-{.full-width}
+{.full-width .wide .expand}
 
 PIG filters each module by the current operating system and architecture. Run `pig repo list` to see the available entries.
 

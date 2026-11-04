@@ -17,6 +17,7 @@ weight: 700
 | `pg_statement_rollback` | 1.5 | 1.6 | DEB | PGDG RPM 已为 1.6。 |
 | `pgsodium` | 3.1.9 | 3.1.11 | Pigsty RPM/DEB | PGDG 在 EL10 上已有 3.1.11，Pigsty 与其他旧 PGDG 目标仍为 3.1.9。 |
 | `topn` | 2.7.0 | 2.7.1 | DEB | Pigsty DEB/源码仍为 2.7.0；PGDG RPM 同时存在 2.7.0 与 2.7.1。 |
+{.wide .expand}
 
 不要仅为消除表格差异而提前修改目录元数据；应先完成构建、测试、入库与重新扫描。
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **8740** | {{< badge content="hdfs_fdw" link="https://github.com/EnterpriseDB/hdfs_fdw" >}} | {{< ext "hdfs_fdw" >}} | `2.0.5` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hdfs_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "hdfs_fdw_18" "green" >}} {{< bg "17" "hdfs_fdw_17" "green" >}} {{< bg "16" "hdfs_fdw_16" "green" >}} {{< bg "15" "hdfs_fdw_15" "green" >}} {{< bg "14" "hdfs_fdw_14" "green" >}} | `hdfs_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.3` | {{< bg "18" "postgresql-18-hdfs-fdw" "green" >}} {{< bg "17" "postgresql-17-hdfs-fdw" "green" >}} {{< bg "16" "postgresql-16-hdfs-fdw" "green" >}} {{< bg "15" "postgresql-15-hdfs-fdw" "green" >}} {{< bg "14" "postgresql-14-hdfs-fdw" "green" >}} | `postgresql-$v-hdfs-fdw` | `default-jre-headless` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -88,7 +90,7 @@ page_width: full
 | `postgresql-18-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 103.0 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.2 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.5 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -121,7 +123,7 @@ page_width: full
 | `postgresql-17-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 102.9 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.4 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.4 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-16-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 102.8 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.3 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.3 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -198,7 +200,7 @@ page_width: full
 | `postgresql-15-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 103.1 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.7 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.5 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -245,7 +247,7 @@ page_width: full
 | `postgresql-14-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 103.0 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.6 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.4 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

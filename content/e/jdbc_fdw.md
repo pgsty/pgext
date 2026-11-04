@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **8530** | {{< badge content="jdbc_fdw" link="https://github.com/pgspider/jdbc_fdw" >}} | {{< ext "jdbc_fdw" >}} | `1.2` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `jdbc_fdw` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "jdbc_fdw_18" "green" >}} {{< bg "17" "jdbc_fdw_17" "green" >}} {{< bg "16" "jdbc_fdw_16" "green" >}} {{< bg "15" "jdbc_fdw_15" "green" >}} {{< bg "14" "jdbc_fdw_14" "green" >}} | `jdbc_fdw_$v` | `java-11-openjdk-headless` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "postgresql-18-jdbc-fdw" "green" >}} {{< bg "17" "postgresql-17-jdbc-fdw" "green" >}} {{< bg "16" "postgresql-16-jdbc-fdw" "green" >}} {{< bg "15" "postgresql-15-jdbc-fdw" "green" >}} {{< bg "14" "postgresql-14-jdbc-fdw" "green" >}} | `postgresql-$v-jdbc-fdw` | `default-jre-headless`, `libpq5` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-jdbc-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-jdbc-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-18-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-17-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-16-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-15-jdbc-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.0" "postgresql-14-jdbc-fdw : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-jdbc-fdw` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 133.9 KiB | [postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jdbc-fdw/postgresql-18-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-jdbc-fdw` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 133.8 KiB | [postgresql-18-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-18-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-jdbc-fdw` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 132.1 KiB | [postgresql-18-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-18-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-jdbc-fdw` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 133.4 KiB | [postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jdbc-fdw/postgresql-17-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-jdbc-fdw` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 133.3 KiB | [postgresql-17-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-17-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-jdbc-fdw` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 131.6 KiB | [postgresql-17-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-17-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -132,7 +134,7 @@ page_width: full
 | `postgresql-16-jdbc-fdw` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 133.5 KiB | [postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jdbc-fdw/postgresql-16-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-jdbc-fdw` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 133.3 KiB | [postgresql-16-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-16-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-jdbc-fdw` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 131.6 KiB | [postgresql-16-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-16-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -157,7 +159,7 @@ page_width: full
 | `postgresql-15-jdbc-fdw` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 136.0 KiB | [postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jdbc-fdw/postgresql-15-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-jdbc-fdw` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 135.2 KiB | [postgresql-15-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-15-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-jdbc-fdw` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 133.7 KiB | [postgresql-15-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-15-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -182,7 +184,7 @@ page_width: full
 | `postgresql-14-jdbc-fdw` | `0.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 135.9 KiB | [postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jdbc-fdw/postgresql-14-jdbc-fdw_0.5.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-jdbc-fdw` | `0.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 135.1 KiB | [postgresql-14-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-14-jdbc-fdw_0.5.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-jdbc-fdw` | `0.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 133.6 KiB | [postgresql-14-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jdbc-fdw/postgresql-14-jdbc-fdw_0.5.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

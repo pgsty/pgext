@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7360** | {{< badge content="login_hook" link="https://github.com/splendiddata/login_hook" >}} | {{< ext "login_hook" >}} | `1.8` | {{< category "SEC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `login_hook` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8` | {{< bg "18" "login_hook_18" "green" >}} {{< bg "17" "login_hook_17" "green" >}} {{< bg "16" "login_hook_16" "green" >}} {{< bg "15" "login_hook_15" "green" >}} {{< bg "14" "login_hook_14" "green" >}} | `login_hook_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "postgresql-18-login-hook" "green" >}} {{< bg "17" "postgresql-17-login-hook" "green" >}} {{< bg "16" "postgresql-16-login-hook" "green" >}} {{< bg "15" "postgresql-15-login-hook" "green" >}} {{< bg "14" "postgresql-14-login-hook" "green" >}} | `postgresql-$v-login-hook` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.7" "postgresql-18-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-17-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-16-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-15-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-14-login-hook : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.7" "postgresql-18-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-17-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-16-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-15-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-14-login-hook : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.7" "postgresql-18-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-17-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-16-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-15-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7" "postgresql-14-login-hook : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-login-hook` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.6 KiB | [postgresql-18-login-hook_1.7-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/login-hook/postgresql-18-login-hook_1.7-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-login-hook` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 27.6 KiB | [postgresql-18-login-hook_1.7-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-18-login-hook_1.7-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-login-hook` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.4 KiB | [postgresql-18-login-hook_1.7-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-18-login-hook_1.7-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -122,7 +124,7 @@ page_width: full
 | `postgresql-17-login-hook` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.6 KiB | [postgresql-17-login-hook_1.7-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/login-hook/postgresql-17-login-hook_1.7-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-login-hook` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 27.5 KiB | [postgresql-17-login-hook_1.7-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-17-login-hook_1.7-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-login-hook` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.4 KiB | [postgresql-17-login-hook_1.7-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-17-login-hook_1.7-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -163,7 +165,7 @@ page_width: full
 | `postgresql-16-login-hook` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.0 KiB | [postgresql-16-login-hook_1.7-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/login-hook/postgresql-16-login-hook_1.7-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-login-hook` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 27.0 KiB | [postgresql-16-login-hook_1.7-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-16-login-hook_1.7-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-login-hook` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.9 KiB | [postgresql-16-login-hook_1.7-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-16-login-hook_1.7-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -204,7 +206,7 @@ page_width: full
 | `postgresql-15-login-hook` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.0 KiB | [postgresql-15-login-hook_1.7-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/login-hook/postgresql-15-login-hook_1.7-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-login-hook` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 27.0 KiB | [postgresql-15-login-hook_1.7-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-15-login-hook_1.7-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-login-hook` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.9 KiB | [postgresql-15-login-hook_1.7-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-15-login-hook_1.7-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -245,7 +247,7 @@ page_width: full
 | `postgresql-14-login-hook` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.1 KiB | [postgresql-14-login-hook_1.7-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/login-hook/postgresql-14-login-hook_1.7-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-login-hook` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 27.2 KiB | [postgresql-14-login-hook_1.7-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-14-login-hook_1.7-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-login-hook` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.0 KiB | [postgresql-14-login-hook_1.7-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/login-hook/postgresql-14-login-hook_1.7-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -343,6 +345,7 @@ The `PUBLIC` grant is required because the function runs for every connecting us
 | `login_hook.is_executing_login_hook()` | `boolean` | Returns true only when called during login hook execution |
 | `login_hook.get_login_hook_version()` | `text` | Returns compiled version of login_hook |
 | `login_hook.login()` | `void` | User-provided function executed at login |
+{.wide .expand}
 
 ### Important Notes
 

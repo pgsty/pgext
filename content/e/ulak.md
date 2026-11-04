@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2680** | {{< badge content="ulak" link="https://github.com/zeybek/ulak" >}} | {{< ext "ulak" >}} | `0.2.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `ulak` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "ulak_18" "green" >}} {{< bg "17" "ulak_17" "green" >}} {{< bg "16" "ulak_16" "green" >}} {{< bg "15" "ulak_15" "green" >}} {{< bg "14" "ulak_14" "green" >}} | `ulak_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-ulak" "green" >}} {{< bg "17" "postgresql-17-ulak" "green" >}} {{< bg "16" "postgresql-16-ulak" "green" >}} {{< bg "15" "postgresql-15-ulak" "green" >}} {{< bg "14" "postgresql-14-ulak" "green" >}} | `postgresql-$v-ulak` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-ulak : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-ulak : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-ulak : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-ulak : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-ulak` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 317.5 KiB | [postgresql-18-ulak_0.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/ulak/postgresql-18-ulak_0.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-ulak` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 320.0 KiB | [postgresql-18-ulak_0.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-18-ulak_0.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-ulak` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 315.3 KiB | [postgresql-18-ulak_0.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-18-ulak_0.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-ulak` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 317.4 KiB | [postgresql-17-ulak_0.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/ulak/postgresql-17-ulak_0.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-ulak` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 320.0 KiB | [postgresql-17-ulak_0.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-17-ulak_0.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-ulak` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 315.3 KiB | [postgresql-17-ulak_0.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-17-ulak_0.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-16-ulak` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 317.3 KiB | [postgresql-16-ulak_0.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/ulak/postgresql-16-ulak_0.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-ulak` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 320.1 KiB | [postgresql-16-ulak_0.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-16-ulak_0.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-ulak` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 315.4 KiB | [postgresql-16-ulak_0.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-16-ulak_0.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-15-ulak` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 325.2 KiB | [postgresql-15-ulak_0.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/ulak/postgresql-15-ulak_0.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-ulak` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 327.9 KiB | [postgresql-15-ulak_0.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-15-ulak_0.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-ulak` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 323.3 KiB | [postgresql-15-ulak_0.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-15-ulak_0.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-14-ulak` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 325.0 KiB | [postgresql-14-ulak_0.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/ulak/postgresql-14-ulak_0.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-ulak` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 327.2 KiB | [postgresql-14-ulak_0.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-14-ulak_0.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-ulak` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 323.1 KiB | [postgresql-14-ulak_0.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/u/ulak/postgresql-14-ulak_0.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

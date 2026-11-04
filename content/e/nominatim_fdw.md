@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **8680** | {{< badge content="nominatim_fdw" link="https://github.com/jimjonesbr/nominatim_fdw" >}} | {{< ext "nominatim_fdw" >}} | `2.3` | {{< category "FDW" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `nominatim_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3` | {{< bg "18" "nominatim_fdw_18" "green" >}} {{< bg "17" "nominatim_fdw_17" "green" >}} {{< bg "16" "nominatim_fdw_16" "green" >}} {{< bg "15" "nominatim_fdw_15" "green" >}} {{< bg "14" "nominatim_fdw_14" "green" >}} | `nominatim_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3` | {{< bg "18" "postgresql-18-nominatim-fdw" "green" >}} {{< bg "17" "postgresql-17-nominatim-fdw" "green" >}} {{< bg "16" "postgresql-16-nominatim-fdw" "green" >}} {{< bg "15" "postgresql-15-nominatim-fdw" "green" >}} {{< bg "14" "postgresql-14-nominatim-fdw" "green" >}} | `postgresql-$v-nominatim-fdw` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.3" "postgresql-18-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-17-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-16-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-15-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-14-nominatim-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.3" "postgresql-18-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-17-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-16-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-15-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-14-nominatim-fdw : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.3" "postgresql-18-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-17-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-16-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-15-nominatim-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3" "postgresql-14-nominatim-fdw : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -142,7 +144,7 @@ page_width: full
 | `postgresql-18-nominatim-fdw` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 81.6 KiB | [postgresql-18-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/nominatim-fdw/postgresql-18-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-nominatim-fdw` | `2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 81.9 KiB | [postgresql-18-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-18-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-nominatim-fdw` | `2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.5 KiB | [postgresql-18-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-18-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -223,7 +225,7 @@ page_width: full
 | `postgresql-17-nominatim-fdw` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 81.7 KiB | [postgresql-17-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/nominatim-fdw/postgresql-17-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-nominatim-fdw` | `2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 81.8 KiB | [postgresql-17-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-17-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-nominatim-fdw` | `2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.6 KiB | [postgresql-17-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-17-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -304,7 +306,7 @@ page_width: full
 | `postgresql-16-nominatim-fdw` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 81.7 KiB | [postgresql-16-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/nominatim-fdw/postgresql-16-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-nominatim-fdw` | `2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 81.8 KiB | [postgresql-16-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-16-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-nominatim-fdw` | `2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.6 KiB | [postgresql-16-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-16-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -385,7 +387,7 @@ page_width: full
 | `postgresql-15-nominatim-fdw` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 81.7 KiB | [postgresql-15-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/nominatim-fdw/postgresql-15-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-nominatim-fdw` | `2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 81.9 KiB | [postgresql-15-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-15-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-nominatim-fdw` | `2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.5 KiB | [postgresql-15-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-15-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -466,7 +468,7 @@ page_width: full
 | `postgresql-14-nominatim-fdw` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 81.7 KiB | [postgresql-14-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/n/nominatim-fdw/postgresql-14-nominatim-fdw_2.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-nominatim-fdw` | `2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 81.9 KiB | [postgresql-14-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-14-nominatim-fdw_2.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-nominatim-fdw` | `2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.6 KiB | [postgresql-14-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/n/nominatim-fdw/postgresql-14-nominatim-fdw_2.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

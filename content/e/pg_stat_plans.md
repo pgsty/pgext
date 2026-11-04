@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6050** | {{< badge content="pg_stat_plans" link="https://github.com/pganalyze/pg_stat_plans" >}} | {{< ext "pg_stat_plans" >}} | `2.1.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_stat_plans` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.0` | {{< bg "18" "pg_stat_plans_18" "green" >}} {{< bg "17" "pg_stat_plans_17" "green" >}} {{< bg "16" "pg_stat_plans_16" "green" >}} {{< bg "15" "pg_stat_plans_15" "red" >}} {{< bg "14" "pg_stat_plans_14" "red" >}} | `pg_stat_plans_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.1` | {{< bg "18" "postgresql-18-pg-stat-plans" "green" >}} {{< bg "17" "postgresql-17-pg-stat-plans" "green" >}} {{< bg "16" "postgresql-16-pg-stat-plans" "green" >}} {{< bg "15" "postgresql-15-pg-stat-plans" "red" >}} {{< bg "14" "postgresql-14-pg-stat-plans" "red" >}} | `postgresql-$v-pg-stat-plans` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.1.1" "postgresql-18-pg-stat-plans : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.1" "postgresql-17-pg-stat-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.1" "postgresql-16-pg-stat-plans : AVAIL 2" "blue" >}} | {{< bg "N/A" "postgresql-15-pg-stat-plans : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-plans : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.1.1" "postgresql-18-pg-stat-plans : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.1" "postgresql-17-pg-stat-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.1" "postgresql-16-pg-stat-plans : AVAIL 2" "blue" >}} | {{< bg "N/A" "postgresql-15-pg-stat-plans : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-plans : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.1.1" "postgresql-18-pg-stat-plans : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.1.1" "postgresql-17-pg-stat-plans : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.1.1" "postgresql-16-pg-stat-plans : AVAIL 2" "blue" >}} | {{< bg "N/A" "postgresql-15-pg-stat-plans : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-stat-plans : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -112,7 +114,7 @@ page_width: full
 | `postgresql-18-pg-stat-plans` | `2.1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.5 KiB | [postgresql-18-pg-stat-plans_2.1.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-18-pg-stat-plans_2.1.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-stat-plans` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.6 KiB | [postgresql-18-pg-stat-plans_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-18-pg-stat-plans_2.1.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-stat-plans` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 77.3 KiB | [postgresql-18-pg-stat-plans_2.0.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-18-pg-stat-plans_2.0.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-17-pg-stat-plans` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 98.5 KiB | [postgresql-17-pg-stat-plans_2.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-17-pg-stat-plans_2.1.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-stat-plans` | `2.1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.8 KiB | [postgresql-17-pg-stat-plans_2.1.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-17-pg-stat-plans_2.1.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-stat-plans` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.8 KiB | [postgresql-17-pg-stat-plans_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-17-pg-stat-plans_2.1.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -194,7 +196,7 @@ page_width: full
 | `postgresql-16-pg-stat-plans` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 97.6 KiB | [postgresql-16-pg-stat-plans_2.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-16-pg-stat-plans_2.1.0-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-stat-plans` | `2.1.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.5 KiB | [postgresql-16-pg-stat-plans_2.1.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-16-pg-stat-plans_2.1.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-stat-plans` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.2 KiB | [postgresql-16-pg-stat-plans_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-stat-plans/postgresql-16-pg-stat-plans_2.1.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

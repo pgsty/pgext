@@ -20,7 +20,7 @@ weight: 620
 | `ext import` | 下载扩展以供离线使用     | 需要 sudo 或 root 权限 |
 | `ext link`   | 链接 PG 版本到 PATH | 需要 sudo 或 root 权限 |
 | `ext reload` | 刷新扩展目录         |                   |
-{.full-width}
+{.full-width .wide .expand}
 
 ## 快速入门
 

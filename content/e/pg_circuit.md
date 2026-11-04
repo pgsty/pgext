@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5815** | {{< badge content="pg_circuit" link="https://github.com/PG-Circuit/pg-circuit" >}} | {{< ext "pg_circuit" >}} | `0.1.0` | {{< category "ADMIN" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 > [!Note] Requires shared_preload_libraries and restart; Community runtime pressure is informational.
 
@@ -34,7 +36,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_circuit` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_circuit_18" "green" >}} {{< bg "17" "pg_circuit_17" "green" >}} {{< bg "16" "pg_circuit_16" "green" >}} {{< bg "15" "pg_circuit_15" "red" >}} {{< bg "14" "pg_circuit_14" "red" >}} | `pg_circuit_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-circuit" "green" >}} {{< bg "17" "postgresql-17-pg-circuit" "green" >}} {{< bg "16" "postgresql-16-pg-circuit" "green" >}} {{< bg "15" "postgresql-15-pg-circuit" "red" >}} {{< bg "14" "postgresql-14-pg-circuit" "red" >}} | `postgresql-$v-pg-circuit` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -55,7 +57,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-circuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-circuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-circuit : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-circuit : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-circuit : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-circuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-circuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-circuit : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-circuit : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-circuit : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-circuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-circuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-circuit : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-circuit : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-circuit : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -79,7 +81,7 @@ page_width: full
 | `postgresql-18-pg-circuit` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 93.6 KiB | [postgresql-18-pg-circuit_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-circuit/postgresql-18-pg-circuit_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-circuit` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 92.6 KiB | [postgresql-18-pg-circuit_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-circuit/postgresql-18-pg-circuit_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-circuit` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 91.8 KiB | [postgresql-18-pg-circuit_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-circuit/postgresql-18-pg-circuit_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -102,7 +104,7 @@ page_width: full
 | `postgresql-17-pg-circuit` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 93.7 KiB | [postgresql-17-pg-circuit_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-circuit/postgresql-17-pg-circuit_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-circuit` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 92.7 KiB | [postgresql-17-pg-circuit_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-circuit/postgresql-17-pg-circuit_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-circuit` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 92.0 KiB | [postgresql-17-pg-circuit_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-circuit/postgresql-17-pg-circuit_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -125,7 +127,7 @@ page_width: full
 | `postgresql-16-pg-circuit` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 93.7 KiB | [postgresql-16-pg-circuit_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-circuit/postgresql-16-pg-circuit_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-circuit` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 92.9 KiB | [postgresql-16-pg-circuit_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-circuit/postgresql-16-pg-circuit_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-circuit` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 92.1 KiB | [postgresql-16-pg-circuit_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-circuit/postgresql-16-pg-circuit_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2640** | {{< badge content="pgrdf" link="https://github.com/styk-tv/pgRDF" >}} | {{< ext "pgrdf" >}} | `0.6.40` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.40` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrdf` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.40` | {{< bg "18" "pgrdf_18" "green" >}} {{< bg "17" "pgrdf_17" "green" >}} {{< bg "16" "pgrdf_16" "green" >}} {{< bg "15" "pgrdf_15" "green" >}} {{< bg "14" "pgrdf_14" "green" >}} | `pgrdf_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.40` | {{< bg "18" "postgresql-18-pgrdf" "green" >}} {{< bg "17" "postgresql-17-pgrdf" "green" >}} {{< bg "16" "postgresql-16-pgrdf" "green" >}} {{< bg "15" "postgresql-15-pgrdf" "green" >}} {{< bg "14" "postgresql-14-pgrdf" "green" >}} | `postgresql-$v-pgrdf` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-18-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-17-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-16-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-15-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-14-pgrdf : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-18-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-17-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-16-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-15-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-14-pgrdf : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-18-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-17-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-16-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-15-pgrdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.39" "postgresql-14-pgrdf : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-pgrdf` | `0.6.39` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.8 MiB | [postgresql-18-pgrdf_0.6.39-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgrdf/postgresql-18-pgrdf_0.6.39-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pgrdf` | `0.6.39` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.1 MiB | [postgresql-18-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-18-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgrdf` | `0.6.39` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.7 MiB | [postgresql-18-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-18-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-pgrdf` | `0.6.39` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.8 MiB | [postgresql-17-pgrdf_0.6.39-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgrdf/postgresql-17-pgrdf_0.6.39-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pgrdf` | `0.6.39` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.1 MiB | [postgresql-17-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-17-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgrdf` | `0.6.39` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.7 MiB | [postgresql-17-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-17-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-16-pgrdf` | `0.6.39` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.8 MiB | [postgresql-16-pgrdf_0.6.39-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgrdf/postgresql-16-pgrdf_0.6.39-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pgrdf` | `0.6.39` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.1 MiB | [postgresql-16-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-16-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgrdf` | `0.6.39` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.7 MiB | [postgresql-16-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-16-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-15-pgrdf` | `0.6.39` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.7 MiB | [postgresql-15-pgrdf_0.6.39-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgrdf/postgresql-15-pgrdf_0.6.39-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pgrdf` | `0.6.39` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.1 MiB | [postgresql-15-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-15-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgrdf` | `0.6.39` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.7 MiB | [postgresql-15-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-15-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-14-pgrdf` | `0.6.39` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.7 MiB | [postgresql-14-pgrdf_0.6.39-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgrdf/postgresql-14-pgrdf_0.6.39-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pgrdf` | `0.6.39` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.1 MiB | [postgresql-14-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-14-pgrdf_0.6.39-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgrdf` | `0.6.39` | [u26.aarch64](/os/u26.aarch64) | pigsty | 5.7 MiB | [postgresql-14-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgrdf/postgresql-14-pgrdf_0.6.39-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7500** | {{< badge content="pg_tde" link="https://github.com/percona/pg_tde" >}} | {{< ext "pg_tde" >}} | `2.2.2` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tde` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgtde-18" "green" >}} {{< bg "17" "pgtde-17" "red" >}} {{< bg "16" "pgtde-16" "red" >}} {{< bg "15" "pgtde-15" "red" >}} {{< bg "14" "pgtde-14" "red" >}} | `pgtde-$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgtde-18 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgtde-17 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-16 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-15 : N/A 0" "gray" >}} | {{< bg "N/A" "pgtde-14 : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `pgtde-18` | `18.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 20.2 MiB | [pgtde-18_18.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtde-18/pgtde-18_18.6-1PGSTY~noble_arm64.deb) |
 | `pgtde-18` | `18.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.2 MiB | [pgtde-18_18.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtde-18/pgtde-18_18.6-1PGSTY~resolute_amd64.deb) |
 | `pgtde-18` | `18.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 19.9 MiB | [pgtde-18_18.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgtde-18/pgtde-18_18.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

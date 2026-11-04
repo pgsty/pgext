@@ -11,6 +11,7 @@ The 620 packaged PostgreSQL extensions (in 514 package families) are organized i
 | {{< category "time" >}} | {{< category "gis" >}}  | {{< category "rag" >}}   | {{< category "fts" >}}  | {{< category "olap" >}} | {{< category "feat" >}} | {{< category "lang" >}} | {{< category "type" >}} |
 |------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------|
 | {{< category "util" >}} | {{< category "func" >}} | {{< category "admin" >}} | {{< category "stat" >}} | {{< category "sec" >}}  | {{< category "fdw" >}}  | {{< category "sim" >}}  | {{< category "etl" >}}  |
+{.wide .expand}
 
 
 ## TIME
@@ -35,6 +36,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1130 | {{< alias "edtf_postgres" >}} | 1.3.2 | EDTF validation, normalization, date bounds, and temporal relations |
 | 1140 | {{< alias "pg_stl" >}} | 1.0.0 | Time series analysis functions for PostgreSQL |
 | 1150 | {{< alias "cron_utils" >}} | 0.1.0 | Parse cron expressions and compute previous or next trigger times |
+{.wide .expand}
 
 ## GIS
 
@@ -73,6 +75,7 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 | 1690 | {{< alias "earthdistance" >}} | 1.2 | calculate great-circle distances on the surface of the Earth |
 | 1700 | {{< alias "qdgc" >}} | 0.1.0 | Encode, decode, navigate, and fill Extended Quarter Degree Grid Cell codes in pure SQL. |
 | 1710 | {{< alias "qdgc_postgis" "qdgc" >}} | 0.1.0 | Add PostGIS geometry and geography bindings plus area-to-cell fills for QDGC. |
+{.wide .expand}
 
 ## RAG
 
@@ -99,6 +102,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | 1980 | {{< alias "pg_turbovec" >}} | 2.15.0 | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 | 1990 | {{< alias "pg_vectorsearch" >}} | 0.1.0 | Approximate vector search with PRISM indexes and RaBitQ quantization |
+{.wide .expand}
 
 ## FTS
 
@@ -142,6 +146,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2330 | {{< alias "pg_tre" >}} | 4.5.3 | Native PostgreSQL index access method for approximate regular-expression matching |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
+{.wide .expand}
 
 ## OLAP
 
@@ -176,6 +181,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
 | 2580 | {{< alias "pg_improv" >}} | 0.12.2 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
+{.wide .expand}
 
 ## FEAT
 
@@ -261,6 +267,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
 | 2980 | {{< alias "pg_mentat" >}} | 1.18.0 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
+{.wide .expand}
 
 ## LANG
 
@@ -311,6 +318,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3291 | {{< alias "jsonb_plpython3u" "plpython3u" >}} | 1.0 | transform between jsonb and plpython3u |
 | 3292 | {{< alias "ltree_plpython3u" "plpython3u" >}} | 1.0 | transform between ltree and plpython3u |
 | 3293 | {{< alias "hstore_plpython3u" "plpython3u" >}} | 1.0 | transform between hstore and plpython3u |
+{.wide .expand}
 
 ## TYPE
 
@@ -365,6 +373,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3970 | {{< alias "hstore" >}} | 1.8 | data type for storing sets of (key, value) pairs |
 | 3980 | {{< alias "citext" >}} | 1.8 | data type for case-insensitive character strings |
 | 3990 | {{< alias "xml2" >}} | 1.2 | XPath querying and XSLT |
+{.wide .expand}
 
 ## UTIL
 
@@ -416,6 +425,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4450 | {{< alias "cryptint" >}} | 1.0.0 | Encryption functions for int and bigint values |
 | 4460 | {{< alias "pguecc" "pg_ecdsa" >}} | 1.0 | uECC bindings for Postgres |
 | 4470 | {{< alias "sparql" "pgsparql" >}} | 1.0 | Query SPARQL datasource with SQL |
+{.wide .expand}
 
 ## FUNC
 
@@ -480,6 +490,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4970 | {{< alias "intagg" >}} | 1.1 | integer aggregator and enumerator (obsolete) |
 | 4980 | {{< alias "dict_int" >}} | 1.0 | text search dictionary template for integers |
 | 4990 | {{< alias "unaccent" >}} | 1.1 | text search dictionary that removes accents |
+{.wide .expand}
 
 ## ADMIN
 
@@ -538,6 +549,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5970 | {{< alias "adminpack" >}} | 2.1 | administrative functions for PostgreSQL |
 | 5980 | {{< alias "amcheck" >}} | 1.5 | functions for verifying relation integrity |
 | 5990 | {{< alias "pg_surgery" >}} | 1.0 | extension to perform surgery on a damaged relation |
+{.wide .expand}
 
 ## STAT
 
@@ -594,6 +606,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6970 | {{< alias "pgstattuple" >}} | 1.5 | show tuple-level statistics |
 | 6980 | {{< alias "auto_explain" >}} | - | Provides a means for logging execution plans of slow statements automatically |
 | 6990 | {{< alias "pg_stat_statements" >}} | 1.12 | track planning and execution statistics of all SQL statements executed |
+{.wide .expand}
 
 ## SEC
 
@@ -643,6 +656,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7970 | {{< alias "auth_delay" >}} | - | pause briefly before reporting authentication failure |
 | 7980 | {{< alias "pgcrypto" >}} | 1.4 | cryptographic functions |
 | 7990 | {{< alias "passwordcheck" >}} | - | checks user passwords and reject weak password |
+{.wide .expand}
 
 ## FDW
 
@@ -677,6 +691,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8970 | {{< alias "dblink" >}} | 1.2 | connect to other PostgreSQL databases from within a database |
 | 8980 | {{< alias "file_fdw" >}} | 1.0 | foreign-data wrapper for flat file access |
 | 8990 | {{< alias "postgres_fdw" >}} | 1.2 | foreign-data wrapper for remote PostgreSQL servers |
+{.wide .expand}
 
 ## SIM
 
@@ -715,6 +730,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL Supplementary Extension |
 | 9430 | {{< alias "pgs3" >}} | 0.1.1 | S3-compatible object storage endpoint implemented inside PostgreSQL |
 | 9440 | {{< alias "kafgres" >}} | 0.3.1 | Kafka protocol broker embedded in PostgreSQL |
+{.wide .expand}
 
 ## ETL
 
@@ -744,4 +760,5 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9830 | {{< alias "pg_bulkload" >}} | 3.1.23 | pg_bulkload is a high speed data loading utility for PostgreSQL |
 | 9970 | {{< alias "test_decoding" >}} | - | SQL-based test/example module for WAL logical decoding |
 | 9980 | {{< alias "pgoutput" >}} | - | Logical Replication output plugin |
+{.wide .expand}
 

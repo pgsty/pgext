@@ -20,7 +20,7 @@ weight: 620
 | `ext import` | Download extensions for offline use | Requires sudo or root |
 | `ext link` | Link a PG version into PATH | Requires sudo or root |
 | `ext reload` | Refresh extension catalog | |
-{.full-width}
+{.full-width .wide .expand}
 
 ## Quick Start
 
@@ -61,6 +61,7 @@ The default PGDG paths are `/usr/pgsql-18/bin/pg_config` on EL and `/usr/lib/pos
 | Remove | `ext rm NAME` | Remove or migrate dependencies in affected databases before uninstalling the package |
 | Inspect | `ext status` / `ext scan` inspect host files | Query `pg_extension` for enabled database extensions |
 | Refresh catalog | `ext reload` updates extension metadata | None |
+{.wide .expand}
 
 `pg_available_extensions` lists extensions available to the server. `pg_extension` lists extensions enabled in the current database.
 

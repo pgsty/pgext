@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2800** | {{< badge content="index_advisor" link="https://github.com/supabase/index_advisor" >}} | {{< ext "index_advisor" >}} | `0.2.1` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `index_advisor` | `hypopg` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "index_advisor_18" "green" >}} {{< bg "17" "index_advisor_17" "green" >}} {{< bg "16" "index_advisor_16" "green" >}} {{< bg "15" "index_advisor_15" "green" >}} {{< bg "14" "index_advisor_14" "green" >}} | `index_advisor_$v` | `hypopg_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "postgresql-18-index-advisor" "green" >}} {{< bg "17" "postgresql-17-index-advisor" "green" >}} {{< bg "16" "postgresql-16-index-advisor" "green" >}} {{< bg "15" "postgresql-15-index-advisor" "green" >}} {{< bg "14" "postgresql-14-index-advisor" "green" >}} | `postgresql-$v-index-advisor` | `postgresql-$v-hypopg` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-18-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-index-advisor : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-18-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-index-advisor : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-18-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-17-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-16-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-15-index-advisor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.1" "postgresql-14-index-advisor : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -91,7 +93,7 @@ page_width: full
 | `postgresql-18-index-advisor` | `0.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.2 KiB | [postgresql-18-index-advisor_0.2.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/index-advisor/postgresql-18-index-advisor_0.2.1-1PGSTY~noble_all.deb) |
 | `postgresql-18-index-advisor` | `0.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.2 KiB | [postgresql-18-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-18-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
 | `postgresql-18-index-advisor` | `0.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.2 KiB | [postgresql-18-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-18-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -120,7 +122,7 @@ page_width: full
 | `postgresql-17-index-advisor` | `0.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.2 KiB | [postgresql-17-index-advisor_0.2.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/index-advisor/postgresql-17-index-advisor_0.2.1-1PGSTY~noble_all.deb) |
 | `postgresql-17-index-advisor` | `0.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.2 KiB | [postgresql-17-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-17-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
 | `postgresql-17-index-advisor` | `0.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.2 KiB | [postgresql-17-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-17-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -149,7 +151,7 @@ page_width: full
 | `postgresql-16-index-advisor` | `0.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.2 KiB | [postgresql-16-index-advisor_0.2.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/index-advisor/postgresql-16-index-advisor_0.2.1-1PGSTY~noble_all.deb) |
 | `postgresql-16-index-advisor` | `0.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.2 KiB | [postgresql-16-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-16-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
 | `postgresql-16-index-advisor` | `0.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.2 KiB | [postgresql-16-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-16-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -178,7 +180,7 @@ page_width: full
 | `postgresql-15-index-advisor` | `0.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.2 KiB | [postgresql-15-index-advisor_0.2.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/index-advisor/postgresql-15-index-advisor_0.2.1-1PGSTY~noble_all.deb) |
 | `postgresql-15-index-advisor` | `0.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.3 KiB | [postgresql-15-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-15-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
 | `postgresql-15-index-advisor` | `0.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.3 KiB | [postgresql-15-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-15-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -207,7 +209,7 @@ page_width: full
 | `postgresql-14-index-advisor` | `0.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.2 KiB | [postgresql-14-index-advisor_0.2.1-1PGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/index-advisor/postgresql-14-index-advisor_0.2.1-1PGSTY~noble_all.deb) |
 | `postgresql-14-index-advisor` | `0.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 6.2 KiB | [postgresql-14-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-14-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
 | `postgresql-14-index-advisor` | `0.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.2 KiB | [postgresql-14-index-advisor_0.2.1-1PGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/i/index-advisor/postgresql-14-index-advisor_0.2.1-1PGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

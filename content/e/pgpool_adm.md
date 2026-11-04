@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5900** | {{< badge content="pgpool_adm" link="https://pgpool.net/" >}} | {{< ext "pgpool_adm" "pgpool" >}} | `4.7.3` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgpool` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.3` | {{< bg "18" "pgpool-II-pg18-extensions" "green" >}} {{< bg "17" "pgpool-II-pg17-extensions" "green" >}} {{< bg "16" "pgpool-II-pg16-extensions" "green" >}} {{< bg "15" "pgpool-II-pg15-extensions" "green" >}} {{< bg "14" "pgpool-II-pg14-extensions" "green" >}} | `pgpool-II-pg$v-extensions` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.3` | {{< bg "18" "postgresql-18-pgpool2" "green" >}} {{< bg "17" "postgresql-17-pgpool2" "green" >}} {{< bg "16" "postgresql-16-pgpool2" "green" >}} {{< bg "15" "postgresql-15-pgpool2" "green" >}} {{< bg "14" "postgresql-14-pgpool2" "green" >}} | `postgresql-$v-pgpool2` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.7.3" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.7.3" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.7.3" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -171,7 +173,7 @@ page_width: full
 | `postgresql-18-pgpool2` | `4.7.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.9 KiB | [postgresql-18-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-18-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.6 KiB | [postgresql-18-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-18-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-18-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-18-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -306,7 +308,7 @@ page_width: full
 | `postgresql-17-pgpool2` | `4.7.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.9 KiB | [postgresql-17-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-17-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.6 KiB | [postgresql-17-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-17-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-17-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-17-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -453,7 +455,7 @@ page_width: full
 | `postgresql-16-pgpool2` | `4.7.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.9 KiB | [postgresql-16-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-16-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-16-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-16-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-16-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-16-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -611,7 +613,7 @@ page_width: full
 | `postgresql-15-pgpool2` | `4.7.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.9 KiB | [postgresql-15-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-15-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.6 KiB | [postgresql-15-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-15-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-15-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-15-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -774,7 +776,7 @@ page_width: full
 | `postgresql-14-pgpool2` | `4.7.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.9 KiB | [postgresql-14-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-14-pgpool2_4.7.3-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.6 KiB | [postgresql-14-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-14-pgpool2_4.7.2-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-pgpool2` | `4.7.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.5 KiB | [postgresql-14-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpool2/postgresql-14-pgpool2_4.7.2-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

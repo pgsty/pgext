@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3860** | {{< badge content="pg_bikram_sambat" link="https://pgxn.org/dist/pg_bikram_sambat/0.1.0/" >}} | {{< ext "pg_bikram_sambat" >}} | `0.1.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_bikram_sambat` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_bikram_sambat_18" "green" >}} {{< bg "17" "pg_bikram_sambat_17" "green" >}} {{< bg "16" "pg_bikram_sambat_16" "green" >}} {{< bg "15" "pg_bikram_sambat_15" "green" >}} {{< bg "14" "pg_bikram_sambat_14" "green" >}} | `pg_bikram_sambat_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-bikram-sambat" "green" >}} {{< bg "17" "postgresql-17-pg-bikram-sambat" "green" >}} {{< bg "16" "postgresql-16-pg-bikram-sambat" "green" >}} {{< bg "15" "postgresql-15-pg-bikram-sambat" "green" >}} {{< bg "14" "postgresql-14-pg-bikram-sambat" "green" >}} | `postgresql-$v-pg-bikram-sambat` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-bikram-sambat : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-bikram-sambat : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-bikram-sambat : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-bikram-sambat : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-bikram-sambat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.5 KiB | [postgresql-18-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bikram-sambat/postgresql-18-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-bikram-sambat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.6 KiB | [postgresql-18-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-18-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-bikram-sambat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.6 KiB | [postgresql-18-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-18-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-bikram-sambat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.8 KiB | [postgresql-17-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bikram-sambat/postgresql-17-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-bikram-sambat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.0 KiB | [postgresql-17-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-17-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-bikram-sambat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.1 KiB | [postgresql-17-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-17-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pg-bikram-sambat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.5 KiB | [postgresql-16-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bikram-sambat/postgresql-16-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-bikram-sambat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 73.0 KiB | [postgresql-16-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-16-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-bikram-sambat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 72.9 KiB | [postgresql-16-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-16-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-pg-bikram-sambat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 71.9 KiB | [postgresql-15-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bikram-sambat/postgresql-15-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-bikram-sambat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 70.7 KiB | [postgresql-15-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-15-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-bikram-sambat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 70.8 KiB | [postgresql-15-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-15-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-pg-bikram-sambat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 70.0 KiB | [postgresql-14-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bikram-sambat/postgresql-14-pg-bikram-sambat_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-bikram-sambat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 69.3 KiB | [postgresql-14-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-14-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-bikram-sambat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 69.3 KiB | [postgresql-14-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bikram-sambat/postgresql-14-pg-bikram-sambat_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

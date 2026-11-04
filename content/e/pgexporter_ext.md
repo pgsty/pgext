@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6430** | {{< badge content="pgexporter_ext" link="https://github.com/pgexporter/pgexporter_ext" >}} | {{< ext "pgexporter_ext" >}} | `0.2.5` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgexporter_ext` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.2.4` | {{< bg "18" "pgexporter_ext_18" "green" >}} {{< bg "17" "pgexporter_ext_17" "green" >}} {{< bg "16" "pgexporter_ext_16" "green" >}} {{< bg "15" "pgexporter_ext_15" "green" >}} {{< bg "14" "pgexporter_ext_14" "green" >}} | `pgexporter_ext_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.5` | {{< bg "18" "postgresql-18-pgexporter-ext" "green" >}} {{< bg "17" "postgresql-17-pgexporter-ext" "green" >}} {{< bg "16" "postgresql-16-pgexporter-ext" "green" >}} {{< bg "15" "postgresql-15-pgexporter-ext" "green" >}} {{< bg "14" "postgresql-14-pgexporter-ext" "green" >}} | `postgresql-$v-pgexporter-ext` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-18-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-17-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-16-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-15-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-14-pgexporter-ext : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-18-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-17-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-16-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-15-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-14-pgexporter-ext : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-18-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-17-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-16-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-15-pgexporter-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.5" "postgresql-14-pgexporter-ext : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -88,7 +90,7 @@ page_width: full
 | `postgresql-18-pgexporter-ext` | `0.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-18-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgexporter-ext/postgresql-18-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pgexporter-ext` | `0.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.3 KiB | [postgresql-18-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-18-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgexporter-ext` | `0.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.2 KiB | [postgresql-18-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-18-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -115,7 +117,7 @@ page_width: full
 | `postgresql-17-pgexporter-ext` | `0.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-17-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgexporter-ext/postgresql-17-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pgexporter-ext` | `0.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.3 KiB | [postgresql-17-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-17-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgexporter-ext` | `0.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.2 KiB | [postgresql-17-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-17-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -142,7 +144,7 @@ page_width: full
 | `postgresql-16-pgexporter-ext` | `0.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-16-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgexporter-ext/postgresql-16-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pgexporter-ext` | `0.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.3 KiB | [postgresql-16-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-16-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgexporter-ext` | `0.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.2 KiB | [postgresql-16-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-16-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -171,7 +173,7 @@ page_width: full
 | `postgresql-15-pgexporter-ext` | `0.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-15-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgexporter-ext/postgresql-15-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pgexporter-ext` | `0.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.3 KiB | [postgresql-15-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-15-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgexporter-ext` | `0.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.2 KiB | [postgresql-15-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-15-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -207,7 +209,7 @@ page_width: full
 | `postgresql-14-pgexporter-ext` | `0.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.2 KiB | [postgresql-14-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgexporter-ext/postgresql-14-pgexporter-ext_0.2.5-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pgexporter-ext` | `0.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.3 KiB | [postgresql-14-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-14-pgexporter-ext_0.2.5-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgexporter-ext` | `0.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.2 KiB | [postgresql-14-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgexporter-ext/postgresql-14-pgexporter-ext_0.2.5-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

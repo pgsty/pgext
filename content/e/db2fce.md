@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9200** | {{< badge content="db2fce" link="https://github.com/credativ/db2fce" >}} | {{< ext "db2fce" >}} | `0.0.17` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.0.17` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `db2fce` | `plpgsql` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.17` | {{< bg "18" "db2fce_18" "green" >}} {{< bg "17" "db2fce_17" "green" >}} {{< bg "16" "db2fce_16" "green" >}} {{< bg "15" "db2fce_15" "green" >}} {{< bg "14" "db2fce_14" "green" >}} | `db2fce_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.0.17` | {{< bg "18" "postgresql-18-db2fce" "green" >}} {{< bg "17" "postgresql-17-db2fce" "green" >}} {{< bg "16" "postgresql-16-db2fce" "green" >}} {{< bg "15" "postgresql-15-db2fce" "green" >}} {{< bg "14" "postgresql-14-db2fce" "green" >}} | `postgresql-$v-db2fce` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.0.17" "postgresql-18-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-17-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-16-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-15-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-14-db2fce : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.0.17" "postgresql-18-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-17-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-16-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-15-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-14-db2fce : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.0.17" "postgresql-18-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-17-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-16-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-15-db2fce : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.17" "postgresql-14-db2fce : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -86,7 +88,7 @@ page_width: full
 | `postgresql-18-db2fce` | `0.0.17` | [u24.aarch64](/os/u24.aarch64) | pgdg | 8.3 KiB | [postgresql-18-db2fce_0.0.17-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-18-db2fce_0.0.17-1.pgdg24.04+1_all.deb) |
 | `postgresql-18-db2fce` | `0.0.17` | [u26.x86_64](/os/u26.x86_64) | pgdg | 8.3 KiB | [postgresql-18-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-18-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
 | `postgresql-18-db2fce` | `0.0.17` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.3 KiB | [postgresql-18-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-18-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -109,7 +111,7 @@ page_width: full
 | `postgresql-17-db2fce` | `0.0.17` | [u24.aarch64](/os/u24.aarch64) | pgdg | 8.3 KiB | [postgresql-17-db2fce_0.0.17-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-17-db2fce_0.0.17-1.pgdg24.04+1_all.deb) |
 | `postgresql-17-db2fce` | `0.0.17` | [u26.x86_64](/os/u26.x86_64) | pgdg | 8.3 KiB | [postgresql-17-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-17-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
 | `postgresql-17-db2fce` | `0.0.17` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.3 KiB | [postgresql-17-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-17-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -132,7 +134,7 @@ page_width: full
 | `postgresql-16-db2fce` | `0.0.17` | [u24.aarch64](/os/u24.aarch64) | pgdg | 8.3 KiB | [postgresql-16-db2fce_0.0.17-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-16-db2fce_0.0.17-1.pgdg24.04+1_all.deb) |
 | `postgresql-16-db2fce` | `0.0.17` | [u26.x86_64](/os/u26.x86_64) | pgdg | 8.3 KiB | [postgresql-16-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-16-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
 | `postgresql-16-db2fce` | `0.0.17` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.3 KiB | [postgresql-16-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-16-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -155,7 +157,7 @@ page_width: full
 | `postgresql-15-db2fce` | `0.0.17` | [u24.aarch64](/os/u24.aarch64) | pgdg | 8.3 KiB | [postgresql-15-db2fce_0.0.17-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-15-db2fce_0.0.17-1.pgdg24.04+1_all.deb) |
 | `postgresql-15-db2fce` | `0.0.17` | [u26.x86_64](/os/u26.x86_64) | pgdg | 8.3 KiB | [postgresql-15-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-15-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
 | `postgresql-15-db2fce` | `0.0.17` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.3 KiB | [postgresql-15-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-15-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -178,7 +180,7 @@ page_width: full
 | `postgresql-14-db2fce` | `0.0.17` | [u24.aarch64](/os/u24.aarch64) | pgdg | 8.9 KiB | [postgresql-14-db2fce_0.0.17-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-14-db2fce_0.0.17-1.pgdg24.04+1_all.deb) |
 | `postgresql-14-db2fce` | `0.0.17` | [u26.x86_64](/os/u26.x86_64) | pgdg | 8.9 KiB | [postgresql-14-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-14-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
 | `postgresql-14-db2fce` | `0.0.17` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.9 KiB | [postgresql-14-db2fce_0.0.17-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/db2fce/postgresql-14-db2fce_0.0.17-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

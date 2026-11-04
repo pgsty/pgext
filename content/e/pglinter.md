@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5090** | {{< badge content="pglinter" link="https://github.com/pmpetit/pglinter" >}} | {{< ext "pglinter" >}} | `2.0.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglinter` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "pglinter_18" "green" >}} {{< bg "17" "pglinter_17" "green" >}} {{< bg "16" "pglinter_16" "green" >}} {{< bg "15" "pglinter_15" "green" >}} {{< bg "14" "pglinter_14" "green" >}} | `pglinter_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "postgresql-18-pglinter" "green" >}} {{< bg "17" "postgresql-17-pglinter" "green" >}} {{< bg "16" "postgresql-16-pglinter" "green" >}} {{< bg "15" "postgresql-15-pglinter" "green" >}} {{< bg "14" "postgresql-14-pglinter" "green" >}} | `postgresql-$v-pglinter` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pglinter : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pglinter : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-pglinter : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-pglinter : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.6 KiB | [postgresql-18-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-18-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.0 KiB | [postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.8 KiB | [postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-18-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.1 KiB | [postgresql-17-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-17-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.4 KiB | [postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.7 KiB | [postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-17-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.0 KiB | [postgresql-16-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-16-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.2 KiB | [postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.7 KiB | [postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-16-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 394.0 KiB | [postgresql-15-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-15-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.2 KiB | [postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.7 KiB | [postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-15-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-pglinter` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 393.9 KiB | [postgresql-14-pglinter_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-14-pglinter_2.0.0-2PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pglinter` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.3 KiB | [postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pglinter` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 392.6 KiB | [postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pglinter/postgresql-14-pglinter_2.0.0-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

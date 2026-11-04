@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4240** | {{< badge content="pgpcre" link="https://github.com/petere/pgpcre" >}} | {{< ext "pgpcre" >}} | `0.20190509` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20190509` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgpcre` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20190509` | {{< bg "18" "pgpcre_18" "green" >}} {{< bg "17" "pgpcre_17" "green" >}} {{< bg "16" "pgpcre_16" "green" >}} {{< bg "15" "pgpcre_15" "green" >}} {{< bg "14" "pgpcre_14" "green" >}} | `pgpcre_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20190509` | {{< bg "18" "postgresql-18-pgpcre" "green" >}} {{< bg "17" "postgresql-17-pgpcre" "green" >}} {{< bg "16" "postgresql-16-pgpcre" "green" >}} {{< bg "15" "postgresql-15-pgpcre" "green" >}} {{< bg "14" "postgresql-14-pgpcre" "green" >}} | `postgresql-$v-pgpcre` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -90,7 +92,7 @@ page_width: full
 | `postgresql-18-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -121,7 +123,7 @@ page_width: full
 | `postgresql-17-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -152,7 +154,7 @@ page_width: full
 | `postgresql-16-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -183,7 +185,7 @@ page_width: full
 | `postgresql-15-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -214,7 +216,7 @@ page_width: full
 | `postgresql-14-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.1 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1870** | {{< badge content="pg_tiktoken" link="https://github.com/kelvich/pg_tiktoken" >}} | {{< ext "pg_tiktoken" >}} | `0.0.1` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tiktoken` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_tiktoken_18" "green" >}} {{< bg "17" "pg_tiktoken_17" "green" >}} {{< bg "16" "pg_tiktoken_16" "green" >}} {{< bg "15" "pg_tiktoken_15" "green" >}} {{< bg "14" "pg_tiktoken_14" "green" >}} | `pg_tiktoken_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1+git20260825.99cb61d` | {{< bg "18" "postgresql-18-pg-tiktoken" "green" >}} {{< bg "17" "postgresql-17-pg-tiktoken" "green" >}} {{< bg "16" "postgresql-16-pg-tiktoken" "green" >}} {{< bg "15" "postgresql-15-pg-tiktoken" "green" >}} {{< bg "14" "postgresql-14-pg-tiktoken" "green" >}} | `postgresql-$v-pg-tiktoken` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-tiktoken : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-tiktoken : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-tiktoken : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-pg-tiktoken` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.0 MiB | [postgresql-18-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tiktoken/postgresql-18-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-tiktoken` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.1 MiB | [postgresql-18-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-18-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-tiktoken` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-18-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-18-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-pg-tiktoken` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.0 MiB | [postgresql-17-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tiktoken/postgresql-17-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-tiktoken` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.1 MiB | [postgresql-17-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-17-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-tiktoken` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-17-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-17-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-pg-tiktoken` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.0 MiB | [postgresql-16-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tiktoken/postgresql-16-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-tiktoken` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.1 MiB | [postgresql-16-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-16-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-tiktoken` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-16-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-16-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-pg-tiktoken` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.0 MiB | [postgresql-15-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tiktoken/postgresql-15-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-tiktoken` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.1 MiB | [postgresql-15-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-15-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-tiktoken` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-15-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-15-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-pg-tiktoken` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.0 MiB | [postgresql-14-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tiktoken/postgresql-14-pg-tiktoken_0.0.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-tiktoken` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.1 MiB | [postgresql-14-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-14-pg-tiktoken_0.0.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-tiktoken` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-14-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tiktoken/postgresql-14-pg-tiktoken_0.0.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

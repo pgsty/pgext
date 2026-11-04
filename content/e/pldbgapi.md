@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3050** | {{< badge content="pldbgapi" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< ext "pldbgapi" "pldebugger" >}} | `1.10` | {{< category "LANG" >}} | {{< license "Artistic-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pldebugger` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.10` | {{< bg "18" "pldebugger_18" "green" >}} {{< bg "17" "pldebugger_17" "green" >}} {{< bg "16" "pldebugger_16" "green" >}} {{< bg "15" "pldebugger_15" "green" >}} {{< bg "14" "pldebugger_14" "green" >}} | `pldebugger_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.10` | {{< bg "18" "postgresql-18-pldebugger" "green" >}} {{< bg "17" "postgresql-17-pldebugger" "green" >}} {{< bg "16" "postgresql-16-pldebugger" "green" >}} {{< bg "15" "postgresql-15-pldebugger" "green" >}} {{< bg "14" "postgresql-14-pldebugger" "green" >}} | `postgresql-$v-pldebugger` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.10" "postgresql-18-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-17-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-16-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-15-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-14-pldebugger : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.10" "postgresql-18-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-17-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-16-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-15-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-14-pldebugger : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.10" "postgresql-18-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-17-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-16-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-15-pldebugger : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10" "postgresql-14-pldebugger : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -96,7 +98,7 @@ page_width: full
 | `postgresql-18-pldebugger` | `1.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 70.3 KiB | [postgresql-18-pldebugger_1.9-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-18-pldebugger_1.9-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pldebugger` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 68.7 KiB | [postgresql-18-pldebugger_1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-18-pldebugger_1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pldebugger` | `1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 68.7 KiB | [postgresql-18-pldebugger_1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-18-pldebugger_1.9-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -133,7 +135,7 @@ page_width: full
 | `postgresql-17-pldebugger` | `1.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 70.4 KiB | [postgresql-17-pldebugger_1.9-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-17-pldebugger_1.9-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pldebugger` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 68.7 KiB | [postgresql-17-pldebugger_1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-17-pldebugger_1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pldebugger` | `1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 68.7 KiB | [postgresql-17-pldebugger_1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-17-pldebugger_1.9-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-16-pldebugger` | `1.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 70.4 KiB | [postgresql-16-pldebugger_1.9-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-16-pldebugger_1.9-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pldebugger` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 68.6 KiB | [postgresql-16-pldebugger_1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-16-pldebugger_1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pldebugger` | `1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 68.7 KiB | [postgresql-16-pldebugger_1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-16-pldebugger_1.9-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -215,7 +217,7 @@ page_width: full
 | `postgresql-15-pldebugger` | `1.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 71.8 KiB | [postgresql-15-pldebugger_1.9-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-15-pldebugger_1.9-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pldebugger` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.0 KiB | [postgresql-15-pldebugger_1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-15-pldebugger_1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pldebugger` | `1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.1 KiB | [postgresql-15-pldebugger_1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-15-pldebugger_1.9-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -257,7 +259,7 @@ page_width: full
 | `postgresql-14-pldebugger` | `1.9` | [u26.x86_64](/os/u26.x86_64) | pgdg | 71.5 KiB | [postgresql-14-pldebugger_1.9-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-14-pldebugger_1.9-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pldebugger` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 69.6 KiB | [postgresql-14-pldebugger_1.10-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-14-pldebugger_1.10-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pldebugger` | `1.9` | [u26.aarch64](/os/u26.aarch64) | pgdg | 69.8 KiB | [postgresql-14-pldebugger_1.9-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pldebugger/postgresql-14-pldebugger_1.9-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -213,7 +213,7 @@ pig pt log grep ERROR          # 搜索日志
 | `pig pt list -W` / `-w 5`          | 原生 `pig pt list --watch`（patronictl 语义）          |
 | 别名 `ls/rs/rl/ri/so/fo/p/r/c`       | 已移除，使用完整原生命令名                                    |
 | `--dbsu -U`                        | `--dbsu`（`-U` 简写已移除）                             |
-{.full-width}
+{.full-width .wide .expand}
 
 ## 运行条件与权限
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3671** | {{< badge content="l10n_table_dependent_extension" link="https://github.com/bigsmoke/pg_xenophile" >}} | {{< ext "l10n_table_dependent_extension" "pg_xenophile" >}} | `0.8.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.8.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_xenophile` | `pg_xenophile` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.8.3` | {{< bg "18" "pg_xenophile_18" "green" >}} {{< bg "17" "pg_xenophile_17" "green" >}} {{< bg "16" "pg_xenophile_16" "green" >}} {{< bg "15" "pg_xenophile_15" "green" >}} {{< bg "14" "pg_xenophile_14" "green" >}} | `pg_xenophile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.8.3` | {{< bg "18" "postgresql-18-pg-xenophile" "green" >}} {{< bg "17" "postgresql-17-pg-xenophile" "green" >}} {{< bg "16" "postgresql-16-pg-xenophile" "green" >}} {{< bg "15" "postgresql-15-pg-xenophile" "green" >}} {{< bg "14" "postgresql-14-pg-xenophile" "green" >}} | `postgresql-$v-pg-xenophile` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-18-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-17-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-16-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-15-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-14-pg-xenophile : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-18-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-17-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-16-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-15-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-14-pg-xenophile : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-18-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-17-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-16-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-15-pg-xenophile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.8.3" "postgresql-14-pg-xenophile : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7170** | {{< badge content="pg_oidc_validator" link="https://github.com/percona/pg_oidc_validator" >}} | {{< ext "pg_oidc_validator" >}} | `1.1.0` | {{< category "SEC" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_oidc_validator` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.0` | {{< bg "18" "pg_oidc_validator_18" "green" >}} {{< bg "17" "pg_oidc_validator_17" "red" >}} {{< bg "16" "pg_oidc_validator_16" "red" >}} {{< bg "15" "pg_oidc_validator_15" "red" >}} {{< bg "14" "pg_oidc_validator_14" "red" >}} | `pg_oidc_validator_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-oidc-validator" "green" >}} {{< bg "17" "postgresql-17-pg-oidc-validator" "red" >}} {{< bg "16" "postgresql-16-pg-oidc-validator" "red" >}} {{< bg "15" "postgresql-15-pg-oidc-validator" "red" >}} {{< bg "14" "postgresql-14-pg-oidc-validator" "red" >}} | `postgresql-$v-pg-oidc-validator` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-pg-oidc-validator : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -89,7 +91,7 @@ page_width: full
 | `postgresql-18-pg-oidc-validator` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 99.6 KiB | [postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-oidc-validator/postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-oidc-validator` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 120.9 KiB | [postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-oidc-validator/postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-oidc-validator` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 105.2 KiB | [postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-oidc-validator/postgresql-18-pg-oidc-validator_1.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

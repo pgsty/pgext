@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1070** | {{< badge content="pg_cron" link="https://github.com/citusdata/pg_cron" >}} | {{< ext "pg_cron" >}} | `1.6.8` | {{< category "TIME" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_cron` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.8` | {{< bg "18" "pg_cron_18" "green" >}} {{< bg "17" "pg_cron_17" "green" >}} {{< bg "16" "pg_cron_16" "green" >}} {{< bg "15" "pg_cron_15" "green" >}} {{< bg "14" "pg_cron_14" "green" >}} | `pg_cron_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.8` | {{< bg "18" "postgresql-18-cron" "green" >}} {{< bg "17" "postgresql-17-cron" "green" >}} {{< bg "16" "postgresql-16-cron" "green" >}} {{< bg "15" "postgresql-15-cron" "green" >}} {{< bg "14" "postgresql-14-cron" "green" >}} | `postgresql-$v-cron` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.6.8" "postgresql-18-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-17-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-16-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-15-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-14-cron : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.6.8" "postgresql-18-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-17-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-16-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-15-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-14-cron : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.6.8" "postgresql-18-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-17-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-16-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-15-cron : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.6.8" "postgresql-14-cron : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -116,7 +118,7 @@ page_width: full
 | `postgresql-18-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 85.1 KiB | [postgresql-18-cron_1.6.8-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.8-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 85.1 KiB | [postgresql-18-cron_1.6.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 83.2 KiB | [postgresql-18-cron_1.6.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.7-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -179,7 +181,7 @@ page_width: full
 | `postgresql-17-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 85.2 KiB | [postgresql-17-cron_1.6.8-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.8-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 85.0 KiB | [postgresql-17-cron_1.6.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 83.1 KiB | [postgresql-17-cron_1.6.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.7-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -258,7 +260,7 @@ page_width: full
 | `postgresql-16-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 85.0 KiB | [postgresql-16-cron_1.6.8-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.8-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 85.1 KiB | [postgresql-16-cron_1.6.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 83.3 KiB | [postgresql-16-cron_1.6.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.7-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -349,7 +351,7 @@ page_width: full
 | `postgresql-15-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 86.3 KiB | [postgresql-15-cron_1.6.8-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.8-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 86.3 KiB | [postgresql-15-cron_1.6.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 84.5 KiB | [postgresql-15-cron_1.6.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.7-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -442,7 +444,7 @@ page_width: full
 | `postgresql-14-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 86.5 KiB | [postgresql-14-cron_1.6.8-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.8-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-cron` | `1.6.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 86.5 KiB | [postgresql-14-cron_1.6.8-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.8-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 84.7 KiB | [postgresql-14-cron_1.6.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.7-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3620** | {{< badge content="asn1oid" link="https://github.com/df7cb/pgsql-asn1oid" >}} | {{< ext "asn1oid" >}} | `1.6` | {{< category "TYPE" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `asn1oid` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "asn1oid_18" "green" >}} {{< bg "17" "asn1oid_17" "green" >}} {{< bg "16" "asn1oid_16" "green" >}} {{< bg "15" "asn1oid_15" "green" >}} {{< bg "14" "asn1oid_14" "green" >}} | `asn1oid_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6` | {{< bg "18" "postgresql-18-asn1oid" "green" >}} {{< bg "17" "postgresql-17-asn1oid" "green" >}} {{< bg "16" "postgresql-16-asn1oid" "green" >}} {{< bg "15" "postgresql-15-asn1oid" "green" >}} {{< bg "14" "postgresql-14-asn1oid" "green" >}} | `postgresql-$v-asn1oid` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.6" "postgresql-18-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-17-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-16-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-15-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-14-asn1oid : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.6" "postgresql-18-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-17-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-16-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-15-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-14-asn1oid : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.6" "postgresql-18-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-17-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-16-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-15-asn1oid : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6" "postgresql-14-asn1oid : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.1 KiB | [postgresql-18-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-asn1oid` | `1.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 13.0 KiB | [postgresql-18-asn1oid_1.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-asn1oid` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-18-asn1oid_1.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.0 KiB | [postgresql-17-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-asn1oid` | `1.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 13.0 KiB | [postgresql-17-asn1oid_1.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-asn1oid` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-17-asn1oid_1.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.9 KiB | [postgresql-16-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-asn1oid` | `1.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 13.0 KiB | [postgresql-16-asn1oid_1.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-asn1oid` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-16-asn1oid_1.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.0 KiB | [postgresql-15-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-asn1oid` | `1.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 13.0 KiB | [postgresql-15-asn1oid_1.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-asn1oid` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.2 KiB | [postgresql-15-asn1oid_1.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.0 KiB | [postgresql-14-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-asn1oid` | `1.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 13.0 KiB | [postgresql-14-asn1oid_1.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-asn1oid` | `1.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-14-asn1oid_1.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

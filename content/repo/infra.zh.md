@@ -238,6 +238,7 @@ sudo yum makecache;
 |     [mongodb-exporter](https://github.com/percona/mongodb_exporter)     | 0.47.2 | Apache-2.0 | 导出 mongodb 指标        |
 |                [mtail](https://github.com/google/mtail)                 | 3.0.8  | Apache-2.0 | 分析日志并生成指标            |
 |        [vector](https://github.com/vectordotdev/vector/releases)        | 0.52.0 |  MPL-2.0   | 多功能日志收集器             |
+{.wide .expand}
 
 ### 对象存储
 
@@ -288,6 +289,7 @@ Pig 包管理器、PostgreSQL 工具和其他数据库相关实用程序
 |                     [sabiql](https://github.com/riii111/sabiql)                       | 1.6.2  |    MIT     | 现代化 SQL 客户端（PostgreSQL/MySQL） |
 |                   [postgrest](https://github.com/PostgREST/postgrest)                 |  14.3  |    MIT     | PostgreSQL RESTful API 服务器   |
 |               [npgsqlrest](https://github.com/vb-consulting/NpgsqlRest)               | 3.4.3  |    MIT     | .NET PostgreSQL REST API 生成器 |
+{.wide .expand}
 
 
 ### AI

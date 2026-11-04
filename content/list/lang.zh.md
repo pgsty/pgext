@@ -10,6 +10,7 @@ weight: 200
 
 | {{< language "c" >}}       | {{< language "c++" >}}       | {{< language "rust" >}}      | {{< language "java" >}}        | {{< language "python" >}}      | {{< language "sql" >}}         | {{< language "data" >}} |
 |----------------------------|------------------------------|------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------|
+{.wide .expand}
 
 ## 概览
 
@@ -471,6 +472,7 @@ weight: 200
 | 9830 | {{< alias "pg_bulkload" >}} | 向 PostgreSQL 中高速加载数据 |
 | 9970 | {{< alias "test_decoding" >}} | 基于SQL的WAL逻辑解码样例 |
 | 9980 | {{< alias "pgoutput" >}} | PG内置的逻辑解码输出插件 |
+{.wide .expand}
 
 ## SQL
 
@@ -560,6 +562,7 @@ weight: 200
 | 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
 | 9550 | {{< alias "db_migrator" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
 | 9700 | {{< alias "mimeo" >}} | 在PostgreSQL实例间进行表级复制 |
+{.wide .expand}
 
 ## Rust
 
@@ -639,6 +642,7 @@ weight: 200
 | 9430 | {{< alias "pgs3" >}} | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
 | 9440 | {{< alias "kafgres" >}} | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 | 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
+{.wide .expand}
 
 ## C++
 
@@ -663,6 +667,7 @@ weight: 200
 | 4700 | {{< alias "datasketches" >}} | PostgreSQL 近似分析摘要数据结构与聚合函数 |
 | 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 | 7170 | {{< alias "pg_oidc_validator" >}} | PostgreSQL 18 OAuth 与 OIDC 令牌验证模块 |
+{.wide .expand}
 
 ## Data
 
@@ -682,6 +687,7 @@ weight: 200
 | 2287 | {{< alias "hunspell_pt_pt" "hunspell" >}} | Hunspell葡萄牙语全文检索词典 |
 | 2288 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Hunspell俄语全文检索词典 |
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
+{.wide .expand}
 
 ## PLpgSQL
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2930** | {{< badge content="rdkit" link="https://github.com/rdkit/rdkit" >}} | {{< ext "rdkit" >}} | `202609.1` | {{< category "FEAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C++" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `202609.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `rdkit` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `202609.1` | {{< bg "18" "rdkit_18" "green" >}} {{< bg "17" "rdkit_17" "green" >}} {{< bg "16" "rdkit_16" "green" >}} {{< bg "15" "rdkit_15" "green" >}} {{< bg "14" "rdkit_14" "green" >}} | `rdkit_$v` | `rdkit` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `202609.1` | {{< bg "18" "postgresql-18-rdkit" "green" >}} {{< bg "17" "postgresql-17-rdkit" "green" >}} {{< bg "16" "postgresql-16-rdkit" "green" >}} {{< bg "15" "postgresql-15-rdkit" "green" >}} {{< bg "14" "postgresql-14-rdkit" "green" >}} | `postgresql-$v-rdkit` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 202609.1" "postgresql-18-rdkit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-17-rdkit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-16-rdkit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-15-rdkit : AVAIL 2" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-14-rdkit : AVAIL 2" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 202609.1" "postgresql-18-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-17-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-16-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-15-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-14-rdkit : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 202609.1" "postgresql-18-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-17-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-16-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-15-rdkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 202609.1" "postgresql-14-rdkit : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -88,7 +90,7 @@ page_width: full
 | `postgresql-18-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.1 KiB | [postgresql-18-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-18-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-rdkit` | `202609.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 123.9 KiB | [postgresql-18-rdkit_202609.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-18-rdkit_202609.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-rdkit` | `202609.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 118.9 KiB | [postgresql-18-rdkit_202609.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-18-rdkit_202609.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -115,7 +117,7 @@ page_width: full
 | `postgresql-17-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.2 KiB | [postgresql-17-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-17-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-rdkit` | `202609.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 123.9 KiB | [postgresql-17-rdkit_202609.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-17-rdkit_202609.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-rdkit` | `202609.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 118.9 KiB | [postgresql-17-rdkit_202609.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-17-rdkit_202609.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -146,7 +148,7 @@ page_width: full
 | `postgresql-16-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.0 KiB | [postgresql-16-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-16-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-rdkit` | `202609.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 123.8 KiB | [postgresql-16-rdkit_202609.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-16-rdkit_202609.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-rdkit` | `202609.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 118.8 KiB | [postgresql-16-rdkit_202609.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-16-rdkit_202609.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-15-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.0 KiB | [postgresql-15-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-15-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-rdkit` | `202609.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 123.9 KiB | [postgresql-15-rdkit_202609.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-15-rdkit_202609.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-rdkit` | `202609.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 118.9 KiB | [postgresql-15-rdkit_202609.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-15-rdkit_202609.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -208,7 +210,7 @@ page_width: full
 | `postgresql-14-rdkit` | `202503.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 237.0 KiB | [postgresql-14-rdkit_202503.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/r/rdkit/postgresql-14-rdkit_202503.1-5.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-rdkit` | `202609.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 123.8 KiB | [postgresql-14-rdkit_202609.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-14-rdkit_202609.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-rdkit` | `202609.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 118.8 KiB | [postgresql-14-rdkit_202609.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdkit/postgresql-14-rdkit_202609.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

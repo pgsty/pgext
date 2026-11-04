@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7040** | {{< badge content="passwordpolicy" link="https://github.com/fmbiete/passwordpolicy" >}} | {{< ext "passwordpolicy" >}} | `2.0.6` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `passwordpolicy` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "passwordpolicy_18" "green" >}} {{< bg "17" "passwordpolicy_17" "green" >}} {{< bg "16" "passwordpolicy_16" "green" >}} {{< bg "15" "passwordpolicy_15" "green" >}} {{< bg "14" "passwordpolicy_14" "green" >}} | `passwordpolicy_$v` | `cracklib-dicts` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.6` | {{< bg "18" "postgresql-18-passwordpolicy" "green" >}} {{< bg "17" "postgresql-17-passwordpolicy" "green" >}} {{< bg "16" "postgresql-16-passwordpolicy" "green" >}} {{< bg "15" "postgresql-15-passwordpolicy" "green" >}} {{< bg "14" "postgresql-14-passwordpolicy" "green" >}} | `postgresql-$v-passwordpolicy` | `cracklib-runtime`, `libcrack2` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-18-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-17-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-16-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-15-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-14-passwordpolicy : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-18-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-17-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-16-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-15-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-14-passwordpolicy : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-18-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-17-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-16-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-15-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-14-passwordpolicy : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -92,7 +94,7 @@ page_width: full
 | `postgresql-18-passwordpolicy` | `2.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 54.1 KiB | [postgresql-18-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/passwordpolicy/postgresql-18-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-passwordpolicy` | `2.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 53.9 KiB | [postgresql-18-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-18-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-passwordpolicy` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.8 KiB | [postgresql-18-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-18-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -123,7 +125,7 @@ page_width: full
 | `postgresql-17-passwordpolicy` | `2.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 54.0 KiB | [postgresql-17-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/passwordpolicy/postgresql-17-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-passwordpolicy` | `2.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 53.9 KiB | [postgresql-17-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-17-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-passwordpolicy` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.8 KiB | [postgresql-17-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-17-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-16-passwordpolicy` | `2.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 54.1 KiB | [postgresql-16-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/passwordpolicy/postgresql-16-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-passwordpolicy` | `2.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 53.9 KiB | [postgresql-16-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-16-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-passwordpolicy` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.8 KiB | [postgresql-16-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-16-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -185,7 +187,7 @@ page_width: full
 | `postgresql-15-passwordpolicy` | `2.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 54.6 KiB | [postgresql-15-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/passwordpolicy/postgresql-15-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-passwordpolicy` | `2.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 54.6 KiB | [postgresql-15-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-15-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-passwordpolicy` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 54.2 KiB | [postgresql-15-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-15-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -216,7 +218,7 @@ page_width: full
 | `postgresql-14-passwordpolicy` | `2.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 54.7 KiB | [postgresql-14-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/passwordpolicy/postgresql-14-passwordpolicy_2.0.5-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-passwordpolicy` | `2.0.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 54.0 KiB | [postgresql-14-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-14-passwordpolicy_2.0.5-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-passwordpolicy` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 54.4 KiB | [postgresql-14-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/passwordpolicy/postgresql-14-passwordpolicy_2.0.5-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

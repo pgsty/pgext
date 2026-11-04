@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2560** | {{< badge content="pg_lake" link="https://github.com/Snowflake-Labs/pg_lake" >}} | {{< ext "pg_lake" >}} | `3.5` | {{< category "OLAP" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -42,7 +44,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_lake` | `pg_lake_copy`, `pg_lake_table` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.5.9` | {{< bg "18" "pg_lake_18" "green" >}} {{< bg "17" "pg_lake_17" "green" >}} {{< bg "16" "pg_lake_16" "green" >}} {{< bg "15" "pg_lake_15" "red" >}} {{< bg "14" "pg_lake_14" "red" >}} | `pg_lake_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.5.9` | {{< bg "18" "postgresql-18-pg-lake" "green" >}} {{< bg "17" "postgresql-17-pg-lake" "green" >}} {{< bg "16" "postgresql-16-pg-lake" "green" >}} {{< bg "15" "postgresql-15-pg-lake" "red" >}} {{< bg "14" "postgresql-14-pg-lake" "red" >}} | `postgresql-$v-pg-lake` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -63,7 +65,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-18-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-17-pg-lake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.5.9" "postgresql-16-pg-lake : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-15-pg-lake : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-lake : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-pg-lake` | `3.5.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 18.9 MiB | [postgresql-18-pg-lake_3.5.9-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lake/postgresql-18-pg-lake_3.5.9-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-lake` | `3.5.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.8 MiB | [postgresql-18-pg-lake_3.5.9-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-18-pg-lake_3.5.9-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-lake` | `3.5.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 19.7 MiB | [postgresql-18-pg-lake_3.5.9-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-18-pg-lake_3.5.9-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -106,7 +108,7 @@ page_width: full
 | `postgresql-17-pg-lake` | `3.5.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 18.8 MiB | [postgresql-17-pg-lake_3.5.9-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lake/postgresql-17-pg-lake_3.5.9-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-lake` | `3.5.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.7 MiB | [postgresql-17-pg-lake_3.5.9-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-17-pg-lake_3.5.9-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-lake` | `3.5.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 19.6 MiB | [postgresql-17-pg-lake_3.5.9-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-17-pg-lake_3.5.9-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -127,7 +129,7 @@ page_width: full
 | `postgresql-16-pg-lake` | `3.5.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 18.9 MiB | [postgresql-16-pg-lake_3.5.9-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-lake/postgresql-16-pg-lake_3.5.9-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-lake` | `3.5.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 20.7 MiB | [postgresql-16-pg-lake_3.5.9-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-16-pg-lake_3.5.9-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-lake` | `3.5.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 19.6 MiB | [postgresql-16-pg-lake_3.5.9-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-lake/postgresql-16-pg-lake_3.5.9-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

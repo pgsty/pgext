@@ -414,7 +414,7 @@ pig pg kill --plan                # 预览终止连接计划
 | `--cancel` | `-c` | 取消查询而非终止连接 |
 | `--watch` | | 每 N 秒重复执行 |
 | `--plan` | | 预览执行计划，不终止连接 |
-{.full-width}
+{.full-width .wide .expand}
 
 `--state` 接受已知连接状态，包括 `idle in transaction`（含空格的值加引号）。
 `--query` 不区分大小写匹配查询文本。正整数 `--pid` 直接选择该进程，并优先于其他筛选参数。
@@ -643,7 +643,7 @@ pig pg fork init dev --plan           # 仅显示执行计划
 | `pig pg fork start <name> or --dst-data <dir>` | `--dst-data`, `--dst-port`, `-t/--timeout`, `--plan`                                | 启动已有 fork                    |
 | `pig pg fork stop <name> or --dst-data <dir>`  | `--dst-data`, `-m/--mode`, `-t/--timeout`, `--plan`                                   | 停止已有 fork                    |
 | `pig pg fork rm <name> or --dst-data <dir>`    | `--dst-data`, `--stop`, `-m/--mode`, `-t/--timeout`, `-f/--force`, `-y/--yes`, `--plan` | 删除 fork；运行中的 fork 需 `--stop` |
-{.full-width}
+{.full-width .wide .expand}
 
 **行为说明：**
 

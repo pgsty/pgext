@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **8500** | {{< badge content="wrappers" link="https://github.com/supabase/wrappers" >}} | {{< ext "wrappers" >}} | `0.6.4` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `wrappers` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "wrappers_18" "green" >}} {{< bg "17" "wrappers_17" "green" >}} {{< bg "16" "wrappers_16" "green" >}} {{< bg "15" "wrappers_15" "green" >}} {{< bg "14" "wrappers_14" "green" >}} | `wrappers_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "postgresql-18-wrappers" "green" >}} {{< bg "17" "postgresql-17-wrappers" "green" >}} {{< bg "16" "postgresql-16-wrappers" "green" >}} {{< bg "15" "postgresql-15-wrappers" "green" >}} {{< bg "14" "postgresql-14-wrappers" "green" >}} | `postgresql-$v-wrappers` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-18-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-18-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-18-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-wrappers` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.7 MiB | [postgresql-18-wrappers_0.6.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-18-wrappers_0.6.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-wrappers` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 33.1 MiB | [postgresql-18-wrappers_0.6.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-18-wrappers_0.6.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-wrappers` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.9 MiB | [postgresql-18-wrappers_0.6.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-18-wrappers_0.6.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-wrappers` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.7 MiB | [postgresql-17-wrappers_0.6.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-17-wrappers_0.6.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-wrappers` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 33.1 MiB | [postgresql-17-wrappers_0.6.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-17-wrappers_0.6.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-wrappers` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.9 MiB | [postgresql-17-wrappers_0.6.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-17-wrappers_0.6.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-wrappers` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.7 MiB | [postgresql-16-wrappers_0.6.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-16-wrappers_0.6.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-wrappers` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 33.1 MiB | [postgresql-16-wrappers_0.6.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-16-wrappers_0.6.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-wrappers` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.8 MiB | [postgresql-16-wrappers_0.6.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-16-wrappers_0.6.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-wrappers` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.7 MiB | [postgresql-15-wrappers_0.6.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-15-wrappers_0.6.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-wrappers` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 33.1 MiB | [postgresql-15-wrappers_0.6.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-15-wrappers_0.6.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-wrappers` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.9 MiB | [postgresql-15-wrappers_0.6.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-15-wrappers_0.6.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-wrappers` | `0.6.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.7 MiB | [postgresql-14-wrappers_0.6.4-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-14-wrappers_0.6.4-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-wrappers` | `0.6.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 33.1 MiB | [postgresql-14-wrappers_0.6.4-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-14-wrappers_0.6.4-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-wrappers` | `0.6.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.8 MiB | [postgresql-14-wrappers_0.6.4-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wrappers/postgresql-14-wrappers_0.6.4-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

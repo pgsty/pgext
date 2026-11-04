@@ -75,3 +75,4 @@ The latest stable version is [v1.10.0](https://github.com/pgsty/pig/releases/tag
 | [v0.1.1](https://pig.pgsty.com/release/pig-0.1.1/) | 2025-01-09 | Update Extension List                                              | [v0.1.1](https://github.com/pgsty/pig/releases/tag/v0.1.1) |
 | [v0.1.0](/release/pig/#v010) | 2024-12-29 | repo, ext, sty, and self-update                                    | [v0.1.0](https://github.com/pgsty/pig/releases/tag/v0.1.0) |
 | [v0.0.1](/release/pig/#v001) | 2024-12-23 | Genesis Release                                                    | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
+{.wide .expand}

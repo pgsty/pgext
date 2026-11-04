@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7310** | {{< badge content="credcheck" link="https://github.com/HexaCluster/credcheck" >}} | {{< ext "credcheck" >}} | `6.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `credcheck` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.0` | {{< bg "18" "credcheck_18" "green" >}} {{< bg "17" "credcheck_17" "green" >}} {{< bg "16" "credcheck_16" "green" >}} {{< bg "15" "credcheck_15" "green" >}} {{< bg "14" "credcheck_14" "green" >}} | `credcheck_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.0` | {{< bg "18" "postgresql-18-credcheck" "green" >}} {{< bg "17" "postgresql-17-credcheck" "green" >}} {{< bg "16" "postgresql-16-credcheck" "green" >}} {{< bg "15" "postgresql-15-credcheck" "green" >}} {{< bg "14" "postgresql-14-credcheck" "green" >}} | `postgresql-$v-credcheck` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 6.0" "postgresql-18-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-17-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-16-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-15-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-14-credcheck : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 6.0" "postgresql-18-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-17-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-16-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-15-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-14-credcheck : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 6.0" "postgresql-18-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-17-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-16-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-15-credcheck : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.0" "postgresql-14-credcheck : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-18-credcheck` | `6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.0 KiB | [postgresql-18-credcheck_6.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-18-credcheck_6.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.0 KiB | [postgresql-18-credcheck_5.0-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-18-credcheck_5.0-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 72.0 KiB | [postgresql-18-credcheck_5.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-18-credcheck_5.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -297,7 +299,7 @@ page_width: full
 | `postgresql-17-credcheck` | `6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.8 KiB | [postgresql-17-credcheck_6.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-17-credcheck_6.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.9 KiB | [postgresql-17-credcheck_5.0-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-17-credcheck_5.0-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.9 KiB | [postgresql-17-credcheck_5.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-17-credcheck_5.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -429,7 +431,7 @@ page_width: full
 | `postgresql-16-credcheck` | `6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.0 KiB | [postgresql-16-credcheck_6.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-16-credcheck_6.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.9 KiB | [postgresql-16-credcheck_5.0-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-16-credcheck_5.0-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.9 KiB | [postgresql-16-credcheck_5.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-16-credcheck_5.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -581,7 +583,7 @@ page_width: full
 | `postgresql-15-credcheck` | `6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.7 KiB | [postgresql-15-credcheck_6.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-15-credcheck_6.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.7 KiB | [postgresql-15-credcheck_5.0-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-15-credcheck_5.0-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.7 KiB | [postgresql-15-credcheck_5.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-15-credcheck_5.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -732,7 +734,7 @@ page_width: full
 | `postgresql-14-credcheck` | `6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 89.6 KiB | [postgresql-14-credcheck_6.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-14-credcheck_6.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 66.9 KiB | [postgresql-14-credcheck_5.0-2.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-14-credcheck_5.0-2.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-credcheck` | `5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 66.9 KiB | [postgresql-14-credcheck_5.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/c/credcheck/postgresql-14-credcheck_5.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -824,6 +826,7 @@ The interval is in days. Installing the SQL extension is separate from loading t
 | `credcheck.password_valid_until`, `credcheck.password_valid_max` | Minimum and maximum password lifetime; the minimum also supplies an omitted expiry when a password is changed |
 | `credcheck.whitelist`, `credcheck.superuser_nocheck` | Explicit policy exemptions |
 | `credcheck.no_password_logging` | Suppress passwords in policy-error logs; enabled by default |
+{.wide .expand}
 
 CrackLib strength checking is available only when the library was built with that support and its dictionary is available.
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4350** | {{< badge content="pg_describe" link="https://github.com/sajonaro/pg_describe" >}} | {{< ext "pg_describe" >}} | `1.0.0` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_describe` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_describe_18" "green" >}} {{< bg "17" "pg_describe_17" "green" >}} {{< bg "16" "pg_describe_16" "red" >}} {{< bg "15" "pg_describe_15" "red" >}} {{< bg "14" "pg_describe_14" "red" >}} | `pg_describe_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-describe" "green" >}} {{< bg "17" "postgresql-17-pg-describe" "green" >}} {{< bg "16" "postgresql-16-pg-describe" "red" >}} {{< bg "15" "postgresql-15-pg-describe" "red" >}} {{< bg "14" "postgresql-14-pg-describe" "red" >}} | `postgresql-$v-pg-describe` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-describe : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-describe : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-describe : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-describe : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-describe : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-describe : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-describe : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-describe : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-describe : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-describe : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-describe : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-describe : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-describe : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-describe : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-describe : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-describe` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 36.9 KiB | [postgresql-18-pg-describe_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-describe/postgresql-18-pg-describe_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-describe` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 37.1 KiB | [postgresql-18-pg-describe_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-describe/postgresql-18-pg-describe_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-describe` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 37.2 KiB | [postgresql-18-pg-describe_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-describe/postgresql-18-pg-describe_1.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-describe` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 36.8 KiB | [postgresql-17-pg-describe_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-describe/postgresql-17-pg-describe_1.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-describe` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 37.1 KiB | [postgresql-17-pg-describe_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-describe/postgresql-17-pg-describe_1.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-describe` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 37.1 KiB | [postgresql-17-pg-describe_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-describe/postgresql-17-pg-describe_1.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

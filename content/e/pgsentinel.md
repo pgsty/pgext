@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6410** | {{< badge content="pgsentinel" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< ext "pgsentinel" >}} | `1.5.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsentinel` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "pgsentinel_18" "green" >}} {{< bg "17" "pgsentinel_17" "green" >}} {{< bg "16" "pgsentinel_16" "green" >}} {{< bg "15" "pgsentinel_15" "green" >}} {{< bg "14" "pgsentinel_14" "green" >}} | `pgsentinel_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsentinel : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsentinel : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsentinel : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-18-pgsentinel` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 48.2 KiB | [postgresql-18-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgsentinel` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.9 KiB | [postgresql-18-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgsentinel` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.7 KiB | [postgresql-18-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -201,7 +203,7 @@ page_width: full
 | `postgresql-17-pgsentinel` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 48.1 KiB | [postgresql-17-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgsentinel` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.0 KiB | [postgresql-17-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgsentinel` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.8 KiB | [postgresql-17-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -274,7 +276,7 @@ page_width: full
 | `postgresql-16-pgsentinel` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 48.1 KiB | [postgresql-16-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgsentinel` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.9 KiB | [postgresql-16-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgsentinel` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.7 KiB | [postgresql-16-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -347,7 +349,7 @@ page_width: full
 | `postgresql-15-pgsentinel` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 48.3 KiB | [postgresql-15-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgsentinel` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.6 KiB | [postgresql-15-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgsentinel` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.3 KiB | [postgresql-15-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -420,7 +422,7 @@ page_width: full
 | `postgresql-14-pgsentinel` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 48.2 KiB | [postgresql-14-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.5.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgsentinel` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.3 KiB | [postgresql-14-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.5.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgsentinel` | `1.5.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.0 KiB | [postgresql-14-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.5.0-1.pgdg26.04+3_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -558,6 +560,7 @@ ORDER BY 3 DESC;
 | `pgsentinel_ash.track_idle_trans` | `false` | Track idle-in-transaction sessions |
 | `pgsentinel_pgssh.max_entries` | 1000 | Ring buffer for pg_stat_statements history |
 | `pgsentinel_pgssh.enable` | `false` | Enable pg_stat_statements history |
+{.wide .expand}
 
 ### Version and Privilege Changes
 

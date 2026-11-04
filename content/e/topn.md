@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4600** | {{< badge content="topn" link="https://github.com/citusdata/postgresql-topn" >}} | {{< ext "topn" >}} | `2.7.1` | {{< category "FUNC" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `topn` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.1` | {{< bg "18" "topn_18" "green" >}} {{< bg "17" "topn_17" "green" >}} {{< bg "16" "topn_16" "green" >}} {{< bg "15" "topn_15" "green" >}} {{< bg "14" "topn_14" "green" >}} | `topn_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.1` | {{< bg "18" "postgresql-18-topn" "green" >}} {{< bg "17" "postgresql-17-topn" "green" >}} {{< bg "16" "postgresql-16-topn" "green" >}} {{< bg "15" "postgresql-15-topn" "green" >}} {{< bg "14" "postgresql-14-topn" "green" >}} | `postgresql-$v-topn` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-topn : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-topn : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-18-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-17-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-16-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-15-topn : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.7.0" "postgresql-14-topn : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -92,7 +94,7 @@ page_width: full
 | `postgresql-18-topn` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 29.0 KiB | [postgresql-18-topn_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/topn/postgresql-18-topn_2.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-topn` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 29.1 KiB | [postgresql-18-topn_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-18-topn_2.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-topn` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.9 KiB | [postgresql-18-topn_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-18-topn_2.7.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -123,7 +125,7 @@ page_width: full
 | `postgresql-17-topn` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 29.0 KiB | [postgresql-17-topn_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/topn/postgresql-17-topn_2.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-topn` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 29.1 KiB | [postgresql-17-topn_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-17-topn_2.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-topn` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.8 KiB | [postgresql-17-topn_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-17-topn_2.7.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -158,7 +160,7 @@ page_width: full
 | `postgresql-16-topn` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.9 KiB | [postgresql-16-topn_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/topn/postgresql-16-topn_2.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-topn` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 29.1 KiB | [postgresql-16-topn_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-16-topn_2.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-topn` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.8 KiB | [postgresql-16-topn_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-16-topn_2.7.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -193,7 +195,7 @@ page_width: full
 | `postgresql-15-topn` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.8 KiB | [postgresql-15-topn_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/topn/postgresql-15-topn_2.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-topn` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 29.1 KiB | [postgresql-15-topn_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-15-topn_2.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-topn` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.9 KiB | [postgresql-15-topn_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-15-topn_2.7.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -227,7 +229,7 @@ page_width: full
 | `postgresql-14-topn` | `2.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 28.8 KiB | [postgresql-14-topn_2.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/topn/postgresql-14-topn_2.7.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-topn` | `2.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 29.0 KiB | [postgresql-14-topn_2.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-14-topn_2.7.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-topn` | `2.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.9 KiB | [postgresql-14-topn_2.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/topn/postgresql-14-topn_2.7.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2690** | {{< badge content="fsm_core" link="https://github.com/pgfsm/fsm/tree/main/packages/database-src-extension/fsm_core" >}} | {{< ext "fsm_core" >}} | `1.1.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `fsm_core` | `ltree`, `pgmq`, `pg_jsonschema` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "fsm_core_18" "green" >}} {{< bg "17" "fsm_core_17" "green" >}} {{< bg "16" "fsm_core_16" "green" >}} {{< bg "15" "fsm_core_15" "green" >}} {{< bg "14" "fsm_core_14" "red" >}} | `fsm_core_$v` | `pgmq_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-fsm-core" "green" >}} {{< bg "17" "postgresql-17-fsm-core" "green" >}} {{< bg "16" "postgresql-16-fsm-core" "green" >}} {{< bg "15" "postgresql-15-fsm-core" "green" >}} {{< bg "14" "postgresql-14-fsm-core" "red" >}} | `postgresql-$v-fsm-core` | `postgresql-$v-pgmq`, `postgresql-$v-pg-jsonschema` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-18-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-17-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-16-fsm-core : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "postgresql-15-fsm-core : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-fsm-core : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -86,7 +88,7 @@ page_width: full
 | `postgresql-18-fsm-core` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 24.7 KiB | [postgresql-18-fsm-core_1.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/fsm-core/postgresql-18-fsm-core_1.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-18-fsm-core` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 24.7 KiB | [postgresql-18-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-18-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-18-fsm-core` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 24.7 KiB | [postgresql-18-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-18-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -109,7 +111,7 @@ page_width: full
 | `postgresql-17-fsm-core` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 24.7 KiB | [postgresql-17-fsm-core_1.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/fsm-core/postgresql-17-fsm-core_1.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-17-fsm-core` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 24.7 KiB | [postgresql-17-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-17-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-17-fsm-core` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 24.7 KiB | [postgresql-17-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-17-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -132,7 +134,7 @@ page_width: full
 | `postgresql-16-fsm-core` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 24.7 KiB | [postgresql-16-fsm-core_1.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/fsm-core/postgresql-16-fsm-core_1.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-16-fsm-core` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 24.7 KiB | [postgresql-16-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-16-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-16-fsm-core` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 24.7 KiB | [postgresql-16-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-16-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -155,7 +157,7 @@ page_width: full
 | `postgresql-15-fsm-core` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 24.7 KiB | [postgresql-15-fsm-core_1.1.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/fsm-core/postgresql-15-fsm-core_1.1.0-1PIGSTY~noble_all.deb) |
 | `postgresql-15-fsm-core` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 24.7 KiB | [postgresql-15-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-15-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
 | `postgresql-15-fsm-core` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 24.7 KiB | [postgresql-15-fsm-core_1.1.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/fsm-core/postgresql-15-fsm-core_1.1.0-1PIGSTY~resolute_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

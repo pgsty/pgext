@@ -39,7 +39,7 @@ Inventory 来源与 [`sty deploy`](/zh/pig/cmd/sty/#sty-deploy) 使用同一配�
 | `node-pkg` | 在选中节点安装或更新软件包 | 选择器，可选软件包 |
 | `repo-build` | 重建 Pigsty 基础设施仓库 | 无 |
 | `redis-add` / `redis-rm` | 添加或移除 Redis 集群、节点或实例 | 选择器，可选端口 |
-{.full-width}
+{.full-width .wide .expand}
 
 使用 `pig do COMMAND --help` 查看单项操作的别名与精确示例。
 

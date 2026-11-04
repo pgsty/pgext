@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2330** | {{< badge content="pg_tre" link="https://codeberg.org/gregburd/pg_tre" >}} | {{< ext "pg_tre" >}} | `4.5.3` | {{< category "FTS" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tre` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.5.3` | {{< bg "18" "pg_tre_18" "green" >}} {{< bg "17" "pg_tre_17" "green" >}} {{< bg "16" "pg_tre_16" "red" >}} {{< bg "15" "pg_tre_15" "red" >}} {{< bg "14" "pg_tre_14" "red" >}} | `pg_tre_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.5.3` | {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} {{< bg "14" "postgresql-14-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-tre` | `4.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 562.3 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-tre` | `4.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 569.5 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-tre` | `4.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 557.7 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-tre` | `4.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 563.0 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-tre` | `4.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 570.1 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-tre` | `4.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 558.1 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

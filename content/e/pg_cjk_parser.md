@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2240** | {{< badge content="pg_cjk_parser" link="https://github.com/huangjimmy/pg_cjk_parser" >}} | {{< ext "pg_cjk_parser" >}} | `0.1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_cjk_parser` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_cjk_parser_18" "green" >}} {{< bg "17" "pg_cjk_parser_17" "green" >}} {{< bg "16" "pg_cjk_parser_16" "green" >}} {{< bg "15" "pg_cjk_parser_15" "green" >}} {{< bg "14" "pg_cjk_parser_14" "green" >}} | `pg_cjk_parser_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-cjk-parser" "green" >}} {{< bg "17" "postgresql-17-pg-cjk-parser" "green" >}} {{< bg "16" "postgresql-16-pg-cjk-parser" "green" >}} {{< bg "15" "postgresql-15-pg-cjk-parser" "green" >}} {{< bg "14" "postgresql-14-pg-cjk-parser" "green" >}} | `postgresql-$v-pg-cjk-parser` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-cjk-parser : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-cjk-parser : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-cjk-parser : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pg-cjk-parser : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-cjk-parser` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 72.5 KiB | [postgresql-18-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cjk-parser/postgresql-18-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-cjk-parser` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.7 KiB | [postgresql-18-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-18-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-cjk-parser` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.6 KiB | [postgresql-18-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-18-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-cjk-parser` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 72.6 KiB | [postgresql-17-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cjk-parser/postgresql-17-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-cjk-parser` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.9 KiB | [postgresql-17-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-17-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-cjk-parser` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.7 KiB | [postgresql-17-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-17-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pg-cjk-parser` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 72.6 KiB | [postgresql-16-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cjk-parser/postgresql-16-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-cjk-parser` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.9 KiB | [postgresql-16-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-16-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-cjk-parser` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.7 KiB | [postgresql-16-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-16-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-pg-cjk-parser` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 72.3 KiB | [postgresql-15-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cjk-parser/postgresql-15-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-cjk-parser` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.3 KiB | [postgresql-15-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-15-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-cjk-parser` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.3 KiB | [postgresql-15-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-15-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-pg-cjk-parser` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 72.3 KiB | [postgresql-14-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-cjk-parser/postgresql-14-pg-cjk-parser_0.1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-cjk-parser` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 71.4 KiB | [postgresql-14-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-14-pg-cjk-parser_0.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-cjk-parser` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 71.3 KiB | [postgresql-14-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-cjk-parser/postgresql-14-pg-cjk-parser_0.1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

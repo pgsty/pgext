@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3700** | {{< badge content="collection" link="https://github.com/aws/pgcollection" >}} | {{< ext "collection" "pgcollection" >}} | `2.1.3` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgcollection` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.3` | {{< bg "18" "pgcollection_18" "green" >}} {{< bg "17" "pgcollection_17" "green" >}} {{< bg "16" "pgcollection_16" "green" >}} {{< bg "15" "pgcollection_15" "green" >}} {{< bg "14" "pgcollection_14" "green" >}} | `pgcollection_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.3` | {{< bg "18" "postgresql-18-collection" "green" >}} {{< bg "17" "postgresql-17-collection" "green" >}} {{< bg "16" "postgresql-16-collection" "green" >}} {{< bg "15" "postgresql-15-collection" "green" >}} {{< bg "14" "postgresql-14-collection" "green" >}} | `postgresql-$v-collection` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-collection : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-collection : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-18-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-17-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-collection : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-collection` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 137.7 KiB | [postgresql-18-collection_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/collection/postgresql-18-collection_2.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-collection` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 138.3 KiB | [postgresql-18-collection_2.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-18-collection_2.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-collection` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 135.6 KiB | [postgresql-18-collection_2.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-18-collection_2.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-collection` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 137.5 KiB | [postgresql-17-collection_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/collection/postgresql-17-collection_2.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-collection` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 138.4 KiB | [postgresql-17-collection_2.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-17-collection_2.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-collection` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 135.3 KiB | [postgresql-17-collection_2.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-17-collection_2.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-collection` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 136.1 KiB | [postgresql-16-collection_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/collection/postgresql-16-collection_2.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-collection` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 137.3 KiB | [postgresql-16-collection_2.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-16-collection_2.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-collection` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 134.5 KiB | [postgresql-16-collection_2.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-16-collection_2.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-collection` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 136.9 KiB | [postgresql-15-collection_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/collection/postgresql-15-collection_2.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-collection` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 137.4 KiB | [postgresql-15-collection_2.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-15-collection_2.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-collection` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 134.8 KiB | [postgresql-15-collection_2.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-15-collection_2.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-collection` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 136.8 KiB | [postgresql-14-collection_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/collection/postgresql-14-collection_2.0.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-collection` | `2.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 137.4 KiB | [postgresql-14-collection_2.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-14-collection_2.0.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-collection` | `2.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 134.5 KiB | [postgresql-14-collection_2.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/collection/postgresql-14-collection_2.0.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -280,6 +282,7 @@ END $$;
 | `keys_to_table(coll)` | All keys as set |
 | `values_to_table(coll)` | All values as set |
 | `to_table(coll)` | Keys and values as table |
+{.wide .expand}
 
 ### Iterator Example
 

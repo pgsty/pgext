@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4090** | {{< badge content="pg_curl" link="https://github.com/RekGRpth/pg_curl" >}} | {{< ext "pg_curl" >}} | `2.4.6` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_curl` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.6` | {{< bg "18" "pg_curl_18" "green" >}} {{< bg "17" "pg_curl_17" "green" >}} {{< bg "16" "pg_curl_16" "green" >}} {{< bg "15" "pg_curl_15" "green" >}} {{< bg "14" "pg_curl_14" "green" >}} | `pg_curl_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.6` | {{< bg "18" "postgresql-18-pg-curl" "green" >}} {{< bg "17" "postgresql-17-pg-curl" "green" >}} {{< bg "16" "postgresql-16-pg-curl" "green" >}} {{< bg "15" "postgresql-15-pg-curl" "green" >}} {{< bg "14" "postgresql-14-pg-curl" "green" >}} | `postgresql-$v-pg-curl` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-18-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-17-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-16-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-15-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-14-pg-curl : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-18-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-17-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-16-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-15-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-14-pg-curl : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-18-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-17-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-16-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-15-pg-curl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.6" "postgresql-14-pg-curl : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -100,7 +102,7 @@ page_width: full
 | `postgresql-18-pg-curl` | `2.4.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 114.7 KiB | [postgresql-18-pg-curl_2.4.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-curl/postgresql-18-pg-curl_2.4.6-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-curl` | `2.4.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 121.5 KiB | [postgresql-18-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-18-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-curl` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 120.9 KiB | [postgresql-18-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-18-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -145,7 +147,7 @@ page_width: full
 | `postgresql-17-pg-curl` | `2.4.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 114.8 KiB | [postgresql-17-pg-curl_2.4.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-curl/postgresql-17-pg-curl_2.4.6-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-curl` | `2.4.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 121.4 KiB | [postgresql-17-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-17-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-curl` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 120.7 KiB | [postgresql-17-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-17-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -190,7 +192,7 @@ page_width: full
 | `postgresql-16-pg-curl` | `2.4.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 114.8 KiB | [postgresql-16-pg-curl_2.4.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-curl/postgresql-16-pg-curl_2.4.6-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-curl` | `2.4.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 121.5 KiB | [postgresql-16-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-16-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-curl` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 120.8 KiB | [postgresql-16-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-16-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -235,7 +237,7 @@ page_width: full
 | `postgresql-15-pg-curl` | `2.4.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 115.1 KiB | [postgresql-15-pg-curl_2.4.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-curl/postgresql-15-pg-curl_2.4.6-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-curl` | `2.4.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 121.3 KiB | [postgresql-15-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-15-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-curl` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 120.7 KiB | [postgresql-15-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-15-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -280,7 +282,7 @@ page_width: full
 | `postgresql-14-pg-curl` | `2.4.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 115.0 KiB | [postgresql-14-pg-curl_2.4.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-curl/postgresql-14-pg-curl_2.4.6-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-curl` | `2.4.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 121.4 KiB | [postgresql-14-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-14-pg-curl_2.4.6-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-curl` | `2.4.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 121.1 KiB | [postgresql-14-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-curl/postgresql-14-pg-curl_2.4.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4170** | {{< badge content="pgjwt" link="https://github.com/michelp/pgjwt" >}} | {{< ext "pgjwt" >}} | `0.2.0` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgjwt` | `pgcrypto` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pgjwt_18" "green" >}} {{< bg "17" "pgjwt_17" "green" >}} {{< bg "16" "pgjwt_16" "green" >}} {{< bg "15" "pgjwt_15" "green" >}} {{< bg "14" "pgjwt_14" "green" >}} | `pgjwt_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pgjwt" "green" >}} {{< bg "17" "postgresql-17-pgjwt" "green" >}} {{< bg "16" "postgresql-16-pgjwt" "green" >}} {{< bg "15" "postgresql-15-pgjwt" "green" >}} {{< bg "14" "postgresql-14-pgjwt" "green" >}} | `postgresql-$v-pgjwt` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgjwt : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgjwt : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgjwt : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -83,7 +85,7 @@ page_width: full
 | `postgresql-18-pgjwt` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.0 KiB | [postgresql-18-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgjwt/postgresql-18-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgjwt` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 KiB | [postgresql-18-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-18-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgjwt` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.0 KiB | [postgresql-18-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-18-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -106,7 +108,7 @@ page_width: full
 | `postgresql-17-pgjwt` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.0 KiB | [postgresql-17-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgjwt/postgresql-17-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgjwt` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 KiB | [postgresql-17-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-17-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgjwt` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.0 KiB | [postgresql-17-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-17-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-16-pgjwt` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.0 KiB | [postgresql-16-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgjwt/postgresql-16-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgjwt` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 KiB | [postgresql-16-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-16-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgjwt` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.0 KiB | [postgresql-16-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-16-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -152,7 +154,7 @@ page_width: full
 | `postgresql-15-pgjwt` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.0 KiB | [postgresql-15-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgjwt/postgresql-15-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgjwt` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 KiB | [postgresql-15-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-15-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgjwt` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.0 KiB | [postgresql-15-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-15-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -175,7 +177,7 @@ page_width: full
 | `postgresql-14-pgjwt` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.0 KiB | [postgresql-14-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgjwt/postgresql-14-pgjwt_0.2.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgjwt` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.0 KiB | [postgresql-14-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-14-pgjwt_0.2.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgjwt` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.0 KiB | [postgresql-14-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgjwt/postgresql-14-pgjwt_0.2.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

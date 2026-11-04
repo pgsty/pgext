@@ -1,0 +1,24 @@
+{{- /* The bilingual content mount also publishes English-only catalog files
+     under /zh/. Only a distinct source file is a real translation; keep the
+     theme's HTML, shell, origin and language opt-in checks for all other pages. */ -}}
+{{- $targets := slice -}}
+{{- $format := lower (.Store.Get "tdOutputFormat" | default "html") -}}
+{{- if and (partialCached "compare/enabled.html" . .Site.Language.Lang .Site.BaseURL) (eq $format "html") .File (in (slice "docs" "book" "blog") .Type) (not .Draft) -}}
+  {{- $origin := urls.Parse .Permalink -}}
+  {{- $sourceFile := .File.Filename -}}
+  {{- range .Translations -}}
+    {{- $page := . -}}
+    {{- $targetOrigin := urls.Parse .Permalink -}}
+    {{- if and .File (ne .File.Filename $sourceFile) (not .Draft) (in (slice "docs" "book" "blog") .Type) (eq $origin.Scheme $targetOrigin.Scheme) (eq $origin.Host $targetOrigin.Host) (partialCached "compare/enabled.html" $page $page.Site.Language.Lang $page.Site.BaseURL) -}}
+      {{- with .OutputFormats.Get "html" -}}
+        {{- $targets = $targets | append (dict
+          "url" .RelPermalink
+          "code" ($page.Language.Locale | default $page.Language.Lang | replaceRE "_" "-")
+          "direction" ($page.Language.Direction | default "ltr")
+          "label" ($page.Language.Label | default $page.Language.Lang)
+        ) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $targets -}}

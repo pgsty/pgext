@@ -17,6 +17,7 @@ This page reflects the local `pgext` catalog and package matrix as of 2026-08-12
 | `pg_statement_rollback` | 1.5     | 1.6    | DEB            | PGDG RPM is already 1.6.                                                               |
 | `pgsodium`              | 3.1.9   | 3.1.11 | Pigsty RPM/DEB | PGDG has 3.1.11 on EL10, while Pigsty and older PGDG targets remain on 3.1.9.          |
 | `topn`                  | 2.7.0   | 2.7.1  | DEB            | Pigsty DEB/source remain on 2.7.0; PGDG RPM coverage is mixed between 2.7.0 and 2.7.1. |
+{.wide .expand}
 
 Do not update package metadata merely to close these rows: first build, test, index, and rescan the actual artifacts.
 

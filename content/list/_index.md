@@ -16,6 +16,7 @@ The full PGEXT.CLOUD directory contains **2703** extensions.
 | **ALL** | 620 | 145 | 456 | 71 | 0 | 610 | 598 | 579 | 546 | 524 |
 | **EL** | 617 | 144 | 456 | 71 | 3 | 608 | 594 | 577 | 546 | 524 |
 | **Debian** | 611 | 104 | 436 | 71 | 9 | 602 | 589 | 572 | 542 | 522 |
+{.wide .expand}
 
 ## Package Stat
 
@@ -26,6 +27,7 @@ The full PGEXT.CLOUD directory contains **2703** extensions.
 | **ALL** | 453 | 135 | 370 | 0 | 0 | 446 | 440 | 423 | 401 | 383 |
 | **EL** | 452 | 134 | 370 | 0 | 62 | 445 | 438 | 422 | 401 | 383 |
 | **Debian** | 446 | 95 | 351 | 0 | 68 | 439 | 433 | 417 | 397 | 381 |
+{.wide .expand}
 
 ## Categories
 
@@ -47,3 +49,4 @@ The full PGEXT.CLOUD directory contains **2703** extensions.
 | {{< category time >}} | {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_background" >}} {{< ext "pg_when" >}} {{< ext "edtf_postgres" >}} {{< ext "pg_stl" >}} {{< ext "cron_utils" >}} |
 | {{< category type >}} | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pg_text_semver" >}} {{< ext "pg_lexo" >}} {{< ext "codesystem" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} {{< ext "pgfaceting" >}} {{< ext "pg_sphere" >}} {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "l10n_table_dependent_extension" >}} {{< ext "currency" >}} {{< ext "pg_money" >}} {{< ext "collection" >}} {{< ext "istore" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "hashtypes" >}} {{< ext "postbis" >}} {{< ext "ip4r" >}} {{< ext "uri" >}} {{< ext "emailaddr" >}} {{< ext "acl" >}} {{< ext "debversion" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_nanotime" >}} {{< ext "pg_rrule" >}} {{< ext "pgcalendar" >}} {{< ext "timestamp9" >}} {{< ext "pgbson" >}} {{< ext "chkpass" >}} {{< ext "isn" >}} {{< ext "seg" >}} {{< ext "cube" >}} {{< ext "ltree" >}} {{< ext "hstore" >}} {{< ext "citext" >}} {{< ext "xml2" >}} |
 | {{< category util >}} | {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} {{< ext "pg_retry" >}} {{< ext "pg_fsql" >}} {{< ext "pg_protobuf" >}} {{< ext "pgproto" >}} {{< ext "pglock" >}} {{< ext "pg_lease" >}} {{< ext "pgjq" >}} {{< ext "pg_json_diff" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "pg_html5_email_address" >}} {{< ext "url_encode" >}} {{< ext "pgsql_tweaks" >}} {{< ext "pg_relation_sql" >}} {{< ext "pg_extra_time" >}} {{< ext "pgpcre" >}} {{< ext "re2" >}} {{< ext "icu_ext" >}} {{< ext "pgqr" >}} {{< ext "envvar" >}} {{< ext "byteamagic" >}} {{< ext "floatfile" >}} {{< ext "external_file" >}} {{< ext "pg_render" >}} {{< ext "pg_readme" >}} {{< ext "pg_readme_test_extension" >}} {{< ext "ddl_historization" >}} {{< ext "data_historization" >}} {{< ext "schedoc" >}} {{< ext "pg_isok" >}} {{< ext "pg_describe" >}} {{< ext "colnames" >}} {{< ext "hashlib" >}} {{< ext "xxhash" >}} {{< ext "shacrypt" >}} {{< ext "cryptint" >}} {{< ext "pguecc" >}} {{< ext "sparql" >}} |
+{.wide .expand}

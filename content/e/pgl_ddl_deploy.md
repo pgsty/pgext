@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9520** | {{< badge content="pgl_ddl_deploy" link="https://github.com/enova/pgl_ddl_deploy" >}} | {{< ext "pgl_ddl_deploy" >}} | `2.2.1` | {{< category "ETL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgl_ddl_deploy` | `pglogical` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "pgl_ddl_deploy_18" "green" >}} {{< bg "17" "pgl_ddl_deploy_17" "green" >}} {{< bg "16" "pgl_ddl_deploy_16" "green" >}} {{< bg "15" "pgl_ddl_deploy_15" "green" >}} {{< bg "14" "pgl_ddl_deploy_14" "green" >}} | `pgl_ddl_deploy_$v` | `pglogical_$v` |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "postgresql-18-pgl-ddl-deploy" "green" >}} {{< bg "17" "postgresql-17-pgl-ddl-deploy" "green" >}} {{< bg "16" "postgresql-16-pgl-ddl-deploy" "green" >}} {{< bg "15" "postgresql-15-pgl-ddl-deploy" "green" >}} {{< bg "14" "postgresql-14-pgl-ddl-deploy" "green" >}} | `postgresql-$v-pgl-ddl-deploy` | `postgresql-$v-pglogical` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-18-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PGDG 2.2.1" "postgresql-17-pgl-ddl-deploy : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2.1" "postgresql-16-pgl-ddl-deploy : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2.1" "postgresql-15-pgl-ddl-deploy : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2.1" "postgresql-14-pgl-ddl-deploy : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-18-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-17-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-16-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-15-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-14-pgl-ddl-deploy : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-18-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-17-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-16-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-15-pgl-ddl-deploy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.1" "postgresql-14-pgl-ddl-deploy : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pgl-ddl-deploy` | `2.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 60.9 KiB | [postgresql-18-pgl-ddl-deploy_2.2.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgl-ddl-deploy/postgresql-18-pgl-ddl-deploy_2.2.1-2PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgl-ddl-deploy` | `2.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.6 KiB | [postgresql-18-pgl-ddl-deploy_2.2.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-18-pgl-ddl-deploy_2.2.1-2PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgl-ddl-deploy` | `2.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.7 KiB | [postgresql-18-pgl-ddl-deploy_2.2.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-18-pgl-ddl-deploy_2.2.1-2PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -111,7 +113,7 @@ page_width: full
 | `postgresql-17-pgl-ddl-deploy` | `2.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.9 KiB | [postgresql-17-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgl-ddl-deploy/postgresql-17-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgl-ddl-deploy` | `2.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.1 KiB | [postgresql-17-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-17-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgl-ddl-deploy` | `2.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.2 KiB | [postgresql-17-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-17-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -142,7 +144,7 @@ page_width: full
 | `postgresql-16-pgl-ddl-deploy` | `2.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.9 KiB | [postgresql-16-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgl-ddl-deploy/postgresql-16-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgl-ddl-deploy` | `2.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 60.0 KiB | [postgresql-16-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-16-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgl-ddl-deploy` | `2.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.0 KiB | [postgresql-16-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-16-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -172,7 +174,7 @@ page_width: full
 | `postgresql-15-pgl-ddl-deploy` | `2.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.6 KiB | [postgresql-15-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgl-ddl-deploy/postgresql-15-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgl-ddl-deploy` | `2.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 59.2 KiB | [postgresql-15-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-15-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgl-ddl-deploy` | `2.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 59.5 KiB | [postgresql-15-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-15-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -202,7 +204,7 @@ page_width: full
 | `postgresql-14-pgl-ddl-deploy` | `2.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.6 KiB | [postgresql-14-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgl-ddl-deploy/postgresql-14-pgl-ddl-deploy_2.2.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgl-ddl-deploy` | `2.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 59.1 KiB | [postgresql-14-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-14-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgl-ddl-deploy` | `2.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 59.4 KiB | [postgresql-14-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgl-ddl-deploy/postgresql-14-pgl-ddl-deploy_2.2.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7180** | {{< badge content="oidc_validator" link="https://github.com/UnAfraid/pg_oidc_validator_rust" >}} | {{< ext "oidc_validator" "pg_oidc_validator_rust" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "Unknown" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_oidc_validator_rust` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_oidc_validator_rust_18" "green" >}} {{< bg "17" "pg_oidc_validator_rust_17" "red" >}} {{< bg "16" "pg_oidc_validator_rust_16" "red" >}} {{< bg "15" "pg_oidc_validator_rust_15" "red" >}} {{< bg "14" "pg_oidc_validator_rust_14" "red" >}} | `pg_oidc_validator_rust_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-oidc-validator-rust" "green" >}} {{< bg "17" "postgresql-17-pg-oidc-validator-rust" "red" >}} {{< bg "16" "postgresql-16-pg-oidc-validator-rust" "red" >}} {{< bg "15" "postgresql-15-pg-oidc-validator-rust" "red" >}} {{< bg "14" "postgresql-14-pg-oidc-validator-rust" "red" >}} | `postgresql-$v-pg-oidc-validator-rust` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-oidc-validator-rust : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator-rust : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-oidc-validator-rust : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator-rust : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-oidc-validator-rust : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-17-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-16-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-oidc-validator-rust : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-oidc-validator-rust : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-oidc-validator-rust` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.5 MiB | [postgresql-18-pg-oidc-validator-rust_0.1.0-2PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-oidc-validator-rust/postgresql-18-pg-oidc-validator-rust_0.1.0-2PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-oidc-validator-rust` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.6 MiB | [postgresql-18-pg-oidc-validator-rust_0.1.0-2PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-oidc-validator-rust/postgresql-18-pg-oidc-validator-rust_0.1.0-2PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-oidc-validator-rust` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.5 MiB | [postgresql-18-pg-oidc-validator-rust_0.1.0-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-oidc-validator-rust/postgresql-18-pg-oidc-validator-rust_0.1.0-2PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

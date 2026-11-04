@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7510** | {{< badge content="pg_vault_tde" link="https://github.com/labmiriade/pg_vault_tde" >}} | {{< ext "pg_vault_tde" >}} | `1.7.2` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_vault_tde` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.2` | {{< bg "18" "pg_vault_tde_18" "green" >}} {{< bg "17" "pg_vault_tde_17" "green" >}} {{< bg "16" "pg_vault_tde_16" "red" >}} {{< bg "15" "pg_vault_tde_15" "red" >}} {{< bg "14" "pg_vault_tde_14" "red" >}} | `pg_vault_tde_$v` | `openssl-libs`, `libcurl` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.2` | {{< bg "18" "postgresql-18-pg-vault-tde" "green" >}} {{< bg "17" "postgresql-17-pg-vault-tde" "green" >}} {{< bg "16" "postgresql-16-pg-vault-tde" "red" >}} {{< bg "15" "postgresql-15-pg-vault-tde" "red" >}} {{< bg "14" "postgresql-14-pg-vault-tde" "red" >}} | `postgresql-$v-pg-vault-tde` | `libssl3 | libssl3t64`, `libcurl4 | libcurl4t64` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.7.2" "postgresql-18-pg-vault-tde : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.2" "postgresql-17-pg-vault-tde : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-vault-tde : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-vault-tde : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-vault-tde : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.7.2" "postgresql-18-pg-vault-tde : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.2" "postgresql-17-pg-vault-tde : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-vault-tde : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-vault-tde : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-vault-tde : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.7.2" "postgresql-18-pg-vault-tde : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.2" "postgresql-17-pg-vault-tde : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-vault-tde : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-vault-tde : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-vault-tde : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-pg-vault-tde` | `1.7.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 426.9 KiB | [postgresql-18-pg-vault-tde_1.7.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vault-tde/postgresql-18-pg-vault-tde_1.7.2-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-vault-tde` | `1.7.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 432.0 KiB | [postgresql-18-pg-vault-tde_1.7.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vault-tde/postgresql-18-pg-vault-tde_1.7.2-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-vault-tde` | `1.7.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 423.5 KiB | [postgresql-18-pg-vault-tde_1.7.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vault-tde/postgresql-18-pg-vault-tde_1.7.2-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -103,7 +105,7 @@ page_width: full
 | `postgresql-17-pg-vault-tde` | `1.7.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 428.6 KiB | [postgresql-17-pg-vault-tde_1.7.2-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vault-tde/postgresql-17-pg-vault-tde_1.7.2-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-vault-tde` | `1.7.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 433.6 KiB | [postgresql-17-pg-vault-tde_1.7.2-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vault-tde/postgresql-17-pg-vault-tde_1.7.2-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-vault-tde` | `1.7.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 424.8 KiB | [postgresql-17-pg-vault-tde_1.7.2-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vault-tde/postgresql-17-pg-vault-tde_1.7.2-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

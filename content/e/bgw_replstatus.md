@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6510** | {{< badge content="bgw_replstatus" link="https://github.com/mhagander/bgw_replstatus" >}} | {{< ext "bgw_replstatus" >}} | `1.0.8` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `bgw_replstatus` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.8` | {{< bg "18" "bgw_replstatus_18" "green" >}} {{< bg "17" "bgw_replstatus_17" "green" >}} {{< bg "16" "bgw_replstatus_16" "green" >}} {{< bg "15" "bgw_replstatus_15" "green" >}} {{< bg "14" "bgw_replstatus_14" "green" >}} | `bgw_replstatus_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.8` | {{< bg "18" "postgresql-18-bgw-replstatus" "green" >}} {{< bg "17" "postgresql-17-bgw-replstatus" "green" >}} {{< bg "16" "postgresql-16-bgw-replstatus" "green" >}} {{< bg "15" "postgresql-15-bgw-replstatus" "green" >}} {{< bg "14" "postgresql-14-bgw-replstatus" "green" >}} | `postgresql-$v-bgw-replstatus` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0.8" "postgresql-18-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-17-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-16-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-15-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-14-bgw-replstatus : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0.8" "postgresql-18-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-17-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-16-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-15-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-14-bgw-replstatus : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.8" "postgresql-18-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-17-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-16-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-15-bgw-replstatus : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.8" "postgresql-14-bgw-replstatus : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -86,7 +88,7 @@ page_width: full
 | `postgresql-18-bgw-replstatus` | `1.0.8` | [u24.aarch64](/os/u24.aarch64) | pgdg | 14.9 KiB | [postgresql-18-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-18-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-bgw-replstatus` | `1.0.8` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.7 KiB | [postgresql-18-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-18-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-bgw-replstatus` | `1.0.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.1 KiB | [postgresql-18-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-18-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -117,7 +119,7 @@ page_width: full
 | `postgresql-17-bgw-replstatus` | `1.0.8` | [u24.aarch64](/os/u24.aarch64) | pgdg | 14.8 KiB | [postgresql-17-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-17-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-bgw-replstatus` | `1.0.8` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.7 KiB | [postgresql-17-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-17-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-bgw-replstatus` | `1.0.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.0 KiB | [postgresql-17-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-17-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -149,7 +151,7 @@ page_width: full
 | `postgresql-16-bgw-replstatus` | `1.0.8` | [u24.aarch64](/os/u24.aarch64) | pgdg | 14.8 KiB | [postgresql-16-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-16-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-bgw-replstatus` | `1.0.8` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.7 KiB | [postgresql-16-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-16-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-bgw-replstatus` | `1.0.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.1 KiB | [postgresql-16-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-16-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -180,7 +182,7 @@ page_width: full
 | `postgresql-15-bgw-replstatus` | `1.0.8` | [u24.aarch64](/os/u24.aarch64) | pgdg | 14.8 KiB | [postgresql-15-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-15-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-bgw-replstatus` | `1.0.8` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.6 KiB | [postgresql-15-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-15-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-bgw-replstatus` | `1.0.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.1 KiB | [postgresql-15-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-15-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -212,7 +214,7 @@ page_width: full
 | `postgresql-14-bgw-replstatus` | `1.0.8` | [u24.aarch64](/os/u24.aarch64) | pgdg | 14.8 KiB | [postgresql-14-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-14-bgw-replstatus_1.0.8-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-bgw-replstatus` | `1.0.8` | [u26.x86_64](/os/u26.x86_64) | pgdg | 14.6 KiB | [postgresql-14-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-14-bgw-replstatus_1.0.8-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-bgw-replstatus` | `1.0.8` | [u26.aarch64](/os/u26.aarch64) | pgdg | 15.1 KiB | [postgresql-14-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/b/bgw-replstatus/postgresql-14-bgw-replstatus_1.0.8-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -53,6 +53,7 @@ In mainland China, use `https://repo.pigsty.cc/pig` for the installer. These com
 | Read, edit, and validate Pigsty inventory | [`pig inventory`](/pig/cmd/inventory/) |
 | Run Pigsty administration playbooks | [`pig do`](/pig/cmd/do/) |
 | Collect host, database, and backup status | [`pig context`](/pig/cmd/#pig-context) |
+{.wide .expand}
 
 Run `pig help <command>` for command help. For automation, use `pig -o json --help` to inspect command capabilities, then select the relevant output and plan options.
 

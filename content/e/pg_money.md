@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3690** | {{< badge content="pg_money" link="https://github.com/RustedBytes/pg-money" >}} | {{< ext "pg_money" >}} | `0.3.0` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_money` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pg_money_18" "green" >}} {{< bg "17" "pg_money_17" "green" >}} {{< bg "16" "pg_money_16" "green" >}} {{< bg "15" "pg_money_15" "green" >}} {{< bg "14" "pg_money_14" "green" >}} | `pg_money_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-pg-money" "green" >}} {{< bg "17" "postgresql-17-pg-money" "green" >}} {{< bg "16" "postgresql-16-pg-money" "green" >}} {{< bg "15" "postgresql-15-pg-money" "green" >}} {{< bg "14" "postgresql-14-pg-money" "green" >}} | `postgresql-$v-pg-money` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-pg-money : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-pg-money : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-pg-money : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-pg-money : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-money` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 914.2 KiB | [postgresql-18-pg-money_0.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-money/postgresql-18-pg-money_0.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-money` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 924.0 KiB | [postgresql-18-pg-money_0.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-18-pg-money_0.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-money` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 910.7 KiB | [postgresql-18-pg-money_0.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-18-pg-money_0.3.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-money` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 912.6 KiB | [postgresql-17-pg-money_0.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-money/postgresql-17-pg-money_0.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-money` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 923.4 KiB | [postgresql-17-pg-money_0.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-17-pg-money_0.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-money` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 908.6 KiB | [postgresql-17-pg-money_0.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-17-pg-money_0.3.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pg-money` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 913.2 KiB | [postgresql-16-pg-money_0.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-money/postgresql-16-pg-money_0.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-money` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 923.5 KiB | [postgresql-16-pg-money_0.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-16-pg-money_0.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-money` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 908.8 KiB | [postgresql-16-pg-money_0.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-16-pg-money_0.3.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-pg-money` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 911.1 KiB | [postgresql-15-pg-money_0.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-money/postgresql-15-pg-money_0.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-money` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 918.7 KiB | [postgresql-15-pg-money_0.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-15-pg-money_0.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-money` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 908.1 KiB | [postgresql-15-pg-money_0.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-15-pg-money_0.3.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-pg-money` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 911.5 KiB | [postgresql-14-pg-money_0.3.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-money/postgresql-14-pg-money_0.3.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-money` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 919.1 KiB | [postgresql-14-pg-money_0.3.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-14-pg-money_0.3.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-money` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 908.9 KiB | [postgresql-14-pg-money_0.3.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-money/postgresql-14-pg-money_0.3.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

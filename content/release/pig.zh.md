@@ -63,6 +63,7 @@ breadcrumb: false
 | [v0.1.1](https://pig.pgsty.com/zh/release/pig-0.1.1/) | 2025-01-09 | 更新扩展列表                                          | [v0.1.1](https://github.com/pgsty/pig/releases/tag/v0.1.1) |
 | [v0.1.0](#v010) | 2024-12-29 | repo、ext、sty 和自更新                               | [v0.1.0](https://github.com/pgsty/pig/releases/tag/v0.1.0) |
 | [v0.0.1](#v001) | 2024-12-23 | 创世发布                                            | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
+{.wide .expand}
 
 --------
 
@@ -192,6 +193,7 @@ Go `1.27.3` 相比 `1.27.2` 新增 **1 项安全修复**。
 | `github.com/stretchr/objx` | `v0.1.0` | `v0.8.0` |
 | `golang.org/x/mod` | `v0.41.0` | `v0.42.0` |
 | `golang.org/x/tools` | `v0.51.0` | `v0.52.0` |
+{.wide .expand}
 
 ### 扩展目录
 
@@ -958,6 +960,7 @@ f25c4f336edba5c9d2145368082f54e5b1a8b2d4261285b7a1721c088df4caa4  pig-v1.3.4.lin
 | `postgresbson`   |        | 2.0.2  | 新增，PG14-18    |
 | `rdf_fdw`        |        | 2.4.0  | 新增，PG14-18    |
 | `parray_gin`     |        | 1.4.0  | 新增，PG14-18    |
+{.wide .expand}
 
 
 **校验和**
@@ -1074,6 +1077,7 @@ e495678ae1c762194a56e8c9969fd2109e7a59830f34a4747039fb978f7820cc  pig_1.3.1-1_ar
 | `snowflake`          | 2.4   | pgEdge Snowflake ID 生成扩展    |
 | `spock`              | 5.0.5 | pgEdge 多主逻辑复制扩展             |
 | `lolor`              | 1.2.2 | pgEdge 大对象逻辑复制兼容扩展          |
+{.wide .expand}
 
 **完整提交列表（`v1.2.0..v1.3.0`）**
 
@@ -1148,6 +1152,7 @@ beb8ff31d1e64dbfcf6896115e6d200d835fc28bbac5a5b92d75096ef1e68c80  pig_1.3.0-1_ar
 | `babelfishpg`       | -              | 5.5.0  | 新增 BabelfishPG 包组     |
 | `babelfish`         | -              | 5.5.0  | 新增 Babelfish 兼容包      |
 | `antlr4-runtime413` | -              | 4.13   | 新增 Babelfish 依赖运行时    |
+{.wide .expand}
 
 **校验和**
 
@@ -1223,6 +1228,7 @@ b67baa404d877b37004331041cb270c85b8f9a3f8a92a5083390a54d76553d2a  pig_1.2.0-1_ar
 | pg_strict          | -            | 1.0.2         |
 | pg_track_optimizer | -            | 0.9.1         |
 | pgmb               | -            | 1.0.0         |
+{.wide .expand}
 
 **Bug 修复**
 

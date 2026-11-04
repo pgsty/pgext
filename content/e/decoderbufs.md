@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9650** | {{< badge content="decoderbufs" link="https://github.com/debezium/postgres-decoderbufs" >}} | {{< ext "decoderbufs" >}} | `3.7.0` | {{< category "ETL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `decoderbufs` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.5.0` | {{< bg "18" "postgres-decoderbufs_18" "green" >}} {{< bg "17" "postgres-decoderbufs_17" "green" >}} {{< bg "16" "postgres-decoderbufs_16" "green" >}} {{< bg "15" "postgres-decoderbufs_15" "green" >}} {{< bg "14" "postgres-decoderbufs_14" "green" >}} | `postgres-decoderbufs_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgresql-18-decoderbufs" "green" >}} {{< bg "17" "postgresql-17-decoderbufs" "green" >}} {{< bg "16" "postgresql-16-decoderbufs" "green" >}} {{< bg "15" "postgresql-15-decoderbufs" "green" >}} {{< bg "14" "postgresql-14-decoderbufs" "green" >}} | `postgresql-$v-decoderbufs` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-decoderbufs : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-decoderbufs : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-decoderbufs : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-decoderbufs : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -134,7 +136,7 @@ page_width: full
 | `postgresql-18-decoderbufs` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.7 KiB | [postgresql-18-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-18-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-decoderbufs` | `3.6.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.7 KiB | [postgresql-18-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-18-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-decoderbufs` | `3.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.7 KiB | [postgresql-18-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-18-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -219,7 +221,7 @@ page_width: full
 | `postgresql-17-decoderbufs` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.6 KiB | [postgresql-17-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-17-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-decoderbufs` | `3.6.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.6 KiB | [postgresql-17-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-17-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-decoderbufs` | `3.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.5 KiB | [postgresql-17-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-17-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -320,7 +322,7 @@ page_width: full
 | `postgresql-16-decoderbufs` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.7 KiB | [postgresql-16-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-16-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-decoderbufs` | `3.6.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.5 KiB | [postgresql-16-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-16-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-decoderbufs` | `3.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.6 KiB | [postgresql-16-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-16-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -421,7 +423,7 @@ page_width: full
 | `postgresql-15-decoderbufs` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.1 KiB | [postgresql-15-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-15-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-decoderbufs` | `3.6.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.0 KiB | [postgresql-15-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-15-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-decoderbufs` | `3.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.0 KiB | [postgresql-15-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-15-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -539,7 +541,7 @@ page_width: full
 | `postgresql-14-decoderbufs` | `3.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.1 KiB | [postgresql-14-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-14-decoderbufs_3.7.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-decoderbufs` | `3.6.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.0 KiB | [postgresql-14-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-14-decoderbufs_3.6.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-decoderbufs` | `3.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.0 KiB | [postgresql-14-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgres-decoderbufs/postgresql-14-decoderbufs_3.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

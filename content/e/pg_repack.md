@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5010** | {{< badge content="pg_repack" link="https://github.com/reorg/pg_repack" >}} | {{< ext "pg_repack" >}} | `1.5.3` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_repack` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.3` | {{< bg "18" "pg_repack_18" "green" >}} {{< bg "17" "pg_repack_17" "green" >}} {{< bg "16" "pg_repack_16" "green" >}} {{< bg "15" "pg_repack_15" "green" >}} {{< bg "14" "pg_repack_14" "green" >}} | `pg_repack_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.3` | {{< bg "18" "postgresql-18-repack" "green" >}} {{< bg "17" "postgresql-17-repack" "green" >}} {{< bg "16" "postgresql-16-repack" "green" >}} {{< bg "15" "postgresql-15-repack" "green" >}} {{< bg "14" "postgresql-14-repack" "green" >}} | `postgresql-$v-repack` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -102,7 +104,7 @@ page_width: full
 | `postgresql-18-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.4 KiB | [postgresql-18-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.4 KiB | [postgresql-18-repack_1.5.3-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.2 KiB | [postgresql-18-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -149,7 +151,7 @@ page_width: full
 | `postgresql-17-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.4 KiB | [postgresql-17-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.8 KiB | [postgresql-17-repack_1.5.3-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.3 KiB | [postgresql-17-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -196,7 +198,7 @@ page_width: full
 | `postgresql-16-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.5 KiB | [postgresql-16-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.7 KiB | [postgresql-16-repack_1.5.3-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.9 KiB | [postgresql-16-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -247,7 +249,7 @@ page_width: full
 | `postgresql-15-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.9 KiB | [postgresql-15-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.9 KiB | [postgresql-15-repack_1.5.3-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.8 KiB | [postgresql-15-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -300,7 +302,7 @@ page_width: full
 | `postgresql-14-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 98.9 KiB | [postgresql-14-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.8 KiB | [postgresql-14-repack_1.5.3-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.6 KiB | [postgresql-14-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

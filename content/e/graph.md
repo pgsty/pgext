@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2630** | {{< badge content="graph" link="https://github.com/evokoa/pggraph" >}} | {{< ext "graph" "pggraph" >}} | `1.2.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pggraph` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "18" "pggraph_18" "green" >}} {{< bg "17" "pggraph_17" "green" >}} {{< bg "16" "pggraph_16" "green" >}} {{< bg "15" "pggraph_15" "green" >}} {{< bg "14" "pggraph_14" "green" >}} | `pggraph_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.1` | {{< bg "18" "postgresql-18-pggraph" "green" >}} {{< bg "17" "postgresql-17-pggraph" "green" >}} {{< bg "16" "postgresql-16-pggraph" "green" >}} {{< bg "15" "postgresql-15-pggraph" "green" >}} {{< bg "14" "postgresql-14-pggraph" "green" >}} | `postgresql-$v-pggraph` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pggraph : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pggraph : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pggraph : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pggraph : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-pggraph` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.5 MiB | [postgresql-18-pggraph_1.2.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pggraph/postgresql-18-pggraph_1.2.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pggraph` | `1.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.9 MiB | [postgresql-18-pggraph_1.2.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-18-pggraph_1.2.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pggraph` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.5 MiB | [postgresql-18-pggraph_1.2.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-18-pggraph_1.2.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-pggraph` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.5 MiB | [postgresql-17-pggraph_1.2.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pggraph/postgresql-17-pggraph_1.2.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pggraph` | `1.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.9 MiB | [postgresql-17-pggraph_1.2.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-17-pggraph_1.2.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pggraph` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.5 MiB | [postgresql-17-pggraph_1.2.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-17-pggraph_1.2.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-16-pggraph` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.5 MiB | [postgresql-16-pggraph_1.2.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pggraph/postgresql-16-pggraph_1.2.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pggraph` | `1.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.9 MiB | [postgresql-16-pggraph_1.2.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-16-pggraph_1.2.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pggraph` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.5 MiB | [postgresql-16-pggraph_1.2.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-16-pggraph_1.2.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-15-pggraph` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.5 MiB | [postgresql-15-pggraph_1.2.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pggraph/postgresql-15-pggraph_1.2.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pggraph` | `1.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.9 MiB | [postgresql-15-pggraph_1.2.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-15-pggraph_1.2.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pggraph` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.5 MiB | [postgresql-15-pggraph_1.2.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-15-pggraph_1.2.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-14-pggraph` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.5 MiB | [postgresql-14-pggraph_1.2.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pggraph/postgresql-14-pggraph_1.2.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pggraph` | `1.2.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.9 MiB | [postgresql-14-pggraph_1.2.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-14-pggraph_1.2.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pggraph` | `1.2.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.5 MiB | [postgresql-14-pggraph_1.2.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pggraph/postgresql-14-pggraph_1.2.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

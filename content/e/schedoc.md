@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4330** | {{< badge content="schedoc" link="https://github.com/ZeroGachis/pg_schedoc" >}} | {{< ext "schedoc" "pg_schedoc" >}} | `0.0.2` | {{< category "UTIL" >}} | {{< license "GPL-3.0" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_schedoc` | `ddl_historization` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "pg_schedoc_18" "green" >}} {{< bg "17" "pg_schedoc_17" "green" >}} {{< bg "16" "pg_schedoc_16" "green" >}} {{< bg "15" "pg_schedoc_15" "green" >}} {{< bg "14" "pg_schedoc_14" "green" >}} | `pg_schedoc_$v` | `ddl_historization_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2+git20260430.9f135c3` | {{< bg "18" "postgresql-18-pg-schedoc" "green" >}} {{< bg "17" "postgresql-17-pg-schedoc" "green" >}} {{< bg "16" "postgresql-16-pg-schedoc" "green" >}} {{< bg "15" "postgresql-15-pg-schedoc" "green" >}} {{< bg "14" "postgresql-14-pg-schedoc" "green" >}} | `postgresql-$v-pg-schedoc` | `postgresql-$v-ddl-historization` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-schedoc : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-schedoc : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-schedoc : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-schedoc : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -83,7 +85,7 @@ page_width: full
 | `postgresql-18-pg-schedoc` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.4 KiB | [postgresql-18-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-schedoc/postgresql-18-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-schedoc` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 KiB | [postgresql-18-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-18-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-schedoc` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 KiB | [postgresql-18-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-18-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -106,7 +108,7 @@ page_width: full
 | `postgresql-17-pg-schedoc` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.4 KiB | [postgresql-17-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-schedoc/postgresql-17-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-schedoc` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 KiB | [postgresql-17-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-17-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-schedoc` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 KiB | [postgresql-17-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-17-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-16-pg-schedoc` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.4 KiB | [postgresql-16-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-schedoc/postgresql-16-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-schedoc` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 KiB | [postgresql-16-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-16-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-schedoc` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 KiB | [postgresql-16-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-16-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -152,7 +154,7 @@ page_width: full
 | `postgresql-15-pg-schedoc` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.4 KiB | [postgresql-15-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-schedoc/postgresql-15-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-schedoc` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 KiB | [postgresql-15-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-15-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-schedoc` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 KiB | [postgresql-15-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-15-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -175,7 +177,7 @@ page_width: full
 | `postgresql-14-pg-schedoc` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.4 KiB | [postgresql-14-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-schedoc/postgresql-14-pg-schedoc_0.0.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-schedoc` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 KiB | [postgresql-14-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-14-pg-schedoc_0.0.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-schedoc` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.4 KiB | [postgresql-14-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-schedoc/postgresql-14-pg-schedoc_0.0.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

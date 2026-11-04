@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7035** | {{< badge content="encsearch" link="https://github.com/lokeshmulpuru/encsearch" >}} | {{< ext "encsearch" >}} | `0.1.1` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 > [!Note] Early release 0.1.1 changes PGXN status to stable without code changes from 0.1.0; PG17 tested, other Cargo PG14-18 targets untested. Session preload must precede key settings; blind indexes leak equality and token frequency.
 
@@ -33,7 +35,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `encsearch` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "encsearch_18" "red" >}} {{< bg "17" "encsearch_17" "green" >}} {{< bg "16" "encsearch_16" "red" >}} {{< bg "15" "encsearch_15" "red" >}} {{< bg "14" "encsearch_14" "red" >}} | `encsearch_$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -54,7 +56,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} | {{< bg "N/A" "encsearch : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -68,7 +70,7 @@ page_width: full
 | `encsearch_17` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 445.6 KiB | [encsearch_17-0.1.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/encsearch_17-0.1.1-1PGSTY.el9.aarch64.rpm) |
 | `encsearch_17` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 473.0 KiB | [encsearch_17-0.1.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/encsearch_17-0.1.1-1PGSTY.el10.x86_64.rpm) |
 | `encsearch_17` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 430.4 KiB | [encsearch_17-0.1.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/encsearch_17-0.1.1-1PGSTY.el10.aarch64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

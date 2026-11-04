@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1506** | {{< badge content="address_standardizer_data_us" link="https://github.com/postgis/address_standardizer" >}} | {{< ext "address_standardizer_data_us" "address_standardizer" >}} | `3.7` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `address_standardizer` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "address_standardizer_18" "green" >}} {{< bg "17" "address_standardizer_17" "green" >}} {{< bg "16" "address_standardizer_16" "green" >}} {{< bg "15" "address_standardizer_15" "green" >}} {{< bg "14" "address_standardizer_14" "green" >}} | `address_standardizer_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.7.0` | {{< bg "18" "postgresql-18-address-standardizer" "green" >}} {{< bg "17" "postgresql-17-address-standardizer" "green" >}} {{< bg "16" "postgresql-16-address-standardizer" "green" >}} {{< bg "15" "postgresql-15-address-standardizer" "green" >}} {{< bg "14" "postgresql-14-address-standardizer" "green" >}} | `postgresql-$v-address-standardizer` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-address-standardizer : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-address-standardizer : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgresql-18-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-17-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-16-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-15-address-standardizer : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "postgresql-14-address-standardizer : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

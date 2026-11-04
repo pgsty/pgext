@@ -111,7 +111,7 @@ for WAL replay; it will shut down after reaching the target.
 | `--repo` | `-r` | Repository selected by pgBackRest |
 | `--dbsu` | `-U` | PostgreSQL operating-system user: `$PIG_DBSU`, then `postgres` |
 | `--data` | `-D` | Target directory; configured `pg1-path`, then `$PGDATA`, then `/pg/data` |
-{.full-width}
+{.full-width .wide .expand}
 
 ### Native restore options
 

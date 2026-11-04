@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3020** | {{< badge content="pllua" link="https://github.com/pllua/pllua" >}} | {{< ext "pllua" >}} | `2.0` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -42,7 +44,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pllua` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "pllua_18" "green" >}} {{< bg "17" "pllua_17" "green" >}} {{< bg "16" "pllua_16" "green" >}} {{< bg "15" "pllua_15" "green" >}} {{< bg "14" "pllua_14" "green" >}} | `pllua_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.12` | {{< bg "18" "postgresql-18-pllua" "green" >}} {{< bg "17" "postgresql-17-pllua" "green" >}} {{< bg "16" "postgresql-16-pllua" "green" >}} {{< bg "15" "postgresql-15-pllua" "green" >}} {{< bg "14" "postgresql-14-pllua" "green" >}} | `postgresql-$v-pllua` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -63,7 +65,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -87,7 +89,7 @@ page_width: full
 | `postgresql-18-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 335.4 KiB | [postgresql-18-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 345.1 KiB | [postgresql-18-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 332.1 KiB | [postgresql-18-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -120,7 +122,7 @@ page_width: full
 | `postgresql-17-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 335.0 KiB | [postgresql-17-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 344.7 KiB | [postgresql-17-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 331.5 KiB | [postgresql-17-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-16-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 335.1 KiB | [postgresql-16-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 344.8 KiB | [postgresql-16-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 331.8 KiB | [postgresql-16-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -186,7 +188,7 @@ page_width: full
 | `postgresql-15-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 337.2 KiB | [postgresql-15-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 346.1 KiB | [postgresql-15-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 333.7 KiB | [postgresql-15-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -218,7 +220,7 @@ page_width: full
 | `postgresql-14-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 336.7 KiB | [postgresql-14-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 346.3 KiB | [postgresql-14-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 333.1 KiB | [postgresql-14-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

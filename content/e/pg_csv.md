@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4770** | {{< badge content="pg_csv" link="https://github.com/PostgREST/pg_csv" >}} | {{< ext "pg_csv" >}} | `1.0.2` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_csv` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.2` | {{< bg "18" "pg_csv_18" "green" >}} {{< bg "17" "pg_csv_17" "green" >}} {{< bg "16" "pg_csv_16" "green" >}} {{< bg "15" "pg_csv_15" "green" >}} {{< bg "14" "pg_csv_14" "green" >}} | `pg_csv_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.2` | {{< bg "18" "postgresql-18-pg-csv" "green" >}} {{< bg "17" "postgresql-17-pg-csv" "green" >}} {{< bg "16" "postgresql-16-pg-csv" "green" >}} {{< bg "15" "postgresql-15-pg-csv" "green" >}} {{< bg "14" "postgresql-14-pg-csv" "green" >}} | `postgresql-$v-pg-csv` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0.2" "postgresql-18-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-17-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-16-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-15-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-14-pg-csv : AVAIL 2" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0.2" "postgresql-18-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-17-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-16-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-15-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-14-pg-csv : AVAIL 2" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.2" "postgresql-18-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-17-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-16-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-15-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-14-pg-csv : AVAIL 2" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -104,7 +106,7 @@ page_width: full
 | `postgresql-18-pg-csv` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.9 KiB | [postgresql-18-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-18-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pg-csv` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.9 KiB | [postgresql-18-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-18-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.9 KiB | [postgresql-18-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-18-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -147,7 +149,7 @@ page_width: full
 | `postgresql-17-pg-csv` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.8 KiB | [postgresql-17-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-17-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-csv` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-17-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-17-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-17-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-17-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -190,7 +192,7 @@ page_width: full
 | `postgresql-16-pg-csv` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.8 KiB | [postgresql-16-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-16-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-csv` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-16-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-16-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-16-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-16-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -233,7 +235,7 @@ page_width: full
 | `postgresql-15-pg-csv` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 17.0 KiB | [postgresql-15-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-15-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pg-csv` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 17.0 KiB | [postgresql-15-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-15-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 17.0 KiB | [postgresql-15-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-15-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -276,7 +278,7 @@ page_width: full
 | `postgresql-14-pg-csv` | `1.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 17.0 KiB | [postgresql-14-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-14-pg-csv_1.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pg-csv` | `1.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 17.0 KiB | [postgresql-14-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-14-pg-csv_1.0.2-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.9 KiB | [postgresql-14-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-14-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

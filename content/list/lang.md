@@ -10,6 +10,7 @@ weight: 200
 
 | {{< language "c" >}}       | {{< language "c++" >}}       | {{< language "rust" >}}      | {{< language "java" >}}        | {{< language "python" >}}      | {{< language "sql" >}}         | {{< language "data" >}} |
 |----------------------------|------------------------------|------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------|
+{.wide .expand}
 
 ## Summary
 
@@ -471,6 +472,7 @@ The traditional PostgreSQL extension language
 | 9830 | {{< alias "pg_bulkload" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
 | 9970 | {{< alias "test_decoding" >}} | SQL-based test/example module for WAL logical decoding |
 | 9980 | {{< alias "pgoutput" >}} | Logical Replication output plugin |
+{.wide .expand}
 
 ## SQL
 
@@ -560,6 +562,7 @@ Pure SQL extensions and functions
 | 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | 9550 | {{< alias "db_migrator" >}} | Tools to migrate other databases to PostgreSQL |
 | 9700 | {{< alias "mimeo" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
+{.wide .expand}
 
 ## Rust
 
@@ -639,6 +642,7 @@ Extensions written in Rust with the pgrx framework
 | 9430 | {{< alias "pgs3" >}} | S3-compatible object storage endpoint implemented inside PostgreSQL |
 | 9440 | {{< alias "kafgres" >}} | Kafka protocol broker embedded in PostgreSQL |
 | 9620 | {{< alias "pgmqtt" >}} | CDC-to-MQTT broker for PostgreSQL |
+{.wide .expand}
 
 ## C++
 
@@ -663,6 +667,7 @@ Extensions leveraging C++ features and libraries
 | 4700 | {{< alias "datasketches" >}} | Approximate analytics sketches and aggregates for PostgreSQL |
 | 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
 | 7170 | {{< alias "pg_oidc_validator" >}} | OAuth and OIDC token validator for PostgreSQL 18 |
+{.wide .expand}
 
 ## Data
 
@@ -682,6 +687,7 @@ Data-only extensions
 | 2287 | {{< alias "hunspell_pt_pt" "hunspell" >}} | Portuguese Hunspell Dictionary |
 | 2288 | {{< alias "hunspell_ru_ru" "hunspell" >}} | Russian Hunspell Dictionary |
 | 2289 | {{< alias "hunspell_ru_ru_aot" "hunspell" >}} | Russian Hunspell Dictionary (from AOT.ru group) |
+{.wide .expand}
 
 ## PLpgSQL
 
@@ -695,6 +701,7 @@ Extensions written in PLpgSQL
 | 4220 | {{< alias "pg_relation_sql" >}} | Generate inlinable SQL functions for navigating PostgreSQL foreign-key relations |
 | 6870 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
 | 9820 | {{< alias "pg_fact_loader" >}} | build fact tables with Postgres |
+{.wide .expand}
 
 ## Python
 
@@ -706,6 +713,7 @@ Extensions written in Python
 |:---:|:---|:---|
 | 1900 | {{< alias "jev" >}} | Natural-language row filtering, ranking and classification through a Jev-compatible API |
 | 3210 | {{< alias "faker" >}} | Wrapper for the Faker Python library |
+{.wide .expand}
 
 ## Java
 

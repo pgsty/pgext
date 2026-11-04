@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4670** | {{< badge content="xicor" link="https://github.com/Florents-Tselai/pgxicor" >}} | {{< ext "xicor" "pgxicor" >}} | `0.1.1` | {{< category "FUNC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgxicor` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "pgxicor_18" "green" >}} {{< bg "17" "pgxicor_17" "green" >}} {{< bg "16" "pgxicor_16" "green" >}} {{< bg "15" "pgxicor_15" "green" >}} {{< bg "14" "pgxicor_14" "green" >}} | `pgxicor_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "postgresql-18-pgxicor" "green" >}} {{< bg "17" "postgresql-17-pgxicor" "green" >}} {{< bg "16" "postgresql-16-pgxicor" "green" >}} {{< bg "15" "postgresql-15-pgxicor" "green" >}} {{< bg "14" "postgresql-14-pgxicor" "green" >}} | `postgresql-$v-pgxicor` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-pgxicor : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-pgxicor : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-18-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-17-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-16-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-15-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.1" "postgresql-14-pgxicor : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-pgxicor` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.5 KiB | [postgresql-18-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgxicor/postgresql-18-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgxicor` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.1 KiB | [postgresql-18-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-18-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgxicor` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.8 KiB | [postgresql-18-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-18-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-pgxicor` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.5 KiB | [postgresql-17-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgxicor/postgresql-17-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgxicor` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.1 KiB | [postgresql-17-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-17-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgxicor` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.7 KiB | [postgresql-17-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-17-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-pgxicor` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.5 KiB | [postgresql-16-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgxicor/postgresql-16-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgxicor` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.1 KiB | [postgresql-16-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-16-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgxicor` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 27.7 KiB | [postgresql-16-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-16-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-pgxicor` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.9 KiB | [postgresql-15-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgxicor/postgresql-15-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgxicor` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.2 KiB | [postgresql-15-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-15-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgxicor` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.2 KiB | [postgresql-15-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-15-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-pgxicor` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.8 KiB | [postgresql-14-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgxicor/postgresql-14-pgxicor_0.1.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgxicor` | `0.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 28.2 KiB | [postgresql-14-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-14-pgxicor_0.1.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgxicor` | `0.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 28.1 KiB | [postgresql-14-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgxicor/postgresql-14-pgxicor_0.1.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

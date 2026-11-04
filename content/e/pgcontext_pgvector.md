@@ -17,11 +17,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1970** | {{< badge content="pgcontext_pgvector" link="https://pgxn.org/dist/pgContext/0.2.0/" >}} | {{< ext "pgcontext_pgvector" "pgcontext" >}} | `0.2.0` | {{< category "RAG" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="N/A" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pgcontext` | `pgcontext`, `vector` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pgcontext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgcontext : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pgcontext : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pgcontext : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

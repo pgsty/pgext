@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **4750** | {{< badge content="aggs_for_vecs" link="https://github.com/pjungwir/aggs_for_vecs" >}} | {{< ext "aggs_for_vecs" >}} | `1.4.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `aggs_for_vecs` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "aggs_for_vecs_18" "green" >}} {{< bg "17" "aggs_for_vecs_17" "green" >}} {{< bg "16" "aggs_for_vecs_16" "green" >}} {{< bg "15" "aggs_for_vecs_15" "green" >}} {{< bg "14" "aggs_for_vecs_14" "green" >}} | `aggs_for_vecs_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "postgresql-18-aggs-for-vecs" "green" >}} {{< bg "17" "postgresql-17-aggs-for-vecs" "green" >}} {{< bg "16" "postgresql-16-aggs-for-vecs" "green" >}} {{< bg "15" "postgresql-15-aggs-for-vecs" "green" >}} {{< bg "14" "postgresql-14-aggs-for-vecs" "green" >}} | `postgresql-$v-aggs-for-vecs` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-aggs-for-vecs : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-aggs-for-vecs : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-aggs-for-vecs : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-aggs-for-vecs : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -82,7 +84,7 @@ page_width: full
 | `postgresql-18-aggs-for-vecs` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.4 KiB | [postgresql-18-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-vecs/postgresql-18-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-aggs-for-vecs` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 85.8 KiB | [postgresql-18-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-18-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-aggs-for-vecs` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.9 KiB | [postgresql-18-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-18-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -105,7 +107,7 @@ page_width: full
 | `postgresql-17-aggs-for-vecs` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.4 KiB | [postgresql-17-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-vecs/postgresql-17-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-aggs-for-vecs` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 85.8 KiB | [postgresql-17-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-17-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-aggs-for-vecs` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 88.1 KiB | [postgresql-17-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-17-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -128,7 +130,7 @@ page_width: full
 | `postgresql-16-aggs-for-vecs` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.4 KiB | [postgresql-16-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-vecs/postgresql-16-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-aggs-for-vecs` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 85.7 KiB | [postgresql-16-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-16-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-aggs-for-vecs` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 88.1 KiB | [postgresql-16-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-16-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-15-aggs-for-vecs` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.5 KiB | [postgresql-15-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-vecs/postgresql-15-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-aggs-for-vecs` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 86.2 KiB | [postgresql-15-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-15-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-aggs-for-vecs` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 88.1 KiB | [postgresql-15-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-15-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -174,7 +176,7 @@ page_width: full
 | `postgresql-14-aggs-for-vecs` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.3 KiB | [postgresql-14-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-vecs/postgresql-14-aggs-for-vecs_1.4.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-aggs-for-vecs` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 86.0 KiB | [postgresql-14-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-14-aggs-for-vecs_1.4.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-aggs-for-vecs` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.9 KiB | [postgresql-14-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/a/aggs-for-vecs/postgresql-14-aggs-for-vecs_1.4.1-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -247,6 +249,7 @@ CREATE EXTENSION aggs_for_vecs;
 | `vec_to_last(anyarray)` | Last non-null in each position (use with ORDER BY) |
 | `hist_2d(x, y, ...)` | 2-D histogram |
 | `hist_md(vals, indexes, ...)` | N-dimensional histogram |
+{.wide .expand}
 
 ### Non-Aggregate Functions
 

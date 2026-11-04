@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7420** | {{< badge content="libx509pq" link="https://github.com/crtsh/libx509pq" >}} | {{< ext "libx509pq" >}} | `1.3` | {{< category "SEC" >}} | {{< license "GPL-3.0-or-later" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `libx509pq` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "libx509pq_18" "green" >}} {{< bg "17" "libx509pq_17" "green" >}} {{< bg "16" "libx509pq_16" "green" >}} {{< bg "15" "libx509pq_15" "green" >}} {{< bg "14" "libx509pq_14" "green" >}} | `libx509pq_$v` | `openssl-libs` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "postgresql-18-libx509pq" "green" >}} {{< bg "17" "postgresql-17-libx509pq" "green" >}} {{< bg "16" "postgresql-16-libx509pq" "green" >}} {{< bg "15" "postgresql-15-libx509pq" "green" >}} {{< bg "14" "postgresql-14-libx509pq" "green" >}} | `postgresql-$v-libx509pq` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.3" "postgresql-18-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-17-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-16-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-15-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-14-libx509pq : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.3" "postgresql-18-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-17-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-16-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-15-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-14-libx509pq : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.3" "postgresql-18-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-17-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-16-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-15-libx509pq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3" "postgresql-14-libx509pq : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-libx509pq` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 80.5 KiB | [postgresql-18-libx509pq_1.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/libx/libx509pq/postgresql-18-libx509pq_1.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-libx509pq` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.2 KiB | [postgresql-18-libx509pq_1.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-18-libx509pq_1.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-libx509pq` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 79.6 KiB | [postgresql-18-libx509pq_1.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-18-libx509pq_1.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-libx509pq` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 80.6 KiB | [postgresql-17-libx509pq_1.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/libx/libx509pq/postgresql-17-libx509pq_1.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-libx509pq` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.2 KiB | [postgresql-17-libx509pq_1.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-17-libx509pq_1.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-libx509pq` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 79.7 KiB | [postgresql-17-libx509pq_1.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-17-libx509pq_1.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-libx509pq` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 80.6 KiB | [postgresql-16-libx509pq_1.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/libx/libx509pq/postgresql-16-libx509pq_1.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-libx509pq` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.3 KiB | [postgresql-16-libx509pq_1.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-16-libx509pq_1.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-libx509pq` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 79.6 KiB | [postgresql-16-libx509pq_1.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-16-libx509pq_1.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-libx509pq` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 81.1 KiB | [postgresql-15-libx509pq_1.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/libx/libx509pq/postgresql-15-libx509pq_1.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-libx509pq` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 80.7 KiB | [postgresql-15-libx509pq_1.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-15-libx509pq_1.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-libx509pq` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 80.1 KiB | [postgresql-15-libx509pq_1.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-15-libx509pq_1.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -176,7 +178,7 @@ page_width: full
 | `postgresql-14-libx509pq` | `1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 86.0 KiB | [postgresql-14-libx509pq_1.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/libx/libx509pq/postgresql-14-libx509pq_1.3-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-libx509pq` | `1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 85.5 KiB | [postgresql-14-libx509pq_1.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-14-libx509pq_1.3-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-libx509pq` | `1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 85.0 KiB | [postgresql-14-libx509pq_1.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/libx/libx509pq/postgresql-14-libx509pq_1.3-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

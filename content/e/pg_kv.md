@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2895** | {{< badge content="pg_kv" link="https://github.com/Murat7Ay/pg_kv" >}} | {{< ext "pg_kv" >}} | `0.1.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_kv` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pg_kv_18" "green" >}} {{< bg "17" "pg_kv_17" "green" >}} {{< bg "16" "pg_kv_16" "green" >}} {{< bg "15" "pg_kv_15" "green" >}} {{< bg "14" "pg_kv_14" "red" >}} | `pg_kv_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-kv" "green" >}} {{< bg "17" "postgresql-17-pg-kv" "green" >}} {{< bg "16" "postgresql-16-pg-kv" "green" >}} {{< bg "15" "postgresql-15-pg-kv" "green" >}} {{< bg "14" "postgresql-14-pg-kv" "red" >}} | `postgresql-$v-pg-kv` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-kv : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-kv : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-kv : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-kv : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pg-kv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pg-kv : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-kv : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-kv` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 206.6 KiB | [postgresql-18-pg-kv_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-kv/postgresql-18-pg-kv_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-kv` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 223.0 KiB | [postgresql-18-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-18-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-kv` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 206.1 KiB | [postgresql-18-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-18-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-kv` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 206.2 KiB | [postgresql-17-pg-kv_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-kv/postgresql-17-pg-kv_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-kv` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 223.0 KiB | [postgresql-17-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-17-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-kv` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 206.1 KiB | [postgresql-17-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-17-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pg-kv` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 206.6 KiB | [postgresql-16-pg-kv_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-kv/postgresql-16-pg-kv_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-kv` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 223.1 KiB | [postgresql-16-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-16-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-kv` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 205.7 KiB | [postgresql-16-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-16-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-pg-kv` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 206.4 KiB | [postgresql-15-pg-kv_0.1.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-kv/postgresql-15-pg-kv_0.1.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-kv` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 223.0 KiB | [postgresql-15-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-15-pg-kv_0.1.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-kv` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 205.7 KiB | [postgresql-15-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-kv/postgresql-15-pg-kv_0.1.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

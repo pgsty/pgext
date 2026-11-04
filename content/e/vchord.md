@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1810** | {{< badge content="vchord" link="https://github.com/supervc-stack/VectorChord" >}} | {{< ext "vchord" >}} | `1.1.1` | {{< category "RAG" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `vchord` | `vector` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "vchord_18" "green" >}} {{< bg "17" "vchord_17" "green" >}} {{< bg "16" "vchord_16" "green" >}} {{< bg "15" "vchord_15" "green" >}} {{< bg "14" "vchord_14" "green" >}} | `vchord_$v` | `pgvector_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-vchord" "green" >}} {{< bg "17" "postgresql-17-vchord" "green" >}} {{< bg "16" "postgresql-16-vchord" "green" >}} {{< bg "15" "postgresql-15-vchord" "green" >}} {{< bg "14" "postgresql-14-vchord" "green" >}} | `postgresql-$v-vchord` | `postgresql-$v-pgvector` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-18-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -83,7 +85,7 @@ page_width: full
 | `postgresql-18-vchord` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.9 MiB | [postgresql-18-vchord_1.1.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vchord/postgresql-18-vchord_1.1.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-vchord` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.1 MiB | [postgresql-18-vchord_1.1.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-18-vchord_1.1.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-vchord` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.9 MiB | [postgresql-18-vchord_1.1.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-18-vchord_1.1.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -106,7 +108,7 @@ page_width: full
 | `postgresql-17-vchord` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.9 MiB | [postgresql-17-vchord_1.1.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vchord/postgresql-17-vchord_1.1.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-vchord` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.1 MiB | [postgresql-17-vchord_1.1.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-17-vchord_1.1.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-vchord` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.9 MiB | [postgresql-17-vchord_1.1.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-17-vchord_1.1.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-16-vchord` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.8 MiB | [postgresql-16-vchord_1.1.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vchord/postgresql-16-vchord_1.1.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-vchord` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.0 MiB | [postgresql-16-vchord_1.1.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-16-vchord_1.1.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-vchord` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.8 MiB | [postgresql-16-vchord_1.1.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-16-vchord_1.1.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -152,7 +154,7 @@ page_width: full
 | `postgresql-15-vchord` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.8 MiB | [postgresql-15-vchord_1.1.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vchord/postgresql-15-vchord_1.1.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-vchord` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.0 MiB | [postgresql-15-vchord_1.1.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-15-vchord_1.1.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-vchord` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.8 MiB | [postgresql-15-vchord_1.1.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-15-vchord_1.1.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -175,7 +177,7 @@ page_width: full
 | `postgresql-14-vchord` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.8 MiB | [postgresql-14-vchord_1.1.1-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vchord/postgresql-14-vchord_1.1.1-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-vchord` | `1.1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 3.0 MiB | [postgresql-14-vchord_1.1.1-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-14-vchord_1.1.1-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-vchord` | `1.1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.8 MiB | [postgresql-14-vchord_1.1.1-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vchord/postgresql-14-vchord_1.1.1-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

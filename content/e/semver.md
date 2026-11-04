@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3510** | {{< badge content="semver" link="https://github.com/theory/pg-semver" >}} | {{< ext "semver" "pg_semver" >}} | `0.42.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.42.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_semver` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.42.0` | {{< bg "18" "semver_18" "green" >}} {{< bg "17" "semver_17" "green" >}} {{< bg "16" "semver_16" "green" >}} {{< bg "15" "semver_15" "green" >}} {{< bg "14" "semver_14" "green" >}} | `semver_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.42.0` | {{< bg "18" "postgresql-18-semver" "green" >}} {{< bg "17" "postgresql-17-semver" "green" >}} {{< bg "16" "postgresql-16-semver" "green" >}} {{< bg "15" "postgresql-15-semver" "green" >}} {{< bg "14" "postgresql-14-semver" "green" >}} | `postgresql-$v-semver` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.42.0" "postgresql-18-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-17-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-16-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-15-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-14-semver : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.42.0" "postgresql-18-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-17-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-16-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-15-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-14-semver : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.42.0" "postgresql-18-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-17-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-16-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-15-semver : AVAIL 3" "blue" >}} | {{< bg "PGDG 0.42.0" "postgresql-14-semver : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -129,7 +131,7 @@ page_width: full
 | `postgresql-18-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 41.3 KiB | [postgresql-18-semver_0.42.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-18-semver_0.42.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.8 KiB | [postgresql-18-semver_0.42.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-semver/postgresql-18-semver_0.42.0-1PGSTY~resolute_arm64.deb) |
 | `postgresql-18-semver` | `0.41.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.4 KiB | [postgresql-18-semver_0.41.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-18-semver_0.41.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -197,7 +199,7 @@ page_width: full
 | `postgresql-17-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 41.2 KiB | [postgresql-17-semver_0.42.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-17-semver_0.42.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.6 KiB | [postgresql-17-semver_0.42.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-semver/postgresql-17-semver_0.42.0-1PGSTY~resolute_arm64.deb) |
 | `postgresql-17-semver` | `0.41.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-17-semver_0.41.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-17-semver_0.41.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -265,7 +267,7 @@ page_width: full
 | `postgresql-16-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 41.2 KiB | [postgresql-16-semver_0.42.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-16-semver_0.42.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.6 KiB | [postgresql-16-semver_0.42.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-semver/postgresql-16-semver_0.42.0-1PGSTY~resolute_arm64.deb) |
 | `postgresql-16-semver` | `0.41.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.2 KiB | [postgresql-16-semver_0.41.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-16-semver_0.41.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -339,7 +341,7 @@ page_width: full
 | `postgresql-15-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 41.6 KiB | [postgresql-15-semver_0.42.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-15-semver_0.42.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.9 KiB | [postgresql-15-semver_0.42.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-semver/postgresql-15-semver_0.42.0-1PGSTY~resolute_arm64.deb) |
 | `postgresql-15-semver` | `0.41.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-15-semver_0.41.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-15-semver_0.41.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -413,7 +415,7 @@ page_width: full
 | `postgresql-14-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 41.5 KiB | [postgresql-14-semver_0.42.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-14-semver_0.42.0-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-semver` | `0.42.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.9 KiB | [postgresql-14-semver_0.42.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-semver/postgresql-14-semver_0.42.0-1PGSTY~resolute_arm64.deb) |
 | `postgresql-14-semver` | `0.41.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 38.3 KiB | [postgresql-14-semver_0.41.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-semver/postgresql-14-semver_0.41.0-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

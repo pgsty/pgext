@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1651** | {{< badge content="mobilitydb_datagen" link="https://github.com/MobilityDB/MobilityDB" >}} | {{< ext "mobilitydb_datagen" "mobilitydb" >}} | `1.3.1` | {{< category "GIS" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mobilitydb` | `mobilitydb` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "mobilitydb_18" "green" >}} {{< bg "17" "mobilitydb_17" "green" >}} {{< bg "16" "mobilitydb_16" "green" >}} {{< bg "15" "mobilitydb_15" "green" >}} {{< bg "14" "mobilitydb_14" "green" >}} | `mobilitydb_$v` | `postgis37_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "postgresql-18-mobilitydb" "green" >}} {{< bg "17" "postgresql-17-mobilitydb" "green" >}} {{< bg "16" "postgresql-16-mobilitydb" "green" >}} {{< bg "15" "postgresql-15-mobilitydb" "green" >}} {{< bg "14" "postgresql-14-mobilitydb" "green" >}} | `postgresql-$v-mobilitydb` | `postgresql-$v-postgis-3` |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-mobilitydb : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-mobilitydb : AVAIL 4" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

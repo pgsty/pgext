@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2650** | {{< badge content="pgq" link="https://github.com/pgq/pgq" >}} | {{< ext "pgq" >}} | `3.5.2` | {{< category "FEAT" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgq` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.5.1` | {{< bg "18" "pgq_18" "green" >}} {{< bg "17" "pgq_17" "green" >}} {{< bg "16" "pgq_16" "green" >}} {{< bg "15" "pgq_15" "green" >}} {{< bg "14" "pgq_14" "green" >}} | `pgq_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.5.1` | {{< bg "18" "postgresql-18-pgq3" "green" >}} {{< bg "17" "postgresql-17-pgq3" "green" >}} {{< bg "16" "postgresql-16-pgq3" "green" >}} {{< bg "15" "postgresql-15-pgq3" "green" >}} {{< bg "14" "postgresql-14-pgq3" "green" >}} | `postgresql-$v-pgq3` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.5.1" "postgresql-18-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-17-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-16-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-15-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-14-pgq3 : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.5.1" "postgresql-18-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-17-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-16-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-15-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-14-pgq3 : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.5.1" "postgresql-18-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-17-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-16-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-15-pgq3 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.5.1" "postgresql-14-pgq3 : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -87,7 +89,7 @@ page_width: full
 | `postgresql-18-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.6 KiB | [postgresql-18-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-18-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.8 KiB | [postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.1 KiB | [postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-18-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -114,7 +116,7 @@ page_width: full
 | `postgresql-17-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.3 KiB | [postgresql-17-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-17-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.6 KiB | [postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.0 KiB | [postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-17-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -141,7 +143,7 @@ page_width: full
 | `postgresql-16-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.4 KiB | [postgresql-16-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-16-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 122.7 KiB | [postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.0 KiB | [postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-16-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -172,7 +174,7 @@ page_width: full
 | `postgresql-15-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.0 KiB | [postgresql-15-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-15-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.4 KiB | [postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.5 KiB | [postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-15-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -206,7 +208,7 @@ page_width: full
 | `postgresql-14-pgq3` | `3.5.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 122.9 KiB | [postgresql-14-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-14-pgq3_3.5.1-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgq3` | `3.5.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.3 KiB | [postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgq3` | `3.5.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 122.4 KiB | [postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgq/postgresql-14-pgq3_3.5.1-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -358,6 +360,7 @@ PgQ requires a ticker daemon (`pgqd`) to run in the background for creating batc
 | `pgq.finish_batch(batch_id)` | Mark batch as processed |
 | `pgq.get_queue_info([name])` | Get queue statistics |
 | `pgq.get_consumer_info(queue)` | Get consumer statistics |
+{.wide .expand}
 
 ### Version and Access Boundaries
 

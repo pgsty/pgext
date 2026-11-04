@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5260** | {{< badge content="pgdisablelogerror" link="https://github.com/fmbiete/pgdisablelogerror" >}} | {{< ext "pgdisablelogerror" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgdisablelogerror` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0` | {{< bg "18" "pgdisablelogerror_18" "green" >}} {{< bg "17" "pgdisablelogerror_17" "green" >}} {{< bg "16" "pgdisablelogerror_16" "green" >}} {{< bg "15" "pgdisablelogerror_15" "green" >}} {{< bg "14" "pgdisablelogerror_14" "green" >}} | `pgdisablelogerror_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pgdisablelogerror" "green" >}} {{< bg "17" "postgresql-17-pgdisablelogerror" "green" >}} {{< bg "16" "postgresql-16-pgdisablelogerror" "green" >}} {{< bg "15" "postgresql-15-pgdisablelogerror" "green" >}} {{< bg "14" "postgresql-14-pgdisablelogerror" "green" >}} | `postgresql-$v-pgdisablelogerror` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgdisablelogerror : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgdisablelogerror : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgdisablelogerror : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -92,7 +94,7 @@ page_width: full
 | `postgresql-18-pgdisablelogerror` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.9 KiB | [postgresql-18-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdisablelogerror/postgresql-18-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgdisablelogerror` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.0 KiB | [postgresql-18-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-18-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgdisablelogerror` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.1 KiB | [postgresql-18-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-18-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -123,7 +125,7 @@ page_width: full
 | `postgresql-17-pgdisablelogerror` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.9 KiB | [postgresql-17-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdisablelogerror/postgresql-17-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgdisablelogerror` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.1 KiB | [postgresql-17-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-17-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgdisablelogerror` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.2 KiB | [postgresql-17-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-17-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-16-pgdisablelogerror` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.9 KiB | [postgresql-16-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdisablelogerror/postgresql-16-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgdisablelogerror` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.1 KiB | [postgresql-16-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-16-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgdisablelogerror` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.2 KiB | [postgresql-16-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-16-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -185,7 +187,7 @@ page_width: full
 | `postgresql-15-pgdisablelogerror` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.0 KiB | [postgresql-15-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdisablelogerror/postgresql-15-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgdisablelogerror` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.1 KiB | [postgresql-15-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-15-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgdisablelogerror` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.2 KiB | [postgresql-15-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-15-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -216,7 +218,7 @@ page_width: full
 | `postgresql-14-pgdisablelogerror` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.9 KiB | [postgresql-14-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgdisablelogerror/postgresql-14-pgdisablelogerror_1.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgdisablelogerror` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 12.1 KiB | [postgresql-14-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-14-pgdisablelogerror_1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgdisablelogerror` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 12.2 KiB | [postgresql-14-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgdisablelogerror/postgresql-14-pgdisablelogerror_1.0-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

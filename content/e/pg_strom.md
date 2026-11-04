@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2530** | {{< badge content="pg_strom" link="https://github.com/heterodb/pg-strom" >}} | {{< ext "pg_strom" >}} | `6.1` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_strom` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "pg_strom_18" "green" >}} {{< bg "17" "pg_strom_17" "green" >}} {{< bg "16" "pg_strom_16" "green" >}} {{< bg "15" "pg_strom_15" "green" >}} {{< bg "14" "pg_strom_14" "red" >}} | `pg_strom_$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} | {{< bg "N/A" "pg_strom : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -72,7 +74,7 @@ page_width: full
 | `pg_strom_18` | `6.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 691.0 KiB | [pg_strom_18-6.1-1PGDG.el9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/pg_strom_18-6.1-1PGDG.el9.x86_64.rpm) |
 | `pg_strom_18` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 710.1 KiB | [pg_strom_18-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/pg_strom_18-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_18` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.8 KiB | [pg_strom_18-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/pg_strom_18-6.1-1PGDG.el10.x86_64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -87,7 +89,7 @@ page_width: full
 | `pg_strom_17` | `5.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 467.3 KiB | [pg_strom_17-5.2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/pg_strom_17-5.2.2-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_17` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 710.1 KiB | [pg_strom_17-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/pg_strom_17-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_17` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.4 KiB | [pg_strom_17-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/pg_strom_17-6.1-1PGDG.el10.x86_64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -114,7 +116,7 @@ page_width: full
 | `pg_strom_16` | `5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 8.6 MiB | [pg_strom_16-5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/pg_strom_16-5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_16` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 710.2 KiB | [pg_strom_16-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/pg_strom_16-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_16` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.7 KiB | [pg_strom_16-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/pg_strom_16-6.1-1PGDG.el10.x86_64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -145,7 +147,7 @@ page_width: full
 | `pg_strom_15` | `3.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_15-3.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/pg_strom_15-3.4-1.rhel9.x86_64.rpm) |
 | `pg_strom_15` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 734.6 KiB | [pg_strom_15-6.1-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/pg_strom_15-6.1-2PGDG.rhel10.1.x86_64.rpm) |
 | `pg_strom_15` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 730.1 KiB | [pg_strom_15-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/pg_strom_15-6.1-1PGDG.el10.x86_64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -158,7 +160,7 @@ page_width: full
 | `pg_strom_14` | `3.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_14-3.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/pg_strom_14-3.4-1.rhel9.x86_64.rpm) |
 | `pg_strom_14` | `3.3.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_14-3.3.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/pg_strom_14-3.3.2-1.rhel9.x86_64.rpm) |
 | `pg_strom_14` | `3.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 25.7 MiB | [pg_strom_14-3.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_strom_14-3.5-1PIGSTY.el10.x86_64.rpm) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -227,6 +229,7 @@ Full documentation is available at [https://heterodb.github.io/pg-strom/](https:
 | [SQL Objects](https://heterodb.github.io/pg-strom/ref_sqlfuncs/) | System views and utility functions |
 | [GUC Parameters](https://heterodb.github.io/pg-strom/ref_params/) | All configuration parameters |
 | [Troubleshooting](https://heterodb.github.io/pg-strom/troubles/) | Diagnostics and common issues |
+{.wide .expand}
 
 
 ### Prerequisites
@@ -504,6 +507,7 @@ SELECT pgstrom.gpucache_recovery('realtime_metrics'::regclass);
 | `pg_strom.enable_brin` | `on` | Enable/disable BRIN index on GPU scans |
 | `pg_strom.enable_gpucache` | `on` | Enable/disable GPU Cache usage |
 | `pg_strom.cpu_fallback` | `notice` | CPU fallback behavior on GPU recheck errors |
+{.wide .expand}
 
 **Optimizer cost parameters:**
 
@@ -520,6 +524,7 @@ SELECT pgstrom.gpucache_recovery('realtime_metrics'::regclass);
 | `pg_strom.gpudirect_enabled` | `on` | Enable/disable GPUDirect SQL |
 | `pg_strom.gpudirect_threshold` | auto | Minimum table size to trigger GPUDirect SQL |
 | `pg_strom.gpu_direct_seq_page_cost` | `seq_page_cost / 4` | Scan cost via GPUDirect SQL |
+{.wide .expand}
 
 **Arrow_Fdw:**
 
@@ -544,3 +549,4 @@ SELECT pgstrom.gpucache_recovery('realtime_metrics'::regclass);
 | `pg_strom.max_async_tasks` | `12` | Max concurrent GPU tasks per query |
 | `pg_strom.enable_partitionwise_gpujoin` | `on` | Push GpuJoin into partitions |
 | `pg_strom.enable_partitionwise_gpupreagg` | `on` | Push GpuPreAgg into partitions |
+{.wide .expand}

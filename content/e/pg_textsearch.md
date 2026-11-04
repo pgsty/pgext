@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2190** | {{< badge content="pg_textsearch" link="https://github.com/timescale/pg_textsearch" >}} | {{< ext "pg_textsearch" >}} | `1.5.1` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_textsearch` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "pg_textsearch_18" "green" >}} {{< bg "17" "pg_textsearch_17" "green" >}} {{< bg "16" "pg_textsearch_16" "red" >}} {{< bg "15" "pg_textsearch_15" "red" >}} {{< bg "14" "pg_textsearch_14" "red" >}} | `pg_textsearch_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "postgresql-18-textsearch" "green" >}} {{< bg "17" "postgresql-17-textsearch" "green" >}} {{< bg "16" "postgresql-16-textsearch" "red" >}} {{< bg "15" "postgresql-15-textsearch" "red" >}} {{< bg "14" "postgresql-14-textsearch" "red" >}} | `postgresql-$v-textsearch` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-18-textsearch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-17-textsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-textsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-textsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-textsearch : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-18-textsearch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-17-textsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-textsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-textsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-textsearch : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-18-textsearch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-17-textsearch : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-textsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-textsearch : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-textsearch : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -90,7 +92,7 @@ page_width: full
 | `postgresql-18-textsearch` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.0 MiB | [postgresql-18-textsearch_1.5.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-textsearch/postgresql-18-textsearch_1.5.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-textsearch` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.0 MiB | [postgresql-18-textsearch_1.5.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-textsearch/postgresql-18-textsearch_1.5.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-textsearch` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-18-textsearch_1.5.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-textsearch/postgresql-18-textsearch_1.5.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -119,7 +121,7 @@ page_width: full
 | `postgresql-17-textsearch` | `1.5.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.9 MiB | [postgresql-17-textsearch_1.5.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-textsearch/postgresql-17-textsearch_1.5.1-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-textsearch` | `1.5.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.0 MiB | [postgresql-17-textsearch_1.5.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-textsearch/postgresql-17-textsearch_1.5.1-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-textsearch` | `1.5.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-17-textsearch_1.5.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-textsearch/postgresql-17-textsearch_1.5.1-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -236,6 +238,7 @@ Use force-merge after bulk loading rather than during steady write traffic. VACU
 | `pg_textsearch.memtable_pages_threshold` | 64 | Chain-page count before spilling |
 | `pg_textsearch.memtable_cache_enabled` | on | Shared-memory read cache |
 | `pg_textsearch.memory_limit` | 2GB | Approximate cache admission budget; 0 removes the limit |
+{.wide .expand}
 
 Parallel builds require at least 64 MB of `maintenance_work_mem` and available parallel maintenance workers. For upgrades, install the matching binary, restart PostgreSQL and run the extension update according to the release instructions.
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9220** | {{< badge content="pg_synonym" link="https://github.com/Mazuco/pg_synonym" >}} | {{< ext "pg_synonym" >}} | `1.0` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_synonym` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_synonym_18" "green" >}} {{< bg "17" "pg_synonym_17" "green" >}} {{< bg "16" "pg_synonym_16" "green" >}} {{< bg "15" "pg_synonym_15" "green" >}} {{< bg "14" "pg_synonym_14" "red" >}} | `pg_synonym_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-synonym" "green" >}} {{< bg "17" "postgresql-17-pg-synonym" "green" >}} {{< bg "16" "postgresql-16-pg-synonym" "green" >}} {{< bg "15" "postgresql-15-pg-synonym" "green" >}} {{< bg "14" "postgresql-14-pg-synonym" "red" >}} | `postgresql-$v-pg-synonym` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-18-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-synonym : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-synonym : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-synonym : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -84,7 +86,7 @@ page_width: full
 | `postgresql-18-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.5 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-18-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -107,7 +109,7 @@ page_width: full
 | `postgresql-17-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.4 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-17-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -130,7 +132,7 @@ page_width: full
 | `postgresql-16-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.6 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-16-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -153,7 +155,7 @@ page_width: full
 | `postgresql-15-pg-synonym` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.4 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-synonym` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.4 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-synonym` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.6 KiB | [postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-synonym/postgresql-15-pg-synonym_1.0.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

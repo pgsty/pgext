@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9570** | {{< badge content="spock" link="https://github.com/pgEdge/spock" >}} | {{< ext "spock" >}} | `5.0.13` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.13` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `spock` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `18.6` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgedge-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 17.11" "pgedge-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 16.15" "pgedge-16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 15.19" "pgedge-15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgedge-14 : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 18.6" "pgedge-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 17.11" "pgedge-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 16.15" "pgedge-16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 15.19" "pgedge-15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgedge-14 : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 18.6" "pgedge-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 17.11" "pgedge-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 16.15" "pgedge-16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 15.19" "pgedge-15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pgedge-14 : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `pgedge-18` | `18.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 MiB | [pgedge-18_18.6-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~noble_arm64.deb) |
 | `pgedge-18` | `18.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.5 MiB | [pgedge-18_18.6-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~resolute_amd64.deb) |
 | `pgedge-18` | `18.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.3 MiB | [pgedge-18_18.6-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.6-3PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `pgedge-17` | `17.11` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.0 MiB | [pgedge-17_17.11-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~noble_arm64.deb) |
 | `pgedge-17` | `17.11` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.2 MiB | [pgedge-17_17.11-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~resolute_amd64.deb) |
 | `pgedge-17` | `17.11` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.9 MiB | [pgedge-17_17.11-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.11-3PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `pgedge-16` | `16.15` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.5 MiB | [pgedge-16_16.15-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~noble_arm64.deb) |
 | `pgedge-16` | `16.15` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.7 MiB | [pgedge-16_16.15-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~resolute_amd64.deb) |
 | `pgedge-16` | `16.15` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.5 MiB | [pgedge-16_16.15-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.15-3PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `pgedge-15` | `15.19` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.6 MiB | [pgedge-15_15.19-3PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~noble_arm64.deb) |
 | `pgedge-15` | `15.19` | [u26.x86_64](/os/u26.x86_64) | pigsty | 9.8 MiB | [pgedge-15_15.19-3PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~resolute_amd64.deb) |
 | `pgedge-15` | `15.19` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.6 MiB | [pgedge-15_15.19-3PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.19-3PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

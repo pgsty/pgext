@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2440** | {{< badge content="pg_mooncake" link="https://github.com/Mooncake-Labs/pg_mooncake" >}} | {{< ext "pg_mooncake" >}} | `0.2.0` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_mooncake` | `pg_duckdb` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pg_mooncake_18" "green" >}} {{< bg "17" "pg_mooncake_17" "green" >}} {{< bg "16" "pg_mooncake_16" "green" >}} {{< bg "15" "pg_mooncake_15" "green" >}} {{< bg "14" "pg_mooncake_14" "green" >}} | `pg_mooncake_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pg-mooncake" "green" >}} {{< bg "17" "postgresql-17-pg-mooncake" "green" >}} {{< bg "16" "postgresql-16-pg-mooncake" "green" >}} {{< bg "15" "postgresql-15-pg-mooncake" "green" >}} {{< bg "14" "postgresql-14-pg-mooncake" "green" >}} | `postgresql-$v-pg-mooncake` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pg-mooncake : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pg-mooncake : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-18-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-17-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pg-mooncake : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pg-mooncake : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.5 MiB | [postgresql-18-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-mooncake` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 MiB | [postgresql-18-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pg-mooncake` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.5 MiB | [postgresql-18-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.4 MiB | [postgresql-17-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-mooncake` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 MiB | [postgresql-17-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pg-mooncake` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.5 MiB | [postgresql-17-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-16-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.4 MiB | [postgresql-16-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-mooncake` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 MiB | [postgresql-16-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pg-mooncake` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.5 MiB | [postgresql-16-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-15-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.4 MiB | [postgresql-15-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-mooncake` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 MiB | [postgresql-15-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pg-mooncake` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.5 MiB | [postgresql-15-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-14-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.4 MiB | [postgresql-14-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-3PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-mooncake` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 MiB | [postgresql-14-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-3PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pg-mooncake` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 15.5 MiB | [postgresql-14-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-3PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

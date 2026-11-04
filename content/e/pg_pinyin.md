@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2200** | {{< badge content="pg_pinyin" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< ext "pg_pinyin" >}} | `0.0.8` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_pinyin` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "18" "pg_pinyin_18" "green" >}} {{< bg "17" "pg_pinyin_17" "green" >}} {{< bg "16" "pg_pinyin_16" "green" >}} {{< bg "15" "pg_pinyin_15" "green" >}} {{< bg "14" "pg_pinyin_14" "green" >}} | `pg_pinyin_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.8` | {{< bg "18" "postgresql-18-pinyin" "green" >}} {{< bg "17" "postgresql-17-pinyin" "green" >}} {{< bg "16" "postgresql-16-pinyin" "green" >}} {{< bg "15" "postgresql-15-pinyin" "green" >}} {{< bg "14" "postgresql-14-pinyin" "green" >}} | `postgresql-$v-pinyin` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.8" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-pinyin` | `0.0.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.6 MiB | [postgresql-18-pinyin_0.0.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.8-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pinyin` | `0.0.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.7 MiB | [postgresql-18-pinyin_0.0.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.8-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pinyin` | `0.0.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.6 MiB | [postgresql-18-pinyin_0.0.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.8-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-pinyin` | `0.0.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.6 MiB | [postgresql-17-pinyin_0.0.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.8-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pinyin` | `0.0.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.7 MiB | [postgresql-17-pinyin_0.0.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.8-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pinyin` | `0.0.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.6 MiB | [postgresql-17-pinyin_0.0.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.8-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-16-pinyin` | `0.0.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.6 MiB | [postgresql-16-pinyin_0.0.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.8-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pinyin` | `0.0.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.7 MiB | [postgresql-16-pinyin_0.0.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.8-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pinyin` | `0.0.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.6 MiB | [postgresql-16-pinyin_0.0.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.8-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -154,7 +156,7 @@ page_width: full
 | `postgresql-15-pinyin` | `0.0.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.6 MiB | [postgresql-15-pinyin_0.0.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.8-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pinyin` | `0.0.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.7 MiB | [postgresql-15-pinyin_0.0.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.8-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pinyin` | `0.0.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.5 MiB | [postgresql-15-pinyin_0.0.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.8-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -177,7 +179,7 @@ page_width: full
 | `postgresql-14-pinyin` | `0.0.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.6 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pinyin` | `0.0.8` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.7 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pinyin` | `0.0.8` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.5 MiB | [postgresql-14-pinyin_0.0.8-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.8-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **6990** | {{< badge content="pg_stat_statements" link="https://www.postgresql.org/docs/current/pgstatstatements.html" >}} | {{< ext "pg_stat_statements" >}} | `1.12` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,6 +40,7 @@ page_width: full
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
 | {{< bg "1.12" "PostgreSQL 18: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 17: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 16: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 15: version 1.12" "green" >}} | {{< bg "1.12" "PostgreSQL 14: version 1.12" "green" >}} |
+{.wide .expand}
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 
@@ -104,6 +107,7 @@ SELECT * FROM pg_stat_statements_info;
 | `wal_bytes` | numeric | Total WAL generated (bytes) |
 | `plans` | bigint | Times planned |
 | `total_plan_time` | double precision | Total planning time (ms) |
+{.wide .expand}
 
 ### Functions
 
@@ -132,5 +136,6 @@ SELECT * FROM pg_stat_statements(showtext := false);
 | `pg_stat_statements.track_utility` | `on` | Track utility commands |
 | `pg_stat_statements.track_planning` | `off` | Track planning statistics |
 | `pg_stat_statements.save` | `on` | Persist across server restarts |
+{.wide .expand}
 
 Requires `shared_preload_libraries = 'pg_stat_statements'` and `compute_query_id = on`.

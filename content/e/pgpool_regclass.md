@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5920** | {{< badge content="pgpool_regclass" link="https://pgpool.net/" >}} | {{< ext "pgpool_regclass" "pgpool" >}} | `4.7.3` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgpool` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.3` | {{< bg "18" "pgpool-II-pg18-extensions" "green" >}} {{< bg "17" "pgpool-II-pg17-extensions" "green" >}} {{< bg "16" "pgpool-II-pg16-extensions" "green" >}} {{< bg "15" "pgpool-II-pg15-extensions" "green" >}} {{< bg "14" "pgpool-II-pg14-extensions" "green" >}} | `pgpool-II-pg$v-extensions` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.3` | {{< bg "18" "postgresql-18-pgpool2" "green" >}} {{< bg "17" "postgresql-17-pgpool2" "green" >}} {{< bg "16" "postgresql-16-pgpool2" "green" >}} {{< bg "15" "postgresql-15-pgpool2" "green" >}} {{< bg "14" "postgresql-14-pgpool2" "green" >}} | `postgresql-$v-pgpool2` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.7.3" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.7.3" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.7.3" "postgresql-18-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-17-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-16-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-15-pgpool2 : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.7.3" "postgresql-14-pgpool2 : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

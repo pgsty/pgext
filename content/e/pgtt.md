@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9110** | {{< badge content="pgtt" link="https://github.com/darold/pgtt" >}} | {{< ext "pgtt" >}} | `4.6` | {{< category "SIM" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgtt` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.6` | {{< bg "18" "pgtt_18" "green" >}} {{< bg "17" "pgtt_17" "green" >}} {{< bg "16" "pgtt_16" "green" >}} {{< bg "15" "pgtt_15" "green" >}} {{< bg "14" "pgtt_14" "green" >}} | `pgtt_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.6` | {{< bg "18" "postgresql-18-pgtt" "green" >}} {{< bg "17" "postgresql-17-pgtt" "green" >}} {{< bg "16" "postgresql-16-pgtt" "green" >}} {{< bg "15" "postgresql-15-pgtt" "green" >}} {{< bg "14" "postgresql-14-pgtt" "green" >}} | `postgresql-$v-pgtt` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.6" "postgresql-18-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-17-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-16-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-15-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-14-pgtt : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.6" "postgresql-18-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-17-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-16-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-15-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-14-pgtt : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.6" "postgresql-18-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-17-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-16-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-15-pgtt : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.6" "postgresql-14-pgtt : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -121,7 +123,7 @@ page_width: full
 | `postgresql-18-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.9 KiB | [postgresql-18-pgtt_4.6-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.6-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-18-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.9 KiB | [postgresql-18-pgtt_4.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgtt` | `4.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.6 KiB | [postgresql-18-pgtt_4.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.5-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -196,7 +198,7 @@ page_width: full
 | `postgresql-17-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-17-pgtt_4.6-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.6-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-17-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.7 KiB | [postgresql-17-pgtt_4.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgtt` | `4.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.4 KiB | [postgresql-17-pgtt_4.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.5-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -279,7 +281,7 @@ page_width: full
 | `postgresql-16-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.9 KiB | [postgresql-16-pgtt_4.6-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-16-pgtt_4.6-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-16-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.9 KiB | [postgresql-16-pgtt_4.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-16-pgtt_4.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgtt` | `4.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.6 KiB | [postgresql-16-pgtt_4.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-16-pgtt_4.5-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -370,7 +372,7 @@ page_width: full
 | `postgresql-15-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.2 KiB | [postgresql-15-pgtt_4.6-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-15-pgtt_4.6-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-15-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.2 KiB | [postgresql-15-pgtt_4.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-15-pgtt_4.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgtt` | `4.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.3 KiB | [postgresql-15-pgtt_4.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-15-pgtt_4.5-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -464,7 +466,7 @@ page_width: full
 | `postgresql-14-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.2 KiB | [postgresql-14-pgtt_4.6-1.pgdg26.04+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-14-pgtt_4.6-1.pgdg26.04+2_arm64.deb) |
 | `postgresql-14-pgtt` | `4.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 57.2 KiB | [postgresql-14-pgtt_4.6-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-14-pgtt_4.6-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgtt` | `4.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.3 KiB | [postgresql-14-pgtt_4.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-14-pgtt_4.5-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

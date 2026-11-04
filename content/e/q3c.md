@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **1540** | {{< badge content="q3c" link="https://github.com/segasai/q3c" >}} | {{< ext "q3c" >}} | `2.0.5` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `q3c` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "q3c_18" "green" >}} {{< bg "17" "q3c_17" "green" >}} {{< bg "16" "q3c_16" "green" >}} {{< bg "15" "q3c_15" "green" >}} {{< bg "14" "q3c_14" "green" >}} | `q3c_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "postgresql-18-q3c" "green" >}} {{< bg "17" "postgresql-17-q3c" "green" >}} {{< bg "16" "postgresql-16-q3c" "green" >}} {{< bg "15" "postgresql-15-q3c" "green" >}} {{< bg "14" "postgresql-14-q3c" "green" >}} | `postgresql-$v-q3c` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.5" "postgresql-18-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-17-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-16-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-15-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-14-q3c : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.5" "postgresql-18-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-17-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-16-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-15-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-14-q3c : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.5" "postgresql-18-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-17-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-16-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-15-q3c : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-14-q3c : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -142,7 +144,7 @@ page_width: full
 | `postgresql-18-q3c` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.3 KiB | [postgresql-18-q3c_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-q3c` | `2.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 158.2 KiB | [postgresql-18-q3c_2.0.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-q3c` | `2.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 163.3 KiB | [postgresql-18-q3c_2.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -225,7 +227,7 @@ page_width: full
 | `postgresql-17-q3c` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 144.8 KiB | [postgresql-17-q3c_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-q3c` | `2.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 150.8 KiB | [postgresql-17-q3c_2.0.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-q3c` | `2.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 153.4 KiB | [postgresql-17-q3c_2.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -308,7 +310,7 @@ page_width: full
 | `postgresql-16-q3c` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.0 KiB | [postgresql-16-q3c_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-q3c` | `2.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 149.9 KiB | [postgresql-16-q3c_2.0.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-q3c` | `2.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 154.8 KiB | [postgresql-16-q3c_2.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -391,7 +393,7 @@ page_width: full
 | `postgresql-15-q3c` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 169.4 KiB | [postgresql-15-q3c_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-q3c` | `2.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 163.9 KiB | [postgresql-15-q3c_2.0.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-q3c` | `2.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 141.3 KiB | [postgresql-15-q3c_2.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -474,7 +476,7 @@ page_width: full
 | `postgresql-14-q3c` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 127.7 KiB | [postgresql-14-q3c_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-q3c` | `2.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 151.2 KiB | [postgresql-14-q3c_2.0.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.4-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-q3c` | `2.0.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 153.0 KiB | [postgresql-14-q3c_2.0.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.3-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

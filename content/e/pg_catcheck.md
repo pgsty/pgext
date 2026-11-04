@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **5160** | {{< badge content="pg_catcheck" link="https://github.com/EnterpriseDB/pg_catcheck" >}} | {{< ext "pg_catcheck" >}} | `1.6.0` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -37,7 +39,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_catcheck` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.0` | {{< bg "18" "pg_catcheck_18" "green" >}} {{< bg "17" "pg_catcheck_17" "green" >}} {{< bg "16" "pg_catcheck_16" "green" >}} {{< bg "15" "pg_catcheck_15" "green" >}} {{< bg "14" "pg_catcheck_14" "green" >}} | `pg_catcheck_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.0` | {{< bg "18" "postgresql-18-pg-catcheck" "green" >}} {{< bg "17" "postgresql-17-pg-catcheck" "green" >}} {{< bg "16" "postgresql-16-pg-catcheck" "green" >}} {{< bg "15" "postgresql-15-pg-catcheck" "green" >}} {{< bg "14" "postgresql-14-pg-catcheck" "green" >}} | `postgresql-$v-pg-catcheck` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -58,7 +60,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.6.0" "postgresql-18-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-17-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-pg-catcheck : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.6.0" "postgresql-18-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-17-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-pg-catcheck : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.6.0" "postgresql-18-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-17-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-pg-catcheck : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-pg-catcheck : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -86,7 +88,7 @@ page_width: full
 | `postgresql-18-pg-catcheck` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 33.6 KiB | [postgresql-18-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-18-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pg-catcheck` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.5 KiB | [postgresql-18-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-18-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pg-catcheck` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.8 KiB | [postgresql-18-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-18-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -117,7 +119,7 @@ page_width: full
 | `postgresql-17-pg-catcheck` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 33.7 KiB | [postgresql-17-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-17-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pg-catcheck` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.7 KiB | [postgresql-17-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-17-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pg-catcheck` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.0 KiB | [postgresql-17-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-17-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -148,7 +150,7 @@ page_width: full
 | `postgresql-16-pg-catcheck` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 33.7 KiB | [postgresql-16-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-16-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pg-catcheck` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.8 KiB | [postgresql-16-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-16-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pg-catcheck` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 34.0 KiB | [postgresql-16-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-16-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -179,7 +181,7 @@ page_width: full
 | `postgresql-15-pg-catcheck` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 33.6 KiB | [postgresql-15-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-15-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pg-catcheck` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 35.6 KiB | [postgresql-15-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-15-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pg-catcheck` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.9 KiB | [postgresql-15-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-15-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -211,7 +213,7 @@ page_width: full
 | `postgresql-14-pg-catcheck` | `1.6.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 33.2 KiB | [postgresql-14-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-14-pg-catcheck_1.6.0-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pg-catcheck` | `1.6.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 34.9 KiB | [postgresql-14-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-14-pg-catcheck_1.6.0-2.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pg-catcheck` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 33.4 KiB | [postgresql-14-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-catcheck/postgresql-14-pg-catcheck_1.6.0-2.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

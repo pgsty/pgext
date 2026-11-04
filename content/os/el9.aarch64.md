@@ -463,4 +463,4 @@ This page shows the availability of PostgreSQL extensions for **RockyLinux 9 ARM
 | {{< ext "repmgr" "repmgr" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} | {{< badge content="PGDG 5.5.0" color="blue" >}} |
 | {{< ext "pg_fact_loader" "pg_fact_loader" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} | {{< badge content="PGDG 2.0.1" color="blue" >}} |
 | {{< ext "pg_bulkload" "pg_bulkload" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} | {{< badge content="PIGSTY 3.1.23" color="green" >}} |
-{.matrix}
+{.matrix .wide .expand}

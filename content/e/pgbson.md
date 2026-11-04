@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3910** | {{< badge content="pgbson" link="https://github.com/buzzm/postgresbson" >}} | {{< ext "pgbson" >}} | `2.2.0` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgbson` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "postgresbson_18" "green" >}} {{< bg "17" "postgresbson_17" "green" >}} {{< bg "16" "postgresbson_16" "green" >}} {{< bg "15" "postgresbson_15" "green" >}} {{< bg "14" "postgresbson_14" "green" >}} | `postgresbson_$v` | `libbson` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "postgresql-18-pgbson" "green" >}} {{< bg "17" "postgresql-17-pgbson" "green" >}} {{< bg "16" "postgresql-16-pgbson" "green" >}} {{< bg "15" "postgresql-15-pgbson" "green" >}} {{< bg "14" "postgresql-14-pgbson" "green" >}} | `postgresql-$v-pgbson` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-18-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-17-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-16-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-15-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-14-pgbson : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-18-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-17-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-16-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-15-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-14-pgbson : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-18-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-17-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-16-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-15-pgbson : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.2.0" "postgresql-14-pgbson : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -96,7 +98,7 @@ page_width: full
 | `postgresql-18-pgbson` | `2.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.1 KiB | [postgresql-18-pgbson_2.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresbson/postgresql-18-pgbson_2.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-pgbson` | `2.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.4 KiB | [postgresql-18-pgbson_2.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-18-pgbson_2.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgbson` | `2.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.4 KiB | [postgresql-18-pgbson_2.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-18-pgbson_2.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -131,7 +133,7 @@ page_width: full
 | `postgresql-17-pgbson` | `2.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.0 KiB | [postgresql-17-pgbson_2.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresbson/postgresql-17-pgbson_2.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-pgbson` | `2.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.4 KiB | [postgresql-17-pgbson_2.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-17-pgbson_2.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgbson` | `2.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.5 KiB | [postgresql-17-pgbson_2.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-17-pgbson_2.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -166,7 +168,7 @@ page_width: full
 | `postgresql-16-pgbson` | `2.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 46.9 KiB | [postgresql-16-pgbson_2.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresbson/postgresql-16-pgbson_2.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-16-pgbson` | `2.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.4 KiB | [postgresql-16-pgbson_2.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-16-pgbson_2.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgbson` | `2.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.5 KiB | [postgresql-16-pgbson_2.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-16-pgbson_2.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -201,7 +203,7 @@ page_width: full
 | `postgresql-15-pgbson` | `2.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 46.9 KiB | [postgresql-15-pgbson_2.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresbson/postgresql-15-pgbson_2.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-15-pgbson` | `2.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.3 KiB | [postgresql-15-pgbson_2.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-15-pgbson_2.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgbson` | `2.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.4 KiB | [postgresql-15-pgbson_2.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-15-pgbson_2.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -236,7 +238,7 @@ page_width: full
 | `postgresql-14-pgbson` | `2.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 46.9 KiB | [postgresql-14-pgbson_2.2.0-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresbson/postgresql-14-pgbson_2.2.0-1PGSTY~noble_arm64.deb) |
 | `postgresql-14-pgbson` | `2.2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.2 KiB | [postgresql-14-pgbson_2.2.0-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-14-pgbson_2.2.0-1PGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgbson` | `2.2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.3 KiB | [postgresql-14-pgbson_2.2.0-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresbson/postgresql-14-pgbson_2.2.0-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

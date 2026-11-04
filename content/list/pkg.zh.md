@@ -15,6 +15,7 @@ comments: false
 | **ALL** | 453 | 135 | 370 | 0 | 0 | 446 | 440 | 423 | 401 | 383 |
 | **EL** | 452 | 134 | 370 | 0 | 62 | 445 | 438 | 422 | 401 | 383 |
 | **Debian** | 446 | 95 | 351 | 0 | 68 | 439 | 433 | 417 | 397 | 381 |
+{.wide .expand}
 
 ## 分类
 
@@ -36,6 +37,7 @@ comments: false
 | {{< category fdw >}} | 27 | {{< ext "wrappers" "wrappers" >}} {{< ext "multicorn" "multicorn" >}} {{< ext "odbc_fdw" "odbc_fdw" >}} {{< ext "jdbc_fdw" "jdbc_fdw" >}} {{< ext "pgspider_ext" "pgspider_ext" >}} {{< ext "mysql_fdw" "mysql_fdw" >}} {{< ext "oracle_fdw" "oracle_fdw" >}} {{< ext "tds_fdw" "tds_fdw" >}} {{< ext "db2_fdw" "db2_fdw" >}} {{< ext "sqlite_fdw" "sqlite_fdw" >}} {{< ext "pgbouncer_fdw" "pgbouncer_fdw" >}} {{< ext "etcd_fdw" "etcd_fdw" >}} {{< ext "informix_fdw" "informix_fdw" >}} {{< ext "nominatim_fdw" "nominatim_fdw" >}} {{< ext "mongo_fdw" "mongo_fdw" >}} {{< ext "redis_fdw" "redis_fdw" >}} {{< ext "redis" "pg_redis_pubsub" >}} {{< ext "kafka_fdw" "kafka_fdw" >}} {{< ext "hdfs_fdw" "hdfs_fdw" >}} {{< ext "firebird_fdw" "firebird_fdw" >}} {{< ext "rdf_fdw" "rdf_fdw" >}} {{< ext "oai_fdw" "oai_fdw" >}} {{< ext "aws_s3" "aws_s3" >}} {{< ext "log_fdw" "log_fdw" >}} {{< ext "dblink" "dblink" >}} {{< ext "file_fdw" "file_fdw" >}} {{< ext "postgres_fdw" "postgres_fdw" >}} |
 | {{< category sim >}} | 20 | {{< ext "documentdb" "documentdb" >}} {{< ext "pg_projection" "pg_projection" >}} {{< ext "orafce" "orafce" >}} {{< ext "pgtt" "pgtt" >}} {{< ext "session_variable" "session_variable" >}} {{< ext "pg_statement_rollback" "pg_statement_rollback" >}} {{< ext "ivorysql_ora" "ivorysql" >}} {{< ext "db2fce" "db2fce" >}} {{< ext "plpgsql_wrap" "plpgsql_wrap" >}} {{< ext "pg_synonym" "pg_synonym" >}} {{< ext "pg_dbms_metadata" "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" "pg_dbms_lock" >}} {{< ext "pg_dbms_job" "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" "pg_utl_smtp" >}} {{< ext "babelfishpg_common" "babelfish" >}} {{< ext "pgmemcache" "pgmemcache" >}} {{< ext "aux_mysql" "openhalo" >}} {{< ext "pgs3" "pgs3" >}} {{< ext "kafgres" "kafgres" >}} |
 | {{< category etl >}} | 21 | {{< ext "pglogical" "pglogical" >}} {{< ext "pglogical_ticker" "pglogical_ticker" >}} {{< ext "pgl_ddl_deploy" "pgl_ddl_deploy" >}} {{< ext "logical_ddl" "logical_ddl" >}} {{< ext "pg_failover_slots" "pg_failover_slots" >}} {{< ext "db_migrator" "db_migrator" >}} {{< ext "pgactive" "pgactive" >}} {{< ext "spock" "spock" >}} {{< ext "lolor" "lolor" >}} {{< ext "pgclone" "pgclone" >}} {{< ext "pgmqtt" "pgmqtt" >}} {{< ext "wal2json" "wal2json" >}} {{< ext "wal2mongo" "wal2mongo" >}} {{< ext "decoderbufs" "decoderbufs" >}} {{< ext "decoder_raw" "decoder_raw" >}} {{< ext "mimeo" "mimeo" >}} {{< ext "repmgr" "repmgr" >}} {{< ext "pg_fact_loader" "pg_fact_loader" >}} {{< ext "pg_bulkload" "pg_bulkload" >}} {{< ext "test_decoding" "test_decoding" >}} {{< ext "pgoutput" "pgoutput" >}} |
+{.wide .expand}
 
 ## 扩展包列表
 
@@ -557,3 +559,4 @@ comments: false
 | {{< ext "pg_bulkload" >}} | `3.1.23` | {{< badge content="Link" link="https://github.com/ossc-db/pg_bulkload" >}} | {{< category "ETL" >}} | `pg_bulkload_$v` | `postgresql-$v-pg-bulkload` |
 | {{< ext "test_decoding" >}} | `-` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/test-decoding.html" >}} | {{< category "ETL" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pgoutput" >}} | `-` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/protocol-logical-replication.html" >}} | {{< category "ETL" >}} | `postgresql$v-contrib` | `postgresql-$v` |
+{.wide .expand}

@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7110** | {{< badge content="pgauditlogtofile" link="https://github.com/fmbiete/pgauditlogtofile" >}} | {{< ext "pgauditlogtofile" >}} | `1.8.7` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgauditlogtofile` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.7` | {{< bg "18" "pgauditlogtofile_18" "green" >}} {{< bg "17" "pgauditlogtofile_17" "green" >}} {{< bg "16" "pgauditlogtofile_16" "green" >}} {{< bg "15" "pgauditlogtofile_15" "green" >}} {{< bg "14" "pgauditlogtofile_14" "green" >}} | `pgauditlogtofile_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8.7` | {{< bg "18" "postgresql-18-pgauditlogtofile" "green" >}} {{< bg "17" "postgresql-17-pgauditlogtofile" "green" >}} {{< bg "16" "postgresql-16-pgauditlogtofile" "green" >}} {{< bg "15" "postgresql-15-pgauditlogtofile" "green" >}} {{< bg "14" "postgresql-14-pgauditlogtofile" "green" >}} | `postgresql-$v-pgauditlogtofile` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.8.7" "postgresql-18-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-17-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-16-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-15-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-14-pgauditlogtofile : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.8.7" "postgresql-18-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-17-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-16-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-15-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-14-pgauditlogtofile : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.8.7" "postgresql-18-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-17-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-16-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-15-pgauditlogtofile : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.8.7" "postgresql-14-pgauditlogtofile : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -189,7 +191,7 @@ page_width: full
 | `postgresql-18-pgauditlogtofile` | `1.8.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.6 KiB | [postgresql-18-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-18-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgauditlogtofile` | `1.8.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.0 KiB | [postgresql-18-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-18-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgauditlogtofile` | `1.8.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 64.2 KiB | [postgresql-18-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-18-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -339,7 +341,7 @@ page_width: full
 | `postgresql-17-pgauditlogtofile` | `1.8.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.7 KiB | [postgresql-17-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-17-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgauditlogtofile` | `1.8.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 64.8 KiB | [postgresql-17-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-17-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgauditlogtofile` | `1.8.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 64.3 KiB | [postgresql-17-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-17-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -496,7 +498,7 @@ page_width: full
 | `postgresql-16-pgauditlogtofile` | `1.8.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 65.3 KiB | [postgresql-16-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-16-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgauditlogtofile` | `1.8.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 64.7 KiB | [postgresql-16-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-16-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgauditlogtofile` | `1.8.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 64.1 KiB | [postgresql-16-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-16-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -653,7 +655,7 @@ page_width: full
 | `postgresql-15-pgauditlogtofile` | `1.8.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.5 KiB | [postgresql-15-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-15-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgauditlogtofile` | `1.8.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 66.8 KiB | [postgresql-15-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-15-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgauditlogtofile` | `1.8.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 66.2 KiB | [postgresql-15-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-15-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -818,7 +820,7 @@ page_width: full
 | `postgresql-14-pgauditlogtofile` | `1.8.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.2 KiB | [postgresql-14-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-14-pgauditlogtofile_1.8.7-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgauditlogtofile` | `1.8.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 66.5 KiB | [postgresql-14-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-14-pgauditlogtofile_1.8.5-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgauditlogtofile` | `1.8.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 66.0 KiB | [postgresql-14-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgauditlogtofile/postgresql-14-pgauditlogtofile_1.8.4-1.pgdg26.04+1_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

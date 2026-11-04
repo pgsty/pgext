@@ -19,7 +19,7 @@ weight: 640
 | `build dep`   | 安装扩展构建依赖           | 需要 sudo 或 root 权限 |
 | `build ext` | 构建扩展包 | 当前用户 |
 | `build pkg`   | 完整构建流程：get、dep、ext | 需要 sudo 或 root 权限 |
-{.full-width}
+{.full-width .wide .expand}
 
 ## 快速入门
 

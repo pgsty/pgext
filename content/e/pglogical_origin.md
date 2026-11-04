@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9501** | {{< badge content="pglogical_origin" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< ext "pglogical_origin" "pglogical" >}} | `1.0.0` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -41,7 +43,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pglogical` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "pglogical_18" "green" >}} {{< bg "17" "pglogical_17" "green" >}} {{< bg "16" "pglogical_16" "green" >}} {{< bg "15" "pglogical_15" "green" >}} {{< bg "14" "pglogical_14" "green" >}} | `pglogical_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.8` | {{< bg "18" "postgresql-18-pglogical" "green" >}} {{< bg "17" "postgresql-17-pglogical" "green" >}} {{< bg "16" "postgresql-16-pglogical" "green" >}} {{< bg "15" "postgresql-15-pglogical" "green" >}} {{< bg "14" "postgresql-14-pglogical" "green" >}} | `postgresql-$v-pglogical` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -62,7 +64,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.4.8" "postgresql-18-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-17-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-16-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-15-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-14-pglogical : AVAIL 3" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.4.8" "postgresql-18-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-17-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-16-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-15-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-14-pglogical : AVAIL 3" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.4.8" "postgresql-18-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-17-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-16-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-15-pglogical : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.8" "postgresql-14-pglogical : AVAIL 3" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 ## Source

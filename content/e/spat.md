@@ -17,11 +17,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **9400** | {{< badge content="spat" link="https://github.com/Florents-Tselai/spat" >}} | {{< ext "spat" >}} | `0.1.0a4` | {{< category "SIM" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -38,7 +40,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0a4` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `spat` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.0a4` | {{< bg "18" "spat_18" "red" >}} {{< bg "17" "spat_17" "green" >}} {{< bg "16" "spat_16" "red" >}} {{< bg "15" "spat_15" "red" >}} {{< bg "14" "spat_14" "red" >}} | `spat_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0a4` | {{< bg "18" "postgresql-18-spat" "red" >}} {{< bg "17" "postgresql-17-spat" "green" >}} {{< bg "16" "postgresql-16-spat" "red" >}} {{< bg "15" "postgresql-15-spat" "red" >}} {{< bg "14" "postgresql-14-spat" "red" >}} | `postgresql-$v-spat` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -59,7 +61,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 | {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -79,7 +81,7 @@ page_width: full
 | `postgresql-17-spat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-spat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.6 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-spat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

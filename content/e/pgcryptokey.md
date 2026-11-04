@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **7320** | {{< badge content="pgcryptokey" link="https://momjian.us/download/pgcryptokey/" >}} | {{< ext "pgcryptokey" >}} | `0.85` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.85` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgcryptokey` | `pgcrypto` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.85` | {{< bg "18" "pgcryptokey_18" "green" >}} {{< bg "17" "pgcryptokey_17" "green" >}} {{< bg "16" "pgcryptokey_16" "green" >}} {{< bg "15" "pgcryptokey_15" "green" >}} {{< bg "14" "pgcryptokey_14" "green" >}} | `pgcryptokey_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.85` | {{< bg "18" "postgresql-18-pgcryptokey" "green" >}} {{< bg "17" "postgresql-17-pgcryptokey" "green" >}} {{< bg "16" "postgresql-16-pgcryptokey" "green" >}} {{< bg "15" "postgresql-15-pgcryptokey" "green" >}} {{< bg "14" "postgresql-14-pgcryptokey" "green" >}} | `postgresql-$v-pgcryptokey` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.85" "postgresql-18-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-17-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-16-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-15-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-14-pgcryptokey : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.85" "postgresql-18-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-17-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-16-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-15-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-14-pgcryptokey : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.85" "postgresql-18-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-17-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-16-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-15-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-14-pgcryptokey : AVAIL 1" "green" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-18-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-18-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgcryptokey` | `0.85` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.6 KiB | [postgresql-18-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-18-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgcryptokey` | `0.85` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.5 KiB | [postgresql-18-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-18-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -118,7 +120,7 @@ page_width: full
 | `postgresql-17-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-17-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-17-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgcryptokey` | `0.85` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.6 KiB | [postgresql-17-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-17-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgcryptokey` | `0.85` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.5 KiB | [postgresql-17-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-17-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -151,7 +153,7 @@ page_width: full
 | `postgresql-16-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-16-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-16-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgcryptokey` | `0.85` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.6 KiB | [postgresql-16-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-16-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgcryptokey` | `0.85` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.5 KiB | [postgresql-16-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-16-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -184,7 +186,7 @@ page_width: full
 | `postgresql-15-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-15-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-15-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgcryptokey` | `0.85` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.6 KiB | [postgresql-15-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-15-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgcryptokey` | `0.85` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.5 KiB | [postgresql-15-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-15-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -216,7 +218,7 @@ page_width: full
 | `postgresql-14-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-14-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-14-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgcryptokey` | `0.85` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.6 KiB | [postgresql-14-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-14-pgcryptokey_0.85-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgcryptokey` | `0.85` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.5 KiB | [postgresql-14-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgcryptokey/postgresql-14-pgcryptokey_0.85-1PIGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

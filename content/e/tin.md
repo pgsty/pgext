@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **2310** | {{< badge content="tin" link="https://github.com/planetscale/lead" >}} | {{< ext "tin" "lead" >}} | `1.0.6` | {{< category "FTS" >}} | {{< license "AGPL-3.0-or-later" >}} | {{< language "Rust" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -40,7 +42,7 @@ page_width: full
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `lead` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "lead_18" "green" >}} {{< bg "17" "lead_17" "green" >}} {{< bg "16" "lead_16" "red" >}} {{< bg "15" "lead_15" "red" >}} {{< bg "14" "lead_14" "red" >}} | `lead_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "postgresql-18-lead" "green" >}} {{< bg "17" "postgresql-17-lead" "green" >}} {{< bg "16" "postgresql-16-lead" "red" >}} {{< bg "15" "postgresql-15-lead" "red" >}} {{< bg "14" "postgresql-14-lead" "red" >}} | `postgresql-$v-lead` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -61,7 +63,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.6" "postgresql-18-lead : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.6" "postgresql-17-lead : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-lead : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-lead : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-lead : N/A 0" "gray" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.6" "postgresql-18-lead : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.6" "postgresql-17-lead : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-lead : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-lead : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-lead : N/A 0" "gray" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.6" "postgresql-18-lead : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.6" "postgresql-17-lead : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-lead : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-lead : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-lead : N/A 0" "gray" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -85,7 +87,7 @@ page_width: full
 | `postgresql-18-lead` | `1.0.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.1 MiB | [postgresql-18-lead_1.0.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lead/postgresql-18-lead_1.0.6-1PGSTY~noble_arm64.deb) |
 | `postgresql-18-lead` | `1.0.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.1 MiB | [postgresql-18-lead_1.0.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lead/postgresql-18-lead_1.0.6-1PGSTY~resolute_amd64.deb) |
 | `postgresql-18-lead` | `1.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-18-lead_1.0.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lead/postgresql-18-lead_1.0.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -108,7 +110,7 @@ page_width: full
 | `postgresql-17-lead` | `1.0.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.0 MiB | [postgresql-17-lead_1.0.6-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lead/postgresql-17-lead_1.0.6-1PGSTY~noble_arm64.deb) |
 | `postgresql-17-lead` | `1.0.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 2.1 MiB | [postgresql-17-lead_1.0.6-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lead/postgresql-17-lead_1.0.6-1PGSTY~resolute_amd64.deb) |
 | `postgresql-17-lead` | `1.0.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 2.0 MiB | [postgresql-17-lead_1.0.6-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lead/postgresql-17-lead_1.0.6-1PGSTY~resolute_arm64.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 

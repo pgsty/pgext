@@ -18,11 +18,13 @@ page_width: full
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
 | **3200** | {{< badge content="pgtap" link="https://github.com/theory/pgtap" >}} | {{< ext "pgtap" >}} | `1.3.4` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+{.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+{.wide .expand}
 
 
 | **Relationships** |   |
@@ -39,7 +41,7 @@ page_width: full
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgtap` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "pgtap_18" "green" >}} {{< bg "17" "pgtap_17" "green" >}} {{< bg "16" "pgtap_16" "green" >}} {{< bg "15" "pgtap_15" "green" >}} {{< bg "14" "pgtap_14" "green" >}} | `pgtap_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "postgresql-18-pgtap" "green" >}} {{< bg "17" "postgresql-17-pgtap" "green" >}} {{< bg "16" "postgresql-16-pgtap" "green" >}} {{< bg "15" "postgresql-15-pgtap" "green" >}} {{< bg "14" "postgresql-14-pgtap" "green" >}} | `postgresql-$v-pgtap` | - |
-{.packages}
+{.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -60,7 +62,7 @@ page_width: full
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3.4" "postgresql-18-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-17-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-16-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-15-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-14-pgtap : AVAIL 1" "blue" >}} |
 | {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3.4" "postgresql-18-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-17-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-16-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-15-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-14-pgtap : AVAIL 1" "blue" >}} |
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3.4" "postgresql-18-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-17-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-16-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-15-pgtap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.4" "postgresql-14-pgtap : AVAIL 1" "blue" >}} |
-{.matrix}
+{.matrix .wide .expand}
 
 
 {{< tabs group="pgmajor" >}}
@@ -94,7 +96,7 @@ page_width: full
 | `postgresql-18-pgtap` | `1.3.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.9 KiB | [postgresql-18-pgtap_1.3.4-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-18-pgtap_1.3.4-1.pgdg24.04+1_all.deb) |
 | `postgresql-18-pgtap` | `1.3.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-18-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-18-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
 | `postgresql-18-pgtap` | `1.3.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.9 KiB | [postgresql-18-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-18-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG17" value="pg17" >}}
@@ -126,7 +128,7 @@ page_width: full
 | `postgresql-17-pgtap` | `1.3.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.9 KiB | [postgresql-17-pgtap_1.3.4-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-17-pgtap_1.3.4-1.pgdg24.04+1_all.deb) |
 | `postgresql-17-pgtap` | `1.3.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-17-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-17-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
 | `postgresql-17-pgtap` | `1.3.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.9 KiB | [postgresql-17-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-17-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG16" value="pg16" >}}
@@ -159,7 +161,7 @@ page_width: full
 | `postgresql-16-pgtap` | `1.3.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.9 KiB | [postgresql-16-pgtap_1.3.4-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-16-pgtap_1.3.4-1.pgdg24.04+1_all.deb) |
 | `postgresql-16-pgtap` | `1.3.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-16-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-16-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
 | `postgresql-16-pgtap` | `1.3.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.9 KiB | [postgresql-16-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-16-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG15" value="pg15" >}}
@@ -193,7 +195,7 @@ page_width: full
 | `postgresql-15-pgtap` | `1.3.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.9 KiB | [postgresql-15-pgtap_1.3.4-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-15-pgtap_1.3.4-1.pgdg24.04+1_all.deb) |
 | `postgresql-15-pgtap` | `1.3.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-15-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-15-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
 | `postgresql-15-pgtap` | `1.3.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.9 KiB | [postgresql-15-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-15-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}
 {{< tab label="PG14" value="pg14" >}}
@@ -228,7 +230,7 @@ page_width: full
 | `postgresql-14-pgtap` | `1.3.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.9 KiB | [postgresql-14-pgtap_1.3.4-1.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-14-pgtap_1.3.4-1.pgdg24.04+1_all.deb) |
 | `postgresql-14-pgtap` | `1.3.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-14-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-14-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
 | `postgresql-14-pgtap` | `1.3.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.9 KiB | [postgresql-14-pgtap_1.3.4-1.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtap/postgresql-14-pgtap_1.3.4-1.pgdg26.04+1_all.deb) |
-{.downloads}
+{.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
 
