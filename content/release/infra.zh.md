@@ -6,6 +6,46 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-04
+
+本地构建批次：8 个软件包完成 amd64/arm64 双架构构建，共生成 32 个制品（16 个 DEB、16 个 RPM）。下载使用 `8888` Xray 代理，15 个上游二进制输入按官方 SHA256 校验值核验。pgbackrest-exporter 0.25.0 尚无二进制附件，使用固定提交的源码和 vendor 依赖，以 Go 1.27.3 离线构建，独立重建得到相同二进制。本批次尚未导入 APT/YUM 仓库，也未在线发布。
+
+| 名称                       | 旧版本  | 新版本  | 备注                                                    |
+| :------------------------- | :------ | :------ | :------------------------------------------------------ |
+| caddy                      | 2.11.7  | 2.11.8  | 安全与配置修复；已验证包内默认 Caddyfile                |
+| claude                     | 2.1.317 | 2.1.318 | 官方 manifest 与双架构 Linux 版本核验                   |
+| code                       | 1.144.1 | 1.145.0 | 保留上游原生 DEB/RPM 字节                               |
+| dblab                      | 0.54.0  | 0.55.0  | 改进表格单元格宽度与文本查看                            |
+| grafana-victoriametrics-ds | 1.0.0   | 1.0.1   | 编辑器设置隔离；vmui 校验；错误信息脱敏                 |
+| pgbackrest-exporter        | 0.24.0  | 0.25.0  | 固定提交源码与 vendor 依赖构建；二进制可复现            |
+| redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES 可选指标；支持排除慢日志与命令日志指标 |
+| stalwart                   | 1.0.2   | 1.0.3   | 新增 OAuth scope、角色权限更新与 blob 存储功能          |
+{.wide .expand}
+
+`grafana-victoriametrics-ds` 1.0.1 保持 1.0.0 的插件身份和 Grafana 依赖要求。[**上游发布**](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.1) 隔离查询编辑器的浏览器设置，拒绝空或无效的 `vmui` 请求，在错误信息中隐藏敏感请求 URL，并更新 `golang.org/x/net`。两个架构均通过 Grafana 13.3.0 + VictoriaMetrics 1.155.0 实际升级测试，涵盖数据源身份、POST 请求体、长查询、异常 `vmui` 请求及查询错误脱敏。编辑器与 WITH 模板的交互界面尚未进行浏览器验收。
+
+[**Caddy 2.11.8**](https://github.com/caddyserver/caddy/releases/tag/v2.11.8) 包含更严格的 Host 与配置校验、更早的请求大小拒绝，以及 PHP／文件匹配行为变更。包内默认 Caddyfile 已通过双架构校验；自定义配置需要单独验证。
+
+[**Stalwart 1.0.3**](https://github.com/stalwartlabs/stalwart/releases/tag/v1.0.3) 为第三方应用管理安全与账户设置引入新的 OAuth scope。已有实例可在一次启动中设置 `STALWART_UPDATE_ROLE_PERMISSIONS=true`，为默认角色补入新权限，随后移除该变量。WebUI 无需调整 OAuth scope；从 0.16.x 升级到 1.0 的既有迁移要求仍然适用。
+
+本次扫描覆盖 99 个配方。`barn` 在现有预发布频道保持 0.9.3；`codex` 保持 0.166.0，上游标签为 `rust-v0.166.0`。`sealos` 继续锁定 5.0.1；保留按版本固定的 cargo-pgrx 快照、人工维护的 grafana-plugins 插件集与已终止维护的 Promtail。
+
+## 2026-11-03
+
+本地构建批次：6 个软件包通过 `8888` Xray 代理下载，按上游 SHA256 校验值核验，完成 amd64/arm64 双架构构建，共生成 24 个制品：12 个 DEB 和 12 个 RPM。VS Code 保留上游原生软件包字节。本批次尚未导入 APT/YUM 仓库，也未在线发布；`sealos` 继续锁定 `5.0.1`。
+
+| 名称                       | 旧版本  | 新版本  | 备注                                        |
+| :------------------------- | :------ | :------ | :------------------------------------------ |
+| claude                     | 2.1.316 | 2.1.317 | 官方 manifest 与双架构 Linux 二进制版本核验 |
+| code                       | 1.143.1 | 1.144.1 | 保留上游原生 DEB/RPM 字节                   |
+| grafana-victoriametrics-ds | 0.26.1  | 1.0.0   | POST/WITH 修复；依赖不变；双架构运行验证    |
+| seaweedfs                  | 4.51    | 4.52    | RPM/DEB 版本规范为 4.52.0                   |
+| stalwart                   | 1.0.1   | 1.0.2   | 双架构 RPM/DEB                              |
+| uv                         | 0.13.6  | 0.13.7  | 双架构 RPM/DEB                              |
+{.wide .expand}
+
+`grafana-victoriametrics-ds` 1.0.0 沿用 0.26.1 的插件 ID、安装路径和 Grafana 版本要求。本次 [**上游发布**](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.0) 修复 POST 请求体与 WITH 模板处理。两个架构均通过 Grafana 13.3.0 + VictoriaMetrics 1.155.0 后端/API 升级测试，包括数据源身份保留，以及经过 URL 长度限制为 4,096 字节的代理执行长 POST 查询。仍需沿用现有 unsigned 插件白名单；WITH 模板的交互界面未进行浏览器验收。
+
 ## 2026-11-01
 
 本地构建批次：10 个软件包通过 `8888` Xray 代理下载，按上游校验值核验后完成双架构 RPM/DEB 构建，并已导入本地 APT/YUM 仓库，共生成 40 个制品。在线发布仍待后续处理；`sealos` 继续锁定 `5.0.1`，`promtail` 和 `pgbackrest-exporter` 暂缓更新。

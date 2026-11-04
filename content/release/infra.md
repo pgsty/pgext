@@ -6,6 +6,46 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-04
+
+Local build batch: eight packages produce 32 artifacts for amd64 and arm64 (16 DEB and 16 RPM). Downloads use the port `8888` Xray proxy. Fifteen upstream binary inputs were checked against official SHA256 values. Since pgbackrest-exporter 0.25.0 has no binary release assets, its pinned source and vendor dependencies were built offline with Go 1.27.3; independent rebuilds produced identical binaries. This batch has not been imported into APT/YUM repositories or published online.
+
+| Name                       | Old     | New     | Comment                                                             |
+| :------------------------- | :------ | :------ | :------------------------------------------------------------------ |
+| caddy                      | 2.11.7  | 2.11.8  | Security and configuration fixes; bundled Caddyfile validated       |
+| claude                     | 2.1.317 | 2.1.318 | Official manifest and both Linux binary versions verified           |
+| code                       | 1.144.1 | 1.145.0 | Upstream native DEB/RPM bytes preserved                             |
+| dblab                      | 0.54.0  | 0.55.0  | Table-cell sizing and text inspection improvements                  |
+| grafana-victoriametrics-ds | 1.0.0   | 1.0.1   | Isolated editor settings; vmui validation; redacted errors          |
+| pgbackrest-exporter        | 0.24.0  | 0.25.0  | Pinned source build with vendor dependencies; reproducible binaries |
+| redis-exporter             | 1.96.0  | 1.97.0  | Opt-in Redis 8 KEYSIZES; slowlog/commandlog exclusion options       |
+| stalwart                   | 1.0.2   | 1.0.3   | OAuth scopes, role-permission updates and blob storage features     |
+{.wide .expand}
+
+`grafana-victoriametrics-ds` 1.0.1 preserves the 1.0.0 plugin identity and Grafana constraints. The [release](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.1) isolates query-editor browser settings, rejects empty or invalid `vmui` requests, redacts sensitive request URLs from errors, and updates `golang.org/x/net`. Both architectures passed real Grafana 13.3.0 + VictoriaMetrics 1.155.0 upgrade tests, including datasource identity, POST request bodies, long queries, malformed `vmui` requests and query-error redaction. Interactive editor and WITH-template UI behavior has not been browser-tested.
+
+[Caddy 2.11.8](https://github.com/caddyserver/caddy/releases/tag/v2.11.8) includes stricter host/configuration validation, earlier request-size rejection, and PHP/file-matching behavior changes. The packaged default Caddyfile passed validation on both architectures; custom configurations need their own validation.
+
+[Stalwart 1.0.3](https://github.com/stalwartlabs/stalwart/releases/tag/v1.0.3) introduces OAuth scopes for third-party apps to manage security and account settings. Upgraded installations can add the new permissions to default roles by starting once with `STALWART_UPDATE_ROLE_PERMISSIONS=true`, then removing the variable. The WebUI needs no OAuth-scope changes. Existing 0.16.x-to-1.0 migration requirements still apply.
+
+The scan covered 99 recipes. `barn` remains at 0.9.3 on its existing prerelease channel; `codex` remains at 0.166.0 (`rust-v0.166.0` is the upstream tag). `sealos` stays pinned at 5.0.1. Versioned cargo-pgrx snapshots, the curated grafana-plugins bundle, and the retired Promtail package are retained.
+
+## 2026-11-03
+
+Local build batch: six packages were downloaded through the port `8888` Xray proxy and verified against upstream SHA256 checksums. The batch produces 24 artifacts for amd64 and arm64: 12 DEB and 12 RPM. VS Code retains the upstream native package bytes. This batch has not been imported into the APT/YUM repositories or published online. `sealos` remains pinned at `5.0.1`.
+
+| Name                       | Old     | New     | Comment                                                            |
+| :------------------------- | :------ | :------ | :----------------------------------------------------------------- |
+| claude                     | 2.1.316 | 2.1.317 | Official manifest and both Linux binary versions verified          |
+| code                       | 1.143.1 | 1.144.1 | Upstream native DEB/RPM bytes preserved                            |
+| grafana-victoriametrics-ds | 0.26.1  | 1.0.0   | POST/WITH fixes; unchanged requirements; both architectures tested |
+| seaweedfs                  | 4.51    | 4.52    | RPM/DEB version normalized to 4.52.0                               |
+| stalwart                   | 1.0.1   | 1.0.2   | RPM/DEB for both architectures                                     |
+| uv                         | 0.13.6  | 0.13.7  | RPM/DEB for both architectures                                     |
+{.wide .expand}
+
+`grafana-victoriametrics-ds` 1.0.0 keeps the plugin ID, install path, and Grafana requirements from 0.26.1. The [upstream release](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.0) fixes POST request bodies and WITH-template handling. Both architectures passed backend/API upgrade tests with Grafana 13.3.0 and VictoriaMetrics 1.155.0, including preserved datasource identity and long POST queries through a proxy with a 4,096-byte URL limit. The existing unsigned-plugin allowlist is still required; the interactive WITH-template UI was not exercised.
+
 ## 2026-11-01
 
 Local build batch: ten packages were downloaded through the port `8888` Xray proxy, verified against upstream digests, and built for both architectures as RPM/DEB, then imported into the local APT/YUM repositories, producing 40 artifacts. Online publication remains pending. `sealos` remains pinned at `5.0.1`; `promtail` and `pgbackrest-exporter` remain deferred.
