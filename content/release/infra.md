@@ -6,6 +6,36 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-05
+
+Ten recipes produce 40 verified packages for amd64 and arm64 (20 DEB and 20 RPM). All 31 upstream inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests. This batch is imported into the local APT/YUM repositories; package architectures, indexed checksums, APT Release/InRelease signatures, and both YUM repomd signatures passed verification. Local YUM copies are signed with the PGSTY key; cached inputs and vendor-direct `dist/` packages retain their original bytes. Online publication remains pending.
+
+| Name                | Old     | New     | Comment                                           |
+| :------------------ | :------ | :------ | :------------------------------------------------ |
+| barn                | 0.9.3   | 1.0.0   | First stable release; native packages             |
+| caddy               | 2.11.8  | 2.11.9  | PHP/FastCGI regression and security fixes         |
+| code-server         | 4.144.0 | 4.145.0 | Upstream native DEB/RPM packages                  |
+| dblab               | 0.55.0  | 0.55.1  | Patch release; both architectures verified        |
+| grafana-infinity-ds | 4.1.5   | 4.1.6   | Signed plugin; csv-parse and gRPC fixes           |
+| k3s                 | 1.37.1  | 1.37.2  | Upstream v1.37.2+k3s1; corrected metadata, 2PGSTY |
+| k3s-images          | 1.37.1  | 1.37.2  | Air-gap images pinned to k3s 1.37.2-2PGSTY        |
+| opentofu            | 1.13.2  | 1.13.8  | Restores -v; state encryption panic fix           |
+| silo-console        | 2.5.1   | 2.6.0   | Usage scans and optional PostgreSQL worker        |
+| victoria-traces     | 0.12.1  | 0.13.0  | OTLP gRPC TLS default changes; healthcheck flag   |
+{.wide .expand}
+
+[Barn 1.0.0](https://github.com/pgsty/barn/releases/tag/v1.0.0) is the first stable release and reads 0.9.3 state without recreating VMs. Catalog signature/revision integrity failures now exit with code `7`. Whole-deployment `recreate` refuses an inventory that omits existing nodes and exits with code `4`; terminal host preparation and purge have additional confirmations. Both architectures passed version/help/JSON checks; destructive VM operations were not exercised.
+
+[Infinity 4.1.6](https://github.com/grafana/grafana-infinity-datasource/releases/tag/v4.1.6) updates csv-parse to 7.0.2 and gRPC to 1.85.0, fixing a security issue and plugin connection freezes under heavy query load. RPM/DEB dependencies now follow the plugin's Grafana compatibility range: `11.6.11 <= v < 12`, `12.0.10 <= v < 12.1`, `12.1.7 <= v < 12.2`, or `v >= 12.2.5`. The complete official ZIP tree is preserved. Grafana 13.3.0 reported a valid signature and a successful backend JSON query on both architectures.
+
+[Caddy 2.11.9](https://github.com/caddyserver/caddy/releases/tag/v2.11.9) fixes the 2.11.8 PHP directory-index/trailing-slash regression and a FastCGI security issue. The packaged default Caddyfile passed validation on both architectures. [OpenTofu 1.13.8](https://github.com/opentofu/opentofu/releases/tag/v1.13.8) restores `-v` and fixes a panic with invalid state encryption configuration.
+
+[SILO Console 2.6.0](https://github.com/pgsty/silo-console/releases/tag/v2.6.0) adds usage scans and an optional durable PostgreSQL usage worker, with administration validation and security fixes. Installing this standalone console does not replace the 2.5.1 frontend embedded in SILO Server 20261026 or add newer server APIs.
+
+[VictoriaTraces 0.13.0](https://github.com/VictoriaMetrics/VictoriaTraces/releases/tag/v0.13.0) disables OTLP gRPC TLS by default: set `-otlpGRPC.tls` explicitly when required. Upstream vtagent now forwards OTLP/HTTP protobuf; its `-remoteWrite.url` must target `/insert/opentelemetry/v1/traces`, and `-remoteWrite.format` and its `/insert/native` endpoint are removed. This recipe packages only single-node VictoriaTraces, not vtagent. It also gains `-healthcheck` and uses Go 1.27.3.
+
+The scan covered 99 recipes with ten updates. `grafana-victoriametrics-ds` remains at 1.0.1; its 1.0 upgrade notes are retained in the November 3 and 4 entries. `sealos` remains pinned at 5.0.1. This batch supersedes the earlier Caddy and dblab builds; the other November 3 and 4 builds still await repository import.
+
 ## 2026-11-04
 
 Local build batch: eight packages produce 32 artifacts for amd64 and arm64 (16 DEB and 16 RPM). Downloads use the port `8888` Xray proxy. Fifteen upstream binary inputs were checked against official SHA256 values. Since pgbackrest-exporter 0.25.0 has no binary release assets, its pinned source and vendor dependencies were built offline with Go 1.27.3; independent rebuilds produced identical binaries. This batch has not been imported into APT/YUM repositories or published online.

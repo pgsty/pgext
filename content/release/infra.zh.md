@@ -6,6 +6,36 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-05
+
+10 个配方完成 amd64/arm64 双架构构建，共生成 40 个验证通过的软件包（20 个 DEB、20 个 RPM）。31 个上游输入均通过 `8888` Xray 代理下载，并按官方 SHA256 摘要校验。本批次已导入本地 APT/YUM 仓库；包架构、索引校验值、APT Release/InRelease 签名及两个 YUM repomd 签名均通过验证。本地 YUM 副本使用 PGSTY 密钥签名；缓存输入与 `dist/` 中的上游原生包保留原始字节。在线发布仍待后续处理。
+
+| 名称                | 旧版本  | 新版本  | 备注                                      |
+| :------------------ | :------ | :------ | :---------------------------------------- |
+| barn                | 0.9.3   | 1.0.0   | 首个稳定版；使用上游原生包                |
+| caddy               | 2.11.8  | 2.11.9  | PHP/FastCGI 回归与安全修复                |
+| code-server         | 4.144.0 | 4.145.0 | 使用上游原生 DEB/RPM 包                   |
+| dblab               | 0.55.0  | 0.55.1  | 补丁版本；已验证双架构                    |
+| grafana-infinity-ds | 4.1.5   | 4.1.6   | 保留插件签名；修复 csv-parse 与 gRPC 问题 |
+| k3s                 | 1.37.1  | 1.37.2  | 上游 v1.37.2+k3s1；修正元数据，2PGSTY     |
+| k3s-images          | 1.37.1  | 1.37.2  | 离线镜像精确依赖 k3s 1.37.2-2PGSTY        |
+| opentofu            | 1.13.2  | 1.13.8  | 恢复 -v；修复状态加密配置导致的崩溃       |
+| silo-console        | 2.5.1   | 2.6.0   | 用量扫描与可选 PostgreSQL 工作进程        |
+| victoria-traces     | 0.12.1  | 0.13.0  | OTLP gRPC TLS 默认值变更；新增健康检查    |
+{.wide .expand}
+
+[**Barn 1.0.0**](https://github.com/pgsty/barn/releases/tag/v1.0.0) 是首个稳定版本，可直接读取 0.9.3 状态，无需重建虚拟机。目录签名或签名修订完整性错误改为退出码 `7`。整组 `recreate` 在清单遗漏已有节点时拒绝执行并返回退出码 `4`；交互终端下的宿主机准备与 purge 增加确认步骤。双架构已验证版本、帮助与 JSON 输出，未执行破坏性虚拟机操作。
+
+[**Infinity 4.1.6**](https://github.com/grafana/grafana-infinity-datasource/releases/tag/v4.1.6) 将 csv-parse 更新为 7.0.2、gRPC 更新为 1.85.0，修复安全问题与高查询负载下的插件连接冻结。RPM/DEB 依赖现与插件的 Grafana 兼容范围一致：`11.6.11 <= v < 12`、`12.0.10 <= v < 12.1`、`12.1.7 <= v < 12.2` 或 `v >= 12.2.5`。保留完整官方 ZIP 文件树，两个架构均在 Grafana 13.3.0 中通过签名有效性与后端 JSON 查询验证。
+
+[**Caddy 2.11.9**](https://github.com/caddyserver/caddy/releases/tag/v2.11.9) 修复 2.11.8 的 PHP 目录首页／尾斜杠回归与 FastCGI 安全问题，包内默认 Caddyfile 通过双架构校验。[**OpenTofu 1.13.8**](https://github.com/opentofu/opentofu/releases/tag/v1.13.8) 恢复 `-v`，并修复无效状态加密配置导致的崩溃。
+
+[**SILO Console 2.6.0**](https://github.com/pgsty/silo-console/releases/tag/v2.6.0) 新增用量扫描与可选的持久化 PostgreSQL 用量工作进程，并改进管理操作校验与安全性。安装此独立控制台不会替换 SILO Server 20261026 内嵌的 2.5.1 前端，也不会为旧服务端增加新 API。
+
+[**VictoriaTraces 0.13.0**](https://github.com/VictoriaMetrics/VictoriaTraces/releases/tag/v0.13.0) 默认关闭 OTLP gRPC TLS，需要时必须显式设置 `-otlpGRPC.tls`。上游 vtagent 改为转发 OTLP/HTTP protobuf，`-remoteWrite.url` 须指向 `/insert/opentelemetry/v1/traces`，并移除 `-remoteWrite.format` 与 vtagent 的 `/insert/native` 端点。本配方仅打包单机版 VictoriaTraces，不包含 vtagent；另新增 `-healthcheck`，构建工具链更新为 Go 1.27.3。
+
+本次扫描覆盖 99 个配方，发现 10 项更新。`grafana-victoriametrics-ds` 保持 1.0.1，1.0 大版本升级说明保留在 11 月 3 日和 4 日条目中；`sealos` 继续锁定 5.0.1。本批次取代此前的 Caddy 与 dblab 构建，11 月 3 日和 4 日的其余构建仍待入库。
+
 ## 2026-11-04
 
 本地构建批次：8 个软件包完成 amd64/arm64 双架构构建，共生成 32 个制品（16 个 DEB、16 个 RPM）。下载使用 `8888` Xray 代理，15 个上游二进制输入按官方 SHA256 校验值核验。pgbackrest-exporter 0.25.0 尚无二进制附件，使用固定提交的源码和 vendor 依赖，以 Go 1.27.3 离线构建，独立重建得到相同二进制。本批次尚未导入 APT/YUM 仓库，也未在线发布。
