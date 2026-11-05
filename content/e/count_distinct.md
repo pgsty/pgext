@@ -39,7 +39,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `count_distinct` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "count_distinct_18" "green" >}} {{< bg "17" "count_distinct_17" "green" >}} {{< bg "16" "count_distinct_16" "green" >}} {{< bg "15" "count_distinct_15" "green" >}} {{< bg "14" "count_distinct_14" "green" >}} | `count_distinct_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.0.2` | {{< bg "18" "count_distinct_18" "green" >}} {{< bg "17" "count_distinct_17" "green" >}} {{< bg "16" "count_distinct_16" "green" >}} {{< bg "15" "count_distinct_15" "green" >}} {{< bg "14" "count_distinct_14" "green" >}} | `count_distinct_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0.2` | {{< bg "18" "postgresql-18-count-distinct" "green" >}} {{< bg "17" "postgresql-17-count-distinct" "green" >}} {{< bg "16" "postgresql-16-count-distinct" "green" >}} {{< bg "15" "postgresql-15-count-distinct" "green" >}} {{< bg "14" "postgresql-14-count-distinct" "green" >}} | `postgresql-$v-count-distinct` | - |
 {.packages .wide .expand}
 

@@ -209,7 +209,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2765 | {{< alias "is_jsonb_valid" >}} | 0.1.4 | Native JSONB validation against JSON Schema drafts 4 and 7 |
 | 2770 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |
 | 2780 | {{< alias "pg_hint_plan" >}} | 1.8.1 | Give PostgreSQL ability to manually force some decisions in execution plans. |
-| 2790 | {{< alias "hypopg" >}} | 1.4.4 | Hypothetical indexes for PostgreSQL |
+| 2790 | {{< alias "hypopg" >}} | 1.4.5 | Hypothetical indexes for PostgreSQL |
 | 2800 | {{< alias "index_advisor" >}} | 0.2.1 | Query index advisor |
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | Cooperative statement and transaction guards based on estimated plan cost |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
@@ -639,7 +639,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | Advanced password hashing methods for PostgreSQL |
 | 7360 | {{< alias "login_hook" >}} | 1.8 | login_hook - hook to execute login_hook.login() at login time |
-| 7370 | {{< alias "set_user" >}} | 4.2.0 | similar to SET ROLE but with added logging |
+| 7370 | {{< alias "set_user" >}} | 4.3.0 | similar to SET ROLE but with added logging |
 | 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | The PostgreSQL Antivirus |
 | 7390 | {{< alias "pgextwlist" >}} | 1.20 | PostgreSQL Extension Whitelisting |
 | 7400 | {{< alias "pg_command_fw" >}} | 0.1.0 | DDL and utility command firewall for PostgreSQL |

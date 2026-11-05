@@ -39,8 +39,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.26.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `timescaledb_toolkit` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.26.0` | {{< bg "18" "timescaledb-toolkit_18" "green" >}} {{< bg "17" "timescaledb-toolkit_17" "green" >}} {{< bg "16" "timescaledb-toolkit_16" "green" >}} {{< bg "15" "timescaledb-toolkit_15" "green" >}} {{< bg "14" "timescaledb-toolkit_14" "red" >}} | `timescaledb-toolkit_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.26.0` | {{< bg "18" "postgresql-18-timescaledb-toolkit" "green" >}} {{< bg "17" "postgresql-17-timescaledb-toolkit" "green" >}} {{< bg "16" "postgresql-16-timescaledb-toolkit" "green" >}} {{< bg "15" "postgresql-15-timescaledb-toolkit" "green" >}} {{< bg "14" "postgresql-14-timescaledb-toolkit" "green" >}} | `postgresql-$v-timescaledb-toolkit` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.23.0` | {{< bg "18" "timescaledb-toolkit_18" "green" >}} {{< bg "17" "timescaledb-toolkit_17" "green" >}} {{< bg "16" "timescaledb-toolkit_16" "green" >}} {{< bg "15" "timescaledb-toolkit_15" "green" >}} {{< bg "14" "timescaledb-toolkit_14" "red" >}} | `timescaledb-toolkit_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.23.0` | {{< bg "18" "postgresql-18-timescaledb-toolkit" "green" >}} {{< bg "17" "postgresql-17-timescaledb-toolkit" "green" >}} {{< bg "16" "postgresql-16-timescaledb-toolkit" "green" >}} {{< bg "15" "postgresql-15-timescaledb-toolkit" "green" >}} {{< bg "14" "postgresql-14-timescaledb-toolkit" "green" >}} | `postgresql-$v-timescaledb-toolkit` | - |
 {.packages .wide .expand}
 
 

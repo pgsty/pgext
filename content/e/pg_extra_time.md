@@ -39,7 +39,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_extra_time` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "18" "pg_extra_time_18" "green" >}} {{< bg "17" "pg_extra_time_17" "green" >}} {{< bg "16" "pg_extra_time_16" "green" >}} {{< bg "15" "pg_extra_time_15" "green" >}} {{< bg "14" "pg_extra_time_14" "green" >}} | `pg_extra_time_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.0` | {{< bg "18" "pg_extra_time_18" "green" >}} {{< bg "17" "pg_extra_time_17" "green" >}} {{< bg "16" "pg_extra_time_16" "green" >}} {{< bg "15" "pg_extra_time_15" "green" >}} {{< bg "14" "pg_extra_time_14" "green" >}} | `pg_extra_time_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.0` | {{< bg "18" "postgresql-18-pg-extra-time" "green" >}} {{< bg "17" "postgresql-17-pg-extra-time" "green" >}} {{< bg "16" "postgresql-16-pg-extra-time" "green" >}} {{< bg "15" "postgresql-15-pg-extra-time" "green" >}} {{< bg "14" "postgresql-14-pg-extra-time" "green" >}} | `postgresql-$v-pg-extra-time` | - |
 {.packages .wide .expand}
 

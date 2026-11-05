@@ -33,7 +33,7 @@ page_width: full
 |   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "columnar" >}} {{< ext "storage_engine" >}} {{< ext "orioledb" >}} {{< ext "pg_sorted_heap" >}} |
 |    **Siblings**   | {{< ext "citus" >}} |
 
-> [!Note] Packaged with Citus 14.3.0 / SQL 14.3-1 for PG16-18. citus_columnar needs no preload; conflicts with Hydra Columnar.
+> [!Note] SQL 14.3-1; no preload; conflicts with Hydra Columnar.
 
 
 ## Packages

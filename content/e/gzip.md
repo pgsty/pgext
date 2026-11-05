@@ -40,7 +40,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_gzip` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.1` | {{< bg "18" "pgsql_gzip_18" "green" >}} {{< bg "17" "pgsql_gzip_17" "green" >}} {{< bg "16" "pgsql_gzip_16" "green" >}} {{< bg "15" "pgsql_gzip_15" "green" >}} {{< bg "14" "pgsql_gzip_14" "green" >}} | `pgsql_gzip_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-gzip" "green" >}} {{< bg "17" "postgresql-17-gzip" "green" >}} {{< bg "16" "postgresql-16-gzip" "green" >}} {{< bg "15" "postgresql-15-gzip" "green" >}} {{< bg "14" "postgresql-14-gzip" "green" >}} | `postgresql-$v-gzip` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-gzip" "green" >}} {{< bg "17" "postgresql-17-gzip" "green" >}} {{< bg "16" "postgresql-16-gzip" "green" >}} {{< bg "15" "postgresql-15-gzip" "green" >}} {{< bg "14" "postgresql-14-gzip" "green" >}} | `postgresql-$v-gzip` | - |
 {.packages .wide .expand}
 
 

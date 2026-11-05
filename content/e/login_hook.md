@@ -41,7 +41,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `login_hook` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.8` | {{< bg "18" "login_hook_18" "green" >}} {{< bg "17" "login_hook_17" "green" >}} {{< bg "16" "login_hook_16" "green" >}} {{< bg "15" "login_hook_15" "green" >}} {{< bg "14" "login_hook_14" "green" >}} | `login_hook_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8` | {{< bg "18" "postgresql-18-login-hook" "green" >}} {{< bg "17" "postgresql-17-login-hook" "green" >}} {{< bg "16" "postgresql-16-login-hook" "green" >}} {{< bg "15" "postgresql-15-login-hook" "green" >}} {{< bg "14" "postgresql-14-login-hook" "green" >}} | `postgresql-$v-login-hook` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "postgresql-18-login-hook" "green" >}} {{< bg "17" "postgresql-17-login-hook" "green" >}} {{< bg "16" "postgresql-16-login-hook" "green" >}} {{< bg "15" "postgresql-15-login-hook" "green" >}} {{< bg "14" "postgresql-14-login-hook" "green" >}} | `postgresql-$v-login-hook` | - |
 {.packages .wide .expand}
 
 

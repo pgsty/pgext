@@ -39,8 +39,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_local_cache` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "pg_local_cache_18" "green" >}} {{< bg "17" "pg_local_cache_17" "green" >}} {{< bg "16" "pg_local_cache_16" "green" >}} {{< bg "15" "pg_local_cache_15" "green" >}} {{< bg "14" "pg_local_cache_14" "green" >}} | `pg_local_cache_$v` | `openssl-libs` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.0` | {{< bg "18" "postgresql-18-pg-local-cache" "green" >}} {{< bg "17" "postgresql-17-pg-local-cache" "green" >}} {{< bg "16" "postgresql-16-pg-local-cache" "green" >}} {{< bg "15" "postgresql-15-pg-local-cache" "green" >}} {{< bg "14" "postgresql-14-pg-local-cache" "green" >}} | `postgresql-$v-pg-local-cache` | `libssl3 | libssl3t64` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "pg_local_cache_18" "green" >}} {{< bg "17" "pg_local_cache_17" "green" >}} {{< bg "16" "pg_local_cache_16" "green" >}} {{< bg "15" "pg_local_cache_15" "green" >}} {{< bg "14" "pg_local_cache_14" "green" >}} | `pg_local_cache_$v` | `openssl-libs` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "postgresql-18-pg-local-cache" "green" >}} {{< bg "17" "postgresql-17-pg-local-cache" "green" >}} {{< bg "16" "postgresql-16-pg-local-cache" "green" >}} {{< bg "15" "postgresql-15-pg-local-cache" "green" >}} {{< bg "14" "postgresql-14-pg-local-cache" "green" >}} | `postgresql-$v-pg-local-cache` | `libssl3 | libssl3t64` |
 {.packages .wide .expand}
 
 

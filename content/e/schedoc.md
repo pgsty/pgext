@@ -38,8 +38,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_schedoc` | `ddl_historization` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "pg_schedoc_18" "green" >}} {{< bg "17" "pg_schedoc_17" "green" >}} {{< bg "16" "pg_schedoc_16" "green" >}} {{< bg "15" "pg_schedoc_15" "green" >}} {{< bg "14" "pg_schedoc_14" "green" >}} | `pg_schedoc_$v` | `ddl_historization_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2+git20260430.9f135c3` | {{< bg "18" "postgresql-18-pg-schedoc" "green" >}} {{< bg "17" "postgresql-17-pg-schedoc" "green" >}} {{< bg "16" "postgresql-16-pg-schedoc" "green" >}} {{< bg "15" "postgresql-15-pg-schedoc" "green" >}} {{< bg "14" "postgresql-14-pg-schedoc" "green" >}} | `postgresql-$v-pg-schedoc` | `postgresql-$v-ddl-historization` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_schedoc_18" "green" >}} {{< bg "17" "pg_schedoc_17" "green" >}} {{< bg "16" "pg_schedoc_16" "green" >}} {{< bg "15" "pg_schedoc_15" "green" >}} {{< bg "14" "pg_schedoc_14" "green" >}} | `pg_schedoc_$v` | `ddl_historization_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-schedoc" "green" >}} {{< bg "17" "postgresql-17-pg-schedoc" "green" >}} {{< bg "16" "postgresql-16-pg-schedoc" "green" >}} {{< bg "15" "postgresql-15-pg-schedoc" "green" >}} {{< bg "14" "postgresql-14-pg-schedoc" "green" >}} | `postgresql-$v-pg-schedoc` | `postgresql-$v-ddl-historization` |
 {.packages .wide .expand}
 
 

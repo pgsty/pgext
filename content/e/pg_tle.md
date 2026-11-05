@@ -32,7 +32,7 @@ page_width: full
 |    **Schemas**    | `pgtle` |
 |   **See Also**    | {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "pgwasm" >}} {{< ext "pllua" >}} {{< ext "pg_extension_base" >}} {{< ext "pgextwlist" >}} {{< ext "pg_readme" >}} |
 
-> [!Note] PGDG 1.5.3 on EL8-10; PIGSTY 1.5.2 on D/U. Added EL10 aarch64; preload/restart; PG19 beta.
+> [!Note] Preload + restart.
 
 
 ## Packages
@@ -40,8 +40,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tle` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.3` | {{< bg "18" "pg_tle_18" "green" >}} {{< bg "17" "pg_tle_17" "green" >}} {{< bg "16" "pg_tle_16" "green" >}} {{< bg "15" "pg_tle_15" "green" >}} {{< bg "14" "pg_tle_14" "green" >}} | `pg_tle_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.3` | {{< bg "18" "postgresql-18-pg-tle" "green" >}} {{< bg "17" "postgresql-17-pg-tle" "green" >}} {{< bg "16" "postgresql-16-pg-tle" "green" >}} {{< bg "15" "postgresql-15-pg-tle" "green" >}} {{< bg "14" "postgresql-14-pg-tle" "green" >}} | `postgresql-$v-pg-tle` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.3` | {{< bg "18" "pg_tle_18" "green" >}} {{< bg "17" "pg_tle_17" "green" >}} {{< bg "16" "pg_tle_16" "green" >}} {{< bg "15" "pg_tle_15" "green" >}} {{< bg "14" "pg_tle_14" "green" >}} | `pg_tle_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pg-tle" "green" >}} {{< bg "17" "postgresql-17-pg-tle" "green" >}} {{< bg "16" "postgresql-16-pg-tle" "green" >}} {{< bg "15" "postgresql-15-pg-tle" "green" >}} {{< bg "14" "postgresql-14-pg-tle" "green" >}} | `postgresql-$v-pg-tle` | - |
 {.packages .wide .expand}
 
 

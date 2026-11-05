@@ -31,8 +31,6 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "unit" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "seg" >}} {{< ext "cube" >}} |
 
-> [!Note] PIGSTY RPM and DEB packages are aligned at 1.0.6 for PostgreSQL 14 through 18.
-
 
 ## Packages
 
@@ -40,7 +38,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmp` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "pgmp_18" "green" >}} {{< bg "17" "pgmp_17" "green" >}} {{< bg "16" "pgmp_16" "green" >}} {{< bg "15" "pgmp_15" "green" >}} {{< bg "14" "pgmp_14" "green" >}} | `pgmp_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.6` | {{< bg "18" "postgresql-18-pgmp" "green" >}} {{< bg "17" "postgresql-17-pgmp" "green" >}} {{< bg "16" "postgresql-16-pgmp" "green" >}} {{< bg "15" "postgresql-15-pgmp" "green" >}} {{< bg "14" "postgresql-14-pgmp" "green" >}} | `postgresql-$v-pgmp` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.6` | {{< bg "18" "postgresql-18-pgmp" "green" >}} {{< bg "17" "postgresql-17-pgmp" "green" >}} {{< bg "16" "postgresql-16-pgmp" "green" >}} {{< bg "15" "postgresql-15-pgmp" "green" >}} {{< bg "14" "postgresql-14-pgmp" "green" >}} | `postgresql-$v-pgmp` | - |
 {.packages .wide .expand}
 
 

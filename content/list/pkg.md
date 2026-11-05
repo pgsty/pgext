@@ -12,9 +12,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 453 | 135 | 370 | 0 | 0 | 446 | 440 | 423 | 401 | 383 |
-| **EL** | 452 | 134 | 370 | 0 | 62 | 445 | 438 | 422 | 401 | 383 |
-| **Debian** | 446 | 95 | 351 | 0 | 68 | 439 | 433 | 417 | 397 | 381 |
+| **ALL** | 453 | 151 | 370 | 0 | 0 | 446 | 440 | 423 | 401 | 383 |
+| **EL** | 452 | 150 | 370 | 0 | 62 | 445 | 438 | 422 | 401 | 383 |
+| **Debian** | 446 | 102 | 344 | 0 | 68 | 440 | 433 | 417 | 397 | 381 |
 {.wide .expand}
 
 ## Categories
@@ -161,7 +161,7 @@ There are 453 available PostgreSQL packages:
 | {{< ext "is_jsonb_valid" >}} | `0.1.4` | {{< badge content="Link" link="https://github.com/furstenheim/is_jsonb_valid" >}} | {{< category "FEAT" >}} | `is_jsonb_valid_$v` | `postgresql-$v-is-jsonb-valid` |
 | {{< ext "jsquery" >}} | `1.2` | {{< badge content="Link" link="https://github.com/postgrespro/jsquery" >}} | {{< category "FEAT" >}} | `jsquery_$v` | `postgresql-$v-jsquery` |
 | {{< ext "pg_hint_plan" >}} | `1.8.1` | {{< badge content="Link" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< category "FEAT" >}} | `pg_hint_plan_$v` | `postgresql-$v-pg-hint-plan` |
-| {{< ext "hypopg" >}} | `1.4.4` | {{< badge content="Link" link="https://github.com/HypoPG/hypopg" >}} | {{< category "FEAT" >}} | `hypopg_$v` | `postgresql-$v-hypopg` |
+| {{< ext "hypopg" >}} | `1.4.5` | {{< badge content="Link" link="https://github.com/HypoPG/hypopg" >}} | {{< category "FEAT" >}} | `hypopg_$v` | `postgresql-$v-hypopg` |
 | {{< ext "index_advisor" >}} | `0.2.1` | {{< badge content="Link" link="https://github.com/supabase/index_advisor" >}} | {{< category "FEAT" >}} | `index_advisor_$v` | `postgresql-$v-index-advisor` |
 | {{< ext "plan_filter" "pg_plan_filter" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< category "FEAT" >}} | `pg_plan_filter_$v` | `postgresql-$v-pg-plan-filter` |
 | {{< ext "pg_variables" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/postgrespro/pg_variables" >}} | {{< category "FEAT" >}} | `pg_variables_$v` | `postgresql-$v-pg-variables` |
@@ -474,7 +474,7 @@ There are 453 available PostgreSQL packages:
 | {{< ext "pgcryptokey" >}} | `0.85` | {{< badge content="Link" link="https://momjian.us/download/pgcryptokey/" >}} | {{< category "SEC" >}} | `pgcryptokey_$v` | `postgresql-$v-pgcryptokey` |
 | {{< ext "pg_pwhash" >}} | `1.0` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/pg_pwhash" >}} | {{< category "SEC" >}} | `pg_pwhash_$v` | `postgresql-$v-pg-pwhash` |
 | {{< ext "login_hook" >}} | `1.8` | {{< badge content="Link" link="https://github.com/splendiddata/login_hook" >}} | {{< category "SEC" >}} | `login_hook_$v` | `postgresql-$v-login-hook` |
-| {{< ext "set_user" >}} | `4.2.0` | {{< badge content="Link" link="https://github.com/pgaudit/set_user" >}} | {{< category "SEC" >}} | `set_user_$v` | `postgresql-$v-set-user` |
+| {{< ext "set_user" >}} | `4.3.0` | {{< badge content="Link" link="https://github.com/pgaudit/set_user" >}} | {{< category "SEC" >}} | `set_user_$v` | `postgresql-$v-set-user` |
 | {{< ext "pg_snakeoil" >}} | `1.4` | {{< badge content="Link" link="https://github.com/credativ/pg_snakeoil" >}} | {{< category "SEC" >}} | `pg_snakeoil_$v` | `postgresql-$v-snakeoil` |
 | {{< ext "pgextwlist" >}} | `1.20` | {{< badge content="Link" link="https://github.com/dimitri/pgextwlist" >}} | {{< category "SEC" >}} | `pgextwlist_$v` | `postgresql-$v-pgextwlist` |
 | {{< ext "pg_command_fw" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/rustwizard/pg_command_fw" >}} | {{< category "SEC" >}} | `pg_command_fw_$v` | `postgresql-$v-pg-command-fw` |

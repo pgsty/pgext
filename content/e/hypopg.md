@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2790** | {{< badge content="hypopg" link="https://github.com/HypoPG/hypopg" >}} | {{< ext "hypopg" >}} | `1.4.4` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2790** | {{< badge content="hypopg" link="https://github.com/HypoPG/hypopg" >}} | {{< ext "hypopg" >}} | `1.4.5` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -37,9 +37,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hypopg` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.4` | {{< bg "18" "hypopg_18" "green" >}} {{< bg "17" "hypopg_17" "green" >}} {{< bg "16" "hypopg_16" "green" >}} {{< bg "15" "hypopg_15" "green" >}} {{< bg "14" "hypopg_14" "green" >}} | `hypopg_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.4` | {{< bg "18" "postgresql-18-hypopg" "green" >}} {{< bg "17" "postgresql-17-hypopg" "green" >}} {{< bg "16" "postgresql-16-hypopg" "green" >}} {{< bg "15" "postgresql-15-hypopg" "green" >}} {{< bg "14" "postgresql-14-hypopg" "green" >}} | `postgresql-$v-hypopg` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hypopg` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.5` | {{< bg "18" "hypopg_18" "green" >}} {{< bg "17" "hypopg_17" "green" >}} {{< bg "16" "hypopg_16" "green" >}} {{< bg "15" "hypopg_15" "green" >}} {{< bg "14" "hypopg_14" "green" >}} | `hypopg_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.5` | {{< bg "18" "postgresql-18-hypopg" "green" >}} {{< bg "17" "postgresql-17-hypopg" "green" >}} {{< bg "16" "postgresql-16-hypopg" "green" >}} {{< bg "15" "postgresql-15-hypopg" "green" >}} {{< bg "14" "postgresql-14-hypopg" "green" >}} | `postgresql-$v-hypopg` | - |
 {.packages .wide .expand}
 
 

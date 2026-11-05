@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7370** | {{< badge content="set_user" link="https://github.com/pgaudit/set_user" >}} | {{< ext "set_user" >}} | `4.2.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7370** | {{< badge content="set_user" link="https://github.com/pgaudit/set_user" >}} | {{< ext "set_user" >}} | `4.3.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -36,9 +36,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `set_user` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "set_user_18" "green" >}} {{< bg "17" "set_user_17" "green" >}} {{< bg "16" "set_user_16" "green" >}} {{< bg "15" "set_user_15" "green" >}} {{< bg "14" "set_user_14" "green" >}} | `set_user_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "postgresql-18-set-user" "green" >}} {{< bg "17" "postgresql-17-set-user" "green" >}} {{< bg "16" "postgresql-16-set-user" "green" >}} {{< bg "15" "postgresql-15-set-user" "green" >}} {{< bg "14" "postgresql-14-set-user" "green" >}} | `postgresql-$v-set-user` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `set_user` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.3.0` | {{< bg "18" "set_user_18" "green" >}} {{< bg "17" "set_user_17" "green" >}} {{< bg "16" "set_user_16" "green" >}} {{< bg "15" "set_user_15" "green" >}} {{< bg "14" "set_user_14" "green" >}} | `set_user_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.3.0` | {{< bg "18" "postgresql-18-set-user" "green" >}} {{< bg "17" "postgresql-17-set-user" "green" >}} {{< bg "16" "postgresql-16-set-user" "green" >}} {{< bg "15" "postgresql-15-set-user" "green" >}} {{< bg "14" "postgresql-14-set-user" "green" >}} | `postgresql-$v-set-user` | - |
 {.packages .wide .expand}
 
 

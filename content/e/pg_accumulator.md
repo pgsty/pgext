@@ -39,8 +39,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_accumulator` | `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_accumulator_18" "green" >}} {{< bg "17" "pg_accumulator_17" "green" >}} {{< bg "16" "pg_accumulator_16" "green" >}} {{< bg "15" "pg_accumulator_15" "green" >}} {{< bg "14" "pg_accumulator_14" "green" >}} | `pg_accumulator_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-accumulator" "green" >}} {{< bg "17" "postgresql-17-pg-accumulator" "green" >}} {{< bg "16" "postgresql-16-pg-accumulator" "green" >}} {{< bg "15" "postgresql-15-pg-accumulator" "green" >}} {{< bg "14" "postgresql-14-pg-accumulator" "green" >}} | `postgresql-$v-pg-accumulator` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.3` | {{< bg "18" "pg_accumulator_18" "green" >}} {{< bg "17" "pg_accumulator_17" "green" >}} {{< bg "16" "pg_accumulator_16" "green" >}} {{< bg "15" "pg_accumulator_15" "green" >}} {{< bg "14" "pg_accumulator_14" "green" >}} | `pg_accumulator_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.3` | {{< bg "18" "postgresql-18-pg-accumulator" "green" >}} {{< bg "17" "postgresql-17-pg-accumulator" "green" >}} {{< bg "16" "postgresql-16-pg-accumulator" "green" >}} {{< bg "15" "postgresql-15-pg-accumulator" "green" >}} {{< bg "14" "postgresql-14-pg-accumulator" "green" >}} | `postgresql-$v-pg-accumulator` | - |
 {.packages .wide .expand}
 
 

@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_datasentinel" >}} {{< ext "pg_profile" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgmonitor" >}} {{< ext "system_stats" >}} {{< ext "pgnodemx" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} |
 
-> [!Note] PGDG D/U 1.5.2; EL 1.5.1. Preload with pg_stat_statements; 1.5.2 hardens search_path and ProcEntryArray.
+> [!Note] Preload with pg_stat_statements.
 
 
 ## Packages
@@ -39,7 +39,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgsentinel` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "pgsentinel_18" "green" >}} {{< bg "17" "pgsentinel_17" "green" >}} {{< bg "16" "pgsentinel_16" "green" >}} {{< bg "15" "pgsentinel_15" "green" >}} {{< bg "14" "pgsentinel_14" "green" >}} | `pgsentinel_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "pgsentinel_18" "green" >}} {{< bg "17" "pgsentinel_17" "green" >}} {{< bg "16" "pgsentinel_16" "green" >}} {{< bg "15" "pgsentinel_15" "green" >}} {{< bg "14" "pgsentinel_14" "green" >}} | `pgsentinel_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
 {.packages .wide .expand}
 

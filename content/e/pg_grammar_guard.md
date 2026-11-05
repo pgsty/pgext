@@ -39,9 +39,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_grammar_guard` | `pg_living_assertions` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.9` | {{< bg "18" "pg_grammar_guard_18" "green" >}} {{< bg "17" "pg_grammar_guard_17" "green" >}} {{< bg "16" "pg_grammar_guard_16" "green" >}} {{< bg "15" "pg_grammar_guard_15" "green" >}} {{< bg "14" "pg_grammar_guard_14" "green" >}} | `pg_grammar_guard_$v` | `pg_living_assertions_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.9` | {{< bg "18" "postgresql-18-pg-grammar-guard" "green" >}} {{< bg "17" "postgresql-17-pg-grammar-guard" "green" >}} {{< bg "16" "postgresql-16-pg-grammar-guard" "green" >}} {{< bg "15" "postgresql-15-pg-grammar-guard" "green" >}} {{< bg "14" "postgresql-14-pg-grammar-guard" "green" >}} | `postgresql-$v-pg-grammar-guard` | `postgresql-$v-pg-living-assertions` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_grammar_guard` | `pg_living_assertions` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "pg_grammar_guard_18" "green" >}} {{< bg "17" "pg_grammar_guard_17" "green" >}} {{< bg "16" "pg_grammar_guard_16" "green" >}} {{< bg "15" "pg_grammar_guard_15" "green" >}} {{< bg "14" "pg_grammar_guard_14" "green" >}} | `pg_grammar_guard_$v` | `pg_living_assertions_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "postgresql-18-pg-grammar-guard" "green" >}} {{< bg "17" "postgresql-17-pg-grammar-guard" "green" >}} {{< bg "16" "postgresql-16-pg-grammar-guard" "green" >}} {{< bg "15" "postgresql-15-pg-grammar-guard" "green" >}} {{< bg "14" "postgresql-14-pg-grammar-guard" "green" >}} | `postgresql-$v-pg-grammar-guard` | `postgresql-$v-pg-living-assertions` |
 {.packages .wide .expand}
 
 

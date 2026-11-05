@@ -8,69 +8,56 @@ weight: 300
 
 ## 2026-11-05
 
-11 月 5 日已验收批次全部进入本地签名仓库索引，debug 独立归档。扩展覆盖 PG14-18，例外见下表；RPM 六平台、DEB 十平台，Redis/Valkey 等明确安排的历史系统另行标注。CDN 与源码镜像尚未同步。
-
-| 名称 | 旧版本 | 新版本 | 说明 |
-|:--|:--|:--|:--|
-| containerd.io | - | 2.4.2-3 | 官方 DEB；六个系统双架构；Bullseye 为 2.3.4-2；本批无 focal 新包；已入本地签名索引 |
-| docker-buildx-plugin | - | 0.38.1 | 官方 DEB；六个系统双架构；Bullseye 为 0.37.0；本批无 focal 新包；已入本地签名索引 |
-| docker-ce | - | 29.9.2 | 官方 DEB；六个系统双架构；Bullseye 为 29.8.0；本批无 focal 新包；已入本地签名索引 |
-| docker-ce-cli | - | 29.9.2 | 官方 DEB；六个系统双架构；Bullseye 为 29.8.0；本批无 focal 新包；已入本地签名索引 |
-| docker-ce-rootless-extras | - | 29.9.2 | 官方 DEB；六个系统双架构；Bullseye 为 29.8.0；本批无 focal 新包；已入本地签名索引 |
-| docker-compose-plugin | - | 5.7.0 | 官方 DEB；六个系统双架构；Bullseye 为 5.5.1；本批无 focal 新包；已入本地签名索引 |
-| nginx | - | 1.31.8 | 官方 DEB；六个系统双架构；Bullseye 为 1.31.6；本批无 focal 新包；已入本地签名索引 |
-| nginx-module-acme | - | 1.31.8+0.4.1 | 官方 DEB；六个系统双架构；Bullseye 为 1.31.6+0.4.1；本批无 focal 新包；已入本地签名索引 |
-| pg_mooncake | 0.2.0 | 0.3.0-1PGSTY | PG14-18；PGSTY fork 配套 pg_duckdb 1.2.0 / DuckDB 2.0.0，内置 Mooncake v0.0.2；80 个 RPM/DEB 组合验证通过；上游未提供 0.2.0 SQL 升级脚本 |
-| pg_parquet | 0.5.1-3PIGSTY | 0.5.1-4PGSTY | PG14-18；回移 9f78a5b7，修复流式 COPY 临时文件泄漏；流式/PROGRAM、Parquet、S3 与 HTTP Range 验证通过 |
-| redis | 7.2.16 | 7.2.17-1PGSTY | 七个系统双架构，含明确安排的 bullseye/focal；DEB epoch 为 6；主包/tools/sentinel 完成本地索引 |
-| valkey | 9.1.2 | 9.1.3-1PGSTY | 七个系统双架构，含明确安排的 bullseye/focal；主包/tools/sentinel 完成本地索引 |
-| vchord | 1.2.0-1PGSTY | 1.2.0-2PGSTY | PG14-18；复核重发 tag 归档与此前相同，完成 RPM/DEB 全矩阵重建；已知 vchordg/halfvec 排序问题仍存在 |
-{.wide .expand}
-
-## 2026-11-04
-
-11 月 1–4 日构建与兼容性更新。全平台产物已入本地仓库；代表性构建另行标注，公网同步未核验。
-
-| 名称                     | 旧版本              | 新版本              | 说明                                                 |
-|:-----------------------|:-----------------|:-----------------|:---------------------------------------------------|
-| address_standardizer   | -                | 3.7.0            | 仅 EL9/U24 ARM64 的 PG18 代表性构建；独立包；SQL 3.7；含 data_us |
-| agensgraph-18          | 2.18.6.0         | 2.18.6.1         | PG18.6 内核与配套扩展                                     |
-| cat_tools              | 0.3.0            | 0.4.0            | PG14-18；纯 SQL                                      |
-| cloudberry             | 2.1.0            | 2.2.0            | 内核与配套扩展                                            |
-| cloudberry-backup      | 2.1.0            | 2.2.0            | 正式版本；六个备份恢复工具                                      |
-| cloudberry-pxf         | 2.1.0            | 2.2.0            | 配套 Cloudberry 2.2.0；含 pxf/pxf_fdw                  |
-| emaj                   | 5.0.0            | 5.0.1            | PG14-18；修复提权与并行回滚问题                                |
-| graphblas              | 10.5.0           | 10.5.2           | 含运行库与开发包；ABI 10                                    |
-| lagraph                | 1.2.2            | 1.2.2            | 使用 GraphBLAS 10.5.2 重建                             |
-| onesparse              | 1.0.0-1PGSTY     | 1.0.0-2PGSTY     | PG18；SQL 0.1.0；随 GraphBLAS/LAGraph 重建；需要预加载        |
-| orioledb-16            | 1.10~beta19      | 1.10.1           | PG16.15 内核；patches16_50；SQL 1.10                   |
-| orioledb-17            | 1.10~beta19      | 1.10.1           | PG17.11 内核；patches17_23；SQL 1.10                   |
-| orioledb-18            | 1.10~beta19      | 1.10.1           | PG18.6 内核；patches18_4；SQL 1.10                     |
-| pg_agent_gate          | 0.3.0            | 0.4.1            | PG18；修复代理角色逃逸；需要预加载                                |
-| pg_anon                | 3.2.3            | 3.3.2            | PG14-18；安全更新；需要删除重建扩展                              |
-| pg_duckdb              | 1.1.1            | 1.2.0            | PG14-18；DuckDB 2.0.0；与 duckdb_fdw 冲突               |
-| pg_fts                 | 1.14.3           | 1.15.2           | PG17-18；修复 top-k 与删除后性能退化；DEB 从 1.14.3 升级          |
-| pg_graphql             | 1.6.2            | 1.6.3            | PG14-18；修复 nodeId 的带引号主键；pgrx 0.19.3               |
-| pg_improv              | 0.12.1           | 0.12.2           | PG15-18；修复空闲同步 worker                              |
-| pg_integrity_checksums | 2.0.0            | 2.1.0            | PG14-18；统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线          |
-| pg_lake                | 3.5.9            | 3.5.10           | PG16-18；八个扩展仍为 SQL 3.5；RPM 仅 EL9/10；Brotli 安全修复    |
-| pg_living_assertions   | 0.5.10           | 0.5.10           | PG14-18；纯 SQL；全平台重建                                |
-| pg_mentat              | 1.18.0           | 1.19.0           | PG14-18；并发写入与 RLS 修复；升级需要持锁                        |
-| pg_mooncake            | 0.2.0            | 0.2.0            | 短期不可用：等待上游适配 pg_duckdb 1.2.0 / DuckDB 2.0          |
-| pg_search              | 0.26.3           | 0.26.4           | PG15-18；修复分区搜索与窗口查询；需要预加载                          |
-| pg_tokenizer           | 0.1.1            | 1.0.0            | PG14-18；切换 PGSTY 分支；原生 tsvector；Lindera 6 词典       |
-| pg_tre                 | 4.5.3            | 4.6.1            | PG17-18；修复 sparsemap 越界；优化匹配                       |
-| pgdog                  | 0.1.62           | 0.1.63           | PostgreSQL 连接池                                     |
-| pgmnemo                | 0.20.0           | 0.21.0           | PG17-18；pg_dump 纳入语料表与序列                           |
-| polardb-17             | 17.11.1.0-1PGSTY | 17.11.1.0-2PGSTY | PG17.11 内核与扩展；使用新版 PolarStore SDK 重建               |
-| polarstore             | 1.2.42-2PGSTY    | 1.2.42-3PGSTY    | 使用 zlog 1.2.20 重建                                  |
-| postgis                | 3.7.0            | 3.7.0            | 仅 EL9/U24 ARM64 的 PG18 代表性构建；PGDG 主供               |
-| postgis_tiger_geocoder | -                | 2025.2           | 仅 EL9/U24 ARM64 的 PG18 代表性构建；独立包；支持 PG16-18        |
-| provsql                | 1.13.0           | 1.13.1           | PG14-18；电路大小与取消操作修复；需要预加载                          |
-| valkey                 | 9.1.2            | 9.1.3            | 安全更新；含开发包                                          |
-| vchord                 | 1.1.1            | 1.2.0            | PG14-18；切换 PGSTY 分支；严格距离排序需重排候选                    |
-| vchord_bm25            | 0.3.0            | 1.0.0            | PG14-18；切换 PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级    |
-| zlog                   | 1.2.18           | 1.2.20           | 联动重建 PolarStore 与 PolarDB                          |
+| 名称                      | 旧版本           | 新版本           | 说明                                                                 |
+|:--------------------------|:-----------------|:-----------------|:---------------------------------------------------------------------|
+| address_standardizer      | -                | 3.7.0            | 仅 U24 ARM64 PG18 代表性构建；独立包；SQL 3.7；含 data_us            |
+| agensgraph-18             | 2.18.6.0         | 2.18.6.1         | PG18.6 内核与配套扩展                                                |
+| cat_tools                 | 0.3.0            | 0.4.0            | 纯 SQL                                                               |
+| cloudberry                | 2.1.0            | 2.2.0            | 内核与配套扩展                                                       |
+| cloudberry-backup         | 2.1.0            | 2.2.0            | 六个备份恢复工具                                                     |
+| cloudberry-pxf            | 2.1.0            | 2.2.0            | 配套 Cloudberry 2.2.0；含 pxf/pxf_fdw                                |
+| containerd.io             | -                | 2.4.2-3          | 官方 DEB；Bullseye 2.3.4-2                                           |
+| docker-buildx-plugin      | -                | 0.38.1           | 官方 DEB；Bullseye 0.37.0                                            |
+| docker-ce                 | -                | 29.9.2           | 官方 DEB；Bullseye 29.8.0                                            |
+| docker-ce-cli             | -                | 29.9.2           | 官方 DEB；Bullseye 29.8.0                                            |
+| docker-ce-rootless-extras | -                | 29.9.2           | 官方 DEB；Bullseye 29.8.0                                            |
+| docker-compose-plugin     | -                | 5.7.0            | 官方 DEB；Bullseye 5.5.1                                             |
+| emaj                      | 5.0.0            | 5.0.1            | 修复提权与并行回滚                                                   |
+| graphblas                 | 10.5.0           | 10.5.2           | 运行库与开发包；ABI 10                                               |
+| lagraph                   | 1.2.2            | 1.2.2            | 使用 GraphBLAS 10.5.2 重建                                           |
+| nginx                     | -                | 1.31.8           | 官方 DEB；Bullseye 1.31.6                                            |
+| nginx-module-acme         | -                | 1.31.8+0.4.1     | 官方 DEB；Bullseye 1.31.6+0.4.1                                      |
+| onesparse                 | 1.0.0-1PGSTY     | 1.0.0-2PGSTY     | PG18；随 GraphBLAS/LAGraph 重建；SQL 0.1.0；需预加载                 |
+| orioledb-16               | 1.10~beta19      | 1.10.1           | PG16.15 内核；SQL 1.10                                               |
+| orioledb-17               | 1.10~beta19      | 1.10.1           | PG17.11 内核；SQL 1.10                                               |
+| orioledb-18               | 1.10~beta19      | 1.10.1           | PG18.6 内核；SQL 1.10                                                |
+| pg_agent_gate             | 0.3.0            | 0.4.1            | PG18；修复代理角色逃逸；需预加载                                     |
+| pg_anon                   | 3.2.3            | 3.3.2            | 安全更新；需删除并重建扩展                                           |
+| pg_duckdb                 | 1.1.1            | 1.2.0            | DuckDB 2.0.0；与 duckdb_fdw 冲突                                     |
+| pg_fts                    | 1.14.3           | 1.15.2           | PG17-18；修复 top-k 与删除后性能退化                                 |
+| pg_graphql                | 1.6.2            | 1.6.3            | 修复 nodeId 的带引号主键                                             |
+| pg_improv                 | 0.12.1           | 0.12.2           | PG15-18；修复空闲同步 worker                                         |
+| pg_integrity_checksums    | 2.0.0            | 2.1.0            | 统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线                |
+| pg_lake                   | 3.5.9            | 3.5.10           | PG16-18；八个扩展，SQL 3.5；Brotli 安全修复                          |
+| pg_living_assertions      | 0.5.10           | 0.5.10           | 纯 SQL；全平台重建                                                   |
+| pg_mentat                 | 1.18.0           | 1.19.0           | 修复并发写入与 RLS；升级需持锁                                       |
+| pg_mooncake               | 0.2.0            | 0.3.0-1PGSTY     | PGSTY 分支；适配 pg_duckdb 1.2.0 / DuckDB 2.0.0；缺少 0.2.0 升级脚本 |
+| pg_parquet                | 0.5.1-3PIGSTY    | 0.5.1-4PGSTY     | 修复流式 COPY 临时文件泄漏                                           |
+| pg_search                 | 0.26.3           | 0.26.4           | PG15-18；修复分区搜索与窗口查询；需预加载                            |
+| pg_tokenizer              | 0.1.1            | 1.0.0            | PGSTY 分支；原生 tsvector；外置 Lindera 6 词典                       |
+| pg_tre                    | 4.5.3            | 4.6.1            | PG17-18；修复 sparsemap 越界；优化匹配                               |
+| pgdog                     | 0.1.62           | 0.1.63           | PostgreSQL 连接池                                                    |
+| pgmnemo                   | 0.20.0           | 0.21.0           | PG17-18；pg_dump 纳入语料表与序列                                    |
+| polardb-17                | 17.11.1.0-1PGSTY | 17.11.1.0-2PGSTY | PG17.11 内核与扩展；使用新版 PolarStore SDK 重建                     |
+| polarstore                | 1.2.42-2PGSTY    | 1.2.42-3PGSTY    | 使用 zlog 1.2.20 重建                                                |
+| postgis                   | 3.7.0            | 3.7.0            | PGDG 主供；仅 U24 ARM64 PG18 代表性构建                              |
+| postgis_tiger_geocoder    | -                | 2025.2           | 仅 U24 ARM64 PG18 代表性构建；独立包；支持 PG16-18                   |
+| provsql                   | 1.13.0           | 1.13.1           | 修复电路大小与取消操作；需预加载                                     |
+| redis                     | 7.2.16           | 7.2.17-1PGSTY    | 七个系统，含 Bullseye/Focal；修复拆分包冲突；epoch 6                 |
+| valkey                    | 9.1.2            | 9.1.3-1PGSTY     | 安全更新；七个系统，含 Bullseye/Focal；修复拆分包冲突                |
+| vchord                    | 1.1.1            | 1.2.0-2PGSTY     | PGSTY 分支重建；vchordg/halfvec 严格排序仍需重排候选                 |
+| vchord_bm25               | 0.3.0            | 1.0.0            | PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级                   |
+| zlog                      | 1.2.18           | 1.2.20           | 联动重建 PolarStore 与 PolarDB                                       |
 {.wide .expand}
 
 

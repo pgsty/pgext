@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "faker" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "pgsqlmock" >}} {{< ext "omni_test" >}} {{< ext "random" >}} {{< ext "tsm_system_time" >}} {{< ext "tsm_system_rows" >}} |
 
-> [!Note] pkg 0.62.0; SQL 0.46.0; stored functions only.
+> [!Note] Stored functions only.
 
 
 ## Packages
@@ -40,7 +40,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.62.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `dbt2` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.62.0` | {{< bg "18" "dbt2-pg18-extensions" "green" >}} {{< bg "17" "dbt2-pg17-extensions" "green" >}} {{< bg "16" "dbt2-pg16-extensions" "green" >}} {{< bg "15" "dbt2-pg15-extensions" "green" >}} {{< bg "14" "dbt2-pg14-extensions" "green" >}} | `dbt2-pg$v-extensions` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.62.0` | {{< bg "18" "postgresql-18-dbt2" "green" >}} {{< bg "17" "postgresql-17-dbt2" "green" >}} {{< bg "16" "postgresql-16-dbt2" "green" >}} {{< bg "15" "postgresql-15-dbt2" "green" >}} {{< bg "14" "postgresql-14-dbt2" "green" >}} | `postgresql-$v-dbt2` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.61.7` | {{< bg "18" "postgresql-18-dbt2" "green" >}} {{< bg "17" "postgresql-17-dbt2" "green" >}} {{< bg "16" "postgresql-16-dbt2" "green" >}} {{< bg "15" "postgresql-15-dbt2" "green" >}} {{< bg "14" "postgresql-14-dbt2" "green" >}} | `postgresql-$v-dbt2` | - |
 {.packages .wide .expand}
 
 

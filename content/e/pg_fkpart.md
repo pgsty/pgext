@@ -38,7 +38,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_fkpart` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "pg_fkpart_18" "green" >}} {{< bg "17" "pg_fkpart_17" "green" >}} {{< bg "16" "pg_fkpart_16" "green" >}} {{< bg "15" "pg_fkpart_15" "green" >}} {{< bg "14" "pg_fkpart_14" "green" >}} | `pg_fkpart_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "pg_fkpart_18" "green" >}} {{< bg "17" "pg_fkpart_17" "green" >}} {{< bg "16" "pg_fkpart_16" "green" >}} {{< bg "15" "pg_fkpart_15" "green" >}} {{< bg "14" "pg_fkpart_14" "green" >}} | `pg_fkpart_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "postgresql-18-pg-fkpart" "green" >}} {{< bg "17" "postgresql-17-pg-fkpart" "green" >}} {{< bg "16" "postgresql-16-pg-fkpart" "green" >}} {{< bg "15" "postgresql-15-pg-fkpart" "green" >}} {{< bg "14" "postgresql-14-pg-fkpart" "green" >}} | `postgresql-$v-pg-fkpart` | - |
 {.packages .wide .expand}
 

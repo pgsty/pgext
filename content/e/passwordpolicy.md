@@ -39,8 +39,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `passwordpolicy` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "passwordpolicy_18" "green" >}} {{< bg "17" "passwordpolicy_17" "green" >}} {{< bg "16" "passwordpolicy_16" "green" >}} {{< bg "15" "passwordpolicy_15" "green" >}} {{< bg "14" "passwordpolicy_14" "green" >}} | `passwordpolicy_$v` | `cracklib-dicts` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.6` | {{< bg "18" "postgresql-18-passwordpolicy" "green" >}} {{< bg "17" "postgresql-17-passwordpolicy" "green" >}} {{< bg "16" "postgresql-16-passwordpolicy" "green" >}} {{< bg "15" "postgresql-15-passwordpolicy" "green" >}} {{< bg "14" "postgresql-14-passwordpolicy" "green" >}} | `postgresql-$v-passwordpolicy` | `cracklib-runtime`, `libcrack2` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.6` | {{< bg "18" "passwordpolicy_18" "green" >}} {{< bg "17" "passwordpolicy_17" "green" >}} {{< bg "16" "passwordpolicy_16" "green" >}} {{< bg "15" "passwordpolicy_15" "green" >}} {{< bg "14" "passwordpolicy_14" "green" >}} | `passwordpolicy_$v` | `cracklib-dicts` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.5` | {{< bg "18" "postgresql-18-passwordpolicy" "green" >}} {{< bg "17" "postgresql-17-passwordpolicy" "green" >}} {{< bg "16" "postgresql-16-passwordpolicy" "green" >}} {{< bg "15" "postgresql-15-passwordpolicy" "green" >}} {{< bg "14" "postgresql-14-passwordpolicy" "green" >}} | `postgresql-$v-passwordpolicy` | `cracklib-runtime`, `libcrack2` |
 {.packages .wide .expand}
 
 

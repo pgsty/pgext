@@ -39,7 +39,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20251029` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_uri` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20251029` | {{< bg "18" "pguri_18" "green" >}} {{< bg "17" "pguri_17" "green" >}} {{< bg "16" "pguri_16" "green" >}} {{< bg "15" "pguri_15" "green" >}} {{< bg "14" "pguri_14" "green" >}} | `pguri_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20251029` | {{< bg "18" "pguri_18" "green" >}} {{< bg "17" "pguri_17" "green" >}} {{< bg "16" "pguri_16" "green" >}} {{< bg "15" "pguri_15" "green" >}} {{< bg "14" "pguri_14" "green" >}} | `pguri_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20251029` | {{< bg "18" "postgresql-18-pg-uri" "green" >}} {{< bg "17" "postgresql-17-pg-uri" "green" >}} {{< bg "16" "postgresql-16-pg-uri" "green" >}} {{< bg "15" "postgresql-15-pg-uri" "green" >}} {{< bg "14" "postgresql-14-pg-uri" "green" >}} | `postgresql-$v-pg-uri` | - |
 {.packages .wide .expand}
 

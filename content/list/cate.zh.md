@@ -209,7 +209,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2765 | {{< alias "is_jsonb_valid" >}} | 0.1.4 | 原生 JSONB 校验，支持 JSON Schema 草案 4 与 7 |
 | 2770 | {{< alias "jsquery" >}} | 1.2 | 用于内省 JSONB 数据类型的查询类型 |
 | 2780 | {{< alias "pg_hint_plan" >}} | 1.8.1 | 添加强制指定执行计划的能力 |
-| 2790 | {{< alias "hypopg" >}} | 1.4.4 | 假设索引，用于创建一个虚拟索引检验执行计划 |
+| 2790 | {{< alias "hypopg" >}} | 1.4.5 | 假设索引，用于创建一个虚拟索引检验执行计划 |
 | 2800 | {{< alias "index_advisor" >}} | 0.2.1 | 查询索引建议器 |
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 1.0.0 | 基于计划估算成本的语句与事务负载保护 |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | 提供标量、数组和记录类型的会话变量 |
@@ -639,7 +639,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | PG密钥管理 |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | PostgreSQL 高级密码哈希扩展（Argon2/scrypt/yescrypt） |
 | 7360 | {{< alias "login_hook" >}} | 1.8 | 在用户登陆时执行login_hook.login()函数 |
-| 7370 | {{< alias "set_user" >}} | 4.2.0 | 增加了日志记录的 SET ROLE |
+| 7370 | {{< alias "set_user" >}} | 4.3.0 | 增加了日志记录的 SET ROLE |
 | 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | PostgreSQL动态链接库反病毒功能 |
 | 7390 | {{< alias "pgextwlist" >}} | 1.20 | PostgreSQL扩展白名单功能 |
 | 7400 | {{< alias "pg_command_fw" >}} | 0.1.0 | PostgreSQL 的 DDL 与 utility 命令防火墙 |

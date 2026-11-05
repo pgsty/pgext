@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "odbc_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} |
 
-> [!Note] Package/source version 0.5.0; SQL extension version 1.2. PIGSTY RPM and DEB packages cover PostgreSQL 14-18 on x86_64 and aarch64; PGDG RPM 0.4.0 is a legacy alternative for PostgreSQL 14-16. Live queries require a JDBC driver and remote database.
+> [!Note] SQL 1.2; JDBC driver required.
 
 
 ## Packages
@@ -39,7 +39,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `jdbc_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "jdbc_fdw_18" "green" >}} {{< bg "17" "jdbc_fdw_17" "green" >}} {{< bg "16" "jdbc_fdw_16" "green" >}} {{< bg "15" "jdbc_fdw_15" "green" >}} {{< bg "14" "jdbc_fdw_14" "green" >}} | `jdbc_fdw_$v` | `java-11-openjdk-headless` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.0` | {{< bg "18" "jdbc_fdw_18" "green" >}} {{< bg "17" "jdbc_fdw_17" "green" >}} {{< bg "16" "jdbc_fdw_16" "green" >}} {{< bg "15" "jdbc_fdw_15" "green" >}} {{< bg "14" "jdbc_fdw_14" "green" >}} | `jdbc_fdw_$v` | `java-11-openjdk-headless` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.0` | {{< bg "18" "postgresql-18-jdbc-fdw" "green" >}} {{< bg "17" "postgresql-17-jdbc-fdw" "green" >}} {{< bg "16" "postgresql-16-jdbc-fdw" "green" >}} {{< bg "15" "postgresql-15-jdbc-fdw" "green" >}} {{< bg "14" "postgresql-14-jdbc-fdw" "green" >}} | `postgresql-$v-jdbc-fdw` | `default-jre-headless`, `libpq5` |
 {.packages .wide .expand}
 

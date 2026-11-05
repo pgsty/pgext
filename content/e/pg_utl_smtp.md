@@ -33,7 +33,7 @@ page_width: full
 |   **Requires**    | {{< ext "plperlu" >}} |
 |   **See Also**    | {{< ext "pg_smtp_client" >}} {{< ext "omni_email" >}} {{< ext "orafce" >}} {{< ext "pg_html5_email_address" >}} {{< ext "emailaddr" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "db2fce" >}} |
 
-> [!Note] PGDG 2.0.0 on EL8-10; PIGSTY 1.0 on D/U. TLS needs plperlu, Net::SMTP and IO::Socket::SSL.
+> [!Note] TLS: plperlu, Net::SMTP, IO::Socket::SSL.
 
 
 ## Packages
@@ -42,7 +42,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_utl_smtp` | `plperlu` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0` | {{< bg "18" "pg_utl_smtp_18" "green" >}} {{< bg "17" "pg_utl_smtp_17" "green" >}} {{< bg "16" "pg_utl_smtp_16" "green" >}} {{< bg "15" "pg_utl_smtp_15" "green" >}} {{< bg "14" "pg_utl_smtp_14" "green" >}} | `pg_utl_smtp_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.0` | {{< bg "18" "postgresql-18-utl-smtp" "green" >}} {{< bg "17" "postgresql-17-utl-smtp" "green" >}} {{< bg "16" "postgresql-16-utl-smtp" "green" >}} {{< bg "15" "postgresql-15-utl-smtp" "green" >}} {{< bg "14" "postgresql-14-utl-smtp" "green" >}} | `postgresql-$v-utl-smtp` | `postgresql-plperl-$v`, `libio-socket-ssl-perl` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-utl-smtp" "green" >}} {{< bg "17" "postgresql-17-utl-smtp" "green" >}} {{< bg "16" "postgresql-16-utl-smtp" "green" >}} {{< bg "15" "postgresql-15-utl-smtp" "green" >}} {{< bg "14" "postgresql-14-utl-smtp" "green" >}} | `postgresql-$v-utl-smtp` | `postgresql-plperl-$v`, `libio-socket-ssl-perl` |
 {.packages .wide .expand}
 
 

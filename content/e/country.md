@@ -37,8 +37,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_country` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "pg_country_18" "green" >}} {{< bg "17" "pg_country_17" "green" >}} {{< bg "16" "pg_country_16" "green" >}} {{< bg "15" "pg_country_15" "green" >}} {{< bg "14" "pg_country_14" "green" >}} | `pg_country_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "postgresql-18-pg-country" "green" >}} {{< bg "17" "postgresql-17-pg-country" "green" >}} {{< bg "16" "postgresql-16-pg-country" "green" >}} {{< bg "15" "postgresql-15-pg-country" "green" >}} {{< bg "14" "postgresql-14-pg-country" "green" >}} | `postgresql-$v-pg-country` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_country_18" "green" >}} {{< bg "17" "pg_country_17" "green" >}} {{< bg "16" "pg_country_16" "green" >}} {{< bg "15" "pg_country_15" "green" >}} {{< bg "14" "pg_country_14" "green" >}} | `pg_country_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-country" "green" >}} {{< bg "17" "postgresql-17-pg-country" "green" >}} {{< bg "16" "postgresql-16-pg-country" "green" >}} {{< bg "15" "postgresql-15-pg-country" "green" >}} {{< bg "14" "postgresql-14-pg-country" "green" >}} | `postgresql-$v-pg-country` | - |
 {.packages .wide .expand}
 
 

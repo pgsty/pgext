@@ -38,8 +38,8 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_currency` | `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "pg_currency_18" "green" >}} {{< bg "17" "pg_currency_17" "green" >}} {{< bg "16" "pg_currency_16" "green" >}} {{< bg "15" "pg_currency_15" "green" >}} {{< bg "14" "pg_currency_14" "green" >}} | `pg_currency_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "postgresql-18-pg-currency" "green" >}} {{< bg "17" "postgresql-17-pg-currency" "green" >}} {{< bg "16" "postgresql-16-pg-currency" "green" >}} {{< bg "15" "postgresql-15-pg-currency" "green" >}} {{< bg "14" "postgresql-14-pg-currency" "green" >}} | `postgresql-$v-pg-currency` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_currency_18" "green" >}} {{< bg "17" "pg_currency_17" "green" >}} {{< bg "16" "pg_currency_16" "green" >}} {{< bg "15" "pg_currency_15" "green" >}} {{< bg "14" "pg_currency_14" "green" >}} | `pg_currency_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-currency" "green" >}} {{< bg "17" "postgresql-17-pg-currency" "green" >}} {{< bg "16" "postgresql-16-pg-currency" "green" >}} {{< bg "15" "postgresql-15-pg-currency" "green" >}} {{< bg "14" "postgresql-14-pg-currency" "green" >}} | `postgresql-$v-pg-currency` | - |
 {.packages .wide .expand}
 
 

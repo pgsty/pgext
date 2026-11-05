@@ -32,7 +32,7 @@ page_width: full
 |    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "pg_ivm" >}} {{< ext "pg_trickle" >}} {{< ext "timescaledb" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_partman" >}} {{< ext "pg_ttl_index" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_lake" >}} |
 
-> [!Note] Package 1.6.1; SQL/control 1.6. Fixes _drop_trigger search_path injection. Sequence pipelines require SELECT or USAGE at creation and execution; file-list functions run as the pipeline executor. pg_cron is optional except for scheduled pipelines.
+> [!Note] SQL 1.6; scheduling needs pg_cron.
 
 
 ## Packages
@@ -40,7 +40,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_incremental` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.1` | {{< bg "18" "pg_incremental_18" "green" >}} {{< bg "17" "pg_incremental_17" "green" >}} {{< bg "16" "pg_incremental_16" "green" >}} {{< bg "15" "pg_incremental_15" "red" >}} {{< bg "14" "pg_incremental_14" "red" >}} | `pg_incremental_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.1` | {{< bg "18" "pg_incremental_18" "green" >}} {{< bg "17" "pg_incremental_17" "green" >}} {{< bg "16" "pg_incremental_16" "green" >}} {{< bg "15" "pg_incremental_15" "red" >}} {{< bg "14" "pg_incremental_14" "red" >}} | `pg_incremental_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.1` | {{< bg "18" "postgresql-18-pg-incremental" "green" >}} {{< bg "17" "postgresql-17-pg-incremental" "green" >}} {{< bg "16" "postgresql-16-pg-incremental" "green" >}} {{< bg "15" "postgresql-15-pg-incremental" "red" >}} {{< bg "14" "postgresql-14-pg-incremental" "red" >}} | `postgresql-$v-pg-incremental` | - |
 {.packages .wide .expand}
 
