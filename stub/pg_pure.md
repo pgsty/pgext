@@ -2,30 +2,44 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/CHANGELOG.md)
 
-`pg_pure` is the installable trusted PL/Pure language entry. Distribution 0.1.1 ships SQL version 0.1. Its handler deliberately refuses to execute functions until libpure has a sandbox. Trusted interpretation is therefore unavailable in this release. The operational sibling is `pg_pureu`.
+`pg_pure` provides the trusted Pure procedural language and SPI database access. Distribution 0.4.0 retains SQL extension version 0.1. Since 0.2.0, trusted functions execute in a libpure safe-mode interpreter; the earlier execution refusal no longer applies.
 
-### Enablement and Current Boundary
+### Core Workflow
 
 ```sql
 CREATE EXTENSION pg_pure;
-SELECT extversion FROM pg_extension WHERE extname = 'pg_pure';
+CREATE FUNCTION pure_factorial(n int) RETURNS numeric
+LANGUAGE pg_pure AS $$ foldl (*) 1L (1..n) $$;
+SELECT pure_factorial(30);
 ```
 
-The control marks the extension trusted, non-relocatable and installable without superuser-only extension creation. That catalog setting does not override the handler's execution refusal. Do not grant ordinary roles the untrusted sibling to work around it.
+The extension is trusted and non-relocatable. Ordinary roles with the required database and schema privileges may install it and define functions in the trusted language. PostgreSQL 17–19 and the upstream embeddable libpure fork at revision ab12de13 or later are required.
 
-### Runtime Requirements
+### Types and Database Access
 
-PostgreSQL 17–19 and the upstream embeddable libpure fork are required. Both siblings use the same `pg_pure` shared library. libpure permits native `extern` calls; the missing sandbox must eventually restrict native calls, inline C, evaluation and arbitrary module loading before trusted execution is safe.
+Scalar values include integer, floating point, numeric, boolean and text. SQL NULL is represented by `sql::null`. Exact `numeric` values use Pure big integers or rationals; use big integers for intermediate arithmetic that can exceed machine range.
 
-Preloading `pg_pure` is optional and requires a server restart when configured through `shared_preload_libraries`. Its `pg_pure.using` setting selects modules, defaulting to `math`. The ordinary interpreter is created per backend without preload.
+`float8[]` maps to a dense Pure double matrix: a one-dimensional array becomes a row vector and a two-dimensional array becomes a matrix. NULL elements and arrays of more than two dimensions are rejected. `sql::query`, `sql::exec`, `sql::notice` and `sql::warning` provide database access and messages; database failures become `sql::error`. Parameterized SPI, set-returning functions, triggers and composite types are not implemented. Do not interpolate untrusted values into SQL strings.
 
-### Deployment Limits
+### Sandbox and Modules
 
-libpure and PostgreSQL's LLVM JIT must not load different LLVM major versions into the same backend; upstream reports a backend-exit crash, which can trigger a cluster-wide restart. The supported 0.1 deployment uses PostgreSQL without LLVM JIT; a matching LLVM major is another documented configuration. This distribution does not establish production readiness or a trusted sandbox.
+Safe mode refuses `extern`, inline C, `eval`/`evalcmd`, arbitrary native or non-allowlisted `using`, and dangerous prelude operations. Trusted and untrusted languages use separate backend-local interpreters. The untrusted sibling `pg_pureu` retains native-code capability and must remain restricted to superusers.
+
+The DBA chooses modules through `pg_pure.using`, whose default is `math`. For the compiled GSL Cholesky solver in 0.4.0, install the matching Pure module and preload/allowlist it through the setting:
+
+```ini
+pg_pure.using = 'math gsl::linalg'
+```
+
+A trusted body may call `gsl::linalg::cholesky_solve` directly after this setup. A namespaced `using gsl::linalg` inside a trusted body is still rejected by libpure's module-path check; use the DBA-managed setting.
+
+### Runtime and Upgrade
+
+Both languages load the `pg_pure` library. Optional `shared_preload_libraries` loading warms the interpreter and requires a restart; without it, initialization happens per backend. The required libpure fork hides its LLVM symbols, so the earlier instruction to disable PostgreSQL JIT is obsolete. Deploy matching extension and libpure files, and replace processes that loaded older libraries. Distribution 0.4.0 does not change SQL version 0.1, so that version alone cannot identify the installed library.

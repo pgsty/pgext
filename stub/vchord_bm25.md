@@ -2,70 +2,78 @@
 
 Sources:
 
-- [0.3.0 README](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/README.md)
-- [Control file](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/vchord_bm25.control)
-- [0.3.0 SQL objects](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/sql/install/vchord_bm25--0.3.0.sql)
-- [Query settings](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/src/guc.rs)
-- [0.3.0 migration](https://github.com/supervc-stack/VectorChord-bm25/blob/0.3.0/sql/vchord_bm25--0.2.2--0.3.0.sql)
-- [0.3.0 release](https://github.com/supervc-stack/VectorChord-bm25/releases/tag/0.3.0)
-- [Tokenizer installation](https://github.com/supervc-stack/pg_tokenizer.rs/blob/0.1.1/docs/01-installation.md)
-- [Tokenizer models](https://github.com/supervc-stack/pg_tokenizer.rs/blob/0.1.1/docs/06-model.md)
+- [Installation](https://vchord.pgsty.com/docs/bm25/getting-started/installation/)
+- [Native tsvector quick start](https://vchord.pgsty.com/docs/bm25/getting-started/quick-start/)
+- [1.0.0 migration and permissions](https://vchord.pgsty.com/docs/bm25/reference/migration/)
+- [SQL reference](https://vchord.pgsty.com/docs/bm25/reference/sql/)
+- [GUCs and index options](https://vchord.pgsty.com/docs/bm25/reference/gucs/)
+- [Index maintenance](https://vchord.pgsty.com/docs/bm25/usage/indexing/)
+- [1.0.0 control file](https://github.com/pgsty/vchord_bm25/blob/1.0.0/vchord_bm25.control)
 
-`vchord_bm25` provides BM25 ranking with a sparse token-frequency type and the `bm25` index access method. Tokenization is supplied separately, commonly by pg_tokenizer. Extension objects live in the fixed `bm25_catalog` schema, and creation requires superuser privileges.
+`vchord_bm25` 1.0.0 adds BM25 relevance ranking over native PostgreSQL `tsvector` values on PostgreSQL 14–18. Its `bm25` access method and `bm25_ops` operator class use a new index format. Standard text search needs no tokenizer extension; `pg_tokenizer` 1.0.0 is optional for custom analyzers and multilingual models. Installation requires superuser privileges and shared preloading.
 
-### Core Workflow
+### Create and Query an Index
 
-The example uses pg_tokenizer, which requires preloading and a restart. Preserve existing entries in the preload list:
+Add the library to the existing preload list and restart PostgreSQL:
 
-```conf
-shared_preload_libraries = 'pg_tokenizer'
+```ini
+shared_preload_libraries = 'vchord_bm25'
 ```
 
 ```sql
-CREATE EXTENSION pg_tokenizer;
 CREATE EXTENSION vchord_bm25;
-SET search_path = public, tokenizer_catalog, bm25_catalog;
-
-SELECT create_tokenizer('english', $$
-model = "bert_base_uncased"
-$$);
 CREATE TABLE documents (
-    id bigserial PRIMARY KEY,
-    passage text,
-    embedding bm25vector
+    id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    passage text NOT NULL,
+    terms tsvector GENERATED ALWAYS AS (to_tsvector('english', passage)) STORED
 );
-INSERT INTO documents(passage) VALUES ('PostgreSQL full text search');
-UPDATE documents SET embedding = tokenize(passage, 'english')::bm25vector;
-CREATE INDEX documents_bm25 ON documents USING bm25 (embedding bm25_ops);
+INSERT INTO documents (passage) VALUES
+    ('PostgreSQL provides full text search.'),
+    ('BM25 ranks PostgreSQL documents by relevance.'),
+    ('A guide to database indexing.');
+CREATE INDEX documents_bm25 ON documents USING bm25 (terms bm25_ops)
+WITH (options = $$
+k1 = 1.2
+b = 0.75
+$$, limit = 100);
 
 SELECT id, passage,
-       embedding <&> to_bm25query('documents_bm25',
-           tokenize('PostgreSQL', 'english')::bm25vector) AS score
+       terms <&> to_bm25query(to_tsvector('english', 'PostgreSQL'), 'documents_bm25') AS rank
 FROM documents
-ORDER BY score
-LIMIT 10;
+WHERE terms @@ plainto_tsquery('english', 'PostgreSQL')
+ORDER BY rank LIMIT 10;
 ```
 
-The index supplies corpus statistics to `to_bm25query`; the score from `<&>` is negative, so ascending order returns greater relevance first. Use the same tokenizer/model for documents and queries. Update stored token vectors when source text changes, or use the tokenizer's maintenance-trigger helper. Changing the vocabulary requires retokenizing stored documents before rebuilding their index.
+`to_bm25query(tsvector, regclass)` takes the query vector first and the target index second. `<&>` returns a negative BM25 score as `double precision`: ascending order puts greater relevance first. Negate the result only for display if a positive score is preferred. Ordering alone also includes zero-score nonmatches and NULLs; the example uses an explicit match predicate.
 
-### Types, Functions, and Search Limits
+Keep positions in stored vectors: `strip(tsvector)` and `array_to_tsvector` cannot provide the term frequencies required by the index. Document weights are ignored, and native position limits can reduce frequency detail for long documents. Use the same analyzer for documents and queries. With custom tokenization, `analyze_to_tsvector` stores string lexemes and `tokenize_to_tsvector` stores model IDs as lexemes; both are `STABLE`, so maintain an ordinary column through the application or a trigger.
 
-- `bm25vector` stores token IDs and frequencies; the integer-array cast aggregates duplicate IDs and discards token order.
-- `bm25query` binds the query vector to an index. `to_bm25query(regclass, bm25vector)` constructs it; `bm25_ops` is the index operator class.
-- `bm25_catalog.bm25_limit` defaults to 100 and limits candidates returned by the index. Increase it for larger SQL limits or restrictive filters; changing SQL LIMIT alone does not increase this candidate budget.
-- `bm25_catalog.enable_index` controls use of the index; `bm25_catalog.enable_prefilter` controls prefiltering. Both default to true.
-- `bm25_catalog.segment_growing_max_page_size` defaults to 4096 pages before sealing a growing segment.
+### Search Controls and Maintenance
+
+| Setting or function | Meaning in 1.0.0 |
+| --- | --- |
+| `bm25.enable_scan` | Allow BM25 index plans; default true. |
+| `bm25.limit`, index `limit` | Initial scan batch size, default 100; zero also selects 100. Scans continue for SQL limits, offsets, and filtering. |
+| `bm25.prefilter`, index `prefilter` | Apply supported predicates before ranking candidates; default false. |
+| `k1`, `b` | TOML scoring parameters; defaults 1.2 and 0.75, ranges 1.2–2.0 and 0–1. |
+| `maintenance_min_rows`, `maintenance_scale_factor` | Automatic merge thresholds; defaults 1000 and 0.1. |
+| `bm25_maintain(regclass)` | Request a merge without the automatic thresholds; returns whether a segment was published. |
+
+Explicit GUC values, including false or the nominal default, override index options. Server, database, role, and startup settings also take precedence. Index defaults apply only when the GUC source is the built-in default.
 
 ```sql
-SET bm25_catalog.bm25_limit = 1000;
+SET "bm25.limit" = 200;
+SET bm25.prefilter = true;
+VACUUM documents;
+SELECT bm25_maintain('documents_bm25');
 ```
 
-The access-method name is global: this extension cannot coexist in a database with another extension that creates the same bm25 access method, including pg_textsearch and the compatibility alias in pg_search. Sparse frequencies do not preserve positions for phrase matching. Chinese text can use a custom corpus model with a Jieba pre-tokenizer; Japanese Lindera support depends on the tokenizer build and dictionary configuration.
+`VACUUM` marks dead records and can merge segments; `ANALYZE` alone does not merge them. Manual maintenance requires table ownership or, on PostgreSQL 17+, `MAINTAIN` privilege, and does not replace dead-tuple detection. Deleted records stop appearing in results immediately but remain in corpus statistics until compaction. Long snapshots can delay page reuse and further merges. Standby readers encountering recycled pages can receive SQLSTATE `40001` and need to retry.
 
-### Upgrade to 0.3.0
+### Permissions and Migration
 
-```sql
-ALTER EXTENSION vchord_bm25 UPDATE TO '0.3.0';
-```
+The extension is relocatable; applications need access to the selected installation schema and indexed data. Scoring requires `SELECT` on the indexed table, or column-level access for an ordinary non-partial single-column index. Expression and partial indexes require table-level access. Both scalar scoring and native scans reject queries when row-level security applies to the current role, because scores use global corpus statistics.
 
-The 0.2.2-to-0.3.0 migration adds `bm25_page_inspect(regclass, integer)`, returning diagnostic page text. The release changes sealed-segment page allocation for small tokens and does not document a mandatory index rebuild. Install matching extension files before updating database objects; replacing the preloaded tokenizer library also requires a restart. Keep tokenization and ranking upgrades compatible and check representative query results.
+The index supports one indexed column and does not support unlogged tables. The access-method name is database-wide, so another extension defining `bm25` cannot coexist in that database.
+
+Upgrades from 0.3.x are deliberately blocked. Keep the old database and library available, export source text, and create a fresh 1.0.0 installation with its own library directory. Recompute native vectors, rebuild indexes, and adapt query argument order, types, settings, and triggers before switching the application. Another database or port sharing the old library directory is insufficient isolation. Neither a binary index copy nor `REINDEX` on an old `bm25vector` column migrates the API.

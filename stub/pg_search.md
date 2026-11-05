@@ -2,10 +2,9 @@
 
 Sources:
 
-- [0.26.4 release]
-- [0.26.4 changelog](https://github.com/paradedb/paradedb/blob/v0.26.4/docs/project/changelog/0.26.4.mdx)
-- [pg_search 0.26.4 control](https://github.com/paradedb/paradedb/blob/v0.26.4/pg_search/pg_search.control)
-- [pg_search 0.26.4 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.4/pg_search/Cargo.toml)(https://github.com/paradedb/paradedb/releases/tag/v0.26.4)
+- [0.26.5 changelog](https://github.com/paradedb/paradedb/blob/v0.26.5/docs/project/changelog/0.26.5.mdx)
+- [pg_search 0.26.5 control](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/pg_search.control)
+- [pg_search 0.26.5 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/Cargo.toml)
 
 - [docs/project/changelog/0.26.2.mdx](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/docs/project/changelog/0.26.2.mdx)
 - [pg_search/sql/pg_search--0.26.1--0.26.2.sql](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/sql/pg_search--0.26.1--0.26.2.sql)
@@ -28,7 +27,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.4 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.26.5 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -141,3 +140,7 @@ This release fixes search operators in generic prepared plans, wrong results or 
 ### 0.26.4 Performance and Stability
 
 Version 0.26.4 adds late materialization for array columns, makes eligible join scans use iterative rank-join for `ORDER BY` and `LIMIT`, and avoids quadratic CJK Lindera token consumption. It fixes wrong file paths in partitioned-table append searches, window-function cases, and helpers for partitioned indexes. The release notes do not introduce a new index-format migration; the 0.26.0 vector-index rebuild requirement still applies.
+
+### 0.26.5 Permissions and Correctness
+
+Version 0.26.5 enforces table permissions on standalone index-reading functions and fixes pushdown involving NULL or empty ALL arrays. It also improves parallel-worker cleanup and merge backpressure. Install matching files, restart through the preload maintenance procedure and update each SQL extension. The release does not remove the 0.26.0 vector-index migration requirement.

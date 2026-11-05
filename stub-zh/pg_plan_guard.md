@@ -2,12 +2,12 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/README.md)
-- [pg_plan_guard.control](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/pg_plan_guard.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/CHANGELOG.md)
-- [pg_plan_guard--1.1.8--1.1.9.sql](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/pg_plan_guard--1.1.8--1.1.9.sql)
+- [README.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/README.md)
+- [pg_plan_guard.control](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/pg_plan_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/CHANGELOG.md)
+- [pg_plan_guard--1.1.8--1.1.9.sql](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/pg_plan_guard--1.1.8--1.1.9.sql)
 
-`pg_plan_guard` 1.1.9 保存认可的 PostgreSQL 19 计划 advice，在重新规划已有查询时检测变化。它要求加载 `pg_plan_advice` 模块，不支持 PostgreSQL 18。
+`pg_plan_guard` 1.1.10 保存认可的 PostgreSQL 19 计划 advice，在重新规划已有查询时检测变化。它要求加载 `pg_plan_advice` 模块，不支持 PostgreSQL 18。
 
 ### 核心用法
 
@@ -32,3 +32,7 @@ SELECT * FROM plan_guard.status WHERE state <> 'ok';
 ### 1.1.9 的角色隔离
 
 1.1.9 在需要角色隔离时，通过作者拥有的临时 `SECURITY DEFINER` 函数规划已保存的 SQL。规划器求值的函数不能再通过重置角色或会话授权取回执行者身份。临时函数在只读规划子事务中创建并回滚。需要该执行环境时，作者须拥有数据库的 `TEMP` 权限，执行者须有权代理作者；权限不足会记录为基线错误。这修复了 1.1.7/1.1.8 中重置角色的逃逸路径，但保存的 SQL 仍须可信。
+
+### 1.1.10 的 Watch 权限
+
+1.1.10 撤销 `PUBLIC` 对 `plan_guard.watch()` 的执行权限，应仅向允许登记监控任务的可信运维角色显式授权。1.1.9 的作者身份隔离、数据库 TEMP 权限及代理作者角色要求仍然有效。

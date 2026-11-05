@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "country" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
 |    **Siblings**   | {{< ext "address_standardizer" >}} |
 
-> [!Note] Bundled with address_standardizer since PostGIS 3.7; PGDG 3.7.0; PG14-18.
+> [!Note] SQL 3.7, bundled in address_standardizer 3.7.0 for PG14-18; no separate RPM build. PGDG primary; PGSTY EL8 x86_64/aarch64 gap packages signed and indexed locally on 2026-11-05; CDN sync pending.
 
 
 ## Packages
@@ -47,8 +47,8 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "MISS" "address_standardizer_18 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_17 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_16 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_15 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_14 : MISS 0" "red" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "MISS" "address_standardizer_18 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_17 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_16 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_15 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_14 : MISS 0" "red" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_14 : AVAIL 1" "green" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_14 : AVAIL 1" "blue" >}} |
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_14 : AVAIL 1" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_14 : AVAIL 1" "blue" >}} |
@@ -70,7 +70,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/postgis/address_standardizer" title="Repository" icon="github" subtitle="github.com/postgis/address_standardizer" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="address_standardizer-3.7.0.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg address_standardizer;		# build rpm/deb
+```
 
 
 ## Install

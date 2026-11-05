@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2330** | {{< badge content="pg_tre" link="https://codeberg.org/gregburd/pg_tre" >}} | {{< ext "pg_tre" >}} | `4.5.3` | {{< category "FTS" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
+| **2330** | {{< badge content="pg_tre" link="https://codeberg.org/gregburd/pg_tre" >}} | {{< ext "pg_tre" >}} | `4.6.1` | {{< category "FTS" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -31,37 +31,37 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_fts" >}} {{< ext "vector" >}} {{< ext "pg_mentat" >}} |
 
-> [!Note] Upstream 4.5.3 fixes a TRE approximate-matcher worklist overflow reachable by query users that could crash a backend and restart the cluster. SQL 4.5.3; update matching library and extension SQL. No on-disk change or new REINDEX requirement; older WAL/format and omitted-posting repair boundaries still apply.
+> [!Note] 4.6.1 improves matching and fixes sparsemap bounds; upgrade library and SQL together. No new REINDEX requirement; older format/omitted-posting repair requirements remain.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tre` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.5.3` | {{< bg "18" "pg_tre_18" "green" >}} {{< bg "17" "pg_tre_17" "green" >}} {{< bg "16" "pg_tre_16" "red" >}} {{< bg "15" "pg_tre_15" "red" >}} {{< bg "14" "pg_tre_14" "red" >}} | `pg_tre_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.5.3` | {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} {{< bg "14" "postgresql-14-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tre` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.1` | {{< bg "18" "pg_tre_18" "green" >}} {{< bg "17" "pg_tre_17" "green" >}} {{< bg "16" "pg_tre_16" "red" >}} {{< bg "15" "pg_tre_15" "red" >}} {{< bg "14" "pg_tre_14" "red" >}} | `pg_tre_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.1` | {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} {{< bg "14" "postgresql-14-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
 {.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.5.3" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "pg_tre_17 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_tre_16 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_15 : N/A 0" "gray" >}} | {{< bg "N/A" "pg_tre_14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-18-pg-tre : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.6.1" "postgresql-17-pg-tre : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-16-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-15-pg-tre : N/A 0" "gray" >}} | {{< bg "N/A" "postgresql-14-pg-tre : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -70,22 +70,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_tre_18` | `4.5.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 592.5 KiB | [pg_tre_18-4.5.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tre_18-4.5.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_tre_18` | `4.5.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 576.4 KiB | [pg_tre_18-4.5.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tre_18-4.5.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_tre_18` | `4.5.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 562.6 KiB | [pg_tre_18-4.5.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tre_18-4.5.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_tre_18` | `4.5.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 553.8 KiB | [pg_tre_18-4.5.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tre_18-4.5.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_tre_18` | `4.5.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 569.5 KiB | [pg_tre_18-4.5.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tre_18-4.5.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_tre_18` | `4.5.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 558.1 KiB | [pg_tre_18-4.5.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tre_18-4.5.3-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-tre` | `4.5.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 574.2 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 555.0 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 576.5 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 558.7 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 588.6 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 578.9 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 572.4 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 562.3 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 569.5 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-tre` | `4.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 557.7 KiB | [postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-18-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb) |
+| `pg_tre_18` | `4.6.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 596.5 KiB | [pg_tre_18-4.6.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tre_18-4.6.1-1PGSTY.el8.x86_64.rpm) |
+| `pg_tre_18` | `4.6.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 580.4 KiB | [pg_tre_18-4.6.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tre_18-4.6.1-1PGSTY.el8.aarch64.rpm) |
+| `pg_tre_18` | `4.6.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 566.3 KiB | [pg_tre_18-4.6.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tre_18-4.6.1-1PGSTY.el9.x86_64.rpm) |
+| `pg_tre_18` | `4.6.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 557.4 KiB | [pg_tre_18-4.6.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tre_18-4.6.1-1PGSTY.el9.aarch64.rpm) |
+| `pg_tre_18` | `4.6.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 573.5 KiB | [pg_tre_18-4.6.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tre_18-4.6.1-1PGSTY.el10.x86_64.rpm) |
+| `pg_tre_18` | `4.6.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 561.9 KiB | [pg_tre_18-4.6.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tre_18-4.6.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-tre` | `4.6.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 577.4 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 558.5 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 579.7 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 561.4 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 591.8 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 582.1 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 576.1 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 565.9 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 572.9 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-tre` | `4.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 560.8 KiB | [postgresql-18-pg-tre_4.6.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-18-pg-tre_4.6.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
 {{< /tab >}}
@@ -93,22 +93,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_tre_17` | `4.5.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 593.2 KiB | [pg_tre_17-4.5.3-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tre_17-4.5.3-1PGSTY.el8.x86_64.rpm) |
-| `pg_tre_17` | `4.5.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 577.1 KiB | [pg_tre_17-4.5.3-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tre_17-4.5.3-1PGSTY.el8.aarch64.rpm) |
-| `pg_tre_17` | `4.5.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 563.4 KiB | [pg_tre_17-4.5.3-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tre_17-4.5.3-1PGSTY.el9.x86_64.rpm) |
-| `pg_tre_17` | `4.5.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 554.6 KiB | [pg_tre_17-4.5.3-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tre_17-4.5.3-1PGSTY.el9.aarch64.rpm) |
-| `pg_tre_17` | `4.5.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 570.1 KiB | [pg_tre_17-4.5.3-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tre_17-4.5.3-1PGSTY.el10.x86_64.rpm) |
-| `pg_tre_17` | `4.5.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 559.1 KiB | [pg_tre_17-4.5.3-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tre_17-4.5.3-1PGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pg-tre` | `4.5.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 575.1 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 555.5 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 577.2 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 558.5 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~trixie_arm64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 645.5 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 632.8 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 573.5 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 563.0 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~noble_arm64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 570.1 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_amd64.deb) |
-| `postgresql-17-pg-tre` | `4.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 558.1 KiB | [postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-17-pg-tre_4.5.3-1PGSTY~resolute_arm64.deb) |
+| `pg_tre_17` | `4.6.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 597.2 KiB | [pg_tre_17-4.6.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tre_17-4.6.1-1PGSTY.el8.x86_64.rpm) |
+| `pg_tre_17` | `4.6.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 581.0 KiB | [pg_tre_17-4.6.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tre_17-4.6.1-1PGSTY.el8.aarch64.rpm) |
+| `pg_tre_17` | `4.6.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 567.3 KiB | [pg_tre_17-4.6.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tre_17-4.6.1-1PGSTY.el9.x86_64.rpm) |
+| `pg_tre_17` | `4.6.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 558.3 KiB | [pg_tre_17-4.6.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tre_17-4.6.1-1PGSTY.el9.aarch64.rpm) |
+| `pg_tre_17` | `4.6.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 574.3 KiB | [pg_tre_17-4.6.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tre_17-4.6.1-1PGSTY.el10.x86_64.rpm) |
+| `pg_tre_17` | `4.6.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 562.8 KiB | [pg_tre_17-4.6.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tre_17-4.6.1-1PGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-tre` | `4.6.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 578.1 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 558.9 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 580.2 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 562.1 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 648.9 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 636.1 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 576.7 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 566.1 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 574.0 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-tre` | `4.6.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 561.2 KiB | [postgresql-17-pg-tre_4.6.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-tre/postgresql-17-pg-tre_4.6.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
@@ -117,7 +117,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/pg_tre" title="Repository" icon="link" subtitle="codeberg.org/gregburd/pg_tre" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tre-4.5.3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tre-4.6.1.tar.gz" />}}
 {{< /cards >}}
 
 

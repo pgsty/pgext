@@ -2,15 +2,15 @@
 
 来源：
 
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/README.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/UPGRADING.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/pg_sift.control)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v3.5.3/sql/pg_sift--3.5.sql)
-- [用法与安全](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/USAGE.md)
-- [支持版本](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/SUPPORT.md)
-- [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v3.5.3)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/README.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/UPGRADING.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/pg_sift.control)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/sql/pg_sift--3.5.sql)
+- [用法与安全](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/USAGE.md)
+- [支持版本](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/SUPPORT.md)
+- [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v4.0.3)
 
-`pg_sift` 发行版 3.4.2 安装的 SQL 扩展版本为 3.4，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
+`pg_sift` 发行版 4.0.3 安装的 SQL 扩展版本为 4.0.3，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
 
 ### 文本检索
 
@@ -80,3 +80,9 @@ SELECT * FROM sift.upgrade_commands();
 ### 3.5.2–3.5.3 正确性修复
 
 3.5.2 修复列聚合读取分块词典及多个宽列时的崩溃和错误分组。3.5.3 修复通用计划中 ANY/ALL 测试使用 NULL 或紧凑文本数组参数时的崩溃或错误结果。应在所有读取节点安装 3.5.3，并重启服务，或重新连接所有已加载旧库的连接池与工作进程。SQL 仍为 3.5，这两个补丁版本无需额外 SQL 更新或 REINDEX。替换二进制前，`sift.enable_agg = off` 可使受影响语句恢复使用 PostgreSQL 自身计划。此前 3.5 的格式与升级边界仍然适用。
+
+### 4.0.3 升级与变化跟踪
+
+先运行对应版本的升级预检查，为每个读取方部署匹配库，并重启或替换加载旧版库的进程。遵循所提供的 SQL 链，经过 3.5、3.7、4.0 升级到 4.0.3。即使从 4.0.2 到 4.0.3，也需要更新 `sift.index_choices` 和 `sift.help` 的 SQL 定义；仅该补丁不改变格式，无需 REINDEX。更早版本的文本索引修复及列格式读取限制仍适用。
+
+新建或重建的列索引默认使用 `track_changes = 'auto'`，通过 UPDATE 与 DELETE 两个语句级触发器跟踪符合条件的单列主键。这会增加写入工作和一次基线堆表扫描。仅执行 ALTER EXTENSION 不会为已有索引启用此功能，`track_changes = 'off'` 可关闭它。分区、继承或并发构建等情况下跟踪不完整时，查询回退到堆表检查；修改表拓扑前应阅读升级指南。文本索引的 `merge_fanin` 默认值现为 4，合并会更频繁。

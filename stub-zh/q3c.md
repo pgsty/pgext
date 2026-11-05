@@ -1,9 +1,10 @@
-
-
-
 ## 用法
 
-> 来源：[`segasai/q3c`](https://github.com/segasai/q3c) | [ADASS 论文](http://adsabs.harvard.edu/abs/2006ASPC..351..735K) | [ASCL](https://ascl.net/1905.008)
+来源：
+
+- [README.md](https://github.com/segasai/q3c/blob/36a237667878cb8e8ece5fe98cc0d703cb056a28/README.md)
+- [q3c.control](https://github.com/segasai/q3c/blob/36a237667878cb8e8ece5fe98cc0d703cb056a28/q3c.control)
+- [Release 2.0.6](https://github.com/segasai/q3c/releases/tag/v2.0.6)
 
 Q3C（Quad Tree Cube）是一个用于天文星表快速天球索引的 PostgreSQL 扩展。它能够对球面坐标（赤经和赤纬）进行高效的空间查询，包括锥形搜索、椭圆搜索、多边形查询、位置交叉匹配和最近邻查找。
 
@@ -14,6 +15,7 @@ Q3C（Quad Tree Cube）是一个用于天文星表快速天球索引的 PostgreS
 要使用 Q3C，在包含 `ra` 和 `dec` 列（单位为度）的表上创建空间索引：
 
 ```sql
+CREATE EXTENSION q3c;
 CREATE INDEX ON mytable (q3c_ang2ipix(ra, dec));
 ```
 
@@ -36,7 +38,7 @@ ANALYZE mytable;
 ```
 
 
-## 函数
+### 函数
 
 - `q3c_ang2ipix(ra, dec)` -- 返回给定 ra 和 dec 对应的 ipix 值（64 位整数像素标识符）
 
@@ -67,7 +69,7 @@ ANALYZE mytable;
 - `q3c_version()` -- 返回安装的 Q3C 版本
 
 
-## 示例
+### 示例
 
 ### 锥形搜索
 
@@ -212,13 +214,13 @@ FROM (
 注意：Q3C 的像素面积不均匀（与 HEALPIX 不同）。
 
 
-## 限制
+### 限制
 
 - 不支持查询直径大于约 25 度的超大多边形
 - 不支持超过 100 个顶点的多边形
 
 
-## 性能提示
+### 性能提示
 
 - 确保 Q3C 函数中的参数顺序正确（如 `q3c_radial_query(ra, dec, 120, 3, 1)` 而非 `q3c_radial_query(120, 3, ra, dec, 1)`）
 - 使用 `EXPLAIN` 验证查询计划使用了 Q3C 索引的位图扫描
@@ -231,3 +233,7 @@ WITH x AS MATERIALIZED (SELECT * FROM t1 WHERE t1.mag < 1),
      y AS (SELECT *, t2.mag AS t2mag FROM x, t2 WHERE q3c_join(x.ra, x.dec, t2.ra, t2.dec, 1./3600))
 SELECT * FROM y WHERE t2mag > 33;
 ```
+
+### 2.0.6 正确性修复
+
+2.0.6 修复内存错误、小于毫角秒的锥形匹配遗漏、跨行错误复用多边形缓存，以及立方体角附近的径向和椭圆查询。非有限坐标通常返回不匹配；`q3c_in_poly` 对非有限点返回 NULL。更新动态库与 SQL 扩展后，应复核应用对无效坐标的处理。

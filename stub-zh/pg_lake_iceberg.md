@@ -2,14 +2,17 @@
 
 来源：
 
-- [官方Iceberg表指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/iceberg-tables.md)
-- [版本3.5控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg.control)
-- [Iceberg元数据SQL API](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg--3.0.sql)
-- [版本3.4目录FDW SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg--3.3--3.4.sql)
+- [官方Iceberg表指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/iceberg-tables.md)
+- [版本3.6控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg.control)
+- [Iceberg元数据SQL API](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg--3.0.sql)
+- [版本3.4目录FDW SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg--3.3--3.4.sql)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg--3.5--3.6.sql)
 
 `pg_lake_iceberg` 在PostgreSQL内部实现了Iceberg的元数据、快照、清单、分区规范和目录集成。依赖它的 `pg_lake_table` 组件提供常用的 `CREATE TABLE ... USING iceberg` 语法；用户通常通过 `pg_lake` 安装这两个组件。
 
-pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
+本次核验的上游发布为 `3.6.0`，SQL 扩展版本为 `3.6`，支持 PostgreSQL 16–19。现有软件包版本单独跟踪，动态库与查询服务器应使用同一发布版本。
 
 ### 创建并检查一个Iceberg表
 
@@ -78,3 +81,7 @@ WITH (catalog = 'my_polaris');
 - Iceberg对某些PostgreSQL值有更窄的表现形式。默认的 `out_of_range_values = 'error'` 保持完整性；`clamp` 默默改变超出范围的时间戳值，并用 `NULL` 替换一些不支持的值。
 
 Iceberg 从 `3.4` 到 `3.5` 的 SQL 迁移脚本为空；补丁级目录与对象删除修复仍须依靠匹配的 `3.5.3` 二进制。
+
+### 上游 3.6.0
+
+上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。此组件从 3.5 到 3.6 的 SQL 迁移为空，但运行库及依赖仍须按同一发布协调升级。

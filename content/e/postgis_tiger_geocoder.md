@@ -33,7 +33,7 @@ page_width: full
 |   **Requires**    | {{< ext "postgis" >}} {{< ext "fuzzystrmatch" >}} |
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
 
-> [!Note] Standalone since PostGIS 3.7; PGDG 2025.2; PG16-18.
+> [!Note] Standalone 2025.2 since PostGIS 3.7; PG16-18 only; requires postgis and fuzzystrmatch. PGDG primary; PGSTY EL8 noarch packages shared across both architectures, signed and indexed locally on 2026-11-05; CDN sync pending.
 
 
 ## Packages
@@ -48,8 +48,8 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "MISS" "postgis_tiger_geocoder_18 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_17 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_16 : MISS 0" "red" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "MISS" "postgis_tiger_geocoder_18 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_17 : MISS 0" "red" >}} | {{< bg "MISS" "postgis_tiger_geocoder_16 : MISS 0" "red" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "green" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2025.2" "postgis_tiger_geocoder_16 : AVAIL 1" "blue" >}} | {{< bg "N/A" "postgis_tiger_geocoder_15 : N/A 0" "gray" >}} | {{< bg "N/A" "postgis_tiger_geocoder_14 : N/A 0" "gray" >}} |
@@ -72,6 +72,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis_tiger_geocoder_18` | `2025.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 123.0 KiB | [postgis_tiger_geocoder_18-2025.2-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis_tiger_geocoder_18-2025.2-1PGSTY.el8.noarch.rpm) |
+| `postgis_tiger_geocoder_18` | `2025.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 123.0 KiB | [postgis_tiger_geocoder_18-2025.2-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis_tiger_geocoder_18-2025.2-1PGSTY.el8.noarch.rpm) |
 | `postgis_tiger_geocoder_18` | `2025.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 104.4 KiB | [postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm) |
 | `postgis_tiger_geocoder_18` | `2025.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 104.3 KiB | [postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/postgis_tiger_geocoder_18-2025.2-1PGDG.rhel9.8.noarch.rpm) |
 | `postgis_tiger_geocoder_18` | `2025.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.5 KiB | [postgis_tiger_geocoder_18-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/postgis_tiger_geocoder_18-2025.2-1PGDG.rhel10.2.noarch.rpm) |
@@ -93,6 +95,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis_tiger_geocoder_17` | `2025.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 123.0 KiB | [postgis_tiger_geocoder_17-2025.2-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis_tiger_geocoder_17-2025.2-1PGSTY.el8.noarch.rpm) |
+| `postgis_tiger_geocoder_17` | `2025.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 123.0 KiB | [postgis_tiger_geocoder_17-2025.2-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis_tiger_geocoder_17-2025.2-1PGSTY.el8.noarch.rpm) |
 | `postgis_tiger_geocoder_17` | `2025.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 104.4 KiB | [postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm) |
 | `postgis_tiger_geocoder_17` | `2025.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 104.3 KiB | [postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/postgis_tiger_geocoder_17-2025.2-1PGDG.rhel9.8.noarch.rpm) |
 | `postgis_tiger_geocoder_17` | `2025.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.6 KiB | [postgis_tiger_geocoder_17-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/postgis_tiger_geocoder_17-2025.2-1PGDG.rhel10.2.noarch.rpm) |
@@ -114,6 +118,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis_tiger_geocoder_16` | `2025.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 123.0 KiB | [postgis_tiger_geocoder_16-2025.2-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis_tiger_geocoder_16-2025.2-1PGSTY.el8.noarch.rpm) |
+| `postgis_tiger_geocoder_16` | `2025.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 123.0 KiB | [postgis_tiger_geocoder_16-2025.2-1PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis_tiger_geocoder_16-2025.2-1PGSTY.el8.noarch.rpm) |
 | `postgis_tiger_geocoder_16` | `2025.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 104.4 KiB | [postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm) |
 | `postgis_tiger_geocoder_16` | `2025.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 104.3 KiB | [postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/postgis_tiger_geocoder_16-2025.2-1PGDG.rhel9.8.noarch.rpm) |
 | `postgis_tiger_geocoder_16` | `2025.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.6 KiB | [postgis_tiger_geocoder_16-2025.2-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/postgis_tiger_geocoder_16-2025.2-1PGDG.rhel10.2.noarch.rpm) |
@@ -136,7 +142,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://gitea.osgeo.org/postgis/postgis_tiger_geocoder" title="Repository" icon="link" subtitle="gitea.osgeo.org/postgis/postgis_tiger_geocoder" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgis_tiger_geocoder-2025.2.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg postgis_tiger_geocoder;		# build rpm/deb
+```
 
 
 ## Install

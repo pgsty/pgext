@@ -2,35 +2,38 @@
 
 Sources:
 
-- [README](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/README.md)
-- [Control](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/pg_phasevec.control)
-- [Base SQL](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/sql/pg_phasevec--0.1.0.sql)
-- [0.16.0 SQL upgrade](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/sql/pg_phasevec--0.15.0--0.16.0.sql)
-- [PGXN release](https://pgxn.org/dist/pg_phasevec/0.16.0/)
-- [IVF implementation](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/src/phasevec_ivf.c)
-- [PostgreSQL 18 DSM interface](https://github.com/postgres/postgres/blob/REL_18_STABLE/src/include/storage/dsm_registry.h)
-- [PostgreSQL 18 LWLock interface](https://github.com/postgres/postgres/blob/REL_18_STABLE/src/include/storage/lwlock.h)
+- [README.md](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/README.md)
+- [pg_phasevec.control](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/pg_phasevec.control)
+- [sql/pg_phasevec--0.1.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.1.0.sql)
+- [sql/pg_phasevec--0.16.0--0.17.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.16.0--0.17.0.sql)
+- [sql/pg_phasevec--0.17.0--0.18.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.17.0--0.18.0.sql)
+- [src/phasevec_ivf.c](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/src/phasevec_ivf.c)
 
-`pg_phasevec` 0.16.0 stores provenance-aware vector readings beside PostgreSQL rows. A reading records the sealed reader identity, the exact text hash and the time; stale or foreign readings are withheld from search. Upstream declares PostgreSQL 18 or newer and makes no network calls; the 0.16.0 source has the PostgreSQL 18 compatibility problem described below.
+`pg_phasevec` 0.18.0 stores provenance-aware vector readings beside PostgreSQL rows. Each reading identifies its sealed reader, exact text hash and time; stale or foreign readings are withheld from search. The reader runs locally and is supplied by the operator.
 
-### PostgreSQL 18 Compatibility
-
-Release 0.16.0 does not compile against PostgreSQL 18: its IVF implementation calls `LWLockNewTrancheId` and `GetNamedDSMSegment` with incompatible signatures and calls `GetNamedDSA`, which PostgreSQL 18 does not provide. Both native and LLVM builds fail. The declared minimum version therefore does not establish working PostgreSQL 18 support; use an upstream compatibility fix before following the installation workflow. Other PostgreSQL versions have not been verified here.
-
-### Seal a Reader and Search
+### Enablement and Compatibility
 
 ```sql
 CREATE EXTENSION pg_phasevec;
 SELECT extversion FROM pg_extension WHERE extname = 'pg_phasevec';
-
 ```
 
-A reader is registered with its model digest and dimensionality. A watch names the source table, key and text expression; `phasevec.next` supplies rows to your local reader, and `phasevec.record` stores the resulting codes against the text hash. `phasevec.search`, `find` and `alike` query only compatible readings. `coverage` reports gaps, while `reader_switch` marks readings from the previous reader as foreign.
+Installation requires a superuser; the schema is fixed to `phasevec`. No other extension is required. Upstream documents PostgreSQL 18–19 testing. Version 0.17.0 fixes the PostgreSQL 18 build failure present in 0.10.0–0.16.0: PostgreSQL 18 uses a per-backend IVF cache, with `phasevec.shared_ivf_cache` off and unavailable; shared IVF requires PostgreSQL 19. This source review does not establish a locally rebuilt binary.
 
-### Index and Boundaries
+### Readers and Search
 
-IVF maintenance is explicit through `ivf_build`, `ivf_maintain` and `ivf_absorb`. The index is approximate and coverage thresholds can refuse to answer from a partially filled watch. Editing a watched row makes its reading stale in the same transaction. The extension does not supply an embedding model, reader service, network transport or durable cross-system ordering; callers own reader sealing, privileges and model provenance. The schema is fixed to `phasevec` and the extension is not relocatable.
+Register a reader with its model digest and dimensionality. A watch names the source table, key and text expression. `phasevec.next` supplies work to the reader, and `phasevec.record` stores resulting codes against the text hash. `phasevec.search`, `find` and `alike` search compatible readings; `coverage` reports gaps, while `reader_switch` marks old-reader results as foreign. The extension supplies neither an embedding model nor a durable reader service.
 
-### Upgrade and Security
+`ivf_build`, `ivf_maintain` and `ivf_absorb` perform explicit approximate-index maintenance. Editing a source row marks its reading stale in the same transaction. Coverage thresholds can refuse queries over an incompletely filled watch; permitting partial results is a caller decision.
 
-Install as a superuser. The source includes a base installation and versioned SQL upgrades through 0.16.0. Install matching library/SQL files and follow the supplied upgrade chain; 0.16.0 hardens allocation bounds, cursor NULL handling and maintenance privileges. Keep model digests, reader manifests and source-table access under the same trust boundary as the database.
+### Recall and Brief Output
+
+`phasevec.recall_approve` records an owner-approved baseline and `phasevec.recall_check` compares current recall with it. Checks use the saved search parameters and sampled keys, so a large sample can be expensive; above 100000 live readings the reference search is itself prefiltered. An unavailable baseline or unusable sample is reported as unmeasurable. These functions and their baseline table are revoked from `PUBLIC`; grant monitoring access deliberately.
+
+Version 0.18.0 adds `phasevec.brief(watch, budget)` with a default character budget of 8000. It summarizes still-valid readings and obtains source text with the caller's privileges. It does not grant additional access to the underlying table.
+
+### Upgrade and Trust Boundary
+
+Install matching library and SQL files and follow the supplied upgrade chain. When crossing 0.17.0 on a server using shared IVF, restart to release the old shared-memory segment after the cache format change. The new cache also distinguishes extension installations, preventing reuse of stale state after drop/recreate.
+
+Maintenance functions are revoked from `PUBLIC`. Reader sealing and model digests establish provenance, not model quality; keep reader manifests, maintenance privileges and source-table permissions under the database's operational controls.

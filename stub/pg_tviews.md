@@ -2,75 +2,72 @@
 
 Sources:
 
-- [pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.30--0.1.0-beta.31.sql)
-- [pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.31--0.1.0-beta.32.sql)
+- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/pg_tviews.control)
+- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/Cargo.toml)
+- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/CHANGELOG.md)
+- [docs/reference/api.md](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/docs/reference/api.md)
+- [docs/concurrency.md](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/docs/concurrency.md)
+- [docs/user-guides/operators.md](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/docs/user-guides/operators.md)
+- [docs/operations/upgrade.md](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/docs/operations/upgrade.md)
+- [docs/operations/upgrades.md](https://github.com/fraiseql/pg_tviews/blob/84157ed337b5b94baa60f3734c04f26a17a132b6/docs/operations/upgrades.md)
 
-- [README.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/README.md)
-- [CHANGELOG.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/CHANGELOG.md)
-- [pg_tviews.control](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/pg_tviews.control)
-- [Cargo.toml](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/Cargo.toml)
-- [sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.29--0.1.0-beta.30.sql)
-- [docs/user-guides/operators.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/docs/user-guides/operators.md)
-- [docs/DEPRECATION_WARNINGS.md](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/docs/DEPRECATION_WARNINGS.md)
-- [beta.33 SQL update](https://github.com/fraiseql/pg_tviews/blob/2a76abdbf8a9ff6cbd365a307d22669574ef0a65/sql/pg_tviews--0.1.0-beta.32--0.1.0-beta.33.sql)
-
-`pg_tviews` 0.1.0-beta.33 maintains derived TVIEW tables transactionally from analyzed queries and base-table triggers. Objects live in the fixed `tviews` schema. This source supports PostgreSQL 16–18.
+`pg_tviews` 0.1.0-beta.35 maintains derived TVIEW tables transactionally from analyzed queries and base-table triggers. It supports PostgreSQL 16–18, installs its API in schema `tviews`, and requires `jsonb_delta`.
 
 ### Core Workflow
 
-Basic SQL functions can load the library lazily, but the upstream quick start preloads it so hooks are active in every session. Automatic rebuild workers require preload and a server restart. Preserve other libraries in the existing configuration.
+Preload the library on every server using it, preserving any existing preload entries, then restart PostgreSQL. Preloading is mandatory; installation and subsequent functions or writes fail with SQLSTATE `55000` when it is absent.
 
 ```ini
 shared_preload_libraries = 'pg_tviews'
 ```
 
+Install as a superuser and create a small TVIEW:
+
 ```sql
+CREATE EXTENSION jsonb_delta;
 CREATE EXTENSION pg_tviews;
-SET search_path = public, tviews;
-CREATE TABLE tb_post (pk_post bigint PRIMARY KEY, title text);
-INSERT INTO tb_post VALUES (1, 'Example');
-SELECT tviews.pg_tviews_create('post',
-  $$ SELECT pk_post, jsonb_build_object('title', title) AS data FROM tb_post $$);
-SELECT * FROM tv_post;
-SELECT * FROM tviews.registry;
-SELECT * FROM tviews.pg_tviews_health_check();
+CREATE TABLE tb_user (
+    pk_user bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id uuid NOT NULL DEFAULT gen_random_uuid(),
+    name text NOT NULL
+);
+INSERT INTO tb_user (name) VALUES ('Alice'), ('Bob');
+CREATE TABLE tv_user AS
+SELECT pk_user, id, jsonb_build_object('id', id, 'name', name) AS data
+FROM tb_user;
+SELECT * FROM tv_user;
+SELECT * FROM tviews.pg_tviews_check_health();
 ```
 
-Definitions must be exactly one SELECT and expose the expected integer entity key and JSONB data. Callers need schema/table/trigger privileges and must own TVIEWs they maintain. `tviews.registry`, `tviews.contract_version()` and `tviews.registry.managed_indexes` describe registered objects; use these interfaces instead of editing internal plans. `tviews.pg_tviews_create_or_replace` changes a definition, while `tviews.pg_tviews_refresh` performs a refresh as the TVIEW owner.
+A definition has one SELECT, the conventional integer entity key, a UUID id and JSONB data. Maintenance runs as the TVIEW owner, who needs SELECT on its sources; writers need base-table privileges and readers need TVIEW SELECT. `tviews.pg_tviews_create_or_replace` requires ownership of an existing TVIEW and treats supplied options as a complete declaration: omitted options revert to defaults. LOGGED is the default.
 
-### Upgrade to beta.30
+### Concurrency and Objects
 
-beta.30 includes the separately unreleased beta.28 and beta.29 changes. Back up and rehearse, install the matching library and restart PostgreSQL, update each database, then re-register all TVIEWs as an authorized maintenance role:
+Writers and flush/refresh/rebuild operations require READ COMMITTED. Stronger isolation is rejected with SQLSTATE `0A000`; this release no longer deliberately raises `40001`. Deadlocks can still return `40P01` and require transaction retry. Pending or suspended refresh at commit fails rather than leaving stale committed results.
+
+Use `tviews.registry` to inspect registrations and `tviews.contract_version()` for the API contract, now 3. Current monitoring names include `tviews.pg_tviews_show_queue`, `tviews.pg_tviews_show_suspended`, `tviews.pg_tviews_count_feed_gaps` and `tviews.pg_tviews_show_replication`. Earlier health, queue and feed-gap names were removed without aliases. `tviews.stats` reports cross-session maintenance counters.
+
+TVIEWs over tables written by logical subscriptions are refused. Publish the maintained TVIEW on the publisher instead. UNLOGGED TVIEWs are empty after crash recovery or promotion and are unavailable on standbys; plan rebuilds or use LOGGED storage.
+
+### Configuration and Change Feed
+
+The five operator settings are `pg_tviews.auto_rebuild_databases` (default all databases), `pg_tviews.publish_changes` (off), `pg_tviews.max_refresh_rows` (0, unlimited), `pg_tviews.lock_escalation_threshold` (64) and `pg_tviews.audit_enabled` (off). The former escalation value -1 is removed. Database rebuild selection needs a restart; the other settings require superuser control.
+
+The hidden superuser diagnostic `pg_tviews.max_queue_size` defaults to 1000000. Former configurable depth/cache/batch limits are now fixed internal limits; remove obsolete settings instead of assuming they still work. Exceeding refresh limits can fail a write with `54000`.
+
+Change notifications on `tviews_changes` are not a durable log. Queue pressure can allow a commit while skipping its notification; monitor feed gaps and invalidate consumer caches when they increase. Prepared transactions with pending change publication are rejected.
+
+### Upgrade to beta.35
+
+Back up and rehearse first, then pause writers. Stop the server before replacing loaded libraries, install matching files and restart. A direct SQL update is supported only from the preceding release, beta.34:
 
 ```sql
-ALTER EXTENSION pg_tviews UPDATE;
-SELECT * FROM tviews.pg_tviews_reregister_all();
+ALTER EXTENSION pg_tviews UPDATE TO '0.1.0-beta.35';
+SELECT tviews.pg_tviews_version(), tviews.contract_version();
+SELECT * FROM tviews.pg_tviews_check_health() WHERE status <> 'OK';
+SELECT schema, name, needs_reregister FROM tviews.registry;
 ```
 
-The upgrade re-derives propagation plans, replaces several interfaces and creates missing reference-column indexes; allow time for index builds on large TVIEWs. `tviews.contract_version()` is now 2. Tools read options through `tviews.registry.options`, and named arguments use `tview =>`. `tviews.registry.references` describes relationships proven by foreign keys; `tviews.registry.typename` supplies the type name.
+Between restart and SQL update, base-table writes fail with `55000`. The update re-derives every TVIEW's plan and triggers as its owner, leaves rows intact, and replaces per-TVIEW triggers with one set per base table. Failure to analyze any definition rolls back the entire update. Restore grants for replaced functions, including `pg_tviews_ensure_propagation_indexes_all(boolean)` and `pg_tviews_reset_stats_all()`, before resuming writers.
 
-Options passed to `tviews.pg_tviews_create_or_replace` are a complete declaration: omitted options revert to defaults, so explicitly preserve the options you need. New TVIEWs default to LOGGED storage; existing tables retain their persistence. Changing storage options can rewrite all rows. Remove deleted GUCs from configuration, notably the old `pg_tviews.uncascaded_policy`; policy now belongs to each TVIEW's options. When crossing earlier releases, also review removed APIs, CASCADE removal of `tviews.tviewschema` and maintenance-function privilege changes.
-
-### Refresh and Concurrency Boundaries
-
-Pending refresh work at commit now causes SQLSTATE `55000`; malformed plans and missing mappings also fail writes instead of committing stale results. Concurrent writes take value/key locks and can produce `40P01` or `40001`; retry both, and prefer READ COMMITTED. `pg_tviews.lock_escalation_threshold` defaults to 64; `tviews.pg_tviews_queue_stats()` reports lock waits and escalations.
-
-Time-dependent definitions need an external refresh schedule through `tviews.pg_tviews_refresh_time_dependent()`. Function table reads and materialized-view reads require the documented maintenance policies. Refresh functions run with a restricted search path, so called functions should qualify their relations. UNLOGGED TVIEWs lose contents after crash recovery and cannot be read on standbys; plan rebuilding or use LOGGED storage. The per-TVIEW uncascaded policy defaults to error. Removed cascade/insert/delete and conversion APIs must not be used by existing integration code.
-
-### Statistics, Notifications and Write Limits
-
-`tviews.stats` exposes refresh counters across sessions and requires preload. `pg_tviews.auto_rebuild_databases` now defaults to all databases to refill UNLOGGED TVIEWs reset by crash recovery or promotion. `pg_tviews.max_queue_size` defaults to 1000000. A superuser can bound a statement's refresh work with `pg_tviews.max_refresh_rows`; exceeding it rejects the write with `54000`.
-
-`pg_tviews.publish_changes` defaults to off. A superuser can select types or rows to publish committed changes on `tviews_changes`. beta.30 messages use `v: 2` and add `c` for affected parent collections; listeners that do not understand the version should invalidate all cached data. Above 90% NOTIFY queue usage, a transaction may commit without publishing and log a warning; this is not a durable change log. PREPARE TRANSACTION fails with `25000` while changes await publication.
-
-### Upgrading from beta.30 to beta.32
-
-Install the matching library, restart through the preload-library procedure, and run `ALTER EXTENSION pg_tviews UPDATE` to reach catalog revision 9. Upgrading from beta.30 or beta.31 does not require TVIEW re-registration. The earlier re-registration requirements still apply when crossing older releases.
-
-`tviews.pg_tviews_feed_gaps()` and queue-statistics field `feed_gaps` count committed transactions that skipped publication since cluster startup and require preload. Listeners should poll the counter and invalidate their entire cache when it changes. beta.32 removes per-session `publish_skipped`; use the new counter. `pg_tviews_flush_and_report` adds collections when publishing rows; invalidated_types covers an entire unlistable type and its collections, so stale row lists are not complete results.
-
-These releases also fix writes depending on privileges on unrelated TVIEW schemas and read the catalog as entities and plans to reduce unrelated TVIEW work. After a logical restore that omitted TVIEW table data, a later write reaching an empty TVIEW refills it when its source view has rows; this does not guarantee an immediately complete restored table.
-
-### beta.33 Partition Correctness
-
-Dropping a partition now removes its contribution from every TVIEW over the partition tree in the same statement. Foreign-partition drops refresh affected TVIEWs in full. Plain DETACH refreshes only the affected keys; ATTACH and concurrent DETACH retain full refreshes. Install matching library files and restart preloaded servers, then update from beta.32. The SQL update is a no-op and catalog revision 9 is unchanged, so this transition needs no TVIEW re-registration. Earlier migration requirements still apply when crossing their affected releases.
+Older releases require the documented drop/recreate migration using saved definitions in dependency order; preserve source rows and keep writers paused until all TVIEWs are recreated. Do not use historical beta.30–33 update instructions as a direct path to beta.35. No downgrade scripts exist: rollback requires the prior matching binaries and a verified backup restored into a new database.

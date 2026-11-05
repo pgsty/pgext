@@ -2,15 +2,18 @@
 
 Sources:
 
-- [Official pg_map README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/README.md)
-- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/pg_map.control)
-- [Base SQL definition](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/pg_map--1.2.sql)
-- [Official extension tests and examples](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/tests/pytests/extension_test.py)
+- [Official pg_map README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/README.md)
+- [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map.control)
+- [Base SQL definition](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map--1.2.sql)
+- [Official extension tests and examples](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/tests/pytests/extension_test.py)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map--3.5--3.6.sql)
 
 `pg_map` generates strongly typed key/value map domains from PostgreSQL types. A generated map is an array of composite key/value pairs, with type-specific extraction, cardinality, entry, and operator functions. It is used by pg_lake for nested data but can also be used directly.
 
 
-The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
+The reviewed upstream release is `3.6.0`, with SQL extension version `3.6` and PostgreSQL 16–19 support. Existing packaged versions are tracked separately. Keep libraries and the query server from the same release.
 
 ### Create and Use a Map Type
 
@@ -57,3 +60,7 @@ FROM map_type.entries(
 - Generated objects are registered as dependencies of `pg_map`; dropping the extension can remove them and columns that depend on them when `CASCADE` is used.
 - Map values use PostgreSQL composite-array syntax. Duplicate-key and ordering semantics should be tested for the application's chosen construction path rather than assumed from JSON objects.
 - The `3.4` to `3.5` map SQL migration is empty; the generated map API remains unchanged.
+
+### Upstream 3.6.0
+
+Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.

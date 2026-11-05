@@ -29,7 +29,6 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `public` |
 |   **See Also**    | {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "snowflake" >}} {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "uuid-ossp" >}} {{< ext "typeid" >}} {{< ext "permuteseq" >}} |
 
 > [!Note] Upstream 1.1.0 ships on PGXN only; pinned to public so uuid operator commutators resolve on PostgreSQL 17 and 18.

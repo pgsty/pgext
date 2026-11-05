@@ -2,30 +2,44 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.1.1/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.4.0/CHANGELOG.md)
 
-`pg_pure` 是可安装的受信任 PL/Pure 语言入口。分发版本 0.1.1 携带 SQL 版本 0.1，但在 libpure 具备沙箱之前，处理函数会主动拒绝执行。因此它是实验性占位实现，并非可用的受信任解释器；目前能够运行的是配套的 `pg_pureu`。
+`pg_pure` 提供受信任的 Pure 过程语言与 SPI 数据库访问。分发版本 0.4.0 仍使用 SQL 扩展版本 0.1。从 0.2.0 起，受信任函数已能在 libpure 安全模式解释器中执行，早期主动拒绝执行的限制不再适用。
 
-### 启用方式与当前边界
+### 核心流程
 
 ```sql
 CREATE EXTENSION pg_pure;
-SELECT extversion FROM pg_extension WHERE extname = 'pg_pure';
+CREATE FUNCTION pure_factorial(n int) RETURNS numeric
+LANGUAGE pg_pure AS $$ foldl (*) 1L (1..n) $$;
+SELECT pure_factorial(30);
 ```
 
-控制文件将扩展标记为受信任、不可迁移，创建扩展本身也不要求超级用户。该目录属性不会绕过处理函数的执行限制。不要为了绕过限制而把非受信任的配套语言交给普通角色使用。
+扩展受信任且不可迁移。具备相应数据库与模式权限的普通角色可以安装扩展并定义受信任语言函数。需要 PostgreSQL 17–19，以及上游适合嵌入的 libpure 分支 ab12de13 或更新修订。
 
-### 运行条件
+### 类型与数据库访问
 
-需要 PostgreSQL 17–19，以及上游适合嵌入宿主进程的 libpure 分支。两个语言共用 `pg_pure` 动态库。libpure 支持原生 `extern` 调用；受信任执行所需的沙箱尚未实现，未来必须限制原生调用、内联 C、求值与任意模块加载。
+标量类型包括整数、浮点、numeric、布尔与文本。SQL NULL 用 `sql::null` 表示。精确 `numeric` 值使用 Pure 大整数或有理数；中间运算可能超出机器整数范围时应使用大整数。
 
-预加载 `pg_pure` 是可选项；通过 `shared_preload_libraries` 配置时需要重启服务器。`pg_pure.using` 选择预载模块，默认是 `math`。不预加载时，各后端会分别创建解释器。
+`float8[]` 映射为稠密 Pure 双精度矩阵：一维数组成为行向量，二维数组成为矩阵。NULL 元素和超过二维的数组会被拒绝。`sql::query`、`sql::exec`、`sql::notice` 与 `sql::warning` 提供数据库访问与消息，数据库错误会转为 `sql::error`。尚未实现参数化 SPI、集合返回函数、触发器与复合类型。不要把不可信值直接拼入 SQL 字符串。
 
-### 部署限制
+### 沙箱与模块
 
-不要让 libpure 与 PostgreSQL 的 LLVM JIT 在同一后端加载不同主版本的 LLVM：上游报告这会导致后端退出时崩溃，进而可能触发整个集群重启。0.1 版本受支持的部署方式是使用不带 LLVM JIT 的 PostgreSQL；LLVM 主版本一致也是上游记录的配置。本次分发不代表已经具备生产可用性或受信任沙箱。
+安全模式拒绝 `extern`、内联 C、`eval`/`evalcmd`、任意原生或未获准的 `using`，以及危险的前导库操作。受信任与非受信任语言使用相互独立的后端本地解释器。非受信任的配套语言 `pg_pureu` 仍可执行原生代码，必须限于超级用户。
+
+DBA 通过 `pg_pure.using` 选择模块，默认值为 `math`。使用 0.4.0 的已编译 GSL Cholesky 求解器时，应安装匹配的 Pure 模块，并通过该设置预载和允许模块：
+
+```ini
+pg_pure.using = 'math gsl::linalg'
+```
+
+完成配置后，受信任函数体可直接调用 `gsl::linalg::cholesky_solve`。受信任函数体中的命名空间导入 `using gsl::linalg` 仍会被 libpure 的模块路径检查拒绝，应使用 DBA 管理的设置。
+
+### 运行与升级
+
+两个语言均加载 `pg_pure` 库。通过 `shared_preload_libraries` 可选预加载能够预热解释器，配置后需要重启；否则每个后端单独初始化。要求使用的 libpure 分支隐藏了 LLVM 符号，早期要求禁用 PostgreSQL JIT 的建议已过时。应部署匹配的扩展与 libpure 文件，并替换已加载旧库的进程。分发版本 0.4.0 不改变 SQL 版本 0.1，因此不能单凭该版本判断实际加载的库。

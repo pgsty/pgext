@@ -2,8 +2,11 @@
 
 来源：
 
-- [官方空间功能文档](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/docs/spatial.md)
-- [官方 control 文件](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_spatial/pg_lake_spatial.control)
+- [官方空间功能文档](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/spatial.md)
+- [官方 control 文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_spatial/pg_lake_spatial.control)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_spatial/pg_lake_spatial--3.5--3.6.sql)
 
 `pg_lake_spatial` 把 `pg_lake` 分析表与 PostGIS geometry、DuckDB spatial/GDAL 读取器连接起来。它可以从空间文件推断模式，直接查询远程 GeoParquet 或 GeoJSON，也能把支持的文件加载到普通分析表。它同时依赖 `pg_lake` 与 `postgis`。
 
@@ -34,3 +37,7 @@ GROUP BY 1;
 GeoParquet 当前只支持 WKB geometry。GDAL 资源可能被下载并缓存，因此远程访问需要可用的网络/对象存储凭据与可预测的缓存空间。不支持通过 GDAL 写入。分析表可能报告 SRID `0`；QGIS 等客户端可能需要显式设置 SRID。
 
 空间下推并不完整。回退到 PostGIS 虽然结果正确，却可能增加数据传输与执行开销，不同表类型之间的连接也可能效率较低。应为每个重要函数核对执行计划与结果，保持两个依赖版本兼容，并使用有代表性的文件大小与坐标系做基准测试。
+
+### 上游 3.6.0
+
+上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。此组件从 3.5 到 3.6 的 SQL 迁移为空，但运行库及依赖仍须按同一发布协调升级。

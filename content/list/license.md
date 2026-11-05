@@ -26,14 +26,14 @@ PostgreSQL extension categorized by license.
 | {{< license "GPL-2.0" >}} | 19 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 15 | [License Text](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 11 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
-| {{< license "AGPL-3.0" >}} | 9 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 8 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "AGPL-3.0" >}} | 7 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "Unknown" >}} | 5 | [License Text](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [License Text](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
+| {{< license "AGPL-3.0-only" >}} | 4 | [License Text](#) | Unknown license |
 | {{< license "Timescale" >}} | 2 | [License Text](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "MPL-2.0" >}} | 2 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "AGPL-3.0-or-later" >}} | 2 | [License Text](#) | Unknown license |
-| {{< license "AGPL-3.0-only" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "Artistic-2.0" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "GPL-3.0-or-later" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 2 | [License Text](#) | Unknown license |
@@ -705,27 +705,6 @@ PostgreSQL extension categorized by license.
 | 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
 {.wide .expand}
 
-## AGPL-3.0
-
-
-
-| {{< license "AGPL-3.0" >}} | {{< badge content="9 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/AGPL-3.0" icon="scale" >}} | Network copyleft license extending GPL to cover network-distributed software. |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 1810 | {{< alias "vchord" >}} | Vector database plugin for Postgres, written in Rust |
-| 1930 | {{< alias "pg4ml" >}} | Machine learning framework for PostgreSQL |
-| 2100 | {{< alias "pg_search" >}} | Full text search for PostgreSQL using BM25 |
-| 2160 | {{< alias "vchord_bm25" >}} | A postgresql extension for bm25 ranking algorithm |
-| 2410 | {{< alias "columnar" "hydra" >}} | Hydra Columnar extension |
-| 2450 | {{< alias "storage_engine" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
-| 4340 | {{< alias "pg_isok" >}} | Query-based data integrity management and soft alerting for PostgreSQL |
-| 4600 | {{< alias "topn" >}} | type for top-n JSONB |
-| 7430 | {{< alias "noset" "pg_noset" >}} | Module for blocking SET variables for non-super users. |
-{.wide .expand}
-
 ## ISC
 
 
@@ -744,6 +723,25 @@ PostgreSQL extension categorized by license.
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9130 | {{< alias "pg_statement_rollback" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
+{.wide .expand}
+
+## AGPL-3.0
+
+
+
+| {{< license "AGPL-3.0" >}} | {{< badge content="7 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/AGPL-3.0" icon="scale" >}} | Network copyleft license extending GPL to cover network-distributed software. |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1930 | {{< alias "pg4ml" >}} | Machine learning framework for PostgreSQL |
+| 2100 | {{< alias "pg_search" >}} | Full text search for PostgreSQL using BM25 |
+| 2410 | {{< alias "columnar" "hydra" >}} | Hydra Columnar extension |
+| 2450 | {{< alias "storage_engine" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
+| 4340 | {{< alias "pg_isok" >}} | Query-based data integrity management and soft alerting for PostgreSQL |
+| 4600 | {{< alias "topn" >}} | type for top-n JSONB |
+| 7430 | {{< alias "noset" "pg_noset" >}} | Module for blocking SET variables for non-super users. |
 {.wide .expand}
 
 ## Unknown
@@ -776,6 +774,21 @@ PostgreSQL extension categorized by license.
 | 3720 | {{< alias "pgmp" >}} | Multiple Precision Arithmetic extension |
 | 7190 | {{< alias "pgmemento" >}} | Transaction-based audit trail with schema versioning |
 | 8700 | {{< alias "mongo_fdw" >}} | foreign data wrapper for MongoDB access |
+
+## AGPL-3.0-only
+
+
+
+| {{< license "AGPL-3.0-only" >}} | {{< badge content="4 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1810 | {{< alias "vchord" >}} | Vector database plugin for Postgres, written in Rust |
+| 2160 | {{< alias "vchord_bm25" >}} | A postgresql extension for bm25 ranking algorithm |
+| 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | Citus columnar storage engine |
 
 ## Timescale
 
@@ -816,19 +829,6 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 2310 | {{< alias "tin" "lead" >}} | TIN-compatible text search for development and testing |
 | 2320 | {{< alias "stannum" >}} | Experimental TINQL text search with BM25 and segmented indexes |
-
-## AGPL-3.0-only
-
-
-
-| {{< license "AGPL-3.0-only" >}} | {{< badge content="2 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | Citus columnar storage engine |
 
 ## Artistic-2.0
 
@@ -955,4 +955,3 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 9100 | {{< alias "orafce" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 {.wide .expand}
-

@@ -2,16 +2,19 @@
 
 来源：
 
-- [官方数据湖文件查询指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/query-data-lake-files.md)
-- [官方Iceberg表指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/iceberg-tables.md)
-- [版本3.5控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table.control)
-- [3.4 至 3.5 目录索引升级](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table--3.4--3.5.sql)
-- [FDW、服务器、实用工具和访问方法SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table--3.0.sql)
+- [官方数据湖文件查询指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/query-data-lake-files.md)
+- [官方Iceberg表指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/iceberg-tables.md)
+- [版本3.6控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table.control)
+- [3.4 至 3.5 目录索引升级](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table--3.4--3.5.sql)
+- [FDW、服务器、实用工具和访问方法SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table--3.0.sql)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table--3.5--3.6.sql)
 
 `pg_lake_table` 将对象存储文件作为 PostgreSQL 外部表暴露，并提供 `USING iceberg` 表语法。它拥有 `pg_lake` 和 `pg_lake_iceberg` 外部服务器、文件检查/缓存实用工具、表目录和事务挂钩；Iceberg 元数据编码委托给 `pg_lake_iceberg`。
 
 
-pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
+本次核验的上游发布为 `3.6.0`，SQL 扩展版本为 `3.6`，支持 PostgreSQL 16–19。现有软件包版本单独跟踪，动态库与查询服务器应使用同一发布版本。
 
 ### 查询外部文件
 
@@ -72,3 +75,7 @@ FROM lake_file.preview('s3://analytics-bucket/events/sample.parquet');
 
 
 版本 `3.5` 为文件删除映射、列统计与分区值目录新增索引，避免批量删除时反复扫描子目录。除安装新动态库外，还须执行 SQL 迁移。
+
+### 上游 3.6.0
+
+上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。表组件注册独立的对象存储目录导出 worker，并将目录名称辅助函数改为 STABLE。必须执行 SQL 迁移，仅替换二进制不会注册该 worker。

@@ -2,14 +2,17 @@
 
 Sources:
 
-- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/iceberg-tables.md)
-- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg.control)
-- [Iceberg metadata SQL API](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg--3.0.sql)
-- [Version 3.4 catalog FDW SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_iceberg/pg_lake_iceberg--3.3--3.4.sql)
+- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/iceberg-tables.md)
+- [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg.control)
+- [Iceberg metadata SQL API](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg--3.0.sql)
+- [Version 3.4 catalog FDW SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg--3.3--3.4.sql)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg--3.5--3.6.sql)
 
 `pg_lake_iceberg` implements Iceberg metadata, snapshots, manifests, partition specifications, and catalog integration inside PostgreSQL. The familiar `CREATE TABLE ... USING iceberg` syntax is exposed by the dependent `pg_lake_table` component; users normally install both through `pg_lake`.
 
-The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
+The reviewed upstream release is `3.6.0`, with SQL extension version `3.6` and PostgreSQL 16–19 support. Existing packaged versions are tracked separately. Keep libraries and the query server from the same release.
 
 ### Create and Inspect an Iceberg Table
 
@@ -78,3 +81,7 @@ WITH (catalog = 'my_polaris');
 - Iceberg has narrower representations for some PostgreSQL values. The default `out_of_range_values = 'error'` preserves integrity; `clamp` silently changes out-of-range temporal values and replaces some unsupported values with `NULL`.
 
 The `3.4` to `3.5` Iceberg SQL migration is empty, while patch-level catalog and object-deletion fixes require the matching `3.5.3` binaries.
+
+### Upstream 3.6.0
+
+Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.

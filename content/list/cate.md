@@ -84,7 +84,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.7 | vector data type and ivfflat and hnsw access methods |
-| 1810 | {{< alias "vchord" >}} | 1.1.1 | Vector database plugin for Postgres, written in Rust |
+| 1810 | {{< alias "vchord" >}} | 1.2.0 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.1 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.27.1 | The simplest way to do vector search on Postgres |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | support similarity queries |
@@ -117,14 +117,14 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2130 | {{< alias "vgram" >}} | 1.0 | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | 2140 | {{< alias "zhparser" >}} | 2.3 | a parser for full-text search of Chinese |
 | 2150 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
-| 2160 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
-| 2170 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
+| 2160 | {{< alias "vchord_bm25" >}} | 1.0.0 | A postgresql extension for bm25 ranking algorithm |
+| 2170 | {{< alias "pg_tokenizer" >}} | 1.0.0 | Tokenizers for full-text search |
 | 2180 | {{< alias "biscuit" "pg_biscuit" >}} | 3.1.0 | IAM-LIKE pattern matching with bitmap indexing |
 | 2190 | {{< alias "pg_textsearch" >}} | 1.5.1 | Full-text search with BM25 ranking |
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | Pinyin romanization and search helpers for PostgreSQL |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | Kazakh full-text search extension for PostgreSQL |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL extension for BM25-family lexical retrieval |
-| 2230 | {{< alias "pg_fts" >}} | 1.15.1 | Full-text search with BM25 and BM25F ranking |
+| 2230 | {{< alias "pg_fts" >}} | 1.15.2 | Full-text search with BM25 and BM25F ranking |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | CJK bigram parser derived from PostgreSQL full-text search |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | Chinese full-text search parser based on cppjieba |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | Compiled Aho-Corasick double-array machines for exact multi-pattern matching and replacement in PostgreSQL |
@@ -143,7 +143,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2300 | {{< alias "pg_icu_parser" >}} | 1.0 | Full text search parser using ICU boundary analysis |
 | 2310 | {{< alias "tin" "lead" >}} | 1.0.6 | TIN-compatible text search for development and testing |
 | 2320 | {{< alias "stannum" >}} | 0.1.0 | Experimental TINQL text search with BM25 and segmented indexes |
-| 2330 | {{< alias "pg_tre" >}} | 4.5.3 | Native PostgreSQL index access method for approximate regular-expression matching |
+| 2330 | {{< alias "pg_tre" >}} | 4.6.1 | Native PostgreSQL index access method for approximate regular-expression matching |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
 {.wide .expand}
@@ -157,8 +157,8 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2400 | {{< alias "citus" >}} | 14.3-1 | Distributed PostgreSQL as an extension |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | 14.3-1 | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | Hydra Columnar extension |
-| 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
-| 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
+| 2430 | {{< alias "pg_duckdb" >}} | 1.2.0 | DuckDB Embedded in Postgres |
+| 2440 | {{< alias "pg_mooncake" >}} | 0.3.0 | Columnstore Table in Postgres |
 | 2450 | {{< alias "storage_engine" >}} | 2.4.0 | colcompress and rowcompress Table Access Methods with vectorized execution |
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.11 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 2.0.2 | DuckDB Foreign Data Wrapper |
@@ -191,7 +191,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 |:---:|:---|:---|:---|
 | 2600 | {{< alias "age" >}} | 1.8.0 | AGE graph database extension |
 | 2610 | {{< alias "pg_liquid" >}} | 0.1.7 | Liquid-inspired Datalog graph query extension for PostgreSQL |
-| 2620 | {{< alias "onesparse" "one_sparse" >}} | 1.0.0 | Sparse linear algebra and graph extension for PostgreSQL 18 |
+| 2620 | {{< alias "onesparse" "one_sparse" >}} | 0.1.0 | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | 2630 | {{< alias "graph" "pggraph" >}} | 1.2.1 | Graph database capabilities for PostgreSQL |
 | 2640 | {{< alias "pgrdf" >}} | 0.6.40 | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | 2650 | {{< alias "pgq" >}} | 3.5.2 | Generic queue for PostgreSQL |
@@ -203,7 +203,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2710 | {{< alias "rum" >}} | 1.3.15 | RUM index access method |
 | 2720 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
 | 2730 | {{< alias "pg_ttl_index" >}} | 3.0.0 | Automatic data expiration with TTL indexes |
-| 2740 | {{< alias "pg_graphql" >}} | 1.6.2 | Add in-database GraphQL support |
+| 2740 | {{< alias "pg_graphql" >}} | 1.6.3 | Add in-database GraphQL support |
 | 2750 | {{< alias "pg_jsonschema" >}} | 0.3.4 | PostgreSQL extension providing JSON Schema validation |
 | 2760 | {{< alias "jsonschema" >}} | 0.1.11 | JSON Schema validation functions for PostgreSQL |
 | 2765 | {{< alias "is_jsonb_valid" >}} | 0.1.4 | Native JSONB validation against JSON Schema drafts 4 and 7 |
@@ -221,7 +221,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2880 | {{< alias "pg_disorder" >}} | 0.1.0 | Perturb unordered SELECT row order to expose order-dependent tests |
 | 2890 | {{< alias "pg_local_cache" >}} | 3.1.0 | Transaction-aware shared-memory cache serving PostgreSQL primary-key rows over RESP2 MGET |
 | 2895 | {{< alias "pg_kv" >}} | 0.1.0 | Shared-memory key/value cache, token-bucket rate limits and sorted sets. |
-| 2900 | {{< alias "provsql" >}} | 1.13.0 | Semiring provenance and probability management for PostgreSQL |
+| 2900 | {{< alias "provsql" >}} | 1.13.1 | Semiring provenance and probability management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.10 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
 | 2930 | {{< alias "rdkit" >}} | 202609.1 | Cheminformatics functionality for PostgreSQL. |
@@ -265,7 +265,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
-| 2980 | {{< alias "pg_mentat" >}} | 1.18.0 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
+| 2980 | {{< alias "pg_mentat" >}} | 1.19.0 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
 {.wide .expand}
 
@@ -509,7 +509,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.4 | Activate/deactivate/verify checksums in offline Postgres clusters |
-| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.0.2 | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.1.0 | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.6 | cluster database read only |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | Introspect pg data dictionary via standard SQL |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4.1 | view object permissions and compare them with the desired state |
@@ -528,7 +528,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5260 | {{< alias "pgdisablelogerror" >}} | 1.0 | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 | 5270 | {{< alias "online_advisor" >}} | 1.0 | Suggest missing indexes and extended statistics online |
 | 5280 | {{< alias "pg_column_tetris" >}} | 0.1.0 | Enforce optimal column alignment to minimize row padding |
-| 5290 | {{< alias "cat_tools" >}} | 0.3.0 | Tools for interfacing with the PostgreSQL catalog |
+| 5290 | {{< alias "cat_tools" >}} | 0.4.0 | Tools for interfacing with the PostgreSQL catalog |
 | 5300 | {{< alias "pg_living_assertions" >}} | 0.5.10 | Executable SQL checks with verdict dates and assertion history |
 | 5810 | {{< alias "pg_savior" >}} | 0.1.0 | Postgres extension to save OOPS mistakes |
 | 5815 | {{< alias "pg_circuit" >}} | 0.1.0 | Runtime observation, warnings and blocking for dangerous SQL statements |
@@ -649,7 +649,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7440 | {{< alias "block_copy_command" >}} | 0.1.5 | Block COPY commands via a configurable ProcessUtility hook |
 | 7450 | {{< alias "pg_policy" >}} | 0.1.0 | Agentic policy language for PostgreSQL with guardrails, guidance, and session-aware controls |
 | 7460 | {{< alias "pg_kpart" >}} | 1.0 | Reject full partition scans that omit the partition key |
-| 7470 | {{< alias "pg_agent_gate" >}} | 0.3.0 | SQL proposal, verification and execution gate with human approval for agent roles. |
+| 7470 | {{< alias "pg_agent_gate" >}} | 0.4.1 | SQL proposal, verification and execution gate with human approval for agent roles. |
 | 7500 | {{< alias "pg_tde" >}} | 2.2.2 | Percona pg_tde access method |
 | 7510 | {{< alias "pg_vault_tde" >}} | 1.7.2 | Transparent Data Encryption for PostgreSQL through custom table and index access methods |
 | 7960 | {{< alias "sepgsql" >}} | - | label-based mandatory access control (MAC) based on SELinux security policy. |
@@ -761,4 +761,3 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9970 | {{< alias "test_decoding" >}} | - | SQL-based test/example module for WAL logical decoding |
 | 9980 | {{< alias "pgoutput" >}} | - | Logical Replication output plugin |
 {.wide .expand}
-

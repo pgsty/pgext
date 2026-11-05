@@ -29,7 +29,6 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
 |   **See Also**    | {{< ext "table_log" >}} {{< ext "safeupdate" >}} {{< ext "pg_strict" >}} {{< ext "pg_savior" >}} {{< ext "pgmemento" >}} {{< ext "pgaudit" >}} {{< ext "pgelog" >}} {{< ext "block_copy_command" >}} {{< ext "pg_kpart" >}} {{< ext "data_historization" >}} |
 

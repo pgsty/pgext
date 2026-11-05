@@ -252,4 +252,3 @@ FROM trial;
 ```
 
 The odds-ratio function applies a 0.5 correction when any cell is zero. Undefined inputs return `NULL`. Version 1.1.0 does not provide confidence intervals, hypothesis tests, or assumption checks; use a full statistical package when those are required for research conclusions.
-

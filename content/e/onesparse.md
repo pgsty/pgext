@@ -17,13 +17,13 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2620** | {{< badge content="onesparse" link="https://github.com/OneSparse/OneSparse" >}} | {{< ext "onesparse" "one_sparse" >}} | `1.0.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2620** | {{< badge content="onesparse" link="https://github.com/OneSparse/OneSparse" >}} | {{< ext "onesparse" "one_sparse" >}} | `0.1.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -32,14 +32,14 @@ page_width: full
 |    **Schemas**    | `onesparse` |
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_liquid" >}} {{< ext "graph" >}} {{< ext "pgrdf" >}} {{< ext "ltree" >}} {{< ext "sparql" >}} |
 
-> [!Note] PG18 only; upstream release v1.0.0 ships extension SQL version 0.1.0
+> [!Note] PG18; package 1.0.0 / SQL 0.1.0; preload onesparse. Rebuilt with GraphBLAS 10.5.2 and LAGraph 1.2.2.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `one_sparse` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `one_sparse` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "onesparse_18" "green" >}} {{< bg "17" "onesparse_17" "red" >}} {{< bg "16" "onesparse_16" "red" >}} {{< bg "15" "onesparse_15" "red" >}} {{< bg "14" "onesparse_14" "red" >}} | `onesparse_$v` | `graphblas`, `lagraph` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-onesparse" "green" >}} {{< bg "17" "postgresql-17-onesparse" "red" >}} {{< bg "16" "postgresql-16-onesparse" "red" >}} {{< bg "15" "postgresql-15-onesparse" "red" >}} {{< bg "14" "postgresql-14-onesparse" "red" >}} | `postgresql-$v-onesparse` | `libgraphblas10`, `liblagraph1`, `liblagraphx1` |
 {.packages .wide .expand}
@@ -71,22 +71,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `onesparse_18` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 222.5 KiB | [onesparse_18-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/onesparse_18-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `onesparse_18` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 201.9 KiB | [onesparse_18-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/onesparse_18-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `onesparse_18` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 195.3 KiB | [onesparse_18-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/onesparse_18-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `onesparse_18` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 182.7 KiB | [onesparse_18-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/onesparse_18-1.0.0-1PIGSTY.el9.aarch64.rpm) |
-| `onesparse_18` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 200.2 KiB | [onesparse_18-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/onesparse_18-1.0.0-1PIGSTY.el10.x86_64.rpm) |
-| `onesparse_18` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 185.5 KiB | [onesparse_18-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/onesparse_18-1.0.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-onesparse` | `1.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 598.3 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 578.4 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 592.1 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 574.7 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 693.6 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 681.1 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 645.2 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 634.9 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 657.7 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-onesparse` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 642.3 KiB | [postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-1PIGSTY~resolute_arm64.deb) |
+| `onesparse_18` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 677.7 KiB | [onesparse_18-1.0.0-2PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/onesparse_18-1.0.0-2PGSTY.el8.x86_64.rpm) |
+| `onesparse_18` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 656.3 KiB | [onesparse_18-1.0.0-2PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/onesparse_18-1.0.0-2PGSTY.el8.aarch64.rpm) |
+| `onesparse_18` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 681.0 KiB | [onesparse_18-1.0.0-2PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/onesparse_18-1.0.0-2PGSTY.el9.x86_64.rpm) |
+| `onesparse_18` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 669.4 KiB | [onesparse_18-1.0.0-2PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/onesparse_18-1.0.0-2PGSTY.el9.aarch64.rpm) |
+| `onesparse_18` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 685.5 KiB | [onesparse_18-1.0.0-2PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/onesparse_18-1.0.0-2PGSTY.el10.x86_64.rpm) |
+| `onesparse_18` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 673.0 KiB | [onesparse_18-1.0.0-2PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/onesparse_18-1.0.0-2PGSTY.el10.aarch64.rpm) |
+| `postgresql-18-onesparse` | `1.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 596.7 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~bookworm_amd64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 578.1 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~bookworm_arm64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 593.5 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~trixie_amd64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 578.4 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~trixie_arm64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 694.4 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~jammy_amd64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 683.0 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~jammy_arm64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 645.7 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~noble_amd64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 635.4 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~noble_arm64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 658.0 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~resolute_amd64.deb) |
+| `postgresql-18-onesparse` | `1.0.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 642.2 KiB | [postgresql-18-onesparse_1.0.0-2PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/onesparse/postgresql-18-onesparse_1.0.0-2PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
@@ -120,6 +120,13 @@ pig install onesparse;		# install by extension name, for the current active PG v
 
 pig install onesparse -v 18;   # install for PG 18
 
+```
+
+
+[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```ini
+shared_preload_libraries = 'onesparse';
 ```
 
 

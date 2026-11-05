@@ -190,4 +190,3 @@ The implementation descends a pruning quadtree instead of testing every cell in 
 - Install `qdgc`, `qdgc_postgis`, and their callable dependencies into schemas visible on the active `search_path`, because the relocatable SQL calls functions by unqualified name.
 - Upstream tests PostgreSQL 13 through 17. Do not infer PostgreSQL 18 support from the absence of compiled code.
 - Deep area fills can still produce enormous sets even with pruning. Treat `qdgc_estimate_cell_count` as an operational guard and apply application-specific limits before executing `qdgc_polygon_to_cells`.
-

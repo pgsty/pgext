@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "columnar" >}} {{< ext "pg_sorted_heap" >}} {{< ext "citus_columnar" >}} |
 
-> [!Note] Upstream beta19 installs SQL 1.10 and requires patched kernels patches16_49/patches17_22/patches18_3. Retained Pigsty recipes, source archives and local RPM/DEB matrix use beta19 (package 1.10). Public beta, not recommended upstream for production; repository publication is checked separately.
+> [!Note] Package 1.10.1 / SQL 1.10; requires patched PG16-18 kernels: patches16_50/patches17_23/patches18_4. Runtime still reports beta19; experimental.
 
 
 ## Packages
@@ -39,29 +39,29 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `orioledb` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10` | {{< bg "18" "orioledb-18" "green" >}} {{< bg "17" "orioledb-17" "green" >}} {{< bg "16" "orioledb-16" "green" >}} {{< bg "15" "orioledb-15" "red" >}} {{< bg "14" "orioledb-14" "red" >}} | `orioledb-$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10` | {{< bg "18" "orioledb-18" "green" >}} {{< bg "17" "orioledb-17" "green" >}} {{< bg "16" "orioledb-16" "green" >}} {{< bg "15" "orioledb-15" "red" >}} {{< bg "14" "orioledb-14" "red" >}} | `orioledb-$v` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10.1` | {{< bg "18" "orioledb-18" "green" >}} {{< bg "17" "orioledb-17" "green" >}} {{< bg "16" "orioledb-16" "green" >}} {{< bg "15" "orioledb-15" "red" >}} {{< bg "14" "orioledb-14" "red" >}} | `orioledb-$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10.1` | {{< bg "18" "orioledb-18" "green" >}} {{< bg "17" "orioledb-17" "green" >}} {{< bg "16" "orioledb-16" "green" >}} {{< bg "15" "orioledb-15" "red" >}} {{< bg "14" "orioledb-14" "red" >}} | `orioledb-$v` | - |
 {.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.10" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.10.1" "orioledb-16 : AVAIL 1" "green" >}} | {{< bg "N/A" "orioledb-15 : N/A 0" "gray" >}} | {{< bg "N/A" "orioledb-14 : N/A 0" "gray" >}} |
 {.matrix .wide .expand}
 
 
@@ -70,22 +70,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `orioledb-18` | `1.10` | [el8.x86_64](/os/el8.x86_64) | pigsty | 24.4 MiB | [orioledb-18-1.10~beta19-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/orioledb-18-1.10~beta19-1PGSTY.el8.x86_64.rpm) |
-| `orioledb-18` | `1.10` | [el8.aarch64](/os/el8.aarch64) | pigsty | 23.8 MiB | [orioledb-18-1.10~beta19-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/orioledb-18-1.10~beta19-1PGSTY.el8.aarch64.rpm) |
-| `orioledb-18` | `1.10` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.3 MiB | [orioledb-18-1.10~beta19-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/orioledb-18-1.10~beta19-1PGSTY.el9.x86_64.rpm) |
-| `orioledb-18` | `1.10` | [el9.aarch64](/os/el9.aarch64) | pigsty | 23.0 MiB | [orioledb-18-1.10~beta19-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/orioledb-18-1.10~beta19-1PGSTY.el9.aarch64.rpm) |
-| `orioledb-18` | `1.10` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.4 MiB | [orioledb-18-1.10~beta19-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/orioledb-18-1.10~beta19-1PGSTY.el10.x86_64.rpm) |
-| `orioledb-18` | `1.10` | [el10.aarch64](/os/el10.aarch64) | pigsty | 23.1 MiB | [orioledb-18-1.10~beta19-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/orioledb-18-1.10~beta19-1PGSTY.el10.aarch64.rpm) |
-| `orioledb-18` | `1.10` | [d12.x86_64](/os/d12.x86_64) | pigsty | 23.5 MiB | [orioledb-18_1.10~beta19-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~bookworm_amd64.deb) |
-| `orioledb-18` | `1.10` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.8 MiB | [orioledb-18_1.10~beta19-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~bookworm_arm64.deb) |
-| `orioledb-18` | `1.10` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.1 MiB | [orioledb-18_1.10~beta19-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~trixie_amd64.deb) |
-| `orioledb-18` | `1.10` | [d13.aarch64](/os/d13.aarch64) | pigsty | 20.5 MiB | [orioledb-18_1.10~beta19-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~trixie_arm64.deb) |
-| `orioledb-18` | `1.10` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.4 MiB | [orioledb-18_1.10~beta19-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~jammy_amd64.deb) |
-| `orioledb-18` | `1.10` | [u22.aarch64](/os/u22.aarch64) | pigsty | 25.1 MiB | [orioledb-18_1.10~beta19-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~jammy_arm64.deb) |
-| `orioledb-18` | `1.10` | [u24.x86_64](/os/u24.x86_64) | pigsty | 23.2 MiB | [orioledb-18_1.10~beta19-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~noble_amd64.deb) |
-| `orioledb-18` | `1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 23.0 MiB | [orioledb-18_1.10~beta19-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~noble_arm64.deb) |
-| `orioledb-18` | `1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.8 MiB | [orioledb-18_1.10~beta19-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~resolute_amd64.deb) |
-| `orioledb-18` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.4 MiB | [orioledb-18_1.10~beta19-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-18/orioledb-18_1.10~beta19-1PGSTY~resolute_arm64.deb) |
+| `orioledb-18` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 24.3 MiB | [orioledb-18-1.10.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/orioledb-18-1.10.1-1PGSTY.el8.x86_64.rpm) |
+| `orioledb-18` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 23.7 MiB | [orioledb-18-1.10.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/orioledb-18-1.10.1-1PGSTY.el8.aarch64.rpm) |
+| `orioledb-18` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.3 MiB | [orioledb-18-1.10.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/orioledb-18-1.10.1-1PGSTY.el9.x86_64.rpm) |
+| `orioledb-18` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 23.0 MiB | [orioledb-18-1.10.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/orioledb-18-1.10.1-1PGSTY.el9.aarch64.rpm) |
+| `orioledb-18` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.4 MiB | [orioledb-18-1.10.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/orioledb-18-1.10.1-1PGSTY.el10.x86_64.rpm) |
+| `orioledb-18` | `1.10.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 23.1 MiB | [orioledb-18-1.10.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/orioledb-18-1.10.1-1PGSTY.el10.aarch64.rpm) |
+| `orioledb-18` | `1.10.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 23.5 MiB | [orioledb-18_1.10.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~bookworm_amd64.deb) |
+| `orioledb-18` | `1.10.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.8 MiB | [orioledb-18_1.10.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~bookworm_arm64.deb) |
+| `orioledb-18` | `1.10.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.2 MiB | [orioledb-18_1.10.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~trixie_amd64.deb) |
+| `orioledb-18` | `1.10.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 20.5 MiB | [orioledb-18_1.10.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~trixie_arm64.deb) |
+| `orioledb-18` | `1.10.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.4 MiB | [orioledb-18_1.10.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~jammy_amd64.deb) |
+| `orioledb-18` | `1.10.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 25.1 MiB | [orioledb-18_1.10.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~jammy_arm64.deb) |
+| `orioledb-18` | `1.10.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 23.3 MiB | [orioledb-18_1.10.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~noble_amd64.deb) |
+| `orioledb-18` | `1.10.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 23.0 MiB | [orioledb-18_1.10.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~noble_arm64.deb) |
+| `orioledb-18` | `1.10.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.8 MiB | [orioledb-18_1.10.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~resolute_amd64.deb) |
+| `orioledb-18` | `1.10.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 22.5 MiB | [orioledb-18_1.10.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-18/orioledb-18_1.10.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
 {{< /tab >}}
@@ -93,22 +93,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `orioledb-17` | `1.10` | [el8.x86_64](/os/el8.x86_64) | pigsty | 23.5 MiB | [orioledb-17-1.10~beta19-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/orioledb-17-1.10~beta19-1PGSTY.el8.x86_64.rpm) |
-| `orioledb-17` | `1.10` | [el8.aarch64](/os/el8.aarch64) | pigsty | 23.0 MiB | [orioledb-17-1.10~beta19-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/orioledb-17-1.10~beta19-1PGSTY.el8.aarch64.rpm) |
-| `orioledb-17` | `1.10` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.6 MiB | [orioledb-17-1.10~beta19-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/orioledb-17-1.10~beta19-1PGSTY.el9.x86_64.rpm) |
-| `orioledb-17` | `1.10` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 MiB | [orioledb-17-1.10~beta19-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/orioledb-17-1.10~beta19-1PGSTY.el9.aarch64.rpm) |
-| `orioledb-17` | `1.10` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.6 MiB | [orioledb-17-1.10~beta19-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/orioledb-17-1.10~beta19-1PGSTY.el10.x86_64.rpm) |
-| `orioledb-17` | `1.10` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.4 MiB | [orioledb-17-1.10~beta19-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/orioledb-17-1.10~beta19-1PGSTY.el10.aarch64.rpm) |
-| `orioledb-17` | `1.10` | [d12.x86_64](/os/d12.x86_64) | pigsty | 22.7 MiB | [orioledb-17_1.10~beta19-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~bookworm_amd64.deb) |
-| `orioledb-17` | `1.10` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.1 MiB | [orioledb-17_1.10~beta19-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~bookworm_arm64.deb) |
-| `orioledb-17` | `1.10` | [d13.x86_64](/os/d13.x86_64) | pigsty | 20.4 MiB | [orioledb-17_1.10~beta19-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~trixie_amd64.deb) |
-| `orioledb-17` | `1.10` | [d13.aarch64](/os/d13.aarch64) | pigsty | 19.9 MiB | [orioledb-17_1.10~beta19-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~trixie_arm64.deb) |
-| `orioledb-17` | `1.10` | [u22.x86_64](/os/u22.x86_64) | pigsty | 24.6 MiB | [orioledb-17_1.10~beta19-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~jammy_amd64.deb) |
-| `orioledb-17` | `1.10` | [u22.aarch64](/os/u22.aarch64) | pigsty | 24.3 MiB | [orioledb-17_1.10~beta19-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~jammy_arm64.deb) |
-| `orioledb-17` | `1.10` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.6 MiB | [orioledb-17_1.10~beta19-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~noble_amd64.deb) |
-| `orioledb-17` | `1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.3 MiB | [orioledb-17_1.10~beta19-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~noble_arm64.deb) |
-| `orioledb-17` | `1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.1 MiB | [orioledb-17_1.10~beta19-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~resolute_amd64.deb) |
-| `orioledb-17` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.7 MiB | [orioledb-17_1.10~beta19-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-17/orioledb-17_1.10~beta19-1PGSTY~resolute_arm64.deb) |
+| `orioledb-17` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 23.5 MiB | [orioledb-17-1.10.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/orioledb-17-1.10.1-1PGSTY.el8.x86_64.rpm) |
+| `orioledb-17` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.9 MiB | [orioledb-17-1.10.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/orioledb-17-1.10.1-1PGSTY.el8.aarch64.rpm) |
+| `orioledb-17` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.6 MiB | [orioledb-17-1.10.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/orioledb-17-1.10.1-1PGSTY.el9.x86_64.rpm) |
+| `orioledb-17` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 MiB | [orioledb-17-1.10.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/orioledb-17-1.10.1-1PGSTY.el9.aarch64.rpm) |
+| `orioledb-17` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 22.7 MiB | [orioledb-17-1.10.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/orioledb-17-1.10.1-1PGSTY.el10.x86_64.rpm) |
+| `orioledb-17` | `1.10.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.4 MiB | [orioledb-17-1.10.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/orioledb-17-1.10.1-1PGSTY.el10.aarch64.rpm) |
+| `orioledb-17` | `1.10.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 22.7 MiB | [orioledb-17_1.10.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~bookworm_amd64.deb) |
+| `orioledb-17` | `1.10.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 22.1 MiB | [orioledb-17_1.10.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~bookworm_arm64.deb) |
+| `orioledb-17` | `1.10.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 20.4 MiB | [orioledb-17_1.10.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~trixie_amd64.deb) |
+| `orioledb-17` | `1.10.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 19.9 MiB | [orioledb-17_1.10.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~trixie_arm64.deb) |
+| `orioledb-17` | `1.10.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 24.7 MiB | [orioledb-17_1.10.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~jammy_amd64.deb) |
+| `orioledb-17` | `1.10.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 24.4 MiB | [orioledb-17_1.10.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~jammy_arm64.deb) |
+| `orioledb-17` | `1.10.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.6 MiB | [orioledb-17_1.10.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~noble_amd64.deb) |
+| `orioledb-17` | `1.10.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.3 MiB | [orioledb-17_1.10.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~noble_arm64.deb) |
+| `orioledb-17` | `1.10.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 22.1 MiB | [orioledb-17_1.10.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~resolute_amd64.deb) |
+| `orioledb-17` | `1.10.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.8 MiB | [orioledb-17_1.10.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-17/orioledb-17_1.10.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
 {{< /tab >}}
@@ -116,22 +116,22 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `orioledb-16` | `1.10` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.6 MiB | [orioledb-16-1.10~beta19-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/orioledb-16-1.10~beta19-1PGSTY.el8.x86_64.rpm) |
-| `orioledb-16` | `1.10` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.0 MiB | [orioledb-16-1.10~beta19-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/orioledb-16-1.10~beta19-1PGSTY.el8.aarch64.rpm) |
-| `orioledb-16` | `1.10` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.8 MiB | [orioledb-16-1.10~beta19-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/orioledb-16-1.10~beta19-1PGSTY.el9.x86_64.rpm) |
-| `orioledb-16` | `1.10` | [el9.aarch64](/os/el9.aarch64) | pigsty | 21.5 MiB | [orioledb-16-1.10~beta19-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/orioledb-16-1.10~beta19-1PGSTY.el9.aarch64.rpm) |
-| `orioledb-16` | `1.10` | [el10.x86_64](/os/el10.x86_64) | pigsty | 21.8 MiB | [orioledb-16-1.10~beta19-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/orioledb-16-1.10~beta19-1PGSTY.el10.x86_64.rpm) |
-| `orioledb-16` | `1.10` | [el10.aarch64](/os/el10.aarch64) | pigsty | 21.5 MiB | [orioledb-16-1.10~beta19-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/orioledb-16-1.10~beta19-1PGSTY.el10.aarch64.rpm) |
-| `orioledb-16` | `1.10` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.8 MiB | [orioledb-16_1.10~beta19-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~bookworm_amd64.deb) |
-| `orioledb-16` | `1.10` | [d12.aarch64](/os/d12.aarch64) | pigsty | 21.2 MiB | [orioledb-16_1.10~beta19-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~bookworm_arm64.deb) |
-| `orioledb-16` | `1.10` | [d13.x86_64](/os/d13.x86_64) | pigsty | 19.7 MiB | [orioledb-16_1.10~beta19-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~trixie_amd64.deb) |
-| `orioledb-16` | `1.10` | [d13.aarch64](/os/d13.aarch64) | pigsty | 19.1 MiB | [orioledb-16_1.10~beta19-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~trixie_arm64.deb) |
-| `orioledb-16` | `1.10` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.8 MiB | [orioledb-16_1.10~beta19-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~jammy_amd64.deb) |
-| `orioledb-16` | `1.10` | [u22.aarch64](/os/u22.aarch64) | pigsty | 23.4 MiB | [orioledb-16_1.10~beta19-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~jammy_arm64.deb) |
-| `orioledb-16` | `1.10` | [u24.x86_64](/os/u24.x86_64) | pigsty | 21.8 MiB | [orioledb-16_1.10~beta19-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~noble_amd64.deb) |
-| `orioledb-16` | `1.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.5 MiB | [orioledb-16_1.10~beta19-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~noble_arm64.deb) |
-| `orioledb-16` | `1.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 21.3 MiB | [orioledb-16_1.10~beta19-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~resolute_amd64.deb) |
-| `orioledb-16` | `1.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.0 MiB | [orioledb-16_1.10~beta19-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-16/orioledb-16_1.10~beta19-1PGSTY~resolute_arm64.deb) |
+| `orioledb-16` | `1.10.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.5 MiB | [orioledb-16-1.10.1-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/orioledb-16-1.10.1-1PGSTY.el8.x86_64.rpm) |
+| `orioledb-16` | `1.10.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.0 MiB | [orioledb-16-1.10.1-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/orioledb-16-1.10.1-1PGSTY.el8.aarch64.rpm) |
+| `orioledb-16` | `1.10.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.8 MiB | [orioledb-16-1.10.1-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/orioledb-16-1.10.1-1PGSTY.el9.x86_64.rpm) |
+| `orioledb-16` | `1.10.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 21.5 MiB | [orioledb-16-1.10.1-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/orioledb-16-1.10.1-1PGSTY.el9.aarch64.rpm) |
+| `orioledb-16` | `1.10.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 21.8 MiB | [orioledb-16-1.10.1-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/orioledb-16-1.10.1-1PGSTY.el10.x86_64.rpm) |
+| `orioledb-16` | `1.10.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 21.6 MiB | [orioledb-16-1.10.1-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/orioledb-16-1.10.1-1PGSTY.el10.aarch64.rpm) |
+| `orioledb-16` | `1.10.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.8 MiB | [orioledb-16_1.10.1-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~bookworm_amd64.deb) |
+| `orioledb-16` | `1.10.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 21.2 MiB | [orioledb-16_1.10.1-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~bookworm_arm64.deb) |
+| `orioledb-16` | `1.10.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 19.7 MiB | [orioledb-16_1.10.1-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~trixie_amd64.deb) |
+| `orioledb-16` | `1.10.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 19.1 MiB | [orioledb-16_1.10.1-1PGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~trixie_arm64.deb) |
+| `orioledb-16` | `1.10.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.8 MiB | [orioledb-16_1.10.1-1PGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~jammy_amd64.deb) |
+| `orioledb-16` | `1.10.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 23.5 MiB | [orioledb-16_1.10.1-1PGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~jammy_arm64.deb) |
+| `orioledb-16` | `1.10.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 21.8 MiB | [orioledb-16_1.10.1-1PGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~noble_amd64.deb) |
+| `orioledb-16` | `1.10.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.5 MiB | [orioledb-16_1.10.1-1PGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~noble_arm64.deb) |
+| `orioledb-16` | `1.10.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 21.3 MiB | [orioledb-16_1.10.1-1PGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~resolute_amd64.deb) |
+| `orioledb-16` | `1.10.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 21.0 MiB | [orioledb-16_1.10.1-1PGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/orioledb-16/orioledb-16_1.10.1-1PGSTY~resolute_arm64.deb) |
 {.downloads .wide .expand}
 
 {{< /tab >}}{{< /tabs >}}
@@ -140,7 +140,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/orioledb/orioledb" title="Repository" icon="github" subtitle="github.com/orioledb/orioledb" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="orioledb-beta19.tar.gz postgres-patches16_49.tar.gz postgres-patches17_22.tar.gz postgres-patches18_3.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="orioledb-1.10.1.tar.gz postgres-patches16_50.tar.gz postgres-patches17_23.tar.gz postgres-patches18_4.tar.gz" />}}
 {{< /cards >}}
 
 

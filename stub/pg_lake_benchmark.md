@@ -2,8 +2,11 @@
 
 Sources:
 
-- [Official benchmark README](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_benchmark/README.md)
-- [Official control file](https://github.com/Snowflake-Labs/pg_lake/blob/44134cc33fb152716e10752d0a345c6e1acb8725/pg_lake_benchmark/pg_lake_benchmark.control)
+- [Official benchmark README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_benchmark/README.md)
+- [Official control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_benchmark/pg_lake_benchmark.control)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_benchmark/pg_lake_benchmark--3.5--3.6.sql)
 
 `pg_lake_benchmark` supplies ClickBench, TPC-H, and TPC-DS data/query drivers for comparing `pg_lake`, Iceberg, and ordinary PostgreSQL heap tables. It depends on `pg_lake` and is intended for controlled benchmark databases, because its generators create large schemas and data sets and its runners discard query results.
 
@@ -42,3 +45,7 @@ Use a dedicated object-store prefix and disposable database. Increasing `iterati
 The run functions execute a query and discard its result, so enable psql timing or capture server-side metrics explicitly. TPC-H and TPC-DS use fixed query parameters, matching the limitation documented by the underlying DuckDB generators; they are not substitute workloads for an application's parameter distribution.
 
 Data generation can exhaust memory and consume substantial object-storage capacity, bandwidth, and time. Keep scale, credentials, region, caches, concurrency, and server settings identical when comparing results, and do not present a single run as a portable performance guarantee.
+
+### Upstream 3.6.0
+
+Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.

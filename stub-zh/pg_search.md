@@ -2,10 +2,9 @@
 
 来源：
 
-- [0.26.4 release]
-- [0.26.4 changelog](https://github.com/paradedb/paradedb/blob/v0.26.4/docs/project/changelog/0.26.4.mdx)
-- [pg_search 0.26.4 control](https://github.com/paradedb/paradedb/blob/v0.26.4/pg_search/pg_search.control)
-- [pg_search 0.26.4 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.4/pg_search/Cargo.toml)(https://github.com/paradedb/paradedb/releases/tag/v0.26.4)
+- [0.26.5 changelog](https://github.com/paradedb/paradedb/blob/v0.26.5/docs/project/changelog/0.26.5.mdx)
+- [pg_search 0.26.5 control](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/pg_search.control)
+- [pg_search 0.26.5 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/Cargo.toml)
 
 - [docs/project/changelog/0.26.2.mdx](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/docs/project/changelog/0.26.2.mdx)
 - [pg_search/sql/pg_search--0.26.1--0.26.2.sql](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/sql/pg_search--0.26.1--0.26.2.sql)
@@ -28,7 +27,7 @@
 - [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.4 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.26.5 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
@@ -141,3 +140,7 @@ LIMIT 20;
 ### 0.26.4 性能与稳定性
 
 0.26.4 为数组列增加延迟物化，使符合条件的连接扫描在 `ORDER BY` 与 `LIMIT` 场景使用迭代式 rank-join，并避免 CJK Lindera 分词消耗呈二次增长。该版本修复分区表追加扫描中的错误文件路径、窗口函数场景及分区索引辅助函数问题。发行说明没有新增索引格式迁移；跨越 0.26.0 时仍须执行前述向量索引重建。
+
+### 0.26.5 权限与正确性
+
+0.26.5 为独立读取索引的函数实施表权限检查，并修复涉及 NULL 或空 ALL 数组的下推结果。它还改进并行 worker 清理与合并背压。应安装匹配文件，按预加载库维护流程重启，并逐库更新 SQL 扩展。此次发布不取消 0.26.0 的向量索引迁移要求。

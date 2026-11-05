@@ -530,17 +530,6 @@ func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]
 
 // getPackageNameForCategory returns the package name for use in category lists
 func (g *PigstyConfigGenerator) getPackageNameForCategory(ext *ExtensionData, pgVer int) string {
-	// Special case handling
-	switch ext.Name {
-	case "pgaudit":
-		// pgaudit has special versioning for older PG versions
-		if g.isRPM() {
-			return g.getPGAuditPackageName(pgVer)
-		}
-		// For Debian/Ubuntu, use standard postgresql-$v-pgaudit pattern
-		return fmt.Sprintf("postgresql-%d-pgaudit", pgVer)
-	}
-
 	// Use rpm_pkg or deb_pkg templates from extension
 	if g.isRPM() {
 		if ext.RPMPkg != "" {
@@ -590,20 +579,6 @@ func (g *PigstyConfigGenerator) getDEBPackagePattern(ext *ExtensionData) string 
 		return ext.DEBPkg
 	}
 	return "postgresql-$v-" + strings.ReplaceAll(ext.Alias, "_", "-")
-}
-
-// getPGAuditPackageName returns the correct pgaudit package name for RPM systems
-func (g *PigstyConfigGenerator) getPGAuditPackageName(pgVer int) string {
-	switch pgVer {
-	case 18, 17, 16:
-		return fmt.Sprintf("pgaudit_%d", pgVer)
-	case 15:
-		return "pgaudit17_15"
-	case 14:
-		return "pgaudit16_14"
-	default:
-		return fmt.Sprintf("pgaudit_%d", pgVer)
-	}
 }
 
 // getExtensionComment returns the comment for an extension

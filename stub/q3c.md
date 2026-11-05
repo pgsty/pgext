@@ -1,9 +1,10 @@
-
-
-
 ## Usage
 
-> Source: [`segasai/q3c`](https://github.com/segasai/q3c) | [ADASS Paper](http://adsabs.harvard.edu/abs/2006ASPC..351..735K) | [ASCL](https://ascl.net/1905.008)
+Sources:
+
+- [README.md](https://github.com/segasai/q3c/blob/36a237667878cb8e8ece5fe98cc0d703cb056a28/README.md)
+- [q3c.control](https://github.com/segasai/q3c/blob/36a237667878cb8e8ece5fe98cc0d703cb056a28/q3c.control)
+- [Release 2.0.6](https://github.com/segasai/q3c/releases/tag/v2.0.6)
 
 Q3C (Quad Tree Cube) is a PostgreSQL extension for fast sky-indexing of astronomical catalogues. It enables efficient spatial queries on spherical coordinates (right ascension and declination), including cone searches, ellipse searches, polygon queries, positional cross-matches, and nearest-neighbor lookups.
 
@@ -14,6 +15,7 @@ All angles (ra, dec, distances) are in **degrees**, proper motions in **mas/year
 To use Q3C, create a spatial index on your table with `ra` and `dec` columns (in degrees):
 
 ```sql
+CREATE EXTENSION q3c;
 CREATE INDEX ON mytable (q3c_ang2ipix(ra, dec));
 ```
 
@@ -36,7 +38,7 @@ ANALYZE mytable;
 ```
 
 
-## Functions
+### Functions
 
 - `q3c_ang2ipix(ra, dec)` -- returns the ipix value (64-bit integer pixel identifier) for given ra and dec
 
@@ -67,7 +69,7 @@ ANALYZE mytable;
 - `q3c_version()` -- returns the installed version of Q3C
 
 
-## Examples
+### Examples
 
 ### Cone Search
 
@@ -212,13 +214,13 @@ FROM (
 Note: Q3C does not have uniform pixel areas (unlike HEALPIX).
 
 
-## Limitations
+### Limitations
 
 - Querying very large polygons with diameter greater than ~25 degrees is not supported
 - Polygons with more than 100 vertices are not supported
 
 
-## Performance Tips
+### Performance Tips
 
 - Ensure correct argument order in Q3C functions (e.g., `q3c_radial_query(ra, dec, 120, 3, 1)` not `q3c_radial_query(120, 3, ra, dec, 1)`)
 - Use `EXPLAIN` to verify the query plan uses bitmap scans on the Q3C index
@@ -231,3 +233,7 @@ WITH x AS MATERIALIZED (SELECT * FROM t1 WHERE t1.mag < 1),
      y AS (SELECT *, t2.mag AS t2mag FROM x, t2 WHERE q3c_join(x.ra, x.dec, t2.ra, t2.dec, 1./3600))
 SELECT * FROM y WHERE t2mag > 33;
 ```
+
+### 2.0.6 Correctness Fixes
+
+Version 2.0.6 fixes memory errors, missed sub-milliarcsecond cone matches, polygon-cache reuse across different rows, and radial/ellipse queries near cube corners. Non-finite coordinates generally return no match; `q3c_in_poly` returns NULL for a non-finite point. Recheck application handling of invalid coordinates after updating the library and SQL extension.

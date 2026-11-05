@@ -2,16 +2,19 @@
 
 Sources:
 
-- [Official data-lake file query guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/query-data-lake-files.md)
-- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/iceberg-tables.md)
-- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table.control)
-- [3.4 to 3.5 catalog indexes](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table--3.4--3.5.sql)
-- [FDW, server, utility, and access-method SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_table/pg_lake_table--3.0.sql)
+- [Official data-lake file query guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/query-data-lake-files.md)
+- [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/iceberg-tables.md)
+- [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table.control)
+- [3.4 to 3.5 catalog indexes](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table--3.4--3.5.sql)
+- [FDW, server, utility, and access-method SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table--3.0.sql)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table--3.5--3.6.sql)
 
 `pg_lake_table` exposes object-store files as PostgreSQL foreign tables and provides the `USING iceberg` table syntax. It owns the `pg_lake` and `pg_lake_iceberg` foreign servers, file inspection/cache utilities, table catalogs, and transaction hooks; Iceberg metadata encoding is delegated to `pg_lake_iceberg`.
 
 
-The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
+The reviewed upstream release is `3.6.0`, with SQL extension version `3.6` and PostgreSQL 16–19 support. Existing packaged versions are tracked separately. Keep libraries and the query server from the same release.
 
 ### Query External Files
 
@@ -71,3 +74,7 @@ FROM lake_file.preview('s3://analytics-bucket/events/sample.parquet');
 - Internal `lake_table.*` catalogs track files, field IDs, partitions, and recovery state. Do not modify them directly.
 
 Version `3.5` adds indexes to file-deletion mappings, column statistics, and partition-value catalogs to avoid repeated child-catalog scans during bulk removal. Apply the SQL migration as well as installing the new library.
+
+### Upstream 3.6.0
+
+Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. The table component registers a separate object-store catalog-export worker and changes catalog-name helpers to STABLE. Apply its SQL migration; replacing binaries alone does not register the worker.

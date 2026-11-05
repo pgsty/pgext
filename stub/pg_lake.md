@@ -2,17 +2,20 @@
 
 Sources:
 
-- [Official pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md)
-- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake/pg_lake.control)
-- [Official build and startup guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/building-from-source.md)
-- [Official project documentation index](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/README.md)
+- [Official pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/README.md)
+- [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake/pg_lake.control)
+- [Official build and startup guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/building-from-source.md)
+- [Official project documentation index](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/README.md)
 - [pg_lake v3.5.3 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.3)
 - [DuckDB secrets manager](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
 - [Upstream v3.5.10 release](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.10)
 
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake/pg_lake--3.5--3.6.sql)
+
 `pg_lake` is the top-level extension for Snowflake's PostgreSQL lakehouse stack. It installs the table, Iceberg, copy, query-engine, extension-base, and map components needed to query object-store files and create transactional Iceberg tables. The PostgreSQL extensions orchestrate planning and transactions while a separate local `pgduck_server` process executes vectorized work with DuckDB.
 
-The packaged workflow below describes `3.5.3`; the latest reviewed upstream release is `3.5.10`, and the SQL extension version remains `3.5`. Keep the libraries and query server from the same release.
+The packaged startup example below retains the established `3.5.3` paths. The reviewed upstream release is `3.6.0`, with SQL version `3.6` and PostgreSQL 16–19 support; this does not assert that 3.6 packages are available. Keep libraries and the query server from the same release.
 
 ### Start the Packaged Stack
 
@@ -164,3 +167,7 @@ Release 3.5.10 hardens catalog-provided secret endpoints and file paths, pins ba
 ### 3.5.10 Changes
 
 Upstream 3.5.10 drops cached vended credentials after catalog vending stops, preserves Iceberg catalog URLs in object storage, and updates Brotli to 1.1.1 for CVE-2026-111497. Deploy matching extension libraries and `pgduck_server`; the SQL version remains 3.5.
+
+### Upstream 3.6.0
+
+Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.

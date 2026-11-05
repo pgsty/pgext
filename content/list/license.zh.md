@@ -26,14 +26,14 @@ page_width: full
 | {{< license "GPL-2.0" >}} | 19 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 15 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-3.0" >}} | 11 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
-| {{< license "AGPL-3.0" >}} | 9 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 8 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "AGPL-3.0" >}} | 7 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "Unknown" >}} | 5 | [许可证文本](#) | Unknown license |
 | {{< license "LGPL-3.0" >}} | 4 | [许可证文本](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
+| {{< license "AGPL-3.0-only" >}} | 4 | [许可证文本](#) | Unknown license |
 | {{< license "Timescale" >}} | 2 | [许可证文本](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "MPL-2.0" >}} | 2 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "AGPL-3.0-or-later" >}} | 2 | [许可证文本](#) | Unknown license |
-| {{< license "AGPL-3.0-only" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "Artistic-2.0" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-3.0-or-later" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "Elastic-2.0" >}} | 2 | [许可证文本](#) | Unknown license |
@@ -705,26 +705,6 @@ page_width: full
 | 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
 {.wide .expand}
 
-## AGPL-3.0
-
-
-
-| {{< license "AGPL-3.0" >}} | {{< badge content="9 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/AGPL-3.0" icon="scale" >}} | Network copyleft license extending GPL to cover network-distributed software. |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 1810 | {{< alias "vchord" >}} | 使用Rust重写的高性能向量扩展 |
-| 1930 | {{< alias "pg4ml" >}} | PG4ML是一个机器学习框架 |
-| 2100 | {{< alias "pg_search" >}} | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
-| 2160 | {{< alias "vchord_bm25" >}} | BM25排序算法 |
-| 2410 | {{< alias "columnar" "hydra" >}} | 开源列式存储扩展 |
-| 2450 | {{< alias "storage_engine" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
-| 4340 | {{< alias "pg_isok" >}} | 基于查询的数据完整性管理与软告警扩展 |
-| 4600 | {{< alias "topn" >}} | top-n JSONB 的类型 |
-| 7430 | {{< alias "noset" "pg_noset" >}} | 阻止非超级用户使用SET/RESET设置变量 |
-
 ## ISC
 
 
@@ -743,6 +723,24 @@ page_width: full
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
+
+## AGPL-3.0
+
+
+
+| {{< license "AGPL-3.0" >}} | {{< badge content="7 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/AGPL-3.0" icon="scale" >}} | Network copyleft license extending GPL to cover network-distributed software. |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 1930 | {{< alias "pg4ml" >}} | PG4ML是一个机器学习框架 |
+| 2100 | {{< alias "pg_search" >}} | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
+| 2410 | {{< alias "columnar" "hydra" >}} | 开源列式存储扩展 |
+| 2450 | {{< alias "storage_engine" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
+| 4340 | {{< alias "pg_isok" >}} | 基于查询的数据完整性管理与软告警扩展 |
+| 4600 | {{< alias "topn" >}} | top-n JSONB 的类型 |
+| 7430 | {{< alias "noset" "pg_noset" >}} | 阻止非超级用户使用SET/RESET设置变量 |
 
 ## Unknown
 
@@ -774,6 +772,21 @@ page_width: full
 | 3720 | {{< alias "pgmp" >}} | 多精度算术扩展 |
 | 7190 | {{< alias "pgmemento" >}} | 基于事务日志的审计追踪、模式版本管理与数据恢复 |
 | 8700 | {{< alias "mongo_fdw" >}} | MongoDB 外部数据包装器 |
+
+## AGPL-3.0-only
+
+
+
+| {{< license "AGPL-3.0-only" >}} | {{< badge content="4 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 1810 | {{< alias "vchord" >}} | 使用Rust重写的高性能向量扩展 |
+| 2160 | {{< alias "vchord_bm25" >}} | BM25排序算法 |
+| 2400 | {{< alias "citus" >}} | 将 PostgreSQL 横向扩展为分布式数据库 |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | Citus 列式存储引擎 |
 
 ## Timescale
 
@@ -813,19 +826,6 @@ page_width: full
 |:---:|:---|:---|
 | 2310 | {{< alias "tin" "lead" >}} | 用于开发测试的 TIN 兼容文本搜索扩展 |
 | 2320 | {{< alias "stannum" >}} | 提供 TINQL、BM25 与分段索引的实验性文本搜索扩展 |
-
-## AGPL-3.0-only
-
-
-
-| {{< license "AGPL-3.0-only" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 2400 | {{< alias "citus" >}} | 将 PostgreSQL 横向扩展为分布式数据库 |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | Citus 列式存储引擎 |
 
 ## Artistic-2.0
 
@@ -949,4 +949,3 @@ page_width: full
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 9100 | {{< alias "orafce" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
-

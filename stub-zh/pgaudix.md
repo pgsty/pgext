@@ -2,11 +2,12 @@
 
 来源：
 
-- [README.md](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/README.md)
-- [pgaudix.control](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/pgaudix.control)
-- [pgaudix--1.0.0.sql](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/pgaudix--1.0.0.sql)
+- [README.md](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/README.md)
+- [pgaudix.control](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/pgaudix.control)
+- [pgaudix--1.1.0.sql](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/pgaudix--1.1.0.sql)
+- [pgaudix--1.0.0--1.1.0.sql](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/pgaudix--1.0.0--1.1.0.sql)
 
-`pgaudix` 1.0.0 将普通表的行镜像到审计表，并同步支持的 DDL 变更。此版本明确拒绝分区表、分区和使用继承的表。
+`pgaudix` 1.1.0 将普通表的行镜像到审计表，并同步支持的 DDL 变更。此版本明确拒绝分区表、分区和使用继承的表。
 
 ### 核心工作流
 
@@ -30,4 +31,8 @@ SELECT * FROM pgaudix.status();
 
 `pgaudix.disable(table)` 停止审计但保留历史；传入 `drop_data := true` 会删除审计表。删除源列或源表可能删除对应历史；如果需要保留，应先停用审计。更新操作记录新行，清空操作仅记录一次操作而不保留逐行删除内容。扩展不自动实施保留策略。
 
-所核验发布仅包含 1.0.0 安装脚本，没有从 0.2.0 升级的路径。不能假定 `ALTER EXTENSION` 会无损迁移，应先保全已有审计数据并明确规划迁移。恢复扩展依赖及镜像表结构时，需要服务器已具备扩展共享库。未发现明确的上游许可证。
+该版本提供 1.0.0 到 1.1.0 的 SQL 升级，但尚未验证从 0.2.0 直接升级的路径。不能假定 `ALTER EXTENSION` 会无损迁移，应先保全已有审计数据并明确规划迁移。恢复扩展依赖及镜像表结构时，需要服务器已具备扩展共享库。未发现明确的上游许可证。
+
+### 1.1.0 的可选审计模式
+
+`pgaudix.enable(target, audit_schema)` 可把新审计表放入已创建的独立模式，调用者需要该模式的 CREATE 权限。省略此选项时，审计表仍与源表位于同一模式。已有注册保留随源表移动的原行为，显式选择的审计模式则在源表移动时保持固定。应独立于源表权限设置审计读取权并保护审计存储。

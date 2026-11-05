@@ -7,6 +7,74 @@ weight: 200
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
 
+## 2026-11-05
+
+11 月 5 日已验收批次全部进入本地签名仓库索引，debug 独立归档。扩展覆盖 PG14-18，例外见下表；RPM 六平台、DEB 十平台，Redis/Valkey 等明确安排的历史系统另行标注。CDN 与源码镜像尚未同步。
+
+| 名称 | 旧版本 | 新版本 | 说明 |
+|:--|:--|:--|:--|
+| address_standardizer | - | 3.7.0-1PGSTY | 补齐 EL8 双架构 PG14-18；SQL 3.7；包含 data_us；独立地址解析包不再强依赖 PostGIS |
+| containerd.io | - | 2.4.2-3 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| docker-buildx-plugin | - | 0.38.1 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| docker-ce | - | 29.9.2 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| docker-ce-cli | - | 29.9.2 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| docker-ce-rootless-extras | - | 29.9.2 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| docker-compose-plugin | - | 5.7.0 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| nginx | - | 1.31.8 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| nginx-module-acme | - | 1.31.8+0.4.1 | 官方 RPM；EL8/9/10 双架构；已入本地签名索引 |
+| pg_mooncake | 0.2.0 | 0.3.0-1PGSTY | PG14-18；PGSTY fork 配套 pg_duckdb 1.2.0 / DuckDB 2.0.0，内置 Mooncake v0.0.2；80 个 RPM/DEB 组合验证通过；上游未提供 0.2.0 SQL 升级脚本 |
+| pg_parquet | 0.5.1-3PIGSTY | 0.5.1-4PGSTY | PG14-18；回移 9f78a5b7，修复流式 COPY 临时文件泄漏；流式/PROGRAM、Parquet、S3 与 HTTP Range 验证通过 |
+| pgaudit | 1.6.3 / 1.7.1 | 1.6.3-1PGSTY / 1.7.1-1PGSTY | EL8/9/10 双架构 PG14/15；统一 pgaudit_$v 包名并提供旧 PGDG 包名；PG16-18 与 DEB 复用 PGDG |
+| postgis | 3.6.4 | 3.7.0-1PGSTY | 补齐 EL8 双架构 PG14-18；EL9/EL10 继续由 PGDG 主供；修复 GMP 检测与 LTO，保留 LLVM/debug |
+| postgis_tiger_geocoder | - | 2025.2-1PGSTY | 补齐 EL8 PG16-18；noarch 由双架构共用；不构建 PG14/15 |
+| redis | 7.2.16 | 7.2.17-1PGSTY | EL8/9/10 双架构全矩阵构建与本地入库；主包/开发包及独立 debug 归档 |
+| valkey | 9.1.2 | 9.1.3-1PGSTY | EL8/9/10 双架构安全更新；主包/开发包完成本地索引，debug 独立归档 |
+| vchord | 1.2.0-1PGSTY | 1.2.0-2PGSTY | PG14-18；复核重发 tag 归档与此前相同，完成 RPM/DEB 全矩阵重建；已知 vchordg/halfvec 排序问题仍存在 |
+{.wide .expand}
+
+## 2026-11-04
+
+11 月 1–4 日构建与兼容性更新。全平台产物已入本地仓库；代表性构建另行标注，公网同步未核验。
+
+| 名称                     | 旧版本              | 新版本              | 说明                                                 |
+|:-----------------------|:-----------------|:-----------------|:---------------------------------------------------|
+| address_standardizer   | -                | 3.7.0            | 仅 EL9/U24 ARM64 的 PG18 代表性构建；独立包；SQL 3.7；含 data_us |
+| agensgraph-18          | 2.18.6.0         | 2.18.6.1         | PG18.6 内核与配套扩展                                     |
+| cat_tools              | 0.3.0            | 0.4.0            | PG14-18；纯 SQL                                      |
+| cloudberry             | 2.1.0            | 2.2.0            | 内核与配套扩展                                            |
+| cloudberry-backup      | 2.1.0            | 2.2.0            | 正式版本；六个备份恢复工具                                      |
+| cloudberry-pxf         | 2.1.0            | 2.2.0            | 配套 Cloudberry 2.2.0；含 pxf/pxf_fdw                  |
+| graphblas              | 10.5.0           | 10.5.2           | 含运行库与开发包；ABI 10                                    |
+| lagraph                | 1.2.2            | 1.2.2            | 使用 GraphBLAS 10.5.2 重建                             |
+| onesparse              | 1.0.0-1PGSTY     | 1.0.0-2PGSTY     | PG18；SQL 0.1.0；随 GraphBLAS/LAGraph 重建；需要预加载        |
+| orioledb-16            | 1.10~beta19      | 1.10.1           | PG16.15 内核；patches16_50；SQL 1.10                   |
+| orioledb-17            | 1.10~beta19      | 1.10.1           | PG17.11 内核；patches17_23；SQL 1.10                   |
+| orioledb-18            | 1.10~beta19      | 1.10.1           | PG18.6 内核；patches18_4；SQL 1.10                     |
+| pg_agent_gate          | 0.3.0            | 0.4.1            | PG18；修复代理角色逃逸；需要预加载                                |
+| pg_duckdb              | 1.1.1            | 1.2.0            | PG14-18；DuckDB 2.0.0；与 duckdb_fdw 冲突               |
+| pg_fts                 | 1.15.1           | 1.15.2           | PG17-18；修复 top-k 与删除后性能退化；DEB 从 1.14.3 升级          |
+| pg_graphql             | 1.6.2            | 1.6.3            | PG14-18；修复 nodeId 的带引号主键；pgrx 0.19.3               |
+| pg_integrity_checksums | 2.0.2            | 2.1.0            | PG14-18；统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线          |
+| pg_lake                | 3.5.9            | 3.5.10           | PG16-18；八个扩展仍为 SQL 3.5；RPM 仅 EL9/10；Brotli 安全修复    |
+| pg_living_assertions   | 0.5.10           | 0.5.10           | PG14-18；纯 SQL；全平台重建                                |
+| pg_mentat              | 1.18.0           | 1.19.0           | PG14-18；并发写入与 RLS 修复；升级需要持锁                        |
+| pg_mooncake            | 0.2.0            | 0.2.0            | 短期不可用：等待上游适配 pg_duckdb 1.2.0 / DuckDB 2.0          |
+| pg_tokenizer           | 0.1.1            | 1.0.0            | PG14-18；切换 PGSTY 分支；原生 tsvector；Lindera 6 词典       |
+| pg_tre                 | 4.5.3            | 4.6.1            | PG17-18；修复 sparsemap 越界；优化匹配                       |
+| pgdog                  | 0.1.62           | 0.1.63           | PostgreSQL 连接池                                     |
+| polardb-17             | 17.11.1.0-1PGSTY | 17.11.1.0-2PGSTY | PG17.11 内核与扩展；使用新版 PolarStore SDK 重建               |
+| polarstore             | 1.2.42-2PGSTY    | 1.2.42-3PGSTY    | 使用 zlog 1.2.20 重建                                  |
+| postgis                | 3.6.4            | 3.7.0            | 仅 EL9/U24 ARM64 的 PG18 代表性构建；PGDG 主供               |
+| postgis_tiger_geocoder | -                | 2025.2           | 仅 EL9/U24 ARM64 的 PG18 代表性构建；独立包；支持 PG16-18        |
+| provsql                | 1.13.0           | 1.13.1           | PG14-18；电路大小与取消操作修复；需要预加载                          |
+| redis                  | 7.2.16           | 7.2.17           | 仅 EL9 aarch64 代表性构建；主包、开发包与调试包已验证                  |
+| valkey                 | 9.1.2            | 9.1.3            | 安全更新；含开发包                                          |
+| vchord                 | 1.1.1            | 1.2.0            | PG14-18；切换 PGSTY 分支；严格距离排序需重排候选                    |
+| vchord_bm25            | 0.3.0            | 1.0.0            | PG14-18；切换 PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级    |
+| zlog                   | 1.2.18           | 1.2.20           | 联动重建 PolarStore 与 PolarDB                          |
+{.wide .expand}
+
+
 ## 2026-10-31
 
 | 名称                    | 旧版本                        | 新版本                        | 说明                                                                                                                                |

@@ -2,15 +2,15 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/UPGRADING.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v3.5.3/sql/pg_sift--3.5.sql)
-- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/USAGE.md)
-- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v3.5.3/docs/SUPPORT.md)
-- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v3.5.3)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/README.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/UPGRADING.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/pg_sift.control)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/sql/pg_sift--3.5.sql)
+- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/USAGE.md)
+- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/SUPPORT.md)
+- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v4.0.3)
 
-`pg_sift` release 3.5.3 installs SQL extension version 3.5. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
+`pg_sift` release 4.0.3 installs SQL extension version 4.0.3. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
 
 ### Text Search
 
@@ -80,3 +80,9 @@ Release 3.5.1 keeps PostgreSQL 17–19 support and the SQL upgrade boundary at `
 ### 3.5.2–3.5.3 Correctness Fixes
 
 3.5.2 fixes crashes and wrong groups when column aggregates read block dictionaries and several wide columns. 3.5.3 fixes crashes or wrong rows for generic plans with NULL or packed text-array parameters in ANY/ALL tests. Install 3.5.3 on every reader and restart servers or reconnect every pool and worker that loaded the old library. SQL remains 3.5: these two patch releases need neither an additional SQL update nor REINDEX. Until binaries are replaced, `sift.enable_agg = off` restores PostgreSQL's own plan for affected statements. The earlier 3.5 format and upgrade boundaries remain.
+
+### 4.0.3 Upgrade and Change Tracking
+
+Run the versioned upgrade preflight, deploy matching libraries on every reader and restart or replace processes that loaded the old release. Follow the supplied SQL chain through 3.5, 3.7 and 4.0 to 4.0.3. Even 4.0.2-to-4.0.3 needs a SQL update for `sift.index_choices` and `sift.help`; that patch alone changes no format and requires no REINDEX. Earlier text-index repairs and column-format reader limits remain.
+
+New or reindexed column indexes default to `track_changes = 'auto'`: an eligible single-column primary key is tracked using two statement triggers for UPDATE and DELETE. This adds write work and a baseline heap scan. Existing indexes do not acquire the feature from ALTER EXTENSION alone. `track_changes = 'off'` disables it. Incomplete tracking, including partition/inheritance or concurrent-build cases, falls back to heap checks; inspect the upgrade guide before changing table topology. The text-index `merge_fanin` default is now 4, so merges occur more often.

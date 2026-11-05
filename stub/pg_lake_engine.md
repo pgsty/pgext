@@ -2,20 +2,23 @@
 
 Sources:
 
-- [Official pg_lake architecture overview](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md#architecture)
-- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine.control)
-- [Base SQL objects](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.0.sql)
-- [3.5 cleanup retry-state migration](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.4--3.5.sql)
+- [Official pg_lake architecture overview](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/README.md#architecture)
+- [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine.control)
+- [Base SQL objects](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.0.sql)
+- [3.5 cleanup retry-state migration](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.4--3.5.sql)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.5--3.6.sql)
 
 `pg_lake_engine` is the shared execution layer used by the pg_lake table, copy, and Iceberg extensions. It rewrites eligible PostgreSQL work for `pgduck_server`, maps PostgreSQL and DuckDB values, and tracks remote files that must be removed after aborts or table changes. It is an internal dependency rather than a standalone analytics interface.
 
-The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
+The reviewed upstream release is `3.6.0`, with SQL extension version `3.6` and PostgreSQL 16–19 support. Existing packaged versions are tracked separately. Keep libraries and the query server from the same release.
 
 ### Deployment Boundary
 
 Install it through the top-level extension so its dependency graph and preload directives remain aligned:
 
-```conf
+```ini
 shared_preload_libraries = 'pg_extension_base'
 ```
 
@@ -47,3 +50,7 @@ Use `to_postgres()` only when an expression cannot or should not be pushed down;
 - Do not manually update or delete queue rows. Cleanup functions need the extension's object-store credentials and privilege roles and should be invoked only as documented by operational tooling.
 - Version `3.5` adds `last_attempt_at` to `lake_engine.deletion_queue`. Cleanup retries are spaced by `pg_lake_engine.vacuum_file_remove_retry_interval`; `pg_lake_engine.vacuum_file_remove_max_retries` limits attempts instead of counting unrelated VACUUM passes.
 - Roles are cluster-wide objects and can outlive an extension instance in one database; review memberships separately when removing pg_lake.
+
+### Upstream 3.6.0
+
+Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. The engine migration adds internal UUID pushdown wrappers. They are planner/deparser plumbing, not a general-purpose application API.

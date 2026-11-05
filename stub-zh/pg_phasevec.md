@@ -2,35 +2,38 @@
 
 来源：
 
-- [README](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/README.md)
-- [Control](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/pg_phasevec.control)
-- [Base SQL](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/sql/pg_phasevec--0.1.0.sql)
-- [0.16.0 SQL upgrade](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/sql/pg_phasevec--0.15.0--0.16.0.sql)
-- [PGXN release](https://pgxn.org/dist/pg_phasevec/0.16.0/)
-- [IVF implementation](https://github.com/Manuelreyesbravo/pg_phasevec/blob/v0.16.0/src/phasevec_ivf.c)
-- [PostgreSQL 18 DSM interface](https://github.com/postgres/postgres/blob/REL_18_STABLE/src/include/storage/dsm_registry.h)
-- [PostgreSQL 18 LWLock interface](https://github.com/postgres/postgres/blob/REL_18_STABLE/src/include/storage/lwlock.h)
+- [README.md](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/README.md)
+- [pg_phasevec.control](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/pg_phasevec.control)
+- [sql/pg_phasevec--0.1.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.1.0.sql)
+- [sql/pg_phasevec--0.16.0--0.17.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.16.0--0.17.0.sql)
+- [sql/pg_phasevec--0.17.0--0.18.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.17.0--0.18.0.sql)
+- [src/phasevec_ivf.c](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/src/phasevec_ivf.c)
 
-`pg_phasevec` 在 PostgreSQL 行旁保存带来源的向量读数。每个读数记录已封存的读取器身份、精确文本哈希和时间；过期或来自其他读取器的读数不会参与检索。上游声明要求 PostgreSQL 18 及更高版本，不发起网络调用；但 0.16.0 源码存在下述 PostgreSQL 18 兼容性问题。
+`pg_phasevec` 0.18.0 在 PostgreSQL 行旁存储带来源的向量读数。每个读数标识已封存的读取器、精确文本哈希与时间，过期或来自其他读取器的读数不会参与检索。读取器在本地运行，由运维方提供。
 
-### PostgreSQL 18 兼容性
-
-0.16.0 无法在 PostgreSQL 18 上编译：IVF 实现以不兼容的签名调用 `LWLockNewTrancheId` 和 `GetNamedDSMSegment`，还调用了 PostgreSQL 18 未提供的 `GetNamedDSA`。原生编译与 LLVM 编译均失败。因此，声明的最低版本不能证明 PostgreSQL 18 实际可用；应等待上游兼容性修复，再使用下述安装流程。此处尚未验证其他 PostgreSQL 版本。
-
-### 封存读取器并检索
+### 启用与兼容性
 
 ```sql
 CREATE EXTENSION pg_phasevec;
 SELECT extversion FROM pg_extension WHERE extname = 'pg_phasevec';
-
 ```
 
-读取器通过模型摘要和维度注册。watch 指定源表、键和文本表达式；`phasevec.next` 将待处理行交给本地读取器，`phasevec.record` 将结果和文本哈希一起保存。`phasevec.search`、`find` 和 `alike` 只查询兼容读数。`coverage` 报告缺口，`reader_switch` 会把旧读取器的读数标为 foreign。
+安装需要超级用户，模式固定为 `phasevec`，不依赖其他扩展。上游记录了 PostgreSQL 18–19 测试。0.17.0 修复了 0.10.0–0.16.0 的 PostgreSQL 18 编译问题：PostgreSQL 18 使用后端独立 IVF 缓存，`phasevec.shared_ivf_cache` 关闭且不可启用；共享 IVF 要求 PostgreSQL 19。本次源码核验不代表已重新构建本地二进制。
 
-### 索引与边界
+### 读取器与检索
 
-`ivf_build`、`ivf_maintain` 和 `ivf_absorb` 提供显式 IVF 维护。索引是近似的，coverage 阈值可以拒绝从未填满的 watch 返回结果。被监视的行修改后，读数会在同一事务中变为 stale。扩展不提供嵌入模型、读取器服务、网络传输或跨系统持久排序；读取器封存、权限和模型来源由调用方负责。模式固定为 `phasevec`，扩展不可迁移。
+用模型摘要和维度注册读取器。watch 指定源表、键与文本表达式。`phasevec.next` 将工作交给读取器，`phasevec.record` 将结果代码与文本哈希一同保存。`phasevec.search`、`find` 和 `alike` 检索兼容读数；`coverage` 报告缺口，`reader_switch` 将旧读取器结果标为 foreign。扩展不提供嵌入模型或持久读取器服务。
 
-### 升级与安全
+`ivf_build`、`ivf_maintain` 和 `ivf_absorb` 显式维护近似索引。源行修改时，其读数在同一事务内变为 stale。coverage 阈值可能拒绝查询未完全填充的 watch；是否允许部分结果由调用方决定。
 
-需要超级用户安装。源码包含初始安装及通向 0.16.0 的 SQL 升级链。应安装匹配的库和 SQL 文件并遵循升级链；0.16.0 加固内存分配边界、游标 NULL 处理和维护权限。模型摘要、读取器清单和源表访问应与数据库处于同一信任边界。
+### 召回率与摘要
+
+`phasevec.recall_approve` 保存所有者认可的基线，`phasevec.recall_check` 比较当前召回率。检查采用已保存的检索参数与抽样键，大样本可能代价较高；超过 100000 个有效读数时，参考检索本身也经过预筛选。缺少基线或样本不可用时会报告无法测量。这些函数及基线表不向 `PUBLIC` 开放，应显式授予监控权限。
+
+0.18.0 新增 `phasevec.brief(watch, budget)`，默认字符预算为 8000。它汇总仍然有效的读数，并以调用者权限获取源文本，不会额外赋予源表访问权。
+
+### 升级与信任边界
+
+安装匹配的库与 SQL 文件，遵循所提供的升级链。在使用共享 IVF 的服务器上跨越 0.17.0 时，缓存格式变更后需要重启以释放旧共享内存段。新缓存也区分扩展安装实例，避免删除重建扩展后复用陈旧状态。
+
+维护函数不向 `PUBLIC` 开放。读取器封存与模型摘要只能证明来源，不能保证模型质量；读取器清单、维护权限和源表权限应纳入数据库运维控制。

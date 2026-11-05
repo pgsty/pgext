@@ -1,9 +1,10 @@
-
-
-
 ## Usage
 
-> [set_user: User switching with enhanced logging and control](https://github.com/pgaudit/set_user)
+Sources:
+
+- [README.md](https://github.com/pgaudit/set_user/blob/45fc481de6874c2afc5199d7efbd2e32c66d702e/README.md)
+- [set_user.control](https://github.com/pgaudit/set_user/blob/45fc481de6874c2afc5199d7efbd2e32c66d702e/set_user.control)
+- [CHANGELOG.md](https://github.com/pgaudit/set_user/blob/45fc481de6874c2afc5199d7efbd2e32c66d702e/CHANGELOG.md)
 
 `set_user` allows switching users and optional privilege escalation with enhanced audit logging. It provides an additional layer of control when unprivileged users must escalate to superuser or object owner roles for maintenance tasks.
 
@@ -13,7 +14,7 @@ CREATE EXTENSION set_user;
 
 ### Configuration
 
-Add to `postgresql.conf`:
+Add to `postgresql.conf`, preserving other preload entries, and restart PostgreSQL:
 
 ```ini
 shared_preload_libraries = 'set_user'
@@ -65,3 +66,9 @@ When escalating to a superuser role:
 - `ALTER SYSTEM` and `COPY PROGRAM` are blocked (if configured)
 - `log_statement` is forced to `all` for full audit trail
 - The `AUDIT` tag is appended to `log_line_prefix`
+
+### 4.3.0 Security and Compatibility
+
+Version 4.3.0 requires PostgreSQL 14 or newer. It fixes the RESET ALL backend crash, blocks DISCARD ALL and function SET-clause paths that could bypass reset-token checks, and compares tokens in constant time. Allowlist role names are now case-sensitive; quote mixed-case names correctly.
+
+A reset token is a best-effort safeguard, not a security boundary against a malicious superuser or another route to changing identity. Restrict EXECUTE grants and both role allowlists explicitly. Install matching files and replace preloaded processes before relying on the fixes.

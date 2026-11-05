@@ -39,7 +39,7 @@ DATE_ALIGN = {"2025-09-04": "2025-09-06"}
 KNOWN_NON_CATALOG = {
     "agensgraph", "antlr4_runtime413", "arrow", "babelfishpg", "cloudberry",
     "cloudberry_backup", "cloudberry_pxf", "oriolepg", "pdu", "pgdog",
-    "pgedge", "polardb", "openhalodb",
+    "pgedge", "polardb", "openhalodb", "redis",
 }
 
 # Kernel package families shipped as one package per PostgreSQL major —

@@ -1,13 +1,11 @@
-
-
-
 ## Usage
 
 Sources:
 
-- [README](https://github.com/HypoPG/hypopg/blob/4e564ebbd46e1ab365ad0d05ca4a2f19cf316ba7/README.md)
-- [Control](https://github.com/HypoPG/hypopg/blob/4e564ebbd46e1ab365ad0d05ca4a2f19cf316ba7/hypopg.control)
-- [Release 1.4.4](https://github.com/HypoPG/hypopg/releases/tag/1.4.4)
+- [README.md](https://api.pgxn.org/src/hypopg/hypopg-1.4.5/README.md)
+- [hypopg.control](https://api.pgxn.org/src/hypopg/hypopg-1.4.5/hypopg.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/hypopg/hypopg-1.4.5/CHANGELOG.md)
+
 
 HypoPG lets you create hypothetical (virtual) indexes that exist only in the current session and are considered by `EXPLAIN` (without `ANALYZE`) for query planning. This enables testing the impact of indexes without the cost of actually creating them.
 
@@ -26,6 +24,7 @@ HypoPG lets you create hypothetical (virtual) indexes that exist only in the cur
 Create a test table and check the baseline plan:
 
 ```sql
+CREATE EXTENSION hypopg;
 CREATE TABLE hypo AS SELECT id, 'line ' || id AS val FROM generate_series(1, 10000) id;
 ANALYZE hypo;
 EXPLAIN SELECT * FROM hypo WHERE id = 1;
@@ -51,7 +50,7 @@ EXPLAIN SELECT * FROM hypo WHERE id = 1;
 List and manage hypothetical indexes:
 
 ```sql
-SELECT * FROM hypopg_list_indexes();
+SELECT * FROM hypopg_list_indexes;
 SELECT * FROM hypopg_drop_index(13543);
 SELECT * FROM hypopg_reset();
 ```
@@ -67,3 +66,7 @@ SELECT * FROM hypopg_reset();
 ### 1.4.4 and Upgrade Boundaries
 
 Upstream 1.4.4 fixes hypothetical index naming for large OIDs, dependent-object invalidation, INCLUDE-column limits and failed EXPLAIN state, with additional PostgreSQL 19 compatibility fixes. Hypothetical indexes remain local to one backend and affect EXPLAIN without ANALYZE. No extension update scripts are provided: after installing matching files, drop and recreate the extension in each database. Reconnect or reset the backend to discard hypothetical state. This upstream release does not assert a matching packaged build.
+
+### 1.4.5 Fixes
+
+HypoPG 1.4.5 fixes hypothetical-index estimates and crashes involving relation identifiers. The upstream replacement procedure above still applies: the project provides no extension update scripts. Keep hypothetical state and EXPLAIN tests in one backend, without ANALYZE.

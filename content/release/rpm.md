@@ -6,6 +6,74 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-11-05
+
+Accepted November 5 batches are signed and indexed in the local repositories, with debug packages archived separately. Extensions cover PG14-18 unless noted: six RPM and ten DEB platforms; explicitly requested legacy suites are listed separately. CDN and source mirror synchronization have not run.
+
+| Name | Old | New | Comment |
+|:--|:--|:--|:--|
+| address_standardizer | - | 3.7.0-1PGSTY | EL8 x86_64/aarch64 PG14-18 gap fill; SQL 3.7; includes data_us; standalone parser has no PostGIS runtime dependency |
+| containerd.io | - | 2.4.2-3 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| docker-buildx-plugin | - | 0.38.1 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| docker-ce | - | 29.9.2 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| docker-ce-cli | - | 29.9.2 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| docker-ce-rootless-extras | - | 29.9.2 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| docker-compose-plugin | - | 5.7.0 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| nginx | - | 1.31.8 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| nginx-module-acme | - | 1.31.8+0.4.1 | Official vendor RPMs; EL8/9/10 both architectures; imported and indexed locally |
+| pg_mooncake | 0.2.0 | 0.3.0-1PGSTY | PG14-18; PGSTY fork for pg_duckdb 1.2.0 / DuckDB 2.0.0; bundles Mooncake v0.0.2; 80 RPM/DEB combinations verified; no upstream 0.2.0 SQL upgrade script |
+| pg_parquet | 0.5.1-3PIGSTY | 0.5.1-4PGSTY | PG14-18; backport 9f78a5b7 to fix streaming COPY temporary-file leaks; stream/PROGRAM, Parquet, S3 and HTTP Range QA passed |
+| pgaudit | 1.6.3 / 1.7.1 | 1.6.3-1PGSTY / 1.7.1-1PGSTY | PG14/15 on EL8/9/10 x86_64/aarch64; normalize pgaudit_$v and provide legacy PGDG names; reuse PGDG for PG16-18 and DEB |
+| postgis | 3.6.4 | 3.7.0-1PGSTY | EL8 x86_64/aarch64 PG14-18 gap fill; PGDG remains primary on EL9/EL10; GMP detection and LTO fixes; LLVM/debug retained |
+| postgis_tiger_geocoder | - | 2025.2-1PGSTY | EL8 PG16-18 gap fill; noarch shared across both architectures; no PG14/15 build |
+| redis | 7.2.16 | 7.2.17-1PGSTY | EL8/9/10 x86_64/aarch64; full build and local import; main/devel plus separate debug archive |
+| valkey | 9.1.2 | 9.1.3-1PGSTY | EL8/9/10 x86_64/aarch64; security update; main/devel locally indexed; debug separately archived |
+| vchord | 1.2.0-1PGSTY | 1.2.0-2PGSTY | PG14-18; verified reissued tag archive is unchanged; full RPM/DEB rebuild; known vchordg/halfvec ordering issue remains |
+{.wide .expand}
+
+## 2026-11-04
+
+November 1–4 builds and compatibility updates. Full-matrix packages are indexed locally; pilot-only builds are marked. Public mirror synchronization is unverified.
+
+| Name                   | Old              | New              | Comment                                                                           |
+|:-----------------------|:-----------------|:-----------------|:----------------------------------------------------------------------------------|
+| address_standardizer   | -                | 3.7.0            | EL9/U24 ARM64 PG18 pilots only; standalone; SQL 3.7; includes data_us             |
+| agensgraph-18          | 2.18.6.0         | 2.18.6.1         | PG18.6 kernel and contrib                                                         |
+| cat_tools              | 0.3.0            | 0.4.0            | PG14-18; SQL-only                                                                 |
+| cloudberry             | 2.1.0            | 2.2.0            | Kernel and contrib                                                                |
+| cloudberry-backup      | 2.1.0            | 2.2.0            | Official release; six backup/restore tools                                        |
+| cloudberry-pxf         | 2.1.0            | 2.2.0            | Matches Cloudberry 2.2.0; includes pxf/pxf_fdw                                    |
+| graphblas              | 10.5.0           | 10.5.2           | Includes runtime and development packages; ABI 10                                 |
+| lagraph                | 1.2.2            | 1.2.2            | Rebuilt with GraphBLAS 10.5.2                                                     |
+| onesparse              | 1.0.0-1PGSTY     | 1.0.0-2PGSTY     | PG18; SQL 0.1.0; GraphBLAS/LAGraph rebuild; preload required                      |
+| orioledb-16            | 1.10~beta19      | 1.10.1           | PG16.15 kernel; patches16_50; SQL 1.10                                            |
+| orioledb-17            | 1.10~beta19      | 1.10.1           | PG17.11 kernel; patches17_23; SQL 1.10                                            |
+| orioledb-18            | 1.10~beta19      | 1.10.1           | PG18.6 kernel; patches18_4; SQL 1.10                                              |
+| pg_agent_gate          | 0.3.0            | 0.4.1            | PG18; fixes agent-role escape; preload required                                   |
+| pg_duckdb              | 1.1.1            | 1.2.0            | PG14-18; DuckDB 2.0.0; conflicts with duckdb_fdw                                  |
+| pg_fts                 | 1.15.1           | 1.15.2           | PG17-18; fixes top-k and post-delete slowdown; DEB from 1.14.3                    |
+| pg_graphql             | 1.6.2            | 1.6.3            | PG14-18; fixes quoted primary keys in nodeId; pgrx 0.19.3                         |
+| pg_integrity_checksums | 2.0.2            | 2.1.0            | PG14-18; canonical logical byte order; recompute Hash/system baselines from 2.0.0 |
+| pg_lake                | 3.5.9            | 3.5.10           | PG16-18; eight extensions at SQL 3.5; RPM EL9/10; Brotli security fix             |
+| pg_living_assertions   | 0.5.10           | 0.5.10           | PG14-18; SQL-only; matrix rebuild                                                 |
+| pg_mentat              | 1.18.0           | 1.19.0           | PG14-18; concurrent writes and RLS fixes; upgrade takes locks                     |
+| pg_mooncake            | 0.2.0            | 0.2.0            | Temporarily unavailable: awaiting upstream pg_duckdb 1.2.0 / DuckDB 2.0 support   |
+| pg_tokenizer           | 0.1.1            | 1.0.0            | PG14-18; PGSTY fork; native tsvector; Lindera 6 dictionaries                      |
+| pg_tre                 | 4.5.3            | 4.6.1            | PG17-18; fixes sparsemap bounds; faster matching                                  |
+| pgdog                  | 0.1.62           | 0.1.63           | PostgreSQL connection pooler                                                      |
+| polardb-17             | 17.11.1.0-1PGSTY | 17.11.1.0-2PGSTY | PG17.11 kernel/contrib; rebuilt with updated PolarStore SDK                       |
+| polarstore             | 1.2.42-2PGSTY    | 1.2.42-3PGSTY    | Rebuilt with zlog 1.2.20                                                          |
+| postgis                | 3.6.4            | 3.7.0            | EL9/U24 ARM64 PG18 pilots only; PGDG primary                                      |
+| postgis_tiger_geocoder | -                | 2025.2           | EL9/U24 ARM64 PG18 pilots only; standalone; supports PG16-18                      |
+| provsql                | 1.13.0           | 1.13.1           | PG14-18; circuit-size and cancellation fixes; preload required                    |
+| redis                  | 7.2.16           | 7.2.17           | EL9 aarch64 pilot only; main/devel and debug packages verified                    |
+| valkey                 | 9.1.2            | 9.1.3            | Security update; includes development package                                     |
+| vchord                 | 1.1.1            | 1.2.0            | PG14-18; PGSTY fork; rerank candidates for strict distance order                  |
+| vchord_bm25            | 0.3.0            | 1.0.0            | PG14-18; PGSTY fork; native tsvector; no in-place upgrade from 0.3.x              |
+| zlog                   | 1.2.18           | 1.2.20           | Rebuilds PolarStore and PolarDB consumers                                         |
+{.wide .expand}
+
+
 ## 2026-10-31
 
 | Name                    | Old                           | New                           | Comment                                                                                                                                                                                      |

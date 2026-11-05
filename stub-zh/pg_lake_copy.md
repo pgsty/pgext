@@ -2,14 +2,17 @@
 
 来源：
 
-- [版本 3.5 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_copy/pg_lake_copy.control)
-- [官方数据湖导入和导出指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/data-lake-import-export.md)
-- [官方文件格式参考](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/file-formats-reference.md)
-- [3.4 至 3.5 SQL 迁移](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_copy/pg_lake_copy--3.4--3.5.sql)
+- [版本 3.6 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_copy/pg_lake_copy.control)
+- [官方数据湖导入和导出指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/data-lake-import-export.md)
+- [官方文件格式参考](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/file-formats-reference.md)
+- [3.4 至 3.5 SQL 迁移](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_copy/pg_lake_copy--3.4--3.5.sql)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_copy/pg_lake_copy--3.5--3.6.sql)
 
 `pg_lake_copy` 扩展了 PostgreSQL `COPY`，使得查询、堆表、外部湖表和 Iceberg 表可以与本地路径、HTTP 端点以及配置的对象存储交换 Parquet、CSV 或换行符分隔的 JSON 文件。它通过钩子添加行为，并没有独立的 SQL 函数 API。
 
-pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
+本次核验的上游发布为 `3.6.0`，SQL 扩展版本为 `3.6`，支持 PostgreSQL 16–19。现有软件包版本单独跟踪，动态库与查询服务器应使用同一发布版本。
 
 ### 启用组件
 
@@ -55,3 +58,7 @@ WITH (format 'csv', header true, compression 'gzip');
 - 对象存储访问通过 `pgduck_server` 进行。其凭据链、网络访问以及桶权限必须允许请求的读取或写入。
 - `COPY` 是一个语句，并参与外围的 PostgreSQL 事务，但远程文件和清理也依赖于 pg_lake 事务/队列机制。在重试大规模导出之前，请检查失败的操作和孤儿清理。
 - 版本 `3.5` 没有为 `pg_lake_copy` 新增独立 SQL API；从 `3.4` 到 `3.5` 的迁移脚本为空。COPY 行为仍取决于匹配的湖扩展动态库和查询服务器二进制。
+
+### 上游 3.6.0
+
+上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。此组件从 3.5 到 3.6 的 SQL 迁移为空，但运行库及依赖仍须按同一发布协调升级。

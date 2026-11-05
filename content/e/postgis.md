@@ -33,7 +33,7 @@ page_width: full
 |   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3" >}} {{< ext "mobilitydb" >}} {{< ext "ogr_fdw" >}} {{< ext "pointcloud" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_polyline" >}} {{< ext "earthdistance" >}} {{< ext "pg_eviltransform" >}} {{< ext "pg_geohash" >}} |
 |    **Siblings**   | {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} |
 
-> [!Note] PostGIS 3.7.0; PGDG on EL9/EL10, local build on EL8.
+> [!Note] PostGIS 3.7.0; PGDG remains primary on EL9/EL10 and DEB. PGSTY fills EL8 x86_64/aarch64 PG14-18; signed and indexed locally on 2026-11-05; CDN sync pending.
 
 
 ## Packages
@@ -48,8 +48,8 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "MISS" "postgis37_18 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_17 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_16 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_15 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_14 : MISS 0" "red" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "MISS" "postgis37_18 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_17 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_16 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_15 : MISS 0" "red" >}} | {{< bg "MISS" "postgis37_14 : MISS 0" "red" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "postgis37_14 : AVAIL 1" "green" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgis37_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_14 : AVAIL 4" "blue" >}} |
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 3.7.0" "postgis37_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_14 : AVAIL 4" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 3.7.0" "postgis37_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 3.7.0" "postgis37_14 : AVAIL 4" "blue" >}} |
@@ -72,6 +72,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis37_18` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.2 MiB | [postgis37_18-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis37_18-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `postgis37_18` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 5.0 MiB | [postgis37_18-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis37_18-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `postgis37_18` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_18-3.7.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/postgis37_18-3.7.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_18` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_18-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/postgis37_18-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_18` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_18-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/postgis37_18-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm) |
@@ -125,6 +127,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis37_17` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.2 MiB | [postgis37_17-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis37_17-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `postgis37_17` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 5.0 MiB | [postgis37_17-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis37_17-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `postgis37_17` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_17-3.7.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/postgis37_17-3.7.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_17` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_17-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/postgis37_17-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_17` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_17-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/postgis37_17-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm) |
@@ -178,6 +182,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis37_16` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.2 MiB | [postgis37_16-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis37_16-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `postgis37_16` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 5.0 MiB | [postgis37_16-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis37_16-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `postgis37_16` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_16-3.7.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/postgis37_16-3.7.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_16` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_16-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/postgis37_16-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_16` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_16-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/postgis37_16-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm) |
@@ -231,6 +237,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis37_15` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.2 MiB | [postgis37_15-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis37_15-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `postgis37_15` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 5.0 MiB | [postgis37_15-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis37_15-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `postgis37_15` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_15-3.7.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/postgis37_15-3.7.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_15` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_15-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/postgis37_15-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_15` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_15-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/postgis37_15-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm) |
@@ -284,6 +292,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `postgis37_14` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.2 MiB | [postgis37_14-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgis37_14-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `postgis37_14` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 5.0 MiB | [postgis37_14-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgis37_14-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `postgis37_14` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_14-3.7.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/postgis37_14-3.7.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_14` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_14-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/postgis37_14-3.7.0-rc3_3PGDG.rhel9.8.x86_64.rpm) |
 | `postgis37_14` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 3.2 MiB | [postgis37_14-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/postgis37_14-3.7.0-rc1_5PGDG.rhel9.8.x86_64.rpm) |

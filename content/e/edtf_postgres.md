@@ -263,4 +263,3 @@ SELECT edtf_relation('1985', '1986');
 ### Data Modeling Boundary
 
 The extension operates on text and derived dates; it does not replace application validation or introduce a stored EDTF base type. Preserve the original expression when uncertainty and qualifiers are significant, and index derived bounds only for the query semantics your application intends.
-

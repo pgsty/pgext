@@ -2,11 +2,12 @@
 
 Sources:
 
-- [README.md](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/README.md)
-- [pgaudix.control](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/pgaudix.control)
-- [pgaudix--1.0.0.sql](https://github.com/sipesistemas/pgaudix/blob/b552a8afe614e403aec7e8784806d344782969e3/pgaudix--1.0.0.sql)
+- [README.md](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/README.md)
+- [pgaudix.control](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/pgaudix.control)
+- [pgaudix--1.1.0.sql](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/pgaudix--1.1.0.sql)
+- [pgaudix--1.0.0--1.1.0.sql](https://github.com/sipesistemas/pgaudix/blob/1c2d840c0485516ead1e900dd565a5f42ff3cc7d/pgaudix--1.0.0--1.1.0.sql)
 
-`pgaudix` 1.0.0 mirrors ordinary table rows into audit tables and follows supported DDL changes. This release explicitly refuses partitioned tables, partitions and inherited tables.
+`pgaudix` 1.1.0 mirrors ordinary table rows into audit tables and follows supported DDL changes. This release explicitly refuses partitioned tables, partitions and inherited tables.
 
 ### Core Workflow
 
@@ -30,4 +31,8 @@ The upstream requirement is PostgreSQL 16+. Installation needs a superuser; no p
 
 `pgaudix.disable(table)` stops auditing while retaining history; passing `drop_data := true` removes the audit table. Dropping a source column or table can remove its corresponding history, so disable auditing first if it must be preserved. Updates record the new row; truncation records an operation without individual deleted rows. There is no automatic retention policy.
 
-The reviewed release includes only the 1.0.0 install script, not a 0.2.0 upgrade path. Do not assume `ALTER EXTENSION` performs a lossless migration: preserve existing audit data and plan the transition explicitly. PostgreSQL extension dependencies and mirrored table layout must be restored with the extension library available. No explicit upstream license was found.
+The release includes a 1.0.0-to-1.1.0 SQL upgrade, but no verified direct path from 0.2.0. Do not assume `ALTER EXTENSION` performs a lossless migration: preserve existing audit data and plan the transition explicitly. PostgreSQL extension dependencies and mirrored table layout must be restored with the extension library available. No explicit upstream license was found.
+
+### Optional Audit Schema in 1.1.0
+
+`pgaudix.enable(target, audit_schema)` can place a new audit table in a separate, already-created schema; the caller needs CREATE there. Omitting the option keeps the audit table beside its source. Existing registrations retain the original source-following behavior; an explicitly chosen schema remains pinned when the source moves. Grant read access and protect audit storage independently of source-table permissions.

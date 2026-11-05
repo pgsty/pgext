@@ -2,20 +2,23 @@
 
 来源：
 
-- [官方pg_lake架构概述](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md#architecture)
-- [版本3.5控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine.control)
-- [基础SQL对象](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.0.sql)
-- [3.5 清理重试状态迁移](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake_engine/pg_lake_engine--3.4--3.5.sql)
+- [官方pg_lake架构概述](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/README.md#architecture)
+- [版本3.6控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine.control)
+- [基础SQL对象](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.0.sql)
+- [3.5 清理重试状态迁移](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.4--3.5.sql)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.5--3.6.sql)
 
 `pg_lake_engine` 是pg_lake表、复制和Iceberg扩展共享的执行层。它重写符合条件的PostgreSQL工作以供 `pgduck_server` 使用，映射PostgreSQL和DuckDB值，并跟踪在中止或表变更后必须删除的远程文件。它是内部依赖项而非独立的分析接口。
 
-pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
+本次核验的上游发布为 `3.6.0`，SQL 扩展版本为 `3.6`，支持 PostgreSQL 16–19。现有软件包版本单独跟踪，动态库与查询服务器应使用同一发布版本。
 
 ### 部署边界
 
 通过顶级扩展安装它，使其依赖图和预加载指令保持一致：
 
-```conf
+```ini
 shared_preload_libraries = 'pg_extension_base'
 ```
 
@@ -47,3 +50,7 @@ FROM external_events;
 - 不要手动更新或删除队列行。清理函数需要扩展的对象存储凭证和特权角色，并且仅应在操作工具文档中指定的情况下调用。
 - 版本 `3.5` 在 `lake_engine.deletion_queue` 中新增 `last_attempt_at`。清理重试由 `pg_lake_engine.vacuum_file_remove_retry_interval` 控制间隔，`pg_lake_engine.vacuum_file_remove_max_retries` 限制实际尝试次数，而不是统计无关的 VACUUM 执行轮次。
 - 角色是集群范围的对象，在一个数据库中可能会超出扩展实例的存在；在移除pg_lake时需单独审查成员资格。
+
+### 上游 3.6.0
+
+上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。引擎迁移增加内部 UUID 下推包装函数，用于规划与反解析，不是通用应用 API。

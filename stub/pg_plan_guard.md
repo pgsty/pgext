@@ -2,12 +2,12 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/README.md)
-- [pg_plan_guard.control](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/pg_plan_guard.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/CHANGELOG.md)
-- [pg_plan_guard--1.1.8--1.1.9.sql](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.9/pg_plan_guard--1.1.8--1.1.9.sql)
+- [README.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/README.md)
+- [pg_plan_guard.control](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/pg_plan_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/CHANGELOG.md)
+- [pg_plan_guard--1.1.8--1.1.9.sql](https://api.pgxn.org/src/pg_plan_guard/pg_plan_guard-1.1.10/pg_plan_guard--1.1.8--1.1.9.sql)
 
-`pg_plan_guard` 1.1.9 records approved PostgreSQL 19 plan-advice text and detects changes when stored queries are replanned. It requires the loaded `pg_plan_advice` module and does not support PostgreSQL 18.
+`pg_plan_guard` 1.1.10 records approved PostgreSQL 19 plan-advice text and detects changes when stored queries are replanned. It requires the loaded `pg_plan_advice` module and does not support PostgreSQL 18.
 
 ### Core Workflow
 
@@ -32,3 +32,7 @@ SELECT * FROM plan_guard.status WHERE state <> 'ok';
 ### Role Isolation in 1.1.9
 
 Version 1.1.9 plans stored SQL inside a temporary author-owned `SECURITY DEFINER` function when role isolation is needed. A function evaluated by the planner can no longer regain the runner's identity by resetting role or session authorization. The function is created and rolled back inside the read-only planning subtransaction. The author needs database `TEMP` permission when this frame is required; the runner needs authority to act as the author. Missing privileges produce a baseline error. This fixes the role-reset escape in 1.1.7/1.1.8 without turning stored SQL into untrusted input.
+
+### 1.1.10 Watch Privileges
+
+Version 1.1.10 revokes `PUBLIC` execution of `plan_guard.watch()`. Grant it explicitly only to trusted operators that may register monitoring work. This does not remove the captured-author isolation, database TEMP or role-assumption requirements of 1.1.9.

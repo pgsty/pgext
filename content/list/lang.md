@@ -724,4 +724,3 @@ Extensions running on JVM
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 3090 | {{< alias "pljava" >}} | PL/Java procedural language |
-

@@ -42,6 +42,40 @@ func TestGetPackageNameForCategoryUsesTemplate(t *testing.T) {
 	}
 }
 
+func TestPGAuditPackageNamesUseStandardTemplates(t *testing.T) {
+	ext := &ExtensionData{
+		Name:   "pgaudit",
+		Alias:  "pgaudit",
+		RPMPkg: "pgaudit_$v",
+		DEBPkg: "postgresql-$v-pgaudit",
+		// Existing matrix rows must not override the catalog template.
+		VersionPackages: map[int]string{14: "pgaudit16_14", 15: "pgaudit17_15"},
+	}
+	for _, osCode := range []string{"el8", "el9", "el10", "d12", "u24"} {
+		t.Run(osCode, func(t *testing.T) {
+			g := &PigstyConfigGenerator{osCode: osCode}
+			for _, tt := range []struct {
+				pg       int
+				rpm, deb string
+			}{
+				{14, "pgaudit_14", "postgresql-14-pgaudit"},
+				{15, "pgaudit_15", "postgresql-15-pgaudit"},
+				{16, "pgaudit_16", "postgresql-16-pgaudit"},
+				{17, "pgaudit_17", "postgresql-17-pgaudit"},
+				{18, "pgaudit_18", "postgresql-18-pgaudit"},
+			} {
+				want := tt.deb
+				if g.isRPM() {
+					want = tt.rpm
+				}
+				if got := g.getPackageNameForCategory(ext, tt.pg); got != want {
+					t.Errorf("PG%d package = %q, want %q", tt.pg, got, want)
+				}
+			}
+		})
+	}
+}
+
 func TestGenerateExtensionMappingsPreferAvailable(t *testing.T) {
 	g := &PigstyConfigGenerator{osCode: "el9"}
 	extensions := map[string]*ExtensionData{

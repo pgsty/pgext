@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "country" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} {{< ext "addressing_dictionary" >}} |
 |    **Siblings**   | {{< ext "address_standardizer_data_us" >}} |
 
-> [!Note] Standalone since PostGIS 3.7; PGDG 3.7.0; PG14-18.
+> [!Note] Standalone package 3.7.0, SQL 3.7, PG14-18; includes address_standardizer_data_us and does not require PostGIS. PGDG primary; PGSTY EL8 x86_64/aarch64 gap packages signed and indexed locally on 2026-11-05; CDN sync pending.
 
 
 ## Packages
@@ -47,8 +47,8 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "MISS" "address_standardizer_18 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_17 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_16 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_15 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_14 : MISS 0" "red" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "MISS" "address_standardizer_18 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_17 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_16 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_15 : MISS 0" "red" >}} | {{< bg "MISS" "address_standardizer_14 : MISS 0" "red" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.7.0" "address_standardizer_14 : AVAIL 1" "green" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_14 : AVAIL 1" "blue" >}} |
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_14 : AVAIL 1" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.7.0" "address_standardizer_14 : AVAIL 1" "blue" >}} |
@@ -71,6 +71,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `address_standardizer_18` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 562.2 KiB | [address_standardizer_18-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/address_standardizer_18-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `address_standardizer_18` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 560.1 KiB | [address_standardizer_18-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/address_standardizer_18-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `address_standardizer_18` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 216.0 KiB | [address_standardizer_18-3.7.0-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/address_standardizer_18-3.7.0-4PGDG.rhel9.8.x86_64.rpm) |
 | `address_standardizer_18` | `3.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 214.6 KiB | [address_standardizer_18-3.7.0-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/address_standardizer_18-3.7.0-4PGDG.rhel9.8.aarch64.rpm) |
 | `address_standardizer_18` | `3.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 216.9 KiB | [address_standardizer_18-3.7.0-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/address_standardizer_18-3.7.0-4PGDG.rhel10.2.x86_64.rpm) |
@@ -92,6 +94,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `address_standardizer_17` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 561.9 KiB | [address_standardizer_17-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/address_standardizer_17-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `address_standardizer_17` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 559.9 KiB | [address_standardizer_17-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/address_standardizer_17-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `address_standardizer_17` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 215.9 KiB | [address_standardizer_17-3.7.0-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/address_standardizer_17-3.7.0-4PGDG.rhel9.8.x86_64.rpm) |
 | `address_standardizer_17` | `3.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 214.5 KiB | [address_standardizer_17-3.7.0-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/address_standardizer_17-3.7.0-4PGDG.rhel9.8.aarch64.rpm) |
 | `address_standardizer_17` | `3.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 216.8 KiB | [address_standardizer_17-3.7.0-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/address_standardizer_17-3.7.0-4PGDG.rhel10.2.x86_64.rpm) |
@@ -113,6 +117,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `address_standardizer_16` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 561.9 KiB | [address_standardizer_16-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/address_standardizer_16-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `address_standardizer_16` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 559.9 KiB | [address_standardizer_16-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/address_standardizer_16-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `address_standardizer_16` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 215.9 KiB | [address_standardizer_16-3.7.0-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/address_standardizer_16-3.7.0-4PGDG.rhel9.8.x86_64.rpm) |
 | `address_standardizer_16` | `3.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 214.5 KiB | [address_standardizer_16-3.7.0-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/address_standardizer_16-3.7.0-4PGDG.rhel9.8.aarch64.rpm) |
 | `address_standardizer_16` | `3.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 216.8 KiB | [address_standardizer_16-3.7.0-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/address_standardizer_16-3.7.0-4PGDG.rhel10.2.x86_64.rpm) |
@@ -134,6 +140,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `address_standardizer_15` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 562.9 KiB | [address_standardizer_15-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/address_standardizer_15-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `address_standardizer_15` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 561.1 KiB | [address_standardizer_15-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/address_standardizer_15-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `address_standardizer_15` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 224.5 KiB | [address_standardizer_15-3.7.0-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/address_standardizer_15-3.7.0-4PGDG.rhel9.8.x86_64.rpm) |
 | `address_standardizer_15` | `3.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 222.1 KiB | [address_standardizer_15-3.7.0-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/address_standardizer_15-3.7.0-4PGDG.rhel9.8.aarch64.rpm) |
 | `address_standardizer_15` | `3.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 225.0 KiB | [address_standardizer_15-3.7.0-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/address_standardizer_15-3.7.0-4PGDG.rhel10.2.x86_64.rpm) |
@@ -155,6 +163,8 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `address_standardizer_14` | `3.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 562.8 KiB | [address_standardizer_14-3.7.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/address_standardizer_14-3.7.0-1PGSTY.el8.x86_64.rpm) |
+| `address_standardizer_14` | `3.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 561.1 KiB | [address_standardizer_14-3.7.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/address_standardizer_14-3.7.0-1PGSTY.el8.aarch64.rpm) |
 | `address_standardizer_14` | `3.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 224.4 KiB | [address_standardizer_14-3.7.0-4PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/address_standardizer_14-3.7.0-4PGDG.rhel9.8.x86_64.rpm) |
 | `address_standardizer_14` | `3.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 222.1 KiB | [address_standardizer_14-3.7.0-4PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/address_standardizer_14-3.7.0-4PGDG.rhel9.8.aarch64.rpm) |
 | `address_standardizer_14` | `3.7.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 224.9 KiB | [address_standardizer_14-3.7.0-4PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/address_standardizer_14-3.7.0-4PGDG.rhel10.2.x86_64.rpm) |
@@ -177,7 +187,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/postgis/address_standardizer" title="Repository" icon="github" subtitle="github.com/postgis/address_standardizer" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="address_standardizer-3.7.0.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg address_standardizer;		# build rpm/deb
+```
 
 
 ## Install

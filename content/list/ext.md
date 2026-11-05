@@ -116,7 +116,7 @@ There are 620 packaged PostgreSQL extensions:
 | {{< ext "vgram" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | {{< ext "zhparser" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | a parser for full-text search of Chinese |
 | {{< ext "pg_bestmatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Generate BM25 sparse vector inside PostgreSQL |
-| {{< ext "vchord_bm25" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | A postgresql extension for bm25 ranking algorithm |
+| {{< ext "vchord_bm25" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | A postgresql extension for bm25 ranking algorithm |
 | {{< ext "pg_tokenizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Tokenizers for full-text search |
 | {{< ext "biscuit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | IAM-LIKE pattern matching with bitmap indexing |
 | {{< ext "pg_textsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Full-text search with BM25 ranking |
@@ -174,7 +174,7 @@ There are 620 packaged PostgreSQL extensions:
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dtr" color="blue" >}} | functions that manipulate whole tables, including crosstab |
 | {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | AGE graph database extension |
 | {{< ext "pg_liquid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
-| {{< ext "onesparse" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
+| {{< ext "onesparse" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | {{< ext "graph" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Graph database capabilities for PostgreSQL |
 | {{< ext "pgrdf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | {{< ext "pgq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Generic queue for PostgreSQL |

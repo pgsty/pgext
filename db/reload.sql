@@ -24,7 +24,6 @@ FROM (SELECT DISTINCT ON (pkg) * FROM pgext.extension WHERE lead AND NOT contrib
      (SELECT * FROM pgext.os WHERE active) os,
      (SELECT * FROM pgext.pg WHERE active) pg;
 -- special case handling
-UPDATE pgext.pkg SET name = replace(name, 'pgaudit', 'pgaudit' || (pg+2)::TEXT ) WHERE pkg = 'pgaudit' AND pg IN (14,15) AND os ~ 'el\d';
 UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'postgis' AND position(' ' in name) > 0;
 UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'pgrouting' AND position(' ' in name) > 0;
 

@@ -2,21 +2,24 @@
 
 Sources:
 
-- [Official pg_extension_base README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/README.md)
-- [Version 3.5 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/pg_extension_base.control)
-- [SQL API definition](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/pg_extension_base--1.6.sql)
-- [3.4 to 3.5 worker-state upgrade](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_extension_base/pg_extension_base--3.4--3.5.sql)
-- [pg_lake build and preload guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/building-from-source.md)
+- [Official pg_extension_base README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_extension_base/README.md)
+- [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_extension_base/pg_extension_base.control)
+- [SQL API definition](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_extension_base/pg_extension_base--1.6.sql)
+- [3.4 to 3.5 worker-state upgrade](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_extension_base/pg_extension_base--3.4--3.5.sql)
+- [pg_lake build and preload guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/building-from-source.md)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_extension_base/pg_extension_base--3.5--3.6.sql)
 
 `pg_extension_base` is Snowflake's infrastructure extension for other PostgreSQL extensions. It provides control-file-driven library preloading, database-scoped lifecycle workers, dependency-aware updates, and short-lived attached workers. Application users normally install it as a dependency of `pg_lake`; extension developers use its C and SQL APIs directly.
 
-The pg_lake release and package version is `3.5.3`; the SQL extension version is `3.5`. Keep the libraries and query server from the same release.
+The reviewed upstream release is `3.6.0`, with SQL extension version `3.6` and PostgreSQL 16–19 support. Existing packaged versions are tracked separately. Keep libraries and the query server from the same release.
 
 ### Enable the Infrastructure
 
 `pg_extension_base` must be preloaded before extensions can use its startup machinery:
 
-```conf
+```ini
 shared_preload_libraries = 'pg_extension_base'
 ```
 
@@ -69,3 +72,7 @@ The base infrastructure starts the worker after server startup, `CREATE EXTENSIO
 - Worker termination around failed `DROP` operations is best effort; worker code must tolerate the extension briefly disappearing or a stop being reversed.
 - `run_attached` is for bounded work that may commit independently of the caller. It is not a detached job queue for long-running tasks.
 - Version `3.5` adds `failure_count` to `extension_base.list_base_workers()` so worker restart backoff can be observed. Its upgrade drops and recreates that function; review dependent database objects and explicit grants before migration.
+
+### Upstream 3.6.0
+
+Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.

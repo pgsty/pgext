@@ -2,15 +2,18 @@
 
 来源：
 
-- [官方 pg_map README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/README.md)
-- [版本 3.5 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/pg_map.control)
-- [基础 SQL 定义](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/pg_map--1.2.sql)
-- [官方扩展测试和示例](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_map/tests/pytests/extension_test.py)
+- [官方 pg_map README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/README.md)
+- [版本 3.6 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map.control)
+- [基础 SQL 定义](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map--1.2.sql)
+- [官方扩展测试和示例](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/tests/pytests/extension_test.py)
+
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_map/pg_map--3.5--3.6.sql)
 
 `pg_map` 从 PostgreSQL 类型生成强类型键值对映射域。生成的映射是一个复合键值对数组，具有特定类型的提取、基数、条目和操作符函数。它被 pg_lake 用于嵌套数据，也可以直接使用。
 
 
-pg_lake 发布与软件包版本为 `3.5.3`，SQL 扩展版本为 `3.5`。动态库与查询服务器应使用同一发布版本。
+本次核验的上游发布为 `3.6.0`，SQL 扩展版本为 `3.6`，支持 PostgreSQL 16–19。现有软件包版本单独跟踪，动态库与查询服务器应使用同一发布版本。
 
 ### 创建并使用一个映射类型
 
@@ -57,3 +60,7 @@ FROM map_type.entries(
 - 生成的对象作为 `pg_map` 的依赖项进行注册；当使用 `CASCADE` 删除扩展时，它们及其依赖的列可能会被移除。
 - 映射值使用 PostgreSQL 复合数组语法。重复键和排序语义应根据应用程序选择的构建路径进行测试，而不是假设来自 JSON 对象。
 - 映射组件从 `3.4` 到 `3.5` 的 SQL 迁移脚本为空，生成的映射 API 保持不变。
+
+### 上游 3.6.0
+
+上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。此组件从 3.5 到 3.6 的 SQL 迁移为空，但运行库及依赖仍须按同一发布协调升级。

@@ -29,7 +29,6 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpython3u" >}} |
 
 > [!Note] typesafe.ai needs an API key; configured endpoints receive row contents.

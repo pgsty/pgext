@@ -2,17 +2,20 @@
 
 来源：
 
-- [官方 pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/README.md)
-- [版本 3.5 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/pg_lake/pg_lake.control)
-- [官方构建和启动指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/building-from-source.md)
-- [官方项目文档索引](https://github.com/Snowflake-Labs/pg_lake/blob/v3.5.3/docs/README.md)
+- [官方 pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/README.md)
+- [版本 3.6 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake/pg_lake.control)
+- [官方构建和启动指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/building-from-source.md)
+- [官方项目文档索引](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/README.md)
 - [pg_lake v3.5.3 发布说明](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.3)
 - [DuckDB Secret 管理器](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
 - [上游 v3.5.10 发布说明](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.5.10)
 
+- [Upstream 3.6.0](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.0)
+- [3.5 to 3.6 SQL](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake/pg_lake--3.5--3.6.sql)
+
 `pg_lake` 是 Snowflake PostgreSQL 湖仓套件的顶层扩展。它会安装查询对象存储文件和创建事务型 Iceberg 表所需的表访问、Iceberg、COPY、查询引擎、扩展基础设施和映射组件。PostgreSQL 扩展负责查询规划与事务协调，独立的本地 `pgduck_server` 进程则使用 DuckDB 执行向量化计算。
 
-下述打包流程对应 `3.5.3`，本次核对的最新上游发布为 `3.5.10`，SQL 扩展版本仍为 `3.5`。动态库与查询服务器应使用同一发布版本。
+下述软件包启动示例保留已有 `3.5.3` 路径。本次核验的上游发布为 `3.6.0`，SQL 版本为 `3.6`，支持 PostgreSQL 16–19；这不代表 3.6 软件包已提供。动态库与查询服务器应使用同一发布版本。
 
 ### 启动打包版服务栈
 
@@ -164,3 +167,7 @@ ORDER BY extname;
 ### 3.5.10 变化
 
 上游 3.5.10 在目录停止下发凭据后清理缓存的临时凭据，保留对象存储中的 Iceberg 目录 URL，并将 Brotli 更新到 1.1.1 以修复 CVE-2026-111497。部署时应匹配扩展动态库和 `pgduck_server`，SQL 版本仍为 3.5。
+
+### 上游 3.6.0
+
+上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。此组件从 3.5 到 3.6 的 SQL 迁移为空，但运行库及依赖仍须按同一发布协调升级。
