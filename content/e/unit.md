@@ -5,7 +5,7 @@ description: "SI units extension"
 weight: 3550
 categories: ["TYPE"]
 languages: ["C"]
-licenses: ["GPL-2.0"]
+licenses: ["GPL-3.0-or-later"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3550** | {{< badge content="unit" link="https://github.com/df7cb/postgresql-unit" >}} | {{< ext "unit" "pgunit" >}} | `7.10` | {{< category "TYPE" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **3550** | {{< badge content="unit" link="https://github.com/df7cb/postgresql-unit" >}} | {{< ext "unit" "pgunit" >}} | `7.10` | {{< category "TYPE" >}} | {{< license "GPL-3.0-or-later" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

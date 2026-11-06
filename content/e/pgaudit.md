@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgauditlogtofile" >}} {{< ext "pg_auditor" >}} {{< ext "pg_roast" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "pg_drop_events" >}} {{< ext "pgelog" >}} {{< ext "logerrors" >}} {{< ext "pg_stat_log" >}} {{< ext "pg_auth_mon" >}} {{< ext "data_historization" >}} {{< ext "table_version" >}} |
 
-> [!Note] Stable catalog 18.0; PGDG remains primary. PGSTY normalizes PG14/15 RPM names to pgaudit_14 (1.6.3) / pgaudit_15 (1.7.1), providing historical pgaudit16_14 / pgaudit17_15 names. Six EL platforms signed and indexed locally; PG16-18 and DEB reuse PGDG. Requires preload and CREATE EXTENSION; CDN sync pending.
+> [!Note] Preload; PG14/15 RPM names differ.
 
 
 ## Packages

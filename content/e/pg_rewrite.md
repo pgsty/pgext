@@ -5,7 +5,7 @@ description: "Tool allows read write to the table during the rewriting"
 weight: 5020
 categories: ["ADMIN"]
 languages: ["C"]
-licenses: ["BSD-3-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5020** | {{< badge content="pg_rewrite" link="https://github.com/cybertec-postgresql/pg_rewrite" >}} | {{< ext "pg_rewrite" >}} | `2.2` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **5020** | {{< badge content="pg_rewrite" link="https://github.com/cybertec-postgresql/pg_rewrite" >}} | {{< ext "pg_rewrite" >}} | `2.2` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

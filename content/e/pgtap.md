@@ -4,7 +4,7 @@ linkTitle: "pgtap"
 description: "Unit testing for PostgreSQL"
 weight: 3200
 categories: ["LANG"]
-languages: ["C"]
+languages: ["SQL"]
 licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
@@ -17,13 +17,13 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3200** | {{< badge content="pgtap" link="https://github.com/theory/pgtap" >}} | {{< ext "pgtap" >}} | `1.3.4` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3200** | {{< badge content="pgtap" link="https://github.com/theory/pgtap" >}} | {{< ext "pgtap" >}} | `1.3.4` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 

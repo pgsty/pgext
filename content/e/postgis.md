@@ -33,7 +33,7 @@ page_width: full
 |   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3" >}} {{< ext "mobilitydb" >}} {{< ext "ogr_fdw" >}} {{< ext "pointcloud" >}} {{< ext "q3c" >}} {{< ext "pg_sphere" >}} {{< ext "nominatim_fdw" >}} {{< ext "pg_polyline" >}} {{< ext "earthdistance" >}} {{< ext "pg_eviltransform" >}} {{< ext "pg_geohash" >}} |
 |    **Siblings**   | {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} |
 
-> [!Note] PostGIS 3.7.0; PGDG remains primary on EL9/EL10 and DEB. PGSTY fills EL8 x86_64/aarch64 PG14-18; signed and indexed locally on 2026-11-05; CDN sync pending.
+> [!Note] Pigsty fills EL8 gaps.
 
 
 ## Packages

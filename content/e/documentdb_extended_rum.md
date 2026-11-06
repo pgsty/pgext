@@ -34,7 +34,7 @@ page_width: full
 |   **See Also**    | {{< ext "rum" >}} {{< ext "pg_projection" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} {{< ext "mongo_fdw" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pgjq" >}} {{< ext "hll" >}} {{< ext "roaringbitmap" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} |
 
-> [!Note] DocumentDB 1.0 packages install SQL 1.0-0. PGSTY supports PostgreSQL 16-18; PG15 is excluded due to the libbson allocation alignment failure. The OSS package includes documentdb, documentdb_core and documentdb_extended_rum only. External RUM is a package dependency on PG16/17 only, not PG18.
+> [!Note] SQL 1.0-0; PG16-18; no PG15.
 
 
 ## Packages

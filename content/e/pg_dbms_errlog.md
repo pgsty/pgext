@@ -30,17 +30,16 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `dbms_errlog` |
-|   **Requires**    | {{< ext "pg_statement_rollback" >}} |
 |   **See Also**    | {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_utl_smtp" >}} {{< ext "pg_dbms_lock" >}} {{< ext "orafce" >}} {{< ext "pg_cron" >}} {{< ext "pgagent" >}} {{< ext "pg_task" >}} |
 
-> [!Note] Requires pg_statement_rollback and shared_preload_libraries=pg_dbms_errlog; restart required.
+> [!Note] Preload; manage savepoints.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_errlog` | `pg_statement_rollback` |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_errlog` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4` | {{< bg "18" "pg_dbms_errlog_18" "green" >}} {{< bg "17" "pg_dbms_errlog_17" "green" >}} {{< bg "16" "pg_dbms_errlog_16" "green" >}} {{< bg "15" "pg_dbms_errlog_15" "green" >}} {{< bg "14" "pg_dbms_errlog_14" "green" >}} | `pg_dbms_errlog_$v` | `pg_statement_rollback_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "postgresql-18-pg-dbms-errlog" "green" >}} {{< bg "17" "postgresql-17-pg-dbms-errlog" "green" >}} {{< bg "16" "postgresql-16-pg-dbms-errlog" "green" >}} {{< bg "15" "postgresql-15-pg-dbms-errlog" "green" >}} {{< bg "14" "postgresql-14-pg-dbms-errlog" "green" >}} | `postgresql-$v-pg-dbms-errlog` | `postgresql-$v-pg-statement-rollback` |
 {.packages .wide .expand}
@@ -272,14 +271,14 @@ pig install pg_dbms_errlog -v 14;   # install for PG 14
 [**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```ini
-shared_preload_libraries = 'pg_statement_rollback, pg_dbms_errlog';
+shared_preload_libraries = 'pg_dbms_errlog';
 ```
 
 
 [**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
-CREATE EXTENSION pg_dbms_errlog CASCADE; -- requires pg_statement_rollback
+CREATE EXTENSION pg_dbms_errlog;
 ```
 
 ## Usage

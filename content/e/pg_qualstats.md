@@ -5,7 +5,7 @@ description: "An extension collecting statistics about quals"
 weight: 6250
 categories: ["STAT"]
 languages: ["C"]
-licenses: ["BSD-3-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6250** | {{< badge content="pg_qualstats" link="https://github.com/powa-team/pg_qualstats" >}} | {{< ext "pg_qualstats" >}} | `2.1.4` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **6250** | {{< badge content="pg_qualstats" link="https://github.com/powa-team/pg_qualstats" >}} | {{< ext "pg_qualstats" >}} | `2.1.4` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

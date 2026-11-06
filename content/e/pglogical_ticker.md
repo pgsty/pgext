@@ -5,7 +5,7 @@ description: "Have an accurate view on pglogical replication delay"
 weight: 9510
 categories: ["ETL"]
 languages: ["C"]
-licenses: ["PostgreSQL"]
+licenses: ["MIT"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9510** | {{< badge content="pglogical_ticker" link="https://github.com/enova/pglogical_ticker" >}} | {{< ext "pglogical_ticker" >}} | `1.4.1` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **9510** | {{< badge content="pglogical_ticker" link="https://github.com/enova/pglogical_ticker" >}} | {{< ext "pglogical_ticker" >}} | `1.4.1` | {{< category "ETL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

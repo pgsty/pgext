@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "wal2json" >}} {{< ext "decoder_raw" >}} {{< ext "pgoutput" >}} {{< ext "pgmqtt" >}} {{< ext "pg_protobuf" >}} {{< ext "pgq" >}} {{< ext "kafka_fdw" >}} {{< ext "test_decoding" >}} {{< ext "wal2mongo" >}} {{< ext "pgproto" >}} |
 
-> [!Note] Headless output plugin; no CREATE EXTENSION. PGDG DEB 3.7.0, RPM 3.5.0; bundled control 0.1.0.
+> [!Note] Output plugin; no CREATE EXTENSION.
 
 
 ## Packages
@@ -549,7 +549,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/debezium/postgres-decoderbufs" title="Repository" icon="github" subtitle="github.com/debezium/postgres-decoderbufs" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="decoderbufs-3.7.0.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg decoderbufs;		# build rpm/deb
+```
 
 
 ## Install

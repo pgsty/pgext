@@ -5,7 +5,7 @@ description: "A tool to remove unused space from a relation."
 weight: 5040
 categories: ["ADMIN"]
 languages: ["C"]
-licenses: ["BSD-2-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5040** | {{< badge content="pg_squeeze" link="https://github.com/cybertec-postgresql/pg_squeeze" >}} | {{< ext "pg_squeeze" >}} | `1.9.4` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
+| **5040** | {{< badge content="pg_squeeze" link="https://github.com/cybertec-postgresql/pg_squeeze" >}} | {{< ext "pg_squeeze" >}} | `1.9.4` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

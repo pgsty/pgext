@@ -23,7 +23,7 @@ page_width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -33,7 +33,7 @@ page_width: full
 |   **Requires**    | {{< ext "btree_gist" >}} {{< ext "dblink" >}} |
 |   **See Also**    | {{< ext "table_version" >}} {{< ext "pgmemento" >}} {{< ext "data_historization" >}} {{< ext "table_log" >}} {{< ext "ddl_historization" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} |
 
-> [!Note] Requires max_prepared_transactions; 5.0.1 fixes privilege escalation and PREPARE TRANSACTION errors.
+> [!Note] Requires max_prepared_transactions.
 
 
 ## Packages
@@ -41,7 +41,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `emaj` | `btree_gist`, `dblink` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.1` | {{< bg "18" "e-maj_18" "green" >}} {{< bg "17" "e-maj_17" "green" >}} {{< bg "16" "e-maj_16" "green" >}} {{< bg "15" "e-maj_15" "green" >}} {{< bg "14" "e-maj_14" "green" >}} | `e-maj_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.0.1` | {{< bg "18" "e-maj_18" "green" >}} {{< bg "17" "e-maj_17" "green" >}} {{< bg "16" "e-maj_16" "green" >}} {{< bg "15" "e-maj_15" "green" >}} {{< bg "14" "e-maj_14" "green" >}} | `e-maj_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.0.1` | {{< bg "18" "postgresql-18-emaj" "green" >}} {{< bg "17" "postgresql-17-emaj" "green" >}} {{< bg "16" "postgresql-16-emaj" "green" >}} {{< bg "15" "postgresql-15-emaj" "green" >}} {{< bg "14" "postgresql-14-emaj" "green" >}} | `postgresql-$v-emaj` | - |
 {.packages .wide .expand}
 

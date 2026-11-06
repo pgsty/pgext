@@ -5,7 +5,7 @@ description: "Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-G
 weight: 9210
 categories: ["SIM"]
 languages: ["C"]
-licenses: ["PostgreSQL"]
+licenses: ["ISC"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9210** | {{< badge content="plpgsql_wrap" link="https://github.com/hexacluster/plpgsql_wrap/" >}} | {{< ext "plpgsql_wrap" >}} | `1.0` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **9210** | {{< badge content="plpgsql_wrap" link="https://github.com/hexacluster/plpgsql_wrap/" >}} | {{< ext "plpgsql_wrap" >}} | `1.0` | {{< category "SIM" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

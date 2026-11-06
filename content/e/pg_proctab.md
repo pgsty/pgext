@@ -4,42 +4,43 @@ linkTitle: "pg_proctab"
 description: "PostgreSQL extension to access the OS process table"
 weight: 6460
 categories: ["STAT"]
-languages: ["C"]
-licenses: ["BSD-3-Clause"]
+languages: ["SQL"]
+licenses: ["Apache-2.0"]
 repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pgnodemx**](https://github.com/markwkm/pg_proctab) : PostgreSQL extension to access the OS process table
+[**pgnodemx**](https://github.com/CrunchyData/pgnodemx) : PostgreSQL extension to access the OS process table
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6460** | {{< badge content="pg_proctab" link="https://github.com/markwkm/pg_proctab" >}} | {{< ext "pg_proctab" "pgnodemx" >}} | `2.0.1` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **6460** | {{< badge content="pg_proctab" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< ext "pg_proctab" "pgnodemx" >}} | `2.0.1` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "pgnodemx" >}} |
 |   **See Also**    | {{< ext "system_stats" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} |
 |    **Siblings**   | {{< ext "pgnodemx" >}} |
 
-> [!Note] Bundled with pgnodemx package/source 2.0.1 for PostgreSQL 14-18; this package ships pg_proctab as a compatibility stub backed by pgnodemx.
+> [!Note] Compatibility stub; PGDG RPM incomplete.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgnodemx` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgnodemx` | `pgnodemx` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "pgnodemx_18" "green" >}} {{< bg "17" "pgnodemx_17" "green" >}} {{< bg "16" "pgnodemx_16" "green" >}} {{< bg "15" "pgnodemx_15" "green" >}} {{< bg "14" "pgnodemx_14" "green" >}} | `pgnodemx_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pgnodemx" "green" >}} {{< bg "17" "postgresql-17-pgnodemx" "green" >}} {{< bg "16" "postgresql-16-pgnodemx" "green" >}} {{< bg "15" "postgresql-15-pgnodemx" "green" >}} {{< bg "14" "postgresql-14-pgnodemx" "green" >}} | `postgresql-$v-pgnodemx` | - |
 {.packages .wide .expand}
@@ -69,7 +70,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/markwkm/pg_proctab" title="Repository" icon="github" subtitle="github.com/markwkm/pg_proctab" />}}
+{{< card link="https://github.com/CrunchyData/pgnodemx" title="Repository" icon="github" subtitle="github.com/CrunchyData/pgnodemx" />}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgnodemx-2.0.1.tar.gz" />}}
 {{< /cards >}}
 
@@ -105,7 +106,7 @@ pig install pg_proctab -v 14;   # install for PG 14
 [**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
-CREATE EXTENSION pg_proctab;
+CREATE EXTENSION pg_proctab CASCADE; -- requires pgnodemx
 ```
 
 

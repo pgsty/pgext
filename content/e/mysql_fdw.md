@@ -5,7 +5,7 @@ description: "Foreign data wrapper for querying a MySQL server"
 weight: 8600
 categories: ["FDW"]
 languages: ["C"]
-licenses: ["BSD-3-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8600** | {{< badge content="mysql_fdw" link="https://github.com/EnterpriseDB/mysql_fdw" >}} | {{< ext "mysql_fdw" >}} | `2.9.3` | {{< category "FDW" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **8600** | {{< badge content="mysql_fdw" link="https://github.com/EnterpriseDB/mysql_fdw" >}} | {{< ext "mysql_fdw" >}} | `2.9.3` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-620 个已打包 PostgreSQL 扩展（归属 514 个包族）划分为 16 个分类。
+626 个已打包 PostgreSQL 扩展（归属 518 个包族）划分为 16 个分类。
 
 
 
@@ -21,7 +21,7 @@ page_width: full
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 1000 | {{< alias "timescaledb" >}} | 2.31.0 | 时序数据库扩展插件 |
-| 1010 | {{< alias "timescaledb_toolkit" >}} | 1.26.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
+| 1010 | {{< alias "timescaledb_toolkit" >}} | 1.27.0 | 分析型超函数库、时间序列管道处理及其他 SQL 工具 |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | 时态表功能支持 |
@@ -56,7 +56,7 @@ page_width: full
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | 将激光雷达点云与PostGIS几何类型相集成 |
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.5.0 | H3六边形层级索引支持 |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | 4.5.0 | H3与PostGIS集成的扩展插件 |
-| 1540 | {{< alias "q3c" >}} | 2.0.5 | Q3C天空索引插件 |
+| 1540 | {{< alias "q3c" >}} | 2.0.6 | Q3C天空索引插件 |
 | 1550 | {{< alias "ogr_fdw" >}} | 1.1.9 | GIS 数据外部数据源包装器 |
 | 1560 | {{< alias "geoip" >}} | 0.4.0 | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Google快速Polyline编码解码扩展 |
@@ -69,7 +69,7 @@ page_width: full
 | 1604 | {{< alias "pgh_output_en_au" "pghydro" >}} | 6.6 | PgHydro 澳式英语输出扩展 |
 | 1605 | {{< alias "pgh_output_pt_br" "pghydro" >}} | 6.6 | PgHydro 巴西葡语输出扩展 |
 | 1606 | {{< alias "pgh_consistency" "pghydro" >}} | 6.6 | PgHydro Pfafstetter 一致性检查扩展 |
-| 1650 | {{< alias "mobilitydb" >}} | 1.3.1 | MobilityDB地理空间投影数据管理分析平台 |
+| 1650 | {{< alias "mobilitydb" >}} | 1.3.1 | MobilityDB 地理空间轨迹数据管理与分析平台 |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | 1.3.1 | MobilityDB随机数据生成函数 |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 0.3.1 | 快速根据GPS经纬度坐标查找时区 |
 | 1690 | {{< alias "earthdistance" >}} | 1.2 | 计算地球表面上的大圆距离 |
@@ -99,7 +99,6 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 1940 | {{< alias "pgml" >}} | 2.10.0 | PostgresML：用SQL运行机器学习算法并训练模型 |
 | 1950 | {{< alias "pgmnemo" >}} | 0.21.0 | PostgreSQL 单计划多模态智能体记忆扩展 |
 | 1960 | {{< alias "pgcontext" >}} | 0.3.0 | 在 PostgreSQL 权威数据表上提供向量检索、过滤感知 HNSW 与混合检索。 |
-| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | 0.2.0 | pgcontext HNSW 索引的可选 pgvector 兼容桥接扩展。 |
 | 1980 | {{< alias "pg_turbovec" >}} | 2.15.0 | 基于 TurboQuant 压缩量化的 PostgreSQL 向量类型与 ANN 索引访问方法。 |
 | 1990 | {{< alias "pg_vectorsearch" >}} | 0.1.0 | 使用 PRISM 索引与 RaBitQ 量化的近似向量检索 |
 {.wide .expand}
@@ -110,7 +109,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.26.4 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
+| 2100 | {{< alias "pg_search" >}} | 0.26.5 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
 | 2110 | {{< alias "pgroonga" >}} | 4.1.0 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.1.0 | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -124,7 +123,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | PostgreSQL 拼音转写与检索辅助扩展 |
 | 2210 | {{< alias "pg_kazsearch" >}} | 2.3.0 | PostgreSQL 哈萨克语全文检索扩展 |
 | 2220 | {{< alias "psql_bm25s" >}} | 0.4.14 | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
-| 2230 | {{< alias "pg_fts" >}} | 1.15.2 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
+| 2230 | {{< alias "pg_fts" >}} | 1.16.0 | 提供 BM25、BM25F 排序与专用倒排索引的全文检索扩展 |
 | 2240 | {{< alias "pg_cjk_parser" >}} | 0.1.0 | 基于 PostgreSQL 默认解析器的中日韩二字组全文检索分词器 |
 | 2250 | {{< alias "pg_jieba" >}} | 1.1.0 | 基于 cppjieba 的中文全文检索分词器 |
 | 2260 | {{< alias "acdat" >}} | 0.1.1 | 在 PostgreSQL 中编译 Aho-Corasick 双数组机，实现精确多模式匹配与替换 |
@@ -143,7 +142,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2300 | {{< alias "pg_icu_parser" >}} | 1.0 | 使用 ICU 边界分析的全文搜索解析器 |
 | 2310 | {{< alias "tin" "lead" >}} | 1.0.6 | 用于开发测试的 TIN 兼容文本搜索扩展 |
 | 2320 | {{< alias "stannum" >}} | 0.1.0 | 提供 TINQL、BM25 与分段索引的实验性文本搜索扩展 |
-| 2330 | {{< alias "pg_tre" >}} | 4.6.1 | 面向近似正则匹配的 PostgreSQL 原生索引访问方法 |
+| 2330 | {{< alias "pg_tre" >}} | 4.6.2 | 面向近似正则匹配的 PostgreSQL 原生索引访问方法 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 1.6 | 文本相似度测量函数与模糊检索 |
 {.wide .expand}
@@ -154,8 +153,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2400 | {{< alias "citus" >}} | 14.3-1 | 将 PostgreSQL 横向扩展为分布式数据库 |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.3-1 | Citus 列式存储引擎 |
+| 2400 | {{< alias "citus" >}} | 14.3.0 | 将 PostgreSQL 横向扩展为分布式数据库 |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.3.0 | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | 开源列式存储扩展 |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.2.0 | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.3.0 | PostgreSQL列式存储表 |
@@ -170,14 +169,14 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2530 | {{< alias "pg_strom" >}} | 6.1 | 使用GPU与NVMe加速大数据处理 |
 | 2540 | {{< alias "pg_orca" >}} | 1.0.0 | PostgreSQL ORCA 查询优化器扩展 |
 | 2550 | {{< alias "pg_sorted_heap" >}} | 0.14.0 | 带 zone map 剪枝和内置向量搜索的有序堆表访问方法 |
-| 2560 | {{< alias "pg_lake" >}} | 3.5 | Snowflake 开源的 PostgreSQL 数据湖与 Iceberg 集成扩展 |
-| 2561 | {{< alias "pg_extension_base" "pg_lake" >}} | 3.5 | Snowflake 提供的 PostgreSQL 扩展开发基础设施，支持库预加载、扩展生命周期后台工作进程和依赖管理 |
-| 2562 | {{< alias "pg_extension_updater" "pg_lake" >}} | 3.5 | 在数据库启动时自动执行 ALTER EXTENSION UPDATE 的扩展更新器 |
-| 2563 | {{< alias "pg_map" "pg_lake" >}} | 3.5 | pg_lake 内置并依赖的 PostgreSQL Map 数据类型。 |
-| 2564 | {{< alias "pg_lake_engine" "pg_lake" >}} | 3.5 | 用于数据湖查询的查询引擎 |
-| 2565 | {{< alias "pg_lake_iceberg" "pg_lake" >}} | 3.5 | PostgreSQL 中的 Iceberg 实现 |
-| 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.5 | 数据湖表和 Iceberg 表 |
-| 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.5 | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
+| 2560 | {{< alias "pg_lake" >}} | 3.6 | Snowflake 开源的 PostgreSQL 数据湖与 Iceberg 集成扩展 |
+| 2561 | {{< alias "pg_extension_base" "pg_lake" >}} | 3.6 | Snowflake 提供的 PostgreSQL 扩展开发基础设施，支持库预加载、扩展生命周期后台工作进程和依赖管理 |
+| 2562 | {{< alias "pg_extension_updater" "pg_lake" >}} | 3.6 | 在数据库启动时自动执行 ALTER EXTENSION UPDATE 的扩展更新器 |
+| 2563 | {{< alias "pg_map" "pg_lake" >}} | 3.6 | pg_lake 内置并依赖的 PostgreSQL Map 数据类型。 |
+| 2564 | {{< alias "pg_lake_engine" "pg_lake" >}} | 3.6 | 用于数据湖查询的查询引擎 |
+| 2565 | {{< alias "pg_lake_iceberg" "pg_lake" >}} | 3.6 | PostgreSQL 中的 Iceberg 实现 |
+| 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.6 | 数据湖表和 Iceberg 表 |
+| 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.6 | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | 基于每个分区的数据范围在规划阶段裁剪分区，并支持非分区键列。 |
 | 2580 | {{< alias "pg_improv" >}} | 0.12.2 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
@@ -194,13 +193,19 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | 0.1.0 | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
 | 2630 | {{< alias "graph" "pggraph" >}} | 1.2.1 | PostgreSQL 图查询与遍历扩展 |
 | 2640 | {{< alias "pgrdf" >}} | 0.6.40 | PostgreSQL 内 RDF、SPARQL、SHACL 与 OWL 推理扩展 |
+| 2645 | {{< alias "pg_warren" >}} | 0.8.0 | 基于 PostgreSQL 表的版本化图遍历与图计算 |
 | 2650 | {{< alias "pgq" >}} | 3.5.2 | 通用队列的PG实现 |
 | 2660 | {{< alias "pgmq" >}} | 1.13.1 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2670 | {{< alias "pgmb" >}} | 1.0.0 | 一个简单的PostgreSQL消息代理系统 |
 | 2680 | {{< alias "ulak" >}} | 0.2.0 | 支持可靠异步投递的 PostgreSQL 事务型 Outbox 扩展 |
 | 2690 | {{< alias "fsm_core" >}} | 1.1.0 | PostgreSQL 有限状态机工具包 |
+| 2695 | {{< alias "pg_statecharts" >}} | 0.1.0 | 层次状态机与事务性事件处理 |
+| 2696 | {{< alias "pg_statecharts_dev" "pg_statecharts" >}} | 0.1.0 | pg_statecharts 的 SCXML 导入与迁移开发工具 |
 | 2700 | {{< alias "hll" >}} | 2.21 | hyperloglog 数据类型 |
 | 2710 | {{< alias "rum" >}} | 1.3.15 | RUM 索引访问方法 |
+| 2715 | {{< alias "pg_lion" >}} | 0.3.0 | 用于过滤、计数与聚合的 Roaring 位图倒排索引 |
+| 2716 | {{< alias "pg_lion_citext" "pg_lion" >}} | 0.3.0 | 为 lion 索引提供大小写不敏感的 citext 运算符类 |
+| 2717 | {{< alias "pg_lion_vector" "pg_lion" >}} | 0.3.0 | 为 pgvector 的 vector 与 halfvec 提供带过滤的近邻索引 |
 | 2720 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
 | 2730 | {{< alias "pg_ttl_index" >}} | 3.0.0 | 基于TTL索引的自动数据过期清理 |
 | 2740 | {{< alias "pg_graphql" >}} | 1.6.3 | PG内的GraphQL支持 |
@@ -224,7 +229,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2900 | {{< alias "provsql" >}} | 1.13.1 | PostgreSQL 半环溯源、概率与不确定性管理扩展 |
 | 2910 | {{< alias "orioledb" >}} | 1.10 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
-| 2930 | {{< alias "rdkit" >}} | 202609.1 | 在PostgreSQL化学领域数据管理功能 |
+| 2930 | {{< alias "rdkit" >}} | 202609.2 | 在PostgreSQL化学领域数据管理功能 |
 | 2940 | {{< alias "omni" "omnigres" >}} | 0.2.14 | PostgreSQL即平台，Omnigres主扩展与加载器 |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | 0.1.3 | Omnigres 基础会话认证管理模块 |
 | 2942 | {{< alias "omni_aws" "omnigres" >}} | 0.1.2 | Omnigres AWS S3 API封装 |
@@ -265,7 +270,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Omnigres 通用Worker池 |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | Omnigres XML工具包 |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | Omnigres YAML工具包 |
-| 2980 | {{< alias "pg_mentat" >}} | 1.19.0 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
+| 2980 | {{< alias "pg_mentat" >}} | 1.19.1 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom 索引-基于指纹的索引 |
 {.wide .expand}
 
@@ -326,7 +331,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 3500 | {{< alias "prefix" "pg_prefix" >}} | 1.2.11 | 前缀树数据类型 |
+| 3500 | {{< alias "prefix" "pg_prefix" >}} | 1.2.11 | 前缀范围（prefix_range）数据类型，支持 GiST 前缀匹配 |
 | 3510 | {{< alias "semver" "pg_semver" >}} | 0.42.0 | 语义版本号数据类型 |
 | 3520 | {{< alias "pg_text_semver" >}} | 1.2.1 | PostgreSQL 语义版本域类型与比较运算符 |
 | 3530 | {{< alias "pg_lexo" >}} | 0.6.0 | 用于列表插入与重排的字典序位置类型 |
@@ -342,13 +347,13 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3660 | {{< alias "country" "pg_country" >}} | 0.0.4 | 国家代码数据类型，遵循ISO 3166-1标准 |
 | 3670 | {{< alias "pg_xenophile" >}} | 0.8.3 | PostgreSQL i8n与l10n工具包 |
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n 工具包 |
-| 3680 | {{< alias "currency" "pg_currency" >}} | 0.0.4 | 使用1字节表示的货币数据类型 |
+| 3680 | {{< alias "currency" "pg_currency" >}} | 0.0.6 | 使用1字节表示的货币数据类型 |
 | 3690 | {{< alias "pg_money" >}} | 0.3.0 | 精确的带币种金额类型、算术与金额分摊 |
 | 3700 | {{< alias "collection" "pgcollection" >}} | 2.1.3 | 面向高性能 PL/pgSQL 工作流的关联数组数据类型 |
 | 3710 | {{< alias "istore" >}} | 0.1.12 | 支持算术、聚合与 GIN 索引的整数键值类型 |
 | 3720 | {{< alias "pgmp" >}} | 1.0.6 | 多精度算术扩展 |
 | 3730 | {{< alias "numeral" >}} | 1.3 | 数值类型扩展 |
-| 3740 | {{< alias "pg_rational" >}} | 0.0.3 | 使用BIGINT表示的有理数数据类型 |
+| 3740 | {{< alias "pg_rational" >}} | 0.0.3 | 以两个 32 位整数（分子/分母）表示的精确分数类型 |
 | 3750 | {{< alias "uint" "pguint" >}} | 1.20260630 | 无符号整型数据类型 |
 | 3760 | {{< alias "uint128" "pg_uint128" >}} | 1.2.0 | 原生128位无符号整型数据类型 |
 | 3770 | {{< alias "hashtypes" >}} | 0.1.5 | 包括SHA1，MD5在内的多种哈希数据类型 |
@@ -421,10 +426,11 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4360 | {{< alias "colnames" >}} | 1.7.0 | 返回记录或复合类型值的列名数组 |
 | 4400 | {{< alias "hashlib" "pg_hashlib" >}} | 1.1 | 稳定哈希函数包 |
 | 4430 | {{< alias "xxhash" "pg_xxhash" >}} | 0.0.1 | xxhash哈希函数包 |
-| 4440 | {{< alias "shacrypt" >}} | 1.1 | 实现SHA256-CRYPT与SHA512-CRYPT密钥加密算法 |
+| 4440 | {{< alias "shacrypt" >}} | 1.1 | 实现 SHA256-CRYPT 与 SHA512-CRYPT 密码哈希方案 |
 | 4450 | {{< alias "cryptint" >}} | 1.0.0 | 加密INT与BIGINT类型 |
 | 4460 | {{< alias "pguecc" "pg_ecdsa" >}} | 1.0 | PostgreSQL的uECC绑定，椭圆曲线加解密函数包 |
 | 4470 | {{< alias "sparql" "pgsparql" >}} | 1.0 | 使用SQL查询SPARQL数据源 |
+| 4480 | {{< alias "opencc" "pg_opencc" >}} | 0.1.0 | 基于 OpenCC 的简繁中文、地区用语与日文新字体转换 |
 {.wide .expand}
 
 ## FUNC
@@ -500,7 +506,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 5010 | {{< alias "pg_repack" >}} | 1.5.3 | 在线垃圾清理与表膨胀治理 |
 | 5020 | {{< alias "pg_rewrite" >}} | 2.2 | 在线重写整表，不阻塞读写 |
-| 5030 | {{< alias "pg_query_rewrite" >}} | 0.0.5 | 使用 ProcessUtility hook 重写 SQL 语句 |
+| 5030 | {{< alias "pg_query_rewrite" >}} | 0.0.5 | 按预定义规则将指定 SQL 语句转换为另一条 SQL 语句 |
 | 5040 | {{< alias "pg_squeeze" >}} | 1.9.4 | 从关系中删除未使用空间 |
 | 5050 | {{< alias "pg_dirtyread" >}} | 2.8 | 从表中读取尚未垃圾回收的行 |
 | 5060 | {{< alias "pgfincore" >}} | 1.4.0 | 检查和管理操作系统缓冲区缓存 |
@@ -508,10 +514,10 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.31 | 提取数据库对象的DDL |
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PG数据库规则检查插件 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | 获取和设置 PostgreSQL 后端的优先级 |
-| 5110 | {{< alias "pg_checksums" >}} | 1.4 | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
+| 5110 | {{< alias "pg_checksums" >}} | 1.4 | 离线启用或禁用校验和，支持在线或离线校验 |
 | 5115 | {{< alias "pg_integrity_checksums" >}} | 2.1.0 | 为 PostgreSQL 页面、行、表、索引与数据库提供物理和逻辑校验和。 |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.6 | 将集群设置为只读 |
-| 5130 | {{< alias "pgdd" >}} | 0.6.1 | 提供通过标准SQL查询数据库目录集簇的能力 |
+| 5130 | {{< alias "pgdd" >}} | 0.6.1 | 库内数据字典，通过标准 SQL 进行数据库内省 |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4.1 | 查看对象权限并将其与期望状态进行比较 |
 | 5150 | {{< alias "pgautofailover" >}} | 2.2 | PG 自动故障迁移 |
 | 5160 | {{< alias "pg_catcheck" >}} | 1.6.0 | 用于诊断系统目录是否损坏的工具 |
@@ -530,7 +536,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5280 | {{< alias "pg_column_tetris" >}} | 0.1.0 | 强制采用最优列对齐顺序，以减少 PostgreSQL 行数据中的填充浪费。 |
 | 5290 | {{< alias "cat_tools" >}} | 0.4.0 | 用于操作 PostgreSQL 系统目录的工具集 |
 | 5300 | {{< alias "pg_living_assertions" >}} | 0.5.10 | 保存可执行 SQL 检查、核验日期和断言变更历史 |
-| 5810 | {{< alias "pg_savior" >}} | 0.1.0 | 阻止不带条件的全表更新以避免意外事故 |
+| 5810 | {{< alias "pg_savior" >}} | 0.1.0 | 拦截无 WHERE 的 UPDATE/DELETE 与高风险 DDL，防止误操作导致数据丢失 |
 | 5815 | {{< alias "pg_circuit" >}} | 0.1.0 | 针对危险 SQL 语句提供运行时观察、告警和拦截 |
 | 5820 | {{< alias "safeupdate" >}} | 1.7 | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | 5830 | {{< alias "pg_strict" >}} | 1.0.5 | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
@@ -591,7 +597,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6520 | {{< alias "pgmeminfo" >}} | 1.0.1 | 显示内存使用情况 |
 | 6530 | {{< alias "toastinfo" >}} | 1.7 | 显示TOAST字段的详细信息 |
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | 快速跳转至PEV查阅可视化执行计划 |
-| 6850 | {{< alias "pg_relusage" >}} | 1.0.2 | 打印查询引用的表与列 |
+| 6850 | {{< alias "pg_relusage" >}} | 1.0.2 | 记录 SQL 语句实际使用的表、视图等关系 |
 | 6860 | {{< alias "pagevis" >}} | 0.1 | 使用ASCII字符可视化数据库物理页面布局 |
 | 6870 | {{< alias "powa" >}} | 5.3.0 | PostgreSQL 工作负载分析器-核心 |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | 允许 EXPLAIN 转储更多详细 |
@@ -616,7 +622,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 3.2.1 | 使用cracklib加固PG用户密码 |
 | 7010 | {{< alias "supautils" >}} | 4.0.0 | 用于在云环境中确保数据库集群的安全 |
-| 7020 | {{< alias "pgsodium" >}} | 3.1.11 | 表数据加密存储 TDE |
+| 7020 | {{< alias "pgsodium" >}} | 3.1.11 | libsodium 加密函数、密钥管理与透明列加密 |
 | 7030 | {{< alias "column_encrypt" >}} | 4.0 | 透明列级加密扩展，提供 encrypted_text 与 encrypted_bytea 类型 |
 | 7035 | {{< alias "encsearch" >}} | 0.1.1 | 使用 AEAD 加密与盲索引的实验性密文文本搜索 |
 | 7040 | {{< alias "passwordpolicy" >}} | 2.0.6 | 可动态配置的 PostgreSQL 密码复杂度检查扩展。 |
@@ -640,7 +646,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | PostgreSQL 高级密码哈希扩展（Argon2/scrypt/yescrypt） |
 | 7360 | {{< alias "login_hook" >}} | 1.8 | 在用户登陆时执行login_hook.login()函数 |
 | 7370 | {{< alias "set_user" >}} | 4.3.0 | 增加了日志记录的 SET ROLE |
-| 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | PostgreSQL动态链接库反病毒功能 |
+| 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | 基于 ClamAV 的 PostgreSQL 反病毒扩展 |
 | 7390 | {{< alias "pgextwlist" >}} | 1.20 | PostgreSQL扩展白名单功能 |
 | 7400 | {{< alias "pg_command_fw" >}} | 0.1.0 | PostgreSQL 的 DDL 与 utility 命令防火墙 |
 | 7410 | {{< alias "sslutils" >}} | 1.4.1 | 使用SQL管理SSL证书 |
@@ -686,7 +692,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.2 | Firebird外部数据源包装器 |
 | 8760 | {{< alias "rdf_fdw" >}} | 3.1 | 通过 SPARQL 端点访问 RDF 三元组存储的 FDW |
 | 8770 | {{< alias "oai_fdw" >}} | 1.16 | 通过 HTTP/HTTPS 采集 OAI-PMH 元数据的只读外部数据包装器。 |
-| 8800 | {{< alias "aws_s3" >}} | 0.0.1 | 从S3导入导出数据的外部数据源包装器 |
+| 8800 | {{< alias "aws_s3" >}} | 0.0.1 | 从 S3 导入导出数据（兼容 RDS aws_s3 扩展） |
 | 8810 | {{< alias "log_fdw" >}} | 1.5 | 访问PostgreSQL日志文件的FDW |
 | 8970 | {{< alias "dblink" >}} | 1.2 | 从数据库内连接到其他 PostgreSQL 数据库 |
 | 8980 | {{< alias "file_fdw" >}} | 1.0 | 访问外部文件的外部数据包装器 |
@@ -701,7 +707,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 9000 | {{< alias "documentdb" >}} | 1.0 | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 1.0 | 微软DocumentDB的核心API层实现 |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 1.0-0 | DocumentDB多节点模式的API层 |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 1.0 | DocumentDB多节点模式的API层 |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 1.0 | DocumentDB扩展RUM索引访问方法 |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | 9100 | {{< alias "orafce" >}} | 4.17.1 | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
@@ -729,7 +735,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | 为PG提供memcached兼容接口 |
 | 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL兼容辅助扩展模块 |
 | 9430 | {{< alias "pgs3" >}} | 0.1.1 | 在 PostgreSQL 内实现的 S3 兼容对象存储端点 |
-| 9440 | {{< alias "kafgres" >}} | 0.3.1 | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
+| 9440 | {{< alias "kafgres" >}} | 0.3.2 | 在 PostgreSQL 中运行 Kafka 协议消息代理 |
 {.wide .expand}
 
 ## ETL
@@ -755,7 +761,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9650 | {{< alias "decoderbufs" >}} | 3.7.0 | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | 逻辑复制解码输出插件：RAW SQL格式 |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | 在PostgreSQL实例间进行表级复制 |
-| 9710 | {{< alias "repmgr" >}} | 5.5.0 | PostgreSQL复制管理组件 |
+| 9710 | {{< alias "repmgr" >}} | 5.5.1 | PostgreSQL复制管理组件 |
 | 9820 | {{< alias "pg_fact_loader" >}} | 2.0.1 | 在 Postgres 中构建事实表 |
 | 9830 | {{< alias "pg_bulkload" >}} | 3.1.23 | 向 PostgreSQL 中高速加载数据 |
 | 9970 | {{< alias "test_decoding" >}} | - | 基于SQL的WAL逻辑解码样例 |

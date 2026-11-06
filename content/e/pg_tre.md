@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2330** | {{< badge content="pg_tre" link="https://codeberg.org/gregburd/pg_tre" >}} | {{< ext "pg_tre" >}} | `4.6.1` | {{< category "FTS" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
+| **2330** | {{< badge content="pg_tre" link="https://codeberg.org/gregburd/pg_tre" >}} | {{< ext "pg_tre" >}} | `4.6.2` | {{< category "FTS" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -38,7 +38,7 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tre` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tre` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.1` | {{< bg "18" "pg_tre_18" "green" >}} {{< bg "17" "pg_tre_17" "green" >}} {{< bg "16" "pg_tre_16" "red" >}} {{< bg "15" "pg_tre_15" "red" >}} {{< bg "14" "pg_tre_14" "red" >}} | `pg_tre_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.1` | {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} {{< bg "14" "postgresql-14-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
 {.packages .wide .expand}
@@ -155,16 +155,16 @@ CREATE EXTENSION pg_tre;
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/README.md)
-- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/pg_tre.control)
-- [sql/pg_tre--4.5.3.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/sql/pg_tre--4.5.3.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/CHANGELOG.md)
-- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/LIMITATIONS.md)
-- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/META.json)
-- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/.github/workflows/ci.yml)
-- [Library initialization](https://api.pgxn.org/src/pg_tre/pg_tre-4.5.3/src/module.c)
+- [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/README.md)
+- [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/pg_tre.control)
+- [sql/pg_tre--4.6.2.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/sql/pg_tre--4.6.2.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/CHANGELOG.md)
+- [LIMITATIONS.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/LIMITATIONS.md)
+- [META.json](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/META.json)
+- [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/.github/workflows/ci.yml)
+- [Library initialization](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/src/module.c)
 
-`pg_tre` 4.5.3 provides the `tre` native index access method for approximate regular-expression matching over text. Upstream supports PostgreSQL 17–19; Pigsty's 4.5.2 packages target PostgreSQL 17–18. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
+`pg_tre` 4.6.2 provides the `tre` native index access method for approximate regular-expression matching over text. Upstream supports PostgreSQL 17–19. It narrows candidates with codepoint trigrams and postings, then checks matches against the heap. Use it for typo-tolerant identifiers, log messages and lexical patterns with explicit edit costs.
 
 ### Enable and Search
 
@@ -216,7 +216,7 @@ SELECT * FROM pg_tre_index_check('documents_body_tre'::regclass, 2);
 Install matching files, ensure sessions use the new library, and update each database:
 
 ```sql
-ALTER EXTENSION pg_tre UPDATE TO '4.5.3';
+ALTER EXTENSION pg_tre UPDATE TO '4.6.2';
 ```
 
 Crossing from 3.x to 4.x changes WAL record types even though the index page format is unchanged. Shut down cleanly before replacing the library; a physical standby cannot run a different major extension version from its primary and must be rebuilt from a fresh base backup after the primary upgrade. There is no rolling upgrade across this boundary. Remove any old `wal_consistency_checking = 'pg_tre'` setting; it prevents startup in 4.x. Upstream recommends `wal_consistency_checking = 'all'` when consistency checking is needed.
@@ -240,3 +240,7 @@ The expected results are true, true and false. The fix affects matching and inde
 ### 4.5.3 Security Fix
 
 An approximate pattern with many reachable states could overflow TRE's fixed work list and crash a backend, causing the postmaster to restart the cluster's other backends. Version 4.5.3 grows that work list within the existing pattern limits. Install the matching library, replace sessions using the old library, and update extension SQL to 4.5.3. The patch changes no on-disk format and adds no REINDEX requirement; the older migration and damaged-index boundaries above remain.
+
+### 4.6 Corrections
+
+4.6.0 corrects trigram candidate extraction for fixed repetitions and character classes; 4.6.1 improves early termination for zero-edit-cost matching. 4.6.2 updates sparsemap to fix validation of cached read-cursor offsets. These releases change no on-disk format and add no REINDEX requirement. Install matching library and SQL files and replace sessions still using the old library; the earlier WAL-transition and omitted-posting rebuild requirements still apply.

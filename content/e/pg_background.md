@@ -32,7 +32,7 @@ page_width: full
 |    **Need By**    | {{< ext "pg_dbms_lock" >}} |
 |   **See Also**    | {{< ext "pg_task" >}} {{< ext "pg_durable" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_retry" >}} {{< ext "pglock" >}} {{< ext "pgmq" >}} {{< ext "ulak" >}} {{< ext "omni_worker" >}} {{< ext "pg_cron" >}} |
 
-> [!Note] pkg 2.0.4; SQL 2.0.
+> [!Note] SQL 2.0.
 
 
 ## Packages
@@ -40,7 +40,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_background` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "pg_background_18" "green" >}} {{< bg "17" "pg_background_17" "green" >}} {{< bg "16" "pg_background_16" "green" >}} {{< bg "15" "pg_background_15" "green" >}} {{< bg "14" "pg_background_14" "green" >}} | `pg_background_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.4` | {{< bg "18" "pg_background_18" "green" >}} {{< bg "17" "pg_background_17" "green" >}} {{< bg "16" "pg_background_16" "green" >}} {{< bg "15" "pg_background_15" "green" >}} {{< bg "14" "pg_background_14" "green" >}} | `pg_background_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.4` | {{< bg "18" "postgresql-18-pg-background" "green" >}} {{< bg "17" "postgresql-17-pg-background" "green" >}} {{< bg "16" "postgresql-16-pg-background" "green" >}} {{< bg "15" "postgresql-15-pg-background" "green" >}} {{< bg "14" "postgresql-14-pg-background" "green" >}} | `postgresql-$v-pg-background` | - |
 {.packages .wide .expand}
 

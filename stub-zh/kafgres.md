@@ -2,14 +2,15 @@
 
 来源：
 
-- [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/extension/sql/kafgres--0.2.0--0.3.0.sql)
-- [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/.github/workflows/ci.yml)
-- [README 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/README.md)
-- [Configuration 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/docs/configuration.md)
+- [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/extension/sql/kafgres--0.2.0--0.3.0.sql)
+- [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/.github/workflows/ci.yml)
+- [README 0.3.2](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/README.md)
+- [Configuration 0.3.2](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/docs/configuration.md)
+- [0.3.2 release](https://github.com/RayElg/kafgres/releases/tag/0.3.2)
+- [0.3.1 to 0.3.2 SQL](https://github.com/RayElg/kafgres/blob/0.3.2/extension/sql/kafgres--0.3.1--0.3.2.sql)
+- [0.3.1 to 0.3.2 changes](https://github.com/RayElg/kafgres/compare/0.3.1...0.3.2)
 
-- [0.3.0 release](https://github.com/RayElg/kafgres/releases/tag/0.3.1)
-
-`kafgres` 在 PostgreSQL 中提供 Kafka 协议代理。上游 0.3.1 构建并测试 PostgreSQL 13–18。需要超级用户安装、共享预加载及重启，许可为 Elastic License 2.0。
+`kafgres` 在 PostgreSQL 中提供 Kafka 协议代理。上游 0.3.2 构建并测试 PostgreSQL 13–18。需要超级用户安装、共享预加载及重启，许可为 Elastic License 2.0。
 
 ### 启用代理
 
@@ -49,3 +50,13 @@ CDC 还需要 `wal_level = logical`；部分 PostgreSQL 构建另外要求配置
 ### 0.3.1 的 CDC 安装边界
 
 CDC 需要 wal_level = logical。若 PostgreSQL 构建启用了输出插件允许列表，且代理报告不能把 kafgres 用作输出插件，应将其加入 output_plugin_libraries 并重载配置。库预加载仍需重启。已有事务式段记录应按上游 0.3.1 升级说明处理；单纯替换库不是存储迁移。
+
+### 0.3.2 修复与升级
+
+0.3.2 修复并发 SQL 生产的可见性、压缩主题处理、CDC 排空以及旧生产者隔离。安装匹配的库并重启 PostgreSQL 后，在代理使用的数据库执行：
+
+```sql
+ALTER EXTENSION kafgres UPDATE TO '0.3.2';
+```
+
+0.3.1 到 0.3.2 的 SQL 脚本只推进扩展版本，不改变 SQL 对象。从 0.3.0 升级时还需处理旧事务标记：Sarama 无法解码缺少 EndTransactionMarker 值的旧标记，它们会一直保留到对应分段被保留策略删除；按上游说明选择消费起点或重建主题。

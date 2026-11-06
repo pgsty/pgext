@@ -2,12 +2,13 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/README.md)
-- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/tessera_pg.control)
-- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/tessera_pg--1.0.sql)
-- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/Makefile)
+- [README v1.3.0](https://github.com/GyuyeongKim/Tessera-public/blob/v1.3.0/README.md)
+- [v1.3.0 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.3.0)
+- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/tessera_pg.control)
+- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/tessera_pg--1.0.sql)
+- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/Makefile)
 
-`tessera_pg` 通过稀疏矩阵乘法替换受支持的连接聚合计划，并提供条目相似度函数。分发版本 1.2.1 安装的 SQL 版本为 1.0，目标是 PostgreSQL 18；原生引擎需要 OpenMP，x86-64 平台还需要 AVX2 或更新的指令集。
+`tessera_pg` 通过稀疏矩阵乘法替换受支持的连接聚合计划，并提供条目相似度函数。分发版本 1.3.0 安装的 SQL 版本为 1.0，目标是 PostgreSQL 18；原生引擎需要 OpenMP，x86-64 平台还需要 AVX2 或更新的指令集。
 
 ### 核心流程
 
@@ -24,7 +25,7 @@ GROUP BY a.x, b.x;
 SELECT * FROM tessera_sim('edges', 'k', 'x', 'jaccard', 0.5);
 ```
 
-出现 `Custom Scan (Tessera)` 表示改写已生效。相关分组列与求和列必须有有效的 NOT NULL 约束；不支持的查询形状继续使用普通规划器。支持范围包括计数、加权乘积、HAVING、有序条目对及两个输入关系，不应推断它可以改写任意 SQL。
+出现 `Custom Scan (Tessera)` 表示改写已生效。1.3.0 支持 `COUNT(DISTINCT a.k)`、`AVG`、单侧 `SUM`、多列或表达式键、额外分组列以及两侧输入过滤。分组列可以包含 NULL，并形成独立分组；求和列仍必须具有有效的 NOT NULL 约束。输入还可以通过子查询、视图、CTE、分区表、外部表和行级安全计划读取，HAVING 与 top-N 查询可使用剪枝。`MIN`、`MAX`、外连接、不确定排序规则及其他不支持的结构继续走普通计划；适配器只识别 PostgreSQL 内置操作符与聚合。
 
 ### 相似度函数与设置
 

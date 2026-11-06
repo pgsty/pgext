@@ -1,7 +1,7 @@
 ---
 title: "pgml"
 linkTitle: "pgml"
-description: "Run AL/ML workloads with SQL interface"
+description: "Run AI/ML workloads with SQL interface"
 weight: 1940
 categories: ["RAG"]
 languages: ["Rust"]
@@ -10,7 +10,7 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pgml**](https://github.com/postgresml/postgresml) : Run AL/ML workloads with SQL interface
+[**pgml**](https://github.com/postgresml/postgresml) : Run AI/ML workloads with SQL interface
 
 
 ## Overview

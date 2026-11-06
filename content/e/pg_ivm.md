@@ -6,7 +6,7 @@ weight: 2840
 categories: ["FEAT"]
 languages: ["C"]
 licenses: ["PostgreSQL"]
-repos: ["PIGSTY"]
+repos: ["PGDG"]
 page_width: full
 ---
 
@@ -39,8 +39,8 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.17` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ivm` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.17` | {{< bg "18" "pg_ivm_18" "green" >}} {{< bg "17" "pg_ivm_17" "green" >}} {{< bg "16" "pg_ivm_16" "green" >}} {{< bg "15" "pg_ivm_15" "green" >}} {{< bg "14" "pg_ivm_14" "green" >}} | `pg_ivm_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.17` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_ivm` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.17` | {{< bg "18" "pg_ivm_18" "green" >}} {{< bg "17" "pg_ivm_17" "green" >}} {{< bg "16" "pg_ivm_16" "green" >}} {{< bg "15" "pg_ivm_15" "green" >}} {{< bg "14" "pg_ivm_14" "green" >}} | `pg_ivm_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.17` | {{< bg "18" "postgresql-18-pg-ivm" "green" >}} {{< bg "17" "postgresql-17-pg-ivm" "green" >}} {{< bg "16" "postgresql-16-pg-ivm" "green" >}} {{< bg "15" "postgresql-15-pg-ivm" "green" >}} {{< bg "14" "postgresql-14-pg-ivm" "green" >}} | `postgresql-$v-pg-ivm` | - |
 {.packages .wide .expand}
 
@@ -667,10 +667,10 @@ pig build pkg pg_ivm;		# build rpm/deb
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add both repo and update cache
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
 [**Install**](https://pigsty.io/docs/pgsql/ext/install/) this extension with [**pig**](https://pig.pgsty.com):

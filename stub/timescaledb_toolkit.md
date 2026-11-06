@@ -1,11 +1,30 @@
-
-
-
 ## Usage
 
-Sources: [documentation index](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/docs/README.md), [v1.23.0 release](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.23.0), [Changelog](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/Changelog.md)
+Sources:
+
+- [Documentation index](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/README.md)
+- [README](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/README.md)
+- [Control](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/extension/timescaledb_toolkit.control)
+- [Cargo version](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/extension/Cargo.toml)
+- [Changelog](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/CHANGELOG.md)
+- [Counter aggregates](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/counter_agg.md)
+- [Gauge aggregates](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/gauge_agg.md)
+- [UddSketch](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/uddsketch.md)
+- [Statistics](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/stats_agg.md)
+- [Timevector pipelines](https://github.com/timescale/timescaledb-toolkit/blob/1.27.0%2Bp2/docs/timeseries_pipeline_elements.md)
+- [1.27.0+p2 release](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.27.0%2Bp2)
 
 TimescaleDB Toolkit provides specialized functions for time-series analytics using a **two-step aggregation pattern**. Most functions create intermediate representations that accessor functions then query, enabling efficient reuse and multiple analyses.
+
+### Enablement and Compatibility
+
+`timescaledb_toolkit` 1.27.0 is published under tag 1.27.0+p2; upstream CI covers PostgreSQL 16–18. After installing the matching library, enable it in each database:
+
+```sql
+CREATE EXTENSION timescaledb_toolkit;
+```
+
+The control file marks it trusted, permitting installation by a role with CREATE privilege on the database; shared preload is not required. Examples using `time_bucket` below also assume TimescaleDB is enabled. Upgrade existing installations with matching libraries and supplied SQL upgrade paths; experimental objects have no upgrade compatibility guarantee.
 
 ### Approximate Analytics
 
@@ -42,7 +61,7 @@ SELECT
 FROM api_metrics
 GROUP BY service_name;
 
--- Hourly percentiles with continuous aggregation
+-- Store hourly percentiles in a materialized view
 CREATE MATERIALIZED VIEW hourly_percentiles AS
 SELECT
     time_bucket('1 hour', timestamp) as hour,
@@ -52,10 +71,10 @@ FROM requests GROUP BY hour;
 
 #### UddSketch - Bounded Error Quantiles
 
-Quantile estimation with guaranteed maximum relative error bounds.
+Quantile estimation with a requested starting error bound. Too few buckets can increase the actual bound; check `error` on the resulting sketch.
 
 ```sql
--- CPU utilization percentiles with 1% max error
+-- CPU percentiles with a starting 1% error target
 SELECT
     host_id,
     approx_percentile(0.95, uddsketch(100, 0.01, cpu_percent)) as p95_cpu,
@@ -79,13 +98,15 @@ SELECT
 FROM metrics
 GROUP BY bucket;
 
--- Extrapolated rate for partial buckets
-SELECT
-    extrapolated_rate(
-        counter_agg(timestamp, bytes_sent,
-                   bounds => time_bucket_range('1 hour', timestamp))
-    ) as bytes_per_second
-FROM network_stats;
+-- Extrapolated rate for each hourly bucket
+SELECT bucket, extrapolated_rate(summary, method => 'prometheus') AS bytes_per_second
+FROM (
+    SELECT time_bucket('1 hour', timestamp) AS bucket,
+           counter_agg(timestamp, bytes_sent,
+                       bounds => time_bucket_range('1 hour', timestamp)) AS summary
+    FROM network_stats
+    GROUP BY time_bucket('1 hour', timestamp)
+) hourly;
 ```
 
 #### Gauge Aggregates - Varying Metrics
@@ -176,7 +197,7 @@ FROM performance_data;
 
 ### Timevector Data Type
 
-Efficient intermediate representation for time series operations.
+Timevectors hold intermediate time-series values. Pipeline operators such as `toolkit_experimental.lttb` remain experimental; sort before downsampling.
 
 ```sql
 -- Create and manipulate timevector
@@ -185,15 +206,16 @@ SELECT host_id, timevector(timestamp, cpu_percent) as ts
 FROM system_metrics GROUP BY host_id;
 
 -- Chain operations on timevector
-SELECT host_id, unnest(lttb(ts, 100))
+SELECT host_id, unnest(ts -> toolkit_experimental.sort()
+                         -> toolkit_experimental.lttb(100))
 FROM cpu_series;
 ```
 
 ### Integration Patterns
 
-### Continuous Aggregation Support
+### Materialized Aggregates
 
-Most toolkit functions work seamlessly with TimescaleDB continuous aggregates:
+The following is an ordinary materialized view; refresh it explicitly when source data changes. A TimescaleDB continuous aggregate additionally requires a hypertable, its continuous option and a suitable refresh policy.
 
 ```sql
 CREATE MATERIALIZED VIEW hourly_analytics AS
@@ -234,7 +256,7 @@ SELECT
     day,
     approx_percentile(0.50, response_digest) as median,
     approx_percentile(0.99, response_digest) as p99,
-    average(stats) as avg_response,
+    average_y(stats) as avg_response,
     slope(stats) as size_correlation
 FROM daily_summaries;
 ```
@@ -243,4 +265,8 @@ All functions in the **experimental** schema (`toolkit_experimental`) may change
 
 ### Version Notes
 
-`timescaledb_toolkit` 1.23.0 has two behavior changes to account for in tests: `max_n`, `max_n_by`, `min_n`, and `min_n_by` return an empty result instead of raising on empty streams, and 1D aggregations now error on values that would lose 53-bit precision instead of silently returning wrong data. The release also marks `time_weight` and its rollup parallel-unsafe, updates to `pgrx` 0.18, and fixes ASAP smoothing sortedness checks.
+Since 1.23, `max_n`, `max_n_by`, `min_n` and `min_n_by` return empty results on empty input, while `stats_agg(bigint)` rejects values outside the exact double-precision integer range. Retain application tests for these behaviors when upgrading.
+
+1.24 adds equality for `heartbeat_agg` and repairs empty frequency aggregates and statistical overflow handling. 1.25 stabilizes `gauge_agg` and fixes empty t-digest input and several type-handling defects. 1.26 removes combine/serialize/deserialize support from `time_weight` and its rollup, retaining their nonparallel aggregation boundary.
+
+1.27 adds equality for `statssummary1d` and `statssummary2d`, fixes sparse HyperLogLog rollups and prevents an ignored counter point at the same timestamp from counting as a reset. It rejects invalid UTF-8 state names, lambdas longer than 1024 bytes or nested beyond 256 parenthesis levels, frequency rollups of different element types and a mismatched NULL type argument to `topn`. It also restores the pipeline map ACL check.

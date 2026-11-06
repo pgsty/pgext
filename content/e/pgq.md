@@ -216,7 +216,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgq/pgq" title="Repository" icon="github" subtitle="github.com/pgq/pgq" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgq-3.5.2.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pgq;		# build rpm/deb
+```
 
 
 ## Install

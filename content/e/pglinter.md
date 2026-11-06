@@ -5,7 +5,7 @@ description: "PostgreSQL Linting and Analysis Extension"
 weight: 5090
 categories: ["ADMIN"]
 languages: ["Rust"]
-licenses: ["PostgreSQL"]
+licenses: ["Apache-2.0"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5090** | {{< badge content="pglinter" link="https://github.com/pmpetit/pglinter" >}} | {{< ext "pglinter" >}} | `2.0.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+| **5090** | {{< badge content="pglinter" link="https://github.com/pmpetit/pglinter" >}} | {{< ext "pglinter" >}} | `2.0.0` | {{< category "ADMIN" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 

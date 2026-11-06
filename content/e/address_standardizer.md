@@ -32,7 +32,7 @@ page_width: full
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "country" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} {{< ext "addressing_dictionary" >}} |
 |    **Siblings**   | {{< ext "address_standardizer_data_us" >}} |
 
-> [!Note] Standalone package 3.7.0, SQL 3.7, PG14-18; includes address_standardizer_data_us and does not require PostGIS. PGDG primary; PGSTY EL8 x86_64/aarch64 gap packages signed and indexed locally on 2026-11-05; CDN sync pending.
+> [!Note] Pigsty fills EL8 gaps.
 
 
 ## Packages

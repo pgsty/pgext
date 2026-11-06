@@ -32,16 +32,14 @@ page_width: full
 |    **Need By**    | {{< ext "fbsql" >}} |
 |   **See Also**    | {{< ext "plxslt" >}} {{< ext "pltcl" >}} {{< ext "plperl" >}} {{< ext "pljava" >}} {{< ext "plsh" >}} {{< ext "plpython3u" >}} {{< ext "plpgsql" >}} {{< ext "plperlu" >}} |
 
-> [!Note] Release/control 8.4.8.10; PG18 RPM/DEB verified. Relocatable=true; package versions vary by platform and PG major.
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `plr` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.10` | {{< bg "18" "plr_18" "green" >}} {{< bg "17" "plr_17" "green" >}} {{< bg "16" "plr_16" "green" >}} {{< bg "15" "plr_15" "green" >}} {{< bg "14" "plr_14" "green" >}} | `plr_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.10` | {{< bg "18" "postgresql-18-plr" "green" >}} {{< bg "17" "postgresql-17-plr" "green" >}} {{< bg "16" "postgresql-16-plr" "green" >}} {{< bg "15" "postgresql-15-plr" "green" >}} {{< bg "14" "postgresql-14-plr" "green" >}} | `postgresql-$v-plr` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.10` | {{< bg "18" "plr_18" "green" >}} {{< bg "17" "plr_17" "green" >}} {{< bg "16" "plr_16" "green" >}} {{< bg "15" "plr_15" "green" >}} {{< bg "14" "plr_14" "green" >}} | `plr_$v` | `R-core` |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `8.4.8.10` | {{< bg "18" "postgresql-18-plr" "green" >}} {{< bg "17" "postgresql-17-plr" "green" >}} {{< bg "16" "postgresql-16-plr" "green" >}} {{< bg "15" "postgresql-15-plr" "green" >}} {{< bg "14" "postgresql-14-plr" "green" >}} | `postgresql-$v-plr` | `r-base-core` |
 {.packages .wide .expand}
 
 
@@ -487,7 +485,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/postgres-plr/plr" title="Repository" icon="github" subtitle="github.com/postgres-plr/plr" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plr-8.4.8.10.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg plr;		# build rpm/deb
+```
 
 
 ## Install

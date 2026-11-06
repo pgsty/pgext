@@ -16,7 +16,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9020** | {{< badge content="documentdb_distributed" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb_distributed" "documentdb" >}} | `1.0-0` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **9020** | {{< badge content="documentdb_distributed" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb_distributed" "documentdb" >}} | `1.0` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
@@ -32,14 +32,14 @@ page_width: full
 |   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "citus" >}} {{< ext "pg_projection" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_extended_rum" >}} |
 
-> [!Note] Obsolete; internal DocumentDB component, excluded from current OSS packages.
+> [!Note] Retired; not packaged.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="N/A" link="/repo/pgsql" >}} | `1.0-0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `documentdb` | `citus`, `documentdb_core`, `documentdb` |
+| **EXT** | {{< badge content="N/A" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `documentdb` | `citus`, `documentdb_core`, `documentdb` |
 {.packages .wide .expand}
 
 

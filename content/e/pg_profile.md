@@ -40,7 +40,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.16` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_profile` | `dblink`, `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.16` | {{< bg "18" "pg_profile_18" "green" >}} {{< bg "17" "pg_profile_17" "green" >}} {{< bg "16" "pg_profile_16" "green" >}} {{< bg "15" "pg_profile_15" "green" >}} {{< bg "14" "pg_profile_14" "green" >}} | `pg_profile_$v` | `postgresql$v-contrib` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.16` | {{< bg "18" "pg_profile_18" "green" >}} {{< bg "17" "pg_profile_17" "green" >}} {{< bg "16" "pg_profile_16" "green" >}} {{< bg "15" "pg_profile_15" "green" >}} {{< bg "14" "pg_profile_14" "green" >}} | `pg_profile_$v` | `postgresql$v-contrib` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.16` | {{< bg "18" "postgresql-18-pg-profile" "green" >}} {{< bg "17" "postgresql-17-pg-profile" "green" >}} {{< bg "16" "postgresql-16-pg-profile" "green" >}} {{< bg "15" "postgresql-15-pg-profile" "green" >}} {{< bg "14" "postgresql-14-pg-profile" "green" >}} | `postgresql-$v-pg-profile` | `postgresql-contrib-$v` |
 {.packages .wide .expand}
 

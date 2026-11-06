@@ -29,7 +29,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "fsm_core" >}} {{< ext "ltree_plpython3u" >}} {{< ext "ltree_plruby" >}} |
+|    **Need By**    | {{< ext "fsm_core" >}} {{< ext "ltree_plpython3u" >}} {{< ext "ltree_plruby" >}} {{< ext "pg_statecharts" >}} |
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_liquid" >}} {{< ext "onesparse" >}} {{< ext "graph" >}} {{< ext "pgrdf" >}} {{< ext "ltree_plpython3u" >}} {{< ext "prefix" >}} {{< ext "ip4r" >}} {{< ext "seg" >}} {{< ext "cube" >}} |
 
 

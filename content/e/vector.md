@@ -29,7 +29,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "documentdb" >}} {{< ext "pg_search" >}} {{< ext "pgcontext_pgvector" >}} {{< ext "pgmnemo" >}} {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} |
+|    **Need By**    | {{< ext "documentdb" >}} {{< ext "pg_lion_vector" >}} {{< ext "pg_search" >}} {{< ext "pgmnemo" >}} {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "vectorscale" >}} |
 |   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} |
 
 > [!Note] PGDG is the principal supplier by explicit catalog policy: RPM and DEB 0.8.7 cover PostgreSQL 14-18. Pigsty recipes are retained for confirmed gaps only.

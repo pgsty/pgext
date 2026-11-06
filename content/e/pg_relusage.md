@@ -1,7 +1,7 @@
 ---
 title: "pg_relusage"
 linkTitle: "pg_relusage"
-description: "Log all the queries that reference a particular column"
+description: "Log the relations actually used by each SQL statement"
 weight: 6850
 categories: ["STAT"]
 languages: ["C"]
@@ -10,7 +10,7 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pg_relusage**](https://github.com/adept/pg_relusage) : Log all the queries that reference a particular column
+[**pg_relusage**](https://github.com/adept/pg_relusage) : Log the relations actually used by each SQL statement
 
 
 ## Overview

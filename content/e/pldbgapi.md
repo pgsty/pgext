@@ -267,7 +267,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/EnterpriseDB/pldebugger" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/pldebugger" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pldebugger-1.10.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pldebugger;		# build rpm/deb
+```
 
 
 ## Install

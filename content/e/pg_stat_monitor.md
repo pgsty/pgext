@@ -5,7 +5,7 @@ description: "The pg_stat_monitor is a PostgreSQL Query Performance Monitoring t
 weight: 6240
 categories: ["STAT"]
 languages: ["C"]
-licenses: ["BSD-3-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6240** | {{< badge content="pg_stat_monitor" link="https://github.com/percona/pg_stat_monitor" >}} | {{< ext "pg_stat_monitor" >}} | `2.4.0` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **6240** | {{< badge content="pg_stat_monitor" link="https://github.com/percona/pg_stat_monitor" >}} | {{< ext "pg_stat_monitor" >}} | `2.4.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

@@ -5,7 +5,7 @@ description: "Reorganize tables in PostgreSQL databases with minimal locks"
 weight: 5010
 categories: ["ADMIN"]
 languages: ["C"]
-licenses: ["PostgreSQL"]
+licenses: ["BSD-3-Clause"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5010** | {{< badge content="pg_repack" link="https://github.com/reorg/pg_repack" >}} | {{< ext "pg_repack" >}} | `1.5.3` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5010** | {{< badge content="pg_repack" link="https://github.com/reorg/pg_repack" >}} | {{< ext "pg_repack" >}} | `1.5.3` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

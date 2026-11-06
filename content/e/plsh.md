@@ -5,7 +5,7 @@ description: "PL/sh procedural language"
 weight: 3080
 categories: ["LANG"]
 languages: ["C"]
-licenses: ["MIT"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3080** | {{< badge content="plsh" link="https://github.com/petere/plsh" >}} | {{< ext "plsh" >}} | `1.20220917` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3080** | {{< badge content="plsh" link="https://github.com/petere/plsh" >}} | {{< ext "plsh" >}} | `1.20220917` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

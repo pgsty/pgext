@@ -23,15 +23,13 @@ page_width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgcalendar" >}} {{< ext "pg_math" >}} {{< ext "pgsql_tweaks" >}} {{< ext "pg_rrule" >}} |
-
-> [!Note] PGDG 2.1.0 on EL8-10; PIGSTY remains on Debian/Ubuntu.
 
 
 ## Packages

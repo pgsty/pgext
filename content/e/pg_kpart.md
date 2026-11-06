@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plan_filter" >}} {{< ext "pg_partman" >}} {{< ext "safeupdate" >}} {{< ext "block_copy_command" >}} {{< ext "pg_strict" >}} {{< ext "prioritize" >}} {{< ext "qos" >}} {{< ext "pg_readonly" >}} {{< ext "pgextwlist" >}} {{< ext "timescaledb" >}} |
 
-> [!Note] Planner hook must be loaded through shared_preload_libraries or session_preload_libraries; CREATE EXTENSION is optional.
+> [!Note] Preload; CREATE EXTENSION optional.
 
 
 ## Packages

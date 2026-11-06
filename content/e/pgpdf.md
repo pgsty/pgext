@@ -5,7 +5,7 @@ description: "PDF type with meta admin & Full-Text Search"
 weight: 3570
 categories: ["TYPE"]
 languages: ["C"]
-licenses: ["GPL-3.0"]
+licenses: ["GPL-2.0"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,13 +17,13 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3570** | {{< badge content="pgpdf" link="https://github.com/Florents-Tselai/pgpdf" >}} | {{< ext "pgpdf" >}} | `0.1.0` | {{< category "TYPE" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **3570** | {{< badge content="pgpdf" link="https://github.com/Florents-Tselai/pgpdf" >}} | {{< ext "pgpdf" >}} | `0.1.0` | {{< category "TYPE" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLdtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -37,7 +37,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgpdf` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pgpdf_18" "green" >}} {{< bg "17" "pgpdf_17" "green" >}} {{< bg "16" "pgpdf_16" "green" >}} {{< bg "15" "pgpdf_15" "green" >}} {{< bg "14" "pgpdf_14" "green" >}} | `pgpdf_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.0` | {{< bg "18" "pgpdf_18" "green" >}} {{< bg "17" "pgpdf_17" "green" >}} {{< bg "16" "pgpdf_16" "green" >}} {{< bg "15" "pgpdf_15" "green" >}} {{< bg "14" "pgpdf_14" "green" >}} | `pgpdf_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pgpdf" "green" >}} {{< bg "17" "postgresql-17-pgpdf" "green" >}} {{< bg "16" "postgresql-16-pgpdf" "green" >}} {{< bg "15" "postgresql-15-pgpdf" "green" >}} {{< bg "14" "postgresql-14-pgpdf" "green" >}} | `postgresql-$v-pgpdf` | - |
 {.packages .wide .expand}
 
@@ -262,13 +262,6 @@ pig install pgpdf -v 16;   # install for PG 16
 pig install pgpdf -v 15;   # install for PG 15
 pig install pgpdf -v 14;   # install for PG 14
 
-```
-
-
-[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
-
-```ini
-shared_preload_libraries = 'pgpdf';
 ```
 
 

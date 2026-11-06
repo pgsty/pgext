@@ -42,7 +42,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.27.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_vectorize` | `pg_cron`, `pgmq`, `vector` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.27.1` | {{< bg "18" "pg_vectorize_18" "green" >}} {{< bg "17" "pg_vectorize_17" "green" >}} {{< bg "16" "pg_vectorize_16" "green" >}} {{< bg "15" "pg_vectorize_15" "green" >}} {{< bg "14" "pg_vectorize_14" "green" >}} | `pg_vectorize_$v` | `pgmq_$v`, `pg_cron_$v`, `pgvector_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.27.1` | {{< bg "18" "postgresql-18-pg-vectorize" "green" >}} {{< bg "17" "postgresql-17-pg-vectorize" "green" >}} {{< bg "16" "postgresql-16-pg-vectorize" "green" >}} {{< bg "15" "postgresql-15-pg-vectorize" "green" >}} {{< bg "14" "postgresql-14-pg-vectorize" "green" >}} | `postgresql-$v-pg-vectorize` | `postgresql-$v-pgmq`, `postgresql-$v-pg-cron`, `postgresql-$v-pgvector` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.27.1` | {{< bg "18" "postgresql-18-pg-vectorize" "green" >}} {{< bg "17" "postgresql-17-pg-vectorize" "green" >}} {{< bg "16" "postgresql-16-pg-vectorize" "green" >}} {{< bg "15" "postgresql-15-pg-vectorize" "green" >}} {{< bg "14" "postgresql-14-pg-vectorize" "green" >}} | `postgresql-$v-pg-vectorize` | `postgresql-$v-pgmq`, `postgresql-$v-cron`, `postgresql-$v-pgvector` |
 {.packages .wide .expand}
 
 

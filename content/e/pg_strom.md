@@ -23,7 +23,7 @@ page_width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_orca" >}} {{< ext "columnar" >}} {{< ext "citus" >}} {{< ext "pg_clickhouse" >}} {{< ext "storage_engine" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} |
 
-> [!Note] RPM only: PGDG provides version 6.1 for PostgreSQL 15-18; the local 3.5/PG14 compatibility spec is a quarantined legacy orphan and is not scheduled; no DEB package is available.
+> [!Note] RPM x86_64 only.
 
 
 ## Packages
@@ -190,6 +190,13 @@ pig install pg_strom -v 17;   # install for PG 17
 pig install pg_strom -v 16;   # install for PG 16
 pig install pg_strom -v 15;   # install for PG 15
 
+```
+
+
+[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```ini
+shared_preload_libraries = 'pg_strom';
 ```
 
 

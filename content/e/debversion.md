@@ -4,20 +4,20 @@ linkTitle: "debversion"
 description: "Debian version number data type"
 weight: 3830
 categories: ["TYPE"]
-languages: ["SQL"]
-licenses: ["PostgreSQL"]
+languages: ["C++"]
+licenses: ["GPL-3.0-or-later"]
 repos: ["PGDG"]
 page_width: full
 ---
 
-[**debversion**](https://github.com/ATIX-AG/postgresql-debversion-evr) : Debian version number data type
+[**debversion**](https://salsa.debian.org/postgresql/postgresql-debversion) : Debian version number data type
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3830** | {{< badge content="debversion" link="https://github.com/ATIX-AG/postgresql-debversion-evr" >}} | {{< ext "debversion" >}} | `1.2.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **3830** | {{< badge content="debversion" link="https://salsa.debian.org/postgresql/postgresql-debversion" >}} | {{< ext "debversion" >}} | `1.2.0` | {{< category "TYPE" >}} | {{< license "GPL-3.0-or-later" >}} | {{< language "C++" >}} |
 {.wide .expand}
 
 
@@ -152,7 +152,7 @@ page_width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/ATIX-AG/postgresql-debversion-evr" title="Repository" icon="github" subtitle="github.com/ATIX-AG/postgresql-debversion-evr" />}}
+{{< card link="https://salsa.debian.org/postgresql/postgresql-debversion" title="Repository" icon="link" subtitle="salsa.debian.org/postgresql/postgresql-debversion" />}}
 {{< /cards >}}
 
 

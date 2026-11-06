@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_roast" >}} {{< ext "pg_permissions" >}} {{< ext "pg_auditor" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pgmemento" >}} {{< ext "table_log" >}} {{< ext "pg_readonly" >}} |
 
-> [!Note] require clamV libs
+> [!Note] Requires ClamAV.
 
 
 ## Packages

@@ -33,7 +33,7 @@ page_width: full
 |    **Need By**    | {{< ext "fsm_core" >}} {{< ext "pg_later" >}} {{< ext "vectorize" >}} |
 |   **See Also**    | {{< ext "redis" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "redis_fdw" >}} {{< ext "pg_durable" >}} {{< ext "pgq" >}} {{< ext "tcn" >}} {{< ext "pgmqtt" >}} {{< ext "pgmemcache" >}} {{< ext "fsm_core" >}} |
 
-> [!Note] SQL-only. 1.13.1 hardens search_path and removes pg_monitor access to message payloads; run ALTER EXTENSION UPDATE and inspect privilege-revocation warnings. Also fixes mixed-case queue notifications.
+> [!Note] UPDATE extension; review revoked grants.
 
 
 ## Packages
@@ -41,7 +41,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmq` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "pgmq_18" "green" >}} {{< bg "17" "pgmq_17" "green" >}} {{< bg "16" "pgmq_16" "green" >}} {{< bg "15" "pgmq_15" "green" >}} {{< bg "14" "pgmq_14" "green" >}} | `pgmq_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.13.1` | {{< bg "18" "pgmq_18" "green" >}} {{< bg "17" "pgmq_17" "green" >}} {{< bg "16" "pgmq_16" "green" >}} {{< bg "15" "pgmq_15" "green" >}} {{< bg "14" "pgmq_14" "green" >}} | `pgmq_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.13.1` | {{< bg "18" "postgresql-18-pgmq" "green" >}} {{< bg "17" "postgresql-17-pgmq" "green" >}} {{< bg "16" "postgresql-16-pgmq" "green" >}} {{< bg "15" "postgresql-15-pgmq" "green" >}} {{< bg "14" "postgresql-14-pgmq" "green" >}} | `postgresql-$v-pgmq` | - |
 {.packages .wide .expand}
 

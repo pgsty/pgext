@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgnodemx" >}} {{< ext "system_stats" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_statvfs" >}} |
 
-> [!Note] Linux >=4.18; procfs and NETLINK_INET_DIAG required. Monitoring roles can see all server-OS-user sockets. No preload or upstream 1.0-to-1.1 upgrade script. PG14-18; PGDG remains principal supplier; PGSTY 1.1 batch supplements published.
+> [!Note] Linux >=4.18; procfs/NETLINK_INET_DIAG.
 
 
 ## Packages

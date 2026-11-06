@@ -2,15 +2,17 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/UPGRADING.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.0.3/sql/pg_sift--3.5.sql)
-- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/USAGE.md)
-- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/SUPPORT.md)
-- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v4.0.3)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/README.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/UPGRADING.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/pg_sift.control)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--3.5.sql)
+- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/USAGE.md)
+- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/SUPPORT.md)
+- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.0)
+- [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--4.0.3--4.1.sql)
+- [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/OPTIONS.md)
 
-`pg_sift` release 4.0.3 installs SQL extension version 4.0.3. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
+`pg_sift` release 4.1.0 installs SQL extension version 4.1. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
 
 ### Text Search
 
@@ -86,3 +88,15 @@ Release 3.5.1 keeps PostgreSQL 17–19 support and the SQL upgrade boundary at `
 Run the versioned upgrade preflight, deploy matching libraries on every reader and restart or replace processes that loaded the old release. Follow the supplied SQL chain through 3.5, 3.7 and 4.0 to 4.0.3. Even 4.0.2-to-4.0.3 needs a SQL update for `sift.index_choices` and `sift.help`; that patch alone changes no format and requires no REINDEX. Earlier text-index repairs and column-format reader limits remain.
 
 New or reindexed column indexes default to `track_changes = 'auto'`: an eligible single-column primary key is tracked using two statement triggers for UPDATE and DELETE. This adds write work and a baseline heap scan. Existing indexes do not acquire the feature from ALTER EXTENSION alone. `track_changes = 'off'` disables it. Incomplete tracking, including partition/inheritance or concurrent-build cases, falls back to heap checks; inspect the upgrade guide before changing table topology. The text-index `merge_fanin` default is now 4, so merges occur more often.
+
+### 4.1 Planning and Maintenance
+
+4.1.0 expands eligible plans for joins, EXISTS/NOT EXISTS, IN/NOT IN, scalar subqueries and text-key top-N queries, and improves grouped scans that exceed hash memory. `sift.agg_probe_rewrite` and `sift.agg_probe_direct` control the corresponding probe optimizations; queries that fail the semantic or cost checks retain ordinary plans.
+
+New or rebuilt `key_cut` indexes default to construction by key ranges, controlled by `sift.col_build_key_ranges`. Each automatic merge pass is bounded by `sift.col_auto_merge_pass_mb`, defaulting to 1024 MB; 0 completes the work in one pass and does not disable merging.
+
+```sql
+ALTER EXTENSION pg_sift UPDATE TO '4.1';
+```
+
+First install matching files and restart all readers, including standbys. The 4.0.3-to-4.1 update advances the SQL version without changing its objects or on-disk formats and adds no REINDEX requirement. Earlier damaged-index rebuild requirements still apply; rebuilding an existing key_cut index is optional to adopt the new construction method.

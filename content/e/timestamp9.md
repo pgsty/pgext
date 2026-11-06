@@ -217,7 +217,7 @@ page_width: full
 
 
 ```bash
-pig build pkg timestamp9;		# build deb
+pig build pkg timestamp9;		# build rpm/deb
 ```
 
 

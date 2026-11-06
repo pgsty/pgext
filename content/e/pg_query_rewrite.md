@@ -1,7 +1,7 @@
 ---
 title: "pg_query_rewrite"
 linkTitle: "pg_query_rewrite"
-description: "Rewrite SQL statements with a PostgreSQL ProcessUtility hook"
+description: "Translate a given SQL statement into another predefined SQL statement"
 weight: 5030
 categories: ["ADMIN"]
 languages: ["C"]
@@ -10,7 +10,7 @@ repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pg_query_rewrite**](https://github.com/pierreforstmann/pg_query_rewrite) : Rewrite SQL statements with a PostgreSQL ProcessUtility hook
+[**pg_query_rewrite**](https://github.com/pierreforstmann/pg_query_rewrite) : Translate a given SQL statement into another predefined SQL statement
 
 
 ## Overview

@@ -33,7 +33,7 @@ page_width: full
 |   **Requires**    | {{< ext "postgis" >}} {{< ext "fuzzystrmatch" >}} |
 |   **See Also**    | {{< ext "nominatim_fdw" >}} {{< ext "geoip" >}} {{< ext "tzf" >}} {{< ext "pg_geohash" >}} {{< ext "ogr_fdw" >}} |
 
-> [!Note] Standalone 2025.2 since PostGIS 3.7; PG16-18 only; requires postgis and fuzzystrmatch. PGDG primary; PGSTY EL8 noarch packages shared across both architectures, signed and indexed locally on 2026-11-05; CDN sync pending.
+> [!Note] Pigsty fills EL8 gaps.
 
 
 ## Packages

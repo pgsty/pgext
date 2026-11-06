@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "auto_explain" >}} {{< ext "explain_ui" >}} {{< ext "pg_overexplain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "pg_qualstats" >}} {{< ext "online_advisor" >}} |
 
-> [!Note] pkg 2.1.1; SQL 2.1.
+> [!Note] SQL 2.1.
 
 
 ## Packages
@@ -204,7 +204,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pganalyze/pg_stat_plans" title="Repository" icon="github" subtitle="github.com/pganalyze/pg_stat_plans" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_plans-2.1.1.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_stat_plans;		# build rpm/deb
+```
 
 
 ## Install

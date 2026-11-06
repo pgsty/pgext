@@ -1,7 +1,7 @@
 ---
 title: "pg_rational"
 linkTitle: "pg_rational"
-description: "bigint fractions"
+description: "Precise fractions stored as two 32-bit integers"
 weight: 3740
 categories: ["TYPE"]
 languages: ["C"]
@@ -10,7 +10,7 @@ repos: ["MIXED"]
 page_width: full
 ---
 
-[**pg_rational**](https://github.com/begriffs/pg_rational) : bigint fractions
+[**pg_rational**](https://github.com/begriffs/pg_rational) : Precise fractions stored as two 32-bit integers
 
 
 ## Overview

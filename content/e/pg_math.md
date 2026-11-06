@@ -5,7 +5,7 @@ description: "GSL statistical functions for postgresql"
 weight: 4790
 categories: ["FUNC"]
 languages: ["C"]
-licenses: ["GPL-3.0"]
+licenses: ["MIT"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4790** | {{< badge content="pg_math" link="https://github.com/chanukyasds/pg_math" >}} | {{< ext "pg_math" >}} | `1.1.0` | {{< category "FUNC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **4790** | {{< badge content="pg_math" link="https://github.com/chanukyasds/pg_math" >}} | {{< ext "pg_math" >}} | `1.1.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

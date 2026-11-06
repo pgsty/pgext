@@ -5,7 +5,7 @@ description: "Function for collecting statistics about messages in logfile"
 weight: 7140
 categories: ["SEC"]
 languages: ["C"]
-licenses: ["BSD-3-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["MIXED"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7140** | {{< badge content="logerrors" link="https://github.com/munakoiso/logerrors" >}} | {{< ext "logerrors" >}} | `2.1.5` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **7140** | {{< badge content="logerrors" link="https://github.com/munakoiso/logerrors" >}} | {{< ext "logerrors" >}} | `2.1.5` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

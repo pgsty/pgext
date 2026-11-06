@@ -23,7 +23,7 @@ page_width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -39,7 +39,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `table_version` | `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "table_version_18" "green" >}} {{< bg "17" "table_version_17" "green" >}} {{< bg "16" "table_version_16" "green" >}} {{< bg "15" "table_version_15" "green" >}} {{< bg "14" "table_version_14" "green" >}} | `table_version_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.11.1` | {{< bg "18" "table_version_18" "green" >}} {{< bg "17" "table_version_17" "green" >}} {{< bg "16" "table_version_16" "green" >}} {{< bg "15" "table_version_15" "green" >}} {{< bg "14" "table_version_14" "green" >}} | `table_version_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.11.1` | {{< bg "18" "postgresql-18-table-version" "green" >}} {{< bg "17" "postgresql-17-table-version" "green" >}} {{< bg "16" "postgresql-16-table-version" "green" >}} {{< bg "15" "postgresql-15-table-version" "green" >}} {{< bg "14" "postgresql-14-table-version" "green" >}} | `postgresql-$v-table-version` | - |
 {.packages .wide .expand}
 

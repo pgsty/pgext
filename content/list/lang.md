@@ -17,9 +17,9 @@ weight: 200
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
 | {{< language "C" >}} | 438 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 80 | Pure SQL extensions and functions |
+| {{< language "SQL" >}} | 84 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 70 | Extensions written in Rust with the pgrx framework |
-| {{< language "C++" >}} | 15 | Extensions leveraging C++ features and libraries |
+| {{< language "C++" >}} | 17 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "PLpgSQL" >}} | 4 | Extensions written in PLpgSQL |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
@@ -102,6 +102,8 @@ The traditional PostgreSQL extension language
 | 2650 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
 | 2680 | {{< alias "ulak" >}} | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
 | 2710 | {{< alias "rum" >}} | RUM index access method |
+| 2715 | {{< alias "pg_lion" >}} | Roaring bitmap inverted indexes for filtering, counts and aggregates |
+| 2717 | {{< alias "pg_lion_vector" "pg_lion" >}} | Filtered nearest-neighbor indexes for pgvector vector and halfvec |
 | 2730 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
 | 2765 | {{< alias "is_jsonb_valid" >}} | Native JSONB validation against JSON Schema drafts 4 and 7 |
 | 2770 | {{< alias "jsquery" >}} | data type for jsonb inspection |
@@ -174,7 +176,6 @@ The traditional PostgreSQL extension language
 | 3162 | {{< alias "hstore_plruby" "plruby" >}} | Transform between hstore and Ruby Hashes for PL/Ruby |
 | 3163 | {{< alias "ltree_plruby" "plruby" >}} | Transform between ltree and Ruby Arrays for PL/Ruby |
 | 3170 | {{< alias "plphp" >}} | Embed PHP 8 as an untrusted PostgreSQL procedural language |
-| 3200 | {{< alias "pgtap" >}} | Unit testing for PostgreSQL |
 | 3220 | {{< alias "dbt2" >}} | OSDL-DBT-2 test kit |
 | 3230 | {{< alias "pg_regresql" >}} | Trust pg_class statistics for planning instead of physical relation size |
 | 3240 | {{< alias "pltcl" >}} | PL/Tcl procedural language |
@@ -207,7 +208,7 @@ The traditional PostgreSQL extension language
 | 3710 | {{< alias "istore" >}} | Integer key/value types with arithmetic, aggregation, and GIN indexing |
 | 3720 | {{< alias "pgmp" >}} | Multiple Precision Arithmetic extension |
 | 3730 | {{< alias "numeral" >}} | numeral datatypes extension |
-| 3740 | {{< alias "pg_rational" >}} | bigint fractions |
+| 3740 | {{< alias "pg_rational" >}} | Precise fractions stored as two 32-bit integers |
 | 3750 | {{< alias "uint" "pguint" >}} | unsigned integer types |
 | 3760 | {{< alias "uint128" "pg_uint128" >}} | Native uint128 type |
 | 3770 | {{< alias "hashtypes" >}} | sha1, md5 and other data types for PostgreSQL |
@@ -306,13 +307,13 @@ The traditional PostgreSQL extension language
 | 4990 | {{< alias "unaccent" >}} | text search dictionary that removes accents |
 | 5010 | {{< alias "pg_repack" >}} | Reorganize tables in PostgreSQL databases with minimal locks |
 | 5020 | {{< alias "pg_rewrite" >}} | Tool allows read write to the table during the rewriting |
-| 5030 | {{< alias "pg_query_rewrite" >}} | Rewrite SQL statements with a PostgreSQL ProcessUtility hook |
+| 5030 | {{< alias "pg_query_rewrite" >}} | Translate a given SQL statement into another predefined SQL statement |
 | 5040 | {{< alias "pg_squeeze" >}} | A tool to remove unused space from a relation. |
 | 5050 | {{< alias "pg_dirtyread" >}} | Read dead but unvacuumed rows from table |
 | 5060 | {{< alias "pgfincore" >}} | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | remove buffered pages for specific relations |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | get and set the priority of PostgreSQL backends |
-| 5110 | {{< alias "pg_checksums" >}} | Activate/deactivate/verify checksums in offline Postgres clusters |
+| 5110 | {{< alias "pg_checksums" >}} | Enable/disable checksums offline and verify them online or offline |
 | 5115 | {{< alias "pg_integrity_checksums" >}} | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
 | 5120 | {{< alias "pg_readonly" >}} | cluster database read only |
 | 5150 | {{< alias "pgautofailover" >}} | pg_auto_failover |
@@ -327,7 +328,7 @@ The traditional PostgreSQL extension language
 | 5250 | {{< alias "pg_pathcheck" >}} | Validate planner Path trees for freed or corrupt memory |
 | 5260 | {{< alias "pgdisablelogerror" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 | 5270 | {{< alias "online_advisor" >}} | Suggest missing indexes and extended statistics online |
-| 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
+| 5810 | {{< alias "pg_savior" >}} | Prevent accidental data loss and risky schema changes |
 | 5815 | {{< alias "pg_circuit" >}} | Runtime observation, warnings and blocking for dangerous SQL statements |
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
 | 5860 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
@@ -361,13 +362,12 @@ The traditional PostgreSQL extension language
 | 6420 | {{< alias "system_stats" >}} | EnterpriseDB system statistics for PostgreSQL |
 | 6430 | {{< alias "pgexporter_ext" >}} | Operating-system and host metrics for pgexporter |
 | 6450 | {{< alias "pgnodemx" >}} | Capture node OS metrics via SQL queries |
-| 6460 | {{< alias "pg_proctab" "pgnodemx" >}} | PostgreSQL extension to access the OS process table |
 | 6470 | {{< alias "pg_statvfs" >}} | Server filesystem capacity and inode statistics through statvfs |
 | 6480 | {{< alias "pg_stat_tcpinfo" >}} | Linux TCP connection statistics, latency and retransmissions |
 | 6510 | {{< alias "bgw_replstatus" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
 | 6520 | {{< alias "pgmeminfo" >}} | show memory usage |
 | 6530 | {{< alias "toastinfo" >}} | show details on toasted datums |
-| 6850 | {{< alias "pg_relusage" >}} | Log all the queries that reference a particular column |
+| 6850 | {{< alias "pg_relusage" >}} | Log the relations actually used by each SQL statement |
 | 6880 | {{< alias "pg_overexplain" >}} | Allow EXPLAIN to dump even more details |
 | 6890 | {{< alias "pg_logicalinspect" >}} | Logical decoding components inspection |
 | 6900 | {{< alias "pageinspect" >}} | inspect the contents of database pages at a low level |
@@ -476,7 +476,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="80 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="84 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -506,14 +506,17 @@ Pure SQL extensions and functions
 | 2660 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2670 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |
 | 2690 | {{< alias "fsm_core" >}} | Finite state machine toolkit for PostgreSQL |
+| 2695 | {{< alias "pg_statecharts" >}} | Hierarchical state machines and transactional event handling |
+| 2696 | {{< alias "pg_statecharts_dev" "pg_statecharts" >}} | SCXML import and migration tooling for pg_statecharts |
+| 2716 | {{< alias "pg_lion_citext" "pg_lion" >}} | Case-insensitive citext operator class for lion indexes |
 | 2800 | {{< alias "index_advisor" >}} | Query index advisor |
 | 3120 | {{< alias "pg_mockable" >}} | Create mockable wrappers for PostgreSQL functions in tests |
 | 3130 | {{< alias "pgsqlmock" >}} | Mocking and faking helpers for PostgreSQL unit tests |
+| 3200 | {{< alias "pgtap" >}} | Unit testing for PostgreSQL |
 | 3520 | {{< alias "pg_text_semver" >}} | Semantic version domain and comparison operators for PostgreSQL |
 | 3640 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
 | 3670 | {{< alias "pg_xenophile" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n toolbox |
-| 3830 | {{< alias "debversion" >}} | Debian version number data type |
 | 3890 | {{< alias "pgcalendar" >}} | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 4140 | {{< alias "pglock" >}} | Lightweight distributed lock service inside PostgreSQL |
 | 4145 | {{< alias "pg_lease" >}} | SQL leases with TTL expiry and monotonically increasing fencing epochs |
@@ -546,6 +549,7 @@ Pure SQL extensions and functions
 | 6090 | {{< alias "pg_statviz" >}} | Capture PostgreSQL statistics snapshots for time-series analysis and visualization |
 | 6270 | {{< alias "pg_track_settings" >}} | Track settings changes |
 | 6440 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
+| 6460 | {{< alias "pg_proctab" "pgnodemx" >}} | PostgreSQL extension to access the OS process table |
 | 6500 | {{< alias "pg_sqlog" >}} | Provide SQL interface to logs |
 | 6860 | {{< alias "pagevis" >}} | Visualise database pages in ascii code |
 | 7130 | {{< alias "pg_auditor" >}} | Audit data changes and provide flashback ability |
@@ -585,9 +589,8 @@ Extensions written in Rust with the pgrx framework
 | 1845 | {{< alias "pg_rrf" >}} | Reciprocal rank fusion functions for hybrid search |
 | 1860 | {{< alias "pg_summarize" >}} | Text Summarization using LLMs. Built using pgrx |
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
-| 1940 | {{< alias "pgml" >}} | Run AL/ML workloads with SQL interface |
+| 1940 | {{< alias "pgml" >}} | Run AI/ML workloads with SQL interface |
 | 1960 | {{< alias "pgcontext" >}} | Vector, filter-aware HNSW, and hybrid retrieval over authoritative PostgreSQL tables. |
-| 1970 | {{< alias "pgcontext_pgvector" "pgcontext" >}} | Optional pgvector compatibility bridge for pgcontext HNSW indexes. |
 | 1980 | {{< alias "pg_turbovec" >}} | TurboQuant-compressed vector type and ANN index access method for PostgreSQL. |
 | 2100 | {{< alias "pg_search" >}} | Full text search for PostgreSQL using BM25 |
 | 2150 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
@@ -603,6 +606,7 @@ Extensions written in Rust with the pgrx framework
 | 2580 | {{< alias "pg_improv" >}} | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2630 | {{< alias "graph" "pggraph" >}} | Graph database capabilities for PostgreSQL |
 | 2640 | {{< alias "pgrdf" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
+| 2645 | {{< alias "pg_warren" >}} | Versioned graph traversal and computation over PostgreSQL tables |
 | 2740 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
 | 2750 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
 | 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
@@ -646,7 +650,7 @@ Extensions written in Rust with the pgrx framework
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="15 Extensions" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="17 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -662,8 +666,10 @@ Extensions leveraging C++ features and libraries
 | 2900 | {{< alias "provsql" >}} | Semiring provenance and probability management for PostgreSQL |
 | 2930 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
+| 3830 | {{< alias "debversion" >}} | Debian version number data type |
 | 4160 | {{< alias "pg_json_diff" >}} | JSONB diff, JSON Patch, and JSON Merge Patch functions |
 | 4245 | {{< alias "re2" >}} | ClickHouse-compatible regex functions using RE2 |
+| 4480 | {{< alias "opencc" "pg_opencc" >}} | OpenCC conversion between Simplified Chinese, Traditional Chinese, regional variants and Japanese Shinjitai |
 | 4700 | {{< alias "datasketches" >}} | Approximate analytics sketches and aggregates for PostgreSQL |
 | 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
 | 7170 | {{< alias "pg_oidc_validator" >}} | OAuth and OIDC token validator for PostgreSQL 18 |

@@ -30,7 +30,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `fsm_core` |
-|   **Requires**    | {{< ext "ltree" >}} {{< ext "pgmq" >}} {{< ext "pg_jsonschema" >}} |
+|   **Requires**    | {{< ext "ltree" >}} {{< ext "pgmq" >}} |
 |   **See Also**    | {{< ext "pgmq" >}} {{< ext "ulak" >}} {{< ext "pgmb" >}} {{< ext "pg_durable" >}} {{< ext "redis" >}} {{< ext "pg_task" >}} {{< ext "pg_background" >}} {{< ext "pgq" >}} {{< ext "redis_fdw" >}} {{< ext "tcn" >}} |
 
 > [!Note] PG15+; requires ltree, pgmq, and pg_jsonschema
@@ -40,7 +40,7 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `fsm_core` | `ltree`, `pgmq`, `pg_jsonschema` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `fsm_core` | `ltree`, `pgmq` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "fsm_core_18" "green" >}} {{< bg "17" "fsm_core_17" "green" >}} {{< bg "16" "fsm_core_16" "green" >}} {{< bg "15" "fsm_core_15" "green" >}} {{< bg "14" "fsm_core_14" "red" >}} | `fsm_core_$v` | `pgmq_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-fsm-core" "green" >}} {{< bg "17" "postgresql-17-fsm-core" "green" >}} {{< bg "16" "postgresql-16-fsm-core" "green" >}} {{< bg "15" "postgresql-15-fsm-core" "green" >}} {{< bg "14" "postgresql-14-fsm-core" "red" >}} | `postgresql-$v-fsm-core` | `postgresql-$v-pgmq`, `postgresql-$v-pg-jsonschema` |
 {.packages .wide .expand}
@@ -198,7 +198,7 @@ pig install fsm_core -v 15;   # install for PG 15
 [**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
 
 ```sql
-CREATE EXTENSION fsm_core CASCADE; -- requires ltree, pgmq, pg_jsonschema
+CREATE EXTENSION fsm_core CASCADE; -- requires ltree, pgmq
 ```
 
 ## Usage

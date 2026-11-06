@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "file_fdw" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "pg_lake" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_csv" >}} {{< ext "omni_csv" >}} |
 
-> [!Note] 0.5.1-4PGSTY backports upstream 9f78a5b723b74c8a6962622b723a6ce99d27a7a2 to fix streaming COPY temporary-file leaks. Six RPM and ten DEB platforms, PG14-18, built and locally indexed; stream/PROGRAM, local Parquet, S3 and HTTP Range QA passed. CDN sync pending.
+> [!Note] Pigsty fixes streaming COPY temp-file leaks.
 
 
 ## Packages

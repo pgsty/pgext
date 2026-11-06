@@ -2,12 +2,13 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/README.md)
-- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/tessera_pg.control)
-- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/tessera_pg--1.0.sql)
-- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.2.1/Makefile)
+- [README v1.3.0](https://github.com/GyuyeongKim/Tessera-public/blob/v1.3.0/README.md)
+- [v1.3.0 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.3.0)
+- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/tessera_pg.control)
+- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/tessera_pg--1.0.sql)
+- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/Makefile)
 
-`tessera_pg` replaces supported join-aggregate plans with sparse matrix multiplication and exposes item-similarity functions. Distribution 1.2.1 installs SQL version 1.0. It targets PostgreSQL 18; the native engine requires OpenMP and AVX2 or newer on x86-64.
+`tessera_pg` replaces supported join-aggregate plans with sparse matrix multiplication and exposes item-similarity functions. Distribution 1.3.0 installs SQL version 1.0. It targets PostgreSQL 18; the native engine requires OpenMP and AVX2 or newer on x86-64.
 
 ### Core Workflow
 
@@ -24,7 +25,7 @@ GROUP BY a.x, b.x;
 SELECT * FROM tessera_sim('edges', 'k', 'x', 'jaccard', 0.5);
 ```
 
-`Custom Scan (Tessera)` identifies an accepted rewrite. The hook requires valid NOT NULL constraints for the relevant grouping and summed columns. Unsupported query shapes use the normal planner. Supported cases include count, weighted products, HAVING, ordered pairs and two input relations; do not assume arbitrary SQL can be rewritten.
+`Custom Scan (Tessera)` identifies an accepted rewrite. Version 1.3.0 supports `COUNT(DISTINCT a.k)`, `AVG`, one-sided `SUM`, multicolumn or expression keys, additional grouping columns and filters on either input. Grouping columns may contain NULLs, which form separate groups; summed columns still need valid NOT NULL constraints. Inputs may also use subqueries, views, CTEs, partitioned or foreign tables and row-level-security plans, with pruning for HAVING and top-N queries. `MIN`, `MAX`, outer joins, nondeterministic collations and other unsupported shapes keep the normal plan; the adapter recognizes only PostgreSQL built-in operators and aggregates.
 
 ### Similarity Functions and Settings
 

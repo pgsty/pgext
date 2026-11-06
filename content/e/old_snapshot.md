@@ -10,14 +10,14 @@ repos: ["CONTRIB"]
 page_width: full
 ---
 
-[**old_snapshot**](https://www.postgresql.org/docs/current/oldsnapshot.html) : utilities in support of old_snapshot_threshold
+[**old_snapshot**](https://www.postgresql.org/docs/16/oldsnapshot.html) : utilities in support of old_snapshot_threshold
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5960** | {{< badge content="old_snapshot" link="https://www.postgresql.org/docs/current/oldsnapshot.html" >}} | {{< ext "old_snapshot" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5960** | {{< badge content="old_snapshot" link="https://www.postgresql.org/docs/16/oldsnapshot.html" >}} | {{< ext "old_snapshot" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 

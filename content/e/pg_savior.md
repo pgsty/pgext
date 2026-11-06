@@ -1,29 +1,29 @@
 ---
 title: "pg_savior"
 linkTitle: "pg_savior"
-description: "Postgres extension to save OOPS mistakes"
+description: "Prevent accidental data loss and risky schema changes"
 weight: 5810
 categories: ["ADMIN"]
 languages: ["C"]
-licenses: ["Apache-2.0"]
+licenses: ["MIT"]
 repos: ["PIGSTY"]
 page_width: full
 ---
 
-[**pg_savior**](https://github.com/viggy28/pg_savior) : Postgres extension to save OOPS mistakes
+[**pg_savior**](https://github.com/viggy28/pg_savior) : Prevent accidental data loss and risky schema changes
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5810** | {{< badge content="pg_savior" link="https://github.com/viggy28/pg_savior" >}} | {{< ext "pg_savior" >}} | `0.1.0` | {{< category "ADMIN" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **5810** | {{< badge content="pg_savior" link="https://github.com/viggy28/pg_savior" >}} | {{< ext "pg_savior" >}} | `0.1.0` | {{< category "ADMIN" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sL--r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "table_log" >}} {{< ext "safeupdate" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_strict" >}} {{< ext "pgmemento" >}} {{< ext "pgaudit" >}} {{< ext "pg_cheat_funcs" >}} {{< ext "pg_crash" >}} {{< ext "pg_dirtyread" >}} {{< ext "block_copy_command" >}} |
 
-> [!Note] -tuplestore_donestoring , breaks on pg18 @ el
+> [!Note] LOAD or preload required.
 
 
 ## Packages
@@ -217,11 +217,16 @@ pig install pg_savior -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
+[**Config**](https://pigsty.io/docs/pgsql/ext/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
-```sql
-CREATE EXTENSION pg_savior;
+```ini
+shared_preload_libraries = 'pg_savior';
 ```
+
+
+This extension does not need `CREATE EXTENSION` DDL command
+
+
 
 
 

@@ -402,7 +402,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/powa-team/powa-archivist" title="Repository" icon="github" subtitle="github.com/powa-team/powa-archivist" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="powa-5.3.0.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg powa;		# build rpm/deb
+```
 
 
 ## Install

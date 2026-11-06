@@ -34,7 +34,7 @@ page_width: full
 |   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3" >}} {{< ext "qdgc" >}} {{< ext "q3c" >}} {{< ext "mobilitydb" >}} {{< ext "pg_polyline" >}} {{< ext "pg_geohash" >}} |
 |    **Siblings**   | {{< ext "postgis" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} |
 
-> [!Note] PostGIS 3.7.0; PGDG remains primary on EL9/EL10 and DEB. PGSTY fills EL8 x86_64/aarch64 PG14-18; signed and indexed locally on 2026-11-05; CDN sync pending.
+> [!Note] Pigsty fills EL8 gaps.
 
 
 ## Packages

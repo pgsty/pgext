@@ -5,7 +5,7 @@ description: "Diagnosing system catalog corruption"
 weight: 5160
 categories: ["ADMIN"]
 languages: ["C"]
-licenses: ["BSD-3-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
@@ -17,19 +17,21 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5160** | {{< badge content="pg_catcheck" link="https://github.com/EnterpriseDB/pg_catcheck" >}} | {{< ext "pg_catcheck" >}} | `1.6.0` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
+| **5160** | {{< badge content="pg_catcheck" link="https://github.com/EnterpriseDB/pg_catcheck" >}} | {{< ext "pg_catcheck" >}} | `1.6.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="-------" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "amcheck" >}} {{< ext "pg_checksums" >}} {{< ext "pg_surgery" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_pathcheck" >}} {{< ext "pageinspect" >}} {{< ext "pg_isok" >}} {{< ext "pgdd" >}} {{< ext "ddlx" >}} {{< ext "meta" >}} |
+
+> [!Note] CLI; no CREATE EXTENSION.
 
 
 ## Packages
@@ -246,11 +248,9 @@ pig install pg_catcheck -v 14;   # install for PG 14
 ```
 
 
-[**Create**](https://pigsty.io/docs/pgsql/ext/create/) this extension with:
+This extension does not need `CREATE EXTENSION` DDL command
 
-```sql
-CREATE EXTENSION pg_catcheck;
-```
+
 
 
 

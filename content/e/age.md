@@ -40,7 +40,7 @@ page_width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `age` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "age_18" "green" >}} {{< bg "17" "age_17" "red" >}} {{< bg "16" "age_16" "red" >}} {{< bg "15" "age_15" "red" >}} {{< bg "14" "age_14" "red" >}} | `age_$v` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "age_18" "green" >}} {{< bg "17" "age_17" "green" >}} {{< bg "16" "age_16" "red" >}} {{< bg "15" "age_15" "red" >}} {{< bg "14" "age_14" "red" >}} | `age_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.8.0` | {{< bg "18" "postgresql-18-age" "green" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "red" >}} {{< bg "15" "postgresql-15-age" "red" >}} {{< bg "14" "postgresql-14-age" "red" >}} | `postgresql-$v-age` | - |
 {.packages .wide .expand}
 

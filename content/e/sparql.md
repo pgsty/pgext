@@ -5,7 +5,7 @@ description: "Query SPARQL datasource with SQL"
 weight: 4470
 categories: ["UTIL"]
 languages: ["SQL"]
-licenses: ["Apache-2.0"]
+licenses: ["PostgreSQL"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4470** | {{< badge content="sparql" link="https://github.com/lacanoid/pgsparql" >}} | {{< ext "sparql" "pgsparql" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "Apache-2.0" >}} | {{< language "SQL" >}} |
+| **4470** | {{< badge content="sparql" link="https://github.com/lacanoid/pgsparql" >}} | {{< ext "sparql" "pgsparql" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 {.wide .expand}
 
 

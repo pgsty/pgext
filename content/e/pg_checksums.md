@@ -1,29 +1,29 @@
 ---
 title: "pg_checksums"
 linkTitle: "pg_checksums"
-description: "Activate/deactivate/verify checksums in offline Postgres clusters"
+description: "Enable/disable checksums offline and verify them online or offline"
 weight: 5110
 categories: ["ADMIN"]
 languages: ["C"]
-licenses: ["BSD-2-Clause"]
+licenses: ["PostgreSQL"]
 repos: ["PGDG"]
 page_width: full
 ---
 
-[**pg_checksums**](https://github.com/credativ/pg_checksums) : Activate/deactivate/verify checksums in offline Postgres clusters
+[**pg_checksums**](https://github.com/credativ/pg_checksums) : Enable/disable checksums offline and verify them online or offline
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5110** | {{< badge content="pg_checksums" link="https://github.com/credativ/pg_checksums" >}} | {{< ext "pg_checksums" >}} | `1.4` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
+| **5110** | {{< badge content="pg_checksums" link="https://github.com/credativ/pg_checksums" >}} | {{< ext "pg_checksums" >}} | `1.4` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s---r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="-------" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -330,7 +330,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/credativ/pg_checksums" title="Repository" icon="github" subtitle="github.com/credativ/pg_checksums" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_checksums-1.4.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_checksums;		# build rpm/deb
+```
 
 
 ## Install

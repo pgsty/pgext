@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_protobuf" >}} {{< ext "decoderbufs" >}} {{< ext "wal2json" >}} {{< ext "pgoutput" >}} {{< ext "test_decoding" >}} {{< ext "pgmqtt" >}} {{< ext "kafka_fdw" >}} {{< ext "pgq" >}} {{< ext "pg_logicalinspect" >}} |
 
-> [!Note] release 0.3.3; SQL v1.0
+> [!Note] SQL 1.0.
 
 
 ## Packages

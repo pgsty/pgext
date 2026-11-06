@@ -17,13 +17,13 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9710** | {{< badge content="repmgr" link="https://github.com/EnterpriseDB/repmgr" >}} | {{< ext "repmgr" >}} | `5.5.0` | {{< category "ETL" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **9710** | {{< badge content="repmgr" link="https://github.com/EnterpriseDB/repmgr" >}} | {{< ext "repmgr" >}} | `5.5.1` | {{< category "ETL" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 
@@ -37,7 +37,7 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `repmgr` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `repmgr` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "repmgr_18" "green" >}} {{< bg "17" "repmgr_17" "green" >}} {{< bg "16" "repmgr_16" "green" >}} {{< bg "15" "repmgr_15" "green" >}} {{< bg "14" "repmgr_14" "green" >}} | `repmgr_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "postgresql-18-repmgr" "green" >}} {{< bg "17" "postgresql-17-repmgr" "green" >}} {{< bg "16" "postgresql-16-repmgr" "green" >}} {{< bg "15" "postgresql-15-repmgr" "green" >}} {{< bg "14" "postgresql-14-repmgr" "green" >}} | `postgresql-$v-repmgr` | - |
 {.packages .wide .expand}
@@ -236,7 +236,13 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/EnterpriseDB/repmgr" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/repmgr" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="repmgr-5.5.1.tar.gz" />}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg repmgr;		# build rpm/deb
+```
 
 
 ## Install
@@ -274,16 +280,23 @@ shared_preload_libraries = 'repmgr';
 CREATE EXTENSION repmgr;
 ```
 
-
-
-
 ## Usage
 
-> [repmgr: Replication manager for PostgreSQL](https://github.com/EnterpriseDB/repmgr)
+Sources:
 
-A suite of tools to manage replication and failover within a PostgreSQL cluster. Supports setting up standby servers, monitoring replication, and performing failover/switchover.
+- [README v5.5.1](https://github.com/EnterpriseDB/repmgr/blob/v5.5.1/README.md)
+- [Control](https://github.com/EnterpriseDB/repmgr/blob/v5.5.1/repmgr.control)
+- [SQL 5.5](https://github.com/EnterpriseDB/repmgr/blob/v5.5.1/repmgr--5.5.sql)
+- [Quickstart](https://github.com/EnterpriseDB/repmgr/blob/v5.5.1/doc/quickstart.xml)
+- [repmgrd configuration](https://github.com/EnterpriseDB/repmgr/blob/v5.5.1/doc/repmgrd-configuration.xml)
+- [Upgrade guide](https://github.com/EnterpriseDB/repmgr/blob/v5.5.1/doc/upgrading-repmgr.xml)
+- [5.5.1 release](https://github.com/EnterpriseDB/repmgr/releases/tag/v5.5.1)
+
+`repmgr` manages PostgreSQL physical replication, monitoring and failover. Release 5.5.1 supports PostgreSQL 13–18 and retains SQL extension version 5.5. It fixes escaping of values substituted into external notification commands. Use the same repmgr release on all cluster nodes.
 
 ### Enabling
+
+Use a dedicated metadata database and management role, with replication connections and the required SSH access configured. The upstream quickstart uses a superuser role; a normal role needs `--superuser` for privileged operations. Run the following SQL in the metadata database with sufficient privileges:
 
 ```sql
 CREATE EXTENSION repmgr;
@@ -339,6 +352,12 @@ repmgr -f /etc/repmgr.conf standby switchover
 
 ### Automatic Failover with repmgrd
 
+Before using `repmgrd`, configure this on each node and restart PostgreSQL:
+
+```ini
+shared_preload_libraries = 'repmgr'
+```
+
 Start the repmgr daemon on each node:
 
 ```bash
@@ -364,3 +383,7 @@ follow_command='repmgr standby follow -f /etc/repmgr.conf --upstream-node-id=%n'
 - `repmgr cluster show` - display cluster status
 - `repmgr cluster event` - show cluster events
 - `repmgr node check` - health check a node
+
+### 5.5.1 Upgrade
+
+Pause or stop automatic failover as directed by the upgrade guide, update the programs on each node, then restart a running `repmgrd` and check cluster status. Both 5.5.0 and 5.5.1 use SQL version `5.5`; do not request a nonexistent SQL version 5.5.1. Follow the appropriate extension upgrade chain when coming from an older SQL version.

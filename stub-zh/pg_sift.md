@@ -2,15 +2,17 @@
 
 来源：
 
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/README.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/UPGRADING.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/pg_sift.control)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.0.3/sql/pg_sift--3.5.sql)
-- [用法与安全](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/USAGE.md)
-- [支持版本](https://github.com/brauliobo/pg_sift/blob/v4.0.3/docs/SUPPORT.md)
-- [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v4.0.3)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/README.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/UPGRADING.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/pg_sift.control)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--3.5.sql)
+- [用法与安全](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/USAGE.md)
+- [支持版本](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/SUPPORT.md)
+- [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.0)
+- [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--4.0.3--4.1.sql)
+- [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/OPTIONS.md)
 
-`pg_sift` 发行版 4.0.3 安装的 SQL 扩展版本为 4.0.3，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
+`pg_sift` 发行版 4.1.0 安装的 SQL 扩展版本为 4.1，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
 
 ### 文本检索
 
@@ -86,3 +88,15 @@ SELECT * FROM sift.upgrade_commands();
 先运行对应版本的升级预检查，为每个读取方部署匹配库，并重启或替换加载旧版库的进程。遵循所提供的 SQL 链，经过 3.5、3.7、4.0 升级到 4.0.3。即使从 4.0.2 到 4.0.3，也需要更新 `sift.index_choices` 和 `sift.help` 的 SQL 定义；仅该补丁不改变格式，无需 REINDEX。更早版本的文本索引修复及列格式读取限制仍适用。
 
 新建或重建的列索引默认使用 `track_changes = 'auto'`，通过 UPDATE 与 DELETE 两个语句级触发器跟踪符合条件的单列主键。这会增加写入工作和一次基线堆表扫描。仅执行 ALTER EXTENSION 不会为已有索引启用此功能，`track_changes = 'off'` 可关闭它。分区、继承或并发构建等情况下跟踪不完整时，查询回退到堆表检查；修改表拓扑前应阅读升级指南。文本索引的 `merge_fanin` 默认值现为 4，合并会更频繁。
+
+### 4.1 规划与维护
+
+4.1.0 扩展了连接、EXISTS/NOT EXISTS、IN/NOT IN、标量子查询与文本键 top-N 的可用计划，并改进超出内存预算的分组扫描。`sift.agg_probe_rewrite` 和 `sift.agg_probe_direct` 控制相应探测优化；不满足语义或成本条件的查询保留普通计划。
+
+新建或重建的 `key_cut` 索引默认按键范围构建，由 `sift.col_build_key_ranges` 控制。自动合并的每轮工作受 `sift.col_auto_merge_pass_mb` 限制，默认 1024 MB；设为 0 时一次完成，不代表关闭合并。
+
+```sql
+ALTER EXTENSION pg_sift UPDATE TO '4.1';
+```
+
+执行前须安装匹配文件并重启所有读取节点，包括备库。从 4.0.3 升至 4.1 只推进 SQL 版本，不改 SQL 对象或磁盘格式，也不新增 REINDEX 要求。更早版本受损索引的重建要求仍适用；重建已有 key_cut 索引是采用新构建方式的可选操作。

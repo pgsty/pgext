@@ -29,10 +29,11 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Need By**    | {{< ext "pg_proctab" >}} |
 |   **See Also**    | {{< ext "system_stats" >}} {{< ext "pgmonitor" >}} {{< ext "pg_stat_ch" >}} {{< ext "pgsentinel" >}} {{< ext "pg_datasentinel" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pgmeminfo" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "pgpool_adm" >}} {{< ext "pgexporter_ext" >}} {{< ext "pg_statvfs" >}} |
 |    **Siblings**   | {{< ext "pg_proctab" >}} |
 
-> [!Note] SQL 2.0; preload.
+> [!Note] Preload; Pigsty fixes unavailable cgroups.
 
 
 ## Packages

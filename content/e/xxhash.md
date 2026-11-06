@@ -5,7 +5,7 @@ description: "xxhash functions for PostgreSQL"
 weight: 4430
 categories: ["UTIL"]
 languages: ["C"]
-licenses: ["BSD-2-Clause"]
+licenses: ["MIT AND BSD-2-Clause"]
 repos: ["PIGSTY"]
 page_width: full
 ---
@@ -17,13 +17,13 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4430** | {{< badge content="xxhash" link="https://github.com/hatarist/pg_xxhash" >}} | {{< ext "xxhash" "pg_xxhash" >}} | `0.0.1` | {{< category "UTIL" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
+| **4430** | {{< badge content="xxhash" link="https://github.com/hatarist/pg_xxhash" >}} | {{< ext "xxhash" "pg_xxhash" >}} | `0.0.1` | {{< category "UTIL" >}} | {{< license "MIT AND BSD-2-Clause" >}} | {{< language "C" >}} |
 {.wide .expand}
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 {.wide .expand}
 
 

@@ -2,14 +2,15 @@
 
 Sources:
 
-- [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/extension/sql/kafgres--0.2.0--0.3.0.sql)
-- [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/8def1919c65f71217665cdc9b72df4c693811cc2/.github/workflows/ci.yml)
-- [README 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/README.md)
-- [Configuration 0.3.1](https://github.com/RayElg/kafgres/blob/451a7f622a10bcf28b3ba4ae63c372a7f15c5aeb/docs/configuration.md)
+- [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/extension/sql/kafgres--0.2.0--0.3.0.sql)
+- [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/.github/workflows/ci.yml)
+- [README 0.3.2](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/README.md)
+- [Configuration 0.3.2](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/docs/configuration.md)
+- [0.3.2 release](https://github.com/RayElg/kafgres/releases/tag/0.3.2)
+- [0.3.1 to 0.3.2 SQL](https://github.com/RayElg/kafgres/blob/0.3.2/extension/sql/kafgres--0.3.1--0.3.2.sql)
+- [0.3.1 to 0.3.2 changes](https://github.com/RayElg/kafgres/compare/0.3.1...0.3.2)
 
-- [0.3.1 release](https://github.com/RayElg/kafgres/releases/tag/0.3.1)
-
-`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.1 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
+`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.2 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
 
 ### Enable the broker
 
@@ -49,3 +50,13 @@ Install the matching 0.3.0 library, restart, then run `ALTER EXTENSION kafgres U
 ### 0.3.1 CDC Installation Boundary
 
 CDC needs wal_level = logical. On PostgreSQL builds that enforce output-plugin allowlists, permit kafgres in output_plugin_libraries and reload configuration if the broker reports that it may not be used as an output plugin. Library preloading still needs a restart. Follow the upstream 0.3.1 upgrade notes for existing transactional segment records; copying the library alone is not a storage migration.
+
+### 0.3.2 Fixes and Upgrade
+
+0.3.2 fixes visibility during concurrent SQL production, compacted-topic handling, CDC draining and fencing of stale producers. Install the matching library and restart PostgreSQL, then run this in the broker database:
+
+```sql
+ALTER EXTENSION kafgres UPDATE TO '0.3.2';
+```
+
+The 0.3.1-to-0.3.2 SQL script advances the extension version without changing SQL objects. When upgrading from 0.3.0, account for old transaction markers: Sarama cannot decode markers lacking an EndTransactionMarker value, and they remain until retention removes their segments. Follow the upstream guidance for the consumer start position or topic recreation.

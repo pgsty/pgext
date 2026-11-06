@@ -33,7 +33,7 @@ page_width: full
 |   **Requires**    | {{< ext "plpgsql" >}} |
 |   **See Also**    | {{< ext "pgmonitor" >}} {{< ext "timescaledb" >}} {{< ext "pg_stl" >}} |
 
-> [!Note] Excluded from default package groups; pkg 1.2.1/SQL 1.2; no Python CLI; RPM Pigsty; DEB Pigsty u22/PGDG elsewhere.
+> [!Note] No CLI; excluded from default groups.
 
 
 ## Packages
