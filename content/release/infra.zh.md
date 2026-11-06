@@ -6,6 +6,29 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-06
+
+7 个配方完成 amd64/arm64 双架构构建，共生成 28 个验证通过的软件包（14 个 DEB、14 个 RPM）。16 个上游二进制输入均通过 `8888` Xray 代理下载，并按官方 SHA256 摘要校验；MCP Toolbox 源码与依赖也通过该代理获取。VS Code 与 OpenTofu 保留上游原生包。本批次尚未导入 APT/YUM 仓库，也未在线发布。
+
+| 名称        | 旧版本  | 新版本  | 备注                                        |
+| :---------- | :------ | :------ | :------------------------------------------ |
+| maddy       | 0.9.6   | 0.9.7   | DMARC 绕过与 IMAP 修复；注意旧配置          |
+| prometheus  | 3.15.1  | 3.16.0  | TLS 外部 URL 默认值与 Remote Write 指标变更 |
+| crush       | 0.99.0  | 0.100.0 | 双架构版本与载荷验证通过                    |
+| codex       | 0.166.0 | 0.167.0 | 上游 rust-v0.167.0；双架构验证通过          |
+| opentofu    | 1.13.8  | 1.13.9  | 修复首次 apply 崩溃时的状态持久化           |
+| code        | 1.145.0 | 1.145.1 | 保留上游原生 DEB/RPM 字节与版本             |
+| mcp-toolbox | 1.15.0  | 1.16.0  | CGO 源码构建；glibc 2.28；安装升级测试通过  |
+{.wide .expand}
+
+[**Maddy 0.9.7**](https://github.com/foxcpp/maddy/releases/tag/v0.9.7) 修复两个 DMARC 验证绕过及其他安全问题，并修复 IMAP 存储问题。新包默认配置已启用 `dmarc_reject_invalid_from yes`；升级保留现有配置，已有部署需要显式启用该选项。
+
+[**Prometheus 3.16.0**](https://github.com/prometheus/prometheus/releases/tag/v3.16.0) 在 Web 配置启用 TLS 时，默认使用 HTTPS 外部 URL，并停止暴露 Remote Write 2.0 队列的四个已弃用元数据指标。两种架构的版本检查与默认配置 `promtool check config` 均通过。
+
+[**MCP Toolbox 1.16.0**](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0) 增加 MCP skills 扩展和动态资源支持，并修复 BigQuery 受保护写入模式。两个架构均从上游提交 `06ea49d9a487a72c22419b5a8d5c22c11f0d7485` 使用 Go 1.27.3、Zig 0.15.2 和 CGO 编译，目标为 glibc 2.28，使用仓库固定的 nFPM 2.43.1 打包。Debian 12 与 EL8 双架构均通过全新安装、从 1.15.0 升级以及非特权用户 MCP/SQLite 查询测试；参数化查询返回 42。
+
+`barn` 保持 1.0.0，`grafana-victoriametrics-ds` 保持 1.0.1，`sealos` 按要求固定在 5.0.1。VS Code 已验证包元数据、应用版本、架构与上游原始字节，未测试图形界面；未运行完整的上游或云服务集成测试。
+
 ## 2026-11-05
 
 10 个配方完成 amd64/arm64 双架构构建，共生成 40 个验证通过的软件包（20 个 DEB、20 个 RPM）。31 个上游输入均通过 `8888` Xray 代理下载，并按官方 SHA256 摘要校验。本批次已导入本地 APT/YUM 仓库；包架构、索引校验值、APT Release/InRelease 签名及两个 YUM repomd 签名均通过验证。本地 YUM 副本使用 PGSTY 密钥签名；缓存输入与 `dist/` 中的上游原生包保留原始字节。在线发布仍待后续处理。

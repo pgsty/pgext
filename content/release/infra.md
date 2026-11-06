@@ -6,6 +6,29 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-06
+
+Seven recipes produce 28 verified packages for amd64 and arm64 (14 DEB and 14 RPM). All 16 upstream binary inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests; MCP Toolbox source and dependencies used the same proxy. VS Code and OpenTofu retain their upstream native packages. This batch has not been imported into the APT/YUM repositories or published online.
+
+| Name        | Old     | New     | Comment                                                    |
+| :---------- | :------ | :------ | :--------------------------------------------------------- |
+| maddy       | 0.9.6   | 0.9.7   | DMARC bypass and IMAP fixes; review existing config        |
+| prometheus  | 3.15.1  | 3.16.0  | TLS external URL default and Remote Write metric changes   |
+| crush       | 0.99.0  | 0.100.0 | Version and payload verified on both architectures         |
+| codex       | 0.166.0 | 0.167.0 | Upstream rust-v0.167.0; both architectures verified        |
+| opentofu    | 1.13.8  | 1.13.9  | Fixes state persistence after a first-apply crash          |
+| code        | 1.145.0 | 1.145.1 | Preserves upstream native DEB/RPM bytes and versions       |
+| mcp-toolbox | 1.15.0  | 1.16.0  | CGO source build; glibc 2.28; install/upgrade tests passed |
+{.wide .expand}
+
+[Maddy 0.9.7](https://github.com/foxcpp/maddy/releases/tag/v0.9.7) fixes two DMARC verification bypasses, other security issues, and IMAP storage bugs. The new packaged default enables `dmarc_reject_invalid_from yes`; upgrades preserve existing configuration, so existing deployments must enable this option explicitly.
+
+[Prometheus 3.16.0](https://github.com/prometheus/prometheus/releases/tag/v3.16.0) defaults the external URL to HTTPS when the web configuration enables TLS and stops exposing four deprecated metadata metrics for Remote Write 2.0 queues. Version checks and `promtool check config` for the packaged default passed on both architectures.
+
+[MCP Toolbox 1.16.0](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0) adds the MCP skills extension and dynamic resource support, and fixes BigQuery protected-write behavior. Both architectures were compiled from upstream commit `06ea49d9a487a72c22419b5a8d5c22c11f0d7485` with Go 1.27.3, Zig 0.15.2, and CGO targeting glibc 2.28, then packaged with the repository's pinned nFPM 2.43.1. Debian 12 and EL8 passed fresh installation, upgrade from 1.15.0, and unprivileged MCP/SQLite query tests on both architectures; the parameterized query returned 42.
+
+`barn` remains at 1.0.0, `grafana-victoriametrics-ds` at 1.0.1, and `sealos` stays pinned at 5.0.1 as requested. VS Code package metadata, application version, architecture, and original upstream bytes were verified; its GUI was not tested. Full upstream or cloud-service integration suites were not run.
+
 ## 2026-11-05
 
 Ten recipes produce 40 verified packages for amd64 and arm64 (20 DEB and 20 RPM). All 31 upstream inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests. This batch is imported into the local APT/YUM repositories; package architectures, indexed checksums, APT Release/InRelease signatures, and both YUM repomd signatures passed verification. Local YUM copies are signed with the PGSTY key; cached inputs and vendor-direct `dist/` packages retain their original bytes. Online publication remains pending.
