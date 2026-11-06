@@ -8,146 +8,57 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2026-11-06
 
-Seven recipes produce 28 verified packages for amd64 and arm64 (14 DEB and 14 RPM). All 16 upstream binary inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests; MCP Toolbox source and dependencies used the same proxy. VS Code and OpenTofu retain their upstream native packages. This batch has not been imported into the APT/YUM repositories or published online.
-
-| Name        | Old     | New     | Comment                                                    |
-| :---------- | :------ | :------ | :--------------------------------------------------------- |
-| maddy       | 0.9.6   | 0.9.7   | DMARC bypass and IMAP fixes; review existing config        |
-| prometheus  | 3.15.1  | 3.16.0  | TLS external URL default and Remote Write metric changes   |
-| crush       | 0.99.0  | 0.100.0 | Version and payload verified on both architectures         |
-| codex       | 0.166.0 | 0.167.0 | Upstream rust-v0.167.0; both architectures verified        |
-| opentofu    | 1.13.8  | 1.13.9  | Fixes state persistence after a first-apply crash          |
-| code        | 1.145.0 | 1.145.1 | Preserves upstream native DEB/RPM bytes and versions       |
-| mcp-toolbox | 1.15.0  | 1.16.0  | CGO source build; glibc 2.28; install/upgrade tests passed |
-{.wide .expand}
-
-[Maddy 0.9.7](https://github.com/foxcpp/maddy/releases/tag/v0.9.7) fixes two DMARC verification bypasses, other security issues, and IMAP storage bugs. The new packaged default enables `dmarc_reject_invalid_from yes`; upgrades preserve existing configuration, so existing deployments must enable this option explicitly.
-
-[Prometheus 3.16.0](https://github.com/prometheus/prometheus/releases/tag/v3.16.0) defaults the external URL to HTTPS when the web configuration enables TLS and stops exposing four deprecated metadata metrics for Remote Write 2.0 queues. Version checks and `promtool check config` for the packaged default passed on both architectures.
-
-[MCP Toolbox 1.16.0](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0) adds the MCP skills extension and dynamic resource support, and fixes BigQuery protected-write behavior. Both architectures were compiled from upstream commit `06ea49d9a487a72c22419b5a8d5c22c11f0d7485` with Go 1.27.3, Zig 0.15.2, and CGO targeting glibc 2.28, then packaged with the repository's pinned nFPM 2.43.1. Debian 12 and EL8 passed fresh installation, upgrade from 1.15.0, and unprivileged MCP/SQLite query tests on both architectures; the parameterized query returned 42.
-
-`barn` remains at 1.0.0, `grafana-victoriametrics-ds` at 1.0.1, and `sealos` stays pinned at 5.0.1 as requested. VS Code package metadata, application version, architecture, and original upstream bytes were verified; its GUI was not tested. Full upstream or cloud-service integration suites were not run.
-
-## 2026-11-05
-
-Ten recipes produce 40 verified packages for amd64 and arm64 (20 DEB and 20 RPM). All 31 upstream inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests. This batch is imported into the local APT/YUM repositories; package architectures, indexed checksums, APT Release/InRelease signatures, and both YUM repomd signatures passed verification. Local YUM copies are signed with the PGSTY key; cached inputs and vendor-direct `dist/` packages retain their original bytes. Online publication remains pending.
-
-| Name                | Old     | New     | Comment                                           |
-| :------------------ | :------ | :------ | :------------------------------------------------ |
-| barn                | 0.9.3   | 1.0.0   | First stable release; native packages             |
-| caddy               | 2.11.8  | 2.11.9  | PHP/FastCGI regression and security fixes         |
-| code-server         | 4.144.0 | 4.145.0 | Upstream native DEB/RPM packages                  |
-| dblab               | 0.55.0  | 0.55.1  | Patch release; both architectures verified        |
-| grafana-infinity-ds | 4.1.5   | 4.1.6   | Signed plugin; csv-parse and gRPC fixes           |
-| k3s                 | 1.37.1  | 1.37.2  | Upstream v1.37.2+k3s1; corrected metadata, 2PGSTY |
-| k3s-images          | 1.37.1  | 1.37.2  | Air-gap images pinned to k3s 1.37.2-2PGSTY        |
-| opentofu            | 1.13.2  | 1.13.8  | Restores -v; state encryption panic fix           |
-| silo-console        | 2.5.1   | 2.6.0   | Usage scans and optional PostgreSQL worker        |
-| victoria-traces     | 0.12.1  | 0.13.0  | OTLP gRPC TLS default changes; healthcheck flag   |
-{.wide .expand}
-
-[Barn 1.0.0](https://github.com/pgsty/barn/releases/tag/v1.0.0) is the first stable release and reads 0.9.3 state without recreating VMs. Catalog signature/revision integrity failures now exit with code `7`. Whole-deployment `recreate` refuses an inventory that omits existing nodes and exits with code `4`; terminal host preparation and purge have additional confirmations. Both architectures passed version/help/JSON checks; destructive VM operations were not exercised.
-
-[Infinity 4.1.6](https://github.com/grafana/grafana-infinity-datasource/releases/tag/v4.1.6) updates csv-parse to 7.0.2 and gRPC to 1.85.0, fixing a security issue and plugin connection freezes under heavy query load. RPM/DEB dependencies now follow the plugin's Grafana compatibility range: `11.6.11 <= v < 12`, `12.0.10 <= v < 12.1`, `12.1.7 <= v < 12.2`, or `v >= 12.2.5`. The complete official ZIP tree is preserved. Grafana 13.3.0 reported a valid signature and a successful backend JSON query on both architectures.
-
-[Caddy 2.11.9](https://github.com/caddyserver/caddy/releases/tag/v2.11.9) fixes the 2.11.8 PHP directory-index/trailing-slash regression and a FastCGI security issue. The packaged default Caddyfile passed validation on both architectures. [OpenTofu 1.13.8](https://github.com/opentofu/opentofu/releases/tag/v1.13.8) restores `-v` and fixes a panic with invalid state encryption configuration.
-
-[SILO Console 2.6.0](https://github.com/pgsty/silo-console/releases/tag/v2.6.0) adds usage scans and an optional durable PostgreSQL usage worker, with administration validation and security fixes. Installing this standalone console does not replace the 2.5.1 frontend embedded in SILO Server 20261026 or add newer server APIs.
-
-[VictoriaTraces 0.13.0](https://github.com/VictoriaMetrics/VictoriaTraces/releases/tag/v0.13.0) disables OTLP gRPC TLS by default: set `-otlpGRPC.tls` explicitly when required. Upstream vtagent now forwards OTLP/HTTP protobuf; its `-remoteWrite.url` must target `/insert/opentelemetry/v1/traces`, and `-remoteWrite.format` and its `/insert/native` endpoint are removed. This recipe packages only single-node VictoriaTraces, not vtagent. It also gains `-healthcheck` and uses Go 1.27.3.
-
-The scan covered 99 recipes with ten updates. `grafana-victoriametrics-ds` remains at 1.0.1; its 1.0 upgrade notes are retained in the November 3 and 4 entries. `sealos` remains pinned at 5.0.1. This batch supersedes the earlier Caddy and dblab builds; the other November 3 and 4 builds still await repository import.
-
-## 2026-11-04
-
-Local build batch: eight packages produce 32 artifacts for amd64 and arm64 (16 DEB and 16 RPM). Downloads use the port `8888` Xray proxy. Fifteen upstream binary inputs were checked against official SHA256 values. Since pgbackrest-exporter 0.25.0 has no binary release assets, its pinned source and vendor dependencies were built offline with Go 1.27.3; independent rebuilds produced identical binaries. This batch has not been imported into APT/YUM repositories or published online.
-
-| Name                       | Old     | New     | Comment                                                             |
-| :------------------------- | :------ | :------ | :------------------------------------------------------------------ |
-| caddy                      | 2.11.7  | 2.11.8  | Security and configuration fixes; bundled Caddyfile validated       |
-| claude                     | 2.1.317 | 2.1.318 | Official manifest and both Linux binary versions verified           |
-| code                       | 1.144.1 | 1.145.0 | Upstream native DEB/RPM bytes preserved                             |
-| dblab                      | 0.54.0  | 0.55.0  | Table-cell sizing and text inspection improvements                  |
-| grafana-victoriametrics-ds | 1.0.0   | 1.0.1   | Isolated editor settings; vmui validation; redacted errors          |
-| pgbackrest-exporter        | 0.24.0  | 0.25.0  | Pinned source build with vendor dependencies; reproducible binaries |
-| redis-exporter             | 1.96.0  | 1.97.0  | Opt-in Redis 8 KEYSIZES; slowlog/commandlog exclusion options       |
-| stalwart                   | 1.0.2   | 1.0.3   | OAuth scopes, role-permission updates and blob storage features     |
-{.wide .expand}
-
-`grafana-victoriametrics-ds` 1.0.1 preserves the 1.0.0 plugin identity and Grafana constraints. The [release](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.1) isolates query-editor browser settings, rejects empty or invalid `vmui` requests, redacts sensitive request URLs from errors, and updates `golang.org/x/net`. Both architectures passed real Grafana 13.3.0 + VictoriaMetrics 1.155.0 upgrade tests, including datasource identity, POST request bodies, long queries, malformed `vmui` requests and query-error redaction. Interactive editor and WITH-template UI behavior has not been browser-tested.
-
-[Caddy 2.11.8](https://github.com/caddyserver/caddy/releases/tag/v2.11.8) includes stricter host/configuration validation, earlier request-size rejection, and PHP/file-matching behavior changes. The packaged default Caddyfile passed validation on both architectures; custom configurations need their own validation.
-
-[Stalwart 1.0.3](https://github.com/stalwartlabs/stalwart/releases/tag/v1.0.3) introduces OAuth scopes for third-party apps to manage security and account settings. Upgraded installations can add the new permissions to default roles by starting once with `STALWART_UPDATE_ROLE_PERMISSIONS=true`, then removing the variable. The WebUI needs no OAuth-scope changes. Existing 0.16.x-to-1.0 migration requirements still apply.
-
-The scan covered 99 recipes. `barn` remains at 0.9.3 on its existing prerelease channel; `codex` remains at 0.166.0 (`rust-v0.166.0` is the upstream tag). `sealos` stays pinned at 5.0.1. Versioned cargo-pgrx snapshots, the curated grafana-plugins bundle, and the retired Promtail package are retained.
-
-## 2026-11-03
-
-Local build batch: six packages were downloaded through the port `8888` Xray proxy and verified against upstream SHA256 checksums. The batch produces 24 artifacts for amd64 and arm64: 12 DEB and 12 RPM. VS Code retains the upstream native package bytes. This batch has not been imported into the APT/YUM repositories or published online. `sealos` remains pinned at `5.0.1`.
-
-| Name                       | Old     | New     | Comment                                                            |
-| :------------------------- | :------ | :------ | :----------------------------------------------------------------- |
-| claude                     | 2.1.316 | 2.1.317 | Official manifest and both Linux binary versions verified          |
-| code                       | 1.143.1 | 1.144.1 | Upstream native DEB/RPM bytes preserved                            |
-| grafana-victoriametrics-ds | 0.26.1  | 1.0.0   | POST/WITH fixes; unchanged requirements; both architectures tested |
-| seaweedfs                  | 4.51    | 4.52    | RPM/DEB version normalized to 4.52.0                               |
-| stalwart                   | 1.0.1   | 1.0.2   | RPM/DEB for both architectures                                     |
-| uv                         | 0.13.6  | 0.13.7  | RPM/DEB for both architectures                                     |
-{.wide .expand}
-
-`grafana-victoriametrics-ds` 1.0.0 keeps the plugin ID, install path, and Grafana requirements from 0.26.1. The [upstream release](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.0) fixes POST request bodies and WITH-template handling. Both architectures passed backend/API upgrade tests with Grafana 13.3.0 and VictoriaMetrics 1.155.0, including preserved datasource identity and long POST queries through a proxy with a 4,096-byte URL limit. The existing unsigned-plugin allowlist is still required; the interactive WITH-template UI was not exercised.
+| Name                       | Old     | New     | Comment                    |
+| :------------------------- | :------ | :------ | :------------------------- |
+| barn                       | 0.9.3   | 1.0.0   | First stable release       |
+| caddy                      | 2.11.7  | 2.11.9  | FastCGI security fixes     |
+| claude                     | 2.1.316 | 2.1.318 |                            |
+| code                       | 1.143.1 | 1.145.1 |                            |
+| code-server                | 4.144.0 | 4.145.0 |                            |
+| codex                      | 0.166.0 | 0.167.0 |                            |
+| crush                      | 0.99.0  | 0.100.0 |                            |
+| dblab                      | 0.54.0  | 0.55.1  |                            |
+| grafana-infinity-ds        | 4.1.5   | 4.1.6   | Security / gRPC fixes      |
+| grafana-victoriametrics-ds | 0.26.1  | 1.0.1   | POST/WITH / security fixes |
+| k3s                        | 1.37.1  | 1.37.2  | k3s1; 2PGSTY               |
+| k3s-images                 | 1.37.1  | 1.37.2  | Air-gap images; 2PGSTY     |
+| maddy                      | 0.9.6   | 0.9.7   | DMARC/IMAP fixes           |
+| mcp-toolbox                | 1.15.0  | 1.16.0  | CGO; glibc 2.28            |
+| opentofu                   | 1.13.2  | 1.13.9  | State persistence fix      |
+| pgbackrest-exporter        | 0.24.0  | 0.25.0  | Source build               |
+| prometheus                 | 3.15.1  | 3.16.0  | TLS / Remote Write changes |
+| redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES           |
+| seaweedfs                  | 4.51    | 4.52    | Package: 4.52.0            |
+| silo-console               | 2.5.1   | 2.6.0   | Usage scans                |
+| stalwart                   | 1.0.1   | 1.0.3   | OAuth permissions          |
+| uv                         | 0.13.6  | 0.13.7  |                            |
+| victoria-traces            | 0.12.1  | 0.13.0  | gRPC TLS now opt-in        |
 
 ## 2026-11-01
 
-Local build batch: ten packages were downloaded through the port `8888` Xray proxy, verified against upstream digests, and built for both architectures as RPM/DEB, then imported into the local APT/YUM repositories, producing 40 artifacts. Online publication remains pending. `sealos` remains pinned at `5.0.1`; `promtail` and `pgbackrest-exporter` remain deferred.
-
-| Name                | Old       | New       | Comment                                       |
-| :------------------ | :-------- | :-------- | :-------------------------------------------- |
-| barn                | 0.9.1     | 0.9.3     | Upstream prerelease; native DEB/RPM bytes     |
-| claude              | 2.1.312   | 2.1.316   | Official manifest verified; dual-architecture |
-| cloudflared         | 2026.10.6 | 2026.10.7 | Dual-architecture RPM/DEB                     |
-| codex               | 0.165.0   | 0.166.0   | Dual-architecture RPM/DEB                     |
-| crush               | 0.98.2    | 0.99.0    | Dual-architecture RPM/DEB                     |
-| grafana-infinity-ds | 4.1.4     | 4.1.5     | Dual-architecture RPM/DEB                     |
-| headscale           | 0.29.6    | 0.29.7    | Dual-architecture RPM/DEB                     |
-| mtail               | 3.4.18    | 3.4.19    | Dual-architecture RPM/DEB                     |
-| vector              | 0.60.0    | 0.61.0    | Upstream native DEB/RPM bytes                 |
-| xray                | 26.10.29  | 26.10.31  | Dual-architecture RPM/DEB                     |
-{.wide .expand}
-
-
-## 2026-10-30
-
-| Name         | Old       | New       | Comment                                       |
-|:-------------|:----------|:----------|:----------------------------------------------|
-| alertmanager | 0.34.1    | 0.34.2    | Dual-architecture RPM/DEB                     |
-| cloudflared  | 2026.10.5 | 2026.10.6 | Dual-architecture RPM/DEB                     |
-| code-server  | 4.143.1   | 4.144.0   | Upstream native DEB/RPM bytes preserved       |
-| nodejs       | 24.22.1   | 26.13.0   | Node.js 26 LTS; both architectures            |
-| pig          | 1.10.2    | 1.10.3    | Dual-architecture RPM/DEB                     |
-| stalwart     | 1.0.0     | 1.0.1     | Database migration still required from 0.16.x |
-| xray         | 26.10.21  | 26.10.29  | Dual-architecture RPM/DEB                     |
-{.wide .expand}
-
-
-## 2026-10-28
-
-| Name                | Old       | New       | Comment |
-|:--------------------|:----------|:----------|:--------|
-| grafana             | 13.2.4    | 13.3.0    |         |
-| grafana-infinity-ds | 4.1.3     | 4.1.4     |         |
-| pg-hardstorage      | 1.5.0     | 1.6.0     |         |
-| pgschema            | 1.13.3    | 1.13.4    |         |
-| cloudflared         | 2026.10.4 | 2026.10.5 |         |
-| hugo                | 0.168.0   | 0.169.0   |         |
-| uv                  | 0.13.5    | 0.13.6    |         |
-| claude              | 2.1.311   | 2.1.312   |         |
-| codex               | 0.164.0   | 0.165.0   |         |
-| opencode            | 1.19.4    | 1.19.5    |         |
-{.wide .expand}
-
+| Name                | Old       | New       | Comment                   |
+| :------------------ | :-------- | :-------- | :------------------------ |
+| alertmanager        | 0.34.1    | 0.34.2    |                           |
+| barn                | 0.9.1     | 0.9.3     | Prerelease                |
+| claude              | 2.1.311   | 2.1.316   |                           |
+| cloudflared         | 2026.10.4 | 2026.10.7 |                           |
+| code-server         | 4.143.1   | 4.144.0   |                           |
+| codex               | 0.164.0   | 0.166.0   |                           |
+| crush               | 0.98.2    | 0.99.0    |                           |
+| grafana             | 13.2.4    | 13.3.0    |                           |
+| grafana-infinity-ds | 4.1.3     | 4.1.5     |                           |
+| headscale           | 0.29.6    | 0.29.7    |                           |
+| hugo                | 0.168.0   | 0.169.0   |                           |
+| mtail               | 3.4.18    | 3.4.19    |                           |
+| nodejs              | 24.22.1   | 26.13.0   | 26 LTS                    |
+| opencode            | 1.19.4    | 1.19.5    |                           |
+| pg-hardstorage      | 1.5.0     | 1.6.0     |                           |
+| pgschema            | 1.13.3    | 1.13.4    |                           |
+| pig                 | 1.10.2    | 1.10.3    |                           |
+| stalwart            | 1.0.0     | 1.0.1     | 0.16.x requires migration |
+| uv                  | 0.13.5    | 0.13.6    |                           |
+| vector              | 0.60.0    | 0.61.0    |                           |
+| xray                | 26.10.21  | 26.10.31  |                           |
 
 ## 2026-10-27
 

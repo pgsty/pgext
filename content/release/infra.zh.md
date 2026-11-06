@@ -8,148 +8,57 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2026-11-06
 
-7 个配方完成 amd64/arm64 双架构构建，共生成 28 个验证通过的软件包（14 个 DEB、14 个 RPM）。16 个上游二进制输入均通过 `8888` Xray 代理下载，并按官方 SHA256 摘要校验；MCP Toolbox 源码与依赖也通过该代理获取。VS Code 与 OpenTofu 保留上游原生包。本批次尚未导入 APT/YUM 仓库，也未在线发布。
-
-| 名称        | 旧版本  | 新版本  | 备注                                        |
-| :---------- | :------ | :------ | :------------------------------------------ |
-| maddy       | 0.9.6   | 0.9.7   | DMARC 绕过与 IMAP 修复；注意旧配置          |
-| prometheus  | 3.15.1  | 3.16.0  | TLS 外部 URL 默认值与 Remote Write 指标变更 |
-| crush       | 0.99.0  | 0.100.0 | 双架构版本与载荷验证通过                    |
-| codex       | 0.166.0 | 0.167.0 | 上游 rust-v0.167.0；双架构验证通过          |
-| opentofu    | 1.13.8  | 1.13.9  | 修复首次 apply 崩溃时的状态持久化           |
-| code        | 1.145.0 | 1.145.1 | 保留上游原生 DEB/RPM 字节与版本             |
-| mcp-toolbox | 1.15.0  | 1.16.0  | CGO 源码构建；glibc 2.28；安装升级测试通过  |
-{.wide .expand}
-
-[**Maddy 0.9.7**](https://github.com/foxcpp/maddy/releases/tag/v0.9.7) 修复两个 DMARC 验证绕过及其他安全问题，并修复 IMAP 存储问题。新包默认配置已启用 `dmarc_reject_invalid_from yes`；升级保留现有配置，已有部署需要显式启用该选项。
-
-[**Prometheus 3.16.0**](https://github.com/prometheus/prometheus/releases/tag/v3.16.0) 在 Web 配置启用 TLS 时，默认使用 HTTPS 外部 URL，并停止暴露 Remote Write 2.0 队列的四个已弃用元数据指标。两种架构的版本检查与默认配置 `promtool check config` 均通过。
-
-[**MCP Toolbox 1.16.0**](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0) 增加 MCP skills 扩展和动态资源支持，并修复 BigQuery 受保护写入模式。两个架构均从上游提交 `06ea49d9a487a72c22419b5a8d5c22c11f0d7485` 使用 Go 1.27.3、Zig 0.15.2 和 CGO 编译，目标为 glibc 2.28，使用仓库固定的 nFPM 2.43.1 打包。Debian 12 与 EL8 双架构均通过全新安装、从 1.15.0 升级以及非特权用户 MCP/SQLite 查询测试；参数化查询返回 42。
-
-`barn` 保持 1.0.0，`grafana-victoriametrics-ds` 保持 1.0.1，`sealos` 按要求固定在 5.0.1。VS Code 已验证包元数据、应用版本、架构与上游原始字节，未测试图形界面；未运行完整的上游或云服务集成测试。
-
-## 2026-11-05
-
-10 个配方完成 amd64/arm64 双架构构建，共生成 40 个验证通过的软件包（20 个 DEB、20 个 RPM）。31 个上游输入均通过 `8888` Xray 代理下载，并按官方 SHA256 摘要校验。本批次已导入本地 APT/YUM 仓库；包架构、索引校验值、APT Release/InRelease 签名及两个 YUM repomd 签名均通过验证。本地 YUM 副本使用 PGSTY 密钥签名；缓存输入与 `dist/` 中的上游原生包保留原始字节。在线发布仍待后续处理。
-
-| 名称                | 旧版本  | 新版本  | 备注                                      |
-| :------------------ | :------ | :------ | :---------------------------------------- |
-| barn                | 0.9.3   | 1.0.0   | 首个稳定版；使用上游原生包                |
-| caddy               | 2.11.8  | 2.11.9  | PHP/FastCGI 回归与安全修复                |
-| code-server         | 4.144.0 | 4.145.0 | 使用上游原生 DEB/RPM 包                   |
-| dblab               | 0.55.0  | 0.55.1  | 补丁版本；已验证双架构                    |
-| grafana-infinity-ds | 4.1.5   | 4.1.6   | 保留插件签名；修复 csv-parse 与 gRPC 问题 |
-| k3s                 | 1.37.1  | 1.37.2  | 上游 v1.37.2+k3s1；修正元数据，2PGSTY     |
-| k3s-images          | 1.37.1  | 1.37.2  | 离线镜像精确依赖 k3s 1.37.2-2PGSTY        |
-| opentofu            | 1.13.2  | 1.13.8  | 恢复 -v；修复状态加密配置导致的崩溃       |
-| silo-console        | 2.5.1   | 2.6.0   | 用量扫描与可选 PostgreSQL 工作进程        |
-| victoria-traces     | 0.12.1  | 0.13.0  | OTLP gRPC TLS 默认值变更；新增健康检查    |
-{.wide .expand}
-
-[**Barn 1.0.0**](https://github.com/pgsty/barn/releases/tag/v1.0.0) 是首个稳定版本，可直接读取 0.9.3 状态，无需重建虚拟机。目录签名或签名修订完整性错误改为退出码 `7`。整组 `recreate` 在清单遗漏已有节点时拒绝执行并返回退出码 `4`；交互终端下的宿主机准备与 purge 增加确认步骤。双架构已验证版本、帮助与 JSON 输出，未执行破坏性虚拟机操作。
-
-[**Infinity 4.1.6**](https://github.com/grafana/grafana-infinity-datasource/releases/tag/v4.1.6) 将 csv-parse 更新为 7.0.2、gRPC 更新为 1.85.0，修复安全问题与高查询负载下的插件连接冻结。RPM/DEB 依赖现与插件的 Grafana 兼容范围一致：`11.6.11 <= v < 12`、`12.0.10 <= v < 12.1`、`12.1.7 <= v < 12.2` 或 `v >= 12.2.5`。保留完整官方 ZIP 文件树，两个架构均在 Grafana 13.3.0 中通过签名有效性与后端 JSON 查询验证。
-
-[**Caddy 2.11.9**](https://github.com/caddyserver/caddy/releases/tag/v2.11.9) 修复 2.11.8 的 PHP 目录首页／尾斜杠回归与 FastCGI 安全问题，包内默认 Caddyfile 通过双架构校验。[**OpenTofu 1.13.8**](https://github.com/opentofu/opentofu/releases/tag/v1.13.8) 恢复 `-v`，并修复无效状态加密配置导致的崩溃。
-
-[**SILO Console 2.6.0**](https://github.com/pgsty/silo-console/releases/tag/v2.6.0) 新增用量扫描与可选的持久化 PostgreSQL 用量工作进程，并改进管理操作校验与安全性。安装此独立控制台不会替换 SILO Server 20261026 内嵌的 2.5.1 前端，也不会为旧服务端增加新 API。
-
-[**VictoriaTraces 0.13.0**](https://github.com/VictoriaMetrics/VictoriaTraces/releases/tag/v0.13.0) 默认关闭 OTLP gRPC TLS，需要时必须显式设置 `-otlpGRPC.tls`。上游 vtagent 改为转发 OTLP/HTTP protobuf，`-remoteWrite.url` 须指向 `/insert/opentelemetry/v1/traces`，并移除 `-remoteWrite.format` 与 vtagent 的 `/insert/native` 端点。本配方仅打包单机版 VictoriaTraces，不包含 vtagent；另新增 `-healthcheck`，构建工具链更新为 Go 1.27.3。
-
-本次扫描覆盖 99 个配方，发现 10 项更新。`grafana-victoriametrics-ds` 保持 1.0.1，1.0 大版本升级说明保留在 11 月 3 日和 4 日条目中；`sealos` 继续锁定 5.0.1。本批次取代此前的 Caddy 与 dblab 构建，11 月 3 日和 4 日的其余构建仍待入库。
-
-## 2026-11-04
-
-本地构建批次：8 个软件包完成 amd64/arm64 双架构构建，共生成 32 个制品（16 个 DEB、16 个 RPM）。下载使用 `8888` Xray 代理，15 个上游二进制输入按官方 SHA256 校验值核验。pgbackrest-exporter 0.25.0 尚无二进制附件，使用固定提交的源码和 vendor 依赖，以 Go 1.27.3 离线构建，独立重建得到相同二进制。本批次尚未导入 APT/YUM 仓库，也未在线发布。
-
-| 名称                       | 旧版本  | 新版本  | 备注                                                    |
-| :------------------------- | :------ | :------ | :------------------------------------------------------ |
-| caddy                      | 2.11.7  | 2.11.8  | 安全与配置修复；已验证包内默认 Caddyfile                |
-| claude                     | 2.1.317 | 2.1.318 | 官方 manifest 与双架构 Linux 版本核验                   |
-| code                       | 1.144.1 | 1.145.0 | 保留上游原生 DEB/RPM 字节                               |
-| dblab                      | 0.54.0  | 0.55.0  | 改进表格单元格宽度与文本查看                            |
-| grafana-victoriametrics-ds | 1.0.0   | 1.0.1   | 编辑器设置隔离；vmui 校验；错误信息脱敏                 |
-| pgbackrest-exporter        | 0.24.0  | 0.25.0  | 固定提交源码与 vendor 依赖构建；二进制可复现            |
-| redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES 可选指标；支持排除慢日志与命令日志指标 |
-| stalwart                   | 1.0.2   | 1.0.3   | 新增 OAuth scope、角色权限更新与 blob 存储功能          |
-{.wide .expand}
-
-`grafana-victoriametrics-ds` 1.0.1 保持 1.0.0 的插件身份和 Grafana 依赖要求。[**上游发布**](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.1) 隔离查询编辑器的浏览器设置，拒绝空或无效的 `vmui` 请求，在错误信息中隐藏敏感请求 URL，并更新 `golang.org/x/net`。两个架构均通过 Grafana 13.3.0 + VictoriaMetrics 1.155.0 实际升级测试，涵盖数据源身份、POST 请求体、长查询、异常 `vmui` 请求及查询错误脱敏。编辑器与 WITH 模板的交互界面尚未进行浏览器验收。
-
-[**Caddy 2.11.8**](https://github.com/caddyserver/caddy/releases/tag/v2.11.8) 包含更严格的 Host 与配置校验、更早的请求大小拒绝，以及 PHP／文件匹配行为变更。包内默认 Caddyfile 已通过双架构校验；自定义配置需要单独验证。
-
-[**Stalwart 1.0.3**](https://github.com/stalwartlabs/stalwart/releases/tag/v1.0.3) 为第三方应用管理安全与账户设置引入新的 OAuth scope。已有实例可在一次启动中设置 `STALWART_UPDATE_ROLE_PERMISSIONS=true`，为默认角色补入新权限，随后移除该变量。WebUI 无需调整 OAuth scope；从 0.16.x 升级到 1.0 的既有迁移要求仍然适用。
-
-本次扫描覆盖 99 个配方。`barn` 在现有预发布频道保持 0.9.3；`codex` 保持 0.166.0，上游标签为 `rust-v0.166.0`。`sealos` 继续锁定 5.0.1；保留按版本固定的 cargo-pgrx 快照、人工维护的 grafana-plugins 插件集与已终止维护的 Promtail。
-
-## 2026-11-03
-
-本地构建批次：6 个软件包通过 `8888` Xray 代理下载，按上游 SHA256 校验值核验，完成 amd64/arm64 双架构构建，共生成 24 个制品：12 个 DEB 和 12 个 RPM。VS Code 保留上游原生软件包字节。本批次尚未导入 APT/YUM 仓库，也未在线发布；`sealos` 继续锁定 `5.0.1`。
-
-| 名称                       | 旧版本  | 新版本  | 备注                                        |
-| :------------------------- | :------ | :------ | :------------------------------------------ |
-| claude                     | 2.1.316 | 2.1.317 | 官方 manifest 与双架构 Linux 二进制版本核验 |
-| code                       | 1.143.1 | 1.144.1 | 保留上游原生 DEB/RPM 字节                   |
-| grafana-victoriametrics-ds | 0.26.1  | 1.0.0   | POST/WITH 修复；依赖不变；双架构运行验证    |
-| seaweedfs                  | 4.51    | 4.52    | RPM/DEB 版本规范为 4.52.0                   |
-| stalwart                   | 1.0.1   | 1.0.2   | 双架构 RPM/DEB                              |
-| uv                         | 0.13.6  | 0.13.7  | 双架构 RPM/DEB                              |
-{.wide .expand}
-
-`grafana-victoriametrics-ds` 1.0.0 沿用 0.26.1 的插件 ID、安装路径和 Grafana 版本要求。本次 [**上游发布**](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.0) 修复 POST 请求体与 WITH 模板处理。两个架构均通过 Grafana 13.3.0 + VictoriaMetrics 1.155.0 后端/API 升级测试，包括数据源身份保留，以及经过 URL 长度限制为 4,096 字节的代理执行长 POST 查询。仍需沿用现有 unsigned 插件白名单；WITH 模板的交互界面未进行浏览器验收。
+| 名称                       | 旧版本  | 新版本  | 备注                  |
+| :------------------------- | :------ | :------ | :-------------------- |
+| barn                       | 0.9.3   | 1.0.0   | 首个稳定版            |
+| caddy                      | 2.11.7  | 2.11.9  | FastCGI 安全修复      |
+| claude                     | 2.1.316 | 2.1.318 |                       |
+| code                       | 1.143.1 | 1.145.1 |                       |
+| code-server                | 4.144.0 | 4.145.0 |                       |
+| codex                      | 0.166.0 | 0.167.0 |                       |
+| crush                      | 0.99.0  | 0.100.0 |                       |
+| dblab                      | 0.54.0  | 0.55.1  |                       |
+| grafana-infinity-ds        | 4.1.5   | 4.1.6   | 安全与 gRPC 修复      |
+| grafana-victoriametrics-ds | 0.26.1  | 1.0.1   | POST/WITH 与安全修复  |
+| k3s                        | 1.37.1  | 1.37.2  | k3s1；2PGSTY          |
+| k3s-images                 | 1.37.1  | 1.37.2  | 离线镜像；2PGSTY      |
+| maddy                      | 0.9.6   | 0.9.7   | DMARC/IMAP 修复       |
+| mcp-toolbox                | 1.15.0  | 1.16.0  | CGO；glibc 2.28       |
+| opentofu                   | 1.13.2  | 1.13.9  | 状态持久化修复        |
+| pgbackrest-exporter        | 0.24.0  | 0.25.0  | 源码构建              |
+| prometheus                 | 3.15.1  | 3.16.0  | TLS/Remote Write 变更 |
+| redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES      |
+| seaweedfs                  | 4.51    | 4.52    | 包版本 4.52.0         |
+| silo-console               | 2.5.1   | 2.6.0   | 用量扫描              |
+| stalwart                   | 1.0.1   | 1.0.3   | OAuth 权限            |
+| uv                         | 0.13.6  | 0.13.7  |                       |
+| victoria-traces            | 0.12.1  | 0.13.0  | gRPC TLS 改为可选     |
 
 ## 2026-11-01
 
-本地构建批次：10 个软件包通过 `8888` Xray 代理下载，按上游校验值核验后完成双架构 RPM/DEB 构建，并已导入本地 APT/YUM 仓库，共生成 40 个制品。在线发布仍待后续处理；`sealos` 继续锁定 `5.0.1`，`promtail` 和 `pgbackrest-exporter` 暂缓更新。
-
-| 名称                | 旧版本    | 新版本    | 备注                              |
-| :------------------ | :-------- | :-------- | :-------------------------------- |
-| barn                | 0.9.1     | 0.9.3     | 上游预发布；保留原生 DEB/RPM 字节 |
-| claude              | 2.1.312   | 2.1.316   | 官方 manifest 已核验；双架构构建  |
-| cloudflared         | 2026.10.6 | 2026.10.7 | 双架构 RPM/DEB                    |
-| codex               | 0.165.0   | 0.166.0   | 双架构 RPM/DEB                    |
-| crush               | 0.98.2    | 0.99.0    | 双架构 RPM/DEB                    |
-| grafana-infinity-ds | 4.1.4     | 4.1.5     | 双架构 RPM/DEB                    |
-| headscale           | 0.29.6    | 0.29.7    | 双架构 RPM/DEB                    |
-| mtail               | 3.4.18    | 3.4.19    | 双架构 RPM/DEB                    |
-| vector              | 0.60.0    | 0.61.0    | 保留上游原生 DEB/RPM 字节         |
-| xray                | 26.10.29  | 26.10.31  | 双架构 RPM/DEB                    |
-{.wide .expand}
-
-
-## 2026-10-30
-
-本地构建批次：7 个软件包通过 8888 Xray 代理下载，完成双架构 RPM/DEB 构建与校验，共生成 28 个制品。当前仅保留在本地，尚未放入 APT/YUM 仓库或在线发布；`sealos` 继续锁定 5.0.1，`promtail` 和 `pgbackrest-exporter` 暂缓更新。
-
-| 名称         | 旧版本    | 新版本    | 备注                      |
-|:-------------|:----------|:----------|:--------------------------|
-| alertmanager | 0.34.1    | 0.34.2    | 双架构 RPM/DEB            |
-| cloudflared  | 2026.10.5 | 2026.10.6 | 双架构 RPM/DEB            |
-| code-server  | 4.143.1   | 4.144.0   | 保持上游原生 DEB/RPM 字节 |
-| nodejs       | 24.22.1   | 26.13.0   | Node.js 26 LTS；双架构    |
-| pig          | 1.10.2    | 1.10.3    | 双架构 RPM/DEB            |
-| stalwart     | 1.0.0     | 1.0.1     | 0.16.x 升级仍需迁移数据库 |
-| xray         | 26.10.21  | 26.10.29  | 双架构 RPM/DEB            |
-{.wide .expand}
-
-
-## 2026-10-28
-
-| 名称                | 旧版本    | 新版本    | 备注 |
-|:--------------------|:----------|:----------|:-----|
-| grafana             | 13.2.4    | 13.3.0    |      |
-| grafana-infinity-ds | 4.1.3     | 4.1.4     |      |
-| pg-hardstorage      | 1.5.0     | 1.6.0     |      |
-| pgschema            | 1.13.3    | 1.13.4    |      |
-| cloudflared         | 2026.10.4 | 2026.10.5 |      |
-| hugo                | 0.168.0   | 0.169.0   |      |
-| uv                  | 0.13.5    | 0.13.6    |      |
-| claude              | 2.1.311   | 2.1.312   |      |
-| codex               | 0.164.0   | 0.165.0   |      |
-| opencode            | 1.19.4    | 1.19.5    |      |
-{.wide .expand}
-
+| 名称                | 旧版本    | 新版本    | 备注          |
+| :------------------ | :-------- | :-------- | :------------ |
+| alertmanager        | 0.34.1    | 0.34.2    |               |
+| barn                | 0.9.1     | 0.9.3     | 预发布        |
+| claude              | 2.1.311   | 2.1.316   |               |
+| cloudflared         | 2026.10.4 | 2026.10.7 |               |
+| code-server         | 4.143.1   | 4.144.0   |               |
+| codex               | 0.164.0   | 0.166.0   |               |
+| crush               | 0.98.2    | 0.99.0    |               |
+| grafana             | 13.2.4    | 13.3.0    |               |
+| grafana-infinity-ds | 4.1.3     | 4.1.5     |               |
+| headscale           | 0.29.6    | 0.29.7    |               |
+| hugo                | 0.168.0   | 0.169.0   |               |
+| mtail               | 3.4.18    | 3.4.19    |               |
+| nodejs              | 24.22.1   | 26.13.0   | 26 LTS        |
+| opencode            | 1.19.4    | 1.19.5    |               |
+| pg-hardstorage      | 1.5.0     | 1.6.0     |               |
+| pgschema            | 1.13.3    | 1.13.4    |               |
+| pig                 | 1.10.2    | 1.10.3    |               |
+| stalwart            | 1.0.0     | 1.0.1     | 0.16.x 需迁移 |
+| uv                  | 0.13.5    | 0.13.6    |               |
+| vector              | 0.60.0    | 0.61.0    |               |
+| xray                | 26.10.21  | 26.10.31  |               |
 
 ## 2026-10-27
 
