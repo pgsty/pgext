@@ -7,89 +7,90 @@ weight: 200
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
 
-## 2026-11-05
+## 2026-11-06
 
-| 名称                      | 旧版本           | 新版本                      | 说明                                                                 |
-|:--------------------------|:-----------------|:----------------------------|:---------------------------------------------------------------------|
-| address_standardizer      | -                | 3.7.0-1PGSTY                | EL8 补包；独立包；SQL 3.7；含 data_us；不依赖 PostGIS                |
-| agensgraph-18             | 2.18.6.0         | 2.18.6.1                    | PG18.6 内核与配套扩展                                                |
-| cat_tools                 | 0.3.0            | 0.4.0                       | 纯 SQL                                                               |
-| cloudberry                | 2.1.0            | 2.2.0                       | 内核与配套扩展                                                       |
-| cloudberry-backup         | 2.1.0            | 2.2.0                       | 六个备份恢复工具                                                     |
-| cloudberry-pxf            | 2.1.0            | 2.2.0                       | 配套 Cloudberry 2.2.0；含 pxf/pxf_fdw                                |
-| containerd.io             | -                | 2.4.2-3                     | 官方 RPM                                                             |
-| docker-buildx-plugin      | -                | 0.38.1                      | 官方 RPM                                                             |
-| docker-ce                 | -                | 29.9.2                      | 官方 RPM                                                             |
-| docker-ce-cli             | -                | 29.9.2                      | 官方 RPM                                                             |
-| docker-ce-rootless-extras | -                | 29.9.2                      | 官方 RPM                                                             |
-| docker-compose-plugin     | -                | 5.7.0                       | 官方 RPM                                                             |
-| graphblas                 | 10.5.0           | 10.5.2                      | 运行库与开发包；ABI 10                                               |
-| lagraph                   | 1.2.2            | 1.2.2                       | 使用 GraphBLAS 10.5.2 重建                                           |
-| nginx                     | -                | 1.31.8                      | 官方 RPM                                                             |
-| nginx-module-acme         | -                | 1.31.8+0.4.1                | 官方 RPM                                                             |
-| onesparse                 | 1.0.0-1PGSTY     | 1.0.0-2PGSTY                | PG18；随 GraphBLAS/LAGraph 重建；SQL 0.1.0；需预加载                 |
-| orioledb-16               | 1.10~beta19      | 1.10.1                      | PG16.15 内核；SQL 1.10                                               |
-| orioledb-17               | 1.10~beta19      | 1.10.1                      | PG17.11 内核；SQL 1.10                                               |
-| orioledb-18               | 1.10~beta19      | 1.10.1                      | PG18.6 内核；SQL 1.10                                                |
-| pg_agent_gate             | 0.3.0            | 0.4.1                       | PG18；修复代理角色逃逸；需预加载                                     |
-| pg_duckdb                 | 1.1.1            | 1.2.0                       | DuckDB 2.0.0；与 duckdb_fdw 冲突                                     |
-| pg_fts                    | 1.15.1           | 1.15.2                      | PG17-18；修复 top-k 与删除后性能退化                                 |
-| pg_graphql                | 1.6.2            | 1.6.3                       | 修复 nodeId 的带引号主键                                             |
-| pg_integrity_checksums    | 2.0.2            | 2.1.0                       | 统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线                |
-| pg_lake                   | 3.5.9            | 3.5.10                      | PG16-18；仅 EL9/10；八个扩展，SQL 3.5；Brotli 安全修复               |
-| pg_living_assertions      | 0.5.10           | 0.5.10                      | 纯 SQL；全平台重建                                                   |
-| pg_mentat                 | 1.18.0           | 1.19.0                      | 修复并发写入与 RLS；升级需持锁                                       |
-| pg_mooncake               | 0.2.0            | 0.3.0-1PGSTY                | PGSTY 分支；适配 pg_duckdb 1.2.0 / DuckDB 2.0.0；缺少 0.2.0 升级脚本 |
-| pg_parquet                | 0.5.1-3PIGSTY    | 0.5.1-4PGSTY                | 修复流式 COPY 临时文件泄漏                                           |
-| pg_tokenizer              | 0.1.1            | 1.0.0                       | PGSTY 分支；原生 tsvector；外置 Lindera 6 词典                       |
-| pg_tre                    | 4.5.3            | 4.6.1                       | PG17-18；修复 sparsemap 越界；优化匹配                               |
-| pgaudit                   | 1.6.3 / 1.7.1    | 1.6.3-1PGSTY / 1.7.1-1PGSTY | PG14/15；统一 pgaudit_$v 包名并兼容 PGDG 旧名；PG16-18 复用 PGDG     |
-| pgdog                     | 0.1.62           | 0.1.63                      | PostgreSQL 连接池                                                    |
-| polardb-17                | 17.11.1.0-1PGSTY | 17.11.1.0-2PGSTY            | PG17.11 内核与扩展；使用新版 PolarStore SDK 重建                     |
-| polarstore                | 1.2.42-2PGSTY    | 1.2.42-3PGSTY               | 使用 zlog 1.2.20 重建                                                |
-| postgis                   | 3.6.4            | 3.7.0-1PGSTY                | EL8 补包；EL9/10 由 PGDG 主供                                        |
-| postgis_tiger_geocoder    | -                | 2025.2-1PGSTY               | EL8 PG16-18 补包；独立 noarch 包                                     |
-| provsql                   | 1.13.0           | 1.13.1                      | 修复电路大小与取消操作；需预加载                                     |
-| redis                     | 7.2.16           | 7.2.17-1PGSTY               | 含开发包                                                             |
-| valkey                    | 9.1.2            | 9.1.3-1PGSTY                | 安全更新；含开发包                                                   |
-| vchord                    | 1.1.1            | 1.2.0-2PGSTY                | PGSTY 分支重建；vchordg/halfvec 严格排序仍需重排候选                 |
-| vchord_bm25               | 0.3.0            | 1.0.0                       | PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级                   |
-| zlog                      | 1.2.18           | 1.2.20                      | 联动重建 PolarStore 与 PolarDB                                       |
+汇总 2026-10-31 至 2026-11-06 的软件包更新；同一包合并为期初版本到本批最终版本。
+
+| 名称                      | 旧版本                        | 新版本                        | 说明                                                                 |
+|:--------------------------|:------------------------------|:------------------------------|:---------------------------------------------------------------------|
+| address_standardizer      | -                             | 3.7.0-1PGSTY                  | EL8 补包；独立包；SQL 3.7；含 data_us；不依赖 PostGIS                |
+| agensgraph-18             | 2.18.6.0                      | 2.18.6.1                      | PG18.6 内核与配套扩展                                                |
+| cat_tools                 | 0.3.0                         | 0.4.0                         | 纯 SQL                                                               |
+| cloudberry                | 2.1.0                         | 2.2.0                         | 内核与配套扩展                                                       |
+| cloudberry-backup         | 2.1.0                         | 2.2.0                         | 六个备份恢复工具                                                     |
+| cloudberry-pxf            | 2.1.0                         | 2.2.0                         | 配套 Cloudberry 2.2.0；含 pxf/pxf_fdw                                |
+| containerd.io             | -                             | 2.4.2-3                       | 官方 RPM                                                             |
+| count_distinct            | 3.0.2                         | 3.0.2                         | PGDG 补齐 EL8                                                        |
+| docker-buildx-plugin      | -                             | 0.38.1                        | 官方 RPM                                                             |
+| docker-ce                 | -                             | 29.9.2                        | 官方 RPM                                                             |
+| docker-ce-cli             | -                             | 29.9.2                        | 官方 RPM                                                             |
+| docker-ce-rootless-extras | -                             | 29.9.2                        | 官方 RPM                                                             |
+| docker-compose-plugin     | -                             | 5.7.0                         | 官方 RPM                                                             |
+| emaj                      | 5.0.0                         | 5.0.1                         | PG14-18；修复 emaj_adm 权限提升与并行回滚问题                        |
+| graphblas                 | 10.5.0                        | 10.5.2                        | 运行库与开发包；ABI 10                                               |
+| groonga                   | 16.1.4                        | 16.1.5                        | EL8/9/10；x86_64/aarch64；含 libs/devel；已本地入库                  |
+| groonga-tokenizer-mecab   | 16.1.4                        | 16.1.5                        | EL8/9/10；x86_64/aarch64；MeCab 分词器；已本地入库                   |
+| hypopg                    | 1.4.4                         | 1.4.5                         | PGDG 软件包                                                          |
+| kafgres                   | 0.3.1                         | 0.3.2                         | PG16                                                                 |
+| lagraph                   | 1.2.2                         | 1.2.2                         | 使用 GraphBLAS 10.5.2 重建                                           |
+| login_hook                | 1.7                           | 1.8                           | PGDG PG14-17；Pigsty PG18；x86 补包修复 PG14 错误路径                |
+| nginx                     | -                             | 1.31.8                        | 官方 RPM                                                             |
+| nginx-module-acme         | -                             | 1.31.8+0.4.1                  | 官方 RPM                                                             |
+| onesparse                 | 1.0.0-1PGSTY                  | 1.0.0-2PGSTY                  | PG18；随 GraphBLAS/LAGraph 重建；SQL 0.1.0；需预加载                 |
+| orioledb-16               | 1.10~beta19                   | 1.10.1                        | PG16.15 内核；SQL 1.10                                               |
+| orioledb-17               | 1.10~beta19                   | 1.10.1                        | PG17.11 内核；SQL 1.10                                               |
+| orioledb-18               | 1.10~beta19                   | 1.10.1                        | PG18.6 内核；SQL 1.10                                                |
+| passwordpolicy            | 2.0.5                         | 2.0.6                         | PGDG 软件包                                                          |
+| pg_agent_gate             | 0.3.0                         | 0.4.1                         | PG18；修复代理角色逃逸；需预加载                                     |
+| pg_anon                   | 3.2.3                         | 3.3.2                         | PG14-18；pgrx 0.19.3；安全更新；需要删除并重建                       |
+| pg_currency               | 0.0.4                         | 0.0.6                         | PG14-18；扩展名 currency                                             |
+| pg_duckdb                 | 1.1.1                         | 1.2.0                         | DuckDB 2.0.0；与 duckdb_fdw 冲突                                     |
+| pg_extra_time             | 2.1.0                         | 2.1.0                         | PGDG 覆盖 EL8/9/10                                                   |
+| pg_fts                    | 1.14.3                        | 1.16.0                        | PG17-18；修复 top-k 与删除后性能                                     |
+| pg_graphql                | 1.6.2                         | 1.6.3                         | 修复 nodeId 的带引号主键                                             |
+| pg_hint_plan              | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG 的 PG18/17/16/15/14 发布线                                      |
+| pg_improv                 | 0.12.1                        | 0.12.2                        | PG15-18；pgrx 0.19.3；修复空闲同步工作进程                           |
+| pg_integrity_checksums    | 2.0.0                         | 2.1.0                         | 统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线                |
+| pg_lake                   | 3.5.9                         | 3.6.0                         | PG16-18；八个扩展；SQL 3.6；EL9/10                                   |
+| pg_lion                   | -                             | 0.3.0                         | PG16-18；含 citext/vector 配套扩展                                   |
+| pg_living_assertions      | 0.5.10                        | 0.5.10                        | 纯 SQL；全平台重建                                                   |
+| pg_mentat                 | 1.18.0                        | 1.19.1                        | 修复并发写入与 RLS；升级需持锁                                       |
+| pg_mooncake               | 0.2.0                         | 0.3.0-1PGSTY                  | PGSTY 分支；适配 pg_duckdb 1.2.0 / DuckDB 2.0.0；缺少 0.2.0 升级脚本 |
+| pg_net                    | 0.20.5                        | 0.20.5                        | PGDG 新增 EL10；其他缺口由 Pigsty 补齐                               |
+| pg_opencc                 | -                             | 0.1.0                         | PG14-18；pgsty/pg_opencc；扩展名 opencc                              |
+| pg_parquet                | 0.5.1-3PIGSTY                 | 0.5.1-4PGSTY                  | 修复流式 COPY 临时文件泄漏                                           |
+| pg_permissions            | 1.4.1                         | 1.4.1                         | Pigsty 重建；SQL 1.4，含 1.3 升级脚本                                |
+| pg_rewrite                | 2.2                           | 2.2                           | 扩充 PGDG 覆盖                                                       |
+| pg_search                 | 0.26.3                        | 0.26.5                        | PG15-18；需预加载                                                    |
+| pg_stat_kcache            | 2.3.1                         | 2.3.2                         | PGDG 软件包                                                          |
+| pg_statecharts            | -                             | 0.1.0                         | PG16-18；含 pg_statecharts_dev                                       |
+| pg_tle                    | 1.5.2                         | 1.5.3                         | PGDG 覆盖 EL8/9/10                                                   |
+| pg_tokenizer              | 0.1.1                         | 1.0.0                         | PGSTY 分支；原生 tsvector；外置 Lindera 6 词典                       |
+| pg_tre                    | 4.5.3                         | 4.6.1                         | PG17-18；修复 sparsemap 越界；优化匹配                               |
+| pg_utl_smtp               | 1.0                           | 2.0                           | PGDG 覆盖 EL8/9/10                                                   |
+| pg_wait_sampling          | 1.1.11                        | 1.1.11                        | 扩充 PGDG 覆盖                                                       |
+| pg_warren                 | -                             | 0.8.0                         | PG15-18                                                              |
+| pgaudit                   | 1.6.3 / 1.7.1                 | 1.6.3-1PGSTY / 1.7.1-1PGSTY   | PG14/15；统一 pgaudit_$v 包名并兼容 PGDG 旧名；PG16-18 复用 PGDG     |
+| pgdog                     | 0.1.62                        | 0.1.63                        | PostgreSQL 连接池                                                    |
+| pgmnemo                   | 0.20.0                        | 0.21.0                        | PG17-18；pg_dump 会保留语料表和序列                                  |
+| pgroonga                  | 4.1.0-3PGSTY.el9              | 4.1.0-4PGSTY.el9              | PG14-18；EL9 修订；EL8/10 以 2PGSTY 重建；Groonga 16.1.5             |
+| pgrouting                 | 4.0.1                         | 4.0.2                         | PGDG 软件包                                                          |
+| pgsentinel                | 1.5.1                         | 1.5.2                         | PGDG 软件包                                                          |
+| polardb-17                | 17.11.1.0-1PGSTY              | 17.11.1.0-2PGSTY              | PG17.11 内核与扩展；使用新版 PolarStore SDK 重建                     |
+| polarstore                | 1.2.42-2PGSTY                 | 1.2.42-3PGSTY                 | 使用 zlog 1.2.20 重建                                                |
+| postgis                   | 3.6.4                         | 3.7.0-1PGSTY                  | EL8 补包；EL9/10 由 PGDG 主供                                        |
+| postgis_tiger_geocoder    | -                             | 2025.2-1PGSTY                 | EL8 PG16-18 补包；独立 noarch 包                                     |
+| provsql                   | 1.13.0                        | 1.13.1                        | 修复电路大小与取消操作；需预加载                                     |
+| rdkit                     | 202609.1                      | 202609.2                      | EL9/10、D13/U24/U26；旧系统保留旧版                                  |
+| redis                     | 7.2.16                        | 7.2.17-1PGSTY                 | 含开发包                                                             |
+| set_user                  | 4.2.0                         | 4.3.0                         | PGDG 软件包                                                          |
+| timescaledb_toolkit       | 1.26.0                        | 1.27.0                        | PG15-18；保留 PG14 旧包                                              |
+| valkey                    | 9.1.2                         | 9.1.3-1PGSTY                  | 安全更新；含开发包                                                   |
+| vchord                    | 1.1.1                         | 1.2.0-2PGSTY                  | PGSTY 分支重建；vchordg/halfvec 严格排序仍需重排候选                 |
+| vchord_bm25               | 0.3.0                         | 1.0.0                         | PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级                   |
+| wal2json                  | 2.6                           | 2.7                           | PGDG 软件包                                                          |
+| zlog                      | 1.2.18                        | 1.2.20                        | 联动重建 PolarStore 与 PolarDB                                       |
 {.wide .expand}
-
-
-## 2026-10-31
-
-| 名称                    | 旧版本                        | 新版本                        | 说明                                                                                                                                |
-|:------------------------|:------------------------------|:------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|
-| emaj                    | 5.0.0                         | 5.0.1                         | PG14-18；修复 emaj_adm 权限提升与并行回滚问题                                                                                       |
-| groonga                 | 16.1.4                        | 16.1.5                        | EL8/9/10；x86_64/aarch64；含 libs/devel；已本地入库                                                                                 |
-| groonga-tokenizer-mecab | 16.1.4                        | 16.1.5                        | EL8/9/10；x86_64/aarch64；MeCab 分词器；已本地入库                                                                                  |
-| pg_anon                 | 3.2.3                         | 3.3.2                         | PG14-18；pgrx 0.19.3；安全更新；需要删除并重建                                                                                      |
-| pg_fts                  | 1.14.3                        | 1.15.1                        | PG17-18；修复配置分析器分块重解析                                                                                                   |
-| pg_improv               | 0.12.1                        | 0.12.2                        | PG15-18；pgrx 0.19.3；修复空闲同步工作进程                                                                                          |
-| pg_integrity_checksums  | 2.0.0                         | 2.0.2                         | PG14-18；兼容 PostgreSQL 19 API；SQL 升级为空操作                                                                                   |
-| pg_search               | 0.26.3                        | 0.26.4                        | PG15-18；pgrx 0.19.3；需要预加载；已本地入库                                                                                        |
-| pgmnemo                 | 0.20.0                        | 0.21.0                        | PG17-18；pg_dump 会保留语料表和序列                                                                                                 |
-| pgroonga                | 4.1.0-3PGSTY.el9              | 4.1.0-4PGSTY.el9              | PG14-18；EL9 修订；EL8/10 以 2PGSTY 重建；Groonga 16.1.5                                                                            |
-| count_distinct          | 3.0.2                         | 3.0.2                         | PGDG 当前覆盖 EL8/9/10 x86_64/aarch64；本轮变化是 EL8 单元格，PIGSTY 的 Debian/Ubuntu 单元格保持不变。                              |
-| login_hook              | 1.7                           | 1.8                           | PG14-17 的 EL8/9/10 x86_64/aarch64 使用 PGDG 1.8；PG18 仍为 PIGSTY 1.7。                                                            |
-| mobilitydb              | 1.3.1                         | 1.3.1                         | D12/D13/U24/U26 x86_64/aarch64 使用 PGDG 1.3.1；EL 与 U22 仍为 PIGSTY 1.3.1。                                                       |
-| pg_extra_time           | 2.1.0                         | 2.1.0                         | EL8/9/10 x86_64/aarch64 使用 PGDG 2.1.0；Debian/Ubuntu 仍为 PIGSTY 2.1.0。                                                          |
-| pg_hint_plan            | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG 提供 PG14-18 发布线；本轮刷新了 EL8 x86_64/aarch64，当前矩阵的其他操作系统单元格已有覆盖。PG19 仍使用独立的上游 1.9.0 发布线。 |
-| pg_ivm                  | 1.17                          | 1.17                          | D12/D13/U22/U24/U26 x86_64/aarch64 使用 PGDG 1.17；EL 仍为 PIGSTY 1.17。                                                            |
-| pg_net                  | 0.20.5                        | 0.20.5                        | EL10 x86_64/aarch64 新增 PGDG 0.20.5；其他支持单元格继续使用 PIGSTY。                                                               |
-| pg_rewrite              | 2.2                           | 2.2                           | PGDG 2.2 扩展覆盖 EL8/9/10；已有的 D/U PGDG 覆盖保持不变。                                                                          |
-| pg_stat_kcache          | 2.3.1                         | 2.3.2                         | PGDG RPM 元数据与包覆盖统一到 2.3.2，覆盖 EL/D/U x86_64/aarch64。                                                                   |
-| pg_tle                  | 1.5.2                         | 1.5.3                         | PGDG 1.5.3 覆盖 EL8/9/10；本轮新增 EL10 aarch64，D/U 仍使用 PIGSTY 1.5.2。                                                          |
-| pg_utl_smtp             | 1.0                           | 2.0                           | PGDG 2.0 覆盖 EL8/9/10；本轮新增 EL10 aarch64，D/U 仍使用 PIGSTY 1.0。                                                              |
-| pg_wait_sampling        | 1.1.11                        | 1.1.11                        | PGDG 1.1.11 扩展覆盖 EL8/9/10；已有的 D/U PGDG 覆盖保持不变。                                                                       |
-| pgrouting               | 4.0.1                         | 4.0.2                         | PGDG 当前覆盖所列 EL/D/U x86_64/aarch64 单元格；本轮将 D12/D13/U22/U24/U26 更新到 4.0.2。                                           |
-| pgsentinel              | 1.5.1                         | 1.5.2                         | PGDG 的 D/U 软件包更新到 1.5.2；EL 仍为 1.5.1。                                                                                     |
-| postgis                 | 3.6.4                         | 3.7.0                         | PGDG 的 D/U 软件包更新到 3.7.0；EL 仍为 3.6.4。上游主要版本更新；未执行本地重建。                                                   |
-| wal2json                | 2.6                           | 2.7                           | PGDG 的 D/U 与大多数 EL 单元格更新到 2.7；EL10 aarch64 仍为 2.6。                                                                   |
-{.wide .expand}
-
 
 
 ## 2026-10-29

@@ -188,6 +188,26 @@ pig ext add pg18-client          # 仅安装客户端工具
 将 `18` 替换为所需的大版本，也可以用 `pgsql` 配合 `-v 18`。
 安装特定软件包版本时，使用 `NAME=VERSION`，版本必须存在于已配置的仓库中。
 
+### 分类别名 {#category-aliases}
+
+分类别名会根据当前平台和 PostgreSQL 大版本矩阵选择软件包。带数字的形式从别名中取得目标大版本；
+`pgsql-<category> -v N` 与 `pgN-<category>` 使用相同的目标大版本。
+
+```bash
+pig ext add pg14-gis --plan
+pig ext add pgsql-gis -v 14 --plan
+pig install pg14-gis --plan
+```
+
+`pgsql-<category>` 未指定版本时，沿用现有命令的版本探测与默认选择；解析器使用最终得到的目标版本，
+未提供目标时默认为最新稳定版。稳定版本严格使用所选操作系统和架构对应的矩阵行。已知操作系统缺少的矩阵单元
+仍视为不可用；可见的主导非 contrib 条目解析到相同软件包时会去重。Beta PostgreSQL 目标继续沿用兼容策略：
+借用最新稳定版矩阵，并只保留 PGDG 来源的条目。
+
+软件包名称由目录针对目标大版本给出。例如 EL 上 PG14/15 的 pgaudit 会解析为 `pgaudit_14`/`pgaudit_15`，
+PostGIS 3.7 系列会解析为 `postgis37_N`；地址标准化器和 PG16 以上的 Tiger Geocoder 使用各自独立的目录条目。
+已配置的软件源必须提供所选软件包。
+
 **选项：**
 
 - `-v|--version`：指定 PG 大版本

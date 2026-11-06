@@ -10,6 +10,7 @@ require (
 	github.com/spf13/pflag v1.0.10
 	github.com/ulikunitz/xz v0.5.17
 	golang.org/x/sync v0.24.0
+	golang.org/x/text v0.43.0
 )
 
 require (
@@ -19,5 +20,4 @@ require (
 	github.com/jackc/puddle/v2 v2.2.3 // indirect
 	github.com/pgsty/oink v1.5.0
 	golang.org/x/sys v0.49.0 // indirect
-	golang.org/x/text v0.43.0 // indirect
 )

@@ -6,89 +6,90 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
-## 2026-11-05
+## 2026-11-06
 
-| Name                      | Old              | New                         | Comment                                                                          |
-|:--------------------------|:-----------------|:----------------------------|:---------------------------------------------------------------------------------|
-| address_standardizer      | -                | 3.7.0-1PGSTY                | EL8 gap fill; standalone; SQL 3.7; includes data_us; no PostGIS dependency       |
-| agensgraph-18             | 2.18.6.0         | 2.18.6.1                    | PG18.6 kernel and contrib                                                        |
-| cat_tools                 | 0.3.0            | 0.4.0                       | SQL-only                                                                         |
-| cloudberry                | 2.1.0            | 2.2.0                       | Kernel and contrib                                                               |
-| cloudberry-backup         | 2.1.0            | 2.2.0                       | Six backup/restore tools                                                         |
-| cloudberry-pxf            | 2.1.0            | 2.2.0                       | For Cloudberry 2.2.0; includes pxf/pxf_fdw                                       |
-| containerd.io             | -                | 2.4.2-3                     | Official RPM                                                                     |
-| docker-buildx-plugin      | -                | 0.38.1                      | Official RPM                                                                     |
-| docker-ce                 | -                | 29.9.2                      | Official RPM                                                                     |
-| docker-ce-cli             | -                | 29.9.2                      | Official RPM                                                                     |
-| docker-ce-rootless-extras | -                | 29.9.2                      | Official RPM                                                                     |
-| docker-compose-plugin     | -                | 5.7.0                       | Official RPM                                                                     |
-| graphblas                 | 10.5.0           | 10.5.2                      | Runtime/devel; ABI 10                                                            |
-| lagraph                   | 1.2.2            | 1.2.2                       | Rebuilt with GraphBLAS 10.5.2                                                    |
-| nginx                     | -                | 1.31.8                      | Official RPM                                                                     |
-| nginx-module-acme         | -                | 1.31.8+0.4.1                | Official RPM                                                                     |
-| onesparse                 | 1.0.0-1PGSTY     | 1.0.0-2PGSTY                | PG18; GraphBLAS/LAGraph rebuild; SQL 0.1.0; preload required                     |
-| orioledb-16               | 1.10~beta19      | 1.10.1                      | PG16.15 kernel; SQL 1.10                                                         |
-| orioledb-17               | 1.10~beta19      | 1.10.1                      | PG17.11 kernel; SQL 1.10                                                         |
-| orioledb-18               | 1.10~beta19      | 1.10.1                      | PG18.6 kernel; SQL 1.10                                                          |
-| pg_agent_gate             | 0.3.0            | 0.4.1                       | PG18; fixes agent-role escape; preload required                                  |
-| pg_duckdb                 | 1.1.1            | 1.2.0                       | DuckDB 2.0.0; conflicts with duckdb_fdw                                          |
-| pg_fts                    | 1.15.1           | 1.15.2                      | PG17-18; fixes top-k and post-delete slowdown                                    |
-| pg_graphql                | 1.6.2            | 1.6.3                       | Fixes quoted primary keys in nodeId                                              |
-| pg_integrity_checksums    | 2.0.2            | 2.1.0                       | Canonical byte order; recompute hash/catalog baselines when upgrading from 2.0.0 |
-| pg_lake                   | 3.5.9            | 3.5.10                      | PG16-18; EL9/10; eight extensions, SQL 3.5; Brotli security fix                  |
-| pg_living_assertions      | 0.5.10           | 0.5.10                      | SQL-only rebuild                                                                 |
-| pg_mentat                 | 1.18.0           | 1.19.0                      | Concurrent-write/RLS fixes; upgrade takes locks                                  |
-| pg_mooncake               | 0.2.0            | 0.3.0-1PGSTY                | PGSTY fork; pg_duckdb 1.2.0 / DuckDB 2.0.0; no 0.2.0 upgrade script              |
-| pg_parquet                | 0.5.1-3PIGSTY    | 0.5.1-4PGSTY                | Fixes streaming COPY temporary-file leaks                                        |
-| pg_tokenizer              | 0.1.1            | 1.0.0                       | PGSTY fork; native tsvector; external Lindera 6 dictionaries                     |
-| pg_tre                    | 4.5.3            | 4.6.1                       | PG17-18; fixes sparsemap bounds; faster matching                                 |
-| pgaudit                   | 1.6.3 / 1.7.1    | 1.6.3-1PGSTY / 1.7.1-1PGSTY | PG14/15; pgaudit_$v with PGDG aliases; PG16-18 use PGDG                          |
-| pgdog                     | 0.1.62           | 0.1.63                      | PostgreSQL connection pooler                                                     |
-| polardb-17                | 17.11.1.0-1PGSTY | 17.11.1.0-2PGSTY            | PG17.11 kernel/contrib; rebuilt with updated PolarStore SDK                      |
-| polarstore                | 1.2.42-2PGSTY    | 1.2.42-3PGSTY               | Rebuilt with zlog 1.2.20                                                         |
-| postgis                   | 3.6.4            | 3.7.0-1PGSTY                | EL8 gap fill; PGDG primary on EL9/10                                             |
-| postgis_tiger_geocoder    | -                | 2025.2-1PGSTY               | EL8 PG16-18 gap fill; standalone noarch package                                  |
-| provsql                   | 1.13.0           | 1.13.1                      | Fixes circuit sizes/cancellation; preload required                               |
-| redis                     | 7.2.16           | 7.2.17-1PGSTY               | Includes devel package                                                           |
-| valkey                    | 9.1.2            | 9.1.3-1PGSTY                | Security update; includes devel package                                          |
-| vchord                    | 1.1.1            | 1.2.0-2PGSTY                | PGSTY fork/rebuild; rerank vchordg/halfvec candidates for strict order           |
-| vchord_bm25               | 0.3.0            | 1.0.0                       | PGSTY fork; native tsvector; no in-place upgrade from 0.3.x                      |
-| zlog                      | 1.2.18           | 1.2.20                      | Rebuilds PolarStore and PolarDB                                                  |
+Consolidated package changes from 2026-10-31 through 2026-11-06; repeated updates show the initial and final versions.
+
+| Name                      | Old                           | New                           | Comment                                                                          |
+|:--------------------------|:------------------------------|:------------------------------|:---------------------------------------------------------------------------------|
+| address_standardizer      | -                             | 3.7.0-1PGSTY                  | EL8 gap fill; standalone; SQL 3.7; includes data_us; no PostGIS dependency       |
+| agensgraph-18             | 2.18.6.0                      | 2.18.6.1                      | PG18.6 kernel and contrib                                                        |
+| cat_tools                 | 0.3.0                         | 0.4.0                         | SQL-only                                                                         |
+| cloudberry                | 2.1.0                         | 2.2.0                         | Kernel and contrib                                                               |
+| cloudberry-backup         | 2.1.0                         | 2.2.0                         | Six backup/restore tools                                                         |
+| cloudberry-pxf            | 2.1.0                         | 2.2.0                         | For Cloudberry 2.2.0; includes pxf/pxf_fdw                                       |
+| containerd.io             | -                             | 2.4.2-3                       | Official RPM                                                                     |
+| count_distinct            | 3.0.2                         | 3.0.2                         | PGDG fills EL8 gaps                                                              |
+| docker-buildx-plugin      | -                             | 0.38.1                        | Official RPM                                                                     |
+| docker-ce                 | -                             | 29.9.2                        | Official RPM                                                                     |
+| docker-ce-cli             | -                             | 29.9.2                        | Official RPM                                                                     |
+| docker-ce-rootless-extras | -                             | 29.9.2                        | Official RPM                                                                     |
+| docker-compose-plugin     | -                             | 5.7.0                         | Official RPM                                                                     |
+| emaj                      | 5.0.0                         | 5.0.1                         | PG14-18; fixes emaj_adm privilege escalation and parallel rollback               |
+| graphblas                 | 10.5.0                        | 10.5.2                        | Runtime/devel; ABI 10                                                            |
+| groonga                   | 16.1.4                        | 16.1.5                        | EL8/9/10; x86_64/aarch64; includes libs/devel; staged locally                    |
+| groonga-tokenizer-mecab   | 16.1.4                        | 16.1.5                        | EL8/9/10; x86_64/aarch64; MeCab tokenizer; staged locally                        |
+| hypopg                    | 1.4.4                         | 1.4.5                         | PGDG packages                                                                    |
+| kafgres                   | 0.3.1                         | 0.3.2                         | PG16                                                                             |
+| lagraph                   | 1.2.2                         | 1.2.2                         | Rebuilt with GraphBLAS 10.5.2                                                    |
+| login_hook                | 1.7                           | 1.8                           | PGDG PG14-17; Pigsty PG18; x86 supplement fixes PG14 error path                  |
+| nginx                     | -                             | 1.31.8                        | Official RPM                                                                     |
+| nginx-module-acme         | -                             | 1.31.8+0.4.1                  | Official RPM                                                                     |
+| onesparse                 | 1.0.0-1PGSTY                  | 1.0.0-2PGSTY                  | PG18; GraphBLAS/LAGraph rebuild; SQL 0.1.0; preload required                     |
+| orioledb-16               | 1.10~beta19                   | 1.10.1                        | PG16.15 kernel; SQL 1.10                                                         |
+| orioledb-17               | 1.10~beta19                   | 1.10.1                        | PG17.11 kernel; SQL 1.10                                                         |
+| orioledb-18               | 1.10~beta19                   | 1.10.1                        | PG18.6 kernel; SQL 1.10                                                          |
+| passwordpolicy            | 2.0.5                         | 2.0.6                         | PGDG packages                                                                    |
+| pg_agent_gate             | 0.3.0                         | 0.4.1                         | PG18; fixes agent-role escape; preload required                                  |
+| pg_anon                   | 3.2.3                         | 3.3.2                         | PG14-18; pgrx 0.19.3; security update; drop/recreate required                    |
+| pg_currency               | 0.0.4                         | 0.0.6                         | PG14-18; extension currency                                                      |
+| pg_duckdb                 | 1.1.1                         | 1.2.0                         | DuckDB 2.0.0; conflicts with duckdb_fdw                                          |
+| pg_extra_time             | 2.1.0                         | 2.1.0                         | PGDG covers EL8/9/10                                                             |
+| pg_fts                    | 1.14.3                        | 1.16.0                        | PG17-18; fixes top-k and delete performance                                      |
+| pg_graphql                | 1.6.2                         | 1.6.3                         | Fixes quoted primary keys in nodeId                                              |
+| pg_hint_plan              | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG PG18/17/16/15/14 release lines                                              |
+| pg_improv                 | 0.12.1                        | 0.12.2                        | PG15-18; pgrx 0.19.3; idle sync worker fix                                       |
+| pg_integrity_checksums    | 2.0.0                         | 2.1.0                         | Canonical byte order; recompute hash/catalog baselines when upgrading from 2.0.0 |
+| pg_lake                   | 3.5.9                         | 3.6.0                         | PG16-18; eight extensions; SQL 3.6; EL9/10                                         |
+| pg_lion                   | -                             | 0.3.0                         | PG16-18; includes citext/vector companions                                       |
+| pg_living_assertions      | 0.5.10                        | 0.5.10                        | SQL-only rebuild                                                                 |
+| pg_mentat                 | 1.18.0                        | 1.19.1                        | Concurrent-write/RLS fixes; upgrade takes locks                                  |
+| pg_mooncake               | 0.2.0                         | 0.3.0-1PGSTY                  | PGSTY fork; pg_duckdb 1.2.0 / DuckDB 2.0.0; no 0.2.0 upgrade script              |
+| pg_net                    | 0.20.5                        | 0.20.5                        | PGDG adds EL10; Pigsty fills other gaps                                          |
+| pg_opencc                 | -                             | 0.1.0                         | PG14-18; pgsty/pg_opencc; extension opencc                                       |
+| pg_parquet                | 0.5.1-3PIGSTY                 | 0.5.1-4PGSTY                  | Fixes streaming COPY temporary-file leaks                                        |
+| pg_permissions            | 1.4.1                         | 1.4.1                         | Pigsty rebuild; SQL 1.4 with 1.3 upgrade                                         |
+| pg_rewrite                | 2.2                           | 2.2                           | PGDG coverage expanded                                                           |
+| pg_search                 | 0.26.3                        | 0.26.5                        | PG15-18; preload required                                                        |
+| pg_stat_kcache            | 2.3.1                         | 2.3.2                         | PGDG packages                                                                    |
+| pg_statecharts            | -                             | 0.1.0                         | PG16-18; includes pg_statecharts_dev                                             |
+| pg_tle                    | 1.5.2                         | 1.5.3                         | PGDG covers EL8/9/10                                                             |
+| pg_tokenizer              | 0.1.1                         | 1.0.0                         | PGSTY fork; native tsvector; external Lindera 6 dictionaries                     |
+| pg_tre                    | 4.5.3                         | 4.6.1                         | PG17-18; fixes sparsemap bounds; faster matching                                 |
+| pg_utl_smtp               | 1.0                           | 2.0                           | PGDG covers EL8/9/10                                                             |
+| pg_wait_sampling          | 1.1.11                        | 1.1.11                        | PGDG coverage expanded                                                           |
+| pg_warren                 | -                             | 0.8.0                         | PG15-18                                                                          |
+| pgaudit                   | 1.6.3 / 1.7.1                 | 1.6.3-1PGSTY / 1.7.1-1PGSTY   | PG14/15; pgaudit_$v with PGDG aliases; PG16-18 use PGDG                          |
+| pgdog                     | 0.1.62                        | 0.1.63                        | PostgreSQL connection pooler                                                     |
+| pgmnemo                   | 0.20.0                        | 0.21.0                        | PG17-18; preserves corpus tables and sequences in pg_dump                        |
+| pgroonga                  | 4.1.0-3PGSTY.el9              | 4.1.0-4PGSTY.el9              | PG14-18; EL9 release; EL8/10 rebuilt at 2PGSTY; Groonga 16.1.5                   |
+| pgrouting                 | 4.0.1                         | 4.0.2                         | PGDG packages                                                                    |
+| pgsentinel                | 1.5.1                         | 1.5.2                         | PGDG packages                                                                    |
+| polardb-17                | 17.11.1.0-1PGSTY              | 17.11.1.0-2PGSTY              | PG17.11 kernel/contrib; rebuilt with updated PolarStore SDK                      |
+| polarstore                | 1.2.42-2PGSTY                 | 1.2.42-3PGSTY                 | Rebuilt with zlog 1.2.20                                                         |
+| postgis                   | 3.6.4                         | 3.7.0-1PGSTY                  | EL8 gap fill; PGDG primary on EL9/10                                             |
+| postgis_tiger_geocoder    | -                             | 2025.2-1PGSTY                 | EL8 PG16-18 gap fill; standalone noarch package                                  |
+| provsql                   | 1.13.0                        | 1.13.1                        | Fixes circuit sizes/cancellation; preload required                               |
+| rdkit                     | 202609.1                      | 202609.2                      | EL9/10; D13/U24/U26; older OS packages retained                                  |
+| redis                     | 7.2.16                        | 7.2.17-1PGSTY                 | Includes devel package                                                           |
+| set_user                  | 4.2.0                         | 4.3.0                         | PGDG packages                                                                    |
+| timescaledb_toolkit       | 1.26.0                        | 1.27.0                        | PG15-18; older PG14 packages retained                                            |
+| valkey                    | 9.1.2                         | 9.1.3-1PGSTY                  | Security update; includes devel package                                          |
+| vchord                    | 1.1.1                         | 1.2.0-2PGSTY                  | PGSTY fork/rebuild; rerank vchordg/halfvec candidates for strict order           |
+| vchord_bm25               | 0.3.0                         | 1.0.0                         | PGSTY fork; native tsvector; no in-place upgrade from 0.3.x                      |
+| wal2json                  | 2.6                           | 2.7                           | PGDG packages                                                                    |
+| zlog                      | 1.2.18                        | 1.2.20                        | Rebuilds PolarStore and PolarDB                                                  |
 {.wide .expand}
-
-
-## 2026-10-31
-
-| Name                    | Old                           | New                           | Comment                                                                                                                                                                                      |
-|:------------------------|:------------------------------|:------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| emaj                    | 5.0.0                         | 5.0.1                         | PG14-18; fixes emaj_adm privilege escalation and parallel rollback                                                                                                                           |
-| groonga                 | 16.1.4                        | 16.1.5                        | EL8/9/10; x86_64/aarch64; includes libs/devel; staged locally                                                                                                                                |
-| groonga-tokenizer-mecab | 16.1.4                        | 16.1.5                        | EL8/9/10; x86_64/aarch64; MeCab tokenizer; staged locally                                                                                                                                    |
-| pg_anon                 | 3.2.3                         | 3.3.2                         | PG14-18; pgrx 0.19.3; security update; drop/recreate required                                                                                                                                |
-| pg_fts                  | 1.14.3                        | 1.15.1                        | PG17-18; fixes configured-analyzer chunked reparsing                                                                                                                                         |
-| pg_improv               | 0.12.1                        | 0.12.2                        | PG15-18; pgrx 0.19.3; idle sync worker fix                                                                                                                                                   |
-| pg_integrity_checksums  | 2.0.0                         | 2.0.2                         | PG14-18; PostgreSQL 19 API compatibility; SQL upgrade is a no-op                                                                                                                             |
-| pg_search               | 0.26.3                        | 0.26.4                        | PG15-18; pgrx 0.19.3; preload required; staged locally                                                                                                                                       |
-| pgmnemo                 | 0.20.0                        | 0.21.0                        | PG17-18; preserves corpus tables and sequences in pg_dump                                                                                                                                    |
-| pgroonga                | 4.1.0-3PGSTY.el9              | 4.1.0-4PGSTY.el9              | PG14-18; EL9 release; EL8/10 rebuilt at 2PGSTY; Groonga 16.1.5                                                                                                                               |
-| count_distinct          | 3.0.2                         | 3.0.2                         | PGDG currently covers EL8/9/10 x86_64/aarch64; this round changed the EL8 cells, while PIGSTY Debian/Ubuntu coordinates remain unchanged.                                                    |
-| login_hook              | 1.7                           | 1.8                           | PGDG 1.8 on EL8/9/10 x86_64/aarch64 for PG14-17; PG18 remains PIGSTY 1.7.                                                                                                                    |
-| mobilitydb              | 1.3.1                         | 1.3.1                         | PGDG 1.3.1 on D12/D13/U24/U26 x86_64/aarch64; EL and U22 remain PIGSTY 1.3.1.                                                                                                                |
-| pg_extra_time           | 2.1.0                         | 2.1.0                         | PGDG 2.1.0 on EL8/9/10 x86_64/aarch64; Debian/Ubuntu remain PIGSTY 2.1.0.                                                                                                                    |
-| pg_hint_plan            | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG PG14-18 release lines; this round refreshed EL8 x86_64/aarch64, while the current matrix already covers the other listed OS coordinates. PG19 remains the separate 1.9.0 upstream line. |
-| pg_ivm                  | 1.17                          | 1.17                          | PGDG 1.17 on D12/D13/U22/U24/U26 x86_64/aarch64; EL remains PIGSTY 1.17.                                                                                                                     |
-| pg_net                  | 0.20.5                        | 0.20.5                        | PGDG 0.20.5 added on EL10 x86_64/aarch64; other supported cells retain PIGSTY coverage.                                                                                                      |
-| pg_rewrite              | 2.2                           | 2.2                           | PGDG 2.2 expanded to EL8/9/10; existing D/U PGDG coverage remains.                                                                                                                           |
-| pg_stat_kcache          | 2.3.1                         | 2.3.2                         | PGDG RPM metadata and package coverage aligned to 2.3.2 across EL/D/U x86_64/aarch64.                                                                                                        |
-| pg_tle                  | 1.5.2                         | 1.5.3                         | PGDG 1.5.3 covers EL8/9/10; this round added EL10 aarch64, while D/U retain PIGSTY 1.5.2 coverage.                                                                                           |
-| pg_utl_smtp             | 1.0                           | 2.0                           | PGDG 2.0 covers EL8/9/10; this round added EL10 aarch64, while D/U retain PIGSTY 1.0 coverage.                                                                                               |
-| pg_wait_sampling        | 1.1.11                        | 1.1.11                        | PGDG 1.1.11 expanded to EL8/9/10; existing D/U PGDG coverage remains.                                                                                                                        |
-| pgrouting               | 4.0.1                         | 4.0.2                         | PGDG current coverage spans the listed EL/D/U x86_64/aarch64 coordinates; this round updated D12/D13/U22/U24/U26 to 4.0.2.                                                                   |
-| pgsentinel              | 1.5.1                         | 1.5.2                         | PGDG D/U packages updated to 1.5.2; EL remains 1.5.1.                                                                                                                                        |
-| postgis                 | 3.6.4                         | 3.7.0                         | PGDG D/U packages updated to 3.7.0; EL remains 3.6.4. Major upstream release; no local rebuild.                                                                                              |
-| wal2json                | 2.6                           | 2.7                           | PGDG D/U and most EL coordinates updated to 2.7; EL10 aarch64 remains 2.6.                                                                                                                   |
-{.wide .expand}
-
 
 
 ## 2026-10-29

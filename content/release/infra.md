@@ -26,6 +26,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | mcp-toolbox                | 1.15.0  | 1.16.0  | CGO; glibc 2.28            |
 | opentofu                   | 1.13.2  | 1.13.9  | State persistence fix      |
 | pgbackrest-exporter        | 0.24.0  | 0.25.0  | Source build               |
+| pig                        | 1.10.3  | 1.10.4  | 626 entries; alias fix     |
 | prometheus                 | 3.15.1  | 3.16.0  | TLS / Remote Write changes |
 | redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES           |
 | seaweedfs                  | 4.51    | 4.52    | Package: 4.52.0            |

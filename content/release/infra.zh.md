@@ -8,31 +8,32 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2026-11-06
 
-| 名称                       | 旧版本  | 新版本  | 备注                  |
-| :------------------------- | :------ | :------ | :-------------------- |
-| barn                       | 0.9.3   | 1.0.0   | 首个稳定版            |
-| caddy                      | 2.11.7  | 2.11.9  | FastCGI 安全修复      |
-| claude                     | 2.1.316 | 2.1.318 |                       |
-| code                       | 1.143.1 | 1.145.1 |                       |
-| code-server                | 4.144.0 | 4.145.0 |                       |
-| codex                      | 0.166.0 | 0.167.0 |                       |
-| crush                      | 0.99.0  | 0.100.0 |                       |
-| dblab                      | 0.54.0  | 0.55.1  |                       |
-| grafana-infinity-ds        | 4.1.5   | 4.1.6   | 安全与 gRPC 修复      |
-| grafana-victoriametrics-ds | 0.26.1  | 1.0.1   | POST/WITH 与安全修复  |
-| k3s                        | 1.37.1  | 1.37.2  | k3s1；2PGSTY          |
-| k3s-images                 | 1.37.1  | 1.37.2  | 离线镜像；2PGSTY      |
-| maddy                      | 0.9.6   | 0.9.7   | DMARC/IMAP 修复       |
-| mcp-toolbox                | 1.15.0  | 1.16.0  | CGO；glibc 2.28       |
-| opentofu                   | 1.13.2  | 1.13.9  | 状态持久化修复        |
-| pgbackrest-exporter        | 0.24.0  | 0.25.0  | 源码构建              |
-| prometheus                 | 3.15.1  | 3.16.0  | TLS/Remote Write 变更 |
-| redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES      |
-| seaweedfs                  | 4.51    | 4.52    | 包版本 4.52.0         |
-| silo-console               | 2.5.1   | 2.6.0   | 用量扫描              |
-| stalwart                   | 1.0.1   | 1.0.3   | OAuth 权限            |
-| uv                         | 0.13.6  | 0.13.7  |                       |
-| victoria-traces            | 0.12.1  | 0.13.0  | gRPC TLS 改为可选     |
+| 名称                       | 旧版本  | 新版本  | 备注                   |
+| :------------------------- | :------ | :------ | :--------------------- |
+| barn                       | 0.9.3   | 1.0.0   | 首个稳定版             |
+| caddy                      | 2.11.7  | 2.11.9  | FastCGI 安全修复       |
+| claude                     | 2.1.316 | 2.1.318 |                        |
+| code                       | 1.143.1 | 1.145.1 |                        |
+| code-server                | 4.144.0 | 4.145.0 |                        |
+| codex                      | 0.166.0 | 0.167.0 |                        |
+| crush                      | 0.99.0  | 0.100.0 |                        |
+| dblab                      | 0.54.0  | 0.55.1  |                        |
+| grafana-infinity-ds        | 4.1.5   | 4.1.6   | 安全与 gRPC 修复       |
+| grafana-victoriametrics-ds | 0.26.1  | 1.0.1   | POST/WITH 与安全修复   |
+| k3s                        | 1.37.1  | 1.37.2  | k3s1；2PGSTY           |
+| k3s-images                 | 1.37.1  | 1.37.2  | 离线镜像；2PGSTY       |
+| maddy                      | 0.9.6   | 0.9.7   | DMARC/IMAP 修复        |
+| mcp-toolbox                | 1.15.0  | 1.16.0  | CGO；glibc 2.28        |
+| opentofu                   | 1.13.2  | 1.13.9  | 状态持久化修复         |
+| pgbackrest-exporter        | 0.24.0  | 0.25.0  | 源码构建               |
+| pig                        | 1.10.3  | 1.10.4  | 626 扩展；分类别名修复 |
+| prometheus                 | 3.15.1  | 3.16.0  | TLS/Remote Write 变更  |
+| redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES       |
+| seaweedfs                  | 4.51    | 4.52    | 包版本 4.52.0          |
+| silo-console               | 2.5.1   | 2.6.0   | 用量扫描               |
+| stalwart                   | 1.0.1   | 1.0.3   | OAuth 权限             |
+| uv                         | 0.13.6  | 0.13.7  |                        |
+| victoria-traces            | 0.12.1  | 0.13.0  | gRPC TLS 改为可选      |
 
 ## 2026-11-01
 

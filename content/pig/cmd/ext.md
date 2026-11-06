@@ -190,6 +190,30 @@ Use these aliases to select a PostgreSQL package group:
 Replace `18` with the required major version. You can also use `pgsql` with `-v 18`.
 To select a specific package version, use `NAME=VERSION` with a version available in the configured repository.
 
+### Category aliases {#category-aliases}
+
+Category aliases select packages from the current platform and PostgreSQL-major matrix. The
+numbered form takes its target major from the alias; `pgsql-<category> -v N` uses the same target
+major as `pgN-<category>`.
+
+```bash
+pig ext add pg14-gis --plan
+pig ext add pgsql-gis -v 14 --plan
+pig install pg14-gis --plan
+```
+
+When `pgsql-<category>` has no explicit version, the existing command version probing and default
+selection apply; the resolver uses the resulting target (latest stable when no target is supplied).
+Stable targets use their exact matrix row for the selected OS and architecture. Missing cells on a
+known OS remain unavailable, and visible leading non-contrib entries that resolve to the same
+package are deduplicated. Beta PostgreSQL targets retain the compatibility behavior of borrowing
+the latest stable matrix and keeping PGDG-origin entries only.
+
+The package name comes from the catalog for the requested major. For example, EL PG14/15 pgaudit
+resolves through `pgaudit_14`/`pgaudit_15`, while the PostGIS 3.7 family resolves through
+`postgis37_N`; its address-standardizer and PG16+ Tiger Geocoder packages have their own catalog
+entries. The configured repository must provide the selected package.
+
 **Options:**
 
 - `-v|--version`: specify PG major version

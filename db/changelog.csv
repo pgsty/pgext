@@ -1,79 +1,121 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
-2026-11-05,address_standardizer,,3.7.0-1PGSTY,"EL8 gap fill; standalone; SQL 3.7; includes data_us; no PostGIS dependency; U24 ARM64 PG18 pilot only; standalone; SQL 3.7; includes data_us; RPM 3.7.0-1PGSTY, DEB 3.7.0",EL8 补包；独立包；SQL 3.7；含 data_us；不依赖 PostGIS；仅 U24 ARM64 PG18 代表性构建；独立包；SQL 3.7；含 data_us；RPM 3.7.0-1PGSTY，DEB 3.7.0
-2026-11-05,agensgraph-18,2.18.6.0,2.18.6.1,PG18.6 kernel and contrib,PG18.6 内核与配套扩展
-2026-11-05,cat_tools,0.3.0,0.4.0,SQL-only,纯 SQL
-2026-11-05,cloudberry,2.1.0,2.2.0,Kernel and contrib,内核与配套扩展
-2026-11-05,cloudberry_backup,2.1.0,2.2.0,Six backup/restore tools,六个备份恢复工具
-2026-11-05,cloudberry_pxf,2.1.0,2.2.0,For Cloudberry 2.2.0; includes pxf/pxf_fdw,配套 Cloudberry 2.2.0；含 pxf/pxf_fdw
-2026-11-05,containerd.io,,2.4.2-3,Official RPM; Official DEB; Bullseye 2.3.4-2,官方 RPM；官方 DEB；Bullseye 2.3.4-2
-2026-11-05,docker-buildx-plugin,,0.38.1,Official RPM; Official DEB; Bullseye 0.37.0,官方 RPM；官方 DEB；Bullseye 0.37.0
-2026-11-05,docker-ce,,29.9.2,Official RPM; Official DEB; Bullseye 29.8.0,官方 RPM；官方 DEB；Bullseye 29.8.0
-2026-11-05,docker-ce-cli,,29.9.2,Official RPM; Official DEB; Bullseye 29.8.0,官方 RPM；官方 DEB；Bullseye 29.8.0
-2026-11-05,docker-ce-rootless-extras,,29.9.2,Official RPM; Official DEB; Bullseye 29.8.0,官方 RPM；官方 DEB；Bullseye 29.8.0
-2026-11-05,docker-compose-plugin,,5.7.0,Official RPM; Official DEB; Bullseye 5.5.1,官方 RPM；官方 DEB；Bullseye 5.5.1
-2026-11-05,emaj,5.0.0,5.0.1,Fixes privilege escalation and parallel rollback,修复提权与并行回滚
-2026-11-05,graphblas,10.5.0,10.5.2,Runtime/devel; ABI 10,运行库与开发包；ABI 10
-2026-11-05,lagraph,1.2.2,1.2.2,Rebuilt with GraphBLAS 10.5.2,使用 GraphBLAS 10.5.2 重建
-2026-11-05,nginx,,1.31.8,Official RPM; Official DEB; Bullseye 1.31.6,官方 RPM；官方 DEB；Bullseye 1.31.6
-2026-11-05,nginx-module-acme,,1.31.8+0.4.1,Official RPM; Official DEB; Bullseye 1.31.6+0.4.1,官方 RPM；官方 DEB；Bullseye 1.31.6+0.4.1
-2026-11-05,one_sparse,1.0.0-1PGSTY,1.0.0-2PGSTY,PG18; GraphBLAS/LAGraph rebuild; SQL 0.1.0; preload required,PG18；随 GraphBLAS/LAGraph 重建；SQL 0.1.0；需预加载
-2026-11-05,orioledb-16,1.10~beta19,1.10.1,PG16.15 kernel; SQL 1.10,PG16.15 内核；SQL 1.10
-2026-11-05,orioledb-17,1.10~beta19,1.10.1,PG17.11 kernel; SQL 1.10,PG17.11 内核；SQL 1.10
-2026-11-05,orioledb-18,1.10~beta19,1.10.1,PG18.6 kernel; SQL 1.10,PG18.6 内核；SQL 1.10
-2026-11-05,pg_agent_gate,0.3.0,0.4.1,PG18; fixes agent-role escape; preload required,PG18；修复代理角色逃逸；需预加载
-2026-11-05,pg_anon,3.2.3,3.3.2,Security update; drop/recreate required,安全更新；需删除并重建扩展
-2026-11-05,pg_duckdb,1.1.1,1.2.0,DuckDB 2.0.0; conflicts with duckdb_fdw,DuckDB 2.0.0；与 duckdb_fdw 冲突
-2026-11-05,pg_fts,1.15.1,1.15.2,PG17-18; fixes top-k and post-delete slowdown,PG17-18；修复 top-k 与删除后性能退化
-2026-11-05,pg_graphql,1.6.2,1.6.3,Fixes quoted primary keys in nodeId,修复 nodeId 的带引号主键
-2026-11-05,pg_improv,0.12.1,0.12.2,PG15-18; fixes idle sync worker,PG15-18；修复空闲同步 worker
-2026-11-05,pg_integrity_checksums,2.0.2,2.1.0,Canonical byte order; recompute hash/catalog baselines when upgrading from 2.0.0,统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线
-2026-11-05,pg_lake,3.5.9,3.5.10,"PG16-18; EL9/10; eight extensions, SQL 3.5; Brotli security fix; PG16-18; eight extensions, SQL 3.5; Brotli security fix",PG16-18；仅 EL9/10；八个扩展，SQL 3.5；Brotli 安全修复；PG16-18；八个扩展，SQL 3.5；Brotli 安全修复
-2026-11-05,pg_living_assertions,0.5.10,0.5.10,SQL-only rebuild,纯 SQL；全平台重建
-2026-11-05,pg_mentat,1.18.0,1.19.0,Concurrent-write/RLS fixes; upgrade takes locks,修复并发写入与 RLS；升级需持锁
-2026-11-05,pg_mooncake,0.2.0,0.3.0-1PGSTY,PGSTY fork; pg_duckdb 1.2.0 / DuckDB 2.0.0; no 0.2.0 upgrade script,PGSTY 分支；适配 pg_duckdb 1.2.0 / DuckDB 2.0.0；缺少 0.2.0 升级脚本
-2026-11-05,pg_parquet,0.5.1-3PIGSTY,0.5.1-4PGSTY,Fixes streaming COPY temporary-file leaks,修复流式 COPY 临时文件泄漏
-2026-11-05,pg_search,0.26.3,0.26.4,PG15-18; fixes partitioned-search/window queries; preload required,PG15-18；修复分区搜索与窗口查询；需预加载
-2026-11-05,pg_tokenizer,0.1.1,1.0.0,PGSTY fork; native tsvector; external Lindera 6 dictionaries,PGSTY 分支；原生 tsvector；外置 Lindera 6 词典
-2026-11-05,pg_tre,4.5.3,4.6.1,PG17-18; fixes sparsemap bounds; faster matching,PG17-18；修复 sparsemap 越界；优化匹配
-2026-11-05,pgaudit,1.6.3 / 1.7.1,1.6.3-1PGSTY / 1.7.1-1PGSTY,PG14/15; pgaudit_$v with PGDG aliases; PG16-18 use PGDG,PG14/15；统一 pgaudit_$v 包名并兼容 PGDG 旧名；PG16-18 复用 PGDG
-2026-11-05,pgdog,0.1.62,0.1.63,PostgreSQL connection pooler,PostgreSQL 连接池
-2026-11-05,pgmnemo,0.20.0,0.21.0,PG17-18; pg_dump includes corpus tables/sequences,PG17-18；pg_dump 纳入语料表与序列
-2026-11-05,polardb-17,17.11.1.0-1PGSTY,17.11.1.0-2PGSTY,PG17.11 kernel/contrib; rebuilt with updated PolarStore SDK,PG17.11 内核与扩展；使用新版 PolarStore SDK 重建
-2026-11-05,polarstore,1.2.42-2PGSTY,1.2.42-3PGSTY,Rebuilt with zlog 1.2.20,使用 zlog 1.2.20 重建
-2026-11-05,postgis,3.6.4,3.7.0-1PGSTY,"EL8 gap fill; PGDG primary on EL9/10; PGDG primary; U24 ARM64 PG18 pilot only; RPM 3.7.0-1PGSTY, DEB 3.7.0",EL8 补包；EL9/10 由 PGDG 主供；PGDG 主供；仅 U24 ARM64 PG18 代表性构建；RPM 3.7.0-1PGSTY，DEB 3.7.0
-2026-11-05,postgis_tiger_geocoder,,2025.2-1PGSTY,"EL8 PG16-18 gap fill; standalone noarch package; U24 ARM64 PG18 pilot only; standalone; supports PG16-18; RPM 2025.2-1PGSTY, DEB 2025.2",EL8 PG16-18 补包；独立 noarch 包；仅 U24 ARM64 PG18 代表性构建；独立包；支持 PG16-18；RPM 2025.2-1PGSTY，DEB 2025.2
-2026-11-05,provsql,1.13.0,1.13.1,Fixes circuit sizes/cancellation; preload required,修复电路大小与取消操作；需预加载
-2026-11-05,redis,7.2.16,7.2.17-1PGSTY,Includes devel package; Seven suites incl. Bullseye/Focal; fixes split-package conflicts; epoch 6,含开发包；七个系统，含 Bullseye/Focal；修复拆分包冲突；epoch 6
-2026-11-05,valkey,9.1.2,9.1.3-1PGSTY,Security update; includes devel package; Security update; seven suites incl. Bullseye/Focal; fixes split-package conflicts,安全更新；含开发包；安全更新；七个系统，含 Bullseye/Focal；修复拆分包冲突
-2026-11-05,vchord,1.1.1,1.2.0-2PGSTY,PGSTY fork/rebuild; rerank vchordg/halfvec candidates for strict order,PGSTY 分支重建；vchordg/halfvec 严格排序仍需重排候选
-2026-11-05,vchord_bm25,0.3.0,1.0.0,PGSTY fork; native tsvector; no in-place upgrade from 0.3.x,PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级
-2026-11-05,zlog,1.2.18,1.2.20,Rebuilds PolarStore and PolarDB,联动重建 PolarStore 与 PolarDB
-2026-10-31,count_distinct,3.0.2,3.0.2,"PGDG currently covers EL8/9/10 x86_64/aarch64; this round changed the EL8 cells, while PIGSTY Debian/Ubuntu coordinates remain unchanged.",PGDG 当前覆盖 EL8/9/10 x86_64/aarch64；本轮变化是 EL8 单元格，PIGSTY 的 Debian/Ubuntu 单元格保持不变。
-2026-10-31,emaj,5.0.0,5.0.1,PG14-18; fixes emaj_adm privilege escalation and parallel rollback; PG14-18; RPM only; no DEB artifact built; DEB remains 5.0.0,PG14-18；修复 emaj_adm 权限提升与并行回滚问题；PG14-18；仅 RPM；未构建 DEB；DEB 保持 5.0.0
-2026-10-31,groonga,16.1.4,16.1.5,EL8/9/10; x86_64/aarch64; includes libs/devel; staged locally; RPM only; no DEB artifact built; DEB remains at the previous version,EL8/9/10；x86_64/aarch64；含 libs/devel；已本地入库；仅 RPM；未构建 DEB；DEB 保持原有版本
-2026-10-31,groonga-tokenizer-mecab,16.1.4,16.1.5,EL8/9/10; x86_64/aarch64; MeCab tokenizer; staged locally; RPM only; no DEB artifact built; DEB remains at the previous version,EL8/9/10；x86_64/aarch64；MeCab 分词器；已本地入库；仅 RPM；未构建 DEB；DEB 保持原有版本
-2026-10-31,login_hook,1.7,1.8,PGDG 1.8 on EL8/9/10 x86_64/aarch64 for PG14-17; PG18 remains PIGSTY 1.7.,PG14-17 的 EL8/9/10 x86_64/aarch64 使用 PGDG 1.8；PG18 仍为 PIGSTY 1.7。
-2026-10-31,mobilitydb,1.3.1,1.3.1,PGDG 1.3.1 on D12/D13/U24/U26 x86_64/aarch64; EL and U22 remain PIGSTY 1.3.1.,D12/D13/U24/U26 x86_64/aarch64 使用 PGDG 1.3.1；EL 与 U22 仍为 PIGSTY 1.3.1。
-2026-10-31,pg_anon,3.2.3,3.3.2,PG14-18; pgrx 0.19.3; security update; drop/recreate required; PG14-18; RPM only; no DEB artifact built; DEB remains 3.2.3,PG14-18；pgrx 0.19.3；安全更新；需要删除并重建；PG14-18；仅 RPM；未构建 DEB；DEB 保持 3.2.3
-2026-10-31,pg_extra_time,2.1.0,2.1.0,PGDG 2.1.0 on EL8/9/10 x86_64/aarch64; Debian/Ubuntu remain PIGSTY 2.1.0.,EL8/9/10 x86_64/aarch64 使用 PGDG 2.1.0；Debian/Ubuntu 仍为 PIGSTY 2.1.0。
-2026-10-31,pg_fts,1.14.3,1.15.1,PG17-18; fixes configured-analyzer chunked reparsing; PG17-18; RPM only; no DEB artifact built; DEB remains 1.14.3,PG17-18；修复配置分析器分块重解析；PG17-18；仅 RPM；未构建 DEB；DEB 保持 1.14.3
-2026-10-31,pg_hint_plan,1.8.0/1.7.1/1.6.2/1.5.3/1.4.4,1.8.1/1.7.2/1.6.3/1.5.4/1.4.5,"PGDG PG14-18 release lines; this round refreshed EL8 x86_64/aarch64, while the current matrix already covers the other listed OS coordinates. PG19 remains the separate 1.9.0 upstream line.",PGDG 提供 PG14-18 发布线；本轮刷新了 EL8 x86_64/aarch64，当前矩阵的其他操作系统单元格已有覆盖。PG19 仍使用独立的上游 1.9.0 发布线。
-2026-10-31,pg_improv,0.12.1,0.12.2,PG15-18; pgrx 0.19.3; idle sync worker fix; PG15-18; RPM only; no DEB artifact built; DEB remains 0.12.1,PG15-18；pgrx 0.19.3；修复空闲同步工作进程；PG15-18；仅 RPM；未构建 DEB；DEB 保持 0.12.1
-2026-10-31,pg_integrity_checksums,2.0.0,2.0.2,PG14-18; PostgreSQL 19 API compatibility; SQL upgrade is a no-op; PG14-18; RPM only; no DEB artifact built; DEB remains 2.0.0,PG14-18；兼容 PostgreSQL 19 API；SQL 升级为空操作；PG14-18；仅 RPM；未构建 DEB；DEB 保持 2.0.0
-2026-10-31,pg_ivm,1.17,1.17,PGDG 1.17 on D12/D13/U22/U24/U26 x86_64/aarch64; EL remains PIGSTY 1.17.,D12/D13/U22/U24/U26 x86_64/aarch64 使用 PGDG 1.17；EL 仍为 PIGSTY 1.17。
-2026-10-31,pg_net,0.20.5,0.20.5,PGDG 0.20.5 added on EL10 x86_64/aarch64; other supported cells retain PIGSTY coverage.,EL10 x86_64/aarch64 新增 PGDG 0.20.5；其他支持单元格继续使用 PIGSTY。
-2026-10-31,pg_rewrite,2.2,2.2,PGDG 2.2 expanded to EL8/9/10; existing D/U PGDG coverage remains.,PGDG 2.2 扩展覆盖 EL8/9/10；已有的 D/U PGDG 覆盖保持不变。
-2026-10-31,pg_search,0.26.3,0.26.4,PG15-18; pgrx 0.19.3; preload required; staged locally; PG15-18; RPM only; no DEB artifact built; DEB remains 0.26.3,PG15-18；pgrx 0.19.3；需要预加载；已本地入库；PG15-18；仅 RPM；未构建 DEB；DEB 保持 0.26.3
-2026-10-31,pg_stat_kcache,2.3.1,2.3.2,PGDG RPM metadata and package coverage aligned to 2.3.2 across EL/D/U x86_64/aarch64.,PGDG RPM 元数据与包覆盖统一到 2.3.2，覆盖 EL/D/U x86_64/aarch64。
-2026-10-31,pg_tle,1.5.2,1.5.3,"PGDG 1.5.3 covers EL8/9/10; this round added EL10 aarch64, while D/U retain PIGSTY 1.5.2 coverage.",PGDG 1.5.3 覆盖 EL8/9/10；本轮新增 EL10 aarch64，D/U 仍使用 PIGSTY 1.5.2。
-2026-10-31,pg_utl_smtp,1.0,2.0,"PGDG 2.0 covers EL8/9/10; this round added EL10 aarch64, while D/U retain PIGSTY 1.0 coverage.",PGDG 2.0 覆盖 EL8/9/10；本轮新增 EL10 aarch64，D/U 仍使用 PIGSTY 1.0。
-2026-10-31,pg_wait_sampling,1.1.11,1.1.11,PGDG 1.1.11 expanded to EL8/9/10; existing D/U PGDG coverage remains.,PGDG 1.1.11 扩展覆盖 EL8/9/10；已有的 D/U PGDG 覆盖保持不变。
-2026-10-31,pgmnemo,0.20.0,0.21.0,PG17-18; preserves corpus tables and sequences in pg_dump; PG17-18; RPM only; no DEB artifact built; DEB remains 0.20.0,PG17-18；pg_dump 会保留语料表和序列；PG17-18；仅 RPM；未构建 DEB；DEB 保持 0.20.0
-2026-10-31,pgroonga,4.1.0-3PGSTY.el9,4.1.0-4PGSTY.el9,"PG14-18; EL9 release; EL8/10 rebuilt at 2PGSTY; Groonga 16.1.5; RPM-only rebuild; no DEB artifact built; DEB remains 4.1.0; RPM 4.1.0-4PGSTY.el9, DEB 4.1.0",PG14-18；EL9 修订；EL8/10 以 2PGSTY 重建；Groonga 16.1.5；仅 RPM 重建；未构建 DEB；DEB 保持 4.1.0；RPM 4.1.0-4PGSTY.el9，DEB 4.1.0
-2026-10-31,pgrouting,4.0.1,4.0.2,PGDG current coverage spans the listed EL/D/U x86_64/aarch64 coordinates; this round updated D12/D13/U22/U24/U26 to 4.0.2.,PGDG 当前覆盖所列 EL/D/U x86_64/aarch64 单元格；本轮将 D12/D13/U22/U24/U26 更新到 4.0.2。
-2026-10-31,pgsentinel,1.5.1,1.5.2,PGDG D/U packages updated to 1.5.2; EL remains 1.5.1.,PGDG 的 D/U 软件包更新到 1.5.2；EL 仍为 1.5.1。
-2026-10-31,postgis,3.6.4,3.7.0,PGDG D/U packages updated to 3.7.0; EL remains 3.6.4. Major upstream release; no local rebuild.,PGDG 的 D/U 软件包更新到 3.7.0；EL 仍为 3.6.4。上游主要版本更新；未执行本地重建。
-2026-10-31,wal2json,2.6,2.7,PGDG D/U and most EL coordinates updated to 2.7; EL10 aarch64 remains 2.6.,PGDG 的 D/U 与大多数 EL 单元格更新到 2.7；EL10 aarch64 仍为 2.6。
+2026-11-06,address_standardizer,,3.7.0-1PGSTY,"EL8 gap fill; standalone; SQL 3.7; includes data_us; no PostGIS dependency; U24 ARM64 PG18 pilot only; standalone; SQL 3.7; includes data_us; RPM 3.7.0-1PGSTY, DEB 3.7.0",EL8 补包；独立包；SQL 3.7；含 data_us；不依赖 PostGIS；仅 U24 ARM64 PG18 代表性构建；独立包；SQL 3.7；含 data_us；RPM 3.7.0-1PGSTY，DEB 3.7.0
+2026-11-06,age,1.7.0,1.8.0,PG18 1.8.0; older PG release lines retained,PG18 为 1.8.0；保留旧 PG 发布线
+2026-11-06,agensgraph-18,2.18.6.0,2.18.6.1,PG18.6 kernel and contrib,PG18.6 内核与配套扩展
+2026-11-06,cat_tools,0.3.0,0.4.0,SQL-only,纯 SQL
+2026-11-06,cloudberry,2.1.0,2.2.0,Kernel and contrib,内核与配套扩展
+2026-11-06,cloudberry_backup,2.1.0,2.2.0,Six backup/restore tools,六个备份恢复工具
+2026-11-06,cloudberry_pxf,2.1.0,2.2.0,For Cloudberry 2.2.0; includes pxf/pxf_fdw,配套 Cloudberry 2.2.0；含 pxf/pxf_fdw
+2026-11-06,containerd.io,,2.4.2-3,Official RPM; Official DEB; Bullseye 2.3.4-2,官方 RPM；官方 DEB；Bullseye 2.3.4-2
+2026-11-06,count_distinct,3.0.2,3.0.2,PGDG fills EL8 gaps,PGDG 补齐 EL8
+2026-11-06,dbt2,0.62.0,0.62.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,ddl_historization,1.0.0,1.0.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,docker-buildx-plugin,,0.38.1,Official RPM; Official DEB; Bullseye 0.37.0,官方 RPM；官方 DEB；Bullseye 0.37.0
+2026-11-06,docker-ce,,29.9.2,Official RPM; Official DEB; Bullseye 29.8.0,官方 RPM；官方 DEB；Bullseye 29.8.0
+2026-11-06,docker-ce-cli,,29.9.2,Official RPM; Official DEB; Bullseye 29.8.0,官方 RPM；官方 DEB；Bullseye 29.8.0
+2026-11-06,docker-ce-rootless-extras,,29.9.2,Official RPM; Official DEB; Bullseye 29.8.0,官方 RPM；官方 DEB；Bullseye 29.8.0
+2026-11-06,docker-compose-plugin,,5.7.0,Official RPM; Official DEB; Bullseye 5.5.1,官方 RPM；官方 DEB；Bullseye 5.5.1
+2026-11-06,emaj,5.0.0,5.0.1,PG14-18; fixes emaj_adm privilege escalation and parallel rollback; Fixes privilege escalation and parallel rollback,PG14-18；修复 emaj_adm 权限提升与并行回滚问题；修复提权与并行回滚
+2026-11-06,geoip,0.4.0,0.4.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,graphblas,10.5.0,10.5.2,Runtime/devel; ABI 10,运行库与开发包；ABI 10
+2026-11-06,groonga,16.1.4,16.1.5,EL8/9/10; x86_64/aarch64; includes libs/devel; staged locally,EL8/9/10；x86_64/aarch64；含 libs/devel；已本地入库
+2026-11-06,groonga-tokenizer-mecab,16.1.4,16.1.5,EL8/9/10; x86_64/aarch64; MeCab tokenizer; staged locally,EL8/9/10；x86_64/aarch64；MeCab 分词器；已本地入库
+2026-11-06,hypopg,1.4.4,1.4.5,PGDG packages,PGDG 软件包
+2026-11-06,kafgres,0.3.1,0.3.2,PG16,PG16
+2026-11-06,lagraph,1.2.2,1.2.2,Rebuilt with GraphBLAS 10.5.2,使用 GraphBLAS 10.5.2 重建
+2026-11-06,login_hook,1.7,1.8,PGDG PG14-17; Pigsty PG18; x86 supplement fixes PG14 error path; Rebuilt; fixes PG14 error path on x86,PGDG PG14-17；Pigsty PG18；x86 补包修复 PG14 错误路径；重建；修复 x86 PG14 错误路径
+2026-11-06,mobilitydb,1.3.1,1.3.1,PGDG D12/D13/U24/U26; Pigsty fills U22,PGDG 覆盖 D12/D13/U24/U26；Pigsty 补齐 U22
+2026-11-06,nginx,,1.31.8,Official RPM; Official DEB; Bullseye 1.31.6,官方 RPM；官方 DEB；Bullseye 1.31.6
+2026-11-06,nginx-module-acme,,1.31.8+0.4.1,Official RPM; Official DEB; Bullseye 1.31.6+0.4.1,官方 RPM；官方 DEB；Bullseye 1.31.6+0.4.1
+2026-11-06,one_sparse,1.0.0-1PGSTY,1.0.0-2PGSTY,PG18; GraphBLAS/LAGraph rebuild; SQL 0.1.0; preload required,PG18；随 GraphBLAS/LAGraph 重建；SQL 0.1.0；需预加载
+2026-11-06,orioledb-16,1.10~beta19,1.10.1,PG16.15 kernel; SQL 1.10,PG16.15 内核；SQL 1.10
+2026-11-06,orioledb-17,1.10~beta19,1.10.1,PG17.11 kernel; SQL 1.10,PG17.11 内核；SQL 1.10
+2026-11-06,orioledb-18,1.10~beta19,1.10.1,PG18.6 kernel; SQL 1.10,PG18.6 内核；SQL 1.10
+2026-11-06,passwordpolicy,2.0.5,2.0.6,PGDG packages; Rebuilt; x86 QA passed,PGDG 软件包；重建；x86 验收通过
+2026-11-06,pg_accumulator,1.2.0,1.2.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_agent_gate,0.3.0,0.4.1,PG18; fixes agent-role escape; preload required,PG18；修复代理角色逃逸；需预加载
+2026-11-06,pg_anon,3.2.3,3.3.2,PG14-18; pgrx 0.19.3; security update; drop/recreate required; Security update; drop/recreate required,PG14-18；pgrx 0.19.3；安全更新；需要删除并重建；安全更新；需删除并重建扩展
+2026-11-06,pg_auditor,0.3,0.3,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_auth_mon,5.0,5.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_base36,1.1.1,1.1.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_country,0.0.4,0.0.4,Rebuild removes trailing NUL from country_name,重建修复 country_name 末尾 NUL
+2026-11-06,pg_duckdb,1.1.1,1.2.0,DuckDB 2.0.0; conflicts with duckdb_fdw,DuckDB 2.0.0；与 duckdb_fdw 冲突
+2026-11-06,pg_extensions,0.0.4,0.0.6,PG14-18; extension currency,PG14-18；扩展名 currency
+2026-11-06,pg_extra_time,2.1.0,2.1.0,PGDG covers EL8/9/10,PGDG 覆盖 EL8/9/10
+2026-11-06,pg_flight_recorder,2.32.1,2.32.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_fts,1.14.3,1.16.0,PG17-18; fixes top-k and delete performance,PG17-18；修复 top-k 与删除后性能
+2026-11-06,pg_grammar_guard,0.4.9,0.4.9,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_graphql,1.6.2,1.6.3,Fixes quoted primary keys in nodeId,修复 nodeId 的带引号主键
+2026-11-06,pg_gzip,1.1.1,1.1.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_hint_plan,1.8.0/1.7.1/1.6.2/1.5.3/1.4.4,1.8.1/1.7.2/1.6.3/1.5.4/1.4.5,PGDG PG18/17/16/15/14 release lines,PGDG 的 PG18/17/16/15/14 发布线
+2026-11-06,pg_improv,0.12.1,0.12.2,PG15-18; pgrx 0.19.3; idle sync worker fix; PG15-18; fixes idle sync worker,PG15-18；pgrx 0.19.3；修复空闲同步工作进程；PG15-18；修复空闲同步 worker
+2026-11-06,pg_integrity_checksums,2.0.0,2.1.0,Canonical byte order; recompute hash/catalog baselines when upgrading from 2.0.0,统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线
+2026-11-06,pg_ivm,1.17,1.17,PGDG covers Debian/Ubuntu,PGDG 覆盖 Debian/Ubuntu
+2026-11-06,pg_lake,3.5.9,3.6.0,PG16-18; eight extensions; SQL 3.6; EL9/10; PG16-18; eight extensions; SQL 3.6,PG16-18；八个扩展；SQL 3.6；EL9/10；PG16-18；八个扩展；SQL 3.6
+2026-11-06,pg_lion,,0.3.0,PG16-18; includes citext/vector companions,PG16-18；含 citext/vector 配套扩展
+2026-11-06,pg_living_assertions,0.5.10,0.5.10,SQL-only rebuild,纯 SQL；全平台重建
+2026-11-06,pg_local_cache,3.1.0,3.1.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_mentat,1.18.0,1.19.1,Concurrent-write/RLS fixes; upgrade takes locks,修复并发写入与 RLS；升级需持锁
+2026-11-06,pg_mooncake,0.2.0,0.3.0-1PGSTY,PGSTY fork; pg_duckdb 1.2.0 / DuckDB 2.0.0; no 0.2.0 upgrade script,PGSTY 分支；适配 pg_duckdb 1.2.0 / DuckDB 2.0.0；缺少 0.2.0 升级脚本
+2026-11-06,pg_net,0.20.5,0.20.5,PGDG adds EL10; Pigsty fills other gaps,PGDG 新增 EL10；其他缺口由 Pigsty 补齐
+2026-11-06,pg_opencc,,0.1.0,PG14-18; pgsty/pg_opencc; extension opencc,PG14-18；pgsty/pg_opencc；扩展名 opencc
+2026-11-06,pg_parquet,0.5.1-3PIGSTY,0.5.1-4PGSTY,Fixes streaming COPY temporary-file leaks,修复流式 COPY 临时文件泄漏
+2026-11-06,pg_permissions,1.4.1,1.4.1,Pigsty rebuild; SQL 1.4 with 1.3 upgrade,Pigsty 重建；SQL 1.4，含 1.3 升级脚本
+2026-11-06,pg_plan_filter,1.0.0,1.0.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_qos,1.1.0,1.1.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_readonly,1.0.6,1.0.6,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_rewrite,2.2,2.2,PGDG coverage expanded,扩充 PGDG 覆盖
+2026-11-06,pg_schedoc,0.0.2,0.0.2,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_search,0.26.3,0.26.5,PG15-18; preload required,PG15-18；需预加载
+2026-11-06,pg_sqlog,1.7,1.7,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_stat_ch,0.4.0,0.4.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_stat_kcache,2.3.1,2.3.2,PGDG packages,PGDG 软件包
+2026-11-06,pg_statecharts,,0.1.0,PG16-18; includes pg_statecharts_dev,PG16-18；含 pg_statecharts_dev
+2026-11-06,pg_statement_rollback,1.6,1.6,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_tle,1.5.2,1.5.3,PGDG covers EL8/9/10,PGDG 覆盖 EL8/9/10
+2026-11-06,pg_tokenizer,0.1.1,1.0.0,PGSTY fork; native tsvector; external Lindera 6 dictionaries,PGSTY 分支；原生 tsvector；外置 Lindera 6 词典
+2026-11-06,pg_tre,4.5.3,4.6.1,PG17-18; fixes sparsemap bounds; faster matching,PG17-18；修复 sparsemap 越界；优化匹配
+2026-11-06,pg_trickle,0.108.3,0.108.3,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_typeid,0.4.1,0.4.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_tzf,0.3.1,0.3.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pg_utl_smtp,1.0,2.0,PGDG covers EL8/9/10; PG14-18; package version 2.0.0,PGDG 覆盖 EL8/9/10；PG14-18；软件包版本 2.0.0
+2026-11-06,pg_wait_sampling,1.1.11,1.1.11,PGDG coverage expanded,扩充 PGDG 覆盖
+2026-11-06,pg_warren,,0.8.0,PG15-18,PG15-18
+2026-11-06,pgactive,2.1.9,2.1.9,Rebuild fixes shared-memory pointer offset,重建修复共享内存指针偏移
+2026-11-06,pgaudit,1.6.3 / 1.7.1,1.6.3-1PGSTY / 1.7.1-1PGSTY,PG14/15; pgaudit_$v with PGDG aliases; PG16-18 use PGDG,PG14/15；统一 pgaudit_$v 包名并兼容 PGDG 旧名；PG16-18 复用 PGDG
+2026-11-06,pgcollection,2.1.3,2.1.3,Rebuild fixes collection output and typed empty values,重建修复集合输出与带类型空值
+2026-11-06,pgcontext,0.3.0,0.3.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pgdog,0.1.62,0.1.63,PostgreSQL connection pooler,PostgreSQL 连接池
+2026-11-06,pglite_fusion,0.0.7,0.0.7,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pgmeminfo,1.0.1,1.0.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pgmnemo,0.20.0,0.21.0,PG17-18; preserves corpus tables and sequences in pg_dump; PG17-18; pg_dump includes corpus tables/sequences,PG17-18；pg_dump 会保留语料表和序列；PG17-18；pg_dump 纳入语料表与序列
+2026-11-06,pgrdf,0.6.40,0.6.40,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,pgroonga,4.1.0-3PGSTY.el9,4.1.0-4PGSTY.el9,PG14-18; EL9 release; EL8/10 rebuilt at 2PGSTY; Groonga 16.1.5,PG14-18；EL9 修订；EL8/10 以 2PGSTY 重建；Groonga 16.1.5
+2026-11-06,pgrouting,4.0.1,4.0.2,PGDG packages,PGDG 软件包
+2026-11-06,pgsentinel,1.5.1,1.5.2,PGDG packages,PGDG 软件包
+2026-11-06,pgsodium,3.1.9,3.1.11,PG14-18; rebuilt with libsodium,PG14-18；配套 libsodium 重建
+2026-11-06,pguint,1.20260630,1.20260630,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,plx,2.0.1,2.0.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,polardb-17,17.11.1.0-1PGSTY,17.11.1.0-2PGSTY,PG17.11 kernel/contrib; rebuilt with updated PolarStore SDK,PG17.11 内核与扩展；使用新版 PolarStore SDK 重建
+2026-11-06,polarstore,1.2.42-2PGSTY,1.2.42-3PGSTY,Rebuilt with zlog 1.2.20,使用 zlog 1.2.20 重建
+2026-11-06,postgis,3.6.4,3.7.0-1PGSTY,"EL8 gap fill; PGDG primary on EL9/10; PGDG primary; U24 ARM64 PG18 pilot only; RPM 3.7.0-1PGSTY, DEB 3.7.0",EL8 补包；EL9/10 由 PGDG 主供；PGDG 主供；仅 U24 ARM64 PG18 代表性构建；RPM 3.7.0-1PGSTY，DEB 3.7.0
+2026-11-06,postgis_tiger_geocoder,,2025.2-1PGSTY,"EL8 PG16-18 gap fill; standalone noarch package; U24 ARM64 PG18 pilot only; standalone; supports PG16-18; RPM 2025.2-1PGSTY, DEB 2025.2",EL8 PG16-18 补包；独立 noarch 包；仅 U24 ARM64 PG18 代表性构建；独立包；支持 PG16-18；RPM 2025.2-1PGSTY，DEB 2025.2
+2026-11-06,provsql,1.13.0,1.13.1,Fixes circuit sizes/cancellation; preload required,修复电路大小与取消操作；需预加载
+2026-11-06,q3c,2.0.5,2.0.6,PGDG packages,PGDG 软件包
+2026-11-06,rdkit,202609.1,202609.2,EL9/10; D13/U24/U26; older OS packages retained,EL9/10、D13/U24/U26；旧系统保留旧版
+2026-11-06,redis,7.2.16,7.2.17-1PGSTY,Includes devel package; Seven suites incl. Bullseye/Focal; fixes split-package conflicts; epoch 6,含开发包；七个系统，含 Bullseye/Focal；修复拆分包冲突；epoch 6
+2026-11-06,redis_fdw,2.0,2.0,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,safeupdate,1.7,1.7,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,set_user,4.2.0,4.3.0,PGDG packages,PGDG 软件包
+2026-11-06,shacrypt,1.1,1.1,Restore missing control/SQL/library files,补齐缺失的 control、SQL 与动态库
+2026-11-06,sslutils,1.4.1,1.4.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,timescaledb_toolkit,1.26.0,1.27.0,PG15-18; older PG14 packages retained,PG15-18；保留 PG14 旧包
+2026-11-06,topn,2.7.1,2.7.1,Rebuilt; x86 QA passed,重建；x86 验收通过
+2026-11-06,valkey,9.1.2,9.1.3-1PGSTY,Security update; includes devel package; Security update; seven suites incl. Bullseye/Focal; fixes split-package conflicts,安全更新；含开发包；安全更新；七个系统，含 Bullseye/Focal；修复拆分包冲突
+2026-11-06,vchord,1.1.1,1.2.0-2PGSTY,PGSTY fork/rebuild; rerank vchordg/halfvec candidates for strict order,PGSTY 分支重建；vchordg/halfvec 严格排序仍需重排候选
+2026-11-06,vchord_bm25,0.3.0,1.0.0,PGSTY fork; native tsvector; no in-place upgrade from 0.3.x,PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级
+2026-11-06,wal2json,2.6,2.7,PGDG packages,PGDG 软件包
+2026-11-06,zlog,1.2.18,1.2.20,Rebuilds PolarStore and PolarDB,联动重建 PolarStore 与 PolarDB
 2026-10-29,credcheck,4.7,6.0,PG14-18; EL8 security supplement,PG14-18；EL8 安全补包
 2026-10-29,oai_fdw,,1.16.0,PG14-18; OAI-PMH FDW; SQL 1.16,PG14-18；OAI-PMH FDW；SQL 1.16
 2026-10-29,pg_agent_gate,,0.3.0,PG18; preview; preload required,PG18；预览版；需预加载
