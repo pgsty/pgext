@@ -2,12 +2,13 @@
 
 Sources:
 
-- [beta17 README](https://github.com/orioledb/orioledb/blob/beta17/README.md)
-- [beta17 release](https://github.com/orioledb/orioledb/releases/tag/beta17)
-- [Control file](https://github.com/orioledb/orioledb/blob/beta17/orioledb.control)
+- [1.10.2 README](https://github.com/orioledb/orioledb/blob/v1.10.2/README.md)
+- [1.10.2 release](https://github.com/orioledb/orioledb/releases/tag/v1.10.2)
+- [Control file](https://github.com/orioledb/orioledb/blob/v1.10.2/orioledb.control)
 - [Patched PostgreSQL](https://github.com/orioledb/postgres)
+- [Patched server versions](https://github.com/orioledb/orioledb/blob/v1.10.2/.pgtags)
 
-OrioleDB is a new storage engine for PostgreSQL that provides modern approaches to database capacity, capabilities, and performance. It uses undo log-based MVCC, copy-on-write checkpoints, and row-level WAL to eliminate bloat and the need for VACUUM.
+`orioledb` provides an alternative table storage engine using undo-based MVCC, copy-on-write checkpoints and row-level WAL. It requires a specifically patched PostgreSQL server and remains a public beta.
 
 ### Configuration
 
@@ -54,20 +55,10 @@ CREATE DATABASE mydb LOCALE 'C' TEMPLATE template0;
 CREATE DATABASE mydb LOCALE_PROVIDER icu ICU_LOCALE 'en' TEMPLATE template0;
 ```
 
-### Key Benefits
+### Compatibility and 1.10.2 Maintenance
 
-- **No bloat**: Undo log-based MVCC means old tuple versions do not bloat main storage
-- **No VACUUM needed**: Page-merging and undo log reclaim space automatically
-- **No wraparound problem**: Native 64-bit transaction identifiers
-- **Lock-less page reading**: In-memory pages linked directly to storage pages
-- **Row-level WAL**: Compact write-ahead logging suitable for parallel apply
+The release's `.pgtags` pins PostgreSQL 16, 17 and 18 to `patches16_50`, `patches17_23` and `patches18_4`, respectively. An ordinary PostgreSQL installation is not sufficient. Only ICU, C and POSIX collations are supported. The undo and page-merging design reduces native-table vacuum requirements; other PostgreSQL tables still need normal maintenance.
 
-### Limitations
+Release 1.10.2 keeps SQL version `1.10` and introduces no storage or WAL format change. It fixes the runtime version reported by `ORIOLEDB_VERSION`, row-version handling under concurrency, capture of updates during concurrent index builds, background-writer crashes with range/array/composite keys, NULL handling in diagnostic functions, expression-index memory leaks and standby tablespace moves.
 
-- Public beta status -- recommended for testing, not production
-- Requires a patched PostgreSQL build from [orioledb/postgres](https://github.com/orioledb/postgres)
-- Only ICU, C, and POSIX collations are supported
-
-### Version Notes
-
-OrioleDB beta17 uses extension SQL version `1.9` and patched PostgreSQL bases 16.15, 17.11, and 18.6. It adds concurrent creation/rebuilding of native btree indexes, cross-major upgrade support, page checksums, and parallel index/bitmap scans, together with recovery and DDL correctness fixes. Follow the beta17 binary and storage compatibility instructions before upgrading; a new SQL version does not make the engine usable on an unpatched PostgreSQL server.
+Use matching server patches and library files on every node and follow the version-specific upgrade procedure with a backup. Do not request SQL version 1.10.2: it does not exist. The public-beta limitation remains; the upstream project does not recommend general production use.

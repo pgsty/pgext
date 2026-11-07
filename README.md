@@ -125,7 +125,7 @@ make check-stubs   # validate usage Markdown
 make build         # build the Hugo site
 ```
 
-The Hugo site uses **Hugo Extended 0.168.0** and **OINK v1.5.0**.
+The Hugo site uses **Hugo Extended 0.168.0** and **OINK v1.5.1**.
 `make dev` previews it at [http://localhost:1313](http://localhost:1313) using a
 sibling `../oink` checkout; set `THEME_DIR` to use another local theme checkout.
 

@@ -2,13 +2,14 @@
 
 Sources:
 
-- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/CHANGELOG.md)
+- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/CHANGELOG.md)
 
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/README.md)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/pg_improv.control)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/Cargo.toml)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/README.md)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/pg_improv.control)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/Cargo.toml)
+- [SQL update](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/sql/pg_improv--0.12.2--0.13.0.sql)
 
-`pg_improv` 0.12.2 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
+`pg_improv` 0.13.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
 
 ### Core Workflow
 
@@ -41,14 +42,25 @@ The `improv` language supports scalar formulas as well as model expressions, but
 
 Back up model definitions and result state with database dumps and rehearse restoration; logical mode needs a fresh slot and recomputation after restore. Library upgrades require restarting preloaded processes and updating the extension SQL. Model computation is distinct from an application transaction's source-of-truth tables.
 
-### Ownership and Database-Wide Logical Sync since 0.11.0
+### Model Access Policies in 0.13.0
 
-Each model now reads and writes as its owner; row-level security protects its catalog, items and cells. Only a superuser or a role allowed to act as the owner may change or recalculate that model. Grant improv_user to a model creator and grant the source-table privileges it needs; the administrator role does not automatically become every model owner. A shared result table still needs ordinary grants. what_if can reveal owner-visible data, so grant access deliberately. Logical models in one database now share one slot and publication. Upgrade with the matching library and SQL scripts, restore roles before model dumps, and monitor retained WAL.
+Models execute with their owner's privileges. Grant `improv_user` to model creators and give them the required source-table privileges. Version 0.13.0 adds Cedar policies through `improv.set_policies`, inspection through `improv.policies`, and decision explanations through `improv.explain_access`.
 
-### 0.12.2 Release Note
+```sql
+SELECT * FROM improv.policies('plan');
+SELECT * FROM improv.explain_access('plan', 'Read');
+```
 
-Release 0.12.2 fixes idle logical-sync workers so they no longer reread the model catalog on every poll; there are no other code changes in this release. The Pigsty build uses pgrx 0.19.3 for the current package, while upstream source metadata still declares pgrx 0.17.0.
+Grant `improv_reader` (or `improv_user`) to restricted users and separately grant access to result tables. Policies filter result rows and the `improv.categories`, `improv.items`, `improv.measures` and `improv.cells` functions. Superusers, the owner and roles allowed to act as the owner bypass these policies. A model without policies retains its ordinary grant behavior; configured policies deny by default, and invalid policies deny access to restricted users.
 
-### 0.12.1 Release Note
+Derived values are calculated over all owner-visible inputs before filtering. Hiding an input does not remove its contribution from an allowed total. Model policies do not restrict direct access to source tables. Permitted cell edits and policy changes are recorded in `improv.policy_audit`; rejected operations are logged by the server. Review grants and totals before exposing a model.
 
-The 0.12.0 SQL migration adds `improv.measure.format` for persisted display formatting; update the extension before saving formats. Release 0.12.1 changes the version from 0.12.0 without additional code changes and restores RHEL 8 (glibc 2.28) compatible artifacts. Upstream still uses pgrx 0.17.0. Logical synchronization still requires `shared_preload_libraries`, `wal_level=logical` and a restart; trigger and manual modes do not.
+### Upgrading to 0.13.0
+
+Install matching files and restart PostgreSQL when the library is preloaded, then update each database:
+
+```sql
+ALTER EXTENSION pg_improv UPDATE TO '0.13.0';
+```
+
+The 0.12.2-to-0.13.0 migration adds the policy objects and functions without changing model rows. The release also fixes an upgrade deadlock with the logical-sync worker. Back up roles and model data and rehearse the update. Upstream now uses pgrx 0.19.3; this does not establish availability of a matching distribution package.

@@ -50,12 +50,12 @@ page_width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 2" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 2" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 6.6" "pghydro_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 6.6" "pghydro_14 : AVAIL 2" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 6.6" "postgresql-18-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-17-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-16-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-15-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-14-pghydro : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 6.6" "postgresql-18-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-17-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-16-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-15-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-14-pghydro : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 6.6" "postgresql-18-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-17-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-16-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-15-pghydro : AVAIL 1" "green" >}} | {{< bg "PIGSTY 6.6" "postgresql-14-pghydro : AVAIL 1" "green" >}} |
@@ -74,11 +74,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pghydro_18` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_18-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_18-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_18` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_18-6.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_18-6.6-1PIGSTY.el8.x86_64.rpm) |
+| `pghydro_18` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 145.0 KiB | [pghydro_18-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_18-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_18` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 144.9 KiB | [pghydro_18-6.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_18-6.6-1PIGSTY.el8.aarch64.rpm) |
+| `pghydro_18` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_18-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_18-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_18` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_18-6.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_18-6.6-1PIGSTY.el9.x86_64.rpm) |
+| `pghydro_18` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.2 KiB | [pghydro_18-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_18-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_18` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.1 KiB | [pghydro_18-6.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_18-6.6-1PIGSTY.el9.aarch64.rpm) |
+| `pghydro_18` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_18-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_18-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_18` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_18-6.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_18-6.6-1PIGSTY.el10.x86_64.rpm) |
+| `pghydro_18` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_18-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_18-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_18` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_18-6.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_18-6.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pghydro` | `6.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 135.5 KiB | [postgresql-18-pghydro_6.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-18-pghydro_6.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pghydro` | `6.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 135.5 KiB | [postgresql-18-pghydro_6.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-18-pghydro_6.6-1PIGSTY~bookworm_arm64.deb) |
@@ -97,11 +103,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pghydro_17` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_17-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_17-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_17` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_17-6.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_17-6.6-1PIGSTY.el8.x86_64.rpm) |
+| `pghydro_17` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 145.0 KiB | [pghydro_17-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_17-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_17` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 144.9 KiB | [pghydro_17-6.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_17-6.6-1PIGSTY.el8.aarch64.rpm) |
+| `pghydro_17` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_17-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_17-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_17` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_17-6.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_17-6.6-1PIGSTY.el9.x86_64.rpm) |
+| `pghydro_17` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.2 KiB | [pghydro_17-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_17-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_17` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.1 KiB | [pghydro_17-6.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_17-6.6-1PIGSTY.el9.aarch64.rpm) |
+| `pghydro_17` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_17-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_17-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_17` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_17-6.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_17-6.6-1PIGSTY.el10.x86_64.rpm) |
+| `pghydro_17` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_17-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_17-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_17` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_17-6.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_17-6.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pghydro` | `6.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 135.5 KiB | [postgresql-17-pghydro_6.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-17-pghydro_6.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pghydro` | `6.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 135.5 KiB | [postgresql-17-pghydro_6.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-17-pghydro_6.6-1PIGSTY~bookworm_arm64.deb) |
@@ -120,11 +132,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pghydro_16` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_16-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_16-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_16` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_16-6.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_16-6.6-1PIGSTY.el8.x86_64.rpm) |
+| `pghydro_16` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 145.0 KiB | [pghydro_16-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_16-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_16` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 144.9 KiB | [pghydro_16-6.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_16-6.6-1PIGSTY.el8.aarch64.rpm) |
+| `pghydro_16` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_16-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_16-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_16` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_16-6.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_16-6.6-1PIGSTY.el9.x86_64.rpm) |
+| `pghydro_16` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.2 KiB | [pghydro_16-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_16-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_16` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.1 KiB | [pghydro_16-6.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_16-6.6-1PIGSTY.el9.aarch64.rpm) |
+| `pghydro_16` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_16-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_16-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_16` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_16-6.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_16-6.6-1PIGSTY.el10.x86_64.rpm) |
+| `pghydro_16` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_16-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_16-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_16` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_16-6.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_16-6.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pghydro` | `6.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 135.5 KiB | [postgresql-16-pghydro_6.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-16-pghydro_6.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pghydro` | `6.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 135.5 KiB | [postgresql-16-pghydro_6.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-16-pghydro_6.6-1PIGSTY~bookworm_arm64.deb) |
@@ -143,11 +161,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pghydro_15` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_15-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_15-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_15` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_15-6.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_15-6.6-1PIGSTY.el8.x86_64.rpm) |
+| `pghydro_15` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 145.0 KiB | [pghydro_15-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_15-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_15` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 144.9 KiB | [pghydro_15-6.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_15-6.6-1PIGSTY.el8.aarch64.rpm) |
+| `pghydro_15` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_15-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_15-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_15` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_15-6.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_15-6.6-1PIGSTY.el9.x86_64.rpm) |
+| `pghydro_15` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.2 KiB | [pghydro_15-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_15-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_15` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.1 KiB | [pghydro_15-6.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_15-6.6-1PIGSTY.el9.aarch64.rpm) |
+| `pghydro_15` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_15-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_15-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_15` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_15-6.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_15-6.6-1PIGSTY.el10.x86_64.rpm) |
+| `pghydro_15` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_15-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_15-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_15` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_15-6.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_15-6.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pghydro` | `6.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 135.5 KiB | [postgresql-15-pghydro_6.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-15-pghydro_6.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pghydro` | `6.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 135.5 KiB | [postgresql-15-pghydro_6.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-15-pghydro_6.6-1PIGSTY~bookworm_arm64.deb) |
@@ -166,11 +190,17 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pghydro_14` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_14-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_14-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_14` | `6.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 145.0 KiB | [pghydro_14-6.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pghydro_14-6.6-1PIGSTY.el8.x86_64.rpm) |
+| `pghydro_14` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 145.0 KiB | [pghydro_14-6.6-2PGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_14-6.6-2PGSTY.el8.noarch.rpm) |
 | `pghydro_14` | `6.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 144.9 KiB | [pghydro_14-6.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pghydro_14-6.6-1PIGSTY.el8.aarch64.rpm) |
+| `pghydro_14` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_14-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_14-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_14` | `6.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 138.2 KiB | [pghydro_14-6.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pghydro_14-6.6-1PIGSTY.el9.x86_64.rpm) |
+| `pghydro_14` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.2 KiB | [pghydro_14-6.6-2PGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_14-6.6-2PGSTY.el9.noarch.rpm) |
 | `pghydro_14` | `6.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 138.1 KiB | [pghydro_14-6.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pghydro_14-6.6-1PIGSTY.el9.aarch64.rpm) |
+| `pghydro_14` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_14-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_14-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_14` | `6.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 138.4 KiB | [pghydro_14-6.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pghydro_14-6.6-1PIGSTY.el10.x86_64.rpm) |
+| `pghydro_14` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_14-6.6-2PGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_14-6.6-2PGSTY.el10.noarch.rpm) |
 | `pghydro_14` | `6.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 138.4 KiB | [pghydro_14-6.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pghydro_14-6.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pghydro` | `6.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 135.5 KiB | [postgresql-14-pghydro_6.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-14-pghydro_6.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pghydro` | `6.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 135.5 KiB | [postgresql-14-pghydro_6.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pghydro/postgresql-14-pghydro_6.6-1PIGSTY~bookworm_arm64.deb) |

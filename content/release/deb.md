@@ -20,20 +20,20 @@ Consolidated package changes from 2026-10-31 through 2026-11-06; repeated update
 | cloudberry-backup         | 2.1.0                         | 2.2.0                         | Six backup/restore tools                                                          |
 | cloudberry-pxf            | 2.1.0                         | 2.2.0                         | For Cloudberry 2.2.0; includes pxf/pxf_fdw                                        |
 | containerd.io             | -                             | 2.4.2-3                       | Official DEB; Bullseye 2.3.4-2                                                    |
-| dbt2                      | 0.62.0                        | 0.62.0                        | Rebuilt; x86 QA passed                         |
-| ddl_historization         | 1.0.0                         | 1.0.0                         | Rebuilt; x86 QA passed                         |
+| dbt2                      | 0.62.0                        | 0.62.0                        | Rebuilt; x86 QA passed                                                            |
+| ddl_historization         | 1.0.0                         | 1.0.0                         | Rebuilt; x86 QA passed                                                            |
 | docker-buildx-plugin      | -                             | 0.38.1                        | Official DEB; Bullseye 0.37.0                                                     |
 | docker-ce                 | -                             | 29.9.2                        | Official DEB; Bullseye 29.8.0                                                     |
 | docker-ce-cli             | -                             | 29.9.2                        | Official DEB; Bullseye 29.8.0                                                     |
 | docker-ce-rootless-extras | -                             | 29.9.2                        | Official DEB; Bullseye 29.8.0                                                     |
 | docker-compose-plugin     | -                             | 5.7.0                         | Official DEB; Bullseye 5.5.1                                                      |
 | emaj                      | 5.0.0                         | 5.0.1                         | Fixes privilege escalation and parallel rollback                                  |
-| geoip                     | 0.4.0                         | 0.4.0                         | Rebuilt; x86 QA passed                         |
+| geoip                     | 0.4.0                         | 0.4.0                         | Rebuilt; x86 QA passed                                                            |
 | graphblas                 | 10.5.0                        | 10.5.2                        | Runtime/devel; ABI 10                                                             |
 | hypopg                    | 1.4.4                         | 1.4.5                         | PGDG packages                                                                     |
 | kafgres                   | 0.3.1                         | 0.3.2                         | PG16                                                                              |
 | lagraph                   | 1.2.2                         | 1.2.2                         | Rebuilt with GraphBLAS 10.5.2                                                     |
-| login_hook                | 1.8                           | 1.8                           | Rebuilt; fixes PG14 error path on x86                   |
+| login_hook                | 1.8                           | 1.8                           | Rebuilt; fixes PG14 error path on x86                                             |
 | mobilitydb                | 1.3.1                         | 1.3.1                         | PGDG D12/D13/U24/U26; Pigsty fills U22                                            |
 | nginx                     | -                             | 1.31.8                        | Official DEB; Bullseye 1.31.6                                                     |
 | nginx-module-acme         | -                             | 1.31.8+0.4.1                  | Official DEB; Bullseye 1.31.6+0.4.1                                               |
@@ -41,65 +41,65 @@ Consolidated package changes from 2026-10-31 through 2026-11-06; repeated update
 | orioledb-16               | 1.10~beta19                   | 1.10.1                        | PG16.15 kernel; SQL 1.10                                                          |
 | orioledb-17               | 1.10~beta19                   | 1.10.1                        | PG17.11 kernel; SQL 1.10                                                          |
 | orioledb-18               | 1.10~beta19                   | 1.10.1                        | PG18.6 kernel; SQL 1.10                                                           |
-| passwordpolicy            | 2.0.6                         | 2.0.6                         | Rebuilt; x86 QA passed                         |
-| pg_accumulator            | 1.2.0                         | 1.2.0                         | Rebuilt; x86 QA passed                         |
+| passwordpolicy            | 2.0.6                         | 2.0.6                         | Rebuilt; x86 QA passed                                                            |
+| pg_accumulator            | 1.2.0                         | 1.2.0                         | Rebuilt; x86 QA passed                                                            |
 | pg_agent_gate             | 0.3.0                         | 0.4.1                         | PG18; fixes agent-role escape; preload required                                   |
 | pg_anon                   | 3.2.3                         | 3.3.2                         | Security update; drop/recreate required                                           |
-| pg_auditor                | 0.3                           | 0.3                           | Rebuilt; x86 QA passed                         |
-| pg_auth_mon               | 5.0                           | 5.0                           | Rebuilt; x86 QA passed                         |
-| pg_base36                 | 1.1.1                         | 1.1.1                         | Rebuilt; x86 QA passed                         |
+| pg_auditor                | 0.3                           | 0.3                           | Rebuilt; x86 QA passed                                                            |
+| pg_auth_mon               | 5.0                           | 5.0                           | Rebuilt; x86 QA passed                                                            |
+| pg_base36                 | 1.1.1                         | 1.1.1                         | Rebuilt; x86 QA passed                                                            |
 | pg_country                | 0.0.4                         | 0.0.4                         | Rebuild removes trailing NUL from country_name                                    |
 | pg_currency               | 0.0.4                         | 0.0.6                         | PG14-18; extension currency                                                       |
 | pg_duckdb                 | 1.1.1                         | 1.2.0                         | DuckDB 2.0.0; conflicts with duckdb_fdw                                           |
-| pg_flight_recorder        | 2.32.1                        | 2.32.1                        | Rebuilt; x86 QA passed                         |
+| pg_flight_recorder        | 2.32.1                        | 2.32.1                        | Rebuilt; x86 QA passed                                                            |
 | pg_fts                    | 1.14.3                        | 1.16.0                        | PG17-18; fixes top-k and delete performance                                       |
-| pg_grammar_guard          | 0.4.9                         | 0.4.9                         | Rebuilt; x86 QA passed                         |
+| pg_grammar_guard          | 0.4.9                         | 0.4.9                         | Rebuilt; x86 QA passed                                                            |
 | pg_graphql                | 1.6.2                         | 1.6.3                         | Fixes quoted primary keys in nodeId                                               |
-| pg_gzip                   | 1.1.1                         | 1.1.1                         | Rebuilt; x86 QA passed                         |
+| pg_gzip                   | 1.1.1                         | 1.1.1                         | Rebuilt; x86 QA passed                                                            |
 | pg_hint_plan              | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG PG18/17/16/15/14 release lines                                               |
 | pg_improv                 | 0.12.1                        | 0.12.2                        | PG15-18; fixes idle sync worker                                                   |
 | pg_integrity_checksums    | 2.0.0                         | 2.1.0                         | Canonical byte order; recompute hash/catalog baselines when upgrading from 2.0.0  |
 | pg_ivm                    | 1.17                          | 1.17                          | PGDG covers Debian/Ubuntu                                                         |
-| pg_lake                   | 3.5.9                         | 3.6.0                         | PG16-18; eight extensions; SQL 3.6                                                  |
+| pg_lake                   | 3.5.9                         | 3.6.0                         | PG16-18; eight extensions; SQL 3.6                                                |
 | pg_lion                   | -                             | 0.3.0                         | PG16-18; includes citext/vector companions                                        |
 | pg_living_assertions      | 0.5.10                        | 0.5.10                        | SQL-only rebuild                                                                  |
-| pg_local_cache            | 3.1.0                         | 3.1.0                         | Rebuilt; x86 QA passed                         |
+| pg_local_cache            | 3.1.0                         | 3.1.0                         | Rebuilt; x86 QA passed                                                            |
 | pg_mentat                 | 1.18.0                        | 1.19.1                        | Concurrent-write/RLS fixes; upgrade takes locks                                   |
 | pg_mooncake               | 0.2.0                         | 0.3.0-1PGSTY                  | PGSTY fork; pg_duckdb 1.2.0 / DuckDB 2.0.0; no 0.2.0 upgrade script               |
 | pg_opencc                 | -                             | 0.1.0                         | PG14-18; pgsty/pg_opencc; extension opencc                                        |
 | pg_parquet                | 0.5.1-3PIGSTY                 | 0.5.1-4PGSTY                  | Fixes streaming COPY temporary-file leaks                                         |
-| pg_plan_filter            | 1.0.0                         | 1.0.0                         | Rebuilt; x86 QA passed                         |
-| pg_qos                    | 1.1.0                         | 1.1.0                         | Rebuilt; x86 QA passed                         |
-| pg_readonly               | 1.0.6                         | 1.0.6                         | Rebuilt; x86 QA passed                         |
+| pg_plan_filter            | 1.0.0                         | 1.0.0                         | Rebuilt; x86 QA passed                                                            |
+| pg_qos                    | 1.1.0                         | 1.1.0                         | Rebuilt; x86 QA passed                                                            |
+| pg_readonly               | 1.0.6                         | 1.0.6                         | Rebuilt; x86 QA passed                                                            |
 | pg_rewrite                | 2.2                           | 2.2                           | PGDG coverage expanded                                                            |
-| pg_schedoc                | 0.0.2                         | 0.0.2                         | Rebuilt; x86 QA passed                         |
+| pg_schedoc                | 0.0.2                         | 0.0.2                         | Rebuilt; x86 QA passed                                                            |
 | pg_search                 | 0.26.3                        | 0.26.5                        | PG15-18; preload required                                                         |
-| pg_sqlog                  | 1.7                           | 1.7                           | Rebuilt; x86 QA passed                         |
-| pg_stat_ch                | 0.4.0                         | 0.4.0                         | Rebuilt; x86 QA passed                         |
+| pg_sqlog                  | 1.7                           | 1.7                           | Rebuilt; x86 QA passed                                                            |
+| pg_stat_ch                | 0.4.0                         | 0.4.0                         | Rebuilt; x86 QA passed                                                            |
 | pg_stat_kcache            | 2.3.1                         | 2.3.2                         | PGDG packages                                                                     |
 | pg_statecharts            | -                             | 0.1.0                         | PG16-18; includes pg_statecharts_dev                                              |
-| pg_statement_rollback     | 1.6                           | 1.6                           | Rebuilt; x86 QA passed                         |
+| pg_statement_rollback     | 1.6                           | 1.6                           | Rebuilt; x86 QA passed                                                            |
 | pg_tle                    | 1.5.3                         | 1.5.3                         | PGDG covers EL8/9/10                                                              |
 | pg_tokenizer              | 0.1.1                         | 1.0.0                         | PGSTY fork; native tsvector; external Lindera 6 dictionaries                      |
 | pg_tre                    | 4.5.3                         | 4.6.1                         | PG17-18; fixes sparsemap bounds; faster matching                                  |
-| pg_trickle                | 0.108.3                       | 0.108.3                       | Rebuilt; x86 QA passed                         |
-| pg_typeid                 | 0.4.1                         | 0.4.1                         | Rebuilt; x86 QA passed                         |
-| pg_tzf                    | 0.3.1                         | 0.3.1                         | Rebuilt; x86 QA passed                         |
+| pg_trickle                | 0.108.3                       | 0.108.3                       | Rebuilt; x86 QA passed                                                            |
+| pg_typeid                 | 0.4.1                         | 0.4.1                         | Rebuilt; x86 QA passed                                                            |
+| pg_tzf                    | 0.3.1                         | 0.3.1                         | Rebuilt; x86 QA passed                                                            |
 | pg_utl_smtp               | 1.0                           | 2.0.0                         | PG14-18; package version 2.0.0                                                    |
 | pg_warren                 | -                             | 0.8.0                         | PG15-18                                                                           |
 | pgactive                  | 2.1.9                         | 2.1.9                         | Rebuild fixes shared-memory pointer offset                                        |
 | pgcollection              | 2.1.3                         | 2.1.3                         | Rebuild fixes collection output and typed empty values                            |
-| pgcontext                 | 0.3.0                         | 0.3.0                         | Rebuilt; x86 QA passed                         |
+| pgcontext                 | 0.3.0                         | 0.3.0                         | Rebuilt; x86 QA passed                                                            |
 | pgdog                     | 0.1.62                        | 0.1.63                        | PostgreSQL connection pooler                                                      |
-| pglite_fusion             | 0.0.7                         | 0.0.7                         | Rebuilt; x86 QA passed                         |
-| pgmeminfo                 | 1.0.1                         | 1.0.1                         | Rebuilt; x86 QA passed                         |
+| pglite_fusion             | 0.0.7                         | 0.0.7                         | Rebuilt; x86 QA passed                                                            |
+| pgmeminfo                 | 1.0.1                         | 1.0.1                         | Rebuilt; x86 QA passed                                                            |
 | pgmnemo                   | 0.20.0                        | 0.21.0                        | PG17-18; pg_dump includes corpus tables/sequences                                 |
-| pgrdf                     | 0.6.40                        | 0.6.40                        | Rebuilt; x86 QA passed                         |
+| pgrdf                     | 0.6.40                        | 0.6.40                        | Rebuilt; x86 QA passed                                                            |
 | pgrouting                 | 4.0.1                         | 4.0.2                         | PGDG packages                                                                     |
 | pgsentinel                | 1.5.1                         | 1.5.2                         | PGDG packages                                                                     |
 | pgsodium                  | 3.1.9                         | 3.1.11                        | PG14-18; rebuilt with libsodium                                                   |
-| pguint                    | 1.20260630                    | 1.20260630                    | Rebuilt; x86 QA passed                         |
-| plx                       | 2.0.1                         | 2.0.1                         | Rebuilt; x86 QA passed                         |
+| pguint                    | 1.20260630                    | 1.20260630                    | Rebuilt; x86 QA passed                                                            |
+| plx                       | 2.0.1                         | 2.0.1                         | Rebuilt; x86 QA passed                                                            |
 | polardb-17                | 17.11.1.0-1PGSTY              | 17.11.1.0-2PGSTY              | PG17.11 kernel/contrib; rebuilt with updated PolarStore SDK                       |
 | polarstore                | 1.2.42-2PGSTY                 | 1.2.42-3PGSTY                 | Rebuilt with zlog 1.2.20                                                          |
 | postgis                   | 3.6.4                         | 3.7.0                         | PGDG primary; U24 ARM64 PG18 pilot only                                           |
@@ -108,13 +108,13 @@ Consolidated package changes from 2026-10-31 through 2026-11-06; repeated update
 | q3c                       | 2.0.5                         | 2.0.6                         | PGDG packages                                                                     |
 | rdkit                     | 202609.1                      | 202609.2                      | EL9/10; D13/U24/U26; older OS packages retained                                   |
 | redis                     | 7.2.16                        | 7.2.17-1PGSTY                 | Seven suites incl. Bullseye/Focal; fixes split-package conflicts; epoch 6         |
-| redis_fdw                 | 2.0                           | 2.0                           | Rebuilt; x86 QA passed                         |
-| safeupdate                | 1.7                           | 1.7                           | Rebuilt; x86 QA passed                         |
+| redis_fdw                 | 2.0                           | 2.0                           | Rebuilt; x86 QA passed                                                            |
+| safeupdate                | 1.7                           | 1.7                           | Rebuilt; x86 QA passed                                                            |
 | set_user                  | 4.2.0                         | 4.3.0                         | PGDG packages                                                                     |
 | shacrypt                  | 1.1                           | 1.1                           | Restore missing control/SQL/library files                                         |
-| sslutils                  | 1.4.1                         | 1.4.1                         | Rebuilt; x86 QA passed                         |
+| sslutils                  | 1.4.1                         | 1.4.1                         | Rebuilt; x86 QA passed                                                            |
 | timescaledb_toolkit       | 1.26.0                        | 1.27.0                        | PG15-18; older PG14 packages retained                                             |
-| topn                      | 2.7.1                         | 2.7.1                         | Rebuilt; x86 QA passed                         |
+| topn                      | 2.7.1                         | 2.7.1                         | Rebuilt; x86 QA passed                                                            |
 | valkey                    | 9.1.2                         | 9.1.3-1PGSTY                  | Security update; seven suites incl. Bullseye/Focal; fixes split-package conflicts |
 | vchord                    | 1.1.1                         | 1.2.0-2PGSTY                  | PGSTY fork/rebuild; rerank vchordg/halfvec candidates for strict order            |
 | vchord_bm25               | 0.3.0                         | 1.0.0                         | PGSTY fork; native tsvector; no in-place upgrade from 0.3.x                       |

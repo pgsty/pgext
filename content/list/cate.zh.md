@@ -178,7 +178,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.6 | 数据湖表和 Iceberg 表 |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.6 | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | 基于每个分区的数据范围在规划阶段裁剪分区，并支持非分区键列。 |
-| 2580 | {{< alias "pg_improv" >}} | 0.12.2 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
+| 2580 | {{< alias "pg_improv" >}} | 0.13.0 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
 {.wide .expand}
 
@@ -391,7 +391,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | 1.1.2 | ZSTD压缩解压缩函数包 |
 | 4070 | {{< alias "http" "pg_http" >}} | 1.7.2 | HTTP客户端，允许在数据库内收发HTTP请求 (supabase) |
 | 4080 | {{< alias "pg_net" >}} | 0.20.5 | 用 SQL 进行异步非阻塞HTTP/HTTPS 请求的扩展 (supabase) |
-| 4090 | {{< alias "pg_curl" >}} | 2.4.6 | 封装CURL，执行各种用URL传输数据的操作 |
+| 4090 | {{< alias "pg_curl" >}} | 2.5.0 | 封装CURL，执行各种用URL传输数据的操作 |
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | 在临时错误中使用指数退避重试语句 |
 | 4110 | {{< alias "pg_fsql" >}} | 1.1.0 | 支持 JSONB 驱动执行的递归 SQL 模板引擎 |
 | 4120 | {{< alias "pg_protobuf" >}} | 1.0 | 提供Protobuf函数支持 |

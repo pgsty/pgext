@@ -2,17 +2,17 @@
 
 来源：
 
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/README.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/UPGRADING.md)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/pg_sift.control)
-- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--3.5.sql)
-- [用法与安全](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/USAGE.md)
-- [支持版本](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/SUPPORT.md)
-- [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.0)
-- [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--4.0.3--4.1.sql)
-- [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/OPTIONS.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.4/README.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/UPGRADING.md)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.4/pg_sift.control)
+- [官方资料](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--3.5.sql)
+- [用法与安全](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/USAGE.md)
+- [支持版本](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/SUPPORT.md)
+- [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.4)
+- [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--4.0.3--4.1.sql)
+- [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/OPTIONS.md)
 
-`pg_sift` 发行版 4.1.0 安装的 SQL 扩展版本为 4.1，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
+`pg_sift` 发行版 4.1.4 安装的 SQL 扩展版本为 4.1，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
 
 ### 文本检索
 
@@ -100,3 +100,11 @@ ALTER EXTENSION pg_sift UPDATE TO '4.1';
 ```
 
 执行前须安装匹配文件并重启所有读取节点，包括备库。从 4.0.3 升至 4.1 只推进 SQL 版本，不改 SQL 对象或磁盘格式，也不新增 REINDEX 要求。更早版本受损索引的重建要求仍适用；重建已有 key_cut 索引是采用新构建方式的可选操作。
+
+### 4.1.1–4.1.4 的正确性与维护修复
+
+4.1.4 修复了受影响的 `NOT NULL` 列上 JSONB 包含条件取反时的错误结果，以及连接或相关查询重新扫描 `sift_col` 索引时重复返回写缓冲行的问题。升级前可用 `sift.enable_agg = off` 避开前者，用 `sift.enable_col_scan = off` 避开后者；仅关闭聚合不能解决重复行问题。
+
+4.1.1 阻止新的跟踪行计数错误；4.1.2 还会对旧跟踪日志重新检查堆表并修复过期状态。4.1.3 修复并发重建索引时的表锁与写入事务死锁。应在所有读取节点安装 4.1.4 文件并重启服务器，包括备库。SQL 仍为 4.1：已有 4.1 安装无需再次执行 `ALTER EXTENSION`，这些补丁也不要求转换格式或强制 `REINDEX`。
+
+在 `pg_upgrade`、禁用触发器的恢复或并发索引重建之后，跟踪列索引可能仍返回正确结果，但使用堆表检查。可执行普通 `REINDEX INDEX`，或为每个索引重新设置原有 `track_changes` 值，恢复优化路径。更早版本的升级要求及受损索引处理要求仍然适用。

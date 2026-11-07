@@ -178,7 +178,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.6 | Data lake tables and Iceberg tables |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.6 | Copy to/from data lake files |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
-| 2580 | {{< alias "pg_improv" >}} | 0.12.2 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
+| 2580 | {{< alias "pg_improv" >}} | 0.13.0 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
 {.wide .expand}
 
@@ -391,7 +391,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | 1.1.2 | Zstandard compression algorithm implementation in PostgreSQL |
 | 4070 | {{< alias "http" "pg_http" >}} | 1.7.2 | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
 | 4080 | {{< alias "pg_net" >}} | 0.20.5 | Async HTTP Requests |
-| 4090 | {{< alias "pg_curl" >}} | 2.4.6 | Run curl actions for data transfer in URL syntax |
+| 4090 | {{< alias "pg_curl" >}} | 2.5.0 | Run curl actions for data transfer in URL syntax |
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | Retry SQL statements on transient errors with exponential backoff |
 | 4110 | {{< alias "pg_fsql" >}} | 1.1.0 | Recursive SQL template engine with JSONB-driven execution |
 | 4120 | {{< alias "pg_protobuf" >}} | 1.0 | Protobuf support for PostgreSQL |

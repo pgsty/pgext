@@ -12,9 +12,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 457 | 158 | 373 | 0 | 0 | 450 | 444 | 427 | 404 | 384 |
-| **EL** | 456 | 157 | 373 | 0 | 62 | 449 | 443 | 426 | 403 | 384 |
-| **Debian** | 450 | 102 | 348 | 0 | 68 | 444 | 437 | 421 | 399 | 382 |
+| **ALL** | 457 | 158 | 373 | 0 | 0 | 450 | 444 | 427 | 405 | 384 |
+| **EL** | 456 | 157 | 373 | 0 | 62 | 449 | 443 | 426 | 404 | 384 |
+| **Debian** | 450 | 102 | 348 | 0 | 68 | 444 | 437 | 421 | 400 | 382 |
 {.wide .expand}
 
 ## Categories
@@ -139,7 +139,7 @@ There are 457 available PostgreSQL packages:
 | {{< ext "pg_sorted_heap" >}} | `0.14.0` | {{< badge content="Link" link="https://github.com/skuznetsov/pg_sorted_heap" >}} | {{< category "OLAP" >}} | `pg_sorted_heap_$v` | `postgresql-$v-pg-sorted-heap` |
 | {{< ext "pg_lake" >}} | `3.6` | {{< badge content="Link" link="https://github.com/Snowflake-Labs/pg_lake" >}} | {{< category "OLAP" >}} | `pg_lake_$v` | `postgresql-$v-pg-lake` |
 | {{< ext "pg_table_range" >}} | `0.1.2` | {{< badge content="Link" link="https://github.com/bitner/pg_table_range" >}} | {{< category "OLAP" >}} | `pg_table_range_$v` | - |
-| {{< ext "pg_improv" >}} | `0.12.2` | {{< badge content="Link" link="https://codeberg.org/gregburd/improv" >}} | {{< category "OLAP" >}} | `pg_improv_$v` | `postgresql-$v-pg-improv` |
+| {{< ext "pg_improv" >}} | `0.13.0` | {{< badge content="Link" link="https://codeberg.org/gregburd/improv" >}} | {{< category "OLAP" >}} | `pg_improv_$v` | `postgresql-$v-pg-improv` |
 | {{< ext "tablefunc" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/tablefunc.html" >}} | {{< category "OLAP" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "age" >}} | `1.8.0` | {{< badge content="Link" link="https://github.com/apache/age" >}} | {{< category "FEAT" >}} | `age_$v` | `postgresql-$v-age` |
 | {{< ext "pg_liquid" >}} | `0.1.7` | {{< badge content="Link" link="https://github.com/michael-golfi/pg_liquid" >}} | {{< category "FEAT" >}} | `pg_liquid_$v` | `postgresql-$v-pg-liquid` |
@@ -261,7 +261,7 @@ There are 457 available PostgreSQL packages:
 | {{< ext "zstd" "pg_zstd" >}} | `1.1.2` | {{< badge content="Link" link="https://github.com/grahamedgecombe/pgzstd" >}} | {{< category "UTIL" >}} | `pg_zstd_$v` | `postgresql-$v-zstd` |
 | {{< ext "http" "pg_http" >}} | `1.7.2` | {{< badge content="Link" link="https://github.com/pramsey/pgsql-http" >}} | {{< category "UTIL" >}} | `pgsql_http_$v` | `postgresql-$v-http` |
 | {{< ext "pg_net" >}} | `0.20.5` | {{< badge content="Link" link="https://github.com/supabase/pg_net" >}} | {{< category "UTIL" >}} | `pg_net_$v` | `postgresql-$v-pg-net` |
-| {{< ext "pg_curl" >}} | `2.4.6` | {{< badge content="Link" link="https://github.com/RekGRpth/pg_curl" >}} | {{< category "UTIL" >}} | `pg_curl_$v` | `postgresql-$v-pg-curl` |
+| {{< ext "pg_curl" >}} | `2.5.0` | {{< badge content="Link" link="https://github.com/RekGRpth/pg_curl" >}} | {{< category "UTIL" >}} | `pg_curl_$v` | `postgresql-$v-pg-curl` |
 | {{< ext "pg_retry" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/Agent-Hellboy/pg_retry" >}} | {{< category "UTIL" >}} | `pg_retry_$v` | `postgresql-$v-retry` |
 | {{< ext "pg_fsql" >}} | `1.1.0` | {{< badge content="Link" link="https://github.com/yurc/pg_fsql" >}} | {{< category "UTIL" >}} | `pg_fsql_$v` | `postgresql-$v-pg-fsql` |
 | {{< ext "pg_protobuf" >}} | `1.0` | {{< badge content="Link" link="https://github.com/afiskon/pg_protobuf" >}} | {{< category "UTIL" >}} | `pg_protobuf_$v` | `postgresql-$v-pg-protobuf` |

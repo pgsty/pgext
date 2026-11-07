@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2580** | {{< badge content="pg_improv" link="https://codeberg.org/gregburd/improv" >}} | {{< ext "pg_improv" >}} | `0.12.2` | {{< category "OLAP" >}} | {{< license "Apache-2.0 OR MIT" >}} | {{< language "Rust" >}} |
+| **2580** | {{< badge content="pg_improv" link="https://codeberg.org/gregburd/improv" >}} | {{< ext "pg_improv" >}} | `0.13.0` | {{< category "OLAP" >}} | {{< license "Apache-2.0 OR MIT" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -31,27 +31,27 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `improv` |
 
-> [!Note] Superuser install; commit mode needs preload. Logical mode needs preload/restart, wal_level=logical and a worker DB; slots retain WAL. PG15-18.
+> [!Note] Commit/logical modes need preload; policies bypassed by owners.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.12.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_improv` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.12.2` | {{< bg "18" "pg_improv_18" "green" >}} {{< bg "17" "pg_improv_17" "green" >}} {{< bg "16" "pg_improv_16" "green" >}} {{< bg "15" "pg_improv_15" "green" >}} {{< bg "14" "pg_improv_14" "red" >}} | `pg_improv_$v` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.13.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_improv` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.13.0` | {{< bg "18" "pg_improv_18" "green" >}} {{< bg "17" "pg_improv_17" "green" >}} {{< bg "16" "pg_improv_16" "green" >}} {{< bg "15" "pg_improv_15" "green" >}} {{< bg "14" "pg_improv_14" "red" >}} | `pg_improv_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.12.2` | {{< bg "18" "postgresql-18-pg-improv" "green" >}} {{< bg "17" "postgresql-17-pg-improv" "green" >}} {{< bg "16" "postgresql-16-pg-improv" "green" >}} {{< bg "15" "postgresql-15-pg-improv" "green" >}} {{< bg "14" "postgresql-14-pg-improv" "red" >}} | `postgresql-$v-pg-improv` | - |
 {.packages .wide .expand}
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.13.0" "pg_improv_15 : AVAIL 1" "green" >}} | {{< bg "N/A" "pg_improv_14 : N/A 0" "gray" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-18-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-17-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-16-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-15-pg-improv : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-improv : N/A 0" "gray" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-18-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-17-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-16-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-15-pg-improv : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-improv : N/A 0" "gray" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-18-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-17-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-16-pg-improv : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.12.2" "postgresql-15-pg-improv : AVAIL 1" "green" >}} | {{< bg "N/A" "postgresql-14-pg-improv : N/A 0" "gray" >}} |
@@ -70,12 +70,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_improv_18` | `0.12.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.3 MiB | [pg_improv_18-0.12.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_18-0.12.2-1PGSTY.el8.x86_64.rpm) |
-| `pg_improv_18` | `0.12.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.5 MiB | [pg_improv_18-0.12.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_18-0.12.2-1PGSTY.el8.aarch64.rpm) |
-| `pg_improv_18` | `0.12.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.2 MiB | [pg_improv_18-0.12.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_18-0.12.2-1PGSTY.el9.x86_64.rpm) |
-| `pg_improv_18` | `0.12.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.8 MiB | [pg_improv_18-0.12.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_18-0.12.2-1PGSTY.el9.aarch64.rpm) |
-| `pg_improv_18` | `0.12.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.2 MiB | [pg_improv_18-0.12.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_18-0.12.2-1PGSTY.el10.x86_64.rpm) |
-| `pg_improv_18` | `0.12.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.7 MiB | [pg_improv_18-0.12.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_18-0.12.2-1PGSTY.el10.aarch64.rpm) |
+| `pg_improv_18` | `0.13.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.3 MiB | [pg_improv_18-0.13.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_18-0.13.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_improv_18` | `0.13.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.4 MiB | [pg_improv_18-0.13.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_18-0.13.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_improv_18` | `0.13.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.1 MiB | [pg_improv_18-0.13.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_18-0.13.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_improv_18` | `0.13.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.5 MiB | [pg_improv_18-0.13.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_18-0.13.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_improv_18` | `0.13.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.1 MiB | [pg_improv_18-0.13.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_18-0.13.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_improv_18` | `0.13.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.6 MiB | [pg_improv_18-0.13.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_18-0.13.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pg-improv` | `0.12.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-18-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-improv` | `0.12.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.7 MiB | [postgresql-18-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-18-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-improv` | `0.12.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-improv/postgresql-18-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb) |
@@ -93,12 +93,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_improv_17` | `0.12.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.3 MiB | [pg_improv_17-0.12.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_17-0.12.2-1PGSTY.el8.x86_64.rpm) |
-| `pg_improv_17` | `0.12.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.5 MiB | [pg_improv_17-0.12.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_17-0.12.2-1PGSTY.el8.aarch64.rpm) |
-| `pg_improv_17` | `0.12.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.2 MiB | [pg_improv_17-0.12.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_17-0.12.2-1PGSTY.el9.x86_64.rpm) |
-| `pg_improv_17` | `0.12.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.8 MiB | [pg_improv_17-0.12.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_17-0.12.2-1PGSTY.el9.aarch64.rpm) |
-| `pg_improv_17` | `0.12.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.2 MiB | [pg_improv_17-0.12.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_17-0.12.2-1PGSTY.el10.x86_64.rpm) |
-| `pg_improv_17` | `0.12.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.7 MiB | [pg_improv_17-0.12.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_17-0.12.2-1PGSTY.el10.aarch64.rpm) |
+| `pg_improv_17` | `0.13.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.3 MiB | [pg_improv_17-0.13.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_17-0.13.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_improv_17` | `0.13.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.4 MiB | [pg_improv_17-0.13.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_17-0.13.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_improv_17` | `0.13.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.1 MiB | [pg_improv_17-0.13.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_17-0.13.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_improv_17` | `0.13.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.5 MiB | [pg_improv_17-0.13.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_17-0.13.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_improv_17` | `0.13.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.1 MiB | [pg_improv_17-0.13.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_17-0.13.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_improv_17` | `0.13.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.5 MiB | [pg_improv_17-0.13.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_17-0.13.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-improv` | `0.12.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.4 MiB | [postgresql-17-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-17-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-improv` | `0.12.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.7 MiB | [postgresql-17-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-17-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-improv` | `0.12.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.4 MiB | [postgresql-17-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-improv/postgresql-17-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb) |
@@ -116,12 +116,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_improv_16` | `0.12.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.3 MiB | [pg_improv_16-0.12.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_16-0.12.2-1PGSTY.el8.x86_64.rpm) |
-| `pg_improv_16` | `0.12.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.5 MiB | [pg_improv_16-0.12.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_16-0.12.2-1PGSTY.el8.aarch64.rpm) |
-| `pg_improv_16` | `0.12.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.2 MiB | [pg_improv_16-0.12.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_16-0.12.2-1PGSTY.el9.x86_64.rpm) |
-| `pg_improv_16` | `0.12.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.8 MiB | [pg_improv_16-0.12.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_16-0.12.2-1PGSTY.el9.aarch64.rpm) |
-| `pg_improv_16` | `0.12.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.2 MiB | [pg_improv_16-0.12.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_16-0.12.2-1PGSTY.el10.x86_64.rpm) |
-| `pg_improv_16` | `0.12.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.7 MiB | [pg_improv_16-0.12.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_16-0.12.2-1PGSTY.el10.aarch64.rpm) |
+| `pg_improv_16` | `0.13.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.3 MiB | [pg_improv_16-0.13.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_16-0.13.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_improv_16` | `0.13.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.4 MiB | [pg_improv_16-0.13.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_16-0.13.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_improv_16` | `0.13.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.1 MiB | [pg_improv_16-0.13.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_16-0.13.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_improv_16` | `0.13.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.5 MiB | [pg_improv_16-0.13.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_16-0.13.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_improv_16` | `0.13.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.1 MiB | [pg_improv_16-0.13.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_16-0.13.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_improv_16` | `0.13.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.5 MiB | [pg_improv_16-0.13.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_16-0.13.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-improv` | `0.12.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.4 MiB | [postgresql-16-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-16-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-improv` | `0.12.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.7 MiB | [postgresql-16-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-16-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-improv` | `0.12.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.4 MiB | [postgresql-16-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-improv/postgresql-16-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb) |
@@ -139,12 +139,12 @@ page_width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_improv_15` | `0.12.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.3 MiB | [pg_improv_15-0.12.2-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_15-0.12.2-1PGSTY.el8.x86_64.rpm) |
-| `pg_improv_15` | `0.12.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.5 MiB | [pg_improv_15-0.12.2-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_15-0.12.2-1PGSTY.el8.aarch64.rpm) |
-| `pg_improv_15` | `0.12.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.2 MiB | [pg_improv_15-0.12.2-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_15-0.12.2-1PGSTY.el9.x86_64.rpm) |
-| `pg_improv_15` | `0.12.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.8 MiB | [pg_improv_15-0.12.2-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_15-0.12.2-1PGSTY.el9.aarch64.rpm) |
-| `pg_improv_15` | `0.12.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.2 MiB | [pg_improv_15-0.12.2-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_15-0.12.2-1PGSTY.el10.x86_64.rpm) |
-| `pg_improv_15` | `0.12.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.8 MiB | [pg_improv_15-0.12.2-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_15-0.12.2-1PGSTY.el10.aarch64.rpm) |
+| `pg_improv_15` | `0.13.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.2 MiB | [pg_improv_15-0.13.0-1PGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_improv_15-0.13.0-1PGSTY.el8.x86_64.rpm) |
+| `pg_improv_15` | `0.13.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.3 MiB | [pg_improv_15-0.13.0-1PGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_improv_15-0.13.0-1PGSTY.el8.aarch64.rpm) |
+| `pg_improv_15` | `0.13.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.1 MiB | [pg_improv_15-0.13.0-1PGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_improv_15-0.13.0-1PGSTY.el9.x86_64.rpm) |
+| `pg_improv_15` | `0.13.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.5 MiB | [pg_improv_15-0.13.0-1PGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_improv_15-0.13.0-1PGSTY.el9.aarch64.rpm) |
+| `pg_improv_15` | `0.13.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 5.1 MiB | [pg_improv_15-0.13.0-1PGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_improv_15-0.13.0-1PGSTY.el10.x86_64.rpm) |
+| `pg_improv_15` | `0.13.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.6 MiB | [pg_improv_15-0.13.0-1PGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_improv_15-0.13.0-1PGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-improv` | `0.12.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.4 MiB | [postgresql-15-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-15-pg-improv_0.12.2-1PGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-improv` | `0.12.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 3.7 MiB | [postgresql-15-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-improv/postgresql-15-pg-improv_0.12.2-1PGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-improv` | `0.12.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.4 MiB | [postgresql-15-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-improv/postgresql-15-pg-improv_0.12.2-1PGSTY~trixie_amd64.deb) |
@@ -163,7 +163,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/improv" title="Repository" icon="link" subtitle="codeberg.org/gregburd/improv" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="improv-0.12.2.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="improv-0.13.0.tar.gz" />}}
 {{< /cards >}}
 
 
@@ -203,13 +203,14 @@ CREATE EXTENSION pg_improv;
 
 Sources:
 
-- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/CHANGELOG.md)
+- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/CHANGELOG.md)
 
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/README.md)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/pg_improv.control)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.12.2/crates/pg_improv/Cargo.toml)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/README.md)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/pg_improv.control)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/Cargo.toml)
+- [SQL update](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/sql/pg_improv--0.12.2--0.13.0.sql)
 
-`pg_improv` 0.12.2 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
+`pg_improv` 0.13.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
 
 ### Core Workflow
 
@@ -242,14 +243,25 @@ The `improv` language supports scalar formulas as well as model expressions, but
 
 Back up model definitions and result state with database dumps and rehearse restoration; logical mode needs a fresh slot and recomputation after restore. Library upgrades require restarting preloaded processes and updating the extension SQL. Model computation is distinct from an application transaction's source-of-truth tables.
 
-### Ownership and Database-Wide Logical Sync since 0.11.0
+### Model Access Policies in 0.13.0
 
-Each model now reads and writes as its owner; row-level security protects its catalog, items and cells. Only a superuser or a role allowed to act as the owner may change or recalculate that model. Grant improv_user to a model creator and grant the source-table privileges it needs; the administrator role does not automatically become every model owner. A shared result table still needs ordinary grants. what_if can reveal owner-visible data, so grant access deliberately. Logical models in one database now share one slot and publication. Upgrade with the matching library and SQL scripts, restore roles before model dumps, and monitor retained WAL.
+Models execute with their owner's privileges. Grant `improv_user` to model creators and give them the required source-table privileges. Version 0.13.0 adds Cedar policies through `improv.set_policies`, inspection through `improv.policies`, and decision explanations through `improv.explain_access`.
 
-### 0.12.2 Release Note
+```sql
+SELECT * FROM improv.policies('plan');
+SELECT * FROM improv.explain_access('plan', 'Read');
+```
 
-Release 0.12.2 fixes idle logical-sync workers so they no longer reread the model catalog on every poll; there are no other code changes in this release. The Pigsty build uses pgrx 0.19.3 for the current package, while upstream source metadata still declares pgrx 0.17.0.
+Grant `improv_reader` (or `improv_user`) to restricted users and separately grant access to result tables. Policies filter result rows and the `improv.categories`, `improv.items`, `improv.measures` and `improv.cells` functions. Superusers, the owner and roles allowed to act as the owner bypass these policies. A model without policies retains its ordinary grant behavior; configured policies deny by default, and invalid policies deny access to restricted users.
 
-### 0.12.1 Release Note
+Derived values are calculated over all owner-visible inputs before filtering. Hiding an input does not remove its contribution from an allowed total. Model policies do not restrict direct access to source tables. Permitted cell edits and policy changes are recorded in `improv.policy_audit`; rejected operations are logged by the server. Review grants and totals before exposing a model.
 
-The 0.12.0 SQL migration adds `improv.measure.format` for persisted display formatting; update the extension before saving formats. Release 0.12.1 changes the version from 0.12.0 without additional code changes and restores RHEL 8 (glibc 2.28) compatible artifacts. Upstream still uses pgrx 0.17.0. Logical synchronization still requires `shared_preload_libraries`, `wal_level=logical` and a restart; trigger and manual modes do not.
+### Upgrading to 0.13.0
+
+Install matching files and restart PostgreSQL when the library is preloaded, then update each database:
+
+```sql
+ALTER EXTENSION pg_improv UPDATE TO '0.13.0';
+```
+
+The 0.12.2-to-0.13.0 migration adds the policy objects and functions without changing model rows. The release also fixes an upgrade deadlock with the logical-sync worker. Back up roles and model data and rehearse the update. Upstream now uses pgrx 0.19.3; this does not establish availability of a matching distribution package.

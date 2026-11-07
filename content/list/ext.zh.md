@@ -10,9 +10,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 626 | 171 | 462 | 71 | 0 | 617 | 604 | 586 | 549 | 525 |
-| **EL** | 624 | 170 | 462 | 71 | 2 | 615 | 602 | 584 | 548 | 525 |
-| **Debian** | 618 | 114 | 433 | 71 | 8 | 610 | 596 | 579 | 544 | 523 |
+| **ALL** | 626 | 171 | 462 | 71 | 0 | 617 | 604 | 586 | 552 | 525 |
+| **EL** | 624 | 170 | 462 | 71 | 2 | 615 | 602 | 584 | 551 | 525 |
+| **Debian** | 618 | 114 | 433 | 71 | 8 | 610 | 596 | 579 | 547 | 523 |
 {.wide .expand}
 
 ## 分类
@@ -616,10 +616,10 @@ comments: false
 | {{< ext "dblink" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | 从数据库内连接到其他 PostgreSQL 数据库 |
 | {{< ext "file_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | 访问外部文件的外部数据包装器 |
 | {{< ext "postgres_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | 用于远程 PostgreSQL 服务器的外部数据包装器 |
-| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的API层 |
-| {{< ext "documentdb_core" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的核心API层实现 |
+| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的API层 |
+| {{< ext "documentdb_core" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的核心API层实现 |
 | {{< ext "documentdb_distributed" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | DocumentDB多节点模式的API层 |
-| {{< ext "documentdb_extended_rum" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | DocumentDB扩展RUM索引访问方法 |
+| {{< ext "documentdb_extended_rum" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | DocumentDB扩展RUM索引访问方法 |
 | {{< ext "pg_projection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 类似Oracle的全局临时表功能 |

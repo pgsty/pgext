@@ -6,6 +6,22 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-11-07
+
+Imported and indexed locally on EL8/9/10 × x86_64/aarch64. Public CDN synchronization is pending.
+
+| Name | Old | New | Comment |
+|:-----|:----|:----|:--------|
+| documentdb | 1.0-1PGSTY | 1.0-2PGSTY | PG15-18; PostGIS 3.7; PG15 advances from 0.117 to 1.0; SQL 1.0-0 |
+| mobilitydb | 1.3.1-1PGSTY | 1.3.1-2PGSTY | PG14-18; PostGIS 3.7; backports upstream fix for geometry input mutation |
+| orioledb-16 | 1.10.1 | 1.10.2 | PG16.15 kernel; SQL 1.10 |
+| orioledb-17 | 1.10.1 | 1.10.2 | PG17.11 kernel; SQL 1.10 |
+| orioledb-18 | 1.10.1 | 1.10.2 | PG18.6 kernel; SQL 1.10 |
+| pg_curl | 2.4.6 | 2.5.0 | PG14-18; SQL 2.5; no upstream SQL upgrade path from 2.4.1 |
+| pg_improv | 0.12.2 | 0.13.0 | PG15-18; upstream pgrx 0.19.3 |
+| pg_tre | 4.6.1 | 4.6.2 | PG17-18 |
+| pghydro | 6.6-1PIGSTY | 6.6-2PGSTY | PG14-18; PostGIS 3.7; noarch; seven SQL extensions |
+
 ## 2026-11-06
 
 Consolidated package changes from 2026-10-31 through 2026-11-06; repeated updates show the initial and final versions.

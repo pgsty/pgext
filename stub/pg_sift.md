@@ -2,17 +2,17 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/UPGRADING.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--3.5.sql)
-- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/USAGE.md)
-- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/SUPPORT.md)
-- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.0)
-- [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.0/sql/pg_sift--4.0.3--4.1.sql)
-- [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.0/docs/OPTIONS.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/README.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/UPGRADING.md)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/pg_sift.control)
+- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--3.5.sql)
+- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/USAGE.md)
+- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/SUPPORT.md)
+- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.4)
+- [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--4.0.3--4.1.sql)
+- [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/OPTIONS.md)
 
-`pg_sift` release 4.1.0 installs SQL extension version 4.1. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
+`pg_sift` release 4.1.4 installs SQL extension version 4.1. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
 
 ### Text Search
 
@@ -100,3 +100,11 @@ ALTER EXTENSION pg_sift UPDATE TO '4.1';
 ```
 
 First install matching files and restart all readers, including standbys. The 4.0.3-to-4.1 update advances the SQL version without changing its objects or on-disk formats and adds no REINDEX requirement. Earlier damaged-index rebuild requirements still apply; rebuilding an existing key_cut index is optional to adopt the new construction method.
+
+### 4.1.1–4.1.4 Correctness and Maintenance Fixes
+
+4.1.4 fixes incorrect negated JSONB containment results on affected `NOT NULL` columns and duplicated buffered rows when a `sift_col` scan is rescanned by a join or correlated query. Until updated, `sift.enable_agg = off` avoids the first case; `sift.enable_col_scan = off` avoids the second. Disabling aggregation alone does not fix the duplicated-row case.
+
+4.1.1 stops new incorrect tracked-row counts; 4.1.2 additionally rechecks older tracking logs against the heap and repairs stale state. 4.1.3 fixes table locking and writer deadlocks during concurrent index rebuilds. Install 4.1.4 files on all readers and restart the servers, including standbys. SQL stays at 4.1: updating an existing 4.1 installation requires no further `ALTER EXTENSION`, no format conversion and no mandatory `REINDEX` for these patch fixes.
+
+After `pg_upgrade`, restore with disabled triggers, or a concurrent index rebuild, tracked column indexes can remain correct but use heap checks. Restore the optimized path with a normal `REINDEX INDEX` or by setting each index's existing `track_changes` value again. Earlier upgrade and damaged-index requirements still apply.
