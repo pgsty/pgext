@@ -2,13 +2,13 @@
 
 Sources:
 
-- [README v1.3.0](https://github.com/GyuyeongKim/Tessera-public/blob/v1.3.0/README.md)
-- [v1.3.0 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.3.0)
-- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/tessera_pg.control)
-- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/tessera_pg--1.0.sql)
-- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.3.0/Makefile)
+- [README v1.4.1](https://github.com/GyuyeongKim/Tessera-public/blob/v1.4.1/README.md)
+- [v1.4.1 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.4.1)
+- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/tessera_pg.control)
+- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/tessera_pg--1.0.sql)
+- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/Makefile)
 
-`tessera_pg` replaces supported join-aggregate plans with sparse matrix multiplication and exposes item-similarity functions. Distribution 1.3.0 installs SQL version 1.0. It targets PostgreSQL 18; the native engine requires OpenMP and AVX2 or newer on x86-64.
+`tessera_pg` replaces supported join-aggregate plans with sparse matrix multiplication and exposes item-similarity functions. Distribution 1.4.1 installs SQL version 1.0. It targets PostgreSQL 18; the native engine requires OpenMP and AVX2 or newer on x86-64.
 
 ### Core Workflow
 
@@ -25,7 +25,9 @@ GROUP BY a.x, b.x;
 SELECT * FROM tessera_sim('edges', 'k', 'x', 'jaccard', 0.5);
 ```
 
-`Custom Scan (Tessera)` identifies an accepted rewrite. Version 1.3.0 supports `COUNT(DISTINCT a.k)`, `AVG`, one-sided `SUM`, multicolumn or expression keys, additional grouping columns and filters on either input. Grouping columns may contain NULLs, which form separate groups; summed columns still need valid NOT NULL constraints. Inputs may also use subqueries, views, CTEs, partitioned or foreign tables and row-level-security plans, with pruning for HAVING and top-N queries. `MIN`, `MAX`, outer joins, nondeterministic collations and other unsupported shapes keep the normal plan; the adapter recognizes only PostgreSQL built-in operators and aggregates.
+`Custom Scan (Tessera)` identifies an accepted rewrite. Version 1.4.1 adds sums and counts over nullable columns, per-group top-k pruning with `RANK()` or `ROW_NUMBER()`, and multiple floating-point sums in one pass. A joined pair contributes to a sum only when all factors are non-NULL; a group without a contributing pair has a NULL sum. The adapter still supports `COUNT(DISTINCT a.k)`, `AVG`, one-sided `SUM`, expression keys and grouping columns, input filters, HAVING and top-N pruning.
+
+PostgreSQL leaves unsupported cases with its normal plan: nullable decimal weights, nullable `float8` averages, integer-times-`float8` products, `real` products, `MIN`, `MAX`, outer joins and nondeterministic collations. Multiple sums and nullable summed inputs also have restrictions on partitioned/inherited inputs or inputs with their own plans. Consult the versioned supported-query matrix; only PostgreSQL built-in operators and aggregates are recognized.
 
 ### Similarity Functions and Settings
 
