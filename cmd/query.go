@@ -85,28 +85,30 @@ Supports region-specific URLs (default or china/mirror).`,
 	PostRun: closeDatabase,
 }
 
-// repoCmd shows repository summary
-var repoCmd = &cobra.Command{
-	Use:   "repo",
-	Short: "show repository summary",
-	Long: `Display repository summary including:
+// newRepoSummaryCommand retains the database-backed repository inventory.
+func newRepoSummaryCommand() *cobra.Command {
+	return &cobra.Command{
+		Use:   "summary",
+		Short: "show repository summary",
+		Long: `Display repository summary including:
 - Repository ID and type
 - Operating system
 - Organization
 - Data size
 - Status (has data or missing)`,
-	Example: `
-  pgext repo                    # show all repositories
+		Example: `
+  pgext repo summary            # show repositories in the metadata database
 `,
-	Args:    cobra.NoArgs,
-	PreRunE: initDatabase,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		if err := cli.ShowRepositories(); err != nil {
-			return fmt.Errorf("failed to show repositories: %w", err)
-		}
-		return nil
-	},
-	PostRun: closeDatabase,
+		Args:    cobra.NoArgs,
+		PreRunE: initDatabase,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			if err := cli.ShowRepositories(); err != nil {
+				return fmt.Errorf("failed to show repositories: %w", err)
+			}
+			return nil
+		},
+		PostRun: closeDatabase,
+	}
 }
 
 // extCmd shows extension information

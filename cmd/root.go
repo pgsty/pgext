@@ -54,6 +54,8 @@ var rootCmd = &cobra.Command{
   pgext parse                   # atomically populate apt, dnf, bin, pkg
   pgext recap                   # rebuild pkg from current catalog data
   pgext status                  # show metadata status
+  pgext repo list               # list package sources from the confgen catalog
+  pgext repo add pgsql --plan    # preview repository setup without a database
   pgext gen cc                  # generate pigsty.cc extension content
   pgext gen io                  # generate pigsty.io extension content
   pgext gen page                # generate PGEXT catalog pages

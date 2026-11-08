@@ -100,6 +100,32 @@ use the embedded `db/extension.csv`, a local configuration copy, or
 See [the build workflow](docs/build-workflow.md) for Docker integration,
 local recipes, source verification, outputs, and migration from PIG.
 
+## Manage repositories
+
+`pgext repo` manages Linux package sources using the same repository definitions
+as `confgen` and Pigsty. It supports repository names, modules, regional mirrors,
+configuration previews, backups, and guarded restores without a database.
+
+```bash
+pgext repo list
+pgext repo show pgsql --platform u24.arm64 --mirror
+pgext repo add pgdg pigsty --dry-run
+sudo pgext repo add pgdg pigsty --update
+sudo pgext repo set all --replace --mirror
+pgext repo status
+sudo pgext repo rm docker
+sudo pgext repo restore <backup-id>
+```
+
+`all` selects `node,pgsql,infra`. `add`, `set`, and `rm` normally manage only
+PGEXT-owned files; `set --replace` backs up and replaces all existing system
+source definitions. `set` also updates the cache by default. Use `--dry-run`
+to inspect changes and `--json` for scripts. The old database-backed repository
+summary is available as `pgext repo summary`.
+
+See [repository management](docs/repository-management.md) for custom Pigsty
+catalogs, platform overrides, trust settings, and isolated staging.
+
 ## Run it locally
 
 With PostgreSQL running, create a database and initialize the catalog using
@@ -129,6 +155,8 @@ pgext serve --db 'postgresql://postgres@%2Ftmp:5432/data' --listen :8080
 pgext init                    # load the bundled catalog and fetch package data
 pgext serve                   # serve the web UI and JSON API
 pgext status                  # show catalog and repository status
+pgext repo list               # list available Linux package repositories
+pgext repo summary            # show fetched repository metadata in the database
 
 pgext reload                  # fetch repository metadata and rebuild the matrix
 pgext rescan                  # scan local Pigsty repositories and rebuild it
