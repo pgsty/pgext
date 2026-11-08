@@ -12,6 +12,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Set by release builds; retained in build provenance.
+var Version = "dev"
+var Commit = "unknown"
+
 // Global flags
 var (
 	// Database connection
@@ -38,8 +42,8 @@ var (
 // rootCmd represents the base command
 var rootCmd = &cobra.Command{
 	Use:   "pgext",
-	Short: "PostgreSQL Extension Metadata Manager",
-	Long:  `pgext - PostgreSQL Extension Metadata Manager using PostgreSQL`,
+	Short: "PostgreSQL Extension Builder and Catalog",
+	Long:  `pgext - build PostgreSQL extensions and manage their catalog`,
 	Example: `
   pgext init                    # setup everything (schema + reload)
   pgext schema [-f]             # initialize pgext schema
@@ -55,9 +59,14 @@ var rootCmd = &cobra.Command{
   pgext gen page                # generate PGEXT catalog pages
   pgext gen all                 # run every generator
   pgext purge                   # drop pgext schema
-  pgext pkg <name>              # show package availability matrix
+  pgext matrix <name>           # show package availability matrix
   pgext bin <name> -p 17 -o el9 # show binary packages with URLs
-  pgext ext <name>              # show extension information
+  pgext info <name>             # show extension information
+  pgext env                    # inspect build environment (no database)
+  pgext get pgvector            # fetch sources
+  pgext dep pgvector -p 18      # install build dependencies
+  pgext mak pgvector -p 18      # build from prepared inputs
+  pgext pkg pgvector -p 18      # get + dep + mak
 `,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		return setupLogging()
@@ -66,6 +75,7 @@ var rootCmd = &cobra.Command{
 
 // Execute runs the root command
 func Execute() error {
+	rootCmd.Version = Version + " (" + Commit + ")"
 	return rootCmd.Execute()
 }
 
@@ -136,7 +146,11 @@ func init() {
 	rootCmd.AddCommand(recapCmd)
 
 	rootCmd.AddCommand(statusCmd)
-	rootCmd.AddCommand(pkgCmd)
+	rootCmd.AddCommand(matrixCmd)
+	for _, action := range []string{"get", "dep", "make", "pkg"} {
+		rootCmd.AddCommand(newBuildCommand(action))
+	}
+	rootCmd.AddCommand(newEnvCommand())
 	rootCmd.AddCommand(binCmd)
 	rootCmd.AddCommand(extCmd)
 

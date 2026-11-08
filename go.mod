@@ -3,6 +3,7 @@ module pgext
 go 1.27.3
 
 require (
+	github.com/gofrs/uuid/v5 v5.5.1
 	github.com/jackc/pgx/v5 v5.12.0
 	github.com/klauspost/compress v1.20.3
 	github.com/sirupsen/logrus v1.10.2

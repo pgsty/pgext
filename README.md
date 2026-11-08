@@ -10,7 +10,9 @@ and find packages for your PostgreSQL version and Linux system.
 
 This repository contains the catalog data and the Go application behind
 PGEXT.CLOUD. The `pgext` CLI collects APT/RPM repository metadata and builds
-package availability matrices. `pgext serve` exposes the catalog as a web
+package availability matrices. It also builds extension RPM/DEB packages
+directly from the Pigsty recipes, without PIG or a metadata database.
+`pgext serve` exposes the catalog as a web
 application and JSON query API, with web assets embedded in the binary and
 data stored in PostgreSQL.
 
@@ -67,6 +69,37 @@ go build -o pgext .
 
 For a source build, use `./pgext` in the examples below.
 
+## Build extensions
+
+Inside a supported Linux builder, prepare the environment once:
+
+```bash
+pgext env repo
+pgext env tool
+pgext env spec
+pgext env rust
+pgext env pgrx
+```
+
+Then run the complete pipeline or its individual stages:
+
+```bash
+pgext pkg pgvector --pg 18
+
+pgext get pgvector --pg 18
+pgext dep pgvector --pg 18
+pgext mak pgvector --pg 18
+```
+
+`make` is the command name; `m`, `mk`, and `mak` are aliases. Examples use
+`mak`. It builds and verifies packages from prepared inputs; `pkg` runs
+`get → dep → mak`. Both preserve debug packages by default. Build commands
+use the embedded `db/extension.csv`, a local configuration copy, or
+`--catalog`; they do not use `PGURL` or the published availability matrix.
+
+See [the build workflow](docs/build-workflow.md) for Docker integration,
+local recipes, source verification, outputs, and migration from PIG.
+
 ## Run it locally
 
 With PostgreSQL running, create a database and initialize the catalog using
@@ -104,8 +137,8 @@ pgext scan                    # scan local repository metadata
 pgext parse                   # parse cached metadata and rebuild the matrix
 pgext recap                   # rebuild package availability from parsed data
 
-pgext ext <name>              # show extension metadata
-pgext pkg <name>              # show a package availability matrix
+pgext info <name>             # show extension metadata (alias: ext)
+pgext matrix <name>           # show a package availability matrix
 pgext bin <name> -p 18 -o el9  # show binary packages and download URLs
 
 pgext gen all                 # run content generators
@@ -116,6 +149,8 @@ pgext pgxn                    # export PGXN metadata to standalone reports
 Run `pgext help <command>` for command-specific options. `pgext reload` reads
 the current repository manifests, validates and parses their metadata, and
 publishes the parsed package tables and availability matrix atomically.
+The former read-only `pgext pkg` query is now `pgext matrix`; `pkg` runs
+the extension build pipeline.
 
 ## Development
 

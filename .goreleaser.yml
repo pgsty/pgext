@@ -20,7 +20,7 @@ builds:
       - amd64
       - arm64
     ldflags:
-      - -s -w
+      - -s -w -X pgext/cmd.Version={{ .Version }} -X pgext/cmd.Commit={{ .Commit }}
 
 archives:
   - id: pgext

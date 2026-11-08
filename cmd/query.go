@@ -34,17 +34,17 @@ var statusCmd = &cobra.Command{
 	PostRun: closeDatabase,
 }
 
-// pkgCmd shows package availability matrix
-var pkgCmd = &cobra.Command{
-	Use:   "pkg <name>",
+// matrixCmd shows package availability; pkg now runs the build pipeline.
+var matrixCmd = &cobra.Command{
+	Use:   "matrix <name>",
 	Short: "show package availability matrix",
 	Long: `Display package availability matrix for a given extension.
 
 Shows which PostgreSQL versions and operating systems have the extension
 available, along with version and repository information.`,
 	Example: `
-  pgext pkg pgvector             # show pgvector availability
-  pgext pkg timescaledb          # show timescaledb availability
+  pgext matrix pgvector          # show pgvector availability
+  pgext matrix timescaledb       # show timescaledb availability
 `,
 	Args:    cobra.ExactArgs(1),
 	PreRunE: initDatabase,
@@ -111,8 +111,9 @@ var repoCmd = &cobra.Command{
 
 // extCmd shows extension information
 var extCmd = &cobra.Command{
-	Use:   "ext <name>",
-	Short: "show extension information",
+	Use:     "info <name>",
+	Aliases: []string{"ext"},
+	Short:   "show extension information",
 	Long: `Display detailed extension information including:
 - Package name
 - Category
@@ -124,9 +125,9 @@ var extCmd = &cobra.Command{
 
 Use --json to return the complete pgext.extension record with stable field names.`,
 	Example: `
-  pgext ext vector                # show pgvector extension info
-  pgext ext timescaledb           # show timescaledb info
-  pgext ext vector --json         # emit machine-readable JSON
+  pgext info vector               # show pgvector extension info
+  pgext info timescaledb          # show timescaledb info
+  pgext info vector --json        # emit machine-readable JSON
 `,
 	Args:    cobra.ExactArgs(1),
 	PreRunE: initDatabase,
