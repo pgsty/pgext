@@ -138,13 +138,13 @@ Generate an inventory from a template under `<PIGSTY_HOME>/conf`. The command ed
 pig sty conf                         # use conf/meta.yml and write pigsty.yml
 pig sty conf -g                      # generate random passwords (recommended)
 pig sty conf rich                    # positional mode selects conf/rich.yml
-pig sty conf -c ha/full              # equivalent flag form; do not combine both forms
+pig sty conf -c full                 # finds conf/ha/full.yml; same as positional full
 pig sty conf ha/trio --ip 10.0.0.10,10.0.0.11,10.0.0.12
 pig sty conf --domain infra.example.com
 pig sty conf rich -v 18              # request PostgreSQL 18 for a generic template
 pig sty conf -r china -s             # China region, placeholder IP, no admin preflight
 pig sty conf -x                       # materialize proxy environment variables
-pig sty conf ha/full -g -O ha.yml       # custom owner-only output file
+pig sty conf full -g -O ha.yml          # custom owner-only output file
 pig sty conf -n --ip 10.0.0.10 -o json
 ```
 
@@ -154,7 +154,24 @@ YAML command output.
 
 ### Template and output paths
 
-Template names are relative to `<PIGSTY_HOME>/conf`. The `.yml` suffix is optional; for example, use `ha/full`. Use a relative name without `..`.
+Ordered short-name lookup is available in the current development source. Older PIG binaries
+may require the exact template mode supported by that release, such as `ha/full`.
+
+Template names are relative to `<PIGSTY_HOME>/conf`. Bare names search for a `.yml` file in this order:
+
+```text
+conf/ → conf/ha/ → conf/fork/ → conf/app/ → conf/demo/ → conf/build/
+```
+
+The first matching file wins. A root template keeps precedence, including templates in older
+Pigsty installations. Search does not recurse into other directories. An explicit relative path
+such as `ha/full` selects only that path; it does not fall back to another directory. Once selected,
+an unreadable or invalid template fails configuration rather than selecting a later match.
+
+The `conf/` prefix, leading `./`, and `.yml` suffix are optional. With the standard templates,
+`full`, `ha/full`, `ha/full.yml`, and `./conf/ha/full.yml` all select `conf/ha/full.yml`.
+`halo` selects `fork/halo`, while `mysql` selects `demo/mysql` when those files are installed.
+Use a relative name without any `..` path component; absolute template paths are rejected.
 
 Relative output paths resolve under `<PIGSTY_HOME>`. Absolute paths are also accepted. The output must be a different file from the template and cannot be a symlink. A parsing, transformation, or validation error leaves the existing output unchanged.
 
@@ -170,14 +187,15 @@ The command applies these changes to the template:
 | small controller | When detected CPU count is below four, rewrites `node_tune: oltp` and `pg_conf: oltp.yml` to their `tiny` profiles. |
 | `--region REGION` | Updates `all.vars.region` for non-default regions. `china` also activates template-provided Docker and pip mirrors, using values already present in the template. |
 | `--proxy` | Reads `HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`, and `NO_PROXY`, each falling back to its lowercase spelling. Missing HTTP/HTTPS values fall back to ALL_PROXY. Writes non-empty values to `all.vars.proxy_env` and supplies a default no-proxy list when needed. |
-| `--version MAJOR` | Updates generic templates for PostgreSQL 14-18, or explicit 19 beta, and selects the matching locale. Version-pinned `mssql`, `polar`, and `pgNN` modes keep their template version and report a warning. |
+| `--version MAJOR` | Updates generic templates for PostgreSQL 14-18, or explicit 19 beta, and selects the matching locale. Version-pinned `fork/mssql`, `fork/polar`, legacy root `mssql`/`polar`, and root `pgNN` modes keep their template version and report a warning. |
 | `--generate` | Generates one 24-character value per known credential identifier and consistently replaces its active values and documented placeholders. |
 
 An IP mapping that creates a duplicate key fails. PIG warns if a supplied address has no matching placeholder in the template.
 
 For PostgreSQL 19 beta, Pig also enables the `beta` repository after `pgsql` when the template
 contains the expected repository list. Modes below `conf/build/` intentionally bypass IP mapping
-and controller-admin preflight so build templates remain portable.
+and controller-admin preflight so build templates remain portable. These rules use the resolved
+mode: `oss` behaves like `build/oss`, and `mssql` behaves like `fork/mssql` when it selects that file.
 
 Active password identifiers are `grafana_admin_password`, `pg_admin_password`,
 `pg_monitor_password`, `pg_replication_password`, `patroni_password`,
@@ -210,6 +228,9 @@ The output must pass inventory validation. If `ansible-inventory` is available, 
 ### Structured output
 
 `-o json` or `-o yaml` returns `pig.sty.configure/v1`, including the template, output path, region, IPs, domain, SSH port, PostgreSQL versions, and warnings. Generated passwords are written only to the inventory; the result lists their identifiers.
+
+`mode` contains the resolved name relative to `conf/`, without `.yml` (for example, `ha/full`
+even when the input is `full`); `template_path` identifies the selected file.
 
 See the [Pigsty configuration guide](https://pigsty.io/docs/setup/install/#configure) for the procedure.
 

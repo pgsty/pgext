@@ -135,13 +135,13 @@ Ansible 安装或验证失败会使命令失败。本机 SSH、locale 或 Pigsty
 pig sty conf                         # 使用 conf/meta.yml，写入 pigsty.yml
 pig sty conf -g                      # 生成随机密码（推荐）
 pig sty conf rich                    # 位置参数选择 conf/rich.yml
-pig sty conf -c ha/full              # 等价的参数形式；不要与位置参数并用
+pig sty conf -c full                 # 找到 conf/ha/full.yml；等价于位置参数 full
 pig sty conf ha/trio --ip 10.0.0.10,10.0.0.11,10.0.0.12
 pig sty conf --domain infra.example.com
 pig sty conf rich -v 18              # 为通用模板请求 PostgreSQL 18
 pig sty conf -r china -s             # 中国区域、保留占位 IP、跳过管理员预检
 pig sty conf -x                       # 写入代理环境变量
-pig sty conf ha/full -g -O ha.yml       # 写入自定义的仅属主可读文件
+pig sty conf full -g -O ha.yml          # 写入自定义的仅属主可读文件
 pig sty conf -n --ip 10.0.0.10 -o json
 ```
 
@@ -150,7 +150,22 @@ Inventory 输出文件，全局小写 `-o` 用于选择 text、JSON 或 YAML 命
 
 ### 模板与输出路径
 
-模板名相对于 `<PIGSTY_HOME>/conf`，可省略 `.yml` 后缀，例如 `ha/full`。使用相对名称，不带 `..`。
+以下有序短名称查找规则对应当前开发源码。旧版 PIG 可能仍需使用该版本支持的完整模板 mode，例如 `ha/full`。
+
+模板名相对于 `<PIGSTY_HOME>/conf`。裸名称按以下顺序查找对应的 `.yml` 文件：
+
+```text
+conf/ → conf/ha/ → conf/fork/ → conf/app/ → conf/demo/ → conf/build/
+```
+
+首个命中的文件生效。根目录模板优先，也兼容旧版 Pigsty 的模板布局；不会递归搜索其他目录。
+显式相对路径（例如 `ha/full`）只选择该路径，不回退到其他目录。选定模板后，如果文件无法读取或内容无效，
+配置失败，不会改选后面的同名模板。
+
+`conf/` 前缀、开头的 `./` 和 `.yml` 后缀均可省略。使用标准模板时，`full`、`ha/full`、
+`ha/full.yml` 与 `./conf/ha/full.yml` 都选择 `conf/ha/full.yml`。
+安装了对应文件时，`halo` 选择 `fork/halo`，`mysql` 选择 `demo/mysql`。
+模板名必须是相对名称，不得包含任何 `..` 路径分量，也不接受绝对模板路径。
 
 相对输出路径位于 `<PIGSTY_HOME>` 下，也可指定绝对路径。输出必须与模板是不同文件，且不能是符号链接。解析、变更或校验失败时，原输出文件保持不变。
 
@@ -166,13 +181,14 @@ Inventory 输出文件，全局小写 `-o` 用于选择 text、JSON 或 YAML 命
 | 小规格控制节点 | 探测到 CPU 少于四核时，将 `node_tune: oltp` 与 `pg_conf: oltp.yml` 改为对应的 `tiny` 配置。 |
 | `--region REGION` | 非默认区域会更新 `all.vars.region`；`china` 还会启用模板中已有的 Docker 与 pip 镜像值。 |
 | `--proxy` | 读取 `HTTP_PROXY`、`HTTPS_PROXY`、`ALL_PROXY` 与 `NO_PROXY`，每项都在大写值缺失时回退到对应的小写变量。HTTP/HTTPS 缺失时回退到 ALL_PROXY。将非空值写入 `all.vars.proxy_env`，必要时补充默认 no-proxy 列表。 |
-| `--version MAJOR` | 通用模板支持 PostgreSQL 14-18，以及显式指定的 19 beta，并选择匹配的 locale；版本固定的 `mssql`、`polar` 与 `pgNN` 模式保留模板版本并给出告警。 |
+| `--version MAJOR` | 通用模板支持 PostgreSQL 14-18，以及显式指定的 19 beta，并选择匹配的 locale；版本固定的 `fork/mssql`、`fork/polar`、旧版根目录 `mssql`/`polar` 与根目录 `pgNN` 模式保留模板版本并给出告警。 |
 | `--generate` | 每个已知凭据标识符生成一个 24 位随机值，并一致替换其生效值和文档化占位符。 |
 
 IP 替换会产生重复键时，命令停止。提供的地址在模板中没有对应占位符时，PIG 会告警。
 
 指定 PostgreSQL 19 beta 时，如果模板包含预期的软件仓库列表，Pig 还会在 `pgsql` 后启用
 `beta` 仓库。`conf/build/` 下的模式有意绕过 IP 映射与控制节点管理员预检，以保持构建模板可移植。
+这些规则以解析后的 mode 为准：`oss` 与 `build/oss` 行为一致；`mssql` 命中 `fork/mssql` 时也执行相同规则。
 
 生效口令标识符包括 `grafana_admin_password`、`pg_admin_password`、
 `pg_monitor_password`、`pg_replication_password`、`patroni_password`、
@@ -204,6 +220,9 @@ PIG 检查操作系统、软件包管理器、控制节点资源、SSH、sudo �
 ### 结构化输出
 
 `-o json` 或 `-o yaml` 返回 `pig.sty.configure/v1`，包括模板、输出路径、区域、IP、域名、SSH 端口、PostgreSQL 版本和告警。生成的密码只写入 Inventory；结果列出对应标识符。
+
+`mode` 返回相对于 `conf/`、不带 `.yml` 的解析后名称，例如输入 `full` 时返回 `ha/full`；
+`template_path` 标识实际选中的文件。
 
 详细步骤见 [Pigsty 配置指南](https://pigsty.cc/docs/setup/install/#配置)。
 
