@@ -92,8 +92,7 @@ release:
   github:
     owner: pgsty
     name: pgext
-  # Artifacts are uploaded to a draft; publishing stays a manual step.
-  draft: true
+  draft: false
   prerelease: false
   mode: replace
   replace_existing_artifacts: true
