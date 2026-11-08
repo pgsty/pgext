@@ -24,14 +24,19 @@ func (e *Engine) sourceNames(j *Job, recipe []byte) []string {
 	if len(recipe) > 0 && e.Platform.Family == "deb" {
 		sources = recipeSources(string(recipe))
 	}
-	if len(sources) == 0 {
-		sources = append(sources, SpecialSourceMapping[j.Package]...)
-	}
 	if len(sources) == 0 && j.Extension != nil {
 		sources = strings.Fields(j.Extension.Source)
 	}
+	if len(sources) == 0 {
+		sources = append(sources, SpecialSourceMapping[j.Package]...)
+	}
 	if len(sources) == 0 && tarballPattern.MatchString(j.Package) {
 		sources = []string{j.Package}
+	}
+	if j.Package == "documentdb" && e.Platform.Family != "rpm" {
+		for _, source := range documentDBSources {
+			sources = append(sources, source.name)
+		}
 	}
 	return unique(sources)
 }
