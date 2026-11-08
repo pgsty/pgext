@@ -166,6 +166,7 @@ func (e *Engine) Prepare(action string, names []string) (*Plan, error) {
 		if j.Extension != nil {
 			j.Package = j.Extension.Package
 		}
+		j.Package = recipeName(e.Platform.Family, j.Package)
 		if previous := seen[j.Package]; previous != nil {
 			previous.Requested = append(previous.Requested, name)
 			continue

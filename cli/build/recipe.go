@@ -12,6 +12,28 @@ import (
 	"strings"
 )
 
+// A few catalog package identities differ from the native recipe names.
+func recipeName(family, name string) string {
+	if name == "one_sparse" {
+		return "onesparse"
+	}
+	if family == "deb" {
+		switch name {
+		case "pg_h3":
+			return "h3"
+		case "address_standardizer":
+			return "address-standardizer"
+		case "postgis_tiger_geocoder":
+			return "postgis-tiger-geocoder"
+		}
+	}
+	return name
+}
+
+func usesKitwareCMake(name string) bool {
+	return name == "graphblas" || name == "lagraph" || name == "pg_mooncake"
+}
+
 func recipePG(family, root, name string, recipe []byte) []int {
 	var raw string
 	if family == "deb" {
@@ -77,6 +99,12 @@ func (e *Engine) dep(ctx context.Context, j *Job, w io.Writer) error {
 	if deps == "" {
 		return fmt.Errorf("no Build-Depends in %s", dir)
 	}
+	// These Jammy recipes deliberately keep system CMake and use the pinned
+	// private Kitware build. Keep every other dependency constraint intact.
+	privateCMake := e.Platform.OS == "u22" && usesKitwareCMake(j.Package)
+	if privateCMake {
+		deps = strings.NewReplacer("cmake (>= 3.23)", "cmake", "cmake (>= 3.24)", "cmake").Replace(deps)
+	}
 	if !e.aptUpdated {
 		if err := e.Exec.Run(ctx, Command{Args: []string{"apt-get", "update", "-o", "APT::Update::Error-Mode=any"}, Root: true}, w); err != nil {
 			return err
@@ -94,6 +122,11 @@ func (e *Engine) dep(ctx context.Context, j *Job, w io.Writer) error {
 		// restrictions rather than stripping them into a lossy package list.
 		if err := e.Exec.Run(ctx, Command{Args: []string{"apt-get", "satisfy", "-y", "--no-install-recommends", d}, Root: true, Env: []string{"DEBIAN_FRONTEND=noninteractive"}}, w); err != nil {
 			return err
+		}
+	}
+	if privateCMake {
+		if err := e.Exec.Run(ctx, Command{Args: []string{"sh", filepath.Join(e.Options.SpecDir, "kitware-cmake")}}, w); err != nil {
+			return fmt.Errorf("prepare private CMake: %w", err)
 		}
 	}
 	if raw, err := os.ReadFile(j.Recipe); err == nil {
@@ -279,14 +312,16 @@ func (e *Engine) makeDEB(ctx context.Context, j *Job, pg int, unit, out string, 
 	}
 	for _, name := range j.Sources {
 		from := filepath.Join(e.Options.Root, "src", name)
-		if _, err := os.Stat(from); os.IsNotExist(err) {
-			continue
-		}
 		staged := filepath.Join(root, "SOURCES", name)
 		if err := copyFile(from, staged, 0644); err != nil {
-			return recipe, err
+			return recipe, fmt.Errorf("stage source %s (run pgext get first): %w", name, err)
 		}
 		if err := e.checkSource(staged); err != nil {
+			return recipe, err
+		}
+	}
+	if usesKitwareCMake(j.Package) {
+		if err := copyFile(filepath.Join(e.Options.SpecDir, "kitware-cmake"), filepath.Join(root, "kitware-cmake"), 0755); err != nil {
 			return recipe, err
 		}
 	}
@@ -312,7 +347,21 @@ func (e *Engine) makeDEB(ctx context.Context, j *Job, pg int, unit, out string, 
 		return recipe, err
 	}
 	env := e.buildEnv(pg)
-	args := []string{"make", "--no-print-directory", "-j1", "PKG_OUTPUT_DIR=" + out}
+	sourceDir := filepath.Join(root, "SOURCES")
+	args := []string{"make", "--no-print-directory", "-j1", "PKG_OUTPUT_DIR=" + out, "SOURCE_DIR=" + sourceDir}
+	// Existing recipes pair SOURCE_TARBALL with TARBALL (and prefixed variants).
+	// Let Make expand the archive name, including its per-PG conditionals, but
+	// bind the input to the staged, checksummed copy instead of a home cache.
+	for _, m := range regexp.MustCompile(`(?m)^([A-Z_]*SOURCE_TARBALL)\s*[:?]?=`).FindAllStringSubmatch(text, -1) {
+		archive := strings.Replace(m[1], "SOURCE_", "", 1)
+		args = append(args, m[1]+"="+sourceDir+"/$("+archive+")")
+	}
+	if j.Package == "documentdb" {
+		for _, source := range documentDBSources {
+			env = append(env, source.env+"="+filepath.Join(sourceDir, source.name))
+		}
+		env = append(env, "DOCUMENTDB_SETUP_ROOT="+unit)
+	}
 	if regexp.MustCompile(`(?m)^SRC_DIR\s*[:?]?=`).MatchString(text) {
 		args = append(args, "SRC_DIR="+filepath.Join(unit, "src"))
 	}

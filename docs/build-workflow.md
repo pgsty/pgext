@@ -103,6 +103,9 @@ Catalog selection is, in priority order:
 An invalid explicitly selected or existing local catalog is an error, not a
 reason to silently use a different catalog. Canonical extension names and
 package names resolve to the same source package; family members are deduplicated.
+Native recipe aliases cover H3, OneSparse, address_standardizer and
+postgis_tiger_geocoder. Without a recipe, the catalog's source list takes
+precedence over the built-in fallback bundles.
 
 No encoded availability matrix is needed. The catalog supplies source names,
 family identities and package naming; the native recipe declares build
@@ -171,6 +174,12 @@ source filename to its SHA256. Missing or mismatched entries fail; without
 this option hashes are recorded for provenance, not checked against an
 independent trusted manifest. Exact source names and native package versions
 are retained independently of normalized catalog versions.
+
+DEB builds bind source tarball variables to the checked copies in the isolated
+`SOURCES` directory. DocumentDB also stages its four offline dependency archives
+and gives its preparation script explicit paths. GraphBLAS, LAGraph and
+pg_mooncake retain their shared `kitware-cmake` helper; on Ubuntu 22.04, `dep`
+prepares that private CMake while keeping all other package constraints enforced.
 
 The default workspace is `~/ext`, configurable with `--work-dir`:
 
