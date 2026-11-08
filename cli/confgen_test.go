@@ -1296,10 +1296,10 @@ func TestConfigConstantsIncludePgTDEAlias(t *testing.T) {
 		if mapping.Key != "pgtde" {
 			continue
 		}
-		if mapping.RPM != "pgtde-$v,pgtde-$v-contrib" {
+		if mapping.RPM != "pgtde-18,pgtde-18-contrib" {
 			t.Fatalf("pgtde RPM alias = %q", mapping.RPM)
 		}
-		if mapping.DEB != "pgtde-$v pgtde-$v-contrib" {
+		if mapping.DEB != "pgtde-18 pgtde-18-contrib" {
 			t.Fatalf("pgtde DEB alias = %q", mapping.DEB)
 		}
 		return
@@ -1394,8 +1394,8 @@ func TestRenderedTemplatesIncludePgTDEPackageMap(t *testing.T) {
 		rendered string
 		want     string
 	}{
-		"rpm": {rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"), want: `pgtde: "pgtde-$v,pgtde-$v-contrib"`},
-		"deb": {rendered: renderDEBTemplateForTest(t, "u24.x86_64", "u24"), want: `pgtde: "pgtde-$v pgtde-$v-contrib"`},
+		"rpm": {rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"), want: `pgtde: "pgtde-18,pgtde-18-contrib"`},
+		"deb": {rendered: renderDEBTemplateForTest(t, "u24.x86_64", "u24"), want: `pgtde: "pgtde-18 pgtde-18-contrib"`},
 	}
 
 	for name, tt := range tests {

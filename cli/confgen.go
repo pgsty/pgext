@@ -701,7 +701,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		},
 		"getPgsqlUtility": func() string {
 			if g.isEL9ARM() {
-				return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pgbadger", "pg_timetable", "pgFormatter", "pg_filedump", "pgxnclient", "timescaledb-tools", "timescaledb-event-streamer")
+				return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pgbadger", "pg-timetable", "pgFormatter", "pg_filedump", "pgxnclient", "timescaledb-tools", "timescaledb-event-streamer")
 			}
 			return g.constants.RPMCommonPkg[6]
 		},
@@ -783,7 +783,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 5: node-package3
 			"zlib readline xz glibc-langpack-en cronie openssh-clients node-exporter bind-utils iproute iputils nmap-ncat procps-ng vim-minimal yum audit grubby chkconfig",
 			// 6: pgsql-utility
-			"patroni patroni-etcd pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
+			"patroni patroni-etcd pgbouncer pgbackrest pgbadger pg-timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
 
 		DEBCommonPkg: []string{
@@ -844,7 +844,7 @@ func GetConfigConstants() *ConfigConstants {
 			{"pgformatter", "pgformatter", "pgformatter"},
 			{"pgcopydb", "pgcopydb", "pgcopydb"},
 			{"pgloader", "pgloader", "pgloader"},
-			{"pg_timetable", "pg_timetable", "pg-timetable"},
+			{"pg_timetable", "pg-timetable", "pg-timetable"},
 			{"timescaledb-utils", "timescaledb-tools timescaledb-event-streamer", "timescaledb-tools timescaledb-event-streamer"},
 		},
 
@@ -853,13 +853,13 @@ func GetConfigConstants() *ConfigConstants {
 			{"agensgraph", "agensgraph-$v", "agensgraph-$v"},
 			{"polardb", "polardb-$v", "polardb-$v"},
 			{"openhalo", "openhalodb-$v", "openhalodb-$v"},
-			{"ivorysql", "ivorysql-$v", "ivorysql-$v"},
+			{"ivorysql", "ivorysql-$v ivorysql-$v-contrib", "ivorysql-$v ivorysql-$v-contrib"},
 			{"babelfish", "babelfish-$v", "babelfish-$v"},
 			{"orioledb", "orioledb-$v", "orioledb-$v"},
 			{"pgedge", "pgedge-$v", "pgedge-$v"},
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
 			{"cloudberry", "cloudberry cloudberry-backup cloudberry-pxf", "cloudberry cloudberry-backup cloudberry-pxf"},
-			{"pgtde", "pgtde-$v,pgtde-$v-contrib", "pgtde-$v pgtde-$v-contrib"},
+			{"pgtde", "pgtde-18,pgtde-18-contrib", "pgtde-18 pgtde-18-contrib"},
 		},
 
 		DistroAdhocPkg: map[string]string{
