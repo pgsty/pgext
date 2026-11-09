@@ -805,7 +805,7 @@ params:
   images:
     - logo.png
 
-  version: v1.1.0
+  version: v1.6.0
   pig_version: 1.10.4
   pigsty_version: 4.5.0
   pig_catalog_count: 626     # Records in the PIG bundled catalog
