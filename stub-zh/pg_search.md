@@ -2,9 +2,9 @@
 
 来源：
 
-- [0.26.5 changelog](https://github.com/paradedb/paradedb/blob/v0.26.5/docs/project/changelog/0.26.5.mdx)
-- [pg_search 0.26.5 control](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/pg_search.control)
-- [pg_search 0.26.5 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/Cargo.toml)
+- [0.26.6 changelog](https://github.com/paradedb/paradedb/blob/v0.26.6/docs/project/changelog/0.26.6.mdx)
+- [pg_search 0.26.6 control](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/pg_search.control)
+- [pg_search 0.26.6 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/Cargo.toml)
 
 - [docs/project/changelog/0.26.2.mdx](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/docs/project/changelog/0.26.2.mdx)
 - [pg_search/sql/pg_search--0.26.1--0.26.2.sql](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/sql/pg_search--0.26.1--0.26.2.sql)
@@ -27,7 +27,7 @@
 - [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.5 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.26.6 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
@@ -144,3 +144,7 @@ LIMIT 20;
 ### 0.26.5 权限与正确性
 
 0.26.5 为独立读取索引的函数实施表权限检查，并修复涉及 NULL 或空 ALL 数组的下推结果。它还改进并行 worker 清理与合并背压。应安装匹配文件，按预加载库维护流程重启，并逐库更新 SQL 扩展。此次发布不取消 0.26.0 的向量索引迁移要求。
+
+### 0.26.6 版本
+
+Join Scan 现在支持在 `INNER` 和 `SEMI`（`IN` / `EXISTS`）连接中对向量距离操作符 `<->`、`<=>`、`<#>` 执行 top-K `ORDER BY`。当叶子节点包含可由索引回答的单表过滤条件（包括行级安全策略、等值、`= ANY` 和范围条件）时，合并得分的 top-K 连接也可使用 rank join。本版本修复 Join Scan 选列同时包含 `pdb.score()` 与标量子查询或查询参数时的崩溃，并在未使用 `RankJoinExec` 时通过 `EXPLAIN` 给出警告。升级后应验证计划与 top-K 结果；软件包坐标需与上游版本分别核对。

@@ -2,12 +2,14 @@
 
 来源：
 
-- [官方 README](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/README.md)
-- [官方扩展控制文件](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/accumulo_access_pg.control)
-- [官方 Rust 实现](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/src/lib.rs)
-- [官方包元数据](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/Cargo.toml)
+- [官方 README](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/README.md)
+- [官方扩展控制文件](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/accumulo_access_pg.control)
+- [官方 Rust 实现](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/src/lib.rs)
+- [官方包元数据](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/Cargo.toml)
+- [Apache-2.0 许可证](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/LICENSE_APACHE)
+- [MIT 许可证](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/LICENSE_MIT)
 
-`accumulo_access_pg` 0.1.5 在 PostgreSQL 内解析并计算 Apache Accumulo 风格的授权表达式，主要用于在行级安全策略中应用 `label1 & (label2 | label3)` 之类的表达式。扩展只计算调用方传入的标签；它不会自行认证用户，也不会取得可信授权声明。
+`accumulo_access_pg` 0.3.0 在 PostgreSQL 内解析并计算 Apache Accumulo 风格的授权表达式，主要用于在行级安全策略中应用 `label1 & (label2 | label3)` 之类的表达式。扩展只计算调用方传入的标签；它不会自行认证用户，也不会取得可信授权声明。
 
 ### 核心流程
 
@@ -49,6 +51,6 @@ SELECT * FROM protected_notes;
 
 ### 安装与安全边界
 
-固定的 0.1.5 包只启用了 pgrx 的 PostgreSQL 15 feature。控制文件要求超级用户安装且不可重定位；用于其他 PostgreSQL 大版本前必须构建并测试匹配产物。
+0.3.0 发布为 PostgreSQL 15–18 构建并测试，同时提供 PostgreSQL 19 beta 包；PostgreSQL 13–14 仅由 pgrx 支持但未构建或测试。控制文件仍要求超级用户安装且不可重定位。此版本拒绝非法引号词元（包括空引号词元），括号嵌套最多 256 层，带引号词元可包含控制字符。
 
 行级安全取决于所有相关角色、策略、绕过权限和声明来源，而不只是 `sec_authz_check`。应验证表所有者、超级用户、具有 `BYPASSRLS` 的角色、连接池、会话状态重置/复用及畸形声明的行为。缓存统计只是运维辅助信息，不是授权审计日志。

@@ -2,20 +2,19 @@
 
 Sources:
 
-- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/Cargo.toml)
-- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/src/worker.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pgbrew.toml)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/LICENSE)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pgbrew.toml)
-- [Official pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/README.md)
-- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pg_ortools.control)
-- [SQL API implementation](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/src/lib.rs)
-- [0.3.3 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/sql/pg_ortools--0.3.2--0.3.3.sql)
+- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/Cargo.toml)
+- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/src/worker.rs)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/crates/pg_bgworker/src/supervision.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/CHANGELOG.md)
+- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/pgbrew.toml)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/LICENSE)
+- [Official pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/README.md)
+- [Extension control file](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/pg_ortools.control)
+- [SQL API implementation](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/src/lib.rs)
+- [0.3.3 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/sql/pg_ortools--0.3.2--0.3.3.sql)
+- [0.3.5 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/sql/pg_ortools--0.3.4--0.3.5.sql)
 
-`pg_ortools` version `0.3.4` defines mixed-integer and linear optimization problems in SQL and solves them with HiGHS. Use it for bounded assignment, allocation, feasibility, and objective-optimization workloads that are naturally represented as integer or Boolean variables and linear constraints.
+`pg_ortools` version `0.3.5` defines mixed-integer and linear optimization problems in SQL and solves them with HiGHS. Use it for bounded assignment, allocation, feasibility, and objective-optimization workloads that are naturally represented as integer or Boolean variables and linear constraints.
 
 ### Core Workflow
 
@@ -68,3 +67,7 @@ The 0.3.2 to 0.3.3 SQL upgrade changes no objects. Install matching libraries an
 ### Idle Workers in 0.3.4
 
 Repository release 0.7.2 contains extension 0.3.4. Read-only or empty-claim polls no longer allocate a transaction ID merely because they use the SPI bridge; an actual row write still does. This removes empty commit WAL from idle polling. Install matching libraries, restart the preloaded workers, and update the SQL extension. The existing privilege, external-service and pre-0.3.0 migration boundaries remain.
+
+### Worker Signals in 0.3.5
+
+Repository release 0.7.5 contains extension 0.3.5 and an empty SQL upgrade script. Worker-created solver threads now block signals before starting. This prevents a signal delivered on a non-main thread from panicking in PostgreSQL FFI and causing the postmaster to restart every session. Install matching libraries, restart the preloaded workers, and run `ALTER EXTENSION pg_ortools UPDATE`; no SQL objects change.

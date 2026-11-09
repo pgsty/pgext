@@ -2,12 +2,14 @@
 
 Sources:
 
-- [Official README](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/README.md)
-- [Official extension control file](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/accumulo_access_pg.control)
-- [Official Rust implementation](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/src/lib.rs)
-- [Official package metadata](https://github.com/larsw/accumulo-access-pg/blob/8e201122665eac9ff2a233727c057eef5b9eee3b/Cargo.toml)
+- [Official README](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/README.md)
+- [Official extension control file](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/accumulo_access_pg.control)
+- [Official Rust implementation](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/src/lib.rs)
+- [Official package metadata](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/Cargo.toml)
+- [Apache-2.0 license](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/LICENSE_APACHE)
+- [MIT license](https://github.com/larsw/accumulo-access-pg/blob/v0.3.0/LICENSE_MIT)
 
-`accumulo_access_pg` 0.1.5 parses and evaluates Apache Accumulo-style authorization expressions inside PostgreSQL. Its main use is applying expressions such as `label1 & (label2 | label3)` in a row-level security policy. The extension evaluates labels supplied by the caller; it does not authenticate users or obtain trusted authorization claims by itself.
+`accumulo_access_pg` 0.3.0 parses and evaluates Apache Accumulo-style authorization expressions inside PostgreSQL. Its main use is applying expressions such as `label1 & (label2 | label3)` in a row-level security policy. The extension evaluates labels supplied by the caller; it does not authenticate users or obtain trusted authorization claims by itself.
 
 ### Core Workflow
 
@@ -49,6 +51,6 @@ Expression syntax and escaping follow the upstream `accumulo-access` Rust librar
 
 ### Installation and Security Boundaries
 
-The pinned 0.1.5 package enables only the pgrx PostgreSQL 15 feature. Its control file marks installation as superuser-only and non-relocatable. Build and test a matching artifact before using another PostgreSQL major version.
+Release 0.3.0 builds and tests PostgreSQL 15–18 and a PostgreSQL 19 beta; PostgreSQL 13–14 are pgrx-supported but not built or tested. Its control file remains superuser-only and non-relocatable. Invalid quoted tokens are rejected, including an empty quoted token, parentheses may nest at most 256 levels, and quoted tokens may contain control characters.
 
 Row-level security depends on every participating role, policy, bypass privilege, and claim source—not only on `sec_authz_check`. Validate behavior for table owners, superusers, roles with `BYPASSRLS`, pooled connections, reset/reuse of session state, and malformed claims. Cache statistics are operational aids, not an authorization audit trail.

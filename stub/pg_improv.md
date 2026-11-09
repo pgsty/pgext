@@ -2,14 +2,14 @@
 
 Sources:
 
-- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/CHANGELOG.md)
+- [Release changelog](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/CHANGELOG.md)
 
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/README.md)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/pg_improv.control)
-- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/Cargo.toml)
-- [SQL update](https://api.pgxn.org/src/pg_improv/pg_improv-0.13.0/crates/pg_improv/sql/pg_improv--0.12.2--0.13.0.sql)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/README.md)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/pg_improv.control)
+- [Official source](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/Cargo.toml)
+- [SQL update](https://api.pgxn.org/src/pg_improv/pg_improv-0.14.0/crates/pg_improv/sql/pg_improv--0.13.0--0.14.0.sql)
 
-`pg_improv` 0.13.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
+`pg_improv` 0.14.0 binds PostgreSQL tables to multidimensional models, evaluates formulas and materializes results. It supports PostgreSQL 15–18 and requires superuser installation. This example uses manual synchronization, which works without preloading the library.
 
 ### Core Workflow
 
@@ -55,12 +55,12 @@ Grant `improv_reader` (or `improv_user`) to restricted users and separately gran
 
 Derived values are calculated over all owner-visible inputs before filtering. Hiding an input does not remove its contribution from an allowed total. Model policies do not restrict direct access to source tables. Permitted cell edits and policy changes are recorded in `improv.policy_audit`; rejected operations are logged by the server. Review grants and totals before exposing a model.
 
-### Upgrading to 0.13.0
+### Upgrading to 0.14.0
 
 Install matching files and restart PostgreSQL when the library is preloaded, then update each database:
 
 ```sql
-ALTER EXTENSION pg_improv UPDATE TO '0.13.0';
+ALTER EXTENSION pg_improv UPDATE TO '0.14.0';
 ```
 
-The 0.12.2-to-0.13.0 migration adds the policy objects and functions without changing model rows. The release also fixes an upgrade deadlock with the logical-sync worker. Back up roles and model data and rehearse the update. Upstream now uses pgrx 0.19.3; this does not establish availability of a matching distribution package.
+The 0.13.0-to-0.14.0 SQL update only records the extension version. The library fix makes the logical-sync worker consistently report a model owner's REVOKE with the owner and affected columns instead of failing later with a bare permission error. Install matching files, restart preloaded processes, and update each database; rehearse this operation with model backups. Other 0.14 changes concern Improv clients, servers, TLS and the GUI rather than the pg_improv SQL API. RPM 0.13.0 and DEB 0.12.2 remain the currently known package coordinates.

@@ -2,20 +2,19 @@
 
 来源：
 
-- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/Cargo.toml)
-- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/src/worker.rs)
-- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/crates/pg_bgworker/src/supervision.rs)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pgbrew.toml)
-- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/CHANGELOG.md)
-- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/LICENSE)
-- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pgbrew.toml)
-- [官方 pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/README.md)
-- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/pg_ortools.control)
-- [SQL API 实现](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/src/lib.rs)
-- [0.3.3 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/867872ab0ab5ec5952a2f3ff1b7904636b6d17b7/extensions/pg_ortools/sql/pg_ortools--0.3.2--0.3.3.sql)
+- [extensions/pg_ortools/Cargo.toml](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/Cargo.toml)
+- [extensions/pg_ortools/src/worker.rs](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/src/worker.rs)
+- [crates/pg_bgworker/src/supervision.rs](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/crates/pg_bgworker/src/supervision.rs)
+- [CHANGELOG.md](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/CHANGELOG.md)
+- [extensions/pg_ortools/pgbrew.toml](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/pgbrew.toml)
+- [LICENSE](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/LICENSE)
+- [官方 pg_ortools README](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/README.md)
+- [扩展 control 文件](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/pg_ortools.control)
+- [SQL API 实现](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/src/lib.rs)
+- [0.3.3 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/sql/pg_ortools--0.3.2--0.3.3.sql)
+- [0.3.5 upgrade](https://github.com/matroidbe/pg_extensions-releases/blob/v0.7.5/extensions/pg_ortools/sql/pg_ortools--0.3.4--0.3.5.sql)
 
-`pg_ortools` 版本 `0.3.4` 用 SQL 定义混合整数与线性优化问题，并通过 HiGHS 求解。它适合有界指派、资源分配、可行性及目标优化工作负载，这些问题通常可表示为整数或布尔变量和线性约束。
+`pg_ortools` 版本 `0.3.5` 用 SQL 定义混合整数与线性优化问题，并通过 HiGHS 求解。它适合有界指派、资源分配、可行性及目标优化工作负载，这些问题通常可表示为整数或布尔变量和线性约束。
 
 ### 核心流程
 
@@ -68,3 +67,7 @@ SELECT * FROM pgortools.worker_status();
 ### 0.3.4 的空闲工作进程
 
 仓库发布 0.7.2 包含扩展版本 0.3.4。只读轮询或未领取到作业的轮询不再仅因使用 SPI 桥接而分配事务 ID，实际写入行时仍会分配，因而空闲轮询不再产生空提交 WAL。 安装匹配的共享库、重启预加载的工作进程并更新 SQL 扩展。既有权限、外部服务和 0.3.0 之前版本的迁移边界仍然适用。
+
+### 0.3.5 的工作进程信号处理
+
+仓库发布 0.7.5 包含扩展 0.3.5，SQL 升级脚本为空。工作进程创建的求解线程启动前会阻塞信号，避免信号落在非主线程时在 PostgreSQL FFI 中 panic，进而导致 postmaster 重启所有会话。安装匹配共享库、重启预加载工作进程并执行 `ALTER EXTENSION pg_ortools UPDATE`；SQL 对象没有变化。
