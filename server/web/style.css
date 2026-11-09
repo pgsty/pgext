@@ -167,7 +167,7 @@ input, select { font: inherit; color: inherit; }
 .brand-name .tld { color: var(--ink-3); font-weight: 450; }
 .nav-links { display: flex; gap: 4px; margin-left: 8px; }
 .nav-links a {
-  color: var(--ink-2); font-size: 14px; padding: 6px 10px; border-radius: 7px;
+  color: var(--ink-2); font-size: 14px; padding: 6px 10px; border-radius: 7px; white-space: nowrap;
 }
 .nav-links a:hover { color: var(--ink); background: var(--accent-wash); text-decoration: none; }
 .nav-links a[aria-current="true"] { color: var(--ink); font-weight: 600; }
@@ -247,7 +247,7 @@ input, select { font: inherit; color: inherit; }
 .hero h1.oneline { white-space: nowrap; }
 .hero h1 em { font-style: italic; color: var(--accent-fg); }
 .hero-sub { font-size: clamp(13.5px, 1.45vw, 17px); color: var(--ink-2); }
-.hero-sub.oneline { white-space: nowrap; }
+.hero-sub.oneline { white-space: normal; }
 .hero-sub b { color: var(--ink); font-weight: 650; }
 .hero-sub code {
   font-size: 14.5px; background: var(--accent-wash); color: var(--accent-fg);
@@ -288,7 +288,7 @@ input, select { font: inherit; color: inherit; }
 .sql-readout {
   margin: 12px 4px 0; font-family: var(--font-mono); font-size: 13px;
   color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline;
-  cursor: pointer; border: none; text-align: left; width: 100%;
+  cursor: pointer; border: none; text-align: left; width: calc(100% - 8px);
 }
 .sql-readout:hover .sql-q { color: var(--ink-2); }
 .sql-readout .kw { color: var(--accent-fg); font-weight: 600; }
@@ -1074,11 +1074,14 @@ a.gmx-pghead:hover { color: var(--accent-fg); background: var(--accent-wash); te
 
 /* ---------------- responsive ---------------- */
 @media (max-width: 760px) {
-  .nav-in { gap: 6px; }
+  .nav-in { gap: 6px; flex-wrap: wrap; height: auto; min-height: 56px; padding-top: 8px; padding-bottom: 8px; }
   .brand-name { display: none; }
   .nav-links { display: flex; gap: 0; margin-left: 0; }
   .nav-links a { font-size: 11.5px; padding: 5px 6px; }
-  .nav-actions { gap: 4px; }
+  .nav-actions { display: contents; }
+  .nav-search { order: 1; flex: 1 0 100%; margin-right: 0; }
+  .nav-search input, .nav-search input:focus { width: 100%; }
+  .nav-menu { position: fixed; top: 42px; left: 16px; right: 16px; max-width: calc(100vw - 32px); overflow-x: auto; }
   .nav-ico { padding: 4px; }
   .nav-github { display: none; }
   .hero { padding-top: 28px; }

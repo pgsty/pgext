@@ -62,8 +62,8 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
    2=pgdg、3=pigsty what-if；旧库的单行 CHECK 约束在启动时自动放宽）。读路径是一次主键查询；
    缓存在早于 `pgext.status` 装载时间或超过 24h 时惰性重建，`POST /api/v1/reload` 与启动预热会
    主动重建全部三个视图。
-3. **ttlCache（`cache.go`）**——全局物化矩阵、逐扩展 `pkg` 矩阵、`bin` 文件表、`doc` 正文按需查询后缓存；
-   键内嵌快照版本号，快照刷新即自然失效。
+3. **ttlCache（`cache.go`）**——全局物化矩阵、逐扩展 `pkg` 矩阵、`bin` 文件表、`doc` 正文与发布历史按需查询后缓存；
+   键包含内容版本与快照加载时间，因此文档、制品或发布历史单独更新，也会在下一次快照刷新后失效。
 
 中间件（`middleware.go`）：访问日志（debug 级）、panic 恢复、只读 `/api/*` CORS、安全响应头、
 gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--reload-token` 或
@@ -79,7 +79,7 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 | `GET /api/v1/ext/{name}` | 单个扩展完整记录（新版 universe 字段 + `state/repo/ext_*` v1 兼容别名） |
 | `GET /api/v1/ext/{name}/matrix` | 可用性矩阵：`pgext.pkg` 的 pg × os 单元格（state/org/version/count） |
 | `GET /api/v1/matrix` | 全局构建矩阵（`matrix-row.v2`）：`p/e/c` 每格一个状态字节（`G/P/M/N`），`v/i` 为行级版本字典与 base36 索引（gzip 后约 7 KiB，读路径为 `pgext.matrix_cache` 单行查询；前端以单张 canvas 一次绘制，/pg/{n} 与 /os/{target} 复用同一载荷切片渲染）。`?repo=pgdg\|pigsty` 返回单仓库 what-if 视图（与 `pgext.pkg_pgdg`/`pkg_pigsty` 视图同一逻辑）：行恰为该仓库实际交付的扩展包，AVAIL 格携带其自有最新版本（单一状态字母），其余现实有效槽位降级为 `M`，`stats.global` 附带现实矩阵的包数与可用槽位数供前端陈述缺口 |
-| `GET /api/v1/ext/{name}/files` | 二进制包文件（`pgext.bin` ⋈ `repository`，含下载 URL 与 SHA256），可选 `?pg= &os=` |
+| `GET /api/v1/ext/{name}/files` | 二进制包文件（`pgext.bin` ⋈ `repository`，含下载 URL 与 SHA256），可选 `?pg= &os=`；同名同目标按原始 `ver` 经 `pgext.version` 比较器降序排列，保留 epoch、预发布及发行修订信息 |
 | `GET /api/v1/ext/{name}/doc` | 用法文档 markdown（`pgext.doc`），`?lang=en\|zh` |
 | `GET /api/v1/ext/{name}/changelog` | 所属软件包的发布历史（`pgext.changelog`，由 RPM/DEB 发布说明经 `bin/changelog.py` 蒸馏）：`{ds, old, new, note_en, note_zh}` 按日期降序；库中无该表时返回空列表 |
 | `GET/POST /api/v1/ext/{name}/visit` | 页面访问计数：POST 自增并返回 `{visits, downloads}`，GET 只读。计数持久化于 `pgext.counter`：内存中累积增量，每分钟以累加式 UPDATE（`visit = visit + Δ`）落库后回读全局值，因此多进程共用一表不冲突；表不存在时退化为内存计数并在每次落盘周期重试。旧 `--visits-file` JSON 文件首次启动时一次性导入并改名 |
@@ -121,7 +121,7 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 ## 前端（web/）
 
 `design/prototype/` 静态原型的 API 化版本：同一套设计系统，使用 History API 的干净路由
-（`/`、`/pkg/{pkg}`、`/ext/{name}`、`/c/{CODE}`、`/matrix`、`/list`、`/list/{dim}`、`/about`）。旧的
+（`/`、`/pkg/{pkg}`、`/ext/{name}`、`/cate/{CODE}`、`/matrix`、`/list`、`/list/{dim}`、`/about`）。旧的
 `/e/ /p/ /browse /dim/` 与 `#/…` 哈希链接会经服务端 301 或客户端迁移到对应新地址。差异：
 
 - 启动时拉取 `/api/v1/bootstrap`（位置数组，列序与 `handleBootstrap` 注释同步维护）；上一次
@@ -159,18 +159,25 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
   右侧是醒目的软件包导航卡（直达 `/pkg/{pkg}` 的定义、矩阵与下载）；正文为 概览 → 安装 →
   版本与可用性 → 构建 → 关联 → 元数据 → 用法。软件下载表只保留在 PKG 页；用法文档按
   GitHub 风味 Markdown 渲染，支持 `> [!NOTE]` 等 Alert 标注（含标注行内正文的变体）；
-- 预加载配置会合并依赖扩展所需的动态库；安装命令会按选定的 PG + OS + 架构使用矩阵里的
-  精确包名，并区分预编译包、PostgreSQL contrib、源码目录与供应商专有扩展；
+- 只有 `kind=preload` 且 `need_load=true` 时才生成 `shared_preload_libraries`，并合并同样明确标记为
+  preload 的依赖库。`need_load` 也可表示 `LOAD`、会话加载、认证或逻辑解码插件配置；这些条目指向
+  用法文档，不据此推断共享预加载或重启要求。安装命令区分预编译包、contrib、源码与厂商扩展；
+- EXT/PKG 构建指南使用 `pgext env` 与 `pgext pkg`，说明 `get → dep → mak`、预览、pgrx 与输出位置。
+  `rpm_build/deb_build` 决定是否提供配方指南；`rpm_pg/deb_pg` 仍表示已发布包范围，不限制源码构建。
+  多项源码输入逐项链接，tarball、补丁及辅助文件不再拼成一个 URL；
 - `pgext.doc` 的中英文 Markdown 正文会去掉重复的顶层 Usage 标题，并渲染目录、锚点、表格、
   嵌套列表、引用、图片及带语言/复制按钮的代码块；
 - 包族页只呈现包层信息：源码/RPM/DEB 定义、精确可用性、校验和下载、构建手册与按目标安装命令；
   页面末尾再链接该软件包交付的全部扩展，预加载和 `CREATE EXTENSION` 等扩展级步骤留在 EXT 页；
 - HTML 外壳始终重验证，内嵌 CSS/JS URL 带内容指纹，二进制升级后不会混用旧前端缓存；
-- 会话级缓存（FULLC/MXC/FILEC/DOCC），语言切换不重复拉取。
+- 详情缓存（FULLC/MXC/FILEC/DOCC/CHLOGC）有效期为 5 分钟，目录内容版本变化时全部清空；
+  语言切换可复用有效缓存，再次访问过期详情会重取数据。矩阵及 PG/OS 分页首次进入时校验本地缓存，
+  即使时间戳、行数不变也接纳新版本内容；
+- 移动端导航保留横排链接与图标，搜索框独占下一行，避免中文链接竖排或控件溢出。
 
 这里不再使用 Hash Router。`/#/...` 只适合无法把深层路径交回应用的纯静态托管；`pgext serve`
-本身可以为 `/e/...`、`/p/...` 等任意 History API 深链返回 SPA 外壳，所以公开链接始终是干净路径。
-客户端仅保留一次性的旧链接迁移：访问旧 `/#/ext/vector` 会立即 `replaceState` 为 `/e/vector`。
+本身可以为 `/ext/...`、`/pkg/...` 等任意 History API 深链返回 SPA 外壳，所以公开链接始终是干净路径。
+客户端仅保留一次性的旧链接迁移：访问旧 `/#/ext/vector` 会立即 `replaceState` 为 `/ext/vector`。
 
 如果页面仍生成 `/#/`，说明当前端口运行的是升级前编译、内嵌了旧 `web/app.js` 的进程；磁盘上的
 前端文件不会热替换已经运行的 Go 二进制。请重启开发进程（例如 `go run . serve --listen :8432`），
