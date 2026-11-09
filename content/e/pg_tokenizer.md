@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2170** | {{< badge content="pg_tokenizer" link="https://vchord.pgsty.com/docs/tokenizer" >}} | {{< ext "pg_tokenizer" >}} | `1.0.0` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2170** | {{< badge content="pg_tokenizer" link="https://vchord.pgsty.com/docs/tokenizer" >}} | {{< ext "pg_tokenizer" >}} | `1.1.0` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -29,19 +29,19 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Schemas**    | `tokenizer_catalog` |
+|    **Schemas**    | `tokenizer_catalog` `tokenizer_data` |
 |   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pg_jieba" >}} {{< ext "pg_cjk_parser" >}} {{< ext "zhparser" >}} {{< ext "pg_bigm" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg_tiktoken_c" >}} {{< ext "unaccent" >}} {{< ext "dict_xsyn" >}} {{< ext "dict_int" >}} {{< ext "hunspell_cs_cz" >}} {{< ext "pg_kazsearch" >}} |
 
-> [!Note] PGSTY fork 1.0.0; native tsvector; preload required. Preserves catalog data; Lindera 6 needs matching external dictionaries. Recompute stored tsvectors for changed token IDs/phrase positions.
+> [!Note] Preload; fresh-install validation only; external Lindera 6 dictionaries.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tokenizer` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_tokenizer_18" "green" >}} {{< bg "17" "pg_tokenizer_17" "green" >}} {{< bg "16" "pg_tokenizer_16" "green" >}} {{< bg "15" "pg_tokenizer_15" "green" >}} {{< bg "14" "pg_tokenizer_14" "green" >}} | `pg_tokenizer_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-tokenizer" "green" >}} {{< bg "17" "postgresql-17-pg-tokenizer" "green" >}} {{< bg "16" "postgresql-16-pg-tokenizer" "green" >}} {{< bg "15" "postgresql-15-pg-tokenizer" "green" >}} {{< bg "14" "postgresql-14-pg-tokenizer" "green" >}} | `postgresql-$v-pg-tokenizer` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_tokenizer` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_tokenizer_18" "green" >}} {{< bg "17" "pg_tokenizer_17" "green" >}} {{< bg "16" "pg_tokenizer_16" "green" >}} {{< bg "15" "pg_tokenizer_15" "green" >}} {{< bg "14" "pg_tokenizer_14" "green" >}} | `pg_tokenizer_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-tokenizer" "green" >}} {{< bg "17" "postgresql-17-pg-tokenizer" "green" >}} {{< bg "16" "postgresql-16-pg-tokenizer" "green" >}} {{< bg "15" "postgresql-15-pg-tokenizer" "green" >}} {{< bg "14" "postgresql-14-pg-tokenizer" "green" >}} | `postgresql-$v-pg-tokenizer` | - |
 {.packages .wide .expand}
 
 
@@ -187,7 +187,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://vchord.pgsty.com/docs/tokenizer" title="Repository" icon="link" subtitle="vchord.pgsty.com/docs/tokenizer" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tokenizer-1.0.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tokenizer-1.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

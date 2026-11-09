@@ -109,15 +109,15 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.26.5 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.26.6 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.1.0 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.1.0 | Recovery helper for removing a damaged PGroonga internal database |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "vgram" >}} | 1.0 | Variable-length gram GIN indexes and statistics for LIKE/ILIKE search |
 | 2140 | {{< alias "zhparser" >}} | 2.3 | a parser for full-text search of Chinese |
 | 2150 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
-| 2160 | {{< alias "vchord_bm25" >}} | 1.0.0 | A postgresql extension for bm25 ranking algorithm |
-| 2170 | {{< alias "pg_tokenizer" >}} | 1.0.0 | Tokenizers for full-text search |
+| 2160 | {{< alias "vchord_bm25" >}} | 1.1.0 | A postgresql extension for bm25 ranking algorithm |
+| 2170 | {{< alias "pg_tokenizer" >}} | 1.1.0 | Tokenizers for full-text search |
 | 2180 | {{< alias "biscuit" "pg_biscuit" >}} | 3.1.0 | IAM-LIKE pattern matching with bitmap indexing |
 | 2190 | {{< alias "pg_textsearch" >}} | 1.5.1 | Full-text search with BM25 ranking |
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | Pinyin romanization and search helpers for PostgreSQL |
@@ -178,7 +178,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.6 | Data lake tables and Iceberg tables |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.6 | Copy to/from data lake files |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | Planning-time partition pruning by per-partition data ranges, including non-key columns. |
-| 2580 | {{< alias "pg_improv" >}} | 0.13.0 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
+| 2580 | {{< alias "pg_improv" >}} | 0.14.0 | Incremental multidimensional models and formula functions over PostgreSQL tables. |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
 {.wide .expand}
 
@@ -644,7 +644,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7310 | {{< alias "credcheck" >}} | 6.0 | credcheck - postgresql plain text credential checker |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | Advanced password hashing methods for PostgreSQL |
-| 7360 | {{< alias "login_hook" >}} | 1.8 | login_hook - hook to execute login_hook.login() at login time |
+| 7360 | {{< alias "login_hook" >}} | 1.9 | login_hook - hook to execute login_hook.login() at login time |
 | 7370 | {{< alias "set_user" >}} | 4.3.0 | similar to SET ROLE but with added logging |
 | 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | The PostgreSQL Antivirus |
 | 7390 | {{< alias "pgextwlist" >}} | 1.20 | PostgreSQL Extension Whitelisting |

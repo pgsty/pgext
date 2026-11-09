@@ -29,6 +29,7 @@ page_width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `oracle` `plvstr` `dbms_output` `dbms_pipe` `plvdate` `plvchr` `dbms_alert` `plvsubst` `dbms_utility` `plvlex` `utl_file` `dbms_assert` `plunit` `dbms_random` `dbms_sql` `utl_raw` |
 |   **See Also**    | {{< ext "ivorysql_ora" >}} {{< ext "db2fce" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "tds_fdw" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} |
 
 > [!Note] Distribution 4.17.1 uses SQL/control version 4.17 and adds UTL_RAW; current PGDG RPM and DEB package baseline is 4.17.1.

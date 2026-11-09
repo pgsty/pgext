@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2100** | {{< badge content="pg_search" link="https://github.com/paradedb/paradedb/tree/main/pg_search" >}} | {{< ext "pg_search" >}} | `0.26.5` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+| **2100** | {{< badge content="pg_search" link="https://github.com/paradedb/paradedb/tree/main/pg_search" >}} | {{< ext "pg_search" >}} | `0.26.6` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -40,9 +40,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_search` | `vector` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.5` | {{< bg "18" "pg_search_18" "green" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} {{< bg "14" "pg_search_14" "red" >}} | `pg_search_$v` | `pgvector_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.5` | {{< bg "18" "postgresql-18-pg-search" "green" >}} {{< bg "17" "postgresql-17-pg-search" "green" >}} {{< bg "16" "postgresql-16-pg-search" "green" >}} {{< bg "15" "postgresql-15-pg-search" "green" >}} {{< bg "14" "postgresql-14-pg-search" "red" >}} | `postgresql-$v-pg-search` | `postgresql-$v-pgvector` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_search` | `vector` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "18" "pg_search_18" "green" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} {{< bg "14" "pg_search_14" "red" >}} | `pg_search_$v` | `pgvector_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.26.6` | {{< bg "18" "postgresql-18-pg-search" "green" >}} {{< bg "17" "postgresql-17-pg-search" "green" >}} {{< bg "16" "postgresql-16-pg-search" "green" >}} {{< bg "15" "postgresql-15-pg-search" "green" >}} {{< bg "14" "postgresql-14-pg-search" "red" >}} | `postgresql-$v-pg-search` | `postgresql-$v-pgvector` |
 {.packages .wide .expand}
 
 
@@ -165,7 +165,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/paradedb/paradedb/tree/main/pg_search" title="Repository" icon="github" subtitle="github.com/paradedb/paradedb/tree/main/pg_search" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_search-0.26.5.tar.gz pg_search_collect_third_party_licenses-0.26.5.py" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_search-0.26.6.tar.gz" />}}
 {{< /cards >}}
 
 

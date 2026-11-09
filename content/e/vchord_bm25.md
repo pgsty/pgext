@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2160** | {{< badge content="vchord_bm25" link="https://vchord.pgsty.com/docs/bm25/" >}} | {{< ext "vchord_bm25" >}} | `1.0.0` | {{< category "FTS" >}} | {{< license "AGPL-3.0-only" >}} | {{< language "Rust" >}} |
+| **2160** | {{< badge content="vchord_bm25" link="https://vchord.pgsty.com/docs/bm25/" >}} | {{< ext "vchord_bm25" >}} | `1.1.0` | {{< category "FTS" >}} | {{< license "AGPL-3.0-only" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -31,16 +31,16 @@ page_width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_bestmatch" >}} {{< ext "pg_fts" >}} {{< ext "pgroonga" >}} {{< ext "pg_rrf" >}} {{< ext "psql_bm25s" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} |
 
-> [!Note] PGSTY fork 1.0.0; native tsvector and new index format; preload required. In-place upgrade from 0.3.x is rejected.
+> [!Note] Preload; no in-place upgrade from 0.3.0.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `vchord_bm25` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "vchord_bm25_18" "green" >}} {{< bg "17" "vchord_bm25_17" "green" >}} {{< bg "16" "vchord_bm25_16" "green" >}} {{< bg "15" "vchord_bm25_15" "green" >}} {{< bg "14" "vchord_bm25_14" "green" >}} | `vchord_bm25_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-vchord-bm25" "green" >}} {{< bg "17" "postgresql-17-vchord-bm25" "green" >}} {{< bg "16" "postgresql-16-vchord-bm25" "green" >}} {{< bg "15" "postgresql-15-vchord-bm25" "green" >}} {{< bg "14" "postgresql-14-vchord-bm25" "green" >}} | `postgresql-$v-vchord-bm25` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `vchord_bm25` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "vchord_bm25_18" "green" >}} {{< bg "17" "vchord_bm25_17" "green" >}} {{< bg "16" "vchord_bm25_16" "green" >}} {{< bg "15" "vchord_bm25_15" "green" >}} {{< bg "14" "vchord_bm25_14" "green" >}} | `vchord_bm25_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-vchord-bm25" "green" >}} {{< bg "17" "postgresql-17-vchord-bm25" "green" >}} {{< bg "16" "postgresql-16-vchord-bm25" "green" >}} {{< bg "15" "postgresql-15-vchord-bm25" "green" >}} {{< bg "14" "postgresql-14-vchord-bm25" "green" >}} | `postgresql-$v-vchord-bm25` | - |
 {.packages .wide .expand}
 
 
@@ -186,7 +186,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://vchord.pgsty.com/docs/bm25/" title="Repository" icon="link" subtitle="vchord.pgsty.com/docs/bm25/" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="vchord_bm25-1.0.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="vchord_bm25-1.1.0.tar.gz" />}}
 {{< /cards >}}
 
 

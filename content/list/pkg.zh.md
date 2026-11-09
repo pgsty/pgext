@@ -12,8 +12,8 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 457 | 158 | 373 | 0 | 0 | 450 | 444 | 427 | 405 | 384 |
-| **EL** | 456 | 157 | 373 | 0 | 62 | 449 | 443 | 426 | 404 | 384 |
+| **ALL** | 457 | 157 | 373 | 0 | 0 | 450 | 444 | 427 | 405 | 384 |
+| **EL** | 456 | 156 | 373 | 0 | 62 | 449 | 443 | 426 | 404 | 384 |
 | **Debian** | 450 | 102 | 348 | 0 | 68 | 444 | 437 | 421 | 400 | 382 |
 {.wide .expand}
 
@@ -96,14 +96,14 @@ comments: false
 | {{< ext "pgcontext" >}} | `0.3.0` | {{< badge content="Link" link="https://pgxn.org/dist/pgcontext/0.3.0/" >}} | {{< category "RAG" >}} | `pgcontext_$v` | `postgresql-$v-pgcontext` |
 | {{< ext "pg_turbovec" >}} | `2.15.0` | {{< badge content="Link" link="https://codeberg.org/gregburd/pg_turbovec" >}} | {{< category "RAG" >}} | `pg_turbovec_$v` | `postgresql-$v-pg-turbovec` |
 | {{< ext "pg_vectorsearch" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/timescale/pg_vectorsearch" >}} | {{< category "RAG" >}} | `pg_vectorsearch_$v` | `postgresql-$v-vectorsearch` |
-| {{< ext "pg_search" >}} | `0.26.5` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/main/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
+| {{< ext "pg_search" >}} | `0.26.6` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/main/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
 | {{< ext "pgroonga" >}} | `4.1.0` | {{< badge content="Link" link="https://github.com/pgroonga/pgroonga" >}} | {{< category "FTS" >}} | `pgroonga_$v` | `postgresql-$v-pgroonga` |
 | {{< ext "pg_bigm" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgbigm/pg_bigm" >}} | {{< category "FTS" >}} | `pg_bigm_$v` | `postgresql-$v-pg-bigm` |
 | {{< ext "vgram" >}} | `1.0` | {{< badge content="Link" link="https://github.com/akorotkov/vgram" >}} | {{< category "FTS" >}} | `vgram_$v` | `postgresql-$v-vgram` |
 | {{< ext "zhparser" >}} | `2.3` | {{< badge content="Link" link="https://github.com/amutu/zhparser" >}} | {{< category "FTS" >}} | `zhparser_$v` | `postgresql-$v-zhparser` |
 | {{< ext "pg_bestmatch" >}} | `0.0.2` | {{< badge content="Link" link="https://github.com/tensorchord/pg_bestmatch.rs" >}} | {{< category "FTS" >}} | `pg_bestmatch_$v` | `postgresql-$v-pg-bestmatch` |
-| {{< ext "vchord_bm25" >}} | `1.0.0` | {{< badge content="Link" link="https://vchord.pgsty.com/docs/bm25/" >}} | {{< category "FTS" >}} | `vchord_bm25_$v` | `postgresql-$v-vchord-bm25` |
-| {{< ext "pg_tokenizer" >}} | `1.0.0` | {{< badge content="Link" link="https://vchord.pgsty.com/docs/tokenizer" >}} | {{< category "FTS" >}} | `pg_tokenizer_$v` | `postgresql-$v-pg-tokenizer` |
+| {{< ext "vchord_bm25" >}} | `1.1.0` | {{< badge content="Link" link="https://vchord.pgsty.com/docs/bm25/" >}} | {{< category "FTS" >}} | `vchord_bm25_$v` | `postgresql-$v-vchord-bm25` |
+| {{< ext "pg_tokenizer" >}} | `1.1.0` | {{< badge content="Link" link="https://vchord.pgsty.com/docs/tokenizer" >}} | {{< category "FTS" >}} | `pg_tokenizer_$v` | `postgresql-$v-pg-tokenizer` |
 | {{< ext "biscuit" "pg_biscuit" >}} | `3.1.0` | {{< badge content="Link" link="https://github.com/CrystallineCore/Biscuit" >}} | {{< category "FTS" >}} | `biscuit_$v` | `postgresql-$v-biscuit` |
 | {{< ext "pg_textsearch" >}} | `1.5.1` | {{< badge content="Link" link="https://github.com/timescale/pg_textsearch" >}} | {{< category "FTS" >}} | `pg_textsearch_$v` | `postgresql-$v-textsearch` |
 | {{< ext "pg_pinyin" >}} | `0.0.8` | {{< badge content="Link" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< category "FTS" >}} | `pg_pinyin_$v` | `postgresql-$v-pinyin` |
@@ -139,7 +139,7 @@ comments: false
 | {{< ext "pg_sorted_heap" >}} | `0.14.0` | {{< badge content="Link" link="https://github.com/skuznetsov/pg_sorted_heap" >}} | {{< category "OLAP" >}} | `pg_sorted_heap_$v` | `postgresql-$v-pg-sorted-heap` |
 | {{< ext "pg_lake" >}} | `3.6` | {{< badge content="Link" link="https://github.com/Snowflake-Labs/pg_lake" >}} | {{< category "OLAP" >}} | `pg_lake_$v` | `postgresql-$v-pg-lake` |
 | {{< ext "pg_table_range" >}} | `0.1.2` | {{< badge content="Link" link="https://github.com/bitner/pg_table_range" >}} | {{< category "OLAP" >}} | `pg_table_range_$v` | - |
-| {{< ext "pg_improv" >}} | `0.13.0` | {{< badge content="Link" link="https://codeberg.org/gregburd/improv" >}} | {{< category "OLAP" >}} | `pg_improv_$v` | `postgresql-$v-pg-improv` |
+| {{< ext "pg_improv" >}} | `0.14.0` | {{< badge content="Link" link="https://codeberg.org/gregburd/improv" >}} | {{< category "OLAP" >}} | `pg_improv_$v` | `postgresql-$v-pg-improv` |
 | {{< ext "tablefunc" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/tablefunc.html" >}} | {{< category "OLAP" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "age" >}} | `1.8.0` | {{< badge content="Link" link="https://github.com/apache/age" >}} | {{< category "FEAT" >}} | `age_$v` | `postgresql-$v-age` |
 | {{< ext "pg_liquid" >}} | `0.1.7` | {{< badge content="Link" link="https://github.com/michael-golfi/pg_liquid" >}} | {{< category "FEAT" >}} | `pg_liquid_$v` | `postgresql-$v-pg-liquid` |
@@ -477,7 +477,7 @@ comments: false
 | {{< ext "credcheck" >}} | `6.0` | {{< badge content="Link" link="https://github.com/HexaCluster/credcheck" >}} | {{< category "SEC" >}} | `credcheck_$v` | `postgresql-$v-credcheck` |
 | {{< ext "pgcryptokey" >}} | `0.85` | {{< badge content="Link" link="https://momjian.us/download/pgcryptokey/" >}} | {{< category "SEC" >}} | `pgcryptokey_$v` | `postgresql-$v-pgcryptokey` |
 | {{< ext "pg_pwhash" >}} | `1.0` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/pg_pwhash" >}} | {{< category "SEC" >}} | `pg_pwhash_$v` | `postgresql-$v-pg-pwhash` |
-| {{< ext "login_hook" >}} | `1.8` | {{< badge content="Link" link="https://github.com/splendiddata/login_hook" >}} | {{< category "SEC" >}} | `login_hook_$v` | `postgresql-$v-login-hook` |
+| {{< ext "login_hook" >}} | `1.9` | {{< badge content="Link" link="https://github.com/splendiddata/login_hook" >}} | {{< category "SEC" >}} | `login_hook_$v` | `postgresql-$v-login-hook` |
 | {{< ext "set_user" >}} | `4.3.0` | {{< badge content="Link" link="https://github.com/pgaudit/set_user" >}} | {{< category "SEC" >}} | `set_user_$v` | `postgresql-$v-set-user` |
 | {{< ext "pg_snakeoil" >}} | `1.4` | {{< badge content="Link" link="https://github.com/credativ/pg_snakeoil" >}} | {{< category "SEC" >}} | `pg_snakeoil_$v` | `postgresql-$v-snakeoil` |
 | {{< ext "pgextwlist" >}} | `1.20` | {{< badge content="Link" link="https://github.com/dimitri/pgextwlist" >}} | {{< category "SEC" >}} | `pgextwlist_$v` | `postgresql-$v-pgextwlist` |

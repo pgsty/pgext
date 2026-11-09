@@ -40,7 +40,7 @@ page_width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_tre` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.2` | {{< bg "18" "pg_tre_18" "green" >}} {{< bg "17" "pg_tre_17" "green" >}} {{< bg "16" "pg_tre_16" "red" >}} {{< bg "15" "pg_tre_15" "red" >}} {{< bg "14" "pg_tre_14" "red" >}} | `pg_tre_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.1` | {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} {{< bg "14" "postgresql-14-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.6.2` | {{< bg "18" "postgresql-18-pg-tre" "green" >}} {{< bg "17" "postgresql-17-pg-tre" "green" >}} {{< bg "16" "postgresql-16-pg-tre" "red" >}} {{< bg "15" "postgresql-15-pg-tre" "red" >}} {{< bg "14" "postgresql-14-pg-tre" "red" >}} | `postgresql-$v-pg-tre` | - |
 {.packages .wide .expand}
 
 

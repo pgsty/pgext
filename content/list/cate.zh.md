@@ -109,15 +109,15 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.26.5 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
+| 2100 | {{< alias "pg_search" >}} | 0.26.6 | 使用 BM25 的 PostgreSQL 全文、分面与混合检索扩展 |
 | 2110 | {{< alias "pgroonga" >}} | 4.1.0 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.1.0 | 清理损坏的 PGroonga 内部数据库文件的恢复辅助扩展 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "vgram" >}} | 1.0 | 用于 LIKE/ILIKE 检索的可变长度字组 GIN 索引与统计信息 |
 | 2140 | {{< alias "zhparser" >}} | 2.3 | 中文分词，全文搜索解析器 |
 | 2150 | {{< alias "pg_bestmatch" >}} | 0.0.2 | 在数据库内生成BM25稀疏向量 |
-| 2160 | {{< alias "vchord_bm25" >}} | 1.0.0 | BM25排序算法 |
-| 2170 | {{< alias "pg_tokenizer" >}} | 1.0.0 | 用于全文检索的分词器 |
+| 2160 | {{< alias "vchord_bm25" >}} | 1.1.0 | BM25排序算法 |
+| 2170 | {{< alias "pg_tokenizer" >}} | 1.1.0 | 用于全文检索的分词器 |
 | 2180 | {{< alias "biscuit" "pg_biscuit" >}} | 3.1.0 | 使用IAM的高性能文本模式匹配 |
 | 2190 | {{< alias "pg_textsearch" >}} | 1.5.1 | 带有BM25排序的全文搜索扩展 |
 | 2200 | {{< alias "pg_pinyin" >}} | 0.0.8 | PostgreSQL 拼音转写与检索辅助扩展 |
@@ -178,7 +178,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 3.6 | 数据湖表和 Iceberg 表 |
 | 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 3.6 | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
 | 2570 | {{< alias "pg_table_range" >}} | 0.1.2 | 基于每个分区的数据范围在规划阶段裁剪分区，并支持非分区键列。 |
-| 2580 | {{< alias "pg_improv" >}} | 0.13.0 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
+| 2580 | {{< alias "pg_improv" >}} | 0.14.0 | 基于 PostgreSQL 表的增量多维模型与公式函数。 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
 {.wide .expand}
 
@@ -644,7 +644,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7310 | {{< alias "credcheck" >}} | 6.0 | 明文凭证检查器 |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | PG密钥管理 |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | PostgreSQL 高级密码哈希扩展（Argon2/scrypt/yescrypt） |
-| 7360 | {{< alias "login_hook" >}} | 1.8 | 在用户登陆时执行login_hook.login()函数 |
+| 7360 | {{< alias "login_hook" >}} | 1.9 | 在用户登陆时执行login_hook.login()函数 |
 | 7370 | {{< alias "set_user" >}} | 4.3.0 | 增加了日志记录的 SET ROLE |
 | 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | 基于 ClamAV 的 PostgreSQL 反病毒扩展 |
 | 7390 | {{< alias "pgextwlist" >}} | 1.20 | PostgreSQL扩展白名单功能 |

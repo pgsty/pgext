@@ -17,7 +17,7 @@ page_width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2580** | {{< badge content="pg_improv" link="https://codeberg.org/gregburd/improv" >}} | {{< ext "pg_improv" >}} | `0.13.0` | {{< category "OLAP" >}} | {{< license "Apache-2.0 OR MIT" >}} | {{< language "Rust" >}} |
+| **2580** | {{< badge content="pg_improv" link="https://codeberg.org/gregburd/improv" >}} | {{< ext "pg_improv" >}} | `0.14.0` | {{< category "OLAP" >}} | {{< license "Apache-2.0 OR MIT" >}} | {{< language "Rust" >}} |
 {.wide .expand}
 
 
@@ -38,9 +38,9 @@ page_width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.13.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_improv` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.13.0` | {{< bg "18" "pg_improv_18" "green" >}} {{< bg "17" "pg_improv_17" "green" >}} {{< bg "16" "pg_improv_16" "green" >}} {{< bg "15" "pg_improv_15" "green" >}} {{< bg "14" "pg_improv_14" "red" >}} | `pg_improv_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.12.2` | {{< bg "18" "postgresql-18-pg-improv" "green" >}} {{< bg "17" "postgresql-17-pg-improv" "green" >}} {{< bg "16" "postgresql-16-pg-improv" "green" >}} {{< bg "15" "postgresql-15-pg-improv" "green" >}} {{< bg "14" "postgresql-14-pg-improv" "red" >}} | `postgresql-$v-pg-improv` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.14.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `pg_improv` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.14.0` | {{< bg "18" "pg_improv_18" "green" >}} {{< bg "17" "pg_improv_17" "green" >}} {{< bg "16" "pg_improv_16" "green" >}} {{< bg "15" "pg_improv_15" "green" >}} {{< bg "14" "pg_improv_14" "red" >}} | `pg_improv_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.14.0` | {{< bg "18" "postgresql-18-pg-improv" "green" >}} {{< bg "17" "postgresql-17-pg-improv" "green" >}} {{< bg "16" "postgresql-16-pg-improv" "green" >}} {{< bg "15" "postgresql-15-pg-improv" "green" >}} {{< bg "14" "postgresql-14-pg-improv" "red" >}} | `postgresql-$v-pg-improv` | - |
 {.packages .wide .expand}
 
 
@@ -163,7 +163,7 @@ page_width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://codeberg.org/gregburd/improv" title="Repository" icon="link" subtitle="codeberg.org/gregburd/improv" />}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="improv-0.13.0.tar.gz" />}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="improv-0.14.0.tar.gz" />}}
 {{< /cards >}}
 
 
