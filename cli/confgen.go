@@ -772,7 +772,7 @@ func GetConfigConstants() *ConfigConstants {
 	constants := &ConfigConstants{
 		RPMCommonPkg: []string{
 			// 0: infra-package
-			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis valkey silo mcli sow pig",
+			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis valkey silo mcli openbao kes sow pig",
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
@@ -789,7 +789,7 @@ func GetConfigConstants() *ConfigConstants {
 
 		DEBCommonPkg: []string{
 			// 0: infra-package
-			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis valkey silo mcli sow pig",
+			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis valkey silo mcli openbao kes sow pig",
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
