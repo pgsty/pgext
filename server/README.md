@@ -12,7 +12,31 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
 连接串优先级：`--db` > 全局 `-d/--database` > 环境变量 `PGURL` > `postgres:///data`。
 前提：目标库已有完整 `pgext` schema 与目录数据（`pgext init`）。
 
-共收录 **2507** 个 PostgreSQL 扩展，其中 **600** 个已打包。
+首页统计来自当前数据库快照；可用 `GET /api/v1/meta` 查看计数，
+`GET /api/v1/bootstrap` 为前端提供同一组数据。
+
+## 首页数字口径
+
+以下为本地 `data` 库在 **2026-11-09** 的核对值，线上与其他实例以各自快照为准：
+
+| 指标 | 当前值 | 计算口径 |
+| --- | ---: | --- |
+| 收录在册扩展 | 2,733 | `pgext.universe` 条目数 |
+| 已打包扩展 | 625 | Universe 中 `packaged = true` 的条目，包含 contrib 与保留条目 |
+| 矩阵软件包 | 457 | `pgext.pkg` 中处于活跃 PG/OS 目标的 `DISTINCT pkg` |
+| Linux 目标 | 16 | `pgext.active_os` 条目；8 个系统版本 × 2 种架构 |
+| PG 大版本 | 5 | `pgext.active_pg` 条目；PG 14–18 |
+| 矩阵槽位 | 36,560 | `pgext.pkg` 中处于活跃 PG/OS 目标的记录数，包含 `AVAIL`、`MISS`、`N/A` |
+
+当前槽位为 33,544 个 `AVAIL`、0 个 `MISS`、3,016 个 `N/A`，不能作为成功构建数。
+软件包族与扩展不是一一对应，contrib 随 PostgreSQL 交付，也不等于矩阵中的独立扩展包。
+首页“已打包”与筛选器使用同一 `packaged` 标记；基线 `pgext.extension` 的 624 个
+`available` 条目是另一口径：例如 `columnar` 在 Universe 中仍标记为已打包且已弃用，
+在基线中则为 `removed`。
+
+前端从 bootstrap 行计算收录与已打包数，从 `pg/os` 数组计算目标数，软件包与槽位数
+直接读取服务端聚合，保留真实的零值。所有计数参与快照内容 ETag；仅矩阵统计变化也会
+使 bootstrap 缓存失效，重复加载相同内容则保持 ETag。
 
 ## 架构
 
@@ -26,7 +50,7 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
                                └────────────────────────────┘
 ```
 
-两级缓存策略：
+三层缓存策略：
 
 1. **Snapshot（`snapshot.go`）**——启动时把新版 `universe`、`category`、`active_pg/os`、
    `doc` 元数据与 `pkg` 的 AVAIL 目标整体载入内存（`atomic.Pointer` 原子换入）。列表、详情、
@@ -60,7 +84,7 @@ gzip（204/304 除外）。`POST /api/v1/reload` 默认关闭；仅在设置 `--
 | `GET /api/v1/ext/{name}/changelog` | 所属软件包的发布历史（`pgext.changelog`，由 RPM/DEB 发布说明经 `bin/changelog.py` 蒸馏）：`{ds, old, new, note_en, note_zh}` 按日期降序；库中无该表时返回空列表 |
 | `GET/POST /api/v1/ext/{name}/visit` | 页面访问计数：POST 自增并返回 `{visits, downloads}`，GET 只读。计数持久化于 `pgext.counter`：内存中累积增量，每分钟以累加式 UPDATE（`visit = visit + Δ`）落库后回读全局值，因此多进程共用一表不冲突；表不存在时退化为内存计数并在每次落盘周期重试。旧 `--visits-file` JSON 文件首次启动时一次性导入并改名 |
 | `GET /api/v1/dim/{key}` | 19 个维度聚合：`category tag package kind lifecycle license lang distribution repo pg os build pgrx capability docs relation vendor kernel activity`（旧 `type` 仍是 `kind` 的兼容别名） |
-| `GET /api/v1/bootstrap` | SPA 引导载荷（紧凑位置数组 32 列，含 `repo_url/url/license_url`；ETag/304，gzip 后约 200 KiB）。载荷格式版本 `bootFormat` 同时参与 ETag 与前端请求 URL（`?fmt=b32`）：改动列布局时必须同步递增，否则浏览器缓存可能把旧列布局供给新前端 |
+| `GET /api/v1/bootstrap` | SPA 引导载荷（紧凑位置数组 34 列，含 `repo_url/url/license_url/rpm_pkg/deb_pkg`；ETag/304，gzip 后约 200 KiB）。载荷格式版本 `bootFormat` 同时参与 ETag 与前端请求 URL（`?fmt=b34`）：改动列布局时必须同步递增，否则浏览器缓存可能把旧列布局供给新前端 |
 | `POST /api/v1/reload` | 带令牌刷新内存快照；未配置令牌时返回 404 |
 | `GET /healthz` | 存活探针：db ping + 快照年龄 |
 
@@ -103,7 +127,7 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 - 启动时拉取 `/api/v1/bootstrap`（位置数组，列序与 `handleBootstrap` 注释同步维护）；上一次
   载荷缓存在 localStorage，回访先用缓存目录即时渲染，再以 `If-None-Match` 条件请求后台校验，
   全部筛选、排序与搜索都在前端对这份数据完成；
-- 首页 Hero：单行主标题与说明、六项关键指标（收录/已打包/包族/Linux 目标/PG 大版本/构建槽位）、
+- 首页 Hero：单行主标题与说明、六项关键指标（收录/已打包/矩阵软件包/Linux 目标/PG 大版本/矩阵槽位，悬停显示口径）、
   放大后的宇宙点阵导航（分类图例并入筛选面板）；检索区为 搜索框 → SQL 读出 → 筛选面板 → 结果；
 - 筛选面板收敛为 SCOPE（全部/可交付/未交付/分支限定/特定厂商/PG 自带）+ 分类 + PostgreSQL +
   语言 + 许可证（≤2 个成员的取值折叠进"全部 N 种 →"索引链接）。SCOPE 级联：其余各行计数都在
@@ -156,5 +180,6 @@ curl -X POST -H 'Authorization: Bearer secret' localhost:8432/api/v1/reload
 
 ```bash
 go test ./server        # 过滤引擎、OS 排序、TTL 缓存（无需数据库）
+node --test server/*_test.cjs  # 首页计数与安装命令渲染
 go build -o pgext . && ./pgext serve   # 端到端
 ```

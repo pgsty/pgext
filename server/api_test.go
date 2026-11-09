@@ -152,6 +152,8 @@ func TestBootstrapIncludesNewUniverseFields(t *testing.T) {
 	snap := fixtureSnapshot()
 	snap.CountPackaged = 3
 	snap.CountProjects = 4
+	snap.CountPackages = 3
+	snap.CountBuildSlots = 12
 	store := NewStore(nil)
 	store.snap.Store(snap)
 	a := &api{store: store}
@@ -171,8 +173,20 @@ func TestBootstrapIncludesNewUniverseFields(t *testing.T) {
 	if len(body.Rows) != 4 || len(body.Rows[0]) != 34 {
 		t.Fatalf("bootstrap shape = %d rows x %d cols", len(body.Rows), len(body.Rows[0]))
 	}
-	if body.Counts["projects"] != 4 || body.Counts["packaged"] != 3 {
+	if body.Counts["total"] != 4 || body.Counts["projects"] != 4 || body.Counts["packaged"] != 3 ||
+		body.Counts["packages"] != 3 || body.Counts["build_slots"] != 12 {
 		t.Fatalf("unexpected counts: %#v", body.Counts)
+	}
+	meta := httptest.NewRecorder()
+	a.handleMeta(meta, httptest.NewRequest(http.MethodGet, "/api/v1/meta", nil))
+	var metaBody struct {
+		Counts map[string]int `json:"counts"`
+	}
+	if err := json.Unmarshal(meta.Body.Bytes(), &metaBody); err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(metaBody.Counts, body.Counts) {
+		t.Fatalf("meta counts differ from bootstrap: %v vs %v", metaBody.Counts, body.Counts)
 	}
 }
 

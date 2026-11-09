@@ -165,8 +165,8 @@ type Snapshot struct {
 	CountContrib         int
 	CountDocs            int
 	CountSourceOnly      int
-	CountPackages        int // distinct package families in pgext.pkg
-	CountBuildSlots      int // pkg × pg × os combinations in pgext.pkg
+	CountPackages        int // distinct package families on active pg/os targets in pgext.pkg
+	CountBuildSlots      int // recorded active pkg × pg × os combinations, including MISS and N/A
 
 	// CountAvail is kept internally for older tests/callers.
 	CountAvail int
@@ -458,19 +458,29 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 		}
 	}
 
-	// Stable content hash: refreshing identical data keeps browser and query
-	// caches warm. LoadedAt is deliberately excluded.
+	snap.Version, err = snap.contentVersion()
+	if err != nil {
+		return nil, err
+	}
+	return snap, nil
+}
+
+// contentVersion includes the matrix totals as well as the catalog rows:
+// adding a missing/unsupported slot can change counts without changing an
+// extension's available TargetIdx. LoadedAt is deliberately excluded so
+// refreshing identical data keeps browser and query caches warm.
+func (s *Snapshot) contentVersion() (string, error) {
 	h := sha1.New()
 	if err := json.NewEncoder(h).Encode(struct {
-		Exts []*Ext
-		Cats []Category
-		PGs  []int
-		OSs  []string
-	}{snap.Exts, snap.Cats, snap.PGs, snap.OSs}); err != nil {
-		return nil, fmt.Errorf("hash catalog snapshot: %w", err)
+		Exts   []*Ext
+		Cats   []Category
+		PGs    []int
+		OSs    []string
+		Counts map[string]int
+	}{s.Exts, s.Cats, s.PGs, s.OSs, s.counts()}); err != nil {
+		return "", fmt.Errorf("hash catalog snapshot: %w", err)
 	}
-	snap.Version = `"` + hex.EncodeToString(h.Sum(nil))[:16] + `"`
-	return snap, nil
+	return `"` + hex.EncodeToString(h.Sum(nil))[:16] + `"`, nil
 }
 
 // preloadLibraries mirrors the cc/io page generators: preload dependencies
@@ -513,7 +523,10 @@ func loadTargets(ctx context.Context, pool *pgxpool.Pool, snap *Snapshot, byPkg 
 	for i, os := range snap.OSs {
 		osIdx[os] = i
 	}
-	if err := pool.QueryRow(ctx, `SELECT count(DISTINCT pkg), count(*) FROM pgext.pkg`).Scan(&snap.CountPackages, &snap.CountBuildSlots); err != nil {
+	if err := pool.QueryRow(ctx, `
+		SELECT count(DISTINCT pkg), count(*) FROM pgext.pkg
+		WHERE pg = ANY($1::integer[]) AND os = ANY($2::text[])`, snap.PGs, snap.OSs,
+	).Scan(&snap.CountPackages, &snap.CountBuildSlots); err != nil {
 		return fmt.Errorf("count pgext.pkg: %w", err)
 	}
 	targets := map[string]map[int]struct{}{}

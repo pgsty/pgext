@@ -81,7 +81,7 @@ function decodeBoot(b) {
   OSIDX = {}; OSS.forEach((os, i) => { OSIDX[os] = i; });
   // Counts derivable from the rows are derived, so figures can never disagree
   // with the decoded catalog itself; only the pkg-table aggregates rely on the
-  // server (with a slot fallback of families × pg × os).
+  // server. Missing aggregates must not invent a complete package matrix.
   N_ALL = EXT.length; N_PROJECTS = byPkg.size;
   N_AVAIL = 0; N_SOURCE = 0; N_VENDOR = 0; N_KERNEL = 0; N_CONTRIB = 0;
   for (const e of EXT) {
@@ -92,8 +92,8 @@ function decodeBoot(b) {
     if (e.flags & F.CONTRIB) N_CONTRIB++;
   }
   N_DOCS = b.counts.docs || 0;
-  N_PKGS = b.counts.packages || 0;
-  N_SLOTS = b.counts.build_slots || (N_PKGS * PGS.length * OSS.length);
+  N_PKGS = b.counts.packages ?? 0;
+  N_SLOTS = b.counts.build_slots ?? 0;
   META = { generated: (b.generated || '').slice(0, 10) };
   UFIELD = [];
   for (const c of CAT_ORDER) {
@@ -142,14 +142,20 @@ const I18N = {
   'nav.lang': ['中文', 'EN'],
   'hero.eyebrow': ['pgext.cloud · everything postgresql can become', 'pgext.cloud · PostgreSQL 的一切可能'],
   'hero.title': ['<em>PostgreSQL</em> Extension Catalog', '<em>PostgreSQL</em> 扩展目录'],
-  'hero.sub': ['Explore the superpowers of <b>{all}</b> PostgreSQL extensions, and the availability of <b>{avail}</b> extension artifacts across <b>{os}</b> Linux platforms.',
-               '探索 <b>{all}</b> 个 PostgreSQL 扩展的超能力，以及 <b>{avail}</b> 个 PG 扩展在 <b>{os}</b> 个 Linux 平台上的可用性。'],
+  'hero.sub': ['Explore <b>{all}</b> PostgreSQL extensions, including <b>{avail}</b> catalogued as packaged, with package availability across <b>{os}</b> Linux targets.',
+               '探索 <b>{all}</b> 个 PostgreSQL 扩展，其中 <b>{avail}</b> 个标记为已打包，并查询 <b>{os}</b> 个 Linux 目标上的软件包可用性。'],
   'hero.s1': ['extensions catalogued', '收录在册扩展'],
   'hero.s2': ['packaged extensions', '已打包扩展'],
-  'hero.s3': ['extension packages', '扩展软件包'],
-  'hero.s4': ['Linux platforms', 'Linux 大版本'],
+  'hero.s3': ['packages in matrix', '矩阵软件包'],
+  'hero.s4': ['Linux targets', 'Linux 目标'],
   'hero.s5': ['PG majors', 'PG 大版本'],
-  'hero.s6': ['build slots', '构建槽位'],
+  'hero.s6': ['matrix slots', '矩阵槽位'],
+  'hero.s1.tip': ['All canonical extensions in the catalog.', '目录中收录的全部规范扩展。'],
+  'hero.s2.tip': ['Entries marked as packaged, including PostgreSQL contrib and retained entries; availability depends on the target.', '标记为已打包的条目，含 PostgreSQL 自带模块与保留条目；具体可用性取决于目标。'],
+  'hero.s3.tip': ['Distinct package families in the active availability matrix; one package can provide several extensions.', '当前可用性矩阵中的软件包族；一个软件包可提供多个扩展。'],
+  'hero.s4.tip': ['Active Linux OS version and architecture combinations; each architecture counts separately.', '活跃的 Linux 系统版本与架构组合；不同架构分别计数。'],
+  'hero.s5.tip': ['Active PostgreSQL major versions tracked by the matrix.', '矩阵当前跟踪的 PostgreSQL 大版本。'],
+  'hero.s6.tip': ['Recorded package × PostgreSQL × Linux target combinations, including missing and unsupported slots; not a count of successful builds.', '已记录的软件包 × PostgreSQL × Linux 目标组合，含缺失与不适用格；并非成功构建数。'],
   'search.ph': ['Search {n} extensions — name, package, tags, or try tag:vector build:pgrx', '搜索 {n} 个扩展——名称、项目、标签，或试试 tag:vector build:pgrx'],
   'search.copy': ['click to copy query', '点击复制查询'],
   'search.copied': ['copied ✓', '已复制 ✓'],
@@ -1254,17 +1260,17 @@ function footerHTML() {
 /* ---------------- view: home ---------------- */
 function homeHTML() {
   const stats = [
-    [fmtInt(N_ALL), t('hero.s1')],
-    [fmtInt(600), t('hero.s2')],
-    [fmtInt(N_PKGS), t('hero.s3')],
-    [fmtInt(OSS.length), t('hero.s4')],
-    [fmtInt(PGS.length), t('hero.s5')],
-    [fmtInt(N_SLOTS), t('hero.s6')]
-  ].map(([n, l]) => '<li><span class="num">' + n + '</span><span class="lbl">' + l + '</span></li>').join('');
+    [N_ALL, 'hero.s1'],
+    [N_AVAIL, 'hero.s2'],
+    [N_PKGS, 'hero.s3'],
+    [OSS.length, 'hero.s4'],
+    [PGS.length, 'hero.s5'],
+    [N_SLOTS, 'hero.s6']
+  ].map(([n, key]) => '<li data-tip="' + esc(t(key + '.tip')) + '"><span class="num">' + fmtInt(n) + '</span><span class="lbl">' + t(key) + '</span></li>').join('');
   return '<section class="hero wrap">'
     + '<p class="eyebrow">' + t('hero.eyebrow') + '</p>'
     + '<h1 class="oneline">' + t('hero.title') + '</h1>'
-    + '<p class="hero-sub oneline">' + t('hero.sub', { all: fmtInt(N_ALL), avail: fmtInt(600), os: fmtInt(OSS.length) }) + '</p>'
+    + '<p class="hero-sub oneline">' + t('hero.sub', { all: fmtInt(N_ALL), avail: fmtInt(N_AVAIL), os: fmtInt(OSS.length) }) + '</p>'
     + '<ul class="hero-stats">' + stats + '</ul>'
     + '<div class="universe"><canvas id="ufield" height="80" aria-hidden="true" style="width:100%;display:block;cursor:crosshair"></canvas></div>'
     + '<div class="console">'
@@ -2961,15 +2967,15 @@ function aboutHTML() {
          'PGEXT.CLOUD 是 PostgreSQL 扩展生态的全量普查——由单个 Go 二进制从 pgext 目录数据库实时供给。') + '</p></header>'
     + '<div class="about-cols">'
     + '<div><h3>' + bi('What this is', '这是什么') + '</h3>'
-    + '<p>' + bi('A curated catalog of <b>' + fmtInt(N_ALL) + '</b> PostgreSQL extensions: upstream repositories and RPM/DEB indexes are inspected continuously, with categories, dependencies, lifecycles, kernels, vendors and bilingual usage manuals maintained as catalog dimensions. <b>' + fmtInt(600) + '</b> of them ship as prebuilt packages across <b>' + fmtInt(OSS.length) + '</b> Linux platforms and <b>' + fmtInt(PGS.length) + '</b> PostgreSQL majors.',
-                 '一份收录 <b>' + fmtInt(N_ALL) + '</b> 个 PostgreSQL 扩展的策展目录：持续抓取上游仓库与 RPM/DEB 软件源索引，维护分类、依赖、生命周期、内核、厂商与双语用法手册等目录维度。其中 <b>' + fmtInt(600) + '</b> 个提供预编译软件包，覆盖 <b>' + fmtInt(OSS.length) + '</b> 个 Linux 平台与 <b>' + fmtInt(PGS.length) + '</b> 个 PG 大版本。') + '</p>'
+    + '<p>' + bi('A curated catalog of <b>' + fmtInt(N_ALL) + '</b> PostgreSQL extensions: upstream repositories and RPM/DEB indexes are inspected continuously, with categories, dependencies, lifecycles, kernels, vendors and bilingual usage manuals maintained as catalog dimensions. <b>' + fmtInt(N_AVAIL) + '</b> are catalogued as packaged, with availability tracked across <b>' + fmtInt(OSS.length) + '</b> Linux OS/architecture targets and <b>' + fmtInt(PGS.length) + '</b> PostgreSQL majors.',
+                 '一份收录 <b>' + fmtInt(N_ALL) + '</b> 个 PostgreSQL 扩展的策展目录：持续抓取上游仓库与 RPM/DEB 软件源索引，维护分类、依赖、生命周期、内核、厂商与双语用法手册等目录维度。其中 <b>' + fmtInt(N_AVAIL) + '</b> 个标记为已打包，跟踪 <b>' + fmtInt(OSS.length) + '</b> 个 Linux 系统/架构目标与 <b>' + fmtInt(PGS.length) + '</b> 个 PG 大版本的软件包可用性。') + '</p>'
     + '<p>' + bi('This site is <code>pgext serve</code>: web assets embedded in one binary, data queried live, snapshots cached in memory. Also read our post that topped Hacker News: ',
                  '本站就是 <code>pgext serve</code>：网页资产内嵌于单个二进制，数据实时查询、内存快照缓存。也欢迎阅读我们登上 Hacker News 头条的博客：')
     + '<a href="https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4" target="_blank" rel="noopener"><i>PostgreSQL is eating the Database World</i> ↗</a></p>'
     + '<a class="about-eco" href="/matrix"><img src="https://pigsty.io/img/pigsty/ecosystem.png" alt="' + esc(bi('The PostgreSQL extension ecosystem', 'PostgreSQL 扩展生态宇宙')) + '" loading="lazy"></a>'
     + '</div>'
     + '<div><h3>' + bi('Highlights', '亮点') + '</h3><ul class="roadmap about-highlights">'
-    + '<li><span class="tag">catalog</span>' + bi('<b>' + fmtInt(600) + '</b> packaged extensions — the largest catalog in the Postgres ecosystem', '<b>' + fmtInt(600) + '</b> 个已打包扩展——PG 生态最大的扩展目录') + '</li>'
+    + '<li><span class="tag">catalog</span>' + bi('<b>' + fmtInt(N_AVAIL) + '</b> extensions in the packaged catalog', '<b>' + fmtInt(N_AVAIL) + '</b> 个扩展标记为已打包') + '</li>'
     + '<li><span class="tag">native</span>' + bi('RPM/DEB packages, properly built, freely composable', 'Linux 原生 RPM/DEB 软件包，规范构建、自由组合') + '</li>'
     + '<li><span class="tag">pig</span><a href="' + bi('https://pig.pgsty.com', 'https://pig.pgsty.com/zh') + '" target="_blank" rel="noopener">' + bi('A handy CLI on apt/dnf: zero-config, out-of-the-box installs', '趁手的 pig 命令行：零配置、开箱即用') + ' ↗</a></li>'
     + '<li><span class="tag">pgdg</span>' + bi('PGDG-compliant — drop-in with the official PostgreSQL kernel', '兼容 PGDG——与官方 PostgreSQL 内核即插即用') + '</li>'
