@@ -1289,7 +1289,7 @@ Add PostgreSQL 18 support for almost all extensions
 | pg_tracing  |    -    | 0.1.3-2 |       + pg 14/18       |
 |   pg_curl   |   2.4   |  2.4.5  |   new version epoch    |
 | pg_rewrite  |    -    |  2.0.0  |    Import from PGDG    |
-| pg_tracing  |    -    |  1.3.0  |     + pg14 / pg18      |
+| pg_tracing  |    -    | 0.1.3-2 |     + pg14 / pg18      |
 |  pgactive   |  2.1.5  |  2.1.6  |         + pg18         |
 |  sentinel   |   1.1   |   1.2   |          1.2           |
 |   pg_tle    | 1.5.1-1 | 1.5.1-2 |         + pg18         |

@@ -788,6 +788,7 @@ Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 | cloudberry-pxf    | -      | 2.1.0  | new companion package                   |
 | oriolepg          | 17.16  | 17.18  | kernel update for orioledb beta15 / 1.7 |
 | orioledb          | 1.6    | 1.7    | bump, paired with oriolepg 17.18        |
+| postgis           | 3.6.2  | 3.6.3  | bump                                    |
 | timescaledb       | 2.26.2 | 2.26.3 | bump                                    |
 | pg_search         | 0.22.6 | 0.23.0 | bump                                    |
 | pg_trickle        | 0.17.0 | 0.20.0 | bump, PG 18 only                        |
@@ -1211,7 +1212,7 @@ Add PostgreSQL 18 support for almost all extensions
 |    pg_curl    |   2.4   |  2.4.5  |                        |
 |    pg_ivm     |  1.11   |  1.12   | + pg18                 |
 |  pg_rewrite   |    -    |  2.0.0  | new extension          |
-|  pg_tracing   |    -    |  1.3.0  | + pg14 / pg18          |
+|  pg_tracing   |    -    | 0.1.3-2 | + pg14 / pg18          |
 |   pgactive    |  2.1.5  |  2.1.6  | + pg18                 |
 |  pgsentinel   |   1.1   |   1.2   | 1.2                    |
 |    pg_tle     | 1.5.1-1 | 1.5.1-2 | + pg18                 |

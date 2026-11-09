@@ -63,6 +63,7 @@ vars/
 /cloud/
 
 bin/*
+!bin/test_changelog.py
 !bin/load-stub
 !bin/dump-stub
 !bin/stub_doc.py

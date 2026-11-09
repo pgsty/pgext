@@ -12,7 +12,10 @@ rows, then:
    typos are fixed, and per-PG kernel builds (babelfish-17, pgedge-15, ...)
    keep their literal package names;
 3. merges the RPM and DEB rows of one (date, package) into a single row,
-   keeping the English comment in `note` and the Chinese one in `note_zh`.
+   keeping the English comment in `note_en` and the Chinese one in `note_zh`.
+
+Bilingual batches must contain the same package/version rows. Missing rows,
+malformed tables and conflicting versions fail before the output is opened.
 
 The output db/changelog.csv feeds pgext.changelog (COPY ... CSV HEADER).
 Run from the repository root:  python3 bin/changelog.py
@@ -21,7 +24,7 @@ Run from the repository root:  python3 bin/changelog.py
 import csv
 import re
 import sys
-from collections import OrderedDict
+from collections import Counter, OrderedDict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -85,7 +88,7 @@ def parse_tables(path: Path):
     """Yield (date, [ [cells...] ... ]) for every `## YYYY-MM-DD` batch."""
     batches = OrderedDict()
     date = None
-    for line in path.read_text(encoding="utf-8").splitlines():
+    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         m = BATCH_RE.match(line)
         if m:
             date = m.group(1)
@@ -98,6 +101,8 @@ def parse_tables(path: Path):
             if batches[date]:
                 batches[date].pop()  # the row before the separator is the header
             continue
+        if len(cells) != 4:
+            raise ValueError(f"{path.name}:{line_number}: expected four table columns")
         batches[date].append(cells)
     return batches
 
@@ -111,33 +116,57 @@ class Row:
         self.note, self.note_zh = note, note_zh
 
 
-def parse_side(side: str, en_path: Path, zh_path: Path, warnings: list):
+def validate_twins(en, zh, en_path: Path, zh_path: Path):
+    """Reject source omissions and version conflicts before generating any CSV."""
+    if en.keys() != zh.keys():
+        raise ValueError(
+            f"{en_path.name}/{zh_path.name}: batch dates differ: "
+            f"English only={sorted(en.keys() - zh.keys())}, "
+            f"Chinese only={sorted(zh.keys() - en.keys())}"
+        )
+    for date in en:
+        signatures = []
+        for path, rows in ((en_path, en[date]), (zh_path, zh[date])):
+            signature = Counter()
+            versions = {}
+            for cells in rows:
+                raw = clean_cell(cells[0]).lower()
+                if not raw:
+                    raise ValueError(f"{path.name} {date}: empty package name")
+                pair = (clean_version(cells[1]), clean_version(cells[2]))
+                if raw in versions and versions[raw] != pair:
+                    raise ValueError(
+                        f"{path.name} {date}: conflicting versions for {raw}: "
+                        f"{versions[raw]} vs {pair}"
+                    )
+                versions[raw] = pair
+                signature[(raw, *pair)] += 1
+            signatures.append(signature)
+        if signatures[0] != signatures[1]:
+            raise ValueError(
+                f"{en_path.name}/{zh_path.name} {date}: bilingual rows differ: "
+                f"English only={list((signatures[0] - signatures[1]).elements())}, "
+                f"Chinese only={list((signatures[1] - signatures[0]).elements())}"
+            )
+
+
+def parse_side(side: str, en_path: Path, zh_path: Path):
     """Parse one side (rpm or deb) and join English/Chinese comments."""
     en, zh = parse_tables(en_path), parse_tables(zh_path)
+    validate_twins(en, zh, en_path, zh_path)
     batches_out = {}
     for date, rows in en.items():
         ds = DATE_ALIGN.get(date, date)
-        zh_rows = zh.get(date, [])
+        zh_rows = zh[date]
         zh_by_name = {}
         for cells in zh_rows:
-            if len(cells) < 4:
-                continue
             key = clean_cell(cells[0]).lower()
             zh_by_name.setdefault(key, []).append(cells)
         out = batches_out.setdefault(ds, [])
         for cells in rows:
-            if len(cells) < 4:
-                continue
             raw = clean_cell(cells[0])
-            if not raw:
-                continue
             note = clean_cell(cells[3]) or None
-            note_zh = None
-            bucket = zh_by_name.get(raw.lower())
-            if bucket:
-                note_zh = clean_cell(bucket.pop(0)[3]) or None
-            elif zh_rows:
-                warnings.append(f"{en_path.name} {date}: no zh row for {raw!r}")
+            note_zh = clean_cell(zh_by_name[raw.lower()].pop(0)[3]) or None
             out.append(Row(side, raw, clean_version(cells[1]), clean_version(cells[2]), note, note_zh))
     return batches_out
 
@@ -271,9 +300,8 @@ def merge_group(pkg: str, rows: list, leads: set):
 
 
 def main():
-    warnings = []
-    rpm = parse_side("rpm", RELEASE / "rpm.md", RELEASE / "rpm.zh.md", warnings)
-    deb = parse_side("deb", RELEASE / "deb.md", RELEASE / "deb.zh.md", warnings)
+    rpm = parse_side("rpm", RELEASE / "rpm.md", RELEASE / "rpm.zh.md")
+    deb = parse_side("deb", RELEASE / "deb.md", RELEASE / "deb.zh.md")
 
     norm = Normalizer()
     merged = {}  # (ds, pkg) → [Row]
@@ -311,10 +339,6 @@ def main():
         print(f"\nkept {len(norm.unresolved)} names verbatim (not in catalog):")
         for name, count in sorted(norm.unresolved.items()):
             print(f"  {name} ×{count}")
-    if warnings:
-        print(f"\n{len(warnings)} warnings:")
-        for wmsg in warnings[:30]:
-            print(f"  {wmsg}")
     return 0
 
 

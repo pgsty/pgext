@@ -649,6 +649,7 @@ ds,pkg,old_ver,new_ver,note_en,note_zh
 2026-04-19,pgclone,3.6.0,4.0.0,bump,升级
 2026-04-19,pgproto,0.2.4,0.3.3,bump,升级
 2026-04-19,pgxicor,0.1.0,0.1.1,bump,升级
+2026-04-19,postgis,3.6.2,3.6.3,bump,升级
 2026-04-19,re2,,0.1.1,"new, PG 16-18",新增，PG 16-18
 2026-04-19,storage_engine,,1.0.7,"new, PG 14-18",新增，PG 14-18
 2026-04-19,timescaledb,2.26.2,2.26.3,bump,升级

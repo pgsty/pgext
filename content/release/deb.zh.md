@@ -639,12 +639,12 @@ weight: 300
 
 ## 2026-07-01
 
-更新 DEB 扩展包，并将上一批次的 documentdb 与 biscuit 更新计入本批次。
+更新 DEB 扩展包。
 
 | 包名          | 旧版本   | 新版本  | 备注                        |
 |:--------------|:---------|:--------|:----------------------------|
 | timescaledb   | 2.28.0   | 2.28.2  | PG 15-18                    |
-| documentdb    | 0.110    | 0.113   | PG 15-18                    |
+| documentdb    | 0.112    | 0.113   | PG 15-18                    |
 | citus         | 14.0.0-4 | 14.1.0  | PG 16-18                    |
 | pgvector      | 0.8.3    | 0.8.4   | PG 14-18                    |
 | plpgsql_check | 2.9.1    | 2.9.2   | PG 14-18                    |
@@ -1216,7 +1216,7 @@ weight: 300
 |    pg_curl    |   2.4   |  2.4.5  |                        |
 |    pg_ivm     |  1.11   |  1.12   | + pg18                 |
 |  pg_rewrite   |    -    |  2.0.0  | new extension          |
-|  pg_tracing   |    -    |  1.3.0  | + pg14 / pg18          |
+|  pg_tracing   |    -    | 0.1.3-2 | + pg14 / pg18          |
 |   pgactive    |  2.1.5  |  2.1.6  | + pg18                 |
 |  pgsentinel   |   1.1   |   1.2   | 1.2                    |
 |    pg_tle     | 1.5.1-1 | 1.5.1-2 | + pg18                 |
