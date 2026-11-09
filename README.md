@@ -4,36 +4,42 @@
 [![Release](https://img.shields.io/github/v/release/pgsty/pgext?color=teal)](https://github.com/pgsty/pgext/releases)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
-**PGEXT** helps you discover PostgreSQL extensions, read their usage guides,
-and find packages for your PostgreSQL version and Linux system.
+**PGEXT** is a PostgreSQL extension builder and catalog. Discover extensions,
+read their usage guides, find packages for your PostgreSQL version and Linux
+system, or build RPM/DEB packages from source.
 [Browse the catalog at pgext.cloud](https://pgext.cloud).
 
 This repository contains the catalog data and the Go application behind
 PGEXT.CLOUD. The `pgext` CLI collects APT/RPM repository metadata and builds
 package availability matrices. It also builds extension RPM/DEB packages
 directly from the Pigsty recipes, without PIG or a metadata database.
-`pgext serve` exposes the catalog as a web
-application and JSON query API, with web assets embedded in the binary and
-data stored in PostgreSQL.
+`pgext serve` exposes the catalog as a web application and JSON query API,
+with web assets embedded in the binary and data stored in PostgreSQL.
 
 ## The catalog today
 
-Catalog snapshot, **2026-10-29**:
+Local catalog snapshot, **2026-11-09**:
 
 | Layer | Current scope |
 | --- | --- |
-| Extension directory | **2,703** entries, including packaged, source, and provider-specific extensions |
-| Packaged catalog | **620** records: 617 marked available and 3 retained as removed |
+| Extension directory | **2,733** entries, including packaged, source, and provider-specific extensions |
+| Packaged directory entries | **625** marked `packaged`, including PostgreSQL contrib and retained entries |
+| Package matrix | **457** distinct package families across **36,560** recorded target slots: 33,544 available and 3,016 not applicable |
 | Categories | **16**, covering spatial data, vectors, search, analytics, operations, security, and more |
 | PostgreSQL targets | **14, 15, 16, 17, 18** |
 | Linux targets | **16** OS/architecture combinations: EL 8/9/10, Debian 12/13, Ubuntu 22.04/24.04/26.04; `x86_64` and `aarch64` |
 
 The broad directory lives in [`pgext.universe`](db/universe.csv); the packaged
-baseline lives in [`pgext.extension`](db/extension.csv). The latter groups its
-620 records under 512 package names, including PostgreSQL contrib modules.
-A package can provide several extensions. Availability varies by PostgreSQL
-major version, OS, architecture, and repository; consult the
-[package matrix](https://pgext.cloud/matrix) for a specific target.
+baseline lives in [`pgext.extension`](db/extension.csv). The latter has
+626 records (624 available, 2 removed), grouped under 518 package names,
+including PostgreSQL contrib modules. These are separate counts: the homepage
+uses Universe's `packaged` flag, while its package and slot totals come from
+the active `pgext.pkg` matrix. A package can provide several extensions;
+matrix slots include missing and unsupported combinations, not just successful
+builds. Availability varies by PostgreSQL major version, OS, architecture,
+and repository; consult the [package matrix](https://pgext.cloud/matrix) for
+a specific target or [`/api/v1/meta`](https://pgext.cloud/api/v1/meta) for the
+running service's current totals.
 
 ## Explore the catalog
 
@@ -71,14 +77,19 @@ For a source build, use `./pgext` in the examples below.
 
 ## Build extensions
 
-Inside a supported Linux builder, prepare the environment once:
+Build natively on EL 8/9/10, Debian 12/13, or Ubuntu 22.04/24.04/26.04,
+on `amd64` or `arm64`. Inside the Linux host or container, prepare the
+environment once (root or sudo is needed for system package operations):
 
 ```bash
+pgext env
 pgext env repo
-pgext env tool
+pgext env tool --pg 18
 pgext env spec
+
+# For Rust/pgrx extensions; select the recipe's cargo-pgrx version:
 pgext env rust
-pgext env pgrx
+pgext env pgrx --pgrx 0.19.3 --pg 18
 ```
 
 Then run the complete pipeline or its individual stages:
@@ -93,9 +104,32 @@ pgext mak pgvector --pg 18
 
 `make` is the command name; `m`, `mk`, and `mak` are aliases. Examples use
 `mak`. It builds and verifies packages from prepared inputs; `pkg` runs
-`get → dep → mak`. Both preserve debug packages by default. Build commands
-use the embedded `db/extension.csv`, a local configuration copy, or
-`--catalog`; they do not use `PGURL` or the published availability matrix.
+`get → dep → mak` and stops on failure. Both preserve debug packages by default.
+Use `--pg 17,18` for multiple majors; omitting it selects installed majors
+supported by the recipe within PG14–18. Extension names such as `vector`
+also resolve to their source package (`pgvector`).
+
+Build commands choose metadata from `--catalog`, then
+`$XDG_CONFIG_HOME/pgext/extension.csv` (normally `~/.config/pgext/extension.csv`),
+then the embedded `db/extension.csv`. They run without PIG or `PGURL`.
+Recipes default to `~/rpmbuild` or `~/debbuild`; use `--spec-dir` to select a
+checkout, or `pgext env spec --from /path/to/recipes` to install one.
+
+Preview a build without downloading, installing, or compiling. This also
+works on macOS with a local recipe checkout:
+
+```bash
+pgext pkg vector --pg 18 --plan --platform u24.arm64 \
+  --spec-dir ../deb/debbuild --json
+```
+
+The workspace defaults to `~/ext` (`--work-dir` overrides it): source archives
+go to `src/`, isolated build trees to `tmp/`, verified packages to `pkg/`, and
+stage logs plus `result.json` manifests to `log/run-*/`. Use `--json` for a
+machine-readable result, `--mirror` on source/environment commands that support
+it to prefer the China mirror, and `--checksums` for a filename-to-SHA256 source
+manifest. Building produces local artifacts; installation and publication are
+separate operations.
 
 See [the build workflow](docs/build-workflow.md) for Docker integration,
 local recipes, source verification, outputs, and migration from PIG.
@@ -169,6 +203,15 @@ pgext info <name>             # show extension metadata (alias: ext)
 pgext matrix <name>           # show a package availability matrix
 pgext bin <name> -p 18 -o el9  # show binary packages and download URLs
 
+pgext env                    # inspect the build environment (no database)
+pgext env repo               # prepare builder package repositories
+pgext env tool --pg 18       # install build tools and PostgreSQL development files
+pgext env spec               # install or update RPM/DEB recipes
+pgext get <name>             # download source inputs
+pgext dep <name> --pg 18     # install recipe dependencies
+pgext mak <name> --pg 18     # build and verify packages from prepared inputs
+pgext pkg <name> --pg 18     # get → dep → mak
+
 pgext gen all                 # run content generators
 pgext gen lint                # lint bilingual usage stubs
 pgext pgxn                    # export PGXN metadata to standalone reports
@@ -183,9 +226,10 @@ the extension build pipeline.
 ## Development
 
 ```bash
-go test ./...      # Go unit tests
-make check-stubs   # validate usage Markdown
-make build         # build the Hugo site
+go test ./...                 # Go unit tests
+node --test server/*_test.cjs  # frontend behavior tests
+make check-stubs              # validate usage Markdown
+make build                    # build the Hugo site
 ```
 
 The Hugo site uses **Hugo Extended 0.168.0** and **OINK v1.5.1**.
