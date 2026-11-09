@@ -1,0 +1,50 @@
+[pigsty-pgsql]
+name=pigsty-pgsql
+baseurl=https://repo.pigsty.cc/yum/pgsql/el$releasever.$basearch
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty
+module_hotfixes=1
+priority=11
+
+[pgdg-common]
+name=pgdg-common
+baseurl=https://mirrors.cloud.tencent.com/postgresql/repos/yum/common/redhat/rhel-9.8-$basearch https://repo.pigsty.cc/yum/pgdg/common/redhat/rhel-9.8-$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+
+[pgdg14]
+name=pgdg14
+baseurl=https://mirrors.cloud.tencent.com/postgresql/repos/yum/14/redhat/rhel-9.8-$basearch https://repo.pigsty.cc/yum/pgdg/14/redhat/rhel-9.8-$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+
+[pgdg15]
+name=pgdg15
+baseurl=https://mirrors.cloud.tencent.com/postgresql/repos/yum/15/redhat/rhel-9.8-$basearch https://repo.pigsty.cc/yum/pgdg/15/redhat/rhel-9.8-$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+
+[pgdg16]
+name=pgdg16
+baseurl=https://mirrors.cloud.tencent.com/postgresql/repos/yum/16/redhat/rhel-9.8-$basearch https://repo.pigsty.cc/yum/pgdg/16/redhat/rhel-9.8-$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+
+[pgdg17]
+name=pgdg17
+baseurl=https://mirrors.cloud.tencent.com/postgresql/repos/yum/17/redhat/rhel-9.8-$basearch https://repo.pigsty.cc/yum/pgdg/17/redhat/rhel-9.8-$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+
+[pgdg18]
+name=pgdg18
+baseurl=https://mirrors.cloud.tencent.com/postgresql/repos/yum/18/redhat/rhel-9.8-$basearch https://repo.pigsty.cc/yum/pgdg/18/redhat/rhel-9.8-$basearch
+enabled=1
+gpgcheck=0
+module_hotfixes=1

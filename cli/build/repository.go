@@ -268,8 +268,9 @@ func recognizedLegacyRepos(content, family string) bool {
 					}
 				}
 				hasURL = true
-			case "name", "enabled", "gpgcheck", "repo_gpgcheck", "module_hotfixes", "priority":
-				// Standard PIG-rendered metadata; no custom URL or package filters.
+			case "name", "enabled", "gpgcheck", "repo_gpgcheck", "gpgkey", "module_hotfixes", "priority":
+				// Standard PIG-rendered metadata. Managed replacements use their
+				// own signing keys rather than copying the legacy gpgkey value.
 			default:
 				return false
 			}

@@ -1,0 +1,8 @@
+[pigsty-infra]
+name=pigsty-infra
+baseurl=https://repo.pigsty.cc/yum/infra/$basearch
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty
+module_hotfixes=1
+priority=12
