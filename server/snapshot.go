@@ -483,10 +483,17 @@ func (s *Snapshot) contentVersion() (string, error) {
 	return `"` + hex.EncodeToString(h.Sum(nil))[:16] + `"`, nil
 }
 
-// preloadLibraries mirrors the cc/io page generators: preload dependencies
-// first, then the extension itself, preserving order and removing duplicates.
+// queryVersion also changes on a content-identical reload: documentation,
+// package files and changelog bodies are queried live, outside the snapshot.
+func (s *Snapshot) queryVersion() string {
+	return s.Version + "|" + s.LoadedAt.Format(time.RFC3339Nano)
+}
+
+// preloadLibraries includes only entries explicitly classified as preload.
+// need_load also covers LOAD, output plugins and authentication configuration.
+// Preload dependencies precede the extension, with duplicates removed.
 func preloadLibraries(e *Ext, byName map[string]*Ext) []string {
-	if e == nil || !e.NeedLoad {
+	if e == nil || !e.NeedLoad || e.Kind != "preload" {
 		return nil
 	}
 	seen := map[string]bool{}
@@ -506,7 +513,7 @@ func preloadLibraries(e *Ext, byName map[string]*Ext) []string {
 		}
 	}
 	for _, name := range e.Requires {
-		if dep := byName[name]; dep != nil && dep.NeedLoad {
+		if dep := byName[name]; dep != nil && dep.NeedLoad && dep.Kind == "preload" {
 			add(dep.Libs, dep.Name)
 		}
 	}

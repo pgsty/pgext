@@ -224,10 +224,11 @@ func TestUniverseDimensions(t *testing.T) {
 
 func TestPreloadLibrariesIncludesDependencies(t *testing.T) {
 	deps := map[string]*Ext{
-		"dep_a": {Name: "dep_a", NeedLoad: true, Libs: []string{"dep_a, shared"}},
+		"dep_a": {Name: "dep_a", Kind: "preload", NeedLoad: true, Libs: []string{"dep_a, shared"}},
 		"dep_b": {Name: "dep_b", NeedLoad: false, Libs: []string{"ignored"}},
+		"auth":  {Name: "auth", Kind: "headless", NeedLoad: true, Libs: []string{"oauth_validator"}},
 	}
-	ext := &Ext{Name: "demo", NeedLoad: true, Requires: []string{"dep_a", "dep_b"}, Libs: []string{"shared", "demo_lib"}}
+	ext := &Ext{Name: "demo", Kind: "preload", NeedLoad: true, Requires: []string{"dep_a", "dep_b", "auth"}, Libs: []string{"shared", "demo_lib"}}
 	got := preloadLibraries(ext, deps)
 	want := []string{"dep_a", "shared", "demo_lib"}
 	if len(got) != len(want) {
@@ -238,8 +239,10 @@ func TestPreloadLibrariesIncludesDependencies(t *testing.T) {
 			t.Fatalf("preloadLibraries = %v, want %v", got, want)
 		}
 	}
-	if got := preloadLibraries(&Ext{Name: "headless"}, deps); got != nil {
-		t.Fatalf("non-preload extension returned %v", got)
+	for _, kind := range []string{"headless", "standard", ""} {
+		if got := preloadLibraries(&Ext{Name: "explicit_load", Kind: kind, NeedLoad: true}, deps); got != nil {
+			t.Fatalf("%s extension returned preload libraries %v", kind, got)
+		}
 	}
 }
 
@@ -380,7 +383,7 @@ func TestEmbeddedDetailManualContract(t *testing.T) {
 		`id="ext-packages"`, `id="ext-build"`, `id="ext-install"`, `id="ext-usage"`,
 		`id="pkg-family"`, `id="pkg-packages"`, `id="pkg-downloads"`,
 		`id="pkg-build"`, `id="pkg-install"`, `id="pkg-changelog"`, "changelogHTML", "/changelog",
-		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "packageTabsHTML", "preload_libs", "pig build pkg",
+		"metadataHTML", "packageVersionsHTML", "packageInstallHTML", "packageTabsHTML", "preload_libs", "pgext pkg",
 		"file-browser", "usage-prose", "function navigateTo", "const extHref", "const pkgHref",
 		"DIM_GROUPS", "relationbits", "migrateLegacyHash", "data-dim-search", "capabilityMatches",
 		"heroDimBadgesHTML", "heroLinkBadgesHTML", "data-hover-ext", "md-alert", "/visit", "ghCardHTML", "heroDatesHTML",

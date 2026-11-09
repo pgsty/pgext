@@ -24,7 +24,19 @@ let INSTALL_PREF = { pg: '', os: '' };
 const F = { LEAD: 1, CONTRIB: 2, BIN: 4, LIB: 8, DDL: 16, LOAD: 32, TRUSTED: 64, RELOC: 128 };
 const B = { RPM: 1, DEB: 2, PGRX: 4, SOURCE: 8 };
 const R = { REQUIRES: 1, REQUIRED_BY: 2, SEE_ALSO: 4 };
-const FULLC = new Map(), MXC = new Map(), FILEC = new Map(), DOCC = new Map(), CHLOGC = new Map();
+// Revisited detail pages must pick up doc-only and package-only updates too.
+class DetailCache {
+  constructor() { this.items = new Map(); }
+  get(key) {
+    const entry = this.items.get(key);
+    if (!entry) return undefined;
+    if (Date.now() >= entry.expires) { this.items.delete(key); return undefined; }
+    return entry.value;
+  }
+  set(key, value) { this.items.set(key, { value, expires: Date.now() + 5 * 60 * 1000 }); }
+  clear() { this.items.clear(); }
+}
+const FULLC = new DetailCache(), MXC = new DetailCache(), FILEC = new DetailCache(), DOCC = new DetailCache(), CHLOGC = new DetailCache();
 let GMATRIX = null, GMATRIX_VIEW = null, matrixHydSeq = 0;
 
 /* ---------------- google analytics (GA4) ---------------- */
@@ -59,6 +71,11 @@ function gaPageView(path) {
    24 target_idx[] 25 family_size 26 comment 27 relationbits 28 pgrx_ver 29 repo_url 30 url 31 license_url
    32 rpm_pkg 33 deb_pkg */
 function decodeBoot(b) {
+  if (BOOT && BOOT.version !== b.version) {
+    for (const cache of [FULLC, MXC, FILEC, DOCC, CHLOGC]) cache.clear();
+    MATRIX_CHECKED = false;
+    for (const key of Object.keys(RMATRIX_CHECKED)) delete RMATRIX_CHECKED[key];
+  }
   BOOT = b;
   EXT = b.rows.map((r, i) => ({
     i, name: r[0], cat: r[1], avail: !!r[2], repo: r[3] || 'n/a', license: r[4] || 'Unknown',
@@ -219,13 +236,13 @@ const I18N = {
   'ext.packaging': ['Packaging metadata', '打包元数据'],
   'ext.upstream': ['Upstream & activity', '上游与活跃度'],
   'ext.projectlinks': ['Project Links', '项目链接'],
-  'ext.buildnone': ['The catalog has source metadata but no reproducible RPM/DEB build recipe. Follow the upstream build documentation.',
-                    '目录已收录源码信息，但没有可复现的 RPM/DEB 构建配方；请遵循上游构建文档。'],
+  'ext.buildnone': ['No maintained RPM/DEB recipe is recorded. Follow the upstream or provider instructions.',
+                    '目录未记录维护中的 RPM/DEB 配方，请遵循上游或服务商说明。'],
   'ext.contribbuild': ['This extension is delivered with PostgreSQL contrib; build it together with the matching PostgreSQL server packages.',
                        '这是 PostgreSQL contrib 扩展，应随对应版本的 PostgreSQL 服务端软件包一起构建和交付。'],
-  'ext.buildrecipe': ['A Pigsty package recipe is recorded for {types}. Build it with the same package-family name used by the catalog.',
-                      '目录记录了 {types} 的 Pigsty 构建配方，请使用目录中的包族名称进行构建。'],
-  'ext.sourcearchive': ['Source Tarball', '源码包'],
+  'ext.buildrecipe': ['A Pigsty recipe is recorded for {types}. Use PGEXT on a matching Linux builder; PIG and a catalog database are not required.',
+                      '目录记录了 {types} 的 Pigsty 配方。可在对应的 Linux 构建环境中使用 PGEXT，无需 PIG 或目录数据库。'],
+  'ext.sourcearchive': ['Source input', '源码输入'],
   'ext.installlede': ['Enable the repository, install the package for your PostgreSQL major with <a href="https://pig.pgsty.com" target="_blank" rel="noopener"><code>pig</code></a>, <code>apt</code> or <code>dnf</code>, then follow the preload, CREATE EXTENSION and verification steps from <code>pgext.universe</code>.',
                       '启用软件仓库，用 <a href="https://pig.pgsty.com/zh" target="_blank" rel="noopener"><code>pig</code></a>、<code>apt</code> 或 <code>dnf</code> 为你的 PostgreSQL 大版本安装软件包，再按 <code>pgext.universe</code> 生成的步骤完成预加载、CREATE EXTENSION 与验证。'],
   'ext.step.repo': ['1 · Repository', '1 · 软件仓库'],
@@ -265,13 +282,13 @@ const I18N = {
   'spec.mtime': ['catalog mtime', '目录更新时间'],
   'spec.extra': ['extra metadata', '扩展元数据'],
   'attr.ddl': ['CREATE EXTENSION', 'CREATE EXTENSION'],
-  'attr.load': ['needs preload', '需要预加载'],
+  'attr.load': ['needs explicit loading or enablement', '需要显式加载或启用'],
   'attr.lib': ['ships .so library', '携带动态库'],
   'attr.bin': ['ships binaries', '携带命令行工具'],
   'attr.trusted': ['trusted', '非超户可装'],
   'attr.reloc': ['relocatable', '模式可迁移'],
   'attr.contrib': ['postgres contrib', 'PG 自带'],
-  'state.avail': ['available', '可用'], 'state.na': ['not packaged', '未打包'],
+  'state.avail': ['packaged', '已打包'], 'state.na': ['not packaged', '未打包'],
   'mx.legend.pgdg': ['Available in PGDG Repo', '在 PGDG 仓库中可用'],
   'mx.legend.pigsty': ['Available in PIGSTY Repo', '在 PIGSTY 仓库中可用'],
   'mx.legend.miss': ['Not provided', '扩展缺失'],
@@ -286,7 +303,7 @@ const I18N = {
   'link.home': ['homepage', '主页'], 'link.repo': ['repository', '仓库'], 'link.license': ['license', '许可证'],
   'link.docs': ['document', '官方文档'], 'link.pgxn': ['PGXN', 'PGXN'],
   'link.control': ['control', 'Control'], 'link.author': ['author', '作者'], 'link.cargo': ['cargo', 'cargo'],
-  'type.standard': ['standard — CREATE EXTENSION, no preload', 'standard——直接 CREATE EXTENSION，无需预加载'],
+  'type.standard': ['standard extension', '标准扩展'],
   'type.preload': ['preload — needs shared_preload_libraries', 'preload——需要 shared_preload_libraries'],
   'type.puresql': ['puresql — SQL objects only, no binary', 'puresql——纯 SQL 对象，无二进制'],
   'type.headless': ['headless — library only, no SQL objects', 'headless——只有库，无 SQL 对象'],
@@ -1562,7 +1579,8 @@ function installHTML(e, full) {
   const repoName = String(full.repo || '').toUpperCase();
   const pgdgOnly = repoName === 'PGDG' && ![full.rpm_repo, full.deb_repo].some(repo => String(repo || '').toUpperCase() === 'PIGSTY');
   const repoCmd = full.contrib || !full.packaged ? '' : (pgdgOnly ? 'pig repo add pgdg -u' : 'pig repo add pgsql -u');
-  const loadConfig = full.need_load ? "shared_preload_libraries = '" + libs.join(', ') + "'" : '';
+  const sharedPreload = full.need_load && full.kind === 'preload';
+  const loadConfig = sharedPreload ? "shared_preload_libraries = '" + libs.join(', ') + "'" : '';
   const code = mdCodeHTML;
 
   const upstream = mdSafeURL(full.repo_url || full.doc_url || full.url);
@@ -1576,9 +1594,13 @@ function installHTML(e, full) {
     ? '<p>' + bi('Bundled with the matching PostgreSQL distribution; no separate repository setup is required.', '随对应 PostgreSQL 发行包交付，无需单独配置扩展仓库。') + '</p>'
     : repoCmd ? '<p>' + bi('Enable and refresh the repository selected by the catalog before installing.', '安装前启用并刷新目录所选的软件仓库。') + '</p>' + code('bash', repoCmd)
       : '<p>' + bi('No public package repository is recorded. Use the build manual and upstream source instead.', '没有公开软件仓库记录，请改用构建手册与上游源码。') + '</p>';
-  const loadBody = full.need_load
+  const loadBody = sharedPreload
     ? '<p>' + bi('Append these libraries to the existing setting, then restart PostgreSQL. Do not overwrite other preload entries.', '将下列库追加到现有配置并重启 PostgreSQL；不要覆盖已有预加载项。') + '</p>' + code('postgresql.conf', loadConfig)
-    : '<p class="step-done">✓ ' + t('ext.noload') + '</p>';
+    : full.need_load
+      ? '<p>' + bi('An explicit loading or enablement step is required. Follow the ', '需要显式加载或启用。请参考')
+        + '<a href="#ext-usage">' + t('ext.docs') + '</a>'
+        + bi(' guide for the exact configuration and restart requirements.', '文档中的具体配置与重启要求。') + '</p>'
+      : '<p class="step-done">✓ ' + t('ext.noload') + '</p>';
   const enableBody = createSQL
     ? '<p>' + (requires.length ? bi('CASCADE also creates declared extension dependencies: ', 'CASCADE 会同时创建声明的扩展依赖：') + '<code>' + esc(requires.join(', ')) + '</code>' : bi('Create the SQL objects in each target database.', '在每一个目标数据库中创建扩展 SQL 对象。')) + '</p>' + code('sql', createSQL)
     : '<p class="step-done">✓ ' + t('ext.noddl') + '</p>';
@@ -1650,7 +1672,8 @@ function filesHTML(f) {
   const tabs = pgs.map((pg, i) => '<button data-ftab="' + pg + '" aria-selected="' + (i === 0) + '">PG ' + pg + '</button>').join('');
   const panes = pgs.map((pg, i) => {
     const rows = f.files.filter(x => x.pg === pg)
-      .sort((a, b) => (OSIDX[a.os] ?? 99) - (OSIDX[b.os] ?? 99) || a.name.localeCompare(b.name) || b.ver.localeCompare(a.ver));
+      // Keep the API's native package-version order within each name/target.
+      .sort((a, b) => (OSIDX[a.os] ?? 99) - (OSIDX[b.os] ?? 99) || a.name.localeCompare(b.name));
     const seen = new Set();
     let older = 0;
     const trs = rows.map(x => {
@@ -1746,7 +1769,7 @@ function metadataHTML(full) {
   const runtime = [
     attrRow('Has Binary', '带有二进制', 'Ships executable command-line tools', '该扩展附带可执行的命令行工具', full.has_bin),
     attrRow('Has Library', '带有动态库', 'Ships a shared library (.so)', '该扩展附带动态链接库（.so 文件）', full.has_lib),
-    attrRow('Need Preload', '需动态加载', 'Must be listed in shared_preload_libraries; changing that requires a restart', '需加入 shared_preload_libraries 预加载，修改后需重启数据库', full.need_load),
+    attrRow('Explicit Loading', '需显式加载', 'Requires LOAD, preload, or another enablement step; see the usage guide', '需要 LOAD、预加载或其他启用步骤，具体方式见用法文档', full.need_load),
     attrRow('Need CREATE', '用 DDL 创建', 'Enabled per database with CREATE EXTENSION', '需执行 CREATE EXTENSION 语句创建后方可使用', full.need_ddl),
     attrRow('Need DBSU', '需超级用户', 'Only a database superuser can install it', '需要数据库超级用户权限才能安装', !full.trusted),
     attrRow('Relocatable', '模式可修改', 'Its objects can be installed into a schema of your choice', '扩展对象可以安装到指定的模式（schema）中', full.relocatable)
@@ -1801,20 +1824,32 @@ function sourceArchiveURL(source) {
 function buildHTML(full) {
   if (full.contrib) return '<div class="build-note contrib"><b>PostgreSQL contrib</b><p>' + t('ext.contribbuild') + '</p>' + pgBadgesHTML(full.pg_ver) + '</div>';
   const types = [full.rpm_build ? 'RPM' : '', full.deb_build ? 'DEB' : ''].filter(Boolean);
-  const archive = sourceArchiveURL(full.tarball || full.source);
+  const sources = [...new Set(String(full.tarball || full.source || '').trim().split(/\s+/).filter(Boolean))];
   const upstream = mdSafeURL(full.repo_url || full.url);
   const docs = mdSafeURL(full.doc_url);
   const links = [];
   if (upstream) links.push('<a href="' + esc(upstream) + '" target="_blank" rel="noopener"><span>' + bi('Upstream source', '上游源码') + '</span><b>' + esc(upstream.replace(/^https?:\/\//, '')) + ' ↗</b></a>');
-  if (archive) links.push('<a href="' + esc(archive) + '" target="_blank" rel="noopener"><span>' + t('ext.sourcearchive') + '</span><b>' + esc((full.tarball || full.source).split('/').pop()) + ' ↓</b></a>');
+  for (const source of sources) links.push('<a href="' + esc(sourceArchiveURL(source)) + '" target="_blank" rel="noopener"><span>' + t('ext.sourcearchive') + '</span><b>' + esc(source.split('/').pop()) + ' ↓</b></a>');
   if (docs) links.push('<a href="' + esc(docs) + '" target="_blank" rel="noopener"><span>' + bi('Upstream build docs', '上游构建文档') + '</span><b>' + esc(docs.replace(/^https?:\/\//, '')) + ' ↗</b></a>');
   let guide = '';
   if (types.length) {
-    const command = 'pig build pkg ' + full.pkg;
+    const name = full.pkg || full.name;
+    const pkg = /^[A-Za-z0-9_][A-Za-z0-9_.+-]*$/.test(name) ? name : shellArg(name);
+    const setup = ['pgext env repo', 'pgext env tool', 'pgext env spec'];
+    if (full.pgrx_ver) {
+      setup.push('pgext env rust');
+      if (/^\d+(\.\d+)*$/.test(full.pgrx_ver)) setup.push('pgext env pgrx --pgrx ' + full.pgrx_ver);
+    }
     guide = '<div class="build-recipe"><p>' + t('ext.buildrecipe', { types: '<b>' + types.join(' / ') + '</b>' }) + '</p>'
-      + '<div class="build-targets"><span>RPM ' + pgBadgesHTML(full.rpm_pg) + '</span><span>DEB ' + pgBadgesHTML(full.deb_pg) + '</span>'
-      + (full.pgrx_ver ? '<span><code>pgrx ' + esc(full.pgrx_ver) + '</code></span>' : '') + '</div>'
-      + '<div class="md-code"><div class="md-codebar"><span>bash</span><button data-copy="' + esc(command) + '">copy</button></div><pre><code>' + highlightCode(command, 'bash') + '</code></pre></div></div>';
+      + '<p>' + bi('Prepare the builder once (system packages require root or sudo):', '首次准备构建环境（系统包操作需要 root 或 sudo）：') + '</p>'
+      + mdCodeHTML('bash', setup.join('\n'))
+      + (full.pgrx_ver ? '<p>pgrx · <code>' + esc(full.pgrx_ver) + '</code> — ' + bi('use the toolchain required by the recipe.', '使用配方要求的工具链。') + '</p>' : '')
+      + '<p>' + bi('Preview, then run get → dep → mak:', '先预览，再执行 get → dep → mak：') + '</p>'
+      + mdCodeHTML('bash', 'pgext pkg ' + pkg + ' --plan\npgext pkg ' + pkg)
+      + '<p>' + bi('Targets come from the recipe and installed PostgreSQL versions. Select majors with <code>--pg</code>; published RPM/DEB coverage does not constrain source builds. Packages and debug files are written under <code>~/ext/pkg/</code>, with logs and manifests under <code>~/ext/log/</code>.',
+        '构建目标由配方与已安装的 PostgreSQL 版本决定，可用 <code>--pg</code> 指定；已发布 RPM/DEB 的覆盖范围不限制源码构建。软件包与调试文件输出至 <code>~/ext/pkg/</code>，日志与清单位于 <code>~/ext/log/</code>。') + '</p>'
+      + '<p><a href="https://github.com/pgsty/pgext/blob/main/docs/build-workflow.md" target="_blank" rel="noopener">'
+      + bi('PGEXT build workflow', 'PGEXT 构建指南') + ' ↗</a></p></div>';
   } else {
     guide = '<div class="build-note"><b>' + bi('Upstream build', '上游构建') + '</b><p>' + t('ext.buildnone') + '</p>'
       + (full.pgrx_ver ? '<span class="badge">pgrx · ' + esc(full.pgrx_ver) + '</span>' : '') + '</div>';
@@ -2428,7 +2463,8 @@ async function hydrateSliceMatrix(kind, value) {
   }
 }
 
-// load the global matrix payload once: warm localStorage copy, then network
+// Every entry route revalidates the warm matrix once per session, including
+// PG/OS slices that may never visit the main matrix page.
 async function ensureGlobalMatrix() {
   if (!GMATRIX) {
     try {
@@ -2436,9 +2472,14 @@ async function ensureGlobalMatrix() {
       if (matrixUsable(cached)) GMATRIX = cached;
     } catch (e) {}
   }
-  if (!GMATRIX) {
-    GMATRIX = await j('/api/v1/matrix');
-    try { localStorage.setItem(MATRIX_CACHE_KEY, JSON.stringify(GMATRIX)); } catch (e) {}
+  if (!MATRIX_CHECKED || !GMATRIX) {
+    try {
+      const fresh = await j('/api/v1/matrix');
+      if (!matrixUsable(fresh)) throw new Error('Invalid matrix response');
+      GMATRIX = fresh;
+      MATRIX_CHECKED = true;
+      try { localStorage.setItem(MATRIX_CACHE_KEY, JSON.stringify(fresh)); } catch (e) {}
+    } catch (err) { if (!GMATRIX) throw err; }
   }
   return GMATRIX;
 }
@@ -2476,14 +2517,11 @@ async function hydrateRepoMatrix(org) {
   if (RMATRIX[view] && RMATRIX_CHECKED[view]) return;
   try {
     const fresh = await j('/api/v1/matrix?repo=' + view);
-    RMATRIX_CHECKED[view] = true;
     if (!matrixUsable(fresh) || fresh.repo !== view) return;
-    const prev = RMATRIX[view];
+    RMATRIX_CHECKED[view] = true;
     RMATRIX[view] = fresh;
     try { localStorage.setItem(key, JSON.stringify(fresh)); } catch (e) {}
-    const changed = !prev || fresh.generated !== prev.generated
-      || !prev.stats || !fresh.stats || fresh.stats.cells !== prev.stats.cells;
-    if (changed && token === matrixHydSeq) paint(fresh);
+    if (token === matrixHydSeq) paint(fresh);
   } catch (err) {
     if (!RMATRIX[view] && token === matrixHydSeq) {
       const box = document.getElementById('repo-matrix');
@@ -2569,7 +2607,7 @@ const DIM_VALUE_NAMES = {
   },
   capability: {
     binary: ['Ships executables', '携带命令行工具'], library: ['Ships libraries', '携带动态库'],
-    'create-extension': ['CREATE EXTENSION', 'CREATE EXTENSION'], preload: ['Needs preload', '需要预加载'],
+    'create-extension': ['CREATE EXTENSION', 'CREATE EXTENSION'], preload: ['Explicit loading', '显式加载'],
     trusted: ['Trusted install', '非超户可装'], relocatable: ['Relocatable schema', '模式可迁移']
   },
   docs: {
@@ -2723,7 +2761,7 @@ const GMX_CLASS = { G: 'pgdg', P: 'pigsty', M: 'missing', N: 'na' };
 const gmxClassOf = ch => GMX_CLASS[String(ch).toUpperCase()] || 'na';
 
 function globalMatrixShellHTML() {
-  const combos = (OSS.length || 16) * (PGS.length || 5);
+  const combos = OSS.length * PGS.length;
   return '<article class="page wrap page-wide gmx-page">'
     + '<header class="page-head"><p class="eyebrow">' + t('gmx.eyebrow') + '</p>'
     + '<div class="gmx-titleline"><div><h1>' + t('gmx.title') + '</h1>'
@@ -2941,11 +2979,8 @@ async function hydrateGlobalMatrix() {
   if (MATRIX_CHECKED && GMATRIX) return;
   try {
     const fresh = await j('/api/v1/matrix');
-    MATRIX_CHECKED = true;
     if (!matrixUsable(fresh)) return;
-    const changed = !GMATRIX || fresh.generated !== GMATRIX.generated
-      || !GMATRIX.stats || !fresh.stats || fresh.stats.cells !== GMATRIX.stats.cells;
-    if (!changed) return;
+    MATRIX_CHECKED = true;
     GMATRIX = fresh;
     try { localStorage.setItem(MATRIX_CACHE_KEY, JSON.stringify(fresh)); } catch (e) {}
     if (token === matrixHydSeq && currentPath === '/matrix') renderGlobalMatrix();
@@ -2983,8 +3018,13 @@ function aboutHTML() {
     + '<li><span class="tag">oss</span>' + bi('Reproducible builds on public infra — free for everyone', '可复现构建、公开基础设施，对所有人免费') + '</li>'
     + '</ul></div>'
     + '<div><h3>' + bi('Get started', '快速上手') + '</h3>'
-    + mdCodeHTML('bash', 'curl -fsSL https://repo.pigsty.io/pig | bash  # install pig cli\\npig repo set                  # setup upstream repository on your linux\\npig install pg18              # install PostgreSQL 18 kernel from PGDG\\npig install pg_duckdb -v 18   # install pg_duckdb extension for PG 18')
+    + mdCodeHTML('bash', ['curl -fsSL https://repo.pigsty.io/pig | bash  # install pig cli', 'pig repo set                  # setup package repositories', 'pig install pg18              # install PostgreSQL 18', 'pig install pg_duckdb -v 18    # install pg_duckdb for PG 18'].join('\n'))
     + '<p><a href="' + bi('https://pig.pgsty.com/start/', 'https://pig.pgsty.com/zh/start/') + '" target="_blank" rel="noopener">' + bi('Read the PIG getting-started guide', '阅读 PIG 快速上手指南') + ' ↗</a></p></div>'
+    + '<div><h3>' + bi('Build extensions with PGEXT', '使用 PGEXT 构建扩展') + '</h3>'
+    + '<p>' + bi('The same binary also prepares Linux builders and builds native RPM/DEB packages from Pigsty recipes, without PIG or a metadata database.',
+      '同一个二进制还可准备 Linux 构建环境，并按 Pigsty 配方构建原生 RPM/DEB 软件包，无需 PIG 或元数据数据库。') + '</p>'
+    + mdCodeHTML('bash', ['pgext env repo', 'pgext env tool --pg 18', 'pgext env spec', 'pgext pkg pgvector --pg 18'].join('\n'))
+    + '<p><a href="https://github.com/pgsty/pgext/blob/main/docs/build-workflow.md" target="_blank" rel="noopener">' + bi('PGEXT build workflow', 'PGEXT 构建指南') + ' ↗</a></p></div>'
     + '<div><h3>' + bi('Friends', '友情链接') + '</h3><ul class="roadmap">'
     + out('https://pigsty.io', 'pigsty.io', bi('Pigsty — Battery-Included PostgreSQL Distribution', 'Pigsty——开箱即用的 PostgreSQL 发行版'))
     + out('https://pigsty.cc', 'pigsty.cc', bi('Pigsty Chinese site & mirror', 'Pigsty 中文站与镜像'))

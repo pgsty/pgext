@@ -1,12 +1,7 @@
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
 const vm = require('node:vm');
 const { test } = require('node:test');
-
-// Run the real decoder, filters and renderers, without DOM events or network boot.
-const source = fs.readFileSync(path.join(__dirname, 'web/app.js'), 'utf8');
-const app = source.slice(0, source.lastIndexOf('\nattachEvents();'));
+const { createAppContext } = require('./test_app.cjs');
 
 function fixture() {
   const row = (name, pkg, packaged, cat, flags = 0) => {
@@ -26,8 +21,7 @@ function fixture() {
 }
 
 function renderContext(lang, payload) {
-  const context = vm.createContext({ window: {}, location: { hostname: 'localhost', search: '' } });
-  vm.runInContext(app, context);
+  const context = createAppContext();
   vm.runInContext(`LANG = '${lang}'`, context);
   context.decodeBoot(payload);
   return context;

@@ -1,11 +1,36 @@
 package server
 
 import (
+	"context"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 	"time"
 )
+
+func TestLiveQueryCacheExpiresOnIdenticalCatalogReload(t *testing.T) {
+	for _, path := range []string{"doc?lang=en", "changelog", "matrix", "files"} {
+		t.Run(path, func(t *testing.T) {
+			snap := fixtureSnapshot()
+			a := &api{cache: newTTLCache(time.Hour, 10)}
+			calls := 0
+			query := func(context.Context) (any, error) { calls++; return map[string]int{"revision": calls}, nil }
+			request := func() string {
+				w := httptest.NewRecorder()
+				a.cached(w, httptest.NewRequest(http.MethodGet, "/api/v1/ext/demo/"+path, nil), snap.queryVersion(), query)
+				return w.Body.String()
+			}
+			before := request()
+			if request() != before || calls != 1 {
+				t.Fatal("same snapshot did not reuse its query cache")
+			}
+			snap.LoadedAt = snap.LoadedAt.Add(time.Minute)
+			if request() == before || calls != 2 {
+				t.Fatal("live content stayed cached after a metadata-identical reload")
+			}
+		})
+	}
+}
 
 func TestBootstrapRevalidatesMatrixCounts(t *testing.T) {
 	for _, tt := range []struct {

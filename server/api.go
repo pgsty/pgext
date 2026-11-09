@@ -563,7 +563,7 @@ func (a *api) handleMatrix(w http.ResponseWriter, r *http.Request) {
 	if e == nil {
 		return
 	}
-	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
+	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
 		rows, _ := a.pool.Query(ctx, `
 			SELECT pg, os, coalesce(name,''), state::text, coalesce(org,''), coalesce(version,''), coalesce(count,0)
 			FROM pgext.pkg WHERE pkg = $1 ORDER BY pg DESC, os`, e.Pkg)
@@ -593,10 +593,7 @@ func (a *api) handleGlobalMatrix(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	snap := a.store.Get()
-	// LoadedAt participates in this cache key because package version/count
-	// changes can be meaningful even when the catalog content hash is stable.
-	cacheVersion := snap.Version + "|" + snap.LoadedAt.Format(time.RFC3339Nano)
-	a.cached(w, r, cacheVersion, func(ctx context.Context) (any, error) {
+	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
 		payload, err := a.matrixPayload(ctx, false, mv)
 		if err != nil {
 			return nil, err
@@ -628,7 +625,7 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query()
 	pg, _ := strconv.Atoi(q.Get("pg"))
 	osFilter := q.Get("os")
-	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
+	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
 		rows, _ := a.pool.Query(ctx, `
 			SELECT b.pg, b.os, b.name, b.repo, coalesce(r.org,''), coalesce(b.ver,''), coalesce(b.version,''),
 			       coalesce(b.file,''), coalesce(b.sha256,''), coalesce(b.size,0),
@@ -637,7 +634,7 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 			FROM pgext.bin b JOIN pgext.repository r ON b.repo = r.id
 			WHERE b.name IN (SELECT DISTINCT name FROM pgext.pkg WHERE pkg = $1 AND name IS NOT NULL)
 			  AND ($2 = 0 OR b.pg = $2) AND ($3 = '' OR b.os = $3)
-			ORDER BY b.pg DESC, b.os, b.name, b.ver DESC
+			ORDER BY b.pg DESC, b.os, b.name, b.ver::pgext.version USING OPERATOR (pgext.>), b.repo, b.file
 			LIMIT 5000`, e.Pkg, pg, osFilter)
 		files, err := pgx.CollectRows(rows, pgx.RowToStructByPos[FileRow])
 		if err != nil {
@@ -656,7 +653,7 @@ func (a *api) handleDoc(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Query().Get("lang") == "zh" {
 		lang, col = "zh", "zh_doc"
 	}
-	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
+	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
 		var doc *string
 		err := a.pool.QueryRow(ctx, `SELECT `+col+` FROM pgext.doc WHERE ext = $1`, e.Name).Scan(&doc)
 		if err != nil && !errors.Is(err, pgx.ErrNoRows) {
@@ -917,7 +914,7 @@ func (a *api) handleChangelog(w http.ResponseWriter, r *http.Request) {
 	if e == nil {
 		return
 	}
-	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
+	a.cached(w, r, snap.queryVersion(), func(ctx context.Context) (any, error) {
 		rows, _ := a.pool.Query(ctx, `
 			SELECT ds::text, coalesce(old_ver,''), coalesce(new_ver,''), coalesce(note_en,''), coalesce(note_zh,'')
 			FROM pgext.changelog WHERE pkg = $1 ORDER BY ds DESC`, e.Pkg)

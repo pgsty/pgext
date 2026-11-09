@@ -36,3 +36,16 @@ for (const [name, fields, expected] of [
     assert.deepEqual(full, before, 'renderer must preserve the curated supplier');
   });
 }
+
+for (const kind of ['headless', 'standard', '']) {
+  test(`explicit ${kind || 'unknown'} loading does not invent a shared preload`, () => {
+    const html = context.installHTML({ name: 'plugin' }, { kind, need_load: true, libs: ['plugin'], need_ddl: false });
+    assert.doesNotMatch(html, /shared_preload_libraries\s*=/);
+    assert.match(html, /href="#ext-usage"/);
+  });
+}
+
+test('known shared preload uses dependency libraries', () => {
+  const html = context.installHTML({ name: 'demo' }, { kind: 'preload', need_load: true, preload_libs: ['dependency', 'demo'] });
+  assert.match(html, /shared_preload_libraries = 'dependency, demo'/);
+});
