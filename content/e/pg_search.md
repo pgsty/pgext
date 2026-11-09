@@ -212,9 +212,9 @@ CREATE EXTENSION pg_search CASCADE; -- requires vector
 
 Sources:
 
-- [0.26.5 changelog](https://github.com/paradedb/paradedb/blob/v0.26.5/docs/project/changelog/0.26.5.mdx)
-- [pg_search 0.26.5 control](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/pg_search.control)
-- [pg_search 0.26.5 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.5/pg_search/Cargo.toml)
+- [0.26.6 changelog](https://github.com/paradedb/paradedb/blob/v0.26.6/docs/project/changelog/0.26.6.mdx)
+- [pg_search 0.26.6 control](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/pg_search.control)
+- [pg_search 0.26.6 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/Cargo.toml)
 
 - [docs/project/changelog/0.26.2.mdx](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/docs/project/changelog/0.26.2.mdx)
 - [pg_search/sql/pg_search--0.26.1--0.26.2.sql](https://api.pgxn.org/src/pg_search/pg_search-0.26.2/pg_search/sql/pg_search--0.26.1--0.26.2.sql)
@@ -237,7 +237,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.5 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.26.6 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -354,3 +354,7 @@ Version 0.26.4 adds late materialization for array columns, makes eligible join 
 ### 0.26.5 Permissions and Correctness
 
 Version 0.26.5 enforces table permissions on standalone index-reading functions and fixes pushdown involving NULL or empty ALL arrays. It also improves parallel-worker cleanup and merge backpressure. Install matching files, restart through the preload maintenance procedure and update each SQL extension. The release does not remove the 0.26.0 vector-index migration requirement.
+
+### Version 0.26.6
+
+Join Scan now supports top-K `ORDER BY` on the vector distance operators `<->`, `<=>`, and `<#>` for `INNER` and `SEMI` (`IN` / `EXISTS`) joins. Rank join also applies when a leaf has a single-table filter answered by the index, including row-level security policies, equality, `= ANY`, and range conditions. The release fixes a crash when `pdb.score()` appears with a scalar subquery or query parameter in a Join Scan select list, and `EXPLAIN` now warns when `RankJoinExec` is not used. Validate plans and top-K results after upgrading; package coordinates must be checked separately from upstream.

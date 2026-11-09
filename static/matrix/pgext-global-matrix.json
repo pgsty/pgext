@@ -62,8 +62,8 @@
     },
     "pgdg_counts": {
       ".": 3016,
-      "B": 10038,
-      "R": 23506
+      "B": 10058,
+      "R": 23486
     }
   },
   "rows": [
@@ -17068,12 +17068,12 @@
         "d12.x86_64": "RRRRR",
         "d13.aarch64": "RRRRR",
         "d13.x86_64": "RRRRR",
-        "el10.aarch64": "RRRRR",
-        "el10.x86_64": "RRRRR",
+        "el10.aarch64": "BBBBB",
+        "el10.x86_64": "BBBBB",
         "el8.aarch64": "RRRRR",
         "el8.x86_64": "RRRRR",
-        "el9.aarch64": "RRRRR",
-        "el9.x86_64": "RRRRR",
+        "el9.aarch64": "BBBBB",
+        "el9.x86_64": "BBBBB",
         "u22.aarch64": "RRRRR",
         "u22.x86_64": "RRRRR",
         "u24.aarch64": "RRRRR",
