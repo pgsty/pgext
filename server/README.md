@@ -17,7 +17,7 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
 
 ## 首页数字口径
 
-以下为本地 `data` 库在 **2026-11-09** 的核对值，线上与其他实例以各自快照为准：
+以下为本地 `data` 库在 **2026-11-10** 的核对值，线上与其他实例以各自快照为准：
 
 | 指标 | 当前值 | 计算口径 |
 | --- | ---: | --- |
@@ -30,9 +30,8 @@ PGEXT_RELOAD_TOKEN=secret pgext serve           # 可选：启用带认证的手
 
 当前槽位为 33,544 个 `AVAIL`、0 个 `MISS`、3,016 个 `N/A`，不能作为成功构建数。
 软件包族与扩展不是一一对应，contrib 随 PostgreSQL 交付，也不等于矩阵中的独立扩展包。
-首页“已打包”与筛选器使用同一 `packaged` 标记；基线 `pgext.extension` 的 624 个
-`available` 条目是另一口径：例如 `columnar` 在 Universe 中仍标记为已打包且已弃用，
-在基线中则为 `removed`。
+首页“已打包”与筛选器使用同一 `packaged` 标记；基线 `pgext.extension` 的 625 个
+`available` 条目是另一口径，按包名归并后对应 518 个包族。
 
 前端从 bootstrap 行计算收录与已打包数，从 `pg/os` 数组计算目标数，软件包与槽位数
 直接读取服务端聚合，保留真实的零值。所有计数参与快照内容 ETag；仅矩阵统计变化也会
