@@ -33,7 +33,7 @@ page_width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "pg_textsearch" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_fts" >}} {{< ext "pgroonga" >}} {{< ext "pg_rrf" >}} {{< ext "psql_bm25s" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pgfaceting" >}} {{< ext "roaringbitmap" >}} {{< ext "rum" >}} |
 
-> [!Note] Preload; conflicts with pg_textsearch/vchord_bm25.
+> [!Note] Preload; conflicts with pg_textsearch/vchord_bm25; known PG18/ARM64 MPP JoinScan crash risk.
 
 
 ## Packages

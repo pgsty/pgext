@@ -270,7 +270,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
-| 2980 | {{< alias "pg_mentat" >}} | 1.19.1 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
+| 2980 | {{< alias "pg_mentat" >}} | 1.20.0 | Datomic-compatible data model and Datalog query engine inside PostgreSQL |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
 {.wide .expand}
 
@@ -515,7 +515,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.4 | Enable/disable checksums offline and verify them online or offline |
-| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.1.0 | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.2.0 | Physical and logical checksums for PostgreSQL pages, rows, tables, indexes and databases. |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.6 | cluster database read only |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | Introspect pg data dictionary via standard SQL |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4.1 | view object permissions and compare them with the desired state |

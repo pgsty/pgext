@@ -270,7 +270,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Omnigres 通用Worker池 |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | Omnigres XML工具包 |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | Omnigres YAML工具包 |
-| 2980 | {{< alias "pg_mentat" >}} | 1.19.1 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
+| 2980 | {{< alias "pg_mentat" >}} | 1.20.0 | 在 PostgreSQL 内提供兼容 Datomic 的数据模型与 Datalog 查询引擎 |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom 索引-基于指纹的索引 |
 {.wide .expand}
 
@@ -515,7 +515,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PG数据库规则检查插件 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | 获取和设置 PostgreSQL 后端的优先级 |
 | 5110 | {{< alias "pg_checksums" >}} | 1.4 | 离线启用或禁用校验和，支持在线或离线校验 |
-| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.1.0 | 为 PostgreSQL 页面、行、表、索引与数据库提供物理和逻辑校验和。 |
+| 5115 | {{< alias "pg_integrity_checksums" >}} | 2.2.0 | 为 PostgreSQL 页面、行、表、索引与数据库提供物理和逻辑校验和。 |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.6 | 将集群设置为只读 |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | 库内数据字典，通过标准 SQL 进行数据库内省 |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4.1 | 查看对象权限并将其与期望状态进行比较 |

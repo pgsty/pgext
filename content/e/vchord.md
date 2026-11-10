@@ -32,7 +32,7 @@ page_width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vectorscale" >}} {{< ext "pgcontext" >}} {{< ext "vectorize" >}} {{< ext "pg_rrf" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bestmatch" >}} {{< ext "pgml" >}} {{< ext "pg4ml" >}} |
 
-> [!Note] PGSTY fork; requires vector and preload. Reissued 1.2.0 tag archive is byte-identical; 1.2.0-2PGSTY rebuilt and locally indexed across six RPM and ten DEB platforms, PG14-18. vchordg/halfvec scans can return distances out of order; explicitly rerank candidates when strict order is required. CDN sync pending.
+> [!Note] PGSTY fork; requires vector and preload; vchordg/halfvec scans can return distances out of order; rerank for strict order.
 
 
 ## Packages

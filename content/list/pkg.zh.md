@@ -181,7 +181,7 @@ comments: false
 | {{< ext "pg_cardano" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< category "FEAT" >}} | `pg_cardano_$v` | `postgresql-$v-pg-cardano` |
 | {{< ext "rdkit" >}} | `202609.2` | {{< badge content="Link" link="https://github.com/rdkit/rdkit" >}} | {{< category "FEAT" >}} | `rdkit_$v` | `postgresql-$v-rdkit` |
 | {{< ext "omni" "omnigres" >}} | `0.2.14` | {{< badge content="Link" link="https://github.com/omnigres/omnigres" >}} | {{< category "FEAT" >}} | `omnigres_$v` | `postgresql-$v-omnigres` |
-| {{< ext "pg_mentat" >}} | `1.19.1` | {{< badge content="Link" link="https://codeberg.org/gregburd/mentat" >}} | {{< category "FEAT" >}} | `pg_mentat_$v` | `postgresql-$v-pg-mentat` |
+| {{< ext "pg_mentat" >}} | `1.20.0` | {{< badge content="Link" link="https://codeberg.org/gregburd/mentat" >}} | {{< category "FEAT" >}} | `pg_mentat_$v` | `postgresql-$v-pg-mentat` |
 | {{< ext "bloom" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/bloom.html" >}} | {{< category "FEAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_tle" >}} | `1.5.3` | {{< badge content="Link" link="https://github.com/aws/pg_tle" >}} | {{< category "LANG" >}} | `pg_tle_$v` | `postgresql-$v-pg-tle` |
 | {{< ext "plv8" >}} | `3.2.5` | {{< badge content="Link" link="https://github.com/plv8/plv8" >}} | {{< category "LANG" >}} | `plv8_$v` | `postgresql-$v-plv8` |
@@ -368,7 +368,7 @@ comments: false
 | {{< ext "pglinter" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/pmpetit/pglinter" >}} | {{< category "ADMIN" >}} | `pglinter_$v` | `postgresql-$v-pglinter` |
 | {{< ext "prioritize" "pg_prioritize" >}} | `1.0.4` | {{< badge content="Link" link="https://github.com/schmiddy/pg_prioritize" >}} | {{< category "ADMIN" >}} | `pg_prioritize_$v` | `postgresql-$v-prioritize` |
 | {{< ext "pg_checksums" >}} | `1.4` | {{< badge content="Link" link="https://github.com/credativ/pg_checksums" >}} | {{< category "ADMIN" >}} | `pg_checksums_$v` | `postgresql-$v-pg-checksums` |
-| {{< ext "pg_integrity_checksums" >}} | `2.1.0` | {{< badge content="Link" link="https://github.com/VictorNagibator/pg_integrity_checksums" >}} | {{< category "ADMIN" >}} | `pg_integrity_checksums_$v` | `postgresql-$v-pg-integrity-checksums` |
+| {{< ext "pg_integrity_checksums" >}} | `2.2.0` | {{< badge content="Link" link="https://github.com/VictorNagibator/pg_integrity_checksums" >}} | {{< category "ADMIN" >}} | `pg_integrity_checksums_$v` | `postgresql-$v-pg-integrity-checksums` |
 | {{< ext "pg_readonly" >}} | `1.0.6` | {{< badge content="Link" link="https://github.com/pierreforstmann/pg_readonly" >}} | {{< category "ADMIN" >}} | `pg_readonly_$v` | `postgresql-$v-pg-readonly` |
 | {{< ext "pgdd" >}} | `0.6.1` | {{< badge content="Link" link="https://github.com/rustprooflabs/pgdd" >}} | {{< category "ADMIN" >}} | `pgdd_$v` | `postgresql-$v-pgdd` |
 | {{< ext "pg_permissions" >}} | `1.4.1` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/pg_permissions" >}} | {{< category "ADMIN" >}} | `pg_permissions_$v` | `postgresql-$v-pg-permissions` |
