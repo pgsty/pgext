@@ -16,7 +16,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 438 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 437 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 84 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 70 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 17 | 使用 C++ 特性和库的扩展 |
@@ -28,7 +28,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="438 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="437 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -433,7 +433,6 @@ weight: 200
 | 8990 | {{< alias "postgres_fdw" >}} | 用于远程 PostgreSQL 服务器的外部数据包装器 |
 | 9000 | {{< alias "documentdb" >}} | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | DocumentDB多节点模式的API层 |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB扩展RUM索引访问方法 |
 | 9100 | {{< alias "orafce" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |

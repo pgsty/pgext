@@ -21,7 +21,7 @@ page_width: full
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 278 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 114 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 114 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 113 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 28 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 19 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 12 | [许可证文本](#) | Unknown license |
@@ -469,7 +469,7 @@ page_width: full
 
 
 
-| {{< license "MIT" >}} | {{< badge content="114 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="113 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -580,7 +580,6 @@ page_width: full
 | 8770 | {{< alias "oai_fdw" >}} | 通过 HTTP/HTTPS 采集 OAI-PMH 元数据的只读外部数据包装器。 |
 | 9000 | {{< alias "documentdb" >}} | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | DocumentDB多节点模式的API层 |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB扩展RUM索引访问方法 |
 | 9090 | {{< alias "pg_projection" >}} | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | 9410 | {{< alias "pgmemcache" >}} | 为PG提供memcached兼容接口 |

@@ -6,6 +6,36 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-09
+
+| Name                           | Old                | New                | Comment                               |
+|--------------------------------|--------------------|--------------------|---------------------------------------|
+| barn                           | 1.0.0              | 1.1.0              | Upstream native packages              |
+| claude                         | 2.1.318            | 2.1.319            | Repacked for both architectures       |
+| code                           | 1.145.1            | 1.145.2            | Upstream native packages              |
+| code-server                    | 4.145.0            | 4.145.2            | Upstream native packages              |
+| grafana-plugins                | 13.2.3             | 13.3.0             | noarch; six plugins updated below     |
+| grafana-victorialogs-ds        | 0.33.1             | 0.34.0             | Repacked for both architectures       |
+| mcli                           | 20261026000000.0.0 | 20261109000000.0.0 | Upstream native packages              |
+| mtail                          | 3.4.19             | 3.4.20             | Repacked for both architectures       |
+| pg-exporter                    | 1.5.0              | 1.6.0              | Repacked for both architectures       |
+| pgext                          | —                  | 1.6.0              | New recipe; previous scan found 1.5.0 |
+| pgschema                       | 1.13.4             | 1.14.1             | Repacked for both architectures       |
+| pgstream                       | 1.5.0              | 1.6.0              | Source build from pinned commit       |
+| rclone                         | 1.75.2             | 1.76.0             | Repacked for both architectures       |
+| seaweedfs                      | 4.52               | 4.53               | Package version: 4.53.0               |
+| silo-console                   | 2.6.0              | 2.7.0              | Upstream draft; local acceptance      |
+| sow                            | 0.6.1              | 0.7.0              | Repacked for both architectures       |
+| marcusolsson-dynamictext-panel | 6.3.0              | 6.3.1              | grafana-plugins                       |
+| marcusolsson-json-datasource   | 1.4.3              | 1.4.4              | grafana-plugins                       |
+| volkovlabs-echarts-panel       | 7.2.5              | 7.3.0              | grafana-plugins                       |
+| volkovlabs-form-panel          | 6.3.5              | 6.3.6              | grafana-plugins                       |
+| volkovlabs-image-panel         | 7.3.3              | 7.3.4              | grafana-plugins                       |
+| volkovlabs-table-panel         | 3.6.8              | 3.6.9              | grafana-plugins                       |
+| nFPM                           | 2.43.1             | 2.48.0             | Build tool; three platforms cached    |
+| Zig                            | 0.15.2             | 0.17.1             | Download only; Linux amd64/arm64      |
+{.wide .expand}
+
 ## 2026-11-06
 
 | Name                       | Old     | New     | Comment                    |

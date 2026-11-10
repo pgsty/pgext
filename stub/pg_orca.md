@@ -3,9 +3,14 @@
 
 ## Usage
 
-Sources: [pgorca README](https://github.com/quantumiodb/pgorca), [entrypoint/GUC source](https://github.com/quantumiodb/pgorca/blob/main/pg_orca.cpp), [control file](https://github.com/quantumiodb/pgorca/blob/main/pg_orca.control).
+Sources:
 
-`pg_orca` plugs the ORCA cost-based optimizer from the Greenplum/Apache Cloudberry lineage into a standard PostgreSQL 18 server. The upstream README describes this project as PostgreSQL 18-only, and the local package metadata also marks it for PG18 only.
+- [PGXN metadata](https://api.pgxn.org/dist/pg_orca/1.1.0/META.json)
+- [Official README](https://api.pgxn.org/src/pg_orca/pg_orca-1.1.0/README.md)
+- [Control file](https://api.pgxn.org/src/pg_orca/pg_orca-1.1.0/pg_orca.control)
+- [1.0 to 1.1 upgrade SQL](https://api.pgxn.org/src/pg_orca/pg_orca-1.1.0/pg_orca--1.0.0--1.1.0.sql)
+
+`pg_orca` plugs the ORCA cost-based optimizer from the Greenplum/Apache Cloudberry lineage into a standard PostgreSQL 18/19 server. The upstream README describes this project as PostgreSQL 18 primary target with PostgreSQL 19 preview support.
 
 ### Enable ORCA For A Session
 
@@ -70,7 +75,11 @@ The entrypoint source also defines additional ORCA tuning and debug GUCs such as
 
 ### Caveats
 
-- PostgreSQL 18 only.
+- PostgreSQL 18 is the primary target; PostgreSQL 19 is preview support.
 - Use `session_preload_libraries = 'pg_orca'` for automatic loading in new sessions.
 - ORCA is disabled by default after loading; set `pg_orca.enable_orca = on`.
 - Fallback to the PostgreSQL planner is expected for unsupported queries; enable `pg_orca.trace_fallback` when checking coverage.
+
+### PostgreSQL 19 Preview
+
+Release 1.1.0 builds against PostgreSQL 19 beta/RC with version guards and adds coverage for the new window-function syntax. Treat PostgreSQL 19 as preview until the server release is final, and validate plan changes before enabling ORCA broadly.

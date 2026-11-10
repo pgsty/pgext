@@ -3,7 +3,12 @@
 
 ## 用法
 
-来源：[README](https://github.com/ClickHouse/pg_stat_ch/blob/main/README.md)、[0.3.6 发行版](https://github.com/ClickHouse/pg_stat_ch/releases/tag/v0.3.6)
+来源：
+
+- [PGXN 元数据](https://api.pgxn.org/dist/pg_stat_ch/0.4.1/META.json)
+- [官方 README](https://api.pgxn.org/src/pg_stat_ch/pg_stat_ch-0.4.1/README.md)
+- [控制文件](https://api.pgxn.org/src/pg_stat_ch/pg_stat_ch-0.4.1/pg_stat_ch.control)
+- [安装指南](https://api.pgxn.org/src/pg_stat_ch/pg_stat_ch-0.4.1/INSTALL.md)
 
 `pg_stat_ch` 会捕获 PostgreSQL 的逐查询执行遥测，并通过共享内存队列和后台工作进程将原始事件导出到 ClickHouse。上游将它定位为 `pg_stat_statements` 的原始事件替代方案：聚合与看板交给 ClickHouse 处理，而不是留在 PostgreSQL 内部。
 
@@ -26,7 +31,7 @@ pg_stat_ch.clickhouse_use_tls = on
 pg_stat_ch.clickhouse_skip_tls_verify = off
 ```
 
-README 说明 PostgreSQL 16、17 和 18 已完整支持；最新发行版是 2026-04-15 发布的 `0.3.6`。
+README 说明 PostgreSQL 16、17 和 18 已完整支持；`0.4.1` 发行版仍使用 SQL/控制文件版本 `0.4`，但调整了导出器默认值和 ClickHouse 模式初始化方式。
 
 ### SQL API
 
@@ -58,6 +63,10 @@ SELECT pg_stat_ch_flush();
 - 应用名、客户端 IP，以及在上游截断限制内的查询文本。
 
 `0.3.6` 发行版将规范化缓存替换为以 queryId 为键的 LRU 缓存，并将 OpenTelemetry SDK 替换为直接使用 protobuf 的导出器和采样支持。现有 SQL 用法仍围绕事件表、汇总视图，以及上面的重置/版本辅助函数。
+
+### 0.4.1 发行版
+
+`0.4.1` README 将 `pg_stat_ch.queue_capacity` 默认值提高到 `131072`，将 `flush_interval_ms` 设为 `500`，并让 `batch_max` 受队列容量限制。手动部署 ClickHouse 时应先创建 `pg_stat_ch` 数据库，再执行 Goose 迁移；近期事件查询使用 `ts` 列。
 
 ### 注意事项
 

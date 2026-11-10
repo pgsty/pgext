@@ -3,9 +3,14 @@
 
 ## 用法
 
-- 来源：[pgorca README](https://github.com/quantumiodb/pgorca)，[entrypoint/GUC source](https://github.com/quantumiodb/pgorca/blob/main/pg_orca.cpp)，[control file](https://github.com/quantumiodb/pgorca/blob/main/pg_orca.control)
+来源：
 
-`pg_orca` 将 Greenplum/Apache Cloudberry 体系中的 ORCA 代价优化器接入标准 PostgreSQL 18 服务器。上游 README 将该项目描述为仅支持 PostgreSQL 18，本地包元数据也标记为仅适用于 PG18。
+- [PGXN 元数据](https://api.pgxn.org/dist/pg_orca/1.1.0/META.json)
+- [官方 README](https://api.pgxn.org/src/pg_orca/pg_orca-1.1.0/README.md)
+- [控制文件](https://api.pgxn.org/src/pg_orca/pg_orca-1.1.0/pg_orca.control)
+- [1.0 到 1.1 升级 SQL](https://api.pgxn.org/src/pg_orca/pg_orca-1.1.0/pg_orca--1.0.0--1.1.0.sql)
+
+`pg_orca` 将 Greenplum/Apache Cloudberry 体系中的 ORCA 代价优化器接入标准 PostgreSQL 18/19 服务器。上游 README 将该项目描述为以 PostgreSQL 18 为主，并提供 PostgreSQL 19 预览支持。
 
 ### 在会话中启用 ORCA
 
@@ -70,7 +75,11 @@ README 记录了以下主要 GUC：
 
 ### 注意事项
 
-- 仅支持 PostgreSQL 18。
+- PostgreSQL 18 是主目标；PostgreSQL 19 属于预览支持。
 - 新会话自动加载时使用 `session_preload_libraries = 'pg_orca'`。
 - 加载后 ORCA 默认仍是禁用状态；需要设置 `pg_orca.enable_orca = on`。
 - 对不支持的查询回退到 PostgreSQL planner 是预期行为；检查覆盖范围时可启用 `pg_orca.trace_fallback`。
+
+### PostgreSQL 19 预览
+
+1.1.0 通过版本条件编译支持 PostgreSQL 19 beta/RC，并覆盖新的窗口函数语法。服务器正式发布前应将 PostgreSQL 19 视为预览版本；大范围启用 ORCA 前请验证执行计划变化。

@@ -16,7 +16,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 438 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 437 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 84 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 70 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 17 | Extensions leveraging C++ features and libraries |
@@ -28,7 +28,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="438 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="437 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -433,7 +433,6 @@ The traditional PostgreSQL extension language
 | 8990 | {{< alias "postgres_fdw" >}} | foreign-data wrapper for remote PostgreSQL servers |
 | 9000 | {{< alias "documentdb" >}} | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB on PostgreSQL |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB Extended RUM index access method |
 | 9100 | {{< alias "orafce" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |

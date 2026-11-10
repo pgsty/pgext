@@ -143,7 +143,9 @@ pgext pkg pg_eviltransform --pg 18 --jobs 4
 
 Without `--pg`, builds select installed majors supported by the recipe,
 limited to PG14–18. An explicit target outside declared support fails before
-building. Packages independent of PostgreSQL majors do not accept `--pg`.
+building. For DEB recipes, `debian/pgversions` declares support; a Makefile's
+`PG_VERSIONS` default is used only when that declaration is absent or empty.
+Packages independent of PostgreSQL majors do not accept `--pg`.
 RPM receives `pgmajorversion`; DEB receives selected `pgversions`,
 `PG_VERSIONS`, `PG_MAJOR`, `PG_SUPPORTED_VERSIONS`, and `PG_CONFIG`. Numbered
 Makefile targets such as `build18` are selected explicitly.

@@ -7,7 +7,7 @@ comments: false
 weight: 900
 ---
 
-共有 626 个已打包的 PostgreSQL 扩展：
+共有 625 个已打包的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
@@ -586,7 +586,6 @@ weight: 900
 | {{< ext "postgres_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d-r" color="blue" >}} | {{< category "FDW" >}} | 用于远程 PostgreSQL 服务器的外部数据包装器 |
 | {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | 微软DocumentDB的API层 |
 | {{< ext "documentdb_core" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | 微软DocumentDB的核心API层实现 |
-| {{< ext "documentdb_distributed" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | DocumentDB多节点模式的API层 |
 | {{< ext "documentdb_extended_rum" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | DocumentDB扩展RUM索引访问方法 |
 | {{< ext "pg_projection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SIM" >}} | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |

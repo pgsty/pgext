@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-The 626 packaged PostgreSQL extensions (in 518 package families) are organized into 16 categories.
+The 625 packaged PostgreSQL extensions (in 518 package families) are organized into 16 categories.
 
 
 
@@ -84,7 +84,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.7 | vector data type and ivfflat and hnsw access methods |
-| 1810 | {{< alias "vchord" >}} | 1.2.0 | Vector database plugin for Postgres, written in Rust |
+| 1810 | {{< alias "vchord" >}} | 1.3.0 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.1 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.27.1 | The simplest way to do vector search on Postgres |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | support similarity queries |
@@ -707,7 +707,6 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 |:---:|:---|:---|:---|
 | 9000 | {{< alias "documentdb" >}} | 1.0 | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 1.0 | Core API surface for DocumentDB on PostgreSQL |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 1.0 | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 1.0 | DocumentDB Extended RUM index access method |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9100 | {{< alias "orafce" >}} | 4.17.1 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |

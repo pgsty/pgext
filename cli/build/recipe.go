@@ -40,8 +40,12 @@ func recipePG(family, root, name string, recipe []byte) []int {
 		if b, err := os.ReadFile(filepath.Join(root, name, "debian", "pgversions")); err == nil {
 			raw = string(b)
 		}
-		if m := regexp.MustCompile(`(?m)^PG_VERSIONS\s*[:?+]?=\s*([0-9 ]+)`).FindSubmatch(recipe); len(m) > 0 {
-			raw = string(m[1])
+		// pgversions declares support; PG_VERSIONS may only select a default
+		// build (for example, PG18). Explicit --pg overrides that Make default.
+		if strings.TrimSpace(raw) == "" {
+			if m := regexp.MustCompile(`(?m)^PG_VERSIONS\s*[:?+]?=\s*([0-9 ]+)`).FindSubmatch(recipe); len(m) > 0 {
+				raw = string(m[1])
+			}
 		}
 		if raw == "" {
 			for pg := 14; pg <= 18; pg++ {

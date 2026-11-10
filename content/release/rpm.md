@@ -6,28 +6,35 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
-## 2026-11-07
+## 2026-11-10
 
-Imported and indexed locally on EL8/9/10 × x86_64/aarch64. Public CDN synchronization is pending.
-
-| Name | Old | New | Comment |
-|:-----|:----|:----|:--------|
-| documentdb | 1.0-1PGSTY | 1.0-2PGSTY | PG15-18; PostGIS 3.7; PG15 advances from 0.117 to 1.0; SQL 1.0-0 |
-| mobilitydb | 1.3.1-1PGSTY | 1.3.1-2PGSTY | PG14-18; PostGIS 3.7; backports upstream fix for geometry input mutation |
-| orioledb-16 | 1.10.1 | 1.10.2 | PG16.15 kernel; SQL 1.10 |
-| orioledb-17 | 1.10.1 | 1.10.2 | PG17.11 kernel; SQL 1.10 |
-| orioledb-18 | 1.10.1 | 1.10.2 | PG18.6 kernel; SQL 1.10 |
-| pg_curl | 2.4.6 | 2.5.0 | PG14-18; SQL 2.5; no upstream SQL upgrade path from 2.4.1 |
-| pg_improv | 0.12.2 | 0.13.0 | PG15-18; upstream pgrx 0.19.3 |
-| pg_tre | 4.6.1 | 4.6.2 | PG17-18 |
-| pghydro | 6.6-1PIGSTY | 6.6-2PGSTY | PG14-18; PostGIS 3.7; noarch; seven SQL extensions |
+| Name                   | Old          | New          | Comment                                         |
+| :--------------------- | :----------- | :----------- | :---------------------------------------------- |
+| documentdb             | 1.0-1PGSTY   | 1.0-2PGSTY   | PG15-18; PostGIS 3.7                            |
+| login_hook             | 1.8          | 1.9          | PG14-17 PGDG; PG18 Pigsty                       |
+| mobilitydb             | 1.3.1-1PGSTY | 1.3.1-2PGSTY | PG14-18; PostGIS 3.7                            |
+| orioledb-16            | 1.10.1       | 1.10.3       | PG16.15 kernel; SQL 1.10                        |
+| orioledb-17            | 1.10.1       | 1.10.3       | PG17.11 kernel; SQL 1.10                        |
+| orioledb-18            | 1.10.1       | 1.10.3       | PG18.6 kernel; SQL 1.10                         |
+| pg_clickhouse          | 0.11.0       | 0.11.1       | PG14-18; SQL 0.11                               |
+| pg_curl                | 2.4.6        | 2.5.0        | PG14-18; SQL 2.5                                |
+| pg_improv              | 0.12.2       | 0.14.0       | PG15-18; pgrx 0.19.3                            |
+| pg_integrity_checksums | 2.1.0        | 2.2.0        | PG14-18; SQL 2.2                                |
+| pg_mentat              | 1.19.1       | 1.20.0       | PG14-18                                         |
+| pg_search              | 0.26.5       | 0.26.6       | PG15-18; preload; known MPP JoinScan crash risk |
+| pg_tokenizer           | 1.0.0        | 1.1.0        | PG14-18; native tsvector                        |
+| pg_tre                 | 4.6.1        | 4.6.2        | PG17-18                                         |
+| pghydro                | 6.6-1PIGSTY  | 6.6-2PGSTY   | PG14-18; PostGIS 3.7; noarch                    |
+| q3c                    | 2.0.5        | 2.0.6        | PGDG packages                                   |
+| repmgr                 | 5.5.0        | 5.5.1        | PGDG packages                                   |
+| vchord                 | 1.2.0-2PGSTY | 1.3.0-1PGSTY | PG14-18                                         |
+| vchord_bm25            | 1.0.0        | 1.1.0        | PG14-18; native tsvector                        |
+{.wide .expand}
 
 ## 2026-11-06
 
-Consolidated package changes from 2026-10-31 through 2026-11-06; repeated updates show the initial and final versions.
-
 | Name                      | Old                           | New                           | Comment                                                                          |
-|:--------------------------|:------------------------------|:------------------------------|:---------------------------------------------------------------------------------|
+| :------------------------ | :---------------------------- | :---------------------------- | :------------------------------------------------------------------------------- |
 | address_standardizer      | -                             | 3.7.0-1PGSTY                  | EL8 gap fill; standalone; SQL 3.7; includes data_us; no PostGIS dependency       |
 | agensgraph-18             | 2.18.6.0                      | 2.18.6.1                      | PG18.6 kernel and contrib                                                        |
 | cat_tools                 | 0.3.0                         | 0.4.0                         | SQL-only                                                                         |
@@ -66,7 +73,7 @@ Consolidated package changes from 2026-10-31 through 2026-11-06; repeated update
 | pg_hint_plan              | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG PG18/17/16/15/14 release lines                                              |
 | pg_improv                 | 0.12.1                        | 0.12.2                        | PG15-18; pgrx 0.19.3; idle sync worker fix                                       |
 | pg_integrity_checksums    | 2.0.0                         | 2.1.0                         | Canonical byte order; recompute hash/catalog baselines when upgrading from 2.0.0 |
-| pg_lake                   | 3.5.9                         | 3.6.0                         | PG16-18; eight extensions; SQL 3.6; EL9/10                                         |
+| pg_lake                   | 3.5.9                         | 3.6.0                         | PG16-18; eight extensions; SQL 3.6; EL9/10                                       |
 | pg_lion                   | -                             | 0.3.0                         | PG16-18; includes citext/vector companions                                       |
 | pg_living_assertions      | 0.5.10                        | 0.5.10                        | SQL-only rebuild                                                                 |
 | pg_mentat                 | 1.18.0                        | 1.19.1                        | Concurrent-write/RLS fixes; upgrade takes locks                                  |
@@ -106,7 +113,6 @@ Consolidated package changes from 2026-10-31 through 2026-11-06; repeated update
 | wal2json                  | 2.6                           | 2.7                           | PGDG packages                                                                    |
 | zlog                      | 1.2.18                        | 1.2.20                        | Rebuilds PolarStore and PolarDB                                                  |
 {.wide .expand}
-
 
 ## 2026-10-29
 

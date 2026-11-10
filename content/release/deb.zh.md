@@ -6,12 +6,30 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+## 2026-11-10
+
+| 名称                   | 旧版本       | 新版本       | 说明                                         |
+| :--------------------- | :----------- | :----------- | :------------------------------------------- |
+| login_hook             | 1.8          | 1.9          | PG14-17 PGDG；PG18 Pigsty                    |
+| orioledb-16            | 1.10.1       | 1.10.3       | PG16.15 内核；SQL 1.10                       |
+| orioledb-17            | 1.10.1       | 1.10.3       | PG17.11 内核；SQL 1.10                       |
+| orioledb-18            | 1.10.1       | 1.10.3       | PG18.6 内核；SQL 1.10                        |
+| pg_clickhouse          | 0.11.0       | 0.11.1       | PG14-18；SQL 0.11                            |
+| pg_curl                | 2.4.6        | 2.5.0        | PG14-18；SQL 2.5                             |
+| pg_improv              | 0.12.2       | 0.14.0       | PG15-18；pgrx 0.19.3                         |
+| pg_integrity_checksums | 2.1.0        | 2.2.0        | PG14-18；SQL 2.2                             |
+| pg_mentat              | 1.19.1       | 1.20.0       | PG14-18                                      |
+| pg_search              | 0.26.5       | 0.26.6       | PG15-18；需预加载；MPP JoinScan 已知崩溃风险 |
+| pg_tokenizer           | 1.0.0        | 1.1.0        | PG14-18；原生 tsvector                       |
+| pg_tre                 | 4.6.1        | 4.6.2        | PG17-18                                      |
+| vchord                 | 1.2.0-2PGSTY | 1.3.0-1PGSTY | PG14-18                                      |
+| vchord_bm25            | 1.0.0        | 1.1.0        | PG14-18；原生 tsvector                       |
+{.wide .expand}
+
 ## 2026-11-06
 
-汇总 2026-10-31 至 2026-11-06 的软件包更新；同一包合并为期初版本到本批最终版本。
-
 | 名称                      | 旧版本                        | 新版本                        | 说明                                                                 |
-|:--------------------------|:------------------------------|:------------------------------|:---------------------------------------------------------------------|
+| :------------------------ | :---------------------------- | :---------------------------- | :------------------------------------------------------------------- |
 | address_standardizer      | -                             | 3.7.0                         | 仅 U24 ARM64 PG18 代表性构建；独立包；SQL 3.7；含 data_us            |
 | age                       | 1.7.0                         | 1.8.0                         | PG18 为 1.8.0；保留旧 PG 发布线                                      |
 | agensgraph-18             | 2.18.6.0                      | 2.18.6.1                      | PG18.6 内核与配套扩展                                                |
@@ -20,20 +38,20 @@ weight: 300
 | cloudberry-backup         | 2.1.0                         | 2.2.0                         | 六个备份恢复工具                                                     |
 | cloudberry-pxf            | 2.1.0                         | 2.2.0                         | 配套 Cloudberry 2.2.0；含 pxf/pxf_fdw                                |
 | containerd.io             | -                             | 2.4.2-3                       | 官方 DEB；Bullseye 2.3.4-2                                           |
-| dbt2                      | 0.62.0                        | 0.62.0                        | 重建；x86 验收通过                                    |
-| ddl_historization         | 1.0.0                         | 1.0.0                         | 重建；x86 验收通过                                    |
+| dbt2                      | 0.62.0                        | 0.62.0                        | 重建；x86 验收通过                                                   |
+| ddl_historization         | 1.0.0                         | 1.0.0                         | 重建；x86 验收通过                                                   |
 | docker-buildx-plugin      | -                             | 0.38.1                        | 官方 DEB；Bullseye 0.37.0                                            |
 | docker-ce                 | -                             | 29.9.2                        | 官方 DEB；Bullseye 29.8.0                                            |
 | docker-ce-cli             | -                             | 29.9.2                        | 官方 DEB；Bullseye 29.8.0                                            |
 | docker-ce-rootless-extras | -                             | 29.9.2                        | 官方 DEB；Bullseye 29.8.0                                            |
 | docker-compose-plugin     | -                             | 5.7.0                         | 官方 DEB；Bullseye 5.5.1                                             |
 | emaj                      | 5.0.0                         | 5.0.1                         | 修复提权与并行回滚                                                   |
-| geoip                     | 0.4.0                         | 0.4.0                         | 重建；x86 验收通过                                    |
+| geoip                     | 0.4.0                         | 0.4.0                         | 重建；x86 验收通过                                                   |
 | graphblas                 | 10.5.0                        | 10.5.2                        | 运行库与开发包；ABI 10                                               |
 | hypopg                    | 1.4.4                         | 1.4.5                         | PGDG 软件包                                                          |
 | kafgres                   | 0.3.1                         | 0.3.2                         | PG16                                                                 |
 | lagraph                   | 1.2.2                         | 1.2.2                         | 使用 GraphBLAS 10.5.2 重建                                           |
-| login_hook                | 1.8                           | 1.8                           | 重建；修复 x86 PG14 错误路径                |
+| login_hook                | 1.8                           | 1.8                           | 重建；修复 x86 PG14 错误路径                                         |
 | mobilitydb                | 1.3.1                         | 1.3.1                         | PGDG 覆盖 D12/D13/U24/U26；Pigsty 补齐 U22                           |
 | nginx                     | -                             | 1.31.8                        | 官方 DEB；Bullseye 1.31.6                                            |
 | nginx-module-acme         | -                             | 1.31.8+0.4.1                  | 官方 DEB；Bullseye 1.31.6+0.4.1                                      |
@@ -41,21 +59,21 @@ weight: 300
 | orioledb-16               | 1.10~beta19                   | 1.10.1                        | PG16.15 内核；SQL 1.10                                               |
 | orioledb-17               | 1.10~beta19                   | 1.10.1                        | PG17.11 内核；SQL 1.10                                               |
 | orioledb-18               | 1.10~beta19                   | 1.10.1                        | PG18.6 内核；SQL 1.10                                                |
-| passwordpolicy            | 2.0.6                         | 2.0.6                         | 重建；x86 验收通过                                    |
-| pg_accumulator            | 1.2.0                         | 1.2.0                         | 重建；x86 验收通过                                    |
+| passwordpolicy            | 2.0.6                         | 2.0.6                         | 重建；x86 验收通过                                                   |
+| pg_accumulator            | 1.2.0                         | 1.2.0                         | 重建；x86 验收通过                                                   |
 | pg_agent_gate             | 0.3.0                         | 0.4.1                         | PG18；修复代理角色逃逸；需预加载                                     |
 | pg_anon                   | 3.2.3                         | 3.3.2                         | 安全更新；需删除并重建扩展                                           |
-| pg_auditor                | 0.3                           | 0.3                           | 重建；x86 验收通过                                    |
-| pg_auth_mon               | 5.0                           | 5.0                           | 重建；x86 验收通过                                    |
-| pg_base36                 | 1.1.1                         | 1.1.1                         | 重建；x86 验收通过                                    |
+| pg_auditor                | 0.3                           | 0.3                           | 重建；x86 验收通过                                                   |
+| pg_auth_mon               | 5.0                           | 5.0                           | 重建；x86 验收通过                                                   |
+| pg_base36                 | 1.1.1                         | 1.1.1                         | 重建；x86 验收通过                                                   |
 | pg_country                | 0.0.4                         | 0.0.4                         | 重建修复 country_name 末尾 NUL                                       |
 | pg_currency               | 0.0.4                         | 0.0.6                         | PG14-18；扩展名 currency                                             |
 | pg_duckdb                 | 1.1.1                         | 1.2.0                         | DuckDB 2.0.0；与 duckdb_fdw 冲突                                     |
-| pg_flight_recorder        | 2.32.1                        | 2.32.1                        | 重建；x86 验收通过                                    |
+| pg_flight_recorder        | 2.32.1                        | 2.32.1                        | 重建；x86 验收通过                                                   |
 | pg_fts                    | 1.14.3                        | 1.16.0                        | PG17-18；修复 top-k 与删除后性能                                     |
-| pg_grammar_guard          | 0.4.9                         | 0.4.9                         | 重建；x86 验收通过                                    |
+| pg_grammar_guard          | 0.4.9                         | 0.4.9                         | 重建；x86 验收通过                                                   |
 | pg_graphql                | 1.6.2                         | 1.6.3                         | 修复 nodeId 的带引号主键                                             |
-| pg_gzip                   | 1.1.1                         | 1.1.1                         | 重建；x86 验收通过                                    |
+| pg_gzip                   | 1.1.1                         | 1.1.1                         | 重建；x86 验收通过                                                   |
 | pg_hint_plan              | 1.8.0/1.7.1/1.6.2/1.5.3/1.4.4 | 1.8.1/1.7.2/1.6.3/1.5.4/1.4.5 | PGDG 的 PG18/17/16/15/14 发布线                                      |
 | pg_improv                 | 0.12.1                        | 0.12.2                        | PG15-18；修复空闲同步 worker                                         |
 | pg_integrity_checksums    | 2.0.0                         | 2.1.0                         | 统一逻辑字节序；从 2.0.0 升级需重算 Hash/系统目录基线                |
@@ -63,43 +81,43 @@ weight: 300
 | pg_lake                   | 3.5.9                         | 3.6.0                         | PG16-18；八个扩展；SQL 3.6                                           |
 | pg_lion                   | -                             | 0.3.0                         | PG16-18；含 citext/vector 配套扩展                                   |
 | pg_living_assertions      | 0.5.10                        | 0.5.10                        | 纯 SQL；全平台重建                                                   |
-| pg_local_cache            | 3.1.0                         | 3.1.0                         | 重建；x86 验收通过                                    |
+| pg_local_cache            | 3.1.0                         | 3.1.0                         | 重建；x86 验收通过                                                   |
 | pg_mentat                 | 1.18.0                        | 1.19.1                        | 修复并发写入与 RLS；升级需持锁                                       |
 | pg_mooncake               | 0.2.0                         | 0.3.0-1PGSTY                  | PGSTY 分支；适配 pg_duckdb 1.2.0 / DuckDB 2.0.0；缺少 0.2.0 升级脚本 |
 | pg_opencc                 | -                             | 0.1.0                         | PG14-18；pgsty/pg_opencc；扩展名 opencc                              |
 | pg_parquet                | 0.5.1-3PIGSTY                 | 0.5.1-4PGSTY                  | 修复流式 COPY 临时文件泄漏                                           |
-| pg_plan_filter            | 1.0.0                         | 1.0.0                         | 重建；x86 验收通过                                    |
-| pg_qos                    | 1.1.0                         | 1.1.0                         | 重建；x86 验收通过                                    |
-| pg_readonly               | 1.0.6                         | 1.0.6                         | 重建；x86 验收通过                                    |
+| pg_plan_filter            | 1.0.0                         | 1.0.0                         | 重建；x86 验收通过                                                   |
+| pg_qos                    | 1.1.0                         | 1.1.0                         | 重建；x86 验收通过                                                   |
+| pg_readonly               | 1.0.6                         | 1.0.6                         | 重建；x86 验收通过                                                   |
 | pg_rewrite                | 2.2                           | 2.2                           | 扩充 PGDG 覆盖                                                       |
-| pg_schedoc                | 0.0.2                         | 0.0.2                         | 重建；x86 验收通过                                    |
+| pg_schedoc                | 0.0.2                         | 0.0.2                         | 重建；x86 验收通过                                                   |
 | pg_search                 | 0.26.3                        | 0.26.5                        | PG15-18；需预加载                                                    |
-| pg_sqlog                  | 1.7                           | 1.7                           | 重建；x86 验收通过                                    |
-| pg_stat_ch                | 0.4.0                         | 0.4.0                         | 重建；x86 验收通过                                    |
+| pg_sqlog                  | 1.7                           | 1.7                           | 重建；x86 验收通过                                                   |
+| pg_stat_ch                | 0.4.0                         | 0.4.0                         | 重建；x86 验收通过                                                   |
 | pg_stat_kcache            | 2.3.1                         | 2.3.2                         | PGDG 软件包                                                          |
 | pg_statecharts            | -                             | 0.1.0                         | PG16-18；含 pg_statecharts_dev                                       |
-| pg_statement_rollback     | 1.6                           | 1.6                           | 重建；x86 验收通过                                    |
+| pg_statement_rollback     | 1.6                           | 1.6                           | 重建；x86 验收通过                                                   |
 | pg_tle                    | 1.5.3                         | 1.5.3                         | PGDG 覆盖 EL8/9/10                                                   |
 | pg_tokenizer              | 0.1.1                         | 1.0.0                         | PGSTY 分支；原生 tsvector；外置 Lindera 6 词典                       |
 | pg_tre                    | 4.5.3                         | 4.6.1                         | PG17-18；修复 sparsemap 越界；优化匹配                               |
-| pg_trickle                | 0.108.3                       | 0.108.3                       | 重建；x86 验收通过                                    |
-| pg_typeid                 | 0.4.1                         | 0.4.1                         | 重建；x86 验收通过                                    |
-| pg_tzf                    | 0.3.1                         | 0.3.1                         | 重建；x86 验收通过                                    |
+| pg_trickle                | 0.108.3                       | 0.108.3                       | 重建；x86 验收通过                                                   |
+| pg_typeid                 | 0.4.1                         | 0.4.1                         | 重建；x86 验收通过                                                   |
+| pg_tzf                    | 0.3.1                         | 0.3.1                         | 重建；x86 验收通过                                                   |
 | pg_utl_smtp               | 1.0                           | 2.0.0                         | PG14-18；软件包版本 2.0.0                                            |
 | pg_warren                 | -                             | 0.8.0                         | PG15-18                                                              |
 | pgactive                  | 2.1.9                         | 2.1.9                         | 重建修复共享内存指针偏移                                             |
 | pgcollection              | 2.1.3                         | 2.1.3                         | 重建修复集合输出与带类型空值                                         |
-| pgcontext                 | 0.3.0                         | 0.3.0                         | 重建；x86 验收通过                                    |
+| pgcontext                 | 0.3.0                         | 0.3.0                         | 重建；x86 验收通过                                                   |
 | pgdog                     | 0.1.62                        | 0.1.63                        | PostgreSQL 连接池                                                    |
-| pglite_fusion             | 0.0.7                         | 0.0.7                         | 重建；x86 验收通过                                    |
-| pgmeminfo                 | 1.0.1                         | 1.0.1                         | 重建；x86 验收通过                                    |
+| pglite_fusion             | 0.0.7                         | 0.0.7                         | 重建；x86 验收通过                                                   |
+| pgmeminfo                 | 1.0.1                         | 1.0.1                         | 重建；x86 验收通过                                                   |
 | pgmnemo                   | 0.20.0                        | 0.21.0                        | PG17-18；pg_dump 纳入语料表与序列                                    |
-| pgrdf                     | 0.6.40                        | 0.6.40                        | 重建；x86 验收通过                                    |
+| pgrdf                     | 0.6.40                        | 0.6.40                        | 重建；x86 验收通过                                                   |
 | pgrouting                 | 4.0.1                         | 4.0.2                         | PGDG 软件包                                                          |
 | pgsentinel                | 1.5.1                         | 1.5.2                         | PGDG 软件包                                                          |
 | pgsodium                  | 3.1.9                         | 3.1.11                        | PG14-18；配套 libsodium 重建                                         |
-| pguint                    | 1.20260630                    | 1.20260630                    | 重建；x86 验收通过                                    |
-| plx                       | 2.0.1                         | 2.0.1                         | 重建；x86 验收通过                                    |
+| pguint                    | 1.20260630                    | 1.20260630                    | 重建；x86 验收通过                                                   |
+| plx                       | 2.0.1                         | 2.0.1                         | 重建；x86 验收通过                                                   |
 | polardb-17                | 17.11.1.0-1PGSTY              | 17.11.1.0-2PGSTY              | PG17.11 内核与扩展；使用新版 PolarStore SDK 重建                     |
 | polarstore                | 1.2.42-2PGSTY                 | 1.2.42-3PGSTY                 | 使用 zlog 1.2.20 重建                                                |
 | postgis                   | 3.6.4                         | 3.7.0                         | PGDG 主供；仅 U24 ARM64 PG18 代表性构建                              |
@@ -108,20 +126,19 @@ weight: 300
 | q3c                       | 2.0.5                         | 2.0.6                         | PGDG 软件包                                                          |
 | rdkit                     | 202609.1                      | 202609.2                      | EL9/10、D13/U24/U26；旧系统保留旧版                                  |
 | redis                     | 7.2.16                        | 7.2.17-1PGSTY                 | 七个系统，含 Bullseye/Focal；修复拆分包冲突；epoch 6                 |
-| redis_fdw                 | 2.0                           | 2.0                           | 重建；x86 验收通过                                    |
-| safeupdate                | 1.7                           | 1.7                           | 重建；x86 验收通过                                    |
+| redis_fdw                 | 2.0                           | 2.0                           | 重建；x86 验收通过                                                   |
+| safeupdate                | 1.7                           | 1.7                           | 重建；x86 验收通过                                                   |
 | set_user                  | 4.2.0                         | 4.3.0                         | PGDG 软件包                                                          |
 | shacrypt                  | 1.1                           | 1.1                           | 补齐缺失的 control、SQL 与动态库                                     |
-| sslutils                  | 1.4.1                         | 1.4.1                         | 重建；x86 验收通过                                    |
+| sslutils                  | 1.4.1                         | 1.4.1                         | 重建；x86 验收通过                                                   |
 | timescaledb_toolkit       | 1.26.0                        | 1.27.0                        | PG15-18；保留 PG14 旧包                                              |
-| topn                      | 2.7.1                         | 2.7.1                         | 重建；x86 验收通过                                    |
+| topn                      | 2.7.1                         | 2.7.1                         | 重建；x86 验收通过                                                   |
 | valkey                    | 9.1.2                         | 9.1.3-1PGSTY                  | 安全更新；七个系统，含 Bullseye/Focal；修复拆分包冲突                |
 | vchord                    | 1.1.1                         | 1.2.0-2PGSTY                  | PGSTY 分支重建；vchordg/halfvec 严格排序仍需重排候选                 |
 | vchord_bm25               | 0.3.0                         | 1.0.0                         | PGSTY 分支；原生 tsvector；不支持从 0.3.x 原地升级                   |
 | wal2json                  | 2.6                           | 2.7                           | PGDG 软件包                                                          |
 | zlog                      | 1.2.18                        | 1.2.20                        | 联动重建 PolarStore 与 PolarDB                                       |
 {.wide .expand}
-
 
 ## 2026-10-29
 

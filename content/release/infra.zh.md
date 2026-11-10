@@ -6,6 +6,38 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-09
+
+| 名称                           | 原版本             | 新版本             | 备注                       |
+|--------------------------------|--------------------|--------------------|----------------------------|
+| barn                           | 1.0.0              | 1.1.0              | 上游原生包                 |
+| claude                         | 2.1.318            | 2.1.319            | 双架构重打包               |
+| code                           | 1.145.1            | 1.145.2            | 上游原生包                 |
+| code-server                    | 4.145.0            | 4.145.2            | 上游原生包                 |
+| grafana-plugins                | 13.2.3             | 13.3.0             | noarch；更新下列六个插件   |
+| grafana-victorialogs-ds        | 0.33.1             | 0.34.0             | 双架构重打包               |
+| mcli                           | 20261026000000.0.0 | 20261109000000.0.0 | 上游原生包                 |
+| mtail                          | 3.4.19             | 3.4.20             | 双架构重打包               |
+| pg-exporter                    | 1.5.0              | 1.6.0              | 双架构重打包               |
+| pgext                          | —                  | 1.6.0              | 新增配方；前次扫描为 1.5.0 |
+| pgschema                       | 1.13.4             | 1.14.1             | 双架构重打包               |
+| pgstream                       | 1.5.0              | 1.6.0              | 固定提交源码构建           |
+| rclone                         | 1.75.2             | 1.76.0             | 双架构重打包               |
+| seaweedfs                      | 4.52               | 4.53               | 包版本为 4.53.0            |
+| silo-console                   | 2.6.0              | 2.7.0              | 上游 Draft；本地验证       |
+| sow                            | 0.6.1              | 0.7.0              | 双架构重打包               |
+| marcusolsson-dynamictext-panel | 6.3.0              | 6.3.1              | grafana-plugins            |
+| marcusolsson-json-datasource   | 1.4.3              | 1.4.4              | grafana-plugins            |
+| volkovlabs-echarts-panel       | 7.2.5              | 7.3.0              | grafana-plugins            |
+| volkovlabs-form-panel          | 6.3.5              | 6.3.6              | grafana-plugins            |
+| volkovlabs-image-panel         | 7.3.3              | 7.3.4              | grafana-plugins            |
+| volkovlabs-table-panel         | 3.6.8              | 3.6.9              | grafana-plugins            |
+| nFPM                           | 2.43.1             | 2.48.0             | 构建工具；三平台缓存       |
+| Zig                            | 0.15.2             | 0.17.1             | 仅下载；Linux 双架构       |
+{.wide .expand}
+
+
+
 ## 2026-11-06
 
 | 名称                       | 旧版本  | 新版本  | 备注                   |

@@ -2,10 +2,10 @@
 
 来源：
 
-- [PGXN 元数据](https://api.pgxn.org/dist/pg_integrity_checksums/2.0.2/META.json)
-- [官方 README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/README.md)
-- [控制文件](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/pg_integrity_checksums.control)
-- [迁移指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/MIGRATION.md)
+- [PGXN 元数据](https://api.pgxn.org/dist/pg_integrity_checksums/2.2.0/META.json)
+- [官方 README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.2.0/README.md)
+- [控制文件](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.2.0/pg_integrity_checksums.control)
+- [迁移指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.2.0/MIGRATION.md)
 
 `pg_integrity_checksums` 为 PostgreSQL 页面、单元、元组、表、索引和数据库计算物理及逻辑校验和。它是面向 PostgreSQL 12–19 上游版本的 C 扩展；Pigsty 软件包覆盖 PostgreSQL 14–18，会直接读取关系存储，因此安装和数据库级扫描需要超级用户。
 
@@ -15,9 +15,9 @@
 CREATE EXTENSION pg_integrity_checksums;
 ```
 
-### 2.0.2 版本
+### 2.2.0 版本
 
-2.0.2 通过适配数组迭代器和表扫描调用，增加对 PostgreSQL 19 API 的兼容。该版本不改变 SQL 对象，2.0.1 到 2.0.2 的 SQL 升级为空操作。Pigsty 构建覆盖 PostgreSQL 14–18。
+2.2.0 保持 PostgreSQL 12–19 支持，并增加返回原始 `bytea` 摘要的通用 FNV-1a 32/64 位重载，同时保留旧的 32 位 SQL API。逻辑校验和继续跨字节序、关系 OID 与物理移动规范化值。控制文件要求超级用户；改变算法或重载后应按实际选择的函数重新计算基线，数据库级扫描仍须遵守文档中的权限边界。
 
 2.0.0 是旧 `pg_checksums` 扩展的重命名延续。PostgreSQL 不支持 `ALTER EXTENSION ... RENAME`；应先检查依赖对象，删除旧扩展，再创建新扩展，并在使用前修改 GUC 前缀：
 

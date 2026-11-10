@@ -2,14 +2,14 @@
 
 来源：
 
-- [pg_clickhouse v0.11.0 README](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/README.md)
-- [pg_clickhouse v0.11.0 参考文档](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/doc/pg_clickhouse.md)
-- [pg_clickhouse v0.11.0 教程](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/doc/tutorial.md)
-- [pg_clickhouse v0.11.0 变更日志](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/CHANGELOG.md)
-- [pg_clickhouse v0.11.0 控制文件](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/pg_clickhouse.control)
-- [0.10 to 0.11 upgrade SQL](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/sql/pg_clickhouse--0.10--0.11.sql)
+- [PGXN README](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/README.md)
+- [PGXN 参考文档](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/doc/pg_clickhouse.md)
+- [PGXN 教程](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/doc/tutorial.md)
+- [PGXN 变更日志](https://api.pgxn.org/dist/pg_clickhouse/0.11.1/META.json)
+- [PGXN 控制文件](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/pg_clickhouse.control)
+- [0.10 到 0.11 升级 SQL](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/sql/pg_clickhouse--0.10--0.11.sql)
 
-`pg_clickhouse` 0.11.0 通过 `clickhouse_fdw` 外部数据封装器把 ClickHouse 表暴露给 PostgreSQL。上游面向 PostgreSQL 14 及以上版本与 ClickHouse 23.3 及以上版本；软件包可用性另行记录。正常使用无需预加载；`session_preload_libraries` 与 `shared_preload_libraries` 只是可选的连接启动优化。
+`pg_clickhouse` 0.11.1 通过 `clickhouse_fdw` 外部数据封装器把 ClickHouse 表暴露给 PostgreSQL。上游面向 PostgreSQL 14 及以上版本与 ClickHouse 23.3 及以上版本；软件包可用性另行记录。正常使用无需预加载；`session_preload_libraries` 与 `shared_preload_libraries` 只是可选的连接启动优化。
 
 ### 连接 PostgreSQL 与 ClickHouse
 
@@ -90,10 +90,14 @@ ALTER EXTENSION pg_clickhouse UPDATE TO '0.11';
 SELECT pgch_version();
 ```
 
-扩展 SQL 版本为 `0.11`，`pgch_version()` 返回库版本 `0.11.0`。安装匹配文件后须执行 `ALTER EXTENSION`，从 SQL 目录中移除废弃函数。
+扩展 SQL 版本为 `0.11`，`pgch_version()` 返回库版本 `0.11.1`。安装匹配文件后须执行 `ALTER EXTENSION`，从 SQL 目录中移除废弃函数。
 
 把 `pg_clickhouse` 放入 `session_preload_libraries` 时，新会话会自动加载它；放入 `shared_preload_libraries` 时，更换动态库需要重启 PostgreSQL。与需要注册 postmaster 钩子的扩展不同，这两个设置都不是强制要求。
 
 文档化的写入接口仍不包括轻量级 `UPDATE` 与 `DELETE`。应把直接远端 SQL 视为特权操作，使用贴近生产的数据验证 NULL 与类型相关的下推，并在依赖受版本约束的优化前核对 PostgreSQL 和 ClickHouse 版本。
 
 0.11 默认拒绝来自 ClickHouse 的无效数据库编码文本或 JSON。服务器选项 `encoding_check` 可取 `fail`、`replace`、`remove` 或 `truncate`；后三者会改变返回数据，应按业务语义明确选择。导入类型还改进了大整数、时间间隔以及数组、Tuple、Map、Nested 的映射；已有外部表定义不会自动随推断规则变化，应逐列核对。
+
+### 0.11.1 设置与 CloudNativePG
+
+0.11.1 补充服务器和外部表的 `settings` 选项。表设置会覆盖同名服务器设置，session 设置再覆盖二者；表之间出现冲突时会回退并发出 NOTICE。本版还补充了 CloudNativePG 使用匹配镜像的 ExtensionConfiguration 与 Database 资源说明。

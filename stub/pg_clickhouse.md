@@ -2,14 +2,14 @@
 
 Sources:
 
-- [pg_clickhouse v0.11.0 README](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/README.md)
-- [pg_clickhouse v0.11.0 reference](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/doc/pg_clickhouse.md)
-- [pg_clickhouse v0.11.0 tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/doc/tutorial.md)
-- [pg_clickhouse v0.11.0 changelog](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/CHANGELOG.md)
-- [pg_clickhouse v0.11.0 control file](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/pg_clickhouse.control)
-- [0.10 to 0.11 upgrade SQL](https://github.com/ClickHouse/pg_clickhouse/blob/v0.11.0/sql/pg_clickhouse--0.10--0.11.sql)
+- [PGXN README](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/README.md)
+- [PGXN reference](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/doc/pg_clickhouse.md)
+- [PGXN tutorial](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/doc/tutorial.md)
+- [PGXN changelog](https://api.pgxn.org/dist/pg_clickhouse/0.11.1/META.json)
+- [PGXN control file](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/pg_clickhouse.control)
+- [0.10 to 0.11 upgrade SQL](https://api.pgxn.org/src/pg_clickhouse/pg_clickhouse-0.11.1/sql/pg_clickhouse--0.10--0.11.sql)
 
-`pg_clickhouse` 0.11.0 exposes ClickHouse tables to PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream targets PostgreSQL 14 or later and ClickHouse 23.3 or later; package availability is tracked separately. No preload is required for normal use; `session_preload_libraries` and `shared_preload_libraries` are optional connection-startup optimizations.
+`pg_clickhouse` 0.11.1 exposes ClickHouse tables to PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream targets PostgreSQL 14 or later and ClickHouse 23.3 or later; package availability is tracked separately. No preload is required for normal use; `session_preload_libraries` and `shared_preload_libraries` are optional connection-startup optimizations.
 
 ### Connect PostgreSQL to ClickHouse
 
@@ -90,10 +90,14 @@ ALTER EXTENSION pg_clickhouse UPDATE TO '0.11';
 SELECT pgch_version();
 ```
 
-The extension SQL version is `0.11`, while `pgch_version()` reports library version `0.11.0`. Run `ALTER EXTENSION` after installing the matching files to remove the obsolete function from the SQL catalog.
+The extension SQL version is `0.11`, while `pgch_version()` reports library version `0.11.1`. Run `ALTER EXTENSION` after installing the matching files to remove the obsolete function from the SQL catalog.
 
 If `pg_clickhouse` is placed in `session_preload_libraries`, new sessions load it automatically. If it is placed in `shared_preload_libraries`, changing the library requires a PostgreSQL restart. Neither setting is mandatory, unlike extensions that register postmaster hooks.
 
 Lightweight `UPDATE` and `DELETE` remain outside the documented write surface. Treat direct remote SQL as privileged, test pushdown with production-shaped NULL and type cases, and validate both PostgreSQL and ClickHouse versions before relying on a version-gated optimization.
 
 Version 0.11 rejects text or JSON with invalid database encoding by default. The server option `encoding_check` accepts `fail`, `replace`, `remove` or `truncate`; the latter three alter returned data and require a deliberate policy. Import mappings also improve large integers, intervals and Array/Tuple/Map/Nested types. Existing foreign-table definitions do not automatically follow new inference rules; review their column mappings.
+
+### 0.11.1 Settings and CloudNativePG
+
+Version 0.11.1 documents `settings` options on servers and foreign tables. Table settings override matching server settings; session settings override both, and conflicting table values fall back with a NOTICE. The release also documents CloudNativePG ExtensionConfiguration and Database resources for mounting the matching image.

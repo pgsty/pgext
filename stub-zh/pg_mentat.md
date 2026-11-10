@@ -2,21 +2,21 @@
 
 来源：
 
-- [v1.19.1 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/README.md)
-- [v1.19.1 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/pg_mentat.control)
-- [v1.19.1 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/CHANGELOG.md)
-- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
-- [v1.19.1 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/sql/07_function_aliases.sql)
-- [v1.19.1 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/src/functions/time_travel.rs)
-- [v1.19.1 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/src/functions/excision.rs)
-- [v1.19.1 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/src/functions/transact.rs)
-- [v1.19.1 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/src/functions/subscriptions.rs)
-- [1.18.0 upgrade SQL](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/sql/pg_mentat--1.17.2--1.18.0.sql)
-- [1.18.0 命名存储指南](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/docs/src/multi-tenancy.md)
-- [1.18.0 查询函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/src/functions/query.rs)
-- [1.18.0 pull 函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.19.1/crates/pg/pg_mentat/src/functions/pull.rs)
+- [v1.20.0 README](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/README.md)
+- [v1.20.0 extension control](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/pg_mentat.control)
+- [v1.20.0 changelog](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/CHANGELOG.md)
+- [v1.9.1 dump repair](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/sql/pg_mentat--1.9.0--1.9.1.sql)
+- [v1.20.0 SQL aliases](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/sql/07_function_aliases.sql)
+- [v1.20.0 history functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/time_travel.rs)
+- [v1.20.0 excision function](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/excision.rs)
+- [v1.20.0 transaction functions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/transact.rs)
+- [v1.20.0 subscriptions](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/subscriptions.rs)
+- [1.18.0 upgrade SQL](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/sql/pg_mentat--1.17.2--1.18.0.sql)
+- [1.18.0 命名存储指南](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/docs/src/multi-tenancy.md)
+- [1.18.0 查询函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/query.rs)
+- [1.18.0 pull 函数](https://api.pgxn.org/src/pg_mentat/pg_mentat-1.20.0/crates/pg/pg_mentat/src/functions/pull.rs)
 
-`pg_mentat` 1.19.1 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
+`pg_mentat` 1.20.0 在 PostgreSQL 内实现与 Datomic 兼容的数据模型和 Datalog 查询引擎。它将不可变事实存储为有类型的 datom，并通过 SQL 函数提供模式事务、Datalog 查询、pull 表达式、时间旅行、事务历史和永久切除功能。它适用于需要这种模型的应用；并非关系表或 SQL 的透明替代品。
 
 ### 安装并定义模式
 
@@ -135,10 +135,10 @@ FROM public.edn_q_rows(
 
 1.9.1 修复了一项重要备份缺陷：更早版本未注册扩展成员表的数据，`pg_dump` 的逻辑备份会漏掉 mentat 数据，恢复后存储为空。升级后应立即重新生成并验证逻辑备份；旧备份不会自动得到修复。物理备份不受该缺陷影响。
 
-安装新版文件后，通过升级链更新到 1.19.1。升级会建立索引并可能阻塞写入，应安排维护窗口：
+安装新版文件后，通过升级链更新到 1.20.0。升级会建立索引并可能阻塞写入，应安排维护窗口：
 
 ```sql
-ALTER EXTENSION pg_mentat UPDATE TO '1.19.1';
+ALTER EXTENSION pg_mentat UPDATE TO '1.20.0';
 ```
 
 已部署数据库仍需执行 SQL 扩展升级并验证新的逻辑备份。
@@ -186,9 +186,9 @@ SELECT public.q(
 
 升级将旧命名存储模式保留为 `mentat_<name>_pre118`，并创建新的空替代模式，对跳过的存储及相关订阅/物化视图给出警告。应检查警告并重建受影响的订阅/视图，不能假定旧数据已经迁移到替代模式。新增 `(store_id, tx)` 索引使用普通 CREATE INDEX，可能阻塞写入。大型部署可先按文档中的准确名称并发预建索引，并在升级前检查有效性。
 
-### 1.19.1 升级与存储边界
+### 1.20.0 升级与存储边界
 
-从 1.18.0 直达 1.19.1 的升级会在修改前取得全部所需锁；存储忙时释放已获锁，并在最长 30 秒内重试。SQLSTATE `55P03` 表示数据库未被修改，应在空闲窗口重试。此次升级不要设置 `lock_timeout`。取得锁后，存储的读写可能等待到提交。1.19.0 到 1.19.1 的 SQL 升级脚本为空。
+从 1.18.0 直达 1.20.0 的升级会在修改前取得全部所需锁；存储忙时释放已获锁，并在最长 30 秒内重试。SQLSTATE `55P03` 表示数据库未被修改，应在空闲窗口重试。此次升级不要设置 `lock_timeout`。取得锁后，存储的读写可能等待到提交。1.19.0 到 1.20.0 的 SQL 升级脚本为空。
 
 新库加载后、SQL 升级前，库行为变化就已生效：`"datomic.tx"` 现在标识事务本身，不再指向独立注解实体。应检查事务报告的消费者。命名存储的事务函数现读取自身存储，且不能在事务函数内再次提交事务。当前状态 RLS 还要求为租户角色授予 `mentat.current_<type>` 表权限。
 

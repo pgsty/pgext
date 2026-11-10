@@ -1,13 +1,23 @@
 ds,pkg,old_ver,new_ver,note_en,note_zh
-2026-11-07,documentdb,1.0-1PGSTY,1.0-2PGSTY,PG15-18; PostGIS 3.7; PG15 advances from 0.117 to 1.0; SQL 1.0-0,PG15-18；PostGIS 3.7；PG15 从 0.117 升至 1.0；SQL 1.0-0
-2026-11-07,mobilitydb,1.3.1-1PGSTY,1.3.1-2PGSTY,PG14-18; PostGIS 3.7; backports upstream fix for geometry input mutation,PG14-18；PostGIS 3.7；回移上游几何输入改写缺陷修复
-2026-11-07,orioledb-16,1.10.1,1.10.2,PG16.15 kernel; SQL 1.10,PG16.15 内核；SQL 1.10
-2026-11-07,orioledb-17,1.10.1,1.10.2,PG17.11 kernel; SQL 1.10,PG17.11 内核；SQL 1.10
-2026-11-07,orioledb-18,1.10.1,1.10.2,PG18.6 kernel; SQL 1.10,PG18.6 内核；SQL 1.10
-2026-11-07,pg_curl,2.4.6,2.5.0,PG14-18; SQL 2.5; no upstream SQL upgrade path from 2.4.1,PG14-18；SQL 2.5；上游未提供从 SQL 2.4.1 升级的路径
-2026-11-07,pg_improv,0.12.2,0.13.0,PG15-18; upstream pgrx 0.19.3,PG15-18；上游 pgrx 0.19.3
-2026-11-07,pg_tre,4.6.1,4.6.2,PG17-18,PG17-18
-2026-11-07,pghydro,6.6-1PIGSTY,6.6-2PGSTY,PG14-18; PostGIS 3.7; noarch; seven SQL extensions,PG14-18；PostGIS 3.7；noarch；七个 SQL 扩展
+2026-11-10,documentdb,1.0-1PGSTY,1.0-2PGSTY,PG15-18; PostGIS 3.7,PG15-18；PostGIS 3.7
+2026-11-10,login_hook,1.8,1.9,PG14-17 PGDG; PG18 Pigsty,PG14-17 PGDG；PG18 Pigsty
+2026-11-10,mobilitydb,1.3.1-1PGSTY,1.3.1-2PGSTY,PG14-18; PostGIS 3.7,PG14-18；PostGIS 3.7
+2026-11-10,orioledb-16,1.10.1,1.10.3,PG16.15 kernel; SQL 1.10,PG16.15 内核；SQL 1.10
+2026-11-10,orioledb-17,1.10.1,1.10.3,PG17.11 kernel; SQL 1.10,PG17.11 内核；SQL 1.10
+2026-11-10,orioledb-18,1.10.1,1.10.3,PG18.6 kernel; SQL 1.10,PG18.6 内核；SQL 1.10
+2026-11-10,pg_clickhouse,0.11.0,0.11.1,PG14-18; SQL 0.11,PG14-18；SQL 0.11
+2026-11-10,pg_curl,2.4.6,2.5.0,PG14-18; SQL 2.5,PG14-18；SQL 2.5
+2026-11-10,pg_improv,0.12.2,0.14.0,PG15-18; pgrx 0.19.3,PG15-18；pgrx 0.19.3
+2026-11-10,pg_integrity_checksums,2.1.0,2.2.0,PG14-18; SQL 2.2,PG14-18；SQL 2.2
+2026-11-10,pg_mentat,1.19.1,1.20.0,PG14-18,PG14-18
+2026-11-10,pg_search,0.26.5,0.26.6,PG15-18; preload; known MPP JoinScan crash risk,PG15-18；需预加载；MPP JoinScan 已知崩溃风险
+2026-11-10,pg_tokenizer,1.0.0,1.1.0,PG14-18; native tsvector,PG14-18；原生 tsvector
+2026-11-10,pg_tre,4.6.1,4.6.2,PG17-18,PG17-18
+2026-11-10,pghydro,6.6-1PIGSTY,6.6-2PGSTY,PG14-18; PostGIS 3.7; noarch,PG14-18；PostGIS 3.7；noarch
+2026-11-10,q3c,2.0.5,2.0.6,PGDG packages,PGDG 软件包
+2026-11-10,repmgr,5.5.0,5.5.1,PGDG packages,PGDG 软件包
+2026-11-10,vchord,1.2.0-2PGSTY,1.3.0-1PGSTY,PG14-18,PG14-18
+2026-11-10,vchord_bm25,1.0.0,1.1.0,PG14-18; native tsvector,PG14-18；原生 tsvector
 2026-11-06,address_standardizer,,3.7.0-1PGSTY,"EL8 gap fill; standalone; SQL 3.7; includes data_us; no PostGIS dependency; U24 ARM64 PG18 pilot only; standalone; SQL 3.7; includes data_us; RPM 3.7.0-1PGSTY, DEB 3.7.0",EL8 补包；独立包；SQL 3.7；含 data_us；不依赖 PostGIS；仅 U24 ARM64 PG18 代表性构建；独立包；SQL 3.7；含 data_us；RPM 3.7.0-1PGSTY，DEB 3.7.0
 2026-11-06,age,1.7.0,1.8.0,PG18 1.8.0; older PG release lines retained,PG18 为 1.8.0；保留旧 PG 发布线
 2026-11-06,agensgraph-18,2.18.6.0,2.18.6.1,PG18.6 kernel and contrib,PG18.6 内核与配套扩展

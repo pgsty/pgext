@@ -2,10 +2,10 @@
 
 Sources:
 
-- [PGXN metadata](https://api.pgxn.org/dist/pg_integrity_checksums/2.0.2/META.json)
-- [Official README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/README.md)
-- [Control file](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/pg_integrity_checksums.control)
-- [Migration guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.0.2/MIGRATION.md)
+- [PGXN metadata](https://api.pgxn.org/dist/pg_integrity_checksums/2.2.0/META.json)
+- [Official README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.2.0/README.md)
+- [Control file](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.2.0/pg_integrity_checksums.control)
+- [Migration guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.2.0/MIGRATION.md)
 
 `pg_integrity_checksums` computes physical and logical checksums for PostgreSQL pages, cells, tuples, tables, indexes and databases. It is a C extension for PostgreSQL 12–19 upstream; Pigsty packages target PostgreSQL 14–18 and reads relation storage directly, so installation and database-wide checks require a superuser.
 
@@ -15,9 +15,9 @@ Sources:
 CREATE EXTENSION pg_integrity_checksums;
 ```
 
-### Version 2.0.2
+### Version 2.2.0
 
-Version 2.0.2 adds PostgreSQL 19 API compatibility by adapting the array iterator and table-scan calls. It changes no SQL objects, and the 2.0.1-to-2.0.2 SQL upgrade is a no-op. Pigsty builds cover PostgreSQL 14–18.
+Version 2.2.0 keeps PostgreSQL 12–19 support and adds generic FNV-1a 32/64-bit overloads that return raw `bytea` digests, while retaining the legacy 32-bit SQL API. Logical checksums continue to canonicalize values across endianness, relation OIDs and physical movement. The control file requires a superuser; recompute any baselines whose selected algorithm or overload changed, and keep database-level scans under the documented privilege boundary.
 
 Version 2.0.0 is the renamed continuation of the earlier `pg_checksums` extension. PostgreSQL has no `ALTER EXTENSION ... RENAME`; review dependent objects, drop the old extension, create the new one, and change the GUC prefix before using the new name:
 

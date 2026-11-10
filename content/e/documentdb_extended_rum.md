@@ -32,7 +32,7 @@ page_width: full
 |    **Schemas**    | `documentdb_extended_rum_catalog` |
 |   **Requires**    | {{< ext "documentdb" >}} |
 |   **See Also**    | {{< ext "rum" >}} {{< ext "pg_projection" >}} {{< ext "jsquery" >}} {{< ext "pgbson" >}} {{< ext "mongo_fdw" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "pgjq" >}} {{< ext "hll" >}} {{< ext "roaringbitmap" >}} |
-|    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} |
+|    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} |
 
 > [!Note] SQL 1.0-0; RPM external RUM dependency only on PG15-17.
 

@@ -21,7 +21,7 @@ PostgreSQL extension categorized by license.
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 278 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 114 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 114 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 113 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD-3-Clause" >}} | 28 | [License Text](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 19 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD-2-Clause" >}} | 12 | [License Text](#) | Unknown license |
@@ -469,7 +469,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="114 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="113 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -580,7 +580,6 @@ PostgreSQL extension categorized by license.
 | 8770 | {{< alias "oai_fdw" >}} | Read-only OAI-PMH foreign data wrapper for metadata harvesting over HTTP/HTTPS. |
 | 9000 | {{< alias "documentdb" >}} | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB on PostgreSQL |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB Extended RUM index access method |
 | 9090 | {{< alias "pg_projection" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9410 | {{< alias "pgmemcache" >}} | memcached interface |

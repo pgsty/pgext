@@ -4,7 +4,7 @@ weight: 100
 page_width: full
 ---
 
-626 个已打包 PostgreSQL 扩展（归属 518 个包族）划分为 16 个分类。
+625 个已打包 PostgreSQL 扩展（归属 518 个包族）划分为 16 个分类。
 
 
 
@@ -84,7 +84,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.7 | 向量数据类型和 ivfflat / hnsw 访问方法 |
-| 1810 | {{< alias "vchord" >}} | 1.2.0 | 使用Rust重写的高性能向量扩展 |
+| 1810 | {{< alias "vchord" >}} | 1.3.0 | 使用Rust重写的高性能向量扩展 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.1 | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.27.1 | 在PostgreSQL中封装RAG向量检索服务 |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | 提供17种距离度量函数 |
@@ -707,7 +707,6 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 9000 | {{< alias "documentdb" >}} | 1.0 | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 1.0 | 微软DocumentDB的核心API层实现 |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 1.0 | DocumentDB多节点模式的API层 |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 1.0 | DocumentDB扩展RUM索引访问方法 |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | 9100 | {{< alias "orafce" >}} | 4.17.1 | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |

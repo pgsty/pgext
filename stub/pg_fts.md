@@ -2,13 +2,13 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.16.0/README.md)
-- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.16.0/pg_fts.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.16.0/CHANGELOG.md)
-- [pg_fts--1.16.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.16.0/pg_fts--1.16.0.sql)
-- [pg_fts--1.15.2--1.16.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.16.0/pg_fts--1.15.2--1.16.0.sql)
+- [README.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/README.md)
+- [pg_fts.control](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/CHANGELOG.md)
+- [pg_fts--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts--1.17.0.sql)
+- [pg_fts--1.16.0--1.17.0.sql](https://api.pgxn.org/src/pg_fts/pg_fts-1.17.0/pg_fts--1.16.0--1.17.0.sql)
 
-`pg_fts` 1.16.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17 and 18 are supported; PostgreSQL 19/master CI is best-effort. The control is trusted and relocatable, and core use needs no shared preload.
+`pg_fts` 1.17.0 provides full-text search with BM25/BM25F ranking and the dedicated fts inverted index. PostgreSQL 17, 18 and 19 are supported; 19 is tested against the release candidate. The control is trusted and relocatable, and core use needs no shared preload.
 
 ### Search and Rank
 
@@ -77,3 +77,7 @@ Version 1.15.1 fixes configured-analyzer chunked reparsing that could split HTML
 ### 1.16.0 Decoder and Compaction Fixes
 
 Version 1.16.0 validates frame-of-reference decoding bounds and permits compaction of a lone packed segment that contains tombstones. The SQL upgrade adds no objects and the index format is unchanged, so this upgrade alone needs no REINDEX. Replace old-library sessions and apply the versioned SQL upgrade; historical index and stored `ftsdoc` repairs described above still apply to data written by affected older releases.
+
+### 1.17.0 Delete Ranking and PostgreSQL 19
+
+Version 1.17.0 removes tombstoned rows from the document count and average length after VACUUM or a merge, so rankings converge toward a REINDEX of the live rows. Existing segments retain the old average until cleanup; `fts_index_segments()` reports tombstones. Replace the library and apply the versioned SQL upgrade. The index format is unchanged, but review indexes with deletes and recheck score baselines.

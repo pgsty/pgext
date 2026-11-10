@@ -79,7 +79,7 @@ There are 457 available PostgreSQL packages:
 | {{< ext "earthdistance" >}} | `1.2` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/earthdistance.html" >}} | {{< category "GIS" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "qdgc" >}} | `0.1.0` | {{< badge content="Link" link="https://pgxn.org/dist/qdgc/0.1.0/" >}} | {{< category "GIS" >}} | `qdgc_$v` | `postgresql-$v-qdgc` |
 | {{< ext "vector" "pgvector" >}} | `0.8.7` | {{< badge content="Link" link="https://github.com/pgvector/pgvector" >}} | {{< category "RAG" >}} | `pgvector_$v` | `postgresql-$v-pgvector` |
-| {{< ext "vchord" >}} | `1.2.0` | {{< badge content="Link" link="https://vchord.pgsty.com/docs/vchord/" >}} | {{< category "RAG" >}} | `vchord_$v` | `postgresql-$v-vchord` |
+| {{< ext "vchord" >}} | `1.3.0` | {{< badge content="Link" link="https://vchord.pgsty.com/docs/vchord/" >}} | {{< category "RAG" >}} | `vchord_$v` | `postgresql-$v-vchord` |
 | {{< ext "vectorscale" "pgvectorscale" >}} | `0.9.1` | {{< badge content="Link" link="https://github.com/timescale/pgvectorscale" >}} | {{< category "RAG" >}} | `pgvectorscale_$v` | `postgresql-$v-pgvectorscale` |
 | {{< ext "vectorize" "pg_vectorize" >}} | `0.27.1` | {{< badge content="Link" link="https://github.com/ChuckHend/pg_vectorize" >}} | {{< category "RAG" >}} | `pg_vectorize_$v` | `postgresql-$v-pg-vectorize` |
 | {{< ext "pg_similarity" >}} | `1.0` | {{< badge content="Link" link="https://github.com/eulerto/pg_similarity" >}} | {{< category "RAG" >}} | `pg_similarity_$v` | `postgresql-$v-similarity` |

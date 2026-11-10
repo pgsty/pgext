@@ -107,6 +107,35 @@ func TestStageBoundariesAndFamilyDedup(t *testing.T) {
 	}
 }
 
+func TestDebianSupportIsNotLimitedByMakeDefault(t *testing.T) {
+	for _, tc := range []struct {
+		name, versions, makeDefault, requested string
+		wantError                              bool
+	}{
+		{"explicit supported major", "14\n15\n16\n17\n18\n", "18", "14", false},
+		{"unsupported major", "17\n18\n", "14 15 16 17 18", "16", true},
+		{"missing file fallback", "", "17 18", "17", false},
+		{"fallback still constrains support", "", "17 18", "16", true},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			e := testEngine(t)
+			e.Options.PG = tc.requested
+			root := filepath.Join(e.Options.SpecDir, "pgvector")
+			put(t, filepath.Join(root, "Makefile"), "PG_VERSIONS ?= "+tc.makeDefault+"\nTARBALL := pgvector-1.0.tar.gz\n")
+			if tc.versions != "" {
+				put(t, filepath.Join(root, "debian", "pgversions"), tc.versions)
+			}
+			p, err := e.Prepare("get", []string{"vector"})
+			if (err != nil) != tc.wantError {
+				t.Fatalf("Prepare() error = %v, wantError %v", err, tc.wantError)
+			}
+			if err == nil && (len(p.Jobs) != 1 || fmt.Sprint(p.Jobs[0].PG) != "["+tc.requested+"]") {
+				t.Fatalf("requested major was lost: %+v", p.Jobs)
+			}
+		})
+	}
+}
+
 func TestPipelineStopsOnDependencyFailure(t *testing.T) {
 	e := testEngine(t)
 	put(t, filepath.Join(e.Options.SpecDir, "pgvector", "Makefile"), "PG_VERSIONS := 18\nTARBALL := pgvector-1.0.tar.gz\n")
