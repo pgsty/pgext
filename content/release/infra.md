@@ -6,6 +6,13 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-10
+
+| Name        | Old     | New     | Comment |
+|-------------|---------|---------|---------|
+| claude-code | 2.1.319 | 2.1.322 | Official native DEB/RPM downloaded directly from Anthropic; old `claude` recipe archived as obsolete |
+{.wide .expand}
+
 ## 2026-11-09
 
 | Name                           | Old                | New                | Comment                               |

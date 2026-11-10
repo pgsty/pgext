@@ -6,6 +6,13 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-10
+
+| 名称        | 原版本  | 新版本  | 备注 |
+|-------------|---------|---------|------|
+| claude-code | 2.1.319 | 2.1.322 | 直接从 Anthropic 官方下载原生 DEB/RPM；旧 `claude` 配方封存为 obsolete |
+{.wide .expand}
+
 ## 2026-11-09
 
 | 名称                           | 原版本             | 新版本             | 备注                       |
