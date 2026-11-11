@@ -30,7 +30,7 @@ page_width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `documentdb_core` |
-|    **Need By**    | {{< ext "documentdb" >}} `documentdb_distributed` |
+|    **Need By**    | {{< ext "documentdb" >}} |
 |   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "pg_projection" >}} {{< ext "pgbson" >}} {{< ext "jsquery" >}} {{< ext "pgjq" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_extended_rum" >}} |
 

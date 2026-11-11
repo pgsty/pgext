@@ -7,7 +7,7 @@ comments: false
 ---
 
 The packaged PostgreSQL extension catalog contains **625** extensions and **457** packages.
-The full PGEXT.CLOUD directory contains **2733** extensions.
+The full PGEXT.CLOUD directory contains **2737** extensions.
 
 ## Extension Stat
 

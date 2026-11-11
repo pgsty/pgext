@@ -31,7 +31,7 @@ page_width: full
 |:-----------------:|:----|
 |    **Schemas**    | `documentdb_api` `documentdb_api_internal` `documentdb_api_catalog` `documentdb_data` `documentdb_api_v2` `documentdb_api_internal_admin` `documentdb_api_internal_readwrite` `documentdb_api_internal_readonly` `documentdb_api_internal_bgworker` |
 |   **Requires**    | {{< ext "documentdb_core" >}} {{< ext "pg_cron" >}} {{< ext "postgis" >}} {{< ext "tsm_system_rows" >}} {{< ext "vector" >}} |
-|    **Need By**    | `documentdb_distributed` {{< ext "documentdb_extended_rum" >}} |
+|    **Need By**    | {{< ext "documentdb_extended_rum" >}} |
 |   **See Also**    | {{< ext "pgbson" >}} {{< ext "jsquery" >}} {{< ext "pg_projection" >}} {{< ext "mongo_fdw" >}} {{< ext "pgjq" >}} {{< ext "pg_graphql" >}} {{< ext "omni_rest" >}} {{< ext "pg_jsonschema" >}} {{< ext "pg_net" >}} {{< ext "jsonschema" >}} |
 |    **Siblings**   | {{< ext "documentdb_core" >}} {{< ext "documentdb_extended_rum" >}} |
 
