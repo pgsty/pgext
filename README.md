@@ -65,7 +65,7 @@ filters, and server options.
 
 Download a binary for Linux or macOS (`amd64`/`arm64`), or a Linux `deb`/`rpm`
 package, from the [releases](https://github.com/pgsty/pgext/releases), and put
-`pgext` on your `PATH`. To build from source, use Go 1.27.3:
+`pgext` on your `PATH`. To build from source, use Go 1.27.4:
 
 ```bash
 git clone https://github.com/pgsty/pgext.git
