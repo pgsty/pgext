@@ -2,6 +2,8 @@
 
 来源：
 
+- [1.3.2 发布说明](https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.2)
+- [1.3.1 至 1.3.2 SQL 迁移](https://github.com/MobilityDB/MobilityDB/blob/v1.3.2/mobilitydb/sql/mobilitydb--1.3.1--1.3.2.sql)
 - [MobilityDB v1.3.1 README](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/README.md)
 - [扩展控制文件](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/sql/mobilitydb.in.control)
 - [1.3 版迁移手册](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/doc/introduction.xml)
@@ -9,7 +11,7 @@
 - [1.3.1 发布与升级说明](https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.1)
 - [1.3.0 至 1.3.1 SQL 迁移](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/sql/mobilitydb--1.3.0--1.3.1.sql)
 
-`mobilitydb` 1.3.1 为 PostgreSQL 与 PostGIS 增加时态值和移动对象轨迹，可存储随时间变化的属性、还原指定时刻的位置，并为时空边界建立索引。该补丁修复了可能导致后端崩溃的二进制输入漏洞，1.3.0 用户应升级。
+`mobilitydb` 1.3.2 为 PostgreSQL 与 PostGIS 增加时态值和移动对象轨迹，可存储随时间变化的属性、还原指定时刻的位置，并为时空边界建立索引。1.3.2 修正了日期跨度集合的求交结果，并修复在 PostgreSQL 18.7 及同期小版本上的扩展安装问题。
 
 ### 启用扩展
 
@@ -79,11 +81,12 @@ WHERE trip && stbox(
 安装新动态库与 SQL 文件后，在每个数据库执行更新：
 
 ```sql
-ALTER EXTENSION mobilitydb UPDATE TO '1.3.1';
+ALTER EXTENSION mobilitydb UPDATE TO '1.3.2';
 SELECT extversion FROM pg_extension WHERE extname = 'mobilitydb';
 ```
 
+- 1.3.2 将 `* (datespanset, date)` 和 `span_intersection(datespanset, date)` 重建为返回 `datespanset` 的定义，与实际计算值及交换操作符一致。更新前应检查对这些对象的依赖。若要备份后恢复到 PostgreSQL 18.7，应先更新扩展：旧定义会在该版本创建扩展时失败。
 - 1.3.1 修复 CVE-2026-102639：畸形 WKB 时态值、集合或跨度输入可能越界读取并导致后端崩溃。仅执行 SQL 迁移不能替换有漏洞的动态库；应重新连接或重启已加载旧二进制的进程。
-- 迁移会移除五个同基础类型间的 `<->` 操作符及其 `set_distance` 函数，因为它们与 `btree_gist` 提供的操作符冲突。更新前应检查依赖对象，必要时使用对应的 `btree_gist` 操作符。
+- 更早的 1.3.0 至 1.3.1 迁移会移除五个同基础类型间的 `<->` 操作符及其 `set_distance` 函数，因为它们与 `btree_gist` 提供的操作符冲突。更新前应检查依赖对象，必要时使用对应的 `btree_gist` 操作符。
 - 从 1.2 系列升级到 1.3 会改变时态值的二进制格式，必须按照上游流程备份与恢复。1.3.0 至 1.3.1 的原地 SQL 更新不能替代跨主系列迁移。
 - 坐标系、插值、时间空洞、包含边界及单位都会影响结果。应按数据模型验证，不能将所有轨迹都视为连续的地理路径。

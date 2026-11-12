@@ -11,6 +11,9 @@ Sources:
 - [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.4)
 - [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--4.0.3--4.1.sql)
 - [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/OPTIONS.md)
+- [4.3.2 release](https://github.com/brauliobo/pg_sift/releases/tag/v4.3.2)
+- [4.3.2 upgrade guide](https://github.com/brauliobo/pg_sift/blob/v4.3.2/docs/UPGRADING.md)
+- [4.3.2 changes](https://github.com/brauliobo/pg_sift/blob/v4.3.2/CHANGELOG.md)
 
 `pg_sift` release 4.1.4 installs SQL extension version 4.1. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
 
@@ -108,3 +111,17 @@ First install matching files and restart all readers, including standbys. The 4.
 4.1.1 stops new incorrect tracked-row counts; 4.1.2 additionally rechecks older tracking logs against the heap and repairs stale state. 4.1.3 fixes table locking and writer deadlocks during concurrent index rebuilds. Install 4.1.4 files on all readers and restart the servers, including standbys. SQL stays at 4.1: updating an existing 4.1 installation requires no further `ALTER EXTENSION`, no format conversion and no mandatory `REINDEX` for these patch fixes.
 
 After `pg_upgrade`, restore with disabled triggers, or a concurrent index rebuild, tracked column indexes can remain correct but use heap checks. Restore the optimized path with a normal `REINDEX INDEX` or by setting each index's existing `track_changes` value again. Earlier upgrade and damaged-index requirements still apply.
+
+### 4.2–4.3.2 Upgrade Boundaries
+
+Install matching libraries on every reader, including standbys, restart the servers, then update each database:
+
+```sql
+ALTER EXTENSION pg_sift UPDATE TO '4.3.2';
+```
+
+4.3.2 fixes wrong counts or sums when an aggregate scan reuses a correlated derived-table result for later outer rows. Until updated, `sift.enable_agg = off` avoids that scan. 4.3.1 also fixes reads during tracked UPDATE/DELETE statements and assigns replica identity to `sift.table_option_values`, allowing relation drops when an all-table publication publishes deletes. The SQL update is required for that catalog repair; replacing the library alone is insufficient.
+
+The 4.2/4.3 line changes index formats. New or merged 4.3 column segments may use format minor 44, which older libraries cannot read. Upgrade every reader before writes; follow the versioned format-cap procedure before attempting a rollback. Existing indexes gain new layouts on merges or rebuilds. The 4.3.1-to-4.3.2 patch itself changes no format or objects and adds no REINDEX requirement.
+
+Run the supplied upgrade preflight and remove retired settings `sift.enable_col` and `sift.table_auto_defrag_dead_pct`. `sift.eval_methods` retains only `penalty_maintenance`; remove its retired method names. Reloptions `rollup` and `rollup_dims` are renamed to `rollup_leaves` and `rollup_columns`, with the old spellings accepted through 4.x. Existing upgrade and damaged-index rebuild requirements still apply.

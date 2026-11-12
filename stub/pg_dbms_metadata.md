@@ -1,9 +1,13 @@
-
-
-
 ## Usage
 
-> [pg_dbms_metadata: Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL](https://github.com/HexaCluster/pg_dbms_metadata)
+Sources:
+
+- [Version 1.1.0 README](https://github.com/HexaCluster/pg_dbms_metadata/blob/v1.1.0/README.md)
+- [SQL definitions](https://github.com/HexaCluster/pg_dbms_metadata/blob/v1.1.0/sql/pg_dbms_metadata--1.1.0.sql)
+- [Upgrade script](https://github.com/HexaCluster/pg_dbms_metadata/blob/v1.1.0/updates/pg_dbms_metadata--1.0.0--1.1.0.sql)
+- [Release notes](https://github.com/HexaCluster/pg_dbms_metadata/releases/tag/v1.1.0)
+
+`pg_dbms_metadata` 1.1.0 extracts PostgreSQL object DDL through an Oracle-style API. It is a SQL/PL/pgSQL extension with no preload requirement. It implements the GET functions, not Oracle FETCH or XML interfaces.
 
 ### Enabling
 
@@ -66,3 +70,16 @@ CALL dbms_metadata.set_transform_param('STORAGE', false);
 -- Reset all params to defaults
 CALL dbms_metadata.set_transform_param('DEFAULT', true);
 ```
+
+### 1.1.0 Behavior and Upgrade
+
+ENUM extraction is now supported and explicitly supplied schemas qualify enum names. For overloaded functions or procedures, an unqualified routine name returns every matching overload; append argument types to select one:
+
+```sql
+SELECT dbms_metadata.get_ddl('FUNCTION', 'my_function(char, char)', 'my_schema');
+ALTER EXTENSION pg_dbms_metadata UPDATE TO '1.1.0';
+```
+
+1.1.0 also fixes quoted table comments and boolean transform defaults. Install the new extension files before the SQL update. Upstream documents PostgreSQL 9.1–18 and tests this release's upgrade path on 12–19; package support is separate.
+
+DDL visibility is not limited to objects owned by the caller. When a schema is omitted, lookup uses `search_path` and requires schema USAGE; TRIGGER and REF_CONSTRAINT calls require an explicit schema. Restrict API access when object definitions are sensitive. Session transform settings affect subsequent extraction calls and can be reset with the DEFAULT transform; this API does not implement a full database backup.

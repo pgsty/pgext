@@ -2,10 +2,10 @@
 
 来源：
 
-- [pgclone v4.4.2 README](https://github.com/valehdba/pgclone/blob/v4.4.2/README.md)
-- [pgclone v4.4.2 使用指南](https://github.com/valehdba/pgclone/blob/v4.4.2/docs/USAGE.md)
-- [异步克隆指南](https://github.com/valehdba/pgclone/blob/v4.4.2/docs/ASYNC.md)
-- [pgclone v4.4.2 发行说明](https://github.com/valehdba/pgclone/releases/tag/v4.4.2)
+- [pgclone v4.5.0 README](https://github.com/valehdba/pgclone/blob/v4.5.0/README.md)
+- [pgclone v4.5.0 使用指南](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/USAGE.md)
+- [异步克隆指南](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/ASYNC.md)
+- [pgclone v4.5.0 发行说明](https://github.com/valehdba/pgclone/releases/tag/v4.5.0)
 
 pgclone 通过 PostgreSQL 连接克隆表、模式、函数、角色或整个数据库。它还提供预检、结构差异、屏蔽、一致快照以及可选的后台作业。使用它进行受控数据库复制，而不是将其用作备份和恢复的无人值守替代品。
 
@@ -53,6 +53,35 @@ JSON 选项可以限制列和行：
 
 4.4.2 版本的屏蔽验证器会跳过不安全或不兼容的屏蔽：无法转换为列的常量值、NOT NULL 列中的 NULL 值、唯一或主键列上的非哈希屏蔽，以及外键列上的屏蔽。被跳过的屏蔽会使该列保持未屏蔽状态。将警告视为隐私门失败，并在分发克隆之前检查结果。
 
+### 冲突处理与远端脱敏报告
+
+从 4.4.3 起，同步表、模式和数据库克隆会执行显式提供的 `conflict` 选项。`replace` 先级联删除已有对象再重建；`skip`、`error` 和 `rename` 分别选择文档规定的其他处理方式。过去被忽略的选项现在可能触发破坏性操作，升级前应检查调用参数。
+
+4.4.4 增加了银行账号与 IBAN 识别，以及远端报告重载：
+
+```sql
+SELECT * FROM pgclone.masking_report(
+    'host=source.example dbname=app user=clone_user', 'public');
+```
+
+### 4.5.0 的 Oracle 数据源
+
+`pgclone.table_from_oracle()` 需要启用了可选 Oracle OCI 支持的动态库，数据库主机也必须能加载 Oracle 客户端。普通构建虽然提供该函数，但会拒绝执行此操作。独立的 `pgclone.oracle_type_to_pg()` 类型映射函数不需要 Oracle 客户端。
+
+```sql
+SELECT pgclone.table_from_oracle(
+    'dsn=ORACLE_SOURCE user=clone_user',
+    'HR', 'EMPLOYEES', dry_run => true);
+```
+
+省略 Oracle 密码时，扩展从服务器进程的 `PGCLONE_ORACLE_PASSWORD` 环境变量读取密码。试运行只返回 DDL，不创建目标。实际克隆要求目标模式已存在、目标表不存在，且不会替换该表。DDL 与复制的数据在同一个 PostgreSQL 事务中完成，Oracle 端使用只读快照。
+
+不支持的 Oracle 列类型会在发出警告后跳过，因此必须核对结果列集合。默认值、外键与检查约束、非唯一索引、触发器、分区、标识列属性以及脱敏和过滤逻辑均不复制。替换动态库后，还需升级扩展以安装新增 SQL 函数：
+
+```sql
+ALTER EXTENSION pgclone UPDATE TO '4.5.0';
+```
+
 ### 预检、差异和一致性
 
     SELECT pgclone.preflight(
@@ -91,6 +120,6 @@ pgclone 还暴露了 progress_detail、resume 和 clear_jobs 用于作业管理�
 ### 重要边界
 
 - 上游使用指南要求超级用户权限来安装和使用 pgclone。
-- 异步模式下的模式/数据库/并行路径在 v4.4.2 中不尊重屏蔽、表或 exclude_tables。当这些控制是安全需求时，请使用文档中同步路径。
+- 异步模式下的模式/数据库/并行路径在 v4.5.0 中不应用脱敏、表筛选或 exclude_tables。当这些控制是安全需求时，请使用文档中同步路径。
 - 请勿将密码存储在 SQL 和日志中；优先考虑 libpq 服务文件、密钥文件或其他受控凭据机制。
 - v4.4.2 版本改进了序列状态的复制，并保护 PostgreSQL 17 源会话免受 transaction_timeout 影响，但调用者仍需验证对象所有权、扩展、角色和克隆后应用程序行为。

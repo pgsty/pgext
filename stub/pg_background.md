@@ -2,9 +2,9 @@
 
 Sources:
 
-- [v2.0.4 README](https://github.com/vibhorkum/pg_background/blob/v2.0.4/README.md)
-- [v2.0.4 release](https://github.com/vibhorkum/pg_background/releases/tag/v2.0.4)
-- [v2.0.4 SQL API](https://github.com/vibhorkum/pg_background/blob/v2.0.4/extension/pg_background--2.0.sql)
+- [v2.0.5 README](https://github.com/vibhorkum/pg_background/blob/v2.0.5/README.md)
+- [v2.0.5 release](https://github.com/vibhorkum/pg_background/releases/tag/v2.0.5)
+- [v2.0.5 SQL API](https://github.com/vibhorkum/pg_background/blob/v2.0.5/extension/pg_background--2.0.sql)
 
 `pg_background` executes SQL inside PostgreSQL background worker processes. Workers run independent transactions inside the server, which is useful for asynchronous maintenance, autonomous side effects, bounded long-running tasks, and progress-tracked jobs.
 
@@ -102,7 +102,7 @@ SET pg_background.worker_timeout = '5min';
 
 ### Caveats
 
-- Upstream release 2.0.4 retains SQL/control version 2.0 and targets PostgreSQL 14-18 plus PostgreSQL 19 beta.
+- Upstream release 2.0.5 retains SQL/control version 2.0 and targets PostgreSQL 14-18 plus PostgreSQL 19 beta.
 - Upgrades from pre-1.8 installs must first reach the 1.8/1.10 release line before updating to 2.0.
 - The original v1 PID-only API was removed. Unsuffixed names now have cookie-protected semantics and return/use `(pid, cookie)`.
 - `pg_background_cancel_v2_grace` and `pg_background_wait_v2_timeout` are folded into `pg_background_cancel(..., grace_ms)` and `pg_background_wait(..., timeout_ms)`.
@@ -113,3 +113,7 @@ SET pg_background.worker_timeout = '5min';
 2.0.4 fixes visibility between commands in one worker, complex result-type transport, and command completion tags. A nonzero `pg_background.worker_timeout` bounds the whole SQL string, excluding commit; when zero, `statement_timeout` applies to each statement separately. Start new workers after installing the updated library to use these fixes.
 
 Installation requires a superuser. PUBLIC receives no execution rights by default; an administrator grants `pgbackground_role` or uses `pg_background_grant_privileges`. Workers commit independently, so rolling back the caller does not undo completed background operations.
+
+### 2.0.5 Launch Handle Fix
+
+2.0.5 fixes a race where a worker finished before its startup check and launch returned the wrong PID. Use the updated library for new workers and continue retaining both handle fields. SQL/control stays at 2.0, with no new API or SQL migration for this patch.

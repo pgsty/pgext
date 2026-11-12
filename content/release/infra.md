@@ -6,6 +6,77 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-12
+
+### Supplemental intake: SILO, Console and pig
+
+Imported three additional recipes: 12 packages (6 DEB and 6 RPM) for amd64/arm64. Downloads used port `8888`; `make silo silo-console pig`, local repository import, signing and index updates are complete. Online repository publication is pending.
+
+| Package | Previous infra repository | Imported version | Notes |
+|---|---|---|---|
+| [silo](https://github.com/pgsty/silo/releases/tag/RELEASE.2026-11-12T00-00-00Z) | 20261109000000.0.0 | 20261112000000.0.0 | Official release, native packages, revision 1PGSTY |
+| [silo-console](https://github.com/pgsty/silo-console/releases/tag/v2.7.2) | 2.7.1 | 2.7.2 | Official native packages matching SILO 20261112 |
+| [pig](https://github.com/pgsty/pig/releases/tag/v1.11.0) | 1.10.4 | 1.11.0 | Repacked for both architectures, revision 1PGSTY; Pigsty 4.6.0 support and a 625-entry extension catalog |
+{.wide .expand}
+
+All four SILO packages were downloaded again from the published release and match the previously authorized draft assets byte for byte. Both architectures report the tagged commit `44e848fed` in their CLI and Go build metadata, with Console 2.7.2 embedded.
+
+Package headers, executable payloads and CLI versions passed validation on both architectures. Four isolated APT/DNF clients verified signatures and selected all three target versions. APT retains 115 index entries per architecture; YUM now has 156 packages per architecture. The two SILO RPMs retain their existing Pigsty signatures; the four Console and pig RPMs were signed. All 588 pre-existing packages were retained.
+
+### Earlier batch
+
+Completed the repository-based update batch: 28 recipes, 120 packages (60 DEB and 60 RPM) for amd64/arm64. The baseline is the actual packages in `repo/apt/infra` and `repo/yum/infra`, including the opencode package revision and packages already built locally. All downloads used port `8888`. All 120 packages are now in the local APT/YUM repositories. Both architecture indexes, Release/repomd signatures and package checksums have been verified; online publication is pending.
+
+| Package | Previous infra repository | Imported version | Notes |
+|---|---|---|---|
+| [agentsview](https://github.com/kenn-io/agentsview/releases/tag/v0.47.0) | 0.46.1 | 0.47.0 | Repacked for both architectures |
+| [alertmanager](https://github.com/prometheus/alertmanager/releases/tag/v0.35.0) | 0.34.1 | 0.35.0 | Repacked for both architectures |
+| [barn](https://github.com/pgsty/barn/releases/tag/v1.2.0) | 1.1.0 | 1.2.0 | Official native packages |
+| [claude-code](https://downloads.claude.ai/claude-code/apt/latest/dists/latest/main/binary-amd64/Packages) | 2.1.319 | 2.1.322 | New official claude-code package; old claude retained |
+| [code](https://update.code.visualstudio.com/api/update/linux-deb-x64/stable/latest) | 1.145.2 | 1.146.0 | Official native packages |
+| [codex](https://github.com/openai/codex/releases/tag/rust-v0.167.2) | 0.167.0 | 0.167.2 | Complete canonical runtime preserved, including bundled bwrap |
+| [dblab](https://github.com/danvergara/dblab/releases/tag/v0.55.2) | 0.55.1 | 0.55.2 | Repacked for both architectures |
+| [golang](https://go.dev/dl/?mode=json) | 1.27.3 | 1.27.4 | Repacked for both architectures |
+| [grafana](https://github.com/grafana/grafana/releases/tag/v13.3.1) | 13.3.0 | 13.3.1 | Official native packages |
+| [ivorysql](https://github.com/IvorySQL/IvorySQL/releases/tag/IvorySQL_5.6) | 5.4 | 5.6 | New native recipe; DEB ivorysql-5 / RPM ivorysql5; PostgreSQL 18.6 |
+| [mcli](https://github.com/pgsty/mc/releases/tag/RELEASE.2026-11-12T00-00-00Z) | 20261109000000.0.0 | 20261112000000.0.0 | Official native packages |
+| [nodejs](https://nodejs.org/dist/index.json) | 24.22.1 | 26.13.1 | Node 26 LTS; RPM epoch 2; npm prefix /usr/local |
+| [opencode](https://github.com/anomalyco/opencode/releases/tag/v1.19.5) | 1.19.5-1PGSTY | 1.19.5-2PGSTY | Package revision 1PGSTY → 2PGSTY; upstream version unchanged |
+| [pg-exporter](https://github.com/pgsty/pg_exporter/releases/tag/v1.6.1) | 1.6.0 | 1.6.1 | Repacked for both architectures |
+| [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage/releases/tag/v1.7.0) | 1.6.0 | 1.7.0 | Repacked for both architectures |
+| [pgext](https://github.com/pgsty/pgext/releases/tag/v1.7.1) | 1.6.0 | 1.7.1 | Official native packages |
+| [pi-coding-agent](https://github.com/earendil-works/pi/releases/tag/v1.5.2) | Not present | 1.5.2 | New package; complete upstream runtime |
+| [rainfrog](https://github.com/achristmascarl/rainfrog/releases/tag/v0.4.7) | 0.4.6 | 0.4.7 | Repacked for both architectures |
+| [rustfs](https://github.com/rustfs/rustfs/releases/tag/1.0.5) | 1.0.4 | 1.0.5 | Repacked for both architectures |
+| [sabiql](https://github.com/riii111/sabiql/releases/tag/v3.0.3) | 3.0.2 | 3.0.3 | Repacked for both architectures |
+| [sealos](https://github.com/labring/sealos/releases/tag/v5.1.1) | 5.0.1 | 5.1.1 | Official native packages; Sustainable Use License; RPM license metadata mismatch |
+| [silo](https://github.com/pgsty/silo/releases/tag/RELEASE.2026-11-09T00-00-00Z) | 20261026000000.0.0 | 20261109000000.0.0 | Official native packages |
+| [silo-console](https://github.com/pgsty/silo-console/releases/tag/v2.7.1) | 2.7.0 | 2.7.1 | Official native packages |
+| [sow](https://github.com/pgsty/sow/releases/tag/v0.7.1) | 0.7.0 | 0.7.1 | Repacked for both architectures |
+| [stalwart](https://github.com/stalwartlabs/stalwart/releases/tag/v1.1.0) | 1.0.3 | 1.1.0 | Repacked for both architectures |
+| [timescaledb-tools](https://github.com/timescale/timescaledb-tune/releases/tag/v0.19.1) | 0.19.0 | 0.19.1 | tune 0.19.1 + parallel-copy 0.13.2; Go 1.27.4 source builds |
+| [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics/releases/tag/v1.156.0) | 1.155.0 | 1.156.0 | Also produces victoria-metrics-cluster and vmutils |
+| [xray](https://github.com/XTLS/Xray-core/releases/tag/v26.11.9) | 26.10.31 | 26.11.9 | Repacked for both architectures |
+{.wide .expand}
+
+Validation passed for all 120 package headers and payload architectures. The 40 native source packages in `dist` match upstream SHA256 hashes; locally repacked DEB/RPM executable payloads agree. Linux containers passed 82 CLI/configuration checks across both architectures, with two additional VS Code application-version metadata checks. Codex's entire canonical runtime matches its upstream archives; Node retains RPM epoch 2 and npm configuration; both Timescale tools include source and build provenance.
+
+Sealos 5.1.1 is now prepared through a vendor-direct recipe. Its [tagged source license](https://github.com/labring/sealos/blob/v5.1.1/LICENSE.md) is the Sealos Sustainable Use License, while the official RPM still declares Apache 2.0. The upstream bytes are preserved in `dist` and the metadata discrepancy is recorded; the former Apache-2.0 local rebuild lock remains documented as history.
+
+Repository acceptance: APT has 115 index entries per architecture and YUM has 153 RPMs per architecture. Four isolated APT/DNF clients verified the Pigsty key and selected all 30 package versions in this batch. All 60 DEBs preserve their source bytes; 56 RPMs were signed or re-signed and four retained their existing valid Pigsty signatures. Every RPM main header and payload matches the build source; original upstream packages remain in `dist`. No obsolete packages were purged.
+
+The new `claude-code` package is now indexed, and the old `claude` package is retained. Upstream packages declare no replacement relationship for `claude`; hosts with the old package need a package-name migration.
+
+Added desktop packages for amd64 and arm64: four DEBs and four RPMs, built/downloaded locally and checksum-verified. Repository import, signing and publication are pending.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| t3code | — | 0.1.9 | T3 Code; official DEBs preserved; RPMs repackaged from the same payload as 1PGSTY |
+| orca-ide | — | 1.4.256 | Orca; all four official DEB/RPM packages preserved unchanged |
+{.wide .expand}
+
+Build aliases: `make t3-code` and `make orca`. Package names remain `t3code` and `orca-ide`. T3 Code core helpers require glibc 2.34; its optional KDE screenshot helper requires 2.39. Both projects use the MIT license.
+
 ## 2026-11-10
 
 | Name        | Old     | New     | Comment |

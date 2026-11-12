@@ -11,6 +11,9 @@
 - [发布说明](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.4)
 - [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--4.0.3--4.1.sql)
 - [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/OPTIONS.md)
+- [4.3.2 release](https://github.com/brauliobo/pg_sift/releases/tag/v4.3.2)
+- [4.3.2 upgrade guide](https://github.com/brauliobo/pg_sift/blob/v4.3.2/docs/UPGRADING.md)
+- [4.3.2 changes](https://github.com/brauliobo/pg_sift/blob/v4.3.2/CHANGELOG.md)
 
 `pg_sift` 发行版 4.1.4 安装的 SQL 扩展版本为 4.1，同时提供 BM25 文本检索、压缩列索引与列式表访问方法。上游支持 PostgreSQL 17–19，但这不代表每个大版本都有对应的软件包。首次安装需要超级用户，普通用法不强制要求预加载。
 
@@ -108,3 +111,17 @@ ALTER EXTENSION pg_sift UPDATE TO '4.1';
 4.1.1 阻止新的跟踪行计数错误；4.1.2 还会对旧跟踪日志重新检查堆表并修复过期状态。4.1.3 修复并发重建索引时的表锁与写入事务死锁。应在所有读取节点安装 4.1.4 文件并重启服务器，包括备库。SQL 仍为 4.1：已有 4.1 安装无需再次执行 `ALTER EXTENSION`，这些补丁也不要求转换格式或强制 `REINDEX`。
 
 在 `pg_upgrade`、禁用触发器的恢复或并发索引重建之后，跟踪列索引可能仍返回正确结果，但使用堆表检查。可执行普通 `REINDEX INDEX`，或为每个索引重新设置原有 `track_changes` 值，恢复优化路径。更早版本的升级要求及受损索引处理要求仍然适用。
+
+### 4.2–4.3.2 的升级边界
+
+先在所有读取节点（包括备库）安装匹配动态库并重启服务器，再更新每个数据库：
+
+```sql
+ALTER EXTENSION pg_sift UPDATE TO '4.3.2';
+```
+
+4.3.2 修复了聚合扫描将相关派生表的结果复用于后续外层行、导致计数或求和错误的问题。升级前可用 `sift.enable_agg = off` 避开该扫描。4.3.1 还修复了跟踪 UPDATE/DELETE 语句期间的读取，并为 `sift.table_option_values` 设置复制标识，使发布删除操作的全表 publication 不再阻止关系删除。该目录修复需要执行 SQL 更新，仅替换动态库并不足够。
+
+4.2/4.3 系列改变了索引格式。4.3 新建或合并的列段可能使用旧库无法读取的格式小版本 44。开始写入前必须升级所有读取方；若需回退，应先遵循对应版本的格式上限流程。已有索引在合并或重建时采用新布局。4.3.1 至 4.3.2 的补丁本身不改变格式或对象，也不新增 REINDEX 要求。
+
+运行上游升级预检查，并移除废弃设置 `sift.enable_col` 和 `sift.table_auto_defrag_dead_pct`。`sift.eval_methods` 只保留 `penalty_maintenance`，应移除已废弃的方法名。关系选项 `rollup` 和 `rollup_dims` 更名为 `rollup_leaves` 和 `rollup_columns`，4.x 仍接受旧拼写。更早版本的升级要求与受损索引重建要求继续适用。

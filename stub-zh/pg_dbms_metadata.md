@@ -1,9 +1,13 @@
-
-
-
 ## 用法
 
-> [pg_dbms_metadata: 为 PostgreSQL 添加 Oracle DBMS_METADATA 兼容性的扩展](https://github.com/HexaCluster/pg_dbms_metadata)
+来源：
+
+- [1.1.0 README](https://github.com/HexaCluster/pg_dbms_metadata/blob/v1.1.0/README.md)
+- [SQL 定义](https://github.com/HexaCluster/pg_dbms_metadata/blob/v1.1.0/sql/pg_dbms_metadata--1.1.0.sql)
+- [升级脚本](https://github.com/HexaCluster/pg_dbms_metadata/blob/v1.1.0/updates/pg_dbms_metadata--1.0.0--1.1.0.sql)
+- [发布说明](https://github.com/HexaCluster/pg_dbms_metadata/releases/tag/v1.1.0)
+
+`pg_dbms_metadata` 1.1.0 通过 Oracle 风格的 API 提取 PostgreSQL 对象 DDL。它由 SQL/PL/pgSQL 实现，无需预加载；只实现 GET 系列函数，不提供 Oracle FETCH 或 XML 接口。
 
 ### 启用
 
@@ -21,7 +25,7 @@ SELECT dbms_metadata.get_ddl('VIEW', 'active_users', 'myschema');
 SELECT dbms_metadata.get_ddl('FUNCTION', 'calculate_tax', 'public');
 SELECT dbms_metadata.get_ddl('INDEX', 'idx_name', 'public');
 
--- 模式可选；省略时使用 search_path
+-- Schema is optional; uses search_path when omitted
 SELECT dbms_metadata.get_ddl('SEQUENCE', 'my_seq');
 ```
 
@@ -48,21 +52,34 @@ SELECT dbms_metadata.get_granted_ddl('ROLE_GRANT', 'user_test');
 通过会话级转换参数自定义 DDL 输出：
 
 ```sql
--- 在每条 DDL 语句后追加 SQL 终结符（;）
+-- Append SQL terminator (;) to each DDL statement
 CALL dbms_metadata.set_transform_param('SQLTERMINATOR', true);
 
--- 从 TABLE DDL 中排除约束
+-- Exclude constraints from TABLE DDL
 CALL dbms_metadata.set_transform_param('CONSTRAINTS', false);
 
--- 从 TABLE DDL 中排除外键
+-- Exclude foreign keys from TABLE DDL
 CALL dbms_metadata.set_transform_param('REF_CONSTRAINTS', false);
 
--- 排除分区子句
+-- Exclude partitioning clauses
 CALL dbms_metadata.set_transform_param('PARTITIONING', false);
 
--- 排除存储参数
+-- Exclude storage parameters
 CALL dbms_metadata.set_transform_param('STORAGE', false);
 
--- 将所有参数重置为默认值
+-- Reset all params to defaults
 CALL dbms_metadata.set_transform_param('DEFAULT', true);
 ```
+
+### 1.1.0 行为与升级
+
+该版本新增 ENUM 提取；显式指定模式时，枚举名称会带模式限定。函数或过程存在重载时，不带参数列表的名称会返回全部匹配重载；在名称后附上参数类型可以选择其中一个：
+
+```sql
+SELECT dbms_metadata.get_ddl('FUNCTION', 'my_function(char, char)', 'my_schema');
+ALTER EXTENSION pg_dbms_metadata UPDATE TO '1.1.0';
+```
+
+1.1.0 还修复了含引号的表注释和布尔转换参数默认值。执行 SQL 更新前须先安装新扩展文件。上游文档列出 PostgreSQL 9.1–18，并对本版本在 12–19 上的升级路径进行测试；软件包支持范围另行记录。
+
+DDL 可见性不局限于调用者拥有的对象。省略模式时按 `search_path` 查找，并要求具有模式 USAGE 权限；TRIGGER 和 REF_CONSTRAINT 调用必须显式指定模式。对象定义敏感时应限制 API 访问。会话转换设置会影响后续提取调用，可以用 DEFAULT 转换重置；该 API 不提供完整数据库备份。

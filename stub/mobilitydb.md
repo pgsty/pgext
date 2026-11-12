@@ -2,6 +2,8 @@
 
 Sources:
 
+- [1.3.2 release](https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.2)
+- [1.3.1 to 1.3.2 SQL migration](https://github.com/MobilityDB/MobilityDB/blob/v1.3.2/mobilitydb/sql/mobilitydb--1.3.1--1.3.2.sql)
 - [MobilityDB v1.3.1 README](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/README.md)
 - [Extension control file](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/sql/mobilitydb.in.control)
 - [Version 1.3 migration manual](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/doc/introduction.xml)
@@ -9,7 +11,7 @@ Sources:
 - [Version 1.3.1 release and upgrade](https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.1)
 - [1.3.0 to 1.3.1 SQL migration](https://github.com/MobilityDB/MobilityDB/blob/v1.3.1/mobilitydb/sql/mobilitydb--1.3.0--1.3.1.sql)
 
-`mobilitydb` 1.3.1 extends PostgreSQL and PostGIS with temporal values and moving-object trajectories. It supports storing changing attributes, reconstructing positions at a timestamp, and indexing space-time bounds. This patch fixes a backend-crashing binary-input vulnerability; installations on 1.3.0 should upgrade.
+`mobilitydb` 1.3.2 extends PostgreSQL and PostGIS with temporal values and moving-object trajectories. It supports storing changing attributes, reconstructing positions at a timestamp, and indexing space-time bounds. The 1.3.2 patch corrects date-span-set intersection results and extension installation on PostgreSQL 18.7 and the corresponding minor releases.
 
 ### Enable the Extension
 
@@ -79,11 +81,12 @@ The bounding-box operator supplies an indexable filter. Apply the appropriate ex
 Install the new library and SQL files, then update each database:
 
 ```sql
-ALTER EXTENSION mobilitydb UPDATE TO '1.3.1';
+ALTER EXTENSION mobilitydb UPDATE TO '1.3.2';
 SELECT extversion FROM pg_extension WHERE extname = 'mobilitydb';
 ```
 
+- Version 1.3.2 replaces `* (datespanset, date)` and `span_intersection(datespanset, date)` with definitions returning `datespanset`, matching the actual computed value and the commutator. Review dependencies on these objects before updating. Update before making a dump for restoration on PostgreSQL 18.7: older definitions fail during extension creation there.
 - Version 1.3.1 fixes CVE-2026-102639: malformed WKB temporal, set, or span input could read beyond the input buffer and crash a backend. The SQL migration alone does not replace the vulnerable library; reconnect or restart processes that loaded the older binary.
-- The migration removes five same-base-type `<->` operators and their `set_distance` functions because they conflict with operators supplied by `btree_gist`. Review dependent objects before updating and use the appropriate `btree_gist` operators where needed.
+- The earlier 1.3.0-to-1.3.1 migration removes five same-base-type `<->` operators and their `set_distance` functions because they conflict with operators supplied by `btree_gist`. Review dependent objects before updating and use the appropriate `btree_gist` operators where needed.
 - Upgrading from the 1.2 line to 1.3 changes the temporal binary format and requires the upstream backup-and-restore procedure. An in-place 1.3.0-to-1.3.1 SQL update does not replace that major-line migration.
 - Coordinate systems, interpolation, gaps, inclusive bounds, and units affect results. Validate them against the data model rather than treating every trajectory as a continuous geographical line.

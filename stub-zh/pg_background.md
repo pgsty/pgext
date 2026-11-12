@@ -2,9 +2,9 @@
 
 来源：
 
-- [v2.0.4 README](https://github.com/vibhorkum/pg_background/blob/v2.0.4/README.md)
-- [v2.0.4 release](https://github.com/vibhorkum/pg_background/releases/tag/v2.0.4)
-- [v2.0.4 SQL API](https://github.com/vibhorkum/pg_background/blob/v2.0.4/extension/pg_background--2.0.sql)
+- [v2.0.5 README](https://github.com/vibhorkum/pg_background/blob/v2.0.5/README.md)
+- [v2.0.5 release](https://github.com/vibhorkum/pg_background/releases/tag/v2.0.5)
+- [v2.0.5 SQL API](https://github.com/vibhorkum/pg_background/blob/v2.0.5/extension/pg_background--2.0.sql)
 
 `pg_background` 在 PostgreSQL 后台工作进程中执行 SQL。工作进程在服务器内部运行独立事务，适合异步维护、自主副作用、有边界的长时间任务，以及可跟踪进度的作业。
 
@@ -102,7 +102,7 @@ SET pg_background.worker_timeout = '5min';
 
 ### 注意事项
 
-- 上游发行版 2.0.4 保留 SQL/control 版本 2.0，面向 PostgreSQL 14-18 和 PostgreSQL 19 beta。
+- 上游发行版 2.0.5 保留 SQL/control 版本 2.0，面向 PostgreSQL 14-18 和 PostgreSQL 19 beta。
 - 从 1.8 之前的安装升级时，必须先升级到 1.8/1.10 发布线，再更新到 2.0。
 - 原始 v1 的仅 PID API 已移除。不带后缀的名称现在具备 cookie 保护语义，并返回/使用 `(pid, cookie)`。
 - `pg_background_cancel_v2_grace` 和 `pg_background_wait_v2_timeout` 已合并进 `pg_background_cancel(..., grace_ms)` 和 `pg_background_wait(..., timeout_ms)`。
@@ -113,3 +113,7 @@ SET pg_background.worker_timeout = '5min';
 2.0.4 修复同一工作进程内多条命令之间的数据可见性、复杂结果类型的传输和命令完成标签。`pg_background.worker_timeout` 非零时限制整个 SQL 字符串的执行时间（不含提交）；为零时由 `statement_timeout` 分别限制每条语句。安装新版库后启动新的工作进程才能使用修复。
 
 安装需要超级用户。默认不向 PUBLIC 开放调用权限；由管理员授予 `pgbackground_role`，或使用 `pg_background_grant_privileges`。后台事务独立提交，调用者回滚不会撤销已经完成的后台操作。
+
+### 2.0.5 启动句柄修复
+
+2.0.5 修复了工作进程在启动检查前已结束、导致启动调用返回错误 PID 的竞态。新工作进程应使用更新后的库，并继续保存句柄的两个字段。SQL/control 仍为 2.0，此补丁没有新增 API 或 SQL 迁移。

@@ -2,12 +2,12 @@
 
 来源：
 
-- [README](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.3.0/README.md)
-- [Control](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.3.0/pg_agent_gate.control)
-- [CHANGELOG](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.3.0/CHANGELOG.md)
-- [SQL upgrade](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.3.0/sql/pg_agent_gate--0.2.15--0.3.0.sql)
+- [README](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/README.md)
+- [Control](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/pg_agent_gate.control)
+- [CHANGELOG](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/CHANGELOG.md)
+- [SQL upgrade](https://github.com/Manuelreyesbravo/pg_agent_gate/blob/v0.4.3/sql/pg_agent_gate--0.4.1--0.4.3.sql)
 
-`pg_agent_gate` 0.3.0 在 PostgreSQL 18/19 上通过提议、检查、试运行和受控执行处理已注册 Agent 角色，并可要求提交前经过人工审批。必须在第一条 Agent 语句之前加载动态库，可采用共享预加载，或配置角色会话预加载后重新连接。
+`pg_agent_gate` 0.4.3 在 PostgreSQL 18/19 上通过提议、检查、试运行和受控执行处理已注册 Agent 角色，并可要求提交前经过人工审批。必须在第一条 Agent 语句之前加载动态库，可采用共享预加载，或配置角色会话预加载后重新连接。
 
 ### 核心用法
 
@@ -31,6 +31,24 @@ SELECT agent_gate.propose('SELECT 1', 'Check connectivity');
 
 固定模式 `agent_gate_internal` 保存提议、执行和审批记录，Agent 不直接访问这些表。执行记录的 `approved_by` 字段保存审批者身份。
 
+### 写入预算与角色成员
+
+0.4.0 引入默认累计写入预算：每小时允许修改该 Agent 单条语句行数上限所规定的行数。`agent_gate.set_budget` 调整额度和窗口；`agent_gate.reset_budget` 重新开始计算额度，不改写记录。已提交写入按实际行影响计数，包括级联与触发器；并发提交会串行核对预算。
+
+Agent 角色不能有成员。登记函数会拒绝这样的角色；升级时会对已有成员关系发出警告，管理员必须撤销这些关系。每个 Agent 应使用自己的登录角色连接，连接代理不能通过角色切换进入 Agent 身份。
+
+### 0.4.3 的函数与会话检查
+
+0.4.3 动态库在隐藏函数调用实际执行时进行检查，包括类型支持函数、聚合、默认值和约束。它拒绝传给已知执行函数的 SQL 文本、Agent 可修改的函数、受保护上下文变化以及未计入控制范围的状态变化。DDL 引起的行变化也计入行数限制。这些检查会有意拒绝普通 PostgreSQL 角色原本能够执行的部分语句。
+
+受保护上下文包括角色身份、行级安全设置、搜索路径和应用占位参数。上下文变化会导致拒绝，而不是自动恢复原值。Agent 所有对象附带的原生代码受到限制。可选的 `pg_living_assertions` 0.5.5 可能泄漏上下文并导致拒绝，0.5.6 已修复该问题。不要将 Agent 可控制的模式放入其他用户的搜索路径，因为 DDL 可以创建之后以其他用户权限运行的代码。
+
 ### 动态库与 SQL 升级
 
-动态库保留了 0.2.15 对可执行函数的参数转换和单分号崩溃的防护。应替换动态库，重启或重连所有预加载它的进程，再通过上游 SQL 升级脚本逐库升级到 0.3.0。0.3.0 迁移新增审批对象，不是空操作。DDL 权限属于模式修改能力，行数限制无法约束它。
+替换动态库后，重启或重新连接所有预加载它的进程，再逐库升级：
+
+```sql
+ALTER EXTENSION pg_agent_gate UPDATE TO '0.4.3';
+```
+
+0.4.1 至 0.4.3 迁移不改变模式对象。更早版本的升级路径仍会添加预算和审批对象；升级后应检查已有 Agent 的预算。0.4.2 未单独发布。超级用户、操作系统和可信 DBA 代码不在这个保护边界内；获准执行的语句仍可能违背人的意图。
