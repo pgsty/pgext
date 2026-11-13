@@ -6,6 +6,9 @@ Sources:
 - [Control file](https://api.pgxn.org/src/pg_reactive/pg_reactive-0.1.8/pg_reactive.control)
 - [Versioned extension SQL](https://api.pgxn.org/src/pg_reactive/pg_reactive-0.1.8/pg_reactive--0.1.8.sql)
 - [Module initialization](https://api.pgxn.org/src/pg_reactive/pg_reactive-0.1.8/src/pg_reactive.c)
+- [Current standalone extension guide](https://github.com/ndokutovich/pg_reactive/blob/4e14073a5a714a40ae60ae01dba81d02e30b30a8/ext/README.md)
+- [Current extension control](https://github.com/ndokutovich/pg_reactive/blob/4e14073a5a714a40ae60ae01dba81d02e30b30a8/ext/pg_reactive.control)
+- [Project changelog](https://github.com/ndokutovich/pg_reactive/blob/4e14073a5a714a40ae60ae01dba81d02e30b30a8/CHANGELOG.md)
 
 `pg_reactive` turns PostgreSQL SELECT queries into subscriptions and sends changed result rows through LISTEN/NOTIFY. Version 0.1.8 supports PostgreSQL 15–18, requires preloading and a restart, and exposes privileged subscription APIs in the `pgr` schema.
 
@@ -13,7 +16,7 @@ Sources:
 
 Add the library to the existing preload list, then restart PostgreSQL. The installation SQL also uses `plpgsql`, normally installed by default.
 
-```conf
+```ini
 shared_preload_libraries = 'pg_reactive'
 pg_reactive.max_subscriptions = 1024
 ```
@@ -75,4 +78,4 @@ The 0.1.8 SQL script revokes public access to subscription functions and the vie
 
 Clients must re-fetch after an overflow or snapshot-layout change, a missed sequence, or reconnection. Notifications share one channel and are not a durable delivery queue. Registration generations identify re-subscriptions; clients/proxies must discard obsolete generations. Recomputing a large result set adds work to writes even when few result rows change.
 
-The reviewed PGXN archive contains the control file, SQL and C source. Its advertised GitHub repository returned 404 during verification; use the versioned PGXN sources above for this release.
+The GitHub repository is now accessible. Its pgStack platform release 0.3.5 includes a lock-order fix for concurrent `pgr.unsubscribe()` calls, while the extension's SQL version remains 0.1.8. This is a source/library fix, not an extension SQL-version bump; the older PGXN 0.1.8 archive is a separate artifact. Verify which source revision supplied the installed library before assuming the fix is present.

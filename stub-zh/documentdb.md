@@ -7,6 +7,10 @@
 - [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb/documentdb.control)
 - [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
 - [DocumentDB 1.0 release](https://github.com/documentdb/documentdb/releases/tag/v1.0-0)
+- [DocumentDB 1.2 release](https://github.com/documentdb/documentdb/releases/tag/v1.2-0)
+- [1.2 control](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb/documentdb.control)
+- [1.1 to 1.2 SQL](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb/sql/documentdb--1.1-0--1.2-0.sql)
+- [Official upgrade procedure](https://github.com/documentdb/documentdb/blob/v1.2-0/packaging/README.md)
 
 `documentdb` 是 PostgreSQL 的公共 API 扩展，用于 DocumentDB，这是一个基于 PostgreSQL 开源的 MongoDB 兼容文档数据库。它存储 BSON 文档并实现 CRUD、聚合、全文搜索、地理空间和向量工作流。MongoDB 驱动程序需要单独的 DocumentDB 网关；仅安装此扩展不会暴露 Wire-Protocol 监听器，而是 PostgreSQL API。
 
@@ -65,3 +69,9 @@ FROM documentdb_api_catalog.bson_aggregation_find(
 官方 DocumentDB Local 容器默认启用使用情况遥测；原生软件包不受影响。容器中可设置 DOCUMENTDB_USAGE_TELEMETRY=false、NO_ANALYTICS=1 或 DO_NOT_TRACK=1 禁用。
 
 MongoDB 兼容性并不等同于所有 MongoDB 服务器版本。应测试应用实际使用的操作符、索引行为、事务、模式验证、身份验证和驱动行为。请确保 `documentdb`、`documentdb_core`、网关及可选的分布式/索引组件来自同一发行系列。
+
+### DocumentDB 1.2 变化
+
+DocumentDB 1.2 的 SQL 版本为 `1.2-0`。升级前应备份数据目录；不支持将已升级数据退回 1.0。官方 1.2 容器先升级扩展再启动网关，并要求显式提供密码，已有数据卷也不例外。对于接管的 PostgreSQL 实例，应遵循包指南的重启与升级顺序，不要重启或修改无关实例。
+
+只有设置 `documentdb_core.enableCollation = on` 后才启用排序规则，即使显式指定 `simple` 也一样。非唯一排序规则索引还需要 `documentdb.enableCollationWithNonUniqueOrderedIndexes`；唯一索引还需要 `documentdb.enable_collated_unique_indexes` 与 `documentdb.enable_composite_unique_optional_key`。此版本扩展了逐命令、逐更新的排序规则行为，并修复降序唯一索引的空值与缺失值冲突、`$dateTrunc` 的天边界以及重扫 `$densify` 的结果。升级后应复核相关查询和索引语义。

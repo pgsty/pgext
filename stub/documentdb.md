@@ -7,6 +7,10 @@ Sources:
 - [`documentdb` control file](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb/documentdb.control)
 - [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
 - [DocumentDB 1.0 release](https://github.com/documentdb/documentdb/releases/tag/v1.0-0)
+- [DocumentDB 1.2 release](https://github.com/documentdb/documentdb/releases/tag/v1.2-0)
+- [1.2 control](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb/documentdb.control)
+- [1.1 to 1.2 SQL](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb/sql/documentdb--1.1-0--1.2-0.sql)
+- [Official upgrade procedure](https://github.com/documentdb/documentdb/blob/v1.2-0/packaging/README.md)
 
 `documentdb` is the public PostgreSQL API extension for DocumentDB, an open-source MongoDB-compatible document database built on PostgreSQL. It stores BSON documents and implements CRUD, aggregation, full-text, geospatial, and vector workflows. MongoDB drivers require the separate DocumentDB gateway; installing this extension alone exposes the PostgreSQL API, not a wire-protocol listener.
 
@@ -65,3 +69,9 @@ Release 1.0-0 adds the first generally available release line. It fixes permissi
 The official DocumentDB Local container enables usage telemetry by default; native packages are unaffected. Set DOCUMENTDB_USAGE_TELEMETRY=false, NO_ANALYTICS=1 or DO_NOT_TRACK=1 to disable it in the container.
 
 MongoDB compatibility is not identical to every MongoDB server version. Test operators, index behavior, transactions, schema validation, authentication, and driver behavior used by the application. Match `documentdb`, `documentdb_core`, gateway, and optional distributed/index components to the same release line.
+
+### DocumentDB 1.2 changes
+
+DocumentDB 1.2 uses SQL version `1.2-0`. Back up the data directory before upgrading; reverting upgraded data to 1.0 is not supported. The official 1.2 container updates extensions before starting the gateway and refuses startup without an explicit password, including on an existing volume. For an adopted PostgreSQL instance, follow the package guide's restart and update sequence rather than restarting or altering unrelated instances.
+
+Collation remains disabled unless `documentdb_core.enableCollation = on`, even for explicit `simple` collation. Collated non-unique indexes additionally require `documentdb.enableCollationWithNonUniqueOrderedIndexes`; collated unique indexes also require `documentdb.enable_collated_unique_indexes` and `documentdb.enable_composite_unique_optional_key`. The release adds per-command/per-update collation behavior and fixes descending unique-index null/missing conflicts, `$dateTrunc` day boundaries and rescanned `$densify` results. Review affected query and index semantics after upgrading.

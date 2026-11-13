@@ -8,6 +8,10 @@
 - [升级契约](https://github.com/LogicOcean/pgokf/blob/v0.4.0/docs/api-stability.md)
 - [发布与升级说明](https://github.com/LogicOcean/pgokf/releases/tag/v0.4.0)
 - [pgrx 清单](https://github.com/LogicOcean/pgokf/blob/v0.4.0/crates/extension/Cargo.toml)
+- [0.5.0 release](https://github.com/LogicOcean/pgokf/releases/tag/v0.5.0)
+- [0.5.0 changelog](https://github.com/LogicOcean/pgokf/blob/v0.5.0/CHANGELOG.md)
+- [0.4 to 0.5 upgrade SQL](https://github.com/LogicOcean/pgokf/blob/v0.5.0/crates/extension/sql/pgokf--0.4.0--0.5.0.sql)
+- [Confluence ingestion](https://github.com/LogicOcean/pgokf/blob/v0.5.0/docs/confluence-integration.md)
 
 `pgokf` 把 Open Knowledge Format bundle 物化为事务化 PostgreSQL catalog，提供全文检索、链接图、provenance、可选语义检索与 tenant 隔离。
 
@@ -61,3 +65,13 @@ SELECT extversion FROM pg_extension WHERE extname = 'pgokf';
 ```
 
 所提供的升级链覆盖更早的 0.1、0.2、0.3 及开发版本。只有旧搜索函数重载的定义、授权和依赖与预期目录完全匹配时，才会修正被替代的重载；遇到意外结构会中止升级。不要强制删除依赖对象来绕过检查。已声明的旧版 Web 表列顺序会保留。SQL 目录与单独部署的 MCP/Web 配套程序应分别遵循各自升级契约。
+
+### 0.5.0 配套工具与升级
+
+0.5.0 不改变 0.4.0 的目录对象或数据，提供的升级脚本只推进扩展版本。安装匹配的服务器文件后，使用常规升级路径：
+
+```sql
+ALTER EXTENSION pgokf UPDATE TO '0.5.0';
+```
+
+独立的 `pgokf-confluence` 配套工具会预览完整的 Confluence Cloud 空间，只有使用 `--apply` 时才写入专用内容包。它记录生产者来源、使用持久化检查点，并要求通过 `--allow-deletions` 确认页面删除。它适合受众一致的内容空间，不会把 Confluence 页面限制复制成 PostgreSQL 权限。令牌应保存在私密文件或 `CONFLUENCE_API_TOKEN` 中。配套工具的 `--tls` / `OKF_PG_TLS` 现在至少强制 `sslmode=require`，服务器拒绝 TLS 时会断开，不再悄悄回退到明文；需要时应使用更严格的证书验证。这些配套工具变化不会让扩展后端直接执行 Confluence 采集或外部向量计算。

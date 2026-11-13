@@ -12,6 +12,9 @@ Sources:
 - [Continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)
 - [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/)
 - [TimescaleDB GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
+- [2.32.0 release and compatibility limits](https://github.com/timescale/timescaledb/releases/tag/2.32.0)
+- [2.32.0 version declaration](https://github.com/timescale/timescaledb/blob/2.32.0/version.config)
+- [2.31 to 2.32 SQL upgrade](https://github.com/timescale/timescaledb/blob/2.32.0/sql/updates/2.31.0--2.32.0.sql)
 
 `timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize `CREATE TABLE ... WITH (tsdb.hypertable)`, continuous aggregates, automation jobs, and moving chunks into the columnstore.
 
@@ -19,7 +22,7 @@ Sources:
 
 Append `timescaledb` to the existing preload list and restart PostgreSQL before creating the extension. Version `2.30.2` supports PostgreSQL 16, 17, and 18.
 
-```conf
+```ini
 shared_preload_libraries = 'timescaledb'
 ```
 
@@ -121,5 +124,16 @@ Install the matching package, then use a fresh `psql -X` connection for the migr
 
 ```sql
 ALTER EXTENSION timescaledb UPDATE TO '2.30.2';
+SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
+```
+
+### Version 2.32.0 upgrade boundaries
+
+The 2.32.0 release is compatible only up to PostgreSQL 18.6, 17.11 and 16.15. Upstream instructs users to reach TimescaleDB 2.32.1 before upgrading beyond those PostgreSQL minor versions; do not use 2.32.0 to approve an unrestricted PostgreSQL minor upgrade. Install matching extension files and restart PostgreSQL for the loader changes, then update each database's extension through its supported path.
+
+This release checks database ownership before stopping or restarting background workers and runs the scheduler and telemetry jobs as the database owner. Review that role's privileges. It also fixes concurrent `UPDATE`/`DELETE` skipping rows under `READ COMMITTED`, missing final continuous-aggregate buckets, and compression crashes. Adaptive Integer Compression is enabled by default. The upgrade removes the internal `bloom1_contains` helper; application code should not depend on internal APIs.
+
+```sql
+ALTER EXTENSION timescaledb UPDATE TO '2.32.0';
 SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
 ```

@@ -2,18 +2,27 @@
 
 来源：
 
-- [已复核 commit 的上游 README](https://github.com/softvisio/postgresql-softvisio-admin/blob/67e923d3761b0ede5adb16a3ec9cf47779d8099e/README.md)
-- [1.2.9 版本 SQL 对象](https://github.com/softvisio/postgresql-softvisio-admin/blob/67e923d3761b0ede5adb16a3ec9cf47779d8099e/softvisio_admin--1.2.9.sql)
-- [扩展 control 文件](https://github.com/softvisio/postgresql-softvisio-admin/blob/67e923d3761b0ede5adb16a3ec9cf47779d8099e/softvisio_admin.control)
+- [Control](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin.control)
+- [Version 1.7.0 SQL](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin--1.7.0.sql)
+- [Installed SQL files](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/Makefile)
+- [Changelog](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/CHANGELOG.md)
 
-`softvisio_admin` 是一个纯 SQL 管理扩展，用于创建应用数据库和角色、报告整个实例中过期扩展，以及跨数据库更新已安装扩展。
+`softvisio_admin` 1.7.0 用 SQL/PL/pgSQL 提供数据库与角色创建，以及跨库扩展盘点和升级功能。安装需要超级用户、`dblink` 和 `pgcrypto`，无需原生库或预加载。
+
+### 创建与检查
+
+实际 1.7.0 SQL 的 `create_database(name text)` 只接收一个参数。它为缺少的登录角色生成密码，从 `template0` 创建使用 ICU 区域 `und` 与 `C.UTF-8` 的 UTF8 数据库，再设置所有权并创建模式。服务器必须支持这些区域配置。旧 README 中可选的排序规则参数与此 SQL 版本不符。
 
 ```sql
 CREATE EXTENSION softvisio_admin CASCADE;
-CALL create_database('appdb', 'C.UTF-8');
+CALL create_database('appdb');
 SELECT * FROM outdated_extensions();
 ```
 
-`create_database` 会在需要时创建带随机密码的角色，再创建数据库并授权。`update_extensions()` 会执行实例范围的扩展更新，并非只读检查。
+### 跨库操作
 
-这些操作需要广泛管理权限，并可能影响所有数据库。应安装在专用管理数据库，从 `PUBLIC` 撤销执行权，只授予受控运维角色，并通过认可的秘密流程接收生成凭据。应审计 SQL 中的动态标识符与远程数据库连接。调用 `update_extensions()` 前必须备份并测试所有扩展升级路径；扩展升级可运行任意迁移 SQL、获取锁、修改对象，或在实例内部分失败。不要向应用角色开放这些例程。
+`outdated_extensions()` 通过 dblink 遍历允许连接的非模板数据库，比较已安装版本与默认版本。`update_extensions()` 跨这些库执行升级，并在适用时调用 PostGIS 升级辅助函数。远端错误可能以提示形式报告后继续执行，应检查返回的安装版本及提示。远程语句独立提交，失败不会撤销先前数据库或创建步骤的修改。
+
+### 升级与权限边界
+
+1.7.0 源码只安装新的基础 SQL，并移除了历史升级脚本，因此仅靠此发行本身不能为旧安装提供常规升级路径。修改服务器文件前，应检查 `pg_extension_update_paths('softvisio_admin')` 并准备经过审查的迁移方案，不要假定 `ALTER EXTENSION UPDATE` 一定成功。这些例程应仅开放给可信管理员：它们能执行权限很高的远程 SQL，新生成的密码还会通过 NOTICE 输出，应限制客户端与服务器日志的访问。调用跨库升级器前，应审查并测试每个受影响扩展的升级。

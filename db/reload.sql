@@ -46,6 +46,10 @@ UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra', 'duckdb_fdw');
 -- too big, non-free, heavy extensions
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'fbsql', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2', 'pgml', 'pljava', 'rdkit', 'jdbc_fdw', 'odbc_fdw', 'pg_strom', 'db_fdw', 'informix_fdw' , 'oracle_fdw', 'pg_statviz');
 
+-- HDFS needs Java; OneSparse pulls in GraphBLAS and its runtime compiler.
+-- Keep individual aliases available, but leave both out of default groups.
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hdfs_fdw', 'one_sparse');
+
 -- exclude due to no license
 UPDATE pgext.pkg SET hide = true WHERE pkg in (SELECT pkg FROM pgext.extension WHERE license = 'Unknown');
 

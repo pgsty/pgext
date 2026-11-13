@@ -6,6 +6,10 @@ Sources:
 - [`documentdb_core` control file](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_core/documentdb_core.control)
 - [BSON SQL definitions](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
 - [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
+- [DocumentDB 1.2 release](https://github.com/documentdb/documentdb/releases/tag/v1.2-0)
+- [1.2 control](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb_core/documentdb_core.control)
+- [1.1 to 1.2 SQL](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb_core/sql/documentdb_core--1.1-0--1.2-0.sql)
+- [Official upgrade procedure](https://github.com/documentdb/documentdb/blob/v1.2-0/packaging/README.md)
 
 `documentdb_core` is the low-level BSON type and operator layer used by DocumentDB. It is normally installed as a dependency of `documentdb`; by itself it does not provide collection CRUD, the MongoDB wire protocol, or the gateway.
 
@@ -58,3 +62,7 @@ Use explicit schema qualification unless `documentdb_core` is in `search_path`.
 BSON comparison, indexing, and numeric semantics follow DocumentDB's implementation and should not be assumed to match PostgreSQL `jsonb`. Most objects are infrastructure for `documentdb`; applications seeking collections and MongoDB commands should use the parent extension or gateway rather than building directly on internal types.
 
 Use SQL extension version 1.0-0 with matching DocumentDB components. This core layer continues to supply BSON infrastructure; collection and gateway workflows belong to the parent extension.
+
+### DocumentDB 1.2 changes
+
+The 1.2 source declares SQL version `1.2-0` for `documentdb_core`, with the supplied 1.0 → 1.1 → 1.2 update chain. Upgrade it together with the API and index components using the official package or container procedure, after backing up data; a downgrade of updated data to 1.0 is unsupported. `bson_build_document` now accepts `timestamptz` as a BSON date at millisecond precision. Collation remains opt-in through `documentdb_core.enableCollation = on`; explicit `simple` collation is also rejected while that setting is off. Application tests should check comparison-sensitive queries after enabling it.

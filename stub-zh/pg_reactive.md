@@ -6,6 +6,9 @@
 - [Control file](https://api.pgxn.org/src/pg_reactive/pg_reactive-0.1.8/pg_reactive.control)
 - [Versioned extension SQL](https://api.pgxn.org/src/pg_reactive/pg_reactive-0.1.8/pg_reactive--0.1.8.sql)
 - [Module initialization](https://api.pgxn.org/src/pg_reactive/pg_reactive-0.1.8/src/pg_reactive.c)
+- [Current standalone extension guide](https://github.com/ndokutovich/pg_reactive/blob/4e14073a5a714a40ae60ae01dba81d02e30b30a8/ext/README.md)
+- [Current extension control](https://github.com/ndokutovich/pg_reactive/blob/4e14073a5a714a40ae60ae01dba81d02e30b30a8/ext/pg_reactive.control)
+- [Project changelog](https://github.com/ndokutovich/pg_reactive/blob/4e14073a5a714a40ae60ae01dba81d02e30b30a8/CHANGELOG.md)
 
 `pg_reactive` 将 PostgreSQL SELECT 查询注册为订阅，通过 LISTEN/NOTIFY 发送结果集变化。0.1.8 支持 PostgreSQL 15–18，需要预加载并重启，订阅管理接口位于 `pgr` 模式中，须由受信任的角色使用。
 
@@ -13,7 +16,7 @@
 
 将库加入现有预加载列表，然后重启 PostgreSQL。安装脚本还使用 `plpgsql`，通常已由数据库默认安装。
 
-```conf
+```ini
 shared_preload_libraries = 'pg_reactive'
 pg_reactive.max_subscriptions = 1024
 ```
@@ -75,4 +78,4 @@ SELECT pgr.restore_subscriptions();
 
 发生通知溢出、快照列结构变化、序号缺失或重新连接时，客户端应重新读取完整结果。通知共用一个频道，不是持久化投递队列。注册代次用于区分重新订阅，客户端或代理须丢弃过时代次。即使变化行很少，重算大型结果集也会增加写入开销。
 
-已核对的 PGXN 发布归档包含控制文件、SQL 和 C 源码。核验时，其声明的 GitHub 仓库返回 404；本版本以以上带版本的 PGXN 源码为依据。
+GitHub 仓库现已可访问。其 pgStack 平台 0.3.5 发行包含并发调用 `pgr.unsubscribe()` 时的加锁顺序修复，而扩展 SQL 版本仍为 0.1.8。这是源码与库的修复，没有提高扩展 SQL 版本；较早的 PGXN 0.1.8 压缩包是独立制品。判断修复是否生效前，应确认已安装库来自哪个源码修订。

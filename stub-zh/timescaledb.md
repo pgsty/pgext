@@ -12,6 +12,9 @@
 - [连续聚合 API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)
 - [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/)
 - [TimescaleDB GUC](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
+- [2.32.0 release and compatibility limits](https://github.com/timescale/timescaledb/releases/tag/2.32.0)
+- [2.32.0 version declaration](https://github.com/timescale/timescaledb/blob/2.32.0/version.config)
+- [2.31 to 2.32 SQL upgrade](https://github.com/timescale/timescaledb/blob/2.32.0/sql/updates/2.31.0--2.32.0.sql)
 
 `timescaledb` 是用于时序与事件分析的 PostgreSQL 扩展。当前文档重点介绍 `CREATE TABLE ... WITH (tsdb.hypertable)`、连续聚合、自动化作业，以及将数据块迁移到列存储的用法。
 
@@ -19,7 +22,7 @@
 
 将 `timescaledb` 加入现有预加载列表，重启 PostgreSQL 后再创建扩展。版本 `2.30.2` 支持 PostgreSQL 16、17 和 18。
 
-```conf
+```ini
 shared_preload_libraries = 'timescaledb'
 ```
 
@@ -121,5 +124,16 @@ SET timescaledb.enable_columnar_scan_filter_pushdown = on;
 
 ```sql
 ALTER EXTENSION timescaledb UPDATE TO '2.30.2';
+SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
+```
+
+### 2.32.0 升级边界
+
+2.32.0 只兼容至 PostgreSQL 18.6、17.11 和 16.15。上游要求先达到 TimescaleDB 2.32.1，再升级到高于这些版本的 PostgreSQL 次版本；不能据此认为 2.32.0 支持不受限制的 PostgreSQL 次版本升级。安装匹配的扩展文件，并为加载器变化重启 PostgreSQL，随后沿受支持的路径逐库升级扩展。
+
+此版本会在停止或重启后台工作进程前检查数据库所有权，并以数据库所有者运行调度器与遥测任务，应复核该角色权限。它还修复了 `READ COMMITTED` 下并发 `UPDATE`/`DELETE` 跳过行、连续聚合遗漏最后时间桶以及压缩崩溃的问题。自适应整数压缩默认启用。升级会移除内部辅助函数 `bloom1_contains`，应用不应依赖内部接口。
+
+```sql
+ALTER EXTENSION timescaledb UPDATE TO '2.32.0';
 SELECT extversion FROM pg_extension WHERE extname = 'timescaledb';
 ```

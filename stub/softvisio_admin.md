@@ -2,18 +2,27 @@
 
 Sources:
 
-- [Upstream README at the reviewed commit](https://github.com/softvisio/postgresql-softvisio-admin/blob/67e923d3761b0ede5adb16a3ec9cf47779d8099e/README.md)
-- [Version 1.2.9 SQL objects](https://github.com/softvisio/postgresql-softvisio-admin/blob/67e923d3761b0ede5adb16a3ec9cf47779d8099e/softvisio_admin--1.2.9.sql)
-- [Extension control file](https://github.com/softvisio/postgresql-softvisio-admin/blob/67e923d3761b0ede5adb16a3ec9cf47779d8099e/softvisio_admin.control)
+- [Control](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin.control)
+- [Version 1.7.0 SQL](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin--1.7.0.sql)
+- [Installed SQL files](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/Makefile)
+- [Changelog](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/CHANGELOG.md)
 
-`softvisio_admin` is a pure-SQL administration extension for creating an application database and role, reporting outdated extensions across a cluster, and updating installed extensions across databases.
+`softvisio_admin` 1.7.0 provides SQL/PL/pgSQL helpers for database and role provisioning and cluster-wide extension inventory or updates. Installation requires a superuser, `dblink` and `pgcrypto`; no native library or preload is required.
+
+### Provision and inspect
+
+The actual 1.7.0 SQL exposes `create_database(name text)` with one argument. It creates a missing login role with a generated password, creates a UTF8 database from `template0` using ICU locale `und` and `C.UTF-8`, then assigns ownership and creates its schema. The server must support this locale configuration. The older README's optional collation argument does not match this SQL version.
 
 ```sql
 CREATE EXTENSION softvisio_admin CASCADE;
-CALL create_database('appdb', 'C.UTF-8');
+CALL create_database('appdb');
 SELECT * FROM outdated_extensions();
 ```
 
-`create_database` creates a role with a random password when needed, creates the database, and grants privileges. `update_extensions()` performs cluster-wide extension updates rather than a read-only check.
+### Cross-database operations
 
-These operations require broad administrative authority and can affect every database. Install in a dedicated administration database, revoke execution from `PUBLIC`, grant only to a controlled operator role, and capture generated credentials through an approved secret workflow. Review the SQL for dynamic identifiers and remote database connections. Take backups and test all extension update paths before calling `update_extensions()`; extension upgrades can run arbitrary migration SQL, take locks, change objects, or fail partway across the cluster. Do not expose these routines to application roles.
+`outdated_extensions()` visits connectable, non-template databases through dblink and compares installed and default versions. `update_extensions()` performs updates across those databases, using the PostGIS upgrade helper where appropriate. It can report remote errors as notices and continue; inspect returned installed versions and notices. Remote statements commit independently, so failure does not roll back earlier databases or provisioning steps.
+
+### Upgrade and access boundaries
+
+The 1.7.0 source installs only the new base SQL file and removes historical upgrade scripts. An existing older installation therefore has no ordinary update path supplied by this distribution alone. Check `pg_extension_update_paths('softvisio_admin')` and preserve a reviewed migration plan before changing server files; do not assume `ALTER EXTENSION UPDATE` will succeed. Keep these routines restricted to trusted administrators. They issue powerful remote SQL, and a newly generated password is printed in a NOTICE; keep client and server logging access controlled. Review and test every affected extension's upgrade before invoking the cluster-wide updater.

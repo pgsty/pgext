@@ -2,13 +2,16 @@
 
 来源：
 
-- [PGXN 元数据](https://api.pgxn.org/dist/pg_integrity_checksums/2.3.0/META.json)
-- [官方 README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/README.md)
-- [控制文件](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/pg_integrity_checksums.control)
-- [函数参考](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/docs/functions.md)
-- [运维指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/docs/operations.md)
-- [升级 SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/pg_integrity_checksums--2.2.0--2.3.0.sql)
-- [迁移指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/MIGRATION.md)
+- [PGXN 元数据](https://api.pgxn.org/dist/pg_integrity_checksums/2.5.0/META.json)
+- [官方 README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/README.md)
+- [控制文件](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums.control)
+- [函数参考](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/functions.md)
+- [运维指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/operations.md)
+- [升级 SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.2.0--2.3.0.sql)
+- [迁移指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/MIGRATION.md)
+- [Upgrade and baseline guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/installation.md)
+- [2.4 upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.3.0--2.4.0.sql)
+- [2.5 upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.4.0--2.5.0.sql)
 
 `pg_integrity_checksums` 为 PostgreSQL 页面、单元、元组、表、索引和数据库计算物理及逻辑校验和。此 C 扩展的上游支持 PostgreSQL 12–19，目录中的 Pigsty 软件包覆盖 PostgreSQL 14–18。安装和数据库级扫描需要超级用户。
 
@@ -18,12 +21,22 @@
 CREATE EXTENSION pg_integrity_checksums;
 ```
 
-### 2.3.0 版本与页面校验
+### 升级到 2.5.0
 
-2.3.0 新增 `pg_page_checksum_status(regclass, integer)`，将页面计算所得的 16 位校验和与已存储的 `pd_checksum` 比较。安装匹配的库和 SQL 文件后，可升级已有的 2.2.0 扩展：
+2.5.0 将 `pg_integrity_checksums.strict` 默认设为 `on`：关系无法检查时，数据库级校验会失败，包括无效索引、不支持的访问方法或扫描错误。显式设置为 `off` 可保留跳过并告警的行为；告警现在会统计跳过的关系。新库的默认值在新会话中生效。安装匹配文件后重新连接，并更新 SQL 版本：
 
 ```sql
-ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.3.0';
+ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.5.0';
+SHOW pg_integrity_checksums.strict;
+```
+
+此次升级包含的 2.4.0 修复会影响部分旧基线：存在已删除列或复合类型属性、用户类型的模式不在 `search_path` 中，以及物理元组头使用 `include_header = true` 的情况。升级后应重新计算并审查这些基线。其他校验和值不变，2.5.0 本身不改变校验算法。升级还撤销了通用数据库级重载的公共执行权限；这些函数此前已在 C 代码中限制为超级用户调用。
+
+### 2.3.0 版本与页面校验
+
+2.3.0 新增 `pg_page_checksum_status(regclass, integer)`，将页面计算所得的 16 位校验和与已存储的 `pd_checksum` 比较。升级后仍可执行以下检查：
+
+```sql
 SHOW data_checksums;
 SELECT pg_page_checksum_status('public.orders'::regclass, 0);
 ```

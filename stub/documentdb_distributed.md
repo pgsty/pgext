@@ -6,6 +6,10 @@ Sources:
 - [DocumentDB package scope](https://github.com/documentdb/documentdb/blob/v1.0-0/packaging/README.md)
 - [Official preload helper](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
 - [DocumentDB v1.0-0 changelog](https://github.com/documentdb/documentdb/blob/v1.0-0/CHANGELOG.md)
+- [DocumentDB 1.2 release](https://github.com/documentdb/documentdb/releases/tag/v1.2-0)
+- [1.2 control](https://github.com/documentdb/documentdb/blob/v1.2-0/internal/pg_documentdb_distributed/documentdb_distributed.control)
+- [1.1 to 1.2 SQL](https://github.com/documentdb/documentdb/blob/v1.2-0/internal/pg_documentdb_distributed/sql/documentdb_distributed--1.1-0--1.2-0.sql)
+- [Official upgrade procedure](https://github.com/documentdb/documentdb/blob/v1.2-0/packaging/README.md)
 
 `documentdb_distributed` is DocumentDB's internal multi-node execution layer. It integrates the public `documentdb` API with Citus; it is not a standalone document API and does not add a separate client workflow.
 
@@ -39,3 +43,7 @@ Use the normal DocumentDB gateway or `documentdb_api` functions after installati
 - Backup, restore, failover, and rolling-upgrade procedures must include both Citus metadata and DocumentDB data.
 
 This component lives under the upstream internal directory. Confirm that the selected distribution actually ships its control file, SQL and library before enabling it; a base DocumentDB package alone is not evidence of distributed-component availability. Keep Citus and all DocumentDB components on compatible builds.
+
+### DocumentDB 1.2 changes
+
+The internal component's own control and update SQL in the 1.2 source declare `1.2-0`; this does not make it part of the public package baseline. Keep all nodes and the API/core libraries on a compatible release and follow a reviewed distributed upgrade plan. Public single-node package/container instructions do not establish a supported Citus cluster rollout. Back up before upgrading, and do not downgrade updated DocumentDB data to 1.0.

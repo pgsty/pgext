@@ -6,6 +6,10 @@
 - [DocumentDB 包范围](https://github.com/documentdb/documentdb/blob/v1.0-0/packaging/README.md)
 - [官方预加载助手](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
 - [DocumentDB v1.0-0 更新日志](https://github.com/documentdb/documentdb/blob/v1.0-0/CHANGELOG.md)
+- [DocumentDB 1.2 release](https://github.com/documentdb/documentdb/releases/tag/v1.2-0)
+- [1.2 control](https://github.com/documentdb/documentdb/blob/v1.2-0/internal/pg_documentdb_distributed/documentdb_distributed.control)
+- [1.1 to 1.2 SQL](https://github.com/documentdb/documentdb/blob/v1.2-0/internal/pg_documentdb_distributed/sql/documentdb_distributed--1.1-0--1.2-0.sql)
+- [Official upgrade procedure](https://github.com/documentdb/documentdb/blob/v1.2-0/packaging/README.md)
 
 `documentdb_distributed` 是 DocumentDB 的内部多节点执行层。它将公共 `documentdb` API 与 Citus 集成；它不是一个独立的文档 API，并不会增加单独的客户端工作流程。
 
@@ -39,3 +43,7 @@ WHERE extname IN ('citus', 'documentdb_core', 'documentdb', 'documentdb_distribu
 - 备份、恢复、故障转移以及滚动升级流程必须包括 Citus 元数据和 DocumentDB 数据。
 
 该组件位于上游 internal 目录中。启用前须确认所用发行包确实包含它的控制文件、SQL 和库；存在基础 DocumentDB 软件包不能证明分布式组件可用。Citus 与所有 DocumentDB 组件须使用兼容的构建。
+
+### DocumentDB 1.2 变化
+
+1.2 源码中，此内部组件自己的控制文件与升级 SQL 声明版本 `1.2-0`，这不意味着它进入公共打包基线。所有节点与 API/core 库必须使用兼容版本，并按经过审查的分布式升级方案执行。公开的单节点包和容器说明不能证明某个 Citus 集群升级流程受支持。升级前应备份，不能把已升级的 DocumentDB 数据降回 1.0。

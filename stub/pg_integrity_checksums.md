@@ -2,13 +2,16 @@
 
 Sources:
 
-- [PGXN metadata](https://api.pgxn.org/dist/pg_integrity_checksums/2.3.0/META.json)
-- [Official README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/README.md)
-- [Control file](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/pg_integrity_checksums.control)
-- [Function reference](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/docs/functions.md)
-- [Operations guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/docs/operations.md)
-- [Upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/pg_integrity_checksums--2.2.0--2.3.0.sql)
-- [Migration guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.3.0/MIGRATION.md)
+- [PGXN metadata](https://api.pgxn.org/dist/pg_integrity_checksums/2.5.0/META.json)
+- [Official README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/README.md)
+- [Control file](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums.control)
+- [Function reference](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/functions.md)
+- [Operations guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/operations.md)
+- [Upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.2.0--2.3.0.sql)
+- [Migration guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/MIGRATION.md)
+- [Upgrade and baseline guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/installation.md)
+- [2.4 upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.3.0--2.4.0.sql)
+- [2.5 upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.4.0--2.5.0.sql)
 
 `pg_integrity_checksums` computes physical and logical checksums for PostgreSQL pages, cells, tuples, tables, indexes and databases. This C extension supports PostgreSQL 12–19 upstream; the catalog's Pigsty packages target PostgreSQL 14–18. Installation and database-wide checks require a superuser.
 
@@ -18,12 +21,22 @@ Sources:
 CREATE EXTENSION pg_integrity_checksums;
 ```
 
-### Version 2.3.0 and page verification
+### Upgrade to 2.5.0
 
-Version 2.3.0 adds `pg_page_checksum_status(regclass, integer)`, which compares a page's calculated 16-bit checksum with its stored `pd_checksum`. After installing the matching library and SQL files, upgrade an existing 2.2.0 installation:
+Version 2.5.0 defaults `pg_integrity_checksums.strict` to `on`: database-wide checks fail if a relation cannot be checked, including invalid indexes, unsupported access methods or scan errors. Setting it to `off` explicitly preserves skip-with-warning behavior; warnings now count skipped relations. The new library default takes effect in new sessions. Install matching files, reconnect and update the SQL version:
 
 ```sql
-ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.3.0';
+ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.5.0';
+SHOW pg_integrity_checksums.strict;
+```
+
+The 2.4.0 changes included in this upgrade affect older baselines for dropped columns or composite attributes, user-defined types whose schema was outside `search_path`, and physical tuple headers with `include_header = true`. Recompute and review those baselines after upgrading. Other checksum values are unchanged; 2.5.0 itself changes no checksum algorithm. The upgrade also revokes public execution of generic database-wide overloads, which already enforce superuser access in C.
+
+### Version 2.3.0 and page verification
+
+Version 2.3.0 adds `pg_page_checksum_status(regclass, integer)`, which compares a page's calculated 16-bit checksum with its stored `pd_checksum`. The following checks remain available after the upgrade:
+
+```sql
 SHOW data_checksums;
 SELECT pg_page_checksum_status('public.orders'::regclass, 0);
 ```

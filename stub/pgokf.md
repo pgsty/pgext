@@ -8,6 +8,10 @@ Sources:
 - [Upgrade contract](https://github.com/LogicOcean/pgokf/blob/v0.4.0/docs/api-stability.md)
 - [Release and upgrade details](https://github.com/LogicOcean/pgokf/releases/tag/v0.4.0)
 - [pgrx manifest](https://github.com/LogicOcean/pgokf/blob/v0.4.0/crates/extension/Cargo.toml)
+- [0.5.0 release](https://github.com/LogicOcean/pgokf/releases/tag/v0.5.0)
+- [0.5.0 changelog](https://github.com/LogicOcean/pgokf/blob/v0.5.0/CHANGELOG.md)
+- [0.4 to 0.5 upgrade SQL](https://github.com/LogicOcean/pgokf/blob/v0.5.0/crates/extension/sql/pgokf--0.4.0--0.5.0.sql)
+- [Confluence ingestion](https://github.com/LogicOcean/pgokf/blob/v0.5.0/docs/confluence-integration.md)
 
 `pgokf` materializes Open Knowledge Format bundles into a transactional PostgreSQL catalog with full-text search, a link graph, provenance, optional semantic search, and tenant isolation.
 
@@ -61,3 +65,13 @@ SELECT extversion FROM pg_extension WHERE extname = 'pgokf';
 ```
 
 The supplied chain covers earlier 0.1, 0.2, 0.3 and development versions. It reconciles superseded search overloads only when their exact definitions, grants and dependencies match the expected old catalog; an unexpected shape aborts the update. Do not force-drop dependent objects to bypass that guard. The declared older web-table column ordering is retained. SQL catalog changes and the separately deployed MCP/web companions must be upgraded according to their own contracts.
+
+### Version 0.5.0 companions and upgrade
+
+Version 0.5.0 leaves catalog objects and data unchanged from 0.4.0; its supplied update script advances the extension version. After installing matching server files, use the ordinary upgrade path:
+
+```sql
+ALTER EXTENSION pgokf UPDATE TO '0.5.0';
+```
+
+The separate `pgokf-confluence` companion previews a complete Confluence Cloud space and writes a dedicated bundle only with `--apply`. It records producer provenance, uses a durable checkpoint and requires `--allow-deletions` for reviewed page removals. It is for a shared audience: Confluence page restrictions are not copied into PostgreSQL permissions. Keep its token in a private file or `CONFLUENCE_API_TOKEN`. Companion `--tls` / `OKF_PG_TLS` now enforces at least `sslmode=require`, refusing a server that declines TLS instead of silently falling back to plaintext; use stricter certificate verification when needed. These companion changes do not run Confluence ingestion or external embedding inside the extension backend.

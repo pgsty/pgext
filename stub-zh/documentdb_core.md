@@ -6,6 +6,10 @@
 - [`documentdb_core` 控制文件](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_core/documentdb_core.control)
 - [BSON SQL定义](https://github.com/documentdb/documentdb/blob/v1.0-0/pg_documentdb_core/sql/udfs/bson_io/bson_io--latest.sql)
 - [官方预加载助手](https://github.com/documentdb/documentdb/blob/v1.0-0/scripts/preload_libraries.sh)
+- [DocumentDB 1.2 release](https://github.com/documentdb/documentdb/releases/tag/v1.2-0)
+- [1.2 control](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb_core/documentdb_core.control)
+- [1.1 to 1.2 SQL](https://github.com/documentdb/documentdb/blob/v1.2-0/pg_documentdb_core/sql/documentdb_core--1.1-0--1.2-0.sql)
+- [Official upgrade procedure](https://github.com/documentdb/documentdb/blob/v1.2-0/packaging/README.md)
 
 `documentdb_core` 是DocumentDB使用的低层BSON类型和操作符层。通常它作为 `documentdb` 的依赖项安装，自身不提供集合CRUD、MongoDB网络协议或网关。
 
@@ -58,3 +62,7 @@ SELECT documentdb_core.bson_get_value_text(
 BSON比较、索引和数值语义遵循DocumentDB的实现，不应假设与PostgreSQL `jsonb` 匹配。大多数对象是 `documentdb` 的基础架构；寻求集合和MongoDB命令的应用程序应使用父扩展或网关而非直接构建在内部类型上。
 
 使用 SQL 扩展版本 1.0-0，并与其他 DocumentDB 组件保持匹配。核心层仍提供 BSON 基础能力，集合操作和网关工作流由上层扩展承担。
+
+### DocumentDB 1.2 变化
+
+1.2 源码将 `documentdb_core` 的 SQL 版本设为 `1.2-0`，并提供 1.0 → 1.1 → 1.2 升级链。备份数据后，应按官方包或容器流程，与 API 和索引组件一起升级；不支持将升级后的数据降回 1.0。`bson_build_document` 现在可把 `timestamptz` 转成毫秒精度 BSON 日期。排序规则仍需显式设置 `documentdb_core.enableCollation = on`，关闭时也会拒绝显式 `simple` 排序规则。启用后应测试受比较语义影响的应用查询。
