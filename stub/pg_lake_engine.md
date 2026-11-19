@@ -2,6 +2,12 @@
 
 Sources:
 
+- [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
+
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/table-options.md)
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/iceberg-catalogs.md)
+
 - [Official pg_lake architecture overview](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/README.md#architecture)
 - [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine.control)
 - [Base SQL objects](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.0.sql)
@@ -54,3 +60,11 @@ Use `to_postgres()` only when an expression cannot or should not be pushed down;
 ### Upstream 3.6.0
 
 Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. The engine migration adds internal UUID pushdown wrappers. They are planner/deparser plumbing, not a general-purpose application API.
+
+### Upstream 3.6.1 runtime update
+
+Deploy the matching 3.6.1 `pgduck_server` with the extension libraries. This patch backports a Brotli decoder security correction and reduces the query server's S3 uploader maximum file size to 50 GB. SQL remains 3.6; an unchanged SQL version does not prove the patched query server is installed. The C COPY-query export interface is internal integration work, not a new SQL function in this component.
+
+### Upstream 3.6.2
+
+The 3.6.2 patch corrects byte-by-byte CSV-value transmission in pgduck_server. Deploy the matching query-server binary with the extension libraries and reconnect/restart processes holding old code. The component SQL version remains 3.6; an unchanged extversion does not prove the query-server fix is installed. Package availability remains a separate catalog fact.

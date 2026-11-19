@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/CHANGELOG.md)
 
-`pg_pureu` executes untrusted Pure scalar functions inside PostgreSQL and exposes SPI database access. It belongs to distribution `pg_pure` 0.6.0, with SQL version 0.1. Only superusers may create functions in this language: Pure can call arbitrary native functions through `extern`.
+`pg_pureu` executes untrusted Pure scalar functions inside PostgreSQL and exposes SPI database access. It belongs to distribution `pg_pure` 0.7.0, with SQL version 0.1. Only superusers may create functions in this language: Pure can call arbitrary native functions through `extern`.
 
 ### Core Workflow
 
@@ -30,6 +30,11 @@ The language installs call, inline and validation handlers. Scalar SQL types inc
 
 ### Configuration and Failure Boundaries
 
-The shared library is `pg_pure`, including for this sibling. Optional `shared_preload_libraries` loading warms the interpreter in the postmaster and needs a restart; otherwise initialization happens in each backend. `pg_pure.using` defaults to `math`. Query cancellation and stack-overflow hooks are implemented; global definitions made with `eval` are not transactional and survive rollback.
+The shared library is `pg_pure`, including for this sibling. Optional `shared_preload_libraries` loading needs a restart, but postmaster warmup does not remove the first-call initialization cost in forked backends; connection pooling avoids repeated initialization. `pg_pure.using` defaults to `math`. Query cancellation and stack-overflow hooks are implemented; global definitions made with `eval` are not transactional and survive rollback.
 
 The embeddable libpure fork at revision ab12de13 or later hides its LLVM symbols and supports normal PostgreSQL JIT. The old JIT incompatibility guidance no longer applies. The trusted `pg_pure` sibling now executes in a separate safe-mode interpreter; this does not restrict the native-code powers of the untrusted language. The compiled `gsl::linalg::cholesky_solve` solver in 0.6.0 needs the matching Pure module. Untrusted bodies may import installed modules with `using`; trusted bodies rely on the DBA's allowlist. Deploy matching libraries and replace sessions that loaded an older version; SQL version 0.1 alone does not identify the distribution release.
+
+
+### Distribution 0.7.0
+
+`bytea` maps to a Pure integer row matrix, preserving arbitrary binary data including NUL bytes; elements outside 0..255 raise an error. Domain arguments and results use their base types while enforcing domain constraints. The preceding 0.6.1 patch fixes numeric precision, sign and scale conversion. Version 0.6.2 rejects trusted bodies and DO blocks that escape their single-expression wrapper and leak rules into another function in the same backend. Deploy the corrected library and replace old sessions; SQL version remains 0.1.

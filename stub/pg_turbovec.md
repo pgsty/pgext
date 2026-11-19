@@ -2,14 +2,17 @@
 
 Sources:
 
-- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/PRODUCTION.md)
-- [v2.15.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/README.md)
-- [v2.15.0 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/CHANGELOG.md)
-- [Upgrade matrix](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/UPGRADING.md)
-- [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/pg_turbovec.control)
-- [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.15.0/docs/FILTERING.md)
+- [2.16.1 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/CHANGELOG.md)
+- [2.16.1 control](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/pg_turbovec.control)
+- [2.16.1 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.1/README.md)
+- [Threads per query](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/PRODUCTION.md)
+- [v2.16.0 README](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/README.md)
+- [v2.16.0 changelog](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/CHANGELOG.md)
+- [Upgrade matrix](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/UPGRADING.md)
+- [Control file](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/pg_turbovec.control)
+- [Filtering guide](https://api.pgxn.org/src/pg_turbovec/pg_turbovec-2.16.0/docs/FILTERING.md)
 
-`pg_turbovec` 2.15.0 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
+`pg_turbovec` 2.16.0 provides the `turbovec.vector` type and compact vector indexes with candidate reranking against the original heap vectors. Flat search scans quantized codes; IVF additionally searches selected cells. Both are approximate unless the candidate set contains every true neighbour. **Upgrading any 1.x index to 2.x requires rebuilding it.**
 
 ### Create and Query Vectors
 
@@ -117,6 +120,18 @@ Version 2.14.1 fixes stale backend caches after overlapping commits, loss of IVF
 
 Two histories require a one-time REINDEX: an IVF index that received inserts after VACUUM on an earlier release, and any index emptied by VACUUM while a writer transaction remained open. On a quiet table, `VACUUM (INDEX_CLEANUP ON)` followed by `turbovec.turbovec_check(regclass)` can help compare the estimated live index entries with the covered heap rows. Include the non-null vector condition and any partial-index predicate; excess index entries require REINDEX. Other healthy 2.x indexes need no routine rebuild. This does not remove the mandatory 1.x rebuild or repair of existing corruption.
 
+### 2.15.2 REINDEX and VACUUM Fixes
+
+Version 2.15.2 drops a dirty per-backend mutation cache entry when a `REINDEX` keeps the relation OID but changes its relfilenode, then reloads the rebuilt file. It also keeps the flat-index vector count and moved slot in one WAL record, so a cancelled VACUUM cannot leave duplicate IDs. The wire format, SQL surface and scores remain unchanged; healthy 2.x indexes need no REINDEX. Reconnect long-lived writers after replacing the library; repair an index already corrupted by the older VACUUM bug with a plain `REINDEX INDEX`.
+
 ### 2.15.0 Empty IVF and Scan Caches
 
 An IVF index built empty is now reported as degraded, and scanning it after loading rows correctly falls back to a flat scan instead of failing when the rotation dimension is uninitialized. Query vectors stored out of line are decoded once per expression, and IVF rotation matrices are cached. Format 8, scoring and SQL objects remain unchanged. Install matching files, update to 2.15.0 and recycle old-library connections; healthy 2.x indexes need no routine REINDEX. Rebuild an empty-built IVF after loading if trained cells are wanted; adding only the new degraded-report flag to an existing empty build is optional. Earlier 1.x migration and corruption-repair requirements remain.
+
+### 2.16.0 IVF E-means Trainer
+
+Version 2.16.0 trains IVF coarse centroids with e-means by default, replacing the previous Lloyd trainer. The new `turbovec.ivf_use_emeans` boolean GUC defaults to `on`; set it to `off` before `CREATE INDEX` or `REINDEX` to retain Lloyd. `turbovec.ivf_emeans_epochs` defaults to 4 and accepts 1 through 64. This is a build-time choice: the SQL surface and wire format remain unchanged, existing indexes continue to read, and no forced REINDEX is required. Reindex an IVF index only when adopting centroids trained by the new method, and reconnect long-lived sessions after replacing the library.
+
+### 2.16.1 Locked Build Fix
+
+Version 2.16.1 commits the `Cargo.lock` matching the turbovec dependency required by 2.16.0, so locked, offline and Nix builds work from the release tag. Runtime behavior, wire format, SQL surface and scores are unchanged; healthy 2.x indexes do not need REINDEX. The normal update is `ALTER EXTENSION pg_turbovec UPDATE TO '2.16.1';`, followed by reconnecting sessions so they load the replacement library.

@@ -2,36 +2,30 @@
 
 来源：
 
-- [官方上游 README](https://github.com/turbot/steampipe-postgres-fdw/blob/f8098e5e79cda44af01fcb9cd77b9ac684e70690/fdw/README.md)
-- [官方扩展控制文件 (steampipe_postgres_fdw.control)](https://github.com/turbot/steampipe-postgres-fdw/blob/f8098e5e79cda44af01fcb9cd77b9ac684e70690/fdw/steampipe_postgres_fdw.control)
-- [官方扩展 SQL (steampipe_postgres_fdw--1.0.sql)](https://github.com/turbot/steampipe-postgres-fdw/blob/f8098e5e79cda44af01fcb9cd77b9ac684e70690/fdw/steampipe_postgres_fdw--1.0.sql)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/README.md)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/fdw/steampipe_postgres_fdw.control)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/fdw/steampipe_postgres_fdw--1.0.sql)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/CHANGELOG.md)
 
-`steampipe_postgres_fdw` — Fdw 是一个用 Go 编写的 Postgres 外部数据封装接口。动态外部表通过 gRPC 插件定义，使其安全、高效且易于构建。当 PostgreSQL 需要通过外部数据接口访问相应的外部数据源时，请使用此扩展。在目标 PostgreSQL 构建中测试链接的上游修订版本作为 API 边界。
+steampipe_postgres_fdw 将 Steampipe 插件暴露为 PostgreSQL 外部表。分发版本 2.3.1 保留扩展 SQL 版本 1.0。核心 FDW 通过 gRPC 连接插件服务；针对单个插件生成的独立扩展属于不同构建。
 
-### 核心工作流
+### 启用与连接
 
 ```sql
 CREATE EXTENSION steampipe_postgres_fdw;
-
-create server
-  fdw_aws
-foreign data wrapper
-  fdw
-options (
-  wrapper 'aws'
-);
+CREATE SERVER fdw_aws
+  FOREIGN DATA WRAPPER steampipe_postgres_fdw
+  OPTIONS (wrapper 'aws');
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小示例，并在将其集成到应用程序 SQL 中之前验证已安装的版本和返回值。
+安装 SQL 中的包装器名称是 steampipe_postgres_fdw，旧架构示例将其简称为 fdw。导入或声明服务商外部表前，应配置兼容的插件服务及凭据。核心库需要管理员安装，但无需预加载；应匹配服务器 ABI，并遵循所选部署方式的插件配置说明。
 
-### 重要对象
+### 版本 2.3.0
 
-- `fdw_handler()` 是一个扩展函数，返回 `fdw_handler`。
-- `fdw_validator(text[], oid)` 是一个扩展函数，返回 `void`。
-- `steampipe_postgres_fdw` 是一个扩展定义的外部数据封装。
+该版本修复了运行期参数条件导致的崩溃和错误结果，包括 LATERAL 引用与子查询。扫描遭遇取消、statement_timeout 或插件错误时现在会失败，不再把部分行集当成完整结果。重复或非法连接名以及格式错误的配置文件会被跳过并产生警告；应检查警告，不能假设所有连接都已加载。
 
-### 要求与注意事项
+独立 FDW 标记为 parallel safe，并从 PostgreSQL 服务器环境读取 GOGC/GOMEMLIMIT。这些是进程设置，不是 SQL GUC。旧 cache_off 命令也已修复。替换匹配库后，应重连或重启已加载旧代码的进程；单凭 extversion 1.0 无法判断运行库是否包含修复。远端 API 仍有各自的权限、分页、一致性和速率限制。
 
-- 审查后的控制文件声明默认版本为 `1.0`。
-- 控制文件将扩展标记为可重定位。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况与固定源进行验证。
+### 分发版本 2.3.1
+
+2.3.1 回补 Darwin 交叉编译及镜像发布流程修复，保留 SQL 版本 1.0，没有增加新的 SQL 使用流程；上述 2.3.0 运行期修复仍然适用。

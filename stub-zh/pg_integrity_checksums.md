@@ -2,16 +2,28 @@
 
 来源：
 
-- [PGXN 元数据](https://api.pgxn.org/dist/pg_integrity_checksums/2.5.0/META.json)
-- [官方 README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/README.md)
-- [控制文件](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums.control)
-- [函数参考](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/functions.md)
-- [运维指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/operations.md)
-- [升级 SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.2.0--2.3.0.sql)
-- [迁移指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/MIGRATION.md)
-- [Upgrade and baseline guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/docs/installation.md)
-- [2.4 upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.3.0--2.4.0.sql)
-- [2.5 upgrade SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.5.0/pg_integrity_checksums--2.4.0--2.5.0.sql)
+- [当前版本资料](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/README.md)
+- [当前版本资料](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/pg_integrity_checksums.control)
+- [当前版本资料](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/Changes)
+- [当前版本资料](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.1/pg_integrity_checksums--2.9.0--2.9.1.sql)
+
+- [2.9.0 Changes](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.0/Changes)
+- [2.8.0 到 2.9.0 SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.0/pg_integrity_checksums--2.8.0--2.9.0.sql)
+- [2.9.0 控制文件](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.0/pg_integrity_checksums.control)
+- [2.9.0 函数参考](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.9.0/docs/functions.md)
+- [当前上游](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/Changes)
+- [当前上游](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/pg_integrity_checksums--2.6.0--2.7.0.sql)
+
+- [PGXN 元数据](https://api.pgxn.org/dist/pg_integrity_checksums/2.7.0/META.json)
+- [官方 README](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/README.md)
+- [控制文件](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/pg_integrity_checksums.control)
+- [函数参考](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/docs/functions.md)
+- [运维指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/docs/operations.md)
+- [2.5 到 2.6 升级 SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/pg_integrity_checksums--2.5.0--2.6.0.sql)
+- [2.4 升级 SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/pg_integrity_checksums--2.3.0--2.4.0.sql)
+- [2.5 升级 SQL](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/pg_integrity_checksums--2.4.0--2.5.0.sql)
+- [迁移指南](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/MIGRATION.md)
+- [Upgrade and baseline guide](https://api.pgxn.org/src/pg_integrity_checksums/pg_integrity_checksums-2.7.0/docs/installation.md)
 
 `pg_integrity_checksums` 为 PostgreSQL 页面、单元、元组、表、索引和数据库计算物理及逻辑校验和。此 C 扩展的上游支持 PostgreSQL 12–19，目录中的 Pigsty 软件包覆盖 PostgreSQL 14–18。安装和数据库级扫描需要超级用户。
 
@@ -20,17 +32,6 @@
 ```sql
 CREATE EXTENSION pg_integrity_checksums;
 ```
-
-### 升级到 2.5.0
-
-2.5.0 将 `pg_integrity_checksums.strict` 默认设为 `on`：关系无法检查时，数据库级校验会失败，包括无效索引、不支持的访问方法或扫描错误。显式设置为 `off` 可保留跳过并告警的行为；告警现在会统计跳过的关系。新库的默认值在新会话中生效。安装匹配文件后重新连接，并更新 SQL 版本：
-
-```sql
-ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.5.0';
-SHOW pg_integrity_checksums.strict;
-```
-
-此次升级包含的 2.4.0 修复会影响部分旧基线：存在已删除列或复合类型属性、用户类型的模式不在 `search_path` 中，以及物理元组头使用 `include_header = true` 的情况。升级后应重新计算并审查这些基线。其他校验和值不变，2.5.0 本身不改变校验算法。升级还撤销了通用数据库级重载的公共执行权限；这些函数此前已在 C 代码中限制为超级用户调用。
 
 ### 2.3.0 版本与页面校验
 
@@ -75,3 +76,31 @@ SELECT pg_database_logical_checksum(false, true);
 ### 权限与维护
 
 关系级函数要求表级 `SELECT` 权限，并拒绝受行级安全策略保护的关系，因为直接存储扫描无法应用 RLS；仅有列级授权并不足够。数据库级函数只允许超级用户执行。`pg_integrity_checksums.workers` 控制并行扫描，`pg_integrity_checksums.strict` 使数据库扫描在关系无法检查时失败，而不是跳过。扩展不要求共享预加载。应保留使用相同算法、兼容结构计算的可信基线，并在比较物理校验和时考虑物理重写的影响。这些校验和不提供密码学认证。
+
+### 2.7.0 升级与基线变化
+
+安装匹配文件，重新连接并执行 SQL 升级：
+
+```sql
+ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.7.0';
+SHOW pg_integrity_checksums.strict;
+```
+
+数据库级逻辑校验和现在纳入带 schema 的关系名，因此即使行内容不变，所有数据库逻辑基线也会改变。修正索引元数据屏蔽后，部分物理索引基线同样改变。应重新计算并审查这些基线；物理校验和仍会受到实际存储变化影响，包括行锁和已回滚的写入。仅凭校验和不同不能认定数据损坏。
+
+元组和单元格校验现在检查 MVCC 可见性，对不可见行返回 NULL。索引表达式在受限上下文中以表所有者身份执行，可串行化扫描会取得必要的冲突锁。页状态检查会对磁盘不匹配进行重试；数据库扫描期间被删除的关系即使在严格模式下也会以 NOTICE 跳过。其他不可读关系仍遵循默认开启的 `pg_integrity_checksums.strict`。这些语义与先前 2.6.0 的屏蔽及基线规则不同。
+
+### 2.9.0 算法、序列与基线
+
+```sql
+ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.9.0';
+```
+
+2.9.0 为通用算法函数新增 `crc32c` 与 `xxh3`，并让 `pg_table_bucket_checksums()` 支持并行 worker。新的序列逻辑校验和会比较序列定义以及 `last_value`、`is_called`；新的关系页面状态函数可一次校验所有页面和 fork。
+
+当 `include_system = false` 时，数据库逻辑与物理校验和现在会像排除 `pg_catalog` 一样排除 `information_schema`。由于 `information_schema` 内容随 PostgreSQL 版本变化，旧版本产生的所有非系统数据库校验和都会因该修正而改变：需要重新计算并替换这些存储基线。表、索引和序列校验值不受此修正影响，CLI 基线此前已排除 `information_schema`。
+
+
+### 2.9.1 扫描变化
+
+在 PostgreSQL 17 及以上，表、索引、bucket 和数据库扫描使用 read stream；PostgreSQL 18 可使用异步 I/O，并行 worker 处理的范围也有所扩大。2.9.1 不改变校验和值。安装匹配库并执行 `ALTER EXTENSION pg_integrity_checksums UPDATE TO '2.9.1'`；此前 2.9.0 排除 information_schema 的变更仍要求替换受影响的非系统数据库基线。

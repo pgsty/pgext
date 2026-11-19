@@ -2,14 +2,14 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/README.md)
-- [pg_phasevec.control](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/pg_phasevec.control)
-- [sql/pg_phasevec--0.1.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.1.0.sql)
-- [sql/pg_phasevec--0.16.0--0.17.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.16.0--0.17.0.sql)
-- [sql/pg_phasevec--0.17.0--0.18.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.17.0--0.18.0.sql)
-- [src/phasevec_ivf.c](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/src/phasevec_ivf.c)
+- [README.md](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/README.md)
+- [pg_phasevec.control](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/pg_phasevec.control)
+- [sql/pg_phasevec--0.1.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/sql/pg_phasevec--0.1.0.sql)
+- [sql/pg_phasevec--0.16.0--0.17.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/sql/pg_phasevec--0.16.0--0.17.0.sql)
+- [sql/pg_phasevec--0.19.0--0.20.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/sql/pg_phasevec--0.19.0--0.20.0.sql)
+- [src/phasevec_ivf.c](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/src/phasevec_ivf.c)
 
-`pg_phasevec` 0.18.0 stores provenance-aware vector readings beside PostgreSQL rows. Each reading identifies its sealed reader, exact text hash and time; stale or foreign readings are withheld from search. The reader runs locally and is supplied by the operator.
+`pg_phasevec` 0.20.0 stores provenance-aware vector readings beside PostgreSQL rows. Each reading identifies its sealed reader, exact text hash and time; stale or foreign readings are withheld from search. The reader runs locally and is supplied by the operator.
 
 ### Enablement and Compatibility
 
@@ -26,11 +26,15 @@ Register a reader with its model digest and dimensionality. A watch names the so
 
 `ivf_build`, `ivf_maintain` and `ivf_absorb` perform explicit approximate-index maintenance. Editing a source row marks its reading stale in the same transaction. Coverage thresholds can refuse queries over an incompletely filled watch; permitting partial results is a caller decision.
 
+### Truth Claims and the 0.20 Preview
+
+Version 0.20.0 adds an owner-bound truth layer. `assert()` records the author and the exact row text, while `verify()` checks a proof in a read-only background worker under the author’s settings and budget. `adopt()`, `rebind()` and `migrate()` handle orphaned claims and restored 0.19 data; `refute()` retires a claim. Claims are visible only through roles that can read the watched table and remain subject to row-level security. The update replaces extension-table foreign keys with restore-safe triggers, so reconnect after the upgrade and read the upstream migration notes before using existing claims.
+
 ### Recall and Brief Output
 
 `phasevec.recall_approve` records an owner-approved baseline and `phasevec.recall_check` compares current recall with it. Checks use the saved search parameters and sampled keys, so a large sample can be expensive; above 100000 live readings the reference search is itself prefiltered. An unavailable baseline or unusable sample is reported as unmeasurable. These functions and their baseline table are revoked from `PUBLIC`; grant monitoring access deliberately.
 
-Version 0.18.0 adds `phasevec.brief(watch, budget)` with a default character budget of 8000. It summarizes still-valid readings and obtains source text with the caller's privileges. It does not grant additional access to the underlying table.
+Version 0.20.0 adds `phasevec.brief(watch, budget)` with a default character budget of 8000. It summarizes still-valid readings and obtains source text with the caller's privileges. It does not grant additional access to the underlying table.
 
 ### Upgrade and Trust Boundary
 

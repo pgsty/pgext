@@ -2,6 +2,19 @@
 
 来源：
 
+- [当前版本资料](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/README.md)
+- [当前版本资料](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/pgclone.control)
+- [当前版本资料](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/CHANGELOG.md)
+- [当前版本资料](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/sql/pgclone--4.8.0--4.9.0.sql)
+
+- [pgclone 4.8.0 变更日志](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/CHANGELOG.md)
+- [4.7.0 到 4.8.0 SQL](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/sql/pgclone--4.7.0--4.8.0.sql)
+- [pgclone 4.8.0 控制文件](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/pgclone.control)
+- [pgclone 4.8.0 README](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/README.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/README.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/docs/USAGE.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/pgclone.control)
+
 - [pgclone v4.5.0 README](https://github.com/valehdba/pgclone/blob/v4.5.0/README.md)
 - [pgclone v4.5.0 使用指南](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/USAGE.md)
 - [异步克隆指南](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/ASYNC.md)
@@ -123,3 +136,26 @@ pgclone 还暴露了 progress_detail、resume 和 clear_jobs 用于作业管理�
 - 异步模式下的模式/数据库/并行路径在 v4.5.0 中不应用脱敏、表筛选或 exclude_tables。当这些控制是安全需求时，请使用文档中同步路径。
 - 请勿将密码存储在 SQL 和日志中；优先考虑 libpq 服务文件、密钥文件或其他受控凭据机制。
 - v4.4.2 版本改进了序列状态的复制，并保护 PostgreSQL 17 源会话免受 transaction_timeout 影响，但调用者仍需验证对象所有权、扩展、角色和克隆后应用程序行为。
+
+### 4.7.0 的 SQL Server 与 MySQL 数据源
+
+4.6 的 SQL Server 接口要求可选 FreeTDS 支持；4.7 通过可选客户端库增加 MySQL/MariaDB。公开入口为 pgclone.table_from_sqlserver() 与 pgclone.table_from_mysql()，并提供相应类型映射辅助函数。没有编入客户端支持的构建保留 SQL 接口，但拒绝克隆操作。省略密码时使用服务端 PGCLONE_SQLSERVER_PASSWORD 或 PGCLONE_MYSQL_PASSWORD 环境变量。
+
+先用 dry_run 检查生成的 DDL。实际导入要求目标模式已存在、目标表不存在，绝不覆盖该表。核对跳过或不支持的源列类型，以及文档规定的键与索引映射；默认值、触发器和完整源数据库语义不会照搬。PostgreSQL 的 DDL 与复制行具有事务性，但源快照保证取决于外部引擎及表类型，不能假定非事务型 MySQL 表共享 InnoDB 快照。
+
+安装匹配的库和可选客户端，重新连接会话，再将 SQL 扩展升级至 4.7.0。上面的旧 Oracle 示例说明该接口最初引入时的步骤；当前 SQL 升级为：
+
+```sql
+ALTER EXTENSION pgclone UPDATE TO '4.7.0';
+```
+
+### 4.8.0 分区克隆与重启边界
+
+4.8.0 没有 SQL 对象变化，但 `make install` 后必须重启 PostgreSQL，再执行 `ALTER EXTENSION pgclone UPDATE`；否则旧预加载库可能找不到更新后的函数。本版本新增 `"conflict": "ignore"`：目标表已存在时保留其定义，并在同步与异步路径中继续加载数据。
+
+分区表 schema 与异步克隆现在先创建父表再创建分区，只从叶子分区复制一次数据，并继承父表主键、索引和触发器，而不是重复克隆。生成列保持生成列语义，COPY 会省略它们并由目标端重新计算；PostgreSQL 18 的虚拟生成列要求目标端也是 PostgreSQL 18。异步单表克隆会预先创建 serial/bigserial 序列并回放其当前值，后台工作进程也会响应 SIGTERM。
+
+
+### 4.9.0 部分克隆失败
+
+同步模式的 schema 与 database 克隆支持 `on_error: continue`。失败表在独立子事务中回滚，输出错误消息及 SQLSTATE，且不再参与后续外键与触发器处理。返回值为 `COMPLETED WITH ERRORS: N table(s) failed: ...`，不能视为完整成功的克隆。默认仍为中止，取消和关闭错误不会被吞掉。异步 schema 克隆此前已支持单表出错后继续。本版本不增加 SQL 对象：安装匹配文件，按上游要求重启 PostgreSQL，再执行 `ALTER EXTENSION pgclone UPDATE TO '4.9.0'`。

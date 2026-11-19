@@ -2,11 +2,11 @@
 
 Sources:
 
-- [pgAudit 18.0 README](https://github.com/pgaudit/pgaudit/blob/18.0/README.md)
-- [PostgreSQL 19 preview](https://github.com/pgaudit/pgaudit/releases/tag/19rc1)
-- [Preview control file](https://github.com/pgaudit/pgaudit/blob/2a7322004a90ebb8cf51d929e3dcf79e791b557e/pgaudit.control)
+- [pgAudit 19.0 README](https://github.com/pgaudit/pgaudit/blob/19.0/README.md)
+- [PostgreSQL 19 release](https://github.com/pgaudit/pgaudit/releases/tag/19.0)
+- [Release control file](https://github.com/pgaudit/pgaudit/blob/19.0/pgaudit.control)
 
-`pgaudit` records session and object audit events through PostgreSQL logging. Choose the branch matching the server: 18.x for PostgreSQL 18, 17.x for 17, 16.x for 16, 1.7.x for 15 and 1.6.x for 14. Upstream 19rc1 is a preview for PostgreSQL 19 with SQL version 19.0; the catalog's packaged version remains stable 18.0.
+`pgaudit` records session and object events through PostgreSQL logging. Use the branch matching the server: 19.0 for PostgreSQL 19, 18.1 for 18, 17.2 for 17, 16.2 for 16, 1.7.2 for 15 and 1.6.4 for 14. The branches are separate server builds; upgrading PostgreSQL does not make an older library ABI-compatible.
 
 ### Enable auditing
 
@@ -72,3 +72,7 @@ Now any `SELECT` or `DELETE` on the `account` table will be audit logged.
 ### Log Format
 
 Entries are CSV with fields: `AUDIT_TYPE`, `STATEMENT_ID`, `SUBSTATEMENT_ID`, `CLASS`, `COMMAND`, `OBJECT_TYPE`, `OBJECT_NAME`, `STATEMENT`, `PARAMETER`.
+
+### Logging boundary
+
+Audit output is best-effort PostgreSQL logging, outside transaction durability. A rolled-back statement can leave an audit record, and a committed transaction is not guaranteed to have a durable audit record. Protect and collect logs separately; do not treat them as a transactionally complete ledger.

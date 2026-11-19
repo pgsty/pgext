@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Current version source](https://api.pgxn.org/src/plpgsql_check/plpgsql_check-2.11.0/README.md)
+- [Current version source](https://api.pgxn.org/src/plpgsql_check/plpgsql_check-2.11.0/plpgsql_check.control)
+- [Installation SQL](https://api.pgxn.org/src/plpgsql_check/plpgsql_check-2.11.0/plpgsql_check--2.11.sql)
+
 - [README.md](https://github.com/okbob/plpgsql_check/blob/9a5c0ec4babebd5eb8e0db104c54f7ddb43fcc07/README.md)
 - [Control](https://github.com/okbob/plpgsql_check/blob/9a5c0ec4babebd5eb8e0db104c54f7ddb43fcc07/plpgsql_check.control)
 - [Release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.16)
@@ -9,7 +13,7 @@ Sources:
 
 `plpgsql_check` is a PL/pgSQL checker, linter, profiler, tracer, and coverage tool. It analyzes PL/pgSQL function bodies with PostgreSQL's own parser and executor infrastructure, so many problems that would otherwise appear only at runtime can be found during development or CI.
 
-Upstream distribution 2.10.16 installs SQL extension version `2.10`. The README covers PostgreSQL 14–20, including development targets; this is not a binary-package availability claim.
+Upstream distribution 2.11.0 installs SQL extension version `2.11`. The README covers PostgreSQL 14–20, including development targets; this is not a binary-package availability claim.
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -189,8 +193,13 @@ Dynamic-SQL query IDs in profiler reports are now disabled by default. Enable `p
 SET plpgsql_check.profiler_show_dynquery_query_id = on;
 ```
 
-The SQL version remains `2.10`: replacing the compatible library does not itself require an extension migration. Reconnect sessions using the old library; shared-preloaded installations require a restart. Rehearse upgrades before changing a live server.
+That historical patch retains SQL version `2.10` and does not itself require an extension migration. Reconnect sessions using the old library; shared-preloaded installations require a restart. Rehearse upgrades before changing a live server.
 
 ### 2.10.16 Correction
 
 Distribution 2.10.16 keeps SQL extension version 2.10 and fixes access to composite-variable tuple descriptors in passive mode. This is an upstream library release; it does not assert that a matching binary package is available.
+
+
+### 2.11.0 Upgrade
+
+Current distribution 2.11.0 uses SQL extension version `2.11`. It adds warnings for labels in pure expressions and security checks for assigned SEARCH_PATH values, and fixes false positives. This distribution supplies installation SQL but no `ALTER EXTENSION UPDATE` migration scripts. When moving from `2.10`, review dependent objects and rehearse extension recreation; do not assume an in-place update exists or blindly use `DROP ... CASCADE`. After replacing the library, reconnect sessions that loaded it; shared-preloaded instances require a restart.

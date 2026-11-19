@@ -2,6 +2,11 @@
 
 来源：
 
+- [当前上游](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/RELEASE_NOTE.md)
+- [当前上游](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/docs/api-reference.md)
+- [当前上游](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/docs/production-runbook.md)
+- [当前上游](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/sql/pg_splitjson--0.3.0--0.4.0.sql)
+
 - [README.md](https://github.com/Haiwen-Yin/pg_splitjson/blob/9982e76f8ebf6bc7e08a7efc10d240f21cc76b5a/README.md)
 - [docs/api-reference.md](https://github.com/Haiwen-Yin/pg_splitjson/blob/9982e76f8ebf6bc7e08a7efc10d240f21cc76b5a/docs/api-reference.md)
 - [docs/support-matrix.md](https://github.com/Haiwen-Yin/pg_splitjson/blob/9982e76f8ebf6bc7e08a7efc10d240f21cc76b5a/docs/support-matrix.md)
@@ -44,3 +49,18 @@ SELECT * FROM public.events;
 先备份并在各节点安装匹配的共享库，随后执行 `ALTER EXTENSION pg_splitjson UPDATE TO '0.3.0'`。已载入旧库的会话需要重建。应备份整个数据库；只导出业务视图不会包含私有存储。
 
 恢复备份、PITR 或接管后，写入前调用 `splitjson.reinitialize_table`，按实际事件选择 `restore`、`recovery` 或 `takeover`，再运行 `splitjson.check_all(true)`。这会轮换版本令牌的纪元。在线迁移使用独立的 WAL 流程；原生发布/订阅只支持相同布局，接管需要隔离旧写入端，不支持双主写入。
+
+### 0.4.0 写入与维护
+
+`splitjson.update_rows` 将一个请求原子应用到 0–1000 个不同 ID，每行执行 1–64 个有序操作。它按 ID 顺序加锁，在锁内检查可选版本令牌，并对每个变化的行只写一次。令牌过期或约束失败会回滚整个请求。`splitjson.explain_update` 无需取得行写锁或读取冷数据即可诊断热路由。可选会话计数器在回滚后仍保留，不是已提交的审计总数。
+
+0.4.0 还新增结构化复合 B-tree 定义以及流式 JSONL/WAL 迁移路径，保留调用者 ACL/RLS 与写入围栏检查；不提供通用视图 DML 转换或多主复制。性能结果依赖工作负载，上游仅验证了 Linux x86-64 上的 PostgreSQL 18.6。
+
+暂停流量、安装匹配的库和 SQL 文件，并回收加载过旧代码的后端，然后执行：
+
+```sql
+ALTER EXTENSION pg_splitjson UPDATE TO '0.4.0';
+SELECT splitjson.check_all(true);
+```
+
+正式升级保留既有 API OID、授权、版本令牌和冷数据字节。新 API 需要通过 `splitjson.grant_access` 显式授权，已有角色不会自动获得。恢复、PITR 与迁移租约仍须遵守运行手册中的重新初始化及恢复要求。

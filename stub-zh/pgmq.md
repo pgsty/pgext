@@ -2,6 +2,10 @@
 
 来源：
 
+- [当前版本资料](https://github.com/pgmq/pgmq/releases/tag/v1.13.2)
+- [当前版本资料](https://api.pgxn.org/src/pgmq/pgmq-1.13.2/pgmq.control)
+- [当前版本资料](https://api.pgxn.org/src/pgmq/pgmq-1.13.2/sql/pgmq--1.13.1--1.13.2.sql)
+
 - [官方资料](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/README.md)
 - [官方资料](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/pgmq.control)
 - [官方资料](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/sql/pgmq--1.13.0--1.13.1.sql)
@@ -89,3 +93,8 @@ ALTER EXTENSION pgmq UPDATE TO '1.13.1';
 1.13.1 固定函数的 `search_path` 并限定内部对象的模式名，防止同名对象影响函数执行。`pg_monitor` 不再拥有消息表全部列的读取权限，监控权限缩小到元数据、可见时间、入队时间和消息标识序列。升级脚本也会清理已有及默认权限；撤销失败时可能仅发出警告，应检查升级日志并核对实际授权。该版本还修复混合大小写队列名称的插入通知。
 
 扩展本身为 SQL 实现，无需预加载；队列创建与管理仍受 PostgreSQL 权限控制。上游版本更新不代表 Pigsty 软件包已经更新。
+
+
+### 1.13.2 队列创建
+
+`pgmq.create()` 对已存在队列的检查不再等待正在使用该队列的事务。发行构建已移除 PostgreSQL 13/14，部署时应选用受支持主版本的构建。安装匹配文件后运行 `ALTER EXTENSION pgmq UPDATE TO '1.13.2'`；上述 1.13.1 权限清理及升级日志检查仍适用。

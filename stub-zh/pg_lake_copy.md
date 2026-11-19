@@ -2,6 +2,8 @@
 
 来源：
 
+- [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
+
 - [版本 3.6 控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_copy/pg_lake_copy.control)
 - [官方数据湖导入和导出指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/data-lake-import-export.md)
 - [官方文件格式参考](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/file-formats-reference.md)
@@ -62,3 +64,7 @@ WITH (format 'csv', header true, compression 'gzip');
 ### 上游 3.6.0
 
 上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。此组件从 3.5 到 3.6 的 SQL 迁移为空，但运行库及依赖仍须按同一发布协调升级。
+
+### 上游 3.6.2
+
+3.6.2 补丁修正 pgduck_server 逐字节传输 CSV 值的处理。应部署与扩展库匹配的查询服务二进制，并重新连接或重启仍持有旧代码的进程。组件 SQL 版本仍为 3.6，extversion 不变不能证明查询服务修复已经安装。软件包可用性仍是单独的目录事实。

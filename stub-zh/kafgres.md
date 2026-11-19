@@ -2,6 +2,7 @@
 
 来源：
 
+- [Current release](https://github.com/RayElg/kafgres/releases/tag/0.3.3)
 - [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/extension/sql/kafgres--0.2.0--0.3.0.sql)
 - [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/.github/workflows/ci.yml)
 - [README 0.3.2](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/README.md)
@@ -16,6 +17,7 @@
 
 ```ini
 shared_preload_libraries = 'kafgres'
+wal_level = logical
 kafgres.database = 'postgres'
 kafgres.bind_host = '127.0.0.1'
 kafgres.advertised_host = '127.0.0.1'
@@ -60,3 +62,7 @@ ALTER EXTENSION kafgres UPDATE TO '0.3.2';
 ```
 
 0.3.1 到 0.3.2 的 SQL 脚本只推进扩展版本，不改变 SQL 对象。从 0.3.0 升级时还需处理旧事务标记：Sarama 无法解码缺少 EndTransactionMarker 值的旧标记，它们会一直保留到对应分段被保留策略删除；按上游说明选择消费起点或重建主题。
+
+### 0.3.3 配置
+
+0.3.3 发布制品覆盖 PostgreSQL 13–18。官方代理配置要求逻辑 WAL，并设置客户端可达的通告主机。在限制输出插件的构建上，应将 kafgres 加入 output_plugin_libraries 并保留已有项；出现禁止使用插件的错误时可重载配置。共享预加载仍须重启，配置重载不能替代它。

@@ -2,6 +2,8 @@
 
 Sources:
 
+- [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
+
 - [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_copy/pg_lake_copy.control)
 - [Official data-lake import and export guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/data-lake-import-export.md)
 - [Official file-format reference](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/file-formats-reference.md)
@@ -62,3 +64,7 @@ The destination can be a PostgreSQL heap table or an Iceberg table; the source c
 ### Upstream 3.6.0
 
 Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.
+
+### Upstream 3.6.2
+
+The 3.6.2 patch corrects byte-by-byte CSV-value transmission in pgduck_server. Deploy the matching query-server binary with the extension libraries and reconnect/restart processes holding old code. The component SQL version remains 3.6; an unchanged extversion does not prove the query-server fix is installed. Package availability remains a separate catalog fact.

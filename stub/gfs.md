@@ -2,36 +2,30 @@
 
 Sources:
 
-- [Official upstream README](https://github.com/guepard-corp/gfs/blob/461d07820e253828d085a3b387f6912753e25d7c/crates/extensions/gfs/README.md)
-- [Official extension control file (gfs.control)](https://github.com/guepard-corp/gfs/blob/461d07820e253828d085a3b387f6912753e25d7c/crates/extensions/gfs/gfs.control)
-- [Official extension SQL (gfs--0.0.1.sql)](https://github.com/guepard-corp/gfs/blob/461d07820e253828d085a3b387f6912753e25d7c/crates/extensions/gfs/c-ref/gfs--0.0.1.sql)
+- [README.md](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/README.md)
+- [gfs.control](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/gfs.control)
+- [Cargo.toml](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/Cargo.toml)
+- [src/lib.rs](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/src/lib.rs)
+- [src/sql/schema.sql](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/src/sql/schema.sql)
 
-`gfs` — Clones a remote PostgreSQL **copy-on-read**: an empty local database that fetches data from the source only when a query touches it, so a multi-TB source can be "cloned" instantly and the clone stays **partial** (it never has to pull what the app doesn't read). Use it when moving, transforming, or integrating the corresponding data from PostgreSQL. Use the pinned upstream revision linked above as the API boundary and test it on the target PostgreSQL build.
+`gfs` uses a planner hook for lazy logical copies of a remote PostgreSQL database. The current Rust module retains extension version 0.0.1 inside GFS distribution 0.5.3. The old C table-access-method implementation in `c-ref/` is reference code, not the current interface. Cargo provides PostgreSQL 16–18 features.
 
-### Core Workflow
+### Enablement and Routing
+
+A superuser installs the non-relocatable extension and its runtime prerequisites:
 
 ```sql
+CREATE EXTENSION postgres_fdw;
+CREATE EXTENSION dblink;
 CREATE EXTENSION gfs;
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+Enable `session_preload_libraries = 'gfs'` for the clone database and reconnect, preserving existing entries. CREATE EXTENSION alone does not install the planner hook in subsequent sessions. The GFS bootstrap prepares ordinary local tables plus `postgres_fdw` foreign tables and user mappings; parallel hydration and source diagnostics use `dblink`. Keep connection credentials in restricted mappings.
 
-### Important Objects
+Register a prepared local/foreign table pair with `gfs.register_clone(local, source_ref, key_col)`. Integer key ranges hydrate missing ranges; selective predicates can hydrate a bounded slice; unbounded joins and aggregates can be redirected to foreign tables. Fully cached tables serve locally. `gfs.warm(local, p_freeze, p_conn)` materializes a table; `gfs.unregister_clone` removes registration. Ordinary remote reads are not a frozen point-in-time database snapshot.
 
-- `gfs.register_clone(local regclass, source_ref text, key_col text DEFAULT 'id')` is an extension function and returns `void`.
-- `gfs.unregister_clone(local regclass)` is an extension function and returns `void`.
-- `gfs.warm(local regclass)` is an extension function and returns `bigint`.
-- `gfs_handler(internal)` is an extension function and returns `table_am_handler`.
-- `gfs.clones` is an extension-defined view.
-- `gfs.clone_source` is a table installed or managed by the extension.
-- `gfs.clone_stats` is a table installed or managed by the extension.
-- `gfs` is a schema created by the extension.
-- `gfs` is an extension-defined access method.
+### Administration
 
-### Requirements and Caveats
+`gfs.clone_source`, `gfs.cached`, `gfs.cached_predicate` and `gfs.clones` expose routing/cache state. `gfs.calibrate` measures source-link weights; `gfs.cost` sets policies and `gfs.budget` throttles source contacts. The current SQL also provides source drift checks, `gfs.pull`, resynchronization and explicit freeze helpers; review their destructive/overwrite choices before applying them to a diverged clone.
 
-- The reviewed control file declares default version `0.0.1`.
-- The control file marks the extension as non-relocatable.
-- The control file requires a superuser for installation.
-- The control file marks the extension as not trusted.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+Treat source references, key columns and predicates as administrator-controlled inputs; the planner/SPI path uses unsafe native FFI. The bootstrap can omit foreign keys and generated columns, so it is not an exact physical replica. The README lists unfinished hardening and an outdated test suite; code presence alone does not certify those paths. With unchanged SQL version 0.0.1, replacing a library does not migrate old prototype catalogs. Plan a controlled clone recreation or a reviewed explicit migration rather than assuming ALTER EXTENSION supplies an upgrade.

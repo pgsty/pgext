@@ -2,6 +2,7 @@
 
 Sources:
 
+- [Current release](https://github.com/RayElg/kafgres/releases/tag/0.3.3)
 - [extension/sql/kafgres--0.2.0--0.3.0.sql](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/extension/sql/kafgres--0.2.0--0.3.0.sql)
 - [.github/workflows/ci.yml](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/.github/workflows/ci.yml)
 - [README 0.3.2](https://github.com/RayElg/kafgres/blob/0f343916988ad0b4b99d3427bd0949e69b5686b3/README.md)
@@ -10,12 +11,13 @@ Sources:
 - [0.3.1 to 0.3.2 SQL](https://github.com/RayElg/kafgres/blob/0.3.2/extension/sql/kafgres--0.3.1--0.3.2.sql)
 - [0.3.1 to 0.3.2 changes](https://github.com/RayElg/kafgres/compare/0.3.1...0.3.2)
 
-`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.2 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
+`kafgres` embeds a Kafka protocol broker in PostgreSQL. Upstream release 0.3.3 builds and tests PostgreSQL 13–18. It needs superuser installation, shared preload and a restart. Its license is Elastic License 2.0.
 
 ### Enable the broker
 
 ```ini
 shared_preload_libraries = 'kafgres'
+wal_level = logical
 kafgres.database = 'postgres'
 kafgres.bind_host = '127.0.0.1'
 kafgres.advertised_host = '127.0.0.1'
@@ -60,3 +62,7 @@ ALTER EXTENSION kafgres UPDATE TO '0.3.2';
 ```
 
 The 0.3.1-to-0.3.2 SQL script advances the extension version without changing SQL objects. When upgrading from 0.3.0, account for old transaction markers: Sarama cannot decode markers lacking an EndTransactionMarker value, and they remain until retention removes their segments. Follow the upstream guidance for the consumer start position or topic recreation.
+
+### 0.3.3 configuration
+
+The 0.3.3 release artifacts cover PostgreSQL 13–18. Its documented broker configuration requires logical WAL and a client-reachable advertised host. On builds enforcing output-plugin allowlists, add kafgres to output_plugin_libraries while preserving existing entries, then reload if the broker reports the plugin is forbidden. Shared preload still requires a restart; a configuration reload does not replace it.

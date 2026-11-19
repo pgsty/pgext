@@ -2,14 +2,14 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/README.md)
-- [pg_phasevec.control](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/pg_phasevec.control)
-- [sql/pg_phasevec--0.1.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.1.0.sql)
-- [sql/pg_phasevec--0.16.0--0.17.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.16.0--0.17.0.sql)
-- [sql/pg_phasevec--0.17.0--0.18.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/sql/pg_phasevec--0.17.0--0.18.0.sql)
-- [src/phasevec_ivf.c](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.18.0/src/phasevec_ivf.c)
+- [README.md](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/README.md)
+- [pg_phasevec.control](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/pg_phasevec.control)
+- [sql/pg_phasevec--0.1.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/sql/pg_phasevec--0.1.0.sql)
+- [sql/pg_phasevec--0.16.0--0.17.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/sql/pg_phasevec--0.16.0--0.17.0.sql)
+- [sql/pg_phasevec--0.19.0--0.20.0.sql](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/sql/pg_phasevec--0.19.0--0.20.0.sql)
+- [src/phasevec_ivf.c](https://api.pgxn.org/src/pg_phasevec/pg_phasevec-0.20.0/src/phasevec_ivf.c)
 
-`pg_phasevec` 0.18.0 在 PostgreSQL 行旁存储带来源的向量读数。每个读数标识已封存的读取器、精确文本哈希与时间，过期或来自其他读取器的读数不会参与检索。读取器在本地运行，由运维方提供。
+`pg_phasevec` 0.20.0 在 PostgreSQL 行旁存储带来源的向量读数。每个读数标识已封存的读取器、精确文本哈希与时间，过期或来自其他读取器的读数不会参与检索。读取器在本地运行，由运维方提供。
 
 ### 启用与兼容性
 
@@ -26,11 +26,15 @@ SELECT extversion FROM pg_extension WHERE extname = 'pg_phasevec';
 
 `ivf_build`、`ivf_maintain` 和 `ivf_absorb` 显式维护近似索引。源行修改时，其读数在同一事务内变为 stale。coverage 阈值可能拒绝查询未完全填充的 watch；是否允许部分结果由调用方决定。
 
+### 真值声明与 0.20 预览版
+
+0.20.0 增加与所有者绑定的真值层。`assert()` 记录作者和所读取的精确行文本，`verify()` 在只读后台工作进程中按作者设置和预算检查证明；`adopt()`、`rebind()` 与 `migrate()` 用于处理孤立声明及恢复的 0.19 数据，`refute()` 退役声明。只有能够读取被监视表的角色才能看到声明，并且仍受行级安全策略限制。此升级把扩展表之间的外键改为可安全恢复的触发器，因此升级后应重新连接，并在使用现有声明前阅读上游迁移说明。
+
 ### 召回率与摘要
 
 `phasevec.recall_approve` 保存所有者认可的基线，`phasevec.recall_check` 比较当前召回率。检查采用已保存的检索参数与抽样键，大样本可能代价较高；超过 100000 个有效读数时，参考检索本身也经过预筛选。缺少基线或样本不可用时会报告无法测量。这些函数及基线表不向 `PUBLIC` 开放，应显式授予监控权限。
 
-0.18.0 新增 `phasevec.brief(watch, budget)`，默认字符预算为 8000。它汇总仍然有效的读数，并以调用者权限获取源文本，不会额外赋予源表访问权。
+0.20.0 新增 `phasevec.brief(watch, budget)`，默认字符预算为 8000。它汇总仍然有效的读数，并以调用者权限获取源文本，不会额外赋予源表访问权。
 
 ### 升级与信任边界
 

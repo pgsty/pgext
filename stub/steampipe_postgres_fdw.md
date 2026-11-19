@@ -2,36 +2,30 @@
 
 Sources:
 
-- [Official upstream README](https://github.com/turbot/steampipe-postgres-fdw/blob/f8098e5e79cda44af01fcb9cd77b9ac684e70690/fdw/README.md)
-- [Official extension control file (steampipe_postgres_fdw.control)](https://github.com/turbot/steampipe-postgres-fdw/blob/f8098e5e79cda44af01fcb9cd77b9ac684e70690/fdw/steampipe_postgres_fdw.control)
-- [Official extension SQL (steampipe_postgres_fdw--1.0.sql)](https://github.com/turbot/steampipe-postgres-fdw/blob/f8098e5e79cda44af01fcb9cd77b9ac684e70690/fdw/steampipe_postgres_fdw--1.0.sql)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/README.md)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/fdw/steampipe_postgres_fdw.control)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/fdw/steampipe_postgres_fdw--1.0.sql)
+- [Official source](https://github.com/turbot/steampipe-postgres-fdw/blob/v2.3.1/CHANGELOG.md)
 
-`steampipe_postgres_fdw` — Fdw is a Postgres Foreign Data Wrapper interface written in Go. Dynamic Foreign Tables are defined through gRPC plugins, making them safe, performant and easy to build. Use it when PostgreSQL must access the corresponding external data source through a foreign-data interface. Use the pinned upstream revision linked above as the API boundary and test it on the target PostgreSQL build.
+steampipe_postgres_fdw exposes Steampipe plugins as PostgreSQL foreign tables. Distribution 2.3.1 retains extension SQL version 1.0. The core FDW connects to plugin services over gRPC; plugin-specific standalone extensions are separate builds.
 
-### Core Workflow
+### Enable and connect
 
 ```sql
 CREATE EXTENSION steampipe_postgres_fdw;
-
-create server
-  fdw_aws
-foreign data wrapper
-  fdw
-options (
-  wrapper 'aws'
-);
+CREATE SERVER fdw_aws
+  FOREIGN DATA WRAPPER steampipe_postgres_fdw
+  OPTIONS (wrapper 'aws');
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+The SQL file names the wrapper steampipe_postgres_fdw; older architecture examples abbreviate it as fdw. Configure a compatible plugin service and its credentials before importing or declaring provider tables. The core library requires administrator installation but no preload; match the server ABI and the selected deployment's documented plugin setup.
 
-### Important Objects
+### Version 2.3.0
 
-- `fdw_handler()` is an extension function and returns `fdw_handler`.
-- `fdw_validator(text[], oid)` is an extension function and returns `void`.
-- `steampipe_postgres_fdw` is an extension-defined foreign data wrapper.
+This release fixes crashes and incorrect results for runtime parameter quals, including LATERAL references and subqueries. A scan interrupted by cancellation, statement_timeout or a plugin error now fails instead of treating a partial row set as complete. Invalid/duplicate connection names or malformed configuration files are skipped with warnings; inspect those warnings rather than assuming every configured connection loaded.
 
-### Requirements and Caveats
+The standalone FDW is marked parallel safe, and GOGC/GOMEMLIMIT are read from the PostgreSQL server environment. These are process settings, not SQL GUCs. The legacy cache_off command is corrected. Replace matching libraries and reconnect/restart processes that loaded old code; extversion 1.0 alone cannot identify the runtime fix. Remote APIs still impose their own permissions, pagination, consistency and rate limits.
 
-- The reviewed control file declares default version `1.0`.
-- The control file marks the extension as relocatable.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+### Distribution 2.3.1
+
+The 2.3.1 patch backports Darwin cross-compilation and image-publishing changes. It retains SQL version 1.0 and adds no new SQL workflow; the 2.3.0 runtime fixes above still apply.

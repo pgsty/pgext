@@ -2,6 +2,9 @@
 
 来源：
 
+- [pg_partman 5.5.1 变更日志](https://github.com/pgpartman/pg_partman/blob/v5.5.1/CHANGELOG.md)
+- [pg_partman 5.5.1 控制文件](https://github.com/pgpartman/pg_partman/blob/v5.5.1/pg_partman.control)
+- [5.5.0 到 5.5.1 SQL](https://github.com/pgpartman/pg_partman/blob/v5.5.1/updates/pg_partman--5.5.0--5.5.1.sql)
 - [pg_partman 5.5.0 README](https://github.com/pgpartman/pg_partman/blob/v5.5.0/README.md)
 - [pg_partman 5.5.0 变更日志](https://github.com/pgpartman/pg_partman/blob/v5.5.0/CHANGELOG.md)
 - [pg_partman 使用指南](https://github.com/pgpartman/pg_partman/blob/v5.5.0/doc/pg_partman_howto.md)
@@ -85,3 +88,11 @@ ALTER EXTENSION pg_partman UPDATE TO '5.5.0';
 - 按文档配置所有者、schema、表、过程、函数、临时表及可选 RLS 权限后，无需超级用户也可以安装和运行 pg_partman。
 - 日常维护应只有一个调度器负责。除非经过明确协调，不要同时使用后台工作进程与外部调度器。
 - 大型维护可能获取许多锁并移动大量数据。应在代表性数据上测试保留与迁移，监控默认分区，并使用独立于分区保留策略的备份。
+
+### 5.5.1 正确性修复
+
+```sql
+ALTER EXTENSION pg_partman UPDATE TO '5.5.1';
+```
+
+5.5.1 修复了使用 `p_lock_wait` 时 `partition_data_time()` 的变量赋值错位，不再把模板表的 INCLUDE 索引列当作子表真实键列，并恢复 date 控制列首日范围行的正确处理。`uuid7_time_encoder()` 与 `uuid7_time_decoder()` 现在为 `IMMUTABLE` 且 `PARALLEL SAFE`，使 UUIDv7 过滤条件可以裁剪分区。后台工作进程的 portal 生命周期和 `show_partition_info()` 的区间结束值也被修正。调用 `create_partition()` 的角色需要目标表 ownership 级权限。

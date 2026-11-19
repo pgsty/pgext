@@ -2,12 +2,12 @@
 
 Sources:
 
-- [pg_tde 2.2 setup](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/setup.md)
-- [Key-provider and key-management functions](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/functions.md)
-- [pg_tde 2.2.0 release notes](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/release-notes/release-notes-v2.2.0.md)
-- [Transparent data encryption limitations](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/tde-limitations.md)
-- [TDE table access method](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/table-access-method.md)
-- [WAL encryption](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/wal-encryption.md)
+- [pg_tde 2.3 setup](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/setup.md)
+- [Key-provider and key-management functions](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/functions.md)
+- [pg_tde 2.3.0 release notes](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/release-notes/release-notes-v2.3.0.md)
+- [Transparent data encryption limitations](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/index/tde-limitations.md)
+- [TDE table access method](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/index/table-access-method.md)
+- [WAL encryption](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/wal-encryption.md)
 
 pg_tde provides transparent data encryption for Percona Server for PostgreSQL. It encrypts table data through the tde_heap access method and can encrypt WAL, with keys managed by file, HashiCorp Vault, or KMIP providers. It is not a drop-in extension for community PostgreSQL.
 
@@ -21,7 +21,7 @@ Then enable pg_tde in every database that will use encrypted tables:
 
     CREATE EXTENSION pg_tde;
 
-Run setup as a superuser or suitably privileged database owner. Upstream pg_tde 2.2 is tied to compatible Percona Server for PostgreSQL 17 or 18 builds; the 2.2.0 release notes warn that it is incompatible with Percona Distribution releases older than 17.10 and 18.4.
+Run setup as a superuser or suitably privileged database owner. Use a matching Percona Server build. Release 2.3.0 adds PostgreSQL 19 support and retains SQL extension version 2.3. Its `pg_tde_waldump` understands the custom resource manager and its `--rmgr` filter. This source support does not establish package availability for a new PostgreSQL major.
 
 ### Configure a Key Provider
 

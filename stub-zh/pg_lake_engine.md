@@ -2,6 +2,12 @@
 
 来源：
 
+- [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
+
+- [当前上游](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
+- [当前上游](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/table-options.md)
+- [当前上游](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/iceberg-catalogs.md)
+
 - [官方pg_lake架构概述](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/README.md#architecture)
 - [版本3.6控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine.control)
 - [基础SQL对象](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_engine/pg_lake_engine--3.0.sql)
@@ -54,3 +60,11 @@ FROM external_events;
 ### 上游 3.6.0
 
 上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。引擎迁移增加内部 UUID 下推包装函数，用于规划与反解析，不是通用应用 API。
+
+### 上游 3.6.1 运行时更新
+
+将匹配的 3.6.1 `pgduck_server` 与扩展库一同部署。本补丁回移 Brotli 解码器安全修正，并将查询服务 S3 上传器的最大文件大小降至 50 GB。SQL 版本仍为 3.6，SQL 版本不变不能证明已部署修补后的查询服务。C 层 COPY 查询导出接口属于内部集成工作，不是该组件新增的 SQL 函数。
+
+### 上游 3.6.2
+
+3.6.2 补丁修正 pgduck_server 逐字节传输 CSV 值的处理。应部署与扩展库匹配的查询服务二进制，并重新连接或重启仍持有旧代码的进程。组件 SQL 版本仍为 3.6，extversion 不变不能证明查询服务修复已经安装。软件包可用性仍是单独的目录事实。

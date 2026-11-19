@@ -2,36 +2,30 @@
 
 来源：
 
-- [官方上游 README](https://github.com/guepard-corp/gfs/blob/461d07820e253828d085a3b387f6912753e25d7c/crates/extensions/gfs/README.md)
-- [官方扩展控制文件 (gfs.control)](https://github.com/guepard-corp/gfs/blob/461d07820e253828d085a3b387f6912753e25d7c/crates/extensions/gfs/gfs.control)
-- [官方扩展 SQL (gfs--0.0.1.sql)](https://github.com/guepard-corp/gfs/blob/461d07820e253828d085a3b387f6912753e25d7c/crates/extensions/gfs/c-ref/gfs--0.0.1.sql)
+- [README.md](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/README.md)
+- [gfs.control](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/gfs.control)
+- [Cargo.toml](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/Cargo.toml)
+- [src/lib.rs](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/src/lib.rs)
+- [src/sql/schema.sql](https://github.com/Guepard-Corp/gfs/blob/v0.5.3/crates/extensions/gfs/src/sql/schema.sql)
 
-`gfs` — 克隆一个远程 PostgreSQL 的 **copy-on-read**：一个空的本地数据库，仅在查询触及其数据时从源端获取数据，因此一个多 TB 的源可以瞬间克隆，并且克隆始终为 **部分状态**（它永远不会拉取应用程序未读取的数据）。在将数据从 PostgreSQL 移动、转换或集成时使用它。请使用上述链接的固定上游版本作为 API 边界，并在目标 PostgreSQL 构建中进行测试。
+`gfs` 使用规划器钩子，对远程 PostgreSQL 数据库进行惰性逻辑复制。GFS 0.5.3 中的当前 Rust 模块仍使用扩展版本 0.0.1。`c-ref/` 中旧的 C 表访问方法实现仅供参考，不是当前接口。Cargo 提供 PostgreSQL 16–18 特性。
 
-### 核心工作流
+### 启用与路由
+
+由超级用户安装不可迁移的扩展及运行依赖：
 
 ```sql
+CREATE EXTENSION postgres_fdw;
+CREATE EXTENSION dblink;
 CREATE EXTENSION gfs;
 ```
 
-在目标数据库中安装扩展，当可用时运行上游示例中的最小示例，并在将其集成到应用程序 SQL 中之前验证已安装的版本和返回值。
+为克隆数据库启用 `session_preload_libraries = 'gfs'`，保留已有条目并重新连接。仅执行 CREATE EXTENSION 不会在后续会话中安装规划器钩子。GFS 引导流程准备普通本地表、`postgres_fdw` 外部表和用户映射；并行补全与源端诊断使用 `dblink`。连接凭据应保存在受限映射中。
 
-### 重要对象
+用 `gfs.register_clone(local, source_ref, key_col)` 注册已准备好的本地表与外部表。整数键范围查询补全缺失区间，选择性谓词可补全有上限的切片，无界连接和聚合可转交外部表执行，完全缓存的表在本地查询。`gfs.warm(local, p_freeze, p_conn)` 完整物化表，`gfs.unregister_clone` 移除注册。普通远程读取并非冻结的时间点数据库快照。
 
-- `gfs.register_clone(local regclass, source_ref text, key_col text DEFAULT 'id')` 是一个扩展函数，返回 `void`。
-- `gfs.unregister_clone(local regclass)` 是一个扩展函数，返回 `void`。
-- `gfs.warm(local regclass)` 是一个扩展函数，返回 `bigint`。
-- `gfs_handler(internal)` 是一个扩展函数，返回 `table_am_handler`。
-- `gfs.clones` 是一个由扩展定义的视图。
-- `gfs.clone_source` 是一个由扩展安装或管理的表。
-- `gfs.clone_stats` 是一个由扩展安装或管理的表。
-- `gfs` 是一个由扩展创建的模式。
-- `gfs` 是一个由扩展定义的访问方法。
+### 管理
 
-### 要求与注意事项
+`gfs.clone_source`、`gfs.cached`、`gfs.cached_predicate` 和 `gfs.clones` 展示路由与缓存状态。`gfs.calibrate` 测量源链路权重，`gfs.cost` 设置策略，`gfs.budget` 限制源端访问速率。当前 SQL 还提供源端漂移检查、`gfs.pull`、重新同步及显式冻结辅助函数；对已产生分歧的克隆使用前，应审查其删除或覆盖选项。
 
-- 控制文件声明默认版本为 `0.0.1`。
-- 控制文件标记该扩展为不可重定位。
-- 控制文件要求超级用户进行安装。
-- 控制文件标记该扩展为不受信任。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况与固定源中的信息一致。
+源引用、键列和谓词必须由管理员控制；规划器/SPI 路径使用不安全的原生 FFI。引导流程可能省略外键和生成列，因此不是精确的物理副本。README 列出尚未完成的加固和过时的测试套件，不能仅凭代码存在断言这些路径已验证。SQL 版本仍为 0.0.1，替换库不会迁移旧原型目录。应规划受控重建克隆或经过审查的显式迁移，不能假设 ALTER EXTENSION 提供升级。

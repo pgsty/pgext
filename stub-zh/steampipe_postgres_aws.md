@@ -2,6 +2,9 @@
 
 来源：
 
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/tag/v1.36.0)
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/download/v1.36.0/steampipe_postgres_aws.pg15.darwin_arm64.tar.gz)
+
 - [Published 0.125.0 package page](https://database.dev/toliver38/steampipe_postgres_aws)
 - [Official AWS plugin documentation](https://hub.steampipe.io/plugins/turbot/aws#postgres-fdw)
 - [Official Postgres FDW configuration guide](https://steampipe.io/docs/steampipe_postgres/configure)
@@ -47,4 +50,4 @@ ORDER BY name;
 
 优先使用 AWS profile、工作负载角色或其他短期凭据来源，不要把静态密钥放入 `pg_foreign_server`。只授予查询目标表所需的 IAM 读取权限，并限制对服务器选项和已导入外部表的访问。外部扫描可能产生 AWS API 活动及相关服务费用。
 
-目录中的软件包是通过 database.dev 单独发布的 `0.125.0`，而官方 Turbot 插件及其表目录仍在演进。当前 Hub 示例中的表或选项在这个旧软件包中可能不存在。升级时应确认已安装扩展版本，查阅匹配版本的表定义，并有意识地重新导入或重建外部表。不要求设置 `shared_preload_libraries`。
+已验证的官方 1.36.0 发布包含独立 PostgreSQL AWS 制品；检查的 PostgreSQL 15 macOS arm64 制品仍使用 SQL 版本 1.0。旧 database.dev 包仍是独立的 0.125.0 发布。必须按实际平台和 PostgreSQL 大版本选择制品，不能从插件标签推断新大版本支持；仅凭 SQL extversion 也无法确定插件修订。升级时应审查表定义变化，有计划地重新导入或重建外部表，并保留授权与依赖对象。安装说明包含破坏性的 DROP 示例，全新安装并不需要这些操作，不应直接照搬到现有部署。无需设置 shared_preload_libraries。

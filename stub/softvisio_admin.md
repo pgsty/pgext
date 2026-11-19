@@ -2,6 +2,11 @@
 
 Sources:
 
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/softvisio_admin.control)
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/softvisio_admin--1.7.1.sql)
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/softvisio_admin--1.7.0--1.7.1.sql)
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/Makefile)
+
 - [Control](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin.control)
 - [Version 1.7.0 SQL](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin--1.7.0.sql)
 - [Installed SQL files](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/Makefile)
@@ -26,3 +31,7 @@ SELECT * FROM outdated_extensions();
 ### Upgrade and access boundaries
 
 The 1.7.0 source installs only the new base SQL file and removes historical upgrade scripts. An existing older installation therefore has no ordinary update path supplied by this distribution alone. Check `pg_extension_update_paths('softvisio_admin')` and preserve a reviewed migration plan before changing server files; do not assume `ALTER EXTENSION UPDATE` will succeed. Keep these routines restricted to trusted administrators. They issue powerful remote SQL, and a newly generated password is printed in a NOTICE; keep client and server logging access controlled. Review and test every affected extension's upgrade before invoking the cluster-wide updater.
+
+### Distribution 1.8.0 and SQL 1.7.1
+
+The 1.8.0 release retains default SQL version 1.7.1 and the same one-argument create_database interface. Its Makefile now supplies the 1.7.0-to-1.7.1 upgrade script, which is empty; that specific update path is available after installing matching files. The README still advertises an optional collation parameter absent from this SQL. This does not supply historical paths from versions older than 1.7.0 or make cross-database operations atomic.

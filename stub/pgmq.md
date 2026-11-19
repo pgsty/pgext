@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Current version source](https://github.com/pgmq/pgmq/releases/tag/v1.13.2)
+- [Current version source](https://api.pgxn.org/src/pgmq/pgmq-1.13.2/pgmq.control)
+- [Current version source](https://api.pgxn.org/src/pgmq/pgmq-1.13.2/sql/pgmq--1.13.1--1.13.2.sql)
+
 - [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/README.md)
 - [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/pgmq.control)
 - [Official source](https://github.com/pgmq/pgmq/blob/8eab18272e50077ab9f72d9787296655f2849dcc/pgmq-extension/sql/pgmq--1.13.0--1.13.1.sql)
@@ -89,3 +93,8 @@ ALTER EXTENSION pgmq UPDATE TO '1.13.1';
 Version 1.13.1 fixes function `search_path` and qualifies internal objects to prevent same-name objects from influencing execution. `pg_monitor` no longer gets whole-message-table reads; monitoring access is limited to metadata, visibility/enqueue timestamps and message-id sequences. The upgrade also cleans existing and default grants. Revocation failures can be warnings rather than fatal errors, so inspect the upgrade log and verify the resulting grants. Mixed-case queue names also receive an insert-notification fix.
 
 The extension is implemented in SQL and needs no preload; PostgreSQL privileges still govern queue creation and management. An upstream version update does not establish availability of updated Pigsty packages.
+
+
+### 1.13.2 Queue Creation
+
+`pgmq.create()` checking an existing queue no longer waits for transactions using that queue. Release builds dropped PostgreSQL 13/14; select a build for a supported major. Install matching files and run `ALTER EXTENSION pgmq UPDATE TO '1.13.2'`; the 1.13.1 grant cleanup and upgrade-log checks above still apply.

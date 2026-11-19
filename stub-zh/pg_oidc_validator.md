@@ -8,7 +8,7 @@
 - [PostgreSQL 18 OAuth 认证文档](https://www.postgresql.org/docs/18/auth-oauth.html)
 - [PostgreSQL 18 libpq OAuth 文档](https://www.postgresql.org/docs/18/libpq-oauth.html)
 
-`pg_oidc_validator` 1.1.0 是 PostgreSQL 18 的 OAuth 验证模块，用于根据 OpenID Connect 提供者验证 JWT 访问令牌。它是没有 control 文件或 SQL 扩展的服务器动态库，因此不要运行 `CREATE EXTENSION`。
+`pg_oidc_validator` 1.1.0 是 PostgreSQL 18/19 的 OAuth 验证模块，用于根据 OpenID Connect 提供者验证 JWT 访问令牌。它是没有 control 文件或 SQL 扩展的服务器动态库，因此不要运行 `CREATE EXTENSION`。
 
 ### 配置服务器
 
@@ -54,4 +54,4 @@ psql 'host=127.0.0.1 dbname=app user=alice oauth_issuer=https://id.example.com/r
 - Dex 不会发送 OAuth scope；显式使用空的 `scope=""` 会关闭 scope 校验，从而削弱常规检查。
 - 客户端的 `oauth_issuer` 必须与 HBA 发行者及发现文档完全一致。应把发行者与任何 `pg_oidc_validator.discovery_url_override` 端点都视为可信安全边界，并对数据库和提供者连接强制执行经过验证的 TLS。
 - 令牌校验不能替代 PostgreSQL 授权、角色成员关系或行级安全。
-- Pigsty RPM 软件包仅覆盖 EL10；DEB 软件包覆盖受支持的 Debian 与 Ubuntu 目标。该模块要求 PostgreSQL 18。
+- Pigsty RPM 软件包仅覆盖 EL10；DEB 软件包覆盖受支持的 Debian 与 Ubuntu 目标。1.1.0 源码发行版支持 PostgreSQL 18 和 19；软件包是否可用需要单独核实。

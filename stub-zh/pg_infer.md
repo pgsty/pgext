@@ -2,22 +2,22 @@
 
 来源：
 
-- [本次分发的 README](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/README)
-- [扩展控制文件](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/pg_infer.control)
-- [Cargo 清单](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/Cargo.toml)
-- [扩展安装 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/sql/pg_infer--0.1.3-alpha.sql)
+- [本次分发的 README](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/README)
+- [扩展控制文件](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/pg_infer.control)
+- [Cargo 清单](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/Cargo.toml)
+- [扩展安装 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/sql/pg_infer--0.1.4-alpha.sql)
 - [模型注册实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/model_mgmt.rs)
 - [索引访问方法实现](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/src/am.rs)
-- [官方回归 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/sql/pg_infer.sql)
-- [Vindex 格式与模型数据](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.3-alpha/crates/infer-vindex/README.md)
+- [官方回归 SQL](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/sql/pg_infer.sql)
+- [Vindex 格式与模型数据](https://api.pgxn.org/src/pg_infer/pg_infer-0.1.4-alpha/crates/infer-vindex/README.md)
 
 `pg_infer` 是一个实验性 PostgreSQL 扩展，通过 SQL 暴露 Transformer 模型的特征、习得关联与相似度信号。它创建 `infer` 模式保存模型注册表，并提供 `infer` 索引访问方法，以便按模型语义对文本排序。它适合在 PostgreSQL 中检查外部准备的模型知识；扩展本身不包含模型或 vindex，其结果是随模型变化的信号，而非经过验证的事实。
 
 ### 版本与适用范围
 
-PGXN 测试分发 `0.1.3-alpha` 的 `pg_infer.control`、`Cargo.toml` 与 `sql/pg_infer--0.1.3-alpha.sql` 均使用 `0.1.3-alpha`。README 横幅和 SQL 文件头仍提及旧版本。早期源码标签 `v0.1.1-alpha` 安装的 SQL 版本为 `1.0.0`，本次没有从该版本升级的脚本，应使用新数据库或经过明确审查的迁移。SQL API 与 vindex 格式仍处于实验阶段。
+PGXN 测试分发 `0.1.4-alpha` 的 `pg_infer.control`、`Cargo.toml` 与 `sql/pg_infer--0.1.4-alpha.sql` 均使用 `0.1.4-alpha`。README 横幅和 SQL 文件头仍提及旧版本。早期源码标签 `v0.1.1-alpha` 安装的 SQL 版本为 `1.0.0`，本次没有从该版本升级的脚本，应使用新数据库或经过明确审查的迁移。SQL API 与 vindex 格式仍处于实验阶段。
 
-本次分发的 Cargo 清单只提供 `pg18` PostgreSQL 特性，并默认选择 `pg18`。因此，PostgreSQL 18 是该源码快照有证据支持的服务器目标；不要假定它兼容更早的大版本。
+本次分发的 Cargo 清单声明 `pg18` 和 `pg19` PostgreSQL 特性，并默认选择 `pg18`。它们是源码功能目标，不代表已有二进制包；未声明更早的大版本。
 
 在每个需要使用它的数据库中安装扩展，然后检查已安装的 SQL 版本：
 
@@ -108,7 +108,7 @@ LIMIT 5;
 
 ### 依赖与注意事项
 
-- 本次分发的 Cargo 清单固定使用 `pgrx 0.17.0` 和 `rust-version = '1.80'`；本次分发的 README 还要求从源码构建时使用 Rust nightly、PostgreSQL 18 或更高版本、OpenSSL 与 OpenBLAS。
+- 本次分发的 Cargo 清单固定使用 `pgrx 0.19.4` 和 `rust-version = '1.80'`；本次分发的 README 还要求从源码构建时使用 Rust nightly、PostgreSQL 18 或更高版本、OpenSSL 与 OpenBLAS。
 - 控制文件和本次分发的安装说明均未声明 `shared_preload_libraries` 设置。正常使用从 `CREATE EXTENSION pg_infer` 开始；除非部署的确切构建给出证据，否则不要自行增加预加载或重启要求。
 - 注册表行和索引元页不能替代外部 vindex 目录。应确认故障切换或恢复后可能执行查询的每台服务器都具备模型数据、正确权限与有效路径。
 - Alpha README 明确警告 SQL 可能发生破坏性变化、vindex 格式尚未冻结、部分计算路径依赖特定硬件，而且该快照尚无成熟的生产部署。应使用代表性模型与查询进行测试，限制内存使用，并把升级视为兼容性敏感操作。

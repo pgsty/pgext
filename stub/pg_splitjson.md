@@ -2,6 +2,11 @@
 
 Sources:
 
+- [Current upstream](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/RELEASE_NOTE.md)
+- [Current upstream](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/docs/api-reference.md)
+- [Current upstream](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/docs/production-runbook.md)
+- [Current upstream](https://github.com/Haiwen-Yin/pg_splitjson/blob/v0.4.0/sql/pg_splitjson--0.3.0--0.4.0.sql)
+
 - [README.md](https://github.com/Haiwen-Yin/pg_splitjson/blob/9982e76f8ebf6bc7e08a7efc10d240f21cc76b5a/README.md)
 - [docs/api-reference.md](https://github.com/Haiwen-Yin/pg_splitjson/blob/9982e76f8ebf6bc7e08a7efc10d240f21cc76b5a/docs/api-reference.md)
 - [docs/support-matrix.md](https://github.com/Haiwen-Yin/pg_splitjson/blob/9982e76f8ebf6bc7e08a7efc10d240f21cc76b5a/docs/support-matrix.md)
@@ -44,3 +49,18 @@ Optional SELECT rewriting requires loading the library before planning, using `L
 Back up first and install matching libraries on every node, then run `ALTER EXTENSION pg_splitjson UPDATE TO '0.3.0'`. Recreate sessions that loaded the old library. Back up the whole database; exporting only the business view omits private storage.
 
 After backup restore, PITR or takeover, call `splitjson.reinitialize_table` before writes, choosing `restore`, `recovery` or `takeover` for the actual event, then run `splitjson.check_all(true)`. This rotates the revision-token epoch. Online migration uses a separate WAL workflow; native publication/subscription supports identical layouts only. Fence the previous writer before takeover; dual-primary writes are unsupported.
+
+### 0.4.0 writes and maintenance
+
+`splitjson.update_rows` applies one atomic request to 0–1000 distinct IDs, with 1–64 ordered operations per row. It locks IDs in order, checks optional revision tokens under lock and writes each changed row once. A stale token or constraint failure rolls back the complete request. `splitjson.explain_update` diagnoses hot routing without taking a row write lock or reading cold data. Opt-in session counters survive rollback and are not committed audit totals.
+
+0.4.0 also adds structured compound B-tree definitions and streaming JSONL/WAL migration paths. These retain the caller's ACL/RLS and write-fence checks; no general view-DML translation or multi-primary replication is provided. Performance results are workload-specific, and only PostgreSQL 18.6 on Linux x86-64 is validated upstream.
+
+Quiesce traffic, install matching library/SQL files and recycle backends that loaded older code, then:
+
+```sql
+ALTER EXTENSION pg_splitjson UPDATE TO '0.4.0';
+SELECT splitjson.check_all(true);
+```
+
+The formal upgrade preserves existing API OIDs/grants, revision tokens and cold bytes. New APIs need explicit grants through `splitjson.grant_access`; existing roles do not automatically receive them. Restores, PITR and migration leases retain the runbook's reinitialization and recovery requirements.

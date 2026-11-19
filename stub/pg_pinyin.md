@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/releases/tag/v0.0.9)
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/blob/v0.0.9/readme.md)
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/blob/v0.0.9/pg_pinyin--0.0.8--0.0.9.sql)
+
 - [pg_pinyin v0.0.8 README](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/readme.md)
 - [pg_pinyin v0.0.8 control file](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/pg_pinyin.control)
 - [0.0.7 to 0.0.8 upgrade SQL](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/pg_pinyin--0.0.7--0.0.8.sql)
@@ -65,3 +69,11 @@ If pg_search is absent, the same entry point is installed as an error-reporting 
 ### Operational Notes
 
 The extension ships generated character and word dictionaries in its pinyin schema. Treat those tables as extension-managed data rather than application tables. Romanization is normalization, not translation, and ambiguous or domain-specific readings may require application-side review.
+
+### 0.0.9 query modes and batch input
+
+The current release requires pgrx 0.20.0-compatible servers and headers: PostgreSQL 15.20, 16.16, 17.12 or 18.7 and later minors. PostgreSQL 14 is removed; 19 RC2 is experimental. Reconnect after replacing the library and run ALTER EXTENSION pg_pinyin UPDATE TO '0.0.9'. This supersedes the older compatibility paragraph.
+
+Explicit apostrophes preserve syllable boundaries such as xi'an. pinyin_regex_phrase_mode adds opt-in full, initials, autocomplete and auto modes; pinyin_phrase provides exact native term/phrase queries for plain syllable fields. Use a mode matching the field encoding and user intent. pg_search remains optional and its native phrase APIs must be available for that integration.
+
+pinyin_word_romanize_batch(text[]) accepts independent plain-text documents with NULL and optional suffix handling. Use the documented COPY staging/batch workflow for imports. Embedded Rust pattern parsers are immutable and parallel safe without runtime SPI; this does not imply every dictionary-dependent romanization function has the same contract. Existing defaults remain available; malformed explicit-mode input raises errors rather than searching a silently truncated prefix.

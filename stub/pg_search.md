@@ -2,6 +2,13 @@
 
 Sources:
 
+- [0.26.8 changelog](https://www.paradedb.com/docs/project/changelog/0.26.8.md)
+- [pg_search 0.26.8 README](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/README.md)
+- [pg_search 0.26.8 control](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/pg_search.control)
+- [0.26.7 to 0.26.8 SQL](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/sql/pg_search--0.26.7--0.26.8.sql)
+- [Upstream source](https://api.pgxn.org/src/pg_search/pg_search-0.26.7/docs/project/changelog/0.26.7.mdx)
+- [Upstream source](https://api.pgxn.org/src/pg_search/pg_search-0.26.7/pg_search/pg_search.control)
+
 - [0.26.6 changelog](https://github.com/paradedb/paradedb/blob/v0.26.6/docs/project/changelog/0.26.6.mdx)
 - [pg_search 0.26.6 control](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/pg_search.control)
 - [pg_search 0.26.6 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/Cargo.toml)
@@ -27,7 +34,7 @@ Sources:
 - [Query vectors](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [Hybrid-search overview](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.6 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
+`pg_search` 0.26.7 adds ParadeDB's full-text, structured, vector, and hybrid search index to PostgreSQL. Version 0.25 uses the `paradedb` index access method; the older `bm25` access-method name remains a compatibility alias. The extension requires `vector`, supports PostgreSQL 15-18 upstream, and must be loaded through `shared_preload_libraries`.
 
 ### Install and Build an Index
 
@@ -148,3 +155,13 @@ Version 0.26.5 enforces table permissions on standalone index-reading functions 
 ### Version 0.26.6
 
 Join Scan now supports top-K `ORDER BY` on the vector distance operators `<->`, `<=>`, and `<#>` for `INNER` and `SEMI` (`IN` / `EXISTS`) joins. Rank join also applies when a leaf has a single-table filter answered by the index, including row-level security policies, equality, `= ANY`, and range conditions. The release fixes a crash when `pdb.score()` appears with a scalar subquery or query parameter in a Join Scan select list, and `EXPLAIN` now warns when `RankJoinExec` is not used. Validate plans and top-K results after upgrading; package coordinates must be checked separately from upstream.
+
+### 0.26.7 partitioning and scores
+
+Skewed partition_by indexes now use heap ctid as a fallback to divide otherwise unsplittable partitions. Existing indexes need REINDEX to benefit. Explicitly including ctid in partition_by retains the old competing-column behavior and does not enable this fallback.
+
+Row-level security filters now contribute 0.0 consistently to pdb.score; an earlier plan-dependent constant is removed. This can change reported scores. Merge backpressure counts all visible segments, and builds/merges with more than 4 GiB of distinct string values in a segment are fixed. These changes do not remove the earlier 0.26 vector-format rebuild requirements.
+
+### 0.26.8 Foreground Merge Behaviour
+
+After a write successfully launches a background merger, the foreground write path now skips its own foreground merge. If the background merger cannot be launched, foreground merging remains the fallback. Apply the normal matching library, SQL-extension update and preload maintenance procedure; this release adds no new index-format migration.

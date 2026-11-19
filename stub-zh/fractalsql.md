@@ -2,6 +2,10 @@
 
 来源：
 
+- [当前上游](https://github.com/FractalSQLabs/fractalsql-postgresql/blob/v2.0.22/sql/fractalsql--1.0.sql)
+- [当前上游](https://github.com/FractalSQLabs/fractalsql-postgresql/blob/v2.0.22/docs/api-analytics.md)
+- [当前上游](https://github.com/FractalSQLabs/fractalsql-postgresql/blob/v2.0.22/docs/mcp-plugin.md)
+
 - [v2.0.21 README](https://github.com/FractalSQLabs/fractalsql-postgresql/blob/v2.0.21/README.md)
 - [扩展控制文件](https://github.com/FractalSQLabs/fractalsql-postgresql/blob/v2.0.21/fractalsql.control)
 - [SQL 定义](https://github.com/FractalSQLabs/fractalsql-postgresql/blob/v2.0.21/sql/fractalsql--1.0.sql)
@@ -27,3 +31,9 @@ SELECT fractal_search(ARRAY[0.1, 0.2, 0.3]::float8[]);
 特征存储记录写入者来源信息；覆盖其他角色的向量时，要求调用者属于该角色或为超级用户。`fractal_store_morphology` 新增可选的来源标签。安装 SQL 撤销了 `fractal_audit_log` 的公共执行权限，已有数据库需要单独复核授权。`fractal_lock_destructive()` 在当前连接中不可逆地禁用账本修改和审计写入。当调用者有删除队列行的权限时，已完成的向量化任务在一小时后清理，失败任务在一天后清理。
 
 安装定义发生了变化，但扩展 SQL 版本仍是 1.0。仅替换库文件不会更新已有 SQL 对象或权限；采用上游迁移说明前，应检查并备份已安装的定义。
+
+### 上游 2.0.22 API 边界
+
+上游分发版本为 2.0.22，SQL 扩展版本仍为 1.0。`fractal_tda_persistence_diagram` 现在要求显式传入 `max_dim` 与 `max_thresh`，前者为 0 或 1，后者必须为正阈值。返回的图环秩不是完整的单纯同调计算。
+
+安装 SQL 将配置包装函数更名为 `fractal_config_set` 与 `fractal_config_get`；MCP 名称与文档中的 `fractal_version`、`fractal_configure_reasoning` 接口对齐。SQL 版本仍为 1.0 时，仅替换库不会让既有数据库获得变化后的 SQL 定义。修改在线安装前，应审查官方安装 SQL 和考虑依赖关系的迁移流程，不要假定 ALTER EXTENSION 能执行并不存在的版本化升级。本次配套 agents 的安装 SQL 没有变化。

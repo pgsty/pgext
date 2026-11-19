@@ -2,6 +2,10 @@
 
 Sources:
 
+- [ProvSQL 1.14.0 changelog](https://github.com/PierreSenellart/provsql/blob/v1.14.0/CHANGELOG.md)
+- [1.13.1 to 1.14.0 SQL](https://api.pgxn.org/src/provsql/provsql-1.14.0/sql/upgrades/provsql--1.13.1--1.14.0.sql)
+- [ProvSQL 1.14.0 control](https://api.pgxn.org/src/provsql/provsql-1.14.0/provsql.common.control)
+- [ProvSQL 1.14.0 README](https://api.pgxn.org/src/provsql/provsql-1.14.0/README.md)
 - [ProvSQL 1.13.0 documentation](https://github.com/PierreSenellart/provsql/blob/v1.13.0/doc/provsql.md)
 - [ProvSQL 1.13.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.13.0)
 - [ProvSQL 1.13.0 changelog](https://github.com/PierreSenellart/provsql/blob/v1.13.0/CHANGELOG.md)
@@ -162,3 +166,13 @@ Long evaluations honor cancellation and statement timeouts. `provsql.max_memory`
 The circuit is stored outside ordinary SQL tables. `pg_dump` and logical replication carry tokens but do not preserve the circuit. A consistent physical backup must include all four store files, taken with the server stopped or through a whole-data-directory filesystem snapshot. Machine crashes can lose recently committed gates unless `provsql.store_synchronous_commit` is enabled; missing gates can be read as independent inputs with probability 1. Queries can write circuit gates even inside read-only transactions, and the store is not fully transaction-isolated.
 
 On PostgreSQL 15+, `provsql.store_wal_logging` requires synchronous store commits and a fresh base backup for existing replicas. Standbys then refuse circuit-writing provenance queries. Keep this option off on storage-layer WAL forks listed by upstream, including Aurora, Neon, AlloyDB and HorizonDB. Major-version PostgreSQL upgrades need separate store-file migration. `provsql.check_store()` checks consistency; `provsql.circuit_cleanup()` needs exclusive use of the database and retains only tokens reachable from the documented table-column types.
+
+### 1.14.0 Exact Probability Performance
+
+```sql
+ALTER EXTENSION provsql UPDATE;
+```
+
+Version 1.14.0 evaluates independent lineage parts separately and reuses d-DNNFs with the same canonical circuit structure within a session. New settings are `provsql.idp_fold`, `provsql.prob_cache`, and `provsql.prob_cache_size`. Probability results are unchanged, but `provsql.last_eval_method` can now report `fold` or `cache:<method>`.
+
+A method that exceeds its expected budget may be retried with a larger budget. An automatically selected external compiler that runs far too long is stopped and reconsidered; a compiler named explicitly, or the last remaining method, still runs until `statement_timeout`. Reconnect sessions after replacing the preloaded library, then apply the SQL upgrade.

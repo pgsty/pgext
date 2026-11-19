@@ -2,42 +2,45 @@
 
 Sources:
 
-- [Official upstream README](https://github.com/pg-cuvs/pg_cuvs/blob/f8bfcc9a0d594c28257870ac23f9f130b90130e7/README.md)
-- [Official extension control file (pg_cuvs.control)](https://github.com/pg-cuvs/pg_cuvs/blob/f8bfcc9a0d594c28257870ac23f9f130b90130e7/pg_cuvs.control)
-- [Official extension SQL (pg_cuvs--0.4.0--0.5.0.sql)](https://github.com/pg-cuvs/pg_cuvs/blob/f8bfcc9a0d594c28257870ac23f9f130b90130e7/sql/pg_cuvs--0.4.0--0.5.0.sql)
+- [README.md](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/README.md)
+- [pg_cuvs.control](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/pg_cuvs.control)
+- [docs/playbooks/release-upgrade.md](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/docs/playbooks/release-upgrade.md)
+- [sql/pg_cuvs--0.9.0--0.9.1.sql](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/sql/pg_cuvs--0.9.0--0.9.1.sql)
+- [sql/pg_cuvs--0.9.1--0.9.2.sql](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/sql/pg_cuvs--0.9.1--0.9.2.sql)
+- [Release](https://github.com/pg-cuvs/pg_cuvs/releases/tag/v0.9.2)
 
-`pg_cuvs` — GPU-accelerated vector search for PostgreSQL via NVIDIA cuVS — a heterogeneous acceleration path that keeps Postgres as the control plane. Use it for the corresponding vector, model, or retrieval workflow. The reviewed upstream material marks this capability deprecated.
+`pg_cuvs` 0.9.2 uses a separate NVIDIA cuVS daemon for GPU vector search and GPU-assisted HNSW construction. The documented target is Linux/PostgreSQL 16 with pgvector 0.7.0 or newer. Match the extension, daemon, CUDA/cuVS libraries and required SDK patches; a CPU CI pass is not evidence of GPU correctness.
 
-### Core Workflow
+### Enable and Query
 
-```sql
-CREATE EXTENSION pg_cuvs;
+Append `pg_cuvs` to the existing preload list, preserve other libraries, and configure matching backend/daemon paths:
+
+```ini
+shared_preload_libraries = 'pg_cuvs'
+cuvs.socket_path = '/var/run/postgresql/.s.pg_cuvs'
+cuvs.index_dir = '/var/lib/postgresql/cuvs_indexes'
 ```
 
-Install the extension in the intended database, run the smallest upstream example above when available, and verify the installed version and returned values before integrating it into application SQL.
+Restart PostgreSQL, start the matching `pg_cuvs_server` with access to the same socket and persistent index directory, and wait until it is listening. A privileged installer then enables the non-relocatable extension:
 
-### Important Objects
+```sql
+CREATE EXTENSION vector;
+CREATE EXTENSION pg_cuvs;
+CREATE TABLE items (id bigint PRIMARY KEY, embedding vector(3));
+INSERT INTO items VALUES (1, '[1,0,0]'), (2, '[0,1,0]'), (3, '[0,0,1]');
+CREATE INDEX items_cagra ON items USING cagra (embedding vector_l2_ops);
+SELECT id FROM items ORDER BY embedding <-> '[1,0,0]'::vector LIMIT 2;
+EXPLAIN SELECT id FROM items ORDER BY embedding <-> '[1,0,0]'::vector LIMIT 2;
+```
 
-- `cuvs_filtered_knn(index_rel regclass, query vector, filter_tids bigint[], k integer)` is an extension function and returns `TABLE`.
-- `cuvs_filtered_knn(index_rel regclass, query vector, filter_tids tid[], k integer)` is an extension function and returns `TABLE`.
-- `cuvsamhandler(internal)` is an extension function and returns `index_am_handler`.
-- `flatamhandler(internal)` is an extension function and returns `index_am_handler`.
-- `ivfpqamhandler(internal)` is an extension function and returns `index_am_handler`.
-- `pg_cuvs_batch_search(rel regclass, queries vector[], k integer, OUT query_idx integer, OUT ctid tid, OUT distance real)` is an extension function and returns `SETOF`.
-- `pg_cuvs_build_hnsw(cagra_oid regclass, mode text DEFAULT 'nsw')` is an extension function and returns `regclass`.
-- `pg_cuvs_compact(index_rel regclass)` is an extension function and returns `void`.
-- `pg_cuvs_eat_vram(leave_bytes bigint)` is an extension function and returns `void`.
-- `pg_cuvs_free_vram()` is an extension function and returns `void`.
-- `pg_cuvs_gc_orphans(do_delete boolean DEFAULT false, OUT db_oid oid, OUT index_oid oid, OUT reason text, OUT action text)` is an extension function and returns `SETOF`.
-- `pg_cuvs_gpu_cache_stats(OUT gpu_device_id integer, OUT hits bigint, OUT misses bigint, OUT evictions bigint, OUT reloads bigint, OUT persist_failures bigint, OUT resident_count integer, OUT vram_used_mb bigint, OUT vram_budget_mb bigint, OUT bf_vram_mb bigint, OUT bf_precision text)` is an extension function and returns `SETOF`.
-- `pg_cuvs_gpu_fallback_stats(OUT index_oid regclass, OUT fallback_count bigint, OUT last_reason text, OUT last_fallback_at timestamptz)` is an extension function and returns `SETOF`.
-- `pg_cuvs_gpu_shard_stats(OUT database_oid oid, OUT index_oid oid, OUT index_name text, OUT shard_id integer, OUT gpu_device_id integer, OUT n_vecs bigint, OUT tid_offset bigint, OUT vram_used_mb bigint, OUT search_count bigint, OUT error_count bigint, OUT resident boolean, OUT last_st…)` is an extension function and returns `SETOF`.
+`cagra` provides approximate GPU search, `flat` exhaustive GPU search, and `ivfpq` compressed approximate search. `pg_cuvs_hnsw` builds with the GPU and serves standard pgvector HNSW pages on CPU. `cuvs.k` controls candidate count independently of SQL LIMIT; filters and approximate search require workload-specific recall checks. Use EXPLAIN to confirm the actual route.
 
-### Requirements and Caveats
+### Operations and Upgrade
 
-- The reviewed control file declares default version `0.5.0`.
-- Install the confirmed extension dependencies first: `vector`.
-- The control file marks the extension as non-relocatable.
-- Upstream material contains an explicit deprecation boundary.
-- Upstream material indicates that the project is abandoned or unmaintained.
-- Confirm privileges, supported PostgreSQL versions, upgrade behavior, and failure cases against the pinned source before production use.
+`pg_stat_gpu_search` exposes search statistics. `pg_cuvs_hnsw_connectivity_status(regclass)` returns an optional structural snapshot recorded at build time; it does not track later INSERT/DELETE/VACUUM or guarantee recall. The older two-step import API was removed; use `CREATE INDEX ... USING pg_cuvs_hnsw` for current builds.
+
+Install both matching binaries, restart PostgreSQL and then the daemon, and run `ALTER EXTENSION pg_cuvs UPDATE TO '0.9.2'` in each database. The repository includes the SQL upgrade chain from 0.1.0. Version 0.9.2 changes no SQL object; it fixes socket connection retries and the daemon backlog for concurrent micro-batches. Its real-GPU evidence covers a specific A100/PG16 environment, not every GPU or driver.
+
+### Failure and Persistence Boundaries
+
+Daemon loss after planning raises an error; the executing statement cannot silently swap to a CPU node. Roll back before retrying and inspect the new plan. `enable_cuvs=off` disables the GPU planning path. GPU sidecars are outside PostgreSQL WAL and need their own backup, restore and replica procedure. IVF-PQ inserts are not indexed incrementally; rebuild after data changes and verify sidecar recovery. Stale-marker delivery remains best effort during outages, and memory preflight does not reserve memory against other processes. The project is active; a deprecated helper is not a deprecation of the extension.

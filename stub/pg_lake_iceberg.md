@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/table-options.md)
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/iceberg-catalogs.md)
+
 - [Official Iceberg table guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/iceberg-tables.md)
 - [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg.control)
 - [Iceberg metadata SQL API](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_iceberg/pg_lake_iceberg--3.0.sql)
@@ -85,3 +89,9 @@ The `3.4` to `3.5` Iceberg SQL migration is empty, while patch-level catalog and
 ### Upstream 3.6.0
 
 Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.
+
+### Upstream 3.6.1 catalog behavior
+
+Read-only tables attached with `catalog = 'snowflake'` and inferred columns now default `lowercase_column_names` to true. Other documented read-only catalog cases retain their existing default; the option is fixed when the table is created and does not rename existing columns. Review inferred names and case collisions when attaching new tables.
+
+The family retains SQL version 3.6. Deploy matching extension libraries and `pgduck_server`: the patch also includes a Brotli decoder security correction in the query server. Existing package versions are recorded independently and are not evidence that this upstream patch is installed.

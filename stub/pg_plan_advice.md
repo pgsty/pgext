@@ -3,11 +3,11 @@
 Sources:
 
 - [PostgreSQL 19 documentation](https://www.postgresql.org/docs/19/pgplanadvice.html)
-- [Module definition](https://github.com/postgres/postgres/blob/REL_19_BETA3/contrib/pg_plan_advice/Makefile)
-- [Module implementation](https://github.com/postgres/postgres/blob/REL_19_BETA3/contrib/pg_plan_advice/pg_plan_advice.c)
-- [Versioned manual](https://github.com/postgres/postgres/blob/REL_19_BETA3/doc/src/sgml/pgplanadvice.sgml)
+- [Module definition](https://github.com/postgres/postgres/blob/REL_19_0/contrib/pg_plan_advice/Makefile)
+- [Module implementation](https://github.com/postgres/postgres/blob/REL_19_0/contrib/pg_plan_advice/pg_plan_advice.c)
+- [Versioned manual](https://github.com/postgres/postgres/blob/REL_19_0/doc/src/sgml/pgplanadvice.sgml)
 
-`pg_plan_advice` is a supplied PostgreSQL 19 module that records planner choices as advice and constrains later planning. This page uses PostgreSQL 19 beta3 as its version boundary; the module has no independent SQL extension version.
+`pg_plan_advice` is a supplied PostgreSQL 19 module that records planner choices as advice and constrains later planning. This page uses PostgreSQL 19.0 as its version boundary; the module has no independent SQL extension version.
 
 ### Session Workflow
 

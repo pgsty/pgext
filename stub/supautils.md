@@ -2,6 +2,7 @@
 
 Sources:
 
+- [Current release](https://github.com/supabase/supautils/releases/tag/v4.0.1)
 - [v4.0.0 README](https://github.com/supabase/supautils/blob/v4.0.0/README.md)
 - [v4.0.0 release](https://github.com/supabase/supautils/releases/tag/v4.0.0)
 - [Version restriction implementation](https://github.com/supabase/supautils/blob/v4.0.0/src/extensions.c)
@@ -88,3 +89,7 @@ Review allowed extensions and custom scripts as trusted code because their opera
 ### 4.0 Migration
 
 Version 4.0.0 removes constrained-extension functionality; remove the old constrained_extensions configuration rather than relying on that mechanism. Global and per-extension custom scripts run in this order: global before-create, extension before-create, extension after-create, global after-create. The default_extension_install_schema setting prepends a default schema when no explicit SCHEMA or parameter override wins. The read-only supautils.version setting identifies the loaded library. These are library changes; restart or reconnect the processes that preload it, without CREATE EXTENSION for supautils itself.
+
+### 4.0.1 fixes
+
+Version 4.0.1 guards role lookups for statements without a role, corrects extension authorization, and runs dependent custom scripts when no dependency cycle exists. It remains a preloaded module with no CREATE EXTENSION command. Replace the matching library and restart processes using it; verify delegated administration and custom-script policy after upgrade.

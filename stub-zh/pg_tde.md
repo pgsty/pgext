@@ -2,12 +2,12 @@
 
 来源：
 
-- [pg_tde 2.2 setup](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/setup.md)
-- [Key-provider and key-management functions](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/functions.md)
-- [pg_tde 2.2.0 release notes](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/release-notes/release-notes-v2.2.0.md)
-- [Transparent data encryption limitations](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/tde-limitations.md)
-- [TDE table access method](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/index/table-access-method.md)
-- [WAL encryption](https://github.com/percona/pg_tde/blob/2.2.0/documentation/docs/wal-encryption.md)
+- [pg_tde 2.3 setup](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/setup.md)
+- [Key-provider and key-management functions](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/functions.md)
+- [pg_tde 2.3.0 release notes](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/release-notes/release-notes-v2.3.0.md)
+- [Transparent data encryption limitations](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/index/tde-limitations.md)
+- [TDE table access method](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/index/table-access-method.md)
+- [WAL encryption](https://github.com/percona/pg_tde/blob/2.3.0/documentation/docs/wal-encryption.md)
 
 pg_tde 为 Percona Server for PostgreSQL 提供透明数据加密功能。它通过 tde_heap 访问方法对表数据进行加密，并可以加密 WAL，密钥由文件、HashiCorp Vault 或 KMIP 提供商管理。它并不是可直接用于社区版 PostgreSQL 的即插即用扩展。
 
@@ -21,7 +21,7 @@ pg_tde 为 Percona Server for PostgreSQL 提供透明数据加密功能。它通
 
     CREATE EXTENSION pg_tde;
 
-以超级用户或具有适当权限的数据库所有者身份运行设置。上游 pg_tde 2.2 版本与兼容的 Percona Server for PostgreSQL 17 或 18 版本绑定；2.2.0 发行说明警告称，它不适用于比 17.10 和 18.4 更早版本的 Percona Distribution。
+以超级用户或具有适当权限的数据库所有者身份运行设置。必须使用匹配的 Percona Server 构建。2.3.0 增加 PostgreSQL 19 支持，SQL 扩展版本为 2.3。该版本的 `pg_tde_waldump` 可识别自定义资源管理器及其 `--rmgr` 过滤条件。源码支持不代表已有对应 PostgreSQL 大版本的软件包。
 
 ### 配置密钥提供者
 

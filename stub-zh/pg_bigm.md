@@ -1,91 +1,31 @@
-
-
-
 ## 用法
 
-> [pg_bigm 文档](https://pgbigm.osdn.jp/pg_bigm_en-1-2.html) | [GitHub: pgbigm/pg_bigm](https://github.com/pgbigm/pg_bigm)
+来源：
 
-`pg_bigm` 模块为 PostgreSQL 提供全文搜索能力。它允许用户创建 **2-gram**（bigram）索引，以加速全文搜索。
+- [Official source](https://github.com/pgbigm/pg_bigm/blob/v1.2-20261118/docs/pg_bigm_en.md)
+- [Official source](https://github.com/pgbigm/pg_bigm/blob/v1.2-20261118/pg_bigm.control)
+- [Official source](https://github.com/pgbigm/pg_bigm/blob/v1.2-20261118/README.md)
+- [Official source](https://github.com/pgbigm/pg_bigm/releases/tag/v1.2-20261118)
 
-`pg_bigm` 采用 PostgreSQL License 发布，是一种宽松的开源许可证，和 BSD、MIT 类似。
+`pg_bigm` 使用 GIN 二元组索引加速 LIKE 与相似度搜索，包括多字节文本。1.2-20261118 发行版保留 SQL 版本 1.2，并增加 PostgreSQL 19 支持。
 
-## 功能特性
-
-- **Bigram 索引**：为文本列创建 2-gram（bigram）GIN 索引
-- **更快的 LIKE 搜索**：加速 `LIKE` 查询，包括前缀、后缀和子串搜索
-- **全语言支持**：无需额外配置即可支持包括中文、日文、韩文在内的任意语言
-- **简单 API**：提供相似度搜索函数和运算符
-
-## 函数与运算符
-
-### 函数
-
-| 函数 | 返回类型 | 说明 |
-|------|----------|------|
-| `likequery(text)` | `text` | 根据关键字生成全文搜索查询 |
-| `show_bigm(text)` | `text[]` | 显示给定字符串中的所有 2-gram |
-| `pg_gin_pending_stats(regclass)` | `record` | 返回 GIN 索引待处理列表中的页面数和元组数 |
-
-### 运算符
-
-| 运算符 | 说明 |
-|--------|------|
-| `text =% text` | 当左右操作数的相似度大于等于 `pg_bigm.similarity_limit` 时返回 true |
-
-## GUC 参数
-
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| `pg_bigm.last_update` | `text` | - | 显示模块最后更新日期（只读） |
-| `pg_bigm.enable_recheck` | `bool` | `on` | 控制索引扫描期间是否执行复查 |
-| `pg_bigm.gin_key_limit` | `int` | `0` | 限制全文搜索使用的最大 bigram 数量，0 表示不限制 |
-| `pg_bigm.similarity_limit` | `real` | `0.3` | 设置 `=%` 运算符的最小相似度阈值 |
-
-## 示例
-
-### 基本全文搜索
+### 搜索
 
 ```sql
--- 创建扩展
 CREATE EXTENSION pg_bigm;
-
--- 创建含文本数据的表
-CREATE TABLE documents (id serial PRIMARY KEY, content text);
-INSERT INTO documents (content) VALUES
-  ('PostgreSQL is a powerful database'),
-  ('Full text search with bigram indexing'),
-  ('Japanese text: 日本語テキスト検索');
-
--- 创建 bigram 索引
+CREATE TABLE documents (id bigint PRIMARY KEY, content text);
+INSERT INTO documents VALUES (1, 'PostgreSQL database search');
 CREATE INDEX docs_bigm_idx ON documents USING gin (content gin_bigm_ops);
-
--- 使用 LIKE 搜索
-SELECT * FROM documents WHERE content LIKE '%search%';
-
--- 使用 likequery 函数搜索
 SELECT * FROM documents WHERE content LIKE likequery('database');
-```
-
-### 相似度搜索
-
-```sql
--- 显示字符串的 bigram
 SELECT show_bigm('PostgreSQL');
-
--- 相似度搜索
 SET pg_bigm.similarity_limit = 0.2;
 SELECT * FROM documents WHERE content =% 'database search';
 ```
 
-### 与 pg_trgm 的比较
+`likequery(text)` 将字面搜索关键字转义为 LIKE 条件；`show_bigm(text)` 显示二元组，`bigm_similarity(text,text)` 返回相似度。`=%` 运算符使用通常为 0.3 的 `pg_bigm.similarity_limit`。只有规划器选择索引时，索引才参与查询。
 
-pg_bigm 相较于内置的 `pg_trgm` 有以下优势：
+### 设置与维护
 
-| 特性 | pg_bigm | pg_trgm |
-|------|---------|---------|
-| N-gram 类型 | 2-gram（bigram） | 3-gram（trigram） |
-| 最小搜索字符串 | 1 个字符 | 3 个字符 |
-| 非字母语言 | 完全支持 | 有限支持 |
-| LIKE 搜索类型 | 前缀、后缀和子串 | 前缀、后缀和子串 |
+通常应保持 `pg_bigm.enable_recheck` 开启，关闭复查可能返回假阳性结果。`pg_bigm.gin_key_limit` 默认 0，表示不限制；正值限制搜索所使用的键数。`pg_gin_pending_stats(regclass)` 返回 GIN 待处理列表的页面数和元组数，`pg_bigm.last_update` 标识库修订。
 
-更完整的高级用法和性能调优，请参见 [pg_bigm 官方文档](https://pgbigm.osdn.jp/pg_bigm_en-1-2.html)。
+20261118 构建修复多字节截断错误、LIKE 下划线处理及相似度匹配遗漏。截断修复要求使用 PostgreSQL 14.21、15.16、16.12、17.8、18.2 或更新补丁版本，或 PostgreSQL 19 的头文件编译；SQL 扩展版本相同不证明运行库已包含修复。应在所有服务器部署匹配库，并替换仍使用旧库的进程。基本用法无需预加载。

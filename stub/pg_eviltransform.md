@@ -2,6 +2,10 @@
 
 Sources:
 
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.8)
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/README.md)
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/pg_eviltransform--0.0.7--0.0.8.sql)
+
 - [Official v0.0.7 README](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/README.md)
 - [v0.0.7 release notes](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.7)
 - [v0.0.7 control file](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/pg_eviltransform.control)
@@ -67,3 +71,13 @@ Array inputs support `numeric`, `double precision`, `real`, `bigint`, `integer`,
 ### 0.0.7 Compatibility
 
 The 0.0.6-to-0.0.7 upgrade SQL updates the coordinate-name resolution functions. Upstream supports PostgreSQL 14-18 and PostgreSQL 19 beta4 with pgrx 0.19.3. The `ST_JenksBins` interface remains unchanged; package/build metadata is maintained separately from the upstream release.
+
+### 0.0.8 compatibility and safety
+
+Current pgrx 0.20.0 binaries and build headers require at least PostgreSQL 15.20, 16.16, 17.12 or 18.7. PostgreSQL 14 is no longer supported; 19 RC2 support is experimental. This supersedes the older compatibility paragraph above.
+
+Invalid non-geometry transformation input now raises an SQL error instead of crashing. PostGIS functions/types resolve independently of the caller's search_path. Install matching files, reconnect, and migrate each existing database:
+
+```sql
+ALTER EXTENSION pg_eviltransform UPDATE TO '0.0.8';
+```

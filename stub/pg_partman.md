@@ -2,6 +2,9 @@
 
 Sources:
 
+- [pg_partman 5.5.1 changelog](https://github.com/pgpartman/pg_partman/blob/v5.5.1/CHANGELOG.md)
+- [pg_partman 5.5.1 control](https://github.com/pgpartman/pg_partman/blob/v5.5.1/pg_partman.control)
+- [5.5.0 to 5.5.1 SQL](https://github.com/pgpartman/pg_partman/blob/v5.5.1/updates/pg_partman--5.5.0--5.5.1.sql)
 - [pg_partman 5.5.0 README](https://github.com/pgpartman/pg_partman/blob/v5.5.0/README.md)
 - [pg_partman 5.5.0 changelog](https://github.com/pgpartman/pg_partman/blob/v5.5.0/CHANGELOG.md)
 - [pg_partman usage guide](https://github.com/pgpartman/pg_partman/blob/v5.5.0/doc/pg_partman_howto.md)
@@ -85,3 +88,11 @@ The release also adds `detach_before_drop`, inherits per-column statistics targe
 - pg_partman can be installed and run without superuser privileges when the owner, schema, table, procedure, function, temporary-table, and optional RLS grants are configured as documented.
 - Only one scheduler should own routine maintenance. Do not run the background worker and an external scheduler concurrently without deliberate coordination.
 - A large maintenance run can hold many locks and move substantial data. Test retention and migration on representative data, monitor the default partition, and keep backups independent of partition retention.
+
+### 5.5.1 Correctness Fixes
+
+```sql
+ALTER EXTENSION pg_partman UPDATE TO '5.5.1';
+```
+
+Version 5.5.1 fixes `partition_data_time()` variable assignment when `p_lock_wait` is used, stops treating a template table's INCLUDE index columns as real child key columns, and restores correct first-day range handling for date control columns. `uuid7_time_encoder()` and `uuid7_time_decoder()` are now `IMMUTABLE` and `PARALLEL SAFE`, allowing UUIDv7 filters to prune partitions. The background worker's portal lifecycle and `show_partition_info()` interval-end output are also corrected. The role calling `create_partition()` needs ownership-level permission on the target table.

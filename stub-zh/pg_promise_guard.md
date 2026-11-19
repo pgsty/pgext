@@ -2,16 +2,15 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/README.md)
-- [pg_promise_guard.control](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/pg_promise_guard.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.10/README.md)
+- [pg_promise_guard.control](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.10/pg_promise_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.10/CHANGELOG.md)
 
-`pg_promise_guard` 0.2.8 扫描系统目录，寻找已声明却不再完整执行的保证。它依赖 `pg_living_assertions`，以纯 SQL 实现，无需预加载。
+`pg_promise_guard` 0.2.10 扫描系统目录，寻找已声明却不再完整执行的保证。它可为 `watch()` 使用 `pg_living_assertions`，以纯 SQL 实现，无需预加载。
 
 ### 核心用法
 
 ```sql
-CREATE EXTENSION pg_living_assertions;
 CREATE EXTENSION pg_promise_guard;
 
 SELECT * FROM promise_guard.promise_breaks;
@@ -24,6 +23,10 @@ SELECT * FROM promise_guard.check_promises('app');
 SELECT promise_guard.watch('public');
 SELECT * FROM living_assertions.status;
 ```
+
+### 0.2.10 依赖边界
+
+0.2.10 将 `pg_living_assertions` 改为安装时可选依赖。普通系统目录检查无需它；在未安装时调用 `promise_guard.watch()` 会报告明确的依赖错误。监控角色仍可在文档授权下执行检查。已有安装会保留创建时记录的依赖。
 
 ### 运行边界
 

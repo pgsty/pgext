@@ -2,6 +2,10 @@
 
 来源：
 
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.8)
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/README.md)
+- [Upstream source](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.8/pg_eviltransform--0.0.7--0.0.8.sql)
+
 - [Official v0.0.7 README](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/README.md)
 - [v0.0.7 release notes](https://github.com/aiyou178/pg_eviltransform/releases/tag/v0.0.7)
 - [v0.0.7 control file](https://github.com/aiyou178/pg_eviltransform/blob/v0.0.7/pg_eviltransform.control)
@@ -67,3 +71,13 @@ FROM measurements;
 ### 0.0.7 兼容性
 
 0.0.6 到 0.0.7 的升级 SQL 更新坐标系名称解析函数。上游使用 pgrx 0.19.3，支持 PostgreSQL 14-18 和 PostgreSQL 19 beta4。`ST_JenksBins` 接口不变；软件包与构建元数据同上游发行版分别维护。
+
+### 0.0.8 兼容性与安全
+
+当前 pgrx 0.20.0 二进制与构建头文件至少要求 PostgreSQL 15.20、16.16、17.12 或 18.7。不再支持 PostgreSQL 14，19 RC2 支持仍属实验性。本段取代上面的旧兼容性说明。
+
+无效的非 geometry 转换输入现在返回 SQL 错误，不再导致崩溃；PostGIS 函数与类型解析不再依赖调用方 search_path。安装匹配文件、重新连接，再逐库迁移：
+
+```sql
+ALTER EXTENSION pg_eviltransform UPDATE TO '0.0.8';
+```

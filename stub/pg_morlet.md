@@ -2,12 +2,14 @@
 
 Sources:
 
-- [MorletDB README at v0.3.0-alpha.1](https://github.com/merkhet-io/morletdb/blob/e85a24d1775cc971b2c4b444fbf3863910f8582c/README.md)
-- [pg_morlet README](https://github.com/merkhet-io/morletdb/blob/e85a24d1775cc971b2c4b444fbf3863910f8582c/extensions/pg_morlet/README.md)
-- [Control file](https://github.com/merkhet-io/morletdb/blob/e85a24d1775cc971b2c4b444fbf3863910f8582c/extensions/pg_morlet/pg_morlet.control)
-- [SQL upgrade](https://github.com/merkhet-io/morletdb/blob/e85a24d1775cc971b2c4b444fbf3863910f8582c/extensions/pg_morlet/sql/pg_morlet--0.2.0--0.3.0.sql)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/pg_morlet.control)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/docs/compatibility.md)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/sql/pg_morlet--0.3.11--0.3.12.sql)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/sql/pg_morlet--0.3.0--0.3.1.sql)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/extensions/pg_morlet/README.md)
+- [Official source](https://github.com/merkhet-io/morletdb/blob/paper-v0.31/docs/recording-workflow.md)
 
-`pg_morlet` 0.3.0 stores waveform recordings and compares compatible windows using versioned Morlet features. Release 0.3.0-alpha.1 is a developer alpha for PostgreSQL 17 with pgrx 0.16.1; it adds acquisition timelines and context-aware comparisons while keeping the synchronous, transactional storage model.
+`pg_morlet` 0.3.12 stores waveforms and compares compatible windows with versioned Morlet features. The exact paper-v0.31 source tag contains this control/SQL version. PostgreSQL 17 is the reference platform; 18 has functional CI coverage, while 19 was tested as a release candidate. This remains an experimental extension using pgrx 0.19.3.
 
 ### Record and search
 
@@ -24,6 +26,14 @@ Acquisitions align channels on an integer nanosecond timeline with declared offs
 
 Ingestion and feature publication remain transactional. Caller privileges and row-security policies apply to collection tables; direct edits can break cross-table invariants. Searches compare only compatible rates, channels, units, windows and extractor versions. Similarity scores are investigation signals, not calibrated probabilities.
 
-### Upgrade boundary
+### Continuous recordings and maintenance
 
-The SQL version is 0.3.0. The tested update script accepts SQL 0.2.0 from 0.2.0-alpha.1 and the chained 0.1.0 SQL from 0.1.0-alpha.3. Older 0.1.0-alpha.1 installations need a reinstall. This remains a developer alpha with no stable schema or production-capacity guarantee.
+The current workflow uses `morlet_start_recording`, `morlet_append_chunk` / `morlet_append_chunks`, `morlet_read_interval` and `morlet_search_interval`. Interval reads reconstruct chunks under caller privileges; incompatible or partly hidden intervals fail explicitly. Optional envelope probes require `vector`; ordinary storage and exact search do not.
+
+The 0.3.11-to-0.3.12 SQL update corrects `morlet_build_envelopes` accounting for compacted episodes and `morlet_collection_status` backlog accounting. Install matching library and SQL files before updating:
+
+```sql
+ALTER EXTENSION pg_morlet UPDATE TO '0.3.12';
+```
+
+The current tag supplies a versioned upgrade chain. Upstream tests cover older alpha upgrades on PostgreSQL 17; 18/19 use fresh installations. Some README paragraphs still describe an obsolete 0.1.0 scaffold with no upgrade path; use the actual control, SQL chain and compatibility document for this revision. Preserve recordings and backups; do not drop a populated extension to follow the old walkthrough.

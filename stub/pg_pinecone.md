@@ -2,14 +2,14 @@
 
 Sources:
 
-- [Official README](https://github.com/pinecone-io/pg_pinecone/blob/v0.12.1/README.md)
-- [Control file](https://github.com/pinecone-io/pg_pinecone/blob/v0.12.1/pg_pinecone/pg_pinecone.control)
-- [Changelog](https://github.com/pinecone-io/pg_pinecone/blob/v0.12.1/CHANGELOG.md)
-- [Upgrade runbook](https://github.com/pinecone-io/pg_pinecone/blob/v0.12.1/docs/runbook.md)
-- [Hosted embedding tutorial](https://github.com/pinecone-io/pg_pinecone/blob/v0.12.1/docs/tutorial-gemini-document-search.md)
-- [License](https://github.com/pinecone-io/pg_pinecone/blob/v0.12.1/LICENSE)
+- [Official README](https://github.com/pinecone-io/pg_pinecone/blob/v0.13.0/README.md)
+- [Control file](https://github.com/pinecone-io/pg_pinecone/blob/v0.13.0/pg_pinecone/pg_pinecone.control)
+- [Changelog](https://github.com/pinecone-io/pg_pinecone/blob/v0.13.0/CHANGELOG.md)
+- [Upgrade runbook](https://github.com/pinecone-io/pg_pinecone/blob/v0.13.0/docs/runbook.md)
+- [Hosted embedding tutorial](https://github.com/pinecone-io/pg_pinecone/blob/v0.13.0/docs/tutorial-gemini-document-search.md)
+- [License](https://github.com/pinecone-io/pg_pinecone/blob/v0.13.0/LICENSE)
 
-`pg_pinecone` 0.12.1 brings Pinecone-compatible vector and full-text search engines into PostgreSQL. It requires `vector` and superuser installation, supports PostgreSQL 17 and 18, and offers local `pgvector` and `native` engines plus a `remote` Pinecone engine.
+`pg_pinecone` 0.13.0 brings Pinecone-compatible vector and full-text search engines into PostgreSQL. It requires `vector` and superuser installation, supports PostgreSQL 17 and 18, and offers local `pgvector` and `native` engines plus a `remote` Pinecone engine.
 
 ### Create a Native Index
 
@@ -26,7 +26,7 @@ The native engine remains the local default and runs without network access; `pg
 
 ### Installation and Upgrade
 
-Prebuilt archives, Docker images and pgrx builds are described in the upstream README. The source build uses cargo-pgrx 0.19.2. Version 0.12.1 re-releases 0.12.0 under a fresh tag to repair the release workflow; extension code and the empty 0.11.0-to-0.12.0 upgrade script are unchanged.
+Prebuilt archives, Docker images and pgrx builds are described in the upstream README. The source build uses cargo-pgrx 0.19.2. The 0.12.1-to-0.13.0 SQL upgrade installs the new health-check function.
 
 For an in-place upgrade from 0.10.0 or later, install matching files, restart PostgreSQL to load the new library, then run `ALTER EXTENSION pg_pinecone UPDATE` in each database. Check `pinecone.worker_version()` for matching compiled and installed versions. Native inner-product indexes created before 0.11.0 still need `REINDEX`; updating the extension does not rebuild them. The older `pinegres` extension has no in-place upgrade path.
 
@@ -50,3 +50,13 @@ SELECT pinecone.search_docs('docs', 'query text', mode => 'embed');
 ```
 
 `pinecone.flush_docs` waits for delivery, but remote indexing is eventually consistent, so an immediate search may not see the new rows. Only one text column per index may use `embed`, and it cannot be combined with a supplied vector column.
+
+### Health and Endpoint Security in 0.13
+
+```sql
+SELECT * FROM pinecone.doctor(remote => false);
+```
+
+`pinecone.doctor()` returns one row per check with `check_name`, `status`, `detail` and `hint`. It checks library/catalog versions, preload, dependencies, credential selection without exposing keys, worker/outbox state and failed partitions. Its default remote check performs an authenticated Pinecone request; `remote => false` avoids that request.
+
+Control-plane and data-plane URLs must use HTTPS, except loopback HTTP. Redirects are no longer followed. A key saved with a non-loopback HTTP URL stops working immediately after the new library is loaded, before SQL upgrade; remote calls fail and the outbox parks. Reconfigure it with `pinecone.set_api_key` using the HTTPS endpoint, then retry the affected table with `pinecone.outbox_retry`.

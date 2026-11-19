@@ -2,6 +2,11 @@
 
 来源：
 
+- [当前版本资料](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/README.md)
+- [当前版本资料](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/pg_tre.control)
+- [当前版本资料](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/CHANGELOG.md)
+- [当前版本资料](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.3/sql/pg_tre--4.6.3.sql)
+
 - [README.md](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/README.md)
 - [pg_tre.control](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/pg_tre.control)
 - [sql/pg_tre--4.6.2.sql](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/sql/pg_tre--4.6.2.sql)
@@ -11,7 +16,7 @@
 - [.github/workflows/ci.yml](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/.github/workflows/ci.yml)
 - [库初始化](https://api.pgxn.org/src/pg_tre/pg_tre-4.6.2/src/module.c)
 
-`pg_tre` 4.6.2 提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。上游支持 PostgreSQL 17–19。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
+`pg_tre` 4.6.3 提供 `tre` 原生索引访问方法，对文本执行近似正则表达式匹配。上游支持 PostgreSQL 17–19。它利用码点三元组与倒排表缩小候选范围，再到堆表核对匹配。适合需要显式编辑代价的容错标识符、日志消息与词法模式检索。
 
 ### 启用与查询
 
@@ -63,7 +68,7 @@ SELECT * FROM pg_tre_index_check('documents_body_tre'::regclass, 2);
 安装匹配文件，确保会话使用新库，再逐库更新：
 
 ```sql
-ALTER EXTENSION pg_tre UPDATE TO '4.6.2';
+ALTER EXTENSION pg_tre UPDATE TO '4.6.3';
 ```
 
 从 3.x 跨至 4.x 时，索引页格式虽然不变，WAL 记录类型却不兼容。替换库前必须干净停库；物理备库不能与主库运行不同主版本的扩展，须在主库升级后从新的基础备份重建，此边界不支持滚动升级。还须移除旧的 `wal_consistency_checking = 'pg_tre'` 设置，否则 4.x 无法启动；如需一致性检查，上游建议使用 `wal_consistency_checking = 'all'`。
@@ -91,3 +96,8 @@ SELECT E'a\nfoo' %~~ tre_pattern('(?n)^foo', 0) AS line_start,
 ### 4.6 系列修复
 
 4.6.0 修正固定重复和字符类的三元组候选提取，4.6.1 改进零编辑代价匹配的提前终止；4.6.2 更新 sparsemap，修复读取游标缓存偏移的校验。这些更新不改变磁盘格式，也不新增 REINDEX 要求。安装匹配的库和 SQL，并替换仍加载旧库的会话；此前 WAL 迁移和遗漏倒排项的重建要求仍适用。
+
+
+### 4.6.3 Sparsemap 修正
+
+4.6.3 将内置 sparsemap 更新至 5.9.0，修复数据丢失和错误结果路径。本补丁不改变传输或磁盘格式，也不增加 REINDEX 要求。安装匹配文件、替换使用旧库的会话后，执行 `ALTER EXTENSION pg_tre UPDATE`。此前的 WAL 迁移及遗漏 posting 重建要求仍适用。

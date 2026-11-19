@@ -2,6 +2,10 @@
 
 来源：
 
+- [当前上游](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
+- [当前上游](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/table-options.md)
+- [当前上游](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/iceberg-catalogs.md)
+
 - [官方数据湖文件查询指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/query-data-lake-files.md)
 - [官方Iceberg表指南](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/iceberg-tables.md)
 - [版本3.6控制文件](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake_table/pg_lake_table.control)
@@ -79,3 +83,9 @@ FROM lake_file.preview('s3://analytics-bucket/events/sample.parquet');
 ### 上游 3.6.0
 
 上游 3.6.0 增加 PostgreSQL 19 支持，并使用 DuckDB 1.5.6。应部署匹配动态库与 `pgduck_server`，保持预加载 `pg_extension_base`，重启加载旧库的进程，并执行所提供的 SQL 升级到 3.6。表组件注册独立的对象存储目录导出 worker，并将目录名称辅助函数改为 STABLE。必须执行 SQL 迁移，仅替换二进制不会注册该 worker。
+
+### 上游 3.6.1 目录行为
+
+通过 `catalog = 'snowflake'` 挂接且自动推断列的只读表，现在默认将 `lowercase_column_names` 设为 true。其他文档描述的只读目录场景保留原有默认值；该选项在建表时固定，不会重命名已有列。挂接新表时应检查推断列名与大小写冲突。
+
+整个家族的 SQL 版本仍为 3.6。扩展库与 `pgduck_server` 需要匹配部署，该补丁也在查询服务中包含 Brotli 解码器安全修正。既有软件包版本单独记录，不能证明已安装这一上游补丁。

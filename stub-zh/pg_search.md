@@ -2,6 +2,13 @@
 
 来源：
 
+- [0.26.8 变更日志](https://www.paradedb.com/docs/project/changelog/0.26.8.md)
+- [pg_search 0.26.8 README](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/README.md)
+- [pg_search 0.26.8 控制文件](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/pg_search.control)
+- [0.26.7 到 0.26.8 SQL](https://api.pgxn.org/src/pg_search/pg_search-0.26.8/pg_search/sql/pg_search--0.26.7--0.26.8.sql)
+- [Upstream source](https://api.pgxn.org/src/pg_search/pg_search-0.26.7/docs/project/changelog/0.26.7.mdx)
+- [Upstream source](https://api.pgxn.org/src/pg_search/pg_search-0.26.7/pg_search/pg_search.control)
+
 - [0.26.6 changelog](https://github.com/paradedb/paradedb/blob/v0.26.6/docs/project/changelog/0.26.6.mdx)
 - [pg_search 0.26.6 control](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/pg_search.control)
 - [pg_search 0.26.6 Cargo.toml](https://github.com/paradedb/paradedb/blob/v0.26.6/pg_search/Cargo.toml)
@@ -27,7 +34,7 @@
 - [查询向量](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/vector/querying.mdx)
 - [混合搜索概述](https://github.com/paradedb/paradedb/blob/v0.25.11/docs/documentation/hybrid/overview.mdx)
 
-`pg_search` 0.26.6 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
+`pg_search` 0.26.7 为 PostgreSQL 增加 ParadeDB 的全文、结构化、向量和混合搜索索引。版本 0.25 使用 `paradedb` 索引访问方法；旧的 `bm25` 访问方法名称仍保留为兼容别名。该扩展依赖 `vector`，上游支持 PostgreSQL 15-18，且必须通过 `shared_preload_libraries` 加载。
 
 ### 安装并构建索引
 
@@ -148,3 +155,13 @@ LIMIT 20;
 ### 0.26.6 版本
 
 Join Scan 现在支持在 `INNER` 和 `SEMI`（`IN` / `EXISTS`）连接中对向量距离操作符 `<->`、`<=>`、`<#>` 执行 top-K `ORDER BY`。当叶子节点包含可由索引回答的单表过滤条件（包括行级安全策略、等值、`= ANY` 和范围条件）时，合并得分的 top-K 连接也可使用 rank join。本版本修复 Join Scan 选列同时包含 `pdb.score()` 与标量子查询或查询参数时的崩溃，并在未使用 `RankJoinExec` 时通过 `EXPLAIN` 给出警告。升级后应验证计划与 top-K 结果；软件包坐标需与上游版本分别核对。
+
+### 0.26.7 分区与分数
+
+数据倾斜的 partition_by 索引现在使用堆 ctid 回退拆分原本无法再切分的分区，已有索引需 REINDEX 才能获益。若显式把 ctid 加入 partition_by，仍沿用它与其他列竞争的旧行为，不启用该回退。
+
+行级安全过滤现在始终对 pdb.score 贡献 0.0，移除了此前随计划变化的常数，因此报告分数可能改变。合并反压统计全部可见段，并修复单段包含超过 4 GiB 不同字符串值时的构建与合并错误。这些变化不取消早先 0.26 向量格式的索引重建要求。
+
+### 0.26.8 前台合并行为
+
+写入路径成功启动后台合并器后，现在会跳过前台合并。若无法启动后台合并器，仍回退到前台合并。按既有流程安装匹配库、更新 SQL 扩展并执行预加载维护；本版本没有新的索引格式迁移。

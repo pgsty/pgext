@@ -2,6 +2,12 @@
 
 Sources:
 
+- [Upstream source](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.2)
+
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/releases/tag/v3.6.1)
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/table-options.md)
+- [Current upstream](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.1/docs/iceberg-catalogs.md)
+
 - [Official pg_lake README](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/README.md)
 - [Version 3.6 control file](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/pg_lake/pg_lake.control)
 - [Official build and startup guide](https://github.com/Snowflake-Labs/pg_lake/blob/v3.6.0/docs/building-from-source.md)
@@ -171,3 +177,13 @@ Upstream 3.5.10 drops cached vended credentials after catalog vending stops, pre
 ### Upstream 3.6.0
 
 Upstream 3.6.0 adds PostgreSQL 19 support and uses DuckDB 1.5.6. Deploy matching libraries and `pgduck_server`, keep `pg_extension_base` preloaded, restart loaded processes and apply the supplied SQL updates to version 3.6. This component's 3.5-to-3.6 SQL migration is empty; the matching runtime and its dependencies still need the coordinated release upgrade.
+
+### Upstream 3.6.1 catalog behavior
+
+Read-only tables attached with `catalog = 'snowflake'` and inferred columns now default `lowercase_column_names` to true. Other documented read-only catalog cases retain their existing default; the option is fixed when the table is created and does not rename existing columns. Review inferred names and case collisions when attaching new tables.
+
+The family retains SQL version 3.6. Deploy matching extension libraries and `pgduck_server`: the patch also includes a Brotli decoder security correction in the query server. Existing package versions are recorded independently and are not evidence that this upstream patch is installed.
+
+### Upstream 3.6.2
+
+The 3.6.2 patch corrects byte-by-byte CSV-value transmission in pgduck_server. Deploy the matching query-server binary with the extension libraries and reconnect/restart processes holding old code. The component SQL version remains 3.6; an unchanged extversion does not prove the query-server fix is installed. Package availability remains a separate catalog fact.

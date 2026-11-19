@@ -3,11 +3,11 @@
 来源：
 
 - [PostgreSQL 19 documentation](https://www.postgresql.org/docs/19/pgplanadvice.html)
-- [Module definition](https://github.com/postgres/postgres/blob/REL_19_BETA3/contrib/pg_plan_advice/Makefile)
-- [Module implementation](https://github.com/postgres/postgres/blob/REL_19_BETA3/contrib/pg_plan_advice/pg_plan_advice.c)
-- [Versioned manual](https://github.com/postgres/postgres/blob/REL_19_BETA3/doc/src/sgml/pgplanadvice.sgml)
+- [Module definition](https://github.com/postgres/postgres/blob/REL_19_0/contrib/pg_plan_advice/Makefile)
+- [Module implementation](https://github.com/postgres/postgres/blob/REL_19_0/contrib/pg_plan_advice/pg_plan_advice.c)
+- [Versioned manual](https://github.com/postgres/postgres/blob/REL_19_0/doc/src/sgml/pgplanadvice.sgml)
 
-`pg_plan_advice` 是 PostgreSQL 19 附带的模块，将规划器选择记录为建议，并据此约束后续规划。本文以 PostgreSQL 19 beta3 为版本边界，该模块没有独立的 SQL 扩展版本。
+`pg_plan_advice` 是 PostgreSQL 19 附带的模块，将规划器选择记录为建议，并据此约束后续规划。本文以 PostgreSQL 19.0 为版本边界，该模块没有独立的 SQL 扩展版本。
 
 ### 会话工作流
 

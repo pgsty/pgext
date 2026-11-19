@@ -2,13 +2,13 @@
 
 Sources:
 
-- [README v1.4.1](https://github.com/GyuyeongKim/Tessera-public/blob/v1.4.1/README.md)
-- [v1.4.1 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.4.1)
-- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/tessera_pg.control)
-- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/tessera_pg--1.0.sql)
-- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/Makefile)
+- [README v1.4.4](https://github.com/GyuyeongKim/Tessera-public/blob/v1.4.4/README.md)
+- [v1.4.4 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.4.4)
+- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.4/tessera_pg.control)
+- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.4/tessera_pg--1.0.sql)
+- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.4/Makefile)
 
-`tessera_pg` replaces supported join-aggregate plans with sparse matrix multiplication and exposes item-similarity functions. Distribution 1.4.1 installs SQL version 1.0. It targets PostgreSQL 18; the native engine requires OpenMP and AVX2 or newer on x86-64.
+`tessera_pg` replaces supported join-aggregate plans with sparse matrix multiplication and exposes item-similarity functions. Distribution 1.4.4 installs SQL version 1.0. It targets PostgreSQL 18; the native engine requires OpenMP and AVX2 or newer on x86-64.
 
 ### Core Workflow
 
@@ -28,6 +28,10 @@ SELECT * FROM tessera_sim('edges', 'k', 'x', 'jaccard', 0.5);
 `Custom Scan (Tessera)` identifies an accepted rewrite. Version 1.4.1 adds sums and counts over nullable columns, per-group top-k pruning with `RANK()` or `ROW_NUMBER()`, and multiple floating-point sums in one pass. A joined pair contributes to a sum only when all factors are non-NULL; a group without a contributing pair has a NULL sum. The adapter still supports `COUNT(DISTINCT a.k)`, `AVG`, one-sided `SUM`, expression keys and grouping columns, input filters, HAVING and top-N pruning.
 
 PostgreSQL leaves unsupported cases with its normal plan: nullable decimal weights, nullable `float8` averages, integer-times-`float8` products, `real` products, `MIN`, `MAX`, outer joins and nondeterministic collations. Multiple sums and nullable summed inputs also have restrictions on partitioned/inherited inputs or inputs with their own plans. Consult the versioned supported-query matrix; only PostgreSQL built-in operators and aggregates are recognized.
+
+### 1.4.4 Runtime and Planner Fixes
+
+Distribution 1.4.4 keeps SQL version 1.0 and the same C interface, but fixes PostgreSQL row-count estimates that could turn `NOT EXISTS` or group joins into a nested loop, restores CPU affinity after OpenMP load, and isolates AVX-512/AMX standard-library symbols on CPUs without those instructions. The release also improves Spark parallelism. It does not change the supported-query contract; continue to measure plans on the real workload.
 
 ### Similarity Functions and Settings
 

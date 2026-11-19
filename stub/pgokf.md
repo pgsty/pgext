@@ -2,6 +2,9 @@
 
 Sources:
 
+- [Current upstream](https://github.com/LogicOcean/pgokf/releases/tag/v0.6.0)
+- [Current upstream](https://github.com/LogicOcean/pgokf/blob/v0.6.0/crates/extension/sql/pgokf--0.5.0--0.6.0.sql)
+
 - [Official README](https://github.com/LogicOcean/pgokf/blob/v0.4.0/README.md)
 - [Extension control file](https://github.com/LogicOcean/pgokf/blob/v0.4.0/crates/extension/pgokf.control)
 - [SQL API](https://github.com/LogicOcean/pgokf/blob/v0.4.0/docs/sql-api.md)
@@ -75,3 +78,7 @@ ALTER EXTENSION pgokf UPDATE TO '0.5.0';
 ```
 
 The separate `pgokf-confluence` companion previews a complete Confluence Cloud space and writes a dedicated bundle only with `--apply`. It records producer provenance, uses a durable checkpoint and requires `--allow-deletions` for reviewed page removals. It is for a shared audience: Confluence page restrictions are not copied into PostgreSQL permissions. Keep its token in a private file or `CONFLUENCE_API_TOKEN`. Companion `--tls` / `OKF_PG_TLS` now enforces at least `sslmode=require`, refusing a server that declines TLS instead of silently falling back to plaintext; use stricter certificate verification when needed. These companion changes do not run Confluence ingestion or external embedding inside the extension backend.
+
+### 0.6.0 companion release
+
+The 0.5.0-to-0.6.0 SQL edge updates the extension receipt without changing catalog objects or data; use `ALTER EXTENSION pgokf UPDATE TO '0.6.0'` after installing matching files. The new private Confluence Forge application and `pgokf-confluence-events` receiver validate delivery identity and write deduplicable JSON-line events. They do not automatically record those events in the PostgreSQL catalog. Configure and operate these companions separately. Stable distribution remains PostgreSQL 15–18; PostgreSQL 19 RC2 is a nonproduction compatibility test target.

@@ -2,6 +2,10 @@
 
 来源：
 
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/releases/tag/v0.0.9)
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/blob/v0.0.9/readme.md)
+- [Upstream source](https://github.com/aiyou178/pg_pinyin/blob/v0.0.9/pg_pinyin--0.0.8--0.0.9.sql)
+
 - [pg_pinyin v0.0.8 README](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/readme.md)
 - [pg_pinyin v0.0.8 control file](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/pg_pinyin.control)
 - [0.0.7 到 0.0.8 升级 SQL](https://github.com/aiyou178/pg_pinyin/blob/v0.0.8/pg_pinyin--0.0.7--0.0.8.sql)
@@ -65,3 +69,11 @@ pg_pinyin 对中文文本进行拉丁化，并提供分词器和查询辅助工�
 ### 运行注意事项
 
 扩展在其 pinyin 模式中自带生成的字符和词字典。将这些表视为由扩展管理的数据，而不是应用程序表。拉丁化是规范化，不是翻译，并且可能需要应用端审查以处理模糊或领域特定的读音。
+
+### 0.0.9 查询模式与批量输入
+
+当前版本要求兼容 pgrx 0.20.0 的服务端与头文件：PostgreSQL 15.20、16.16、17.12 或 18.7 及其后续小版本。移除 PostgreSQL 14 支持，19 RC2 仍属实验性。替换库后重新连接，并执行 ALTER EXTENSION pg_pinyin UPDATE TO '0.0.9'。本段取代旧兼容性说明。
+
+显式撇号可保留 xi'an 等音节边界。pinyin_regex_phrase_mode 增加可选的 full、initials、autocomplete 与 auto 模式；pinyin_phrase 为纯音节字段提供精确原生词项/短语查询。应根据字段编码与用户意图选择模式。pg_search 仍是可选集成，使用其功能时须具备原生短语 API。
+
+pinyin_word_romanize_batch(text[]) 接受独立的纯文本文档，支持 NULL 与可选后缀。导入可采用文档中的 COPY 暂存/批处理流程。内置 Rust 模式解析器无需运行时 SPI，具有 immutable 与 parallel safe 属性；这不意味着依赖词典的所有转写函数都有相同契约。既有默认行为保留，显式模式中的无效输入会报错，不会静默截断后搜索前缀。

@@ -2,6 +2,19 @@
 
 Sources:
 
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/README.md)
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/pgclone.control)
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/CHANGELOG.md)
+- [Current version source](https://api.pgxn.org/src/pgclone/pgclone-4.9.0/sql/pgclone--4.8.0--4.9.0.sql)
+
+- [pgclone 4.8.0 changelog](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/CHANGELOG.md)
+- [4.7.0 to 4.8.0 SQL](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/sql/pgclone--4.7.0--4.8.0.sql)
+- [pgclone 4.8.0 control](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/pgclone.control)
+- [pgclone 4.8.0 README](https://api.pgxn.org/src/pgclone/pgclone-4.8.0/README.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/README.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/docs/USAGE.md)
+- [Upstream source](https://api.pgxn.org/src/pgclone/pgclone-4.7.0/pgclone.control)
+
 - [pgclone v4.5.0 README](https://github.com/valehdba/pgclone/blob/v4.5.0/README.md)
 - [pgclone v4.5.0 usage guide](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/USAGE.md)
 - [Async cloning guide](https://github.com/valehdba/pgclone/blob/v4.5.0/docs/ASYNC.md)
@@ -123,3 +136,26 @@ pgclone also exposes progress_detail, resume, and clear_jobs for job administrat
 - Async schema/database/parallel paths do not honor masks, tables, or exclude_tables in v4.5.0. Use the documented synchronous path when those controls are a security requirement.
 - Keep passwords out of stored SQL and logs; prefer libpq service files, passfiles, or another controlled credential mechanism.
 - Version 4.4.2 improves sequence-state copying and protects PostgreSQL 17 source sessions from transaction_timeout, but callers must still validate object ownership, extensions, roles, large objects, and post-clone application behavior.
+
+### SQL Server and MySQL sources in 4.7.0
+
+The 4.6 SQL Server interface requires optional FreeTDS support; 4.7 adds MySQL/MariaDB through an optional client library. The public entry points are pgclone.table_from_sqlserver() and pgclone.table_from_mysql(), with corresponding type-mapping helpers. Builds without the client support reject cloning while retaining the SQL interface. An omitted password uses the server's PGCLONE_SQLSERVER_PASSWORD or PGCLONE_MYSQL_PASSWORD environment variable.
+
+Use dry_run to inspect generated DDL first. Actual imports require an existing target schema and an absent target table, and never overwrite the table. Inspect skipped/unsupported source column types and the documented mapping of keys and indexes; defaults, triggers and full source-database semantics are not reproduced. PostgreSQL DDL and copied rows are transactional, but source snapshot guarantees depend on the selected external engine and table type. Do not assume nontransactional MySQL tables share an InnoDB snapshot.
+
+Install the matching library and optional clients, reconnect sessions, and update the SQL extension to 4.7.0. The older Oracle example above describes that interface's introduction; this is the current SQL upgrade:
+
+```sql
+ALTER EXTENSION pgclone UPDATE TO '4.7.0';
+```
+
+### 4.8.0 Partition Cloning and Restart Boundary
+
+Version 4.8.0 has no SQL-level object changes, but after `make install` PostgreSQL must be restarted before `ALTER EXTENSION pgclone UPDATE`; a stale preloaded library can otherwise fail to find updated functions. The update adds `"conflict": "ignore"`: when the target table already exists, pgclone keeps its definition and still loads data in both sync and async paths.
+
+Partitioned schema and async clones now create parents before partitions, copy rows once from leaf partitions, and propagate parent primary keys, indexes and triggers rather than duplicating them. Generated columns remain generated and are omitted from COPY so the target recomputes them; PostgreSQL 18 virtual generated columns require PostgreSQL 18 on the target. Async single-table cloning pre-creates serial/bigserial sequences and replays their values, and background workers honour SIGTERM.
+
+
+### 4.9.0 Partial Clone Failures
+
+Synchronous schema and database clones accept `on_error: continue`. Each failed table rolls back in its own subtransaction, emits its message and SQLSTATE, and is excluded from later foreign-key and trigger passes. The result reports `COMPLETED WITH ERRORS: N table(s) failed: ...`; it is not a fully successful clone. The default remains abort, and cancellation/shutdown errors are not swallowed. Async schema clones already continued after individual table errors. This release adds no SQL objects: install matching files, restart PostgreSQL as directed upstream, then run `ALTER EXTENSION pgclone UPDATE TO '4.9.0'`.

@@ -2,11 +2,11 @@
 
 来源：
 
-- [pgAudit 18.0 README](https://github.com/pgaudit/pgaudit/blob/18.0/README.md)
-- [PostgreSQL 19 预览版](https://github.com/pgaudit/pgaudit/releases/tag/19rc1)
-- [预览版控制文件](https://github.com/pgaudit/pgaudit/blob/2a7322004a90ebb8cf51d929e3dcf79e791b557e/pgaudit.control)
+- [pgAudit 19.0 README](https://github.com/pgaudit/pgaudit/blob/19.0/README.md)
+- [PostgreSQL 19 发行版](https://github.com/pgaudit/pgaudit/releases/tag/19.0)
+- [发行版控制文件](https://github.com/pgaudit/pgaudit/blob/19.0/pgaudit.control)
 
-`pgaudit` 通过 PostgreSQL 日志记录会话和对象审计事件。应选择匹配服务器的分支：PostgreSQL 18 对应 18.x，17 对应 17.x，16 对应 16.x，15 对应 1.7.x，14 对应 1.6.x。上游 19rc1 是面向 PostgreSQL 19 的预览版，SQL 版本为 19.0；目录中的打包版本仍为稳定的 18.0。
+`pgaudit` 通过 PostgreSQL 日志记录会话和对象事件。应选择匹配服务器的分支：PostgreSQL 19 对应 19.0，18 对应 18.1，17 对应 17.2，16 对应 16.2，15 对应 1.7.2，14 对应 1.6.4。各分支分别针对对应服务器构建，升级 PostgreSQL 不会使旧库自动具备 ABI 兼容性。
 
 ### 启用审计
 
@@ -72,3 +72,7 @@ GRANT SELECT, DELETE
 ### 日志格式
 
 条目为 CSV 格式，包含以下字段：`AUDIT_TYPE`、`STATEMENT_ID`、`SUBSTATEMENT_ID`、`CLASS`、`COMMAND`、`OBJECT_TYPE`、`OBJECT_NAME`、`STATEMENT`、`PARAMETER`。
+
+### 日志边界
+
+审计输出使用尽力而为的 PostgreSQL 日志机制，不具备事务持久性。回滚的语句可能留下记录，已提交事务也不保证具有持久化审计记录。应单独保护和收集日志，不能将其视为事务完整的账本。

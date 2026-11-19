@@ -2,6 +2,10 @@
 
 来源：
 
+- [当前版本资料](https://api.pgxn.org/src/plpgsql_check/plpgsql_check-2.11.0/README.md)
+- [当前版本资料](https://api.pgxn.org/src/plpgsql_check/plpgsql_check-2.11.0/plpgsql_check.control)
+- [安装 SQL](https://api.pgxn.org/src/plpgsql_check/plpgsql_check-2.11.0/plpgsql_check--2.11.sql)
+
 - [README.md](https://github.com/okbob/plpgsql_check/blob/9a5c0ec4babebd5eb8e0db104c54f7ddb43fcc07/README.md)
 - [Control](https://github.com/okbob/plpgsql_check/blob/9a5c0ec4babebd5eb8e0db104c54f7ddb43fcc07/plpgsql_check.control)
 - [Release](https://github.com/okbob/plpgsql_check/releases/tag/v2.10.16)
@@ -9,7 +13,7 @@
 
 `plpgsql_check` 是面向 PL/pgSQL 的检查器、代码规范检查器、性能分析器、跟踪器和覆盖率工具。它利用 PostgreSQL 自身的解析器和执行器基础设施分析 PL/pgSQL 函数体，因此许多原本只会在运行时出现的问题，可以在开发或 CI 阶段被发现。
 
-上游发行版 2.10.16 安装的 SQL 扩展版本仍为 `2.10`。README 覆盖 PostgreSQL 14–20，其中包含开发版本；这不代表对应二进制软件包已经可用。
+当前上游发行版 2.11.0 安装 SQL 扩展版本 `2.11`。README 覆盖 PostgreSQL 14–20，其中包含开发版本；这不代表对应二进制软件包已经可用。
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS plpgsql_check;
@@ -189,8 +193,13 @@ FROM plpgsql_check_function(
 SET plpgsql_check.profiler_show_dynquery_query_id = on;
 ```
 
-SQL 版本仍为 `2.10`，替换兼容的库文件本身不要求执行扩展迁移。应重新连接使用旧库的会话；共享预加载的实例需要重启。修改运行中的服务器前应先演练升级。
+该历史补丁的 SQL 版本仍为 `2.10`，仅该补丁不要求执行扩展迁移。应重新连接使用旧库的会话；共享预加载的实例需要重启。修改运行中的服务器前应先演练升级。
 
 ### 2.10.16 修正
 
 源码发行版 2.10.16 保持 SQL 扩展版本 2.10，修复被动检查模式下访问复合类型变量元组描述符的问题。这是上游库更新，不代表相应二进制包已发布。
+
+
+### 2.11.0 升级
+
+当前分发版本 2.11.0 使用 SQL 扩展版本 `2.11`。新增纯表达式中标签使用的警告，以及赋值给 SEARCH_PATH 的安全检查，并修正若干误报。发行包提供安装 SQL，但没有 `ALTER EXTENSION UPDATE` 迁移脚本。从 `2.10` 迁移时，应检查依赖对象并演练扩展重建；不能假定存在原地升级路径，也不能盲目使用 `DROP ... CASCADE`。替换库后，重新连接加载过旧库的会话；共享预加载实例需要重启。

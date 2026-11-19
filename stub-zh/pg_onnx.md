@@ -2,11 +2,13 @@
 
 来源：
 
-- [已复核 commit 的上游 README](https://github.com/kibae/pg_onnx/blob/v1.31.1/README.md)
-- [函数参考](https://github.com/kibae/pg_onnx/blob/v1.31.1/docs/functions.md)
-- [扩展源码](https://github.com/kibae/pg_onnx/tree/v1.31.1/pg_onnx)
+- [已复核 commit 的上游 README](https://github.com/kibae/pg_onnx/blob/v1.32.0/README.md)
+- [函数参考](https://github.com/kibae/pg_onnx/blob/v1.32.0/docs/functions.md)
+- [扩展源码](https://github.com/kibae/pg_onnx/tree/v1.32.0/pg_onnx)
 
-`pg_onnx` 从 PostgreSQL 运行 ONNX 推理。v1.31.1 发行版捆绑 `onnxruntime-server` 1.31.1；SQL 扩展模式仍为 1.2.1，支持 Ubuntu 上的 PostgreSQL 13–18 以及 macOS 上的 14–18。动态后台工作进程托管 `onnxruntime-server`，并为每个导入模型复用一个运行时会话，避免每个客户端后端各自分配大型运行时。
+`pg_onnx` 从 PostgreSQL 运行 ONNX 推理。v1.32.0 发行版捆绑 `onnxruntime-server` 1.32.0；SQL 扩展模式仍为 1.2.1，支持 Ubuntu 上的 PostgreSQL 13–18 以及 macOS 上的 14–18。动态后台工作进程托管 `onnxruntime-server`，并为每个导入模型复用一个运行时会话，避免每个客户端后端各自分配大型运行时。
+
+1.32.0 可识别 `FLOAT6E2M3` 和 `FLOAT6E3M2` 张量类型名称，但运行时仍拒绝分配这些张量，因此不代表支持 float6 推理。
 
 ```sql
 CREATE EXTENSION pg_onnx;

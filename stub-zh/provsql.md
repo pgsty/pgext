@@ -2,6 +2,10 @@
 
 来源：
 
+- [ProvSQL 1.14.0 变更日志](https://github.com/PierreSenellart/provsql/blob/v1.14.0/CHANGELOG.md)
+- [1.13.1 到 1.14.0 SQL](https://api.pgxn.org/src/provsql/provsql-1.14.0/sql/upgrades/provsql--1.13.1--1.14.0.sql)
+- [ProvSQL 1.14.0 控制文件](https://api.pgxn.org/src/provsql/provsql-1.14.0/provsql.common.control)
+- [ProvSQL 1.14.0 README](https://api.pgxn.org/src/provsql/provsql-1.14.0/README.md)
 - [ProvSQL 1.13.0 文档](https://github.com/PierreSenellart/provsql/blob/v1.13.0/doc/provsql.md)
 - [ProvSQL 1.13.0 发行版](https://github.com/PierreSenellart/provsql/releases/tag/v1.13.0)
 - [ProvSQL 1.13.0 变更日志](https://github.com/PierreSenellart/provsql/blob/v1.13.0/CHANGELOG.md)
@@ -162,3 +166,13 @@ FROM model;
 电路存储不属于普通 SQL 表。`pg_dump` 和逻辑复制会携带令牌，但不会保存电路。一致的物理备份必须包含四个存储文件，应在服务器停止时复制，或对整个数据目录创建文件系统快照。若未启用 `provsql.store_synchronous_commit`，机器崩溃可能丢失最近提交的门；缺失门可能被当作概率为 1 的独立输入。即使处于只读事务，查询仍可能写入电路门；电路存储也并非完全事务隔离。
 
 PostgreSQL 15+ 的 `provsql.store_wal_logging` 要求同步提交电路存储，并为已有备库重新制作基础备份。此时备库会拒绝需要写电路的溯源查询。在上游列出的存储层 WAL 分支（包括 Aurora、Neon、AlloyDB 与 HorizonDB）上应保持该选项关闭。PostgreSQL 大版本升级需要另行迁移存储文件。`provsql.check_store()` 检查一致性；`provsql.circuit_cleanup()` 要求独占数据库，并只保留从官方列出的表字段类型能够到达的令牌。
+
+### 1.14.0 精确概率性能
+
+```sql
+ALTER EXTENSION provsql UPDATE;
+```
+
+1.14.0 会独立求值互不共享输入元组的 lineage 部分，并在同一会话内按规范电路结构复用 d-DNNF。新增设置包括 `provsql.idp_fold`、`provsql.prob_cache` 和 `provsql.prob_cache_size`。概率结果不变，但 `provsql.last_eval_method` 现在可能报告 `fold` 或 `cache:<method>`。
+
+超出预期预算的方法之后可能以更大预算重试。自动选择的外部编译器运行过久时会被停止并重新考虑；显式指定的编译器或最后一个可用方法仍会运行到 `statement_timeout`。替换预加载库后先重连会话，再执行 SQL 升级。

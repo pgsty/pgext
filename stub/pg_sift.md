@@ -2,20 +2,15 @@
 
 Sources:
 
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/README.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/UPGRADING.md)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/pg_sift.control)
-- [Official source](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--3.5.sql)
-- [Usage and security](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/USAGE.md)
-- [Supported versions](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/SUPPORT.md)
-- [Release notes](https://github.com/brauliobo/pg_sift/releases/tag/v4.1.4)
-- [4.0.3 to 4.1 SQL](https://github.com/brauliobo/pg_sift/blob/v4.1.4/sql/pg_sift--4.0.3--4.1.sql)
-- [Options](https://github.com/brauliobo/pg_sift/blob/v4.1.4/docs/OPTIONS.md)
-- [4.3.2 release](https://github.com/brauliobo/pg_sift/releases/tag/v4.3.2)
-- [4.3.2 upgrade guide](https://github.com/brauliobo/pg_sift/blob/v4.3.2/docs/UPGRADING.md)
-- [4.3.2 changes](https://github.com/brauliobo/pg_sift/blob/v4.3.2/CHANGELOG.md)
+- [Current version source](https://github.com/brauliobo/pg_sift/blob/v5.0.1/README.md)
+- [Current version source](https://github.com/brauliobo/pg_sift/blob/v5.0.1/pg_sift.control)
+- [Current version source](https://github.com/brauliobo/pg_sift/blob/v5.0.1/CHANGELOG.md)
+- [Current version source](https://github.com/brauliobo/pg_sift/blob/v5.0.1/docs/USAGE.md)
+- [Current version source](https://github.com/brauliobo/pg_sift/blob/v5.0.1/docs/UPGRADING.md)
+- [Current version source](https://github.com/brauliobo/pg_sift/blob/v5.0.1/docs/SUPPORT.md)
+- [Current version source](https://github.com/brauliobo/pg_sift/blob/v5.0.1/sql/pg_sift--5.0--5.0.1.sql)
 
-`pg_sift` release 4.1.4 installs SQL extension version 4.1. It combines BM25 text search with compressed column indexes and a columnar table access method. PostgreSQL 17–19 are supported upstream; this does not imply a packaged build for every major. Initial installation requires a superuser, but no mandatory preload for ordinary use.
+`pg_sift` 5.0.1 combines BM25 text search, compressed column indexes and a columnar table access method. Upstream supports PostgreSQL 17–19. Initial installation requires a superuser. Ordinary search and column analytics do not require preload; publishing columnar tables through logical replication has the separate preload requirements in the upstream guide.
 
 ### Text Search
 
@@ -32,7 +27,7 @@ WHERE body @@> 'postgresql AND search'
 ORDER BY score DESC LIMIT 10;
 ```
 
-The `sift` index handles a text column or expression, with boolean, phrase, prefix, wildcard, regex and fuzzy queries. Use `sift.score(ctid)` in the scanning query's output or ordering; it also supports comparisons with a constant score threshold in its filter. `sift.tokenize`, `sift.highlight` and `sift.facets` provide analysis, highlighting and facets. `sift.sections` and `sift.field_query` support the documented field-weight workflow; they do not create a multicolumn BM25 index.
+The `sift` access method indexes one text column or expression. It supports boolean, phrase, prefix, wildcard, regex and fuzzy queries. Use `sift.score(ctid)` in the scanning query. `sift.tokenize`, `sift.highlight` and `sift.facets` provide analysis, highlighting and facets; `sift.sections` and `sift.field_query` implement the documented field-weight workflow.
 
 ### Column Analytics
 
@@ -43,85 +38,30 @@ SELECT category, count(*), sum(amount) FROM orders GROUP BY category;
 CREATE TABLE events (id bigint, kind text, amount numeric(10,2)) USING sift_table;
 ```
 
-`sift_col` supplements an ordinary table; `sift_table` stores the table itself in column format. Eligible aggregates and filters use `Custom Scan (SiftAgg)`; other cases retain ordinary plans. Inspect the actual plan. `sift.enable_agg = off` disables aggregate pushdown for comparison. Version 3.3 expands top-N ordering, point lookups and joins to small tables. New column indexes enable pre-aggregates by default. The optional Vulkan path is experimental and disabled by default, including in upstream packages.
+`sift_col` supplements an ordinary table; `sift_table` stores the table itself in column format. Eligible plans use `Custom Scan (SiftAgg)`; other shapes keep ordinary PostgreSQL plans. Inspect the actual plan. `sift.enable_agg = off` disables aggregate pushdown, while `sift.enable_col_scan = off` disables column scans. The optional Vulkan path is experimental and disabled by default.
+
+New or rebuilt eligible column indexes use `track_changes = 'auto'`, which installs statement triggers and adds write work. Incomplete tracking falls back to heap checks. Consult the upgrade guide before changing partition topology or restoring with triggers disabled.
 
 ### Security and Maintenance
 
-Roles under row-level security do not get ranked scans by default. A superuser may opt in with `sift.rls_scores = on`; visible rows still obey the policy, but scores depend on statistics for the whole index, including hidden rows. Review that information boundary before enabling it. Security-barrier and other unsupported query shapes retain their documented limitations.
+Ranked scans are disabled by default for roles subject to row-level security. A superuser may enable `sift.rls_scores = on`; returned rows obey RLS, but their scores depend on whole-index statistics, including hidden rows. Review that disclosure boundary. Maintenance functions such as `sift.verify`, `sift.segments` and `sift.merge` require table ownership or MAINTAIN privilege. Analyzer or scoring-option changes can require a search-index rebuild.
 
-The 3.3 install and update grant schema usage on `sift` to `PUBLIC`; functions still enforce their own table/index permissions. `sift.verify`, `sift.segments`, `sift.merge` and related maintenance calls require table ownership or MAINTAIN privilege. Changing analyzers or scoring options requires rebuilding affected search indexes.
+Version 5.0.1 stops automatic full rewrites of `sift_col` indexes. `sift.col_maintenance_status` and `sift.col_maintenance_due` report when a rebuild is recommended; an operator chooses `REINDEX INDEX CONCURRENTLY` or schedules `sift.col_maintain(index)`. Incremental write-buffer promotion, small-segment merges, log folding, vacuum and value-store maintenance remain automatic; `sift.col_auto_merge` still controls merges. Remove retired `sift.col_auto_merge_max_active` and `sift.col_auto_merge_max_workers` settings. Some build/merge memory scopes remain unbounded in upstream qualification; do not assume a hard memory ceiling.
 
-`sift.col_auto_merge` and `sift.table_auto_defrag` now default to on. Background maintenance can vacuum tables and rewrite column indexes, producing WAL. The column merge budget is controlled by `sift.col_auto_merge_wal_pct`, while `sift.col_maintenance_status` and `sift.col_index_status` expose maintenance state. Set the two automatic-maintenance switches to off to restore the older behavior.
+With the default `sift.on_corruption = quarantine`, the detecting statement fails and a damaged `sift` or `sift_col` index is taken out of service. Later queries use exact heap answers; an old plan can raise `40001` once. Inspect `sift.quarantine` and rebuild deliberately. This does not repair PostgreSQL system catalogs or cover `sift_table` corruption.
 
-`write_buffer_limit` replaces the older `mutable_limit` name, retained as an alias. Index truncation replay can cancel standby queries. Publishing a columnar table through logical replication requires the upstream preload configuration; basic text search and column analytics do not require preloading.
+### Upgrade Boundaries
 
-### Upgrading from Before 3.3
-
-Use the upstream upgrade preflight, install matching files, update each database, and restart processes that loaded the old library so that all readers use the same release:
+Run the versioned preflight and install matching libraries on every reader, including standbys. Follow the required restart/reconnect procedure before updating each database:
 
 ```sql
-ALTER EXTENSION pg_sift UPDATE TO '3.4';
+ALTER EXTENSION pg_sift UPDATE TO '5.0.1';
 SELECT * FROM sift.upgrade_commands();
+SELECT * FROM sift.col_repair('public.orders_col', true);
 ```
 
-Rebuild every pre-3.3 text index except those using `analyzer = keyword`: the treatment of words longer than 255 bytes changed, so unreconstructed indexes can miss matching rows. The update prints commands; run concurrent index rebuilds individually outside a transaction. A suggested column-index rebuild may improve performance, while a suggested columnar-table rewrite can take an exclusive lock. Review each command before running it.
+The 5.0-to-5.0.1 SQL script is empty: it aligns the reported extension version but changes no objects. This patch fixes concurrent-build locking, memory retention, cancellation and crash paths without an on-disk format change or an additional REINDEX requirement.
 
-The 3.3 default `sift.col_format_minor = 15` is unreadable by 3.2 libraries. Upgrade all readers, including standbys, before new-format writes. If compatibility with 3.2 is required, follow the versioned downgrade guide and set the format limit server-wide before upgrading; a session-only limit does not reach background workers. Opt-in point TID directories require format 16. There is no automatic downgrade of data files.
+Crossing to 5.0 still requires the full upgrade guide: move readers to at least 4.3.6 first and upgrade standbys before a primary writes the new format. A 4.x reader cannot interpret 5.0 index data. `sift_table` logical change records use WAL resource-manager ID 152; 5.0 also reads legacy ID 128, while 4.x cannot replay 152. Rollback needs the documented clean-shutdown and format-rebuild procedure. A format mismatch is not proof of corruption.
 
-The 3.3 SQL migration fixes the earlier DROP event-trigger privilege defect; the prior manual workaround is no longer a separate installation step. It also handles a fresh backend's first query with bound parameters, extending the plain-query fix in 3.2.3.
-
-### 3.4 Upgrade and Planning Changes
-
-Release 3.4.2 updates SQL extension version 3.4. Apply the supplied 3.3-to-3.4 SQL upgrade after installing matching files. It adds foreign-key-assisted column scans and refines IN-list and scan startup costing; unsupported or more expensive shapes keep the normal PostgreSQL plan. Fixes include incorrect aggregate-path ordering metadata, numeric sums at the signed 128-bit limit, and text-dictionary handling. Check the release-specific upgrade guide for existing indexes and preloaded processes; do not treat benchmark timings as workload guarantees.
-
-### 3.4.2 Maintenance Fixes
-
-Release 3.4.2 keeps SQL extension version 3.4. It fixes an `ORDER BY ... LIMIT` crash after columns are added with `ALTER TABLE`, improves grouped aggregate and range/IN scans, and repairs dictionary and column-maintenance edge cases. Install matching files on all readers before writing the newer column formats; the release does not change the existing 3.3-to-3.4 upgrade boundary.
-
-### 3.5 Release
-
-Release 3.5.1 keeps PostgreSQL 17–19 support and the SQL upgrade boundary at `3.5`. The 3.5 line adds column format minors and planner/maintenance changes; install the matching library on every reader before writing the newer formats. Release 3.5.1 fixes a backend crash in a parallel aggregate scan when no parallel worker can be launched. Follow the release-specific upgrade guide before applying `ALTER EXTENSION pg_sift UPDATE TO '3.5'`.
-
-### 3.5.2–3.5.3 Correctness Fixes
-
-3.5.2 fixes crashes and wrong groups when column aggregates read block dictionaries and several wide columns. 3.5.3 fixes crashes or wrong rows for generic plans with NULL or packed text-array parameters in ANY/ALL tests. Install 3.5.3 on every reader and restart servers or reconnect every pool and worker that loaded the old library. SQL remains 3.5: these two patch releases need neither an additional SQL update nor REINDEX. Until binaries are replaced, `sift.enable_agg = off` restores PostgreSQL's own plan for affected statements. The earlier 3.5 format and upgrade boundaries remain.
-
-### 4.0.3 Upgrade and Change Tracking
-
-Run the versioned upgrade preflight, deploy matching libraries on every reader and restart or replace processes that loaded the old release. Follow the supplied SQL chain through 3.5, 3.7 and 4.0 to 4.0.3. Even 4.0.2-to-4.0.3 needs a SQL update for `sift.index_choices` and `sift.help`; that patch alone changes no format and requires no REINDEX. Earlier text-index repairs and column-format reader limits remain.
-
-New or reindexed column indexes default to `track_changes = 'auto'`: an eligible single-column primary key is tracked using two statement triggers for UPDATE and DELETE. This adds write work and a baseline heap scan. Existing indexes do not acquire the feature from ALTER EXTENSION alone. `track_changes = 'off'` disables it. Incomplete tracking, including partition/inheritance or concurrent-build cases, falls back to heap checks; inspect the upgrade guide before changing table topology. The text-index `merge_fanin` default is now 4, so merges occur more often.
-
-### 4.1 Planning and Maintenance
-
-4.1.0 expands eligible plans for joins, EXISTS/NOT EXISTS, IN/NOT IN, scalar subqueries and text-key top-N queries, and improves grouped scans that exceed hash memory. `sift.agg_probe_rewrite` and `sift.agg_probe_direct` control the corresponding probe optimizations; queries that fail the semantic or cost checks retain ordinary plans.
-
-New or rebuilt `key_cut` indexes default to construction by key ranges, controlled by `sift.col_build_key_ranges`. Each automatic merge pass is bounded by `sift.col_auto_merge_pass_mb`, defaulting to 1024 MB; 0 completes the work in one pass and does not disable merging.
-
-```sql
-ALTER EXTENSION pg_sift UPDATE TO '4.1';
-```
-
-First install matching files and restart all readers, including standbys. The 4.0.3-to-4.1 update advances the SQL version without changing its objects or on-disk formats and adds no REINDEX requirement. Earlier damaged-index rebuild requirements still apply; rebuilding an existing key_cut index is optional to adopt the new construction method.
-
-### 4.1.1–4.1.4 Correctness and Maintenance Fixes
-
-4.1.4 fixes incorrect negated JSONB containment results on affected `NOT NULL` columns and duplicated buffered rows when a `sift_col` scan is rescanned by a join or correlated query. Until updated, `sift.enable_agg = off` avoids the first case; `sift.enable_col_scan = off` avoids the second. Disabling aggregation alone does not fix the duplicated-row case.
-
-4.1.1 stops new incorrect tracked-row counts; 4.1.2 additionally rechecks older tracking logs against the heap and repairs stale state. 4.1.3 fixes table locking and writer deadlocks during concurrent index rebuilds. Install 4.1.4 files on all readers and restart the servers, including standbys. SQL stays at 4.1: updating an existing 4.1 installation requires no further `ALTER EXTENSION`, no format conversion and no mandatory `REINDEX` for these patch fixes.
-
-After `pg_upgrade`, restore with disabled triggers, or a concurrent index rebuild, tracked column indexes can remain correct but use heap checks. Restore the optimized path with a normal `REINDEX INDEX` or by setting each index's existing `track_changes` value again. Earlier upgrade and damaged-index requirements still apply.
-
-### 4.2–4.3.2 Upgrade Boundaries
-
-Install matching libraries on every reader, including standbys, restart the servers, then update each database:
-
-```sql
-ALTER EXTENSION pg_sift UPDATE TO '4.3.2';
-```
-
-4.3.2 fixes wrong counts or sums when an aggregate scan reuses a correlated derived-table result for later outer rows. Until updated, `sift.enable_agg = off` avoids that scan. 4.3.1 also fixes reads during tracked UPDATE/DELETE statements and assigns replica identity to `sift.table_option_values`, allowing relation drops when an all-table publication publishes deletes. The SQL update is required for that catalog repair; replacing the library alone is insufficient.
-
-The 4.2/4.3 line changes index formats. New or merged 4.3 column segments may use format minor 44, which older libraries cannot read. Upgrade every reader before writes; follow the versioned format-cap procedure before attempting a rollback. Existing indexes gain new layouts on merges or rebuilds. The 4.3.1-to-4.3.2 patch itself changes no format or objects and adds no REINDEX requirement.
-
-Run the supplied upgrade preflight and remove retired settings `sift.enable_col` and `sift.table_auto_defrag_dead_pct`. `sift.eval_methods` retains only `penalty_maintenance`; remove its retired method names. Reloptions `rollup` and `rollup_dims` are renamed to `rollup_leaves` and `rollup_columns`, with the old spellings accepted through 4.x. Existing upgrade and damaged-index rebuild requirements still apply.
+Older repair obligations remain: pre-3.3 text indexes other than `analyzer = keyword` need rebuilding for long-word correctness; affected 4.2.1–4.3.5 column segments may need `sift.col_repair` or REINDEX after liveness-page damage. Start with the dry run shown above. Concurrent rebuild commands run individually outside a transaction. Remove obsolete `sift.enable_col` and `sift.table_auto_defrag_dead_pct`; `sift.eval_methods` retains only `penalty_maintenance`. Review the current guide for option renames and reader format limits instead of downgrading libraries in place.

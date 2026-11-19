@@ -2,6 +2,9 @@
 
 来源：
 
+- [当前上游](https://github.com/LogicOcean/pgokf/releases/tag/v0.6.0)
+- [当前上游](https://github.com/LogicOcean/pgokf/blob/v0.6.0/crates/extension/sql/pgokf--0.5.0--0.6.0.sql)
+
 - [官方 README](https://github.com/LogicOcean/pgokf/blob/v0.4.0/README.md)
 - [扩展控制文件](https://github.com/LogicOcean/pgokf/blob/v0.4.0/crates/extension/pgokf.control)
 - [SQL API](https://github.com/LogicOcean/pgokf/blob/v0.4.0/docs/sql-api.md)
@@ -75,3 +78,7 @@ ALTER EXTENSION pgokf UPDATE TO '0.5.0';
 ```
 
 独立的 `pgokf-confluence` 配套工具会预览完整的 Confluence Cloud 空间，只有使用 `--apply` 时才写入专用内容包。它记录生产者来源、使用持久化检查点，并要求通过 `--allow-deletions` 确认页面删除。它适合受众一致的内容空间，不会把 Confluence 页面限制复制成 PostgreSQL 权限。令牌应保存在私密文件或 `CONFLUENCE_API_TOKEN` 中。配套工具的 `--tls` / `OKF_PG_TLS` 现在至少强制 `sslmode=require`，服务器拒绝 TLS 时会断开，不再悄悄回退到明文；需要时应使用更严格的证书验证。这些配套工具变化不会让扩展后端直接执行 Confluence 采集或外部向量计算。
+
+### 0.6.0 配套组件发布
+
+0.5.0 到 0.6.0 的 SQL 升级只更新扩展版本收据，不改变目录对象或数据；安装匹配文件后执行 `ALTER EXTENSION pgokf UPDATE TO '0.6.0'`。新增的私有 Confluence Forge 应用与 `pgokf-confluence-events` 接收器验证投递身份，写入可去重的 JSON 行事件，但不会自动将事件记录到 PostgreSQL 目录中。这些配套组件需要单独配置与运行。稳定分发仍为 PostgreSQL 15–18，PostgreSQL 19 RC2 仅是非生产兼容性测试目标。

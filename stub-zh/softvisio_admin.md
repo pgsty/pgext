@@ -2,6 +2,11 @@
 
 来源：
 
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/softvisio_admin.control)
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/softvisio_admin--1.7.1.sql)
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/softvisio_admin--1.7.0--1.7.1.sql)
+- [Upstream source](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.8.0/Makefile)
+
 - [Control](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin.control)
 - [Version 1.7.0 SQL](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/softvisio_admin--1.7.0.sql)
 - [Installed SQL files](https://github.com/softvisio/postgresql-softvisio-admin/blob/v1.7.0/Makefile)
@@ -26,3 +31,7 @@ SELECT * FROM outdated_extensions();
 ### 升级与权限边界
 
 1.7.0 源码只安装新的基础 SQL，并移除了历史升级脚本，因此仅靠此发行本身不能为旧安装提供常规升级路径。修改服务器文件前，应检查 `pg_extension_update_paths('softvisio_admin')` 并准备经过审查的迁移方案，不要假定 `ALTER EXTENSION UPDATE` 一定成功。这些例程应仅开放给可信管理员：它们能执行权限很高的远程 SQL，新生成的密码还会通过 NOTICE 输出，应限制客户端与服务器日志的访问。调用跨库升级器前，应审查并测试每个受影响扩展的升级。
+
+### 分发版本 1.8.0 与 SQL 1.7.1
+
+1.8.0 发布的默认 SQL 版本为 1.7.1，仍提供仅接受一个参数的 create_database 接口。Makefile 现已提供空的 1.7.0 到 1.7.1 升级脚本；安装匹配文件后可以走这条特定更新路径。README 仍宣传该 SQL 中不存在的可选排序规则参数。这不意味着补齐了 1.7.0 之前的历史升级路径，也不会让跨库操作具有整体原子性。

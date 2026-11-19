@@ -2,6 +2,7 @@
 
 来源：
 
+- [Current release](https://github.com/supabase/supautils/releases/tag/v4.0.1)
 - [v4.0.0 README](https://github.com/supabase/supautils/blob/v4.0.0/README.md)
 - [v4.0.0 release](https://github.com/supabase/supautils/releases/tag/v4.0.0)
 - [Version restriction implementation](https://github.com/supabase/supautils/blob/v4.0.0/src/extensions.c)
@@ -88,3 +89,7 @@ supautils.reserved_memberships = 'pg_read_server_files'
 ### 4.0 迁移
 
 4.0.0 移除了受限扩展功能，应删除旧 constrained_extensions 配置，不再依赖该机制。全局与扩展专用脚本依次执行：全局 before-create、扩展 before-create、扩展 after-create、全局 after-create。没有显式 SCHEMA 或更高优先级参数覆盖时，default_extension_install_schema 在搜索路径前加入默认安装模式。只读的 supautils.version 可识别已加载库。这些属于库变化，应重启或重连预加载它的进程，不要为 supautils 本身执行 CREATE EXTENSION。
+
+### 4.0.1 修复
+
+4.0.1 为未指定角色的语句增加角色查询保护，修正扩展授权，并在不存在依赖环时执行依赖扩展的自定义脚本。它仍是预加载模块，不提供 CREATE EXTENSION 命令。替换匹配的库并重启使用该库的进程，升级后验证委派管理权限和自定义脚本策略。

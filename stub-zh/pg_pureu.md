@@ -2,14 +2,14 @@
 
 来源：
 
-- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/README.md)
-- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pure.control)
-- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pureu.control)
-- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pure--0.1.sql)
-- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/pg_pureu--0.1.sql)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.6.0/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/README.md)
+- [pg_pure.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure.control)
+- [pg_pureu.control](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu.control)
+- [pg_pure--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pure--0.1.sql)
+- [pg_pureu--0.1.sql](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/pg_pureu--0.1.sql)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_pure/pg_pure-0.7.0/CHANGELOG.md)
 
-`pg_pureu` 在 PostgreSQL 中执行非受信任的 Pure 标量函数，并提供 SPI 数据库访问能力。它属于 `pg_pure` 0.6.0 分发，SQL 版本为 0.1。只有超级用户才能用该语言创建函数，因为 Pure 可以通过 `extern` 调用任意原生函数。
+`pg_pureu` 在 PostgreSQL 中执行非受信任的 Pure 标量函数，并提供 SPI 数据库访问能力。它属于 `pg_pure` 0.7.0 分发，SQL 版本为 0.1。只有超级用户才能用该语言创建函数，因为 Pure 可以通过 `extern` 调用任意原生函数。
 
 ### 核心流程
 
@@ -30,6 +30,11 @@ SELECT pure_factorial(30);
 
 ### 配置与故障边界
 
-配套语言同样使用 `pg_pure` 动态库。可选的 `shared_preload_libraries` 加载会在主进程中预热解释器，需要重启；否则各后端独立初始化。`pg_pure.using` 默认加载 `math`。已实现查询取消和栈溢出钩子，但通过 `eval` 建立的全局定义不具备事务性，回滚后仍然存在。
+配套语言同样使用 `pg_pure` 动态库。可选的 `shared_preload_libraries` 加载需要重启，但主进程预热不能消除派生后端首次调用的初始化成本；连接池可避免重复初始化。`pg_pure.using` 默认加载 `math`。已实现查询取消和栈溢出钩子，但通过 `eval` 建立的全局定义不具备事务性，回滚后仍然存在。
 
 适合嵌入的 libpure 分支 ab12de13 或更新修订会隐藏 LLVM 符号，支持正常的 PostgreSQL JIT；早期 JIT 不兼容建议不再适用。受信任的配套语言 `pg_pure` 现已能在独立安全模式解释器中运行，但不会限制非受信任语言执行原生代码的能力。0.6.0 的已编译求解器 `gsl::linalg::cholesky_solve` 需要匹配的 Pure 模块。非受信任函数体可通过 `using` 导入已安装模块，受信任函数体则依赖 DBA 的许可列表。应部署匹配库并替换加载旧版库的会话；SQL 版本 0.1 本身不能标识分发版本。
+
+
+### 0.7.0 发行版
+
+`bytea` 映射为 Pure 整数行矩阵，可保留包括 NUL 字节在内的任意二进制数据；元素超出 0..255 时会报错。域类型参数与结果按基础类型转换，同时执行域约束。此前 0.6.1 修复 numeric 精度、符号和显示精度转换；0.6.2 拒绝受信任函数体及 DO 块逃出单表达式包装、向同一后端的其他函数泄露规则。应部署修正后的动态库并替换旧会话，SQL 版本仍为 0.1。

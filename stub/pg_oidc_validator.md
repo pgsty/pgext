@@ -8,7 +8,7 @@ Sources:
 - [PostgreSQL 18 OAuth authentication](https://www.postgresql.org/docs/18/auth-oauth.html)
 - [PostgreSQL 18 libpq OAuth support](https://www.postgresql.org/docs/18/libpq-oauth.html)
 
-`pg_oidc_validator` 1.1.0 is a PostgreSQL 18 OAuth validator module that validates JWT access tokens against an OpenID Connect provider. It is a server library with no control file or SQL extension, so do not run `CREATE EXTENSION`.
+`pg_oidc_validator` 1.1.0 is a PostgreSQL 18/19 OAuth validator module that validates JWT access tokens against an OpenID Connect provider. It is a server library with no control file or SQL extension, so do not run `CREATE EXTENSION`.
 
 ### Configure the Server
 
@@ -54,4 +54,4 @@ Use `oauth_client_secret` only when the registered client requires it. The clien
 - Dex does not emit OAuth scopes; an explicitly empty `scope=""` disables scope validation, which weakens the normal check.
 - The client `oauth_issuer` must exactly match the HBA issuer and the discovery document. Treat the issuer and any `pg_oidc_validator.discovery_url_override` endpoint as trusted security boundaries, and require verified TLS for database and provider connections.
 - Token validation does not replace PostgreSQL grants, role membership, or row-level security.
-- Pigsty RPM packages are limited to EL10; DEB packages cover the supported Debian and Ubuntu targets. PostgreSQL 18 is required.
+- Pigsty RPM packages are limited to EL10; DEB packages cover the supported Debian and Ubuntu targets. The 1.1.0 source release supports PostgreSQL 18 and 19; verify package availability separately.

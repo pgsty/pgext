@@ -2,6 +2,9 @@
 
 Sources:
 
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/tag/v1.36.0)
+- [Upstream source](https://github.com/turbot/steampipe-plugin-aws/releases/download/v1.36.0/steampipe_postgres_aws.pg15.darwin_arm64.tar.gz)
+
 - [Published 0.125.0 package page](https://database.dev/toliver38/steampipe_postgres_aws)
 - [Official AWS plugin documentation](https://hub.steampipe.io/plugins/turbot/aws#postgres-fdw)
 - [Official Postgres FDW configuration guide](https://steampipe.io/docs/steampipe_postgres/configure)
@@ -47,4 +50,4 @@ Queries call AWS APIs and can be slower, rate-limited, paginated, eventually con
 
 Prefer an AWS profile, workload role, or other short-lived credential source over static keys in `pg_foreign_server`. Grant only the IAM read permissions needed by the tables you query, and restrict access to server options and imported foreign tables. Foreign scans may incur AWS API activity and related service costs.
 
-The cataloged package is `0.125.0`, published separately on database.dev, while the official Turbot plugin and its table catalog continue to evolve. Current Hub examples may name tables or options absent from that older package. Confirm the installed extension version, consult matching-version table definitions, and re-import or recreate foreign tables deliberately when upgrading. No `shared_preload_libraries` setting is required.
+The verified official 1.36.0 release includes standalone PostgreSQL AWS artifacts; the inspected PostgreSQL 15 macOS arm64 artifact retains SQL version 1.0. The older database.dev package remains a separate 0.125.0 publication. Match the official artifact to the actual platform and PostgreSQL major; do not infer newer-major support from the plugin tag. SQL extversion alone cannot identify the plugin revision. Review table-definition changes and re-import or recreate foreign tables deliberately, preserving grants and dependent objects. The installer README contains destructive DROP examples, which are unnecessary for a fresh installation and should not be copied over an existing deployment. No shared_preload_libraries setting is required.

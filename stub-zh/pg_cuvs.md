@@ -2,42 +2,45 @@
 
 来源：
 
-- [官方上游 README](https://github.com/pg-cuvs/pg_cuvs/blob/f8bfcc9a0d594c28257870ac23f9f130b90130e7/README.md)
-- [官方扩展控制文件 (pg_cuvs.control)](https://github.com/pg-cuvs/pg_cuvs/blob/f8bfcc9a0d594c28257870ac23f9f130b90130e7/pg_cuvs.control)
-- [官方扩展 SQL (pg_cuvs--0.4.0--0.5.0.sql)](https://github.com/pg-cuvs/pg_cuvs/blob/f8bfcc9a0d594c28257870ac23f9f130b90130e7/sql/pg_cuvs--0.4.0--0.5.0.sql)
+- [README.md](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/README.md)
+- [pg_cuvs.control](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/pg_cuvs.control)
+- [docs/playbooks/release-upgrade.md](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/docs/playbooks/release-upgrade.md)
+- [sql/pg_cuvs--0.9.0--0.9.1.sql](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/sql/pg_cuvs--0.9.0--0.9.1.sql)
+- [sql/pg_cuvs--0.9.1--0.9.2.sql](https://github.com/pg-cuvs/pg_cuvs/blob/v0.9.2/sql/pg_cuvs--0.9.1--0.9.2.sql)
+- [Release](https://github.com/pg-cuvs/pg_cuvs/releases/tag/v0.9.2)
 
-`pg_cuvs` — 通过 NVIDIA cuVS 在 PostgreSQL 上实现 GPU 加速向量搜索的扩展，这是一种异构加速路径，保持 PostgreSQL 作为控制平面。使用它来进行相应的向量、模型或检索工作流。经过审核的上游材料已将此功能标记为弃用。
+`pg_cuvs` 0.9.2 使用独立的 NVIDIA cuVS 守护进程执行 GPU 向量检索与 HNSW 构建加速。文档目标为 Linux/PostgreSQL 16，要求 pgvector 0.7.0 或更新版本。扩展、守护进程、CUDA/cuVS 库及所需 SDK 补丁必须匹配；CPU CI 通过不能证明 GPU 正确性。
 
-### 核心工作流
+### 启用与查询
 
-```sql
-CREATE EXTENSION pg_cuvs;
+将 `pg_cuvs` 加入现有预加载列表，保留其他库，并为后端与守护进程配置一致的路径：
+
+```ini
+shared_preload_libraries = 'pg_cuvs'
+cuvs.socket_path = '/var/run/postgresql/.s.pg_cuvs'
+cuvs.index_dir = '/var/lib/postgresql/cuvs_indexes'
 ```
 
-在目标数据库中安装扩展，当可用时运行最小的上游示例，并在将其集成到应用程序 SQL 中之前验证安装版本和返回值。
+重启 PostgreSQL，启动可访问相同套接字与持久索引目录的匹配 `pg_cuvs_server`，等待其开始监听，再由有权限的管理员启用不可迁移的扩展：
 
-### 重要对象
+```sql
+CREATE EXTENSION vector;
+CREATE EXTENSION pg_cuvs;
+CREATE TABLE items (id bigint PRIMARY KEY, embedding vector(3));
+INSERT INTO items VALUES (1, '[1,0,0]'), (2, '[0,1,0]'), (3, '[0,0,1]');
+CREATE INDEX items_cagra ON items USING cagra (embedding vector_l2_ops);
+SELECT id FROM items ORDER BY embedding <-> '[1,0,0]'::vector LIMIT 2;
+EXPLAIN SELECT id FROM items ORDER BY embedding <-> '[1,0,0]'::vector LIMIT 2;
+```
 
-- `cuvs_filtered_knn(index_rel regclass, query vector, filter_tids bigint[], k integer)` 是一个扩展函数，返回 `TABLE`。
-- `cuvs_filtered_knn(index_rel regclass, query vector, filter_tids tid[], k integer)` 是一个扩展函数，返回 `TABLE`。
-- `cuvsamhandler(internal)` 是一个扩展函数，返回 `index_am_handler`。
-- `flatamhandler(internal)` 是一个扩展函数，返回 `index_am_handler`。
-- `ivfpqamhandler(internal)` 是一个扩展函数，返回 `index_am_handler`。
-- `pg_cuvs_batch_search(rel regclass, queries vector[], k integer, OUT query_idx integer, OUT ctid tid, OUT distance real)` 是一个扩展函数，返回 `SETOF`。
-- `pg_cuvs_build_hnsw(cagra_oid regclass, mode text DEFAULT 'nsw')` 是一个扩展函数，返回 `regclass`。
-- `pg_cuvs_compact(index_rel regclass)` 是一个扩展函数，返回 `void`。
-- `pg_cuvs_eat_vram(leave_bytes bigint)` 是一个扩展函数，返回 `void`。
-- `pg_cuvs_free_vram()` 是一个扩展函数，返回 `void`。
-- `pg_cuvs_gc_orphans(do_delete boolean DEFAULT false, OUT db_oid oid, OUT index_oid oid, OUT reason text, OUT action text)` 是一个扩展函数，返回 `SETOF`。
-- `pg_cuvs_gpu_cache_stats(OUT gpu_device_id integer, OUT hits bigint, OUT misses bigint, OUT evictions bigint, OUT reloads bigint, OUT persist_failures bigint, OUT resident_count integer, OUT vram_used_mb bigint, OUT vram_budget_mb bigint, OUT bf_vram_mb bigint, OUT bf_precision text)` 是一个扩展函数，返回 `SETOF`。
-- `pg_cuvs_gpu_fallback_stats(OUT index_oid regclass, OUT fallback_count bigint, OUT last_reason text, OUT last_fallback_at timestamptz)` 是一个扩展函数，返回 `SETOF`。
-- `pg_cuvs_gpu_shard_stats(OUT database_oid oid, OUT index_oid oid, OUT index_name text, OUT shard_id integer, OUT gpu_device_id integer, OUT n_vecs bigint, OUT tid_offset bigint, OUT vram_used_mb bigint, OUT search_count bigint, OUT error_count bigint, OUT resident boolean, OUT last_st…)` 是一个扩展函数，返回 `SETOF`。
+`cagra` 提供近似 GPU 检索，`flat` 提供穷举 GPU 检索，`ivfpq` 提供压缩近似检索。`pg_cuvs_hnsw` 使用 GPU 构建，在 CPU 上查询标准 pgvector HNSW 页面。`cuvs.k` 独立于 SQL LIMIT 控制候选数量；过滤和近似检索需要针对实际负载验证召回率。用 EXPLAIN 确认实际路径。
 
-### 要求与注意事项
+### 运维与升级
 
-- 经过审核的控制文件声明默认版本为 `0.5.0`。
-- 先安装确认的扩展依赖项：`vector`。
-- 控制文件将该扩展标记为不可重定位。
-- 上游材料包含显式的弃用边界。
-- 上游材料表明该项目已被放弃或不再维护。
-- 在生产使用前，请确认权限、支持的 PostgreSQL 版本、升级行为和失败情况。
+`pg_stat_gpu_search` 提供检索统计。`pg_cuvs_hnsw_connectivity_status(regclass)` 返回可选的构建时结构快照，不跟踪后续 INSERT/DELETE/VACUUM，也不保证召回率。旧的两步导入 API 已移除，当前构建应使用 `CREATE INDEX ... USING pg_cuvs_hnsw`。
+
+安装两种匹配的二进制，先重启 PostgreSQL，再重启守护进程，随后在每个数据库执行 `ALTER EXTENSION pg_cuvs UPDATE TO '0.9.2'`。仓库包含从 0.1.0 开始的 SQL 升级链。0.9.2 不改变 SQL 对象，修复并发微批次下的套接字重试及守护进程监听积压问题。真实 GPU 证据针对特定 A100/PG16 环境，不覆盖所有 GPU 或驱动。
+
+### 故障与持久化边界
+
+规划完成后守护进程失联会报错，执行中的语句不会自动切换 CPU 节点。重试前应回滚并检查新执行计划。`enable_cuvs=off` 可禁用 GPU 规划路径。GPU 辅助文件不在 PostgreSQL WAL 内，需要独立的备份、恢复与副本流程。IVF-PQ 不增量索引插入行，数据变化后应重建并核验辅助文件恢复。故障期间的陈旧标记投递仍为尽力而为，内存预检也不会替其他进程预留内存。项目仍在维护，某个辅助函数弃用不代表整个扩展弃用。

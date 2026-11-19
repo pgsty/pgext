@@ -2,13 +2,13 @@
 
 来源：
 
-- [README v1.4.1](https://github.com/GyuyeongKim/Tessera-public/blob/v1.4.1/README.md)
-- [v1.4.1 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.4.1)
-- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/tessera_pg.control)
-- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/tessera_pg--1.0.sql)
-- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.1/Makefile)
+- [README v1.4.4](https://github.com/GyuyeongKim/Tessera-public/blob/v1.4.4/README.md)
+- [v1.4.4 release](https://github.com/GyuyeongKim/Tessera-public/releases/tag/v1.4.4)
+- [tessera_pg.control](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.4/tessera_pg.control)
+- [tessera_pg--1.0.sql](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.4/tessera_pg--1.0.sql)
+- [Makefile](https://api.pgxn.org/src/tessera_pg/tessera_pg-1.4.4/Makefile)
 
-`tessera_pg` 通过稀疏矩阵乘法替换受支持的连接聚合计划，并提供条目相似度函数。分发版本 1.4.1 安装的 SQL 版本为 1.0，目标是 PostgreSQL 18；原生引擎需要 OpenMP，x86-64 平台还需要 AVX2 或更新的指令集。
+`tessera_pg` 通过稀疏矩阵乘法替换受支持的连接聚合计划，并提供条目相似度函数。分发版本 1.4.4 安装的 SQL 版本为 1.0，目标是 PostgreSQL 18；原生引擎需要 OpenMP，x86-64 平台还需要 AVX2 或更新的指令集。
 
 ### 核心流程
 
@@ -28,6 +28,10 @@ SELECT * FROM tessera_sim('edges', 'k', 'x', 'jaccard', 0.5);
 出现 `Custom Scan (Tessera)` 表示计划已被接管。1.4.1 版本新增对可空列求和与计数、使用 `RANK()` 或 `ROW_NUMBER()` 的组内 top-k 裁剪，以及一次计算多个浮点求和项。只有所有因子都非 NULL 的连接行对才参与求和；没有有效贡献行对的分组返回 NULL。扩展仍支持 `COUNT(DISTINCT a.k)`、`AVG`、单侧 `SUM`、表达式连接键和分组列、输入过滤、HAVING 与 top-N 裁剪。
 
 PostgreSQL 对不支持的情况仍使用常规计划，包括可空 decimal 权重、可空 `float8` 平均值、整数与 `float8` 的乘积、`real` 乘积、`MIN`、`MAX`、外连接及非确定性排序规则。多个求和项与可空求和输入对于分区表、继承表或自带计划的输入还有额外限制。应查阅对应版本的支持矩阵；适配器仅识别 PostgreSQL 内置运算符和聚合函数。
+
+### 1.4.4 运行时与规划器修复
+
+1.4.4 的分发版本仍安装 SQL 1.0，C 接口也未变，但修复了 PostgreSQL 行数估算问题，避免 `NOT EXISTS` 或按组连接误选嵌套循环；OpenMP 加载后会恢复线程 CPU 亲和性，并在不支持 AVX-512/AMX 的处理器上隔离标准库符号。此版本也改进 Spark 并行度。支持的查询契约未改变，仍应在真实负载上检查计划。
 
 ### 相似度函数与设置
 

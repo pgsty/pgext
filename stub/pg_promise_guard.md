@@ -2,16 +2,15 @@
 
 Sources:
 
-- [README.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/README.md)
-- [pg_promise_guard.control](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/pg_promise_guard.control)
-- [CHANGELOG.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.8/CHANGELOG.md)
+- [README.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.10/README.md)
+- [pg_promise_guard.control](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.10/pg_promise_guard.control)
+- [CHANGELOG.md](https://api.pgxn.org/src/pg_promise_guard/pg_promise_guard-0.2.10/CHANGELOG.md)
 
-`pg_promise_guard` 0.2.8 scans system catalogs for declared guarantees that are no longer fully enforced. It requires `pg_living_assertions`, uses pure SQL and needs no preload.
+`pg_promise_guard` 0.2.10 scans system catalogs for declared guarantees that are no longer fully enforced. It optionally uses `pg_living_assertions` for `watch()`, uses pure SQL and needs no preload.
 
 ### Core Workflow
 
 ```sql
-CREATE EXTENSION pg_living_assertions;
 CREATE EXTENSION pg_promise_guard;
 
 SELECT * FROM promise_guard.promise_breaks;
@@ -24,6 +23,10 @@ SELECT * FROM promise_guard.check_promises('app');
 SELECT promise_guard.watch('public');
 SELECT * FROM living_assertions.status;
 ```
+
+### 0.2.10 Dependency Boundary
+
+Version 0.2.10 makes `pg_living_assertions` optional at installation time. Ordinary catalog checks work without it; `promise_guard.watch()` reports a clear dependency error until it is installed. Monitoring roles may still use the checks under the documented grants. Existing installations retain the dependency recorded when they were created.
 
 ### Operational Boundaries
 
