@@ -187,13 +187,12 @@ The command applies these changes to the template:
 | small controller | When detected CPU count is below four, rewrites `node_tune: oltp` and `pg_conf: oltp.yml` to their `tiny` profiles. |
 | `--region REGION` | Updates `all.vars.region` for non-default regions. `china` also activates template-provided Docker and pip mirrors, using values already present in the template. |
 | `--proxy` | Reads `HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`, and `NO_PROXY`, each falling back to its lowercase spelling. Missing HTTP/HTTPS values fall back to ALL_PROXY. Writes non-empty values to `all.vars.proxy_env` and supplies a default no-proxy list when needed. |
-| `--version MAJOR` | Updates generic templates for PostgreSQL 14-18, or explicit 19 beta, and selects the matching locale. Version-pinned `fork/mssql`, `fork/polar`, legacy root `mssql`/`polar`, and root `pgNN` modes keep their template version and report a warning. |
+| `--version MAJOR` | Updates generic templates for active PostgreSQL 15-19 (default 18), and selects the matching locale. Version-pinned `fork/mssql`, `fork/polar`, legacy root `mssql`/`polar`, and root `pgNN` modes keep their template version and report a warning. |
 | `--generate` | Generates one 24-character value per known credential identifier and consistently replaces its active values and documented placeholders. |
 
 An IP mapping that creates a duplicate key fails. PIG warns if a supplied address has no matching placeholder in the template.
 
-For PostgreSQL 19 beta, Pig also enables the `beta` repository after `pgsql` when the template
-contains the expected repository list. Modes below `conf/build/` intentionally bypass IP mapping
+PostgreSQL 19 uses standard stable repositories and no longer adds a `beta` repository entry. Modes below `conf/build/` intentionally bypass IP mapping
 and controller-admin preflight so build templates remain portable. These rules use the resolved
 mode: `oss` behaves like `build/oss`, and `mssql` behaves like `fork/mssql` when it selects that file.
 
@@ -209,7 +208,7 @@ same generated value.
 - `-c|--conf`: template mode, equivalent to positional `[mode]`; the two forms are exclusive
 - `--ip`: up to ten distinct comma-separated IPv4 addresses
 - `--domain`: replace the exact `i.pigsty` placeholder with a valid DNS domain
-- `-v|--version`: PostgreSQL major version, 18/17/16/15/14; 19 beta can be specified explicitly
+- `-v|--version`: PostgreSQL major version, 19/18/17/16/15; the default remains 18
 - `-r|--region`: upstream repository region, such as default/china/europe
 - `-m|--mirror`: equivalent to `--region china`; mutually exclusive with `--region`
 - `-O|--output-file`: output config file path, default `pigsty.yml`

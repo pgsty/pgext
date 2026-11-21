@@ -5,6 +5,9 @@ icon: fa-solid fa-terminal
 weight: 640
 ---
 
+> **活跃构建策略：** 自 2026-11-21 起，PGEXT 与 PIG 均面向 PostgreSQL **15–19**（其中 EL8 覆盖 **15–18**），并保持 **PG18** 作为默认配置与工具目标。PostgreSQL 19 正式版直接通过常规稳定仓库构建，无需 `--beta`。
+
+
 `pig build` 使用 Pigsty 的构建配方下载源码、安装依赖并生成 RPM/DEB 软件包。它适用于 EL、Debian 和 Ubuntu 构建主机；Rust、pgrx 和 Xray 客户端也支持各自的 macOS 使用场景。
 
 | 命令            | 描述                 | 备注                |
@@ -103,10 +106,10 @@ pig build spec -m                # 优先使用 pigsty.cc 中国镜像
 ```bash
 pig build repo                   # 等同于：pig repo set
 pig build repo -m                # 选择内置的中国区域镜像
-pig build repo --beta            # 同时启用 PostgreSQL 19 beta 仓库模块
+pig build repo --beta            # 同时启用旧版测试仓库模块
 ```
 
-**功能：** 以 `pig repo set` 初始化构建所需仓库：移除旧仓库、添加所需仓库并更新包缓存。`--beta/-b` 会把 `beta` 模块追加到仓库模块列表，用于显式构建 PostgreSQL 19 beta 相关包；稳定默认路径仍只使用 PG14-18。
+**功能：** 以 `pig repo set` 初始化构建所需仓库：移除旧仓库、添加所需仓库并更新包缓存。`--beta/-b` 会把可选 `beta` 模块追加到仓库列表以供上游测试源使用；PostgreSQL 19 正式版在 EL9/EL10 与 Debian/Ubuntu 上均直接使用常规 `pgsql` 稳定源。
 
 **选项：**
 
@@ -122,14 +125,13 @@ pig build tool                   # 安装默认工具集
 pig build tool mini              # 最小工具集
 pig build tool full              # 完整工具集
 pig build rust                   # 单独安装 Rust 工具链
-pig build tool --beta            # 额外安装 PG19 beta 构建依赖
 ```
 
 **工具包：**
 
 - **最小（`mini`）：** 构建工具和开发库，从安装列表中排除 PostgreSQL 与 PGDG 包
-- **默认 / `full`：** Make、CMake、开发库、打包工具和 PostgreSQL 构建依赖。EL 安装 PG14-18 server/devel 包；Debian/Ubuntu 使用 `postgresql-all` 与 `postgresql-server-dev-all`
-- **`--beta`：** 额外安装 PG19 beta server/devel 包；`mini` 仍排除 PostgreSQL 包
+- **默认 / `full`：** Make、CMake、开发库、打包工具和 PostgreSQL 构建依赖。EL9/EL10 安装 PG15–19 server/devel 包，EL8 安装 PG15–18 server/devel 包；Debian/Ubuntu 使用 `postgresql-all` 与 `postgresql-server-dev-all`
+- **`--beta`：** 保留兼容开关，在配置了上游 beta 测试包时生效；`mini` 仍排除 PostgreSQL 包
 
 ## build rust
 
@@ -150,12 +152,11 @@ PIG 通过 rustup 为当前用户安装 Rust，不询问交互确认。如果 `~
 ```bash
 pig build pgrx                   # 安装默认版本 (0.19.3)
 pig build pgrx -v 0.19.3         # 安装特定版本
-pig build pgrx --pg 18,17,16     # 为指定 PG 版本初始化 pgrx
+pig build pgrx --pg 19,18,17     # 为指定 PG 版本初始化 pgrx
 pig build pgrx --pg init         # 只执行 cargo pgrx init，不传 PG 参数
-pig build pgrx -b                # 自动探测时包含 PostgreSQL 19 beta pg_config
 ```
 
-**前提条件：** 必须先安装 Rust 工具链、PostgreSQL 开发头文件。默认自动探测只覆盖稳定 PG14-18；需要 PG19 beta 时使用 `-b|--beta`，或通过 `--pg 19` 显式指定。
+**前提条件：** 必须先安装 Rust 工具链、PostgreSQL 开发头文件。默认自动探测覆盖已安装的活跃版本 PG15–19（EL8 上为 15–18）；也可通过 `--pg` 显式指定目标版本。
 
 ## build proxy
 
@@ -391,16 +392,18 @@ pig build pkg citus --pg 15,16,17
 
 结果按 PostgreSQL 主版本分别生成。所选版本需要匹配的开发包和构建配方支持。
 
-### 构建 PostgreSQL 19 beta 扩展
+### 构建 PostgreSQL 19 扩展
+
+在已配置稳定仓库的 EL9/EL10 或 Debian/Ubuntu 上：
 
 ```bash
-pig build repo --beta
-pig build tool --beta
-pig build pgrx -b                # 仅 Rust/pgrx 扩展需要
+pig build repo
+pig build tool
+pig build pgrx --pg 19           # 仅 Rust/pgrx 扩展需要
 pig build pkg EXTENSION --pg 19
 ```
 
-将 `EXTENSION` 替换为支持该版本的扩展。这里的 beta 版本由 PIG 当前内置配置指定。
+将 `EXTENSION` 替换为支持 PG19 的构建配方。默认配置目标继续使用 PG18；EL8 不提供 PG19，PG14 已退出活跃构建生命周期。
 
 ## 故障排除
 

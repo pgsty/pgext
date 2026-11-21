@@ -58,7 +58,7 @@ In pig, APT/YUM repositories are organized as **modules**: groups of repositorie
 | `infra` | Infrastructure component repository | pigsty-infra |
 | `nginx` | Nginx repository | nginx |
 | `docker` | Docker repository | docker-ce |
-| `beta` | PostgreSQL 19 beta repositories | pgdg19-beta, pgdg-beta |
+| `beta` | Legacy testing repositories | pgdg19-beta, pgdg-beta |
 | `extra` | PGDG non-free and third-party extensions | pgdg-extras, timescaledb, citus |
 | `groonga` | PGroonga repository | groonga |
 | `percona` | Percona PG + PG_TDE | percona |
@@ -72,6 +72,9 @@ In pig, APT/YUM repositories are organized as **modules**: groups of repositorie
 | `click` | ClickHouse repository | clickhouse |
 | `gitlab` | GitLab repository | gitlab-ce, gitlab-ee |
 {.full-width .wide .expand}
+
+PG19 stable is included in the regular `pgsql` (`pgdg`) module on EL9/EL10 and Debian/Ubuntu and does not require the `beta` module. PG14 repository definitions have been retired.
+
 
 PIG filters each module by the current operating system and architecture. Run `pig repo list` to see the available entries.
 

@@ -58,7 +58,7 @@ pig repo set
 |  `infra`  | 基础设施组件仓库 | pigsty-infra |
 | `nginx` | Nginx 仓库 | nginx |
 | `docker`  | Docker 仓库               | docker-ce                                         |
-|  `beta`   | PostgreSQL 19 Beta 版本   | pgdg19-beta, pgdg-beta                            |
+|  `beta`   | 旧版测试仓库   | pgdg19-beta, pgdg-beta                            |
 |  `extra`  | PGDG Non-Free 与三方扩展     | pgdg-extras, timescaledb, citus                   |
 | `groonga` | PGroonga 仓库             | groonga                                           |
 | `percona` | Percona PG + PG_TDE     | percona                                           |
@@ -72,6 +72,9 @@ pig repo set
 |  `click`  | ClickHouse 仓库           | clickhouse                                        |
 | `gitlab`  | GitLab 仓库               | gitlab-ce, gitlab-ee                              |
 {.full-width .wide .expand}
+
+PG19 正式版在 EL9/EL10 与 Debian/Ubuntu 上均已纳入常规 `pgsql`（`pgdg`）模块，不需要 `beta` 模块；PG14 仓库定义已退役。
+
 
 模块中的仓库会按当前操作系统与架构筛选。用 `pig repo list` 查看本机可用项。
 

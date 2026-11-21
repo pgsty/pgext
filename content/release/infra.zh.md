@@ -6,6 +6,88 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-21
+
+### 常规软件更新
+
+最终扫描覆盖 106 个配方及 Grafana 合集内的全部 14 个插件。本常规批次含 **38 个配方、158 个包（79 个 DEB、79 个 RPM）**，包括已锁定的 Sealos 回滚包。加上下方 Rust/pgrx 的 12 个包，**41 个配方的 170 个制品（85 个 DEB、85 个 RPM）已全部导入本地 APT/YUM 仓库**：166 个常规新增／更新包，4 个 Sealos 降级包。下载使用 `8888` 端口，构建、本地入库、签名、索引更新和四路客户端验收均已完成；尚未在线发布。
+
+本地入库放置 171 份仓库副本：85 个 DEB，以及两个 YUM 架构目录各 43 个 RPM，noarch RPM 各放一份。初次验收使用四个隔离的 Debian 12／EL8 客户端，每路解析 43 个目标版本，校验 20 个下载包并安装 16 个代表包，包括 Sealos 显式降级验证。随后按用户要求清理 77 个未引用 DEB 和 78 个历史 RPM，包文件合计 8.45 GB。清理后 APT 每架构保留 119 条活跃记录，YUM 每架构保留 129 个 RPM；492 个保留包的字节均未改变。Release/InRelease、repomd 和全部 258 个 RPM 的 PGSTY 签名验证通过，最终仓库验收覆盖全部 106 个现行配方、432 件独立制品。四路客户端解析了全部活跃记录（APT 每架构 119 条、YUM 每架构 129 条，合计 496 条），并在不指定版本的情况下下载、安装了 Sealos 5.0.1-2PGSTY。包头、依赖与文件清单、摘要及签名全部一致，没有缺失架构、未索引包或未引用 DEB；22 个保留的历史包名及旧 repodata 已单独记录。本地验收完成，尚未远端同步或在线发布。
+
+| 名称 | 原版本 | 新版本 | 备注 |
+|---|---|---|---|
+| [claude-code](https://downloads.claude.ai/claude-code/apt/latest/dists/latest/main/binary-amd64/Packages) | 2.1.322 | 2.1.330 | 官方原生包；保持上游签名与字节 |
+| [cloudflared](https://github.com/cloudflare/cloudflared/releases/tag/2026.11.1) | 2026.10.7 | 2026.11.1 | 双架构重打包 |
+| [code](https://update.code.visualstudio.com/api/update/linux-deb-x64/stable/latest) | 1.146.0 | 1.147.0 | 官方原生包 |
+| [code-server](https://github.com/coder/code-server/releases/tag/v4.146.0) | 4.145.2 | 4.146.0 | 官方双架构 DEB／RPM；四路安装、CLI 与 HTTP 工作台检查通过 |
+| [codex](https://github.com/openai/codex/releases/tag/rust-v0.171.0) | 0.167.2 | 0.171.0 | 保留完整上游运行时与原始 bwrap |
+| [crush](https://github.com/charmbracelet/crush/releases/tag/v0.102.0) | 0.100.0 | 0.102.0 | 双架构重打包 |
+| [duckdb](https://github.com/duckdb/duckdb/releases/tag/v2.0.1) | 2.0.0 | 2.0.1 | 双架构重打包 |
+| [etcd](https://github.com/etcd-io/etcd/releases/tag/v3.7.4) | 3.7.3 | 3.7.4 | 双架构重打包 |
+| [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/releases/tag/v4.1.8) | 4.1.6 | 4.1.8 | 双架构重打包 |
+| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.2) | 1.0.1 | 1.0.2 | 双架构重打包 |
+| [hugo](https://github.com/gohugoio/hugo/releases/tag/v0.170.1) | 0.169.0 | 0.170.1 | 双架构重打包 |
+| [logcli](https://github.com/grafana/loki/releases/tag/v3.7.10) | 3.7.9 | 3.7.10 | 双架构重打包 |
+| [loki](https://github.com/grafana/loki/releases/tag/v3.7.10) | 3.7.9 | 3.7.10 | 双架构重打包 |
+| [loki-canary](https://github.com/grafana/loki/releases/tag/v3.7.10) | 3.7.9 | 3.7.10 | 双架构重打包 |
+| [maddy](https://github.com/foxcpp/maddy/releases/tag/v0.9.8) | 0.9.7 | 0.9.8 | 双架构重打包 |
+| [mcp-toolbox](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.18.0) | 1.16.0 | 1.18.0 | Go 1.27.4＋CGO 源码构建；glibc 2.28 |
+| [mtail](https://github.com/jaqx0r/mtail/releases/tag/v3.4.21) | 3.4.20 | 3.4.21 | 双架构重打包 |
+| [node-exporter](https://github.com/prometheus/node_exporter/releases/tag/v1.13.1) | 1.12.1 | 1.13.1 | 双架构重打包 |
+| [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest/releases/tag/v4.0.1) | 3.21.0 | 4.0.1 | 4.0 安全大版本；4.0.1 修复登录与角色检查 |
+| [openbao](https://github.com/openbao/openbao/releases/tag/v2.7.3) | 2.7.2 | 2.7.3 | 官方原生包 |
+| [opencode](https://github.com/anomalyco/opencode/releases/tag/v1.19.6) | 1.19.5-2PGSTY | 1.19.6-1PGSTY | 上游版本更新；发行号重置为 1PGSTY |
+| [orca-ide](https://github.com/stablyai/orca/releases/tag/v1.4.267) | — | 1.4.267 | 官方双架构 DEB／RPM |
+| [pgbot](https://github.com/pgrundev/pgbot/releases/tag/v0.10.0) | 0.9.0 | 0.10.0 | 双架构重打包 |
+| [pi-coding-agent](https://github.com/earendil-works/pi/releases/tag/v1.6.0) | 1.5.2 | 1.6.0 | 保留完整上游运行时 |
+| [postgrest](https://github.com/PostgREST/postgrest/releases/tag/v16.6) | 16.5 | 16.6 | 双架构重打包 |
+| [restic](https://github.com/restic/restic/releases/tag/v0.20.0) | 0.19.1 | 0.20.0 | 包含恢复操作的安全修复 |
+| [rustfs](https://github.com/rustfs/rustfs/releases/tag/1.0.6) | 1.0.5 | 1.0.6 | 双架构重打包 |
+| [sabiql](https://github.com/riii111/sabiql/releases/tag/v3.1.0) | 3.0.3 | 3.1.0 | 上游二进制要求 glibc 2.39 |
+| [sealos](https://github.com/labring/sealos/releases/tag/v5.0.1) | 5.1.1 | 5.0.1-2PGSTY | 回滚并永久锁定于最后的 Apache-2.0 正式版 |
+| [seaweedfs](https://github.com/seaweedfs/seaweedfs/releases/tag/4.54) | 4.53 | 4.54 | 包版本规范化为 4.54.0 |
+| [sql-studio](https://github.com/frectonz/sql-studio/releases/tag/0.1.54) | 0.1.53 | 0.1.54 | 缓存文件名加入版本号 |
+| [sqlcmd](https://github.com/microsoft/go-sqlcmd/releases/tag/v1.11.0) | 1.10.0 | 1.11.0 | 双架构重打包 |
+| [stalwart](https://github.com/stalwartlabs/stalwart/releases/tag/v1.1.1) | 1.1.0 | 1.1.1 | 双架构重打包 |
+| [t3code](https://github.com/pingdotgg/t3code/releases/tag/v0.1.11) | — | 0.1.11 | 官方 DEB；同载荷重打包 RPM |
+| [uv](https://github.com/astral-sh/uv/releases/tag/0.13.9) | 0.13.7 | 0.13.9 | 双架构重打包 |
+| [vector](https://github.com/vectordotdev/vector/releases/tag/v0.62.0) | 0.61.0 | 0.62.0 | 官方原生包；含破坏性变更 |
+| [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.54.0) | 1.53.0 | 1.54.0 | 同时更新 vlagent、vlogscli |
+| [grafana-plugins](https://grafana.com/grafana/plugins/marcusolsson-json-datasource/) | 13.3.0 | 13.3.1 | JSON datasource 1.4.4 → 1.4.5；其余 13 个插件内容不变 |
+{.wide .expand}
+
+最终复核补入 Claude Code 2.1.330、code-server 4.146.0、Orca 1.4.267 与 MCP Toolbox 1.18.0。新增的 16 个包通过包头、摘要和架构检查，其中 12 个官方包与已验证输入逐字节一致。Claude 与 code-server 的四路安装和 CLI 检查通过，code-server 的 HTTP 工作台也可访问；MCP Toolbox 的四个包均通过安装、CLI SQL 与 MCP SQL 调用检查。Orca 四路 Linux 安装、内置 Electron/Node 运行时与 agent-browser 检查也已通过，未测试桌面图形交互。Orca 和 T3 Code 本次首次纳入活跃仓库索引。OpenCode 继续采用 V1 渠道的 1.19.6，V2 2.3.2 使用独立安装器与包；Loki 4.0.0-rc.4 虽被上游标为非预发布，仍按 RC 排除。
+
+Sealos 撤回此前准备的 5.1.2 候选包，恢复 Apache-2.0 nFPM 配方，回滚至 **5.0.1-2PGSTY（锁定）**。除非用户明确解除 Sealos 锁定，后续常规扫描与更新均跳过。双架构四个 RPM／DEB 制品已入库。历史 5.1.1 仓库包已清理，APT 与 DNF 现在均默认选择 5.0.1-2PGSTY。已安装 5.1.1 的机器仍需显式降级。四路客户端从 5.1.1 降级至 5.0.1-2PGSTY 均已验证，尚未在线发布。
+
+下载输入均在解包前校验；官方 DEB 和 dist／tarball 中的原生 RPM 保持上游字节，YUM 仓库 RPM 副本重签为 PGSTY，包头和载荷保持一致。已核验包头版本、架构、可执行载荷及本地重打包 DEB／RPM 的一致性，并完成双架构 Linux CLI 检查。MCP Toolbox 附带源码／依赖校验及构建溯源。Rust/pgrx 更新由同日的独立工具链批次负责。`make lint` 通过。
+
+升级注意事项：
+
+- [NpgsqlRest 4.0](https://github.com/NpgsqlRest/NpgsqlRest/blob/v4.0.0/changelog/v4.0.0.md) 是安全大版本：登录、授权、转发头、抗伪造和上传行为有变化；可执行文件使用自包含 .NET 11，x86_64 要求 x86-64-v2。4.0.1 修复用户参数登录及 JWT 角色检查问题。
+- [Vector 0.62](https://vector.dev/releases/0.62.0/#breaking-changes) 先解析配置，再对字符串值做插值；已移除部分弃用指标，MongoDB 指标源要求 MongoDB 4.4 及以上。升级前检查配置与监控查询。
+- Sabiql 继续要求 glibc 2.39。T3 Code 的核心辅助程序要求 glibc 2.34，可选 KDE 截图组件及 arm64 Cursor 沙箱要求 2.39；桌面图形交互未在本批次验证。
+- VS Code 1.147.0 与 code-server 4.146.0 官方 arm64 DEB／RPM 的 `@vscode/sandbox-runtime` 仅附带 x64 `apply-seccomp`，缺少 arm64 对应文件。按架构查找逻辑不会选用 x64 文件；该模块的 Unix socket 过滤需要外部 arm64 辅助程序或调用方覆盖。保留官方包字节，桌面沙箱行为未验证。
+- [Restic 0.20](https://github.com/restic/restic/releases/tag/v0.20.0) 修复恢复时的所有权处理及重复节点名问题。构建工具 [nFPM 2.49.0](https://github.com/goreleaser/nfpm/releases/tag/v2.49.0) 包含两项安全修复，仓库版本锁同步更新。
+
+SQL Studio 和 NpgsqlRest 改用带版本号的缓存文件名，避免命中旧版本下载。Promtail、Promscale 保持冻结，Sealos 永久锁定于 5.0.1；cargo-pgrx 旧版本槽保留；预发布版本未作为常规更新。
+
+### Rust/pgrx 工具链更新
+
+将 Rust 升级至 1.100.0，并新增两个独立 cargo-pgrx 版本包，共 12 个本地 RPM/DEB 制品，覆盖 amd64、arm64 双架构。下载使用 8888 端口代理；12 个制品均已完成本地入库、签名与索引验收，尚未在线发布。
+
+| 软件包 | 原版本 | 新版本 | 依赖与兼容性 |
+|---|---|---|---|
+| `rust-toolchain` | 1.99.1 | 1.100.0 | 官方签名工具链；私有前缀 `/usr/lib/pgsty/rust`；glibc >= 2.17 |
+| `cargo-pgrx-0194` | — | 0.19.4 | Rust >= 1.96.0；glibc >= 2.28；0.19 分支最终维护版 |
+| `cargo-pgrx-0200` | — | 0.20.0 | Rust >= 1.99.1；glibc >= 2.28；支持 PostgreSQL 15–19 |
+
+两个 cargo-pgrx 包均使用 Rust 1.100.0，在 EL8 环境中基于锁定的离线依赖源码构建。显式依赖 `tar`、`gzip`，使用独立的可执行文件路径与 `PGRX_HOME`，并与 0191/0192/0193 共存。使用 0.20 构建扩展时，需要选择主版本一致的 clang、libclang，以及对应的 `llvm-ar` 和目标 PostgreSQL 开发头文件。
+
+pgrx 0.19.4 与 0.20.0 中的 CVE-2026-6460 修复需要各扩展更新 pgrx 依赖，并针对已修补的 PostgreSQL 头文件重新编译。仅安装 CLI 不会修复已有扩展；使用修补后的头文件构建的扩展不能加载到更早的 PostgreSQL 小版本。详见 [**0.19.4 发布说明**](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.4) 和 [**0.20 迁移指南**](https://github.com/pgcentralfoundation/pgrx/blob/v0.20.0/v0.20.0-MIGRATION.md)。
+
+所有包的版本、架构、Rust 最低版本依赖、上游 Rust 签名、ELF ABI 基线及 RPM/DEB 二进制一致性均已验证。16 组操作系统与架构安装检查全部通过，包括 Rust 编译，以及两个 cargo-pgrx 版本的独立初始化。
+
 ## 2026-11-12
 
 ### 补充入库：SILO、Console 与 pig

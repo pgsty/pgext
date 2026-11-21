@@ -158,11 +158,11 @@ PIG `v1.10.3` 更新内嵌 PostgreSQL 扩展目录，从 **616 个条目增至 6
 ### 扩展目录口径
 
 目录现在包含 **620 个条目**：617 条可用记录和 3 条保留的已移除记录。
-[目录计数口径](/zh/zh/pig/cmd/ext/#catalog-count) 包含 SQL 工具与生命周期保留记录，
+[目录计数口径](/zh/pig/cmd/ext/#catalog-count) 包含 SQL 工具与生命周期保留记录，
 具体可用性仍取决于平台。
 
 Go 保持 `1.27.3`，内嵌 Pigsty 保持 `4.5.0`，默认 `cargo-pgrx` 保持 `0.19.3`。
-升级 PIG 请参阅 [安装文档](/zh/zh/pig/install/)。
+升级 PIG 请参阅 [安装文档](/zh/pig/install/)。
 
 
 ### 校验和

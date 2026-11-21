@@ -90,13 +90,11 @@ pig ext reload                   # 刷新扩展目录
 # 环境设置
 pig build spec                   # 初始化构建规格
 pig build repo                   # 设置仓库
-pig build repo --beta            # 设置仓库，并额外启用 PostgreSQL 19 beta 仓库
 pig build tool                   # 安装构建工具
-pig build tool --beta            # 安装构建工具，并额外安装 PG19 beta 构建包
 pig build rust -y                # 强制重装 Rust（默认不重装）
 pig build rust -m                # 使用中国镜像安装 Rust，并写入 Cargo 镜像配置
 pig build pgrx                   # 安装 PGRX 框架
-pig build pgrx -b                # 自动探测时包含 PostgreSQL 19 beta pg_config
+pig build pgrx --pg 19           # 显式选择已安装的 PostgreSQL 19
 pig build proxy                  # 安装或检查 Xray
 pig build proxy client --from ./client.uri
 pig build proxy server --host proxy.example.com --target www.sraoss.co.jp:443 --export ./client.uri

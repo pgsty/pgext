@@ -5,6 +5,9 @@ icon: fa-solid fa-terminal
 weight: 640
 ---
 
+> **Active build policy:** Since 2026-11-21, both PGEXT and PIG target PostgreSQL **15–19** (with **15–18** on EL8) and keep **PG18** as the default configuration/tool target. PostgreSQL 19 builds use standard stable repositories without `--beta`.
+
+
 `pig build` downloads sources, installs dependencies, and produces RPM/DEB packages using Pigsty build recipes. Use it on an EL, Debian, or Ubuntu build host. Rust, pgrx, and the Xray client also support their respective macOS workflows.
 
 | Command | Description | Notes |
@@ -103,10 +106,10 @@ Initialize package repositories required for building extensions.
 ```bash
 pig build repo                   # equivalent to: pig repo set
 pig build repo -m                # select the bundled China-region mirrors
-pig build repo --beta            # also enable the PostgreSQL 19 beta repo module
+pig build repo --beta            # also enable the legacy testing repo module
 ```
 
-**What it does:** initializes build repositories with `pig repo set`: remove old repositories, add required repositories, and refresh package caches. `--beta/-b` appends the `beta` module for explicit PostgreSQL 19 beta builds; the stable default path still uses PG14-18.
+**What it does:** initializes build repositories with `pig repo set`: remove old repositories, add required repositories, and refresh package caches. `--beta/-b` appends the optional `beta` module for upstream testing repositories; PostgreSQL 19 GA uses the regular `pgsql` repositories on EL9/EL10 and Debian/Ubuntu.
 
 **Options:**
 
@@ -122,14 +125,13 @@ pig build tool                   # install default toolset
 pig build tool mini              # minimal toolset
 pig build tool full              # full toolset
 pig build rust                   # install Rust separately
-pig build tool --beta            # add PG19 beta build dependencies
 ```
 
 **Toolsets:**
 
 - **Minimal (`mini`)**: build tools and libraries, with PostgreSQL and PGDG packages removed from the install list.
-- **Default / `full`**: Make, CMake, development libraries, packaging tools, and PostgreSQL build dependencies. EL selects PG14-18 server/devel packages; Debian/Ubuntu uses `postgresql-all` and `postgresql-server-dev-all`.
-- **`--beta`**: adds explicit PG19 beta server/devel packages. `mini` still excludes PostgreSQL packages.
+- **Default / `full`**: Make, CMake, development libraries, packaging tools, and PostgreSQL build dependencies. EL9/EL10 select PG15–19 server/devel packages, EL8 selects PG15–18 server/devel packages, and Debian/Ubuntu uses `postgresql-all` and `postgresql-server-dev-all`.
+- **`--beta`**: retained as a compatibility flag when upstream beta packages are configured; `mini` still excludes PostgreSQL packages.
 
 ## build rust
 
@@ -150,12 +152,11 @@ Install and initialize PGRX, the PostgreSQL extension framework for Rust.
 ```bash
 pig build pgrx                   # install default version (0.19.3)
 pig build pgrx -v 0.19.3         # install a specific pgrx version
-pig build pgrx --pg 18,17,16     # initialize pgrx for selected PG versions
+pig build pgrx --pg 19,18,17     # initialize pgrx for selected PG versions
 pig build pgrx --pg init         # run cargo pgrx init without PG arguments
-pig build pgrx -b                # include PostgreSQL 19 beta pg_config during auto-detection
 ```
 
-**Prerequisites:** Rust toolchain and PostgreSQL development headers must be installed first. Default auto-detection only covers stable PG14-18; use `-b|--beta`, or explicitly pass `--pg 19`, when PG19 beta is required.
+**Prerequisites:** Rust toolchain and PostgreSQL development headers must be installed first. Default auto-detection covers active PostgreSQL 15–19 installations (`15–18` on EL8); pass `--pg` to target specific majors explicitly.
 
 ## build proxy
 
@@ -395,16 +396,18 @@ pig build pkg citus --pg 15,16,17
 
 PIG produces packages for each major version. Each version needs matching development packages and recipe support.
 
-### Build for PostgreSQL 19 beta
+### Build for PostgreSQL 19
+
+On EL9/EL10 or Debian/Ubuntu with stable repositories configured:
 
 ```bash
-pig build repo --beta
-pig build tool --beta
-pig build pgrx -b                # only for Rust/pgrx extensions
+pig build repo
+pig build tool
+pig build pgrx --pg 19           # only for Rust/pgrx extensions
 pig build pkg EXTENSION --pg 19
 ```
 
-Replace `EXTENSION` with one that supports the selected version. The beta version comes from PIG's current embedded configuration.
+Replace `EXTENSION` with a recipe that supports PG19. PG18 remains the default configuration target; PG19 is unavailable on EL8, and PG14 has left the active build lifecycle.
 
 ## Troubleshooting
 

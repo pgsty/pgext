@@ -47,11 +47,11 @@ PIG 只在执行命令时运行。PostgreSQL 与已安装的扩展可以独立�
 
 ## Linux 兼容性
 
-软件仓库覆盖以下 Linux 版本上的 PostgreSQL **14–18**。每个发行版均提供 **x86_64** 和 **aarch64** 两种架构的软件包。
+软件仓库覆盖以下 Linux 版本上的 PostgreSQL **15–19**（其中 `el8` 覆盖 **15–18**）。每个发行版均提供 **x86_64** 和 **aarch64** 两种架构的软件包。PG14 已退出活跃生命周期，默认版本仍为 PG18。分平台的实际包覆盖范围以[可用性矩阵](/zh/os/matrix/)为准。
 
 | OS 代码 | 发行版 | 版本 |
 |:---|:---|:---|
-| `el8` | RHEL、Rocky Linux、AlmaLinux | 8 |
+| `el8` | RHEL、Rocky Linux、AlmaLinux | 8（PG 15–18） |
 | `el9` | RHEL、Rocky Linux、AlmaLinux | 9 |
 | `el10` | RHEL、Rocky Linux、AlmaLinux | 10 |
 | `d12` | Debian | 12 |

@@ -47,11 +47,11 @@ PIG is needed only when you run its commands. PostgreSQL and installed extension
 
 ## Linux compatibility
 
-The package repositories cover PostgreSQL **14–18** on these Linux releases. Each release has packages for **x86_64** and **aarch64**.
+The package repositories cover PostgreSQL **15–19** across these Linux releases (**15–18** on `el8`). Each release has packages for **x86_64** and **aarch64**. PG14 has left the active lifecycle, while PG18 remains the default. Consult the [availability matrix](/os/matrix/) for per-platform package coverage.
 
 | OS code | Distribution | Release |
 |:---|:---|:---|
-| `el8` | RHEL, Rocky Linux, AlmaLinux | 8 |
+| `el8` | RHEL, Rocky Linux, AlmaLinux | 8 (PG 15–18) |
 | `el9` | RHEL, Rocky Linux, AlmaLinux | 9 |
 | `el10` | RHEL, Rocky Linux, AlmaLinux | 10 |
 | `d12` | Debian | 12 |

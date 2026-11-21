@@ -6,6 +6,88 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-11-21
+
+### Routine Package Updates
+
+Final scan covered 106 recipes and all 14 bundled Grafana plugins. This routine batch contains **38 recipes and 158 packages (79 DEB and 79 RPM)**, including the locked Sealos rollback. Together with the 12 Rust/pgrx packages below, **all 170 packages (85 DEB and 85 RPM) from 41 recipes are now imported into the local APT/YUM repositories**: 166 ordinary additions/updates and 4 Sealos downgrade packages. Downloads used port `8888`; builds, local import, signing, index updates and four-lane client verification are complete. Online publication is pending.
+
+Local admission placed 171 repository copies: 85 DEBs plus 43 RPMs in each YUM architecture directory, including the noarch RPM in both. Initial acceptance used four isolated Debian 12 / EL8 clients, with 43 target versions per lane, 20 verified downloads and 16 representative installations, including explicit Sealos downgrades. The subsequent requested cleanup removed 77 unreferenced DEBs and 78 historical RPMs (8.45 GB of package files). APT retains 119 active records per architecture; YUM retains 129 RPMs per architecture. All 492 retained package files are unchanged, and Release/InRelease, repomd and all 258 RPM signatures passed verification. Final repository acceptance covered all 106 current recipes and 432 independent artifacts. The four client lanes resolved every active record (119 per APT architecture and 129 per YUM architecture, 496 total) and downloaded and installed Sealos 5.0.1-2PGSTY without an explicit version selection. Package headers, dependency and file-list metadata, checksums and signatures all matched; no missing architectures, unindexed packages or unreferenced DEBs remain. The 22 retained historical package names and old repodata are documented separately. Local acceptance is complete; remote synchronization and publication are pending.
+
+| Package | Previous | New | Notes |
+|---|---|---|---|
+| [claude-code](https://downloads.claude.ai/claude-code/apt/latest/dists/latest/main/binary-amd64/Packages) | 2.1.322 | 2.1.330 | Official native packages; preserve upstream signatures and bytes |
+| [cloudflared](https://github.com/cloudflare/cloudflared/releases/tag/2026.11.1) | 2026.10.7 | 2026.11.1 | Dual-architecture repackaging |
+| [code](https://update.code.visualstudio.com/api/update/linux-deb-x64/stable/latest) | 1.146.0 | 1.147.0 | Official native packages |
+| [code-server](https://github.com/coder/code-server/releases/tag/v4.146.0) | 4.145.2 | 4.146.0 | Official dual-architecture DEB/RPM; installation, CLI and HTTP workbench verified |
+| [codex](https://github.com/openai/codex/releases/tag/rust-v0.171.0) | 0.167.2 | 0.171.0 | Complete upstream runtime and original bwrap retained |
+| [crush](https://github.com/charmbracelet/crush/releases/tag/v0.102.0) | 0.100.0 | 0.102.0 | Dual-architecture repackaging |
+| [duckdb](https://github.com/duckdb/duckdb/releases/tag/v2.0.1) | 2.0.0 | 2.0.1 | Dual-architecture repackaging |
+| [etcd](https://github.com/etcd-io/etcd/releases/tag/v3.7.4) | 3.7.3 | 3.7.4 | Dual-architecture repackaging |
+| [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/releases/tag/v4.1.8) | 4.1.6 | 4.1.8 | Dual-architecture repackaging |
+| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.2) | 1.0.1 | 1.0.2 | Dual-architecture repackaging |
+| [hugo](https://github.com/gohugoio/hugo/releases/tag/v0.170.1) | 0.169.0 | 0.170.1 | Dual-architecture repackaging |
+| [logcli](https://github.com/grafana/loki/releases/tag/v3.7.10) | 3.7.9 | 3.7.10 | Dual-architecture repackaging |
+| [loki](https://github.com/grafana/loki/releases/tag/v3.7.10) | 3.7.9 | 3.7.10 | Dual-architecture repackaging |
+| [loki-canary](https://github.com/grafana/loki/releases/tag/v3.7.10) | 3.7.9 | 3.7.10 | Dual-architecture repackaging |
+| [maddy](https://github.com/foxcpp/maddy/releases/tag/v0.9.8) | 0.9.7 | 0.9.8 | Dual-architecture repackaging |
+| [mcp-toolbox](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.18.0) | 1.16.0 | 1.18.0 | Go 1.27.4 + CGO source build; glibc 2.28 |
+| [mtail](https://github.com/jaqx0r/mtail/releases/tag/v3.4.21) | 3.4.20 | 3.4.21 | Dual-architecture repackaging |
+| [node-exporter](https://github.com/prometheus/node_exporter/releases/tag/v1.13.1) | 1.12.1 | 1.13.1 | Dual-architecture repackaging |
+| [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest/releases/tag/v4.0.1) | 3.21.0 | 4.0.1 | 4.0 security major; 4.0.1 login and role-check fixes |
+| [openbao](https://github.com/openbao/openbao/releases/tag/v2.7.3) | 2.7.2 | 2.7.3 | Official native packages |
+| [opencode](https://github.com/anomalyco/opencode/releases/tag/v1.19.6) | 1.19.5-2PGSTY | 1.19.6-1PGSTY | Upstream update; packaging revision reset to 1PGSTY |
+| [orca-ide](https://github.com/stablyai/orca/releases/tag/v1.4.267) | — | 1.4.267 | Official dual-architecture DEB/RPM |
+| [pgbot](https://github.com/pgrundev/pgbot/releases/tag/v0.10.0) | 0.9.0 | 0.10.0 | Dual-architecture repackaging |
+| [pi-coding-agent](https://github.com/earendil-works/pi/releases/tag/v1.6.0) | 1.5.2 | 1.6.0 | Complete upstream runtime retained |
+| [postgrest](https://github.com/PostgREST/postgrest/releases/tag/v16.6) | 16.5 | 16.6 | Dual-architecture repackaging |
+| [restic](https://github.com/restic/restic/releases/tag/v0.20.0) | 0.19.1 | 0.20.0 | Includes restore security fixes |
+| [rustfs](https://github.com/rustfs/rustfs/releases/tag/1.0.6) | 1.0.5 | 1.0.6 | Dual-architecture repackaging |
+| [sabiql](https://github.com/riii111/sabiql/releases/tag/v3.1.0) | 3.0.3 | 3.1.0 | Upstream binaries require glibc 2.39 |
+| [sealos](https://github.com/labring/sealos/releases/tag/v5.0.1) | 5.1.1 | 5.0.1-2PGSTY | Rolled back and permanently locked at the final Apache-2.0 stable release |
+| [seaweedfs](https://github.com/seaweedfs/seaweedfs/releases/tag/4.54) | 4.53 | 4.54 | Package version normalized to 4.54.0 |
+| [sql-studio](https://github.com/frectonz/sql-studio/releases/tag/0.1.54) | 0.1.53 | 0.1.54 | Version-qualified cache filename |
+| [sqlcmd](https://github.com/microsoft/go-sqlcmd/releases/tag/v1.11.0) | 1.10.0 | 1.11.0 | Dual-architecture repackaging |
+| [stalwart](https://github.com/stalwartlabs/stalwart/releases/tag/v1.1.1) | 1.1.0 | 1.1.1 | Dual-architecture repackaging |
+| [t3code](https://github.com/pingdotgg/t3code/releases/tag/v0.1.11) | — | 0.1.11 | Official DEB; RPM repackaged from the same payload |
+| [uv](https://github.com/astral-sh/uv/releases/tag/0.13.9) | 0.13.7 | 0.13.9 | Dual-architecture repackaging |
+| [vector](https://github.com/vectordotdev/vector/releases/tag/v0.62.0) | 0.61.0 | 0.62.0 | Official native packages; breaking changes |
+| [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/releases/tag/v1.54.0) | 1.53.0 | 1.54.0 | Also updates vlagent and vlogscli |
+| [grafana-plugins](https://grafana.com/grafana/plugins/marcusolsson-json-datasource/) | 13.3.0 | 13.3.1 | JSON datasource 1.4.4 → 1.4.5; other 13 plugins unchanged |
+{.wide .expand}
+
+The final pass added Claude Code 2.1.330, code-server 4.146.0, Orca 1.4.267, and MCP Toolbox 1.18.0. Their 16 packages passed package-header, checksum and architecture checks; the 12 official packages are byte-identical to verified inputs. Claude and code-server passed installation and CLI checks in all four architecture/format combinations; code-server also served its HTTP workbench. All four MCP Toolbox packages passed installation, CLI SQL and MCP SQL checks. Orca passed all four Linux installation, embedded Electron/Node runtime and agent-browser checks; desktop GUI interaction was not tested. Orca and T3 Code are now indexed locally for the first time. OpenCode remains on the adopted V1 channel (1.19.6); V2 2.3.2 uses a separate installer/package. Loki 4.0.0-rc.4 is excluded as an RC despite its upstream prerelease flag.
+
+Sealos replaces the previously prepared 5.1.2 candidate with **5.0.1-2PGSTY (locked)**, restoring the Apache-2.0 nFPM recipe. Routine scans and updates skip it unless the user explicitly unlocks Sealos. The four RPM/DEB packages are now indexed locally. The superseded 5.1.1 repository packages have been removed; both APT and DNF now select 5.0.1-2PGSTY by default. Hosts already running 5.1.1 still need an explicit downgrade. Downgrading installed 5.1.1 to 5.0.1-2PGSTY passed on all four client lanes. Online publication is pending.
+
+Downloaded inputs were verified before extraction; official DEBs and original RPMs in dist/tarball retain upstream bytes. YUM repository RPM copies carry PGSTY signatures with unchanged main headers and payloads. Validation covers package versions and architectures, executable payloads, matching DEB/RPM payloads for locally repackaged packages, and CLI checks on both Linux architectures. MCP Toolbox includes verified source/dependency inputs and build provenance. Rust/pgrx updates belong to a separate toolchain batch on the same date. `make lint` passed.
+
+Upgrade notes:
+
+- [NpgsqlRest 4.0](https://github.com/NpgsqlRest/NpgsqlRest/blob/v4.0.0/changelog/v4.0.0.md) is a security major release with changes to login, authorization, forwarded headers, antiforgery, and uploads. The executable is self-contained .NET 11; x86_64 requires x86-64-v2. Version 4.0.1 fixes user-parameter login and JWT role checks.
+- [Vector 0.62](https://vector.dev/releases/0.62.0/#breaking-changes) parses configuration before interpolating string values, removes deprecated metrics, and requires MongoDB 4.4+ for the MongoDB metrics source. Review configuration and monitoring queries before upgrading.
+- Sabiql continues to require glibc 2.39. T3 Code requires glibc 2.34 for core helpers and 2.39 for optional KDE capture and the arm64 Cursor sandbox. Desktop GUI interaction was not tested in this batch.
+- The official VS Code 1.147.0 and code-server 4.146.0 arm64 DEB/RPM packages bundle only the x64 `apply-seccomp` in `@vscode/sandbox-runtime`. Its architecture-specific lookup will not select that file; Unix-socket filtering through this module requires an external arm64 helper or a caller override. Official payloads are preserved; desktop sandbox behavior was not exercised.
+- [Restic 0.20](https://github.com/restic/restic/releases/tag/v0.20.0) fixes restore ownership handling and duplicate node-name validation. The repository now pins [nFPM 2.49.0](https://github.com/goreleaser/nfpm/releases/tag/v2.49.0), which includes two security fixes.
+
+SQL Studio and NpgsqlRest use version-qualified cache names to prevent reuse of older downloads. Promtail and Promscale remain frozen, and Sealos is permanently locked at 5.0.1; older cargo-pgrx slots are retained, and prereleases are excluded from routine upgrades.
+
+### Rust/pgrx toolchain updates
+
+Updated Rust to 1.100.0 and added two independent cargo-pgrx slots. All 12 local RPM/DEB packages cover amd64 and arm64. Downloads used the port 8888 proxy; all 12 packages have been imported, signed and indexed locally. Online publication is pending.
+
+| Package | Previous version | New version | Dependencies and compatibility |
+|---|---|---|---|
+| `rust-toolchain` | 1.99.1 | 1.100.0 | Signed upstream toolchain; private prefix `/usr/lib/pgsty/rust`; glibc >= 2.17 |
+| `cargo-pgrx-0194` | — | 0.19.4 | Rust >= 1.96.0; glibc >= 2.28; final 0.19 maintenance release |
+| `cargo-pgrx-0200` | — | 0.20.0 | Rust >= 1.99.1; glibc >= 2.28; PostgreSQL 15–19 |
+
+Both cargo-pgrx packages are built from locked, vendored sources with Rust 1.100.0 in EL8 environments. They explicitly depend on `tar` and `gzip`, retain separate executable paths and `PGRX_HOME` directories, and coexist with 0191/0192/0193. For 0.20 extension builds, select matching clang/libclang major versions, the corresponding `llvm-ar`, and development headers for the target PostgreSQL major.
+
+The CVE-2026-6460 fix in pgrx 0.19.4 and 0.20.0 requires updating each extension's pgrx dependencies and rebuilding against patched PostgreSQL headers. Installing the CLI alone does not fix existing extensions; extensions built against the patched headers cannot load on earlier PostgreSQL minor releases. See the [0.19.4 release notes](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.4) and [0.20 migration guide](https://github.com/pgcentralfoundation/pgrx/blob/v0.20.0/v0.20.0-MIGRATION.md).
+
+Validation passed for all package versions, architecture headers, Rust minimum dependencies, upstream Rust signatures, ELF ABI ceilings and matching RPM/DEB binary payloads. All 16 OS/architecture installation checks passed, including Rust compilation and isolated initialization of both cargo-pgrx versions.
+
 ## 2026-11-12
 
 ### Supplemental intake: SILO, Console and pig

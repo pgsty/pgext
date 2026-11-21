@@ -181,13 +181,12 @@ conf/ → conf/ha/ → conf/fork/ → conf/app/ → conf/demo/ → conf/build/
 | 小规格控制节点 | 探测到 CPU 少于四核时，将 `node_tune: oltp` 与 `pg_conf: oltp.yml` 改为对应的 `tiny` 配置。 |
 | `--region REGION` | 非默认区域会更新 `all.vars.region`；`china` 还会启用模板中已有的 Docker 与 pip 镜像值。 |
 | `--proxy` | 读取 `HTTP_PROXY`、`HTTPS_PROXY`、`ALL_PROXY` 与 `NO_PROXY`，每项都在大写值缺失时回退到对应的小写变量。HTTP/HTTPS 缺失时回退到 ALL_PROXY。将非空值写入 `all.vars.proxy_env`，必要时补充默认 no-proxy 列表。 |
-| `--version MAJOR` | 通用模板支持 PostgreSQL 14-18，以及显式指定的 19 beta，并选择匹配的 locale；版本固定的 `fork/mssql`、`fork/polar`、旧版根目录 `mssql`/`polar` 与根目录 `pgNN` 模式保留模板版本并给出告警。 |
+| `--version MAJOR` | 通用模板支持活跃的 PostgreSQL 15-19（默认 18），并选择匹配的 locale；版本固定的 `fork/mssql`、`fork/polar`、旧版根目录 `mssql`/`polar` 与根目录 `pgNN` 模式保留模板版本并给出告警。 |
 | `--generate` | 每个已知凭据标识符生成一个 24 位随机值，并一致替换其生效值和文档化占位符。 |
 
 IP 替换会产生重复键时，命令停止。提供的地址在模板中没有对应占位符时，PIG 会告警。
 
-指定 PostgreSQL 19 beta 时，如果模板包含预期的软件仓库列表，Pig 还会在 `pgsql` 后启用
-`beta` 仓库。`conf/build/` 下的模式有意绕过 IP 映射与控制节点管理员预检，以保持构建模板可移植。
+PostgreSQL 19 正式版直接使用常规稳定仓库，不再向仓库列表注入 `beta`。`conf/build/` 下的模式有意绕过 IP 映射与控制节点管理员预检，以保持构建模板可移植。
 这些规则以解析后的 mode 为准：`oss` 与 `build/oss` 行为一致；`mssql` 命中 `fork/mssql` 时也执行相同规则。
 
 生效口令标识符包括 `grafana_admin_password`、`pg_admin_password`、
@@ -201,7 +200,7 @@ IP 替换会产生重复键时，命令停止。提供的地址在模板中没�
 - `-c|--conf`：模板模式，等价于位置参数 `[mode]`，两种形式不能同时使用
 - `--ip`：最多十个互不相同、逗号分隔的 IPv4 地址
 - `--domain`：将精确的 `i.pigsty` 占位符替换为合法 DNS 域名
-- `-v|--version`：PostgreSQL 主版本（18/17/16/15/14；19 beta 可显式指定）
+- `-v|--version`：PostgreSQL 主版本（19/18/17/16/15；默认仍为 18）
 - `-r|--region`：上游仓库区域（default/china/europe）
 - `-m|--mirror`：等价于 `--region china`；不能与 `--region` 同时使用
 - `-O|--output-file`：输出配置文件路径（默认：pigsty.yml）
