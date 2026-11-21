@@ -1,10 +1,10 @@
 {{- /*
-The global availability matrix: 407 packages × 16 platforms × 5 PostgreSQL
+The global availability matrix: packages × active platforms × PostgreSQL
 majors, drawn as one sheet.
 
 The whole point of the page is that the grid fits the screen's width, so the
 column size is derived from the container rather than fixed: `--cell-size` is
-what remains of the canvas after the package column, divided by the eighty
+what remains of the canvas after the package column, divided by the active
 data columns. Everything else — the sticky header, the sticky package column,
 the group rules — follows from that one measurement.
 
@@ -30,7 +30,7 @@ viewer, so this page and `/matrix/` are the same data rendered twice.
 {{- $labels := dict "G" "PIGSTY" "B" "PGDG" "R" (cond $zh "缺失" "Missing") "." "N/A" -}}
 {{- $counts := $stats.Counts -}}
 
-<section class="mx-page" aria-label="{{ cond $zh "全局构建矩阵" "Global build matrix" }}">
+<section class="mx-page" style="--mx-columns: {{ mul (len $oss) $npg }};" aria-label="{{ cond $zh "全局构建矩阵" "Global build matrix" }}">
   <header class="mx-head">
     <p class="pgx-eyebrow">{{ cond $zh "pgext.cloud · 构建矩阵" "pgext.cloud · build matrix" }}</p>
     <h1>{{ .Title }}</h1>
@@ -75,14 +75,14 @@ viewer, so this page and `/matrix/` are the same data rendered twice.
           {{- end }}
         </tr>
         <tr>
-          {{- range $oss }}{{ $os := . }}{{ range $pgs }}<th class="mx-pg">{{ . }}</th>{{ end }}{{ end }}
+          {{- range $oss }}{{ range $i, $pg := $pgs }}<th class="mx-pg{{ if eq $i 0 }} mx-group-start{{ end }}">{{ $pg }}</th>{{ end }}{{ end }}
         </tr>
       </thead>
       <tbody>
         {{- range $m.rows }}
         {{- $row := . -}}
         {{- $cells := "" -}}
-        {{- /* Each group is five characters in ascending major order, so the
+        {{- /* Each group has one character per major in ascending order, so the
              newest major is read from the end. */ -}}
         {{- range $os := $oss -}}
           {{- $group := index $row.groups $os | default "" -}}
@@ -90,7 +90,9 @@ viewer, so this page and `/matrix/` are the same data rendered twice.
             {{- $code := "." -}}
             {{- $i := sub (len $group) . -}}
             {{- if ge $i 0 }}{{ $code = substr $group $i 1 }}{{ end -}}
-            {{- $cells = printf `%s<td class="%s"></td>` $cells (index $classes $code | default "n") -}}
+            {{- $class := index $classes $code | default "n" -}}
+            {{- if eq . 1 }}{{ $class = printf "%s mx-group-start" $class }}{{ end -}}
+            {{- $cells = printf `%s<td class="%s"></td>` $cells $class -}}
           {{- end -}}
         {{- end -}}
         <tr><th class="mx-pkg"><a href="{{ $extBase }}{{ $row.ext }}/">{{ $row.pkg }}</a></th>{{ $cells | safeHTML }}</tr>

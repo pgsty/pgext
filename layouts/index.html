@@ -87,7 +87,7 @@
       </a>
       <div class="pgx-facet-values">
         <button type="button" class="pgx-fbtn any" data-facet="pg" data-value="" aria-pressed="true">{{ cond $zh "全部" "Any" }}</button>
-        {{- range slice 18 17 16 15 14 }}
+        {{- range $data.pgs }}
         <button type="button" class="pgx-fbtn" data-facet="pg" data-value="{{ . }}" aria-pressed="false">PG{{ . }}</button>
         {{- end }}
       </div>

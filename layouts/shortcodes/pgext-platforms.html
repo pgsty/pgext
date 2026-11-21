@@ -1,0 +1,38 @@
+{{- $zh := eq .Page.Site.Language.Lang "zh" -}}
+{{- $rows := resources.Get "db/os.csv" | transform.Unmarshal (dict "delimiter" ",") -}}
+{{- $columns := dict -}}
+{{- range $i, $name := index $rows 0 }}{{ $columns = merge $columns (dict $name $i) }}{{ end -}}
+{{- $pgs := partialCached "pgext/pg-versions.html" "pg-versions" -}}
+{{- $active := slice -}}
+{{- range $i, $row := $rows -}}
+  {{- if and (gt $i 0) (eq (index $row (index $columns "active")) "t") -}}
+    {{- $major := int (index $row (index $columns "os_major")) -}}
+    {{- $arch := cond (eq (index $row (index $columns "os_arch")) "x86_64") 0 1 -}}
+    {{- $active = $active | append (dict "row" $row "order" (printf "%03d-%d" $major $arch)) -}}
+  {{- end -}}
+{{- end -}}
+<table>
+  <thead><tr>
+    <th>{{ if $zh }}构建平台{{ else }}Build platform{{ end }}</th>
+    <th>{{ if $zh }}发行版{{ else }}Distribution{{ end }}</th>
+    <th>{{ if $zh }}PG 构建目标{{ else }}PG build targets{{ end }}</th>
+  </tr></thead>
+  <tbody>
+  {{- range sort $active "order" -}}
+      {{- $row := .row -}}
+      {{- $os := index $row (index $columns "os") -}}
+      {{- $osCode := index $row (index $columns "os_code") -}}
+      {{- $rowPgs := slice -}}
+      {{- range $pg := $pgs -}}
+        {{- if not (and (eq $osCode "el8") (ge (int $pg) 19)) -}}
+          {{- $rowPgs = $rowPgs | append $pg -}}
+        {{- end -}}
+      {{- end -}}
+      <tr>
+        <td><a href="{{ printf "os/%s/" $os | relLangURL }}"><code>{{ $os }}</code></a></td>
+        <td>{{ index $row (index $columns "os_full") }}</td>
+        <td>{{ delimit $rowPgs " · " }}</td>
+      </tr>
+  {{- end -}}
+  </tbody>
+</table>

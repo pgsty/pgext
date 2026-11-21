@@ -5,7 +5,7 @@ The whole catalog — every extension, packaged or not — has to reach the brow
 for the console to answer instantly, so the payload is positional and interned:
 dimension values become indices into small dictionaries, PostgreSQL support
 becomes one bit-field, and only the current language's description is carried.
-That turns 2,733 rows into a couple of hundred kilobytes before
+That turns thousands of rows into a few hundred kilobytes before
 compression.
 
 Returns the published resource, so the caller can emit its URL.
@@ -54,8 +54,13 @@ Row layout — assets/js/pgext-catalog.js must agree with it:
 
 {{- /* PostgreSQL majors, newest first — the order the catalog displays. One
      bit each, in that order, so a row's support set is a single small int. */ -}}
-{{- $pgs := slice 18 17 16 15 14 -}}
-{{- $pgBit := dict "18" 1 "17" 2 "16" 4 "15" 8 "14" 16 -}}
+{{- $pgs := partialCached "pgext/pg-versions.html" "pg-versions" -}}
+{{- $pgBit := dict -}}
+{{- $bit := 1 -}}
+{{- range $pgs -}}
+  {{- $pgBit = merge $pgBit (dict (string .) $bit) -}}
+  {{- $bit = mul $bit 2 -}}
+{{- end -}}
 
 {{- $lics := slice -}}{{- $licIdx := dict -}}
 {{- $langs := slice -}}{{- $langIdx := dict -}}
@@ -166,13 +171,20 @@ Row layout — assets/js/pgext-catalog.js must agree with it:
   {{- end -}}
 {{- end -}}
 
+{{- /* Build slots count the actual availability matrix, whose rows exclude
+     catalog packages without a matrix entry. */ -}}
+{{- $matrixSource := resources.Get "matrix/pgext-global-matrix.json" -}}
+{{- if not $matrixSource -}}
+  {{- errorf "pgext: matrix/pgext-global-matrix.json is not mounted into assets; run `pgext gen matrix`" -}}
+{{- end -}}
+{{- $matrix := $matrixSource | transform.Unmarshal -}}
 {{- $stats := dict
   "all" (len $out)
   "packaged" $packagedN
   "packages" (len $pkgNames)
   "targets" (len $targets)
   "pgs" (len $pgs)
-  "slots" (mul (mul (len $pkgNames) (len $targets)) (len $pgs))
+  "slots" $matrix.stats.Cells
 -}}
 
 {{- $json := printf `{"v":1,"lang":%s,"cats":%s,"lics":%s,"langs":%s,"repos":%s,"pgs":%s,"rows":[%s]}`
@@ -185,4 +197,4 @@ Row layout — assets/js/pgext-catalog.js must agree with it:
   (delimit $out ",") -}}
 {{- $res := resources.FromString (printf "catalog/universe.%s.json" $lang) $json -}}
 {{- if hugo.IsProduction }}{{ $res = $res | fingerprint "md5" }}{{ end -}}
-{{- return dict "resource" $res "stats" $stats "cats" $catOrder "targets" $targets -}}
+{{- return dict "resource" $res "stats" $stats "cats" $catOrder "targets" $targets "pgs" $pgs -}}

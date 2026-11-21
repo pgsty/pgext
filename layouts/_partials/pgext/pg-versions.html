@@ -1,0 +1,13 @@
+{{- /* Only active build targets are offered; historical compatibility remains in the catalog. */ -}}
+{{- $csv := resources.Get "db/pg.csv" -}}
+{{- if not $csv }}{{ errorf "pgext: db/pg.csv is not mounted into assets" }}{{ end -}}
+{{- $rows := $csv | transform.Unmarshal (dict "delimiter" ",") -}}
+{{- $columns := dict -}}
+{{- range $i, $name := index $rows 0 }}{{ $columns = merge $columns (dict $name $i) }}{{ end -}}
+{{- $versions := slice -}}
+{{- range $i, $row := $rows -}}
+  {{- if and (gt $i 0) (eq (index $row (index $columns "active")) "t") -}}
+    {{- $versions = $versions | append (int (index $row (index $columns "pg"))) -}}
+  {{- end -}}
+{{- end -}}
+{{- return (sort $versions "value" "desc") -}}

@@ -464,7 +464,7 @@ a.pgx-b {
 // ---------------------------------------------------------------------------
 // 4 · Catalogue tables — psql density
 //
-// The generated pages are data sheets: long extension lists, 16 × 5
+// The generated pages are data sheets: long extension lists, OS × PG
 // availability matrices, per-major package tables. They get the dynamic
 // catalogue's table: a mono header rule, tight rows, and a wash on hover.
 // ---------------------------------------------------------------------------
@@ -1633,17 +1633,17 @@ a.td-badge--solid {
 // ---------------------------------------------------------------------------
 // 8 · The global matrix
 //
-// One sheet: 407 packages down, sixteen platforms × five majors across. The
+// One sheet: packages down, active platforms × PostgreSQL majors across. The
 // page exists to be read at a glance, so the grid is sized from the container
 // rather than from a fixed cell width — `--cell-size` is whatever is left of
-// the canvas after the package column, divided by the eighty data columns.
+// the canvas after the package column, divided by the active data columns.
 // Widen the window and the dots grow; nothing ever scrolls sideways.
 // ---------------------------------------------------------------------------
 
 .mx-page {
   container-type: inline-size;
   --mx-pkg-col: #{'clamp(132px, 12cqw, 184px)'};
-  --mx-cell: #{'max(7px, calc((100cqw - var(--mx-pkg-col) - 2px) / 80))'};
+  --mx-cell: #{'max(7px, calc((100cqw - var(--mx-pkg-col) - 2px) / var(--mx-columns)))'};
   // Rows run shorter than the cells are wide, which is what keeps four
   // hundred packages within a few screens instead of a dozen. The dynamic
   // catalogue draws the same sheet at fifteen pixels a row.
@@ -1860,9 +1860,8 @@ a.td-badge--solid {
   border-radius: 3px;
 }
 
-// Every platform group starts on the first of its five majors: cell 2, 7, 12…
-.mx-matrix tbody td:nth-child(5n + 2),
-.mx-matrix thead tr:nth-child(2) th:nth-child(5n + 1),
+// The template marks each platform's first major, regardless of target count.
+.mx-matrix .mx-group-start,
 .mx-matrix thead tr:first-child th + th {
   border-inline-start: 2px solid var(--line-2);
 }
