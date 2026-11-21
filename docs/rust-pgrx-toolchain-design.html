@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="PGEXT 的 Rust / pgrx 包管理工具链设计：系统入口、FHS、版本并存、元包、迁移与验收。包含两种 Linux 平台的原型验证证据。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ba461c'/%3E%3Cpath d='M7 9l8 7-8 7m11 0h7' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E">
+<title>PGEXT · Rust / pgrx 构建工具链方案</title>
+<style>
+:root{--ink:#142332;--muted:#566576;--quiet:#6c7886;--paper:#f5f7fa;--white:#fff;--line:#dce3e9;--rust:#ba461c;--rust-light:#fff1e9;--teal:#00685e;--teal-light:#e5f4ef;--blue:#255b94;--navy:#122634;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:"Avenir Next","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--sans);-webkit-font-smoothing:antialiased}a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:4px}button,select{font:inherit}button,a,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #df774a;outline-offset:4px}code,pre{font-family:var(--mono)}code{font-size:.88em;overflow-wrap:anywhere}p{margin:0 0 1rem}h1,h2,h3,h4{line-height:1.3;letter-spacing:-.025em}h2{font-size:2rem;margin:0 0 1.1rem;font-weight:750}h3{font-size:1.18rem;margin:1.6rem 0 .7rem}h4{font-size:1rem;margin:.7rem 0}strong{font-weight:700}ul,ol{padding-left:1.35rem;margin:.7rem 0 1rem}li{padding-left:.15rem;margin:.38rem 0}::selection{background:#f9c7ae;color:#10222f}.skip{position:absolute;left:20px;top:-80px;z-index:20;background:white;padding:12px}.skip:focus{top:8px}
+.topbar{height:76px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:12;backdrop-filter:blur(12px)}.top-inner{max-width:1424px;height:100%;padding:0 40px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:14px;color:var(--ink);text-decoration:none;white-space:nowrap}.brand-mark{width:31px;height:31px;background:var(--rust);color:white;display:grid;place-items:center;font:700 17px var(--mono);border-radius:7px}.brand b{font-size:19px;letter-spacing:.035em}.brand span:last-child{font-size:13px;letter-spacing:.12em;color:var(--muted)}.top-actions{display:flex;gap:14px;align-items:center}.top-date{font:13px var(--mono);color:var(--muted)}.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:7px;background:var(--white);color:var(--ink);font-size:14px;text-decoration:none}.button:hover{border-color:#a1adb8;background:#f4f7f9}.button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.button.primary:hover{background:#294152}.reading-progress{position:absolute;bottom:-1px;height:2px;background:var(--rust);width:0;left:0;transition:width .08s linear}
+.hero{background:var(--navy);color:#f7fafc;position:relative;overflow:hidden}.hero-inner{max-width:1344px;margin:auto;padding:68px 40px 58px;display:grid;grid-template-columns:1.12fr 1fr;gap:62px;align-items:center}.eyebrow{font:600 12px/1.6 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:#b2c6d3;margin-bottom:22px}.hero h1{font-size:clamp(36px,4.3vw,60px);font-weight:700;margin:0 0 24px;line-height:1.16;letter-spacing:-.045em}.hero h1 em{font-style:normal;color:#ffb38b}.hero-lead{font-size:18px;line-height:1.85;max-width:560px;color:#d4dfe6}.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}.hero-tag{padding:4px 9px;border:1px solid #4b606e;border-radius:4px;color:#e2eaf0;font:13px/1.5 var(--mono)}.hero-tag.accent{background:#57362b;border-color:#a46d53;color:#ffccb2}.hero-caption{margin-top:20px;font-size:13px;color:#abc0cd;line-height:1.6}.flow-board{border:1px solid #3b5362;border-radius:12px;padding:25px;background:#182f3e;box-shadow:0 18px 38px #07172230}.flow-title{font-size:13px;color:#a8becd;letter-spacing:.04em;margin-bottom:18px;display:flex;justify-content:space-between}.flow-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.flow-node{border:1px solid #4b606f;border-radius:6px;padding:14px 15px;min-width:0}.flow-node .label{font-size:12px;color:#aac2d0;margin-bottom:5px}.flow-node code{font-size:13px;color:#fff;word-break:break-word}.flow-node.payload{background:#0c242e;border-color:#488273}.flow-node.payload .label{color:#9bc6bc}.flow-link{height:33px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:13px}.flow-link span{width:1px;background:#738b9a;margin:auto;height:25px;position:relative}.flow-link span:after{content:"";position:absolute;bottom:0;left:-3px;width:6px;height:6px;border-right:1px solid #738b9a;border-bottom:1px solid #738b9a;transform:rotate(45deg)}.flow-note{padding:14px 0 0;margin:0;font-size:13px;color:#b6cbd7;border-top:1px solid #39505f;margin-top:18px}.flow-note b{color:#f6c1a3;font-weight:500}
+.statbar{border-bottom:1px solid var(--line);background:#fff}.stats{max-width:1264px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);padding:24px 0}.stat{padding:0 28px;border-left:1px solid var(--line)}.stat:first-child{border-left:0}.stat-label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}.stat-value{font-size:24px;letter-spacing:-.035em;line-height:1.3;font-weight:700}.stat-value small{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}.stat-caption{font-size:12px;color:var(--quiet);display:block;margin-top:4px}
+.layout{max-width:1344px;margin:0 auto;display:grid;grid-template-columns:188px minmax(0,1fr);gap:52px;padding:48px 40px 70px}.sidebar{position:sticky;top:112px;align-self:start}.nav-label{font-size:11px;letter-spacing:.13em;color:var(--quiet);font-weight:700;margin:0 0 15px 12px}.nav{display:flex;flex-direction:column;gap:3px}.nav a{color:var(--muted);text-decoration:none;border-radius:5px;padding:8px 12px;font-size:14px;display:flex;align-items:center;gap:12px;min-height:42px}.nav a span{font:11px var(--mono);color:#8995a1}.nav a:hover{background:#e9eef3}.nav a.active{color:var(--rust);background:#f9e9df;font-weight:700}.nav a.active span{color:var(--rust)}.sidebar-note{font-size:12px;line-height:1.7;color:var(--quiet);border-top:1px solid var(--line);margin-top:25px;padding:16px 12px}.sidebar-note strong{color:var(--muted)}main{min-width:0;max-width:944px}.section{padding-bottom:48px;margin-bottom:42px;border-bottom:1px solid var(--line);scroll-margin-top:100px}.section:last-child{border:0;margin-bottom:0}.section-kicker{color:var(--rust);font:600 12px/1.4 var(--mono);letter-spacing:.1em;margin-bottom:12px}.intro{font-size:18px;color:#374a5c;max-width:790px}.small{font-size:14px;color:var(--muted)}.muted{color:var(--muted)}.inline-code{background:#e9eef3;border-radius:4px;padding:2px 5px}.badge{font-size:12px;line-height:1.6;display:inline-block;padding:3px 8px;border-radius:4px;font-weight:600;white-space:nowrap;background:#e9eef3;color:#455665}.badge.good{background:var(--teal-light);color:var(--teal)}.badge.proposed{background:var(--rust-light);color:#9f3d1c}.badge.blue{background:#e9f1fa;color:#255b94}.callout{background:white;border:1px solid var(--line);padding:22px 24px;border-radius:8px;margin:24px 0}.callout p:last-child{margin:0}.callout.success{background:#edf7f3;border-color:#c6e1d5}.callout.note{background:#fff5ee;border-color:#ecd4c4}.callout .badge{margin-bottom:10px}.decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:24px}.decision{padding:20px 0;border-top:1px solid var(--line)}.decision h3{margin:0 0 9px;font-size:17px}.decision p{font-size:15px;color:var(--muted);margin:0}.decision strong{color:var(--ink)}.keyline{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:22px 0 12px}.keyline h3{margin:0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff;margin:18px 0 24px;max-width:100%}table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;line-height:1.7}th{font-size:12px;color:var(--muted);background:#eef2f6;font-weight:700}th,td{padding:14px 16px;vertical-align:top;border-bottom:1px solid var(--line)}tr:last-child td{border-bottom:0}td code{font-size:12px}td .badge{font-size:11px}td p{margin:0}td small{display:block;color:var(--muted);font-size:12px;margin-top:5px}.table-wide{min-width:670px}.table-compact td,.table-compact th{padding:11px 14px}.status-column{white-space:nowrap}.codebox{background:#142734;color:#e6f0f4;border-radius:8px;position:relative;margin:18px 0 22px;overflow:hidden}.codebox .codebar{display:flex;justify-content:space-between;align-items:center;padding:11px 17px;border-bottom:1px solid #344b5c;color:#adc0cf;font:12px var(--mono);gap:10px}.codebox pre{font-size:13px;line-height:1.8;padding:18px 20px;margin:0;overflow-x:auto;tab-size:2;max-width:100%}.codebox pre code{font-size:inherit;overflow-wrap:normal}.copy{border:1px solid #607382;border-radius:4px;min-height:36px;padding:2px 12px;background:transparent;color:#d4e2eb;font-size:12px}.copy:hover{background:#294250}.code-comment{color:#9cb5c5}.dep-tree{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#fff;padding:24px;border:1px solid var(--line);border-radius:10px;margin:24px 0}.dep-top{grid-column:1/-1;border:1px solid #c9d5df;border-radius:6px;padding:15px 20px;background:#eef3f7;display:flex;align-items:center;justify-content:space-between;gap:12px}.dep-top code{font-size:16px;font-weight:700}.dep-branch{min-width:0}.dep-edge{height:26px;width:1px;background:#a9bccb;margin:0 auto}.dep-box{border:1px solid var(--line);padding:15px;border-radius:5px;background:#fff}.dep-box b{font-size:14px;display:block;margin-bottom:4px}.dep-box code{font-size:13px}.dep-box small{display:block;font-size:12px;color:var(--muted);margin-top:6px}.dep-box.existing{background:#edf7f3;border-color:#c6e1d5}.dep-foot{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:6px}.path-table td:first-child{width:43%}.path-table code{word-break:break-word}.path-table td:last-child{font-size:13px}.defs{margin:20px 0;padding:0;list-style:none}.defs li{display:grid;grid-template-columns:130px 1fr;gap:12px;border-top:1px solid var(--line);padding:15px 0;margin:0}.defs b{font-size:14px}.defs span{font-size:14px;color:var(--muted)}
+.scenario{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:24px 0}.scenario-top{padding:20px 22px 0;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.scenario-top h3{margin:0;font-size:17px}.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:17px 20px;border-bottom:1px solid var(--line)}.tabs button{min-height:44px;border:1px solid transparent;background:#eef2f6;border-radius:5px;padding:8px 12px;font-size:13px;color:#465869}.tabs button[aria-selected="true"]{background:var(--navy);color:white;border-color:var(--navy)}.scenario-body{padding:24px}.route{display:flex;align-items:stretch;gap:10px;margin-bottom:20px}.route-step{flex:1;min-width:0;border:1px solid var(--line);padding:13px;border-radius:6px;background:#f7f9fb}.route-step b{display:block;font-size:11px;letter-spacing:.06em;color:var(--muted);margin-bottom:7px}.route-step code{font-size:12px;word-break:break-word}.route-step.target{background:var(--teal-light);border-color:#b9d9ce}.route-step.blocked{background:#fff1e9;border-color:#e5bda7}.route-arrow{align-self:center;color:#8b9aa7;font-size:18px}.scenario-body h4{margin:0 0 6px;font-size:16px}.scenario-body p{font-size:14px;color:var(--muted)}.scenario-body pre{margin:0;padding:15px 17px;background:#edf2f6;border-radius:6px;font-size:12px;line-height:1.85;overflow-x:auto}.scenario-body .scene-status{margin-bottom:12px}.scenario-footer{font-size:12px;color:var(--muted);padding:12px 22px;background:#f8fafb;border-top:1px solid var(--line)}details{background:#fff;border:1px solid var(--line);border-radius:7px;margin:14px 0}summary{padding:16px 20px;font-size:15px;font-weight:650;cursor:pointer;list-style-position:outside;margin-left:17px}summary::marker{color:var(--rust)}.detail-body{padding:0 21px 20px}.detail-body p,.detail-body li{font-size:14px}.detail-body .codebox{margin-bottom:0}.timeline{margin:24px 0 28px}.phase{display:grid;grid-template-columns:40px 1fr;gap:18px;position:relative;padding-bottom:27px}.phase:before{content:"";position:absolute;top:38px;bottom:0;left:18px;width:1px;background:var(--line)}.phase:last-child:before{display:none}.phase-number{border:1px solid #cad4dd;border-radius:50%;width:37px;height:37px;display:grid;place-items:center;font:13px var(--mono);background:#fff;color:var(--muted)}.phase h3{margin:1px 0 7px;font-size:17px}.phase p{font-size:14px;color:var(--muted);margin:0 0 7px}.phase .exit{font-size:13px;color:var(--teal)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px}.two-col h3{margin-top:0}.two-col p,.two-col li{font-size:14px}.test-summary{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:22px 0}.test-platform{padding:22px 24px;background:#fff;border:1px solid #c7ded3;border-radius:8px}.test-platform .count{font:700 33px/1.2 var(--mono);letter-spacing:-.05em;color:var(--teal)}.test-platform .count small{font:14px var(--sans);color:var(--muted);letter-spacing:0}.test-platform h3{margin:9px 0 4px;font-size:16px}.test-platform p{font-size:12px;color:var(--muted);margin:0}.test-filter{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 10px;flex-wrap:wrap}.test-filter label{font-size:14px;color:var(--muted)}select{min-height:44px;background:#fff;color:var(--ink);border:1px solid #b8c4ce;border-radius:6px;padding:7px 34px 7px 11px;font-size:14px}.test-pass{color:var(--teal);font-weight:650;font-size:13px}.check-list{list-style:none;padding:0;margin:0}.check-list li{position:relative;padding-left:26px;margin:11px 0;font-size:14px}.check-list li:before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;border:1px solid #b6c4cf;border-radius:2px;background:#fff}.scope{border-top:1px solid var(--line);margin-top:20px;padding-top:18px;color:var(--muted);font-size:14px}.refs{list-style:none;padding:0;margin:24px 0}.refs li{display:grid;grid-template-columns:38px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line);margin:0}.ref-id{font:12px var(--mono);color:var(--rust);padding-top:4px}.refs b{font-size:14px}.refs code{display:block;font-size:11px;line-height:1.8;color:var(--muted);word-break:break-word;margin-top:4px}.refs p{font-size:13px;color:var(--muted);margin:4px 0 0}.refs a{font-size:13px}.footer{background:#eaf0f4;border-top:1px solid var(--line);padding:28px 40px}.footer-inner{max-width:1264px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px}.footer b{color:var(--ink);letter-spacing:.06em}.live-region{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);padding:10px 18px;background:#142734;color:#fff;border-radius:6px;box-shadow:0 5px 25px #0002;font-size:14px;z-index:30}.live-region:empty{display:none}.link-ref{font:11px var(--mono);vertical-align:super;text-decoration:none;margin-left:2px}.recommendation{font-size:20px;line-height:1.7;color:var(--ink);font-weight:600;margin:24px 0 0}.plan-only{font-size:13px;color:var(--rust);margin:10px 0 0}
+@media(min-width:1600px){.hero-inner{padding-top:82px;padding-bottom:70px}.hero h1{font-size:62px}}
+@media(max-width:1100px){.hero-inner{gap:30px}.layout{gap:30px;grid-template-columns:154px minmax(0,1fr);padding-left:28px;padding-right:28px}.top-inner{padding:0 28px}.hero-inner{padding-left:28px;padding-right:28px}.stat{padding:0 22px}.brand span:last-child{display:none}}
+@media(max-width:850px){.hero-inner{grid-template-columns:1fr;padding:44px 28px;gap:28px}.hero h1{font-size:43px}.hero-lead{max-width:100%}.flow-board{max-width:620px}.layout{display:block;padding-top:30px}.sidebar{position:relative;top:auto;margin-bottom:32px}.nav{flex-direction:row;overflow-x:auto;padding-bottom:6px;gap:4px}.nav a{white-space:nowrap;padding:8px 11px}.nav a span,.nav-label,.sidebar-note{display:none}.stats{grid-template-columns:repeat(2,1fr);padding:18px 12px;gap:19px 0}.stat:nth-child(3){border-left:0}.stat{padding:0 18px}.section{padding-bottom:32px;margin-bottom:32px}h2{font-size:1.8rem}.top-date{display:none}.stat-value{font-size:23px}}
+@media(max-width:560px){.topbar{height:66px}.top-inner{padding:0 18px}.brand{gap:9px}.brand b{font-size:16px}.brand-mark{width:27px;height:27px;font-size:14px}.top-actions{gap:8px}.top-actions .button{font-size:12px;padding:7px 11px}.hero-inner{padding:37px 20px 32px}.hero h1{font-size:37px;letter-spacing:-.05em}.hero-lead{font-size:16px}.eyebrow{font-size:10px;margin-bottom:18px}.hero-tags{gap:6px}.hero-tag{font-size:11px}.flow-board{padding:17px}.flow-row{gap:9px}.flow-node{padding:11px 9px}.flow-node code{font-size:11px}.flow-node .label{font-size:11px}.flow-title{font-size:11px}.flow-note{font-size:12px}.layout{padding:24px 20px 35px}.intro{font-size:16px}.decision-grid,.two-col{grid-template-columns:1fr;gap:0}.dep-tree{padding:17px;gap:12px}.dep-top{align-items:flex-start;flex-direction:column;padding:13px}.dep-top code{font-size:14px}.dep-box{padding:12px 9px}.dep-box code{font-size:11px}.dep-box b{font-size:12px}.dep-box small{font-size:11px}.dep-foot{font-size:11px}.route{flex-direction:column;gap:7px}.route-arrow{transform:rotate(90deg);line-height:15px}.route-step{padding:10px 13px}.scenario-body{padding:20px}.scenario-body pre{font-size:11px}.tabs{padding:13px;gap:5px}.tabs button{flex:1 1 45%;font-size:12px;padding:7px 8px}.scenario-top{padding:17px 17px 0}.scenario-top h3{font-size:16px}.test-summary{gap:10px}.test-platform{padding:17px 14px}.test-platform h3{font-size:14px}.test-platform .count{font-size:28px}.test-platform .count small{font-size:11px}.stat-value{font-size:22px}.stat-caption{font-size:11px}.stat-label{font-size:12px}.callout{padding:19px}.defs li{grid-template-columns:1fr;gap:3px}.codebox pre{padding:15px;font-size:11px}.codebox .codebar{font-size:10px;padding:10px 13px}.footer{padding:23px 20px}.footer-inner{flex-direction:column;align-items:flex-start;gap:7px}.phase{gap:12px}.phase h3{font-size:16px}.table-wide{min-width:620px}.path-table{min-width:570px}.keyline{align-items:flex-start}.refs li{gap:8px}.recommendation{font-size:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{@page{size:A4;margin:17mm 15mm}body{font-size:10pt;background:#fff;color:#142332}.topbar,.sidebar,.top-actions,.reading-progress,.copy,.test-filter,.tabs,.no-print{display:none!important}.hero{background:#fff!important;color:#142332;overflow:visible;border-bottom:2px solid #142332}.hero-inner{display:block;padding:0 0 22px}.hero h1{font-size:31pt;color:#142332}.hero h1 em{color:#ba461c}.hero-lead{color:#334759;font-size:11pt}.eyebrow,.hero-caption{color:#566576}.hero-tags{margin-top:10px}.hero-tag,.hero-tag.accent{color:#334759;background:white;border-color:#cad4dd;font-size:8pt}.flow-board{display:none}.stats{padding:16px 0;grid-template-columns:repeat(4,1fr)}.stat{padding:0 12px}.stat-value{font-size:15pt}.stat-value small,.stat-label,.stat-caption{font-size:8pt}.layout{display:block;padding:24px 0 0}.section{margin-bottom:24px;padding-bottom:24px;scroll-margin:0}h2{font-size:19pt}h3{font-size:12pt}p,.intro,.decision p,.small{font-size:10pt}.section-kicker{font-size:8pt}.callout,.codebox,.scenario,.dep-tree,.test-platform,details,.decision{break-inside:avoid}table{font-size:8pt}.table-wrap{overflow:visible}.table-wide,.path-table{min-width:0}.codebox{background:#f1f4f6;color:#142332;border:1px solid #cad4dd}.codebox .codebar{color:#566576;border-color:#cad4dd}.codebox pre{font-size:8pt;white-space:pre-wrap;overflow-wrap:anywhere}.code-comment{color:#566576}.codebox pre code{overflow-wrap:anywhere}.refs code{font-size:7pt}.scenario-body pre{white-space:pre-wrap}.footer{background:#fff;padding:15px 0}.footer-inner{font-size:8pt}a{color:#255b94}thead{display:table-header-group}tr{break-inside:avoid}.test-summary{grid-template-columns:1fr 1fr}.badge{font-size:8pt}.scenario-footer{font-size:8pt}.live-region{display:none}.phase:before{background:#aaa}.section:last-child{padding-bottom:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#overview">跳到方案正文</a>
+<header class="topbar">
+  <div class="top-inner">
+    <a class="brand" href="#top" aria-label="PGEXT 方案首页"><span class="brand-mark" aria-hidden="true">&gt;_</span><b>PGEXT</b><span>ENGINEERING NOTE</span></a>
+    <div class="top-actions"><span class="top-date">2026.11.21 / SHANGHAI</span><a class="button" href="#validation">查看验证</a><button class="button primary" id="print-button" type="button">打印报告</button></div>
+  </div><div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+</header>
+<div class="hero" id="top">
+ <div class="hero-inner">
+  <div>
+   <div class="eyebrow">BUILD TOOLCHAIN / DESIGN PROPOSAL</div>
+   <h1>Rust / pgrx<br><em>构建工具链方案</em></h1>
+   <p class="hero-lead">保留熟悉的 <code>cargo pgrx</code>。让软件包管理安装，让系统入口选择版本，让构建任务验证并锁定环境。</p>
+   <div class="hero-tags"><span class="hero-tag accent">目标 Rust 1.100.0</span><span class="hero-tag accent">目标 pgrx 0.20.0</span><span class="hero-tag">RPM + DEB</span></div>
+   <p class="hero-caption">设计已完成 · 入口原型已验证 · 正式包与构建链尚未切换</p>
+  </div>
+  <div class="flow-board" aria-label="推荐架构：标准命令，经系统入口，到现有预编译软件包">
+   <div class="flow-title"><span>推荐架构</span><span>沿用现有载荷</span></div>
+   <div class="flow-row"><div class="flow-node"><div class="label">配方继续调用</div><code>cargo / rustc</code></div><div class="flow-node"><div class="label">配方继续调用</div><code>cargo pgrx</code></div></div>
+   <div class="flow-link" aria-hidden="true"><span></span><span></span></div>
+   <div class="flow-row"><div class="flow-node"><div class="label">系统入口</div><code>/usr/bin/cargo</code></div><div class="flow-node"><div class="label">系统入口</div><code>/usr/bin/cargo-pgrx</code></div></div>
+   <div class="flow-link" aria-hidden="true"><span></span><span></span></div>
+   <div class="flow-row"><div class="flow-node payload"><div class="label">已存在的包</div><code>rust-toolchain<br>1.100.0</code></div><div class="flow-node payload"><div class="label">已存在的包</div><code>cargo-pgrx-0200<br>0.20.0</code></div></div>
+   <p class="flow-note">安装位置与调用方式解耦。<b>无需为路径重写所有扩展配方。</b></p>
+  </div>
+ </div>
+</div>
+<div class="statbar"><div class="stats">
+ <div class="stat"><span class="stat-label">新增包设计</span><span class="stat-value">2 <small>入口包 +</small> 1 <small>元包</small></span><span class="stat-caption">载荷包继续沿用</span></div>
+ <div class="stat"><span class="stat-label">入口契约原型</span><span class="stat-value">18 <small>项 ×</small> 2 <small>平台</small></span><span class="stat-caption">Ubuntu 24.04 / EL8 · arm64</span></div>
+ <div class="stat"><span class="stat-label">当前公网索引</span><span class="stat-value">8 / 8 <small>已可见</small></span><span class="stat-caption">目标 Rust 与 pgrx 版本</span></div>
+ <div class="stat"><span class="stat-label">正式切换原则</span><span class="stat-value">按批次 <small>锁定</small></span><span class="stat-caption">构建期间不更新工具链</span></div>
+</div></div>
+<div class="layout">
+ <aside class="sidebar" aria-label="报告目录"><p class="nav-label">CONTENTS</p><nav class="nav" id="section-nav">
+  <a href="#overview" class="active"><span>01</span>关键决策</a><a href="#packages"><span>02</span>包与依赖模型</a><a href="#filesystem"><span>03</span>FHS 与 PATH</a><a href="#selection"><span>04</span>版本选择机制</a><a href="#contracts"><span>05</span>构建依赖契约</a><a href="#migration"><span>06</span>迁移与回退</a><a href="#validation"><span>07</span>验证与验收</a><a href="#evidence"><span>08</span>证据与交付</a>
+ </nav><p class="sidebar-note"><strong>阅读提示</strong><br>绿色表示通过或保留，橙色表示拟议或待处理。实施状态见末节。命令示例不会在页面中执行。</p></aside>
+ <main>
+ <section class="section" id="overview">
+  <div class="section-kicker">DECISION</div><h2>把变化收敛在工具链层</h2>
+  <p class="intro">官方构建以 Rust 1.100.0 / pgrx 0.20.0 为目标基线。普通配方保留标准命令；环境准备负责装包、设置默认版本和检查真实命令。旧 pgrx 仅作为过渡版本槽保留。</p>
+  <div class="decision-grid">
+   <div class="decision"><h3>软件包安装成为默认</h3><p><code>pgext env rust/pgrx</code> 默认走 APT/DNF。找不到指定包时明确失败，<strong>不隐式退回联网编译</strong>。rustup 作为明确选择的独立环境模式。</p></div>
+   <div class="decision"><h3>标准命令保持不变</h3><p>通过 <code>/usr/bin</code> 提供 Cargo、Rust 和 pgrx 入口。即使配方重置为常规系统 PATH，也能找到工具。</p></div>
+   <div class="decision"><h3>默认统一，任务可固定</h3><p>系统默认 pgrx 为 0.20.0；任务启动时固定版本与 <code>PGRX_HOME</code>。并发任务不修改系统默认值。</p></div>
+   <div class="decision"><h3>工具要求独立于发行版包名</h3><p>移除扩展配方对发行版 <code>rust/cargo/rustc/rustfmt</code> 的错误约束；保留<strong>实际工具检查</strong>与其他真实构建依赖。</p></div>
+  </div>
+  <div class="callout success"><span class="badge good">本轮更新</span><p><strong>目标载荷已经进入公网索引。</strong> 2026-11-21 16:51（北京时间），<code>repo.pigsty.cc</code> 与 <code>repo.pigsty.io</code> 的 APT/YUM、两架构八路索引均出现 Rust 1.100.0 和 pgrx 0.20.0。此前会话中的“尚未公开”状态已被这次读取结果取代。此次为索引读取，未重复执行公网整仓签名验收。<a class="link-ref" href="#ref-s7">S7</a></p></div>
+  <p class="small">当前 pgext 仍以 rustup 安装 Rust、以 <code>cargo install</code> 安装 pgrx，默认 0.19.3；代码硬编码用户 Cargo 路径。现有 Rust 包只提供私有前缀，尚不拥有标准命令。<a class="link-ref" href="#ref-s1">S1</a><a class="link-ref" href="#ref-s2">S2</a></p>
+ </section>
+
+ <section class="section" id="packages">
+  <div class="section-kicker">PACKAGE MODEL</div><h2>两个入口包，一个基线元包</h2>
+  <p>建议新增三个轻量包。两个入口包提供真实文件；一个元包聚合并锁定版本。<strong>元包不是伪造发行版能力名</strong>：不使用 <code>Provides: cargo/rust</code> 让不正确的依赖检查“通过”。</p>
+  <div class="dep-tree" role="img" aria-label="pgext-build-rust 元包依赖两个入口包，入口包分别依赖已有的 Rust 工具链和 pgrx 0.20.0 载荷；元包同时锁定载荷的精确版本">
+   <div class="dep-top"><div><code>pgext-build-rust</code><div class="small">聚合安装 · 固定经过验收的版本组合</div></div><span class="badge proposed">新增元包</span></div>
+   <div class="dep-branch"><div class="dep-edge"></div><div class="dep-box"><b>Rust 系统命令</b><code>rust-toolchain-default</code><small>新增 · 只接管标准入口</small></div><div class="dep-edge"></div><div class="dep-box existing"><b>完整工具链载荷</b><code>rust-toolchain 1.100.0</code><small>现有 · 不重新编译 Rust</small></div></div>
+   <div class="dep-branch"><div class="dep-edge"></div><div class="dep-box"><b>pgrx 系统命令</b><code>cargo-pgrx-default</code><small>新增 · 参数适配与版本解析</small></div><div class="dep-edge"></div><div class="dep-box existing"><b>独立版本槽</b><code>cargo-pgrx-0200 0.20.0</code><small>现有 · 其他版本按需共存</small></div></div>
+   <div class="dep-foot">元包还直接声明载荷的精确依赖，避免只锁入口包却允许 Rust 在同一构建批次中漂移。</div>
+  </div>
+  <div class="table-wrap"><table class="table-wide"><thead><tr><th>包</th><th>类型与文件所有权</th><th>依赖与边界</th></tr></thead><tbody>
+   <tr><td><code>rust-toolchain</code><small>保留现有包</small></td><td>原生架构载荷<br><code>/usr/lib/pgsty/rust/</code></td><td>保留编译器及标准库；与发行版 Rust 载荷可共存。自身不接管 <code>/usr/bin</code>。</td></tr>
+   <tr><td><code>cargo-pgrx-0200</code><small>保留现有包</small></td><td>原生架构载荷与显式入口<br><code>/usr/bin/cargo-pgrx-0200</code></td><td>保留实际 libc、libgcc、tar/gzip 与 <code>rust-toolchain ≥ 1.99.1</code> 依赖。旧槽各自独立。</td></tr>
+   <tr><td><code>rust-toolchain-default</code><small><span class="badge proposed">新增 · all / noarch</span></small></td><td>标准命令链接：Cargo、rustc、rustdoc、rustfmt、cargo-fmt</td><td>依赖 <code>rust-toolchain</code>。与实际占有同名系统文件的发行版包互斥；不替用户删除这些包。</td></tr>
+   <tr><td><code>cargo-pgrx-default</code><small><span class="badge proposed">新增 · all / noarch</span></small></td><td><code>/usr/bin/cargo-pgrx</code> 通用包装器；alternatives 的有限注册逻辑</td><td>初版依赖 <code>cargo-pgrx-0200</code>；负责默认入口，可按任务选择已安装旧槽。卸载入口不删除载荷或用户缓存。</td></tr>
+   <tr><td><code>pgext-build-rust</code><small><span class="badge proposed">新增 · all / noarch</span></small></td><td>元包；仅必要文档与版本声明</td><td>精确锁定两个入口包及 Rust/pgrx 的完整 EVR/DEB 版本；不执行切换、下载、重启或清理。</td></tr>
+  </tbody></table></div>
+  <p class="small">三个新包没有架构相关 ELF，可采用 DEB <code>all</code> / RPM <code>noarch</code>。被依赖的 Rust/pgrx 由包管理器选择宿主架构。公开分发前仍需验证两架构依赖解析。</p>
+  <details><summary>依赖精度：区分包版本、工具版本与构建批次</summary><div class="detail-body">
+   <p>Rust/pgrx 自身的版本保持上游语义；入口包用自己的接口版本（例如 <code>1.0.0-1PGSTY</code>）；元包用经过验收的基线版本（例如 <code>2026.11.21-1PGSTY</code>）。以下是依赖设计示例，不是已发布包：</p>
+   <div class="codebox"><div class="codebar"><span>元包核心依赖 · 拟议</span><button class="copy" type="button" data-copy="meta-deps">复制</button></div><pre id="meta-deps"><code># Debian
+rust-toolchain-default (= 1.0.0-1PGSTY)
+cargo-pgrx-default (= 1.0.0-1PGSTY)
+rust-toolchain (= 1.100.0-1PGSTY)
+cargo-pgrx-0200 (= 0.20.0-1PGSTY)
+
+# RPM 使用相同的精确 EVR 关系，采用原生 RPM 比较语义。
+# 未来重打包提升 release，必须发布并验证新的基线组合。</code></pre></div>
+   <p style="margin-top:16px">精确依赖只能防止组合漂移，不能代替制品保存。仓库清理旧版本前，必须在独立基线归档中保留 RPM/DEB、SHA256 和镜像摘要；回退不能依赖一个已经被剪枝的旧包。</p>
+  </div></details>
+  <div class="callout note"><span class="badge proposed">需要一起落地的规则</span><p>当前 <code>infra-pkg/bin/lint_specs.py</code> 禁止 <code>conflicts/provides/replaces/obsoletes</code>。应只为 <code>rust-toolchain-default</code> 的经核实文件冲突增加<strong>包名 + 格式 + 字段 + 值</strong>级别白名单，并补回归检查。不要全局取消限制，也不要用 <code>Replaces/Obsoletes</code> 接管发行版载荷。实际冲突包名要通过各发行版包文件清单确认。<a class="link-ref" href="#ref-s4">S4</a></p></div>
+ </section>
+
+ <section class="section" id="filesystem">
+  <div class="section-kicker">FILESYSTEM &amp; PATH</div><h2>系统程序与用户状态各归其位</h2>
+  <p>继续使用已有私有运行时目录，避免搬动经过验证的载荷。公共链接由入口包拥有；默认目标由系统 alternatives 管理；编译缓存和 PG 注册信息不写入系统程序目录。</p>
+  <div class="table-wrap"><table class="path-table"><thead><tr><th>路径</th><th>所有者 / 用途</th></tr></thead><tbody>
+   <tr><td><code>/usr/lib/pgsty/rust/</code></td><td><strong>Rust 载荷包</strong> · 当前单一 Rust 工具链；程序与目标标准库保持同一版本。</td></tr>
+   <tr><td><code>/usr/lib/pgsty/cargo-pgrx/X.Y.Z/bin/cargo-pgrx</code></td><td><strong>pgrx 版本槽</strong> · 实际 ELF；多个版本之间无文件覆盖。</td></tr>
+   <tr><td><code>/usr/bin/{cargo,rustc,rustdoc,rustfmt,cargo-fmt}</code></td><td><strong>Rust 入口包</strong> · 指向现有 Rust 私有前缀；不依赖 shell 初始化。</td></tr>
+   <tr><td><code>/usr/bin/cargo-pgrx</code></td><td><strong>pgrx 入口包</strong> · 适配 Cargo 参数，解析任务版本或系统默认，调用实际 ELF。</td></tr>
+   <tr><td><code>/usr/lib/pgsty/cargo-pgrx/default</code></td><td><strong>alternatives</strong> · 私有默认链接，间接指向某个版本的实际 ELF。普通包文件不同时占有这个链接。</td></tr>
+   <tr><td><code>/etc/alternatives/pgsty-cargo-pgrx</code></td><td><strong>系统管理器</strong> · 选择状态；入口包不直接重写 alternatives 数据库。</td></tr>
+   <tr><td><code>$HOME/.cargo/</code></td><td><strong>构建账户</strong> · 镜像配置、registry/git 缓存、必要的认证；不要把认证复制到公用缓存。实际遵从 <code>CARGO_HOME</code>。</td></tr>
+   <tr><td><code>&lt;job&gt;/pgrx/0.20.0/pg18/</code></td><td><strong>单次构建</strong> · 设置为 <code>PGRX_HOME</code>。交互式命令可默认使用 <code>$HOME/.pgrx/0.20.0</code>。</td></tr>
+   <tr><td><code>/usr/share/doc/&lt;package&gt;/</code></td><td><strong>各软件包</strong> · 许可证、构建记录、版本与来源。</td></tr>
+  </tbody></table></div>
+  <div class="codebox"><div class="codebar"><span>构建过程中的 PATH · 建议契约</span><button class="copy" type="button" data-copy="path-contract">复制</button></div><pre id="path-contract"><code># PostgreSQL 目录由实际平台与本次 PG major 决定。
+&lt;PG bin&gt;:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Rust / pgrx 的正式入口位于 /usr/bin。
+# 每次构建预检 PATH 与 CARGO_HOME，确认它们没有被其他程序遮蔽。</code></pre></div>
+  <p><strong>不把新文件放进 <code>/usr/local</code> 或用户的 <code>~/.cargo/bin</code>。</strong> 前者留给本机管理员，后者是用户工具空间。只放一个 <code>/etc/profile.d</code> 脚本也不够：非登录 shell 不一定加载它，现有配方还可能重置 PATH。</p>
+  <details><summary>旧 rustup 环境怎么迁移，而不损坏用户数据？</summary><div class="detail-body"><ol>
+   <li>优先重新构建干净镜像或使用独立构建账户。开发账户里的 rustup 可以继续服务其他项目。</li>
+   <li>原地迁移前记录系统包所有者、<code>command -v</code>、最终链接目标和版本；对旧命令入口做可恢复备份，只处理本次相关 Rust/pgrx 入口。</li>
+   <li>保留需要的 registry/git 缓存、Cargo 配置和认证。不要整树删除 <code>~/.cargo</code>、<code>~/.rustup</code>。</li>
+   <li>旧配方即使把 <code>$HOME/.cargo/bin</code> 放到 PATH 前面，只要里面没有冲突工具，仍可正常找到系统入口。存在冲突时预检失败，不能宣称只改 PATH 已解决。</li>
+   <li>若使用独立 <code>CARGO_HOME</code>，显式迁移必要镜像配置；认证只按原权限与需要配置，不写进镜像或报告。</li>
+  </ol></div></details>
+ </section>
+
+ <section class="section" id="selection">
+  <div class="section-kicker">VERSION SELECTION</div><h2>一个默认值，明确的任务覆盖</h2>
+  <p>pgrx 版本选择顺序固定为：<strong>任务指定版本 → 系统手动默认 → 报错</strong>。不扫描目录挑“最新版”，不在构建中安装缺失版本，不切换全局默认以服务某个临时任务。</p>
+  <div class="scenario">
+   <div class="scenario-top"><h3>看看一条命令会运行哪个程序</h3><span class="badge blue">设计推演 · 本地交互</span></div>
+   <div class="tabs" role="tablist" aria-label="版本解析场景">
+    <button type="button" role="tab" id="tab-default" aria-controls="scene-panel" aria-selected="true" data-scene="default">默认统一构建</button>
+    <button type="button" role="tab" id="tab-legacy" aria-controls="scene-panel" aria-selected="false" tabindex="-1" data-scene="legacy">并发旧版本</button>
+    <button type="button" role="tab" id="tab-shadow" aria-controls="scene-panel" aria-selected="false" tabindex="-1" data-scene="shadow">残留插件遮蔽</button>
+    <button type="button" role="tab" id="tab-missing" aria-controls="scene-panel" aria-selected="false" tabindex="-1" data-scene="missing">指定版本缺失</button>
+   </div>
+   <div class="scenario-body" id="scene-panel" role="tabpanel" aria-labelledby="tab-default" tabindex="0">
+    <div class="route" aria-label="命令解析路径"><div class="route-step"><b>调用</b><code id="route-command">cargo pgrx package</code></div><span class="route-arrow" aria-hidden="true">›</span><div class="route-step"><b>解析入口</b><code id="route-entry">/usr/bin/cargo-pgrx</code></div><span class="route-arrow" aria-hidden="true">›</span><div class="route-step target" id="route-target-box"><b>最终选择</b><code id="route-target">pgrx 0.20.0 + Rust 1.100.0</code></div></div>
+    <span class="badge good scene-status" id="scene-status">使用固定基线</span><h4 id="scene-heading">普通配方无需理解版本槽</h4><p id="scene-copy">系统默认在环境准备阶段设为 0.20.0。正式任务仍显式固定版本与 PGRX_HOME，防止其他管理员操作改变构建选择。</p>
+    <pre id="scene-code">PGEXT_PGRX_VERSION=0.20.0 \
+PGRX_HOME=/work/job-a/pgrx/0.20.0/pg18 \
+cargo pgrx --version</pre>
+   </div><div class="scenario-footer">这里展示拟议接口。<code>PGEXT_PGRX_VERSION</code> 已用于本轮包装器原型，尚不是正式 pgext 的已发布参数。</div>
+  </div>
+  <div class="two-col">
+   <div><h3>系统默认：原生 alternatives</h3><p>管理的是私有链接 <code>/usr/lib/pgsty/cargo-pgrx/default</code>。公共 <code>/usr/bin/cargo-pgrx</code> 始终是同一个包装器，由它找到实际 ELF。</p><p>安装版本槽与激活默认值分开。<code>pgext env pgrx --pgrx 0.20.0</code> 在准备阶段注册指定槽并选择手动模式；构建阶段不调用 alternatives。</p></div>
+   <div><h3>单次任务：环境变量固定</h3><p>包装器严格验证 <code>PGEXT_PGRX_VERSION=X.Y.Z</code>，只在已安装的固定前缀中查找。选择后设置同一套 <code>CARGO/RUSTC/RUSTDOC/RUSTFMT</code>。</p><p>每个任务单独初始化 <code>PGRX_HOME</code>；初始化与打包必须继承同一选择。显式旧版命令 <code>cargo-pgrx-0193</code> 继续保留。</p></div>
+  </div>
+  <details><summary>为什么不能只给现有包装器加一个软链接？</summary><div class="detail-body"><p>Cargo 调用插件时会把 <code>pgrx</code> 作为参数传入。现有 <code>cargo-pgrx-0200</code> 包装器又主动补一次 <code>pgrx</code>。直接把它链接成 <code>cargo-pgrx</code> 会得到重复参数；本轮在两平台上均复现了这个错误。<a class="link-ref" href="#ref-s3">S3</a></p><p>新通用包装器先规范化这个参数，再调用私有目录中的真实 ELF。这样 <code>cargo pgrx --version</code> 和 <code>cargo-pgrx --version</code> 都成立，而旧显式版本入口不必马上改变。</p></div></details>
+  <h3>Rust 多版本：第一阶段保留简单模型</h3>
+  <p>现有 <code>rust-toolchain</code> 是单一包名、单一前缀，升级替换旧版。<strong>同一个包名不能据此宣称多版本并存。</strong> 当前建议以镜像固定不同 Rust 基线，在同一个正式镜像中只保留一个受控版本。</p>
+  <p class="small">将来确有同机多 Rust 需求，再拆成 <code>rust-toolchain-1.100.0</code> 等不同包名，安装到 <code>/usr/lib/pgsty/rust/1.100.0/</code>；把 Cargo、rustc、rustdoc、rustfmt 与标准库作为一组切换。届时必须同步修改 pgrx 包装器固定的 Rust 路径。不要先创建一个 <code>current</code> 链接，就声称现有包已经支持共存。</p>
+ </section>
+
+ <section class="section" id="contracts">
+  <div class="section-kicker">BUILD CONTRACT</div><h2>去掉错误包依赖，补上真实能力检查</h2>
+  <p>扩展配方声明所需能力，环境准备负责满足它。用户通过 rustup 安装的编译器，不会在 RPM/dpkg 数据库中表现为发行版的 <code>rust/cargo</code>；检查某个包名无法证明实际执行的是那个编译器。</p>
+  <div class="table-wrap"><table><thead><tr><th>处理</th><th>范围</th><th>新契约</th></tr></thead><tbody>
+   <tr><td><span class="badge proposed">移除</span></td><td>扩展配方中错误的发行版 Rust/Cargo/rustfmt 构建依赖</td><td>环境已准备好工具链；实际命令与版本由构建预检验证。</td></tr>
+   <tr><td><span class="badge good">保留</span></td><td>PG 开发文件、C/C++ 编译器、clang/libclang、真实链接库、打包工具</td><td>继续由 APT/DNF 和原生打包检查验证。</td></tr>
+   <tr><td><span class="badge good">保留</span></td><td>Rust/pgrx 工具包自身的真实运行依赖</td><td>例如 libc、libgcc、tar/gzip，以及版本槽实际使用的私有 Rust。</td></tr>
+   <tr><td><span class="badge proposed">补强</span></td><td>实际工具链、Cargo 配置与来源记录</td><td>预检最终路径、版本、sysroot、PGRX_HOME、LLVM、PG 配置及锁文件；构建结果记录这些值。</td></tr>
+  </tbody></table></div>
+  <div class="callout"><p><strong>需要对依赖字段做一次集中、窄范围整理。</strong> 这不是把配方重写成另一套调用方式。保留原有 <code>cargo pgrx</code> 构建逻辑，不使用批量 <code>--nodeps</code> / <code>-d</code> 跳过所有检查，也不在 pgext 中用正则临时删掉任意依赖表达式。已有绕过检查的配方，应在工具依赖整理后逐步恢复原生检查。<a class="link-ref" href="#ref-s1">S1</a></p></div>
+  <h3>正式预检要覆盖的内容</h3>
+  <ul class="defs">
+   <li><b>入口与供应方</b><span>检查命令最终路径、链接与包所有者，检测 <code>/usr/local/bin</code>、用户 rustup proxy 和 <code>$CARGO_HOME/bin/cargo-pgrx</code> 的遮蔽；包模式不能混入另一套编译器。</span></li>
+   <li><b>版本与组件</b><span>读取 <code>rustc -vV</code>、Cargo/pgrx 版本和 Rust sysroot；核对源代码的 MSRV、<code>rust-toolchain.toml</code>、精确版本检查及必要 target。普通 Cargo 不会替 rustup 解释工具链文件。</span></li>
+   <li><b>pgrx 与 PG</b><span>源代码及 <code>Cargo.lock</code> 的 pgrx 系列依赖与 CLI 对齐；检查实际 <code>pg_config</code>、开发头文件和目标架构，显式注册本次 PG major，使用 <code>--no-run</code>。</span></li>
+   <li><b>LLVM 与本机构建</b><span>pgrx 0.20.0 要求匹配 major 的 clang/libclang，优先同版本 llvm-ar，并需要宿主 C 编译器；Rust 至少 1.99.1。本方案第一阶段按各平台原生架构构建，不默认引入交叉编译。<a class="link-ref" href="#ref-s6">S6</a></span></li>
+   <li><b>复现与并发</b><span>记录完整包版本、SHA256、镜像摘要、源码及锁文件摘要；每任务独立 PGRX_HOME 和构建输出。共享下载缓存可以保留，编译期间不升级工具链或修改全局默认。</span></li>
+  </ul>
+  <h3>统一 0.20.0 时必须真实处理的差异</h3>
+  <div class="table-wrap"><table class="table-compact"><thead><tr><th>差异</th><th>处理方式</th></tr></thead><tbody>
+   <tr><td>旧 pgrx crate 与 CLI 不一致</td><td>更新源码依赖、API 使用与锁文件，执行编译和 SQL 测试；不能只改 CLI 或取消版本检查。</td></tr>
+   <tr><td>PG13 / PG14 遗留</td><td>0.20.0 已移除这两代支持。同步 features、初始化参数与测试范围；全局活跃策略是 PG15–19，EL8/PG19 为 N/A。</td></tr>
+   <tr><td><code>pg_search</code> 精确锁 Rust 1.99.1</td><td>与源代码升级同步审查并更新检查。不能假设换成 1.100.0 后当前配方会直接接受。</td></tr>
+   <tr><td><code>pgwasm</code> 调用 <code>rustup target add</code></td><td>把 wasm target 准备移到环境阶段。后续可增 <code>rust-std-wasm32-wasip2</code> 包，版本必须精确绑定 Rust，避免对包管理器目录运行 rustup 修改。</td></tr>
+   <tr><td>0.20.0 新增原生 RPM/DEB 元数据读取</td><td>核查源中的 <code>[package.metadata.rpm/deb]</code>：新 <code>cargo pgrx package</code> 会读取并打包；旧 cargo-deb 字段可能不兼容，也可能产生与现有 RPM/DEB 流程重复的输出。<a class="link-ref" href="#ref-s6">S6</a></td></tr>
+  </tbody></table></div>
+ </section>
+
+ <section class="section" id="migration">
+  <div class="section-kicker">MIGRATION &amp; OPERATIONS</div><h2>分阶段接入，保留可用的旧基线</h2>
+  <p>先证明包与入口正确，再迁移扩展源码和配方。0.20.0 的新镜像可以先行准备；在扩展完成适配前，旧版本构建仍使用原来的固定镜像。</p>
+  <div class="timeline">
+   <div class="phase"><span class="phase-number">1</span><div><h3>落地三个新包</h3><p>实现 Rust 标准链接、pgrx 通用包装器、有限 alternatives 生命周期与精确基线元包。为唯一需要的冲突关系添加 lint 白名单，补充文档。</p><div class="exit">退出条件：RPM/DEB 的安装、升级、卸载、冲突检测及两架构解析通过。</div></div></div>
+   <div class="phase"><span class="phase-number">2</span><div><h3>接入 pgext 环境与构建预检</h3><p>移除用户 Cargo 路径硬编码；包安装为默认，rustup 模式显式选择。环境准备负责安装与激活；每任务固定版本、PGRX_HOME 和实际 Rust 路径；plan 输出须准确展示这些动作。</p><div class="exit">退出条件：新旧来源不会被混用，版本缺失和遮蔽能在编译前失败。</div></div></div>
+   <div class="phase"><span class="phase-number">3</span><div><h3>建立 0.20.0 候选镜像</h3><p>更新 Dockerfile 与共享 <code>pgext.mk</code>；去掉 rustup 和 cargo-install 初始化路径，安装固定元包。保留旧镜像的不可变摘要；候选镜像先使用独立标签。</p><div class="exit">退出条件：两种包格式与架构代表环境跑通，再覆盖 16 个构建平台。</div></div></div>
+   <div class="phase"><span class="phase-number">4</span><div><h3>统一扩展依赖和必要配方字段</h3><p>逐批更新 pgrx 源码/锁文件，清理发行版 Rust 依赖、旧 PG 参数及特殊 target 准备。对一般扩展保留原有构建命令，记录少数例外。</p><div class="exit">退出条件：按扩展实际支持范围通过编译、打包、CREATE EXTENSION / 升级与核心功能测试。</div></div></div>
+   <div class="phase"><span class="phase-number">5</span><div><h3>发布基线并切换正式构建</h3><p>完成包签名与索引验收、发布固定镜像及来源清单，再把正式构建指向新基线。归档旧载荷与镜像；发生失败时切回已验收的旧组合。</p><div class="exit">退出条件：公开安装链路和构建产物验证完成；来源安装、代码部署、包发布分别记账。</div></div></div>
+  </div>
+  <details><summary>包生命周期：安装、升级和卸载如何处理？</summary><div class="detail-body">
+   <div class="table-wrap"><table class="table-compact"><thead><tr><th>动作</th><th>约定</th></tr></thead><tbody>
+    <tr><td>安装载荷槽</td><td>只增加自己的文件。已有槽保持不变。单独装槽不意味着进入官方构建基线。</td></tr>
+    <tr><td>安装入口包</td><td>标准文件由包管理器拥有；检测文件所有权冲突。pgrx postinstall 在载荷存在后注册默认候选，保留已有手动选择。</td></tr>
+    <tr><td>激活默认</td><td><code>pgext env pgrx</code> 明确设置手动默认。元包只聚合依赖，不在安装脚本中切换版本。首次无默认可由原生工具建立候选默认，正式构建仍须预检并固定。</td></tr>
+    <tr><td>增添历史槽</td><td>显式版本命令或任务覆盖可直接使用。需要作为系统候选时，由环境准备注册；不必立即重打包所有旧槽。</td></tr>
+    <tr><td>入口包升级</td><td>包装器应向后兼容，保留管理员选择。区分 Debian 的 upgrade/remove/purge 和 RPM 脚本参数，不能在升级中误删 alternatives 组。</td></tr>
+    <tr><td>卸载某版本</td><td>注销对应候选；对未配套 hook 的旧槽，卸载前由环境管理流程注销。预检要识别失效链接。元包依赖应阻止意外移除基线；本机 alternatives 的回退不等于允许构建降级。</td></tr>
+    <tr><td>卸载入口包</td><td>移除入口与其拥有的注册，保留版本槽、用户配置和缓存。重复执行脚本必须幂等。</td></tr>
+   </tbody></table></div>
+   <p>不能直接覆盖或手工写入 alternatives 状态数据库。实现阶段应测试两种系统管理器真实行为，包括卸载当前选择、重装和中断后恢复；原型中的“移除候选”测试尚不等于这些包事务已通过。</p>
+  </div></details>
+  <div class="codebox"><div class="codebar"><span>设计完成后的使用体验 · 尚未实施</span><button class="copy" type="button" data-copy="future-cli">复制</button></div><pre id="future-cli"><code># 环境准备：通过包管理器安装，明确激活默认。
+pgext env rust
+pgext env pgrx --pgrx 0.20.0 --pg 18
+
+# 配方中的标准调用保持不变。
+cargo --version
+rustc --version
+cargo pgrx --version
+
+# 临时选择已安装旧槽，不修改系统默认。
+PGEXT_PGRX_VERSION=0.19.3 \
+PGRX_HOME=/work/legacy-job/pgrx/0.19.3/pg18 \
+cargo pgrx --version</code></pre></div>
+  <h3>代码变更边界</h3>
+  <div class="table-wrap"><table class="table-compact"><thead><tr><th>仓库</th><th>计划修改</th></tr></thead><tbody>
+   <tr><td><code>infra-pkg</code></td><td>新增三个包目录、包装器/生命周期脚本与包级 lint 例外；更新构建目标分类及状态文档。新增入口与元包列为按需构建，避免混入普通全量批次。</td></tr>
+   <tr><td><code>pgext</code></td><td><code>environment.go</code> 的安装与激活；<code>recipe.go</code> 的任务环境与预检；CLI 参数、plan/manifest 与相关测试。需要准确记录 pgrx 版本，不能只记录 Cargo/Rust。</td></tr>
+   <tr><td><code>docker</code></td><td>16 个平台的环境准备入口、共享刷新逻辑与基线锁定。镜像中的 PG 头文件和 LLVM 版本单独验收。</td></tr>
+   <tr><td><code>rpm / deb</code></td><td>集中清理错误 Rust 包依赖；随统一升级处理锁定版本、PG features、特殊 target 和 pgrx 0.20 API 变化。无需为系统路径改成大量版本化命令。</td></tr>
+  </tbody></table></div>
+ </section>
+
+ <section class="section" id="validation">
+  <div class="section-kicker">VALIDATION</div><h2>先验证入口，再验证完整构建</h2>
+  <p>本轮用真实本地 Rust/pgrx 包，在两个一次性 Linux 容器里安装载荷，再布置拟议系统入口原型。容器禁止联网，源仓库与包目录只读挂载；测试结束后已自动移除。</p>
+  <div class="test-summary"><div class="test-platform"><div class="count">18 / 18 <small>通过</small></div><h3>Ubuntu 24.04 · arm64</h3><p>DEB 载荷 · update-alternatives</p></div><div class="test-platform"><div class="count">18 / 18 <small>通过</small></div><h3>EL8 · arm64</h3><p>RPM 载荷 · alternatives · glibc 2.28</p></div></div>
+  <div class="test-filter"><label for="test-category">入口原型检查</label><select id="test-category"><option value="all">显示全部 18 项</option><option value="entry">命令入口</option><option value="version">版本与并发</option><option value="boundary">错误边界</option><option value="build">编译与初始化</option></select></div>
+  <div class="table-wrap"><table class="table-compact" id="test-table"><thead><tr><th>检查项目</th><th>Ubuntu arm64</th><th>EL8 arm64</th></tr></thead><tbody>
+   <tr data-category="entry"><td>标准 Rust 命令指向私有载荷</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="entry"><td><code>cargo pgrx --version</code> 正确选择默认</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="entry"><td><code>cargo-pgrx --version</code> 参数适配</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="version"><td>显式旧槽命令仍可用</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="version"><td>单进程覆盖为 0.19.3</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="version"><td>进程覆盖不改变系统默认</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="version"><td>新增候选不改变手动选择</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="version"><td>系统默认在已安装版本间切换</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="boundary"><td>基线预检拒绝错误默认版本</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="version"><td>移除非当前候选不破坏默认</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="version"><td>并发进程各自使用指定版本</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="build"><td>两版本使用隔离 PGRX_HOME 初始化 PG18</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="build"><td>通过系统 rustc 编译并运行程序</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="boundary"><td>拒绝非法版本字符串</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="boundary"><td>指定槽缺失时失败，不自动安装</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="boundary"><td>识别 Cargo home 中的插件遮蔽</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="boundary"><td>识别 PATH 中的旧 rustup proxy</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+   <tr data-category="boundary"><td>复现直接链接旧包装器的重复参数问题</td><td class="test-pass">通过</td><td class="test-pass">通过</td></tr>
+  </tbody></table></div>
+  <div class="callout note"><span class="badge proposed">验证范围</span><p>这些是<strong>命令与进程契约原型测试</strong>。新入口包和元包尚未加入 infra-pkg，也未构建为正式 RPM/DEB。因此不能据此声称其安装脚本、升级/卸载事务、完整扩展编译或 x86_64 已经验收。</p></div>
+  <div class="two-col">
+   <div><h3>包层正式验收</h3><ul class="check-list"><li>两种格式、两架构的元包依赖解析。</li><li>干净安装、重复安装、升级、卸载、重装及中断恢复。</li><li>发行版 Cargo/Rust 文件冲突的真实事务测试。</li><li>替换入口不删除用户缓存、认证或其他工具。</li><li>移除当前默认槽与失效链接的处理。</li><li>包头依赖、文件所有权、签名、索引和真实安装一致。</li></ul></div>
+   <div><h3>扩展层正式验收</h3><ul class="check-list"><li>16 平台策略；PG15–19 中实际受支持的坐标。</li><li>EL8 / PG19 保持 N/A；不因 CLI 支持而扩张配方支持。</li><li>小型 pgrx 扩展先行，再验证大型与特殊组件扩展。</li><li>编译、debug 信息、打包布局、ELF 依赖与架构。</li><li>CREATE EXTENSION、已有版本升级及核心 SQL。</li><li>已固定源码/锁文件，构建期间没有额外工具链安装。</li></ul></div>
+  </div>
+  <p class="scope">Rust/pgrx 预编译包消除了工具链自身的现场编译，不代表扩展可以完全离线构建。crate 与 Git 依赖仍需在取源阶段准备和核验，再以锁文件约束构建。</p>
+ </section>
+
+ <section class="section" id="evidence">
+  <div class="section-kicker">EVIDENCE &amp; HANDOFF</div><h2>可追溯的设计与明确的实施状态</h2>
+  <p>本报告依据当前工作树、真实包布局、现有构建镜像、公开索引和 pgrx 0.20.0 官方迁移文档。现有未提交改动没有被改写；本轮交付是方案、可运行入口原型及验证记录。</p>
+  <div class="table-wrap"><table class="table-compact"><thead><tr><th>层次</th><th>本轮状态</th></tr></thead><tbody>
+   <tr><td>设计：包拆分、FHS、PATH、版本选择、依赖与回退</td><td><span class="badge good">已完成</span></td></tr>
+   <tr><td>入口与版本解析原型，两平台各 18 项验证</td><td><span class="badge good">已通过</span></td></tr>
+   <tr><td>Rust 1.100.0 / pgrx 0.20.0 公开索引可见性</td><td><span class="badge good">八路已确认</span></td></tr>
+   <tr><td>infra-pkg 新入口包与元包正式配方、包生命周期</td><td><span class="badge proposed">待实施</span></td></tr>
+   <tr><td>pgext / Docker 接入、扩展统一升级、全矩阵验收</td><td><span class="badge proposed">待实施</span></td></tr>
+   <tr><td>新包入库、镜像切换、代码提交与发布</td><td><span class="badge proposed">未执行</span></td></tr>
+  </tbody></table></div>
+  <ul class="refs">
+   <li id="ref-s1"><span class="ref-id">S1</span><div><b>当前 pgext 安装与构建行为</b><code>/Users/vonng/pgsty/pgext/cli/build/environment.go:18,273,318<br>/Users/vonng/pgsty/pgext/cli/build/recipe.go:77,176,208</code><p>默认 pgrx 0.19.3；rustup/cargo-install；用户 Cargo 路径；原生依赖安装与工具版本记录。</p></div></li>
+   <li id="ref-s2"><span class="ref-id">S2</span><div><b>现有 Rust 载荷契约</b><code>/Users/vonng/pgsty/infra-pkg/rust-toolchain/README.md:3<br>/Users/vonng/pgsty/infra-pkg/rust-toolchain/Makefile:17<br>/Users/vonng/pgsty/infra-pkg/rust-toolchain/nfpm.yaml:19</code><p>1.100.0、私有前缀、当前单版本模型、现有组件及声明的 ABI 基线。</p></div></li>
+   <li id="ref-s3"><span class="ref-id">S3</span><div><b>现有 pgrx 版本槽</b><code>/Users/vonng/pgsty/infra-pkg/cargo-pgrx-0200/nfpm.yaml:80<br>/Users/vonng/pgsty/infra-pkg/cargo-pgrx-0200/src/cargo-pgrx-0200:4</code><p>版本化 ELF、Rust 最低依赖、默认 PGRX_HOME 与参数注入。</p></div></li>
+   <li id="ref-s4"><span class="ref-id">S4</span><div><b>infra-pkg lint 的限制</b><code>/Users/vonng/pgsty/infra-pkg/bin/lint_specs.py:58,222</code><p>当前禁止兼容关系字段；系统默认入口的冲突声明需要严格限定的例外。</p></div></li>
+   <li id="ref-s5"><span class="ref-id">S5</span><div><b>配方中的真实例外与共享镜像入口</b><code>/Users/vonng/pgsty/deb/debbuild/pg_search/Makefile:16,68<br>/Users/vonng/pgsty/rpm/rpmbuild/SPECS/pgwasm.spec:48<br>/Users/vonng/pgsty/deb/debbuild/pg_eviltransform/Makefile:45<br>/Users/vonng/pgsty/docker/pgext.mk:40</code><p>精确 Rust 检查、wasm target、配方重置 PATH 和镜像刷新路径。</p></div></li>
+   <li id="ref-s6"><span class="ref-id">S6</span><div><b>pgrx 0.20.0 官方迁移契约</b><p><a href="https://github.com/pgcentralfoundation/pgrx/blob/v0.20.0/v0.20.0-MIGRATION.md" target="_blank" rel="noopener noreferrer">查看版本固定的官方迁移文档</a></p><p>Rust ≥ 1.99.1、PG13/14 退役、匹配的 clang/libclang、源码 API 变更，以及 cargo-pgrx 对原生包 metadata 的新处理。</p></div></li>
+   <li id="ref-s7"><span class="ref-id">S7</span><div><b>公开索引，2026-11-21 16:51 +08:00</b><p><a href="https://repo.pigsty.cc/apt/infra/dists/generic/main/binary-amd64/Packages.gz">APT 中国</a> · <a href="https://repo.pigsty.io/apt/infra/dists/generic/main/binary-amd64/Packages.gz">APT 全球</a> · <a href="https://repo.pigsty.cc/yum/infra/x86_64/repodata/repomd.xml">YUM 中国</a> · <a href="https://repo.pigsty.io/yum/infra/x86_64/repodata/repomd.xml">YUM 全球</a></p><p>同时读取相应 arm64/aarch64 索引，共八路。完整 URL、元数据摘要及解析结果保存在证据文件。</p></div></li>
+   <li id="ref-s8"><span class="ref-id">S8</span><div><b>本轮原型、日志与输入摘要</b><code>/Users/vonng/pgsty/artifacts/rust-pgrx-design-20261121/prototype/<br>/Users/vonng/pgsty/artifacts/rust-pgrx-design-20261121/evidence/source-evidence.json<br>/Users/vonng/pgsty/artifacts/rust-pgrx-design-20261121/evidence/u24a-contract.json<br>/Users/vonng/pgsty/artifacts/rust-pgrx-design-20261121/evidence/el8a-contract.json</code><p>另含两平台完整测试日志。原型只验证入口契约，不作为生产包交付。</p></div></li>
+  </ul>
+  <p class="recommendation">推荐先落地两个系统入口包与一个固定基线元包，再接入 pgext 预检和候选镜像。扩展统一到 0.20.0 时，只改真实的版本、依赖与兼容性要求。</p>
+ </section>
+ </main>
+</div>
+<footer class="footer"><div class="footer-inner"><span><b>PGEXT</b> &nbsp; Rust / pgrx 工具链设计 · 2026-11-21</span><span>单文件 HTML · 无外部字体或脚本依赖 · 支持离线阅读与打印</span></div></footer>
+<div class="live-region" id="live-region" role="status" aria-live="polite"></div>
+<script>
+(() => {
+ 'use strict';
+ const scenes = {
+  default: {command:'cargo pgrx package',entry:'/usr/bin/cargo-pgrx',target:'pgrx 0.20.0 + Rust 1.100.0',status:'使用固定基线',heading:'普通配方无需理解版本槽',copy:'系统默认在环境准备阶段设为 0.20.0。正式任务仍显式固定版本与 PGRX_HOME，防止其他管理员操作改变构建选择。',code:'PGEXT_PGRX_VERSION=0.20.0 \\\nPGRX_HOME=/work/job-a/pgrx/0.20.0/pg18 \\\ncargo pgrx --version',blocked:false},
+  legacy: {command:'PGEXT_PGRX_VERSION=0.19.3 cargo pgrx …',entry:'/usr/bin/cargo-pgrx',target:'已安装的 0.19.3 槽',status:'只影响当前进程',heading:'旧版本与默认版本可以同时工作',copy:'新任务固定 0.20.0，旧任务固定 0.19.3，并使用不同 PGRX_HOME。两个进程不修改 alternatives。旧扩展仍必须兼容当前 Rust，否则使用旧基线镜像。',code:'PGEXT_PGRX_VERSION=0.19.3 \\\nPGRX_HOME=/work/job-old/pgrx/0.19.3/pg18 \\\ncargo pgrx --version\n\n# 另一进程仍使用 0.20.0；系统默认保持不变。',blocked:false},
+  shadow: {command:'cargo pgrx package',entry:'$CARGO_HOME/bin/cargo-pgrx',target:'预检失败：插件被遮蔽',status:'必须在构建前处理',heading:'仅把 /usr/bin 放进 PATH 还不够',copy:'Cargo 优先搜索 Cargo home 的插件。即使系统入口正确，也可能根本没有执行它。正式构建预检检测残留；使用干净构建账户或迁移相关旧入口，保留缓存与认证。',code:'# 检查实际命令与 Cargo 插件位置。\ncommand -v cargo\ncommand -v rustc\nls -l "${CARGO_HOME:-$HOME/.cargo}/bin/cargo-pgrx"\n\n# 发现遮蔽则失败，不自动删除用户目录。',blocked:true},
+  missing: {command:'PGEXT_PGRX_VERSION=0.18.1 cargo pgrx …',entry:'/usr/bin/cargo-pgrx',target:'预检失败：版本槽缺失',status:'不回退到其他版本',heading:'缺包应暴露，不能暗中选择最新版',copy:'指定版本只映射到固定前缀中的对应槽。槽不存在即退出，给出环境准备提示。软件安装在 env 阶段完成，make/package 阶段不联网编译工具链。',code:'PGEXT_PGRX_VERSION=0.18.1 cargo pgrx --version\n# error: cargo-pgrx 0.18.1 is not installed\n\n# 环境准备阶段另行安装或选择对应旧镜像。',blocked:true}
+ };
+ const tabs = [...document.querySelectorAll('[data-scene]')];
+ const showScene = key => {
+  const s = scenes[key];
+  tabs.forEach(t => { const active=t.dataset.scene===key;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1; });
+  document.getElementById('scene-panel').setAttribute('aria-labelledby','tab-'+key);
+  for (const [id,value] of Object.entries({'route-command':s.command,'route-entry':s.entry,'route-target':s.target,'scene-status':s.status,'scene-heading':s.heading,'scene-copy':s.copy,'scene-code':s.code})) document.getElementById(id).textContent=value;
+  document.getElementById('route-target-box').classList.toggle('blocked',s.blocked);
+  document.getElementById('scene-status').className='badge scene-status '+(s.blocked?'proposed':'good');
+ };
+ tabs.forEach((tab,index) => {
+  tab.addEventListener('click',()=>showScene(tab.dataset.scene));
+  tab.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%tabs.length;else if(event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();showScene(tabs[next].dataset.scene);tabs[next].focus();});
+ });
+ const category=document.getElementById('test-category');
+ category.addEventListener('change',()=>document.querySelectorAll('#test-table tbody tr').forEach(row=>{row.hidden=category.value!=='all'&&row.dataset.category!==category.value;}));
+ let toastTimer;
+ const announce=message=>{const live=document.getElementById('live-region');live.textContent=message;clearTimeout(toastTimer);toastTimer=setTimeout(()=>{live.textContent='';},2600);};
+ document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{const content=document.getElementById(button.dataset.copy).textContent;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(content);}else{const area=document.createElement('textarea');area.value=content;area.style.position='fixed';area.style.left='-10000px';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();if(!ok)throw new Error('copy unavailable');}announce('已复制示例；拟议接口尚未发布。');}catch{announce('当前环境不支持复制，请选择代码手动复制。');}}));
+ const links=[...document.querySelectorAll('#section-nav a')];
+ const sections=[...document.querySelectorAll('main .section')];
+ const progress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('reading-progress').style.width=(max>0?Math.min(100,Math.max(0,window.scrollY/max*100)):0)+'%';let current=sections[0];for(const section of sections){if(section.getBoundingClientRect().top<=Math.max(220,window.innerHeight*.25))current=section;}links.forEach(a=>{const active=a.hash==='#'+current.id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});};let readingFrame=0;const scheduleProgress=()=>{if(!readingFrame)readingFrame=requestAnimationFrame(()=>{readingFrame=0;progress();});};window.addEventListener('scroll',scheduleProgress,{passive:true});window.addEventListener('resize',scheduleProgress);progress();
+ let closedBeforePrint=[];
+ window.addEventListener('beforeprint',()=>{closedBeforePrint=[...document.querySelectorAll('details:not([open])')];closedBeforePrint.forEach(d=>d.open=true);document.querySelectorAll('#test-table tbody tr').forEach(row=>row.hidden=false);});
+ window.addEventListener('afterprint',()=>{closedBeforePrint.forEach(d=>d.open=false);category.dispatchEvent(new Event('change'));});
+ document.getElementById('print-button').addEventListener('click',()=>window.print());
+})();
+</script>
+</body>
+</html>
